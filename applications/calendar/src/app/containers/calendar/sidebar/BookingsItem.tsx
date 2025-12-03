@@ -49,8 +49,8 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
 
     const [deleteBookingModal, showDeleteModal] = useModalTwo(DeleteBookingModal);
 
-    const bookignCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
-    const isCalendarDisabled = getIsCalendarDisabled(bookignCalendar);
+    const bookingCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
+    const isCalendarDisabled = getIsCalendarDisabled(bookingCalendar);
 
     const isEditingEnabled = useFlag('EditCalendarBookings');
 
@@ -63,18 +63,21 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
     };
 
     const handleEditClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (isCalendarDisabled) {
-            e.preventDefault();
-            e.stopPropagation();
-            return;
-        }
+        e.preventDefault();
+        e.stopPropagation();
 
-        if (!isEditingEnabled) {
+        if (!isEditingEnabled || isCalendarDisabled) {
             return;
         }
 
         const { payload } = (await dispatch(loadBookingPage(page.id))) as { payload: BookingPageEditData };
         openBookingSidebarEdition(page, payload);
+    };
+
+    const handleDeleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        void showDeleteModal({ bookingId: page.id });
     };
 
     return (
@@ -88,13 +91,14 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                     onDisplayed={spotlight.onDisplayed}
                     onClose={spotlight.onClose}
                 >
-                    {/* The div can be removed when the spotligh is removed */}
+                    {/* The div can be removed when the spotlight is removed */}
                     <div>
                         <SidebarListItemLabel
                             htmlFor={`booking-page-${page.id}`}
                             className="group-hover-opacity-container"
+                            onClick={(e) => handleCopy(e, page.link)}
                         >
-                            <SidebarListItemContent left={<IcCalendarListFilled color={bookignCalendar?.Color} />}>
+                            <SidebarListItemContent left={<IcCalendarListFilled color={bookingCalendar?.Color} />}>
                                 <div className="flex flex-nowrap justify-space-between items-center w-full">
                                     <p className="text-ellipsis m-0" title={page.summary}>
                                         {page.summary}
@@ -107,6 +111,10 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                         hasCaret={false}
                                         shape="ghost"
                                         size="small"
+                                        onClick={(e: React.MouseEvent) => {
+                                            e.stopPropagation();
+                                            e.preventDefault();
+                                        }}
                                         onToggle={() => {
                                             spotlight.onClose();
                                         }}
@@ -138,10 +146,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                                     {c('Action').t`Edit booking page`}
                                                 </DropdownMenuButton>
                                             )}
-                                            <DropdownMenuButton
-                                                onClick={() => showDeleteModal({ bookingId: page.id })}
-                                                className="text-left"
-                                            >
+                                            <DropdownMenuButton onClick={handleDeleteClick} className="text-left">
                                                 {c('Action').t`Delete booking page`}
                                             </DropdownMenuButton>
                                             <hr className="m-0" />
