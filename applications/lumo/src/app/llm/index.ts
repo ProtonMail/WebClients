@@ -34,7 +34,6 @@ import {
 import type { GenerationResponseMessage, WireImage } from '../types-api';
 import { type ConversationContext, formatPersonalization } from '../ui/interactiveConversation/helper';
 import { separateAttachmentsByType } from './attachments';
-import { removeFileFromMessageContext } from './utils';
 
 export type ContextFilter = {
     messageId: string;
@@ -48,9 +47,13 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
 
 export const ENABLE_U2L_ENCRYPTION = true;
 
-function concat(array: (undefined | string)[]) {
-    return array.filter((s) => s && s.length > 0).join('\n\n');
-}
+// Internal type for turns during processing (before final cleanup)
+type TurnInProgress = Turn & {
+    attachments?: ShallowAttachment[];
+    context?: string;
+    toolCall?: string;
+    toolResult?: string;
+};
 
 /**
  * Convert Uint8Array to base64 string
@@ -86,47 +89,24 @@ export function prepareTurns(
     documentContext?: string,
     c?: ConversationContext
 ): Turn[] {
-    type ExtraTurn = {
-        role: Role;
-        content?: string;
-        context?: string;
-        toolCall?: string;
-        toolResult?: string;
-        images?: WireImage[];
-    };
+    // Step 1: Transform messages to turns with filtered attachments
+    let turns: TurnInProgress[] = linearChain.map((message) => ({
+        role: message.role,
+        content: message.content, // Just the typed message, NOT message.context
+        toolCall: message.toolCall,
+        toolResult: message.toolResult,
+        attachments: filterMessageAttachments(message.attachments, message.id, c?.contextFilters ?? []),
+    }));
 
-    // Apply context filters in ONE place to filter BOTH text content AND attachments
-    // This ensures text files and image files are filtered consistently
-    const filteredMessageChain = linearChain.map((message) => {
-        const filter = (c?.contextFilters ?? []).find((f) => f.messageId === message.id);
-        return applyContextFiltersToMessage(message, filter);
-    });
+    // Step 2: Expand attachments into separate turns (one turn per attachment)
+    if (c?.allConversationAttachments) {
+        turns = turns.flatMap((turn) => expandAttachmentsIntoTurns(turn, c.allConversationAttachments));
+    }
 
-    // Transform messages to turns, converting attachments to images in the same pass
-    let turns: ExtraTurn[] = filteredMessageChain.map((message) => {
-        const turn: ExtraTurn = {
-            role: message.role,
-            content: message.content,
-            context: message.context,
-            toolCall: message.toolCall,
-            toolResult: message.toolResult,
-        };
-
-        // Add images immediately while we have both the message and allAttachments
-        if (message.role === Role.User && message.attachments && c?.allConversationAttachments) {
-            const images = convertAttachmentsToImages(message.attachments, c.allConversationAttachments);
-            if (images.length > 0) {
-                turn.images = images;
-            }
-        }
-
-        return turn;
-    });
-
-    // Insert the final turn, which should be assistant normally
+    // Step 3: Insert the final empty assistant turn
     turns.push(EMPTY_ASSISTANT_TURN);
 
-    // Add RAG document context to the FIRST user message's context field (like an attachment)
+    // Step 4.1: Add RAG document context to the FIRST user message's context field (like an attachment)
     // This ensures documents are included once and won't be duplicated across turns
     if (documentContext && turns.length > 0) {
         const firstUserIndex = turns.findIndex((turn) => turn.role === Role.User);
@@ -142,7 +122,7 @@ export function prepareTurns(
         }
     }
 
-    // Add personalization and project instructions to the LAST user message content
+    // Step 4.2: Add personalization to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
     if (personalizationPrompt || projectInstructions) {
@@ -185,27 +165,17 @@ export function prepareTurns(
         }
     }
 
-    // Remove context and prepend it to the message content
-    // Preserve images through the transformation
-    turns = turns.map(({ role, content, context, toolCall, toolResult, images }) => ({
-        role,
-        content: concat([context, content]),
-        toolCall,
-        toolResult,
-        ...(images && images.length > 0 && { images }),
-    }));
+    // Step 5: Expand tool calls into separate turns (if any)
+    turns = turns.flatMap(({ toolCall, toolResult, images, ...turn }) => {
+        const baseTurn = { ...turn, ...(images && { images }) };
+        if (!toolCall && !toolResult) return [baseTurn];
 
-    // If we see a tool call, we insert hidden turns representing tool call invocation and output.
-    // If there are no tool calls, the turns will remain unchanged.
-    // Note: images stay with the original user turn (tool calls don't have images)
-    turns = turns.flatMap(({ toolCall, toolResult, images, ...message }) => {
-        const turn = { ...message, ...(images && { images }) };
-        if (!toolCall && !toolResult) return [turn];
         const tcTurn = { role: Role.ToolCall, content: toolCall };
         const trTurn = { role: Role.ToolResult, content: toolResult };
-        return [tcTurn, trTurn, turn];
+        return [tcTurn, trTurn, baseTurn];
     });
 
+    // Step 6: Remove empty assistant turns
     turns = removeEmptyAssistantTurns(turns);
 
     return turns;
@@ -238,74 +208,83 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
 }
 
 /**
- * Filter text content by removing excluded files
+ * Format a single text attachment for LLM context
  */
-function filterMessageContext(message: Message, excludedFiles: string[]): string | undefined {
-    if (!message.context) return message.context;
+function formatTextAttachmentContent(attachment: Attachment): string {
+    const filename = `Filename: ${attachment.filename}`;
+    const header = 'File contents:';
+    const beginMarker = '----- BEGIN FILE CONTENTS -----';
+    const endMarker = '----- END FILE CONTENTS -----';
+    const content = attachment.markdown?.trim() || '';
 
-    let filteredContext: string | undefined = message.context;
-    for (const filename of excludedFiles) {
-        filteredContext = removeFileFromMessageContext({ ...message, context: filteredContext }, filename).context;
-    }
-    return filteredContext;
+    return [filename, header, beginMarker, content, endMarker].join('\n');
 }
 
 /**
- * Filter attachments by removing excluded files
+ * Create a turn for an attachment (either text or image)
+ */
+function createAttachmentTurn(shallowAtt: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
+    const fullAtt = allAttachments.find((a) => a.id === shallowAtt.id);
+    if (!fullAtt) return null;
+
+    const { imageAttachments, textAttachments } = separateAttachmentsByType([fullAtt]);
+
+    if (imageAttachments.length > 0) {
+        // Image attachment turn
+        const wireImage = tryConvertToWireImage(fullAtt);
+        if (!wireImage) return null;
+
+        return {
+            role: Role.User,
+            content: `[Image: ${shallowAtt.filename}]`,
+            images: [wireImage],
+        };
+    } else if (textAttachments.length > 0) {
+        // Text attachment turn
+        return {
+            role: Role.User,
+            content: formatTextAttachmentContent(fullAtt),
+        };
+    }
+
+    return null;
+}
+
+/**
+ * Filter attachments by removing excluded files based on context filters
  */
 function filterMessageAttachments(
     attachments: ShallowAttachment[] | undefined,
-    excludedFiles: string[]
+    messageId: string,
+    contextFilters: ContextFilter[]
 ): ShallowAttachment[] | undefined {
     if (!attachments || attachments.length === 0) return attachments;
 
-    return attachments.filter((att) => !excludedFiles.includes(att.filename));
+    const filter = (contextFilters ?? []).find((f) => f.messageId === messageId);
+    if (!filter || filter.excludedFiles.length === 0) return attachments;
+
+    return attachments.filter((att) => !filter.excludedFiles.includes(att.filename));
 }
 
 /**
- * Apply context filters to a message, filtering both text content and attachments
+ * Expand a turn with attachments into multiple turns (one per attachment + content)
+ * Similar to how tool calls are expanded into separate turns
  */
-function applyContextFiltersToMessage(message: Message, filter: ContextFilter | undefined): Message {
-    if (!filter || filter.excludedFiles.length === 0) return message;
+function expandAttachmentsIntoTurns(turn: TurnInProgress, allAttachments: Attachment[]): Turn[] {
+    const { attachments, ...baseTurn } = turn;
 
-    return {
-        ...message,
-        context: filterMessageContext(message, filter.excludedFiles),
-        attachments: filterMessageAttachments(message.attachments, filter.excludedFiles),
-    };
-}
-
-/**
- * Convert a message's attachments to WireImage format for inclusion in a turn
- */
-function convertAttachmentsToImages(
-    messageAttachments: ShallowAttachment[] | undefined,
-    allAttachments: Attachment[]
-): WireImage[] {
-    if (!messageAttachments || messageAttachments.length === 0) {
-        return [];
+    // No attachments or not a user message? Return as-is
+    if (turn.role !== Role.User || !attachments || attachments.length === 0) {
+        return [baseTurn];
     }
 
-    // Match this message's attachments by ID from the allAttachments array
-    const messageAttachmentIds = messageAttachments.map((a) => a.id);
-    const fullAttachments = allAttachments.filter((a) => messageAttachmentIds.includes(a.id));
+    // Create a turn for each attachment
+    const attachmentTurns = attachments
+        .map((att) => createAttachmentTurn(att, allAttachments))
+        .filter((t): t is Turn => t !== null);
 
-    if (fullAttachments.length === 0) {
-        return [];
-    }
-
-    // Filter to get only image attachments, without text attachments
-    const { imageAttachments } = separateAttachmentsByType(fullAttachments);
-    if (imageAttachments.length === 0) {
-        return [];
-    }
-
-    // Convert images to WireImage format
-    const images: WireImage[] = imageAttachments
-        .map(tryConvertToWireImage)
-        .filter((img): img is WireImage => img !== null);
-
-    return images;
+    // Return: attachments first, then user's message content
+    return [...attachmentTurns, baseTurn];
 }
 
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
