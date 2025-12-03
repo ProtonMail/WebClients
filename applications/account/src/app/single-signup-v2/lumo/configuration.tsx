@@ -229,6 +229,7 @@ export const getLumoConfiguration = ({
     audience,
     planParameters,
     isLumoB2BEnabled,
+    isNewB2BPlanEnabled,
     vpnServersCountData,
     signupParameters,
 }: {
@@ -238,6 +239,7 @@ export const getLumoConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     planParameters: PlanParameters | undefined;
     isLumoB2BEnabled: boolean;
+    isNewB2BPlanEnabled: boolean;
     vpnServersCountData: VPNServersCountData;
     signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
@@ -263,24 +265,42 @@ export const getLumoConfiguration = ({
                 type: 'standard' as const,
                 guarantee: true,
             },
-            {
-                plan: PLANS.BUNDLE_PRO_2024,
-                addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
-                subsection: (
-                    <FeatureListPlanCardSubSection
-                        description={c('lumo_signup_2025: Info')
-                            .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`}
-                        features={
-                            <PlanCardFeatureList
-                                {...planCardFeatureProps}
-                                features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
-                            />
-                        }
-                    />
-                ),
-                type: 'best' as const,
-                guarantee: true,
-            },
+            isNewB2BPlanEnabled
+                ? {
+                      plan: PLANS.BUNDLE_BIZ_2025,
+                      subsection: (
+                          <FeatureListPlanCardSubSection
+                              description={c('lumo_signup_2025: Info')
+                                  .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`}
+                              features={
+                                  <PlanCardFeatureList
+                                      {...planCardFeatureProps}
+                                      features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_BIZ_2025], freePlan)}
+                                  />
+                              }
+                          />
+                      ),
+                      type: 'best' as const,
+                      guarantee: true,
+                  }
+                : {
+                      plan: PLANS.BUNDLE_PRO_2024,
+                      addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
+                      subsection: (
+                          <FeatureListPlanCardSubSection
+                              description={c('lumo_signup_2025: Info')
+                                  .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`}
+                              features={
+                                  <PlanCardFeatureList
+                                      {...planCardFeatureProps}
+                                      features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
+                                  />
+                              }
+                          />
+                      ),
+                      type: 'best' as const,
+                      guarantee: true,
+                  },
             {
                 subsection: (
                     <LetsTalkSubSection
@@ -366,11 +386,16 @@ export const getLumoConfiguration = ({
             }
 
             if (audience === Audience.B2B) {
-                return {
-                    plan: PLANS.BUNDLE_PRO_2024,
-                    addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
-                    cycle: CYCLE.YEARLY,
-                };
+                return isNewB2BPlanEnabled
+                    ? {
+                          plan: PLANS.BUNDLE_BIZ_2025,
+                          cycle: CYCLE.YEARLY,
+                      }
+                    : {
+                          plan: PLANS.BUNDLE_PRO_2024,
+                          addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
+                          cycle: CYCLE.YEARLY,
+                      };
             }
 
             return {

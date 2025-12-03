@@ -4,14 +4,13 @@ import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import {
-    PLANS,
     type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    hasBundlePro,
-    hasBundlePro2024,
-    hasSomeAddonOrPlan,
+    hasAnyB2bBundle,
+    hasBundleBiz2025,
+    hasVisionary,
     hasVpnBusiness,
     planSupportsSSO,
     upsellPlanSSO,
@@ -88,9 +87,8 @@ export const getOrganizationAppRoutes = ({
 
     const canShowB2BActivityMonitorEvents = isOrgConfigured && isAdmin;
 
-    //vpnbiz2023, bundlepro2022, bundlepro2024 have the Connection Events feature
-    const hasPlanWithEventLogging =
-        hasVpnBusiness(subscription) || hasBundlePro(subscription) || hasBundlePro2024(subscription);
+    //vpnbiz2023, and all business bundle plans have the Connection Events feature
+    const hasPlanWithEventLogging = hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription);
     const canShowB2BConnectionEvents =
         canDisplayB2BLogsVPN &&
         hasPlanWithEventLogging &&
@@ -147,7 +145,7 @@ export const getOrganizationAppRoutes = ({
         // retention policies management is a B2B feature, only show if org is elligible for it
         isOrgActive &&
         isOrgConfigured &&
-        hasSomeAddonOrPlan(subscription, [PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024]);
+        (hasBundleBiz2025(subscription) || hasVisionary(subscription));
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -241,7 +239,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
-                available: hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription),
+                available: hasVpnB2BPlan || hasAnyB2bBundle(subscription),
                 subsections: [
                     {
                         id: 'servers',
@@ -253,9 +251,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Shared servers`,
                 to: '/shared-servers',
                 icon: 'earth',
-                available:
-                    isSharedServerFeatureEnabled &&
-                    (hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription)),
+                available: isSharedServerFeatureEnabled && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
                 subsections: [
                     {
                         id: 'servers',

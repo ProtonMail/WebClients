@@ -196,6 +196,7 @@ const SingleSignupContainerV2 = ({
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
     const isLumoB2BEnabled = useFlag('LumoB2B');
+    const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -283,6 +284,7 @@ const SingleSignupContainerV2 = ({
             model: defaultSignupModel,
             vpnServersCountData: defaultSignupModel.vpnServersCountData,
             isLumoB2BEnabled,
+            isNewB2BPlanEnabled,
         });
 
         const planParameters = getPlanIDsFromParams(plans, 'CHF', signupParameters, signupConfiguration.defaults);
@@ -331,6 +333,7 @@ const SingleSignupContainerV2 = ({
         model,
         vpnServersCountData,
         isLumoB2BEnabled,
+        isNewB2BPlanEnabled,
     });
     const {
         planCards,

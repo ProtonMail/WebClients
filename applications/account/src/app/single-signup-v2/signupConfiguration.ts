@@ -23,6 +23,7 @@ export const getSignupConfiguration = ({
     viewportWidth,
     theme,
     isLumoB2BEnabled,
+    isNewB2BPlanEnabled,
 }: {
     toApp?: APP_NAMES;
     model: SignupModelV2;
@@ -32,6 +33,7 @@ export const getSignupConfiguration = ({
     viewportWidth: any; // todo lazy
     theme: PublicTheme;
     isLumoB2BEnabled: boolean;
+    isNewB2BPlanEnabled: boolean;
 }) => {
     const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
     const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
@@ -47,6 +49,7 @@ export const getSignupConfiguration = ({
             hideFreePlan: signupParameters.hideFreePlan,
             toApp,
             signupParameters,
+            isNewB2BPlanEnabled,
         });
     }
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
@@ -60,6 +63,7 @@ export const getSignupConfiguration = ({
             vpnServersCountData,
             freePlan: model.freePlan,
             canUseBYOE: toApp === APPS.PROTONMAIL,
+            isNewB2BPlanEnabled,
         });
     }
     if (getIsPassApp(toApp)) {
@@ -111,6 +115,7 @@ export const getSignupConfiguration = ({
             audience,
             planParameters: model.planParameters,
             isLumoB2BEnabled,
+            isNewB2BPlanEnabled,
             vpnServersCountData,
             signupParameters,
         });
@@ -133,5 +138,6 @@ export const getSignupConfiguration = ({
         plansMap: model.plansMap,
         isLargeViewport: viewportWidth['>=large'],
         vpnServersCountData,
+        isNewB2BPlanEnabled,
     });
 };

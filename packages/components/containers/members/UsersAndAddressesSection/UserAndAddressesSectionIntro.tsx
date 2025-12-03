@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/payments';
+import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan, hasBundleBiz2025 } from '@proton/payments';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
@@ -67,7 +67,8 @@ const UserAndAddressesSectionIntro = () => {
             return null;
         };
 
-        if (maxAI > 0) {
+        // bundlebiz2025 has AI features included for all members, so we don't need to show the writing assistant usage info
+        if (maxAI > 0 && !hasBundleBiz2025(subscription)) {
             if (usedAI === 0) {
                 return (
                     <>

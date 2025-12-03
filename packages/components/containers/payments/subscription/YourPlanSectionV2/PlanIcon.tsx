@@ -11,6 +11,7 @@ import {
     type Subscription,
     getHasConsumerVpnPlan,
     hasBundle,
+    hasBundleBiz2025,
     hasBundlePro2024,
     hasDrive,
     hasDrive1TB,
@@ -167,6 +168,13 @@ export const PlanIcon = ({
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.BUNDLE_PRO_2024} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+    if (hasBundleBiz2025(subscription) || planName === PLANS.BUNDLE_BIZ_2025) {
+        return (
+            <LogoIconShape border={false} size={size}>
+                <CustomLogo planName={PLANS.BUNDLE_BIZ_2025} app={app} size={size} />
             </LogoIconShape>
         );
     }

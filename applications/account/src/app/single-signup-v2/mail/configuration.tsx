@@ -224,6 +224,7 @@ export const getMailConfiguration = ({
     signupParameters: { mode, hideFreePlan, invite },
     signupParameters,
     canUseBYOE,
+    isNewB2BPlanEnabled,
 }: {
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
@@ -234,6 +235,7 @@ export const getMailConfiguration = ({
     planParameters: PlanParameters | undefined;
     plansMap?: PlansMap;
     canUseBYOE: boolean;
+    isNewB2BPlanEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <MailLogo />;
 
@@ -271,7 +273,7 @@ export const getMailConfiguration = ({
                 type: 'standard' as const,
                 guarantee: true,
             },
-            {
+            !isNewB2BPlanEnabled && {
                 plan: PLANS.MAIL_BUSINESS,
                 subsection: (
                     <FeatureListPlanCardSubSection
@@ -304,13 +306,30 @@ export const getMailConfiguration = ({
                 type: 'best' as const,
                 guarantee: true,
             },
+            isNewB2BPlanEnabled && {
+                plan: PLANS.BUNDLE_BIZ_2025,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('mail_signup_2025: Info')
+                            .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_BIZ_2025], freePlan)}
+                            />
+                        }
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: true,
+            },
             {
                 subsection: <LetsTalkGenericSubSection app="mail" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,
-                interactive: false,
+                interactive: false as const,
             },
-        ],
+        ].filter(isTruthy),
         [Audience.B2C]: [
             !hideFreePlan && {
                 plan: PLANS.FREE,
