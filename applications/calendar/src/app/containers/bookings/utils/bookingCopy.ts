@@ -15,13 +15,13 @@ export const BookingErrorMessages = {
     get RANGE_MULTIPLE_DAYS() {
         return c('Info').t`Cannot create a range across days.`;
     },
-    get RANGE_LIMIT_EXCEEDED() {
-        return c('Info').t`You can’t have more than ${MAX_BOOKING_SLOTS} booking slots on a page.`;
-    },
     get RANGE_TOO_SHORT() {
         return c('Info').t`Range is too short.`;
     },
     get NO_CALENDAR_AVAILABLE() {
         return c('Info').t`No calendar available; please delete the booking page.`;
+    },
+    maxSlotsReached(numberOfSlots: number) {
+        return c('Info').t`You’ve reached the limit of booking slots (${numberOfSlots}/${MAX_BOOKING_SLOTS})`;
     },
 } as const;
