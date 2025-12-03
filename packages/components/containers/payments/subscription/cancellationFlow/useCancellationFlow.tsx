@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     hasBundle,
+    hasBundleBiz2025,
     hasBundlePro2024,
     hasDrive,
     hasDuo,
@@ -32,7 +33,8 @@ const useCancellationFlow = () => {
             startedCancellation ||
             hasMailPro(subscription) ||
             hasMailBusiness(subscription) ||
-            hasBundlePro2024(subscription)
+            hasBundlePro2024(subscription) ||
+            hasBundleBiz2025(subscription)
         ) {
             return true;
         }

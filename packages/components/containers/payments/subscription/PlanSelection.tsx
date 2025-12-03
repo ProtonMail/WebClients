@@ -3,8 +3,6 @@ import { type ReactElement, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -18,6 +16,8 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import {
     CYCLE,
     type Currency,
@@ -230,6 +230,7 @@ export function useAccessiblePlans({
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
+    const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -360,7 +361,11 @@ export function useAccessiblePlans({
             return lumoB2BPlans;
         }
 
-        return filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
+        const plans = isNewB2BPlanEnabled
+            ? [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]
+            : [plansMap[PLANS.MAIL_PRO], plansMap[bundleProPlan], plansMap[PLANS.BUNDLE_BIZ_2025]];
+
+        return filterPlans(plans);
     })();
 
     const isPassLifetimeEligible =
@@ -486,6 +491,7 @@ const PlanSelection = (props: Props) => {
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();
+    const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
 
     const maximumCycle: Cycle | undefined = getMaximumCycle(maybeMaximumCycle, audience, app, currency);
 
@@ -527,6 +533,7 @@ const PlanSelection = (props: Props) => {
             PLANS.MAIL_BUSINESS,
             PLANS.BUNDLE_PRO,
             PLANS.BUNDLE_PRO_2024,
+            PLANS.BUNDLE_BIZ_2025,
             PLANS.VISIONARY,
         ])
             ? undefined
@@ -535,7 +542,9 @@ const PlanSelection = (props: Props) => {
         PLANS.FAMILY,
     ].filter(isTruthy);
 
-    const b2bRecommendedPlans = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024];
+    const b2bRecommendedPlans = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].concat(
+        isNewB2BPlanEnabled ? [PLANS.BUNDLE_BIZ_2025] : []
+    );
     const hasRecommended = new Set<Audience>();
 
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {

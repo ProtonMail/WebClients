@@ -4,8 +4,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components';
-import { Prompt, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
-import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
+import { Prompt } from '@proton/components';
+import { hasVisionary } from '@proton/payments';
 import walletAtSignDark from '@proton/styles/assets/img/wallet/wallet-at-sign-dark.png';
 import walletAtSign from '@proton/styles/assets/img/wallet/wallet-at-sign.png';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
@@ -15,6 +15,7 @@ import walletLock from '@proton/styles/assets/img/wallet/wallet-lock.jpg';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../atoms';
+import { useUpsellModal } from '../../hooks/useUpsellModal';
 import { type SubTheme, WalletUpgradeBanner } from '../../utils';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
@@ -29,26 +30,10 @@ type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 
 export const WalletUpgradeModal = ({ title, content, theme, banner, ...modalProps }: Props) => {
     const walletTheme = useWalletTheme();
-    const [openSubscriptionModal] = useSubscriptionModal();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const upgradeToVisionaryOnly =
-        hasBundle(subscription) ||
-        hasFamily(subscription) ||
-        hasDuo(subscription) ||
-        hasBundlePro(subscription) ||
-        hasBundlePro2024(subscription);
+    const [openUpsellModal] = useUpsellModal(subscription);
     const hidden = hasVisionary(subscription);
-    const subscriptionProps = upgradeToVisionaryOnly
-        ? {
-              step: SUBSCRIPTION_STEPS.CHECKOUT,
-              disablePlanSelection: true,
-              plan: PLANS.VISIONARY,
-          }
-        : {
-              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-          };
-
     const getBanner = () => {
         const isDarkMode = walletTheme === WalletThemeOption.WalletDark;
         if (banner === WalletUpgradeBanner.AT_SIGN) {
@@ -72,17 +57,7 @@ export const WalletUpgradeModal = ({ title, content, theme, banner, ...modalProp
                         color="norm"
                         hidden={hidden}
                         disabled={!user.canPay}
-                        onClick={() => {
-                            openSubscriptionModal({
-                                ...subscriptionProps,
-                                onSubscribed: () => {
-                                    modalProps.onClose?.();
-                                },
-                                metrics: {
-                                    source: 'upsells',
-                                },
-                            });
-                        }}
+                        onClick={openUpsellModal}
                     >
                         {c('Action').t`Upgrade now`}
                     </Button>
