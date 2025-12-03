@@ -778,45 +778,50 @@ export function sendMessage({
     };
 }
 
+export type RegenerateData = {
+    assistantMessageId: MessageId;
+    retryInstructions?: string;
+};
+
 // TODO: improve error handling
-export function regenerateMessage(
-    api: Api,
-    spaceId: SpaceId,
-    conversationId: ConversationId,
-    assistantMessageId: MessageId,
-    messagesWithContext: Message[],
-    attachments: Attachment[],
-    signal: AbortSignal,
-    enableExternalTools: boolean,
-    enableSmoothing: boolean = true,
-    contextFilters: any[] = [],
-    retryInstructions: string | undefined,
-    personalization: PersonalizationSettings
-) {
+export function regenerateMessage({
+    applicationContext: a,
+    conversationContext: c,
+    uiContext: ui,
+    settingsContext: s,
+    regenerateData: r,
+}: {
+    applicationContext: ApplicationContext;
+    conversationContext: ConversationContext;
+    uiContext: UiContext;
+    settingsContext: SettingsContext;
+    regenerateData: RegenerateData;
+}) {
     return async (dispatch: AppDispatch, getState: () => any) => {
-        dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
+        dispatch(updateConversationStatus({ id: c.conversationId!, status: ConversationStatus.GENERATING }));
 
         const state = getState();
 
         // Calculate which files will actually be used for the regenerated response
         // Note: Project files are retrieved via RAG
-        const contextFilesForResponse = getContextFilesForMessages(messagesWithContext, contextFilters);
+        const contextFilesForResponse = getContextFilesForMessages(c.messageChain, c.contextFilters);
 
         // Update the assistant message with context files before regenerating
-        const assistantMessage = messagesWithContext.find((m) => m.id === assistantMessageId);
+        let assistantMessage = c.messageChain.find((m) => m.id === r.assistantMessageId);
         if (assistantMessage) {
-            const updatedAssistantMessage: Message = {
+            assistantMessage = {
                 ...assistantMessage,
                 ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
             };
-            dispatch(addMessage(updatedAssistantMessage));
+            dispatch(addMessage(assistantMessage));
         }
 
         try {
+            const messagesWithContext = c.messageChain;
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
             let isProject = false;
-            const space = state.spaces[spaceId];
+            const space = state.spaces[c.spaceId];
             if (space?.isProject) {
                 isProject = true;
                 if (space?.projectInstructions) {
@@ -832,24 +837,14 @@ export function regenerateMessage(
             const userQuery = lastUserMessage?.content || '';
             const ragResult = await retrieveDocumentContextForProject(
                 userQuery,
-                spaceId,
+                c.spaceId,
                 userId,
                 isProject,
                 messagesWithContext,
                 allAttachments
             );
 
-            const personalizationPrompt = formatPersonalization(personalization);
-            console.log('[RAG] Context retrieval result:', {
-                personalizationPrompt: !!personalizationPrompt,
-                projectInstructions: !!projectInstructions,
-                documentContext: !!ragResult?.context,
-                documentContextLength: ragResult?.context?.length || 0,
-                ragAttachments: ragResult?.attachments?.length || 0,
-                userQuery: userQuery.slice(0, 50),
-                spaceId,
-                isProject,
-            });
+            const personalizationPrompt = formatPersonalization(s.personalization);
 
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
@@ -894,59 +889,55 @@ export function regenerateMessage(
                 );
 
                 // Recalculate contextFiles to include the auto-retrieved attachments
-                const updatedContextFiles = getContextFilesForMessages(updatedMessagesWithContext, contextFilters);
+                const updatedContextFiles = getContextFilesForMessages(updatedMessagesWithContext, c.contextFilters);
 
                 // Update the assistant message's contextFiles
-                const assistantMessage = state.messages[assistantMessageId];
                 if (assistantMessage) {
-                    const updatedAssistantMessage: Message = {
+                    assistantMessage = {
                         ...assistantMessage,
                         contextFiles: updatedContextFiles,
                     };
-                    dispatch(addMessage(updatedAssistantMessage));
+                    dispatch(addMessage(assistantMessage));
                 }
             }
 
             // Build conversation context (Δ₂ pattern)
-            const c: ConversationContext = {
-                spaceId,
-                conversationId,
-                allConversationAttachments: attachments,
+            c = {
+                ...c,
                 messageChain: updatedMessagesWithContext,
-                contextFilters,
             };
 
             // Δ₁ + Δ₂: Use refactored API with RAG context
             const turns = prepareTurns(
                 updatedMessagesWithContext,
-                contextFilters,
-                personalization,
+                c.contextFilters,
+                s.personalization,
                 projectInstructions,
                 ragResult?.context,
                 c
             );
 
             // Add retry instructions if provided
-            if (retryInstructions) {
+            if (r.retryInstructions) {
                 // Insert a system message with retry instructions before the final assistant turn
                 const systemTurn = {
                     role: Role.System,
-                    content: retryInstructions,
+                    content: r.retryInstructions,
                 };
                 // Insert the system turn before the last turn (which should be the empty assistant turn)
                 turns.splice(-1, 0, systemTurn);
             }
 
             await dispatch(
-                sendMessageWithRedux(api, turns, {
-                    messageId: assistantMessageId,
-                    conversationId,
-                    spaceId,
-                    signal,
-                    enableExternalTools,
+                sendMessageWithRedux(a.api, turns, {
+                    messageId: r.assistantMessageId,
+                    conversationId: c.conversationId!,
+                    spaceId: c.spaceId!,
+                    signal: a.signal,
+                    enableExternalTools: ui.enableExternalTools,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                        enableSmoothing,
+                        enableSmoothing: ui.enableSmoothing,
                     },
                     errorHandler: createLumoErrorHandler(),
                 })
@@ -958,73 +949,63 @@ export function regenerateMessage(
     };
 }
 
-export async function retrySendMessage({
-    api,
-    dispatch,
-    lastUserMessage,
-    messageChain,
-    attachments,
-    spaceId,
-    conversationId,
-    signal,
-    enableExternalTools,
-    isProject,
-    userId,
-    enableSmoothing,
-    contextFilters = [],
-    personalization,
+export type RetryData = {
+    lastUserMessage: Message;
+};
+
+export function retrySendMessage({
+    applicationContext: a,
+    conversationContext: c,
+    uiContext: ui,
+    settingsContext: s,
+    retryData: r,
+    isProject, // todo incorporate in context param objects
+    userId, // todo incorporate in context param objects
     projectInstructions,
     allAttachments = {},
 }: {
-    api: Api;
-    dispatch: AppDispatch;
-    lastUserMessage: Message;
-    messageChain: Message[];
-    attachments: Attachment[];
-    spaceId: SpaceId;
-    conversationId: ConversationId;
-    signal: AbortSignal;
-    enableExternalTools: boolean;
+    applicationContext: ApplicationContext;
+    conversationContext: ConversationContext;
+    uiContext: UiContext;
+    settingsContext: SettingsContext;
+    retryData: RetryData;
     isProject: boolean;
     userId?: string;
-    enableSmoothing?: boolean;
-    contextFilters?: any[];
-    personalization: PersonalizationSettings;
     projectInstructions?: string;
     allAttachments?: Record<string, Attachment>;
 }) {
-    const date = createDate();
+    return async (dispatch: LumoDispatch) => {
+        const date = createDate();
 
-    // Update conversation status to generating
-    dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
+        // Update conversation status to generating
+        dispatch(updateConversationStatus({ id: c.conversationId, status: ConversationStatus.GENERATING }));
 
-    // Create a new assistant message for the retry
-    const assistantMessageId = newMessageId();
-    const assistantMessage: Message = {
-        id: assistantMessageId,
-        parentId: lastUserMessage.id,
-        createdAt: date,
-        content: '',
-        role: Role.Assistant,
-        placeholder: true,
-        conversationId,
-    };
+        // Create a new assistant message for the retry
+        const assistantMessageId = newMessageId();
+        const assistantMessage: Message = {
+            id: assistantMessageId,
+            parentId: r.lastUserMessage.id,
+            createdAt: date,
+            content: '',
+            role: Role.Assistant,
+            placeholder: true,
+            conversationId: c.conversationId,
+        };
 
-    // Note: Project files are retrieved via RAG
-    const contextFilesForResponse = getContextFilesForMessages(messageChain, contextFilters);
+        // Note: Project files are retrieved via RAG
+        const contextFilesForResponse = getContextFilesForMessages(c.messageChain, c.contextFilters);
 
-    // Update the assistant message with the context files that will be used
-    const assistantMessageWithContext: Message = {
-        ...assistantMessage,
-        ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
-    };
+        // Update the assistant message with the context files that will be used
+        const assistantMessageWithContext: Message = {
+            ...assistantMessage,
+            ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
+        };
 
-    dispatch(addMessage(assistantMessageWithContext));
+        dispatch(addMessage(assistantMessageWithContext));
 
-    // Call the LLM
-    try {
-        const linearChain = messageChain;
-        const requestTitle = messageChain.length === 1;
+        // Call the LLM
+        const linearChain = c.messageChain;
+        const requestTitle = c.messageChain.length === 1;
         const referencedFileNames = new Set<string>(); // empty for retry, no new @ mentions
 
         // Extract the user's query from the last user message for RAG retrieval
@@ -1036,7 +1017,7 @@ export async function retrySendMessage({
         // Pass referencedFileNames to exclude files that were explicitly @mentioned
         const ragResult = await retrieveDocumentContextForProject(
             userQuery,
-            spaceId,
+            c.spaceId,
             userId,
             isProject,
             linearChain,
@@ -1085,7 +1066,7 @@ export async function retrySendMessage({
             updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
 
             // Recalculate contextFiles to include the auto-retrieved attachments
-            const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, contextFilters);
+            const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, c.contextFilters);
 
             console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
@@ -1110,46 +1091,45 @@ export async function retrySendMessage({
         }
 
         // Build conversation context for turn preparation (includes attachments for image enrichment)
-        const c: ConversationContext = {
-            spaceId,
-            conversationId,
-            allConversationAttachments: attachments,
+        const c2: ConversationContext = {
+            ...c,
             messageChain: updatedLinearChain,
-            contextFilters,
         };
 
         // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         const turns = prepareTurns(
             updatedLinearChain,
-            contextFilters,
-            personalization,
+            c.contextFilters,
+            s.personalization,
             projectInstructions,
             ragResult?.context,
-            c
+            c2
         );
 
-        await dispatch(
-            sendMessageWithRedux(api, turns, {
-                messageId: assistantMessageId,
-                conversationId,
-                spaceId,
-                signal,
-                enableExternalTools,
-                generateTitle: requestTitle,
-                config: {
-                    enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                    enableSmoothing,
-                },
-                errorHandler: createLumoErrorHandler(),
-            })
-        );
-        // --- END fetchAssistantResponse ---
-    } catch (error) {
-        console.warn('retry error: ', error);
-        throw error;
-    }
+        // Call the LLM
+        try {
+            await dispatch(
+                sendMessageWithRedux(a.api, turns, {
+                    messageId: assistantMessageId,
+                    conversationId: c.conversationId!,
+                    spaceId: c.spaceId!,
+                    signal: a.signal,
+                    enableExternalTools: ui.enableExternalTools,
+                    generateTitle: requestTitle,
+                    config: {
+                        enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                        enableSmoothing: ui.enableSmoothing,
+                    },
+                    errorHandler: createLumoErrorHandler(),
+                })
+            );
+        } catch (error) {
+            console.warn('retry error: ', error);
+            throw error;
+        }
 
-    return assistantMessage;
+        return assistantMessage;
+    };
 }
 
 export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode: boolean = false) {
