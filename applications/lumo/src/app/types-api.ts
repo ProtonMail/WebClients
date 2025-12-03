@@ -81,7 +81,14 @@ export function isUnencryptedWireTurn(obj: any): obj is UnencryptedWireTurn {
 
 export type Tier = 'anonymous' | 'basic' | 'free';
 
-export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency' | 'generate_image';
+export type ToolName =
+    | 'proton_info'
+    | 'web_search'
+    | 'weather'
+    | 'stock'
+    | 'cryptocurrency'
+    | 'generate_image'
+    | 'describe_image';
 
 /*
  * A generation request in the format that the scheduler backend expects.

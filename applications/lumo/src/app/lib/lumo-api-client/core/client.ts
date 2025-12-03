@@ -38,7 +38,7 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     endpoint: LUMO_CHAT_ENDPOINT,
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
-    internalTools: ['proton_info', 'generate_image'],
+    internalTools: ['proton_info', 'generate_image', 'describe_image'],
     interceptors: {
         request: [],
         response: [],
