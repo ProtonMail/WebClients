@@ -87,12 +87,13 @@ export const useSheetsOnboardingModal = () => {
         }
     }, [setOnboardingSchedule, shouldSchedule]);
 
+    // Show onboarding modal if the current time is later than scheduled time
     useEffect(() => {
-        if (typeof onboardingSchedule === 'number' && Date.now() > onboardingSchedule) {
+        if (typeof onboardingSchedule === 'number' && Date.now() > onboardingSchedule && !alreadyShown) {
             showSheetsOnboardingModal({});
             setAlreadyShown(true);
         }
-    }, [onboardingSchedule, setAlreadyShown, showSheetsOnboardingModal]);
+    }, [alreadyShown, onboardingSchedule, setAlreadyShown, showSheetsOnboardingModal]);
 
     return sheetsOnboardingModal;
 };
