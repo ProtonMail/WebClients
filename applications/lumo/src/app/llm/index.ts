@@ -220,6 +220,7 @@ function removeEmptyAssistantTurns(turns: Turn[]) {
 /**
  * Find the corresponding message for a user turn
  */
+// FIXME this method is an abomination and should be removed asap
 function findCorrespondingUserMessage(
     turn: Turn,
     turnIndex: number,
@@ -265,6 +266,7 @@ export function enrichTurnWithImages(
     }
 
     // Find the corresponding message for this turn
+    // FIXME we should not have to find the corresponding message but rather pass it from above
     const correspondingMessage = findCorrespondingUserMessage(turn, turnIndex, turns, linearChain);
     if (!correspondingMessage || !correspondingMessage.attachments || correspondingMessage.attachments.length === 0) {
         return turn;

@@ -225,24 +225,37 @@ export const useLumoActions = ({
             projectInstructions = space.projectInstructions;
         }
 
-        await retrySendMessage({
-            api,
-            dispatch,
-            lastUserMessage,
-            messageChain: messagesWithContext,
-            attachments: historyAttachments,
-            spaceId: finalSpaceId,
-            conversationId: finalConversationId,
-            signal,
-            enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
-            isProject: space?.isProject ?? false,
-            userId: user?.ID,
-            enableSmoothing,
-            contextFilters,
-            personalization,
-            projectInstructions,
-            allAttachments,
-        });
+        await dispatch(
+            retrySendMessage({
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                conversationContext: {
+                    spaceId: finalSpaceId,
+                    conversationId: finalConversationId,
+                    allConversationAttachments: historyAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    navigateCallback,
+                    isGhostMode,
+                    enableSmoothing,
+                },
+                settingsContext: {
+                    personalization,
+                },
+                retryData: {
+                    lastUserMessage,
+                },
+                isProject: space?.isProject ?? false,
+                userId: user?.ID,
+                projectInstructions,
+                allAttachments,
+            })
+        );
     };
 
     const handleEditAction = async (
@@ -370,20 +383,32 @@ export const useLumoActions = ({
         }
 
         await dispatch(
-            regenerateMessage(
-                api,
-                spaceId,
-                conversationId,
-                assistantMessageId,
-                messagesWithContext,
-                allAttachments,
-                signal,
-                enableExternalTools,
-                enableSmoothing,
-                contextFilters,
-                retryInstructions,
-                personalization
-            )
+            regenerateMessage({
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                conversationContext: {
+                    spaceId,
+                    conversationId,
+                    allConversationAttachments: allAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    enableExternalTools,
+                    navigateCallback,
+                    isGhostMode,
+                    enableSmoothing,
+                },
+                settingsContext: {
+                    personalization,
+                },
+                regenerateData: {
+                    assistantMessageId,
+                    retryInstructions,
+                },
+            })
         );
     };
 
