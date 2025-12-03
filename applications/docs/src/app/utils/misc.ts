@@ -53,6 +53,11 @@ export function useIsSheetsEnabled() {
   return (useFlag('DocsSheetsEnabled') || isDevOrBlack()) && !killswitch
 }
 
+export function useIsSheetsEditorEnabled() {
+  const killswitch = useFlag('DocsSheetsDisabled')
+  return (useFlag('SheetsEditorEnabled') || isDevOrBlack()) && !killswitch
+}
+
 /**
  * Checks if the user is allowed to download logs.
  * It will only be active for alpha and dev/black environments for now.
