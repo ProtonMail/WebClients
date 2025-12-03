@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Ajouter une autre plage de réservation pour ce jour"
+      ],
+      "Create a new booking page": [
+        "Créer une nouvelle page de réservation"
+      ],
+      "Go to the first available appointment": [
+        "Aller au premier rendez-vous disponible"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "événement",
         "événements"
+      ],
+      "Ends after": [
+        "Se termine après"
+      ],
+      "Ends on": [
+        "Se termine le"
       ]
     },
     "customer_support.feature.all": {
@@ -4092,6 +4107,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Location is required": [
+        "L'emplacement est requis"
       ]
     },
     "error": {
@@ -6526,6 +6544,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Booking updated successfully": [
+        "La réservation a été mise à jour avec succès"
+      ],
+      "Cannot create a range across days.": [
+        "Impossible de créer une plage s'étendant sur plusieurs jours."
+      ],
+      "Cannot create a range in the past.": [
+        "Impossible de créer une plage dans le passé."
+      ],
+      "Loading appointments...": [
+        "Chargement des rendez-vous..."
+      ],
+      "Manage booking page": [
+        "Gérer la page de réservation"
+      ],
+      "No appointments available": [
+        "Aucun rendez-vous disponible"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Aucun calendrier disponible ; veuillez supprimer la page de réservation."
+      ],
+      "No future appointments available": [
+        "Aucun prochain rendez-vous disponible."
+      ],
+      "Range already exists.": [
+        "La plage existe déjà."
+      ],
+      "Range is too short.": [
+        "La plage est trop courte."
+      ],
+      "Range overlaps with an existing range.": [
+        "La plage chevauche une plage existante."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Cette page de réservation ne peut pas être modifiée, le calendrier associé a été désactivé."
+      ],
+      "When can appointments be booked?": [
+        "Quand les rendez-vous peuvent-ils être réservés ?"
       ]
     },
     "info": {
@@ -7217,6 +7274,15 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copier le lien ou gérer votre page d'ici à tout moment."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Créez des pages partageables où les gens peuvent réserver du temps avec vous."
+      ],
+      "Repeat weekly": [
+        "Répéter chaque semaine"
       ]
     },
     "label": {
@@ -7234,6 +7300,9 @@
       ],
       "What should people know before booking?": [
         "Que faut-il savoir avant de réserver ?"
+      ],
+      "What should people know about this appointment?": [
+        "Que faut-il savoir à propos de ce rendez-vous ?"
       ]
     },
     "Label for contact group color": {
@@ -9676,6 +9745,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Enter a short description or additional info": [
+        "Saisissez une courte description ou des informations supplémentaires"
       ]
     },
     "Placeholder for contact group name": {
@@ -12081,6 +12153,12 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Introducing booking pages": [
+        "Présentation des pages de réservation"
+      ],
+      "Your booking pages live here": [
+        "Vos pages de réservation se trouvent ici"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

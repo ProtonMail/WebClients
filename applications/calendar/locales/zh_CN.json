@@ -366,7 +366,7 @@
         "生成密码"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -8550,7 +8550,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -8676,6 +8676,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ]
     },
     "Payments.Error": {

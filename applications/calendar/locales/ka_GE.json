@@ -1004,6 +1004,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "კიდევ ერთი ჯავშნის შუალედის დამატება ამ დღეზე"
+      ],
+      "Go to the first available appointment": [
+        "გადასვლა პირველშემდეგ ხელმისაწვდომ შეხვედრაზე"
       ]
     },
     "action": {
@@ -1312,6 +1318,9 @@
       ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
       ]
     },
     "b2b_trials_Action": {
@@ -6395,6 +6404,33 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
+      ],
+      "Booking updated successfully": [
+        "ჯავშნის განახლება წარმატებულია"
+      ],
+      "Loading appointments...": [
+        "შეხვედრების ჩატვირთვა..."
+      ],
+      "Manage booking page": [
+        "დაჯავშნის გვერდის მართვა"
+      ],
+      "No appointments available": [
+        "შეხვედრები ხელმისაწვდომი არაა"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "კალენდარი არ არის ხელმისაწვდომი; წაშალეთ ჯავშნის გვერდი."
+      ],
+      "No future appointments available": [
+        "მომავალი შეხვედრები ხელმისაწვდომი არაა"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "ადამიანები, რომლებიც თქვენთან დროს დაჯავშნიან, ${ selectedCalendar.Email }-ს თქვენს საკონტაქტო მისამართად დაინახავენ."
+      ],
+      "When can appointments be booked?": [
+        "სად შემიძლია შეხვედრის დაჯავშნა?"
       ]
     },
     "info": {
@@ -7092,6 +7128,12 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "დააკოპირეთ ბმული, ან მართეთ თქვენი გვერდი აქედან ნებისმიერ დროს."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "შექმენით გასაზიარებელი გვერდები, სადაც ადამიანებს შეუძლიათ თქვენთან დროის დაჯავშნა."
       ]
     },
     "label": {
@@ -7109,6 +7151,9 @@
       ],
       "What should people know before booking?": [
         "რა უნდა იცოდეს ხალხმა შეხვედრის შესახებ?"
+      ],
+      "What should people know about this appointment?": [
+        "რა უნდა იცოდეს ხალხმა ამ შეხვედრის შესახებ?"
       ]
     },
     "Label for contact group color": {
@@ -7335,6 +7380,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძელებლად გაათავისუფლეთ ადგილი, ან ${ cta }."
       ]
     },
     "Log preference": {
@@ -9278,6 +9326,9 @@
       ],
       "Your plan includes this feature already.": [
         "თქვენი სატარიფო გეგმა ამ ფუნქციას უკვე შეიცავს."
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "თუ აირჩევთ, შეცვალოთ თქვენი ${ planTitle } სატარიფო გეგმა, შეიძლება, ზოგიერთ ფუნქციასთან წვდომა დაკარგოთ."
       ]
     },
     "Payments.plan_name": {
@@ -9507,6 +9558,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Enter a short description or additional info": [
+        "შეიყვანეთ მოკლე აღწერა, ან დამატებითი ინფორმაცია"
       ]
     },
     "Placeholder for contact group name": {
@@ -9641,6 +9695,9 @@
       ],
       "your subscription": [
         "თქვენი გამოწერა"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
       ]
     },
     "Reload event button tooltip": {
@@ -10982,6 +11039,12 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Booking page created": [
+        "დაჯავშნის გვერდი შეიქმნა"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "დაჯავშნის გვერდი შეიქმნა და ბმული დაკოპირდა ბუფერში"
       ]
     },
     "Suffix": {
@@ -11864,6 +11927,12 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Introducing booking pages": [
+        "წარმოგიდგენთ ჯავშნის გვერდებს"
+      ],
+      "Your booking pages live here": [
+        "თქვენი დაჯავშნის გვერდები აქაა."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

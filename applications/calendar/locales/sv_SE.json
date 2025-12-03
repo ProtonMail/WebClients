@@ -1001,6 +1001,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Lägg till ytterligare ett bokningsintervall för denna dag"
+      ],
+      "Create a new booking page": [
+        "Skapa en ny bokningssida"
       ]
     },
     "action": {
@@ -1632,6 +1638,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "Meet problem": [
+        "Problem med Meet"
       ]
     },
     "Button": {
@@ -2984,6 +2993,12 @@
       "event": [
         "händelse",
         "händelser"
+      ],
+      "Ends after": [
+        "Slutar efter"
+      ],
+      "Ends on": [
+        "Slutar den"
       ]
     },
     "customer_support.feature.all": {
@@ -4071,6 +4086,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Location is required": [
+        "Plats är obligatoriskt"
       ]
     },
     "error": {
@@ -6484,6 +6502,42 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Booking updated successfully": [
+        "Bokning uppdaterad"
+      ],
+      "Cannot create a range across days.": [
+        "Kan inte skapa ett intervall över dagar."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan inte skapa ett intervall i det förflutna."
+      ],
+      "Manage booking page": [
+        "Hantera bokningssida"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Ingen kalender tillgänglig, ta bort bokningssidan."
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Personer som bokar tid med dig kommer se ${ selectedCalendar.Email } som din kontaktadress."
+      ],
+      "Powered by": [
+        "Drivs av"
+      ],
+      "Range already exists.": [
+        "Intervall finns redan."
+      ],
+      "Range is too short.": [
+        "Intervall är för kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Intervall överlappar med ett befintligt intervall."
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Dela denna sida så att andra kan boka tid i din kalender. Du kan hitta och redigera den i sidopanelen under “Bokningssidor“."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Denna bokningssida kan inte redigeras, den associerade kalendern är inaktiverad"
       ]
     },
     "info": {
@@ -7181,6 +7235,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Kopiera länken eller hantera din sida härifrån när som helst."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Skapa delningsbara sidor där människor kan boka tid med dig."
       ]
     },
     "label": {
@@ -9344,6 +9404,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {
@@ -9626,6 +9689,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter a short description or additional info": [
+        "Ange en kort beskrivning eller ytterligare information"
       ]
     },
     "Placeholder for contact group name": {
@@ -9793,6 +9859,9 @@
       ],
       "your subscription": [
         "din prenumeration"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter det datumet kommer ditt konto att nedgraderas till **${ BRAND_NAME } Free**. Om du ångrar dig kan du **återaktivera din prenumeration** för att behålla åtkomst till premiumfunktioner."
       ]
     },
     "Reload event button tooltip": {
@@ -11140,6 +11209,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Booking page created": [
+        "Bokningssida skapad"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Bokningssida skapad och länk kopierad till urklipp"
       ]
     },
     "Suffix": {
@@ -12022,6 +12097,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Introducing booking pages": [
+        "Introduktion av bokningssidor"
+      ],
+      "Your booking pages live here": [
+        "Dina bokningssidor finns här"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Añadir otro rango de reserva a este día"
+      ],
+      "Create a new booking page": [
+        "Crear una nueva página de reservas"
+      ],
+      "Go to the first available appointment": [
+        "Ir a la primera cita disponible"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "evento",
         "eventos"
+      ],
+      "Ends after": [
+        "Finaliza después de"
+      ],
+      "Ends on": [
+        "Finaliza el"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Location is required": [
+        "Se requiere una ubicación."
       ]
     },
     "error": {
@@ -6532,6 +6550,39 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Booking updated successfully": [
+        "Reserva actualizada exitosamente"
+      ],
+      "Cannot create a range across days.": [
+        "No puedes crear un rango de reserva que abarque varios días."
+      ],
+      "Cannot create a range in the past.": [
+        "No se puede crear una reserva en el pasado."
+      ],
+      "Manage booking page": [
+        "Administra la página de reservas"
+      ],
+      "No appointments available": [
+        "No hay citas disponibles"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "No hay calendario disponible. Elimina la página de reserva."
+      ],
+      "No future appointments available": [
+        "No hay citas disponibles próximamente"
+      ],
+      "Range is too short.": [
+        "El rango es demasiado corto."
+      ],
+      "Range overlaps with an existing range.": [
+        "La reserva se superpone con otra existente."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "No se puede editar esta página de reservas, el calendario asociado está deshabilitado."
+      ],
+      "When can appointments be booked?": [
+        "¿Cuándo se pueden reservar citas?"
       ]
     },
     "info": {
@@ -7229,6 +7280,12 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copia el enlace o administra tu página desde aquí en cualquier momento."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Crea páginas para compartir donde otras personas puedan reservar tiempo contigo."
       ]
     },
     "label": {
@@ -7246,6 +7303,9 @@
       ],
       "What should people know before booking?": [
         "¿Qué debería saber la gente antes de reservar?"
+      ],
+      "What should people know about this appointment?": [
+        "¿Qué deben saber los invitados sobre esta cita?"
       ]
     },
     "Label for contact group color": {
@@ -9688,6 +9748,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Enter a short description or additional info": [
+        "Añade una descripción breve o información adicional"
       ]
     },
     "Placeholder for contact group name": {
@@ -12093,6 +12156,12 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Introducing booking pages": [
+        "Presentamos las páginas de reservas"
+      ],
+      "Your booking pages live here": [
+        "Aquí encontrarás tus páginas de reservas"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Προσθήκη άλλου εύρους κράτησης σε αυτήν την ημέρα"
+      ],
+      "Create a new booking page": [
+        "Δημιουργήστε μια νέα σελίδα κρατήσεων"
+      ],
+      "Go to the first available appointment": [
+        "Μετάβαση στο πρώτο διαθέσιμο ραντεβού"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "εκδήλωση",
         "εκδηλώσεις"
+      ],
+      "Ends after": [
+        "Τελειώνει μετά"
+      ],
+      "Ends on": [
+        "Τελειώνει στις"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Location is required": [
+        "Η τοποθεσία είναι υποχρεωτική"
       ]
     },
     "error": {
@@ -6532,6 +6550,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Booking updated successfully": [
+        "Η κράτηση ενημερώθηκε επιτυχώς"
+      ],
+      "Cannot create a range across days.": [
+        "Δεν είναι δυνατή η δημιουργία εύρους που να εκτείνεται σε πολλές ημέρες."
+      ],
+      "Cannot create a range in the past.": [
+        "Δεν είναι δυνατή η δημιουργία εύρους στο παρελθόν."
+      ],
+      "Loading appointments...": [
+        "Φόρτωση ραντεβού..."
+      ],
+      "Manage booking page": [
+        "Διαχείριση σελίδας κρατήσεων"
+      ],
+      "No appointments available": [
+        "Δεν υπάρχουν διαθέσιμα ραντεβού"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Δεν υπάρχει διαθέσιμο ημερολόγιο· παρακαλούμε διαγράψτε τη σελίδα κράτησης."
+      ],
+      "No future appointments available": [
+        "Δεν υπάρχουν διαθέσιμα μελλοντικά ραντεβού"
+      ],
+      "Range already exists.": [
+        "Το εύρος υπάρχει ήδη."
+      ],
+      "Range is too short.": [
+        "Υπερβολικά μικρό εύρος."
+      ],
+      "Range overlaps with an existing range.": [
+        "Το εύρος επικαλύπτεται με μια υπάρχον εύρος."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Αυτή η σελίδα κράτησης δεν μπορεί να επεξεργαστεί, το σχετικό ημερολόγιο είναι απενεργοποιημένο."
+      ],
+      "When can appointments be booked?": [
+        "Πότε μπορούν να κλείνονται ραντεβού;"
       ]
     },
     "info": {
@@ -7229,6 +7286,12 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Αντιγράψτε τον σύνδεσμο ή διαχειριστείτε τη σελίδα σας από εδώ ανά πάσα στιγμή."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Δημιουργήστε κοινόχρηστες σελίδες όπου οι χρήστες μπορούν να κλείσουν ραντεβού μαζί σας."
       ]
     },
     "label": {
@@ -7246,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "Τι πρέπει να γνωρίζουν οι άνθρωποι πριν κάνουν κράτηση;"
+      ],
+      "What should people know about this appointment?": [
+        "Τι πρέπει να γνωρίζουν οι άνθρωποι για αυτό το ραντεβού;"
       ]
     },
     "Label for contact group color": {
@@ -9688,6 +9754,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Enter a short description or additional info": [
+        "Εισαγάγετε μια σύντομη περιγραφή ή πρόσθετες πληροφορίες"
       ]
     },
     "Placeholder for contact group name": {
@@ -12093,6 +12162,12 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Introducing booking pages": [
+        "Παρουσιάζουμε τις σελίδες κρατήσεων"
+      ],
+      "Your booking pages live here": [
+        "Οι σελίδες των κρατήσεών σας βρίσκονται εδώ"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

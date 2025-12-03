@@ -995,6 +995,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Aggiungi un altro intervallo di prenotazione per questo giorno"
+      ],
+      "Create a free account": [
+        "Crea un account gratuito"
+      ],
+      "Go to the first available appointment": [
+        "Vai al primo appuntamento disponibile"
+      ],
+      "See previous availability": [
+        "Vedi disponibilità precedente"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Seleziona ${ dateHeaderLongString } alle ${ timeString }"
       ]
     },
     "action": {
@@ -2993,6 +3008,12 @@
       "event": [
         "evento",
         "eventi"
+      ],
+      "Ends after": [
+        "Termina dopo"
+      ],
+      "Ends on": [
+        "Termina il"
       ]
     },
     "customer_support.feature.all": {
@@ -4083,6 +4104,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "You cannot enter the organizer email": [
+        "Non puoi inserire l'email dell'organizzatore"
       ]
     },
     "error": {
@@ -6491,6 +6515,51 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Sei sicuro di voler eliminare questa pagina di prenotazione?"
+      ],
+      "Booking page deleted": [
+        "Pagina di prenotazione eliminata"
+      ],
+      "Booking updated successfully": [
+        "Prenotazione aggiornata con successo"
+      ],
+      "Loading appointments...": [
+        "Caricamento appuntamenti..."
+      ],
+      "Manage booking page": [
+        "Gestisci pagina di prenotazione"
+      ],
+      "No appointments available": [
+        "Nessun appuntamento disponibile"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nessun calendario disponibile; per favore elimina la pagina di prenotazione."
+      ],
+      "No future appointments available": [
+        "Nessun appuntamento futuro disponibile"
+      ],
+      "Powered by": [
+        "Fornito da"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Condividi questa pagina per permettere ad altri di prenotare un orario nel tuo calendario. Puoi gestirlo in qualsiasi momento nella barra laterale, sotto Pagine di prenotazione."
+      ],
+      "Take control of your digital life": [
+        "Prendi il controllo della tua vita digitale"
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Questa pagina di prenotazione non può essere modificata, il calendario associato è disattivato"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Questa prenotazione è stata effettuata tramite ${ CALENDAR_APP_NAME }, che fa parte della suite di prodotti incentrati sulla privacy di ${ BRAND_NAME }."
+      ],
+      "What do you want to call this booking page?": [
+        "Come vuoi chiamare questa pagina di prenotazione?"
+      ],
+      "When can appointments be booked?": [
+        "Quando si possono prenotare gli appuntamenti?"
       ]
     },
     "info": {
@@ -7179,6 +7248,21 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copia il link o gestisci la tua pagina da qui in qualsiasi momento."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Crea pagine condivisibili dove le persone possono prenotare un appuntamento con te."
+      ],
+      "Full name": [
+        "Nome completo"
+      ],
+      "Repeat weekly": [
+        "Ripeti ogni settimana"
+      ],
+      "Unavailable": [
+        "Non disponibile"
       ]
     },
     "label": {
@@ -7193,6 +7277,9 @@
       ],
       "Start time of the booking range": [
         "Ora di inizio dell'intervallo di prenotazione"
+      ],
+      "What should people know about this appointment?": [
+        "Cosa dovrebbero sapere le persone su questo appuntamento?"
       ]
     },
     "Label for contact group color": {
@@ -9629,6 +9716,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Email for booking confirmation": [
+        "Email per conferma di prenotazione"
+      ],
+      "Enter a short description or additional info": [
+        "Inserisci una breve descrizione o informazioni aggiuntive"
+      ],
+      "Name of attendee": [
+        "Nome del partecipante"
       ]
     },
     "Placeholder for contact group name": {
@@ -11146,6 +11242,12 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Booking page created": [
+        "Titolo della pagina di prenotazione"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Pagina di prenotazione creata e link copiato negli appunti"
       ]
     },
     "Suffix": {
@@ -12022,6 +12124,18 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Choose a time": [
+        "Scegli un orario"
+      ],
+      "Delete booking page?": [
+        "Elimina pagina di prenotazione?"
+      ],
+      "Introducing booking pages": [
+        "Ti presentiamo le pagine di prenotazione"
+      ],
+      "Your booking pages live here": [
+        "Le tue pagine di prenotazione si trovano qui"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12595,6 +12709,11 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "Conferma la tua prenotazione"
       ]
     }
   }

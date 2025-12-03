@@ -1012,6 +1012,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Přidat další rozsah rezervace k tomuto dni"
+      ],
+      "Create a new booking page": [
+        "Vytvořit novou rezervační stránku"
+      ],
+      "Go to the first available appointment": [
+        "Přejít na první dostupnou schůzku"
       ]
     },
     "action": {
@@ -3040,6 +3049,12 @@
         "události",
         "událostí",
         "událostí"
+      ],
+      "Ends after": [
+        "Končí po"
+      ],
+      "Ends on": [
+        "Končí"
       ]
     },
     "customer_support.feature.all": {
@@ -4165,6 +4180,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Location is required": [
+        "Poloha je povinná"
       ]
     },
     "error": {
@@ -6702,6 +6720,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "Booking updated successfully": [
+        "Rezervace úspěšně aktualizována"
+      ],
+      "Cannot create a range across days.": [
+        "Nelze vytvořit rozsah rezervace zahrnující několik dní."
+      ],
+      "Cannot create a range in the past.": [
+        "Nelze vytvořit rozsah rezervace v minulosti."
+      ],
+      "Loading appointments...": [
+        "Načítání schůzek..."
+      ],
+      "Manage booking page": [
+        "Spravovat rezervační stránku"
+      ],
+      "No appointments available": [
+        "Žádné schůzky k dispozici"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Není dostupný žádný kalendář; smažte prosím rezervační stránku."
+      ],
+      "No future appointments available": [
+        "Žádné budoucí schůzky k dispozici"
+      ],
+      "Range already exists.": [
+        "Rozsah již existuje."
+      ],
+      "Range is too short.": [
+        "Rozsah je příliš krátký."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rozsah se překrývá s existujícím rozsahem."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Tuto rezervační stránku nelze upravovat, přidružený kalendář je deaktivován"
+      ],
+      "When can appointments be booked?": [
+        "Kdy je možné rezervovat schůzky?"
       ]
     },
     "info": {
@@ -7411,6 +7468,12 @@
       ],
       "Zoom meeting": [
         "Schůzka na Zoomu"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Zde můžete kdykoli zkopírovat odkaz nebo spravovat svou stránku."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Vytvořte sdílené stránky, kde si lidé mohou rezervovat schůzku s vámi."
       ]
     },
     "label": {
@@ -7428,6 +7491,9 @@
       ],
       "What should people know before booking?": [
         "Co by lidé měli vědět před rezervací?"
+      ],
+      "What should people know about this appointment?": [
+        "Co by lidé měli vědět o této schůzce?"
       ]
     },
     "Label for contact group color": {
@@ -10006,6 +10072,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter a short description or additional info": [
+        "Zadejte krátký popis nebo doplňující informace"
       ]
     },
     "Placeholder for contact group name": {
@@ -12519,6 +12588,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Introducing booking pages": [
+        "Představujeme rezervační stránky"
+      ],
+      "Your booking pages live here": [
+        "Vaše rezervační stránky jsou zde"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

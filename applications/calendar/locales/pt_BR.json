@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Adicionar outro período de reservas para este dia"
+      ],
+      "Create a new booking page": [
+        "Criar nova página de agendamento"
+      ],
+      "Go to the first available appointment": [
+        "Vá para o primeiro horário disponível"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "evento",
         "eventos"
+      ],
+      "Ends after": [
+        "Termina depois de"
+      ],
+      "Ends on": [
+        "Termina em"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Location is required": [
+        "A localização é obrigatória"
       ]
     },
     "error": {
@@ -6526,6 +6544,51 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Booking updated successfully": [
+        "Agendamento atualizado com sucesso"
+      ],
+      "Cannot create a range across days.": [
+        "Não é possível criar um intervalo que abranja vários dias."
+      ],
+      "Cannot create a range in the past.": [
+        "Não foi possível criar um intervalo no passado."
+      ],
+      "Loading appointments...": [
+        "Carregando compromissos..."
+      ],
+      "Manage booking page": [
+        "Gerenciar página de agendamentos"
+      ],
+      "No appointments available": [
+        "Nenhum horário disponível"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nenhum calendário disponível; exclua a página de agendamento."
+      ],
+      "No future appointments available": [
+        "Nenhum horário futuro disponível"
+      ],
+      "Range already exists.": [
+        "O intervalo já existe."
+      ],
+      "Range is too short.": [
+        "O intervalo é muito curto."
+      ],
+      "Range overlaps with an existing range.": [
+        "O intervalo coincide com um intervalo existente."
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Compartilhe esta página para que outras pessoas possam agendar um horário no seu calendário. Você pode encontrar e editar na barra lateral em Páginas de agendamento."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Esta reserva foi feita via ${ CALENDAR_APP_NAME }, parte do conjunto de produtos que priorizam a privacidade da ${ BRAND_NAME }."
+      ],
+      "When can appointments be booked?": [
+        "Quando é possível agendar reuniões?"
       ]
     },
     "info": {
@@ -7223,6 +7286,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copie o link ou gerencie sua página daqui a qualquer momento."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Crie páginas compartilháveis onde as pessoas podem agendar um horário com você."
       ]
     },
     "label": {
@@ -7240,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "O que as pessoas devem saber antes de reservar?"
+      ],
+      "What should people know about this appointment?": [
+        "O que as pessoas devem saber sobre este compromisso?"
       ]
     },
     "Label for contact group color": {
@@ -9688,6 +9760,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a short description or additional info": [
+        "Inserir uma breve descrição ou informações adicionais"
       ]
     },
     "Placeholder for contact group name": {
@@ -10544,7 +10619,7 @@
         "Para todos os serviços da ${ BRAND_NAME }"
       ],
       "Storage used": [
-        "De armazenamento usado"
+        "Armazenamento usado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, libere espaço ou faça um ${ upgrade }"
@@ -11205,6 +11280,12 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Booking page created": [
+        "Página de agendamentos criada"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Página de agendamento criada e link copiado para a área de transferência"
       ]
     },
     "Suffix": {
@@ -12087,6 +12168,12 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Introducing booking pages": [
+        "Apresentamos as páginas de agendamento"
+      ],
+      "Your booking pages live here": [
+        "Sua página de agendamentos ficam aqui"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

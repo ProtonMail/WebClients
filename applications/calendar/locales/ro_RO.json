@@ -14,10 +14,10 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+        "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
-        "Redirecționare mesaje oprită"
+        "Transferare mesaje oprită"
       ]
     },
     "Account Settings - Info": {
@@ -402,7 +402,7 @@
         "Ați uitat parola?"
       ],
       "Forward as attachment": [
-        "Redirecționare ca atașament"
+        "Transferare ca atașament"
       ],
       "Generate password": [
         "Generare parolă"
@@ -810,7 +810,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -1008,6 +1008,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Adăugare alt interval de rezervare pentru această zi"
+      ],
+      "Create a new booking page": [
+        "Creare pagină de rezervări"
+      ],
+      "Go to the first available appointment": [
+        "Salt la prima programare disponibilă"
       ]
     },
     "action": {
@@ -3021,6 +3030,12 @@
         "eveniment",
         "evenimente",
         "evenimente"
+      ],
+      "Ends after": [
+        "Se termină după"
+      ],
+      "Ends on": [
+        "Se termină la"
       ]
     },
     "customer_support.feature.all": {
@@ -3159,7 +3174,7 @@
         "De asemenea, inclus"
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Availability unknown": [
         "Disponibilitate necunoscută"
@@ -3763,7 +3778,7 @@
         "Numele folderului nu poate fi gol."
       ],
       "Forward address is required": [
-        "Adresa de redirecționare este obligatorie."
+        "Adresa de transferare este obligatorie."
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
@@ -4130,11 +4145,14 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Location is required": [
+        "Locul este obligatoriu."
       ]
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+        "Conectați-vă cu o adresă Gmail care deja se transferă mesaje către ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
@@ -6617,6 +6635,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Booking updated successfully": [
+        "Rezervarea a fost actualizată"
+      ],
+      "Cannot create a range across days.": [
+        "Nu se poate crea un interval pe parcursul mai multor zile."
+      ],
+      "Cannot create a range in the past.": [
+        "Nu se poate crea un interval în trecut."
+      ],
+      "Loading appointments...": [
+        "Se încarcă programările..."
+      ],
+      "Manage booking page": [
+        "Gestionare pagină de rezervări"
+      ],
+      "No appointments available": [
+        "Nu există programări disponibile"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Niciun calendar disponibil. Ștergeți pagina de rezervare."
+      ],
+      "No future appointments available": [
+        "Nu există programări viitoare disponibile"
+      ],
+      "Range already exists.": [
+        "Intervalul există deja."
+      ],
+      "Range is too short.": [
+        "Intervalul este prea scurt."
+      ],
+      "Range overlaps with an existing range.": [
+        "Intervalul se suprapune cu un interval existent."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Această pagină de rezervare nu poate fi editată, calendarul asociat este dezactivat."
+      ],
+      "When can appointments be booked?": [
+        "Când se pot programa întâlnirile?"
       ]
     },
     "info": {
@@ -7011,7 +7068,7 @@
         "Amplasare folder"
       ],
       "Forwards to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -7320,6 +7377,12 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copiați legătura web sau gestionați-vă pagina de aici oricând."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Creați pagini partajabile unde persoanele pot rezerva timp pentru a vă întâlni."
       ]
     },
     "label": {
@@ -7337,6 +7400,9 @@
       ],
       "What should people know before booking?": [
         "Ce ar trebui să știe oamenii înainte de a rezerva?"
+      ],
+      "What should people know about this appointment?": [
+        "Ce ar trebui să știe oamenii despre această întâlnire?"
       ]
     },
     "Label for contact group color": {
@@ -7456,7 +7522,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -8068,7 +8134,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -9847,6 +9913,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter a short description or additional info": [
+        "Introduceți o scurtă descriere sau informații suplimentare"
       ]
     },
     "Placeholder for contact group name": {
@@ -10977,7 +11046,7 @@
         "Orice domeniu de e-mail personal va fi dezactivat."
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Back up photos from your devices": [
         "Conservați fotografiile de pe dispozitive"
@@ -11150,7 +11219,7 @@
         "și încă alte 15 funcții premium"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
+        "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Alerte divulgări date ${ strongArgument }"
@@ -11403,6 +11472,12 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Booking page created": [
+        "Pagina de rezervare s-a creat."
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Pagina de rezervare a fost creată și legătura web s-a copiat în memorie."
       ]
     },
     "Suffix": {
@@ -12140,7 +12215,7 @@
         "Setare frază de recuperare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -12300,6 +12375,12 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Introducing booking pages": [
+        "Vă prezentăm paginile de rezervare"
+      ],
+      "Your booking pages live here": [
+        "Paginile personale de rezervare se găsesc aici"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

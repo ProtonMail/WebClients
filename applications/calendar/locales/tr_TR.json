@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Bu güne başka bir rezervasyon aralığı ekle"
+      ],
+      "Create a new booking page": [
+        "Yeni rezervasyon sayfası oluşturun"
+      ],
+      "Go to the first available appointment": [
+        "İlk uygun randevuya git"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "etkinlik",
         "etkinlik"
+      ],
+      "Ends after": [
+        "Şu kadar sonra sona erer"
+      ],
+      "Ends on": [
+        "Bitiş tarihi"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Location is required": [
+        "Konum bilgisi gereklidir"
       ]
     },
     "error": {
@@ -6532,6 +6550,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Booking updated successfully": [
+        "Randevu güncellendi"
+      ],
+      "Cannot create a range across days.": [
+        "Birden fazla güne yayılan bir aralık oluşturulamıyor."
+      ],
+      "Cannot create a range in the past.": [
+        "Geçmişte aralık oluşturulamıyor."
+      ],
+      "Loading appointments...": [
+        "Randevular yükleniyor..."
+      ],
+      "Manage booking page": [
+        "Rezervasyon sayfası yönetimi"
+      ],
+      "No appointments available": [
+        "Uygun bir randevu yok"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Kullanılabilecek bir takvim yok. Lütfen rezervasyon sayfasını silin."
+      ],
+      "No future appointments available": [
+        "Gelecekte uygun bir randevu yok"
+      ],
+      "Range already exists.": [
+        "Aralık zaten mevcut."
+      ],
+      "Range is too short.": [
+        "Aralık çok kısa."
+      ],
+      "Range overlaps with an existing range.": [
+        "Aralık, mevcut bir aralıkla çakışıyor."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Bu rezervasyon sayfası düzenlenemez, ilişkili takvim kullanımdan kaldırılmış."
+      ],
+      "When can appointments be booked?": [
+        "Randevular ne zaman rezerve edilebilir?"
       ]
     },
     "info": {
@@ -7223,6 +7280,18 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Buradan dilediğiniz zaman bağlantınızı paylaşın ya da sayfanızı yönetin"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "İnsanların sizden randevu alabileceği paylaşılabilir sayfanızı oluşturun."
+      ],
+      "Repeat weekly": [
+        "Haftalık yinelensin"
+      ],
+      "Unavailable": [
+        "Kullanılamıyor"
       ]
     },
     "label": {
@@ -7240,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "Rezervasyon almadan önce insanların neyi bilmesi gerekir?"
+      ],
+      "What should people know about this appointment?": [
+        "İnsanların bu randevu hakkında ne bilmesi gerekir?"
       ]
     },
     "Label for contact group color": {
@@ -8052,7 +8124,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -9682,6 +9754,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Enter a short description or additional info": [
+        "Kısa bir açıklama veya ek bilgiler yazın"
       ]
     },
     "Placeholder for contact group name": {
@@ -12087,6 +12162,12 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Introducing booking pages": [
+        "Randevu sayfaları ile tanışın"
+      ],
+      "Your booking pages live here": [
+        "Randevu sayfanız burada hazır"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

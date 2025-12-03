@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Legg til et annet bestillingsintervall til denne dagen"
+      ],
+      "Create a new booking page": [
+        "Opprett en ny bestillingsside"
+      ],
+      "Go to the first available appointment": [
+        "Gå til første ledige avtale"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "hendelse",
         "hendelser"
+      ],
+      "Ends after": [
+        "Avsluttes etter"
+      ],
+      "Ends on": [
+        "Slutter på"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Location is required": [
+        "Plassering kreves"
       ]
     },
     "error": {
@@ -6532,6 +6550,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Booking updated successfully": [
+        "Bestilling vellykket oppdatert"
+      ],
+      "Cannot create a range across days.": [
+        "Kan ikke opprette et intervall som strekker seg over flere dager."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan ikke opprette et tidsintervall bakover i tid."
+      ],
+      "Loading appointments...": [
+        "Laster inn avtaler..."
+      ],
+      "Manage booking page": [
+        "Administrer bestillingsside"
+      ],
+      "No appointments available": [
+        "Ingen ledige avtaler"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Ingen kalender tilgjengelig. Vennligst slett bestillingssiden."
+      ],
+      "No future appointments available": [
+        "Ingen fremtidige avtaler tilgjengelig"
+      ],
+      "Range already exists.": [
+        "Tidsrommet finnes allerede."
+      ],
+      "Range is too short.": [
+        "Intervallet er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Tidsrommet overlapper med et eksisterende tidsrom."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Denne bestillingssiden kan ikke redigeres. Den tilhørende kalenderen er deaktivert."
+      ],
+      "When can appointments be booked?": [
+        "Når kan avtaler bestilles?"
       ]
     },
     "info": {
@@ -7229,6 +7286,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Kopier koblingen eller administrer siden din herfra når som helst."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Lag delbare sider der folk kan bestille tid hos deg."
       ]
     },
     "label": {
@@ -7246,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "Hva bør folk vite før de bestiller?"
+      ],
+      "What should people know about this appointment?": [
+        "Hva bør folk vite om denne avtalen?"
       ]
     },
     "Label for contact group color": {
@@ -9688,6 +9754,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter a short description or additional info": [
+        "Angi en kort beskrivelse eller tilleggsinformasjon"
       ]
     },
     "Placeholder for contact group name": {
@@ -11205,6 +11274,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "Booking page created": [
+        "Bestillingsside opprettet"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Bestillingsside opprettet og kobling kopiert til utklippstavlen"
       ]
     },
     "Suffix": {
@@ -12087,6 +12162,12 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Introducing booking pages": [
+        "Vi presenterer bestillingssider"
+      ],
+      "Your booking pages live here": [
+        "Bestillingssidene dine ligger her"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

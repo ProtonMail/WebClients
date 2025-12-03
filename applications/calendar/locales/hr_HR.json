@@ -668,6 +668,9 @@
       ],
       "Yes, I'll attend": [
         "Da, prisustvovati ću"
+      ],
+      "Claim this address": [
+        "Preuzmi ovu adresu"
       ]
     },
     "action": {
@@ -1035,6 +1038,9 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ],
+      "Black Friday": [
+        "Crni petak"
       ]
     },
     "Button": {
@@ -1188,8 +1194,8 @@
       ],
       "Total for ${ n } month": [
         "Ukupno za ${ n } mjesec",
-        "Ukupno za ${ n } mjeseci",
-        "Ukupno za ${ n } mjeseca"
+        "Ukupno za ${ n } mjeseca",
+        "Ukupno za ${ n } mjeseci"
       ]
     },
     "Collapsible tooltip": {
@@ -2376,6 +2382,9 @@
       ],
       "Download for macOS": [
         "Učitaj za macOS"
+      ],
+      "Download for Windows": [
+        "Preuzmi za Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2401,6 +2410,12 @@
     "Email body for invitation": {
       "NOTE:": [
         "BILJEŠKA:"
+      ],
+      "DESCRIPTION:": [
+        "OPIS:"
+      ],
+      "LOCATION:": [
+        "MJESTO:"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -2742,6 +2757,9 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "Aliases could not be loaded": [
+        "Nije moguće učitati pseudonime"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3012,6 +3030,9 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Neograničen broj hide-my-email pseudonima"
+      ],
+      "More premium features": [
+        "Više premium značajki"
       ]
     },
     "fido2: Error": {
@@ -3584,7 +3605,7 @@
         "Odbaci promjene?"
       ],
       "Discover ProtectBuy logo": [
-        "Otkrij ProtectBuy logotip"
+        "Discover ProtectBuy logotip"
       ],
       "Downgrade": [
         "Snizi status"
@@ -4081,6 +4102,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
+      ],
+      "Ad targeting": [
+        "Ciljanje oglasa"
+      ],
+      "Continue": [
+        "Nastavi"
+      ],
+      "Not connected": [
+        "Nije povezano"
+      ],
+      "Surveillance": [
+        "Nadzor"
+      ],
+      "Your IP": [
+        "Vaš IP"
       ]
     },
     "info": {
@@ -4587,6 +4623,15 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Your ISP": [
+        "Vaš ISP"
+      ],
+      "Your location": [
+        "Vaša lokacija"
       ]
     },
     "Label for contact group color": {
@@ -4664,6 +4709,12 @@
       ],
       "What’s this?": [
         "Što je ovo?"
+      ],
+      "Reactivate subscription": [
+        "Ponovno aktiviraj pretplatu"
+      ],
+      "Resume now": [
+        "Nastavi sada"
       ]
     },
     "Link label (optional)": {
@@ -5122,7 +5173,7 @@
         "Prioritetna podrška"
       ],
       "Priority support & live chat": [
-        "Prioritetna podrška i chat uživo"
+        "Prioritetna podrška i čavrljanje uživo"
       ],
       "Require 2FA for organization": [
         "Zahtijevajte 2FA za organizaciju"
@@ -5711,6 +5762,9 @@
       ],
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payments": {
@@ -5746,6 +5800,9 @@
       ],
       "VAT": [
         "Porez"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Iznos za plaćanje nakon završetka probe dana ${ formattedDate }"
       ]
     },
     "Payments.Error": {
@@ -5781,6 +5838,12 @@
       ],
       "VAT number": [
         "PDV broj"
+      ],
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -5895,6 +5958,9 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Select country": [
+        "Odaberi državu"
       ]
     },
     "Placeholder for contact group name": {
@@ -5984,6 +6050,9 @@
       ],
       "your subscription": [
         "Vaša pretplata"
+      ],
+      "More sharing options": [
+        "Više opcija dijeljenja"
       ]
     },
     "Security Center": {
@@ -7260,6 +7329,21 @@
       ],
       "Your plan": [
         "Vaš plan"
+      ],
+      "Download the app": [
+        "Preuzmite aplikaciju"
+      ],
+      "How does it all work?": [
+        "Kako to sve funkcionira?"
+      ],
+      "Private browsing vs VPN": [
+        "Privatno pretraživanje protiv VPN-a"
+      ],
+      "Share your link": [
+        "Podijeli svoju poveznicu"
+      ],
+      "VPN explained": [
+        "VPN objašnjen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7329,6 +7413,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sigurno prijavljivanje na svim vašim uređajima. Uključuje neograničen broj aliasa, dijeljenje, integriranu dvofaktorsku autentikaciju i još mnogo toga."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: asistent umjetne inteligencije koji poštuje Vašu privatnost"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -7721,6 +7808,40 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Pristup naprednim modelima umjetne inteligencije"
+      ],
+      "Basic chat history": [
+        "Osnovna povijest razgovora"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mjesec"
+      ],
+      "2 user accounts": [
+        "2 korisnička računa"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dobijte 4x više pohrane"
+      ],
+      "Share your plan": [
+        "Podijelite svoju pretplatu"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Nešto je pošlo po zlu. Provjera Google Paya nije uspjela."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ako odlučite izmijeniti svoju pretplatu ${ planTitle }, možda ćete izgubiti pristup nekim značajkama."
       ]
     }
   }

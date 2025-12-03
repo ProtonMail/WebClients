@@ -1000,6 +1000,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "この日に別の予約期間を追加する"
+      ],
+      "Create a new booking page": [
+        "新しい予約ページを作成"
+      ],
+      "Go to the first available appointment": [
+        "最初の利用可能な予定へ移動"
       ]
     },
     "action": {
@@ -4060,6 +4069,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Location is required": [
+        "位置情報は必須です"
       ]
     },
     "error": {
@@ -6447,6 +6459,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Booking updated successfully": [
+        "予約が正常に更新されました"
+      ],
+      "Cannot create a range across days.": [
+        "複数日にまたがる範囲は作成できません。"
+      ],
+      "Cannot create a range in the past.": [
+        "過去の日付に範囲を作成することはできません。"
+      ],
+      "Manage booking page": [
+        "予約ページを管理"
+      ],
+      "No appointments available": [
+        "利用可能な予定がありません"
+      ],
+      "No future appointments available": [
+        "今後の予定はありません"
+      ],
+      "Range already exists.": [
+        "その範囲は既に存在します。"
+      ],
+      "Range is too short.": [
+        "範囲が短すぎます。"
+      ],
+      "Range overlaps with an existing range.": [
+        "範囲が既存の範囲と重複しています。"
+      ],
+      "When can appointments be booked?": [
+        "予約はいつから可能ですか？"
       ]
     },
     "info": {
@@ -7155,6 +7197,9 @@
       ],
       "What should people know before booking?": [
         "予約前に知っておくべきことは何ですか？"
+      ],
+      "What should people know about this appointment?": [
+        "この予定について知っておくべきことは何ですか？"
       ]
     },
     "Label for contact group color": {
@@ -9529,6 +9574,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Enter a short description or additional info": [
+        "短い説明または追加情報を入力してください"
       ]
     },
     "Placeholder for contact group name": {
@@ -11007,6 +11055,12 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Booking page created": [
+        "予約ページが作成されました"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "予約ページが作成され、リンクがクリップボードにコピーされました"
       ]
     },
     "Suffix": {

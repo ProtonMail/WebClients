@@ -348,7 +348,7 @@
         "Download ${ DRIVE_APP_NAME }-apps"
       ],
       "Download logs": [
-        "Download-logfiler"
+        "Download logfiler"
       ],
       "Download now": [
         "Download nu"
@@ -1001,6 +1001,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Add another booking range to this day": [
+        "Tilføj endnu et bookinginterval til denne dag"
+      ],
+      "Create a new booking page": [
+        "Opret en ny bookingside"
+      ],
+      "Go to the first available appointment": [
+        "Gå til første ledige aftale"
+      ],
+      "Subscribe now": [
+        "Abonnér nu"
       ]
     },
     "action": {
@@ -2219,7 +2231,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        "Ascension"
+        "Ascension Island"
       ],
       "Australia": [
         "Australien"
@@ -2960,7 +2972,7 @@
         "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Jomfruøerne, Amerika."
+        "Jomfruøerne (de amerikanske, USVI)"
       ],
       "Wallis and Futuna": [
         "Wallis og Futuna"
@@ -2999,6 +3011,12 @@
       "event": [
         "begivenhed",
         "begivenheder"
+      ],
+      "Ends after": [
+        "Slutter efter"
+      ],
+      "Ends on": [
+        "Slutter den"
       ]
     },
     "customer_support.feature.all": {
@@ -3570,7 +3588,7 @@
         "En gruppe med dette navn findes allerede"
       ],
       "A problem occurred, please try again.": [
-        "Der opstod et problem. Prøv venligst igen."
+        "Der opstod et problem. Prøv igen."
       ],
       "Account does not exist": [
         "Konto findes ikke"
@@ -3985,7 +4003,7 @@
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The email addresses do not match": [
-        "E-Mailadresserne stemmer ikke overens"
+        "E-mailadresserne stemmer ikke overens"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
@@ -4086,6 +4104,15 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering af faktureringsadresse er ikke tilgængelig i øjeblikket. Prøv igen senere."
+      ],
+      "Location is required": [
+        "Placering er påkrævet"
+      ],
+      "Postal code is required": [
+        "Postnummer kræves"
       ]
     },
     "error": {
@@ -6523,6 +6550,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Booking updated successfully": [
+        "Booking blev opdateret"
+      ],
+      "Cannot create a range across days.": [
+        "Kan ikke oprette reservationsperiode på tværs af dage."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan ikke oprette reservationsperiode i fortiden."
+      ],
+      "Loading appointments...": [
+        "Indlæser aftaler..."
+      ],
+      "Manage booking page": [
+        "Håndtér booking-siden"
+      ],
+      "No appointments available": [
+        "Ingen ledige aftaler"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Ingen kalender tilgængelig; slet bookingsiden."
+      ],
+      "No future appointments available": [
+        "Ingen fremtidige aftaler tilgængelige"
+      ],
+      "Range already exists.": [
+        "Intervallet findes allerede."
+      ],
+      "Range is too short.": [
+        "Interval er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Din reservation overlapper med en eksisterende reservation."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Booking siden kan ikke redigeres, den tilknyttede kalender er deaktiveret"
+      ],
+      "When can appointments be booked?": [
+        "Hvornår kan der bookes aftaler?"
       ]
     },
     "info": {
@@ -7220,6 +7286,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Kopiér linket, eller administrer din side herfra når som helst."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Opret delbare sider, hvor folk kan booke tid med sig."
       ]
     },
     "label": {
@@ -7237,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "Hvad bør folk vide, før de reserverer?"
+      ],
+      "What should people know about this appointment?": [
+        "Hvad skal folk vide om denne aftale?"
       ]
     },
     "Label for contact group color": {
@@ -9679,6 +9754,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter a short description or additional info": [
+        "Angiv en kort beskrivelse eller yderligere oplysninger"
       ]
     },
     "Placeholder for contact group name": {
@@ -9834,6 +9912,21 @@
       ],
       "your subscription": [
         "Dit abonnement"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du annullerer før denne dato,** vil du blive **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveversionen udløber."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** bliver du **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke annullerer,** starter dit fulde abonnement, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne dato,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sidste chance for at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
       ]
     },
     "Reload event button tooltip": {
@@ -11181,6 +11274,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Booking page created": [
+        "Booking-side oprettet"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Bookingside oprettet og link kopieret til udklipsholder"
       ]
     },
     "Suffix": {
@@ -12063,6 +12162,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Introducing booking pages": [
+        "Introducerer bookingsider"
+      ],
+      "Your booking pages live here": [
+        "Dine bookingsider bor her"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

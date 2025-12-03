@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Einen weiteren Buchungszeitraum zu diesem Tag hinzufügen"
+      ],
+      "Create a new booking page": [
+        "Eine neue Buchungsseite erstellen"
+      ],
+      "Go to the first available appointment": [
+        "Zum ersten verfügbaren Termin gehen"
       ]
     },
     "action": {
@@ -3002,6 +3011,12 @@
       "event": [
         "Termin",
         "Termine"
+      ],
+      "Ends after": [
+        "Endet nach"
+      ],
+      "Ends on": [
+        "Endet am"
       ]
     },
     "customer_support.feature.all": {
@@ -4095,6 +4110,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Location is required": [
+        "Ort erforderlich"
       ]
     },
     "error": {
@@ -6532,6 +6550,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Booking updated successfully": [
+        "Buchung erfolgreich aktualisiert"
+      ],
+      "Cannot create a range across days.": [
+        "Zeitraum über mehrere Tage kann nicht erstellt werden."
+      ],
+      "Cannot create a range in the past.": [
+        "Zeitraum in der Vergangenheit kann nicht erstellt werden."
+      ],
+      "Loading appointments...": [
+        "Termine werden geladen…"
+      ],
+      "Manage booking page": [
+        "Buchungsseite verwalten"
+      ],
+      "No appointments available": [
+        "Keine Termine verfügbar"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Kein Kalender verfügbar; bitte lösche die Buchungsseite."
+      ],
+      "No future appointments available": [
+        "Keine zukünftigen Termine verfügbar"
+      ],
+      "Range already exists.": [
+        "Bereich existiert bereits."
+      ],
+      "Range is too short.": [
+        "Zeitraum ist zu kurz."
+      ],
+      "Range overlaps with an existing range.": [
+        "Zeitraum überschneidet sich mit einem bestehenden Zeitraum."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Diese Buchungsseite kann nicht bearbeitet werden, da der zugehörige Kalender deaktiviert ist."
+      ],
+      "When can appointments be booked?": [
+        "Wann können Termine gebucht werden?"
       ]
     },
     "info": {
@@ -7229,6 +7286,12 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Link kopieren oder deine Seite jederzeit von hier aus verwalten."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Teilbare Seiten erstellen, auf denen andere Termine mit dir buchen können."
       ]
     },
     "label": {
@@ -7246,6 +7309,9 @@
       ],
       "What should people know before booking?": [
         "Was sollten die Personen vor dem Buchen wissen?"
+      ],
+      "What should people know about this appointment?": [
+        "Was sollten Teilnehmer über diesen Termin wissen?"
       ]
     },
     "Label for contact group color": {
@@ -9688,6 +9754,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Enter a short description or additional info": [
+        "Eine kurze Beschreibung oder zusätzliche Informationen eingeben"
       ]
     },
     "Placeholder for contact group name": {
@@ -12093,6 +12162,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Introducing booking pages": [
+        "Wir präsentieren Buchungsseiten"
+      ],
+      "Your booking pages live here": [
+        "Deine Buchungsseiten findest du hier"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

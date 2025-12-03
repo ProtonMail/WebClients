@@ -1012,6 +1012,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add another booking range to this day": [
+        "Pridať ďalší rozsah rezervácie pre tento deň"
+      ],
+      "Create a new booking page": [
+        "Vytvoriť novú stránku pre rezervácie"
+      ],
+      "Go to the first available appointment": [
+        "Prejsť na prvý dostupný termín"
       ]
     },
     "action": {
@@ -3040,6 +3049,12 @@
         "udalosti",
         "udalostí",
         "udalostí"
+      ],
+      "Ends after": [
+        "Skončí po"
+      ],
+      "Ends on": [
+        "Končí"
       ]
     },
     "customer_support.feature.all": {
@@ -4165,6 +4180,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Location is required": [
+        "Poloha je povinná"
       ]
     },
     "error": {
@@ -6702,6 +6720,45 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Booking updated successfully": [
+        "Rezervácia bola úspešne aktualizovaná."
+      ],
+      "Cannot create a range across days.": [
+        "Nie je možné vytvoriť rozsah zahŕňajúci viacero dní."
+      ],
+      "Cannot create a range in the past.": [
+        "Nie je možné vytvoriť rozsah v minulosti."
+      ],
+      "Loading appointments...": [
+        "Načítavanie stretnutí..."
+      ],
+      "Manage booking page": [
+        "Spravovať stránku rezervácií"
+      ],
+      "No appointments available": [
+        "Nie sú k dispozícii žiadne termíny"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nie je k dispozícii žiadny kalendár; vymažte stránku rezervácie, prosím."
+      ],
+      "No future appointments available": [
+        "Nie sú k dispozícii žiadne budúce termíny"
+      ],
+      "Range already exists.": [
+        "Rozsah už existuje."
+      ],
+      "Range is too short.": [
+        "Rozsah je príliš krátky."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rozsah sa prekrýva s existujúcim rozsahom."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Túto rezervačnú stránku nie je možné upraviť, pridružený kalendár je deaktivovaný"
+      ],
+      "When can appointments be booked?": [
+        "Kedy je možné rezervovať termíny?"
       ]
     },
     "info": {
@@ -7411,6 +7468,12 @@
       ],
       "Zoom meeting": [
         "Zoom stretnutie"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Skopírujte odkaz alebo spravujte svoju stránku odtiaľto kedykoľvek."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Vytvorte zdieľateľné stránky, na ktorých si ľudia môžu rezervovať čas s vami."
       ]
     },
     "label": {
@@ -7428,6 +7491,9 @@
       ],
       "What should people know before booking?": [
         "Čo by mali ľudia vedieť pred rezerváciou?"
+      ],
+      "What should people know about this appointment?": [
+        "Čo by ľudia mali vedieť o tomto stretnutí?"
       ]
     },
     "Label for contact group color": {
@@ -10006,6 +10072,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter a short description or additional info": [
+        "Zadajte krátky popis alebo ďalšie informácie"
       ]
     },
     "Placeholder for contact group name": {
@@ -12519,6 +12588,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Introducing booking pages": [
+        "Predstavujeme rezervačné stránky"
+      ],
+      "Your booking pages live here": [
+        "Vaše rezervačné stránky sú tu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
