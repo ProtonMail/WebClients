@@ -2,7 +2,6 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { createKTVerifier } from '@proton/key-transparency';
-import type { MailSettingState } from '@proton/mail';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -498,8 +497,8 @@ export const createMember = ({
     };
     api: Api;
 }): ThunkAction<
-    Promise<void>,
-    KtState & OrganizationKeyState & MailSettingState,
+    Promise<Member>,
+    KtState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -682,7 +681,7 @@ export const createMember = ({
                 single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
             ]);
             dispatch(upsertMember({ member: updatedMember }));
-            return;
+            return updatedMember;
         }
 
         const Member = await srpVerify<{ Member: Member }>({
@@ -751,6 +750,7 @@ export const createMember = ({
             single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
         ]);
         dispatch(upsertMember({ member: updatedMember }));
+        return updatedMember;
     };
 };
 
