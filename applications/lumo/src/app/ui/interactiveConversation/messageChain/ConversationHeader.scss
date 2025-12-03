@@ -27,4 +27,31 @@
 			display: none;
 		}
 	}
+
+	@media (max-width: 1024px) {
+        .hide-on-small-screens {
+            display: none;
+        }
+    }
+}
+
+.conversation-breadcrumb-mobile {
+	flex-shrink: 0;
+	background-color: var(--background-norm);
+	min-height: 44px;
+	z-index: 10;
+
+	.conversation-breadcrumb-back {
+		padding: 0;
+		color: var(--text-weak);
+
+		&:hover {
+			color: var(--text-norm);
+			background-color: transparent !important;
+		}
+	}
+
+	@include media('>small') {
+		display: none;
+	}
 }
