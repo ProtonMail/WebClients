@@ -71,7 +71,7 @@ export const useAudioToggle = (
         try {
             // Get existing audio track and publication
             const audioPublication = [...localParticipant.audioTrackPublications.values()].find(
-                (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+                (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShareAudio
             );
             const audioTrack = audioPublication?.audioTrack;
 
