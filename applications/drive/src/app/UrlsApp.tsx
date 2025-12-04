@@ -27,7 +27,7 @@ import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import config from './config';
-import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
+import { PublicSharedLinkContainer } from './containers/PublicSharedLinkContainer';
 import locales from './locales';
 import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
