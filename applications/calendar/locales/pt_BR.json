@@ -261,8 +261,8 @@
       "Create a free account": [
         "Criar uma conta gratuita"
       ],
-      "Create a new bookings page": [
-        "Criar uma página de agendamentos"
+      "Create a new booking page": [
+        "Criar nova página de agendamento"
       ],
       "Create a new contact group": [
         "Criar um grupo de contatos"
@@ -3673,6 +3673,9 @@
       "Last name is too long": [
         "Sobrenome é muito longo"
       ],
+      "Location is required": [
+        "A localização é obrigatória"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
         "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
@@ -5207,15 +5210,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
-      "Booking already exists.": [
-        "O agendamento já existe"
-      ],
-      "Booking cannot be added in the past.": [
-        "Não é possível adicionar um agendamento no passado."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Agendamento coincide com um agendamento existente."
-      ],
       "Booking page deleted": [
         "Página de agendamentos excluída"
       ],
@@ -5246,8 +5240,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Não consegue encontrar os eventos que procura? Alguns eventos em calendários ocultos correspondem à sua consulta. Para ver esses resultados, ative a visibilidade para ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Não é possível criar um intervalo de reserva que abranja vários dias"
+      "Cannot create a range across days.": [
+        "Não é possível criar um intervalo que abranja vários dias."
+      ],
+      "Cannot create a range in the past.": [
+        "Não foi possível criar um intervalo no passado."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5852,6 +5849,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "A navegação privada (ou modo “incógnito”) é útil apenas para manter sua atividade oculta no seu dispositivo. Ela impede que seu navegador salve o histórico e os cookies, mas não o torna invisível. Seu ISP, administrador de rede e os sites que você visita ainda podem ver o que você faz on-line."
       ],
+      "Range already exists.": [
+        "O intervalo já existe."
+      ],
+      "Range is too short.": [
+        "O intervalo é muito curto."
+      ],
+      "Range overlaps with an existing range.": [
+        "O intervalo coincide com um intervalo existente."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
@@ -6252,9 +6258,6 @@
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
       ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Você não pode ter mais de ${ MAX_BOOKING_SLOTS } horários de agendamento em uma página."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Você será notificado se sua senha ou outros dados vazarem de um serviço de terceiros."
       ],
@@ -6412,6 +6415,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {

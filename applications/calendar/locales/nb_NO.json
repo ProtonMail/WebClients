@@ -261,7 +261,7 @@
       "Create a free account": [
         "Opprett en gratis konto"
       ],
-      "Create a new bookings page": [
+      "Create a new booking page": [
         "Opprett en ny bestillingsside"
       ],
       "Create a new contact group": [
@@ -2864,6 +2864,12 @@
       "Doesn't end": [
         "Avsluttes ikke"
       ],
+      "Ends after": [
+        "Avsluttes etter"
+      ],
+      "Ends on": [
+        "Slutter på"
+      ],
       "event": [
         "hendelse",
         "hendelser"
@@ -3666,6 +3672,9 @@
       ],
       "Last name is too long": [
         "Etternavnet er for langt"
+      ],
+      "Location is required": [
+        "Plassering kreves"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
@@ -5201,15 +5210,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
-      "Booking already exists.": [
-        "Bestilling finnes allerede."
-      ],
-      "Booking cannot be added in the past.": [
-        "En bestilling kan ikke legges til i fortiden."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Bestillingen overlapper med en eksisterende bestilling."
-      ],
       "Booking page deleted": [
         "Bestillingsside slettet"
       ],
@@ -5240,8 +5240,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Finner ikke hendelsene som du ser etter? Noen hendelser i skjulte kalendere samsvarer med søket ditt. For å se disse resultatene, slå på synlighet for ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Kan ikke opprette bestillingsintervall over flere dager."
+      "Cannot create a range across days.": [
+        "Kan ikke opprette et intervall som strekker seg over flere dager."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan ikke opprette et tidsintervall bakover i tid."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
@@ -5846,6 +5849,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
+      "Range already exists.": [
+        "Tidsrommet finnes allerede."
+      ],
+      "Range is too short.": [
+        "Intervallet er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Tidsrommet overlapper med et eksisterende tidsrom."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
       ],
@@ -5994,6 +6006,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Denne bestillingssiden kan ikke redigeres. Den tilhørende kalenderen er deaktivert."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Denne bestillingen ble gjort via ${ CALENDAR_APP_NAME }, som er en del av ${ BRAND_NAME }s serie med personvern-fokuserte produkter."
@@ -6242,9 +6257,6 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Du kan ikke ha mer enn ${ MAX_BOOKING_SLOTS } bestillingstider på en side."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."

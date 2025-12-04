@@ -263,8 +263,8 @@
       "Create a free account": [
         "Vytvorte si bezplatný účet"
       ],
-      "Create a new bookings page": [
-        "Vytvoriť novú stránku rezervácií"
+      "Create a new booking page": [
+        "Vytvoriť novú stránku pre rezervácie"
       ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
@@ -3873,9 +3873,6 @@
       "Process aborted": [
         "Proces prerušený"
       ],
-      "Range is too short": [
-        "Rozsah je príliš krátky"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Odstránený duplicitný príjemca: ${ joinedRecipients }",
         "Odstránení duplicitní príjemcovia: ${ joinedRecipients }",
@@ -5357,15 +5354,6 @@
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
       ],
-      "Booking already exists.": [
-        "Rezervácia už existuje."
-      ],
-      "Booking cannot be added in the past.": [
-        "Rezerváciu nie je možné pridať spätne."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Rezervácia sa prekrýva s existujúcou rezerváciou."
-      ],
       "Booking page deleted": [
         "Stránka rezervácií bola vymazaná"
       ],
@@ -5396,11 +5384,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Nemôžete nájsť udalosti, ktoré hľadáte? Niektoré udalosti v skrytých kalendároch sa zhodujú s vaším vyhľadávaním. Na zobrazenie týchto výsledkov zapnite viditeľnosť pre ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Nie je možné vytvoriť rezerváciu v rozsahu viacerých dní"
+      "Cannot create a range across days.": [
+        "Nie je možné vytvoriť rozsah zahŕňajúci viacero dní."
       ],
-      "Cannot create booking range in the past.": [
-        "Nie je možné vytvoriť rozsah rezervácie v minulosti."
+      "Cannot create a range in the past.": [
+        "Nie je možné vytvoriť rozsah v minulosti."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -6017,6 +6005,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
       ],
+      "Range already exists.": [
+        "Rozsah už existuje."
+      ],
+      "Range is too short.": [
+        "Rozsah je príliš krátky."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rozsah sa prekrýva s existujúcim rozsahom."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
       ],
@@ -6425,9 +6422,6 @@
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
       ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Na jednej stránke nemôžete mať viac ako ${ MAX_BOOKING_SLOTS } rezervovaných miest."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Dostanete upozornenie, keď dôjde k úniku vášho hesla alebo iných údajov zo služieb tretích strán."
       ],
@@ -6589,6 +6583,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
