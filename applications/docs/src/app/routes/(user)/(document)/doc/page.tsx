@@ -25,17 +25,14 @@ import { useFlag } from '@proton/unleash'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
-import { useIsSheetsEnabled } from '~/utils/misc'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
 
   const [user] = useUser()
 
-  const isSheetsEnabled = useIsSheetsEnabled()
   const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar({
     isDocsEnabled: driveCompat.isDocsEnabled,
-    isSheetsEnabled,
   })
   useEffectOnce(() => {
     removeLocalIDFromUrl()
