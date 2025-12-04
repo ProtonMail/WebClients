@@ -1,9 +1,14 @@
 import type { SessionKey } from '@proton/crypto/lib';
-import { getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { getIsAddressDisabled, getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';
 
 import { encryptSlotBookingSharedKeyPackets } from '../../containers/bookings/utils/crypto/bookingEncryption';
+
+export type AttendeeSharedKeyPacketResult =
+    | { type: 'success'; keyPacket: string | undefined }
+    | { type: 'disabled_address' };
 
 export const getAttendeeSharedKeyPacket = async ({
     isGuest,
@@ -19,21 +24,33 @@ export const getAttendeeSharedKeyPacket = async ({
     getCalendarUserSettings: () => Promise<CalendarUserSettings>;
     getAddresses: () => Promise<Address[]>;
     getCalendarKeys: (calendarID: string) => Promise<DecryptedCalendarKey[]>;
-}) => {
+}): Promise<AttendeeSharedKeyPacketResult> => {
     if (isGuest) {
-        return undefined;
+        return { type: 'success', keyPacket: undefined };
     }
 
     const [calendarSettings, addresses] = await Promise.all([getCalendarUserSettings(), getAddresses()]);
 
-    const usedAddress = addresses.find((address) => address.Email === attendeeEmail);
-    if (!calendarSettings.DefaultCalendarID || !usedAddress) {
+    const usedAddress = addresses.find(
+        (address) => canonicalizeInternalEmail(address.Email) === canonicalizeInternalEmail(attendeeEmail)
+    );
+    if (!calendarSettings.DefaultCalendarID) {
         throw new Error('Default calendar ID or used address not found');
+    }
+
+    // The user could have entered an address which is not part of his addresses
+    if (!usedAddress) {
+        return { type: 'success', keyPacket: undefined };
     }
 
     // We don't want to auto-add events for external addresses
     if (getIsAddressExternal(usedAddress)) {
-        return undefined;
+        return { type: 'success', keyPacket: undefined };
+    }
+
+    // Block booking submission for disabled addresses
+    if (getIsAddressDisabled(usedAddress)) {
+        return { type: 'disabled_address' };
     }
 
     const sharedKeyPacket = await encryptSlotBookingSharedKeyPackets({
@@ -42,5 +59,5 @@ export const getAttendeeSharedKeyPacket = async ({
         sharedSessionKey,
     });
 
-    return sharedKeyPacket?.toBase64();
+    return { type: 'success', keyPacket: sharedKeyPacket?.toBase64() };
 };

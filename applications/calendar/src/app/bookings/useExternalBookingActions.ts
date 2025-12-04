@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useApi } from '@proton/components';
+import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
@@ -31,6 +32,7 @@ export const useExternalBookingActions = () => {
     const saveMeeting = useSaveMeeting();
     const getVTimezonesMap = useGetVtimezonesMap();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+    const { createNotification } = useNotifications();
 
     const history = useHistory();
     const { isGuest } = useBookingsProvider();
@@ -40,14 +42,12 @@ export const useExternalBookingActions = () => {
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const bookingSecretBase64Url = location.hash.substring(1);
-    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const submitBooking = async (timeslot: BookingTimeslot, attendeeInfo: AttendeeInfo) => {
         if (!bookingDetails) {
             throw new Error('Booking details not available');
         }
 
-        setIsSubmitting(true);
         try {
             const bookingUidBase64Url = await extractBookingUidFromSecret(bookingSecretBase64Url);
 
@@ -65,7 +65,7 @@ export const useExternalBookingActions = () => {
                 getVTimezonesMap,
             });
 
-            const AttendeeSharedKeyPacket = await getAttendeeSharedKeyPacket({
+            const attendeeSharedKeyPacketResult = await getAttendeeSharedKeyPacket({
                 isGuest,
                 attendeeEmail: attendeeInfo.email,
                 sharedSessionKey: submissionData.sharedSessionKey,
@@ -74,13 +74,21 @@ export const useExternalBookingActions = () => {
                 getCalendarKeys,
             });
 
+            if (attendeeSharedKeyPacketResult.type === 'disabled_address') {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Cannot create a booking with a disabled address`,
+                });
+                return;
+            }
+
             await api(
                 confirmBookingSlot(bookingUidBase64Url, timeslot.id, {
                     ContentPart: submissionData.contentPart,
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
                     AttendeeToken: submissionData.attendeeToken,
-                    AttendeeSharedKeyPacket,
+                    AttendeeSharedKeyPacket: attendeeSharedKeyPacketResult.keyPacket,
                     EmailData: {
                         Name: submissionData.emailData.name,
                         Email: submissionData.emailData.email,
@@ -94,11 +102,10 @@ export const useExternalBookingActions = () => {
 
             setSelectedBookingSlot(timeslot);
             history.push('/bookings/success');
+            return 'success';
         } catch (error: unknown) {
             traceError(error);
             throw error;
-        } finally {
-            setIsSubmitting(false);
         }
     };
 
@@ -106,6 +113,5 @@ export const useExternalBookingActions = () => {
         bookingSecretBase64Url,
         bookingDetails,
         submitBooking,
-        isSubmitting,
     };
 };
