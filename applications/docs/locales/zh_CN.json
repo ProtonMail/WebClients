@@ -352,7 +352,7 @@
         "生成密码"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -7174,6 +7174,11 @@
         "无限别名，保护您的身份"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "以后再说"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
@@ -7304,7 +7309,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -7348,6 +7353,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"

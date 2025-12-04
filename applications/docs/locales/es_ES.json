@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
+      "Create a spreadsheet": [
+        "Crear una hoja de cálculo"
+      ],
       "Create and copy alias": [
         "Crear y copiar el alias"
       ],
@@ -5268,6 +5271,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Tus datos te pertenecen. Crea y colabora usando hojas de cálculo con todas las funciones protegidas con cifrado de extremo a extremo."
+      ],
       "Your email address and password were leaked:": [
         "Tu dirección de correo electrónico y contraseña fueron filtradas:"
       ],
@@ -5422,6 +5428,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Una captura de pantalla de ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Añadir correo electrónico"
@@ -7636,6 +7645,11 @@
         "Alias ilimitados para proteger tu identidad"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Quizás más tarde"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita nuestro ${ helpCenterLink } o contacta a nuestro ${ contactSupportLink }."
@@ -9468,6 +9482,9 @@
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Presentamos ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"

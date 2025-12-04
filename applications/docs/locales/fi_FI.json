@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create a spreadsheet": [
+        "Luo laskentataulukko"
+      ],
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
@@ -5194,6 +5197,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Datasi säilyy sinulla. Luo ja tee yhteistyötä käyttämällä monipuolisilla ominaisuuksilla varusteluissa taulukoissa, jotka on suojattu päästä päähän -salauksella."
+      ],
       "Your email address and password were leaked:": [
         "Sähköpostiosoitteesi ja salasanasi paljastuivat:"
       ],
@@ -5342,6 +5348,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Ruutukaappaus ${ SHEETS_APP_NAME } -sovelluksesta"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -7454,6 +7463,11 @@
         "Tallennustila"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ]
+    },
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
@@ -9199,6 +9213,9 @@
       ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Esittelyssä ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
