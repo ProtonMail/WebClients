@@ -12,7 +12,6 @@ import { deserializeAttachment, serializeAttachment } from '../../serialization'
 import {
     type Attachment,
     type AttachmentId,
-    type DeletedAttachment,
     type SerializedAttachment,
     type ShallowAttachment,
     type Space,

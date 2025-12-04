@@ -1,8 +1,4 @@
 .project-card {
-    background: var(--background-norm);
-    border: 1px solid var(--border-weak);
-    border-radius: 12px;
-    padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -14,56 +10,29 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
     }
-
-    &--example {
-        background: var(--background-weak);
-        border: 1px dashed var(--border-norm);
-        opacity: 0.9;
-        padding: 12px;
-        gap: 8px;
-
-        &:hover {
-            opacity: 1;
-            border-color: var(--interaction-norm-minor-2);
-            background: var(--background-weak);
-        }
-
-        .project-card-icon {
-            width: 32px;
-            height: 32px;
-        }
-
-        .project-card-title {
-            font-size: 14px;
-            line-height: 1.3;
-        }
-
-        .project-card-description {
-            font-size: 12px;
-            line-height: 1.4;
-            -webkit-line-clamp: 2;
-        }
-    }
 }
 
 .project-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 8px;
+}
+
+.project-card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
 }
 
 .project-card-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
 
     .project-card:hover & {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 }
 
@@ -96,11 +65,14 @@
 }
 
 .project-card-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     margin: 0;
     color: var(--text-norm);
     line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-card-description {
@@ -126,8 +98,3 @@
     font-size: 13px;
     color: var(--text-weak);
 }
-
-.project-card-footer {
-    padding-top: 4px;
-}
-
