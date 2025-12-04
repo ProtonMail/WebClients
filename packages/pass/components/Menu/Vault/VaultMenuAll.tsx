@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -7,6 +8,7 @@ import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { selectAllVaults } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
@@ -20,7 +22,9 @@ type Props = {
 
 export const VaultMenuAll = memo(({ count, selected, onAction = noop }: Props) => {
     const { select, organize } = useVaultActions();
-    const vaultOrganizationEnabled = useFeatureFlag(PassFeature.PassHideShowVault);
+    const vaults = useSelector(selectAllVaults);
+    const hideShowVaultFeatureFlag = useFeatureFlag(PassFeature.PassHideShowVault);
+    const vaultOrganizationEnabled = vaults.length > 0 && hideShowVaultFeatureFlag;
 
     return (
         <DropdownMenuButton
