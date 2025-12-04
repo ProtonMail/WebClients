@@ -1,5 +1,6 @@
-import { MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { CALENDAR_UPSELL_PATHS, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { getUpsellModalBookingsConfig } from '../configs/getUpsellModalBookingsConfig';
 import { getUpsellModalComposerAssistantConfig } from '../configs/getUpsellModalComposerAssistantConfig';
 import { getUpsellModalDefaultConfig } from '../configs/getUpsellModalDefaultConfig';
 import { getUpsellModalFreeUserConfig } from '../configs/getUpsellModalFreeUserConfig';
@@ -10,13 +11,22 @@ export const getMailUpsellConfig = async (data: UpsellModalConfigParams): Promis
     const isSentinelUpsell = [SHARED_UPSELL_PATHS.SENTINEL, MAIL_UPSELL_PATHS.PROTON_SENTINEL].some((path) =>
         data.upsellRef?.includes(path)
     );
-    const isComposerAssistantUpsell = data.upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
+    if (isSentinelUpsell) {
+        return getUpsellModalProtonSentinelConfig(data);
+    }
 
+    const isComposerAssistantUpsell = data.upsellRef?.includes(MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER);
     if (isComposerAssistantUpsell) {
         return getUpsellModalComposerAssistantConfig(data);
-    } else if (isSentinelUpsell) {
-        return getUpsellModalProtonSentinelConfig(data);
-    } else if (data.user.isFree) {
+    }
+
+    const isBookingsUpsell = data.upsellRef?.includes(CALENDAR_UPSELL_PATHS.BOOKING_PAGE);
+    // Paid users of mail get upsell to the BUNDLE_BIZ_2025 plan, other get the regular upsell
+    if (isBookingsUpsell && data.user.hasPaidMail) {
+        return getUpsellModalBookingsConfig(data);
+    }
+
+    if (data.user.isFree) {
         return getUpsellModalFreeUserConfig(data);
     }
 
