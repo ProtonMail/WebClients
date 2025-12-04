@@ -25,6 +25,7 @@ import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -93,13 +94,15 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
 
     useItemDraft<CreditCardItemFormValues>(form, { mode: 'new', type: 'creditCard' });
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const freeCcFlag = useFeatureFlag(PassFeature.PassAllowCreditCardFreeUsers);
+    const upsell = !freeCcFlag && isFreePlan;
 
     return (
         <ItemCreatePanel
             discardable={!form.dirty}
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            submitButton={isFreePlan && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_CC} />}
+            submitButton={upsell && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_CC} />}
             type="creditCard"
             valid={form.isValid && !form.status?.isBusy}
             actions={ParentPortal}
@@ -107,7 +110,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
-                        {isFreePlan && (
+                        {upsell && (
                             <Card className="mb-2 text-sm" type="primary">
                                 {c('Info')
                                     .t`You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.`}

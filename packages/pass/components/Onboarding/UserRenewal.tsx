@@ -8,8 +8,10 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectPlanDisplayName, selectUserPlan } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { epochToDate } from '@proton/pass/utils/time/format';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -22,6 +24,7 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
     const online = useOnline();
+    const freeCcFlag = useFeatureFlag(PassFeature.PassAllowCreditCardFreeUsers);
 
     if (!(plan && plan.SubscriptionEnd)) return;
 
@@ -39,8 +42,11 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
         <div className="flex-1">
             <strong className="block">{title}</strong>
             <span className="block text-sm">
-                {c('Info')
-                    .t`You will no longer have access to sharing, 2FA, credit card and other advanced features in ${PASS_APP_NAME}`}
+                {freeCcFlag
+                    ? c('Info')
+                          .t`You will no longer have access to sharing, 2FA and other advanced features in ${PASS_APP_NAME}`
+                    : c('Info')
+                          .t`You will no longer have access to sharing, 2FA, credit card and other advanced features in ${PASS_APP_NAME}`}
             </span>
             <div className="mt-2">
                 <Button
