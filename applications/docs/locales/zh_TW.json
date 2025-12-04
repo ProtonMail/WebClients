@@ -842,6 +842,16 @@
         "不支援的事件"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "未顯示 ${ hiddenResultsCount } 個結果"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "在 ${ formattedDate } 試用結束後，其會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate } 前取消，則不會被收費。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消訂購授權"
@@ -2392,8 +2402,16 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "取得四倍的儲存空間"
+      ],
       "Share your plan": [
         "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
     "Email body for invitation": {
@@ -2894,6 +2912,11 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
       ]
     },
     "Error importing calendar": {
@@ -3784,6 +3807,12 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -3801,6 +3830,9 @@
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
       ],
       "Ad targeting": [
         "廣告目標鎖定"
@@ -3888,6 +3920,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "聯絡資訊已從${ contactGroupName }群裡移除"
+      ],
+      "Continue": [
+        "繼續"
       ],
       "Copy the link to clipboard": [
         "複製連結到剪貼簿"
@@ -3993,6 +4028,9 @@
       ],
       "End-to-end encrypted.": [
         "點對點加密."
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
       ],
       "Enter password": [
         "輸入密碼"
@@ -4714,6 +4752,9 @@
       "Your IP": [
         "您的 IP"
       ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "您的 IP 位址可見且可用於追蹤您的線上活動。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -5296,6 +5337,9 @@
       ],
       "Reactivate now": [
         "現在重新啟用"
+      ],
+      "Reactivate subscription": [
+        "重新啟用訂閱"
       ],
       "Request an invite": [
         "需求邀請"
@@ -6094,6 +6138,9 @@
       "Vault sharing (up to ${ n } person)": [
         "保管庫共享 (至多 ${ n } 人)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "與最多 ${ n } 個人分享保管庫"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
       ]
@@ -6805,6 +6852,11 @@
         "雲端儲存"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "稍後再說"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
@@ -6944,11 +6996,20 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "試用期結束後，於 ${ formattedDate } 付費"
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月可享優惠價格。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
@@ -7162,11 +7223,20 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "每個推薦 ${ referrerRewardAmount }"
+      ],
       "Friend joined": [
         "已加入的親友"
       ],
       "Friend subscribed": [
         "已訂閱的親友"
+      ],
+      "More sharing options": [
+        "更多分享選項"
+      ],
+      "Refer friends": [
+        "推薦朋友"
       ]
     },
     "Safety review": {
@@ -7752,6 +7822,9 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app }儲存"
+      ],
+      "${ app } storage used": [
+        "已使用 ${ app } 儲存空間"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }${ percentage }% 滿"
@@ -8342,6 +8415,9 @@
       "High security for your account": [
         "高安全性帳號"
       ],
+      "How does it all work?": [
+        "這一切是如何運作的？"
+      ],
       "How does it work?": [
         "那是如何運作的？"
       ],
@@ -8548,6 +8624,9 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "升級以保留您的進階權益。"
       ],
       "Uploading a large file or folder": [
         "上傳大檔案或資料夾"
@@ -8831,6 +8910,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
       ]
     }
   }

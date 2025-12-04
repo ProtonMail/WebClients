@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
+      "Create a spreadsheet": [
+        "Tabelle erstellen"
+      ],
       "Create and copy alias": [
         "Erstellen und Alias kopieren"
       ],
@@ -4310,6 +4313,9 @@
       "Create an end-to-end encrypted document.": [
         "Erstelle ein Ende-zu-Ende-verschlüsseltes Dokument."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Ende-zu-Ende-verschlüsselte Dokumente und Tabellen erstellen."
+      ],
       "Create in": [
         "Erstellen in"
       ],
@@ -5262,6 +5268,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Deine Daten bleiben deine eigenen. Erstelle und arbeite zusammen mithilfe voll ausgestatteter Tabellenkalkulationen, gesichert mit Ende-zu-Ende-Verschlüsselung."
+      ],
       "Your email address and password were leaked:": [
         "Deine E-Mail-Adresse und dein Passwort wurden offengelegt:"
       ],
@@ -5416,6 +5425,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Ein Screenshot von ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -7630,6 +7642,11 @@
         "Unbegrenzte Aliase, um deine Identität zu schützen"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Vielleicht später"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
@@ -9462,6 +9479,9 @@
       ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Wir präsentieren ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
