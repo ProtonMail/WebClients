@@ -104,6 +104,9 @@
       "Choose my own password": [
         "Odaberite vlastitu lozinku"
       ],
+      "Claim this address": [
+        "Preuzmi ovu adresu"
+      ],
       "Close": [
         "Zatvori"
       ],
@@ -1174,6 +1177,9 @@
       "Application problem": [
         "Problem s aplikacijom"
       ],
+      "Black Friday": [
+        "Crni petak"
+      ],
       "Bridge problem": [
         "Problem s Bridgeom"
       ],
@@ -1295,8 +1301,8 @@
       ],
       "Total for ${ n } month": [
         "Ukupno za ${ n } mjesec",
-        "Ukupno za ${ n } mjeseci",
-        "Ukupno za ${ n } mjeseca"
+        "Ukupno za ${ n } mjeseca",
+        "Ukupno za ${ n } mjeseci"
       ]
     },
     "Checkout summary": {
@@ -1316,6 +1322,14 @@
       ],
       "Expand": [
         "Proširi"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Pristup naprednim modelima umjetne inteligencije"
+      ],
+      "Basic chat history": [
+        "Osnovna povijest razgovora"
       ]
     },
     "color": {
@@ -2531,6 +2545,22 @@
         "Prioritetna podrška"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/mjesec"
+      ],
+      "2 user accounts": [
+        "2 korisnička računa"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dobijte 4x više pohrane"
+      ],
+      "Share your plan": [
+        "Podijelite svoju pretplatu"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstualna polja su neobavezna. Informacije koje date u ovom obrascu će se prikazivati isključivo na računima izdanima u budućnosti i neće utjecati na postojeće račune."
@@ -2557,6 +2587,12 @@
       ]
     },
     "Email body for invitation": {
+      "DESCRIPTION:": [
+        "OPIS:"
+      ],
+      "LOCATION:": [
+        "MJESTO:"
+      ],
       "NOTE:": [
         "BILJEŠKA:"
       ]
@@ -3201,6 +3237,9 @@
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
       ],
+      "More premium features": [
+        "Više premium značajki"
+      ],
       "Remove": [
         "Ukloni"
       ],
@@ -3394,6 +3433,11 @@
       ],
       "Very small": [
         "Jako malo"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privatnost zadana."
       ]
     },
     "Gmail forwarding": {
@@ -3994,6 +4038,9 @@
       "Connection data will be available in around 1 hour.": [
         "Podaci o vezi bit će dostupni za otprilike 1 sat."
       ],
+      "Continue": [
+        "Nastavi"
+      ],
       "Copied to clipboard": [
         "Kopirano u međuspremnik"
       ],
@@ -4049,7 +4096,7 @@
         "Onemogućeno ${ boldValue }"
       ],
       "Discover ProtectBuy logo": [
-        "Otkrij ProtectBuy logotip"
+        "Discover ProtectBuy logotip"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM omogućuje ${ BRAND_NAME }u kriptografsko potpisivanje Vaše e-pošte i sprječava napadače u mijenjanju Vaše e-pošte. Provjerite jeste li dodali sljedeća tri CNAME zapisa u svoju DNS konzolu (nalazi se na platformi na kojoj ste kupili prilagođenu domenu)."
@@ -5153,6 +5200,9 @@
       "Billing cycle": [
         "Ciklus naplate"
       ],
+      "Black Friday": [
+        "Crni petak"
+      ],
       "Block": [
         "Blokiraj"
       ],
@@ -5823,8 +5873,14 @@
       "Privacy policy": [
         "Pravila o privatnosti"
       ],
+      "Reactivate subscription": [
+        "Ponovno aktiviraj pretplatu"
+      ],
       "Request an invite": [
         "Zatraži pozivnicu"
+      ],
+      "Resume now": [
+        "Nastavi sada"
       ],
       "settings": [
         "postavke"
@@ -6259,7 +6315,7 @@
         "Prioritetna podrška"
       ],
       "Priority support & live chat": [
-        "Prioritetna podrška i chat uživo"
+        "Prioritetna podrška i čavrljanje uživo"
       ],
       "Require 2FA for organization": [
         "Zahtijevajte 2FA za organizaciju"
@@ -6918,11 +6974,17 @@
       "Credit/debit card": [
         "Kreditna/debitna kartica"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Iznos za plaćanje nakon završetka probe dana ${ formattedDate }"
+      ],
       "Card number": [
         "Broj kartice"
       ],
@@ -6977,6 +7039,16 @@
         "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Nešto je pošlo po zlu. Provjera Google Paya nije uspjela."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ako odlučite izmijeniti svoju pretplatu ${ planTitle }, možda ćete izgubiti pristup nekim značajkama."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -6990,6 +7062,12 @@
     "Payments.VAT number name": {
       "ABN": [
         "ABN"
+      ],
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
       ],
       "EIN": [
         "EIN"
@@ -7096,6 +7174,9 @@
       ],
       "Select": [
         "Odaberi"
+      ],
+      "Select country": [
+        "Odaberi državu"
       ],
       "Start date": [
         "Početni datum"
@@ -9385,6 +9466,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: asistent umjetne inteligencije koji poštuje Vašu privatnost"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sigurno prijavljivanje na svim vašim uređajima. Uključuje neograničen broj aliasa, dijeljenje, integriranu dvofaktorsku autentikaciju i još mnogo toga."
       ],
