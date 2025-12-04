@@ -104,7 +104,7 @@ export const useLumoActions = ({
     const spaceId = space?.id;
 
     // Helper to load and deduplicate attachments from message history
-    const loadAndDeduplicateAttachments = async (
+    const loadAttachments = async (
         messages: Message[],
         user: User | undefined,
         spaceDek: any
@@ -114,6 +114,10 @@ export const useLumoActions = ({
 
         for (const message of messages) {
             if (message.attachments && message.attachments.length > 0) {
+                console.log(
+                    `Loading attachments for message ${message.id}] (content=${message.content?.slice(50)}`,
+                    message.attachments
+                );
                 // Filter out already-seen attachments to avoid redundant loading
                 const unseenAttachments = message.attachments.filter((a) => !seenIds.has(a.id));
 
@@ -126,6 +130,8 @@ export const useLumoActions = ({
                 }
             }
         }
+
+        console.log('all attachments:', allAttachments);
 
         return allAttachments;
     };
@@ -146,7 +152,7 @@ export const useLumoActions = ({
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
 
         // Load all attachments from conversation history and combine with new message attachments
-        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
         const allAttachments = [...historyAttachments, ...provisionalAttachments];
 
         await dispatch(
@@ -207,7 +213,7 @@ export const useLumoActions = ({
         );
 
         // Load all attachments from conversation history
-        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
 
         // Get personalization data for retry from saved user settings (not unsaved Redux state)
         // TODO can I delete this?
@@ -277,7 +283,7 @@ export const useLumoActions = ({
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
 
         // Load all attachments from conversation history and combine with edited message attachments
-        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
         const editedMessageAttachments = await fillAttachmentData(
             originalMessage.attachments ?? [],
             attachmentMap,
@@ -364,7 +370,7 @@ export const useLumoActions = ({
         const retryInstructions = getRetryInstructions(retryStrategy, customInstructions);
 
         // Load all attachments from conversation history
-        const allAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const allAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
 
         // Create a new placeholder assistant message
         const assistantMessageId = newMessageId();

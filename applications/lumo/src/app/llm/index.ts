@@ -223,27 +223,30 @@ function formatTextAttachmentContent(attachment: Attachment): string {
 /**
  * Create a turn for an attachment (either text or image)
  */
-function createAttachmentTurn(shallowAtt: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
-    const fullAtt = allAttachments.find((a) => a.id === shallowAtt.id);
-    if (!fullAtt) return null;
+function createAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
+    console.log(`createAttachmentTurn: shallowAttachment ${shallowAttachment.id} = `, shallowAttachment);
+    console.log(`createAttachmentTurn: allAttachments = `, allAttachments);
+    const fullAttachment = allAttachments.find((a) => a.id === shallowAttachment.id);
+    console.log(`createAttachmentTurn: fullAttachment = `, fullAttachment);
+    if (!fullAttachment) return null;
 
-    const { imageAttachments, textAttachments } = separateAttachmentsByType([fullAtt]);
+    const { imageAttachments, textAttachments } = separateAttachmentsByType([fullAttachment]);
 
     if (imageAttachments.length > 0) {
         // Image attachment turn
-        const wireImage = tryConvertToWireImage(fullAtt);
+        const wireImage = tryConvertToWireImage(fullAttachment);
         if (!wireImage) return null;
 
         return {
             role: Role.User,
-            content: `[Image: ${shallowAtt.filename}]`,
+            content: `[Image: ${shallowAttachment.filename}]`,
             images: [wireImage],
         };
     } else if (textAttachments.length > 0) {
         // Text attachment turn
         return {
             role: Role.User,
-            content: formatTextAttachmentContent(fullAtt),
+            content: formatTextAttachmentContent(fullAttachment),
         };
     }
 
@@ -273,13 +276,8 @@ function filterMessageAttachments(
 function expandAttachmentsIntoTurns(turn: TurnInProgress, allAttachments: Attachment[]): Turn[] {
     const { attachments, ...baseTurn } = turn;
 
-    // No attachments or not a user message? Return as-is
-    if (turn.role !== Role.User || !attachments || attachments.length === 0) {
-        return [baseTurn];
-    }
-
-    // Create a turn for each attachment
-    const attachmentTurns = attachments
+    // Create an additional turn for each attachment
+    const attachmentTurns = (attachments ?? [])
         .map((att) => createAttachmentTurn(att, allAttachments))
         .filter((t): t is Turn => t !== null);
 
