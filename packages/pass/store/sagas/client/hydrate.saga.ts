@@ -6,8 +6,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
-import { getPassPlan } from '@proton/pass/lib/user/user.plan';
-import { isPaidPlan, userStateHydrated } from '@proton/pass/lib/user/user.predicates';
+import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import { stateHydrate } from '@proton/pass/store/actions';
 import { migrate } from '@proton/pass/store/migrate';
@@ -106,13 +105,11 @@ export function* hydrate(
         /** Activate offline mode by default for paid users who
          * haven't touched the `offlineEnabled` setting yet */
         if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
-            const plan = getPassPlan(userState.plan);
-            const validUserType = isPaidPlan(plan);
             const hasOfflinePassword = authStore.hasOfflinePassword();
             const untouched = settings.offlineEnabled === undefined;
 
-            const autoSetup = untouched && validUserType && hasOfflinePassword;
-            settings.offlineEnabled = autoSetup || (validUserType && settings.offlineEnabled);
+            const autoSetup = untouched && hasOfflinePassword;
+            settings.offlineEnabled = autoSetup || settings.offlineEnabled;
         }
 
         const incoming = { user: userState, settings, organization };
