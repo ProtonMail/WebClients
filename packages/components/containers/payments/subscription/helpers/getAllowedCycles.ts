@@ -55,6 +55,10 @@ export const isSupportedCycle = ({
         return true;
     }
 
+    if (planIDs[PLANS.VPN2024] && cycle === CYCLE.SIX) {
+        return true;
+    }
+
     if (!isRegularCycle(cycle)) {
         return false;
     }
