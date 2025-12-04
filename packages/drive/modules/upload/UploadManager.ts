@@ -15,22 +15,55 @@ import { isDataTransferList, processDroppedItems } from './utils/processDroppedI
  */
 export class UploadManager {
     private orchestrator = new UploadOrchestrator();
+    private activeContexts = new Set<string>();
+    private contextUnsubscribers = new Map<string, () => void>();
 
     /**
-     * Subscribe to upload events.
-     * Only supports one subscription for now.
+     * Subscribe to upload events with a specific context.
+     * Supports multiple subscriptions from different contexts.
      *
+     * @param context - Unique identifier for the subscription context
      * @param callback - Async function called for each upload event
      *
      * @example
-     * uploadManager.onUploadEvent(async (event) => {
+     * uploadManager.subscribeToEvents('transfer-manager', async (event) => {
      *   if (event.type === 'file:complete') {
      *     console.log('Upload complete:', event.nodeUid);
      *   }
      * });
      */
-    onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
-        this.orchestrator.onUploadEvent(callback);
+    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): void {
+        if (this.activeContexts.has(context)) {
+            return;
+        }
+
+        const unsubscribe = this.orchestrator.subscribeToEvents(context, callback);
+        this.contextUnsubscribers.set(context, unsubscribe);
+        this.activeContexts.add(context);
+    }
+
+    /**
+     * Unsubscribe from upload events for a specific context.
+     *
+     * @param context - Unique identifier for the subscription context to remove
+     *
+     * @example
+     * uploadManager.unsubscribeFromEvents('transfer-manager');
+     */
+    unsubscribeFromEvents(context: string): void {
+        const unsubscribe = this.contextUnsubscribers.get(context);
+        if (unsubscribe) {
+            unsubscribe();
+            this.contextUnsubscribers.delete(context);
+            this.activeContexts.delete(context);
+        }
+    }
+
+    /**
+     * Check if there are any active subscriptions
+     */
+    hasSubscriptions(): boolean {
+        return this.orchestrator.hasSubscriptions();
     }
 
     /**

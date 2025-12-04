@@ -42,8 +42,12 @@ export class UploadOrchestrator {
         this.photosExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
     }
 
-    onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
-        this.eventHandler.onUploadEvent(callback);
+    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): () => void {
+        return this.eventHandler.subscribeToEvents(context, callback);
+    }
+
+    hasSubscriptions(): boolean {
+        return this.eventHandler.hasSubscriptions();
     }
 
     /**

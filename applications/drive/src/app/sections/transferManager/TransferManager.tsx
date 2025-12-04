@@ -57,10 +57,8 @@ export const TransferManager = () => {
     }, [status]);
 
     useEffect(() => {
-        // TODO: Move out of here once we have multi event subscription
-        // Also we can create photos:complete event so we can separate
         const actionEventManager = getActionEventManager();
-        uploadManager.onUploadEvent(async (event) => {
+        uploadManager.subscribeToEvents('transfer-manager', async (event) => {
             if (event.type === 'file:complete' && event.isUpdatedNode) {
                 await actionEventManager.emit({
                     type: ActionEventName.UPDATED_NODES,
@@ -77,6 +75,10 @@ export const TransferManager = () => {
                 });
             }
         });
+
+        return () => {
+            uploadManager.unsubscribeFromEvents('transfer-manager');
+        };
     }, [driveEventManager.pollEvents]);
 
     const toggleMinimize = () => {

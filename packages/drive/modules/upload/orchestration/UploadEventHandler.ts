@@ -15,7 +15,7 @@ export class UploadEventHandler {
     private eventHandlers: {
         [K in UploadEvent['type']]: (event: Extract<UploadEvent, { type: K }>) => void | Promise<void>;
     };
-    private onUploadEventCallback: ((event: UploadEvent) => Promise<void>) | undefined = undefined;
+    private eventSubscriptions = new Map<string, (event: UploadEvent) => Promise<void>>();
 
     constructor(
         private capacityManager: CapacityManager,
@@ -43,14 +43,25 @@ export class UploadEventHandler {
         };
     }
 
-    onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
-        this.onUploadEventCallback = callback;
+    subscribeToEvents(context: string, callback: (event: UploadEvent) => Promise<void>): () => void {
+        this.eventSubscriptions.set(context, callback);
+        return () => {
+            this.eventSubscriptions.delete(context);
+        };
+    }
+
+    hasSubscriptions(): boolean {
+        return this.eventSubscriptions.size > 0;
     }
 
     async handleEvent(event: UploadEvent): Promise<void> {
         const handler = this.eventHandlers[event.type];
         if (handler) {
-            await this.onUploadEventCallback?.(event);
+            await Promise.all(
+                Array.from(this.eventSubscriptions.values()).map((callback) => {
+                    return callback(event);
+                })
+            );
             // We have to cast here to be able to call the handler.
             await (handler as (event: UploadEvent) => void | Promise<void>)(event);
         }
