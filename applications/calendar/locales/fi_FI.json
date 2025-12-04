@@ -240,6 +240,9 @@
       "Create": [
         "Luo"
       ],
+      "Create a new booking page": [
+        "Luo uusi varaussivu"
+      ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
@@ -289,6 +292,9 @@
       "Delete ${ selectedCount } contact group": [
         "Poista ${ selectedCount } yhteystietoryhmä",
         "Poista ${ selectedCount } yhteystietoryhmää"
+      ],
+      "Delete booking page": [
+        "Poista varaussivu"
       ],
       "Delete contact": [
         "Poista yhteystieto"
@@ -3700,9 +3706,6 @@
       "Process aborted": [
         "Tapahtuma keskeytettiin"
       ],
-      "Range is too short": [
-        "Väli on liian lyhyt"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Vastaanottajan kaksoiskappale poistettiin: ${ joinedRecipients }",
         "Vastaanottajien kaksoiskappaleet poistettiin: ${ joinedRecipients }"
@@ -5075,9 +5078,6 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
-      "Booking already exists.": [
-        "Varaus on jo olemassa."
-      ],
       "Booking updated successfully": [
         "Varaus päivitettiin onnistuneesti"
       ],
@@ -5102,8 +5102,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Etkö löydä etsimiäsi tapahtumia? Jotkin piilotetujen kalenterien tapahtumat vastaavat hakuasi. Jos haluat nähdä nämä tulokset, vaihda seuraavien kalentereiden ${ hiddenWithItemsCalendarList } näkyvyysasetus."
       ],
-      "Cannot create booking range in the past.": [
-        "Varausjaksoa ei voi luoda menneisyyteen."
+      "Cannot create a range across days.": [
+        "Jaksoa ei voi luoda usean päivän yli."
+      ],
+      "Cannot create a range in the past.": [
+        "Väliä ei voi luoda menneisyyteen."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -5654,6 +5657,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Yksityinen selaus (tai \"incognito\"-tila) on hyödyllinen pitämään toimintasi piilotettuna vain laitteellasi. Se estää selainta tallentamasta selaushistoriaa ja evästeitä, mutta se ei tee sinusta näkymätöntä. Internet-palveluntarjoajasi, verkon ylläpitäjäsi ja vierailemasi verkkosivustot näkevät edelleen, mitä teet verkossa."
       ],
+      "Range already exists.": [
+        "Väli on jo olemassa."
+      ],
+      "Range is too short.": [
+        "Väli on liian lyhyt."
+      ],
+      "Range overlaps with an existing range.": [
+        "Väli on päällekkäin toisen välin kanssa."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
@@ -6168,6 +6180,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
       ]
     },
     "info": {
