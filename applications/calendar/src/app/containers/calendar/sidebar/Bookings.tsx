@@ -4,14 +4,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { Spotlight, useLocalState } from '@proton/components';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
-import { UpsellBookings } from '../../bookings/UpsellBookings';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import {
     IntroduceBookingsSpotlightContent,
@@ -28,7 +26,6 @@ interface Props {
 export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [user] = useUser();
     const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
-    const [modalProps, setModalOpen, renderModal] = useModalState();
 
     const [calendars] = useCalendars();
 
@@ -40,12 +37,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
 
     const handleCreate = () => {
         spotlight.onClose();
-
-        if (user.hasPaidMail) {
-            openBookingSidebarCreation(utcDate);
-        } else {
-            setModalOpen(true);
-        }
+        openBookingSidebarCreation(utcDate);
     };
 
     return (
@@ -93,8 +85,6 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                         />
                     ))}
             </SidebarList>
-
-            {renderModal && <UpsellBookings {...modalProps} />}
         </>
     );
 };

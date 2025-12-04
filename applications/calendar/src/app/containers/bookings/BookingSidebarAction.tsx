@@ -5,12 +5,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
 import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
-import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 
 import './BookingSidebarAction.scss';
@@ -25,14 +23,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
     const [user] = useUser();
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
-    const [modalProps, setModalOpen, renderModal] = useModalState();
-
     const handleBookingPage = () => {
-        if (!user.hasPaidMail) {
-            setModalOpen(true);
-            return;
-        }
-
         openBookingSidebarCreation(utcDate);
     };
 
@@ -67,7 +58,6 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                     </DropdownMenuButton>
                 </DropdownMenu>
             </SimpleDropdown>
-            {renderModal && <UpsellBookings {...modalProps} />}
         </>
     );
 };

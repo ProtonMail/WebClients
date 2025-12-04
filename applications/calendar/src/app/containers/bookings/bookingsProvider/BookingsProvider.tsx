@@ -4,9 +4,11 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
+import { useUser } from '@proton/account/user/hooks';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { Product } from '@proton/shared/lib/ProductEnum';
@@ -21,6 +23,9 @@ import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider'
 import { ModalType } from '../../GlobalModals/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
 import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from '../interface';
+import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
+import { UpsellBookings } from '../upsells/UpsellBookings';
+import { useBookingUpsell } from '../upsells/useBookingUpsell';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
 import {
@@ -51,6 +56,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const { notify } = useCalendarGlobalModals();
     const { createNotification } = useNotifications();
 
+    const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings] = useCalendarUserSettings();
     const [writeableCalendars = []] = useWriteableCalendars();
@@ -65,6 +71,11 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
+
+    // Upsell modals
+    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
+    const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
+    const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
@@ -231,6 +242,22 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const openBookingSidebarCreation = (currentDate: Date) => {
+        const userReachedBookingLimit = shouldShowLimitModal();
+
+        if (userReachedBookingLimit.booking) {
+            setLimitModalOpen(true);
+            return;
+        }
+
+        if (userReachedBookingLimit.plan) {
+            if (user.canPay) {
+                setUpsellModalOpen(true);
+            } else {
+                setLimitModalOpen(true);
+            }
+            return;
+        }
+
         initializeFormData(currentDate);
         setBookingsState(BookingState.CREATE_NEW);
     };
@@ -348,7 +375,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const value: BookingsContextValue = {
-        canCreateBooking: writeableCalendars.length > 0,
+        canCreateBooking: writeableCalendars.length > 0 && !loadingLimits,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         bookingsState,
         openBookingSidebarCreation,
@@ -366,7 +393,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         getRangesAsLayoutEvents,
     };
 
-    return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;
+    return (
+        <BookingsContext.Provider value={value}>
+            {children}
+            {renderUpsellModal && <UpsellBookings {...upsellModalProps} />}
+            {renderLimitModal && <BookingsLimitReached {...limitModalProps} />}
+        </BookingsContext.Provider>
+    );
 };
 
 export const useBookings = () => {
