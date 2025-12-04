@@ -1185,9 +1185,20 @@
         "不支援的事件"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "未顯示 ${ hiddenResultsCount } 個結果"
+      ]
+    },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "在 ${ formattedDate } 試用結束後，其會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate } 前取消，則不會被收費。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You have reached the trial limit.": [
+        "您已達到試用限制。"
       ]
     },
     "b2b_trials_Action": {
@@ -2822,8 +2833,16 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "取得四倍的儲存空間"
+      ],
       "Share your plan": [
         "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
     "Email body for invitation": {
@@ -3411,6 +3430,11 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
       ]
     },
     "Error importing calendar": {
@@ -4281,6 +4305,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 位址以進行安全的事件同步與加密。立刻領取您的免費 ${ MAIL_APP_NAME } 位址。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -4407,6 +4434,12 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -4430,6 +4463,9 @@
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
       ],
       "Account successfully updated": [
         "帳號已成功更新"
@@ -4602,6 +4638,9 @@
       "Contact unassigned from group ${ contactGroupName }": [
         "聯絡資訊已從${ contactGroupName }群裡移除"
       ],
+      "Continue": [
+        "繼續"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "繼續使用 ${ DRIVE_APP_NAME } 並在稍後解鎖雲端硬碟"
       ],
@@ -4769,6 +4808,9 @@
       ],
       "End-to-end encrypted": [
         "端到端加密"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
       ],
       "Enter password": [
         "輸入密碼"
@@ -5943,6 +5985,9 @@
       "Your IP": [
         "您的 IP"
       ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "您的 IP 位址可見且可用於追蹤您的線上活動。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -6784,6 +6829,9 @@
       "Reactivate now": [
         "現在重新啟用"
       ],
+      "Reactivate subscription": [
+        "重新啟用訂閱"
+      ],
       "Request an invite": [
         "需求邀請"
       ],
@@ -7598,6 +7646,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫共享 (至多 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "與最多 ${ n } 個人分享保管庫"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -8660,6 +8711,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "試用期結束後，於 ${ formattedDate } 付費"
+      ],
       "Billing Country": [
         "計費國家"
       ],
@@ -8714,6 +8768,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月可享優惠價格。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
       ],
@@ -8744,6 +8804,9 @@
       "You already have a subscription to this plan.": [
         "您已訂閱此方案。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "將會重新導向至 PayPal 驗證您的付款。"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -8768,9 +8831,28 @@
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出了點問題。Google Pay 驗證失敗。"
+      ]
+    },
     "Payments.info": {
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您確定您要繼續嗎？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "若您選擇修改您的 ${ planTitle } 方案，可能會失去對某些功能的存取權。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我確定"
       ]
     },
     "Payments.plan_name": {
@@ -9039,11 +9121,20 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "每個推薦 ${ referrerRewardAmount }"
+      ],
       "Friend joined": [
         "已加入的親友"
       ],
       "Friend subscribed": [
         "已訂閱的親友"
+      ],
+      "More sharing options": [
+        "更多分享選項"
+      ],
+      "Refer friends": [
+        "推薦朋友"
       ]
     },
     "Safety review": {
@@ -9597,6 +9688,9 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app }儲存"
+      ],
+      "${ app } storage used": [
+        "已使用 ${ app } 儲存空間"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }${ percentage }% 滿"
@@ -10624,6 +10718,9 @@
       "Hm, we couldn't find that one": [
         "抱歉，我們找不到那個"
       ],
+      "How does it all work?": [
+        "這一切是如何運作的？"
+      ],
       "How does it work?": [
         "那是如何運作的？"
       ],
@@ -10971,6 +11068,9 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "升級以保留您的進階權益。"
       ],
       "Uploaded": [
         "已上載"
@@ -11322,6 +11422,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
       ]
     }
   }

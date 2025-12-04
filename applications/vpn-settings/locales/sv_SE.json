@@ -11709,6 +11709,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {
@@ -12303,6 +12306,9 @@
       ]
     },
     "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inklusive de i “Inkorg“, “Skickat“ och “Utkast“. Detta kan tömma meddelanden som användare förväntar sig att behålla. Det är inte möjligt att återställa dessa meddelanden senare."
+      ],
       "After ${ lifetime } day all messages will be deleted": [
         "Efter ${ lifetime } dag kommer alla meddelanden att tas bort",
         "Efter ${ lifetime } dagar kommer alla meddelanden att tas bort"
@@ -13494,6 +13500,9 @@
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Ställ in ett reservlösenord för att lägga till ett extra skyddslager. Det gör att du kan logga in om du blir utelåst, så se till att förvara det någonstans säkert."
+      ],
+      "Set identity": [
+        "Ställ in identitet"
       ],
       "Set your backup password": [
         "Ange ditt reservlösenord"

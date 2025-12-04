@@ -1499,8 +1499,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5010,10 +5009,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Wrong password": [
         "Forkert adgangskode"
@@ -7243,7 +7242,7 @@
         "Mappe"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
+        "For yderligere information og for at fjerne begrænsninger skal du logge ind på ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -7308,7 +7307,7 @@
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
-        "Hvis du mener vi har begået en fejl, bedes du ${ contactLink }."
+        "Hvis du mener, vi har begået en fejl, bedes du ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -7402,7 +7401,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8296,7 +8296,7 @@
         "For at gendanne dine data skal du genaktivere den konto-nøgle, der blev brugt på det tidspunkt, hvor dataene blev oprettet. Dette vil kræve, at du husker den adgangskode, der blev brugt, da nøglen blev genereret."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "For at fjerne restriktioner, kan du opgradere til et betalt abonnement"
+        "For at fjerne restriktioner kan du opgradere til et betalt abonnement"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "For at afmelde dig fra denne mailingliste, vil en e-mail blive sendt fra ${ boldFrom } med følgende detaljer som defineret af afsenderen af nyhedsbrevet:"
@@ -8510,9 +8510,6 @@
       ],
       "Week": [
         "Uge"
-      ],
-      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
-        "Vi har opgraderet din ${ DRIVE_APP_NAME }-lagerplads til 5 GB. Hold dine vigtige filer og fotos krypteret."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Hvornår ønsker du, at din besked automatisk skal slettes fra modtagerens indbakke og din sendt-mappe?"
@@ -14615,7 +14612,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account security": [
         "Kontosikkerhed"

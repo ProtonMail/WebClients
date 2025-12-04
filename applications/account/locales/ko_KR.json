@@ -412,6 +412,9 @@
       "Delete account": [
         "계정 삭제"
       ],
+      "Delete filter “${ Name }”": [
+        "필터 \"${ Name }\" 삭제"
+      ],
       "Delete Gateway": [
         "게이트웨이 삭제"
       ],
@@ -568,6 +571,9 @@
       "Edit servers": [
         "서버 편집"
       ],
+      "Edit Sieve filter “${ Name }”": [
+        "Sieve 필터 \"${ Name }\" 편집"
+      ],
       "Edit sign-in details": [
         "로그인 정보 변경"
       ],
@@ -621,6 +627,9 @@
       ],
       "Extend": [
         "연장"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "필터가 활성화되었습니다. 작업에 몇 분 정도 소요될 수 있습니다."
       ],
       "Fit to window": [
         "창에 맞게"
@@ -2477,6 +2486,11 @@
         "개인 이메일 주소는 디지털 신원의 가장 필수적인 부분입니다. 휴대전화 번호와 같이, 만나는 모든 사람에게 알려주지 않는 것이죠. 그렇기 때문에 다양한 용도로 사용할 수 있는 다른 이메일 주소를 갖는 것이 유용합니다."
       ]
     },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "최신 버전 찾기 실패"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
@@ -4227,6 +4241,11 @@
         "수요일"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "기본 이벤트 설정"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "알 수 없음"
@@ -5114,11 +5133,17 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Edit conditions": [
+        "조건 편집"
+      ],
       "Got it": [
         "확인"
       ],
       "Pause": [
         "일시 중지"
+      ],
+      "Remove “${ value }”": [
+        "\"${ value }\" 제거"
       ],
       "Save": [
         "저장"
@@ -5140,6 +5165,9 @@
       ]
     },
     "email_forwarding_2023: Header": {
+      "Actions": [
+        "작업"
+      ],
       "Forward from": [
         "전달한 사람:"
       ],
@@ -5148,6 +5176,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "다른 이메일 주소로 이메일을 자동으로 가져오세요."
+      ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "호환성을 위해 양자 내성 암호화가 비활성화되며 ${ boldForwarderEmail }에 대한 새 암호화 키가 생성됩니다."
       ],
@@ -5159,6 +5190,9 @@
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "종단 간 암호화 없는 주소 포워딩은 ${ boldForwarderEmail } 주소에 대한 종단 간 암호화 비활성화를 의미 합니다. 다만, 제로 엑세스 암호화는 여전히 활성화 상태로 유지됩니다. ${ learnMoreLink }"
+      ],
+      "No outgoing forwarding rules": [
+        "나가는 포워딩 규칙 없음."
       ],
       "The forwardee rejected the forwarding request": [
         "전달자가 포워딩 요청을 거절했습니다."
@@ -5211,6 +5245,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Delete forwarding?": [
+        "가져오기를 중단합니까?"
+      ],
       "Email forwarding deactivated": [
         "이메일 가져오기를 비활성화 했습니다."
       ],
@@ -6392,8 +6429,14 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } 이벤트 내보냄"
       ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "캘린더의 이벤트 복호화 중: ${ totalProcessed }/${ totalToProcess }"
+      ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "비밀번호 재설정으로 인해, 어떠한 이벤트도 복호화하거나 내보낼 수 없습니다."
+      ],
+      "Loading events": [
+        "이벤트 로딩 중"
       ],
       "Password reset - multiple events cannot be decrypted": [
         "비밀번호 재설정 - 여러 이벤트를 복호화 할 수 없음"
@@ -8237,6 +8280,9 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "편집 중인 그룹을 정말 삭제하시겠어요?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "정말로 이 캘린더를 지우시겠습니까? 모든 이벤트가 삭제됩니다."
       ],
       "Are you sure you want to delete this filter?": [
         "정말 이 필터를 삭제할까요?"
@@ -10362,6 +10408,9 @@
       "Version ${ version }": [
         "${ version } 버전"
       ],
+      "Version history": [
+        "버전 기록"
+      ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
       ],
@@ -11060,6 +11109,9 @@
       "Disabled": [
         "비활성화됨"
       ],
+      "Inactive": [
+        "비활성"
+      ],
       "Primary": [
         "우선 순위"
       ]
@@ -11067,6 +11119,11 @@
     "Key type hint": {
       "Faster": [
         "더 빠르게"
+      ]
+    },
+    "Key type option": {
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
       ]
     },
     "Keyboard shortcut name": {
@@ -11650,6 +11707,9 @@
       ],
       "Conversation grouping": [
         "대화 그룹"
+      ],
+      "Conversations per page": [
+        "페이지 당 대화"
       ],
       "Copy": [
         "복사"
@@ -12287,6 +12347,9 @@
       "Show week numbers": [
         "주 번호 표시"
       ],
+      "Sign external messages": [
+        "외부 메시지 서명"
+      ],
       "Signature": [
         "서명"
       ],
@@ -12515,6 +12578,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "${ MAIL_APP_NAME } 계정에 소유 중인 도메인을 추가하세요."
+      ]
+    },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "상시 이벤트 알림"
       ]
     },
     "Label for domain modal": {
@@ -14647,6 +14715,9 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation revoked": [
+        "초대 취소됨"
+      ],
       "Member added": [
         "구성원 추가됨"
       ],
@@ -14906,14 +14977,26 @@
       "19th of the month": [
         "매월 19일"
       ],
+      "1st of the month": [
+        "매월 1일"
+      ],
       "23rd of the month": [
         "매월 23일"
+      ],
+      "24th of the month": [
+        "매월 24일"
+      ],
+      "25th of the month": [
+        "매월 25일"
       ],
       "26th of the month": [
         "매월 26일"
       ],
       "30th of the month": [
         "매월 30일"
+      ],
+      "7th of the month": [
+        "매월 7일"
       ],
       "Add to existing group": [
         "병합할 그룹 추가"
@@ -15369,6 +15452,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "계속하면, 당사 ${ termsAndConditionsLink } 및 ${ privacyPolicyLink }에 동의하는 것으로 간주합니다."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "계속하면, 당사 ${ termsAndConditionsLink } 및 ${ privacyPolicyLink }, ${ referralPolicyLink }에 동의하는 것으로 간주됩니다."
       ],
       "Creating your account": [
         "계정을 생성하는 중"
@@ -16555,6 +16641,11 @@
       ],
       "your subscription": [
         "내 구독"
+      ]
+    },
+    "Remark about a key type option": {
+      "Post-quantum": [
+        "양자 내성"
       ]
     },
     "Remove calendar section description": {
@@ -20481,6 +20572,9 @@
       "Export": [
         "내보내기"
       ],
+      "Export private key": [
+        "개인 키 내보내기"
+      ],
       "External PGP settings": [
         "외부 PGP 설정"
       ],
@@ -21555,6 +21649,12 @@
       "Shared server policies can be applied to individual users or groups": [
         "공유 서버 정책은 개별 사용자 또는 그룹에 적용될 수 있습니다."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "메시지 목록에서 각 보낸 사람의 프로필 사진를 보여줍니다. 사진을 사용할 수 없는 경우 보낸 이의 이니셜이 표시됩니다."
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "이 키로 생성된 서명은 유효하지 않은 것으로 취급되며 이 키는 암호화에 사용할 수 없습니다."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오"
       ],
@@ -22423,6 +22523,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "이 키는 당사 보안 기준에 더 이상 적합하지 않습니다. 저희는 이 키를 오래된 것으로 표시하고 새 키를 생성하는 것을 권장합니다."
       ]
     },
     "Weekly recurring event, frequency": {

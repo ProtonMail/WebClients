@@ -261,9 +261,6 @@
       "Create a free account": [
         "უფასო ანგარიშის შექმნა"
       ],
-      "Create a new bookings page": [
-        "ახალი დაჯავშნის გვერდის შექმნა"
-      ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
@@ -5133,15 +5130,6 @@
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
-      "Booking already exists.": [
-        "ჯავშანი უკვე არსებობს."
-      ],
-      "Booking cannot be added in the past.": [
-        "ჯავშნის წარსულში დამატება შეუძლებელია."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "დაჯავშნა კონფლიქტშია არსებულ ჯავშანთან."
-      ],
       "Booking page deleted": [
         "დაჯავშნის გვერდი წაიშალა"
       ],
@@ -5171,9 +5159,6 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "ვერ პოულობთ მოვლენებს, რომლებსაც ეძებთ? ზოგიერთი მოვლენა დამალულ კალენდრებში ემთხვევა თქვენს მოთხოვნას. ამ შედეგების სანახავად ჩართეთ მათი ხილვადობა ${ hiddenWithItemsCalendarList }-სთვის."
-      ],
-      "Cannot create booking range across days": [
-        "დაჯავშნის შექმნა, რომელიც რამდენიმე დღე გრძელდება, შეუძლებელია"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
@@ -6129,9 +6114,6 @@
       ],
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "ერთ გვერდზე ${ MAX_BOOKING_SLOTS }-ზე მეტი ჯავშანი ვერ გექნებათ."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."

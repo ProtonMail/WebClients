@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a spreadsheet": [
+        "Opret et regneark"
+      ],
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
@@ -3127,10 +3130,10 @@
         "Upload er midlertidigt deaktiveret for denne mappe"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -5268,6 +5271,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Dine data forbliver dine. Opret og arbejd sammen med andre ved hjælp af funktionsrige regneark sikret med end-to-end kryptering."
+      ],
       "Your email address and password were leaked:": [
         "Din e-mailadresse og adgangskode er blevet lækket:"
       ],
@@ -5422,6 +5428,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Et skærmfoto af ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -7579,6 +7588,11 @@
         "Ubegrænsede aliasser til at beskytte din identitet"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Måske senere"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
@@ -9127,7 +9141,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account security": [
         "Kontosikkerhed"
@@ -9411,6 +9425,9 @@
       ],
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Introducerer ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"

@@ -316,7 +316,7 @@
         "Пацвердзіць куплю"
       ],
       "Connect": [
-        "Падключыцца"
+        "Падключыць"
       ],
       "Connect apps and devices": [
         "Падключыць праграмы і прылады"
@@ -5141,7 +5141,7 @@
         "2 ТБ сховішча для абагульвання"
       ],
       "2 user accounts": [
-        "2 уліковых запісаў карыстальнікаў"
+        "2 уліковыя запісы"
       ],
       "All premium features from your current plan": [
         "Усе прэміяльныя функцыі з вашага бягучага тарыфнага плана"
@@ -12816,7 +12816,7 @@
         "Аўтаскасаванне падпіскі"
       ],
       "Autofill": [
-        "Аўтазапоўніць"
+        "Аўтазапаўненне"
       ],
       "Autofill 2FA": [
         "Аўтазапаўненне 2ФА"
@@ -14006,7 +14006,7 @@
         "Разгорнуты"
       ],
       "Normal": [
-        "Звычайна"
+        "Звычайны"
       ]
     },
     "Label to change density": {
@@ -14272,6 +14272,9 @@
       "Terms": [
         "Умовы"
       ],
+      "terms of our referral program": [
+        "ўмовамі рэферальнай праграмы"
+      ],
       "Trouble signing in?": [
         "Праблемы з уваходам?"
       ],
@@ -14535,6 +14538,11 @@
       ],
       "For individuals": [
         "Асабісты"
+      ]
+    },
+    "mail_signup_2025: Info": {
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Усе праграмы ${ BRAND_NAME } for Business і прэміяльныя функцыі для яго комплекснай абароны"
       ]
     },
     "mailtrial2024: Action": {
@@ -17111,6 +17119,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink }, нашай ${ privacyPolicyLink } і ${ referralPolicyLink }"
       ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
@@ -20653,6 +20664,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Задаць рэзервовы пароль, каб дадаць дадатковы слой бяспекі. Ён дазволіць вам увайсці ў выпадку, калі вы не зможаце атрымаць доступ да свайго ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
       ],
+      "Set identity": [
+        "Задаць ідэнтычнасць"
+      ],
       "Set your backup password": [
         "Задаць рэзервовы пароль"
       ],
@@ -20676,6 +20690,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Запытаны ўваход на іншай прыладзе. Гэта былі вы?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Адзіны ўваход можа працаваць некарэктна без ідэнтычнасці арганізацыі. Задайце ідэнтычнасць, каб забяспечыць надзейную аўтэнтыфікацыю."
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"

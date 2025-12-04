@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create a spreadsheet": [
+        "Creeu un full de càlcul"
+      ],
       "Create and copy alias": [
         "Crea i copia un àlies"
       ],
@@ -5268,6 +5271,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Les vostres dades són vostres. Creeu i col·laboreu utilitzant fulls de càlcul amb totes les funcionalitats i protegits amb xifratge d'extrem a extrem."
+      ],
       "Your email address and password were leaked:": [
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
       ],
@@ -5422,6 +5428,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Una captura de pantalla de ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
@@ -7636,6 +7645,11 @@
         "Un nombre il·limitat d'àlies per protegir la vostra identitat"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Potser després"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
@@ -9468,6 +9482,9 @@
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Us presentem ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
