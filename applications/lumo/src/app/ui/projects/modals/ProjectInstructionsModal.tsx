@@ -5,27 +5,38 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
-
-import { useProjectActions } from '../hooks/useProjectActions';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useLumoDispatch } from '../../../redux/hooks';
+import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
+import type { Space } from '../../../types';
 
 import './ProjectInstructionsModal.scss';
 
 interface ProjectInstructionsModalProps extends ModalStateProps {
     projectId: string;
     currentInstructions?: string;
+    space: Space;
 }
 
 export const ProjectInstructionsModal = ({
     projectId,
     currentInstructions,
+    space,
     ...modalProps
 }: ProjectInstructionsModalProps) => {
     const [instructions, setInstructions] = useState(currentInstructions || '');
-    const { updateProjectInstructions } = useProjectActions();
+    const dispatch = useLumoDispatch();
 
     const handleSave = () => {
-        updateProjectInstructions(projectId, instructions);
+        // Update the space with new instructions, preserving all other data
+        const updatedSpace = {
+            ...space,
+            projectInstructions: instructions || undefined,
+        };
+        
+        dispatch(addSpace(updatedSpace));
+        dispatch(pushSpaceRequest({ id: projectId }));
         modalProps.onClose?.();
     };
 

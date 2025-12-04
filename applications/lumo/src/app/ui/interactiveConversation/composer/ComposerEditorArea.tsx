@@ -111,11 +111,21 @@ export const ComposerEditorArea = ({
                 e.preventDefault();
                 e.stopPropagation();
                 setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
-            } else if (e.key === 'Enter' && files.length > 0) {
-                e.preventDefault();
-                const fileToSelect = files[selectedIndex];
-                if (fileToSelect) {
-                    selectFile(fileToSelect);
+            } else if (e.key === 'Enter') {
+                if (files.length > 0) {
+                    // Select the file from autocomplete
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const fileToSelect = files[selectedIndex];
+                    if (fileToSelect) {
+                        selectFile(fileToSelect);
+                    }
+                } else if (!e.shiftKey) {
+                    // No files to select, close mention and submit (desktop behavior)
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMention();
+                    onSubmit();
                 }
             } else if (e.key === 'Escape') {
                 e.preventDefault();
@@ -126,7 +136,7 @@ export const ComposerEditorArea = ({
 
         editorElement.addEventListener('keydown', handleKeyDown, true);
         return () => editorElement.removeEventListener('keydown', handleKeyDown, true);
-    }, [editor, mentionState.isActive, files, selectedIndex, selectFile, closeMention]);
+    }, [editor, mentionState.isActive, files, selectedIndex, selectFile, closeMention, onSubmit]);
 
     return (
         <div
@@ -143,7 +153,7 @@ export const ComposerEditorArea = ({
             {/* File mention autocomplete dropdown */}
             {mentionState.isActive && mentionState.position && files.length > 0 && (
                 <div
-                    className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-50 max-h-80 overflow-y-auto min-w-72 py-1"
+                    className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] max-h-80 overflow-y-auto min-w-72 py-1"
                     style={{
                         top: `${mentionState.position.top}px`,
                         left: `${mentionState.position.left}px`,
@@ -153,7 +163,12 @@ export const ComposerEditorArea = ({
                     {files.map((file, index) => {
                         const mimeType = file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
                         const query = mentionState.query.toLowerCase();
-                        const fileName = file.name;
+                        const fullPath = file.name;
+                        
+                        // Split path into folder and filename for better display
+                        const lastSlashIndex = fullPath.lastIndexOf('/');
+                        const folderPath = lastSlashIndex > 0 ? fullPath.substring(0, lastSlashIndex) : '';
+                        const fileName = lastSlashIndex > 0 ? fullPath.substring(lastSlashIndex + 1) : fullPath;
                         
                         // Highlight matching text
                         const highlightText = (text: string, query: string): { text: string; isMatch: boolean }[] => {
@@ -190,13 +205,14 @@ export const ComposerEditorArea = ({
                             return parts.length > 0 ? parts : [{ text, isMatch: false }];
                         };
                         
-                        const highlightedParts = highlightText(fileName, query);
+                        const highlightedFileNameParts = highlightText(fileName, query);
+                        const highlightedFolderParts = folderPath ? highlightText(folderPath, query) : [];
                         
                         return (
                             <button
                                 key={`${file.source}-${file.id}`}
                                 type="button"
-                                className={`w-full text-left px-4 py-2 hover:bg-weak transition-colors flex items-center gap-3 ${
+                                className={`w-full text-left px-4 py-3 hover:bg-weak transition-colors flex items-center gap-3 ${
                                     index === selectedIndex ? 'bg-weak' : ''
                                 }`}
                                 onClick={() => selectFile(file)}
@@ -207,16 +223,30 @@ export const ComposerEditorArea = ({
                                 ) : (
                                     <Icon name="file-lines" size={3.5} className="color-weak flex-shrink-0" />
                                 )}
-                                <span className="flex-1 truncate text-sm">
-                                    {highlightedParts.map((part, partIndex) => (
-                                        <span
-                                            key={partIndex}
-                                            className={part.isMatch ? 'font-semibold color-primary' : ''}
-                                        >
-                                            {part.text}
-                                        </span>
-                                    ))}
-                                </span>
+                                <div className="flex-1 min-w-0">
+                                    {folderPath && (
+                                        <div className="text-xs color-weak truncate mb-0.5">
+                                            {highlightedFolderParts.map((part, partIndex) => (
+                                                <span
+                                                    key={partIndex}
+                                                    className={part.isMatch ? 'font-medium color-primary' : ''}
+                                                >
+                                                    {part.text}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <div className="text-sm truncate">
+                                        {highlightedFileNameParts.map((part, partIndex) => (
+                                            <span
+                                                key={partIndex}
+                                                className={part.isMatch ? 'font-semibold color-primary' : ''}
+                                            >
+                                                {part.text}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                                 {file.source === 'drive' && (
                                     <IcBrandProtonDrive size={3} className="color-primary flex-shrink-0 opacity-70" />
                                 )}
