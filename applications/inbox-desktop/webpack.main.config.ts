@@ -27,6 +27,7 @@ export const mainConfig: Configuration = {
             "process.env.IDA_TAG": JSON.stringify(process.env.IDA_TAG),
             "process.env.DESKTOP_SENTRY_DSN": JSON.stringify(sentryDSN),
             "process.env.IS_SNAP": JSON.stringify(process.env.IS_SNAP),
+            "process.env.PLAYWRIGHT_TEST": JSON.stringify(process.env.PLAYWRIGHT_TEST),
         }),
     ],
     resolve: {
