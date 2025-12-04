@@ -1036,6 +1036,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åpne i ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -1494,10 +1497,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -7399,7 +7398,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8507,9 +8507,6 @@
       ],
       "Week": [
         "Uke"
-      ],
-      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
-        "Vi har oppgradert lagringsplassen for ${ DRIVE_APP_NAME } til 5 GB. Hold viktige filer og bilder kryptert."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Når vil du at meldingen skal slettes automatisk fra mottakerens innboks og den sendte mappen?"
@@ -15463,6 +15460,9 @@
       ],
       "To": [
         "Til"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
       ],
       "Trash": [
         "Papirkurv"
