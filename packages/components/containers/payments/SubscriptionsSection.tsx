@@ -9,7 +9,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -25,6 +24,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import {
     Renew,
     type Subscription,
@@ -36,8 +36,10 @@ import {
     isManagedExternally,
     isUpcomingSubscriptionUnpaid,
 } from '@proton/payments';
-import { shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription } from '@proton/payments/core/subscription/helpers';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import {
+    shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription,
+    isReferralTrial,
+} from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -133,9 +135,9 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
     const renewAmount =
         upcoming && isUpcomingSubscriptionUnpaid(subscription)
-            ? // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and take
-              // into account the actual amount that take into account coupons. But currently we need to fallback to
-              // BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
+            ? // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and
+              // take into account the actual amount that take into account coupons. But currently we need to fallback
+              // to BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
               // sense to use RenewAmount for unpaid upcoming subscription because we want to know what user will pay
               // when we actually trigger the charge for this subscription term.
               upcoming.Amount || upcoming.BaseRenewAmount

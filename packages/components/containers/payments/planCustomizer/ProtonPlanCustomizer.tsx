@@ -491,9 +491,14 @@ export const ProtonPlanCustomizer = ({
         [allowedAddonTypes]
     );
 
-    const addons = (Object.keys(supportedAddons) as ADDON_NAMES[]).sort(
-        (a, b) => getAddonDisplayOrder(a) - getAddonDisplayOrder(b)
-    );
+    const addons = (Object.keys(supportedAddons) as ADDON_NAMES[])
+        .filter((addonName) => {
+            // Some cycles don't support some addons. For example, if user buys vpn2024 6m then 1lumo-vpn2024 doesn't
+            // support 6m. So we hide the lumo addon in this case.
+            const addonSupportsSelectedCycle = !!plansMap[addonName]?.Pricing[cycle];
+            return addonSupportsSelectedCycle;
+        })
+        .sort((a, b) => getAddonDisplayOrder(a) - getAddonDisplayOrder(b));
 
     return (
         <div
