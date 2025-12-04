@@ -5,11 +5,20 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "O aplikaciji ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Stvarna veličina"
       ],
+      "Check spelling while typing": [
+        "Provjeravaj pravopis tijekom tipkanja"
+      ],
       "Clear application data": [
         "Izbriši podatke aplikacije"
+      ],
+      "Close Window": [
+        "Zatvori prozor"
       ],
       "Copy": [
         "Kopiraj"
@@ -20,6 +29,12 @@
       "Delete": [
         "Izbriši"
       ],
+      "Force Reload": [
+        "Prisilno ponovno učitaj"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Sakrij ${ MAIL_APP_NAME }"
+      ],
       "Hide Others": [
         "Sakrij ostale"
       ],
@@ -29,8 +44,14 @@
       "Paste": [
         "Zalijepi"
       ],
+      "Paste and Match Style": [
+        "Zalijepi i uskladi stil"
+      ],
       "Quit": [
         "Zatvori"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Izađi iz ${ MAIL_APP_NAME }"
       ],
       "Redo": [
         "Ponovi"
@@ -50,14 +71,23 @@
       "Speech": [
         "Govor"
       ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Pokreni ${ MAIL_APP_NAME } prilikom prijave"
+      ],
       "Start Speaking": [
         "Započnite govoriti"
       ],
       "Stop Speaking": [
-        "Prekinite govoriti"
+        "Prekini govoriti"
+      ],
+      "Toggle Full Screen": [
+        "Uključi/isključi prikaz preko cijelog zaslona"
       ],
       "Undo": [
         "Poništi"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Deinstaliraj ${ MAIL_APP_NAME }"
       ],
       "Zoom": [
         "Povećaj"
@@ -75,8 +105,14 @@
       ]
     },
     "Context menu": {
+      "Add to dictionary": [
+        "Dodaj u rječnik"
+      ],
       "Copy link": [
         "Kopiraj poveznicu"
+      ],
+      "Emoji and Symbols": [
+        "Emoji i simboli"
       ],
       "Save image as…": [
         "Spremi sliku kao…"
@@ -88,7 +124,7 @@
         "Započnite govoriti"
       ],
       "Stop Speaking": [
-        "Prekinite govoriti"
+        "Prekini govoriti"
       ]
     },
     "Context Menu": {
@@ -98,8 +134,14 @@
       "Cut": [
         "Izreži"
       ],
+      "Look Up “${ text }”": [
+        "Potraži „${ text }”"
+      ],
       "Paste": [
         "Zalijepi"
+      ],
+      "Paste and Match Style": [
+        "Zalijepi i uskladi stil"
       ],
       "Redo": [
         "Ponovi"
@@ -112,13 +154,27 @@
       ]
     },
     "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Aplikacija će se zatvoriti zbog greške. Pokušajte ju ponovno pokrenuti, a ako se problem nastavi obratite se korisničkoj podršci. Informacije o grešci mogu se pronaći u aplikacijinim zapisnicima."
+      ],
       "Unexpected error": [
         "Neočekivana pogreška"
       ]
     },
     "error screen": {
+      "Cannot establish connection": [
+        "Nije moguće uspostaviti vezu"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Provjerite svoju internetsku vezu ili mrežne postavke. Ako se problemi nastave, obratite se korisničkoj podršci."
+      ],
       "Try again": [
         "Pokušaj ponovno"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Učitavanje ${ title }…"
       ]
     },
     "Menu": {
@@ -129,7 +185,7 @@
         "Datoteka"
       ],
       "View": [
-        "Pogledaj"
+        "Prikaz"
       ],
       "Window": [
         "Prozor"
@@ -143,7 +199,7 @@
         "Napusti"
       ],
       "Leave page?": [
-        "Napusti stranicu?"
+        "Napustiti stranicu?"
       ],
       "Stay": [
         "Ostani"
