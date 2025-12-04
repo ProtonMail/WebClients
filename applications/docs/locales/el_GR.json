@@ -244,6 +244,9 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create a spreadsheet": [
+        "Δημιουργήστε ένα υπολογιστικό φύλλο"
+      ],
       "Create and copy alias": [
         "Δημιουργία και αντιγραφή ψευδωνύμου"
       ],
@@ -5265,6 +5268,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Τα δεδομένα σας παραμένουν δικά σας. Δημιουργήστε και συνεργαστείτε χρησιμοποιώντας πλήρως εξοπλισμένα υπολογιστικά φύλλα προστατευμένα με διατερματική κρυπτογράφηση."
+      ],
       "Your email address and password were leaked:": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασής σας διέρρευσαν:"
       ],
@@ -5419,6 +5425,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Ένα στιγμιότυπο οθόνης του ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -7576,6 +7585,11 @@
         "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Ίσως αργότερα"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " επισκεφθείτε το ${ helpCenterLink } ή ${ contactSupportLink }."
@@ -9408,6 +9422,9 @@
       ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Παρουσιάζουμε το ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
