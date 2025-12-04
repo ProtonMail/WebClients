@@ -14,6 +14,9 @@
       "Add another account": [
         "Weiteres Konto hinzufügen"
       ],
+      "Agree and continue": [
+        "Akzeptieren und fortfahren"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } zum Organisator machen"
       ],
@@ -74,6 +77,12 @@
       "Delete": [
         "Löschen"
       ],
+      "Disable ${ participantName }'s video": [
+        "${ participantName }s Kamera deaktivieren"
+      ],
+      "Disable camera": [
+        "Kamera deaktivieren"
+      ],
       "Dismiss": [
         "Verwerfen"
       ],
@@ -88,6 +97,9 @@
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
+      ],
+      "Enable camera": [
+        "Kamera aktivieren"
       ],
       "Enable video": [
         "Video aktivieren"
@@ -131,6 +143,9 @@
       "Kick out": [
         "Rauswerfen"
       ],
+      "Kick out ${ participantName }": [
+        "${ participantName } rauswerfen"
+      ],
       "Leave": [
         "Verlassen"
       ],
@@ -145,6 +160,9 @@
       ],
       "More options for accounts": [
         "Mehr Optionen für Konten"
+      ],
+      "Mute ${ participantName }": [
+        "${ participantName } stumm schalten"
       ],
       "Next month": [
         "Nächster Monat"
@@ -239,6 +257,9 @@
       "Start meeting": [
         "Meeting starten"
       ],
+      "Start recording": [
+        "Aufzeichnung starten"
+      ],
       "Stay in meeting": [
         "Im Meeting bleiben"
       ],
@@ -250,6 +271,9 @@
       ],
       "Stop receiving video": [
         "Eingehendes Video stoppen"
+      ],
+      "Stop recording": [
+        "Aufzeichnung stoppen"
       ],
       "Submit": [
         "Senden"
@@ -1380,6 +1404,12 @@
       "Failed to rotate personal meeting link": [
         "Fehler beim Rotieren deines persönlichen Meeting-Links"
       ],
+      "Failed to save recording": [
+        "Fehler beim Speichern der Aufnahme"
+      ],
+      "Failed to start recording": [
+        "Fehler beim Starten der Aufzeichnung"
+      ],
       "Failed to start screen share": [
         "Die Bildschirmfreigabe konnte nicht gestartet werden."
       ],
@@ -1574,6 +1604,9 @@
       "${ user.DisplayName }'s Meeting": [
         "${ user.DisplayName }s Meeting"
       ],
+      "(You)": [
+        "(Du)"
+      ],
       "(you)": [
         "(Du)"
       ],
@@ -1588,6 +1621,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Wenn du im Meeting bleibst, erklärst du dich damit einverstanden, dass es aufgezeichnet wird."
       ],
       "camera": [
         "Kamera"
@@ -1802,6 +1838,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Unsere Ende-zu-Ende-verschlüsselten Meetings schützen deine Privatsphäre und ermöglichen wirklich freie Meinungsäußerung."
       ],
+      "participant": [
+        "Teilnehmer"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Deinen ${ MEET_APP_NAME }-Link einfügen, um einem sicheren Meeting beizutreten."
       ],
@@ -1816,6 +1855,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Bitte gib die Passphrase ein, um dieses Meeting zu entschlüsseln und anzuzeigen."
+      ],
+      "Recording saved": [
+        "Aufzeichnung gespeichert"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -1864,6 +1906,9 @@
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit flüchtigen Nachrichten. Nachdem du den Anruf verlassen hast, wirst du nicht mehr auf diesen Chat zugreifen können."
+      ],
+      "This meeting is being recorded": [
+        "Dieses Meeting wird aufgezeichnet"
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Diese Besprechung ist gesperrt. Bitte kontaktiere den Gastgeber, um beizutreten."
@@ -2244,6 +2289,9 @@
       "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
+      "Activity events": [
+        "Aktivitäten"
+      ],
       "Are you sure?": [
         "Bist du sicher?"
       ],
@@ -2264,6 +2312,12 @@
       ],
       "Epoch": [
         "Schlüssel-Epoche"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoche ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Fehler bei Epoche ${ log.epoch }"
       ],
       "Help and feedback": [
         "Hilfe und Feedback"
@@ -2291,6 +2345,9 @@
       ],
       "Join with link": [
         "Mit Link beitreten"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Mit Epoche ${ log.epoch } beigetreten"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "Teilnahme an Besprechung mit ${ participantCount } weiteren Teilnehmern …"

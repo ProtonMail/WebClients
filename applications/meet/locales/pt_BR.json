@@ -14,6 +14,9 @@
       "Add another account": [
         "Adicionar outra conta"
       ],
+      "Agree and continue": [
+        "Concordar e continuar"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Atribuir ${ selectedParticipantName } como anfitrião"
       ],
@@ -254,6 +257,9 @@
       "Start meeting": [
         "Iniciar reunião"
       ],
+      "Start recording": [
+        "Iniciar gravação"
+      ],
       "Stay in meeting": [
         "Ficar na reunião"
       ],
@@ -265,6 +271,9 @@
       ],
       "Stop receiving video": [
         "Parar de receber vídeo"
+      ],
+      "Stop recording": [
+        "Parar a gravação"
       ],
       "Submit": [
         "Enviar"
@@ -1395,6 +1404,12 @@
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
       ],
+      "Failed to save recording": [
+        "Erro ao salvar a gravação"
+      ],
+      "Failed to start recording": [
+        "Erro ao iniciar a gravação"
+      ],
       "Failed to start screen share": [
         "Erro ao iniciar o compartilhamento de tela"
       ],
@@ -1609,6 +1624,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Ao continuar na reunião, você reconhece e consente em ser gravado."
       ],
       "camera": [
         "Câmera"
@@ -1841,6 +1859,9 @@
       "Please enter the passphrase to decrypt and view this meeting": [
         "Insira a frase secreta para descriptografar e visualizar esta reunião."
       ],
+      "Recording saved": [
+        "A gravação foi salva"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
@@ -1888,6 +1909,9 @@
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Este é um chat criptografado de ponta a ponta com mensagens efêmeras. Depois que você sair da chamada, você não conseguirá acessar este chat."
+      ],
+      "This meeting is being recorded": [
+        "Esta reunião está sendo gravada"
       ],
       "This meeting is locked. Please contact the host to join.": [
         "A reunião está bloqueada. Entre em contato com o anfitrião para participar."
