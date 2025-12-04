@@ -261,7 +261,7 @@
       "Create a free account": [
         "Opret en gratis konto"
       ],
-      "Create a new bookings page": [
+      "Create a new booking page": [
         "Opret en ny bookingside"
       ],
       "Create a new contact group": [
@@ -3809,9 +3809,6 @@
       "Process aborted": [
         "Proces afbrudt"
       ],
-      "Range is too short": [
-        "Interval er for kort"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Fjernede dublet af modtager: ${ joinedRecipients }",
         "Fjernede dubletter af modtagere: ${ joinedRecipients }"
@@ -3931,10 +3928,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -5213,15 +5210,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
-      "Booking already exists.": [
-        "Reservation eksisterer allerede."
-      ],
-      "Booking cannot be added in the past.": [
-        "En reservation kan ikke tilføjes i fortiden."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Din reservation overlapper med en eksisterende reservation."
-      ],
       "Booking page deleted": [
         "Reservationsside slettet"
       ],
@@ -5252,10 +5240,10 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Kan du ikke finde den begivenhed du leder efter? Nogle begivenheder i skjulte kalendere matcher din forespørgsel. For at se disse resultater, skal du slå synlighed til for ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Kan ikke oprette reservationsperiode på tværs af dage"
+      "Cannot create a range across days.": [
+        "Kan ikke oprette reservationsperiode på tværs af dage."
       ],
-      "Cannot create booking range in the past.": [
+      "Cannot create a range in the past.": [
         "Kan ikke oprette reservationsperiode i fortiden."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
@@ -5861,6 +5849,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
+      "Range already exists.": [
+        "Intervallet findes allerede."
+      ],
+      "Range is too short.": [
+        "Interval er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Din reservation overlapper med en eksisterende reservation."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
@@ -6260,9 +6257,6 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Du kan ikke have mere end ${ MAX_BOOKING_SLOTS } reservationspladser på en side."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -11278,7 +11272,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account security": [
         "Kontosikkerhed"
