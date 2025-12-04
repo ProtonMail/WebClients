@@ -1251,9 +1251,20 @@
         "不支援的事件"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "未顯示 ${ hiddenResultsCount } 個結果"
+      ]
+    },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "在 ${ formattedDate } 試用結束後，其會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate } 前取消，則不會被收費。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You have reached the trial limit.": [
+        "您已達到試用限制。"
       ]
     },
     "b2b_trials_Action": {
@@ -3116,8 +3127,16 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "取得四倍的儲存空間"
+      ],
       "Share your plan": [
         "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
     "edm": {
@@ -3710,6 +3729,11 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
       ]
     },
     "Error importing calendar": {
@@ -5119,6 +5143,9 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "從其他雙重驗證應用程式**匯入您的現有代碼**，例如 Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
       "**Sync codes** to all your devices": [
         "**同步代碼**到您的所有裝置"
       ],
@@ -5362,6 +5389,9 @@
       "Connection data will be available in around 1 hour.": [
         "連結資料將於約1小時後為可用"
       ],
+      "Continue": [
+        "繼續"
+      ],
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
       ],
@@ -5589,6 +5619,9 @@
       ],
       "Enhance your network security": [
         "強化您的網路安全"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
       ],
       "Enter key manually instead": [
         "改為手動輸入金鑰"
@@ -8166,6 +8199,9 @@
       "Reactivate now": [
         "現在重新啟用"
       ],
+      "Reactivate subscription": [
+        "重新啟用訂閱"
+      ],
       "Request an invite": [
         "需求邀請"
       ],
@@ -8992,6 +9028,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫共享 (至多 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "與最多 ${ n } 個人分享保管庫"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -10073,6 +10112,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "試用期結束後，於 ${ formattedDate } 付費"
+      ],
       "Billing Country": [
         "計費國家"
       ],
@@ -10133,6 +10175,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月可享優惠價格。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
       ],
@@ -10163,6 +10211,9 @@
       "You already have a subscription to this plan.": [
         "您已訂閱此方案。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "將會重新導向至 PayPal 驗證您的付款。"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -10187,9 +10238,28 @@
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出了點問題。Google Pay 驗證失敗。"
+      ]
+    },
     "Payments.info": {
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您確定您要繼續嗎？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "若您選擇修改您的 ${ planTitle } 方案，可能會失去對某些功能的存取權。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我確定"
       ]
     },
     "Payments.plan_name": {
@@ -10519,6 +10589,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "每個推薦 ${ referrerRewardAmount }"
+      ],
+      "Refer friends": [
+        "推薦朋友"
       ]
     },
     "Restore administrator panel": {
@@ -11330,6 +11408,9 @@
       "${ n } user converted to SSO": [
         "${ n }位使用者轉換至單一登入"
       ],
+      "${ n } user detached from SSO": [
+        "${ n } 個使用者已從 SSO 脫鉤"
+      ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n }使用者透過您的身分提供者已加入您的組織機構。立即查看帳號:"
       ],
@@ -11590,6 +11671,9 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app }儲存"
+      ],
+      "${ app } storage used": [
+        "已使用 ${ app } 儲存空間"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }${ percentage }% 滿"
@@ -13296,6 +13380,9 @@
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "升級以保留您的進階權益。"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "透過專用伺服器提升您的網路保護"
       ],
@@ -13966,6 +14053,9 @@
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
         "您的復原短語已過時，若您再次重設您的密碼，該短語將無法還原新的資料。"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
       ]
     },
     "Warning for domain modal": {
