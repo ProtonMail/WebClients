@@ -42,12 +42,16 @@ const config: ForgeConfig = {
         // Change category type of the application on macOS
         appCategoryType: "public.app-category.productivity",
         appBundleId: pkg.config.appBundleId,
-        osxSign: {},
-        osxNotarize: {
-            appleId: process.env.APPLE_ID!,
-            appleIdPassword: process.env.APPLE_PASSWORD!,
-            teamId: process.env.APPLE_TEAM_ID!,
-        },
+        ...(process.env.SKIP_CODESIGN === "true"
+            ? {}
+            : {
+                  osxSign: {},
+                  osxNotarize: {
+                      appleId: process.env.APPLE_ID!,
+                      appleIdPassword: process.env.APPLE_PASSWORD!,
+                      teamId: process.env.APPLE_TEAM_ID!,
+                  },
+              }),
         extendInfo: {
             ...getAppTransportSecuity(),
         },
@@ -63,7 +67,7 @@ const config: ForgeConfig = {
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
                 vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
                 signWithParams:
-                    process.env.WINDOWS_PACKAGE_SIGNING === "yes"
+                    process.env.SKIP_CODESIGN !== "true" && process.env.WINDOWS_PACKAGE_SIGNING === "yes"
                         ? `/a /d "Proton Mail Desktop" /t "http://timestamp.sectigo.com" /fd SHA256`
                         : undefined,
             },
@@ -177,7 +181,8 @@ const config: ForgeConfig = {
             // Disables the NODE_OPTIONS environment variable
             [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
             // Disables the --inspect and --inspect-brk family of CLI options
-            [FuseV1Options.EnableNodeCliInspectArguments]: false,
+            // Must be set to true in order for Playwright to connect to Electron.
+            [FuseV1Options.EnableNodeCliInspectArguments]: process.env.PLAYWRIGHT_TEST === "true",
             // Enables validation of the app.asar archive on macOS
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths

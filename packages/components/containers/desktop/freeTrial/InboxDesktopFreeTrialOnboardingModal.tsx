@@ -28,7 +28,7 @@ export const InboxDesktopFreeTrialOnboardingModal = ({ ...modalState }: ModalPro
     };
 
     return (
-        <ModalTwo size="small" {...modalState} onClose={startFreeTrial}>
+        <ModalTwo size="small" {...modalState} onClose={startFreeTrial} data-testid="inbox-desktop-free-trial-modal">
             <ModalTwoContent className="text-center mt-8 mb-4 flex gap-6 flex-column">
                 <img src={protonDesktop} alt={c('Free trial desktop').t`${MAIL_APP_NAME} desktop app`} />
                 <div>
@@ -37,8 +37,13 @@ export const InboxDesktopFreeTrialOnboardingModal = ({ ...modalState }: ModalPro
                         .t`Enjoy fast, secure, and distraction-free access to your inbox and calendar.`}</p>
                 </div>
                 <div>
-                    <Button color="norm" size="large" onClick={handleClose} fullWidth>{c('Free trial desktop')
-                        .t`Start free trial`}</Button>
+                    <Button
+                        color="norm"
+                        size="large"
+                        onClick={handleClose}
+                        fullWidth
+                        data-testid="inbox-desktop-start-free-trial-modal-button"
+                    >{c('Free trial desktop').t`Start free trial`}</Button>
                     <div className="text-center flex flex-column color-weak text-sm gap-0.5 mt-4">
                         <p className="m-0">{c('Free trial desktop').t`14-day desktop app trial.`}</p>
                         <p className="m-0">{c('Free trial desktop').t`No credit card required.`}</p>

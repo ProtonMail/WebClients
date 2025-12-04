@@ -23,6 +23,7 @@
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "yarn run check:lint",
         "make": "electron-forge make",
+        "make-test": "SKIP_CODESIGN=true PLAYWRIGHT_TEST=true electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "make:snap": "IS_SNAP=1 electron-forge make --platform=linux --arch=x64 --targets=@electron-forge/maker-deb && bash ./scripts/package_snap.sh",
         "negativity": "electronegativity -i ./src",
