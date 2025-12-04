@@ -24,7 +24,7 @@ export function FormatMenu({ renderMenuButton, ...props }: FormatMenuProps) {
         <ThemeSubmenu />
         <TableFormattingSubmenu />
         <CellStylesSubmenu />
-        <UI.MenuSeparator />
+        {/* <UI.MenuSeparator /> */}
         <NumberSubmenu />
         <TextSubmenu />
         <AlignmentSubmenu />
@@ -57,6 +57,9 @@ function ThemeSubmenu() {
 }
 
 function TableFormattingSubmenu() {
+  // TODO: implement
+  return
+  // biome-ignore lint/correctness/noUnreachable: kept for the future
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton
@@ -74,6 +77,9 @@ function TableFormattingSubmenu() {
 }
 
 function CellStylesSubmenu() {
+  // TODO: implement
+  return
+  // biome-ignore lint/correctness/noUnreachable: kept for the future
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.brush} />} disabled={useUI((ui) => ui.info.isReadonly)}>
@@ -339,7 +345,7 @@ function ClearSubmenu() {
           onClick={useUI.$.withFocusGrid(useUI.$.format.clear)}
           disabled={useUI((ui) => ui.info.isReadonly)}
         >
-          {s('Clear formatting')} (broken)
+          {s('Clear formatting')}
         </UI.MenuItem>
         <UI.MenuItem
           leadingIconSlot={<UI.Icon legacyName="cross-big" />}

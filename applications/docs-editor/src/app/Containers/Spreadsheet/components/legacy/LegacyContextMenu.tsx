@@ -10,6 +10,7 @@ import {
   DotsVerticalIcon,
   EyeNoneIcon,
   FunnelIcon,
+  Link1Icon,
   MdOutlineFactCheck,
   PaintBrush,
   PlusIcon,
@@ -18,11 +19,11 @@ import {
   SizeIcon,
   SortDownIcon,
   SortUpIcon,
-  SpaceBetweenHorizontallyIcon,
+  //   SpaceBetweenHorizontallyIcon,
   TableIcon,
   TrashIcon,
   ViewGridIcon,
-  WandIcon,
+  //   WandIcon,
 } from '@rowsncolumns/icons'
 import {
   DropdownLeftSlot,
@@ -48,6 +49,11 @@ import {
   type SortOrder,
   useGetContentfulRangeAroundCell,
 } from '@rowsncolumns/spreadsheet'
+import { useUI } from '../../ui-store'
+import { createStringifier } from '../../stringifier'
+import { c, msgid } from 'ttag'
+
+const { s } = createStringifier(strings)
 
 export type LegacyContextMenuProps = {
   activeCell: CellInterface
@@ -170,6 +176,7 @@ export function LegacyContextMenu({
   onAddQuickEdit,
   enableMagicFill,
 }: LegacyContextMenuProps) {
+  const insertLink = useUI.$.insert.link
   const isHeader = isColumnHeader || isRowHeader
   const shouldFocusSheetRef = useRef(true)
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
@@ -327,7 +334,7 @@ export function LegacyContextMenu({
           <DropdownLeftSlot>
             <CopyIcon />
           </DropdownLeftSlot>
-          Copy <DropdownRightSlot>⌘C</DropdownRightSlot>
+          {s('Copy')} <DropdownRightSlot>⌘C</DropdownRightSlot>
         </DropdownMenuItem>
         {/* <DropdownMenuItem onClick={() => onPaste?.()} disabled={readonly}>
           <DropdownLeftSlot>
@@ -354,7 +361,7 @@ export function LegacyContextMenu({
           </DropdownMenuSubContent>
         </DropdownMenuSub> */}
 
-        {enableMagicFill ? (
+        {/* {enableMagicFill ? (
           <>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onAddQuickEdit({ ...selection.range, sheetId })} disabled={readonly}>
@@ -364,24 +371,24 @@ export function LegacyContextMenu({
               AI Quick Edit
             </DropdownMenuItem>
           </>
-        ) : null}
+        ) : null} */}
 
         <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={readonly}>
             <DropdownLeftSlot>
               <Cross1Icon />
             </DropdownLeftSlot>
-            Clear
+            {s('Clear')}
             <DropdownRightSlot>
               <ChevronRightIcon />
             </DropdownRightSlot>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent sideOffset={2} alignOffset={-5}>
             <DropdownMenuItem onClick={() => onClearFormatting?.(sheetId, activeCell, selections)} disabled={readonly}>
-              Clear formats
+              {s('Clear formats')}
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => onClearContents?.(sheetId, activeCell, selections)} disabled={readonly}>
-              Clear contents
+              {s('Clear contents')}
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
@@ -397,7 +404,9 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PlusIcon />
               </DropdownLeftSlot>
-              Insert {selectedColumnHeadersIds.length} column left
+              <span>
+                {s('Insert')} <b>{columnsString(selectedColumnHeadersIds.length)}</b> {s('left')}
+              </span>
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() =>
@@ -412,14 +421,16 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PlusIcon />
               </DropdownLeftSlot>
-              Insert {selectedColumnHeadersIds.length} column right
+              <span>
+                {s('Insert')} <b>{columnsString(selectedColumnHeadersIds.length)}</b> {s('right')}
+              </span>
             </DropdownMenuItem>
 
             <DropdownMenuItem onClick={() => onDeleteColumn?.(sheetId, selectedColumnHeadersIds)} disabled={readonly}>
               <DropdownLeftSlot>
                 <TrashIcon />
               </DropdownLeftSlot>
-              Delete column {multiColumnTitle}
+              {s('Delete column')} {multiColumnTitle}
             </DropdownMenuItem>
             <DropdownMenuItem
               disabled={!onHideColumn}
@@ -428,7 +439,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <EyeNoneIcon />
               </DropdownLeftSlot>
-              Hide column {multiColumnTitle}
+              {s('Hide column')} {multiColumnTitle}
             </DropdownMenuItem>
 
             <DropdownMenuItem
@@ -438,14 +449,14 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <SizeIcon />
               </DropdownLeftSlot>
-              Resize column {multiColumnTitle}
+              {s('Resize column')} {multiColumnTitle}
             </DropdownMenuItem>
 
             <DropdownMenuItem onClick={() => onFreezeColumn?.(sheetId, activeCell.columnIndex)}>
               <DropdownLeftSlot>
                 <ViewGridIcon />
               </DropdownLeftSlot>
-              Freeze up to Column {number2Alpha(activeCell.columnIndex - 1)}
+              {s('Freeze up to column')} {number2Alpha(activeCell.columnIndex - 1)}
             </DropdownMenuItem>
 
             {frozenColumns > 1 ? (
@@ -453,7 +464,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <ViewGridIcon />
                 </DropdownLeftSlot>
-                Unfreeze columns
+                {s('Unfreeze columns')}
               </DropdownMenuItem>
             ) : null}
 
@@ -466,7 +477,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot className="text-base leading-4">
                 <SortDownIcon />
               </DropdownLeftSlot>
-              Sort sheet A to Z
+              {s('Sort sheet A to Z')}
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => onSortColumn?.(sheetId, activeCell.columnIndex, 'DESCENDING')}
@@ -475,7 +486,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot className="text-base leading-4">
                 <SortUpIcon />
               </DropdownLeftSlot>
-              Sort sheet Z to A
+              {s('Sort sheet Z to A')}
             </DropdownMenuItem>
           </>
         ) : null}
@@ -489,7 +500,9 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PlusIcon />
               </DropdownLeftSlot>
-              Insert {selectedRowHeadersIds.length} row above
+              <span>
+                {s('Insert')} <b>{rowsString(selectedRowHeadersIds.length)}</b> {s('above')}
+              </span>
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() =>
@@ -500,19 +513,21 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PlusIcon />
               </DropdownLeftSlot>
-              Insert {selectedRowHeadersIds.length} row below
+              <span>
+                {s('Insert')} <b>{rowsString(selectedRowHeadersIds.length)}</b> {s('below')}
+              </span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => onDeleteRow?.(sheetId, selectedRowHeadersIds)} disabled={readonly}>
               <DropdownLeftSlot>
                 <TrashIcon />
               </DropdownLeftSlot>
-              Delete row {multiRowTitle}
+              {s('Delete row')} {multiRowTitle}
             </DropdownMenuItem>
             <DropdownMenuItem disabled={!onHideRow} onClick={() => onHideRow?.(sheetId, selectedRowHeadersIds)}>
               <DropdownLeftSlot>
                 <EyeNoneIcon />
               </DropdownLeftSlot>
-              Hide row {multiRowTitle}
+              {s('Hide row')} {multiRowTitle}
             </DropdownMenuItem>
 
             <DropdownMenuItem
@@ -522,14 +537,14 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <SizeIcon />
               </DropdownLeftSlot>
-              Resize row {multiRowTitle}
+              {s('Resize row')} {multiRowTitle}
             </DropdownMenuItem>
 
             <DropdownMenuItem onClick={() => onFreezeRow?.(sheetId, activeCell.rowIndex)}>
               <DropdownLeftSlot>
                 <ViewGridIcon />
               </DropdownLeftSlot>
-              Freeze up to Row {activeCell.rowIndex}
+              {s('Freeze up to row')} {activeCell.rowIndex}
             </DropdownMenuItem>
 
             {frozenRows > 1 ? (
@@ -537,7 +552,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <ViewGridIcon />
                 </DropdownLeftSlot>
-                Unfreeze rows
+                {s('Unfreeze rows')}
               </DropdownMenuItem>
             ) : null}
           </>
@@ -568,7 +583,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PaintBrush />
               </DropdownLeftSlot>
-              Conditional format
+              {s('Conditional format')}
             </DropdownMenuItem>
 
             {onRequestDataValidation ? (
@@ -593,7 +608,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <PlusIcon />
                 </DropdownLeftSlot>
-                Insert
+                {s('Insert')}
                 <DropdownRightSlot>
                   <ChevronRightIcon />
                 </DropdownRightSlot>
@@ -611,7 +626,7 @@ export function LegacyContextMenu({
                         <DropdownLeftSlot>
                           <PlusIcon />
                         </DropdownLeftSlot>
-                        Insert table row
+                        {s('Insert table row')}
                       </DropdownMenuItem>
                     )}
                     <DropdownMenuItem
@@ -627,7 +642,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <ArrowLeftIcon />
                       </DropdownLeftSlot>
-                      Insert table column to the left
+                      {s('Insert table column to the left')}
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => {
@@ -642,7 +657,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <ArrowRightIcon />
                       </DropdownLeftSlot>
-                      Insert table column to the right
+                      {s('Insert table column to the right')}
                     </DropdownMenuItem>
                   </>
                 ) : (
@@ -654,7 +669,9 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <PlusIcon />
                       </DropdownLeftSlot>
-                      Insert {selectedRowIndexes.length} row above
+                      <span>
+                        {s('Insert')} <b>{rowsString(selectedRowIndexes.length)}</b> {s('above')}
+                      </span>
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => onInsertColumn?.(sheetId, activeCell.columnIndex, selectedColumnIndexes.length)}
@@ -663,7 +680,9 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <PlusIcon />
                       </DropdownLeftSlot>
-                      Insert {selectedColumnIndexes.length} column left
+                      <span>
+                        {s('Insert')} <b>{columnsString(selectedColumnIndexes.length)}</b> {s('left')}
+                      </span>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem
@@ -673,7 +692,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <PlusIcon />
                       </DropdownLeftSlot>
-                      Insert cells and shift cells right
+                      {s('Insert cells and shift cells right')}
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => onInsertCellsShiftDown?.(sheetId, activeCell, selections)}
@@ -682,7 +701,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <PlusIcon />
                       </DropdownLeftSlot>
-                      Insert cells and shift cells down
+                      {s('Insert cells and shift cells down')}
                     </DropdownMenuItem>
                   </>
                 )}
@@ -694,7 +713,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <TrashIcon />
                 </DropdownLeftSlot>
-                Delete
+                {s('Delete')}
                 <DropdownRightSlot>
                   <ChevronRightIcon />
                 </DropdownRightSlot>
@@ -710,7 +729,7 @@ export function LegacyContextMenu({
                         <DropdownLeftSlot>
                           <TrashIcon />
                         </DropdownLeftSlot>
-                        Delete table row
+                        {s('Delete table row')}
                       </DropdownMenuItem>
                     )}
                     <DropdownMenuItem
@@ -722,7 +741,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <TrashIcon />
                       </DropdownLeftSlot>
-                      Delete table column
+                      {s('Delete table column')}
                     </DropdownMenuItem>
                   </>
                 ) : (
@@ -731,7 +750,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <TrashIcon />
                       </DropdownLeftSlot>
-                      Delete row {generateMultiDimTitle(selectedRowIndexes, 'x')}
+                      {s('Delete row')} {generateMultiDimTitle(selectedRowIndexes, 'x')}
                     </DropdownMenuItem>
 
                     <DropdownMenuItem
@@ -741,7 +760,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <TrashIcon />
                       </DropdownLeftSlot>
-                      Delete column {generateMultiDimTitle(selectedColumnIndexes, 'y')}
+                      {s('Delete column')} {generateMultiDimTitle(selectedColumnIndexes, 'y')}
                     </DropdownMenuItem>
 
                     <DropdownMenuItem
@@ -751,7 +770,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <TrashIcon />
                       </DropdownLeftSlot>
-                      Delete cells and shift cells left
+                      {s('Delete cells and shift cells left')}
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       onClick={() => onDeleteCellsShiftUp?.(sheetId, activeCell, selections)}
@@ -760,7 +779,7 @@ export function LegacyContextMenu({
                       <DropdownLeftSlot>
                         <TrashIcon />
                       </DropdownLeftSlot>
-                      Delete cells and shift cells up
+                      {s('Delete cells and shift cells up')}
                     </DropdownMenuItem>
                   </>
                 )}
@@ -774,7 +793,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <FunnelIcon />
                 </DropdownLeftSlot>
-                Filter
+                {s('Filter')}
                 <DropdownRightSlot>
                   <ChevronRightIcon />
                 </DropdownRightSlot>
@@ -786,9 +805,8 @@ export function LegacyContextMenu({
                   }}
                   disabled={readonly}
                 >
-                  Cell value &quot;
-                  {getFormattedValue(sheetId, activeCell.rowIndex, activeCell.columnIndex) ?? BLANK_LABEL}
-                  &quot;
+                  {s('Cell value')} "
+                  {getFormattedValue(sheetId, activeCell.rowIndex, activeCell.columnIndex) ?? BLANK_LABEL}"
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuSub>
@@ -798,7 +816,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <SortDownIcon />
                 </DropdownLeftSlot>
-                Sort
+                {s('Sort')}
                 <DropdownRightSlot>
                   <ChevronRightIcon />
                 </DropdownRightSlot>
@@ -813,13 +831,13 @@ export function LegacyContextMenu({
                   <DropdownLeftSlot>
                     <SortDownIcon />
                   </DropdownLeftSlot>
-                  Sort range A &rarr; Z
+                  {s('Sort range A → Z')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => onSortTableOrFilterView('DESCENDING')} disabled={readonly}>
                   <DropdownLeftSlot>
                     <SortUpIcon />
                   </DropdownLeftSlot>
-                  Sort range Z &rarr; A
+                  {s('Sort range Z → A')}
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuSub>
@@ -830,17 +848,17 @@ export function LegacyContextMenu({
                   <DropdownLeftSlot>
                     <TableIcon />
                   </DropdownLeftSlot>
-                  Table
+                  {s('Table')}
                   <DropdownRightSlot>
                     <ChevronRightIcon />
                   </DropdownRightSlot>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent sideOffset={2} alignOffset={-5}>
                   <DropdownMenuItem onClick={() => onRemoveTable?.(activeTable)} disabled={readonly}>
-                    Convert to range
+                    {s('Convert to range')}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onRequestEditTable?.(activeTable)} disabled={readonly}>
-                    Edit table
+                    {s('Edit table')}
                   </DropdownMenuItem>
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
@@ -895,7 +913,7 @@ export function LegacyContextMenu({
                   <DropdownLeftSlot>
                     <TableIcon />
                   </DropdownLeftSlot>
-                  Convert to table
+                  {s('Convert to table')}
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
@@ -908,7 +926,7 @@ export function LegacyContextMenu({
                   <DropdownLeftSlot>
                     <FunnelIcon />
                   </DropdownLeftSlot>
-                  {activeBasicFilter ? 'Remove filter' : 'Create a filter'}
+                  {activeBasicFilter ? s('Remove filter') : s('Create a filter')}
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
               </>
@@ -939,7 +957,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PaintBrush />
               </DropdownLeftSlot>
-              Conditional format
+              {s('Conditional format')}
             </DropdownMenuItem>
 
             {onRequestDataValidation ? (
@@ -954,7 +972,7 @@ export function LegacyContextMenu({
                 <DropdownLeftSlot>
                   <MdOutlineFactCheck />
                 </DropdownLeftSlot>
-                Data validation
+                {s('Data validation')}
               </DropdownMenuItem>
             ) : null}
 
@@ -969,7 +987,14 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <ReaderIcon />
               </DropdownLeftSlot>
-              Insert note
+              {s('Insert note')}
+            </DropdownMenuItem>
+
+            <DropdownMenuItem onClick={insertLink} disabled={readonly}>
+              <DropdownLeftSlot>
+                <Link1Icon />
+              </DropdownLeftSlot>
+              {s('Insert link')}
             </DropdownMenuItem>
 
             <DropdownMenuItem
@@ -982,7 +1007,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <PlusIcon />
               </DropdownLeftSlot>
-              Define named range
+              {s('Define named range')}
             </DropdownMenuItem>
           </>
         )}
@@ -1002,9 +1027,9 @@ export function LegacyContextMenu({
                 Data validation
               </DropdownMenuItem> */}
 
-        <DropdownMenuSeparator />
+        {selections.length && !isRowHeader ? <DropdownMenuSeparator /> : null}
 
-        <DropdownMenuSub>
+        {/* <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={readonly}>
             <DropdownLeftSlot>
               <SpaceBetweenHorizontallyIcon />
@@ -1031,7 +1056,7 @@ export function LegacyContextMenu({
               Pipe
             </DropdownMenuItem>
           </DropdownMenuSubContent>
-        </DropdownMenuSub>
+        </DropdownMenuSub> */}
 
         {selections.length && !isRowHeader ? (
           <DropdownMenuSub>
@@ -1039,7 +1064,7 @@ export function LegacyContextMenu({
               <DropdownLeftSlot>
                 <DotsVerticalIcon />
               </DropdownLeftSlot>
-              More cell actions
+              {s('More cell actions')}
               <DropdownRightSlot>
                 <ChevronRightIcon />
               </DropdownRightSlot>
@@ -1048,13 +1073,13 @@ export function LegacyContextMenu({
               {selections.length && !isRowHeader ? (
                 <>
                   <DropdownMenuItem onClick={() => onSortRange?.(sheetId, selections, 'ASCENDING')} disabled={readonly}>
-                    Sort range A &rarr; Z
+                    {s('Sort range A → Z')}
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={() => onSortRange?.(sheetId, selections, 'DESCENDING')}
                     disabled={readonly}
                   >
-                    Sort range Z &rarr; A
+                    {s('Sort range Z → A')}
                   </DropdownMenuItem>
                 </>
               ) : null}
@@ -1063,5 +1088,98 @@ export function LegacyContextMenu({
         ) : null}
       </DropdownMenuContent>
     </DropdownMenuPortal>
+  )
+}
+
+function strings() {
+  return {
+    Copy: c('sheets_2025:Spreadsheet context menu').t`Copy`,
+    Clear: c('sheets_2025:Spreadsheet context menu').t`Clear`,
+    'Clear formats': c('sheets_2025:Spreadsheet context menu').t`Clear formats`,
+    'Clear contents': c('sheets_2025:Spreadsheet context menu').t`Clear contents`,
+
+    'Insert table row': c('sheets_2025:Spreadsheet context menu').t`Insert table row`,
+    'Insert table column to the left': c('sheets_2025:Spreadsheet context menu').t`Insert table column to the left`,
+    'Insert table column to the right': c('sheets_2025:Spreadsheet context menu').t`Insert table column to the right`,
+    'Insert link': c('sheets_2025:Spreadsheet context menu').t`Insert link`,
+    'Insert cells and shift cells right': c('sheets_2025:Spreadsheet context menu')
+      .t`Insert cells and shift cells right`,
+    'Insert cells and shift cells down': c('sheets_2025:Spreadsheet context menu').t`Insert cells and shift cells down`,
+
+    Delete: c('sheets_2025:Spreadsheet context menu').t`Delete`,
+    'Delete column': c('sheets_2025:Spreadsheet context menu').t`Delete column`,
+    'Delete row': c('sheets_2025:Spreadsheet context menu').t`Delete row`,
+    'Delete table row': c('sheets_2025:Spreadsheet context menu').t`Delete table row`,
+    'Delete table column': c('sheets_2025:Spreadsheet context menu').t`Delete table column`,
+    'Delete cells and shift cells left': c('sheets_2025:Spreadsheet context menu').t`Delete cells and shift cells left`,
+    'Delete cells and shift cells up': c('sheets_2025:Spreadsheet context menu').t`Delete cells and shift cells up`,
+
+    'Hide column': c('sheets_2025:Spreadsheet context menu').t`Hide column`,
+    'Hide row': c('sheets_2025:Spreadsheet context menu').t`Hide row`,
+    'Resize column': c('sheets_2025:Spreadsheet context menu').t`Resize column`,
+    'Resize row': c('sheets_2025:Spreadsheet context menu').t`Resize row`,
+
+    'Freeze up to column': c('sheets_2025:Spreadsheet context menu').t`Freeze up to column`,
+    'Unfreeze columns': c('sheets_2025:Spreadsheet context menu').t`Unfreeze columns`,
+    'Freeze up to row': c('sheets_2025:Spreadsheet context menu').t`Freeze up to row`,
+    'Unfreeze rows': c('sheets_2025:Spreadsheet context menu').t`Unfreeze rows`,
+
+    'Sort sheet A to Z': c('sheets_2025:Spreadsheet context menu').t`Sort sheet A to Z`,
+    'Sort sheet Z to A': c('sheets_2025:Spreadsheet context menu').t`Sort sheet Z to A`,
+    Sort: c('sheets_2025:Spreadsheet context menu').t`Sort`,
+    'Sort range A → Z': c('sheets_2025:Spreadsheet context menu').t`Sort range A → Z`,
+    'Sort range Z → A': c('sheets_2025:Spreadsheet context menu').t`Sort range Z → A`,
+
+    Filter: c('sheets_2025:Spreadsheet context menu').t`Filter`,
+    'Cell value': c('sheets_2025:Spreadsheet context menu').t`Cell value`,
+
+    Insert: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`Insert`,
+    above: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`above`,
+    below: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`below`,
+    left: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`left`,
+    right: c('sheets_2025:Spreadsheet context menu (columns/rows)').t`right`,
+
+    Table: c('sheets_2025:Spreadsheet context menu').t`Table`,
+    'Convert to range': c('sheets_2025:Spreadsheet context menu').t`Convert to range`,
+    'Edit table': c('sheets_2025:Spreadsheet context menu').t`Edit table`,
+    'Convert to table': c('sheets_2025:Spreadsheet context menu').t`Convert to table`,
+
+    'Create a filter': c('sheets_2025:Spreadsheet context menu').t`Create a filter`,
+    'Remove filter': c('sheets_2025:Spreadsheet context menu').t`Remove filter`,
+
+    'Conditional format': c('sheets_2025:Spreadsheet context menu').t`Conditional format`,
+    'Data validation': c('sheets_2025:Spreadsheet context menu').t`Data validation`,
+
+    'Insert note': c('sheets_2025:Spreadsheet context menu').t`Insert note`,
+    'Define named range': c('sheets_2025:Spreadsheet context menu').t`Define named range`,
+    'More cell actions': c('sheets_2025:Spreadsheet context menu').t`More cell actions`,
+    'AI Quick Edit': c('sheets_2025:Spreadsheet context menu').t`AI Quick Edit`,
+    'Paste special': c('sheets_2025:Spreadsheet context menu').t`Paste special`,
+    'Values only': c('sheets_2025:Spreadsheet context menu').t`Values only`,
+    'Formatting only': c('sheets_2025:Spreadsheet context menu').t`Formatting only`,
+    Transposed: c('sheets_2025:Spreadsheet context menu').t`Transposed`,
+    Comma: c('sheets_2025:Spreadsheet context menu').t`Comma`,
+    Semicolon: c('sheets_2025:Spreadsheet context menu').t`Semicolon`,
+    Period: c('sheets_2025:Spreadsheet context menu').t`Period`,
+    Space: c('sheets_2025:Spreadsheet context menu').t`Space`,
+    Pipe: c('sheets_2025:Spreadsheet context menu').t`Pipe`,
+  }
+}
+
+function columnsString(numberOfColumns: number) {
+  // translator: this is used in the context of three strings put together - "Insert | N columns | left/right" (the | symbol is used to show the separation between the three strings), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+  return c('sheets_2025:Spreadsheet context menu (columns/rows)').ngettext(
+    msgid`${numberOfColumns} column`,
+    `${numberOfColumns} columns`,
+    numberOfColumns,
+  )
+}
+
+function rowsString(numberOfRows: number) {
+  // translator: this is used in the context of three strings put together - "Insert | N rows | above/below" (the | symbol is used to show the separation between the three strings), and it's separate because "X columns/rows" needs to be bold, the order of these three strings cannot be changed and they will be separated by spaces
+  return c('sheets_2025:Spreadsheet context menu (columns/rows)').ngettext(
+    msgid`${numberOfRows} row`,
+    `${numberOfRows} rows`,
+    numberOfRows,
   )
 }
