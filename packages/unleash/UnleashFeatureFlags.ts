@@ -244,6 +244,8 @@ enum MeetFeatureFlag {
     MeetShowMLSLogs = 'MeetShowMLSLogs',
     MeetingRecording = 'MeetingRecording',
     MeetAllowNewHostAssignment = 'MeetAllowNewHostAssignment',
+    MeetAllowMLSLogExport = 'MeetAllowMLSLogExport',
+    MeetAllowDecryptionErrorReporting = 'MeetAllowDecryptionErrorReporting',
 }
 
 enum LumoFeatureFlag {

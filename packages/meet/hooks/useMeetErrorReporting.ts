@@ -1,12 +1,29 @@
+import type { SeverityLevel } from '@sentry/browser';
+
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash';
+
+interface ReportMeetErrorOptions {
+    level?: SeverityLevel;
+    context?: Record<string, unknown>;
+    fingerprint?: string[];
+}
 
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
 
-    const reportMeetError = (label: string, error: unknown) => {
+    const reportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => {
         if (shouldReportError) {
-            captureMessage(label, { level: 'error', extra: { error } });
+            if (options && typeof options === 'object' && 'context' in options) {
+                const { level = 'error', context, fingerprint } = options as ReportMeetErrorOptions;
+                captureMessage(label, {
+                    level,
+                    extra: context,
+                    fingerprint,
+                });
+            } else {
+                captureMessage(label, { level: 'error', extra: { error: options } });
+            }
         }
     };
 

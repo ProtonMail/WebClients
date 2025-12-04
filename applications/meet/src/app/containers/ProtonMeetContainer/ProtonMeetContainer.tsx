@@ -64,6 +64,8 @@ interface ProtonMeetContainerProps {
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
     hasSubscription: boolean;
+    keyRotationLogs: KeyRotationLog[];
+    setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
 }
 
 export const ProtonMeetContainer = ({
@@ -72,6 +74,8 @@ export const ProtonMeetContainer = ({
     keyProvider,
     user = null,
     hasSubscription = false,
+    keyRotationLogs,
+    setKeyRotationLogs,
 }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
 
@@ -163,7 +167,6 @@ export const ProtonMeetContainer = ({
 
     const loadingStartTimeRef = useRef(0);
     const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
-    const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
     const wasmApp = useWasmApp();
 
@@ -182,14 +185,14 @@ export const ProtonMeetContainer = ({
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
-            return true;
+            return 'Lower epoch than last epoch';
         }
 
         if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
-            return true;
+            return 'Epoch is not the next epoch';
         }
 
-        return false;
+        return null;
     };
 
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
@@ -242,11 +245,13 @@ export const ProtonMeetContainer = ({
                 epoch: epoch,
             });
 
+            const errorMessage = hasEpochError(epoch);
+
             const newLog = {
                 timestamp: Date.now(),
                 epoch: Number(epoch),
-                type: hasEpochError(epoch) ? 'error' : 'log',
-                message: 'Key rotation successful',
+                type: errorMessage ? 'error' : 'log',
+                message: errorMessage ?? 'Key rotation successful',
             };
 
             setKeyRotationLogs((prev) => [...prev, newLog as KeyRotationLog]);
@@ -877,6 +882,7 @@ export const ProtonMeetContainer = ({
                         paidUser={treatedAsPaidUser}
                         keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
+                        getKeychainIndexInformation={keyProvider.getKeychainIndexInformation}
                     />
                 ) : (
                     <PrejoinContainer

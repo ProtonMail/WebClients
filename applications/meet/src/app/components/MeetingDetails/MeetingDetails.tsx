@@ -24,9 +24,11 @@ import './MeetingDetails.scss';
 
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const isMeetShowMLSLogsEnabled = useFlag('MeetShowMLSLogs');
+    const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
 
-    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs } = useMeetContext();
+    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation } =
+        useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -58,6 +60,17 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
               timeZone: timeZone,
           })
         : null;
+
+    const getEncryptionLogs = () => {
+        return JSON.stringify(
+            {
+                keyRotationLogs,
+                keychainIndexInformation: getKeychainIndexInformation() ?? [],
+            },
+            null,
+            2
+        );
+    };
 
     if (!sideBarState[MeetingSideBars.MeetingDetails]) {
         return null;
@@ -191,24 +204,17 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                 {isMeetShowMLSLogsEnabled && (
                     <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
                         <div className="text-semibold pl-2 mb-4 flex justify-space-between items-center w-full">
-                            {c('Title').t`Activity events`}{' '}
-                            <button
-                                className="color-primary cursor-pointer unstyled p-0 m-0"
-                                onClick={() => {
-                                    void copyTextToClipboard(
-                                        keyRotationLogs
-                                            .map(
-                                                (log) =>
-                                                    `${format(new Date(log.timestamp), 'HH:mm:ss', {
-                                                        locale: dateLocale,
-                                                    })} ${log.epoch} ${log.type === 'error' ? 'Error' : 'Success'}`
-                                            )
-                                            .join('\n')
-                                    );
-                                }}
-                            >
-                                <IcMeetCopy />
-                            </button>
+                            {c('Title').t`Activity events`}
+                            {isMeetAllowMLSLogExportEnabled && (
+                                <button
+                                    className="color-primary cursor-pointer unstyled p-0 m-0"
+                                    onClick={() => {
+                                        void copyTextToClipboard(getEncryptionLogs());
+                                    }}
+                                >
+                                    <IcMeetCopy />
+                                </button>
+                            )}
                         </div>
                         <div className="px-2">
                             <Table>
