@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -6,13 +8,22 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useInvitationsActions } from '../../store';
 import { useInvitationsListing } from '../../store/_invitations';
+import { sendErrorReport } from '../../utils/errorHandling';
 
 export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshSharedWithMeAlbums: () => void }) => {
-    const { getCachedInvitations } = useInvitationsListing();
+    const { getCachedInvitations, loadInvitations } = useInvitationsListing();
     const { acceptInvitation, rejectInvitation } = useInvitationsActions();
     const cachedInvitations = getCachedInvitations();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const invitations = cachedInvitations.filter((invitation) => invitation.link.type === LinkType.ALBUM);
+    useEffect(() => {
+        const abortController = new AbortController();
+        void loadInvitations(abortController.signal).catch(sendErrorReport);
+
+        return () => {
+            abortController.abort();
+        };
+    }, []);
     return (
         <>
             {invitations.length !== 0 && (
