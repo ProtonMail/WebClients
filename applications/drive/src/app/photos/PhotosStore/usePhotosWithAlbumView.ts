@@ -104,6 +104,21 @@ export const usePhotosWithAlbumsView = () => {
     const { download } = useDownloadProvider();
     const [isAlbumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
 
+    // Initialize the Photos shareId in LinksState so events can properly update it
+    // This fixes the issue where the first photo uploaded to an empty photos view doesn't appear:
+    // - Without this, when upload events arrive, LinksState doesn't recognize the Photos shareId
+    // - The event gets skipped (returns old state without adding the new photo)
+    // - The UI never updates to show the newly uploaded photo
+    // We must load at least the root link because addOrUpdate returns early with empty arrays
+    // Only do this when photos list is empty to avoid unnecessary API calls
+    const initializedShareRef = useRef<string | null>(null);
+    useEffect(() => {
+        if (volumeId && shareId && linkId && initializedShareRef.current !== shareId && photos.length === 0) {
+            void loadLinksMeta(new AbortController().signal, 'photos-init', shareId, [linkId]);
+            initializedShareRef.current = shareId;
+        }
+    }, [volumeId, shareId, linkId, loadLinksMeta, photos.length]);
+
     const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = useMemo(() => {
         return shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
