@@ -59,6 +59,8 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const freeCcFlag = useFeatureFlag(PassFeature.PassAllowCreditCardFreeUsers);
+    const creditCardLock = !freeCcFlag && isFreePlan;
 
     const { anchorRef, isOpen, toggle, close, open } = usePopperAnchor<HTMLButtonElement>();
 
@@ -86,7 +88,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         const actions: QuickAction[] = [
             { label: c('Label').t`Login`, type: 'login' },
             { label: c('Label').t`Alias`, type: 'alias' },
-            { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan },
+            { label: c('Label').t`Card`, type: 'creditCard', locked: creditCardLock },
             { label: c('Label').t`Note`, type: 'note' },
             { label: c('Label').t`Identity`, type: 'identity' },
             { label: c('Label').t`Other`, type: 'custom', locked: isFreePlan, hidden: !showCustomItem },

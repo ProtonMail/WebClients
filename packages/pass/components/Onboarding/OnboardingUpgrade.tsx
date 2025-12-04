@@ -21,9 +21,11 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
@@ -51,14 +53,14 @@ type FeaturesTable = {
 const CheckIcon = () => <Icon name="checkmark-circle-filled" size={4} />;
 const InfiniteIcon = () => <div className="text-lg">∞</div>;
 
-const getTableContent = (): Record<AvailablePlans, FeaturesTable> => ({
+const getTableContent = (freeCcFlag: boolean): Record<AvailablePlans, FeaturesTable> => ({
     [PLANS.PASS]: {
         comparisons: [{ label: c('Label').t`Free` }, { label: c('Label').t`Plus`, badge: 'dark' }],
         included: [
             { title: c('Label').t`Hide-my-email aliases`, currentPlan: '10', nextPlan: <InfiniteIcon /> },
             { title: c('Label').t`Built-in 2FA`, nextPlan: <CheckIcon /> },
             { title: c('Label').t`Vault, item & link sharing`, nextPlan: <CheckIcon /> },
-            { title: c('Label').t`Credit cards`, nextPlan: <InfiniteIcon /> },
+            ...(freeCcFlag ? [] : [{ title: c('Label').t`Credit cards`, nextPlan: <InfiniteIcon /> }]),
             { title: DARK_WEB_MONITORING_NAME, nextPlan: <CheckIcon /> },
             { title: c('Label').t`File attachments`, nextPlan: '10 GB' },
         ],
@@ -92,7 +94,8 @@ const getProtonProducts = () => [
 export const Content: FC = () => {
     const { selected = PLANS.PASS } = useOnboarding<AvailablePlans>();
     const online = useOnline();
-    const includesFeatures = useMemo(getTableContent, []);
+    const freeCcFlag = useFeatureFlag(PassFeature.PassAllowCreditCardFreeUsers);
+    const includesFeatures = useMemo(() => getTableContent(freeCcFlag), [freeCcFlag]);
     const protonProducts = useMemo(getProtonProducts, []);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
     const user = useSelector(selectUser);
