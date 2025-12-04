@@ -160,6 +160,7 @@ enum DriveFeatureFlag {
     DriveWebSDKPhotosTransfer = 'DriveWebSDKPhotosTransfer',
     DriveWebSDKCopy = 'DriveWebSDKCopy',
     DriveWebSDKPreview = 'DriveWebSDKPreview',
+    DriveWebSDKPublic = 'DriveWebSDKPublic',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
     // Thumbnail Generation

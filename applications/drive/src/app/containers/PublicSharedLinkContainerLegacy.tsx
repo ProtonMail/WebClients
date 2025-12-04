@@ -1,39 +1,60 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import { getUnixTime } from 'date-fns';
+import { c } from 'ttag';
 
 import { useTheme } from '@proton/components';
-import { type NodeEntity, NodeType, getDrive, splitNodeUid, useDrive } from '@proton/drive';
+import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
-import config from '../config';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
-import { setPublicLinkClient } from '../sections/publicPage/publicLinkClient';
 import type { DecryptedLink } from '../store';
-import { PublicDriveProvider, useBookmarksPublicView, useDownload } from '../store';
+import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveWebShareURLSignupModal } from '../store/_bookmarks/useDriveWebShareURLSignupModal';
 import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
-import { handleSdkError } from '../utils/errorHandling/useSdkErrorHandler';
-import { getNodeEntity } from '../utils/sdk/getNodeEntity';
+import { getMetricsUserPlan } from '../store/_user/getMetricsUserPlan';
+import { sendErrorReport } from '../utils/errorHandling';
+import { is4xx, is5xx, isCryptoEnrichedError } from '../utils/errorHandling/apiErrors';
+import { Actions, countActionWithTelemetry } from '../utils/telemetry';
+import type { ErrorTuple } from '../utils/type/ErrorTuple';
 import { deleteStoredUrlPassword } from '../utils/url/password';
 import LocationErrorBoundary from './LocationErrorBoundary';
-import PublicSharedLinkContainerLegacy from './PublicSharedLinkContainerLegacy';
 
-export function PublicSharedLinkContainer() {
-    const useDriveSDKPublicLink = useFlag('DriveWebSDKPublic');
-    const location = useLocation();
-    if (!useDriveSDKPublicLink) {
-        return <PublicSharedLinkContainerLegacy />;
+export const getErrorMetricTypeOnPublicPage = (error: unknown) => {
+    const apiError = getApiError(error);
+
+    if (apiError.status === HTTP_STATUS_CODE.NOT_FOUND || apiError.code === API_CODES.NOT_FOUND_ERROR) {
+        return 'does_not_exist_or_expired';
     }
+
+    if (apiError.status && typeof apiError.status === 'number') {
+        if (is4xx(apiError.status)) {
+            return '4xx';
+        }
+        if (is5xx(apiError.status)) {
+            return '5xx';
+        }
+    }
+
+    if (isCryptoEnrichedError(error)) {
+        return 'crypto';
+    }
+
+    return 'unknown';
+};
+
+export default function PublicSharedLinkContainer() {
+    const location = useLocation();
     return (
         <LocationErrorBoundary location={location}>
             <PublicDriveProvider>
@@ -44,18 +65,6 @@ export function PublicSharedLinkContainer() {
 }
 export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 
-const loadRootNode = async (url: string, password: string | undefined) => {
-    const drive = getDrive();
-    try {
-        const publicLinkClient = await drive.experimental.authPublicLink(url, password);
-        setPublicLinkClient(publicLinkClient);
-        const rootNode = await publicLinkClient.getRootNode();
-        return rootNode;
-    } catch (error) {
-        throw error;
-    }
-};
-
 /**
  * PublicShareLinkInitContainer initiate public session for shared link.
  * That is to initiate SRP handshake and ask for password if needed to
@@ -64,25 +73,34 @@ const loadRootNode = async (url: string, password: string | undefined) => {
 function PublicShareLinkInitContainer() {
     const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
-    const { drive, init } = useDrive();
     const { setTheme } = useTheme();
-    const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
-    const [isLegacy, setIsLegacy] = useState(false);
-    const [customPassword, setCustomPassword] = useState('');
+    const {
+        isLoading,
+        customPassword,
+        error: [authError, authErrorMessage],
+        isLegacy,
+        isPasswordNeeded,
+        submitPassword,
+    } = usePublicAuth(token, urlPassword, 'drive');
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const isDriveWebShareUrlSignupModalEnabled = useDriveWebShareURLSignupModal();
-    const [rootNode, setRootNode] = useState<NodeEntity>();
-    const [isLoading, setIsLoading] = useState(!rootNode);
+    const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
+    const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
-    const [error, setError] = useState<unknown | Error>();
+    const { loadPublicShare, user } = usePublicShare();
     const bookmarksPublicView = useBookmarksPublicView({ customPassword });
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
+
+    const error: ErrorTuple[0] = authError || publicShareError;
+    const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
+
     const isPartialView = usePartialPublicView();
 
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const { openDocumentWindow } = useOpenDocument();
 
-    // const showErrorPage = showLoadingPage === false && link === undefined;
+    const showLoadingPage = isLoading || isLoadingDecrypt;
+    const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
     const shouldRedirectToDocs =
         isDocsPublicSharingEnabled &&
         link &&
@@ -117,17 +135,9 @@ function PublicShareLinkInitContainer() {
                 window: getDocsWindow(redirect || false, customPassword),
             });
         },
+
         [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword, getDocsWindow, isSheet]
     );
-
-    useEffect(() => {
-        if (!drive) {
-            init({
-                appName: config.APP_NAME,
-                appVersion: config.APP_VERSION,
-            });
-        }
-    }, [drive, init]);
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
@@ -154,84 +164,62 @@ function PublicShareLinkInitContainer() {
     }, []);
 
     useEffect(() => {
-        if (!drive) {
-            return;
-        }
-        let cancelled = false;
-        void drive.experimental
-            .getPublicLinkInfo(window.location.href)
-            .then(async (linkInfo) => {
-                if (cancelled) {
-                    return;
-                }
-                setIsLegacy(linkInfo.isLegacy);
-                if (linkInfo.isCustomPasswordProtected) {
-                    setIsPasswordNeeded(linkInfo.isCustomPasswordProtected);
-                } else {
-                    const maybeNode = await loadRootNode(window.location.href, customPassword);
-                    if (!maybeNode) {
-                        return;
-                    }
-                    const { node } = getNodeEntity(maybeNode);
-                    setRootNode(node);
-                    if (!node.deprecatedShareId) {
-                        return;
-                    }
-                    // TODO: Remove that in next ticket with page implementation ticket
-                    setLink({
-                        encryptedName: node.name,
-                        fileModifyTime: node.activeRevision?.claimedModificationTime
-                            ? getUnixTime(node.activeRevision.claimedModificationTime)
-                            : 0,
-                        rootShareId: node.deprecatedShareId,
-                        volumeId: splitNodeUid(node.uid).volumeId,
-                        hasThumbnail: false,
-                        linkId: splitNodeUid(node.uid).nodeId,
-                        parentLinkId: node.parentUid ? splitNodeUid(node.parentUid).nodeId : '',
-                        type: node.type === NodeType.File ? LinkType.FILE : LinkType.FOLDER,
-                        isFile: node.type === NodeType.File,
-                        name: node.name,
-                        mimeType: node.mediaType || '',
-                        hash: node.activeRevision?.claimedDigests?.sha1 || '',
-                        size: node.activeRevision?.storageSize || 0,
-                        createTime: getUnixTime(node.creationTime),
-
-                        metaDataModifyTime: node.activeRevision?.claimedModificationTime
-                            ? getUnixTime(node.activeRevision.claimedModificationTime)
-                            : 0,
-                        trashed: null,
-                    });
-                }
-            })
-            .catch((e) => {
-                handleSdkError(e);
-                setError(e);
-            })
-            .finally(() => {
-                if (cancelled) {
-                    return;
-                }
-                setIsLoading(false);
+        if (error) {
+            const errorMetricType = getErrorMetricTypeOnPublicPage(error);
+            metrics.drive_public_share_load_error_total.increment({
+                // eslint-disable-next-line no-nested-ternary
+                type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
+                plan: getMetricsUserPlan({ user, isPublicContext: true }),
+                error: errorMetricType,
             });
+
+            // We use observability to track this, so we can omit it from Sentry
+            if (errorMetricType !== 'does_not_exist_or_expired') {
+                if (errorMessage) {
+                    sendErrorReport(new Error(errorMessage));
+                }
+            }
+        }
+    }, [errorMessage, error]);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+
+        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded) {
+            void withLoading(
+                loadPublicShare(abortController.signal)
+                    .then(({ link }) => {
+                        setLink(link);
+                        metrics.drive_public_share_load_success_total.increment({
+                            type: link.isFile ? 'file' : 'folder',
+                            plan: getMetricsUserPlan({ user, isPublicContext: true }),
+                        });
+                        void countActionWithTelemetry(Actions.PublicLinkVisit);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                        const apiError = getApiError(error);
+                        setError([error, apiError.message || error.message || c('Info').t`Cannot load shared link`]);
+                    })
+            );
+        } else if (authErrorMessage) {
+            setLoading(false);
+        }
+
         return () => {
-            cancelled = true;
+            abortController.abort();
         };
-    }, [drive, customPassword]);
+    }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
 
     if (isPasswordNeeded) {
-        return (
-            <PasswordPage
-                submitPassword={async (password) => setCustomPassword(password)}
-                isPartialView={isPartialView}
-            />
-        );
+        return <PasswordPage submitPassword={submitPassword} isPartialView={isPartialView} />;
     }
 
-    if (isLoading) {
+    if (showLoadingPage) {
         return <LoadingPage haveCustomPassword={!!customPassword} isPartialView={isPartialView} />;
     }
 
-    if (!rootNode || !link) {
+    if (showErrorPage || !link) {
         return <ErrorPage isPartialView={isPartialView} />;
     }
 
@@ -251,7 +239,7 @@ function PublicShareLinkInitContainer() {
 
     return (
         <>
-            {rootNode.type === NodeType.File ? <SharedFilePage {...props} /> : <SharedFolderPage {...props} />}
+            {link.isFile ? <SharedFilePage {...props} /> : <SharedFolderPage {...props} />}
             {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled ? null : renderUpsellFloatingModal}
         </>
     );
