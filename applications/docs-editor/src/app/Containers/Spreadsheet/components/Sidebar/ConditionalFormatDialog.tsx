@@ -21,8 +21,8 @@ import {
   type ConditionType,
   shouldShowFromValue,
   shouldShowToValue,
-  ColorSelector,
   type InterpolationPoint,
+  getStringifiedColor,
 } from '@rowsncolumns/spreadsheet'
 import { Icon } from '../ui'
 import * as Atoms from '../atoms'
@@ -40,6 +40,7 @@ import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { useEvent } from '../utils'
 import { Button, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from './shared'
 import { useUI } from '../../ui-store'
+import { ColorPicker } from '../shared/ColorPicker'
 
 const { s } = createStringifier(strings)
 
@@ -339,13 +340,17 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure render={<FormatButton />}>
-                        <Icon legacyName="text-style" />
+                        <Icon
+                          data={Icons.textColor}
+                          style={{
+                            '--selected-color': getStringifiedColor(booleanRule?.format?.textFormat?.color, theme),
+                          }}
+                        />
                       </Ariakit.PopoverDisclosure>
 
                       <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
-                        <ColorSelector
-                          color={booleanRule?.format?.textFormat?.color}
-                          theme={theme}
+                        <ColorPicker
+                          selectedColor={booleanRule?.format?.textFormat?.color ?? undefined}
                           onChange={(value) => {
                             form.setValue('booleanRule.format.textFormat.color', value)
                           }}
@@ -355,13 +360,17 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure render={<FormatButton />}>
-                        <Icon data={Icons.bucketColor} />
+                        <Icon
+                          data={Icons.bucketColor}
+                          style={{
+                            '--selected-color': getStringifiedColor(booleanRule?.format?.backgroundColor, theme),
+                          }}
+                        />
                       </Ariakit.PopoverDisclosure>
 
                       <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
-                        <ColorSelector
-                          color={booleanRule?.format?.backgroundColor}
-                          theme={theme}
+                        <ColorPicker
+                          selectedColor={booleanRule?.format?.backgroundColor ?? undefined}
                           onChange={(value) => {
                             form.setValue('booleanRule.format.backgroundColor', value)
                           }}
@@ -419,13 +428,15 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
                         <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
-                          <Icon data={Icons.bucketColor} />
+                          <Icon
+                            data={Icons.bucketColor}
+                            style={{ '--selected-color': getStringifiedColor(gradientRule?.minpoint?.color, theme) }}
+                          />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
-                          <ColorSelector
-                            color={gradientRule?.minpoint?.color}
-                            theme={theme}
+                          <ColorPicker
+                            selectedColor={gradientRule?.minpoint?.color}
                             onChange={(value) => {
                               form.setValue('gradientRule.minpoint.color', value)
                             }}
@@ -471,13 +482,15 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
                         <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
-                          <Icon data={Icons.bucketColor} />
+                          <Icon
+                            data={Icons.bucketColor}
+                            style={{ '--selected-color': getStringifiedColor(gradientRule?.midpoint?.color, theme) }}
+                          />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
-                          <ColorSelector
-                            color={gradientRule?.midpoint?.color}
-                            theme={theme}
+                          <ColorPicker
+                            selectedColor={gradientRule?.midpoint?.color}
                             onChange={(value) => {
                               form.setValue('gradientRule.midpoint.color', value)
                             }}
@@ -523,13 +536,15 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
                         <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
-                          <Icon data={Icons.bucketColor} />
+                          <Icon
+                            data={Icons.bucketColor}
+                            style={{ '--selected-color': getStringifiedColor(gradientRule?.maxpoint?.color, theme) }}
+                          />
                         </Ariakit.PopoverDisclosure>
 
                         <Atoms.DropdownPopover className="p-2" render={<Ariakit.Popover />}>
-                          <ColorSelector
-                            color={gradientRule?.maxpoint?.color}
-                            theme={theme}
+                          <ColorPicker
+                            selectedColor={gradientRule?.maxpoint?.color}
                             onChange={(value) => {
                               form.setValue('gradientRule.maxpoint.color', value)
                             }}
@@ -679,8 +694,10 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
   )
 }
 
-interface RulesProps
-  extends Pick<ConditionalFormatEditorProps, 'conditionalFormats' | 'sheetId' | 'onDeleteRule' | 'theme'> {
+interface RulesProps extends Pick<
+  ConditionalFormatEditorProps,
+  'conditionalFormats' | 'sheetId' | 'onDeleteRule' | 'theme'
+> {
   onNewRule: () => void
   onSelectRule: (rule: ConditionalFormatRule) => void
 }

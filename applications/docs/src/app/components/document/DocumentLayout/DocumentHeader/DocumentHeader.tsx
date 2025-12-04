@@ -25,6 +25,7 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import useFlag from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
+import { useIsSheetsEditorEnabled } from '~/utils/misc'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -44,6 +45,7 @@ export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
   const [editorController, setEditorController] = useState<EditorControllerInterface | null>(null)
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [showErrorHeader, setShowErrorHeader] = useState(false)
+  const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
 
   useEffect(() => {
     return application.userState.subscribeToEvent('BlockingInterfaceErrorDidDisplay', () => {
@@ -65,6 +67,10 @@ export function DocumentHeader({ actionMode, documentType }: DocsHeaderProps) {
       },
     })
   }, [application])
+
+  if (documentType === 'sheet' && !isSheetsEditorEnabled) {
+    return <DocsHeaderNoDocument />
+  }
 
   if (application.isRunningInNativeMobileWeb) {
     return null

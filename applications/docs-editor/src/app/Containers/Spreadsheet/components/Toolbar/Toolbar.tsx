@@ -307,10 +307,8 @@ function TextColor() {
       <Ariakit.PopoverDisclosure
         render={
           <T.Item
-            legacyIconName="text-style"
-            style={{
-              color: colorString,
-            }}
+            icon={Icons.textColor}
+            style={{ '--selected-color': colorString }}
             disabled={useUI((ui) => ui.info.isReadonly)}
           >
             {s('Text color')}
@@ -330,12 +328,19 @@ function FillColor() {
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.backgroundColor.value)
+  const theme = useUI((ui) => ui.legacy.theme)
+  const colorString = getStringifiedColor(color, theme)
   const onChange = useUI.$.format.backgroundColor.set
   return (
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={Icons.bucketColor} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
+          <T.Item
+            icon={Icons.bucketColor}
+            style={{ '--selected-color': colorString }}
+            dropdownIndicator
+            disabled={useUI((ui) => ui.info.isReadonly)}
+          >
             {s('Fill color')}
           </T.Item>
         }

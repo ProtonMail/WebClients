@@ -34,7 +34,7 @@ export function PublicApplicationContent({
 
   const { user, localID } = usePublicSessionUser()
 
-  const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled, isSheetsEnabled: true })
+  const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
 
   const application = useMemo(() => {
     return new Application(
@@ -46,7 +46,6 @@ export function PublicApplicationContent({
       unleashClient,
     )
     // Ensure only one application instance is created
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
