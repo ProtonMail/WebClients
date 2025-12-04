@@ -172,6 +172,9 @@
       "Apply": [
         "Appliquer"
       ],
+      "Apply to existing messages": [
+        "Appliquer aux messages existants"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -610,6 +613,9 @@
       "Export": [
         "Exporter"
       ],
+      "Export key": [
+        "Exporter la clé"
+      ],
       "Export key before deleting": [
         "Exporter la clé avant de supprimer"
       ],
@@ -637,6 +643,9 @@
       "Generate recovery phrase": [
         "Générer une phrase de récupération"
       ],
+      "Generate token": [
+        "Générer le jeton"
+      ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Profitez de ${ planName } pour ${ priceCoupon }"
       ],
@@ -663,6 +672,9 @@
       ],
       "Get more addresses": [
         "Bénéficiez de plus d'adresses"
+      ],
+      "Get more filters": [
+        "Obtenir plus de filtres"
       ],
       "Get more folders": [
         "Obtenir plus de dossiers"
@@ -988,6 +1000,9 @@
       "Quote": [
         "Citer"
       ],
+      "Reactivate keys": [
+        "Réactiver les clés"
+      ],
       "Reconnect": [
         "Reconnecter"
       ],
@@ -1032,6 +1047,9 @@
       ],
       "Remove button": [
         "Retirer le bouton"
+      ],
+      "Remove calendar": [
+        "Retirer le calendrier"
       ],
       "Remove domain": [
         "Retirer le domaine"
@@ -1724,6 +1742,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "En quittant maintenant, certains événements pourraient ne pas être importés."
+      ]
+    },
+    "Alias promotion": {
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "Avec ${ PASS_APP_NAME }, vous pouvez générer des alias uniques pour masquer votre identité et transférer des messages vers votre boite de réception principale."
       ]
     },
     "Alter": {
@@ -2613,6 +2636,11 @@
     "Calendar invite status label": {
       "Invite sent": [
         "L'invitation a été envoyée."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label edited": [
+        "Libellé édité"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -5083,6 +5111,9 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Got it": [
+        "Compris"
+      ],
       "Pause": [
         "Suspendre"
       ],
@@ -5095,9 +5126,20 @@
         "Réessayez d'ouvrir le lien."
       ]
     },
+    "email_forwarding_2023: Header": {
+      "Forward from": [
+        "Transférer depuis"
+      ],
+      "To": [
+        "À"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "Le destinataire a été invité et doit accepter/refuser l'invitation ou la mise à jour."
+      ],
+      "Forwarding is active": [
+        "Le transfert est activé"
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Transférer à une adresse sans chiffrement de bout en bout désactivera le chiffrement de bout en bout pour votre adresse ${ boldForwarderEmail }, mais le chiffrement zéro accès restera activé. ${ learnMoreLink }"
@@ -5107,6 +5149,14 @@
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
         "Vous ne recevrez pas les messages transférés automatiquement depuis ${ boldForwarderEmail }."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "Forward to": [
+        "Transférer à"
+      ],
+      "or": [
+        "ou"
       ]
     },
     "email_forwarding_2023: Link": {
@@ -5119,7 +5169,18 @@
         "Le transfert vers l'adresse de destination sera arrêté."
       ]
     },
+    "email_forwarding_2023: Status": {
+      "Paused": [
+        "Mis en pause"
+      ]
+    },
     "email_forwarding_2023: Success": {
+      "Changes saved": [
+        "Modifications enregistrées"
+      ],
+      "Forwarding declined": [
+        "Transfert refusé"
+      ],
       "Forwarding deleted": [
         "Le transfert a été supprimé."
       ]
@@ -6313,6 +6374,9 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "Nombre d'événements exportés : ${ totalProcessed } sur ${ totalToProcess }",
         "Nombre d'événements exportés : ${ totalProcessed } sur ${ totalToProcess }"
+      ],
+      "Loading events": [
+        "Chargement des évènements"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -7286,6 +7350,11 @@
       ],
       "Value / Data / Points to": [
         "Valeur / Données / Pointe vers"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Adresse email"
       ]
     },
     "Headline": {
@@ -9193,6 +9262,9 @@
       "Link created": [
         "Le lien est créé."
       ],
+      "Link deleted": [
+        "Lien supprimé"
+      ],
       "Link expired": [
         "Le lien a expiré."
       ],
@@ -10665,6 +10737,9 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
       ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Vous devez avoir un calendrier personnel afin d'importer vos évènements depuis un fichier ICS."
+      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Vous pourrez promouvoir l'utilisateur au rang d'administrateur une fois qu'il aura accepté l'invitation."
       ],
@@ -11010,9 +11085,27 @@
         "Abonnement"
       ]
     },
+    "Key function description": {
+      "Decryption": [
+        "Déchiffrage"
+      ]
+    },
+    "Key generation": {
+      "Generate key": [
+        "Générer la clé"
+      ],
+      "New key generated": [
+        "Nouvelle clé générée"
+      ]
+    },
     "Key state badge": {
       "Primary": [
         "Principale"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Plus rapide"
       ]
     },
     "Keyboard shortcut name": {
@@ -11371,6 +11464,9 @@
       "Allow": [
         "Adresses autorisées"
       ],
+      "Allow data export for all users": [
+        "Autoriser l'export des données pour tous les utilisateurs"
+      ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
       ],
@@ -11608,6 +11704,9 @@
       "Country": [
         "Pays"
       ],
+      "Create password": [
+        "Créer un mot de passe"
+      ],
       "Credit cards": [
         "Cartes de paiement"
       ],
@@ -11697,6 +11796,9 @@
       ],
       "Email address": [
         "Adresse e-mail"
+      ],
+      "Email categories": [
+        "Catégories d'email"
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
@@ -12959,6 +13061,11 @@
       ],
       "For individuals": [
         "Pour les particuliers"
+      ]
+    },
+    "mail_signup_2025: Info": {
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ]
     },
     "mailtrial2024: Action": {
@@ -14600,6 +14707,9 @@
       "Member added": [
         "Membre ajouté",
         "Membres ajoutés"
+      ],
+      "Member deleted": [
+        "Membre supprimé"
       ]
     },
     "Notification in shared calendar modal": {
@@ -14854,6 +14964,12 @@
       ],
       "15th of the month": [
         "15 du mois"
+      ],
+      "26th of the month": [
+        "Le 26 du mois"
+      ],
+      "30th of the month": [
+        "Le 30 du mois"
       ],
       "Add to existing group": [
         "Ajouter à un groupe existant"
@@ -15112,6 +15228,11 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "Vérifiez votre adresse e-mail ${ email } pour définir l'identité de l'organisation."
+      ]
+    },
+    "OS compatibility": {
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (pour Fedora/openSUSE)"
       ]
     },
     "Participant name": {
@@ -16226,6 +16347,11 @@
         "Gratuit"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Fuseau horaire principal"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -16467,6 +16593,17 @@
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "En vous désinscrivant, vous n'aurez plus accès à ce calendrier. Les événements qu'il contient seront supprimés de votre compte, mais resteront dans le lien public d'origine."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Supprimer le calendrier ?"
+      ],
+      "Leave calendar?": [
+        "Quitter le calendrier ?"
+      ],
+      "Unsubscribe?": [
+        "Se désabonner ?"
       ]
     },
     "Remove organization logo": {
@@ -18577,6 +18714,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Définissez un mot de passe de secours pour davantage de protection. Il vous permettra de vous connecter si vous êtes bloqué. Assurez-vous de le conserver dans un endroit sûr."
       ],
+      "Set identity": [
+        "Définir l'identité"
+      ],
       "Set your backup password": [
         "Définir le mot de passe de secours"
       ],
@@ -18600,6 +18740,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Une connexion a été demandée sur un autre appareil. En êtes-vous à l'origine ?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "L'authentification unique pourrait ne pas fonctionner correctement sans une identité d'organisation. Définissez une identité pour garantir une authentification fiable."
       ],
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
@@ -19355,6 +19498,9 @@
       "Administrator privileges restored": [
         "Les droits administrateur ont été restaurés."
       ],
+      "Auto-reply updated": [
+        "Réponse automatique mise à jour"
+      ],
       "Backup password updated": [
         "Le mot de passe de secours a été mis à jour."
       ],
@@ -19390,6 +19536,9 @@
       ],
       "Credits added": [
         "Les crédits ont été ajoutés."
+      ],
+      "Default calendar updated": [
+        "Calendrier par défaut mis à jour"
       ],
       "Device deleted": [
         "L'appareil a été supprimé."
@@ -19974,6 +20123,9 @@
       "Application access": [
         "Accès a l'application"
       ],
+      "Apply filter to existing messages": [
+        "Appliquer le filtre aux messages existants"
+      ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
       ],
@@ -20000,6 +20152,9 @@
       ],
       "Block trackers and malware": [
         "Bloquez les logiciels malveillants et traqueurs"
+      ],
+      "Browser extensions": [
+        "Extensions de navigateur"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
@@ -20631,6 +20786,9 @@
       ],
       "IP": [
         "IP"
+      ],
+      "Keyboard shortcuts": [
+        "Raccourcis clavier"
       ],
       "Labels": [
         "Labels"
@@ -21352,6 +21510,11 @@
         "État"
       ]
     },
+    "Title header for keys table": {
+      "Function": [
+        "Fonction"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Adresses"
@@ -21533,6 +21696,9 @@
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payant."
+      ],
+      "This key is used for email forwarding": [
+        "Cette clé est utilisée pour le transfert d'email"
       ],
       "This setting is managed by your organization": [
         "Ce paramètre est géré par votre organisation"

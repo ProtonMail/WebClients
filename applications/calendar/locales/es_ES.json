@@ -261,7 +261,7 @@
       "Create a free account": [
         "Crear una cuenta gratuita"
       ],
-      "Create a new bookings page": [
+      "Create a new booking page": [
         "Crear una nueva página de reservas"
       ],
       "Create a new contact group": [
@@ -3809,9 +3809,6 @@
       "Process aborted": [
         "Proceso anulado"
       ],
-      "Range is too short": [
-        "El rango es demasiado corto"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatario duplicado eliminado: ${ joinedRecipients }",
         "Destinatarios duplicados eliminados: ${ joinedRecipients }"
@@ -5213,15 +5210,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
-      "Booking already exists.": [
-        "La reserva ya existe."
-      ],
-      "Booking cannot be added in the past.": [
-        "No se pueden añadir reservas con fecha anterior a la actual."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "La reserva se superpone con otra reserva existente."
-      ],
       "Booking page deleted": [
         "Página de reservas eliminada"
       ],
@@ -5252,10 +5240,10 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "¿No encuentras los eventos que buscas? Algunos eventos en calendarios ocultos coinciden con tu búsqueda. Para ver esos resultados activa la visibilidad para ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
+      "Cannot create a range across days.": [
         "No puedes crear un rango de reserva que abarque varios días."
       ],
-      "Cannot create booking range in the past.": [
+      "Cannot create a range in the past.": [
         "No se puede crear una reserva en el pasado."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
@@ -5858,6 +5846,12 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
       ],
+      "Range is too short.": [
+        "El rango es demasiado corto."
+      ],
+      "Range overlaps with an existing range.": [
+        "La reserva se superpone con otra existente."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
@@ -6258,9 +6252,6 @@
       "You cannot undo this action.": [
         "No se puede deshacer esta acción."
       ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "No puedes tener más de ${ MAX_BOOKING_SLOTS } espacios de reserva en una página."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -6418,6 +6409,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {

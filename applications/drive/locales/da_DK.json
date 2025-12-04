@@ -899,6 +899,9 @@
       "Retry": [
         "Prøv igen"
       ],
+      "Retry failed items": [
+        "Forsøg med de mislykkede elementer igen"
+      ],
       "Run diagnostics": [
         "Kør diagnosticering"
       ],
@@ -3742,10 +3745,10 @@
         "Upload er midlertidigt deaktiveret for denne mappe"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -11699,7 +11702,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account security": [
         "Kontosikkerhed"

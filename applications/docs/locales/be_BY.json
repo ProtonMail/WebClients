@@ -246,6 +246,9 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
+      "Create a spreadsheet": [
+        "Стварыць электронную табліцу"
+      ],
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
@@ -2644,7 +2647,7 @@
         "2 ТБ сховішча для абагульвання"
       ],
       "2 user accounts": [
-        "2 уліковых запісаў карыстальнікаў"
+        "2 уліковыя запісы"
       ],
       "All premium features from your current plan": [
         "Усе прэміяльныя функцыі з вашага бягучага тарыфнага плана"
@@ -4433,6 +4436,9 @@
       "Create an end-to-end encrypted document.": [
         "Стварыць дакумент зашыфраваны скразным метадам."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Стварайце зашыфраваныя скразным метадам дакументы і электронныя табліцы."
+      ],
       "Create in": [
         "Стварыць у"
       ],
@@ -5399,6 +5405,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Вашыя даныя застаюцца вашымі. Стварайце і супрацоўнічайце, выкарыстоўваючы поўнафункцыянальныя электронныя табліцы, абароненыя скразным шыфраваннем."
+      ],
       "Your email address and password were leaked:": [
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
       ],
@@ -5559,6 +5568,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Здымак экрана ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
@@ -7865,6 +7877,11 @@
         "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Магчыма пазней"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
@@ -9809,6 +9826,9 @@
       ],
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Прадстаўляем вам ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"

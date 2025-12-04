@@ -240,6 +240,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create a spreadsheet": [
+        "스프레드시트 생성"
+      ],
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
@@ -5162,6 +5165,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "데이터는 온전히 개인의 것이여야 합니다. 모든 기능을 갖춘 스프레드시트를 사용해 생성 및 공동 작업하세요. 종단간 암호화로 데이터가 안전하게 보호됩니다."
+      ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
       ],
@@ -5313,6 +5319,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }의 스크린샷"
       ],
       "Add email address": [
         "이메일 주소 추가"
@@ -7415,6 +7424,11 @@
         "신원 보호를 위한 무제한 별칭"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "나중에"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } 또는 ${ contactSupportLink }에 방문하세요."
@@ -9191,6 +9205,9 @@
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }를 소개합니다"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"

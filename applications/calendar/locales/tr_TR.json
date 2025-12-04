@@ -261,8 +261,8 @@
       "Create a free account": [
         "Ücretsiz hesap açın"
       ],
-      "Create a new bookings page": [
-        "Yeni bir rezervasyon sayfası oluşturun"
+      "Create a new booking page": [
+        "Yeni rezervasyon sayfası oluşturun"
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
@@ -3809,9 +3809,6 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
-      "Range is too short": [
-        "Aralık çok kısa"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
         "Yinelenen alıcılar kaldırıldı: ${ joinedRecipients }"
@@ -5213,15 +5210,6 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
-      "Booking already exists.": [
-        "Rezervasyon zaten var"
-      ],
-      "Booking cannot be added in the past.": [
-        "Rezervasyon geçmiş bir tarihe eklenemez."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Rezervasyon var olan bir rezervasyonla çakışıyor."
-      ],
       "Booking page deleted": [
         "Rezervasyon sayfası silindi"
       ],
@@ -5252,11 +5240,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Aradığınız etkinlikleri bulamıyor musunuz? Gizli takvimlerdeki bazı etkinlikler sorgunuzla eşleşiyor. Bu sonuçları görmek için ${ hiddenWithItemsCalendarList } görünürlüğünü açın."
       ],
-      "Cannot create booking range across days": [
-        "Birden fazla güne yayılan bir rezervasyon aralığı oluşturulamaz"
+      "Cannot create a range across days.": [
+        "Birden fazla güne yayılan bir aralık oluşturulamıyor."
       ],
-      "Cannot create booking range in the past.": [
-        "Geçmişte rezervasyon aralığı oluşturulamıyor."
+      "Cannot create a range in the past.": [
+        "Geçmişte aralık oluşturulamıyor."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -5861,6 +5849,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
       ],
+      "Range already exists.": [
+        "Aralık zaten mevcut."
+      ],
+      "Range is too short.": [
+        "Aralık çok kısa."
+      ],
+      "Range overlaps with an existing range.": [
+        "Aralık, mevcut bir aralıkla çakışıyor."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
@@ -6261,9 +6258,6 @@
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
       ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Bir sayfada ${ MAX_BOOKING_SLOTS } taneden fazla rezervasyon alanı bulunamaz."
-      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
       ],
@@ -6421,6 +6415,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Rezervasyon kotanızın sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {

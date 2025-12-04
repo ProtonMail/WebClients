@@ -261,7 +261,7 @@
       "Create a free account": [
         "Créer un compte gratuit"
       ],
-      "Create a new bookings page": [
+      "Create a new booking page": [
         "Créer une nouvelle page de réservation"
       ],
       "Create a new contact group": [
@@ -3806,9 +3806,6 @@
       "Process aborted": [
         "Le processus a été abandonné."
       ],
-      "Range is too short": [
-        "La plage est trop courte."
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Le destinataire dupliqué a été retiré : ${ joinedRecipients }",
         "Les destinataires dupliqués ont été retirés : ${ joinedRecipients }"
@@ -5210,15 +5207,6 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
-      "Booking already exists.": [
-        "La réservation existe déjà."
-      ],
-      "Booking cannot be added in the past.": [
-        "Une réservation ne peut pas être ajoutée dans le passé."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "La réservation chevauche une réservation existante."
-      ],
       "Booking page deleted": [
         "La page de réservation a été supprimée"
       ],
@@ -5249,11 +5237,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Vous ne trouvez pas ce que vous cherchez ? Certains événements dans vos calendriers masqués correspondent à votre recherche. Pour voir ces résultats, activez la visibilité de ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Impossible de créer une plage de réservation s'étendant sur plusieurs jours"
+      "Cannot create a range across days.": [
+        "Impossible de créer une plage s'étendant sur plusieurs jours."
       ],
-      "Cannot create booking range in the past.": [
-        "Impossible de créer une plage de réservation dans le passé."
+      "Cannot create a range in the past.": [
+        "Impossible de créer une plage dans le passé."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -5858,6 +5846,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navigation privée (ou mode « incognito ») sert uniquement à masquer vos activités sur votre appareil. Elle empêche votre navigateur d'enregistrer l'historique et les cookies, mais ne vous rend pas invisible. Votre FAI, votre administrateur réseau et les sites internet que vous consultez peuvent toujours voir ce que vous faites en ligne."
       ],
+      "Range already exists.": [
+        "La plage existe déjà."
+      ],
+      "Range is too short.": [
+        "La plage est trop courte."
+      ],
+      "Range overlaps with an existing range.": [
+        "La plage chevauche une plage existante."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
@@ -6415,6 +6412,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
       ]
     },
     "info": {
@@ -7052,6 +7052,9 @@
       ],
       "Toolbar": [
         "Barre d'outils"
+      ],
+      "Unavailable": [
+        "Indisponible"
       ],
       "Upload picture": [
         "Importer une image"

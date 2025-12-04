@@ -14,6 +14,9 @@
       "Add another account": [
         "Ajouter un autre compte"
       ],
+      "Agree and continue": [
+        "Accepter et continuer"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "Désigner ${ selectedParticipantName } comme hôte"
       ],
@@ -203,8 +206,14 @@
       "Start meeting": [
         "Démarrer la réunion"
       ],
+      "Start recording": [
+        "Démarrer l'enregistrement"
+      ],
       "Stay in meeting": [
         "Rester dans la réunion"
+      ],
+      "Stop recording": [
+        "Arrêter l'enregistrement"
       ],
       "Submit": [
         "Envoyer"
@@ -1219,6 +1228,12 @@
       "Failed to join meeting. Please try again later.": [
         "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
       ],
+      "Failed to save recording": [
+        "L'enregistrement n'a pas abouti."
+      ],
+      "Failed to start recording": [
+        "Le démarrage de l'enregistrement n'a pas abouti."
+      ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
@@ -1398,6 +1413,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "En poursuivant dans la réunion, vous reconnaissez et consentez à être enregistré."
+      ],
       "Chat with everyone": [
         "Discuter avec tout le monde"
       ],
@@ -1548,6 +1566,9 @@
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Veuillez activer l'accès à votre ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pour une expérience optimale."
       ],
+      "Recording saved": [
+        "L'enregistrement a été enregistré."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
@@ -1580,6 +1601,9 @@
       ],
       "Stop sharing your screen": [
         "Mettre fin au partage d'écran"
+      ],
+      "This meeting is being recorded": [
+        "Cette réunion est en cours d'enregistrement"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."

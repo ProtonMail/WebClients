@@ -230,9 +230,6 @@
       "Create": [
         "创建"
       ],
-      "Create a new bookings page": [
-        "创建新的预订页面"
-      ],
       "Create a new contact group": [
         "创建联系人群组"
       ],
@@ -366,7 +363,7 @@
         "生成密码"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -8413,7 +8410,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -8509,6 +8506,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
