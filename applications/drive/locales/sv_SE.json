@@ -899,6 +899,9 @@
       "Retry": [
         "Försök igen"
       ],
+      "Retry failed items": [
+        "Försök med misslyckade objekt igen"
+      ],
       "Run diagnostics": [
         "Kör diagnostik"
       ],
@@ -3758,6 +3761,9 @@
       ],
       "We were not able to load some of your shared items": [
         "Vi kunde inte ladda några av dina delade objekt"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Vi kunde inte ladda information om några av dina delade objekt"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -9876,6 +9882,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {
