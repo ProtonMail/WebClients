@@ -7,18 +7,15 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { DocumentType, RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useLocation } from 'react-router-dom-v5-compat'
+import { useIsSheetsEnabled } from './misc'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
-export function useDocsUrlBar({
-  isDocsEnabled = true,
-  isSheetsEnabled = false,
-}: { isDocsEnabled?: boolean; isSheetsEnabled?: boolean } = {}) {
+export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(
-    parseOpenAction(searchParams, pathname, isSheetsEnabled),
-  )
+  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams, pathname))
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -118,9 +115,20 @@ export function useDocsUrlBar({
     history.replaceState(null, '', newUrl.toString())
   }, [])
 
+  const isSheetsEnabled = useIsSheetsEnabled()
+
   useEffectOnce(() => {
     if (isDocsEnabled === false) {
       window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
+      return
+    }
+    // prevent users without access from creating sheets
+    if (
+      !isSheetsEnabled &&
+      (openAction?.type === 'sheet' || openAction?.type === 'spreadsheet') &&
+      (openAction?.mode === 'create' || openAction?.mode === 'new')
+    ) {
+      window.location.assign(getAppHref('/', APPS.PROTONDOCS, getLocalID()))
       return
     }
   })
@@ -142,11 +150,7 @@ export const DOCUMENT_EDITOR_PATH = '/doc'
 export const DOCUMENT_NEW_PATH = '/new'
 export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, SHEET_EDITOR_PATH, DOCUMENT_NEW_PATH]
 
-export function parseOpenAction(
-  searchParams: URLSearchParams,
-  pathname: string,
-  isSheetsEnabled = false,
-): DocumentAction | null {
+export function parseOpenAction(searchParams: URLSearchParams, pathname: string): DocumentAction | null {
   let type = stripLocalBasenameFromPathname(pathname).slice(1) as DocumentAction['type']
   const mode = (searchParams.get('mode') ?? 'open') as DocumentAction['mode']
   const action = searchParams.get('action') as RedirectAction | undefined
@@ -154,12 +158,9 @@ export function parseOpenAction(
   const volumeId = searchParams.get('volumeId')
   const linkId = searchParams.get('linkId') || undefined
   const token = searchParams.get('token')
+  const typeParam = searchParams.get('type') as ProtonDocumentType | undefined
 
   if (type !== 'doc' && type !== 'sheet') {
-    type = 'doc'
-  }
-
-  if (type === 'sheet' && !isSheetsEnabled) {
     type = 'doc'
   }
 
@@ -181,7 +182,8 @@ export function parseOpenAction(
 
     if (DOCUMENT_CREATION_PATHS.some((path) => pathname.endsWith(path)) && hasNoParamsOrHasOnlyTypeParam) {
       return {
-        type,
+        // hack to make new?type=spreadsheet work
+        type: typeParam === 'spreadsheet' ? 'sheet' : type,
         mode: 'new',
       }
     }
