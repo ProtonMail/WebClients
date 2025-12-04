@@ -516,6 +516,7 @@ const ProjectDetailViewInner = () => {
                     {...instructionsModal.modalProps}
                     projectId={projectId}
                     currentInstructions={projectInstructions}
+                    space={space}
                 />
             )}
 

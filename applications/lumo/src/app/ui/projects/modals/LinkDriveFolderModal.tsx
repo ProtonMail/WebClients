@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,20 +24,36 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
     const files = Object.values(spaceAssets).filter((asset) => !asset.error);
     const hasExistingFiles = files.length > 0;
-    const { isInitialized, browseFolderChildren, getRootFolder } = useDriveSDK();
-    const [selectedFolder, setSelectedFolder] = useState<DriveNode | null>(null);
-    const [folderPath, setFolderPath] = useState<string>('');
+    const { isInitialized, getRootFolder } = useDriveSDK();
+    const [currentBrowsedFolder, setCurrentBrowsedFolder] = useState<DriveNode | null>(null);
+    const [rootFolderId, setRootFolderId] = useState<string | null>(null);
+    const [folderPath, setFolderPath] = useState<string[]>([]);
 
-    const handleFolderSelect = useCallback((folder: DriveNode) => {
-        if (folder.type === 'folder') {
-            setSelectedFolder(folder);
-            // Build path from folder name - in a real implementation, we'd track breadcrumbs
-            setFolderPath(folder.name);
+    // Initialize root folder ID when Drive is ready
+    useEffect(() => {
+        if (isInitialized && !rootFolderId) {
+            void (async () => {
+                try {
+                    const root = await getRootFolder();
+                    setRootFolderId(root.nodeId);
+                    setCurrentBrowsedFolder(root);
+                    setFolderPath([root.name]);
+                } catch (error) {
+                    console.error('Failed to get root folder:', error);
+                }
+            })();
         }
+    }, [isInitialized, rootFolderId, getRootFolder]);
+
+    const handleFolderNavigate = useCallback((folder: DriveNode) => {
+        setCurrentBrowsedFolder(folder);
+        setFolderPath((prev) => [...prev, folder.name]);
     }, []);
 
+    const isAtRoot = !currentBrowsedFolder || currentBrowsedFolder.nodeId === rootFolderId;
+
     const handleLinkFolder = useCallback(async () => {
-        if (!selectedFolder || !space) {
+        if (!currentBrowsedFolder || !space || isAtRoot) {
             return;
         }
 
@@ -46,9 +62,9 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             const updatedSpace = {
                 ...space,
                 linkedDriveFolder: {
-                    folderId: selectedFolder.nodeId,
-                    folderName: selectedFolder.name,
-                    folderPath: folderPath || selectedFolder.name,
+                    folderId: currentBrowsedFolder.nodeId,
+                    folderName: currentBrowsedFolder.name,
+                    folderPath: folderPath.join(' / '),
                 },
             };
 
@@ -68,7 +84,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 type: 'error',
             });
         }
-    }, [selectedFolder, space, folderPath, dispatch, projectId, createNotification, modalProps]);
+    }, [currentBrowsedFolder, space, folderPath, dispatch, projectId, createNotification, modalProps, isAtRoot]);
 
     const handleUnlinkFolder = useCallback(() => {
         if (!space) {
@@ -113,7 +129,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             <ModalTwoContent>
                 {!isInitialized ? (
                     <div className="flex items-center justify-center p-8">
-                        <Icon name="circle-notch" className="mr-2" />
+                        <Icon name="brand-proton-drive-filled" className="mr-2" />
                         <span>{c('collider_2025:Info').t`Initializing Drive...`}</span>
                     </div>
                 ) : isLinked ? (
@@ -150,24 +166,35 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             <>
                                 <p className="text-sm color-weak mb-4">
                                     {c('collider_2025:Info')
-                                        .t`Select a Drive folder to link to this project. Files uploaded to this project will be saved to the linked folder.`}
+                                        .t`Browse to the Drive folder you want to link to this project, then click "Link this folder".`}
                                 </p>
                                 <DriveBrowser
                                     onFileSelect={() => {
-                                        // Ignore file selection in folder selection mode
+                                        // Ignore file selection in folder browsing mode
                                     }}
-                                    onFolderSelect={handleFolderSelect}
+                                    onFolderSelect={handleFolderNavigate}
                                     folderSelectionMode={true}
                                     initialShowDriveBrowser={true}
                                     isModal={true}
+                                    hideHeader={true}
                                 />
-                                {selectedFolder && (
+                                {currentBrowsedFolder && !isAtRoot && (
                                     <div className="mt-4 p-4 bg-weak rounded border border-weak">
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <Icon name="checkmark-circle" className="color-success" />
-                                            <span className="text-bold">{c('collider_2025:Label').t`Selected Folder`}</span>
+                                        <div className="flex items-center gap-2">
+                                            <Icon name="folder" className="color-primary" />
+                                            <span className="text-sm">
+                                                {c('collider_2025:Label').t`Current folder:`}{' '}
+                                                <span className="text-bold">{currentBrowsedFolder.name}</span>
+                                            </span>
                                         </div>
-                                        <div className="text-sm">{selectedFolder.name}</div>
+                                    </div>
+                                )}
+                                {isAtRoot && (
+                                    <div className="mt-4 p-3 bg-info rounded text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <Icon name="info-circle" size={4} />
+                                            <span>{c('collider_2025:Info').t`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
+                                        </div>
                                     </div>
                                 )}
                             </>
@@ -180,12 +207,14 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                     <Button onClick={modalProps.onClose} color="weak">
                         {c('collider_2025:Button').t`Cancel`}
                     </Button>
-                    <Button onClick={handleLinkFolder} color="norm" disabled={!selectedFolder}>
-                        {c('collider_2025:Button').t`Link this folder`}
+                    <Button onClick={handleLinkFolder} color="norm" disabled={isAtRoot}>
+                        <span className="flex items-center flex-nowrap">
+                            <Icon name="link" className="mr-2" />
+                            {c('collider_2025:Button').t`Link this folder`}
+                        </span>
                     </Button>
                 </ModalTwoFooter>
             )}
         </ModalTwo>
     );
 };
-
