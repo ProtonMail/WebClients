@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getPromptSuggestionsForCategory } from './constants';
 import type { Project } from './types';
 
 export const EXAMPLE_PROJECTS: Project[] = [
@@ -26,10 +27,9 @@ Answer questions across a wide range of fitness topics, including: strength trai
 If the users request falls outside safe or science-backed recommendations, politely explain the risks and guide them toward healthier alternatives.
 
 Your goal: help the user achieve their fitness goals in a safe, effective, and motivating way while grounding your advice in reliable evidence and proper citations.`,
-        promptSuggestions: [
-            'Design a 3-day strength program for someone who can only train 45 minutes per session',
-            'What should I do to improve my sleep?',
-        ],
+        get promptSuggestions() {
+            return getPromptSuggestionsForCategory('health');
+        },
     },
     {
         id: 'example-financial-analysis',
@@ -46,11 +46,9 @@ Key guidelines:
 - Help prepare questions for financial advisors
 - Respect the highly sensitive nature of financial information
 - Never share specific financial details in summaries`,
-        promptSuggestions: [
-            'Analyze my spending patterns and suggest areas to reduce expenses',
-            'Review my investment portfolio allocation and suggest rebalancing',
-            'Help me understand the tax implications of this financial decision',
-        ],
+        get promptSuggestions() {
+            return getPromptSuggestionsForCategory('finance');
+        },
     },
     {
         id: 'example-legal-review',
@@ -67,11 +65,9 @@ Key guidelines:
 - Suggest questions to ask a lawyer
 - Never provide legal advice
 - Maintain strict confidentiality of all document contents`,
-        promptSuggestions: [
-            'Summarize the key obligations and rights in this contract',
-            'What are the termination clauses and notice requirements?',
-            'Identify any unusual or potentially unfavorable terms',
-        ],
+        get promptSuggestions() {
+            return getPromptSuggestionsForCategory('legal');
+        },
     },
     {
         id: 'example-research-synthesis',
@@ -88,11 +84,9 @@ Key guidelines:
 - Suggest areas for further investigation
 - Respect confidential and proprietary research
 - Maintain academic integrity and proper attribution`,
-        promptSuggestions: [
-            'Compare the methodologies used across these studies',
-            'What are the main findings and how do they relate to each other?',
-            'Identify research gaps and suggest future research directions',
-        ],
+        get promptSuggestions() {
+            return getPromptSuggestionsForCategory('research');
+        },
     },
 ];
 

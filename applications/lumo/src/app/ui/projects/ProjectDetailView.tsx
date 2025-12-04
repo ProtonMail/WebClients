@@ -8,7 +8,6 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
-    Hamburger,
     Icon,
     ModalTwo,
     ModalTwoContent,
@@ -30,7 +29,7 @@ import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
-import { getProjectCategory } from './constants';
+import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
 import { useProjectActions } from './hooks/useProjectActions';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
@@ -99,7 +98,7 @@ const ProjectDetailViewInner = () => {
     const { isSmallScreen } = useSidebar();
     const [isMobileViewport, setIsMobileViewport] = useState(false);
 
-    // Check if viewport is <= 768px (matches CSS breakpoint)
+    // Check if viewport is <= 768px (matches CSS breakpoint for mobile-specific UI)
     useEffect(() => {
         const checkViewport = () => {
             setIsMobileViewport(window.innerWidth <= 768);
@@ -199,52 +198,10 @@ const ProjectDetailViewInner = () => {
         (att) => !att.error
     ).length;
 
-    // Get prompt suggestions based on project name (for newly created example projects)
-    const getPromptSuggestions = (): string[] => {
-        // Health/Medical
-        if (category.id === 'health') {
-            return [
-                'What do these lab values mean and are any outside normal ranges?',
-                'Help me prepare questions about this diagnosis for my doctor',
-                'Explain this medication and its potential side effects',
-            ];
-        }
-        // Financial
-        if (category.id === 'financial' || category.id === 'investing') {
-            return [
-                'Analyze my spending patterns and suggest areas to reduce expenses',
-                'Review my investment portfolio allocation and suggest rebalancing',
-                'Help me understand the tax implications of this financial decision',
-            ];
-        }
-        // Legal
-        if (category.id === 'legal') {
-            return [
-                'Summarize the key obligations and rights in this contract',
-                'What are the termination clauses and notice requirements?',
-                'Identify any unusual or potentially unfavorable terms',
-            ];
-        }
-        // Research
-        if (category.id === 'research') {
-            return [
-                'Compare the methodologies used across these studies',
-                'What are the main findings and how do they relate to each other?',
-                'Identify research gaps and suggest future research directions',
-            ];
-        }
-        // Writing
-        if (category.id === 'writing') {
-            return [
-                'Help me refine this draft to be more concise and impactful',
-                'Suggest ways to improve the flow and structure of this text',
-                'Review this for clarity, tone, and grammatical errors',
-            ];
-        }
-        return [];
-    };
-
-    const promptSuggestions = sortedConversations.length === 0 ? getPromptSuggestions() : [];
+    // Get prompt suggestions based on project category (only shown when no conversations exist)
+    const promptSuggestions = sortedConversations.length === 0 
+        ? getPromptSuggestionsForCategory(category.id) 
+        : [];
 
     // Create a Project object for the delete modal
     const projectForModal: Project = {
@@ -264,14 +221,13 @@ const ProjectDetailViewInner = () => {
         <div className="project-detail-view flex flex-column">
             {isSmallScreen && (
                 <HeaderWrapper>
-                    <div className="flex flex-row items-center gap-1">
-                        {/* Empty - header actions can go here if needed */}
-                    </div>
+                    <>
+                    </>
                 </HeaderWrapper>
             )}
             <div className={`project-detail-header flex flex-nowrap items-baseline ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
                 <div className="project-detail-header-content flex flex-column">
-                    {!isSmallScreen && (
+                    
                         <Button
                             icon
                             shape="ghost"
@@ -282,7 +238,7 @@ const ProjectDetailViewInner = () => {
                             <Icon name="arrow-left" className="mr-1" />
                             <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
                         </Button>
-                    )}
+                    
                     <div className="project-detail-title-section flex items-center">
                         <Icon name={category.icon as any} size={6} className="project-detail-title-icon shrink-0" />
                         <h1 className="project-detail-title text-2xl">{projectName}</h1>

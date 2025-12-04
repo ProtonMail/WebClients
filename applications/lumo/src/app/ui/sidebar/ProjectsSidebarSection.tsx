@@ -225,20 +225,8 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                 )}
                                 onClick={onItemClick}
                             >
-                                <div
-                                    className="project-icon-small"
-                                    style={{
-                                        backgroundColor: category.color,
-                                        width: '20px',
-                                        height: '20px',
-                                        borderRadius: '6px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        flexShrink: 0,
-                                    }}
-                                >
-                                    <Icon name={category.icon as any} size={3} className="color-white" />
+                                <div className="project-icon-small color-norm">
+                                    <Icon name={category.icon as any} size={4} className="color-white" />
                                 </div>
                                 <span className="flex-1 text-ellipsis text-sm" title={project.name}>
                                     {project.name}

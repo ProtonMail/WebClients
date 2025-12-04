@@ -1,40 +1,39 @@
-import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import {c} from 'ttag';
+import { c } from 'ttag';
 
-import {Button} from '@proton/atoms/Button/Button';
-import {ButtonLike} from '@proton/atoms/Button/ButtonLike';
-import {Hamburger, Icon, SettingsLink, useModalStateObject} from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
 
-import {EXAMPLE_PROJECTS} from './exampleProjects';
-import {useIsGuest} from '../../providers/IsGuestProvider';
-import {useLumoPlan} from '../../providers/LumoPlanProvider';
-import {useSidebar} from '../../providers/SidebarProvider';
-import {useProjects} from './hooks/useProjects';
-import {NewProjectModal} from './modals/NewProjectModal';
-import {ProjectCard} from './ProjectCard';
-import {ProjectLimitModal} from './modals/ProjectLimitModal';
+import { EXAMPLE_PROJECTS } from './exampleProjects';
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
+import { useProjects } from './hooks/useProjects';
+import { NewProjectModal } from './modals/NewProjectModal';
+import { ProjectCard } from './ProjectCard';
+import { ProjectLimitModal } from './modals/ProjectLimitModal';
+import { HeaderWrapper } from '../header/HeaderWrapper';
 
 import './ProjectsView.scss';
 
 export const ProjectsView = () => {
     const history = useHistory();
     const isGuest = useIsGuest();
-    const {hasLumoPlus} = useLumoPlan();
+    const { hasLumoPlus } = useLumoPlan();
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
     const myProjects = useProjects();
-    const {isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen} = useSidebar();
+    const { isSmallScreen } = useSidebar();
     const [templateData, setTemplateData] = useState<{ name: string; instructions: string; icon: string } | null>(null);
 
     const handleCreateProject = () => {
         if (isGuest) {
-            // Guest users cannot create projects - they must sign in
             return;
         }
 
-        // Free users are limited to 1 project
         if (!hasLumoPlus && myProjects.length >= 1) {
             projectLimitModal.openModal(true);
             return;
@@ -45,33 +44,30 @@ export const ProjectsView = () => {
     };
 
     const handleOpenTemplateModal = (name: string, instructions: string, icon: string) => {
-        setTemplateData({name, instructions, icon});
+        setTemplateData({ name, instructions, icon });
         newProjectModal.openModal(true);
     };
 
     const handleProjectCreated = (projectId: string) => {
-        // Navigate to the newly created project
         if (projectId) {
             history.push(`/projects/${projectId}`);
         }
     };
 
     const renderContent = () => {
-        // Guest users - show sign-in prompt
         if (isGuest) {
             return (
                 <div className="projects-empty-state">
                     <div className="projects-empty-icon">
-                        <Icon name="lock" size={6}/>
+                        <Icon name="lock" size={6} />
                     </div>
                     <h2 className="projects-empty-title">
                         {c('collider_2025:Title').t`Sign in to create projects`}
                     </h2>
                     <p className="projects-empty-description">
-                        {c('collider_2025:Info')
-                            .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
+                        {c('collider_2025:Info').t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
                     </p>
-                    <div className="flex flex-column gap-2 items-center mt-4" style={{maxWidth: '20rem'}}>
+                    <div className="flex flex-column gap-2 items-center mt-4" style={{ maxWidth: '20rem' }}>
                         <ButtonLike
                             as={SettingsLink}
                             color="norm"
@@ -86,21 +82,20 @@ export const ProjectsView = () => {
                         </ButtonLike>
                     </div>
                     <p className="text-sm color-weak mt-4">
-                        <Icon name="lock" size={3} className="mr-1"/>
+                        <Icon name="lock" size={3} className="mr-1" />
                         {c('collider_2025:Info').t`Your information is zero-access encrypted`}
                     </p>
                 </div>
             );
         }
 
-        // If user has projects, show them with Inspiration section below
         if (myProjects.length > 0) {
             return (
                 <>
                     <div className="projects-grid-wrapper">
                         <div className="projects-grid">
                             {myProjects.map((project) => (
-                                <ProjectCard key={project.id} project={project}/>
+                                <ProjectCard key={project.id} project={project} />
                             ))}
                         </div>
                     </div>
@@ -122,20 +117,18 @@ export const ProjectsView = () => {
             );
         }
 
-        // If no projects, show example projects in Inspiration section
         return (
             <>
                 <div className="projects-empty-state-wrapper">
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
-                            <Icon name="folder" size={6}/>
+                            <Icon name="folder-filled" size={8} color="var(--text-accent)"/>
                         </div>
                         <h2 className="projects-empty-title">
                             {c('collider_2025:Title').t`Get started by creating a new project`}
                         </h2>
                         <p className="projects-empty-description">
-                            {c('collider_2025:Info')
-                                .t`Projects help you organize conversations with custom instructions and files.`}
+                            {c('collider_2025:Info').t`Projects help you organize conversations with custom instructions and files.`}
                         </p>
                     </div>
                 </div>
@@ -160,14 +153,18 @@ export const ProjectsView = () => {
     return (
         <>
             <div className="projects-view">
+                {isSmallScreen && (
+                    <HeaderWrapper>
+                        <div />
+                    </HeaderWrapper>
+                )}
                 <div className="projects-header">
-                    {isSmallScreen && (
-                        <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5}/>
-                    )}
                     <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
                     <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
-                        <Icon name="plus" className="mr-2"/>
-                        {c('collider_2025:Button').t`New project`}
+                        <span className="flex items-center flex-nowrap">
+                            <Icon name="plus" className="mr-2" />
+                            {c('collider_2025:Button').t`New project`}
+                        </span>
                     </Button>
                 </div>
 
@@ -187,4 +184,3 @@ export const ProjectsView = () => {
         </>
     );
 };
-
