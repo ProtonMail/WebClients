@@ -1709,6 +1709,11 @@
         "Abaila Anda keluar sekarang, sebagian acara kemungkinan tidak akan terimpor"
       ]
     },
+    "Alias promotion": {
+      "Get unlimited aliases!": [
+        "Dapatkan alias tanpa batas!"
+      ]
+    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
@@ -4976,6 +4981,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Meneruskan pesan ke alamat tanpa enkripsi end-to-end akan menonaktifkan enkripsi end-to-end pada alamat ${ boldForwarderEmail } milik Anda, namun enkripsi zero-access tetap akan aktif. ${ learnMoreLink }"
+      ],
       "You can safely close this tab.": [
         "Anda kini dapat menutup tab ini."
       ],
@@ -6144,6 +6152,11 @@
     "Event title": {
       "(no title)": [
         "(tanpa judul)"
+      ]
+    },
+    "Export calendar": {
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "Kalender berhasil diekspor. Anda kini dapat menyimpan berkas ICS yang dihasilkan."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -8633,6 +8646,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Menyembunyikan informasi pribadi dengan memuat konten eksternal melalui proxy. Konten eksternal yang ada akan tetap dapat dilihat dan disimpan sebagai lampiran."
       ],
       "High Priority": [
         "Prioritas Tinggi"
@@ -14443,6 +14459,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "Tanggal 10"
+      ],
+      "11th of the month": [
+        "Tanggal 11"
+      ],
+      "12th of the month": [
+        "Tanggal 12"
+      ],
+      "13th of the month": [
+        "Tanggal 13"
+      ],
+      "14th of the month": [
+        "Tanggal 14"
+      ],
+      "15th of the month": [
+        "Tanggal 15"
+      ],
+      "16th of the month": [
+        "Tanggal 16"
+      ],
+      "17th of the month": [
+        "Tanggal 17"
+      ],
+      "18th of the month": [
+        "Tanggal 18"
+      ],
+      "19th of the month": [
+        "Tanggal 19"
+      ],
+      "1st of the month": [
+        "Tanggal 1"
+      ],
+      "20th of the month": [
+        "Tanggal 20"
+      ],
+      "21st of the month": [
+        "Tanggal 21"
+      ],
+      "22nd of the month": [
+        "Tanggal 22"
+      ],
+      "23rd of the month": [
+        "Tanggal 23"
+      ],
+      "24th of the month": [
+        "Tanggal 24"
+      ],
+      "25th of the month": [
+        "Tanggal 25"
+      ],
+      "26th of the month": [
+        "Tanggal 26"
+      ],
+      "27th of the month": [
+        "Tanggal 27"
+      ],
+      "28th of the month": [
+        "Tanggal 28"
+      ],
+      "29th of the month": [
+        "Tanggal 29"
+      ],
+      "2nd of the month": [
+        "Tanggal 2"
+      ],
+      "30th of the month": [
+        "Tanggal 30"
+      ],
+      "31st of the month": [
+        "Tanggal 31"
+      ],
+      "3rd of the month": [
+        "Tanggal 3"
+      ],
+      "4th of the month": [
+        "Tanggal 4"
+      ],
+      "5th of the month": [
+        "Tanggal 5"
+      ],
+      "6th of the month": [
+        "Tanggal 6"
+      ],
+      "7th of the month": [
+        "Tanggal 7"
+      ],
+      "8th of the month": [
+        "Tanggal 8"
+      ],
+      "9th of the month": [
+        "Tanggal 9"
+      ],
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
       ],
@@ -17057,6 +17166,11 @@
         "Permintaan pengaturan ulang kata sandi"
       ]
     },
+    "Setting": {
+      "Get updates about comments via email": [
+        "Dapatkan pembaruan seputar komentar via email"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Jaga agar kotak masuk Anda tetap teratur dengan folder dan label. ${ learnMoreLink }"
@@ -17709,7 +17823,7 @@
         "Lakukan lebih banyak dengan ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
-        "Dapatkan alias tak terbatas"
+        "Dapatkan alias tanpa batas"
       ],
       "Go to subscription plans": [
         "Tuju daftar paket langganan"
@@ -19415,6 +19529,9 @@
       "Block trackers and malware": [
         "Blokir pelacak dan malware"
       ],
+      "Browser extensions": [
+        "Ekstensi browser"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -19504,6 +19621,9 @@
       ],
       "Connect organization": [
         "Sambungkan organisasi"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Hubungkan VPN Anda ke ${ VPN_CONNECTIONS } perangkat sekaligus dengan ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Hubungkan ke konferensi video"
@@ -20749,6 +20869,11 @@
         "Status"
       ]
     },
+    "Title header for keys table": {
+      "Type": [
+        "Jenis"
+      ]
+    },
     "Title header for members table": {
       "Addresses": [
         "Alamat"
@@ -20822,6 +20947,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Sesuaikan impor untuk mengurangi jumlah label"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Hapus pesan sampah dan spam setelah 30 hari. Dengan mengaktifkan penghapusan otomatis, pesan yang telah ada di sampah/spam akan memiliki tenggat waktu penghapusan berdasarkan tanggal pembuangan masing-masing pesan."
       ],
       "Device name and app version": [
         "Nama perangkat dan versi aplikasi"
@@ -21198,6 +21326,11 @@
       ],
       "Your default font will look like following:": [
         "Jenis tulisan bawaan Anda akan tampak sebagai berikut:"
+      ]
+    },
+    "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Tingkatkan ke ${ passPlusPlanName } untuk memperoleh alias hide-my-email tanpa batasan jumlah"
       ]
     },
     "Upsell": {
@@ -21665,6 +21798,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu pada perangkat Anda tidak sesuai tanggal dan waktu saat ini. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Perangkat atau layanan yang menggunakan token ini tidak lagi akan dapat mengirimkan email melalui ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Impor ini dapat melebihi kapasitas penyimpanan yang tersedia pada akun ${ BRAND_NAME } Anda saat ini. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
