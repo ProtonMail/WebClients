@@ -7,6 +7,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
@@ -20,6 +21,8 @@ import { ScreenShareLeaveWarningModal } from '../ScreenShareLeaveWarningModal/Sc
 import './LeaveMeetingPopup.scss';
 
 export const LeaveMeetingPopup = () => {
+    const allowNewHostAssignment = useFlag('MeetAllowNewHostAssignment');
+
     const [isScreenShareLeaveWarningModalOpen, setIsScreenShareLeaveWarningModalOpen] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { handleEndMeeting, handleLeave, isLocalScreenShare } = useMeetContext();
@@ -86,17 +89,19 @@ export const LeaveMeetingPopup = () => {
                     >
                         {c('Action').t`Leave meeting`}
                     </Button>
-                    <Button
-                        className="assign-new-host-button border-none rounded-full w-full py-4"
-                        onClick={() => {
-                            toggleSideBarState(MeetingSideBars.AssignHost);
-                            close();
-                        }}
-                        disabled={loadingEndMeeting}
-                        size="large"
-                    >
-                        {c('Action').t`Assign new host`}
-                    </Button>
+                    {allowNewHostAssignment && (
+                        <Button
+                            className="assign-new-host-button border-none rounded-full w-full py-4"
+                            onClick={() => {
+                                toggleSideBarState(MeetingSideBars.AssignHost);
+                                close();
+                            }}
+                            disabled={loadingEndMeeting}
+                            size="large"
+                        >
+                            {c('Action').t`Assign new host`}
+                        </Button>
+                    )}
                 </div>
             </Dropdown>
             {isScreenShareLeaveWarningModalOpen && (
