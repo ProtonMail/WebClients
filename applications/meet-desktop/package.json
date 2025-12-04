@@ -14,7 +14,6 @@
         "check-types": "yarn run check:types",
         "check:format": "prettier . --check",
         "check:lint": "eslint --quiet",
-        "check:negativity": "electronegativity -i ./src",
         "check:types": "tsc --noEmit",
         "format": "prettier . --write --list-different",
         "i18n:extract:web": "node tasks/extract-translations.mjs",
@@ -23,7 +22,6 @@
         "lint": "yarn run check:lint",
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
-        "negativity": "electronegativity -i ./src",
         "package": "electron-forge package",
         "start": "electron-forge start",
         "test": "jest --runInBand"
@@ -51,7 +49,6 @@
         "zod": "^3.25.76"
     },
     "devDependencies": {
-        "@doyensec/electronegativity": "^1.10.3",
         "@electron-forge/cli": "^7.3.0",
         "@electron-forge/maker-deb": "^7.3.0",
         "@electron-forge/maker-dmg": "^7.3.0",
