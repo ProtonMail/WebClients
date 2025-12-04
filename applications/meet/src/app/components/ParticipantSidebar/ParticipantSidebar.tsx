@@ -59,7 +59,7 @@ export const ParticipantSidebar = ({
                 </Button>
             )}
             {participantSideBarOpen && (
-                <div className="h-full flex items-start flex-column">
+                <div className="h-full flex items-start flex-column flex-nowrap">
                     {participants.map((participant) => {
                         return (
                             <div
