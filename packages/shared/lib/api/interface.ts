@@ -5,5 +5,5 @@ export interface PaginationParams {
 
 export interface CountParams {
     AddressID?: string;
-    OnlyInInboxForCategories?: boolean;
+    OnlyInInboxForCategories: 1 | 0 | undefined;
 }
