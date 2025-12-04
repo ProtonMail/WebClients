@@ -1,4 +1,6 @@
 import { sha1 } from '@noble/hashes/sha1';
+// Allow support of toHex, toBase65 on Uint8Array
+import 'core-js/actual/typed-array';
 import { getUnixTime } from 'date-fns';
 
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
