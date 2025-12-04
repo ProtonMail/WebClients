@@ -103,21 +103,21 @@ export const computeIconShift = (
          * present at that location. Other browsers include elements outside of the shadow DOM,
          * from the shadow DOM element in the topmost layer to the document root node. */
 
-        /** We trace a diagonal across the icon to hit-test at top-left and bottom-right,
-         * accounting for the icon's radius from its center point. This diagonal sampling
-         * ensures we don't miss underlying elements that might only be present at the
-         * icon's edges rather than its center.
+        /** We check for elements at the left and right edges of the icon on the same
+         * y-axis, accounting for the icon's radius from its center point. This horizontal
+         * sampling ensures we don't miss underlying elements that might only be present at
+         * the icon's horizontal edges rather than its center.
          *
          *  ____________
          * |            |
-         * |    ↖       | (x-offset, y-offset)
-         * |      x     | (x, y) center
-         * |        ↘   | (x+offset, y+offset)
+         * |            |
+         * |  <-  x  -> |     (x, y) center - check left/right on same y-axis
+         * |            |
          * |____________|
          */
-        const offset = Math.max(options.radius / 2);
-        const overlaysLeft = document.elementsFromPoint(x - offset, y - offset);
-        const overlaysRight = document.elementsFromPoint(x + offset, y + offset);
+        const offsetX = options.radius / 2;
+        const overlaysLeft = document.elementsFromPoint(x - offsetX, y);
+        const overlaysRight = document.elementsFromPoint(x + offsetX, y);
         const overlays = overlaysLeft.length > overlaysRight.length ? overlaysLeft : overlaysRight;
 
         let maxDx: number = 0;
