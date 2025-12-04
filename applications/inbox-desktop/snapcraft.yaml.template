@@ -1,3 +1,4 @@
+assumes: [snapd2.55]
 name: proton-mail
 icon: assets/linux/icon.svg
 version: $APP_VERSION
@@ -29,6 +30,13 @@ parts:
     prime:
       - -usr/lib/proton-mail/chrome-sandbox
 
+plugs:
+  foo-install-cups:
+    interface: content
+    content: foo
+    default-provider: cups 
+    target: $SNAP_DATA/foo
+
 apps:
   proton-mail:
     extensions:
@@ -52,3 +60,4 @@ apps:
       - hardware-observe
       - u2f-devices
       - network
+      - cups 
