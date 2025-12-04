@@ -6,13 +6,10 @@ import { c } from 'ttag';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
-import { selectHasTwoPasswordMode, selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectHasTwoPasswordMode, selectOfflineEnabled } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -23,14 +20,10 @@ export const Offline: FC = () => {
     const authStore = useAuthStore();
 
     const enabled = useSelector(selectOfflineEnabled);
-    const plan = useSelector(selectPassPlan);
-    const freeUser = !isPaidPlan(plan);
     const twoPwdMode = useSelector(selectHasTwoPasswordMode);
 
-    const validUserType = !freeUser;
     const validPasswordMode = !twoPwdMode || (authStore?.hasOfflinePassword() ?? false);
-    const canEnableOffline = validUserType && validPasswordMode;
-    const disabled = !canEnableOffline;
+    const disabled = !validPasswordMode;
 
     const toggle = useRequest(offlineToggle, { initial: true });
     offlineToggle.requestID();
@@ -65,20 +58,7 @@ export const Offline: FC = () => {
                 {...(disabled
                     ? {
                           contentClassname: 'opacity-50 pointer-events-none py-4',
-                          actions: freeUser
-                              ? [
-                                    <UpgradeButton
-                                        upsellRef={UpsellRef.SETTING}
-                                        inline
-                                        className="text-sm"
-                                        key="upgrade"
-                                    />,
-                                ]
-                              : [],
-                          subTitle: freeUser
-                              ? c('Error')
-                                    .t`Offline mode isn't currently available for your plan and not compatible with two password mode.`
-                              : c('Error').t`Offline mode is currently not available for two password mode.`,
+                          subTitle: c('Error').t`Offline mode is currently not available for two password mode.`,
                       }
                     : {})}
             >
