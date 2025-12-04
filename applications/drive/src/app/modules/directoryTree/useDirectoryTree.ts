@@ -3,18 +3,17 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import type { DegradedNode } from '@proton/drive';
-import { MemberRole, type NodeEntity, NodeType, useDrive } from '@proton/drive';
+import { MemberRole, NodeType, useDrive } from '@proton/drive';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import {
     DEVICES_ROOT_ID,
     SHARED_WITH_ME_ROOT_ID,
-    getMorePermissiveRole,
-    getName,
+    findEffectiveRole,
     getNodeUidFromTreeItemId,
     makeTreeItemId,
 } from './helpers';
@@ -43,11 +42,35 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         }))
     );
 
+    const addNode = useCallback(
+        async (nodeUid: string, parentFolderUid: string, name: string) => {
+            const maybeNode = await drive.getNode(nodeUid);
+
+            const { type } = getNodeEntity(maybeNode).node;
+
+            const highestEffectiveRole = options?.loadPermissions
+                ? await findEffectiveRole(drive, maybeNode.ok ? maybeNode.value : maybeNode.error)
+                : undefined;
+
+            addItem({
+                nodeUid,
+                treeItemId: makeTreeItemId(parentFolderUid, nodeUid),
+                name,
+                type,
+                parentUid: parentFolderUid,
+                expandable: type === NodeType.Folder,
+                isSharedWithMe: false,
+                highestEffectiveRole,
+            });
+        },
+        [addItem, drive, options?.loadPermissions]
+    );
+
     // It has to be called before any other call - loads all the top-level elements
     const initializeTree = useCallback(async () => {
         // My files
         const myFilesRoot = await drive.getMyFilesRootFolder();
-        const { uid } = myFilesRoot.ok ? myFilesRoot.value : myFilesRoot.error;
+        const { uid } = getNodeEntity(myFilesRoot).node;
         addItem({
             nodeUid: uid,
             treeItemId: makeTreeItemId(null, uid),
@@ -82,40 +105,6 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         });
     }, [drive, addItem]);
 
-    const findEffectiveRole = useCallback(
-        async (node: NodeEntity | DegradedNode, previousHighestRole?: MemberRole) => {
-            if (node.directRole === MemberRole.Admin) {
-                return MemberRole.Admin;
-            }
-
-            if (previousHighestRole) {
-                const newHighest = getMorePermissiveRole(previousHighestRole, node.directRole);
-
-                if (newHighest === MemberRole.Admin) {
-                    return MemberRole.Admin;
-                }
-
-                // No parent, stop traversing
-                if (!node.parentUid) {
-                    return newHighest;
-                }
-
-                const parent = await drive.getNode(node.parentUid);
-                return findEffectiveRole(parent.ok ? parent.value : parent.error, newHighest);
-            }
-
-            // No previous highest role = current one is the highest
-            if (node.parentUid) {
-                const parent = await drive.getNode(node.parentUid);
-                return findEffectiveRole(parent.ok ? parent.value : parent.error, node.directRole);
-            } else {
-                // No parent, stop traversing
-                return node.directRole;
-            }
-        },
-        [drive]
-    );
-
     const loadDevices = useCallback(async () => {
         try {
             for await (const device of drive.iterateDevices()) {
@@ -138,20 +127,20 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
     const loadSharedWithMe = useCallback(async () => {
         try {
             for await (const sharedNode of drive.iterateSharedNodesWithMe()) {
-                const { uid, type } = sharedNode.ok ? sharedNode.value : sharedNode.error;
+                const { uid, name, type } = getNodeEntity(sharedNode).node;
 
                 if (options?.onlyFolders && type !== NodeType.Folder) {
                     continue;
                 }
 
                 const highestEffectiveRole = options?.loadPermissions
-                    ? await findEffectiveRole(sharedNode.ok ? sharedNode.value : sharedNode.error)
+                    ? await findEffectiveRole(drive, sharedNode.ok ? sharedNode.value : sharedNode.error)
                     : undefined;
                 addItem({
                     nodeUid: uid,
                     treeItemId: makeTreeItemId(SHARED_WITH_ME_ROOT_ID, uid),
                     parentUid: SHARED_WITH_ME_ROOT_ID,
-                    name: getName(sharedNode),
+                    name,
                     type,
                     expandable: type === NodeType.Folder,
                     isSharedWithMe: true,
@@ -162,7 +151,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             handleSdkError(error, { fallbackMessage: 'Failed to load shared items' });
             throw error;
         }
-    }, [drive, options?.onlyFolders, options?.loadPermissions, findEffectiveRole, addItem]);
+    }, [drive, options?.onlyFolders, options?.loadPermissions, addItem]);
 
     const loadChildren = useCallback(
         async (parentUid: string) => {
@@ -191,16 +180,16 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
                 for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions)) {
-                    const { uid, type } = node.ok ? node.value : node.error;
+                    const { uid, name, type } = getNodeEntity(node).node;
                     const highestEffectiveRole = options?.loadPermissions
-                        ? await findEffectiveRole(node.ok ? node.value : node.error)
+                        ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
                         : undefined;
                     const existingItem = items.get(uid);
                     addItem({
                         nodeUid: uid,
                         parentUid,
                         treeItemId: makeTreeItemId(parentUid, uid),
-                        name: getName(node),
+                        name,
                         type,
                         expandable: type === NodeType.Folder,
                         // We need to preserve value between item displayed in the root of shares and deeply nested child that is also shared.
@@ -216,16 +205,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
                 throw error;
             }
         },
-        [
-            items,
-            loadDevices,
-            loadSharedWithMe,
-            options?.onlyFolders,
-            options?.loadPermissions,
-            drive,
-            findEffectiveRole,
-            addItem,
-        ]
+        [items, loadDevices, loadSharedWithMe, options?.onlyFolders, options?.loadPermissions, drive, addItem]
     );
 
     const toggleExpand = useCallback(
@@ -252,6 +232,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         get,
         toggleExpand,
         treeRoots: toTree([...items.values()], expandedTreeIds),
+        addNode,
     };
 }
 
