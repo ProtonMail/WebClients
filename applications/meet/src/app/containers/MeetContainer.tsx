@@ -48,6 +48,7 @@ interface MeetContainerProps {
     assignHost: (participantUuid: string) => Promise<void>;
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
+    getKeychainIndexInformation: () => (number | undefined)[];
 }
 
 export const MeetContainer = ({
@@ -80,6 +81,7 @@ export const MeetContainer = ({
     assignHost,
     keyRotationLogs,
     isRecordingInProgress,
+    getKeychainIndexInformation,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -197,6 +199,7 @@ export const MeetContainer = ({
                         paidUser,
                         keyRotationLogs,
                         isRecordingInProgress,
+                        getKeychainIndexInformation,
                     }}
                 >
                     <UIStateProvider instantMeeting={instantMeeting}>
