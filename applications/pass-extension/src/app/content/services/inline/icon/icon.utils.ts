@@ -181,6 +181,19 @@ export const hasIconInjectionStylesChanged = (a?: MaybeNull<IconStyles>, b?: May
     return false;
 };
 
+/** Resolves the optimal anchor element for injecting the control
+ * element when no anchor is available. Implements smart positioning
+ * logic to avoid breaking CSS selectors and layout patterns. */
+export const resolveInjectionAnchor = (input: HTMLInputElement): Element => {
+    /** Inject right after the input to avoid breaking `:first-child` selectors
+     * and `label + input` patterns. If next sibling is a <label>, inject after
+     * it to preserve `input + label` (floating labels). Injecting adjacent to
+     * the input (vs appending to parent) prevents positioning flicker when
+     * error tooltips dynamically appear. */
+    const nextSibling = input.nextElementSibling;
+    return nextSibling?.tagName === 'LABEL' ? nextSibling : input;
+};
+
 export const getInputInitialStyles = (el: HTMLElement): FieldOverrides => {
     const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
     return initialStyles ? JSON.parse(initialStyles) : {};
