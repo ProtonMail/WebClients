@@ -14,6 +14,9 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
+      "Agree and continue": [
+        "Kabul et ve devam et"
+      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
@@ -254,6 +257,9 @@
       "Start meeting": [
         "Görüşme başlat"
       ],
+      "Start recording": [
+        "Kaydı başlat"
+      ],
       "Stay in meeting": [
         "Görüşmede kal"
       ],
@@ -265,6 +271,9 @@
       ],
       "Stop receiving video": [
         "Gelen görüntüyü kapat"
+      ],
+      "Stop recording": [
+        "Kaydı durdur"
       ],
       "Submit": [
         "Gönder"
@@ -1395,6 +1404,12 @@
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
       ],
+      "Failed to save recording": [
+        "Kayıt kaydedilemedi"
+      ],
+      "Failed to start recording": [
+        "Kayıt başlatılamadı"
+      ],
       "Failed to start screen share": [
         "Ekran paylaşımı başlatılamadı"
       ],
@@ -1609,6 +1624,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "By continuing in the meeting, you acknowledge and consent to being recorded.": [
+        "Toplantıya devam ederek kayıt yapılacağını kabul etmiş ve onaylamış olursunuz."
       ],
       "camera": [
         "kamera"
@@ -1841,6 +1859,9 @@
       "Please enter the passphrase to decrypt and view this meeting": [
         "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
       ],
+      "Recording saved": [
+        "Kayıt kaydedildi"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
@@ -1888,6 +1909,9 @@
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Bu sohbet uçtan uca şifrelenmiştir ve iletiler geçicidir. Görüşmeden ayrıldıktan sonra bu sohbete yeniden erişemezsiniz."
+      ],
+      "This meeting is being recorded": [
+        "Bu toplantı kaydedilmektedir"
       ],
       "This meeting is locked. Please contact the host to join.": [
         "Bu görüşme kilitlenmiş. Katılmak için lütfen sahibi ile görüşün."
