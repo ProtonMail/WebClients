@@ -29,6 +29,7 @@ import {
     computeIconInjectionStyles,
     createIcon,
     hasIconInjectionStylesChanged,
+    resolveInjectionAnchor,
 } from './icon.utils';
 
 type IconControllerOptions = {
@@ -72,12 +73,9 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     const { icon, control } = createIcon({ zIndex, tag });
 
     const noAnchor = anchor.element === input || anchor.element === input.parentElement;
-    const container = (() => {
-        const wrapper = noAnchor ? input.parentElement! : anchor.element;
-        return wrapper;
-    })();
+    const container = noAnchor ? input.parentElement! : anchor.element;
 
-    if (noAnchor) container.insertBefore(control, container.firstElementChild);
+    if (noAnchor) resolveInjectionAnchor(input).after(control);
     else container.appendChild(control);
 
     const state: IconState = {
