@@ -13327,6 +13327,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "追加の保護層としてバックアップパスワードを設定してください。ロックアウトされた場合でもサインインできるようにするため、必ず安全な場所に保管してください。"
       ],
+      "Set identity": [
+        "ユーザー情報を設定"
+      ],
       "Set your backup password": [
         "バックアップパスワードを設定してください"
       ],
@@ -13350,6 +13353,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "他のデバイスからサインインが要求されました。あなたですか？"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "組織のユーザー情報がないため、シングルサインオンが正常に機能しない可能性があります。信頼性の高い認証を確保するためには、ユーザー情報を設定してください。"
       ],
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
