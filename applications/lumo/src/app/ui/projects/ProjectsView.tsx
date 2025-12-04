@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
-
+import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 import { EXAMPLE_PROJECTS } from './exampleProjects';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -122,7 +122,7 @@ export const ProjectsView = () => {
                 <div className="projects-empty-state-wrapper">
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
-                            <Icon name="folder-filled" size={8} color="var(--text-accent)"/>
+                            <img src={lumoProjects} alt="Projects" width={300} />
                         </div>
                         <h2 className="projects-empty-title">
                             {c('collider_2025:Title').t`Get started by creating a new project`}
