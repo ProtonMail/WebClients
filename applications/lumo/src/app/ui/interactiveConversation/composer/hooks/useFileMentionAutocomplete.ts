@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/components';
 
 import type { SpaceId, Attachment, Message } from '../../../../types';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
-import { selectSpaceById, selectAssetsBySpaceId, selectAttachmentsBySpaceId, selectAttachments, selectProvisionalAttachments } from '../../../../redux/selectors';
+import { selectSpaceById, selectAssetsBySpaceId, selectAttachments, selectProvisionalAttachments } from '../../../../redux/selectors';
 import { upsertAttachment, newAttachmentId, deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { getApproximateTokenCount } from '../../../../llm/tokenizer';
@@ -49,25 +49,26 @@ const INITIAL_MENTION_STATE: FileMentionState = {
  */
 function computeFileList(
     spaceAssets: Record<string, any>,
-    spaceAttachments: Record<string, any>,
     driveFiles: { id: string; name: string }[],
     allAttachments: Record<string, Attachment>,
     provisionalAttachments: Attachment[]
 ): FileItem[] {
-    // Get local files (space assets and attachments)
-    const localFiles: FileItem[] = [
-        ...Object.values(spaceAssets).filter((asset) => asset && !asset.error && !asset.processing),
-        ...Object.values(spaceAttachments).filter((att) => att && !att.error && !att.processing),
-    ].map((file) => {
-        const attachment = allAttachments[file.id];
-        return {
-            id: file.id,
-            name: file.filename,
-            source: 'local' as const,
-            attachment,
-            mimeType: attachment?.mimeType,
-        };
-    });
+    // Get local files from space assets (project knowledge base only)
+    // We don't include spaceAttachments because those are files used in conversations
+    // that may not be in the project's knowledge base
+    const localFiles: FileItem[] = Object.values(spaceAssets)
+        .filter((asset) => asset && !asset.error && !asset.processing)
+        .map((file) => {
+            const attachment = allAttachments[file.id];
+            return {
+                id: file.id,
+                name: file.filename,
+                source: 'local' as const,
+                attachment,
+                // Use mimeType from the file (asset) directly, fallback to attachment
+                mimeType: file.mimeType || attachment?.mimeType,
+            };
+        });
 
     // Drive files
     const driveFilesList: FileItem[] = driveFiles.map((file) => ({
@@ -112,27 +113,27 @@ function filterFiles(files: FileItem[], query: string, limit: number = 10): File
  */
 function createFileCacheKey(
     spaceAssets: Record<string, any>,
-    spaceAttachments: Record<string, any>,
     driveFiles: { id: string; name: string }[],
     provisionalAttachments: Attachment[]
 ): string {
     const assetIds = Object.keys(spaceAssets).sort().join(',');
-    const attachmentIds = Object.keys(spaceAttachments).sort().join(',');
     const driveIds = driveFiles.map(f => `${f.id}:${f.name}`).sort().join(',');
     const provisionalNames = provisionalAttachments.map(att => att.filename.toLowerCase()).sort().join(',');
-    return `${assetIds}|${attachmentIds}|${driveIds}|${provisionalNames}`;
+    return `${assetIds}|${driveIds}|${provisionalNames}`;
 }
 
 export const useFileMentionAutocomplete = (
     editor: Editor | null,
     spaceId?: SpaceId,
     messageChain: Message[] = [],
-    driveSDK?: DriveSDKFunctions // Optional - only provided for authenticated users
+    driveSDK?: DriveSDKFunctions, // Optional - only provided for authenticated users
+    onDriveFilesRefresh?: () => void // Optional callback when drive files are refreshed
 ): {
     mentionState: FileMentionState;
     files: FileItem[];
     selectFile: (file: FileItem) => void;
     closeMention: () => void;
+    refreshDriveFiles: () => Promise<void>;
 } => {
     const [mentionState, setMentionState] = useState<FileMentionState>(INITIAL_MENTION_STATE);
 
@@ -146,9 +147,6 @@ export const useFileMentionAutocomplete = (
     const spaceAssets = useLumoSelector((state) =>
         spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
     );
-    const spaceAttachments = useLumoSelector((state) =>
-        spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
-    );
 
     // Drive files state
     const [driveFiles, setDriveFiles] = useState<{ id: string; name: string }[]>([]);
@@ -157,41 +155,86 @@ export const useFileMentionAutocomplete = (
     // Cache for computed files
     const filesCacheRef = useRef<{ key: string; files: FileItem[] }>({ key: '', files: EMPTY_FILES });
 
-    // Load Drive files once (only if driveSDK is provided)
+    // Clear drive files when folder is unlinked
+    useEffect(() => {
+        if (!linkedDriveFolder) {
+            setDriveFiles([]);
+            driveFilesLoadedRef.current = false;
+            // Clear the file cache as well
+            filesCacheRef.current = { key: '', files: EMPTY_FILES };
+        }
+    }, [linkedDriveFolder]);
+
+    // Recursive function to load all files from a folder and its subfolders
+    const loadDriveFilesRecursively = useCallback(async (folderId: string, path: string = ''): Promise<{ id: string; name: string; path: string }[]> => {
+        if (!driveSDK) return [];
+        
+        try {
+            const children = await driveSDK.browseFolderChildren(folderId);
+            const allFiles: { id: string; name: string; path: string }[] = [];
+            
+            for (const child of children) {
+                const childPath = path ? `${path}/${child.name}` : child.name;
+                
+                if (child.type === 'file') {
+                    allFiles.push({
+                        id: child.id,
+                        name: child.name,
+                        path: childPath,
+                    });
+                } else if (child.type === 'folder') {
+                    // Recursively load files from subfolders
+                    const subFiles = await loadDriveFilesRecursively(child.id, childPath);
+                    allFiles.push(...subFiles);
+                }
+            }
+            
+            return allFiles;
+        } catch (error) {
+            console.error(`Failed to load Drive files from folder ${folderId}:`, error);
+            return [];
+        }
+    }, [driveSDK]);
+
+    // Load Drive files (with refresh capability)
+    const refreshDriveFiles = useCallback(async () => {
+        if (!linkedDriveFolder || !driveSDK) return;
+        
+        try {
+            const allFiles = await loadDriveFilesRecursively(linkedDriveFolder.folderId);
+            const files = allFiles.map((file) => ({
+                id: file.id,
+                name: file.path, // Use full path as name for better identification
+            }));
+            setDriveFiles(files);
+            driveFilesLoadedRef.current = true;
+            
+            // Call the refresh callback if provided
+            onDriveFilesRefresh?.();
+        } catch (error) {
+            console.error('Failed to load Drive files for autocomplete:', error);
+        }
+    }, [linkedDriveFolder, driveSDK, loadDriveFilesRecursively, onDriveFilesRefresh]);
+
+    // Initial load of Drive files
     useEffect(() => {
         if (!linkedDriveFolder || driveFilesLoadedRef.current || !driveSDK) return;
+        void refreshDriveFiles();
+    }, [linkedDriveFolder, driveSDK, refreshDriveFiles]);
 
-        const loadDriveFiles = async () => {
-            try {
-                const children = await driveSDK.browseFolderChildren(linkedDriveFolder.folderId);
-                const files = children
-                    .filter((child) => child.type === 'file')
-                    .map((file) => ({
-                        id: file.id,
-                        name: file.name,
-                    }));
-                setDriveFiles(files);
-                driveFilesLoadedRef.current = true;
-            } catch (error) {
-                console.error('Failed to load Drive files for autocomplete:', error);
-            }
-        };
-
-        loadDriveFiles();
-    }, [linkedDriveFolder, driveSDK]);
 
     // Compute files with manual caching
     const getAllFiles = useCallback((): FileItem[] => {
-        const cacheKey = createFileCacheKey(spaceAssets, spaceAttachments, driveFiles, provisionalAttachments);
+        const cacheKey = createFileCacheKey(spaceAssets, driveFiles, provisionalAttachments);
         
         if (cacheKey === filesCacheRef.current.key) {
             return filesCacheRef.current.files;
         }
         
-        const files = computeFileList(spaceAssets, spaceAttachments, driveFiles, allAttachments, provisionalAttachments);
+        const files = computeFileList(spaceAssets, driveFiles, allAttachments, provisionalAttachments);
         filesCacheRef.current = { key: cacheKey, files: files.length === 0 ? EMPTY_FILES : files };
         return filesCacheRef.current.files;
-    }, [spaceAssets, spaceAttachments, driveFiles, allAttachments, provisionalAttachments]);
+    }, [spaceAssets, driveFiles, allAttachments, provisionalAttachments]);
 
     // Detect @ mentions in editor
     useEffect(() => {
@@ -495,10 +538,22 @@ export const useFileMentionAutocomplete = (
         setMentionState(prev => prev.isActive ? INITIAL_MENTION_STATE : prev);
     }, []);
 
+    // Refresh Drive files when autocomplete becomes active (user types @)
+    const prevMentionActiveRef = useRef(false);
+    useEffect(() => {
+        // Detect when autocomplete becomes active (transitions from false to true)
+        if (mentionState.isActive && !prevMentionActiveRef.current && linkedDriveFolder && driveSDK) {
+            // Refresh files when user starts typing @ to ensure fresh results
+            void refreshDriveFiles();
+        }
+        prevMentionActiveRef.current = mentionState.isActive;
+    }, [mentionState.isActive, linkedDriveFolder, driveSDK, refreshDriveFiles]);
+
     return {
         mentionState,
         files: filteredFiles,
         selectFile,
         closeMention,
+        refreshDriveFiles,
     };
 };
