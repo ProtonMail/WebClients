@@ -100,7 +100,7 @@ async function checkForValidUpdates() {
     updateElectronApp({
         updateSource: {
             type: UpdateSourceType.StaticStorage,
-            baseUrl: `https://proton.me/download/meet/${platform}/${newUpdate.Version}/`,
+            baseUrl: `https://proton.me/download/meet/${platform}/${newUpdate.Version}`,
         },
         updateInterval: "5 min", // minimal
         logger: updateLogger,
