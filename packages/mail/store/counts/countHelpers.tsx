@@ -3,8 +3,8 @@ import type { MailSettings, OrganizationExtended } from '@proton/shared/lib/inte
 
 export const getCountQueryParams = (organization: OrganizationExtended, mailSettings: MailSettings): CountParams => {
     if (!organization.Settings.MailCategoryViewEnabled) {
-        return {};
+        return { OnlyInInboxForCategories: undefined };
     }
 
-    return { OnlyInInboxForCategories: mailSettings.MailCategoryView };
+    return { OnlyInInboxForCategories: mailSettings.MailCategoryView ? 1 : 0 };
 };
