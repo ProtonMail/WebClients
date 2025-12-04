@@ -14,7 +14,6 @@
         "check-types": "yarn run check:types",
         "check:format": "prettier . --check",
         "check:lint": "eslint --quiet",
-        "check:negativity": "electronegativity -i ./src",
         "check:types": "tsc --noEmit",
         "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Proton Mail Uninstaller.app' ./assets/icons/uninstaller.png",
         "format": "prettier . --write --list-different",
@@ -26,7 +25,6 @@
         "make-test": "SKIP_CODESIGN=true PLAYWRIGHT_TEST=true electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "make:snap": "IS_SNAP=1 electron-forge make --platform=linux --arch=x64 --targets=@electron-forge/maker-deb && bash ./scripts/package_snap.sh",
-        "negativity": "electronegativity -i ./src",
         "package": "electron-forge package",
         "start": "electron-forge start",
         "start:snap": "IS_SNAP=1 electron-forge start ",
@@ -55,7 +53,6 @@
         "zod": "^3.25.76"
     },
     "devDependencies": {
-        "@doyensec/electronegativity": "^1.10.3",
         "@electron-forge/cli": "^7.3.0",
         "@electron-forge/maker-deb": "^7.3.0",
         "@electron-forge/maker-dmg": "^7.3.0",
