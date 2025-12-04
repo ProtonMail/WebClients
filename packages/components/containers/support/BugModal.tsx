@@ -12,7 +12,6 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Form from '@proton/components/components/form/Form';
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -27,9 +26,11 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getInboxDesktopLogsBlob, isInboxDesktopBugReportLogsSupported } from '@proton/shared/lib/desktop/logHelpers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -257,7 +258,10 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
     const collectLogs = useFlag('CollectLogs') && Boolean(APPS_FOR_LOG_COLLECTION[app]);
-    const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs);
+    const collectLogsInboxDesktop =
+        !useFlag('InboxDesktopBugReportLogAttachmentDisabled') && isInboxDesktopBugReportLogsSupported();
+    const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs || collectLogsInboxDesktop);
+
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
     // Pre-cache logs for better performance when downloading
@@ -296,11 +300,20 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
             );
 
             // Get logs from all logger instances if user opted in
-            if (includeLogs) {
+            if (collectLogs && includeLogs) {
                 const logs = await loggerManager.getAllCachedLogs();
                 if (logs && logs.trim()) {
                     const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
                     attachments[filename] = new Blob([logs], { type: 'text/plain' });
+                }
+            }
+
+            if (collectLogsInboxDesktop && includeLogs) {
+                const attachmentSize = Object.values(attachments).reduce((sum, blob) => sum + blob.size, 0);
+                const inboxDesktopLogs = await getInboxDesktopLogsBlob(attachmentSize);
+                if (inboxDesktopLogs) {
+                    const filename = `logs-INDA-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+                    attachments[filename] = inboxDesktopLogs;
                 }
             }
 
@@ -447,7 +460,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
                     setUploading={setUploadingScreenshots}
                     disabled={loading}
                 />
-                {collectLogs && (
+                {(collectLogs || collectLogsInboxDesktop) && (
                     <div className="mb-4">
                         <div className="flex items-center justify-space-between">
                             <Checkbox
@@ -457,14 +470,16 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
                             >
                                 {c('Label').t`Include application logs in bug report`}
                             </Checkbox>
-                            <Button
-                                className="ml-2"
-                                shape="underline"
-                                onClick={() => loggerManager.downloadAllLogs()}
-                                title={c('Info').t`Download current logs`}
-                            >
-                                {c('Action').t`Download logs`}
-                            </Button>
+                            {collectLogs && (
+                                <Button
+                                    className="ml-2"
+                                    shape="underline"
+                                    onClick={() => loggerManager.downloadAllLogs()}
+                                    title={c('Info').t`Download current logs`}
+                                >
+                                    {c('Action').t`Download logs`}
+                                </Button>
+                            )}
                         </div>
                     </div>
                 )}

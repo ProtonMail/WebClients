@@ -3,6 +3,7 @@ import { APPS } from '../constants';
 import { getIsIframe } from '../helpers/browser';
 import { isElectronMail } from '../helpers/desktop';
 import type {
+    IPCInboxClientGetAsyncDataMessage,
     IPCInboxClientUpdateMessage,
     IPCInboxDesktopFeature,
     IPCInboxGetInfoMessage,
@@ -85,9 +86,19 @@ export const canGetInboxDesktopInfo =
 export const canListenInboxDesktopHostMessages =
     isElectronMail && !!window.ipcInboxMessageBroker && !!window.ipcInboxMessageBroker!.on;
 
+export const canGetAsyncInboxDesktopData =
+    isElectronMail && !!window.ipcInboxMessageBroker && !!window.ipcInboxMessageBroker!.getAsyncData;
+
 export function getInboxDesktopInfo<T extends IPCInboxGetInfoMessage['type']>(key: T) {
     return window.ipcInboxMessageBroker!.getInfo!<T>(key);
 }
+
+export const getInboxDesktopAsyncData = <T extends IPCInboxClientGetAsyncDataMessage['type']>(
+    type: T,
+    ...args: Extract<IPCInboxClientGetAsyncDataMessage, { type: T }>['args']
+) => {
+    return window.ipcInboxMessageBroker!.getAsyncData!<T>(type, ...args);
+};
 
 export const getInboxDesktopUserInfo = <T extends IPCInboxGetUserInfoMessage['type']>(key: T, userID: string) => {
     return window.ipcInboxMessageBroker!.getUserInfo!<T>(key, userID);
