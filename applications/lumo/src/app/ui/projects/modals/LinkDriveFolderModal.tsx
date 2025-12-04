@@ -138,7 +138,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                         {hasExistingFiles ? (
                             <div className="p-4 bg-warning-weak rounded border border-warning">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <Icon name="exclamation-triangle" className="color-warning" />
+                                    <Icon name="exclamation-triangle-filled" className="color-warning" />
                                     <span className="text-bold">{c('collider_2025:Warning').t`Cannot Link Drive Folder`}</span>
                                 </div>
                                 <p className="text-sm mb-0">
