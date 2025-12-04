@@ -243,6 +243,7 @@ enum MeetFeatureFlag {
     MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetShowMLSLogs = 'MeetShowMLSLogs',
     MeetingRecording = 'MeetingRecording',
+    MeetAllowNewHostAssignment = 'MeetAllowNewHostAssignment',
 }
 
 enum LumoFeatureFlag {
