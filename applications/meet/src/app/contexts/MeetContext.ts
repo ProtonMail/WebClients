@@ -65,6 +65,7 @@ export interface MeetContextValues {
     assignHost: (participantUuid: string) => Promise<void>;
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
+    getKeychainIndexInformation: () => (number | undefined)[];
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -119,6 +120,7 @@ export const MeetContext = createContext<MeetContextValues>({
     assignHost: () => Promise.resolve(),
     keyRotationLogs: [],
     isRecordingInProgress: false,
+    getKeychainIndexInformation: () => [],
 });
 
 export const useMeetContext = () => {

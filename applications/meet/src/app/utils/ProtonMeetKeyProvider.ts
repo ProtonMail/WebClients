@@ -51,4 +51,8 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         this.currentEpoch = undefined;
         this.currentKey = undefined;
     }
+
+    getKeychainIndexInformation() {
+        return this.getKeys().map((keyInfo) => keyInfo.keyIndex);
+    }
 }
