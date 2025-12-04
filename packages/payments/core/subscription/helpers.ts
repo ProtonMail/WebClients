@@ -657,7 +657,10 @@ export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolea
     //
     // In both cases, the upcoming subscription will be unpaid until it starts.
     // see PAY-2060, PAY-2080, and PAY-3027.
-    return !!current && !!upcoming && current.Cycle >= upcoming.Cycle;
+    //
+    // Additional case from P2-1572:
+    // 3. vpn2024 and bundle2022 can have 6m cycles which always renew for 12m.
+    return !!current && !!upcoming && (current.Cycle >= upcoming.Cycle || current.Cycle === CYCLE.SIX);
 }
 
 export function getRenewalTime(subscription: Subscription): number {
@@ -919,9 +922,15 @@ export function shouldHaveUpcomingSubscription(subscription: Subscription | Free
         return false;
     }
 
-    if (subscription.Cycle !== CYCLE.TWO_YEARS) {
-        return false;
+    if (subscription.Cycle === CYCLE.TWO_YEARS) {
+        return plansWithAutomatic12mTo24mDowncycling[planName];
     }
 
-    return plansWithAutomatic12mTo24mDowncycling[planName];
+    if (subscription.Cycle === CYCLE.SIX) {
+        // vpn2024 and bundle2022 can have 6m cycles which always renew for 12m.
+        // Other plans do not support 6m subscription at the moment.
+        return true;
+    }
+
+    return false;
 }
