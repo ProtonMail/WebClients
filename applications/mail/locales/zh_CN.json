@@ -592,7 +592,7 @@
         "生成文本"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -1445,6 +1445,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -6578,7 +6581,7 @@
         "关闭这个窗口以退出"
       ],
       "Composer:": [
-        "编写器:"
+        "编辑区："
       ],
       "Confirm phishing report": [
         "确认举报欺诈邮件"
@@ -7013,7 +7016,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8808,7 +8811,7 @@
         "公司名称"
       ],
       "Composer": [
-        "编写器"
+        "编辑区"
       ],
       "Conditions": [
         "条件"
@@ -11397,7 +11400,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -11493,6 +11496,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
