@@ -2400,6 +2400,9 @@
       "**Streaming** is included in your subscription.": [
         "**Streaming** är inkluderat i din prenumeration."
       ],
+      "11 tips to stop spam emails": [
+        "11 tips för att stoppa skräppost"
+      ],
       "5 ways to backup your files": [
         "5 sätt att säkerhetskopiera dina filer"
       ],
@@ -5458,6 +5461,9 @@
       "Automatically forward emails to another email address.": [
         "Vidarebefordra automatiskt e-post till annan e-postadress."
       ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "End-to-end-kryptering har inaktiverats för din ${ boldForwarderEmail }-adress, men kryptering med noll åtkomst förblir aktiverad. ${ learnMoreLink }"
+      ],
       "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "För kompatibilitet har en ny krypteringsnyckel genererats för ${ boldForwarderEmail }."
       ],
@@ -8343,6 +8349,9 @@
       ]
     },
     "Inactive key function info": {
+      "If reactivated, the key will be used for decryption": [
+        "Om den återaktiveras kommer nyckeln att användas för dekryptering"
+      ],
       "If reactivated, the key will be used for decryption and verification": [
         "Om den återaktiveras kommer nyckeln att användas för dekryptering och verifiering"
       ]
@@ -8719,6 +8728,9 @@
       ],
       "active": [
         "aktiv"
+      ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Lägg till e-postadressen ”@pm.me” till ditt konto. Denna enkla, kortare domän står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
@@ -10581,6 +10593,9 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-inlämning tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "SMTP-inlämning tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att använda denna funktion, börja med att generera en ny token."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooza meddelanden för senare så att de är högst upp i din inkorg när du vill"
@@ -17157,6 +17172,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {
@@ -17976,6 +17994,9 @@
       ]
     },
     "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inklusive de i “Inkorg“, “Skickat“ och “Utkast“. Detta kan tömma meddelanden som användare förväntar sig att behålla. Det är inte möjligt att återställa dessa meddelanden senare."
+      ],
       "After ${ lifetime } day all messages will be deleted": [
         "Efter ${ lifetime } dag kommer alla meddelanden att tas bort",
         "Efter ${ lifetime } dagar kommer alla meddelanden att tas bort"
@@ -20044,6 +20065,9 @@
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Ställ in ett reservlösenord för att lägga till ett extra skyddslager. Det gör att du kan logga in om du blir utelåst, så se till att förvara det någonstans säkert."
+      ],
+      "Set identity": [
+        "Ställ in identitet"
       ],
       "Set your backup password": [
         "Ange ditt reservlösenord"
@@ -23222,6 +23246,9 @@
       "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
         "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre mobilappar för att kryptera data de skickar till dig."
       ],
+      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare för att kryptera data de skickar till dig"
+      ],
       "This key cannot be used for encryption": [
         "Denna nyckel kan inte användas för kryptering"
       ],
@@ -23317,6 +23344,16 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Välj standardinställningarna för PGP som används för att signera eller kryptera meddelanden med icke-${ BRAND_NAME } PGP-användare Observera att Inline PGP tvingar fram oformaterade textmeddelanden."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "När du tar emot ett e-postmeddelande från annan ${ MAIL_APP_NAME }-användare som inte har betrodda nycklar i dina kontakter kommer en banner fråga om du vill aktivera betrodda nycklar."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Signera automatiskt alla dina utgående meddelanden så användare kan verifiera äktheten av dina meddelanden. Detta görs i kombination med standardinställningarna för PGP som kan konfigureras nedan."
       ]
     },
     "Tooltip: PM signature locked": {

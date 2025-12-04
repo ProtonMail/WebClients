@@ -65,6 +65,9 @@
       "Activate": [
         "启用"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "激活 ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "激活机构密钥"
       ],
@@ -597,7 +600,7 @@
         "生成恢复密语"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -3759,6 +3762,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "让您即时在活动邀请中添加会议链接。"
       ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "在邮件末尾展现您的独特品牌，而非我们的统一标识。"
+      ],
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
       ],
@@ -4041,6 +4047,11 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 或 Windows 32位 (ARM64)"
+      ]
+    },
+    "Download link": {
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "您也可以通过 ${ linkSnapStore } 下载此应用。"
       ]
     },
     "drive_signup_2023: Title": {
@@ -7606,6 +7617,9 @@
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
+      ],
       "Featured in": [
         "推荐"
       ],
@@ -7975,6 +7989,9 @@
       "Left to Right": [
         "从左到右"
       ],
+      "Let your contacts know you care about their privacy.": [
+        "向他人表明您对隐私的关切。"
+      ],
       "Let's get started by pressing the New group button above": [
         "点击上方的新建群组按钮开始吧"
       ],
@@ -7992,6 +8009,9 @@
       ],
       "Live chat": [
         "在线聊天"
+      ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "如果同时开启追踪防护，图像将通过我们的代理服务器加载，安全性更高。"
       ],
       "Loading": [
         "加载中"
@@ -8154,6 +8174,9 @@
       ],
       "On": [
         "启用"
+      ],
+      "On Ubuntu?": [
+        "使用的是 Ubuntu 系统？"
       ],
       "Once you reset your password:": [
         "当你重置密码后："
@@ -8962,6 +8985,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
+      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
       ],
@@ -9162,6 +9188,9 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
+      ],
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "好友开通付费账户后，您也将获得余额奖励。"
@@ -9919,6 +9948,9 @@
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 地址"
       ],
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } 标识"
+      ],
       "${ n } month": [
         "${ n } 个月"
       ],
@@ -10066,11 +10098,17 @@
       "Auto-delete unwanted messages": [
         "自动删除无用邮件"
       ],
+      "Auto-unsubscribe": [
+        "自动退订邮件"
+      ],
       "Autofill": [
         "自动填充"
       ],
       "Autofill 2FA": [
         "自动填充 2FA"
+      ],
+      "Automatically save contacts": [
+        "自动保存联系人"
       ],
       "Autosave": [
         "自动保存"
@@ -10163,7 +10201,16 @@
         "公司名称"
       ],
       "Composer": [
-        "编写器"
+        "编辑区"
+      ],
+      "Composer default font/size": [
+        "编辑区默认字体与字号"
+      ],
+      "Composer mode": [
+        "邮件格式"
+      ],
+      "Composer text direction": [
+        "编辑区文字方向"
       ],
       "Conditions": [
         "条件"
@@ -10197,6 +10244,9 @@
       ],
       "Conversation grouping": [
         "会话分组"
+      ],
+      "Conversations per page": [
+        "每页会话数量"
       ],
       "Copy": [
         "复制"
@@ -10233,6 +10283,9 @@
       ],
       "Current email": [
         "当前邮箱"
+      ],
+      "Daily email notifications": [
+        "每日邮件提醒"
       ],
       "Date": [
         "日期"
@@ -10426,6 +10479,9 @@
       "Import to:": [
         "导入到："
       ],
+      "Inbox": [
+        "收件箱"
+      ],
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
       ],
@@ -10449,6 +10505,9 @@
       ],
       "Keep me signed in": [
         "保持登录状态"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "已发送和草稿包括移至别处的邮件"
       ],
       "Key": [
         "密钥"
@@ -10506,6 +10565,9 @@
       ],
       "Members without 2FA": [
         "未启用 2FA 的成员"
+      ],
+      "Messages per page": [
+        "每页邮件数量"
       ],
       "Metadata file for ${ appName }": [
         "${ appName } 的元数据文件"
@@ -10765,6 +10827,9 @@
       "Show sender images": [
         "显示发件人头像"
       ],
+      "Show unread count in Favicon": [
+        "在网页图标中显示未读邮件数量"
+      ],
       "Show week numbers": [
         "显示周数"
       ],
@@ -10794,6 +10859,9 @@
       ],
       "Statement": [
         "要求"
+      ],
+      "Sticky labels": [
+        "自动加标签"
       ],
       "Street address": [
         "街道地址"
@@ -10996,6 +11064,30 @@
       ],
       "Expired": [
         "已过期"
+      ]
+    },
+    "Label to change composer mode": {
+      "Maximized": [
+        "满屏"
+      ],
+      "Normal": [
+        "常规"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "适中"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "分列"
+      ],
+      "Row": [
+        "分行"
       ]
     },
     "Label, credit card": {
@@ -11215,11 +11307,17 @@
       "Request an invite": [
         "申请注册"
       ],
+      "Set email address": [
+        "设置邮箱地址"
+      ],
       "settings": [
         "设置"
       ],
       "Sign in": [
         "登录"
+      ],
+      "Snap store": [
+        "Snap Store"
       ],
       "switch account": [
         "切换账户"
@@ -13241,6 +13339,9 @@
       "Archive": [
         "归档"
       ],
+      "Ask each time": [
+        "每次均询问"
+      ],
       "Auto": [
         "自动"
       ],
@@ -13274,6 +13375,9 @@
       "It's too expensive": [
         "价格太贵"
       ],
+      "Left to Right": [
+        "从左到右"
+      ],
       "Mark as read": [
         "标为已读"
       ],
@@ -13289,8 +13393,17 @@
       "None": [
         "无"
       ],
+      "Normal": [
+        "常规"
+      ],
       "Not allowed": [
         "禁止"
+      ],
+      "Off": [
+        "关闭"
+      ],
+      "On": [
+        "开启"
       ],
       "Optional ${ defaultLabel }": [
         "可选的 ${ defaultLabel }"
@@ -13298,11 +13411,17 @@
       "Organization only": [
         "仅组织"
       ],
+      "Plain text": [
+        "纯文本"
+      ],
       "Receive from all": [
         "全部接收"
       ],
       "Required": [
         "必选(填)字段"
+      ],
+      "Right to Left": [
+        "从右到左"
       ],
       "Router": [
         "路由器"
@@ -13837,7 +13956,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -14013,6 +14132,9 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
@@ -18321,6 +18443,9 @@
       "IP": [
         "IP"
       ],
+      "Keyboard shortcuts": [
+        "键盘快捷键"
+      ],
       "Labels": [
         "标签"
       ],
@@ -18461,6 +18586,9 @@
       ],
       "PayPal verification failed": [
         "PayPal 验证失败"
+      ],
+      "Personalize your email footer": [
+        "个性化邮件标识"
       ],
       "Phone": [
         "电话"
@@ -19054,6 +19182,9 @@
       "Customize import to reduce the number of labels": [
         "自定义导入以减少标签数量"
       ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "垃圾邮件与回收站中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
+      ],
       "Device name and app version": [
         "设备名称和应用版本"
       ],
@@ -19096,6 +19227,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "将收件箱中同一主题的往来邮件合并显示。"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "身份供应商的公钥，用于签署身份验证声明。从身份供应商处获取证书哈希值。"
       ],
@@ -19104,6 +19238,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "未启用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "“已发送”和“草稿”文件夹中的邮件将始终显示在该文件夹中，无论是否已移至其他位置。"
       ],
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"
@@ -19117,11 +19254,29 @@
       "Origin IP address and Internet Service Provider (ISP)": [
         "来源 IP 地址和互联网服务提供商 (ISP)"
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "删除图像中的元数据，保护您的隐私。"
+      ],
+      "See number of unread messages in the tab icon": [
+        "在标签页图标中即可看到未读邮件的数量"
+      ],
+      "Set how your list of messages looks like by default.": [
+        "调整邮件列表的默认显示方式。"
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "设置邮件编辑区是否默认占满页面。"
+      ],
+      "Set the default layout for your Inbox.": [
+        "设置您的收件箱默认布局。"
+      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "共享服务器策略可应用于单个用户或组"
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "指定允许使用 SAML SSO 进行身份验证的域"
@@ -19156,6 +19311,9 @@
       "This email address will be shown to all organization members when performing account management operations.": [
         "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"
       ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "此功能会延迟发送邮件，让您有机会在选定的时间范围内撤消发送。"
+      ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"
       ],
@@ -19185,6 +19343,15 @@
       ],
       "When enabled, animations and transitions will not show": [
         "界面不再显示动画和过渡效果"
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "给会话中的某一邮件加标签后，自动为将来该会话中的所有往来邮件加上同一标签。"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "点击链接后向您确认要打开的网址，谨防欺诈网站。"
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "标为垃圾邮件时自动退订来自对方的同类邮件。"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "您的 ${ MAIL_APP_NAME } 邮箱空间不足"

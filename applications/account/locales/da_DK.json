@@ -6559,10 +6559,10 @@
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -14263,6 +14263,11 @@
         "Til enkeltpersoner"
       ]
     },
+    "mail_signup_2025: Info": {
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Alle ${ BRAND_NAME } for Business og premiumfunktioner til at beskytte hele din virksomhed"
+      ]
+    },
     "mailtrial2024: Action": {
       "Special Offer": [
         "Særtilbud"
@@ -20186,6 +20191,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Angiv en backupadgangskode for at tilføje et ekstra lag af beskyttelse. Den giver dig mulighed for at logge ind, hvis du bliver låst ude, så sørg for at opbevare den et sikkert sted."
       ],
+      "Set identity": [
+        "Opret identitet"
+      ],
       "Set your backup password": [
         "Indstil din backupadgangskode"
       ],
@@ -20209,6 +20217,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Der blev anmodet om login fra en anden enhed. Var det dig?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Single sign-on fungerer muligvis ikke korrekt uden en organisationsidentitet. Indstil en identitet for at sikre pålidelig godkendelse."
       ],
       "Single sign-on removed": [
         "Single sign-on fjernet"
@@ -21528,7 +21539,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account suspended": [
         "Konto suspenderet"
