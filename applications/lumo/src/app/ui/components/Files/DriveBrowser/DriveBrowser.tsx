@@ -192,22 +192,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 return;
             }
 
-            // In folder selection mode, clicking a folder selects it directly (except root)
-            if (folderSelectionMode && onFolderSelect) {
-                // Prevent selecting the root folder
-                if (rootFolderId && folder.nodeId === rootFolderId) {
-                    createNotification({
-                        text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
-                        type: 'error',
-                    });
-                    return;
-                }
-                // Select the folder directly
-                onFolderSelect(folder);
-                return;
-            }
-
-            // Normal mode: navigate into folders
+            // Always navigate into folders (even in folder selection mode)
             try {
                 setLoading(true);
                 const folderChildren = await browseFolderChildren(folder.nodeId);
@@ -227,6 +212,11 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 } else {
                     setBreadcrumbs([...breadcrumbs, newBreadcrumb]);
                 }
+
+                // In folder selection mode, notify parent of current folder for potential linking
+                if (folderSelectionMode && onFolderSelect) {
+                    onFolderSelect(folder);
+                }
             } catch (error) {
                 console.error('Failed to browse folder:', error);
                 onError?.(error instanceof Error ? error : new Error('Failed to browse folder'));
@@ -234,7 +224,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 setLoading(false);
             }
         },
-        [browseFolderChildren, breadcrumbs, onError, initialFolderId, folderSelectionMode, onFolderSelect, rootFolderId, createNotification]
+        [browseFolderChildren, breadcrumbs, onError, initialFolderId, folderSelectionMode, onFolderSelect]
     );
 
     const handleFileClick = useCallback(
@@ -705,9 +695,9 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                             return () => <IcPlusCircle />;
                                                         };
 
-                                                        // If folder is linked, files are automatically active - don't show "Add to active" button
+                                                        // If folder is linked or in folder selection mode, don't show file actions
                                                         const actions: any[] =
-                                                            child.type === 'file' && !isLinkedFolder
+                                                            child.type === 'file' && !isLinkedFolder && !folderSelectionMode
                                                                 ? [
                                                                       {
                                                                           icon: getActionIcon(),
@@ -757,7 +747,8 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                                         : child.type === 'file' &&
                                                                             !fileExists &&
                                                                             !exceedsFileSizeLimit &&
-                                                                            !estimatedTooLargeForPreview
+                                                                            !estimatedTooLargeForPreview &&
+                                                                            !folderSelectionMode
                                                                           ? () => handleFileClick(child)
                                                                           : undefined
                                                                 }

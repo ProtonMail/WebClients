@@ -235,7 +235,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 <div className="project-files-section-header">
                     <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
                     <div className="flex items-center gap-1">
-                        {!linkedDriveFolder && (
+                        {!linkedDriveFolder && files.length !== 0 && (
                             <Button
                                 shape="ghost"
                                 size="small"
@@ -243,7 +243,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                 className="project-files-add-header-button"
                                 title={c('collider_2025:Action').t`Add files`}
                             >
-                                <Icon name="paper-clip" size={4} />
+                                <Icon name="arrow-up-line" size={4} />
                             </Button>
                         )}
                         {linkedDriveFolder && (
