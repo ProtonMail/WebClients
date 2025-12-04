@@ -10,7 +10,6 @@ import {
     useModalStateObject,
     usePopperAnchor,
 } from '@proton/components';
-import clsx from '@proton/utils/clsx';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -41,19 +40,16 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
 
     const handleClick = () => {
         if (project.isExample) {
-            // Check if user is signed in
             if (isGuest) {
                 onSignInRequired?.();
                 return;
             }
 
-            // Check project limit for free users
             if (!hasLumoPlus && myProjects.length >= 1) {
                 projectLimitModal.openModal(true);
                 return;
             }
 
-            // Open new project modal with pre-filled template data
             if (onOpenNewProjectModal) {
                 onOpenNewProjectModal(
                     project.name,
@@ -62,7 +58,6 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
                 );
             }
         } else {
-            // Navigate to project detail view
             history.push(`/projects/${project.id}`);
         }
     };
@@ -82,7 +77,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
 
     return (
         <div 
-            className={clsx('project-card', project.isExample && 'project-card--example')}
+            className="project-card p-6 border border-weak rounded-lg"
             onClick={handleClick}
             role="button"
             tabIndex={0}
@@ -94,8 +89,9 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
             }}
         >
             <div className="project-card-header">
-                <div className="project-card-icon" style={{ backgroundColor: category.color }}>
-                    <Icon name={category.icon as any} size={project.isExample ? 3 : 3.5} className="color-white" />
+                <div className="project-card-title-row">
+                    <Icon name={category.icon as any} size={4.5} className="project-card-icon" style={{ color: category.color }} />
+                    <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
                     <>
@@ -127,7 +123,6 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
             </div>
 
             <div className="project-card-body">
-                <h3 className="project-card-title">{project.name}</h3>
                 {project.description && (
                     <p className="project-card-description">{project.description}</p>
                 )}

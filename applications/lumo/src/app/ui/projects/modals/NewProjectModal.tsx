@@ -95,9 +95,9 @@ export const NewProjectModal = ({
                                         <div className="new-project-modal-category-option">
                                             <div
                                                 className="new-project-modal-category-icon"
-                                                style={{ backgroundColor: category.color }}
+                                                style={{ color: category.color }}
                                             >
-                                                <Icon name={category.icon as any} size={4} className="color-white" />
+                                                <Icon name={category.icon as any} size={6} />
                                             </div>
                                             <span>{category.name}</span>
                                         </div>

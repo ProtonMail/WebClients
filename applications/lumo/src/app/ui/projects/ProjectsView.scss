@@ -21,9 +21,9 @@
         max-width: none;
     }
 
-    // Hamburger button on mobile
-    .hamburger-button {
-        flex-shrink: 0;
+    @media (max-width: 1024px) {
+        padding: 32px;
+        max-width: none;
     }
 }
 
@@ -61,7 +61,8 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-top: 2px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
     max-width: 900px;
     width: 100%;
@@ -128,13 +129,6 @@
     max-width: 400px;
 }
 
-.projects-empty-subdescription {
-    font-size: 13px;
-    color: var(--text-hint);
-    margin: 8px 0 0;
-    max-width: 400px;
-}
-
 .projects-inspiration-section {
     width: 100%;
     max-width: 900px;
@@ -145,11 +139,6 @@
         display: none;
     }
 
-    // Only show border-top when there are projects above
-    &--with-projects {
-        border-top: 1px solid var(--border-weak);
-        margin-top: auto;
-    }
 }
 
 .projects-inspiration-title {
@@ -158,4 +147,3 @@
     color: var(--text-norm);
     margin: 0 0 12px;
 }
-
