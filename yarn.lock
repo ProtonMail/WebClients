@@ -2803,17 +2803,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@electron/asar@npm:^3.0.3, @electron/asar@npm:^3.2.1, @electron/asar@npm:^3.2.13, @electron/asar@npm:^3.2.7":
-  version: 3.2.13
-  resolution: "@electron/asar@npm:3.2.13"
+"@electron/asar@npm:^3.0.3, @electron/asar@npm:^3.2.1, @electron/asar@npm:^3.2.13, @electron/asar@npm:^3.2.4, @electron/asar@npm:^3.2.7":
+  version: 3.4.1
+  resolution: "@electron/asar@npm:3.4.1"
   dependencies:
-    "@types/glob": "npm:^7.1.0"
     commander: "npm:^5.0.0"
     glob: "npm:^7.1.6"
     minimatch: "npm:^3.0.4"
   bin:
     asar: bin/asar.js
-  checksum: 10/361a8a495446b9d0e4acd42dea490bc4722f96e655d01cc2414e3923b1cba7dfcc4dea69f52400316aabc6f404843deebb70d50c03fd36b4638bdf1c8976ee4a
+  checksum: 10/c41c6b0a5e112e0209b7f6b6eec7d83d3162a8061233375c76ca9f94afcff326a3447e5f53889b35049a855648a09f203c9850c2dbb6cd4690b54a2075eae266
   languageName: node
   linkType: hard
 
@@ -13887,7 +13886,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:^7.1.0, @types/glob@npm:^7.1.1, @types/glob@npm:^7.1.3":
+"@types/glob@npm:^7.1.1, @types/glob@npm:^7.1.3":
   version: 7.2.0
   resolution: "@types/glob@npm:7.2.0"
   dependencies:
@@ -23164,6 +23163,15 @@ __metadata:
   version: 5.4.3
   resolution: "electron-log@npm:5.4.3"
   checksum: 10/0162345d56c644378f23339e586e9046a0d646be0436c624b51f4bf560b376bc7eb9569b1ea3af04085fafd662af6f559ac5d4616a26910de192996ffb74948d
+  languageName: node
+  linkType: hard
+
+"electron-playwright-helpers@npm:^1.7.1":
+  version: 1.8.2
+  resolution: "electron-playwright-helpers@npm:1.8.2"
+  dependencies:
+    "@electron/asar": "npm:^3.2.4"
+  checksum: 10/bce4357849d80c70ffd41c03162a4813580f5cd829c9f76bae48bc747f85954e173d3c990e030bc28a122880648f88c1662e203d29077de401a09f92a185c75b
   languageName: node
   linkType: hard
 
@@ -38274,6 +38282,7 @@ __metadata:
     chance: "npm:^1.1.13"
     date-fns: "npm:^2.30.0"
     dotenv: "npm:^17.2.3"
+    electron-playwright-helpers: "npm:^1.7.1"
     eslint: "npm:^9.39.1"
     eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-import: "npm:^2.32.0"

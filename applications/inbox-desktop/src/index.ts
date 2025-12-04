@@ -10,6 +10,7 @@ import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {
     bringWindowToFront,
+    getCurrentViewID,
     getMainWindow,
     getWebContentsViewName,
     viewCreationAppStartup,
@@ -150,4 +151,12 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
     initializeFeatureFlagManager();
     setRequestPermission();
     extendAppVersionHeader();
+
+    if (process.env.PLAYWRIGHT_TEST === "true") {
+        // We can expose a method through the global node context.
+        // Playwright can interface with it via JS handles.
+        // In turn this enables us to evaluate what view is presented in the main browser window on INDA.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (globalThis as any).getCurrentViewID = getCurrentViewID;
+    }
 })().catch(captureTopLevelRejection);

@@ -94,6 +94,15 @@ export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
+
+    // We need this for E2E tests because Playwright waits for something
+    // to be loaded before connecting to the browser view.
+    // We need to check if removing this after the Electron version update
+    // will work
+    if (process.env.PLAYWRIGHT_TEST === "true") {
+        await mainWindow.loadURL("about:blank");
+    }
+
     createViews();
 
     const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);

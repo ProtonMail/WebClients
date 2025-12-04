@@ -53,6 +53,7 @@ function InboxDesktopDefaultAppSwitcher({ appToLinkTo: currentApp }: Props) {
                                 className="text-center text-no-decoration outline-none--at-all apps-dropdown-link p-0"
                                 aria-current={current}
                                 shape="ghost"
+                                data-testid={`inbox-desktop-switch-${APP_TO_VIEW_TARGET[app]}-app`}
                             >
                                 <ProductIcon appToLinkTo={app} current={current} />
                             </Button>
@@ -80,6 +81,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
                 className="flex items-center"
                 shape={isAppMail ? 'solid' : 'ghost'}
                 aria-current={isAppMail}
+                data-testid="inbox-desktop-switch-mail-app"
             >
                 <Icon name="inbox" alt={MAIL_APP_NAME} className={clsx(isAppMail ? 'color-norm' : 'color-weak')} />
             </ButtonLike>
@@ -88,6 +90,7 @@ function InboxDesktopMacAppSwitcher({ appToLinkTo }: Props) {
                 className="flex items-center"
                 shape={isAppCalendar ? 'solid' : 'ghost'}
                 aria-current={isAppCalendar}
+                data-testid="inbox-desktop-switch-calendar-app"
             >
                 <Icon
                     name="calendar-grid"

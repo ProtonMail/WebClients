@@ -23,7 +23,7 @@ const UpgradeButton = () => {
     });
 
     return (
-        <Button shape="underline" onClick={() => freeTrialUpgradeClick(upsellRef)} className="py-0 align-baseline">{c(
+        <Button shape="underline" onClick={() => freeTrialUpgradeClick(upsellRef)} className="py-0 align-baseline" data-testid='inbox-desktop-upgrade-free-trial-banner-button'>{c(
             'Action'
         ).t`Upgrade Now`}</Button>
     );
@@ -74,7 +74,7 @@ export const InboxDesktopFreeTrialTopBanner = ({ className }: { className?: stri
     };
 
     return (
-        <TopBanner onClose={handleClose} className={clsx('bg-info', className)}>
+        <TopBanner onClose={handleClose} className={clsx('bg-info', className)} data-testid='inbox-desktop-free-trial-banner'>
             {message}
         </TopBanner>
     );
