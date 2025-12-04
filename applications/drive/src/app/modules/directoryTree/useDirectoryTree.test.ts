@@ -16,6 +16,8 @@ const mockedHandleSdkError = jest.mocked(handleSdkError);
 jest.mock('../../utils/errorHandling');
 jest.mocked(sendErrorReport);
 
+jest.mock('../../utils/ActionEventManager/ActionEventManager');
+
 const { directoryTreeFactory } = jest.requireActual('./useDirectoryTree');
 
 const createMockDevice = (rootFolderUid: string, name: string) => ({
@@ -118,6 +120,7 @@ describe('useDirectoryTree', () => {
                 error: {
                     uid: 'degraded-root-uid',
                     type: NodeType.Folder,
+                    name: { ok: true, value: 'My files' },
                 },
             });
 
@@ -261,7 +264,7 @@ describe('useDirectoryTree', () => {
                     error: {
                         uid: 'degraded-shared',
                         type: NodeType.Folder,
-                        name: 'Degraded Name',
+                        name: { ok: true, value: 'Degraded Name' },
                     },
                 },
             ];
@@ -413,7 +416,7 @@ describe('useDirectoryTree', () => {
                     error: {
                         uid: 'degraded-child',
                         type: NodeType.File,
-                        name: 'Degraded File',
+                        name: { ok: true, value: 'Degraded File' },
                     },
                 },
             ];

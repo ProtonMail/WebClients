@@ -20,6 +20,7 @@ import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { useCreateFolderModal } from '../CreateFolderModal';
 import { useCopyItems } from './useCopyItems';
 
 /**
@@ -35,7 +36,7 @@ type CopyModalItem = {
 };
 
 const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: CopyModalItem[] } & ModalStateProps) => {
-    const { initializeTree, get, toggleExpand, treeRoots } = useCopyModalDirectoryTree({
+    const { initializeTree, get, toggleExpand, treeRoots, addNode } = useCopyModalDirectoryTree({
         onlyFolders: true,
         loadPermissions: true,
     });
@@ -43,6 +44,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
     const [isCopying, setIsCopying] = useState(false);
     const copyItems = useCopyItems();
     const { handleError } = useSdkErrorHandler();
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
 
     useEffect(() => {
         setIsLoading(true);
@@ -95,19 +97,37 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
                     />
                 )}
             </ModalTwoContent>
-            <ModalTwoFooter className="flex justify-end gap-4">
-                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                <Tooltip title={errorMessage}>
-                    {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
-                    <span>
-                        <Button
-                            color="norm"
-                            onClick={copyItemsToTarget}
-                            disabled={isCopying || !copyTargetUid || !!errorMessage}
-                        >{c('Action').t`Make a copy`}</Button>
-                    </span>
-                </Tooltip>
+            <ModalTwoFooter className="flex justify-evenly gap-4">
+                <Button
+                    onClick={() =>
+                        showCreateFolderModal({
+                            parentFolderUid: copyTargetUid,
+                            onSuccess: ({ uid, name }) =>
+                                uid && copyTargetUid
+                                    ? addNode(uid, copyTargetUid, name)
+                                    : console.error('Missing data for new folder in copy modal'),
+                        })
+                    }
+                    disabled={!copyTargetUid}
+                >
+                    {c('Action').t`Create new folder`}
+                </Button>
+
+                <div className="flex gap-4">
+                    <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+                    <Tooltip title={errorMessage}>
+                        {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
+                        <span>
+                            <Button
+                                color="norm"
+                                onClick={copyItemsToTarget}
+                                disabled={isCopying || !copyTargetUid || !!errorMessage}
+                            >{c('Action').t`Make a copy`}</Button>
+                        </span>
+                    </Tooltip>
+                </div>
             </ModalTwoFooter>
+            {createFolderModal}
         </ModalTwo>
     );
 };
