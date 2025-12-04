@@ -246,6 +246,9 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
+      "Create a spreadsheet": [
+        "Vytvořit tabulku"
+      ],
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
@@ -5399,6 +5402,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Vaše data zůstávají vaše. Vytvářejte a spolupracujte pomocí plně funkčních tabulek zabezpečených koncovým šifrováním."
+      ],
       "Your email address and password were leaked:": [
         "Vaše e-mailová adresa a heslo unikly:"
       ],
@@ -5559,6 +5565,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Snímek obrazovky ${ SHEETS_APP_NAME }"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -7814,6 +7823,11 @@
         "Neomezený počet aliasů pro ochranu vaší identity"
       ]
     },
+    "Onboarding Action": {
+      "Maybe later": [
+        "Možná později"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " navštivte naše ${ helpCenterLink } nebo ${ contactSupportLink }."
@@ -9758,6 +9772,9 @@
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Představujeme ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
