@@ -261,7 +261,7 @@
       "Create a free account": [
         "Skapa ett gratis konto"
       ],
-      "Create a new bookings page": [
+      "Create a new booking page": [
         "Skapa en ny bokningssida"
       ],
       "Create a new contact group": [
@@ -3788,9 +3788,6 @@
       "Process aborted": [
         "Process avbruten"
       ],
-      "Range is too short": [
-        "Intervallet är för kort"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Tog bort duplicerad mottagare: ${ joinedRecipients }",
         "Tog bort duplicerade mottagare: ${ joinedRecipients }"
@@ -5192,15 +5189,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
-      "Booking already exists.": [
-        "Bokning finns redan."
-      ],
-      "Booking cannot be added in the past.": [
-        "Bokning kan inte läggas till i det förflutna."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Bokning överlappar med en befintlig bokning."
-      ],
       "Booking page deleted": [
         "Bokningssida borttagen"
       ],
@@ -5231,11 +5219,11 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Hittar du inte händelsen du letar efter? Några händelser i dolda kalendrar matchar din fråga. För att se dessa resultat, aktivera synlighet för ${ hiddenWithItemsCalendarList }."
       ],
-      "Cannot create booking range across days": [
-        "Kan inte skapa bokningsintervall över dagar"
+      "Cannot create a range across days.": [
+        "Kan inte skapa ett intervall över dagar."
       ],
-      "Cannot create booking range in the past.": [
-        "Kan inte skapa bokningsintervall i det förflutna."
+      "Cannot create a range in the past.": [
+        "Kan inte skapa ett intervall i det förflutna."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
@@ -5825,6 +5813,15 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
+      "Range already exists.": [
+        "Intervall finns redan."
+      ],
+      "Range is too short.": [
+        "Intervall är för kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Intervall överlappar med ett befintligt intervall."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
@@ -6218,9 +6215,6 @@
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Du kan inte ha fler än ${ MAX_BOOKING_SLOTS } bokningsluckor på en sida."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -6682,6 +6676,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Skapa delningsbara sidor där människor kan boka tid med dig."
       ],
       "Credits": [
         "Krediter"
@@ -9236,6 +9233,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {

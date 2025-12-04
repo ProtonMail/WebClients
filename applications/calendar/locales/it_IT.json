@@ -261,9 +261,6 @@
       "Create a free account": [
         "Crea un account gratuito"
       ],
-      "Create a new bookings page": [
-        "Crea pagina di prenotazione"
-      ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
@@ -5207,15 +5204,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
-      "Booking already exists.": [
-        "La prenotazione esiste già."
-      ],
-      "Booking cannot be added in the past.": [
-        "Non è possibile aggiungere una prenotazione nel passato."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Questa prenotazione si sovrappone a una prenotazione esistente."
-      ],
       "Booking page deleted": [
         "Pagina di prenotazione eliminata"
       ],
@@ -5245,9 +5233,6 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Non trovi gli eventi che cerchi? Alcuni eventi nei calendari nascosti corrispondono alla tua ricerca. Per vedere questi risultati, attiva la visibilità per ${ hiddenWithItemsCalendarList }."
-      ],
-      "Cannot create booking range across days": [
-        "Non puoi creare un intervallo di prenotazione su più giorni."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -6251,9 +6236,6 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Non puoi avere più di ${ MAX_BOOKING_SLOTS } slot di prenotazione su una pagina."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."

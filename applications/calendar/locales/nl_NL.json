@@ -261,9 +261,6 @@
       "Create a free account": [
         "Maak een gratis account aan"
       ],
-      "Create a new bookings page": [
-        "Maak een nieuwe boekingspagina"
-      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
@@ -3809,9 +3806,6 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
-      "Range is too short": [
-        "Bereik is te kort"
-      ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Dubbele ontvanger verwijderd: ${ joinedRecipients }",
         "Dubbele ontvangers verwijderd: ${ joinedRecipients }"
@@ -5213,15 +5207,6 @@
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
-      "Booking already exists.": [
-        "Boeking bestaat al."
-      ],
-      "Booking cannot be added in the past.": [
-        "Een boeking in het verleden kan niet worden toegevoegd."
-      ],
-      "Booking overlaps with an existing booking.": [
-        "Deze boeking overlapt met een bestaande boeking."
-      ],
       "Booking page deleted": [
         "Boekingspagina verwijderd"
       ],
@@ -5251,12 +5236,6 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Kunt u de evenementen die u zoekt niet vinden? Sommige evenementen in verborgen agenda's komen overeen met uw zoekopdracht. Om die resultaten te zien, schakel de zichtbaarheid in voor ${ hiddenWithItemsCalendarList }."
-      ],
-      "Cannot create booking range across days": [
-        "Kan geen boekingsbereik over meerdere dagen aanmaken."
-      ],
-      "Cannot create booking range in the past.": [
-        "Kan geen boekingsbereik in het verleden aanmaken."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -6260,9 +6239,6 @@
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
-      ],
-      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "U kunt niet meer dan ${ MAX_BOOKING_SLOTS } boekingsmomenten op een pagina hebben."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
