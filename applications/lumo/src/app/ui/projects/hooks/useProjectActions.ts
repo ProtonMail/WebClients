@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { generateSpaceKeyBase64 } from '../../../crypto';
-import { useLumoDispatch } from '../../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { selectSpaceById } from '../../../redux/selectors';
 import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequest } from '../../../redux/slices/core/spaces';
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { SpaceId } from '../../../types';
@@ -62,11 +63,11 @@ export const useProjectActions = () => {
 
     const updateProjectInstructions = useCallback(
         (spaceId: SpaceId, instructions: string) => {
-            // TODO: Implement updating space instructions
-            // Need to update the Space in Redux and trigger a push
-            console.log('TODO: Update project instructions:', spaceId, instructions);
+            // This function is deprecated - instructions are now updated directly in the modal
+            // to avoid the complexity of accessing state in a callback
+            console.warn('updateProjectInstructions is deprecated - use direct dispatch in modal');
         },
-        [dispatch]
+        []
     );
 
     const deleteProject = useCallback(
