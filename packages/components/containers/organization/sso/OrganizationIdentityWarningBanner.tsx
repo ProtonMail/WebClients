@@ -8,7 +8,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 export const OrganizationIdentityWarningBanner = () => {
     const [organizationKey] = useOrganizationKey();
 
-    if (!organizationKey || organizationKey.Key.SignatureAddress) {
+    if (!organizationKey || organizationKey.Key.FingerprintSignatureAddress) {
         return null;
     }
 
