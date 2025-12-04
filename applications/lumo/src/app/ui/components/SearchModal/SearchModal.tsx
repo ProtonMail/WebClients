@@ -69,13 +69,11 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
         }
     };
     
-    // Helper to get project category info
     const getProjectCategoryInfo = (categoryId?: string) => {
         if (!categoryId) return null;
         return getProjectCategory(categoryId);
     };
 
-    // Get project category for conversation/message results
     const projectCategory = (result.type === 'conversation' || result.type === 'message') && result.projectIcon
         ? getProjectCategoryInfo(result.projectIcon)
         : null;
@@ -111,7 +109,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                 title={c('Action').t`Open file preview`}
             >
                 <div className="search-result-icon">
-                    <Icon name="speech-bubble" size={4} className="color-primary" />
+                    <Icon name="speech-bubble" size={4} className="var(--text-norm)" />
                 </div>
                 <div className="search-result-content">
                     <div className="search-result-title">
@@ -119,13 +117,13 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                     </div>
                     {result.documentPreview && (
                         <div className="search-result-preview search-result-folder-path">
-                            <Icon name="folder" size={3} className="mr-1" />
+                            <Icon name="folder" size={3} className="mr-1" color="var(--text-norm)" />
                             {result.documentPreview}
                         </div>
                     )}
                 </div>
                 <div className="search-result-meta">
-                    <Icon name="drive" size={3} className="color-weak mr-1" />
+                    <Icon name="brand-proton-drive-filled" size={3} className="color-weak mr-1" />
                     <span className="search-result-date">{formatDate(result.timestamp, query)}</span>
                 </div>
             </button>
@@ -135,18 +133,15 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
     if (result.type === 'project') {
         const projectCategory = result.projectIcon ? getProjectCategoryInfo(result.projectIcon) : null;
         const projectIconName = projectCategory ? projectCategory.icon : 'folder';
-        const projectIconColor = projectCategory ? projectCategory.color : undefined;
+
         return (
             <button
                 className="search-result-item search-result-item-project"
                 onClick={handleClick}
                 title={c('Action').t`Open project`}
             >
-                <div 
-                    className="search-result-icon"
-                    style={projectIconColor ? { backgroundColor: projectIconColor } : undefined}
-                >
-                    <Icon name={projectIconName as any} size={4} className={projectIconColor ? "color-white" : "color-primary"} />
+                <div className="search-result-icon">
+                    <Icon name={projectIconName as any} size={4} className={"color-norm"} />
                 </div>
                 <div className="search-result-content">
                     <div className="search-result-title">
@@ -169,8 +164,7 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
     const mainIconCategory = (result.type === 'conversation' || result.type === 'message') && result.projectIcon
         ? getProjectCategoryInfo(result.projectIcon)
         : null;
-    const mainIconName = mainIconCategory ? mainIconCategory.icon : 'speech-bubble';
-    const mainIconColor = mainIconCategory ? mainIconCategory.color : undefined;
+    const mainIconName = mainIconCategory ? 'folder-filled' : 'speech-bubble';
 
     return (
         <button
@@ -178,22 +172,19 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
             onClick={handleClick}
             title={c('Action').t`Open conversation`}
         >
-            <div 
-                className="search-result-icon" 
-                style={mainIconColor ? { backgroundColor: mainIconColor } : undefined}
-            >
-                <Icon name={mainIconName as any} size={4} className={mainIconColor ? "color-white" : "color-primary"} />
+            <div className="search-result-icon">
+                <Icon name={mainIconName as any} size={4} className={"color-norm"} />
             </div>
             <div className="search-result-content">
-                <div className="search-result-title">
-                    {highlightText(result.conversationTitle || '', query)}
-                </div>
-                {(result.type === 'conversation' || result.type === 'message') && result.projectName && (
+                {result.projectName && (
                     <div className="search-result-preview search-result-folder-path">
                         {ProjectIcon}
                         {result.projectName}
                     </div>
                 )}
+                <div className="search-result-title">
+                    {highlightText(result.conversationTitle || '', query)}
+                </div>
                 {result.type === 'message' && result.messagePreview && (
                     <div className="search-result-preview">
                         {highlightText(result.messagePreview, query)}
@@ -400,32 +391,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
             {/* Search Results */}
             <div className="search-modal-results">
-                {/* Actions Section - always show when no query */}
-                {!query.trim() && (
-                    <div className="search-modal-section">
-                        <div className="search-modal-section-header">
-                            <span className="search-modal-section-title">Actions</span>
-                        </div>
-                        <button
-                            className="search-result-item search-result-action"
-                            onClick={() => {
-                                history.push('/');
-                                onClose();
-                            }}
-                            title={c('Action').t`Create new chat`}
-                        >
-                            <div className="search-result-icon">
-                                <Icon name="pen-square" size={4} className="color-primary" />
-                            </div>
-                            <div className="search-result-content">
-                                <div className="search-result-title">
-                                    {c('Action').t`Create New Chat`}
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                )}
-
+                
                 {/* Empty state hint - only show when no results and no query */}
                 {!query.trim() && results.length === 0 && !isSearching && (
                     <div className="search-modal-empty-hint">
