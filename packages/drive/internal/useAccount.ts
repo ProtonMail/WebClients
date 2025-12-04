@@ -6,6 +6,7 @@ import type { PublicKey } from '@protontech/drive-sdk/dist/crypto';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
@@ -16,6 +17,9 @@ export function useAccount(): ProtonDriveAccount {
     const api = useApi();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
+    // This is using AuthenticationProvider, it should be included in every app already
+    // TODO: Check if we can improve that, probably we can pass authentication through the init of drive and then instanciate it here
+    const authentication = useAuthentication();
 
     const cachedPublicKeys = useRef(new Map<string, PublicKeyReference[]>());
 
@@ -64,6 +68,9 @@ export function useAccount(): ProtonDriveAccount {
     };
 
     const getPublicKeys = async (email: string): Promise<PublicKey[]> => {
+        if (!authentication.getUID()) {
+            return [];
+        }
         try {
             const address = await getOwnAddress(email);
             const keys = address.keys.map(({ key }) => key);

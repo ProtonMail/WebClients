@@ -64,6 +64,7 @@ export type {
     SeekableReadableStream,
 } from '@protontech/drive-sdk';
 export type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+export type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 
 /* Other export */
 export {

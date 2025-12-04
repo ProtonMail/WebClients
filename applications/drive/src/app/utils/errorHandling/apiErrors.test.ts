@@ -1,6 +1,6 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { getErrorMetricTypeOnPublicPage } from '../../containers/PublicSharedLinkContainer';
+import { getErrorMetricTypeOnPublicPage } from '../../containers/PublicSharedLinkContainerLegacy';
 import { EnrichedError } from './EnrichedError';
 
 jest.mock('@proton/shared/lib/api/helpers/apiErrorHelper', () => ({
