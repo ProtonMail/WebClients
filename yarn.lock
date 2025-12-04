@@ -2359,7 +2359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@doyensec/electronegativity@npm:^1.10.3, @doyensec/electronegativity@npm:^1.9.1":
+"@doyensec/electronegativity@npm:^1.10.3":
   version: 1.10.3
   resolution: "@doyensec/electronegativity@npm:1.10.3"
   dependencies:
@@ -2615,17 +2615,6 @@ __metadata:
   dependencies:
     "@electron-forge/shared-types": "npm:7.5.0"
   checksum: 10/8e528248b92902e9ca70fbe7f3604c274fb59d40636e427d9845afa6bc6e516ab572652c26625a4646ba433b9a812c05be8cba3e9a19a1ad3495e541e6576f23
-  languageName: node
-  linkType: hard
-
-"@electron-forge/plugin-electronegativity@npm:^7.5.0":
-  version: 7.5.0
-  resolution: "@electron-forge/plugin-electronegativity@npm:7.5.0"
-  dependencies:
-    "@doyensec/electronegativity": "npm:^1.9.1"
-    "@electron-forge/plugin-base": "npm:7.5.0"
-    "@electron-forge/shared-types": "npm:7.5.0"
-  checksum: 10/44205fef55d11430789b54ce23cb58a260280c731279bdb0ffde428d153976fe9ddf653c4825f523f3043342f0796100df3e2b39332be386f98e86e9e239965e
   languageName: node
   linkType: hard
 
@@ -38663,7 +38652,6 @@ __metadata:
     "@electron-forge/maker-squirrel": "npm:^7.5.0"
     "@electron-forge/maker-zip": "npm:^7.5.0"
     "@electron-forge/plugin-auto-unpack-natives": "npm:^7.5.0"
-    "@electron-forge/plugin-electronegativity": "npm:^7.5.0"
     "@electron-forge/plugin-fuses": "npm:^7.5.0"
     "@electron-forge/plugin-webpack": "npm:^7.5.0"
     "@electron-forge/shared-types": "npm:^7.5.0"
