@@ -4,7 +4,12 @@ export const serializeFormData = (data: { [key: string]: any }): FormData => {
         if (Array.isArray(data[key])) {
             data[key].forEach((val: any) => formData.append(key, val));
         } else {
-            formData.append(key, data[key]);
+            const value = data[key];
+            if (value instanceof Blob) {
+                formData.append(key, value, key);
+            } else {
+                formData.append(key, data[key]);
+            }
         }
     });
     return formData;
