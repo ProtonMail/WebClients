@@ -1432,6 +1432,9 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -2359,7 +2362,7 @@
         "Esta resposta está desactualizada. O evento já não existe no seu calendário."
       ],
       "This response is out of date. You have no calendars.": [
-        "Esta resposta está desactualizada. Não tem calendários."
+        "Esta resposta está desatualizada. Não tem calendários."
       ],
       "You already accepted this invitation.": [
         "Já aceitou este convite."
@@ -7028,7 +7031,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -9601,7 +9605,7 @@
         "Abrir no ${ CALENDAR_APP_NAME }"
       ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
-        "Abrir evento actualizado em ${ CALENDAR_APP_NAME }"
+        "Abrir evento atualizado em ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ou pode eliminar um dos seus calendários e criar um vinculado a um e-mail ativo."
@@ -11313,7 +11317,7 @@
     },
     "Online Accounts Name": {
       "Banking": [
-        "Transações bancárias"
+        "Bancário"
       ],
       "Crypto": [
         "Cripto"

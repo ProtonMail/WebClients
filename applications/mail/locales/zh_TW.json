@@ -1056,6 +1056,9 @@
       "Read receipt sent": [
         "讀取回條已傳送"
       ],
+      "Recently read": [
+        "最近閱讀"
+      ],
       "Reconnect": [
         "重新連線"
       ],
@@ -1422,9 +1425,6 @@
       "Trust": [
         "信任"
       ],
-      "Trust key": [
-        "信任金鑰"
-      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1433,6 +1433,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Try categories": [
+        "嘗試分類"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
@@ -1801,9 +1804,20 @@
         "寄件者驗證合格"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "未顯示 ${ hiddenResultsCount } 個結果"
+      ]
+    },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "在 ${ formattedDate } 試用結束後，其會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate } 前取消，則不會被收費。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
+      ],
+      "You have reached the trial limit.": [
+        "您已達到試用限制。"
       ]
     },
     "b2b_trials_Action": {
@@ -4042,8 +4056,16 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "取得四倍的儲存空間"
+      ],
       "Share your plan": [
         "共享您的方案"
+      ]
+    },
+    "Duo offer: Title": {
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
     "Email body for invitation": {
@@ -4771,6 +4793,11 @@
         "郵遞區號為必要項目"
       ]
     },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "每一邀請函至多僅能包含 ${ maxAttendees } 位參與者"
@@ -5481,6 +5508,9 @@
       "Checklist complete": [
         "清單完成"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "索取 ${ BRAND_NAME } 位址"
+      ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "在 ${ daysCount } 日內完成以下項目可以免費將儲存空間翻倍。"
       ],
@@ -6020,6 +6050,9 @@
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "${ BRAND_NAME }的密碼管理器使您能創建，儲存，及自動填入密碼，所以您永遠不需要重設他們。"
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 位址以進行安全的事件同步與加密。立刻領取您的免費 ${ MAIL_APP_NAME } 位址。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -6200,6 +6233,12 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** 筆總數出現在 ${ labelName }"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**第一步：**使用您的推薦連結邀請您的朋友加入 ${ BRAND_NAME }。"
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**第三步：**每當有朋友訂閱方案時，您將獲得 ${ referrerRewardAmount } 額度。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -6220,6 +6259,9 @@
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
         "VPN 會加密您的連線並隱藏您的 IP 位址，使任何人都更難追蹤或監控您的瀏覽。"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN 是您裝置與網際網路之間的安全通道。它能隱藏您的位置與活動，讓 ISP 及您造訪的網站無法追蹤。"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "於10臺裝置存取6,500+ 高速伺服器以確保您的瀏覽安全。於${ ios }，${ android }，${ appleTV }，及${ desktop }。"
@@ -6244,6 +6286,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
+      ],
+      "Addresses settings": [
+        "位址設定"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
@@ -6295,6 +6340,9 @@
       ],
       "An unknown public key has been detected for this recipient.": [
         "已檢測到此收件者的未知公開金鑰。"
+      ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "系統將代表您寄送一封取消訂閱的電子郵件。"
       ],
       "and": [
         "和"
@@ -6469,6 +6517,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "聯絡資訊已從${ contactGroupName }群裡移除"
+      ],
+      "Continue": [
+        "繼續"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -6689,6 +6740,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "透過桌面應用程式享受更快，更專注的信件體驗"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
+      ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
       ],
@@ -6754,6 +6808,9 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "於任何時間存取電子郵件和優化的移動端使用體驗，下載我們的${ androidAppLink }或${ iosAppLink }。"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "為強化安全性，您可設定密碼短語。此密碼短語不會包含在行事曆邀請中，請記得另行與賓客分享。"
       ],
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
@@ -6879,7 +6936,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -6913,6 +6970,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "將您的登入帳號與信用卡資料加入 ${ PASS_APP_NAME }，讓您的登入帳號與信用卡資料安全無虞，而且隨時隨地都能使用。這是免費的，並且包含在您的 ${ BRAND_NAME } 帳號中。"
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "透過自動清除已存在超過 30 天的垃圾郵件，讓您的信箱保持整潔。"
@@ -7739,6 +7799,9 @@
       "Trackers blocked:": [
         "追蹤器已封鎖:"
       ],
+      "Trash existing messages": [
+        "刪除現有訊息"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
@@ -8135,6 +8198,9 @@
       "Your IP": [
         "您的 IP"
       ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "您的 IP 位址可見且可用於追蹤您的線上活動。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -8457,6 +8523,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
+      "${ count } unread conversation": [
+        "${ count } 則未讀對話"
+      ],
+      "${ count } unread message": [
+        "${ count } 則未讀訊息"
+      ],
       "${ n } month": [
         "${ n } 月"
       ],
@@ -8480,6 +8552,9 @@
       ],
       "Add image URL": [
         "加入圖像路徑"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "新增或移除分類。設定或關閉通知。隨時都可以在 ${ menuIcon } 選單中調整。"
       ],
       "Add to group": [
         "加入至群組"
@@ -8745,6 +8820,9 @@
       "Go to Social": [
         "去社交"
       ],
+      "Go to Updates": [
+        "前往更新"
+      ],
       "Hide password": [
         "隱藏密碼"
       ],
@@ -8835,6 +8913,9 @@
       "Move ${ sidebarElementName }": [
         "移動 ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "移動訊息到"
+      ],
       "Move to": [
         "移至"
       ],
@@ -8870,6 +8951,9 @@
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
         "不再遺漏重要訊息！即刻起，這些會顯示在 ${ primaryCopy } 下方。而其它全部的訊息將以類別排序，方便您更容易找出郵件，同時讓收件匣井然有序。"
+      ],
+      "Non-promotional content and news": [
+        "非促銷內容與新聞"
       ],
       "Not factually correct": [
         "與事實不符"
@@ -9035,6 +9119,9 @@
       ],
       "The category has been updated, thanks for your feedback!": [
         "類別已更新，感謝您的意見回饋！"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "篩選器已停用。${ enableButton }"
       ],
       "Theme": [
         "布景主題"
@@ -9352,6 +9439,9 @@
       ],
       "Reactivate now": [
         "現在重新啟用"
+      ],
+      "Reactivate subscription": [
+        "重新啟用訂閱"
       ],
       "Request an invite": [
         "需求邀請"
@@ -10208,6 +10298,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫共享 (至多 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "與最多 ${ n } 個人分享保管庫"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -11123,6 +11216,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "試用期結束後，於 ${ formattedDate } 付費"
+      ],
       "Billing Country": [
         "計費國家"
       ],
@@ -11177,6 +11273,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月可享優惠價格。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "特別優惠價僅適用於首月。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
       ],
@@ -11207,6 +11309,9 @@
       "You already have a subscription to this plan.": [
         "您已訂閱此方案。"
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "將會重新導向至 PayPal 驗證您的付款。"
+      ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
       ]
@@ -11231,9 +11336,28 @@
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "出了點問題。Google Pay 驗證失敗。"
+      ]
+    },
     "Payments.info": {
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您確定您要繼續嗎？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "若您選擇修改您的 ${ planTitle } 方案，可能會失去對某些功能的存取權。"
+      ],
+      "Keep ${ planTitle }": [
+        "保留 ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "是的，我確定"
       ]
     },
     "Payments.plan_name": {
@@ -11591,11 +11715,20 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "每個推薦 ${ referrerRewardAmount }"
+      ],
       "Friend joined": [
         "已加入的親友"
       ],
       "Friend subscribed": [
         "已訂閱的親友"
+      ],
+      "More sharing options": [
+        "更多分享選項"
+      ],
+      "Refer friends": [
+        "推薦朋友"
       ]
     },
     "Remaining days before the message expire": {
@@ -12379,6 +12512,9 @@
       "${ app } storage": [
         "${ app }儲存"
       ],
+      "${ app } storage used": [
+        "已使用 ${ app } 儲存空間"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }${ percentage }% 滿"
       ],
@@ -12887,6 +13023,9 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 則訊息已不再歸屬 ${ labelName }。"
       ],
+      "${ elementsCount } message removed from Starred.": [
+        "已移除 ${ elementsCount } 則訊息的星號。"
+      ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
@@ -13072,6 +13211,9 @@
       ],
       "Read receipt sent": [
         "讀取回條已傳送"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "重新分類 ${ elementsCount } 則訊息。"
       ],
       "Secret passphrase updated": [
         "秘密助記詞已更新"
@@ -13476,6 +13618,9 @@
       "Create contact": [
         "創建聯絡人"
       ],
+      "Create folder \"${ search }\"": [
+        "建立資料夾「${ search }」"
+      ],
       "Create new group": [
         "創建新群組"
       ],
@@ -13668,6 +13813,9 @@
       "High security for your account": [
         "高安全性帳號"
       ],
+      "How does it all work?": [
+        "這一切是如何運作的？"
+      ],
       "How does it work?": [
         "那是如何運作的？"
       ],
@@ -13838,6 +13986,9 @@
       ],
       "Night theme": [
         "夜間布景主題"
+      ],
+      "No active newsletters": [
+        "無啟用中的電子報"
       ],
       "No attachment found": [
         "找不到附件"
@@ -14132,6 +14283,9 @@
       ],
       "Upgrade to ${ planName }": [
         "升級至${ planName }"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "升級以保留您的進階權益。"
       ],
       "Verification error": [
         "驗證錯誤"
@@ -14477,6 +14631,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
       ]
     },
     "WeekDay": {

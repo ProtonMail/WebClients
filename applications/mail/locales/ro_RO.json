@@ -1502,11 +1502,6 @@
       "Trust": [
         "Aprobare"
       ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Cheie de încredere",
-        "Chei de încredere"
-      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -3995,7 +3990,7 @@
         "Confortabilă"
       ],
       "Compact": [
-        "Compact"
+        "Compactă"
       ]
     },
     "Description": {
@@ -7020,7 +7015,7 @@
         "Ștergerea datelor din navigator dezactivează și căutarea în conținutul din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc)"
+        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc.)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -7519,7 +7514,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7977,7 +7974,7 @@
         "Nu uitați să vă actualizați aceste date în managerul de parole sau oriunde vă păstrați datele contului și de autentificare."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate, …)"
+        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate etc.)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și a îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
@@ -8633,9 +8630,6 @@
       ],
       "Week": [
         "Săptămâna"
-      ],
-      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
-        "V-am mărit spațiul de stocare al ${ DRIVE_APP_NAME } la 5 GiB. Păstrați-vă fișierele și fotografiile importante criptate."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Când doriți să fie șters automat mesajul de la destinatar și din mesajele trimise?"
