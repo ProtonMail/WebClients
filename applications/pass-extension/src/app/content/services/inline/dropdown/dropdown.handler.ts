@@ -27,18 +27,19 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
         listeners,
         attach: (layer) => registry.attachDropdown(layer),
         toggle: async (request) => {
+            const ctrl = new AbortController();
             state.ctrl?.abort();
-            state.ctrl = null;
 
             const visible = registry.dropdown?.getState().visible;
-            const valid = await validateDropdownRequest(request, registry.dropdown?.anchor);
-
             if (visible) dropdown.close();
 
-            if (valid) {
-                const ctrl = new AbortController();
-                state.ctrl = ctrl;
+            /** NOTE: we update the AbortController state reference
+             * **after** potentially closing the dropdown as the `close`
+             * call will force abort the active signal. */
+            state.ctrl = ctrl;
+            const valid = await validateDropdownRequest(request, registry.dropdown?.anchor);
 
+            if (valid) {
                 const field = request.type === 'field' ? request.field : undefined;
                 const form = field?.getFormHandle();
                 const layer = form?.element;
