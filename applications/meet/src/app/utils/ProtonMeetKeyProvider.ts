@@ -53,6 +53,8 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
     }
 
     getKeychainIndexInformation() {
-        return this.getKeys().map((keyInfo) => keyInfo.keyIndex);
+        return this.getKeys()
+            .filter((keyInfo) => !!keyInfo.key)
+            .map((keyInfo) => keyInfo.keyIndex);
     }
 }
