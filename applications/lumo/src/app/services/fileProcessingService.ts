@@ -60,6 +60,35 @@ export class FileProcessingService {
         }
     }
 
+    // Dynamic timeout based on file size and type
+    private getTimeout(fileSize: number, fileType: string): number {
+        // Base timeout
+        let timeout = 30000; // 30 seconds
+
+        // Increase timeout for larger files
+        if (fileSize > 10 * 1024 * 1024) {
+            // > 10MB
+            timeout = 120000; // 2 minutes
+        } else if (fileSize > 5 * 1024 * 1024) {
+            // > 5MB
+            timeout = 90000; // 1.5 minutes
+        } else if (fileSize > 1 * 1024 * 1024) {
+            // > 1MB
+            timeout = 60000; // 1 minute
+        }
+
+        // CSV and Excel files get extra time since they might have many rows
+        if (
+            fileType === 'text/csv' ||
+            fileType === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+            fileType === 'application/vnd.ms-excel'
+        ) {
+            timeout = Math.max(timeout, 60000); // Minimum 1 minute for spreadsheets
+        }
+
+        return timeout;
+    }
+
     async processFile(file: File): Promise<FileProcessingResponse> {
         return new Promise<FileProcessingResponse>((resolve, reject) => {
             const id = `file-${++this.requestCounter}-${Date.now()}`;
@@ -68,68 +97,44 @@ export class FileProcessingService {
             this.pendingRequests.set(id, { resolve, reject });
 
             // Convert file to ArrayBuffer and send to worker
-            file.arrayBuffer()
-                .then((data) => {
-                    const request: FileProcessingRequest = {
-                        id,
-                        file: {
-                            name: file.name,
-                            type: file.type,
-                            size: file.size,
-                            data,
-                        },
-                    };
-
-                    this.sendToWorker(request);
-                })
+            this.makeRequest(id, file)
+                .then((request) => this.sendToWorker(request))
                 .catch((error) => {
                     // Clean up pending request on error
                     this.pendingRequests.delete(id);
                     reject(error);
                 });
 
-            // Dynamic timeout based on file size and type
-            const getTimeout = (fileSize: number, fileType: string): number => {
-                // Base timeout
-                let timeout = 30000; // 30 seconds
-
-                // Increase timeout for larger files
-                if (fileSize > 10 * 1024 * 1024) {
-                    // > 10MB
-                    timeout = 120000; // 2 minutes
-                } else if (fileSize > 5 * 1024 * 1024) {
-                    // > 5MB
-                    timeout = 90000; // 1.5 minutes
-                } else if (fileSize > 1 * 1024 * 1024) {
-                    // > 1MB
-                    timeout = 60000; // 1 minute
-                }
-
-                // CSV and Excel files get extra time since they might have many rows
-                if (
-                    fileType === 'text/csv' ||
-                    fileType === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-                    fileType === 'application/vnd.ms-excel'
-                ) {
-                    timeout = Math.max(timeout, 60000); // Minimum 1 minute for spreadsheets
-                }
-
-                return timeout;
-            };
-
             // Set a timeout to prevent hanging requests
-            const timeout = getTimeout(file.size, file.type);
-            setTimeout(() => {
-                if (this.pendingRequests.has(id)) {
-                    this.pendingRequests.delete(id);
-                    reject(
-                        new Error(
-                            `File processing timeout after ${timeout / 1000} seconds. Large files may require breaking into smaller chunks.`
-                        )
-                    );
-                }
-            }, timeout);
+            const timeout = this.getTimeout(file.size, file.type);
+            this.ensureFinishedAfterTimeout(id, reject, timeout);
         });
+    }
+
+    private async makeRequest(id: string, file: File): Promise<FileProcessingRequest> {
+        const data = await file.arrayBuffer();
+        return {
+            id,
+            file: {
+                name: file.name,
+                type: file.type,
+                size: file.size,
+                data,
+            },
+        };
+    }
+
+    private ensureFinishedAfterTimeout(id: string, reject: (reason?: any) => void, timeout: number) {
+        setTimeout(() => {
+            if (this.pendingRequests.has(id)) {
+                this.pendingRequests.delete(id);
+                reject(
+                    new Error(
+                        `File processing timeout after ${timeout / 1000} seconds. Large files may require breaking into smaller chunks.`
+                    )
+                );
+            }
+        }, timeout);
     }
 
     private sendToWorker(request: FileProcessingRequest) {
