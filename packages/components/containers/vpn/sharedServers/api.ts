@@ -10,13 +10,13 @@ export interface SharedServerLocation {
 }
 
 export interface FilterPolicyRequest {
-    ID: number | null;
+    ID: number | string | null;
     Name: string;
     Type: number;
     State: number;
     Locations: SharedServerLocation[];
-    UserIds: number[] | null;
-    GroupIds: number[] | null;
+    UserIds: (string | number)[] | null;
+    GroupIds: (string | number)[] | null;
 }
 
 export interface CreateLocationFilterPayload {
