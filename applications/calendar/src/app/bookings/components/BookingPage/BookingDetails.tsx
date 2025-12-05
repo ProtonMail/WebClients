@@ -36,7 +36,7 @@ export const BookingDetails = () => {
 
     return (
         <header
-            className="rounded-lg p-8 md:p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header"
+            className="p-8 md:p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header"
             aria-labelledby="booking-details-header-title"
         >
             <h1 className="text-rg mb-2 color-primary text-bold" id="booking-details-header-title">{c('Title')
