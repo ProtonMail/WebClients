@@ -117,18 +117,18 @@ export function sendMessage({
         // Get space-level attachments and assets (project files) and include them with the message
         const allAttachmentsState = state.attachments;
         const allAssetsState = state.assets;
-        
+
         const spaceAttachments: Attachment[] = Object.values(allAttachmentsState)
             .filter((att: any) => att.spaceId === spaceId && !att.processing && !att.error)
             .map((att: any) => att as Attachment);
-        
+
         // Get space assets (project-level files) - they have same shape as attachments
         const spaceAssets: Attachment[] = Object.values(allAssetsState)
             .filter((asset: any) => {
                 return asset && typeof asset === 'object' && asset.spaceId === spaceId && !asset.processing && !asset.error;
             })
             .map((asset: any) => asset as Attachment);
-        
+
         // Combine space attachments, space assets, and provisional attachments (remove duplicates)
         const allMessageAttachments: Attachment[] = [...spaceAttachments, ...spaceAssets];
         attachments.forEach((att) => {
@@ -140,38 +140,30 @@ export function sendMessage({
         // Resolve file references (@file name) in message content
         let processedContent = newMessageContent;
         const space = spaceId ? state.spaces[spaceId] : undefined;
-        const linkedDriveFolder = space?.linkedDriveFolder;
-        
-        // Create file resolver function
+
         const fileResolver = async (fileName: string): Promise<{ content: string; fileName: string } | null> => {
-            // First, try to find in space assets/attachments
+
             const foundFile = allMessageAttachments.find(
                 (att) => att.filename.toLowerCase() === fileName.toLowerCase()
             );
-            
+
             if (foundFile && foundFile.markdown) {
                 return { content: foundFile.markdown, fileName: foundFile.filename };
             }
-            
-            // TODO: If linkedDriveFolder exists, search in Drive folder
-            // This would require Drive SDK access, which we don't have in this context
-            // For now, we'll only support files that are already in space assets
-            
+
             return null;
         };
-        
+
         const { content: resolvedContent, referencedFiles } = await resolveFileReferences(
             newMessageContent,
             fileResolver
         );
         processedContent = resolvedContent;
-        
-        // Log referenced files for debugging
+
         if (referencedFiles.length > 0) {
             console.log('Resolved file references:', referencedFiles.map(f => f.fileName));
         }
 
-        // Create the new messages (user and assistant) with all attachments
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
             allMessageAttachments,
@@ -299,14 +291,14 @@ export function regenerateMessage(
             if (personalization?.enableForNewChats) {
                 personalizationPrompt = getPersonalizationPromptFromState(personalization);
             }
-            
+
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
             const space = state.spaces[spaceId];
             if (space?.isProject && space?.projectInstructions) {
                 projectInstructions = space.projectInstructions;
             }
-            
+
             const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt, projectInstructions);
 
             // Add retry instructions if provided
