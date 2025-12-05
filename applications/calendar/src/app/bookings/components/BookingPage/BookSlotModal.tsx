@@ -31,6 +31,7 @@ interface BookingSlotModalProps extends ModalProps {
 }
 
 const NAME_MAX_LENGTH = 100;
+const EMAIL_MAX_LENGTH = 320;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const { submitBooking, bookingDetails } = useExternalBookingActions();
@@ -134,6 +135,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         bigger
                         value={email}
                         className="rounded-lg"
+                        maxLength={EMAIL_MAX_LENGTH}
                         onChange={(e) => setEmail(e.target.value)}
                         error={validator([
                             requiredValidator(email),
