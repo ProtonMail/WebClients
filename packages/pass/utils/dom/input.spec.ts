@@ -3,6 +3,8 @@ import { findInputBoundingElement } from './input';
 type LayoutProps = {
     rect?: Partial<DOMRect>;
     styles?: Partial<CSSStyleDeclaration>;
+    offsetHeight?: number;
+    offsetWidth?: number;
 };
 
 class DOMBuilder {
@@ -76,8 +78,8 @@ class DOMBuilder {
         };
 
         this.els.set(el, mockProps);
-        Object.defineProperty(el, 'offsetHeight', { get: () => computedRect.height });
-        Object.defineProperty(el, 'offsetWidth', { get: () => computedRect.width });
+        Object.defineProperty(el, 'offsetHeight', { get: () => props.offsetHeight ?? computedRect.height });
+        Object.defineProperty(el, 'offsetWidth', { get: () => props.offsetWidth ?? computedRect.width });
 
         return el as T;
     }
@@ -528,6 +530,34 @@ describe('findInputBoundingElement', () => {
 
             const result = findInputBoundingElement(input);
             expect(result).toBe(container);
+        });
+    });
+
+    describe('Safari rendering quirks', () => {
+        test('should stop at parent with valid DOMRect but bad offsetHeight', () => {
+            /** Simulate Safari quirk where getBoundingClientRect returns valid dimensions
+             * but offsetHeight is 0 - this should cause isSuitableParent to return false */
+            const parent = builder.createElement('div', {
+                rect: { width: 200, height: 35 },
+                offsetHeight: 0,
+                styles: {
+                    borderTopWidth: '1px',
+                    borderBottomWidth: '1px',
+                    borderLeftWidth: '1px',
+                    borderRightWidth: '1px',
+                    borderTopStyle: 'solid',
+                    borderBottomStyle: 'solid',
+                    borderLeftStyle: 'solid',
+                    borderRightStyle: 'solid',
+                },
+            });
+            const input = builder.createInput({ rect: { width: 200, height: 30 } });
+
+            parent.appendChild(input);
+            document.body.appendChild(parent);
+
+            const result = findInputBoundingElement(input);
+            expect(result).toBe(input);
         });
     });
 });

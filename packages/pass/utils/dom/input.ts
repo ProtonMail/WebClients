@@ -87,9 +87,11 @@ const isSuitableParent = (
     /** Parent dimensions don't meet size constraints for viable
      * bounding box. Parent must be visible and reasonably sized
      * relative to input for accurate positioning */
-    const { height: parentHeight, width: parentWidth } = parent.getBoundingClientRect();
+    const { offsetHeight } = parent;
+    const { height, width } = parent.getBoundingClientRect();
     const { minHeight, maxWidth } = constraints;
-    if (!parentHeight || parentHeight < minHeight || parentWidth > maxWidth) return false;
+    if (!(offsetHeight && height)) return false;
+    if (height < minHeight || width > maxWidth) return false;
 
     /** Parent contains text nodes or alert elements that affect layout and
      * may introduce unpredictable spacing affecting positioning. */
@@ -113,7 +115,7 @@ const isSuitableParent = (
      * input dimensions. Both scenarios make the parent unsuitable. */
     if (!isInput) {
         const parentInnerHeight = getComputedHeight(parentStyles, 'inner');
-        if (parentInnerHeight.value > element.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return false;
+        if (parentInnerHeight.value > offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return false;
     }
 
     return true;
