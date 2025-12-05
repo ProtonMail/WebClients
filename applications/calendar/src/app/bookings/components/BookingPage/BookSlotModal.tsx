@@ -73,25 +73,29 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     );
 
     return (
-        <ModalTwo as={Form} onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))} {...rest}>
+        <ModalTwo
+            as={Form}
+            onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))}
+            {...rest}
+            className="booking-modal-slot p-5"
+        >
             <ModalTwoHeader
                 title={c('Form').t`Confirm your booking`}
-                titleClassName="text-4xl text-normal booking-color-title font-arizona"
+                titleClassName="text-4xl text-normal booking-color-title font-arizona booking-modal-slot-title"
                 subline={subtitle}
                 sublineClassName="mt-2"
-                hasClose
-                closeButtonProps={{
-                    className: 'm-1',
-                }}
+                hasClose={false}
             />
             <ModalTwoContent>
-                <div className="mt-6">
+                <div className="mt-8 pt-4">
                     <InputFieldTwo
                         autoFocus
                         label={c('Label').t`Full name`}
                         placeholder={c('Placeholder').t`Name of attendee`}
                         type="text"
+                        bigger
                         value={name}
+                        className="rounded-lg"
                         onChange={(e) => setName(e.target.value)}
                         maxLength={NAME_MAX_LENGTH}
                         error={validator([requiredValidator(name)])}
@@ -100,7 +104,9 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         label={c('Label').t`Email address`}
                         placeholder={c('Placeholder').t`Email for booking confirmation`}
                         type="email"
+                        bigger
                         value={email}
+                        className="rounded-lg"
                         onChange={(e) => setEmail(e.target.value)}
                         error={validator([
                             requiredValidator(email),
@@ -110,9 +116,18 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                     />
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={rest.onClose} pill>{c('Action').t`Cancel`}</Button>
-                <Button disabled={!name.trim() || !email.trim()} loading={isLoading} pill color="norm" type="submit">
+            <ModalTwoFooter className="flex *:min-size-auto flex-column sm:flex-row sm:gap-5">
+                <Button size="large" className="text-semibold flex-1" onClick={rest.onClose} pill>{c('Action')
+                    .t`Cancel`}</Button>
+                <Button
+                    size="large"
+                    className="text-semibold flex-1 "
+                    disabled={!name.trim() || !email.trim()}
+                    loading={isLoading}
+                    pill
+                    color="norm"
+                    type="submit"
+                >
                     {c('Action').t`Confirm booking`}
                 </Button>
             </ModalTwoFooter>

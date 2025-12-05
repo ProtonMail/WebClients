@@ -21,7 +21,7 @@ export const BookingPage = () => {
 
     return (
         <div className="mt-12 mx-auto">
-            <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 booking-wrapper items-start">
+            <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 md:gap-12 booking-wrapper items-start">
                 <BookingDetails />
                 <BookingTimeSlotGrid />
             </div>
