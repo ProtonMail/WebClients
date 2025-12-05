@@ -150,7 +150,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                     .t`Cancel`}</Button>
                 <Button
                     size="large"
-                    className="text-semibold flex-1 "
+                    className="text-semibold text-pre flex-1 "
                     disabled={!name.trim() || !email.trim()}
                     loading={isLoading}
                     pill
