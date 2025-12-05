@@ -75,6 +75,10 @@ type CCExpirationFormat = {
     fullYear: boolean;
     monthFirst: boolean;
 };
+type CCFieldMatchParams = {
+    type: string | null;
+    visible: boolean;
+};
 declare const CC_ATTRIBUTES: string[];
 declare const CC_INPUT_TYPES: string[];
 declare const getExpirationFormat: (field: HTMLElement, allowFallback?: boolean) => CCExpirationFormat | undefined;
@@ -90,11 +94,7 @@ declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCE
 declare const getCCHaystack: (field: HTMLElement) => string;
 declare const getCachedCCSubtype: (el: HTMLElement) => CCFieldType | undefined;
 declare const getCCFieldType: (field: HTMLElement) => CCFieldType | undefined;
-type MatchCCInputFieldParams = {
-    type: string | null;
-    visible: boolean;
-};
-declare const matchCCInputField: (input: HTMLInputElement, { type, visible }: MatchCCInputFieldParams) => boolean;
+declare const matchCCInputField: (input: HTMLInputElement, { type, visible }: CCFieldMatchParams) => boolean;
 declare const isCCInputField: (fnode: Fnode) => boolean;
 declare const isCCSelectField: (fnode: Fnode) => boolean;
 
@@ -165,18 +165,18 @@ declare const createInputIterator: (form: HTMLElement) => {
 };
 declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
 
-declare const getCachedIdentitySubType: (el: HTMLElement) => IdentityFieldType | undefined;
-declare const getIdentityHaystack: (input: HTMLInputElement) => string;
-declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
-type MatchIdendityFieldParams = {
+type IdentityFieldMatchParams = {
     form: FormClassification;
     searchField: boolean;
     type: string | null;
     visible: boolean;
 };
+declare const getCachedIdentitySubType: (el: HTMLElement) => IdentityFieldType | undefined;
+declare const getIdentityHaystack: (input: HTMLInputElement) => string;
+declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
 declare const matchIdentityField: (
     input: HTMLInputElement,
-    { form, searchField, type, visible }: MatchIdendityFieldParams
+    { form, searchField, type, visible }: IdentityFieldMatchParams
 ) => boolean;
 declare const isIdentity: (fnode: Fnode) => boolean;
 
