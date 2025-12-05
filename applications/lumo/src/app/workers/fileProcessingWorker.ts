@@ -1,5 +1,9 @@
 import type { Row } from 'exceljs';
 
+import { ThumbnailType } from '@protontech/drive-sdk';
+
+import { generateThumbnail } from '@proton/drive/modules/thumbnails/thumbnailGenerator';
+
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 import pdfParse from '../lib/attachments/pdfParse';
 import type {
@@ -210,10 +214,35 @@ async function processExcelFile(fileData: FileData): Promise<InternalTextResult>
 }
 
 async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
-    // TODO: Implement actual image compression/resizing
-    // For now, this is an identity function that returns the original data
-    console.log(`[Image Processing] Reducing image size for ${fileData.name} (placeholder - no actual reduction yet)`);
-    return fileData.data;
+    console.log(`[Image Processing] Reducing image size for ${fileData.name} using thumbnail generator`);
+
+    // Convert ArrayBuffer to Blob for thumbnail generator
+    const blob = new Blob([fileData.data], { type: fileData.type });
+
+    // Generate thumbnails with debug mode enabled
+    const { thumbnailsPromise } = generateThumbnail(blob, fileData.name, fileData.size, { debug: true });
+
+    // Await the thumbnail generation result
+    const result = await thumbnailsPromise;
+
+    if (!result.ok) {
+        throw new Error(`Thumbnail generation failed: ${result.error}`);
+    }
+
+    const thumbnailResult = result.result;
+
+    if (!thumbnailResult?.thumbnails || thumbnailResult.thumbnails.length === 0) {
+        throw new Error('No thumbnails were generated');
+    }
+
+    // Prefer Type2 (HD) thumbnail, fallback to Type1 if not available
+    const hdThumbnail = thumbnailResult.thumbnails.find(t => t.type === ThumbnailType.Type2);
+    const thumbnail = hdThumbnail || thumbnailResult.thumbnails[0];
+
+    console.log(`[Image Processing] Using ${thumbnail.type === ThumbnailType.Type2 ? 'HD' : 'standard'} thumbnail for ${fileData.name}`);
+
+    // Convert Uint8Array to ArrayBuffer
+    return thumbnail.thumbnail.buffer;
 }
 
 async function processImageFile(fileData: FileData): Promise<InternalImageResult> {
