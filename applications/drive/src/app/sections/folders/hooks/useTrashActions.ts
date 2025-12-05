@@ -31,7 +31,7 @@ export const useTrashActions = () => {
         const itemsMap = items.map((d) => ({ ...d, linkId: d.uid }));
         const uids = items.map((d) => d.uid);
         const success = [];
-        const failure = [];
+        const failures = [];
         await getActionEventManager().emit({ type: ActionEventName.TRASHED_NODES, uids });
 
         try {
@@ -39,13 +39,13 @@ export const useTrashActions = () => {
                 if (result.ok) {
                     success.push(result.uid);
                 } else {
-                    failure.push(result.uid);
+                    failures.push({ nodeToTrash: result.uid, error: result.error });
                 }
             }
         } catch (e) {
             handleError(e);
         }
-        createTrashedItemsNotifications(Object.values(itemsMap), success, failure, () => restoreItems(items));
+        createTrashedItemsNotifications(Object.values(itemsMap), success, failures, () => restoreItems(items));
     };
 
     return {
