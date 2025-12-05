@@ -168,6 +168,7 @@ import { type CalendarViewEventStore, eventsActions } from '../../store/events/e
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import { TEMPORARY_BOOKING_SLOT } from '../bookings/interface';
+import { BookingErrorMessages } from '../bookings/utils/bookingCopy';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -965,6 +966,9 @@ const InteractiveCalendarView = ({
                     if (isBookingActive) {
                         // We prevent drag and drop if the booking is strictly in the past
                         if (isStrictlyInPast && !formData.recurring) {
+                            createNotification({
+                                text: BookingErrorMessages.RANGE_IN_PAST,
+                            });
                             return;
                         }
 
@@ -996,6 +1000,9 @@ const InteractiveCalendarView = ({
                     if (isBookingActive) {
                         // We prevent drag and drop if the booking is strictly in the past
                         if (isStrictlyInPast && !formData.recurring) {
+                            createNotification({
+                                text: BookingErrorMessages.RANGE_IN_PAST,
+                            });
                             return;
                         }
 
