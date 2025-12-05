@@ -6,6 +6,7 @@ import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-c
 
 import { PAGE_SIZE } from '../constants';
 import type {
+    DecryptionErrorLog,
     KeyRotationLog,
     MLSGroupState,
     MeetChatMessage,
@@ -66,6 +67,7 @@ export interface MeetContextValues {
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
+    decryptionErrorLogs: DecryptionErrorLog[];
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -121,6 +123,7 @@ export const MeetContext = createContext<MeetContextValues>({
     keyRotationLogs: [],
     isRecordingInProgress: false,
     getKeychainIndexInformation: () => [],
+    decryptionErrorLogs: [],
 });
 
 export const useMeetContext = () => {
