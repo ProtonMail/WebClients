@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { generateSpaceKeyBase64 } from '../../../crypto';
-import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectSpaceById } from '../../../redux/selectors';
+import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequest } from '../../../redux/slices/core/spaces';
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { SpaceId } from '../../../types';
