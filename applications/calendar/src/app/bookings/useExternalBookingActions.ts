@@ -1,23 +1,23 @@
-import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useApi } from '@proton/components';
+import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import {
-    encryptSlotBookingSharedKeyPackets,
-    extractBookingUidFromSecret,
-} from '../containers/bookings/utils/crypto/bookingEncryption';
+import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import type { BookingTimeslot } from './booking.store';
 import { prepareBookingSubmission } from './bookingSubmissionUtils';
 import { useBookingsProvider } from './entryPoints/BookingsExternalProvider';
+import { getAttendeeSharedKeyPacket } from './utils/attendeeKeyPacketHelper';
 
 interface AttendeeInfo {
     name: string;
@@ -32,22 +32,22 @@ export const useExternalBookingActions = () => {
     const saveMeeting = useSaveMeeting();
     const getVTimezonesMap = useGetVtimezonesMap();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+    const { createNotification } = useNotifications();
 
     const history = useHistory();
     const { isGuest } = useBookingsProvider();
 
     const getCalendarKeys = useGetCalendarKeys();
+    const getAddresses = useGetAddresses();
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const bookingSecretBase64Url = location.hash.substring(1);
-    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const submitBooking = async (timeslot: BookingTimeslot, attendeeInfo: AttendeeInfo) => {
         if (!bookingDetails) {
             throw new Error('Booking details not available');
         }
 
-        setIsSubmitting(true);
         try {
             const bookingUidBase64Url = await extractBookingUidFromSecret(bookingSecretBase64Url);
 
@@ -65,23 +65,21 @@ export const useExternalBookingActions = () => {
                 getVTimezonesMap,
             });
 
-            let AttendeeSharedKeyPacket = undefined;
-            if (!isGuest) {
-                const calendarSettings = await getCalendarUserSettings();
-                if (!calendarSettings.DefaultCalendarID) {
-                    throw new Error('Default calendar ID not found');
-                }
+            const attendeeSharedKeyPacketResult = await getAttendeeSharedKeyPacket({
+                isGuest,
+                attendeeEmail: attendeeInfo.email,
+                sharedSessionKey: submissionData.sharedSessionKey,
+                getCalendarUserSettings,
+                getAddresses,
+                getCalendarKeys,
+            });
 
-                const sharedKeyPacket = await encryptSlotBookingSharedKeyPackets({
-                    calendarID: calendarSettings.DefaultCalendarID,
-                    getCalendarKeys,
-                    sharedSessionKey: submissionData.sharedSessionKey,
+            if (attendeeSharedKeyPacketResult.type === 'disabled_address') {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Cannot create a booking with a disabled address`,
                 });
-
-                AttendeeSharedKeyPacket = sharedKeyPacket ? sharedKeyPacket.toBase64() : undefined;
-
-                try {
-                } catch (e) {}
+                return;
             }
 
             await api(
@@ -90,7 +88,7 @@ export const useExternalBookingActions = () => {
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
                     AttendeeToken: submissionData.attendeeToken,
-                    AttendeeSharedKeyPacket,
+                    AttendeeSharedKeyPacket: attendeeSharedKeyPacketResult.keyPacket,
                     EmailData: {
                         Name: submissionData.emailData.name,
                         Email: submissionData.emailData.email,
@@ -104,11 +102,10 @@ export const useExternalBookingActions = () => {
 
             setSelectedBookingSlot(timeslot);
             history.push('/bookings/success');
+            return 'success';
         } catch (error: unknown) {
             traceError(error);
             throw error;
-        } finally {
-            setIsSubmitting(false);
         }
     };
 
@@ -116,6 +113,5 @@ export const useExternalBookingActions = () => {
         bookingSecretBase64Url,
         bookingDetails,
         submitBooking,
-        isSubmitting,
     };
 };
