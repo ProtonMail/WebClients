@@ -202,7 +202,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     };
 
     return (
-        <div className="project-files-panel md:w-1/3">
+        <div className={`project-files-panel md:w-1/3 ${linkedDriveFolder ? 'has-drive-browser' : ''}`}>
             <div className="project-files-panel-content">
                 {/* Instructions Section */}
                 <div className="project-files-section">
@@ -271,10 +271,11 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             <div className="flex items-start justify-between gap-3">
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-1">
-                                        <IcBrandProtonDrive size={4} className="color-primary flex-shrink-0" />
-                                        <span className="text-sm font-semibold">{linkedDriveFolder.folderName}</span>
+                                        <Icon name="brand-proton-drive-filled" size={4} className="color-norm flex-shrink-0" />
+                                        <span className="text-sm font-semibold">{c('collider_2025:Info').t`Connected to ${DRIVE_APP_NAME}`}</span>
+                                        <div className="drive-connection-indicator"></div>
                                     </div>
-                                    <div className="text-xs color-weak">/{linkedDriveFolder.folderPath}</div>
+                                    <div className="text-xs color-weak">/{linkedDriveFolder.folderPath}/{linkedDriveFolder.folderName}</div>
                                 </div>
                                 <div className="flex items-center gap-1 flex-shrink-0">
                                     <Button
