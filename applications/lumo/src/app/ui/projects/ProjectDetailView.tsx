@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import lumoHardHat from '@proton/styles/assets/img/lumo/lumo-hard-hat.svg';
 
 import { c } from 'ttag';
 
@@ -61,29 +62,29 @@ const ProjectDetailViewInner = () => {
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
     const conversations = useLumoSelector((state) => selectConversationsBySpaceId(projectId)(state));
     const allConversations = Object.values(conversations);
-    
+
     // Sort conversations by date (most recent first)
     const sortedConversations = [...allConversations].sort((a, b) => {
         return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
     });
-    
+
     // Group conversations by date sections
     const now = new Date();
     const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const sevenDaysAgo = new Date(todayStart);
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-    
+
     const todayConversations: typeof sortedConversations = [];
     const last7DaysConversations: typeof sortedConversations = [];
     const olderConversations: typeof sortedConversations = [];
-    
+
     sortedConversations.forEach((conversation) => {
         const createdAt = new Date(conversation.createdAt);
         const conversationDate = new Date(createdAt.getFullYear(), createdAt.getMonth(), createdAt.getDate());
         const conversationTime = conversationDate.getTime();
         const todayTime = todayStart.getTime();
         const sevenDaysAgoTime = sevenDaysAgo.getTime();
-        
+
         if (conversationTime === todayTime) {
             todayConversations.push(conversation);
         } else if (conversationTime >= sevenDaysAgoTime) {
@@ -92,7 +93,7 @@ const ProjectDetailViewInner = () => {
             olderConversations.push(conversation);
         }
     });
-    
+
     const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { isSmallScreen } = useSidebar();
@@ -199,8 +200,8 @@ const ProjectDetailViewInner = () => {
     ).length;
 
     // Get prompt suggestions based on project category (only shown when no conversations exist)
-    const promptSuggestions = sortedConversations.length === 0 
-        ? getPromptSuggestionsForCategory(category.id) 
+    const promptSuggestions = sortedConversations.length === 0
+        ? getPromptSuggestionsForCategory(category.id)
         : [];
 
     // Create a Project object for the delete modal
@@ -227,7 +228,7 @@ const ProjectDetailViewInner = () => {
             )}
             <div className={`project-detail-header flex flex-nowrap items-baseline ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
                 <div className="project-detail-header-content flex flex-column">
-                    
+
                         <Button
                             icon
                             shape="ghost"
@@ -238,7 +239,7 @@ const ProjectDetailViewInner = () => {
                             <Icon name="arrow-left" className="mr-1" />
                             <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
                         </Button>
-                    
+
                     <div className="project-detail-title-section flex items-center">
                         <Icon name={category.icon as any} size={6} className="project-detail-title-icon shrink-0" />
                         <h1 className="project-detail-title text-2xl">{projectName}</h1>
@@ -345,10 +346,8 @@ const ProjectDetailViewInner = () => {
                     <div className="project-detail-main flex flex-column justify-center items-center">
                     {sortedConversations.length === 0 ? (
                         <div className="project-detail-empty flex flex-column items-center justify-center flex-1">
-                            <div className="project-detail-empty-icon flex items-center justify-center">
-                                <Icon name="speech-bubble" size={12} />
-                            </div>
-                            <h2 className="project-detail-empty-title text-lg">
+                            <img src={lumoHardHat} alt="Projects" width={80} />
+                            <h2 className="project-detail-empty-title text-lg pt-3">
                                 {c('collider_2025:Title').t`Start a new project conversation`}
                             </h2>
                             {promptSuggestions.length > 0 && (
@@ -396,7 +395,7 @@ const ProjectDetailViewInner = () => {
                                         })}
                                     </>
                                 )}
-                                
+
                                 {last7DaysConversations.length > 0 && (
                                     <>
                                         <h3 className="project-detail-section-title text-sm">
@@ -426,7 +425,7 @@ const ProjectDetailViewInner = () => {
                                         })}
                                     </>
                                 )}
-                                
+
                                 {olderConversations.length > 0 && (
                                     <>
                                         <h3 className="project-detail-section-title text-sm">
