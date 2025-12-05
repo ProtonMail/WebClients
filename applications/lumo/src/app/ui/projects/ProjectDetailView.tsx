@@ -12,6 +12,7 @@ import {
     Icon,
     ModalTwo,
     ModalTwoContent,
+    ModalTwoFooter,
     ModalTwoHeader,
     useModalStateObject,
     usePopperAnchor,
@@ -27,6 +28,7 @@ import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectConversationsBySpaceId, selectProvisionalAttachments, selectSpaceById } from '../../redux/selectors';
 import { sendMessage } from '../interactiveConversation/helper';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { locallyDeleteConversationFromLocalRequest, pushConversationRequest } from '../../redux/slices/core/conversations';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
@@ -43,6 +45,49 @@ interface RouteParams {
     projectId: string;
 }
 
+// Conversation dropdown component
+interface ConversationDropdownProps {
+    conversationId: string;
+    onDelete: () => void;
+}
+
+const ConversationDropdown = ({ conversationId, onDelete }: ConversationDropdownProps) => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const handleDelete = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        close();
+        onDelete();
+    };
+
+    return (
+        <>
+            <button
+                ref={anchorRef}
+                className="conversation-menu-button shrink-0 p-1 rounded hover:bg-weak"
+                aria-label={c('collider_2025:Action').t`More options`}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggle();
+                }}
+            >
+                <Icon name="three-dots-vertical" size={4} />
+            </button>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                <DropdownMenu>
+                    <DropdownMenuButton
+                        className="text-left color-danger"
+                        onClick={handleDelete}
+                    >
+                        <Icon name="trash" className="mr-2" />
+                        {c('collider_2025:Action').t`Delete conversation`}
+                    </DropdownMenuButton>
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
+
 const ProjectDetailViewInner = () => {
     const { projectId } = useParams<RouteParams>();
     const history = useHistory();
@@ -55,6 +100,8 @@ const ProjectDetailViewInner = () => {
     const [suggestedPrompt, setSuggestedPrompt] = useState<string | undefined>(undefined);
     const instructionsModal = useModalStateObject();
     const deleteModal = useModalStateObject();
+    const deleteConversationModal = useModalStateObject();
+    const [conversationToDelete, setConversationToDelete] = useState<string | null>(null);
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -218,6 +265,22 @@ const ProjectDetailViewInner = () => {
         deleteProject(projectId);
     };
 
+    const handleDeleteConversation = (conversationId: string) => {
+        setConversationToDelete(conversationId);
+        deleteConversationModal.openModal(true);
+    };
+
+    const confirmDeleteConversation = () => {
+        if (conversationToDelete) {
+            // First mark as deleted locally
+            dispatch(locallyDeleteConversationFromLocalRequest(conversationToDelete));
+            // Then trigger remote sync to call DELETE /conversations/{conversationId}
+            dispatch(pushConversationRequest({ id: conversationToDelete }));
+            setConversationToDelete(null);
+            deleteConversationModal.modalProps.onClose?.();
+        }
+    };
+
     return (
         <div className="project-detail-view flex flex-column">
             {isSmallScreen && (
@@ -377,20 +440,26 @@ const ProjectDetailViewInner = () => {
                                             const formattedDate = createdAt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
                                             return (
-                                                <button
-                                                    key={conversation.id}
-                                                    className="project-detail-conversation-item flex items-center"
-                                                    onClick={() => history.push(`/c/${conversation.id}`)}
-                                                >
-                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                        <span className="project-detail-conversation-title text-md">
-                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
-                                                        </span>
-                                                        <span className="project-detail-conversation-date text-xs">
-                                                            {formattedDate}
-                                                        </span>
-                                                    </div>
-                                                </button>
+                                                <div key={conversation.id} className="project-detail-conversation-item flex items-center">
+                                                    <button
+                                                        className="flex items-center flex-1 text-left"
+                                                        onClick={() => history.push(`/c/${conversation.id}`)}
+                                                    >
+                                                        <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                            <span className="project-detail-conversation-title text-md">
+                                                                {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                            </span>
+                                                            <span className="project-detail-conversation-date text-xs">
+                                                                {formattedDate}
+                                                            </span>
+                                                        </div>
+                                                        <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
+                                                    </button>
+                                                    <ConversationDropdown 
+                                                        conversationId={conversation.id} 
+                                                        onDelete={() => handleDeleteConversation(conversation.id)}
+                                                    />
+                                                </div>
                                             );
                                         })}
                                     </>
@@ -406,21 +475,26 @@ const ProjectDetailViewInner = () => {
                                             const formattedDate = createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
 
                                             return (
-                                                <button
-                                                    key={conversation.id}
-                                                    className="project-detail-conversation-item flex items-center"
-                                                    onClick={() => history.push(`/c/${conversation.id}`)}
-                                                >
-                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                        <span className="project-detail-conversation-title text-md">
-                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
-                                                        </span>
-                                                        <span className="project-detail-conversation-date text-xs">
-                                                            {formattedDate}
-                                                        </span>
-                                                    </div>
-                                                    <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
-                                                </button>
+                                                <div key={conversation.id} className="project-detail-conversation-item flex items-center">
+                                                    <button
+                                                        className="flex items-center flex-1 text-left"
+                                                        onClick={() => history.push(`/c/${conversation.id}`)}
+                                                    >
+                                                        <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                            <span className="project-detail-conversation-title text-md">
+                                                                {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                            </span>
+                                                            <span className="project-detail-conversation-date text-xs">
+                                                                {formattedDate}
+                                                            </span>
+                                                        </div>
+                                                        <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
+                                                    </button>
+                                                    <ConversationDropdown 
+                                                        conversationId={conversation.id} 
+                                                        onDelete={() => handleDeleteConversation(conversation.id)}
+                                                    />
+                                                </div>
                                             );
                                         })}
                                     </>
@@ -436,21 +510,26 @@ const ProjectDetailViewInner = () => {
                                             const formattedDate = createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
 
                                             return (
-                                                <button
-                                                    key={conversation.id}
-                                                    className="project-detail-conversation-item flex items-center"
-                                                    onClick={() => history.push(`/c/${conversation.id}`)}
-                                                >
-                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                        <span className="project-detail-conversation-title text-md">
-                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
-                                                        </span>
-                                                        <span className="project-detail-conversation-date text-xs">
-                                                            {formattedDate}
-                                                        </span>
-                                                    </div>
-                                                    <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
-                                                </button>
+                                                <div key={conversation.id} className="project-detail-conversation-item flex items-center">
+                                                    <button
+                                                        className="flex items-center flex-1 text-left"
+                                                        onClick={() => history.push(`/c/${conversation.id}`)}
+                                                    >
+                                                        <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                            <span className="project-detail-conversation-title text-md">
+                                                                {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                            </span>
+                                                            <span className="project-detail-conversation-date text-xs">
+                                                                {formattedDate}
+                                                            </span>
+                                                        </div>
+                                                        <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
+                                                    </button>
+                                                    <ConversationDropdown 
+                                                        conversationId={conversation.id} 
+                                                        onDelete={() => handleDeleteConversation(conversation.id)}
+                                                    />
+                                                </div>
                                             );
                                         })}
                                     </>
@@ -525,6 +604,23 @@ const ProjectDetailViewInner = () => {
                     project={projectForModal}
                     onConfirmDelete={handleDelete}
                 />
+            )}
+
+            {deleteConversationModal.render && (
+                <ModalTwo {...deleteConversationModal.modalProps} size="small">
+                    <ModalTwoHeader title={c('collider_2025:Title').t`Delete conversation?`} />
+                    <ModalTwoContent>
+                        <p>{c('collider_2025:Info').t`Are you sure you want to delete this conversation? This action cannot be undone.`}</p>
+                    </ModalTwoContent>
+                    <ModalTwoFooter>
+                        <Button onClick={deleteConversationModal.modalProps.onClose} color="weak">
+                            {c('collider_2025:Button').t`Cancel`}
+                        </Button>
+                        <Button onClick={confirmDeleteConversation} color="danger">
+                            {c('collider_2025:Button').t`Delete`}
+                        </Button>
+                    </ModalTwoFooter>
+                </ModalTwo>
             )}
 
             {/* Drive Browser Modal */}
