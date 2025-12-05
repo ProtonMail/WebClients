@@ -44,7 +44,7 @@ import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureI
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { useMeetDispatch } from '../../store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
-import type { KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
+import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
@@ -66,6 +66,7 @@ interface ProtonMeetContainerProps {
     hasSubscription: boolean;
     keyRotationLogs: KeyRotationLog[];
     setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
+    decryptionErrorLogs: DecryptionErrorLog[];
 }
 
 export const ProtonMeetContainer = ({
@@ -76,6 +77,7 @@ export const ProtonMeetContainer = ({
     hasSubscription = false,
     keyRotationLogs,
     setKeyRotationLogs,
+    decryptionErrorLogs,
 }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
 
@@ -884,6 +886,7 @@ export const ProtonMeetContainer = ({
                         keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
                         getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
+                        decryptionErrorLogs={decryptionErrorLogs}
                     />
                 ) : (
                     <PrejoinContainer

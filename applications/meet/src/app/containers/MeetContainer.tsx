@@ -16,7 +16,7 @@ import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
-import type { KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
+import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 interface MeetContainerProps {
     locked: boolean;
@@ -49,6 +49,7 @@ interface MeetContainerProps {
     keyRotationLogs: KeyRotationLog[];
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
+    decryptionErrorLogs: DecryptionErrorLog[];
 }
 
 export const MeetContainer = ({
@@ -82,6 +83,7 @@ export const MeetContainer = ({
     keyRotationLogs,
     isRecordingInProgress,
     getKeychainIndexInformation,
+    decryptionErrorLogs,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -200,6 +202,7 @@ export const MeetContainer = ({
                         keyRotationLogs,
                         isRecordingInProgress,
                         getKeychainIndexInformation,
+                        decryptionErrorLogs,
                     }}
                 >
                     <UIStateProvider instantMeeting={instantMeeting}>

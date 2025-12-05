@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
-import { LogLevel, Room, setLogExtension } from 'livekit-client';
+import { LogLevel, Room, Track, setLogExtension } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import useFlag from '@proton/unleash/useFlag';
@@ -9,7 +9,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
 import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
-import type { KeyRotationLog } from '../../types';
+import type { DecryptionErrorLog, KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
@@ -25,6 +25,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const workerRef = useRef<Worker | null>(null);
 
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
+    const [decryptionErrorLogs, setDecryptionErrorLogs] = useState<DecryptionErrorLog[]>([]);
 
     const isMeetAllowDecryptionErrorReportingEnabled = useFlag('MeetAllowDecryptionErrorReporting');
 
@@ -40,24 +41,37 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                     const receiverIdentity = roomRef.current?.localParticipant?.identity;
                     const occupiedKeychainIndexes = keyProviderRef.current.getKeychainIndexInformation();
 
+                    if (keyIndex === undefined || !participantIdentity || keyRotationLogs.length === 0) {
+                        return;
+                    }
+
+                    const senderParticipant = roomRef.current?.remoteParticipants.get(participantIdentity);
+                    const senderTracks = Array.from(senderParticipant?.trackPublications.values() ?? []);
+                    const countBySource = (source: Track.Source) =>
+                        senderTracks.filter((pub) => pub.source === source).length;
+
+                    const decryptionErrorLog: DecryptionErrorLog = {
+                        keyIndex: Number(keyIndex),
+                        participantIdentity,
+                        receiverIdentity: receiverIdentity ?? '',
+                        tracksOfSender: {
+                            microphone: countBySource(Track.Source.Microphone),
+                            camera: countBySource(Track.Source.Camera),
+                            screenShareVideo: countBySource(Track.Source.ScreenShare),
+                            screenShareAudio: countBySource(Track.Source.ScreenShareAudio),
+                        },
+                    };
+
                     reportMeetError(`[LiveKit] Missing key at index error detected`, {
                         level: 'error',
                         context: {
-                            keyIndex,
-                            senderIdentity: participantIdentity,
-                            receiverIdentity,
                             occupiedKeychainIndexes,
                             keyRotationLogs,
+                            ...decryptionErrorLog,
                         },
-                        fingerprint: [
-                            'missing-key-error',
-                            keyIndex ?? 'unknown',
-                            participantIdentity ?? 'unknown',
-                            receiverIdentity ?? 'unknown',
-                            JSON.stringify(occupiedKeychainIndexes),
-                            JSON.stringify(keyRotationLogs),
-                        ],
                     });
+
+                    setDecryptionErrorLogs((prev) => [...prev, decryptionErrorLog]);
                 }
             });
         }
@@ -111,6 +125,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                             hasSubscription={false}
                             keyRotationLogs={keyRotationLogs}
                             setKeyRotationLogs={setKeyRotationLogs}
+                            decryptionErrorLogs={decryptionErrorLogs}
                         />
                     ) : (
                         <ProtonMeetContainerWithUser
@@ -119,6 +134,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                             keyProvider={keyProviderRef.current}
                             keyRotationLogs={keyRotationLogs}
                             setKeyRotationLogs={setKeyRotationLogs}
+                            decryptionErrorLogs={decryptionErrorLogs}
                         />
                     )}
                 </UIStateProvider>
