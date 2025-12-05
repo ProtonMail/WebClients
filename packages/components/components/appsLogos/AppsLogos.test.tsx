@@ -5,17 +5,17 @@ import { APPS } from '@proton/shared/lib/constants';
 import AppsLogos from './AppsLogos';
 
 describe('AppsLogos', () => {
-    it('renders all apps by default', () => {
-        render(<AppsLogos />);
-        expect(screen.getByRole('listitem', { name: 'Proton Mail' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Calendar' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Drive' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton VPN' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Pass' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Docs' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Proton Sheets' })).toBeInTheDocument();
-        expect(screen.getByRole('listitem', { name: 'Lumo' })).toBeInTheDocument();
+    it('renders no apps by default', () => {
+        render(<AppsLogos apps={[]} />);
+        expect(screen.queryByRole('listitem', { name: 'Proton Mail' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Calendar' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Drive' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton VPN' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Pass' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Wallet' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Docs' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Sheets' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Lumo' })).not.toBeInTheDocument();
     });
 
     it('renders only the specified apps', () => {
@@ -32,7 +32,7 @@ describe('AppsLogos', () => {
     });
 
     it('does not render app names when appNames is false', () => {
-        const { container } = render(<AppsLogos appNames={false} />);
+        const { container } = render(<AppsLogos apps={[APPS.PROTONMAIL, APPS.PROTONDRIVE]} appNames={false} />);
         const appNameSpans = container.querySelectorAll('.apps-logos-app-name');
         expect(appNameSpans).toHaveLength(0);
     });
@@ -52,18 +52,5 @@ describe('AppsLogos', () => {
         const wallet = screen.getByRole('listitem', { name: 'Proton Wallet' });
         expect(wallet).toHaveClass('opacity-40');
         expect(screen.queryByRole('listitem', { name: 'Proton Docs' })).toHaveClass('opacity-40');
-    });
-
-    it('renders all apps as enabled when showDisabledApps is true but no apps prop is provided', () => {
-        render(<AppsLogos showDisabledApps />);
-        expect(screen.getByRole('listitem', { name: 'Proton Mail' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Calendar' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Drive' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton VPN' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Pass' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Docs' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Proton Sheets' })).not.toHaveClass('opacity-40');
-        expect(screen.getByRole('listitem', { name: 'Lumo' })).not.toHaveClass('opacity-40');
     });
 });
