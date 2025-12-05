@@ -13,7 +13,6 @@ import {
 } from '@proton/components'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 
-import screenshot from './sheets-announcement-modal-image.svg'
 import { useIsSheetsEnabled } from '~/utils/misc'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 
@@ -23,10 +22,13 @@ function SheetsAnnouncementModal(modalProps: ModalProps) {
   return (
     <ModalTwo {...modalProps} size="xlarge">
       <ModalTwoContent className="pt-4">
-        <img
-          className="aspect-[681/379] w-full"
-          src={screenshot}
-          alt={c('Label').t`A screenshot of ${SHEETS_APP_NAME}`}
+        <video
+          className="aspect-[735992/409609] rounded-[2rem] bg-contain bg-center"
+          style={{ backgroundImage: 'url(/announcement-video-initial-frame.webp)' }}
+          src="/announcement-video.webm"
+          autoPlay
+          muted
+          playsInline
         />
         <div className="px-8 pt-6">
           <h1 className="text-bold text-4xl">{c('Title').t`Introducing ${SHEETS_APP_NAME}`}</h1>
