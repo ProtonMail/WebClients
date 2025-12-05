@@ -93,24 +93,21 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
     } else {
         // Non-image files go through the worker for conversion
         try {
-            // Use the Web Worker service for file processing
             const result = await fileProcessingService.processFile(file);
 
-            if (result.success && result.result) {
-                // All good - file processed successfully
+            if (result.type === 'text') {
+                // File processed successfully
                 processedAttachment = {
                     ...processedAttachment,
-                    markdown: result.result.convertedContent,
-                    truncated: result.result.truncated,
-                    originalRowCount: result.result.originalRowCount,
-                    processedRowCount: result.result.processedRowCount,
+                    markdown: result.content,
+                    truncated: result.metadata?.truncated,
+                    originalRowCount: result.metadata?.rowCount?.original,
+                    processedRowCount: result.metadata?.rowCount?.processed,
                 };
 
                 // Calculate and cache token count for performance
-                // Only calculate if we have markdown content
                 if (processedAttachment.markdown) {
                     try {
-                        // Calculate token count directly (not using the cached function to avoid circular dependency)
                         const filename = `Filename: ${processedAttachment.filename}`;
                         const header = 'File contents:';
                         const beginMarker = '----- BEGIN FILE CONTENTS -----';
@@ -124,44 +121,42 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
                         console.log(`Token count calculated for ${file.name}: ${tokenCount} tokens`);
                     } catch (error) {
                         console.warn('Failed to calculate token count:', error);
-                        // Don't fail the entire process if token calculation fails
                     }
                 }
-            } else if (result.isUnsupported) {
-                // Unsupported file type - don't store in Redux, just return info for caller to show notification
-                isUnsupported = true;
+            } else if (result.type === 'error') {
+                if (result.unsupported) {
+                    // Unsupported file type
+                    isUnsupported = true;
 
-                // Calculate processing duration for telemetry
-                const endTime = performance.now();
-                const processingDurationMs = Math.round(endTime - startTime);
+                    const endTime = performance.now();
+                    const processingDurationMs = Math.round(endTime - startTime);
 
-                // Send comprehensive telemetry with all file processing data
-                sendFileUploadFinishEvent(
-                    file.size,
-                    file.type,
-                    true, // processing completed (even though unsupported)
-                    isUnsupported,
-                    false, // not an error, just unsupported
-                    processingDurationMs
-                );
+                    sendFileUploadFinishEvent(
+                        file.size,
+                        file.type,
+                        true,
+                        isUnsupported,
+                        false,
+                        processingDurationMs
+                    );
 
-                return {
-                    success: false,
-                    isUnsupported: true,
-                    fileName: file.name,
-                };
-            } else {
-                // Error during conversion
-                hasError = true;
-                console.error('Error during conversion:', result.error);
-                processedAttachment = {
-                    ...processedAttachment,
-                    error: true,
-                    errorMessage: result.error || 'Unknown error during file processing',
-                };
+                    return {
+                        success: false,
+                        isUnsupported: true,
+                        fileName: file.name,
+                    };
+                } else {
+                    // Processing error
+                    hasError = true;
+                    console.error('Error during conversion:', result.message);
+                    processedAttachment = {
+                        ...processedAttachment,
+                        error: true,
+                        errorMessage: result.message,
+                    };
+                }
             }
         } catch (error) {
-            // Error during processing
             hasError = true;
             console.error('Error during file processing:', error);
             processedAttachment = {
