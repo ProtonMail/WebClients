@@ -93,7 +93,7 @@ export const useVideoToggle = (
 
         const currentVideoTrack = getCurrentVideoTrack();
 
-        if (backgroundBlur && currentVideoTrack) {
+        if (currentVideoTrack) {
             try {
                 await currentVideoTrack.stopProcessor();
             } catch (error) {
