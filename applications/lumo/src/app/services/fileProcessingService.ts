@@ -1,4 +1,42 @@
-import type { FileProcessingRequest, FileProcessingResponse } from '../workers/fileProcessingWorker';
+export interface FileData {
+    name: string;
+    type: string;
+    size: number;
+    data: ArrayBuffer;
+}
+
+export interface FileProcessingRequest {
+    id: string;
+    file: FileData;
+    isLumoPaid?: boolean; // User tier information for tiered processing limits
+}
+
+export interface TextProcessingResult {
+    id: string;
+    type: 'text';
+    content: string;
+    metadata?: {
+        truncated?: boolean;
+        rowCount?: { original: number; processed: number };
+    };
+}
+
+export interface ImageProcessingResult {
+    id: string;
+    type: 'image';
+    originalSize: number;
+    processedSize: number;
+    processedData: ArrayBuffer;
+}
+
+export interface ProcessingError {
+    id: string;
+    type: 'error';
+    message: string;
+    unsupported?: boolean;
+}
+
+export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
 
 export class FileProcessingService {
     private worker: Worker | null = null;
