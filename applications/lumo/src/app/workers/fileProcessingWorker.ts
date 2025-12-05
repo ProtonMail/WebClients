@@ -1,3 +1,5 @@
+import type { Row } from 'exceljs';
+
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 import pdfParse from '../lib/attachments/pdfParse';
 import type {
@@ -61,6 +63,42 @@ async function getPandocConverter(): Promise<PandocConverter> {
     return pandocConverter;
 }
 
+function rowToCommaSeparatedString(row: Row): string {
+    // ExcelJS row.values is an array where index 0 is empty, actual values start at index 1
+    const rowValues = row.values as any[];
+    return rowValues
+        .slice(1)
+        .map((value: any) => {
+            // Handle different cell value types
+            if (value === null || value === undefined) {
+                return '';
+            }
+            // Handle ExcelJS cell objects with rich text or formulas
+            if (typeof value === 'object' && value !== null) {
+                if (value.richText) {
+                    // Handle rich text cells
+                    return value.richText.map((rt: any) => rt.text || '').join('');
+                } else if (value.text !== undefined) {
+                    // Handle simple text cells
+                    return String(value.text);
+                } else if (value.result !== undefined) {
+                    // Handle formula cells
+                    return String(value.result);
+                } else {
+                    // Handle other object types
+                    return String(value);
+                }
+            }
+            const stringValue = String(value);
+            // Escape commas and quotes in CSV
+            if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+                return `"${stringValue.replace(/"/g, '""')}"`;
+            }
+            return stringValue;
+        })
+        .join(',');
+}
+
 async function convertXlsxToCsv(fileData: FileData): Promise<string> {
     try {
         console.log(`Converting Excel file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
@@ -80,45 +118,9 @@ async function convertXlsxToCsv(fileData: FileData): Promise<string> {
 
         // Convert the worksheet to CSV format
         const csvRows: string[] = [];
-        worksheet.eachRow((row, rowNumber) => {
-            // ExcelJS row.values is an array where index 0 is empty, actual values start at index 1
-            const rowValues = row.values as any[];
-            const csvRow = rowValues
-                .slice(1)
-                .map((value: any) => {
-                    // Handle different cell value types
-                    if (value === null || value === undefined) {
-                        return '';
-                    }
-                    // Handle ExcelJS cell objects with rich text or formulas
-                    if (typeof value === 'object' && value !== null) {
-                        if (value.richText) {
-                            // Handle rich text cells
-                            return value.richText.map((rt: any) => rt.text || '').join('');
-                        } else if (value.text !== undefined) {
-                            // Handle simple text cells
-                            return String(value.text);
-                        } else if (value.result !== undefined) {
-                            // Handle formula cells
-                            return String(value.result);
-                        } else {
-                            // Handle other object types
-                            return String(value);
-                        }
-                    }
-                    const stringValue = String(value);
-                    // Escape commas and quotes in CSV
-                    if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
-                        return `"${stringValue.replace(/"/g, '""')}"`;
-                    }
-                    return stringValue;
-                })
-                .join(',');
-            csvRows.push(csvRow);
-        });
+        worksheet.eachRow((row) => csvRows.push(rowToCommaSeparatedString(row)));
 
         const csvData = csvRows.join('\n');
-
         if (!csvData.trim()) {
             throw new Error('Excel file appears to be empty or contains no readable data');
         }
