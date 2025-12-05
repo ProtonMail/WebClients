@@ -53,6 +53,7 @@ export function useMeetingRecorder(
     const audioSourceNodesRef = useRef<Map<string, { source: MediaStreamAudioSourceNode; stream: MediaStream }>>(
         new Map()
     );
+    const silentSourceRef = useRef<{ source: ConstantSourceNode; gain: GainNode } | null>(null);
     const startTimeRef = useRef<number>(0);
     const workerStorageRef = useRef<WorkerRecordingStorage | null>(null);
     const visibilityListenerRef = useRef<(() => void) | null>(null);
@@ -132,6 +133,14 @@ export function useMeetingRecorder(
             source.disconnect();
         });
         audioSourceNodesRef.current.clear();
+
+        // Clean up the silent keepalive source
+        if (silentSourceRef.current) {
+            silentSourceRef.current.source.stop();
+            silentSourceRef.current.source.disconnect();
+            silentSourceRef.current.gain.disconnect();
+            silentSourceRef.current = null;
+        }
 
         if (audioCompressorRef.current) {
             audioCompressorRef.current.disconnect();
@@ -338,6 +347,15 @@ export function useMeetingRecorder(
 
         const destination = audioContext.createMediaStreamDestination();
         compressor.connect(destination);
+
+        const silentSource = audioContext.createConstantSource();
+        silentSource.offset.value = 0;
+        const silentGain = audioContext.createGain();
+        silentGain.gain.value = 0;
+        silentSource.connect(silentGain);
+        silentGain.connect(compressor);
+        silentSource.start();
+        silentSourceRef.current = { source: silentSource, gain: silentGain };
 
         audioContextRef.current = audioContext;
         audioDestinationRef.current = destination;
