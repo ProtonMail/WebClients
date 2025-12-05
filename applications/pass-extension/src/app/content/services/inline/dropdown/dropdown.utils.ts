@@ -80,44 +80,40 @@ export const resolveDropdownOrigins = (
     }
 };
 
-export const validateDropdownRequest = withContext<
-    (request: DropdownRequest, anchor?: MaybeNull<DropdownAnchor>) => Promise<boolean>
->(async (ctx, request, anchor) => {
-    if (!ctx) return false;
+export const validateDropdownRequest = withContext<(request: DropdownRequest) => Promise<boolean>>(
+    async (ctx, request) => {
+        if (!ctx) return false;
 
-    const { action, autofocused, autofilled } = request;
+        const { action, autofocused, autofilled } = request;
 
-    /** If the dropdown anchor didn't change, noop */
-    const match = matchesDropdownAnchor(anchor, request);
-    if (match) return false;
+        /** Block autofocus requests on previously autofilled fields */
+        const validInteraction = !(autofocused && autofilled);
+        if (!validInteraction) return false;
 
-    /** Block autofocus requests on previously autofilled fields */
-    const validInteraction = !(autofocused && autofilled);
-    if (!validInteraction) return false;
+        /** If we're refocusing after an unlock request from the dropdown,
+         * ensure the client status has resolved before continuing */
+        await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
+        const { authorized } = ctx.getState();
 
-    /** If we're refocusing after an unlock request from the dropdown,
-     * ensure the client status has resolved before continuing */
-    await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
-    const { authorized } = ctx.getState();
+        /** If unauthorized and autofocused: cancel request. */
+        if (autofocused && !authorized) return false;
 
-    /** If unauthorized and autofocused: cancel request. */
-    if (autofocused && !authorized) return false;
+        const url = ctx.getExtensionContext()?.url;
 
-    const url = ctx.getExtensionContext()?.url;
-
-    switch (action) {
-        case DropdownAction.AUTOFILL_CC:
-            return !(autofocused && !(await ctx.service.autofill.getCreditCardsCount()));
-        case DropdownAction.AUTOFILL_IDENTITY:
-            return !(autofocused && !(await ctx.service.autofill.getIdentitiesCount()));
-        case DropdownAction.AUTOFILL_LOGIN:
-            return !(autofocused && !(await ctx.service.autofill.getCredentialsCount()));
-        case DropdownAction.AUTOSUGGEST_ALIAS:
-            return Boolean(url?.displayName);
-        default:
-            return true;
+        switch (action) {
+            case DropdownAction.AUTOFILL_CC:
+                return !(autofocused && !(await ctx.service.autofill.getCreditCardsCount()));
+            case DropdownAction.AUTOFILL_IDENTITY:
+                return !(autofocused && !(await ctx.service.autofill.getIdentitiesCount()));
+            case DropdownAction.AUTOFILL_LOGIN:
+                return !(autofocused && !(await ctx.service.autofill.getCredentialsCount()));
+            case DropdownAction.AUTOSUGGEST_ALIAS:
+                return Boolean(url?.displayName);
+            default:
+                return true;
+        }
     }
-});
+);
 
 export const intoDropdownAction = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
     async (ctx, request) => {
