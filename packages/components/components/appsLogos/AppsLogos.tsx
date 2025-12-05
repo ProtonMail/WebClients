@@ -4,6 +4,7 @@ import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DocsLogo from '@proton/components/components/logo/DocsLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import type { LogoProps } from '@proton/components/components/logo/LogoBase';
+import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import SheetsLogo from '@proton/components/components/logo/SheetsLogo';
@@ -18,6 +19,8 @@ import {
     DOCS_SHORT_APP_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    LUMO_APP_NAME,
+    LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
@@ -46,7 +49,8 @@ type SupportedApp =
     | typeof APPS.PROTONPASS
     | typeof APPS.PROTONWALLET
     | typeof APPS.PROTONDOCS
-    | typeof APPS.PROTONSHEETS;
+    | typeof APPS.PROTONSHEETS
+    | typeof APPS.PROTONLUMO;
 
 const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
     [APPS.PROTONMAIL]: {
@@ -88,6 +92,11 @@ const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
         title: SHEETS_APP_NAME,
         shortTitle: SHEETS_SHORT_APP_NAME,
         Logo: SheetsLogo,
+    },
+    [APPS.PROTONLUMO]: {
+        title: LUMO_APP_NAME,
+        shortTitle: LUMO_SHORT_APP_NAME,
+        Logo: LumoLogo,
     },
 } as const;
 
@@ -151,7 +160,7 @@ const AppsLogos = ({
                         >
                             <Logo size={logoSize} variant="glyph-only" />
                         </div>
-                        {appNames && <span className="text-xs color-weak">{shortTitle}</span>}
+                        {appNames && <span className="apps-logos-app-name text-xs color-weak">{shortTitle}</span>}
                     </li>
                 );
             })}

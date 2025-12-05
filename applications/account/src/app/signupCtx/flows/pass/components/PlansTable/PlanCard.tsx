@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import { AppsLogos, Icon } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import './PlanCard.scss';
@@ -54,7 +55,22 @@ export const PlanCard: FC<PlanCardProps> = ({
             >
                 {buttonText}
             </Button>
-            {showProducts && <AppsLogos fullWidth className="mt-6" />}
+            {showProducts && (
+                <AppsLogos
+                    fullWidth
+                    className="mt-6"
+                    apps={[
+                        APPS.PROTONMAIL,
+                        APPS.PROTONCALENDAR,
+                        APPS.PROTONDRIVE,
+                        APPS.PROTONVPN_SETTINGS,
+                        APPS.PROTONPASS,
+                        APPS.PROTONWALLET,
+                        APPS.PROTONDOCS,
+                        APPS.PROTONSHEETS,
+                    ]}
+                />
+            )}
             <ul className="mt-8 unstyled">
                 {featuresTitle && <div className="mb-4">{featuresTitle}</div>}
                 {features.map((feature) => (

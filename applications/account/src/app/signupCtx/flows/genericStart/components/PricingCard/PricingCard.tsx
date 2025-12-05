@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
 import { AppsLogos } from '@proton/components';
-import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/features/pass';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -49,16 +48,9 @@ const PricingFeatures = () => {
                     text={c('Signup').t`${totalDriveStorageSize} cloud storage for files and photos`}
                     highlighted
                 />
-                <FeatureItem text={c('Signup').t`Collaborative document editing`} highlighted />
+                <FeatureItem text={c('Signup').t`Collaborative documents and spreadsheets`} highlighted />
                 <FeatureItem text={c('Signup').t`Password manager for all your devices`} highlighted />
-                <FeatureItem
-                    text={c('Signup').ngettext(
-                        msgid`${FREE_PASS_ALIASES} hide-my-email alias to fight spam`,
-                        `${FREE_PASS_ALIASES} hide-my-email aliases to fight spam`,
-                        FREE_PASS_ALIASES
-                    )}
-                    highlighted
-                />
+                <FeatureItem text={c('Signup').t`Private AI assistant with encrypted chat history`} highlighted />
             </ul>
         </div>
     );
@@ -79,7 +71,7 @@ const PricingHeader = () => {
                             APPS.PROTONVPN_SETTINGS,
                             APPS.PROTONDRIVE,
                             APPS.PROTONPASS,
-                            APPS.PROTONDOCS,
+                            APPS.PROTONLUMO,
                         ]}
                     />
                 </div>
@@ -94,7 +86,7 @@ const PricingHeader = () => {
                             APPS.PROTONVPN_SETTINGS,
                             APPS.PROTONDRIVE,
                             APPS.PROTONPASS,
-                            APPS.PROTONDOCS,
+                            APPS.PROTONLUMO,
                         ]}
                     />
                 </div>
