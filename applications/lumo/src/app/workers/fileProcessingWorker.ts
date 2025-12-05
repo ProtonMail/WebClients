@@ -27,26 +27,55 @@ export interface FileProcessingRequest {
     isLumoPaid?: boolean; // User tier information for tiered processing limits
 }
 
-export interface FileProcessingResponse {
+export interface TextProcessingResult {
     id: string;
-    success: boolean;
-    result?: {
-        originalContent: string;
-        convertedContent: string;
-        originalSize: number;
-        convertedSize: number;
+    type: 'text';
+    content: string;
+    metadata?: {
         truncated?: boolean;
-        originalRowCount?: number;
-        processedRowCount?: number;
+        rowCount?: { original: number; processed: number };
     };
-    error?: string;
-    isUnsupported?: boolean;
+}
+
+export interface ImageProcessingResult {
+    id: string;
+    type: 'image';
+}
+
+export interface ProcessingError {
+    id: string;
+    type: 'error';
+    message: string;
+    unsupported?: boolean;
+}
+
+export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
+
+interface RowMetadata {
+    original: number;
+    processed: number;
+}
+
+interface ProcessedContent {
+    content: string;
+    rowCount?: RowMetadata;
+}
+
+interface InternalProcessingResult {
+    content: string;
+    metadata?: {
+        rowCount?: RowMetadata;
+    };
+}
+
+interface TruncationResult {
+    content: string;
+    wasTruncated: boolean;
 }
 
 let pandocConverter: PandocConverter | null = null;
 
-// Performance optimization: Content truncation to prevent memory issues
-function truncateContent(content: string, maxChars: number = 500000): { content: string; wasTruncated: boolean } {
+function truncateContent(content: string, maxChars: number = 500000): TruncationResult {
     if (content.length <= maxChars) {
         return { content, wasTruncated: false };
     }
@@ -141,105 +170,92 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
     }
 }
 
-async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: boolean = false): Promise<FileProcessingResponse['result'] | null> {
-    const startTime = performance.now();
-    const fileSizeMB = fileData.size / (1024 * 1024);
-    console.log(
-        `[Performance] Starting processing for ${fileData.name} (${fileData.type}, ${fileSizeMB.toFixed(2)}MB)`
-    );
-
-    // Performance optimization: Set size limits for different file types based on user tier
-    const BASE_LIMITS = {
-        'text/plain': 50, // 50MB
-        'text/csv': 100, // 100MB
-        'application/pdf': 200, // 200MB
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 150, // 150MB
-        'application/vnd.ms-excel': 150, // 150MB
-        default: 50, // 50MB for other types
+function validateFileSize(fileData: FileProcessingRequest['file'], isLumoPaid: boolean): void {
+    const BASE_LIMITS: Record<string, number> = {
+        'text/plain': 50,
+        'text/csv': 100,
+        'application/pdf': 200,
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 150,
+        'application/vnd.ms-excel': 150,
+        default: 50,
     };
 
-    // Apply user tier multiplier - paid users get higher processing limits
-    const tierMultiplier = isLumoPaid ? 2 : 1; // Paid users get 2x processing limits
-    const baseSizeLimit = BASE_LIMITS[fileData.type as keyof typeof BASE_LIMITS] || BASE_LIMITS.default;
+    const tierMultiplier = isLumoPaid ? 2 : 1;
+    const baseSizeLimit = BASE_LIMITS[fileData.type] || BASE_LIMITS.default;
     const sizeLimit = baseSizeLimit * tierMultiplier;
+    const fileSizeMB = fileData.size / (1024 * 1024);
 
     if (fileSizeMB > sizeLimit) {
-        workerLogger.warn(
-            `File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`
-        );
-        throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit for ${fileData.type}`);
+        throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit`);
     }
+}
+
+function processTextFile(fileData: FileProcessingRequest['file']): string {
+    const content = new TextDecoder('utf-8').decode(fileData.data);
+    const { content: truncatedContent } = truncateContent(content);
+    return truncatedContent;
+}
+
+function processCsvFile(fileData: FileProcessingRequest['file']): ProcessedContent {
+    const csvContent = new TextDecoder('utf-8').decode(fileData.data);
+    const lines = csvContent.split('\n');
+    const { content: truncatedContent, wasTruncated } = truncateContent(csvContent);
+
+    return {
+        content: truncatedContent,
+        rowCount: {
+            original: lines.length,
+            processed: wasTruncated
+                ? Math.floor(lines.length * (truncatedContent.length / csvContent.length))
+                : lines.length,
+        },
+    };
+}
+
+async function processPdfFile(fileData: FileProcessingRequest['file']): Promise<string> {
+    const parseResult = await pdfParse(fileData.data);
+    return parseResult.text;
+}
+
+async function processExcelFile(fileData: FileProcessingRequest['file']): Promise<ProcessedContent> {
+    const csvData = await convertXlsxToCsv(fileData);
+    const lines = csvData.split('\n');
+    const { content: truncatedContent, wasTruncated } = truncateContent(csvData);
+
+    return {
+        content: truncatedContent,
+        rowCount: {
+            original: lines.length,
+            processed: wasTruncated
+                ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
+                : lines.length,
+        },
+    };
+}
+
+async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: boolean = false): Promise<InternalProcessingResult | null> {
+    const startTime = performance.now();
+    console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type})`);
+
+    validateFileSize(fileData, isLumoPaid);
 
     try {
         switch (fileData.type) {
-            case 'text/plain': {
-                const converted = new TextDecoder('utf-8').decode(fileData.data);
-                const truncated = truncateContent(converted);
-                return {
-                    originalContent: converted,
-                    convertedContent: truncated.content,
-                    originalSize: converted.length,
-                    convertedSize: truncated.content.length,
-                    truncated: truncated.wasTruncated,
-                };
-            }
+            case 'text/plain':
+                return { content: processTextFile(fileData) };
 
             case 'text/csv': {
-                // Direct CSV processing - no need for Pandoc conversion
-                console.log(`Processing CSV file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
-
-                const csvContent = new TextDecoder('utf-8').decode(fileData.data);
-                const lines = csvContent.split('\n');
-                console.log(`CSV file has ${lines.length} lines`);
-
-                // Truncate large CSV files for performance
-                const truncated = truncateContent(csvContent);
-
-                return {
-                    originalContent: csvContent,
-                    convertedContent: truncated.content,
-                    originalSize: csvContent.length,
-                    convertedSize: truncated.content.length,
-                    truncated: truncated.wasTruncated,
-                    originalRowCount: lines.length,
-                    processedRowCount: truncated.wasTruncated
-                        ? Math.floor(lines.length * (truncated.content.length / csvContent.length))
-                        : lines.length,
-                };
+                const result = processCsvFile(fileData);
+                return { content: result.content, metadata: { rowCount: result.rowCount } };
             }
 
-            case 'application/pdf': {
-                const original = new TextDecoder('utf-8').decode(fileData.data);
-                const converted = await convertPdfToText(fileData);
-                return {
-                    originalContent: original,
-                    convertedContent: converted,
-                    originalSize: fileData.data.byteLength,
-                    convertedSize: converted.length,
-                };
-            }
+            case 'application/pdf':
+                return { content: await processPdfFile(fileData) };
 
             case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
             case 'application/vnd.ms-excel': {
-                // Optimized Excel processing - convert to CSV and process directly
-                const original = `[Binary ${fileData.type.includes('spreadsheetml') ? 'XLSX' : 'XLS'} file]`;
-                const csvData = await convertXlsxToCsv(fileData);
-
-                // Process and truncate CSV data for performance
-                const lines = csvData.split('\n');
-                const truncated = truncateContent(csvData);
-
-                return {
-                    originalContent: original,
-                    convertedContent: truncated.content,
-                    originalSize: fileData.data.byteLength,
-                    convertedSize: truncated.content.length,
-                    truncated: truncated.wasTruncated,
-                    originalRowCount: lines.length,
-                    processedRowCount: truncated.wasTruncated
-                        ? Math.floor(lines.length * (truncated.content.length / csvData.length))
-                        : lines.length,
-                };
+                const result = await processExcelFile(fileData);
+                return { content: result.content, metadata: { rowCount: result.rowCount } };
             }
 
             case 'image/jpeg':
@@ -248,116 +264,48 @@ async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: 
             case 'image/gif':
             case 'image/webp':
             case 'image/heic':
-            case 'image/heif': {
-                // Images don't need text conversion - binary data will be sent as WireImage
-                console.log(`Processing image file: ${fileData.name} (${fileData.type})`);
-                return {
-                    originalContent: `[Binary ${fileData.type} image]`,
-                    convertedContent: '', // No markdown for images
-                    originalSize: fileData.size,
-                    convertedSize: 0,
-                };
-            }
+            case 'image/heif':
+                console.log(`Processing image: ${fileData.name}`);
+                return { content: '' }; // Empty content signals image type
 
             default: {
-                // Check if this file should be processed as plain text (JSON, JS, etc.)
-                if (shouldProcessAsPlainText(fileData.type)) {
-                    console.log(`Processing ${fileData.type} as plain text (no Pandoc needed)`);
-                    const converted = new TextDecoder('utf-8').decode(fileData.data);
-                    return {
-                        originalContent: converted,
-                        convertedContent: converted,
-                        originalSize: converted.length,
-                        convertedSize: converted.length,
-                    };
+                if (shouldProcessAsPlainText(fileData.type) ||
+                    (fileData.type === '' && isFileTypeSupported(fileData.name))) {
+                    return { content: processTextFile(fileData) };
                 }
 
-                // For files with ambiguous MIME types like text/plain, check the file extension
-                if (fileData.type === 'text/plain' || fileData.type === '') {
-                    if (isFileTypeSupported(fileData.name)) {
-                        console.log(
-                            `Processing ${fileData.name} (${fileData.type}) as plain text based on file extension`
-                        );
-                        const converted = new TextDecoder('utf-8').decode(fileData.data);
-                        return {
-                            originalContent: converted,
-                            convertedContent: converted,
-                            originalSize: converted.length,
-                            convertedSize: converted.length,
-                        };
-                    }
-                }
-
-                // Check if this file actually needs Pandoc conversion
                 if (needsPandocConversion(fileData.type)) {
                     const pandocFormat = mimeTypeToPandocFormat(fileData.type);
                     if (pandocFormat) {
-                        console.log(`Processing ${fileData.type} with Pandoc (format: ${pandocFormat})`);
-
-                        return await processFileWithPandoc(fileData, pandocFormat);
+                        return { content: await processWithPandoc(fileData, pandocFormat) };
                     }
                 }
 
-                // Unsupported file type
-                console.log(`Unsupported file format: ${fileData.type} for file: ${fileData.name}`);
                 return null;
             }
         }
     } catch (error) {
-        const endTime = performance.now();
-        const duration = endTime - startTime;
-        workerLogger.error(`Error processing ${fileData.name} after ${duration.toFixed(2)}ms:`, error);
+        workerLogger.error(`Error processing ${fileData.name}:`, error);
         throw error instanceof Error ? error : new Error(String(error));
     } finally {
-        const endTime = performance.now();
-        const duration = endTime - startTime;
-        console.log(`[Performance] Completed processing ${fileData.name} in ${duration.toFixed(2)}ms`);
+        const duration = performance.now() - startTime;
+        console.log(`[Performance] Completed ${fileData.name} in ${duration.toFixed(2)}ms`);
     }
 }
 
-async function processFileWithPandoc(
-    fileData: FileProcessingRequest['file'],
-    inputFormat: string
-): Promise<FileProcessingResponse['result']> {
-    console.log('processFileWithPandoc in worker');
+async function processWithPandoc(fileData: FileProcessingRequest['file'], inputFormat: string): Promise<string> {
+    const pandoc = await getPandocConverter();
+    const converted = await pandoc.convert(fileData.data, inputFormat);
 
-    // For binary files, don't try to decode as UTF-8 text
-    const isBinaryFile =
-        fileData.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-        fileData.type === 'application/vnd.ms-excel' ||
-        fileData.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
-        fileData.type === 'application/msword';
-
-    const original = isBinaryFile
-        ? `[Binary ${inputFormat.toUpperCase()} file]`
-        : new TextDecoder('utf-8').decode(fileData.data);
-
-    try {
-        const pandoc = await getPandocConverter();
-        const converted = await pandoc.convert(fileData.data, inputFormat);
-
-        // Check if conversion produced any content
-        if (!converted || converted.trim() === '') {
-            const errorMsg = `Pandoc conversion produced empty output for ${fileData.type}. This may indicate the format is not supported by the WASM build.`;
-            workerLogger.error(errorMsg);
-            throw new Error(errorMsg);
-        }
-
-        return {
-            originalContent: original,
-            convertedContent: converted,
-            originalSize: fileData.data.byteLength,
-            convertedSize: converted.length,
-        };
-    } catch (error) {
-        workerLogger.error(`Error converting ${fileData.type} with pandoc:`, error);
-        throw error instanceof Error ? error : new Error(String(error));
+    if (!converted || converted.trim() === '') {
+        throw new Error(`Pandoc conversion produced empty output for ${fileData.type}`);
     }
+
+    return converted;
 }
 
-async function convertPdfToText(fileData: FileProcessingRequest['file']): Promise<string> {
-    const parseResult = await pdfParse(fileData.data);
-    return parseResult.text;
+function isImageType(mimeType: string): boolean {
+    return mimeType.startsWith('image/');
 }
 
 // Handle messages from the main thread
@@ -368,29 +316,36 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
         const result = await processFile(file, isLumoPaid);
 
         if (result === null) {
-            // Unsupported file type
-            const response: FileProcessingResponse = {
+            const response: ProcessingError = {
                 id,
-                success: false,
-                isUnsupported: true,
+                type: 'error',
+                message: `Unsupported file type: ${file.type}`,
+                unsupported: true,
+            };
+            self.postMessage(response);
+        } else if (isImageType(file.type)) {
+            const response: ImageProcessingResult = {
+                id,
+                type: 'image',
             };
             self.postMessage(response);
         } else {
-            // Success
-            const response: FileProcessingResponse = {
+            const response: TextProcessingResult = {
                 id,
-                success: true,
-                result,
+                type: 'text',
+                content: result.content,
+                metadata: result.metadata?.rowCount
+                    ? { truncated: result.content.includes('Content truncated'), rowCount: result.metadata.rowCount }
+                    : undefined,
             };
             self.postMessage(response);
         }
     } catch (error) {
-        // Error during processing
         const errorMessage = error instanceof Error ? error.message : String(error);
-        const response: FileProcessingResponse = {
+        const response: ProcessingError = {
             id,
-            success: false,
-            error: errorMessage || 'Unknown error during file processing',
+            type: 'error',
+            message: errorMessage,
         };
         self.postMessage(response);
     }
