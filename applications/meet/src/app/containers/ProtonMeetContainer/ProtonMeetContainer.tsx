@@ -883,7 +883,7 @@ export const ProtonMeetContainer = ({
                         paidUser={treatedAsPaidUser}
                         keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
-                        getKeychainIndexInformation={keyProvider.getKeychainIndexInformation}
+                        getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
                     />
                 ) : (
                     <PrejoinContainer
