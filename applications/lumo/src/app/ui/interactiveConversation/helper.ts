@@ -118,27 +118,34 @@ export function sendMessage({
         const allAttachmentsState = state.attachments;
         const allAssetsState = state.assets;
 
-        const spaceAttachments: Attachment[] = Object.values(allAttachmentsState)
-            .filter((att: any) => att.spaceId === spaceId && !att.processing && !att.error)
-            .map((att: any) => att as Attachment);
-
-        // Get space assets (project-level files) - they have same shape as attachments
+        // Get space assets (project-level files) - these should be available for @ references
         const spaceAssets: Attachment[] = Object.values(allAssetsState)
             .filter((asset: any) => {
                 return asset && typeof asset === 'object' && asset.spaceId === spaceId && !asset.processing && !asset.error;
             })
             .map((asset: any) => asset as Attachment);
 
-        // Combine space attachments, space assets, and provisional attachments (remove duplicates)
-        const allMessageAttachments: Attachment[] = [...spaceAttachments, ...spaceAssets];
+        // Get attachments from current conversation messages - these should be available for @ references
+        const conversationAttachments: Attachment[] = [];
+        messageChain.forEach((message) => {
+            if (message.attachments) {
+                message.attachments.forEach((shallowAtt) => {
+                    const fullAtt = allAttachmentsState[shallowAtt.id];
+                    if (fullAtt && !conversationAttachments.some((a) => a.id === fullAtt.id)) {
+                        conversationAttachments.push(fullAtt as Attachment);
+                    }
+                });
+            }
+        });
+
+        // Combine space assets, conversation attachments, and provisional attachments for @ references
+        // Exclude space attachments from other conversations
+        const allMessageAttachments: Attachment[] = [...spaceAssets, ...conversationAttachments];
         attachments.forEach((att) => {
             if (!allMessageAttachments.some((a) => a.id === att.id)) {
                 allMessageAttachments.push(att);
             }
         });
-
-        // Resolve file references (@file name) in message content
-        let processedContent: string;
 
         const fileResolver = async (fileName: string): Promise<{ content: string; fileName: string } | null> => {
 
@@ -157,11 +164,30 @@ export function sendMessage({
             newMessageContent,
             fileResolver
         );
-        processedContent = resolvedContent;
+        const processedContent: string = resolvedContent;
 
         if (referencedFiles.length > 0) {
             console.log('Resolved file references:', referencedFiles.map(f => f.fileName));
+            console.log('Non-referenced attachments to assign to space:', nonReferencedAttachments.map(a => a.filename));
+            console.log('Provisional referenced attachments (conversation-specific):', provisionalReferencedAttachments.map(a => a.filename));
         }
+
+        // Identify which attachments came from @ file references
+        const referencedFileNames = new Set(referencedFiles.map(f => f.fileName.toLowerCase()));
+        const referencedAttachments = allMessageAttachments.filter(att => 
+            referencedFileNames.has(att.filename.toLowerCase())
+        );
+        
+        // For space assignment, only consider provisional attachments (those without spaceId)
+        // Referenced files should not be assigned to space regardless of their source
+        const nonReferencedAttachments = attachments.filter(att => 
+            !referencedFileNames.has(att.filename.toLowerCase())
+        );
+        
+        // Identify provisional referenced attachments (from composer)
+        const provisionalReferencedAttachments = attachments.filter(att => 
+            referencedFileNames.has(att.filename.toLowerCase())
+        );
 
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
@@ -197,7 +223,16 @@ export function sendMessage({
             ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
         };
         dispatch(addMessage(assistantMessageWithContext));
-        dispatch(assignProvisionalAttachmentsToSpace(attachments, spaceId));
+        
+        // Only assign non-referenced attachments to the space
+        // Referenced files (from @ mentions) should remain conversation-specific
+        dispatch(assignProvisionalAttachmentsToSpace(nonReferencedAttachments, spaceId));
+        
+        // Push referenced attachments to server without assigning them to space
+        // Only push provisional referenced attachments (those from the composer)
+        provisionalReferencedAttachments.forEach((attachment) => {
+            dispatch(pushAttachmentRequest({ id: attachment.id }));
+        });
 
         // Navigate to /c/:conversationId
         if (!isEdit && navigateCallback) navigateCallback(conversationId);

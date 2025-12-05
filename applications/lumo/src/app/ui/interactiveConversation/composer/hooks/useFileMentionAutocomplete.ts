@@ -8,7 +8,7 @@ import { useNotifications } from '@proton/components';
 import type { SpaceId, Attachment, Message } from '../../../../types';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { selectSpaceById, selectAssetsBySpaceId, selectAttachments, selectProvisionalAttachments } from '../../../../redux/selectors';
-import { upsertAttachment, newAttachmentId, deleteAttachment } from '../../../../redux/slices/core/attachments';
+import { upsertAttachment, newAttachmentId } from '../../../../redux/slices/core/attachments';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { getApproximateTokenCount } from '../../../../llm/tokenizer';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
@@ -353,6 +353,27 @@ export const useFileMentionAutocomplete = (
             const startPos = $from.pos - match[0].length;
             const endPos = $from.pos;
 
+            // Check for duplicates for all file types
+            const conversationAttachmentIds = new Set(
+                messageChain.flatMap((msg) => msg.attachments?.map((att) => att.id) || [])
+            );
+            const conversationAttachments = Object.values(allAttachments).filter(
+                (att) => conversationAttachmentIds.has(att.id) || !att.spaceId
+            );
+            
+            const isDuplicate = conversationAttachments.some(
+                (att) => att.filename.toLowerCase() === file.name.toLowerCase()
+            );
+            
+            if (isDuplicate) {
+                createNotification({
+                    text: c('collider_2025:Info').t`File "${file.name}" is already added to this conversation`,
+                    type: 'info',
+                });
+                setMentionState(INITIAL_MENTION_STATE);
+                return;
+            }
+
             let attachmentToAdd: Attachment | null = null;
 
             if (file.source === 'local' && file.attachment) {
@@ -371,6 +392,7 @@ export const useFileMentionAutocomplete = (
                     setMentionState(INITIAL_MENTION_STATE);
                     return;
                 }
+                
                 
                 const mimeType = getMimeTypeFromExtension(file.name);
                 const provisionalAttachmentId = newAttachmentId();
@@ -407,26 +429,6 @@ export const useFileMentionAutocomplete = (
                             type: mimeType,
                             lastModified: Date.now(),
                         });
-                        
-                        const conversationAttachmentIds = new Set(
-                            messageChain.flatMap((msg) => msg.attachments?.map((att) => att.id) || [])
-                        );
-                        const conversationAttachments = Object.values(allAttachments).filter(
-                            (att) => conversationAttachmentIds.has(att.id) || (!att.spaceId && att.id !== provisionalAttachmentId)
-                        );
-                        
-                        const isDuplicate = conversationAttachments.some(
-                            (att) => att.filename.toLowerCase() === file.name.toLowerCase()
-                        );
-                        
-                        if (isDuplicate) {
-                            dispatch(deleteAttachment(provisionalAttachmentId));
-                            createNotification({
-                                text: c('collider_2025:Info').t`File "${file.name}" is already added`,
-                                type: 'info',
-                            });
-                            return;
-                        }
                         
                         try {
                             const result = await fileProcessingService.processFile(driveFile);

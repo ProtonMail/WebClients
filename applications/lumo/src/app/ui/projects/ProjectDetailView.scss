@@ -360,3 +360,17 @@
         overflow-y: auto;
     }
 }
+
+.conversation-menu-button {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+}
+
+.project-detail-conversation-item:hover .conversation-menu-button {
+    opacity: 1;
+}
