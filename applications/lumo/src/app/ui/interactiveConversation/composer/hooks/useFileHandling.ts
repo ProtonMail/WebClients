@@ -15,6 +15,7 @@ import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
 import type { AttachmentId, LinkedDriveFolder, Message } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
+import { isLargeSpreadsheetFile, isPresentationFile } from '../../../../util/fileTypeHelpers';
 import { sendFileUploadEvent, sendFileUploadFromDriveEvent } from '../../../../util/telemetry';
 
 export interface UseFileHandlingProps {
@@ -123,33 +124,26 @@ export const useFileHandling = ({
                 // Log file processing start for user feedback
                 console.log(`Starting file processing: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
 
-                // Special messaging for large CSV files
-                if (
-                    (file.type === 'text/csv' ||
-                        file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-                        file.type === 'application/vnd.ms-excel') &&
-                    file.size > 1024 * 1024
-                ) {
-                    // > 1MB
+                // Special messaging for large spreadsheet files
+                if (isLargeSpreadsheetFile(file)) {
                     console.log(`Processing large spreadsheet file - this may take a moment...`);
                 }
 
                 const result = await dispatch(handleFileAsync(file, messageChain));
 
+                // Handle duplicate file
                 if (result.isDuplicate) {
-                    // Show toast notification for duplicate file
                     createNotification({
                         text: c('collider_2025: Error').t`File already added: ${result.fileName}`,
                         type: 'warning',
                     });
-                } else if (result.isUnsupported) {
-                    // Special message for PPTX files with conversion suggestions
-                    if (
-                        file.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation' ||
-                        file.type === 'application/vnd.ms-powerpoint' ||
-                        file.name.toLowerCase().endsWith('.pptx') ||
-                        file.name.toLowerCase().endsWith('.ppt')
-                    ) {
+                    return;
+                }
+
+                // Handle unsupported file
+                if (result.isUnsupported) {
+                    // Special message for presentation files with conversion suggestions
+                    if (isPresentationFile(file)) {
                         createNotification({
                             text: c('collider_2025: Error')
                                 .t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
@@ -162,8 +156,11 @@ export const useFileHandling = ({
                             type: 'error',
                         });
                     }
-                } else if (!result.success && result.errorMessage) {
-                    // Show toast notification for processing error
+                    return;
+                }
+
+                // Handle processing error
+                if (!result.success && result.errorMessage) {
                     createNotification({
                         text: c('collider_2025: Error').t`Error processing ${result.fileName}: ${result.errorMessage}`,
                         type: 'error',
@@ -194,6 +191,9 @@ export const useFileHandling = ({
                         }
                     }
                 }
+
+                // Success
+                console.log(`File processing completed: ${file.name}`);
             } catch (error) {
                 console.error('Error processing file:', error);
                 createNotification({
