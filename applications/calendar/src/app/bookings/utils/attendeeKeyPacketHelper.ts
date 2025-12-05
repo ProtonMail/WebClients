@@ -1,5 +1,5 @@
 import type { SessionKey } from '@proton/crypto/lib';
-import { getIsAddressDisabled, getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { getIsAddressDisabled, getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';
@@ -44,7 +44,7 @@ export const getAttendeeSharedKeyPacket = async ({
     }
 
     // We don't want to auto-add events for external addresses
-    if (getIsAddressExternal(usedAddress)) {
+    if (getIsAddressExternal(usedAddress) || getIsBYOEAddress(usedAddress)) {
         return { type: 'success', keyPacket: undefined };
     }
 
