@@ -3,6 +3,7 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -62,10 +63,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
         createNotification({ text: c('Info').t`Link copied to clipboard` });
     };
 
-    const handleEditClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        e.stopPropagation();
-
+    const handleEditClick = async () => {
         if (!isEditingEnabled || isCalendarDisabled) {
             return;
         }
@@ -74,9 +72,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
         openBookingSidebarEdition(page, payload);
     };
 
-    const handleDeleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const handleDeleteClick = () => {
         void showDeleteModal({ bookingId: page.id });
     };
 
@@ -96,14 +92,18 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                         <SidebarListItemLabel
                             htmlFor={`booking-page-${page.id}`}
                             className="group-hover-opacity-container"
-                            onClick={(e) => handleCopy(e, page.link)}
                         >
                             <SidebarListItemContent left={<IcCalendarListFilled color={bookingCalendar?.Color} />}>
-                                <div className="flex flex-nowrap justify-space-between items-center w-full">
+                                <ButtonLike
+                                    as="div"
+                                    shape="underline"
+                                    onClick={(e) => handleCopy(e, page.link)}
+                                    className="flex flex-nowrap justify-space-between items-center w-full text-no-decoration"
+                                >
                                     <p className="text-ellipsis m-0" title={page.summary}>
                                         {page.summary}
                                     </p>
-                                </div>
+                                </ButtonLike>
                                 <Tooltip title={c('Info').t`Manage booking page`}>
                                     <SimpleDropdown
                                         as={Button}
@@ -111,10 +111,6 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                         hasCaret={false}
                                         shape="ghost"
                                         size="small"
-                                        onClick={(e: React.MouseEvent) => {
-                                            e.stopPropagation();
-                                            e.preventDefault();
-                                        }}
                                         onToggle={() => {
                                             spotlight.onClose();
                                         }}
