@@ -14,9 +14,11 @@ export const useCreateInstantMeeting = () => {
     const createInstantMeeting = async ({
         params,
         isGuest = false,
+        isPaidUser = false,
     }: {
         params: Partial<CreateMeetingParams>;
         isGuest?: boolean;
+        isPaidUser?: boolean;
     }) => {
         let addressId = null;
         let privateKey;
@@ -32,7 +34,7 @@ export const useCreateInstantMeeting = () => {
         const { response, passwordBase } = await saveMeeting({
             params: {
                 ...params,
-                meetingName: isGuest ? c('Info').t`Free meeting` : c('Info').t`Secure meeting`,
+                meetingName: isPaidUser ? c('Info').t`Secure meeting` : c('Info').t`Free meeting`,
                 customPassword: '',
                 startTime: null,
                 endTime: null,
