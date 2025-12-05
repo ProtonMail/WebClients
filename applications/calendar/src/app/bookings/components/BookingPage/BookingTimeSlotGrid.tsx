@@ -62,7 +62,7 @@ export const BookingTimeSlotGrid = () => {
                         <div className="flex-1" key={date.getTime()}>
                             <h3 className="flex flex-column flex-nowrap items-center text-rg mb-2">
                                 <div className="sr-only">{dateHeaderLongString}</div>
-                                <div className="text-sm" aria-hidden="true">
+                                <div className="text-sm booking-color-title" aria-hidden="true">
                                     {dateHeaderShortString}
                                 </div>
                                 <div
@@ -72,7 +72,9 @@ export const BookingTimeSlotGrid = () => {
                                     )}
                                     aria-hidden="true"
                                 >
-                                    <span className="lh100">{dateNumberString}</span>
+                                    <span className={clsx('lh100', !isToday(date) && 'booking-color-title')}>
+                                        {dateNumberString}
+                                    </span>
                                 </div>
                             </h3>
                             <ul className="unstyled m-0 p-0 flex flex-column gap-2">
@@ -108,8 +110,13 @@ export const BookingTimeSlotGrid = () => {
 
                                         return (
                                             <li aria-hidden="true" key={`${i}-${j}`}>
-                                                <Button disabled shape="outline" color="norm" className="w-full">
-                                                    -
+                                                <Button
+                                                    disabled
+                                                    shape="outline"
+                                                    color="norm"
+                                                    className="w-full booking-button-slot-outline"
+                                                >
+                                                    –
                                                 </Button>
                                             </li>
                                         );
