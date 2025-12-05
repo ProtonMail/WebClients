@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
@@ -21,7 +20,7 @@ import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
 const DECRYPTION_BATCH_SIZE = 5;
 
 export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void, boolean] => {
-    const [user] = useUser();
+    const personalMeetingName = c('Title').t`Personal meeting room`;
 
     const [meetings, setMeetings] = useState<Meeting[] | null>(null);
     const [personalMeeting, setPersonalMeeting] = useState<Meeting | null>(null);
@@ -97,11 +96,6 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         }
     };
 
-    const getDefaultPersonalMeetingName = () => {
-        const displayName = user?.DisplayName || user?.Name || user?.Email || '';
-        return c('Title').t`${displayName}'s personal meeting`;
-    };
-
     const persistPersonalMeetingIntoStore = async (meeting: Meeting) => {
         const decryptedPersonalMeeting = await getDecryptedMeeting(meeting);
 
@@ -127,7 +121,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
         try {
             const { meeting } = await createMeeting({
-                meetingName: getDefaultPersonalMeetingName(),
+                meetingName: personalMeetingName,
                 type: MeetingType.PERSONAL,
             });
 
@@ -144,7 +138,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         return withLoadingRotatePersonalMeeting(async () => {
             try {
                 const { meeting } = await rotatePersonalMeeting({
-                    meetingName: getDefaultPersonalMeetingName(),
+                    meetingName: personalMeetingName,
                 });
 
                 await persistPersonalMeetingIntoStore(meeting);

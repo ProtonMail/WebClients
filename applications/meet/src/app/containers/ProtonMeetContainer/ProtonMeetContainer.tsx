@@ -562,6 +562,7 @@ export const ProtonMeetContainer = ({
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
                 isGuest: guestMode,
+                isPaidUser: treatedAsPaidUser,
             });
 
             const handshakeResult = await handleHandshakeInfoFetch(id);
