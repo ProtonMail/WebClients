@@ -16,14 +16,16 @@ const workerLogger = {
     }
 };
 
+export interface FileData {
+    name: string;
+    type: string;
+    size: number;
+    data: ArrayBuffer;
+}
+
 export interface FileProcessingRequest {
     id: string;
-    file: {
-        name: string;
-        type: string;
-        size: number;
-        data: ArrayBuffer;
-    };
+    file: FileData;
     isLumoPaid?: boolean; // User tier information for tiered processing limits
 }
 
@@ -40,6 +42,9 @@ export interface TextProcessingResult {
 export interface ImageProcessingResult {
     id: string;
     type: 'image';
+    originalSize: number;
+    processedSize: number;
+    processedData: ArrayBuffer;
 }
 
 export interface ProcessingError {
@@ -67,6 +72,28 @@ interface InternalProcessingResult {
         rowCount?: RowMetadata;
     };
 }
+
+interface ProcessedImage {
+    originalSize: number;
+    processedSize: number;
+    processedData: ArrayBuffer;
+}
+
+interface InternalTextResult {
+    type: 'text';
+    data: InternalProcessingResult;
+}
+
+interface InternalImageResult {
+    type: 'image';
+    data: ProcessedImage;
+}
+
+interface InternalUnsupportedResult {
+    type: 'unsupported';
+}
+
+type InternalFileResult = InternalTextResult | InternalImageResult | InternalUnsupportedResult;
 
 interface TruncationResult {
     content: string;
@@ -99,7 +126,7 @@ async function getPandocConverter(): Promise<PandocConverter> {
     return pandocConverter;
 }
 
-async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promise<string> {
+async function convertXlsxToCsv(fileData: FileData): Promise<string> {
     try {
         console.log(`Converting Excel file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
 
@@ -170,7 +197,7 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
     }
 }
 
-function validateFileSize(fileData: FileProcessingRequest['file'], isLumoPaid: boolean): void {
+function validateFileSize(fileData: FileData, isLumoPaid: boolean): void {
     const BASE_LIMITS: Record<string, number> = {
         'text/plain': 50,
         'text/csv': 100,
@@ -190,50 +217,88 @@ function validateFileSize(fileData: FileProcessingRequest['file'], isLumoPaid: b
     }
 }
 
-function processTextFile(fileData: FileProcessingRequest['file']): string {
+function processTextFile(fileData: FileData): InternalTextResult {
     const content = new TextDecoder('utf-8').decode(fileData.data);
     const { content: truncatedContent } = truncateContent(content);
-    return truncatedContent;
+    return {
+        type: 'text',
+        data: { content: truncatedContent },
+    };
 }
 
-function processCsvFile(fileData: FileProcessingRequest['file']): ProcessedContent {
+function processCsvFile(fileData: FileData): InternalTextResult {
     const csvContent = new TextDecoder('utf-8').decode(fileData.data);
     const lines = csvContent.split('\n');
     const { content: truncatedContent, wasTruncated } = truncateContent(csvContent);
 
     return {
-        content: truncatedContent,
-        rowCount: {
-            original: lines.length,
-            processed: wasTruncated
-                ? Math.floor(lines.length * (truncatedContent.length / csvContent.length))
-                : lines.length,
+        type: 'text',
+        data: {
+            content: truncatedContent,
+            metadata: {
+                rowCount: {
+                    original: lines.length,
+                    processed: wasTruncated
+                        ? Math.floor(lines.length * (truncatedContent.length / csvContent.length))
+                        : lines.length,
+                },
+            },
         },
     };
 }
 
-async function processPdfFile(fileData: FileProcessingRequest['file']): Promise<string> {
+async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
     const parseResult = await pdfParse(fileData.data);
-    return parseResult.text;
+    return {
+        type: 'text',
+        data: { content: parseResult.text },
+    };
 }
 
-async function processExcelFile(fileData: FileProcessingRequest['file']): Promise<ProcessedContent> {
+async function processExcelFile(fileData: FileData): Promise<InternalTextResult> {
     const csvData = await convertXlsxToCsv(fileData);
     const lines = csvData.split('\n');
     const { content: truncatedContent, wasTruncated } = truncateContent(csvData);
 
     return {
-        content: truncatedContent,
-        rowCount: {
-            original: lines.length,
-            processed: wasTruncated
-                ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
-                : lines.length,
+        type: 'text',
+        data: {
+            content: truncatedContent,
+            metadata: {
+                rowCount: {
+                    original: lines.length,
+                    processed: wasTruncated
+                        ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
+                        : lines.length,
+                },
+            },
         },
     };
 }
 
-async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: boolean = false): Promise<InternalProcessingResult | null> {
+async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
+    // TODO: Implement actual image compression/resizing
+    // For now, this is an identity function that returns the original data
+    console.log(`[Image Processing] Reducing image size for ${fileData.name} (placeholder - no actual reduction yet)`);
+    return fileData.data;
+}
+
+async function processImageFile(fileData: FileData): Promise<InternalImageResult> {
+    console.log(`Processing image: ${fileData.name} (${fileData.type})`);
+
+    const processedData = await reduceImageSize(fileData);
+
+    return {
+        type: 'image',
+        data: {
+            originalSize: fileData.size,
+            processedSize: processedData.byteLength,
+            processedData,
+        },
+    };
+}
+
+async function processFile(fileData: FileData, isLumoPaid: boolean = false): Promise<InternalFileResult> {
     const startTime = performance.now();
     console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type})`);
 
@@ -242,21 +307,17 @@ async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: 
     try {
         switch (fileData.type) {
             case 'text/plain':
-                return { content: processTextFile(fileData) };
+                return processTextFile(fileData);
 
-            case 'text/csv': {
-                const result = processCsvFile(fileData);
-                return { content: result.content, metadata: { rowCount: result.rowCount } };
-            }
+            case 'text/csv':
+                return processCsvFile(fileData);
 
             case 'application/pdf':
-                return { content: await processPdfFile(fileData) };
+                return await processPdfFile(fileData);
 
             case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-            case 'application/vnd.ms-excel': {
-                const result = await processExcelFile(fileData);
-                return { content: result.content, metadata: { rowCount: result.rowCount } };
-            }
+            case 'application/vnd.ms-excel':
+                return await processExcelFile(fileData);
 
             case 'image/jpeg':
             case 'image/jpg':
@@ -265,23 +326,22 @@ async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: 
             case 'image/webp':
             case 'image/heic':
             case 'image/heif':
-                console.log(`Processing image: ${fileData.name}`);
-                return { content: '' }; // Empty content signals image type
+                return await processImageFile(fileData);
 
             default: {
                 if (shouldProcessAsPlainText(fileData.type) ||
                     (fileData.type === '' && isFileTypeSupported(fileData.name))) {
-                    return { content: processTextFile(fileData) };
+                    return processTextFile(fileData);
                 }
 
                 if (needsPandocConversion(fileData.type)) {
                     const pandocFormat = mimeTypeToPandocFormat(fileData.type);
                     if (pandocFormat) {
-                        return { content: await processWithPandoc(fileData, pandocFormat) };
+                        return await processWithPandoc(fileData, pandocFormat);
                     }
                 }
 
-                return null;
+                return { type: 'unsupported' };
             }
         }
     } catch (error) {
@@ -293,7 +353,7 @@ async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: 
     }
 }
 
-async function processWithPandoc(fileData: FileProcessingRequest['file'], inputFormat: string): Promise<string> {
+async function processWithPandoc(fileData: FileData, inputFormat: string): Promise<InternalTextResult> {
     const pandoc = await getPandocConverter();
     const converted = await pandoc.convert(fileData.data, inputFormat);
 
@@ -301,11 +361,10 @@ async function processWithPandoc(fileData: FileProcessingRequest['file'], inputF
         throw new Error(`Pandoc conversion produced empty output for ${fileData.type}`);
     }
 
-    return converted;
-}
-
-function isImageType(mimeType: string): boolean {
-    return mimeType.startsWith('image/');
+    return {
+        type: 'text',
+        data: { content: converted },
+    };
 }
 
 // Handle messages from the main thread
@@ -315,7 +374,7 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
     try {
         const result = await processFile(file, isLumoPaid);
 
-        if (result === null) {
+        if (result.type === 'unsupported') {
             const response: ProcessingError = {
                 id,
                 type: 'error',
@@ -323,19 +382,22 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
                 unsupported: true,
             };
             self.postMessage(response);
-        } else if (isImageType(file.type)) {
+        } else if (result.type === 'image') {
             const response: ImageProcessingResult = {
                 id,
                 type: 'image',
+                originalSize: result.data.originalSize,
+                processedSize: result.data.processedSize,
+                processedData: result.data.processedData,
             };
             self.postMessage(response);
-        } else {
+        } else if (result.type === 'text') {
             const response: TextProcessingResult = {
                 id,
                 type: 'text',
-                content: result.content,
-                metadata: result.metadata?.rowCount
-                    ? { truncated: result.content.includes('Content truncated'), rowCount: result.metadata.rowCount }
+                content: result.data.content,
+                metadata: result.data.metadata?.rowCount
+                    ? { truncated: result.data.content.includes('Content truncated'), rowCount: result.data.metadata.rowCount }
                     : undefined,
             };
             self.postMessage(response);
