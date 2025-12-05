@@ -14,8 +14,6 @@ import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
-const worker = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
-
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
     const roomRef = useRef<Room>();
 
@@ -24,6 +22,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isLogExtensionSetup = useRef(false);
 
     const keyProviderRef = useRef(new ProtonMeetKeyProvider());
+    const workerRef = useRef<Worker | null>(null);
 
     const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
@@ -65,10 +64,11 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     }, []);
 
     if (!roomRef.current) {
+        workerRef.current = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
         roomRef.current = new Room({
             e2ee: {
                 keyProvider: keyProviderRef.current,
-                worker,
+                worker: workerRef.current,
             },
             videoCaptureDefaults: {
                 resolution: qualityConstants[QualityScenarios.PortraitView].resolution,
@@ -89,6 +89,15 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
             disconnectOnPageLeave: false,
         });
     }
+
+    useEffect(() => {
+        return () => {
+            if (workerRef.current) {
+                workerRef.current.terminate();
+                workerRef.current = null;
+            }
+        };
+    }, []);
 
     return (
         <RoomContext.Provider value={roomRef.current}>

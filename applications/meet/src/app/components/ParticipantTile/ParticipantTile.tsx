@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import { useLocalParticipant } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
@@ -52,6 +54,8 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
     const { facingMode } = useMediaManagementContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
 
+    const videoRef = useRef<HTMLVideoElement>();
+
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
     );
@@ -78,6 +82,19 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
         participant.identity === localParticipant.identity ? displayName : c('Info').t`Loading...`;
 
     const participantName = participantNameMap[participant.identity] ?? participantNameFallback;
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+        if (videoElement && cameraVideoPublication?.track) {
+            cameraVideoPublication.track.attach(videoElement);
+        }
+
+        return () => {
+            if (videoElement && cameraVideoPublication?.track) {
+                cameraVideoPublication.track.detach(videoElement);
+            }
+        };
+    }, [cameraVideoPublication?.track?.sid, shouldShowVideo]);
 
     return (
         <div
@@ -131,11 +148,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                     <video
                         className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
-                        ref={(el) => {
-                            if (el && cameraVideoPublication?.track) {
-                                cameraVideoPublication.track.attach(el);
-                            }
-                        }}
+                        ref={(el) => (videoRef.current = el ?? undefined)}
                         muted={participant.isLocal}
                         style={{
                             transform:
