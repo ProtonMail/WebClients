@@ -1,7 +1,6 @@
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 import pdfParse from '../lib/attachments/pdfParse';
-import { isFileTypeSupported } from '../util/filetypes';
-import { mimeTypeToPandocFormat, needsPandocConversion, shouldProcessAsPlainText } from '../util/mimetype';
+import { getProcessingCategory, mimeTypeToPandocFormat } from '../util/filetypes';
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
 const workerLogger = {
@@ -13,7 +12,7 @@ const workerLogger = {
     },
     error: (message: string, ...args: any[]) => {
         console.log(`[WORKER-ERROR] ${message}`, ...args);
-    }
+    },
 };
 
 export interface FileData {
@@ -59,11 +58,6 @@ export type FileProcessingResponse = TextProcessingResult | ImageProcessingResul
 interface RowMetadata {
     original: number;
     processed: number;
-}
-
-interface ProcessedContent {
-    content: string;
-    rowCount?: RowMetadata;
 }
 
 interface InternalProcessingResult {
@@ -305,44 +299,34 @@ async function processFile(fileData: FileData, isLumoPaid: boolean = false): Pro
     validateFileSize(fileData, isLumoPaid);
 
     try {
-        switch (fileData.type) {
-            case 'text/plain':
+        const category = getProcessingCategory(fileData.type, fileData.name);
+
+        switch (category) {
+            case 'text':
                 return processTextFile(fileData);
 
-            case 'text/csv':
+            case 'csv':
                 return processCsvFile(fileData);
 
-            case 'application/pdf':
-                return await processPdfFile(fileData);
-
-            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-            case 'application/vnd.ms-excel':
+            case 'excel':
                 return await processExcelFile(fileData);
 
-            case 'image/jpeg':
-            case 'image/jpg':
-            case 'image/png':
-            case 'image/gif':
-            case 'image/webp':
-            case 'image/heic':
-            case 'image/heif':
-                return await processImageFile(fileData);
+            case 'pdf':
+                return await processPdfFile(fileData);
 
-            default: {
-                if (shouldProcessAsPlainText(fileData.type) ||
-                    (fileData.type === '' && isFileTypeSupported(fileData.name))) {
-                    return processTextFile(fileData);
+            case 'document': {
+                const pandocFormat = mimeTypeToPandocFormat(fileData.type);
+                if (pandocFormat) {
+                    return await processWithPandoc(fileData, pandocFormat);
                 }
-
-                if (needsPandocConversion(fileData.type)) {
-                    const pandocFormat = mimeTypeToPandocFormat(fileData.type);
-                    if (pandocFormat) {
-                        return await processWithPandoc(fileData, pandocFormat);
-                    }
-                }
-
                 return { type: 'unsupported' };
             }
+
+            case 'image':
+                return await processImageFile(fileData);
+
+            case 'unsupported':
+                return { type: 'unsupported' };
         }
     } catch (error) {
         workerLogger.error(`Error processing ${fileData.name}:`, error);
@@ -367,6 +351,10 @@ async function processWithPandoc(fileData: FileData, inputFormat: string): Promi
     };
 }
 
+const sendResponse = (response: FileProcessingResponse) => {
+    self.postMessage(response);
+};
+
 // Handle messages from the main thread
 self.addEventListener('message', async (event: MessageEvent<FileProcessingRequest>) => {
     const { id, file, isLumoPaid = false } = event.data;
@@ -381,7 +369,7 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
                 message: `Unsupported file type: ${file.type}`,
                 unsupported: true,
             };
-            self.postMessage(response);
+            sendResponse(response);
         } else if (result.type === 'image') {
             const response: ImageProcessingResult = {
                 id,
@@ -390,17 +378,20 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
                 processedSize: result.data.processedSize,
                 processedData: result.data.processedData,
             };
-            self.postMessage(response);
+            sendResponse(response);
         } else if (result.type === 'text') {
             const response: TextProcessingResult = {
                 id,
                 type: 'text',
                 content: result.data.content,
                 metadata: result.data.metadata?.rowCount
-                    ? { truncated: result.data.content.includes('Content truncated'), rowCount: result.data.metadata.rowCount }
+                    ? {
+                          truncated: result.data.content.includes('Content truncated'),
+                          rowCount: result.data.metadata.rowCount,
+                      }
                     : undefined,
             };
-            self.postMessage(response);
+            sendResponse(response);
         }
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
@@ -409,7 +400,7 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
             type: 'error',
             message: errorMessage,
         };
-        self.postMessage(response);
+        sendResponse(response);
     }
 });
 
