@@ -14,6 +14,8 @@ describe('AppsLogos', () => {
         expect(screen.getByRole('listitem', { name: 'Proton Pass' })).toBeInTheDocument();
         expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).toBeInTheDocument();
         expect(screen.getByRole('listitem', { name: 'Proton Docs' })).toBeInTheDocument();
+        expect(screen.getByRole('listitem', { name: 'Proton Sheets' })).toBeInTheDocument();
+        expect(screen.getByRole('listitem', { name: 'Lumo' })).toBeInTheDocument();
     });
 
     it('renders only the specified apps', () => {
@@ -25,18 +27,14 @@ describe('AppsLogos', () => {
         expect(screen.queryByRole('listitem', { name: 'Proton Pass' })).not.toBeInTheDocument();
         expect(screen.queryByRole('listitem', { name: 'Proton Wallet' })).not.toBeInTheDocument();
         expect(screen.queryByRole('listitem', { name: 'Proton Docs' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Proton Sheets' })).not.toBeInTheDocument();
+        expect(screen.queryByRole('listitem', { name: 'Lumo' })).not.toBeInTheDocument();
     });
 
     it('does not render app names when appNames is false', () => {
-        render(<AppsLogos appNames={false} />);
-        // Should not find any short app names
-        expect(screen.queryByText('Mail')).not.toBeInTheDocument();
-        expect(screen.queryByText('Calendar')).not.toBeInTheDocument();
-        expect(screen.queryByText('Drive')).not.toBeInTheDocument();
-        expect(screen.queryByText('VPN')).not.toBeInTheDocument();
-        expect(screen.queryByText('Pass')).not.toBeInTheDocument();
-        expect(screen.queryByText('Wallet')).not.toBeInTheDocument();
-        expect(screen.queryByText('Docs')).not.toBeInTheDocument();
+        const { container } = render(<AppsLogos appNames={false} />);
+        const appNameSpans = container.querySelectorAll('.apps-logos-app-name');
+        expect(appNameSpans).toHaveLength(0);
     });
 
     it('renders all apps and greys out the ones not in the apps array when showDisabledApps is true', () => {
@@ -65,5 +63,7 @@ describe('AppsLogos', () => {
         expect(screen.getByRole('listitem', { name: 'Proton Pass' })).not.toHaveClass('opacity-40');
         expect(screen.getByRole('listitem', { name: 'Proton Wallet' })).not.toHaveClass('opacity-40');
         expect(screen.getByRole('listitem', { name: 'Proton Docs' })).not.toHaveClass('opacity-40');
+        expect(screen.getByRole('listitem', { name: 'Proton Sheets' })).not.toHaveClass('opacity-40');
+        expect(screen.getByRole('listitem', { name: 'Lumo' })).not.toHaveClass('opacity-40');
     });
 });

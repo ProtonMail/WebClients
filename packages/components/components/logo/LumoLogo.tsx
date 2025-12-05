@@ -116,8 +116,6 @@ const LumoLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
             />
         </LogoBase>
     );
-
-    return null;
 };
 
 export default LumoLogo;
