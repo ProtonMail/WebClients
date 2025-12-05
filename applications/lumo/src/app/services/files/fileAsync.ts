@@ -80,91 +80,87 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
     let hasError = false;
     let isUnsupported = false;
 
-    // Check if this is an image - images don't need worker processing
-    const isImage = file.type.startsWith('image/');
+    // All files go through the worker for processing
+    try {
+        const result = await fileProcessingService.processFile(file);
 
-    if (isImage) {
-        // Images bypass the worker - no conversion needed, just keep binary data
-        console.log(`Processing image file (no conversion needed): ${file.name} (${file.type})`);
-        processedAttachment = {
-            ...processedAttachment,
-            markdown: '', // No markdown for images
-        };
-    } else {
-        // Non-image files go through the worker for conversion
-        try {
-            const result = await fileProcessingService.processFile(file);
-
-            if (result.type === 'text') {
-                // File processed successfully
-                processedAttachment = {
-                    ...processedAttachment,
-                    markdown: result.content,
-                    truncated: result.metadata?.truncated,
-                    originalRowCount: result.metadata?.rowCount?.original,
-                    processedRowCount: result.metadata?.rowCount?.processed,
-                };
-
-                // Calculate and cache token count for performance
-                if (processedAttachment.markdown) {
-                    try {
-                        const filename = `Filename: ${processedAttachment.filename}`;
-                        const header = 'File contents:';
-                        const beginMarker = '----- BEGIN FILE CONTENTS -----';
-                        const endMarker = '----- END FILE CONTENTS -----';
-                        const content = processedAttachment.markdown.trim();
-
-                        const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
-                        const tokenCount = getApproximateTokenCount(fullContext);
-
-                        processedAttachment.tokenCount = tokenCount;
-                        console.log(`Token count calculated for ${file.name}: ${tokenCount} tokens`);
-                    } catch (error) {
-                        console.warn('Failed to calculate token count:', error);
-                    }
-                }
-            } else if (result.type === 'error') {
-                if (result.unsupported) {
-                    // Unsupported file type
-                    isUnsupported = true;
-
-                    const endTime = performance.now();
-                    const processingDurationMs = Math.round(endTime - startTime);
-
-                    sendFileUploadFinishEvent(
-                        file.size,
-                        file.type,
-                        true,
-                        isUnsupported,
-                        false,
-                        processingDurationMs
-                    );
-
-                    return {
-                        success: false,
-                        isUnsupported: true,
-                        fileName: file.name,
-                    };
-                } else {
-                    // Processing error
-                    hasError = true;
-                    console.error('Error during conversion:', result.message);
-                    processedAttachment = {
-                        ...processedAttachment,
-                        error: true,
-                        errorMessage: result.message,
-                    };
-                }
-            }
-        } catch (error) {
-            hasError = true;
-            console.error('Error during file processing:', error);
+        if (result.type === 'text') {
+            // Text file processed successfully
             processedAttachment = {
                 ...processedAttachment,
-                error: true,
-                errorMessage: error instanceof Error ? error.message : 'Unknown error during file processing',
+                markdown: result.content,
+                truncated: result.metadata?.truncated,
+                originalRowCount: result.metadata?.rowCount?.original,
+                processedRowCount: result.metadata?.rowCount?.processed,
             };
+
+            // Calculate and cache token count for performance
+            if (processedAttachment.markdown) {
+                try {
+                    const filename = `Filename: ${processedAttachment.filename}`;
+                    const header = 'File contents:';
+                    const beginMarker = '----- BEGIN FILE CONTENTS -----';
+                    const endMarker = '----- END FILE CONTENTS -----';
+                    const content = processedAttachment.markdown.trim();
+
+                    const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
+                    const tokenCount = getApproximateTokenCount(fullContext);
+
+                    processedAttachment.tokenCount = tokenCount;
+                    console.log(`Token count calculated for ${file.name}: ${tokenCount} tokens`);
+                } catch (error) {
+                    console.warn('Failed to calculate token count:', error);
+                }
+            }
+        } else if (result.type === 'image') {
+            // Image processed successfully - update with processed data
+            processedAttachment = {
+                ...processedAttachment,
+                markdown: '', // No markdown for images
+                data: new Uint8Array(result.processedData), // Store processed image data
+            };
+            console.log(`Image processed: ${file.name}, original: ${result.originalSize} bytes, processed: ${result.processedSize} bytes`);
+        } else if (result.type === 'error') {
+            if (result.unsupported) {
+                // Unsupported file type
+                isUnsupported = true;
+
+                const endTime = performance.now();
+                const processingDurationMs = Math.round(endTime - startTime);
+
+                sendFileUploadFinishEvent(
+                    file.size,
+                    file.type,
+                    true,
+                    isUnsupported,
+                    false,
+                    processingDurationMs
+                );
+
+                return {
+                    success: false,
+                    isUnsupported: true,
+                    fileName: file.name,
+                };
+            } else {
+                // Processing error
+                hasError = true;
+                console.error('Error during conversion:', result.message);
+                processedAttachment = {
+                    ...processedAttachment,
+                    error: true,
+                    errorMessage: result.message,
+                };
+            }
         }
+    } catch (error) {
+        hasError = true;
+        console.error('Error during file processing:', error);
+        processedAttachment = {
+            ...processedAttachment,
+            error: true,
+            errorMessage: error instanceof Error ? error.message : 'Unknown error during file processing',
+        };
     }
 
     // Only store in Redux if not unsupported
@@ -173,8 +169,10 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
         processing: false,
     };
 
+    // Determine if this is an image based on mime type
+    const isImage = file.type.startsWith('image/');
+
     // Store in Redux initially with processing state (only for supported files)
-    // Note: isImage was already determined earlier to decide whether to use worker
     if (isImage) {
         // For images, keep the data field - it's needed for WireImage conversion
         dispatch(upsertAttachment(attachment));
