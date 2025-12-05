@@ -52,8 +52,10 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
             return;
         }
 
-        await submitBooking(timeslot, { name, email });
-        rest.onClose?.();
+        const result = await submitBooking(timeslot, { name, email });
+        if (result === 'success') {
+            rest.onClose?.();
+        }
     };
 
     // To check later: if case where start/end time is not on the same day
