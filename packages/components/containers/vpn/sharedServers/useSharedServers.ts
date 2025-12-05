@@ -12,7 +12,7 @@ import {
 export interface VpnLocationFilterPolicy {
     Code: number;
     Groups: SharedServerGroup[];
-    LocationFilterPolicyID: number | null;
+    LocationFilterPolicyID: number | string | null;
     Locations: SharedServerLocation[];
     Name: string;
     OrganizationID: number;
@@ -22,13 +22,13 @@ export interface VpnLocationFilterPolicy {
 }
 
 export interface SharedServerUser {
-    UserID: number;
+    UserID: number | string;
     Name: string;
     Email: string;
 }
 
 export interface SharedServerGroup {
-    GroupID: number;
+    GroupID: number | string;
     Name: string;
     UserCount: number;
     Users: SharedServerUser[];
