@@ -59,7 +59,7 @@ export const ProjectsView = () => {
             return (
                 <div className="projects-empty-state">
                     <div className="projects-empty-icon">
-                        <Icon name="lock" size={6} />
+                        <img src={lumoProjects} alt="Projects" width={300} />
                     </div>
                     <h2 className="projects-empty-title">
                         {c('collider_2025:Title').t`Sign in to create projects`}
