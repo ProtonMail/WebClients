@@ -11,7 +11,6 @@ import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-// Import extracted components
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
@@ -62,7 +61,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
     onUploadTriggerRef,
     onRefreshTriggerRef,
 }) => {
-    const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile, createFolder } = useDriveSDK();
+    const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
     const { createNotification } = useNotifications();
     const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
     const [children, setChildren] = useState<DriveNode[]>([]);
@@ -124,16 +123,16 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
             setLoading(true);
             setLocalError(null); // Clear any previous local errors
             initializedRef.current = true;
-            
+
             const rootFolder = await getRootFolder();
             setRootFolderId(rootFolder.nodeId);
-            
+
             if (initialFolderId && initialFolderId !== rootFolder.nodeId) {
                 // Navigate to specific folder - this is the base/root for this browser
                 // Browse the folder to get its children
                 const folderChildren = await browseFolderChildren(initialFolderId);
                 setChildren(folderChildren);
-                
+
                 // Create a DriveNode for the target folder
                 // Use the provided name if available, otherwise use a default
                 const targetFolder: DriveNode = {
@@ -143,7 +142,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                     parentNodeId: rootFolder.nodeId, // Store parent for reference, but don't show in breadcrumbs
                 };
                 setCurrentFolder(targetFolder);
-                
+
                 // Set breadcrumbs starting from the linked folder (not root)
                 // This prevents users from navigating back to root
                 setBreadcrumbs([
@@ -205,7 +204,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                     node: folder,
                     index: breadcrumbs.length,
                 };
-                
+
                 // If this is the first navigation and we have initialFolderId, replace root with initial folder
                 if (initialFolderId && breadcrumbs.length === 0 && folder.nodeId === initialFolderId) {
                     setBreadcrumbs([newBreadcrumb]);
