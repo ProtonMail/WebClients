@@ -309,7 +309,7 @@ export function DocumentTitleDropdown({
   }, [authenticatedController, editorController, documentType, showHistoryModal])
 
   const openHelp = useCallback(() => {
-    window.open(getStaticURL('/support'), '_blank')
+    window.open(getStaticURL('/support/drive/sheets'), '_blank')
   }, [])
 
   useEffect(() => {
@@ -857,6 +857,7 @@ export function DocumentTitleDropdown({
               className="mr-2 inline-block align-middle underline hover:underline"
               href="https://proton.me/security/end-to-end-encryption"
               target="_blank"
+              rel="noreferrer"
             >
               {c('Info').t`Learn more`}
             </a>
