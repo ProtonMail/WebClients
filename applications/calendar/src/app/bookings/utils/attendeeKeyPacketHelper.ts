@@ -1,5 +1,5 @@
 import type { SessionKey } from '@proton/crypto/lib';
-import { getIsAddressDisabled, getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { getIsAddressActive, getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar';
@@ -49,7 +49,7 @@ export const getAttendeeSharedKeyPacket = async ({
     }
 
     // Block booking submission for disabled addresses
-    if (getIsAddressDisabled(usedAddress)) {
+    if (!getIsAddressActive(usedAddress)) {
         return { type: 'disabled_address' };
     }
 
