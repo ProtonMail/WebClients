@@ -1,4 +1,5 @@
 import Loader from '@proton/components/components/loader/Loader';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useBookingStore } from '../../booking.store';
 import { NoMatch, Reason } from '../NoMatch';
@@ -11,8 +12,14 @@ export const BookingPage = () => {
     const hasLoaded = useBookingStore((state) => state.hasLoaded);
     const isEmpty = useBookingStore((state) => !state.bookingDetails);
 
+    const isExternalBookingsEnabled = useFlag('CalendarExternalBookings');
+
     if (!isLoading && hasLoaded && isEmpty) {
         return <NoMatch reason={Reason.notFound} />;
+    }
+
+    if (!isExternalBookingsEnabled) {
+        return <NoMatch reason={Reason.featureUnavailable} />;
     }
 
     if (!hasLoaded && isLoading) {
