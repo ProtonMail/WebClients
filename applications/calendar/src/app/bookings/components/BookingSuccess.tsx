@@ -38,14 +38,17 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     return (
         <div className="flex gap-3">
             <div
-                className="shrink-0 rounded-full bg-weak flex items-center justify-center w-custom h-custom booking-color-title"
+                className="shrink-0 rounded-full flex items-center justify-center w-custom h-custom booking-color-title booking-success-item-icon"
                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
             >
                 {icon}
             </div>
             <div className="flex-1">
-                <h2 className="m-0 text-semibold text-rg">{title}</h2>
-                <p className="m-0 text-break max-w-full" title={typeof data === 'string' ? data : ''}>
+                <h2 className="m-0 text-semibold text-rg booking-color-title">{title}</h2>
+                <p
+                    className="m-0 text-break max-w-full booking-success-item-data"
+                    title={typeof data === 'string' ? data : ''}
+                >
                     {data}
                 </p>
             </div>
@@ -84,7 +87,7 @@ export const BookingSuccess = () => {
     return (
         <div className="container">
             <div
-                className="mx-auto mt-8 bg-norm p-8 md:p-12 rounded-xl max-w-custom"
+                className="mx-auto mt-8 bg-norm p-8 md:p-12 booking-success-container max-w-custom"
                 style={{ '--max-w-custom': '37.5rem' }}
             >
                 <div className="text-center mb-6">
@@ -134,7 +137,7 @@ export const BookingSuccess = () => {
             {isGuest && (
                 <div className="mx-auto text-center max-w-custom p-8" style={{ '--max-w-custom': '32rem' }}>
                     <p className="color-weak inline-flex flex-nowrap items-center gap-2 mt-0 mb-6">
-                        <span className="text-sm mt-3">{c('Info').t`Powered by`}</span>
+                        <span className="text-sm mt-3 booking-success-powered-by">{c('Info').t`Powered by`}</span>
                         <ProtonLogo />
                     </p>
 
@@ -160,23 +163,23 @@ export const BookingSuccess = () => {
                     <p className="text-center inline-flex flex-row flex-wrap items-center gap-5 my-0">
                         <span className="">
                             <MailLogo variant="glyph-only" />
-                            <span className="block">{MAIL_SHORT_APP_NAME}</span>
+                            <span className="block text-sm booking-success-app-name">{MAIL_SHORT_APP_NAME}</span>
                         </span>
                         <span className="">
                             <VpnLogo variant="glyph-only" />
-                            <span className="block">{VPN_SHORT_APP_NAME}</span>
+                            <span className="block text-sm booking-success-app-name">{VPN_SHORT_APP_NAME}</span>
                         </span>
                         <span className="">
                             <PassLogo variant="glyph-only" />
-                            <span className="block">{PASS_SHORT_APP_NAME}</span>
+                            <span className="block text-sm booking-success-app-name">{PASS_SHORT_APP_NAME}</span>
                         </span>
                         <span className="">
                             <LumoLogo variant="glyph-only" />
-                            <span className="block">{LUMO_SHORT_APP_NAME}</span>
+                            <span className="block text-sm booking-success-app-name">{LUMO_SHORT_APP_NAME}</span>
                         </span>
                         <span className="">
                             <DriveLogo variant="glyph-only" />
-                            <span className="block">{DRIVE_SHORT_APP_NAME}</span>
+                            <span className="block text-sm booking-success-app-name">{DRIVE_SHORT_APP_NAME}</span>
                         </span>
                     </p>
                 </div>

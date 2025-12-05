@@ -2,10 +2,10 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useActiveBreakpoint } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { TimeZoneSelector } from '@proton/components/components/timezoneSelector/TimeZoneSelector';
-import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
@@ -24,7 +24,29 @@ interface Props {
     availabilityState: AvailabilityState;
 }
 
+const IconHeroCalendar = ({ className }: { className?: string }) => {
+    return (
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className={className}
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M4.5 0.75V3M15 0.75V3M0.75 16.5V5.25C0.75 4.00736 1.75736 3 3 3H16.5C17.7426 3 18.75 4.00736 18.75 5.25V16.5M0.75 16.5C0.75 17.7426 1.75736 18.75 3 18.75H16.5C17.7426 18.75 18.75 17.7426 18.75 16.5M0.75 16.5V9C0.75 7.75736 1.75736 6.75 3 6.75H16.5C17.7426 6.75 18.75 7.75736 18.75 9V16.5M9.75 10.5H9.7575V10.5075H9.75V10.5ZM9.75 12.75H9.7575V12.7575H9.75V12.75ZM9.75 15H9.7575V15.0075H9.75V15ZM7.5 12.75H7.5075V12.7575H7.5V12.75ZM7.5 15H7.5075V15.0075H7.5V15ZM5.25 12.75H5.2575V12.7575H5.25V12.75ZM5.25 15H5.2575V15.0075H5.25V15ZM12 10.5H12.0075V10.5075H12V10.5ZM12 12.75H12.0075V12.7575H12V12.75ZM12 15H12.0075V15.0075H12V15ZM14.25 10.5H14.2575V10.5075H14.25V10.5ZM14.25 12.75H14.2575V12.7575H14.25V12.75Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+};
+
 export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
+    const { viewportWidth } = useActiveBreakpoint();
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const setSelectedTimezone = useBookingStore((state) => state.setSelectedTimezone);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
@@ -50,7 +72,7 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                 <TimeZoneSelector
                     data-testid="calendar-view:time-zone-dropdown"
                     disabled={hasNoSlots}
-                    className="w-auto mb-2"
+                    className="w-auto mb-2 mt-1"
                     date={selectedDate}
                     timezone={selectedTimezone || bookingDetails?.timezone || getTimezone()}
                     onChange={setSelectedTimezone}
@@ -61,19 +83,19 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                 />
             </div>
             <div className="flex justify-between w-full mb-4">
-                <div className="flex-1 flex space-between">
+                <div className="flex-1 flex space-between mr-2">
                     <Button
                         pill
                         onClick={toggle}
                         ref={anchorRef}
-                        className="flex items-center"
+                        className="flex flex-nowrap gap-2 items-center booking-buttons booking-button-minicalendar text-semibold justify-center"
                         aria-expanded={isOpen}
                         disabled={hasNoSlots}
+                        size={viewportWidth['<=small'] ? 'medium' : 'large'}
                     >
-                        {/*TODO replace icon*/}
-                        <IcCalendarGrid className="mr-2" />
-                        {format(selectedDate, 'MMMM Y', { locale: dateLocale })}
-                        {isOpen ? <IcChevronUp /> : <IcChevronDown />}
+                        <IconHeroCalendar className="booking-button-minicalendar-icon" />
+                        <span className="text-ellipsis">{format(selectedDate, 'MMMM Y', { locale: dateLocale })}</span>
+                        {isOpen ? <IcChevronUp className="shrink-0" /> : <IcChevronDown className="shrink-0" />}
                     </Button>
                     <Dropdown
                         anchorRef={anchorRef}

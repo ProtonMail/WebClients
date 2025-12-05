@@ -24,9 +24,8 @@
 
 	&-calendar-select {
 		&#{&} {
-			color: var(--text-weak);
-
 			&--disabled {
+				color: var(--text-weak);
 				padding-inline-end: var(--space-4);
 			}
 		}
