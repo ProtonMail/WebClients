@@ -10,6 +10,17 @@
     overflow-y: auto;
     flex-shrink: 0;
 
+    // When drive browser is active, remove outer scroll and let drive browser handle it
+    &.has-drive-browser {
+        overflow-y: hidden;
+        
+        .project-files-panel-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+
     // Smooth panel entrance animation
     animation: slideInFromRight 0.3s ease-out;
 
@@ -66,6 +77,14 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
+
+    // When drive browser is active, the files section should expand to fill remaining space
+    .has-drive-browser &:last-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0; // Allow flex child to shrink
+    }
 }
 
 .project-files-section-header {
@@ -85,18 +104,25 @@
 .project-files-section-content {
     min-height: 60px;
 
-		&.files-section {
-			background-color: white;
-			border: 1px solid var(--border-weak);
-			border-radius: var(--border-radius-xl);
-			padding: 20px;
-			padding-bottom: 20px; // Ensure bottom padding is explicit
-			max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
-			overflow-y: auto;
-			overflow-x: hidden;
-			display: flex;
-			flex-direction: column;
-			position: relative; // Ensure border is visible
+	&.files-section {
+		background-color: white;
+		border: 1px solid var(--border-weak);
+		border-radius: var(--border-radius-xl);
+		padding: 20px;
+		padding-bottom: 20px; // Ensure bottom padding is explicit
+		max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		position: relative; // Ensure border is visible
+
+		// When drive browser is active, remove height restriction and overflow
+		.has-drive-browser & {
+			max-height: none;
+			overflow-y: visible;
+			flex: 1;
+		}
 			box-sizing: border-box; // Ensure padding is included in height calculation
 			
 			.project-files-progress-overlay {
@@ -378,6 +404,53 @@
         outline: 2px solid var(--focus-outline);
         outline-offset: 1px;
         opacity: 1 !important;
+    }
+}
+
+.project-drive-browser {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; // Allow flex child to shrink
+    
+    // The drive browser main container
+    > div {
+        flex: 1;
+        min-height: 0; // Allow flex child to shrink
+    }
+}
+
+.drive-connection-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--signal-success);
+    flex-shrink: 0;
+    position: relative;
+    
+    // Subtle pulse animation to indicate active connection
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50%;
+        background-color: var(--signal-success);
+        opacity: 0.3;
+        animation: pulse-connection 2s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse-connection {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.1;
     }
 }
 
