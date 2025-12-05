@@ -1,25 +1,20 @@
 import { c } from 'ttag';
 
-import { useGetOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
-import { CacheType } from '@proton/redux-utilities';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
-import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import PendingInvitationModalErrors from './PendingInvitationModalErrors';
 
@@ -29,9 +24,6 @@ interface Props extends ModalStateProps {
 
 const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     const api = useApi();
-    const goToSettings = useSettingsLink();
-    const protonConfig = useConfig();
-    const getOrganization = useGetOrganization();
 
     const { createNotification } = useNotifications();
 
@@ -55,12 +47,6 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         createNotification({
             text: c('familyOffer_2023:Family plan').t`You have successfully joined the family group`,
         });
-
-        if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
-            // Force refresh the organization since it's not present in the event manager
-            getOrganization({ cache: CacheType.None }).catch(noop);
-            goToSettings('/account-password', APPS.PROTONACCOUNT);
-        }
     };
 
     const inviteEmail = <strong key="invite-email">{`${invite.InviterEmail}`}</strong>;
