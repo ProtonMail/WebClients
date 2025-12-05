@@ -63,21 +63,25 @@ const prodId = getProdId(config);
 const getBookingGeneralProperties = async ({
     bookingDetails,
     timeslot,
+    attendeeName,
     saveMeeting,
     uid,
 }: {
     bookingDetails: BookingDetails;
     timeslot: BookingTimeslot;
+    attendeeName: string;
     saveMeeting: (params: SaveMeetingParams) => Promise<{
         response: CreateMeetingResponse;
         passwordBase: string;
     }>;
     uid: string;
 }) => {
+    const title = `${bookingDetails.summary} (${attendeeName})`;
+
     if (!bookingDetails.withProtonMeetLink) {
         return modelToGeneralProperties({
             uid,
-            title: bookingDetails.summary,
+            title,
             location: bookingDetails.location.trim(),
         });
     }
@@ -89,7 +93,7 @@ const getBookingGeneralProperties = async ({
         params: {
             customPassword: '',
             protonCalendar: true, // todo not sure we need to pass this
-            meetingName: bookingDetails.summary,
+            meetingName: title,
             recurrence: null, // todo handle this once we support recurring events
             startTime: startDate.toISOString(),
             endTime: endDate.toISOString(),
@@ -105,7 +109,7 @@ const getBookingGeneralProperties = async ({
 
     return modelToGeneralProperties({
         uid,
-        title: bookingDetails.summary,
+        title,
         location: fullLink,
     });
 };
@@ -235,7 +239,13 @@ export const prepareBookingSubmission = async ({
     const canonicalEmail = canonicalEmailMap[attendeeEmail] || canonicalizeEmailByGuess(attendeeEmail);
     const attendeeToken = await generateAttendeeToken(canonicalEmail, uid);
 
-    const generalProperties = await getBookingGeneralProperties({ timeslot, bookingDetails, saveMeeting, uid });
+    const generalProperties = await getBookingGeneralProperties({
+        timeslot,
+        bookingDetails,
+        saveMeeting,
+        uid,
+        attendeeName,
+    });
     const organizerProperties = modelToOrganizerProperties({ organizer: { email: organizerEmail, cn: organizerName } });
     const attendeeProperties = modelToAttendeeProperties({
         attendees: [
