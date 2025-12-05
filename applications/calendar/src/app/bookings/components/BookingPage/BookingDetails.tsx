@@ -77,7 +77,7 @@ export const BookingDetails = () => {
                     <div className="flex-1">
                         <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info')
                             .t`Appointment duration`}</h3>
-                        <div>{c('Info').t`${bookingDetails.duration} min duration`}</div>
+                        <div>{c('Info').t`${bookingDetails.duration} min`}</div>
                     </div>
                 </div>
                 {hasLocation && (
