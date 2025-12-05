@@ -61,11 +61,6 @@ export class FileProcessingService {
     }
 
     async processFile(file: File): Promise<FileProcessingResponse> {
-        if (!this.worker) {
-            console.warn('Worker not available, falling back to synchronous processing');
-            return this.processSynchronously(file);
-        }
-
         return new Promise<FileProcessingResponse>((resolve, reject) => {
             const id = `file-${++this.requestCounter}-${Date.now()}`;
 
@@ -85,7 +80,7 @@ export class FileProcessingService {
                         },
                     };
 
-                    this.worker!.postMessage(request);
+                    this.sendToWorker(request);
                 })
                 .catch((error) => {
                     // Clean up pending request on error
@@ -137,14 +132,13 @@ export class FileProcessingService {
         });
     }
 
-    private async processSynchronously(file: File): Promise<FileProcessingResponse> {
-        console.warn('File processing worker unavailable - please refresh the page and try again');
+    private sendToWorker(request: FileProcessingRequest) {
+        if (!this.worker) {
+            throw new Error('Failed to process attachment. Please refresh the page and try again.');
+        }
 
-        return {
-            id: 'fallback',
-            type: 'error',
-            message: 'File processing worker unavailable. Please refresh the page and try again.',
-        };
+        // Message is received in fileProcessingWorker.ts
+        this.worker.postMessage(request);
     }
 
     cleanup() {
