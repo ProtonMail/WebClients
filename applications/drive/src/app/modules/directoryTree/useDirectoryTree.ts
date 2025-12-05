@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -105,56 +105,62 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         });
     }, [drive, addItem]);
 
-    const loadDevices = useCallback(async () => {
-        try {
-            for await (const device of drive.iterateDevices()) {
-                addItem({
-                    nodeUid: device.rootFolderUid,
-                    treeItemId: makeTreeItemId(DEVICES_ROOT_ID, device.rootFolderUid),
-                    parentUid: DEVICES_ROOT_ID,
-                    name: getDeviceName(device),
-                    type: DirectoryTreeRootType.Device,
-                    expandable: true,
-                    isSharedWithMe: false,
-                });
-            }
-        } catch (error) {
-            handleSdkError(error, { fallbackMessage: 'Failed to load devices' });
-            throw error;
-        }
-    }, [addItem, drive]);
-
-    const loadSharedWithMe = useCallback(async () => {
-        try {
-            for await (const sharedNode of drive.iterateSharedNodesWithMe()) {
-                const { uid, name, type } = getNodeEntity(sharedNode).node;
-
-                if (options?.onlyFolders && type !== NodeType.Folder) {
-                    continue;
+    const loadDevices = useCallback(
+        async (abortSignal: AbortSignal) => {
+            try {
+                for await (const device of drive.iterateDevices(abortSignal)) {
+                    addItem({
+                        nodeUid: device.rootFolderUid,
+                        treeItemId: makeTreeItemId(DEVICES_ROOT_ID, device.rootFolderUid),
+                        parentUid: DEVICES_ROOT_ID,
+                        name: getDeviceName(device),
+                        type: DirectoryTreeRootType.Device,
+                        expandable: true,
+                        isSharedWithMe: false,
+                    });
                 }
-
-                const highestEffectiveRole = options?.loadPermissions
-                    ? await findEffectiveRole(drive, sharedNode.ok ? sharedNode.value : sharedNode.error)
-                    : undefined;
-                addItem({
-                    nodeUid: uid,
-                    treeItemId: makeTreeItemId(SHARED_WITH_ME_ROOT_ID, uid),
-                    parentUid: SHARED_WITH_ME_ROOT_ID,
-                    name,
-                    type,
-                    expandable: type === NodeType.Folder,
-                    isSharedWithMe: true,
-                    highestEffectiveRole,
-                });
+            } catch (error) {
+                handleSdkError(error, { fallbackMessage: 'Failed to load devices' });
+                throw error;
             }
-        } catch (error) {
-            handleSdkError(error, { fallbackMessage: 'Failed to load shared items' });
-            throw error;
-        }
-    }, [drive, options?.onlyFolders, options?.loadPermissions, addItem]);
+        },
+        [addItem, drive]
+    );
+
+    const loadSharedWithMe = useCallback(
+        async (abortSignal: AbortSignal) => {
+            try {
+                for await (const sharedNode of drive.iterateSharedNodesWithMe(abortSignal)) {
+                    const { uid, name, type } = getNodeEntity(sharedNode).node;
+
+                    if (options?.onlyFolders && type !== NodeType.Folder) {
+                        continue;
+                    }
+
+                    const highestEffectiveRole = options?.loadPermissions
+                        ? await findEffectiveRole(drive, sharedNode.ok ? sharedNode.value : sharedNode.error)
+                        : undefined;
+                    addItem({
+                        nodeUid: uid,
+                        treeItemId: makeTreeItemId(SHARED_WITH_ME_ROOT_ID, uid),
+                        parentUid: SHARED_WITH_ME_ROOT_ID,
+                        name,
+                        type,
+                        expandable: type === NodeType.Folder,
+                        isSharedWithMe: true,
+                        highestEffectiveRole,
+                    });
+                }
+            } catch (error) {
+                handleSdkError(error, { fallbackMessage: 'Failed to load shared items' });
+                throw error;
+            }
+        },
+        [drive, options?.onlyFolders, options?.loadPermissions, addItem]
+    );
 
     const loadChildren = useCallback(
-        async (parentUid: string) => {
+        async (parentUid: string, abortSignal: AbortSignal) => {
             const maybeItem = items.get(parentUid);
             if (!maybeItem) {
                 const error = new Error(c('Error').t`Failed to expand folder`);
@@ -168,18 +174,18 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             }
 
             if (parentUid === DEVICES_ROOT_ID) {
-                await loadDevices();
+                await loadDevices(abortSignal);
                 return;
             }
 
             if (parentUid === SHARED_WITH_ME_ROOT_ID) {
-                await loadSharedWithMe();
+                await loadSharedWithMe(abortSignal);
                 return;
             }
 
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
-                for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions)) {
+                for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions, abortSignal)) {
                     const { uid, name, type } = getNodeEntity(node).node;
                     const highestEffectiveRole = options?.loadPermissions
                         ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
@@ -208,22 +214,39 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         [items, loadDevices, loadSharedWithMe, options?.onlyFolders, options?.loadPermissions, drive, addItem]
     );
 
+    const expandAbortControllers = useRef(new Map<string, AbortController>());
     const toggleExpand = useCallback(
         async (treeItemId: string) => {
-            const newValue = !expandedTreeIds.get(treeItemId);
+            const shouldExpand = !expandedTreeIds.get(treeItemId);
 
-            if (newValue) {
+            if (shouldExpand) {
+                const controller = new AbortController();
+                expandAbortControllers.current.set(treeItemId, controller);
+
                 const uid = getNodeUidFromTreeItemId(treeItemId);
                 if (!uid) {
                     return;
                 }
-                await loadChildren(uid);
+
+                await loadChildren(uid, controller.signal);
+            } else {
+                // Cancel ongoing work when collapsing
+                expandAbortControllers.current.get(treeItemId)?.abort();
+                expandAbortControllers.current.delete(treeItemId);
             }
 
-            changeExpanded(treeItemId, !!newValue);
+            changeExpanded(treeItemId, !!shouldExpand);
         },
         [changeExpanded, expandedTreeIds, loadChildren]
     );
+    // Stop ongoing work when closing modal
+    useEffect(() => {
+        return () => {
+            expandAbortControllers.current.forEach((controller) => {
+                controller.abort();
+            });
+        };
+    }, []);
 
     const get = useCallback((uid: string) => items.get(uid), [items]);
 

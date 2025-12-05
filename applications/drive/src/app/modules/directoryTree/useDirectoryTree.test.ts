@@ -398,7 +398,7 @@ describe('useDirectoryTree', () => {
                 await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
-            expect(mockIterateFolderChildren).toHaveBeenCalledWith(MY_FILES_ROOT_UID, undefined);
+            expect(mockIterateFolderChildren).toHaveBeenCalledWith(MY_FILES_ROOT_UID, undefined, expect.any(Object));
 
             const myFiles = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
             expect(myFiles.children).not.toBeNull();
@@ -511,6 +511,155 @@ describe('useDirectoryTree', () => {
                     result.current.toggleExpand(makeTreeItemId(MY_FILES_ROOT_UID, 'child-file'))
                 ).rejects.toThrow('Failed to expand folder');
             });
+        });
+
+        it('should abort loading devices list when collapsing', async () => {
+            createMyFilesRoot();
+
+            let abortSignalReceived: AbortSignal | undefined;
+            mockIterateDevices.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignalReceived = signal;
+                yield createMockDevice('device-1', 'Device 1');
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+
+            expect(abortSignalReceived?.aborted).toBe(true);
+        });
+
+        it('should abort loading shared with me when collapsing', async () => {
+            createMyFilesRoot();
+
+            let abortSignalReceived: AbortSignal | undefined;
+            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignalReceived = signal;
+                yield createMockNode('shared-1', 'Shared 1', NodeType.Folder);
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            expect(abortSignalReceived?.aborted).toBe(true);
+        });
+
+        it('should abort loading my files when collapsing', async () => {
+            createMyFilesRoot();
+
+            let abortSignalReceived: AbortSignal | undefined;
+            mockIterateFolderChildren.mockImplementation(async function* (
+                _uid: string,
+                _options: any,
+                signal: AbortSignal
+            ) {
+                abortSignalReceived = signal;
+                yield createMockNode('child-1', 'Child 1', NodeType.Folder);
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            expect(abortSignalReceived?.aborted).toBe(true);
+        });
+
+        it('should track separate abort controllers for each expanded branch', async () => {
+            createMyFilesRoot();
+
+            const abortSignals = new Map<string, AbortSignal>();
+
+            // Setup devices iterator to track its abort signal
+            mockIterateDevices.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignals.set('devices', signal);
+                yield createMockDevice('device-1', 'Device 1');
+            });
+
+            // Setup shared nodes iterator to track its abort signal
+            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignals.set('shared', signal);
+                yield createMockNode('shared-1', 'Shared 1', NodeType.Folder);
+            });
+
+            // Setup folder children iterator to track its abort signal
+            mockIterateFolderChildren.mockImplementation(async function* (
+                _uid: string,
+                _options: any,
+                signal: AbortSignal
+            ) {
+                abortSignals.set('myfiles', signal);
+                yield createMockNode('child-1', 'Child 1', NodeType.Folder);
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            // Expand devices - should create its own abort controller
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+
+            expect(abortSignals.get('devices')).toBeDefined();
+            const devicesSignal = abortSignals.get('devices');
+
+            // Expand shared with me - should create a separate abort controller
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            expect(abortSignals.get('shared')).toBeDefined();
+            const sharedSignal = abortSignals.get('shared');
+
+            // Expand my files - should create yet another abort controller
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            expect(abortSignals.get('myfiles')).toBeDefined();
+            const myFilesSignal = abortSignals.get('myfiles');
+
+            // All should have their own independent signals
+            expect(devicesSignal).not.toBe(sharedSignal);
+            expect(devicesSignal).not.toBe(myFilesSignal);
+            expect(sharedSignal).not.toBe(myFilesSignal);
+
+            // Collapse only devices - should only abort devices
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+
+            expect(devicesSignal?.aborted).toBe(true);
+            expect(sharedSignal?.aborted).toBe(false);
+            expect(myFilesSignal?.aborted).toBe(false);
         });
     });
 
@@ -985,6 +1134,126 @@ describe('useDirectoryTree', () => {
 
             expect(result1.current.treeRoots).toHaveLength(3);
             expect(result2.current.treeRoots).toHaveLength(0);
+        });
+    });
+
+    describe('cleanup on unmount', () => {
+        it('should abort all loading branches when component unmounts', async () => {
+            createMyFilesRoot();
+
+            const abortSignals = new Map<string, AbortSignal>();
+            let devicesYielded = 0;
+            let sharedYielded = 0;
+            let myFilesYielded = 0;
+
+            // Simulate long-running jobs for devices
+            mockIterateDevices.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignals.set('devices', signal);
+                for (let i = 1; i <= 10; i++) {
+                    if (signal.aborted) {
+                        throw new Error('Aborted');
+                    }
+
+                    await new Promise((resolve, reject) => {
+                        const timeout = setTimeout(resolve, 100);
+                        signal.addEventListener('abort', () => {
+                            clearTimeout(timeout);
+                            reject(new Error('Aborted'));
+                        });
+                    });
+
+                    devicesYielded++;
+                    yield createMockDevice(`device-${i}`, `Device ${i}`);
+                }
+            });
+
+            // Simulate long-running jobs for shared with me
+            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+                abortSignals.set('shared', signal);
+                for (let i = 1; i <= 10; i++) {
+                    if (signal.aborted) {
+                        throw new Error('Aborted');
+                    }
+
+                    await new Promise((resolve, reject) => {
+                        const timeout = setTimeout(resolve, 100);
+                        signal.addEventListener('abort', () => {
+                            clearTimeout(timeout);
+                            reject(new Error('Aborted'));
+                        });
+                    });
+
+                    sharedYielded++;
+                    yield createMockNode(`shared-${i}`, `Shared ${i}`, NodeType.Folder);
+                }
+            });
+
+            // Simulate long-running jobs for folder children
+            mockIterateFolderChildren.mockImplementation(async function* (
+                _uid: string,
+                _options: any,
+                signal: AbortSignal
+            ) {
+                abortSignals.set('myfiles', signal);
+                for (let i = 1; i <= 10; i++) {
+                    if (signal.aborted) {
+                        throw new Error('Aborted');
+                    }
+
+                    await new Promise((resolve, reject) => {
+                        const timeout = setTimeout(resolve, 100);
+                        signal.addEventListener('abort', () => {
+                            clearTimeout(timeout);
+                            reject(new Error('Aborted'));
+                        });
+                    });
+
+                    myFilesYielded++;
+                    yield createMockNode(`child-${i}`, `Child ${i}`, NodeType.Folder);
+                }
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result, unmount } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            // Start expanding multiple branches without awaiting
+            let devicesPromise!: Promise<void>;
+            let sharedPromise!: Promise<void>;
+            let myFilesPromise!: Promise<void>;
+
+            act(() => {
+                devicesPromise = result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+                sharedPromise = result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+                myFilesPromise = result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            // Wait a bit for some items to be processed
+            await new Promise((resolve) => setTimeout(resolve, 150));
+
+            // Unmount should abort all loading operations
+            unmount();
+
+            // All promises should reject due to abort
+            await expect(devicesPromise).rejects.toThrow('Aborted');
+            await expect(sharedPromise).rejects.toThrow('Aborted');
+            await expect(myFilesPromise).rejects.toThrow('Aborted');
+
+            // Verify all abort signals were aborted
+            expect(abortSignals.get('devices')?.aborted).toBe(true);
+            expect(abortSignals.get('shared')?.aborted).toBe(true);
+            expect(abortSignals.get('myfiles')?.aborted).toBe(true);
+
+            // Verify not all items were processed (operations were interrupted)
+            expect(devicesYielded).toBeGreaterThan(0);
+            expect(devicesYielded).toBeLessThan(10);
+            expect(sharedYielded).toBeGreaterThan(0);
+            expect(sharedYielded).toBeLessThan(10);
+            expect(myFilesYielded).toBeGreaterThan(0);
+            expect(myFilesYielded).toBeLessThan(10);
         });
     });
 });
