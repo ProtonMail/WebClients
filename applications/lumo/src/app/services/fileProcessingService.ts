@@ -60,22 +60,8 @@ export class FileProcessingService {
         }
     }
 
-    async processFile(file: File): Promise<{
-        success: boolean;
-        result?: {
-            originalContent: string;
-            convertedContent: string;
-            originalSize: number;
-            convertedSize: number;
-            truncated?: boolean;
-            originalRowCount?: number;
-            processedRowCount?: number;
-        };
-        error?: string;
-        isUnsupported?: boolean;
-    }> {
+    async processFile(file: File): Promise<FileProcessingResponse> {
         if (!this.worker) {
-            // Fallback to synchronous processing if worker failed to initialize
             console.warn('Worker not available, falling back to synchronous processing');
             return this.processSynchronously(file);
         }
@@ -152,13 +138,12 @@ export class FileProcessingService {
     }
 
     private async processSynchronously(file: File): Promise<FileProcessingResponse> {
-        // Fallback when worker is not available
         console.warn('File processing worker unavailable - please refresh the page and try again');
 
         return {
             id: 'fallback',
-            success: false,
-            error: 'File processing worker unavailable. Please refresh the page and try again.',
+            type: 'error',
+            message: 'File processing worker unavailable. Please refresh the page and try again.',
         };
     }
 
