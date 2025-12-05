@@ -138,8 +138,7 @@ export function sendMessage({
         });
 
         // Resolve file references (@file name) in message content
-        let processedContent = newMessageContent;
-        const space = spaceId ? state.spaces[spaceId] : undefined;
+        let processedContent: string;
 
         const fileResolver = async (fileName: string): Promise<{ content: string; fileName: string } | null> => {
 
