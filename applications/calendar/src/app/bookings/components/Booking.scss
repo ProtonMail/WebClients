@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/lib';
 @import '~@proton/styles/scss/specifics/arizona';
 
-$booking-breakpoint: em(700, 16);
+$booking-breakpoint: em(750, 16);
 
 body:has(.booking-main-container) {
 	// to check if has to be connected to taxonomy or same page for all cases
@@ -10,6 +10,9 @@ body:has(.booking-main-container) {
 	--booking-color-title: #372580;
 	--booking-no-booking-container-border-color: #e2dbff;
 	--text-norm: #4b5563;
+	--border-radius-3xl: #{rem(24)};
+	--border-radius-4xl: #{rem(36)};
+	--signal-success: #148a6d;
 }
 
 .booking {
@@ -29,6 +32,8 @@ body:has(.booking-main-container) {
 		inline-size: rem(360);
 		position: sticky;
 		inset-block-start: var(--space-12);
+		border-radius: var(--border-radius-3xl);
+
 		@include media('<=#{$booking-breakpoint}') {
 			inline-size: 100%;
 			position: static;
@@ -45,10 +50,63 @@ body:has(.booking-main-container) {
 		inline-size: 2rem; // explicit 32px size to avoid layout shifts for some numbers
 	}
 
+	&-buttons {
+		&#{&} {
+			border: 1px solid #efebff;
+			color: var(--booking-color-title);
+
+			&:hover,
+			&:focus {
+				border: 1px solid #e2dbff;
+				background: #f7f5ff;
+			}
+
+			&:active {
+				border: 1px solid #c5b7ff;
+				background: #f7f5ff;
+			}
+		}
+	}
+
+	&-button-minicalendar {
+		&#{&} {
+			@include media('>medium') {
+				min-inline-size: rem(260);
+			}
+		}
+
+		@include media('<=#{em(400, 16)}') {
+			&-icon {
+				display: none;
+			}
+		}
+	}
+
 	&-button-slot-outline {
 		--button-default-border-color: #e2dbff;
 
 		border-radius: var(--border-radius-lg);
+		color: var(--booking-color-title);
+		padding-block: rem(8);
+
+		&:hover,
+		&:focus {
+			border: 1px solid #e2dbff;
+			background: #f7f5ff;
+		}
+
+		&:active {
+			border: 1px solid #c5b7ff;
+			background: #f7f5ff;
+		}
+
+		&[disabled] {
+			&#{&} {
+				border: 1px solid #efebff;
+				background: #f9fafb;
+				color: #4a2dc5;
+			}
+		}
 	}
 
 	&-no-booking-container {
@@ -57,15 +115,56 @@ body:has(.booking-main-container) {
 		}
 	}
 
-	&-success-grid {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		@include media('<=#{$booking-breakpoint}') {
-			grid-template-columns: repeat(1, minmax(0, 1fr));
+	&-modal-slot {
+		border-radius: var(--border-radius-3xl);
+
+		&-title {
+			&#{&} {
+				font-size: rem(30);
+				font-weight: normal;
+				margin-block-start: rem(-4);
+			}
 		}
 
-		* {
-			min-inline-size: 0;
+		.field-two-label-container {
+			margin-block-end: rem(8);
+		}
+	}
+
+	&-button-confirm-booking {
+		&#{&} {
+			flex-grow: 1.2;
+		}
+	}
+
+	&-success {
+		&-container {
+			border-radius: var(--border-radius-4xl);
+		}
+
+		&-item-icon {
+			background-color: #f3f4f6;
+		}
+
+		&-app-name {
+			color: #6b7280;
+		}
+
+		&-item-data,
+		&-powered-by {
+			color: var(--text-norm);
+		}
+
+		&-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			@include media('<=#{$booking-breakpoint}') {
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+			}
+
+			* {
+				min-inline-size: 0;
+			}
 		}
 	}
 }
