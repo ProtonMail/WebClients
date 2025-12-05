@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { addMinutes } from 'date-fns';
 import format from 'date-fns/format';
 import { c } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     Form,
@@ -22,6 +23,7 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { type BookingTimeslot, useBookingStore } from '../../booking.store';
+import { useBookingsProvider } from '../../entryPoints/BookingsExternalProvider';
 import { useExternalBookingActions } from '../../useExternalBookingActions';
 
 interface BookingSlotModalProps extends ModalProps {
@@ -29,6 +31,7 @@ interface BookingSlotModalProps extends ModalProps {
 }
 
 const NAME_MAX_LENGTH = 100;
+const EMAIL_MAX_LENGTH = 320;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const { submitBooking, bookingDetails } = useExternalBookingActions();
@@ -36,8 +39,31 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
 
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
+    const [hasInitialized, setHasInitialized] = useState(false);
+
     const [isLoading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
+
+    const { isGuest } = useBookingsProvider();
+    const getAddresses = useGetAddresses();
+
+    useEffect(() => {
+        if (isGuest || hasInitialized) {
+            return;
+        }
+
+        const fetchAddresses = async () => {
+            const addresses = await getAddresses();
+            const firstAddress = addresses?.[0]?.Email;
+            if (firstAddress) {
+                setEmail(firstAddress);
+            }
+
+            setHasInitialized(true);
+        };
+
+        void fetchAddresses();
+    }, [isGuest, getAddresses, hasInitialized]);
 
     const organizerEmailValidator = (email: string) => {
         const isOrganizerEmail =
@@ -109,6 +135,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         bigger
                         value={email}
                         className="rounded-lg"
+                        maxLength={EMAIL_MAX_LENGTH}
                         onChange={(e) => setEmail(e.target.value)}
                         error={validator([
                             requiredValidator(email),
