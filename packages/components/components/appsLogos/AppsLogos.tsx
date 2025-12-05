@@ -101,8 +101,8 @@ const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
 } as const;
 
 interface AppsLogosProps {
-    /** Array of apps to display. If not provided, shows all supported apps */
-    apps?: SupportedApp[];
+    /** Array of apps to display. If not provided, shows no apps */
+    apps: SupportedApp[];
     appNames?: boolean;
     logoSize?: IconSize;
     className?: string;
@@ -121,6 +121,10 @@ const AppsLogos = ({
     iconShape = 'glyph',
     fullWidth = false,
 }: AppsLogosProps) => {
+    if (apps.length === 0) {
+        return null;
+    }
+
     let appsToShow;
     if (showDisabledApps) {
         appsToShow = Object.entries(supportedAppLogosMap).map(([appKey, appLogo]) => ({
