@@ -120,3 +120,15 @@ export enum PublishableDataTypes {
     RecordingStatus = 'recordingStatus',
     Message = 'message',
 }
+
+export interface DecryptionErrorLog {
+    keyIndex: number;
+    participantIdentity: string;
+    receiverIdentity: string;
+    tracksOfSender: {
+        microphone: number;
+        camera: number;
+        screenShareVideo: number;
+        screenShareAudio: number;
+    };
+}
