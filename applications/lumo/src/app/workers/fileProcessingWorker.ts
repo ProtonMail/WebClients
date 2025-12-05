@@ -1,5 +1,13 @@
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 import pdfParse from '../lib/attachments/pdfParse';
+import type {
+    FileData,
+    FileProcessingRequest,
+    FileProcessingResponse,
+    ImageProcessingResult,
+    ProcessingError,
+    TextProcessingResult,
+} from '../services/fileProcessingService';
 import { getProcessingCategory, mimeTypeToPandocFormat } from '../util/filetypes';
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
@@ -15,79 +23,12 @@ const workerLogger = {
     },
 };
 
-export interface FileData {
-    name: string;
-    type: string;
-    size: number;
-    data: ArrayBuffer;
-}
+// Internally we don't need the id field, it will be reinjected when sending the response using postMessage()
+type InternalTextResult = Omit<TextProcessingResult, 'id'>;
+type InternalImageResult = Omit<ImageProcessingResult, 'id'>;
+type InternalError = Omit<ProcessingError, 'id'>;
 
-export interface FileProcessingRequest {
-    id: string;
-    file: FileData;
-    isLumoPaid?: boolean; // User tier information for tiered processing limits
-}
-
-export interface TextProcessingResult {
-    id: string;
-    type: 'text';
-    content: string;
-    metadata?: {
-        truncated?: boolean;
-        rowCount?: { original: number; processed: number };
-    };
-}
-
-export interface ImageProcessingResult {
-    id: string;
-    type: 'image';
-    originalSize: number;
-    processedSize: number;
-    processedData: ArrayBuffer;
-}
-
-export interface ProcessingError {
-    id: string;
-    type: 'error';
-    message: string;
-    unsupported?: boolean;
-}
-
-export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
-
-interface RowMetadata {
-    original: number;
-    processed: number;
-}
-
-interface InternalProcessingResult {
-    content: string;
-    metadata?: {
-        rowCount?: RowMetadata;
-    };
-}
-
-interface ProcessedImage {
-    originalSize: number;
-    processedSize: number;
-    processedData: ArrayBuffer;
-}
-
-interface InternalTextResult {
-    type: 'text';
-    data: InternalProcessingResult;
-}
-
-interface InternalImageResult {
-    type: 'image';
-    data: ProcessedImage;
-}
-
-interface InternalUnsupportedResult {
-    type: 'unsupported';
-}
-
-type InternalFileResult = InternalTextResult | InternalImageResult | InternalUnsupportedResult;
+type InternalFileResult = InternalTextResult | InternalImageResult | InternalError;
 
 interface TruncationResult {
     content: string;
@@ -216,7 +157,7 @@ function processTextFile(fileData: FileData): InternalTextResult {
     const { content: truncatedContent } = truncateContent(content);
     return {
         type: 'text',
-        data: { content: truncatedContent },
+        content: truncatedContent,
     };
 }
 
@@ -227,15 +168,13 @@ function processCsvFile(fileData: FileData): InternalTextResult {
 
     return {
         type: 'text',
-        data: {
-            content: truncatedContent,
-            metadata: {
-                rowCount: {
-                    original: lines.length,
-                    processed: wasTruncated
-                        ? Math.floor(lines.length * (truncatedContent.length / csvContent.length))
-                        : lines.length,
-                },
+        content: truncatedContent,
+        metadata: {
+            rowCount: {
+                original: lines.length,
+                processed: wasTruncated
+                    ? Math.floor(lines.length * (truncatedContent.length / csvContent.length))
+                    : lines.length,
             },
         },
     };
@@ -245,7 +184,7 @@ async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
     const parseResult = await pdfParse(fileData.data);
     return {
         type: 'text',
-        data: { content: parseResult.text },
+        content: parseResult.text,
     };
 }
 
@@ -256,15 +195,13 @@ async function processExcelFile(fileData: FileData): Promise<InternalTextResult>
 
     return {
         type: 'text',
-        data: {
-            content: truncatedContent,
-            metadata: {
-                rowCount: {
-                    original: lines.length,
-                    processed: wasTruncated
-                        ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
-                        : lines.length,
-                },
+        content: truncatedContent,
+        metadata: {
+            rowCount: {
+                original: lines.length,
+                processed: wasTruncated
+                    ? Math.floor(lines.length * (truncatedContent.length / csvData.length))
+                    : lines.length,
             },
         },
     };
@@ -284,11 +221,9 @@ async function processImageFile(fileData: FileData): Promise<InternalImageResult
 
     return {
         type: 'image',
-        data: {
-            originalSize: fileData.size,
-            processedSize: processedData.byteLength,
-            processedData,
-        },
+        originalSize: fileData.size,
+        processedSize: processedData.byteLength,
+        processedData,
     };
 }
 
@@ -319,14 +254,22 @@ async function processFile(fileData: FileData, isLumoPaid: boolean = false): Pro
                 if (pandocFormat) {
                     return await processWithPandoc(fileData, pandocFormat);
                 }
-                return { type: 'unsupported' };
+                return {
+                    type: 'error',
+                    message: `Unsupported document format: ${fileData.type}`,
+                    unsupported: true,
+                };
             }
 
             case 'image':
                 return await processImageFile(fileData);
 
             case 'unsupported':
-                return { type: 'unsupported' };
+                return {
+                    type: 'error',
+                    message: `Unsupported file type: ${fileData.type}`,
+                    unsupported: true,
+                };
         }
     } catch (error) {
         workerLogger.error(`Error processing ${fileData.name}:`, error);
@@ -347,7 +290,7 @@ async function processWithPandoc(fileData: FileData, inputFormat: string): Promi
 
     return {
         type: 'text',
-        data: { content: converted },
+        content: converted,
     };
 }
 
@@ -362,37 +305,15 @@ self.addEventListener('message', async (event: MessageEvent<FileProcessingReques
     try {
         const result = await processFile(file, isLumoPaid);
 
-        if (result.type === 'unsupported') {
-            const response: ProcessingError = {
-                id,
-                type: 'error',
-                message: `Unsupported file type: ${file.type}`,
-                unsupported: true,
-            };
-            sendResponse(response);
-        } else if (result.type === 'image') {
-            const response: ImageProcessingResult = {
-                id,
-                type: 'image',
-                originalSize: result.data.originalSize,
-                processedSize: result.data.processedSize,
-                processedData: result.data.processedData,
-            };
-            sendResponse(response);
-        } else if (result.type === 'text') {
-            const response: TextProcessingResult = {
-                id,
-                type: 'text',
-                content: result.data.content,
-                metadata: result.data.metadata?.rowCount
-                    ? {
-                          truncated: result.data.content.includes('Content truncated'),
-                          rowCount: result.data.metadata.rowCount,
-                      }
-                    : undefined,
-            };
-            sendResponse(response);
+        // Add id to result and send
+        const response: FileProcessingResponse = { id, ...result };
+
+        // For text results, compute truncated flag if not already set
+        if (response.type === 'text' && response.metadata && !('truncated' in response.metadata)) {
+            response.metadata.truncated = response.content.includes('Content truncated');
         }
+
+        sendResponse(response);
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
         const response: ProcessingError = {
