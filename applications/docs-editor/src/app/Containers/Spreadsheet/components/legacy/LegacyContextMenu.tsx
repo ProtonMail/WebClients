@@ -865,7 +865,7 @@ export function LegacyContextMenu({
             ) : null}
 
             <DropdownMenuSeparator />
-            {activeTable ? null : (
+            {/* {activeTable ? null : (
               <>
                 <DropdownMenuItem
                   onClick={() => {
@@ -930,7 +930,7 @@ export function LegacyContextMenu({
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
               </>
-            )}
+            )} */}
 
             {/* <DropdownMenuItem
               disabled={readonly}
