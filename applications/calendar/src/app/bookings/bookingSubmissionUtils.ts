@@ -26,6 +26,7 @@ import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { convertTimestampToTimezone } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { type CreateMeetingResponse, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
@@ -292,6 +293,7 @@ export const prepareBookingSubmission = async ({
         method: ICAL_METHOD.REQUEST,
         vevent,
         isCreateEvent: true,
+        dateFormatOptions: { locale: dateLocale },
     };
 
     const emailSubject = generateEmailSubject(invitationInfo);
