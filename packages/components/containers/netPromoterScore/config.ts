@@ -1,12 +1,12 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { NPSConfig } from './interface';
+import type { NetPromoterScoreConfig } from './interface';
 
 const supportedAppsArray = [APPS.PROTONMAIL, APPS.PROTONCALENDAR] as const;
 type SupportedApps = (typeof supportedAppsArray)[number];
 
-export const npsConfig: Record<SupportedApps, NPSConfig> = {
+export const npsConfig: Record<SupportedApps, NetPromoterScoreConfig> = {
     [APPS.PROTONMAIL]: {
         appName: MAIL_APP_NAME,
         telemetryApp: 'mail',
