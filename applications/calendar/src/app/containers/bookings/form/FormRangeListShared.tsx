@@ -8,6 +8,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { convertUTCDateTimeToZone, fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 
 import { type BookingRange, BookingRangeError } from '../interface';
 import { BookingErrorMessages } from '../utils/bookingCopy';
@@ -35,12 +36,13 @@ interface InputTimeProps {
 }
 
 export const StartTimeInput = ({ id, range, duration, onChange, className }: InputTimeProps) => {
+    const nowWithTz = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), range.timezone));
     return (
         <TimeInput
             id={id}
             value={range.start}
             onChange={onChange}
-            min={isToday(range.start) ? roundToNextHalfHour(new Date()) : startOfDay(range.start)}
+            min={isToday(range.start) ? roundToNextHalfHour(nowWithTz) : startOfDay(range.start)}
             max={subMinutes(range.end, duration)}
             className={className}
         />
