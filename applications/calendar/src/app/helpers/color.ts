@@ -19,9 +19,15 @@ export const getEventStyle = (backgroundColor = '', style: CSSProperties = {}) =
 };
 
 export const getBookingSlotStyle = (backgroundColor = '', style: CSSProperties = {}): CSSProperties => {
+    // Use range size when user is moving a range, otherwise make the slot slightly bigger
+    let adjustedWidth = style.width;
+    if (style.width === '100%') {
+        adjustedWidth = '102%';
+    }
+
     return {
         ...style,
-        width: '102%',
+        width: adjustedWidth,
         '--color-alt': backgroundColor,
         '--alt-inline-start-width': '1px',
         '--color-main': 'var(--background-norm)',

@@ -167,8 +167,9 @@ import { pendingUniqueIdsSelector, selectIsTmpEventSaving } from '../../store/ev
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
-import { TEMPORARY_BOOKING_SLOT } from '../bookings/interface';
+import { BOOKING_SLOT_ID, TEMPORARY_BOOKING_SLOT } from '../bookings/interface';
 import { BookingErrorMessages } from '../bookings/utils/bookingCopy';
+import { getTemporaryBookingEvents } from '../bookings/utils/provider/getTemporaryBookingEvents';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -455,7 +456,8 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, formData, isIntersectingBookingRange } = useBookings();
+    const { isBookingActive, addBookingRange, formData, isIntersectingBookingRange, updateBookingRange } =
+        useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -779,8 +781,63 @@ const InteractiveCalendarView = ({
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
-                // We don't do anything when clicking on an event during booking page creation
-                if (isBookingActive) {
+                const isBookingEvent =
+                    event.uniqueId.startsWith(TEMPORARY_BOOKING_SLOT) || event.uniqueId.startsWith(BOOKING_SLOT_ID);
+
+                if (isBookingActive && !isBookingEvent) {
+                    return;
+                }
+
+                // When doing an action on a booking ranges, we need to bypas the temporary event logic
+                if (isBookingEvent) {
+                    // Don't handle EVENT_UP for booking events (no popover)
+                    if (mouseUpAction.action === ACTIONS.EVENT_UP) {
+                        return;
+                    }
+
+                    if (mouseUpAction.action !== ACTIONS.EVENT_MOVE && mouseUpAction.action !== ACTIONS.EVENT_MOVE_UP) {
+                        return;
+                    }
+
+                    const {
+                        result: { start, end },
+                    } = mouseUpAction.payload;
+
+                    // We prevent dragging past the duration in the form
+                    if (differenceInMinutes(end, start) < formData.duration) {
+                        return;
+                    }
+
+                    if (mouseUpAction.action === ACTIONS.EVENT_MOVE) {
+                        // To get visual feedback on the interface when moving or resizing an event,
+                        // we need to create a "fake" temporary event
+
+                        const minimalModel = getTemporaryBookingEvents(event, start, end, tzid);
+
+                        const previewEvent: CalendarViewEventTemporaryEvent = {
+                            ...event,
+                            start,
+                            end,
+                            tmpData: minimalModel,
+                            tmpDataOriginal: minimalModel,
+                        };
+
+                        setInteractiveData({
+                            temporaryEvent: previewEvent,
+                        });
+                        return;
+                    }
+
+                    // On mouse up, we can save the change the user made
+                    if (mouseUpAction.action === ACTIONS.EVENT_MOVE_UP) {
+                        const rangeId = event.uniqueId;
+
+                        const localStart = toLocalDate(fromUTCDate(start));
+                        const localEnd = toLocalDate(fromUTCDate(end));
+
+                        updateBookingRange(rangeId, localStart, localEnd);
+                        setInteractiveData(undefined);
+                    }
                     return;
                 }
 
@@ -798,6 +855,7 @@ const InteractiveCalendarView = ({
                     return;
                 }
 
+                // Regular event handling below
                 if (!newTemporaryModel) {
                     newTemporaryModel = getUpdateModel({ viewEventData: event.data });
                     if (!newTemporaryModel) {
