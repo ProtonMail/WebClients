@@ -56,6 +56,7 @@ enum CommonFeatureFlag {
     AutoAddMeetingLink = 'AutoAddMeetingLink',
     AvatarColorWeb = 'AvatarColorWeb',
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
+    OlesM1 = 'OlesM1',
 }
 
 enum AccountFlag {

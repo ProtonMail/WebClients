@@ -252,3 +252,46 @@ export interface CreateSignupOAuthTokenResponse {
         Provider: ApiImportProvider;
     };
 }
+
+export interface ApiImporterOrganizationUser {
+    ID: string;
+    Email: string;
+    AdminSetName: string;
+    Domain: string;
+    IsDisabled: boolean;
+    IsArchived: boolean;
+    IsSuspended: boolean;
+    FirstName: string;
+    LastName: string;
+    TotalQuota: number;
+    UsedQuota: number;
+    ProductQuotas: {
+        Mail: number;
+    };
+}
+
+export type ApiImporterProduct = 'Mail' | 'Contacts' | 'Calendar';
+
+export interface ApiImporterOrganization {
+    AdminUserID: string;
+    CreateTime: string;
+    DomainName: string;
+    ExternalCustomerID: string;
+    ImporterConfig: {
+        Products: ApiImporterProduct[];
+    };
+    ImporterOrganizationID: string;
+    ModifyTime: string;
+    OrganizationID: string;
+    Provider: ApiImportProvider;
+}
+
+export interface ApiCreateImporterOrganization {
+    Provider: ApiImportProvider;
+    Products: ApiImporterProduct[];
+}
+
+export interface ApiCreateImporterOrganizationMigration {
+    ImporterOrganizationId: string;
+    UserIds: string[];
+}

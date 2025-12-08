@@ -6,22 +6,31 @@ import {
     type OAuthProps,
 } from '@proton/activation/src/interface';
 import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
+import { GSUITE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
+import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { useFlag } from '@proton/unleash';
 
-import { generateGoogleOAuthUrl, getOAuthAuthorizationUrl, getOAuthRedirectURL } from './useOAuthPopup.helpers';
+import {
+    generateGoogleOAuthParams,
+    generateGoogleOAuthUrl,
+    getOAuthAuthorizationUrl,
+    getOAuthRedirectURL,
+} from './useOAuthPopup.helpers';
 
 interface Props {
     errorMessage: string;
 }
 
 interface GoogleOAuth {
-    provider: ImportProvider.GOOGLE | OAUTH_PROVIDER.GOOGLE;
+    provider: ImportProvider.GOOGLE | OAUTH_PROVIDER.GOOGLE | OAUTH_PROVIDER.GSUITE;
     features: EASY_SWITCH_FEATURES[];
     loginHint?: string;
 }
 
 interface GenericOAuth {
-    provider: Exclude<ImportProvider, ImportProvider.GOOGLE> | Exclude<OAUTH_PROVIDER, OAUTH_PROVIDER.GOOGLE>;
+    provider:
+        | Exclude<ImportProvider, ImportProvider.GOOGLE>
+        | Exclude<OAUTH_PROVIDER, OAUTH_PROVIDER.GOOGLE | OAUTH_PROVIDER.GSUITE>;
     scope: string;
 }
 
@@ -40,16 +49,31 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         let authorizationUrl;
         const redirectUri = getOAuthRedirectURL(provider);
 
-        if (provider === ImportProvider.GOOGLE || provider === OAUTH_PROVIDER.GOOGLE) {
-            const { loginHint, features } = args;
-            authorizationUrl = generateGoogleOAuthUrl({ loginHint, features, redirectUri });
-        } else {
-            if (!config) {
-                return;
+        switch (provider) {
+            case ImportProvider.GOOGLE:
+            case OAUTH_PROVIDER.GOOGLE: {
+                const { loginHint, features } = args;
+                authorizationUrl = generateGoogleOAuthUrl({ loginHint, features, redirectUri });
+                break;
             }
-            const { scope } = args as GenericOAuth;
+            case OAUTH_PROVIDER.GSUITE: {
+                const { loginHint, features } = args;
+                authorizationUrl = `${createUrl(
+                    GSUITE_OAUTH_PATH,
+                    generateGoogleOAuthParams({ loginHint, features, redirectUri }),
+                    window.location.origin
+                )}`;
+                break;
+            }
+            default: {
+                if (!config) {
+                    return;
+                }
+                const { scope } = args as GenericOAuth;
 
-            authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, consentExperiment });
+                authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, consentExperiment });
+                break;
+            }
         }
 
         void openOAuthPopup({ authorizationUrl, redirectUri, provider, callback, errorMessage });
