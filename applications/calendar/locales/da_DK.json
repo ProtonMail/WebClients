@@ -3937,10 +3937,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller ciffer"
+        "Brugernavn skal begynde med et bogstav eller tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller ciffer"
+        "Brugernavn skal ende på et bogstav eller tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -3978,6 +3978,9 @@
       ],
       "Location is required": [
         "Placering er påkrævet"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan ikke oprette en reservation med en deaktiveret adresse"
       ]
     },
     "error": {
@@ -6451,6 +6454,24 @@
       ],
       "This booking page cannot be edited, the associated calendar is disabled": [
         "Booking siden kan ikke redigeres, den tilknyttede kalender er deaktiveret"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "De har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11308,7 +11329,7 @@
         "Kontogendannelse"
       ],
       "Account restricted": [
-        "Konto begrænset:"
+        "Kontoen har begrænsninger"
       ],
       "Account security": [
         "Kontosikkerhed"
@@ -12024,6 +12045,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4046,6 +4046,9 @@
       ],
       "Location is required": [
         "Poloha je povinná"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Nie je možné vytvoriť rezerváciu s deaktivovanou adresou"
       ]
     },
     "error": {
@@ -6619,6 +6622,24 @@
       ],
       "This booking page cannot be edited, the associated calendar is disabled": [
         "Túto rezervačnú stránku nie je možné upraviť, pridružený kalendár je deaktivovaný"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, požiadajte svojho správcu, aby zvýšil úroveň vášho plánu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, zvýšte úroveň svojho plánu."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -12448,6 +12469,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Cannot create more Booking pages": [
+        "Nemožno vytvoriť viac rezervačných stránok"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

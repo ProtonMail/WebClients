@@ -4046,6 +4046,9 @@
       ],
       "Location is required": [
         "Poloha je povinná"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Nelze vytvořit rezervaci se zakázanou adresou"
       ]
     },
     "error": {
@@ -6594,7 +6597,7 @@
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
       ],
       "Cannot create a range across days.": [
-        "Nelze vytvořit rozsah rezervace zahrnující několik dní."
+        "Nelze vytvořit rozsah rezervace přesahující několik dní."
       ],
       "Cannot create a range in the past.": [
         "Nelze vytvořit rozsah rezervace v minulosti."
@@ -6619,6 +6622,24 @@
       ],
       "When can appointments be booked?": [
         "Kdy je možné rezervovat schůzky?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požádejte svého správce o navýšení tarifu nebo o odebrání stránky z postranního panelu stránek rezervací."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pro přidání nové rezervační stránky požádejte svého správce o navýšení vašeho tarifu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pro přidání nové rezervační stránky odeberte některou z těch stávajících z bočního panelu rezervačních stránek."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pro přidání nové rezervační stránky navyšte svůj tarif."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosáhli jste maximálního počtu rezervačních stránek dostupných ve vašem tarifu."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -12448,6 +12469,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Cannot create more Booking pages": [
+        "Nelze vytvořit další rezervační stránky"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

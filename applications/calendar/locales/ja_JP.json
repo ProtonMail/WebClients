@@ -2858,6 +2858,12 @@
       ],
       "event": [
         "予定"
+      ],
+      "Ends after": [
+        "終了:"
+      ],
+      "Ends on": [
+        "終了:"
       ]
     },
     "customer_support.feature.all": {
@@ -3935,6 +3941,9 @@
       ],
       "Location is required": [
         "位置情報は必須です"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "無効化されているアドレスでは予約を作成できません"
       ]
     },
     "error": {
@@ -6343,6 +6352,33 @@
       ],
       "Range overlaps with an existing range.": [
         "範囲が既存の範囲と重複しています。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
+      ],
+      "Loading appointments...": [
+        "予約を読み込み中…"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "利用可能なカレンダーがありません、予約ページを削除してください。"
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "この予約ページは編集できません、関連づけられたカレンダーが無効化されています"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "新し予約ページを追加するには、お客様のプランをアップグレードしてください。"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "このプランで利用できる予約ページの最大数に達しました。"
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
       ]
     },
     "info": {
@@ -7034,6 +7070,12 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "リンクをコピーするか、いつでもこちらからお客様のページを管理できます。"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "お客様と日程を調整できる共有ページを作成します。"
       ]
     },
     "label": {
@@ -7260,7 +7302,7 @@
         "もっと詳しく"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+        "${ BRAND_NAME }を利用し続けるには、プレミアム機能が使用中でないことを確認するか、プランをアップグレードしてください。"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -11388,7 +11430,7 @@
         "ホスト"
       ],
       "How does it all work?": [
-        "どのように機能しますか？"
+        "そもそもどんな仕組みでこんなことが？"
       ],
       "How does it work?": [
         "どのように動作しますか?"
@@ -11776,6 +11818,15 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Cannot create more Booking pages": [
+        "予約ページはこれ以上作成できません"
+      ],
+      "Introducing booking pages": [
+        "予約ページのご紹介です"
+      ],
+      "Your booking pages live here": [
+        "予約ページはこちらです"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

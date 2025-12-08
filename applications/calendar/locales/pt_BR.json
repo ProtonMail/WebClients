@@ -6445,6 +6445,9 @@
       ],
       "This booking page cannot be edited, the associated calendar is disabled": [
         "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
