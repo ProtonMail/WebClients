@@ -14,6 +14,7 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useApi from '../../hooks/useApi';
+import useErrorHandler from '../../hooks/useErrorHandler';
 import type { NetPromoterScoreModalProps } from './interface';
 
 export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalProps) => {
@@ -21,12 +22,17 @@ export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalPro
     const [openModal, setOpenModal] = useState(show);
     const [loadingByKey, withLoadingByKey] = useLoadingByKey();
     const [optionalComment, setOptionalComment] = useState('');
+    const errorHandler = useErrorHandler();
     const api = useApi();
 
     const [selectedScale, setSelectedScale] = useState<number | undefined>(undefined);
 
     const dismissNPSModal = async () => {
-        await api(dismissNps());
+        try {
+            await api(dismissNps());
+        } catch (error) {
+            errorHandler(error);
+        }
         setOpenModal(false);
     };
 
@@ -35,8 +41,12 @@ export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalPro
             return;
         }
 
-        await api(submitNps({ Score: selectedScale, Comment: optionalComment }));
-        setOpenModal(false);
+        try {
+            await api(submitNps({ Score: selectedScale, Comment: optionalComment }));
+            setOpenModal(false);
+        } catch (error) {
+            errorHandler(error);
+        }
     };
 
     return (
