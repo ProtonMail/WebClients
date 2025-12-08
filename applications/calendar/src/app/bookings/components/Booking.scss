@@ -82,6 +82,50 @@ body:has(.booking-main-container) {
 		}
 	}
 
+	&-time-slot-grid .booking-time-slot-grid-list {
+		animation: slotReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+		@keyframes slotReveal {
+			0% {
+				opacity: 0;
+				transform: translateY(12px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		&[data-index='0'] {
+			animation-delay: 0s;
+		}
+
+		&[data-index='1'] {
+			animation-delay: 0.05s;
+		}
+
+		&[data-index='2'] {
+			animation-delay: 0.1s;
+		}
+
+		&[data-index='3'] {
+			animation-delay: 0.15s;
+		}
+
+		&[data-index='4'] {
+			animation-delay: 0.2s;
+		}
+
+		&[data-index='5'] {
+			animation-delay: 0.25s;
+		}
+
+		&[data-index='6'] {
+			animation-delay: 0.3s;
+		}
+	}
+
 	&-button-slot-outline {
 		--button-default-border-color: #e2dbff;
 
