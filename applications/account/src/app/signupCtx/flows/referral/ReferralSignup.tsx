@@ -32,7 +32,6 @@ type Step = 'account-details' | 'payment' | 'recovery' | 'display-name' | 'creat
 
 const ReferralSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
-    const history = useHistory();
 
     const signup = useSignup();
 
@@ -48,9 +47,6 @@ const ReferralSignupInner = () => {
         <>
             {step === 'account-details' && (
                 <AccountDetailsStep
-                    onBack={() => {
-                        history.goBack();
-                    }}
                     onSuccess={async () => {
                         if (plansRequiringPaymentToken.includes(payments.selectedPlan.name as SupportedReferralPlans)) {
                             setStep('payment');

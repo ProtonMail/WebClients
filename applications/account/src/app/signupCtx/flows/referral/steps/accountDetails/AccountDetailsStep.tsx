@@ -1,7 +1,10 @@
+import { useHistory, useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { Aside } from '../../components/Layout/Aside';
 import { Footer } from '../../components/Layout/Footer';
@@ -12,7 +15,10 @@ import { Wrapper } from '../../components/Layout/Wrapper';
 import { PricingCard } from '../../components/PricingCard/PricingCard';
 import AccountDetailsForm from './AccountDetailsForm';
 
-const AccountDetailsStep = ({ onBack, onSuccess }: { onBack: () => void; onSuccess: () => Promise<void> }) => {
+const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) => {
+    const history = useHistory();
+    const location = useLocation();
+
     return (
         <Layout>
             <Header showSignIn />
@@ -20,7 +26,12 @@ const AccountDetailsStep = ({ onBack, onSuccess }: { onBack: () => void; onSucce
             <Wrapper minHeight="calc(100vh - 4.25rem - 4rem)">
                 <Main>
                     <Button
-                        onClick={onBack}
+                        onClick={() => {
+                            history.push({
+                                pathname: SSO_PATHS.REFERAL_PLAN_SELECTION,
+                                search: location.search,
+                            });
+                        }}
                         shape="ghost"
                         size="small"
                         className="inline-flex gap-1 items-center self-start ml-custom"
