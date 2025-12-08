@@ -12,7 +12,6 @@ import { SearchService, type SearchResult } from '../../../services/searchServic
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import type { Attachment } from '../../../types';
 import { FileContentModal } from '../Files/KnowledgeBase/FileContentModal';
-import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { getProjectCategory } from '../../projects/constants';
 
 import './SearchModal.scss';
@@ -108,9 +107,6 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                 onClick={handleClick}
                 title={c('Action').t`Open file preview`}
             >
-                <div className="search-result-icon">
-                    <Icon name="speech-bubble" size={4} className="var(--text-norm)" />
-                </div>
                 <div className="search-result-content">
                     <div className="search-result-title">
                         {highlightText(result.documentName || '', query)}
@@ -160,21 +156,13 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
         );
     }
 
-    // Use project icon if conversation is in a project, otherwise use speech bubble
-    const mainIconCategory = (result.type === 'conversation' || result.type === 'message') && result.projectIcon
-        ? getProjectCategoryInfo(result.projectIcon)
-        : null;
-    const mainIconName = mainIconCategory ? 'folder-filled' : 'speech-bubble';
-
     return (
         <button
             className="search-result-item"
             onClick={handleClick}
             title={c('Action').t`Open conversation`}
         >
-            <div className="search-result-icon">
-                <Icon name={mainIconName as any} size={4} className={"color-norm"} />
-            </div>
+
             <div className="search-result-content">
                 {result.projectName && (
                     <div className="search-result-preview search-result-folder-path">
@@ -204,16 +192,24 @@ interface SearchModalInnerProps {
 
 const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     const history = useHistory();
-    const state = useLumoSelector((state) => state);
+    // Select only the slices needed for search; memoize to keep stable references
+    const conversations = useLumoSelector((state) => state.conversations);
+    const messages = useLumoSelector((state) => state.messages);
+    const spaces = useLumoSelector((state) => state.spaces);
+    const searchState = React.useMemo(
+        () => ({ conversations, messages, spaces }),
+        [conversations, messages, spaces]
+    );
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>([]);
     const [isSearching, setIsSearching] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [documentPreview, setDocumentPreview] = useState<Attachment | null>(null);
     const [isLoadingPreview] = useState(false);
-    const { downloadFile } = useDriveSDK();
     const searchInputRef = useRef<HTMLInputElement>(null);
     const searchTimeoutRef = useRef<NodeJS.Timeout>();
+    // Guard against double-invocation in React 18 StrictMode (dev) to prevent duplicate loads
+    const hasLoadedOnceRef = useRef(false);
 
     // Load all conversations on mount and when query is cleared
     const loadAllConversations = useCallback(async () => {
@@ -222,7 +218,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         try {
             const searchService = SearchService.get();
-            const allConversations = await searchService.getAllConversations(state);
+            const allConversations = await searchService.getAllConversations(searchState);
             setResults(allConversations);
         } catch (err) {
             console.error('[SearchModal] Failed to load conversations:', err);
@@ -231,11 +227,14 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [state]);
+    }, [searchState]);
 
     // Load conversations on mount
     useEffect(() => {
+        if (hasLoadedOnceRef.current) return;
+        hasLoadedOnceRef.current = true;
         loadAllConversations();
+        // loadAllConversations depends on memoized searchState slices; only reruns when they change
     }, [loadAllConversations]);
 
     // Focus search input on mount
@@ -259,7 +258,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 
         try {
             const searchService = SearchService.get();
-            const searchResults = await searchService.searchAsync(searchQuery, state);
+            const searchResults = await searchService.searchAsync(searchQuery, searchState);
             setResults(searchResults);
         } catch (err) {
             console.error('[SearchModal] Search failed:', err);
@@ -268,7 +267,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [state, loadAllConversations]);
+    }, [searchState, loadAllConversations]);
 
     // Handle search input changes with debouncing
     const handleSearchChange = (value: string) => {
@@ -302,7 +301,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             
             onClose();
         }
-    }, [history, onClose, results, downloadFile]);
+    }, [history, onClose]);
 
     // Keyboard navigation
     const handleKeyDown = (e: React.KeyboardEvent) => {
