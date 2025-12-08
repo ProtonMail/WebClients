@@ -45,12 +45,12 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
             </div>
             <div className="flex-1">
                 <h2 className="m-0 text-semibold text-rg booking-color-title">{title}</h2>
-                <p
-                    className="m-0 text-break max-w-full booking-success-item-data"
+                <div
+                    className="text-break max-w-full booking-success-item-data"
                     title={typeof data === 'string' ? data : ''}
                 >
                     {data}
-                </p>
+                </div>
             </div>
         </div>
     );
