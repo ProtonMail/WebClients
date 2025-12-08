@@ -4,17 +4,13 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
-import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
-
-import { getMimeTypeFromExtension } from '../../../util/filetypes';
 
 import { useFileMentionAutocomplete, type DriveSDKFunctions } from './hooks/useFileMentionAutocomplete';
 import type { SpaceId, Message } from '../../../types';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
+import { FileMentionComponent } from './FileMentionComponent';
 
 export interface ComposerEditorAreaProps {
     editor: any; // TipTap editor instance
@@ -67,6 +63,23 @@ export const ComposerEditorArea = ({
     const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId, messageChain, driveSDK);
     
     const [selectedIndex, setSelectedIndex] = useState(0);
+
+    // Stable refs for callbacks to avoid reattaching listeners unnecessarily
+    const selectFileRef = useRef(selectFile);
+    const closeMentionRef = useRef(closeMention);
+    const onSubmitRef = useRef(onSubmit);
+
+    useEffect(() => {
+        selectFileRef.current = selectFile;
+    }, [selectFile]);
+
+    useEffect(() => {
+        closeMentionRef.current = closeMention;
+    }, [closeMention]);
+
+    useEffect(() => {
+        onSubmitRef.current = onSubmit;
+    }, [onSubmit]);
     
     // Track previous isActive to detect when autocomplete opens
     const prevIsActiveRef = useRef(false);
@@ -118,25 +131,26 @@ export const ComposerEditorArea = ({
                     e.stopPropagation();
                     const fileToSelect = files[selectedIndex];
                     if (fileToSelect) {
-                        selectFile(fileToSelect);
+                        selectFileRef.current?.(fileToSelect);
                     }
                 } else if (!e.shiftKey) {
                     // No files to select, close mention and submit (desktop behavior)
                     e.preventDefault();
                     e.stopPropagation();
-                    closeMention();
-                    onSubmit();
+                    closeMentionRef.current?.();
+                    onSubmitRef.current?.();
                 }
             } else if (e.key === 'Escape') {
                 e.preventDefault();
                 e.stopPropagation();
-                closeMention();
+                closeMentionRef.current?.();
             }
         };
 
         editorElement.addEventListener('keydown', handleKeyDown, true);
         return () => editorElement.removeEventListener('keydown', handleKeyDown, true);
-    }, [editor, mentionState.isActive, files, selectedIndex, selectFile, closeMention, onSubmit]);
+    // Only depend on the values that affect keyboard handling; avoid reattaching on array identity changes
+    }, [editor, mentionState.isActive, files.length, selectedIndex]);
 
     return (
         <div
@@ -150,111 +164,13 @@ export const ComposerEditorArea = ({
                 style={{ '--max-h-custom': '13.125rem' /*210px*/ }}
             />
 
-            {/* File mention autocomplete dropdown */}
-            {mentionState.isActive && mentionState.position && files.length > 0 && (
-                <div
-                    className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] max-h-80 overflow-y-auto min-w-72 py-1"
-                    style={{
-                        top: `${mentionState.position.top}px`,
-                        left: `${mentionState.position.left}px`,
-                        maxWidth: `min(calc(100vw - ${mentionState.position.left + 16}px), 24rem)`,
-                    }}
-                >
-                    {files.map((file, index) => {
-                        const mimeType = file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
-                        const query = mentionState.query.toLowerCase();
-                        const fullPath = file.name;
-                        
-                        // Split path into folder and filename for better display
-                        const lastSlashIndex = fullPath.lastIndexOf('/');
-                        const folderPath = lastSlashIndex > 0 ? fullPath.substring(0, lastSlashIndex) : '';
-                        const fileName = lastSlashIndex > 0 ? fullPath.substring(lastSlashIndex + 1) : fullPath;
-                        
-                        // Highlight matching text
-                        const highlightText = (text: string, query: string): { text: string; isMatch: boolean }[] => {
-                            if (!query) {
-                                return [{ text, isMatch: false }];
-                            }
-                            
-                            const parts: { text: string; isMatch: boolean }[] = [];
-                            let lastIndex = 0;
-                            let searchIndex = 0;
-                            
-                            while (true) {
-                                const matchIndex = text.toLowerCase().indexOf(query, searchIndex);
-                                if (matchIndex === -1) {
-                                    // Add remaining text
-                                    if (lastIndex < text.length) {
-                                        parts.push({ text: text.slice(lastIndex), isMatch: false });
-                                    }
-                                    break;
-                                }
-                                
-                                // Add text before match
-                                if (matchIndex > lastIndex) {
-                                    parts.push({ text: text.slice(lastIndex, matchIndex), isMatch: false });
-                                }
-                                
-                                // Add matched text
-                                parts.push({ text: text.slice(matchIndex, matchIndex + query.length), isMatch: true });
-                                
-                                lastIndex = matchIndex + query.length;
-                                searchIndex = matchIndex + 1;
-                            }
-                            
-                            return parts.length > 0 ? parts : [{ text, isMatch: false }];
-                        };
-                        
-                        const highlightedFileNameParts = highlightText(fileName, query);
-                        const highlightedFolderParts = folderPath ? highlightText(folderPath, query) : [];
-                        
-                        return (
-                            <button
-                                key={`${file.source}-${file.id}`}
-                                type="button"
-                                className={`w-full text-left px-4 py-3 hover:bg-weak transition-colors flex items-center gap-3 ${
-                                    index === selectedIndex ? 'bg-weak' : ''
-                                }`}
-                                onClick={() => selectFile(file)}
-                                onMouseEnter={() => setSelectedIndex(index)}
-                            >
-                                {mimeType ? (
-                                    <FileIcon mimeType={mimeType} className="flex-shrink-0" size={3.5} />
-                                ) : (
-                                    <Icon name="file-lines" size={3.5} className="color-weak flex-shrink-0" />
-                                )}
-                                <div className="flex-1 min-w-0">
-                                    {folderPath && (
-                                        <div className="text-xs color-weak truncate mb-0.5">
-                                            {highlightedFolderParts.map((part, partIndex) => (
-                                                <span
-                                                    key={partIndex}
-                                                    className={part.isMatch ? 'font-medium color-primary' : ''}
-                                                >
-                                                    {part.text}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    )}
-                                    <div className="text-sm truncate">
-                                        {highlightedFileNameParts.map((part, partIndex) => (
-                                            <span
-                                                key={partIndex}
-                                                className={part.isMatch ? 'font-semibold color-primary' : ''}
-                                            >
-                                                {part.text}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                                {file.source === 'drive' && (
-                                    <IcBrandProtonDrive size={3} className="color-primary flex-shrink-0 opacity-70" />
-                                )}
-                            </button>
-                        );
-                    })}
-                </div>
-            )}
+            <FileMentionComponent
+                mentionState={mentionState}
+                files={files}
+                selectedIndex={selectedIndex}
+                setSelectedIndex={setSelectedIndex}
+                selectFile={selectFile}
+            />
 
             {canShowSendButton && (
                 <div className="flex flex-row self-end items-end gap-1 h-full shrink-0 composer-submit-button">

@@ -1,28 +1,25 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
-import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
-import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
-import { getAcceptAttributeString, isFileTypeSupported } from '../../../../util/filetypes';
-import { CircularProgress } from './CircularProgress';
-import { type BreadcrumbItem, DriveBreadcrumbs } from './DriveBreadcrumbs';
+import { getAcceptAttributeString } from '../../../../util/filetypes';
+import { type BreadcrumbItem } from './DriveBreadcrumbs';
 import { DriveBrowserHeader } from './DriveBrowserHeader';
+import { DriveContent } from './DriveContent';
 import { DriveErrorState } from './DriveErrorState';
-import { FileItemCard, type FileItemData } from './FileItemCard';
 import { type UploadProgress, UploadProgressOverlay } from './UploadProgressOverlay';
+
+export interface DriveBrowserHandle {
+    triggerUpload: () => void;
+    triggerRefresh: () => void;
+}
 
 interface DriveBrowserProps {
     onFileSelect: (file: DriveNode, content: Uint8Array<ArrayBuffer>) => void;
@@ -40,11 +37,9 @@ interface DriveBrowserProps {
     initialFolderName?: string; // Optional folder name for initialFolderId
     isLinkedFolder?: boolean; // When true, folder is linked to project - files are automatically active
     hideHeader?: boolean; // When true, hides the header (for project view)
-    onUploadTriggerRef?: React.MutableRefObject<(() => void) | null>; // Ref to expose upload trigger function
-    onRefreshTriggerRef?: React.MutableRefObject<(() => void) | null>; // Ref to expose refresh trigger function
 }
 
-export const DriveBrowser: React.FC<DriveBrowserProps> = ({
+export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(({
     onFileSelect,
     onError,
     onClose,
@@ -58,9 +53,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
     initialFolderName,
     isLinkedFolder = false,
     hideHeader = false,
-    onUploadTriggerRef,
-    onRefreshTriggerRef,
-}) => {
+}, ref) => {
     const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
     const { createNotification } = useNotifications();
     const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
@@ -421,29 +414,41 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
         fileInputRef.current?.click();
     }, []);
 
-    // Expose upload trigger function via ref if provided
-    useEffect(() => {
-        if (onUploadTriggerRef) {
-            onUploadTriggerRef.current = handleUploadButtonClick;
-        }
-        return () => {
-            if (onUploadTriggerRef) {
-                onUploadTriggerRef.current = null;
-            }
-        };
-    }, [onUploadTriggerRef, handleUploadButtonClick]);
+    // Expose imperative methods via ref
+    useImperativeHandle(ref, () => ({
+        triggerUpload: handleUploadButtonClick,
+        triggerRefresh: handleRefresh,
+    }), [handleUploadButtonClick, handleRefresh]);
 
-    // Expose refresh trigger function via ref if provided
-    useEffect(() => {
-        if (onRefreshTriggerRef) {
-            onRefreshTriggerRef.current = handleRefresh;
+    // Check if we can show the "Link Current Folder" option
+    const canLinkCurrentFolder = (() => {
+        const hasCurrentFolder = !!currentFolder;
+        const isInFolderSelectionMode = folderSelectionMode;
+        const hasSelectionCallback = !!onFolderSelect;
+        const hasRootFolderId = !!rootFolderId;
+        const isNotRootFolder = currentFolder?.nodeId !== rootFolderId;
+        
+        return hasCurrentFolder && 
+               isInFolderSelectionMode && 
+               hasSelectionCallback && 
+               hasRootFolderId && 
+               isNotRootFolder;
+    })();
+
+    const handleLinkCurrentFolder = useCallback(() => {
+        if (!currentFolder) return;
+        
+        // Prevent selecting the root folder
+        if (currentFolder.nodeId === rootFolderId) {
+            createNotification({
+                text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
+                type: 'error',
+            });
+            return;
         }
-        return () => {
-            if (onRefreshTriggerRef) {
-                onRefreshTriggerRef.current = null;
-            }
-        };
-    }, [onRefreshTriggerRef, handleRefresh]);
+        
+        onFolderSelect?.(currentFolder);
+    }, [currentFolder, rootFolderId, onFolderSelect, createNotification]);
 
     // Check for errors from both SDK and local initialization
     const displayError = error || localError;
@@ -472,21 +477,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                     isRefreshing={isRefreshing}
                     hasCurrentFolder={!!currentFolder}
                     folderSelectionMode={folderSelectionMode}
-                    onLinkCurrentFolder={
-                        currentFolder && folderSelectionMode && onFolderSelect && rootFolderId && currentFolder.nodeId !== rootFolderId
-                            ? () => {
-                                  // Prevent selecting the root folder
-                                  if (currentFolder.nodeId === rootFolderId) {
-                                      createNotification({
-                                          text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
-                                          type: 'error',
-                                      });
-                                      return;
-                                  }
-                                  onFolderSelect(currentFolder);
-                              }
-                            : undefined
-                    }
+                    onLinkCurrentFolder={canLinkCurrentFolder ? handleLinkCurrentFolder : undefined}
                     currentFolderName={currentFolder?.name}
                 />
             )}
@@ -514,256 +505,25 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
             )}
 
             {isInitialized && currentFolder && !uploadProgress && (
-                <>
-                    <DriveBreadcrumbs
-                        breadcrumbs={breadcrumbs}
-                        currentFolder={currentFolder}
-                        onBreadcrumbClick={handleBreadcrumbClick}
-                    />
-
-                    <div className="flex-1 overflow-auto h-full" style={{ minHeight: '40vh' }}>
-                        {loading ? (
-                            <div className="flex-1 items-center justify-center h-full">
-                                <Loader size={'medium'} />
-                                <p className={'text-center'}>{c('collider_2025: Info').t`Loading`}...</p>
-                            </div>
-                        ) : children.length === 0 ? (
-                            <div className="text-center py-8 text-gray-500">
-                                <img
-                                    className="w-custom h-custom mx-auto mt-6 mb-6"
-                                    src={lumoDrive}
-                                    alt="Lumo + Proton Drive"
-                                    style={{ '--w-custom': '11.5rem' }}
-                                />
-                                <p>{c('collider_2025: Info').t`This folder is empty`}</p>
-
-                                <Button
-                                    onClick={handleUploadButtonClick}
-                                    size="medium"
-                                    color="norm"
-                                    disabled={loading || isRefreshing || !currentFolder}
-                                    title={c('collider_2025: Action').t`Upload file and add to knowledge base`}
-                                >
-                                    <IcArrowUpLine /> {c('collider_2025: Action').t`Upload a file`}
-                                </Button>
-                            </div>
-                        ) : (
-                            <>
-                                {(() => {
-                                    const filteredChildren = children.filter((child) => {
-                                        if (child.type === 'folder') {
-                                            return true;
-                                        }
-
-                                        // Filter out all Proton files (docs, sheets, etc.) as they can't be processed yet
-                                        if (
-                                            child.type === 'file' &&
-                                            child.mediaType?.startsWith('application/vnd.proton')
-                                        ) {
-                                            return false;
-                                        }
-
-                                        // Filter out unsupported file types using centralized function
-                                        if (!isFileTypeSupported(child.name, child.mimeType)) {
-                                            return false;
-                                        }
-
-                                        return true;
-                                    });
-
-                                    const hiddenProtonDocsCount = children.filter(
-                                        (child) =>
-                                            child.type === 'file' &&
-                                            child.mediaType?.startsWith('application/vnd.proton')
-                                    ).length;
-
-                                    const hiddenUnsupportedCount = children.filter(
-                                        (child) =>
-                                            child.type === 'file' &&
-                                            !child.mediaType?.startsWith('application/vnd.proton') &&
-                                            !isFileTypeSupported(child.name, child.mimeType)
-                                    ).length;
-
-                                    return (
-                                        <>
-                                            {(hiddenProtonDocsCount > 0 || hiddenUnsupportedCount > 0) && (
-                                                <div className="mb-3 p-3 bg-weak rounded border border-weak">
-                                                    <div className="flex items-center gap-2 text-sm color-weak">
-                                                        <Icon name="info-circle" size={4} />
-                                                        <div className="flex flex-col">
-                                                            {hiddenProtonDocsCount > 0 && (
-                                                                <span>
-                                                                    {hiddenProtonDocsCount}{' '}
-                                                                    {hiddenProtonDocsCount > 1
-                                                                        ? c('collider_2025: Info')
-                                                                              .t` ${BRAND_NAME} files are hidden (not supported yet)`
-                                                                        : c('collider_2025: Info')
-                                                                              .t` ${BRAND_NAME} file is hidden (not supported yet)`}
-                                                                </span>
-                                                            )}
-                                                            {hiddenUnsupportedCount > 0 && (
-                                                                <span>
-                                                                    {hiddenUnsupportedCount}{' '}
-                                                                    {hiddenUnsupportedCount > 1
-                                                                        ? c('collider_2025: Info')
-                                                                              .t` files are hidden (unsupported file types)`
-                                                                        : c('collider_2025: Info')
-                                                                              .t` file is hidden (unsupported file type)`}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {filteredChildren.length === 0 &&
-                                            (hiddenProtonDocsCount > 0 || hiddenUnsupportedCount > 0) ? (
-                                                <div className="text-center py-8 text-gray-500">
-                                                    <p>No supported files in this folder</p>
-                                                </div>
-                                            ) : (
-                                                filteredChildren
-                                                    .sort((a, b) => {
-                                                        // Sort folders first, then files
-                                                        if (a.type === 'folder' && b.type !== 'folder') {
-                                                            return -1;
-                                                        }
-                                                        if (a.type !== 'folder' && b.type === 'folder') {
-                                                            return 1;
-                                                        }
-                                                        // Within the same type, sort alphabetically by name (case-insensitive)
-                                                        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-                                                    })
-                                                    .map((child) => {
-                                                        const fileData: FileItemData = {
-                                                            id: child.nodeId,
-                                                            name: child.name,
-                                                            mimeType: child.mimeType,
-                                                            size: child.size,
-                                                            type: child.type,
-                                                            downloadProgress:
-                                                                downloadingFile === child.nodeId
-                                                                    ? downloadProgress || undefined
-                                                                    : undefined,
-                                                        };
-
-                                                        // Check if file already exists in knowledge base
-                                                        const fileExists = existingFiles.some(
-                                                            (existing) => existing.filename === child.name
-                                                        );
-
-                                                        // Estimate if file is too large for preview (roughly 150k tokens ≈ 600-750KB)
-                                                        const estimatedTooLargeForPreview =
-                                                            child.size && child.size > 750 * 1024; // 750KB threshold
-
-                                                        // Check if file exceeds our 10MB upload limit
-                                                        const exceedsFileSizeLimit =
-                                                            child.size && child.size > MAX_FILE_SIZE;
-
-                                                        const getActionIcon = () => {
-                                                            if (fileExists) {
-                                                                return () => <IcCheckmarkCircle />;
-                                                            }
-                                                            if (exceedsFileSizeLimit) {
-                                                                return () => (
-                                                                    <Icon
-                                                                        name="exclamation-triangle-filled"
-                                                                        className="color-danger"
-                                                                        size={4}
-                                                                    />
-                                                                );
-                                                            }
-                                                            if (estimatedTooLargeForPreview) {
-                                                                return () => (
-                                                                    <Icon
-                                                                        name="exclamation-triangle-filled"
-                                                                        className="color-warning"
-                                                                        size={4}
-                                                                    />
-                                                                );
-                                                            }
-                                                            if (downloadingFile === child.nodeId) {
-                                                                return () => (
-                                                                    <CircularProgress
-                                                                        progress={fileData.downloadProgress || 0}
-                                                                        size={16}
-                                                                        className="text-primary"
-                                                                    />
-                                                                );
-                                                            }
-                                                            return () => <IcPlusCircle />;
-                                                        };
-
-                                                        // If folder is linked or in folder selection mode, don't show file actions
-                                                        const actions: any[] =
-                                                            child.type === 'file' && !isLinkedFolder && !folderSelectionMode
-                                                                ? [
-                                                                      {
-                                                                          icon: getActionIcon(),
-                                                                          label: fileExists
-                                                                              ? 'Already in KB'
-                                                                              : exceedsFileSizeLimit
-                                                                                ? 'Exceeds 10MB limit'
-                                                                                : estimatedTooLargeForPreview
-                                                                                  ? 'File too large'
-                                                                                  : downloadingFile === child.nodeId
-                                                                                    ? `Downloading (${Math.round(fileData.downloadProgress || 0)}%)`
-                                                                                    : 'Add to active',
-                                                                          onClick: (e: React.MouseEvent) => {
-                                                                              e.stopPropagation();
-                                                                              if (
-                                                                                  !fileExists &&
-                                                                                  !exceedsFileSizeLimit &&
-                                                                                  !estimatedTooLargeForPreview
-                                                                              ) {
-                                                                                  void handleFileClick(child);
-                                                                              }
-                                                                          },
-                                                                          disabled:
-                                                                              downloadingFile === child.nodeId ||
-                                                                              fileExists ||
-                                                                              exceedsFileSizeLimit ||
-                                                                              estimatedTooLargeForPreview,
-                                                                          loading: downloadingFile === child.nodeId,
-                                                                          variant: fileExists
-                                                                              ? 'secondary'
-                                                                              : exceedsFileSizeLimit
-                                                                                ? 'danger'
-                                                                                : estimatedTooLargeForPreview
-                                                                                  ? 'secondary'
-                                                                                  : 'primary',
-                                                                      },
-                                                                  ]
-                                                                : [];
-                                                        return (
-                                                            <FileItemCard
-                                                                key={child.nodeId}
-                                                                file={fileData}
-                                                                actions={actions}
-                                                                onClick={
-                                                                    child.type === 'folder'
-                                                                        ? () => handleFolderClick(child)
-                                                                        : child.type === 'file' &&
-                                                                            !fileExists &&
-                                                                            !exceedsFileSizeLimit &&
-                                                                            !estimatedTooLargeForPreview &&
-                                                                            !folderSelectionMode
-                                                                          ? () => handleFileClick(child)
-                                                                          : undefined
-                                                                }
-                                                                variant="simple"
-                                                            />
-                                                        );
-                                                    })
-                                            )}
-                                        </>
-                                    );
-                                })()}
-                            </>
-                        )}
-                    </div>
-                </>
+                <DriveContent
+                    loading={loading}
+                    isRefreshing={isRefreshing}
+                    children={children}
+                    currentFolder={currentFolder}
+                    breadcrumbs={breadcrumbs}
+                    existingFiles={existingFiles}
+                    downloadingFile={downloadingFile}
+                    downloadProgress={downloadProgress}
+                    onFileClick={handleFileClick}
+                    onFolderClick={handleFolderClick}
+                    onUpload={handleUploadButtonClick}
+                    isLinkedFolder={isLinkedFolder}
+                    folderSelectionMode={folderSelectionMode}
+                    handleBreadcrumbClick={handleBreadcrumbClick}
+                />
             )}
         </div>
     );
-};
+});
+
+DriveBrowser.displayName = 'DriveBrowser';
