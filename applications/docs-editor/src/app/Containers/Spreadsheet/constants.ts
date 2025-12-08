@@ -112,8 +112,12 @@ export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')
 
 const IMPLEMENTED_FUNCTION_NAMES = FormulaParser.getImplementedFunctionNames()
 const EXCLUDED_FUNCTION_DATATYPES = ['google']
+const EXCLUDED_FUNCTION_NAMES = ['webservice']
 export const FUNCTION_DESCRIPTIONS = functionDescriptions.filter(
-  (fn) => IMPLEMENTED_FUNCTION_NAMES.has(fn.title) && !EXCLUDED_FUNCTION_DATATYPES.includes(fn.datatype.toLowerCase()),
+  (fn) =>
+    IMPLEMENTED_FUNCTION_NAMES.has(fn.title) &&
+    !EXCLUDED_FUNCTION_DATATYPES.includes(fn.datatype.toLowerCase()) &&
+    !EXCLUDED_FUNCTION_NAMES.includes(fn.title.toLowerCase()),
 )
 
 export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {

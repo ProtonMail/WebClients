@@ -19,7 +19,8 @@ import { SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlagsDriveSheet } from '../../../flags/useFlagsDriveSheet';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useDocumentActions } from '../../../store/_documents';
-import screenshot from './sheetsScreenshot.webp';
+import video from './sheetsOnboardingVideo.webm';
+import initialFrame from './sheetsOnboardingVideoInitialFrame.webp';
 
 // TODO: Once this modal is removed, remove BasePage.ts close of the modal
 // Search for:
@@ -43,7 +44,20 @@ function SheetsOnboardingModal(modalProps: ModalProps) {
         <ModalTwo {...modalProps} size="large" data-testid="drive-sheets-onboarding">
             <ModalTwoHeader />
             <ModalTwoContent>
-                <img src={screenshot} alt={c('Label').t`A screenshot of ${SHEETS_APP_NAME}`} />
+                <video
+                    style={{
+                        backgroundImage: `url(${initialFrame})`,
+                        aspectRatio: '735992 / 409609',
+                        borderRadius: '1rem',
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        width: '100%',
+                    }}
+                    src={video}
+                    autoPlay
+                    muted
+                    playsInline
+                />
                 <div className="pt-6 px-8">
                     <h1 className="text-4xl text-bold">{c('Title').t`Introducing ${SHEETS_APP_NAME}`}</h1>
                     <p className="color-weak text-lg">
