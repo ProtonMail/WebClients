@@ -1,5 +1,5 @@
-import { Event, Input, WebContentsView } from "electron";
-import { getMainWindow, updateZoom } from "./viewManagement";
+import { Event, Input } from "electron";
+import { updateZoom } from "./viewManagement";
 import { isLinux, isWindows } from "../helpers";
 
 export function handleBeforeInput(event: Event, input: Input) {
@@ -15,18 +15,6 @@ export function handleBeforeInput(event: Event, input: Input) {
             event.preventDefault();
             updateZoom("in");
             return;
-        }
-    }
-
-    if (input.control && input.alt && input.shift && input.code === "KeyI") {
-        const mainWindow = getMainWindow();
-        // We need to force WebContentsView type here because getContentView() has a type bug.
-        const view = mainWindow.getContentView() as unknown as WebContentsView;
-
-        if (view) {
-            view.webContents.toggleDevTools();
-        } else {
-            mainWindow.webContents.toggleDevTools();
         }
     }
 }
