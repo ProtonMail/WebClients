@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useLoading } from '@proton/hooks';
+import { dismissNps } from '@proton/shared/lib/api/netPromoterScore';
 
 import ScaleLadder from '../../components/input/ScaleLadder';
 import Modal from '../../components/modalTwo/Modal';
@@ -11,16 +13,25 @@ import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
-import type { NPSModalProps } from './interface';
+import useApi from '../../hooks/useApi';
+import type { NetPromoterScoreModalProps } from './interface';
 
-export const NPSModal = ({ show, config }: NPSModalProps) => {
+export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalProps) => {
     // TODO: add telemetry
-    // TODO: add submit handlers
+    // TODO: add feedback submit handler
+    const [openModal, setOpenModal] = useState(show);
+    const [loading, withLoading] = useLoading();
+    const api = useApi();
 
     const [selectedScale, setSelectedScale] = useState<number | undefined>(undefined);
 
+    const dismissNPSModal = async () => {
+        await api(dismissNps());
+        setOpenModal(false);
+    };
+
     return (
-        <Modal size="large" fullscreenOnMobile open={show}>
+        <Modal size="large" fullscreenOnMobile open={openModal}>
             <ModalHeader title={c('Title').t`We'd love to hear from you!`} hasClose={false} />
             <ModalContent className="pt-4">
                 <p className="m-0 mt-6 mb-3 text-semibold">{c('new_plans: label')
@@ -43,9 +54,13 @@ export const NPSModal = ({ show, config }: NPSModalProps) => {
                 />
             </ModalContent>
             <ModalFooter>
-                <Button size="small" shape="ghost">{c('Action').t`Not now`}</Button>
+                <Button loading={loading} size="small" shape="ghost" onClick={() => withLoading(dismissNPSModal)}>{c(
+                    'Action'
+                ).t`Not now`}</Button>
                 <Button color="norm">{c('Action').t`Send Feedback`}</Button>
             </ModalFooter>
         </Modal>
     );
 };
+
+export default NetPromoterScoreModal;
