@@ -2,10 +2,10 @@ import type {
     BookingPageEditData,
     InternalBookingPage,
 } from 'applications/calendar/src/app/store/internalBooking/interface';
-import { areIntervalsOverlapping, differenceInMinutes, isBefore, subMinutes } from 'date-fns';
+import { areIntervalsOverlapping, differenceInMinutes, isBefore, isSameDay, subMinutes } from 'date-fns';
 
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
+import { convertUTCDateTimeToZone, fromUTCDate, getTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type {
     CalendarBootstrap,
@@ -62,7 +62,7 @@ export const computeInitialFormData = ({
     currentUTCDate,
     preferredCalendarID,
     recurring,
-    isMeetVideoConferenceEnabled,
+    canUseMeetLocation,
 }: {
     userSettings: UserSettings;
     calendarUserSettings?: CalendarUserSettings;
@@ -70,7 +70,7 @@ export const computeInitialFormData = ({
     currentUTCDate: Date;
     preferredCalendarID: string;
     recurring: boolean;
-    isMeetVideoConferenceEnabled: boolean;
+    canUseMeetLocation: boolean;
 }): InternalBookingFrom => {
     const timezone = calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
@@ -91,7 +91,7 @@ export const computeInitialFormData = ({
         recurring,
         summary: '',
         selectedCalendar: preferredCalendarID,
-        locationType: isMeetVideoConferenceEnabled ? BookingLocation.MEET : BookingLocation.IN_PERSON,
+        locationType: canUseMeetLocation ? BookingLocation.MEET : BookingLocation.IN_PERSON,
         duration,
         timezone,
         bookingRanges: fullSlotDuration,
@@ -136,13 +136,13 @@ export const computeEditFormData = ({
     bookingPageCalendar,
     bookingPage,
     editData,
-    isMeetVideoConferenceEnabled,
+    canUseMeetLocation,
     calendarUserSettings,
 }: {
     bookingPageCalendar: VisualCalendar;
     bookingPage: InternalBookingPage;
     editData: BookingPageEditData;
-    isMeetVideoConferenceEnabled: boolean;
+    canUseMeetLocation: boolean;
     calendarUserSettings?: CalendarUserSettings;
 }): InternalBookingFrom => {
     const firstSlot = editData.slots[0];
@@ -168,8 +168,8 @@ export const computeEditFormData = ({
         summary: bookingPage.summary,
         description: bookingPage.description,
         selectedCalendar: bookingPageCalendar.ID,
-        locationType: isMeetVideoConferenceEnabled ? locationType : BookingLocation.IN_PERSON,
-        location: isMeetVideoConferenceEnabled && bookingPage.withProtonMeetLink ? undefined : bookingPage.location,
+        locationType: canUseMeetLocation ? locationType : BookingLocation.IN_PERSON,
+        location: canUseMeetLocation && bookingPage.withProtonMeetLink ? undefined : bookingPage.location,
         timezone: timezone,
         recurring,
         duration,
@@ -181,30 +181,35 @@ export const validateRangeOperation = ({
     operation,
     start,
     end,
-    timezone,
     rangeId,
     existingRanges,
     excludeRangeId,
     recurring,
+    timezone,
 }: {
     operation: 'add' | 'update';
     start: Date;
     end: Date;
-    timezone: string;
     rangeId: string;
     existingRanges: BookingRange[];
     excludeRangeId?: string;
     recurring: boolean;
+    timezone: string;
 }): string | null => {
+    if (operation === 'add') {
+        if (!isSameDay(start, end)) {
+            return BookingErrorMessages.RANGE_MULTIPLE_DAYS;
+        }
+    }
+
     // Check if invalid duration (this typically happens with overlaps)
-    if (recurring && start.getTime() >= end.getTime()) {
+    if (recurring && !isBefore(start, end)) {
         return BookingErrorMessages.RANGE_OVERLAP;
     }
 
     // Check if trying to add/update in the past, not relevant for recurring bookings
-    if (operation === 'add' && !recurring) {
-        const now = new Date();
-        const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, timezone);
+    if (!recurring) {
+        const nowWithTz = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), timezone));
 
         if (isBefore(start, nowWithTz)) {
             return BookingErrorMessages.RANGE_IN_PAST;

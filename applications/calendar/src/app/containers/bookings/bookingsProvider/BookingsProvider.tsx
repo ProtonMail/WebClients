@@ -1,13 +1,18 @@
 import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { isBefore, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
+import { useUser } from '@proton/account/user/hooks';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -17,8 +22,12 @@ import type { BookingPageEditData, InternalBookingPage } from '../../../store/in
 import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
+import type { CalendarViewEvent } from '../../calendar/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
 import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from '../interface';
+import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
+import { UpsellBookings } from '../upsells/UpsellBookings';
+import { useBookingUpsell } from '../upsells/useBookingUpsell';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
 import {
@@ -40,6 +49,7 @@ import {
     getIsRecurringBookingsIntersection,
     getRangeDateStart,
     normalizeBookingRangeToTimeOfWeek,
+    splitMidnightRecurringSpanningRange,
 } from '../utils/range/rangeHelpers';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -49,16 +59,26 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const { notify } = useCalendarGlobalModals();
     const { createNotification } = useNotifications();
 
+    const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings] = useCalendarUserSettings();
     const [writeableCalendars = []] = useWriteableCalendars();
     const readCalendarBootstrap = useReadCalendarBootstrap();
+
+    const [allowedProducts] = useAllowedProducts();
 
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
     const isRecurringEnabled = useFlag('RecurringCalendarBookings');
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+
+    const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
+
+    // Upsell modals
+    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
+    const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
+    const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
@@ -92,7 +112,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             currentUTCDate,
             preferredCalendarID: defaultCalendarID,
             recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
-            isMeetVideoConferenceEnabled,
+            canUseMeetLocation,
         });
 
         setInternalForm(formData);
@@ -154,16 +174,70 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        const updatedRange: BookingRange = {
-            id: newRangeId,
-            start,
-            end,
-            timezone: oldRange.timezone,
-        };
+        // In the recurring scenario, the user can try to add ranges in future weeks
+        // To update the new range properly, dates needs to be normalized so that range is added to the current week
+        const isRecurring = formData.recurring;
+        const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start, userSettings.WeekStart) : start;
+        const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end, userSettings.WeekStart) : end;
 
-        const newBookingRanges = internalForm.bookingRanges
-            .map((range) => (range.id === oldRangeId ? updatedRange : range))
-            .sort((a, b) => a.start.getTime() - b.start.getTime());
+        let newBookingRanges;
+        // When moving a recurring slot to the end of the week with an overlap to the next day, we need to split it in 2 ranges
+        // E.g. when moving a range on Sunday evening, we need it to end at midnight and create one on Monday
+        if (isRecurring && isBefore(normalizedEnd, normalizedStart)) {
+            const { firstRange, secondRange } = splitMidnightRecurringSpanningRange({
+                oldRange,
+                normalizedStart,
+                normalizedEnd,
+                originalStart: start,
+            });
+
+            const validationErrorFirstRange = validateRangeOperation({
+                operation: 'update',
+                start: firstRange.start,
+                end: firstRange.end,
+                timezone: oldRange.timezone,
+                rangeId: firstRange.id,
+                existingRanges: internalForm.bookingRanges,
+                excludeRangeId: oldRangeId,
+                recurring: formData.recurring,
+            });
+            if (validationErrorFirstRange) {
+                createNotification({ text: validationErrorFirstRange });
+                return;
+            }
+
+            const validationErrorSecondRange = validateRangeOperation({
+                operation: 'update',
+                start: secondRange.start,
+                end: secondRange.end,
+                timezone: oldRange.timezone,
+                rangeId: secondRange.id,
+                existingRanges: internalForm.bookingRanges,
+                excludeRangeId: oldRangeId,
+                recurring: formData.recurring,
+            });
+
+            if (validationErrorSecondRange) {
+                createNotification({ text: validationErrorSecondRange });
+                return;
+            }
+
+            // Add new ranges and remove the old one
+            newBookingRanges = [...internalForm.bookingRanges, firstRange, secondRange]
+                .filter((range) => range.id !== oldRangeId)
+                .sort((a, b) => a.start.getTime() - b.start.getTime());
+        } else {
+            const updatedRange: BookingRange = {
+                id: newRangeId,
+                start: normalizedStart,
+                end: normalizedEnd,
+                timezone: oldRange.timezone,
+            };
+
+            newBookingRanges = internalForm.bookingRanges
+                .map((range) => (range.id === oldRangeId ? updatedRange : range))
+                .sort((a, b) => a.start.getTime() - b.start.getTime());
+        }
 
         setInternalForm((prev) => ({ ...prev, bookingRanges: newBookingRanges }));
     };
@@ -176,18 +250,32 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
-        const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start);
-        const end = intersectionRef.current?.end || data.end;
+        const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start, data.timezone);
+
+        const safeEnd = isBefore(data.end, start)
+            ? set(data.end, {
+                  month: start.getMonth(),
+                  date: start.getDate(),
+              })
+            : data.end;
+
+        const end = intersectionRef.current?.end || safeEnd;
 
         // In the recurring scenario, the user can try to add ranges in future weeks
         // To add the new range properly, dates needs to be normalized so that range is added to the current week
-        const isRecurring = formData.recurring;
-        const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start) : start;
-        const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end) : end;
+        const normalizedStart = formData.recurring
+            ? normalizeBookingRangeToTimeOfWeek(start, userSettings.WeekStart)
+            : start;
+        const normalizedEnd = formData.recurring ? normalizeBookingRangeToTimeOfWeek(end, userSettings.WeekStart) : end;
+
+        // Prevent adding timeslots with same start and end (and do not show an error in that case)
+        if (normalizedStart.getTime() === normalizedEnd.getTime()) {
+            intersectionRef.current = null;
+            return;
+        }
 
         const dataId = generateBookingRangeID(normalizedStart, normalizedEnd);
 
-        // Validate the operation using pure function
         const validationError = validateRangeOperation({
             operation: 'add',
             start: normalizedStart,
@@ -220,6 +308,22 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const openBookingSidebarCreation = (currentDate: Date) => {
+        const userReachedBookingLimit = shouldShowLimitModal();
+
+        if (userReachedBookingLimit.booking) {
+            setLimitModalOpen(true);
+            return;
+        }
+
+        if (userReachedBookingLimit.plan) {
+            if (user.canPay) {
+                setUpsellModalOpen(true);
+            } else {
+                setLimitModalOpen(true);
+            }
+            return;
+        }
+
         initializeFormData(currentDate);
         setBookingsState(BookingState.CREATE_NEW);
     };
@@ -235,7 +339,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             bookingPageCalendar,
             bookingPage,
             editData,
-            isMeetVideoConferenceEnabled,
+            canUseMeetLocation,
             calendarUserSettings,
         });
         setInternalForm(form);
@@ -274,6 +378,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                   start,
                   end,
                   bookingRanges: internalForm.bookingRanges,
+                  weekStart: userSettings.WeekStart,
               })
             : getIsBookingsIntersection({
                   start,
@@ -320,16 +425,21 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
     };
 
-    const getRangeAsCalendarViewEvents = (utcDate: Date) => {
+    const getRangeAsCalendarViewEvents = (utcDate: Date, temporaryEvent?: CalendarViewEvent) => {
         const selectedCalendar = writeableCalendars?.find((calendar) => calendar.ID === formData.selectedCalendar);
-        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate, userSettings).sort(
-            (a, b) => a.start.getTime() - b.start.getTime()
-        );
+        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate, userSettings)
+            .map((event) => {
+                if (event.uniqueId === temporaryEvent?.uniqueId) {
+                    return temporaryEvent;
+                }
+                return event;
+            })
+            .sort((a, b) => a.start.getTime() - b.start.getTime());
     };
 
-    const getRangesAsLayoutEvents = (utcDate: Date, days: Date[]) => {
+    const getRangesAsLayoutEvents = (utcDate: Date, days: Date[], temporaryEvent?: CalendarViewEvent) => {
         return splitTimeGridEventsPerDay({
-            events: getRangeAsCalendarViewEvents(utcDate),
+            events: getRangeAsCalendarViewEvents(utcDate, temporaryEvent),
             min: days[0],
             max: days[days.length - 1],
             totalMinutes: 24 * 60,
@@ -337,7 +447,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const value: BookingsContextValue = {
-        canCreateBooking: writeableCalendars.length > 0,
+        canCreateBooking: writeableCalendars.length > 0 && !loadingLimits,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         bookingsState,
         openBookingSidebarCreation,
@@ -355,7 +465,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         getRangesAsLayoutEvents,
     };
 
-    return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;
+    return (
+        <BookingsContext.Provider value={value}>
+            {children}
+            {renderUpsellModal && <UpsellBookings {...upsellModalProps} />}
+            {renderLimitModal && <BookingsLimitReached {...limitModalProps} />}
+        </BookingsContext.Provider>
+    );
 };
 
 export const useBookings = () => {

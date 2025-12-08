@@ -1,10 +1,11 @@
 import { addMinutes } from '@proton/shared/lib/date-fns-utc';
 
+import { isBookingSlotEvent } from '../../../containers/bookings/utils/calendar/calendarHelper';
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
 import { isBusySlotEvent } from '../../../helpers/busySlots';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
-import { getTargetIndex } from '../mouseHelpers/mathHelpers';
+import { getRelativePosition, getTargetIndex } from '../mouseHelpers/mathHelpers';
 import type { splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
 import { getKey } from '../splitTimeGridEventsPerDay';
 import { ACTIONS, TYPE } from './constants';
@@ -40,16 +41,16 @@ const getAutoScrollOptions = (titleEl: HTMLElement) => {
     };
 };
 
-const getType = (/* position, offset */) => {
-    /*
-    // Support removed for this because the handle needs to be stable
-    if (position <= offset) {
-        return DRAG_EVENT_TIME_UP;
+const getType = (position: number, offset: number, isBookingEvent: boolean) => {
+    // Only allow event "resize" on booking ranges
+    if (isBookingEvent) {
+        if (position <= offset) {
+            return DRAG_EVENT_TIME_UP;
+        }
+        if (position >= 1 - offset) {
+            return DRAG_EVENT_TIME_DOWN;
+        }
     }
-    if (position >= 1 - offset) {
-        return DRAG_EVENT_TIME_DOWN;
-    }
-     */
     return DRAG_EVENT_MOVE;
 };
 
@@ -454,16 +455,17 @@ export default ({
     if (!Array.isArray(eventsInDay) || targetIndex >= eventsInDay.length) {
         return;
     }
-    const { idx } = eventsInDay[targetIndex];
-    const event = events[idx];
+    const { id } = eventsInDay[targetIndex];
+    const event = events.find((event) => event.uniqueId === id);
     if (!event || isBusySlotEvent(event)) {
         return;
     }
-    // const eventNode = dayContainerNode.childNodes[targetIndex];
-    // const eventNodeRect = eventNode.getBoundingClientRect();
-    // const eventTargetPosition = getRelativePosition(e.pageY, eventNodeRect.top, eventNodeRect.height);
 
-    const type = getType(/* eventTargetPosition, 0.2 */);
+    const eventNode = dayContainerNode.childNodes[targetIndex] as HTMLElement;
+    const eventNodeRect = eventNode.getBoundingClientRect();
+    const eventTargetPosition = getRelativePosition(e.pageY, eventNodeRect.top, eventNodeRect.height);
+    const offset = isBookingSlotEvent(event) ? 0.1 : 0.2;
+    const type = getType(eventTargetPosition, offset, isBookingSlotEvent(event));
 
     const normalizedType =
         (type === DRAG_EVENT_TIME_UP && event.start.getUTCDate() !== day.getUTCDate()) ||
