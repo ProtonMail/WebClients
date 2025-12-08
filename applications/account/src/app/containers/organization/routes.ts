@@ -10,6 +10,7 @@ import {
     getHasVpnB2BPlan,
     hasAnyB2bBundle,
     hasBundleBiz2025,
+    hasBundlePro2024,
     hasVisionary,
     hasVpnBusiness,
     planSupportsSSO,
@@ -145,7 +146,7 @@ export const getOrganizationAppRoutes = ({
         // retention policies management is a B2B feature, only show if org is elligible for it
         isOrgActive &&
         isOrgConfigured &&
-        (hasBundleBiz2025(subscription) || hasVisionary(subscription));
+        (hasBundleBiz2025(subscription) || hasVisionary(subscription) || hasBundlePro2024(subscription));
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
