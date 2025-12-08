@@ -10,11 +10,12 @@ import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 
-interface PartDayBusyEventProps
-    extends Pick<
-        PartDayEventProps,
-        'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
-    > {
+import './PartDayBookingEvent.scss';
+
+interface PartDayBusyEventProps extends Pick<
+    PartDayEventProps,
+    'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
+> {
     event: CalendarViewEvent;
 }
 
@@ -83,9 +84,15 @@ export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDur
             isSelected={false}
             ref={eventRef}
             isLoaded
+            hideOverflow={false}
             eventPartDuration={eventPartDuration}
+            className="group-hover-opacity-container"
         >
-            <div data-testid="calendar-day-week-view:part-day-event" className="booking-cell h-full w-full">
+            <span
+                className="group-hover:opacity-100 group-hover:opacity-100-no-width booking-drag-handle absolute top-custom left-custom border bg-norm rounded-full border-2"
+                style={{ borderColor: 'var(--color-alt)', '--left-custom': '6px', '--top-custom': '-6px' }}
+            />
+            <div data-testid="calendar-day-week-view:part-day-event" className="booking-cell h-full w-full ">
                 <BookingSlots
                     start={event.start}
                     eventPartDuration={eventPartDuration}
@@ -93,6 +100,10 @@ export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDur
                     backgroundColor={event.data.calendarData.Color}
                 />
             </div>
+            <span
+                className="group-hover:opacity-100 group-hover:opacity-100-no-width booking-drag-handle absolute bottom-custom right-custom border bg-norm rounded-full border-2"
+                style={{ borderColor: 'var(--color-alt)', '--right-custom': '6px', '--bottom-custom': '-6px' }}
+            />
         </PartDayEventView>
     );
 };
