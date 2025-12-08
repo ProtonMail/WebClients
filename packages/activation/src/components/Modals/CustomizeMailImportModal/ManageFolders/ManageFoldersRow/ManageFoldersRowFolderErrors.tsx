@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -22,13 +22,13 @@ const ManageFoldersRowFolderErrors = ({ isSystemFolderChild, checked, errors }: 
         <div className="shrink-0 inline-flex self-center shrink-0 ml-2">
             {tooLong && (
                 <Tooltip title={trans.errorNameTooLong()} type={TooltipTypeEnum.Error}>
-                    <Icon tabIndex={-1} name="info-circle" className="color-danger" />
+                    <IcInfoCircle tabIndex={-1} className="color-danger" />
                 </Tooltip>
             )}
 
             {alreadyUsed && !tooLong && (
                 <Tooltip title={trans.errorNameAlreadyExists()} type={TooltipTypeEnum.Error}>
-                    <Icon tabIndex={-1} name="info-circle" className="color-danger" />
+                    <IcInfoCircle tabIndex={-1} className="color-danger" />
                 </Tooltip>
             )}
 
@@ -38,12 +38,12 @@ const ManageFoldersRowFolderErrors = ({ isSystemFolderChild, checked, errors }: 
                         .t`${BRAND_NAME} will merge all folders with the same name. To avoid this, change the names before import.`}
                     type={TooltipTypeEnum.Warning}
                 >
-                    <Icon tabIndex={-1} name="info-circle" className="color-warning" />
+                    <IcInfoCircle tabIndex={-1} className="color-warning" />
                 </Tooltip>
             )}
             {isSystemFolderChild && !mergeWarning && (
                 <Tooltip title={c('Tooltip').t`System subfolders will show up as separate folders in ${MAIL_APP_NAME}`}>
-                    <Icon tabIndex={-1} name="info-circle" />
+                    <IcInfoCircle tabIndex={-1} />
                 </Tooltip>
             )}
         </div>

@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { EditLabelModal, Field, Icon, Label, LabelStack, Row, useModalState } from '@proton/components';
+import { EditLabelModal, Field, Label, LabelStack, Row, useModalState } from '@proton/components';
 import type { LabelModel } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPen } from '@proton/icons/icons/IcPen';
 
 interface Props {
     label: Pick<LabelModel, 'Name' | 'Color' | 'Type'>;
@@ -19,7 +21,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                 <Label className="flex items-center">
                     {c('Label').t`Label messages as`}
                     <Tooltip title={c('Tooltip').t`Each imported email will have this label`}>
-                        <Icon name="info-circle" className="ml-2" />
+                        <IcInfoCircle className="ml-2" />
                     </Tooltip>
                 </Label>
                 <Field className="w-auto flex items-center flex-nowrap">
@@ -43,7 +45,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                             onClick={() => openEditLabelModal(true)}
                             data-testid="CustomizeModal:editLabel"
                         >
-                            <Icon name="pen" alt={c('Action').t`Edit label`} />
+                            <IcPen alt={c('Action').t`Edit label`} />
                         </Button>
                     </Tooltip>
                 </Field>
