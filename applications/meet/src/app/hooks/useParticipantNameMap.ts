@@ -60,19 +60,29 @@ export const useParticipantNameMap = () => {
 
             isFetchingRef.current = true;
 
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+                timeoutRef.current = null;
+            }
+
             if (countRef.current > PARTICIPANT_COUNT_THRESHOLD) {
                 const timeDiff = Date.now() - lastFetchTimestamp.current;
 
                 const timeout = Math.max(FETCH_TIME_CONSTRAINT_MS - timeDiff, 0);
 
-                timeoutRef.current = setTimeout(() => handleFetch(meetingLinkName), timeout);
+                timeoutRef.current = setTimeout(async () => {
+                    try {
+                        await handleFetch(meetingLinkName);
+                    } catch (error) {
+                        isFetchingRef.current = false;
+                    }
+                }, timeout);
             } else {
                 await handleFetch(meetingLinkName);
             }
         } catch (error) {
             // eslint-disable-next-line no-console
             console.error(error);
-        } finally {
             isFetchingRef.current = false;
         }
     };
