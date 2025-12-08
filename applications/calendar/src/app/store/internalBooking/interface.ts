@@ -35,6 +35,7 @@ export interface BookingPageEditData {
 
 export interface InternalBookingPageSliceInterface {
     bookingPages: InternalBookingPage[];
+    pageCount: number;
     bookingPageEditData?: BookingPageEditData;
 }
 
