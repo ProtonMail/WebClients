@@ -26,6 +26,20 @@ export const getEasySwitchFeaturesFromProducts = (importTypes: ImportType[]) => 
     return features;
 };
 
+export const generateGoogleOAuthParams = ({
+    redirectUri,
+    loginHint,
+    features,
+}: {
+    redirectUri: string;
+    loginHint?: string;
+    features: EASY_SWITCH_FEATURES[];
+}) => ({
+    proton_feature: features,
+    redirect_uri: redirectUri,
+    loginHint: loginHint ? loginHint : undefined,
+});
+
 export const generateGoogleOAuthUrl = ({
     redirectUri,
     loginHint,
@@ -37,11 +51,7 @@ export const generateGoogleOAuthUrl = ({
 }) => {
     return createUrl(
         GOOGLE_OAUTH_PATH,
-        {
-            proton_feature: features,
-            redirect_uri: redirectUri,
-            loginHint: loginHint ? loginHint : undefined,
-        },
+        generateGoogleOAuthParams({ redirectUri, loginHint, features }),
         window.location.origin
     ).toString();
 };
@@ -59,7 +69,11 @@ const generateZoomOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentCon
 export const getOAuthRedirectURL = (provider: ImportProvider | OAUTH_PROVIDER) => {
     const { protocol, host } = window.location;
 
-    if (provider === ImportProvider.GOOGLE || provider === OAUTH_PROVIDER.GOOGLE) {
+    if (
+        provider === ImportProvider.GOOGLE ||
+        provider === OAUTH_PROVIDER.GOOGLE ||
+        provider === OAUTH_PROVIDER.GSUITE
+    ) {
         return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
     }
 
@@ -118,6 +132,8 @@ export const getProviderNumber = (provider: ImportProvider | OAUTH_PROVIDER) => 
             return OAUTH_PROVIDER.OUTLOOK;
         case OAUTH_PROVIDER.ZOOM:
             return OAUTH_PROVIDER.ZOOM;
+        case OAUTH_PROVIDER.GSUITE:
+            return OAUTH_PROVIDER.GSUITE;
         default:
             throw new Error('Provider does not exist');
     }
