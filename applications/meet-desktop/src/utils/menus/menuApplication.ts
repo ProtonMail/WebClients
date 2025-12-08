@@ -55,22 +55,6 @@ export const setApplicationMenu = () => {
             key: "view",
             submenu: [
                 {
-                    label: c("App menu").t`Toggle Developer Tools`,
-                    accelerator: "CmdOrCtrl+Shift+I",
-                    click: () => {
-                        const mainWindow = getMainWindow();
-                        if (mainWindow) {
-                            // We need to force WebContentsView type here because getContentView() has a type bug.
-                            const view = mainWindow.getContentView() as unknown as WebContentsView;
-                            if (view) {
-                                view.webContents.toggleDevTools();
-                            } else {
-                                mainWindow.webContents.toggleDevTools();
-                            }
-                        }
-                    },
-                },
-                {
                     label: c("App menu").t`Reload`,
                     accelerator: "CmdOrCtrl+R",
                     click: () => {

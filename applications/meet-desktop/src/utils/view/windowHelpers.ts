@@ -62,7 +62,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         show: false,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: true,
+            devTools: false,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             // Security additions
             session: appSession(),
