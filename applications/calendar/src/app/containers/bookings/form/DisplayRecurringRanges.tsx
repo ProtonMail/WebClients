@@ -72,6 +72,7 @@ export const DisplayRecurringRanges = ({
                                         range={range}
                                         duration={formData.duration}
                                         onChange={(value) => onStartChange(range, value)}
+                                        recurring
                                     />
                                 </div>
                                 <div className="m-0">
@@ -81,6 +82,7 @@ export const DisplayRecurringRanges = ({
                                         range={range}
                                         duration={formData.duration}
                                         onChange={(value) => onEndChange(range, value)}
+                                        recurring
                                     />
                                 </div>
                                 <div className="flex flex-nowrap shrink-0">

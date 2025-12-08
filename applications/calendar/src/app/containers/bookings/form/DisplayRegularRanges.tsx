@@ -56,7 +56,7 @@ export const DisplayRegularRanges = ({
                             className="booking-date-input"
                         />
                     </div>
-                    <RangeStartTimeLabel htmlFor={`range-start-input-${range.id}`} />
+                    <RangeStartTimeLabel htmlFor={`range-start-time-${range.id}`} />
                     <StartTimeInput
                         id={`range-start-time-${range.id}`}
                         range={range}

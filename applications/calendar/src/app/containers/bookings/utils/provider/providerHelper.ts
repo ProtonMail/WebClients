@@ -75,7 +75,7 @@ export const computeInitialFormData = ({
     const timezone = calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
     const duration = calendarBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
-    const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, recurring);
+    const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, duration, recurring);
 
     // Remove 30 minutes form the end of the booking range for 90 minutes calendars to have full slots
     const fullSlotDuration =
