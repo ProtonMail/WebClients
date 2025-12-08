@@ -6,11 +6,13 @@ import {
     createUnleash,
     init,
     loadCrypto,
+    loadLocales,
     loadSession,
     unleashReady,
 } from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { initMainHost } from '@proton/cross-storage/lib';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -74,6 +76,11 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
 
         const store = setupStore({
             preloadedState: persistedState?.state,
+        });
+
+        // We don't want to block the loading while we load the user locales
+        void store.dispatch(userSettingsThunk()).then((userSettings) => {
+            void loadLocales({ userSettings, locales });
         });
 
         await store.dispatch(mailSettingsThunk());

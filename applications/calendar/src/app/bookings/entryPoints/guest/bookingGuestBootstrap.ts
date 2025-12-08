@@ -10,6 +10,9 @@ import {
 import { initMainHost } from '@proton/cross-storage/lib';
 import createApi from '@proton/shared/lib/api/createApi';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
+import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
@@ -52,6 +55,12 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
 
     await unleashReady({ unleashClient }).catch(noop);
     await loadCrypto({ appName: config.APP_NAME, unleashClient });
+
+    await loadLocales({
+        locale: getBrowserLocale(),
+        locales: sharedLocales,
+        userSettings: undefined,
+    });
 
     return {
         store: setupGuestBookingStore(),

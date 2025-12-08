@@ -1,4 +1,5 @@
 import Loader from '@proton/components/components/loader/Loader';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useBookingStore } from '../../booking.store';
 import { NoMatch, Reason } from '../NoMatch';
@@ -11,8 +12,14 @@ export const BookingPage = () => {
     const hasLoaded = useBookingStore((state) => state.hasLoaded);
     const isEmpty = useBookingStore((state) => !state.bookingDetails);
 
+    const isExternalBookingsEnabled = useFlag('CalendarExternalBookings');
+
     if (!isLoading && hasLoaded && isEmpty) {
         return <NoMatch reason={Reason.notFound} />;
+    }
+
+    if (!isExternalBookingsEnabled) {
+        return <NoMatch reason={Reason.featureUnavailable} />;
     }
 
     if (!hasLoaded && isLoading) {
@@ -21,7 +28,7 @@ export const BookingPage = () => {
 
     return (
         <div className="mt-12 mx-auto">
-            <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 booking-wrapper items-start">
+            <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 md:gap-12 booking-wrapper items-start">
                 <BookingDetails />
                 <BookingTimeSlotGrid />
             </div>

@@ -3,6 +3,7 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -49,8 +50,8 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
 
     const [deleteBookingModal, showDeleteModal] = useModalTwo(DeleteBookingModal);
 
-    const bookignCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
-    const isCalendarDisabled = getIsCalendarDisabled(bookignCalendar);
+    const bookingCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
+    const isCalendarDisabled = getIsCalendarDisabled(bookingCalendar);
 
     const isEditingEnabled = useFlag('EditCalendarBookings');
 
@@ -62,19 +63,17 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
         createNotification({ text: c('Info').t`Link copied to clipboard` });
     };
 
-    const handleEditClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        if (isCalendarDisabled) {
-            e.preventDefault();
-            e.stopPropagation();
-            return;
-        }
-
-        if (!isEditingEnabled) {
+    const handleEditClick = async () => {
+        if (!isEditingEnabled || isCalendarDisabled) {
             return;
         }
 
         const { payload } = (await dispatch(loadBookingPage(page.id))) as { payload: BookingPageEditData };
         openBookingSidebarEdition(page, payload);
+    };
+
+    const handleDeleteClick = () => {
+        void showDeleteModal({ bookingId: page.id });
     };
 
     return (
@@ -88,18 +87,23 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                     onDisplayed={spotlight.onDisplayed}
                     onClose={spotlight.onClose}
                 >
-                    {/* The div can be removed when the spotligh is removed */}
+                    {/* The div can be removed when the spotlight is removed */}
                     <div>
                         <SidebarListItemLabel
                             htmlFor={`booking-page-${page.id}`}
                             className="group-hover-opacity-container"
                         >
-                            <SidebarListItemContent left={<IcCalendarListFilled color={bookignCalendar?.Color} />}>
-                                <div className="flex flex-nowrap justify-space-between items-center w-full">
+                            <SidebarListItemContent left={<IcCalendarListFilled color={bookingCalendar?.Color} />}>
+                                <ButtonLike
+                                    as="div"
+                                    shape="underline"
+                                    onClick={(e) => handleCopy(e, page.link)}
+                                    className="flex flex-nowrap justify-space-between items-center w-full text-no-decoration"
+                                >
                                     <p className="text-ellipsis m-0" title={page.summary}>
                                         {page.summary}
                                     </p>
-                                </div>
+                                </ButtonLike>
                                 <Tooltip title={c('Info').t`Manage booking page`}>
                                     <SimpleDropdown
                                         as={Button}
@@ -138,10 +142,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                                     {c('Action').t`Edit booking page`}
                                                 </DropdownMenuButton>
                                             )}
-                                            <DropdownMenuButton
-                                                onClick={() => showDeleteModal({ bookingId: page.id })}
-                                                className="text-left"
-                                            >
+                                            <DropdownMenuButton onClick={handleDeleteClick} className="text-left">
                                                 {c('Action').t`Delete booking page`}
                                             </DropdownMenuButton>
                                             <hr className="m-0" />
