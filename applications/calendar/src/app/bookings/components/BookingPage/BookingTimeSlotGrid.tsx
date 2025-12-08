@@ -4,7 +4,6 @@ import { format, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Loader } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -52,7 +51,7 @@ export const BookingTimeSlotGrid = () => {
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
             <BookingHeader gridSize={gridSize} availabilityState={availabilityState} />
 
-            <div className="flex flex-row flex-nowrap gap-2 w-full">
+            <div className="flex flex-row flex-nowrap gap-2 w-full booking-time-slot-grid">
                 {range.map((date, i) => {
                     const dateHeaderShortString = format(date, 'EEE', { locale: dateLocale });
                     const dateHeaderLongString = format(date, 'EEEE d MMMM yyyy', { locale: dateLocale });
@@ -77,7 +76,10 @@ export const BookingTimeSlotGrid = () => {
                                     </span>
                                 </div>
                             </h3>
-                            <ul className="unstyled m-0 p-0 flex flex-column gap-2">
+                            <ul
+                                className="unstyled m-0 p-0 flex flex-column gap-2 booking-time-slot-grid-list"
+                                data-index={i}
+                            >
                                 {canShowSlots &&
                                     slotsArray[i].map((timeslot, j) => {
                                         if (timeslot) {
@@ -128,16 +130,6 @@ export const BookingTimeSlotGrid = () => {
             </div>
             {!canShowSlots && (
                 <>
-                    {(availabilityState === AvailabilityState.Loading || isLoading) && (
-                        <BookingEmptyRangeCard
-                            message={
-                                <div className="flex justify-center items-center gap-2">
-                                    <Loader />
-                                    {c('Info').t`Loading appointments...`}
-                                </div>
-                            }
-                        />
-                    )}
                     {availabilityState === AvailabilityState.HasNextSlot && (
                         <BookingEmptyRangeCard
                             message={c('Info').t`No appointments available this week`}
