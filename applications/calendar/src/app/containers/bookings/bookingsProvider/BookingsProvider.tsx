@@ -138,7 +138,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         // We generate the booking ranges each time we toggle the recurring option
         if (field === 'recurring') {
             const date = currentDate || new Date();
-            const newRanges = generateDefaultBookingRange(userSettings, date, formData.timezone, value);
+            const newRanges = generateDefaultBookingRange(
+                userSettings,
+                date,
+                formData.timezone,
+                formData.duration,
+                value
+            );
             updatedForm = { ...updatedForm, bookingRanges: newRanges };
         }
 
