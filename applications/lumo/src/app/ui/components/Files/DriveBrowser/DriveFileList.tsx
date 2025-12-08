@@ -90,15 +90,16 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                         ? [
                               {
                                   icon: getActionIcon(),
-                                  label: fileExists
-                                      ? c('collider_2025: Action').t`Already in KB`
-                                      : exceedsFileSizeLimit
-                                        ? c('collider_2025: Info').t`Exceeds 10MB limit`
-                                        : estimatedTooLargeForPreview
-                                          ? c('collider_2025: Info').t`File too large`
-                                          : downloadingFile === child.nodeId
-                                            ? c('collider_2025: Info').t`Downloading (${Math.round(fileData.downloadProgress || 0)}%)`
-                                            : c('collider_2025: Action').t`Add to active`,
+                                  label: (() => {
+                                      if (fileExists) return c('collider_2025: Action').t`Already in KB`;
+                                      if (exceedsFileSizeLimit) return c('collider_2025: Info').t`Exceeds 10MB limit`;
+                                      if (estimatedTooLargeForPreview) return c('collider_2025: Info').t`File too large`;
+                                      if (downloadingFile === child.nodeId) {
+                                          const progressPct = Math.round(fileData.downloadProgress || 0);
+                                          return c('collider_2025: Info').t`Downloading (${progressPct}%)`;
+                                      }
+                                      return c('collider_2025: Action').t`Add to active`;
+                                  })(),
                                   onClick: (e: React.MouseEvent) => {
                                       e.stopPropagation();
                                       if (!fileExists && !exceedsFileSizeLimit && !estimatedTooLargeForPreview) {
