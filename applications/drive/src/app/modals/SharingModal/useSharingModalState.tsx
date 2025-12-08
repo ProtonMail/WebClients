@@ -82,6 +82,7 @@ export const useSharingModalState = ({
     const [sharingInfo, setSharingInfo] = useState<ShareResult>(defaultSharingInfo);
 
     const [ownerEmail, setOwnerEmail] = useState<string | undefined>();
+    const [ownerDisplayName, setOwnerDisplayName] = useState<string | undefined>();
 
     const [name, setName] = useState('');
 
@@ -243,6 +244,9 @@ export const useSharingModalState = ({
                 const nodeInfo = await drive.getNode(nodeUid);
                 if (nodeInfo.ok && nodeInfo.value.keyAuthor.ok && nodeInfo.value.keyAuthor.value) {
                     setOwnerEmail(nodeInfo.value.keyAuthor.value);
+                    if (nodeInfo.value.directRole === MemberRole.Admin) {
+                        setOwnerDisplayName(user.DisplayName);
+                    }
                 }
                 if (nodeInfo.ok) {
                     setName(nodeInfo.value.name);
@@ -256,7 +260,7 @@ export const useSharingModalState = ({
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [drive, handleError, isDocsPublicSharingEnabled, nodeUid, withLoading]);
+    }, [drive, handleError, isDocsPublicSharingEnabled, nodeUid, user.DisplayName, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
@@ -265,8 +269,6 @@ export const useSharingModalState = ({
         );
         createNotification({ text: c('Info').t`Invite link copied` });
     };
-    // TODO: Update with logic when we will be able to retrieve real DisplayName of any user
-    const ownerDisplayName = user.Email === ownerEmail && user.DisplayName ? user.DisplayName : undefined;
 
     const directMembers: DirectMember[] = sharingInfo.members
         .map((member) => ({
