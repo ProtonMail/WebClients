@@ -453,7 +453,6 @@ const ProjectDetailViewInner = () => {
                                                                 {formattedDate}
                                                             </span>
                                                         </div>
-                                                        <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
                                                     </button>
                                                     <ConversationDropdown 
                                                         conversationId={conversation.id} 
@@ -488,7 +487,6 @@ const ProjectDetailViewInner = () => {
                                                                 {formattedDate}
                                                             </span>
                                                         </div>
-                                                        <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
                                                     </button>
                                                     <ConversationDropdown 
                                                         conversationId={conversation.id} 

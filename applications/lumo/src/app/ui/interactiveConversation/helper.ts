@@ -166,17 +166,8 @@ export function sendMessage({
         );
         const processedContent: string = resolvedContent;
 
-        if (referencedFiles.length > 0) {
-            console.log('Resolved file references:', referencedFiles.map(f => f.fileName));
-            console.log('Non-referenced attachments to assign to space:', nonReferencedAttachments.map(a => a.filename));
-            console.log('Provisional referenced attachments (conversation-specific):', provisionalReferencedAttachments.map(a => a.filename));
-        }
-
         // Identify which attachments came from @ file references
         const referencedFileNames = new Set(referencedFiles.map(f => f.fileName.toLowerCase()));
-        const referencedAttachments = allMessageAttachments.filter(att => 
-            referencedFileNames.has(att.filename.toLowerCase())
-        );
         
         // For space assignment, only consider provisional attachments (those without spaceId)
         // Referenced files should not be assigned to space regardless of their source
