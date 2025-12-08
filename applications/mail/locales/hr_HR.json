@@ -1216,6 +1216,45 @@
       ],
       "Your email writing assistant": [
         "Vaš asistent za pisanje e-pošte"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Stvori mapu ${ boldFolderName }"
+      ],
+      "Download logs": [
+        "Preuzmi zapisnike"
+      ],
+      "Fewer search options": [
+        "Manje opcija pretraživanja"
+      ],
+      "I like this response": [
+        "Sviđa mi se ovaj odgovor"
+      ],
+      "Mark as favorite": [
+        "Označi kao favorit"
+      ],
+      "Messages from this sender": [
+        "Poruke ovog pošiljatelja"
+      ],
+      "Messages to this recipient": [
+        "Poruke ovom primatelju"
+      ],
+      "Modify selection": [
+        "Izmijeni odabir"
+      ],
+      "Remove from list": [
+        "Ukloni s popisa"
+      ],
+      "Remove self-destruction": [
+        "Ukloni samouništenje"
+      ],
+      "Replaces the selected text in your message": [
+        "Zamjenjuje odabrani tekst u Vašoj poruci"
+      ],
+      "Set as album cover": [
+        "Postavi kao naslovnicu albuma"
+      ],
+      "Stop moving to Archive": [
+        "Prestani premještati u arhivu"
       ]
     },
     "action": {
@@ -1740,6 +1779,12 @@
       ],
       "(Attendance optional)": [
         "(Prisutnost neobavezna)"
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } prihvaća pozivnicu i predlaže novo vrijeme za ovaj događaj."
+      ],
+      "This response is out of date.": [
+        "Ovaj odgovor je zastario."
       ]
     },
     "Cancel expiration of the message": {
@@ -3456,6 +3501,9 @@
       ],
       "Thanks for the feedback!": [
         "Hvala na povratnim informacijama!"
+      ],
+      "Please activate your search again": [
+        "Ponovno aktivirajte svoje pretraživanje"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3969,6 +4017,12 @@
       ],
       "Get more storage": [
         "Nabavite više pohrane"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Zatražite ${ BRAND_NAME } adresu"
+      ],
+      "Popular online services": [
+        "Popularne internetske usluge"
       ]
     },
     "Gmail forwarding": {
@@ -5420,6 +5474,50 @@
       ],
       "Your message will expire tomorrow.": [
         "Vaša poruka će istječi sutra."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Istječe za ${ minutesDiff } minutu",
+        "Istječe za ${ minutesDiff } minute",
+        "Istječe za ${ minutesDiff } minuta"
+      ],
+      "Included for free with your plan": [
+        "Besplatno uključeno uz Vašu pretplatu"
+      ],
+      "Initializing…": [
+        "Inicijalizacija…"
+      ],
+      "No messages to show": [
+        "Nema poruka za prikaz"
+      ],
+      "Please open the document to view it.": [
+        "Otvorite dokument da biste ga pregledali."
+      ],
+      "Please use another browser or download the file.": [
+        "Koristite drugi preglednik ili preuzmite datoteku."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Pretpregled za ovu vrstu datoteke trenutno nije podržan u ovom pregledniku."
+      ],
+      "Preview for this file type is not supported": [
+        "Pretpregled ove vrste datoteke nije podržan"
+      ],
+      "Preview of documents is not yet supported.": [
+        "Pretpregled dokumenata još nije podržan."
+      ],
+      "Sender has been blocked.": [
+        "Pošiljatelj je blokiran."
+      ],
+      "The message has expired": [
+        "Poruka je istekla"
+      ],
+      "This file is too large to preview": [
+        "Ova datoteka je prevelika za pretpregled"
+      ],
+      "Your online activity is protected": [
+        "Vaša aktivnost na mreži je zaštićena"
       ]
     },
     "info": {
@@ -6269,6 +6367,12 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Choose what to do instead": [
+        "Odaberite što učiniti umjesto toga"
+      ],
+      "Moved to Archive": [
+        "Premjesti u arhivu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7226,6 +7330,9 @@
       ],
       "You currently pay": [
         "Trenutno plaćate"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Uhvatite ${ BRAND_NAME } Duo"
       ]
     },
     "Offer feature": {
@@ -7295,6 +7402,12 @@
       ],
       "iOS": [
         "iOS"
+      ],
+      "Activate selected": [
+        "Aktiviraj odabrano"
+      ],
+      "You are all set!": [
+        "Spremni ste!"
       ]
     },
     "Onboarding Proton": {
@@ -7312,6 +7425,9 @@
       ],
       "Make it your own": [
         "Učinite ga svojim"
+      ],
+      "Choose your preferred look and feel.": [
+        "Odaberite izgled i dojam koji preferirate."
       ]
     },
     "Onboarding Trial": {
@@ -7648,6 +7764,9 @@
       ],
       "Select country": [
         "Odaberi državu"
+      ],
+      "Describe what to change": [
+        "Opišite što treba promijeniti"
       ]
     },
     "Placeholder for contact group name": {
@@ -8206,6 +8325,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
       ]
     },
     "Status": {
@@ -8236,6 +8358,9 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ],
+      "Get more storage": [
+        "Nabavite više pohrane"
       ]
     },
     "storage_split: action": {
@@ -8260,6 +8385,12 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
+      ],
+      "Storage used": [
+        "Iskorištena pohrana"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Za nastavak prijenosa i sinkronizacije datoteka, oslobodite prostor ili nadogradite na više pohrane."
       ]
     },
     "Subscription": {
@@ -8652,6 +8783,14 @@
         "${ elementsCount } poruka uklonjena iz oznake Sa zvjezdicom.",
         "${ elementsCount } poruke uklonjene iz oznake Sa zvjezdicom.",
         "${ elementsCount } poruka uklonjeno iz oznake Sa zvjezdicom."
+      ],
+      "Conversation updated": [
+        "Razgovor je ažuriran",
+        "Razgovori su ažurirani",
+        "Razgovori su ažurirani"
+      ],
+      "Message expiration canceled": [
+        "Istek poruke je otkazan"
       ]
     },
     "Success notification": {
@@ -9499,6 +9638,27 @@
       ],
       "VPN explained": [
         "VPN objašnjen"
+      ],
+      "Disable categories?": [
+        "Onemogućiti kategorije?"
+      ],
+      "Move all messages to archive": [
+        "Premjesti sve poruke u arhivu"
+      ],
+      "No-reply address detected": [
+        "Otkrivena je adresa za neodgovaranje (no-reply)"
+      ],
+      "Sender changed": [
+        "Pošiljatelj je promijenjen"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Postavite ${ protonDuoPlanName }"
+      ],
+      "Your changes are not synced yet": [
+        "Vaše promjene još nisu sinkronizirane"
+      ],
+      "Your free trial has ended": [
+        "Vaše probno razdoblje je završilo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9582,6 +9742,11 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {
@@ -9671,6 +9836,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -9956,6 +10124,9 @@
     "Add participant to calendar event": {
       "Participant added": [
         "Sudionik dodan"
+      ],
+      "Failed to add participant": [
+        "Dodavanje sudionika nije uspjelo"
       ]
     },
     "collider_2025: feature": {
@@ -9964,6 +10135,9 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
+      ],
+      "Unlimited daily chats": [
+        "Neograničena dnevna čavrljanja"
       ]
     },
     "Duo offer": {
@@ -9972,6 +10146,9 @@
       ],
       "2 user accounts": [
         "2 korisnička računa"
+      ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
       ]
     },
     "Duo offer: Link": {
@@ -10010,6 +10187,21 @@
     "Payments.ModificationWarning": {
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
         "Ako odlučite izmijeniti svoju pretplatu ${ planTitle }, možda ćete izgubiti pristup nekim značajkama."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Pouzdani kontakt"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Potvrđivanje pošiljatelja"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Pon, ${ formatTime }"
       ]
     }
   }
