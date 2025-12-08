@@ -3966,6 +3966,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan ikke opprette en bestilling med en deaktivert adresse"
       ]
     },
     "error": {
@@ -6415,6 +6418,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For å legge til en ny bestillingsside, be administratoren om å oppgradere planen din."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For å legge til en ny bestillingsside, fjern en eksisterende fra sidefeltet for bestillingssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Oppgrader planen din for å legge til en ny bestillingsside."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nådd maksimalt antall bestillingssider som er tilgjengelige i planen din."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11988,6 +12009,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke opprette flere bestillingssider"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

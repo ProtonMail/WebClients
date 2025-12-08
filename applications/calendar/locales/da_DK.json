@@ -3966,6 +3966,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan ikke oprette en reservation med en deaktiveret adresse"
       ]
     },
     "error": {
@@ -6415,6 +6418,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "De har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11988,6 +12009,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

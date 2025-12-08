@@ -3125,6 +3125,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "Vous recevrez prochainement un e-mail sécurisé contenant tous les détails."
       ]
     },
     "description": {
@@ -3963,6 +3966,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Impossible de créer une réservation avec une adresse désactivée"
       ]
     },
     "error": {
@@ -6415,6 +6421,21 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demandez à votre administrateur de changer d'abonnement ou de retirer une page de la barre latérale des pages de réservation."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, demandez à votre administrateur de changer votre abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une existante de la barre latérale des pages de réservation."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, changez votre abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Vous avez atteint le nombre maximum de pages de réservation prévues dans votre abonnement."
       ]
     },
     "info": {
@@ -11988,6 +12009,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Cannot create more Booking pages": [
+        "Vous ne pouvez pas créer de pages de réservation supplémentaire."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

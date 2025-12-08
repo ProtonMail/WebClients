@@ -950,6 +950,30 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a date": [
+        "Lisää päivämäärä"
+      ],
+      "Close sidebar": [
+        "Sulje sivupalkki"
+      ],
+      "Copy link and close": [
+        "Kopioi linkki ja sulje"
+      ],
+      "Create a free account": [
+        "Luo ilmainen tili"
+      ],
+      "Explore other plans": [
+        "Tutustu muihin tilauksiin"
+      ],
+      "Go to the first available appointment": [
+        "Siirry ensimmäiseen vapaaseen aikaan"
+      ],
+      "Go to the next available appointment": [
+        "Siirry seuraavaan vapaaseen aikaan"
+      ],
+      "Hide more benefits": [
+        "Piilota enemmän etuja"
       ]
     },
     "action": {
@@ -3854,6 +3878,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Varausta ei voi luoda käytöstä poistetulla osoitteella."
       ]
     },
     "error": {
@@ -6183,6 +6210,37 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pyydä ylläpitäjää päivittämään tilaus tai poistamaan sivu Varaussivut-sivupalkista."
+      ],
+      "Host": [
+        "Isäntä"
+      ],
+      "Location": [
+        "Sijainti"
+      ],
+      "No future appointments available": [
+        "Tulevia aikoja ei ole saatavilla"
+      ],
+      "Powered by ${ protonButton }": [
+        "Tarjoaa ${ protonButton }"
+      ],
+      "Saving event": [
+        "Tallennetaan tapahtumaa",
+        "Tallennetaan tapahtumia"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Lisätäksesi uuden varaussivun, pyydä ylläpitäjääsi päivittämään tilauksesi."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Voit lisätä uuden varaussivun poistamalla olemassa olevan sivun Varaussivut-sivupalkista."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Lisätäksesi uuden varaussivun, päivitä tilauksesi."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Olet saavuttanut tilaukseesi sisältyvien varaussivujen enimmäismäärän."
       ]
     },
     "info": {
@@ -6871,6 +6929,12 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Full name": [
+        "Koko nimi"
+      ],
+      "Repeat weekly": [
+        "Toista viikottain"
       ]
     },
     "Label for contact group color": {
@@ -7027,6 +7091,9 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "Booking pages": [
+        "Ajanvaraussivut"
       ]
     },
     "Link label (optional)": {
@@ -8567,6 +8634,12 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Advanced threat protection": [
+        "Edistynyt uhkasuojaus"
+      ],
+      "File version history (over 1 week)": [
+        "Tiedoston versiohistoria (yli 1 viikon)"
       ]
     },
     "Onboarding": {
@@ -8614,6 +8687,12 @@
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
+      ],
+      "contact our support team": [
+        "ota yhteyttä tukeen"
+      ],
+      "Your free trial has started": [
+        "Ilmainen kokeilujaksosi on alkanut"
       ]
     },
     "Option": {
@@ -11509,6 +11588,21 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Cannot create more Booking pages": [
+        "Varaussivuja ei voi luoda enempää."
+      ],
+      "Choose a time": [
+        "Valitse aika"
+      ],
+      "Delete booking page?": [
+        "Poista varaussivu?"
+      ],
+      "Host": [
+        "Isäntä"
+      ],
+      "This booking page has expired": [
+        "Tämä varaussivu on vanhentunut"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12076,6 +12170,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Paikan päällä"
       ]
     }
   }

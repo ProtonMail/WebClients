@@ -671,6 +671,9 @@
       ],
       "Yes, I'll attend": [
         "Da, prisustvovati ću"
+      ],
+      "Download logs": [
+        "Preuzmi zapisnike"
       ]
     },
     "action": {
@@ -1165,6 +1168,9 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
+      ],
+      "Unlimited daily chats": [
+        "Neograničena dnevna čavrljanja"
       ]
     },
     "colon": {
@@ -2364,6 +2370,9 @@
       ],
       "2 user accounts": [
         "2 korisnička računa"
+      ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
       ]
     },
     "Duo offer: Link": {
@@ -2737,6 +2746,9 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "Please activate your search again": [
+        "Ponovno aktivirajte svoje pretraživanje"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4094,6 +4106,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
+      ],
+      "Clear encrypted search data": [
+        "Očisti podatke šifriranog pretraživanja"
+      ],
+      "Your online activity is protected": [
+        "Vaša aktivnost na mreži je zaštićena"
       ]
     },
     "info": {
@@ -5575,6 +5596,9 @@
       ],
       "You currently pay": [
         "Trenutno plaćate"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Uhvatite ${ BRAND_NAME } Duo"
       ]
     },
     "Offer feature": {
@@ -6346,6 +6370,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
       ]
     },
     "Storage": {
@@ -6378,6 +6405,9 @@
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
+      ],
+      "Storage used": [
+        "Iskorištena pohrana"
       ]
     },
     "Subscribe to calendar modal": {
@@ -7426,6 +7456,11 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {
@@ -7515,6 +7550,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -7795,6 +7833,11 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Pouzdani kontakt"
       ]
     }
   }

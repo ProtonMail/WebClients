@@ -3966,6 +3966,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Du kannst keine Buchung mit einer deaktivierten Adresse erstellen."
       ]
     },
     "error": {
@@ -6418,6 +6421,21 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten zu entfernen."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, bitte deinen Administrator, dein Abonnement zu upgraden."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, upgrade dein Abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du hast die maximale Anzahl an Buchungsseiten in deinem Abonnement erreicht."
       ]
     },
     "info": {
@@ -11991,6 +12009,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Cannot create more Booking pages": [
+        "Du kannst keine weiteren Buchungsseiten erstellen."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
