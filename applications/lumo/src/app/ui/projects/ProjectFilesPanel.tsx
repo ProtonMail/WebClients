@@ -16,7 +16,7 @@ import { handleSpaceAssetFileAsync } from '../../services/files';
 import { locallyDeleteAssetFromLocalRequest } from '../../redux/slices/core/assets';
 import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFileItem';
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
-import { DriveBrowser } from '../components/Files/DriveBrowser/DriveBrowser';
+import { DriveBrowser, type DriveBrowserHandle } from '../components/Files/DriveBrowser/DriveBrowser';
 import { UploadProgressOverlay, type UploadProgress } from '../components/Files/DriveBrowser/UploadProgressOverlay';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
@@ -31,8 +31,7 @@ interface ProjectFilesPanelProps {
 
 export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions }: ProjectFilesPanelProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const driveBrowserUploadRef = useRef<(() => void) | null>(null);
-    const driveBrowserRefreshRef = useRef<(() => void) | null>(null);
+    const driveBrowserRef = useRef<DriveBrowserHandle>(null);
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const [fileToView, setFileToView] = useState<Asset | null>(null);
@@ -66,8 +65,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
             setFolderName('');
             setCreateFolderModalOpen(false);
             // Refresh the DriveBrowser to show the new folder
-            if (driveBrowserRefreshRef.current) {
-                driveBrowserRefreshRef.current();
+            if (driveBrowserRef.current) {
+                driveBrowserRef.current.triggerRefresh();
             }
         } catch (error) {
             console.error('Failed to create folder:', error);
@@ -80,8 +79,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     const handleAddFiles = () => {
         // If Drive folder is linked, use DriveBrowser's upload handler
-        if (linkedDriveFolder && driveBrowserUploadRef.current) {
-            driveBrowserUploadRef.current();
+        if (linkedDriveFolder && driveBrowserRef.current) {
+            driveBrowserRef.current.triggerUpload();
             return;
         }
         // Otherwise use the regular file input
@@ -302,6 +301,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                 </div>
                             </div>
                             <DriveBrowser
+                                ref={driveBrowserRef}
                                 onFileSelect={handleDriveFileSelect}
                                 initialShowDriveBrowser={true}
                                 isModal={false}
@@ -309,8 +309,6 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                 initialFolderName={linkedDriveFolder.folderName}
                                 isLinkedFolder={true}
                                 hideHeader={true}
-                                onUploadTriggerRef={driveBrowserUploadRef}
-                                onRefreshTriggerRef={driveBrowserRefreshRef}
                             />
                         </div>
                     ) : files.length === 0 ? (
