@@ -1,20 +1,15 @@
 import type { Row } from 'exceljs';
 
-import { ThumbnailType } from '@protontech/drive-sdk';
-
-import { generateThumbnail } from '@proton/drive/modules/thumbnails/thumbnailGenerator';
-
-import { PandocConverter } from '../lib/attachments/pandoc-wasm';
-import pdfParse from '../lib/attachments/pdfParse';
+import { PandocConverter } from '../../lib/attachments/pandoc-wasm';
+import pdfParse from '../../lib/attachments/pdfParse';
+import { getProcessingCategory, mimeTypeToPandocFormat } from '../../util/filetypes';
 import type {
     FileData,
     FileProcessingRequest,
     FileProcessingResponse,
-    ImageProcessingResult,
     ProcessingError,
-    TextProcessingResult,
-} from '../services/fileProcessingService';
-import { getProcessingCategory, mimeTypeToPandocFormat } from '../util/filetypes';
+} from '../fileProcessingService';
+import type { InternalFileResult, InternalTextResult, TruncationResult } from '../files/types';
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
 const workerLogger = {
@@ -28,18 +23,6 @@ const workerLogger = {
         console.log(`[WORKER-ERROR] ${message}`, ...args);
     },
 };
-
-// Internally we don't need the id field, it will be reinjected when sending the response using postMessage()
-type InternalTextResult = Omit<TextProcessingResult, 'id'>;
-type InternalImageResult = Omit<ImageProcessingResult, 'id'>;
-type InternalError = Omit<ProcessingError, 'id'>;
-
-type InternalFileResult = InternalTextResult | InternalImageResult | InternalError;
-
-interface TruncationResult {
-    content: string;
-    wasTruncated: boolean;
-}
 
 let pandocConverter: PandocConverter | null = null;
 
@@ -213,51 +196,6 @@ async function processExcelFile(fileData: FileData): Promise<InternalTextResult>
     };
 }
 
-async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
-    console.log(`[Image Processing] Reducing image size for ${fileData.name} using thumbnail generator`);
-
-    // Convert ArrayBuffer to Blob for thumbnail generator
-    const blob = new Blob([fileData.data], { type: fileData.type });
-
-    // Generate thumbnails with debug mode enabled
-    const { thumbnailsPromise } = generateThumbnail(blob, fileData.name, fileData.size, { debug: true });
-
-    // Await the thumbnail generation result
-    const result = await thumbnailsPromise;
-
-    if (!result.ok) {
-        throw new Error(`Thumbnail generation failed: ${result.error}`);
-    }
-
-    const thumbnailResult = result.result;
-
-    if (!thumbnailResult?.thumbnails || thumbnailResult.thumbnails.length === 0) {
-        throw new Error('No thumbnails were generated');
-    }
-
-    // Prefer Type2 (HD) thumbnail, fallback to Type1 if not available
-    const hdThumbnail = thumbnailResult.thumbnails.find(t => t.type === ThumbnailType.Type2);
-    const thumbnail = hdThumbnail || thumbnailResult.thumbnails[0];
-
-    console.log(`[Image Processing] Using ${thumbnail.type === ThumbnailType.Type2 ? 'HD' : 'standard'} thumbnail for ${fileData.name}`);
-
-    // Convert Uint8Array to ArrayBuffer
-    return thumbnail.thumbnail.buffer;
-}
-
-async function processImageFile(fileData: FileData): Promise<InternalImageResult> {
-    console.log(`Processing image: ${fileData.name} (${fileData.type})`);
-
-    const processedData = await reduceImageSize(fileData);
-
-    return {
-        type: 'image',
-        originalSize: fileData.size,
-        processedSize: processedData.byteLength,
-        processedData,
-    };
-}
-
 async function processFile(fileData: FileData, isLumoPaid: boolean = false): Promise<InternalFileResult> {
     const startTime = performance.now();
     console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type})`);
@@ -293,7 +231,11 @@ async function processFile(fileData: FileData, isLumoPaid: boolean = false): Pro
             }
 
             case 'image':
-                return await processImageFile(fileData);
+                return {
+                    type: 'error',
+                    message: `Images must be processed on the main thread`,
+                    unsupported: false,
+                };
 
             case 'unsupported':
                 return {
@@ -362,3 +304,5 @@ self.addEventListener('beforeunload', async () => {
         await pandocConverter.cleanup();
     }
 });
+
+workerLogger.log('file processing worker initialized');
