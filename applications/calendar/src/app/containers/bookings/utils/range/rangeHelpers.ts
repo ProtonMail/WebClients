@@ -3,6 +3,7 @@ import {
     addDays,
     addMinutes,
     areIntervalsOverlapping,
+    differenceInCalendarDays,
     differenceInMinutes,
     eachDayOfInterval,
     endOfWeek,
@@ -23,7 +24,7 @@ import {
     toLocalDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_WEEK_START, UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';
@@ -104,7 +105,10 @@ export const generateDefaultBookingRange = (
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
     // When doing recurrign we want to use the current week as starting date and not calendar date
-    const start = isRecurring ? new Date() : startDate;
+    let start = new Date();
+    if (!isRecurring) {
+        start = isBefore(startDate, start) ? start : startDate;
+    }
 
     // We want to make sure the stored dates for the range is in UTC
     const utc = toUTCDate(fromLocalDate(start));
@@ -144,8 +148,12 @@ export const createBookingRangeNextAvailableTime = ({
     timezone: string;
     startDate?: Date;
 }): BookingRange => {
+    const now = new Date();
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
-    const tomorrow = startDate ? startOfWeek(startDate, { weekStartsOn }) : addDays(new Date(), 1);
+    let tomorrow = addDays(now, 1);
+    if (startDate) {
+        tomorrow = isBefore(startDate, now) ? addDays(now, 1) : startOfWeek(startDate, { weekStartsOn });
+    }
 
     // We return tomorrow if it's free
     if (!bookingRanges.some((range) => isSameDay(range.start, tomorrow))) {
@@ -201,7 +209,7 @@ export const convertBookingRangesToCalendarViewEvents = (
 
             // When editing a booking range, users could have changed the timezone and the range is in two days
             // This ensure that we add one day if this is the case
-            const endTargetDay = addDays(targetDay, range.end.getDate() - range.start.getDate());
+            const endTargetDay = addDays(targetDay, differenceInCalendarDays(range.end, range.start));
             const adjustedEndLocal = set(endTargetDay, {
                 hours: range.end.getHours(),
                 minutes: range.end.getMinutes(),
@@ -298,21 +306,66 @@ export const computeRangesErrors = (ranges: BookingRange[], duration: number): B
     });
 };
 
-export const normalizeBookingRangeToTimeOfWeek = (date: Date) => {
+export const normalizeBookingRangeToTimeOfWeek = (date: Date, weekStart: SETTINGS_WEEK_START) => {
     const today = new Date();
-    const todayDayOfWeek = today.getDay();
+    const weekStartsOn = getWeekStartsOn({ WeekStart: weekStart });
+    const currentWeekStart = startOfWeek(today, { weekStartsOn });
+
+    // When the user has set a different week start, we need to apply the offset with the "standard" week start to normalize the date
     const targetDayOfWeek = date.getDay();
-    const dayDifference = targetDayOfWeek - todayDayOfWeek;
+    let dayOffset = targetDayOfWeek - weekStartsOn;
+
+    // When week start is "on the previous week" (e.g. Saturday), and the target on the current week (e.g. Tuesday),
+    // the offset will be < 0 (because we get the one from the previous week).
+    // To use the target date from the current week, we need to add 7.
+    if (dayOffset < 0) {
+        dayOffset += 7;
+    }
+
+    const targetDay = addDays(currentWeekStart, dayOffset);
 
     return new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        today.getDate() + dayDifference,
+        targetDay.getFullYear(),
+        targetDay.getMonth(),
+        targetDay.getDate(),
         date.getHours(),
         date.getMinutes(),
         0,
         0
     );
+};
+
+export const splitMidnightRecurringSpanningRange = ({
+    oldRange,
+    normalizedStart,
+    normalizedEnd,
+    originalStart,
+}: {
+    oldRange: BookingRange;
+    normalizedStart: Date;
+    normalizedEnd: Date;
+    originalStart: Date;
+}): { firstRange: BookingRange; secondRange: BookingRange } => {
+    // First range ends at midnight on the next day
+    const firstRangeEnd = startOfDay(addDays(normalizedStart, 1));
+    const firstRange: BookingRange = {
+        id: generateBookingRangeID(originalStart, firstRangeEnd),
+        start: normalizedStart,
+        end: firstRangeEnd,
+        timezone: oldRange.timezone,
+    };
+
+    // Second range starts at midnight
+    const secondRangeStart = startOfDay(normalizedEnd);
+    const secondRangeId = generateBookingRangeID(secondRangeStart, normalizedEnd);
+    const secondRange: BookingRange = {
+        id: secondRangeId,
+        start: secondRangeStart,
+        end: normalizedEnd,
+        timezone: oldRange.timezone,
+    };
+
+    return { firstRange, secondRange };
 };
 
 export const getIsBookingsIntersection = ({
@@ -349,21 +402,23 @@ export const getIsRecurringBookingsIntersection = ({
     start,
     end,
     bookingRanges,
+    weekStart,
 }: {
     start: Date;
     end: Date;
     bookingRanges: BookingRange[];
+    weekStart: SETTINGS_WEEK_START;
 }): Intersection | null => {
     // In the recurring scenario, the user can try to add ranges in future weeks
     // To compute intersections properly, dates needs to be normalized so that we check intersections "on the same day"
-    const normalizedStart = normalizeBookingRangeToTimeOfWeek(start);
-    const normalizedEnd = normalizeBookingRangeToTimeOfWeek(end);
+    const normalizedStart = normalizeBookingRangeToTimeOfWeek(start, weekStart);
+    const normalizedEnd = normalizeBookingRangeToTimeOfWeek(end, weekStart);
 
     const overlappingRange = bookingRanges
         .filter((range) => range.start.getDay() === start.getDay())
         .find((range) => {
-            const normalizedRangeStart = normalizeBookingRangeToTimeOfWeek(range.start);
-            const normalizedRangeEnd = normalizeBookingRangeToTimeOfWeek(range.end);
+            const normalizedRangeStart = normalizeBookingRangeToTimeOfWeek(range.start, weekStart);
+            const normalizedRangeEnd = normalizeBookingRangeToTimeOfWeek(range.end, weekStart);
 
             return areIntervalsOverlapping(
                 { start: normalizedStart, end: normalizedEnd },
@@ -375,8 +430,8 @@ export const getIsRecurringBookingsIntersection = ({
         return null;
     }
 
-    const normalizedOverlapStart = normalizeBookingRangeToTimeOfWeek(overlappingRange.start);
-    const normalizedOverlapEnd = normalizeBookingRangeToTimeOfWeek(overlappingRange.end);
+    const normalizedOverlapStart = normalizeBookingRangeToTimeOfWeek(overlappingRange.start, weekStart);
+    const normalizedOverlapEnd = normalizeBookingRangeToTimeOfWeek(overlappingRange.end, weekStart);
 
     // The intersection is happening at the end of a range
     if (isWithinInterval(normalizedStart, { start: normalizedOverlapStart, end: normalizedOverlapEnd })) {
