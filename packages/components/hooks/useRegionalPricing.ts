@@ -1,33 +1,57 @@
-import { type CheckSubscriptionData, type Currency, type RequestOptions, isMainCurrency } from '@proton/payments';
+import {
+    type CheckSubscriptionData,
+    type Currency,
+    type EnrichedCheckResponse,
+    type RequestOptions,
+    getCheckout,
+    getOptimisticCheckResult,
+    isMainCurrency,
+} from '@proton/payments';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
+import { usePreferredPlansMap } from './usePreferredPlansMap';
 
 export const useRegionalPricing = () => {
     const { paymentsApi } = usePaymentsApi();
+    const { plansMap } = usePreferredPlansMap();
 
-    const fetchPrice = async ({
+    const getCheckResult = async ({
         data,
-        defaultPrice,
         currency,
-        expectedPrice = defaultPrice,
         requestOptions,
     }: {
         data: CheckSubscriptionData;
-        defaultPrice: number;
         currency: Currency;
-        expectedPrice?: number;
         requestOptions?: RequestOptions;
-    }): Promise<number> => {
+    }): Promise<EnrichedCheckResponse> => {
+        const optimisticCheckResult = getOptimisticCheckResult({
+            planIDs: data.Plans,
+            cycle: data.Cycle,
+            currency,
+            plansMap,
+        });
+
         if (isMainCurrency(currency)) {
-            return expectedPrice ?? defaultPrice;
+            return optimisticCheckResult;
         }
 
         try {
-            const result = await paymentsApi.checkSubscription(data, requestOptions);
-            return result.AmountDue ?? defaultPrice;
+            return await paymentsApi.checkSubscription(data, requestOptions);
         } catch (e) {
-            return defaultPrice;
+            return optimisticCheckResult;
         }
+    };
+
+    const fetchPrice = async (requestParams: Parameters<typeof getCheckResult>[0]): Promise<number> => {
+        const checkResult = await getCheckResult(requestParams);
+
+        const checkout = getCheckout({
+            plansMap,
+            checkResult,
+            planIDs: requestParams.data.Plans,
+        });
+
+        return checkout.withDiscountPerCycle;
     };
 
     return {
