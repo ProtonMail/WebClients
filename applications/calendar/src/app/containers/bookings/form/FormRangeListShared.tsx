@@ -33,16 +33,23 @@ interface InputTimeProps {
     duration: number;
     onChange: (value: Date) => void;
     className?: string;
+    recurring?: boolean;
 }
 
-export const StartTimeInput = ({ id, range, duration, onChange, className }: InputTimeProps) => {
+export const StartTimeInput = ({ id, range, duration, onChange, className, recurring = false }: InputTimeProps) => {
     const nowWithTz = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), range.timezone));
+
+    let minTime = undefined;
+    if (!recurring) {
+        minTime = isToday(range.start) ? roundToNextHalfHour(nowWithTz) : startOfDay(range.start);
+    }
+
     return (
         <TimeInput
             id={id}
             value={range.start}
             onChange={onChange}
-            min={isToday(range.start) ? roundToNextHalfHour(nowWithTz) : startOfDay(range.start)}
+            min={minTime}
             max={subMinutes(range.end, duration)}
             className={className}
         />
