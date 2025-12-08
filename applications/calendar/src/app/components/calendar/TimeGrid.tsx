@@ -16,6 +16,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { useBookings } from '../../containers/bookings/bookingsProvider/BookingsProvider';
+import { isBookingSlotEvent } from '../../containers/bookings/utils/calendar/calendarHelper';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
@@ -144,7 +145,9 @@ const TimeGrid = ({
     }, [secondaryTimezoneOffset, formatTime]);
 
     const [timeEvents, dayEvents] = useMemo(() => {
-        const result = [...events, ...attendeeBusySlots].reduce<
+        // Remove bookings from timedEvents because we are displaying it with rangesEvents
+        const filteredEvents = events.filter((event) => !isBookingSlotEvent(event));
+        const result = [...filteredEvents, ...attendeeBusySlots].reduce<
             [(CalendarViewEvent | CalendarViewBusyEvent)[], (CalendarViewEvent | CalendarViewBusyEvent)[]]
         >(
             (acc, event) => {
@@ -171,8 +174,11 @@ const TimeGrid = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1CD7F9
     }, [days, viewportWidth['<=small'], date]);
 
-    const rangesPerDay = isBookingActive ? getRangesAsLayoutEvents(date, days) : {};
-    const rangesEvents = isBookingActive ? getRangeAsCalendarViewEvents(date) : [];
+    // To prevent displaying both the temporary event, that is the range we're moving or resizing, and the old range,
+    // we need to filter it out from the rangesPerDay and rangesEvents
+    const temporaryBookingRange = events.find((event) => isBookingSlotEvent(event));
+    const rangesPerDay = isBookingActive ? getRangesAsLayoutEvents(date, days, temporaryBookingRange) : {};
+    const rangesEvents = isBookingActive ? getRangeAsCalendarViewEvents(date, temporaryBookingRange) : [];
 
     const dayEventHeight = 28;
     const numberOfRows = 3;
@@ -265,8 +271,15 @@ const TimeGrid = ({
             totalDays: normalizedDays.length,
             totalMinutes,
             interval: 30,
-            events: timeEvents,
-            eventsPerDay,
+            events: [...timeEvents, ...rangesEvents],
+            // To observe user actions on the booking ranges, we need to merge rangesPerDay and eventsPerDay
+            eventsPerDay: Object.entries(eventsPerDay).reduce(
+                (acc, [key, value]) => {
+                    acc[key] = [...(acc[key] ?? []), ...value];
+                    return acc;
+                },
+                { ...rangesPerDay }
+            ),
             days: normalizedDays,
             timeGridEl: timeGridRef.current,
             scrollEl: scrollRef.current,

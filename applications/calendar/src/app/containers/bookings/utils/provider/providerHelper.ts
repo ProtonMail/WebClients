@@ -196,23 +196,23 @@ export const validateRangeOperation = ({
     recurring: boolean;
     timezone: string;
 }): string | null => {
+    if (operation === 'add') {
+        if (!isSameDay(start, end)) {
+            return BookingErrorMessages.RANGE_MULTIPLE_DAYS;
+        }
+    }
+
     // Check if invalid duration (this typically happens with overlaps)
-    if (recurring && start.getTime() >= end.getTime()) {
+    if (recurring && !isBefore(start, end)) {
         return BookingErrorMessages.RANGE_OVERLAP;
     }
 
     // Check if trying to add/update in the past, not relevant for recurring bookings
-    if (operation === 'add' && !recurring) {
+    if (!recurring) {
         const nowWithTz = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), timezone));
 
         if (isBefore(start, nowWithTz)) {
             return BookingErrorMessages.RANGE_IN_PAST;
-        }
-    }
-
-    if (operation === 'add') {
-        if (!isSameDay(start, end)) {
-            return BookingErrorMessages.RANGE_MULTIPLE_DAYS;
         }
     }
 

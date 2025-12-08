@@ -13,6 +13,7 @@ export const getEventPartDuration = ({ start, end, colEnd }: { start: Date; end:
         if (colEnd === 24 * 60) {
             eventPartEnd.setUTCHours(0, 0, 0, 0);
         } else {
+            eventPartStart.setUTCMonth(end.getUTCMonth());
             eventPartStart.setUTCDate(end.getUTCDate());
             eventPartStart.setUTCHours(0, 0, 0, 0);
         }

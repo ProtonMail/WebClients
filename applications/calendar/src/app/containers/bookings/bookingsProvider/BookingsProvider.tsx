@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { isBefore, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
@@ -21,6 +22,7 @@ import type { BookingPageEditData, InternalBookingPage } from '../../../store/in
 import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
+import type { CalendarViewEvent } from '../../calendar/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
 import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from '../interface';
 import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
@@ -47,6 +49,7 @@ import {
     getIsRecurringBookingsIntersection,
     getRangeDateStart,
     normalizeBookingRangeToTimeOfWeek,
+    splitMidnightRecurringSpanningRange,
 } from '../utils/range/rangeHelpers';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -171,16 +174,70 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        const updatedRange: BookingRange = {
-            id: newRangeId,
-            start,
-            end,
-            timezone: oldRange.timezone,
-        };
+        // In the recurring scenario, the user can try to add ranges in future weeks
+        // To update the new range properly, dates needs to be normalized so that range is added to the current week
+        const isRecurring = formData.recurring;
+        const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start, userSettings.WeekStart) : start;
+        const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end, userSettings.WeekStart) : end;
 
-        const newBookingRanges = internalForm.bookingRanges
-            .map((range) => (range.id === oldRangeId ? updatedRange : range))
-            .sort((a, b) => a.start.getTime() - b.start.getTime());
+        let newBookingRanges;
+        // When moving a recurring slot to the end of the week with an overlap to the next day, we need to split it in 2 ranges
+        // E.g. when moving a range on Sunday evening, we need it to end at midnight and create one on Monday
+        if (isRecurring && isBefore(normalizedEnd, normalizedStart)) {
+            const { firstRange, secondRange } = splitMidnightRecurringSpanningRange({
+                oldRange,
+                normalizedStart,
+                normalizedEnd,
+                originalStart: start,
+            });
+
+            const validationErrorFirstRange = validateRangeOperation({
+                operation: 'update',
+                start: firstRange.start,
+                end: firstRange.end,
+                timezone: oldRange.timezone,
+                rangeId: firstRange.id,
+                existingRanges: internalForm.bookingRanges,
+                excludeRangeId: oldRangeId,
+                recurring: formData.recurring,
+            });
+            if (validationErrorFirstRange) {
+                createNotification({ text: validationErrorFirstRange });
+                return;
+            }
+
+            const validationErrorSecondRange = validateRangeOperation({
+                operation: 'update',
+                start: secondRange.start,
+                end: secondRange.end,
+                timezone: oldRange.timezone,
+                rangeId: secondRange.id,
+                existingRanges: internalForm.bookingRanges,
+                excludeRangeId: oldRangeId,
+                recurring: formData.recurring,
+            });
+
+            if (validationErrorSecondRange) {
+                createNotification({ text: validationErrorSecondRange });
+                return;
+            }
+
+            // Add new ranges and remove the old one
+            newBookingRanges = [...internalForm.bookingRanges, firstRange, secondRange]
+                .filter((range) => range.id !== oldRangeId)
+                .sort((a, b) => a.start.getTime() - b.start.getTime());
+        } else {
+            const updatedRange: BookingRange = {
+                id: newRangeId,
+                start: normalizedStart,
+                end: normalizedEnd,
+                timezone: oldRange.timezone,
+            };
+
+            newBookingRanges = internalForm.bookingRanges
+                .map((range) => (range.id === oldRangeId ? updatedRange : range))
+                .sort((a, b) => a.start.getTime() - b.start.getTime());
+        }
 
         setInternalForm((prev) => ({ ...prev, bookingRanges: newBookingRanges }));
     };
@@ -194,13 +251,22 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
         const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start, data.timezone);
-        const end = intersectionRef.current?.end || data.end;
+
+        const safeEnd = isBefore(data.end, start)
+            ? set(data.end, {
+                  month: start.getMonth(),
+                  date: start.getDate(),
+              })
+            : data.end;
+
+        const end = intersectionRef.current?.end || safeEnd;
 
         // In the recurring scenario, the user can try to add ranges in future weeks
         // To add the new range properly, dates needs to be normalized so that range is added to the current week
-        const isRecurring = formData.recurring;
-        const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start) : start;
-        const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end) : end;
+        const normalizedStart = formData.recurring
+            ? normalizeBookingRangeToTimeOfWeek(start, userSettings.WeekStart)
+            : start;
+        const normalizedEnd = formData.recurring ? normalizeBookingRangeToTimeOfWeek(end, userSettings.WeekStart) : end;
 
         // Prevent adding timeslots with same start and end (and do not show an error in that case)
         if (normalizedStart.getTime() === normalizedEnd.getTime()) {
@@ -312,6 +378,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                   start,
                   end,
                   bookingRanges: internalForm.bookingRanges,
+                  weekStart: userSettings.WeekStart,
               })
             : getIsBookingsIntersection({
                   start,
@@ -358,16 +425,21 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
     };
 
-    const getRangeAsCalendarViewEvents = (utcDate: Date) => {
+    const getRangeAsCalendarViewEvents = (utcDate: Date, temporaryEvent?: CalendarViewEvent) => {
         const selectedCalendar = writeableCalendars?.find((calendar) => calendar.ID === formData.selectedCalendar);
-        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate, userSettings).sort(
-            (a, b) => a.start.getTime() - b.start.getTime()
-        );
+        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate, userSettings)
+            .map((event) => {
+                if (event.uniqueId === temporaryEvent?.uniqueId) {
+                    return temporaryEvent;
+                }
+                return event;
+            })
+            .sort((a, b) => a.start.getTime() - b.start.getTime());
     };
 
-    const getRangesAsLayoutEvents = (utcDate: Date, days: Date[]) => {
+    const getRangesAsLayoutEvents = (utcDate: Date, days: Date[], temporaryEvent?: CalendarViewEvent) => {
         return splitTimeGridEventsPerDay({
-            events: getRangeAsCalendarViewEvents(utcDate),
+            events: getRangeAsCalendarViewEvents(utcDate, temporaryEvent),
             min: days[0],
             max: days[days.length - 1],
             totalMinutes: 24 * 60,

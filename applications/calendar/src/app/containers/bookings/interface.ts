@@ -35,8 +35,12 @@ export interface BookingsContextValue {
     updateBookingRange: (id: string, start: Date, end: Date) => void;
     removeBookingRange: (id: string) => void;
     isIntersectingBookingRange: (start: Date, end: Date) => boolean;
-    getRangeAsCalendarViewEvents: (date: Date) => CalendarViewEvent[];
-    getRangesAsLayoutEvents: (date: Date, days: Date[]) => { [key: string]: LayoutEvent[] };
+    getRangeAsCalendarViewEvents: (date: Date, temporaryEvent?: CalendarViewEvent) => CalendarViewEvent[];
+    getRangesAsLayoutEvents: (
+        date: Date,
+        days: Date[],
+        temporaryEvent?: CalendarViewEvent
+    ) => { [key: string]: LayoutEvent[] };
 }
 
 export interface Intersection {
