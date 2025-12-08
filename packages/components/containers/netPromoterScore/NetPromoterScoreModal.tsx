@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useLoading } from '@proton/hooks';
-import { dismissNps } from '@proton/shared/lib/api/netPromoterScore';
+import { useLoadingByKey } from '@proton/hooks/useLoading';
+import { dismissNps, submitNps } from '@proton/shared/lib/api/netPromoterScore';
 
 import ScaleLadder from '../../components/input/ScaleLadder';
 import Modal from '../../components/modalTwo/Modal';
@@ -18,15 +18,24 @@ import type { NetPromoterScoreModalProps } from './interface';
 
 export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalProps) => {
     // TODO: add telemetry
-    // TODO: add feedback submit handler
     const [openModal, setOpenModal] = useState(show);
-    const [loading, withLoading] = useLoading();
+    const [loadingByKey, withLoadingByKey] = useLoadingByKey();
+    const [optionalComment, setOptionalComment] = useState('');
     const api = useApi();
 
     const [selectedScale, setSelectedScale] = useState<number | undefined>(undefined);
 
     const dismissNPSModal = async () => {
         await api(dismissNps());
+        setOpenModal(false);
+    };
+
+    const submitNPSScore = async () => {
+        if (selectedScale === undefined) {
+            return;
+        }
+
+        await api(submitNps({ Score: selectedScale, Comment: optionalComment }));
         setOpenModal(false);
     };
 
@@ -51,13 +60,29 @@ export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalPro
                     id="feedback-input"
                     label={c('Label').t`Tell us more about your experience`}
                     placeholder={c('Placeholder').t`Optional feedback`}
+                    onValue={(value: string) => {
+                        setOptionalComment(value);
+                    }}
                 />
             </ModalContent>
             <ModalFooter>
-                <Button loading={loading} size="small" shape="ghost" onClick={() => withLoading(dismissNPSModal)}>{c(
-                    'Action'
-                ).t`Not now`}</Button>
-                <Button color="norm">{c('Action').t`Send Feedback`}</Button>
+                <Button
+                    loading={loadingByKey.dismiss}
+                    size="small"
+                    shape="ghost"
+                    onClick={() => withLoadingByKey('dismiss', dismissNPSModal)}
+                >
+                    {c('Action').t`Not now`}
+                </Button>
+
+                <Button
+                    color="norm"
+                    disabled={selectedScale === undefined}
+                    loading={loadingByKey.submit}
+                    onClick={() => withLoadingByKey('submit', submitNPSScore)}
+                >
+                    {c('Action').t`Send Feedback`}
+                </Button>
             </ModalFooter>
         </Modal>
     );
