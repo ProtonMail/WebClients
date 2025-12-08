@@ -1,6 +1,5 @@
 import type { LumoState } from '../redux/store';
 import { Role } from '../types';
-import { selectConversations, selectMessages } from '../redux/selectors';
 
 export type SearchResult =
     | {
@@ -37,6 +36,9 @@ export type SearchResult =
           timestamp: number;
       };
 
+// Narrow state shape needed for search to avoid passing full Redux state
+type SearchState = Pick<LumoState, 'conversations' | 'messages' | 'spaces'>;
+
 export class SearchService {
     private static instance: SearchService | null = null;
 
@@ -55,8 +57,8 @@ export class SearchService {
      * Get all conversations (for default view)
      * @param state Redux state
      */
-    async getAllConversations(state: LumoState): Promise<SearchResult[]> {
-        const conversations = selectConversations(state);
+    async getAllConversations(state: SearchState): Promise<SearchResult[]> {
+        const conversations = state.conversations;
         const spaces = state.spaces;
         const results: SearchResult[] = [];
 
@@ -95,15 +97,15 @@ export class SearchService {
      * @param query Search query string
      * @param state Redux state to search in
      */
-    async searchAsync(query: string, state: LumoState): Promise<SearchResult[]> {
+    async searchAsync(query: string, state: SearchState): Promise<SearchResult[]> {
         const normalizedQuery = query.toLowerCase().trim();
         if (!normalizedQuery) {
             return [];
         }
 
         const results: SearchResult[] = [];
-        const conversations = selectConversations(state);
-        const messages = selectMessages(state);
+        const conversations = state.conversations;
+        const messages = state.messages;
         const spaces = state.spaces;
 
         // Helper to get project info for a space
