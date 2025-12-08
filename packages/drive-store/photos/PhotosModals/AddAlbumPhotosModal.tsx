@@ -4,13 +4,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import {
-    Icon,
     type ModalStateReturnObj,
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
+import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../store';
@@ -85,7 +86,7 @@ const AlbumSquare = ({
                             '--h-custom': '2.5rem',
                         }}
                     >
-                        <Icon name="album-folder" />
+                        <IcAlbumFolder />
                     </div>
                 )}
                 <span className="grow-2 text-left text-ellipsis">{album.name}</span>
@@ -178,7 +179,7 @@ export const AddAlbumPhotosModal = ({
                                     '--h-custom': '2.5rem',
                                 }}
                             >
-                                <Icon name="plus-circle" />
+                                <IcPlusCircle />
                             </span>
                             {share ? c('Action').t`New shared album` : c('Action').t`New album`}
                         </Button>

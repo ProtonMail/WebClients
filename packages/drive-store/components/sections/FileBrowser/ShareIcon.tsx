@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import type { BrowserItemId } from '../../FileBrowser/interface';
 import type { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
@@ -36,7 +36,7 @@ const ShareIcon = ({ shareId, linkId, trashed, className, showLinkSharingModal, 
                         });
                     }}
                 >
-                    <Icon name="users" alt={c('Action').t`Manage share`} />
+                    <IcUsers alt={c('Action').t`Manage share`} />
                 </Button>
             </Tooltip>
         </>

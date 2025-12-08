@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Table from '@proton/components/components/table/Table';
@@ -14,6 +13,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
@@ -135,8 +135,7 @@ const CalendarsTable = ({
                                             disabled={!!isLoading}
                                             className="shrink-0"
                                         >
-                                            <Icon
-                                                name="cog-wheel"
+                                            <IcCogWheel
                                                 alt={c('Calendar table settings button tooltip').t`Open settings`}
                                             />
                                         </ButtonLike>

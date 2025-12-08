@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
@@ -75,7 +76,7 @@ export const ButtonNumberInput = ({
                 }}
                 data-testid={`decrease-addon-${id}`}
             >
-                {!decreaseBlockedReason && <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />}
+                {!decreaseBlockedReason && <IcMinus alt={c('Action').t`Decrease`} className="m-auto" />}
             </button>
             {decreaseBlockedReason && (
                 <span
@@ -127,7 +128,7 @@ export const ButtonNumberInput = ({
                     }}
                     data-testid={`increase-addon-${id}`}
                 >
-                    <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
+                    <IcPlus alt={c('Action').t`Increase`} className="m-auto" />
                 </button>
             </IncreaseBlockedTooltip>
         </div>

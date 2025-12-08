@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ClickableDiv } from '@proton/pass/components/Layout/Button/ClickableDiv';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -93,11 +94,7 @@ export const FileAttachment: FC<Props> = ({
                 onClick={canDownload ? onDownload : noop}
                 onDoubleClick={canDownload ? onDownload : noop}
             >
-                <Icon
-                    name="arrow-down"
-                    alt={c('Pass_file_attachments').t`Download file`}
-                    className="hover:show m-auto"
-                />
+                <IcArrowDown alt={c('Pass_file_attachments').t`Download file`} className="hover:show m-auto" />
                 <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} className="hover:hide" />
             </ClickableDiv>
             <div className="flex-1 flex-column text-left">
@@ -149,7 +146,7 @@ export const FileAttachment: FC<Props> = ({
                                 size="small"
                                 title={c('Action').t`Cancel`}
                             >
-                                <Icon name="cross" alt={c('Action').t`Cancel`} size={3} />
+                                <IcCross alt={c('Action').t`Cancel`} size={3} />
                             </Button>
                         )}
                     </div>

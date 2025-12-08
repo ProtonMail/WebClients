@@ -13,6 +13,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments';
@@ -73,7 +74,7 @@ const FeatureList = ({
                             {icon && feature.icon ? (
                                 <Icon size={iconSize} name={feature.icon} />
                             ) : (
-                                <Icon size={iconSize} name="checkmark" />
+                                <IcCheckmark size={iconSize} />
                             )}
                         </span>
                     );
@@ -86,6 +87,7 @@ const FeatureList = ({
                 <li
                     key={
                         // Key by index so that we can skeleton load certain features - eg the vpn countries
+                        // eslint-disable-next-line react/no-array-index-key
                         i
                     }
                     className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}

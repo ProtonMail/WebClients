@@ -11,6 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PLANS } from '@proton/payments';
 
 import type { ConfirmationModal } from './interface';
@@ -55,7 +56,7 @@ const CancelConfirmationModal = ({
                 <p className="mb-4 mt-6 text-lg text-bold">{warningTitle}</p>
                 <StripedList alternate="odd" className="mt-0">
                     {warningPoints.map((text) => (
-                        <StripedItem key={text} left={<Icon name="cross-big" className="color-danger" />}>
+                        <StripedItem key={text} left={<IcCrossBig className="color-danger" />}>
                             {text}
                         </StripedItem>
                     ))}

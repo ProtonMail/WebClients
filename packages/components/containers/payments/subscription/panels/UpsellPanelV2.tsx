@@ -11,8 +11,9 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { CYCLE } from '@proton/payments';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import type { PLANS } from '@proton/payments';
+import { CYCLE } from '@proton/payments';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -77,7 +78,7 @@ const UpsellPanelV2 = ({ title, plan, features, children, ctas = [], isRecommend
                         {isExpanded ? (
                             <>
                                 <span>{c('Action').t`Hide plan features`}</span>
-                                <Icon name="chevron-up" className="ml-2" />
+                                <IcChevronUp className="ml-2" />
                             </>
                         ) : (
                             <>

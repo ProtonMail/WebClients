@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { AccessLimitPrompt } from '@proton/pass/components/Invite/Access/AccessLimitPrompt';
 import { AccessList } from '@proton/pass/components/Invite/Access/AccessList';
 import { AccessUpgrade } from '@proton/pass/components/Invite/Access/AccessUpgrade';
@@ -89,7 +89,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
 
     const actions = [
         <Button key="modal-close-button" className="shrink-0" icon pill shape="solid" onClick={close}>
-            <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+            <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
         </Button>,
     ];
 

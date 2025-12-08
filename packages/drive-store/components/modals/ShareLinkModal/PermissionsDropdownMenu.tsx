@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -24,7 +25,7 @@ export const MenuItem = ({
             {iconName && <Icon name={iconName} className="mr-2" />}
             {label}
         </span>
-        {isSelected ? <Icon name="checkmark" /> : null}
+        {isSelected ? <IcCheckmark /> : null}
     </DropdownMenuButton>
 );
 

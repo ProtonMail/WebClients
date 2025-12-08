@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAlbumShareButtonProps {
@@ -15,7 +16,7 @@ export const PhotosAlbumShareButton = ({ onClick, showIconOnly }: PhotosAlbumSha
         title={c('Action').t`Share`}
         className="inline-flex flex-nowrap flex-row items-center"
     >
-        <Icon name="user-plus" className={clsx(!showIconOnly && 'mr-2')} alt={c('Action').t`Share`} />
+        <IcUserPlus className={clsx(!showIconOnly && 'mr-2')} alt={c('Action').t`Share`} />
         <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Share`}</span>
     </ToolbarButton>
 );

@@ -9,6 +9,9 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcPassLock } from '@proton/icons/icons/IcPassLock';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
@@ -118,7 +121,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                     size="small"
                     title={c('Action').t`Add new item`}
                 >
-                    <Icon size={3.5} name="plus" alt={c('Action').t`Add new item`} />
+                    <IcPlus size={3.5} alt={c('Action').t`Add new item`} />
                     <span className="hidden md:block">{c('Action').t`Create item`}</span>
                 </Button>
             </OrganizationPolicyTooltip>
@@ -156,7 +159,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                                     }
 
                                     if (locked) {
-                                        return <Icon name="pass-lock" size={3.5} className="mr-1.5" />;
+                                        return <IcPassLock size={3.5} className="mr-1.5" />;
                                     }
                                 })()}
                                 icon={
@@ -183,11 +186,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                                     className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
                                     style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                 >
-                                    <Icon
-                                        name="key"
-                                        className="absolute inset-center"
-                                        color="var(--interaction-norm)"
-                                    />
+                                    <IcKey className="absolute inset-center" color="var(--interaction-norm)" />
                                 </span>
                             }
                         />

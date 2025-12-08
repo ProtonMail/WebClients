@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -15,6 +14,7 @@ import Time from '@proton/components/components/time/Time';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffectOnce, useLoading } from '@proton/hooks';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -140,7 +140,7 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                         </div>
                     </div>
                     <Card rounded>
-                        <Icon name="info-circle" className="align-text-top" />{' '}
+                        <IcInfoCircle className="align-text-top" />{' '}
                         {c('sso')
                             .t`This will sign the user out of their other devices and they will have to create a new backup password.`}
                     </Card>

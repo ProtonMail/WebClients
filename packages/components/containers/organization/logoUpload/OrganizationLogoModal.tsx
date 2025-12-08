@@ -19,6 +19,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
@@ -325,15 +326,15 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                     </p>
                     <ul className="unstyled text-sm color-weak text-left m-0">
                         <li>
-                            <Icon name="checkmark" className="shrink-0 mr-1" />
+                            <IcCheckmark className="shrink-0 mr-1" />
                             {c('Organization logo upload modal').t`Square image of at least 128 pixels`}
                         </li>
                         <li>
-                            <Icon name="checkmark" className="shrink-0 mr-1" />
+                            <IcCheckmark className="shrink-0 mr-1" />
                             {c('Organization logo upload modal').t`File in PNG or JPEG format`}
                         </li>
                         <li>
-                            <Icon name="checkmark" className="shrink-0 mr-1" />
+                            <IcCheckmark className="shrink-0 mr-1" />
                             {c('Organization logo upload modal').t`File not larger than 30 KB`}
                         </li>
                     </ul>

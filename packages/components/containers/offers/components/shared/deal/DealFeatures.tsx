@@ -8,6 +8,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from './DealContext';
@@ -36,7 +38,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                                 !!feature.icon ? (
                                     <Icon className="color-success" name={feature.icon} size={5} />
                                 ) : (
-                                    <Icon className="color-success" name="checkmark" size={5} />
+                                    <IcCheckmark className="color-success" size={5} />
                                 )
                             }
                         >
@@ -53,7 +55,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                 <div className="w-full text-center flex">
                     <InlineLinkButton className="mx-auto offer-see-plan-features" onClick={() => expand()}>
                         <span>{c('Action').t`See plan features`}</span>
-                        <Icon name="chevron-down" className="ml-2" />
+                        <IcChevronDown className="ml-2" />
                     </InlineLinkButton>
                 </div>
             )}

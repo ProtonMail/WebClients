@@ -4,9 +4,10 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import { IcCloud } from '@proton/icons/icons/IcCloud';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -153,7 +154,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
                 })
             )}
         >
-            <Icon name="cloud" />
+            <IcCloud />
             {c('Storage').t`Get more storage`}
         </ButtonLike>
     );
@@ -185,7 +186,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
                         setIgnoreStorageLimit(true);
                     }}
                 >
-                    <Icon size={3} name="cross-big" />
+                    <IcCrossBig size={3} />
                 </Button>
             </div>
             <div className="text-bold">{data.description}</div>

@@ -7,7 +7,6 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
@@ -20,6 +19,7 @@ import { getShortPlan } from '@proton/components/containers/payments/features/pl
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
 import { FREE_PLAN, getPlansMap } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -70,7 +70,7 @@ const FeatureList = () => {
                 {features.map((feature, i) => {
                     return (
                         /* eslint-disable-next-line react/no-array-index-key */
-                        <StripedItem key={i} left={<Icon name="cross-big" className="color-weak" />}>
+                        <StripedItem key={i} left={<IcCrossBig className="color-weak" />}>
                             {feature}
                         </StripedItem>
                     );

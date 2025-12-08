@@ -5,8 +5,9 @@ import { type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { AliasPreview } from '@proton/pass/components/Alias/Alias.preview';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -76,7 +77,7 @@ export const AliasModal = <T extends AliasFormValues>({
                                 shape="solid"
                                 onClick={modalProps.onClose}
                             >
-                                <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
+                                <IcCross className="modal-close-icon" alt={c('Action').t`Close`} />
                             </Button>,
 
                             /* if user has reached his alias limit prompt
@@ -115,7 +116,7 @@ export const AliasModal = <T extends AliasFormValues>({
                     <div className="flex justify-center mb-4">
                         <Button shape="ghost" onClick={toggleShowAdvanced} pill>
                             <span className="flex items-center color-weak text-sm">
-                                <Icon name="cog-wheel" className="mr-1" />
+                                <IcCogWheel className="mr-1" />
                                 {c('Action').t`Advanced options`}
                             </span>
                         </Button>

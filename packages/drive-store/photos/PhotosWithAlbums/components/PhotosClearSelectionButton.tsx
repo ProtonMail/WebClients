@@ -2,7 +2,8 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 interface Props {
     onClick: () => void;
@@ -17,7 +18,7 @@ export const PhotosClearSelectionButton: FC<Props> = ({ onClick, children }) => 
             data-testid="toolbar-clear-selection"
             className="inline-flex flex-nowrap flex-row items-center ml-2 border px-2 py-1"
         >
-            <Icon name="cross-big" className="mr-2" /> {children}
+            <IcCrossBig className="mr-2" /> {children}
         </ToolbarButton>
     );
 };

@@ -7,6 +7,8 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, FileIcon, Icon } from '@proton/components';
+import { IcCloud } from '@proton/icons/icons/IcCloud';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -192,7 +194,7 @@ export const PhotosCard: FC<Props> = ({
                                             data-testid="photo-cloud-icon"
                                             className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
                                         >
-                                            <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
+                                            <IcCloud alt={c('Info').t`Photo is not saved to your library`} />
                                         </div>
                                     )}
                                 {photo.signatureIssues && (
@@ -206,7 +208,7 @@ export const PhotosCard: FC<Props> = ({
                                 )}
                                 {photo.isShared && (
                                     <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
-                                        <Icon name="users" color="white" size={3} />
+                                        <IcUsers color="white" size={3} />
                                     </div>
                                 )}
                             </div>
