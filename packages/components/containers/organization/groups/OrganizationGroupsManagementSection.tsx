@@ -4,12 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
 import { DualPaneSidebar } from '@proton/atoms/DualPane/DualPaneSidebar';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -82,7 +82,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                     actions.onCreateGroup();
                 }}
             >
-                <Icon className="shrink-0 mr-2" name="plus" />
+                <IcPlus className="shrink-0 mr-2" />
                 {c('Action').t`New group`}
             </Button>
             {(hasUsableDomain || usingGroupsDomainButNotActive) && (

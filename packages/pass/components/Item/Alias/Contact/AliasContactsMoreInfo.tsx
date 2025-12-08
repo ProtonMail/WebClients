@@ -3,8 +3,8 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import createContactImg from '@proton/pass/assets/alias/alias-contact-create.svg';
 import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.png';
 import stampedLetter from '@proton/pass/assets/alias/alias-contact-stamped-letter.svg';
@@ -64,7 +64,7 @@ export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ on
                                 '--left-custom': '16px',
                             }}
                         >
-                            <Icon name="cross" alt={c('Action').t`Cancel`} />
+                            <IcCross alt={c('Action').t`Cancel`} />
                         </Button>,
                         <div
                             key="image-stamped-letter"

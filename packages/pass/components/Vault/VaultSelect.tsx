@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { RadioButtonGroup, RadioLabelledButton } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
@@ -75,7 +75,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
                                 shape="solid"
                                 onClick={props.onClose}
                             >
-                                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                                <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                             </Button>,
                             ...(didDowngrade
                                 ? [<UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />]

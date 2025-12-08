@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
@@ -42,7 +43,7 @@ const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton =
                 data-testid="toolbar-details"
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="info-circle" className={clsx(!showIconOnly && 'mr-2')} />
+                <IcInfoCircle className={clsx(!showIconOnly && 'mr-2')} />
                 <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Details`}</span>
             </ButtonComp>
             {detailsModal}

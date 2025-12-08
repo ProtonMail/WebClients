@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCloudArrowDown } from '@proton/icons/icons/IcCloudArrowDown';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -30,7 +31,7 @@ export const PhotosSavePhotoButton: FC<Props> = ({ onSavePhotos, showIconOnly, d
             data-testid="toolbar-save-photo"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="cloud-arrow-down" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcCloudArrowDown className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Save`}</span>
         </ButtonComp>
     );

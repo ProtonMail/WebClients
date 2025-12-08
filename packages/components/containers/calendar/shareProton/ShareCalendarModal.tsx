@@ -17,7 +17,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useApi from '@proton/components/hooks/useApi';
@@ -25,6 +25,7 @@ import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncrypti
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
@@ -233,7 +234,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
         return {
             icon: (
                 <div className="flex items-center shrink-0 ml-2">
-                    <Icon name="exclamation-circle" />
+                    <IcExclamationCircle />
                 </div>
             ),
             iconTooltip: error.message,
@@ -354,12 +355,14 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                     const onError = (error: any) => {
                         const { data = {} } = error;
                         if (typeof data.Error === 'string') {
+                            // eslint-disable-next-line no-console
                             console.error(data.Error);
                             createNotification({
                                 type: 'error',
                                 text: data.Error,
                             });
                         } else {
+                            // eslint-disable-next-line no-console
                             console.error(error);
                             createNotification({
                                 type: 'error',

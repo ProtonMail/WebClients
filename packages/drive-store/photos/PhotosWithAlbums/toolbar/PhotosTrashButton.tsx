@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import type { LinkInfo } from '../../../store';
@@ -25,7 +26,7 @@ const PhotosTrashButton = ({ selectedLinks, showIconOnly, dropDownMenuButton }: 
             data-testid="toolbar-trash"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="trash" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcTrash className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Delete`}</span>
         </ButtonComp>
     );

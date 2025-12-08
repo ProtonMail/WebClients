@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { CountryOptions } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
@@ -90,8 +91,9 @@ export const ButtonNumberInput = ({
                         onChange?.(newValue);
                     }}
                 >
-                    <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />
+                    <IcMinus alt={c('Action').t`Decrease`} className="m-auto" />
                 </button>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label htmlFor={id} className="my-2 flex">
                     <input
                         autoComplete="off"
@@ -134,7 +136,7 @@ export const ButtonNumberInput = ({
                         onChange?.(newValue);
                     }}
                 >
-                    <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
+                    <IcPlus alt={c('Action').t`Increase`} className="m-auto" />
                 </button>
             </div>
         </>

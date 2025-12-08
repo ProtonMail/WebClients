@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import type { Maybe } from '@proton/pass/types';
@@ -54,7 +56,7 @@ export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
                             shape="ghost"
                             size="small"
                         >
-                            <Icon name="cross" size={3} />
+                            <IcCross size={3} />
                         </Button>
                     )}
 
@@ -77,7 +79,7 @@ export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
                     onClick={() => setShowLogs(true)}
                 >
                     <div className="flex items-center justify-center gap-2 p-8 text-sm">
-                        <Icon name="window-terminal" />
+                        <IcWindowTerminal />
                         <span>{c('Label').t`View logs`}</span>
                     </div>
                 </Button>
@@ -87,7 +89,7 @@ export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
 
             <Button shape="underline" size="small" onClick={async () => downloadLogs(await getLogs().catch(() => []))}>
                 <div className="flex items-center gap-2 text-sm">
-                    <Icon name="arrow-down-to-square" />
+                    <IcArrowDownToSquare />
                     <span>{c('Label').t`Download logs`}</span>
                 </div>
             </Button>

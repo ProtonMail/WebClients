@@ -11,8 +11,11 @@ import { StripedList } from '@proton/components/components/stripedList/StripedLi
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { CYCLE } from '@proton/payments';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import type { PLANS } from '@proton/payments';
+import { CYCLE } from '@proton/payments';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -58,7 +61,7 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
             {/* `Recommended` label */}
             {isRecommended && (
                 <label className="recommended-label absolute color-invert bg-primary rounded-full px-2 py-1 flex items-center">
-                    <Icon name="star" className="mr-1" />
+                    <IcStar className="mr-1" />
                     {c('upsell panel').t`Recommended`}
                 </label>
             )}
@@ -69,12 +72,12 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                         {isExpanded ? (
                             <>
                                 <span>{c('Action').t`Hide plan features`}</span>
-                                <Icon name="chevron-up" className="ml-2" />
+                                <IcChevronUp className="ml-2" />
                             </>
                         ) : (
                             <>
                                 <span>{c('Action').t`See plan features`}</span>
-                                <Icon name="chevron-down" className="ml-2" />
+                                <IcChevronDown className="ml-2" />
                             </>
                         )}
                     </InlineLinkButton>

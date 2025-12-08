@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -55,7 +57,7 @@ export const PasswordGeneratorModal: FC<Props> = ({ actionLabel, className, open
                                 shape="solid"
                                 onClick={onClose}
                             >
-                                <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
+                                <IcCross className="modal-close-icon" alt={c('Action').t`Close`} />
                             </Button>,
                             <div className="flex gap-1" key="modal-actions-group">
                                 {actionLabel && (
@@ -75,7 +77,7 @@ export const PasswordGeneratorModal: FC<Props> = ({ actionLabel, className, open
                                     className="shrink-0"
                                     onClick={generator.regeneratePassword}
                                 >
-                                    <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />
+                                    <IcArrowsRotate alt={c('Action').t`Regenerate`} />
                                 </Button>
                             </div>,
                         ]}
@@ -88,7 +90,7 @@ export const PasswordGeneratorModal: FC<Props> = ({ actionLabel, className, open
 
                 <button className="w-full flex items-center justify-space-between" onClick={passwordHistory.open}>
                     <span>{c('Label').t`Password history`}</span>
-                    <Icon name="chevron-right" />
+                    <IcChevronRight />
                 </button>
             </Panel>
         </SidebarModal>

@@ -6,12 +6,13 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
     reinviteGroupMember,
@@ -47,7 +48,7 @@ const Option = ({
             disabled={disabled}
         >
             <span className="flex items-center mr-14">{option.label}</span>
-            {isSelected ? <Icon className="color-primary" name="checkmark" /> : null}
+            {isSelected ? <IcCheckmark className="color-primary" /> : null}
         </DropdownMenuButton>
     );
 };
@@ -147,7 +148,7 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete, canChangeVisibi
                 title={c('Action').t`More options`}
                 aria-expanded={isOpen}
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                <IcThreeDotsVertical alt={c('Action').t`More options`} />
             </Button>
             <Dropdown
                 isOpen={isOpen}

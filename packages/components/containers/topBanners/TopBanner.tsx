@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -34,7 +34,7 @@ const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
                     onClick={onClose}
                     title={c('Action').t`Close this banner`}
                 >
-                    <Icon name="cross" alt={c('Action').t`Close this banner`} />
+                    <IcCross alt={c('Action').t`Close this banner`} />
                 </Button>
             ) : null}
         </div>

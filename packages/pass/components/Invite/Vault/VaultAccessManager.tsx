@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { AccessLimitPrompt } from '@proton/pass/components/Invite/Access/AccessLimitPrompt';
 import { AccessList } from '@proton/pass/components/Invite/Access/AccessList';
 import { AccessUpgrade } from '@proton/pass/components/Invite/Access/AccessUpgrade';
@@ -49,7 +49,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const warning = useMemo(() => {
         if (canManage && limitReached) {
-            const upgradeLink = <AccessUpgrade key="eslint-autofix-3D8F17" />;
+            const upgradeLink = <AccessUpgrade key="eslint-upgrade-link" />;
             return (
                 <Card type="primary" className="text-sm">
                     {plan === UserPassPlan.FREE
@@ -62,7 +62,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const actions = [
         <Button key="modal-close-button" className="shrink-0" icon pill shape="solid" onClick={close}>
-            <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+            <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
         </Button>,
         <Button key="modal-invite-button" color="norm" pill onClick={onVaultInvite} disabled={!canManage}>
             {c('Action').t`Invite others`}

@@ -2,8 +2,9 @@ import type { ChangeEvent, FC, KeyboardEvent, KeyboardEventHandler } from 'react
 import { useEffect, useReducer } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 import './IncrementableInput.scss';
@@ -114,7 +115,7 @@ export const IncrementableInput: FC<Props> = ({
                 pill
                 disabled={state.disabledDecrement}
             >
-                <Icon name="minus" alt="Decrement value" />
+                <IcMinus alt="Decrement value" />
             </Button>
             <InputFieldTwo
                 rootClassName="flex items-center bg-weak"
@@ -138,7 +139,7 @@ export const IncrementableInput: FC<Props> = ({
                 pill
                 disabled={state.disabledIncrement}
             >
-                <Icon name="plus" alt="Increment value" />
+                <IcPlus alt="Increment value" />
             </Button>
         </div>
     );

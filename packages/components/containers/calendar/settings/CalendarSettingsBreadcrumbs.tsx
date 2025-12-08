@@ -6,9 +6,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import CollapsingBreadcrumbs from '@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getCalendarSubpagePath, getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -48,7 +48,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                     icon
                     type="button"
                     className="shrink-0"
-                    content={<Icon name="chevron-down" className="caret-like" />}
+                    content={<IcChevronDown className="caret-like" />}
                     hasCaret={false}
                 >
                     <SelectOptions<string>

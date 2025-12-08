@@ -6,6 +6,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import InputButton from '@proton/components/components/input/InputButton';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -74,7 +75,7 @@ export const RadioLabelledButton = <T extends RadioValue>({
             />
             <div className="flex items-center gap-x-3 py-4">
                 {children}
-                {checked && <Icon name="checkmark" size={6} color="var(--interaction-norm)" />}
+                {checked && <IcCheckmark size={6} color="var(--interaction-norm)" />}
             </div>
         </label>
     );

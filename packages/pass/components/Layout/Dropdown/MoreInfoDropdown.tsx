@@ -6,7 +6,8 @@ import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import type { SelectedRevision } from '@proton/pass/types';
 
@@ -34,12 +35,12 @@ export const MoreInfoDropdown: FC<Props> = ({ revision, itemId, shareId, vaultId
                 className="pt-2 text-sm"
                 suffix={
                     <CollapsibleHeaderIconButton className="p-0" onClick={handleClick}>
-                        <Icon name="chevron-down" className="color-weak" />
+                        <IcChevronDown className="color-weak" />
                     </CollapsibleHeaderIconButton>
                 }
             >
                 <span className="flex items-center color-weak text-semibold">
-                    <Icon className="mr-2" name="info-circle" />
+                    <IcInfoCircle className="mr-2" />
                     <span>{c('Button').t`More info`}</span>
                 </span>
             </CollapsibleHeader>

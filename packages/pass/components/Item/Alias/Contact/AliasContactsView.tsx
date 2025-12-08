@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
 import { AliasContactCard } from '@proton/pass/components/Item/Alias/Contact/AliasContactCard';
 import { AliasContactCreate } from '@proton/pass/components/Item/Alias/Contact/AliasContactCreate';
@@ -58,7 +58,7 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
                                     onClick={onClose}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                    <IcCross alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <Button color="norm" key="modal-submit-button" pill onClick={handleCreateClick}>
                                     {c('Action').t`Create contact`}

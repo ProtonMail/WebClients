@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import clsx from '@proton/utils/clsx';
@@ -34,7 +34,7 @@ export const OnboardingButton: FC = () => {
                         shape="ghost"
                         title={c('Action').t`Close`}
                     >
-                        <Icon name="cross" alt={c('Action').t`Close`} />
+                        <IcCross alt={c('Action').t`Close`} />
                     </Button>
                 </div>
             </div>

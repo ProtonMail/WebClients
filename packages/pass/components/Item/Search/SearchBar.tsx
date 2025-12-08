@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
@@ -113,7 +114,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
             onValue={setSearch}
             placeholder={`${placeholder}…`}
             title={`${placeholder}…`}
-            prefix={<Icon name="magnifier" />}
+            prefix={<IcMagnifier />}
             ref={inputRef}
             suffix={
                 search !== '' && (
@@ -126,7 +127,7 @@ export const SearchBar = memo(({ disabled, trash }: Props) => {
                         onClick={handleClear}
                         title={c('Action').t`Clear search`}
                     >
-                        <Icon name="cross" />
+                        <IcCross alt={c('Action').t`Clear search`} />
                     </Button>
                 )
             }
