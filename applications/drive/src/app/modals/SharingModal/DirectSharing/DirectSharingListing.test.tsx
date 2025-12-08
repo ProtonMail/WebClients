@@ -83,6 +83,16 @@ describe('DirectSharingListing', () => {
         expect(screen.getByText('Owner')).toBeInTheDocument();
     });
 
+    it('renders owner information without display name', () => {
+        render(<DirectSharingListing {...defaultProps} ownerDisplayName={undefined} />);
+
+        const ownerSection = screen.getByTestId('share-owner');
+        expect(ownerSection).toBeInTheDocument();
+        expect(screen.getByText('owner@example.com (you)')).toBeInTheDocument();
+        expect(screen.queryByTitle('owner@example.com')).toBeInTheDocument();
+        expect(screen.getByText('Owner')).toBeInTheDocument();
+    });
+
     it('renders empty members list', () => {
         render(<DirectSharingListing {...defaultProps} members={[]} />);
 

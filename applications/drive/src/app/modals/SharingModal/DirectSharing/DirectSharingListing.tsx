@@ -56,12 +56,14 @@ export const DirectSharingListing = ({
                 <div className="flex-1 flex flex-nowrap items-center gap-2">
                     <UserAvatar name={ownerDisplayName || ownerEmail} className="shrink-0" />
                     <p className="flex-1 flex flex-column flex-nowrap p-0 m-0">
-                        <span className="text-semibold">
-                            {ownerDisplayName} ({c('Info').t`you`})
+                        <span className="text-semibold" title={ownerDisplayName ? undefined : ownerEmail}>
+                            {ownerDisplayName ? ownerDisplayName : ownerEmail} ({c('Info').t`you`})
                         </span>
-                        <span className="color-weak block max-w-full text-ellipsis" title={ownerEmail}>
-                            {ownerEmail}
-                        </span>
+                        {ownerDisplayName ? (
+                            <span className="color-weak block max-w-full text-ellipsis" title={ownerEmail}>
+                                {ownerEmail}
+                            </span>
+                        ) : null}
                     </p>
                 </div>
                 <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
