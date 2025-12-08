@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Icon, Logo } from '@proton/components';
+import { Logo } from '@proton/components';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import envelope from '@proton/styles/assets/img/illustrations/envelope.svg';
 import gmailLogo from '@proton/styles/assets/img/illustrations/gmail-logo.svg';
@@ -36,7 +37,7 @@ const GmailSyncModalAnimation = ({ reduceHeight = false }: Props) => {
             <div className="gsma-auto-forward">
                 <div className="gsma-forwarded">
                     {c('Animation').t`Auto forwarded`}
-                    <Icon className="ml-4 shrink-0" name="arrow-up-and-right-big" />
+                    <IcArrowUpAndRightBig className="ml-4 shrink-0" />
                 </div>
                 <div className="gsma-envelope">
                     <img src={envelope} alt="" width={mobile ? 55 : 45} height={mobile ? 29 : 35} />

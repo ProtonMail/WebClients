@@ -16,10 +16,11 @@ import {
     type OAuthProps,
 } from '@proton/activation/src/interface';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Icon, useModalState } from '@proton/components';
+import { useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks/index';
+import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
 import { useVariant } from '@proton/unleash';
 
 interface Props {
@@ -98,7 +99,7 @@ const BYOESignupButton = ({
                 >
                     {variant.name === 'Bold' ? (
                         <>
-                            <Icon name="brand-google" className="mr-2" />
+                            <IcBrandGoogle className="mr-2" />
                             {c('loc_nightly: BYOE').t`Use my Gmail address`}
                         </>
                     ) : (

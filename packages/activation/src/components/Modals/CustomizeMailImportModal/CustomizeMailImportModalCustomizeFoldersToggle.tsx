@@ -2,6 +2,8 @@ import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, Label, Row } from '@proton/components';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcTags } from '@proton/icons/icons/IcTags';
 
 interface Props {
     isLabelMapping: boolean;
@@ -27,7 +29,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
                 <Tooltip title={t.manage()}>
                     <Button shape="outline" onClick={toggleFolderVisibility} data-testid="CustomizeModal:toggleFolders">
                         <span>
-                            <Icon name={isLabelMapping ? 'tags' : 'folders'} className="mr-2" />
+                            {isLabelMapping ? <IcTags className="mr-2" /> : <IcFolders className="mr-2" />}
                             {selectedFoldersCount === totalFoldersCount ? (
                                 <span>{t.totalCount(totalFoldersCount)}</span>
                             ) : (

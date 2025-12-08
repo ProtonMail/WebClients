@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { Badge, Icon } from '@proton/components'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Badge } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -22,7 +23,7 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                             title={c('Tooltip').t`Account is disconnected`}
                             data-testid="ImporterRowStatus:IMAP_Error"
                         >
-                            <Icon name="exclamation-circle-filled" />
+                            <IcExclamationCircleFilled />
                         </Tooltip>
                     )}
                     {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
@@ -30,7 +31,7 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                             title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}
                             data-testid="ImporterRowStatus:quota_Error"
                         >
-                            <Icon name="exclamation-circle-filled" />
+                            <IcExclamationCircleFilled />
                         </Tooltip>
                     )}
                 </>
@@ -47,7 +48,7 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                         title={c('Tooltip')
                             .t`Your external account may have reached its 24-hour bandwidth limit. ${BRAND_NAME} will try to resume the import as soon as possible.`}
                     >
-                        <Icon name="exclamation-circle-filled" />
+                        <IcExclamationCircleFilled />
                     </Tooltip>
                 </>
             );

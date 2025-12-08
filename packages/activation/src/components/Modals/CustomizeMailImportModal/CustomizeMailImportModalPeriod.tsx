@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { getTimeUnitLabels } from '@proton/activation/src/constants';
 import { TIME_PERIOD } from '@proton/activation/src/interface';
-import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 interface Props {
     selectedPeriod: TIME_PERIOD;
@@ -20,7 +21,7 @@ const CustomizeMailImportModalPeriod = ({ selectedPeriod, onChange }: Props) => 
                 <Label className="flex items-center">
                     {c('Label').t`Import interval`}
                     <Tooltip title={c('Tooltip').t`The import will start with the most recent messages.`}>
-                        <Icon name="info-circle" className="ml-2" />
+                        <IcInfoCircle className="ml-2" />
                     </Tooltip>
                 </Label>
                 <Field>
