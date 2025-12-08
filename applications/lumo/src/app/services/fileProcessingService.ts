@@ -1,3 +1,10 @@
+import { ThumbnailType } from '@protontech/drive-sdk';
+
+import { generateThumbnail } from '@proton/drive/modules/thumbnails/thumbnailGenerator';
+
+import { getProcessingCategory } from '../util/filetypes';
+import type { InternalImageResult } from './files/types';
+
 export interface FileData {
     name: string;
     type: string;
@@ -38,6 +45,53 @@ export interface ProcessingError {
 
 export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
 
+async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
+    console.log(`[Image Processing] Reducing image size for ${fileData.name} using thumbnail generator`);
+
+    // Convert ArrayBuffer to Blob for thumbnail generator
+    const blob = new Blob([fileData.data], { type: fileData.type });
+
+    // Generate thumbnails with debug mode enabled
+    const { thumbnailsPromise } = generateThumbnail(blob, fileData.name, fileData.size, { debug: true });
+
+    // Await the thumbnail generation result
+    const result = await thumbnailsPromise;
+
+    if (!result.ok) {
+        throw new Error(`Thumbnail generation failed: ${result.error}`);
+    }
+
+    const thumbnailResult = result.result;
+
+    if (!thumbnailResult?.thumbnails || thumbnailResult.thumbnails.length === 0) {
+        throw new Error('No thumbnails were generated');
+    }
+
+    // Prefer Type2 (HD) thumbnail, fallback to Type1 if not available
+    const hdThumbnail = thumbnailResult.thumbnails.find((t) => t.type === ThumbnailType.Type2);
+    const thumbnail = hdThumbnail || thumbnailResult.thumbnails[0];
+
+    console.log(
+        `[Image Processing] Using ${thumbnail.type === ThumbnailType.Type2 ? 'HD' : 'standard'} thumbnail for ${fileData.name}`
+    );
+
+    // Convert Uint8Array to ArrayBuffer
+    return thumbnail.thumbnail.buffer;
+}
+
+async function processImageFile(fileData: FileData): Promise<InternalImageResult> {
+    console.log(`Processing image: ${fileData.name} (${fileData.type})`);
+
+    const processedData = await reduceImageSize(fileData);
+
+    return {
+        type: 'image',
+        originalSize: fileData.size,
+        processedSize: processedData.byteLength,
+        processedData,
+    };
+}
+
 export class FileProcessingService {
     private worker: Worker | null = null;
 
@@ -58,43 +112,55 @@ export class FileProcessingService {
     private initializeWorker() {
         try {
             // Create the worker
-            this.worker = new Worker(new URL('../workers/fileProcessingWorker.ts', import.meta.url), {
+            this.worker = new Worker(new URL('./workers/fileProcessingWorker.ts', import.meta.url), {
                 type: 'module',
             });
 
             // Handle messages from worker
             this.worker.addEventListener('message', (event: MessageEvent<FileProcessingResponse>) => {
-                const response = event.data;
-                const pending = this.pendingRequests.get(response.id);
-
-                if (pending) {
-                    this.pendingRequests.delete(response.id);
-                    pending.resolve(response);
-                }
+                this.onMessage(event);
             });
 
             // Handle worker errors
             this.worker.addEventListener('error', (error) => {
-                console.error('Worker error:', error);
-                // Reject all pending requests
-                this.pendingRequests.forEach(({ reject }) => {
-                    reject(new Error('Worker error: ' + error.message));
-                });
-                this.pendingRequests.clear();
+                this.onError(error);
             });
 
             // Handle worker termination
             this.worker.addEventListener('messageerror', (error) => {
-                console.error('Worker message error:', error);
-                // Reject all pending requests
-                this.pendingRequests.forEach(({ reject }) => {
-                    reject(new Error('Worker message error'));
-                });
-                this.pendingRequests.clear();
+                this.onMessageError(error);
             });
         } catch (error) {
             console.error('Failed to initialize file processing worker:', error);
             this.worker = null;
+        }
+    }
+
+    private onMessageError(error: MessageEvent<any>) {
+        console.error('Worker message error:', error);
+        // Reject all pending requests
+        this.pendingRequests.forEach(({ reject }) => {
+            reject(new Error('Worker message error'));
+        });
+        this.pendingRequests.clear();
+    }
+
+    private onError(error: ErrorEvent) {
+        console.error('Worker error:', error);
+        // Reject all pending requests
+        this.pendingRequests.forEach(({ reject }) => {
+            reject(new Error('Worker error: ' + error.message));
+        });
+        this.pendingRequests.clear();
+    }
+
+    private onMessage(event: MessageEvent<FileProcessingResponse>) {
+        const response = event.data;
+        const pending = this.pendingRequests.get(response.id);
+
+        if (pending) {
+            this.pendingRequests.delete(response.id);
+            pending.resolve(response);
         }
     }
 
@@ -136,7 +202,7 @@ export class FileProcessingService {
 
             // Convert file to ArrayBuffer and send to worker
             this.makeRequest(id, file)
-                .then((request) => this.sendToWorker(request))
+                .then((request) => this.process(request))
                 .catch((error) => {
                     // Clean up pending request on error
                     this.pendingRequests.delete(id);
@@ -147,6 +213,34 @@ export class FileProcessingService {
             const timeout = this.getTimeout(file.size, file.type);
             this.ensureFinishedAfterTimeout(id, reject, timeout);
         });
+    }
+
+    private async process(request: FileProcessingRequest) {
+        if (this.needsMainThread(request)) {
+            await this.processOnMainThread(request);
+        } else {
+            this.sendToWorker(request);
+        }
+    }
+
+    needsMainThread(request: FileProcessingRequest) {
+        const { file } = request;
+        const category = getProcessingCategory(file.type, file.name);
+        return category === 'image';
+    }
+
+    async processOnMainThread(request: FileProcessingRequest) {
+        const { file } = request;
+        const category = getProcessingCategory(file.type, file.name);
+        switch (category) {
+            case 'image':
+                const result = await processImageFile(file);
+                const extResult: ImageProcessingResult = { id: request.id, ...result };
+                this.onMessage({ data: extResult } as MessageEvent<ImageProcessingResult>);
+                return result;
+            default:
+                throw new Error('Unsupported file type');
+        }
     }
 
     private async makeRequest(id: string, file: File): Promise<FileProcessingRequest> {
