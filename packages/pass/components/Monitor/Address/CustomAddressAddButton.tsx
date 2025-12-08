@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 
@@ -11,7 +11,7 @@ export const CustomAddressAddButton: FC = () => {
 
     return (
         <Button icon pill size="small" shape="solid" color="weak" disabled={disabled} onClick={addAddress}>
-            <Icon name="plus" />
+            <IcPlus />
         </Button>
     );
 };

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Badge, Checkbox, FileNameDisplay, Icon } from '@proton/components';
+import { Badge, Checkbox, FileNameDisplay } from '@proton/components';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -58,6 +59,7 @@ const GridViewItemBase = ({
                     {IconComponent}
                 </>
             </button>
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
                 className={clsx([
                     'flex file-browser-grid-item--select',
@@ -102,7 +104,7 @@ const GridViewItemBase = ({
                         contextMenuControls.handleContextMenuTouch?.(e);
                     }}
                 >
-                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                    <IcThreeDotsVertical alt={c('Action').t`More options`} />
                 </Button>
             </div>
         </>

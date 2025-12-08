@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon } from '@proton/components';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
@@ -67,7 +67,7 @@ export const EmptyPhotos: FC<EmptyPhotosProps> = ({ shareId, linkId }) => {
                     data-testid="main-photos-upload"
                     title={c('Action').t`Upload photos`}
                 >
-                    <Icon className="mr-2" name="arrow-up-line" alt={c('Action').t`Upload photos`} />
+                    <IcArrowUpLine className="mr-2" alt={c('Action').t`Upload photos`} />
                     {c('Actions').t`Upload`}
                 </Button>
             </div>

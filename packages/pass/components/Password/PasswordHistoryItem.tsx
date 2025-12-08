@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
@@ -32,7 +32,7 @@ export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, i
                         shape="solid"
                         onClick={() => passwordHistory.remove(id)}
                     >
-                        <Icon name="cross" alt={c('Action').t`Delete password`} />
+                        <IcCross alt={c('Action').t`Delete password`} />
                     </Button>,
                 ]}
                 extra={<small className="color-weak">{epochToDateTime(createTime)}</small>}

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { InAppNotificationState } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -42,7 +42,7 @@ export const InAppNotificationBanner = WithInAppNotification(
                         icon
                         pill
                     >
-                        <Icon name="cross" size={3} alt={c('Action').t`Close`} />
+                        <IcCross size={3} alt={c('Action').t`Close`} />
                     </Button>
                     <div className={clsx('flex flex-column items-start', dense ? 'gap-1' : 'gap-2')}>
                         {content.imageUrl && (

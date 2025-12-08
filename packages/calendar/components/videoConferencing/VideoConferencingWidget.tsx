@@ -1,4 +1,4 @@
-import React, { type ReactNode, useState } from 'react';
+import { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +6,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, IconRow } from '@proton/components';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -93,7 +95,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                 }
                             >
                                 <Button icon shape="ghost" size="small" onClick={handleDelete}>
-                                    <Icon name="cross-big" alt={c('Action').t`Remove video conference`} />
+                                    <IcCrossBig alt={c('Action').t`Remove video conference`} />
                                 </Button>
                             </Tooltip>
                         )}
@@ -127,7 +129,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                 onClick={toggleExpanded}
                             >
                                 {isExpanded ? c('Google Meet').t`Less details` : c('Google Meet').t`More details`}
-                                <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
+                                <IcChevronDown className={isExpanded ? 'rotateX-180' : ''} />
                             </button>
                         </CollapsibleHeader>
 

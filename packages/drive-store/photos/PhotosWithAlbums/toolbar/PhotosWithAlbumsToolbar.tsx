@@ -17,6 +17,13 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { IconName } from '@proton/icons/types';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -100,18 +107,18 @@ const AlbumGalleryDropdownButton = ({
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
                 data-testid="toolbar-album-more-options"
             >
-                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
+                <IcThreeDotsVertical className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
                     {/*
                     TODO: Missing 2 actions
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap">
-                        <Icon className="mr-2" name="window-image" />
+                        <IcWindowImage className="mr-2" />
                         {c('Action').t`Set album cover`}
                     </DropdownMenuButton>
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap">
-                        <Icon className="mr-2" name="pencil" />
+                        <IcPencil className="mr-2" />
                         {c('Action').t`Edit album`}
                     </DropdownMenuButton>
                     */}
@@ -129,19 +136,19 @@ const AlbumGalleryDropdownButton = ({
                         />
                     )}
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onShowDetails}>
-                        <Icon className="mr-2" name="info-circle" />
+                        <IcInfoCircle className="mr-2" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
 
                     {showDeleteAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
-                            <Icon className="mr-2" name="trash" />
+                            <IcTrash className="mr-2" />
                             {c('Action').t`Delete album`}
                         </DropdownMenuButton>
                     )}
                     {showLeaveAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onLeave}>
-                            <Icon className="mr-2" name="cross-big" />
+                            <IcCrossBig className="mr-2" />
                             {c('Action').t`Leave album`}
                         </DropdownMenuButton>
                     )}
@@ -218,7 +225,7 @@ export const ToolbarLeftActionsAlbumsGallery = ({
             onClick={onAlbumsClick}
             data-testid="toolbar-go-back"
         >
-            <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
+            <IcArrowLeft className="mr-2 shrink-0" /> {c('Action').t`Go back`}
         </Button>
     );
 };
@@ -243,7 +250,7 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
                 className="inline-flex flex-nowrap flex-row items-center"
                 data-testid="toolbar-new-album"
             >
-                <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
+                <IcPlus className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`New album`}</span>
             </Button>
         </>
@@ -332,11 +339,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     title={c('Action').t`Download`}
                     className="inline-flex flex-nowrap flex-row items-center"
                 >
-                    <Icon
-                        name="arrow-down-line"
-                        className={clsx(!showIconOnly && 'mr-2')}
-                        alt={c('Action').t`Download`}
-                    />
+                    <IcArrowDownLine className={clsx(!showIconOnly && 'mr-2')} alt={c('Action').t`Download`} />
                     <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>
             )}
@@ -385,7 +388,7 @@ const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => 
                 className="inline-flex flex-nowrap flex-row items-center toolbar-button"
                 data-testid="toolbar-album-more-options"
             >
-                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
+                <IcThreeDotsVertical className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>{children}</DropdownMenu>
@@ -454,24 +457,24 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     // Only show set cover button if photo selected is not already the cover
     const canSelectCover = Boolean(
         !hasMultipleSelected &&
-            onSelectCover &&
-            album &&
-            selectedItems.length &&
-            album.cover?.linkId !== selectedItems[0].linkId &&
-            album.permissions.isAdmin &&
-            !driveAlbumsDisabled
+        onSelectCover &&
+        album &&
+        selectedItems.length &&
+        album.cover?.linkId !== selectedItems[0].linkId &&
+        album.permissions.isAdmin &&
+        !driveAlbumsDisabled
     );
     const canSavePhotos = Boolean(
         album &&
-            hasSelection &&
-            rootLinkId &&
-            onSavePhotos &&
-            selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
+        hasSelection &&
+        rootLinkId &&
+        onSavePhotos &&
+        selectedItems.every(({ parentLinkId }) => parentLinkId !== rootLinkId)
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const canShare = Boolean(
         (openSharePhotoModal && !hasMultipleSelected && !album) ||
-            (!hasMultipleSelected && album && album.permissions.isAdmin)
+        (!hasMultipleSelected && album && album.permissions.isAdmin)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
     const canAddPhotosFromGallery = Boolean(

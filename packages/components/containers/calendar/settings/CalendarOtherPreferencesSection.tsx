@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import ShortcutsToggle from '../../general/ShortcutsToggle';
 import CalendarShortcutsModal from '../shortcutsModal/CalendarShortcutsModal';
@@ -28,9 +28,8 @@ const CalendarOtherPreferencesSection = () => {
                                     setCalendarShortcutsModalOpen(true);
                                 }}
                             >
-                                <Icon
+                                <IcInfoCircle
                                     className="color-primary"
-                                    name="info-circle"
                                     alt={c('Action').t`More info: Keyboard shortcuts`}
                                     size={4}
                                 />

@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Badge from '@proton/components/components/badge/Badge';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';
@@ -18,6 +17,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading, { useLoadingByKey } from '@proton/hooks/useLoading';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
@@ -236,7 +237,7 @@ const AuthDevicesSettings = () => {
                                                     <ButtonGroup size="small" individualButtonColor={true}>
                                                         <Button onClick={() => handleApproveDevice(authDevice)}>
                                                             <div className="flex items-center flex-nowrap gap-1">
-                                                                <Icon name="checkmark" className="shrink-0" />
+                                                                <IcCheckmark className="shrink-0" />
                                                                 <span className="text-ellipsis">
                                                                     {c('sso').t`Approve`}
                                                                 </span>
@@ -248,7 +249,7 @@ const AuthDevicesSettings = () => {
                                                             onClick={() => handleConfirmRejectDevice(authDevice)}
                                                         >
                                                             <div className="flex items-center flex-nowrap gap-1">
-                                                                <Icon name="cross" className="shrink-0" />
+                                                                <IcCross className="shrink-0" />
                                                                 <span className="text-ellipsis">
                                                                     {c('sso').t`Reject`}
                                                                 </span>

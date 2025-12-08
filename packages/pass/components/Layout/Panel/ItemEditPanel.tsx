@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';
@@ -46,7 +46,7 @@ export const ItemEditPanel = ({ type, formId, valid, discardable, handleCancelCl
                                     onClick={() => (discardable ? handleCancelClick() : props.confirm())}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                    <IcCross alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <Tooltip
                                     key="submit-button"

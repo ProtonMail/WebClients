@@ -6,7 +6,7 @@ import CollapsibleContent from '@proton/components/components/collapsible/Collap
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { IconName } from '@proton/icons/types';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
@@ -60,7 +60,7 @@ export const Submenu = memo(({ headerClassname, icon, label, contentClassname, i
             className={clsx(headerClassname, 'shrink-0 pl-4 pr-2')}
             suffix={
                 <CollapsibleHeaderIconButton className="p-0" pill size="small">
-                    <Icon name="chevron-down" />
+                    <IcChevronDown />
                 </CollapsibleHeaderIconButton>
             }
         >

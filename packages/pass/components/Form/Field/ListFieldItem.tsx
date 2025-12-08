@@ -4,7 +4,7 @@ import { memo, useRef, useState } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
@@ -134,7 +134,7 @@ const ListFieldItemRender = <T,>({
                             onDelete(index);
                         }}
                     >
-                        <Icon name="cross" className="shrink-0" />
+                        <IcCross className="shrink-0" />
                     </ButtonLike>
                 )}
             </button>

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, Toolbar } from '@proton/components';
+import { Toolbar } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
 import { PhotosUploadButton } from './PhotosUploadButton';
@@ -48,7 +49,7 @@ export const PhotosAddAlbumPhotosToolbar = ({
                     onClick={() => withLoading(onAddAlbumPhotos)}
                     data-testid="toolbar-add-to-album"
                 >
-                    <Icon className="mr-2" name="checkmark" />
+                    <IcCheckmark className="mr-2" />
                     <span>{c('Action').t`Add to album`}</span>
                 </Button>
             </div>

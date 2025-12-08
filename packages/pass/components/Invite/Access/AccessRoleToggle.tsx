@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { ShareRole } from '@proton/pass/types';
@@ -38,7 +38,7 @@ export const AccessRoleToggle: FC<Props> = ({ onRoleChange }) => {
                 style={{ '--text-norm': 'var(--interaction-norm-major-1)' }}
             >
                 <span className="color-norm text-ellipsis">{c('Action').t`Set access level`}</span>
-                <Icon className="shrink-0" name="chevron-down" />
+                <IcChevronDown className="shrink-0" />
             </DropdownButton>
 
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>

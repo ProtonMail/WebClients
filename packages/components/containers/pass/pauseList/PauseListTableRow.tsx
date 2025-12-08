@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PauseListEntryDeleteDTO } from '@proton/pass/lib/organization/types';
 import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '@proton/pass/types';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
@@ -119,7 +119,7 @@ export const PauseListTableRowExisting: FC<ExistingRowProps> = ({ entry, onDelet
                 shape="ghost"
                 icon
             >
-                <Icon name="cross-big" size={3} />
+                <IcCrossBig size={3} />
             </Button>
         </TableCell>
     </TableRow>

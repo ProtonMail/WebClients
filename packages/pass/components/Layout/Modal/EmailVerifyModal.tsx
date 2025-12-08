@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -82,7 +82,7 @@ export const EmailVerifyModal: FC<Props> = ({
                                     onClick={onClose}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                    <IcCross alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <Button
                                     color="norm"

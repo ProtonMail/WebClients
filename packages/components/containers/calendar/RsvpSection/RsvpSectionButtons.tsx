@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcPen } from '@proton/icons/icons/IcPen';
 
 interface EditButtonProps {
     onEdit: () => void;
@@ -13,7 +14,7 @@ export const EditNoteButton = ({ onEdit, disabled }: EditButtonProps) => {
     return (
         <Tooltip title={c('RSVP Note').t`Edit note`}>
             <ButtonLike className="shrink-0" shape="ghost" onClick={onEdit} disabled={disabled} icon size="small">
-                <Icon name="pen" alt={c('RSVP Note').t`Edit note`} />
+                <IcPen alt={c('RSVP Note').t`Edit note`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -36,7 +37,7 @@ export const DeleteNoteButton = ({ loading, onDelete, disabled }: DeleteButtonPr
                 icon
                 size="small"
             >
-                <Icon name="cross" alt={c('RSVP Note').t`Remove note`} />
+                <IcCross alt={c('RSVP Note').t`Remove note`} />
             </ButtonLike>
         </Tooltip>
     );

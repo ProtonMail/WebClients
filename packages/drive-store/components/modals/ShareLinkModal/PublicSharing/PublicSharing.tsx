@@ -5,10 +5,9 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input'
+import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
-    Icon,
     SUBSCRIPTION_STEPS,
     Toggle,
     useConfig,
@@ -17,6 +16,9 @@ import {
     useUpsellConfig,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { type SHARE_URL_PERMISSIONS, getCanWrite } from '@proton/shared/lib/drive/permissions';
@@ -121,7 +123,7 @@ export const PublicSharing = ({
             <div className={clsx('flex items-center justify-space-between mb-4', !publicSharedLink && 'opacity-30')}>
                 <div className="w-full flex flex-nowrap gap-2">
                     <Avatar color="weak" className="shrink-0">
-                        <Icon name="globe" />
+                        <IcGlobe />
                     </Avatar>
                     <p className="flex-1 flex flex-column p-0 m-0">
                         <span className="text-semibold">{c('Label').t`Anyone with the link`}</span>
@@ -131,7 +133,7 @@ export const PublicSharing = ({
                                 : c('Label').t`Anyone on the Internet with the link can view`}
                             {editorPermissions && (
                                 <Tooltip title={editorPermissionsTooltipText}>
-                                    <Icon className="ml-1" name="info-circle" />
+                                    <IcInfoCircle className="ml-1" />
                                 </Tooltip>
                             )}
                         </span>
@@ -170,7 +172,7 @@ export const PublicSharing = ({
                         disabled={!publicSharedLink}
                         data-testid="share-anyone-copyUrlButton"
                     >
-                        <Icon name="squares" />
+                        <IcSquares />
                     </Button>
                 </div>
             ) : null}

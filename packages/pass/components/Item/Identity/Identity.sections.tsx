@@ -5,7 +5,7 @@ import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import {
     createExtraField,
@@ -108,7 +108,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                                 dropdownOptions={getDropdownOptions(helpers, sectionFields.length)}
                                             >
                                                 <div className="flex items-center">
-                                                    <Icon name="plus" />
+                                                    <IcPlus />
                                                     <div className="ml-2 text-semibold">{c('Action').t`Add more`}</div>
                                                 </div>
                                             </DropdownMenuBase>

@@ -6,11 +6,11 @@ import type { FormikHelpers } from 'formik/dist/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -56,7 +56,7 @@ export const CustomNewSection: FC<Props> = ({ onAdd, upsellRef }) => {
                 onClick={() => (isFreePlan ? upsell({ type: 'pass-plus', upsellRef }) : setModal(true))}
             >
                 <div className="flex items-center justify-center">
-                    <Icon name="plus" />
+                    <IcPlus />
                     <div className="ml-2 text-semibold">{c('Label').t`Add section`}</div>
                 </div>
             </Button>

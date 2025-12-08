@@ -3,8 +3,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, TimeIntl } from '@proton/components';
+import { TimeIntl } from '@proton/components';
 import type { Revision } from '@proton/drive';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useContextMenuControls } from '../FileBrowser';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
@@ -65,7 +66,7 @@ const RevisionListItem = ({
                         contextMenuControls.handleContextMenuTouch(e);
                     }}
                 >
-                    <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                    <IcThreeDotsVertical alt={c('Action').t`More options`} />
                 </Button>
             </li>
         </>

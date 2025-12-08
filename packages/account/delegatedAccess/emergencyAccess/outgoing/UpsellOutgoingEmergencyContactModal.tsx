@@ -1,18 +1,20 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
 import UpsellPriceV1 from '@proton/components/containers/payments/subscription/panels/components/UpsellPriceV1';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import illustration from '../upsell-shield.svg';
 
-export interface EditOutgoingEmergencyContactModalProps
-    extends Omit<ModalProps<'form'>, 'children' | 'buttons' | 'onSubmit'> {
+export interface EditOutgoingEmergencyContactModalProps extends Omit<
+    ModalProps<'form'>,
+    'children' | 'buttons' | 'onSubmit'
+> {
     onUpgrade: (type: 'explore' | 'upgrade') => void;
     upsell: UpsellWithPlan;
 }
@@ -86,11 +88,7 @@ export const UpsellOutgoingEmergencyContactModal = ({
                                                 <li key={key}>
                                                     <div className="flex flex-nowrap items-center">
                                                         <div className="mr-3 shrink-0 flex">
-                                                            <Icon
-                                                                className="color-primary m-auto"
-                                                                size={4}
-                                                                name="checkmark"
-                                                            />
+                                                            <IcCheckmark className="color-primary m-auto" size={4} />
                                                         </div>
                                                         <div className="flex-1">
                                                             <span className="align-middle">{text}</span>

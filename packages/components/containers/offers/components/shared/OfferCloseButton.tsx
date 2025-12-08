@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -25,7 +25,7 @@ const OfferCloseButton = ({ onClose, darkBackground = false }: Props) => {
                     '--top-custom': '8px',
                 }}
             >
-                <Icon className="modal-close-icon" size={3} name="cross-big" alt={c('specialoffer: Action').t`Close`} />
+                <IcCrossBig className="modal-close-icon" size={3} alt={c('specialoffer: Action').t`Close`} />
             </Button>
         </Tooltip>
     );

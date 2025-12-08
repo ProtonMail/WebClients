@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -32,7 +33,7 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
             data-testid="toolbar-download-selection"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="arrow-down-line" className={clsx(!showIconOnly && 'mr-2')} />
+            <IcArrowDownLine className={clsx(!showIconOnly && 'mr-2')} />
             <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
         </ToolbarButton>
     );
