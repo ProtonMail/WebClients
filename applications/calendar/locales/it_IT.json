@@ -4107,6 +4107,9 @@
       ],
       "You cannot enter the organizer email": [
         "Non puoi inserire l'email dell'organizzatore"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Non è possibile creare una prenotazione con un indirizzo disabilitato"
       ]
     },
     "error": {
@@ -6560,6 +6563,21 @@
       ],
       "When can appointments be booked?": [
         "Quando si possono prenotare gli appuntamenti?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Chiedi al tuo amministratore di effettuare l’upgrade al piano o di rimuovere una pagina dalla barra laterale delle pagine di prenotazione."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, chiedi al tuo amministratore di effettuare l\"upgrade del tuo piano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per aggiungere una nuova pagina di prenotazione, rimuovi una esistente dalla barra laterale delle pagine di prenotazione."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, effettua l'upgrade del tuo piano."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Hai raggiunto il numero massimo di calendari disponibili nel tuo piano."
       ]
     },
     "info": {
@@ -12136,6 +12154,9 @@
       ],
       "Your booking pages live here": [
         "Le tue pagine di prenotazione si trovano qui"
+      ],
+      "Cannot create more Booking pages": [
+        "Impossibile creare altre pagine di prenotazione"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

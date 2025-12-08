@@ -1009,7 +1009,7 @@
         "Bu güne başka bir rezervasyon aralığı ekle"
       ],
       "Create a new booking page": [
-        "Yeni rezervasyon sayfası oluşturun"
+        "Yeni bir rezervasyon sayfası oluştur"
       ],
       "Go to the first available appointment": [
         "İlk uygun randevuya git"
@@ -4112,7 +4112,10 @@
         "Posta kodunun yazılması zorunludur"
       ],
       "Location is required": [
-        "Konum bilgisi gereklidir"
+        "Konum belirtilmelidir"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kullanımdan kaldırılmış bir adres ile rezervasyon oluşturulamaz"
       ]
     },
     "error": {
@@ -6555,10 +6558,10 @@
         "Randevu güncellendi"
       ],
       "Cannot create a range across days.": [
-        "Birden fazla güne yayılan bir aralık oluşturulamıyor."
+        "Birden fazla güne yayılan bir aralık oluşturulamaz."
       ],
       "Cannot create a range in the past.": [
-        "Geçmişte aralık oluşturulamıyor."
+        "Geçmişte bir aralık oluşturulamaz."
       ],
       "Loading appointments...": [
         "Randevular yükleniyor..."
@@ -6576,19 +6579,37 @@
         "Gelecekte uygun bir randevu yok"
       ],
       "Range already exists.": [
-        "Aralık zaten mevcut."
+        "Aralık zaten var."
       ],
       "Range is too short.": [
         "Aralık çok kısa."
       ],
       "Range overlaps with an existing range.": [
-        "Aralık, mevcut bir aralıkla çakışıyor."
+        "Aralık, var olan bir aralıkla çakışıyor."
       ],
       "This booking page cannot be edited, the associated calendar is disabled": [
         "Bu rezervasyon sayfası düzenlenemez, ilişkili takvim kullanımdan kaldırılmış."
       ],
       "When can appointments be booked?": [
         "Randevular ne zaman rezerve edilebilir?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için yöneticinizden tarifenizi yükseltmesini isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Yeni bir rezervasyon sayfası eklemek için Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için tarifenizi yükseltin."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -12168,6 +12189,9 @@
       ],
       "Your booking pages live here": [
         "Randevu sayfanız burada hazır"
+      ],
+      "Cannot create more Booking pages": [
+        "Daha fazla Rezervasyon sayfası oluşturulamıyor"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

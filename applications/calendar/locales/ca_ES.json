@@ -4113,6 +4113,9 @@
       ],
       "Location is required": [
         "La ubicació és obligatòria"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "No es pot crear una reserva amb una adreça deshabilitada"
       ]
     },
     "error": {
@@ -6589,6 +6592,24 @@
       ],
       "When can appointments be booked?": [
         "Quan es poden reservar cites?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demaneu a l'administrador que millori el pla o esborri una pàgina de la barra lateral de Pàgines de reserves."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per afegir una nova pàgina de reserves, demaneu al vostre administrador/a que millori el vostre pla."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per afegir una nova pàgina de reserves, esborreu-ne una d’existent de la barra lateral de pàgines de reserves."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per afegir una nova pàgina de reserves, millori el seu pla."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Heu assolit el nombre màxim de pàgines de reserva disponibles amb el vostre pla."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -12168,6 +12189,9 @@
       ],
       "Your booking pages live here": [
         "Les vostres pàgines de reserva són aquí"
+      ],
+      "Cannot create more Booking pages": [
+        "No podeu crear més pàgines de reserves"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

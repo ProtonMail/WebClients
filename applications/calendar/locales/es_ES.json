@@ -4113,6 +4113,9 @@
       ],
       "Location is required": [
         "Se requiere una ubicación."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "No se puede crear una reserva con una dirección deshabilitada"
       ]
     },
     "error": {
@@ -6583,6 +6586,21 @@
       ],
       "When can appointments be booked?": [
         "¿Cuándo se pueden reservar citas?"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para añadir una nueva página de reservas, pide a tu administrador que mejore tu plan."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para añadir una nueva página de reservas, elimina una existente de la barra lateral de páginas de reservas."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para añadir una nueva página de reservas, mejora tu plan."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Has alcanzado el número máximo de páginas de reserva disponibles en tu plan."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -12162,6 +12180,9 @@
       ],
       "Your booking pages live here": [
         "Aquí encontrarás tus páginas de reservas"
+      ],
+      "Cannot create more Booking pages": [
+        "No puedes crear más páginas de reservas"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
