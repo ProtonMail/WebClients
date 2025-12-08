@@ -544,18 +544,62 @@ describe('useSharingModalState', () => {
         expect(mockEvents.pollEvents.volumes).toHaveBeenCalledWith(mockVolumeId);
     });
 
-    it('should determine owner display name correctly', async () => {
+    it('should determine owner display name correctly when user is admin', async () => {
         const userAsOwner = {
             Email: 'owner@proton.me',
             DisplayName: 'Owner Display Name',
         } as unknown as UserModel;
 
+        const nodeInfoWithAdminRole = {
+            ok: true,
+            value: {
+                name: 'Test File',
+                type: 1,
+                keyAuthor: {
+                    ok: true,
+                    value: 'owner@proton.me',
+                },
+                directRole: MemberRole.Admin,
+            },
+        };
+
         mockedUseUser.mockReturnValue([userAsOwner, false]);
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithAdminRole);
 
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
         await waitFor(() => {
             expect(result.current.ownerDisplayName).toBe('Owner Display Name');
+            expect(result.current.ownerEmail).toBe('owner@proton.me');
+        });
+    });
+
+    it('should not set owner display name when user is not admin', async () => {
+        const userAsNonAdmin = {
+            Email: 'viewer@proton.me',
+            DisplayName: 'Viewer Display Name',
+        } as unknown as UserModel;
+
+        const nodeInfoWithViewerRole = {
+            ok: true,
+            value: {
+                name: 'Test File',
+                type: 1,
+                keyAuthor: {
+                    ok: true,
+                    value: 'owner@proton.me',
+                },
+                directRole: MemberRole.Viewer,
+            },
+        };
+
+        mockedUseUser.mockReturnValue([userAsNonAdmin, false]);
+        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithViewerRole);
+
+        const { result } = renderHook(() => useSharingModalState(mockProps));
+
+        await waitFor(() => {
+            expect(result.current.ownerDisplayName).toBeUndefined();
             expect(result.current.ownerEmail).toBe('owner@proton.me');
         });
     });
