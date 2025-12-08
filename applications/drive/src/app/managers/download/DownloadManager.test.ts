@@ -195,6 +195,15 @@ const resetSingleton = () => {
     Reflect.set(DownloadManager, 'instance', undefined);
 };
 
+beforeAll(() => {
+    jest.spyOn(console, 'debug').mockImplementation(() => {});
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+});
+
+afterAll(() => {
+    jest.restoreAllMocks();
+});
+
 beforeEach(() => {
     jest.clearAllMocks();
 
