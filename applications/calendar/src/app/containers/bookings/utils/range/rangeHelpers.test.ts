@@ -154,10 +154,10 @@ describe('Booking range helpers', () => {
             jest.useRealTimers();
         });
 
-        it('should normalize a future date to current week with same day and time', () => {
+        it('should normalize a future date to current week with same day and time (week starts Sunday)', () => {
             // Monday, Dec 1, 2025, 2:00 PM (next week)
             const futureMonday = new Date(2025, 11, 1, 14, 0, 0);
-            const normalized = normalizeBookingRangeToTimeOfWeek(futureMonday);
+            const normalized = normalizeBookingRangeToTimeOfWeek(futureMonday, SETTINGS_WEEK_START.SUNDAY);
 
             // Should be Monday of current week at 2:00 PM
             expect(normalized.getDay()).toBe(1); // Monday
@@ -168,10 +168,10 @@ describe('Booking range helpers', () => {
             expect(normalized.getDate()).toBeLessThanOrEqual(29);
         });
 
-        it('should normalize a past date to current week with same day and time', () => {
+        it('should normalize a past date to current week with same day and time (week starts Sunday)', () => {
             // Tuesday, Nov 18, 2025, 9:30 AM (last week)
             const pastTuesday = new Date(2025, 10, 18, 9, 30, 0);
-            const normalized = normalizeBookingRangeToTimeOfWeek(pastTuesday);
+            const normalized = normalizeBookingRangeToTimeOfWeek(pastTuesday, SETTINGS_WEEK_START.SUNDAY);
 
             // Should be Tuesday of current week at 9:30 AM
             expect(normalized.getDay()).toBe(2); // Tuesday
@@ -182,9 +182,9 @@ describe('Booking range helpers', () => {
             expect(normalized.getDate()).toBeLessThanOrEqual(29);
         });
 
-        it('should preserve time when normalizing across weeks', () => {
+        it('should preserve time when normalizing across weeks (week starts Sunday)', () => {
             const inputDate = new Date(2025, 11, 5, 14, 30, 45, 123);
-            const normalized = normalizeBookingRangeToTimeOfWeek(inputDate);
+            const normalized = normalizeBookingRangeToTimeOfWeek(inputDate, SETTINGS_WEEK_START.SUNDAY);
 
             // Same weekday
             expect(normalized.getDay()).toBe(inputDate.getDay());
@@ -196,16 +196,61 @@ describe('Booking range helpers', () => {
             expect(normalized.getMilliseconds()).toBe(0);
         });
 
-        it('should handle same week dates correctly', () => {
+        it('should handle same week dates correctly (week starts Sunday)', () => {
             // Friday, Nov 28, 2025, 4:15 PM (this week)
             const thisFriday = new Date(2025, 10, 28, 16, 15, 0);
-            const normalized = normalizeBookingRangeToTimeOfWeek(thisFriday);
+            const normalized = normalizeBookingRangeToTimeOfWeek(thisFriday, SETTINGS_WEEK_START.SUNDAY);
 
             // Should remain Friday at 4:15 PM
             expect(normalized.getDay()).toBe(5);
             expect(normalized.getHours()).toBe(16);
             expect(normalized.getMinutes()).toBe(15);
             expect(isSameDay(normalized, thisFriday)).toBe(true);
+        });
+
+        it('should normalize correctly when week starts on Saturday', () => {
+            // Current time: Wednesday, Nov 27, 2025
+            // Week starts on Saturday, so current week is: Nov 22 (Sat) - Nov 28 (Fri)
+
+            // Test with a Tuesday from next week (Dec 2)
+            const futureTuesday = new Date(2025, 11, 2, 14, 0, 0);
+            const normalized = normalizeBookingRangeToTimeOfWeek(futureTuesday, SETTINGS_WEEK_START.SATURDAY);
+
+            // Should be Tuesday of current week (Nov 25) at 2:00 PM
+            expect(normalized.getDay()).toBe(2); // Tuesday
+            expect(normalized.getHours()).toBe(14);
+            expect(normalized.getMinutes()).toBe(0);
+            expect(normalized.getDate()).toBe(25); // Nov 25 is the Tuesday in the current Saturday-start week
+        });
+
+        it('should handle Sunday when week starts on Saturday', () => {
+            // Current time: Wednesday, Nov 27, 2025
+            // Week starts on Saturday, so current week is: Nov 22 (Sat) - Nov 28 (Fri)
+
+            // Test with a Sunday from next week (Nov 30)
+            const futureSunday = new Date(2025, 10, 30, 10, 30, 0);
+            const normalized = normalizeBookingRangeToTimeOfWeek(futureSunday, SETTINGS_WEEK_START.SATURDAY);
+
+            // Should be Sunday of current week (Nov 23) at 10:30 AM
+            expect(normalized.getDay()).toBe(0); // Sunday
+            expect(normalized.getHours()).toBe(10);
+            expect(normalized.getMinutes()).toBe(30);
+            expect(normalized.getDate()).toBe(23); // Nov 23 is the Sunday in the current Saturday-start week
+        });
+
+        it('should normalize correctly when week starts on Monday', () => {
+            // Current time: Wednesday, Nov 27, 2025
+            // Week starts on Monday, so current week is: Nov 24 (Mon) - Nov 30 (Sun)
+
+            // Test with a Sunday from past week (Nov 23)
+            const pastSunday = new Date(2025, 10, 23, 11, 0, 0);
+            const normalized = normalizeBookingRangeToTimeOfWeek(pastSunday, SETTINGS_WEEK_START.MONDAY);
+
+            // Should be Sunday of current week (Nov 30) at 11:00 AM
+            expect(normalized.getDay()).toBe(0); // Sunday
+            expect(normalized.getHours()).toBe(11);
+            expect(normalized.getMinutes()).toBe(0);
+            expect(normalized.getDate()).toBe(30); // Nov 30 is the Sunday in the current Monday-start week
         });
     });
 
@@ -337,6 +382,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-02T11:00:00Z'),
                 end: new Date('2025-12-02T12:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             expect(result).toBeNull();
@@ -358,6 +404,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-01T11:00:00Z'),
                 end: new Date('2025-12-01T12:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             expect(result).toBeNull();
@@ -379,6 +426,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-01T09:30:00Z'),
                 end: new Date('2025-12-01T11:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             expect(result).not.toBeNull();
@@ -400,6 +448,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-01T09:30:00Z'),
                 end: new Date('2025-12-01T11:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             // Should suggest: Monday Dec 1, 10:00-11:00 AM (same week as user's selection)
@@ -424,6 +473,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-01T09:00:00Z'),
                 end: new Date('2025-12-01T10:30:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             // Should suggest: Monday Dec 1, 9:00-10:00 AM (same week as user's selection)
@@ -448,6 +498,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-11-17T09:30:00Z'),
                 end: new Date('2025-11-17T11:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             // Should suggest: Monday Nov 17, 10:00-11:00 AM (preserves user's selected week)
@@ -472,6 +523,7 @@ describe('Booking range helpers', () => {
                 start: new Date('2025-12-01T09:00:00Z'),
                 end: new Date('2025-12-01T12:00:00Z'),
                 bookingRanges,
+                weekStart: SETTINGS_WEEK_START.SUNDAY,
             });
 
             expect(result).toBeNull();
