@@ -1,11 +1,10 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef, useContext } from 'react';
 
-import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
-import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeOwnProps, ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
@@ -47,7 +46,7 @@ const NotificationButton: PolymorphicForwardRefExoticComponent<NotificationOwnPr
 export const NotificationCloseButton = ({ onClick }: { onClick?: () => void }) => {
     return (
         <NotificationButton icon onClick={onClick} close>
-            <Icon name="cross-big" data-testid="notification:close-button" />
+            <IcCrossBig data-testid="notification:close-button" />
         </NotificationButton>
     );
 };

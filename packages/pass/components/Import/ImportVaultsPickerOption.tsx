@@ -7,6 +7,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ImportVault } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
@@ -43,7 +45,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                     <span className="text-sm text-weak">{formatItemsCount(count)}</span>
                 </div>
             </Checkbox>
-            <Icon name="arrow-right" />
+            <IcArrowRight />
             <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                 <SelectTwo value={value} className="text-sm" onValue={(value) => onChange(value)} disabled={!selected}>
                     {[
@@ -58,7 +60,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                             disabled={!allowNewVault}
                         >
                             <span className="flex items-center">
-                                <Icon name="plus" size={3.5} className="mr-3 grow-0" />
+                                <IcPlus size={3.5} className="mr-3 grow-0" />
                                 <span className="flex-1 text-ellipsis">{c('Label').t`New vault`}</span>
                             </span>
                         </Option>,

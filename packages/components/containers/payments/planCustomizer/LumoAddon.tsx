@@ -3,7 +3,7 @@ import { type ReactElement, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { Plan } from '@proton/payments';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -27,7 +27,7 @@ const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: React
             </p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
-            <Icon name="plus" className="shrink-0" />
+            <IcPlus className="shrink-0" />
             <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span>
         </Button>
     </div>

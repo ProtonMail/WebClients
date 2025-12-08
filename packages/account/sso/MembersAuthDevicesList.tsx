@@ -2,11 +2,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import AuthDeviceItem from './AuthDeviceItem';
@@ -59,7 +60,7 @@ const MembersAuthDevicesList = ({
                                 <ButtonGroup size="small" individualButtonColor={true}>
                                     <Button onClick={() => onApprove(pendingAdminActivation)}>
                                         <div className="flex items-center flex-nowrap gap-1">
-                                            <Icon name="checkmark" className="shrink-0" />
+                                            <IcCheckmark className="shrink-0" />
                                             <span className="text-ellipsis">{c('sso').t`Grant`}</span>
                                         </div>
                                     </Button>
@@ -69,7 +70,7 @@ const MembersAuthDevicesList = ({
                                         loading={loadingMap[pendingAdminActivation.memberAuthDevice.ID]}
                                     >
                                         <div className="flex items-center flex-nowrap gap-1">
-                                            <Icon name="cross" className="shrink-0" />
+                                            <IcCross className="shrink-0" />
                                             <span className="text-ellipsis">{c('sso').t`Deny`}</span>
                                         </div>
                                     </Button>

@@ -3,7 +3,8 @@ import { type FC, useContext } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 const CollapsibleHeaderToggleButton: FC<ButtonProps> = ({ children, disabled, onClick, ...rest }) => {
     /* Must be used inside a <Collapsible> component */
@@ -25,7 +26,7 @@ const CollapsibleHeaderToggleButton: FC<ButtonProps> = ({ children, disabled, on
             aria-controls={contentId}
             onClick={handleButtonClick}
         >
-            {isExpanded ? <Icon name="cross" /> : <Icon name="chevron-down" />}
+            {isExpanded ? <IcCross /> : <IcChevronDown />}
             {children}
         </Button>
     );

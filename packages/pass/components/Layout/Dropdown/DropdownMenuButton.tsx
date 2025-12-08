@@ -20,6 +20,8 @@ import { default as DropdownMenuButtonCore } from '@proton/components/components
 import Icon from '@proton/components/components/icon/Icon';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -47,7 +49,7 @@ const QuickActionsDropdown: FC<Props> = ({ children, originalPlacement }) => {
                 shape="ghost"
                 title={c('Action').t`More options`}
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} color="var(--text-weak)" />
+                <IcThreeDotsVertical alt={c('Action').t`More options`} color="var(--text-weak)" />
             </Button>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement={originalPlacement}>
@@ -156,7 +158,7 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
                         <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraPadding)}>
                             {isSelected && (
                                 <div className={clsx('ml-auto')}>
-                                    <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
+                                    <IcCheckmark color="var(--interaction-norm-major-1)" />
                                 </div>
                             )}
                             {extra}

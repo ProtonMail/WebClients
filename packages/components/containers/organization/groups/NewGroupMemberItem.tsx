@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Badge from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import type { NewGroupMember } from './EditGroup';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
@@ -29,7 +29,7 @@ export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting }
                         }}
                         title={c('Action').t`Delete member`}
                     >
-                        <Icon name="cross" size={5} alt={c('Action').t`Delete member`} />
+                        <IcCross size={5} alt={c('Action').t`Delete member`} />
                     </Button>
                 ) : (
                     <div className="flex flex-column flex-nowrap self-center">

@@ -7,7 +7,6 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -24,6 +23,7 @@ import useCalendarShareInvitationActions from '@proton/components/hooks/useCalen
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     CALENDAR_STATUS_TYPE,
@@ -98,8 +98,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                         size="small"
                         icon
                     >
-                        <Icon
-                            name="cog-wheel"
+                        <IcCogWheel
                             className="shrink-0"
                             alt={c('Calendar table settings button tooltip').t`Open settings`}
                         />
@@ -219,6 +218,7 @@ const SharedCalendarsSection = ({ addresses, calendars = [], calendarInvitations
             const { senderEmail, errors } = e;
             setCalendarOwnerEmail(senderEmail);
             errors?.forEach((error) => {
+                // eslint-disable-next-line no-console
                 console.error(error);
             });
             setIsSignatureVerificationErrorModalOpen(true);

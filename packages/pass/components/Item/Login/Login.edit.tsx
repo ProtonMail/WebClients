@@ -5,7 +5,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -231,7 +232,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                                     form.setFieldValue('passkeys', arrayRemove(passkeys, idx))
                                                 }
                                             >
-                                                <Icon name="cross" size={3} />
+                                                <IcCross size={3} />
                                             </Button>,
                                         ]}
                                     />
@@ -280,7 +281,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                                       className="flex items-center gap-1"
                                                       onClick={() => handleAdd(domain)}
                                                   >
-                                                      <Icon name="plus" /> {c('Action').t`Add current URL`}
+                                                      <IcPlus /> {c('Action').t`Add current URL`}
                                                   </Button>
                                               )
                                             : undefined

@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalStateReturnObj } from '@proton/components';
-import { Icon, IconRow } from '@proton/components';
+import { IconRow } from '@proton/components';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
@@ -80,7 +81,7 @@ export const ZoomRow = ({ model, accessLevel, processState, handleDelete, handle
                     />
                 </div>
                 <IconRow
-                    icon={<Icon name="exclamation-circle" className="color-danger" />}
+                    icon={<IcExclamationCircle className="color-danger" />}
                     containerClassName="grow"
                     labelClassName="my-auto p-0"
                     className="w-full"

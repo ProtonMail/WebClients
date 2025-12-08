@@ -5,14 +5,14 @@ import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Alert from '@proton/components/components/alert/Alert';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
 import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { IcPen } from '@proton/icons/icons/IcPen';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getIsHolidaysCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
@@ -133,7 +133,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                 <span className="ml-4 pt-2 shrink-0">
                     <Tooltip title={editCalendarText}>
                         <ButtonLike shape="outline" onClick={handleEdit} icon disabled={!canEdit}>
-                            <Icon name="pen" alt={editCalendarText} />
+                            <IcPen alt={editCalendarText} />
                         </ButtonLike>
                     </Tooltip>
                 </span>

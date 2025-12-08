@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 import './PassPlusPromotionButton.scss';
@@ -30,6 +30,6 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
             '--upgrade-color-stop-2': '#9834ff',
         }}
     >
-        <Icon name="plus" size={2.5} className="mb-0.5" />
+        <IcPlus size={2.5} className="mb-0.5" />
     </PromotionButton>
 );

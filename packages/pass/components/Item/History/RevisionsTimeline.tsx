@@ -6,7 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
@@ -53,7 +55,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                         onClick={() => selectItem(shareId, itemId, { scope })}
                         title={c('Action').t`Close`}
                     >
-                        <Icon name="cross" alt={c('Action').t`Close`} />
+                        <IcCross alt={c('Action').t`Close`} />
                     </Button>
                     <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{c('Title').t`History`}</h2>
                 </div>
@@ -69,7 +71,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                               color="danger"
                               onClick={() => reset.prompt(true)}
                           >
-                              <Icon name="clock-rotate-left" className="mr-1" />
+                              <IcClockRotateLeft className="mr-1" />
                               <span>{c('Action').t`Reset history`}</span>
                           </Button>,
                       ]
@@ -135,7 +137,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                                 disabled={loading}
                                 loading={loading}
                             >
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                                 <span>{c('Action').t`View older history`}</span>
                             </Button>
                         )}

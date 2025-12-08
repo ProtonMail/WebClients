@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcLowDash } from '@proton/icons/icons/IcLowDash';
 import clsx from '@proton/utils/clsx';
 
 import {
@@ -190,6 +191,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
 
     return (
         <div className="transfers-manager-heading flex items-center flex-nowrap px-2">
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <div
                 role="presentation"
                 className="flex-1 p-2"
@@ -213,13 +215,13 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                     aria-expanded={!minimized}
                     aria-controls="transfer-manager"
                 >
-                    <Icon className={clsx(['m-auto', minimized && 'rotateX-180'])} name="low-dash" />
+                    <IcLowDash className={clsx(['m-auto', minimized && 'rotateX-180'])} />
                     <span className="sr-only">{minMaxTitle}</span>
                 </Button>
             </Tooltip>
             <Tooltip title={closeTitle}>
                 <Button icon type="button" shape="ghost" data-testid="drive-transfers-manager:close" onClick={onClose}>
-                    <Icon className="m-auto" name="cross" alt={closeTitle} />
+                    <IcCross className="m-auto" alt={closeTitle} />
                 </Button>
             </Tooltip>
         </div>

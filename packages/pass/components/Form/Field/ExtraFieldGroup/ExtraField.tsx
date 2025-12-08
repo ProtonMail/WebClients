@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { DateField } from '@proton/pass/components/Form/Field/DateField';
 import type { FieldBoxProps } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
@@ -44,7 +44,7 @@ export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete }) => (
         size="small"
         title={c('Action').t`Delete`}
     >
-        <Icon name="cross" />
+        <IcCross />
     </Button>
 );
 

@@ -5,7 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -33,7 +36,11 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
     const passwordHistory = usePasswordHistoryActions();
 
     const { itemEmail, withUsername } = form.values;
-    const itemEmailFieldIcon = withUsername ? 'envelope' : 'user';
+    const itemEmailFieldIcon = withUsername ? (
+        <IcEnvelope size={4} className="mt-2" />
+    ) : (
+        <IcUser size={4} className="mt-2" />
+    );
 
     /** When enabling the username field set the `itemEmail` as
      * the `itemUsername` only if it's a non-valid email */
@@ -64,11 +71,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                 itemType="login"
                 icon={
                     <>
-                        <Icon
-                            name={aliasModal.usernameIsAlias ? 'alias' : itemEmailFieldIcon}
-                            size={4}
-                            className="mt-2"
-                        />
+                        {aliasModal.usernameIsAlias ? <IcAlias size={4} className="mt-2" /> : itemEmailFieldIcon}
                         {!withUsername && (
                             <ButtonLike
                                 as="div"
@@ -84,7 +87,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                                     '--left-custom': '16px',
                                 }}
                             >
-                                <Icon name="plus" size={4} className="shrink-0" />
+                                <IcPlus size={4} className="shrink-0" />
                             </ButtonLike>
                         )}
                     </>
@@ -135,7 +138,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                                         .finally(() => aliasModal.setOpen(true))
                                 }
                             >
-                                <Icon name="alias" size={5} />
+                                <IcAlias size={5} />
                             </Button>
                         ),
                     ].filter(Boolean) as ReactElement[]

@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import './TopBar.scss';
@@ -26,7 +26,7 @@ export const TopBar: FC<TopBarProps> = ({ breakpoint, children, className, visib
             {children}
             {onClose && (
                 <Button className="ml-auto" pill size="small" shape="ghost" onClick={onClose}>
-                    <Icon name="cross" />
+                    <IcCross />
                 </Button>
             )}
         </div>

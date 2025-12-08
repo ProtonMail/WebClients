@@ -1,11 +1,11 @@
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import IntegerInput from '@proton/components/components/input/IntegerInput';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import {
     NOTIFICATION_INPUT_ID,
     NOTIFICATION_TYPE_API,
@@ -115,7 +115,7 @@ const NotificationInputInDrawer = ({
                                 shape="ghost"
                                 color="norm"
                             >
-                                <Icon name="trash" className="shrink-0" />
+                                <IcTrash className="shrink-0" />
                                 <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>

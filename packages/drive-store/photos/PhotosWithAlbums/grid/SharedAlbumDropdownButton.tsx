@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,10 +7,12 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -57,6 +59,7 @@ export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdo
             try {
                 await refreshSharedWithMeAlbums(abortSignal);
             } catch (e) {
+                // eslint-disable-next-line no-console
                 console.warn(e);
                 await refreshSharedWithMeAlbums(abortSignal);
             }
@@ -80,7 +83,7 @@ export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdo
                 icon
                 className="inline-flex flex-nowrap flex-row items-center relative z-up border-none"
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More`} />
+                <IcThreeDotsVertical alt={c('Action').t`More`} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
@@ -91,7 +94,7 @@ export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdo
                         }}
                         className="text-left flex items-center flex-nowrap"
                     >
-                        <Icon className="mr-2" name="info-circle" />
+                        <IcInfoCircle className="mr-2" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -101,7 +104,7 @@ export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdo
                         }}
                         className="text-left flex items-center flex-nowrap"
                     >
-                        <Icon className="mr-2" name="cross-big" />
+                        <IcCrossBig className="mr-2" />
                         {c('Action').t`Leave album`}
                     </DropdownMenuButton>
                 </DropdownMenu>

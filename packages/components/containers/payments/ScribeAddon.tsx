@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import {
     getScribeUpsellLearnMore,
     getScribeUpsellText,
 } from '@proton/components/containers/payments/subscription/assistant/helpers';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
@@ -34,7 +34,7 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
             </p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
-            <Icon name="plus" className="shrink-0" />
+            <IcPlus className="shrink-0" />
             <span>{c('Action').t`Add`}</span>
         </Button>
     </div>

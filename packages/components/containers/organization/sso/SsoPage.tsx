@@ -9,7 +9,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
@@ -26,6 +25,9 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { planSupportsSSO } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
@@ -145,7 +147,7 @@ const ConfigureSamlContent = ({
                                     key={domain.ID}
                                     className="flex gap-2 items-center flex-nowrap"
                                 >
-                                    <Icon name="globe" className="shrink-0" />{' '}
+                                    <IcGlobe className="shrink-0" />{' '}
                                     <span className="text-ellipsis">{domain.DomainName}</span>
                                 </Option>
                             );
@@ -166,7 +168,7 @@ const ConfigureSamlContent = ({
                                 className="flex gap-2 items-center justify-space-between flex-nowrap"
                             >
                                 <div className="flex gap-2 flex-nowrap items-center">
-                                    <Icon name="plus" className="shrink-0" />{' '}
+                                    <IcPlus className="shrink-0" />{' '}
                                     <span className="flex-1 text-ellipsis">{addDomain}</span>
                                 </div>
                                 <div className="shrink-0 color-hint">
@@ -220,7 +222,7 @@ const ConfigureSamlContent = ({
                                         setRemoveSSODomainOpen(true);
                                     }}
                                 >
-                                    <Icon name="cross-big" alt="" />
+                                    <IcCrossBig alt="" />
                                 </Button>
                             </Tooltip>
                         </>

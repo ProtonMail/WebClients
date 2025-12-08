@@ -4,6 +4,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
@@ -136,7 +137,7 @@ const ItemCheckbox = ({
                     )}
                 </span>
                 <span className="item-icon-fakecheck m-auto">
-                    <Icon color={color ? 'white' : undefined} name="checkmark" className="item-icon-fakecheck-icon" />
+                    <IcCheckmark color={color ? 'white' : undefined} className="item-icon-fakecheck-icon" />
                 </span>
             </span>
         </label>

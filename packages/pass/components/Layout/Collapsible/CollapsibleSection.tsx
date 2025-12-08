@@ -4,7 +4,7 @@ import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 type CollapsibleSectionProps = PropsWithChildren & {
     label: ReactNode;
@@ -24,7 +24,7 @@ export const CollapsibleSection: FC<CollapsibleSectionProps> = ({
         <CollapsibleHeader className="flex flex-nowrap justify-space-between mb-2 color-weak" suffix={suffix}>
             <div className="flex flex-nowrap items-center gap-1">
                 <CollapsibleHeaderIconButton className="color-weak shrink-0" pill size="small">
-                    <Icon name="chevron-down" />
+                    <IcChevronDown />
                 </CollapsibleHeaderIconButton>
                 <span className="flex-1 text-ellipsis">{label}</span>
             </div>

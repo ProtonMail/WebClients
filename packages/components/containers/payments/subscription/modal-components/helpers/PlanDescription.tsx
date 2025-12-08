@@ -4,7 +4,7 @@ import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
 
 export const PlanDescription = ({ list }: { list: Included[] }) => {
@@ -16,7 +16,7 @@ export const PlanDescription = ({ list }: { list: Included[] }) => {
                     className="text-semibold"
                     suffix={
                         <CollapsibleHeaderIconButton>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >

@@ -5,8 +5,9 @@ import { FieldArray, type FormikContextType, type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { maybeErrorMessage } from '@proton/pass/hooks/useFieldControl';
 import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -89,7 +90,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                             size="small"
                                             title={c('Action').t`Delete`}
                                         >
-                                            <Icon name="cross" size={5} className="color-weak" />
+                                            <IcCross size={5} className="color-weak" />
                                         </Button>
                                     </li>
                                 ))}
@@ -124,7 +125,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 className="flex items-center gap-1"
                                 onClick={() => handleAdd(values.url).then(() => inputRef.current?.focus())}
                             >
-                                <Icon name="plus" /> {c('Action').t`Add`}
+                                <IcPlus /> {c('Action').t`Add`}
                             </Button>
                         </>
                     );
