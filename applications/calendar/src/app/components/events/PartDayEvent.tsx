@@ -31,6 +31,7 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     className?: string;
     children?: ReactNode;
     eventPartDuration?: number;
+    hideOverflow?: boolean;
 }
 export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
     {
@@ -43,6 +44,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
         className,
         children,
         eventPartDuration,
+        hideOverflow = true,
         ...rest
     }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
@@ -55,7 +57,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
             role="button"
             tabIndex={0}
             className={clsx([
-                'calendar-eventcell overflow-hidden',
+                'calendar-eventcell',
                 isLoaded && 'isLoaded',
                 isPast && 'isPast',
                 isSelected && 'isSelected',
@@ -63,6 +65,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isCancelled && 'isCancelled',
                 size && `calendar-eventcell--${size}`,
                 canDisplayOnlyOneLine && 'calendar-eventcell--title-small-fit',
+                hideOverflow && 'overflow-hidden',
                 className,
             ])}
             ref={ref}
