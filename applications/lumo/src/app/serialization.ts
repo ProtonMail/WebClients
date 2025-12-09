@@ -124,6 +124,19 @@ function getAttachmentAd(attachment: AttachmentPub): AdString {
     return _adString;
 }
 
+// Warning: It is critical to always get the same AD for the same user settings.
+// This has consequences in terms of backward compatibility: if you
+// change this logic, this might make older user settings unreadable,
+// because the AD won't match anymore during decryption.
+function getUserSettingsAd(): AdString {
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'user-settings',
+    });
+    if (!_adString) throw new Error('Could not get AD for user settings');
+    return _adString;
+}
+
 export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): Promise<SerializedSpace> {
     const { spacePriv, spacePub, spaceKeyClear } = splitSpace(space);
 
@@ -392,20 +405,6 @@ export async function deserializeAttachment(
         safeLogger.warn(`Cannot deserialize attachment ${serializedAttachment.id}:`, e);
         return null;
     }
-}
-
-// User settings serialization functions
-// Warning: It is critical to always get the same AD for the same user settings.
-// This has consequences in terms of backward compatibility: if you
-// change this logic, this might make older user settings unreadable,
-// because the AD won't match anymore during decryption.
-function getUserSettingsAd(): AdString {
-    const _adString = stableStringify({
-        app: APP_NAME,
-        type: 'user-settings',
-    });
-    if (!_adString) throw new Error('Could not get AD for user settings');
-    return _adString;
 }
 
 export async function serializeUserSettings(
