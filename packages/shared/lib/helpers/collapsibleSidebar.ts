@@ -18,7 +18,6 @@ export const enum SOURCE_EVENT {
     BUTTON_VIEWS = 'BUTTON_VIEWS',
     BUTTON_BOOKINGS = 'BUTTON_BOOKINGS',
     BUTTON_CALENDARS = 'BUTTON_CALENDARS',
-    BUTTON_OTHER_CALENDARS = 'BUTTON_OTHER_CALENDARS',
 }
 
 export const sendRequestCollapsibleSidebarReport = ({
