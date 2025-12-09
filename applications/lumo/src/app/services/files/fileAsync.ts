@@ -83,11 +83,13 @@ export const handleFileAsync =
                 // Image processed successfully - update with processed data
                 processedAttachment = {
                     ...processedAttachment,
-                    markdown: '', // No markdown for images
-                    data: new Uint8Array(result.processedData), // Store processed image data
+                    markdown: undefined, // No markdown for images
+                    // TODO: try to fill `markdown` with Tesseract OCR?
+                    data: result.hdImage, // Store processed image data
+                    imagePreview: result.previewThumbnail,
                 };
                 console.log(
-                    `Image processed: ${file.name}, original: ${result.originalSize} bytes, processed: ${result.processedSize} bytes`
+                    `Image processed: ${file.name}, original: ${result.originalSize} bytes, processed: ${result.hdImageSize} bytes`
                 );
             } else if (result.type === 'error') {
                 if (result.unsupported) {
