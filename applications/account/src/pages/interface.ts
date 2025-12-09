@@ -3,6 +3,7 @@ import { c } from 'ttag';
 export interface Parameters {
     title: string;
     description: string;
+    ogImage?: string;
 }
 
 export const getLoginTitle = (appName: string) => {
