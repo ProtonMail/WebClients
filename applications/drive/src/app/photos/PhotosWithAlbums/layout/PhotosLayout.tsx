@@ -721,6 +721,7 @@ export const PhotosLayout = () => {
                     }
                     onClose={() => setPreviewLinkId(undefined)}
                     onExit={() => setPreviewLinkId(undefined)}
+                    isForPhotos
                 />
             )}
 
