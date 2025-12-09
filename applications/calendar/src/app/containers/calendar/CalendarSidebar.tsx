@@ -141,13 +141,6 @@ const CalendarSidebar = ({
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_CALENDARS)}
                             title={c('Action').t`Expand navigation bar to see calendars`}
                         />
-                        {otherCalendars.length > 0 && (
-                            <CalendarSidebarCollapsedButton
-                                type="otherCalendars"
-                                onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_OTHER_CALENDARS)}
-                                title={c('Action').t`Expand navigation bar to see other calendars`}
-                            />
-                        )}
                     </>
                 ) : (
                     <>
