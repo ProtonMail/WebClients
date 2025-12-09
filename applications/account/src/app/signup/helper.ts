@@ -1,22 +1,18 @@
 import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import {
     type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
-    DEFAULT_TAX_BILLING_ADDRESS,
     type EnrichedCheckResponse,
     PLANS,
-    type PaymentStatus,
     type PaymentsApi,
     type PlanIDs,
     getFreeCheckResult,
     hasPlanIDs,
 } from '@proton/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
@@ -68,38 +64,6 @@ export async function getSubscriptionPrices({
     return paymentsApi.checkSubscription(data);
 }
 
-export async function getSubscriptionPricesWithFallback<T>(
-    paymentsApi: PaymentsApi,
-    planIDs: PlanIDs,
-    currency: Currency,
-    cycle: Cycle,
-    billingAddress: BillingAddress | undefined,
-    maybeCoupon: string | undefined,
-    {
-        invalidZipCodeFallback,
-    }: {
-        invalidZipCodeFallback: () => T;
-    }
-): Promise<EnrichedCheckResponse | T> {
-    try {
-        return await getSubscriptionPrices({
-            paymentsApi,
-            planIDs,
-            currency,
-            cycle,
-            billingAddress,
-            coupon: maybeCoupon,
-            trial: false,
-            ValidateZipCode: true,
-        });
-    } catch (error) {
-        if (error instanceof InvalidZipCodeError) {
-            return invalidZipCodeFallback();
-        }
-        throw error;
-    }
-}
-
 export const isReferralSignup = (location: Location) => {
     return (
         location.pathname.includes(SSO_PATHS.REFERAL_PLAN_SELECTION) ||
@@ -113,44 +77,10 @@ export const isPorkbunSignup = (location: Location) => {
     );
 };
 
-export const getSignupApplication = (APP_NAME: APP_NAMES) => {
-    if (APP_NAME === 'proton-vpn-settings') {
-        return 'proton-vpn-settings';
-    }
-
-    return 'proton-account';
-};
-
 export const getOptimisticDomains = () => {
     let secondLevelDomain = getSecondLevelDomain(window.location.hostname);
     if (secondLevelDomain.endsWith('.onion') || secondLevelDomain.includes('protonvpn')) {
         secondLevelDomain = 'proton.me';
     }
     return [secondLevelDomain, 'protonmail.com'];
-};
-
-export const getOptimisticPaymentMethods = (): PaymentStatus => {
-    const defaultValue = {
-        VendorStates: {
-            Card: false,
-            Paypal: false,
-            Apple: false,
-            Cash: false,
-            Bitcoin: false,
-            Google: true,
-        },
-        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
-        State: DEFAULT_TAX_BILLING_ADDRESS.State,
-        ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
-    };
-
-    return {
-        ...defaultValue,
-        VendorStates: {
-            ...defaultValue.VendorStates,
-            // We guess that card and PayPal are active by default
-            Card: true,
-            Paypal: true,
-        },
-    };
 };

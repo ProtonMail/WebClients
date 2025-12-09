@@ -1,3 +1,4 @@
+import type { PaymentStatus } from '@proton/payments';
 import {
     CYCLE,
     type Cycle,
@@ -10,7 +11,6 @@ import {
 import { Audience } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 
-import { getOptimisticPaymentMethods } from '../signup/helper';
 import type { SubscriptionData } from '../signup/interfaces';
 import { type SignupModelV2, Steps, type Upsell, UpsellTypes } from './interface';
 
@@ -23,6 +23,32 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
         checkResult: getFreeCheckResult(),
         billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         zipCodeValid: true,
+    };
+};
+
+const getOptimisticPaymentMethods = (): PaymentStatus => {
+    const defaultValue = {
+        VendorStates: {
+            Card: false,
+            Paypal: false,
+            Apple: false,
+            Cash: false,
+            Bitcoin: false,
+            Google: true,
+        },
+        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+        State: DEFAULT_TAX_BILLING_ADDRESS.State,
+        ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
+    };
+
+    return {
+        ...defaultValue,
+        VendorStates: {
+            ...defaultValue.VendorStates,
+            // We guess that card and PayPal are active by default
+            Card: true,
+            Paypal: true,
+        },
     };
 };
 

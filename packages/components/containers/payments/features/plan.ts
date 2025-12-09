@@ -13,7 +13,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getActivityLog, getRequire2FA, getSSOIntegration, getTeamPolicies } from './b2b';
@@ -90,7 +90,6 @@ import {
     getKillSwitch,
     getMultiPlatformSupportVPNFeature,
     getNetShield,
-    getNoLogs,
     getP2P,
     getPrioritySupport,
     getPrivateGatewaysVPNFeature,
@@ -99,7 +98,6 @@ import {
     getStreaming,
     getTor,
     getVPNAppFeature,
-    getVPNConnections,
     getVPNSpeed,
 } from './vpn';
 import { getWalletAppFeature } from './wallet';
@@ -430,31 +428,6 @@ export const getMailPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlan
             getDesktopAppFeature(),
             getDarkWebMonitoringFeature(),
         ],
-    };
-};
-
-export const getFreeVPNPlan = (serversCount: VPNServersCountData): ShortPlan => {
-    const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
-    return {
-        plan: PLANS.FREE,
-        title: PLAN_NAMES[PLANS.FREE],
-        label: '',
-        description: c('new_plans: info')
-            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
-        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getVPNConnections(1), getCountries(freeServers), getVPNSpeed('medium'), getNoLogs()],
-    };
-};
-
-export const getFreeDrivePlan = (freePlan: FreePlanDefault): ShortPlan => {
-    return {
-        plan: PLANS.FREE,
-        title: PLAN_NAMES[PLANS.FREE],
-        label: '',
-        description: c('new_plans: info')
-            .t`The no-cost starter account designed to empower everyone with privacy by default.`,
-        cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getFreeDriveStorageFeature(freePlan), getNAddressesFeature({ n: 1 })],
     };
 };
 

@@ -31,9 +31,20 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clamp from '@proton/utils/clamp';
 
 import type { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
-import { SERVICES } from './interfaces';
 
-export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
+export const SERVICES: { [key: string]: APP_NAMES } = {
+    mail: APPS.PROTONMAIL,
+    calendar: APPS.PROTONCALENDAR,
+    drive: APPS.PROTONDRIVE,
+    vpn: APPS.PROTONVPN_SETTINGS,
+    pass: APPS.PROTONPASS,
+    docs: APPS.PROTONDOCS,
+    wallet: APPS.PROTONWALLET,
+    lumo: APPS.PROTONLUMO,
+    authenticator: APPS.PROTONAUTHENTICATOR,
+};
+
+const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
     if (!maybeProduct) {
         return;
     }
@@ -47,10 +58,6 @@ export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefi
     }
 };
 
-const getDefaultProductParam = (): 'generic' => {
-    return 'generic';
-};
-
 const productParams = new Set(otherProductParamValues);
 
 const getSanitisedProductParam = (value: string | undefined): OtherProductParam | undefined => {
@@ -59,7 +66,7 @@ const getSanitisedProductParam = (value: string | undefined): OtherProductParam 
     }
 };
 
-export const getProductParam = (
+const getProductParam = (
     product: APP_NAMES | undefined,
     productParam: string | undefined
 ): ProductParam | undefined => {
@@ -88,7 +95,7 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
         .map((value) => getProductParam(product, value))
         .filter(Boolean);
 
-    productParam = productParam || getDefaultProductParam();
+    productParam = productParam || 'generic';
 
     if (productParam === 'business') {
         if ([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS].includes(searchParams.get('plan') as any)) {
@@ -171,7 +178,6 @@ export const getSignupSearchParams = (
         trial,
     };
 };
-export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
 export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
     const hasBFCoupon = getHas2025OfferCoupon(searchParams.get('coupon')?.toUpperCase());

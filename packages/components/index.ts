@@ -719,7 +719,6 @@ export { InviteSection } from './containers/referral/invite/InviteSection';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
-export { ReferralFeaturesList as ReferralFeaturesListLegacy } from './containers/referralLegacy/ReferralFeaturesList';
 export { ReferralInvitesContextProvider as ReferralInvitesContextProviderLegacy } from './containers/referralLegacy/ReferralInvitesContext';
 export { RewardSection as RewardSectionLegacy } from './containers/referralLegacy/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';

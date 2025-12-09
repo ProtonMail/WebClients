@@ -1,20 +1,15 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
-import useConfig from '@proton/components/hooks/useConfig';
-import metrics from '@proton/metrics';
 import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import Content from '../public/Content';
-import Header from '../public/Header';
-import Main from '../public/Main';
-import ExploreAppsList, { getExploreApps } from './ExploreAppsList';
-import { getSignupApplication } from './helper';
+import ExploreAppsList, { getExploreApps } from '../../components/ExploreAppsList';
+import Content from '../../public/Content';
+import Header from '../../public/Header';
+import Main from '../../public/Main';
 
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
@@ -24,18 +19,10 @@ interface Props {
 }
 
 const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
-    const { APP_NAME } = useConfig();
-
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
-    useEffect(() => {
-        void metrics.core_signup_pageLoad_total.increment({
-            step: 'recovery',
-            application: getSignupApplication(APP_NAME),
-        });
-    }, []);
 
     const subscribed = user?.Subscribed || 0;
 

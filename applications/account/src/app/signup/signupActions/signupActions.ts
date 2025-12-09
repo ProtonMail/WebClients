@@ -2,7 +2,6 @@ import { MAX_CHARS_API } from '@proton/account';
 import { getInitialStorage, getStorageRange } from '@proton/account/organization/storage';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import type { VerificationModel } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
@@ -20,7 +19,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { queryCheckEmailAvailability, queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
@@ -29,10 +28,9 @@ import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authenticati
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { localeCode } from '@proton/shared/lib/i18n';
-import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import {
     generatePasswordlessOrganizationKey,
     getDecryptedUserKeysHelper,
@@ -52,9 +50,7 @@ import type {
     SignupCacheResult,
     SubscriptionData,
 } from '../interfaces';
-import { HumanVerificationTrigger, SignupSteps, SignupType } from '../interfaces';
-import { handleCreateUser } from './handleCreateUser';
-import { hvHandler } from './helpers';
+import { SignupType } from '../interfaces';
 
 export const handleDone = ({
     cache,
@@ -87,7 +83,6 @@ export const handleDone = ({
             flow: 'signup',
             appIntent: appIntent,
         },
-        to: SignupSteps.Done,
     };
 };
 
@@ -254,7 +249,6 @@ export const handleSetPassword = async ({
                 user: user,
             },
         },
-        to: SignupSteps.Congratulations,
     };
 };
 
@@ -316,18 +310,6 @@ export const handleSetupOrg = async ({
             GroupAddressKeyTokens: [],
         }),
     });
-};
-
-export const handleSetupRecoveryPhrase = async ({
-    cache,
-}: {
-    cache: SignupCacheResult;
-    api: Api;
-}): Promise<SignupActionResponse> => {
-    return {
-        cache,
-        to: SignupSteps.Congratulations,
-    };
 };
 
 export const getSubscriptionMetricsData = (
@@ -535,165 +517,5 @@ export const handleSetupUser = async ({
 
     return {
         cache: newCache,
-        to: SignupSteps.Congratulations,
     };
-};
-
-export const handlePayment = ({
-    api,
-    cache,
-    subscriptionData,
-}: {
-    api: Api;
-    cache: SignupCacheResult;
-    subscriptionData: SubscriptionData;
-}): Promise<SignupActionResponse> => {
-    return handleCreateUser({
-        cache: {
-            ...cache,
-            subscriptionData,
-        },
-        api,
-    });
-};
-
-export const handleSelectPlan = async ({
-    api,
-    cache,
-    subscriptionData,
-}: {
-    api: Api;
-    cache: SignupCacheResult;
-    subscriptionData: SubscriptionData;
-}): Promise<SignupActionResponse> => {
-    if (subscriptionData.checkResult.Amount > 0 && hasPlanIDs(subscriptionData.planIDs)) {
-        return {
-            cache: {
-                ...cache,
-                subscriptionData,
-            },
-            to: SignupSteps.Payment,
-        };
-    }
-
-    return handleCreateUser({
-        cache: {
-            ...cache,
-            subscriptionData,
-        },
-        api,
-    });
-};
-
-export const usernameAvailabilityError = 'UsernameAvailabilityError';
-
-export const handleCreateAccount = async ({
-    cache,
-    api,
-}: {
-    cache: SignupCacheResult;
-    api: Api;
-}): Promise<SignupActionResponse> => {
-    const {
-        accountData: { username, email, domain, signupType },
-        humanVerificationResult,
-    } = cache;
-
-    try {
-        if (signupType === SignupType.Proton) {
-            await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
-        }
-    } catch (error: any) {
-        error.type = usernameAvailabilityError;
-        throw error;
-    }
-
-    if (signupType === SignupType.External) {
-        try {
-            await api(
-                withVerificationHeaders(
-                    humanVerificationResult?.token,
-                    humanVerificationResult?.tokenType,
-                    queryCheckEmailAvailability(email)
-                )
-            );
-        } catch (error) {
-            const humanVerificationData = hvHandler(error, HumanVerificationTrigger.ExternalCheck);
-            return {
-                cache: {
-                    ...cache,
-                    humanVerificationData,
-                },
-                to: SignupSteps.HumanVerification,
-            };
-        }
-    }
-
-    if (cache.referralData?.referrer) {
-        return handleCreateUser({
-            cache,
-            api,
-        });
-    }
-
-    if (cache.subscriptionData.checkResult.Amount > 0 && hasPlanIDs(cache.subscriptionData.planIDs)) {
-        return {
-            cache,
-            to: SignupSteps.Payment,
-        };
-    }
-
-    if (!cache.subscriptionData.skipUpsell) {
-        return {
-            cache,
-            to: SignupSteps.Upsell,
-        };
-    }
-
-    return handleCreateUser({
-        cache,
-        api,
-    });
-};
-
-export const handleHumanVerification = async ({
-    api,
-    cache,
-    token,
-    tokenType,
-    verificationModel,
-}: {
-    api: Api;
-    cache: SignupCacheResult;
-    token: string;
-    tokenType: HumanVerificationMethodType;
-    verificationModel?: VerificationModel;
-}): Promise<SignupActionResponse> => {
-    const humanVerificationResult = {
-        token,
-        tokenType,
-        verificationModel,
-    };
-
-    if (cache.humanVerificationData?.trigger === HumanVerificationTrigger.ExternalCheck) {
-        return handleCreateAccount({
-            cache: {
-                ...cache,
-                humanVerificationResult,
-            },
-            api,
-        });
-    }
-
-    if (cache.humanVerificationData?.trigger === HumanVerificationTrigger.UserCreation) {
-        return handleCreateUser({
-            cache: {
-                ...cache,
-                humanVerificationResult,
-            },
-            api,
-        });
-    }
-
-    throw new Error('Human verification triggered from unknown step');
 };
