@@ -70,7 +70,7 @@
         "Пополнить счёт"
       ],
       "Add domain": [
-        "Добавление домена"
+        "Добавить домен"
       ],
       "Add external address": [
         "Добавить внешний адрес"
@@ -322,7 +322,7 @@
         "Готово"
       ],
       "Downgrade": [
-        "Перейти на более дешёвую версию"
+        "Перейти на более дешевую версию"
       ],
       "Download": [
         "Скачать"
@@ -1994,9 +1994,9 @@
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "Выбран ${ selectedCitiesCount } город",
-        "Выбраны ${ selectedCitiesCount } города",
-        "Выбраны ${ selectedCitiesCount } городов",
-        "Выбраны ${ selectedCitiesCount } городов"
+        "Выбрано ${ selectedCitiesCount } города",
+        "Выбрано ${ selectedCitiesCount } городов",
+        "Выбрано ${ selectedCitiesCount } городов"
       ],
       "${ selectedCountriesCount } selected": [
         "Выбрана ${ selectedCountriesCount }",
@@ -2871,7 +2871,7 @@
     },
     "Cycle": {
       "/month": [
-        "в месяц"
+        "/месяц"
       ],
       "/user per month": [
         "/за пользователя в месяц"
@@ -3095,7 +3095,7 @@
         "Удаление ${ name } не удалось"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } не удалось переместить в белый список"
+        "${ name } не удалось переместить в черный список"
       ],
       "${ name } failed to move to block list": [
         "Не удалось переместить ${ name } в список блокируемых"
@@ -3580,7 +3580,7 @@
         "Недействительный номер карты"
       ],
       "Invalid code": [
-        "Неверный код"
+        "Недействительный код"
       ],
       "Invalid domain": [
         "Недействительный домен"
@@ -4346,7 +4346,7 @@
         "Для подтверждения введите название семейной группы"
       ],
       "Enter organization name to confirm": [
-        "Введите название организации для подтверждения"
+        "Для подтверждения введите название организации"
       ],
       "Family name": [
         "Название семьи"
@@ -4566,10 +4566,10 @@
         "Подтвердите свою личность физическим ключом безопасности U2F или FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }."
+        "Достигнут предел в ${ maxSecurityKeyLength } ключ безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключа безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключей безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключей безопасности."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш ключ двухфакторной аутентификации готов к использованию."
@@ -5497,10 +5497,10 @@
         "**Получите адрес** ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+ ${ invisibleCount } More": [
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }"
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -7470,9 +7470,6 @@
       "You can now return to the application to continue": [
         "Теперь вы можете вернуться в приложение, чтобы продолжить"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Одновременно может быть открыт только один чат. Пожалуйста, закройте предыдущие беседы, прежде чем начинать новую."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
       ],
@@ -7492,10 +7489,10 @@
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have ${ availableCount } new server available.": [
-        "Вам доступен ${ availableCount } выделенный сервер.",
-        "Вам доступно ${ availableCount } выделенных сервера.",
-        "Вам доступны ${ availableCount } выделенных серверов.",
-        "Вам доступно ${ availableCount } выделенных сервера."
+        "Доступен ${ availableCount } новый сервер.",
+        "Доступны ${ availableCount } новых сервера.",
+        "Доступно ${ availableCount } новых серверов.",
+        "Доступно ${ availableCount } новых серверов."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Вы недавно пользовались ${ unassignedAvailableCount } сервером. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
@@ -8347,7 +8344,7 @@
         "Плательщик"
       ],
       "Payment details": [
-        "Информация платежа"
+        "Информация о платеже"
       ],
       "Payment method": [
         "Способ оплаты"
@@ -8447,9 +8444,9 @@
       ],
       "Show ${ n } administrator": [
         "Показать ${ n } администратора",
+        "Показать ${ n } администратора",
         "Показать ${ n } администраторов",
-        "Показать ${ n } администраторов",
-        "Показать ${ n } администратора"
+        "Показать ${ n } администраторов"
       ],
       "Single sign-on Entity ID": [
         "Единый вход для идентификатора организации"
@@ -8574,7 +8571,7 @@
         "Восстановление на базе устройств"
       ],
       "Recovery phone number": [
-        "Номер телефона для восстановления доступа"
+        "Номер телефона для восстановления"
       ],
       "Recovery phrase": [
         "Фраза для восстановления доступа к учетной записи"
@@ -8852,20 +8849,6 @@
       ],
       "What’s this?": [
         "Что это такое?"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Онлайн-чат доступен с ${ planName }"
-      ],
-      "Open support form": [
-        "Открыть форму поддержки"
-      ],
-      "Upgrade subscription": [
-        "Улучшить подписку"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Улучшите подписку, чтобы разблокировать чат с поддержкой и другие платные функции, или используйте бесплатную форму поддержки, чтобы сообщить о вашей проблеме."
       ]
     },
     "Loading info": {
@@ -10456,7 +10439,7 @@
         "Конфигурации бесплатных серверов"
       ],
       "I found another service that I like better": [
-        "Я нашел другой сервис, который мне больше нравится"
+        "Я нашел другую службу, которая мне нравится больше"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я использую другой аккаунт ${ BRAND_NAME }"
@@ -11211,7 +11194,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Бесплатно"
       ]
     },
     "Property type": {
@@ -11262,7 +11245,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Email address has been verified.": [
         "Адрес электронной почты был подтвержден."
@@ -11299,7 +11282,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Phone number has been verified.": [
         "Номер телефона подтвержден."
@@ -12271,10 +12254,10 @@
         "${ n } пользователя преобразовано в SSO"
       ],
       "${ n } user detached from SSO": [
-        "${ n } пользователь отсоединён от SSO",
-        "${ n } пользователя отсоединёно от SSO",
-        "${ n } пользователей отсоединёно от SSO",
-        "${ n } пользователя отсоединёно от SSO"
+        "${ n } пользователь отключён от SSO",
+        "${ n } пользователя отключены от SSO",
+        "${ n } пользователей отключены от SSO",
+        "${ n } пользователей отключены от SSO"
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Проверьте этот аккаунт сейчас:",
@@ -12350,15 +12333,15 @@
       ],
       "Delete ${ n } inactive user?": [
         "Удалить ${ n } неактивного пользователя?",
-        "Удалить ${ n } неактивных пользователей?",
+        "Удалить ${ n } неактивных пользователя?",
         "Удалить ${ n } неактивных пользователей?",
         "Удалить ${ n } неактивных пользователей?"
       ],
       "Delete ${ n } user": [
         "Удалить ${ n } пользователя",
+        "Удалить ${ n } пользователя",
         "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователя"
+        "Удалить ${ n } пользователей"
       ],
       "Deny": [
         "Отказать"
@@ -12751,7 +12734,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Применить"
+        "Понятно"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Просто войдите в свой аккаунт Apple App Store, и выберите ${ subscriptions }."
@@ -13501,11 +13484,6 @@
         "Поле vCard-файла"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Темы"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } день",
@@ -13542,9 +13520,6 @@
       "${ feature } is now active": [
         "${ feature } теперь активна"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Клиенты ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(активное)"
       ],
@@ -13572,9 +13547,6 @@
       "Access control": [
         "Контроль доступа"
       ],
-      "Account": [
-        "Аккаунт"
-      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -13585,7 +13557,7 @@
         "Аккаунт временно заблокирован"
       ],
       "Action": [
-        "Действия"
+        "Действие"
       ],
       "Actions": [
         "Действия"
@@ -13603,7 +13575,7 @@
         "Добавить ${ totalServerCount } сервер?",
         "Добавить ${ totalServerCount } сервера?",
         "Добавить ${ totalServerCount } серверов?",
-        "Добавить ${ totalServerCount } сервера?"
+        "Добавить ${ totalServerCount } серверов?"
       ],
       "Add address": [
         "Добавить адрес"
@@ -13666,7 +13638,7 @@
         "Сумма"
       ],
       "Amount due": [
-        "Сумма к оплате"
+        "К оплате"
       ],
       "An address for each role": [
         "Адрес для каждой должности"
@@ -13690,7 +13662,7 @@
         "Автоматическое удаление включено"
       ],
       "Billing cycle": [
-        "Платежный цикл"
+        "Период оплаты"
       ],
       "Block trackers and malware": [
         "Блокируйте трекеры и вредоносные программы"
@@ -13971,9 +13943,6 @@
       "Email": [
         "Эл. почта"
       ],
-      "Email subscriptions": [
-        "Подписки на рассылки"
-      ],
       "Enable advanced account protection": [
         "Включить расширенную защиту аккаунта"
       ],
@@ -14119,7 +14088,7 @@
         "Ошибка сети"
       ],
       "Next": [
-        "Следующий этап"
+        "Далее"
       ],
       "Night theme": [
         "Ночная тема"
@@ -14138,9 +14107,6 @@
       ],
       "Open pagination": [
         "Открыть нумерацию страниц"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Имя пользователя OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Файлы конфигурации OpenVPN"
@@ -14190,9 +14156,6 @@
       "Phone": [
         "Телефон"
       ],
-      "Plans": [
-        "Тарифы"
-      ],
       "Preview": [
         "Предварительный просмотр"
       ],
@@ -14209,7 +14172,7 @@
         "Код QR"
       ],
       "Recommended": [
-        "Рекомендованный"
+        "Рекомендуется"
       ],
       "Recommended actions": [
         "Рекомендуемые действия"
@@ -14287,7 +14250,7 @@
         "События безопасности"
       ],
       "Select a plan": [
-        "Выбрать тариф"
+        "Выбор тарифа"
       ],
       "Select action to take on contact group": [
         "Выберите действие для группы контактов"
@@ -14433,9 +14396,6 @@
       "Upgrade to ${ planName }": [
         "Улучшить на ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Улучшить защиту вашей сети с помощью выделенных серверов"
-      ],
       "Upgrade your privacy": [
         "Повысьте вашу приватность"
       ],
@@ -14507,9 +14467,6 @@
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
-      ],
-      "Your current plan": [
-        "Ваш текущий тариф"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"

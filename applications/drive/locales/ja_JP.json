@@ -5884,6 +5884,9 @@
       "Running diagnostics...": [
         "診断を実行中..."
       ],
+      "Same photo or video already exist": [
+        "同じ写真または動画がすでに存在します"
+      ],
       "Saving...": [
         "保存中..."
       ],
@@ -6755,9 +6758,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
-      "A screenshot of ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME } のスクリーンショット"
-      ],
       "Account holder": [
         "アカウント所有者"
       ],
@@ -6973,9 +6973,6 @@
       ],
       "Encrypt emails": [
         "メールを暗号化"
-      ],
-      "Encrypted node": [
-        "暗号化ノード"
       ],
       "Enter device name": [
         "デバイス名を入力"
@@ -7572,7 +7569,7 @@
         "もっと詳しく"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+        "${ BRAND_NAME }を利用し続けるには、プレミアム機能が使用中でないことを確認するか、プランをアップグレードしてください。"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -11886,7 +11883,7 @@
         "うーん、それは見つかりませんでした"
       ],
       "How does it all work?": [
-        "どのように機能しますか？"
+        "そもそもどんな仕組みでこんなことが？"
       ],
       "How does it work?": [
         "どのように動作しますか?"

@@ -1032,6 +1032,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Buka di ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -1291,7 +1294,7 @@
         "Kirim bukti baca"
       ],
       "Send unsubscribe email": [
-        "Kirim email berhenti berlangganan"
+        "Kirim email pembatalan langganan"
       ],
       "Set": [
         "Atur"
@@ -1491,6 +1494,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1537,10 +1543,10 @@
         "Berhenti berlangganan"
       ],
       "Unsubscribed": [
-        "Langganan dihentikan"
+        "Langganan dibatalkan"
       ],
       "Unsubscribing": [
-        "Menghentikan langganan"
+        "Membatalkan langganan"
       ],
       "Untrust": [
         "Berhenti percayai"
@@ -1948,6 +1954,9 @@
       "1 user account": [
         "1 akun pengguna"
       ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
       "6 user accounts": [
         "6 akun pengguna"
       ],
@@ -1969,6 +1978,9 @@
       "Password health alerts": [
         "Peringatan kesehatan kata sandi"
       ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
@@ -1982,6 +1994,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
+      "forever": [
+        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
@@ -2125,6 +2140,12 @@
       ],
       "Application problem": [
         "Masalah aplikasi"
+      ],
+      "Authenticator problem": [
+        "Kesalahan autentikator"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -2629,6 +2650,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Kemaanan akun dan jaringan lanjutan dalam satu paket"
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
@@ -4222,6 +4246,9 @@
       "/month": [
         "/bulan"
       ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
       "2 user accounts": [
         "2 akun pengguna"
       ],
@@ -4233,11 +4260,17 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dapatkan ruang penyimpanan 4x lebih besar"
+      ],
       "Share your plan": [
         "Bagikan paket Anda"
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Dapatkan ruang penyimpanan 4x lebih besar dengan ${ BRAND_NAME } Duo"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
@@ -4991,6 +5024,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
       ]
@@ -6502,7 +6538,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Permintaan untuk berhenti berlangganan dari milis ini akan disampaikan kepada pengirim buletin dan akan diproses secara otomatis."
+        "Permintaan untuk membatalkan langganan milis ini akan disampaikan kepada pengirim buletin dan akan diproses secara otomatis."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Koneksi yang aman sangat penting pada saat bekerja secara remote. VPN melindungi data perusahaan Anda dari ancaman siber dan menjaga pekerjaan Anda tetap privat."
@@ -6542,6 +6578,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
+      ],
+      "Addresses settings": [
+        "Pengaturan alamat"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman online Anda."
@@ -6601,7 +6640,7 @@
         "Kunci publik tidak dikenal terdeteksi untuk penerima ini."
       ],
       "An unsubscribe email will be sent on your behalf.": [
-        "Email penghentian langganan akan dikirim atas nama Anda."
+        "Email pembatalan langganan akan dikirim atas nama Anda."
       ],
       "and": [
         "dan"
@@ -6970,7 +7009,7 @@
         "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "Kelola dan hentikan langganan buletin dan milis dengan mudah."
+        "Kelola dan batalkan langganan buletin dan milis dengan mudah."
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -7125,6 +7164,9 @@
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Berikan tagihan yang masuk label dengan keterangan warna yang khusus, semisal \"${ suggestedLabelName }\". Setelah tagihan ini terbayar, ubah label ini menjadi \"${ suggestedPaidLabelName }\"."
       ],
+      "Google Pay mark": [
+        "Tanda Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Pemerintah dan ISP dapat memantau aktivitas online Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
       ],
@@ -7277,6 +7319,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Simpan rincian entri masuk dan kartu kredit Anda dengan aman namun tetap mudah diakses dengan menambahkan rincian ini ke ${ PASS_APP_NAME }. Gratis, dan terliput dalam Akun ${ BRAND_NAME } Anda."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Pertahankan kerapian kotak surat Anda dengan membersihkan pesan sampah dan spam yang telah berusia lebih dari 30 hari secara otomatis."
@@ -7725,11 +7770,17 @@
       "Saved: ${ dateString }": [
         "Disimpan: ${ dateString }"
       ],
+      "Saving draft": [
+        "Menyimpan draf"
+      ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR dengan perangkat seluler Anda"
       ],
       "Scheduled send of this message will be canceled.": [
         "Pengiriman terjadwal pesan ini akan dibatalkan."
+      ],
+      "Scheduling message": [
+        "Menjadwalkan pesan"
       ],
       "Scribe panel": [
         "Panel Scribe"
@@ -7772,6 +7823,9 @@
       ],
       "Sending": [
         "Mengirim"
+      ],
+      "Sending message": [
+        "Mengirim pesan"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me merupakan fitur berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
@@ -8092,7 +8146,7 @@
         "Informasi ini ditampilkan kepada Anda karena baris subjek email Anda mengandung kata kunci untuk pengaturan ulang kata sandi."
       ],
       "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
-        "Tindakan ini akan menghapus entri buletin ini dari daftar ini. Hal ini tidak akan menghentikan langganan Anda dari buletin. Entri buletin ini akan kembali muncul apabila Anda menerima pesan baru."
+        "Tindakan ini akan menghapus entri buletin ini dari daftar ini. Hal ini tidak akan membatalkan langganan buletin Anda. Entri buletin ini akan kembali muncul apabila Anda menerima pesan baru."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
@@ -8122,10 +8176,10 @@
         "Untuk menghilangkan batasan yang ada, Anda dapat meningkatkan ke paket berbayar."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang ditetapkan oleh pengirim milis:"
+        "Untuk membatalkan langganan milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang ditetapkan oleh pengirim milis:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Untuk berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan lebih lanjut dari pengelola milis:"
+        "Untuk membatalkan langganan milis ini, Anda akan dibawa ke URL berikut yang berisi arahan lebih lanjut dari pengelola milis:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk kunci yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
@@ -8182,7 +8236,7 @@
         "Perubahan yang belum disimpan"
       ],
       "Unsubscribe": [
-        "Berhenti berlangganan"
+        "Batalkan langganan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -8965,6 +9019,12 @@
       "Also archive": [
         "Arsipkan juga"
       ],
+      "Always label sender's emails": [
+        "Selalu labeli email pengirim"
+      ],
+      "Always move sender's emails": [
+        "Selalu pindahkan email pengirim"
+      ],
       "AND": [
         "DAN"
       ],
@@ -9006,6 +9066,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
       ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
@@ -9219,6 +9282,9 @@
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
       ],
       "Go to Forums": [
         "Ke Forum"
@@ -9593,7 +9659,7 @@
         "Tidak aman atau bermasalah"
       ],
       "Unsubscribed from ${ truncatedName }.": [
-        "Langganan ${ truncatedName } dihentikan."
+        "Langganan ${ truncatedName } dibatalkan."
       ],
       "Updates": [
         "Pembaruan"
@@ -9743,7 +9809,7 @@
     },
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
-        "Buletin atau milis yang langganannya telah Anda hentikan akan muncul di sini."
+        "Buletin atau milis yang langganannya telah Anda batalkan akan muncul di sini."
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "Anda tidak memiliki langganan buletin atau milis yang aktif."
@@ -10526,7 +10592,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi file besar"
+        "Kolaborasi dan berbagi berkas besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -10584,6 +10650,9 @@
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent kilat"
@@ -11732,6 +11801,9 @@
       "Advanced account protection": [
         "Perlindungan akun mutakhir"
       ],
+      "File attachments (up to 10GB)": [
+        "Lampiran berkas (hingga 10GB)"
+      ],
       "Team policies": [
         "Kebijakan tim"
       ]
@@ -11794,6 +11866,9 @@
       ],
       "Credit/debit card": [
         "Kartu kredit/debit"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
@@ -11877,6 +11952,9 @@
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
       ],
@@ -11916,11 +11994,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Anda akan segera dialihkan ke PayPal untuk memverifikasi pembayaran Anda."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Anda akan segera dialihkan untuk memverifikasi pembayaran Anda."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Langganan Anda saat ini telah memiliki diskon. Dengan berpindah ke penawaran ini, diskon yang telah ada tidak akan lagi berlaku."
       ]
     },
     "Payments.Error": {
@@ -11943,6 +12030,11 @@
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Terjadi kesalahan. Verifikasi Google Pay gagal."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -11954,6 +12046,18 @@
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Apakah Anda yakin ingin melanjutkan?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Apabila Anda memilih untuk mengubah paket ${ planTitle } milik Anda, Anda dapat kehilangan akses ke sebagian fitur."
+      ],
+      "Keep ${ planTitle }": [
+        "Pertahankan ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ya, saya yakin"
+      ],
+      "Your plan includes this feature already.": [
+        "Paket Anda telah meliputi fitur ini."
       ]
     },
     "Payments.plan_name": {
@@ -11967,6 +12071,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transfer bank - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kartu yang berakhir dengan ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12368,6 +12475,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Setelah tanggal ini, akun Anda akan diturunkan ke **${ BRAND_NAME } Free**. Apabila Anda ingin berubah pikiran, Anda dapat **mengaktifkan kembali langganan Anda** untuk mempertahankan akses ke berbagai fitur premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
@@ -13168,7 +13278,7 @@
         "Alias dinonaktifkan"
       ],
       "Unsubscribed": [
-        "Langganan dihentikan"
+        "Langganan dibatalkan"
       ]
     },
     "Step": {
@@ -13230,6 +13340,9 @@
       "${ app } storage": [
         "Ruang penyimpanan ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } ruang penyimpanan digunakan"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
       ],
@@ -13241,6 +13354,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Ruang penyimpanan yang digunakan"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk terus mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
@@ -13871,7 +13987,7 @@
         "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Mail list unsubscribed": [
-        "Langganan milis dihentikan"
+        "Langganan milis dibatalkan"
       ],
       "Message added to ${ labelName }.": [
         "Pesan ditambahkan ke ${ labelName }."
@@ -13991,7 +14107,7 @@
         "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
+        "Anda telah berhasil membatalkan langganan"
       ]
     },
     "Success notification": {
@@ -14389,6 +14505,9 @@
       ],
       "Create folder \"${ search }\"": [
         "Buat folder \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Buat label \"${ search }\""
       ],
       "Create new group": [
         "Buat grup baru"
@@ -15062,6 +15181,9 @@
       "To": [
         "Kepada"
       ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
+      ],
       "Trash": [
         "Sampah"
       ],
@@ -15084,16 +15206,16 @@
         "Autentikasi dua faktor"
       ],
       "Unsubscribe": [
-        "Berhenti berlangganan"
+        "Batalkan langganan"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
-        "Berhenti berlangganan dari ${ subscription.Name }?"
+        "Batalkan langganan ${ subscription.Name }?"
       ],
       "Unsubscribe not available for this sender": [
-        "Penghentian langganan tidak tersedia untuk pengirim ini"
+        "Pembatalan langganan tidak tersedia untuk pengirim ini"
       ],
       "Unsubscribe request sent": [
-        "Permintaan penghentian langganan dikirim"
+        "Permintaan pembatalan langganan dikirim"
       ],
       "Upgrade complete!": [
         "Peningkatan selesai!"
@@ -15290,6 +15412,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]

@@ -72,7 +72,7 @@
         "Ajouter un autre compte"
       ],
       "Add credit / debit card": [
-        "Ajouter une carte de crédit/débit"
+        "Ajouter une carte de paiement"
       ],
       "Add credits": [
         "Ajouter des crédits"
@@ -96,7 +96,7 @@
         "Ajouter un utilisateur"
       ],
       "Allow": [
-        "Adresses autorisées"
+        "Autoriser"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Autoriser les messages chiffrés de bout en bout pour ce groupe"
@@ -960,7 +960,7 @@
         "Ignorer la vérification"
       ],
       "Spam": [
-        "Indésirable/spam"
+        "Indésirables/spam"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -1725,7 +1725,7 @@
         "Lifetime"
       ],
       "Monthly": [
-        "Chaque mois"
+        "Mensuel"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -1904,7 +1904,7 @@
         "Fermer"
       ],
       "Configure your network": [
-        "Configurez votre réseau"
+        "Configurer votre réseau"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
@@ -3213,7 +3213,7 @@
         "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Créez une passerelle pour permettre à vos utilisateurs d'accéder à vos ressources informatiques via des serveurs dédiés."
+        "Créer une passerelle pour permettre à vos utilisateurs d'accéder à vos ressources informatiques via des serveurs dédiés."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Créez une réunion Zoom et ajouter les informations de participation à votre événement en un clic."
@@ -3276,7 +3276,7 @@
         "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si vous ne l'avez pas déjà fait, activez des méthodes de récupération pour vous assurer de ne jamais perdre l'accès à ${ VPN_APP_NAME }."
+        "Si ce n'est pas déjà fait, activez des méthodes de récupération pour vous assurer de ne jamais perdre l'accès à ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -3413,13 +3413,13 @@
         "Autre raison (dites-nous comment nous pouvons nous améliorer)"
       ],
       "Subscription is too expensive": [
-        "L'abonnement est trop cher."
+        "Abonnement trop cher"
       ],
       "Switching to a different provider": [
         "Utilisation d'un autre service"
       ],
       "Temporary need, may come back in the future": [
-        "C'est un besoin temporaire que je pourrais avoir à l'avenir."
+        "Il s'agit d'un besoin temporaire qui pourrait revenir à l'avenir."
       ],
       "The VPN is too slow": [
         "Le VPN est trop lent."
@@ -3803,7 +3803,7 @@
         "Le nombre maximum de calendriers a été atteint."
       ],
       "Checkout expired, please try again": [
-        "La commande a expiré. Nous vous invitons à réessayer."
+        "La commande a expiré, nous vous invitons à réessayer."
       ],
       "Code wrong or not valid anymore": [
         "Le code n'est pas correct ou n'est plus valide."
@@ -3913,7 +3913,7 @@
         "Le numéro de carte n'est pas valide"
       ],
       "Invalid code": [
-        "Le code n’est pas valide."
+        "Le code n'est pas valide."
       ],
       "Invalid domain": [
         "Le domaine n'est pas valide."
@@ -4725,10 +4725,10 @@
     },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Cela supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
+        "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Cela supprimera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
+        "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5040,7 +5040,7 @@
     },
     "FilterSettings": {
       "Allow:": [
-        "Adresses autorisées:"
+        "Adresses autorisées :"
       ],
       "Block:": [
         "Adresses bloquées :"
@@ -5058,7 +5058,7 @@
         "Ces listes s'appliquent à tous les comptes de votre organisation. Les membres de votre organisation peuvent créer leurs propres filtres, mais ne pourront pas remplacer les adresses ou les domaines que vous avez bloqués."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
-        "Pour que les messages importants ne se retrouvent pas dans les indésirables/spam."
+        "pour que les messages importants ne se retrouvent pas dans les indésirables/spam."
       ],
       "To prevent junk mail from clogging up inboxes": [
         "pour que les messages indésirables/spam n'encombrent pas les boites de réception."
@@ -6541,7 +6541,7 @@
         "Recevez une notification lorsque votre mot de passe ou d'autres données personnelles ont été exposées. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Commencez"
+        "Démarrer"
       ],
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
@@ -7011,6 +7011,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Vous avez payé pour un abonnement."
@@ -7981,7 +7984,7 @@
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Nous vous invitons à fermer les conversations précédentes avant d'en entamer une nouvelle."
+        "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Veuillez fermer les conversations précédentes avant d'en ouvrir une nouvelle."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
@@ -8100,7 +8103,7 @@
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
-        "La promotion a été prise en compte et votre compte a été mis à jour."
+        "Votre compte a été mis à jour avec cette promotion."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -9098,6 +9101,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Vulnérable"
       ],
@@ -9437,13 +9443,13 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "Le chat en direct est disponible avec ${ planName }."
+        "Le chat en direct est disponible avec ${ planName }"
       ],
       "Open support form": [
         "Ouvrir le formulaire de support"
       ],
       "Upgrade subscription": [
-        "Passer à l’abonnement supérieur"
+        "Changer d'abonnement"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Passez à la version supérieure pour débloquer l'assistance par chat et d'autres fonctionnalités premium ou utilisez notre formulaire de support gratuit pour signaler votre problème."
@@ -9764,7 +9770,7 @@
     },
     "Navigation": {
       "All": [
-        "Tous"
+        "Tout"
       ],
       "Allow": [
         "Adresses autorisées"
@@ -9773,7 +9779,7 @@
         "Adresses bloquées"
       ],
       "Spam": [
-        "Indésirable/spam"
+        "Indésirables/spam"
       ]
     },
     "New Label form": {
@@ -9823,7 +9829,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Souhaitez-vous passer à ${ downgradedPlanName } "
+        "Passer à ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Découvrir tous les abonnements ${ BRAND_NAME }"
@@ -10489,7 +10495,7 @@
         "Supprimer le compte ?"
       ],
       "Downgrade account?": [
-        "Passer à un abonnement inférieur ?"
+        "Passer à un abonnement inférieur ?"
       ],
       "Review subscription": [
         "Vérifier l'abonnement"
@@ -11135,6 +11141,9 @@
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } autorisé"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Configurations pays"
       ],
@@ -11143,6 +11152,9 @@
       ],
       "Free server configs": [
         "Configurations des serveurs Free"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "J'ai trouvé un autre service que je préfère."
@@ -11155,6 +11167,9 @@
       ],
       "Ignore group": [
         "Ignorer le groupe"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Il manque une fonctionnalité essentielle dont j'ai besoin."
@@ -12093,7 +12108,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratuit"
       ]
     },
     "Property type": {
@@ -13748,7 +13763,7 @@
     },
     "Subscription": {
       "Billed every 2 years": [
-        "Facturation tous les 2 ans"
+        "Facturé tous les 2 ans"
       ],
       "Billed monthly": [
         "Facturé mensuellement"
@@ -13840,7 +13855,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Il vous suffit de vous connecter à votre compte Apple App Store, puis de sélectionner ${ subscriptions }."
@@ -14209,7 +14224,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "Êtes-vous sûr ?"
+        "Confirmez-vous ?"
       ],
       "Auto-pay is disabled": [
         "Le paiement automatique est désactivé."
@@ -14485,7 +14500,7 @@
         "Les préférences ont été mises à jour."
       ],
       "Resent invitation": [
-        "Renvoyer l'invitation"
+        "L'invitation a été renvoyée."
       ]
     },
     "Suffix": {
@@ -15109,7 +15124,7 @@
         "Catégories de messages"
       ],
       "Email subscriptions": [
-        "Newsletters"
+        "Abonnement e-mail"
       ],
       "Enable advanced account protection": [
         "Activer la protection avancée du compte"
@@ -15182,7 +15197,7 @@
         "Tirez le meilleur parti de votre VPN"
       ],
       "Get started": [
-        "Commencez"
+        "Démarrer"
       ],
       "Get the apps": [
         "Obtenir les applications"
@@ -15267,7 +15282,7 @@
         "Nom"
       ],
       "Network error": [
-        "Erreur de réseau "
+        "Erreur réseau"
       ],
       "Next": [
         "Suivant"
@@ -15294,7 +15309,7 @@
         "Ouvrir la pagination"
       ],
       "OpenVPN / IKEv2 username": [
-        "Nom d'utilisateur OpenVPN/IKEv2"
+        "Nom d'utilisateur OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
@@ -15797,6 +15812,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Un changement du côté de Gmail bloque ${ BRAND_NAME } de se connecter. Accordez la permission de rétablir la fonctionnalité du message."
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Ajouté(s) à votre abonnement : ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
       ],
@@ -15840,7 +15858,7 @@
         "L'URL du point de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Exclusion des utilisateurs avec authentification unique dont l'A2F est gérée par le fournisseur d'identité"
+        "Exclusion des utilisateurs avec authentification unique dont l'A2F est gérée par le fournisseur d'identité."
       ],
       "Feature in early access": [
         "Fonctionnalité en avant-première"
@@ -16461,6 +16479,20 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "macOS": [
+        "macOS"
       ]
     },
     "wallet_signup_2024: Info": {

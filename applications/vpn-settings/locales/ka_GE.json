@@ -96,7 +96,7 @@
         "მომხმარებლის დამატება"
       ],
       "Allow": [
-        "ავტორიზებული მისამართები"
+        "დაშვება"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "გამჭოლად დაშიფრული ელფოსტის დაშვება ამ ჯგუფისთვის"
@@ -588,7 +588,7 @@
         "გაიგეთ მეტი"
       ],
       "Let's talk": [
-        "ვისაუბროთ"
+        "ვიბაზროთ"
       ],
       "Load more": [
         "მეტის ჩატვირთვა"
@@ -667,6 +667,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
@@ -1421,6 +1424,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ გქონდეთ მაქსიმუმ ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } მომხმარებლის ადგილი."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
@@ -3230,8 +3236,14 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
+      ],
       "Everyone in your organization can connect to shared servers in all countries.": [
         "თქვენს ორგანიზაციაში ყველას შეუძლია გაზიარებულ სერვერებთან დაკავშირება, ყველა ქვეყანაში."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -3321,10 +3333,10 @@
         "${ name }-ის წაშლის შეცდომა"
       ],
       "${ name } failed to move to allow list": [
-        "${ name }-ის დაშვებული მისამართების სიაში გადატანის შეცდომა"
+        "შეცდომა დაშვებულების სიაში ჩამატებისას: ${ name }"
       ],
       "${ name } failed to move to block list": [
-        "${ name }-ის დაბლოკილების სიაში ჩამატების შეცდომა"
+        "შეცდომა დაბლოკილების სიაში ჩამატებისას: ${ name }"
       ],
       "${ name } failed to move to spam list": [
         "შეცდომა სპამის სიაში ჩამატებისას: ${ name }"
@@ -4981,7 +4993,7 @@
         "დაშვება:"
       ],
       "Block:": [
-        "დაბლოკილი მისამართები:"
+        "დაბლოკვა:"
       ],
       "Search list": [
         "ძებნის სია"
@@ -5782,6 +5794,12 @@
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
       ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ **${ referrerRewardAmount }-ის კრედიტები** ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
+      ],
       "**Sync codes** to all your devices": [
         "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
       ],
@@ -6149,7 +6167,7 @@
         "მორგებული ბრენდინგი"
       ],
       "Custom email domains": [
-        "თქვენი ელფოსტის დომენები"
+        "ელფოსტის თქვენი დომენები"
       ],
       "Custom policies": [
         "მომხმარებლის პოლიტიკები"
@@ -6341,6 +6359,9 @@
       ],
       "Enhance your network security": [
         "გააფართოვეთ თქვენი ქსელის უსაფრთხოება"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
       "Enter key manually instead": [
         "გასაღების ხელით შეყვანა"
@@ -6617,6 +6638,9 @@
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
       ],
+      "It won't be linked to your ${ BRAND_NAME } Account, so there's **no risk of getting locked out**.": [
+        "ის არ იქნება დაკავშირებული თქვენი ${ BRAND_NAME }-ის ანგარიშთან, ასე რომ, **არ არსებობს შანსი, რომ ანგარიში დაგებლოკოთ**."
+      ],
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
       ],
@@ -6751,6 +6775,9 @@
       ],
       "Manage which features the members of your organization can access.": [
         "მართეთ, რომელ ფუნქციებთან ექნებათ წვდომა თქვენი ორგანიზაციის წევრებს."
+      ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "შეიყვანეთ ხელით ეს ინფორმაცია თქვენს ავთენტიფიკატორის აპში თქვენი ანგარიშის დასაყენებლად. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
@@ -6900,6 +6927,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "გადახდილია სატარიფო გეგმისთვის"
@@ -7213,6 +7243,9 @@
       "Some keys successfully reactivated": [
         "ზოგიერთი გასაღები წარმატებით გააქტიურდა"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "ზოგიერთი სერვერი, შეიძლება, ზედა სიაში არ გამოჩნდეს. საპოვნელად მოძებნეთ სერვერის სახელით (მაგ: AT#62)."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
       ],
@@ -7365,6 +7398,9 @@
       "This is a 12-word phrase that you were prompted to set.": [
         "12-სიტყვიანი ფრაზა, რომლის შეყვანაც გთხოვეთ."
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "ეს არის სახელი ან მეტსახელი თქვენი ორგანიზაციისთვის, რომელსაც თქვენი მომხმარებლები დაინახავენ. მისი შეცვლა ნებისმიერ დროს შეგიძლიათ."
+      ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "ეს აღდგენის ფაილი ან დაშიფვრის გასაღებია, რომელიც ადრე შეინახეთ."
       ],
@@ -7492,7 +7528,7 @@
         "ელფოსტები სულ"
       ],
       "Total storage": [
-        "საცავი სულ"
+        "სრული საცავი"
       ],
       "Total supported domains": [
         "მხარდაჭერილი დომენები სულ"
@@ -7826,9 +7862,6 @@
       ],
       "You can now return to the application to continue": [
         "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "ჩატის, მხოლოდ, ერთი ფანჯარა შეიძლება, გქონდეთ ღია. ახლის დასაწყებად გთხოვთ, ჯერ წინა ფანჯარა დახუროთ."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -8240,7 +8273,7 @@
         "ავტორიზებული მისამართები"
       ],
       "Allow recovery by email": [
-        "ელ-ფოსტით აღდგენის ჩართვა"
+        "ელფოსტით აღდგენის ჩართვა"
       ],
       "Allow recovery by phone": [
         "ტელეფონით აღდგენის ჩართვა"
@@ -8297,7 +8330,7 @@
         "შავი პარასკევი"
       ],
       "Block": [
-        "დაბლოკილი მისამართები"
+        "დაბლოკვა"
       ],
       "Block malware only": [
         "მხოლოდ malware-ის დაბლოკვა"
@@ -8862,7 +8895,7 @@
         "სპეცსიმბოლოები"
       ],
       "Start date": [
-        "დაწყების თარიღი"
+        "საწყისი თარიღი"
       ],
       "State": [
         "მდგომარეობა"
@@ -8929,6 +8962,9 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "მოწყვლადი"
@@ -9087,7 +9123,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "სასაჩუქრე კოდის დამატება"
+        "ჩასვით სასაჩუქრე კოდი"
       ],
       "Add gift code": [
         "ჩასვით სასაჩუქრე კოდი"
@@ -9275,10 +9311,7 @@
         "მხარდაჭერის ფორმის გახსნა"
       ],
       "Upgrade subscription": [
-        "ტარიფის განახლება"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "გადადით ფასიან ვერსიაზე ჩატისა და სხვა ფასიანი ფუნქციების მხარდაჭერისთვის, ან გამოიყენეთ ჩვენი უფასო მხარდაჭერის ფორმა, რათა თქვენი პრობლემის შესახებ შეგვატყობინოთ."
+        "სატარიფო გეგმის აწევა"
       ]
     },
     "Loading info": {
@@ -10304,7 +10337,7 @@
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
       "Switch plans?": [
-        "სატარიფო გეგმის გადართვა?"
+        "გადავრთო სატარიფო გეგმა?"
       ]
     },
     "new_plans: Title": {
@@ -10941,6 +10974,9 @@
       "Allowed ${ defaultLabel }": [
         "დაშვებულია ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "ქვეყნების მორგება"
       ],
@@ -10950,8 +10986,11 @@
       "Free server configs": [
         "უფასო სერვერების კონფიგურაციები"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
-        "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
+        "მე სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
@@ -10962,11 +11001,17 @@
       "Ignore group": [
         "ჯგუფის იგნორი"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "აკლია ჩემთვის კრიტიკული თვისება"
       ],
       "It's too expensive": [
         "ძალიან ძვირია"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "ჩემი მიზეზი სიაში არაა"
@@ -11010,8 +11055,17 @@
       "Standard server configs": [
         "სერვერის სტანდარტული კონფიგურაციები"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11514,6 +11568,9 @@
       "You will soon be redirected to verify your payment.": [
         "მალე გადაგამისამართებთ თქვენი გადახდის გადასამოწმებლად."
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "თქვენი ვალუტა ევროზე (€) შეიცვალა, რადგან SEPA საბანკო გადარიცხვები მხოლოდ ევროში გადახდებს უჭერს მხარს."
+      ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
@@ -11856,7 +11913,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "უფასო"
       ]
     },
     "Property type": {
@@ -11931,7 +11988,7 @@
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
       "Verify with email": [
-        "ელფოსტით გადამოწმება"
+        "ელფოსტით შემოწმება"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "ელფოსტის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
@@ -11978,6 +12035,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
       ],
@@ -11998,6 +12058,9 @@
       ],
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "მას შემდეგ, რაც თქვენი სრული გამოწერა დაიწყება, თქვენ ჯერ კიდევ შეგიძლიათ, გააუქმოთ ის 30 დღის განმავლობაში და დაიბრუნოთ თანხა."
       ],
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
@@ -12115,6 +12178,9 @@
       ],
       "Forever": [
         "სამუდამოდ"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "შეიცავს ყველა შეტყობინებას შემოსულებში, გაგზავნილებში და ყველა სხვა ადგილას. წაშლილი შეტყობინებების აღდგენა შეუძლებელია."
       ],
       "Removes messages already deleted by users.": [
         "მოაცილებს მომხმარებლების მიერ უკვე წაშლილ შეტყობინებებს."
@@ -13266,6 +13332,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "დააყენეთ მარქაფი პაროლი, რომ დაცვის კიდევ ერთი ფენა დაამატოთ. ის საშუალებას გაძლევთ, შეხვიდეთ სისტემაში მაშინაც კი, როცა ანგარიში დაგებლოკებათ. ასე რომ, დარწმუნდით, რომ ის უსაფრთხო ადგილას ინახება."
       ],
+      "Set identity": [
+        "იდენტიფიკატორის დაყენება"
+      ],
       "Set your backup password": [
         "დააყენეთ თქვენი მარქაფი პაროლი"
       ],
@@ -13465,7 +13534,7 @@
         "გადახდა 2 წელიწადში ერთხელ"
       ],
       "Billed monthly": [
-        "თვიური გადახდა"
+        "გადაიხდით თვეში ერთხელ"
       ],
       "Billed yearly": [
         "გადახდა წელიწადში ერთხელ"
@@ -14476,7 +14545,7 @@
         "რაოდენობა"
       ],
       "Amount due": [
-        "გადახდის თანხა"
+        "გადასახდელი თანხა"
       ],
       "An address for each role": [
         "მისამართი თითოეული როლისთვის"
@@ -14585,6 +14654,9 @@
       ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "დაუკავშირდით ${ VPN_CONNECTIONS } მოწყობილობას ერთდროულად ${ vpnPlusOrUnlimited }-ით. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
@@ -15050,7 +15122,7 @@
         "ტელეფონი"
       ],
       "Plans": [
-        "ტარიფები"
+        "სატარიფო გეგმები"
       ],
       "Preview": [
         "გადახედვა"
@@ -15287,6 +15359,9 @@
       "Third-party apps and services": [
         "მესამე პირების აპები და სერვისები"
       ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "სცადეთ ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -15414,7 +15489,7 @@
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
       ],
       "Your current plan": [
-        "თქვენი მიმდინარე გეგმა"
+        "თქვენი მიმდინარე სატარიფო გეგმა"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
@@ -16148,6 +16223,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "წვდომა Secure Core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "აი-ოსი"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

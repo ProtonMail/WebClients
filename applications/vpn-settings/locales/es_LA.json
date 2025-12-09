@@ -78,7 +78,7 @@
         "Agregar créditos"
       ],
       "Add domain": [
-        "Agregar un dominio"
+        "Agregar dominio"
       ],
       "Add external address": [
         "Agregar una dirección externa"
@@ -96,7 +96,7 @@
         "Agregar usuario"
       ],
       "Allow": [
-        "Permitida"
+        "Permitir"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitir los correos cifrados de extremo a extremo para este grupo"
@@ -1943,7 +1943,7 @@
         "Recordarme más tarde"
       ],
       "Secure your organization": [
-        "Asegure su organización"
+        "Proteja su organización"
       ],
       "Send": [
         "Enviar"
@@ -3425,7 +3425,7 @@
         "Cambio a otro proveedor"
       ],
       "Temporary need, may come back in the future": [
-        "Necesidad temporal, puedo volver en el futuro"
+        "Se trata de una necesidad temporal que podría volver en el futuro."
       ],
       "The VPN is too slow": [
         "La VPN es muy lenta"
@@ -3727,7 +3727,7 @@
         "Error al mover ${ name } a la Lista de spam"
       ],
       "${ name } moved to allow list": [
-        "${ name } fue movido a la lista de direcciones permitidas."
+        "${ name } ha sido movida a la lista de direcciones permitidas."
       ],
       "${ name } moved to block list": [
         "${ name } fue movida a la lista de direcciones bloqueadas."
@@ -4734,7 +4734,7 @@
         "Esta acción eliminará permanentemente todos los subusuarios, cuentas y datos asociados con la organización."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Esta acción borrará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
+        "Esta acción eliminará todas las funciones premium de ${ BRAND_NAME } de cada miembro de la familia."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5965,7 +5965,7 @@
         "Se copió la dirección al portapapeles."
       ],
       "Admin account allocation": [
-        "Cuenta administrador de asignación"
+        "Asignación de la cuenta de administrador"
       ],
       "Affected user is on row": [
         "El usuario afectado está en la fila",
@@ -6242,7 +6242,7 @@
         "Marca personalizada"
       ],
       "Custom email domains": [
-        "Dominios de correo electrónico personalizados"
+        "Dominios de correo personalizados"
       ],
       "Custom policies": [
         "Políticas personalizadas"
@@ -6547,7 +6547,7 @@
         "Reciba notificaciones si la contraseña u otro dato personal fue filtrado. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Empezar"
+        "Comenzar"
       ],
       "Get started with the referral link above.": [
         "Comience con el enlace de referidos de arriba."
@@ -7017,6 +7017,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nuestras alertas ponen la seguridad en primer lugar. Si no reconoce la información vulnerada, puede ignorar este informe."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Pagó por un plan"
@@ -7627,7 +7630,7 @@
         "Almacenamiento total"
       ],
       "Total supported domains": [
-        "Dominios compatibles totales"
+        "Total de dominios compatibles"
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
@@ -8573,7 +8576,7 @@
         "¿Podría indicarnos cuál proveedor?"
       ],
       "Could you please specify which streaming service?": [
-        "¿Podría especificar cuál servicio de streaming?"
+        "¿Podría especificar cuál servicio de transmisión?"
       ],
       "Could you please specify?": [
         "¿Podría especificarlo?"
@@ -8915,7 +8918,7 @@
         "Pagador"
       ],
       "Payment details": [
-        "Detalles del pago"
+        "Datos de pago"
       ],
       "Payment method": [
         "Método de pago"
@@ -9109,6 +9112,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -9455,10 +9461,10 @@
         "Abrir formulario de soporte"
       ],
       "Upgrade subscription": [
-        "Mejorar la suscripción"
+        "Actualizar suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Mejore el plan para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar el problema."
+        "Mejore su plan para desbloquear el soporte por chat y otras funciones premium o use nuestro formulario de soporte gratuito para notificar el problema."
       ]
     },
     "Loading info": {
@@ -9647,7 +9653,7 @@
         "Cambiar contraseña"
       ],
       "Convert to SSO": [
-        "Pasar al SSO"
+        "Pasar a la autenticación única (SSO)"
       ],
       "Delete": [
         "Eliminar"
@@ -9776,7 +9782,7 @@
     },
     "Navigation": {
       "All": [
-        "Todas"
+        "Todos"
       ],
       "Allow": [
         "Permitida"
@@ -9812,7 +9818,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar la cuenta"
+        "Eliminar cuenta"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"
@@ -11147,6 +11153,9 @@
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permitido"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Ajustes de país"
       ],
@@ -11155,6 +11164,9 @@
       ],
       "Free server configs": [
         "Ajustes del servidor gratuito"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Encontré otro servicio que me gusta mejor"
@@ -11168,11 +11180,17 @@
       "Ignore group": [
         "Ignorar grupo"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Falta una característica clave que necesito"
       ],
       "It's too expensive": [
         "Es muy costoso"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
@@ -11216,8 +11234,17 @@
       "Standard server configs": [
         "Ajustes estándar del servidor"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Toda la organización"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -12105,7 +12132,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratis"
       ]
     },
     "Property type": {
@@ -13760,7 +13787,7 @@
         "Facturación cada 2 años"
       ],
       "Billed monthly": [
-        "Facturado cada mes"
+        "Facturación mensual"
       ],
       "Billed yearly": [
         "Facturación anual"
@@ -13849,7 +13876,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Solo inicie sesión en la cuenta de App Store de Apple y luego seleccione ${ subscriptions }."
@@ -14218,10 +14245,10 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "Está segura/o?"
+        "¿Está seguro?"
       ],
       "Auto-pay is disabled": [
-        "Pago automático deshabilitado"
+        "Pago automático desactivado"
       ],
       "Auto-pay is enabled": [
         "Pago automático activado"
@@ -14494,7 +14521,7 @@
         "Preferencias actualizadas"
       ],
       "Resent invitation": [
-        "Reenviar la invitación"
+        "Invitación reenviada"
       ]
     },
     "Suffix": {
@@ -14540,7 +14567,7 @@
         "Para familias"
       ],
       "For individuals": [
-        "Para particulares"
+        "Para personas"
       ]
     },
     "TableHeader": {
@@ -14810,7 +14837,7 @@
         "Bloquee rastreadores y malware"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Cancelar suscripción de ${ MAIL_SHORT_APP_NAME }"
+        "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
@@ -14997,7 +15024,7 @@
         "¿Eliminar ${ policyName }?"
       ],
       "Delete account": [
-        "Eliminar la cuenta"
+        "Eliminar cuenta"
       ],
       "Delete group?": [
         "¿Eliminar grupo?"
@@ -15046,7 +15073,7 @@
         "¿Descartar cambios?"
       ],
       "Dismiss setup checklist": [
-        "Descartar lista de comprobación de configuración"
+        "Descartar lista de configuración"
       ],
       "Domain names": [
         "Nombres de dominio"
@@ -15118,7 +15145,7 @@
         "Categorías de correo electrónico"
       ],
       "Email subscriptions": [
-        "Suscripciones de correo"
+        "Suscripciones de correo electrónico"
       ],
       "Enable advanced account protection": [
         "Active la protección avanzada de la cuenta"
@@ -15191,7 +15218,7 @@
         "Obtenga más de su VPN"
       ],
       "Get started": [
-        "Empezar"
+        "Comenzar"
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
@@ -15303,7 +15330,7 @@
         "Abrir paginación"
       ],
       "OpenVPN / IKEv2 username": [
-        "Usuario OpenVPN / IKEv2"
+        "Nombre de usuario OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Archivos de configuración de OpenVPN"
@@ -15628,7 +15655,7 @@
         "Mejore para mantener sus beneficios premium."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Mejore la protección de la red con servidores dedicados"
+        "Mejore la protección de su red con servidores dedicados"
       ],
       "Upgrade your privacy": [
         "Mejore su privacidad"
@@ -15655,7 +15682,7 @@
         "Usuario"
       ],
       "User converted to SSO": [
-        "Se pasó al usuario a la autenticación única (SSO)."
+        "El usuario pasó a la autenticación única (SSO)."
       ],
       "Users": [
         "Usuarios"
@@ -15721,7 +15748,7 @@
         "Sus cambios aún no se han sincronizado"
       ],
       "Your current plan": [
-        "El plan actual"
+        "Su plan actual"
       ],
       "Your exposed information": [
         "Sus datos expuestos"
@@ -15852,7 +15879,7 @@
         "URL de punto final del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Excluyendo usuarios con inicio de sesión con 2FA administrado por su proveedor de identidad"
+        "Exclusión de los usuarios con autenticación única cuyo segundo factor de autenticación es gestionado por el proveedor de identidad."
       ],
       "Feature in early access": [
         "Funcionalidad en acceso anticipado"
@@ -15965,7 +15992,7 @@
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
       ],
       "Group membership paused": [
-        "Se pausó la membresía del grupo."
+        "Se suspendió la suscripción al grupo."
       ],
       "Sending member invitation": [
         "Enviando invitación al miembro"
@@ -16152,7 +16179,7 @@
         "Obtenga ${ drivePlusPlanMaxSpace } de almacenamiento para sus archivos, fotos y documentos, y recupere versiones con una recuperación de archivos de 10 años."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
-        "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete. Desde solo ${ fallBackString } al mes"
+        "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete. Por solo ${ fallBackString } al mes."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
         "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete. Solo **${ priceString }** más cada mes."
@@ -16478,6 +16505,29 @@
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
         "${ n } dirección de correo electrónico de ${ BRAND_NAME }",
@@ -16522,7 +16572,7 @@
         "¿Está seguro de que quiere eliminar el número de teléfono?"
       ],
       "Are you sure you want to delete this address?": [
-        "¿Está seguro que quiere eliminar esta dirección?"
+        "¿Está seguro de que quiere eliminar esta dirección?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."

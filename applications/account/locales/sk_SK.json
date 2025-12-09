@@ -5167,17 +5167,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minút"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minút"
@@ -5188,8 +5182,14 @@
       "60 minutes": [
         "60 minút"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minút"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Easy switch": {
@@ -10502,6 +10502,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Do služby ${ BRAND_NAME } sa zaregistrovalo viac ako 100 miliónov ľudí a firiem."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Zaplatené za ${ rewardMonths } mesačný plán",
         "Zaplatené za ${ rewardMonths } mesačné plány",
@@ -13859,6 +13862,9 @@
       "Video conferencing with Zoom": [
         "Videokonferencie s aplikáciou Zoom"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Zraniteľné"
       ],
@@ -16639,6 +16645,9 @@
       "Allowed (default)": [
         "Povolené (predvolené)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Archív"
       ],
@@ -16663,6 +16672,9 @@
       "Free server configs": [
         "Konfigurácia bezplatného servera"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Našiel som inú službu, ktorá sa mi páči viac"
       ],
@@ -16675,6 +16687,9 @@
       "Ignore group": [
         "Ignorovať skupinu"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Chýba kľúčová funkcia, kterú potrebujem"
       ],
@@ -16686,6 +16701,9 @@
       ],
       "Left to Right": [
         "Zľava doprava"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Označiť ako prečítané"
@@ -16771,11 +16789,20 @@
       "Star": [
         "S hviezdičkou"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Celá organizácia"
       ],
       "Trash": [
         "Kôš"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -19820,6 +19847,9 @@
       "Collaborative document editing": [
         "Spoločné úpravy dokumentov"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Spolupráca na dokumentoch a tabuľkách"
+      ],
       "Compare plans": [
         "Porovnať plány"
       ],
@@ -19921,6 +19951,9 @@
       ],
       "Pick your perfect plan": [
         "Vyberte si svoj perfektný plán"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Súkromný AI asistent s šifrovanou históriou chatu"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Propagačný kód využitý - zľava ${ checkout.discountPercent }%"
@@ -24656,6 +24689,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, TOR cez VPN a ďalšie."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

@@ -72,13 +72,13 @@
         "Afegeix un altre compte"
       ],
       "Add credit / debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add credits": [
-        "Afegir crèdits"
+        "Afegeix crèdits"
       ],
       "Add domain": [
-        "Afegeix un domini"
+        "Afegir domini"
       ],
       "Add external address": [
         "Afegeix una adreça externa"
@@ -87,7 +87,7 @@
         "afegeix més llicències"
       ],
       "Add PayPal": [
-        "Afegir PayPal"
+        "Afegeix PayPal"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Afegeix un enllaç de recomanació a la signatura de ${ MAIL_APP_NAME }"
@@ -96,7 +96,7 @@
         "Afegir usuari"
       ],
       "Allow": [
-        "Adreces permeses"
+        "Permet"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permet el correu xifrat d'extrem a extrem per a aquest grup"
@@ -186,10 +186,10 @@
         "Col·labora en documents"
       ],
       "Compare all plans": [
-        "Compareu tots els plans"
+        "Compara tots els plans"
       ],
       "Compare plans": [
-        "Compareu els plans"
+        "Compara els plans"
       ],
       "Configure SAML": [
         "Configura SAML"
@@ -282,7 +282,7 @@
         "Elimina"
       ],
       "Delete account": [
-        "Suprimeix el compte"
+        "Elimina el compte"
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
@@ -387,7 +387,7 @@
         "Edita els països"
       ],
       "Edit display name": [
-        "Edita el nom a mostrar"
+        "Edita el nom per a mostrar"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -690,7 +690,7 @@
         "Paga ${ price }"
       ],
       "Pay ${ price } now": [
-        "Paga ${ price }"
+        "Paga ${ price } ara"
       ],
       "Previous": [
         "Anterior"
@@ -825,7 +825,7 @@
         "Desa"
       ],
       "Save address": [
-        "Desar adreça"
+        "Desa l'adreça"
       ],
       "Save SAML configuration": [
         "Desa la configuració SAML"
@@ -903,7 +903,7 @@
         "Configura un domini personalitzat"
       ],
       "Set up auto-forwarding from Gmail": [
-        "Configura el reenviament automàtic des del Gmail"
+        "Configura el reenviament automàtic des de Gmail"
       ],
       "Set up email forwarding": [
         "Configura el reenviament de correu"
@@ -1731,7 +1731,7 @@
         "Per sempre"
       ],
       "Monthly": [
-        "Cada mes"
+        "Mensual"
       ],
       "Two-year": [
         "Bianual"
@@ -1739,10 +1739,10 @@
     },
     "Blog": {
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
-        "Política de no registres de ${ VPN_APP_NAME } VPN confirmada per una auditoria externa."
+        "Política de no registres de ${ VPN_APP_NAME } confirmada per una auditoria externa."
       ],
       "**Streaming** is included in your subscription.": [
-        "L'**estríming** està inclòs a la vostra subscripció."
+        "L'**estríming** està inclòs en la vostra subscripció."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Algú pot veure el meu historial d'internet si utilitzem el mateix wifi?"
@@ -1757,7 +1757,7 @@
         "Obteniu protecció durant les 24 hores del dia"
       ],
       "How safe is Telegram?": [
-        "Què tan segur és Telegram?"
+        "Com de segur és Telegram?"
       ],
       "How to change your IP address on Windows": [
         "Com canviar la vostra adreça IP a Windows"
@@ -1784,7 +1784,7 @@
         "Protegiu la vostra empresa de les filtracions de dades i feu que el teletreball sigui més segur amb una VPN empresarial."
       ],
       "Protect your whole household with 1 device": [
-        "Protegiu tota la vostra casa amb 1 dispositiu"
+        "Protegiu tota la vostra llar amb un sol dispositiu."
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Feu estríming de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
@@ -1793,7 +1793,7 @@
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
-        "VPN Accelerator utilitza una combinació de tecnologies avançades de VPN per millorar l'estabilitat de la connexió i augmentar la velocitat de la connexió."
+        "VPN Accelerator utilitza una combinació de tecnologies avançades de VPN per a millorar l'estabilitat i augmentar la velocitat de la connexió."
       ],
       "Watch your favorite movies and TV shows": [
         "Mireu les vostres pel·lícules i programes de televisió preferits"
@@ -1904,7 +1904,7 @@
     },
     "Button": {
       "Add users manually": [
-        "Afegiu usuaris manualment"
+        "Afegeix usuaris manualment"
       ],
       "Close": [
         "Tanca"
@@ -1943,7 +1943,7 @@
         "Recorda-m'ho més tard"
       ],
       "Secure your organization": [
-        "Protegiu la vostra organització"
+        "Protegeix la vostra organització"
       ],
       "Send": [
         "Enviar"
@@ -3130,7 +3130,7 @@
     },
     "Cycle": {
       "/month": [
-        "/mesos"
+        "/mes"
       ],
       "/user per month": [
         "/usuari per mes"
@@ -3219,7 +3219,7 @@
         "Connecteu el CRM, lloc web, impressores i molt més."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Creeu una passarel·la per donar als vostres usuaris accés als vostres recursos de TI mitjançant servidors dedicats."
+        "Creeu una passarel·la per donar accés als vostres usuaris als vostres recursos de TI mitjançant servidors dedicats."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Creeu una reunió a Zoom i afegiu els detalls de participació a l'esdeveniment en un clic."
@@ -3228,13 +3228,13 @@
         "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Creeu comptes d'usuari nous o importeu-ne amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
+        "Creeu comptes d'usuari nous o importeu usuaris amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decidiu quins usuaris es poden connectar a cadascuna de les nostres més de 120 ubicacions de servidor compartides."
+        "Decidiu quins usuaris es poden connectar a cadascuna de les nostres més de 120 ubicacions de servidors compartits."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
@@ -3282,7 +3282,7 @@
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Si encara no ho heu fet, habiliteu alguns mètodes de recuperació per assegurar-vos que no perdeu mai l'accés a ${ VPN_APP_NAME }."
+        "Si encara no ho heu fet, habiliteu mètodes de recuperació per assegurar-vos que no perdeu mai l'accés a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -3360,7 +3360,7 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "S'ha afegit ${ name }"
+        "S'ha afegit ${ name }."
       ],
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
@@ -3369,7 +3369,7 @@
         "No s'ha pogut moure ${ name } a la llista d'adreces permeses."
       ],
       "${ name } failed to move to block list": [
-        "No s'ha pogut moure ${ name } a la llista d'adreces bloquejades"
+        "No s'ha pogut moure ${ name } a la vostra llista d'adreces bloquejades"
       ],
       "${ name } failed to move to spam list": [
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
@@ -3378,7 +3378,7 @@
         "S'ha mogut ${ name } a la llista d'adreces permeses."
       ],
       "${ name } moved to block list": [
-        "S'ha mogut ${ name } a la llista d'adreces bloquejades"
+        "S'ha mogut ${ name } a la vostra llista d'adreces bloquejades"
       ],
       "${ name } moved to spam list": [
         "S'ha mogut ${ name } a la llista de correu brossa"
@@ -3425,7 +3425,7 @@
         "Canvio a un proveïdor diferent"
       ],
       "Temporary need, may come back in the future": [
-        "Necessitat temporal, potser torni més endavant"
+        "És una necessitat puntual que podria tornar més endavant."
       ],
       "The VPN is too slow": [
         "La VPN és massa lenta"
@@ -3488,7 +3488,7 @@
         "Firefox"
       ],
       "Get the app": [
-        "Aconseguiu l'aplicació"
+        "Obteniu l'aplicació"
       ],
       "Get the extension": [
         "Obteniu l'extensió"
@@ -3603,10 +3603,10 @@
         "${ BRAND_NAME } mai us sol·licitarà que escanegeu un codi QR que no sigui de ${ domain } o d'una aplicació oficial de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
-        "${ BRAND_NAME } no us demanarà mai per sorpresa que inicieu la sessió amb un codi QR."
+        "${ BRAND_NAME } mai no us demanarà inesperadament que inicieu la sessió amb un codi QR."
       ],
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
-        "**Com funciona:** introduïu en aquest dispositiu el codi que es mostra al dispositiu on voleu iniciar la sessió. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius."
+        "**Com funciona:** Introduïu en aquest dispositiu el codi que es mostra al dispositiu on voleu iniciar la sessió. Se us identificarà com a **${ email }**. Tots dos dispositius romandran actius."
       ],
       "Allow QR code sign‒in": [
         "Permet iniciar la sessió amb un codi QR"
@@ -3919,7 +3919,7 @@
         "El número de la targeta no es vàlid."
       ],
       "Invalid code": [
-        "Codi no vàlid"
+        "Codi invàlid"
       ],
       "Invalid domain": [
         "Domini invàlid"
@@ -4857,7 +4857,7 @@
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "and more premium features...": [
-        "i més característiques premium..."
+        "i més característiques prèmium."
       ],
       "Connect custom domain": [
         "Connecteu un domini personalitzat"
@@ -5277,7 +5277,7 @@
         "Contacteu amb nosaltres"
       ],
       "Enjoying ${ planName }?": [
-        "Gaudint ${ planName }?"
+        "Esteu gaudint de ${ planName }?"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Desbloquegeu 4 serveis de privadesa prèmium per només **${ priceString }** més al mes"
@@ -5647,7 +5647,7 @@
         " i altres característiques de seguretat."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } usuari ten actualment accés als servidors compartits.",
+        "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits.",
         "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -5693,16 +5693,16 @@
         "${ fileName }: vista prèvia de baixa resolució"
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de doble factor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de doble factor."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de doble factor per a iniciar la sessió a la vostra organització.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de doble factor per a iniciar la sessió a la vostra organització."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
@@ -5890,7 +5890,7 @@
         "30 dies de garantia de reemborsament"
       ],
       "30-day money-back guarantee.": [
-        "Garantia de reemborsament de 30 dies."
+        "30 dies de garantia de reemborsament."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } allotja un ${ protonSubdomain } que us permet configurar ràpidament un subdomini. ${ learnMoreLink }"
@@ -6242,7 +6242,7 @@
         "Marca personalitzada"
       ],
       "Custom email domains": [
-        "Dominis de correu electrònic personalitzats"
+        "Dominis de correu personalitzats"
       ],
       "Custom policies": [
         "Polítiques personalitzades"
@@ -6858,7 +6858,7 @@
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gestioneu a quines aplicacions ${ BRAND_NAME } poden accedir els membres de la teva organització. Si està desactivat, només els administradors tindran accés."
+        "Gestioneu a quines aplicacions de ${ BRAND_NAME } poden accedir els membres de la vostra organització. Si està desactivat, només els administradors hi tindran accés."
       ],
       "Manage which features the members of your organization can access.": [
         "Gestioneu a quines característiques podran accedir els membres de la vostra organització."
@@ -6924,13 +6924,13 @@
         "Les noves dades de connexió VPN deixaran de ser recopilades i mostrades."
       ],
       "Next billing date": [
-        "Propera data de facturació"
+        "Pròxima data de facturació"
       ],
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
       "No countries enabled": [
-        "Cap país activat"
+        "No hi ha cap país habilitat"
       ],
       "No gateways": [
         "Sense passarel·les"
@@ -7017,6 +7017,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Heu pagat un pla"
@@ -7288,7 +7291,7 @@
         "Configuració de la vostra organització"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "Configureu la vostra organització i comenceu a protegir les vostres dades en pocs passos senzills."
+        "Configureu la vostra organització i comenceu a protegir les vostres dades en uns quants passos senzills."
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -7549,7 +7552,7 @@
         "Això esborrarà l'inici de sessió únic (SSO) per a ${ boldDomainName }."
       ],
       "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
-        "Això suprimirà el vostre accés a tots els serveis connectats i totes les dades, incloent-hi contactes, adjunts, esdeveniments, contrasenyes i fitxers."
+        "Això suprimirà el vostre accés a tots els serveis connectats i eliminarà totes les dades, incloent-hi contactes, adjunts, esdeveniments, contrasenyes i fitxers."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
@@ -7987,7 +7990,7 @@
         "Ara podeu tornar a l'aplicació per continuar."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Només podeu tenir una instància de xat oberta a la vegada. Tanqueu les converses anteriors abans d'iniciar-ne una de nova."
+        "Només podeu tenir una instància de xat oberta alhora. Tanqueu les converses anteriors abans de començar-ne una de nova."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
@@ -8732,7 +8735,7 @@
         "Amaga la contrasenya"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
-        "Entenc que haig d'associar aquesta adreça de correu-e a un altre compte immediatament, per a evitar la pèrdua de l'adreça de forma permanent."
+        "Entenc que he d'afegir aquesta adreça de correu electrònic a l'altre compte immediatament per a evitar perdre-la de manera permanent."
       ],
       "IBAN": [
         "IBAN"
@@ -9110,6 +9113,9 @@
       "Verification code": [
         "Codi de verificació"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Vulnerable"
       ],
@@ -9267,7 +9273,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Afegir un codi regal"
+        "Afegeix un codi de regal"
       ],
       "Add gift code": [
         "Afegeix un codi regal"
@@ -9449,16 +9455,16 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "El xat en viu està disponible amb ${ planName }"
+        "El xat en directe està disponible amb ${ planName }"
       ],
       "Open support form": [
-        "Obri el formulari de suport"
+        "Obriu el formulari de suport"
       ],
       "Upgrade subscription": [
-        "Millora la subscripció"
+        "Milloreu la subscripció"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Milloreu el vostre pla per a desbloquejar el suport per xat i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per a informar del vostre problema."
+        "Milloreu de pla per desbloquejar el suport per xat i altres característiques prèmium, o utilitzeu el nostre formulari de suport gratuït per informar del vostre problema."
       ]
     },
     "Loading info": {
@@ -9776,7 +9782,7 @@
     },
     "Navigation": {
       "All": [
-        "Tots"
+        "Tot"
       ],
       "Allow": [
         "Adreces permeses"
@@ -9812,10 +9818,10 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Suprimeix el compte"
+        "Elimina el compte"
       ],
       "Downgrade account": [
-        "Passar a un pla inferior"
+        "Passa a un pla inferior"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obtén ${ BRAND_NAME } gratuïtament"
@@ -9835,7 +9841,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
+        "Passar a ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Explora tots els plans de ${ BRAND_NAME }"
@@ -10501,7 +10507,7 @@
         "Voleu eliminar el compte?"
       ],
       "Downgrade account?": [
-        "Voleu passar a un pla amb menys funcions?"
+        "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
         "Reviseu la subscripció"
@@ -11147,6 +11153,9 @@
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permès"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Configuracions de país"
       ],
@@ -11156,8 +11165,11 @@
       "Free server configs": [
         "Configuracions de servidor gratuït"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
-        "He trobat un altre servei que m'agrada més."
+        "He trobat un altre servei que m'agrada mes"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Faig ús d'un compte ${ BRAND_NAME } diferent"
@@ -11168,11 +11180,17 @@
       "Ignore group": [
         "Ignorar grup"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Li falta una característica clau que necessito"
       ],
       "It's too expensive": [
         "Es massa car"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "La meva raó no apareix"
@@ -11216,8 +11234,17 @@
       "Standard server configs": [
         "Configuracions estàndard de servidor"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Tota l'organització"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11912,7 +11939,7 @@
         "Seleccioneu un nom"
       ],
       "Choose display name": [
-        "Trieu el nom a mostrar"
+        "Trieu el nom per a mostrar"
       ],
       "Company name": [
         "Nom de l'empresa"
@@ -12086,7 +12113,7 @@
         "Pla de ${ months } mesos"
       ],
       "Enjoying ${ planName }?": [
-        "Gaudint ${ planName }?"
+        "Esteu gaudint de ${ planName }?"
       ]
     },
     "plus_block": {
@@ -12105,7 +12132,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratuït"
       ]
     },
     "Property type": {
@@ -13763,7 +13790,7 @@
         "Facturació cada 2 anys"
       ],
       "Billed monthly": [
-        "Facturat mensualment"
+        "Facturació mensual"
       ],
       "Billed yearly": [
         "Facturació anual"
@@ -13852,7 +13879,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Fet"
+        "Entesos"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Només heu d'iniciar sessió al vostre compte l'App Store d'Apple i seleccionar ${ subscriptions }."
@@ -14221,7 +14248,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "N'estas segur?"
+        "N'esteu segur?"
       ],
       "Auto-pay is disabled": [
         "El pagament automàtic està desactivat."
@@ -14239,10 +14266,10 @@
         "Mantén el pagament automàtic"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot descarregar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
+        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No podem descarregar-vos de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No us podem baixar de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -14292,7 +14319,7 @@
         "S'ha actualitzat l'adreça d'arreplega"
       ],
       "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "S'han publicat els canvis. Les vostres modificacions seran visibles per a tots els usuaris en les pròximes hores."
+        "S'han publicat els canvis. Aquests seran visibles per a tots els usuaris en les pròximes hores."
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -14310,7 +14337,7 @@
         "S'ha rebutjat el dispositiu."
       ],
       "Display name updated": [
-        "S'ha actualitzat el nom a mostrar"
+        "S'ha actualitzat el nom per a mostrar"
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiat al portaretalls"
@@ -14497,7 +14524,7 @@
         "S'han actualitzat les preferències."
       ],
       "Resent invitation": [
-        "Reenvia la invitació"
+        "S'ha tornat a enviar la invitació."
       ]
     },
     "Suffix": {
@@ -14510,7 +14537,7 @@
     },
     "Suffix for price": {
       "per month": [
-        "al mes"
+        "per mes"
       ],
       "per user per month": [
         "per usuari al mes"
@@ -14656,7 +14683,7 @@
         "${ PROTON_SENTINEL_NAME } per organitzacions"
       ],
       "${ VPN_APP_NAME } clients": [
-        "Clients ${ VPN_APP_NAME }"
+        "Clients de ${ VPN_APP_NAME }"
       ],
       "(active)": [
         "(actiu)"
@@ -14729,10 +14756,10 @@
         "Afegeix països a «${ policyName }»"
       ],
       "Add credit/debit card": [
-        "Afegir targeta de crèdit/dèbit"
+        "Afegeix una targeta de crèdit/dèbit"
       ],
       "Add credits": [
-        "Afegir crèdits"
+        "Afegeix crèdits"
       ],
       "Add dedicated servers": [
         "Afegeix servidors dedicats"
@@ -14744,7 +14771,7 @@
         "Voleu afegir una adreça externa?"
       ],
       "Add PayPal payment method": [
-        "Afegir PayPal com a mètode de pagament"
+        "Afegeix PayPal com a mètode de pagament"
       ],
       "Add pm.me subdomain": [
         "Afegeix un subdomini pm.me"
@@ -14780,7 +14807,7 @@
         "Quantitat"
       ],
       "Amount due": [
-        "Import pendent"
+        "Import a deure"
       ],
       "An address for each role": [
         "Una adreça per a cada rol"
@@ -14834,7 +14861,7 @@
         "Adreça d'arreplega"
       ],
       "Change login password": [
-        "Canviar contrasenya d'inici de sessió"
+        "Canvia la contrasenya d'inici de sessió"
       ],
       "Change organization name": [
         "Canviar nom de l'organització"
@@ -14991,7 +15018,7 @@
         "Desxifra la clau"
       ],
       "Deep dive into VPN blog posts": [
-        "Anàlisi en profunditat de les nostres publicacions de blog VPN"
+        "Anàlisi en profunditat de les nostres publicacions del blog de VPN"
       ],
       "Delete": [
         "Elimina"
@@ -15000,7 +15027,7 @@
         "Voleu suprimir ${ policyName }?"
       ],
       "Delete account": [
-        "Suprimeix el compte"
+        "Elimina el compte"
       ],
       "Delete group?": [
         "Voleu eliminar el grup?"
@@ -15049,7 +15076,7 @@
         "Voleu descartar els canvis?"
       ],
       "Dismiss setup checklist": [
-        "Descarteu la llista de comprovació de configuració"
+        "Descarteu la llista de verificació de configuració"
       ],
       "Domain names": [
         "Noms de domini"
@@ -15058,10 +15085,10 @@
         "No voleu que es torni a mostrar?"
       ],
       "Downgrade account": [
-        "Passar a un pla inferior"
+        "Passa a un pla inferior"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
-        "Pasar a ${ downgradedPlanName }?"
+        "Passar a ${ downgradedPlanName }?"
       ],
       "Download ${ app }": [
         "Baixeu ${ app }"
@@ -15306,7 +15333,7 @@
         "Obrir paginació"
       ],
       "OpenVPN / IKEv2 username": [
-        "Nom d'usuari OpenVPN / IKEv2"
+        "Nom d'usuari d'OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"
@@ -15855,7 +15882,7 @@
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Exclou els usuaris que el seu inici de sessió 2FA d'un sol cop és administrat pel vostre proveïdor d'identitat"
+        "S'estan excloent els usuaris de l'inici de sessió únic el 2FA dels quals és administrat pel vostre proveïdor d'identitat"
       ],
       "Feature in early access": [
         "Característica en accés anticipat"
@@ -15876,7 +15903,7 @@
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "Els membres que no utilitzin l'autenticació 2FA rebran un correu-e demanant que ho habilitin com més aviat millor. Això exclou als usuaris amb inici d'un sol cop."
+        "Els membres que no utilitzin l'autenticació de doble factor (2FA) rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."
       ],
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
@@ -15962,7 +15989,7 @@
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ],
       "Disables end-to-end email encryption for this group": [
-        "Desactiva l'encriptació de correu electrònic d'extrem a extrem per a aquest grup"
+        "Desactiva el xifratge de correu electrònic d'extrem a extrem per a aquest grup"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup i no es compartirà cap recurs xifrat amb aquest usuari."
@@ -16176,7 +16203,7 @@
         "Podeu protegir fins a ${ DUO_MAX_USERS } persones amb ${ PLAN_NAMES[PLANS.DUO] }, i fins a ${ FAMILY_MAX_USERS } amb ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de només ${ priceString }/mes per compte."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
-        "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[plan] }. A partir de només ${ priceString }/mes per compte."
+        "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[plan] } a partir de només ${ priceString }/mes per compte."
       ]
     },
     "upsell panel": {
@@ -16479,6 +16506,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

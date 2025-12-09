@@ -139,7 +139,7 @@
         "Arhivare"
       ],
       "As Scheduled": [
-        "Ca programat"
+        "Ca planificat"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Contacte permise per grup de contacte: ${ maxContacts }",
@@ -505,7 +505,7 @@
         "Editare categorii"
       ],
       "Edit draft": [
-        "Editare schiță"
+        "Editare ciornă"
       ],
       "Edit email address": [
         "Editare adresa de e-mail"
@@ -1233,7 +1233,7 @@
         "Se salvează${ ellipsis }"
       ],
       "Schedule message": [
-        "Programare mesaj"
+        "Planificare mesaj"
       ],
       "Scroll to bottom": [
         "Derulare până jos"
@@ -1501,6 +1501,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -2029,20 +2034,20 @@
         "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați -vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
@@ -2955,7 +2960,7 @@
     },
     "Confirm modal title": {
       "Edit and reschedule": [
-        "Editare și reprogramare"
+        "Editare și replanificare"
       ],
       "Message saved to Drafts": [
         "Mesaj salvat în „Ciorne”"
@@ -4040,7 +4045,7 @@
         "Se șterg contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
       "Don’t want to send your email right now? Schedule it for exactly the right time.": [
-        "Nu doriți să trimiteți mesajul chiar acum? Programați-l exact la momentul potrivit."
+        "Nu doriți să trimiteți mesajul chiar acum? Planificați-l exact la momentul potrivit."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
@@ -6663,9 +6668,9 @@
         "Buletine informative: ${ unreadCount }"
       ],
       "${ unreadCount } scheduled message": [
-        "Mesaje programate: ${ unreadCount }",
-        "Mesaje programate: ${ unreadCount }",
-        "Mesaje programate: ${ unreadCount }"
+        "Mesaje planificate: ${ unreadCount }",
+        "Mesaje planificate: ${ unreadCount }",
+        "Mesaje planificate: ${ unreadCount }"
       ],
       "${ updated } contact updated successfully.": [
         "Contacte actualizate: ${ updated }",
@@ -6850,7 +6855,7 @@
         "Data viitoare când deschideți Mail va fi afișat un alt sfat"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Orice mesaj programat sau amânat va fi anulat."
+        "Orice mesaj planificat sau amânat va fi anulat."
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul „Toate mesajele”."
@@ -7036,7 +7041,7 @@
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
-        "Luați în considerare când este cel mai bun moment pentru ca destinatarul să vă primească mesajul și programați-l să fie trimis atunci."
+        "Luați în considerare când este cel mai bun moment pentru ca destinatarul să vă primească mesajul și planificați-l să fie trimis atunci."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
@@ -7514,9 +7519,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7597,7 +7600,7 @@
         "Se încarcă ${ appName }"
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de planificări Calendly într-o filă nouă."
       ],
       "Loading message": [
         "Se încarcă mesajul"
@@ -8010,7 +8013,7 @@
         "Scanați codul QR cu dispozitivul mobil"
       ],
       "Scheduled send of this message will be canceled.": [
-        "Trimiterea programată a acestui mesaj va fi anulată."
+        "Trimiterea planificată a acestui mesaj va fi anulată."
       ],
       "Scheduling message": [
         "Se programează mesajul"
@@ -8271,7 +8274,7 @@
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
-        "Această conversație conține un mesaj programat. Trimiterea acestui mesaj va fi anulată."
+        "Această conversație conține un mesaj planificat. Trimiterea acestui mesaj va fi anulată."
       ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
@@ -8344,7 +8347,7 @@
         "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Acest mesaj va fi mutat în „Ciorne” pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
+        "Acest mesaj va fi mutat în „Ciorne” pentru a putea fi editat. Va trebui să replanificați când va fi trimis."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
@@ -8431,7 +8434,7 @@
         "Mâine, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
+        "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l planificat pe acesta."
       ],
       "Total email addresses": [
         "Total adrese de e-mail"
@@ -8937,12 +8940,12 @@
         "Asistentul personal privat de scriere"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
+        "Planul planificat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
@@ -10257,7 +10260,7 @@
         "Gestionare foldere"
       ],
       "More": [
-        "Detalii"
+        "Mai multe"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Deschidere în ${ CALENDAR_APP_NAME }"
@@ -10296,7 +10299,7 @@
         "Reluare acum"
       ],
       "Scheduled": [
-        "Programat"
+        "Planificat"
       ],
       "Sent": [
         "Trimise"
@@ -10516,10 +10519,10 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        "Trimitere programată anulată"
+        "Trimitere planificată anulată"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Programarea a fost anulată. Mesajul a fost mutat în „Ciorne”."
+        "Planificarea a fost anulată. Mesajul a fost mutat în „Ciorne”."
       ],
       "Sending undone": [
         "Trimitere anulată"
@@ -11096,7 +11099,7 @@
         "Salvați timp la scrierea mesajelor"
       ],
       "Schedule and snooze emails for any time": [
-        "Programați și amânați mesaje pentru orice moment"
+        "Planificați și amânați mesaje pentru orice moment"
       ],
       "Secure Core servers": [
         "Servere Secure Core"
@@ -11376,7 +11379,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
+        "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
@@ -12958,7 +12961,7 @@
         "Nu au fost găsite mesaje"
       ],
       "No messages scheduled": [
-        "Nu sunt mesaje programate"
+        "Nu sunt mesaje planificate"
       ],
       "No results found": [
         "Nu s-au găsit rezultate."
@@ -13674,7 +13677,7 @@
         "Invitați persoane la ${ BRAND_NAME }"
       ],
       "Schedule send": [
-        "Programare trimitere"
+        "Planificare trimitere"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
         "Aceasta este acum adresa implicită. Deschideți meniul derulant pentru a trimite de la o adresă diferită."
@@ -13686,7 +13689,7 @@
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
       ],
       "You can now schedule your messages to be sent later": [
-        "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
+        "Acum puteți să vă planificați mesajele pentru a fi trimise mai târziu."
       ],
       "Your pm.me email is active": [
         "Adresa pm.me este activată"
@@ -13968,7 +13971,7 @@
         "${ planName } vă oferă echipei tot ce are nevoie pentru a fi mai productivă și organizată în muncă, cu acces la toate aplicațiile ${ BRAND_NAME } și la funcțiile lor premium."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
-        "${ planName } vă oferă echipei ceea ce are nevoie pentru a fi mai productivă, organizată și să controleze căsuța de e-mail, programul și multe altele."
+        "${ planName } vă oferă echipei ceea ce are nevoie pentru a fi mai productivă, organizată și să controleze căsuța de e-mail, planificările și multe altele."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } depășește funcțiile de bază pentru a vă ajuta să aveți productivitate sporită, organizare și să controlați contul de e-mail, identitatea adresei de e-mail și multe altele."
@@ -15397,7 +15400,7 @@
         "Dispozitive mobile"
       ],
       "More": [
-        "Detalii"
+        "Mai multe"
       ],
       "More actions": [
         "Alte acțiuni"
@@ -15436,7 +15439,7 @@
         "Mutare în „Gunoi”"
       ],
       "Moving a scheduled message": [
-        "Se mută un mesaj programat"
+        "Se mută un mesaj planificat"
       ],
       "Moving a snoozed message": [
         "Se mută un mesaj amânat"
@@ -15610,13 +15613,13 @@
         "Același cont, adresă de e-mail mai scurtă"
       ],
       "Schedule now, send later": [
-        "Programați acum, trimiteți mai târziu"
+        "Planificați acum, trimiteți mai târziu"
       ],
       "Schedule send": [
-        "Programare trimitere"
+        "Planificare trimitere"
       ],
       "Schedule send:": [
-        "Programare trimitere:"
+        "Planificare trimitere:"
       ],
       "Security center": [
         "Centru de securitate"

@@ -38,6 +38,15 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue without camera": [
+        "Doorgaan zonder camera"
+      ],
+      "Continue without microphone": [
+        "Doorgaan zonder microfoon"
+      ],
+      "Copied": [
+        "Gekopieerd"
+      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -82,6 +91,9 @@
       ],
       "Leave": [
         "Verlaat"
+      ],
+      "Lock meeting": [
+        "Vergadering vergrendelen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -134,6 +146,9 @@
       "Show advanced options": [
         "Geavanceerde opties weergeven"
       ],
+      "Show timezones": [
+        "Tijdzones tonen"
+      ],
       "Sign in": [
         "Inloggen"
       ],
@@ -178,8 +193,14 @@
       ]
     },
     "Alt": {
+      "Go to dashboard": [
+        "Ga naar dashboard"
+      ],
       "Hide self view": [
         "Verberg eigen weergave"
+      ],
+      "Lock meeting": [
+        "Vergadering vergrendelen"
       ]
     },
     "Apps dropdown": {
@@ -1371,6 +1392,9 @@
       "New": [
         "Nieuw"
       ],
+      "No microphone detected.": [
+        "Geen microfoon gedetecteerd."
+      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -1392,6 +1416,9 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Share screen": [
+        "Scherm delen"
+      ],
       "This meeting is being recorded": [
         "Deze sessie wordt opgenomen"
       ],
@@ -1400,6 +1427,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "Turn off microphone": [
+        "Microfoon uitschakelen"
+      ],
+      "Turn on camera": [
+        "Zet camera aan"
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -1673,11 +1706,20 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Join a meeting": [
+        "Deelnemen aan een vergadering"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Toegetreden op epoch ${ log.epoch }"
       ],
       "Minicalendar": [
         "Mini-agenda"
+      ],
+      "Personal meeting": [
+        "Persoonlijke vergadering"
+      ],
+      "Personal meeting room": [
+        "Persoonlijke vergaderruimte"
       ],
       "Report a problem": [
         "Meld een probleem"

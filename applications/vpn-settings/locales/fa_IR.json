@@ -123,7 +123,7 @@
         "ایجاد پوشه"
       ],
       "Current plan": [
-        "اشتراک کنونی"
+        "طرح فعلی"
       ],
       "Customize": [
         "شخصی‌سازی"
@@ -879,7 +879,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "۱ ماه"
+        "1 ماه"
       ],
       "12 months": [
         "12 ماه"
@@ -3212,9 +3212,6 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } نامعتبر است"
       ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } نشانی",
         "${ n } نشانی"
@@ -4064,9 +4061,6 @@
       ],
       "You can import one data type at a time.": [
         "شما تنها می‌توانید یک نوع داده را در یک زمان وارد کنید."
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "شما می‌توانید برای دریافت هشدار هنگام ورود پیام‌های رایانامه جدید به این پوشه، اعلان‌ها را فعال کنید."
@@ -4922,20 +4916,6 @@
         "این چیست؟"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "گفتگو آنلاین با ${ planName } در دسترس است"
-      ],
-      "Open support form": [
-        "باز کردن فرم پشتیبانی"
-      ],
-      "Upgrade subscription": [
-        "ارتقا دادن اشتراک"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "طرح خود را ارتقا دهید تا از گفتگو با پشتیبانی و سایر قابلیت های ویژه بهره‌مند شوید، یا ازفرم پشتیبانی رایگان ما برای گزارش مشکل خود استفاده کنید."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "تقریبا تمام شد"
@@ -5124,7 +5104,7 @@
         "حذف حساب کاربری"
       ],
       "Downgrade account": [
-        "تنزیل درجه حساب کاربری"
+        "اکانت را تنزل دهید"
       ],
       "Get ${ BRAND_NAME } for free": [
         "دریافت ${ BRAND_NAME } بطور رایگان"
@@ -5956,7 +5936,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "لغو"
+        "انصراف"
       ],
       "Email address has been verified.": [
         "آدرس ایمیل تایید شده است."
@@ -5990,7 +5970,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "لغو"
+        "انصراف"
       ],
       "Phone number has been verified.": [
         "شماره تلفن تایید شده است."
@@ -6458,7 +6438,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "فهمیدم"
+        "متوجه شدم"
       ]
     },
     "subscription reminder": {
@@ -6746,11 +6726,6 @@
         "کادر vCard"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "پوسته‌ها"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } روز",
@@ -6770,9 +6745,6 @@
       ]
     },
     "Title": {
-      "${ VPN_APP_NAME } clients": [
-        "مشتریان ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(فعال)"
       ],
@@ -6797,9 +6769,6 @@
       "4. Select a server to connect to": [
         "4. سروری برای اتصال انتخاب کنید"
       ],
-      "Account": [
-        "حساب"
-      ],
       "Account recovery": [
         "بازیابی حساب کاربری"
       ],
@@ -6807,7 +6776,7 @@
         "حساب کاربری معلق شده است"
       ],
       "Action": [
-        "عملیات"
+        "اقدام"
       ],
       "Actions": [
         "اقدامات"
@@ -6924,7 +6893,7 @@
         "در حال ایجاد حساب های کاربری"
       ],
       "Credits": [
-        "اعتبارها"
+        "اعتبار"
       ],
       "Currency": [
         "واحد پول"
@@ -7015,9 +6984,6 @@
       ],
       "Email": [
         "ایمیل"
-      ],
-      "Email subscriptions": [
-        "اشتراک‌های رایانامه"
       ],
       "Enter your password": [
         "کلمه عبور خود را وارد نمایید"
@@ -7113,9 +7079,6 @@
       "Open pagination": [
         "بازگشایی صفحه‌بندی"
       ],
-      "OpenVPN / IKEv2 username": [
-        "نام کاربری OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "فایل‌های پیکربندی OpenVPN"
       ],
@@ -7143,9 +7106,6 @@
       "Phone": [
         "تلفن"
       ],
-      "Plans": [
-        "طرح ها"
-      ],
       "Preview": [
         "پیش‌نمایش"
       ],
@@ -7159,7 +7119,7 @@
         "در حال پردازش..."
       ],
       "Recommended": [
-        "توصیه شده"
+        "پیشنهاد شده"
       ],
       "Reconnect your account": [
         "دوباره حساب خود را وصل کنید"
@@ -7292,9 +7252,6 @@
       ],
       "WireGuard configuration": [
         "تنظیمات WireGuard"
-      ],
-      "Your current plan": [
-        "طرح کنونی شما"
       ],
       "Your plan": [
         "طرح شما"

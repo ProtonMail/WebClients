@@ -261,7 +261,7 @@
         "Vytvoriť používateľov"
       ],
       "Current plan": [
-        "Súčasný plán"
+        "Aktuálny plán"
       ],
       "Customize": [
         "Prispôsobiť"
@@ -282,7 +282,7 @@
         "Odstrániť"
       ],
       "Delete account": [
-        "Odstrániť účet"
+        "Vymazať účet"
       ],
       "Delete Gateway": [
         "Odstrániť bránu"
@@ -963,7 +963,7 @@
         "Preskočiť overenie"
       ],
       "Spam": [
-        "Nevyžiadaná pošta"
+        "Spam"
       ],
       "Start import": [
         "Spustiť import"
@@ -3415,10 +3415,10 @@
         "${ name } presunuté do zoznamu blokovaných"
       ],
       "${ name } moved to spam list": [
-        "${ name } bola presunutá na zoznam spamov"
+        "Doména ${ name } bola presunutá do zoznamu nevyžiadaných"
       ],
       "${ name } successfully deleted": [
-        "${ name } úspešne odstránený"
+        "${ name } úspešne odstránené"
       ]
     },
     "Downgrade account reason": {
@@ -3750,7 +3750,7 @@
     },
     "Email spam notification": {
       "${ name } added": [
-        "${ name } pridaná"
+        "${ name } pridaný"
       ],
       "${ name } deletion failed": [
         "${ name } sa nepodarilo odstrániť"
@@ -4821,7 +4821,7 @@
         "Odstrániť rodinnú skupinu?"
       ],
       "Delete organization?": [
-        "Zmazať organizáciu?"
+        "Odstrániť organizáciu"
       ],
       "Edit user storage": [
         "Upraviť úložisko používateľa"
@@ -5129,7 +5129,7 @@
         "Vyhľadať v zozname"
       ],
       "Spam:": [
-        "Nevyžiadaná pošta:"
+        "Spam:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Získajte kontrolu nad tým, čo sa dostane do doručenej pošty členov vašej organizácie vytvorením nasledujúcich zoznamov:"
@@ -5257,7 +5257,7 @@
         "Typ kľúča"
       ],
       "Location": [
-        "Umiestnenie"
+        "Poloha"
       ],
       "Members": [
         "Členovia"
@@ -6399,7 +6399,7 @@
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
       ],
       "Current plan": [
-        "Súčasný plán"
+        "Aktuálny plán"
       ],
       "Custom": [
         "Vlastné"
@@ -7196,6 +7196,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "Zaplatené za plán"
       ],
@@ -7713,7 +7716,7 @@
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
-        "Týmto bude prístup k **${ email }** zamietnutý. Ste si istí, že chcete pokračovať?"
+        "Týmto bude prístup k **${ email }** zamietnutý. Skutočne chcete pokračovať?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
@@ -7818,7 +7821,7 @@
         "Všetky e-mailové adresy"
       ],
       "Total storage": [
-        "Celkové úložisko"
+        "Celkové úložisko "
       ],
       "Total supported domains": [
         "Celkom podporovaných domén"
@@ -9145,7 +9148,7 @@
         "Platca"
       ],
       "Payment details": [
-        "Detaily platby"
+        "Platobné údaje"
       ],
       "Payment method": [
         "Spôsob platby"
@@ -9341,6 +9344,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "Zraniteľné"
@@ -9689,7 +9695,7 @@
         "Otvoriť formulár podpory"
       ],
       "Upgrade subscription": [
-        "Inovovať predplatné"
+        "Navýšiť predplatné"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Inovujte a odomknite chatovú podporu a ďalšie prémiové funkcie, alebo využite náš formulár bezplatnej podpory a nahláste váš problém."
@@ -10020,16 +10026,16 @@
     },
     "Navigation": {
       "All": [
-        "Všetko"
+        "Všetky"
       ],
       "Allow": [
         "Povolené"
       ],
       "Block": [
-        "Blokovať"
+        "Blokované"
       ],
       "Spam": [
-        "Nevyžiadaná pošta"
+        "Spam"
       ]
     },
     "New Label form": {
@@ -10056,10 +10062,10 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Odstrániť účet"
+        "Zmazať účet"
       ],
       "Downgrade account": [
-        "Znížiť úroveň účtu"
+        "Znížiť účet"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Získať ${ BRAND_NAME } zadarmo"
@@ -10779,7 +10785,7 @@
         "Vymazať účet?"
       ],
       "Downgrade account?": [
-        "Znížiť úroveň účtu?"
+        "Prejsť na nižšiu verziu účtu?"
       ],
       "Review subscription": [
         "Preskúmať predplatné"
@@ -11425,6 +11431,9 @@
       "Allowed ${ defaultLabel }": [
         "Povolené ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Konfigurácia krajiny"
       ],
@@ -11433,6 +11442,9 @@
       ],
       "Free server configs": [
         "Konfigurácia bezplatného servera"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Našiel som inú službu, ktorá sa mi páči viac"
@@ -11446,11 +11458,17 @@
       "Ignore group": [
         "Ignorovať skupinu"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Chýba kľúčová funkcia, kterú potrebujem"
       ],
       "It's too expensive": [
         "Cena je príliš vysoká"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
@@ -11462,7 +11480,7 @@
         "Žiadne oprávnenie"
       ],
       "Not allowed": [
-        "Zakázané"
+        "Nie je povolené"
       ],
       "Optional ${ defaultLabel }": [
         "Voliteľné ${ defaultLabel }"
@@ -11494,8 +11512,17 @@
       "Standard server configs": [
         "Konfigurácia štandardného servera"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Celá organizácia"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -12357,7 +12384,7 @@
     },
     "plan customizer, users": {
       "contact": [
-        "kontakt"
+        "kontaktujte"
       ]
     },
     "Plan description": {
@@ -12404,7 +12431,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Zdarma"
       ]
     },
     "Property type": {
@@ -13760,7 +13787,7 @@
         "${ n } používateľov vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+        "**SSO používatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**SSO používatelia budú odpojení od vášho poskytovateľa identity** a prevedení na používateľov bez SSO."
@@ -13889,7 +13916,7 @@
         "Nie, nejde o moju žiadosť"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
-        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
+        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj. sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
       ],
       "Once single sign-on is disabled for your organization:": [
         "V momente, keď dôjde k zrušeniu jednotného prihlásenia pre vašu organizáciu:"
@@ -14246,7 +14273,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Chápem"
+        "Rozumiem"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Stačí sa prihlásiť do účtu v Apple App Store a vybrať ${ subscriptions }."
@@ -14636,7 +14663,7 @@
         "Automatická platba je povolená"
       ],
       "Disable": [
-        "Zakázať"
+        "Deaktivovať"
       ],
       "Enable auto-pay support": [
         "Zapnutie podpory automatických platieb"
@@ -15019,7 +15046,7 @@
     },
     "Themes": {
       "Themes": [
-        "Vzhľad"
+        "Motív"
       ]
     },
     "Time unit": {
@@ -15422,7 +15449,7 @@
         "Vymazať ${ policyName }?"
       ],
       "Delete account": [
-        "Odstrániť účet"
+        "Zmazať účet"
       ],
       "Delete group?": [
         "Vymazať skupinu?"
@@ -15545,7 +15572,7 @@
         "Kategórie emailu"
       ],
       "Email subscriptions": [
-        "Zasielanie pravidelných emailov"
+        "Emailové odbery"
       ],
       "Enable advanced account protection": [
         "Povoliť pokročilú ochranu účtu"
@@ -16001,7 +16028,7 @@
         "${ n } používateľských účtov bolo úspešne vytvorených"
       ],
       "Summary": [
-        "Súhrn"
+        "Zhrnutie"
       ],
       "Switch to one-password mode": [
         "Prepnúť do režimu s jedným heslom"
@@ -16929,6 +16956,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, TOR cez VPN a ďalšie."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

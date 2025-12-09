@@ -518,9 +518,6 @@
       "Increase": [
         "Aumentar"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Juntar ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Juntar ao calendário"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minutos"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minutos"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 minutos"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -4941,8 +4938,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min de duração"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -5185,6 +5182,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Peça ao seu administrador para fazer upgrade do plano ou remover uma página da barra lateral de Páginas de agendamento."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } caracteres"
@@ -5617,9 +5617,6 @@
       "Loading ${ appName }": [
         "Carregando ${ appName }"
       ],
-      "Loading appointments...": [
-        "Carregando compromissos..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
@@ -6046,6 +6043,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, peça ao seu administrador para fazer upgrade do seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, faça upgrade do seu plano."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
@@ -6114,9 +6120,6 @@
       ],
       "VPN IP": [
         "IP da VPN"
-      ],
-      "Want to create your own booking page?": [
-        "Quer criar sua própria página de agendamentos?"
       ],
       "Warning": [
         "Alerta"
@@ -11215,6 +11218,14 @@
         "Participe da reunião do Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Nenhum agendamento disponível."
+      ],
+      "Please try again later.": [
+        "Tente novamente mais tarde."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -11367,6 +11378,9 @@
       ],
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços."
+      ],
+      "Cannot create more Booking pages": [
+        "Não é possível criar mais páginas de agendamento"
       ],
       "Card verification": [
         "Verificação do cartão"
@@ -11875,11 +11889,8 @@
       "Summary": [
         "Resumo"
       ],
-      "This booking page does not exist": [
-        "Esta página de agendamentos não existe"
-      ],
-      "This booking page has expired": [
-        "Esta página de agendamentos expirou"
+      "This booking page has expired.": [
+        "Esta página de agendamento expirou."
       ],
       "Time": [
         "Hora"

@@ -96,7 +96,7 @@
         "Gebruiker toevoegen"
       ],
       "Allow": [
-        "Geautoriseerde adressen"
+        "Toestaan"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Versleutelde end-to-end e-mail voor deze groep toestaan"
@@ -1193,7 +1193,7 @@
         "${ LUMO_APP_NAME } AI-assistent"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "${ LUMO_APP_NAME } AI assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
         "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
@@ -1922,10 +1922,10 @@
         "Ontdek en configureer functies"
       ],
       "Invite your team": [
-        "Nodig je team uit"
+        "Nodig uw team uit"
       ],
       "Manage global VPN permissions": [
-        "Globale VPN-machtigingen beheren"
+        "Globale VPN-rechten beheren"
       ],
       "Maybe later": [
         "Misschien later"
@@ -1941,6 +1941,9 @@
       ],
       "Set up other features": [
         "Andere functies instellen"
+      ],
+      "Set up SSO": [
+        "SSO configureren"
       ],
       "Take a tour": [
         "Volg een rondleiding"
@@ -3118,7 +3121,7 @@
     },
     "Cycle": {
       "/month": [
-        "/maandelijks"
+        "/maand"
       ],
       "/user per month": [
         "/gebruiker per maand"
@@ -3215,8 +3218,14 @@
       "Create groups you can email with a single address.": [
         "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Nieuwe gebruikersaccounts aanmaken of gebruikers importeren met SSO (single sign-on) SCIM-provisioning."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Maak policies aan om te bepalen wie in elk land kan verbinden met de gedeelde servers."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bepaal welke gebruikers kunnen verbinden met elk van onze 120+ gedeelde serverlocaties."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Krijg eenvoudig toegang tot uw e-mail en agenda op desktop en mobiel."
@@ -6988,6 +6997,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "Betaald voor een abonnement"
       ],
@@ -7258,7 +7270,7 @@
         "Stel uw organisatie in"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "Stel uw organisatie in en begin met de bescherming van uw gegevens in een paar eenvoudige stappen."
+        "Configureer uw organisatie en begin met de bescherming van uw gegevens in een paar eenvoudige stappen."
       ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
@@ -7951,7 +7963,7 @@
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "U kunt slechts één chat-instantie tegelijk open hebben. Sluit eerdere gesprekken voordat u een nieuw gesprek begint."
+        "U kunt slechts één gesprek tegelijk voeren. Sluit voorgaande gesprekken voordat u een nieuw gesprek begint."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -9416,10 +9428,10 @@
         "Ondersteuningsformulier openen"
       ],
       "Upgrade subscription": [
-        "Abonnement upgraden"
+        "Abonnement opwaarderen"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Upgraden om chatondersteuning en andere premium functies te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
+        "Waardeer op om chatondersteuning en andere premiumfunctionaliteiten te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
       ]
     },
     "Loading info": {
@@ -9734,7 +9746,7 @@
     },
     "Navigation": {
       "All": [
-        "Alle"
+        "Alles"
       ],
       "Allow": [
         "Geautoriseerde adressen"
@@ -11085,6 +11097,9 @@
       "Allowed ${ defaultLabel }": [
         "Toegestaan ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Landconfiguraties"
       ],
@@ -11094,8 +11109,11 @@
       "Free server configs": [
         "Gratis server configuratiebestanden"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
-        "Ik heb een andere service gevonden die mijn voorkeur heeft"
+        "Ik heb een anderen service gevonden die mijn voorkeur heeft"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
@@ -11105,6 +11123,9 @@
       ],
       "Ignore group": [
         "Groep negeren"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Ik mis een belangrijke functie"
@@ -13640,6 +13661,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
+        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Uw ${ appStorage } is bijna vol"
       ],
@@ -13760,7 +13785,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Ik begrijp het"
+        "Begrepen"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
@@ -14465,7 +14490,7 @@
         "CSV-veld"
       ],
       "Edit": [
-        "Bewerk"
+        "Bewerken"
       ],
       "Email": [
         "E-mail"
@@ -14561,7 +14586,7 @@
         "${ PROTON_SENTINEL_NAME } voor organisaties"
       ],
       "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME }-clients"
+        "${ VPN_APP_NAME }-cliënten"
       ],
       "(active)": [
         "(actief)"
@@ -14712,7 +14737,7 @@
         "Automatisch verwijderen is actief"
       ],
       "Billing cycle": [
-        "Facturatieperiode"
+        "Factuurperiode"
       ],
       "Block trackers and malware": [
         "Blokkeer trackers en malware"
@@ -14954,7 +14979,7 @@
         "Wijzigingen annuleren?"
       ],
       "Dismiss setup checklist": [
-        "Setup-checklist negeren"
+        "Configuratiecontrolelijst verwerpen"
       ],
       "Domain names": [
         "Domeinnamen"
@@ -15259,7 +15284,7 @@
         "Telefoon"
       ],
       "Plans": [
-        "Abonnementen"
+        "Plans"
       ],
       "Preview": [
         "Voorbeeld"
@@ -15453,6 +15478,9 @@
       "Start import process": [
         "Importproces starten"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Begin met het beschermen van uw apparaten met de ${ VPN_APP_NAME } app."
+      ],
       "State": [
         "Land/Staat"
       ],
@@ -15530,7 +15558,7 @@
         "Upgraden om uw premium voordelen te behouden."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Upgrade uw netwerkbescherming met toegewijde servers"
+        "Waardeer uw netwerkbescherming op met toegewijde servers"
       ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
@@ -15823,7 +15851,7 @@
         "Dit e-mailadres zal worden getoond aan alle leden van de organisatie bij het uitvoeren van operaties binnen accountbeheer."
       ],
       "This setting is managed by your organization": [
-        "Deze instelling wordt beheerd door je organisatie."
+        "Deze instelling wordt beheerd door uw organisatie."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."

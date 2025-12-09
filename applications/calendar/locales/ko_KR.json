@@ -515,9 +515,6 @@
       "Increase": [
         "증가"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }에 합류"
-      ],
       "Join calendar": [
         "캘린더 가입"
       ],
@@ -3264,17 +3261,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1시간 30분"
-      ],
       "120 minutes": [
         "120분"
-      ],
-      "1h": [
-        "1시간"
-      ],
-      "2h": [
-        "2시간"
       ],
       "30 minutes": [
         "30분"
@@ -4889,9 +4877,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "예상 소요 시간 ${ bookingDetails.duration }분"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -5534,9 +5519,6 @@
       "Loading ${ appName }": [
         "${ appName } 로딩 중"
       ],
-      "Loading appointments...": [
-        "일정 로드 중..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
@@ -6025,9 +6007,6 @@
       ],
       "VPN IP": [
         "VPN IP"
-      ],
-      "Want to create your own booking page?": [
-        "나만의 예약 페이지를 만들고 싶으신가요?"
       ],
       "Warning": [
         "경고"
@@ -11644,12 +11623,6 @@
       ],
       "Summary": [
         "요약"
-      ],
-      "This booking page does not exist": [
-        "이 예약 페이지는 존재하지 않습니다."
-      ],
-      "This booking page has expired": [
-        "이 예약 페이지는 만료되었습니다"
       ],
       "Time": [
         "시간"

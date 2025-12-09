@@ -96,7 +96,7 @@
         "Kullanıcı ekle"
       ],
       "Allow": [
-        "İzin verilen"
+        "İzin ver"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Bu grupta uçtan uca şifrelenmiş e-posta kullanılabilsin"
@@ -588,7 +588,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Let's talk": [
-        "Hadi konuşalım."
+        "Hadi konuşalım!"
       ],
       "Load more": [
         "Diğerlerini yükle"
@@ -963,7 +963,7 @@
         "Doğrulamayı atla"
       ],
       "Spam": [
-        "İstenmeyenlere taşı"
+        "İstenmeyen"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -1775,7 +1775,7 @@
         "Telegram kullanmak güvenli mi? Bu yazıda tartışacağımız gibi, bu büyük ölçüde onu nasıl kullandığınızla ilişkili."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
-        "Yönelticinizde nasıl ${ VPN_APP_NAME } kullanacağınızı öğrenin."
+        "Yönlendiricinizde nasıl ${ VPN_APP_NAME } kullanacağınızı öğrenin."
       ],
       "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile evinizdeki tüm aygıtları aynı anda koruyun."
@@ -3130,7 +3130,7 @@
     },
     "Cycle": {
       "/month": [
-        "/aylık"
+        "/ay"
       ],
       "/user per month": [
         "/kullanıcı aylık"
@@ -5055,7 +5055,7 @@
         "Arama listesi"
       ],
       "Spam:": [
-        "İstenmeyenlere taşı:"
+        "İstenmeyen:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Bu listeleri kullanarak üyelerinizin gelen kutularına ulaşmasını istediğiniz e-postaları belirleyin:"
@@ -5890,7 +5890,7 @@
         "30 gün içinde ücreti geri ödeme garantisi"
       ],
       "30-day money-back guarantee.": [
-        "30 gün ücret iade garantisi."
+        "30 gün içinde ücreti geri ödeme garantisi."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
@@ -7018,6 +7018,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "Bir tarife ödemesi yaptı"
       ],
@@ -7971,6 +7974,10 @@
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -9106,6 +9113,9 @@
       "Verification code": [
         "Doğrulama kodu"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Çok zayıf"
       ],
@@ -9781,7 +9791,7 @@
         "Engellenen"
       ],
       "Spam": [
-        "İstenmeyenlere taşı"
+        "İstenmeyen"
       ]
     },
     "New Label form": {
@@ -9831,7 +9841,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşürülsün mü"
+        "${ downgradedPlanName } tarifesine düşür"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
@@ -10490,7 +10500,7 @@
         "Aboneliği ve ödemeyi gözden geçirin"
       ],
       "Switch plans?": [
-        "Tarifeleri değiştir?"
+        "Tarifeler değiştirilsin mi?"
       ]
     },
     "new_plans: Title": {
@@ -11127,6 +11137,9 @@
       "Allowed ${ defaultLabel }": [
         "İzin verilen ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Ülke yapılandırmaları"
       ],
@@ -11135,6 +11148,9 @@
       ],
       "Free server configs": [
         "Ücretsiz sunucu yapılandırmaları"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Daha çok sevdiğim başka bir hizmet buldum"
@@ -11148,11 +11164,17 @@
       "Ignore group": [
         "Grubu yok say"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "İhtiyacım olan önemli bir özellik eksik"
       ],
       "It's too expensive": [
         "Çok pahalı"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Gerekçem listede yok"
@@ -11196,8 +11218,17 @@
       "Standard server configs": [
         "Standart sunucu yapılandırmaları"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Tüm kuruluş"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11267,7 +11298,7 @@
         "İyi bir logo seçmeye yönelik ipuçları"
       ],
       "Use a graphical icon or image rather than text.": [
-        "Metin yerine bir simge ya da görsel kullanın."
+        "Yazı yerine bir simge ya da görsel kullanın."
       ],
       "Use a solid background color.": [
         "Düz bir arka plan rengi kullanın."
@@ -12082,7 +12113,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Ücretsiz"
       ]
     },
     "Property type": {
@@ -12139,7 +12170,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "İptal et"
+        "İptal"
       ],
       "Email address has been verified.": [
         "E-posta adresi doğrulanmış."
@@ -12176,7 +12207,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "İptal et"
+        "İptal"
       ],
       "Phone number has been verified.": [
         "Telefon numarası doğrulandı."
@@ -13554,7 +13585,7 @@
         "Başka bir aygıttan oturum açılması istendi. Bunu siz mi yaptınız?"
       ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
-        "Tek oturum açma, bir kuruluş kimliği olmadan düzgün çalışmayabilir. Güvenilir kimlik doğrulaması sağlamak için bir kimlik ayarlayın."
+        "Tek oturum açma, bir kuruluş kimliği olmadan düzgün çalışmayabilir. Kimlik doğrulamasının güvenliğini sağlamak için bir kimlik ayarlayın."
       ],
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
@@ -13694,6 +13725,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
+      ],
       "Your ${ appStorage } is almost full": [
         "Kullandığınız ${ appStorage } dolmak üzere"
       ],
@@ -13814,7 +13849,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Tamam"
+        "Anladım"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Apple App Store hesabınızda oturum açın ve ardından ${ subscriptions } seçin."
@@ -14125,7 +14160,7 @@
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
-        "Yıllık ücretsiz depolama alanı hediyeleri"
+        "Yıllık ücretsiz depolama alanı ödülleri"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "${ boldedDate } tarihine kadar geçerli tarifenizdeki tüm faydalarının tadını çıkartmayı sürdürebilirsiniz."
@@ -14201,7 +14236,7 @@
         "Otomatik ödemeyi sürdür"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliği kaybetmenize neden olur."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
@@ -14395,7 +14430,7 @@
         "Aboneliğinizi iptal ettiniz."
       ],
       "You have successfully unsubscribed": [
-        "Abonelikten ayrıldınız"
+        "Aboneliği sonlandırdınız"
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Geçerli bir kurtarma e-posta adresi yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir e-posta alacaksınız."
@@ -14499,7 +14534,7 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "Kuruluşlar için"
+        "Kurumlar için"
       ],
       "For families": [
         "Aileler için"
@@ -15110,8 +15145,8 @@
         "Kuruluşun tüm üyeleri erişebilir"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } kullanıcı hesabı eklenemedi.",
-        "${ failedUsers.length } kullanıcı hesabı eklenemedi."
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi",
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi"
       ],
       "Feature access": [
         "Özellik erişimi"
@@ -15244,7 +15279,7 @@
         "Ağ sorunu"
       ],
       "Next": [
-        "İlerle"
+        "Sonraki"
       ],
       "Night theme": [
         "Gece teması"
@@ -15337,7 +15372,7 @@
         "Kare kod"
       ],
       "Recommended": [
-        "Önerilir"
+        "Önerilen"
       ],
       "Recommended actions": [
         "Önerilen işlemler"
@@ -16437,6 +16472,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

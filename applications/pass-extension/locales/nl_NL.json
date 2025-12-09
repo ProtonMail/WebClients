@@ -257,6 +257,9 @@
       "Do not show again": [
         "Niet meer weergeven"
       ],
+      "Do not show again when I press": [
+        "Niet meer tonen wanneer ik druk op"
+      ],
       "Do not show on this website": [
         "Niet weergeven op deze website"
       ],
@@ -1089,6 +1092,9 @@
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Toegang tot de websites ${ domainsJSX } geweigerd"
+      ],
       "Permission denied for website access.": [
         "Toestemming geweigerd voor website toegang."
       ],
@@ -1832,8 +1838,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2432,6 +2437,9 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "U wordt uitgelogd en moet opnieuw inloggen op al uw andere apparaten."
       ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "U krijgt geen toegang meer tot delen, 2FA en andere geavanceerde functionaliteiten in ${ PASS_APP_NAME }"
+      ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "U heeft niet langer toegang tot delen, 2FA, creditcard en andere geavanceerde functies in ${ PASS_APP_NAME }"
       ],
@@ -2997,6 +3005,9 @@
       ],
       "Language": [
         "Taal"
+      ],
+      "Larger window": [
+        "Groter venster"
       ],
       "Last 2 weeks": [
         "Afgelopen 2 weken"

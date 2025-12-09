@@ -5121,17 +5121,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 h"
-      ],
       "120 minutes": [
         "120 minuts"
       ],
-      "1h": [
-        "1 h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minuts"
@@ -5142,8 +5136,14 @@
       "60 minutes": [
         "60 minuts"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuts"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Easy switch": {
@@ -10294,6 +10294,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Més de 100 milions de persones i negocis han creat un compte a ${ BRAND_NAME }."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Ha pagat un pla de ${ rewardMonths } mes",
         "Ha pagat un pla de ${ rewardMonths } mesos"
@@ -13591,6 +13594,9 @@
       "Video conferencing with Zoom": [
         "Videoconferència amb Zoom"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Vulnerable"
       ],
@@ -16281,6 +16287,9 @@
       "Allowed (default)": [
         "Permès (per defecte)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Arxiva"
       ],
@@ -16305,6 +16314,9 @@
       "Free server configs": [
         "Configuracions de servidor gratuït"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes"
       ],
@@ -16317,6 +16329,9 @@
       "Ignore group": [
         "Ignorar grup"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Li falta una característica clau que necessito"
       ],
@@ -16328,6 +16343,9 @@
       ],
       "Left to Right": [
         "D'esquerra a dreta"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -16413,11 +16431,20 @@
       "Star": [
         "Destacat"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Tota l'organització"
       ],
       "Trash": [
         "Paperera"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -19377,6 +19404,9 @@
       "Collaborative document editing": [
         "Edició col·laborativa de documents"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Documents i fulls de càlcul col·laboratius"
+      ],
       "Compare plans": [
         "Compara els plans"
       ],
@@ -19478,6 +19508,9 @@
       ],
       "Pick your perfect plan": [
         "Trieu el pla que més us convingui"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Assistent d'IA privat amb historial de xat xifrat"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "S'ha aplicat la promoció (${ checkout.discountPercent }% de descompte)."
@@ -24073,6 +24106,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

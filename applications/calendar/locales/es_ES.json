@@ -518,9 +518,6 @@
       "Increase": [
         "Aumentar"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Unirte a ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Unirse al calendario"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minutos"
       ],
-      "1h": [
-        "1 h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120m"
       ],
       "30 minutes": [
         "30 minutos"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 minutos"
       ],
+      "60m": [
+        "60m"
+      ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -3493,6 +3490,9 @@
       ],
       "Cancellation failed to be sent": [
         "Error al enviar la cancelación"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "No se puede crear una reserva con una dirección deshabilitada"
       ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min de duración"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
@@ -6040,6 +6040,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para añadir una nueva página de reservas, pide a tu administrador que mejore tu plan."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para añadir una nueva página de reservas, elimina una existente de la barra lateral de páginas de reservas."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para añadir una nueva página de reservas, mejora tu plan."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
       ],
@@ -6108,9 +6117,6 @@
       ],
       "VPN IP": [
         "IP de VPN"
-      ],
-      "Want to create your own booking page?": [
-        "¿Quieres crear tu propia página de reservas?"
       ],
       "Warning": [
         "Advertencia"
@@ -6312,6 +6318,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Has alcanzado el número máximo de direcciones en el grupo de contactos."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Has alcanzado el número máximo de páginas de reserva disponibles en tu plan."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
@@ -11203,6 +11212,17 @@
         "Unirte a la reunión de Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "No hay huecos disponibles."
+      ],
+      "Please check the link and try again.": [
+        "Comprueba el enlace e inténtalo de nuevo"
+      ],
+      "Please try again later.": [
+        "Inténtalo más tarde."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } día",
@@ -11355,6 +11375,9 @@
       ],
       "Cannot add more addresses": [
         "No se pueden añadir más direcciones"
+      ],
+      "Cannot create more Booking pages": [
+        "No puedes crear más páginas de reservas"
       ],
       "Card verification": [
         "Verificación de la tarjeta"
@@ -11863,11 +11886,14 @@
       "Summary": [
         "Resumen"
       ],
-      "This booking page does not exist": [
-        "Esta página de reserva no existe"
+      "The booking feature is currently unavailable.": [
+        "La función de reservas no está disponible."
       ],
-      "This booking page has expired": [
-        "Esta página de reserva ha expirado"
+      "This booking page can’t be shown.": [
+        "No se puede mostrar esta página de reservas."
+      ],
+      "This booking page has expired.": [
+        "Esta página de reservas ha expirado."
       ],
       "Time": [
         "Fecha"
