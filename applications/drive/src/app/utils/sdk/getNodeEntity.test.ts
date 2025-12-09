@@ -35,6 +35,7 @@ describe('getNodeEntity', () => {
         isShared: false,
         isSharedPublicly: false,
         creationTime: new Date('2023-01-01'),
+        modificationTime: new Date('2023-01-01'),
         trashTime: undefined,
         totalStorageSize: 1024,
         activeRevision: mockRevision,

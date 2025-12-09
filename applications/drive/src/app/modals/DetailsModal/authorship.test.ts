@@ -40,6 +40,7 @@ function createOkNode(
             isShared: false,
             isSharedPublicly: false,
             creationTime: new Date(),
+            modificationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
         },
     };
@@ -84,6 +85,7 @@ function createDegradedNode(
             isShared: false,
             isSharedPublicly: false,
             creationTime: new Date(),
+            modificationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
         },
     };
