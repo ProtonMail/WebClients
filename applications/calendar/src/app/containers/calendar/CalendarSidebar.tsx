@@ -32,6 +32,7 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useBookingsAvailability } from '../bookings/useBookingsAvailability';
+import { CalendarSidebarCollapsedButton } from './CalendarSidebarCollapsedButton';
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
 import { Bookings } from './sidebar/Bookings';
 import { MyCalendars } from './sidebar/MyCalendars';
@@ -66,12 +67,12 @@ const CalendarSidebar = ({
 
     const isBookingsEnabled = useBookingsAvailability();
 
-    const onClickExpandNav = () => {
+    const onClickExpandNav = (sourceEvent = SOURCE_EVENT.BUTTON_SIDEBAR) => {
         sendRequestCollapsibleSidebarReport({
             api,
             action: showSideBar ? COLLAPSE_EVENTS.COLLAPSE : COLLAPSE_EVENTS.EXPAND,
             application: APPS.PROTONCALENDAR,
-            sourceEvent: SOURCE_EVENT.BUTTON_SIDEBAR,
+            sourceEvent,
         });
         setshowSideBar(!showSideBar);
     };
@@ -126,7 +127,29 @@ const CalendarSidebar = ({
             navigationRef={navigationRef}
         >
             <SidebarNav className="flex *:min-size-auto" data-testid="calendar-sidebar:calendars-list-area">
-                {!collapsed && (
+                {collapsed ? (
+                    <>
+                        {isBookingsEnabled && (
+                            <CalendarSidebarCollapsedButton
+                                type="bookings"
+                                onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_BOOKINGS)}
+                                title={c('Action').t`Expand navigation bar to see bookings`}
+                            />
+                        )}
+                        <CalendarSidebarCollapsedButton
+                            type="calendars"
+                            onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_CALENDARS)}
+                            title={c('Action').t`Expand navigation bar to see calendars`}
+                        />
+                        {otherCalendars.length > 0 && (
+                            <CalendarSidebarCollapsedButton
+                                type="otherCalendars"
+                                onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_OTHER_CALENDARS)}
+                                title={c('Action').t`Expand navigation bar to see other calendars`}
+                            />
+                        )}
+                    </>
+                ) : (
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
@@ -175,7 +198,7 @@ const CalendarSidebar = ({
                                     collapsed ? 'mx-auto' : 'mr-2 ml-auto',
                                     isScrollPresent && 'sidebar-collapse-button--above-scroll'
                                 )}
-                                onClick={onClickExpandNav}
+                                onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_SIDEBAR)}
                                 aria-pressed={showSideBar}
                             >
                                 <Icon
