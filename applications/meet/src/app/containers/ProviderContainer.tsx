@@ -12,6 +12,7 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -30,6 +31,8 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
     const [initialised, setInitialised] = useState(false);
 
     const [error, setError] = useState<string | null>(null);
+
+    useEarlyAccess();
 
     const notificationsManager = useNotifications();
 
