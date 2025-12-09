@@ -115,14 +115,18 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches } = state
+  const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches, calculateNow } = state
   const handleExcelFileImport = useCallback(
     async (file: File) => {
-      await importExcelFile(file, 1000, 100)
+      const { requiresRecalc } = await importExcelFile(file, 1000, 100)
+      calculateNow({
+        disableEvaluation: requiresRecalc,
+        shouldResetCellDependencyGraph: true,
+      })
       const patches = await generateStatePatches()
       state.yjsState.onBroadcastPatch([[patches]])
     },
-    [generateStatePatches, importExcelFile, state.yjsState],
+    [calculateNow, generateStatePatches, importExcelFile, state.yjsState],
   )
   useEffect(() => {
     const canConvertFile =
@@ -143,7 +147,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }, [editorInitializationConfig, handleExcelFileImport, importCSVFile])
 
   // TODO: document this effect
-  const { onCreateNewSheet, onRenameSheet, calculateNow } = state
+  const { onCreateNewSheet, onRenameSheet } = state
   useEffect(
     () =>
       application.eventBus.addEventCallback((data: SheetImportData) => {
