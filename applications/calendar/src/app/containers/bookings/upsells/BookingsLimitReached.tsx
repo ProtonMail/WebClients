@@ -6,14 +6,19 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Prompt from '@proton/components/components/prompt/Prompt';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
+import { MAX_BOOKING_PAGES } from '../interface';
 
 export const BookingsLimitReached = ({ ...modalProps }: ModalStateProps) => {
     const [user] = useUser();
     const [bookings] = useInternalBooking();
 
     const getDetailsCopy = () => {
-        const hasBookingPages = (bookings?.bookingPages || []).length > 0;
+        const pageLength = bookings?.bookingPages?.length || 0;
+        if (pageLength >= MAX_BOOKING_PAGES) {
+            return c('Info').t`To add a new booking page, remove an existing one from the Booking pages sidebar.`;
+        }
 
+        const hasBookingPages = pageLength > 0;
         if (user.canPay) {
             return hasBookingPages
                 ? c('Info').t`To add a new booking page, remove an existing one from the Booking pages sidebar.`
