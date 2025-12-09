@@ -1,9 +1,5 @@
-import type { ChartSpec } from '@rowsncolumns/spreadsheet'
+import type { BasicChartSpec, ChartData, ChartSpec, EmbeddedChart } from '@rowsncolumns/spreadsheet'
 import omit from 'lodash/omit'
-
-export function getBaseChartSpecData(spec: Partial<ChartSpec>): Partial<ChartSpec> {
-  return omit(spec, ...(['chartType', 'smooth', 'stackedType', 'radius'] satisfies (keyof ChartSpec)[]))
-}
 
 type ChartType = {
   name: string
@@ -197,8 +193,6 @@ const treemap: ChartType = {
   ),
   spec: {
     chartType: 'treemap',
-    stackedType: 'UNSTACKED',
-    radius: undefined,
   },
 }
 
@@ -230,8 +224,6 @@ const sunburst: ChartType = {
   ),
   spec: {
     chartType: 'sunburst',
-    stackedType: 'UNSTACKED',
-    radius: undefined,
   },
 }
 
@@ -243,6 +235,10 @@ export const CHART_TYPES: [string, ChartType[]][] = [
   ['Pie', PIE_CHART_TYPES],
   ['Hierarchy', HIERARCHY_CHART_TYPES],
 ]
+
+export function getBaseChartSpecData(spec: Partial<ChartSpec>): Partial<ChartSpec> {
+  return omit(spec, ...(['chartType', 'smooth', 'stackedType', 'radius'] satisfies (keyof BasicChartSpec)[]))
+}
 
 /**
  * Maps a generic ChartSpec object to a specific ChartType.
@@ -299,3 +295,9 @@ export function getChartTypeByName(name: string): ChartType | undefined {
   }
   return undefined
 }
+
+export function isBasicChartSpec(spec: EmbeddedChart['spec']): spec is EmbeddedChart['spec'] & BasicChartSpec {
+  return ['bar', 'line', 'pie', 'area'].includes(spec.chartType)
+}
+
+export type ChartDataFormula = Omit<ChartData, 'sources'> & { sources: string[] }
