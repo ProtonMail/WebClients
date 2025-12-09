@@ -1036,6 +1036,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }-ში გახსნა"
+      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -1495,6 +1498,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1895,6 +1902,9 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ გქონდეთ მაქსიმუმ ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } მომხმარებლის ადგილი."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
@@ -4019,6 +4029,12 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "შეუზღუდავი წვდომისთვის წერის დამხმარესთან ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Duo-მდე."
@@ -6561,6 +6577,9 @@
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
       ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -6635,6 +6654,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "ამ ჭდით შენახული ყველა შეტყობინება სამუდამოდ წაიშლება."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "ყველა შეტყობინება ნაჩვენები იქნება შემომავლებში და კატეგორიის ჩანართები და ჭდეები აღარ გამოჩნდება. "
       ],
       "All your calendars are disabled.": [
         "თქვენი ყველა კალენდარი გამორთულია."
@@ -6795,6 +6817,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "კატეგორიები მუშაობს ისე, როგორც სპამის ფილტრები. ${ MAIL_APP_NAME } არასოდეს კითხულობს თქვენს ელფოსტას და არ აზიარებს თქვენს მონაცემებს."
       ],
       "Center": [
         "ცენტრი"
@@ -7079,6 +7104,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "ისიამოვნეთ სწრაფი ელფოსტით პირდაპირ სამუშაო მაგიდიდან."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
+      ],
       "Enter the code from your authenticator app": [
         "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
       ],
@@ -7300,8 +7328,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7712,6 +7739,9 @@
       "Print email": [
         "ელფოსტის დაბეჭდვა"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
+      ],
       "Proofread selection": [
         "მონიშნულის კორექტურა"
       ],
@@ -8051,6 +8081,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "ეს მოსაწვევი შენახულია გამორთულ კალენდარში."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "ეს არის სახელი ან მეტსახელი თქვენი ორგანიზაციისთვის, რომელსაც თქვენი მომხმარებლები დაინახავენ. მისი შეცვლა ნებისმიერ დროს შეგიძლიათ."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "ეს განკუთვნილია წერაში დახმარებისთვის. შეამოწმეთ შემოთავაზებული ტექსტი სისწორეზე. ${ learnMoreResult }"
@@ -8991,6 +9024,9 @@
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "კატეგორიების დამატება ან წაშლა. შეტყობინებების დაყენება ან გამორთვა. ნებისმიერ დროს შეცვალეთ ${ menuIcon } მენიუში."
+      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
@@ -9297,6 +9333,9 @@
       "Go to Updates": [
         "განახლებებზე გადასვლა"
       ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "დაგვეხმარეთ კატეგორიების გაუმჯობესებაში იმის კატეგორიის არჩევით, რომელიც ამ ელფოსტას ყველაზე კარგად ერგება. მადლობა დახმარებისთვის!"
+      ],
       "Help us improve the upcoming mail categorization": [
         "დაგვეხმარეთ მომავალი ელფოსტის კატეგორიზაციაში"
       ],
@@ -9552,6 +9591,9 @@
       "Search in": [
         "რაში მოვძებნო"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "აირჩიეთ კატეგორიები ჩასასმელად და ჩართეთ შეტყობინებები, რათა მიიღოთ შეტყობინებები კატეგორიაში ახალი ელფოსტის შესახებ."
+      ],
       "Send auto-reply": [
         "პასუხის ავტომატურად გაცემა"
       ],
@@ -9668,6 +9710,9 @@
       ],
       "Weak password": [
         "სუსტი პაროლი"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "ჩვენ ვაუმჯობესებთ ელფოსტის კატეგორიზაციის მეთოდს. თქვენი უკუკავშირი ხელს უწყობს მის უფრო ჭკვიანს და ზუსტს გახდას."
       ],
       "What happened?": [
         "რა მოხდა?"
@@ -11989,6 +12034,9 @@
       "You will soon be redirected to verify your payment.": [
         "მალე გადაგამისამართებთ თქვენი გადახდის გადასამოწმებლად."
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "თქვენი ვალუტა ევროზე (€) შეიცვალა, რადგან SEPA საბანკო გადარიცხვები მხოლოდ ევროში გადახდებს უჭერს მხარს."
+      ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
@@ -12436,6 +12484,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
       ],
@@ -12461,6 +12512,9 @@
       ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "მას შემდეგ, რაც თქვენი სრული გამოწერა დაიწყება, თქვენ ჯერ კიდევ შეგიძლიათ, გააუქმოთ ის 30 დღის განმავლობაში და დაიბრუნოთ თანხა."
       ],
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
@@ -15213,6 +15267,9 @@
       ],
       "To": [
         "ვის"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
       ],
       "Trash": [
         "ნაგვის ყუთი"

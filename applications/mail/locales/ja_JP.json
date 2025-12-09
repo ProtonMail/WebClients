@@ -121,16 +121,16 @@
         "配置"
       ],
       "All Read": [
-        "すべての既読"
+        "すべて既読"
       ],
       "All Starred": [
         "すべてのスターつき"
       ],
       "All Unread": [
-        "すべての未読"
+        "すべて未読"
       ],
       "All Unstarred": [
-        "全てのスターなし"
+        "全て星印なし"
       ],
       "Apply": [
         "適用"
@@ -529,7 +529,7 @@
         "絵文字"
       ],
       "Enable": [
-        "有効"
+        "有効化する"
       ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } を有効にする"
@@ -829,7 +829,7 @@
         "読み込み中${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "${ MAIL_APP_NAME } をデフォルトのメールアプリにする"
+        "${ MAIL_APP_NAME } を規定のメールアプリに設定"
       ],
       "Make it friendly": [
         "フレンドリーにする"
@@ -964,7 +964,7 @@
         "受信トレイに移動"
       ],
       "Move to inbox (not spam)": [
-        "受信トレイに移動 (迷惑メールではありません)"
+        "受信トレイへ移動 (迷惑メールではない)"
       ],
       "Move to spam": [
         "迷惑メールに移動"
@@ -1494,6 +1494,9 @@
       "Trust": [
         "信頼する"
       ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1534,7 +1537,7 @@
         "スヌーズを解除"
       ],
       "Unstar": [
-        "スターを外す"
+        "星印を外す"
       ],
       "Unsubscribe": [
         "登録解除"
@@ -1782,7 +1785,7 @@
         "会話のスターを外す"
       ],
       "Unstar message": [
-        "メッセージのスターを外す"
+        "星印を外す"
       ]
     },
     "Alternative text for conversation image": {
@@ -1817,7 +1820,7 @@
     },
     "Assistant feedback": {
       "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
-        "このフィードバックを送信すると、プロンプトとお客様のコメントが${ BRAND_NAME }のモデレーションチームに表示されます。"
+        "このフィードバックを送信すると、${ BRAND_NAME }の審査チームがこのプロンプトとあなたのコメントを読みます。"
       ]
     },
     "Assistant option": {
@@ -2312,7 +2315,7 @@
         "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName }はいずれかの予定への招待を辞退しました。"
+        "${ participantName }はこの予定のうちの一つへの招待を辞退しました。"
       ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } はこの予定への招待を辞退しました。"
@@ -2339,7 +2342,7 @@
         "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } はこの予定への招待を承諾しました。"
+        "${ participantName } はこの予定への招待を承諾していました。"
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
@@ -2360,7 +2363,7 @@
         "${ participantName } はこの予定への招待を辞退しました。"
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+        "${ participantName } は招待を辞退し、この予定のどれか一つに新しい時間を提案していました。この回答と提案は古くなっています。"
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
@@ -2405,7 +2408,7 @@
         "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案していました。この回答と提案は古くなっています。"
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } はいずれかの予定への招待を仮承諾しました。"
@@ -2483,7 +2486,7 @@
         "この招待は古くなっています。この予定は更新されました。"
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "この新しい時間の提案は、招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
+        "新しい時間の提案が招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "この回答は招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
@@ -4876,7 +4879,7 @@
         "テキストが長すぎて修正できません"
       ],
       "Thanks for the feedback!": [
-        "フィードバックありがとうございます！"
+        "ご意見ありがとうございます!"
       ],
       "The amount due has changed. Please try again.": [
         "金額が変更されました。もう一度やり直してください。"
@@ -5732,7 +5735,7 @@
         "自動転送"
       ],
       "Block email communications from scammers permanently.": [
-        "詐欺師からのメールを永久にブロックする"
+        "詐欺のメールを永久にブロック"
       ],
       "Block unsavory senders": [
         "不適切な送信者をブロックする"
@@ -5759,7 +5762,7 @@
         "${ strongText } がどのように保護されているかをご覧ください"
       ],
       "Discover privacy features": [
-        "プライバシー機能の発見"
+        "プライバシー機能を見る"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強力な暗号化により、お客様と意図した宛先の受信者のみがメールを閲覧できます。"
@@ -7282,7 +7285,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7420,7 +7423,7 @@
         "メッセージリスト"
       ],
       "Message sent": [
-        "メッセージが送信されました"
+        "メールを送信しました"
       ],
       "Message sent.": [
         "メッセージは送信されました。"
@@ -7576,7 +7579,7 @@
         "システムはこれを疑わしいとしています。フィッシングメールや詐欺メールでない場合は、正当なものとしてマークしてください。"
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
-        "システムはこのメッセージがフィッシングの可能性があるとフラグを立てました。正当性を確認してください。"
+        "このメッセージはフィッシング詐欺の可能性があることが検知されました。正当性を確認してください。"
       ],
       "password": [
         "パスワード"
@@ -7990,7 +7993,7 @@
         "現在転送もしくは返信しようとしているメールはまだ送信されていませんが、続行するとメールの送信取り消しはできなくなります。"
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "このメッセージの元の差出人は有効ではありません。メッセージはデフォルトのアドレス ${ defaultEmail } から送信されます。"
+        "このメールの元の差出人は有効でなくなりました。既定のアドレス ${ defaultEmail } から送信します。"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "このアドレスの所有者はエンドツーエンド暗号化を無効にしています。このアドレスへ暗号化済みのメールを送るには、所有者がエンドツーエンド暗号化を有効にする必要があります。"
@@ -8521,7 +8524,7 @@
         "このメールには件名がありません。このままメッセージを送信しますか？"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "ストレージ容量の100%に達しました。新しいメッセージを作成するために、ストレージ容量を増やしたり、容量追加のためにアカウントをアップグレードすることを検討してください。"
+        "ストレージ容量の100%に達しました。新しいメッセージを作成するには、ストレージ容量を少し空けるか、容量追加のためにアップグレードしましょう。"
       ],
       "You have reached the maximum number of 5 replies.": [
         "返信数の上限（5件）に達しました。"
@@ -8996,7 +8999,7 @@
         "画像 URL を追加"
       ],
       "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "カテゴリを追加または削除します。通知を設定またはオフにします。${ menuIcon } メニューでいつでも調整できます。"
+        "カテゴリを追加・削除、通知をオン・オフにできます。${ menuIcon } メニューでいつでも調整可能です。"
       ],
       "Add to group": [
         "グループに追加"
@@ -9443,7 +9446,7 @@
         "ラベルが見つかりませんでした"
       ],
       "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
-        "重要なメッセージを見逃す心配はもうありません！ これらは${ primaryCopy }の下に表示されます。その他の項目はすべてカテゴリ別に整理されているため、簡単に見つけることができ、お客様の受信トレイを煩雑にすることもありません。"
+        "重要なメールを見逃す心配はもうありません！それらは${ primaryCopy }の下に表示されるようになりました。その他の項目はすべてカテゴリ別に整理されているため、簡単に見つけることができ、受信トレイを煩雑にすることもありません。"
       ],
       "Non-promotional content and news": [
         "プロモーション以外のコンテンツおよびニュース"
@@ -9809,7 +9812,7 @@
         "登録解除したニュースレターまたはメーリングリストがここに表示されます。"
       ],
       "You don't have any active newsletters or mailing list subscriptions.": [
-        "アクティブなニュースレターまたはメーリングリストのサブスクリプションはありません。"
+        "ニュースレターやメーリングリストの購読はありません。"
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "ニュースレターまたはメーリングリストのサブスクリプションはありません。"
@@ -9859,7 +9862,7 @@
         "アクティブなメールアドレスにリンクされたカレンダーを作成します。"
       ],
       "Create a new calendar to add this event": [
-        "この予定を追加するために新しいカレンダーを作成します"
+        "この予定を追加するための新しいカレンダーを作成しましょう"
       ],
       "Create a new calendar to answer this invitation": [
         "招待に回答するために新しいカレンダーを作成します"
@@ -10107,7 +10110,7 @@
         "もっと詳しく"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+        "${ BRAND_NAME }を利用し続けるには、プレミアム機能が使用中でないことを確認するか、プランをアップグレードしてください。"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -10213,7 +10216,7 @@
         "送信予約を取り消しました"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "送信予約がキャンセルされました。メッセージは下書きに移動されました。"
+        "送信予約をキャンセルし、メールを下書きに移動しました。"
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -11490,7 +11493,7 @@
         "ショッピング"
       ],
       "Social media": [
-        "ソーシャルメディア"
+        "SNS"
       ]
     },
     "Onboarding modal": {
@@ -11537,7 +11540,7 @@
         "ブラウザ"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "削除されたメールおよびスパムメールを 30 日後に削除されます。"
+        "30 日放っておいた迷惑メールや削除されたメールを、自動的に完全に削除しましょう。"
       ],
       "Continue": [
         "続ける"
@@ -13951,7 +13954,7 @@
         "会話が更新されました"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
-        "${ sendersList }との会話に${ labelsList }のラベルを付けます"
+        "${ sendersList }との会話は${ labelsList }のラベルが付きます"
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "${ sendersList }との会話を${ folder }に移動します"
@@ -14564,7 +14567,7 @@
         "会話を削除"
       ],
       "Delete draft": [
-        "下書きの削除"
+        "下書きを削除"
       ],
       "Delete folder?": [
         "フォルダを削除しますか？"
@@ -14621,7 +14624,7 @@
         "メール設定を編集"
       ],
       "Edit filter": [
-        "フィルターの編集"
+        "フィルター編集"
       ],
       "Edit image": [
         "画像の編集"
@@ -14714,7 +14717,7 @@
         "アカウントの高度なセキュリティ"
       ],
       "How does it all work?": [
-        "どのように機能しますか？"
+        "そもそもどんな仕組みでこんなことが？"
       ],
       "How does it work?": [
         "どのように動作しますか?"
@@ -15077,7 +15080,7 @@
         "変更した設定を送信しますか?"
       ],
       "Send with encryption disabled?": [
-        "暗号化を無効にして送信しますか？"
+        "暗号化を無効で送信しますか？"
       ],
       "Send without expiration?": [
         "期限なしで送信しますか?"

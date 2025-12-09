@@ -266,6 +266,9 @@
       "Create folder": [
         "Stvori mapu"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Stvori mapu ${ boldFolderName }"
+      ],
       "Create label": [
         "Stvori oznaku"
       ],
@@ -354,6 +357,9 @@
       "Download ${ attachmentName }": [
         "Preuzmi ${ attachmentName }"
       ],
+      "Download logs": [
+        "Preuzmi zapisnike"
+      ],
       "Download the desktop app": [
         "Preuzmite aplikaciju za radnu površinu"
       ],
@@ -431,6 +437,9 @@
       ],
       "External encryption": [
         "Vanjsko šifriranje"
+      ],
+      "Fewer search options": [
+        "Manje opcija pretraživanja"
       ],
       "Filter on...": [
         "Filtar za..."
@@ -512,6 +521,9 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email pseudonimi"
+      ],
+      "I like this response": [
+        "Sviđa mi se ovaj odgovor"
       ],
       "Images will be loaded without a proxy": [
         "Slike će se učitavati bez proxy"
@@ -617,6 +629,9 @@
       "Manage labels": [
         "Upravljanje oznakama"
       ],
+      "Mark as favorite": [
+        "Označi kao favorit"
+      ],
       "Mark as read": [
         "Označi kao pročitano"
       ],
@@ -650,11 +665,20 @@
       "Merge contacts": [
         "Spoji kontakte"
       ],
+      "Messages from this sender": [
+        "Poruke ovog pošiljatelja"
+      ],
+      "Messages to this recipient": [
+        "Poruke ovom primatelju"
+      ],
       "Minimize composer": [
         "Smanji prozor za novu poruku"
       ],
       "Modify": [
         "Izmijeniti"
+      ],
+      "Modify selection": [
+        "Izmijeni odabir"
       ],
       "Monday": [
         "Ponedjeljak"
@@ -860,14 +884,23 @@
       "Remove encryption": [
         "Ukloni šifriranje"
       ],
+      "Remove from list": [
+        "Ukloni s popisa"
+      ],
       "Remove gift code": [
         "Ukloni darovni kôd"
+      ],
+      "Remove self-destruction": [
+        "Ukloni samouništenje"
       ],
       "Remove this label": [
         "Ukloni ovu oznaku"
       ],
       "Replace": [
         "Zamijeni"
+      ],
+      "Replaces the selected text in your message": [
+        "Zamjenjuje odabrani tekst u Vašoj poruci"
       ],
       "Reply securely": [
         "Odgovori na siguran način"
@@ -968,6 +1001,9 @@
       "Set": [
         "Postavi"
       ],
+      "Set as album cover": [
+        "Postavi kao naslovnicu albuma"
+      ],
       "Set as default": [
         "Postavi kao zadano"
       ],
@@ -1055,6 +1091,9 @@
       "Stop marking as read": [
         "Zaustavi označavanje kao pročitano"
       ],
+      "Stop moving to Archive": [
+        "Prestani premještati u arhivu"
+      ],
       "Strikethrough": [
         "Precrtano"
       ],
@@ -1078,9 +1117,6 @@
       ],
       "Trust": [
         "Vjeruj"
-      ],
-      "Trust key": [
-        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -1241,6 +1277,9 @@
       ]
     },
     "Add participant to calendar event": {
+      "Failed to add participant": [
+        "Dodavanje sudionika nije uspjelo"
+      ],
       "Participant added": [
         "Sudionik dodan"
       ]
@@ -1593,6 +1632,9 @@
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je prihvatio poziv i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } prihvaća pozivnicu i predlaže novo vrijeme za ovaj događaj."
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
@@ -1740,6 +1782,9 @@
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Ovaj se odgovor ne podudara s detaljima vaše pozivnice. Provjerite detalje pozivnice u kalendaru."
       ],
+      "This response is out of date.": [
+        "Ovaj odgovor je zastario."
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Ovaj je odgovor zastario. Događaj više ne postoji u vašem kalendaru."
       ],
@@ -1789,6 +1834,9 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
+      ],
+      "Unlimited daily chats": [
+        "Neograničena dnevna čavrljanja"
       ]
     },
     "color": {
@@ -3108,6 +3156,9 @@
       "/month": [
         "/mjesec"
       ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
+      ],
       "2 user accounts": [
         "2 korisnička računa"
       ]
@@ -3172,6 +3223,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Ažuriranje događaja s početkom ${ formattedStart }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Pouzdani kontakt"
       ]
     },
     "Encrypted Headers": {
@@ -3348,6 +3404,9 @@
       ],
       "Payment process not supported": [
         "Proces plaćanja nije podržan"
+      ],
+      "Please activate your search again": [
+        "Ponovno aktivirajte svoje pretraživanje"
       ],
       "Please select a country": [
         "Molimo odaberite državu"
@@ -3996,6 +4055,9 @@
         "Još ${ remainingDaysCount } dana",
         "Još ${ remainingDaysCount } dana"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Zatražite ${ BRAND_NAME } adresu"
+      ],
       "Finish setup": [
         "Završi postavljanje"
       ],
@@ -4010,6 +4072,9 @@
       ],
       "Learn more": [
         "Više informacija"
+      ],
+      "Popular online services": [
+        "Popularne internetske usluge"
       ],
       "privacy features": [
         "značajke privatnosti"
@@ -4457,6 +4522,9 @@
       "(No Recipient)": [
         "(Nema primatelja)"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
@@ -4757,6 +4825,11 @@
       "Expired": [
         "Isteklo"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Istječe za ${ minutesDiff } minutu",
+        "Istječe za ${ minutesDiff } minute",
+        "Istječe za ${ minutesDiff } minuta"
+      ],
       "file attached": [
         "privitak dodan",
         "privitka dodana",
@@ -4840,13 +4913,17 @@
       "Include Spam/Trash.": [
         "Uključi neželjenu poštu/otpad."
       ],
+      "Included for free with your plan": [
+        "Besplatno uključeno uz Vašu pretplatu"
+      ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
+      "Initializing…": [
+        "Inicijalizacija…"
+      ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -4980,6 +5057,9 @@
       "No links cleaned": [
         "Nema očišćenih poveznica"
       ],
+      "No messages to show": [
+        "Nema poruka za prikaz"
+      ],
       "No more results found": [
         "Nema više rezultata"
       ],
@@ -5040,11 +5120,17 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
       ],
+      "Please open the document to view it.": [
+        "Otvorite dokument da biste ga pregledali."
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Odaberite vrstu poveznice koju želite umetnuti i popunite sva polja."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
+      ],
+      "Please use another browser or download the file.": [
+        "Koristite drugi preglednik ili preuzmite datoteku."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Pričekajte dok potražimo kontakte koji se mogu ponovno potpisati primarnim ključem šifriranja."
@@ -5054,6 +5140,15 @@
       ],
       "Preferences updated": [
         "Postavke su ažurirane"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Pretpregled za ovu vrstu datoteke trenutno nije podržan u ovom pregledniku."
+      ],
+      "Preview for this file type is not supported": [
+        "Pretpregled ove vrste datoteke nije podržan"
+      ],
+      "Preview of documents is not yet supported.": [
+        "Pretpregled dokumenata još nije podržan."
       ],
       "Primary": [
         "Glavno"
@@ -5114,6 +5209,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Odaberite koje kalendare želite uvesti. Novi kalendar bit će stvoren za svaki uvezeni kalendar, ovisno o broju kalendara dostupnih u vašem planu."
+      ],
+      "Sender has been blocked.": [
+        "Pošiljatelj je blokiran."
       ],
       "Sending": [
         "Slanje"
@@ -5178,6 +5276,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Podaci koje ste unijeli u skicu mogu biti izgubljeni ako napustite stranicu."
       ],
+      "The message has expired": [
+        "Poruka je istekla"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izvorna poruka koju pokušavate proslijediti/odgovoriti je u procesu slanja. Ako nastavite, više nećete moći poništiti slanje izvorne poruke."
       ],
@@ -5211,6 +5312,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Ova poruka e-pošte nije prošla autentikaciju vlastite domene. Može biti lažna ili nepropisno proslijeđena."
+      ],
+      "This file is too large to preview": [
+        "Ova datoteka je prevelika za pretpregled"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ova pozivnica je spremljena u onemogućeni kalendar."
@@ -5463,6 +5567,9 @@
       ],
       "Your message will expire tomorrow.": [
         "Vaša poruka će istječi sutra."
+      ],
+      "Your online activity is protected": [
+        "Vaša aktivnost na mreži je zaštićena"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
@@ -5854,6 +5961,9 @@
       "CC": [
         "Kopija"
       ],
+      "Choose what to do instead": [
+        "Odaberite što učiniti umjesto toga"
+      ],
       "City": [
         "Grad"
       ],
@@ -6075,6 +6185,9 @@
       ],
       "Move to Inbox": [
         "Premjesti u Pristiglu poštu"
+      ],
+      "Moved to Archive": [
+        "Premjesti u arhivu"
       ],
       "Moved to Trash": [
         "Premješteno u otpad"
@@ -7263,6 +7376,9 @@
       ]
     },
     "Offer": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Uhvatite ${ BRAND_NAME } Duo"
+      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
@@ -7311,6 +7427,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } na Play Storeu"
       ],
+      "Activate selected": [
+        "Aktiviraj odabrano"
+      ],
       "Ad-free promise": [
         "Obećanje „bez oglasa”"
       ],
@@ -7346,9 +7465,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Dobrodošli u ${ MAIL_APP_NAME }"
+      ],
+      "You are all set!": [
+        "Spremni ste!"
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Odaberite izgled i dojam koji preferirate."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ],
@@ -7595,6 +7720,9 @@
       ],
       "Company name": [
         "Naziv tvrtke"
+      ],
+      "Describe what to change": [
+        "Opišite što treba promijeniti"
       ],
       "E.g., ": [
         "Npr. "
@@ -7948,6 +8076,11 @@
         "Otkrili smo neka upozorenja. Sljedeće adrese e-pošte možda ne primaju e-poštu:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Potvrđivanje pošiljatelja"
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
         "Šifrira ${ MAIL_APP_NAME } za PGP primatelja"
@@ -8267,6 +8400,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
       ]
     },
     "Status": {
@@ -8292,6 +8428,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Nabavite više pohrane"
+      ],
       "Upgrade storage": [
         "Nadogradi prostor za pohranu"
       ],
@@ -8315,6 +8454,12 @@
     "storage_split: info": {
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Unazađivanjem ćete izgubiti sljedeće pogodnosti. Jeste li sigurni da želite nastaviti?"
+      ],
+      "Storage used": [
+        "Iskorištena pohrana"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Za nastavak prijenosa i sinkronizacije datoteka, oslobodite prostor ili nadogradite na više pohrane."
       ],
       "Your storage is full": [
         "Pohrana je puna"
@@ -8615,6 +8760,11 @@
       "Conversation removed from ${ labelName }.": [
         "Razgovor uklonjen iz ${ labelName }."
       ],
+      "Conversation updated": [
+        "Razgovor je ažuriran",
+        "Razgovori su ažurirani",
+        "Razgovori su ažurirani"
+      ],
       "Copied to clipboard": [
         "Kopirano u međuspremnik"
       ],
@@ -8647,6 +8797,9 @@
       ],
       "Message deleted": [
         "Poruka izbrisana"
+      ],
+      "Message expiration canceled": [
+        "Istek poruke je otkazan"
       ],
       "Message marked as legitimate": [
         "Poruka označena legitimnom"
@@ -9097,6 +9250,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Disable categories?": [
+        "Onemogućiti kategorije?"
+      ],
       "Downgrade account": [
         "Smanjite svoj plan"
       ],
@@ -9268,6 +9424,9 @@
       "Move all messages": [
         "Premjesti sve poruke"
       ],
+      "Move all messages to archive": [
+        "Premjesti sve poruke u arhivu"
+      ],
       "Move to": [
         "Premjesti u"
       ],
@@ -9312,6 +9471,9 @@
       ],
       "No need to empty the trash": [
         "Nema potrebe za pražnjenjem otpada"
+      ],
+      "No-reply address detected": [
+        "Otkrivena je adresa za neodgovaranje (no-reply)"
       ],
       "Notes": [
         "Bilješke"
@@ -9439,6 +9601,9 @@
       "Sender": [
         "Pošiljatelj"
       ],
+      "Sender changed": [
+        "Pošiljatelj je promijenjen"
+      ],
       "Sending error": [
         "Greška slanja"
       ],
@@ -9450,6 +9615,9 @@
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
+      ],
+      "Set up ${ protonDuoPlanName }": [
+        "Postavite ${ protonDuoPlanName }"
       ],
       "Set up your family account": [
         "Postavite svoj obiteljski korisnički račun"
@@ -9555,6 +9723,12 @@
       "Welcome ${ userName }": [
         "Dobrodošli ${ userName }"
       ],
+      "Your changes are not synced yet": [
+        "Vaše promjene još nisu sinkronizirane"
+      ],
+      "Your free trial has ended": [
+        "Vaše probno razdoblje je završilo"
+      ],
       "Your plan": [
         "Vaš plan"
       ],
@@ -9643,6 +9817,11 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {
@@ -9732,6 +9911,14 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Pon, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
