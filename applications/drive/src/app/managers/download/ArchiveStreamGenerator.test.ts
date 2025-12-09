@@ -102,7 +102,7 @@ describe('ArchiveStreamGenerator', () => {
         const scheduledTask = schedulerInstance._tasks[0];
         expect(scheduledTask.storageSizeEstimate).toBe(node.activeRevision?.storageSize ?? 0);
 
-        const { completion } = await scheduledTask.start();
+        const completion = scheduledTask.start();
 
         const { value, done } = await generatorInstance.generator.next();
         expect(done).toBe(false);
@@ -215,7 +215,8 @@ describe('ArchiveStreamGenerator', () => {
         const waitPromise = generatorInstance.waitForFirstItem();
 
         const task = schedulerInstance._tasks[0];
-        await task.start();
+        const completionPromise = task.start();
+        await completionPromise;
         await flushAsync();
 
         await expect(waitPromise).resolves.toBeUndefined();

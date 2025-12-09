@@ -2,25 +2,13 @@ import type { NodeEntity } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
 
 import type { DownloadController } from './DownloadManager';
-import type { ArchiveItem, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
+import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
 import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
 
-export type { ArchiveItem } from './downloadTypes';
-
-type ArchiveTracker = {
-    registerFile(taskId: string): void;
-    updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number): void;
-    attachController(taskId: string, controller: DownloadController): void;
-    pauseAll(): void;
-    resumeAll(): void;
-    waitForCompletion(): Promise<void>;
-    notifyItemReady(): void;
-    notifyError(error: unknown): void;
-    waitForFirstItem(): Promise<void>;
-};
+export type { ArchiveItem, ArchiveTracker } from './downloadTypes';
 
 /**
  * Called to start the creation of a new archive
@@ -58,6 +46,14 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
             });
 
             completionPromises.set(taskId, completionPromise);
+        },
+        // individual task completion
+        waitForTaskCompletion(taskId: string): Promise<void> {
+            const completion = completionPromises.get(taskId);
+            if (completion) {
+                return completion;
+            }
+            return Promise.resolve();
         },
         pauseAll() {
             controllerByUid.forEach((ctrl) => ctrl.pause());
@@ -208,7 +204,7 @@ export class ArchiveStreamGenerator {
                             this.hasProducedItem = true;
                         }
                         if (item.isFile) {
-                            this.totalClaimedSize += item.claimedSize ?? getNodeStorageSize(node);
+                            this.totalClaimedSize += getNodeStorageSize(node);
                         }
                         this.tracker.notifyItemReady();
                         this.archiveItemsQueue.push(item);
@@ -224,11 +220,9 @@ export class ArchiveStreamGenerator {
                         this.maybeCloseQueue();
                     });
 
-                return {
-                    completion: archivePromise.then(() => {}),
-                };
+                return archivePromise.then(() => this.tracker.waitForTaskCompletion(taskId));
             },
-            storageSizeEstimate: node.activeRevision?.storageSize ?? 0,
+            storageSizeEstimate: getNodeStorageSize(node),
         };
 
         this.scheduledTasksAwaitingStart += 1;

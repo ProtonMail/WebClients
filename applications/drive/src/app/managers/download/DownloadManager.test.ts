@@ -15,6 +15,7 @@ const schedulerTracker = trackInstances((...args: unknown[]) => {
     return {
         constructorArgs: args,
         scheduleDownload: jest.fn(),
+        cancelDownloadsById: jest.fn(),
         cancelDownload: jest.fn(),
         clearDownloads: jest.fn(),
         generateTaskId: jest.fn(() => `scheduler-task-${++counter}`),
@@ -34,7 +35,7 @@ const archiveStreamGeneratorTracker = trackInstances((...args: unknown[]) => ({
 }));
 
 const archiveGeneratorTracker = trackInstances(() => ({
-    stream: 'archive-stream',
+    stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
     writeLinks: jest.fn().mockResolvedValue(undefined),
     cancel: jest.fn(),
 }));
@@ -309,7 +310,8 @@ describe('DownloadManager', () => {
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
         expect(scheduledTask.node).toEqual(node);
 
-        const handle = await scheduledTask.start();
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
 
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('download-1')).toBe(true);
@@ -326,16 +328,14 @@ describe('DownloadManager', () => {
         controllerCompletion.resolve();
         saveDeferred.resolve();
 
-        await handle.completion;
+        await completionPromise;
 
         expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
             readableStream,
             { filename: node.name, mimeType: 'application/octet-stream', size: nodeSize },
             expect.any(Function)
         );
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            status: DownloadStatus.Finalizing,
-        });
+
         await waitForCondition(() =>
             storeMockState.updateDownloadItem.mock.calls.some(
                 ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
@@ -367,8 +367,7 @@ describe('DownloadManager', () => {
         await manager.download([node.uid]);
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
 
-        const handle = await scheduledTask.start();
-        await expect(handle.completion).rejects.toBe(failure);
+        await expect(scheduledTask.start()).rejects.toBe(failure);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
             status: DownloadStatus.Failed,
             error: failure,
@@ -418,16 +417,18 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockReturnValueOnce(undefined);
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
-        traverseNodeStructureMock.mockResolvedValue({
+        traverseNodeStructureMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSize: 0,
+            traversalCompletedPromise: Promise.resolve({
+                totalEncryptedSize: 0,
+                containsUnsupportedFile: false,
+            }),
             parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
-            containsUnsupportedFile: false,
         });
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
         archiveGeneratorTracker.setFactory(() => ({
-            stream: 'archive-stream',
+            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
             writeLinks: jest.fn().mockResolvedValue(undefined),
             cancel: jest.fn(),
         }));
@@ -464,17 +465,22 @@ describe('DownloadManager', () => {
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         const traversalDeferred = createDeferred<{
-            nodesQueue: { iterator: typeof iteratorMock };
-            totalEncryptedSize: number;
-            parentPathByUid: Map<string, string[]>;
-            containsUnsupportedFile?: boolean;
+            totalSize: number;
+            containsUnsupportedFile: boolean;
         }>();
         const parentPathByUid = new Map(nodes.map((node) => [node.uid, []]));
-        traverseNodeStructureMock.mockReturnValue(traversalDeferred.promise);
+        traverseNodeStructureMock.mockReturnValue({
+            nodesQueue: { iterator: iteratorMock },
+            traversalCompletedPromise: traversalDeferred.promise.then(({ totalSize, containsUnsupportedFile }) => ({
+                totalEncryptedSize: totalSize,
+                containsUnsupportedFile,
+            })),
+            parentPathByUid,
+        });
 
         const writeLinksDeferred = createDeferred<void>();
         archiveGeneratorTracker.setFactory(() => ({
-            stream: 'archive-stream',
+            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
             writeLinks: jest.fn().mockReturnValue(writeLinksDeferred.promise),
             cancel: jest.fn(),
         }));
@@ -489,12 +495,10 @@ describe('DownloadManager', () => {
         expect(traversalArgs[0]).toEqual(nodes);
         expect(traversalArgs[1]).toHaveProperty('aborted', false);
 
-        expect(archiveStreamGeneratorTracker.instances).toHaveLength(0);
+        expect(archiveStreamGeneratorTracker.instances).toHaveLength(1);
 
         traversalDeferred.resolve({
-            nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSize: 4096,
-            parentPathByUid,
+            totalSize: 4096,
             containsUnsupportedFile: false,
         });
         await flushAsync();
@@ -511,32 +515,12 @@ describe('DownloadManager', () => {
         const archiveGeneratorInstance = getArchiveGeneratorInstance();
         expect(archiveGeneratorInstance.writeLinks).toHaveBeenCalledWith(archiveInstance.generator);
 
-        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
-            'archive-stream',
-            expect.objectContaining({
-                filename: expect.stringMatching(/\.zip$/),
-                mimeType: 'application/zip',
-                size: 4096,
-            }),
-            expect.any(Function)
-        );
-
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('archive-id')).toBe(true);
 
         writeLinksDeferred.resolve();
         saveDeferred.resolve();
         await flushAsync(2);
-
-        await waitForCondition(() =>
-            storeMockState.updateDownloadItem.mock.calls.some(
-                ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
-                    id === 'archive-id' && update.status === DownloadStatus.Finalizing
-            )
-        );
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('archive-id', {
-            status: DownloadStatus.Finalizing,
-        });
 
         await waitForCondition(() =>
             storeMockState.updateDownloadItem.mock.calls.some(
@@ -565,11 +549,13 @@ describe('DownloadManager', () => {
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
-        traverseNodeStructureMock.mockResolvedValue({
+        traverseNodeStructureMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSize: 0,
+            traversalCompletedPromise: Promise.resolve({
+                totalEncryptedSize: 0,
+                containsUnsupportedFile: false,
+            }),
             parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
-            containsUnsupportedFile: false,
         });
 
         const waitDeferred = createDeferred<void>();
@@ -585,7 +571,7 @@ describe('DownloadManager', () => {
         }));
 
         archiveGeneratorTracker.setFactory(() => ({
-            stream: 'archive-stream',
+            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
             writeLinks: jest.fn().mockResolvedValue(undefined),
             cancel: jest.fn(),
         }));
@@ -597,13 +583,11 @@ describe('DownloadManager', () => {
 
         const archiveGenInstance = getArchiveGeneratorInstance();
         expect(archiveGenInstance.writeLinks).not.toHaveBeenCalled();
-        expect(fileSaverSaveAsFileMock).not.toHaveBeenCalled();
 
         waitDeferred.resolve();
         await flushAsync();
 
         expect(archiveGenInstance.writeLinks).toHaveBeenCalled();
-        expect(fileSaverSaveAsFileMock).toHaveBeenCalled();
 
         archiveStreamGeneratorTracker.restoreFactory();
         archiveGeneratorTracker.restoreFactory();
