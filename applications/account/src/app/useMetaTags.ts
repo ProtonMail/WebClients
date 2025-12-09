@@ -9,6 +9,7 @@ const defaultValue: MetaTags = { title: undefined, description: undefined };
 export interface MetaTags {
     title: string | undefined;
     description: string | undefined;
+    ogImage?: string;
 }
 
 export const useMetaTags = (options: MetaTags | null) => {
