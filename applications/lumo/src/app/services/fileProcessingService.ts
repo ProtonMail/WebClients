@@ -32,8 +32,9 @@ export interface ImageProcessingResult {
     id: string;
     type: 'image';
     originalSize: number;
-    processedSize: number;
-    processedData: ArrayBuffer;
+    hdImageSize: number;
+    hdImage: Uint8Array<ArrayBuffer>;
+    previewThumbnail?: Uint8Array<ArrayBuffer>;
 }
 
 export interface ProcessingError {
@@ -45,7 +46,9 @@ export interface ProcessingError {
 
 export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError;
 
-async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
+async function reduceImageSize(
+    fileData: FileData
+): Promise<{ sdThumbnail?: Uint8Array<ArrayBuffer>; hdThumbnail?: Uint8Array<ArrayBuffer> }> {
     console.log(`[Image Processing] Reducing image size for ${fileData.name} using thumbnail generator`);
 
     // Convert ArrayBuffer to Blob for thumbnail generator
@@ -67,28 +70,31 @@ async function reduceImageSize(fileData: FileData): Promise<ArrayBuffer> {
         throw new Error('No thumbnails were generated');
     }
 
-    // Prefer Type2 (HD) thumbnail, fallback to Type1 if not available
-    const hdThumbnail = thumbnailResult.thumbnails.find((t) => t.type === ThumbnailType.Type2);
-    const thumbnail = hdThumbnail || thumbnailResult.thumbnails[0];
+    // Retrieve both sizes
+    const hdThumbnail = thumbnailResult.thumbnails.find((t) => t.type === ThumbnailType.Type2)?.thumbnail;
+    const sdThumbnail = thumbnailResult.thumbnails.find((t) => t.type === ThumbnailType.Type1)?.thumbnail;
 
-    console.log(
-        `[Image Processing] Using ${thumbnail.type === ThumbnailType.Type2 ? 'HD' : 'standard'} thumbnail for ${fileData.name}`
-    );
-
-    // Convert Uint8Array to ArrayBuffer
-    return thumbnail.thumbnail.buffer;
+    return { sdThumbnail, hdThumbnail };
 }
 
 async function processImageFile(fileData: FileData): Promise<InternalImageResult> {
     console.log(`Processing image: ${fileData.name} (${fileData.type})`);
 
-    const processedData = await reduceImageSize(fileData);
+    // Prefer HD thumbnail, fallback to SD if not available
+    const { sdThumbnail, hdThumbnail } = await reduceImageSize(fileData);
 
+    const hdImage = hdThumbnail ?? sdThumbnail;
+    const previewThumbnail = sdThumbnail ?? hdThumbnail;
+
+    if (!hdImage) {
+        throw new Error('No thumbnails were generated');
+    }
     return {
         type: 'image',
         originalSize: fileData.size,
-        processedSize: processedData.byteLength,
-        processedData,
+        hdImageSize: hdImage.byteLength,
+        hdImage,
+        previewThumbnail,
     };
 }
 
@@ -223,6 +229,8 @@ export class FileProcessingService {
         }
     }
 
+    // We need to process image requests on the main thread due to the
+    // thumbnail generation API, which is currently not worker compatible.
     needsMainThread(request: FileProcessingRequest) {
         const { file } = request;
         const category = getProcessingCategory(file.type, file.name);
