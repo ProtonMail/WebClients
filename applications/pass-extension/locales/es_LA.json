@@ -1838,8 +1838,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2437,6 +2436,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se cerrará la sesión y tendrá que volver a iniciarla en todos los dispositivos."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Ya no tendrá acceso a compartir autenticación de dos factores (2FA) y otras funciones avanzadas en ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Ya no tendrá acceso a compartir, autenticación de dos factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."

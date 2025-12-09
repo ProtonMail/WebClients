@@ -1837,10 +1837,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2437,6 +2433,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du wirst abgemeldet und musst dich bei allen anderen Geräten erneut anmelden."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Du wirst keinen Zugriff mehr auf Freigaben, 2FA und andere erweiterte Funktionen in ${ PASS_APP_NAME } haben."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Du wirst keinen Zugriff mehr auf Freigaben, 2FA, Kreditkarten und andere erweiterte Funktionen in ${ PASS_APP_NAME } haben."

@@ -762,6 +762,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } არის ელფოსტის ავთენტიკაციის მეთოდი, რომელიც შექმნილია გამგზავნის ყალბი მისამართების აღმოსაჩენად ელფოსტის მიწოდების დროს. SPF-ის დაყენება მკაცრად რეკომენდებულია იმის ალბათობის შესამცირებლად, რომ თქვენი ელფოსტა მოხვდეს მიმღების სპამის საქაღალდეში."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "ეს საცავები ხელმისაწვდომი არ იქნება და მათი შემცველობა არ იქნება გამოყენებული ძებნისა და ავტოშევსებისას."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
       ],
@@ -1031,6 +1034,9 @@
       ],
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
+      ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "გასაგრძელებლად, ${ PASS_APP_NAME } მოითხოვს შემდეგ გაფართოების ნებართვებს: ${ permissionsJSX }"
       ],
       "Inactive secure links could not be removed.": [
         "არააქტიური დაცული ბმულების წაშლა შეუძლებელია."
@@ -1810,10 +1816,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1825,6 +1827,9 @@
       ],
       "Moving items to trash": [
         "ელემენტების გადატანა ნაგვის ყუთში"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "გადადით თქვენი ბრაუზერის გაფართოების პარამეტრებში და ჩართეთ საიტის ნებართვები ${ PASS_SHORT_APP_NAME }-ისთვის."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "გჭირდებათ, მისწეროთ ვინმეს, მაგრამ არ გნებავთ, მათ თქვენი ელფოსტის მისამართი დაინახონ? მოირგეთ კონტაქტის ფსევდონიმი."
@@ -1861,6 +1866,9 @@
       ],
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "გახსენით Safari-ის პარამეტრები, იპოვეთ ${ PASS_APP_NAME }, გადადით \"ნებართვებზე\" და ჩართეთ საიტის ნებართვები."
       ],
       "Owner": [
         "მფლობელი"
@@ -2383,6 +2391,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "თქვენ ახლა გახვალთ და უნდა თავიდან შემოსვლა მოგიწევთ ყველა თქვენი სხვა მოწყობილობიდან."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "თქვენ აღარ გექნებათ წვდომა გაზიარებასთან, 2FA-სთან, და სხვა დამატებით ფუნქციებთან ${ PASS_APP_NAME }-ში"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "თქვენ აღარ გექნებათ წვდომა გაზიარებასთან, 2FA-სთან, საკრედიტო ბარათთან და სხვა დამატებით ფუნქციებთან ${ PASS_APP_NAME }-ში"
