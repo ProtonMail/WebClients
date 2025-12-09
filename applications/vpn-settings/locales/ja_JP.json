@@ -282,7 +282,7 @@
         "削除"
       ],
       "Delete account": [
-        "アカウントを削除する"
+        "アカウントを削除"
       ],
       "Delete Gateway": [
         "ゲートウェイ削除"
@@ -588,7 +588,7 @@
         "詳細"
       ],
       "Let's talk": [
-        "話しましょう"
+        "話をしよう"
       ],
       "Load more": [
         "さらに読み込む"
@@ -1706,7 +1706,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "1 ヶ月"
+        "1 か月"
       ],
       "12 months": [
         "12 か月"
@@ -1718,7 +1718,7 @@
         "Lifetime"
       ],
       "Monthly": [
-        "毎月"
+        "月額"
       ],
       "Two-year": [
         "2年払い"
@@ -1733,6 +1733,9 @@
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "同じWiFiを使用している場合、誰かが私のインターネット履歴を見ることができますか?"
+      ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "同時に${ VPN_CONNECTIONS }台のデバイスを接続"
       ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "VPN設定でキルスイッチと自動接続を有効にします。"
@@ -1760,6 +1763,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "ルーターで ${ VPN_APP_NAME } を有効にする方法を学びましょう。"
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "お客様のすべての家庭用デバイスを、${ PLAN_NAMES[PLANS.BUNDLE] } で同時に保護します。"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "企業をデータ侵害から保護し、企業VPNを使用してリモート作業をより安全にします。"
@@ -1885,13 +1891,13 @@
     },
     "Button": {
       "Add users manually": [
-        "ユーザーを手動で追加する"
+        "ユーザーを手動で追加"
       ],
       "Close": [
         "閉じる"
       ],
       "Configure your network": [
-        "ネットワークを設定する"
+        "ネットワークを設定"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
@@ -1912,7 +1918,7 @@
         "機能の発見と設定"
       ],
       "Invite your team": [
-        "チームを招待する"
+        "チームを招待"
       ],
       "Manage global VPN permissions": [
         "グローバルVPNの権限を管理する"
@@ -1924,7 +1930,7 @@
         "後で通知する"
       ],
       "Secure your organization": [
-        "組織の安全を確保する"
+        "組織の安全を確保"
       ],
       "Send": [
         "送信"
@@ -1933,7 +1939,7 @@
         "他の機能を設定"
       ],
       "Set up SSO": [
-        "SSOを設定する"
+        "SSOを設定"
       ],
       "Take a tour": [
         "ツアーを開始"
@@ -3107,7 +3113,7 @@
     },
     "Cycle": {
       "/month": [
-        "/ 月"
+        "/月"
       ],
       "/user per month": [
         "/ 毎月 (1 ユーザーあたり)"
@@ -3196,7 +3202,7 @@
         "CRM、ウェブサイト、プリンターなどを接続。"
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "専用サーバーを通じてユーザーがITリソースにアクセスできるようにするゲートウェイを作成します。"
+        "専用サーバーを通じてユーザーが ITリソースを使用できるようにするゲートウェイを作成しましょう。"
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "ワンクリックでZoomミーティングを作成し、参加詳細をイベントに追加します。"
@@ -3211,7 +3217,7 @@
         "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "120以上の共有サーバーロケーションそれぞれに接続できるユーザーを決定します。"
+        "120以上の共有サーバーの位置にそれぞれに接続できるユーザーを決定できます。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
@@ -3259,7 +3265,7 @@
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "まだ設定していない場合は、復旧方法を有効にして、${ VPN_APP_NAME }へのアクセスを絶対に失わないようにしてください。"
+        "まだ設定していない場合は、復旧方法を設定して、${ VPN_APP_NAME }へのアクセスを絶対に失わないようにしましょう。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
@@ -3892,7 +3898,7 @@
         "無効なカード番号です"
       ],
       "Invalid code": [
-        "無効なコード"
+        "無効なコードです"
       ],
       "Invalid domain": [
         "無効なドメインです"
@@ -3986,6 +3992,9 @@
       ],
       "Permissions request failed.": [
         "権限リクエストに失敗しました。"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "サブスクリプションを再有効化する前に、支払い方法を追加してください"
       ],
       "Please configure a custom domain before adding addresses.": [
         "アドレスを追加する前にカスタム ドメインを構成してください。"
@@ -4808,6 +4817,9 @@
       "15 GB storage": [
         "15 GB のストレージ"
       ],
+      "4 more privacy services": [
+        "プライバシーサービスが4つも増える"
+      ],
       "@pm.me address": [
         "@pm.me メールアドレス"
       ],
@@ -5131,7 +5143,7 @@
         "鍵の種類"
       ],
       "Location": [
-        "位置"
+        "場所"
       ],
       "Members": [
         "メンバー"
@@ -5228,6 +5240,9 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName } を楽しんでいますか？"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "毎月たった **${ priceString }** のご負担で、4つのプレミアムプライバシーサービスをご利用いただけます"
       ],
       "Upgrade your privacy": [
         "プライバシーをアップグレード"
@@ -5765,6 +5780,9 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator などの他の2要素認証アプリから、**既存のコードをインポート**"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**ステップ1:友達を招待してください**招待リンクで${ BRAND_NAME }に。"
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
       ],
@@ -6141,7 +6159,7 @@
         "カスタムブランディング"
       ],
       "Custom email domains": [
-        "カスタムメールドメイン"
+        "独自メールドメイン"
       ],
       "Custom policies": [
         "カスタムポリシー"
@@ -6911,6 +6929,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "支払い済みのプラン"
       ],
@@ -7179,7 +7200,7 @@
         "組織を設定"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "組織を設定し、簡単な手順でデータの保護を開始しましょう。"
+        "組織の設定を終え、簡単な手順でデータの保護を開始しましょう。"
       ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
@@ -7754,6 +7775,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "キャンセルする場合、サブスクリプションは自動更新されませんが、サブスクリプション期間終了まではプランの恩恵を受けることができます。その後、${ BRAND_NAME }の無料プランにダウングレードされます。"
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "お客様がキャンセルされた場合、サブスクリプションは開始されませんが、トライアル期間の終了まではプランの特典を引き続きご利用いただけます。その後、お客様は${ BRAND_NAME }の無料プランにダウングレードされます。"
+      ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
       ],
@@ -7863,7 +7887,7 @@
         "アプリケーションに戻って続けましょう"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "チャットインスタンスは同時に 1 つだけ開くことができます。新しく開く前に古い会話を閉じてください。"
+        "同時に開けるチャット数は1つのみです。新しい会話を開始するには以前の会話を閉じてください。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -8779,7 +8803,7 @@
         "支払人"
       ],
       "Payment details": [
-        "支払い詳細"
+        "支払いの詳細"
       ],
       "Payment method": [
         "支払い方法"
@@ -8973,6 +8997,9 @@
       "Verification code": [
         "認証コード"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "脆弱"
       ],
@@ -9018,7 +9045,7 @@
         "デバイスベースの回復"
       ],
       "Recovery phone number": [
-        "回復用の電話番号"
+        "回復用電話番号"
       ],
       "Recovery phrase": [
         "回復用フレーズ"
@@ -9311,7 +9338,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "${ planName } ではライブチャットが利用可能です"
+        "${ planName } でライブチャットが利用可能です"
       ],
       "Open support form": [
         "サポートフォームを開く"
@@ -9320,7 +9347,7 @@
         "サブスクリプションをアップグレード"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "アップグレードしてチャットによるサポートやその他プレミアム機能を解放するか、無料のサポートフォームで問題をご報告ください。"
+        "アップグレードしてチャットなどのプレミアム機能を使うか、無料のサポートフォームで問題をご報告ください。"
       ]
     },
     "Loading info": {
@@ -9351,7 +9378,7 @@
         "もっと詳しく"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+        "${ BRAND_NAME }を利用し続けるには、プレミアム機能が使用中でないことを確認するか、プランをアップグレードしてください。"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -9669,10 +9696,10 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "アカウントを削除する"
+        "アカウントを削除"
       ],
       "Downgrade account": [
-        "アカウントのダウングレード"
+        "アカウントをダウングレード"
       ],
       "Get ${ BRAND_NAME } for free": [
         "無料で ${ BRAND_NAME } を入手"
@@ -10341,7 +10368,7 @@
         "サブスクリプションを見なおして決済"
       ],
       "Switch plans?": [
-        "プランを変更?"
+        "プランを変更しますか?"
       ]
     },
     "new_plans: Title": {
@@ -10975,6 +11002,9 @@
       "Allowed ${ defaultLabel }": [
         "許可済み${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "各国の設定ファイル"
       ],
@@ -10984,8 +11014,11 @@
       "Free server configs": [
         "無料サーバーの設定ファイル"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
-        "もっと気に入ったサービスを見つけた"
+        "より良い他のサービスを見つけた"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
@@ -10996,11 +11029,17 @@
       "Ignore group": [
         "グループを無視"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "欲しい機能が含まれていない"
       ],
       "It's too expensive": [
         "料金が高過ぎる"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "それ以外の理由"
@@ -11044,8 +11083,17 @@
       "Standard server configs": [
         "標準サーバーの設定ファイル"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "組織全体"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11918,7 +11966,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "無料"
       ]
     },
     "Property type": {
@@ -11975,7 +12023,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "取消"
+        "キャンセル"
       ],
       "Email address has been verified.": [
         "メールアドレスは検証されました。"
@@ -12012,7 +12060,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "取消"
+        "キャンセル"
       ],
       "Phone number has been verified.": [
         "電話番号は検証されました。"
@@ -12066,6 +12114,9 @@
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "それまでにキャンセルすると、トライアル終了時に${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }にダウングレードされます。キャンセルしない場合、お客様のフルプランが開始され、**${ referrerRewardAmount }** のクレジットを獲得できます。"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "お客様がキャンセルされた場合、**${ referrerRewardAmount }**のクレジット報酬は失われます。"
       ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "お客様がこの日付までに登録された場合、**${ referrerRewardAmount }**のクレジットを獲得できます。登録されなかった場合、${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }へダウングレードされます。"
@@ -13610,7 +13661,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "分かりました"
+        "了解"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Apple App Storeアカウントにサインインして、${ subscriptions }を選んでください。"
@@ -13973,7 +14024,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "本当によろしいですか？"
+        "よろしいですか?"
       ],
       "Auto-pay is disabled": [
         "自動支払いが無効です"
@@ -14262,7 +14313,7 @@
     },
     "Suffix for price": {
       "per month": [
-        "1ヶ月あたり"
+        "毎月"
       ],
       "per user per month": [
         "1 ユーザー/月"
@@ -14289,7 +14340,7 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "企業向け"
+        "ビジネス向け"
       ],
       "For families": [
         "家族向け"
@@ -14447,7 +14498,7 @@
         "アカウントが一時的にロックされています"
       ],
       "Action": [
-        "操作"
+        "アクション"
       ],
       "Actions": [
         "アクション"
@@ -14525,7 +14576,7 @@
         "金額"
       ],
       "Amount due": [
-        "支払額"
+        "支払い総額"
       ],
       "An address for each role": [
         "それぞれの役割のアドレス"
@@ -14635,6 +14686,9 @@
       "Connect organization": [
         "組織を接続"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "${ vpnPlusOrUnlimited }なら一度に${ VPN_CONNECTIONS }台のデバイスに接続できます。 ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
@@ -14741,7 +14795,7 @@
         "${ policyName }を削除しますか?"
       ],
       "Delete account": [
-        "アカウントを削除する"
+        "アカウントの削除"
       ],
       "Delete group?": [
         "グループを削除しますか？"
@@ -14789,7 +14843,7 @@
         "変更を破棄しますか?"
       ],
       "Dismiss setup checklist": [
-        "セットアップチェックリストを閉じる"
+        "「始めましょう」チェックリストを無視"
       ],
       "Domain names": [
         "ドメイン名"
@@ -14861,7 +14915,7 @@
         "メールカテゴリ"
       ],
       "Email subscriptions": [
-        "メーリングリストの購読"
+        "メール購読"
       ],
       "Enable advanced account protection": [
         "高度なアカウント保護を有効にする"
@@ -15017,10 +15071,10 @@
         "名前"
       ],
       "Network error": [
-        "ネットワークエラーが発生しました"
+        "ネットワークエラー"
       ],
       "Next": [
-        "次"
+        "次へ"
       ],
       "Night theme": [
         "夜間のテーマ"
@@ -15113,7 +15167,7 @@
         "QRコード"
       ],
       "Recommended": [
-        "推奨"
+        "おすすめ"
       ],
       "Recommended actions": [
         "推奨されるアクション"
@@ -15289,6 +15343,9 @@
       "Start import process": [
         "インポートを開始"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "${ VPN_APP_NAME }アプリでデバイスの保護を開始しましょう。"
+      ],
       "State": [
         "状態"
       ],
@@ -15365,7 +15422,7 @@
         "プレミアム特典を維持するには、アップグレードしてください。"
       ],
       "Upgrade your network protection with dedicated servers": [
-        "専用サーバーでネットワークの保護を強化する"
+        "専用サーバーでネットワークの保護を強化"
       ],
       "Upgrade your privacy": [
         "あなたのプライバシーをアップグレード"
@@ -15887,6 +15944,12 @@
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！一月${ fallBackString }だけで、全てご利用いただけます。"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！月々追加料金**${ priceString }**のみで、全てご利用いただけます。"
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
       ],
@@ -16196,6 +16259,29 @@
         "Secure Core サーバーへのアクセス、高速 P2P/BitTorrent ダウンロード、Tor over VPN など。"
       ]
     },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
         "${ n } ${ BRAND_NAME } メールアドレス"
@@ -16237,7 +16323,7 @@
         "本当にこの電話番号を削除しますか？"
       ],
       "Are you sure you want to delete this address?": [
-        "本当にこのアドレスを削除してよいですか。"
+        "本当にこのアドレスを削除してよろしいですか？"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "このアドレスを削除することで、今後毎日のメール通知を受け取ることができなくなります。"

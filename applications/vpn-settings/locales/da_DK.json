@@ -261,7 +261,7 @@
         "Opret brugere"
       ],
       "Current plan": [
-        "Nuværende abonnent"
+        "Nuværende abonnement"
       ],
       "Customize": [
         "Tilpas"
@@ -354,7 +354,7 @@
         "Udført"
       ],
       "Downgrade": [
-        "Nedgrader"
+        "Nedgradér"
       ],
       "Download": [
         "Download"
@@ -1731,7 +1731,7 @@
         "Livstid"
       ],
       "Monthly": [
-        "Månedligt"
+        "Månedlig"
       ],
       "Two-year": [
         "To-År"
@@ -1943,7 +1943,7 @@
         "Påmind mig senere"
       ],
       "Secure your organization": [
-        "Sikr din organisation"
+        "Beskyt din organisation"
       ],
       "Send": [
         "Send"
@@ -4230,10 +4230,10 @@
         "Uploadede filer er ikke gyldige private nøgle. Kontrollér og prøv igen."
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller tal"
+        "Brugernavn skal begynde med et bogstav eller et tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller tal"
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Bekræftelse mislykkedes, forsøg igen om en time."
@@ -5646,6 +5646,10 @@
       " and other security features.": [
         " og andre sikkerhedsfunktioner."
       ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere",
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -5671,6 +5675,10 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } land aktiveret",
+        "${ countriesCount } lande aktiveret"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
@@ -5961,7 +5969,7 @@
       ],
       "Affected user is on row": [
         "Berørt bruger er på række",
-        "Berørt brugere er på række"
+        "Berørte brugere er på rækker"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -6225,7 +6233,7 @@
         "Kredit for den ubrugte del af dit tidligere abonnement"
       ],
       "Current plan": [
-        "Nuværende abonnent"
+        "Nuværende abonnement"
       ],
       "Custom": [
         "Brugerdefineret"
@@ -6234,7 +6242,7 @@
         "Tilpasset varemærke"
       ],
       "Custom email domains": [
-        "Tilpassede e-maildomæner"
+        "Brugerdefinerede e-maildomæner"
       ],
       "Custom policies": [
         "Brugerdefinerede policer"
@@ -7010,6 +7018,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "Betalt for et abonnement"
       ],
@@ -7280,7 +7291,7 @@
         "Konfigurer din organisation"
       ],
       "Set up your organization and start protecting your data in a few easy steps.": [
-        "Konfigurer din organisation, og begynd at beskytte dine data i nogle få nemme trin."
+        "Konfigurer din organisation, og begynd at beskytte dine data med få enkle trin."
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -7920,7 +7931,7 @@
         "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ${ usedAI } af din ${ maxAI } tilgængelige licens til skriveassistent.",
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ${ usedAI } af din ${ maxAI } tilgængelige skriveassistentlicens.",
         "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser og ${ usedAI } af dine ${ maxAI } tilgængelige skriveassistentlicenser."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
@@ -7979,7 +7990,7 @@
         "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Du kan kun have en chatinstans åben ad gangen. Luk venligst tidligere samtaler, før du starter en ny."
+        "Du kan kun have én chatinstans åben ad gangen. Luk tidligere samtaler, før du starter en ny."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
@@ -7988,8 +7999,8 @@
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mail-invitation de næste 24 timer",
-        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mail-invitationer de næste 24 timer"
+        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mailinvitation de næste 24 timer",
+        "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mailinvitationer de næste 24 timer"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
@@ -8610,7 +8621,7 @@
         "Deaktiveret"
       ],
       "Display name": [
-        "Vist navn"
+        "Visningsnavn"
       ],
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
@@ -8907,7 +8918,7 @@
         "Betaler"
       ],
       "Payment details": [
-        "Betalingsdetaljer"
+        "Betalingsoplysninger"
       ],
       "Payment method": [
         "Betalingsmetode"
@@ -9101,6 +9112,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -9447,10 +9461,10 @@
         "Åbn supportformular"
       ],
       "Upgrade subscription": [
-        "Opgradér abonnement"
+        "Opgrader abonnement"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Opgradér for at låse op for chat-support og andre premium-funktioner, eller brug vores gratis supportformular til at rapportere dit problem."
+        "Opgrader for at låse op for chat-support og andre premium-funktioner, eller brug vores gratis supportformular til at rapportere dit problem."
       ]
     },
     "Loading info": {
@@ -11131,6 +11145,9 @@
       "Allowed ${ defaultLabel }": [
         "Tilladt ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Landeopsætninger"
       ],
@@ -11139,6 +11156,9 @@
       ],
       "Free server configs": [
         "Gratis serverkonfigurationer"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Jeg fandt en anden tjeneste, som jeg synes bedre om"
@@ -11152,11 +11172,17 @@
       "Ignore group": [
         "Ignorer gruppe"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Der mangler en vigtig funktion, som jeg har brug for"
       ],
       "It's too expensive": [
         "Det er for dyrt"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Min grund er ikke angivet"
@@ -11200,8 +11226,17 @@
       "Standard server configs": [
         "Standard serverkonfigurer"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Hele organisationen"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11242,16 +11277,16 @@
         "${ upgradeLink } for at få mere lagerplads, eller fjerne noget lagerplads for at frigøre plads."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
-        "Dit abonnement har et maksimum ${ availableAddresses } adresser."
+        "Dit abonnement har et maksimum på ${ availableAddresses } yderligere adresse.",
+        "Dit abonnement har et maksimum på ${ availableAddresses } yderligere adresser."
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
         "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatorisk bruger.",
         "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatoriske brugere."
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konto.",
-        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konti."
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } yderligere VPN-konto.",
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } yderligere VPN-konti."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
@@ -12086,7 +12121,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratis"
       ]
     },
     "Property type": {
@@ -12180,7 +12215,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Annuller"
+        "Annullér"
       ],
       "Phone number has been verified.": [
         "Telefonnummeret er blevet bekræftet."
@@ -12189,7 +12224,7 @@
         "Telefonnummer er endnu ikke bekræftet."
       ],
       "Verify by SMS": [
-        "Verificer med SMS"
+        "Bekræft med SMS"
       ],
       "Verify now": [
         "Bekræft nu"
@@ -12277,8 +12312,8 @@
     },
     "Restore administrator panel": {
       "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } administrator i din organisation skal have adgang til organitationsnøglen",
-        "${ n } administratorer i din organisation skal have adgang til organationsnøglen."
+        "${ n } administrator i din organisation skal have adgang til organisationsnøglen.",
+        "${ n } administratorer i din organisation skal have adgang til organisationsnøglen."
       ],
       "Changing organization keys": [
         "Skift af organisationsnøgler"
@@ -12674,7 +12709,7 @@
         "Deaktiver SCIM integration?"
       ],
       "Generate new SCIM token?": [
-        "Generer ny SCIM token?"
+        "Generer nyt SCIM token?"
       ],
       "SCIM automatic provisioning": [
         "Automatisk provisionering af SCIM"
@@ -13647,7 +13682,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Bevar ${ currentPlanName }"
+        "Behold ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -14208,7 +14243,7 @@
         "Automatisk betaling er aktiveret"
       ],
       "Disable": [
-        "Deaktiver"
+        "Deaktivér"
       ],
       "Enable auto-pay support": [
         "Aktivér understøttelse af automatisk betaling"
@@ -14515,7 +14550,7 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "For virksomheder"
+        "Til virksomheder"
       ],
       "For families": [
         "Til familier"
@@ -14538,7 +14573,7 @@
         "CSV-felt"
       ],
       "Edit": [
-        "Rediger"
+        "Redigér"
       ],
       "Email": [
         "E-mail"
@@ -14634,7 +14669,7 @@
         "${ PROTON_SENTINEL_NAME } til organisationer"
       ],
       "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } klienter"
+        "${ VPN_APP_NAME }-klienter"
       ],
       "(active)": [
         "(aktiv)"
@@ -14785,7 +14820,7 @@
         "Automatisk sletning er aktiv"
       ],
       "Billing cycle": [
-        "Faktureringsperiode"
+        "Faktureringscyklus"
       ],
       "Block trackers and malware": [
         "Blokér trackere og malware"
@@ -15284,7 +15319,7 @@
         "Åbn sidenummerering"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2-brugernavn"
+        "OpenVPN-/IKEv2-brugernavn"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
@@ -15609,7 +15644,7 @@
         "Opgradér for at beholde dine premium-fordele."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Opgradér din netværksbeskyttelse med dedikerede servere"
+        "Opgrader din netværksbeskyttelse med dedikerede servere"
       ],
       "Upgrade your privacy": [
         "Opgradér dit privatlivs fred"
@@ -16457,6 +16492,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "ChromeBook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

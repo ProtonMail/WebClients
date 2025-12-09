@@ -79,7 +79,7 @@
         "Додати користувача"
       ],
       "Allow": [
-        "Дозволені"
+        "Дозволити"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Дозволити наскрізну зашифровану пошту для цієї групи"
@@ -214,7 +214,7 @@
         "Створити користувачів"
       ],
       "Current plan": [
-        "Поточний план"
+        "Поточний тарифний план"
       ],
       "Customize": [
         "Налаштувати"
@@ -1478,14 +1478,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Додати користувачів вручну"
-      ],
       "Close": [
         "Закрити"
-      ],
-      "Configure your network": [
-        "Налаштувати мережу"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
@@ -1502,23 +1496,11 @@
       "Create label": [
         "Створити мітку"
       ],
-      "Invite your team": [
-        "Запросити команду"
-      ],
-      "Manage global VPN permissions": [
-        "Керувати глобальними дозволами VPN"
-      ],
       "Maybe later": [
         "Можливо пізніше"
       ],
-      "Secure your organization": [
-        "Захистити організацію"
-      ],
       "Send": [
         "Надіслати"
-      ],
-      "Set up SSO": [
-        "Налаштувати SSO"
       ],
       "Take a tour": [
         "Показати знайомство"
@@ -1780,10 +1762,10 @@
         "${ selectedCitiesCount } місто(а) вибрано"
       ],
       "${ selectedCountriesCount } selected": [
-        "вибрано ${ selectedCountriesCount }",
-        "вибрано ${ selectedCountriesCount }",
-        "вибрано ${ selectedCountriesCount }",
-        "вибрано ${ selectedCountriesCount }"
+        "${ selectedCountriesCount } вибрана",
+        "${ selectedCountriesCount } вибрані",
+        "${ selectedCountriesCount } вибраних",
+        "${ selectedCountriesCount } вибрана(і)"
       ]
     },
     "Country name": {
@@ -2652,7 +2634,7 @@
     },
     "Cycle": {
       "/month": [
-        "/місячний"
+        "/місяць"
       ],
       "/user per month": [
         "/користувач на місяць"
@@ -2731,20 +2713,11 @@
       "Connect your CRM, website, printers, and more.": [
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Створіть мережевий шлюз, щоб надати користувачам доступ до ваших ІТ-ресурсів через виділені сервери."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Створення нових облікових записів користувачів або імпорт користувачів із забезпеченням SCIM, які мають SSO (єдиний вхід)."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Створити політику, щоби визначити, хто може під'єднуватися до спільних серверів у кожній країні."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Вирішіть, які користувачі можуть під’єднуватися до кожного з наших понад 120 спільних серверних розташувань."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
@@ -2769,9 +2742,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Якщо ви ще цього не зробили, активуйте способи відновлення, щоб завжди гарантовано мати доступ до ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -3209,7 +3179,7 @@
         "Недійсний номер картки"
       ],
       "Invalid code": [
-        "Невірний код"
+        "Недійсний код"
       ],
       "Invalid domain": [
         "Недійсний домен"
@@ -3870,10 +3840,10 @@
         "Керувати обліковими записами користувачів"
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
-        "Можна прийняти лише ${ n } запрошення протягом 6 місяців",
-        "Можна прийняти лише ${ n } запрошень протягом 6 місяців",
-        "Можна прийняти лише ${ n } запрошень протягом 6 місяців"
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців.",
+        "Можна прийняти лише ${ n } запрошення протягом 6 місяців.",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців.",
+        "Можна прийняти лише ${ n } запрошень протягом 6 місяців."
       ],
       "Owners of a plan with members cannot join another family plan.": [
         "Власники плану з учасниками не можуть приєднатися до іншого сімейного плану."
@@ -3909,16 +3879,16 @@
         "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців.",
-        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців.",
-        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців.",
-        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців."
+        "Ви досягли обмеження – ${ n } прийняте запрошення за 6 місяців.",
+        "Ви досягли обмеження – ${ n } прийняті запрошення за 6 місяців.",
+        "Ви досягли обмеження – ${ n } прийнятих запрошень за 6 місяців.",
+        "Ви досягли обмеження – ${ n } прийнятих запрошень за 6 місяців."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Ви досягли обмеження в ${ n } прийняте запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
-        "Ви досягли обмеження в ${ n } прийняті запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
-        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
-        "Ви досягли обмеження в ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів."
+        "Ви досягли обмеження – ${ n } прийняте запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження – ${ n } прийняті запрошення за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження – ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів.",
+        "Ви досягли обмеження – ${ n } прийнятих запрошень за 6 місяців. Кнопка стане доступною, коли ви зможете запросити додаткових користувачів."
       ],
       "You have successfully joined the family group": [
         "Ви успішно приєдналися до сімейної групи"
@@ -4388,9 +4358,9 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } учасник",
-        "${ memberCount } учасників",
         "${ memberCount } учасники",
-        "${ memberCount } учасники"
+        "${ memberCount } учасників",
+        "${ memberCount } учасників"
       ]
     },
     "Header": {
@@ -4867,6 +4837,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } користувач має доступ до спільних серверів.",
+        "${ amountUsers }/${ totalUsers } користувачі мають доступ до спільних серверів.",
+        "${ amountUsers }/${ totalUsers } користувачів мають доступ до спільних серверів.",
+        "${ amountUsers }/${ totalUsers } користувача(ів) мають доступ до спільних серверів."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -4914,9 +4890,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } учасники використовують двофакторну автентифікацію для входу до вашої організації.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } учасників використовують двофакторну автентифікацію для входу до вашої організації.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } учасника(ів) використовують двофакторну автентифікацію для входу до вашої організації."
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "${ MAIL_APP_NAME } та ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює і пароль входу, і другий пароль. Щоб перемикнутися в режим єдиного пароля, введіть єдиний пароль, який ви хочете використовувати, і натисніть кнопку «Зберегти»"
@@ -5021,10 +4994,10 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
       ],
       "${ selectedEntities.length } selected": [
-        "вибрано ${ selectedEntities.length }",
-        "вибрано ${ selectedEntities.length }",
-        "вибрано ${ selectedEntities.length }",
-        "вибрано ${ selectedEntities.length }"
+        "${ selectedEntities.length } вибраний",
+        "${ selectedEntities.length } вибрані",
+        "${ selectedEntities.length } вибраних",
+        "${ selectedEntities.length } вибраного(их)"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Вибрано ${ selectedFoldersCountLocalized } теку",
@@ -5102,7 +5075,7 @@
         "Гарантія повернення грошей протягом 30 днів"
       ],
       "30-day money-back guarantee.": [
-        "Гарантія повернення коштів протягом 30 днів."
+        "Гарантія повернення грошей протягом 30 днів."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } розміщується на хостингу ${ BRAND_NAME }, що дозволяє швидко налаштувати субдомен. ${ learnMoreLink }"
@@ -5659,9 +5632,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Отримуйте сповіщення, якщо ваш пароль або інші персональні дані потрапили до витоку. ${ learnMoreLinkNoBreach }"
       ],
-      "Get started": [
-        "Початок роботи"
-      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
       ],
@@ -6035,16 +6005,16 @@
         "або ${ selectFileButton }"
       ],
       "or assign to any country in ${ availableAgainAfterDays } day": [
-        "або призначити в будь-яку країну через ${ availableAgainAfterDays } день",
-        "або призначити в будь-яку країну через ${ availableAgainAfterDays } дні",
-        "або призначити в будь-яку країну через ${ availableAgainAfterDays } днів",
-        "або призначити в будь-яку країну через ${ availableAgainAfterDays } днів"
+        "або призначте будь-якій країні через ${ availableAgainAfterDays } день",
+        "або призначте будь-якій країні через ${ availableAgainAfterDays } дні",
+        "або призначте будь-якій країні через ${ availableAgainAfterDays } днів",
+        "або призначте будь-якій країні через ${ availableAgainAfterDays } днів"
       ],
       "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "або призначити в будь-яку країну через ${ availableAgainAfterHours } годину",
-        "або призначити в будь-яку країну через ${ availableAgainAfterHours } години",
-        "або призначити в будь-яку країну через ${ availableAgainAfterHours } годин",
-        "або призначити в будь-яку країну через ${ availableAgainAfterHours } годин"
+        "або призначте будь-якій країні через ${ availableAgainAfterHours } годину",
+        "або призначте будь-якій країні через ${ availableAgainAfterHours } години",
+        "або призначте будь-якій країні через ${ availableAgainAfterHours } годин",
+        "або призначте будь-якій країні через ${ availableAgainAfterHours } годин"
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
@@ -6300,9 +6270,6 @@
       ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Налаштуйте свою організацію і почніть захищати свої дані, виконавши кілька простих кроків."
       ],
       "Setting up your new address…": [
         "Налаштування вашої нової адреси…"
@@ -6845,16 +6812,16 @@
         "Наразі ви використовуєте ${ ipCount } виділених серверів із ${ ipAddresses } доступних."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Зараз ви використовуєте ${ usedMembers } з ${ maxMembers } доступної ліцензії користувача та ${ usedAI } з ${ maxAI } доступної ліцензії помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувача та ${ usedAI } з ${ maxAI } доступних ліцензій помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувача та ${ usedAI } з ${ maxAI } доступних ліцензій помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } із ваших ${ maxMembers } доступних ліцензій користувача та ${ usedAI } із ваших ${ maxAI } доступних ліцензій помічника з написання."
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступної ліцензії користувача та ${ usedAI } з ${ maxAI } доступної ліцензії помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та ${ usedAI } з ${ maxAI } доступних ліцензій помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та ${ usedAI } з ${ maxAI } доступних ліцензій помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та ${ usedAI } з ${ maxAI } доступних ліцензій помічника з написання."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Наразі ви використовуєте ${ usedMembers } із вашої ${ maxMembers } доступної ліцензії користувача та жодної з вашої ${ maxAI } доступної ліцензії помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } із ваших ${ maxMembers } доступних ліцензій користувача та жодної з ваших ${ maxAI } доступних ліцензій помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } із ваших ${ maxMembers } доступних ліцензій користувача та жодної з ваших ${ maxAI } доступних ліцензій помічника з написання.",
-        "Зараз ви використовуєте ${ usedMembers } із ваших ${ maxMembers } доступних ліцензій користувача та жодної з ваших ${ maxAI } доступних ліцензій помічника з написання."
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступної ліцензії користувача та жодної з ${ maxAI } доступної ліцензії помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та жодної з ${ maxAI } доступних ліцензій помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та жодної з ${ maxAI } доступних ліцензій помічника з написання.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних ліцензій користувачів та жодної з ${ maxAI } доступних ліцензій помічника з написання."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступної користувацької ліцензії",
@@ -6886,6 +6853,12 @@
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -6897,9 +6870,6 @@
       ],
       "You can now return to the application to continue": [
         "Тепер ви можете повернутися до програми для продовження роботи"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Ви можете відкрити одночасно лише один сеанс чату. Будь ласка, закрийте попередні розмови перед початком нової."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
@@ -6923,10 +6893,10 @@
         "Вам доступні ${ availableCount } нових серверів."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "У вас є ${ unassignedAvailableCount } нещодавно використаний сервер. Щоб виділити цей сервер іншій країні, вам доведеться дочекатися завершення деактивації.",
-        "У вас є ${ unassignedAvailableCount } нещодавно використані сервери. Щоб виділити ці сервери іншій країні, вам доведеться дочекатися завершення деактивації.",
-        "У вас є ${ unassignedAvailableCount } нещодавно використані сервери. Щоб виділити ці сервери іншій країні, вам доведеться дочекатися завершення деактивації.",
-        "У вас є ${ unassignedAvailableCount } нещодавно використані сервери. Щоб виділити ці сервери іншій країні, вам доведеться дочекатися завершення деактивації."
+        "У вас є ${ unassignedAvailableCount } нещодавно використаний сервер. Щоб призначити цей сервер іншій країні, необхідно дочекатися завершення деактивації.",
+        "У вас є ${ unassignedAvailableCount } нещодавно використані сервери. Щоб призначити ці сервери іншій країні, необхідно дочекатися завершення деактивації.",
+        "У вас є ${ unassignedAvailableCount } нещодавно використаних серверів. Щоб призначити ці сервери іншій країні, необхідно дочекатися завершення деактивації.",
+        "У вас є ${ unassignedAvailableCount } нещодавно використаних серверів. Щоб призначити ці сервери іншій країні, необхідно дочекатися завершення деактивації."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
@@ -7202,9 +7172,9 @@
       ],
       "${ group.UserCount } user": [
         "${ group.UserCount } користувач",
-        "${ group.UserCount } користувачів",
         "${ group.UserCount } користувачі",
-        "${ group.UserCount } користувачі"
+        "${ group.UserCount } користувачів",
+        "${ group.UserCount } користувача(ів)"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -7255,7 +7225,7 @@
         "Розширено"
       ],
       "Allow": [
-        "Дозволені"
+        "Дозволити"
       ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
@@ -8149,20 +8119,6 @@
         "Що це?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Спілкування наживо доступне з ${ planName }"
-      ],
-      "Open support form": [
-        "Відкрити форму підтримки"
-      ],
-      "Upgrade subscription": [
-        "Оновити передплату"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміальних функцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Майже готово"
@@ -8441,7 +8397,7 @@
     },
     "Navigation": {
       "All": [
-        "Всі"
+        "Усі"
       ],
       "Allow": [
         "Дозволені"
@@ -8480,7 +8436,7 @@
         "Видалити обліковий запис"
       ],
       "Downgrade account": [
-        "Понизити тарифний план"
+        "Понизити обліковий запис"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Отримати ${ BRAND_NAME } безплатно"
@@ -10323,9 +10279,9 @@
     "Plans": {
       "${ cycle } month": [
         "${ cycle } місяць",
-        "${ cycle } місяців",
         "${ cycle } місяці",
-        "${ cycle } місяці"
+        "${ cycle } місяців",
+        "${ cycle } місяця(ів)"
       ],
       "${ months } month plan": [
         "План на ${ months } місяць",
@@ -10344,7 +10300,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Безплатно"
       ]
     },
     "Property type": {
@@ -12594,11 +12550,6 @@
         "Поле vCard"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Теми"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } день",
@@ -12629,9 +12580,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник у написанні ${ BRAND_NAME } Scribe"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Клієнти ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(активні)"
       ],
@@ -12655,9 +12603,6 @@
       ],
       "4. Select a server to connect to": [
         "4. Виберіть сервер, до якого потрібно під'єднатися"
-      ],
-      "Account": [
-        "Обліковий запис"
       ],
       "Account recovery": [
         "Відновлення облікового запису"
@@ -12962,9 +12907,6 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
-      "Dismiss setup checklist": [
-        "Відхилити контрольний список налаштування"
-      ],
       "Domain names": [
         "Домени"
       ],
@@ -13015,9 +12957,6 @@
       ],
       "Email": [
         "Е-пошта"
-      ],
-      "Email subscriptions": [
-        "Підписки електронної пошти"
       ],
       "Enter endpoints into your identity provider": [
         "Введіть кінцеві точки у вашого провайдера ідентифікації"
@@ -13072,9 +13011,6 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
-      ],
-      "Get started": [
-        "Початок роботи"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -13166,9 +13102,6 @@
       "Open pagination": [
         "Показати нумерацію сторінок"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Ім'я користувача OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Файли конфігурації OpenVPN"
       ],
@@ -13210,9 +13143,6 @@
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plans": [
-        "Тарифні плани"
       ],
       "Preview": [
         "Попередній перегляд"
@@ -13442,9 +13372,6 @@
       "Upgrade to ${ planName }": [
         "Покращити до ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Вдоскональте рівень захисту мережі за допомогою виділених серверів"
-      ],
       "Upgrade your privacy": [
         "Вдоскональте свою приватність"
       ],
@@ -13507,9 +13434,6 @@
       ],
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
-      ],
-      "Your current plan": [
-        "Поточний тарифний план"
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
@@ -13808,10 +13732,10 @@
         "Підтвердити все"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Не вдалося автоматично увімкнути доступ адміністратора для користувача ${ n }, оскільки його ключі шифрування було оновлено:",
-        "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:",
-        "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:",
-        "Не вдалося автоматично увімкнути доступ адміністратора для користувачів ${ n }, оскільки їхні ключі шифрування було оновлено:"
+        "Не вдалося автоматично ввімкнути адміністраторський доступ для ${ n } користувача, оскільки його ключі шифрування оновлено:",
+        "Не вдалося автоматично ввімкнути адміністраторський доступ для ${ n } користувачів, оскільки їхні ключі шифрування оновлено:",
+        "Не вдалося автоматично ввімкнути адміністраторський доступ для ${ n } користувачів, оскільки їхні ключі шифрування оновлено:",
+        "Не вдалося автоматично ввімкнути адміністраторський доступ для ${ n } користувачів, оскільки їхні ключі шифрування оновлено:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Не вдалося увімкнути доступ адміністратора: ${ error }"
@@ -13867,7 +13791,7 @@
         "Рекомендовано"
       ],
       "Save ${ price.uiData.discountPercent }%": [
-        "Знижка ${ price.uiData.discountPercent }%"
+        "Заощадьте ${ price.uiData.discountPercent }%"
       ]
     },
     "User role": {

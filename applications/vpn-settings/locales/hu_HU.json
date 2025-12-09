@@ -70,7 +70,7 @@
         "Kredit hozzáadása"
       ],
       "Add domain": [
-        "Domain név hozzáadása"
+        "Domain hozzáadása"
       ],
       "Add external address": [
         "Külső cím hozzáadása"
@@ -334,7 +334,7 @@
         "Kész"
       ],
       "Downgrade": [
-        "Váltás kisebb csomagra"
+        "Kisebb csomagra váltás"
       ],
       "Download": [
         "Letöltés"
@@ -1564,7 +1564,7 @@
         "Élettartam"
       ],
       "Monthly": [
-        "Minden hónapban"
+        "Havonta"
       ],
       "Two-year": [
         "Kétévente"
@@ -4884,7 +4884,7 @@
         "Kulcs típusa"
       ],
       "Location": [
-        "Helyszín"
+        "Hely"
       ],
       "Members": [
         "Tagok"
@@ -5560,7 +5560,7 @@
         "30 napos pénz-visszafizetési garancia"
       ],
       "30-day money-back guarantee.": [
-        "30 napos pénzvisszatérítési garancia."
+        "30 napos pénz-visszafizetési garancia."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "A(z) ${ protonSubdomain } domain nevet a ${ BRAND_NAME } tárolja, így gyorsan létrehozhat egy aldomain nevet. ${ learnMoreLink }"
@@ -7503,9 +7503,6 @@
       "You can now return to the application to continue": [
         "Most már visszatérhet az applikációba és fojtathatja"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Egyszerre csak egy csevegés-ablakot tud megnyitni. Zárja be előző beszélgetéseit, mielőtt belekezd egy újba."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
@@ -7956,7 +7953,7 @@
         "Black Friday"
       ],
       "Block": [
-        "Tiltás"
+        "Letiltás"
       ],
       "Block malware only": [
         "Csak a rosszindulatú programok blokkolása"
@@ -8103,7 +8100,7 @@
         "Kikapcsolva"
       ],
       "Display name": [
-        "Megjelenítendő név"
+        "Megjelenített név"
       ],
       "Do you have any suggestions for our team?": [
         "Lenne valamilyen javaslata a csapatunk számára?"
@@ -8902,20 +8899,6 @@
         "Mi ez?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Élő csevegés a következővel érhető el: ${ planName }"
-      ],
-      "Open support form": [
-        "Támogatási űrlap megnyitása"
-      ],
-      "Upgrade subscription": [
-        "Előfizetési csomag bővítése"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "A csevegős támogatás és más prémium funkciók feloldásához frissítse csomagját, vagy használja ingyenes támogatási űrlapunkat problémájának bejelentéséhez."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Majdnem kész"
@@ -9208,13 +9191,13 @@
     },
     "Navigation": {
       "All": [
-        "Összes"
+        "Mind"
       ],
       "Allow": [
         "Engedélyezés"
       ],
       "Block": [
-        "Tiltás"
+        "Letiltás"
       ],
       "Spam": [
         "Levélszemét"
@@ -11460,7 +11443,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Törlés"
+        "Mégsem"
       ],
       "Email address has been verified.": [
         "Az e-mail cím megerősítésre került."
@@ -11478,7 +11461,7 @@
         "Helyreállító e-mail megerősítése?"
       ],
       "Verify with email": [
-        "Ellenőrzés email-el"
+        "Ellenőrzés e-maillel"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Az e-mail címének megerősítése növeli a fiókja biztonságát, illeve több helyreállítási lehetőséget biztosít."
@@ -11497,7 +11480,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Törlés"
+        "Mégsem"
       ],
       "Phone number has been verified.": [
         "A telefonszám ellenőrizve."
@@ -12757,7 +12740,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "${ currentPlanName } megtartása"
+        "Maradjon ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -12930,7 +12913,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Értem."
+        "Rendben"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Jelentkezzen be az Apple App Store fiókjába, majd válassza a ${ subscriptions } lehetőséget."
@@ -13305,7 +13288,7 @@
         "Az automatikus fizetés engedélyezve van"
       ],
       "Disable": [
-        "Kikapcsolás"
+        "Letiltás"
       ],
       "Enable auto-pay support": [
         "A automatikus fizetés támogatásának aktiválása."
@@ -13674,11 +13657,6 @@
         "vCard mező"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Témák"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } nap",
@@ -13707,9 +13685,6 @@
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } kliensek"
-      ],
       "(active)": [
         "(aktív)"
       ],
@@ -13736,9 +13711,6 @@
       ],
       "Access control": [
         "Hozzáférés vezérlés"
-      ],
-      "Account": [
-        "Fiók"
       ],
       "Account recovery": [
         "Fiók helyreállítás"
@@ -14139,9 +14111,6 @@
       "Email": [
         "E-mail"
       ],
-      "Email subscriptions": [
-        "E-mail feliratkozás"
-      ],
       "Enable advanced account protection": [
         "A speciális fiókvédelem engedélyezése"
       ],
@@ -14286,7 +14255,7 @@
         "Hálózati hiba"
       ],
       "Next": [
-        "Tovább"
+        "Következő"
       ],
       "Night theme": [
         "Éjszakai téma"
@@ -14305,9 +14274,6 @@
       ],
       "Open pagination": [
         "Lapozó megnyitása"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 felhasználónév"
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfigurációs fájlok"
@@ -14357,9 +14323,6 @@
       "Phone": [
         "Telefonszám"
       ],
-      "Plans": [
-        "Csomagok"
-      ],
       "Preview": [
         "Előnézet"
       ],
@@ -14376,7 +14339,7 @@
         "QR-kód"
       ],
       "Recommended": [
-        "Ajánlott"
+        "Javasolt"
       ],
       "Recommended actions": [
         "Javasolt műveletek"
@@ -14604,9 +14567,6 @@
       "Upgrade to keep your premium benefits.": [
         "Váltson nagyobb csomagra, hogy megőrizze prémium előnyeit."
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "A hálózat védelmének verziófrissítése dedikált szerverekkel"
-      ],
       "Upgrade your privacy": [
         "Fejlessze az adatvédelmét"
       ],
@@ -14684,9 +14644,6 @@
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
-      ],
-      "Your current plan": [
-        "Jelenlegi csomag"
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"

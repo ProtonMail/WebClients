@@ -70,7 +70,7 @@
         "Adicionar créditos"
       ],
       "Add domain": [
-        "Adicionar um domínio"
+        "Adicionar domínio"
       ],
       "Add external address": [
         "Adicionar um endereço externo"
@@ -85,7 +85,7 @@
         "Adicionar utilizador"
       ],
       "Allow": [
-        "Endereços permitidos"
+        "Permitir"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitir correio encriptado de ponta a ponta para este grupo"
@@ -238,7 +238,7 @@
         "Criar utilizadores"
       ],
       "Current plan": [
-        "Plano actual"
+        "Plano atual"
       ],
       "Customize": [
         "Personalizar"
@@ -259,7 +259,7 @@
         "Eliminar"
       ],
       "Delete account": [
-        "Apagar conta"
+        "Eliminar a conta"
       ],
       "Delete Gateway": [
         "Eliminar a porta de entrada"
@@ -3077,7 +3077,7 @@
         "${ name } foi movido para a lista de endereços permitidos."
       ],
       "${ name } moved to block list": [
-        "${ name } foi movido para a lista de endereços bloqueados."
+        "${ name } foi movido para a lista de endereços bloqueados"
       ],
       "${ name } moved to spam list": [
         "${ name } foi movido para a lista de spam."
@@ -5444,7 +5444,7 @@
         "Um utilizador é uma conta associada com um único nome de utilizador, caixa de correio e pessoa."
       ],
       "Account successfully updated": [
-        "Conta actualizada"
+        "Conta atualizada"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
@@ -5628,7 +5628,7 @@
         "Ao desativar a monitorização de eventos de segurança, também irá limpar todo o seu histórico. Tem a certeza de que deseja desativar isto?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar guardadas"
@@ -5733,7 +5733,7 @@
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
       ],
       "Current plan": [
-        "Plano actual"
+        "Plano atual"
       ],
       "Custom": [
         "Personalizado"
@@ -7034,7 +7034,7 @@
         "Total de endereços de e-mail"
       ],
       "Total storage": [
-        "Armazenamento total"
+        "Total de armazenamento"
       ],
       "Total supported domains": [
         "Total de domínios suportados"
@@ -7359,9 +7359,6 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -7750,7 +7747,7 @@
         "Endereço"
       ],
       "Address type": [
-        "Categoria de endereço"
+        "Tipo de endereço"
       ],
       "Addresses": [
         "Endereços"
@@ -7963,7 +7960,7 @@
         "Desativado"
       ],
       "Display name": [
-        "Nome exibido"
+        "Nome a mostrar"
       ],
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
@@ -8245,7 +8242,7 @@
         "Pagante"
       ],
       "Payment details": [
-        "Detalhes de Pagamento"
+        "Detalhes de pagamento"
       ],
       "Payment method": [
         "Método de pagamento"
@@ -8756,20 +8753,6 @@
         "O que é isto?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "O chat em direto está disponível com ${ planName }"
-      ],
-      "Open support form": [
-        "Abrir o formulário de suporte"
-      ],
-      "Upgrade subscription": [
-        "Actualizar a sua subscrição"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Actualize para desbloquear o suporte por chat e outras funcionalidades premium, ou utilize o nosso formulário de suporte gratuito para comunicar o seu problema."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Quase lá"
@@ -9059,7 +9042,7 @@
     },
     "Navigation": {
       "All": [
-        "Tudo"
+        "Todos"
       ],
       "Allow": [
         "Endereços permitidos"
@@ -9098,7 +9081,7 @@
         "Apagar conta"
       ],
       "Downgrade account": [
-        "Optar por um plano inferior"
+        "Mudar para uma conta com menos funcionalidades"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obter o ${ BRAND_NAME } gratuitamente"
@@ -9774,7 +9757,7 @@
         "Apagar a conta?"
       ],
       "Downgrade account?": [
-        "Mudar para um conta com menos funcionalidades?"
+        "Mudar para uma conta com menos funcionalidades?"
       ],
       "Review subscription": [
         "Rever a subscrição"
@@ -10391,7 +10374,7 @@
         "Definições do servidor Free"
       ],
       "I found another service that I like better": [
-        "Encontrei outro serviço do qual gosto mais"
+        "Encontrei outro serviço de que gosto mais"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
@@ -11179,7 +11162,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratuito"
       ]
     },
     "Property type": {
@@ -12658,7 +12641,7 @@
         "Faturado a cada 2 anos"
       ],
       "Billed monthly": [
-        "Faturação mensal"
+        "Faturado mensalmente"
       ],
       "Billed yearly": [
         "Faturação anual"
@@ -12743,7 +12726,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Percebi"
+        "Entendido"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, selecionar ${ subscriptions }."
@@ -13376,7 +13359,7 @@
         "As preferências foram atualizadas."
       ],
       "Resent invitation": [
-        "Reenviar o convite"
+        "O convite foi reenviado."
       ]
     },
     "Suffix": {
@@ -13422,7 +13405,7 @@
         "Para famílias"
       ],
       "For individuals": [
-        "Para particulares"
+        "Para indivíduos"
       ]
     },
     "TableHeader": {
@@ -13490,11 +13473,6 @@
         "Campo vCard"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Temas"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -13523,9 +13501,6 @@
       "${ feature } is now active": [
         "A funcionalidade ${ feature } agora está ativa."
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Clientes ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(ativo)"
       ],
@@ -13552,9 +13527,6 @@
       ],
       "Access control": [
         "Controlo de acesso"
-      ],
-      "Account": [
-        "Conta"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -13645,7 +13617,7 @@
         "Quantia"
       ],
       "Amount due": [
-        "Montante devido"
+        "Quantia devida"
       ],
       "An address for each role": [
         "Um endereço para cada função"
@@ -13847,7 +13819,7 @@
         "Eliminar ${ policyName }?"
       ],
       "Delete account": [
-        "Apagar conta"
+        "Eliminar a conta"
       ],
       "Delete group?": [
         "Apagar grupo?"
@@ -13954,9 +13926,6 @@
       ],
       "Email": [
         "E-mail"
-      ],
-      "Email subscriptions": [
-        "Subscrições de e-mail"
       ],
       "Enable advanced account protection": [
         "Ativar a proteção avançada da conta"
@@ -14125,9 +14094,6 @@
       "Open pagination": [
         "Abrir paginação"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Utilizador OpenVPN/IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Ficheiros de configuração OpenVPN"
       ],
@@ -14175,9 +14141,6 @@
       ],
       "Phone": [
         "Telefone"
-      ],
-      "Plans": [
-        "Planos"
       ],
       "Preview": [
         "Pré-visualização"
@@ -14420,9 +14383,6 @@
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Melhore a sua proteção da rede com servidores dedicados"
-      ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
@@ -14500,9 +14460,6 @@
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
-      ],
-      "Your current plan": [
-        "O seu plano actual"
       ],
       "Your exposed information": [
         "As suas informações expostas"

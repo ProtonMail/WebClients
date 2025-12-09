@@ -588,7 +588,7 @@
         "Lär dig mer"
       ],
       "Let's talk": [
-        "Låt oss prata"
+        "Låt oss prata!"
       ],
       "Load more": [
         "Ladda mer"
@@ -5872,7 +5872,7 @@
         "30 dagars pengarna-tillbaka-garanti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
-        "En ${ protonSubdomain } hostas av ${ BRAND_NAME } vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
+        "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
@@ -12066,7 +12066,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratis"
       ]
     },
     "Property type": {
@@ -12214,6 +12214,9 @@
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Om du prenumererar före detta datum får du **${ referrerRewardAmount }** i krediter. Om du inte prenumererar kommer du att nedgraderas till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
@@ -13798,7 +13801,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Förstår"
+        "Förstått"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
@@ -14214,7 +14217,7 @@
     },
     "Success": {
       "Account deleted. Signing out...": [
-        "Konto borttaget. Loggar ut …"
+        "Konto borttaget. Loggar ut..."
       ],
       "Address added": [
         "Adress tillagd"
@@ -14753,7 +14756,7 @@
         "Automatisk borttagning är aktivt"
       ],
       "Billing cycle": [
-        "Faktureringsperiod"
+        "Faktureringscykel"
       ],
       "Block trackers and malware": [
         "Blockera spårare och skadlig kod"
@@ -15249,7 +15252,7 @@
         "Öppna sidnumrering"
       ],
       "OpenVPN / IKEv2 username": [
-        "OpenVPN/IKEv2-användarnamn"
+        "Användarnamn för OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurationsfiler"
@@ -15318,7 +15321,7 @@
         "QR-kod"
       ],
       "Recommended": [
-        "Rekommenderade"
+        "Rekommenderad"
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"

@@ -78,7 +78,7 @@
         "Añadir créditos"
       ],
       "Add domain": [
-        "Añadir un dominio"
+        "Añadir dominio"
       ],
       "Add external address": [
         "Añadir una dirección externa"
@@ -96,7 +96,7 @@
         "Añadir usuario"
       ],
       "Allow": [
-        "Direcciones permitidas"
+        "Permitir"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitir los correos cifrados de extremo a extremo para este grupo"
@@ -132,7 +132,7 @@
         "Cancelar"
       ],
       "Cancel subscription": [
-        "Cancelar la suscripción"
+        "Cancelar tu suscripción"
       ],
       "Cancel trial and pay": [
         "Cancelar la prueba gratuita y pagar"
@@ -1245,7 +1245,7 @@
         "Desactivar dirección \"${ emailAddress }\""
       ],
       "Disable E2EE mail": [
-        "Deshabiliar correo E2EE"
+        "Desactivar correo E2EE"
       ],
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
@@ -1731,7 +1731,7 @@
         "De por vida"
       ],
       "Monthly": [
-        "Cada mes"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -3218,17 +3218,23 @@
       "Connect your CRM, website, printers, and more.": [
         "Conecta tu CRM, sitio web, impresoras y mucho más."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Crea una puerta de enlace para dar a tus usuarios acceso a tus recursos de TI a través de servidores dedicados."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crea una reunión de Zoom y añade los detalles para unirse a tu evento en un clic."
       ],
       "Create groups you can email with a single address.": [
         "Crea grupos a los que puedas enviar correos electrónicos con una sola dirección."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Crear nuevas cuentas de usuario o importar usuarios con aprovisionamiento SCIM de SSO (inicio de sesión único)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crea políticas para decidir quién puede conectarse a servidores compartidos en cada país."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Decide qué usuarios se pueden conectar con cada una de nuestras más de 120 ubicaciones de servidor compartidas."
+        "Decide qué usuarios pueden conectarse a cada una de nuestras más de 120 ubicaciones de servidores compartidos."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accede fácilmente a tu correo electrónico y calendario en el escritorio y en el móvil."
@@ -3366,7 +3372,7 @@
         "Error al mover ${ name } a tu lista de direcciones bloqueadas"
       ],
       "${ name } failed to move to spam list": [
-        "Error al mover ${ name } a la lista spam"
+        "Error al mover ${ name } a la lista Spam"
       ],
       "${ name } moved to allow list": [
         "${ name } ha sido movido a tu lista de direcciones permitidas."
@@ -3419,7 +3425,7 @@
         "Cambiando a otro proveedor"
       ],
       "Temporary need, may come back in the future": [
-        "Necesidad temporal que puede volver en el futuro"
+        "Se trata de una necesidad temporal que podría volver en el futuro."
       ],
       "The VPN is too slow": [
         "La VPN es muy lenta."
@@ -3612,7 +3618,7 @@
         "Código del otro dispositivo"
       ],
       "Enter code manually": [
-        "Introducie el código manualmente"
+        "Introduce el código manualmente"
       ],
       "QR code sign-in disabled": [
         "Inicio de sesión con código QR desactivado"
@@ -3913,10 +3919,10 @@
         "El número de tarjeta ingresado no es válido."
       ],
       "Invalid code": [
-        "El código no es válido."
+        "Código no válido"
       ],
       "Invalid domain": [
-        "El dominio no es válido."
+        "Dominio no válido"
       ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
@@ -4758,10 +4764,10 @@
         "Cambiar el nombre de la familia"
       ],
       "Delete family group?": [
-        "¿Eliminar el grupo familiar?"
+        "¿Eliminar grupo familiar?"
       ],
       "Delete organization?": [
-        "¿Eliminar la organización?"
+        "¿Eliminar organización?"
       ],
       "Edit user storage": [
         "Editar almacenamiento de usuario"
@@ -5956,7 +5962,7 @@
         "Se ha copiado la dirección al portapapeles."
       ],
       "Admin account allocation": [
-        "Asignación de cuenta de administrador"
+        "Asignación de la cuenta de administrador"
       ],
       "Affected user is on row": [
         "El usuario afectado está en la fila.",
@@ -6613,7 +6619,7 @@
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Si procedes a pasar a un plan inferior, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
+        "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si has restablecido recientemente tu contraseña, puedes utilizar un método de recuperación de datos para desbloquear tus datos."
@@ -8032,7 +8038,7 @@
         "Debes activar la clave privada de tu organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para añadirla como método de pago."
@@ -9258,7 +9264,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Añadir un código de regalo"
+        "Añadir código promocional"
       ],
       "Add gift code": [
         "Añadir un código de regalo"
@@ -9446,10 +9452,10 @@
         "Abrir el formulario de soporte"
       ],
       "Upgrade subscription": [
-        "Mejorar tu suscripción"
+        "Mejorar suscripción"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Mejora tu plan para desbloquear el soporte por chat y otras funciones premium o utiliza nuestro formulario de soporte gratuito para notificar tu problema."
+        "Mejora tu plan para desbloquear el soporte por chat y otras funciones prémium o utiliza nuestro formulario de soporte gratuito para notificar tu problema."
       ]
     },
     "Loading info": {
@@ -9638,7 +9644,7 @@
         "Cambiar contraseña"
       ],
       "Convert to SSO": [
-        "Pasar al SSO"
+        "Pasar a la autenticación única (SSO)"
       ],
       "Delete": [
         "Eliminar"
@@ -9767,7 +9773,7 @@
     },
     "Navigation": {
       "All": [
-        "Todas"
+        "Todos"
       ],
       "Allow": [
         "Direcciones permitidas"
@@ -9803,7 +9809,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Eliminar la cuenta"
+        "Eliminar cuenta"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"
@@ -11148,7 +11154,7 @@
         "Configuraciones del servidor gratuito"
       ],
       "I found another service that I like better": [
-        "He encontrado otro servicio que me gusta mejor."
+        "He encontrado otro servicio que me gusta más"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo una cuenta ${ BRAND_NAME } diferente."
@@ -11936,7 +11942,7 @@
         "Introduzca un nombre"
       ],
       "example@domain.com": [
-        "ejemplo@dominio.com"
+        "ejemplo@dominio.es"
       ],
       "Feedback": [
         "Comentarios"
@@ -12096,7 +12102,7 @@
     },
     "Price": {
       "Free": [
-        "Gratuito"
+        "Gratis"
       ]
     },
     "Property type": {
@@ -13754,7 +13760,7 @@
         "Facturado cada 2 años"
       ],
       "Billed monthly": [
-        "Facturado cada mes"
+        "Facturación mensual"
       ],
       "Billed yearly": [
         "Facturación anual"
@@ -13843,7 +13849,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Solo inicia sesión en la cuenta de App Store de Apple y luego selecciona ${ subscriptions }."
@@ -13861,7 +13867,7 @@
         "Has comprado tu plan usando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "subscription downgrading info": {
@@ -14488,7 +14494,7 @@
         "Se han actualizado las preferencias."
       ],
       "Resent invitation": [
-        "Reenviar la invitación"
+        "Se ha reenviado la invitación."
       ]
     },
     "Suffix": {
@@ -14528,7 +14534,7 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        "Para negocios"
+        "Para empresas"
       ],
       "For families": [
         "Para familias"
@@ -14858,7 +14864,7 @@
         "Confirmar"
       ],
       "Confirm address": [
-        "Confirmar la dirección"
+        "Confirmar dirección"
       ],
       "Confirm downgrade": [
         "Confirmar el paso a un plan inferior"
@@ -14991,7 +14997,7 @@
         "¿Eliminar ${ policyName }?"
       ],
       "Delete account": [
-        "Eliminar la cuenta"
+        "Eliminar cuenta"
       ],
       "Delete group?": [
         "¿Eliminar el grupo?"
@@ -15038,6 +15044,9 @@
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
+      ],
+      "Dismiss setup checklist": [
+        "Descartar lista de configuración"
       ],
       "Domain names": [
         "Nombres de dominio"
@@ -15109,7 +15118,7 @@
         "Categorías de correo electrónico"
       ],
       "Email subscriptions": [
-        "Boletines electrónicos"
+        "Suscripciones de correo electrónico"
       ],
       "Enable advanced account protection": [
         "Activar la protección avanzada de la cuenta"
@@ -15843,7 +15852,7 @@
         "URL de punto final de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Excluyendo usuarios con inicio de sesión con 2FA administrado por tu proveedor de identidad"
+        "Exclusión de los usuarios con autenticación única cuyo segundo factor de autenticación es gestionado por el proveedor de identidad."
       ],
       "Feature in early access": [
         "Funcionalidad en acceso anticipado"
@@ -15956,7 +15965,7 @@
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
       ],
       "Group membership paused": [
-        "Se ha pausado la membresía del grupo."
+        "Se ha suspendido la suscripción al grupo."
       ],
       "Sending member invitation": [
         "Enviando una invitación al miembro"
