@@ -3,8 +3,8 @@ import type { ReactElement, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
+import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
@@ -73,7 +73,7 @@ const PlanCard = ({
                     color="norm"
                     onClick={() => onSelect(planName)}
                     disabled={disabled}
-                    className="w-full"
+                    className="w-full text-nowrap"
                     aria-describedby={`desc_${planName}`}
                     data-testid={`select-${planName}`}
                 >
@@ -103,7 +103,7 @@ const PlanCard = ({
                     </div>
                 ) : null}
                 <div className="flex flex-row items-center">
-                    <h2 className="h3 plan-selection-title flex text-bold mb-2" id={`desc_${planName}`}>
+                    <h2 className="h3 plan-selection-title flex text-bold mb-2 text-nowrap" id={`desc_${planName}`}>
                         {planTitle}
                     </h2>
                 </div>
