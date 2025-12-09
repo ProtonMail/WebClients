@@ -899,6 +899,9 @@
       "Retry": [
         "Opnieuw proberen"
       ],
+      "Retry failed items": [
+        "Mislukte items opnieuw proberen"
+      ],
       "Run diagnostics": [
         "Diagnostiek uitvoeren"
       ],
@@ -6853,9 +6856,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
-      "A screenshot of ${ SHEETS_APP_NAME }": [
-        "Een schermafbeelding van ${ SHEETS_APP_NAME }"
-      ],
       "Account holder": [
         "Rekeninghouder"
       ],
@@ -7072,9 +7072,6 @@
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
-      ],
-      "Encrypted node": [
-        "Versleutelde node"
       ],
       "Enter device name": [
         "Apparaatnaam invoeren"

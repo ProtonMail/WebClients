@@ -3723,6 +3723,9 @@
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Conflit de stratégie inconnu : ${ strategy }"
+      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
@@ -6853,9 +6856,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
-      "A screenshot of ${ SHEETS_APP_NAME }": [
-        "Une capture d’écran de ${ SHEETS_APP_NAME }"
-      ],
       "Account holder": [
         "Titulaire du compte"
       ],
@@ -7075,9 +7075,6 @@
       ],
       "Encrypt emails": [
         "Chiffrer les messages"
-      ],
-      "Encrypted node": [
-        "Nœud chiffré"
       ],
       "Enter device name": [
         "Saisir le nom de l'appareil"
@@ -8989,6 +8986,9 @@
       "\"${ name }\" saved successfully": [
         "« ${ name } » a été enregistré."
       ],
+      "\"${ name }\" successfully copied": [
+        "« ${ name } » a été copié."
+      ],
       "\"${ name }\" successfully moved": [
         "« ${ name } » a été déplacé."
       ],
@@ -9001,6 +9001,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } l'élément n'a pas pu être copié",
+        "${ errors.length } les éléments n'ont pas pu être copiés"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } élément n'a pas pu être mis à la corbeille",
+        "${ errors.length } éléments n'ont pas pu être mis à la corbeille"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "Le retrait de ${ nbFailures } photo à « ${ albumLink.name } » n'a pas abouti.",
@@ -9017,6 +9025,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } photo a été retirée de « ${ albumLink.name } »",
         "${ nbSuccesses } photos ont étés retirés de « ${ albumLink.name } »"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } élément copié a été déplacé dans la corbeille",
+        "${ numberOfItems } éléments copiés ont été déplacés dans la corbeille"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } élément supprimé",
@@ -9053,6 +9065,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } élément a été restauré depuis le dossier Corbeille.",
         "${ numberOfItems } éléments ont été restaurés depuis le dossier Corbeille."
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } élément a été copié",
+        "${ numberOfItems } éléments ont été copiés"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } élément a été déplacé.",
@@ -9096,6 +9112,9 @@
       ],
       "Contact group updated": [
         "Le groupe de contacts a été mis à jour."
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "\"${ name }\" a été déplacé dans la Corbeille"
       ],
       "Device failed to be removed": [
         "L'appareil n'a pas pu être retiré."
