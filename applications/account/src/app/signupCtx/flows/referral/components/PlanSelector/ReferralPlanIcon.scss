@@ -43,10 +43,6 @@
 		color: var(--name-color);
 		background-color: var(--name-background);
 		transform: scale(1);
-
-		@include media('>small') {
-			white-space: nowrap;
-		}
 	}
 
 	&:hover,
