@@ -11,7 +11,13 @@ import MiniCalendar from './MiniCalendar';
 
 export type Props = MiniCalProps;
 
-const LocalizedMiniCalendar = ({ weekStartsOn, now, todayTitle: todayTitleProp, ...rest }: Props) => {
+const LocalizedMiniCalendar = ({
+    weekStartsOn,
+    now,
+    todayTitle: todayTitleProp,
+    disableNonHighlightedDates,
+    ...rest
+}: Props) => {
     const weekdaysLong = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
@@ -54,6 +60,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, now, todayTitle: todayTitleProp, 
             weekStartsOn={weekStartsOn !== undefined ? weekStartsOn : getWeekStartsOn(dateLocale)}
             formatDay={formatDay}
             todayTitle={todayTitle}
+            disableNonHighlightedDates={disableNonHighlightedDates}
             {...rest}
         />
     );

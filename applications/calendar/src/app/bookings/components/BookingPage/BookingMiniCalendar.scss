@@ -39,6 +39,17 @@
 		gap: rem(4);
 	}
 
+	.minicalendar-day.minicalendar-day--highlighted {
+		border: 1px solid var(--booking-day-highlighted-border-color);
+		background-color: var(--booking-day-highlighted-background-color);
+
+		&:hover,
+		&:focus {
+			border-color: var(--booking-day-highlighted-hover-border-color);
+			background-color: var(--booking-day-highlighted-border-color);
+		}
+	}
+
 	.minicalendar-next-prev-button,
 	.minicalendar-day {
 		&,
@@ -56,5 +67,13 @@
 		> svg {
 			margin: auto;
 		}
+	}
+
+	.minicalendar-day {
+		display: flex;
+	}
+
+	.minicalendar-day-number {
+		margin: auto;
 	}
 }
