@@ -30,11 +30,11 @@
 	}
 
 	&-product-cards {
-		background-color: rgb(255 255 255 / 0.5);
+		background-color: rgb(from var(--background-norm) r g b / 0.5);
 		transition: background-color 0.15s ease-out;
 
 		&:hover {
-			background-color: rgb(255 255 255 / 1);
+			background-color: var(--background-norm);
 		}
 	}
 }
