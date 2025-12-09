@@ -36,7 +36,13 @@ import type { SortParams } from './utils/useSorting';
 /**
  * useFileView provides data for file preview.
  */
-export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
+export default function useFileView(
+    shareId: string,
+    linkId: string,
+    useNavigation = false,
+    revisionId?: string,
+    isForPhotos: boolean = false
+) {
     const { getCachedChildren, loadChildren } = useLinksListing();
     const { downloadDocument } = useDocumentActions();
     const { getSharePermissions } = useDirectSharingInfo();
@@ -45,7 +51,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
     const [isPermissionsLoading, withPermissionsLoading] = useLoading(true);
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
-        useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren }, revisionId);
+        useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren }, revisionId, isForPhotos);
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
     const loadPermissions = useCallback(async (abortSignal: AbortSignal, shareId: string) => {
@@ -109,6 +115,7 @@ export function usePublicFileView(
     useEffect(() => {
         if (error) {
             metrics.drive_file_preview_errors_total.increment({
+                // eslint-disable-next-line no-nested-ternary
                 type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
             });
         }
@@ -132,7 +139,8 @@ function useFileViewBase(
     shareId: string,
     linkId: string,
     { getCachedChildren, loadChildren, customDebouncedRequest }: UseDownloadProps,
-    revisionId?: string
+    revisionId?: string,
+    isForPhotos: boolean = false
 ) {
     const { downloadStream, getPreviewThumbnail, getVideoData, downloadSlices } = useDownload({
         getCachedChildren,
@@ -143,7 +151,7 @@ function useFileViewBase(
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
     const isVideoStreamingEnabled = unleashVanillaStore.getState().isEnabled('DriveWebVideoStreaming');
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos });
     const dm = DownloadManager.getInstance();
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
