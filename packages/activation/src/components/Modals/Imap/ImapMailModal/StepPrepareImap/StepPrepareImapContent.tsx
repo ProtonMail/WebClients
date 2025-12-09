@@ -3,8 +3,14 @@ import { c } from 'ttag';
 import { getTimeUnitLabels } from '@proton/activation/src/constants';
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import type { TIME_PERIOD } from '@proton/activation/src/interface';
-import { Icon, LabelStack } from '@proton/components'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { LabelStack } from '@proton/components';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { IcTag } from '@proton/icons/icons/IcTag';
+import { IcTags } from '@proton/icons/icons/IcTags';
 import type { Label } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -34,19 +40,19 @@ const StepPrepareContent = ({
     return (
         <>
             <div className="mb-4 flex items-center">
-                <Icon className="mr-2" name="inbox" />
+                <IcInbox className="mr-2" />
                 {c('Info').t`Import mailbox`}
             </div>
 
             <div className="mb-4 ml-4 flex items-center">
-                <Icon className="mr-2" name="clock" />
+                <IcClock className="mr-2" />
                 {c('Label').t`Import interval`}
                 {`: `}
                 <strong className="ml-2">{timeUnitLabels[selectedPeriod]}</strong>
             </div>
 
             <div className="mb-4 ml-4 flex items-center flex-nowrap">
-                <Icon className="shrink-0 mr-2" name="tag" />
+                <IcTag className="shrink-0 mr-2" />
                 <span className="shrink-0">{c('Info').t`Label all imported messages as`}</span>
                 {importLabel && (
                     <span className="ml-2">
@@ -65,12 +71,12 @@ const StepPrepareContent = ({
             </div>
 
             <div className="mb-4 ml-4 flex items-center">
-                <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
+                {isLabelMapping ? <IcTags className="mr-2" /> : <IcFolders className="mr-2" />}
                 {trans.foundCount(providerFoldersNumLocalized, providerFoldersNum)}
 
                 {showMaxFoldersError && (
                     <Tooltip title={trans.errorMaxItems()} originalPlacement="right">
-                        <Icon className="ml-2 color-danger" name="exclamation-circle-filled" size={4.5} />
+                        <IcExclamationCircleFilled className="ml-2 color-danger" size={4.5} />
                     </Tooltip>
                 )}
             </div>
@@ -78,7 +84,7 @@ const StepPrepareContent = ({
             {selectedFoldersCount !== providerFoldersNum && (
                 <div className="mb-4 ml-8 flex items-center">
                     <strong>
-                        <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
+                        {isLabelMapping ? <IcTags className="mr-2" /> : <IcFolders className="mr-2" />}
                         {trans.selectedCount(selectedFoldersCountLocalized, selectedFoldersCount)}
                     </strong>
                 </div>

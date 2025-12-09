@@ -4,7 +4,7 @@ import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
 interface Props {
     isLabelMapping: boolean;
@@ -22,7 +22,7 @@ const StepPrepareCustomButton = ({ isLabelMapping, handleClickCustomize, handleR
             </Button>
             {hasError && (
                 <Tooltip title={EasyTrans.get(isLabelMapping).editName()} originalPlacement="right">
-                    <Icon name="exclamation-circle-filled" size={5} className="ml-2 color-danger" />
+                    <IcExclamationCircleFilled size={5} className="ml-2 color-danger" />
                 </Tooltip>
             )}
             {isCustom && (

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { MailImportDestinationFolder } from '@proton/activation/src/interface';
-import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 interface Props {
     hasCategories: boolean;
@@ -27,7 +28,7 @@ const CustomizeMailImportModalGmailCategories = ({ hasCategories, selectedCatego
                                 title={c('Tooltip')
                                     .t`Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.`}
                             >
-                                <Icon name="info-circle" className="ml-2" />
+                                <IcInfoCircle className="ml-2" />
                             </Tooltip>
                         </Label>
                         <Field>
