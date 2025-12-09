@@ -118,7 +118,7 @@ function SheetOptions({ sheet, rename, index, ...props }: SheetOptionsProps) {
       <Ariakit.MenuButton {...props} onClick={(e: MouseEvent) => e.stopPropagation()}>
         <Icon legacyName="chevron-down" />
       </Ariakit.MenuButton>
-      <UI.Menu>
+      <UI.Menu unmountOnHide>
         <UI.MenuItem onClick={() => openDeleteSheetDialog(sheet.id)}>{s('Delete')}</UI.MenuItem>
         <UI.MenuItem onClick={() => duplicateSheet(sheet.id)}>{s('Duplicate')}</UI.MenuItem>
         <UI.MenuItem
