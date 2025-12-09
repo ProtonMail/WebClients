@@ -37,7 +37,7 @@ export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title, ext
             </div>
             <div
                 className={clsx(
-                    'ReferralPlanIcon-name text-sm text-semibold lg:text-rg inline-flex flex-row justify-center rounded-full px-1 sm:px-2 py-1',
+                    'ReferralPlanIcon-name text-sm text-semibold lg:text-rg inline-flex flex-row justify-center rounded-full px-1 sm:px-2 py-1 max-w-full',
                     selected ? 'color-primary bg-norm shadow-lifted shadow-color-primary' : 'color-weak'
                 )}
             >
