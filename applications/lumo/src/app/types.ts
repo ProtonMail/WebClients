@@ -582,14 +582,14 @@ export type AttachmentPub = {
 // This is represents the sensitive data in its decrypted form.
 export type AttachmentPriv = {
     filename: string;
-    data?: Uint8Array<ArrayBuffer>; // original binary as sent by user
+    data?: Uint8Array<ArrayBuffer>; // original binary as sent by user, or HD reduction of image
     markdown?: string; // after conversion
     errorMessage?: string; // detailed error message for processing failures
     truncated?: boolean; // indicates if the file content was truncated for context limits
     originalRowCount?: number; // original number of rows in CSV/Excel files
     processedRowCount?: number; // number of rows actually processed
     tokenCount?: number; // cached token count for LLM context size calculation
-    imagePreview?: Uint8Array<ArrayBuffer>; // if the attachment is an image: smaller definition bytes for preview
+    imagePreview?: Uint8Array<ArrayBuffer>; // if the attachment is an image: small definition image for preview
     role?: 'user' | 'assistant'; // source of attachment, defaults to 'user' for backward compatibility
 };
 
