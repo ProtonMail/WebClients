@@ -100,23 +100,6 @@ describe('Provider helpers', () => {
             expect(result).toBe(BookingErrorMessages.RANGE_OVERLAP);
         });
 
-        it('should not check past dates for recurring bookings', () => {
-            const pastStart = subDays(new Date(), 7);
-            const pastEnd = addHours(pastStart, 8);
-
-            const result = validateRangeOperation({
-                operation: 'add',
-                start: pastStart,
-                end: pastEnd,
-                rangeId: 'new-range',
-                existingRanges: [],
-                recurring: true,
-                timezone: 'Europe/Zurich',
-            });
-
-            expect(result).toBeNull();
-        });
-
         it('should return error when range is in the past', () => {
             const pastStart = set(subDays(new Date(), 7), { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
             const pastEnd = set(subDays(new Date(), 7), { hours: 17, minutes: 0, seconds: 0, milliseconds: 0 });

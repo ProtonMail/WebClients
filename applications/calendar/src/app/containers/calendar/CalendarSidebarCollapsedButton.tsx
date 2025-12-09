@@ -3,7 +3,7 @@ import { SidebarListItem } from '@proton/components';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCalendarListFilled } from '@proton/icons/icons/IcCalendarListFilled';
 
-type CalendarSidebarCollapsedButtonType = 'bookings' | 'calendars' | 'otherCalendars';
+type CalendarSidebarCollapsedButtonType = 'bookings' | 'calendars';
 
 interface Props {
     type: CalendarSidebarCollapsedButtonType;
@@ -17,8 +17,6 @@ export const CalendarSidebarCollapsedButton = ({ type, onClick, title }: Props) 
             case 'bookings':
                 return <IcCalendarListFilled alt={title} className="mx-auto" />;
             case 'calendars':
-                return <IcCalendarGrid alt={title} className="mx-auto" />;
-            case 'otherCalendars':
                 return <IcCalendarGrid alt={title} className="mx-auto" />;
         }
     };
