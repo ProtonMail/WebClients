@@ -29,6 +29,7 @@ export interface Props {
     numberOfDays: number;
     numberOfWeeks: number;
     cellRef?: Ref<HTMLLIElement>;
+    highlightedDates?: Date[];
 }
 
 const MonthDays = ({
@@ -46,6 +47,7 @@ const MonthDays = ({
     numberOfDays,
     numberOfWeeks,
     cellRef,
+    highlightedDates,
 }: Props) => {
     const [temporaryDateRange, setTemporaryDateRange] = useState<[Date, Date | undefined] | undefined>(undefined);
     const rangeStartRef = useRef<Date | undefined>(undefined);
@@ -147,6 +149,9 @@ const MonthDays = ({
                     isIntervalBoundStart && 'minicalendar-day--range-bound-start',
                     isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     selectedDate && isSameDay(selectedDate, dayDate) && 'minicalendar-day--selected',
+                    highlightedDates &&
+                        highlightedDates.some((date) => isSameDay(date, dayDate)) &&
+                        'minicalendar-day--highlighted',
                     customClassName,
                 ]);
 

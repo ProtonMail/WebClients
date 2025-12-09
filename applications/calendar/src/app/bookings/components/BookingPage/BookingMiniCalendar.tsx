@@ -41,6 +41,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     };
 
     const today = new Date();
+    const highlightedDates = Array.from(getDateKeySet()).map((key) => new Date(key));
 
     return (
         <div className="relative">
@@ -60,6 +61,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
                     hasCursors
                     getDayClassName={getDayClassName}
                     miniCalendarNextPrevButtonsColor="norm"
+                    highlightedDates={highlightedDates}
                 />
             </div>
         </div>

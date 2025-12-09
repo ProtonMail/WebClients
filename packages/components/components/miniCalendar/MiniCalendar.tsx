@@ -46,6 +46,7 @@ export interface Props {
     preventLeaveFocus?: boolean;
     todayTitle?: string;
     miniCalendarNextPrevButtonsColor?: 'weak' | 'norm';
+    highlightedDates?: Date[];
 }
 
 const MiniCalendar = ({
@@ -87,6 +88,7 @@ const MiniCalendar = ({
     preventLeaveFocus = false,
     todayTitle,
     miniCalendarNextPrevButtonsColor = 'weak',
+    highlightedDates,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const [cellWidth, setCellWidth] = useState(0);
@@ -267,6 +269,7 @@ const MiniCalendar = ({
                     now={now}
                     activeDate={activeDate}
                     selectedDate={selectedDate}
+                    highlightedDates={highlightedDates}
                 />
             </div>
         </div>
