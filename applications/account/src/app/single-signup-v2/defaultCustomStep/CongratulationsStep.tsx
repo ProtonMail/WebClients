@@ -1,19 +1,17 @@
 import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, useConfig, useFormErrors } from '@proton/components';
+import { InputFieldTwo, useFormErrors } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import metrics from '@proton/metrics';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import Content from '../public/Content';
-import Header from '../public/Header';
-import Main from '../public/Main';
-import Text from '../public/Text';
-import { getSignupApplication } from './helper';
+import Content from '../../public/Content';
+import Header from '../../public/Header';
+import Main from '../../public/Main';
+import Text from '../../public/Text';
 
 interface Props {
     defaultName?: string;
@@ -23,18 +21,10 @@ interface Props {
 }
 
 const CongratulationsStep = ({ defaultName = '', planTitle: maybePlanTitle, onSubmit, description }: Props) => {
-    const { APP_NAME } = useConfig();
     const [displayName, setDisplayName] = useState(defaultName);
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const planTitleElement = maybePlanTitle && <b key="plan-name">{maybePlanTitle}</b>;
-
-    useEffect(() => {
-        void metrics.core_signup_pageLoad_total.increment({
-            step: 'congratulations',
-            application: getSignupApplication(APP_NAME),
-        });
-    }, []);
 
     return (
         <Main>

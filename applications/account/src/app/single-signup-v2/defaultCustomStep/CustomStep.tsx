@@ -12,9 +12,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getLocalPart } from '@proton/shared/lib/keys';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
-import CongratulationsStep from '../../signup/CongratulationsStep';
-import ExploreStep from '../../signup/ExploreStep';
-import RecoveryStep from '../../signup/RecoveryStep';
 import type { SignupCacheResult } from '../../signup/interfaces';
 import { SignupType } from '../../signup/interfaces';
 import { handleDisplayName, handleDone, handleSaveRecovery, handleSetupOrg } from '../../signup/signupActions';
@@ -22,7 +19,10 @@ import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps } from '../interface';
+import CongratulationsStep from './CongratulationsStep';
+import ExploreStep from './ExploreStep';
 import OrgSetupStep from './OrgSetupStep';
+import RecoveryStep from './RecoveryStep';
 import MnemonicRecoveryStep from './recovery/MnemonicRecoveryStep';
 
 enum Step {

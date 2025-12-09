@@ -1,8 +1,7 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 
-import { clsx } from 'clsx';
-
 import { SettingsSectionWide, Toggle } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface AccessToggleProps extends PropsWithChildren {
     id: string;

@@ -1,18 +1,13 @@
 import type { ChallengeResult, VerificationModel } from '@proton/components';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type {
     BillingAddress,
     Currency,
     Cycle,
     ExtendedTokenPayment,
-    FreePlanDefault,
     FreeSubscription,
     PAYMENT_METHOD_TYPES,
-    PaymentStatus,
-    Plan,
     PlanIDs,
-    PlansMap,
     SavedPaymentMethod,
     Subscription,
     SubscriptionCheckResponse,
@@ -21,7 +16,6 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 import type {
     Address,
     Api,
@@ -29,36 +23,9 @@ import type {
     KeyTransparencyActivation,
     Organization,
     User,
-    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
 import type { DeferredMnemonicData } from '../containers/recoveryPhrase/types';
-
-export enum SignupSteps {
-    NoSignup = 'no-signup',
-    AccountCreationUsername = 'account-creation-username',
-    SaveRecovery = 'save-recovery',
-    Congratulations = 'congratulations',
-    Upsell = 'plans',
-    Payment = 'payment',
-    HumanVerification = 'human-verification',
-    CreatingAccount = 'creating-account',
-    Explore = 'explore',
-    Done = 'done',
-}
-
-export const SERVICES: { [key: string]: APP_NAMES } = {
-    mail: APPS.PROTONMAIL,
-    calendar: APPS.PROTONCALENDAR,
-    drive: APPS.PROTONDRIVE,
-    vpn: APPS.PROTONVPN_SETTINGS,
-    pass: APPS.PROTONPASS,
-    docs: APPS.PROTONDOCS,
-    wallet: APPS.PROTONWALLET,
-    lumo: APPS.PROTONLUMO,
-    authenticator: APPS.PROTONAUTHENTICATOR,
-    meet: APPS.PROTONMEET,
-};
 
 export interface SessionData {
     resumedSessionResult: ResumedSessionResult;
@@ -103,21 +70,6 @@ export enum SignupType {
     BringYourOwnEmail = 3,
 }
 
-export interface SignupModel {
-    freePlan: FreePlanDefault;
-    inviteData: InviteData | undefined;
-    referralData: ReferralData | undefined;
-    subscriptionData: SubscriptionData;
-    domains: string[];
-    plans: Plan[];
-    plansMap: PlansMap;
-    humanVerificationMethods: HumanVerificationMethodType[];
-    humanVerificationToken: string;
-    selectedProductPlans: SelectedProductPlans;
-    vpnServersCountData: VPNServersCountData;
-    paymentStatus: PaymentStatus;
-}
-
 export type SignupInviteParameters =
     | { type: 'generic'; data: { selector: string; token: string } }
     | { type: 'drive'; data: { invitee: string; externalInvitationID: string; preVerifiedAddressToken: string } }
@@ -126,19 +78,6 @@ export type SignupInviteParameters =
     | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
     | { type: 'lumo'; data: { invitee: string; preVerifiedAddressToken?: string } }
     | { type: 'porkbun'; data: { invitee: string; preVerifiedAddressToken?: string; porkbunToken: string } };
-
-export class HumanVerificationError extends Error {
-    methods: HumanVerificationMethodType[];
-
-    token: string;
-
-    constructor(methods: HumanVerificationMethodType[], token: string) {
-        super('HumanVerificationError');
-        this.methods = methods;
-        this.token = token;
-        Object.setPrototypeOf(this, HumanVerificationError.prototype);
-    }
-}
 
 export interface InviteData {
     selector: string;
@@ -157,19 +96,7 @@ export type AccountData = BaseAccountData & {
     signupType: SignupType;
 };
 
-export enum HumanVerificationTrigger {
-    ExternalCheck,
-    UserCreation,
-}
-
-export interface HumanVerificationData {
-    title: string;
-    methods: HumanVerificationMethodType[];
-    token: string;
-    trigger: HumanVerificationTrigger;
-}
-
-export interface SetupData {
+interface SetupData {
     user: User;
     addresses: Address[];
     authResponse: AuthResponse;
@@ -178,7 +105,7 @@ export interface SetupData {
     session: ResumedSessionResult;
 }
 
-export interface UserData {
+interface UserData {
     User: User;
 }
 
@@ -191,7 +118,7 @@ export interface UserCacheResult {
     session: SessionData;
 }
 
-export interface HumanVerificationResult {
+interface HumanVerificationResult {
     tokenType: HumanVerificationMethodType;
     token: string;
     verificationModel?: VerificationModel;
@@ -216,18 +143,15 @@ export interface SignupCacheResult {
     clientType: CLIENT_TYPES;
     ignoreExplore: boolean;
     humanVerificationInline?: boolean;
-    humanVerificationData?: HumanVerificationData;
     humanVerificationResult?: HumanVerificationResult;
 }
 
-export interface SignupActionContinueResponse {
+interface SignupActionContinueResponse {
     cache: SignupCacheResult;
-    to: Exclude<SignupSteps, SignupSteps.Done>;
 }
 
 export interface SignupActionDoneResponse {
     cache: SignupCacheResult;
-    to: SignupSteps.Done;
     session: AuthSession;
 }
 

@@ -1,5 +1,4 @@
-import { SERVICES } from './interfaces';
-import { getProductParams } from './searchParams';
+import { SERVICES, getProductParams } from './searchParams';
 
 describe('search params helper', () => {
     const values = [
