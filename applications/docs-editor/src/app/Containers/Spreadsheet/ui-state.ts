@@ -15,9 +15,8 @@ import {
   isProtectedRange as isProtectedRangeFn,
   getUserSelections,
   useFocusSheet,
-  sortSheetsByIndex,
 } from '@rowsncolumns/spreadsheet'
-import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
+import { number2Alpha, sortSheetsByIndex, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
   CURRENCY,
   DATE_PATTERN_EXAMPLE_VALUE,
