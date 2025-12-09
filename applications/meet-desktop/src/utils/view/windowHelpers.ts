@@ -2,9 +2,10 @@ import { BrowserWindowConstructorOptions, app, screen } from "electron";
 import { join } from "path";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { appSession } from "../session";
-import { MEET_APP_NAME } from "@proton/shared/lib/constants";
+import { MEET_APP_NAME, RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { isProdEnv } from "../isProdEnv";
 import { DEFAULT_ZOOM_FACTOR } from "../../constants/zoom";
+import { getSettings } from "../../store/settingsStore";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -49,6 +50,8 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
     const primaryDisplay = screen.getPrimaryDisplay();
     const { width: screenWidth, height: screenHeight } = primaryDisplay.workAreaSize;
 
+    const isAlpha = getSettings().releaseCategory === RELEASE_CATEGORIES.ALPHA;
+
     return {
         title: isProdEnv() ? MEET_APP_NAME : `${MEET_APP_NAME} Dev`,
         icon: join(app.getAppPath(), "assets/icon.png"),
@@ -62,7 +65,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         show: false,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: false,
+            devTools: isAlpha,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             // Security additions
             session: appSession(),

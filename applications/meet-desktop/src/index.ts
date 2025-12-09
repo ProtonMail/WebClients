@@ -19,12 +19,14 @@ import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
+import { initializeIPC } from "./ipc/main";
 
 (async function () {
     initializeLog();
     captureUncaughtErrors();
     await initializeSentry();
     logInitialAppInfo();
+    initializeIPC();
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed

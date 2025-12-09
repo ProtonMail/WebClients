@@ -1,8 +1,11 @@
-import { Event, Input } from "electron";
-import { updateZoom } from "./viewManagement";
+import { Event, Input, WebContentsView } from "electron";
+import { getMainWindow, updateZoom } from "./viewManagement";
 import { isLinux, isWindows } from "../helpers";
+import { getSettings } from "../../store/settingsStore";
+import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 
 export function handleBeforeInput(event: Event, input: Input) {
+    const isAlpha = getSettings().releaseCategory === RELEASE_CATEGORIES.ALPHA;
     if (input.type !== "keyDown") {
         return;
     }
@@ -15,6 +18,20 @@ export function handleBeforeInput(event: Event, input: Input) {
             event.preventDefault();
             updateZoom("in");
             return;
+        }
+    }
+
+    if (isAlpha) {
+        if (input.control && input.alt && input.shift && input.code === "KeyI") {
+            const mainWindow = getMainWindow();
+            // We need to force WebContentsView type here because getContentView() has a type bug.
+            const view = mainWindow.getContentView() as unknown as WebContentsView;
+
+            if (view) {
+                view.webContents.toggleDevTools();
+            } else {
+                mainWindow.webContents.toggleDevTools();
+            }
         }
     }
 }

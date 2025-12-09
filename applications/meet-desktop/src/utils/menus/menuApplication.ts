@@ -3,7 +3,8 @@ import { c } from "ttag";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, resetZoom, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
-import { MEET_APP_NAME } from "@proton/shared/lib/constants";
+import { MEET_APP_NAME, RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
+import { getSettings } from "../../store/settingsStore";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -12,6 +13,7 @@ interface MenuProps extends MenuItemConstructorOptions {
 
 export const setApplicationMenu = () => {
     const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
+    const isAlpha = getSettings().releaseCategory === RELEASE_CATEGORIES.ALPHA;
 
     const temp: MenuProps[] = [
         {
@@ -92,6 +94,28 @@ export const setApplicationMenu = () => {
                 { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
                 { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
+                // Only show Developer Tools in alpha channel
+                ...(isAlpha
+                    ? [
+                          { type: "separator" } as MenuItemConstructorOptions,
+                          {
+                              label: c("App menu").t`Toggle Developer Tools`,
+                              accelerator: "CmdOrCtrl+Shift+I",
+                              click: () => {
+                                  const mainWindow = getMainWindow();
+                                  if (mainWindow) {
+                                      // We need to force WebContentsView type here because getContentView() has a type bug.
+                                      const view = mainWindow.getContentView() as unknown as WebContentsView;
+                                      if (view) {
+                                          view.webContents.toggleDevTools();
+                                      } else {
+                                          mainWindow.webContents.toggleDevTools();
+                                      }
+                                  }
+                              },
+                          } as MenuItemConstructorOptions,
+                      ]
+                    : []),
             ],
         },
         {
