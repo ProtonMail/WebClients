@@ -518,9 +518,6 @@
       "Increase": [
         "Forøg"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Tilmeld dig ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Tilmeld kalender"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5t"
-      ],
       "120 minutes": [
         "120 minutter"
       ],
-      "1h": [
-        "1t"
-      ],
-      "2h": [
-        "2t"
+      "120m": [
+        "120m"
       ],
       "30 minutes": [
         "30 minutter"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 minutter"
       ],
+      "60m": [
+        "60m"
+      ],
       "90 minutes": [
         "90 minutter"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -3493,6 +3490,9 @@
       ],
       "Cancellation failed to be sent": [
         "Aflysning kunne ikke sendes"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan ikke oprette en reservation med en deaktiveret adresse"
       ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
@@ -3928,10 +3928,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller tal"
+        "Brugernavn skal begynde med et bogstav eller et tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller tal"
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min. varighed"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
@@ -5185,6 +5185,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -5617,9 +5620,6 @@
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
       ],
-      "Loading appointments...": [
-        "Indlæser aftaler..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
       ],
@@ -6046,6 +6046,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
       ],
@@ -6114,9 +6123,6 @@
       ],
       "VPN IP": [
         "VPN-IP"
-      ],
-      "Want to create your own booking page?": [
-        "Ønsker du at oprette din egen bookingside?"
       ],
       "Warning": [
         "Advarsel"
@@ -6319,6 +6325,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
       ],
@@ -6415,6 +6424,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11206,6 +11218,17 @@
         "Deltag i Teams-møde"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Ingen reservationer tilgængelige."
+      ],
+      "Please check the link and try again.": [
+        "Tjek linket og prøv igen."
+      ],
+      "Please try again later.": [
+        "Prøv igen senere."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -11358,6 +11381,9 @@
       ],
       "Cannot add more addresses": [
         "Kan ikke tilføje flere adresser"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
       ],
       "Card verification": [
         "Kortbekræftelse"
@@ -11866,11 +11892,14 @@
       "Summary": [
         "Sammenfatning"
       ],
-      "This booking page does not exist": [
-        "Denne bookingside eksisterer ikke"
+      "The booking feature is currently unavailable.": [
+        "Denne reservationsfunktion er ikke tilgængelig i øjeblikket."
       ],
-      "This booking page has expired": [
-        "Denne bookingside er udløbet"
+      "This booking page can’t be shown.": [
+        "Denne reservationsside kan ikke vises."
+      ],
+      "This booking page has expired.": [
+        "Denne reservationsside er udløbet."
       ],
       "Time": [
         "Tid"

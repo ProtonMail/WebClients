@@ -518,9 +518,6 @@
       "Increase": [
         "Øk"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Bli med ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Bli med i kalender"
       ],
@@ -3286,17 +3283,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 timer"
-      ],
       "120 minutes": [
         "120 minutter"
-      ],
-      "1h": [
-        "1 time"
-      ],
-      "2h": [
-        "2 timer"
       ],
       "30 minutes": [
         "30 minutter"
@@ -3493,6 +3481,9 @@
       ],
       "Cancellation failed to be sent": [
         "Kansellering kunne ikke sendes"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan ikke opprette en bestilling med en deaktivert adresse"
       ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
@@ -4941,9 +4932,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min. varighet"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -5185,6 +5173,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -5617,9 +5608,6 @@
       "Loading ${ appName }": [
         "Laster ${ appName }"
       ],
-      "Loading appointments...": [
-        "Laster inn avtaler..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laster inn kalender, vent litt. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
@@ -6046,6 +6034,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For å legge til en ny bestillingsside, be administratoren om å oppgradere planen din."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For å legge til en ny bestillingsside, fjern en eksisterende fra sidefeltet for bestillingssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Oppgrader planen din for å legge til en ny bestillingsside."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
@@ -6114,9 +6111,6 @@
       ],
       "VPN IP": [
         "VPN-IP"
-      ],
-      "Want to create your own booking page?": [
-        "Vil du opprette din egen bestillingsside?"
       ],
       "Warning": [
         "Advarsel"
@@ -6319,6 +6313,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nådd maksimalt antall adresser i kontaktgruppen."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nådd maksimalt antall bestillingssider som er tilgjengelige i planen din."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, betal eventuelle forfalte fakturaer."
       ],
@@ -6415,6 +6412,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11359,6 +11359,9 @@
       "Cannot add more addresses": [
         "Kan ikke legge til flere adresser"
       ],
+      "Cannot create more Booking pages": [
+        "Kan ikke opprette flere bestillingssider"
+      ],
       "Card verification": [
         "Verifisering av kort"
       ],
@@ -11865,12 +11868,6 @@
       ],
       "Summary": [
         "Sammendrag"
-      ],
-      "This booking page does not exist": [
-        "Denne bestillingssiden finnes ikke"
-      ],
-      "This booking page has expired": [
-        "Denne bestillingssiden er utløpt"
       ],
       "Time": [
         "Tid"

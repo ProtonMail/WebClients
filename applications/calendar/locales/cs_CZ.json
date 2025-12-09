@@ -524,9 +524,6 @@
       "Increase": [
         "Zvýšit"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Připojit se k ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Připojit ke kalendáři"
       ],
@@ -3330,17 +3327,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5h"
-      ],
       "120 minutes": [
         "120 minut"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min."
       ],
       "30 minutes": [
         "30 minut"
@@ -3351,8 +3342,14 @@
       "60 minutes": [
         "60 minut"
       ],
+      "60m": [
+        "60 min."
+      ],
       "90 minutes": [
         "90 minut"
+      ],
+      "90m": [
+        "90 min."
       ]
     },
     "Edit billing address form note": {
@@ -3545,6 +3542,9 @@
       ],
       "Cancellation failed to be sent": [
         "Zrušení se nepodařilo odeslat"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Nelze vytvořit rezervaci se zakázanou adresou"
       ],
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
@@ -5045,8 +5045,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min. doba trvání"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
@@ -5330,6 +5330,9 @@
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požádejte svého správce o navýšení tarifu nebo o odebrání stránky z postranního panelu stránek rezervací."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Alespoň ${ BETTER_PASSWORD_LENGTH } znaků"
       ],
@@ -5385,7 +5388,7 @@
         "Nemůžete najít události, které hledáte? Některé události ve skrytých kalendářích odpovídají vašemu dotazu. Chcete-li tyto výsledky zobrazit, zapněte viditelnost pro ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot create a range across days.": [
-        "Nelze vytvořit rozsah rezervace zahrnující několik dní."
+        "Nelze vytvořit rozsah rezervace přesahující několik dní."
       ],
       "Cannot create a range in the past.": [
         "Nelze vytvořit rozsah rezervace v minulosti."
@@ -5770,9 +5773,6 @@
       ],
       "Loading ${ appName }": [
         "Načítání aplikace ${ appName }"
-      ],
-      "Loading appointments...": [
-        "Načítání schůzek..."
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítání kalendáře, prosím čekejte. Budete přesměrováni na naši plánovací platformu Calendly v nové záložce."
@@ -6206,6 +6206,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pro přidání nové rezervační stránky požádejte svého správce o navýšení vašeho tarifu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pro přidání nové rezervační stránky odeberte některou z těch stávajících z bočního panelu rezervačních stránek."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pro přidání nové rezervační stránky navyšte svůj tarif."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
@@ -6274,9 +6283,6 @@
       ],
       "VPN IP": [
         "VPN IP"
-      ],
-      "Want to create your own booking page?": [
-        "Chcete si vytvořit vlastní rezervační stránku?"
       ],
       "Warning": [
         "Varování"
@@ -6484,6 +6490,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosáhli jste maximálního počtu adres ve skupině kontaktů."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosáhli jste maximálního počtu rezervačních stránek dostupných ve vašem tarifu."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -11603,6 +11612,17 @@
         "Připojit se ke schůzce v Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Žádné rezervace nejsou dostupné."
+      ],
+      "Please check the link and try again.": [
+        "Zkontrolujte prosím odkaz a zkuste to znovu."
+      ],
+      "Please try again later.": [
+        "Zkuste to prosím později."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } den",
@@ -11779,6 +11799,9 @@
       ],
       "Cannot add more addresses": [
         "Nelze přidávat další adresy"
+      ],
+      "Cannot create more Booking pages": [
+        "Nelze vytvořit další rezervační stránky"
       ],
       "Card verification": [
         "Ověření karty"
@@ -12293,11 +12316,14 @@
       "Summary": [
         "Shrnutí"
       ],
-      "This booking page does not exist": [
-        "Tato rezervační stránka neexistuje"
+      "The booking feature is currently unavailable.": [
+        "Funkce rezervací je momentálně nedostupná."
       ],
-      "This booking page has expired": [
-        "Tato rezervační stránka vypršela"
+      "This booking page can’t be shown.": [
+        "Tato rezervační stránka nemůže být zobrazena."
+      ],
+      "This booking page has expired.": [
+        "Tato rezervační stránka vypršela."
       ],
       "Time": [
         "Čas"

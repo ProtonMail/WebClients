@@ -50,6 +50,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add a date": [
+        "Lisää päivämäärä"
+      ],
       "Add account": [
         "Lisää tili"
       ],
@@ -174,6 +177,9 @@
       "Close navigation": [
         "Sulje navigaatio"
       ],
+      "Close sidebar": [
+        "Sulje sivupalkki"
+      ],
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
@@ -231,6 +237,9 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Copy link and close": [
+        "Kopioi linkki ja sulje"
+      ],
       "Copy password": [
         "Kopioi salasana"
       ],
@@ -239,6 +248,9 @@
       ],
       "Create": [
         "Luo"
+      ],
+      "Create a free account": [
+        "Luo ilmainen tili"
       ],
       "Create a new booking page": [
         "Luo uusi varaussivu"
@@ -359,6 +371,9 @@
       "Expand video conferencing widget": [
         "Laajenna videoneuvotteluwidgetti"
       ],
+      "Explore other plans": [
+        "Tutustu muihin tilauksiin"
+      ],
       "Export": [
         "Vie"
       ],
@@ -413,6 +428,12 @@
       "Go to settings": [
         "Avaa asetukset"
       ],
+      "Go to the first available appointment": [
+        "Siirry ensimmäiseen vapaaseen aikaan"
+      ],
+      "Go to the next available appointment": [
+        "Siirry seuraavaan vapaaseen aikaan"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -433,6 +454,9 @@
       ],
       "Hide busy times": [
         "Piilota varatut ajat"
+      ],
+      "Hide more benefits": [
+        "Piilota enemmän etuja"
       ],
       "Hide time zones": [
         "Piilota aikavyöhykkeet"
@@ -3203,17 +3227,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 t"
-      ],
       "120 minutes": [
         "120 minuuttia"
       ],
-      "1h": [
-        "1 t"
-      ],
-      "2h": [
-        "2 t"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minuuttia"
@@ -3224,8 +3242,14 @@
       "60 minutes": [
         "60 minuuttia"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuuttia"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit event button tooltip": {
@@ -3402,6 +3426,9 @@
       ],
       "Cancellation failed to be sent": [
         "Perumisilmoituksen lähetys epäonnistui"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Varausta ei voi luoda käytöstä poistetulla osoitteella."
       ],
       "Cannot export this contact": [
         "Tätä yhteystietoa ei voida viedä"
@@ -4824,6 +4851,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -5056,6 +5086,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Haluatko varmasti hylätä tuontisi?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pyydä ylläpitäjää päivittämään tilaus tai poistamaan sivu Varaussivut-sivupalkista."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Ainakin ${ BETTER_PASSWORD_LENGTH } merkkiä"
@@ -5346,6 +5379,9 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
+      "Host": [
+        "Isäntä"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jos pikanäppäimet ovat käytössä, voit käyttää seuraavia näppäimiä pikatoimintoihin tai eri näkymiin siirtymiseen. ${ metaKey } + K on aina käytössä."
       ],
@@ -5455,9 +5491,6 @@
       "Loading ${ appName }": [
         "Ladataan ${ appName }"
       ],
-      "Loading appointments...": [
-        "Ladataan ajanvarauksia..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
       ],
@@ -5466,6 +5499,9 @@
       ],
       "Loading events": [
         "Tapahtumia ladataan"
+      ],
+      "Location": [
+        "Sijainti"
       ],
       "Low Priority": [
         "Alhainen tärkeys"
@@ -5514,6 +5550,9 @@
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
+      ],
+      "No future appointments available": [
+        "Tulevia aikoja ei ole saatavilla"
       ],
       "No group found": [
         "Ryhmää ei löytynyt"
@@ -5645,6 +5684,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
       ],
+      "Powered by ${ protonButton }": [
+        "Tarjoaa ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Tapahtumaketjun aiemmat muutokset menetetään."
       ],
@@ -5680,6 +5722,10 @@
       ],
       "Removed participants will be notified.": [
         "Poistetuille osallistujille ilmoitetaan."
+      ],
+      "Saving event": [
+        "Tallennetaan tapahtumaa",
+        "Tallennetaan tapahtumia"
       ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
@@ -5834,6 +5880,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Lisätäksesi uuden varaussivun, pyydä ylläpitäjääsi päivittämään tilauksesi."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Voit lisätä uuden varaussivun poistamalla olemassa olevan sivun Varaussivut-sivupalkista."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Lisätäksesi uuden varaussivun, päivitä tilauksesi."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
@@ -6095,6 +6150,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Olet saavuttanut yhteystietoryhmän osoitteiden enimmäismäärän."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Olet saavuttanut tilaukseesi sisältyvien varaussivujen enimmäismäärän."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
@@ -6580,6 +6638,9 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
+      "Full name": [
+        "Koko nimi"
+      ],
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
@@ -6748,6 +6809,9 @@
       ],
       "Remove Zoom video conference": [
         "Poista Zoom-videokonferenssi"
+      ],
+      "Repeat weekly": [
+        "Toista viikottain"
       ],
       "Reveal password": [
         "Näytä salasana"
@@ -6938,6 +7002,9 @@
       "Add a gift code": [
         "Lisää lahjakoodi"
       ],
+      "Booking pages": [
+        "Ajanvaraussivut"
+      ],
       "Calendars": [
         "Kalenterit"
       ],
@@ -7066,6 +7133,11 @@
       ],
       "Your import is starting": [
         "Tuontisi alkaa"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Paikan päällä"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8550,6 +8622,9 @@
       "500 GB secure storage": [
         "500 Gt suojattua tallennustilaa"
       ],
+      "Advanced threat protection": [
+        "Edistynyt uhkasuojaus"
+      ],
       "Custom email domain": [
         "Oma sähköpostiverkkotunnus"
       ],
@@ -8558,6 +8633,9 @@
       ],
       "Email addresses": [
         "Sähköpostiosoitteet"
+      ],
+      "File version history (over 1 week)": [
+        "Tiedoston versiohistoria (yli 1 viikon)"
       ],
       "Free": [
         "Free"
@@ -8606,6 +8684,9 @@
       ]
     },
     "Onboarding Trial": {
+      "contact our support team": [
+        "ota yhteyttä tukeen"
+      ],
       "Continue": [
         "Jatka"
       ],
@@ -8614,6 +8695,9 @@
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
+      ],
+      "Your free trial has started": [
+        "Ilmainen kokeilujaksosi on alkanut"
       ]
     },
     "Option": {
@@ -10766,6 +10850,17 @@
         "Liity Teams-kokoukseen"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Varauksia ei ole saatavilla."
+      ],
+      "Please check the link and try again.": [
+        "Tarkista linkki ja yritä uudelleen."
+      ],
+      "Please try again later.": [
+        "Yritä myöhemmin uudelleen."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } vuorokausi",
@@ -10913,6 +11008,9 @@
       "Cannot add more addresses": [
         "Enempää osoitteita ei voida lisätä"
       ],
+      "Cannot create more Booking pages": [
+        "Varaussivuja ei voi luoda enempää."
+      ],
       "Card verification": [
         "Kortin vahvistus"
       ],
@@ -10921,6 +11019,9 @@
       ],
       "Change password": [
         "Vaihda salasana"
+      ],
+      "Choose a time": [
+        "Valitse aika"
       ],
       "Choose how many times this event will repeat": [
         "Valitse miten monta kertaa tapahtuma toistuu"
@@ -11007,6 +11108,9 @@
       ],
       "Delete ${ value }": [
         "Poista ${ value }"
+      ],
+      "Delete booking page?": [
+        "Poista varaussivu?"
       ],
       "Delete event": [
         "Poista tapahtuma"
@@ -11136,6 +11240,9 @@
       ],
       "High security for your account": [
         "Vahva suojaus tilillesi"
+      ],
+      "Host": [
+        "Isäntä"
       ],
       "How does it all work?": [
         "Miten se toimii?"
@@ -11407,6 +11514,15 @@
       ],
       "Summary": [
         "Yhteenveto"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Varausominaisuus ei ole tällä hetkellä käytettävissä."
+      ],
+      "This booking page can’t be shown.": [
+        "Tätä varaussivua ei voida näyttää."
+      ],
+      "This booking page has expired.": [
+        "Tämä varaussivu on vanhentunut."
       ],
       "Time": [
         "Aika"

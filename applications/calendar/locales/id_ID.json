@@ -50,6 +50,9 @@
       "Add": [
         "Tambah"
       ],
+      "Add a date": [
+        "Tambah tanggal"
+      ],
       "Add account": [
         "Tambah akun"
       ],
@@ -58,6 +61,9 @@
       ],
       "Add another account": [
         "Tambah akun lainnya"
+      ],
+      "Add another booking range to this day": [
+        "Tambah rentang waktu pemesanan baru untuk hari ini"
       ],
       "Add birthday": [
         "Tambah ulang tahun"
@@ -170,6 +176,9 @@
       "Close navigation": [
         "Tutup navigasi"
       ],
+      "Close sidebar": [
+        "Tutup bilah samping"
+      ],
       "Close this banner": [
         "Tutup spanduk ini"
       ],
@@ -184,6 +193,9 @@
       ],
       "Confirm": [
         "Konfirmasi"
+      ],
+      "Confirm booking": [
+        "Konfirmasi pemesanan"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
@@ -218,6 +230,9 @@
       "Copy alias “${ name }”": [
         "Salin alias “${ name }”"
       ],
+      "Copy booking page link": [
+        "Salin tautan halaman pemesanan"
+      ],
       "Copy email address": [
         "Salin alamat email"
       ],
@@ -226,6 +241,9 @@
       ],
       "Copy link": [
         "Salin tautan"
+      ],
+      "Copy link and close": [
+        "Salin tautan dan tutup"
       ],
       "Copy password": [
         "Salin kata sandi"
@@ -236,11 +254,26 @@
       "Create": [
         "Buat"
       ],
+      "Create a booking page": [
+        "Buat halaman pemesanan"
+      ],
+      "Create a free account": [
+        "Buat akun gratis"
+      ],
+      "Create a new booking page": [
+        "Buat halaman pemesanan baru"
+      ],
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
+      "Create an event": [
+        "Buat acara"
+      ],
       "Create and copy alias": [
         "Buat dan salin alias"
+      ],
+      "Create booking page": [
+        "Buat halaman pemesanan"
       ],
       "Create calendar": [
         "Buat kalender"
@@ -281,6 +314,9 @@
       "Delete ${ selectedCount } contact group": [
         "Hapus ${ selectedCount } grup kontak"
       ],
+      "Delete booking page": [
+        "Hapus halaman pemesanan"
+      ],
       "Delete contact": [
         "Hapus kontak"
       ],
@@ -319,6 +355,9 @@
       ],
       "Edit": [
         "Sunting"
+      ],
+      "Edit booking page": [
+        "Sunting halaman pemesanan"
       ],
       "Edit email address": [
         "Sunting alamat email"
@@ -400,6 +439,12 @@
       ],
       "Go to settings": [
         "Pergi ke pengaturan"
+      ],
+      "Go to the first available appointment": [
+        "Tuju janji temu pertama yang tersedia"
+      ],
+      "Go to the next available appointment": [
+        "Tuju janji temu selanjutnya yang tersedia"
       ],
       "Got it": [
         "Dimengerti"
@@ -665,6 +710,9 @@
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
+      "Remove the booking range": [
+        "Hapus rentang waktu pemesanan"
+      ],
       "Remove this notification": [
         "Hapus notifikasi ini"
       ],
@@ -715,6 +763,15 @@
       ],
       "See plan features": [
         "Lihat fitur paket"
+      ],
+      "See previous availability": [
+        "Lihat ketersediaan sebelumnya"
+      ],
+      "See upcoming availability": [
+        "Lihat ketersediaan yang akan datang"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Pilih ${ dateHeaderLongString } pada pukul ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Pilih ${ planOrAppName }"
@@ -1176,6 +1233,9 @@
       "1 user account": [
         "1 akun pengguna"
       ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
       "6 user accounts": [
         "6 akun pengguna"
       ],
@@ -1197,6 +1257,9 @@
       "Password health alerts": [
         "Peringatan kesehatan kata sandi"
       ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
@@ -1210,6 +1273,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
+      "forever": [
+        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
@@ -1353,6 +1419,12 @@
       ],
       "Application problem": [
         "Masalah aplikasi"
+      ],
+      "Authenticator problem": [
+        "Kesalahan autentikator"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -1755,6 +1827,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Kemaanan akun dan jaringan lanjutan dalam satu paket"
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
@@ -2766,6 +2841,15 @@
       ]
     },
     "Custom frequency option": {
+      "Doesn't end": [
+        "Tidak pernah"
+      ],
+      "Ends after": [
+        "Berakhir setelah"
+      ],
+      "Ends on": [
+        "Berakhir pada"
+      ],
       "event": [
         "acara"
       ]
@@ -3014,6 +3098,9 @@
       "Your account and data recovery methods are set.": [
         "Metode pemulihan akun dan data Anda telah diatur."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Anda akan segera memperoleh email dengan rincian pemesanan ini."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
@@ -3139,6 +3226,9 @@
       "/month": [
         "/bulan"
       ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
       "2 user accounts": [
         "2 akun pengguna"
       ],
@@ -3150,11 +3240,17 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dapatkan ruang penyimpanan 4x lebih besar"
+      ],
       "Share your plan": [
         "Bagikan paket Anda"
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Dapatkan ruang penyimpanan 4x lebih besar dengan ${ BRAND_NAME } Duo"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
@@ -3162,6 +3258,23 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Gandakan acara"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 menit"
+      ],
+      "30 minutes": [
+        "30 menit"
+      ],
+      "30m": [
+        "30m"
+      ],
+      "60 minutes": [
+        "60 menit"
+      ],
+      "90 minutes": [
+        "90 menit"
       ]
     },
     "Edit billing address form note": {
@@ -3520,6 +3633,9 @@
       "Last name is too long": [
         "Nama terakhir terlalu panjang"
       ],
+      "Location is required": [
+        "Lokasi dibutuhkan"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
@@ -3534,6 +3650,9 @@
       ],
       "Name required": [
         "Nama dibutuhkan"
+      ],
+      "No booking page data received": [
+        "Tidak ada data halaman pemesanan yang diterima"
       ],
       "No calendars found to import": [
         "Tidak ada kalender yang ditemukan untuk diimpor"
@@ -3781,6 +3900,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
       ],
+      "You cannot enter the organizer email": [
+        "Anda tidak dapat memasukkan email penyelenggara"
+      ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai batas jumlah kalender maksimum."
       ],
@@ -3801,6 +3923,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
       ]
@@ -4335,6 +4460,11 @@
         "Mungil"
       ]
     },
+    "Form": {
+      "Confirm your booking": [
+        "Konfirmasi pemesanan Anda"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Gabung ke Google Meet"
@@ -4786,6 +4916,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "Panggilan video ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4957,8 +5090,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
       ],
+      "Appointment duration": [
+        "Lama janji temu"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Apakah Anda yakin ingin menghapus halaman pemesanan ini?"
+      ],
       "Are you sure you want to discard your import?": [
         "Apakah Anda yakin ingin membuang impor Anda?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Mintalah kepada admin Anda untuk meningkatkan paket atau menghapus halaman dari bilah samping di halaman Pemesanan."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
@@ -4984,6 +5126,15 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
+      "Booking page deleted": [
+        "Halaman pemesanan dihapus"
+      ],
+      "Booking page example": [
+        "Contoh halaman pemesanan"
+      ],
+      "Booking updated successfully": [
+        "Pemesanan berhasil diperbarui"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
       ],
@@ -5004,6 +5155,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Tidak menemukan acara yang Anda cari? Sebagian acara dalam kalender tersembunyi Anda sesuai dengan kueri pencarian Anda. Untuk melihat hasil ini, atur agar ${ hiddenWithItemsCalendarList } dapat terlihat."
+      ],
+      "Cannot create a range across days.": [
+        "Rentang waktu tidak dapat berjarak antar hari."
+      ],
+      "Cannot create a range in the past.": [
+        "Rentang waktu tidak dapat diatur di masa lampau."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
@@ -5236,6 +5393,9 @@
       "Geoblocking": [
         "Pemblokiran wilayah"
       ],
+      "Google Pay mark": [
+        "Tanda Google Pay"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Pemerintah dan ISP dapat memantau aktivitas online Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
       ],
@@ -5244,6 +5404,12 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
+      ],
+      "Host": [
+        "Tuan rumah"
+      ],
+      "How long should an appointment last?": [
+        "Seberapa lama janji temu ini akan berlangsung?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jika pintasan keyboard diaktifkan, Anda dapat menggunakan tombol-tombol berikut untuk tindakan cepat atau menuju tampilan berbeda. ${ metaKey } + K selalu diaktifkan."
@@ -5292,6 +5458,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
+      ],
+      "In which calendar should bookings appear?": [
+        "Pada kalender mana halaman pemesanan akan muncul?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Mengindeks acara: ${ current }/${ total }"
@@ -5344,6 +5513,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Biarkan pengguna lain memesan waktu dengan Anda secara otomatis, tanpa perlu saling berkirim email secara terus-menerus. Bagikan tautan Anda, dan atur ketersediaan Anda."
+      ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
       ],
@@ -5365,8 +5537,14 @@
       "Loading events": [
         "Memuat acara"
       ],
+      "Location": [
+        "Lokasi"
+      ],
       "Low Priority": [
         "Prioritas Rendah"
+      ],
+      "Manage booking page": [
+        "Kelola halaman pemesanan"
       ],
       "Manage your calendars": [
         "Kelola kalender Anda"
@@ -5401,11 +5579,23 @@
       "New": [
         "Baru"
       ],
+      "No appointments available": [
+        "Tidak ada janji temu yang tersedia"
+      ],
+      "No appointments available this week": [
+        "Tidak ada janji temu yang tersedia minggu ini"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Tidak ada kalender yang tersedia; silakan hapus halaman pemesanan ini."
+      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
       "No email address": [
         "Tidak ada alamat email"
+      ],
+      "No future appointments available": [
+        "Tidak ada janji temu mendatang yang tersedia"
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
@@ -5485,6 +5675,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Orang lain yang memesan waktu dengan Anda akan melihat ${ selectedCalendar.Email } sebagai alamat kontak Anda."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format teks polos."
       ],
@@ -5539,8 +5732,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
       ],
+      "Powered by": [
+        "Diberdayakan oleh"
+      ],
+      "Powered by ${ protonButton }": [
+        "Diberdayakan oleh ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Perubahan sebelumnya pada seri ini akan hilang."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Acara yang sebelumnya telah dipesan tidak akan dihapus."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
@@ -5548,8 +5750,20 @@
       "Primary": [
         "Utama"
       ],
+      "Privacy by default": [
+        "Privasi sebagai hal yang baku"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Penjelajahan pribadi (atau mode \"incognito\") hanya berguna untuk menyembunyikan aktivitas Anda pada perangkat yang Anda gunakan. Walaupun mode ini menghentikan browser Anda untuk menyimpan riwayat penjelajahan dan cookie, mode ini tidak serta-merta membuat Anda kasat mata. Pihak ISP, pengelola jaringan, dan situs web yang Anda kunjungi masih akan dapat melihat apa yang Anda lakukan secara online."
+      ],
+      "Range already exists.": [
+        "Rentang sudah ada."
+      ],
+      "Range is too short.": [
+        "Rentang waktu terlalu pendek."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rentang bertumpang tindih dengan rentang yang telah ada."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
@@ -5565,6 +5779,9 @@
       ],
       "Removed participants will be notified.": [
         "Peserta yang dihapus akan diberi tahu."
+      ],
+      "Saving event": [
+        "Menyimpan acara"
       ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR dengan perangkat seluler Anda"
@@ -5598,6 +5815,9 @@
       ],
       "Setting up your new address…": [
         "Mempersiapkan alamat baru Anda…"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Bagikan halaman ini untuk memungkinkan pengguna lain memesan waktu pada kalender Anda. Anda dapat menemukan dan menyunting halaman ini pada bilah samping di bawah halaman Pemesanan."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
@@ -5640,6 +5860,9 @@
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Raih kendali atas kehidupan digital Anda"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
@@ -5689,6 +5912,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Halaman pemesanan ini tidak dapat disunting, kalender yang terhubung dengan halaman dinonaktifkan"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Pemesanan ini dibuat melalui ${ CALENDAR_APP_NAME }, bagian dari rangkaian produk ${ BRAND_NAME } yang mengutamakan privasi."
+      ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Acara ini telah diperbarui penyelenggara. Anda ingin mengubah jawaban untuk rangkaian kegiatan ini saja?"
       ],
@@ -5721,6 +5950,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Untuk menambahkan halaman pemesanan baru, mintalah kepada admin Anda untuk meningkatkan paket Anda."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Untuk menambahkan halaman pemesanan baru, hapus halaman yang sudah ada dari bilah samping di halaman Pemesanan."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Untuk menambahkan halaman pemesanan baru, tingkatkan paket Anda."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
@@ -5824,6 +6062,12 @@
       "Week and month views only apply to desktop.": [
         "Tampilan pekan dan bulan hanya berlaku di desktop."
       ],
+      "What do you want to call this booking page?": [
+        "Dengan nama apa Anda ingin menyebut halaman pemesanan ini?"
+      ],
+      "When can appointments be booked?": [
+        "Kapan janji temu ini dapat dipesan?"
+      ],
       "When working remotely": [
         "Pada saat bekerja secara remote"
       ],
@@ -5832,6 +6076,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+      ],
+      "Where will the appointment take place?": [
+        "Di mana janji temu ini akan berlangsung?"
       ],
       "Which event would you like to delete?": [
         "Acara mana yang ingin dihapus?"
@@ -5980,6 +6227,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Anda telah mencapai batas jumlah alamat dalam grup kontak"
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Anda telah mencapai batas halaman pemesanan yang tersedia pada paket Anda."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
@@ -6075,6 +6325,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6299,6 +6552,9 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
+      "Black Friday": [
+        "Jumat Hitam"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -6359,6 +6615,9 @@
       "Copy": [
         "Salin"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Salin tautan ini atau kelola halaman Anda dari layar ini kapan saja."
+      ],
       "Could you please let us know which provider?": [
         "Dapatkah Anda memberitahu kami layanan penyedia email mana yang Anda maksud?"
       ],
@@ -6370,6 +6629,9 @@
       ],
       "Country": [
         "Negara"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Buat halaman untuk dibagikan di mana orang lain dapat memesan waktu dengan Anda."
       ],
       "Credits": [
         "Saldo"
@@ -6460,6 +6722,12 @@
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
+      ],
+      "Full name": [
+        "Nama lengkap"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -6629,6 +6897,9 @@
       "Remove Zoom video conference": [
         "Hapus konferensi video Zoom"
       ],
+      "Repeat weekly": [
+        "Ulangi setiap minggu"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
@@ -6688,6 +6959,9 @@
       ],
       "Toolbar": [
         "Bilah Alat"
+      ],
+      "Unavailable": [
+        "Tidak tersedia"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -6751,6 +7025,23 @@
       ],
       "Zoom meeting": [
         "Pertemuan Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Rentang tanggal pertemuan"
+      ],
+      "End time of the booking range": [
+        "Waktu akhir rentang pemesanan"
+      ],
+      "How long should an appointment last?": [
+        "Seberapa lama janji temu ini akan berlangsung?"
+      ],
+      "Start time of the booking range": [
+        "Rentang awal waktu pemesanan"
+      ],
+      "What should people know about this appointment?": [
+        "Hal apa saja yang orang lain perlu ketahui tentang janji temu ini?"
       ]
     },
     "Label for contact group color": {
@@ -6817,6 +7108,9 @@
     "Link": {
       "Add a gift code": [
         "Tambah kode hadiah"
+      ],
+      "Booking pages": [
+        "Halaman pemesanan"
       ],
       "Calendars": [
         "Kalender"
@@ -6945,6 +7239,11 @@
       ],
       "Your import is starting": [
         "Proses impor Anda akan segera dimulai"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Tatap muka"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7439,7 +7738,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi file besar"
+        "Kolaborasi dan berbagi berkas besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -7497,6 +7796,9 @@
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent kilat"
@@ -8625,6 +8927,9 @@
       "Advanced account protection": [
         "Perlindungan akun mutakhir"
       ],
+      "File attachments (up to 10GB)": [
+        "Lampiran berkas (hingga 10GB)"
+      ],
       "Team policies": [
         "Kebijakan tim"
       ]
@@ -8687,6 +8992,9 @@
       ],
       "Credit/debit card": [
         "Kartu kredit/debit"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
@@ -8770,6 +9078,9 @@
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
       ],
@@ -8809,11 +9120,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Anda akan segera dialihkan ke PayPal untuk memverifikasi pembayaran Anda."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Anda akan segera dialihkan untuk memverifikasi pembayaran Anda."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Langganan Anda saat ini telah memiliki diskon. Dengan berpindah ke penawaran ini, diskon yang telah ada tidak akan lagi berlaku."
       ]
     },
     "Payments.Error": {
@@ -8836,6 +9156,11 @@
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Terjadi kesalahan. Verifikasi Google Pay gagal."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -8847,6 +9172,18 @@
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Apakah Anda yakin ingin melanjutkan?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Apabila Anda memilih untuk mengubah paket ${ planTitle } milik Anda, Anda dapat kehilangan akses ke sebagian fitur."
+      ],
+      "Keep ${ planTitle }": [
+        "Pertahankan ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ya, saya yakin"
+      ],
+      "Your plan includes this feature already.": [
+        "Paket Anda telah meliputi fitur ini."
       ]
     },
     "Payments.plan_name": {
@@ -8860,6 +9197,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transfer bank - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kartu yang berakhir dengan ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -8972,6 +9312,12 @@
       "E.g., ": [
         "Misalnya "
       ],
+      "Email for booking confirmation": [
+        "Email untuk konfirmasi pemesanan"
+      ],
+      "Enter a short description or additional info": [
+        "Tulis deskripsi singkat atau info tambahan lainnya"
+      ],
       "Enter passphrase": [
         "Masukkan frasa sandi"
       ],
@@ -9007,6 +9353,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Name of attendee": [
+        "Nama hadirin"
       ],
       "Name or email address": [
         "Nama atau alamat email"
@@ -9186,6 +9535,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Setelah tanggal ini, akun Anda akan diturunkan ke **${ BRAND_NAME } Free**. Apabila Anda ingin berubah pikiran, Anda dapat **mengaktifkan kembali langganan Anda** untuk mempertahankan akses ke berbagai fitur premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
@@ -9881,6 +10233,9 @@
       "${ app } storage": [
         "Ruang penyimpanan ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } ruang penyimpanan digunakan"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
       ],
@@ -9892,6 +10247,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Ruang penyimpanan yang digunakan"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
@@ -10541,7 +10899,7 @@
         "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
+        "Anda telah berhasil membatalkan langganan"
       ]
     },
     "Suffix": {
@@ -10759,6 +11117,9 @@
       "Apply gift code": [
         "Gunakan kode hadiah"
       ],
+      "Appointment details": [
+        "Rincian janji temu"
+      ],
       "Are you sure?": [
         "Apakah Anda yakin?"
       ],
@@ -10786,6 +11147,9 @@
       "Cannot add more addresses": [
         "Tidak dapat menambahkan lebih banyak alamat"
       ],
+      "Cannot create more Booking pages": [
+        "Tidak dapat membuat lebih banyak halaman Pemesanan"
+      ],
       "Card verification": [
         "Verifikasi kartu"
       ],
@@ -10794,6 +11158,9 @@
       ],
       "Change password": [
         "Ubah kata sandi"
+      ],
+      "Choose a time": [
+        "Pilih waktu"
       ],
       "Choose how many times this event will repeat": [
         "Pilih berapa kali acara ini berulang"
@@ -10878,6 +11245,9 @@
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"
+      ],
+      "Delete booking page?": [
+        "Hapus halaman pemesanan?"
       ],
       "Delete event": [
         "Hapus acara"
@@ -11008,6 +11378,9 @@
       "High security for your account": [
         "Keamanan yang tinggi bagi akun Anda"
       ],
+      "Host": [
+        "Tuan rumah"
+      ],
       "How does it all work?": [
         "Bagaimana cara semua ini bekerja?"
       ],
@@ -11040,6 +11413,9 @@
       ],
       "Information exposed in breach": [
         "Informasi yang terpapar dalam kebocoran data"
+      ],
+      "Introducing booking pages": [
+        "Memperkenalkan halaman pemesanan"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -11139,6 +11515,9 @@
       ],
       "Reactivate calendar keys": [
         "Aktifkan ulang kunci kalender"
+      ],
+      "Ready to automate your scheduling?": [
+        "Siap untuk mengotomatiskan jadwal Anda?"
       ],
       "Recommended": [
         "Direkomendasikan"
@@ -11371,6 +11750,15 @@
       "Your account is protected": [
         "Akun Anda terlindung"
       ],
+      "Your booking is confirmed": [
+        "Pemesanan Anda terkonfirmasi"
+      ],
+      "Your booking page is ready": [
+        "Halaman pemesanan Anda telah siap"
+      ],
+      "Your booking pages live here": [
+        "Halaman pemesanan Anda akan dapat ditemukan di sini"
+      ],
       "Your calendar link": [
         "Tautan kalender Anda"
       ],
@@ -11485,6 +11873,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]

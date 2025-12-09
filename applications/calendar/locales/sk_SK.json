@@ -524,9 +524,6 @@
       "Increase": [
         "Zvýšiť"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Pripojte sa k ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Pripojiť ku kalendáru"
       ],
@@ -3330,17 +3327,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minút"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minút"
@@ -3351,8 +3342,14 @@
       "60 minutes": [
         "60 minút"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minút"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3545,6 +3542,9 @@
       ],
       "Cancellation failed to be sent": [
         "Zrušenie sa nepodarilo odoslať"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Nie je možné vytvoriť rezerváciu s deaktivovanou adresou"
       ],
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
@@ -5045,8 +5045,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "trvanie ${ bookingDetails.duration } minút"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
@@ -5329,6 +5329,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
@@ -5771,9 +5774,6 @@
       "Loading ${ appName }": [
         "Načítavanie aplikácie ${ appName }"
       ],
-      "Loading appointments...": [
-        "Načítavanie stretnutí..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
       ],
@@ -6206,6 +6206,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, požiadajte svojho správcu, aby zvýšil úroveň vášho plánu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, zvýšte úroveň svojho plánu."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Na dokončenie platby pošlite ${ btcAmountBold } na nižšie uvedenú adresu."
       ],
@@ -6274,9 +6283,6 @@
       ],
       "VPN IP": [
         "IP VPN"
-      ],
-      "Want to create your own booking page?": [
-        "Chcete si vytvoriť vlastnú rezervačnú stránku?"
       ],
       "Warning": [
         "Varovanie"
@@ -6484,6 +6490,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosiahli ste maximálny počet adries v skupine kontaktov."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -11603,6 +11612,17 @@
         "Pripojiť sa k Teams mítingu"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Nie sú k dispozícii žiadne rezervácie."
+      ],
+      "Please check the link and try again.": [
+        "Skontrolujte odkaz a skúste to znova, prosím."
+      ],
+      "Please try again later.": [
+        "Skúste to znova neskôr, prosím."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } deň",
@@ -11779,6 +11799,9 @@
       ],
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
+      ],
+      "Cannot create more Booking pages": [
+        "Nemožno vytvoriť viac rezervačných stránok"
       ],
       "Card verification": [
         "Overenie karty"
@@ -12293,11 +12316,14 @@
       "Summary": [
         "Zhrnutie"
       ],
-      "This booking page does not exist": [
-        "Táto rezervačná stránka neexistuje"
+      "The booking feature is currently unavailable.": [
+        "Funkcia rezervácie je aktuálne nedostupná."
       ],
-      "This booking page has expired": [
-        "Táto rezervačná stránka vypršala"
+      "This booking page can’t be shown.": [
+        "Táto rezervačná stránka sa nedá zobraziť."
+      ],
+      "This booking page has expired.": [
+        "Táto rezervačná stránka vypršala."
       ],
       "Time": [
         "Čas"

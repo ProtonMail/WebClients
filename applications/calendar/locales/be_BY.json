@@ -524,9 +524,6 @@
       "Increase": [
         "Павялічыць"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Далучыцца да ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Далучыцца да календара"
       ],
@@ -1300,7 +1297,7 @@
         "Неабмежаваная колькасць запісаў уваходу, крэдытных картак, псеўданімаў hide-my-email і іншых функцый"
       ],
       "Use your own email domain": [
-        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+        "Выкарыстоўвайце свой ўласны дамен электроннай пошты"
       ]
     },
     "BF2024: Offers": {
@@ -3313,7 +3310,7 @@
         "Атрымайце ў 4 разы больш месца ў сховішчы"
       ],
       "Share your plan": [
-        "Абагульвайце свой тарыфны план"
+        "Абагуліце свой тарыфны план"
       ]
     },
     "Duo offer: Title": {
@@ -3330,17 +3327,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 гадз"
-      ],
       "120 minutes": [
         "120 хвілін"
       ],
-      "1h": [
-        "1 гадз"
-      ],
-      "2h": [
-        "2 гадз"
+      "120m": [
+        "120хв"
       ],
       "30 minutes": [
         "30 хвілін"
@@ -3351,8 +3342,14 @@
       "60 minutes": [
         "60 хвілін"
       ],
+      "60m": [
+        "60хв"
+      ],
       "90 minutes": [
         "90 хвілін"
+      ],
+      "90m": [
+        "90хв"
       ]
     },
     "Edit billing address form note": {
@@ -3545,6 +3542,9 @@
       ],
       "Cancellation failed to be sent": [
         "Не ўдалося адправіць скасаванне"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Нельга стварыць браніраванне з адключаным адрасам"
       ],
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
@@ -3763,7 +3763,7 @@
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Ніводны знешніх ключоў, які атрыманы для карыстальніка, не падыходзіць для адпраўкі"
+        "Ніводны са знешніх ключоў, які атрыманы для карыстальніка, не падыходзіць для адпраўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -4015,7 +4015,7 @@
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
       "You cannot enter the organizer email": [
-        "Вы не можаце ўвесці электронную пошту арганізатара."
+        "Вы не можаце ўвесці электронную пошту арганізатара"
       ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
@@ -4433,7 +4433,7 @@
         "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Колькасць адрасоў электроннай пошты вашага ўлікова запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
+        "Колькасць адрасоў электроннай пошты вашага ўліковага запісу перавышае дазволенае значэнне для вашага бягучага тарыфнага плана. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
@@ -4818,7 +4818,7 @@
         "Адбылася памылка пры шыфраванні і дадаванні вашага кантакту. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка пры шыфраванні і дадаванні кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Адбылася памылка пры шыфраванні і дадаванні вашых кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Адбылася памылка пры шыфраванні і дадаванні вашых кантактаў. Ніводны кантакт не быў імпартаваны."
@@ -5045,8 +5045,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "Працягласць ${ bookingDetails.duration } хв"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } хв"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
@@ -5316,7 +5316,7 @@
         "і"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, такія як назва, размяшчэнне або ўдзельнікі."
+        "Любы карыстальнік з гэтай спасылкай зможа ўбачыць ўсе падрабязнасці падзеі гэтага календара, такія як назва, размяшчэнне або ўдзельнікаў."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Любы карыстальнік з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, такія як загаловак, размяшчэнне або ўдзельнікаў."
@@ -5329,6 +5329,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпарт?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
@@ -5771,9 +5774,6 @@
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
       ],
-      "Loading appointments...": [
-        "Загрузка сустрэчы..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
@@ -5892,7 +5892,7 @@
         "Адкрыць спіс спалучэнняў клавіш"
       ],
       "Open the guide for recommended actions and helpful links.": [
-        "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
+        "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
       ],
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
@@ -5922,7 +5922,7 @@
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Людзі, якія браніруюць у вас час, убачаць ${ selectedCalendar.Email } у якасці вашага кантактнага."
+        "Людзі, якія браніруюць у вас час, убачаць ${ selectedCalendar.Email } у якасці вашага кантактнага адраса."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
@@ -6206,6 +6206,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Папрасіце свайго адміністратара палепшыць ваш тарыфны план, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Палепшыце свой тарыфны план, каб дадаць новую старонку браніравання."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
@@ -6274,9 +6283,6 @@
       ],
       "VPN IP": [
         "IP VPN"
-      ],
-      "Want to create your own booking page?": [
-        "Хочаце стварыць уласную старонку браніравання?"
       ],
       "Warning": [
         "Папярэджанне"
@@ -6485,6 +6491,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці старонак браніравання, якія даступны на вашым тарыфным плане."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
@@ -6540,7 +6549,7 @@
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
       "Your next billing date is ${ renewalTime }.": [
-        "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }."
+        "Наступная дата спагнання грашовых сродкаў адбудзецца ${ renewalTime }"
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
@@ -7539,10 +7548,10 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }, каб запампоўваць або сінхранізаваць файлы."
+        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }, каб адпраўляць або прымаць лісты."
+        "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Ваш уліковы запіс пад пагрозай выдалення. Папрасіце свайго адміністратара палепшыць тарыфны план, каб пазбегнуць страты даных. ${ cta }"
@@ -8442,7 +8451,7 @@
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсё вашай кампаніі."
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсёй вашай кампаніі."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -8472,7 +8481,7 @@
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Заплаціце адзін раз і абараніце свае паролі і ідэнтычнасць назаўсёды."
+        "Заплаціце адзін раз, каб пастаянна абараняць свае паролі і ідэнтычнасць."
       ],
       "Popular": [
         "Папулярны"
@@ -8649,7 +8658,7 @@
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць і выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -9529,7 +9538,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовамі выкарыстання"
+        "умовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -9544,10 +9553,10 @@
         "Спецыяльны зніжаны кошт дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
-        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Гэты купон дзейнічае для падаўжэння на ${ couponRedemptions }. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт дзейнічае на працягу першага месяца. Пасля гэтага адбудзецца аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за кожны месяц. Скасаваць можна ў любы момант."
@@ -9601,10 +9610,10 @@
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -9638,7 +9647,7 @@
     },
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
-        "Нешта пайшло не так. Збой праверкі Google Pay."
+        "Нешта пайшло не так. Збой спраўджання Google Pay."
       ]
     },
     "Payments.info": {
@@ -9654,10 +9663,10 @@
         "Вы сапраўды хочаце працягнуць?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
-        "Вы можаце згубіць доступ да некаторый функцый, калі выберыце змену тарыфнага плана ${ planTitle }."
+        "Вы можаце згубіць доступ да некаторых функцый, калі выберыце змену тарыфнага плана ${ planTitle }."
       ],
       "Keep ${ planTitle }": [
-        "Выйсці з ${ planTitle }"
+        "Пакінуць ${ planTitle }"
       ],
       "Yes, I'm sure": [
         "Так, я ўпэўнены"
@@ -10683,7 +10692,7 @@
         "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
-        "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
+        "Абараніце свой уліковы запіс ад пагроз з дапамогай Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай з ${ planName } на 2 гады"
@@ -10729,7 +10738,7 @@
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
-        "Запланаваць і далучыцца да выклікаў ${ MEET_APP_NAME } непасрэдна са свайго календара."
+        "Заплануйце і далучыцеся да выклікаў ${ MEET_APP_NAME } непасрэдна са свайго календара."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Бесперабойнае стварэнне і дадаванне спасылак з відэасустрэчамі ў вашы падзеі."
@@ -10786,7 +10795,7 @@
         "Выкарыстана сховішча ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } запоўнена на ${ percentage }%"
+        "${ storage } запоўнены на ${ percentage }%"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Панізіўшы тарыфны план, вы страціце наступныя перавагі. Вы сапраўды хочаце працягнуць?"
@@ -11603,6 +11612,17 @@
         "Далучыцца да сустрэчы ў Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Няма даступных браніраванняў."
+      ],
+      "Please check the link and try again.": [
+        "Праверце спасылку і паспрабуйце яшчэ раз."
+      ],
+      "Please try again later.": [
+        "Паўтарыце спробу пазней."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } дзень",
@@ -11779,6 +11799,9 @@
       ],
       "Cannot add more addresses": [
         "Немагчыма дадаць больш адрасоў"
+      ],
+      "Cannot create more Booking pages": [
+        "Немагчыма стварыць больш старонак браніравання"
       ],
       "Card verification": [
         "Праверка карткі"
@@ -12293,11 +12316,14 @@
       "Summary": [
         "Зводка"
       ],
-      "This booking page does not exist": [
-        "Такая старонка браніравання не існуе"
+      "The booking feature is currently unavailable.": [
+        "Функцыя браніравання ў цяперашні час недаступная."
       ],
-      "This booking page has expired": [
-        "Гэта старонка браніравання пратэрмінавана"
+      "This booking page can’t be shown.": [
+        "Гэтая старонка браніравання не можа быць паказана."
+      ],
+      "This booking page has expired.": [
+        "Гэта старонка браніравання пратэрмінавана."
       ],
       "Time": [
         "Час"
@@ -12740,7 +12766,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Мы не змаглі спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."
@@ -12765,29 +12791,29 @@
         "Кожны ${ interval } тыдзень у ${ multipleDaysString }",
         "Кожныя ${ interval } тыдні ў ${ multipleDaysString }",
         "Кожных ${ interval } тыдняў у ${ multipleDaysString }",
-        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }"
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }"
       ],
       "Every ${ interval } week on all days": [
         "Кожны ${ interval } тыдзень ва ўсе дні",
         "Кожныя ${ interval } тыдні ва ўсе дні",
         "Кожных ${ interval } тыдняў ва ўсе дні",
-        "Кожныя ${ interval } тыдні ва ўсе дні"
+        "Кожных ${ interval } тыдняў ва ўсе дні"
       ],
       "Every ${ interval } week on Friday": [
         "Кожны ${ interval } тыдзень у пятніцу",
         "Кожныя ${ interval } тыдні ў пятніцу",
         "Кожных ${ interval } тыдняў у пятніцу",
-        "Кожныя ${ interval } тыдні ў пятніцу"
+        "Кожных ${ interval } тыдняў у пятніцу"
       ],
       "Every ${ interval } week on Monday": [
         "Кожны ${ interval } тыдзень у панядзелак",
         "Кожныя ${ interval } тыдні ў панядзелак",
         "Кожных ${ interval } тыдняў у панядзелак",
-        "Кожныя ${ interval } тыдні ў панядзелак"
+        "Кожных ${ interval } тыдняў у панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
         "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
-        "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ timesString }",
         "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
         "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }"
       ],
@@ -12795,13 +12821,13 @@
         "Кожны ${ interval } тыдзень у суботу",
         "Кожныя ${ interval } тыдні ў суботу",
         "Кожных ${ interval } тыдняў у суботу",
-        "Кожныя ${ interval } тыдні ў суботу"
+        "Кожных ${ interval } тыдняў у суботу"
       ],
       "Every ${ interval } week on Sunday": [
         "Кожны ${ interval } тыдзень у нядзелю",
-        "Кожныя ${ interval } тыдні ў нядзелю",
+        "Кожных ${ interval } тыдні ў нядзелю",
         "Кожных ${ interval } тыдняў у нядзелю",
-        "Кожныя ${ interval } тыдні ў нядзелю"
+        "Кожных ${ interval } тыдняў у нядзелю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "Кожны ${ interval } тыдзень у нядзелю, ${ timesString }",
@@ -12813,13 +12839,13 @@
         "Кожны ${ interval } тыдзень у чацвер",
         "Кожныя ${ interval } тыдні ў чацвер",
         "Кожных ${ interval } тыдняў у чацвер",
-        "Кожныя ${ interval } тыдні ў чацвер"
+        "Кожных ${ interval } тыдняў у чацвер"
       ],
       "Every ${ interval } week on Tuesday": [
         "Кожны ${ interval } тыдзень у аўторак",
         "Кожныя ${ interval } тыдні ў аўторак",
         "Кожных ${ interval } тыдняў у аўторак",
-        "Кожныя ${ interval } тыдні ў аўторак"
+        "Кожных ${ interval } тыдняў у аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
         "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
@@ -12831,7 +12857,7 @@
         "Кожны ${ interval } тыдзень у сераду",
         "Кожныя ${ interval } тыдні ў сераду",
         "Кожных ${ interval } тыдняў у сераду",
-        "Кожныя ${ interval } тыдні ў сераду"
+        "Кожных ${ interval } тыдняў у сераду"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Штотыдзень у ${ multipleDaysString }"

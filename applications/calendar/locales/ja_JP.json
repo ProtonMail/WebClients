@@ -515,9 +515,6 @@
       "Increase": [
         "増加"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }に参加"
-      ],
       "Join calendar": [
         "カレンダーに参加"
       ],
@@ -2847,6 +2844,12 @@
       "Doesn't end": [
         "終了しない"
       ],
+      "Ends after": [
+        "終了:"
+      ],
+      "Ends on": [
+        "終了:"
+      ],
       "event": [
         "予定"
       ]
@@ -3258,17 +3261,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5時間"
-      ],
       "120 minutes": [
         "120分"
       ],
-      "1h": [
-        "1時間"
-      ],
-      "2h": [
-        "2時間"
+      "120m": [
+        "120分"
       ],
       "30 minutes": [
         "30分"
@@ -3279,7 +3276,13 @@
       "60 minutes": [
         "60分"
       ],
+      "60m": [
+        "60分"
+      ],
       "90 minutes": [
+        "90分"
+      ],
+      "90m": [
         "90分"
       ]
     },
@@ -3461,6 +3464,9 @@
       ],
       "Cancellation failed to be sent": [
         "キャンセルの送信に失敗しました"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "無効化されているアドレスでは予約を作成できません"
       ],
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
@@ -4883,8 +4889,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } 分間"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } 分"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
@@ -5107,6 +5113,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してもよろしいですか?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
@@ -5591,6 +5600,9 @@
       "No appointments available this week": [
         "今週は利用可能な予定がありません"
       ],
+      "No calendar available; please delete the booking page.": [
+        "利用可能なカレンダーがありません、予約ページを削除してください。"
+      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
@@ -5915,6 +5927,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "この予約ページは編集できません、関連づけられたカレンダーが無効化されています"
+      ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "この予約は${ CALENDAR_APP_NAME }経由で作成されました、これは${ BRAND_NAME }が提供するプライバシーを重視した製品群の一部です。"
       ],
@@ -5950,6 +5965,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "新し予約ページを追加するには、お客様のプランをアップグレードしてください。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
@@ -6019,9 +6043,6 @@
       ],
       "VPN IP": [
         "VPN IP"
-      ],
-      "Want to create your own booking page?": [
-        "お客様ご自身の予約ページを作成しますか？"
       ],
       "Warning": [
         "警告"
@@ -6221,6 +6242,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "連絡先グループのアドレス数の上限に達しました。"
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "このプランで利用できる予約ページの最大数に達しました。"
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
@@ -6316,6 +6340,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
       ]
     },
     "info": {
@@ -6603,6 +6630,9 @@
       "Copy": [
         "コピー"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "リンクをコピーするか、いつでもこちらからお客様のページを管理できます。"
+      ],
       "Could you please let us know which provider?": [
         "プロバイダーについて教えていただけますか?"
       ],
@@ -6614,6 +6644,9 @@
       ],
       "Country": [
         "国"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "お客様と日程を調整できる共有ページを作成します。"
       ],
       "Credits": [
         "クレジット"
@@ -7233,7 +7266,7 @@
         "もっと詳しく"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "${ BRAND_NAME }を継続してご利用いただくには、プレミアムサーバーの機能が使用中でないことをご確認ください。またはプランをアップグレードしてください。"
+        "${ BRAND_NAME }を利用し続けるには、プレミアム機能が使用中でないことを確認するか、プランをアップグレードしてください。"
       ],
       "upgrade for more storage": [
         "より大きなストレージへアップグレード"
@@ -10988,6 +11021,17 @@
         "Teamsミーティングに参加する"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "予約がありません。"
+      ],
+      "Please check the link and try again.": [
+        "リンクを確認して、もう一度お試しください。"
+      ],
+      "Please try again later.": [
+        "後ほど再度お試しください。"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }日"
@@ -11128,6 +11172,9 @@
       ],
       "Cannot add more addresses": [
         "これ以上アドレスを追加できません"
+      ],
+      "Cannot create more Booking pages": [
+        "予約ページはこれ以上作成できません"
       ],
       "Card verification": [
         "カードの検証"
@@ -11361,7 +11408,7 @@
         "ホスト"
       ],
       "How does it all work?": [
-        "どのように機能しますか？"
+        "そもそもどんな仕組みでこんなことが？"
       ],
       "How does it work?": [
         "どのように動作しますか?"
@@ -11392,6 +11439,9 @@
       ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
+      ],
+      "Introducing booking pages": [
+        "予約ページのご紹介です"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -11630,11 +11680,14 @@
       "Summary": [
         "概要"
       ],
-      "This booking page does not exist": [
-        "この予約ページは存在しません"
+      "The booking feature is currently unavailable.": [
+        "この予約機能は現在ご利用いただけません。"
       ],
-      "This booking page has expired": [
-        "この予約ページは有効期限切れです"
+      "This booking page can’t be shown.": [
+        "この予約ページは表示できません。"
+      ],
+      "This booking page has expired.": [
+        "この予約ページは有効期限切れです."
       ],
       "Time": [
         "時間"
@@ -11737,6 +11790,9 @@
       ],
       "Your booking page is ready": [
         "予約ページの準備ができました"
+      ],
+      "Your booking pages live here": [
+        "予約ページはこちらです"
       ],
       "Your calendar link": [
         "カレンダーのリンク"
