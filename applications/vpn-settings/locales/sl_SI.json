@@ -250,7 +250,7 @@
         "Izbriši"
       ],
       "Delete account": [
-        "Izbrišite račun"
+        "Izbriši račun"
       ],
       "Delete Gateway": [
         "Izbriši prehod"
@@ -4515,7 +4515,7 @@
         "Vrsta ključa"
       ],
       "Location": [
-        "Kraj"
+        "Lokacija"
       ],
       "Members": [
         "Člani"
@@ -6847,9 +6847,6 @@
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Naenkrat je lahko odprt samo eno okno klepeta. Pred začetkom novega pogovora zaprite prejšnje pogovore."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
       ],
@@ -6885,9 +6882,6 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Lahko vas preusmerijo na spletno stran vaše banke."
-      ],
-      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Morate aktivirati zasebni ključ vaše organizacije s geslom za varnostno kopijo organizacijskega ključa, ki vam ga je zagotovil skrbnik vaše organizacije."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
@@ -7381,7 +7375,7 @@
         "Onemogočeno"
       ],
       "Display name": [
-        "Ime za prikaz"
+        "Prikazno ime"
       ],
       "Do you have any suggestions for our team?": [
         "Imate kak predlog za našo ekipo?"
@@ -8143,20 +8137,6 @@
         "Kaj je to?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Klepet v živo je na voljo z ${ planName }"
-      ],
-      "Open support form": [
-        "Odprite obrazec za podporo"
-      ],
-      "Upgrade subscription": [
-        "Nadgradnja naročnine"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Nadgradite, da odklenete podporo za klepet in druge premijske funkcije, ali uporabite naš brezplačni obrazec za podporo, da prijavite svojo težavo."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Še malo"
@@ -8465,7 +8445,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "Izbrišite račun"
+        "Izbriši račun"
       ],
       "Downgrade account": [
         "Zmanjšaj račun"
@@ -8488,7 +8468,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšaj na paket ${ downgradedPlanName }"
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Raziščite vse pakete ${ BRAND_NAME }."
@@ -9128,7 +9108,7 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Izbrišite račun?"
+        "Izbriši račun?"
       ],
       "Downgrade account?": [
         "Zmanjšaj račun?"
@@ -10507,7 +10487,7 @@
         "Preverjanje s SMS sporočilom"
       ],
       "Verify now": [
-        "Preveri zdaj"
+        "Preverite zdaj"
       ],
       "Verify recovery phone?": [
         "Preverite telefonsko številko za obnovitev?"
@@ -12165,7 +12145,7 @@
         "Samodejno plačilo je omogočeno."
       ],
       "Disable": [
-        "Onemogoči"
+        "Onemogočite"
       ],
       "Enable auto-pay support": [
         "Omogočite podporo za samodejno plačilo."
@@ -12484,11 +12464,6 @@
         "Polje vCard"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Teme"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dan",
@@ -12522,9 +12497,6 @@
       "${ feature } is now active": [
         "${ feature } je zdaj aktivna"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Odjemalci ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(aktivno)"
       ],
@@ -12551,9 +12523,6 @@
       ],
       "Access control": [
         "Nadzor dostopa"
-      ],
-      "Account": [
-        "Račun"
       ],
       "Account recovery": [
         "Obnovitev računa"
@@ -12628,7 +12597,7 @@
         "Znesek"
       ],
       "Amount due": [
-        "Dolgovani znesek"
+        "Zapadli znesek"
       ],
       "App": [
         "Aplikacija"
@@ -12814,7 +12783,7 @@
         "Izbriši ${ policyName }?"
       ],
       "Delete account": [
-        "Izbrišite račun"
+        "Izbriši račun"
       ],
       "Delete group?": [
         "Želite izbrisati skupino?"
@@ -12917,9 +12886,6 @@
       ],
       "Email": [
         "E-pošta"
-      ],
-      "Email subscriptions": [
-        "E-poštne naročnine"
       ],
       "Enable advanced account protection": [
         "Omogoči napredno zaščito računa"
@@ -13048,10 +13014,10 @@
         "Ime"
       ],
       "Network error": [
-        "Omrežna napaka"
+        "Napaka v omrežju"
       ],
       "Next": [
-        "Naslednji"
+        "Naprej"
       ],
       "Night theme": [
         "Nočna tema"
@@ -13070,9 +13036,6 @@
       ],
       "Open pagination": [
         "Odpri krmarjenje"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "Uporabniško ime OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "OpenVPN nastavitvene datoteke"
@@ -13121,9 +13084,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plans": [
-        "Paketi"
       ],
       "Preview": [
         "Predogled"
@@ -13359,9 +13319,6 @@
       "Upgrade to ${ planName }": [
         "Nadgradi na ${ planName }."
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Nadgradite zaščito omrežja z namenskimi strežniki"
-      ],
       "Upgrade your privacy": [
         "Nadgradite svojo zasebnost"
       ],
@@ -13430,9 +13387,6 @@
       ],
       "Your changes are not synced yet": [
         "Vaše spremembe se še niso sinhronizirale"
-      ],
-      "Your current plan": [
-        "Vaš trenutni paket"
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
