@@ -97,6 +97,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy descriptor": [
+        "Salin deskriptor"
+      ],
       "Copy public key (${ prefix })": [
         "Salin kunci publik (${ prefix })"
       ],
@@ -814,6 +817,12 @@
       "Application problem": [
         "Masalah aplikasi"
       ],
+      "Authenticator problem": [
+        "Kesalahan autentikator"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
+      ],
       "Bridge problem": [
         "Masalah bridge"
       ],
@@ -1054,6 +1063,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Kemaanan akun dan jaringan lanjutan dalam satu paket"
       ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
@@ -2360,6 +2372,21 @@
       ]
     },
     "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Deskriptor disalin ke papan klip"
+      ],
+      "I want the ${ prefix } instead": [
+        "Saya ingin menggunakan ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Impor deskriptor ini ke perangkat lunak dompet lain untuk memantau saldo Anda dan menghasilkan alamat penerima tanpa mengekspos kunci pribadi Anda."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Kunci publik (${ prefix }) disalin ke papan klip"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Periksa apakah beberapa alamat turunan pertama ini sesuai dengan alamat yang ada pada ${ WALLET_APP_NAME } sebelum melanjutkan."
+      ],
       "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
         "Kami sangat merekomendasikan untuk menggunakan deskriptor di atas, karena deskriptor ini mengandung seluruh informasi yang dibutuhkan untuk memastikan bahwa alamat yang dihasilkan adalah alamat yang benar. xpub, ypub, dan zpub bukan merupakan bagian dari BIP standar dan sebaiknya hanya digunakan dengan berhati-hati."
       ]
@@ -2723,6 +2750,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Google Pay mark": [
+        "Tanda Google Pay"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -3002,6 +3032,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "Pembayaran Anda telah terbuka pada tab baru. Silakan selesaikan pembayaran Anda pada tab ini dan kembali ke halaman ini pada saat pembayaran telah selesai."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
@@ -3072,6 +3105,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
       ],
       "Browser": [
         "Browser"
@@ -3156,6 +3192,9 @@
       ],
       "Folder location": [
         "Lokasi folder"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -3578,7 +3617,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi file besar"
+        "Kolaborasi dan berbagi berkas besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -3636,6 +3675,9 @@
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent kilat"
@@ -4297,6 +4339,9 @@
       "Advanced account protection": [
         "Perlindungan akun mutakhir"
       ],
+      "File attachments (up to 10GB)": [
+        "Lampiran berkas (hingga 10GB)"
+      ],
       "Team policies": [
         "Kebijakan tim"
       ]
@@ -4339,6 +4384,9 @@
       ],
       "Credit/debit card": [
         "Kartu kredit/debit"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
@@ -4422,6 +4470,9 @@
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
       ],
@@ -4461,11 +4512,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda telah memiliki langganan untuk paket ini. Anda dapat mengubah langganan Anda pada ${ subscriptionPlatform }."
       ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Anda akan segera dialihkan ke PayPal untuk memverifikasi pembayaran Anda."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Anda akan segera dialihkan untuk memverifikasi pembayaran Anda."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Mata uang Anda telah diubah menjadi euro (€) karena transfer bank SEPA hanya mendukung pembayaran dalam euro."
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Langganan Anda saat ini telah memiliki diskon. Dengan berpindah ke penawaran ini, diskon yang telah ada tidak akan lagi berlaku."
       ]
     },
     "Payments.Error": {
@@ -4488,6 +4548,11 @@
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Terjadi kesalahan. Verifikasi Google Pay gagal."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
@@ -4499,6 +4564,18 @@
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Apakah Anda yakin ingin melanjutkan?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Apabila Anda memilih untuk mengubah paket ${ planTitle } milik Anda, Anda dapat kehilangan akses ke sebagian fitur."
+      ],
+      "Keep ${ planTitle }": [
+        "Pertahankan ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ya, saya yakin"
+      ],
+      "Your plan includes this feature already.": [
+        "Paket Anda telah meliputi fitur ini."
       ]
     },
     "Payments.plan_name": {
@@ -4512,6 +4589,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Transfer bank - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kartu yang berakhir dengan ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -4879,6 +4959,9 @@
       "${ app } storage": [
         "Ruang penyimpanan ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } ruang penyimpanan digunakan"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
       ],
@@ -4887,6 +4970,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Ruang penyimpanan yang digunakan"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Untuk sementara, kami akan menambahkan saldo ini pada Akun ${ BRAND_NAME } Anda."
@@ -5068,7 +5154,7 @@
         "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
+        "Anda telah berhasil membatalkan langganan"
       ]
     },
     "Suffix": {
@@ -5351,6 +5437,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
