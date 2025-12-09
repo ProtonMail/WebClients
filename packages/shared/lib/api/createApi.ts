@@ -9,7 +9,7 @@ import { getDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
 import type { Api } from '../interfaces';
 import { getApiError, getApiErrorMessage, getIsOfflineError, getIsUnreachableError } from './helpers/apiErrorHelper';
-import withApiHandlers from './helpers/withApiHandlers';
+import { withApiHandlers } from './helpers/withApiHandlers';
 
 export const defaultApiStatus = {
     offline: false,
