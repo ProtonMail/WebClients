@@ -8,7 +8,6 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import { TimeZoneSelector } from '@proton/components/components/timezoneSelector/TimeZoneSelector';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
-import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -40,6 +39,24 @@ const IconHeroCalendar = ({ className }: { className?: string }) => {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+            />
+        </svg>
+    );
+};
+
+const IconHeroWorldMap = ({ className }: { className?: string }) => {
+    return (
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className={className}
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M10 17.5C13.4938 17.5 16.4296 15.111 17.2631 11.8775M10 17.5C6.50619 17.5 3.57035 15.111 2.73692 11.8775M10 17.5C12.0711 17.5 13.75 14.1421 13.75 10C13.75 5.85786 12.0711 2.5 10 2.5M10 17.5C7.92893 17.5 6.25 14.1421 6.25 10C6.25 5.85786 7.92893 2.5 10 2.5M10 2.5C12.8043 2.5 15.2492 4.03912 16.5359 6.31871M10 2.5C7.19567 2.5 4.75083 4.03912 3.4641 6.31871M16.5359 6.31871C14.7831 7.83366 12.4986 8.75 10 8.75C7.50143 8.75 5.21689 7.83366 3.4641 6.31871M16.5359 6.31871C17.1497 7.40619 17.5 8.66219 17.5 10C17.5 10.6483 17.4177 11.2774 17.2631 11.8775M17.2631 11.8775C15.1111 13.0706 12.6349 13.75 10 13.75C7.36509 13.75 4.88885 13.0706 2.73692 11.8775M2.73692 11.8775C2.58226 11.2774 2.5 10.6483 2.5 10C2.5 8.66219 2.85027 7.40619 3.4641 6.31871"
+                stroke="currentColor"
             />
         </svg>
     );
@@ -77,7 +94,8 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                     timezone={selectedTimezone || bookingDetails?.timezone || getTimezone()}
                     onChange={setSelectedTimezone}
                     unstyledSelect
-                    prefixIcon={<IcGlobe className="mr-2" />}
+                    prefixIcon={<IconHeroWorldMap className="mr-2" />}
+                    caretIconName="chevron-down"
                     // telemetrySource="temporary_timezone"
                     // abbreviatedTimezone={breakpoint === 'small' ? 'offset' : undefined}
                 />
