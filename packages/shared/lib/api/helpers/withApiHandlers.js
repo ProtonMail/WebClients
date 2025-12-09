@@ -1,10 +1,6 @@
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
-import {
-    getUIDHeaderValue,
-    getVerificationHeaders,
-    withUIDHeaders,
-} from '../../fetch/headers';
+import { getUIDHeaderValue, getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
 import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
 import { setRefreshCookies } from '../auth';
@@ -16,7 +12,7 @@ import { retryHandler } from './retryHandler';
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  */
-export default ({ call, onMissingScopes, onVerification, onUserRestricted }) => {
+export function withApiHandlers({ call, onMissingScopes, onVerification, onUserRestricted }) {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -183,4 +179,4 @@ export default ({ call, onMissingScopes, onVerification, onUserRestricted }) => 
     });
 
     return cb;
-};
+}
