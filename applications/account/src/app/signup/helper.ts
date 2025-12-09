@@ -101,7 +101,10 @@ export async function getSubscriptionPricesWithFallback<T>(
 }
 
 export const isReferralSignup = (location: Location) => {
-    return location.pathname.includes(SSO_PATHS.REFERAL_PLAN_SELECTION);
+    return (
+        location.pathname.includes(SSO_PATHS.REFERAL_PLAN_SELECTION) ||
+        location.pathname.includes(SSO_PATHS.REFERAL_SIGNUP)
+    );
 };
 
 export const isPorkbunSignup = (location: Location) => {
