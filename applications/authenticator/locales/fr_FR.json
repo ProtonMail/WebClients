@@ -8,6 +8,9 @@
       "Animate code change": [
         "Animer le changement de code"
       ],
+      "Automatic backups": [
+        "Sauvegardes automatiques"
+      ],
       "Backup and reset": [
         "Sauvegarde et réinitialisation"
       ],
@@ -23,6 +26,9 @@
       "Confirm reset": [
         "Confirmer la réinitialisation"
       ],
+      "Copy ${ issuer } (${ name })": [
+        "Copier ${ issuer } (${ name })"
+      ],
       "Create": [
         "Créer"
       ],
@@ -32,8 +38,14 @@
       "Export data without password": [
         "Exporter les données sans mot de passe"
       ],
+      "Hide codes": [
+        "Cacher les codes"
+      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "Reload app": [
+        "Relancer l'application"
       ],
       "Try again": [
         "Réessayer"
@@ -46,11 +58,20 @@
       "Change folder": [
         "Changer de dossier"
       ],
+      "Clear search": [
+        "Effacer la recherche"
+      ],
       "Close": [
         "Fermer"
       ],
       "Confirm": [
         "Confirmer"
+      ],
+      "Continue anyway": [
+        "Continuer quand même"
+      ],
+      "Continue anyways": [
+        "Continuer quand même"
       ],
       "Create a free account": [
         "Créer un compte gratuit"
@@ -60,6 +81,9 @@
       ],
       "Create new code": [
         "Créer un nouveau code"
+      ],
+      "Delete": [
+        "Supprimer"
       ],
       "Edit": [
         "Modifier"
@@ -73,6 +97,9 @@
       "Import": [
         "Importer"
       ],
+      "Import codes": [
+        "Importer des codes"
+      ],
       "Need more help?": [
         "Besoin d'aide supplémentaire ?"
       ],
@@ -82,8 +109,17 @@
       "Please try again or reset to create a new one.": [
         "Veuillez réessayer ou réinitialiser pour en créer un nouveau."
       ],
+      "Please try again.": [
+        "Veuillez réessayer."
+      ],
+      "Report an issue": [
+        "Signaler un problème"
+      ],
       "Save code": [
         "Enregistrer le code"
+      ],
+      "Search": [
+        "Rechercher"
       ],
       "Secure now": [
         "Sécuriser maintenant"
@@ -97,8 +133,19 @@
       "Try again": [
         "Essayer à nouveau"
       ],
+      "Unlock": [
+        "Débloquer"
+      ],
       "Unlock with biometrics": [
         "Déverrouiller avec les données biométriques"
+      ],
+      "Update and relaunch": [
+        "Mettre à jour et relancer"
+      ]
+    },
+    "authenticator-2025:Description": {
+      "Your import file is protected by a password. Please enter the password to proceed.": [
+        "Votre fichier d'importation est protégé par mot de passe. Veuillez saisir le mot de passe pour continuer."
       ]
     },
     "authenticator-2025:Error": {
@@ -111,17 +158,35 @@
       "Biometric authentication failure (Code: ${ code })": [
         "L'authentification biométrique n'a pas abouti (Code : ${ code })"
       ],
+      "Cannot generate secure storage key. You can try to create a password app lock instead": [
+        "Impossible de générer la clé de stockage sécurisé. Vous pouvez essayer de verrouiller l'application par mot de passe à la place."
+      ],
+      "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
+        "Impossible d'utiliser ce dossier. Veuillez choisir un dossier dans le dossier utilisateur (${ home })"
+      ],
       "Failed database migration. If the issue persists, please contact customer support.": [
         "La migration de la base de données n'a pas abouti. Si le problème persiste, veuillez contacter le service client."
       ],
+      "Failed to create export": [
+        "La création de l'exportation a échoué"
+      ],
       "Failed to import due to wrong password. Please try again.": [
         "L'importation n'a pas abouti en raison d'un mot de passe incorrect. Veuillez réessayer."
+      ],
+      "Failed to reorder items": [
+        "Le tri des éléments a échoué"
       ],
       "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
         "La migration n'a pas abouti après la mise à jour de ${ AUTHENTICATOR_APP_NAME }. Vous pouvez réessayer, ou sauvegarder vos données et réinitialiser l'application pour continuer."
       ],
       "Unable to access your secure storage key due to a system issue.": [
         "Impossible d'accéder à votre clé d'espace de stockage sécurisé en raison d'un problème système."
+      ],
+      "We couldn't create your secure storage key due to a system limitation.": [
+        "Nous n'avons pas pu créer votre clé de stockage dû à une limitation du système."
+      ],
+      "Your storage key appears to be damaged and can't be read.": [
+        "Votre clé de stockage semble être endommagée et ne peut pas être lue."
       ],
       "Your storage key is missing and needs to be recreated.": [
         "Votre clé de stockage est manquante et doit être recréée."
@@ -144,6 +209,9 @@
       "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
         "Choisissez ${ plainTextBold }, cela créera un fichier texte que vous pourrez utiliser ici."
       ],
+      "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
+        "Choisissez ${ zipTextBold }, cela créera un fichier zip que vous pourrez utiliser ici."
+      ],
       "Code added": [
         "Le code a été ajouté"
       ],
@@ -158,6 +226,9 @@
       ],
       "Code edited but could not be synced": [
         "Le code a été modifié mais n'a pas pu être synchronisé"
+      ],
+      "Code reordered but could not be synced": [
+        "Le code a été réorganisé mais n'a pas pu être synchronisé"
       ],
       "Export created": [
         "L'exportation a été créée"
@@ -174,6 +245,9 @@
       "Failed updating remote items": [
         "La mise à jour des éléments à distance n'a pas abouti"
       ],
+      "Importing codes from ${ paths.length } files...": [
+        "Importation des codes du fichier ${ paths.length }..."
+      ],
       "Importing codes...": [
         "Importation des codes..."
       ],
@@ -183,17 +257,29 @@
       "Lock updated": [
         "Verrouillage mis à jour"
       ],
+      "New version ${ latestVersion.version } is available": [
+        "Une nouvelle version ${ latestVersion.version } est disponible"
+      ],
       "One-time code copied": [
         "Le code à usage unique a été copié"
       ],
       "Please go to ${ settingsPath }.": [
         "Veuillez aller à ${ settingsPath }."
       ],
+      "Please import your data manually for now.": [
+        "Veuillez importer vos données manuellement pour le moment."
+      ],
       "Settings > 2FAS Backup > Export": [
         "Paramètres > Sauvegarde 2FAS > Exporter"
       ],
       "Settings > Data > Export codes": [
         "Paramètres > Données > Exporter les codes"
+      ],
+      "Settings > Export": [
+        "Paramètres > Exporter"
+      ],
+      "Sync enabled": [
+        "Synchronisation activée"
       ],
       "This will create a Json file that you can use here.": [
         "Cela créera un fichier JSON que vous pourrez utiliser ici."
@@ -221,6 +307,12 @@
       "Add": [
         "Ajouter"
       ],
+      "Advanced options": [
+        "Options avancées"
+      ],
+      "Algorithm": [
+        "Algorithme"
+      ],
       "App lock": [
         "Verrouillage de l'application"
       ],
@@ -236,11 +328,26 @@
       "Backups": [
         "Sauvegardes"
       ],
+      "Biometrics": [
+        "Biométrie"
+      ],
+      "Boxed": [
+        "Encadré"
+      ],
+      "Dark": [
+        "Sombre"
+      ],
+      "Digits": [
+        "Chiffres"
+      ],
       "Discover ${ BRAND_NAME }": [
         "Découvrez ${ BRAND_NAME }"
       ],
       "Enabled, temporarily offline": [
         "Activé, temporairement hors ligne"
+      ],
+      "Enter your password:": [
+        "Entrez votre mot de passe:"
       ],
       "Export": [
         "Exporter"
@@ -250,6 +357,9 @@
       ],
       "Issuer": [
         "Émetteur"
+      ],
+      "Light": [
+        "Clair"
       ],
       "Loading account data...": [
         "Chargement des données de compte..."
@@ -263,8 +373,29 @@
       "Once deleted, this code cannot be recovered.": [
         "Une fois supprimé, ce code ne peut pas être récupéré."
       ],
+      "Password": [
+        "Mot de passe"
+      ],
+      "Secret": [
+        "Secret"
+      ],
       "Secret key": [
         "Clé secrète"
+      ],
+      "Security": [
+        "Sécurité"
+      ],
+      "Support": [
+        "Assistance"
+      ],
+      "Theme": [
+        "Thème"
+      ],
+      "Time interval": [
+        "Intervalle de temps"
+      ],
+      "Type": [
+        "Type"
       ]
     },
     "authenticator-2025:Title": {
@@ -273,6 +404,9 @@
       ],
       "Create password": [
         "Créer un mot de passe"
+      ],
+      "Delete \"${ displayName }\"": [
+        "Supprimer \"${ displayName }\""
       ],
       "Edit code": [
         "Modifier le code"
@@ -286,11 +420,20 @@
       "Log in": [
         "Se connecter"
       ],
+      "New code": [
+        "Nouveau code"
+      ],
+      "No export available": [
+        "Aucune exportation disponible"
+      ],
       "Settings": [
         "Paramètres"
       ],
       "Sign up": [
         "S'inscrire"
+      ],
+      "Storage key issue": [
+        "Problème avec la clé de stockage"
       ]
     },
     "authenticator-2025:Warning": {
@@ -345,6 +488,9 @@
       ]
     },
     "Info": {
+      "A ${ BRAND_NAME } account is required to enable end-to-end encrypted sync between devices.": [
+        "Un compte ${ BRAND_NAME } est requis pour activer la synchronisation chiffrée de bout-en-bout entre appareils."
+      ],
       "Identity confirmed": [
         "L'identité a été confirmée."
       ],
@@ -417,13 +563,22 @@
       ]
     },
     "Placeholder": {
+      "Confirm password": [
+        "Confirmer le mot de passe"
+      ],
       "Password": [
         "Mot de passe"
       ]
     },
     "Title": {
+      "Confirm password": [
+        "Confirmer le mot de passe"
+      ],
       "Device sync": [
         "Synchronisation des appareils"
+      ],
+      "No codes yet": [
+        "Aucun code pour le moment"
       ],
       "Set backup password": [
         "Définir le mot de passe de secours"
@@ -435,6 +590,9 @@
     "Validation": {
       "Secret cannot be empty": [
         "Le secret ne peut pas être vide."
+      ],
+      "Title cannot be empty": [
+        "Le titre ne peut pas être vide"
       ]
     },
     "Warning": {
