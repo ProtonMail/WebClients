@@ -1741,10 +1741,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2820,6 +2816,9 @@
       ],
       "Issuing Country": [
         "Myöntävä maa"
+      ],
+      "Issuing State/Country": [
+        "Myöntävä osavaltio/maa"
       ],
       "Item ID": [
         "Kohteen ID"
@@ -3968,6 +3967,9 @@
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
       ],
+      "Hidden vaults": [
+        "Piilotetut holvit"
+      ],
       "Hide my email": [
         "Piilota sähköpostiosoitteeni"
       ],
@@ -4174,6 +4176,9 @@
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
+      ],
+      "Visible vaults": [
+        "Näkyvät holvit"
       ],
       "Weak password": [
         "Heikko salasana"

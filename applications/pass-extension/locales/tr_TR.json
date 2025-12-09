@@ -1838,8 +1838,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2437,6 +2436,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasında paylaşım, iki adımlı doğrulama ve diğer gelişmiş özelliklere artık erişemeyeceksiniz."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasındaki paylaşım, iki adımlı doğrulama, kredi kartı ve diğer gelişmiş özelliklere artık erişemeyeceksiniz"

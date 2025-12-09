@@ -1837,10 +1837,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2437,6 +2433,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Θα αποσυνδεθείτε και θα πρέπει να συνδεθείτε ξανά σε όλες τις άλλες συσκευές σας."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, και άλλες προηγμένες δυνατότητες της ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, πιστωτική κάρτα και άλλες προηγμένες δυνατότητες της ${ PASS_APP_NAME }"

@@ -1838,8 +1838,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2437,6 +2436,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du bliver logget ud og skal logge ind igen på alle dine andre enheder."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Du vil ikke længere have adgang til deling, 2FA og andre avancerede funktioner i ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Du vil ikke længere have adgang til deling, 2FA, betalingskort og andre avancerede funktioner i ${ PASS_APP_NAME }"

@@ -1835,8 +1835,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2434,6 +2433,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Você será desconectado e precisará iniciar sessão novamente em todos os seus outros dispositivos."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Você não terá mais acesso a compartilhamento, A2F e outros recursos avançados no ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Você não terá mais acesso a compartilhamento, A2F, cartão de crédito e outros recursos avançados no ${ PASS_APP_NAME }"
