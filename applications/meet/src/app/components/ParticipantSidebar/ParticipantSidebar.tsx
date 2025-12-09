@@ -8,7 +8,8 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useMeetSelector } from '../../store/hooks';
+import { selectMeetSettings } from '../../store/slices/settings';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';
@@ -24,7 +25,7 @@ export const ParticipantSidebar = ({
 
     const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
 
-    const { selfView } = useUIStateContext();
+    const { selfView } = useMeetSelector(selectMeetSettings);
 
     const participants = selfView ? pagedParticipants : pagedParticipantsWithoutSelfView;
 

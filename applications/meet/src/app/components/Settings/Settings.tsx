@@ -1,5 +1,3 @@
-import type { ChangeEvent } from 'react';
-
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -12,6 +10,8 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
+import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
+import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
@@ -19,12 +19,14 @@ import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
 import './Settings.scss';
 
 export const Settings = () => {
-    const { disableVideos, setDisableVideos, handleMeetingLockToggle, isMeetingLocked } = useMeetContext();
+    const dispatch = useMeetDispatch();
+    const { disableVideos, selfView, pipEnabled, meetingLocked: isMeetingLocked } = useMeetSelector(selectMeetSettings);
 
     const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported, noiseFilter, toggleNoiseFilter } =
         useMediaManagementContext();
+    const { handleMeetingLockToggle, isLocalScreenShare } = useMeetContext();
 
-    const { sideBarState, toggleSideBarState, selfView, setSelfView } = useUIStateContext();
+    const { sideBarState, toggleSideBarState } = useUIStateContext();
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
@@ -47,7 +49,7 @@ export const Settings = () => {
             <div className="flex flex-column w-full gap-4 pr-4">
                 {(isLocalParticipantAdmin || isLocalParticipantHost) && (
                     <div className="flex flex-column w-full gap-4">
-                        <div className="text-semibold color-weak pb-2">Host</div>
+                        <div className="text-semibold color-weak pb-2">{c('Title').t`Security`}</div>
                         <div className="flex flex-column w-full gap-4 pl-4">
                             <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                                 <label
@@ -60,8 +62,8 @@ export const Settings = () => {
                                 <Toggle
                                     id="lock-meeting"
                                     checked={isMeetingLocked}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                        void withLoadingLock(handleMeetingLockToggle(event.target.checked));
+                                    onChange={() => {
+                                        void withLoadingLock(handleMeetingLockToggle());
                                     }}
                                     className={clsx(
                                         'settings-toggle',
@@ -75,8 +77,8 @@ export const Settings = () => {
                     </div>
                 )}
                 <div className="flex flex-column w-full gap-4">
-                    {isLocalParticipantHost && <div className="text-semibold color-weak py-2">Meeting</div>}
-                    <div className={clsx('flex flex-column w-full gap-4', isLocalParticipantHost && 'pl-4')}>
+                    <div className="text-semibold color-weak py-2">{c('Title').t`Video`}</div>
+                    <div className="flex flex-column w-full gap-4 pl-4">
                         {!isMobile() && (
                             <BackgroundBlurToggle
                                 backgroundBlur={backgroundBlur}
@@ -88,12 +90,21 @@ export const Settings = () => {
                                 withTooltip={true}
                             />
                         )}
-
-                        <NoiseCancellingToggle
-                            idBase="settings"
-                            noiseFilter={noiseFilter}
-                            toggleNoiseFilter={toggleNoiseFilter}
-                        />
+                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
+                            <label
+                                className={clsx(
+                                    'setting-label text-ellipsis',
+                                    disableVideos ? 'color-norm' : 'color-hint'
+                                )}
+                                htmlFor="disable-videos"
+                            >{c('Action').t`Turn off incoming video`}</label>
+                            <Toggle
+                                id="disable-videos"
+                                checked={disableVideos}
+                                onChange={() => dispatch(setDisableVideos(!disableVideos))}
+                                className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
+                            />
+                        </div>
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx('setting-label text-ellipsis', !selfView ? 'color-norm' : 'color-hint')}
@@ -102,27 +113,33 @@ export const Settings = () => {
                             <Toggle
                                 id="self-view"
                                 checked={!selfView}
-                                onChange={() => setSelfView(!selfView)}
+                                onChange={() => dispatch(setSelfView(!selfView))}
                                 className={clsx('settings-toggle', !selfView ? '' : 'settings-toggle-inactive')}
-                                aria-label={c('Alt').t`Hide self view`}
                             />
                         </div>
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
-                                className={clsx(
-                                    'setting-label text-ellipsis',
-                                    disableVideos ? 'color-norm' : 'color-hint'
-                                )}
-                                htmlFor="disable-videos"
-                            >{c('Action').t`Stop incoming video`}</label>
+                                className={clsx('setting-label text-ellipsis', !selfView ? 'color-norm' : 'color-hint')}
+                                htmlFor="pip-enabled"
+                            >{c('Action').t`Picture-in-picture mode`}</label>
                             <Toggle
-                                id="disable-videos"
-                                checked={disableVideos}
-                                onChange={() => setDisableVideos(!disableVideos)}
-                                className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
-                                aria-label={c('Alt').t`Stop incoming video`}
+                                id="pip-enabled"
+                                checked={pipEnabled}
+                                onChange={() => dispatch(setPipEnabled(!pipEnabled))}
+                                className={clsx('settings-toggle', pipEnabled ? '' : 'settings-toggle-inactive')}
+                                disabled={isLocalScreenShare}
                             />
                         </div>
+                    </div>
+                </div>
+                <div className="flex flex-column w-full gap-4">
+                    <div className="text-semibold color-weak py-2">{c('Title').t`Audio`}</div>
+                    <div className="flex flex-column w-full gap-4 pl-4">
+                        <NoiseCancellingToggle
+                            idBase="settings"
+                            noiseFilter={noiseFilter}
+                            toggleNoiseFilter={toggleNoiseFilter}
+                        />
                     </div>
                 </div>
             </div>

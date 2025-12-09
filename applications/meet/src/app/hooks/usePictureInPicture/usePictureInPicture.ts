@@ -7,6 +7,8 @@ import { useNotifications } from '@proton/components';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useMeetSelector } from '../../store/hooks';
+import { selectMeetSettings } from '../../store/slices/settings';
 import type { MeetChatMessage } from '../../types';
 import { PiPSessionManager } from './PiPSessionManager';
 import { useLatest } from './useLatest';
@@ -48,6 +50,8 @@ export function usePictureInPicture({
 
     const { toggleVideo, toggleAudio, isVideoEnabled, isAudioEnabled, selectedMicrophoneId, selectedCameraId } =
         useMediaManagementContext();
+
+    const { pipEnabled } = useMeetSelector(selectMeetSettings);
 
     const [isPipActive, setIsPipActive] = useState(false);
 
@@ -104,7 +108,7 @@ export function usePictureInPicture({
     }, [stopRendering, startRendering, tracksForDisplay, messages, participantNameMapRef]);
 
     const pipSetup = async (throttle: boolean = false) => {
-        if (isMobile()) {
+        if (isMobile() || !pipEnabled) {
             return;
         }
 
@@ -120,6 +124,10 @@ export function usePictureInPicture({
 
     // Start PiP
     const startPiP = useCallback(async () => {
+        if (!pipEnabled) {
+            return;
+        }
+
         try {
             if (isMobile() || isPipActive) {
                 return;
@@ -166,6 +174,7 @@ export function usePictureInPicture({
         setIsPipActive,
         setupMediaSession,
         stopPiP,
+        pipEnabled,
     ]);
 
     const preparePictureInPicture = () => {
@@ -201,7 +210,7 @@ export function usePictureInPicture({
     }, [isPipActive, tracksForDisplay, messages, startRendering, stopRendering]);
 
     useEffect(() => {
-        if (!isChromiumBased() || isMobile()) {
+        if (!isChromiumBased() || isMobile() || !pipEnabled) {
             return;
         }
 
@@ -228,11 +237,11 @@ export function usePictureInPicture({
         return () => {
             window.removeEventListener('blur', handleWindowBlur);
         };
-    }, [startPiP, isPipActive, room]);
+    }, [startPiP, isPipActive, room, pipEnabled]);
 
     useEffect(() => {
         try {
-            if ('mediaSession' in navigator && isChromiumBased() && !isMobile()) {
+            if ('mediaSession' in navigator && isChromiumBased() && !isMobile() && pipEnabled) {
                 // @ts-ignore - Only available in Chrome
                 navigator.mediaSession.setActionHandler('enterpictureinpicture', async () => {
                     const isScreenShareActive = [
@@ -254,14 +263,14 @@ export function usePictureInPicture({
             // eslint-disable-next-line no-console
             console.error(error);
         }
-    }, [startPiP]);
+    }, [startPiP, pipEnabled]);
 
     const prevMediaStatus = useRef(isVideoEnabled || isAudioEnabled);
     // Setting up a silent audio stream to be able to use enterpictureinpicture in Chromium based browsers
     useEffect(() => {
         const currentMediaStatus = isVideoEnabled || isAudioEnabled;
 
-        if (!isChromiumBased() || isMobile() || currentMediaStatus) {
+        if (!isChromiumBased() || isMobile() || currentMediaStatus || !pipEnabled) {
             return;
         }
 
@@ -299,7 +308,7 @@ export function usePictureInPicture({
                 silentStream.getTracks().forEach((track) => track.stop());
             }
         };
-    }, [room, isVideoEnabled, isAudioEnabled]);
+    }, [room, isVideoEnabled, isAudioEnabled, pipEnabled]);
 
     return {
         startPiP,
