@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
@@ -6,8 +6,6 @@ import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { redirectTo } from '@proton/shared/lib/helpers/browser';
-import { useFlag, useFlagsStatus } from '@proton/unleash';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
@@ -140,14 +138,6 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
     const defaultEmail = searchParams.get('email') || undefined;
 
     const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
-
-    const { flagsReady } = useFlagsStatus();
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
-    useEffect(() => {
-        if (flagsReady && !isReferralExpansionEnabled) {
-            redirectTo(`${SSO_PATHS.SIGNUP}${location.search}`);
-        }
-    }, [flagsReady, isReferralExpansionEnabled]);
 
     return (
         <SignupContextProvider
