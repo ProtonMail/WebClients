@@ -39,16 +39,14 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
 };
 
 export const createTodayBookingRange = (date: Date, timezone: string, today: Date, duration: number) => {
-    const nextHour = today.getHours() + 1;
+    const roundedTime = roundToNextHalfHour(today);
 
-    if (nextHour >= DEFAULT_RANGE_END_HOUR) {
+    if (roundedTime.getHours() >= DEFAULT_RANGE_END_HOUR) {
         return undefined;
     }
 
-    const roundedTime = roundToNextHalfHour(today);
-
     const start =
-        nextHour < DEFAULT_RANGE_START_HOUR
+        roundedTime.getHours() < DEFAULT_RANGE_START_HOUR
             ? set(date, { hours: DEFAULT_RANGE_START_HOUR, minutes: 0, seconds: 0, milliseconds: 0 })
             : set(date, {
                   hours: roundedTime.getHours(),
