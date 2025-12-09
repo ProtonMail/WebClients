@@ -7,6 +7,19 @@ export type ArchiveStreamGeneratorResult = {
     controller: DownloadController;
 };
 
+export type ArchiveTracker = {
+    registerFile(taskId: string): void;
+    updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number): void;
+    attachController(taskId: string, controller: DownloadController): void;
+    waitForTaskCompletion(taskId: string): Promise<void>;
+    pauseAll(): void;
+    resumeAll(): void;
+    waitForCompletion(): Promise<void>;
+    notifyItemReady(): void;
+    notifyError(error: unknown): void;
+    waitForFirstItem(): Promise<void>;
+};
+
 export type ArchiveItem =
     | {
           isFile: false;
@@ -22,16 +35,12 @@ export type ArchiveItem =
           claimedSize?: number;
       };
 
-export type DownloadQueueTaskHandle = {
-    completion: Promise<void>;
-};
-
 export type DownloadQueueTask = {
     taskId: string;
     node: NodeEntity;
     downloadId: string;
     storageSizeEstimate?: number;
-    start: () => Promise<DownloadQueueTaskHandle>;
+    start: () => Promise<void>;
 };
 
 export type DownloadScheduler = {
