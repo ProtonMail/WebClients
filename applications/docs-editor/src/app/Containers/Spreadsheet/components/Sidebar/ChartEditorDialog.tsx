@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+
 import {
   FormulaInput,
   type SheetRange,
@@ -11,11 +13,18 @@ import { useChartEditorDialogState } from '@rowsncolumns/charts'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
 import { Button, FormCheckbox, FormGroup, FormLabel, Input, Select, SelectPopover } from './shared'
 import * as Ariakit from '@ariakit/react'
-import { CHART_TYPES, getBaseChartSpecData, getChartTypeByName, getChartTypeBySpec } from './chartData'
+import {
+  CHART_TYPES,
+  type ChartDataFormula,
+  getBaseChartSpecData,
+  getChartTypeByName,
+  getChartTypeBySpec,
+  isBasicChartSpec,
+} from './chartData'
 import clsx from '@proton/utils/clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { useUI } from '../../ui-store'
-import { useEffect, useMemo, useState } from 'react'
+import { Fragment, useCallback, useEffect, useMemo, useState } from 'react'
 import { uuid } from '@rowsncolumns/utils'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
@@ -58,6 +67,23 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
     })
   }, [subscribe, handleSubmit, saveChanges])
 
+  const chartDataToFormula = useCallback(
+    (data?: ChartData[]): ChartDataFormula[] => {
+      if (!data) {
+        return []
+      }
+      return data.map((item) => {
+        return {
+          ...item,
+          sources: item.sources.map((source) => {
+            return rangeToFormula(source)
+          }),
+        }
+      })
+    },
+    [rangeToFormula],
+  )
+
   const dataRangeFormula = useMemo(() => {
     const dataRange = formValue.spec?.dataRange
     if (dataRange) {
@@ -67,35 +93,21 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
     return `=`
   }, [formValue.spec?.dataRange, rangeToFormula])
 
-  const horizontalAxisFormula = useMemo(() => {
-    const domains = formValue.spec?.domains
-    if (domains) {
-      return domains.map((domain) => {
-        return {
-          ...domain,
-          sources: domain.sources.map((source) => rangeToFormula(source)),
-        }
-      })
-    }
+  const basicSpec = isBasicChartSpec(formValue.spec) ? formValue.spec : undefined
 
-    return []
-  }, [formValue.spec?.domains, rangeToFormula])
+  const horizontalAxisFormula = useMemo(() => {
+    if (!basicSpec) {
+      return []
+    }
+    return chartDataToFormula(basicSpec.domains)
+  }, [basicSpec, chartDataToFormula])
 
   const seriesFormula = useMemo(() => {
-    const domains = formValue.spec?.series
-    if (domains) {
-      return domains.map((domain) => {
-        return {
-          ...domain,
-          sources: domain.sources.map((source) => {
-            return rangeToFormula(source)
-          }),
-        }
-      })
+    if (!basicSpec) {
+      return []
     }
-
-    return []
-  }, [formValue.spec?.series, rangeToFormula])
+    return chartDataToFormula(basicSpec.series)
+  }, [basicSpec, chartDataToFormula])
 
   const selectedChartType = getChartTypeBySpec(formValue.spec)
 
@@ -114,6 +126,16 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                 value={selectedChartType?.name}
                 setValue={(value: string) => {
                   const chartType = getChartTypeByName(value)
+                  // if (chartType) {
+                  //   form.setValue(
+                  //     'spec',
+                  //     mergeChartSpecWithConfig(
+                  //       formValue.spec,
+                  //       chartType.spec as Partial<EmbeddedChart['spec']>,
+                  //     ) as ChartSpec,
+                  //   )
+                  // }
+
                   if (chartType) {
                     form.setValue('spec', {
                       ...getBaseChartSpecData(formValue.spec),
@@ -179,138 +201,159 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
               </div>
             </FormGroup>
 
-            <FormGroup>
-              <div className="flex items-center justify-between gap-2">
-                <FormLabel>{s('Series')}</FormLabel>
-                <Button
-                  type="button"
-                  className="shrink-0 rounded px-2 py-1 text-xs text-[#6D4AFF]"
-                  onClick={() => {
-                    const lastSeries = formValue.spec.series[formValue.spec.series.length - 1]
-                    form.setValue('spec.series', [
-                      ...formValue.spec.series,
-                      {
-                        sources: lastSeries ? lastSeries.sources : [formValue.spec.dataRange],
-                      },
-                    ] as ChartData[])
-                  }}
-                >
-                  {s('Add')}
-                </Button>
-              </div>
-              <div>
-                {seriesFormula.map((domain, domainIdx) => {
-                  return (
-                    <div key={domainIdx} className="flex flex-col gap-2 border-b border-[black]/[0.12] py-4 first:pt-0">
-                      <FormGroup>
-                        <div className="flex items-center justify-between gap-2">
-                          <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
-                            {s('Name')} ({s('Series')} {domainIdx + 1})
-                          </Ariakit.Role.label>
+            {basicSpec ? (
+              <Fragment>
+                <FormGroup>
+                  <div className="flex items-center justify-between gap-2">
+                    <FormLabel>{s('Series')}</FormLabel>
+                    <Button
+                      type="button"
+                      className="shrink-0 rounded px-2 py-1 text-xs text-[#6D4AFF]"
+                      onClick={() => {
+                        const nextSeries = basicSpec.series
+                        const lastSeries = nextSeries[nextSeries.length - 1]
+                        form.setValue('spec.series', [
+                          ...nextSeries,
+                          {
+                            sources: lastSeries
+                              ? lastSeries.sources
+                              : formValue.spec.dataRange
+                                ? [formValue.spec.dataRange]
+                                : [],
+                          },
+                        ] as ChartData[])
+                      }}
+                    >
+                      {s('Add')}
+                    </Button>
+                  </div>
+                  <div>
+                    {seriesFormula.map((domain, domainIdx) => {
+                      return (
+                        <div
+                          key={domainIdx}
+                          className="flex flex-col gap-2 border-b border-[black]/[0.12] py-4 first:pt-0"
+                        >
+                          <FormGroup>
+                            <div className="flex items-center justify-between gap-2">
+                              <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
+                                {s('Name')} ({s('Series')} {domainIdx + 1})
+                              </Ariakit.Role.label>
 
-                          <Button
-                            type="button"
-                            className="inline-flex size-6 items-center justify-center"
-                            onClick={() => {
-                              form.setValue(
-                                'spec.series',
-                                formValue.spec.series.filter((_, i) => i !== domainIdx),
-                              )
-                            }}
-                          >
-                            <Icon legacyName="trash" />
-                          </Button>
-                        </div>
-                        <Input
-                          placeholder={s('Name')}
-                          value={formValue.spec.series[domainIdx].dataLabel ?? ''}
-                          onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
-                        />
-                      </FormGroup>
+                              <Button
+                                type="button"
+                                className="inline-flex size-6 items-center justify-center"
+                                onClick={() => {
+                                  // form.setValue(
+                                  //   'spec.series',
+                                  //   formValue.spec.series.filter((_, i) => i !== domainIdx),
+                                  // )
 
-                      {domain.sources.map((source, sourceIdx) => {
-                        return (
-                          <FormGroup key={sourceIdx}>
-                            <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
-                              {s('Range')}
-                            </Ariakit.Role.label>
-                            <div className="flex items-center">
-                              <FormulaInput
-                                value={source}
-                                onChange={(value) => {
+                                  const currentSeries = basicSpec.series
                                   form.setValue(
-                                    `spec.series.${domainIdx}.sources.${sourceIdx}`,
-                                    formulaToRange(value) as SheetRange,
+                                    'spec.series',
+                                    currentSeries.filter((_, seriesIndex) => seriesIndex !== domainIdx),
                                   )
                                 }}
-                                required
-                                placeholder={s('Select a range')}
-                                autoFocus
-                                className="mb-0 w-full"
-                              />
+                              >
+                                <Icon legacyName="trash" />
+                              </Button>
                             </div>
+                            <Input
+                              placeholder={s('Name')}
+                              value={basicSpec.series[domainIdx].dataLabel ?? ''}
+                              onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
+                            />
                           </FormGroup>
-                        )
-                      })}
-                    </div>
-                  )
-                })}
-              </div>
-            </FormGroup>
 
-            <FormGroup>
-              <FormLabel>{s('Horizontal (category) axis labels')}</FormLabel>
-              {horizontalAxisFormula.map((domain, domainIndex) => {
-                return domain.sources.map((source, sourceIdx) => {
-                  return (
-                    <div key={sourceIdx} className="flex items-center">
-                      <FormulaInput
-                        value={source}
-                        onChange={(value) => {
-                          form.setValue(
-                            `spec.domains.${domainIndex}.sources.${sourceIdx}`,
-                            formulaToRange(value) as SheetRange,
-                          )
-                        }}
-                        required
-                        placeholder={s('Select a range')}
-                        autoFocus
-                        className="mb-0 w-full"
-                      />
-                    </div>
-                  )
-                })
-              })}
-            </FormGroup>
+                          {domain.sources.map((source, sourceIdx) => {
+                            return (
+                              <FormGroup key={sourceIdx}>
+                                <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
+                                  {s('Range')}
+                                </Ariakit.Role.label>
+                                <div className="flex items-center">
+                                  <FormulaInput
+                                    value={source}
+                                    onChange={(value) => {
+                                      form.setValue(
+                                        `spec.series.${domainIdx}.sources.${sourceIdx}`,
+                                        formulaToRange(value) as SheetRange,
+                                      )
+                                    }}
+                                    required
+                                    placeholder={s('Select a range')}
+                                    autoFocus
+                                    className="mb-0 w-full"
+                                  />
+                                </div>
+                              </FormGroup>
+                            )
+                          })}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </FormGroup>
 
-            <FormGroup>
-              <FormLabel>{s('Vertical axis title')}</FormLabel>
-              <Input
-                value={formValue?.spec.verticalAxisTitle ?? ''}
-                onChange={(e) => form.setValue(`spec.verticalAxisTitle`, e.target.value)}
-                placeholder={s('Vertical axis title')}
-              />
-            </FormGroup>
+                <FormGroup>
+                  <FormLabel>{s('Horizontal (category) axis labels')}</FormLabel>
+                  {horizontalAxisFormula.map((domain, domainIndex) => {
+                    return domain.sources.map((source, sourceIdx) => {
+                      return (
+                        <div key={sourceIdx} className="flex items-center">
+                          <FormulaInput
+                            value={source}
+                            onChange={(value) => {
+                              form.setValue(
+                                `spec.domains.${domainIndex}.sources.${sourceIdx}`,
+                                formulaToRange(value) as SheetRange,
+                              )
+                            }}
+                            required
+                            placeholder={s('Select a range')}
+                            autoFocus
+                            className="mb-0 w-full"
+                          />
+                        </div>
+                      )
+                    })
+                  })}
+                </FormGroup>
 
-            <FormGroup>
-              <FormLabel>{s('Horizontal axis title')}</FormLabel>
-              <Input
-                value={formValue?.spec.horizontalAxisTitle ?? ''}
-                onChange={(e) => form.setValue(`spec.horizontalAxisTitle`, e.target.value)}
-                placeholder={s('Horizontal axis title')}
-              />
-            </FormGroup>
+                <FormGroup>
+                  <FormLabel>{s('Vertical axis title')}</FormLabel>
+                  <Input
+                    value={formValue?.spec.verticalAxisTitle ?? ''}
+                    onChange={(e) => form.setValue(`spec.verticalAxisTitle`, e.target.value)}
+                    placeholder={s('Vertical axis title')}
+                  />
+                </FormGroup>
 
-            <FormGroup>
-              <Ariakit.CheckboxProvider
-                value={formValue.spec.hiddenDimensionStrategy === 'SHOW_ALL'}
-                setValue={(checked) => {
-                  form.setValue('spec.hiddenDimensionStrategy', checked ? 'SHOW_ALL' : 'SKIP_HIDDEN_ROWS_AND_COLUMNS')
-                }}
-              >
-                <FormCheckbox>{s('Show data in hidden rows and columns')}</FormCheckbox>
-              </Ariakit.CheckboxProvider>
-            </FormGroup>
+                <FormGroup>
+                  <FormLabel>{s('Horizontal axis title')}</FormLabel>
+                  <Input
+                    value={formValue?.spec.horizontalAxisTitle ?? ''}
+                    onChange={(e) => form.setValue(`spec.horizontalAxisTitle`, e.target.value)}
+                    placeholder={s('Horizontal axis title')}
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Ariakit.CheckboxProvider
+                    value={formValue.spec.hiddenDimensionStrategy === 'SHOW_ALL'}
+                    setValue={(checked) => {
+                      form.setValue(
+                        'spec.hiddenDimensionStrategy',
+                        checked ? 'SHOW_ALL' : 'SKIP_HIDDEN_ROWS_AND_COLUMNS',
+                      )
+                    }}
+                  >
+                    <FormCheckbox>{s('Show data in hidden rows and columns')}</FormCheckbox>
+                  </Ariakit.CheckboxProvider>
+                </FormGroup>
+              </Fragment>
+            ) : null}
           </div>
         </div>
       </div>

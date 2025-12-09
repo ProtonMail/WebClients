@@ -6,9 +6,8 @@ import {
   addressToSelection,
   FormulaBarInput,
   selectionToRxC,
-  sortSheetsByIndex,
 } from '@rowsncolumns/spreadsheet'
-import { addressToCell, cellToAddress, convertCellToRange } from '@rowsncolumns/utils'
+import { addressToCell, cellToAddress, convertCellToRange, sortSheetsByIndex } from '@rowsncolumns/utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useUI } from '../../ui-store'
 import { FUNCTION_DESCRIPTIONS } from '../../constants'
