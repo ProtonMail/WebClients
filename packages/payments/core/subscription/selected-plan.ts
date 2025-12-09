@@ -8,6 +8,7 @@ import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../in
 import {
     type AddonGuard,
     AddonGuardsMap,
+    type SupportedAddons,
     getAddonType,
     getSupportedAddons,
     isAddonType,
@@ -38,6 +39,8 @@ type PresentAddonTypes = {
     [ADDON_PREFIXES.LUMO]: boolean;
 };
 
+export type AddonBalanceKey = 'prefer-scribes' | 'prefer-lumos';
+
 export class SelectedPlan {
     private _planIDs: PlanIDs;
 
@@ -60,7 +63,7 @@ export class SelectedPlan {
         plans: PlansMap | Plan[],
         cycle: CYCLE,
         currency: Currency,
-        preferred: 'prefer-scribes' | 'prefer-lumos' = 'prefer-lumos'
+        preferred: AddonBalanceKey = 'prefer-lumos'
     ): SelectedPlan {
         const plan = new SelectedPlan(planIDs, plans, cycle, currency);
         return plan.applyRules(preferred);
@@ -121,6 +124,14 @@ export class SelectedPlan {
         return SelectedPlan.createNormalized(newPlanIDs, this._plansMap, this._cycle, this._currency);
     }
 
+    getSupportedAddons(): SupportedAddons {
+        return getSupportedAddons(this.planIDs);
+    }
+
+    getSupportedAddonNames(): ADDON_NAMES[] {
+        return Object.keys(this.getSupportedAddons()) as ADDON_NAMES[];
+    }
+
     private swapAddonName(addonName: ADDON_NAMES, planName: PLANS): ADDON_NAMES | null {
         const addonType = getAddonType(addonName);
         if (!addonType) {
@@ -138,7 +149,7 @@ export class SelectedPlan {
         return supportedAddon;
     }
 
-    getTotalMembers(): number {
+    private getTotalMembers(): number {
         return this.getTotalAddons(isMemberAddon, 'MaxMembers');
     }
 
@@ -262,7 +273,7 @@ export class SelectedPlan {
         return updatedPlan;
     }
 
-    private applyRules(preferred: 'prefer-scribes' | 'prefer-lumos'): SelectedPlan {
+    private applyRules(preferred: AddonBalanceKey): SelectedPlan {
         return this.capScribes().capLumos().balanceScribesAndLumos(preferred);
     }
 
@@ -322,7 +333,7 @@ export class SelectedPlan {
         return this;
     }
 
-    private balanceScribesAndLumos(preferred: 'prefer-scribes' | 'prefer-lumos'): SelectedPlan {
+    private balanceScribesAndLumos(preferred: AddonBalanceKey): SelectedPlan {
         const members = this.getTotalMembers();
         const lumos = this.getTotalLumos();
         const scribes = this.getTotalScribes();
@@ -346,7 +357,7 @@ export class SelectedPlan {
         return this.getCountInPlan(featureLimitKey) + this.getCountInAddons(guard, featureLimitKey);
     }
 
-    private getCountInPlan(featureLimitKey: FeatureLimitKey): number {
+    getCountInPlan(featureLimitKey: FeatureLimitKey): number {
         return getPlanFeatureLimit(this.getPlan(), featureLimitKey);
     }
 
