@@ -112,7 +112,11 @@ export const FileCard = ({ attachment, onRemove, onView, className, readonly = f
                 ))}
 
             <div className="flex flex-row flex-nowrap gap-2 items-start">
-                {previewUrl ? (
+                {processing ? (
+                    <div className="mr-1 flex items-center justify-center" style={{ width: '2.5rem', height: '2.5rem' }}>
+                        <CircularProgress progress={75} size={20} />
+                    </div>
+                ) : previewUrl ? (
                     <img
                         src={previewUrl}
                         alt={filename}
