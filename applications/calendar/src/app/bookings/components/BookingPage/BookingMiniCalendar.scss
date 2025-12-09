@@ -39,6 +39,10 @@
 		gap: rem(4);
 	}
 
+	.minicalendar-monthdays > li {
+		min-block-size: rem(30); // fix for Chrome
+	}
+
 	.minicalendar-day.minicalendar-day--highlighted {
 		border: 1px solid var(--booking-day-highlighted-border-color);
 		background-color: var(--booking-day-highlighted-background-color);
