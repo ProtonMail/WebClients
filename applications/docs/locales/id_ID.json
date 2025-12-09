@@ -90,6 +90,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Ask me next time": [
+        "Tanyakan saya lain kali"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
@@ -239,6 +242,9 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
+      ],
+      "Create a spreadsheet": [
+        "Buat lembar kerja"
       ],
       "Create and copy alias": [
         "Buat dan salin alias"
@@ -651,6 +657,9 @@
       "Save changes": [
         "Simpan perubahan"
       ],
+      "Save preferences": [
+        "Simpan preferensi"
+      ],
       "Search": [
         "Cari"
       ],
@@ -983,6 +992,9 @@
       "1 user account": [
         "1 akun pengguna"
       ],
+      "200 GB storage: 40x your current plan": [
+        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
+      ],
       "6 user accounts": [
         "6 akun pengguna"
       ],
@@ -1004,6 +1016,9 @@
       "Password health alerts": [
         "Peringatan kesehatan kata sandi"
       ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
+      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
@@ -1017,6 +1032,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
+      "forever": [
+        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
@@ -1140,6 +1158,12 @@
       ],
       "Application problem": [
         "Masalah aplikasi"
+      ],
+      "Authenticator problem": [
+        "Kesalahan autentikator"
+      ],
+      "Black Friday": [
+        "Jumat Hitam"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -1324,6 +1348,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Kemaanan akun dan jaringan lanjutan dalam satu paket"
+      ],
       "High-speed chats and advanced AI features.": [
         "Percakapan berkecepatan tinggi dan berbagai fitur AI mutakhir."
       ]
@@ -2571,6 +2598,9 @@
       "/month": [
         "/bulan"
       ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
       "2 user accounts": [
         "2 akun pengguna"
       ],
@@ -2582,11 +2612,17 @@
       ]
     },
     "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dapatkan ruang penyimpanan 4x lebih besar"
+      ],
       "Share your plan": [
         "Bagikan paket Anda"
       ]
     },
     "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Dapatkan ruang penyimpanan 4x lebih besar dengan ${ BRAND_NAME } Duo"
+      ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Bagikan keutamaan paket Anda dengan ${ BRAND_NAME } Duo"
       ]
@@ -3101,6 +3137,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Silakan masuk dengan alamat Gmail yang telah meneruskan pesan ke ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
       ]
@@ -4184,6 +4223,9 @@
       "Continue": [
         "Lanjutkan"
       ],
+      "Converting document...": [
+        "Mengonversi dokumen..."
+      ],
       "Copy the link to clipboard": [
         "Salin tautan ke papan klip"
       ],
@@ -4211,6 +4253,9 @@
       "Create an end-to-end encrypted document.": [
         "Buat dokumen terenkripsi secara end-to-end."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Buat dokumen dan lembar kerja yang terenkripsi end-to-end."
+      ],
       "Create in": [
         "Buat di"
       ],
@@ -4225,6 +4270,9 @@
       ],
       "Creating link to folder": [
         "Menghasilkan tautan folder"
+      ],
+      "Creating new document...": [
+        "Membuat dokumen baru..."
       ],
       "Current plan": [
         "Paket saat ini"
@@ -4319,6 +4367,12 @@
       "Enter your own password (as trusted contact).": [
         "Masukkan kata sandi Anda (selaku kontak terpercaya)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Kesalahan mengonversi dokumen: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Kesalahan memuat dokumen: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Terjadi Kesalahan Menyinkronkan"
       ],
@@ -4378,6 +4432,12 @@
       ],
       "Geoblocking": [
         "Pemblokiran wilayah"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Dapatkan pembaruan via email untuk komentar dan saran yang ditambahkan ke dokumen Anda."
+      ],
+      "Get Notified About Comments": [
+        "Dapatkan Notifikasi Seputar Komentar"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Pemerintah dan ISP dapat memantau aktivitas online Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
@@ -4514,6 +4574,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Making a copy...": [
+        "Membuat salinan..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
@@ -4543,6 +4606,9 @@
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Tidak ada dokumen yang disertakan pada URL. Kembali ke ${ DRIVE_APP_NAME } dan pilih dokumen."
       ],
       "No email address": [
         "Tidak ada alamat email"
@@ -4825,6 +4891,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim email terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "URL yang Anda masukkan sepertinya tidak disalin dari Slack dengan benar. Pada saat menyalin tautan yang panjang dari Slack, klik kanan tautan ini, lalu pilih \"Salin tautan\" alih-alih menyalin teks URL yang terpotong secara langsung."
       ],
       "There are no documents in the trash.": [
         "Tidak ada dokumen di sampah."
@@ -5132,6 +5201,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Jadikan data Anda tetap milik Anda. Buat dan kolaborasikan berbagai hal dengan lembaran kerja berfitur lengkap yang diamankan oleh enkripsi end-to-end."
+      ],
       "Your email address and password were leaked:": [
         "Alamat email dan kata sandi Anda telah bocor:"
       ],
@@ -5425,6 +5497,9 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -5472,6 +5547,9 @@
       ],
       "Include application logs in bug report": [
         "Sertakan log aplikasi dalam laporan bug"
+      ],
+      "Include document name in notification": [
+        "Sertakan nama dokumen dalam notifikasi"
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama berkas dalam email undangan"
@@ -6393,7 +6471,7 @@
         "Tagihan yang terpusat"
       ],
       "Collaborate and share large files": [
-        "Kolaborasi dan berbagi file besar"
+        "Kolaborasi dan berbagi berkas besar"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -6451,6 +6529,9 @@
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Keutamaan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } yang telah ada"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent kilat"
@@ -7559,6 +7640,9 @@
       "Advanced account protection": [
         "Perlindungan akun mutakhir"
       ],
+      "File attachments (up to 10GB)": [
+        "Lampiran berkas (hingga 10GB)"
+      ],
       "Team policies": [
         "Kebijakan tim"
       ]
@@ -7633,6 +7717,9 @@
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -7880,6 +7967,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Setelah tanggal ini, akun Anda akan diturunkan ke **${ BRAND_NAME } Free**. Apabila Anda ingin berubah pikiran, Anda dapat **mengaktifkan kembali langganan Anda** untuk mempertahankan akses ke berbagai fitur premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Dapatkan saldo senilai hingga ${ maxRewardAmount }. Anda akan memperoleh ${ referrerRewardAmount } pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
@@ -8551,6 +8641,9 @@
       "${ app } storage": [
         "Ruang penyimpanan ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } ruang penyimpanan digunakan"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% penuh"
       ],
@@ -8562,6 +8655,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Ruang penyimpanan yang digunakan"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Untuk terus menggunakan produk ${ BRAND_NAME }, kosongkan ruang yang ada atau ${ upgrade }"
@@ -8795,7 +8891,7 @@
         "Anda telah berhasil membatalkan langganan Anda."
       ],
       "You have successfully unsubscribed": [
-        "Anda berhasil berhenti berlangganan"
+        "Anda telah berhasil membatalkan langganan"
       ]
     },
     "Suffix": {
@@ -9203,6 +9299,9 @@
       "Information exposed in breach": [
         "Informasi yang terpapar dalam kebocoran data"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Memperkenalkan ${ SHEETS_APP_NAME }"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -9554,6 +9653,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asisten AI yang menghargai privasi Anda"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]

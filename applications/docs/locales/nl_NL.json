@@ -90,6 +90,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Ask me next time": [
+        "Volgende keer vragen"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -657,6 +660,9 @@
       "Save changes": [
         "Wijzigingen opslaan"
       ],
+      "Save preferences": [
+        "Voorkeuren opslaan"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -668,6 +674,9 @@
       ],
       "Search recent spreadsheets": [
         "Doorzoek recente rekenbladen"
+      ],
+      "Search recents": [
+        "Zoek in recenten"
       ],
       "See how": [
         "Zie hoe"
@@ -4273,6 +4282,9 @@
       "Continue": [
         "Ga verder"
       ],
+      "Converting document...": [
+        "Document wordt geconverteerd…"
+      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -4318,6 +4330,9 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
+      ],
+      "Creating new document...": [
+        "Nieuw document wordt aangemaakt..."
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4412,6 +4427,12 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fout bij het converteren van document: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fout bij het laden van document: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4471,6 +4492,12 @@
       ],
       "Geoblocking": [
         "Geoblocking"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
+      ],
+      "Get Notified About Comments": [
+        "Krijg een melding bij reacties"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
@@ -4608,6 +4635,9 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Making a copy...": [
+        "Kopie wordt gemaakt…"
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
@@ -4638,6 +4668,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Er is geen document meegegeven in de URL. Ga terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -4868,6 +4901,9 @@
       "Something went wrong": [
         "Er is iets fout gegaan."
       ],
+      "Spreadsheets": [
+        "Rekenbladen"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
       ],
@@ -4919,6 +4955,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "De URL die u hebt ingevoegd, lijkt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -5387,9 +5426,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
-      "A screenshot of ${ SHEETS_APP_NAME }": [
-        "Een schermafbeelding van ${ SHEETS_APP_NAME }"
-      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -5531,6 +5567,9 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
+      "Enable email notifications": [
+        "E-mailmeldingen inschakelen"
+      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -5578,6 +5617,9 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
+      ],
+      "Include document name in notification": [
+        "Documentnaam weergeven in melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
