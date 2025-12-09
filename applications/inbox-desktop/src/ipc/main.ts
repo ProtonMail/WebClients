@@ -2,6 +2,7 @@ import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update/update";
 import type {
+    IPCInboxClientGetAsyncDataMessage,
     IPCInboxClientUpdateMessage,
     IPCInboxGetInfoMessage,
     IPCInboxGetUserInfoMessage,
@@ -33,6 +34,7 @@ import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
 import telemetry from "../utils/telemetry";
 import { toggleAppCache } from "../utils/appCache";
+import { getLogs } from "../utils/log/getLogsIPC";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -224,4 +226,20 @@ export const handleIPCCalls = () => {
                 break;
         }
     });
+
+    ipcMain.handle(
+        "getAsyncData",
+        async (_event, message: IPCInboxClientGetAsyncDataMessage["type"], ...args: unknown[]) => {
+            switch (message) {
+                case "getElectronLogs": {
+                    type ElectronLogsMessage = Extract<IPCInboxClientGetAsyncDataMessage, { type: "getElectronLogs" }>;
+                    const [maxSize] = args as ElectronLogsMessage["args"];
+                    return await getLogs(maxSize);
+                }
+                default:
+                    ipcLogger.error(`Invalid getAsyncData message: ${message}`);
+                    return null;
+            }
+        },
+    );
 };

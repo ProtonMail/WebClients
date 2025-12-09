@@ -34,6 +34,7 @@ enum CommonFeatureFlag {
     InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
     InboxDesktopAppSessionCacheDisabled = 'InboxDesktopAppSessionCacheDisabled',
+    InboxDesktopBugReportLogAttachmentDisabled = 'InboxDesktopBugReportLogAttachmentDisabled',
     // Monthly subscriber nudge feature flags
     SubscriberNudgeBundleMonthly = 'SubscriberNudgeBundleMonthly',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',

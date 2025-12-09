@@ -38,7 +38,8 @@ export type IPCInboxDesktopFeature =
     | 'StatsTelemetry'
     | 'RestrictedThemeSelection'
     | 'ClearAppModal'
-    | 'SnapSupport';
+    | 'SnapSupport'
+    | 'BugReportLogAttachments';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -78,6 +79,11 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'reportTestingError'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
     | { type: 'toggleAppCache'; payload: boolean };
+export type IPCInboxClientGetAsyncDataMessage = {
+    type: 'getElectronLogs';
+    args: [maxSize?: number];
+    result: Uint8Array<ArrayBuffer> | null;
+};
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
@@ -127,6 +133,12 @@ export type IPCInboxMessageBroker = {
         type: T,
         userID: string
     ) => Extract<IPCInboxGetUserInfoMessage, { type: T }>['result'];
+
+    getAsyncData?: <T extends IPCInboxClientGetAsyncDataMessage['type']>(
+        type: T,
+        ...args: Extract<IPCInboxClientGetAsyncDataMessage, { type: T }>['args']
+    ) => Promise<Extract<IPCInboxClientGetAsyncDataMessage, { type: T }>['result']>;
+
     on?: IPCInboxHostUpdateListenerAdder;
     send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
