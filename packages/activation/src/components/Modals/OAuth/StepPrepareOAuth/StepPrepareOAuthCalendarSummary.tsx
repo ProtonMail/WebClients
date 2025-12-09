@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 import { updateCalendarData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useModalState } from '@proton/components';
+import { useModalState } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import isTruthy from '@proton/utils/isTruthy';
 
 import CustomizeCalendarImportModal from './CustomizeCalendarImportModal/CustomizeCalendarImportModal';
@@ -67,7 +68,7 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
         <>
             {derivedValues.calendarLimitReached ? (
                 <div className="flex color-danger">
-                    <Icon name="exclamation-circle-filled" className="self-center mr-2" />
+                    <IcExclamationCircleFilled className="self-center mr-2" />
                     {c('Error').t`Calendar limit reached`}
                 </div>
             ) : (
