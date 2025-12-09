@@ -1,11 +1,18 @@
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
 import type { UIStateContextType } from '../../contexts/UIStateContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
+import type { MeetSettingsState } from '../../store/slices/settings';
+import { settingsReducer } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 
@@ -25,9 +32,35 @@ vi.mock('../../hooks/useIsLocalParticipantAdmin', () => ({
     }),
 }));
 
+vi.mock('../../contexts/MediaManagementContext', () => ({
+    useMediaManagementContext: vi.fn().mockReturnValue({
+        backgroundBlur: false,
+        toggleBackgroundBlur: vi.fn(),
+        isBackgroundBlurSupported: false,
+        noiseFilter: false,
+        toggleNoiseFilter: vi.fn(),
+    }),
+}));
+
+const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
+    return configureStore({
+        reducer: {
+            ...settingsReducer,
+        },
+        preloadedState: {
+            meetSettings: {
+                disableVideos: false,
+                selfView: true,
+                meetingLocked: false,
+                pipEnabled: true,
+                ...settingsState,
+            },
+        },
+    });
+};
+
 const mockContextValues = {
-    disableVideos: false,
-    setDisableVideos: vi.fn(),
+    handleMeetingLockToggle: vi.fn(),
 };
 
 const mockUIStateContextValues = {
@@ -40,21 +73,27 @@ const Wrapper = ({
     children,
     contextValue = {},
     uiStateContextValue = {},
+    settingsState = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
     uiStateContextValue?: Partial<UIStateContextType>;
+    settingsState?: Partial<MeetSettingsState>;
 }) => {
+    const store = createMockStore(settingsState);
+
     return (
-        // @ts-expect-error - contextValue is a partial MeetContextValues
-        <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
-            <UIStateContext.Provider
-                // @ts-expect-error - mock data
-                value={{ ...mockUIStateContextValues, ...uiStateContextValue }}
-            >
-                {children}
-            </UIStateContext.Provider>
-        </MeetContext.Provider>
+        <Provider context={ProtonStoreContext} store={store}>
+            {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
+            <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
+                <UIStateContext.Provider
+                    // @ts-expect-error - mock data
+                    value={{ ...mockUIStateContextValues, ...uiStateContextValue }}
+                >
+                    {children}
+                </UIStateContext.Provider>
+            </MeetContext.Provider>
+        </Provider>
     );
 };
 
@@ -75,27 +114,27 @@ describe('Settings', () => {
             </Wrapper>
         );
 
-        expect(screen.getByText('Stop incoming video')).toBeInTheDocument();
+        expect(screen.getByText('Turn off incoming video')).toBeInTheDocument();
     });
 
     it('should allow for toggling the disable videos', async () => {
-        const setDisableVideos = vi.fn();
-
         render(
-            <Wrapper contextValue={{ setDisableVideos }}>
+            <Wrapper settingsState={{ disableVideos: false }}>
                 <Settings />
             </Wrapper>
         );
 
         const user = userEvent.setup();
 
-        const stopIncomingVideoCheckbox = screen.getByRole('checkbox', { name: 'Stop incoming video' });
-        await user.click(stopIncomingVideoCheckbox);
+        const turnOffIncomingVideoCheckbox = screen.getByRole('checkbox', { name: 'Turn off incoming video' });
+        expect(turnOffIncomingVideoCheckbox).not.toBeChecked();
 
-        expect(setDisableVideos).toHaveBeenCalledWith(!mockContextValues.disableVideos);
+        await user.click(turnOffIncomingVideoCheckbox);
+
+        expect(turnOffIncomingVideoCheckbox).toBeChecked();
     });
 
-    it('should show host options when user is a host', () => {
+    it('should show security options when user is a host or admin', () => {
         // Temporarily override the mock for this test
         const mockUseIsLocalParticipantAdmin = vi.mocked(useIsLocalParticipantAdmin);
         mockUseIsLocalParticipantAdmin.mockReturnValueOnce({
@@ -111,7 +150,7 @@ describe('Settings', () => {
             </Wrapper>
         );
 
-        expect(screen.getByText('Host')).toBeInTheDocument();
+        expect(screen.getByText('Security')).toBeInTheDocument();
         expect(screen.getByText('Lock meeting')).toBeInTheDocument();
     });
 });

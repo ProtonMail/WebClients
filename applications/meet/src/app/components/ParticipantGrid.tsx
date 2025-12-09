@@ -1,16 +1,17 @@
 import { useMemo } from 'react';
 
 import { useMeetContext } from '../contexts/MeetContext';
-import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
+import { useMeetSelector } from '../store/hooks';
+import { selectMeetSettings } from '../store/slices/settings';
 import { calculateGridLayout } from '../utils/calculateGridLayout';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
     const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
 
-    const { selfView } = useUIStateContext();
+    const { selfView } = useMeetSelector(selectMeetSettings);
 
     const isLargerThanMd = useIsLargerThanMd();
 
