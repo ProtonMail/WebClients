@@ -3,10 +3,12 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Info } from '@proton/components';
-import type { PLANS } from '@proton/payments';
+import { getForcedFeatureLimitations } from '@proton/components/containers/payments/planCustomizer/forced-addon-limits';
+import type { PLANS, StrictPlan } from '@proton/payments';
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
+    AddonFeatureLimitKeyMapping,
     type Currency,
     type Cycle,
     type Plan,
@@ -46,7 +48,7 @@ const AddonField = ({ id, label, tooltip, className, children, ...rest }: AddonF
 interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
-    currentPlan: Plan;
+    currentPlan: StrictPlan;
     planIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
@@ -113,10 +115,16 @@ const PlanCustomizer = ({
             {addonsPricing.map(({ value, min, max, addon, isSupported, addonMultiplier }) => {
                 const id = addon.Name;
                 const trialProps = getTrialProps(isTrialMode, addon.Name);
+                const { forcedMin } = getForcedFeatureLimitations({
+                    plan: currentPlan.Name,
+                    featureLimitKey: AddonFeatureLimitKeyMapping[addon.Name as ADDON_NAMES],
+                    subscription: undefined,
+                    plansMap,
+                });
 
                 const buttonProps = {
                     id,
-                    min,
+                    min: Math.max(forcedMin ?? 0, min),
                     max,
                     step: addonMultiplier,
                     value,
