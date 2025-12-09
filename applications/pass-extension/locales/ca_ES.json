@@ -1838,8 +1838,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2437,6 +2436,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Se us tancarà la sessió i haureu de tornar a iniciar-la en tots els altres dispositius."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Ja no tindreu accés a compartir, a 2FA i altres característiques avançades de ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Ja no tindreu accés a compartir, 2FA, targeta de crèdit i altres funcions avançades a ${ PASS_APP_NAME }"

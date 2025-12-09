@@ -96,7 +96,7 @@
         "Benutzer hinzuf."
       ],
       "Allow": [
-        "Zugelassen"
+        "Erlauben"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Ende-zu-Ende-verschlüsselte E-Mail für diese Gruppe zulassen"
@@ -354,7 +354,7 @@
         "Fertig"
       ],
       "Downgrade": [
-        "Downgraden"
+        "Zurückstufen"
       ],
       "Download": [
         "Herunterladen"
@@ -963,7 +963,7 @@
         "Überprüfung überspringen"
       ],
       "Spam": [
-        "In Spam verschieben"
+        "Spam"
       ],
       "Start import": [
         "Importvorgang starten"
@@ -3130,7 +3130,7 @@
     },
     "Cycle": {
       "/month": [
-        "/ Monat"
+        "/Monat"
       ],
       "/user per month": [
         "/Benutzer pro Monat"
@@ -3234,7 +3234,7 @@
         "Erstelle Richtlinien, um zu entscheiden, wer sich mit gemeinsamen Servern in jedem Land verbinden darf."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Entscheide, welche Benutzer sich mit jedem unserer mehr als 120 geteilten Server-Standorten verbinden können."
+        "Entscheide, welche Benutzer sich mit jedem unserer mehr als 120 geteilten Server-Standorte verbinden können."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Greife einfach auf deine E-Mails und deinen Kalender auf dem Desktop und Mobilgerät zu."
@@ -3366,19 +3366,19 @@
         "${ name } konnte nicht gelöscht werden"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } konnte nicht in die Liste zugelassener E-Mail-Adressen verschoben werden."
+        "${ name } konnte nicht in die Liste zugelassener Domains verschoben werden."
       ],
       "${ name } failed to move to block list": [
-        "${ name } konnte nicht in die Liste gesperrter E-Mail-Adressen verschoben werden."
+        "${ name } konnte nicht in die Liste gesperrter Domains verschoben werden."
       ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
       "${ name } moved to allow list": [
-        "${ name } wurde in die Liste zugelassener E-Mail-Adressen verschoben."
+        "${ name } wurde in die Liste zugelassener Domains verschoben."
       ],
       "${ name } moved to block list": [
-        "${ name } wurde in die Liste gesperrter E-Mail-Adressen verschoben."
+        "${ name } wurde in die Liste gesperrter Domains verschoben."
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -5055,7 +5055,7 @@
         "Liste durchsuchen"
       ],
       "Spam:": [
-        "In Spam verschieben:"
+        "Spam:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Übernimm die Kontrolle darüber, was in den Posteingängen der Mitglieder deiner Organisation landet, indem du die folgenden Listen erstellst:"
@@ -6324,8 +6324,8 @@
         "Inhaberschaft der Domain bestätigt."
       ],
       "domain used": [
-        "Domain verwendet",
-        "Domains verwendet"
+        "Domain belegt",
+        "Domänen belegt"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Verliere nicht den Zugang auf premium ${ appName } Funktionen. Aktiviere automatische Verlängerung heute."
@@ -7017,6 +7017,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Bezahlt für ein Abonnement"
@@ -8402,7 +8405,7 @@
         "Anschrift"
       ],
       "Address type": [
-        "Adresstyp"
+        "Art der Adresse"
       ],
       "Addresses": [
         "E-Mail-Adressen"
@@ -8471,7 +8474,7 @@
         "Black Friday"
       ],
       "Block": [
-        "Blockieren"
+        "Gesperrt"
       ],
       "Block malware only": [
         "Nur Malware blockieren"
@@ -8915,7 +8918,7 @@
         "Zahlungsleistender"
       ],
       "Payment details": [
-        "Zahlungsinformationen"
+        "Zahlungsdetails"
       ],
       "Payment method": [
         "Zahlungsmethode"
@@ -9110,6 +9113,9 @@
       "Verification code": [
         "Verifizierungscode"
       ],
+      "VPN Accelerator": [
+        "VPN-Accelerator"
+      ],
       "Vulnerable": [
         "Verwundbar"
       ],
@@ -9155,7 +9161,7 @@
         "Gerätebasierte Wiederherstellung"
       ],
       "Recovery phone number": [
-        "Wiederherstellung-Telefonnummer"
+        "Telefonnummer für die Wiederherstellung"
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
@@ -9449,10 +9455,10 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "Live Chat ist verfügbar mit ${ planName }"
+        "Live-Chat ist verfügbar mit ${ planName }"
       ],
       "Open support form": [
-        "Supportformular öffnen"
+        "Support-Formular öffnen"
       ],
       "Upgrade subscription": [
         "Abonnement upgraden"
@@ -9782,10 +9788,10 @@
         "Zugelassen"
       ],
       "Block": [
-        "Blockieren"
+        "Gesperrt"
       ],
       "Spam": [
-        "In Spam verschieben"
+        "Spam"
       ]
     },
     "New Label form": {
@@ -9835,7 +9841,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Auf ${ downgradedPlanName } downgraden"
+        "Downgrade auf ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Alle ${ BRAND_NAME }-Abonnements entdecken"
@@ -10498,7 +10504,7 @@
         "Abonnement prüfen und bezahlen"
       ],
       "Switch plans?": [
-        "Tarife wechseln?"
+        "Abonnement wechseln?"
       ]
     },
     "new_plans: Title": {
@@ -11135,6 +11141,9 @@
       "Allowed ${ defaultLabel }": [
         "Zugelassen ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Länderkonfigurationen"
       ],
@@ -11143,6 +11152,9 @@
       ],
       "Free server configs": [
         "Kostenlose Server-Konfigurationen"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
@@ -11155,6 +11167,9 @@
       ],
       "Ignore group": [
         "Gruppe ignorieren"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Es fehlt eine Schlüsselfunktion, die ich benötige"
@@ -12090,7 +12105,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Kostenlos"
       ]
     },
     "Property type": {
@@ -13745,7 +13760,7 @@
         "Wird alle 2 Jahre abgerechnet"
       ],
       "Billed monthly": [
-        "Monatlich abgerechnet"
+        "Wird monatlich abgerechnet"
       ],
       "Billed yearly": [
         "Wird jährlich abgerechnet"
@@ -14411,7 +14426,7 @@
         "Du hast dein Abonnement erfolgreich gekündigt."
       ],
       "You have successfully unsubscribed": [
-        "Sie haben erfolgreich das Abonnement gekündigt"
+        "Du hast das Abonnement erfolgreich gekündigt."
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Du erhältst deinen Benutzernamen innerhalb einer Minute per E-Mail, wenn du eine gültige E-Mail-Adresse für die Wiederherstellung eingegeben hast."
@@ -14521,7 +14536,7 @@
         "Für Familien"
       ],
       "For individuals": [
-        "Für Privatpersonen"
+        "Für Einzelpersonen"
       ]
     },
     "TableHeader": {
@@ -14661,7 +14676,7 @@
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
       ],
       "Access control": [
-        "Zutrittskontrolle"
+        "Zugriffsrechte"
       ],
       "Account": [
         "Konto"
@@ -15099,7 +15114,7 @@
         "E-Mail-Kategorien"
       ],
       "Email subscriptions": [
-        "E‐Mail‐Abonnements"
+        "E-Mail-Abonnemente"
       ],
       "Enable advanced account protection": [
         "Erweiterten Kontoschutz aktivieren"
@@ -15335,7 +15350,7 @@
         "Telefon"
       ],
       "Plans": [
-        "Abonnements"
+        "Abonnemente"
       ],
       "Preview": [
         "Vorschau"
@@ -16457,6 +16472,11 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
+      ]
+    },
+    "VPNClient": {
+      "Android TV": [
+        "Android TV"
       ]
     },
     "wallet_signup_2024: Info": {

@@ -1494,7 +1494,7 @@
         "Vypnuto"
       ],
       "Enabled": [
-        "Zapnuto"
+        "Povoleno"
       ],
       "Missing keys": [
         "Chybějící klíče"
@@ -1960,7 +1960,7 @@
         "Pozvěte svůj tým"
       ],
       "Manage global VPN permissions": [
-        "Správa globálních oprávnění VPN"
+        "Spravovat globální oprávnění VPN"
       ],
       "Maybe later": [
         "Možná později"
@@ -3253,7 +3253,7 @@
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Vytvořte bránu, která vašim uživatelům umožní přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
+        "Vytvořte bránu, abyste vašim uživatelům umožnili přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
@@ -3262,13 +3262,13 @@
         "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a zajištění SCIM."
+        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a protokolu SCIM."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 umístění sdílených serverů."
+        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 sdílených serverových lokací."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
@@ -3394,10 +3394,10 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "E-mailová adresa ${ name } přidána"
+        "Doména ${ name } přidána"
       ],
       "${ name } deletion failed": [
-        "Smazání e-mailové adresy ${ name } selhalo"
+        "Smazání domény ${ name } selhalo"
       ],
       "${ name } failed to move to allow list": [
         "${ name } se nepodařilo přesunout na Seznam povolených"
@@ -3415,10 +3415,10 @@
         "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } moved to spam list": [
-        "E-mailová adresa ${ name } byla přesunuta na seznam nevyžádaných e-mailů"
+        "Doména ${ name } byla přesunuta na seznam spamů"
       ],
       "${ name } successfully deleted": [
-        "E-mailová adresa ${ name } úspěšně smazána"
+        "Doména ${ name } úspěšně smazána"
       ]
     },
     "Downgrade account reason": {
@@ -5257,7 +5257,7 @@
         "Typ klíče"
       ],
       "Location": [
-        "Lokace"
+        "Umístění"
       ],
       "Members": [
         "Členové"
@@ -6717,7 +6717,7 @@
         "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Začněme"
+        "Začněte"
       ],
       "Get started with the referral link above.": [
         "Začněte s doporučujícím odkazem výše."
@@ -8196,7 +8196,7 @@
         "Nyní se můžete vrátit do aplikace a pokračovat"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Můžete mít otevřen pouze jeden chat. Prosíme, zavřete předchozí konverzace před zahájením nové."
+        "Můžete mít otevřen pouze jeden chat. Před zahájením nové konverzace prosím zavřete ty předchozí."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -10065,7 +10065,7 @@
         "Smazat účet"
       ],
       "Downgrade account": [
-        "Downgrade účtu"
+        "Snížit úroveň účtu"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Získat ${ BRAND_NAME } zdarma"
@@ -10779,7 +10779,7 @@
         "Smazat účet?"
       ],
       "Downgrade account?": [
-        "Downgrade účtu?"
+        "Snížit účet na nižší úroveň?"
       ],
       "Review subscription": [
         "Zkontrolovat předplatné"
@@ -12428,7 +12428,7 @@
     },
     "Price": {
       "Free": [
-        "Bezplatné"
+        "Zdarma"
       ]
     },
     "Property type": {
@@ -12485,7 +12485,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Zpět"
+        "Zrušit"
       ],
       "Email address has been verified.": [
         "E-mailová adresa byla ověřena."
@@ -12503,7 +12503,7 @@
         "Ověřit e-mail obnovení?"
       ],
       "Verify with email": [
-        "Ověřit přes e-mail"
+        "Ověřit e-mailem"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Ověření e-mailové adresy zvyšuje zabezpečení účtu a umožňuje další možnosti obnovení."
@@ -12522,7 +12522,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Zpět"
+        "Zrušit"
       ],
       "Phone number has been verified.": [
         "Telefonní číslo bylo ověřeno."
@@ -14347,7 +14347,7 @@
         "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro vaše e-maily, přílohy, události, hesla a soubory. Také máte nárok na roční bonusový prostor na úložišti."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } nabízí ${ planMaxSpace } úložiště pro vaše soubory a fotografie. Máte také nárok na roční bonusy k úložišti."
+        "${ planName } nabízí ${ planMaxSpace } úložiště pro vaše soubory a fotky. Máte také nárok na roční bonusy k úložišti."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události a soubory. Také máte nárok na roční bonusový prostor na úložišti."
@@ -14410,7 +14410,7 @@
         "Automatické přesměrování e-mailů"
       ],
       "Back up photos from your devices": [
-        "Zálohovat fotografie ze svých zařízení"
+        "Zálohovat fotky ze svých zařízení"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vybudujte si důvěryhodnost a rozpoznatelnost značky pomocí profesionálních e-mailových adres na vlastní doméně."
@@ -14645,7 +14645,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "Jste si jisti?"
+        "Jste si jistý?"
       ],
       "Auto-pay is disabled": [
         "Automatická platba je zakázána"
@@ -14654,7 +14654,7 @@
         "Automatická platba je povolena"
       ],
       "Disable": [
-        "Deaktivovat"
+        "Zakázat"
       ],
       "Enable auto-pay support": [
         "Zapnout podporu pro automatickou platbu"
@@ -14934,7 +14934,7 @@
     },
     "Suffix for price": {
       "per month": [
-        "měsíčně"
+        "za měsíc"
       ],
       "per user per month": [
         "za uživatele měsíčně"
@@ -15092,7 +15092,7 @@
         "${ PROTON_SENTINEL_NAME } pro organizace"
       ],
       "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } klienti"
+        "Klienti ${ VPN_APP_NAME }"
       ],
       "(active)": [
         "(aktivní)"
@@ -15245,7 +15245,7 @@
         "Automatické mazání je aktivní"
       ],
       "Billing cycle": [
-        "Fakturační období"
+        "Fakturační cyklus"
       ],
       "Block trackers and malware": [
         "Blokování sledovacích prvků a malware"
@@ -15491,7 +15491,7 @@
         "Zahodit změny?"
       ],
       "Dismiss setup checklist": [
-        "Odmítnout kontrolní seznam nastavení"
+        "Zavřít kontrolní seznam nastavení"
       ],
       "Domain names": [
         "Názvy domén"
@@ -15500,7 +15500,7 @@
         "Příště nezobrazovat?"
       ],
       "Downgrade account": [
-        "Downgrade účtu"
+        "Snížit úroveň účtu"
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Snížit na ${ downgradedPlanName }?"
@@ -15563,7 +15563,7 @@
         "Kategorie e-mailů"
       ],
       "Email subscriptions": [
-        "Zasílání pravidelných e-mailů"
+        "E-mailové odběry"
       ],
       "Enable advanced account protection": [
         "Povolení pokročilé ochrany účtu"
@@ -15638,7 +15638,7 @@
         "Získejte více ze své VPN"
       ],
       "Get started": [
-        "Začněme"
+        "Začněte"
       ],
       "Get the apps": [
         "Získat aplikace"
@@ -15821,7 +15821,7 @@
         "QR kód"
       ],
       "Recommended": [
-        "Doporučené"
+        "Doporučeno"
       ],
       "Recommended actions": [
         "Doporučené akce"
@@ -16172,7 +16172,7 @@
         "Vaše změny zatím nejsou synchronizovány"
       ],
       "Your current plan": [
-        "Váš aktuální tarif"
+        "Váš současný tarif"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
@@ -16801,7 +16801,7 @@
         "Získejte více ze svého předplatného ${ planTitle }."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Udržujte své soubory, fotografie a dokumenty v bezpečí s bezplatným cloudovým úložištěm o velikosti ${ maxDriveSpace }."
+        "Udržujte své soubory, fotky a dokumenty v bezpečí s bezplatným cloudovým úložištěm o velikosti ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "Nastavte bezpečná hesla bez potíží."

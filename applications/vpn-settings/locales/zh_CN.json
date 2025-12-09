@@ -70,7 +70,7 @@
         "充值"
       ],
       "Add domain": [
-        "添加域"
+        "添加域名"
       ],
       "Add external address": [
         "添加外部地址"
@@ -238,7 +238,7 @@
         "创建用户"
       ],
       "Current plan": [
-        "当前方案"
+        "当前等级"
       ],
       "Customize": [
         "定制"
@@ -1535,7 +1535,7 @@
         "终身"
       ],
       "Monthly": [
-        "每月"
+        "月费"
       ],
       "Two-year": [
         "两年付费"
@@ -1552,7 +1552,7 @@
         "如果我们使用相同的 WiFi，别人能看到我的上网记录吗？"
       ],
       "Enable kill switch and auto-connect in your VPN settings.": [
-        "在 VPN 设置中启用  Kill Switch 和自动连接功能"
+        "在 VPN 设置中启用 Kill Switch 和自动连接功能"
       ],
       "Get round-the-clock protection": [
         "获得全天候保护"
@@ -1695,14 +1695,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "手工添加用户"
-      ],
       "Close": [
         "关闭"
-      ],
-      "Configure your network": [
-        "配置您的网络"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
@@ -1722,29 +1716,17 @@
       "Discover and set up features": [
         "发现并设置功能"
       ],
-      "Invite your team": [
-        "邀请您的团队"
-      ],
-      "Manage global VPN permissions": [
-        "管理全局 VPN 权限"
-      ],
       "Maybe later": [
         "以后再说"
       ],
       "Remind me later": [
         "稍后提醒我"
       ],
-      "Secure your organization": [
-        "保障您的组织安全"
-      ],
       "Send": [
         "发送"
       ],
       "Set up other features": [
         "设置其他功能"
-      ],
-      "Set up SSO": [
-        "设置 SSO"
       ],
       "Take a tour": [
         "开始导览"
@@ -2871,7 +2853,7 @@
     },
     "Cycle": {
       "/month": [
-        "/个月"
+        "/月"
       ],
       "/user per month": [
         "/用户每月"
@@ -2959,23 +2941,14 @@
       "Connect your CRM, website, printers, and more.": [
         "连接您的 CRM、网站、打印机等。"
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "创建网关，让用户能够通过专用服务器访问您的 IT 资源。"
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "创建 Zoom 会议并一键添加加入事件的详细信息。"
       ],
       "Create groups you can email with a single address.": [
         "创建可通过单一地址发送电子邮件的群组。"
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "创建新用户账户或通过 SSO（单点登录）SCIM 配置导入用户。"
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "决定哪些用户可以连接到我们 120+ 共享服务器位置中的每个位置。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在电脑和手机上轻松访问电子邮件和日历。"
@@ -3021,9 +2994,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "若尚未启用，请设置恢复方式，确保您永远不会失去对 ${ VPN_APP_NAME } 的访问权限。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
@@ -3357,7 +3327,7 @@
         "二维码登录已启用"
       ],
       "Scan QR code on your mobile device to sign in": [
-        "扫描移动设备上的二维码以登录"
+        "使用移动设备扫描二维码即可登录"
       ],
       "Security tips": [
         "安全提示"
@@ -3624,7 +3594,7 @@
         "卡号无效"
       ],
       "Invalid code": [
-        "无效的验证码"
+        "无效代码"
       ],
       "Invalid domain": [
         "域名无效"
@@ -4676,10 +4646,10 @@
     },
     "FilterSettings": {
       "Allow:": [
-        "白名单:"
+        "白名单："
       ],
       "Block:": [
-        "黑名单:"
+        "黑名单："
       ],
       "Search list": [
         "搜索名单"
@@ -4792,7 +4762,7 @@
         "创建您的帐户"
       ],
       "Device": [
-        "台设备"
+        "设备"
       ],
       "Domain": [
         "域名"
@@ -4810,7 +4780,7 @@
         "密钥类型"
       ],
       "Location": [
-        "本地"
+        "地理位置"
       ],
       "Members": [
         "成员"
@@ -5454,7 +5424,7 @@
         "30 天内可退款"
       ],
       "30-day money-back guarantee.": [
-        "30 天退款保证."
+        "30 天内可退款。"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } 由 ${ BRAND_NAME } 托管，可让您快速建立子域。${ learnMoreLink }"
@@ -5772,7 +5742,7 @@
         "根据当前账户等级的剩余有效时间折算返还的余额"
       ],
       "Current plan": [
-        "当前方案"
+        "当前等级"
       ],
       "Custom": [
         "自定义"
@@ -5781,7 +5751,7 @@
         "定制品牌"
       ],
       "Custom email domains": [
-        "自定义电子邮件域名"
+        "自有域名"
       ],
       "Custom policies": [
         "自定义策略"
@@ -6058,9 +6028,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "当您的密码等个人信息泄露时迅速得到通知。${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "立即体验"
       ],
       "Get started with the referral link above.": [
         "立即通过上方推荐链接开始使用。"
@@ -6761,9 +6728,6 @@
       "Set up your organization": [
         "设置您的组织"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "只需几个简单步骤，即可设置您的组织并开始保护您的数据。"
-      ],
       "Setting up ${ feature }…": [
         "正在设置 ${ feature }…"
       ],
@@ -7182,7 +7146,7 @@
         "用户名"
       ],
       "Users": [
-        "用户数"
+        "用户"
       ],
       "Vault created": [
         "保险库已创建"
@@ -7414,9 +7378,6 @@
       ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "一次只能打开一个聊天实例。开始新对话之前，请关闭前一个对话。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -7791,7 +7752,7 @@
         "地址"
       ],
       "Address type": [
-        "地址类型"
+        "邮箱类型"
       ],
       "Addresses": [
         "地址"
@@ -8004,7 +7965,7 @@
         "未启用"
       ],
       "Display name": [
-        "显示称呼"
+        "称呼"
       ],
       "Do you have any suggestions for our team?": [
         "您对我们的团队有什么建议吗？"
@@ -8289,7 +8250,7 @@
         "付款人"
       ],
       "Payment details": [
-        "支付明细"
+        "支付方式"
       ],
       "Payment method": [
         "付款方式"
@@ -8519,7 +8480,7 @@
         "通过设备恢复"
       ],
       "Recovery phone number": [
-        "密保手机号"
+        "密保手机"
       ],
       "Recovery phrase": [
         "恢复密语"
@@ -8797,20 +8758,6 @@
       ],
       "What’s this?": [
         "这是什么？"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "${ planName } 用户可享在线客服服务"
-      ],
-      "Open support form": [
-        "填写客服表单"
-      ],
-      "Upgrade subscription": [
-        "升级账户"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "升级账户即可与客服实时交流，同时解锁其他高级功能。您也可以通过客服表单免费反馈遇到的问题。"
       ]
     },
     "Loading info": {
@@ -9136,7 +9083,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "删除账号"
+        "删除账户"
       ],
       "Downgrade account": [
         "降级账户"
@@ -9799,7 +9746,7 @@
         "确认订单并支付"
       ],
       "Switch plans?": [
-        "变更账户等级?"
+        "切换计划？"
       ]
     },
     "new_plans: Title": {
@@ -11173,7 +11120,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "免费版"
       ]
     },
     "Property type": {
@@ -11230,7 +11177,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "关闭"
+        "取消"
       ],
       "Email address has been verified.": [
         "邮箱地址已验证。"
@@ -11267,7 +11214,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "关闭"
+        "取消"
       ],
       "Phone number has been verified.": [
         "电话号码已验证。"
@@ -12640,7 +12587,7 @@
         "每两年付费"
       ],
       "Billed monthly": [
-        "按月计费"
+        "每月付费"
       ],
       "Billed yearly": [
         "每年付费"
@@ -13073,7 +13020,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "您确定吗？"
+        "确定要这样做吗?"
       ],
       "Auto-pay is disabled": [
         "自动付款已禁用"
@@ -13454,11 +13401,6 @@
         "vCard 字段"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "主题"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } 天"
@@ -13482,9 +13424,6 @@
       ],
       "${ feature } is now active": [
         "${ feature } 已激活"
-      ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } 客户端"
       ],
       "(active)": [
         "（当前）"
@@ -13512,9 +13451,6 @@
       ],
       "Access control": [
         "访问控制"
-      ],
-      "Account": [
-        "账户"
       ],
       "Account recovery": [
         "账户恢复"
@@ -13805,7 +13741,7 @@
         "删除 ${ policyName }？"
       ],
       "Delete account": [
-        "删除账号"
+        "删除账户"
       ],
       "Delete group?": [
         "删除群组？"
@@ -13845,9 +13781,6 @@
       ],
       "Discard changes?": [
         "放弃更改？"
-      ],
-      "Dismiss setup checklist": [
-        "关闭设置检查清单"
       ],
       "Domain names": [
         "域名"
@@ -13911,9 +13844,6 @@
       ],
       "Email": [
         "邮件"
-      ],
-      "Email subscriptions": [
-        "邮件订阅"
       ],
       "Enable advanced account protection": [
         "启用高级账户保护"
@@ -13980,9 +13910,6 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
-      ],
-      "Get started": [
-        "入门"
       ],
       "Get the apps": [
         "下载应用"
@@ -14086,9 +14013,6 @@
       "Open pagination": [
         "选择页码"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 用户名"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN 配置文件"
       ],
@@ -14136,9 +14060,6 @@
       ],
       "Phone": [
         "电话"
-      ],
-      "Plans": [
-        "套餐"
       ],
       "Preview": [
         "预览"
@@ -14237,7 +14158,7 @@
         "安全事件"
       ],
       "Select a plan": [
-        "选择套餐"
+        "选择账户等级"
       ],
       "Select action to take on contact group": [
         "选择针对联系人群组的动作"
@@ -14389,9 +14310,6 @@
       "Upgrade to keep your premium benefits.": [
         "升级以保留您的高级权益。"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "使用专用服务器，升级互联网保护"
-      ],
       "Upgrade your privacy": [
         "提升隐私保护"
       ],
@@ -14469,9 +14387,6 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
-      ],
-      "Your current plan": [
-        "您的账户等级"
       ],
       "Your exposed information": [
         "您的泄露信息"

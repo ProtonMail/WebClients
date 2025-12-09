@@ -262,7 +262,7 @@
         "Ücretsiz hesap açın"
       ],
       "Create a new booking page": [
-        "Yeni rezervasyon sayfası oluşturun"
+        "Yeni bir rezervasyon sayfası oluştur"
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
@@ -517,9 +517,6 @@
       ],
       "Increase": [
         "Artır"
-      ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } uygulamasına katılın"
       ],
       "Join calendar": [
         "Takvime katıl"
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5s"
-      ],
       "120 minutes": [
         "120 dakika"
       ],
-      "1h": [
-        "1s"
-      ],
-      "2h": [
-        "2s"
+      "120m": [
+        "120 dk"
       ],
       "30 minutes": [
         "30 dakika"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 dakika"
       ],
+      "60m": [
+        "60 dk"
+      ],
       "90 minutes": [
         "90 dakika"
+      ],
+      "90m": [
+        "90 dk"
       ]
     },
     "Edit billing address form note": {
@@ -3494,6 +3491,9 @@
       "Cancellation failed to be sent": [
         "İptal bildirimi gönderilemedi"
       ],
+      "Cannot create a booking with a disabled address": [
+        "Kullanımdan kaldırılmış bir adres ile rezervasyon oluşturulamaz"
+      ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
@@ -3674,7 +3674,7 @@
         "Soyad çok uzun"
       ],
       "Location is required": [
-        "Konum bilgisi gereklidir"
+        "Konum belirtilmelidir"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } en az süre"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } dk"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -5186,6 +5186,9 @@
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
@@ -5241,10 +5244,10 @@
         "Aradığınız etkinlikleri bulamıyor musunuz? Gizli takvimlerdeki bazı etkinlikler sorgunuzla eşleşiyor. Bu sonuçları görmek için ${ hiddenWithItemsCalendarList } görünürlüğünü açın."
       ],
       "Cannot create a range across days.": [
-        "Birden fazla güne yayılan bir aralık oluşturulamıyor."
+        "Birden fazla güne yayılan bir aralık oluşturulamaz."
       ],
       "Cannot create a range in the past.": [
-        "Geçmişte aralık oluşturulamıyor."
+        "Geçmişte bir aralık oluşturulamaz."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -5617,9 +5620,6 @@
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
       ],
-      "Loading appointments...": [
-        "Randevular yükleniyor..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanlama platformumuz Calendly açılacak."
       ],
@@ -5850,13 +5850,13 @@
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
       ],
       "Range already exists.": [
-        "Aralık zaten mevcut."
+        "Aralık zaten var."
       ],
       "Range is too short.": [
         "Aralık çok kısa."
       ],
       "Range overlaps with an existing range.": [
-        "Aralık, mevcut bir aralıkla çakışıyor."
+        "Aralık, var olan bir aralıkla çakışıyor."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
@@ -6046,6 +6046,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için yöneticinizden tarifenizi yükseltmesini isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Yeni bir rezervasyon sayfası eklemek için Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için tarifenizi yükseltin."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
       ],
@@ -6114,9 +6123,6 @@
       ],
       "VPN IP": [
         "VPN IP adresi"
-      ],
-      "Want to create your own booking page?": [
-        "Kendi rezervasyon sayfanızı oluşturmak ister misiniz?"
       ],
       "Warning": [
         "Uyarı"
@@ -6319,6 +6325,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Kişi grubunda bulunabilecek en fazla adres sayısına ulaştınız:"
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
@@ -6417,7 +6426,7 @@
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
-        "Rezervasyon kotanızın sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+        "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11209,6 +11218,17 @@
         "Teams görüşmesine katıl"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Uygun rezervasyon yok."
+      ],
+      "Please check the link and try again.": [
+        "Lütfen bağlantıyı kontrol edin ve tekrar deneyin."
+      ],
+      "Please try again later.": [
+        "Lütfen daha sonra tekrar deneyin."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } gün",
@@ -11361,6 +11381,9 @@
       ],
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
+      ],
+      "Cannot create more Booking pages": [
+        "Daha fazla Rezervasyon sayfası oluşturulamıyor"
       ],
       "Card verification": [
         "Kart doğrulama"
@@ -11869,11 +11892,14 @@
       "Summary": [
         "Özet"
       ],
-      "This booking page does not exist": [
-        "Bu rezervasyon sayfası bulunamadı"
+      "The booking feature is currently unavailable.": [
+        "Rezervasyon özelliği şu anda kullanılamıyor."
       ],
-      "This booking page has expired": [
-        "Bu rezervasyon sayfasının geçerlilik süresi dolmuş"
+      "This booking page can’t be shown.": [
+        "Bu rezervasyon sayfası görüntülenemiyor."
+      ],
+      "This booking page has expired.": [
+        "Bu rezervasyon sayfasının süresi geçmiş."
       ],
       "Time": [
         "Zaman"

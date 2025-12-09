@@ -85,7 +85,7 @@
         "Dodaj użytkownika"
       ],
       "Allow": [
-        "Dozwolone"
+        "Zezwól"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Zezwalaj na szyfrowanie ent-to-end w grupie"
@@ -934,7 +934,7 @@
         "Pomiń weryfikację"
       ],
       "Spam": [
-        "Przenieś do spamu"
+        "Spam"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -1615,7 +1615,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "miesiąc"
+        "1 miesiąc"
       ],
       "12 months": [
         "12 miesięcy"
@@ -1627,7 +1627,7 @@
         "Dożywotnio"
       ],
       "Monthly": [
-        "Co miesiąc"
+        "Miesięcznie"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -3172,16 +3172,16 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "Adres ${ name } został dodany"
+        "Domena ${ name } została dodana"
       ],
       "${ name } deletion failed": [
-        "Usunięcie adresu ${ name } nie powiodło się"
+        "Usunięcie domeny ${ name } nie powiodło się"
       ],
       "${ name } failed to move to allow list": [
         "Przenoszenie domeny ${ name } do listy dozwolonych adresów nie powiodło się"
       ],
       "${ name } failed to move to block list": [
-        "Przenoszenie adresu ${ name } do listy zablokowanych nie powiodło się"
+        "Przenoszenie domeny ${ name } do listy zablokowanych nie powiodło się"
       ],
       "${ name } failed to move to spam list": [
         "Przenoszenie domeny ${ name } do listy spamu nie powiodło się"
@@ -3196,7 +3196,7 @@
         "Domena ${ name } została przeniesiona do listy spamu"
       ],
       "${ name } successfully deleted": [
-        "Adres ${ name } został usunięty"
+        "Domena ${ name } została usunięta"
       ]
     },
     "Downgrade account reason": {
@@ -4815,7 +4815,7 @@
         "Przeszukaj"
       ],
       "Spam:": [
-        "Przenieś do spamu:"
+        "Spam:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Przejmij kontrolę nad tym, co ląduje w skrzynkach odbiorczych użytkowników organizacji za pomocą następujących list:"
@@ -7722,9 +7722,6 @@
       "You can now return to the application to continue": [
         "Możesz wrócić do aplikacji, aby kontynuować"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
@@ -9151,20 +9148,6 @@
         "Co to jest?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Czat jest dostępny w planie ${ planName }"
-      ],
-      "Open support form": [
-        "Otwórz formularz kontaktowy"
-      ],
-      "Upgrade subscription": [
-        "Ulepsz subskrypcję"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Ulepsz konto, aby odblokować czat i inne funkcje premium lub skorzystaj z naszego darmowego formularza kontaktowego, aby zgłosić problem."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Już prawie"
@@ -9464,7 +9447,7 @@
     },
     "Navigation": {
       "All": [
-        "Wszystko"
+        "Wszystkie"
       ],
       "Allow": [
         "Dozwolone"
@@ -9473,7 +9456,7 @@
         "Zablokowane"
       ],
       "Spam": [
-        "Przenieś do spamu"
+        "Spam"
       ]
     },
     "New Label form": {
@@ -9523,7 +9506,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Obniżyć plan do wersji ${ downgradedPlanName }"
+        "Obniż plan do wersji ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Pokaż wszystkie plany ${ BRAND_NAME }"
@@ -11656,7 +11639,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Za darmo"
       ]
     },
     "Property type": {
@@ -13381,7 +13364,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "OK"
+        "Ok"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "Zaloguj się do konta App Store, a następnik kliknij ${ subscriptions }."
@@ -14143,11 +14126,6 @@
         "Pole vCard"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "Motywy"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
@@ -14184,9 +14162,6 @@
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "Aplikacje ${ VPN_APP_NAME }"
-      ],
       "(active)": [
         "(włączony)"
       ],
@@ -14213,9 +14188,6 @@
       ],
       "Access control": [
         "Kontrola dostępu"
-      ],
-      "Account": [
-        "Konto"
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
@@ -14625,9 +14597,6 @@
       "Email": [
         "E-mail"
       ],
-      "Email subscriptions": [
-        "Listy mailingowe"
-      ],
       "Enable advanced account protection": [
         "Włącz zaawansowaną ochronę konta"
       ],
@@ -14799,9 +14768,6 @@
       "Open pagination": [
         "Otwórz stronicowanie"
       ],
-      "OpenVPN / IKEv2 username": [
-        "Nazwa użytkownika OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Pliki konfiguracyjne OpenVPN"
       ],
@@ -14850,9 +14816,6 @@
       "Phone": [
         "Telefon"
       ],
-      "Plans": [
-        "Plany"
-      ],
       "Preview": [
         "Podgląd"
       ],
@@ -14869,7 +14832,7 @@
         "Kod QR"
       ],
       "Recommended": [
-        "Zalecane"
+        "Zalecany"
       ],
       "Recommended actions": [
         "Zalecane kroki"
@@ -15099,9 +15062,6 @@
       "Upgrade to ${ planName }": [
         "Ulepsz do planu ${ planName }"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Ulepsz ochronę sieci za pomocą dedykowanych serwerów"
-      ],
       "Upgrade your privacy": [
         "Zwiększ swoją prywatność"
       ],
@@ -15185,9 +15145,6 @@
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
-      ],
-      "Your current plan": [
-        "Obecny plan"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"

@@ -1752,7 +1752,7 @@
         "Más información"
       ],
       "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Salir detendrá su pantalla compartida. ¿Desea continuar?"
+        "Al salir detendrá su pantalla compartida. ¿Desea continuar?"
       ],
       "Left": [
         "Izquierda"
@@ -2283,9 +2283,6 @@
       ]
     },
     "Title": {
-      "${ displayName }'s personal meeting": [
-        "Reunión personal de ${ displayName }"
-      ],
       "Account restricted": [
         "Cuenta restringida"
       ],
@@ -2350,7 +2347,7 @@
         "Unirse con un enlace"
       ],
       "Joined at epoch ${ log.epoch }": [
-        "Se unió a epoch ${ log.epoch }"
+        "Se unió en epoch ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "Uniéndose a la reunión con ${ participantCount } participante(s)…"
@@ -2378,6 +2375,9 @@
       ],
       "Personal meeting link": [
         "Enlace de reunión personal"
+      ],
+      "Personal meeting room": [
+        "Sala de reuniones personal"
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Protegiendo la reunión con cifrado de extremo a extremo..."

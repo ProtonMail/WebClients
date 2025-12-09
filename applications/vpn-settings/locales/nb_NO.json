@@ -1747,6 +1747,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan noen se internettloggen min hvis vi bruker samme WiFi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Koble til ${ VPN_CONNECTIONS } enheter om gangen"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktiver nødstopp og automatisk tilkobling i VPN-innstillingene dine."
       ],
@@ -1897,14 +1900,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "Legg til brukere manuelt"
-      ],
       "Close": [
         "Lukk"
-      ],
-      "Configure your network": [
-        "Konfigurer nettverket ditt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
@@ -1924,29 +1921,17 @@
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
       ],
-      "Invite your team": [
-        "Inviter teamet ditt"
-      ],
-      "Manage global VPN permissions": [
-        "Administrer globale VPN-tillatelser"
-      ],
       "Maybe later": [
         "Kanskje senere"
       ],
       "Remind me later": [
         "Påminn meg senere"
       ],
-      "Secure your organization": [
-        "Sikre organisasjonen din"
-      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funksjoner"
-      ],
-      "Set up SSO": [
-        "Konfigurer SSO"
       ],
       "Take a tour": [
         "Få en omvisning"
@@ -3124,7 +3109,7 @@
     },
     "Cycle": {
       "/month": [
-        "/måneders"
+        "/måned"
       ],
       "/user per month": [
         "/bruker per måned"
@@ -3212,23 +3197,14 @@
       "Connect your CRM, website, printers, and more.": [
         "Koble til CRM-en, nettstedet, skriverne dine og mer."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Opprett en porttjener for å gi brukerne dine tilgang til IT-ressurser via dedikerte tjenere."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
       ],
       "Create groups you can email with a single address.": [
         "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Opprett nye brukerkontoer eller importer brukere med SSO (enkeltpålogging) SCIM-klargjøring."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Bestem hvilke brukere som kan koble til hver av våre 120+ delte tjenerplasseringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
@@ -3274,9 +3250,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "Hvis du ikke allerede har gjort det, aktiver noen gjenopprettingsmetoder for å forsikre deg om at du aldri mister tilgang til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -3360,7 +3333,7 @@
         "${ name } sletting mislyktes"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } kunne ikke flyttes til tillatelseslisten"
+        "${ name } kunne ikke flytte til tillatelseslisten"
       ],
       "${ name } failed to move to block list": [
         "${ name } kunne ikke flyttes til blokkeringsliste"
@@ -3627,7 +3600,7 @@
         "Sikkerhetstips"
       ],
       "Sign in on another device": [
-        "Logg på en annen enhet"
+        "Logg inn på en annen enhet"
       ],
       "Sign in with QR code": [
         "Logg på med QR-kode"
@@ -3636,7 +3609,7 @@
         "For å få tilgang til koden til enheten du vil logge på med, trykker du på knappen **Logg på med QR-kode** i hjelpemenyen på påloggingsskjermen, og trykker deretter på **Skriv inn nøkkel manuelt**. "
       ],
       "You have successfully signed in to another device": [
-        "Du har logget på en annen enhet"
+        "Du har logget inn på en annen enhet"
       ]
     },
     "Email body for invitation": {
@@ -4600,7 +4573,7 @@
         "Administrer adresser"
       ],
       "Manage user accounts": [
-        "Administrere brukerkontoer"
+        "Administrer brukerkontoer"
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } akseptert invitasjon på 6 måneder er tillat.",
@@ -5172,7 +5145,7 @@
         "Nøkkeltype"
       ],
       "Location": [
-        "Lokasjon"
+        "Plassering"
       ],
       "Members": [
         "Medlemmer"
@@ -5878,7 +5851,7 @@
         "30 dagers tilbakebetalingsgaranti"
       ],
       "30-day money-back guarantee.": [
-        "30 dager pengene-tilbake-garanti."
+        "30 dagers tilbakebetalingsgaranti."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
@@ -6533,9 +6506,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
-      ],
-      "Get started": [
-        "Kom i gang"
       ],
       "Get started with the referral link above.": [
         "Kom i gang med vervekoblingen ovenfor."
@@ -7278,9 +7248,6 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "Konfigurer organisasjonen og begynn å beskytte dataene i noen få enkle trinn."
-      ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
@@ -7747,7 +7714,7 @@
         "Verifiser domene"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Verifiser din identitet med en tids-basert en-time passord fra en autentiseringsapp."
+        "Bekreft identiteten din med et tidsbasert engangspassord fra en autentiseringsapp"
       ],
       "Verifying your payment": [
         "Verifiserer betalingen din"
@@ -7973,9 +7940,6 @@
       ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
-      ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Du kan kun ha én chat-instans åpen om gangen. Lukk tidligere samtaler før du starter en ny."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
@@ -8459,7 +8423,7 @@
         "Black Friday"
       ],
       "Block": [
-        "Blokker"
+        "Blokkér"
       ],
       "Block malware only": [
         "Blokkér kun skadevare"
@@ -9438,20 +9402,6 @@
         "Hva er det der?"
       ]
     },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "Live chat er tilgjengelig med ${ planName }"
-      ],
-      "Open support form": [
-        "Åpne støtteskjema"
-      ],
-      "Upgrade subscription": [
-        "Oppgrader abonnement"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Oppgrader for å låse opp chat-støtte og andre premiumfunksjoner, eller bruk vårt gratis støtteskjema for å rapportere problemet ditt."
-      ]
-    },
     "Loading info": {
       "Almost there": [
         "Nesten der"
@@ -9773,7 +9723,7 @@
         "Tillat"
       ],
       "Block": [
-        "Blokker"
+        "Blokkér"
       ],
       "Spam": [
         "Søppelpost"
@@ -9826,7 +9776,7 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradere til ${ downgradedPlanName }"
+        "Nedgrader til ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Utforsk alle ${ BRAND_NAME }-planer"
@@ -10443,7 +10393,7 @@
         "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
+        "Prøveperioden utløper ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10494,7 +10444,7 @@
     },
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
+        "${ shortPlan.title }-prøveperiode"
       ],
       "Your account's usage": [
         "Kontoens forbruk"
@@ -11945,7 +11895,7 @@
         "eksempel@domain.no"
       ],
       "Feedback": [
-        "Ttilbakemelding"
+        "Tilbakemelding"
       ],
       "Gift code": [
         "Gavekode"
@@ -12102,7 +12052,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratis"
       ]
     },
     "Property type": {
@@ -14057,7 +14007,7 @@
         "Få bedriften din til å skille seg ut"
       ],
       "Manage your calendar": [
-        "Administrere kalenderen din"
+        "Administrer kalenderen din"
       ],
       "Online privacy, for your whole family": [
         "Personvern på nettet, for hele familien din"
@@ -14568,7 +14518,7 @@
         "Liste"
       ],
       "Marked as": [
-        "Markert som"
+        "Merket som"
       ],
       "Name": [
         "Navn"
@@ -14590,11 +14540,6 @@
       ],
       "vCard field": [
         "vCard-felt"
-      ]
-    },
-    "Themes": {
-      "Themes": [
-        "Temaer"
       ]
     },
     "Time unit": {
@@ -14636,9 +14581,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } for organisasjoner"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME }-klienter"
-      ],
       "(active)": [
         "(aktiv)"
       ],
@@ -14665,9 +14607,6 @@
       ],
       "Access control": [
         "Adgangskontroll"
-      ],
-      "Account": [
-        "Konto"
       ],
       "Account recovery": [
         "Kontogjenoppretting"
@@ -14871,6 +14810,9 @@
       "Connect organization": [
         "Koble organisasjon"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Koble til ${ VPN_CONNECTIONS } enheter på en gang med ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
       ],
@@ -15026,9 +14968,6 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
-      "Dismiss setup checklist": [
-        "Avvis sjekkliste for oppsett"
-      ],
       "Domain names": [
         "Domenenavn"
       ],
@@ -15097,9 +15036,6 @@
       ],
       "Email categories": [
         "E-postkategorier"
-      ],
-      "Email subscriptions": [
-        "E-post abonnementer"
       ],
       "Enable advanced account protection": [
         "Aktiver avansert kontobeskyttelse"
@@ -15170,9 +15106,6 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
-      ],
-      "Get started": [
-        "Kom i gang"
       ],
       "Get the apps": [
         "Skaff deg appene"
@@ -15283,9 +15216,6 @@
       "Open pagination": [
         "Åpne sidenummerering"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2-brukernavn"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN-konfigurasjonsfiler"
       ],
@@ -15333,9 +15263,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plans": [
-        "Planer"
       ],
       "Preview": [
         "Forhåndsvis"
@@ -15605,9 +15532,6 @@
       "Upgrade to keep your premium benefits.": [
         "Oppgrader for å beholde premiumfordelene dine."
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "Oppgrader nettverksbeskyttelsen med dedikerte tjenere"
-      ],
       "Upgrade your privacy": [
         "Oppgrader personvernet"
       ],
@@ -15697,9 +15621,6 @@
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"
-      ],
-      "Your current plan": [
-        "Din gjeldende plan"
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
@@ -16128,6 +16049,9 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filene, bildene og dokumentene dine og gjenopprett filversjoner med 10-års filgjenoppretting."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandling i én pakke. Kun **${ priceString }** mer hver måned."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Beskytt organisasjonen din mot datainnbrudd med ${ PLAN_NAMES[plan] }."

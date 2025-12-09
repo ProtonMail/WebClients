@@ -96,7 +96,7 @@
         "Adicionar usuário"
       ],
       "Allow": [
-        "Endereços permitidos"
+        "Permitir"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitir criptografia de ponta-a-ponta neste grupo"
@@ -1777,6 +1777,9 @@
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Aprenda como ativar o ${ VPN_APP_NAME } no seu roteador."
       ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Proteja todos os seus dispositivos domésticos ao mesmo tempo com ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteja sua empresa contra violações de dados e torne o trabalho remoto mais seguro com uma VPN empresarial."
       ],
@@ -3422,7 +3425,7 @@
         "Mudando para um provedor diferente"
       ],
       "Temporary need, may come back in the future": [
-        "Necessidade temporária, posso voltar no futuro"
+        "Trata-se de uma necessidade temporária que pode voltar no futuro."
       ],
       "The VPN is too slow": [
         "A VPN é muito lenta"
@@ -5805,7 +5808,7 @@
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
       "${ storage } storage": [
-        "Armazenamento de ${ storage }"
+        "${ storage } de armazenamento"
       ],
       "${ userFound } user found": [
         "${ userFound } usuário encontrado",
@@ -8414,7 +8417,7 @@
         "Endereços permitidos"
       ],
       "Allow recovery by email": [
-        "Permitir recuperação por e-mail\n"
+        "Permitir recuperação por e-mail"
       ],
       "Allow recovery by phone": [
         "Permitir a recuperação por telefone"
@@ -8471,7 +8474,7 @@
         "Black Friday"
       ],
       "Block": [
-        "Bloquear"
+        "Endereços bloqueados"
       ],
       "Block malware only": [
         "Bloquear apenas malware"
@@ -8915,7 +8918,7 @@
         "Pagador"
       ],
       "Payment details": [
-        "Detalhes de pagamento"
+        "Detalhes do pagamento"
       ],
       "Payment method": [
         "Forma de pagamento"
@@ -9158,7 +9161,7 @@
         "Recuperação baseada no dispositivo"
       ],
       "Recovery phone number": [
-        "Número de telefone de recuperação"
+        "Telefone de recuperação"
       ],
       "Recovery phrase": [
         "Frase de recuperação"
@@ -9785,7 +9788,7 @@
         "Endereços permitidos"
       ],
       "Block": [
-        "Bloquear"
+        "Endereços bloqueados"
       ],
       "Spam": [
         "Spam"
@@ -11150,6 +11153,9 @@
       "Allowed ${ defaultLabel }": [
         "${ defaultLabel } permitido"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Configurações do país"
       ],
@@ -11159,8 +11165,11 @@
       "Free server configs": [
         "Configurações do servidor gratuito"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
-        "Encontrei outro serviço que gosto mais"
+        "Encontrei outro serviço que considero melhor"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Eu uso uma conta ${ BRAND_NAME } diferente"
@@ -11179,6 +11188,9 @@
       ],
       "It's too expensive": [
         "É muito caro"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Meu motivo não está listado"
@@ -11230,6 +11242,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -12114,7 +12129,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "Gratuito"
       ]
     },
     "Property type": {
@@ -14491,7 +14506,7 @@
         "Preferências atualizadas"
       ],
       "Resent invitation": [
-        "Convite reenviado"
+        "O convite foi reenviado."
       ]
     },
     "Suffix": {
@@ -15718,7 +15733,7 @@
         "Sua alteração não foram sintonizadas ainda"
       ],
       "Your current plan": [
-        "O seu plano atual"
+        "Seu plano atual"
       ],
       "Your exposed information": [
         "Sua informação exposta"
@@ -16461,8 +16476,26 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "iOS": [
         "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -16509,7 +16542,7 @@
         "Você tem certeza que deseja excluir o número de telefone?"
       ],
       "Are you sure you want to delete this address?": [
-        "Você tem certeza que deseja excluir este endereço?"
+        "Tem a certeza de que quer apagar esta endereço?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao excluir este endereço, você não poderá mais receber notificações diárias por e-mail."

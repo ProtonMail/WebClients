@@ -132,7 +132,7 @@
         "취소"
       ],
       "Cancel subscription": [
-        "구독 취소하기"
+        "구독 취소"
       ],
       "Cancel trial and pay": [
         "무료 체험 취소 및 바로 결제"
@@ -594,7 +594,7 @@
         "더 불러오기"
       ],
       "Loading verification": [
-        "인증정보 불러오는 중"
+        "인증 정보 불러오는 중"
       ],
       "Lost access to your 2FA device?": [
         "2단계 인증 장치에 대한 접근 권한을 분실하셨나요?"
@@ -963,7 +963,7 @@
         "인증 건너뛰기"
       ],
       "Spam": [
-        "스팸 메일함"
+        "스팸"
       ],
       "Start import": [
         "가져오기 시작"
@@ -1059,7 +1059,7 @@
         "업그레이드하여 모두 보기"
       ],
       "Upgrade your plan": [
-        "요금제 업그레이드"
+        "플랜 업그레이드"
       ],
       "Upload": [
         "업로드"
@@ -1762,7 +1762,7 @@
         "Telegram은 사용하기에 안전할까요? 이 기사에서 논의할 것처럼, 당신이 어떻게 사용하느냐에 달려 있습니다."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
-        "라우터에 ${ VPN_APP_NAME }를 활성화 하는 법을 알아보세요."
+        "라우터에 ${ VPN_APP_NAME }를 활성화하는 법을 알아보세요."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "기업용 VPN으로 데이터 유출로부터 회사를 보호하고 재택 근무를 더 안전하게 만드세요."
@@ -1887,14 +1887,8 @@
       ]
     },
     "Button": {
-      "Add users manually": [
-        "수동으로 사용자 추가"
-      ],
       "Close": [
         "닫기"
-      ],
-      "Configure your network": [
-        "네트워크 구성"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }을 계속 사용하세요."
@@ -1914,29 +1908,17 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
-      "Invite your team": [
-        "팀 초대하기"
-      ],
-      "Manage global VPN permissions": [
-        "전역 VPN 권한 관리"
-      ],
       "Maybe later": [
         "나중에"
       ],
       "Remind me later": [
         "나중에 확인하기"
       ],
-      "Secure your organization": [
-        "내 조직 보호하기"
-      ],
       "Send": [
         "보내기"
       ],
       "Set up other features": [
         "다른 기능 설정하기"
-      ],
-      "Set up SSO": [
-        "SSO 설정"
       ],
       "Take a tour": [
         "둘러보기"
@@ -3110,7 +3092,7 @@
     },
     "Cycle": {
       "/month": [
-        "/월간"
+        "/월"
       ],
       "/user per month": [
         "/월 사용자 당"
@@ -3198,23 +3180,14 @@
       "Connect your CRM, website, printers, and more.": [
         "CRM, 웹 사이트, 프린터 등에 연렬하세요."
       ],
-      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "회원님의 사용자가 전용 서버를 통해 IT 리소스에 접근할 수 있도록 게이트웨이를 생성하세요."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "한 번의 클릭으로 Zoom 미팅을 생성하고 참가 정보를 이벤트에 추가하세요."
       ],
       "Create groups you can email with a single address.": [
         "단일 주소로 이메일을 보낼 수 있는 그룹을 생성하세요."
       ],
-      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "신규 사용자 계정을 생성하거나 SSO (싱글 사인 온) SCIM 프로비저닝으로 사용자를 불러오세요."
-      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "각 국가에서 공유된 서버에 연결할 수 있는 구성원을 결정할 수 있도록 정책을 추가하세요."
-      ],
-      "Decide which users can connect to each of our 120+ shared server locations.": [
-        "Proton VPN의 120개 이상의 공유 서버 국가 각각에 연결할 수 있는 사용자를 설정하세요."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "데스크톱 및 휴대기기에서 회원님의 이메일과 캘린더에 간편하게 접근해 보세요."
@@ -3260,9 +3233,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
-      ],
-      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
-        "아직까지 조치하지 않으셨다면, ${ VPN_APP_NAME }에 대한 접근을 영구적으로 상실하지 않기 위해 일부 복구 방법을 활성화하시기 바랍니다."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -3474,7 +3444,7 @@
         "확장 프로그램 설치"
       ],
       "Installation guide": [
-        "설치 가이드"
+        "설치 가이드(설치 완료 후 설정창에서 한국어 변경 가능)"
       ],
       "iPhone/iPad": [
         "iPhone 및 iPad"
@@ -3895,7 +3865,7 @@
         "유효하지 않은 카드 번호"
       ],
       "Invalid code": [
-        "잘못된 코드입니다"
+        "잘못된 코드입니다."
       ],
       "Invalid domain": [
         "유효하지 않은 도메인"
@@ -4210,7 +4180,7 @@
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "인증이 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
+        "인증에 성공하지 못했습니다. 한 시간 후에 다시 시도해주십시오."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 설정 문제로 DKIM 로그인을 중지했습니다. 로그인을 계속하기 위해서는 아래 설명을 따라주세요."
@@ -4665,7 +4635,7 @@
         "가족 구성원을 추가 및 관리하세요."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 계정 생성이 필요합니다."
+        "만일 추가하려는 사용자가 이미 ${ MAIL_APP_NAME } 주소를 이미 소유하고 있다면 아래에 주소를 입력하세요. 그렇지 않다면 먼저 계정 생성이 필요합니다."
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 ${ BRAND_NAME } 계정을 보유한다면 여기 입력하세요. 그렇지 않다면 계정 생성이 우선 필요합니다."
@@ -4682,10 +4652,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "나의 가족 그룹에 사용자 계정을 생성, 삭제 및 변경하세요."
+        "가족 그룹의 사용자 계정을 생성, 삭제 및 변경하세요."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "나의 조직에 사용자 계정을 생성, 삭제 및 변경하세요."
+        "조직에 사용자 계정을 생성, 삭제 및 변경하세요."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5012,10 +4982,10 @@
         "검색 내역"
       ],
       "Spam:": [
-        "스팸 메일함:"
+        "스팸:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
-        "조직 멤버의 받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
+        "조직 구성원의 받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
       ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
         "이 목록은 조직의 모든 계정에 적용됩니다. 개개인이 자신만의 개별 필터를 만들 수 있지만, 차단한 주소나 도메인을 재정의할 수 없습니다."
@@ -5024,10 +4994,10 @@
         "중요한 메시지들이 스팸으로 분류되어 놓쳐버리지 않도록 하기 위해"
       ],
       "To prevent junk mail from clogging up inboxes": [
-        "받은 편지함을 메우는 광고 메일을 방지하기 위해서"
+        "받은 편지함을 메우는 광고 메일을 방지하기 위해"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
-        "피싱 또는 의심스러운 이메일이 조직의 이메일 시스템에 진입하는 것을 막으려면"
+        "피싱 또는 의심스러운 이메일의 조직의 이메일 시스템 진입을 방지하기 위해"
       ]
     },
     "Font face option": {
@@ -5607,7 +5577,7 @@
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "${ BRAND_NAME }의 암호화 기술은 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
+        "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME }은(는) 안전한 이벤트 동기화 및 암호화를 위해 ${ BRAND_NAME } 주소가 필요합니다. ${ claimAddressButton }."
@@ -5676,7 +5646,7 @@
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
+        "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
         "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
@@ -5712,7 +5682,7 @@
         "${ remainingAddresses.length } 더"
       ],
       "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } 더 많은 주소들"
+        "주소 더 보기 (${ remainingAddresses.length })"
       ],
       "${ resultsCount } result found": [
         "${ resultsCount }개 결과 발견"
@@ -5793,7 +5763,7 @@
         "가지고 계신 모든 기기와 **코드를 동기화할 수 있어요**"
       ],
       "+ ${ invisibleCount } More": [
-        "외 ${ invisibleCount }명"
+        "+ ${ invisibleCount }명 더"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -5808,7 +5778,7 @@
         "30일 이내 환불 보장"
       ],
       "30-day money-back guarantee.": [
-        "30일 무료체험."
+        "30일 환불 보장"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
@@ -6084,7 +6054,7 @@
         "사용자의 ${ BRAND_NAME } 조직으로 **${ organizationValue.Name }**에 연결을 계속하십시오"
       ],
       "Continue to connect this entity with your ${ BRAND_NAME } organization.": [
-        "이 엔티티를 귀하의 ${ BRAND_NAME } 조직과 연결하려면 계속하세요."
+        "이 엔티티를 사용자의 ${ BRAND_NAME } 조직과 연결하려면 계속하세요."
       ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
@@ -6264,7 +6234,7 @@
         "앱을 다운로드한 뒤 기존 코드를 불러오세요."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
+        "오늘 회원님이 선호하는 앱을 다운로드하여 언제 어디서나 프라이버시를 유지해 보세요."
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
@@ -6451,9 +6421,6 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 알림을 받아보세요. ${ learnMoreLinkNoBreach }"
-      ],
-      "Get started": [
-        "시작하기"
       ],
       "Get started with the referral link above.": [
         "위의 추천 링크를 통해 시작하세요."
@@ -6759,7 +6726,7 @@
         "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
+        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인할 수 있도록 ${ addARecoveryMethod }를 권장합니다."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
@@ -7167,7 +7134,7 @@
         "개인 관리형 암호화폐 지갑"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "회원들이 2단계 인증으로 계정을 보호하도록 이메일을 보내세요."
+        "구성원들이 2단계 인증으로 계정을 보호하도록 요청하는 이메일을 전송하세요."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "안전한 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>로 보냈습니다."
@@ -7189,9 +7156,6 @@
       ],
       "Set up your organization": [
         "내 조직 설정하기"
-      ],
-      "Set up your organization and start protecting your data in a few easy steps.": [
-        "조직 설정과 몇 가지 간단한 단계로 회원님의 데이터 보호를 시작하세요."
       ],
       "Setting up ${ feature }…": [
         "${ feature } 설정 중…"
@@ -7335,7 +7299,7 @@
         "다음 주소는 생성되지 않았습니다."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "다음 회원들이 가능한 한 빨리 이중 인증을 활성화하라는 이메일을 받게 됩니다."
+        "다음 구성원들이 빠른 시일내로 2단계 인증을 활성화하도록 요구하는 이메일을 받게 됩니다."
       ],
       "The format of your CSV file is incorrect.": [
         "CSV 파일의 포맷이 올바르지 않습니다."
@@ -7407,7 +7371,7 @@
         "이 메시지는 지원 팀으로 전해지지 않으므로, 당사 서비스에 문제가 있거나 필요한 조치가 있다면 ${ supportLink }."
       ],
       "This service is not available to users signing in with single sign-on.": [
-        "이 서비스는 싱글 사인 온 사용자에게 제공되지 않습니다"
+        "이 서비스는 싱글 사인온(SSO) 사용자에게 제공되지 않습니다"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
@@ -7434,7 +7398,7 @@
         "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "사용자의 계정 및 계정에 연결된 모든 정보가 영구 삭제되며, 이 계정의 복구가 불가능합니다."
+        "사용자의 계정 및 계정과 연결된 모든 정보가 영구 삭제되며, 이 계정을 다시 활성화할 수 없게 됩니다."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
@@ -7542,7 +7506,7 @@
         "2차 비밀번호 모드는 두 개의 비밀번호를 필요로 합니다. 하나는 계정에 로그인하기 위한 것이고, 하나는 데이터의 복호화를 위한 것입니다. (고급 사용자용)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이 기능으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드를 권장합니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인 비밀번호를 설정한 다음 두 번째 비밀번호를 설정하십시오."
+        "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이 기능으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드가 권장됩니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인에 사용할 비밀번호를 설정한 다음 2차 비밀번호를 설정하십시오."
       ],
       "Unable to check gateways monitoring current status.": [
         "현재 게이트웨이 모니터링 상태 확인 불가."
@@ -7713,7 +7677,7 @@
         "2단계 인증 강제를 설정하기 전에 가족 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "2단계 인증 사용을 시작하기 전에 조직 구성원에게 알리고 계정에 2단계 인증을 설정하도록 요청하는 것이 좋습니다."
+        "2단계 인증 요구 시작 전에 조직 구성원에게 알린 다음 계정에 2단계 인증을 설정하도록 요청하는 것이 권장됩니다."
       ],
       "We recommend using your recovery phrase instead.": [
         "복구 방법을 사용하는 것을 권장합니다."
@@ -7761,7 +7725,7 @@
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "지금의 유료 구독을 취소하신다면, 구독의 잔량이 계정 크레딧으로 반환되고 ${ BRAND_NAME } ${ PLANS.FREE } 요금제로 다운그레이드됩니다."
+        "현재의 유료 구독을 취소시, 구독의 잔량이 계정 크레딧으로 반환되며 ${ BRAND_NAME } ${ PLANS.FREE } 플랜으로 다운그레이드됩니다."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "취소하면 사용자의 구독이 갱신되지 않지만 여전히 구독 종료 기간까지 플랜 혜택을 계속 누릴 수 있습니다. 종료 이후부터는 ${ BRAND_NAME } 무료 플랜으로 자동 다운그레이드될 예정입니다."
@@ -7874,9 +7838,6 @@
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "한 번에 하나의 채팅 인스턴스만 열 수 있습니다. 새 대화를 시작하기 전에 이전 대화를 닫으십시오."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -7983,7 +7944,7 @@
         "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "${ VPN_APP_NAME } 과 ${ MAIL_APP_NAME } 계정이 연결되어 있습니다. 둘 다 삭제하려면 ${ loginLink } 에 로그인하여 계정을 삭제하십시오."
+        "${ VPN_APP_NAME }과 ${ MAIL_APP_NAME } 계정이 연결되어 있습니다. 둘 다 삭제하기 위해 ${ loginLink }에서 로그인하여 계정을 삭제해 주세요."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -8097,7 +8058,7 @@
         "조직에 새로운 사용자를 추가하여 주소를 생성하세요."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "보안 상의 이유로, ${ domainName }의 소유자인지 확인이 필요합니다. 다음 TXT 레코드를 (커스텀 도메인을 구매한 플랫폼에 위치한) DNS 콘솔에 입력하십시오. 이 링크에서 몇 가지 도움 되는 정보를 찾을 수 있습니다 ${ kbLink }."
+        "보안 상의 이유로, ${ domainName }의 소유자인지 확인이 필요합니다. 다음 TXT 레코드를 (커스텀 도메인을 구매한 플랫폼에 위치한) DNS 콘솔에 입력하십시오. 이 링크에서 몇 가지 도움 되는 정보를 찾을 수 있습니다. ${ kbLink }"
       ]
     },
     "Info for payment methods": {
@@ -8407,7 +8368,7 @@
         "색상"
       ],
       "Common passwords": [
-        "보편적인 비밀번호"
+        "흔한 비밀번호"
       ],
       "Company": [
         "회사"
@@ -9201,7 +9162,7 @@
         "번역 돕기"
       ],
       "here": [
-        "."
+        "지원 문서 보기"
       ],
       "How does monitoring work?": [
         "모니터링이 어떻게 작동하나요?"
@@ -9306,7 +9267,7 @@
         "복구 방법 유형"
       ],
       "Upgrade your plan": [
-        "요금제 업그레이드"
+        "플랜 업그레이드"
       ],
       "Vault": [
         "금고"
@@ -9322,20 +9283,6 @@
       ],
       "What’s this?": [
         "복구 관련 정보란?"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "라이브 채팅이 ${ planName }에 제공됩니다"
-      ],
-      "Open support form": [
-        "지원 양식 열기"
-      ],
-      "Upgrade subscription": [
-        "구독 업그레이드"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "채팅 지원과 다른 프리미엄 서비스를 잠금해제 하기 위해 업그레이드 하거나, 문제를 신고하기 위해 무료 지원팀에 연락하세요."
       ]
     },
     "Loading info": {
@@ -9657,7 +9604,7 @@
         "차단"
       ],
       "Spam": [
-        "스팸 메일함"
+        "스팸"
       ]
     },
     "New Label form": {
@@ -9696,7 +9643,7 @@
         "${ planName } 사용하기"
       ],
       "Keep ${ plan }": [
-        "${ plan } 유지하기"
+        "${ plan }  유지"
       ],
       "Keep account": [
         "계정 유지"
@@ -10263,7 +10210,7 @@
         "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+        "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
       ],
       "Pay once, secure your passwords and identity forever.": [
         "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
@@ -10356,7 +10303,7 @@
         "구독 및 결제 검토"
       ],
       "Switch plans?": [
-        "요금제 변경?"
+        "플랜을 변경하시겠어요?"
       ]
     },
     "new_plans: Title": {
@@ -10587,7 +10534,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "${ plus }, ${ bundle }, 및 ${ BRAND_NAME } for Business를 포함합니다."
+        "${ plus }, ${ bundle }, 및 ${ BRAND_NAME } for Business에 포함되어 있습니다."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
         "모든 ${ BRAND_NAME } 비즈니스 플랜에 포함"
@@ -10776,13 +10723,13 @@
         "너무 많은 최근 API 요청"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "이중 인증이 관리자로 부터 활성화 되었습니다."
+        "2단계 인증이 관리자로 부터 활성화 되었습니다."
       ],
       "Two-factor authentication has been enforced for all members": [
-        "이중 인증이 모든 회원으로 활성화 되었습니다."
+        "2단계 인증이 모든 구성원에게 활성화 되었습니다."
       ],
       "Two-factor authentication is not required anymore": [
-        "이중 인증이 모두에게 필요하지 않습니다."
+        "2단계 인증이 모든 구성원에게 요구되지 않습니다."
       ],
       "Zoom video conferencing settings have been updated": [
         "줌 화상 회의 설정이 업데이트 되었습니다"
@@ -11954,7 +11901,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "무료"
       ]
     },
     "Property type": {
@@ -12011,7 +11958,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "취소하기"
+        "취소"
       ],
       "Email address has been verified.": [
         "이메일 주소가 인증되었습니다."
@@ -12048,7 +11995,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "취소하기"
+        "취소"
       ],
       "Phone number has been verified.": [
         "전화번호가 인증되었습니다."
@@ -13640,7 +13587,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "확인했습니다"
+        "확인하였습니다."
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "사용자의 Apple App Store 계정으로 로그인하여 ${ subscriptions }을 선택하세요."
@@ -13658,7 +13605,7 @@
         "Android 앱에서 요금제를 구매하여 사용하고 계십니다. 요금제를 변경하거나 결제 수단 세부사항을 변경하려면, Google Play Store에서 변경이 필요합니다."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "IOS 앱에서 요금제를 구매하여 사용하고 계십니다. 요금제를 변경하거나 결제 수단 세부사항을 변경하려면, Apple App Store에서 변경이 필요합니다."
+        "iOS 앱에서 플랜을 구매하여 사용하고 있습니다. 플랜을 변경하거나 결제 수단 세부사항을 변경하려면, Apple App Store에서 변경이 필요합니다."
       ]
     },
     "subscription downgrading info": {
@@ -14003,7 +13950,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "확실하신가요?"
+        "확실한가요?"
       ],
       "Auto-pay is disabled": [
         "자동 결제가 비활성화됨"
@@ -14342,7 +14289,7 @@
         "CSV 란"
       ],
       "Edit": [
-        "편집하기"
+        "편집"
       ],
       "Email": [
         "이메일"
@@ -14393,11 +14340,6 @@
         "vCard 란"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "테마"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }일"
@@ -14431,9 +14373,6 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "조직용 ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } 클라이언트"
-      ],
       "(active)": [
         "(활성)"
       ],
@@ -14460,9 +14399,6 @@
       ],
       "Access control": [
         "접근 제어"
-      ],
-      "Account": [
-        "계정"
       ],
       "Account recovery": [
         "계정 복구"
@@ -14555,7 +14491,7 @@
         "금액"
       ],
       "Amount due": [
-        "총 금액"
+        "지불할 금액"
       ],
       "An address for each role": [
         "각 역할에 따른 주소"
@@ -14588,13 +14524,13 @@
         "트래커와 멀웨어를 차단하기"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription": [
         "구독 취소"
       ],
       "Cancel subscription?": [
-        "구독을 취소하시겠습니까?"
+        "구독을 취소하시겠어요?"
       ],
       "Cannot add more users": [
         "사용자를 더 추가할 수 없음"
@@ -14810,19 +14746,16 @@
         "활동 모니터링을 비활성화하시겠습니까?"
       ],
       "Disable two-factor authentication": [
-        "이중 인증 비활성화"
+        "2단계 인증 비활성화"
       ],
       "Disable two-factor authentication app?": [
         "2단계 인증 앱을 비활성화하시겠어요?"
       ],
       "Disable two-factor authentication?": [
-        "이중 인증을 비활성화하시겠습니까?"
+        "2단계 인증을 비활성화하시겠습니까?"
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
-      ],
-      "Dismiss setup checklist": [
-        "설정 체크리스트 닫기"
       ],
       "Domain names": [
         "도메인 이름"
@@ -14893,9 +14826,6 @@
       "Email categories": [
         "이메일 카테고리"
       ],
-      "Email subscriptions": [
-        "이메일 구독"
-      ],
       "Enable advanced account protection": [
         "향상된 계정 보호 활성화하기"
       ],
@@ -14964,9 +14894,6 @@
       ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
-      ],
-      "Get started": [
-        "시작하기"
       ],
       "Get the apps": [
         "앱 다운로드"
@@ -15076,9 +15003,6 @@
       "Open pagination": [
         "페이지 번호 열기"
       ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 사용자 이름"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN 설정 파일"
       ],
@@ -15127,9 +15051,6 @@
       "Phone": [
         "전화"
       ],
-      "Plans": [
-        "플랜"
-      ],
       "Preview": [
         "미리 보기"
       ],
@@ -15146,7 +15067,7 @@
         "QR코드"
       ],
       "Recommended": [
-        "권장"
+        "추천됨"
       ],
       "Recommended actions": [
         "권장하는 조치"
@@ -15400,9 +15321,6 @@
       "Upgrade to keep your premium benefits.": [
         "프리미엄 기능 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "전용 서버로 네트워크 보호를 업그레이드하세요"
-      ],
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
       ],
@@ -15492,9 +15410,6 @@
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."
-      ],
-      "Your current plan": [
-        "내 현재 플랜"
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
@@ -15625,7 +15540,7 @@
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "2단계 인증이 신원 제공자에 의해 처리되는 단일 사인온 사용자 제외"
+        "2단계 인증이 신원 제공자에 의해 처리되는 단일 사인온(SSO) 사용자 제외"
       ],
       "Feature in early access": [
         "얼리 엑세스 기능"
@@ -15646,7 +15561,7 @@
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "2단계 인증을 사용하지 않는 회원은 가능 한 빠른 시일 내로 활성화해 달라는 이메일을 받게 됩니다. 싱글 사인 온(SSO)사용자는 이메일 알림을 받지 않습니다."
+        "2단계 인증을 사용하지 않는 회원은 가능 한 빠른 시일 내로 활성화해 달라는 이메일을 받게 됩니다. 싱글 사인온(SSO) 사용자는 이메일 알림을 받지 않습니다."
       ],
       "Not all information listed here was exposed for all users.": [
         "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
@@ -15942,7 +15857,7 @@
         "${ PLAN_NAMES[PLANS.DUO] }로 최대 ${ DUO_MAX_USERS }명, ${ PLAN_NAMES[PLANS.FAMILY] }로 최대 ${ FAMILY_MAX_USERS }까지 보호할 수 있습니다. 계정당 매월 ${ priceString }부터 시작합니다."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
-        "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있습니다."
+        "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있어요."
       ]
     },
     "upsell panel": {
@@ -16299,7 +16214,7 @@
         "정말로 전화번호를 삭제하시겠습니까?"
       ],
       "Are you sure you want to delete this address?": [
-        "이 주소를 삭제하시려는 것이 맞습니까?"
+        "정말 이 주소를 삭제하시겠습니까?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "이 주소를 삭제하면 더 이상 일일 이메일 알림을 받을 수 없습니다."

@@ -835,6 +835,9 @@
       "These items remain at risk": [
         "ეს ელემენტები რჩება რისკის ქვეშ"
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "ეს საცავები ხელმისაწვდომი არ იქნება და მათი შემცველობა არ იქნება გამოყენებული ძებნისა და ავტოშევსებისას."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "ეს ანგარიში მოწყვლადია. მიმართეთ სერვისს და შეცვალეთ თქვენი პაროლი."
       ],
@@ -1854,6 +1857,9 @@
       "Item successfully unpinned": [
         "ელემენტის მოხსნა წარმატებულია"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "კლავიატურის მალსახმობის გამოყენება, მხოლოდ, ${ PASS_APP_NAME } აპლიკაციაში, შესვლის ერთეულის ნახვისას არის შესაძლებელი."
+      ],
       "Latest breach on ${ formattedDate }": [
         "უახლესი გაჟონვის თარიღი ${ formattedDate }"
       ],
@@ -2490,6 +2496,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება აღარ მოგივათ."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "თქვენ აღარ გექნებათ წვდომა გაზიარებასთან, 2FA-სთან, და სხვა დამატებით ფუნქციებთან ${ PASS_APP_NAME }-ში"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "თქვენ აღარ გექნებათ წვდომა გაზიარებასთან, 2FA-სთან, საკრედიტო ბარათთან და სხვა დამატებით ფუნქციებთან ${ PASS_APP_NAME }-ში"

@@ -214,7 +214,7 @@
         "उपयोगकर्ता बनाएं"
       ],
       "Current plan": [
-        "चालू प्लान"
+        "वर्तमान योजना"
       ],
       "Customize": [
         "कस्टम"
@@ -2503,7 +2503,7 @@
     },
     "Cycle": {
       "/month": [
-        "/महीना"
+        "/माह"
       ],
       "/user per month": [
         "/यूज़र हर महीने"
@@ -2659,10 +2659,10 @@
         "${ name } को स्पैम लिस्ट में ले जाने में असफल"
       ],
       "${ name } moved to allow list": [
-        "${ name } अलाउ सूची में ले जाया गया"
+        "${ name } को अलाउ सूची में ले जाया गया"
       ],
       "${ name } moved to block list": [
-        "${ name } ब्लॉक सूची में ले जाया गया"
+        "${ name } को ब्लॉक सूची में ले जाया गया"
       ],
       "${ name } moved to spam list": [
         "${ name } स्पैम लिस्ट में ले जाया गया"
@@ -3008,7 +3008,7 @@
         "अमान्य कार्ड नंबर"
       ],
       "Invalid code": [
-        "अमान्य कोड"
+        "अवैध कोड"
       ],
       "Invalid domain": [
         "अमान्य डोमेन"
@@ -4560,9 +4560,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
       ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को एक पासवर्ड के साथ भी इस्तेमाल किया जा सकता है जो लॉगइन और दूसरे पासवर्ड दोनों की जगह लेता है। एक-पासवर्ड मोड पर स्विच करने के लिए, वह एकल पासवर्ड दर्ज करें जो आप उपयोग करना चाहते हैं और 'सहेजें' पर क्लिक करें।"
       ],
@@ -4983,7 +4980,7 @@
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
       ],
       "Current plan": [
-        "चालू प्लान"
+        "वर्तमान योजना"
       ],
       "Custom": [
         "अनुकूल"
@@ -5246,7 +5243,7 @@
         "पहचान प्रदाता के पास जाएं, ${ appName } के लिए SAML मेटाडाटा प्राप्त करें और इसे यहां आयात करें।"
       ],
       "Got it": [
-        "समझ गया"
+        "ठीक है"
       ],
       "Group deleted": [
         "ग्रुप मिटाया गया"
@@ -6441,9 +6438,6 @@
       "You can now return to the application to continue": [
         "जारी रखने के लिए एप्लीकेशन पे लौटे"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "एक वक्त में सिर्फ एक बातचीत खोला जा सकता है। नई बातचीत शुरू करने से पहले पिछले बातचीत बंद कर लें।"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "नए ईमेल संदेश इस फ़ोल्डर में आने पर आप अलर्ट प्राप्त कर सकते हैं।"
       ],
@@ -7231,7 +7225,7 @@
         "भुगतान करनेवाले"
       ],
       "Payment details": [
-        "भुगतान विवरण"
+        "भुगतान जानकारी"
       ],
       "Payment method": [
         "भुगतान तरीका"
@@ -7337,7 +7331,7 @@
         "विशेष वर्ण"
       ],
       "Start date": [
-        "शुरू तारीख"
+        "आरंभ करने की तिथि"
       ],
       "State": [
         "राज्य"
@@ -7438,7 +7432,7 @@
         "डिवाइस-आधारित पुनर्प्राप्ति"
       ],
       "Recovery phone number": [
-        "रिक्वरी फोन नंबर"
+        "पुनर्प्राप्ति फ़ोन नंबर"
       ],
       "Recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश"
@@ -7659,20 +7653,6 @@
       ],
       "What’s this?": [
         "यह क्या है?"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "लाइव बातचीत ${ planName } के साथ उपलब्ध है"
-      ],
-      "Open support form": [
-        "सपोर्ट फॉर्म खोलें"
-      ],
-      "Upgrade subscription": [
-        "सदस्यता अपग्रेड करें"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "बातचीत और दूसरे प्रीमियम सुविधाओं के लिए अपग्रेड करें, या फिर अपनी समस्या रिपोर्ट करने के लिए हमारा मुफ्त सपोर्ट फॉर्म इस्तेमाल करें।"
       ]
     },
     "Loading info": {
@@ -7955,7 +7935,7 @@
     },
     "new_plans: action": {
       "Delete account": [
-        "खाता मिटाएं"
+        "खाता हटा दो"
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
@@ -9524,7 +9504,7 @@
     },
     "Price": {
       "Free": [
-        "Free"
+        "मुफ्त"
       ]
     },
     "Property type": {
@@ -9575,7 +9555,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "कैंसिल करें"
+        "रद्द करें"
       ],
       "Email address has been verified.": [
         "ईमेल पता सत्यापित किया गया है।"
@@ -9612,7 +9592,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "कैंसिल करें"
+        "रद्द करें"
       ],
       "Phone number has been verified.": [
         " फोन नंबर सत्यापित कर दिया गया है।"
@@ -10795,7 +10775,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "ठीक है"
+        "समझ गए"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "बस अपने Play Store खाते पे साइन इन करें, फिर ${ subscriptions } दबाएं।"
@@ -10984,7 +10964,7 @@
     },
     "Subscription renewal state": {
       "Are you sure?": [
-        "क्या आप पक्का हैं?"
+        "पक्का?"
       ],
       "Auto-pay is disabled": [
         "अपनेआप भुगतान अक्षम है"
@@ -11335,11 +11315,6 @@
         "vCard फील्ड"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "थीम"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } दिन",
@@ -11365,9 +11340,6 @@
       "${ feature } is now active": [
         "${ feature } अब सक्रिय है"
       ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } क्लाइंट"
-      ],
       "(active)": [
         "(सक्रिय)"
       ],
@@ -11391,9 +11363,6 @@
       ],
       "4. Select a server to connect to": [
         "4. जुड़ने के लिए सर्वर चुनें"
-      ],
-      "Account": [
-        "खाता"
       ],
       "Account recovery": [
         "खाता पुनर्प्राप्ति"
@@ -11505,7 +11474,7 @@
         "स्वचालित हटाना सक्रिय है"
       ],
       "Billing cycle": [
-        "बिल चक्र"
+        "बिलिंग चक्र"
       ],
       "Block trackers and malware": [
         "ट्रैकर्स और मैलवेयर को ब्लॉक करें"
@@ -11662,7 +11631,7 @@
         "${ policyName } मिटाएं?"
       ],
       "Delete account": [
-        "खाता मिटाएं"
+        "खाता हटा दो"
       ],
       "Delete group?": [
         "ग्रुप मिटाएं?"
@@ -11760,9 +11729,6 @@
       ],
       "Email": [
         "ईमेल"
-      ],
-      "Email subscriptions": [
-        "ईमेल सदस्यताएँ"
       ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
@@ -11884,7 +11850,7 @@
         "नेटवर्क एरर"
       ],
       "Next": [
-        "आगे"
+        "अगला"
       ],
       "Night theme": [
         "रात की थीम"
@@ -11903,9 +11869,6 @@
       ],
       "Open pagination": [
         "खुला पाग"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 यूज़रनेम"
       ],
       "OpenVPN configuration files": [
         "OpenVPN विन्यास फाइल"
@@ -11949,9 +11912,6 @@
       "Phone": [
         "फोन"
       ],
-      "Plans": [
-        "प्लान"
-      ],
       "Preview": [
         "प्रिव्यू करें"
       ],
@@ -11968,7 +11928,7 @@
         "QR कोड"
       ],
       "Recommended": [
-        "अनुशंसित"
+        "सलाह"
       ],
       "Recommended actions": [
         "अनुशंसित कार्रवाइयाँ"
@@ -12043,7 +12003,7 @@
         "सुरक्षा घटनाएं"
       ],
       "Select a plan": [
-        "प्लान चुनें"
+        "एक योजना चुनें"
       ],
       "Select action to take on contact group": [
         "संपर्क समूह पर कार्रवाई करने के लिए कार्रवाई का चयन करें"
@@ -12172,9 +12132,6 @@
       "Upgrade to ${ planName }": [
         "${ planName } पे अपग्रेड करें"
       ],
-      "Upgrade your network protection with dedicated servers": [
-        "समर्पित सर्वर के साथ नेटवर्क सुरक्षा को अपग्रेड करें"
-      ],
       "Upgrade your privacy": [
         "निजता को अपग्रेड करें"
       ],
@@ -12237,9 +12194,6 @@
       ],
       "Your changes are not synced yet": [
         "आपके बदलाव अभी तक सिंक नहीं हुए"
-      ],
-      "Your current plan": [
-        "आपका चालू प्लान"
       ],
       "Your exposed information": [
         "आपकी उजागर जानकारी"

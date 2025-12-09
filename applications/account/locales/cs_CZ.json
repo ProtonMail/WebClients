@@ -5167,17 +5167,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5h"
-      ],
       "120 minutes": [
         "120 minut"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min."
       ],
       "30 minutes": [
         "30 minut"
@@ -5188,8 +5182,14 @@
       "60 minutes": [
         "60 minut"
       ],
+      "60m": [
+        "60 min."
+      ],
       "90 minutes": [
         "90 minut"
+      ],
+      "90m": [
+        "90 min."
       ]
     },
     "Easy switch": {
@@ -13656,7 +13656,7 @@
         "Odesílat hlášení pádů"
       ],
       "Send in": [
-        "Odeslat v"
+        "Odeslat v jazyce"
       ],
       "Sequences": [
         "Sekvence"
@@ -19847,6 +19847,9 @@
       "Collaborative document editing": [
         "Spolupráce na úpravě dokumentů"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenty a tabulky pro spolupráci"
+      ],
       "Compare plans": [
         "Porovnání tarifů"
       ],
@@ -19948,6 +19951,9 @@
       ],
       "Pick your perfect plan": [
         "Vyberte si ideální tarif"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Soukromý AI asistent se šifrovanou historií chatu"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Propagační kód použit – sleva ${ checkout.discountPercent } %"

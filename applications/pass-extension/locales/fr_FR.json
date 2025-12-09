@@ -1838,8 +1838,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2437,6 +2436,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Vous serez déconnecté et vous devrez vous connecter à nouveau sur tous vos autres appareils."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Vous n'aurez plus accès aux fonctionnalités avancées dans ${ PASS_APP_NAME } comme entre autres le partage, l'authentification à deux facteurs."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Vous n'aurez plus accès aux fonctionnalités avancées dans ${ PASS_APP_NAME } comme entre autres le partage, l'authentification à deux facteurs, la carte de paiement."

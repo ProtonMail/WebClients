@@ -90,6 +90,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -240,6 +243,9 @@
       ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
+      ],
+      "Create a spreadsheet": [
+        "ელცხრილის შექმნა"
       ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
@@ -653,6 +659,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -2412,6 +2421,12 @@
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
       ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
       ],
@@ -4093,6 +4108,9 @@
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
       ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -4214,6 +4232,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Converting document...": [
+        "დოკუმენტის გადაყვანა..."
+      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4242,6 +4263,9 @@
       "Create an end-to-end encrypted document.": [
         "შექმენით თქვენი გამჭოლად დაშიფრული დოკუმენტი."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "შექმენით გამჭოლად დაშიფრული დოკუმენტები და ელცხრილები."
+      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -4256,6 +4280,9 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
+      ],
+      "Creating new document...": [
+        "ახალი დოკუმენტის შექმნა..."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -4326,6 +4353,9 @@
       "End-to-end encrypted.": [
         "გამჭოლად დაშიფრული."
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
+      ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
@@ -4346,6 +4376,12 @@
       ],
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
       ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
@@ -4406,6 +4442,12 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
+      ],
+      "Get Notified About Comments": [
+        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "here": [
         "აქ"
@@ -4540,6 +4582,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -4567,6 +4612,9 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -4694,6 +4742,9 @@
       ],
       "Primary": [
         "ძირითადი"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
       ],
       "Public documents are not yet enabled for your organization.": [
         "საჯარო დოკუმენტები თქვენი ორგანიზაციისთვის, ჯერ, ჩართული არაა."
@@ -4848,6 +4899,9 @@
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "ეს დოკუმენტი ან არ არსებობს, ან მისი ნახვის უფლება არ გაქვთ. შეგიძლიათ, სცადოთ თავიდან ჩატვირთოთ გვერდი, რომ ნახოთ, გაქრება თუ არა პრობლემა, ან მისცეწრეთ მის მფლობელს წვდომისთვის."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "ეს არის სახელი ან მეტსახელი თქვენი ორგანიზაციისთვის, რომელსაც თქვენი მომხმარებლები დაინახავენ. მისი შეცვლა ნებისმიერ დროს შეგიძლიათ."
       ],
       "This item already exists in your library": [
         "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
@@ -5412,6 +5466,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5459,6 +5516,9 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Include document name in notification": [
+        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -7839,6 +7899,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
       ],
@@ -7864,6 +7927,9 @@
       ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "მას შემდეგ, რაც თქვენი სრული გამოწერა დაიწყება, თქვენ ჯერ კიდევ შეგიძლიათ, გააუქმოთ ის 30 დღის განმავლობაში და დაიბრუნოთ თანხა."
       ],
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
@@ -9208,6 +9274,9 @@
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "წარმოგიდგენთ ${ SHEETS_APP_NAME }-ს"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"

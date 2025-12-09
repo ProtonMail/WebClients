@@ -1812,9 +1812,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2405,6 +2402,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "ログアウトされ、他のすべてのデバイスで再度ログインする必要があります。"
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "あなたは、${ PASS_APP_NAME } での共有、2要素認証、その他の高度な機能へのアクセスができなくなります。"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "あなたは、${ PASS_APP_NAME } での共有、2要素認証、クレジットカード、その他の高度な機能へのアクセスができなくなります。"

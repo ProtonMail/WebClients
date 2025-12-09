@@ -515,9 +515,6 @@
       "Increase": [
         "Verhogen"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Word lid van ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Vervoeg agenda"
       ],
@@ -3283,17 +3280,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5u"
-      ],
       "120 minutes": [
         "120 minuten"
-      ],
-      "1h": [
-        "1u"
-      ],
-      "2h": [
-        "2u"
       ],
       "30 minutes": [
         "30 minuten"
@@ -4938,9 +4926,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } minuten duur"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
@@ -5182,6 +5167,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Vraag uw beheerder om het abonnement op te waarderen of een pagina uit de zijbalk \"Boekingspagina's\" te verwijderen."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Voer minstens ${ BETTER_PASSWORD_LENGTH } tekens in"
@@ -5608,9 +5596,6 @@
       "Loading ${ appName }": [
         "${ appName } laden"
       ],
-      "Loading appointments...": [
-        "Afspraken worden geladen..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
@@ -6028,6 +6013,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Om een nieuwe boekingspagina toe te voegen, vraagt u uw beheerder om uw abonnement te op te waarderen."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Om een nieuwe boekingspagina toe te voegen, verwijdert u een bestaande pagina uit de zijbalk \"Boekingspagina's\"."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Om een nieuwe boekingspagina toe te voegen, dient u uw abonnement op te waarderen."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
@@ -6096,9 +6090,6 @@
       ],
       "VPN IP": [
         "VPN IP-adres"
-      ],
-      "Want to create your own booking page?": [
-        "Wilt u uw eigen boekingspagina aanmaken?"
       ],
       "Warning": [
         "Waarschuwing"
@@ -6300,6 +6291,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "U heeft het maximaal aantal adressen bereikt in de contactgroep."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "U heeft het maximale aantal beschikbare boekingspagina's voor uw abonnement bereikt."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -11341,6 +11335,9 @@
       "Cannot add more addresses": [
         "Kan geen extra adressen toevoegen"
       ],
+      "Cannot create more Booking pages": [
+        "Kan niet meer boekingspagina's aanmaken."
+      ],
       "Card verification": [
         "Kaartverificatie"
       ],
@@ -11844,12 +11841,6 @@
       ],
       "Summary": [
         "Overzicht"
-      ],
-      "This booking page does not exist": [
-        "Deze boekingspagina bestaat niet"
-      ],
-      "This booking page has expired": [
-        "Deze boekingspagina is verlopen"
       ],
       "Time": [
         "Tijd"

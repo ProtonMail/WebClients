@@ -1867,6 +1867,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+      ],
       "Moving items": [
         "Déplacement des éléments"
       ],
@@ -2466,6 +2469,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Vous ne serez plus informé en cas de fuites de données pour cette adresse e-mail."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Vous n'aurez plus accès aux fonctionnalités avancées dans ${ PASS_APP_NAME } comme entre autres le partage, l'authentification à deux facteurs."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Vous n'aurez plus accès aux fonctionnalités avancées dans ${ PASS_APP_NAME } comme entre autres le partage, l'authentification à deux facteurs, la carte de paiement."

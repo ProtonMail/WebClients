@@ -252,7 +252,7 @@
         "創建使用者"
       ],
       "Current plan": [
-        "當前方案"
+        "現行方案"
       ],
       "Customize": [
         "自訂"
@@ -4536,7 +4536,7 @@
         "創建您的帳號"
       ],
       "Device": [
-        "設備"
+        "裝置"
       ],
       "Domain": [
         "網域"
@@ -4554,7 +4554,7 @@
         "金鑰類型"
       ],
       "Location": [
-        "路徑"
+        "位置"
       ],
       "Members": [
         "成員"
@@ -5165,7 +5165,7 @@
         "30 天體驗不滿意退款服務"
       ],
       "30-day money-back guarantee.": [
-        "30 日體驗不滿意退款服務."
+        "30天退款保證。"
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }是由${ BRAND_NAME }管理，允許您快速設定子網域。${ learnMoreLink }"
@@ -5456,7 +5456,7 @@
         "自訂品牌"
       ],
       "Custom email domains": [
-        "自訂電子郵件網域"
+        "自訂電郵網域"
       ],
       "Custom policies": [
         "自訂政策"
@@ -5564,7 +5564,7 @@
         "每組驗證代碼只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄  (${ spfValue }) 的後面。"
+        "每個網域僅能有一項SPF (TXT)紀錄。若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
       "Edit email address": [
         "編輯電子郵件位址"
@@ -6961,9 +6961,6 @@
       "You can now return to the application to continue": [
         "您現在可以返回應用程式並繼續"
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "您一次只能開啟一個聊天實體。在開啟新的對話前，請先關閉先前的對話。"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
@@ -7773,7 +7770,7 @@
         "付款人"
       ],
       "Payment details": [
-        "繳款詳細資訊"
+        "付款細節"
       ],
       "Payment method": [
         "付款方式"
@@ -7994,7 +7991,7 @@
         "基於裝置的復原"
       ],
       "Recovery phone number": [
-        "復原電話號碼"
+        "復原手機號碼"
       ],
       "Recovery phrase": [
         "復原短語"
@@ -8237,20 +8234,6 @@
       ],
       "What’s this?": [
         "這是什麼？"
-      ]
-    },
-    "Live Chat Modal": {
-      "Live chat is available with ${ planName }": [
-        "即時聊天在 ${ planName } 方案提供"
-      ],
-      "Open support form": [
-        "開啟支援表單"
-      ],
-      "Upgrade subscription": [
-        "升級訂購授權"
-      ],
-      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "升級以解鎖聊天支援與其他進階功能，或是使用我們的免費支援表單來回報您的問題。"
       ]
     },
     "Loading info": {
@@ -9194,7 +9177,7 @@
         "檢視訂購授權與繳款"
       ],
       "Switch plans?": [
-        "切換方案?"
+        "切換方案？"
       ]
     },
     "new_plans: Title": {
@@ -9748,7 +9731,7 @@
         "免費伺服器組態設定"
       ],
       "I found another service that I like better": [
-        "我找到了另一個我更喜歡的服務"
+        "別家的服務，我更喜歡"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "我使用不同的 ${ BRAND_NAME } 帳號"
@@ -10548,7 +10531,7 @@
         "驗證還原電郵？"
       ],
       "Verify with email": [
-        "郵件驗證"
+        "電郵驗證"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "驗證您的電郵位址可以增加您帳號的安全性，並提供了額外的還原選項。"
@@ -11738,7 +11721,7 @@
         "雙年繳制"
       ],
       "Billed monthly": [
-        "每月出帳"
+        "月繳"
       ],
       "Billed yearly": [
         "年繳"
@@ -11808,7 +11791,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "瞭解"
+        "明白"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
         "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
@@ -12159,7 +12142,7 @@
         "自動付款已啟用"
       ],
       "Disable": [
-        "關閉"
+        "停用"
       ],
       "Enable auto-pay support": [
         "啟用自動付款支援"
@@ -12508,11 +12491,6 @@
         "vCard 欄位"
       ]
     },
-    "Themes": {
-      "Themes": [
-        "視覺主題"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } 天"
@@ -12533,9 +12511,6 @@
       ],
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
-      ],
-      "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } 客戶端"
       ],
       "(active)": [
         "(啟用的)"
@@ -12564,9 +12539,6 @@
       "Access control": [
         "存取控制"
       ],
-      "Account": [
-        "帳號"
-      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -12577,7 +12549,7 @@
         "帳號已被停用"
       ],
       "Action": [
-        "操作"
+        "動作"
       ],
       "Actions": [
         "操作"
@@ -12787,7 +12759,7 @@
         "創建使用者帳號"
       ],
       "Credits": [
-        "額度"
+        "儲值"
       ],
       "Currency": [
         "貨幣"
@@ -12936,9 +12908,6 @@
       "Email": [
         "電子郵件"
       ],
-      "Email subscriptions": [
-        "電子報訂閱"
-      ],
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
@@ -13066,10 +13035,10 @@
         "名稱"
       ],
       "Network error": [
-        "網路連線錯誤"
+        "網路錯誤"
       ],
       "Next": [
-        "下一步"
+        "下一頁"
       ],
       "Night theme": [
         "夜間布景主題"
@@ -13091,9 +13060,6 @@
       ],
       "Open pagination": [
         "開啟分頁"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN / IKEv2 使用者名稱"
       ],
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
@@ -13140,9 +13106,6 @@
       "Phone": [
         "電話"
       ],
-      "Plans": [
-        "方案"
-      ],
       "Preview": [
         "預覽"
       ],
@@ -13159,7 +13122,7 @@
         "QRCode"
       ],
       "Recommended": [
-        "推薦使用"
+        "推薦"
       ],
       "Recommended actions": [
         "建議行動"
@@ -13336,7 +13299,7 @@
         "成功創建 ${ n } 使用者帳號"
       ],
       "Summary": [
-        "摘要"
+        "總結"
       ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
@@ -13382,9 +13345,6 @@
       ],
       "Upgrade to keep your premium benefits.": [
         "升級以保留您的進階權益。"
-      ],
-      "Upgrade your network protection with dedicated servers": [
-        "透過專用伺服器提升您的網路保護"
       ],
       "Upgrade your privacy": [
         "升級您的隱私"
@@ -13454,9 +13414,6 @@
       ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
-      ],
-      "Your current plan": [
-        "您目前的方案"
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"

@@ -521,9 +521,6 @@
       "Increase": [
         "Mărire"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Alăturați-vă la ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Alăturare la calendar"
       ],
@@ -1312,20 +1309,20 @@
         "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați -vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
+        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
@@ -3308,17 +3305,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 h"
-      ],
       "120 minutes": [
         "120 de minute"
-      ],
-      "1h": [
-        "1 h"
-      ],
-      "2h": [
-        "2 h"
       ],
       "30 minutes": [
         "30 de minute"
@@ -3519,6 +3507,9 @@
       ],
       "Cancellation failed to be sent": [
         "Anularea nu a putut fi trimisă."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Nu puteți crea o rezervare cu o adresă dezactivată."
       ],
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
@@ -4993,9 +4984,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "Durată de ${ bookingDetails.duration } min"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -5257,6 +5245,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Anulați importarea?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Solicitați-i administratorului să modifice planul actual sau să elimine o pagină din bara laterală a paginilor de rezervări."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
@@ -5694,11 +5685,8 @@
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
       ],
-      "Loading appointments...": [
-        "Se încarcă programările..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
-        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
+        "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de planificări Calendly într-o filă nouă."
       ],
       "Loading event": [
         "Se încarcă evenimentul."
@@ -6126,6 +6114,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, solicitați-i administratorului să modifice planul actual."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pentru a adăuga o pagină de rezervări nouă, eliminați una existentă din bara laterală a paginilor de rezervări."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, modificați-vă planul."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
@@ -6194,9 +6191,6 @@
       ],
       "VPN IP": [
         "IP VPN"
-      ],
-      "Want to create your own booking page?": [
-        "Doriți să vă creați propria pagină de programări?"
       ],
       "Warning": [
         "Avertizare"
@@ -6402,6 +6396,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Ați atins numărul maxim de pagini de rezervare disponibile în planul actual."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
@@ -6475,12 +6472,12 @@
         "Locul unde vă aflați este vizibil și poate fi folosit pentru a vă restricționa accesul la internet."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Planul planificat începe ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
+        "Planul planificat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
@@ -6499,6 +6496,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -8132,7 +8132,7 @@
         "Salvați timp la scrierea mesajelor"
       ],
       "Schedule and snooze emails for any time": [
-        "Programați și amânați mesaje pentru orice moment"
+        "Planificați și amânați mesaje pentru orice moment"
       ],
       "Secure Core servers": [
         "Servere Secure Core"
@@ -8412,7 +8412,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
+        "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
@@ -10545,7 +10545,7 @@
         "Invitați persoane la ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
-        "Programați și alăturați-vă apelurilor ${ MEET_APP_NAME } direct din calendarul personal."
+        "Planificați și alăturați-vă apelurilor ${ MEET_APP_NAME } direct din calendarul personal."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Creați și adăugați fără probleme legături web pentru conferințe video la evenimentele create."
@@ -10798,7 +10798,7 @@
         "${ planName } vă oferă echipei tot ce are nevoie pentru a fi mai productivă și organizată în muncă, cu acces la toate aplicațiile ${ BRAND_NAME } și la funcțiile lor premium."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
-        "${ planName } vă oferă echipei ceea ce are nevoie pentru a fi mai productivă, organizată și să controleze căsuța de e-mail, programul și multe altele."
+        "${ planName } vă oferă echipei ceea ce are nevoie pentru a fi mai productivă, organizată și să controleze căsuța de e-mail, planificările și multe altele."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } depășește funcțiile de bază pentru a vă ajuta să aveți productivitate sporită, organizare și să controlați contul de e-mail, identitatea adresei de e-mail și multe altele."
@@ -11568,6 +11568,9 @@
       "Cannot add more addresses": [
         "Nu se mai pot adăuga adrese"
       ],
+      "Cannot create more Booking pages": [
+        "Nu se mai pot crea pagini de rezervare"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -11977,7 +11980,7 @@
         "Salvare modificări"
       ],
       "Schedule meetings in one click": [
-        "Programare întâlniri cu un singur clic"
+        "Planificare întâlniri cu un singur clic"
       ],
       "Security center": [
         "Centru de securitate"
@@ -12077,12 +12080,6 @@
       ],
       "Summary": [
         "Sumar"
-      ],
-      "This booking page does not exist": [
-        "Această pagină de rezervare nu există."
-      ],
-      "This booking page has expired": [
-        "Această pagină de rezervare a expirat"
       ],
       "Time": [
         "Ora"

@@ -5121,17 +5121,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5s"
-      ],
       "120 minutes": [
         "120 dakika"
       ],
-      "1h": [
-        "1s"
-      ],
-      "2h": [
-        "2s"
+      "120m": [
+        "120 dk"
       ],
       "30 minutes": [
         "30 dakika"
@@ -5142,8 +5136,14 @@
       "60 minutes": [
         "60 dakika"
       ],
+      "60m": [
+        "60 dk"
+      ],
       "90 minutes": [
         "90 dakika"
+      ],
+      "90m": [
+        "90 dk"
       ]
     },
     "Easy switch": {
@@ -10294,6 +10294,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "100 milyon üzerinde kişi ve kuruluş ${ BRAND_NAME } hesabı açtı."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "${ rewardMonths } aylık tarife için ödeme yapıldı",
         "${ rewardMonths } aylık tarife için ödeme yapıldı"
@@ -13591,6 +13594,9 @@
       "Video conferencing with Zoom": [
         "Zoom ile görüntülü görüşme"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Çok zayıf"
       ],
@@ -14003,7 +14009,7 @@
         "Koşullar"
       ],
       "terms of our referral program": [
-        "referans programımızın şartları"
+        "öneri programımızın koşulları"
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
@@ -14262,7 +14268,7 @@
     },
     "mail_signup_2025: Info": {
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
-        "Tüm ${ BRAND_NAME } için Kurumsal uygulamaları ve işletmenizin tamamını korumak için premium özellikler"
+        "Tüm ${ BRAND_NAME } for Business uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler"
       ]
     },
     "mailtrial2024: Action": {
@@ -16281,6 +16287,9 @@
       "Allowed (default)": [
         "İzin veriliyor (varsayılan)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Arşivle"
       ],
@@ -16305,6 +16314,9 @@
       "Free server configs": [
         "Ücretsiz sunucu yapılandırmaları"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Daha çok sevdiğim başka bir hizmet buldum"
       ],
@@ -16317,6 +16329,9 @@
       "Ignore group": [
         "Grubu yok say"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "İhtiyacım olan önemli bir özellik eksik"
       ],
@@ -16328,6 +16343,9 @@
       ],
       "Left to Right": [
         "Soldan sağa"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -16413,11 +16431,20 @@
       "Star": [
         "Yıldız koy"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Tüm kuruluş"
       ],
       "Trash": [
         "Çöpe at"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -16755,7 +16782,7 @@
         "İlerleyerek ${ termsAndConditionsLink } ve ${ privacyPolicyLink } metinlerini kabul etmiş olursunuz."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
-        "Devam ederek ${ termsAndConditionsLink }, ${ privacyPolicyLink } ve ${ referralPolicyLink } politikalarımızı kabul etmiş olursunuz."
+        "İlerleyerek ${ termsAndConditionsLink }, ${ privacyPolicyLink } ${ referralPolicyLink } içeriklerini kabul etmiş olursunuz."
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -19374,6 +19401,9 @@
       "Collaborative document editing": [
         "İş birliği ile belge düzenleme"
       ],
+      "Collaborative documents and spreadsheets": [
+        "İş birlikli çalışma belgeleri ve hesap tabloları"
+      ],
       "Compare plans": [
         "Tarifeleri karşılaştır"
       ],
@@ -19475,6 +19505,9 @@
       ],
       "Pick your perfect plan": [
         "Size en uygun olan tarifeyi seçin"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Şifrelenmiş sohbet geçmişi ile güvenli yapay zeka yardımcısı"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "İndirim uygulandı – %${ checkout.discountPercent } indirim"
@@ -20216,7 +20249,7 @@
         "Başka bir aygıttan oturum açılması istendi. Bunu siz mi yaptınız?"
       ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
-        "Tek oturum açma, bir kuruluş kimliği olmadan düzgün çalışmayabilir. Güvenilir kimlik doğrulaması sağlamak için bir kimlik ayarlayın."
+        "Tek oturum açma, bir kuruluş kimliği olmadan düzgün çalışmayabilir. Kimlik doğrulamasının güvenliğini sağlamak için bir kimlik ayarlayın."
       ],
       "Single sign-on removed": [
         "Tek oturum açma kaldırıldı"
@@ -24070,6 +24103,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {
