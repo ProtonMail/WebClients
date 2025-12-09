@@ -286,9 +286,9 @@ describe('auth handlers', () => {
         });
         const api = withApiHandlers({ ...withApiHandlersDefaultParams, call });
         (api as any).UID = '128';
-        await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
+        await expectAsync(api({})).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(2);
-        await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
+        await expectAsync(api({})).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(2);
     });
 });
