@@ -51,7 +51,7 @@ export const useCopyItems = () => {
                         parentUid: targetFolderUid,
                     });
                 } else {
-                    errors.push({ error: result.error });
+                    errors.push({ error: result.error.toString() });
                 }
             }
         } catch (error) {

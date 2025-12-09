@@ -34,6 +34,7 @@ describe('getNodeEffectiveRole', () => {
         isShared: false,
         isSharedPublicly: false,
         creationTime: new Date(),
+        modificationTime: new Date(),
         trashTime: undefined,
         totalStorageSize: 0,
         activeRevision: undefined,

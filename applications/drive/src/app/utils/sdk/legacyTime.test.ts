@@ -26,6 +26,7 @@ describe('legacyTime utilities', () => {
         isShared: false,
         isSharedPublicly: false,
         creationTime: createTime,
+        modificationTime: modificationTime,
         trashTime: undefined,
         totalStorageSize: 1024,
         activeRevision: undefined,
