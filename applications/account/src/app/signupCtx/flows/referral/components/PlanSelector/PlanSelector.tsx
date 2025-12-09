@@ -65,7 +65,8 @@ const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
                     plan={PLANS.MAIL}
                     selected={isSelected(PLANS.MAIL)}
                     handleClick={handlePlanClick}
-                    title={MAIL_SHORT_APP_NAME}
+                    title={c('Signup').t`Mail`}
+                    extraShortTitle={MAIL_SHORT_APP_NAME}
                 />
                 <ReferralPlanIcon
                     icon={getPlanIconPath(PLANS.DRIVE)}
@@ -73,6 +74,7 @@ const PlanSelector = ({ onPlanClick, onCTAClick }: Props) => {
                     selected={isSelected(PLANS.DRIVE)}
                     handleClick={handlePlanClick}
                     title={c('Signup').t`Storage`}
+                    extraShortTitle={DRIVE_SHORT_APP_NAME}
                 />
                 <ReferralPlanIcon
                     icon={getPlanIconPath(PLANS.PASS)}
