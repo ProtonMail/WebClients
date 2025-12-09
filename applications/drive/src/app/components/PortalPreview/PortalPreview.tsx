@@ -10,7 +10,7 @@ import { Portal } from '@proton/components/components/portal';
 import { useFileView } from '../../store';
 import { getSharedStatus } from '../../utils/share';
 import { SignatureAlertBody } from '../SignatureAlert';
-import SignatureIcon from '../SignatureIcon';
+import SignatureIconComponent from '../SignatureIcon';
 
 interface PortalPreviewProps {
     shareId: string;
@@ -25,6 +25,7 @@ interface PortalPreviewProps {
     isFavorite?: boolean;
     className?: string;
     navigationControls?: ReactNode;
+    isForPhotos?: boolean;
 }
 
 const PortalPreview = (
@@ -41,12 +42,13 @@ const PortalPreview = (
         date,
         className,
         navigationControls,
+        isForPhotos,
         ...modalProps
     }: PortalPreviewProps & ModalStateProps,
     ref: Ref<HTMLDivElement>
 ) => {
     const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile, videoStreaming } =
-        useFileView(shareId, linkId, false, revisionId);
+        useFileView(shareId, linkId, false, revisionId, isForPhotos);
 
     const signatureStatus = useMemo(() => {
         if (!link) {
@@ -54,7 +56,7 @@ const PortalPreview = (
         }
 
         return (
-            <SignatureIcon
+            <SignatureIconComponent
                 isFile={link.isFile}
                 mimeType={link.mimeType}
                 signatureIssues={link.signatureIssues}
