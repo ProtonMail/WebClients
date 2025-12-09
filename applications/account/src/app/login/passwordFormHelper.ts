@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-export interface PasswordFormLabels {
+interface PasswordFormLabels {
     formName: string;
     passwordLabel: string;
     confirmPasswordLabel: string;

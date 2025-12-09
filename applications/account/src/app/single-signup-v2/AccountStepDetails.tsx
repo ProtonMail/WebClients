@@ -26,7 +26,7 @@ import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyn
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';
 
-import '../signup/AccountStep.scss';
+import './AccountStepDetails.scss';
 
 export interface AccountStepDetailsRef {
     validate: () => Promise<boolean>;

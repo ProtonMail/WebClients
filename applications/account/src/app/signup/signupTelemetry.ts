@@ -6,7 +6,6 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 import type { SignupType } from './interfaces';
 
 type FlowId =
-    | 'legacy-signup' // Multi-step signup used from login page `Create account` click
     | 'single-page-signup' // Single page signup v1 - only used by vpn
     | 'single-page-signup-vpn' // Single page signup v2 - used by all other products
     | string;

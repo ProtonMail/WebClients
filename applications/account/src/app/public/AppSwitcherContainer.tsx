@@ -19,7 +19,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
-import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
+import ExploreAppsList, { getExploreApps } from '../components/ExploreAppsList';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';

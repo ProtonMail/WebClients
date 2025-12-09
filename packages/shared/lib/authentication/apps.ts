@@ -16,14 +16,8 @@ export const getToAppName = (toApp?: APP_NAMES) => {
 export const vpnApps = [APPS.PROTONVPN_SETTINGS, APPS.PROTONVPNBROWSEREXTENSION];
 export const passApps = [APPS.PROTONPASS, APPS.PROTONEXTENSION, APPS.PROTONPASSBROWSEREXTENSION];
 
-export const externalApps = [...vpnApps, APPS.PROTONDRIVE, ...passApps];
-
 export const requiresProtonAddress: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
 export const requiresAddress: APP_NAMES[] = [...requiresProtonAddress, APPS.PROTONDRIVE, ...passApps];
-
-export const getHasAppExternalSignup = (toApp?: APP_NAMES) => {
-    return externalApps.includes(toApp as any);
-};
 
 export const getIsPassApp = (toApp?: APP_NAMES) => {
     return passApps.includes(toApp as any);

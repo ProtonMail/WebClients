@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Href } from '@proton/atoms/Href/Href';
 import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
@@ -22,8 +23,7 @@ import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customC
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, BRAND_NAME, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
@@ -37,14 +37,29 @@ import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/h
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
+import { getLocaleTermsURL } from '../content/helper';
 import SetPasswordWithPolicyForm from '../login/SetPasswordWithPolicyForm';
-import { getTerms } from '../signup/terms';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import ExpiredError from './ExpiredError';
 import JoinOrganizationAdminItem from './JoinOrganizationAdminItem';
 import Layout from './Layout';
 import Main from './Main';
 import { stripQueryParams } from './jwt';
+
+const getTerms = (app: APP_NAMES) => {
+    const terms = (
+        <Fragment key="terms">
+            <br />
+            <Href href={getLocaleTermsURL(app)}>{
+                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                c('new_plans: signup').t`terms and conditions`
+            }</Href>
+        </Fragment>
+    );
+
+    // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+    return c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`;
+};
 
 enum ErrorType {
     Expired,

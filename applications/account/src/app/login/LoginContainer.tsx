@@ -54,7 +54,7 @@ export enum RememberMode {
     HideEnable = 3,
 }
 
-export interface Props {
+interface Props {
     defaultUsername?: string;
     initialSearchParams?: URLSearchParams;
     onLogin: OnLoginCallback;

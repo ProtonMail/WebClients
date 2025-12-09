@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Main from '../public/Main';
-import { FakeLoadingTextStepper } from '../signup/LoadingStep';
+import { FakeLoadingTextStepper } from '../signup/FakeLoadingTextStepper';
 import type { Background } from './Layout';
 import Layout from './Layout';
 import illustration from './business-onboarding-illustration.svg';
