@@ -6,9 +6,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES, type CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 
-import SignupContainer from '../signup/SignupContainer';
 import { isReferralSignup } from '../signup/helper';
-import { getSignupMeta } from '../signup/signupPagesJson';
 import SignupCtxRouter from '../signupCtx/SignupCtxRouter';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import type { MetaTags } from '../useMetaTags';
@@ -59,7 +57,8 @@ const SingleSignupSwitchContainer = ({
     const renderContextSignup =
         searchParams.get('mode') === 'ctx' ||
         location.pathname === SSO_PATHS.START ||
-        location.pathname === SSO_PATHS.FIRST_EMAIL;
+        location.pathname === SSO_PATHS.FIRST_EMAIL ||
+        isReferral;
 
     if (renderContextSignup) {
         return (
@@ -71,26 +70,6 @@ const SingleSignupSwitchContainer = ({
                     handleLogin={handleLogin}
                     loginUrl={paths.login}
                     productParam={productParam}
-                />
-            </UnAuthenticated>
-        );
-    }
-
-    if (isReferral) {
-        return (
-            <UnAuthenticated>
-                <SignupContainer
-                    initialSearchParams={initialSearchParams}
-                    metaTags={getSignupMeta(maybePreAppIntent)}
-                    loginUrl={paths.login}
-                    productParam={productParam}
-                    clientType={clientType}
-                    toApp={maybePreAppIntent}
-                    toAppName={toAppName}
-                    onLogin={handleLogin}
-                    onBack={onBack}
-                    onPreSubmit={onPreSubmit}
-                    onStartAuth={onStartAuth}
                 />
             </UnAuthenticated>
         );
