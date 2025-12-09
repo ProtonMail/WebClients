@@ -124,6 +124,9 @@
       "Back": [
         "Natrag"
       ],
+      "Back to sign in": [
+        "Natrag na prijavu"
+      ],
       "Block": [
         "Blokiraj"
       ],
@@ -370,6 +373,9 @@
       "Download": [
         "Preuzmi"
       ],
+      "Download logs": [
+        "Preuzmi zapisnike"
+      ],
       "Download recovery file": [
         "Preuzimanje datoteke za oporavak"
       ],
@@ -499,6 +505,9 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go back": [
+        "Idi natrag"
+      ],
       "Go to label": [
         "Idi na oznaku"
       ],
@@ -600,6 +609,9 @@
       ],
       "Mark as default": [
         "Postavi kao zadano"
+      ],
+      "Mark as favorite": [
+        "Označi kao favorit"
       ],
       "Mark as open": [
         "Označi kao otvoreno"
@@ -876,6 +888,9 @@
       ],
       "Send reminder": [
         "Pošalji podsjetnik"
+      ],
+      "Set as album cover": [
+        "Postavi kao naslovnicu albuma"
       ],
       "Set as default": [
         "Postavi kao zadano"
@@ -1724,6 +1739,9 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
+      ],
+      "Unlimited daily chats": [
+        "Neograničena dnevna čavrljanja"
       ]
     },
     "collider_2025: Info": {
@@ -3171,6 +3189,9 @@
       "/month": [
         "/mjesec"
       ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
+      ],
       "2 user accounts": [
         "2 korisnička računa"
       ]
@@ -3448,6 +3469,9 @@
       ],
       "Time required before automatically granting them access": [
         "Vrijeme potrebno prije nego što im se automatski omogući pristup"
+      ],
+      "Trusted contact": [
+        "Pouzdani kontakt"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -5066,6 +5090,9 @@
       "* No credit card required.": [
         "* Nije potrebna kreditna kartica."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
+      ],
       "**Sync codes** to all your devices": [
         "**Sinkronizirajte kôdove** na sve Vaše uređaje"
       ],
@@ -5861,11 +5888,17 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Molimo, čuvajte ju na sigurnom. Trebat će Vam za pristup vašem korisničkom računu i dešifriranje Vaših podataka u slučaju resetiranja lozinke."
       ],
+      "Please open the document to view it.": [
+        "Otvorite dokument da biste ga pregledali."
+      ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Odaberite vrstu poveznice koju želite umetnuti i popunite sva polja."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
+      ],
+      "Please use another browser or download the file.": [
+        "Koristite drugi preglednik ili preuzmite datoteku."
       ],
       "Plus ${ numOfBreaches } more": [
         "I još ${ numOfBreaches }"
@@ -5878,6 +5911,15 @@
       ],
       "Preview": [
         "Pregled"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Pretpregled za ovu vrstu datoteke trenutno nije podržan u ovom pregledniku."
+      ],
+      "Preview for this file type is not supported": [
+        "Pretpregled ove vrste datoteke nije podržan"
+      ],
+      "Preview of documents is not yet supported.": [
+        "Pretpregled dokumenata još nije podržan."
       ],
       "Protected by Swiss privacy laws": [
         "Zaštićeno švicarskim zakonima o privatnosti"
@@ -5971,6 +6013,9 @@
       ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
+      ],
+      "Settings update failed": [
+        "Ažuriranje postavki nije uspjelo"
       ],
       "Settings updated": [
         "Ažurirane postavke"
@@ -6076,6 +6121,9 @@
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ova značajka odgađa slanje vaše e-pošte, dajući vam mogućnost poništavanja slanja tijekom odabranog vremenskog okvira."
       ],
+      "This file is too large to preview": [
+        "Ova datoteka je prevelika za pretpregled"
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Ova pozivna poveznica je istekla. Molimo kontaktirajte svog administratora kako biste zatražili pristup."
       ],
@@ -6141,6 +6189,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
+      ],
+      "To continue to ${ product }": [
+        "Za nastavak na ${ product }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -6324,6 +6375,11 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Trenutno koristite ${ ipCount } od ${ ipAddresses } dostupnog dediciranog poslužitelja.",
+        "Trenutno koristite ${ ipCount } od ${ ipAddresses } dostupna dedicirana poslužitelja.",
+        "Trenutno koristite ${ ipCount } od ${ ipAddresses } dostupnih dediciranih poslužitelja."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Koristite više pohrane nego što je uključeno u ${ downgradedPlanName } plan. Molimo izbrišite ili uklonite podatke kako biste se unazadili."
@@ -7770,6 +7826,9 @@
       "Create an alias": [
         "Stvori pseudonim"
       ],
+      "Don't have access to your 2FA?": [
+        "Nemate pristup svojoj 2FA metodi?"
+      ],
       "Encryption and keys": [
         "Šifriranje i ključevi"
       ],
@@ -8046,14 +8105,35 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: prijava"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: registracija"
+      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } račun"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Stvorite ${ BRAND_NAME } korisnički račun za korištenje svih šifriranih ${ BRAND_NAME } usluga kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge, sa samo jednom prijavom. Nabavite besplatan ${ BRAND_NAME } korisnički račun."
       ],
+      "Create a new ${ appName } account": [
+        "Stvori novi račun za ${ appName }"
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Pronađite svoje korisničko ime ${ BRAND_NAME } računa"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Zaboravili ste lozinku za svoj ${ BRAND_NAME } račun? Ponovno ju postavi pomoću kodova za oporavak, e-pošte ili SMS-a i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Zaboravili ste korisničko ime za svoj ${ BRAND_NAME } račun? Pronađite ga pomoću e-pošte ili broja mobilnog telefona za oporavak i vratite si pristup uslugama ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i drugima."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Ponovno postavite lozinku za svoj ${ BRAND_NAME } račun"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Prijavite se za pristup svom računu za ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se na svoj ${ BRAND_NAME } račun kako biste pristupili svim šifriranim ${ BRAND_NAME } uslugama kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge. Nemate račun? Izradite ga BESPLATNO."
@@ -8994,6 +9074,9 @@
       ]
     },
     "Offer": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Uhvatite ${ BRAND_NAME } Duo"
+      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
@@ -11121,6 +11204,9 @@
       "You will have to create new users manually to add them to your organization.": [
         "Morat ćete ručno stvoriti nove korisnike kako biste ih dodali u svoju organizaciju."
       ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
+      ],
       "Your SSO configuration will be deleted.": [
         "Vaša SSO konfiguracija bit će izbrisana."
       ]
@@ -11183,6 +11269,9 @@
     "storage_split: info": {
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Unazađivanjem ćete izgubiti sljedeće pogodnosti. Jeste li sigurni da želite nastaviti?"
+      ],
+      "Storage used": [
+        "Iskorištena pohrana"
       ],
       "Try out ${ app } to its full potential": [
         "Isprobajte ${ app } u svojem punom potencijalu"
@@ -12579,6 +12668,9 @@
       "Set organization name": [
         "Postavite naziv organizacije"
       ],
+      "Set up ${ protonDuoPlanName }": [
+        "Postavite ${ protonDuoPlanName }"
+      ],
       "Set up a recovery method": [
         "Postavite način oporavka"
       ],
@@ -12754,6 +12846,9 @@
       ],
       "Your calendar link": [
         "Poveznica vašeg kalendara"
+      ],
+      "Your changes are not synced yet": [
+        "Vaše promjene još nisu sinkronizirane"
       ],
       "Your plan": [
         "Vaš plan"
@@ -13199,6 +13294,11 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {
@@ -13399,6 +13499,9 @@
       ],
       "You will not see this import record in the list any more.": [
         "Ovaj zapis o uvozu više nećete vidjeti na popisu"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {

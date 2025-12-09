@@ -5058,17 +5058,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 tim."
-      ],
       "120 minutes": [
         "120 minuter"
       ],
-      "1h": [
-        "1 tim."
-      ],
-      "2h": [
-        "2 tim."
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minuter"
@@ -5079,8 +5073,14 @@
       "60 minutes": [
         "60 minuter"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuter"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Easy switch": {
@@ -17865,6 +17865,9 @@
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
       ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Om du prenumererar före detta datum får du **${ referrerRewardAmount }** i krediter. Om du inte prenumererar kommer du att nedgraderas till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
       ],
@@ -19353,6 +19356,9 @@
       ],
       "Pick your perfect plan": [
         "Välj ditt perfekta paket"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privat AI-assistent med krypterad chatthistorik"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Kampanj tillämpad – ${ checkout.discountPercent } % rabatt"

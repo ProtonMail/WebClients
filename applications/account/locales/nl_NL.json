@@ -172,6 +172,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Apply to existing messages": [
+        "Pas toe op bestaande berichten"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -613,6 +616,9 @@
       "Export": [
         "Exporteren"
       ],
+      "Export key": [
+        "Sleutel exporteren"
+      ],
       "Export key before deleting": [
         "Exporteer sleutel voor het verwijderen"
       ],
@@ -993,6 +999,9 @@
       ],
       "Quote": [
         "Citaat"
+      ],
+      "Reactivate keys": [
+        "Sleutels heractiveren"
       ],
       "Reconnect": [
         "Opnieuw verbinden"
@@ -1593,7 +1602,7 @@
         "${ LUMO_APP_NAME } AI-assistent"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "${ LUMO_APP_NAME } AI assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruiker)",
         "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
@@ -2273,7 +2282,7 @@
         "Krijg een schone inbox met filters"
       ],
       "Get enough storage for over 40,000 photos.": [
-        "Krijg genoeg opslagruimte voor meer dan 40.000 foto's."
+        "Krijg genoeg opslagruimte voor meer dan 40 000 foto's."
       ],
       "Get round-the-clock protection": [
         "Krijg non-stop bescherming"
@@ -2597,6 +2606,11 @@
     "Calendar access select label": {
       "Add people or groups": [
         "Voeg mensen of groepen toe"
+      ]
+    },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "Uitnodiging verzonden"
       ]
     },
     "Calendar link purpose update success message": {
@@ -4794,17 +4808,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5u"
-      ],
       "120 minutes": [
         "120 minuten"
-      ],
-      "1h": [
-        "1u"
-      ],
-      "2h": [
-        "2u"
       ],
       "30 minutes": [
         "30 minuten"
@@ -5107,6 +5112,11 @@
         "Probeer de link opnieuw te openen."
       ]
     },
+    "email_forwarding_2023: Header": {
+      "Forward from": [
+        "Doorsturen vanaf"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "Automatically forward emails to another email address.": [
         "E-mails automatisch doorsturen naar een ander e-mailadres."
@@ -5116,6 +5126,9 @@
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "De ontvanger is uitgenodigd en moet de uitnodiging accepteren, afwijzen of bijwerken."
+      ],
+      "Forwarding is active": [
+        "Doorsturen is actief"
       ],
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
@@ -6354,7 +6367,7 @@
         "Als gevolg van een wachtwoordreset konden sommige van uw evenementen niet worden ontsleuteld en geëxporteerd."
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Gelieve het tabblad niet te sluiten voordat het exportproces is voltooid."
+        "Sluit het tabblad niet voordat het exportproces is voltooid."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -9229,6 +9242,9 @@
       "Link created": [
         "Koppeling aangemaakt"
       ],
+      "Link deleted": [
+        "Koppeling verwijderd"
+      ],
       "Link expired": [
         "Link is vervallen"
       ],
@@ -9476,6 +9492,9 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Meer dan 100 miljoen mensen en bedrijven hebben zich voor ${ BRAND_NAME } geregistreerd."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Betaald voor een ${ rewardMonths } maand abonnement",
@@ -10531,7 +10550,7 @@
         "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Met je huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
+        "Met uw huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
@@ -11717,6 +11736,9 @@
       ],
       "Default language": [
         "Standaardtaal"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Standaardtaal (${ defaultLanguage })"
       ],
       "Default scrollbars": [
         "Standaard schuifbalken"
@@ -13099,8 +13121,8 @@
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid bereikt.",
-        "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } leden bereikt."
+        "U heeft het maximum van ${ MAX_CALENDAR_MEMBERS } lid bereikt.",
+        "U heeft het maximum van ${ MAX_CALENDAR_MEMBERS } leden bereikt."
       ]
     },
     "Member action": {
@@ -14961,6 +14983,9 @@
       "12th of the month": [
         "12e dag van de maand"
       ],
+      "15th of the month": [
+        "15e dag van de maand"
+      ],
       "19th of the month": [
         "19e dag van de maand"
       ],
@@ -14972,6 +14997,9 @@
       ],
       "Allowed ${ defaultLabel }": [
         "Toegestaan ${ defaultLabel }"
+      ],
+      "Android": [
+        "Android"
       ],
       "Archive": [
         "Archief"
@@ -14997,6 +15025,9 @@
       "Free server configs": [
         "Gratis server configuratiebestanden"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Ik heb een anderen service gevonden die mijn voorkeur heeft"
       ],
@@ -15008,6 +15039,9 @@
       ],
       "Ignore group": [
         "Groep negeren"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Ik mis een belangrijke functie"
@@ -17841,8 +17875,8 @@
         "${ VPN_CONNECTIONS } hoge snelheid VPN-verbindingen"
       ],
       "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } land",
-        "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } landen"
+        "${ vpnServersCountData.free.servers }+ VPN-servers in ${ vpnServersCountData.free.countries } land",
+        "${ vpnServersCountData.free.servers }+ VPN-servers in ${ vpnServersCountData.free.countries } landen"
       ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ land",
@@ -17896,6 +17930,9 @@
       ],
       "Collaborative document editing": [
         "Samen documenten bewerken"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Gedeelde documenten en rekenbladen"
       ],
       "Compare plans": [
         "Vergelijk abonnementen"
@@ -17998,6 +18035,9 @@
       ],
       "Pick your perfect plan": [
         "Kies uw perfecte abonnement"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privé AI-assistent met versleutelde gespreksgeschiedenis"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Promotie toegepast – ${ checkout.discountPercent }% korting"
@@ -19530,6 +19570,9 @@
       "Credits added": [
         "Tegoed toegevoegd"
       ],
+      "Default calendar updated": [
+        "Standaardagenda bijgewerkt"
+      ],
       "Device deleted": [
         "Apparaat verwijderd"
       ],
@@ -20118,6 +20161,9 @@
       "Application access": [
         "Toegang tot toepassing"
       ],
+      "Apply filter to existing messages": [
+        "Filter toepassen op bestaande berichten"
+      ],
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
@@ -20147,6 +20193,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
+      ],
+      "Browser extensions": [
+        "Browserextensies"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
@@ -20523,7 +20572,7 @@
         "E-mailadres"
       ],
       "Email breaches": [
-        "E-mail inbreuken"
+        "E-mailinbreuken"
       ],
       "Email categories": [
         "E-mailcategorieën"
@@ -20578,6 +20627,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Export private key": [
+        "Privésleutel exporteren"
       ],
       "External PGP settings": [
         "Externe PGP-instellingen"
@@ -21202,6 +21254,9 @@
       "Start import process": [
         "Importproces starten"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Begin met het beschermen van uw apparaten met de ${ VPN_APP_NAME } app."
+      ],
       "State": [
         "Land/Staat"
       ],
@@ -21493,6 +21548,9 @@
     "Title header for keys table": {
       "Function": [
         "Functie"
+      ],
+      "Type": [
+        "Soort"
       ]
     },
     "Title header for members table": {
@@ -21681,7 +21739,7 @@
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
       ],
       "This setting is managed by your organization": [
-        "Deze instelling wordt beheerd door je organisatie."
+        "Deze instelling wordt beheerd door uw organisatie."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
