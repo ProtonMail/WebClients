@@ -13,6 +13,7 @@ describe('getContentPreviewMethod', () => {
         isShared: false,
         isSharedPublicly: false,
         creationTime: baseDate,
+        modificationTime: baseDate,
         trashTime: undefined,
         totalStorageSize: 100,
         folder: undefined,
