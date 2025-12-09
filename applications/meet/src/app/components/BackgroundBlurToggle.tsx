@@ -22,13 +22,13 @@ export const BackgroundBlurToggle = ({
             <label
                 className={clsx('setting-label text-ellipsis', backgroundBlur ? 'color-norm' : 'color-hint')}
                 htmlFor={withTooltip ? 'blur-background-with-tooltip' : 'blur-background'}
-            >{c('Action').t`Blur background`}</label>
+            >{c('Action').t`Background blur`}</label>
             {withTooltip ? (
                 <Tooltip
                     title={
                         !isBackgroundBlurSupported
-                            ? c('Tooltip').t`Blur background is not supported on your browser`
-                            : c('Tooltip').t`Blur background`
+                            ? c('Tooltip').t`Background blur is not supported on your browser`
+                            : c('Tooltip').t`Background blur`
                     }
                 >
                     <span>
@@ -37,7 +37,6 @@ export const BackgroundBlurToggle = ({
                             checked={backgroundBlur}
                             onChange={onChange}
                             className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
-                            aria-label={c('Alt').t`Blur background`}
                             loading={loadingBackgroundBlur}
                             disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
                         />

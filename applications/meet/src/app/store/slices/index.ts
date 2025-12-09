@@ -1,5 +1,6 @@
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingsReducer } from './meetings';
+import { settingsReducer } from './settings';
 import { userSettingsReducer } from './userSettings';
 
 export * from './meetAppStateSlice';
@@ -10,4 +11,5 @@ export const meetReducers = {
     ...meetAppStateReducer,
     ...meetingsReducer,
     ...userSettingsReducer,
+    ...settingsReducer,
 };

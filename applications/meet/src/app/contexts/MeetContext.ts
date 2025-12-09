@@ -37,8 +37,6 @@ export interface MeetContextValues {
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
-    disableVideos: boolean;
-    setDisableVideos: (disableVideos: boolean) => void;
     participantsWithDisabledVideos: string[];
     setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
     displayName: string;
@@ -56,8 +54,7 @@ export interface MeetContextValues {
     isScreenShare: boolean;
     screenShareParticipant: Participant | null;
     screenShareTrack: TrackReference | null;
-    handleMeetingLockToggle: (enable: boolean) => Promise<void>;
-    isMeetingLocked: boolean;
+    handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
     startPiP: () => void;
     stopPiP: () => void;
@@ -93,8 +90,6 @@ export const MeetContext = createContext<MeetContextValues>({
     participantsMap: {},
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
-    disableVideos: false,
-    setDisableVideos: () => {},
     participantsWithDisabledVideos: [],
     setParticipantsWithDisabledVideos: () => {},
     displayName: '',
@@ -113,7 +108,6 @@ export const MeetContext = createContext<MeetContextValues>({
     screenShareParticipant: null,
     screenShareTrack: null,
     handleMeetingLockToggle: () => Promise.resolve(),
-    isMeetingLocked: false,
     isDisconnected: false,
     startPiP: () => {},
     stopPiP: () => {},

@@ -37,13 +37,13 @@ import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
-import { useLockMeeting } from '../../hooks/useLockMeeting';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { useMeetDispatch } from '../../store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
+import { toggleMeetingLockThunk } from '../../store/slices/settings';
 import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
@@ -119,8 +119,6 @@ export const ProtonMeetContainer = ({
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
 
     const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
-
-    const { toggleMeetingLock, isMeetingLocked } = useLockMeeting();
 
     const instantMeetingRef = useRef(!token);
 
@@ -768,8 +766,10 @@ export const ProtonMeetContainer = ({
         prepareUpsell();
     };
 
-    const handleMeetingLockToggle = async (enable: boolean) => {
-        await toggleMeetingLock(enable, token, accessTokenRef.current as string);
+    const handleMeetingLockToggle = async () => {
+        await dispatch(
+            toggleMeetingLockThunk({ meetingLinkName: token, accessToken: accessTokenRef.current as string })
+        );
     };
 
     // Warn user before leaving if in a meeting
@@ -867,7 +867,6 @@ export const ProtonMeetContainer = ({
                         passphrase={password}
                         guestMode={guestMode}
                         handleMeetingLockToggle={handleMeetingLockToggle}
-                        isMeetingLocked={isMeetingLocked}
                         mlsGroupState={mlsGroupState}
                         isDisconnected={connectionLost}
                         startPiP={startPiP}

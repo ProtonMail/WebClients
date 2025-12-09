@@ -5,11 +5,14 @@ import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
 import { RoomEvent, Track } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
+import { useMeetSelector } from '../store/hooks';
+import { selectMeetSettings } from '../store/slices/settings';
 import { useParticipantQuality } from './useParticipantQuality';
 
 export const useParticipantVideoControls = () => {
     const { pagedParticipants } = useMeetContext();
-    const { participantsWithDisabledVideos, disableVideos } = useMeetContext();
+    const { participantsWithDisabledVideos } = useMeetContext();
+    const { disableVideos } = useMeetSelector(selectMeetSettings);
     const { localParticipant } = useLocalParticipant();
 
     const participantQuality = useParticipantQuality();
