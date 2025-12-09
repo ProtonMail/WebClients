@@ -5121,17 +5121,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 ώρα"
-      ],
       "120 minutes": [
         "120 λεπτά"
       ],
-      "1h": [
-        "1ώρα"
-      ],
-      "2h": [
-        "2ώρες"
+      "120m": [
+        "120λ"
       ],
       "30 minutes": [
         "30 λεπτά"
@@ -5142,8 +5136,14 @@
       "60 minutes": [
         "60 λεπτά"
       ],
+      "60m": [
+        "60λ"
+      ],
       "90 minutes": [
         "90 λεπτά"
+      ],
+      "90m": [
+        "90λ"
       ]
     },
     "Easy switch": {
@@ -10294,6 +10294,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Πάνω από 100 εκατομμύρια άνθρωποι και επιχειρήσεις έχουν εγγραφεί στο ${ BRAND_NAME }."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Πλήρωσε για πρόγραμμα ${ rewardMonths } μήνα",
         "Πλήρωσε για πρόγραμμα ${ rewardMonths } μηνών"
@@ -13591,6 +13594,9 @@
       "Video conferencing with Zoom": [
         "Τηλεδιάσκεψη με Zoom"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Ευάλωτο"
       ],
@@ -16281,6 +16287,9 @@
       "Allowed (default)": [
         "Επιτρέπεται (προεπιλογή)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Αρχειοθετημένα"
       ],
@@ -16305,6 +16314,9 @@
       "Free server configs": [
         "Ρυθμίσεις δωρεάν διακομιστή"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
       ],
@@ -16317,6 +16329,9 @@
       "Ignore group": [
         "Παράβλεψη ομάδας"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Λείπει ένα βασικό χαρακτηριστικό που χρειάζομαι"
       ],
@@ -16328,6 +16343,9 @@
       ],
       "Left to Right": [
         "Αριστερά προς Δεξιά"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Σήμανση ως διαβασμένο"
@@ -16413,11 +16431,20 @@
       "Star": [
         "Αστέρι"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
       ],
       "Trash": [
         "Διαγραμμένα"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -19374,6 +19401,9 @@
       "Collaborative document editing": [
         "Συνεργατική επεξεργασία εγγράφων"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Συνεργατικά έγγραφα και υπολογιστικά φύλλα"
+      ],
       "Compare plans": [
         "Σύγκριση πλάνων"
       ],
@@ -19475,6 +19505,9 @@
       ],
       "Pick your perfect plan": [
         "Επιλέξτε το ιδανικό σας πλάνο"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Ιδιωτικός βοηθός Τεχνητής Νοημοσύνης με κρυπτογραφημένο ιστορικό συνομιλιών"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Προσφορά εφαρμόστηκε – ${ checkout.discountPercent }% έκπτωση"
@@ -24070,6 +24103,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Πρόσβαση σε Secure Core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, TOR μέσω VPN, και πολλά άλλα."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

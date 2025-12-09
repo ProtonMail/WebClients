@@ -4757,17 +4757,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minutos"
       ],
-      "1h": [
-        "1 h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120m"
       ],
       "30 minutes": [
         "30 minutos"
@@ -4778,8 +4772,14 @@
       "60 minutes": [
         "60 minutos"
       ],
+      "60m": [
+        "60m"
+      ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Easy switch": {
@@ -17613,6 +17613,9 @@
       "Collaborative document editing": [
         "Edición colaborativa de documentos"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Documentos y hojas de cálculo colaborativos"
+      ],
       "Compare plans": [
         "Compara los planes"
       ],
@@ -17714,6 +17717,9 @@
       ],
       "Pick your perfect plan": [
         "Elige el plan perfecto para ti"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Asistente de IA privado con historial de chat cifrado"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Se ha aplicado la promoción (-${ checkout.discountPercent }% de descuento)."

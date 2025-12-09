@@ -2484,6 +2484,9 @@
       "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
         "Se você quer elevar sua identidade profissional, é importante aprender por que e como criar um domínio de e-mail personalizado. A maioria das pessoas usa endereços de e-mail gratuitos com domínios padrão fornecidos pelo serviço de e-mail delas."
       ],
+      "If you want to leave Google, one of the first things you must do is stop using its proprietary browser, Chrome, and its built-in password manager. A vital first step towards leaving Google is downloading your passwords so you can transition more easily to a new, better password manager.": [
+        "Se você quer sair do Google, uma das primeiras coisas que você deve fazer é parar de usar seu navegador proprietário, o Chrome, e seu gerenciador de senhas integrado. Um primeiro passo vital para sair do Google é baixar suas senhas para que você possa fazer a transição mais facilmente para um gerenciador de senhas novo e melhor."
+      ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Neste artigo, veremos quem pode ver seu histórico da Internet quando você usa WiFi, o que eles podem ver e por que podem fazer isso."
       ],
@@ -2519,6 +2522,12 @@
       ],
       "Learn how to make account sharing simple for any family member.": [
         "Aprenda a simplificar o compartilhamento de conta para qualquer membro da família."
+      ],
+      "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
+        "Aprenda a compartilhar um único item, um link criptografado ou um cofre através do ${ PASS_APP_NAME }."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Proteja todos os seus dispositivos domésticos ao mesmo tempo com ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Proteja as comunicações da sua empresa."
@@ -2562,6 +2571,9 @@
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
+        "Aproveite o recurso avançado de alias de e-mail no ${ PASS_APP_NAME }"
+      ],
       "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
         "O profissional médio recebe cerca de 120 e-mails por dia, o que totaliza aproximadamente 43.800 e-mails por ano. Não importa em qual setor você trabalhe, essa é uma quantidade esmagadora de e-mails de trabalho para lidar."
       ],
@@ -2588,6 +2600,9 @@
       ],
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Discutimos como mudar os endereços de IP externos e locais do seu dispositivo Windows."
+      ],
+      "What are passkeys and how do they work?": [
+        "O que são chaves de acesso e como elas funcionam?"
       ],
       "What is a safe username?": [
         "O que é um nome de usuário seguro?"
@@ -5088,17 +5103,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5h"
-      ],
       "120 minutes": [
         "120 minutos"
       ],
-      "1h": [
-        "1h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minutos"
@@ -5109,8 +5118,14 @@
       "60 minutes": [
         "60 minutos"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Easy switch": {
@@ -6929,6 +6944,9 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "A conexão com a internet foi interrompida causando erro no processo de exportação. Tente novamente."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Você pode salvar um arquivo ICS dos eventos exportados."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -16254,6 +16272,9 @@
       "Allowed (default)": [
         "Permitido (padrão)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Arquivar"
       ],
@@ -16277,6 +16298,9 @@
       ],
       "Free server configs": [
         "Configurações do servidor gratuito"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Encontrei outro serviço que considero melhor"
@@ -16304,6 +16328,9 @@
       ],
       "Left to Right": [
         "Esquerda para direita"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Marcar como lido"
@@ -16400,6 +16427,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -19350,6 +19380,9 @@
       "Collaborative document editing": [
         "Edição de documentos colaborativos"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Documentos e planilhas colaborativos"
+      ],
       "Compare plans": [
         "Comparar planos"
       ],
@@ -19451,6 +19484,9 @@
       ],
       "Pick your perfect plan": [
         "Escolha seu plano perfeito"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Assistente de IA privado com histórico de bate-papo criptografado"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Promoção aplicada – ${ checkout.discountPercent }% de desconto"
@@ -24040,8 +24076,26 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "iOS": [
         "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {
