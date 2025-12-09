@@ -1,5 +1,6 @@
 import type { ADDON_NAMES, PlanIDs } from '@proton/payments';
 import {
+    ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
     AddonLimit,
     type Cycle,
@@ -7,6 +8,7 @@ import {
     getAddonMultiplier,
     getPlanFeatureLimit,
     getSupportedAddons,
+    isAddonType,
 } from '@proton/payments';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -24,6 +26,8 @@ export default function getAddonsPricing({
     const supportedAddons = getSupportedAddons(planIDs);
 
     const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
+
+    const whitelistedAddonTypes: ADDON_PREFIXES[] = [ADDON_PREFIXES.MEMBER, ADDON_PREFIXES.IP];
 
     return supportedAddonNames
         .map((addonName) => {
@@ -54,7 +58,8 @@ export default function getAddonsPricing({
 
             const addonPricePerCycle = addon.Pricing[cycle] || 0;
 
-            if (!value) {
+            const isAllowedAddonType = whitelistedAddonTypes.some((addonType) => isAddonType(addonName, addonType));
+            if (!value && !isAllowedAddonType) {
                 return;
             }
 

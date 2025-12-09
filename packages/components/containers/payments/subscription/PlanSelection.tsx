@@ -41,6 +41,7 @@ import {
     isFreeSubscription as getIsFreeSubscription,
     getMaximumCycleForApp,
     getPlan,
+    getPlanFeatureLimit,
     getPlansMap,
     hasLumoAddon,
     hasMaximumCycle,
@@ -71,6 +72,7 @@ import { getAllFeatures } from '../features';
 import type { ShortPlanLike } from '../features/interface';
 import { isShortPlanLike } from '../features/interface';
 import { getShortPlan } from '../features/plan';
+import { getForcedFeatureLimitations } from '../planCustomizer/forced-addon-limits';
 import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
@@ -128,7 +130,15 @@ const getCycleSelectorOptions = () => {
     return [oneMonth, oneYear];
 };
 
-const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
+const PlanRequiresDedicatedServerNote = ({
+    plan,
+    currency,
+    cycle,
+}: {
+    plan: Plan;
+    currency: Currency;
+    cycle: Cycle;
+}) => {
     const serverPrice = (
         <Price currency={currency} key="server-price">
             {getIpPricePerMonth(cycle)}
@@ -547,6 +557,18 @@ const PlanSelection = (props: Props) => {
     );
     const hasRecommended = new Set<Audience>();
 
+    const getRequiresDedicatedServer = (plan: Plan) => {
+        return (
+            getPlanFeatureLimit(plan, 'MaxIPs') > 0 ||
+            (getForcedFeatureLimitations({
+                plan: plan.Name as PLANS,
+                featureLimitKey: 'MaxIPs',
+                subscription,
+                plansMap,
+            }).forcedMin ?? 0) > 0
+        );
+    };
+
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
@@ -582,10 +604,10 @@ const PlanSelection = (props: Props) => {
 
             return selectPlanOrAppNameText(planTitle);
         })();
-        const actionLabel =
-            plan.Name === PLANS.VPN_BUSINESS ? (
-                <ActionLabel plan={plan} currency={plan.Currency} cycle={cycle} />
-            ) : null;
+
+        const actionLabel = getRequiresDedicatedServer(plan) ? (
+            <PlanRequiresDedicatedServerNote plan={plan} currency={plan.Currency} cycle={cycle} />
+        ) : null;
 
         const plansList =
             audience === Audience.B2C
@@ -638,7 +660,7 @@ const PlanSelection = (props: Props) => {
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
                 action={action}
                 actionLabel={actionLabel}
-                enableActionLabelSpacing={isVpnB2bPlans && audience === Audience.B2B}
+                enableActionLabelSpacing={plansInAudience.some(getRequiresDedicatedServer)}
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
                 planTitle={

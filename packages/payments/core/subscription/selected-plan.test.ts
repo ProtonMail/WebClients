@@ -24,7 +24,7 @@ describe('SelectedPlan', () => {
     ])('should return the total members', ({ planIDs, expected }) => {
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(selectedPlan.getTotalMembers()).toBe(expected);
+        expect(selectedPlan.getTotalUsers()).toBe(expected);
     });
 
     it.each([
@@ -231,7 +231,7 @@ describe('SelectedPlan', () => {
 
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(selectedPlan.getTotalMembers()).toEqual(4);
+        expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalScribes()).toEqual(40);
 
@@ -338,7 +338,7 @@ describe('SelectedPlan', () => {
 
         const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-        expect(selectedPlan.getTotalMembers()).toEqual(4);
+        expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalLumos()).toEqual(40);
 
@@ -388,10 +388,10 @@ describe('SelectedPlan', () => {
             expect(selectedPlan.planIDs).toEqual({});
         });
 
-        it.each([FREE_SUBSCRIPTION, null, undefined])('should return 0 for total members', (subscription) => {
+        it.each([FREE_SUBSCRIPTION, null, undefined])('should return 1 for total users', (subscription) => {
             const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
 
-            expect(selectedPlan.getTotalMembers()).toBe(0);
+            expect(selectedPlan.getTotalUsers()).toBe(1);
         });
 
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return 1 for total users', (subscription) => {
@@ -517,7 +517,7 @@ describe('SelectedPlan', () => {
                 'prefer-scribes'
             );
 
-            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalUsers()).toBe(4);
             expect(selectedPlan.getTotalScribes()).toBe(3);
             expect(selectedPlan.getTotalLumos()).toBe(1); // Lumos reduced by 2 to balance
             expect(selectedPlan.planIDs).toEqual({
@@ -544,7 +544,7 @@ describe('SelectedPlan', () => {
                 'prefer-lumos'
             );
 
-            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalUsers()).toBe(4);
             expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
             expect(selectedPlan.getTotalLumos()).toBe(3);
             expect(selectedPlan.planIDs).toEqual({
@@ -565,7 +565,7 @@ describe('SelectedPlan', () => {
 
             const selectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 
-            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalUsers()).toBe(4);
             expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
             expect(selectedPlan.getTotalLumos()).toBe(3);
             expect(selectedPlan.planIDs).toEqual({
@@ -592,7 +592,7 @@ describe('SelectedPlan', () => {
                 'prefer-scribes'
             );
 
-            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalUsers()).toBe(4);
             expect(selectedPlan.getTotalScribes()).toBe(2); // Unchanged
             expect(selectedPlan.getTotalLumos()).toBe(2); // Unchanged
             expect(selectedPlan.planIDs).toEqual(planIDs);
@@ -614,7 +614,7 @@ describe('SelectedPlan', () => {
                 'prefer-scribes'
             );
 
-            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalUsers()).toBe(4);
             expect(selectedPlan.getTotalScribes()).toBe(1); // Unchanged
             expect(selectedPlan.getTotalLumos()).toBe(1); // Unchanged
             expect(selectedPlan.planIDs).toEqual(planIDs);
@@ -630,7 +630,7 @@ describe('SelectedPlan', () => {
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
             const updatedPlan = selectedPlan.setScribeCount(3); // Adding 3 scribes when already have 3 lumos
 
-            expect(updatedPlan.getTotalMembers()).toBe(4);
+            expect(updatedPlan.getTotalUsers()).toBe(4);
             expect(updatedPlan.getTotalScribes()).toBe(3);
             expect(updatedPlan.getTotalLumos()).toBe(1); // Lumos reduced to maintain balance
         });
@@ -645,7 +645,7 @@ describe('SelectedPlan', () => {
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
             const updatedPlan = selectedPlan.setLumoCount(3); // Adding 3 lumos when already have 3 scribes
 
-            expect(updatedPlan.getTotalMembers()).toBe(4);
+            expect(updatedPlan.getTotalUsers()).toBe(4);
             expect(updatedPlan.getTotalScribes()).toBe(1); // Scribes reduced to maintain balance
             expect(updatedPlan.getTotalLumos()).toBe(3);
         });
