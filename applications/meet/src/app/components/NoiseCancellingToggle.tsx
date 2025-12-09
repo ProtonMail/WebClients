@@ -16,14 +16,13 @@ export const NoiseCancellingToggle = ({
         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
             <label
                 className={clsx('setting-label text-ellipsis', noiseFilter ? 'color-norm' : 'color-hint')}
-                htmlFor="noise-filter"
-            >{c('Action').t`Noise filter`}</label>
+                htmlFor={`${idBase}-noise-filter`}
+            >{c('Action').t`Noise cancellation`}</label>
             <Toggle
                 id={`${idBase}-noise-filter`}
                 checked={noiseFilter}
                 onChange={() => toggleNoiseFilter()}
                 className={clsx('settings-toggle', noiseFilter ? '' : 'settings-toggle-inactive')}
-                aria-label={c('Alt').t`Noise filter`}
             />
         </div>
     );

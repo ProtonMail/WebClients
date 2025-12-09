@@ -22,6 +22,8 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
+import { useMeetSelector } from '../../store/hooks';
+import { selectMeetSettings } from '../../store/slices/settings';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
@@ -41,7 +43,7 @@ export const ParticipantControls = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const { roomName, page, setPage, isScreenShare, guestMode, paidUser } = useMeetContext();
-
+    const { selfView } = useMeetSelector(selectMeetSettings);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
 
@@ -52,7 +54,6 @@ export const ParticipantControls = () => {
         setPermissionPromptStatus,
         setNoDeviceDetected,
         popupState,
-        selfView,
     } = useUIStateContext();
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();

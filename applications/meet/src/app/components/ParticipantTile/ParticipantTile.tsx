@@ -14,6 +14,8 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
+import { useMeetSelector } from '../../store/hooks';
+import { selectMeetSettings } from '../../store/slices/settings';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
@@ -50,9 +52,10 @@ const indicatorSizeBySize = {
 
 export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
-    const { participantNameMap, disableVideos, participantsWithDisabledVideos, displayName } = useMeetContext();
+    const { participantNameMap, participantsWithDisabledVideos, displayName } = useMeetContext();
     const { facingMode } = useMediaManagementContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
+    const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     const videoRef = useRef<HTMLVideoElement>();
 

@@ -34,8 +34,7 @@ interface MeetContainerProps {
     getParticipants: () => Promise<void>;
     passphrase: string;
     guestMode: boolean;
-    handleMeetingLockToggle: (enable: boolean) => Promise<void>;
-    isMeetingLocked: boolean;
+    handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
     startPiP: () => void;
     stopPiP: () => void;
@@ -69,7 +68,6 @@ export const MeetContainer = ({
     passphrase,
     guestMode,
     handleMeetingLockToggle,
-    isMeetingLocked,
     isDisconnected,
     startPiP,
     stopPiP,
@@ -95,8 +93,6 @@ export const MeetContainer = ({
     const [resolution, setResolution] = useState<string | null>(null);
 
     const participantEvents = useParticipantEvents(participantNameMap);
-
-    const [disableVideos, setDisableVideos] = useState(false);
 
     const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
 
@@ -168,8 +164,6 @@ export const MeetContainer = ({
                         participantsMap,
                         participantNameMap,
                         getParticipants,
-                        disableVideos,
-                        setDisableVideos,
                         participantsWithDisabledVideos,
                         setParticipantsWithDisabledVideos,
                         displayName,
@@ -186,7 +180,6 @@ export const MeetContainer = ({
                         screenShareParticipant,
                         screenShareTrack,
                         handleMeetingLockToggle,
-                        isMeetingLocked,
                         isDisconnected,
                         startPiP,
                         stopPiP,
