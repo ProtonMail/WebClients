@@ -518,9 +518,6 @@
       "Increase": [
         "Αύξηση"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Συμμετοχή ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Εγγραφή στο ημερολόγιο"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 ώρα"
-      ],
       "120 minutes": [
         "120 λεπτά"
       ],
-      "1h": [
-        "1ώρα"
-      ],
-      "2h": [
-        "2ώρες"
+      "120m": [
+        "120λ"
       ],
       "30 minutes": [
         "30 λεπτά"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 λεπτά"
       ],
+      "60m": [
+        "60λ"
+      ],
       "90 minutes": [
         "90 λεπτά"
+      ],
+      "90m": [
+        "90λ"
       ]
     },
     "Edit billing address form note": {
@@ -3493,6 +3490,9 @@
       ],
       "Cancellation failed to be sent": [
         "Η ακύρωση απέτυχε να σταλεί"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Δεν είναι δυνατή η δημιουργία κράτησης με απενεργοποιημένη διεύθυνση."
       ],
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } λεπτά διάρκεια"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } λ."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
@@ -5185,6 +5185,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
@@ -5617,9 +5620,6 @@
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
       ],
-      "Loading appointments...": [
-        "Φόρτωση ραντεβού..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
       ],
@@ -6046,6 +6046,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο σας."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των σελίδων κρατήσεων."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αναβαθμίστε το πλάνο σας."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
@@ -6114,9 +6123,6 @@
       ],
       "VPN IP": [
         "VPN IP"
-      ],
-      "Want to create your own booking page?": [
-        "Θέλετε να δημιουργήσετε τη δική σας σελίδα κρατήσεων;"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -6318,6 +6324,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό σελίδων κρατήσεων που είναι διαθέσιμες στο πλάνο σας."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
@@ -11209,6 +11218,17 @@
         "Συνδεθείτε στη σύσκεψη Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Δεν υπάρχουν διαθέσιμες κρατήσεις."
+      ],
+      "Please check the link and try again.": [
+        "Παρακαλούμε ελέγξτε τον σύνδεσμο και δοκιμάστε ξανά."
+      ],
+      "Please try again later.": [
+        "Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } ημέρα",
@@ -11361,6 +11381,9 @@
       ],
       "Cannot add more addresses": [
         "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
+      ],
+      "Cannot create more Booking pages": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
       ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
@@ -11869,11 +11892,14 @@
       "Summary": [
         "Περίληψη"
       ],
-      "This booking page does not exist": [
-        "Αυτή η σελίδα κρατήσεων δεν υπάρχει"
+      "The booking feature is currently unavailable.": [
+        "Η λειτουργία κράτησης δεν είναι διαθέσιμη προς το παρόν."
       ],
-      "This booking page has expired": [
-        "Αυτή η σελίδα κράτησης έχει λήξει"
+      "This booking page can’t be shown.": [
+        "Αυτή η σελίδα κράτησης δεν μπορεί να εμφανιστεί."
+      ],
+      "This booking page has expired.": [
+        "Αυτή η σελίδα κράτησης έχει λήξει."
       ],
       "Time": [
         "Ώρα"

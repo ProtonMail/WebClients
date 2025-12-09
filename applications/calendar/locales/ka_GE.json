@@ -261,6 +261,9 @@
       "Create a free account": [
         "უფასო ანგარიშის შექმნა"
       ],
+      "Create a new booking page": [
+        "ახალი დაჯავშნის გვერდის შექმნა"
+      ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
@@ -514,9 +517,6 @@
       ],
       "Increase": [
         "გაგრძელება"
-      ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }-ზე შესვლა"
       ],
       "Join calendar": [
         "კალენდარზე მიერთება"
@@ -1174,6 +1174,9 @@
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ გქონდეთ მაქსიმუმ ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } მომხმარებლის ადგილი."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
@@ -2846,6 +2849,12 @@
       "Doesn't end": [
         "არ დაასრულო"
       ],
+      "Ends after": [
+        "სრულდება შემდეგ"
+      ],
+      "Ends on": [
+        "სრულდება"
+      ],
       "event": [
         "მოვლენა",
         "მოვლენა"
@@ -3023,6 +3032,12 @@
       ],
       "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
         "დარწმუნდით, რომ გაქვთ უმაღლესი დონის დაცვა ${ PROTON_SENTINEL_NAME } პროგრამით."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "დარწმუნდით, რომ კვლავ შეძლებთ წვდომას თქვენს ანგარიშსა და მონაცემებზე მაშინაც კი, თუ დაკარგავთ თქვენს ${ BRAND_NAME } პაროლს."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "იმისათვის, რომ შეუფერხებლად გადახვიდეთ ${ BRAND_NAME }-ზე, შემოიტანეთ თქვენი მონაცემები Google-დან, Outlook-დან და სხვა წყაროებიდან."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -3250,17 +3265,8 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1.5სთ"
-      ],
       "120 minutes": [
         "120 წუთი"
-      ],
-      "1h": [
-        "1სთ"
-      ],
-      "2h": [
-        "2სთ"
       ],
       "30 minutes": [
         "30 წუთი"
@@ -3447,6 +3453,9 @@
       "Cancellation failed to be sent": [
         "გაუქმების გაგზავნის შეცდომა"
       ],
+      "Cannot create a booking with a disabled address": [
+        "გამორთული მისამართით დაჯავშნას ვერ შექმნით"
+      ],
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
@@ -3625,6 +3634,9 @@
       ],
       "Last name is too long": [
         "გვარი ძალიან გრძელია."
+      ],
+      "Location is required": [
+        "მდებარეობა სავალდებულოა"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
@@ -4888,9 +4900,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } წთ ხანგრძლივობა"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
@@ -5012,6 +5021,9 @@
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
       ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი პიროვნებისთვის, რომელიც გამოიწერს სატარიფო გეგმას."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -5109,6 +5121,9 @@
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "სთხოვეთ თქვენს ადმინისტრატორს, ასწიოს სატარიფო გეგმა, ან წაშალოს გვერდი დაჯავშნის გვერდების გვერდითი პანელიდან."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
       ],
@@ -5159,6 +5174,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "ვერ პოულობთ მოვლენებს, რომლებსაც ეძებთ? ზოგიერთი მოვლენა დამალულ კალენდრებში ემთხვევა თქვენს მოთხოვნას. ამ შედეგების სანახავად ჩართეთ მათი ხილვადობა ${ hiddenWithItemsCalendarList }-სთვის."
+      ],
+      "Cannot create a range across days.": [
+        "შუალედის შექმნა, რომელიც რამდენიმე დღე გრძელდება, შეუძლებელია."
+      ],
+      "Cannot create a range in the past.": [
+        "შუალედის წარსულში შექმნა შეუძლებელია."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
@@ -5330,6 +5351,9 @@
       ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
       "Enter the code from your authenticator app": [
         "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
@@ -5518,9 +5542,6 @@
       ],
       "Loading ${ appName }": [
         "იტვირთება ${ appName }"
-      ],
-      "Loading appointments...": [
-        "შეხვედრების ჩატვირთვა..."
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
@@ -5745,6 +5766,18 @@
       "Privacy by default": [
         "ნაგულისხმევი კონფიდენციალობა"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "პირადი დათვალიერება (ან „ინკოგნიტო“ რეჟიმი) სასარგებლოა, მხოლოდ, თქვენი აქტივობის თქვენს მოწყობილობაზე დამალვისთვის. ის ხელს უშლის თქვენს ბრაუზერს ისტორიისა და ქუქი-ფაილების შენახვაში, მაგრამ არ გხდით უხილავს. თქვენს ინტერნეტ პროვაიდერს, ქსელის ადმინისტრატორს და ვებსაიტებს, რომლებსაც სტუმრობთ, კვლავ შეუძლიათ ნახონ, რას აკეთებთ ონლაინ."
+      ],
+      "Range already exists.": [
+        "შუალედი უკვე არსებობს."
+      ],
+      "Range is too short.": [
+        "შუალედი მეტისმეტად მოკლეა."
+      ],
+      "Range overlaps with an existing range.": [
+        "შუალედი კონფლიქტშია არსებულ შუალედთან."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
       ],
@@ -5879,6 +5912,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "ამ დაჯავშნის გვერდის რედაქტირება შეუძლებელია, რადგან დაკავშირებული კალენდარი გათიშულია."
+      ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "მოვლენა განახლდა ორგანიზატორის მიერ. გნებავთ თქვენი პასუხის შეცვლა, მხოლოდ, ამ სერიებში მოხდენების შესახებ?"
       ],
@@ -5891,6 +5927,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "ეს მოვლენა განახლდა. ორგანიზატორს არ ეცნობება, რომ თქვენ უარს ამბობთ მოწვევაზე, რადგან ვერ გაგზავნით ელფოსტას მოწვეული მისამართიდან. გსურთ, მაინც წაშალოთ ეს მოვლენა?"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "ეს არის სახელი ან მეტსახელი თქვენი ორგანიზაციისთვის, რომელსაც თქვენი მომხმარებლები დაინახავენ. მისი შეცვლა ნებისმიერ დროს შეგიძლიათ."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "ეს ახლა თქვენი ${ defaultEmailAddress }-ია ახალი შეტყობინებების გასაგზავნად."
       ],
@@ -5902,6 +5941,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად, სთხოვეთ თქვენს ადმინისტრატორს, გააუმჯობესოს თქვენი სატარიფო გეგმა."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად წაშალეთ არსებული დაჯავშნის გვერდების გვერდითი პანელიდან."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად გააუმჯობესეთ თქვენი სატარიფო გეგმა."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "გადახდის დასასრულებლად, გამოაგზავნეთ ${ btcAmountBold } ქვემორე მისამართზე."
@@ -5971,9 +6019,6 @@
       ],
       "VPN IP": [
         "VPN IP"
-      ],
-      "Want to create your own booking page?": [
-        "გნებავთ საკუთარი დაჯავშნის გვერდის შექმნა?"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -6176,6 +6221,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "თქვენ მიაღწიეთ თქვენს გეგმაში ხელმისაწვდომი დაჯავშნის გვერდების მაქსიმალურ რაოდენობას."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
       ],
@@ -6260,6 +6308,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -9103,6 +9154,9 @@
       "You will soon be redirected to verify your payment.": [
         "მალე გადაგამისამართებთ თქვენი გადახდის გადასამოწმებლად."
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "თქვენი ვალუტა ევროზე (€) შეიცვალა, რადგან SEPA საბანკო გადარიცხვები მხოლოდ ევროში გადახდებს უჭერს მხარს."
+      ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
@@ -9484,6 +9538,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**თუ არ გამოიწერთ,** თქვენი ანგარიში **დაქვეითდება** პაკეტამდე ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
       ],
@@ -9509,6 +9566,9 @@
       ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "მას შემდეგ, რაც თქვენი სრული გამოწერა დაიწყება, თქვენ ჯერ კიდევ შეგიძლიათ, გააუქმოთ ის 30 დღის განმავლობაში და დაიბრუნოთ თანხა."
       ],
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
@@ -11127,6 +11187,9 @@
       "Cannot add more addresses": [
         "მეტი მისამართის დამატება შეუძლებელია"
       ],
+      "Cannot create more Booking pages": [
+        "მეტი დაჯავშნის გვერდის შექმნა შეუძლებელია"
+      ],
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
@@ -11633,12 +11696,6 @@
       ],
       "Summary": [
         "შეჯამება"
-      ],
-      "This booking page does not exist": [
-        "ეს დაჯავშნის გვერდი არ არსებობს"
-      ],
-      "This booking page has expired": [
-        "ამ დაჯავშნის გვერდის ვადა ამოწურულია"
       ],
       "Time": [
         "დრო"

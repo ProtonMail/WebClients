@@ -225,6 +225,9 @@
       "Download": [
         "Preuzmi"
       ],
+      "Download logs": [
+        "Preuzmi zapisnike"
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -1165,6 +1168,9 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
+      ],
+      "Unlimited daily chats": [
+        "Neograničena dnevna čavrljanja"
       ]
     },
     "colon": {
@@ -2362,6 +2368,9 @@
       "/month": [
         "/mjesec"
       ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
+      ],
       "2 user accounts": [
         "2 korisnička računa"
       ]
@@ -2418,6 +2427,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Ažuriranje događaja s početkom ${ formattedStart }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Pouzdani kontakt"
       ]
     },
     "Error": {
@@ -2621,6 +2635,9 @@
       ],
       "Payment process not supported": [
         "Proces plaćanja nije podržan"
+      ],
+      "Please activate your search again": [
+        "Ponovno aktivirajte svoje pretraživanje"
       ],
       "Please create an address first.": [
         "Prvo stvorite adresu."
@@ -3456,6 +3473,9 @@
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
@@ -3530,6 +3550,9 @@
       ],
       "Clear data": [
         "Izbriši podatke"
+      ],
+      "Clear encrypted search data": [
+        "Očisti podatke šifriranog pretraživanja"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -4088,6 +4111,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
+      ],
+      "Your online activity is protected": [
+        "Vaša aktivnost na mreži je zaštićena"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
@@ -5561,6 +5587,9 @@
       ]
     },
     "Offer": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Uhvatite ${ BRAND_NAME } Duo"
+      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
@@ -6346,6 +6375,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
       ]
     },
     "Storage": {
@@ -6372,6 +6404,9 @@
     "storage_split: info": {
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Unazađivanjem ćete izgubiti sljedeće pogodnosti. Jeste li sigurni da želite nastaviti?"
+      ],
+      "Storage used": [
+        "Iskorištena pohrana"
       ],
       "Your storage is full": [
         "Pohrana je puna"
@@ -7426,6 +7461,11 @@
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
         "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znak)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znaka)",
+        "Pokušajte s kraćim korisničkim imenom (maksimalno ${ n } znakova)"
       ]
     },
     "Video control": {
@@ -7515,6 +7555,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

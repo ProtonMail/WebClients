@@ -518,9 +518,6 @@
       "Increase": [
         "Incrementa"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Uniu-vos a ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Uneix-me al calendari"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 h"
-      ],
       "120 minutes": [
         "120 minuts"
       ],
-      "1h": [
-        "1 h"
-      ],
-      "2h": [
-        "2h"
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minuts"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 minuts"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuts"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3493,6 +3490,9 @@
       ],
       "Cancellation failed to be sent": [
         "No s'ha pogut enviar la cancel·lació."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "No es pot crear una reserva amb una adreça deshabilitada"
       ],
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } minuts de durada"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
@@ -5185,6 +5185,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demaneu a l'administrador que millori el pla o esborri una pàgina de la barra lateral de Pàgines de reserves."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
@@ -5617,9 +5620,6 @@
       "Loading ${ appName }": [
         "Carregant ${ appName }"
       ],
-      "Loading appointments...": [
-        "S'estan carregant les cites..."
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
@@ -6046,6 +6046,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per afegir una nova pàgina de reserves, demaneu al vostre administrador/a que millori el vostre pla."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per afegir una nova pàgina de reserves, esborreu-ne una d’existent de la barra lateral de pàgines de reserves."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per afegir una nova pàgina de reserves, millori el seu pla."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
       ],
@@ -6114,9 +6123,6 @@
       ],
       "VPN IP": [
         "IP de VPN"
-      ],
-      "Want to create your own booking page?": [
-        "Voleu crear la vostra pròpia pàgina de reserves?"
       ],
       "Warning": [
         "Advertència"
@@ -6319,6 +6325,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Heu assolit el nombre màxim d'adreces en el grup de contactes."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Heu assolit el nombre màxim de pàgines de reserva disponibles amb el vostre pla."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
@@ -6417,7 +6426,7 @@
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
-        "Heu arribat al límit de franges de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+        "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -11209,6 +11218,17 @@
         "Uniu-vos a la reunió de Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "No hi ha reserves disponibles."
+      ],
+      "Please check the link and try again.": [
+        "Comproveu l'enllaç i torneu-ho a provar."
+      ],
+      "Please try again later.": [
+        "Proveu-ho més tard."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -11361,6 +11381,9 @@
       ],
       "Cannot add more addresses": [
         "No es poden afegir més adreces."
+      ],
+      "Cannot create more Booking pages": [
+        "No podeu crear més pàgines de reserves"
       ],
       "Card verification": [
         "Verificació de la targeta"
@@ -11869,11 +11892,14 @@
       "Summary": [
         "Resum"
       ],
-      "This booking page does not exist": [
-        "Aquesta pàgina de reserves no existeix"
+      "The booking feature is currently unavailable.": [
+        "La característica de reserva no està disponible actualment."
       ],
-      "This booking page has expired": [
-        "Aquesta pàgina de reserves ha caducat"
+      "This booking page can’t be shown.": [
+        "Aquesta pàgina de reserves no es pot mostrar."
+      ],
+      "This booking page has expired.": [
+        "Aquesta pàgina de reserves ha caducat."
       ],
       "Time": [
         "Hora"

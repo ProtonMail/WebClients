@@ -512,9 +512,6 @@
       "Increase": [
         "Öka"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "Gå med ${ CALENDAR_APP_NAME }"
-      ],
       "Join calendar": [
         "Gå med i kalender"
       ],
@@ -3268,17 +3265,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 tim."
-      ],
       "120 minutes": [
         "120 minuter"
       ],
-      "1h": [
-        "1 tim."
-      ],
-      "2h": [
-        "2 tim."
+      "120m": [
+        "120 min"
       ],
       "30 minutes": [
         "30 minuter"
@@ -3289,8 +3280,14 @@
       "60 minutes": [
         "60 minuter"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuter"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3475,6 +3472,9 @@
       ],
       "Cancellation failed to be sent": [
         "Misslyckades att skicka avbokning"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan inte skapa en bokning med en inaktiverad adress"
       ],
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
@@ -4920,8 +4920,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } min. varaktighet"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -6007,6 +6007,12 @@
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "För att lägga till en ny bokningssida, be din administratör att uppgradera ditt paket."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "För att lägga till en ny bokningssida, uppgradera ditt paket."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
@@ -6075,9 +6081,6 @@
       ],
       "VPN IP": [
         "VPN-IP"
-      ],
-      "Want to create your own booking page?": [
-        "Vill du skapa din egen bokningssida?"
       ],
       "Warning": [
         "Varning"
@@ -11147,6 +11150,14 @@
         "Gå med i Teams-möte"
       ]
     },
+    "Text": {
+      "Please check the link and try again.": [
+        "Kontrollera länken och försök igen."
+      ],
+      "Please try again later.": [
+        "Försök igen senare."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -11299,6 +11310,9 @@
       ],
       "Cannot add more addresses": [
         "Kan inte lägga till fler adresser"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan inte skapa fler bokningssidor"
       ],
       "Card verification": [
         "Kortverifiering"
@@ -11807,11 +11821,14 @@
       "Summary": [
         "Sammanfattning"
       ],
-      "This booking page does not exist": [
-        "Denna bokningssida finns inte"
+      "The booking feature is currently unavailable.": [
+        "Bokningsfunktionen är för närvarande inte tillgänglig."
       ],
-      "This booking page has expired": [
-        "Denna bokningssida har löpt ut"
+      "This booking page can’t be shown.": [
+        "Denna bokningssida kan inte visas."
+      ],
+      "This booking page has expired.": [
+        "Denna bokningssida har löpt ut."
       ],
       "Time": [
         "Tid"

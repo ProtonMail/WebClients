@@ -518,9 +518,6 @@
       "Increase": [
         "Vergrößern"
       ],
-      "Join ${ CALENDAR_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } beitreten"
-      ],
       "Join calendar": [
         "Kalender beitreten"
       ],
@@ -3286,17 +3283,11 @@
       ]
     },
     "Duration": {
-      "1.5h": [
-        "1,5 Std."
-      ],
       "120 minutes": [
         "120 Minuten"
       ],
-      "1h": [
-        "1 Std."
-      ],
-      "2h": [
-        "2 Std."
+      "120m": [
+        "120 Min."
       ],
       "30 minutes": [
         "30 Minuten"
@@ -3307,8 +3298,14 @@
       "60 minutes": [
         "60 Minuten"
       ],
+      "60m": [
+        "60 Min."
+      ],
       "90 minutes": [
         "90 Minuten"
+      ],
+      "90m": [
+        "90 Min."
       ]
     },
     "Edit billing address form note": {
@@ -3493,6 +3490,9 @@
       ],
       "Cancellation failed to be sent": [
         "Absage konnte nicht gesendet werden"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Du kannst keine Buchung mit einer deaktivierten Adresse erstellen."
       ],
       "Cannot export this contact": [
         "Dieser Kontakt kann nicht exportiert werden."
@@ -4941,8 +4941,8 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
-      "${ bookingDetails.duration } min duration": [
-        "${ bookingDetails.duration } Mindestdauer"
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } Min."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
@@ -5185,6 +5185,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Möchtest du deinen Import wirklich verwerfen?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten zu entfernen."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
@@ -5617,9 +5620,6 @@
       "Loading ${ appName }": [
         "${ appName } wird geladen"
       ],
-      "Loading appointments...": [
-        "Termine werden geladen…"
-      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
@@ -6046,6 +6046,15 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, bitte deinen Administrator, dein Abonnement zu upgraden."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, upgrade dein Abonnement."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
       ],
@@ -6114,9 +6123,6 @@
       ],
       "VPN IP": [
         "VPN-IP"
-      ],
-      "Want to create your own booking page?": [
-        "Möchtest du deine eigene Buchungsseite erstellen?"
       ],
       "Warning": [
         "Warnung"
@@ -6318,6 +6324,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du hast die maximale Anzahl an Buchungsseiten in deinem Abonnement erreicht."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -11209,6 +11218,17 @@
         "Teams-Meeting beitreten"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Keine Termine verfügbar."
+      ],
+      "Please check the link and try again.": [
+        "Bitte überprüfe den Link und versuche es erneut."
+      ],
+      "Please try again later.": [
+        "Bitte versuch es später noch einmal."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } Tag",
@@ -11361,6 +11381,9 @@
       ],
       "Cannot add more addresses": [
         "Es können keine weiteren Adressen hinzugefügt werden."
+      ],
+      "Cannot create more Booking pages": [
+        "Du kannst keine weiteren Buchungsseiten erstellen."
       ],
       "Card verification": [
         "Kartenprüfung"
@@ -11869,11 +11892,14 @@
       "Summary": [
         "Zusammenfassung"
       ],
-      "This booking page does not exist": [
-        "Diese Buchungsseite existiert nicht"
+      "The booking feature is currently unavailable.": [
+        "Die Buchungsfunktion ist momentan nicht verfügbar."
       ],
-      "This booking page has expired": [
-        "Diese Buchungsseite ist abgelaufen"
+      "This booking page can’t be shown.": [
+        "Diese Buchungsseite kann nicht angezeigt werden."
+      ],
+      "This booking page has expired.": [
+        "Diese Buchungsseite ist abgelaufen."
       ],
       "Time": [
         "Zeit"
