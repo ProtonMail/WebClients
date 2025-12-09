@@ -13,8 +13,7 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import type { SignupActionResponse, SignupCacheResult, SignupInviteParameters } from '../interfaces';
-import { HumanVerificationTrigger, SignupSteps, SignupType } from '../interfaces';
-import { hvHandler } from './helpers';
+import { SignupType } from '../interfaces';
 
 const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
     if (referralData) {
@@ -25,7 +24,7 @@ const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) =
     }
 };
 
-export const getTokenPayment = (tokenPayment: string | undefined) => {
+const getTokenPayment = (tokenPayment: string | undefined) => {
     return tokenPayment ? { TokenPayment: tokenPayment } : undefined;
 };
 
@@ -50,7 +49,6 @@ export const handleCreateUser = async ({
         accountData: { signupType, username, email, password, payload },
         subscriptionData,
         accountData,
-        humanVerificationInline,
         humanVerificationResult,
         inviteData,
         referralData,
@@ -108,7 +106,6 @@ export const handleCreateUser = async ({
             const humanVerificationResult = response.humanVerificationResult;
             const { User } = await response.json();
             return {
-                to: SignupSteps.CreatingAccount,
                 cache: {
                     ...cache,
                     userData: {
@@ -133,17 +130,7 @@ export const handleCreateUser = async ({
                     mode,
                 });
             }
-            if (mode === 'cro' || !humanVerificationInline) {
-                throw error;
-            }
-            const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
-            return {
-                cache: {
-                    ...cache,
-                    humanVerificationData,
-                },
-                to: SignupSteps.HumanVerification,
-            };
+            throw error;
         }
     }
 
@@ -200,7 +187,6 @@ export const handleCreateUser = async ({
             ),
         });
         return {
-            to: SignupSteps.CreatingAccount,
             cache: {
                 ...cache,
                 userData: {

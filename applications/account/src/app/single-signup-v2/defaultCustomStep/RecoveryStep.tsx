@@ -1,21 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { PromptProps } from '@proton/components';
-import { InputFieldTwo, PhoneInput, Prompt, useApi, useConfig, useFormErrors, useModalState } from '@proton/components';
+import { InputFieldTwo, PhoneInput, Prompt, useApi, useFormErrors, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import metrics from '@proton/metrics';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import Content from '../public/Content';
-import Header from '../public/Header';
-import Main from '../public/Main';
-import Text from '../public/Text';
-import { getSignupApplication } from './helper';
+import Content from '../../public/Content';
+import Header from '../../public/Header';
+import Main from '../../public/Main';
+import Text from '../../public/Text';
 
 interface RecoveryConfirmModalProps extends Omit<PromptProps, 'buttons' | 'children' | 'title'> {
     onConfirm: () => void;
@@ -60,7 +58,6 @@ const RecoveryStep = ({
     onSubmit,
     onBack,
 }: Props) => {
-    const { APP_NAME } = useConfig();
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [loadingDiscard, withLoadingDiscard] = useLoading();
@@ -71,13 +68,6 @@ const RecoveryStep = ({
     const inputRecoveryEmailRef = useRef<HTMLInputElement>(null);
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    useEffect(() => {
-        void metrics.core_signup_pageLoad_total.increment({
-            step: 'recovery',
-            application: getSignupApplication(APP_NAME),
-        });
-    }, []);
 
     const phoneValidations = recoveryPhone ? [requiredValidator(recoveryPhone)] : [];
     const emailValidations = recoveryEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];

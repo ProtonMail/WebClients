@@ -8,7 +8,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import { FakeLoadingTextStepper } from '../signup/LoadingStep';
+import { FakeLoadingTextStepper } from '../signup/FakeLoadingTextStepper';
 
 const Step2 = ({
     onSetup,

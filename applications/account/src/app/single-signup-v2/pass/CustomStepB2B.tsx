@@ -13,13 +13,13 @@ import { getLocalPart } from '@proton/shared/lib/keys';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import noop from '@proton/utils/noop';
 
-import CongratulationsStep from '../../signup/CongratulationsStep';
 import type { SignupCacheResult, UserCacheResult } from '../../signup/interfaces';
 import { SignupType } from '../../signup/interfaces';
 import { handleDisplayName, handleSetupOrg } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
+import CongratulationsStep from '../defaultCustomStep/CongratulationsStep';
 import OrgSetupStep from '../defaultCustomStep/OrgSetupStep';
 import MnemonicRecoveryStep from '../defaultCustomStep/recovery/MnemonicRecoveryStep';
 import type { SignupCustomStepProps } from '../interface';

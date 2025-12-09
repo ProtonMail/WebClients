@@ -32,7 +32,7 @@ export type LoginLocationState =
     | LoginLocationStateData<'auth-ext', AuthExtensionState>
     | LoginLocationStateData<'auth-desktop', AuthDesktopState>;
 
-export interface LoginCompleteState {
+interface LoginCompleteState {
     type: 'done';
     payload: {
         session?: AuthSession;

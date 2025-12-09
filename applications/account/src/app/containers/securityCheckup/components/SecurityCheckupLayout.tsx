@@ -14,7 +14,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useAccountDispatch } from '../../../store/hooks';
 
-export interface Props {
+interface Props {
     children: ReactNode;
 }
 
