@@ -19,8 +19,6 @@ export enum DownloadStatus {
     Failed = BaseTransferStatus.Failed,
     Paused = BaseTransferStatus.Paused,
     PausedServer = BaseTransferStatus.PausedServer,
-    // During Finalizing the SDK has finished, we're saving the file
-    Finalizing = 'finalizing',
     // The savePromise has finished and the file is downloaded
     Finished = BaseTransferStatus.Finished,
     // Download waiting to start in queue

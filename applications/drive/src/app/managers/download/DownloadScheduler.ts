@@ -1,7 +1,7 @@
-import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
-import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
+import type { DownloadQueueTask } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { handleError } from './utils/handleError';
 
 const ALLOWED_BYTES_PER_FILE = 40 * 1024 * 1024; // 40 MiB
 const ALLOWED_BYTES_TOTAL_LOAD = 60 * 1024 * 1024; // 60 MiB
@@ -89,12 +89,6 @@ export class DownloadScheduler {
             const nextTask = this.pendingTasks[index];
             const estimatedBytes = this.getTaskLoad(nextTask);
 
-            const isBlockedByUser = this.isBlockedByUser(nextTask);
-
-            if (isBlockedByUser) {
-                continue;
-            }
-
             if (!this.canStartWithLoad(estimatedBytes)) {
                 continue;
             }
@@ -103,13 +97,6 @@ export class DownloadScheduler {
             const pendingTaskLoad = { totalBytes: estimatedBytes, remainingBytes: estimatedBytes };
             this.startTask(nextTask, pendingTaskLoad);
             break;
-        }
-
-        // We have tasks but they cannot be started, probably waiting user decision
-        if (this.pendingTasks.length) {
-            setTimeout(() => {
-                this.drainQueue();
-            }, UPDATE_PROGRESS_THROTTLE_MS);
         }
     }
 
@@ -125,18 +112,14 @@ export class DownloadScheduler {
         });
 
         task.start()
-            .then((handle: DownloadQueueTaskHandle) => {
-                handle.completion
-                    .catch(() => undefined)
-                    .finally(() => {
-                        this.activeTasksLoad.delete(id);
-                        this.drainQueue();
-                    });
-            })
-            .catch((error) => {
+            .catch((e) => handleError(e, task.downloadId, [task.node]))
+            .finally(() => {
+                downloadLogDebug('Download Scheduler handle completion', {
+                    downloadId: task.downloadId,
+                    taskId: task.taskId,
+                });
                 this.activeTasksLoad.delete(id);
                 this.drainQueue();
-                throw error;
             });
     }
 
@@ -178,11 +161,5 @@ export class DownloadScheduler {
         task.storageSizeEstimate = task.storageSizeEstimate ?? getNodeStorageSize(task.node);
 
         return task.storageSizeEstimate;
-    }
-
-    private isBlockedByUser(task: DownloadQueueTask) {
-        const { getQueueItem } = useDownloadManagerStore.getState();
-        const storeItem = getQueueItem(task.downloadId);
-        return storeItem?.unsupportedFileDetected === 'detected';
     }
 }

@@ -1,11 +1,8 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { AbortError, NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
-import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { bufferToStream } from '../../utils/stream';
+import { bufferToStream, streamToBuffer } from '../../utils/stream';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
 import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
@@ -16,14 +13,20 @@ import {
 import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
-import type { DownloadQueueTaskHandle } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { handleError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
+/**
+ * The timeout is chosen based on trial and error for a good responsivness without overbearing the UI with constant checks
+ * If a user knows exactly what the modal is for it takes a second to click on it. Otherwise a few seconds.
+ * At the same time if we set it too high you will feel the lag between closing the modal and finishing the transfer.
+ */
+const UNSUPPORTED_FILE_DECISION_TIMEOUT = 1500;
 
 export type FileDownloader = Awaited<ReturnType<ProtonDriveClient['getFileDownloader']>>;
 export type DownloadController = ReturnType<FileDownloader['downloadToStream']>;
@@ -198,7 +201,6 @@ export class DownloadManager {
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
                 unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
-                // TODO: Add support for photos
                 isPhoto: false,
             });
             this.requestedDownloads.set(downloadId, nodes);
@@ -237,7 +239,7 @@ export class DownloadManager {
         });
     }
 
-    private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<DownloadQueueTaskHandle> {
+    private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(downloadId);
 
@@ -262,8 +264,7 @@ export class DownloadManager {
 
             const streamForSaver: ReadableStream<Uint8Array<ArrayBuffer>> = await streamWrapperPromise;
 
-            // eslint-disable-next-line no-console
-            const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
+            const log = (message: string) => downloadLogDebug('FileSaver', message);
             const savePromise = fileSaver.instance.saveAsFile(
                 streamForSaver,
                 { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: getNodeStorageSize(node) },
@@ -271,10 +272,6 @@ export class DownloadManager {
             );
 
             const controllerCompletion = controller.completion();
-
-            void controllerCompletion.then(() => {
-                this.updateStatus([downloadId], DownloadStatus.Finalizing);
-            });
 
             this.activeDownloads.set(downloadId, {
                 controller,
@@ -303,11 +300,11 @@ export class DownloadManager {
                     this.activeDownloads.delete(downloadId);
                 });
         } catch (error) {
-            this.handleError(error, downloadId, [node]);
+            handleError(error, downloadId, [node]);
             completionPromise = Promise.reject(error);
         }
 
-        return { completion: completionPromise };
+        return completionPromise;
     }
 
     private async scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): Promise<void> {
@@ -315,6 +312,7 @@ export class DownloadManager {
         const queueItem = getQueueItem(downloadId);
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
         let currentDownloadedBytes = 0;
+        let totalEncryptedSize = 0;
 
         const abortController = new AbortController();
 
@@ -330,20 +328,26 @@ export class DownloadManager {
             ) {
                 updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
             } else {
-                this.handleError(error, downloadId, nodes);
+                handleError(error, downloadId, nodes);
             }
         };
 
         try {
             // Traversing all folders to get the node entities + parentPath
-            const { nodesQueue, totalEncryptedSize, parentPathByUid, containsUnsupportedFile } =
-                await traverseNodeStructure(nodes, abortController.signal);
+            const { nodesQueue, traversalCompletedPromise, parentPathByUid } = traverseNodeStructure(
+                nodes,
+                abortController.signal
+            );
 
-            // Traversal is completed at this point so the size is known and the queue is closed
-            updateDownloadItem(downloadId, { storageSize: totalEncryptedSize, status: DownloadStatus.InProgress });
-            if (containsUnsupportedFile) {
-                updateDownloadItem(downloadId, { unsupportedFileDetected: 'detected' });
-            }
+            void traversalCompletedPromise.then((traversalResult) => {
+                downloadLogDebug('Archive traversal complete', traversalResult);
+                totalEncryptedSize = traversalResult.totalEncryptedSize;
+                updateDownloadItem(downloadId, {
+                    storageSize: totalEncryptedSize,
+                    status: DownloadStatus.InProgress,
+                    unsupportedFileDetected: traversalResult.containsUnsupportedFile ? 'detected' : undefined,
+                });
+            });
 
             const updateProgress = (downloadedBytes: number) => {
                 updateDownloadItem(downloadId, { downloadedBytes });
@@ -351,7 +355,6 @@ export class DownloadManager {
                 currentDownloadedBytes = downloadedBytes;
             };
 
-            // Traversal already populated and closed the queue; pass it to the generator to build the archive
             const archiveStreamGenerator = new ArchiveStreamGenerator(
                 nodesQueue.iterator(),
                 updateProgress,
@@ -367,31 +370,83 @@ export class DownloadManager {
             const archiveGenerator = new ArchiveGenerator();
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
-            const startArchiveSaving = () => {
-                const archivePromise = archiveGenerator.writeLinks(generator);
-                void archivePromise.then(() => {
-                    this.updateStatus([downloadId], DownloadStatus.Finalizing);
+            const waitForFirstItemPromise = archiveStreamGenerator.waitForFirstItem();
+
+            const waitForUnsupportedDecision = () =>
+                new Promise<void>((resolve, reject) => {
+                    const checkDecision = () => {
+                        const item = getQueueItem(downloadId);
+                        if (!item) {
+                            reject(new Error('Download item not found'));
+                            return;
+                        }
+                        if (item.unsupportedFileDetected === 'approved') {
+                            downloadLogDebug('unsupportedFileDetected decision approved', downloadId);
+                            resolve();
+                            return;
+                        }
+                        if (item.unsupportedFileDetected === 'rejected') {
+                            downloadLogDebug('unsupportedFileDetected decision reject', downloadId);
+                            reject();
+                            return;
+                        }
+                        setTimeout(checkDecision, UNSUPPORTED_FILE_DECISION_TIMEOUT);
+                    };
+                    checkDecision();
                 });
 
-                const savePromise = fileSaver.instance.saveAsFile(
-                    archiveGenerator.stream,
-                    {
-                        filename: archiveName,
-                        mimeType: 'application/zip',
-                        size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
-                    },
-                    log
-                );
+            /**
+             * After we have traversed all nodes and we have containsUnsupportedFile
+             * we wait for the user decision about unsupported file or continue if not detected.
+             * For normal archives we stream directly to FileSaver.
+             * For archives with unsupported files, we buffer the stream while waiting
+             * for the decision so downloads can continue, and only save after approval.
+             * If the user rejects the download, we never save the file.
+             */
+            const archivePromise = (async () => {
+                await waitForFirstItemPromise;
+                await archiveGenerator.writeLinks(generator);
+                downloadLogDebug('Archive writeLinks done', { downloadId });
+            })();
 
-                return Promise.all([archivePromise, savePromise]).then(() => {});
-            };
+            const savingPromise = (async () => {
+                const traversalResult = await traversalCompletedPromise;
+                const meta = {
+                    filename: archiveName,
+                    mimeType: 'application/zip',
+                    size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
+                } as const;
 
-            const savingPromise = archiveStreamGenerator.waitForFirstItem().then(() => startArchiveSaving());
+                // No unsupported files: wait for first item, then stream archive to FileSaver
+                if (!traversalResult.containsUnsupportedFile) {
+                    await waitForFirstItemPromise;
+                    downloadLogDebug('Archive saveAsFile (stream) start', { downloadId });
+                    await fileSaver.instance.saveAsFile(archiveGenerator.stream, meta, log);
+                    downloadLogDebug('Archive saveAsFile (stream) done', { downloadId });
+                    return;
+                }
+
+                // Unsupported files present:
+                // buffer the archive so SDK downloads keep flowing while we wait
+                downloadLogDebug('Archive saving (buffered, unsupported files)', { downloadId });
+                const bufferPromise = streamToBuffer(archiveGenerator.stream);
+
+                await waitForUnsupportedDecision();
+                await waitForFirstItemPromise;
+                const buffer = await bufferPromise;
+                downloadLogDebug('Archive saveAsFile (buffer) start', { downloadId });
+                await fileSaver.instance.saveAsFile(bufferToStream(buffer), meta, log);
+                downloadLogDebug('Archive saveAsFile (buffer) done', { downloadId });
+            })();
+
+            const combinedPromise = (async () => {
+                await Promise.all([archivePromise, savingPromise]);
+            })();
 
             const controllerProxy: DownloadController = {
                 pause: () => trackerController.pause(),
                 resume: () => trackerController.resume(),
-                completion: () => savingPromise.then(() => {}),
+                completion: () => combinedPromise.then(() => {}),
             };
 
             this.activeDownloads.set(downloadId, {
@@ -399,7 +454,7 @@ export class DownloadManager {
                 abortController,
             });
 
-            savingPromise
+            combinedPromise
                 .then(() => {
                     // At the moment images storageSize mistakenly includes the thumbnail, to avoid progress showing <100%
                     // we force the downloaded size to match the storage size until this is fixed
@@ -418,24 +473,6 @@ export class DownloadManager {
         } catch (error) {
             handleArchiveError(error);
         }
-    }
-
-    private handleError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
-        const { updateDownloadItem } = useDownloadManagerStore.getState();
-        const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
-        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToHandle });
-
-        sendErrorReport(
-            new EnrichedError(errorToHandle.message, {
-                tags: {
-                    component: 'download-manager',
-                },
-                extra: {
-                    filesTypes: nodes.map((f) => getFileExtension(f.name)),
-                    storageSize: nodes.reduce((acc, node) => getNodeStorageSize(node) + acc, 0),
-                },
-            })
-        );
     }
 
     private getArchiveName(nodes: NodeEntity[]): string {
@@ -486,9 +523,10 @@ export class DownloadManager {
             if (storeItem && this.activeDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isActive: true });
                 void this.stopDownload(downloadIds);
+                this.scheduler.cancelDownloadsById(id);
+                this.activeDownloads.delete(id);
             } else if (storeItem && this.requestedDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isPending: true });
-                this.requestedDownloads.delete(id);
                 this.scheduler.cancelDownloadsById(id);
             }
             this.updateStatus(downloadIds, DownloadStatus.Cancelled);
@@ -515,6 +553,8 @@ export class DownloadManager {
         const { clearQueue, queue } = useDownloadManagerStore.getState();
         await this.stopDownload(Array.from(queue.keys()));
         this.scheduler.clearDownloads();
+        this.activeDownloads.clear();
+        this.requestedDownloads.clear();
         clearQueue();
     }
 
