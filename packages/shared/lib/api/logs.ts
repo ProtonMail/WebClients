@@ -1,4 +1,4 @@
-export const queryLogs = (params) => ({
+export const queryLogs = (params: { Page: number; PageSize: number }) => ({
     method: 'get',
     url: 'core/v4/logs/auth',
     params,
