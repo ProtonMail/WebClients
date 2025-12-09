@@ -62,6 +62,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
                     getDayClassName={getDayClassName}
                     miniCalendarNextPrevButtonsColor="norm"
                     highlightedDates={highlightedDates}
+                    disableNonHighlightedDates
                 />
             </div>
         </div>
