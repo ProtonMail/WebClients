@@ -11,11 +11,7 @@ import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
-import {
-    BaseTransferStatus,
-    DownloadStatus,
-    useDownloadManagerStore,
-} from '../../../zustand/download/downloadManager.store';
+import { BaseTransferStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
@@ -39,7 +35,6 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
         [UploadStatus.PhotosDuplicate]: c('Info').t`Same photo or video already exist`,
-        [DownloadStatus.Finalizing]: c('Info').t`Finalizing`,
     };
     return labels[entry.status];
 };
@@ -89,36 +84,35 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         UploadStatus.PhotosDuplicate,
     ].includes(entry.status as BaseTransferStatus);
 
-    const { getDownloadItem, updateDownloadItem } = useDownloadManagerStore(
+    const { getDownloadItem, updateDownloadItem, unsupportedFileDetected } = useDownloadManagerStore(
         useShallow((state) => {
+            const item = state.getQueueItem(entry.id);
             return {
                 getDownloadItem: state.getQueueItem,
                 updateDownloadItem: state.updateDownloadItem,
+                unsupportedFileDetected: item?.unsupportedFileDetected,
             };
         })
     );
 
     useEffect(() => {
-        const processItem = async () => {
+        if (unsupportedFileDetected === 'detected') {
             const item = getDownloadItem(entry.id);
-
-            if (item?.unsupportedFileDetected === 'detected') {
-                showModal({
-                    onSubmit: () => {
-                        updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'approved' });
-                    },
-                    onCancel: () => {
-                        cancelTransfer(entry);
-                        updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'rejected' });
-                    },
-                });
+            if (!item) {
+                return;
             }
-        };
-
-        void processItem();
-
+            showModal({
+                onSubmit: () => {
+                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'approved' });
+                },
+                onCancel: () => {
+                    cancelTransfer(entry);
+                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'rejected' });
+                },
+            });
+        }
         // showModal causes infinite rerender
-    }, [entry, getDownloadItem, updateDownloadItem, cancelTransfer]);
+    }, [entry.id, unsupportedFileDetected, getDownloadItem, updateDownloadItem, cancelTransfer]);
 
     return (
         <div

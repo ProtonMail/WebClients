@@ -92,6 +92,7 @@ export const useTransferManagerState = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
     const uploadQueue = useUploadQueueStore(useShallow((state) => state.getQueue()));
     return useMemo(() => {
+        const statesMap = new Map();
         const downloads = downloadQueue.map(mapDownload);
         const uploads = uploadQueue.map(mapUpload);
         const allTransfers = [...downloads, ...uploads];
@@ -100,13 +101,14 @@ export const useTransferManagerState = () => {
         let sumOfBytes = 0;
         const transfersFinished = [];
 
-        // XXX: This is 4 loops on the same list but it's the most elegant way i can think of
-        // there's a test to make sure it stays under 20ms with 10k elements
         for (const transfer of allTransfers) {
+            const statesCounter = (statesMap.get(transfer.status) ?? 0) + 1;
+            statesMap.set(transfer.status, statesCounter);
             const shouldIgnore = getShouldIgnoreTransferProgress(transfer.status);
             if (!shouldIgnore) {
-                sumOfTransferredBytes = transfer.transferredBytes;
-                sumOfBytes = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
+                const size = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
+                sumOfBytes += size;
+                sumOfTransferredBytes += Math.min(transfer.transferredBytes, size);
             }
             if (shouldIgnore || transfer.status === BaseTransferStatus.Finished) {
                 transfersFinished.push(transfer);
@@ -115,21 +117,19 @@ export const useTransferManagerState = () => {
 
         if (allTransfers.length === 0) {
             status = TransferManagerStatus.Empty;
-        } else if (allTransfers.some((t) => t.status === BaseTransferStatus.InProgress)) {
+        } else if (statesMap.get(BaseTransferStatus.InProgress) || statesMap.get(BaseTransferStatus.Pending)) {
             status = TransferManagerStatus.InProgress;
-        } else if (allTransfers.some((t) => t.status === BaseTransferStatus.Failed)) {
+        } else if (statesMap.get(BaseTransferStatus.Failed)) {
             status = TransferManagerStatus.Failed;
-        } else if (allTransfers.some((t) => t.status === BaseTransferStatus.Cancelled)) {
+        } else if (statesMap.get(BaseTransferStatus.Cancelled)) {
             status = TransferManagerStatus.Cancelled;
-        } else if (allTransfers.some((t) => t.status === BaseTransferStatus.Pending)) {
-            status = TransferManagerStatus.InProgress;
         } else {
             status = TransferManagerStatus.Finished;
         }
 
         let progressPercentage = sumOfBytes ? (sumOfTransferredBytes / sumOfBytes) * 100 : 0;
         // Edge case in which all transfers are cancelled/failed we should still show 100%
-        if (sumOfBytes === 0 && allTransfers.length && allTransfers.length === transfersFinished.length) {
+        if (allTransfers.length && allTransfers.length === transfersFinished.length) {
             progressPercentage = 100;
         }
 
