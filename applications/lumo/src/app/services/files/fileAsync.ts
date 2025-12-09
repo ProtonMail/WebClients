@@ -2,7 +2,7 @@ import { selectAttachments } from '../../redux/selectors';
 import { newAttachmentId } from '../../redux/slices/core/attachments';
 import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { Attachment, Message } from '../../types';
-import { calculateAttachmentTokenCount, storeAttachmentStates } from '../../util/attachmentHelpers';
+import { calculateAttachmentTokenCount, storeAttachmentInRedux } from '../../util/attachmentHelpers';
 import { isImageFile } from '../../util/fileTypeHelpers';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
 import { fileProcessingService } from '../fileProcessingService';
@@ -53,6 +53,12 @@ export const handleFileAsync =
         };
 
         console.log({ id: attachment.id });
+
+        // Determine if this is an image
+        const isImage = isImageFile(file);
+
+        // Dispatch initial attachment state immediately so it shows in UI with processing state
+        storeAttachmentInRedux(dispatch, attachment, isImage);
 
         let processedAttachment: Attachment = { ...attachment };
         let hasError = false;
@@ -133,11 +139,8 @@ export const handleFileAsync =
             processing: false,
         };
 
-        // Determine if this is an image
-        const isImage = isImageFile(file);
-
-        // Store initial processing state and final processed state in Redux
-        storeAttachmentStates(dispatch, attachment, processedAttachment, isImage);
+        // Store final processed state in Redux (initial state was already dispatched earlier)
+        storeAttachmentInRedux(dispatch, processedAttachment, isImage);
 
         // Calculate processing duration
         const endTime = performance.now();

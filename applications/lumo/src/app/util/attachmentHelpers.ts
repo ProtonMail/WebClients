@@ -2,7 +2,6 @@
  * Attachment helper utilities
  * Centralizes attachment processing logic like token counting and Redux storage
  */
-
 import { getApproximateTokenCount } from '../llm/tokenizer';
 import { upsertAttachment } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
@@ -50,11 +49,7 @@ export function calculateAttachmentTokenCount(attachment: Attachment): number {
  * Images keep their data field (needed for WireImage conversion)
  * Text files have data removed to avoid serialization issues
  */
-export function storeAttachmentInRedux(
-    dispatch: LumoDispatch,
-    attachment: Attachment,
-    isImage: boolean
-): void {
+export function storeAttachmentInRedux(dispatch: LumoDispatch, attachment: Attachment, isImage: boolean): void {
     if (isImage) {
         // For images, keep the data field - it's needed for WireImage conversion
         dispatch(upsertAttachment(attachment));
@@ -63,21 +58,4 @@ export function storeAttachmentInRedux(
         const { data, ...attachmentForRedux } = attachment;
         dispatch(upsertAttachment(attachmentForRedux));
     }
-}
-
-/**
- * Store both initial and final attachment states in Redux
- * This handles the two-phase storage: initial processing state, then final processed state
- */
-export function storeAttachmentStates(
-    dispatch: LumoDispatch,
-    initialAttachment: Attachment,
-    finalAttachment: Attachment,
-    isImage: boolean
-): void {
-    // Store initial state (with processing flag)
-    storeAttachmentInRedux(dispatch, initialAttachment, isImage);
-
-    // Store final processed state
-    storeAttachmentInRedux(dispatch, finalAttachment, isImage);
 }
