@@ -63,6 +63,7 @@ describe('mapNodeToLegacyItem', () => {
         isShared: false,
         isSharedPublicly: false,
         creationTime: new Date(fileCreateTime),
+        modificationTime: new Date(fileCreateTime),
         trashTime: undefined,
         totalStorageSize: 1024,
         activeRevision: mockRevision,

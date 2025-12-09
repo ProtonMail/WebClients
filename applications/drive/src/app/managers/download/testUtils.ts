@@ -86,6 +86,7 @@ export const createMockNodeEntity = (overrides: Partial<NodeEntity> = {}): NodeE
     isShared: false,
     isSharedPublicly: false,
     creationTime: new Date('2024-01-01T00:00:00Z'),
+    modificationTime: new Date('2024-01-01T01:00:00Z'),
     trashTime: undefined,
     totalStorageSize: 0,
     activeRevision: {
