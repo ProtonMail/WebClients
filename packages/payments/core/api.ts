@@ -438,8 +438,8 @@ export type RenewalStateData =
           CancellationFeedback: FeedbackDowngradeData;
       };
 
-export const changeRenewState = (data: RenewalStateData, version: PaymentsVersion) => ({
-    url: `payments/${version}/subscription/renew`,
+export const changeRenewState = (data: RenewalStateData) => ({
+    url: `payments/v5/subscription/renew`,
     method: 'put',
     data,
 });

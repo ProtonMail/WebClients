@@ -1,10 +1,7 @@
-import type { PropsWithChildren } from 'react';
-
 import { c } from 'ttag';
 
-import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
@@ -21,16 +18,16 @@ import {
     isFreeSubscription,
     isTrial,
 } from '@proton/payments';
-import { isSubscriptionUnchanged } from '@proton/payments/core/subscription/helpers';
-import { EditCardModal, InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import { InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { getSubscriptionManagerName } from './InAppPurchaseModal';
-import { getVisionaryDowngradeWarningTextElement } from './VisionaryDowngradeWarningModal';
-import type { SUBSCRIPTION_STEPS } from './constants';
-import type { CouponConfigRendered } from './coupon-config/useCouponConfig';
+import { getSubscriptionManagerName } from '../InAppPurchaseModal';
+import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
+import type { SUBSCRIPTION_STEPS } from '../constants';
+import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
+import { InfoBanner } from './InfoBanner';
 
-type Props = {
+export type Props = {
     className?: string;
     currency: Currency;
     step: SUBSCRIPTION_STEPS;
@@ -40,7 +37,6 @@ type Props = {
     disabled?: boolean;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
     subscription: Subscription | FreeSubscription;
-    hasPaymentMethod: boolean;
     taxCountry: TaxCountryHook;
     paymentFacade: PaymentFacade;
     couponConfig?: CouponConfigRendered;
@@ -48,15 +44,7 @@ type Props = {
     onSubmit: () => void;
 };
 
-const InfoBanner = ({ children, variant }: PropsWithChildren & { variant?: BannerVariants }) => {
-    return (
-        <Banner className="mt-2 mb-4" variant={variant ?? BannerVariants.INFO}>
-            {children}
-        </Banner>
-    );
-};
-
-const SubscriptionSubmitButton = ({
+export const SubscriptionSubmitButton = ({
     className,
     currency,
     loading,
@@ -64,59 +52,13 @@ const SubscriptionSubmitButton = ({
     disabled,
     onDone,
     paymentForbiddenReason,
-    hasPaymentMethod,
     subscription,
     taxCountry,
     paymentFacade,
     couponConfig,
     showVisionaryWarning,
-    onSubmit,
 }: Props) => {
-    const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
-
-    const selectedLowerCycle =
-        subscription && !isFreeSubscription(subscription) && checkResult && subscription.Cycle > checkResult.Cycle;
-    const selectedSamePlan = checkResult && isSubscriptionUnchanged(subscription, checkResult.requestData.Plans);
-    const hasTrialSubscriptionWithoutPaymentMethods = isTrial(subscription) && !hasPaymentMethod;
-
-    const subscribesToTheSameCycle = paymentForbiddenReason.reason === 'already-subscribed';
-    const subscribesToLowerCycle = selectedSamePlan && selectedLowerCycle;
-
-    if (hasTrialSubscriptionWithoutPaymentMethods && (subscribesToTheSameCycle || subscribesToLowerCycle)) {
-        return (
-            <>
-                <Button
-                    color="norm"
-                    className={className}
-                    disabled={disabled}
-                    loading={loading}
-                    onClick={() => setCreditCardModalOpen(true)}
-                >
-                    {c('Action').t`Add credit / debit card`}
-                </Button>
-                <InfoBanner>{c('Payments')
-                    .t`Payment method required for the subscription to be activated after the trial ends.`}</InfoBanner>
-                {renderCreditCardModal && (
-                    <EditCardModal
-                        enableRenewToggle={false}
-                        onMethodAdded={() => {
-                            if (subscribesToTheSameCycle) {
-                                onDone?.();
-                                return;
-                            }
-
-                            if (subscribesToLowerCycle) {
-                                onSubmit();
-                                return;
-                            }
-                        }}
-                        {...creditCardModalProps}
-                    />
-                )}
-            </>
-        );
-    }
 
     if (paymentForbiddenReason.forbidden) {
         const info = (() => {
@@ -239,5 +181,3 @@ const SubscriptionSubmitButton = ({
         </>
     );
 };
-
-export default SubscriptionSubmitButton;
