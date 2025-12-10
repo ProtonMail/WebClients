@@ -4,6 +4,8 @@ import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, resetZoom, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
 import { MEET_APP_NAME } from "@proton/shared/lib/constants";
+import { getFeatureFlagManager } from "../flags/manager";
+import { FeatureFlag } from "../flags/flags";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -92,6 +94,27 @@ export const setApplicationMenu = () => {
                 { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
                 { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
+                { type: "separator" },
+                ...(getFeatureFlagManager().isEnabled(FeatureFlag.MEET_DESKTOP_DEV_TOOLS_ENABLED)
+                    ? [
+                          {
+                              label: c("App menu").t`Toggle Developer Tools`,
+                              accelerator: "CmdOrCtrl+Shift+I",
+                              click: () => {
+                                  const mainWindow = getMainWindow();
+                                  if (mainWindow) {
+                                      // We need to force WebContentsView type here because getContentView() has a type bug.
+                                      const view = mainWindow.getContentView() as unknown as WebContentsView;
+                                      if (view) {
+                                          view.webContents.toggleDevTools();
+                                      } else {
+                                          mainWindow.webContents.toggleDevTools();
+                                      }
+                                  }
+                              },
+                          },
+                      ]
+                    : []),
             ],
         },
         {
