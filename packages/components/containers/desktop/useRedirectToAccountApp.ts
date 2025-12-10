@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { COUPON_CODES } from '@proton/payments/index';
-import { getPlanNameFromIDs } from '@proton/payments/index';
+import type { COUPON_CODES } from '@proton/payments';
+import { getPlanNameFromIDs } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

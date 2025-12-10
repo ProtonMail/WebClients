@@ -1,5 +1,5 @@
 import useApi from '@proton/components/hooks/useApi';
-import { Renew, SubscriptionMode, changeRenewState, isTrial } from '@proton/payments/index';
+import { Renew, SubscriptionMode, changeRenewState, isTrial } from '@proton/payments';
 
 import { AddCreditCardButton, type PublicProps as AddCreditCardButtonProps } from './AddCreditCardButton';
 import { SubscriptionSubmitButton, type Props as SubscriptionSubmitButtonProps } from './SubscriptionSubmitButton';
