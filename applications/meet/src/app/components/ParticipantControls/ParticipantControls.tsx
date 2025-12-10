@@ -11,7 +11,7 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
