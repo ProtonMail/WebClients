@@ -5,10 +5,12 @@ import type { itemHistoryFailure, itemHistorySuccess } from '@proton/pass/store/
 import { itemHistoryIntent } from '@proton/pass/store/actions';
 import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '@proton/pass/types';
 
+const initialState = { next: null, revisions: [], since: null, total: 0 };
+
 type Props = Omit<ItemRevisionsIntent, 'since'>;
 
 export const useItemRevisions = ({ shareId, itemId, pageSize }: Props) => {
-    const [state, setState] = useState<ItemRevisionsSuccess>({ next: null, revisions: [], since: null, total: 0 });
+    const [state, setState] = useState<ItemRevisionsSuccess>(initialState);
 
     const { loading, revalidate, dispatch } = useActionRequest<
         typeof itemHistoryIntent,
@@ -24,9 +26,10 @@ export const useItemRevisions = ({ shareId, itemId, pageSize }: Props) => {
     });
 
     useEffect(() => {
+        setState(initialState);
         /** Trigger initial request when component mounts */
         dispatch({ shareId, itemId, pageSize, since: null });
-    }, []);
+    }, [shareId, itemId]);
 
     return useMemo(
         () => ({
