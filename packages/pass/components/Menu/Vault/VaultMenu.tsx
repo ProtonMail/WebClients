@@ -8,7 +8,7 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { isShareManageable, isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -37,7 +37,6 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
 
     const menu = useMemo(() => {
         const totalItems = vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0) + totalSharedWithMe;
-        const ownedVaultCount = vaults.filter(isOwnVault).length;
 
         return (
             <>
@@ -52,7 +51,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                         selected={scope === 'share' && selectedShareId === vault.shareId}
                         canEdit={isShareManageable(vault)}
                         canMove={isWritableVault(vault) && vault.count > 0}
-                        canDelete={vault.owner && ownedVaultCount > 1}
+                        canDelete={vault.owner}
                         canInvite={!vault.shared}
                         canManage={isShareManageable(vault)}
                         canLeave={vault.shared && !vault.owner}
