@@ -220,7 +220,7 @@ const ConversationComponent = ({
             if (retryPanelState.messageId) {
                 const message = messageChain.find((m) => m.id === retryPanelState.messageId);
                 if (message) {
-                    handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+                    void handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
                 }
             }
             handleRetryPanelClose();

@@ -1,7 +1,7 @@
-export type ToolCallData = WebSearchToolCallData;
+export type ToolCallData = WebSearchToolCallData | DescribeImageToolCallData | GenerateImageToolCallData;
 
 export function isToolCallData(data: unknown): data is ToolCallData {
-    return isWebSearchToolCallData(data);
+    return isWebSearchToolCallData(data) || isDescribeImageToolCallData(data) || isGenerateImageToolCallData(data);
 }
 
 export type WebSearchToolCallData = { name: 'web_search'; arguments: WebSearchArguments };
@@ -22,13 +22,87 @@ export type WebSearchArguments = {
     query: string;
 };
 
-export function isWebSearchArguments(args: unknown): args is WebSearchToolCallData {
+export function isWebSearchArguments(args: unknown): args is WebSearchArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
         ('query' in args &&
             typeof args.query === 'string')
+    );
+}
+
+export type DescribeImageToolCallData = { name: 'describe_image'; arguments: DescribeImageArguments };
+
+export function isDescribeImageToolCallData(data: unknown): data is DescribeImageToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data &&
+            data.name === 'describe_image') &&
+        ('arguments' in data &&
+            isDescribeImageArguments(data.arguments))
+    );
+}
+
+export type DescribeImageArguments = {
+    image_id: string;
+    question?: string | null;
+};
+
+export function isDescribeImageArguments(args: unknown): args is DescribeImageArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        ('image_id' in args &&
+            typeof args.image_id === 'string') &&
+        (!('question' in args) ||
+            args.question === null ||
+            args.question === undefined ||
+            typeof args.question === 'string')
+    );
+}
+
+export type GenerateImageToolCallData = { name: 'generate_image'; arguments: GenerateImageArguments };
+
+export function isGenerateImageToolCallData(data: unknown): data is GenerateImageToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data &&
+            data.name === 'generate_image') &&
+        ('arguments' in data &&
+            isGenerateImageArguments(data.arguments))
+    );
+}
+
+export type GenerateImageArguments = {
+    negative_prompt?: string | null;
+    output_format: string;
+    prompt: string;
+    seed?: number | null;
+};
+
+export function isGenerateImageArguments(args: unknown): args is GenerateImageArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        (!('negative_prompt' in args) ||
+            args.negative_prompt === null ||
+            args.negative_prompt === undefined ||
+            typeof args.negative_prompt === 'string') &&
+        ('output_format' in args &&
+            typeof args.output_format === 'string') &&
+        ('prompt' in args &&
+            typeof args.prompt === 'string') &&
+        (!('seed' in args) ||
+            args.seed === null ||
+            args.seed === undefined ||
+            typeof args.seed === 'number')
     );
 }
 
@@ -88,22 +162,25 @@ export function tryParseToolCall(toolCall: string): ToolCallData | null {
         return null;
     }
     try {
-        // console.log(toolCall);
+        console.log('Trying to parse tool call:', toolCall);
         const parsed = JSON.parse(toolCall);
         return isToolCallData(parsed) ? parsed : null;
     } catch (e) {
+        console.log('Failed to parse tool call: ', e);
         return null;
     }
 }
 
-export function tryParseToolResult(toolCall: string): ToolResultData | null {
-    if (!toolCall) {
+export function tryParseToolResult(toolResult: string): ToolResultData | null {
+    if (!toolResult) {
         return null;
     }
     try {
-        const parsed = JSON.parse(toolCall);
+        console.log('Trying to parse tool result: ', toolResult);
+        const parsed = JSON.parse(toolResult);
         return isToolResultData(parsed) ? parsed : null;
     } catch (e) {
+        console.log('Failed to parse tool result: ', e);
         return null;
     }
 }
