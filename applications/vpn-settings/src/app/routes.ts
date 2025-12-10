@@ -24,7 +24,6 @@ interface Arguments {
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     isB2BTrial: boolean;
     isReferralProgramEnabled: boolean;
-    isReferralExpansionEnabled: boolean;
     isBreachesAccountDashboardEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
@@ -46,7 +45,6 @@ export const getRoutes = ({
     showVPNDashboardVariant,
     isB2BTrial,
     isReferralProgramEnabled,
-    isReferralExpansionEnabled,
     referralInfo,
     isBreachesAccountDashboardEnabled,
     isZoomIntegrationEnabled,
@@ -407,7 +405,7 @@ export const getRoutes = ({
             description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
             to: '/referral',
             icon: 'money-bills',
-            available: !!isReferralProgramEnabled && !!isReferralExpansionEnabled,
+            available: isReferralProgramEnabled,
             subsections: [
                 {
                     id: 'referral-invite-section',

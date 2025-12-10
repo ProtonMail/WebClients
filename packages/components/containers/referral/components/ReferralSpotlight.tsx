@@ -1,4 +1,4 @@
-import type { ReactElement, RefObject } from 'react';
+import type { CSSProperties, ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,7 +16,7 @@ interface Props {
     onDisplayed?: () => void;
     onClose: () => void;
     originalPlacement?: PopperPlacement;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
 }
 
 export const ReferralSpotlight = ({

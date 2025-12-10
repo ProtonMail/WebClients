@@ -15,7 +15,6 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import SessionRecoverySignOutConfirmPrompt from '@proton/components/containers/account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import { useReferral } from '@proton/components/containers/heading/useReferral';
-import { ReferralSpotlight } from '@proton/components/containers/referralLegacy/ReferralSpotlight';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -226,25 +225,17 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
             {renderHelpModal && (
                 <HelpModal {...helpModal} APP_NAME={APP_NAME} onOpenBugModal={value.onOpenBugReportModal} />
             )}
-            <ReferralSpotlight
-                show={referral.shouldShowSpotlight}
-                anchorRef={anchorRef}
-                onDisplayed={referral.onDisplayedSpotlight}
+            <UserDropdownButton
+                data-testid="heading:userdropdown"
+                {...rest}
                 user={user}
-            >
-                <UserDropdownButton
-                    data-testid="heading:userdropdown"
-                    {...rest}
-                    user={user}
-                    ref={anchorRef}
-                    isOpen={isOpen}
-                    dropdownIcon={dropdownIcon}
-                    onClick={() => {
-                        referral.onCloseSpotlight();
-                        toggle();
-                    }}
-                />
-            </ReferralSpotlight>
+                ref={anchorRef}
+                isOpen={isOpen}
+                dropdownIcon={dropdownIcon}
+                onClick={() => {
+                    toggle();
+                }}
+            />
             <UserDropdownContent />
         </UserDropdownContext.Provider>
     );

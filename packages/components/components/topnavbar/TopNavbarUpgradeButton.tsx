@@ -22,7 +22,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import useFlag from '@proton/unleash/useFlag';
 
 import PromotionButton from '../button/PromotionButton/PromotionButton';
 import TopNavReferralButton from './TopNavReferralButton';
@@ -42,7 +41,6 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
 
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isUserEligibleForReferral = !!userSettings?.Referral?.Eligible;
     const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
 
@@ -105,7 +103,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         );
     }
 
-    if (isReferralExpansionEnabled && isUserEligibleForReferral) {
+    if (isUserEligibleForReferral) {
         return (
             <TopNavbarListItem noCollapse>
                 <TopNavReferralButton />

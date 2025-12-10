@@ -719,9 +719,6 @@ export { SessionRecoverySection } from './containers/recovery/SessionRecoverySec
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
-export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
-export { ReferralInvitesContextProvider as ReferralInvitesContextProviderLegacy } from './containers/referralLegacy/ReferralInvitesContext';
-export { RewardSection as RewardSectionLegacy } from './containers/referralLegacy/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
 export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';

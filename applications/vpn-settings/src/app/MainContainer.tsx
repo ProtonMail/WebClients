@@ -129,7 +129,6 @@ const MainContainer: FunctionComponent = () => {
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const [referralInfo] = useReferralInfo();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -143,7 +142,6 @@ const MainContainer: FunctionComponent = () => {
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         isB2BTrial,
         isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
-        isReferralExpansionEnabled,
         referralInfo: referralInfo.uiData,
         isBreachesAccountDashboardEnabled,
         isProtonMeetIntegrationEnabled,

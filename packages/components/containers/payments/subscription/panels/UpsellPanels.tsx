@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers';
@@ -17,8 +17,6 @@ interface Props {
 }
 
 const UpsellPanels = ({ upsells, subscription }: Props) => {
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
-
     const formattedPeriodEndDate = (
         <Time format="PPP" key="period-end" data-testid="period-end">
             {subscription?.PeriodEnd}
@@ -63,7 +61,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                         plan={isUpsellWithPlan(upsell) ? upsell.plan : undefined}
                     >
                         {/* Warning when user is in Trial period for a plan but only for legacy referral */}
-                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding && !isReferralExpansionEnabled ? (
+                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding && !isReferralTrial(subscription) ? (
                             <>
                                 <h4>{c('new_plans: Info').jt`Your trial ends ${formattedPeriodEndDate}`}</h4>
                                 <div className="color-weak">
