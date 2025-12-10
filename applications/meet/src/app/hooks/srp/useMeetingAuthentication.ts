@@ -1,7 +1,5 @@
 import { useCallback } from 'react';
 
-import { c } from 'ttag';
-
 import { useMeetErrorReporting } from '@proton/meet';
 import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
 
@@ -57,7 +55,7 @@ export const useMeetingAuthentication = () => {
                 };
             } catch (error) {
                 reportMeetError('Failed to get meeting info', error);
-                throw new Error(c('Error').t`Failed to get room name`);
+                throw error;
             }
         },
         [getSessionToken, getMeetingInfo]
