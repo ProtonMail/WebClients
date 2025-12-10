@@ -110,9 +110,9 @@ import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
-import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useVisionaryDowngradeWarningModal } from './VisionaryDowngradeWarningModal';
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
+import { SubscriptionConfirmButton } from './confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { isCSCoupon } from './coupon-config/helpers';
 import { useCouponConfig } from './coupon-config/useCouponConfig';
@@ -1210,7 +1210,7 @@ const SubscriptionContainerInner = ({
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
 
     const subscriptionCheckoutSubmit = (
-        <SubscriptionSubmitButton
+        <SubscriptionConfirmButton
             currency={model.currency}
             onDone={onSubscribed}
             step={model.step}

@@ -152,18 +152,15 @@ describe('cancel subscription', () => {
             await wait(0);
 
             expect(apiMock).toHaveBeenCalledWith(
-                changeRenewState(
-                    {
-                        RenewalState: Renew.Disabled,
-                        CancellationFeedback: {
-                            Reason: 'DIFFERENT_ACCOUNT',
-                            Feedback: '',
-                            ReasonDetails: '',
-                            Context: 'mail',
-                        },
+                changeRenewState({
+                    RenewalState: Renew.Disabled,
+                    CancellationFeedback: {
+                        Reason: 'DIFFERENT_ACCOUNT',
+                        Feedback: '',
+                        ReasonDetails: '',
+                        Context: 'mail',
                     },
-                    'v5'
-                )
+                })
             );
 
             await expect(cancelSubscriptionPromise).resolves.toEqual({
