@@ -383,7 +383,7 @@ const UserDropdownContent = () => {
                             className="px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                             href={getShopURL()}
                             target="_blank"
-                            data-testid="userdropdown:help:link:request-feature"
+                            data-testid="userdropdown:link:shop"
                         >
                             {c('Action').t`${BRAND_NAME} shop`}
                         </a>
