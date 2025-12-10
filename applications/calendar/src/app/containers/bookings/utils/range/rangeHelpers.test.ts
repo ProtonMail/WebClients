@@ -85,7 +85,18 @@ describe('Booking range helpers', () => {
                 120
             );
 
-            expect(result?.start).toEqual(new Date('2026-01-16T08:30:00Z'));
+            expect(result?.start).toEqual(new Date('2026-01-16T09:00:00Z'));
+        });
+
+        it('should create a 30 minute range if enough time', () => {
+            const result = createTodayBookingRange(
+                new Date('2026-01-16T16:23:00Z'),
+                'Europe/Zurich',
+                new Date('2026-01-16T16:23:00Z'),
+                30
+            );
+
+            expect(result?.start).toEqual(new Date('2026-01-16T16:30:00Z'));
         });
     });
 
