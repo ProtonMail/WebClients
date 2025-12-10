@@ -2,8 +2,6 @@ import type { ReactNode } from 'react';
 
 import { getPlanNameFromIDs } from '@proton/payments';
 
-import { anniversary11Config } from './anniverary11';
-import { bf2025Config } from './bf2025';
 import { hasAlikeCoupon } from './helpers';
 import {
     type CouponConfig,
@@ -15,9 +13,9 @@ import {
     isCouponConfigRequiredProps,
 } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
-import { tldrNewsletterConfig } from './tldrNewsletter';
+import { vpn15mConfig } from './vpn15m';
 
-const couponConfigs: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig, bf2025Config];
+const defaultCouponConfigs: CouponConfig[] = [monthlyNudgeConfig, vpn15mConfig];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
@@ -27,7 +25,10 @@ export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cycl
     renderPayCTA?: () => string;
 };
 
-export function matchCouponConfig(checkoutProps: CouponConfigProps): CouponConfig | undefined {
+export function matchCouponConfig(
+    checkoutProps: CouponConfigProps,
+    couponConfigs: CouponConfig[]
+): CouponConfig | undefined {
     if (!isCouponConfigRequiredProps(checkoutProps)) {
         return;
     }
@@ -49,12 +50,15 @@ export function matchCouponConfig(checkoutProps: CouponConfigProps): CouponConfi
  * Defines overrides for the UI of subscription view. If a certain coupon is present it might change the view.
  * See details of {@link CouponConfig}.
  */
-export const useCouponConfig = (checkoutProps: CouponConfigProps): CouponConfigRendered | undefined => {
+export const useCouponConfig = (
+    checkoutProps: CouponConfigProps,
+    couponConfigs: CouponConfig[] = defaultCouponConfigs
+): CouponConfigRendered | undefined => {
     if (!isCouponConfigRequiredProps(checkoutProps)) {
         return;
     }
 
-    const matchingConfig = matchCouponConfig(checkoutProps);
+    const matchingConfig = matchCouponConfig(checkoutProps, couponConfigs);
     if (!matchingConfig) {
         return;
     }
