@@ -12,15 +12,13 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const navigate = useNavigate();
     const { revision, share } = itemViewProps;
-    const { onHistory } = useItemNavigation(revision);
     const { createTime, modifyTime, revision: revisionNumber, optimistic, itemId } = revision;
-    const { shareId } = share;
+    const { shareId, vaultId } = share;
     const aliasEmail = revision.aliasEmail!;
     const trashed = isTrashed(revision);
 
@@ -51,21 +49,25 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                   }
                 : {})}
         >
-            <AliasContent
-                revision={revision}
-                optimistic={optimistic}
-                actions={
-                    !trashed ? (
-                        <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>
-                            {c('Action').t`Create login`}
-                        </InlineLinkButton>
-                    ) : null
-                }
-            />
+            {({ onHistory }) => (
+                <>
+                    <AliasContent
+                        revision={revision}
+                        optimistic={optimistic}
+                        actions={
+                            !trashed ? (
+                                <InlineLinkButton className="text-underline" onClick={createLoginFromAlias}>
+                                    {c('Action').t`Create login`}
+                                </InlineLinkButton>
+                            ) : null
+                        }
+                    />
 
-            <FileAttachmentsContentView revision={revision} />
-            <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
-            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
+                    <FileAttachmentsContentView revision={revision} />
+                    <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
+                    <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={vaultId} />
+                </>
+            )}
         </ItemViewPanel>
     );
 };

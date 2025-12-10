@@ -10,13 +10,12 @@ import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useAutotypeShortcut } from '@proton/pass/hooks/autotype/useAutotypeShortcut';
-import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;
+    const { vaultId } = share;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId, data } = revision;
-    const { onHistory } = useItemNavigation(revision);
 
     useAutotypeShortcut(data);
 
@@ -26,17 +25,21 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
             quickActions={DESKTOP_BUILD ? [<AutotypeDropdownLogin data={data} key="autotype-dropdown" />] : undefined}
             {...itemViewProps}
         >
-            {isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
-            <SecureLinkCardList shareId={shareId} itemId={itemId} />
-            <LoginContent revision={revision} />
-            <FileAttachmentsContentView revision={revision} />
-            <ItemHistoryStats
-                lastUseTime={lastUseTime}
-                createTime={createTime}
-                modifyTime={modifyTime}
-                handleHistoryClick={onHistory}
-            />
-            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
+            {({ onHistory }) => (
+                <>
+                    {isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
+                    <SecureLinkCardList shareId={shareId} itemId={itemId} />
+                    <LoginContent revision={revision} />
+                    <FileAttachmentsContentView revision={revision} />
+                    <ItemHistoryStats
+                        lastUseTime={lastUseTime}
+                        createTime={createTime}
+                        modifyTime={modifyTime}
+                        handleHistoryClick={onHistory}
+                    />
+                    <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={vaultId} />
+                </>
+            )}
         </ItemViewPanel>
     );
 };
