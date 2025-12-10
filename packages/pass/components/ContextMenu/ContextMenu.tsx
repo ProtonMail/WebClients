@@ -16,8 +16,22 @@ export const ContextMenu: FC<Props> = ({ id, children, elements, ...rest }) => {
     const { close, state } = useContextMenu();
 
     useEffect(() => {
-        window.addEventListener('resize', close, { capture: true });
-        return () => window.removeEventListener('resize', close, { capture: true });
+        let width = window.outerWidth;
+        let height = window.outerHeight;
+
+        /** Close on window resize, but ignore spurious resize events
+         * that Firefox extension popups sometimes fire when dropdowns
+         * or popovers are opened without actual dimension changes. */
+        const closeOnResize = () => {
+            const newWidth = window.outerWidth;
+            const newHeight = window.outerHeight;
+            if (newWidth !== width || newHeight !== height) close();
+            width = newWidth;
+            height = newHeight;
+        };
+
+        window.addEventListener('resize', closeOnResize, { capture: true });
+        return () => window.removeEventListener('resize', closeOnResize, { capture: true });
     }, []);
 
     return (
