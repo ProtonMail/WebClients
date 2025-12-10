@@ -220,6 +220,13 @@ describe('removeRefTokens', () => {
         expect(removeRefTokens(input)).toBe(expected);
     });
 
+    it('should drop bold square brackets without a dagger', () => {
+        // Note NNBSP spaces inside the brackets below
+        const input = 'Text 【proton_info snippet “Get Lumo Plus … $12.99/month”】 more text';
+        const expected = 'Text  more text';
+        expect(removeRefTokens(input)).toBe(expected);
+    });
+
     it('should remove mixed formats', () => {
         const input = 'Normal [REF]1[/REF] and dagger [2†ref] and CJK 【REF】3【/REF】 refs';
         const expected = 'Normal  and dagger  and CJK  refs';
@@ -513,5 +520,19 @@ describe('convertRefTokensToSpans', () => {
                 });
             });
         });
+    });
+
+    // Test for dropping bold square brackets without dagger or REF format
+    it('should drop bold square brackets without a dagger or REF format', () => {
+        // Note NNBSP spaces inside the brackets below
+        const input = 'Text 【proton_info snippet "Get Lumo Plus … $12.99/month"】 more text';
+        const expected = 'Text  more text';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should truncate partial bold square brackets without closing bracket', () => {
+        const input = 'Text 【proton_info snippet "Get Lumo Plus';
+        const expected = 'Text ';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 });
