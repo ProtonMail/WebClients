@@ -3,7 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Tabs from '@proton/components/components/tabs/Tabs';
-import { type Subscription, hasAnyB2bBundle, hasPassBusiness, hasVpnBusiness } from '@proton/payments';
+import {
+    type Subscription,
+    hasAnyB2bBundle,
+    hasPassBusiness,
+    hasVpnBusiness,
+    hasVPNPassProfessional
+} from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -48,7 +54,9 @@ const useCanViewGatewayMonitor = (
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
-    const hasPlanWithEventLogging = hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription);
+    const hasPlanWithEventLogging = hasVpnBusiness(subscription)
+        || hasAnyB2bBundle(subscription)
+        || hasVPNPassProfessional(subscription);
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
 
     return (

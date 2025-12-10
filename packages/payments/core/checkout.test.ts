@@ -1007,4 +1007,33 @@ describe('getUsersAndAddons()', () => {
             ],
         });
     });
+
+    it('should return plan name and number of users - VPN and Pass Professional with users', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: 4,
+                },
+                {
+                    [PLANS.VPN_PASS_BUNDLE_BUSINESS]: PLANS_MAP[PLANS.VPN_PASS_BUNDLE_BUSINESS],
+                    [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]:
+                        PLANS_MAP[ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS],
+                    [ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS]: PLANS_MAP[ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+            planTitle: 'VPN and Pass Professional',
+            // VPN and Pass Professional has 1 user by default + 4 addons selected by user
+            users: 5,
+            viewUsers: 5,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 1299,
+                [CYCLE.YEARLY]: 13188,
+                [CYCLE.TWO_YEARS]: 0,
+            },
+            addons: [],
+        });
+    });
 });

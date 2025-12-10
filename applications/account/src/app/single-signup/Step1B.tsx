@@ -8,10 +8,10 @@ import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import {
+    Alert3ds,
     type Breakpoints,
     CurrencySelector,
     Icon,
-    Price,
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
@@ -143,10 +143,11 @@ const getPlanTitle = (selected: string, trial?: boolean) => {
             <span className="color-success" key="free-for-n-days">{c('b2b_trials_2025_Info')
                 .t`free for ${TRIAL_DURATION_DAYS} days`}</span>
         );
-        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        // translator: ${selected} is title of a subscription plan, for example can be "Proton Business Suite",
+        // translator: then the whole is "Your Proton Business Suite plan"
         return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeForNDays}`;
     }
-    return c('vpn_2step: info').t`Your plan includes:`;
+    return c('vpn_2step: info').t`Your ${selected} plan`;
 };
 
 const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
@@ -161,7 +162,7 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: ReactNode }) => {
 const BoxHeader = ({ title, right }: { title: string; right?: ReactNode }) => {
     return (
         <div className="flex items-center justify-space-between flex-nowrap gap-6">
-            <h2 className="text-bold text-4xl">{title ? `${title}:` : ''}</h2>
+            <h2 className="text-bold text-4xl">{title}</h2>
             {right && <div className="shrink-0">{right}</div>}
         </div>
     );
@@ -596,12 +597,6 @@ const Step1B = ({
             })),
         taxCountry,
     });
-
-    const price = (
-        <Price key="price" currency={options.currency}>
-            {options.checkResult.AmountDue}
-        </Price>
-    );
 
     const upsellPlanName = upsellShortPlan?.title || '';
 
@@ -1136,6 +1131,11 @@ const Step1B = ({
         />
     );
 
+    const isVpnPassBundleBusinessPlan = selectedPlan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS;
+    const checkoutHeaderText = isVpnPassBundleBusinessPlan
+        ? c('Header').t`Checkout`
+        : c('Header').t`Select your payment method:`;
+
     return (
         <Layout
             hasDecoration
@@ -1148,7 +1148,7 @@ const Step1B = ({
             }
             background={background}
             isB2bPlan={isB2bPlan}
-            headerCenterElement={viewportWidth['<=small'] ? undefined : signInText}
+            headerCenterElement={viewportWidth['<=small'] || isVpnPassBundleBusinessPlan ? undefined : signInText}
         >
             {viewportWidth['<=small'] && signInText}
             <div className="flex items-center flex-column">
@@ -1185,14 +1185,13 @@ const Step1B = ({
                     if (model.loadingDependencies) {
                         return <SkeletonLoader height="2.5rem" width="30rem" className={sharedClasses} />;
                     }
-
-                    return (
+                    return !isVpnPassBundleBusinessPlan ? (
                         <DiscountBanner
                             discountPercent={actualCheckout.discountPercent}
                             selectedPlanTitle={selectedPlan.Title}
                             className={sharedClasses}
                         />
-                    );
+                    ) : null;
                 })()}
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
@@ -1292,7 +1291,13 @@ const Step1B = ({
                 <Box className="mt-8 w-full">
                     <div className="flex justify-space-between flex-column lg:flex-row ">
                         <div className={`lg:flex-1 ${padding}`}>
-                            <BoxHeader title={c('Header').t`Enter your email address`} />
+                            <BoxHeader
+                                title={
+                                    isVpnPassBundleBusinessPlan
+                                        ? c('Header').t`Create your account`
+                                        : c('Header').t`Enter your email address`
+                                }
+                            />
                             <BoxContent>
                                 <div className="relative">
                                     <AccountFormDataContextProvider
@@ -1306,7 +1311,7 @@ const Step1B = ({
                                             measure={measure}
                                             accountStepDetailsRef={accountDetailsRef}
                                             disableChange={loadingSignup}
-                                            hideEmailLabel
+                                            hideEmailLabel={!isVpnPassBundleBusinessPlan}
                                             onSubmit={
                                                 hasSelectedFree
                                                     ? () => {
@@ -1335,6 +1340,15 @@ const Step1B = ({
                                                                         .t`Start using ${appName}`}
                                                                 </Button>
                                                             </div>
+                                                        )}
+                                                        {isVpnPassBundleBusinessPlan && (
+                                                            <span>
+                                                                {
+                                                                    // translator: Full sentence "Already have an account? Sign in"
+                                                                    c('Go to sign in')
+                                                                        .jt`Already have an account? ${signIn}`
+                                                                }
+                                                            </span>
                                                         )}
                                                         {!isB2bPlan && (
                                                             <div className="mt-4 color-weak text-sm">
@@ -1381,9 +1395,7 @@ const Step1B = ({
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
-                            title={
-                                viewportWidth['>=large'] && !checkTrial ? c('Header').t`Select your payment method` : ''
-                            }
+                            title={viewportWidth['>=large'] && !checkTrial ? checkoutHeaderText : ''}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         {viewportWidth['<=medium'] ? (
@@ -1394,7 +1406,7 @@ const Step1B = ({
                                     </div>
                                 </BoxContent>
 
-                                <h2 className="text-bold text-4xl mt-8">{c('Header').t`Select your payment method`}</h2>
+                                <h2 className="text-bold text-4xl mt-8">{checkoutHeaderText}</h2>
                             </>
                         ) : null}
                         <BoxContent className="mt-4">
@@ -1450,11 +1462,23 @@ const Step1B = ({
                                             startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
+                                        {isVpnPassBundleBusinessPlan && (
+                                            <DiscountBanner
+                                                discountPercent={actualCheckout.discountPercent}
+                                                selectedPlanTitle={selectedPlan.Title}
+                                                className="mb-2"
+                                            />
+                                        )}
+
                                         {(() => {
                                             if (loadingPaymentsForm) {
                                                 return;
                                             }
-
+                                            const guaranteeElement = hasGuarantee ? (
+                                                <div className="text-center color-success my-4">
+                                                    <Guarantee />
+                                                </div>
+                                            ) : null;
                                             const tncElement = (
                                                 <div className="mt-4 text-sm color-weak text-center">
                                                     {checkTrial
@@ -1476,34 +1500,47 @@ const Step1B = ({
                                                     paymentFacade={paymentFacade}
                                                     loading={loadingSignup}
                                                     disabled={disablePayButton}
-                                                    suffix={tncElement}
+                                                    suffix={(type) => (
+                                                        <>
+                                                            {guaranteeElement}
+                                                            {type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ? (
+                                                                <Alert3ds />
+                                                            ) : (
+                                                                ''
+                                                            )}
+                                                            {tncElement}
+                                                        </>
+                                                    )}
                                                     formInvalid={!isFormValid}
                                                 >
                                                     {(() => {
                                                         if (checkTrial) {
                                                             return c('Action').t`Try for free`;
                                                         }
-                                                        return options.checkResult.AmountDue > 0
-                                                            ? c('Action').jt`Pay ${price}`
-                                                            : c('Action').t`Confirm`;
+                                                        return c('Action').t`Get Deal`;
                                                     })()}
                                                 </PayButton>
                                             );
                                         })()}
                                     </form>
 
-                                    {hasGuarantee && viewportWidth['<=medium'] && (
-                                        <GuaranteeCard className="mt-8" productName={toAppName} />
+                                    {!isVpnPassBundleBusinessPlan && (
+                                        <>
+                                            {hasGuarantee && viewportWidth['<=medium'] && (
+                                                <GuaranteeCard className="mt-8" productName={toAppName} />
+                                            )}
+                                            <RatingsSection className="mt-8" />
+                                        </>
                                     )}
-
-                                    <RatingsSection className="mt-8" />
                                 </div>
                                 {viewportWidth['>=large'] && (
                                     <div className="w-custom" style={{ '--w-custom': '18.75rem' }}>
                                         <div className="flex-1 border rounded-xl border-weak px-3 py-4">
                                             {paymentSummary}
                                         </div>
-                                        {hasGuarantee && <GuaranteeCard productName={toAppName} className="mt-6" />}
+                                        {hasGuarantee && !isVpnPassBundleBusinessPlan && (
+                                            <GuaranteeCard productName={toAppName} className="mt-6" />
+                                        )}
                                     </div>
                                 )}
                             </div>
