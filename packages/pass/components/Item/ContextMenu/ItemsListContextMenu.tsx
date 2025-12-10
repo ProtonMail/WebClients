@@ -1,5 +1,5 @@
 import type { FC, MouseEvent, RefObject } from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
@@ -15,12 +15,12 @@ type Props = UniqueItem & { anchorRef: RefObject<HTMLElement> };
 /** NOTE: A context menu can remain open after its item is removed or updated.
  * This component handles graceful failures while keeping fresh data available. */
 export const ItemsListContextMenu: FC<Props> = ({ anchorRef, ...selectedItem }) => {
-    const { isOpen, close } = useContextMenu();
+    const { close, state } = useContextMenu();
     const { shareId, itemId } = selectedItem;
 
     const item = useSelector(selectItemWithOptimistic(shareId, itemId));
     const share = useSelector(selectShare(shareId));
-    const itemOpened = isOpen(getItemKey(selectedItem));
+    const itemOpened = state?.id === getItemKey(selectedItem);
     const autoClose = !item && itemOpened;
     const bulk = useBulkSelection();
     const isBulk = bulk.count > 0;
@@ -39,11 +39,8 @@ export const ItemsListContextMenu: FC<Props> = ({ anchorRef, ...selectedItem }) 
 
 export const useItemContextMenu = () => {
     const [item, setItem] = useState<MaybeNull<UniqueItem>>(null);
-    const { open, isOpen } = useContextMenu();
-
-    /** FIXME: Should check for "item list" context menu type specifically
-     * to avoid stale `UniqueItem` state when other menu types are added. */
-    const closed = !isOpen();
+    const { open, state } = useContextMenu();
+    const closed = !state?.id;
 
     useEffect(() => {
         if (closed) setItem(null);
@@ -54,5 +51,5 @@ export const useItemContextMenu = () => {
         setItem(item);
     }, []);
 
-    return { item, onContextMenu };
+    return useMemo(() => ({ item, onContextMenu }), [item]);
 };

@@ -13,13 +13,13 @@ type Props = Omit<ContextMenuProps, 'size' | 'isOpen' | 'close' | 'position' | '
 };
 
 export const ContextMenu: FC<Props> = ({ id, children, elements, ...rest }) => {
-    const { isOpen, close, state } = useContextMenu();
+    const { close, state } = useContextMenu();
 
     return (
         <DsContextMenu
             {...rest}
             size={{ maxHeight: DropdownSizeUnit.Viewport }}
-            isOpen={isOpen(id)}
+            isOpen={state?.id === id}
             close={close}
             position={state?.position}
         >
