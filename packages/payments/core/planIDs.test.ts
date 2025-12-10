@@ -174,6 +174,7 @@ describe('switchPlan', () => {
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 1, // vpn biz has 2 members, bundle pro has 1 member, so we add an addon to match the difference
             [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 6, // We expect 1 more than the IP_VPN_BUSINESS amount because one IP is included in that plan
         });
     });
@@ -190,6 +191,7 @@ describe('switchPlan', () => {
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 1, // vpn biz has 2 members, bundle pro has 1 member, so we add an addon to match the difference
             [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1, // 1 IP is included in vpnbiz, so we need to add this
         });
     });
@@ -663,6 +665,8 @@ describe('switchPlan', () => {
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
+            // because Family has 6 members. Bundle pro has 1 member + 5 member addons.
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
             [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1,
         });
 
@@ -681,6 +685,8 @@ describe('switchPlan', () => {
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
+            // because Family has 6 members. Bundle pro has 1 member + 5 member addons.
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 5,
             [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
         });
     });
@@ -806,6 +812,52 @@ describe('planIDsPositiveDifference', () => {
         const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
         const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
         expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({});
+    });
+
+    it('should correctly transfer members from VPN_BUSINESS to vpnpassbiz2025', () => {
+        const subscription = buildSubscription({
+            // total 5 members: 2 in the plan + 3 in the addons
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 3,
+        });
+
+        const newPlan = PLANS.VPN_PASS_BUNDLE_BUSINESS;
+        expect(
+            switchPlan({
+                subscription,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+            })
+        ).toEqual({
+            // total 5 members: 1 in the plan + 4 in the addons
+            [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: 4,
+            [ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS]: 1,
+        });
+    });
+
+    it('should correctly transfer members from VPN_BUSINESS to bundlepro2024', () => {
+        const subscription = buildSubscription({
+            // total 5 members: 2 in the plan + 3 in the addons
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 3,
+        });
+
+        const newPlan = PLANS.BUNDLE_PRO_2024;
+        expect(
+            switchPlan({
+                subscription,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization: MOCK_ORGANIZATION,
+            })
+        ).toEqual({
+            // total 5 members: 1 in the plan + 4 in the addons
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 4,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1,
+        });
     });
 });
 

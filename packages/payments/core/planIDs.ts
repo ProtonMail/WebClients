@@ -187,6 +187,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
 
     const supportedAddons = getSupportedAddons(newPlanIDs);
     const plan = plans.find(({ Name }) => Name === getPlanNameFromIDs(newPlanIDs));
+    const currentPlan = plans.find(({ Name }) => Name === getPlanNameFromIDs(currentPlanIDs));
 
     const supportedAddonNames = (Object.keys(supportedAddons) as ADDON_NAMES[]).sort(
         (a, b) => getAddonPriority(a) - getAddonPriority(b)
@@ -244,6 +245,13 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
                     if (isMemberAddon(addonName)) {
                         memberAddons += currentPlanIDs[addonName] ?? 0;
                     }
+                }
+
+                if (currentPlan) {
+                    const membersInTheCurrentPlan = getPlanFeatureLimit(currentPlan, 'MaxMembers');
+                    const membersInTheNewPlan = getPlanFeatureLimit(plan, 'MaxMembers');
+                    const membersDifference = Math.max(membersInTheCurrentPlan - membersInTheNewPlan, 0);
+                    memberAddons += membersDifference;
                 }
 
                 newPlanIDs[addon] = Math.max(
