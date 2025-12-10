@@ -11,7 +11,9 @@ export class DocSizeTracker {
   }
 
   incrementSize(size: number) {
-    this.logger?.info(`Incrementing document size by ${size}. New total: ${this.currentSize + size}`)
+    this.logger?.info(
+      `Current size: ${this.currentSize}. Incrementing by ${size}. New total: ${this.currentSize + size}`,
+    )
     this.currentSize += size
   }
 
