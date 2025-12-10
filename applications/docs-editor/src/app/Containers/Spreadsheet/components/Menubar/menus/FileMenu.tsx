@@ -22,11 +22,15 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
   const { application } = useApplication()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
+  const [showDebugToggle, setShowDebugToggle] = useState(false)
   useEffect(() => {
     // When the user holds down the shift key, show the version number. When they release, hide it.
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.shiftKey) {
         setShowVersionNumber(true)
+        if (event.ctrlKey) {
+          setShowDebugToggle((prev) => !prev)
+        }
       }
     }
 
@@ -45,6 +49,14 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
     }
   }, [])
 
+  const store = Ariakit.useMenuStore()
+  const mounted = Ariakit.useStoreState(store, 'mounted')
+  useEffect(() => {
+    if (!mounted) {
+      setShowDebugToggle(false)
+    }
+  }, [mounted])
+
   const triggerMenuAction = useCallback(
     async (action: FileMenuAction) => {
       try {
@@ -58,7 +70,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
   )
 
   return (
-    <Ariakit.MenuProvider {...props}>
+    <Ariakit.MenuProvider {...props} store={store}>
       <Ariakit.MenuButton render={renderMenuButton} />
       <UI.Menu unmountOnHide>
         {!isPublicMode ? <NewSpreadsheetOption triggerMenuAction={triggerMenuAction} /> : null}
@@ -146,6 +158,18 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
           {s('Open Proton Drive')}
         </UI.MenuItem>
         {/* TODO: add download logs option */}
+        {showDebugToggle && (
+          <UI.MenuItem
+            leadingIconSlot={<UI.Icon legacyName="cog-wheel" />}
+            onClick={() => {
+              void triggerMenuAction({
+                type: 'toggle-debug-mode',
+              })
+            }}
+          >
+            {s('Toggle debug mode')}
+          </UI.MenuItem>
+        )}
       </UI.Menu>
     </Ariakit.MenuProvider>
   )
@@ -300,5 +324,6 @@ function strings() {
     'View recent spreadsheets': c('sheets_2025:Spreadsheet editor menubar file menu').t`View recent spreadsheets`,
     'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open ${DRIVE_APP_NAME}`,
     'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
+    'Toggle debug mode': c('sheets_2025:Spreadsheet editor menubar file menu').t`Toggle debug mode`,
   }
 }
