@@ -79,6 +79,10 @@ const NET_ERROR_CODE = {
 
 export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 
+export const getMeetView = () => {
+    return viewMap.meet!;
+};
+
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
     createViews();
