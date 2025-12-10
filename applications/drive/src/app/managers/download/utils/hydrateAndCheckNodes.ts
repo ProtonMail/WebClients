@@ -30,8 +30,15 @@ export const hydratePhotos = async (uids: string[]) => {
     const nodes: NodeEntity[] = [];
     for (const uid of uids) {
         const maybeNode = await drive.getNode(uid);
-        const { node } = getNodeEntity(maybeNode);
+        const { node, photoAttributes } = getNodeEntity(maybeNode);
         nodes.push(node);
+        if (photoAttributes?.relatedPhotoNodeUids) {
+            for (const relatedUid of photoAttributes.relatedPhotoNodeUids) {
+                const relatedMaybeNode = await drive.getNode(relatedUid);
+                const { node: relatedNode } = getNodeEntity(relatedMaybeNode);
+                nodes.push(relatedNode);
+            }
+        }
     }
 
     return { nodes };
