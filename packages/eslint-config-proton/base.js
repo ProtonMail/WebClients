@@ -9,6 +9,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
 import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
+import { restrictedImports } from './restrictedImports.js';
 
 export default defineConfig(
     {
@@ -295,49 +296,7 @@ export default defineConfig(
              */
             'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
 
-            'no-restricted-imports': [
-                'error',
-                {
-                    paths: [
-                        {
-                            name: 'reselect',
-                            importNames: ['createSelector'],
-                            message: 'Please use createSelector from @redux/toolkit instead.',
-                        },
-                    ],
-                    patterns: [
-                        {
-                            group: ['pmcrypto'],
-                            message:
-                                'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
-                        },
-                        {
-                            group: ['packages/'],
-                            message: 'You should import from `@proton/` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/index'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/core/*'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/ui/*'],
-                            message: 'You should import from `@proton/payments/ui` instead.',
-                        },
-                        {
-                            group: ['@proton/unleash/index'],
-                            message: 'You should import from `@proton/unleash` instead.',
-                        },
-                        {
-                            group: ['@proton/mail/index'],
-                            message: 'You should import from `@proton/mail` instead.',
-                        },
-                    ],
-                },
-            ],
+            'no-restricted-imports': ['error', restrictedImports],
         },
         settings: {
             'import/extensions': allExtensions,
@@ -368,12 +327,14 @@ export default defineConfig(
     },
     {
         name: 'tsx-restricted-imports',
-        files: ['**/*.tsx', '**/*/jsx'],
+        files: ['**/*.tsx', '**/*/.jsx'],
         rules: {
             'no-restricted-imports': [
                 'error',
                 {
+                    paths: restrictedImports.paths,
                     patterns: [
+                        ...restrictedImports.patterns,
                         {
                             group: ['@proton/shared/lib/api/helpers/customConfig'],
                             importNames: ['getSilentApi'],
