@@ -1,10 +1,6 @@
 import { getMailView } from "../view/viewManagement";
-import Store from "electron-store";
 import { FeatureFlag } from "./flags";
 import { flagManagerLogger } from "../log";
-
-const cacheFilename = "ff_cache";
-const cacheFieldName = "featureFlags";
 
 // Period one minute was decided to reflect quckly the default refresh 10 min
 // interval used to retrieve unleash flags from API.
@@ -12,32 +8,14 @@ const pollIntervalMS = 60 * 1000;
 
 let featureFlagManager: FeatureFlagManager | null = null;
 
-interface FeatureFlagCache {
-    flags: Record<string, boolean>;
-    lastUpdated: number;
-}
-
 class FeatureFlagManager {
     private flags: Map<FeatureFlag, boolean> = new Map();
     private checkInterval: NodeJS.Timeout | null = null;
     private checkIntervalDurationMS: number = 60 * 1000;
-    private store: Store<{ featureFlags: FeatureFlagCache }>;
 
-    constructor(checkIntervalDurationMS: number, storeMock?: Store<{ featureFlags: FeatureFlagCache }>) {
+    constructor(checkIntervalDurationMS: number) {
         this.checkIntervalDurationMS = checkIntervalDurationMS;
-        this.store =
-            storeMock ||
-            new Store<{ featureFlags: FeatureFlagCache }>({
-                name: cacheFilename,
-                defaults: {
-                    featureFlags: {
-                        flags: {},
-                        lastUpdated: 0,
-                    },
-                },
-            });
 
-        this.loadFromCache();
         this.startPeriodicCheck();
     }
 
@@ -46,34 +24,6 @@ class FeatureFlagManager {
             clearInterval(this.checkInterval);
             this.checkInterval = null;
         }
-    }
-
-    private loadFromCache(): void {
-        const cached = this.store.get(cacheFieldName);
-
-        for (const flag of Object.values(FeatureFlag)) {
-            const cachedValue = cached.flags[flag];
-            this.flags.set(flag as FeatureFlag, cachedValue ?? false);
-        }
-
-        flagManagerLogger.info("Feature flags loaded from cache", {
-            lastUpdated: new Date(cached.lastUpdated).toISOString(),
-            flags: Object.fromEntries(this.flags),
-        });
-    }
-
-    private saveToCache(): void {
-        const flagsObject: Record<string, boolean> = {};
-        for (const [flag, value] of this.flags.entries()) {
-            flagsObject[flag] = value;
-        }
-
-        this.store.set(cacheFieldName, {
-            flags: flagsObject,
-            lastUpdated: Date.now(),
-        });
-
-        flagManagerLogger.debug("Feature flags saved to cache");
     }
 
     private checkFlags(): void {
