@@ -53,18 +53,21 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const startTrial = true;
 
     const paymentFacade = usePaymentFacade({
-        checkResult: options.checkResult,
-        amount: options.checkResult.AmountDue,
+        // since we are not charging anything and we just want to validate the credit card, we set the amount to 0.
+        // Chargebee might still create an authorization transaction typically 0.01$ or 0.5$ which will be immediately
+        // refunded.
+        amount: 0,
+        isTrial: startTrial,
+
         currency: options.currency,
         selectedPlanName: getPlanFromPlanIDs(payments.plansMap, options.planIDs)?.Name,
         billingAddress: options.billingAddress,
-        onChargeable: async (operations, data) => {
+        onChargeable: async (_, data) => {
             signup.submitPaymentData(options, data);
             return onPaymentTokenProcessed();
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
-        isTrial: startTrial,
     });
 
     const validatePayment = () => {

@@ -33,7 +33,8 @@ interface SelectProps extends Omit<ForwardedSelectProps, 'onSelect' | 'onChange'
 }
 
 interface SelectTwoProps
-    extends Omit<ForwardedSelectTwoProps<Cycle | 'lifetime'>, 'onSelect' | 'children' | 'onChange' | 'value'>,
+    extends
+        Omit<ForwardedSelectTwoProps<Cycle | 'lifetime'>, 'onSelect' | 'children' | 'onChange' | 'value'>,
         SharedProps {
     mode: 'select-two';
 }
@@ -142,7 +143,7 @@ const CycleSelector = (props: CycleSelectorProps) => {
             >
                 {options.map(({ text, value }) => {
                     return (
-                        <Option value={value} title={`${text}`}>
+                        <Option key={value} value={value} title={`${text}`}>
                             {text}
                         </Option>
                     );
