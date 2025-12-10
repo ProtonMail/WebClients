@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren, ReactElement } from 'react';
+import type { FC, ReactElement, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -18,6 +18,7 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
+import type { ItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -37,9 +38,10 @@ type Props = {
     /** extra quick actions in the actions dropdown menu */
     quickActions?: ReactElement[];
     type: ItemType;
+    children: (actions: ItemActions) => ReactNode;
 } & ItemViewProps;
 
-export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
+export const ItemViewPanel: FC<Props> = ({
     actions: extraActions = [],
     children,
     quickActions = [],
@@ -316,7 +318,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                 />
             }
         >
-            {children}
+            {children(itemActions)}
         </Panel>
     );
 };

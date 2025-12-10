@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { type FC, type ReactNode, useEffect } from 'react';
 
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu';
 import DsContextMenu from '@proton/components/components/contextMenu/ContextMenu';
@@ -13,13 +13,18 @@ type Props = Omit<ContextMenuProps, 'size' | 'isOpen' | 'close' | 'position' | '
 };
 
 export const ContextMenu: FC<Props> = ({ id, children, elements, ...rest }) => {
-    const { isOpen, close, state } = useContextMenu();
+    const { close, state } = useContextMenu();
+
+    useEffect(() => {
+        window.addEventListener('resize', close, { capture: true });
+        return () => window.removeEventListener('resize', close, { capture: true });
+    }, []);
 
     return (
         <DsContextMenu
             {...rest}
             size={{ maxHeight: DropdownSizeUnit.Viewport }}
-            isOpen={isOpen(id)}
+            isOpen={state?.id === id}
             close={close}
             position={state?.position}
         >

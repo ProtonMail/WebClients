@@ -4,7 +4,7 @@ import ContextMenuButton from '@proton/components/components/contextMenu/Context
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
-import { useContextMenuClose } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 
@@ -25,7 +25,7 @@ export type ContextMenuElement = ContextMenuItem | ContextMenuSeparator;
 type Props = { elements: ContextMenuElement[] };
 
 export const ContextMenuContent: FC<Props> = ({ elements }) => {
-    const close = useContextMenuClose();
+    const { close } = useContextMenu();
     const copyToClipboard = useCopyToClipboard();
 
     const handleAction = async (element: ContextMenuItem) => {
