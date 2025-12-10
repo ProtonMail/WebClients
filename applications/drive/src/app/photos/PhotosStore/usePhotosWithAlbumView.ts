@@ -488,7 +488,8 @@ export const usePhotosWithAlbumsView = () => {
             // if on album page and all links are selected, download the zip as the album name
             const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
             if (isSDKTransferEnabled && volumeId) {
-                const nodeUids = links.map((link) => generateNodeUid(volumeId, link.linkId));
+                // NOTE: only need metaLinks since the DownloadManager will hydrate the related photos
+                const nodeUids = metaLinks.map((link) => generateNodeUid(volumeId, link.linkId));
                 await DownloadManager.getInstance().downloadPhotos(nodeUids, album?.name);
             } else {
                 await download(links, {
