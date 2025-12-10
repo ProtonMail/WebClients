@@ -453,37 +453,40 @@ export const ProtonPlanCustomizer = ({
         })
         .sort((a, b) => getAddonDisplayOrder(a) - getAddonDisplayOrder(b));
 
-    useEffect(function forceAddonsMinMaxConstraints() {
-        let newPlanIDs: PlanIDs | undefined;
-        for (const addonName of addons) {
-            const featureLimitKey = AddonFeatureLimitKeyMapping[addonName];
-            const { forcedMin, forcedMax } = getForcedFeatureLimitations({
-                plan: normalizedSelectedPlan.getPlanName(),
-                featureLimitKey,
-                subscription: latestSubscription,
-                plansMap,
-            });
+    useEffect(
+        function forceAddonsMinMaxConstraints() {
+            let newPlanIDs: PlanIDs | undefined;
+            for (const addonName of addons) {
+                const featureLimitKey = AddonFeatureLimitKeyMapping[addonName];
+                const { forcedMin, forcedMax } = getForcedFeatureLimitations({
+                    plan: normalizedSelectedPlan.getPlanName(),
+                    featureLimitKey,
+                    subscription: latestSubscription,
+                    plansMap,
+                });
 
-            let newTarget: number | undefined;
-            if (forcedMin && normalizedSelectedPlan.getTotal(featureLimitKey) < forcedMin) {
-                newTarget = forcedMin;
-            } else if (forcedMax && normalizedSelectedPlan.getTotal(featureLimitKey) > forcedMax) {
-                newTarget = forcedMax;
+                let newTarget: number | undefined;
+                if (forcedMin && normalizedSelectedPlan.getTotal(featureLimitKey) < forcedMin) {
+                    newTarget = forcedMin;
+                } else if (forcedMax && normalizedSelectedPlan.getTotal(featureLimitKey) > forcedMax) {
+                    newTarget = forcedMax;
+                }
+
+                if (newTarget) {
+                    newPlanIDs = setQuantity(
+                        newPlanIDs ?? normalizedSelectedPlan.planIDs,
+                        addonName,
+                        newTarget - normalizedSelectedPlan.getTotal(featureLimitKey)
+                    );
+                }
             }
 
-            if (newTarget) {
-                newPlanIDs = setQuantity(
-                    newPlanIDs ?? normalizedSelectedPlan.planIDs,
-                    addonName,
-                    newTarget - normalizedSelectedPlan.getTotal(featureLimitKey)
-                );
+            if (newPlanIDs) {
+                onChangePlanIDs(newPlanIDs);
             }
-        }
-
-        if (newPlanIDs) {
-            onChangePlanIDs(newPlanIDs);
-        }
-    }, []);
+        },
+        [selectedPlanIDs]
+    );
 
     return (
         <div
