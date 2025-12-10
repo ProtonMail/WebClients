@@ -41,7 +41,6 @@ import {
     hasVpnPro,
     isForbiddenModification,
     isPlan,
-    isTrial,
 } from '@proton/payments';
 import {
     type PreloadedPaymentsContextType,
@@ -815,7 +814,6 @@ type ResolveUpsellsToDisplayProps = {
     canAccessDuoPlan?: boolean;
     user: UserModel;
     telemetryFlow: TelemetryPaymentFlow;
-    isReferralExpansionEnabled?: boolean;
 };
 
 export const resolveUpsellsToDisplay = ({
@@ -829,7 +827,6 @@ export const resolveUpsellsToDisplay = ({
     canAccessDuoPlan,
     user,
     telemetryFlow,
-    isReferralExpansionEnabled,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
     if (!subscription) {
@@ -858,20 +855,6 @@ export const resolveUpsellsToDisplay = ({
         const hasLumoFree = isFree && app === APPS.PROTONLUMO;
 
         switch (true) {
-            case Boolean(
-                isTrial(subscription) && hasMail(subscription) && subscription.PeriodEnd && !isReferralExpansionEnabled
-            ):
-                return [
-                    getMailPlusUpsell({ ...upsellsPayload, isTrialEnding: true }),
-                    getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
-                ];
-            case Boolean(
-                isTrial(subscription) &&
-                    hasBundle(subscription) &&
-                    subscription.PeriodEnd &&
-                    !isReferralExpansionEnabled
-            ):
-                return [getBundleUpsell({ ...upsellsPayload, isTrialEnding: true })];
             case Boolean(hasMailFree):
                 return [
                     getMailPlusUpsell({ ...upsellsPayload }),

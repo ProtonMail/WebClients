@@ -12,10 +12,10 @@ import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useConfig from '@proton/components/hooks/useConfig';
 import { Renew, isTrial } from '@proton/payments';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
 
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
@@ -23,7 +23,6 @@ import TrialCanceledModal from './TrialCanceledModal';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 import LegacyReferralTopBanner from './trials/LegacyReferralTopBanner';
 import ReferralTopBanner from './trials/ReferralTopBanner';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 
 const B2BTrialTopBanner = () => {
     const [closed, setClosed] = useState<boolean>(false);
@@ -50,8 +49,8 @@ const B2BTrialTopBanner = () => {
         return null;
     }
 
-    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="eslint-autofix-3C8894" />;
-    const trialEndsOnFormatted = <Time key="eslint-autofix-194343">{trialEndsOn}</Time>;
+    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="trial-remaining" />;
+    const trialEndsOnFormatted = <Time key="trial-end">{trialEndsOn}</Time>;
 
     return (
         <>
@@ -96,13 +95,11 @@ const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
-
     let topBanner = undefined;
 
     if (isB2BTrial) {
         topBanner = <B2BTrialTopBanner />;
-    } else if (isReferralTrial(subscription) && isReferralExpansionEnabled) {
+    } else if (isReferralTrial(subscription)) {
         topBanner = <ReferralTopBanner app={app} />;
     } else if (isTrial(subscription) && !isVpn && app) {
         topBanner = <LegacyReferralTopBanner fromApp={app} />;

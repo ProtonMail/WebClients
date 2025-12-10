@@ -12,15 +12,12 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
-import useFlag from '@proton/unleash/useFlag';
 
 export const useReferral = (location: ReturnType<typeof useLocation>) => {
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
     const [redDotReferral, setRedDotReferral] = useState(false);
-
-    const isExpansionFeatureActive = useFlag('ReferralExpansion');
 
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
 
@@ -32,10 +29,7 @@ export const useReferral = (location: ReturnType<typeof useLocation>) => {
         onClose: onCloseSpotlight,
     } = useSpotlightOnFeature(
         FeatureCode.ReferralProgramSpotlight,
-        !!referralProgramFeature?.Value &&
-            !!userSettings?.Referral?.Eligible &&
-            subscriptionStartedThirtyDaysAgo &&
-            !isExpansionFeatureActive
+        !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible && subscriptionStartedThirtyDaysAgo
     );
     const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
 

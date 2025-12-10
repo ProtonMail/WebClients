@@ -9,19 +9,17 @@ import { PLANS, PLAN_NAMES, getPlanTitle, isAutoRenewTrial } from '@proton/payme
 import { isReferralTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import useFlag from '@proton/unleash/useFlag';
 
 const TrialInfoDashboardV2 = () => {
     const [subscription] = useSubscription();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     const { PeriodEnd = 0 } = subscription || {};
     const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
     const planTitle = getPlanTitle(subscription) || c('Referral').t`your subscription`;
 
-    if (!isReferralExpansionEnabled || !isReferralTrial(subscription)) {
+    if (!isReferralTrial(subscription)) {
         return null;
     }
 

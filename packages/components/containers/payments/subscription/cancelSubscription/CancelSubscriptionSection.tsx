@@ -14,7 +14,6 @@ import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
@@ -32,8 +31,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
 
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
-    const isActiveReferralTrial = isReferralExpansionEnabled && isReferralTrial(subscription);
+    const isActiveReferralTrial = isReferralTrial(subscription);
 
     if (loadingCancelSubscription) {
         return null;
