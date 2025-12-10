@@ -221,13 +221,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             });
 
             await api(
-                changeRenewState(
-                    {
-                        RenewalState: Renew.Disabled,
-                        CancellationFeedback: feedback,
-                    },
-                    'v5'
-                )
+                changeRenewState({
+                    RenewalState: Renew.Disabled,
+                    CancellationFeedback: feedback,
+                })
             );
             await eventManager.call();
 

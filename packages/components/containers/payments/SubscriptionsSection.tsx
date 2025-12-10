@@ -117,12 +117,9 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                     sendDashboardReactivateReport(reactivationSource || 'default');
 
                     await api(
-                        changeRenewState(
-                            {
-                                RenewalState: Renew.Enabled,
-                            },
-                            'v5'
-                        )
+                        changeRenewState({
+                            RenewalState: Renew.Enabled,
+                        })
                     );
 
                     await eventManager.call();
