@@ -45,7 +45,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const { isGhostChatMode } = useGhostChat();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
-    
+
     // Extract 'q' query parameter from URL (will be cleared after reading)
     const queryFromUrl = useQueryParam('q');
     const initialQuery = queryFromUrl;
@@ -68,6 +68,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     //     ? c('collider_2025:Title').jt`Hi ${displayName}, how can I help you today?`
     //     : c('collider_2025:Title').t`Hello, how can I help you today?`;
 
+    // FIXME: `isLoading` is always false because `messageMap` is never falsy (it can be `{}`, but that's not falsy)
     const isLoading = !isGuest && (!remoteWasSynced || (curConversationId && !messageMap));
 
     const navigateCallback = useCallback((conversationId: ConversationId) => {
@@ -99,9 +100,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     // ** Effects & related **
 
     // Set document title - don't expose conversation title in ghost mode for privacy
-    useDocumentTitle(
-        isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`
-    );
+    useDocumentTitle(isGhostChatMode || !conversationTitle ? LUMO_FULL_APP_TITLE : `${conversationTitle} | Lumo`);
 
     // Synchronize the /c/:conversationId parameter with ConversationProvider.
     useEffect(() => {
@@ -180,8 +179,8 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
             onDragOver={onDragOver}
         >
             {!curConversationId && (
-                <MainContainer 
-                    isProcessingAttachment={isProcessingAttachment} 
+                <MainContainer
+                    isProcessingAttachment={isProcessingAttachment}
                     handleSendMessage={handleSendMessage}
                     initialQuery={initialQuery || undefined}
                 />
