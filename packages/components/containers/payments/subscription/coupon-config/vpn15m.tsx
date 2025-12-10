@@ -1,24 +1,14 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { COUPON_CODES, CYCLE, PLANS, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getShortBillingText } from '../helpers';
 import type { CouponConfig } from './interface';
 
-export const bf2025Config: CouponConfig = {
-    coupons: [
-        COUPON_CODES.BLACK_FRIDAY_2025,
-        COUPON_CODES.BLACK_FRIDAY_2025_MONTH,
-        COUPON_CODES.BLACK_FRIDAY_2025_BUNDLE,
-        COUPON_CODES.BLACK_FRIDAY_2025_LIGHTNING,
-        COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON,
-        COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON_OMNI,
-        COUPON_CODES.BLACK_FRIDAY_2025_DEALPD,
-        COUPON_CODES.BLACK_FRIDAY_2025_DEALVM,
-        COUPON_CODES.BLACK_FRIDAY_2025_TWOYEAR,
-    ],
+export const vpn15mConfig: CouponConfig = {
+    coupons: [],
     specialCases: [
         {
             planName: PLANS.VPN2024,
@@ -68,8 +58,6 @@ export const bf2025Config: CouponConfig = {
     showMigrationDiscountLossWarning: true,
 
     hideLumoAddonBanner: true,
-
-    checkoutSubtitle: () => c('Label').t`Black Friday`,
 
     payCTA: () => c('Label').t`Get the deal`,
 };

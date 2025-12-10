@@ -3,7 +3,6 @@ import { CYCLE, PLANS, type SubscriptionCheckResponse } from '@proton/payments';
 import type { CouponConfig, CouponConfigProps } from './interface';
 import { matchCouponConfig } from './useCouponConfig';
 
-// Hardcoded config for testing - matches monthlyNudgeConfig
 const testMonthlyNudgeConfig: CouponConfig = {
     coupons: ['ANNUALOFFER25'],
     hidden: true,
@@ -11,7 +10,6 @@ const testMonthlyNudgeConfig: CouponConfig = {
     cycleTitle: undefined,
 };
 
-// Hardcoded config for testing - matches bf2025Config
 const testBf2025Config: CouponConfig = {
     coupons: [
         'BF25PROMO',
@@ -36,6 +34,8 @@ const testBf2025Config: CouponConfig = {
     hideLumoAddonBanner: true,
 };
 
+const testCouponConfigs: CouponConfig[] = [testMonthlyNudgeConfig, testBf2025Config];
+
 describe('matchCouponConfig', () => {
     it('returns undefined when required props are missing', () => {
         const config: CouponConfigProps = {
@@ -44,7 +44,7 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        expect(matchCouponConfig(config)).toBeUndefined();
+        expect(matchCouponConfig(config, testCouponConfigs)).toBeUndefined();
     });
 
     it('matches config by coupon code (monthlyNudgeConfig)', () => {
@@ -71,7 +71,7 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        const result = matchCouponConfig(config);
+        const result = matchCouponConfig(config, testCouponConfigs);
         expect(result).toBeDefined();
         expect(result?.coupons).toEqual(testMonthlyNudgeConfig.coupons);
         expect(result?.hidden).toBe(testMonthlyNudgeConfig.hidden);
@@ -96,7 +96,7 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        const result = matchCouponConfig(config);
+        const result = matchCouponConfig(config, testCouponConfigs);
         expect(result).toBeDefined();
         expect(result?.coupons).toEqual(testBf2025Config.coupons);
         expect(result?.hidden).toBe(testBf2025Config.hidden);
@@ -127,7 +127,7 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        const result = matchCouponConfig(config);
+        const result = matchCouponConfig(config, testCouponConfigs);
         expect(result).toBeDefined();
         expect(result?.coupons).toContain('BF25PROMO');
         expect(result?.hidden).toBe(true);
@@ -158,7 +158,7 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        const result = matchCouponConfig(config);
+        const result = matchCouponConfig(config, testCouponConfigs);
         expect(result).toBeDefined();
         expect(result?.coupons).toContain('BF25BUNDLEPROMO');
         expect(result?.hidden).toBe(true);
@@ -188,6 +188,6 @@ describe('matchCouponConfig', () => {
             plansMap: {},
         };
 
-        expect(matchCouponConfig(config)).toBeUndefined();
+        expect(matchCouponConfig(config, testCouponConfigs)).toBeUndefined();
     });
 });
