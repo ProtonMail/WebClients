@@ -182,12 +182,9 @@ describe('SubscriptionsSection', () => {
 
         expect(mockGetPaymentMethods).toHaveBeenCalled();
         expect(apiMock).toHaveBeenCalledWith(
-            changeRenewState(
-                {
-                    RenewalState: Renew.Enabled,
-                },
-                'v5'
-            )
+            changeRenewState({
+                RenewalState: Renew.Enabled,
+            })
         );
     });
 
