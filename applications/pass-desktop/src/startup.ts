@@ -1,6 +1,7 @@
 import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
 import { setupIpcHandlers as clipboard } from './lib/clipboard/clipboard.ipc';
+import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';
@@ -18,4 +19,5 @@ export const startup = async (ctx: PassElectronContext) => {
     info();
     theming();
     autotype(() => ctx.window);
+    contextMenu(() => ctx.window);
 };

@@ -24,6 +24,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import Icons from '@proton/icons/Icons';
+import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -186,16 +187,18 @@ export const App = () => (
                                                         <AuthSwitchProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <ThemeConnect />
-                                                                    <Localized>
-                                                                        <ClipboardProvider>
-                                                                            <AppGuard />
-                                                                        </ClipboardProvider>
-                                                                    </Localized>
-                                                                    <Portal>
-                                                                        <ModalsChildren />
-                                                                        <NotificationsChildren />
-                                                                    </Portal>
+                                                                    <ContextMenuProvider>
+                                                                        <ThemeConnect />
+                                                                        <Localized>
+                                                                            <ClipboardProvider>
+                                                                                <AppGuard />
+                                                                            </ClipboardProvider>
+                                                                        </Localized>
+                                                                        <Portal>
+                                                                            <ModalsChildren />
+                                                                            <NotificationsChildren />
+                                                                        </Portal>
+                                                                    </ContextMenuProvider>
                                                                 </StoreProvider>
                                                             </AuthServiceProvider>
                                                         </AuthSwitchProvider>

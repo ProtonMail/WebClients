@@ -1,4 +1,4 @@
-import type { DragEvent, DragEventHandler } from 'react';
+import type { DragEvent, DragEventHandler, MouseEvent } from 'react';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -36,6 +36,7 @@ type Props = {
     onDragEnd?: DragEventHandler;
     onDragStart?: (event: DragEvent, item: DraggableItem) => void;
     onSelect: (item: ItemRevision, metaKey: boolean) => void;
+    onContextMenu?: (event: MouseEvent, item: ItemRevision) => void;
 };
 
 export const ItemsListItem = memo(
@@ -50,6 +51,7 @@ export const ItemsListItem = memo(
         onDragStart,
         onDragEnd,
         onSelect,
+        onContextMenu,
     }: Props) => {
         const { data, shareId, itemId } = item;
         const { heading, subheading } = presentListItem(item);
@@ -86,8 +88,9 @@ export const ItemsListItem = memo(
                         e.preventDefault();
                         onSelect(item, e.ctrlKey || e.metaKey);
                     }}
-                    onDragStart={(evt: DragEvent) => canDrag && onDragStart?.(evt, { ID: id })}
+                    onDragStart={(evt) => canDrag && onDragStart?.(evt, { ID: id })}
                     onDragEnd={onDragEnd}
+                    onContextMenu={(evt) => onContextMenu?.(evt, item)}
                 >
                     <div className={clsx('flex-nowrap flex w-full items-center', bulk ? 'px-2 py-1.5' : 'px-3 py-2')}>
                         <SafeItemIcon

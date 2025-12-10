@@ -2,9 +2,12 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
     LoginAutofillTelemetry = 'LoginAutofillTelemetry',
+    PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
     PassBasicAuthAutofill = 'PassBasicAuthAutofill',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
+    PassContextMenu = 'PassContextMenu',
     PassCustomTypeV1 = 'PassCustomTypeV1',
+    PassDesktopAutotype = 'PassDesktopAutotype',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassExperimentalWebsiteRules = 'PassExperimentalWebsiteRules',
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
@@ -14,8 +17,6 @@ export enum PassFeature {
     PassRenameAdminToManager = 'PassRenameAdminToManager',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebPrfUnlock = 'PassWebPrfUnlock',
-    PassDesktopAutotype = 'PassDesktopAutotype',
-    PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);

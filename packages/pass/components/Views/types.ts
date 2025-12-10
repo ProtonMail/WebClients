@@ -13,21 +13,7 @@ import type { ParsedUrl } from '@proton/pass/utils/url/types';
 export type ItemViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevisionWithOptimistic<T>;
     share: ShareItem;
-    handleCloneClick: () => void;
-    handleDeleteClick: () => void;
-    handleDismissClick: () => void;
-    handleEditClick: () => void;
-    handleHistoryClick: () => void;
-    handleLeaveItemClick: () => void;
-    handleManageClick: () => void;
-    handleMoveToTrashClick: () => void;
-    handleMoveToVaultClick: () => void;
-    handlePinClick: () => void;
-    handleRestoreClick: () => void;
-    handleRetryClick: () => void;
     handleSecureLinkClick: () => void;
-    handleShareItemClick: () => void;
-    handleToggleFlagsClick: () => void;
 };
 
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {

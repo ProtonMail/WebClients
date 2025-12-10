@@ -3,6 +3,11 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import {
+    ItemsListContextMenu,
+    useItemContextMenu,
+} from '@proton/pass/components/Item/ContextMenu/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
@@ -19,11 +24,14 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const ExcludedItems: FC = () => {
     const listRef = useRef<List>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
     const { excluded } = useMonitor();
     const items = useMemoSelector(selectSelectedItems, [excluded.data]);
     const selectedItem = useSelectedItem();
+    const { close } = useContextMenu();
+    const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     useAutoSelect(items);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayExcludedItems, {}, {})([]);
@@ -33,27 +41,32 @@ export const ExcludedItems: FC = () => {
     }, []);
 
     return items.length > 0 ? (
-        <VirtualList
-            ref={listRef}
-            rowCount={items.length}
-            rowHeight={() => 54}
-            rowRenderer={({ style, index, key }) => {
-                const item = items[index];
-                const id = getItemKey(item);
+        <>
+            <VirtualList
+                ref={listRef}
+                rowCount={items.length}
+                rowHeight={() => 54}
+                rowRenderer={({ style, index, key }) => {
+                    const item = items[index];
+                    const id = getItemKey(item);
 
-                return (
-                    <div style={style} key={key}>
-                        <ItemsListItem
-                            active={selectedItem && itemEq(selectedItem)(item)}
-                            id={id}
-                            item={item}
-                            key={id}
-                            onSelect={onSelect}
-                        />
-                    </div>
-                );
-            }}
-        />
+                    return (
+                        <div style={style} key={key}>
+                            <ItemsListItem
+                                active={selectedItem && itemEq(selectedItem)(item)}
+                                id={id}
+                                item={item}
+                                key={id}
+                                onSelect={onSelect}
+                                onContextMenu={onContextMenu}
+                            />
+                        </div>
+                    );
+                }}
+                onScroll={close}
+            />
+            {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
+        </>
     ) : (
         <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
             <strong>{c('Title').t`No excluded items`}</strong>
