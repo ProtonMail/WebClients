@@ -38,6 +38,9 @@ const contextBridgeApi: ContextBridgeApi = {
 
     /* autotype fields */
     autotype: (props) => invoke('autotype:execute', props),
+
+    /* context menus */
+    openContextMenu: (items) => invoke('contextMenu:open', items),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

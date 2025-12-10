@@ -1,4 +1,6 @@
+import type { ContextMenuItemSerializable } from '@proton/pass/types/desktop/context-menu';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
+
 import type { AutotypeProperties } from './autotype';
 
 export * from './autotype';
@@ -6,17 +8,25 @@ export * from './autotype';
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
     readFromClipboard: () => Promise<string>;
+
     navigate: (href: string) => Promise<void>;
+
     canCheckPresence: () => Promise<boolean>;
     checkPresence: (reason?: string) => Promise<void>;
+
     getSecret: (key: string, version: number) => Promise<MaybeNull<string>>;
     setSecret: (key: string, data: Uint8Array<ArrayBuffer>) => Promise<void>;
     deleteSecret: (key: string) => Promise<void>;
+
     getInstallInfo: () => Promise<MaybeNull<string>>;
     setInstallSourceReported: () => Promise<void>;
+
     getTheme: () => Promise<Maybe<DesktopTheme>>;
     setTheme: (theme: DesktopTheme) => Promise<void>;
+
     autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;
+
+    openContextMenu: (items: ContextMenuItemSerializable[]) => Promise<number>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';

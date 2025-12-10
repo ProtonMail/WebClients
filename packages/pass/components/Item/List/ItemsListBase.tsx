@@ -1,9 +1,15 @@
-import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import type { MouseEvent } from 'react';
+import { type FC, type ReactElement, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useStore } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import {
+    ItemsListContextMenu,
+    useItemContextMenu,
+} from '@proton/pass/components/Item/ContextMenu/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
@@ -40,12 +46,25 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
     const bulk = useBulkSelection();
     const bulkEnabled = useBulkEnabled();
     const { draggable, handleDragStart, handleDragEnd } = useItemDrag();
+    const { close } = useContextMenu();
+
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort, filters.selectedShareId]);
 
     const { interpolation, interpolationIndexes } = useMemo(
         () => interpolateRecentItems(items)(filters.sort === 'recent'),
         [filters.type, filters.sort, items]
+    );
+
+    const handleContextMenu = useCallback(
+        (item: ItemRevision, bulkSelected: boolean) => (event: MouseEvent) => {
+            /** Active context menu if no bulk or if bulk and over one of the selected items */
+            if (!bulkEnabled || bulkSelected) return onContextMenu(event, item);
+        },
+        [bulkEnabled, bulk]
     );
 
     return (
@@ -60,6 +79,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                 <VirtualList
                     interpolationIndexes={interpolationIndexes}
                     ref={listRef}
+                    containerRef={containerRef}
                     rowCount={interpolation.length}
                     rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 28 : 54)}
                     rowRenderer={({ style, index, key }) => {
@@ -86,6 +106,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             onDragStart={handleDragStart}
                                             onDragEnd={handleDragEnd}
                                             onSelect={onSelect}
+                                            onContextMenu={handleContextMenu(item, bulkSelected)}
                                         />
                                     </div>
                                 );
@@ -99,8 +120,10 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                             }
                         }
                     }}
+                    onScroll={close}
                 />
             )}
+            {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
         </>
     );
 };
