@@ -164,6 +164,7 @@ export const ProtonMeetContainer = ({
     const joinBlockedRef = useRef(false);
     const lastEpochRef = useRef<bigint | null>(null);
     const refetchedParticipantNameMapRef = useRef(false);
+    const joinedRoomLoggedRef = useRef(false);
 
     const loadingStartTimeRef = useRef(0);
     const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
@@ -180,6 +181,7 @@ export const ProtonMeetContainer = ({
 
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
+    const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
 
     const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
 
@@ -377,6 +379,13 @@ export const ProtonMeetContainer = ({
         };
     }, []);
 
+    // Log connection lost when connectionLost state changes to true
+    useEffect(() => {
+        if (connectionLost && wasmApp && joinedRoom && isMeetClientMetricsLogEnabled) {
+            void wasmApp.logConnectionLost().catch((error) => reportMeetError('Failed to log connection lost', error));
+        }
+    }, [connectionLost, wasmApp, joinedRoom]);
+
     const submitPassword = async () => {
         try {
             setInvalidPassphrase(false);
@@ -525,12 +534,23 @@ export const ProtonMeetContainer = ({
 
                 setInitialisedParticipantNameMap(false);
                 setJoinedRoom(false);
+                joinedRoomLoggedRef.current = false;
                 void stopPiP();
             });
 
             if (!isMobile()) {
                 setJoinedRoom(true);
                 setJoiningInProgress(false);
+            }
+
+            // Log successful room join (only once)
+            if (!joinedRoomLoggedRef.current && wasmApp && isMeetClientMetricsLogEnabled) {
+                joinedRoomLoggedRef.current = true;
+                try {
+                    await wasmApp.logJoinedRoom();
+                } catch (error) {
+                    reportMeetError('Failed to log joined room', error);
+                }
             }
         } catch (error: any) {
             reportMeetError('Failed to join meeting', error);
@@ -539,6 +559,16 @@ export const ProtonMeetContainer = ({
             joinBlockedRef.current = false;
 
             const { code } = getApiError(error);
+
+            // Log failed room join
+            if (isMeetClientMetricsLogEnabled) {
+                try {
+                    await wasmApp?.logJoinedRoomFailed(code ? String(code) : undefined);
+                } catch (logError) {
+                    reportMeetError('Failed to log joined room failed', logError);
+                }
+            }
+
             if (code === MEETING_LOCKED_ERROR_CODE) {
                 await handleMeetingIsLockedError();
                 return;
@@ -907,7 +937,16 @@ export const ProtonMeetContainer = ({
                 {isWebRtcUnsupportedModalOpen && (
                     <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
                 )}
-                {connectionLost && <ConnectionLostModal onClose={() => setConnectionLost(false)} />}
+                {connectionLost && (
+                    <ConnectionLostModal
+                        onClose={() => {
+                            void wasmApp
+                                ?.triggerWebSocketReconnect()
+                                .catch((error) => reportMeetError('Failed to trigger websocket reconnect', error));
+                            setConnectionLost(false);
+                        }}
+                    />
+                )}
                 {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
                     <PiPPreviewVideo
                         canvas={canvas}
