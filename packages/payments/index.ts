@@ -376,7 +376,6 @@ export {
     hasAddons,
     hasAIAssistant,
     hasAllProductsB2CPlan,
-    hasAnniversary2025Coupon,
     hasAnyB2bBundle,
     hasBundle,
     hasBundleBiz2025,
