@@ -188,6 +188,7 @@ export { default as ProtonForBusinessLogo } from './components/logo/ProtonForBus
 export { default as ProtonLogo } from './components/logo/ProtonLogo';
 export { default as VpnForBusinessLogo } from './components/logo/VpnForBusinessLogo';
 export { default as VpnLogo } from './components/logo/VpnLogo';
+export { default as VpnPassLogo } from './components/logo/VpnPassLogo';
 export { default as WalletLogo } from './components/logo/WalletLogo';
 export { default as SettingsMaintenanceLayoutWrapper } from './components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
 export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';

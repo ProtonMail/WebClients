@@ -20,12 +20,14 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import metrics, { observeApiError } from '@proton/metrics';
 import type { PaymentProcessorType } from '@proton/payments';
 import {
+    ADDON_NAMES,
     type BillingAddress,
     CYCLE,
     type Currency,
     FREE_PLAN,
     PLANS,
     type Plan,
+    type PlanIDs,
     SubscriptionMode,
     getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
@@ -94,7 +96,7 @@ import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
 import type { VPNSignupMode, VPNSignupModel } from './interface';
 import type { TelemetryMeasurementData } from './measure';
-import { getCycleData } from './state';
+import { filterCycleDataByPlan, getCycleData } from './state';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 interface Props {
@@ -121,6 +123,25 @@ const vpnPlanName = PLANS.VPN2024;
 
 const getSearchParams = () => {
     return new URLSearchParams(window.location.search);
+};
+
+/**
+ * Applies minimum required addons for VPN_PASS_BUNDLE_BUSINESS plan
+ *  Sets minimum 3 members (plan includes 1, so adds 2 member addons)
+ *  Sets 1 dedicated IP by default
+ */
+const maybeApplyVpnPassBundleDefaults = (planIDs: PlanIDs): void => {
+    if (!planIDs[PLANS.VPN_PASS_BUNDLE_BUSINESS]) {
+        return;
+    }
+
+    if (!planIDs[ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]) {
+        planIDs[ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS] = 2;
+    }
+
+    if (!planIDs[ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS]) {
+        planIDs[ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS] = 1;
+    }
 };
 
 const getSignupMode = (coupon: string | undefined, currency: Currency | undefined): VPNSignupMode => {
@@ -181,6 +202,7 @@ const SingleSignupContainer = ({
             PLANS.VPN_PRO,
             PLANS.VPN_PASS_BUNDLE,
             PLANS.VPN_BUSINESS,
+            PLANS.VPN_PASS_BUNDLE_BUSINESS,
         ];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
             delete result.preSelectedPlan;
@@ -204,9 +226,12 @@ const SingleSignupContainer = ({
             plan: vpnPlanName,
             cycle: cycleData.upsellCycle,
         };
-        const cycle = signupParameters.cycle || defaults.cycle;
         const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults) || {};
         const planIDs = planParameters.planIDs;
+        maybeApplyVpnPassBundleDefaults(planIDs);
+        const selectedPlan = getPlanFromPlanIDs(plansMap, planIDs) || FREE_PLAN;
+        const filteredCycleData = filterCycleDataByPlan(cycleData, selectedPlan);
+        const cycle = signupParameters.cycle || filteredCycleData.upsellCycle;
         const billingAddress = {
             CountryCode: '',
             State: '',
@@ -224,13 +249,13 @@ const SingleSignupContainer = ({
         const subscriptionDataCycleMapping = getOptimisticPlanCardsSubscriptionData({
             plansMap,
             planIDs: [planIDs, { [vpnPlanName]: 1 }, { [PLANS.VPN_PASS_BUNDLE]: 1 }],
-            cycles: unique([cycle, ...cycleData.cycles]),
+            cycles: unique([cycle, ...filteredCycleData.cycles]),
             billingAddress,
         });
 
         return {
             ...defaultSignupModel,
-            cycleData,
+            cycleData: filteredCycleData,
             planParameters,
             subscriptionData,
             subscriptionDataCycleMapping,
@@ -278,7 +303,7 @@ const SingleSignupContainer = ({
 
     const vpnServersCountData = model.vpnServersCountData;
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-    const upsellShortPlan = getUpsellShortPlan(model.plansMap[vpnPlanName], vpnServersCountData);
+    const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
     const background = (() => {
@@ -310,13 +335,15 @@ const SingleSignupContainer = ({
             cycle: cycleData.upsellCycle,
         };
         const { plan, planIDs } = getPlanIDsFromParams(plans, preferredCurrency, signupParameters, defaults) || {};
+        maybeApplyVpnPassBundleDefaults(planIDs);
 
         const selectedPlanCurrency = plan.Currency;
 
         const plansMap = getPlansMap(plans, selectedPlanCurrency, true);
+        const filteredCycleData = filterCycleDataByPlan(cycleData, plan);
 
         const modelCycle = withModel ? model.subscriptionData.cycle : undefined;
-        const cycle = modelCycle || signupParameters.cycle || defaults.cycle;
+        const cycle = modelCycle || signupParameters.cycle || filteredCycleData.upsellCycle;
 
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
         const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
@@ -343,7 +370,7 @@ const SingleSignupContainer = ({
             const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
                 ...sharedOptions,
                 planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                cycles: unique([cycle, ...cycleData.cycles]),
+                cycles: unique([cycle, ...filteredCycleData.cycles]),
                 coupon,
             });
 
@@ -397,7 +424,7 @@ const SingleSignupContainer = ({
         return {
             plansMap,
             subscriptionData,
-            cycleData,
+            cycleData: filteredCycleData,
             subscriptionDataCycleMapping,
             coupon,
             selectedPlan,
@@ -476,7 +503,6 @@ const SingleSignupContainer = ({
                 currency: preferredCurrency,
                 cycle: subscriptionData.cycle,
             });
-
             setModelDiff({
                 domains,
                 plans,

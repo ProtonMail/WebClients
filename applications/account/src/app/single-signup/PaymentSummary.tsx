@@ -34,7 +34,7 @@ const TrialSummary = ({ loading, options }: { loading: boolean; options: Optimis
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
 
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time key="eslint-autofix-8E16F6">{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
 
     return (
         <>
@@ -111,6 +111,16 @@ const PaymentSummary = ({
     })();
 
     const tax = formatTax(options.checkResult);
+
+    const amountDueLabel = (() => {
+        if (isTrial) {
+            return c('b2b_trials_2025_Label').t`Amount due now`;
+        }
+        if (isB2bPlan) {
+            return c('Info').t`Amount due`;
+        }
+        return getTotalBillingText(options.cycle, options.planIDs);
+    })();
 
     return (
         <div className="flex flex-column gap-3">
@@ -197,7 +207,8 @@ const PaymentSummary = ({
                                 );
                                 if (
                                     addon.Name === ADDON_NAMES.MEMBER_VPN_PRO ||
-                                    addon.Name === ADDON_NAMES.MEMBER_VPN_BUSINESS
+                                    addon.Name === ADDON_NAMES.MEMBER_VPN_BUSINESS ||
+                                    addon.Name === ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS
                                 ) {
                                     return (
                                         <AddonSummary
@@ -210,7 +221,10 @@ const PaymentSummary = ({
                                     );
                                 }
 
-                                if (addon.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+                                if (
+                                    addon.Name === ADDON_NAMES.IP_VPN_BUSINESS ||
+                                    addon.Name === ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS
+                                ) {
                                     return (
                                         <AddonSummary
                                             key={addon.Name}
@@ -264,13 +278,7 @@ const PaymentSummary = ({
 
             <div className="mx-3 flex flex-column gap-2">
                 <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
-                    <span>
-                        {isTrial
-                            ? c('b2b_trials_2025_Label').t`Amount due now`
-                            : isB2bPlan
-                              ? c('Info').t`Amount due`
-                              : getTotalBillingText(options.cycle, options.planIDs)}
-                    </span>
+                    <span>{amountDueLabel}</span>
                     <span>
                         {loading ? (
                             loaderNode

@@ -58,11 +58,13 @@ import {
     getLinkSharing,
     getLoginsAndNotes,
     getPassAdminPanel,
+    getPasswordManager,
     getProtonPassFeature,
+    getSecureVaultSharing,
     getVaultSharing,
     getVaults,
 } from '../../../features/pass';
-import { getVPNConnectionsFeature } from '../../../features/vpn';
+import { getNetShield, getVPNConnectionsFeature } from '../../../features/vpn';
 import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
@@ -400,11 +402,15 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'servers',
             },
-            getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
+            getNetShield(true),
+            ...(user.hasPaidPass
+                ? [getPasswordManager(), getHideMyEmailAliases('unlimited'), getSecureVaultSharing(true)]
+                : [getProtonPassFeature(FREE_PASS_ALIASES)]),
         ].filter(isTruthy);
 
         return (
-            <StripedList alternate="odd">
+            <StripedList alternate={alternate}>
+                {storageItem}
                 <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
