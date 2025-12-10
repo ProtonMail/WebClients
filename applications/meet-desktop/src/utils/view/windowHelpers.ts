@@ -5,6 +5,8 @@ import { appSession } from "../session";
 import { MEET_APP_NAME } from "@proton/shared/lib/constants";
 import { isProdEnv } from "../isProdEnv";
 import { DEFAULT_ZOOM_FACTOR } from "../../constants/zoom";
+import { getFeatureFlagManager } from "../flags/manager";
+import { FeatureFlag } from "../flags/flags";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -62,7 +64,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
         show: false,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: false,
+            devTools: getFeatureFlagManager().isEnabled(FeatureFlag.MEET_DESKTOP_DEV_TOOLS_ENABLED),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             // Security additions
             session: appSession(),
