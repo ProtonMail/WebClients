@@ -376,20 +376,23 @@ export const getCheckoutRenewNoticeText = ({
 
 const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
+
+    // duplication to prevent react warning about key being not unique
+    const formattedDate1 = <Time key="trial-end-date-1">{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate2 = <Time key="trial-end-date-2">{getUnixTime(trialEndDate)}</Time>;
 
     if (renewCycle === CYCLE.MONTHLY) {
         return c('b2b_trials_2025_Info')
-            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${formattedDate}.`;
+            .jt`After the trial ends on ${formattedDate1}, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${formattedDate2}.`;
     }
 
     return c('b2b_trials_2025_Info')
-        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${renewCycle} months. You won’t be charged if you cancel before ${formattedDate}.`;
+        .jt`After the trial ends on ${formattedDate1}, it will become a paid subscription that auto-renews every ${renewCycle} months. You won’t be charged if you cancel before ${formattedDate2}.`;
 };
 
 export const getTrialRenewalAmountDueNoticeText = () => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="trial-end-date-amount-due">{getUnixTime(trialEndDate)}</Time>;
 
     return c('Payments').jt`Amount due after trial on ${formattedDate}`;
 };
