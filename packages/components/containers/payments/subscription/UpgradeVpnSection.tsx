@@ -11,7 +11,6 @@ import { FREE_PLAN } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers';
@@ -32,7 +31,6 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     useLoad();
 
@@ -45,7 +43,6 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
         openSubscriptionModal,
         user,
         telemetryFlow,
-        isReferralExpansionEnabled,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

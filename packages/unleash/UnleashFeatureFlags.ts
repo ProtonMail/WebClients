@@ -43,7 +43,6 @@ enum CommonFeatureFlag {
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
-    ReferralExpansion = 'ReferralExpansion',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
     AlwaysOnUpsell = 'AlwaysOnUpsell',
     LumoEarlyAccess = 'LumoEarlyAccess',

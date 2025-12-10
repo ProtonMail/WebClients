@@ -6,7 +6,6 @@ import {
 } from '@proton/account/delegatedAccess/available';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
     Renew,
     type Subscription,
@@ -25,7 +24,6 @@ import {
     DARK_WEB_MONITORING_NAME,
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
-    REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { Address, GroupMembershipReturn, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -180,7 +178,6 @@ export const getAccountAppRoutes = ({
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
     isB2BTrial,
-    isReferralExpansionEnabled,
     referralInfo,
     canDisplayNonPrivateEmailPhone,
     showMailDashboard,
@@ -206,7 +203,6 @@ export const getAccountAppRoutes = ({
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
     isB2BTrial: boolean;
-    isReferralExpansionEnabled: boolean;
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
@@ -220,10 +216,8 @@ export const getAccountAppRoutes = ({
     showDriveDashboard: boolean;
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
 }) => {
-    const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
-    const credits = isReferralExpansionEnabled
-        ? referralInfo.maxRewardAmount
-        : getSimplePriceString(Currency, REFERRAL_PROGRAM_MAX_AMOUNT);
+    const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
+    const credits = referralInfo.maxRewardAmount;
 
     // Used to determine if a user is on a family plan or a duo plan
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
@@ -615,11 +609,11 @@ export const getAccountAppRoutes = ({
             referral: {
                 id: 'referral',
                 text: c('Title').t`Refer a friend`,
-                title: isReferralExpansionEnabled ? c('Title').t`Invite friends. Get credits.` : undefined,
+                title: c('Title').t`Invite friends. Get credits.`,
                 description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
-                icon: isReferralExpansionEnabled ? 'money-bills' : 'heart',
-                available: !!isReferralProgramEnabled,
+                icon: 'money-bills',
+                available: isReferralProgramEnabled,
                 subsections: [
                     {
                         id: 'referral-invite-section',

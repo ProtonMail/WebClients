@@ -20,8 +20,6 @@ import {
     mailProfessionalUpsell,
     passPlusUpsell,
     subscription,
-    subscriptionBundle,
-    trialMailPlusUpsell,
     unlimitedUpsell,
     vpnBusinessUpsell,
 } from '../__mocks__/data';
@@ -67,7 +65,6 @@ describe('resolveUpsellsToDisplay', () => {
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
             telemetryFlow: 'subscription',
-            isReferralExpansionEnabled: false,
         };
     });
 
@@ -91,94 +88,6 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.YEARLY,
-                disablePlanSelection: true,
-                plan: PLANS.BUNDLE,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: 'subscription',
-            });
-        });
-    });
-
-    describe('Free Trial', () => {
-        it('should return MailPlus + Unlimited (recommended) upsells if user has Mail Plus trial', () => {
-            const upsells = resolveUpsellsToDisplay({
-                ...base,
-                subscription: {
-                    ...base.subscription,
-                    IsTrial: true,
-                    PeriodEnd: 1718870501,
-                } as Subscription,
-            });
-
-            // .toMatchObject can't match functions, so we need to remove them
-            const trialMailPlusUpsellWithoutAction = {
-                ...trialMailPlusUpsell,
-                otherCtas: trialMailPlusUpsell.otherCtas.map(({ action, ...rest }) => rest),
-            };
-
-            expect(upsells).toMatchObject([
-                trialMailPlusUpsellWithoutAction,
-                { ...unlimitedUpsell, isRecommended: true },
-            ]);
-
-            upsells[0].onUpgrade();
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                disablePlanSelection: true,
-                plan: PLANS.MAIL,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: 'subscription',
-            });
-
-            upsells[1].onUpgrade();
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
-            expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: CYCLE.YEARLY,
-                disablePlanSelection: true,
-                plan: PLANS.BUNDLE,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: 'subscription',
-            });
-        });
-
-        it('should return Unlimited (recommended) upsell if user has Unlimited trial', () => {
-            const upsells = resolveUpsellsToDisplay({
-                ...base,
-                subscription: {
-                    ...subscriptionBundle,
-                    IsTrial: true,
-                    PeriodEnd: 1718870501,
-                } as Subscription,
-            });
-
-            const unlimitedUpsellWithoutAction = {
-                ...unlimitedUpsell,
-                title: 'Proton Unlimited Trial',
-                otherCtas: [
-                    {
-                        action: expect.any(Function),
-                        label: 'Explore all Proton plans',
-                        shape: 'ghost',
-                        color: 'norm',
-                    },
-                ],
-            };
-
-            expect(upsells).toMatchObject([unlimitedUpsellWithoutAction]);
-
-            upsells[0].onUpgrade();
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,

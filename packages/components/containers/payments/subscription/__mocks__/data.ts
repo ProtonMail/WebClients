@@ -9,8 +9,6 @@ import type {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import type { UpsellCta } from '../helpers';
-
 export const mailPlusUpsell = {
     plan: PLANS.MAIL,
     planKey: PLANS.MAIL,
@@ -61,22 +59,6 @@ export const mailPlusUpsell = {
         value: 399,
         currency: 'EUR',
     },
-};
-
-export const trialMailPlusUpsell = {
-    ...mailPlusUpsell,
-    title: 'Mail Plus Trial',
-    otherCtas: [
-        {
-            label: 'Explore all Proton plans',
-            action: () => {},
-            color: 'norm',
-            shape: 'ghost',
-        },
-    ] as UpsellCta[],
-    isTrialEnding: true,
-    hasVPN: false,
-    hasPaidMail: false,
 };
 
 export const unlimitedUpsell = {

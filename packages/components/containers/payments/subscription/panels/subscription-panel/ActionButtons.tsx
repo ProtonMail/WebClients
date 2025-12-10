@@ -15,7 +15,6 @@ import {
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -31,7 +30,6 @@ export const ActionButtons = ({
 }) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     /**
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
@@ -67,8 +65,7 @@ export const ActionButtons = ({
 
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
 
-    const showStartSubscription =
-        isTrial(subscription) && !isAutoRenewTrial(subscription) && isReferralExpansionEnabled;
+    const showStartSubscription = isTrial(subscription) && !isAutoRenewTrial(subscription);
 
     const showEditBillingDetails =
         user.isPaid &&

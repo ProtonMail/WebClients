@@ -37,7 +37,6 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
@@ -89,7 +88,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     const space = getSpace(user);
 
@@ -107,7 +105,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     }
 
     // Hide this panel for legacy trial case, but not for B2B trials
-    if (subscription && isTrial(subscription) && !isB2BTrial && !isReferralExpansionEnabled) {
+    if (subscription && isTrial(subscription) && !isB2BTrial) {
         return null;
     }
 
