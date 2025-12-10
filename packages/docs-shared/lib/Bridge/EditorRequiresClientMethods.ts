@@ -47,6 +47,9 @@ export type FileMenuAction =
   | {
       type: 'open-proton-drive'
     }
+  | {
+      type: 'toggle-debug-mode'
+    }
 export const FileMenuActionEvent = 'FileMenuAction' as const
 
 export interface EditorRequiresClientMethods {
