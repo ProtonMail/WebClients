@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -22,12 +22,16 @@ interface FileCardProps {
 }
 
 const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): string | null => {
+    console.log('createPreviewUrl: imagePreview = ', imagePreview);
     if (!imagePreview || !(imagePreview instanceof Uint8Array)) {
         return null;
     }
     try {
         const blob = new Blob([imagePreview], { type: 'image/jpg' });
-        return URL.createObjectURL(blob);
+        console.log('createPreviewUrl: output blob = ', blob);
+        const url = URL.createObjectURL(blob);
+        console.log('createPreviewUrl: created object url = ', url);
+        return url;
     } catch (e) {
         console.error('Failed to create preview URL:', e);
         return null;
@@ -36,21 +40,23 @@ const createPreviewUrl = (imagePreview: Uint8Array<ArrayBuffer> | undefined): st
 
 export const FileCard = ({ attachment, onRemove, onView, className, readonly = false }: FileCardProps) => {
     const { error, processing, filename, errorMessage, imagePreview } = attachment;
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const mimeTypeIcon = attachment.mimeType ?? 'unknown';
     const prettyType = mimeToHuman(attachment);
     const hasError = error;
 
-    // Convert imagePreview to URL for display
-    const previewUrl = useMemo(() => createPreviewUrl(imagePreview), [imagePreview, attachment.mimeType]);
-
     // Cleanup blob URL on unmount or when it changes
     useEffect(() => {
+        const url = createPreviewUrl(imagePreview);
+        setPreviewUrl(url);
         return () => {
-            if (previewUrl) {
-                URL.revokeObjectURL(previewUrl);
+            if (url) {
+                console.log('revoking object url = ', url);
+                URL.revokeObjectURL(url);
             }
+            setPreviewUrl(null);
         };
-    }, [previewUrl]);
+    }, [imagePreview]);
 
     // const hasContent = attachment.markdown && attachment.markdown.trim() !== '';
 
@@ -113,7 +119,10 @@ export const FileCard = ({ attachment, onRemove, onView, className, readonly = f
 
             <div className="flex flex-row flex-nowrap gap-2 items-start">
                 {processing ? (
-                    <div className="mr-1 flex items-center justify-center" style={{ width: '2.5rem', height: '2.5rem' }}>
+                    <div
+                        className="mr-1 flex items-center justify-center"
+                        style={{ width: '2.5rem', height: '2.5rem' }}
+                    >
                         <CircularProgress progress={75} size={20} />
                     </div>
                 ) : previewUrl ? (
