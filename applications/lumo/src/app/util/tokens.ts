@@ -28,6 +28,9 @@ export function convertRefTokensToSpans(content: string) {
         return numbersToMarkdownLinks(numbersStr);
     });
 
+    // Remove any remaining complete bold square brackets (catch-all for non-REF/non-dagger patterns)
+    content = content.replaceAll(/【[^】]*?】/g, '');
+
     // Clean up any incomplete/malformed REF tags (including CJK brackets)
     content = content.replaceAll(/[\[【](R(E(F([\]】]([^[\[【]*([\[【](\/(R(E(F([\]】])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
 
@@ -36,6 +39,10 @@ export function convertRefTokensToSpans(content: string) {
         /<(S(P(E(C(I(A(L(_(2(7(>([^<]*(<(S(P(E(C(I(A(L(_(2(8(>)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?$/gi,
         ''
     );
+
+    // Remove any incomplete bold square brackets at the end
+    content = content.replaceAll(/【[^】]*$/g, '');
+
     return content;
 }
 
@@ -50,6 +57,9 @@ export function removeRefTokens(content: string) {
     // Remove complete SPECIAL tags
     content = content.replaceAll(/<SPECIAL_27>[^<]*<SPECIAL_28>/gi, '');
 
+    // Remove any remaining complete bold square brackets (catch-all for non-REF/non-dagger patterns)
+    content = content.replaceAll(/【[^】]*?】/g, '');
+
     // Remove incomplete REF tags (including CJK brackets)
     content = content.replaceAll(/[\[【](R(E(F([\]】]([^[\[【]*([\[【](\/(R(E(F([\]】])?)?)?)?)?)?)?)?)?)?)?$/gi, '');
 
@@ -58,6 +68,9 @@ export function removeRefTokens(content: string) {
         /<(S(P(E(C(I(A(L(_(2(7(>([^<]*(<(S(P(E(C(I(A(L(_(2(8(>)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?$/gi,
         ''
     );
+
+    // Remove any incomplete bold square brackets at the end
+    content = content.replaceAll(/【[^】]*$/g, '');
 
     return content;
 }
