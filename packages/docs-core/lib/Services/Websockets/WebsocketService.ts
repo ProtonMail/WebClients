@@ -77,6 +77,9 @@ export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
   readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
 
+  readonly knownUpdateUUIDs: Set<string> = new Set()
+  private knownUpdatesSkipped = 0
+
   documentType: DocumentType = 'doc'
   setDocumentType(type: DocumentType): void {
     this.documentType = type
@@ -380,6 +383,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     instead of the message wrapper  */
     const size = documentUpdate.serializeBinary().byteLength
     this.sizeTracker.incrementSize(size)
+    this.knownUpdateUUIDs.add(uuid)
 
     const message = CreateDocumentUpdateMessage(documentUpdate)
 
@@ -690,6 +694,15 @@ export class WebsocketService implements WebsocketServiceInterface {
         this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }
 
+      const updateSize = update.serializeBinary().byteLength
+      if (this.knownUpdateUUIDs.has(update.uuid)) {
+        this.knownUpdatesSkipped += 1
+        this.logger.info(
+          `Skipping duplicate update of size ${updateSize} bytes. Total updates skipped: ${this.knownUpdatesSkipped}`,
+        )
+        continue
+      }
+
       const content = update.encryptedContent as Uint8Array<ArrayBuffer>
       if (isDocumentUpdateChunk(content)) {
         await processDocumentUpdateChunk(content, {
@@ -709,7 +722,8 @@ export class WebsocketService implements WebsocketServiceInterface {
         await this.decryptAndPublishDocumentUpdate(update, keys, document)
       }
 
-      this.sizeTracker.incrementSize(update.serializeBinary().byteLength)
+      this.knownUpdateUUIDs.add(update.uuid)
+      this.sizeTracker.incrementSize(updateSize)
     }
   }
 
