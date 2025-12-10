@@ -1,8 +1,10 @@
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
+import type { ApiError } from '../../fetch/ApiError';
 import { getUIDHeaderValue, getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
 import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
+import type { HumanVerificationMethodType } from '../../interfaces';
 import { setRefreshCookies } from '../auth';
 import { getApiError, getApiErrorMessage } from './apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from './errors';
@@ -12,7 +14,17 @@ import { retryHandler } from './retryHandler';
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  */
-export function withApiHandlers({ call, onMissingScopes, onVerification, onUserRestricted }) {
+export function withApiHandlers({
+    call,
+    onMissingScopes,
+    onVerification,
+    onUserRestricted,
+}: {
+    call: any;
+    onMissingScopes: (data: any) => Promise<any>;
+    onVerification: (data: any) => Promise<any>;
+    onUserRestricted: (data: any) => Promise<any>;
+}) {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -20,10 +32,10 @@ export function withApiHandlers({ call, onMissingScopes, onVerification, onUserR
         return refresh(() => call(withUIDHeaders(UID, setRefreshCookies())), 1, RETRY_ATTEMPTS_MAX);
     });
 
-    let UID;
+    let UID: string | undefined;
 
-    const cb = (options) => {
-        const perform = (attempts, maxAttempts) => {
+    const cb = (options: any) => {
+        const perform = (attempts: number, maxAttempts?: number) => {
             if (loggedOut) {
                 return Promise.reject(InactiveSessionError());
             }
@@ -31,7 +43,7 @@ export function withApiHandlers({ call, onMissingScopes, onVerification, onUserR
                 return Promise.reject(AppVersionBadError());
             }
 
-            return call(options).catch((e) => {
+            return call(options).catch((e: ApiError) => {
                 if (loggedOut) {
                     throw InactiveSessionError();
                 }
@@ -40,7 +52,7 @@ export function withApiHandlers({ call, onMissingScopes, onVerification, onUserR
                     throw e;
                 }
 
-                const { status, name, response } = e;
+                const { status, name, response } = e as ApiError;
 
                 const {
                     ignoreHandler,
@@ -132,7 +144,7 @@ export function withApiHandlers({ call, onMissingScopes, onVerification, onUserR
                         } = {},
                     } = e.data || {};
 
-                    const onVerify = (token, tokenType) => {
+                    const onVerify = (token: string, tokenType: HumanVerificationMethodType) => {
                         return call({
                             ...options,
                             silence:
@@ -159,7 +171,7 @@ export function withApiHandlers({ call, onMissingScopes, onVerification, onUserR
                     const errorMessage = getApiErrorMessage(e);
                     return onUserRestricted({
                         error: e,
-                        message: errorMessage,
+                        message: errorMessage || '',
                     });
                 }
 

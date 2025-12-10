@@ -9,6 +9,7 @@ const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
                 // If the key already contains [], do not add it a second time or the request would be malformed
                 if (key.endsWith('[]')) {
                     if (process.env.NODE_ENV !== 'production') {
+                        // eslint-disable-next-line no-console
                         console.warn(`Warning: Key "${key}" ends with "[]". Please use "${key.slice(0, -2)}" instead.`);
                     }
                     url.searchParams.append(key, item);
@@ -33,7 +34,7 @@ export const createUrl = (urlString: string, params: { [key: string]: any } = {}
     return url;
 };
 
-export const getDateHeader = (headers: Headers) => {
+export const getDateHeader = (headers?: Headers) => {
     const dateHeader = headers?.get?.('date');
     if (!dateHeader) {
         return;
