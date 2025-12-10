@@ -185,6 +185,14 @@ describe('WebsocketService', () => {
       expect(service.sizeTracker.incrementSize).toHaveBeenCalled()
     })
 
+    it('should track known update UUIDs', async () => {
+      const knownUpdatesSize = service.knownUpdateUUIDs.size
+
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
+
+      expect(service.knownUpdateUUIDs.size).toBeGreaterThan(knownUpdatesSize)
+    })
+
     it('should add message to ack ledger', async () => {
       service.ledger.messagePosted = jest.fn()
 
@@ -424,6 +432,41 @@ describe('WebsocketService', () => {
       expect(service.sizeTracker.incrementSize).toHaveBeenCalledWith(new Uint8Array().byteLength)
 
       expect(switchToRealtimeMode).not.toHaveBeenCalled()
+    })
+
+    it('should not process updates with known UUIDs', async () => {
+      const decryptAndPublishDocumentUpdate = jest.spyOn(service, 'decryptAndPublishDocumentUpdate')
+
+      await service.handleIncomingDocumentUpdatesMessage(record, {
+        updates: {
+          documentUpdates: [
+            {
+              encryptedContent: new Uint8Array(),
+              authorAddress: 'foo',
+              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              uuid: 'foo',
+            },
+          ],
+        },
+      } as unknown as ServerMessageWithDocumentUpdates)
+
+      expect(service.knownUpdateUUIDs.has('foo')).toBe(true)
+
+      await service.handleIncomingDocumentUpdatesMessage(record, {
+        updates: {
+          documentUpdates: [
+            {
+              encryptedContent: new Uint8Array(),
+              authorAddress: 'foo',
+              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              uuid: 'foo',
+            },
+          ],
+        },
+      } as unknown as ServerMessageWithDocumentUpdates)
+
+      expect(service.sizeTracker.incrementSize).toHaveBeenCalledTimes(1)
+      expect(decryptAndPublishDocumentUpdate).toHaveBeenCalledTimes(1)
     })
   })
 
