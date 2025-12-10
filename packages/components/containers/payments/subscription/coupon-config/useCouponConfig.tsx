@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { getPlanNameFromIDs } from '@proton/payments/index';
+import { getPlanNameFromIDs } from '@proton/payments';
 
 import { anniversary11Config } from './anniverary11';
 import { bf2025Config } from './bf2025';
