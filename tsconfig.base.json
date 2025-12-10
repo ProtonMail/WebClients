@@ -67,6 +67,6 @@
             "proton-authenticator/*": ["./applications/authenticator/src/*"]
         }
     },
-    "include": ["${configDir}/"],
+    "include": ["${configDir}"],
     "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/"]
 }
