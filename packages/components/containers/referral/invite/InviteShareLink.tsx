@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 import throttle from '@proton/utils/throttle';
 
 import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
+import ReferralShareLinks from './inviteActions/ReferralShareLinks';
 
 const InviteShareLink = ({ className }: { className?: string }) => {
     const [userSettings] = useUserSettings();
@@ -54,6 +55,8 @@ const InviteShareLink = ({ className }: { className?: string }) => {
                     </Button>
                 </div>
             </div>
+
+            <ReferralShareLinks referralLink={referrerLink} />
 
             <ReferralSignatureToggle />
         </div>
