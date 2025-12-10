@@ -11,6 +11,7 @@ import { Icon, useModalStateObject } from '@proton/components';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
+import { isWebSearchToolResultData } from '../../../../../lib/toolCall/types';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
@@ -181,8 +182,14 @@ const AssistantMessage = ({
     const retryButtonRef = useRef<HTMLButtonElement>(null);
     const messageContent = preprocessContent(message?.content);
 
-    const { query, results } = useToolCallInfo(message.toolCall, message.toolResult);
-    const hasToolCall = !!query;
+    const { toolCall, toolResult } = useToolCallInfo(message.toolCall, message.toolResult);
+    const hasToolCall = toolCall !== null;
+
+    // Extract search results if this is a web_search tool
+    const searchResults =
+        toolCall?.name === 'web_search' && toolResult && isWebSearchToolResultData(toolResult)
+            ? toolResult.results
+            : null;
 
     const handleLinkClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -220,6 +227,13 @@ const AssistantMessage = ({
                         ref={markdownContainerRef}
                         className="markdown-rendering w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
                     >
+                        <div className="border-2 border-black bg-white">
+                            <p>DEBUG INFO</p>
+                            <p>isLoading: {JSON.stringify(isLoading)}</p>
+                            <p>hasToolCall: {JSON.stringify(hasToolCall)}</p>
+                            <p>toolCall: {JSON.stringify(toolCall)}</p>
+                            <p>searchResults: {JSON.stringify(searchResults)}</p>
+                        </div>
                         {
                             // eslint-disable-next-line no-nested-ternary
                             isLoading ? (
@@ -239,7 +253,7 @@ const AssistantMessage = ({
                                                 content={messageContent}
                                                 isStreaming={isGenerating && isLastMessage}
                                                 handleLinkClick={handleLinkClick}
-                                                toolCallResults={results}
+                                                toolCallResults={searchResults}
                                                 sourcesContainerRef={sourcesContainerRef}
                                             />
                                         </div>
@@ -254,7 +268,7 @@ const AssistantMessage = ({
                                         handleRegenerate={handleRegenerate}
                                         siblingInfo={siblingInfo}
                                         generationFailed={generationFailed}
-                                        results={results}
+                                        results={searchResults}
                                         onToggleMessageSource={onToggleMessageSource}
                                         messageChain={messageChain}
                                         onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
@@ -315,10 +329,12 @@ function preprocessContent(content: string | undefined): string {
 export default memo(AssistantMessage, (prevProps, nextProps) => {
     // Only re-render if message content or streaming state changed
     const contentEqual = prevProps.message.content === nextProps.message.content;
+    const toolCallEqual = prevProps.message.toolCall === nextProps.message.toolCall;
+    const toolResultEqual = prevProps.message.toolResult === nextProps.message.toolResult;
     const statusEqual = prevProps.message.status === nextProps.message.status;
     const streamingEqual = prevProps.isGenerating === nextProps.isGenerating;
     const lastMessageEqual = prevProps.isLastMessage === nextProps.isLastMessage;
 
     // Don't re-render if nothing meaningful changed
-    return contentEqual && statusEqual && streamingEqual && lastMessageEqual;
+    return contentEqual && toolCallEqual && toolResultEqual && statusEqual && streamingEqual && lastMessageEqual;
 });
