@@ -56,6 +56,7 @@ import {
     getHasPassB2BPlan,
     hasDuo,
     hasPassBusiness,
+    hasVPNPassProfessional,
     hasVisionary,
 } from '@proton/payments';
 import { baseUseSelector } from '@proton/react-redux-store';
@@ -151,7 +152,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
     const useEmail = hasExternalMemberCapableB2BPlan;
     const allowStorageConfiguration =
-        !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
+        !hasExternalMemberCapableB2BPlan ||
+        hasDriveB2BPlan ||
+        hasPassBusiness(subscription) ||
+        hasVPNPassProfessional(subscription);
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     // Allow to display a toggle in the UI
@@ -171,7 +175,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
-    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
+    const showFeaturesColumn =
+        !hasExternalMemberCapableB2BPlan ||
+        hasDriveB2BPlan ||
+        hasPassBusiness(subscription) ||
+        hasVPNPassProfessional(subscription);
 
     const { MaxAI = 0, UsedAI = 0, MaxLumo = 0, UsedLumo = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;

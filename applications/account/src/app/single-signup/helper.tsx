@@ -1,13 +1,18 @@
 import { c } from 'ttag';
 
 import { VpnLogo } from '@proton/components';
-import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
+import { getVPNPassProPlan, getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
 import { CYCLE, PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
-    if (plan && plan.Name === PLANS.VPN2024) {
+    if (!plan) {
+        return undefined;
+    }
+
+    // Handle specific plans that need custom features or formatting
+    if (plan.Name === PLANS.VPN2024) {
         const vpnPlan = getVPNPlan(plan, vpnServersCountData);
         return {
             logo: <VpnLogo variant="with-wordmark" />,
@@ -15,6 +20,25 @@ export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: 
             features: [...vpnPlan.features, getFreeFeatures(), getAllPlatforms(), getRefundable()],
         };
     }
+
+    if (plan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
+        const vpnPassProPlan = getVPNPassProPlan(plan, vpnServersCountData);
+        return {
+            ...vpnPassProPlan,
+            features: [...(vpnPassProPlan.features || []), getFreeFeatures(), getAllPlatforms(), getRefundable()],
+        };
+    }
+
+    // For any other plan, return basic info with the plan's title
+    // This provides a fallback for plans like VPN_BUSINESS, VPN_PRO, etc.
+    return {
+        plan: plan.Name,
+        title: plan.Title,
+        label: '',
+        description: '',
+        cta: '',
+        features: [getFreeFeatures(), getAllPlatforms(), getRefundable()],
+    };
 };
 
 export const getOffText = (discount: string, billingCycle: string) => {

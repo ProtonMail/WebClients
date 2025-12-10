@@ -13,6 +13,7 @@ import {
     hasBundlePro2024,
     hasVisionary,
     hasVpnBusiness,
+    hasVPNPassProfessional,
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments';
@@ -89,7 +90,9 @@ export const getOrganizationAppRoutes = ({
     const canShowB2BActivityMonitorEvents = isOrgConfigured && isAdmin;
 
     //vpnbiz2023, and all business bundle plans have the Connection Events feature
-    const hasPlanWithEventLogging = hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription);
+    const hasPlanWithEventLogging = hasVpnBusiness(subscription)
+        || hasAnyB2bBundle(subscription)
+        || hasVPNPassProfessional(subscription);
     const canShowB2BConnectionEvents =
         canDisplayB2BLogsVPN &&
         hasPlanWithEventLogging &&

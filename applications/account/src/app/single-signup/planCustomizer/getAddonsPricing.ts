@@ -1,10 +1,11 @@
-import type { ADDON_NAMES, PlanIDs } from '@proton/payments';
 import {
+    type ADDON_NAMES,
     ADDON_PREFIXES,
     AddonFeatureLimitKeyMapping,
     AddonLimit,
     type Cycle,
     type Plan,
+    type PlanIDs,
     getAddonMultiplier,
     getPlanFeatureLimit,
     getSupportedAddons,

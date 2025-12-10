@@ -1,6 +1,8 @@
 import { getIsVPNPassPromotion } from '@proton/components/containers/payments/subscription/helpers';
-import type { PLANS } from '@proton/payments';
-import { CYCLE, type Currency } from '@proton/payments';
+import type { PLANS, Plan } from '@proton/payments';
+import { CYCLE, type Currency, FREE_PLAN } from '@proton/payments';
+
+import type { CycleData } from './interface';
 
 export const getCycleData = ({ coupon, currency }: { plan: PLANS; coupon?: string; currency: Currency }) => {
     if (getIsVPNPassPromotion(coupon, currency)) {
@@ -13,5 +15,26 @@ export const getCycleData = ({ coupon, currency }: { plan: PLANS; coupon?: strin
     return {
         upsellCycle: CYCLE.TWO_YEARS,
         cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+    };
+};
+
+export const filterCycleDataByPlan = (cycleData: CycleData, plan: Plan): CycleData => {
+    if (plan.Name === FREE_PLAN.Name) {
+        return cycleData;
+    }
+
+    const supportedCycles = cycleData.cycles.filter((cycle) => plan.Pricing && plan.Pricing[cycle] !== undefined);
+
+    if (supportedCycles.length === 0) {
+        return cycleData;
+    }
+
+    const upsellCycle = supportedCycles.includes(cycleData.upsellCycle)
+        ? cycleData.upsellCycle
+        : Math.max(...supportedCycles);
+
+    return {
+        cycles: supportedCycles,
+        upsellCycle,
     };
 };

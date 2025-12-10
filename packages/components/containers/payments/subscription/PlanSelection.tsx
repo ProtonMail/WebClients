@@ -38,6 +38,7 @@ import {
     getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
     getIsB2BAudienceFromPlan,
+    getIsB2BAudienceFromSubscription,
     isFreeSubscription as getIsFreeSubscription,
     getMaximumCycleForApp,
     getPlan,
@@ -319,12 +320,13 @@ export function useAccessiblePlans({
     ]);
 
     // after the release of vpnpassbiz2025, please remove this check, assuming that this condition will always be true.
-    const hasVpnPassBiz2025Plan = !!plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS];
+    const shouldShowVpnPassBiz2025Plan =
+        !!plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] && getIsB2BAudienceFromSubscription(subscription);
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
     const passB2BPlans = filterPlans([
-        hasVpnPassBiz2025Plan ? null : plansMap[PLANS.PASS_PRO],
+        shouldShowVpnPassBiz2025Plan ? null : plansMap[PLANS.PASS_PRO],
         plansMap[PLANS.PASS_BUSINESS],
-        hasVpnPassBiz2025Plan ? plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] : null,
+        shouldShowVpnPassBiz2025Plan ? plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] : null,
         plansMap[bundleProPlan],
     ]);
 

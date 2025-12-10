@@ -119,12 +119,12 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
         return acc;
     }, {});
 
-    // VPN Business plan includes 1 IP by default. Each addons adds +1 IP.
-    // So if users has business plan but doesn't have IP addons, then they still must have 1 IP for price
+    // VPN Business plan includes 1 IP by default. Each addon adds +1 IP.
+    // So if user has business plan but doesn't have IP addons, then they still must have 1 IP for price
     // calculation purposes.
     if (plan?.Name === PLANS.VPN_BUSINESS) {
         const addon = addonsMap[ADDON_NAMES.IP_VPN_BUSINESS];
-
+        
         if (addon) {
             addon.quantity += 1;
         } else {
