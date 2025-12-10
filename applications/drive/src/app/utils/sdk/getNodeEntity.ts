@@ -1,10 +1,15 @@
-import type { InvalidNameError, MaybeNode, NodeEntity } from '@proton/drive/index';
+import type { InvalidNameError, MaybeNode, NodeEntity, PhotoAttributes, PhotoNode } from '@proton/drive/index';
 
 import { getNodeName } from './getNodeName';
 
 export type GetNodeEntityType = {
     node: NodeEntity;
     errors: Map<'name' | 'activeRevision' | 'unhandledError', Error | InvalidNameError>;
+    photoAttributes?: PhotoAttributes;
+};
+
+export const isPhotoNode = (node: NodeEntity): node is PhotoNode => {
+    return 'photo' in node;
 };
 
 export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
@@ -33,5 +38,6 @@ export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
     return {
         node,
         errors,
+        photoAttributes: isPhotoNode(node) ? node.photo : undefined,
     };
 };
