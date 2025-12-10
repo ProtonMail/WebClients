@@ -183,7 +183,6 @@ const MainContainer = () => {
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isMeetAvailable = useFlag('PMVC2025');
@@ -263,7 +262,6 @@ const MainContainer = () => {
         isSharedServerFeatureEnabled,
         isCryptoPostQuantumOptInEnabled,
         isB2BTrial,
-        isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
         isSsoForPbsEnabled,
         referralInfo: referralInfo.uiData,

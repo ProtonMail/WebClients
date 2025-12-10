@@ -27,7 +27,6 @@ import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payment
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
@@ -117,10 +116,9 @@ const PlanNameSection = ({
     subscription: Subscription;
     maxMembers: number;
 }) => {
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
-    const billingCycleElement = subscription.Cycle && !(isReferralExpansionEnabled && isTrial(subscription)) && (
+    const billingCycleElement = subscription.Cycle && !isTrial(subscription) && (
         <>
             <span className="color-weak mx-1">·</span>
             <span className="color-weak">{getBillingCycleText(subscription.Cycle)}</span>

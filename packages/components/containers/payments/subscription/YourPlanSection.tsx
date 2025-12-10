@@ -26,7 +26,6 @@ import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
@@ -56,7 +55,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     useLoad();
 
     const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
@@ -69,7 +67,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
         canAccessDuoPlan,
         user,
         telemetryFlow,
-        isReferralExpansionEnabled,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
@@ -91,11 +88,9 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const planCanShowUsage = !getHasVpnB2BPlan(subscription) || hasVPNPassProfessional(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
-    const shouldRenderSubscription =
-        user.canPay || (subscription && !isTrial(subscription) && !isReferralExpansionEnabled);
+    const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
     const shouldRenderPendingInvitation = !!invites.length;
     const shouldRenderTrialInfo =
-        isReferralExpansionEnabled &&
         isReferralTrial(subscription) &&
         ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet

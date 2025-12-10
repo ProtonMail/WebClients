@@ -1,14 +1,6 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 
-import type { Subscription } from '@proton/payments';
-
-import {
-    familyUpsell,
-    subscription,
-    subscriptionBundle,
-    trialMailPlusUpsell,
-    unlimitedUpsell,
-} from '../__mocks__/data';
+import { familyUpsell, subscription, unlimitedUpsell } from '../__mocks__/data';
 import type { Upsell } from '../helpers';
 import UpsellPanels from './UpsellPanels';
 
@@ -57,53 +49,5 @@ describe('UpsellPanel', () => {
         expect(within(familyUpsellPanel).getByText('90 email addresses/aliases'));
         expect(within(familyUpsellPanel).getByText('10 high-speed VPN connections'));
         expect(within(familyUpsellPanel).getByText('Proton Pass with unlimited hide-my-email aliases'));
-    });
-
-    it('should display warning for trial period end', () => {
-        render(
-            <UpsellPanels
-                subscription={
-                    {
-                        ...subscription,
-                        IsTrial: true,
-                        PeriodEnd: 1718870501,
-                    } as Subscription
-                }
-                upsells={[{ ...trialMailPlusUpsell, onUpgrade: jest.fn() } as unknown as Upsell]}
-            />
-        );
-
-        expect(screen.getByTestId('period-end')).toHaveTextContent('June 20th, 2024');
-    });
-
-    it.each([
-        {
-            subscription,
-            trialPlanName: 'Proton Mail',
-        },
-        {
-            subscription: subscriptionBundle,
-            trialPlanName: 'Proton Unlimited',
-        },
-    ])('should display trial info for the correct plan - $trialPlanName', ({ subscription, trialPlanName }) => {
-        render(
-            <UpsellPanels
-                subscription={
-                    {
-                        ...subscription,
-                        IsTrial: true,
-                        PeriodEnd: 1718870501,
-                    } as Subscription
-                }
-                upsells={[{ ...trialMailPlusUpsell, onUpgrade: jest.fn() } as unknown as Upsell]}
-            />
-        );
-
-        const expectedText = new RegExp(
-            `To continue to use ${trialPlanName} with premium features, choose your subscription and payment options.`,
-            'i'
-        );
-
-        expect(screen.getByText(expectedText)).toBeInTheDocument();
     });
 });
