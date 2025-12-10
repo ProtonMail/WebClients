@@ -1,6 +1,7 @@
 import { getMeetView } from "../view/viewManagement";
 import Store from "electron-store";
 import { FeatureFlag } from "./flags";
+import { isValidFlagString } from "./isValidFlagString";
 
 const cacheFilename = "ff_cache";
 const cacheFieldName = "featureFlags";
@@ -95,6 +96,16 @@ class FeatureFlagManager {
 
         try {
             if (typeof flags === "string") {
+                // Validate string length to prevent DoS attacks
+                if (flags.length === 0 || flags.length > 100000) {
+                    return;
+                }
+
+                // Validate string to prevent prototype pollution attacks
+                if (!isValidFlagString(flags)) {
+                    return;
+                }
+
                 flags = JSON.parse(flags);
             }
         } catch (_) {
