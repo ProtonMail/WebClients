@@ -1,7 +1,5 @@
 import { useCallback } from 'react';
 
-import { c } from 'ttag';
-
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMeetErrorReporting } from '@proton/meet';
@@ -35,12 +33,10 @@ export const useMeetSrp = () => {
     const initHandshake = useCallback(
         async (token: string) => {
             try {
-                const response = await api<SRPHandshakeInfo>(queryInitMeetSRPHandshake(token));
-
-                return response;
+                return await api<SRPHandshakeInfo>(queryInitMeetSRPHandshake(token));
             } catch (error) {
                 reportMeetError('Error initializing handshake', error);
-                throw new Error(c('Error').t`Failed to initialize handshake`);
+                throw error;
             }
         },
         [api]
@@ -80,11 +76,10 @@ export const useMeetSrp = () => {
     const getMeetingInfo = useCallback(
         async (meetingLinkName: string) => {
             try {
-                const response = await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
-
-                return response;
+                return await api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
             } catch (error) {
-                throw new Error(c('Error').t`Failed to get meeting info`);
+                reportMeetError('Failed to get meeting info', error);
+                throw error;
             }
         },
         [api]
@@ -108,6 +103,7 @@ export const useMeetSrp = () => {
                 result.AccessToken = AccessToken;
                 result.WebsocketUrl = WebsocketUrl;
             } catch (error) {
+                // eslint-disable-next-line no-console
                 console.error(error);
                 throw error;
             }
