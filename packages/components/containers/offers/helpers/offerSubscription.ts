@@ -3,7 +3,6 @@ import {
     CYCLE,
     getHas2025OfferCoupon,
     getIsVariableCycleOffer,
-    hasAnniversary2025Coupon,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -171,14 +170,6 @@ class OfferSubscription {
         }
 
         return hasBundle(this.subscription);
-    }
-
-    hasAnniversary2025Coupon() {
-        if (this.upcomingSubscription) {
-            return hasAnniversary2025Coupon(this.upcomingSubscription) || hasAnniversary2025Coupon(this.subscription);
-        }
-
-        return hasAnniversary2025Coupon(this.subscription);
     }
 
     hasBF2025Coupon() {
