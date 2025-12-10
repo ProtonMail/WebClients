@@ -214,7 +214,7 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const { generateOTP } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const { isOpen, close } = useContextMenu();
+    const { close, state } = useContextMenu();
     const itemState = useItemState(item, share);
     const itemActions = useItemActions(item);
 
@@ -229,7 +229,7 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
         return copyBtns.concat(separator, actionBtns);
     }, [item, itemState, itemActions]);
 
-    const itemOpened = isOpen(getItemKey(item));
+    const itemOpened = state?.id === getItemKey(item);
     const autoClose = elements.length === 0 && itemOpened;
 
     useEffect(() => {
