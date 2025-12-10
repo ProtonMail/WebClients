@@ -4,7 +4,7 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ChevronRightIcon,
-  //   ClipboardIcon,
+  ClipboardIcon,
   CopyIcon,
   Cross1Icon,
   DotsVerticalIcon,
@@ -15,7 +15,7 @@ import {
   PaintBrush,
   PlusIcon,
   ReaderIcon,
-  //   ScissorsIcon,
+  ScissorsIcon,
   SizeIcon,
   SortDownIcon,
   SortUpIcon,
@@ -323,26 +323,25 @@ export function LegacyContextMenu({
         }}
         onMouseMove={(e) => e.stopPropagation()}
       >
-        {/* TODO: re-enable once fixed */}
-        {/* <DropdownMenuItem onClick={onCut} disabled={readonly}>
+        <DropdownMenuItem onClick={onCut} disabled={readonly}>
           <DropdownLeftSlot>
             <ScissorsIcon />
           </DropdownLeftSlot>
           Cut <DropdownRightSlot>⌘X</DropdownRightSlot>
-        </DropdownMenuItem> */}
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={onCopy}>
           <DropdownLeftSlot>
             <CopyIcon />
           </DropdownLeftSlot>
           {s('Copy')} <DropdownRightSlot>⌘C</DropdownRightSlot>
         </DropdownMenuItem>
-        {/* <DropdownMenuItem onClick={() => onPaste?.()} disabled={readonly}>
+        <DropdownMenuItem onClick={() => onPaste?.()} disabled={readonly}>
           <DropdownLeftSlot>
             <ClipboardIcon />
           </DropdownLeftSlot>
           Paste <DropdownRightSlot>⌘V</DropdownRightSlot>
         </DropdownMenuItem>
-
+        {/* 
         <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={readonly}>
             <DropdownLeftSlot>

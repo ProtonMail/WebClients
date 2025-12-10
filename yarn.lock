@@ -5602,7 +5602,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@modelcontextprotocol/sdk@npm:^1.24.3":
+"@modelcontextprotocol/sdk@npm:^1.2.0":
   version: 1.24.3
   resolution: "@modelcontextprotocol/sdk@npm:1.24.3"
   dependencies:
@@ -10799,7 +10799,7 @@ __metadata:
   resolution: "@rowsncolumns/ai@workspace:vendor/rowsncolumns/ai"
   dependencies:
     "@assistant-ui/react": "npm:^0.11.14"
-    "@modelcontextprotocol/sdk": "npm:^1.24.3"
+    "@modelcontextprotocol/sdk": "npm:^1.2.0"
     "@rowsncolumns/spreadsheet": "workspace:^"
     "@rowsncolumns/spreadsheet-state": "workspace:^"
     "@rowsncolumns/ui": "workspace:^"
