@@ -108,7 +108,7 @@ export function DocumentTitleDropdown({
       if (event.shiftKey) {
         setShowVersionNumber(true)
         if (event.ctrlKey) {
-          setShowDebugToggle(true)
+          setShowDebugToggle((prev) => !prev)
         }
       }
     }
@@ -116,10 +116,6 @@ export function DocumentTitleDropdown({
     const handleKeyUp = (event: KeyboardEvent) => {
       if (!event.shiftKey) {
         setShowVersionNumber(false)
-        setShowDebugToggle(false)
-      }
-      if (!event.ctrlKey) {
-        setShowDebugToggle(false)
       }
     }
 
@@ -237,6 +233,12 @@ export function DocumentTitleDropdown({
     }
   }, [])
 
+  useEffect(() => {
+    if (!isOpen) {
+      setShowDebugToggle(false)
+    }
+  }, [isOpen])
+
   const openProtonDrive = useCallback(
     (to = '/', target = '_blank') => {
       window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()), target)
@@ -347,6 +349,9 @@ export function DocumentTitleDropdown({
         case 'view-recent-spreadsheets':
           openRecentSpreadsheets()
           break
+        case 'toggle-debug-mode':
+          toggleDebugMode()
+          break
       }
     }, FileMenuActionEvent)
   }, [
@@ -362,6 +367,7 @@ export function DocumentTitleDropdown({
     openProtonDrive,
     editorController,
     openRecentSpreadsheets,
+    toggleDebugMode,
   ])
 
   const canRename = documentState.getProperty('userRole').canRename()
