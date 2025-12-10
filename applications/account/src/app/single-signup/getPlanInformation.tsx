@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { SkeletonLoader, VpnLogo } from '@proton/components';
+import { SkeletonLoader, VpnLogo, VpnPassLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
@@ -211,6 +211,34 @@ export const getPlanInformation = ({
                 },
                 {
                     text: c('new_plans: feature').t`Centralized settings and billings`,
+                    included: true,
+                },
+            ],
+        };
+    }
+    if (selectedPlan.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
+        return {
+            logo: <VpnPassLogo size={iconSize} />,
+            title: selectedPlan.Title,
+            features: [
+                {
+                    text: c('new_plans: feature').t`Advanced network security`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Dedicated servers and IP`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Secure password management`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`Activity logs and policy`,
+                    included: true,
+                },
+                {
+                    text: c('new_plans: feature').t`24/7 support`,
                     included: true,
                 },
             ],

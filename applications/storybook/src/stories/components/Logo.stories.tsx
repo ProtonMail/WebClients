@@ -10,6 +10,7 @@ import {
     ProtonLogo,
     RadioGroup,
     VpnLogo,
+    VpnPassLogo,
     WalletLogo,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
@@ -88,5 +89,6 @@ export const Individual = () => (
         <VpnLogo />
         <PassLogo />
         <WalletLogo />
+        <VpnPassLogo />
     </div>
 );

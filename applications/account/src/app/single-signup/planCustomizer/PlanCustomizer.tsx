@@ -146,7 +146,13 @@ const PlanCustomizer = ({
 
                 const buttonNumberInput = <ButtonNumberInput {...buttonProps} />;
 
-                if ([ADDON_NAMES.MEMBER_VPN_PRO, ADDON_NAMES.MEMBER_VPN_BUSINESS].includes(addon.Name as ADDON_NAMES)) {
+                if (
+                    [
+                        ADDON_NAMES.MEMBER_VPN_PRO,
+                        ADDON_NAMES.MEMBER_VPN_BUSINESS,
+                        ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS,
+                    ].includes(addon.Name as ADDON_NAMES)
+                ) {
                     return (
                         <AddonField key={id} id={id} label={c('Info').t`Organization size`}>
                             {buttonNumberInput}
@@ -154,7 +160,7 @@ const PlanCustomizer = ({
                     );
                 }
 
-                if (addon.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+                if (getAddonType(addon.Name) === ADDON_PREFIXES.IP) {
                     return (
                         <div>
                             <AddonField
@@ -166,13 +172,15 @@ const PlanCustomizer = ({
                             >
                                 {buttonNumberInput}
                             </AddonField>
-                            <div className="mt-2 p-3 color-weak bg-weak rounded flex flex-nowrap">
-                                <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
-                                <span>
-                                    {c('Info')
-                                        .t`We recommend having at least 2 servers in order to provide redundancy.`}
-                                </span>
-                            </div>
+                            {!isTrialMode && (
+                                <div className="mt-2 p-3 color-weak bg-weak rounded flex flex-nowrap">
+                                    <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
+                                    <span>
+                                        {c('Info')
+                                            .t`We recommend having at least 2 servers in order to provide redundancy.`}
+                                    </span>
+                                </div>
+                            )}
                         </div>
                     );
                 }

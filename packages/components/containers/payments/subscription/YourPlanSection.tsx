@@ -21,6 +21,7 @@ import {
     isAutoRenewTrial,
     isTrial,
 } from '@proton/payments';
+import { hasVPNPassProfessional, isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -35,7 +36,6 @@ import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 
 import './YourPlanSection.scss';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 
 interface Props {
     app: APP_NAMES;
@@ -87,7 +87,8 @@ const YourPlanSectionInner = ({ app }: Props) => {
         return <Loader />;
     }
 
-    const isVpnB2b = getHasVpnB2BPlan(subscription);
+    // Usage panel is displayed for members of B2B plans including VPN+Pass B2B but excluding VPN B2B
+    const planCanShowUsage = !getHasVpnB2BPlan(subscription) || hasVPNPassProfessional(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
     const shouldRenderSubscription =
@@ -100,9 +101,8 @@ const YourPlanSectionInner = ({ app }: Props) => {
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =
         !isWalletEA && shouldRenderSubscription && !hasLumo(subscription) && !shouldRenderTrialInfo;
-    // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
-        (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
+        (organization?.UsedMembers || 0) > 1 && planCanShowUsage && organization?.State === ORGANIZATION_STATE.ACTIVE;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
     // But since 3 panels don't fit in this section (or are too tightly packed),
