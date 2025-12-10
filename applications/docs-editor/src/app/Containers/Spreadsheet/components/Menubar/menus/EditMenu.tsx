@@ -23,7 +23,7 @@ export function EditMenu({ renderMenuButton, ...props }: EditMenuProps) {
         {/* TODO: re-enable once fixed */}
         {/* <Cut /> */}
         <Copy />
-        {/* <Paste /> */}
+        <Paste />
         {/* <PasteSpecialSubmenu /> */}
         <UI.MenuSeparator />
         <Find />
@@ -77,7 +77,6 @@ function Copy() {
   )
 }
 
-// @ts-expect-error Temporarily disabled.
 function Paste() {
   return (
     <UI.MenuItem
