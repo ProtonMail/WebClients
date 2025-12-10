@@ -29,16 +29,16 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 /** Get context menu copy function when value is not obfuscated */
-const getClear = (value: string): ContextMenuItemCopy => (value === '' ? undefined : () => value);
+const fromPlainTextValue = (value: string): ContextMenuItemCopy => (value === '' ? undefined : () => value);
 
 /** Get context menu copy function when value is obfuscated */
-const getObfuscate = (value: ObfuscatedItemProperty) =>
+const fromObfuscatedValue = (value: ObfuscatedItemProperty) =>
     deobfuscate(value) === '' ? undefined : () => deobfuscate(value);
 
 type GetTotp = (value: ObfuscatedItemProperty) => ContextMenuItemCopy;
 
 /** Get context menu copy function for totp token */
-const getTotpFactory =
+const fromOTPValue =
     (
         generateOTP: PassCoreContextValue['generateOTP'],
         createNotification: (options: CreateNotificationOptions) => number
@@ -56,10 +56,10 @@ const getTotpFactory =
               };
 
 /** Get context menu copy function when value is an expiration date */
-const getExpiration = (content: string) =>
+const fromExpirationValue = (content: string) =>
     content.length === 0 ? undefined : () => pipe(formatExpirationDateMMYY(content), expDateMask);
 
-const conditionalItem = (condition: boolean, item: ContextMenuItem): ContextMenuItem[] => (condition ? [item] : []);
+const withItemCondition = (condition: boolean, item: ContextMenuItem): ContextMenuItem[] => (condition ? [item] : []);
 
 /** Returns context menu items to copy item fields depending on item type */
 const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => {
@@ -70,19 +70,19 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
                     type: 'button',
                     icon: 'user',
                     name: c('Action').t`Copy username`,
-                    copy: getObfuscate(item.content.itemUsername),
+                    copy: fromObfuscatedValue(item.content.itemUsername),
                 },
                 {
                     type: 'button',
                     icon: 'envelope',
                     name: c('Action').t`Copy email`,
-                    copy: getObfuscate(item.content.itemEmail),
+                    copy: fromObfuscatedValue(item.content.itemEmail),
                 },
                 {
                     type: 'button',
                     icon: 'key',
                     name: c('Action').t`Copy password`,
-                    copy: getObfuscate(item.content.password),
+                    copy: fromObfuscatedValue(item.content.password),
                 },
                 {
                     type: 'button',
@@ -97,25 +97,25 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
                     type: 'button',
                     icon: 'user',
                     name: c('Action').t`Copy name on card`,
-                    copy: getClear(item.content.cardholderName),
+                    copy: fromPlainTextValue(item.content.cardholderName),
                 },
                 {
                     type: 'button',
                     icon: 'credit-card',
                     name: c('Action').t`Copy card number`,
-                    copy: getObfuscate(item.content.number),
+                    copy: fromObfuscatedValue(item.content.number),
                 },
                 {
                     type: 'button',
                     icon: 'calendar-today',
                     name: c('Action').t`Copy expiration date`,
-                    copy: getExpiration(item.content.expirationDate),
+                    copy: fromExpirationValue(item.content.expirationDate),
                 },
                 {
                     type: 'button',
                     icon: 'shield',
                     name: c('Action').t`Copy security code`,
-                    copy: getObfuscate(item.content.verificationNumber),
+                    copy: fromObfuscatedValue(item.content.verificationNumber),
                 },
             ];
         case 'note':
@@ -124,7 +124,7 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
                     type: 'button',
                     icon: 'key',
                     name: c('Action').t`Copy note content`,
-                    copy: getObfuscate(item.metadata.note),
+                    copy: fromObfuscatedValue(item.metadata.note),
                 },
             ];
         default:
@@ -134,14 +134,14 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
 
 /** Returns context menu items about actions on the item */
 const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): ContextMenuItem[] => {
-    const monitorActions = conditionalItem(itemState.canMonitor, {
+    const monitorActions = withItemCondition(itemState.canMonitor, {
         type: 'button',
         icon: itemState.isMonitored ? 'eye-slash' : 'eye',
         name: itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`,
         action: itemActions.onToggleFlags,
     });
 
-    const leaveActions = conditionalItem(itemState.canLeave, {
+    const leaveActions = withItemCondition(itemState.canLeave, {
         type: 'button',
         icon: 'arrow-out-from-rectangle',
         name: c('Action').t`Leave`,
@@ -168,13 +168,13 @@ const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): C
               ...leaveActions,
           ]
         : [
-              ...conditionalItem(!itemState.isReadOnly, {
+              ...withItemCondition(!itemState.isReadOnly, {
                   type: 'button',
                   icon: 'pen',
                   name: c('Action').t`Edit`,
                   action: itemActions.onEdit,
               }),
-              ...conditionalItem(!itemState.isReadOnly, {
+              ...withItemCondition(!itemState.isReadOnly, {
                   type: 'button',
                   icon: 'folder-arrow-in',
                   name: c('Action').t`Move to another vault`,
@@ -214,22 +214,22 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const { generateOTP } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const { isOpen, close } = useContextMenu();
+    const { close, state } = useContextMenu();
     const itemState = useItemState(item, share);
     const itemActions = useItemActions(item);
 
     const elements: ContextMenuElement[] = useMemo(() => {
         if (item.failed) return [];
 
-        const getTotp = getTotpFactory(generateOTP, createNotification);
-        const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data, getTotp).filter(({ copy }) => !!copy);
+        const getOTPCode = fromOTPValue(generateOTP, createNotification);
+        const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data, getOTPCode).filter(({ copy }) => !!copy);
         const actionBtns = getItemActionButtons(itemState, itemActions);
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
     }, [item, itemState, itemActions]);
 
-    const itemOpened = isOpen(getItemKey(item));
+    const itemOpened = state?.id === getItemKey(item);
     const autoClose = elements.length === 0 && itemOpened;
 
     useEffect(() => {

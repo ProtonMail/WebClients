@@ -7,25 +7,28 @@ import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreIn
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
 
 export const IdentityView: FC<ItemViewProps<'identity'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;
+    const { vaultId } = share;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
-    const { onHistory } = useItemNavigation(revision);
 
     return (
         <ItemViewPanel type="identity" {...itemViewProps}>
-            <SecureLinkCardList shareId={shareId} itemId={itemId} />
-            <IdentityContent revision={revision} />
-            <FileAttachmentsContentView revision={revision} />
-            <ItemHistoryStats
-                lastUseTime={lastUseTime}
-                createTime={createTime}
-                modifyTime={modifyTime}
-                handleHistoryClick={onHistory}
-            />
-            <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
+            {({ onHistory }) => (
+                <>
+                    <SecureLinkCardList shareId={shareId} itemId={itemId} />
+                    <IdentityContent revision={revision} />
+                    <FileAttachmentsContentView revision={revision} />
+                    <ItemHistoryStats
+                        lastUseTime={lastUseTime}
+                        createTime={createTime}
+                        modifyTime={modifyTime}
+                        handleHistoryClick={onHistory}
+                    />
+                    <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={vaultId} />
+                </>
+            )}
         </ItemViewPanel>
     );
 };

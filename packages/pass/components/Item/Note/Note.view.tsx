@@ -11,15 +11,11 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
     const { revision } = itemViewProps;
     const { shareId, itemId, modifyTime, createTime } = revision;
-
-    const { onHistory } = useItemNavigation(revision);
-
     const note = useDeobfuscatedValue(revision.data.metadata.note);
 
     const copyToClipboard = useCopyToClipboard();
@@ -48,10 +44,14 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
             }
             {...itemViewProps}
         >
-            <SecureLinkCardList shareId={shareId} itemId={itemId} />
-            <NoteContent revision={revision} />
-            <FileAttachmentsContentView revision={revision} />
-            <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
+            {({ onHistory }) => (
+                <>
+                    <SecureLinkCardList shareId={shareId} itemId={itemId} />
+                    <NoteContent revision={revision} />
+                    <FileAttachmentsContentView revision={revision} />
+                    <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
+                </>
+            )}
         </ItemViewPanel>
     );
 };
