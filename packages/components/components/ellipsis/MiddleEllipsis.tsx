@@ -1,5 +1,5 @@
 import type { HTMLProps } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
@@ -14,11 +14,11 @@ interface Props extends HTMLProps<HTMLSpanElement> {
     /**
      * when you embed it into something with title/tooltip, you might not want to display it
      */
-    displayTitle?: Boolean;
+    displayTitle?: boolean;
     /**
      * When text is too long, tooltip can be used to show the full text.
      */
-    displayTooltip?: Boolean;
+    displayTooltip?: boolean;
     /**
      * Unless you REALLY know what you are doing (if you're using this component on RTL content ONLY for example)
      * leave this value to ltr, otherwise you can update it
@@ -42,7 +42,22 @@ const MiddleEllipsis = ({
     ...rest
 }: Props) => {
     const ref = useRef<HTMLSpanElement>(null);
-    const textIsTooLong = ref.current ? ref.current.offsetWidth < ref.current.scrollWidth : false;
+    const [textIsTooLong, setTextIsTooLong] = useState(!splitOnlyTooLong);
+
+    useLayoutEffect(() => {
+        if (!splitOnlyTooLong) {
+            return;
+        }
+
+        const checkOverflow = () => {
+            if (ref.current) {
+                const isTooLong = ref.current.offsetWidth < ref.current.scrollWidth;
+                setTextIsTooLong(isTooLong);
+            }
+        };
+
+        checkOverflow();
+    }, [text, splitOnlyTooLong]);
 
     const [start, end] = useMemo(() => {
         // Split text per characters and not bytes. For example, 👋🌍😊🐶 with
@@ -51,11 +66,11 @@ const MiddleEllipsis = ({
         // characters), the results is as expected 👋 and 🌍😊🐶.
         // Note this doesn't work with all unicodes. For example, flags have
         // six bytes and even that is not handled properly by string iterator.
-        if (charsToDisplayEnd === 0 || (splitOnlyTooLong && textIsTooLong === false)) {
+        if (charsToDisplayEnd === 0 || (splitOnlyTooLong && !textIsTooLong)) {
             return [text, null];
         }
         return [[...text].slice(0, -charsToDisplayEnd).join(''), [...text].slice(-charsToDisplayEnd).join('')];
-    }, [text, textIsTooLong]);
+    }, [text, charsToDisplayEnd, splitOnlyTooLong, textIsTooLong]);
 
     const [tooltipTitle, setTooltipTitle] = useState<string | null>(null);
     useEffect(() => {
@@ -67,7 +82,7 @@ const MiddleEllipsis = ({
         } else {
             setTooltipTitle(null);
         }
-    });
+    }, [textIsTooLong, displayTooltip]);
 
     return (
         <Tooltip title={tooltipTitle} originalPlacement="bottom">
