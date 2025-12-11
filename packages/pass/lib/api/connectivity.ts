@@ -11,9 +11,9 @@ export enum ConnectivityStatus {
 
 const CONNECTIVITY_RETRY_TIMEOUT = 5_000;
 
-export const intoConnectivityStatus = <T extends { online: boolean; unreachable: boolean }>(
-    state: T
-): ConnectivityStatus => {
+type ConnectivityOptions = { online: boolean; unreachable: boolean };
+
+export const intoConnectivityStatus = <T extends ConnectivityOptions>(state: T): ConnectivityStatus => {
     if (state.unreachable) return ConnectivityStatus.DOWNTIME;
     return ConnectivityStatus[state.online ? 'ONLINE' : 'OFFLINE'];
 };
