@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
+import { BugModal, DropdownMenuButton, DropdownMenuLink, useModalState } from '@proton/components';
+import { IcBug } from '@proton/icons/icons/IcBug';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
@@ -26,11 +28,11 @@ const SignupSupportDropdown = ({ isDarkBg }: Props) => {
                     target="_blank"
                     className="text-left"
                 >
-                    <Icon name="speech-bubble" className="mr-2" />
+                    <IcSpeechBubble className="mr-2" />
                     {c('Link').t`Common sign up issues`}
                 </DropdownMenuLink>
                 <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
-                    <Icon name="bug" className="mr-2" />
+                    <IcBug className="mr-2" />
                     {c('Action').t`Report a problem`}
                 </DropdownMenuButton>
             </SupportDropdown>

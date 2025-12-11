@@ -3,11 +3,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent } from '@proton/components';
+import { ModalTwo, ModalTwoContent } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { IconName } from '@proton/icons/types';
 import {
     COUPON_CODES,
@@ -153,7 +155,7 @@ const Trial2024UpsellModal = ({
                 }}
                 size="small"
             >
-                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
             </Button>
         </Tooltip>
     );
@@ -169,7 +171,7 @@ const Trial2024UpsellModal = ({
                 <div className="visibility-hidden">{close}</div>
                 <div className="flex-1 text-center">
                     <span>
-                        <Icon name="hourglass" size={3.5} />
+                        <IcHourglass size={3.5} />
                         <span className="ml-1">
                             {ctaTitle}: {c('mailtrial2024: Info').jt`Get ${planTitle} for ${discountedPriceElement}`}
                         </span>

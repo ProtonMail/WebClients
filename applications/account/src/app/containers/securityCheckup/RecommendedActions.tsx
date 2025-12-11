@@ -6,10 +6,10 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     SettingsLink,
     useSecurityCheckup,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 import Actions from './Actions';
 import RecoveryMethods, { showRecoveryMethods } from './RecoveryMethods';
@@ -36,7 +36,7 @@ const RecommendedActions = () => {
                             <CollapsibleHeader
                                 suffix={
                                     <CollapsibleHeaderIconButton size="small">
-                                        <Icon className="color-weak" name="chevron-down" />
+                                        <IcChevronDown className="color-weak" />
                                     </CollapsibleHeaderIconButton>
                                 }
                                 disableFullWidth
@@ -77,7 +77,7 @@ const RecommendedActions = () => {
                     <CollapsibleHeader
                         suffix={
                             <CollapsibleHeaderIconButton>
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                         disableFullWidth

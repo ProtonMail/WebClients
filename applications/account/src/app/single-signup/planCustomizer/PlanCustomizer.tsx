@@ -2,8 +2,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Info } from '@proton/components';
+import { Info } from '@proton/components';
 import { getForcedFeatureLimitations } from '@proton/components/containers/payments/planCustomizer/forced-addon-limits';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { PLANS, StrictPlan } from '@proton/payments';
 import {
     ADDON_NAMES,
@@ -174,7 +175,7 @@ const PlanCustomizer = ({
                             </AddonField>
                             {!isTrialMode && (
                                 <div className="mt-2 p-3 color-weak bg-weak rounded flex flex-nowrap">
-                                    <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
+                                    <IcInfoCircle className="mr-2 mt-0.5 shrink-0" />
                                     <span>
                                         {c('Info')
                                             .t`We recommend having at least 2 servers in order to provide redundancy.`}

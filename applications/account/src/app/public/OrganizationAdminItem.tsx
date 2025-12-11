@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -21,7 +21,7 @@ const OrganizationAdminItem = ({ className, adminEmail, organizationLogoUrl }: P
                     <img src={organizationLogoUrl} alt="" className="object-cover w-full h-full" />
                 ) : (
                     <span className="m-auto text-semibold" aria-hidden="true">
-                        <Icon name="user" />
+                        <IcUser />
                     </span>
                 )}
             </div>

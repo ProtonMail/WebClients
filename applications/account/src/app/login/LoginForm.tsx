@@ -11,7 +11,6 @@ import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,
     Checkbox,
-    Icon,
     InputFieldTwo,
     Label,
     PasswordInputTwo,
@@ -24,6 +23,10 @@ import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components
 import { handleLogin } from '@proton/components/containers/login/loginActions';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -429,7 +432,7 @@ const LoginForm = ({
             className="mb-4 bg-weak w-full border-none pl-3 pr-4 py-3 gap-3 rounded-lg flex items-start flex-nowrap"
         >
             <div className="flex justify-start items-start shrink-0 pt-0.5">
-                <Icon name="exclamation-circle-filled" className="color-danger shrink-0" />
+                <IcExclamationCircleFilled className="color-danger shrink-0" />
             </div>
             {errorMsg}
         </div>
@@ -680,14 +683,14 @@ const LoginForm = ({
                                                 to={resetPath}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                <Icon name="key" />
+                                                <IcKey />
                                                 {c('Link').t`Forgot password?`}
                                             </Link>
                                             <Link
                                                 to={forgotUsernamePath}
                                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                             >
-                                                <Icon name="user-circle" />
+                                                <IcUserCircle />
                                                 {c('Link').t`Forgot username?`}
                                             </Link>
                                             {
@@ -697,7 +700,7 @@ const LoginForm = ({
                                                         to={paths.signinAnotherDevice}
                                                         className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                                                     >
-                                                        <Icon name="qr-code" />
+                                                        <IcQrCode />
                                                         {c('edm').t`Sign in with QR code`}
                                                     </Link>
                                                 )

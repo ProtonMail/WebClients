@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, Logo } from '@proton/components';
+import { Logo } from '@proton/components';
 import EarlyAccessBadge from '@proton/components/components/earlyAccessBadge/EarlyAccessBadge';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { PLANS, getHasPlusPlan } from '@proton/payments';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -206,7 +207,7 @@ const ExploreAppsList = ({ onExplore, apps, subscription }: Props) => {
                             </div>
                             {!showLoader && (
                                 <span className="shrink-0" aria-hidden="true">
-                                    <Icon name="arrow-right" />
+                                    <IcArrowRight />
                                 </span>
                             )}
                         </Button>

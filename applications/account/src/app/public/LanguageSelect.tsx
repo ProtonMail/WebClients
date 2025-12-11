@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
@@ -58,7 +59,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
         <>
             {globe && (
                 <>
-                    <Icon className="mr-2 shrink-0 hidden sm:inline-block" name="globe" />
+                    <IcGlobe className="mr-2 shrink-0 hidden sm:inline-block" />
                 </>
             )}
             <span className="text-ellipsis" lang={getLanguageCode(localeCode)}>

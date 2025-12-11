@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, StripedItem, StripedList } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, StripedItem, StripedList } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import svg from '../welcome-suite.svg';
@@ -51,10 +52,7 @@ const VisionaryUpsellModal = ({ plan, appName, onClose, onUpgrade, onContinue, .
                                 },
                             ].map(({ key, right }) => {
                                 return (
-                                    <StripedItem
-                                        key={key}
-                                        left={<Icon className="color-success" name="checkmark" size={5} />}
-                                    >
+                                    <StripedItem key={key} left={<IcCheckmark className="color-success" size={5} />}>
                                         {right}
                                     </StripedItem>
                                 );

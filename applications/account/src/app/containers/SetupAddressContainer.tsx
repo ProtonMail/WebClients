@@ -8,7 +8,6 @@ import { useGetUser } from '@proton/account/user/hooks';
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
-    Icon,
     StandardLoadErrorPage,
     useApi,
     useAuthentication,
@@ -18,6 +17,7 @@ import {
     useTheme,
 } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
+import { IcBug } from '@proton/icons/icons/IcBug';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
@@ -106,7 +106,7 @@ const SetupSupportDropdown = () => {
             {render && <AuthenticatedBugModal {...authenticatedBugReportModal} />}
             <SupportDropdown buttonClassName="mx-auto">
                 <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
-                    <Icon name="bug" className="mr-2" />
+                    <IcBug className="mr-2" />
                     {c('Action').t`Report a problem`}
                 </DropdownMenuButton>
             </SupportDropdown>

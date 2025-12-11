@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -23,7 +23,7 @@ const JoinOrganizationAdminItem = ({ organizationName, adminEmail, organizationL
                     <img src={organizationLogoUrl} alt="" className="object-cover w-full h-full" />
                 ) : (
                     <span className="m-auto" aria-hidden="true">
-                        <Icon name="users" size={8} />
+                        <IcUsers size={8} />
                     </span>
                 )}
             </div>

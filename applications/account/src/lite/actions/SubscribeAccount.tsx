@@ -12,7 +12,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     CalendarLogo,
     DriveLogo,
-    Icon,
     Logo,
     MailLogo,
     PassLogo,
@@ -23,6 +22,7 @@ import {
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import {
     CURRENCIES,
     type Currency,
@@ -101,7 +101,7 @@ export const SubscribeAccountHeader = ({
             {onClose && (
                 <Tooltip title={c('Action').t`Close`}>
                     <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
-                        <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                        <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                     </Button>
                 </Tooltip>
             )}

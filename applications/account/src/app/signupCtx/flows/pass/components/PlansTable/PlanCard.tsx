@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import { AppsLogos, Icon } from '@proton/components';
+import { AppsLogos } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -75,7 +76,7 @@ export const PlanCard: FC<PlanCardProps> = ({
                 {featuresTitle && <div className="mb-4">{featuresTitle}</div>}
                 {features.map((feature) => (
                     <li key={`${id}-${feature}`} className="mb-4">
-                        <Icon name="checkmark" className="mr-1" />
+                        <IcCheckmark className="mr-1" />
                         {feature}
                     </li>
                 ))}

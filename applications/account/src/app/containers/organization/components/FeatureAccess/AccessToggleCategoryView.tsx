@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Icon, useApi, useNotifications } from '@proton/components';
+import { useApi, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
@@ -39,7 +40,7 @@ export const AccessToggleCategoryView = () => {
     return (
         <AccessToggle
             id="category-toggle"
-            icon={<Icon name="drawer-dividers" className="color-weak" size={6} />}
+            icon={<IcDrawerDividers className="color-weak" size={6} />}
             title={c('Title').t`Email categories`}
             checked={!!organization?.Settings.MailCategoryViewEnabled}
             loading={categoryLoading}

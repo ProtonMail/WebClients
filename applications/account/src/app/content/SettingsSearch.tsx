@@ -7,6 +7,7 @@ import { Input } from '@proton/atoms/Input/Input';
 import type { SubSectionConfig } from '@proton/components';
 import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconName } from '@proton/icons/types';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -134,7 +135,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                         /** Translator: Translate as the action to search in the settings */
                         c('Action').t`Search settings`
                     }
-                    prefix={<Icon name="magnifier" />}
+                    prefix={<IcMagnifier />}
                     className="pl-0"
                     ref={inputRef}
                     containerRef={containerRef}
