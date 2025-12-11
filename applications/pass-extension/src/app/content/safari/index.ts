@@ -6,7 +6,7 @@ import type { Runtime } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ApiCallFn } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import configureApi from '@proton/shared/lib/api';
+import { configureApi } from '@proton/shared/lib/api';
 import { pullForkSession } from '@proton/shared/lib/api/auth';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import xhr from '@proton/shared/lib/fetch/fetch';

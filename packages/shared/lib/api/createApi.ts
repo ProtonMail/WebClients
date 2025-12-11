@@ -1,6 +1,6 @@
 import { updateServerTime } from '@proton/crypto';
 
-import configureApi from '../api';
+import { configureApi } from '../api';
 import { getClientID } from '../apps/helper';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
 import xhr from '../fetch/fetch';
