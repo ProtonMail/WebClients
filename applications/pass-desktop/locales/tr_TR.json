@@ -166,8 +166,20 @@
       "Continue offline": [
         "Çevrim dışı kal"
       ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Copy and close": [
         "Kopyala ve kapat"
+      ],
+      "Copy card number": [
+        "Kart numarasını kopyala"
+      ],
+      "Copy email": [
+        "E-postayı kopyala"
+      ],
+      "Copy expiration date": [
+        "Son kullanma tarihini kopyala"
       ],
       "Copy forwarding address": [
         "İletme adresini kopyala"
@@ -175,8 +187,23 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Copy name on card": [
+        "Kart üzerindeki ismi kopyala"
+      ],
+      "Copy note content": [
+        "Not içeriğini kopyala"
+      ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
+      "Copy security code": [
+        "Güvenlik kodunu kopyala"
+      ],
       "Copy to clipboard": [
         "Panoya kopyala"
+      ],
+      "Copy username": [
+        "Kullanıcı adını kopyala"
       ],
       "Create": [
         "Ekle"
@@ -219,6 +246,9 @@
       ],
       "Custom section": [
         "Özel bölüm"
+      ],
+      "Cut": [
+        "Kes"
       ],
       "Delete": [
         "Sil"
@@ -465,6 +495,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "Yapıştır"
       ],
       "Pause monitoring": [
         "İzlemeyi duraklat"
@@ -1934,7 +1967,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
