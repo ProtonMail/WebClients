@@ -22,7 +22,6 @@ export type MessageComponentProps = {
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     isLastMessage: boolean;
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
@@ -33,8 +32,7 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message === nextProps.message &&
         prevProps.siblingInfo === nextProps.siblingInfo &&
         prevProps.isLastMessage === nextProps.isLastMessage &&
-        prevProps.isGenerating === nextProps.isGenerating &&
-        prevProps.isGeneratingWithToolCall === nextProps.isGeneratingWithToolCall
+        prevProps.isGenerating === nextProps.isGenerating
     ) {
         return true;
     }
@@ -56,9 +54,7 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
 
     // Compare generation state
     const generationStateChanged =
-        prevProps.isLastMessage !== nextProps.isLastMessage ||
-        prevProps.isGenerating !== nextProps.isGenerating ||
-        prevProps.isGeneratingWithToolCall !== nextProps.isGeneratingWithToolCall;
+        prevProps.isLastMessage !== nextProps.isLastMessage || prevProps.isGenerating !== nextProps.isGenerating;
 
     // If any of these changed, re-render
     return !messageChanged && !siblingInfoChanged && !generationStateChanged;
@@ -77,7 +73,6 @@ const MessageComponentPure = ({
     newMessageRef,
     isLastMessage,
     isGenerating,
-    isGeneratingWithToolCall,
     onRetryPanelToggle,
 }: MessageComponentProps) => {
     const messageContent = message?.content;
@@ -116,7 +111,6 @@ const MessageComponentPure = ({
                         handleOpenFiles={handleOpenFiles}
                         messageChain={messageChain}
                         isGenerating={isGenerating}
-                        isGeneratingWithToolCall={isGeneratingWithToolCall}
                         onToggleMessageSource={handleOpenSources}
                         onToggleFilesManagement={handleOpenFiles}
                         onRetryPanelToggle={onRetryPanelToggle}
