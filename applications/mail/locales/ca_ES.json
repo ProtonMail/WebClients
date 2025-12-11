@@ -1922,6 +1922,12 @@
       ],
       "You have reached the trial limit.": [
         "Heu arribat al límit de la versió de prova."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -7401,7 +7407,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"

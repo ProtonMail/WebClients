@@ -1922,6 +1922,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nået grænsen for prøveversionen."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -5009,10 +5015,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller tal"
+        "Brugernavn skal begynde med et bogstav eller et tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller tal"
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Wrong password": [
         "Forkert adgangskode"
@@ -7401,7 +7407,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"

@@ -1922,6 +1922,12 @@
       ],
       "You have reached the trial limit.": [
         "Vous avez atteint la limite de la version d'essai."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -7401,7 +7407,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images."
       ],
       "Insert link": [
         "Insérer un lien"
