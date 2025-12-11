@@ -26,6 +26,7 @@ export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
         event.stopPropagation();
         event.preventDefault();
         if (!enabled.current) return;
+        document.dispatchEvent(new CustomEvent('dropdownclose'));
         setState({ id, position: { top: event.clientY, left: event.clientX } });
     }, []);
 
