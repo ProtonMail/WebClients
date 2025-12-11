@@ -1,4 +1,4 @@
-import { asyncLock, asyncQueue, awaiter, unwrap } from './promises';
+import { asyncLock, asyncQueue, awaiter, cancelable, unwrap } from './promises';
 
 type TestResolvers = { resolve: (val: number) => void; reject: (err: unknown) => void }[];
 
@@ -165,6 +165,42 @@ describe('promise', () => {
             expect(asyncFn).toHaveBeenCalledTimes(3);
             resolvers[2].resolve(2);
             await expect(job2).resolves.toEqual(2);
+        });
+    });
+
+    describe('cancelable', () => {
+        test('should resolve when job completes without cancellation', async () => {
+            const job = jest.fn(() => Promise.resolve(42));
+            const cancelableJob = cancelable(job);
+            const result = cancelableJob.run();
+
+            await expect(result).resolves.toBe(42);
+            expect(job).toHaveBeenCalledTimes(1);
+        });
+
+        test('should reject when canceled before job completes', async () => {
+            jest.useFakeTimers();
+            const job = jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(42), 100)));
+            const cancelableJob = cancelable(job);
+
+            const result = cancelableJob.run();
+            cancelableJob.cancel();
+            jest.runAllTimers();
+
+            await expect(result).rejects.toBeUndefined();
+            expect(job).toHaveBeenCalledTimes(1);
+        });
+
+        test('should reject on next call if canceled after job completes', async () => {
+            const job = jest.fn(() => Promise.resolve(42));
+            const cancelableJob = cancelable(job);
+            const result = cancelableJob.run();
+
+            await expect(result).resolves.toBe(42);
+            expect(job).toHaveBeenCalledTimes(1);
+            cancelableJob.cancel();
+
+            await expect(cancelableJob.run).rejects.toBeUndefined();
         });
     });
 });
