@@ -1059,6 +1059,9 @@
       "Read receipt sent": [
         "Potrdilo o branju je poslano"
       ],
+      "Recently read": [
+        "Nazadnje prebrano"
+      ],
       "Recently received": [
         "Nedavno prejeto"
       ],
@@ -1436,6 +1439,9 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1832,6 +1838,14 @@
       ],
       "Sender verification passed": [
         "Preverjanje pošiljatelja je bilo uspešno"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
       ]
     },
     "b2b_trials_Action": {
@@ -3973,6 +3987,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } novo sporočilo",
+        "${ notificationsToShow.length } novi sporočili",
+        "${ notificationsToShow.length } nova sporočila",
+        "${ notificationsToShow.length } novih sporočil"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } – ${ Subject }"
       ]
@@ -4056,6 +4076,11 @@
       ],
       "Priority support": [
         "Prednostna podpora"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     },
     "Email body for invitation": {
@@ -6355,6 +6380,12 @@
         "${ trackersCount } blokirani sledilniki",
         "${ trackersCount } blokiranih sledilnikov"
       ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } glasilo",
+        "${ unreadCount } glasili",
+        "${ unreadCount } glasila",
+        "${ unreadCount } glasil"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } načrtovano sporočilo",
         "${ unreadCount } načrtovani sporočili",
@@ -7142,7 +7173,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9203,6 +9237,9 @@
       "Move ${ sidebarElementName }": [
         "Premakni ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "Premakni sporočila v"
+      ],
       "Move to": [
         "Premakni v"
       ],
@@ -9732,6 +9769,9 @@
       ],
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
+      ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
       ],
       "Request an invite": [
         "Zahtevaj povabilo"
@@ -12792,12 +12832,6 @@
       "Email tracking protection": [
         "Zaščita pred sledenjem v sporočilih"
       ],
-      "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } kot dobropis."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
-      ],
       "Schedule send": [
         "Načrtuj pošiljanje"
       ],
@@ -13561,6 +13595,12 @@
       "Conversation removed from Starred.": [
         "Pogovoru je odstranjena oznaka zvezdice."
       ],
+      "Conversation updated": [
+        "Pogovor posodobljen",
+        "Pogovora posodobljena",
+        "Pogovori posodobljeni",
+        "Pogovori posodobljeni"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Pogovori pošiljateljev ${ sendersList } bodo označeni kot ${ labelsList }"
       ],
@@ -13635,6 +13675,12 @@
       ],
       "Message removed from Starred.": [
         "Sporočilu je odstranjena oznaka \"Z zvezdico\"."
+      ],
+      "Message updated": [
+        "Sporočilo posodobljeno",
+        "Sporočili posodobljeni",
+        "Sporočila posodobljena",
+        "Sporočila posodobljena"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Sporočila pošiljateljev ${ sendersList } bodo označena kot ${ labelsList }"
