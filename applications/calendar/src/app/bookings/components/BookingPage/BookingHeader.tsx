@@ -122,6 +122,7 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                         autoClose={false}
                         autoCloseOutside
                         className="p-2 rounded-xl booking-mini-calendar"
+                        adaptiveForTouchScreens={false}
                     >
                         <BookingMiniCalendar selectedDate={selectedDate} onSelectDate={handleSelectDate} />
                     </Dropdown>
