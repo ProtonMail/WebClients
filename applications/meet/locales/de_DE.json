@@ -29,8 +29,8 @@
       "Authenticate": [
         "Authentifizieren"
       ],
-      "Blur background": [
-        "Hintergrund unscharf machen"
+      "Background blur": [
+        "Hintergrundunschärfe"
       ],
       "Cancel": [
         "Abbrechen"
@@ -170,11 +170,14 @@
       "Next page": [
         "Nächste Seite"
       ],
-      "Noise filter": [
-        "Geräuschfilter"
+      "Noise cancellation": [
+        "Geräuschunterdrückung"
       ],
       "Open link": [
         "Link öffnen"
+      ],
+      "Picture-in-picture mode": [
+        "Bild-in-Bild-Modus"
       ],
       "Previous month": [
         "Vorheriger Monat"
@@ -263,9 +266,6 @@
       "Stay in meeting": [
         "Im Meeting bleiben"
       ],
-      "Stop incoming video": [
-        "Eingehendes Video stoppen"
-      ],
       "Stop presenting": [
         "Präsentation beenden"
       ],
@@ -283,6 +283,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Turn off incoming video": [
+        "Eingehendes Video ausschalten"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -328,9 +331,6 @@
       "Go to dashboard": [
         "Zum Dashboard gehen"
       ],
-      "Hide self view": [
-        "Eigenansicht ausblenden"
-      ],
       "Leave": [
         "Verlassen"
       ],
@@ -342,9 +342,6 @@
       ],
       "Meeting details": [
         "Besprechungsdetails"
-      ],
-      "Noise filter": [
-        "Geräuschfilter"
       ],
       "Open chat message search": [
         "Chat-Nachrichtensuche öffnen"
@@ -369,9 +366,6 @@
       ],
       "Show passphrase": [
         "Passphrase anzeigen"
-      ],
-      "Stop incoming video": [
-        "Eingehendes Video stoppen"
       ],
       "Toggle camera": [
         "Kamera ein-/ausschalten"
@@ -1386,15 +1380,6 @@
       "Failed to decrypt session key": [
         "Entschlüsselung des Sitzungsschlüssels fehlgeschlagen"
       ],
-      "Failed to get meeting info": [
-        "Fehler beim Abrufen der Besprechungsinformationen"
-      ],
-      "Failed to get room name": [
-        "Fehler beim Abrufen des Raumnamens"
-      ],
-      "Failed to initialize handshake": [
-        "Handshake konnte nicht initialisiert werden"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Beitritt zum Meeting fehlgeschlagen. Bitte versuche es später erneut."
       ],
@@ -1784,7 +1769,7 @@
       "Meeting link": [
         "Meeting-Link"
       ],
-      "Meeting locked. No new participants can join": [
+      "Meeting locked. No new participants can join.": [
         "Meeting gesperrt. Es können keine neuen Teilnehmer beitreten."
       ],
       "Meeting unlocked. Participants can join again.": [
@@ -1911,7 +1896,7 @@
         "Dieses Meeting wird aufgezeichnet"
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Diese Besprechung ist gesperrt. Bitte kontaktiere den Gastgeber, um beizutreten."
+        "Dieses Meeting ist gesperrt. Bitte kontaktiere den Organisator, um beizutreten."
       ],
       "This meeting is password protected": [
         "Dieses Meeting ist passwortgeschützt"
@@ -2243,14 +2228,6 @@
         "Upgrade durchführen"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Erhalte bis zu ${ credits } als Guthaben."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Lade Freunde zu ${ BRAND_NAME } ein"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Anmelden"
@@ -2294,6 +2271,9 @@
       ],
       "Assign a new host": [
         "Neuen Organisator zuweisen"
+      ],
+      "Audio": [
+        "Ton"
       ],
       "Authenticator": [
         "Authenticator"
@@ -2397,6 +2377,9 @@
       "Secure meeting": [
         "Sicheres Meeting"
       ],
+      "Security": [
+        "Sicherheit"
+      ],
       "Settings": [
         "Einstellungen"
       ],
@@ -2423,6 +2406,9 @@
       ],
       "Upcoming meetings": [
         "Anstehende Meetings"
+      ],
+      "Video": [
+        "Video"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2431,11 +2417,11 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Hintergrund unscharf machen"
+      "Background blur": [
+        "Hintergrundunschärfe"
       ],
-      "Blur background is not supported on your browser": [
-        "Hintergrundunschärfe wird von deinem Browser nicht unterstützt"
+      "Background blur is not supported on your browser": [
+        "Hintergrundunschärfe wird von deinem Browser nicht unterstützt."
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"
