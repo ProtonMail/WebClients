@@ -88,6 +88,9 @@
       "Edit": [
         "Modifier"
       ],
+      "Got it": [
+        "C'est compris"
+      ],
       "How to update ${ AUTHENTICATOR_APP_NAME } on Linux": [
         "Comment mettre à jour ${ AUTHENTICATOR_APP_NAME } sur Linux"
       ],
@@ -112,8 +115,14 @@
       "Please try again.": [
         "Veuillez réessayer."
       ],
+      "Remove previous backups": [
+        "Supprimer les sauvegardes précédentes"
+      ],
       "Report an issue": [
         "Signaler un problème"
+      ],
+      "Reset": [
+        "Réinitialiser"
       ],
       "Save code": [
         "Enregistrer le code"
@@ -144,6 +153,9 @@
       ]
     },
     "authenticator-2025:Description": {
+      "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
+        "Vous aurez besoin de ce mot de passe pour déverrouiller ${ AUTHENTICATOR_APP_NAME } à chaque redémarrage."
+      ],
       "Your import file is protected by a password. Please enter the password to proceed.": [
         "Votre fichier d'importation est protégé par mot de passe. Veuillez saisir le mot de passe pour continuer."
       ]
@@ -164,6 +176,9 @@
       "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
         "Impossible d'utiliser ce dossier. Veuillez choisir un dossier dans le dossier utilisateur (${ home })"
       ],
+      "Codes from file \"${ filename }\" could not be imported": [
+        "Les codes du fichier \"${ filename }\" n'ont pas pu être importés."
+      ],
       "Failed database migration. If the issue persists, please contact customer support.": [
         "La migration de la base de données n'a pas abouti. Si le problème persiste, veuillez contacter le service client."
       ],
@@ -179,11 +194,20 @@
       "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
         "La migration n'a pas abouti après la mise à jour de ${ AUTHENTICATOR_APP_NAME }. Vous pouvez réessayer, ou sauvegarder vos données et réinitialiser l'application pour continuer."
       ],
+      "Passwords do not match": [
+        "Les mots de passe ne correspondent pas."
+      ],
+      "The app couldn’t access your storage key.": [
+        "L'application n'a pas pu accéder à votre clé de stockage."
+      ],
       "Unable to access your secure storage key due to a system issue.": [
         "Impossible d'accéder à votre clé d'espace de stockage sécurisé en raison d'un problème système."
       ],
       "We couldn't create your secure storage key due to a system limitation.": [
         "Nous n'avons pas pu créer votre clé de stockage dû à une limitation du système."
+      ],
+      "We couldn't generate your secure storage key.": [
+        "Nous n'avons pas pu générer votre clé d'espace de stockage sécurisé."
       ],
       "Your storage key appears to be damaged and can't be read.": [
         "Votre clé de stockage semble être endommagée et ne peut pas être lue."
@@ -263,6 +287,12 @@
       "One-time code copied": [
         "Le code à usage unique a été copié"
       ],
+      "Only the last ${ BACKUP_MAX_AMOUNT } daily backups are kept.": [
+        "Seules les ${ BACKUP_MAX_AMOUNT } dernières sauvegardes sont enregistrées."
+      ],
+      "Plain text": [
+        "Texte brut"
+      ],
       "Please go to ${ settingsPath }.": [
         "Veuillez aller à ${ settingsPath }."
       ],
@@ -278,11 +308,29 @@
       "Settings > Export": [
         "Paramètres > Exporter"
       ],
+      "Settings > Import & Export > Export": [
+        "Paramètres > Importer & Exporter > Exporter"
+      ],
+      "Settings > Transfer accounts > Export accounts": [
+        "Paramètres > Transférer des comptes > Exporter des comptes"
+      ],
+      "Settings > Transfer accounts > Export accounts to file": [
+        "Paramètres > Transférer des comptes > Exporter des comptes vers un fichier"
+      ],
+      "Sync disabled": [
+        "Synchronisation désactivée"
+      ],
       "Sync enabled": [
         "Synchronisation activée"
       ],
+      "This will create a 2fas file that you can use here.": [
+        "Cela créera un fichier 2fas que vous pourrez utiliser ici."
+      ],
       "This will create a Json file that you can use here.": [
         "Cela créera un fichier JSON que vous pourrez utiliser ici."
+      ],
+      "This will create one or more QR codes that you can use here.": [
+        "Cela créera un ou plusieurs codes QR que vous pourrez utiliser ici."
       ],
       "Unfortunately, Authy doesn’t currently support exporting data from their app. Consider contacting Authy to request this feature.": [
         "Malheureusement, Authy ne prend actuellement pas en charge l'exportation de données depuis leur application. Nous vous invitons à contacter Authy pour suggérer cette fonctionnalité."
@@ -337,6 +385,9 @@
       "Dark": [
         "Sombre"
       ],
+      "Digit style": [
+        "Style des chiffres"
+      ],
       "Digits": [
         "Chiffres"
       ],
@@ -376,6 +427,9 @@
       "Password": [
         "Mot de passe"
       ],
+      "Plain": [
+        "Simple"
+      ],
       "Secret": [
         "Secret"
       ],
@@ -394,8 +448,25 @@
       "Time interval": [
         "Intervalle de temps"
       ],
+      "Title": [
+        "Titre"
+      ],
+      "Title, account, or label": [
+        "Titre, compte ou label"
+      ],
       "Type": [
         "Type"
+      ],
+      "View logs": [
+        "Voir les journaux"
+      ]
+    },
+    "authenticator-2025:Reason": {
+      "disable lock": [
+        "désactiver le verrouillage"
+      ],
+      "enable lock": [
+        "activer le verrouillage"
       ]
     },
     "authenticator-2025:Title": {
@@ -426,6 +497,9 @@
       "No export available": [
         "Aucune exportation disponible"
       ],
+      "Protected file": [
+        "Fichier protégé"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -434,6 +508,9 @@
       ],
       "Storage key issue": [
         "Problème avec la clé de stockage"
+      ],
+      "Unlock ${ AUTHENTICATOR_APP_NAME }": [
+        "Débloquer ${ AUTHENTICATOR_APP_NAME }"
       ]
     },
     "authenticator-2025:Warning": {
@@ -443,8 +520,14 @@
       "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
         "Pour une sécurité renforcée, la sauvegarde automatique non chiffrée a été désactivée. Vous pouvez la réactiver dans les Paramètres."
       ],
+      "If you continue without setting up a secure storage key, your data will still be encrypted locally, but the key will be saved less securely.": [
+        "Si vous continuez sans configurer une clé d'espace de stockage sécurisé, vos données seront toujours chiffrées localement, mais la clé sera enregistrée de manière moins sécurisée."
+      ],
       "Nothing to import.": [
         "Il n'y a rien à importer."
+      ],
+      "Resetting your storage key will erase any local data that hasn’t been synced.": [
+        "Réinitialiser votre clé d'espace de stockage effacera toutes les données locales qui n'ont pas été synchronisées."
       ],
       "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
         "Le mot de passe est incorrect. Il vous reste ${ remainingCount } tentative, après quoi, vos données seront effacées.",
