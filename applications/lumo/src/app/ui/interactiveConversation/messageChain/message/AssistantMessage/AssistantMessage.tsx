@@ -142,7 +142,6 @@ interface AssistantMessageProps {
     handleOpenFiles: (message?: Message) => void;
     messageChain: Message[];
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
     onToggleMessageSource: (message: Message) => void;
     onToggleFilesManagement: (message?: Message) => void;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
@@ -169,7 +168,6 @@ const AssistantMessage = ({
     handleOpenFiles,
     messageChain,
     isGenerating,
-    isGeneratingWithToolCall,
     onRetryPanelToggle,
 }: AssistantMessageProps) => {
     const { isWebSearchButtonToggled } = useWebSearch();
@@ -286,7 +284,7 @@ const AssistantMessage = ({
                     <AvatarAndNotice
                         isFinishedGenerating={isFinishedGenerating}
                         isGenerating={isGenerating}
-                        isGeneratingWithToolCall={isGeneratingWithToolCall}
+                        toolCallName={toolCall?.name}
                     />
                 )}
             </div>
