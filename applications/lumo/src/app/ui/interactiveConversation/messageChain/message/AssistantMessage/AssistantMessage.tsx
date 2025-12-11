@@ -182,6 +182,7 @@ const AssistantMessage = ({
     const retryButtonRef = useRef<HTMLButtonElement>(null);
     const messageContent = preprocessContent(message?.content);
 
+    console.log(`in AssistantMessage component body: message = ${JSON.stringify(message)}`);
     const { toolCall, toolResult } = useToolCallInfo(message.toolCall, message.toolResult);
     const hasToolCall = toolCall !== null;
 
@@ -238,7 +239,7 @@ const AssistantMessage = ({
                             // eslint-disable-next-line no-nested-ternary
                             isLoading ? (
                                 hasToolCall ? (
-                                    <ToolCallLoading />
+                                    <ToolCallLoading toolCallName={toolCall?.name} />
                                 ) : (
                                     <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                         <div className="rectangle-skeleton keep-motion"></div>
