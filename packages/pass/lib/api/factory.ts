@@ -16,7 +16,7 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
-import configureApi from '@proton/shared/lib/api';
+import { configureApi } from '@proton/shared/lib/api';
 import {
     getApiError,
     getApiErrorMessage,
