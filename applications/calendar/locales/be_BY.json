@@ -389,6 +389,12 @@
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
+      "Expand navigation bar to see bookings": [
+        "Разгарнуць панэль навігацыі, каб убачыць браніраванні"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Разгарнуць панэль навігацыі, каб убачыць календары"
+      ],
       "Expand video conferencing widget": [
         "Разгарнуць віджэт відэаканферэнцыі"
       ],
@@ -1192,12 +1198,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -3331,7 +3331,7 @@
         "120 хвілін"
       ],
       "120m": [
-        "120хв"
+        "120 хв"
       ],
       "30 minutes": [
         "30 хвілін"
@@ -3343,13 +3343,13 @@
         "60 хвілін"
       ],
       "60m": [
-        "60хв"
+        "60 хв"
       ],
       "90 minutes": [
         "90 хвілін"
       ],
       "90m": [
-        "90хв"
+        "90 хв"
       ]
     },
     "Edit billing address form note": {
@@ -4125,7 +4125,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Кампанент."
+        "Памылковы фармат. Немагчыма прачытаць кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -6834,9 +6834,6 @@
       "Billing cycle": [
         "Перыяд аплаты"
       ],
-      "Black Friday": [
-        "Чорная пятніца"
-      ],
       "Browser": [
         "Браўзер"
       ],
@@ -9122,7 +9119,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з ${ planName }"
+        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -10731,12 +10728,6 @@
       "Custom event colors": [
         "Карыстальніцкія колеры падзей"
       ],
-      "Get up to ${ credits } in credits.": [
-        "Атрымайце да ${ credits } у крэдытах."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Запрасіць сяброў у ${ BRAND_NAME }"
-      ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Заплануйце і далучыцеся да выклікаў ${ MEET_APP_NAME } непасрэдна са свайго календара."
       ],
@@ -12317,10 +12308,10 @@
         "Зводка"
       ],
       "The booking feature is currently unavailable.": [
-        "Функцыя браніравання ў цяперашні час недаступная."
+        "Функцыя браніравання ў цяперашні час недаступна."
       ],
       "This booking page can’t be shown.": [
-        "Гэтая старонка браніравання не можа быць паказана."
+        "Гэта старонка браніравання не можа быць паказана."
       ],
       "This booking page has expired.": [
         "Гэта старонка браніравання пратэрмінавана."
@@ -12766,7 +12757,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэта спраўджанне."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

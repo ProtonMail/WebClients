@@ -686,9 +686,6 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pagar ${ price }"
-      ],
       "Pay ${ price } now": [
         "Pagar ${ price } ahora"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", aceptas nuestros ${ termsAndConditions }."
@@ -5204,9 +5201,6 @@
       "Select your deal": [
         "Elige tu oferta"
       ],
-      "Select your payment method": [
-        "Selecciona tu método de pago"
-      ],
       "Select your pricing plan": [
         "Selecciona el precio del plan"
       ],
@@ -8463,9 +8457,6 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Direcciones bloqueadas"
@@ -13364,14 +13355,6 @@
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Consigue hasta ${ credits } en créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invita amigos a ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando tu ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -16468,9 +16451,6 @@
       ],
       "Your ${ selected } plan": [
         "Tu plan ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Tu plan incluye:"
       ]
     },
     "vpn_2step: tooltip": {

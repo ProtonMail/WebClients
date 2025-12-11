@@ -380,6 +380,12 @@
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
       ],
+      "Expand navigation bar to see bookings": [
+        "ナビゲーションバーを展開して予約を表示"
+      ],
+      "Expand navigation bar to see calendars": [
+        "ナビゲーションバーを展開してカレンダーを表示"
+      ],
       "Expand video conferencing widget": [
         "ビデオ会議ウィジェットを拡張"
       ],
@@ -1162,12 +1168,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -5973,7 +5973,7 @@
         "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
       ],
       "To add a new booking page, upgrade your plan.": [
-        "新し予約ページを追加するには、お客様のプランをアップグレードしてください。"
+        "新しい予約ページを追加するには、お客様のプランをアップグレードしてください。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
@@ -6567,9 +6567,6 @@
       "Billing cycle": [
         "支払い間隔"
       ],
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
       "Browser": [
         "ブラウザ"
       ],
@@ -6913,7 +6910,7 @@
         "Zoomビデオ会議を削除"
       ],
       "Repeat weekly": [
-        "毎週"
+        "毎週繰り返し"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -6976,7 +6973,7 @@
         "ツールバー"
       ],
       "Unavailable": [
-        "設定不可"
+        "利用できません"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -10188,12 +10185,6 @@
       "Custom event colors": [
         "独自の予定の色"
       ],
-      "Get up to ${ credits } in credits.": [
-        "最大${ credits }分のクレジットを獲得できます"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "友達を ${ BRAND_NAME } に招待"
-      ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "カレンダーから直接、${ MEET_APP_NAME } の通話をスケジュール設定し、参加できます。"
       ],
@@ -11687,7 +11678,7 @@
         "この予約ページは表示できません。"
       ],
       "This booking page has expired.": [
-        "この予約ページは有効期限切れです."
+        "この予約ページは有効期限切れです。"
       ],
       "Time": [
         "時間"

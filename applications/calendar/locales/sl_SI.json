@@ -1084,6 +1084,14 @@
         "Neobvezno"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Prekliči naročnino"
@@ -3007,6 +3015,11 @@
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Dodaj koledar"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     },
     "Duplicate event button tooltip": {
@@ -6694,6 +6707,9 @@
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
       ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
+      ],
       "Request an invite": [
         "Zahtevaj povabilo"
       ],
@@ -9551,12 +9567,6 @@
       ],
       "Custom event colors": [
         "Barve dogodka po meri"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } kot dobropis."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Preprosto ustvarite in dodajte povezave za video sestanke svojim dogodkom."

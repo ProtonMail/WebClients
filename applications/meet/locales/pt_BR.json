@@ -29,8 +29,8 @@
       "Authenticate": [
         "Autenticar"
       ],
-      "Blur background": [
-        "Desfocar fundo"
+      "Background blur": [
+        "Desfoque de fundo"
       ],
       "Cancel": [
         "Cancelar"
@@ -170,11 +170,14 @@
       "Next page": [
         "Próxima página"
       ],
-      "Noise filter": [
-        "Filtro de ruído"
+      "Noise cancellation": [
+        "Cancelamento de ruído"
       ],
       "Open link": [
         "Abrir link"
+      ],
+      "Picture-in-picture mode": [
+        "Modo de janela flutuante"
       ],
       "Previous month": [
         "Mês anterior"
@@ -263,9 +266,6 @@
       "Stay in meeting": [
         "Ficar na reunião"
       ],
-      "Stop incoming video": [
-        "Parar de receber vídeo"
-      ],
       "Stop presenting": [
         "Parar de apresentar"
       ],
@@ -283,6 +283,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Turn off incoming video": [
+        "Desativar vídeo de entrada"
       ],
       "Use authentication code": [
         "Usar um código de autenticação"
@@ -328,9 +331,6 @@
       "Go to dashboard": [
         "Ir para painel de controle"
       ],
-      "Hide self view": [
-        "Ocultar minha visualização"
-      ],
       "Leave": [
         "Sair"
       ],
@@ -342,9 +342,6 @@
       ],
       "Meeting details": [
         "Detalhes da reunião"
-      ],
-      "Noise filter": [
-        "Filtro de ruído"
       ],
       "Open chat message search": [
         "Abrir pesquisa de mensagens do bate-papo"
@@ -369,9 +366,6 @@
       ],
       "Show passphrase": [
         "Mostrar frase secreta"
-      ],
-      "Stop incoming video": [
-        "Parar de receber vídeo"
       ],
       "Toggle camera": [
         "Alternar câmera"
@@ -1386,15 +1380,6 @@
       "Failed to decrypt session key": [
         "Falha ao descriptografar a chave de sessão"
       ],
-      "Failed to get meeting info": [
-        "Erro ao obter informações da reunião"
-      ],
-      "Failed to get room name": [
-        "Falha ao obter nome da sala"
-      ],
-      "Failed to initialize handshake": [
-        "Falha ao iniciar negociação de conexão﻿"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Falha ao entrar na reunião. Tente novamente mais tarde."
       ],
@@ -1787,8 +1772,8 @@
       "Meeting link": [
         "Link da reunião"
       ],
-      "Meeting locked. No new participants can join": [
-        "Reunião bloqueada. Nenhum novo participante pode entrar"
+      "Meeting locked. No new participants can join.": [
+        "Reunião bloqueada. Nenhum novo participante pode entrar."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Reunião desbloqueada. Participantes podem entrar novamente."
@@ -2246,14 +2231,6 @@
         "Fazer upgrade"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Receba até ${ credits } em créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Convide amigos para ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Iniciar sessão"
@@ -2297,6 +2274,9 @@
       ],
       "Assign a new host": [
         "Atribuir um novo anfitrião"
+      ],
+      "Audio": [
+        "Áudio"
       ],
       "Authenticator": [
         "Autenticador"
@@ -2400,6 +2380,9 @@
       "Secure meeting": [
         "Reunião segura"
       ],
+      "Security": [
+        "Segurança"
+      ],
       "Settings": [
         "Configurações"
       ],
@@ -2426,6 +2409,9 @@
       ],
       "Upcoming meetings": [
         "Próximas reuniões"
+      ],
+      "Video": [
+        "Vídeo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2434,11 +2420,11 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Desfocar fundo"
+      "Background blur": [
+        "Desfoque de fundo"
       ],
-      "Blur background is not supported on your browser": [
-        "Desfoque de fundo não é suportado no seu navegador"
+      "Background blur is not supported on your browser": [
+        "O desfoque de fundo não é compatível com o seu navegador"
       ],
       "Recurring meeting": [
         "Reunião recorrente"

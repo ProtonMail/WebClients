@@ -20,9 +20,6 @@
       "Authenticate": [
         "Autentica"
       ],
-      "Blur background": [
-        "Sfocatura dello sfondo"
-      ],
       "Cancel": [
         "Annulla"
       ],
@@ -143,9 +140,6 @@
       "Next page": [
         "Pagina successiva"
       ],
-      "Noise filter": [
-        "Filtro Rumore"
-      ],
       "Open link": [
         "Apri link"
       ],
@@ -227,9 +221,6 @@
       "Stay in meeting": [
         "Resta nella riunione"
       ],
-      "Stop incoming video": [
-        "Interrompi il video in arrivo"
-      ],
       "Stop presenting": [
         "Interrompi la presentazione"
       ],
@@ -289,9 +280,6 @@
       "Go to dashboard": [
         "Vai alla dashboard"
       ],
-      "Hide self view": [
-        "Nascondi la tua immagine"
-      ],
       "Leave": [
         "Abbandona"
       ],
@@ -303,9 +291,6 @@
       ],
       "Meeting details": [
         "Dettagli della riunione"
-      ],
-      "Noise filter": [
-        "Filtro Rumore"
       ],
       "Open chat message search": [
         "Apri la ricerca messaggi della chat"
@@ -330,9 +315,6 @@
       ],
       "Show passphrase": [
         "Mostra frase d'accesso"
-      ],
-      "Stop incoming video": [
-        "Interrompi il video in arrivo"
       ],
       "Toggle camera": [
         "Attiva/disattiva fotocamera"
@@ -1344,15 +1326,6 @@
       "Failed to decrypt session key": [
         "Decriptazione della chiave di sessione non riuscita"
       ],
-      "Failed to get meeting info": [
-        "Impossibile recuperare le informazioni sulla riunione"
-      ],
-      "Failed to get room name": [
-        "Impossibile ottenere il nome della stanza"
-      ],
-      "Failed to initialize handshake": [
-        "Impossibile inizializzare l'handshake\n"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Impossibile partecipare alla riunione. Per favore, riprova più tardi."
       ],
@@ -1711,9 +1684,6 @@
       ],
       "Meeting link": [
         "Collegamento alla riunione"
-      ],
-      "Meeting locked. No new participants can join": [
-        "Riunione bloccata. Nessun nuovo partecipante può unirsi"
       ],
       "Meeting unlocked. Participants can join again.": [
         "Riunione sbloccata. I partecipanti possono unirsi di nuovo."
@@ -2141,14 +2111,6 @@
         "Effettua l'upgrade"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Guadagna fino a ${ credits } in crediti."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invita gli amici su ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Accedi"
@@ -2274,6 +2236,9 @@
       "Secure meeting": [
         "Riunione sicura"
       ],
+      "Security": [
+        "Sicurezza"
+      ],
       "Settings": [
         "Impostazioni"
       ],
@@ -2308,12 +2273,6 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Sfocatura dello sfondo"
-      ],
-      "Blur background is not supported on your browser": [
-        "La sfocatura dello sfondo non è supportata dal tuo browser"
-      ],
       "Recurring meeting": [
         "Riunione ricorrente"
       ]

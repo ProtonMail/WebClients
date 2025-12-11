@@ -686,9 +686,6 @@
       "Pay": [
         "გადახდა"
       ],
-      "Pay ${ price }": [
-        "${ price }-ის გადახდა"
-      ],
       "Pay ${ price } now": [
         "${ price }-ის გადახდა"
       ],
@@ -5151,9 +5148,6 @@
       "Select your deal": [
         "აირჩიეთ ტარიფი"
       ],
-      "Select your payment method": [
-        "აირჩიეთ თქვენი გადახდის მეთოდი"
-      ],
       "Select your pricing plan": [
         "აირჩიეთ თქვენი ტარიფი"
       ],
@@ -8325,9 +8319,6 @@
       ],
       "Billing cycle": [
         "გადახდის პერიოდი"
-      ],
-      "Black Friday": [
-        "შავი პარასკევი"
       ],
       "Block": [
         "დაბლოკვა"
@@ -13147,14 +13138,6 @@
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "მიღეთ ${ credits }-მდე კრედიტი."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
@@ -16215,9 +16198,6 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
-      ],
-      "Your plan includes:": [
-        "თქვენი ტარიფი შეიცავს:"
       ]
     },
     "vpn_2step: tooltip": {

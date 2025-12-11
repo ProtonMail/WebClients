@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Creați o legătură web pentru a partaja cu oricine în afara ${ BRAND_NAME }"
       ],
-      "Create account": [
-        "Creare cont"
-      ],
       "Create calendar": [
         "Creare calendar"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Plătire"
-      ],
-      "Pay ${ price }": [
-        "Plată ${ price }"
       ],
       "Pay ${ price } now": [
         "Plătire ${ price } acum"
@@ -2043,12 +2037,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
       ],
@@ -2774,9 +2762,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Adăugare legătură web la subsol"
-      ],
       "Close": [
         "Închidere"
       ],
@@ -2801,9 +2786,6 @@
       "Got it": [
         "Am înțeles"
       ],
-      "Invite": [
-        "Invitare"
-      ],
       "Maybe later": [
         "Poate mai târziu"
       ],
@@ -2821,9 +2803,6 @@
       ],
       "Take a tour": [
         "Faceți un tur"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4516,7 +4495,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "Setări implicite eveniment"
+        "Setări implicite evenimente"
       ]
     },
     "Default display name vcard": {
@@ -4624,11 +4603,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Felicitări! Ați câștigat maximul de ${ rewardsLimit } lună gratuită pentru ${ plusPlanName }.",
-        "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite pentru ${ plusPlanName }.",
-        "Felicitări! Ați câștigat maximul de ${ rewardsLimit } de luni gratuite pentru ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
@@ -4731,17 +4705,11 @@
       "Track the status and activity of your referrals": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
-      "Track the status and activity of your referrals.": [
-        "Urmăriți starea și activitatea celor recomandați."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Treceți la alt plan pentru a obține adresa ${ activatePmUser } mai scurtă și ușor de reținut pe lângă cea actuală."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Puteți continua să invitați prieteni, dar nu veți putea câștiga mai multe credite."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Vă puteți personaliza lista de domenii în care anumite funcții automate din extensia de navigator web ${ PASS_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
@@ -5147,6 +5115,9 @@
       "120 minutes": [
         "120 de minute"
       ],
+      "120m": [
+        "120 m"
+      ],
       "30 minutes": [
         "30 de minute"
       ],
@@ -5156,8 +5127,14 @@
       "60 minutes": [
         "60 de minute"
       ],
+      "60m": [
+        "60 m"
+      ],
       "90 minutes": [
         "90 de minute"
+      ],
+      "90m": [
+        "90 m"
       ]
     },
     "Easy switch": {
@@ -7938,9 +7915,6 @@
       "Select your deal": [
         "Selectați oferta"
       ],
-      "Select your payment method": [
-        "Selectați metoda de plată"
-      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
       ],
@@ -8541,9 +8515,6 @@
         "Țări activate: ${ countriesCount }",
         "Țări activate: ${ countriesCount }"
       ],
-      "${ current } of ${ total }": [
-        "${ current } din ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
       ],
@@ -8769,9 +8740,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrare dacă ORICARE din condițiile următoare sunt îndeplinite)"
       ],
-      "* No credit card required.": [
-        "* Nu trebuie card de credit."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** nu este suportată în organizația **${ organizationName }**."
       ],
@@ -8821,17 +8789,8 @@
         "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Invitați persoane la ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Ei încearcă ${ planName }"
-      ],
       "2FA disabled": [
         "A2F dezactivată"
-      ],
-      "3. You earn credits": [
-        "3. Câștigați credite"
       ],
       "30-day money-back guarantee": [
         "Garanția returnării banilor în 30 de zile"
@@ -9324,9 +9283,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
       ],
-      "Credits earned": [
-        "Credite câștigate"
-      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -9677,7 +9633,7 @@
         "Eșuare preluare jurnale."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rapid și eficient. E-mail și calendar chiar de desktop."
+        "Rapid și eficient. E-mail și calendar chiar pe desktop."
       ],
       "Featured in": [
         "Menționat în"
@@ -10049,17 +10005,11 @@
       "Item updated in vault": [
         "Articol actualizat în seif."
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Am folosit @ProtonMail și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea prin această legătură web de recomandare oferă o lună gratuită: ${ referrerLink }"
-      ],
       "JCB logo": [
         "Logo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
-      ],
-      "Just send them your personal referral link.": [
-        "Doar trimiteți-le legătua personală de recomandare."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
@@ -10319,9 +10269,6 @@
       "Once you reset your password:": [
         "După ce veți reseta parola:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Un cont. Toate serviciile ${ BRAND_NAME }."
-      ],
       "One time import": [
         "Importare unică"
       ],
@@ -10391,14 +10338,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Plătit pentru un plan de o lună.",
-        "Plătit pentru un plan de ${ rewardMonths } luni.",
-        "Plătit pentru un plan de ${ rewardMonths } de luni."
-      ],
-      "Paid for a monthly plan": [
-        "Plătit pentru un plan lunar"
       ],
       "Paid for a plan": [
         "Plătit pentru un plan"
@@ -10980,9 +10919,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Ei vor primi o lună gratuită pentru ${ planName }."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -11165,9 +11101,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "pentru a utiliza ${ toAppName } și toate serviciile ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Pentru a folosi ${ toAppName }, vă trebuie o adresă ${ MAIL_APP_NAME }."
@@ -11474,9 +11407,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Când sunt activate notificările, veți primi o alertă la adresa de e-mail de recuperare dacă aveți mesaje noi în contul ${ MAIL_APP_NAME }."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Atunci când se abonează la un plan, veți primi credite pe care le puteți folosi pentru abonamentul personal."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Dacă vă anulați abonamentul actual cu plată, soldul abonamentului va fi returnat sub formă de credite de cont și contul va fi retrogradat la planul ${ BRAND_NAME } ${ PLANS.FREE }."
@@ -12566,7 +12496,7 @@
         "TOATE"
       ],
       "All-day event notifications": [
-        "Notificări evenimente toată ziua"
+        "Notificări pentru evenimente care durează toată ziua"
       ],
       "Allow": [
         "Permise"
@@ -12702,9 +12632,6 @@
       ],
       "Billing cycle": [
         "Ciclu de facturare"
-      ],
-      "Black Friday": [
-        "Vinerea Neagră"
       ],
       "Block": [
         "Blocate"
@@ -13468,9 +13395,6 @@
       "Repeat backup password": [
         "Repetare parolă de rezervă"
       ],
-      "Repeat password": [
-        "Repetare parolă"
-      ],
       "Reply (ACS) URL": [
         "URL răspuns (ACS)"
       ],
@@ -13534,7 +13458,7 @@
         "Afișare ${ n } de administratori"
       ],
       "Show others when I'm busy": [
-        "Afișare stare disponibilitate celorlalți"
+        "Arată celorlalți stare mea"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -13770,9 +13694,6 @@
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
       ],
-      "Your referral link": [
-        "Legătură web de recomandare"
-      ],
       "ZIP code": [
         "Cod poștal"
       ]
@@ -13815,7 +13736,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notificări evenimente toată ziua"
+        "Notificări pentru evenimente care durează toată ziua"
       ],
       "Notifications": [
         "Notificări"
@@ -14528,6 +14449,12 @@
       "Create a new ${ appName } account": [
         "Creare cont ${ appName }"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Bucurați-vă de două săptămâni de ${ BRAND_NAME } gratuit"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Experimentați confidențialitatea online cu adevărat. Protejați-vă datele cu ${ BRAND_NAME } gratuit pentru următoarele 14 zile."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Găsiți-vă numele de utilizator al contului ${ BRAND_NAME }"
       ],
@@ -14545,12 +14472,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Conectați-vă la contul ${ BRAND_NAME } pentru a accesa toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și altele. NU aveți un cont? Creați unul GRATUIT."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Preluați controlul asupra datelor cu criptarea bilaterală"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Încercați ${ BRAND_NAME } gratuit cu această legătură web"
       ]
     },
     "Modal title": {
@@ -14820,9 +14741,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Continuare cu Free"
-      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -14843,9 +14761,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Trecere la ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -15424,21 +15339,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vă permite să creați adrese de e-mail și să gestionați conturi pentru utilizatori secundari. Ideal pentru familii și organizații."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de o lună. Alte opțiuni de abonament sunt disponibile la finalizare."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de 12 luni. Alte opțiuni de abonament sunt disponibile la finalizare."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de 15 luni. Alte opțiuni de abonament sunt disponibile la finalizare."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de 24 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Cu abonament de 30 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TiB de stocare în cloud care vă permite stocarea, sincronizarea și partajarea ușoară a fișierelor. Securizat prin criptare bilaterală."
       ],
@@ -15480,9 +15380,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Dacă treceți la un alt plan, veți pierde toate beneficiile planului ${ visionary } și nu veți mai putea reveni la el."
-      ],
-      "Most popular": [
-        "Cel mai popular"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
@@ -15555,14 +15452,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Creând contul ${ BRAND_NAME } sunteți de acord cu ${ terms }"
       ],
-      "Payment details": [
-        "Detalii plată"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Salvați adresa de e-mail sau numărul de telefon pentru a fi utilizate la verificarea contului dacă trebuie să vă resetați contul."
-      ],
-      "Subscription": [
-        "Abonament"
       ],
       "terms and conditions": [
         "termenii și condițiile"
@@ -15575,9 +15466,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Abonamentul ${ planTitleElement } este acum activ."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Planul selectat: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -19684,6 +19572,9 @@
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
+      "Mail": [
+        "E-Mail"
+      ],
       "Mailboxes and custom domains for aliases": [
         "Mesaje și domenii personale pentru aliasuri"
       ],
@@ -19885,9 +19776,6 @@
       "Display name": [
         "Nume afișat"
       ],
-      "Email": [
-        "E-mail"
-      ],
       "Email address": [
         "Adresa de e-mail"
       ],
@@ -19899,17 +19787,6 @@
       ],
       "Username": [
         "Utilizator"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Setare cont"
-      ],
-      "Payment": [
-        "Plată"
-      ],
-      "Verification": [
-        "Verificare"
       ]
     },
     "signup: Action": {
@@ -20257,12 +20134,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obțineți credite când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } în credite."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invitați persoane la ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -22145,9 +22016,6 @@
       "Create user accounts": [
         "Creare conturi de utilizator"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Creați-vă contul ${ BRAND_NAME }"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Creați-vă adresa ${ BRAND_NAME }"
       ],
@@ -22593,14 +22461,8 @@
       "Home": [
         "Început"
       ],
-      "How does it work?": [
-        "Cum funcționează?"
-      ],
       "How to choose a good logo": [
         "Cum să alegeți un logo bun"
-      ],
-      "How to refer a friend and get credits": [
-        "Cum să recomandați o persoană și să primiți credite"
       ],
       "How your free trial works": [
         "Cum funcționează probarea gratuită"
@@ -22970,9 +22832,6 @@
       "Search for additional servers": [
         "Căutare servere suplimentare"
       ],
-      "Secure email based in Switzerland": [
-        "E-mail securizat găzduit în Elveția"
-      ],
       "Secure your passwords. Everywhere.": [
         "Securizați-vă parolele. Oriunde."
       ],
@@ -23269,14 +23128,8 @@
       "Vaults owned": [
         "Seifuri deținute"
       ],
-      "Verification": [
-        "Verificare"
-      ],
       "Verification failed": [
         "Verificarea a eșuat"
-      ],
-      "Verify email address": [
-        "Verificare adresă de e-mail"
       ],
       "Verifying your card...": [
         "Verificare card..."
@@ -23373,9 +23226,6 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Ați fost invitat să încercați ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24076,16 +23926,6 @@
         "Economisiți ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Invitat prin e-mail"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Înscris prin legătura dvs."
-      ]
-    },
     "User role": {
       "Admin": [
         "Administrator"
@@ -24379,9 +24219,6 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Planul actual include:"
       ]
     },
     "vpn_2step: tooltip": {

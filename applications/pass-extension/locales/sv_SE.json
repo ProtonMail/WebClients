@@ -155,14 +155,38 @@
       "Copy and close": [
         "Kopiera och stäng"
       ],
+      "Copy card number": [
+        "Kopiera kortnummer"
+      ],
+      "Copy email": [
+        "Kopiera e-post"
+      ],
+      "Copy expiration date": [
+        "Kopiera utgångsdatum"
+      ],
       "Copy forwarding address": [
         "Kopiera vidarebefordringsadress"
       ],
       "Copy link": [
         "Kopiera länk"
       ],
+      "Copy name on card": [
+        "Kopiera namn på kort"
+      ],
+      "Copy note content": [
+        "Kopiera anteckningsinnehåll"
+      ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
+      "Copy security code": [
+        "Kopiera säkerhetskod"
+      ],
       "Copy to clipboard": [
         "Kopiera till urklipp"
+      ],
+      "Copy username": [
+        "Kopiera användarnamn"
       ],
       "Create": [
         "Skapa"
@@ -1830,6 +1854,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

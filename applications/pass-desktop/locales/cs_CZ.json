@@ -166,8 +166,20 @@
       "Continue offline": [
         "Pokračovat offline"
       ],
+      "Copy": [
+        "Kopírovat"
+      ],
       "Copy and close": [
         "Kopírovat a zavřít"
+      ],
+      "Copy card number": [
+        "Zkopírovat číslo karty"
+      ],
+      "Copy email": [
+        "Zkopírovat e-mail"
+      ],
+      "Copy expiration date": [
+        "Zkopírovat datum vypršení platnosti"
       ],
       "Copy forwarding address": [
         "Kopírovat adresu přeposílání"
@@ -175,8 +187,23 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Copy name on card": [
+        "Zkopírovat jméno na kartě"
+      ],
+      "Copy note content": [
+        "Zkopírovat obsah poznámky"
+      ],
+      "Copy password": [
+        "Kopírovat heslo"
+      ],
+      "Copy security code": [
+        "Zkopírovat bezpečnostní kód"
+      ],
       "Copy to clipboard": [
         "Zkopírovat do schránky"
+      ],
+      "Copy username": [
+        "Zkopírovat uživatelské jméno"
       ],
       "Create": [
         "Vytvořit"
@@ -219,6 +246,9 @@
       ],
       "Custom section": [
         "Vlastní sekce"
+      ],
+      "Cut": [
+        "Vyjmout"
       ],
       "Delete": [
         "Smazat"
@@ -465,6 +495,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "Vložit"
       ],
       "Pause monitoring": [
         "Pozastavit sledování"
@@ -1984,7 +2017,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
