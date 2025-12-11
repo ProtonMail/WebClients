@@ -9,6 +9,9 @@ body:has(.booking-main-container) {
 
 	--booking-color-title: #372580;
 	--booking-no-booking-container-border-color: #e2dbff;
+	--booking-day-highlighted-border-color: #e5e7eb;
+	--booking-day-highlighted-background-color: #f3f4f6;
+	--booking-day-highlighted-hover-border-color: #d1d5db;
 	--text-norm: #4b5563;
 	--border-radius-3xl: #{rem(24)};
 	--border-radius-4xl: #{rem(36)};

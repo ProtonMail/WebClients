@@ -29,6 +29,8 @@ export interface Props {
     numberOfDays: number;
     numberOfWeeks: number;
     cellRef?: Ref<HTMLLIElement>;
+    highlightedDates?: Date[];
+    disableNonHighlightedDates?: boolean;
 }
 
 const MonthDays = ({
@@ -46,6 +48,8 @@ const MonthDays = ({
     numberOfDays,
     numberOfWeeks,
     cellRef,
+    highlightedDates,
+    disableNonHighlightedDates,
 }: Props) => {
     const [temporaryDateRange, setTemporaryDateRange] = useState<[Date, Date | undefined] | undefined>(undefined);
     const rangeStartRef = useRef<Date | undefined>(undefined);
@@ -140,6 +144,7 @@ const MonthDays = ({
                     (!rangeEnd && isIntervalBoundStart);
 
                 const customClassName = getDayClassName?.(dayDate);
+                const isHighlighted = highlightedDates && highlightedDates.some((date) => isSameDay(date, dayDate));
                 const className = clsx([
                     'minicalendar-day *:pointer-events-none',
                     !isActiveMonth && 'minicalendar-day--out-of-month',
@@ -147,13 +152,14 @@ const MonthDays = ({
                     isIntervalBoundStart && 'minicalendar-day--range-bound-start',
                     isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     selectedDate && isSameDay(selectedDate, dayDate) && 'minicalendar-day--selected',
+                    isHighlighted && 'minicalendar-day--highlighted',
                     customClassName,
                 ]);
 
                 return (
                     <li key={dayDate.toString()} ref={i === 0 ? cellRef : undefined}>
                         <button
-                            disabled={isOutsideMinMax}
+                            disabled={isOutsideMinMax || (disableNonHighlightedDates && !isHighlighted)}
                             aria-label={formatDay(dayDate)}
                             aria-current={isCurrent ? 'date' : undefined}
                             aria-pressed={isPressed ? true : undefined}
