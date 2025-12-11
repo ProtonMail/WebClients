@@ -12,13 +12,18 @@ export const useToolCallInfo = (toolCall: string | undefined, toolResult: string
     console.log('useToolCallInfo: toolCall = ', toolCall);
     console.log('useToolCallInfo: toolResult = ', toolResult);
 
-    if (!toolCall || !toolResult) {
+    if (!toolCall) {
         return { toolCall: null, hasError: false, toolResult: null };
     }
 
     const parsedToolCall = tryParseToolCall(toolCall);
     if (!parsedToolCall) {
         return { toolCall: null, hasError: false, toolResult: null };
+    }
+
+    // If we have a toolCall but no toolResult yet, show the toolCall
+    if (!toolResult) {
+        return { toolCall: parsedToolCall, hasError: false, toolResult: null };
     }
 
     const parsedToolResult = tryParseToolResult(toolResult);
