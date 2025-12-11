@@ -937,14 +937,6 @@
         "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "구독 취소하기"
@@ -4071,10 +4063,10 @@
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
@@ -8482,12 +8474,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "이 항목의 링크가 Drive에 저장되었어요. '나와 공유됨' 섹션에서 추후 접근이 가능합니다."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "최대 ${ credits }의 크레딧 받기"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME }에 초대하세요."
       ],
       "To edit this document, create a copy that you can modify.": [
         "이 문서를 편집하려면, 수정할 수 있는 복사본을 생성하세요."
