@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, WalletLogo } from '@proton/components';
+import { WalletLogo } from '@proton/components';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
@@ -20,6 +20,7 @@ import {
     getWallets,
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { IcLock } from '@proton/icons/icons/IcLock';
 import { CYCLE, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import {
     APPS,
@@ -199,7 +200,7 @@ export const getWalletConfiguration = ({
     const features = [
         {
             key: 'e2e',
-            left: <Icon size={6} className="color-primary" name="lock" />,
+            left: <IcLock size={6} className="color-primary" />,
             text: c('wallet_signup_2024: Info').t`Self-custodial wallet`,
         },
         getOpenSourceFeature(),

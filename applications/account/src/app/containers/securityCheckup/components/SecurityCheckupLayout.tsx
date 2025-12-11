@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { securityCheckupSlice } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { AppLink, Icon, Logo, ProtonLogo, PublicTopBanners, useSecurityCheckup, useTheme } from '@proton/components';
+import { AppLink, Logo, ProtonLogo, PublicTopBanners, useSecurityCheckup, useTheme } from '@proton/components';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -45,7 +46,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                     color="norm"
                     className="inline-flex items-center"
                 >
-                    <Icon name="arrow-left" className="shrink-0 mr-1 mb-0.5" />
+                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
                     {c('Safety review').t`Account safety review`}
                 </ButtonLike>
             );
@@ -60,7 +61,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                     color="norm"
                     className="inline-flex items-center"
                 >
-                    <Icon name="arrow-left" className="shrink-0 mr-1 mb-0.5" />
+                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
                     {c('Action').t`Settings`}
                 </ButtonLike>
             );
@@ -99,7 +100,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                 color="norm"
                 className="inline-flex items-center"
             >
-                <Icon name="arrow-left" className="shrink-0 mr-1 mb-0.5" />
+                <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
                 {label}
             </ButtonLike>
         );

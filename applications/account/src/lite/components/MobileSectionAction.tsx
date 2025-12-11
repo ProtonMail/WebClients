@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -28,7 +28,7 @@ const MobileSectionAction = ({ children, stackContent = false, onClick, coloredL
                     {children}
                 </button>
             </div>
-            <Icon name="chevron-right" className="shrink-0" />
+            <IcChevronRight className="shrink-0" />
         </div>
     );
 };

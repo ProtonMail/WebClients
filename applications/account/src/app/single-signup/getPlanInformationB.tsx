@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Icon, SkeletonLoader, VpnLogo, VpnPassLogo } from '@proton/components';
+import { SkeletonLoader, VpnLogo, VpnPassLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
@@ -30,6 +30,11 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandIos } from '@proton/icons/icons/IcBrandIos';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES, type Plan, getFreeTitle } from '@proton/payments';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -94,11 +99,11 @@ export const getPlanInformation = ({
                         <div className="flex items-center">
                             {c('new_plans: feature').t`Apps for`}
                             <span className="ml-1 inline-flex gap-1.5">
-                                <Icon name="brand-windows" />
-                                <Icon name="brand-apple" />
-                                <Icon name="brand-android" />
-                                <Icon name="brand-ios" />
-                                <Icon name="brand-linux" />
+                                <IcBrandWindows />
+                                <IcBrandApple />
+                                <IcBrandAndroid />
+                                <IcBrandIos />
+                                <IcBrandLinux />
                             </span>
                         </div>
                     ),

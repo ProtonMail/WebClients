@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import {
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     type OnLoginCallback,
     type OnLoginCallbackArguments,
     SimpleDropdown,
@@ -13,6 +12,8 @@ import {
 import Logo from '@proton/components/components/logo/Logo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -51,10 +52,7 @@ const Disabled = ({ children }: { children: ReactElement }) => {
             >
                 {children}
             </div>
-            <Icon
-                className="absolute color-danger top-0 right-0 bg-norm rounded-xl border border-transparent"
-                name="cross-circle-filled"
-            />
+            <IcCrossCircleFilled className="absolute color-danger top-0 right-0 bg-norm rounded-xl border border-transparent" />
         </div>
     );
 };
@@ -121,7 +119,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             className="flex flex-nowrap items-center gap-2 text-left"
                             onClick={onSwitch}
                         >
-                            <Icon name="plus" />
+                            <IcPlus />
                             {c('Action').t`Switch or add account`}
                         </DropdownMenuButton>
                     </DropdownMenu>

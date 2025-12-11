@@ -7,7 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import type { SectionConfig } from '@proton/components';
 import {
-    Icon,
     SettingsListItem,
     SidebarListItem,
     SidebarListItemButton,
@@ -17,6 +16,7 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -163,13 +163,14 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                                 aria-describedby={headerId}
                                 aria-controls={contentId}
                             >
-                                <Icon name="chevron-down-filled" className={clsx(isExpanded && 'rotateX-180')} />
+                                <IcChevronDownFilled className={clsx(isExpanded && 'rotateX-180')} />
                             </Button>
                         }
                     >
                         {calendarsSettingsHeaderContent}
                     </SidebarListItemContent>
                 </SidebarListItemLink>
+                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                 <ul
                     className="unstyled"
                     id={contentId}

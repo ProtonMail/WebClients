@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components';
+import { IcShieldFilled } from '@proton/icons/icons/IcShieldFilled';
 import { PROTON_SENTINEL_SHORT_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -10,7 +10,7 @@ export const SentinelBadge = ({ className }: { className?: string }) => {
                 className
             )}
         >
-            <Icon name="shield-filled" size={4} />
+            <IcShieldFilled size={4} />
             {PROTON_SENTINEL_SHORT_NAME}
         </span>
     );

@@ -7,7 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import {
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     InputFieldTwo,
     type OnLoginCallback,
     type OnLoginCallbackArguments,
@@ -22,6 +21,9 @@ import { handleReAuthKeyPassword } from '@proton/components/containers/login/log
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { queryScopes } from '@proton/shared/lib/api/auth';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
@@ -251,14 +253,14 @@ const ReAuthContainer = ({
                                 to={paths.reset}
                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                             >
-                                <Icon name="key" />
+                                <IcKey />
                                 {c('Link').t`Forgot password?`}
                             </Link>
                             <Link
                                 to={paths.forgotUsername}
                                 className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                             >
-                                <Icon name="user-circle" />
+                                <IcUserCircle />
                                 {c('Link').t`Forgot username?`}
                             </Link>
                         </SupportDropdown>
@@ -359,7 +361,7 @@ const ReAuthContainer = ({
                                 className="flex flex-nowrap items-center gap-2 text-left"
                                 onClick={onSwitch}
                             >
-                                <Icon name="plus" />
+                                <IcPlus />
                                 {c('Action').t`Switch or add account`}
                             </DropdownMenuButton>
                         </DropdownMenu>

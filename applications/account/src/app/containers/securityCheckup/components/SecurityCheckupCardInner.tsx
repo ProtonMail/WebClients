@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Icon } from '@proton/components';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
 
 export interface SecurityCheckupCardInnerProps {
@@ -30,7 +30,7 @@ const SecurityCheckupCardInner = ({
                     {checkmark && (
                         <>
                             &nbsp;
-                            <Icon className="shrink-0 color-success mb-0.5" size={4} name="checkmark-circle" />
+                            <IcCheckmarkCircle className="shrink-0 color-success mb-0.5" size={4} />
                         </>
                     )}
                 </h2>

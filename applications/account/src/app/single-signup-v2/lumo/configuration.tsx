@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, LumoLogo } from '@proton/components';
+import { LumoLogo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import { APPS, BRAND_NAME, LUMO_APP_NAME, LUMO_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience, type VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -28,7 +29,7 @@ import CustomStep from './CustomStep';
 
 const getBuiltInEuropeFeature = () => ({
     key: 'built-in-europe',
-    left: <Icon size={6} className="color-primary" name="map-pin" />,
+    left: <IcMapPin size={6} className="color-primary" />,
     text: c('collider_2025: Feature').t`Built and based in Europe`,
 });
 

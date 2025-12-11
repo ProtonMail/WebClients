@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/components';
+import { InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
 import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -20,7 +21,7 @@ import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmMod
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (
         <div className="mb-4 p-4 border border-weak rounded">
-            <Icon className="color-danger mr-2 float-left mt-1" name="exclamation-circle-filled" size={3.5} />
+            <IcExclamationCircleFilled className="color-danger mr-2 float-left mt-1" size={3.5} />
             {children}
         </div>
     );

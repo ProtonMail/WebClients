@@ -3,12 +3,13 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, SkeletonLoader } from '@proton/components';
+import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import {
     CYCLE,
     type Currency,
@@ -252,9 +253,7 @@ const PlanCardViewSlot = ({
                                         )}
                                         style={{ '--w-custom': '1.25rem', '--h-custom': '1.25rem' }}
                                     >
-                                        {selected && (
-                                            <Icon name="checkmark" className="color-primary-contrast" size={4} />
-                                        )}
+                                        {selected && <IcCheckmark className="color-primary-contrast" size={4} />}
                                     </span>
                                 )}
                             </div>
