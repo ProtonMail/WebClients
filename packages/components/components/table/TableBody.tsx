@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import TableRowBusy from './TableRowBusy';
 
@@ -6,6 +6,7 @@ interface Props {
     children: ReactNode;
     colSpan?: number;
     loading?: boolean;
+    style?: CSSProperties;
 }
 
 const TableBody = ({ children, loading = false, colSpan, ...rest }: Props) => {
