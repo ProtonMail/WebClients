@@ -6,8 +6,8 @@ import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
-import { LegacyContextMenu } from './LegacyContextMenu'
 import { GridFooter } from '../GridFooter/GridFooter'
+import { ContextMenu, ContextMenuWrapper } from '../ContextMenu'
 
 const exposeCanvasGrid = (
   instance: CanvasGridMethods | null,
@@ -190,7 +190,8 @@ export function LegacyGrid() {
       readonly={isReadonly}
       getEffectiveFormat={useUI((ui) => ui.legacy.getEffectiveFormat)}
       CellTooltip={CellTooltip}
-      ContextMenu={LegacyContextMenu}
+      ContextMenu={ContextMenu}
+      ContextMenuWrapper={ContextMenuWrapper}
       footerHeight={isReadonly ? undefined : 68}
       footerComponent={
         isReadonly ? undefined : <GridFooter sheetId={activeSheetId} onRequestAddRows={onRequestAddRows} />
