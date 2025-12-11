@@ -655,7 +655,7 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
     return Boolean(state.currentCellFormat?.textFormat?.[format])
   }
   function toggleTextFormat(format: BooleanTextFormatKey) {
-    setTextFormat(format, !isTextFormat(format) ? true : undefined)
+    setTextFormat(format, !isTextFormat(format))
   }
   function useTextFormatEntry(format: BooleanTextFormatKey) {
     return { active: isTextFormat(format), toggle: useEvent(() => toggleTextFormat(format)) }
