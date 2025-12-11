@@ -11,7 +11,7 @@ import {
     verifySCT,
 } from '../lib/verification/verifyCertificates';
 import { epoch } from './epoch.data';
-import { letsEncryptCertificateChain, zeroSSLCertificateChain } from './verifyCertificate.data';
+import { letsEncryptCertificateChain, newCertificateChain, zeroSSLCertificateChain } from './verifyCertificate.data';
 
 describe('certificate transparency', () => {
     it('should fail to parse with corrupt certificate', async () => {
@@ -67,9 +67,36 @@ describe('certificate transparency', () => {
             await verifySCT(epochCert, issuerCert);
             errorThrown = false;
         } catch (err) {
-            expect(err.message).toEqual('SCT verification failed');
+            expect(err.message).toEqual('The number of verified SCTs does not reach the number of operator threshold');
         }
         expect(errorThrown).toEqual(true);
+    });
+
+    it('verifySCT should ignore SCT from unknown log', async () => {
+        const certChain = await parseCertChain(newCertificateChain);
+        const epochCert = certChain[0];
+        const issuerCert = certChain[1];
+
+        const SignedCertificateTimestampListID = '1.3.6.1.4.1.11129.2.4.2';
+
+        for (let i = 0; epochCert.extensions && i < epochCert.extensions.length; i++) {
+            if (epochCert.extensions[i].extnID === SignedCertificateTimestampListID) {
+                const { parsedValue } = epochCert.extensions[i];
+                parsedValue.timestamps.push({
+                    ...parsedValue.timestamps[0],
+                    logID: '',
+                    toJSON() {
+                        return this;
+                    },
+                    verify() {
+                        return false;
+                    },
+                });
+                break;
+            }
+        }
+
+        await verifySCT(epochCert, issuerCert);
     });
 });
 
@@ -93,6 +120,20 @@ describe('certificate chain verification', () => {
                 KT_CERTIFICATE_ISSUER.LETSENCRYPT,
                 now
             );
+        } catch (err) {
+            error = err;
+        }
+        expect(error).toBeUndefined();
+    });
+    it('Should verify new certificate chain', async () => {
+        const now = new Date(1764658905 * SECOND + 24 * HOUR); // 24h after epoch was published.
+        let error;
+        try {
+            const certChain = await parseCertChain(newCertificateChain);
+            const epochCert = certChain[0];
+            const issuerCert = certChain[1];
+            await verifyCertChain(certChain, KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
+            await verifySCT(epochCert, issuerCert);
         } catch (err) {
             error = err;
         }
