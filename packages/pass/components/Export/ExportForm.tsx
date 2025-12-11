@@ -17,7 +17,7 @@ import { UpsellRef } from '@proton/pass/constants';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
-import { BitField } from '@proton/pass/types';
+import { OrganizationExportMode } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 export type ExporterProps = { form: FormikContextType<ExportRequestOptions>; loading: boolean };
@@ -29,7 +29,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const canUseStorage = useSelector(selectUserStorageAllowed);
     const upsell = useUpselling();
     const org = useOrganization({ sync: true });
-    const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
+    const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === OrganizationExportMode.ONLYADMINS;
     const disabled = orgExportDisabled || !online;
 
     const warnings = useMemo(

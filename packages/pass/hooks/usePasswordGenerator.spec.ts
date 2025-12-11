@@ -1,10 +1,10 @@
 import { DEFAULT_MEMORABLE_PW_OPTIONS, DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import type { OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 
 import { getPasswordConfig } from './usePasswordGenerator';
 
-const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyRequest = {
+const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyInput = {
     RandomPasswordAllowed: true,
     RandomPasswordMinLength: null,
     RandomPasswordMaxLength: null,
@@ -41,7 +41,7 @@ describe('getPasswordConfig', () => {
 
     it('returns a different config type if policy does not allow the current config type', () => {
         const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
-        const randomPolicy: OrganizationUpdatePasswordPolicyRequest = {
+        const randomPolicy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             RandomPasswordAllowed: false,
         };
@@ -49,7 +49,7 @@ describe('getPasswordConfig', () => {
         expect(randomResult.type).toBe('memorable');
 
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
-        const memorablePolicy: OrganizationUpdatePasswordPolicyRequest = {
+        const memorablePolicy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             MemorablePasswordAllowed: false,
         };
@@ -59,7 +59,7 @@ describe('getPasswordConfig', () => {
 
     it('enforces policy for random password', () => {
         const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
-        const policy: OrganizationUpdatePasswordPolicyRequest = {
+        const policy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             RandomPasswordMinLength: 63,
             RandomPasswordMustIncludeNumbers: false,
@@ -75,7 +75,7 @@ describe('getPasswordConfig', () => {
 
     it('enforces policy for memorable password', () => {
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
-        const policy: OrganizationUpdatePasswordPolicyRequest = {
+        const policy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             MemorablePasswordMinWords: 9,
             MemorablePasswordMustCapitalize: false,
@@ -89,7 +89,7 @@ describe('getPasswordConfig', () => {
 
     it('enforces max length policy for random password', () => {
         const randomConfig = DEFAULT_RANDOM_PW_OPTIONS;
-        const policy: OrganizationUpdatePasswordPolicyRequest = {
+        const policy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             RandomPasswordMinLength: 4,
             RandomPasswordMaxLength: 4,
@@ -100,7 +100,7 @@ describe('getPasswordConfig', () => {
 
     it('enforces max words policy for memorable password', () => {
         const memorableConfig = DEFAULT_MEMORABLE_PW_OPTIONS;
-        const policy: OrganizationUpdatePasswordPolicyRequest = {
+        const policy: OrganizationUpdatePasswordPolicyInput = {
             ...DEFAULT_POLICY,
             MemorablePasswordMinWords: 1,
             MemorablePasswordMaxWords: 2,

@@ -6,18 +6,18 @@ import { c } from 'ttag';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import InputField from '@proton/components/components/v2/field/InputField';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import type { OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 import type { PasswordGeneratorOptionValue, PasswordLength } from './PasswordGeneratorPolicyForm';
 
 type Props = {
-    id: keyof OrganizationUpdatePasswordPolicyRequest;
+    id: keyof OrganizationUpdatePasswordPolicyInput;
     label: string;
     value: PasswordGeneratorOptionValue;
     onChange: (value: PasswordGeneratorOptionValue) => void;
@@ -55,7 +55,7 @@ export const PasswordGeneratorPolicyOption: FC<Props> = ({ id, label, value, onC
                 {length ? (
                     <Field
                         value={value}
-                        as={InputField}
+                        as={InputFieldTwo}
                         name={id}
                         type="number"
                         min={length.min}

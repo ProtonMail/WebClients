@@ -5,7 +5,7 @@ import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { inviteAddressesValidateFailure, inviteAddressesValidateSuccess } from '@proton/pass/store/actions';
 import { inviteAddressesValidateIntent } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
-import { BitField } from '@proton/pass/types';
+import { OrganizationShareMode } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -18,7 +18,7 @@ export interface InviteAddressValidator {
 
 export const useAddressValidator = (shareId: string): MaybeNull<InviteAddressValidator> => {
     const org = useOrganization({ sync: true });
-    const shouldValidate = !org?.b2bAdmin && org?.settings.ShareMode === BitField.ACTIVE;
+    const shouldValidate = !org?.b2bAdmin && org?.settings.ShareMode === OrganizationShareMode.ONLYSHAREINSIDEORG;
 
     /** keeps track of valid/invalid email addresses in a map
      * in order to only request new emails to validate*/
