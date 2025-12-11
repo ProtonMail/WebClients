@@ -1,3 +1,7 @@
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
+
+import { getDrive } from '../../../index';
 import type { EventCallback, UploadTask } from '../types';
 
 /**
@@ -5,6 +9,15 @@ import type { EventCallback, UploadTask } from '../types';
  * Ensures consistent API across different executor types (file, folder, photo)
  */
 export abstract class TaskExecutor<T extends UploadTask = UploadTask> {
+    #driveClient: ProtonDriveClient | ProtonDrivePublicLinkClient | undefined;
+
+    get driveClient() {
+        return this.#driveClient || getDrive();
+    }
+    set driveClient(driveClientInstance: ProtonDriveClient | ProtonDrivePublicLinkClient) {
+        this.#driveClient = driveClientInstance;
+    }
+
     protected eventCallback?: EventCallback;
 
     /**

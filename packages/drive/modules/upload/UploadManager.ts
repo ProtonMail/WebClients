@@ -1,4 +1,6 @@
-import { NodeType } from '@proton/drive';
+import { NodeType, type ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
+
 import generateUID from '@proton/utils/generateUID';
 
 import { UploadOrchestrator } from './orchestration/UploadOrchestrator';
@@ -17,6 +19,12 @@ export class UploadManager {
     private orchestrator = new UploadOrchestrator();
     private activeContexts = new Set<string>();
     private contextUnsubscribers = new Map<string, () => void>();
+
+    setDriveClient(driveClientInstance?: ProtonDriveClient | ProtonDrivePublicLinkClient) {
+        if (driveClientInstance) {
+            this.orchestrator.setDriveClient(driveClientInstance);
+        }
+    }
 
     /**
      * Subscribe to upload events with a specific context.

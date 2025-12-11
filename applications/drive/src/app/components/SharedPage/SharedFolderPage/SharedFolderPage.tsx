@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
 import { useFlagsDriveSheet } from '../../../flags/useFlagsDriveSheet';
+import { TransferManager } from '../../../sections/transferManager/TransferManager';
 import {
     type DecryptedLink,
     type useBookmarksPublicView,
@@ -140,6 +142,7 @@ export default function SharedFolder({
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
     const { viewportWidth } = useActiveBreakpoint();
+    const useSDKTransferManager = useFlagsDriveSDKTransfer({ isForPhotos: false });
 
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
@@ -317,7 +320,11 @@ export default function SharedFolder({
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
             <FloatingElementsPublic>
-                <TransferManagerLegacy onVirusReport={handleVirusReport} />
+                {useSDKTransferManager ? (
+                    <TransferManager deprecatedRootShareId={undefined} />
+                ) : (
+                    <TransferManagerLegacy onVirusReport={handleVirusReport} />
+                )}
             </FloatingElementsPublic>
             {reportAbuseModal}
         </FileBrowserStateProvider>
