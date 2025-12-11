@@ -7,13 +7,15 @@ import {
   type EmbeddedChart,
   type ChartData,
   type ChartSpec,
+  type ChartAggregateType,
 } from '@rowsncolumns/spreadsheet'
 import { defaultCellCoords } from '@rowsncolumns/spreadsheet-state'
 import { useChartEditorDialogState } from '@rowsncolumns/charts'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
-import { Button, FormCheckbox, FormGroup, FormLabel, Input, Select, SelectPopover } from './shared'
+import { Button, FormCheckbox, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from './shared'
 import * as Ariakit from '@ariakit/react'
 import {
+  AGGREGATE_OPTIONS,
   CHART_TYPES,
   type ChartDataFormula,
   getBaseChartSpecData,
@@ -101,15 +103,10 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
     }
     return chartDataToFormula(basicSpec.domains)
   }, [basicSpec, chartDataToFormula])
-
-  const seriesFormula = useMemo(() => {
-    if (!basicSpec) {
-      return []
-    }
-    return chartDataToFormula(basicSpec.series)
-  }, [basicSpec, chartDataToFormula])
+  const seriesFormula = basicSpec ? chartDataToFormula(basicSpec.series) : []
 
   const selectedChartType = getChartTypeBySpec(formValue.spec)
+  const isAggregateType = basicSpec ? basicSpec.series.some((serie: ChartData) => serie.aggregateType) : false
 
   const onSubmit: SubmitHandler<EmbeddedChart> = (data) => {
     saveChanges(data)
@@ -204,8 +201,23 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
             {basicSpec ? (
               <Fragment>
                 <FormGroup>
+                  <Ariakit.CheckboxProvider
+                    value={isAggregateType}
+                    setValue={(checked) => {
+                      const nextSeries = basicSpec.series.map((serie: ChartData) => ({
+                        ...serie,
+                        aggregateType: checked ? 'SUM' : undefined,
+                      }))
+                      form.setValue('spec.series', nextSeries as ChartData[])
+                    }}
+                  >
+                    <FormCheckbox>{s('Aggregate')}</FormCheckbox>
+                  </Ariakit.CheckboxProvider>
+                </FormGroup>
+
+                <FormGroup className="border-y border-[black]/[.1] py-3">
                   <div className="flex items-center justify-between gap-2">
-                    <FormLabel>{s('Series')}</FormLabel>
+                    <FormLabel>{s('Value')}</FormLabel>
                     <Button
                       type="button"
                       className="shrink-0 rounded px-2 py-1 text-xs text-[#6D4AFF]"
@@ -220,6 +232,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                               : formValue.spec.dataRange
                                 ? [formValue.spec.dataRange]
                                 : [],
+                            dataLabel: '',
                           },
                         ] as ChartData[])
                       }}
@@ -227,71 +240,84 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                       {s('Add')}
                     </Button>
                   </div>
-                  <div>
+
+                  <div className="flex flex-col gap-2">
                     {seriesFormula.map((domain, domainIdx) => {
-                      return (
-                        <div
-                          key={domainIdx}
-                          className="flex flex-col gap-2 border-b border-[black]/[0.12] py-4 first:pt-0"
-                        >
-                          <FormGroup>
-                            <div className="flex items-center justify-between gap-2">
-                              <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
-                                {s('Name')} ({s('Series')} {domainIdx + 1})
-                              </Ariakit.Role.label>
-
-                              <Button
-                                type="button"
-                                className="inline-flex size-6 items-center justify-center"
-                                onClick={() => {
-                                  // form.setValue(
-                                  //   'spec.series',
-                                  //   formValue.spec.series.filter((_, i) => i !== domainIdx),
-                                  // )
-
-                                  const currentSeries = basicSpec.series
-                                  form.setValue(
-                                    'spec.series',
-                                    currentSeries.filter((_, seriesIndex) => seriesIndex !== domainIdx),
-                                  )
-                                }}
-                              >
-                                <Icon legacyName="trash" />
-                              </Button>
-                            </div>
-                            <Input
-                              placeholder={s('Name')}
-                              value={basicSpec.series[domainIdx].dataLabel ?? ''}
-                              onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
-                            />
-                          </FormGroup>
-
-                          {domain.sources.map((source, sourceIdx) => {
-                            return (
-                              <FormGroup key={sourceIdx}>
+                      return domain.sources.map((source, sourceIdx) => {
+                        return (
+                          <div key={`${domainIdx}-${sourceIdx}`} className="flex flex-col gap-2">
+                            <FormGroup>
+                              <div className="flex items-center justify-between gap-2">
                                 <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
-                                  {s('Range')}
+                                  {s('Series')} {domainIdx + 1}
                                 </Ariakit.Role.label>
-                                <div className="flex items-center">
-                                  <FormulaInput
-                                    value={source}
-                                    onChange={(value) => {
-                                      form.setValue(
-                                        `spec.series.${domainIdx}.sources.${sourceIdx}`,
-                                        formulaToRange(value) as SheetRange,
-                                      )
-                                    }}
-                                    required
-                                    placeholder={s('Select a range')}
-                                    autoFocus
-                                    className="mb-0 w-full"
-                                  />
-                                </div>
+
+                                <Button
+                                  type="button"
+                                  className="inline-flex size-6 items-center justify-center"
+                                  onClick={() => {
+                                    const currentSeries = basicSpec.series
+                                    form.setValue(
+                                      'spec.series',
+                                      currentSeries.filter((_, seriesIndex) => seriesIndex !== domainIdx),
+                                    )
+                                  }}
+                                >
+                                  <Icon legacyName="trash" />
+                                </Button>
+                              </div>
+                              <Input
+                                placeholder={s('Enter title')}
+                                value={domain.dataLabel ?? ''}
+                                onChange={(e) => form.setValue(`spec.series.${domainIdx}.dataLabel`, e.target.value)}
+                              />
+                            </FormGroup>
+
+                            <FormGroup>
+                              <div className="flex items-center">
+                                <FormulaInput
+                                  key={`${domainIdx}-${sourceIdx}-series`}
+                                  value={source}
+                                  onChange={(value) => {
+                                    form.setValue(
+                                      `spec.series.${domainIdx}.sources.${sourceIdx}`,
+                                      formulaToRange(value) as SheetRange,
+                                    )
+                                  }}
+                                  required
+                                  placeholder={s('Select a range')}
+                                  autoFocus
+                                  className="mb-0 w-full"
+                                />
+                              </div>
+                            </FormGroup>
+
+                            {isAggregateType ? (
+                              <FormGroup>
+                                <Ariakit.SelectProvider
+                                  value={domain.aggregateType ?? ''}
+                                  setValue={(value) => {
+                                    const aggregateType = value as ChartAggregateType | ''
+                                    form.setValue(`spec.series.${domainIdx}.aggregateType`, aggregateType || undefined)
+                                  }}
+                                >
+                                  <Select />
+                                  <SelectPopover sameWidth>
+                                    <Ariakit.SelectGroup className="py-2">
+                                      <SelectItem value="">None</SelectItem>
+                                      {AGGREGATE_OPTIONS.map((option) => (
+                                        <SelectItem key={option.value} value={option.value}>
+                                          {option.label}
+                                        </SelectItem>
+                                      ))}
+                                    </Ariakit.SelectGroup>
+                                  </SelectPopover>
+                                </Ariakit.SelectProvider>
                               </FormGroup>
-                            )
-                          })}
-                        </div>
-                      )
+                            ) : null}
+                          </div>
+                        )
+                      })
                     })}
                   </div>
                 </FormGroup>
@@ -361,13 +387,18 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
   )
 }
 
-interface ChartEditorRootProps {
-  onDone: () => void
+// We determine if a chart has been deleted by checking if its ID is still present
+// in the list of charts in the UI state. Technically not foolproof, but sufficient
+// for our use case here.
+function isChartDeleted(charts: EmbeddedChart[], chartId: EmbeddedChart['chartId']) {
+  return !charts.some((chart) => chart.chartId === chartId)
 }
 
-function ChartEditorRoot({ onDone }: ChartEditorRootProps) {
+function ChartEditorRoot() {
+  const [open, setOpen] = useChartEditorDialogState()
   const selectedChart = useUI((ui) => ui.charts.selected)
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const charts = useUI((ui) => ui.legacy.charts)
 
   const [defaultChart] = useState<EmbeddedChart>(() => ({
     chartId: uuid(),
@@ -379,7 +410,15 @@ function ChartEditorRoot({ onDone }: ChartEditorRootProps) {
   }))
   const chart = selectedChart || defaultChart
 
-  return <ChartEditor key={chart.chartId} chart={chart} onDone={onDone} />
+  // Close the dialog if the selected chart has been deleted
+  // This can happen if the user deletes the chart while the editor is open
+  // We check for chart deletion by verifying if the chart ID is still present in the charts list
+  // in the UI state
+  if (chart === selectedChart && open && isChartDeleted(charts, selectedChart.chartId)) {
+    setOpen(false)
+  }
+
+  return <ChartEditor key={chart.chartId} chart={chart} onDone={() => setOpen(false)} />
 }
 
 export function ChartEditorDialog() {
@@ -389,7 +428,7 @@ export function ChartEditorDialog() {
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
         <SidebarDialogHeader title={s('Chart editor')} />
-        <ChartEditorRoot onDone={() => setOpen(false)} />
+        <ChartEditorRoot />
       </div>
     </SidebarDialog>
   )
@@ -414,5 +453,8 @@ function strings() {
     'Horizontal axis title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Horizontal axis title`,
     'Show data in hidden rows and columns': c('sheets_2025:Spreadsheet sidebar chart editor dialog')
       .t`Show data in hidden rows and columns`,
+    Aggregate: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Aggregate`,
+    Value: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Value`,
+    'Enter title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Enter title`,
   }
 }

@@ -584,8 +584,18 @@ function InsertNote() {
 }
 
 function InsertChart() {
+  const insertChart = useUI.$.insert.chart
+  const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
+
   return (
-    <T.Item icon={Icons.barChart} onClick={useUI.$.insert.chart} disabled={useUI((ui) => ui.info.isReadonly)}>
+    <T.Item
+      icon={Icons.barChart}
+      onClick={() => {
+        const chart = insertChart()
+        onRequestEditChart(chart)
+      }}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Insert chart')}
     </T.Item>
   )

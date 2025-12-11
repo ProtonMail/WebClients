@@ -1,4 +1,4 @@
-import type { BasicChartSpec, ChartData, ChartSpec, EmbeddedChart } from '@rowsncolumns/spreadsheet'
+import type { BasicChartSpec, ChartAggregateType, ChartData, ChartSpec, EmbeddedChart } from '@rowsncolumns/spreadsheet'
 import omit from 'lodash/omit'
 
 type ChartType = {
@@ -234,6 +234,15 @@ export const CHART_TYPES: [string, ChartType[]][] = [
   ['Line', LINE_CHART_TYPES],
   ['Pie', PIE_CHART_TYPES],
   ['Hierarchy', HIERARCHY_CHART_TYPES],
+]
+
+export const AGGREGATE_OPTIONS: { label: string; value: ChartAggregateType }[] = [
+  { label: 'Sum', value: 'SUM' },
+  { label: 'Average', value: 'AVERAGE' },
+  { label: 'Count', value: 'COUNT' },
+  { label: 'Median', value: 'MEDIAN' },
+  { label: 'Min', value: 'MIN' },
+  { label: 'Max', value: 'MAX' },
 ]
 
 export function getBaseChartSpecData(spec: Partial<ChartSpec>): Partial<ChartSpec> {
