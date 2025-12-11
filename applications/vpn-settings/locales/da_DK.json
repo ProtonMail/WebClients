@@ -686,9 +686,6 @@
       "Pay": [
         "Betal"
       ],
-      "Pay ${ price }": [
-        "Betal ${ price }"
-      ],
       "Pay ${ price } now": [
         "Betal ${ price } nu"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved at klikke på \"Prøv\" accepterer du vores ${ termsAndConditions }."
@@ -5207,8 +5204,8 @@
       "Select your deal": [
         "Vælg dit tilbud"
       ],
-      "Select your payment method": [
-        "Vælg din betalingsmetode"
+      "Select your payment method:": [
+        "Vælg din betalingsmetode:"
       ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
@@ -5697,11 +5694,11 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine familiemedlemmer bruger to-faktor-godkendelse."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.to-faktor-godkendelse",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer uden SSO bruger to-faktor-godkendelse til at logge ind på din organisation.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
@@ -7310,7 +7307,7 @@
       ],
       "Shared server country (${ countriesCount })": [
         "Delt serverland (${ countriesCount })",
-        "Delte server-lande (${ countriesCount })"
+        "Delte serverlande (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Delt boks slettet"
@@ -8017,7 +8014,7 @@
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Du har ${ unassignedAvailableCount } nyligt anvendt server til rådighed. For at tildele denne server til et andet land skal du vente, indtil deaktiveringen er afsluttet.",
-        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente, indtil deaktiveringen er afsluttet."
+        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente indtil deaktiveringen er afsluttet."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -8469,9 +8466,6 @@
       ],
       "Billing cycle": [
         "Faktureringsperiode"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Blokér"
@@ -9975,6 +9969,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Aktivitetslog og politik"
+      ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
       ],
@@ -10209,6 +10206,9 @@
       ],
       "Secure link sharing": [
         "Sikker link-deling"
+      ],
+      "Secure password management": [
+        "Sikker adgangskodehåndtering"
       ],
       "See team's availability": [
         "Se teamets tilgængelighed"
@@ -12267,6 +12267,9 @@
       "How your free trial works:": [
         "Sådan fungerer din gratis prøveperiode:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at du måske vil kunne lide det. Det er en sikker e-mail, sky-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få 14 dages premium-funktioner gratis: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du annullerer inden da, nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, når prøveversionen udløber. Hvis du ikke annullerer, starter dit fulde abonnement, og du modtager **${ referrerRewardAmount }** i kreditter."
       ],
@@ -12287,6 +12290,9 @@
       ],
       "Refer friends": [
         "Henvis venner"
+      ],
+      "Share using ${ name }": [
+        "Del via ${ name }"
       ],
       "Start earning credits": [
         "Begynd at optjene kreditter"
@@ -13378,14 +13384,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Få op til ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16096,8 +16094,8 @@
         "Bekræft alle"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:",
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:"
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi dennes krypteringsnøgler er blevet opdaterer i mellemtiden:",
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdateret i mellemtiden:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunne ikke aktivere administratoradgang: ${ error }"
@@ -16484,9 +16482,6 @@
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"
-      ],
-      "Your plan includes:": [
-        "Dit abonnement omfatter:"
       ]
     },
     "vpn_2step: tooltip": {

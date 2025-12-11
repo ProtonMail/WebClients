@@ -686,9 +686,6 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pague ${ price }"
-      ],
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Experimentar\", você concorda com nossos ${ termsAndConditions }."
@@ -5207,9 +5204,6 @@
       "Select your deal": [
         "Selecione sua oferta"
       ],
-      "Select your payment method": [
-        "Selecione o seu método de pagamento"
-      ],
       "Select your pricing plan": [
         "Selecione o seu plano"
       ],
@@ -8469,9 +8463,6 @@
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Endereços bloqueados"
@@ -13379,14 +13370,6 @@
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Receba até ${ credits } em créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Convide amigos para ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando sua ajuda para iniciar sessão na sua conta ${ BRAND_NAME } com login único."
@@ -16465,9 +16448,6 @@
       ],
       "Your ${ selected } plan": [
         "Seu plano ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Seu plano inclui:"
       ]
     },
     "vpn_2step: tooltip": {

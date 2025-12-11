@@ -686,9 +686,6 @@
       "Pay": [
         "결제"
       ],
-      "Pay ${ price }": [
-        "${ price } 결제"
-      ],
       "Pay ${ price } now": [
         "${ price } 결제"
       ],
@@ -1395,12 +1392,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -5133,9 +5124,6 @@
       "Select your deal": [
         "특가를 골라보세요"
       ],
-      "Select your payment method": [
-        "결제 수단을 선택하세요"
-      ],
       "Select your pricing plan": [
         "플랜을 선택하세요"
       ],
@@ -5748,10 +5736,10 @@
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
       ],
       "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받게 됩니다."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
@@ -8303,9 +8291,6 @@
       ],
       "Billing cycle": [
         "결제 주기"
-      ],
-      "Black Friday": [
-        "블랙 프라이데이"
       ],
       "Block": [
         "차단"
@@ -13133,14 +13118,6 @@
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "최대 ${ credits }의 크레딧 받기"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME }에 초대하세요."
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
@@ -16140,9 +16117,6 @@
       ],
       "Your ${ selected } plan": [
         "나의 ${ selected } 플랜"
-      ],
-      "Your plan includes:": [
-        "플랜에 포함되는 항목:"
       ]
     },
     "vpn_2step: tooltip": {

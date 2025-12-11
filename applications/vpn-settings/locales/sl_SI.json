@@ -624,9 +624,6 @@
       "Pay": [
         "Plačilo"
       ],
-      "Pay ${ price }": [
-        "Plačajte ${ price }"
-      ],
       "Pay ${ price } now": [
         "Plačajte ${ price } sedaj"
       ],
@@ -1247,6 +1244,14 @@
       ],
       "Unsupported event": [
         "Nepodprt dogodek"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
       ]
     },
     "b2b_trials_Action": {
@@ -3101,6 +3106,11 @@
       ],
       "Priority support": [
         "Prednostna podpora"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     },
     "edm": {
@@ -7128,6 +7138,12 @@
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } uporabnik",
+        "${ group.UserCount } uporabnika",
+        "${ group.UserCount } uporabniki",
+        "${ group.UserCount } uporabnikov"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } od ${ humanMaxSpace }"
       ],
@@ -8096,6 +8112,9 @@
       ],
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
+      ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
       ],
       "Request an invite": [
         "Zahtevaj povabilo"
@@ -10376,6 +10395,12 @@
       ]
     },
     "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mesec",
+        "${ cycle } meseca",
+        "${ cycle } meseci",
+        "${ cycle } mesecev"
+      ],
       "Enjoying ${ planName }?": [
         "Uživate v ${ planName }?"
       ]
@@ -11386,14 +11411,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } kot dobropis."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
       ]
     },
     "sso": {

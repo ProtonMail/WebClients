@@ -686,9 +686,6 @@
       "Pay": [
         "Zaplatiť"
       ],
-      "Pay ${ price }": [
-        "Zaplatiť ${ price }"
-      ],
       "Pay ${ price } now": [
         "Zaplatiť teraz ${ price }"
       ],
@@ -1422,11 +1419,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na „Vyskúšať“ súhlasíte s našimi ${ termsAndConditions }."
@@ -5283,9 +5280,6 @@
       "Select your deal": [
         "Vyberte si svoju ponuku"
       ],
-      "Select your payment method": [
-        "Vyberte váš spôsob platby"
-      ],
       "Select your pricing plan": [
         "Vyberte si plán predplatného"
       ],
@@ -8699,9 +8693,6 @@
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Blokovať"
@@ -13738,14 +13729,6 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Získajte až ${ credits } v kreditoch."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Pozvite priateľov do ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
@@ -16948,9 +16931,6 @@
       ],
       "Your ${ selected } plan": [
         "Váš ${ selected } plán"
-      ],
-      "Your plan includes:": [
-        "Váš plán obsahuje:"
       ]
     },
     "vpn_2step: tooltip": {

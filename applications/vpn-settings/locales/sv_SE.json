@@ -686,9 +686,6 @@
       "Pay": [
         "Betala"
       ],
-      "Pay ${ price }": [
-        "Betala ${ price }"
-      ],
       "Pay ${ price } now": [
         "Betala ${ price } nu"
       ],
@@ -1404,12 +1401,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -5189,8 +5180,8 @@
       "Select your deal": [
         "Välj ditt erbjudande"
       ],
-      "Select your payment method": [
-        "Välj din betalningsmetod"
+      "Select your payment method:": [
+        "Välj din betalningsmetod:"
       ],
       "Select your pricing plan": [
         "Välj ditt prispaket"
@@ -8430,9 +8421,6 @@
       "Billing cycle": [
         "Faktureringsperiod"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Blockera"
       ],
@@ -9930,6 +9918,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Activity logs and policy": [
+        "Aktivitetsloggar och policy"
+      ],
       "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
       ],
@@ -10164,6 +10155,9 @@
       ],
       "Secure link sharing": [
         "Säker länkdelning"
+      ],
+      "Secure password management": [
+        "Säker lösenordshantering"
       ],
       "See team's availability": [
         "Se teamets tillgänglighet"
@@ -12230,6 +12224,9 @@
       "Refer friends": [
         "Hänvisa vänner"
       ],
+      "Share using ${ name }": [
+        "Dela med ${ name }"
+      ],
       "Start earning credits": [
         "Börja tjäna krediter"
       ],
@@ -13317,14 +13314,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Få upp till ${ credits } i krediter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Bjud in vänner till ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16091,6 +16080,12 @@
       "Did you know?": [
         "Visste du att?"
       ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Integritetssvit med säker e-post, ${ VPN_SHORT_APP_NAME }, molnlagringsutrymme och lösenordshanterare i ett paket. Från endast ${ fallBackString } per månad"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Integritetssvit med säker e-post, ${ VPN_SHORT_APP_NAME }, molnlagringsutrymme och lösenordshanterare i ett paket. Endast **${ priceString }** mer per månad."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Skydda din organisation från dataintrång med ${ PLAN_NAMES[plan] }."
       ],
@@ -16398,9 +16393,6 @@
       ],
       "Your ${ selected } plan": [
         "Ditt ${ selected }-paket"
-      ],
-      "Your plan includes:": [
-        "Ditt paket inkluderar:"
       ]
     },
     "vpn_2step: tooltip": {

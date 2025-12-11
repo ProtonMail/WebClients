@@ -686,9 +686,6 @@
       "Pay": [
         "Πληρωμή"
       ],
-      "Pay ${ price }": [
-        "Πληρωμή ${ price }"
-      ],
       "Pay ${ price } now": [
         "Πληρωμή ${ price } τώρα"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -5207,8 +5204,8 @@
       "Select your deal": [
         "Επιλέξτε την προσφορά σας"
       ],
-      "Select your payment method": [
-        "Επιλέξτε τη μέθοδο πληρωμής σας"
+      "Select your payment method:": [
+        "Επιλέξτε τη μέθοδο πληρωμής σας:"
       ],
       "Select your pricing plan": [
         "Επιλέξτε το πλάνο χρέωσης σας:"
@@ -8470,9 +8467,6 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Αποκλεισμένη"
       ],
@@ -9979,6 +9973,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Αρχεία καταγραφής δραστηριότητας και πολιτική"
+      ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
@@ -10213,6 +10210,9 @@
       ],
       "Secure link sharing": [
         "Ασφαλής κοινή χρήση συνδέσμων"
+      ],
+      "Secure password management": [
+        "Διαχείριση ασφαλών κωδικών πρόσβασης"
       ],
       "See team's availability": [
         "Δείτε τη διαθεσιμότητα της ομάδας"
@@ -12271,6 +12271,9 @@
       "How your free trial works:": [
         "Πως λειτουργεί η δοκιμαστική περίοδος σας:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Χρησιμοποιώ το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να σας αρέσει. Πρόκειται για ένα ασφαλές email, αποθήκευση στο cloud, διαχειριστή κωδικών πρόσβασης και VPN που προστατεύει τα προσωπικά σας δεδομένα. Εγγραφείτε μέσω αυτού του συνδέσμου για να αποκτήσετε δωρεάν πρόσβαση σε premium λειτουργίες για 14 ημέρες: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
       ],
@@ -12291,6 +12294,9 @@
       ],
       "Refer friends": [
         "Συστήστε φίλους"
+      ],
+      "Share using ${ name }": [
+        "Κοινοποίηση μέσω ${ name }"
       ],
       "Start earning credits": [
         "Ξεκινήστε να κερδίζετε πιστώσεις"
@@ -13382,14 +13388,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Λάβετε έως και ${ credits } σε πιστώσεις."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16488,9 +16486,6 @@
       ],
       "Your ${ selected } plan": [
         "Το ${ selected } πλάνο σας"
-      ],
-      "Your plan includes:": [
-        "Το πλάνο σας περιλαμβάνει:"
       ]
     },
     "vpn_2step: tooltip": {

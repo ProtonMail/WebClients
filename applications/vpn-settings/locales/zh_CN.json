@@ -645,9 +645,6 @@
       "Pay": [
         "支付"
       ],
-      "Pay ${ price }": [
-        "支付 ${ price }"
-      ],
       "Pay ${ price } now": [
         "立即支付 ${ price }"
       ],
@@ -4805,9 +4802,6 @@
       ],
       "Select your deal": [
         "选择您的交易"
-      ],
-      "Select your payment method": [
-        "选择支付方式"
       ],
       "Select your pricing plan": [
         "选择适合您的账户等级"
@@ -12212,14 +12206,6 @@
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "最高可获 ${ credits } 余额奖励。"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "邀请好友注册 ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } 请求您帮助以单点登录方式登录他们的 ${ BRAND_NAME } 账户。"
@@ -15061,9 +15047,6 @@
       ],
       "Your ${ selected } plan": [
         "您的 ${ selected } 计划"
-      ],
-      "Your plan includes:": [
-        "您的计划包括："
       ]
     },
     "vpn_2step: tooltip": {

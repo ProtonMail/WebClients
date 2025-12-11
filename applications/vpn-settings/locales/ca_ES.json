@@ -686,9 +686,6 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Paga ${ price }"
-      ],
       "Pay ${ price } now": [
         "Paga ${ price } ara"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
@@ -5207,8 +5204,8 @@
       "Select your deal": [
         "Seleccioneu la vostra oferta"
       ],
-      "Select your payment method": [
-        "Seleccioneu el mètode de pagament"
+      "Select your payment method:": [
+        "Seleccioneu el mètode de pagament:"
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
@@ -8470,9 +8467,6 @@
       "Billing cycle": [
         "Cicle de facturació"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Adreces bloquejades"
       ],
@@ -9979,6 +9973,9 @@
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
+      "Activity logs and policy": [
+        "Registres d'activitat i política"
+      ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
@@ -10213,6 +10210,9 @@
       ],
       "Secure link sharing": [
         "Compartició d'enllaços segurs"
+      ],
+      "Secure password management": [
+        "Gestió de contrasenyes segura"
       ],
       "See team's availability": [
         "Consulteu la disponibilitat de l'equip"
@@ -12278,6 +12278,9 @@
       "How your free trial works:": [
         "Com funciona la vostra prova gratuïta:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "He estat utilitzant ${ BRAND_NAME } i he pensat que us podria agradar. És un correu electrònic segur, amb emmagatzematge al núvol, gestor de contrasenyes i VPN que protegeix la vostra privacitat. Registreu-vos en aquest enllaç per obtenir 14 dies de funcions prèmium de franc: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si cancel·leu abans, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan acabi la prova. Si no cancel·leu, començarà el vostre pla complet i rebreu **${ referrerRewardAmount }** en crèdits."
       ],
@@ -12298,6 +12301,9 @@
       ],
       "Refer friends": [
         "Recomana amistats"
+      ],
+      "Share using ${ name }": [
+        "Compartiu-ho amb ${ name }"
       ],
       "Start earning credits": [
         "Comenceu a guanyar crèdits"
@@ -13392,14 +13398,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Obteniu fins a ${ credits } en crèdits."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Convida amistats a ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16498,9 +16496,6 @@
       ],
       "Your ${ selected } plan": [
         "El vostre pla ${ selected }"
-      ],
-      "Your plan includes:": [
-        "El pla inclou:"
       ]
     },
     "vpn_2step: tooltip": {
