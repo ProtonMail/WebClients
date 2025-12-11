@@ -1,225 +1,316 @@
-import { memo } from 'react';
+import type { MouseEvent, TouchEvent } from 'react';
 
+import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useConfirmActionModal } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { Badge, type Breakpoints, FileIcon, useContactEmailsCache } from '@proton/components';
+import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import { NodeType } from '@proton/drive';
+import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
+import clsx from '@proton/utils/clsx';
 
-import { AcceptOrRejectInviteCell } from '../../components/cells/AcceptOrRejectInviteCell';
-import { CheckboxCell } from '../../components/cells/CheckboxCell';
-import { ContextMenuCell } from '../../components/cells/ContextMenuCell';
-import { EmptyCell } from '../../components/cells/EmptyCell';
-import { NameCell } from '../../components/cells/NameCell';
-import { SharedByCell } from '../../components/cells/SharedByCell';
-import { TimeCell } from '../../components/cells/TimeCell';
-import useVolumesState from '../../store/_volumes/useVolumesState';
-import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
-import {
-    ItemType,
-    type SharedWithMeListingItemUI,
-    useSharedWithMeListingStore,
-} from '../../zustand/sections/sharedWithMeListing.store';
+import { FileName } from '../../components/FileName';
+import { SignatureIcon } from '../../components/SignatureIcon';
+import { getLinkIconText } from '../../components/sections/FileBrowser/utils';
+import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
+import { ContextMenuCell } from '../../statelessComponents/DriveExplorer/cells/ContextMenuCell';
+import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
+import { useVolumesState } from '../../store/_volumes';
+import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
+import { AcceptRejectCell } from './driveExplorerCells/AcceptRejectCell';
+import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/SharedByCell';
+import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
 
-const getSharedBy = (item: any): string => {
-    if (item.itemType === ItemType.DIRECT_SHARE) {
-        return item.directShare.sharedBy;
-    }
-    if (item.itemType === ItemType.INVITATION) {
-        return item.invitation.sharedBy;
-    }
-    return '';
-};
-
-const getSharedOn = (item: any): Date | undefined => {
-    if (item.itemType === ItemType.BOOKMARK) {
-        return item.bookmark.creationTime;
-    }
-    if (item.itemType === ItemType.DIRECT_SHARE) {
-        return item.directShare.sharedOn;
-    }
-    return undefined;
-};
-
-const NameCellWithThumbnail = ({
-    name,
-    mediaType,
-    type,
-    thumbnailId,
-    isInvitation,
-    haveSignatureIssues,
+export const getSharedWithMeCells = ({
+    viewportWidth,
+    onRenderItem,
+    showConfirmModal,
 }: {
-    name: string;
-    mediaType: string | undefined;
-    type: NodeType;
-    thumbnailId: string | undefined;
-    isInvitation?: boolean;
-    haveSignatureIssues: boolean | undefined;
-}) => {
-    const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.getThumbnail(thumbnailId) : undefined));
+    viewportWidth: Breakpoints['viewportWidth'];
+    onRenderItem: (uid: string) => void;
+    showConfirmModal: (props: ConfirmActionModalProps) => void;
+    selectionControls: {
+        selectItem: (uid: string) => void;
+        isSelected: (uid: string) => boolean;
+    };
+    contextMenuControls: {
+        isOpen: boolean;
+        handleContextMenu: (e: MouseEvent<Element>) => void;
+    };
+}): CellDefinition[] => [
+    {
+        ...defaultNameCellConfig,
+        render: (uid) => {
+            const NameCellComponent = () => {
+                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                const thumbnail = useThumbnailStore(
+                    useShallow((state) => (item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined))
+                );
 
-    return (
-        <NameCell
-            name={name}
-            mediaType={mediaType}
-            type={type}
-            thumbnailUrl={thumbnail?.sdUrl}
-            isInvitation={isInvitation}
-            haveSignatureIssues={haveSignatureIssues}
-        />
-    );
-};
+                if (!item) {
+                    return null;
+                }
 
-const SharedByCellWithInfo = ({ sharedBy, itemType }: { sharedBy: string; itemType: ItemType }) => {
-    const [contactEmails] = useContactEmails();
+                return (
+                    <NameCell
+                        uid={uid}
+                        name={item.name}
+                        type={item.type}
+                        mediaType={item.type === NodeType.File ? item.mediaType : undefined}
+                        thumbnail={thumbnail}
+                        isInvitation={item.itemType === ItemType.INVITATION}
+                        haveSignatureIssues={item.itemType === ItemType.DIRECT_SHARE ? item.haveSignatureIssues : false}
+                    />
+                );
+            };
+            return <NameCellComponent />;
+        },
+    },
+    {
+        ...defaultSharedByCellConfig,
+        disabled: !viewportWidth['>=large'],
+        render: (uid) => {
+            const SharedByCellComponent = () => {
+                const { contactEmails } = useContactEmailsCache();
+                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                if (!item) {
+                    return null;
+                }
 
-    const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === sharedBy);
-    const displayName = sharedBy && contactEmails && contactEmail ? contactEmail.Name : sharedBy;
-    return <SharedByCell displayName={displayName} isBookmark={itemType === ItemType.BOOKMARK} />;
-};
+                let displayName = '';
+                if (item.itemType === ItemType.DIRECT_SHARE) {
+                    const sharedBy = item.directShare.sharedBy;
+                    const contactEmail = contactEmails?.find((contact) => contact.Email === sharedBy);
+                    displayName = contactEmail?.Name || sharedBy;
+                } else if (item.itemType === ItemType.INVITATION) {
+                    const sharedBy = item.invitation.sharedBy;
+                    const contactEmail = contactEmails?.find((contact) => contact.Email === sharedBy);
+                    displayName = contactEmail?.Name || sharedBy;
+                }
 
-const SharedOnCellWithInfo = ({ sharedOn }: { sharedOn: Date | undefined }) => {
-    return sharedOn ? <TimeCell time={dateToLegacyTimestamp(sharedOn)} /> : <EmptyCell />;
-};
+                return (
+                    <SharedByCell
+                        uid={uid}
+                        displayName={displayName}
+                        isPublicLink={item.itemType === ItemType.BOOKMARK}
+                    />
+                );
+            };
+            return <SharedByCellComponent />;
+        },
+    },
+    {
+        ...defaultSharedOnCellConfig,
+        disabled: !viewportWidth['>=large'],
+        render: (uid) => {
+            const RenderedSharedOnCell = () => {
+                const { setVolumeShareIds } = useVolumesState();
+                const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
+                const { acceptLegacyInvitation, rejectLegacyInvitation } = useLegacyInvitationsActions();
+                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                if (!item) {
+                    return null;
+                }
 
-const AcceptOrRejectCellComponent = ({
-    uid,
-    invitationUid,
-    name,
-    type,
+                if (item.itemType === ItemType.INVITATION) {
+                    return (
+                        <AcceptRejectCell
+                            uid={uid}
+                            invitationUid={item.invitation.uid}
+                            onAcceptInvitation={async (uid, invitationUid) => {
+                                if (item.type === NodeType.Album) {
+                                    await acceptLegacyInvitation(uid, invitationUid);
+                                } else {
+                                    await acceptInvitation(uid, invitationUid);
+                                    onRenderItem(uid);
+                                }
+                            }}
+                            onRejectInvitation={async (uid, invitationUid) => {
+                                if (item.type === NodeType.Album) {
+                                    await rejectLegacyInvitation(showConfirmModal, {
+                                        uid: uid,
+                                        invitationUid: invitationUid,
+                                    });
+                                } else {
+                                    await rejectInvitation(showConfirmModal, {
+                                        uid,
+                                        invitationUid,
+                                        name: item.name,
+                                        type: item.type,
+                                    });
+                                }
+                            }}
+                        />
+                    );
+                }
+
+                let sharedOn: Date | undefined;
+                if (item.itemType === ItemType.BOOKMARK) {
+                    sharedOn = item.bookmark.creationTime;
+                } else if (item.itemType === ItemType.DIRECT_SHARE) {
+                    sharedOn = item.directShare.sharedOn;
+                }
+
+                if (!sharedOn) {
+                    return null;
+                }
+                return <SharedOnCell sharedOn={sharedOn} />;
+            };
+            return <RenderedSharedOnCell />;
+        },
+    },
+];
+
+export const getSharedWithMeContextMenu = ({
+    selectionControls,
+    contextMenuControls,
 }: {
-    uid: string;
-    invitationUid: string;
-    name: string;
-    type: NodeType;
+    selectionControls: {
+        selectItem: (uid: string) => void;
+        isSelected: (uid: string) => boolean;
+    };
+    contextMenuControls: {
+        isOpen: boolean;
+        handleContextMenu: (e: MouseEvent<Element>) => void;
+    };
 }) => {
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    // TODO: Remove that when we will have sdk for upload
-    const { setVolumeShareIds } = useVolumesState();
-    const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
-    const { acceptLegacyInvitation, rejectLegacyInvitation } = useLegacyInvitationsActions();
-
-    return (
-        <>
-            <AcceptOrRejectInviteCell
-                onAccept={async () => {
-                    if (type === NodeType.Album) {
-                        await acceptLegacyInvitation(uid, invitationUid);
-                    } else {
-                        await acceptInvitation(uid, invitationUid);
-                    }
-                }}
-                onReject={() => {
-                    if (type === NodeType.Album) {
-                        void rejectLegacyInvitation(showConfirmModal, { uid, invitationUid });
-                    } else {
-                        void rejectInvitation(showConfirmModal, { uid, invitationUid, name, type });
-                    }
-                }}
-            />
-            {confirmModal}
-        </>
-    );
-};
-
-export type MappedLegacyItem = {
-    id: string;
-    trashed: null;
-    volumeId: string;
-    parentLinkId: string;
-    rootShareId: string;
-    mimeType: string;
-    linkId: string;
-    isFile: boolean;
-    name: string;
-    size: number;
-};
-
-const SharedWithMeRow = memo(
-    ({
-        item,
-        cells,
-    }: {
-        item: MappedLegacyItem;
-        cells: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[];
-    }) => {
-        const rowData = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(item.id)));
-
-        // If no data available, don't render the row
-        if (!rowData) {
-            return null;
-        }
-
+    const ContextMenuRenderer = (uid: string) => {
+        const isContextMenuButtonActive = contextMenuControls.isOpen && selectionControls.isSelected(uid);
         return (
-            <>
-                {cells.map((CellComponent, index) => (
-                    <CellComponent key={index} item={item} rowData={rowData} />
-                ))}
-            </>
+            <ContextMenuCell
+                isActive={isContextMenuButtonActive}
+                onClick={(e) => {
+                    selectionControls.selectItem(uid);
+                    contextMenuControls.handleContextMenu(e);
+                }}
+            />
         );
-    }
-);
+    };
+    return ContextMenuRenderer;
+};
 
-SharedWithMeRow.displayName = 'SharedWithMeRow';
+export const getSharedWithMeGrid = ({
+    selectionControls,
+    contextMenuControls,
+}: {
+    selectionControls: {
+        selectItem: (uid: string) => void;
+        isSelected: (uid: string) => boolean;
+    };
+    contextMenuControls: {
+        isOpen: boolean;
+        handleContextMenu: (e: MouseEvent<Element>) => void;
+        handleContextMenuTouch: (e: TouchEvent<Element>) => void;
+    };
+}): GridDefinition => ({
+    name: (uid) => {
+        const NameComponent = () => {
+            const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+            if (!item) {
+                return null;
+            }
+            return (
+                <div className="flex items-center mx-auto">
+                    <SignatureIcon
+                        haveSignatureIssues={
+                            (item.itemType === ItemType.DIRECT_SHARE && item.haveSignatureIssues) || false
+                        }
+                        isFile={item.type === NodeType.File}
+                        className="mr-2 shrink-0"
+                    />
 
-const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[] = [
-    ({ item }) => <CheckboxCell uid={item.id} isLocked={false} />,
-    ({ rowData }) => (
-        <NameCellWithThumbnail
-            name={rowData.name}
-            mediaType={rowData.mediaType}
-            type={rowData.type}
-            thumbnailId={rowData.thumbnailId}
-            isInvitation={rowData.itemType === ItemType.INVITATION}
-            haveSignatureIssues={rowData.itemType === ItemType.DIRECT_SHARE ? rowData.haveSignatureIssues : undefined}
-        />
-    ),
-    ({ rowData }) => <SharedByCellWithInfo sharedBy={getSharedBy(rowData)} itemType={rowData.itemType} />,
-    ({ rowData }) =>
-        rowData.itemType === ItemType.INVITATION && rowData.invitation.uid ? (
-            <AcceptOrRejectCellComponent
-                uid={rowData.nodeUid}
-                invitationUid={rowData.invitation.uid}
-                type={rowData.type}
-                name={rowData.name}
-            />
-        ) : (
-            <SharedOnCellWithInfo sharedOn={getSharedOn(rowData)} />
-        ),
-    ({ item }) => <ContextMenuCell uid={item.id} />,
-];
+                    <FileName text={item.name} testId="grid-item-name" />
+                </div>
+            );
+        };
+        return <NameComponent />;
+    },
+    mainContent: (uid) => {
+        const MainContentComponent = () => {
+            const item = useSharedWithMeListingStore((state) => state.getSharedWithMeItem(uid));
+            const thumbnail = useThumbnailStore((state) =>
+                item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined
+            );
+            if (!item) {
+                return null;
+            }
 
-const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: SharedWithMeListingItemUI }>[] = [
-    ({ item }) => <CheckboxCell uid={item.id} isLocked={false} />,
-    ({ rowData }) => (
-        <NameCellWithThumbnail
-            name={rowData.name}
-            mediaType={rowData.mediaType}
-            type={rowData.type}
-            thumbnailId={rowData.thumbnailId}
-            isInvitation={rowData.itemType === ItemType.INVITATION}
-            haveSignatureIssues={rowData.itemType === ItemType.DIRECT_SHARE ? rowData.haveSignatureIssues : undefined}
-        />
-    ),
-    ({ rowData }) =>
-        rowData.itemType === ItemType.INVITATION && rowData.invitation.uid ? (
-            <AcceptOrRejectCellComponent
-                uid={rowData.nodeUid}
-                invitationUid={rowData.invitation.uid}
-                type={rowData.type}
-                name={rowData.name}
-            />
-        ) : null,
-    ({ item }) => <ContextMenuCell uid={item.id} />,
-];
+            const isInvitation = item.itemType === ItemType.INVITATION;
 
-export const largeScreenCells: React.FC<{ item: MappedLegacyItem }>[] = [
-    ({ item }) => <SharedWithMeRow item={item} cells={largeScreenCellComponents} />,
-];
+            const iconText = getLinkIconText({
+                linkName: item.name,
+                mimeType: item.mediaType || '',
+                isFile: item.type === NodeType.File,
+            });
 
-export const smallScreenCells: React.FC<{ item: MappedLegacyItem }>[] = [
-    ({ item }) => <SharedWithMeRow item={item} cells={smallScreenCellComponents} />,
-];
+            const IconComponent = (
+                <>
+                    {item.type === NodeType.Album && (
+                        <FileIcon
+                            mimeType="Album"
+                            alt={c('Label').t`Album`}
+                            size={12}
+                            style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
+                        />
+                    )}
+                    {thumbnail?.sdUrl && item.type !== NodeType.Album && (
+                        <img
+                            src={thumbnail?.sdUrl}
+                            className={clsx(
+                                'w-full h-full',
+                                // TODO: DRVWEB-4404
+                                // In the future: Music Cover, M4B Audiobook Cover, and other types that are not images that also have covers in their metadata
+                                item.mediaType && isCompatibleCBZ(item.mediaType, item.name)
+                                    ? 'object-contain'
+                                    : 'object-cover'
+                            )}
+                            style={{ objectPosition: 'center' }}
+                            alt={iconText}
+                        />
+                    )}
+                    {!thumbnail?.sdUrl && item.type !== NodeType.Album && (
+                        <FileIcon
+                            mimeType={(item.type === NodeType.File && item.mediaType) || 'Folder'}
+                            alt={iconText}
+                            size={12}
+                            style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
+                        />
+                    )}
+                </>
+            );
+
+            return (
+                <>
+                    {isInvitation && (
+                        <Badge className="absolute top-0 right-0 mt-1 mr-1" type="primary">
+                            {c('Badge').t`Invited`}
+                        </Badge>
+                    )}
+                    {isInvitation ? (
+                        <button
+                            className="w-full h-full cusor-pointer flex items-center justify-center"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                selectionControls?.selectItem(uid);
+                                contextMenuControls.handleContextMenu(e);
+                            }}
+                            onTouchEnd={(e) => {
+                                selectionControls?.selectItem(uid);
+                                contextMenuControls.handleContextMenuTouch?.(e);
+                            }}
+                        >
+                            {IconComponent}
+                        </button>
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center">{IconComponent}</div>
+                    )}
+                </>
+            );
+        };
+
+        return <MainContentComponent />;
+    },
+});
