@@ -1625,6 +1625,9 @@
       ],
       "Trust key": [
         "Zaupaj ključu"
+      ],
+      "Recently read": [
+        "Nazadnje prebrano"
       ]
     },
     "action": {
@@ -3978,6 +3981,12 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ Subject }": [
         "Od: ${ sender } – ${ Subject }"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } novo sporočilo",
+        "${ notificationsToShow.length } novi sporočili",
+        "${ notificationsToShow.length } nova sporočila",
+        "${ notificationsToShow.length } novih sporočil"
       ]
     },
     "Desktop notification title": {
@@ -7145,7 +7154,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8529,6 +8541,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } glasilo",
+        "${ unreadCount } glasili",
+        "${ unreadCount } glasila",
+        "${ unreadCount } glasil"
       ]
     },
     "info": {
@@ -9484,6 +9502,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Move messages to": [
+        "Premakni sporočila v"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9810,6 +9831,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
       ]
     },
     "Link to calendar event": {
@@ -13713,6 +13737,18 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Conversation updated": [
+        "Pogovor posodobljen",
+        "Pogovora posodobljena",
+        "Pogovori posodobljeni",
+        "Pogovori posodobljeni"
+      ],
+      "Message updated": [
+        "Sporočilo posodobljeno",
+        "Sporočili posodobljeni",
+        "Sporočila posodobljena",
+        "Sporočila posodobljena"
       ]
     },
     "Success notification": {
@@ -15561,6 +15597,19 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     }
   }
