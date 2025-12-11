@@ -138,10 +138,16 @@ function Sheet() {
 }
 
 function Chart() {
+  const insertChart = useUI.$.insert.chart
+  const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
+
   return (
     <UI.MenuItem
       leadingIconSlot={<UI.Icon data={Icons.barChart} />}
-      onClick={useUI.$.insert.chart}
+      onClick={() => {
+        const chart = insertChart()
+        onRequestEditChart(chart)
+      }}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Chart')}
