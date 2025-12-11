@@ -462,7 +462,7 @@ export function useLocalState(
       namedRanges: state.namedRanges,
       theme: state.theme,
       dataValidations: state.dataValidations,
-      cellXfs: state.cellXfs,
+      cellXfs: (state.cellXfs ? Object.fromEntries(state.cellXfs.entries()) : {}) as unknown as CellXfs,
       scale: state.scale,
       userDefinedColors: state.userDefinedColors,
     }),
