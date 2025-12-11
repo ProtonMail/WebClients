@@ -386,6 +386,12 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
+      "Expand navigation bar to see bookings": [
+        "Extindere bară de navigare pentru a vedea rezervările"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Extindere bară de navigare pentru a vedea calendarele"
+      ],
       "Expand video conferencing widget": [
         "Extindere instrument pentru videoconferințe"
       ],
@@ -1182,12 +1188,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
       ],
@@ -3308,6 +3308,9 @@
       "120 minutes": [
         "120 de minute"
       ],
+      "120m": [
+        "120 m"
+      ],
       "30 minutes": [
         "30 de minute"
       ],
@@ -3317,8 +3320,14 @@
       "60 minutes": [
         "60 de minute"
       ],
+      "60m": [
+        "60 m"
+      ],
       "90 minutes": [
         "90 de minute"
+      ],
+      "90m": [
+        "90 m"
       ]
     },
     "Edit billing address form note": {
@@ -4983,6 +4992,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
@@ -6713,7 +6725,7 @@
         "Toată ziua"
       ],
       "All-day event notifications": [
-        "Notificări evenimente toată ziua"
+        "Notificări pentru evenimente care durează toată ziua"
       ],
       "Anderson": [
         "Andrei"
@@ -6732,9 +6744,6 @@
       ],
       "Billing cycle": [
         "Ciclu de facturare"
-      ],
-      "Black Friday": [
-        "Vinerea Neagră"
       ],
       "Browser": [
         "Navigator"
@@ -7096,7 +7105,7 @@
         "Fus orar secundar"
       ],
       "Show others when I'm busy": [
-        "Afișare stare disponibilitate celorlalți"
+        "Arată celorlalți stare mea"
       ],
       "Show week numbers": [
         "Afișare număr săptămână"
@@ -10538,12 +10547,6 @@
       "Custom event colors": [
         "Culori personale evenimente"
       ],
-      "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } în credite."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invitați persoane la ${ BRAND_NAME }"
-      ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Planificați și alăturați-vă apelurilor ${ MEET_APP_NAME } direct din calendarul personal."
       ],
@@ -11403,6 +11406,17 @@
         "Accesați conferințe Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Nu există rezervări disponibile."
+      ],
+      "Please check the link and try again.": [
+        "Verificați legătura web și reîncercați."
+      ],
+      "Please try again later.": [
+        "Reîncercați mai târziu."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } zi",
@@ -12080,6 +12094,15 @@
       ],
       "Summary": [
         "Sumar"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Funcția de rezervare nu este disponibilă momentan."
+      ],
+      "This booking page can’t be shown.": [
+        "Această pagină de rezervare nu poate fi afișată."
+      ],
+      "This booking page has expired.": [
+        "Această pagină de rezervare a expirat."
       ],
       "Time": [
         "Ora"
