@@ -15,7 +15,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -138,7 +138,7 @@ const PassPolicies = () => {
         ).catch(handleError);
     };
 
-    const handleSubmitPasswordGenerator = async (config: OrganizationUpdatePasswordPolicyRequest) => {
+    const handleSubmitPasswordGenerator = async (config: OrganizationUpdatePasswordPolicyInput) => {
         withLoading(
             organization.settings.setPasswordGeneratorPolicy(config).then((orgSettings) => {
                 setOrganizationSettings(orgSettings);

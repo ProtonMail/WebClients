@@ -11,7 +11,7 @@ import {
 } from '@proton/pass/lib/password/constants';
 import { generatePassword } from '@proton/pass/lib/password/generator';
 import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
@@ -64,7 +64,7 @@ export const getCharsGroupedByColor = (password: string) => {
 
 const getRandomPasswordConfig = (
     config: GeneratePasswordConfig<'random'>,
-    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyInput>
 ): GeneratePasswordConfig => {
     return {
         type: 'random',
@@ -82,7 +82,7 @@ const getRandomPasswordConfig = (
 
 const getMemorablePasswordConfig = (
     config: GeneratePasswordConfig<'memorable'>,
-    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyInput>
 ): GeneratePasswordConfig => {
     return {
         type: 'memorable',
@@ -102,7 +102,7 @@ const getMemorablePasswordConfig = (
  * else update the current config */
 export const getPasswordConfig = (
     config: GeneratePasswordConfig,
-    policy?: MaybeNull<OrganizationUpdatePasswordPolicyRequest>
+    policy?: MaybeNull<OrganizationUpdatePasswordPolicyInput>
 ): GeneratePasswordConfig => {
     if (!policy) return config;
 
@@ -120,7 +120,7 @@ export const getPasswordConfig = (
 
 type PasswordGeneratorOptions = {
     config: MaybeNull<GeneratePasswordConfig>;
-    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyInput>;
     onConfigChange?: (config: GeneratePasswordConfig) => void;
 };
 

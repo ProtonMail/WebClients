@@ -6,14 +6,14 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordTypeSelect.scss';
 
 type Props = PasswordGeneratorResult & {
     dense?: boolean;
-    policy: MaybeNull<OrganizationUpdatePasswordPolicyRequest>;
+    policy: MaybeNull<OrganizationUpdatePasswordPolicyInput>;
 };
 
 export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswordOptions, policy }) => (
