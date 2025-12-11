@@ -974,6 +974,12 @@
       ],
       "Hide more benefits": [
         "Piilota enemmän etuja"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Laajenna navigointipalkki nähdäksesi varaukset"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Laajenna navigointipalkki nähdäksesi kalenterit"
       ]
     },
     "action": {
@@ -3069,6 +3075,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
       ]
     },
     "description": {
@@ -3250,6 +3259,15 @@
       ],
       "90 minutes": [
         "90 minuuttia"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit event button tooltip": {
@@ -6241,6 +6259,18 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Olet saavuttanut tilaukseesi sisältyvien varaussivujen enimmäismäärän."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Jos muutat mieltäsi, voit aloittaa uuden tilauksen milloin tahansa. Harmi, että päätit lähteä."
+      ],
+      "Where will the appointment take place?": [
+        "Missä tapaaminen järjestetään?"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } -tilauksesi korvataan ${ PASS_SHORT_APP_NAME } Lifetime -tilauksella. Tilauksesi ylijäänyt saldo lisätään tilillesi. ${ PASS_SHORT_APP_NAME } lifetime -tarjous ei uusiudu, se on kertamaksu elinikäiseen pääsyyn ${ PASS_SHORT_APP_NAME }iin."
       ]
     },
     "info": {
@@ -8693,6 +8723,9 @@
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nauti ilmaisista business-turvaominaisuuksista ${ trialEndsOnFormatted } asti."
       ]
     },
     "Option": {
@@ -11603,6 +11636,15 @@
       ],
       "This booking page has expired": [
         "Tämä varaussivu on vanhentunut"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Varausominaisuus ei ole tällä hetkellä käytettävissä."
+      ],
+      "This booking page can’t be shown.": [
+        "Tätä varaussivua ei voida näyttää."
+      ],
+      "This booking page has expired.": [
+        "Tämä varaussivu on vanhentunut."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12175,6 +12217,22 @@
     "Location": {
       "In person": [
         "Paikan päällä"
+      ]
+    },
+    "label": {
+      "Start time of the booking range": [
+        "Varausajanjakson aloitusaika"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Varauksia ei ole saatavilla."
+      ],
+      "Please check the link and try again.": [
+        "Tarkista linkki ja yritä uudelleen."
+      ],
+      "Please try again later.": [
+        "Yritä myöhemmin uudelleen."
       ]
     }
   }

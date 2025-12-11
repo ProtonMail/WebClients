@@ -1007,6 +1007,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Ouvrir la barre de navigation pour afficher les réservations"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Ouvrir la barre de navigation pour afficher les calendriers"
       ]
     },
     "action": {
@@ -1198,6 +1204,12 @@
       ],
       "You have reached the trial limit.": [
         "Vous avez atteint la limite de la version d'essai."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3309,6 +3321,15 @@
       ],
       "90 minutes": [
         "90 minutes"
+      ],
+      "120m": [
+        "120m"
+      ],
+      "60m": [
+        "60m"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -6436,6 +6457,9 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Vous avez atteint le nombre maximum de pages de réservation prévues dans votre abonnement."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12012,6 +12036,15 @@
       ],
       "Cannot create more Booking pages": [
         "Vous ne pouvez pas créer de pages de réservation supplémentaire."
+      ],
+      "The booking feature is currently unavailable.": [
+        "La fonctionnalité de réservation n'est pas disponible pour le moment."
+      ],
+      "This booking page can’t be shown.": [
+        "Cette page de réservation ne peut pas être affichée."
+      ],
+      "This booking page has expired.": [
+        "Cette page de réservation a expiré."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12585,6 +12618,17 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Aucune réservation disponible."
+      ],
+      "Please check the link and try again.": [
+        "Veuillez vérifier le lien et réessayer."
+      ],
+      "Please try again later.": [
+        "Veuillez réessayer plus tard."
       ]
     }
   }

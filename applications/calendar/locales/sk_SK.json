@@ -1015,6 +1015,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Rozbaliť navigačný panel pre zobrazenie rezervácií"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Rozbaliť navigačný panel pre zobrazenie kalendárov"
       ]
     },
     "action": {
@@ -1218,6 +1224,12 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3353,6 +3365,15 @@
       ],
       "90 minutes": [
         "90 minút"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -6604,6 +6625,9 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12436,6 +12460,15 @@
       ],
       "Cannot create more Booking pages": [
         "Nemožno vytvoriť viac rezervačných stránok"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Funkcia rezervácie je aktuálne nedostupná."
+      ],
+      "This booking page can’t be shown.": [
+        "Táto rezervačná stránka sa nedá zobraziť."
+      ],
+      "This booking page has expired.": [
+        "Táto rezervačná stránka vypršala."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13097,6 +13130,17 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Nie sú k dispozícii žiadne rezervácie."
+      ],
+      "Please check the link and try again.": [
+        "Skontrolujte odkaz a skúste to znova, prosím."
+      ],
+      "Please try again later.": [
+        "Skúste to znova neskôr, prosím."
       ]
     }
   }

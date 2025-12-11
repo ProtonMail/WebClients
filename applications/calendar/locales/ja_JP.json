@@ -1003,6 +1003,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "ナビゲーションバーを展開して予約を表示"
+      ],
+      "Expand navigation bar to see calendars": [
+        "ナビゲーションバーを展開してカレンダーを表示"
       ]
     },
     "action": {
@@ -1188,6 +1194,12 @@
       ],
       "You have reached the trial limit.": [
         "トライアルの制限に達しました。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
       ]
     },
     "b2b_trials_Action": {
@@ -3286,6 +3298,15 @@
         "60分"
       ],
       "90 minutes": [
+        "90分"
+      ],
+      "120m": [
+        "120分"
+      ],
+      "60m": [
+        "60分"
+      ],
+      "90m": [
         "90分"
       ]
     },
@@ -6345,13 +6366,16 @@
         "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
       ],
       "To add a new booking page, upgrade your plan.": [
-        "新し予約ページを追加するには、お客様のプランをアップグレードしてください。"
+        "新しい予約ページを追加するには、お客様のプランをアップグレードしてください。"
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "このプランで利用できる予約ページの最大数に達しました。"
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } 分"
       ]
     },
     "info": {
@@ -6916,7 +6940,7 @@
         "Zoomビデオ会議を削除"
       ],
       "Repeat weekly": [
-        "毎週"
+        "毎週繰り返し"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -6979,7 +7003,7 @@
         "ツールバー"
       ],
       "Unavailable": [
-        "設定不可"
+        "利用できません"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -11800,6 +11824,15 @@
       ],
       "Your booking pages live here": [
         "予約ページはこちらです"
+      ],
+      "The booking feature is currently unavailable.": [
+        "この予約機能は現在ご利用いただけません。"
+      ],
+      "This booking page can’t be shown.": [
+        "この予約ページは表示できません。"
+      ],
+      "This booking page has expired.": [
+        "この予約ページは有効期限切れです。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12329,6 +12362,17 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "予約がありません。"
+      ],
+      "Please check the link and try again.": [
+        "リンクを確認して、もう一度お試しください。"
+      ],
+      "Please try again later.": [
+        "後ほど再度お試しください。"
       ]
     }
   }

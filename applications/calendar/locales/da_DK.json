@@ -1007,6 +1007,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Udvid navigationsbjælken for at se reservationer"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Udvid navigationsbjælken for at se kalendere"
       ]
     },
     "action": {
@@ -1198,6 +1204,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nået grænsen for prøveversionen."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3309,6 +3321,15 @@
       ],
       "90 minutes": [
         "90 minutter"
+      ],
+      "120m": [
+        "120m"
+      ],
+      "60m": [
+        "60m"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -3928,10 +3949,10 @@
         "Ukendt betalingstokens status"
       ],
       "Username must begin with a letter or digit": [
-        "Brugernavn skal begynde med et bogstav eller tal"
+        "Brugernavn skal begynde med et bogstav eller et tal"
       ],
       "Username must end with a letter or digit": [
-        "Brugernavn skal ende på et bogstav eller tal"
+        "Brugernavn skal ende på et bogstav eller et tal"
       ],
       "Validation error": [
         "Bekræftelsesfejl"
@@ -6432,10 +6453,13 @@
         "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
-        "De har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
+        "Du har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12012,6 +12036,15 @@
       ],
       "Cannot create more Booking pages": [
         "Kan ikke oprette flere reservationssider"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Denne reservationsfunktion er ikke tilgængelig i øjeblikket."
+      ],
+      "This booking page can’t be shown.": [
+        "Denne reservationsside kan ikke vises."
+      ],
+      "This booking page has expired.": [
+        "Denne reservationsside er udløbet."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12585,6 +12618,17 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Ingen reservationer tilgængelige."
+      ],
+      "Please check the link and try again.": [
+        "Tjek linket og prøv igen."
+      ],
+      "Please try again later.": [
+        "Prøv igen senere."
       ]
     }
   }

@@ -1007,6 +1007,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Rezervasyonları görmek için gezinme çubuğunu genişletin"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Takvimleri görmek için gezinme çubuğunu genişletin"
       ]
     },
     "action": {
@@ -1198,6 +1204,12 @@
       ],
       "You have reached the trial limit.": [
         "Deneme süresi sayısı sınırına ulaştınız."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ]
     },
     "b2b_trials_Action": {
@@ -3309,6 +3321,15 @@
       ],
       "90 minutes": [
         "90 dakika"
+      ],
+      "120m": [
+        "120 dk"
+      ],
+      "60m": [
+        "60 dk"
+      ],
+      "90m": [
+        "90 dk"
       ]
     },
     "Edit billing address form note": {
@@ -6436,6 +6457,9 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } dk"
       ]
     },
     "info": {
@@ -12012,6 +12036,15 @@
       ],
       "Cannot create more Booking pages": [
         "Daha fazla Rezervasyon sayfası oluşturulamıyor"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Rezervasyon özelliği şu anda kullanılamıyor."
+      ],
+      "This booking page can’t be shown.": [
+        "Bu rezervasyon sayfası görüntülenemiyor."
+      ],
+      "This booking page has expired.": [
+        "Bu rezervasyon sayfasının süresi geçmiş."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12585,6 +12618,17 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Uygun bir rezervasyon yok."
+      ],
+      "Please check the link and try again.": [
+        "Lütfen bağlantıyı denetleyip yeniden deneyin."
+      ],
+      "Please try again later.": [
+        "Lütfen bir süre sonra yeniden deneyin."
       ]
     }
   }

@@ -1007,6 +1007,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandiu la barra de navegació per veure les reserves"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandiu la barra de navegació per veure els calendaris"
       ]
     },
     "action": {
@@ -1198,6 +1204,12 @@
       ],
       "You have reached the trial limit.": [
         "Heu arribat al límit de la versió de prova."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3309,6 +3321,15 @@
       ],
       "90 minutes": [
         "90 minuts"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -6436,6 +6457,9 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Heu assolit el nombre màxim de pàgines de reserva disponibles amb el vostre pla."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12012,6 +12036,15 @@
       ],
       "Cannot create more Booking pages": [
         "No podeu crear més pàgines de reserves"
+      ],
+      "The booking feature is currently unavailable.": [
+        "La característica de reserva no està disponible actualment."
+      ],
+      "This booking page can’t be shown.": [
+        "Aquesta pàgina de reserves no es pot mostrar."
+      ],
+      "This booking page has expired.": [
+        "Aquesta pàgina de reserves ha caducat."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12585,6 +12618,17 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "No hi ha reserves disponibles."
+      ],
+      "Please check the link and try again.": [
+        "Comproveu l'enllaç i torneu-ho a provar."
+      ],
+      "Please try again later.": [
+        "Proveu-ho més tard."
       ]
     }
   }
