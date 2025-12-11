@@ -36,6 +36,7 @@ import telemetry from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
+import { isWindowValid } from "./windowUtils";
 
 type ViewID = keyof URLConfig;
 
@@ -218,7 +219,7 @@ const createViews = () => {
     viewMap.account.webContents.on("before-input-event", handleBeforeInput);
 
     mainWindow!.on("resize", () => {
-        if (!mainWindow || mainWindow.isDestroyed()) {
+        if (!isWindowValid(mainWindow)) {
             return;
         }
 
@@ -247,7 +248,7 @@ const createBrowserWindow = () => {
 };
 
 function updateViewBounds(view: WebContentsView | undefined, viewID: ViewID | null = null) {
-    if (!mainWindow || mainWindow.isDestroyed()) {
+    if (!isWindowValid(mainWindow)) {
         return;
     }
 
@@ -322,7 +323,7 @@ async function updateLocalID(urlString: string) {
 }
 
 export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
-    if (!mainWindow || mainWindow.isDestroyed()) {
+    if (!isWindowValid(mainWindow)) {
         return;
     }
 
@@ -369,7 +370,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
 }
 
 export const openMail = (labelID?: string, elementID?: string, messageID?: string) => {
-    if (!mainWindow || mainWindow.isDestroyed()) {
+    if (!isWindowValid(mainWindow)) {
         viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
         return;
     }
@@ -398,7 +399,7 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
 };
 
 export const openCalendar = () => {
-    if (!mainWindow || mainWindow.isDestroyed()) {
+    if (!isWindowValid(mainWindow)) {
         viewLogger("calendar").warn("Ignoring openCalendar action, mainWindow is not available");
         return;
     }
@@ -704,7 +705,7 @@ export function updateZoom(direction: "in" | "out") {
 }
 
 export const bringWindowToFront = () => {
-    if (!mainWindow || mainWindow.isDestroyed()) {
+    if (!isWindowValid(mainWindow)) {
         mainLogger.info("Cannot bring window to front: window unavailable.");
         return;
     }
