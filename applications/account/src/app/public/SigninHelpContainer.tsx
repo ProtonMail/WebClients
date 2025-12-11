@@ -3,7 +3,10 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon } from '@proton/components';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -35,7 +38,7 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                         className="flex items-center gap-3 text-no-decoration color-norm hover:color-norm py-4 border-bottom border-weak"
                         to={paths.signinAnotherDevice}
                     >
-                        <Icon name="qr-code" size={6} />
+                        <IcQrCode size={6} />
                         <div className="text-left flex-1">
                             <div className="text-lg">{c('edm').t`Sign in with QR code`}</div>
                             <div className="color-weak">{c('edm')
@@ -47,7 +50,7 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                         className="flex items-center gap-3 text-no-decoration color-norm hover:color-norm py-4 border-bottom border-weak"
                         to={`${paths.reset}${location.search}`}
                     >
-                        <Icon name="key" size={6} />
+                        <IcKey size={6} />
                         <div className="text-left flex-1">
                             <div className="text-lg">{c('Action').t`Reset password`}</div>
                             <div className="color-weak">{c('Description')
@@ -60,12 +63,12 @@ const SigninHelpContainer = ({ toApp, paths }: Props) => {
                         target="_blank"
                         href={getKnowledgeBaseUrl('/common-login-problems')}
                     >
-                        <Icon name="question-circle" size={6} />
+                        <IcQuestionCircle size={6} />
                         <div className="text-left flex-1">
                             <div className="text-lg">{c('Title').t`Other sign-in issues`}</div>
                             <div className="color-weak">{c('Description').t`Learn more about common problems`}</div>
                         </div>
-                        <Icon name="arrow-within-square" size={3.5} className="color-weak m-3" />
+                        <IcArrowWithinSquare size={3.5} className="color-weak m-3" />
                     </Href>
                 </Content>
             </Main>

@@ -3,16 +3,10 @@ import { c } from 'ttag';
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {
-    Icon,
-    SUBSCRIPTION_STEPS,
-    SettingsLink,
-    useApi,
-    useNotifications,
-    useSubscriptionModal,
-} from '@proton/components';
+import { SUBSCRIPTION_STEPS, SettingsLink, useApi, useNotifications, useSubscriptionModal } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useLoading from '@proton/hooks/useLoading';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -29,7 +23,7 @@ export const userAndAddress = (
         app={APPS.PROTONMAIL}
         target="_self"
         className="color-weak p-0"
-        key="eslint-autofix-833E97"
+        key="user-and-addresses-link"
     >
         {c('Action').t`Users and addresses`}
     </ButtonLike>
@@ -91,12 +85,12 @@ export const AccessToggleScribe = () => {
         return null;
     }
 
-    const addMoreSeats = <AddMoreSeats key="eslint-autofix-6B1773" />;
+    const addMoreSeats = <AddMoreSeats key="add-more-seats-link" />;
 
     return (
         <AccessToggle
             id="scribe-toggle"
-            icon={<Icon name="pen-sparks" className="color-weak" size={6} />}
+            icon={<IcPenSparks className="color-weak" size={6} />}
             title={c('Title').t`${BRAND_NAME} Scribe writing assistant`}
             checked={!!organization?.Settings.ShowScribeWritingAssistant}
             loading={scribeLoading}

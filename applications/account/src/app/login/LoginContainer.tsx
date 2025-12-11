@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { OnLoginCallback } from '@proton/components';
-import { AbuseModal, Icon, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
+import { AbuseModal, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import type {
     AuthActionResponse,
@@ -20,6 +20,7 @@ import {
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -242,7 +243,7 @@ const LoginContainer = ({
                 title: c('sso').t`Welcome`,
                 subTitle: (
                     <button onClick={handleBackStep} type="button" className="max-w-full text-ellipsis">
-                        <Icon name="user" /> {authTypeData.username}
+                        <IcUser /> {authTypeData.username}
                     </button>
                 ),
             };

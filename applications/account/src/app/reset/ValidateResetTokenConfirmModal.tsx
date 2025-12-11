@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -62,7 +63,7 @@ const ValidateResetTokenConfirmModal = ({
                     <div className="p-3 border border-weak rounded">
                         <div className="flex flex-nowrap gap-2">
                             <div className="flex shrink-0 mt-0.5">
-                                <Icon className="color-success" name="checkmark-circle-filled" />
+                                <IcCheckmarkCircleFilled className="color-success" />
                             </div>
                             <div>
                                 <div className="mb-1">

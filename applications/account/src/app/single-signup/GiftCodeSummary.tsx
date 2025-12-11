@@ -5,8 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
-import { Icon, Info, Price, useNotifications } from '@proton/components';
+import { Info, Price, useNotifications } from '@proton/components';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
 
 interface Props {
@@ -51,7 +52,7 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap,
                 <div>
                     <span className="flex items-center rounded-sm bg-success px-1 py-0.5 text-semibold">
                         <span className="mr-0.5">{code}</span>
-                        {removingCode ? <CircleLoader /> : <Icon onClick={handleRemoveCode} name="cross" />}
+                        {removingCode ? <CircleLoader /> : <IcCross onClick={handleRemoveCode} />}
                     </span>
                 </div>
                 {!couponConfig?.hidden && (

@@ -3,11 +3,12 @@ import { type FC, type FormEvent, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert3ds, Icon } from '@proton/components';
+import { Alert3ds } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
@@ -118,7 +119,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
                 <div className="flex items-center justify-space-between mb-12">
                     <Button shape="ghost" icon pill onClick={onBack}>
-                        <Icon name="arrow-left" size={6} />
+                        <IcArrowLeft size={6} />
                     </Button>
                     <div className="text-center">
                         <span className="text-sm color-weak">{payments.selectedPlan.getPlan().Title}</span>

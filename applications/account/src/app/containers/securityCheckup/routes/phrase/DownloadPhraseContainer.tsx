@@ -9,9 +9,10 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Checkbox, Icon, Label, useApi, useSecurityCheckup } from '@proton/components';
+import { Checkbox, Label, useApi, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -25,6 +26,7 @@ import {
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 import noop from '@proton/utils/noop';
 
 import generateDeferredMnemonicData from '../../../recoveryPhrase/generateDeferredMnemonicData';
@@ -35,7 +37,6 @@ import SecurityCheckupMain from '../../components/SecurityCheckupMain';
 import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
 import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle';
 import { phraseIcon } from '../../methodIcons';
-import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 
 enum STEPS {
     DOWNLOAD,
@@ -224,7 +225,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
                 disabled={showUnderstoodCheckBox && !understood}
                 onClick={() => withDownloading(handleDownload)}
             >
-                <Icon name="arrow-down-line" className="mr-2" />
+                <IcArrowDownLine className="mr-2" />
                 {c('Safety review').t`Download ${size}`}
             </Button>
         </SecurityCheckupMain>

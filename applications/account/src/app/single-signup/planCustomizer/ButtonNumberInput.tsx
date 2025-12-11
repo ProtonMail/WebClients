@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
@@ -85,8 +86,9 @@ const ButtonNumberInput = ({
                 disabled={isDecDisabled}
                 onClick={handleDecrease}
             >
-                <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />
+                <IcMinus alt={c('Action').t`Decrease`} className="m-auto" />
             </button>
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor={id} className="my-2 flex">
                 <input
                     autoComplete="off"
@@ -117,7 +119,7 @@ const ButtonNumberInput = ({
                     disabled={isIncDisabled}
                     onClick={handleIncrease}
                 >
-                    <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />
+                    <IcPlus alt={c('Action').t`Increase`} className="m-auto" />
                 </button>
             </IncreaseBlockedTooltip>
         </div>

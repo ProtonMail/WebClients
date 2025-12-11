@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcShield } from '@proton/icons/icons/IcShield';
 
 const Guarantee = () => {
     return (
         <span className="color-success">
-            <Icon name="shield" className="align-text-bottom mr-1" />
+            <IcShield className="align-text-bottom mr-1" />
             <span>{c('Info').t`30-day money-back guarantee`}</span>
         </span>
     );

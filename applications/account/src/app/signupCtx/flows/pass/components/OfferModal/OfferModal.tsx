@@ -3,8 +3,11 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, PassLogo } from '@proton/components';
+import { PassLogo } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { PaymentsCheckout } from '@proton/payments';
 
 import './OfferModal.scss';
@@ -31,11 +34,11 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
             <div className="modal rounded-lg relative">
                 <div className="relative bg-primary flex items-center justify-center py-2">
                     <div className="modal-title-container flex items-center">
-                        <Icon name="hourglass" />
+                        <IcHourglass />
                         <span className="ml-1 text-bold">{c('Label').t`Special Offer!`}</span>
                     </div>
                     <Button className="absolute right-0" shape="ghost" icon pill onClick={onClose}>
-                        <Icon name="cross" size={5} />
+                        <IcCross size={5} />
                     </Button>
                 </div>
                 <div className="py-4 px-6">
@@ -70,7 +73,7 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
                         <div className="text-bold">{c('Label').t`Get everything in Free, plus:`}</div>
                         {features.map((feature) => (
                             <div key={feature}>
-                                <Icon name="checkmark" className="mr-1" />
+                                <IcCheckmark className="mr-1" />
                                 {feature}
                             </div>
                         ))}

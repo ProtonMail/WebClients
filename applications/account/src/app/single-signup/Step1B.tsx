@@ -11,7 +11,6 @@ import {
     Alert3ds,
     type Breakpoints,
     CurrencySelector,
-    Icon,
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
@@ -30,6 +29,9 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type {
@@ -685,11 +687,11 @@ const Step1B = ({
     const iconColorClassName = background === 'bf2025' ? 'color-norm' : 'color-primary';
     const features = [
         {
-            left: <Icon size={6} className={iconColorClassName} name="code" />,
+            left: <IcCode size={6} className={iconColorClassName} />,
             text: c('Info').t`Open source`,
         },
         {
-            left: <Icon size={6} className={iconColorClassName} name="eye-slash" />,
+            left: <IcEyeSlash size={6} className={iconColorClassName} />,
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
@@ -698,7 +700,7 @@ const Step1B = ({
         },
         viewportWidth['>=large'] &&
             [PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
-                left: <Icon size={6} className={iconColorClassName} name="servers" />,
+                left: <IcServers size={6} className={iconColorClassName} />,
                 text: model.loadingDependencies ? (
                     <>
                         <SkeletonLoader width="5em" />
