@@ -161,6 +161,9 @@
       "Copy link": [
         "Salin tautan"
       ],
+      "Copy password": [
+        "Salin kata sandi"
+      ],
       "Copy to clipboard": [
         "Salin ke papan klip"
       ],
@@ -1811,6 +1814,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"

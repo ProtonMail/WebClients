@@ -155,14 +155,38 @@
       "Copy and close": [
         "Kopírovať a zatvoriť"
       ],
+      "Copy card number": [
+        "Kopírovať číslo karty"
+      ],
+      "Copy email": [
+        "Kopírovať email"
+      ],
+      "Copy expiration date": [
+        "Kopírovať dátum exspirácie"
+      ],
       "Copy forwarding address": [
         "Kopírovať adresu pre preposielanie"
       ],
       "Copy link": [
         "Kopírovať odkaz"
       ],
+      "Copy name on card": [
+        "Kopírovať meno na karte"
+      ],
+      "Copy note content": [
+        "Kopírovať obsah poznámky"
+      ],
+      "Copy password": [
+        "Kopírovať heslo"
+      ],
+      "Copy security code": [
+        "Kopírovať bezpečnostný kód"
+      ],
       "Copy to clipboard": [
         "Skopírovať do schránky"
+      ],
+      "Copy username": [
+        "Kopírovať používateľské meno"
       ],
       "Create": [
         "Vytvoriť"
@@ -1886,6 +1910,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
