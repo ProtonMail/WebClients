@@ -290,9 +290,6 @@
       "Create": [
         "बनाएँ"
       ],
-      "Create account": [
-        "खाता बनाएं"
-      ],
       "Create calendar": [
         "कैलेंडर बनाएँ"
       ],
@@ -772,9 +769,6 @@
       ],
       "Pay": [
         "भुगतान करें"
-      ],
-      "Pay ${ price }": [
-        "${ price } भुगतान करें"
       ],
       "Pay ${ price } now": [
         "${ price } अभी दें"
@@ -1798,9 +1792,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "ईमेल फुटर में लिंक जोड़ें"
-      ],
       "Close": [
         "बंद करें"
       ],
@@ -1825,9 +1816,6 @@
       "Got it": [
         "समझ गया"
       ],
-      "Invite": [
-        "न्योता भेजें"
-      ],
       "Maybe later": [
         "शायद बाद में"
       ],
@@ -1845,9 +1833,6 @@
       ],
       "Take a tour": [
         "एक टूर लें"
-      ],
-      "Tweet": [
-        "ट्वीट करें"
       ]
     },
     "Calendar access select label": {
@@ -3310,12 +3295,6 @@
       ],
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
-      ],
-      "Track the status and activity of your referrals.": [
-        "अपने रेफरल के स्थिति ट्रैक करें।"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "आप दोस्तों को आमंत्रित कर सकते हैं, लेकिन अतिरिक्त क्रेडिट अर्जित नहीं कर पाएंगे"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "आप iCal फॉर्मैट (ICS फाइल) में इवेंट आयात कर सकते है। फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का होना चाहिए और ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_EVENTS_STRING } तक इवेंट रखा हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो उसे छोटे फाइलों में तोड़े।"
@@ -5331,9 +5310,6 @@
       "Select your deal": [
         "अपनी डील चुनें"
       ],
-      "Select your payment method": [
-        "अपना भुगतान तरीका चुनें"
-      ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
       ],
@@ -5831,9 +5807,6 @@
         "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
         "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
       ],
-      "${ current } of ${ total }": [
-        "${ total } में से ${ current }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% छूट"
       ],
@@ -5982,9 +5955,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(यदि निम्न में से कोई भी शर्त पूरी हो तो फ़िल्टर करें)"
       ],
-      "* No credit card required.": [
-        "* किसी क्रेडिट कार्ड की आवश्यकता नहीं।"
-      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } सहित सभी ${ BRAND_NAME_TWO } सेवाओं का उपयोग करने के लिए **${ BRAND_NAME } पता प्राप्त करें**।"
       ],
@@ -5999,17 +5969,8 @@
         "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
         "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. दोस्तों को ${ BRAND_NAME } पे आने का न्योता दे"
-      ],
-      "2. They try ${ planName }": [
-        "2. वो ${ planName } आज़माएंगे"
-      ],
       "2FA disabled": [
         "2-एफए अक्षम"
-      ],
-      "3. You earn credits": [
-        "3. आप क्रेडिट कमाते हैं"
       ],
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
@@ -6357,9 +6318,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
-      ],
-      "Credits earned": [
-        "क्रेडिट मिला"
       ],
       "Current plan": [
         "वर्तमान योजना"
@@ -6905,14 +6863,8 @@
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "हम @ProtonMail इस्तेमाल कर रहे हैं और सोचा की आपको भी पसंद आएगा। ये एक सुरक्षित सुरक्षित ईमेल सेवा है जो आपके निजता को महफूज़ रखता है। 1 महीने की प्रीमियम सुविधाओं को मुफ्त में लेने के लिए हमारे रेफरल लिंक से साइनअप करें: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "बस अपने चयन की पुष्टि करें और हम बाकी काम करेंगे।"
-      ],
-      "Just send them your personal referral link.": [
-        "बस उन्हें अपना व्यक्तिगत रेफरल लिंक भेजें।"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "इन निर्देश और सुझावों से अपनी जानकारी को और अधिक सुरक्षित और निजी रखें।"
@@ -7106,9 +7058,6 @@
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "एक खाता‌। सारे ${ BRAND_NAME } सेवाएं।"
-      ],
       "Open source": [
         "ओपन सोर्स"
       ],
@@ -7143,13 +7092,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "10 करोड़ से अधिक लोगों और व्यवसायों ने ${ BRAND_NAME } के लिए साइन अप किया है।"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया",
-        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया"
-      ],
-      "Paid for a monthly plan": [
-        "मासिक योजना के लिए भुगतान किया"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - कस्टम ईमेल सत्यापित किया गया"
@@ -7575,9 +7517,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "इन प्रमाण का उपयोग हमारे आधिकारिक ${ VPN_APP_NAME } ऐप में साइनइन करने के लिए नहीं किया जा सकता। ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "उनको ${ planName } का एक मुफ्त महीना मिलेगा।"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "संभावित नीति उल्लंघन के कारण इस खाते को निलंबित कर दिया गया है।"
       ],
@@ -7730,9 +7669,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "अपना इंटरनेट कनेक्शन सुरक्षित करने के लिए, अपने डिवाइस के लिए ${ VPN_APP_NAME } ऐप डाउनलोड और इंस्टॉल करें और किसी सर्वर से जुड़े।"
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "${ toAppName } और सारे ${ BRAND_NAME } सेवाओं को इस्तेमाल करने के लिए"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } इस्तेमाल करने को आपको एक ${ MAIL_APP_NAME } पता चाहिए।"
@@ -7976,9 +7912,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "पहचान प्रदाता में ${ appName } के लिए SAML सक्षम करते समय, कॉलबैक (ACS) URL और जारीकर्ता ID का उपयोग करने के लिए कहा जा सकता है। बस नीचे दिए गए डाटा को पहचान प्रदाता फील्ड में कॉपी-पेस्ट करें।"
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "जब वो किसी प्लान की सदस्यता लेते है, तब आपको अपने सदस्यता पे इस्तेमाल करने के लिए मिलता है।"
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "जब आप अपनी वर्तमान भुगतान की गई सदस्यता को रद्द करते हैं, तो आपकी सदस्यता का शेष बैलेंस खाता क्रेडिट के रूप में लौटा दिया जाएगा और आपको ${ BRAND_NAME } ${ PLANS.FREE } प्लैन में डाउनग्रेड कर दिया जाएगा।"
@@ -9410,9 +9343,6 @@
       "Repeat backup password": [
         "बैकअप पासवर्ड दोहराएं"
       ],
-      "Repeat password": [
-        "पासवर्ड दोहराएं"
-      ],
       "Reply (ACS) URL": [
         "प्रतिक्रिया URL (ACS)"
       ],
@@ -9599,9 +9529,6 @@
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
-      ],
-      "Your referral link": [
-        "आपका संदर्भ लिंक"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -10397,9 +10324,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Free जारी रखें"
-      ],
       "Delete account": [
         "खाता हटा दो"
       ],
@@ -10420,9 +10344,6 @@
       ],
       "Switch plan": [
         "प्लान बदले"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "${ upsellPlanHumanSize } पे अपग्रेड करें"
       ]
     },
     "new_plans: Action": {
@@ -10825,21 +10746,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } आपको ईमेल पते बनाने और उप-यूज़र के खाते संभालने देता हैं। परिवारों और संगठनों के लिए अच्छा।"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1-महीने की सदस्यता के साथ। चेकआउट पे दूसरे सदस्यता विकल्प मौजूद है।"
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12 महीने के सदस्यता के साथ। दूसरे सदस्यता विकल्प चेकआउट पे मौजूद है।"
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15 महीने के सदस्यता के साथ। दूसरे सदस्यता विकल्प चेकआउट पे मौजूद है।"
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24 महीने के सदस्यता के साथ। दूसरे सदस्यता विकल्प चेकआउट पे मौजूद है।"
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30 महीने के सदस्यता के साथ। दूसरे सदस्यता विकल्प चेकआउट पे मौजूद है।"
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "विशेष सुरक्षित गेटवे के साथ उन्नत नेटवर्क सुरक्षा और पहुँच प्रबंधन"
       ],
@@ -10866,9 +10772,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "अगर आप प्लान बदलते हैं, तो आप ${ visionary } प्लान के सारे फायदे खो देंगे और अगर आप वापिस ${ visionary } लेने की कोशिश करें तो नहीं लें पाएंगे।"
-      ],
-      "Most popular": [
-        "सबसे लोकप्रिय"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "हमारा ${ visionary } प्लान अब नए सदस्यो के लिए अब नहीं है क्योंकी वो असली ${ BRAND_NAME } यूज़र के लिए एक खास प्लान था खास सुविधाओं और फायदों के साथ।"
@@ -10926,14 +10829,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME } खाता बनाकर, आप हमारे ${ terms } को मानते हैं"
       ],
-      "Payment details": [
-        "भुगतान जानकारी"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "खाता रीसेट के समय सत्यापन करने के लिए अपना ज़रूरी ईमेल पता या फोन नंबर सेव करें।"
-      ],
-      "Subscription": [
-        "सदस्यता"
       ],
       "terms and conditions": [
         "नियम और शर्तें"
@@ -10946,9 +10843,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "आपकी ${ planTitleElement } सदस्यता अब सक्रिय है।"
-      ],
-      "Your selected plan: ${ planName }": [
-        "आपकी चुनी हुई योजना: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -13506,9 +13400,6 @@
       "Display name": [
         "प्रदर्शित नाम"
       ],
-      "Email": [
-        "ईमेल"
-      ],
       "Email address": [
         "ईमेल पता"
       ],
@@ -13520,17 +13411,6 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "खाता सेटअप"
-      ],
-      "Payment": [
-        "भुगतान"
-      ],
-      "Verification": [
-        "सत्यापन"
       ]
     },
     "signup: Action": {
@@ -13777,14 +13657,6 @@
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "${ credits } तक क्रेडिट लें।"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "${ BRAND_NAME } पे दोस्तो को बुलाएं"
       ]
     },
     "sso": {
@@ -15170,9 +15042,6 @@
       "Create user accounts": [
         "यूज़र खाता बनाएं"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "खुद का ${ BRAND_NAME } खाता बनाएं"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "अपना ${ BRAND_NAME } पता बनाएं"
       ],
@@ -15490,14 +15359,8 @@
       "Home": [
         "होम"
       ],
-      "How does it work?": [
-        "यह कैसे काम करता है?"
-      ],
       "How to choose a good logo": [
         "एक अच्छा चिन्ह कैसे चुनें"
-      ],
-      "How to refer a friend and get credits": [
-        "किसी दोस्त को रेफर करके क्रेडिट कैसे लें"
       ],
       "Human verification": [
         "मानव सत्यापन"
@@ -15773,9 +15636,6 @@
       "SAML authentication": [
         "SAML सत्यापन"
       ],
-      "Secure email based in Switzerland": [
-        "स्विट्ज़रलैंड में स्थित सुरक्षित ईमेल"
-      ],
       "Security and privacy": [
         "सुरक्षा व निजता"
       ],
@@ -15987,14 +15847,8 @@
       "Users and addresses": [
         "उपयोगकर्ता और ई-मेल पते"
       ],
-      "Verification": [
-        "सत्यापन"
-      ],
       "Verification failed": [
         "सत्यापन असफल"
-      ],
-      "Verify email address": [
-        "ईमेल पता सत्यापित करें"
       ],
       "Verifying your card...": [
         "आपका कार्ड सत्यापित कर रहे..."
@@ -16064,9 +15918,6 @@
       ],
       "Your subscriptions": [
         "आपकी सदस्यता"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "आपको ${ MAIL_APP_NAME } इस्तेमाल करने का न्योता मिला है"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -16547,16 +16398,6 @@
         "${ price.uiData.discountPercent } की छूट%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "ईमेल से न्योता भेजा"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "आपके लिंक से साइनअप किया"
-      ]
-    },
     "User role": {
       "Admin": [
         "व्यवस्थापक"
@@ -16817,9 +16658,6 @@
       ],
       "Your ${ selected } plan": [
         "आपकी ${ selected } प्लैन"
-      ],
-      "Your plan includes:": [
-        "आपके प्लैन में शामिल हैं:"
       ]
     },
     "wallet_signup_2024: Info": {

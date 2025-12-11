@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ის გარეთ გაზიარების ბმულის შექმნა"
       ],
-      "Create account": [
-        "ანგარიშის შექმნა"
-      ],
       "Create calendar": [
         "კალენდრის შექმნა"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "გადახდა"
-      ],
-      "Pay ${ price }": [
-        "${ price }-ის გადახდა"
       ],
       "Pay ${ price } now": [
         "${ price }-ის გადახდა"
@@ -2701,9 +2695,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "დაამატეთ ბმული თქვენი ელფოსტის ბოლოს"
-      ],
       "Close": [
         "დახურვა"
       ],
@@ -2728,9 +2719,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "Invite": [
-        "მოწვევა"
-      ],
       "Maybe later": [
         "მოგვიანებით"
       ],
@@ -2748,9 +2736,6 @@
       ],
       "Take a tour": [
         "გასაცნობი ტური"
-      ],
-      "Tweet": [
-        "Tweeter-ზე დაწერა"
       ]
     },
     "Calendar access select label": {
@@ -4518,10 +4503,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ.",
-        "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
       ],
@@ -4624,14 +4605,8 @@
       "Track the status and activity of your referrals": [
         "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი"
       ],
-      "Track the status and activity of your referrals.": [
-        "თქვენი მიმართვების სტატუსისა და აქტივობების ტრეკინგი."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "ასწიეთ ტრაფიკი, რომ მიიღოთ ${ activatePmUser } უფრო მოკლე და ადვილად დასამახსოვრებელი ელფოსტის მისამართი იმასთან ერთად, რაც ახლა გაქვთ."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "მეგობრების მოწვევა შეგიძლიათ, გააგრძელოთ, მაგრამ მეტ კრედიტებს აღარ მიიღებთ"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "შეგიძლიათ, შემოიტანოთ ფაილები iCAL ფორმატში (ICS ფაილები). ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება შეიცავდეს ${ MAX_IMPORT_EVENTS_STRING }-მდე მოვლენას. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
@@ -7742,9 +7717,6 @@
       "Select your deal": [
         "აირჩიეთ ტარიფი"
       ],
-      "Select your payment method": [
-        "აირჩიეთ თქვენი გადახდის მეთოდი"
-      ],
       "Select your pricing plan": [
         "აირჩიეთ თქვენი ტარიფი"
       ],
@@ -8330,9 +8302,6 @@
         "ჩართულია ${ countriesCount } ქვეყანა",
         "ჩართულია ${ countriesCount } ქვეყანა"
       ],
-      "${ current } of ${ total }": [
-        "${ current } ${ total }-დან"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% ფასდაკლება"
       ],
@@ -8521,9 +8490,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(ფილტრაცია, თუ შემდეგი პირობებიდან ერთი მაინც სრულდება)"
       ],
-      "* No credit card required.": [
-        "* საკრედიტო ბარათი საჭირო არაა."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** მხარდაჭერილი არაა თქვენს ორგანიზაციაში **${ organizationName }**."
       ],
@@ -8571,17 +8537,8 @@
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
-      ],
-      "2. They try ${ planName }": [
-        "2. ისინი ცდიან ${ planName }"
-      ],
       "2FA disabled": [
         "2FA გათიშულია"
-      ],
-      "3. You earn credits": [
-        "3. თქვენ იღებთ კრედიტებს"
       ],
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
@@ -9039,9 +8996,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
-      ],
-      "Credits earned": [
-        "შეძენილი სახსრები"
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -9734,17 +9688,11 @@
       "Item updated in vault": [
         "ელემენტი განახლდა საცავში"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "მე ვიყენებდი @ProtonMail-ს და ვიფიქრე, თქვენც მოგეწონებოდათ. უფასო, დაცული ელფოსტის სერვისი, რომელიც იცავს თქვენს პირად სივრცეს. ერთთვიანი, პრემიუმ-კლასის, უფასო ანგარიშის მისაღები ბმული: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB ლოგო"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
-      ],
-      "Just send them your personal referral link.": [
-        "უბრალოდ, გაუგზავნეთ მოწვევის თქვენი პირადი ბმული."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
@@ -9998,9 +9946,6 @@
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "ერთი ანგარიში ${ BRAND_NAME }-ის ყველა სერვისისთვის."
-      ],
       "One time import": [
         "ერთჯერადი შემოტანა"
       ],
@@ -10065,13 +10010,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "გადაიხადეთ ${ rewardMonths } თვიანი ტარიფისთვის",
-        "გადაიხადეთ ${ rewardMonths } თვიანი ტარიფისთვის"
-      ],
-      "Paid for a monthly plan": [
-        "თვიური გადახდის გეგმა"
       ],
       "Paid for a plan": [
         "გადახდილია სატარიფო გეგმისთვის"
@@ -10624,9 +10562,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "ეს ავტორიზაციის დეტალები არ შეიძლება, გამოყენებული იქნეს ჩვენს ოფიციალურ ${ VPN_APP_NAME }-ის აპებზე შესასვლელად. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "ისინი ${ planName }-ის უფასო ვერსიას მიიღებენ."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
       ],
@@ -10803,9 +10738,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "ინტერნეტ-შეერთების დასაცავად გადმოწერეთ და დააყენეთ აპლიკაცია ${ VPN_APP_NAME } თქვენი მოწყობილობისთვის და მიუერთდით სერვერს."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "${ toAppName }-ის და ${ BRAND_NAME }-ის ყველა სერვისის გამოსაყენებლად"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName }-ის გამოსაყენებლად ${ MAIL_APP_NAME }-ის მისამართი გჭირდებათ."
@@ -11088,9 +11020,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "როცა გამოიწერთ სატარიფო გეგმას, ქულებს მიიღებთ, რომელიც შეგიძლიათ გამოწერისას გამოიყენოთ."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "როცა თქვენს მიმდინარე გამოწერას აუქმებთ, თქვენი გამოწერის ბალანსი ანგარიშის კრედიტების სახით დაგიბრუნდებათ და სატარრიფო გეგმა ${ BRAND_NAME } ${ PLANS.FREE }-ზე ჩამოიწევა."
@@ -12237,9 +12166,6 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
-      "Black Friday": [
-        "შავი პარასკევი"
-      ],
       "Block": [
         "დაბლოკვა"
       ],
@@ -12999,9 +12925,6 @@
       "Repeat backup password": [
         "გაიმეორეთ მარქაფი პაროლი"
       ],
-      "Repeat password": [
-        "გაიმეორეთ პაროლი"
-      ],
       "Reply (ACS) URL": [
         "პასუხის (ACS) URL"
       ],
@@ -13296,9 +13219,6 @@
       ],
       "Your password (trusted contact)": [
         "თქვენი პაროლი (სანდო კონტაქტი)"
-      ],
-      "Your referral link": [
-        "თქვენი მოწვევის ბმული"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -14047,12 +13967,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "აიღეთ ხელში თქვენი მონაცემების მართვა გამჭოლი დაშიფვრით"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "სცადეთ ${ BRAND_NAME } უფასოდ ამ ბმულით"
       ]
     },
     "Modal title": {
@@ -14319,9 +14233,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "უფასოთი გაგრძელება"
-      ],
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
@@ -14342,9 +14253,6 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -14897,21 +14805,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } საშუალებას გაძლევთ, შექმნათ ელფოსტის მისამართები და მართოთ ქვემომხმარებლების ანგარიშები. იდეალურია ოჯახისა და ორგანიზაციებისთვის."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1-თვიანი გამოწერა. გამოწერის სხვა ვარიანტები ხელმისაწვდომი იქნება გადახდის დროს."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12-თვიანი გამოწერა. გამოწერის სხვა ვარიანტები ხელმისაწვდომი იქნება გადახდის დროს."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15-თვიანი გამოწერა. გამოწერის სხვა ვარიანტები ხელმისაწვდომი იქნება გადახდის დროს."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24-თვიანი გამოწერა. გამოწერის სხვა ვარიანტები ხელმისაწვდომი იქნება გადახდის დროს."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30-თვიანი გამოწერა. გამოწერის სხვა ვარიანტები ხელმისაწვდომი იქნება გადახდის დროს."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
       ],
@@ -14947,9 +14840,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "თუ გადაერთვებით სხვა ტარიფზე, ${ visionary } ტარიფის ყველა ბენეფიტს დაკარგავთ და უკან ${ visionary }-ზე ვეღარ დაბრუნდებით."
-      ],
-      "Most popular": [
-        "ყველაზე პოპულარული"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "ჩვენი სატარიფო გეგმა ${ visionary } ახალი გამომწერებისთვის ხელმისაწვდომი აღარაა, რადგან ის სპეციალური გეგმაა ${ BRAND_NAME }-ის მომხმარებლებისთვის, სპეციალური ფუნქციებით და ბენეფიტებით."
@@ -15022,14 +14912,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME }-ის ანგარიშის შექმნით თქვენ ეთანხმებით ჩვენს ${ terms }-ს"
       ],
-      "Payment details": [
-        "გადახდის დეტალები"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "შეინახეთ თქვენი ელფოსტის მისამართი ან ტელეფონის ნომერი იმ შემთხვევისთვის, თუ პაროლის შეცვლა დაგჭირდათ."
-      ],
-      "Subscription": [
-        "გამოწერა"
       ],
       "terms and conditions": [
         "პირობები და წესები"
@@ -15042,9 +14926,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "თქვენი გამოწერა ${ planTitleElement } ახლა აქტიურია."
-      ],
-      "Your selected plan: ${ planName }": [
-        "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -19194,9 +19075,6 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
-      "Email": [
-        "ელ-ფოსტა"
-      ],
       "Email address": [
         "ელფოსტის მისამართი"
       ],
@@ -19208,17 +19086,6 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "ანგარიშის მორგება"
-      ],
-      "Payment": [
-        "გადახდა"
-      ],
-      "Verification": [
-        "გადამოწმება"
       ]
     },
     "signup: Action": {
@@ -19561,12 +19428,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "მიიღეთ კრედიტები, როცა პიროვნება, რომელიც მოიწვიეთ, შეიძენს ${ BRAND_NAME }-ის სატარიფო გეგმას."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "მიღეთ ${ credits }-მდე კრედიტი."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
       ]
     },
     "sso": {
@@ -21386,9 +21247,6 @@
       "Create user accounts": [
         "შექმენით მოხმხმარებლის ანგარიშები"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "შექმენით თქვენი ${ BRAND_NAME }-ის მისამართი"
       ],
@@ -21829,14 +21687,8 @@
       "Home": [
         "მთავარი"
       ],
-      "How does it work?": [
-        "როგორ მუშაობს?"
-      ],
       "How to choose a good logo": [
         "როგორ აირჩიოთ კარგი ლოგო"
-      ],
-      "How to refer a friend and get credits": [
-        "როგორ მოვიწვიოთ მეგობარი და მივიღოთ კრედიტები"
       ],
       "How your free trial works": [
         "როგორ მუშაობს საცდელი ვერსია"
@@ -22205,9 +22057,6 @@
       "Search for additional servers": [
         "დამატებითი სერვერების ძებნა"
       ],
-      "Secure email based in Switzerland": [
-        "დაცული ელფოსტა. დაფუძნებულია შვეიცარიაში"
-      ],
       "Secure your passwords. Everywhere.": [
         "დაიცავით თქვენი პაროლები. ყველგან."
       ],
@@ -22503,14 +22352,8 @@
       "Vaults owned": [
         "საცავები მფლობელობაში"
       ],
-      "Verification": [
-        "შემოწმება"
-      ],
       "Verification failed": [
         "გადამოწმების შეცდომა"
-      ],
-      "Verify email address": [
-        "გადაამოწმეთ ელფოსტის მისამართი"
       ],
       "Verifying your card...": [
         "მიმდინარეობს ბარათის გადამოწმება ..."
@@ -22607,9 +22450,6 @@
       ],
       "Your subscriptions": [
         "თქვენი გამოწერები"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "თქვენ მიგიწვიეს, სცადოთ ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23249,16 +23089,6 @@
         "დაზოგეთ ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "ელფოსტით მოწვეული"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "დარეგისტრირდა თქვენი ბმულით"
-      ]
-    },
     "User role": {
       "Admin": [
         "ადმინისტრატორი"
@@ -23540,9 +23370,6 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
-      ],
-      "Your plan includes:": [
-        "თქვენი ტარიფი შეიცავს:"
       ]
     },
     "vpn_2step: tooltip": {

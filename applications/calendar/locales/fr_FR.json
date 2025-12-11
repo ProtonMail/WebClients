@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
+      "Expand navigation bar to see bookings": [
+        "Ouvrir la barre de navigation pour afficher les réservations"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Ouvrir la barre de navigation pour afficher les calendriers"
+      ],
       "Expand video conferencing widget": [
         "Développer le widget de vidéoconférence"
       ],
@@ -1172,11 +1178,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate1 }, l'abonnement deviendra payant et se renouvellera automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
@@ -6656,9 +6662,6 @@
       "Billing cycle": [
         "Cycle de facturation"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Navigateur"
       ],
@@ -10368,12 +10371,6 @@
       ],
       "Custom event colors": [
         "Couleurs personnalisées des événements"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Recevez jusqu'à ${ credits } en crédits."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Planifiez et rejoignez les appels ${ MEET_APP_NAME } directement depuis votre calendrier."

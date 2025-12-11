@@ -671,9 +671,6 @@
       "Pay": [
         "Maksa"
       ],
-      "Pay ${ price }": [
-        "Maksa ${ price }"
-      ],
       "Pay ${ price } now": [
         "Maksa ${ price } nyt"
       ],
@@ -1341,12 +1338,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
@@ -3153,6 +3144,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ansaitse jopa ${ credits } krediitteinä kutsumalla kavereita ${ BRAND_NAME }iin."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
       ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
         "Jos et ole vielä tehnyt niin, ota käyttöön joitakin palautusmenetelmiä varmistaaksesi, että et koskaan menetä pääsyä ${ VPN_APP_NAME } -sovellukseen."
@@ -5021,8 +5015,8 @@
       "Select your deal": [
         "Valitse tarjouksesi"
       ],
-      "Select your payment method": [
-        "Valitse maksutapasi"
+      "Select your payment method:": [
+        "Valitse maksutapa:"
       ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
@@ -6341,6 +6335,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jos perut ${ planTitle } -tilauksesi, sitä ei uudisteta sen päättyessä ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Jos muutat mieltäsi, voit aloittaa uuden tilauksen milloin tahansa. Harmi, että päätit lähteä."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
@@ -7750,6 +7747,9 @@
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } -tilauksesi korvataan ${ PASS_SHORT_APP_NAME } Lifetime -tilauksella. Tilauksesi ylijäänyt saldo lisätään tilillesi. ${ PASS_SHORT_APP_NAME } lifetime -tarjous ei uusiudu, se on kertamaksu elinikäiseen pääsyyn ${ PASS_SHORT_APP_NAME }iin."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
       ],
@@ -8083,9 +8083,6 @@
       ],
       "Billing cycle": [
         "Laskutusjakso"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Estä"
@@ -9529,6 +9526,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Activity logs and policy": [
+        "Toimintalokit ja käytäntö"
+      ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
       ],
@@ -9754,6 +9754,9 @@
       ],
       "Secure link sharing": [
         "Suojattu linkkien jako"
+      ],
+      "Secure password management": [
+        "Turvallinen salasanahallinta"
       ],
       "See team's availability": [
         "Näe tiimisi tavoitettavuus"
@@ -10607,6 +10610,9 @@
       ],
       "Continue": [
         "Jatka"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nauti ilmaisista business-turvaominaisuuksista ${ trialEndsOnFormatted } asti."
       ],
       "help center": [
         "tukikeskus"
@@ -11671,6 +11677,9 @@
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Olen käyttänyt ${ BRAND_NAME } -palvelua ja ajattelin, että se voisi kiinnostaa sinua. Se on turvallinen sähköpostipalvelu, pilvitallennustila, salasananhallinta ja VPN, joka suojaa yksityisyyttäsi. Rekisteröidy tämän linkin kautta ja saat 14 päivän ilmaisen premium-käyttöoikeuden: ${ referralLink }"
+      ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Jos peruutat, menetät **${ referrerRewardAmount }** krediittipalkkion."
       ],
@@ -11682,6 +11691,9 @@
       ],
       "Refer friends": [
         "Kerro kavereille"
+      ],
+      "Share using ${ name }": [
+        "Jaa käyttämällä ${ name }"
       ],
       "Start earning credits": [
         "Aloita krediittien ansaitseminen"
@@ -12675,14 +12687,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediitteinä."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Kutsu kavereita ${ BRAND_NAME }iin"
       ]
     },
     "sso": {
@@ -15615,9 +15619,6 @@
       ],
       "Your ${ selected } plan": [
         "Sinun ${ selected } -tilauksesi"
-      ],
-      "Your plan includes:": [
-        "Tilauksesi sisältää:"
       ]
     },
     "vpn_2step: tooltip": {

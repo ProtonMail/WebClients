@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Δημιουργία συνδέσμου για κοινή χρήση με οποιονδήποτε εκτός ${ BRAND_NAME }"
       ],
-      "Create account": [
-        "Δημιουργία λογαριασμού"
-      ],
       "Create calendar": [
         "Δημιουργία ημερολογίου"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Πληρωμή"
-      ],
-      "Pay ${ price }": [
-        "Πληρωμή ${ price }"
       ],
       "Pay ${ price } now": [
         "Πληρωμή ${ price } τώρα"
@@ -2034,11 +2028,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -2761,9 +2755,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Προσθήκη συνδέσμου στο υποσέλιδο ηλεκτρονικού ταχυδρομείου"
-      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -2788,9 +2779,6 @@
       "Got it": [
         "Το κατάλαβα"
       ],
-      "Invite": [
-        "Πρόσκληση"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4602,10 +4587,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Συγχαρητήρια! Κερδίσατε το μέγιστο ${ rewardsLimit } δωρεάν μήνα του ${ plusPlanName }.",
-        "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μήνες ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
       ],
@@ -4708,17 +4689,11 @@
       "Track the status and activity of your referrals": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
       ],
-      "Track the status and activity of your referrals.": [
-        "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Αναβαθμίστε για να λάβετε ${ activatePmUser } για μια συντομότερη, εύκολη στην απομνημόνευση διεύθυνση ηλεκτρονικού ταχυδρομείου εκτός από την τρέχουσα."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Μπορείτε να προσαρμόσετε τη λίστα των τομέων στους οποίους ορισμένες αυτόματες λειτουργίες στην προέκταση προγράματος περιήγησης ${ PASS_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δε θα πρέπει να εκτελούνται."
@@ -7894,8 +7869,8 @@
       "Select your deal": [
         "Επιλέξτε την προσφορά σας"
       ],
-      "Select your payment method": [
-        "Επιλέξτε τη μέθοδο πληρωμής σας"
+      "Select your payment method:": [
+        "Επιλέξτε τη μέθοδο πληρωμής σας:"
       ],
       "Select your pricing plan": [
         "Επιλέξτε το πλάνο χρέωσης σας:"
@@ -8485,9 +8460,6 @@
         "${ countriesCount } χώρα ενεργοποιημένη",
         "${ countriesCount } χώρες ενεργοποιημένες"
       ],
-      "${ current } of ${ total }": [
-        "${ current } από ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% έκπτωση"
       ],
@@ -8692,9 +8664,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
       ],
-      "* No credit card required.": [
-        "* Δεν απαιτείται πιστωτική κάρτα."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
       ],
@@ -8742,17 +8711,8 @@
         "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
         "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Προσκαλέστε φίλους στο ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Έπειτα δοκιμάστε ${ planName }"
-      ],
       "2FA disabled": [
         "Επαλήθευση 2 παραγόντων ανενεργή (2FA)"
-      ],
-      "3. You earn credits": [
-        "3. Κερδίζετε πιστώσεις"
       ],
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
@@ -9234,9 +9194,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
-      ],
-      "Credits earned": [
-        "Κερδισμένες πιστώσεις"
       ],
       "Current plan": [
         "Τρέχον πλάνο"
@@ -9956,17 +9913,11 @@
       "Item updated in vault": [
         "Το στοιχείο ενημερώθηκε στην κρύπτη"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Έχω χρησιμοποιήσει το @ProtonMail και σκέφτηκα ότι μπορεί να σας αρέσει. Είναι μια ασφαλής υπηρεσία ηλεκτρονικού ταχυδρομείου που προστατεύει το απόρρητό σας. Εγγραφείτε με τον σύνδεσμο παραπομπής μου για να λάβετε δωρεάν 1 μήνα premium δυνατότητες: ${ referrerLink }"
-      ],
       "JCB logo": [
         "Λογότυπο JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
-      ],
-      "Just send them your personal referral link.": [
-        "Απλώς αποστείλετε τους τον προσωπικό σας σύνδεσμο παραπομπής."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
@@ -10226,9 +10177,6 @@
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Ένας λογαριασμός. Όλες οι ${ BRAND_NAME } υπηρεσίες."
-      ],
       "One time import": [
         "Εφάπαξ εισαγωγή"
       ],
@@ -10296,13 +10244,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Πλήρωσε για πρόγραμμα ${ rewardMonths } μήνα",
-        "Πλήρωσε για πρόγραμμα ${ rewardMonths } μηνών"
-      ],
-      "Paid for a monthly plan": [
-        "Πλήρωσε για μηνιαίο πρόγραμμα"
       ],
       "Paid for a plan": [
         "Πλήρωσε για ένα πλάνο"
@@ -10876,9 +10817,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Θα λάβουν έναν δωρεάν μήνα ${ planName }."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
@@ -11061,9 +10999,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "για να χρησιμοποιήσετε ${ toAppName } και όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Για να χρησιμοποιήσετε ${ toAppName }, χρειάζεστε μια ${ MAIL_APP_NAME } διεύθυνση."
@@ -11370,9 +11305,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Εφόσον οι ειδοποιήσεις είναι ενεργοποιημένες, όταν έχετε νέα μηνύματα στο λογαριασμό σας ${ MAIL_APP_NAME }, θα στέλνουμε μια ειδοποίηση στη διεύθυνση ανάκτησης."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Όταν εγγραφούν σε ένα πλάνο, θα λάβετε πιστώσεις για χρήση στη συνδρομή σας."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Όταν ακυρώσετε την τρέχουσα συνδρομή επί πληρωμή, το υπόλοιπο της συνδρομής σας θα επιστραφεί ως πιστώσεις λογαριασμού και θα υποβαθμιστείτε στο ${ BRAND_NAME } ${ PLANS.FREE } πλάνο."
@@ -12579,9 +12511,6 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Αποκλεισμένη"
       ],
@@ -13344,9 +13273,6 @@
       "Repeat backup password": [
         "Επανάληψη εφεδρικού κωδικού πρόσβασης"
       ],
-      "Repeat password": [
-        "Επανάληψη κωδικού"
-      ],
       "Reply (ACS) URL": [
         "URL απάντησης (ACS)"
       ],
@@ -13644,9 +13570,6 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
-      ],
-      "Your referral link": [
-        "Ο σύνδεσμος παραπομπής σας"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -14395,6 +14318,12 @@
       "Create a new ${ appName } account": [
         "Δημιουργήστε ένα νέο ${ appName } λογαριασμό"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Απολαύστε δύο εβδομάδες ${ BRAND_NAME } δωρεάν"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Ζήστε πραγματική διαδικτυακή ιδιωτικότητα. Προστατέψτε τα δεδομένα σας με το ${ BRAND_NAME } δωρεάν για τις επόμενες 14 ημέρες."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Βρείτε το όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας"
       ],
@@ -14412,12 +14341,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Πάρτε τον έλεγχο των δεδομένων σας με κρυπτογράφηση από άκρο σε άκρο"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Δοκιμάστε το ${ BRAND_NAME } δωρεάν με αυτόν τον σύνδεσμο"
       ]
     },
     "Modal title": {
@@ -14684,9 +14607,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Συνέχεια με Δωρεάν"
-      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -14707,9 +14627,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Αναβάθμιση σε ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -14851,6 +14768,9 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Activity logs and policy": [
+        "Αρχεία καταγραφής δραστηριότητας και πολιτική"
       ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
@@ -15093,6 +15013,9 @@
       "Secure link sharing": [
         "Ασφαλής κοινή χρήση συνδέσμων"
       ],
+      "Secure password management": [
+        "Διαχείριση ασφαλών κωδικών πρόσβασης"
+      ],
       "See team's availability": [
         "Δείτε τη διαθεσιμότητα της ομάδας"
       ],
@@ -15262,21 +15185,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Με μηνιαία συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Με ετήσια συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Με 15μηνη συνδρομή. Άλλες επιλογές συνδρομής είναι διαθέσιμες στο ταμείο."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Με διετή συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Με 30μηνη συνδρομή. Άλλες επιλογές συνδρομής είναι διαθέσιμες στο ταμείο."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB αποθηκευτικού χώρου στο cloud που σας επιτρέπει να αποθηκεύετε, συγχρονίζετε και μοιράζεστε αρχεία εύκολα. Προστατεύεται από διατερματική κρυπτογράφηση."
       ],
@@ -15318,9 +15226,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Εάν μεταβείτε σε διαφορετικό πλάνο, θα χάσετε όλα τα οφέλη του πλάνου ${ visionary } και δε θα μπορείτε να επιστρέψετε στο ${ visionary }."
-      ],
-      "Most popular": [
-        "Τα πιο δημοφιλή"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Το ${ visionary } πλάνο μας δεν είναι πλέον διαθέσιμο σε νέους συνδρομητές, καθώς είναι ένα ειδικό πρόγραμμα για αρχικούς χρήστες ${ BRAND_NAME } με ειδικές δυνατότητες και οφέλη."
@@ -15393,14 +15298,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Δημιουργώντας ένα ${ BRAND_NAME } λογαριασμό, συμφωνείτε με τους ${ terms }"
       ],
-      "Payment details": [
-        "Στοιχεία πληρωμής"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Αποθηκεύστε τη διεύθυνση email ή τον αριθμό τηλεφώνου σας για να τα χρησιμοποιήσετε για επαλήθευση, αν χρειαστεί να επαναφέρετε το λογαριασμό σας."
-      ],
-      "Subscription": [
-        "Συνδρομή"
       ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
@@ -15413,9 +15312,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Η συνδρομή σας ${ planTitleElement } είναι τώρα ενεργή."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -18002,6 +17898,9 @@
       "How your free trial works:": [
         "Πως λειτουργεί η δοκιμαστική περίοδος σας:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Χρησιμοποιώ το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να σας αρέσει. Πρόκειται για ένα ασφαλές email, αποθήκευση στο cloud, διαχειριστή κωδικών πρόσβασης και VPN που προστατεύει τα προσωπικά σας δεδομένα. Εγγραφείτε μέσω αυτού του συνδέσμου για να αποκτήσετε δωρεάν πρόσβαση σε premium λειτουργίες για 14 ημέρες: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
       ],
@@ -18022,6 +17921,9 @@
       ],
       "Refer friends": [
         "Συστήστε φίλους"
+      ],
+      "Share using ${ name }": [
+        "Κοινοποίηση μέσω ${ name }"
       ],
       "Start earning credits": [
         "Ξεκινήστε να κερδίζετε πιστώσεις"
@@ -19470,6 +19372,9 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
+      "Mail": [
+        "Mail"
+      ],
       "Mailboxes and custom domains for aliases": [
         "Θυρίδες και προσαρμοσμένοι τομείς για ψευδώνυμα"
       ],
@@ -19669,9 +19574,6 @@
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
-      "Email": [
-        "Ηλεκτρονικό ταχυδρομείο"
-      ],
       "Email address": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -19683,17 +19585,6 @@
       ],
       "Username": [
         "Όνομα χρήστη"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Ρύθμιση λογαριασμού"
-      ],
-      "Payment": [
-        "Πληρωμή"
-      ],
-      "Verification": [
-        "Επαλήθευση"
       ]
     },
     "signup: Action": {
@@ -20036,12 +19927,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Κερδίστε πόντους όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Λάβετε έως και ${ credits } σε πιστώσεις."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -21879,9 +21764,6 @@
       "Create user accounts": [
         "Δημιουργία λογαριασμών χρηστών"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Δημιουργία Λογαριασμού ${ BRAND_NAME }"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Δημιουργήστε τη ${ BRAND_NAME } διεύθυνσής σας"
       ],
@@ -22325,14 +22207,8 @@
       "Home": [
         "Αρχική"
       ],
-      "How does it work?": [
-        "Πώς λειτουργεί;"
-      ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
-      ],
-      "How to refer a friend and get credits": [
-        "Πώς να συστήσετε έναν φίλο για να λάβετε πόντους"
       ],
       "How your free trial works": [
         "Πως λειτουργεί η δοκιμαστική περίοδος σας"
@@ -22701,9 +22577,6 @@
       "Search for additional servers": [
         "Αναζήτηση για πρόσθετους διακομιστές"
       ],
-      "Secure email based in Switzerland": [
-        "Ασφαλές email με έδρα την Ελεβετία"
-      ],
       "Secure your passwords. Everywhere.": [
         "Προστατέψτε τους κωδικούς πρόσβασής σας. Παντού."
       ],
@@ -22999,14 +22872,8 @@
       "Vaults owned": [
         "Ιδιόκτητες κρύπτες"
       ],
-      "Verification": [
-        "Επαλήθευση"
-      ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
-      ],
-      "Verify email address": [
-        "Επαλήθευση διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."
@@ -23103,9 +22970,6 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Έχετε προσκληθεί να δοκιμάσετε το ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23804,16 +23668,6 @@
         "Εξοικονομίστε ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Προσκλήθηκε μέσω email"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Εγγραφή μέσω του συνδέσμου σας"
-      ]
-    },
     "User role": {
       "Admin": [
         "Διαχειριστής"
@@ -24095,9 +23949,6 @@
       ],
       "Your ${ selected } plan": [
         "Το ${ selected } πλάνο σας"
-      ],
-      "Your plan includes:": [
-        "Το πλάνο σας περιλαμβάνει:"
       ]
     },
     "vpn_2step: tooltip": {

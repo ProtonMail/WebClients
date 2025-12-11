@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Buat tautan untuk membagikan kalender ini dengan siapa pun di luar ${ BRAND_NAME }"
       ],
-      "Create account": [
-        "Buat akun"
-      ],
       "Create calendar": [
         "Buat kalender"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Bayar"
-      ],
-      "Pay ${ price }": [
-        "Bayar ${ price }"
       ],
       "Pay ${ price } now": [
         "Bayar ${ price } sekarang"
@@ -2025,12 +2019,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Setelah uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Setelah masa uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
@@ -2748,9 +2736,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Tambahkan tautan pada footer email Anda"
-      ],
       "Close": [
         "Tutup"
       ],
@@ -2775,9 +2760,6 @@
       "Got it": [
         "Paham"
       ],
-      "Invite": [
-        "Undang"
-      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
@@ -2795,9 +2777,6 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4580,9 +4559,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Sesuaikan pengaturan ini terlebih dahulu untuk mengaktifkan organisasi Anda dan menyesuaikan alamat email Anda."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Selamat! Anda telah memperoleh langganan ${ plusPlanName } gratis selama ${ rewardsLimit } bulan."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Hubungkan CRM, situs web, printer, dan berbagai hal lainnya yang Anda miliki dengan mudah."
       ],
@@ -4685,17 +4661,11 @@
       "Track the status and activity of your referrals": [
         "Lacak status dan aktivitas rujukan Anda"
       ],
-      "Track the status and activity of your referrals.": [
-        "Lacak status dan aktivitas rujukan Anda."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Tingkatkan untuk mendapatkan ${ activatePmUser } untuk alamat email yang lebih pendek dan mudah untuk diingat sebagai tambahan dari yang Anda punya saat ini."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh lebih banyak saldo"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Anda dapat menyesuaikan daftar domain di mana fungsi otomatis ekstensi browser ${ PASS_APP_NAME } tertentu (Isi Otomatis, Saran Otomatis, Simpan Otomatis) tidak akan berjalan."
@@ -7832,9 +7802,6 @@
       "Select your deal": [
         "Pilih penawaran Anda"
       ],
-      "Select your payment method": [
-        "Pilih metode pembayaran Anda"
-      ],
       "Select your pricing plan": [
         "Pilih struktur pembayaran paket Anda"
       ],
@@ -8411,9 +8378,6 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } negara diaktifkan"
       ],
-      "${ current } of ${ total }": [
-        "${ current } dari ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "Diskon ${ discountPercent }%"
       ],
@@ -8597,9 +8561,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Saring apabila ADA kondisi yang terpenuhi)"
       ],
-      "* No credit card required.": [
-        "* Tanpa perlu kartu kredit."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** tidak didukung pada organisasi **${ organizationName }** milik Anda."
       ],
@@ -8645,17 +8606,8 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Undang teman ke ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Mereka mencoba ${ planName }"
-      ],
       "2FA disabled": [
         "2FA dinonaktifkan"
-      ],
-      "3. You earn credits": [
-        "3. Anda memperoleh saldo"
       ],
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
@@ -9127,9 +9079,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
-      ],
-      "Credits earned": [
-        "Saldo yang diperoleh"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -9845,17 +9794,11 @@
       "Item updated in vault": [
         "Item diperbarui dalam brankas"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Saya telah menggunakan @ProtonMail dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan saya dan nikmati berbagai fitur premium selama 1 bulan secara gratis: ${ referrerLink }"
-      ],
       "JCB logo": [
         "Logo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
-      ],
-      "Just send them your personal referral link.": [
-        "Kirimkan saja tautan rujukan Anda kepada mereka."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Jadikan informasi seputar diri Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
@@ -10115,9 +10058,6 @@
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Satu akun. Seluruh layanan ${ BRAND_NAME }."
-      ],
       "One time import": [
         "Impor sekali jadi"
       ],
@@ -10180,12 +10120,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Lebih dari 100 juta orang dan bisnis telah mendaftar ke ${ BRAND_NAME }."
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Telah dibayar untuk paket ${ rewardMonths } bulan"
-      ],
-      "Paid for a monthly plan": [
-        "Terbayar dalam bentuk paket berlangganan bulanan"
       ],
       "Paid for a plan": [
         "Dibayar untuk paket"
@@ -10751,9 +10685,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Kredensial berikut tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Mereka akan memperoleh langganan ${ planName } selama satu bulan secara cuma-cuma."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
@@ -10936,9 +10867,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan hubungkan diri Anda ke server yang tersedia."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "untuk dapat menggunakan ${ toAppName } dan seluruh layanan ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Untuk menggunakan ${ toAppName }, Anda memerlukan alamat ${ MAIL_APP_NAME }."
@@ -11245,9 +11173,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Pada saat notifikasi diaktifkan, kami akan mengirimkan peringatan ke alamat email pemulihan Anda setiap kali terdapat pesan baru yang masuk ke akun ${ MAIL_APP_NAME } Anda."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Pada saat mereka berlangganan ke salah satu paket, Anda akan memperoleh saldo yang dapat Anda gunakan untuk langganan Anda."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Pada saat Anda membatalkan langganan berbayar Anda saat ini, biaya langganan Anda akan dikembalikan dalam bentuk saldo akun dan Anda akan diturunkan ke paket ${ BRAND_NAME }${ PLANS.FREE }."
@@ -12434,9 +12359,6 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
-      "Black Friday": [
-        "Jumat Hitam"
-      ],
       "Block": [
         "Diblokir"
       ],
@@ -13199,9 +13121,6 @@
       "Repeat backup password": [
         "Ulangi kata sandi cadangan"
       ],
-      "Repeat password": [
-        "Ulangi kata sandi"
-      ],
       "Reply (ACS) URL": [
         "URL balasan (ACS)"
       ],
@@ -13495,9 +13414,6 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak terpercaya)"
-      ],
-      "Your referral link": [
-        "Tautan rujukan Anda"
       ],
       "ZIP code": [
         "Kode pos"
@@ -14255,12 +14171,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Masuk ke Akun ${ BRAND_NAME } Anda untuk mengakses seluruh layanan ${ BRAND_NAME } terenkripsi seperti ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi. Belum memiliki akun? Buat akun baru secara GRATIS."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Kendalikan data Anda dengan enkripsi end-to-end"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Coba ${ BRAND_NAME } secara cuma-cuma dengan tautan ini"
       ]
     },
     "Modal title": {
@@ -14524,9 +14434,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Lanjut dengan akun Free"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -14547,9 +14454,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -15076,21 +14980,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } memungkinkan Anda untuk membuat alamat email dan mengelola akun pada tingkatan sub-pengguna. Ideal bagi kebutuhan keluarga dan organisasi Anda."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 1 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 12 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Dengan langganan selama 15 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 24 bulan. Opsi berlangganan lainnya akan tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Dengan langganan selama 30 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Ruang penyimpanan 1 TB yang memungkinkan Anda untuk menyimpan, menyinkronkan, dan membagikan berkas dengan mudah. Terlindung oleh enkripsi end-to-end."
       ],
@@ -15132,9 +15021,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Dengan beralih ke paket lainnya, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan Anda tidak akan lagi dapat beralih kembali ke ${ visionary } ke depannya."
-      ],
-      "Most popular": [
-        "Terpopuler"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
@@ -15207,14 +15093,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju terhadap ${ terms } kami"
       ],
-      "Payment details": [
-        "Rincian pembayaran"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Simpan alamat email atau nomor telepon Anda untuk keperluan verifikasi apabila Anda perlu mengatur ulang akun Anda ke depannya."
-      ],
-      "Subscription": [
-        "Langganan"
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -15227,9 +15107,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Langganan ${ planTitleElement } Anda kini telah aktif."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Paket yang Anda pilih: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -19402,9 +19279,6 @@
       "Display name": [
         "Nama tampilan"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email address": [
         "Alamat email"
       ],
@@ -19416,17 +19290,6 @@
       ],
       "Username": [
         "Nama pengguna"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Pengaturan akun"
-      ],
-      "Payment": [
-        "Pembayaran"
-      ],
-      "Verification": [
-        "Verifikasi"
       ]
     },
     "signup: Action": {
@@ -19764,12 +19627,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Dapatkan saldo pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Dapatkan saldo hingga ${ credits }."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Undang teman ke ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -21562,9 +21419,6 @@
       "Create user accounts": [
         "Buat akun pengguna"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME } Anda"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Buat alamat ${ BRAND_NAME } Anda"
       ],
@@ -22006,14 +21860,8 @@
       "Home": [
         "Beranda"
       ],
-      "How does it work?": [
-        "Bagaimana cara hal ini bekerja?"
-      ],
       "How to choose a good logo": [
         "Cara memilih logo yang baik"
-      ],
-      "How to refer a friend and get credits": [
-        "Cara untuk merujuk teman dan memperoleh saldo tambahan"
       ],
       "How your free trial works": [
         "Bagaimana masa uji coba gratis Anda bekerja"
@@ -22381,9 +22229,6 @@
       "Search for additional servers": [
         "Cari server tambahan"
       ],
-      "Secure email based in Switzerland": [
-        "Email aman berbasis di Swiss"
-      ],
       "Secure your passwords. Everywhere.": [
         "Amankan kata sandi Anda. Di mana pun Anda berada."
       ],
@@ -22678,14 +22523,8 @@
       "Vaults owned": [
         "Brankas yang dimiliki"
       ],
-      "Verification": [
-        "Verifikasi"
-      ],
       "Verification failed": [
         "Verifikasi gagal"
-      ],
-      "Verify email address": [
-        "Verifikasi alamat email"
       ],
       "Verifying your card...": [
         "Memverifikasi kartu Anda..."
@@ -22782,9 +22621,6 @@
       ],
       "Your subscriptions": [
         "Langganan Anda"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23481,16 +23317,6 @@
         "Disimpan: ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Diundang via email"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Mendaftar melalui tautan Anda"
-      ]
-    },
     "User role": {
       "Admin": [
         "Admin"
@@ -23760,9 +23586,6 @@
       ],
       "Your ${ selected } plan": [
         "Paket ${ selected } Anda"
-      ],
-      "Your plan includes:": [
-        "Paket Anda meliputi:"
       ]
     },
     "vpn_2step: tooltip": {

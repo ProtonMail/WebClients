@@ -942,14 +942,6 @@
         "Näytä ${ hiddenResultsCount } piilotettua tulosta"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Peru tilaus"
@@ -2414,6 +2406,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
@@ -4464,6 +4459,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jos perut ${ planTitle } -tilauksesi, sitä ei uudisteta sen päättyessä ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Jos muutat mieltäsi, voit aloittaa uuden tilauksen milloin tahansa. Harmi, että päätit lähteä."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
@@ -5181,6 +5179,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } -tilauksesi korvataan ${ PASS_SHORT_APP_NAME } Lifetime -tilauksella. Tilauksesi ylijäänyt saldo lisätään tilillesi. ${ PASS_SHORT_APP_NAME } lifetime -tarjous ei uusiudu, se on kertamaksu elinikäiseen pääsyyn ${ PASS_SHORT_APP_NAME }iin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -7484,6 +7485,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nauti ilmaisista business-turvaominaisuuksista ${ trialEndsOnFormatted } asti."
+      ],
       "help center": [
         "tukikeskus"
       ],
@@ -8487,12 +8491,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Linkki tähän kohteeseen on tallennettu Driveesi. Löydät sen jatkossa \"Jaettu minulle\" -osiosta."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediitteinä."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
       "To edit this document, create a copy that you can modify.": [
         "Muokataksesi tätä tiedostoa, luo siitä kopio, jota voit muokata."

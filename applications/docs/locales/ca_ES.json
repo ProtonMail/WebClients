@@ -958,11 +958,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quan finalitzi la prova el ${ formattedDate1 }, es convertirà en una subscripció de pagament que es renovarà mensualment. No se us cobrarà res si cancel·leu abans del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -8732,12 +8732,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "S'ha desat un enllaç a aquest element a la vostra unitat. Podeu accedir-hi més endavant a la secció «Compartit amb mi»."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Obteniu fins a ${ credits } en crèdits."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Convida amistats a ${ BRAND_NAME }"
       ],
       "To edit this document, create a copy that you can modify.": [
         "Per editar aquest document, creeu una còpia que pugueu editar."

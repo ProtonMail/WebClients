@@ -686,9 +686,6 @@
       "Pay": [
         "Betal"
       ],
-      "Pay ${ price }": [
-        "Betal ${ price }"
-      ],
       "Pay ${ price } now": [
         "Betal ${ price } nå"
       ],
@@ -1404,12 +1401,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
       ],
@@ -1776,6 +1767,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Finn ut hvordan du aktiverer ${ VPN_APP_NAME } på ruteren."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Beskytt alle enheter i din husstand samtidig med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Beskytt bedriften din mot datainnbrudd og gjør eksternt arbeid tryggere med et VPN for bedrifter."
@@ -4814,6 +4808,9 @@
       "15 GB storage": [
         "15 GB lagringsplass"
       ],
+      "4 more privacy services": [
+        "4 flere personverntjenester"
+      ],
       "@pm.me address": [
         "@pm.me-adresse"
       ],
@@ -5171,9 +5168,6 @@
       "Select your deal": [
         "Velg tilbudet ditt"
       ],
-      "Select your payment method": [
-        "Velg betalingsmåte"
-      ],
       "Select your pricing plan": [
         "Velg prisplanen din"
       ],
@@ -5242,6 +5236,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Lås opp 4 flere premium personverntjenester for kun **${ priceString }** mer hver måned"
       ],
       "Upgrade your privacy": [
         "Oppgrader personvernet"
@@ -7827,6 +7824,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-plan."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-planen."
+      ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Når du fjerner en tjener fra en porttjener, går den inn i en 10-dagers deaktiveringsperiode. Denne tjeneren kan legges til en ny porttjener, men landet kan ikke endres."
       ],
@@ -8418,9 +8418,6 @@
       ],
       "Billing cycle": [
         "Faktureringssyklus"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Blokkér"
@@ -13308,14 +13305,6 @@
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Få opptil ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging."
@@ -13516,6 +13505,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Pålogging forespurt på en annen enhet. Var det deg?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Enkel pålogging vil kanskje ikke fungere riktig uten en organisasjonsidentitet. Angi en identitet for å sikre pålitelig autentisering."
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
@@ -16050,6 +16042,9 @@
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filene, bildene og dokumentene dine og gjenopprett filversjoner med 10-års filgjenoppretting."
       ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke. Fra kun ${ fallBackString } per måned"
+      ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
         "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandling i én pakke. Kun **${ priceString }** mer hver måned."
       ],
@@ -16356,9 +16351,6 @@
       ],
       "Your ${ selected } plan": [
         "Din ${ selected }-plan"
-      ],
-      "Your plan includes:": [
-        "Planen din inkluderer:"
       ]
     },
     "vpn_2step: tooltip": {

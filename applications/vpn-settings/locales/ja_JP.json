@@ -686,9 +686,6 @@
       "Pay": [
         "支払う"
       ],
-      "Pay ${ price }": [
-        "${ price } を支払う"
-      ],
       "Pay ${ price } now": [
         "${ price } を支払う"
       ],
@@ -1395,12 +1392,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
       ],
@@ -5169,9 +5160,6 @@
       "Select your deal": [
         "取引を選択してください"
       ],
-      "Select your payment method": [
-        "支払い方法を選択してください"
-      ],
       "Select your pricing plan": [
         "料金プランを選択してください"
       ],
@@ -8355,9 +8343,6 @@
       "Billing cycle": [
         "支払い間隔"
       ],
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
       "Block": [
         "ブロック"
       ],
@@ -9338,7 +9323,7 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "${ planName } でライブチャットが利用可能です"
+        "ライブチャットは${ planName }で利用可能です"
       ],
       "Open support form": [
         "サポートフォームを開く"
@@ -9347,7 +9332,7 @@
         "サブスクリプションをアップグレード"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "アップグレードしてチャットなどのプレミアム機能を使うか、無料のサポートフォームで問題をご報告ください。"
+        "チャットサポートやその他のプレミアム機能を利用するにはアップグレードしてください。または、無料のサポートフォームを使って問題を報告してください。"
       ]
     },
     "Loading info": {
@@ -13201,14 +13186,6 @@
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "最大${ credits }分のクレジットを獲得できます"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "友達を ${ BRAND_NAME } に招待"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }は${ BRAND_NAME }アカウントにシングルサインオンでサインインするためにあなたの支援を要請しています。"
@@ -14843,7 +14820,7 @@
         "変更を破棄しますか?"
       ],
       "Dismiss setup checklist": [
-        "「始めましょう」チェックリストを無視"
+        "セットアップチェックリストを閉じる"
       ],
       "Domain names": [
         "ドメイン名"
@@ -15945,10 +15922,10 @@
         "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
-        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！一月${ fallBackString }だけで、全てご利用いただけます。"
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
-        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！月々追加料金**${ priceString }**のみで、全てご利用いただけます。"
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月々たったの**${ priceString }**の追加料金でご利用いただけます。"
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
@@ -16249,9 +16226,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } プラン"
-      ],
-      "Your plan includes:": [
-        "プランには次のものが含まれます。"
       ]
     },
     "vpn_2step: tooltip": {

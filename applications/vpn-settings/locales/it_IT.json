@@ -683,9 +683,6 @@
       "Pay": [
         "Paga"
       ],
-      "Pay ${ price }": [
-        "Paga ${ price }"
-      ],
       "Pay ${ price } now": [
         "Paga ${ price } adesso"
       ],
@@ -1398,12 +1395,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Facendo clic su \"Prova\", accetti i nostri ${ termsAndConditions }."
       ],
@@ -5192,9 +5183,6 @@
       "Select your deal": [
         "Seleziona la tua offerta"
       ],
-      "Select your payment method": [
-        "Seleziona il tuo metodo di pagamento"
-      ],
       "Select your pricing plan": [
         "Seleziona il tuo piano tariffario."
       ],
@@ -8441,9 +8429,6 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Blocca"
@@ -13341,14 +13326,6 @@
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Guadagna fino a ${ credits } in crediti."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invita gli amici su ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } sta richiedendo il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On."
@@ -16409,9 +16386,6 @@
       ],
       "Your ${ selected } plan": [
         "Il tuo piano ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Il tuo piano include:"
       ]
     },
     "vpn_2step: tooltip": {

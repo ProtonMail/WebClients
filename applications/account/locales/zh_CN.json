@@ -323,9 +323,6 @@
       "Create": [
         "创建"
       ],
-      "Create account": [
-        "创建账户"
-      ],
       "Create calendar": [
         "创建日历"
       ],
@@ -886,9 +883,6 @@
       ],
       "Pay": [
         "支付"
-      ],
-      "Pay ${ price }": [
-        "支付 ${ price }"
       ],
       "Pay ${ price } now": [
         "立即支付 ${ price }"
@@ -2103,9 +2097,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "将链接加入邮件来源标识中"
-      ],
       "Close": [
         "关闭"
       ],
@@ -2130,9 +2121,6 @@
       "Got it": [
         "好的"
       ],
-      "Invite": [
-        "发送邀请"
-      ],
       "Maybe later": [
         "以后再说"
       ],
@@ -2150,9 +2138,6 @@
       ],
       "Take a tour": [
         "开始导览"
-      ],
-      "Tweet": [
-        "发推文"
       ]
     },
     "Calendar access select label": {
@@ -3687,9 +3672,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "恭喜！您已获得 ${ rewardsLimit } 个月的 ${ plusPlanName } 免费使用权限。"
-      ],
       "Connect your CRM, website, printers, and more.": [
         "连接您的 CRM、网站、打印机等。"
       ],
@@ -3789,17 +3771,11 @@
       "Track the status and activity of your referrals": [
         "实时跟踪已发出的邀请动态"
       ],
-      "Track the status and activity of your referrals.": [
-        "实时跟踪已发出的邀请动态。"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升级后，除现有电子邮件地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 电子邮件地址。"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "您可以继续邀请朋友，但不能再赚取更多奖励。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
@@ -6179,9 +6155,6 @@
       "Select your deal": [
         "选择您的交易"
       ],
-      "Select your payment method": [
-        "选择支付方式"
-      ],
       "Select your pricing plan": [
         "选择适合您的账户等级"
       ],
@@ -6696,9 +6669,6 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } 国家/地区已启用"
       ],
-      "${ current } of ${ total }": [
-        "${ current } / ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
       ],
@@ -6870,9 +6840,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "（满足下列任一条件）"
       ],
-      "* No credit card required.": [
-        "* 无需信用卡。"
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "您的组织 **${ organizationName }** 不支持 **${ appName }**。"
       ],
@@ -6900,17 +6867,8 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. 邀请好友注册 ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. 体验 ${ planName }"
-      ],
       "2FA disabled": [
         "2FA 已禁用"
-      ],
-      "3. You earn credits": [
-        "3. 赢取奖励"
       ],
       "30-day money-back guarantee": [
         "30 天内可退款"
@@ -7310,9 +7268,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "根据当前账户等级的剩余有效时间折算返还的余额"
-      ],
-      "Credits earned": [
-        "已赚取奖励"
       ],
       "Current plan": [
         "当前等级"
@@ -7941,17 +7896,11 @@
       "Item updated in vault": [
         "密码库中有条目被被更新"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "我一直在使用@ProtonMail，并且认为你可能会喜欢它。这是一项可以保护您隐私的安全电子邮件服务。使用我的推荐链接注册即可免费获得 1 个月的高级功能：${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB 徽标"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
-      ],
-      "Just send them your personal referral link.": [
-        "只需将您的专属邀请链接发给他们即可。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "使用这些指南和技巧，让您的信息更安全、更私密。"
@@ -8181,9 +8130,6 @@
       "Once you reset your password:": [
         "当你重置密码后："
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "一个账户，所有 ${ BRAND_NAME } 服务通用。"
-      ],
       "One time import": [
         "一次性导入"
       ],
@@ -8231,12 +8177,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "超过 1 亿人和企业已注册 ${ BRAND_NAME } 。"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "为 ${ rewardMonths } 个月的计划付费"
-      ],
-      "Paid for a monthly plan": [
-        "已开通月费账户"
       ],
       "Paid for a plan": [
         "已开通套餐"
@@ -8742,9 +8682,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "这些凭据无法用来登录我们的官方 ${ VPN_APP_NAME } 应用。${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "2. 好友可免费体验 ${ planName } 一个月。"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
@@ -8912,9 +8849,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "增强互联网传输安全，下载安装 ${ VPN_APP_NAME } 应用程序，连接应用提供的服务器。"
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "即可使用 ${ toAppName } 和所有 ${ BRAND_NAME } 服务"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
@@ -9191,9 +9125,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "好友开通付费账户后，您也将获得余额奖励。"
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "当您取消当前的付费订阅时，套餐余额将以账户积分的形式返还给您，同时您将转为 ${ BRAND_NAME } ${ PLANS.FREE } 套餐。"
@@ -10776,9 +10707,6 @@
       "Repeat backup password": [
         "再次输入备用密码"
       ],
-      "Repeat password": [
-        "重复密码"
-      ],
       "Reply (ACS) URL": [
         "回复 (ACS) URL"
       ],
@@ -10997,9 +10925,6 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
-      ],
-      "Your referral link": [
-        "您的邀请链接"
       ],
       "ZIP code": [
         "邮政编码"
@@ -11648,6 +11573,12 @@
       "Create a new ${ appName } account": [
         "创建 ${ appName } 账户"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "免费试用 ${ BRAND_NAME } 两周"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "体验真正的在线隐私。使用 ${ BRAND_NAME }免费保护您接下来14 天的数据。"
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "查找您的 ${ BRAND_NAME } 帐户用户名"
       ],
@@ -11665,9 +11596,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登录到您的 ${ BRAND_NAME } 帐户以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等等。 没有帐户？免费创建一个帐户。"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "使用此链接免费试用 ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -11928,9 +11856,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "注册免费账户"
-      ],
       "Delete account": [
         "删除账户"
       ],
@@ -11951,9 +11876,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "开通 ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -12471,21 +12393,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 账户可以创建从属用户并分配邮箱地址，适合家庭与组织团体使用。"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 此为月费价格，结算时可选择其他计费方式。"
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 此为年费价格，结算时可选择其他计费方式。"
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 此为 15 个月付费价，结算时可选择其他计费方式。"
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 此为两年付费价格，结算时可选择其他计费方式。"
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 此为 30 个月付费价，结算时可选择其他计费方式。"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的云存储空间，让您轻松存储、同步和共享文件。端到端加密，安全可靠。"
       ],
@@ -12527,9 +12434,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "如果您切换到其他套餐，您将失去${ visionary } 套餐的所有福利，并且无法切换回${ visionary }。"
-      ],
-      "Most popular": [
-        "常用"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
@@ -12599,14 +12503,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "创建 ${ BRAND_NAME } 账户即表示您接受我们的${ terms }。"
       ],
-      "Payment details": [
-        "支付方式"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "请妥善保存您填写的邮箱或电话号码，以便在意外情况下重置账户。"
-      ],
-      "Subscription": [
-        "订购"
       ],
       "terms and conditions": [
         "服务条款"
@@ -12619,9 +12517,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "您的 ${ planTitleElement } 账户已激活。"
-      ],
-      "Your selected plan: ${ planName }": [
-        "您所选的账户等级：${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -15863,6 +15758,9 @@
       "Highest VPN speed": [
         "最快的 VPN 速度"
       ],
+      "Mail": [
+        "邮件"
+      ],
       "Mailboxes and custom domains for aliases": [
         "用于别名的邮箱地址和自定义域名"
       ],
@@ -16033,9 +15931,6 @@
       "Display name": [
         "称呼"
       ],
-      "Email": [
-        "邮箱"
-      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -16047,17 +15942,6 @@
       ],
       "Username": [
         "用户名"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "账户配置"
-      ],
-      "Payment": [
-        "支付"
-      ],
-      "Verification": [
-        "验证"
       ]
     },
     "signup: Action": {
@@ -16372,14 +16256,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "最高可获 ${ credits } 余额奖励。"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "邀请好友注册 ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -18023,9 +17899,6 @@
       "Create user accounts": [
         "创建账户"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "创建 ${ BRAND_NAME } 账户"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "创建 ${ BRAND_NAME } 地址"
       ],
@@ -18377,14 +18250,8 @@
       "Home": [
         "首页"
       ],
-      "How does it work?": [
-        "如何操作？"
-      ],
       "How to choose a good logo": [
         "如何选择一个不错的徽标"
-      ],
-      "How to refer a friend and get credits": [
-        "如何邀请好友并获得奖励"
       ],
       "Human verification": [
         "身份验证"
@@ -18707,9 +18574,6 @@
       "Schedule send:": [
         "定时发送："
       ],
-      "Secure email based in Switzerland": [
-        "来自瑞士的加密邮箱"
-      ],
       "Security and privacy": [
         "安全与隐私"
       ],
@@ -18962,14 +18826,8 @@
       "Users and addresses": [
         "用户和地址"
       ],
-      "Verification": [
-        "验证"
-      ],
       "Verification failed": [
         "验证失败"
-      ],
-      "Verify email address": [
-        "验证邮箱地址"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."
@@ -19057,9 +18915,6 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "诚邀您体验 ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19617,16 +19472,6 @@
         "节省 ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "已发送邀请邮件"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "已通过您的邀请链接注册"
-      ]
-    },
     "User role": {
       "Admin": [
         "管理员"
@@ -19879,9 +19724,6 @@
       ],
       "Your ${ selected } plan": [
         "您的 ${ selected } 计划"
-      ],
-      "Your plan includes:": [
-        "您的计划包括："
       ]
     },
     "vpn_2step: tooltip": {

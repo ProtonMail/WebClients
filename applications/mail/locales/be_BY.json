@@ -1507,10 +1507,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1924,12 +1921,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -5229,7 +5220,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Няправільны фармат. Кампанент."
+        "Памылковы фармат. Немагчыма прачытаць кампанент."
       ],
       "Calendar": [
         "Каляндар"
@@ -7636,7 +7627,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9510,9 +9504,6 @@
       ],
       "Billing cycle": [
         "Перыяд аплаты"
-      ],
-      "Black Friday": [
-        "Чорная пятніца"
       ],
       "Blind Carbon Copy": [
         "Схаваная копія"
@@ -11967,7 +11958,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з ${ planName }"
+        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -13888,12 +13879,6 @@
       ],
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Атрымайце да ${ credits } у крэдытах."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
       "Schedule send": [
         "Запланаваць адпраўку"
@@ -16498,7 +16483,7 @@
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+        "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэта спраўджанне."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

@@ -29,8 +29,8 @@
       "Authenticate": [
         "S'authentifier"
       ],
-      "Blur background": [
-        "Flouter l'arrière-plan"
+      "Background blur": [
+        "Flou d'arrière-plan"
       ],
       "Cancel": [
         "Annuler"
@@ -170,11 +170,14 @@
       "Next page": [
         "Page suivante"
       ],
-      "Noise filter": [
-        "Filtre anti-bruit"
+      "Noise cancellation": [
+        "Réduction du bruit"
       ],
       "Open link": [
         "Ouvrir le lien"
+      ],
+      "Picture-in-picture mode": [
+        "Mode picture-in-picture"
       ],
       "Previous month": [
         "Mois précédent"
@@ -263,9 +266,6 @@
       "Stay in meeting": [
         "Rester dans la réunion"
       ],
-      "Stop incoming video": [
-        "Arrêter la vidéo entrante"
-      ],
       "Stop presenting": [
         "Arrêtez de présenter"
       ],
@@ -283,6 +283,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Turn off incoming video": [
+        "Désactiver la vidéo entrante"
       ],
       "Use authentication code": [
         "Utiliser le code d'authentification"
@@ -328,9 +331,6 @@
       "Go to dashboard": [
         "Aller au tableau de bord"
       ],
-      "Hide self view": [
-        "Masquer ma description"
-      ],
       "Leave": [
         "Quitter"
       ],
@@ -342,9 +342,6 @@
       ],
       "Meeting details": [
         "Informations de la réunion"
-      ],
-      "Noise filter": [
-        "Filtre anti-bruit"
       ],
       "Open chat message search": [
         "Rechercher dans les discussions ouvertes"
@@ -369,9 +366,6 @@
       ],
       "Show passphrase": [
         "Afficher la phrase secrète"
-      ],
-      "Stop incoming video": [
-        "Arrêter la vidéo entrante"
       ],
       "Toggle camera": [
         "Activer/Désactiver la caméra"
@@ -1386,15 +1380,6 @@
       "Failed to decrypt session key": [
         "Le déchiffrement de la clé de session n'a pas abouti."
       ],
-      "Failed to get meeting info": [
-        "La récupération des informations de la réunion n'a pas abouti."
-      ],
-      "Failed to get room name": [
-        "Impossible d'obtenir le nom de la salle"
-      ],
-      "Failed to initialize handshake": [
-        "Échec de l'initialisation de la poignée de main"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
       ],
@@ -1787,8 +1772,8 @@
       "Meeting link": [
         "Lien de la réunion "
       ],
-      "Meeting locked. No new participants can join": [
-        "Réunion close. Aucun nouveau participant ne peut rejoindre"
+      "Meeting locked. No new participants can join.": [
+        "La réunion a été close. Aucun nouveau participant ne peut la rejoindre."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Réunion déverrouillée. Les participants peuvent se reconnecter."
@@ -2246,14 +2231,6 @@
         "Passez à Premium"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Recevez jusqu'à ${ credits } en crédits."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter des amis à rejoindre ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Se connecter"
@@ -2297,6 +2274,9 @@
       ],
       "Assign a new host": [
         "Désigner un nouvel hôte"
+      ],
+      "Audio": [
+        "Audio"
       ],
       "Authenticator": [
         "Authentificateur"
@@ -2400,6 +2380,9 @@
       "Secure meeting": [
         "Réunion sécurisée"
       ],
+      "Security": [
+        "Sécurité"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -2426,6 +2409,9 @@
       ],
       "Upcoming meetings": [
         "Réunions à venir"
+      ],
+      "Video": [
+        "Vidéo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2434,10 +2420,10 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Flouter l'arrière-plan"
+      "Background blur": [
+        "Flou d'arrière-plan"
       ],
-      "Blur background is not supported on your browser": [
+      "Background blur is not supported on your browser": [
         "Le flou d'arrière-plan n'est pas pris en charge sur votre navigateur"
       ],
       "Recurring meeting": [

@@ -686,9 +686,6 @@
       "Pay": [
         "Zaplatit"
       ],
-      "Pay ${ price }": [
-        "Zaplatit ${ price }"
-      ],
       "Pay ${ price } now": [
         "Nyní zaplatit ${ price }"
       ],
@@ -1422,11 +1419,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane předplatné, které bude automaticky obnoveno každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudete nic platit."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -5283,9 +5280,6 @@
       "Select your deal": [
         "Vyberte svoji nabídku"
       ],
-      "Select your payment method": [
-        "Zvolte platební metodu"
-      ],
       "Select your pricing plan": [
         "Vyberte si tarif"
       ],
@@ -8699,9 +8693,6 @@
       ],
       "Billing cycle": [
         "Fakturační období"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Blokovat"
@@ -13735,14 +13726,6 @@
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Získejte až ${ credits } v kreditech."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Pozvěte přátele do ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
@@ -16939,9 +16922,6 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Váš tarif zahrnuje:"
       ]
     },
     "vpn_2step: tooltip": {

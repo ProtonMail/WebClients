@@ -686,9 +686,6 @@
       "Pay": [
         "Zahlen"
       ],
-      "Pay ${ price }": [
-        "${ price } bezahlen"
-      ],
       "Pay ${ price } now": [
         "${ price } jetzt zahlen"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Wenn du auf „Testen“ klickst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden."
@@ -5207,8 +5204,8 @@
       "Select your deal": [
         "Wähle dein Angebot"
       ],
-      "Select your payment method": [
-        "Wähle deine Zahlungsmethode"
+      "Select your payment method:": [
+        "Wähle deine Zahlungsmethode:"
       ],
       "Select your pricing plan": [
         "Wähle dein Abonnement"
@@ -8470,9 +8467,6 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Gesperrt"
       ],
@@ -9971,6 +9965,9 @@
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
+      "Activity logs and policy": [
+        "Aktivitätsprotokolle und Richtlinie"
+      ],
       "Ad-blocker and malware protection": [
         "Werbeblocker und Malware-Schutz"
       ],
@@ -10205,6 +10202,9 @@
       ],
       "Secure link sharing": [
         "Sicheres Teilen von Links"
+      ],
+      "Secure password management": [
+        "Sichere Passwortverwaltung"
       ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
@@ -12251,6 +12251,9 @@
       "How your free trial works:": [
         "So funktioniert deine kostenlose Testversion:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Ich benutze ${ BRAND_NAME } und dachte, es könnte dir gefallen. Es ist sicher für E-Mail, Cloud-Speicher, Passwort-Manager und VPN, das deine Privatsphäre schützt. Registriere dich über diesen Link und erhalte 14 Tage Premium-Funktionen kostenlos: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Wenn du vorher kündigst, wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } zurückgestuft, wenn die Testversion endet. Wenn du nicht kündigst, beginnt dein vollständiges Abonnement und du erhältst **${ referrerRewardAmount }** Guthaben."
       ],
@@ -12271,6 +12274,9 @@
       ],
       "Refer friends": [
         "Freunde werben"
+      ],
+      "Share using ${ name }": [
+        "Mit ${ name } teilen"
       ],
       "Start earning credits": [
         "Fange an, Guthaben zu verdienen"
@@ -13362,14 +13368,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Erhalte bis zu ${ credits } als Guthaben."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Lade Freunde zu ${ BRAND_NAME } ein"
       ]
     },
     "sso": {
@@ -16464,9 +16462,6 @@
       ],
       "Your ${ selected } plan": [
         "Dein ${ selected }-Abonnement"
-      ],
-      "Your plan includes:": [
-        "Dein Abonnement beinhaltet:"
       ]
     },
     "vpn_2step: tooltip": {

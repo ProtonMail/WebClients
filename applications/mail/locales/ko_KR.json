@@ -1888,12 +1888,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -6514,10 +6508,10 @@
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 ${ BRAND_NAME } 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
@@ -9066,9 +9060,6 @@
       ],
       "Billing cycle": [
         "결제 주기"
-      ],
-      "Black Friday": [
-        "블랙 프라이데이"
       ],
       "Blind Carbon Copy": [
         "숨김 참조"
@@ -13231,12 +13222,6 @@
       ],
       "Email tracking protection": [
         "이메일 트래킹 보호"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "최대 ${ credits }의 크레딧 받기"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME }에 초대하세요."
       ],
       "Schedule send": [
         "예약 전송"

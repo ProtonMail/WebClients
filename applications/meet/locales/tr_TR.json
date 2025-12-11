@@ -29,8 +29,8 @@
       "Authenticate": [
         "Kimliği doğrula"
       ],
-      "Blur background": [
-        "Arka planı bulanıklaştır"
+      "Background blur": [
+        "Arka plan bulanıklığı"
       ],
       "Cancel": [
         "İptal"
@@ -170,11 +170,14 @@
       "Next page": [
         "Sonraki sayfa"
       ],
-      "Noise filter": [
-        "Gürültü süzgeci"
+      "Noise cancellation": [
+        "Gürültü engelleme"
       ],
       "Open link": [
         "Bağlantıyı aç"
+      ],
+      "Picture-in-picture mode": [
+        "Görüntü içinde görüntü kipi"
       ],
       "Previous month": [
         "Önceki ay"
@@ -263,9 +266,6 @@
       "Stay in meeting": [
         "Görüşmede kal"
       ],
-      "Stop incoming video": [
-        "Gelen görüntüyü kapat"
-      ],
       "Stop presenting": [
         "Sunumu durdur"
       ],
@@ -283,6 +283,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Turn off incoming video": [
+        "Gelen görüntüyü kapat"
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodunu kullanın"
@@ -328,9 +331,6 @@
       "Go to dashboard": [
         "Panoya git"
       ],
-      "Hide self view": [
-        "Kendi görüntünü gizle"
-      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -342,9 +342,6 @@
       ],
       "Meeting details": [
         "Görüşme ayrıntıları"
-      ],
-      "Noise filter": [
-        "Gürültü süzgeci"
       ],
       "Open chat message search": [
         "Sohbet iletisi aramayı aç"
@@ -369,9 +366,6 @@
       ],
       "Show passphrase": [
         "Parola ifadesini görüntüle"
-      ],
-      "Stop incoming video": [
-        "Gelen görüntüyü kapat"
       ],
       "Toggle camera": [
         "Kamerayı aç/kapat"
@@ -1386,15 +1380,6 @@
       "Failed to decrypt session key": [
         "Oturum anahtarının şifresi çözülemedi"
       ],
-      "Failed to get meeting info": [
-        "Görüşme bilgileri alınamadı"
-      ],
-      "Failed to get room name": [
-        "Oda adı alınamadı"
-      ],
-      "Failed to initialize handshake": [
-        "El sıkışma başlatılamadı"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -1787,8 +1772,8 @@
       "Meeting link": [
         "Görüşme bağlantısı"
       ],
-      "Meeting locked. No new participants can join": [
-        "Görüşme kilitlendi. Artık yeni kişiler katılamaz"
+      "Meeting locked. No new participants can join.": [
+        "Görüşme kilitlendi. Artık yeni kişiler katılamaz."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Görüşmenin kilidi açıldı. Katılımcılar yine katılabilir"
@@ -2246,14 +2231,6 @@
         "Yükselt"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "${ credits } tutarına kadar kredi kazanın."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Oturum aç"
@@ -2297,6 +2274,9 @@
       ],
       "Assign a new host": [
         "Yeni bir görüşme sahibi ata"
+      ],
+      "Audio": [
+        "Ses"
       ],
       "Authenticator": [
         "Kimlik doğrulayıcı"
@@ -2400,6 +2380,9 @@
       "Secure meeting": [
         "Güvenli görüşme"
       ],
+      "Security": [
+        "Güvenlik"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -2426,6 +2409,9 @@
       ],
       "Upcoming meetings": [
         "Yaklaşan görüşmeler"
+      ],
+      "Video": [
+        "Görüntü"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2434,11 +2420,11 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Arka planı bulanıklaştır"
+      "Background blur": [
+        "Arka plan bulanıklığı"
       ],
-      "Blur background is not supported on your browser": [
-        "Tarayıcınız arka plan bulanıklaştırmayı desteklemiyor"
+      "Background blur is not supported on your browser": [
+        "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"

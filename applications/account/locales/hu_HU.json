@@ -326,9 +326,6 @@
       "Create": [
         "Létrehozás"
       ],
-      "Create account": [
-        "Fiók létrehozása"
-      ],
       "Create calendar": [
         "Naptár létrehozása"
       ],
@@ -880,9 +877,6 @@
       ],
       "Pay": [
         "Fizetés"
-      ],
-      "Pay ${ price }": [
-        "${ price } fizetése"
       ],
       "Pay ${ price } now": [
         "${ price } kifizetése"
@@ -1669,9 +1663,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "A próbaidőszak ekkor ér véget: ${ formattedDate }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate } előtt."
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ha lemondja, az ingyenes próbaidőszaka nem alakul át fizetős előfizetéssé, de a próbaidőszak végéig még használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free plan csomagra kerül át."
       ],
@@ -2117,9 +2108,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Hivatkozás hozzáadása az e-mail láblécéhez"
-      ],
       "Close": [
         "Bezárás"
       ],
@@ -2144,9 +2132,6 @@
       "Got it": [
         "Értem."
       ],
-      "Invite": [
-        "Meghívás"
-      ],
       "Maybe later": [
         "Talán később"
       ],
@@ -2164,9 +2149,6 @@
       ],
       "Take a tour": [
         "Bemutató megtekintése"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -3850,17 +3832,11 @@
       "Track the status and activity of your referrals": [
         "Kövesse figyelemmel a meghívói állapotát"
       ],
-      "Track the status and activity of your referrals.": [
-        "Kövesse figyelemmel a meghívói állapotát."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Frissítsen a ${ activatePmUser } verzióra, hogy a jelenlegi mellett egy rövidebb, könnyen megjegyezhető e-mail címet kapjon."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Ezzel az útmutatóval szervezete gyorsan részesülhet ${ BRAND_NAME } iparágvezető titkosítási és adatvédelmi ökoszisztémájának előnyeiből."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -6264,9 +6240,6 @@
       "Select your deal": [
         "Válassza ki az ajánlatot"
       ],
-      "Select your payment method": [
-        "Válassza ki a fizetési módot"
-      ],
       "Select your pricing plan": [
         "Válasszon előfizetést"
       ],
@@ -6793,9 +6766,6 @@
         "${ countriesCount } ország engedélyezve",
         "${ countriesCount } ország engedélyezve"
       ],
-      "${ current } of ${ total }": [
-        "${ current } / ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% kedvezmény"
       ],
@@ -6970,9 +6940,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Szűrés ha az alábbi feltételek közül BÁRMELYIK teljesül)"
       ],
-      "* No credit card required.": [
-        "* Bankkártya nem szükséges."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "A(z) **${ appName }** nem támogatott az Ön **${ organizationName }** nevű szervezetében."
       ],
@@ -7002,17 +6969,8 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Hívjon meg barátokat a ${ BRAND_NAME }ba"
-      ],
-      "2. They try ${ planName }": [
-        "2. Kipróbálják a ${ planName } csomagot"
-      ],
       "2FA disabled": [
         "Kétlépcsős hitelesítés kikapcsolva"
-      ],
-      "3. You earn credits": [
-        "3. Krediteket kap"
       ],
       "30-day money-back guarantee": [
         "30 napos pénz-visszafizetési garancia"
@@ -7413,9 +7371,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
-      ],
-      "Credits earned": [
-        "Kredit hozzáadva"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -8033,17 +7988,11 @@
       "Item updated in vault": [
         "Elem frissítve a tárolóban"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Az @ProtonMailt használom és gondoltam, hogy neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, amely védi a magánéleted. Regisztrálj ezen a hivatkozáson, hogy 1 hónapig ingyen használhasd a prémium funkciókat is: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB logó"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
-      ],
-      "Just send them your personal referral link.": [
-        "Csak küldje el nekik az ön ajánló hivatkozását."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Tartsa adatait biztonságban és kezelje bizalmasan ezekkel az útmutatókkal és tippekkel."
@@ -8258,9 +8207,6 @@
       "Once you reset your password:": [
         "Ha visszaállítja a jelszavát:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Egy fiók minden ${ BRAND_NAME } szolgáltatáshoz."
-      ],
       "One time import": [
         "Egyszeri import"
       ],
@@ -8307,13 +8253,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Több mint százmillió ember és vállalkozás regisztrált a ${ BRAND_NAME } szolgáltatásaira."
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } hónapos csomag fizetve",
-        "${ rewardMonths } hónapos csomag fizetve"
-      ],
-      "Paid for a monthly plan": [
-        "Előfizetett a havidíjas csomagra"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - egyedi e-mail megerősítve"
@@ -8821,9 +8760,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ezeket az azonosítókat nem lehet használni hivatalos ${ VPN_APP_NAME } alkalmazásainkhoz történő bejelentkezéshez. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Egy havi ingyenes ${ planName } elérést kapnak."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
@@ -8991,9 +8927,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ${ VPN_APP_NAME } alkalmazást és kapcsolódjon egy szerverhez."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "hogy használni tudja a ${ toAppName } és minden ${ BRAND_NAME } szolgáltatást"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "A ${ toAppName } használatához, szüksége van egy ${ MAIL_APP_NAME } címre."
@@ -9258,9 +9191,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Ha előfizetnek a csomagra, krediteket fog kapni, amelyeket felhasználhat az előfizetéséhez."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Amikor lemondja a jelenlegi előfizetését, a fennmaradó kifizetett összeg kreditként kerül hozzáadásra a fiókja egyenlegéhez, és előfizetése átvált a ${ BRAND_NAME } ${ PLANS.FREE } csomagra."
@@ -10193,9 +10123,6 @@
       "Billing cycle": [
         "Számlázási ciklus"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Letiltás"
       ],
@@ -10820,9 +10747,6 @@
       "Repeat backup password": [
         "Ismételje meg a biztonsági jelszót"
       ],
-      "Repeat password": [
-        "Jelszó ismét"
-      ],
       "Reply (ACS) URL": [
         "Válasz (ACS) URL"
       ],
@@ -11033,9 +10957,6 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
-      ],
-      "Your referral link": [
-        "Ajánló hivatkozása"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -11682,9 +11603,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Jelentkezzen be a ${ BRAND_NAME } , hogy hozzáférjen minden titkosított ${ BRAND_NAME } szolgáltatáshoz, mint például ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }. Nincsen fiókja? Készítsen egyet INGYEN."
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Próbálja ki ${ BRAND_NAME }-t ingyen ezzel a linkkel"
       ]
     },
     "Modal title": {
@@ -11948,9 +11866,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Folytatás az ingyenessel"
-      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -11971,9 +11886,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Váltás ${ upsellPlanHumanSize } csomagra"
       ]
     },
     "new_plans: Action": {
@@ -12526,21 +12438,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } e-mail címek és al-felhasználók létrehozására biztosít lehetőséget. Ideális családoknak vagy szervezeteknek."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB felhőalapú tárhely, amellyel könnyedén tárolhat, szinkronizálhat és oszthat meg fájlokat. Végpontok közti titkosítással védett."
       ],
@@ -12582,9 +12479,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Ha másik csomagra vált, elveszíti a ${ visionary } csomag előnyeit és nem fog tudni visszaváltani a ${ visionary } csomagra."
-      ],
-      "Most popular": [
-        "Legnépszerűbb"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "A ${ visionary } csomag már nem érhető el új előfizetéshez, mert ez egy speciális csomag eredeti ${ BRAND_NAME } felhasználók számára, külön lehetőségekkel és előnyökkel."
@@ -12651,14 +12545,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Egy ${ BRAND_NAME } felhasználói fiók létrehozásával, elfogadja a ${ terms }-et"
       ],
-      "Payment details": [
-        "Fizetés részletei"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Mentse le e-mail címét vagy telefonszámát, hogy a jelszó esetleges visszaállítása esetén ellenőrzéshez használhassa."
-      ],
-      "Subscription": [
-        "Előfizetés"
       ],
       "terms and conditions": [
         "felhasználási feltételek"
@@ -12671,9 +12559,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "A ${ planTitleElement } csomagja most már aktív."
-      ],
-      "Your selected plan: ${ planName }": [
-        "A választott csomagja: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -15953,9 +15838,6 @@
       "Display name": [
         "Megjelenített név"
       ],
-      "Email": [
-        "E-mail"
-      ],
       "Email address": [
         "E-mail cím"
       ],
@@ -15967,17 +15849,6 @@
       ],
       "Username": [
         "Felhasználónév"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Fiók beállítása"
-      ],
-      "Payment": [
-        "Fizetés"
-      ],
-      "Verification": [
-        "Ellenőrzés"
       ]
     },
     "signup: Action": {
@@ -16303,14 +16174,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Szerezzen akár ${ credits } kreditet."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ]
     },
     "sso": {
@@ -17999,9 +17862,6 @@
       "Create user accounts": [
         "Új felhasználói fiók létrehozása"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } fiók létrehozása"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Hozza létre saját ${ BRAND_NAME } címét"
       ],
@@ -18352,14 +18212,8 @@
       "Home": [
         "Otthoni"
       ],
-      "How does it work?": [
-        "Hogyan működik?"
-      ],
       "How to choose a good logo": [
         "Hogyan válasszon egy jó logót"
-      ],
-      "How to refer a friend and get credits": [
-        "Hogyan hívhatja meg ismerőseit és szerezhet krediteket"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -18668,9 +18522,6 @@
       "Schedule send:": [
         "Küldés ütemezése:"
       ],
-      "Secure email based in Switzerland": [
-        "Biztonságos e-mail svájci székhellyel"
-      ],
       "Security and privacy": [
         "Biztonság és adatvédelem"
       ],
@@ -18924,14 +18775,8 @@
       "Users and addresses": [
         "Felhasználók és címek"
       ],
-      "Verification": [
-        "Ellenőrzés"
-      ],
       "Verification failed": [
         "Az ellenőrzés sikertelen"
-      ],
-      "Verify email address": [
-        "E-mail cím megerősítése"
       ],
       "Verifying your card...": [
         "Kártya ellenőrzése..."
@@ -19010,9 +18855,6 @@
       ],
       "Your subscriptions": [
         "Előfizetések"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19529,16 +19371,6 @@
         "Megtakarítás ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Meghívva e-mail által"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Regisztrált az ön hivatkozásán keresztül"
-      ]
-    },
     "User role": {
       "Admin": [
         "Adminisztrátor"
@@ -19803,9 +19635,6 @@
       ],
       "Your ${ selected } plan": [
         "Az Ön ${ selected } csomagja"
-      ],
-      "Your plan includes:": [
-        "A csomagja tartalma:"
       ]
     },
     "vpn_2step: tooltip": {

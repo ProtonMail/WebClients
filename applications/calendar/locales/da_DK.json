@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
+      "Expand navigation bar to see bookings": [
+        "Udvid navigationsbjælken for at se reservationer"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Udvid navigationsbjælken for at se kalendere"
+      ],
       "Expand video conferencing widget": [
         "Udvid widget til videokonference"
       ],
@@ -1172,11 +1178,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
@@ -6656,9 +6662,6 @@
       "Billing cycle": [
         "Faktureringsperiode"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -10368,12 +10371,6 @@
       ],
       "Custom event colors": [
         "Brugertilpassede eventfarver"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Få op til ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Planlæg og deltag i ${ MEET_APP_NAME }-opkald direkte fra din kalender."

@@ -361,9 +361,6 @@
       "Create": [
         "Luo"
       ],
-      "Create account": [
-        "Luo tili"
-      ],
       "Create calendar": [
         "Luo kalenteri"
       ],
@@ -978,9 +975,6 @@
       ],
       "Pay": [
         "Maksa"
-      ],
-      "Pay ${ price }": [
-        "Maksa ${ price }"
       ],
       "Pay ${ price } now": [
         "Maksa ${ price } nyt"
@@ -1817,12 +1811,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
@@ -2290,9 +2278,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Lisää linkki viestisi alatunnisteeseen"
-      ],
       "Close": [
         "Sulje"
       ],
@@ -2317,9 +2302,6 @@
       "Got it": [
         "Selvä"
       ],
-      "Invite": [
-        "Kutsu"
-      ],
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
@@ -2337,9 +2319,6 @@
       ],
       "Take a tour": [
         "Katso esittely"
-      ],
-      "Tweet": [
-        "Twiittaa"
       ]
     },
     "Calendar access select label": {
@@ -3988,10 +3967,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän: ${ rewardsLimit } kuukauden ${ plusPlanName }.",
-        "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän: ${ rewardsLimit } kuukautta ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Yhdistä CRM:si, verkkosivustosi, tulostimesi ja muuta."
       ],
@@ -4043,6 +4018,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ansaitse jopa ${ credits } krediitteinä kutsumalla kavereita ${ BRAND_NAME }iin."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
@@ -4082,14 +4060,8 @@
       "Track the status and activity of your referrals": [
         "Seuraa suosittelujesi tilaa ja toimintaa"
       ],
-      "Track the status and activity of your referrals.": [
-        "Seuraa suosittelujesi tilaa ja toimintaa."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Päivitä tilauksesi saadaksesi ${ activatePmUser }, toisen lyhyemmän ja helpommin muistettavan sähköpostiosoitten nykyisen lisäksi."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Voit edelleen kutsua kavereita, muttet voi ansaita enempää krediittejä"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
@@ -6775,8 +6747,8 @@
       "Select your deal": [
         "Valitse tarjouksesi"
       ],
-      "Select your payment method": [
-        "Valitse maksutapasi"
+      "Select your payment method:": [
+        "Valitse maksutapa:"
       ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
@@ -7329,9 +7301,6 @@
         "${ countriesCount } maa käytössä",
         "${ countriesCount } maata käytössä"
       ],
-      "${ current } of ${ total }": [
-        "${ current }/${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% alennus"
       ],
@@ -7527,9 +7496,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(suodata, jos JOTKIN seuraavista ehdoista täyttyvät)"
       ],
-      "* No credit card required.": [
-        "* Maksukorttia ei vaadita."
-      ],
       "**${ appName }** is not supported.": [
         "**${ appName }** ei ole tuettu."
       ],
@@ -7559,17 +7525,8 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Kutsu kavereita ${ BRAND_NAME }iin"
-      ],
-      "2. They try ${ planName }": [
-        "2. He kokeilevat ${ planName } -tilausta"
-      ],
       "2FA disabled": [
         "2FA poistettu käytöstä"
-      ],
-      "3. You earn credits": [
-        "3. Ansaitset krediittejä"
       ],
       "30-day money-back guarantee": [
         "30 päivän rahat takaisin -takuu"
@@ -7974,9 +7931,6 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
       ],
-      "Credits earned": [
-        "Krediittejä ansaittu"
-      ],
       "Current plan": [
         "Nykyinen tilaus"
       ],
@@ -8318,6 +8272,9 @@
       "finance": [
         "rahoitus"
       ],
+      "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
+        "Saadaksesi helpon pääsyn sähköpostiisi ja optimoidun kokemuksen mobiililaitteille, lataa ${ androidAppLink } tai ${ iosAppLink }."
+      ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
@@ -8413,6 +8370,9 @@
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jos perut ${ planTitle } -tilauksesi, sitä ei uudisteta sen päättyessä ${ expiryDate }."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Jos muutat mieltäsi, voit aloittaa uuden tilauksen milloin tahansa. Harmi, että päätit lähteä."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
@@ -8611,17 +8571,11 @@
       "Item updated in vault": [
         "Holvin kohdetta muokattiin"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Olen käyttänyt @ProtonMailia ja ajattelin, että saatat pitää siitä. Se on turvallinen sähköpostipalvelu, joka suojaa yksityisyyttäsi. Rekisteröidy suosituslinkilläni ja saat kuukauden premium-ominaisuudet ilmaiseksi: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB-logo"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
-      ],
-      "Just send them your personal referral link.": [
-        "Lähetä heille henkilökohtainen suosittelulinkkisi."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
@@ -8842,9 +8796,6 @@
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Yksi tili. Kaikki ${ BRAND_NAME }-palvelut."
-      ],
       "One time import": [
         "Kertaluontoinen tuonti"
       ],
@@ -8900,13 +8851,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Kustansi ${ rewardMonths } kuukauden tilauksen",
-        "Kustansi ${ rewardMonths } kuukauden tilauksen"
-      ],
-      "Paid for a monthly plan": [
-        "Maksettu kuukausittainen tilaus"
       ],
       "Paid for a plan": [
         "Maksettu tilaukselle"
@@ -9417,9 +9361,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Näillä kirjautumistiedoilla ei ole mahdollista kirjautua virallisiin ${ VPN_APP_NAME } -sovelluksiin. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "He saavat ilmaisen kuukauden ilmaisen ${ planName } -tilauksen."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
@@ -9584,9 +9525,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Suojataksesi Internet-yhteytesi, lataa ja asenna ${ VPN_APP_NAME } -sovellus laitteellesi ja yhdistä palvelimeen."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "käyttääksesi ${ toAppName } -sovellusta ja kaikkia ${ BRAND_NAME }-palveluita"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Tarvitset ${ toAppName } -palvelun käyttöön ${ MAIL_APP_NAME } -osoitteen."
@@ -9855,9 +9793,6 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
       ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Kun he tilaavat palvelun, saat omaan tilaukseesi käytettäviä krediittejä."
-      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Kun peruutat nykyisen maksullisen tilauksesi, tilauksesi saldo palautetaan tilikrediitteinä ja sinut alennetaan ${ BRAND_NAME } ${ PLANS.FREE } -tilaukseen."
       ],
@@ -10107,6 +10042,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } -tilauksesi korvataan ${ PASS_SHORT_APP_NAME } Lifetime -tilauksella. Tilauksesi ylijäänyt saldo lisätään tilillesi. ${ PASS_SHORT_APP_NAME } lifetime -tarjous ei uusiudu, se on kertamaksu elinikäiseen pääsyyn ${ PASS_SHORT_APP_NAME }iin."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
@@ -10829,9 +10767,6 @@
       "Billing cycle": [
         "Laskutusjakso"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Estä"
       ],
@@ -11489,9 +11424,6 @@
       "Repeat backup password": [
         "Toista varasalasana"
       ],
-      "Repeat password": [
-        "Toista salasana"
-      ],
       "Reply (ACS) URL": [
         "Vastaus URL (ACS)"
       ],
@@ -11720,9 +11652,6 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
-      ],
-      "Your referral link": [
-        "Suosittelulinkkisi"
       ],
       "ZIP code": [
         "Postinumero"
@@ -12392,6 +12321,12 @@
       "Create a new ${ appName } account": [
         "Luo uusi ${ appName } -tili"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Nauti kahden viikon ajan ilmaiseksi ${ BRAND_NAME } -palvelusta"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Koe todellinen yksityisyys verkossa. Suojaa tietosi ilmaiseksi ${ BRAND_NAME } -palvelulla seuraavan 14 päivän ajan."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
       ],
@@ -12409,9 +12344,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Kokeile ${ BRAND_NAME } -tilausta ilmaiseksi tästä linkistä"
       ]
     },
     "Modal title": {
@@ -12678,9 +12610,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Jatka ilmaisella"
-      ],
       "Delete account": [
         "Poista tili"
       ],
@@ -12701,9 +12630,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
       ]
     },
     "new_plans: Action": {
@@ -12845,6 +12771,9 @@
       ],
       "99.95% SLA": [
         "99.95 % SLA"
+      ],
+      "Activity logs and policy": [
+        "Toimintalokit ja käytäntö"
       ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
@@ -13078,6 +13007,9 @@
       "Secure link sharing": [
         "Suojattu linkkien jako"
       ],
+      "Secure password management": [
+        "Turvallinen salasanahallinta"
+      ],
       "See team's availability": [
         "Näe tiimisi tavoitettavuus"
       ],
@@ -13247,21 +13179,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } mahdollistaa sähköpostiosoitteiden luonnin ja alikäyttäjien tilien hallinan. Ihanteellinen perheille ja organisaatioille."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
-      ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "200 Gt pilvitallennustilaa jolla voit säilyttää, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
       ],
@@ -13300,9 +13217,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Jos vaihdat eri tilaukseen, menetät kaikki ${ visionary }-tilauksen edut, etkä voi enää vaihtaa takaisin ${ visionary }-tilaukseen."
-      ],
-      "Most popular": [
-        "Suosituin"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary }-tilaus ei ole enää uusien tilaajien saatavilla, koska se on alkuperäisen ${ BRAND_NAME }-palvelun käyttäjille tarjottu lisäominaisuuksia ja etuja sisältänyt erikoistilaus."
@@ -13369,14 +13283,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Luodessasi ${ BRAND_NAME }-tilin, hyväksyt ${ terms }"
       ],
-      "Payment details": [
-        "Maksutiedot"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Tallenna sähköpostiosoite tai puhelinnumero, jolla tilisi palautus voidaan tarvittaessa vahvistaa."
-      ],
-      "Subscription": [
-        "Tilaus"
       ],
       "terms and conditions": [
         "käyttöehtomme"
@@ -13389,9 +13297,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "${ planTitleElement }-tilauksesi on nyt käytössä."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Valitsemasi tilaus: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -14069,6 +13974,9 @@
       ],
       "Continue": [
         "Jatka"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nauti ilmaisista business-turvaominaisuuksista ${ trialEndsOnFormatted } asti."
       ],
       "help center": [
         "tukikeskus"
@@ -15646,6 +15554,9 @@
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Olen käyttänyt ${ BRAND_NAME } -palvelua ja ajattelin, että se voisi kiinnostaa sinua. Se on turvallinen sähköpostipalvelu, pilvitallennustila, salasananhallinta ja VPN, joka suojaa yksityisyyttäsi. Rekisteröidy tämän linkin kautta ja saat 14 päivän ilmaisen premium-käyttöoikeuden: ${ referralLink }"
+      ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Jos peruutat, menetät **${ referrerRewardAmount }** krediittipalkkion."
       ],
@@ -15657,6 +15568,9 @@
       ],
       "Refer friends": [
         "Kerro kavereille"
+      ],
+      "Share using ${ name }": [
+        "Jaa käyttämällä ${ name }"
       ],
       "Start earning credits": [
         "Aloita krediittien ansaitseminen"
@@ -16869,6 +16783,9 @@
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
       ],
+      "Mail": [
+        "Sähköposti"
+      ],
       "Monthly": [
         "Kuukausittain"
       ],
@@ -16999,9 +16916,6 @@
       "Display name": [
         "Näyttönimi"
       ],
-      "Email": [
-        "Sähköposti"
-      ],
       "Email address": [
         "Sähköpostiosoite"
       ],
@@ -17013,17 +16927,6 @@
       ],
       "Username": [
         "Käyttäjätunnus"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Tilin määritys"
-      ],
-      "Payment": [
-        "Maksu"
-      ],
-      "Verification": [
-        "Vahvistus"
       ]
     },
     "signup: Action": {
@@ -17336,12 +17239,6 @@
     "Spotlight": {
       "Earn up to ${ maxRewardAmount } in credit": [
         "Ansaitse jopa ${ maxRewardAmount } krediitteinä"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Ansaitse jopa ${ credits } krediitteinä."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Kutsu kavereita ${ BRAND_NAME }iin"
       ]
     },
     "sso": {
@@ -19049,9 +18946,6 @@
       "Create user accounts": [
         "Luo käyttäjätilejä"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Luo ${ BRAND_NAME }-tilisi"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Luo ${ BRAND_NAME }-osoitteesi"
       ],
@@ -19426,14 +19320,8 @@
       "Home": [
         "Koti"
       ],
-      "How does it work?": [
-        "Miten se toimii?"
-      ],
       "How to choose a good logo": [
         "Miten valita hyvä logo"
-      ],
-      "How to refer a friend and get credits": [
-        "Miten suositella kaverille ja ansaita krediittejä"
       ],
       "Human verification": [
         "Ihmisvahvistus"
@@ -19760,9 +19648,6 @@
       "Search for additional servers": [
         "Etsi lisää palvelimia"
       ],
-      "Secure email based in Switzerland": [
-        "Turvallinen sähköposti Sveitsistä"
-      ],
       "Security": [
         "Turvallisuus"
       ],
@@ -20022,14 +19907,8 @@
       "Users and addresses": [
         "Käyttäjät ja osoitteet"
       ],
-      "Verification": [
-        "Vahvistus"
-      ],
       "Verification failed": [
         "Vahvistus epäonnistui"
-      ],
-      "Verify email address": [
-        "Vahvista sähköpostiosoite"
       ],
       "Verifying your card...": [
         "Vahvistetaan korttiasi..."
@@ -20111,9 +19990,6 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Sinut on kutsuttu kokeilemaan ${ MAIL_APP_NAME }ia"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20647,16 +20523,6 @@
         "Säästä ${ price.uiData.discountPercent } %"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Kutsuttu sähköpostitse"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Rekisteröityi linkkisi välityksellä"
-      ]
-    },
     "User role": {
       "Admin": [
         "Ylläpitäjä"
@@ -20923,9 +20789,6 @@
       ],
       "Your ${ selected } plan": [
         "Sinun ${ selected } -tilauksesi"
-      ],
-      "Your plan includes:": [
-        "Tilauksesi sisältää:"
       ]
     },
     "vpn_2step: tooltip": {
