@@ -80,7 +80,7 @@ export function isGenerateImageToolCallData(data: unknown): data is GenerateImag
 
 export type GenerateImageArguments = {
     negative_prompt?: string | null;
-    output_format: string;
+    output_format?: string;
     prompt: string;
     seed?: number | null;
 };
@@ -91,7 +91,7 @@ export function isGenerateImageArguments(args: unknown): args is GenerateImageAr
         typeof args === 'object' &&
         args !== null &&
         (!('negative_prompt' in args) || args.negative_prompt === null || args.negative_prompt === undefined || typeof args.negative_prompt === 'string') &&
-        ('output_format' in args && typeof args.output_format === 'string') &&
+        (!('output_format' in args) || args.output_format === undefined || typeof args.output_format === 'string') &&
         ('prompt' in args && typeof args.prompt === 'string') &&
         (!('seed' in args) || args.seed === null || args.seed === undefined || typeof args.seed === 'number')
     );
