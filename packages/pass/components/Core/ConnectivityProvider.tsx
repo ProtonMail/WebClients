@@ -11,8 +11,8 @@ import {
     getConnectivityWarning,
     intoConnectivityStatus,
 } from '@proton/pass/lib/api/connectivity';
-import type { ApiSubscriptionEvent, Maybe, MaybeNull } from '@proton/pass/types';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
+import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
+import { asyncLock, cancelable } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
@@ -33,12 +33,14 @@ const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
 
 export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, onPing, subscribe }) => {
     const { getApiState } = usePassCore();
-    const navigatorOnline = useNavigatorOnline();
-    const [status, setStatus] = useState(ConnectivityStatus[navigatorOnline ? 'ONLINE' : 'OFFLINE']);
-    const online = status === ConnectivityStatus.ONLINE && navigatorOnline;
+    const retryTimer = useRef<NodeJS.Timeout>();
     const retryCount = useRef<number>(0);
 
-    const checkApiOnline = useCallback(
+    const navigatorOnline = useNavigatorOnline();
+    const [status, setStatus] = useState(() => ConnectivityStatus[navigatorOnline ? 'ONLINE' : 'OFFLINE']);
+    const online = status === ConnectivityStatus.ONLINE && navigatorOnline;
+
+    const check = useCallback(
         asyncLock((): Promise<ConnectivityStatus> => {
             retryCount.current++;
             return Promise.resolve(onPing?.())
@@ -46,7 +48,8 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
                 .then(async () => {
                     const nextStatus = await (async (): Promise<ConnectivityStatus> => {
                         if (!getApiState) return ConnectivityStatus[navigator.onLine ? 'ONLINE' : 'OFFLINE'];
-                        return intoConnectivityStatus(await getApiState());
+                        const state = await getApiState();
+                        return intoConnectivityStatus(state);
                     })();
 
                     setStatus(nextStatus);
@@ -68,27 +71,36 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
     );
 
     useEffect(() => {
-        if (navigatorOnline) void checkApiOnline();
+        if (navigatorOnline) void check();
     }, [navigatorOnline]);
 
     useEffect(() => {
-        if (!online) {
-            let timer: Maybe<NodeJS.Timeout>;
+        if (online) retryCount.current = 0;
+        else {
+            const cancelableCheck = cancelable(check);
 
-            const checkWithRetry = () =>
-                checkApiOnline().then((next) => {
-                    if (next !== ConnectivityStatus.ONLINE) {
-                        const ms = getConnectivityRetryTimeout(next, retryCount.current);
-                        timer = setTimeout(checkWithRetry, ms);
-                    }
-                });
+            const retryableCheck = async () => {
+                cancelableCheck
+                    .run()
+                    .then((next) => {
+                        if (next !== ConnectivityStatus.ONLINE) {
+                            const ms = getConnectivityRetryTimeout(next, retryCount.current);
+                            retryTimer.current = setTimeout(retryableCheck, ms);
+                        }
+                    })
+                    .catch(noop);
+            };
 
-            void checkWithRetry();
-            return () => clearTimeout(timer);
-        } else retryCount.current = 0;
+            void retryableCheck();
+
+            return () => {
+                cancelableCheck.cancel();
+                clearTimeout(retryTimer.current);
+            };
+        }
     }, [online]);
 
-    const ctx = useMemo(() => ({ check: checkApiOnline, status }), [status]);
+    const ctx = useMemo(() => ({ check, status }), [status]);
 
     return <ConnectivityContext.Provider value={ctx}>{children}</ConnectivityContext.Provider>;
 };
@@ -97,6 +109,7 @@ export const useOnline = () => {
     const ctx = useContext(ConnectivityContext);
     return ctx ? ctx.status === ConnectivityStatus.ONLINE : true;
 };
+
 export const useConnectivity = () => useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
 export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
 export const useOnlineRef = () => useStatefulRef(useOnline());
