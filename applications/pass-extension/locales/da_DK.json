@@ -155,14 +155,38 @@
       "Copy and close": [
         "Kopiér og luk"
       ],
+      "Copy card number": [
+        "Kopiér kortnummer"
+      ],
+      "Copy email": [
+        "Kopier emailadresse"
+      ],
+      "Copy expiration date": [
+        "Kopiér udløbsdato"
+      ],
       "Copy forwarding address": [
         "Kopier videresendelsesadresse"
       ],
       "Copy link": [
         "Kopiér link"
       ],
+      "Copy name on card": [
+        "Kopiér navn på kort"
+      ],
+      "Copy note content": [
+        "Kopiér noteindhold"
+      ],
+      "Copy password": [
+        "Kopiér adgangskode"
+      ],
+      "Copy security code": [
+        "Kopiér sikkerhedskode"
+      ],
       "Copy to clipboard": [
         "Kopiér til udklipsholder"
+      ],
+      "Copy username": [
+        "Kopiér brugernavn"
       ],
       "Create": [
         "Opret"
@@ -809,7 +833,7 @@
         "Alias-indstillinger kunne ikke hentes"
       ],
       "An error occured during the import process": [
-        "Der opstod en fejl under importprocessen"
+        "Der opstod en fejl i importprocessen"
       ],
       "Authentication error": [
         "Godkendelsesfejl"
@@ -1201,7 +1225,7 @@
         "Boksens navn matcher ikke"
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
-        "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
+        "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt vores kundesupport for hjælp."
       ],
       "Wrong backup password": [
         "Forkert backupadgangskode"
@@ -1838,7 +1862,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4723,7 +4748,7 @@
         "Din session blev låst."
       ],
       "Your subscription does not allow you to create more vaults.": [
-        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
+        "Du kan ikke oprette flere bokse end dit abonnement tillader."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
