@@ -73,7 +73,6 @@ export const Form = () => {
                     className="resize-none booking-sidebar-title-textarea relative"
                     minRows={1}
                     rows={3}
-                    unstyled
                     autoGrow
                     autoFocus
                 />

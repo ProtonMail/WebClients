@@ -35,7 +35,7 @@
 
 	.minicalendar-grid {
 		padding-inline: var(--space-2);
-		padding-block: 0;
+		padding-block: 0 0.5rem;
 		gap: rem(4);
 	}
 
@@ -47,6 +47,14 @@
 			border-radius: var(--border-radius-full);
 			inline-size: rem(28);
 			block-size: rem(28);
+		}
+	}
+
+	.minicalendar-next-prev-button {
+		display: flex;
+
+		> svg {
+			margin: auto;
 		}
 	}
 }

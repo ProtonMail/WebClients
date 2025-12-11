@@ -30,6 +30,7 @@ interface Props {
     removeBookingRange: (id: string) => void;
     onPlusClick: (range: BookingRange) => void;
     onAddRange: (date: Date) => void;
+    hasReachedMaxSlots: boolean;
 }
 
 export const DisplayRecurringRanges = ({
@@ -40,6 +41,7 @@ export const DisplayRecurringRanges = ({
     removeBookingRange,
     onPlusClick,
     onAddRange,
+    hasReachedMaxSlots,
 }: Props) => {
     const now = new Date();
     const ranges = generateRecurringRanges(userSettings, now, formData.bookingRanges);
@@ -72,6 +74,7 @@ export const DisplayRecurringRanges = ({
                                         range={range}
                                         duration={formData.duration}
                                         onChange={(value) => onStartChange(range, value)}
+                                        recurring
                                     />
                                 </div>
                                 <div className="m-0">
@@ -81,11 +84,12 @@ export const DisplayRecurringRanges = ({
                                         range={range}
                                         duration={formData.duration}
                                         onChange={(value) => onEndChange(range, value)}
+                                        recurring
                                     />
                                 </div>
                                 <div className="flex flex-nowrap shrink-0">
                                     <AddButton
-                                        disabled={isPlusDisabled(day)}
+                                        disabled={isPlusDisabled(day) || hasReachedMaxSlots}
                                         onClick={() => onPlusClick(range)}
                                         btnClassName={clsx(index !== 0 && 'visibility-hidden')}
                                     />
@@ -108,7 +112,7 @@ export const DisplayRecurringRanges = ({
                         <p className="m-0 color-weak">{c('Label').t`Unavailable`}</p>
                         <p className="m-0 color-weak" />
                         <div className="flex flex-nowrap shrink-0">
-                            <AddButton onClick={() => onAddRange(day.date)} />
+                            <AddButton onClick={() => onAddRange(day.date)} disabled={hasReachedMaxSlots} />
                             <RemoveButton onClick={noop} btnClassName="visibility-hidden" />
                         </div>
                     </div>

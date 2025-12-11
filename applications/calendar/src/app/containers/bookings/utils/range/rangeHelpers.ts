@@ -38,18 +38,28 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
 };
 
-export const createTodayBookingRange = (date: Date, timezone: string, today: Date) => {
-    const nextHour = today.getHours() + 1;
+export const createTodayBookingRange = (date: Date, timezone: string, today: Date, duration: number) => {
+    const roundedTime = roundToNextHalfHour(today);
 
-    if (nextHour >= DEFAULT_RANGE_END_HOUR) {
+    if (roundedTime.getHours() >= DEFAULT_RANGE_END_HOUR) {
         return undefined;
     }
 
     const start =
-        nextHour < DEFAULT_RANGE_START_HOUR
+        roundedTime.getHours() < DEFAULT_RANGE_START_HOUR
             ? set(date, { hours: DEFAULT_RANGE_START_HOUR, minutes: 0, seconds: 0, milliseconds: 0 })
-            : set(date, { hours: nextHour, minutes: 0, seconds: 0, milliseconds: 0 });
+            : set(date, {
+                  hours: roundedTime.getHours(),
+                  minutes: roundedTime.getMinutes(),
+                  seconds: 0,
+                  milliseconds: 0,
+              });
+
     const end = set(date, { hours: DEFAULT_RANGE_END_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
+
+    if (differenceInMinutes(end, start) < duration) {
+        return undefined;
+    }
 
     return {
         id: generateBookingRangeID(start, end),
@@ -100,6 +110,7 @@ export const generateDefaultBookingRange = (
     userSettings: UserSettings,
     startDate: Date,
     timezone: string,
+    duration: number,
     isRecurring: boolean
 ): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
@@ -129,7 +140,7 @@ export const generateDefaultBookingRange = (
             }
 
             if (isSameDay(day, startOfDay(todayUTC))) {
-                return createTodayBookingRange(day, timezone, todayUTC);
+                return createTodayBookingRange(day, timezone, todayUTC, duration);
             }
 
             return createBookingRange(day, timezone);

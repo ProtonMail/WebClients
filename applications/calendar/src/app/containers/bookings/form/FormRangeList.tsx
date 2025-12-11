@@ -30,6 +30,8 @@ export const FormRangeList = () => {
 
     const isRecurringEnabled = useFlag('RecurringCalendarBookings');
 
+    const hasReachedMaxSlots = !!(validation && validation.reason === BookingFormValidationReasons.TIME_SLOT_LIMIT);
+
     if (!formData.bookingRanges) {
         return null;
     }
@@ -141,6 +143,7 @@ export const FormRangeList = () => {
                     onAddRange={createRangeOnDate}
                     onStartChange={handleStartChange}
                     onEndChange={handleEndChange}
+                    hasReachedMaxSlots={hasReachedMaxSlots}
                 />
             ) : (
                 <>
@@ -151,6 +154,7 @@ export const FormRangeList = () => {
                         onEndChange={handleEndChange}
                         onDateChange={handleDateChange}
                         onPlusClick={handlePlusClick}
+                        hasReachedMaxSlots={hasReachedMaxSlots}
                     />
 
                     <Button
