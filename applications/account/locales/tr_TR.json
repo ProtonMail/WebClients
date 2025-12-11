@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } kullanmayan kişilerle paylaşmak için bir bağlantı oluştur"
       ],
-      "Create account": [
-        "Hesap ekle"
-      ],
       "Create calendar": [
         "Takvim ekle"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Öde"
-      ],
-      "Pay ${ price }": [
-        "${ price } öde"
       ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
@@ -2034,11 +2028,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -2761,9 +2755,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "E-postalarınıza alt bilgi bağlantısı ekleyin"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -2788,9 +2779,6 @@
       "Got it": [
         "Tamam"
       ],
-      "Invite": [
-        "Davet et"
-      ],
       "Maybe later": [
         "Belki sonra"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Take a tour": [
         "Keşfedin"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4602,10 +4587,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız.",
-        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
       ],
@@ -4708,17 +4689,11 @@
       "Track the status and activity of your referrals": [
         "Önerilerinizin etkinliklerini ve durumunu izleyin"
       ],
-      "Track the status and activity of your referrals.": [
-        "Önerilerinizin etkinliklerini ve durumunu izleyin."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Var olan e-posta adresinize ek olarak, daha kısa ve hatırlaması kolay ${ activatePmUser } e-posta adresini edinmek için tarifenizi yükseltin."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Arkadaşlarınızı davet etmeyi sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "${ PASS_APP_NAME } tarayıcı eklentisindeki belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme gibi) yapılmayacağı etki alanlarının listesini özelleştirebilirsiniz."
@@ -7894,8 +7869,8 @@
       "Select your deal": [
         "Teklifinizi seçin"
       ],
-      "Select your payment method": [
-        "Ödeme yönteminizi seçin"
+      "Select your payment method:": [
+        "Ödeme yönteminizi seçin:"
       ],
       "Select your pricing plan": [
         "Ücret tarifenizi seçin"
@@ -8485,9 +8460,6 @@
         "${ countriesCount } ülke için kullanıma açıldı",
         "${ countriesCount } ülke için kullanıma açıldı"
       ],
-      "${ current } of ${ total }": [
-        "${ current } / ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "%${ discountPercent } indirim"
       ],
@@ -8692,9 +8664,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Aşağıdaki koşullardan BİRİ karşılandığında süzülür)"
       ],
-      "* No credit card required.": [
-        "* Kredi kartı gerekmez."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ organizationName }** kuruluşunuzda **${ appName }** desteklenmiyor."
       ],
@@ -8742,17 +8711,8 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
-      ],
-      "2. They try ${ planName }": [
-        "2. Onlar da ${ planName } denesinler"
-      ],
       "2FA disabled": [
         "İki adımlı doğrulama kapalı"
-      ],
-      "3. You earn credits": [
-        "3. Hediye kredinizi kazanın"
       ],
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
@@ -9234,9 +9194,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
-      ],
-      "Credits earned": [
-        "Kazanılan kredi"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -9956,17 +9913,11 @@
       "Item updated in vault": [
         "Kasa ögesi güncellendi"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Bir süredir @ProtonMail kullanıyorum ve senin de beğenebileceğini düşündüm. Gizliliği koruyan güvenli bir e-posta hizmeti. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için öneri bağlantıma kullanarak bir hesap açabilirsin: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB logosu"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
-      ],
-      "Just send them your personal referral link.": [
-        "Onlara kişisel öneri bağlantınızı gönderin."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
@@ -10226,9 +10177,6 @@
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Tek hesap. Tüm ${ BRAND_NAME } hizmetleri."
-      ],
       "One time import": [
         "Tek seferlik içe aktarma"
       ],
@@ -10296,13 +10244,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } aylık tarife için ödeme yapıldı",
-        "${ rewardMonths } aylık tarife için ödeme yapıldı"
-      ],
-      "Paid for a monthly plan": [
-        "Bir aylık tarife ödemesi yaptı"
       ],
       "Paid for a plan": [
         "Bir tarife ödemesi yaptı"
@@ -10876,9 +10817,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "${ planName } tarifesini bir ay ücretsiz olarak kullanabilecekler."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
@@ -11061,9 +10999,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "${ toAppName } ve tüm ${ BRAND_NAME } hizmetlerini kullanmak için"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresiniz olmalıdır."
@@ -11370,9 +11305,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz bir miktar kredi kazanacaksınız."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Geçerli ücretli aboneliğinizi iptal ettiğinizde, aboneliğinizin bakiyesi hesap kredisi olarak iade edilir ve ${ BRAND_NAME } ${ PLANS.FREE } tarifesine geçersiniz."
@@ -12579,9 +12511,6 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
       "Block": [
         "Engellenen"
       ],
@@ -13344,9 +13273,6 @@
       "Repeat backup password": [
         "Yedek parola onayı"
       ],
-      "Repeat password": [
-        "Parola onayı"
-      ],
       "Reply (ACS) URL": [
         "Yanıt (ACS) adresi"
       ],
@@ -13644,9 +13570,6 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
-      ],
-      "Your referral link": [
-        "Öneri bağlantınız"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -14395,6 +14318,12 @@
       "Create a new ${ appName } account": [
         "Yeni bir ${ appName } hesabı açın"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "İki haftalık ücretsiz ${ BRAND_NAME } tadını çıkarın"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Gerçek çevrim içi gizliliği deneyimleyin. Verilerinizi ${ BRAND_NAME } ile önümüzdeki 14 gün boyunca ücretsiz koruyun."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } hesabınızın kullanıcı adını bulun"
       ],
@@ -14412,12 +14341,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Verilerinizi uçtan uca şifrelemeyle elinizde tutun."
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Bu bağlantı ile ${ BRAND_NAME } tarifesini ücretsiz olarak deneyin"
       ]
     },
     "Modal title": {
@@ -14684,9 +14607,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Free tarifesini kullanmayı sürdür"
-      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -14707,9 +14627,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "${ upsellPlanHumanSize } tarifesine yükselt"
       ]
     },
     "new_plans: Action": {
@@ -14851,6 +14768,9 @@
       ],
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
+      ],
+      "Activity logs and policy": [
+        "Etkinlik günlükleri ve ilke"
       ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
@@ -15093,6 +15013,9 @@
       "Secure link sharing": [
         "Güvenli bağlantı paylaşımı"
       ],
+      "Secure password management": [
+        "Güvenli parola yönetimi"
+      ],
       "See team's availability": [
         "Ekibin uygunluğuna bakın"
       ],
@@ -15262,21 +15185,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri ekleyerek yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "Dosyalarınızı saklamak, eşitlemek ve paylaşmak için 1 TB bulut depolama alanı. Uçtan uca şifreleme ile korunur."
       ],
@@ -15318,9 +15226,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
-      ],
-      "Most popular": [
-        "En çok kullanılan"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
@@ -15393,14 +15298,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
       ],
-      "Payment details": [
-        "Ödeme ayrıntıları"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Hesabınızı sıfırlamanız gerekirse doğrulama için kullanılacak e-posta adresi ya da telefon numarasını kaydedin."
-      ],
-      "Subscription": [
-        "Abonelik"
       ],
       "terms and conditions": [
         "hüküm ve koşullar"
@@ -15413,9 +15312,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "${ planTitleElement } aboneliğiniz başladı."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Seçtiğiniz tarife: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -18002,6 +17898,9 @@
       "How your free trial works:": [
         "Ücretsiz deneme süreniz nasıl işler:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliğini koruyan güvenli bir e-posta, bulut depolama, parola yöneticisi ve VPN hizmetidir. Bu bağlantıdan hesap aç ve 14 gün boyunca ücretli özellikleri ücretsiz kullan: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
       ],
@@ -18022,6 +17921,9 @@
       ],
       "Refer friends": [
         "Arkadaşlarınıza önerin"
+      ],
+      "Share using ${ name }": [
+        "${ name } ile paylaş"
       ],
       "Start earning credits": [
         "Kredi kazanmaya başlayın"
@@ -19470,6 +19372,9 @@
       "Highest VPN speed": [
         "En yüksek VPN hızı"
       ],
+      "Mail": [
+        "E-posta"
+      ],
       "Mailboxes and custom domains for aliases": [
         "Takma adlar için e-posta kutuları ve özel etki alanları"
       ],
@@ -19669,9 +19574,6 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
-      "Email": [
-        "E-posta adresi"
-      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -19683,17 +19585,6 @@
       ],
       "Username": [
         "Kullanıcı adı"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Hesap kurulumu"
-      ],
-      "Payment": [
-        "Ödeme"
-      ],
-      "Verification": [
-        "Doğrulama"
       ]
     },
     "signup: Action": {
@@ -20036,12 +19927,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda kredi kazanın."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "${ credits } tutarına kadar kredi kazanın."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
     "sso": {
@@ -21879,9 +21764,6 @@
       "Create user accounts": [
         "Kullanıcı hesapları ekle"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } hesabınızı açın"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresinizi oluşturun"
       ],
@@ -22325,14 +22207,8 @@
       "Home": [
         "Giriş"
       ],
-      "How does it work?": [
-        "Nasıl çalışır?"
-      ],
       "How to choose a good logo": [
         "İyi bir logo nasıl seçilir"
-      ],
-      "How to refer a friend and get credits": [
-        "Kredi kazanmak için bir arkadaşınıza nasıl önerebilirsiniz"
       ],
       "How your free trial works": [
         "Ücretsiz denemeniz nasıl işler"
@@ -22701,9 +22577,6 @@
       "Search for additional servers": [
         "Ek sunucuları arayın"
       ],
-      "Secure email based in Switzerland": [
-        "İsviçre merkezli güvenli e-posta"
-      ],
       "Secure your passwords. Everywhere.": [
         "Parolalarınızı koruyun. Her yerde."
       ],
@@ -22999,14 +22872,8 @@
       "Vaults owned": [
         "Sahibi olunan kasalar"
       ],
-      "Verification": [
-        "Doğrulama"
-      ],
       "Verification failed": [
         "Doğrulanamadı"
-      ],
-      "Verify email address": [
-        "E-posta adresini doğrula"
       ],
       "Verifying your card...": [
         "Kartınız doğrulanıyor..."
@@ -23103,9 +22970,6 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } uygulamasını denemeye davet edildiniz"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23804,16 +23668,6 @@
         "%${ price.uiData.discountPercent } indirim alın"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "E-posta ile davet edildi"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Bağlantınızla hesap açtı"
-      ]
-    },
     "User role": {
       "Admin": [
         "Yönetici"
@@ -24095,9 +23949,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
-      ],
-      "Your plan includes:": [
-        "Tarifenizin özellikleri:"
       ]
     },
     "vpn_2step: tooltip": {

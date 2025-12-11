@@ -241,9 +241,6 @@
       "Create": [
         "Stvori"
       ],
-      "Create account": [
-        "Stvori račun"
-      ],
       "Create calendar": [
         "Stvori kalendar"
       ],
@@ -681,9 +678,6 @@
       ],
       "Pay": [
         "Plati"
-      ],
-      "Pay ${ price }": [
-        "Platite ${ price }"
       ],
       "Pay ${ price } now": [
         "Platite ${ price } sada"
@@ -1610,9 +1604,6 @@
       ],
       "Got it": [
         "Razumijem"
-      ],
-      "Invite": [
-        "Pozvati"
       ],
       "Maybe later": [
         "Možda kasnije"
@@ -3003,9 +2994,6 @@
       ],
       "Send a code to your recovery email or phone": [
         "Pošaljite kôd na svoju adresu e-pošte za oporavak ili telefon"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Možete nastaviti pozivati prijatelje, ali nećete moći zaraditi više kredita"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
@@ -5087,9 +5075,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
       ],
-      "* No credit card required.": [
-        "* Nije potrebna kreditna kartica."
-      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**1. korak:** pozovite svoje prijatelje da se pridruže usluzi ${ BRAND_NAME } pomoću Vaše referalne poveznice."
       ],
@@ -5099,14 +5084,8 @@
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Pozovite prijatelje u ${ BRAND_NAME }"
-      ],
       "2FA disabled": [
         "2FA onemogućen"
-      ],
-      "3. You earn credits": [
-        "3. Zarađujete kredit"
       ],
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
@@ -5302,9 +5281,6 @@
       ],
       "Creating your account": [
         "Izrada vašeg računa"
-      ],
-      "Credits earned": [
-        "Zarađeni krediti"
       ],
       "Current plan": [
         "Trenutni plan"
@@ -5694,9 +5670,6 @@
       "JCB logo": [
         "Logotip JCB"
       ],
-      "Just send them your personal referral link.": [
-        "Samo im pošaljite svoju osobnu referalnu poveznicu."
-      ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
       ],
@@ -5832,9 +5805,6 @@
       "On": [
         "Uključeno"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Jedan korisnički račun. Sve ${ BRAND_NAME } usluge."
-      ],
       "Open source": [
         "Otvoreni kôd"
       ],
@@ -5849,11 +5819,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Plaćeno za ${ rewardMonths } mjesec plana",
-        "Plaćeno za ${ rewardMonths } mjeseca plana",
-        "Plaćeno za ${ rewardMonths } mjeseci plana"
       ],
       "Paid for a plan": [
         "Plaćeno za plan"
@@ -6102,9 +6067,6 @@
       ],
       "The unpublished changes you made will be lost.": [
         "Nepohranjene promjene koje ste napravili bit će izgubljene."
-      ],
-      "They'll receive a free month of ${ planName }.": [
-        "Dobit će besplatan mjesec ${ planName }."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
@@ -7021,9 +6983,6 @@
       "Billing cycle": [
         "Ciklus naplate"
       ],
-      "Black Friday": [
-        "Crni petak"
-      ],
       "Block": [
         "Blokiraj"
       ],
@@ -7527,9 +7486,6 @@
       ],
       "Repeat backup password": [
         "Ponovite rezervnu lozinku"
-      ],
-      "Repeat password": [
-        "Ponovite lozinku"
       ],
       "Require 2FA for everyone": [
         "Zahtijevaj 2FA za sve"
@@ -8137,12 +8093,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se na svoj ${ BRAND_NAME } račun kako biste pristupili svim šifriranim ${ BRAND_NAME } uslugama kao što su ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i druge. Nemate račun? Izradite ga BESPLATNO."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Preuzmite kontrolu nad svojim podacima s end-to-end šifriranjem"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Isprobajte ${ BRAND_NAME } besplatno s ovom poveznicom"
       ]
     },
     "Modal title": {
@@ -8402,9 +8352,6 @@
       ],
       "Switch plan": [
         "Promijeniti plan"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Nadogradite za ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -8673,21 +8620,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } završava na ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* S jednomjesečnom pretplatom. Druge mogućnosti pretplate dostupne su pri naplati."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* S 12-mjesečnom pretplatom. Druge mogućnosti pretplate dostupne su pri naplati."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* S 15-mjesečnom pretplatom. Druge mogućnosti pretplate dostupne su pri naplati."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* S 24-mjesečnom pretplatom. Druge mogućnosti pretplate dostupne su pri naplati."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* S 30-mjesečnom pretplatom. Druge mogućnosti pretplate dostupne su pri naplati."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Napredna mrežna sigurnost i upravljanje pristupom s namjenskim sigurnim pristupnicima"
       ],
@@ -8699,9 +8631,6 @@
       ],
       "For next-level password management and identity protection.": [
         "Za napredno upravljanje lozinkama i zaštitu identiteta."
-      ],
-      "Most popular": [
-        "Najpopularnije"
       ],
       "Popular": [
         "Popularno"
@@ -8744,14 +8673,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Stvaranjem ${ BRAND_NAME } računa, slažete se s našim ${ terms }"
       ],
-      "Payment details": [
-        "Detalji o plaćanju"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Spremite svoju adresu e-pošte ili telefonski broj za korištenje za provjeru ako trebate resetirati svoj račun."
-      ],
-      "Subscription": [
-        "Pretplata"
       ],
       "terms and conditions": [
         "uvjeti i odredbe"
@@ -10858,9 +10781,6 @@
       "Display name": [
         "Zaslonski naziv"
       ],
-      "Email": [
-        "E-pošta"
-      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -10872,17 +10792,6 @@
       ],
       "Username": [
         "Korisničko ime"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Postavljanje računa"
-      ],
-      "Payment": [
-        "Plaćanje"
-      ],
-      "Verification": [
-        "Potvrda"
       ]
     },
     "signup: Action": {
@@ -11057,9 +10966,6 @@
     "Spotlight": {
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ostvarite kredite kada se osoba koju pozovete pretplati na ${ BRAND_NAME } plan."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Pozovite prijatelje u ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -12104,9 +12010,6 @@
       "Create public link": [
         "Stvori javnu poveznicu"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Stvorite svoj ${ BRAND_NAME } račun"
-      ],
       "Created": [
         "Stvoreno"
       ],
@@ -12361,9 +12264,6 @@
       ],
       "Home": [
         "Početna"
-      ],
-      "How does it work?": [
-        "Kako funkcionira?"
       ],
       "How to choose a good logo": [
         "Kako odabrati dobar logotip"
@@ -12620,9 +12520,6 @@
       "Schedule send:": [
         "Zakaži slanje:"
       ],
-      "Secure email based in Switzerland": [
-        "Sigurna e-pošta sa sjedištem u Švicarskoj"
-      ],
       "Security and privacy": [
         "Sigurnost i privatnost"
       ],
@@ -12805,14 +12702,8 @@
       "Users and addresses": [
         "Korisnici i adrese"
       ],
-      "Verification": [
-        "Potvrda"
-      ],
       "Verification failed": [
         "Neuspješna provjera"
-      ],
-      "Verify email address": [
-        "Potvrdite adresu e-pošte"
       ],
       "Verifying your payment...": [
         "Vaša uplata se provjerava..."
@@ -12858,9 +12749,6 @@
       ],
       "Your subscriptions": [
         "Vaše pretplate"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Pozvani ste isprobati ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13198,11 +13086,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Uštedite ${ price.uiData.discountPercent } %"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Registriran/a putem Vaše poveznice"
       ]
     },
     "User role": {

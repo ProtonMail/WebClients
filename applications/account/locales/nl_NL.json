@@ -352,9 +352,6 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create account": [
-        "Account aanmaken"
-      ],
       "Create calendar": [
         "Agenda aanmaken"
       ],
@@ -969,9 +966,6 @@
       ],
       "Pay": [
         "Betalen"
-      ],
-      "Pay ${ price }": [
-        "Betaal ${ price }"
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
@@ -1870,12 +1864,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -2551,9 +2539,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Link toevoegen aan uw e-mailvoet"
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -2578,9 +2563,6 @@
       "Got it": [
         "Begrepen"
       ],
-      "Invite": [
-        "Uitnodigen"
-      ],
       "Maybe later": [
         "Misschien later"
       ],
@@ -2598,9 +2580,6 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
-      ],
-      "Tweet": [
-        "Tweeten"
       ]
     },
     "Calendar access select label": {
@@ -4301,10 +4280,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maand ${ plusPlanName } verdiend.",
-        "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Verbind uw CRM, website, printers en meer."
       ],
@@ -4404,17 +4379,11 @@
       "Track the status and activity of your referrals": [
         "Volg de status en activiteiten van uw doorverwijzingen"
       ],
-      "Track the status and activity of your referrals.": [
-        "Volg de status en activiteiten van uw doorverwijzingen."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade om ${ activatePmUser } te krijgen voor een korter, makkelijk te onthouden e-mailadres, toegevoegd aan uw huidige adres."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "U kan vrienden blijven uitnodigen, maar u kan geen tegoed meer ontvangen"
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "U kunt de wachtwoordregels die leden zullen gebruiken als ze een wachtwoord aanmaken in ${ PASS_APP_NAME } afdwingen."
@@ -4811,6 +4780,9 @@
       "120 minutes": [
         "120 minuten"
       ],
+      "120m": [
+        "120m"
+      ],
       "30 minutes": [
         "30 minuten"
       ],
@@ -4820,8 +4792,14 @@
       "60 minutes": [
         "60 minuten"
       ],
+      "60m": [
+        "60m"
+      ],
       "90 minutes": [
         "90 minuten"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Easy switch": {
@@ -7272,9 +7250,6 @@
       "Select your deal": [
         "Kies uw deal"
       ],
-      "Select your payment method": [
-        "Selecteer uw betalingsmethode"
-      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
       ],
@@ -7819,9 +7794,6 @@
         "${ countriesCount } land ingeschakeld",
         "${ countriesCount } landen ingeschakeld"
       ],
-      "${ current } of ${ total }": [
-        "${ current } van ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% korting"
       ],
@@ -8017,9 +7989,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
       ],
-      "* No credit card required.": [
-        "* Green kredietkaart vereist."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** wordt niet ondersteund in uw organisatie **${ organizationName }**."
       ],
@@ -8064,17 +8033,8 @@
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Nodig vrienden uit voor ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Ze proberen ${ planName }"
-      ],
       "2FA disabled": [
         "Tweestapsverificatie uitgeschakeld"
-      ],
-      "3. You earn credits": [
-        "3. U verdient tegoed"
       ],
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
@@ -8511,9 +8471,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
-      ],
-      "Credits earned": [
-        "Tegoed verdiend"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -9185,17 +9142,11 @@
       "Item updated in vault": [
         "Item bijgewerkt in kluis"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Ik gebruik @ProtonMail en dacht dat u dit misschien ook leuk vindt. Het is een veilige e-maildienst die uw privacy beschermd. Meld u aan met mijn doorverwijslink om gratis 1 maand premiumfuncties te krijgen: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB-logo"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
-      ],
-      "Just send them your personal referral link.": [
-        "Stuur ze gewoon uw persoonlijke doorverwijslink."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
@@ -9431,9 +9382,6 @@
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Eén account. Alle ${ BRAND_NAME }-diensten."
-      ],
       "One time import": [
         "Eenmalige import"
       ],
@@ -9495,13 +9443,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Betaald voor een ${ rewardMonths } maand abonnement",
-        "Betaald voor een ${ rewardMonths } maanden abonnement"
-      ],
-      "Paid for a monthly plan": [
-        "Betaald voor een maandelijks abonnement"
       ],
       "Paid for a plan": [
         "Betaald voor een abonnement"
@@ -10042,9 +9983,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Ze zullen een gratis maand ${ planName } ontvangen."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
@@ -10212,9 +10150,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "om ${ toAppName } en alle ${ BRAND_NAME }-diensten"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Om ${ toAppName } te gebruiken, heeft u een ${ MAIL_APP_NAME }-adres nodig."
@@ -10503,9 +10438,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "U zal tegoed ontvangen om op uw abonnement te gebruiken wanneer zij zich abonneren."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Wanneer u uw huidige betaalde abonnement annuleert, zal het saldo van uw abonnement als accounttegoed worden teruggestort en wordt u gedowngrade naar het ${ BRAND_NAME } ${ PLANS.FREE } abonnement."
@@ -11566,9 +11498,6 @@
       "Billing cycle": [
         "Facturatieperiode"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Geblokkeerd"
       ],
@@ -12259,9 +12188,6 @@
       "Repeat backup password": [
         "Herhaal back-upwachtwoord"
       ],
-      "Repeat password": [
-        "Wachtwoord herhalen"
-      ],
       "Reply (ACS) URL": [
         "Antwoord (ACS) URL"
       ],
@@ -12511,9 +12437,6 @@
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
-      ],
-      "Your referral link": [
-        "Uw doorverwijslink"
       ],
       "ZIP code": [
         "Postcode"
@@ -13227,12 +13150,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Neem de controle over uw gegevens met end-to-end versleuteling"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "U kan ${ BRAND_NAME } gratis proberen met deze link."
       ]
     },
     "Modal title": {
@@ -13499,9 +13416,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Doorgaan met gratis"
-      ],
       "Delete account": [
         "Account verwijderen"
       ],
@@ -13522,9 +13436,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Upgraden naar ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -14077,21 +13988,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Met ${ BRAND_NAME } kunt u e-mailadressen maken en accounts beheren voor subgebruikers. Ideaal voor gezinnen en organisaties."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 1 maand. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 12 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 15 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 24 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 30 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
       ],
@@ -14133,9 +14029,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Als u overstapt op een ander abonnement, raakt u alle voordelen van het ${ visionary }-abonnement kwijt en kunt u niet meer terug naar ${ visionary }."
-      ],
-      "Most popular": [
-        "Populairste keuze"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
@@ -14205,14 +14098,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }"
       ],
-      "Payment details": [
-        "Betalingsgegevens"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Sla uw e-mailadres of telefoonnummer op voor verificatiedoeleinden als u uw account moet resetten."
-      ],
-      "Subscription": [
-        "Abonnement"
       ],
       "terms and conditions": [
         "algemene voorwaarden"
@@ -14225,9 +14112,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Uw ${ planTitleElement }-abonnement is nu actief."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -18196,9 +18080,6 @@
       "Display name": [
         "Weergavenaam"
       ],
-      "Email": [
-        "E-mailadres"
-      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -18210,17 +18091,6 @@
       ],
       "Username": [
         "Gebruikersnaam"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Account instelling"
-      ],
-      "Payment": [
-        "Betaling"
-      ],
-      "Verification": [
-        "Verificatie"
       ]
     },
     "signup: Action": {
@@ -18563,12 +18433,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ontvang tegoed wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME }-abonnement."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Krijg tot wel ${ credits } als krediet."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Nodig vrienden uit voor ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -20336,9 +20200,6 @@
       "Create user accounts": [
         "Gebruikersaccounts aanmaken"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Maak uw ${ BRAND_NAME }-account"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Maak uw ${ BRAND_NAME }-adres aan"
       ],
@@ -20758,14 +20619,8 @@
       "Home": [
         "Home"
       ],
-      "How does it work?": [
-        "Hoe werkt het?"
-      ],
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"
-      ],
-      "How to refer a friend and get credits": [
-        "Hoe een vriend doorverwijzen en tegoed verdienen"
       ],
       "Human verification": [
         "Persoonsverificatie"
@@ -21104,9 +20959,6 @@
       "Search for additional servers": [
         "Zoeken naar extra servers"
       ],
-      "Secure email based in Switzerland": [
-        "Veilige e-maildienst gevestigd in Zwitserland"
-      ],
       "Secure your passwords. Everywhere.": [
         "Beveilig uw wachtwoorden. Overal."
       ],
@@ -21390,14 +21242,8 @@
       "Users and addresses": [
         "Gebruikers en adressen"
       ],
-      "Verification": [
-        "Verificatie"
-      ],
       "Verification failed": [
         "Verificatie mislukt"
-      ],
-      "Verify email address": [
-        "Verifieer e-mailadres"
       ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."
@@ -21488,9 +21334,6 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22074,16 +21917,6 @@
         "Bespaar ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Uitgenodigd via e-mail"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Geregistreerd via uw link"
-      ]
-    },
     "User role": {
       "Admin": [
         "Beheerder"
@@ -22365,9 +22198,6 @@
       ],
       "Your ${ selected } plan": [
         "Uw ${ selected } abonnement"
-      ],
-      "Your plan includes:": [
-        "Uw abonnement omvat:"
       ]
     },
     "vpn_2step: tooltip": {

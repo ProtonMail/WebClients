@@ -352,9 +352,6 @@
       "Create": [
         "생성"
       ],
-      "Create account": [
-        "계정 만들기"
-      ],
       "Create calendar": [
         "캘린더 생성"
       ],
@@ -981,9 +978,6 @@
       ],
       "Pay": [
         "결제"
-      ],
-      "Pay ${ price }": [
-        "${ price } 결제"
       ],
       "Pay ${ price } now": [
         "${ price } 결제"
@@ -1871,12 +1865,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -2586,9 +2574,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "이메일 바닥글에 링크 추가"
-      ],
       "Close": [
         "닫기"
       ],
@@ -2613,9 +2598,6 @@
       "Got it": [
         "확인했습니다"
       ],
-      "Invite": [
-        "초대"
-      ],
       "Maybe later": [
         "나중에"
       ],
@@ -2633,9 +2615,6 @@
       ],
       "Take a tour": [
         "둘러보기"
-      ],
-      "Tweet": [
-        "트윗"
       ]
     },
     "Calendar access select label": {
@@ -4337,9 +4316,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "CRM, 웹 사이트, 프린터 등에 연렬하세요."
       ],
@@ -4439,17 +4415,11 @@
       "Track the status and activity of your referrals": [
         "추천인 상태와 활동 추적하기"
       ],
-      "Track the status and activity of your referrals.": [
-        "사용자의 리퍼럴 상태와 활동을 추적하세요."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "업그레이드하여 현재 이메일 주소보다 더 짧고, 기억하기 쉬운 주소인 ${ activatePmUser }를 받아보세요"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
@@ -7321,9 +7291,6 @@
       "Select your deal": [
         "특가를 골라보세요"
       ],
-      "Select your payment method": [
-        "결제 수단을 선택하세요"
-      ],
       "Select your pricing plan": [
         "플랜을 선택하세요"
       ],
@@ -7858,9 +7825,6 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount }개 국가 활성화됨"
       ],
-      "${ current } of ${ total }": [
-        "${ total } 중 ${ current }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
       ],
@@ -8035,9 +7999,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(다음 조건 중 하나라도 충족되면 필터링하기)"
       ],
-      "* No credit card required.": [
-        "* 신용 카드 필요 없음."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }**이(가) 사용자의 조직 **${ organizationName }**(에)서 지원되지 않습니다."
       ],
@@ -8060,10 +8021,10 @@
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
       ],
       "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받게 됩니다."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받습니다"
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받게 됩니다."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
@@ -8083,17 +8044,8 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "${ VPN_APP_NAME } 을 위한 +${ organization.BonusVPN } 연결 (더 많은 기기를 VPN에 연결할 수 있습니다)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. 친구를 ${ BRAND_NAME }에 초대하세요."
-      ],
-      "2. They try ${ planName }": [
-        "2. 초대를 받은 사람이 ${ planName }(을)를 체험합니다."
-      ],
       "2FA disabled": [
         "2FA 비활성화됨"
-      ],
-      "3. You earn credits": [
-        "3. 크레딧을 적립합니다."
       ],
       "30-day money-back guarantee": [
         "30일 이내 환불 보장"
@@ -8526,9 +8478,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
-      ],
-      "Credits earned": [
-        "크레딧 얻음"
       ],
       "Current plan": [
         "현재 플랜"
@@ -9202,17 +9151,11 @@
       "Item updated in vault": [
         "금고 내에 항목을 업데이트했습니다."
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "저는 @ProtonMail 을 사용해왔고 귀하가 좋아할 거라고 생각합니다. Proton Mail은 당신의 사생활을 보호하는 안전한 이메일 서비스입니다. 1개월의 프리미엄 기능을 무료로 사용하려면 이 링크에 접속하세요: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB 로고"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
-      ],
-      "Just send them your personal referral link.": [
-        "내 추천인 링크를 보내세요."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "이 가이드와 팁을 통해 내 정보가 더욱 안전하고 사적이도록 하세요."
@@ -9451,9 +9394,6 @@
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "하나의 계정, 모든 ${ BRAND_NAME } 서비스."
-      ],
       "One time import": [
         "한 번만 가져오기"
       ],
@@ -9513,12 +9453,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } 개월 플랜 결제"
-      ],
-      "Paid for a monthly plan": [
-        "매달 플랜 결제"
       ],
       "Paid for a plan": [
         "플랜 결제"
@@ -10057,9 +9991,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "초대를 받은 사람은 한 달간 무료로 ${ planName }(을)를 이용할 수 있습니다."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
       ],
@@ -10227,9 +10158,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "인터넷 연결을 안전하게 보호하기 위해, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "${ toAppName }과 모든 ${ BRAND_NAME } 서비스 사용하기"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName }을 사용하려면, ${ MAIL_APP_NAME } 주소가 필요합니다."
@@ -10521,9 +10449,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "초대를 받은 사람이 플랜을 구독하면, 내 구독에 사용할 수 있는 크레딧을 받을 수 있습니다."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "현재의 유료 구독을 취소시, 구독의 잔량이 계정 크레딧으로 반환되며 ${ BRAND_NAME } ${ PLANS.FREE } 플랜으로 다운그레이드됩니다."
@@ -11582,9 +11507,6 @@
       "Billing cycle": [
         "결제 주기"
       ],
-      "Black Friday": [
-        "블랙 프라이데이"
-      ],
       "Block": [
         "차단"
       ],
@@ -12275,9 +12197,6 @@
       "Repeat backup password": [
         "백업 비밀번호 확인"
       ],
-      "Repeat password": [
-        "비밀번호 확인"
-      ],
       "Reply (ACS) URL": [
         "Reply (ACS) URL"
       ],
@@ -12529,9 +12448,6 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
-      ],
-      "Your referral link": [
-        "리퍼럴 코드"
       ],
       "ZIP code": [
         "우편번호"
@@ -13240,12 +13156,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "종단간 암호화로 당신의 데이터에 주도권을 잡으세요"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "${ BRAND_NAME }을(를) 이 링크로 무료 체험하세요."
       ]
     },
     "Modal title": {
@@ -13509,9 +13419,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "무료로 계속하기"
-      ],
       "Delete account": [
         "계정 삭제"
       ],
@@ -13532,9 +13439,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "${ upsellPlanHumanSize } 로 업그레이드"
       ]
     },
     "new_plans: Action": {
@@ -14061,21 +13965,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME }을 사용하면 이메일 주소를 만들고 하위 사용자의 계정을 관리할 수 있습니다. 이는 가족과 조직에 이상적입니다."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
@@ -14117,9 +14006,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "만약 다른 플랜으로 변경하면, 모든 ${ visionary } 플랜 혜택을 잃게 되며, 다시 ${ visionary } 로 변경할 수 없습니다."
-      ],
-      "Most popular": [
-        "가장 인기"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 없습니다."
@@ -14189,14 +14075,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME } 계정을 생성하면, 당사의 ${ terms } 에 동의하는 것으로 간주됩니다"
       ],
-      "Payment details": [
-        "결제 정보"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "계정을 재설정해야 하는 경우 본인 확인을 위해 사용할 이메일 주소 또는 전화 번호를 저장합니다."
-      ],
-      "Subscription": [
-        "구독"
       ],
       "terms and conditions": [
         "이용 약관"
@@ -14209,9 +14089,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "${ planTitleElement } 구독이 활성화되었습니다."
-      ],
-      "Your selected plan: ${ planName }": [
-        "${ planName } 플랜을 선택하셨습니다"
       ]
     },
     "new_plans: Subtext": {
@@ -18176,9 +18053,6 @@
       "Display name": [
         "표시되는 이름"
       ],
-      "Email": [
-        "이메일"
-      ],
       "Email address": [
         "이메일 주소"
       ],
@@ -18190,17 +18064,6 @@
       ],
       "Username": [
         "사용자 이름"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "계정 설정"
-      ],
-      "Payment": [
-        "결제 수단"
-      ],
-      "Verification": [
-        "인증"
       ]
     },
     "signup: Action": {
@@ -18535,12 +18398,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "초대한 사용자가 ${ BRAND_NAME } 플랜을 구독할 때 크레딧을 수령하세요."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "최대 ${ credits }의 크레딧 받기"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME }에 초대하세요."
       ]
     },
     "sso": {
@@ -20269,9 +20126,6 @@
       "Create user accounts": [
         "사용자 계정 만들기"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } 계정 생성하기"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } 주소를 생성하세요"
       ],
@@ -20692,14 +20546,8 @@
       "Home": [
         "홈"
       ],
-      "How does it work?": [
-        "어떻게 작동하나요?"
-      ],
       "How to choose a good logo": [
         "최고의 로고를 선택하는 방법"
-      ],
-      "How to refer a friend and get credits": [
-        "친구를 추천하고 크레딧을 받는 방법"
       ],
       "How your free trial works": [
         "무료 체험 작동 원리"
@@ -21040,9 +20888,6 @@
       "Search for additional servers": [
         "추가 서버 검색"
       ],
-      "Secure email based in Switzerland": [
-        "스위스에 위치한 안전한 이메일"
-      ],
       "Secure your passwords. Everywhere.": [
         "언제 어디서나 확인하는 내 비밀번호"
       ],
@@ -21325,14 +21170,8 @@
       "Users and addresses": [
         "사용자 및 주소"
       ],
-      "Verification": [
-        "인증"
-      ],
       "Verification failed": [
         "인증 실패"
-      ],
-      "Verify email address": [
-        "이메일 주소 인증"
       ],
       "Verifying your card...": [
         "카드 인증 중..."
@@ -21426,9 +21265,6 @@
       ],
       "Your subscriptions": [
         "구독"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } 체험에 초대되었습니다."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22025,16 +21861,6 @@
         "${ price.uiData.discountPercent }% 절약"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "이메일로 초대됨"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "사용자의 링크로 로그인됨"
-      ]
-    },
     "User role": {
       "Admin": [
         "관리자"
@@ -22304,9 +22130,6 @@
       ],
       "Your ${ selected } plan": [
         "나의 ${ selected } 플랜"
-      ],
-      "Your plan includes:": [
-        "플랜에 포함되는 항목:"
       ]
     },
     "vpn_2step: tooltip": {

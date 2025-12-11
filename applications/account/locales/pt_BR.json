@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Crie um link para compartilhar com qualquer pessoa de fora ${ BRAND_NAME }"
       ],
-      "Create account": [
-        "Criar conta"
-      ],
       "Create calendar": [
         "Criar calendário"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Pagar"
-      ],
-      "Pay ${ price }": [
-        "Pague ${ price }"
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
@@ -2034,11 +2028,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Experimentar\", você concorda com nossos ${ termsAndConditions }."
@@ -2743,9 +2737,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Adicione o link para o seu rodapé do e-mail"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -2770,9 +2761,6 @@
       "Got it": [
         "Entendi"
       ],
-      "Invite": [
-        "Convidar"
-      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -2790,9 +2778,6 @@
       ],
       "Take a tour": [
         "Faça um tour"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4584,10 +4569,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Parabéns! Você ganhou o máximo de ${ rewardsLimit } mês gratuito de ${ plusPlanName }.",
-        "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "\"Conecte seu CRM, site, impressoras e outros dispositivos."
       ],
@@ -4690,17 +4671,11 @@
       "Track the status and activity of your referrals": [
         "Acompanhe o status e a atividade de suas referências"
       ],
-      "Track the status and activity of your referrals.": [
-        "Acompanhe o status e a atividade de suas referências."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Faça upgrade para obter ${ activatePmUser } para um endereço de e-mail mais curto e fácil de lembrar, além do seu atual."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Você pode continuar a convidar amigos, mas não poderá ganhar mais créditos"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Você pode personalizar a lista de domínios onde certas funções automáticas na extensão do navegador ${ PASS_APP_NAME } (preenchimento automático, sugestão automática e salvamento automático) não devem ser executadas."
@@ -7879,9 +7854,6 @@
       "Select your deal": [
         "Selecione sua oferta"
       ],
-      "Select your payment method": [
-        "Selecione o seu método de pagamento"
-      ],
       "Select your pricing plan": [
         "Selecione o seu plano"
       ],
@@ -8470,9 +8442,6 @@
         "${ countriesCount } país ativado",
         "${ countriesCount } países ativados"
       ],
-      "${ current } of ${ total }": [
-        "${ current } de ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "Desconto de ${ discountPercent }%"
       ],
@@ -8677,9 +8646,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrar se qualquer uma das seguintes condições for atendida)"
       ],
-      "* No credit card required.": [
-        "* Cartão de crédito não necessário."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** não é suportado na sua organização **${ organizationName }**."
       ],
@@ -8727,17 +8693,8 @@
         "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)",
         "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Convide amigos para ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Eles tentam ${ planName }"
-      ],
       "2FA disabled": [
         "A2F desativado"
-      ],
-      "3. You earn credits": [
-        "3. Você ganha créditos"
       ],
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
@@ -9219,9 +9176,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
-      ],
-      "Credits earned": [
-        "Créditos recebidos"
       ],
       "Current plan": [
         "Plano atual"
@@ -9941,17 +9895,11 @@
       "Item updated in vault": [
         "Item atualizado no cofre"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Estou usando o @ProtonMail e pensei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com meu link de referência para obter 1 mês de recursos premium gratuitamente: ${ referrerLink }"
-      ],
       "JCB logo": [
         "Logotipo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
-      ],
-      "Just send them your personal referral link.": [
-        "Basta enviar-lhes o seu link de referência pessoal."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
@@ -10211,9 +10159,6 @@
       "Once you reset your password:": [
         "Depois de redefinir sua senha:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Uma conta. Todos os serviços da ${ BRAND_NAME }."
-      ],
       "One time import": [
         "Importação única"
       ],
@@ -10281,13 +10226,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Pago por um plano de ${ rewardMonths } mês",
-        "Pago por um plano de ${ rewardMonths } meses"
-      ],
-      "Paid for a monthly plan": [
-        "Pago para o plano mensal"
       ],
       "Paid for a plan": [
         "Pago por um plano"
@@ -10861,9 +10799,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Eles receberão um mês grátis de ${ planName }."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -11046,9 +10981,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "para usar ${ toAppName } e todos os serviços da ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Para usar ${ toAppName } necessita de um endereço do ${ MAIL_APP_NAME }."
@@ -11355,9 +11287,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quando as notificações estão ativas, enviaremos um alerta para seu endereço de recuperação se você tiver novas mensagens na sua conta ${ MAIL_APP_NAME }."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Quando eles se inscreverem em um plano, você receberá créditos para usar em sua assinatura."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quando você cancela sua assinatura paga atual, o saldo da sua assinatura será devolvido como crédito de conta e você fará downgrade para o plano ${ BRAND_NAME } ${ PLANS.FREE }."
@@ -12564,9 +12493,6 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Endereços bloqueados"
       ],
@@ -13329,9 +13255,6 @@
       "Repeat backup password": [
         "Repetir senha de backup"
       ],
-      "Repeat password": [
-        "Repita a senha"
-      ],
       "Reply (ACS) URL": [
         "URL de resposta (ACS)"
       ],
@@ -13629,9 +13552,6 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
-      ],
-      "Your referral link": [
-        "Seu link de referência"
       ],
       "ZIP code": [
         "CEP"
@@ -14394,12 +14314,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Acesse a sua conta da ${ BRAND_NAME } para ter acesso a todos os serviços criptografados da ${ BRAND_NAME }, como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais. Ainda não tem uma conta? Crie uma GRATUITAMENTE."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Assuma o controle dos seus dados com criptografia de ponta a ponta"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Experimente ${ BRAND_NAME } gratuitamente com este link"
       ]
     },
     "Modal title": {
@@ -14669,9 +14583,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Continuar com o plano Free"
-      ],
       "Delete account": [
         "Excluir conta"
       ],
@@ -14692,9 +14603,6 @@
       ],
       "Switch plan": [
         "Mudar de plano"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Fazer upgrade para o ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -15247,21 +15155,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } permite que você crie endereços de e-mail e gerencie contas para subusuários. Ideal para famílias e organizações."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Com a assinatura de 1 mês. Outras opções de assinatura estão disponíveis na finalização da compra."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Com a assinatura de 12 meses. Outras opções de assinatura estão disponíveis na finalização da compra."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Com a assinatura de 15 mês. Outras opções de assinatura estão disponíveis na finalização da compra."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Com a assinatura de 24 meses. Outras opções de assinatura estão disponíveis na finalização da compra."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Com a assinatura de 30 mês. Outras opções de assinatura estão disponíveis na finalização da compra."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de armazenamento em nuvem que permite armazenar, sincronizar e compartilhar arquivos com facilidade. Protegido por criptografia de ponta a ponta."
       ],
@@ -15303,9 +15196,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se mudar para um plano diferente, você perderá todos os benefícios do plano ${ visionary } e não poderá voltar para o ${ visionary }."
-      ],
-      "Most popular": [
-        "Mais popular"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
@@ -15378,14 +15268,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ao criar uma conta ${ BRAND_NAME }, você concorda com nossos ${ terms }"
       ],
-      "Payment details": [
-        "Detalhes de pagamento"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Salve seu endereço de e-mail ou número de telefone para usar na verificação se precisar redefinir sua conta."
-      ],
-      "Subscription": [
-        "Assinatura"
       ],
       "terms and conditions": [
         "termos de condições"
@@ -15398,9 +15282,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Sua assinatura do ${ planTitleElement } já está ativa."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Seu plano selecionado: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -19449,6 +19330,9 @@
       "Highest VPN speed": [
         "Velocidade VPN máxima"
       ],
+      "Mail": [
+        "Mail"
+      ],
       "Mailboxes and custom domains for aliases": [
         "Caixas de correio e domínios personalizados para aliases"
       ],
@@ -19648,9 +19532,6 @@
       "Display name": [
         "Nome de exibição"
       ],
-      "Email": [
-        "E-mail"
-      ],
       "Email address": [
         "Endereço de e-mail"
       ],
@@ -19662,17 +19543,6 @@
       ],
       "Username": [
         "Nome de usuário"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Configuração da conta"
-      ],
-      "Payment": [
-        "Pagamento"
-      ],
-      "Verification": [
-        "Verificação"
       ]
     },
     "signup: Action": {
@@ -20015,12 +19885,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe créditos quando a pessoa que você convida se inscreve em um plano ${ BRAND_NAME }."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Receba até ${ credits } em créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Convide amigos para ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -21858,9 +21722,6 @@
       "Create user accounts": [
         "Criar contas de usuários"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Crie sua conta da ${ BRAND_NAME }."
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Criar seu endereço da ${ BRAND_NAME }"
       ],
@@ -22301,14 +22162,8 @@
       "Home": [
         "Casa"
       ],
-      "How does it work?": [
-        "Como isso funciona?"
-      ],
       "How to choose a good logo": [
         "Como escolher um bom logotipo"
-      ],
-      "How to refer a friend and get credits": [
-        "Como indicar um amigo e ganhar créditos"
       ],
       "How your free trial works": [
         "Como funciona seu teste gratuito"
@@ -22683,9 +22538,6 @@
       "Search for additional servers": [
         "Pesquisar por servidores adicionais"
       ],
-      "Secure email based in Switzerland": [
-        "E-mail seguro sediado na Suíça"
-      ],
       "Secure your passwords. Everywhere.": [
         "Proteja suas senhas. Em todos os lugares."
       ],
@@ -22981,14 +22833,8 @@
       "Vaults owned": [
         "Cofres possuídos"
       ],
-      "Verification": [
-        "Verificação"
-      ],
       "Verification failed": [
         "Erro na verificação"
-      ],
-      "Verify email address": [
-        "Verificar endereço de e-mail"
       ],
       "Verifying your card...": [
         "Verificando seu cartão..."
@@ -23088,9 +22934,6 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23774,16 +23617,6 @@
         "Economize ${ price.uiData.discountPercent }%"
       ]
     },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Convidado através do e-mail"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Registrado através do seu link"
-      ]
-    },
     "User role": {
       "Admin": [
         "Administrador"
@@ -24065,9 +23898,6 @@
       ],
       "Your ${ selected } plan": [
         "Seu plano ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Seu plano inclui:"
       ]
     },
     "vpn_2step: tooltip": {

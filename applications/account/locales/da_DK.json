@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Opret et link, som du kan dele med alle udenfor ${ BRAND_NAME }"
       ],
-      "Create account": [
-        "Opret konto"
-      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "Betal"
-      ],
-      "Pay ${ price }": [
-        "Betal ${ price }"
       ],
       "Pay ${ price } now": [
         "Betal ${ price } nu"
@@ -2034,11 +2028,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter prøveperioden udløber den ${ formattedDate1 }, vil det blive et betalt abonnement, der automatisk fornyes månedligt. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate2 }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved at klikke på \"Prøv\" accepterer du vores ${ termsAndConditions }."
@@ -2761,9 +2755,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Tilføj link til bunden af din e-mail"
-      ],
       "Close": [
         "Luk"
       ],
@@ -2788,9 +2779,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Invite": [
-        "Inviter"
-      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -2808,9 +2796,6 @@
       ],
       "Take a tour": [
         "Tag en tour"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4602,10 +4587,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Tillykke! Du har optjent den maksimale ${ rewardsLimit } gratis måned med ${ plusPlanName }.",
-        "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
@@ -4708,17 +4689,11 @@
       "Track the status and activity of your referrals": [
         "Følg status og aktivitet for dine henvisninger"
       ],
-      "Track the status and activity of your referrals.": [
-        "Følg status og aktivitet for dine henvisninger."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Opgrader for at få ${ activatePmUser } og en kortere e-mailadresse, der er nem at huske, ud over din nuværende."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Du kan tilpasse listen over domæner, hvor visse automatiske funktioner i ${ PASS_APP_NAME }-browserudvidelsen (autofyld, autoforslag, automatisk lagring) ikke bør køres."
@@ -7897,8 +7872,8 @@
       "Select your deal": [
         "Vælg dit tilbud"
       ],
-      "Select your payment method": [
-        "Vælg din betalingsmetode"
+      "Select your payment method:": [
+        "Vælg din betalingsmetode:"
       ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
@@ -8488,9 +8463,6 @@
         "${ countriesCount } land aktiveret",
         "${ countriesCount } lande aktiveret"
       ],
-      "${ current } of ${ total }": [
-        "${ current } af ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
       ],
@@ -8511,11 +8483,11 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine familiemedlemmer bruger to-faktor-godkendelse."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.to-faktor-godkendelse",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer uden SSO bruger to-faktor-godkendelse til at logge ind på din organisation.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
@@ -8695,9 +8667,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
       ],
-      "* No credit card required.": [
-        "* Intet betalingskort påkrævet."
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** understøttes ikke i din organisation **${ organizationName }**"
       ],
@@ -8745,17 +8714,8 @@
         "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Inviter venner til ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. De prøver ${ planName }"
-      ],
       "2FA disabled": [
         "2FA deaktiveret"
-      ],
-      "3. You earn credits": [
-        "3. Du optjener kreditter"
       ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -9237,9 +9197,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
-      ],
-      "Credits earned": [
-        "Kreditter optjent"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -9959,17 +9916,11 @@
       "Item updated in vault": [
         "Element opdateret i boks"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Jeg har gennem noget tid brugt @ProtonMail og tænkte, at du måske også vil kunne lide den. Det er en sikker e-mailtjeneste, der beskytter dit privatliv. Tilmeld dig med mit henvisningslink for at få 1 måneds premium-funktioner gratis: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB logo"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
-      ],
-      "Just send them your personal referral link.": [
-        "Du skal blot sende dem dit personlige henvisningslink."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
@@ -10229,9 +10180,6 @@
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Én konto. Alle ${ BRAND_NAME }-tjenester."
-      ],
       "One time import": [
         "Engangsimport"
       ],
@@ -10299,13 +10247,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Betalte for et ${ rewardMonths }-måneds abonnement",
-        "Betalte for et ${ rewardMonths }-måneders abonnement"
-      ],
-      "Paid for a monthly plan": [
-        "Betalte for et månedligt abonnement"
       ],
       "Paid for a plan": [
         "Betalt for et abonnement"
@@ -10653,7 +10594,7 @@
       ],
       "Shared server country (${ countriesCount })": [
         "Delt serverland (${ countriesCount })",
-        "Delte server-lande (${ countriesCount })"
+        "Delte serverlande (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Delt boks slettet"
@@ -10879,9 +10820,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "De vil modtage en gratis måned af ${ planName }."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -11064,9 +11002,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en server."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "for at bruge ${ toAppName } og alle ${ BRAND_NAME }-adresser"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "For at bruge ${ toAppName }, skal du bruge en ${ MAIL_APP_NAME } adresse."
@@ -11374,9 +11309,6 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når notifikationer er aktiveret, sender vi dig en advarsel til din e-mailadresse til gendannelse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Når de tegner et abonnement, får du kreditter, du kan bruge på dit abonnement."
-      ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Når du opsiger dit nuværende betalte abonnement, returneres restbeløbet af abonnementet som kontokredit, og du nedgraderes til ${ BRAND_NAME }. ${ PLANS.FREE }-abonnementet"
       ],
@@ -11570,7 +11502,7 @@
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Du har ${ unassignedAvailableCount } nyligt anvendt server til rådighed. For at tildele denne server til et andet land skal du vente, indtil deaktiveringen er afsluttet.",
-        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente, indtil deaktiveringen er afsluttet."
+        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente indtil deaktiveringen er afsluttet."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -12582,9 +12514,6 @@
       "Billing cycle": [
         "Faktureringsperiode"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Block": [
         "Blokér"
       ],
@@ -13347,9 +13276,6 @@
       "Repeat backup password": [
         "Gentag backupadgangskode"
       ],
-      "Repeat password": [
-        "Gentag adgangskode"
-      ],
       "Reply (ACS) URL": [
         "Svar (ACS) URL"
       ],
@@ -13647,9 +13573,6 @@
       ],
       "Your password (trusted contact)": [
         "Din adgangskode (betroet kontakt)"
-      ],
-      "Your referral link": [
-        "Dit henvisningslink"
       ],
       "ZIP code": [
         "Postnummer"
@@ -14398,6 +14321,12 @@
       "Create a new ${ appName } account": [
         "Opret en ny ${ appName }-konto"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Nyd to uger med ${ BRAND_NAME } gratis"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Oplev ægte online privatlivsbeskyttelse. Beskyt dine data med ${ BRAND_NAME } gratis de næste 14 dage."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Find dit brugernavn til ${ BRAND_NAME }-konto"
       ],
@@ -14415,12 +14344,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log ind på din ${ BRAND_NAME }-konto for at få adgang til alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og meget mere. Har du ikke en konto? Opret en helt GRATIS."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Tag kontrol over dine data med end-to-end kryptering"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Prøv ${ BRAND_NAME } gratis med dette link"
       ]
     },
     "Modal title": {
@@ -14687,9 +14610,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Fortsæt med Free"
-      ],
       "Delete account": [
         "Slet konto"
       ],
@@ -14710,9 +14630,6 @@
       ],
       "Switch plan": [
         "Skift abonnement"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Opgrader til ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -14854,6 +14771,9 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Activity logs and policy": [
+        "Aktivitetslog og politik"
       ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
@@ -15096,6 +15016,9 @@
       "Secure link sharing": [
         "Sikker link-deling"
       ],
+      "Secure password management": [
+        "Sikker adgangskodehåndtering"
+      ],
       "See team's availability": [
         "Se teamets tilgængelighed"
       ],
@@ -15265,21 +15188,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } lader dig oprette e-mail-adresser og administrere konti for underbrugere. Ideel til familier og organisationer."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Med 12-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Med 15-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Med 24-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Med 30-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB lagerplads i skyen, som giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
       ],
@@ -15321,9 +15229,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Hvis du skifter til et andet abonnement mister du alle fordelene ved ${ visionary }-abonnementet og kan ikke skifte tilbage til ${ visionary }."
-      ],
-      "Most popular": [
-        "Mest populær"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
@@ -15396,14 +15301,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ved at oprette en ${ BRAND_NAME }-konto accepterer du vores ${ terms }"
       ],
-      "Payment details": [
-        "Betalingsoplysninger"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Gem din e-mailadresse eller dit telefonnummer, som du kan bruge til bekræftelse, hvis du har brug for at nulstille din konto."
-      ],
-      "Subscription": [
-        "Abonnement"
       ],
       "terms and conditions": [
         "vilkår og betingelser"
@@ -15416,9 +15315,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Dit ${ planTitleElement } abonnement er nu aktivt."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Dit valgte abonnement: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -18005,6 +17901,9 @@
       "How your free trial works:": [
         "Sådan fungerer din gratis prøveperiode:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at du måske vil kunne lide det. Det er en sikker e-mail, sky-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få 14 dages premium-funktioner gratis: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du annullerer inden da, nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, når prøveversionen udløber. Hvis du ikke annullerer, starter dit fulde abonnement, og du modtager **${ referrerRewardAmount }** i kreditter."
       ],
@@ -18025,6 +17924,9 @@
       ],
       "Refer friends": [
         "Henvis venner"
+      ],
+      "Share using ${ name }": [
+        "Del via ${ name }"
       ],
       "Start earning credits": [
         "Begynd at optjene kreditter"
@@ -19473,6 +19375,9 @@
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
       ],
+      "Mail": [
+        "Mail"
+      ],
       "Mailboxes and custom domains for aliases": [
         "Mailboxe og brugerdomæner til aliasser"
       ],
@@ -19672,9 +19577,6 @@
       "Display name": [
         "Vist navn"
       ],
-      "Email": [
-        "E-mail"
-      ],
       "Email address": [
         "E-mailadresse"
       ],
@@ -19686,17 +19588,6 @@
       ],
       "Username": [
         "Brugernavn"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Kontoopsætning"
-      ],
-      "Payment": [
-        "Betaling"
-      ],
-      "Verification": [
-        "Bekræftelse"
       ]
     },
     "signup: Action": {
@@ -20039,12 +19930,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Få kreditter, når den person, du inviterer, tegner et ${ BRAND_NAME }-abonnement."
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Få op til ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -21882,9 +21767,6 @@
       "Create user accounts": [
         "Opret brugerkonti"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Opret din ${ BRAND_NAME }-konto"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Opret din ${ BRAND_NAME }-adresse"
       ],
@@ -22328,14 +22210,8 @@
       "Home": [
         "Hjem"
       ],
-      "How does it work?": [
-        "Hvordan fungerer det?"
-      ],
       "How to choose a good logo": [
         "Hvordan vælger man et godt logo"
-      ],
-      "How to refer a friend and get credits": [
-        "Sådan henviser du en ven og får kreditter"
       ],
       "How your free trial works": [
         "Sådan fungerer din gratis prøveperiode"
@@ -22704,9 +22580,6 @@
       "Search for additional servers": [
         "Søg efter yderligere servere"
       ],
-      "Secure email based in Switzerland": [
-        "Sikker e-mail-tjeneste baseret i Schweiz"
-      ],
       "Secure your passwords. Everywhere.": [
         "Sikr dine adgangskoder. Overalt."
       ],
@@ -23002,14 +22875,8 @@
       "Vaults owned": [
         "Ejede bokse"
       ],
-      "Verification": [
-        "Verifikation"
-      ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
-      ],
-      "Verify email address": [
-        "Bekræft e-mailadresse"
       ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
@@ -23106,9 +22973,6 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23657,8 +23521,8 @@
         "Bekræft alle"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:",
-        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdaterer i mellemtiden:"
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } bruger, fordi dennes krypteringsnøgler er blevet opdaterer i mellemtiden:",
+        "Kunne ikke automatisk aktivere administratoradgang for ${ n } brugere, fordi deres krypteringsnøgler er blevet opdateret i mellemtiden:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Kunne ikke aktivere administratoradgang: ${ error }"
@@ -23805,16 +23669,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Spar ${ price.uiData.discountPercent }%"
-      ]
-    },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Inviteret via e-mail"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Meldte sig til via dit link"
       ]
     },
     "User role": {
@@ -24098,9 +23952,6 @@
       ],
       "Your ${ selected } plan": [
         "Dit ${ selected }-abonnement"
-      ],
-      "Your plan includes:": [
-        "Dit abonnement omfatter:"
       ]
     },
     "vpn_2step: tooltip": {
