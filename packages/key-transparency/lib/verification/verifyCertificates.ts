@@ -3,7 +3,7 @@ import type { Certificate, GeneralName } from 'pkijs';
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
-import { getBaseDomain, throwKTError } from '../helpers/utils';
+import { getBaseDomain, ktSentryReport, throwKTError } from '../helpers/utils';
 
 const importPkijs = () =>
     import(
@@ -192,9 +192,7 @@ export const extractSCTs = (certificate: Certificate) => {
                 timestamps.push(
                     ...parsedValue
                         .toJSON()
-                        .timestamps.map(({ logID }: { logID: string }) =>
-                            Uint8Array.fromHex(logID).toBase64()
-                        )
+                        .timestamps.map(({ logID }: { logID: string }) => Uint8Array.fromHex(logID).toBase64())
                 );
             }
             break;
@@ -216,15 +214,24 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     );
     const verified: boolean[] = [];
     const { verifySCTsForCertificate } = await importPkijs();
-    try {
-        verified.push(...(await verifySCTsForCertificate(certificate, issuerCert, logs)));
-    } catch (error: any) {
-        return throwKTError('SCT verification failed', {
-            errorMessage: error.message,
-            certificate: printCertificate(certificate),
-            issuerCert: printCertificate(issuerCert),
-        });
+    // verifySCTsForCertificate mutates the extensions, preserve them
+    // for the subsequent calls.
+    const certificateExtensions = certificate.extensions;
+    for (let i = 0; i < scts.length; i++) {
+        try {
+            certificate.extensions = certificateExtensions?.slice();
+            verified.push(...(await verifySCTsForCertificate(certificate, issuerCert, logs, i)));
+        } catch (error: any) {
+            verified.push(false);
+            certificate.extensions = certificateExtensions;
+            ktSentryReport('SCT verification failed', {
+                errorMessage: error.message,
+                certificate: printCertificate(certificate),
+                issuerCert: printCertificate(issuerCert),
+            });
+        }
     }
+    certificate.extensions = certificateExtensions;
 
     if (verified.length !== scts.length) {
         return throwKTError('The number of verified SCTs does not match with the number of SCTs', {
