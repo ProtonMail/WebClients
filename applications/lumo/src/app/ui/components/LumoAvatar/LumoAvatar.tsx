@@ -2,6 +2,7 @@ import lumoGhostAvatarDark from '@proton/styles/assets/img/lumo/lumo-ghost-avata
 import lumoGhostAvatar from '@proton/styles/assets/img/lumo/lumo-ghost-avatar.svg';
 
 import { LazyLottie } from '../../../components/LazyLottie';
+import type { ToolCallName } from '../../../lib/toolCall/types';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 
@@ -9,7 +10,7 @@ import './LumoAvatar.scss';
 
 interface LumoAvatarProps {
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
+    toolCallName?: ToolCallName;
 }
 
 const lightMap = {
@@ -58,7 +59,7 @@ const darkMap = {
         ),
 };
 
-const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithToolCall: boolean) => {
+const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolCallName) => {
     const { isGhostChatMode } = useGhostChat();
     const { isDarkLumoTheme } = useLumoTheme();
 
@@ -73,7 +74,7 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithTool
         if (isGenerating) {
             if (isGhostChatMode) {
                 key = 'ghostThinking';
-            } else if (isGeneratingWithToolCall) {
+            } else if (toolCallName === 'web_search' || toolCallName === 'proton_info') {
                 key = 'webSearch';
             } else {
                 key = 'generating';
@@ -89,8 +90,8 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, isGeneratingWithTool
     return { getAnimationData: getAnimationDataToImport(), isDarkLumoTheme };
 };
 
-const LumoAvatar = ({ isGenerating, isGeneratingWithToolCall }: LumoAvatarProps) => {
-    const { getAnimationData, isDarkLumoTheme } = useThemeLumoAvatarAnimation(isGenerating, isGeneratingWithToolCall);
+const LumoAvatar = ({ isGenerating, toolCallName }: LumoAvatarProps) => {
+    const { getAnimationData, isDarkLumoTheme } = useThemeLumoAvatarAnimation(isGenerating, toolCallName);
 
     return (
         <div className="self-start shrink-0 relative no-print">
