@@ -22,7 +22,6 @@ import type { Message } from 'applications/lumo/src/app/types';
 //         isLoading,
 //         isRunning: _isRunning,
 //         isGenerating,
-//         isGeneratingWithToolCall,
 //         isFinishedGenerating,
 //         generationFailed,
 //         doNotShowEmptyMessage,
@@ -44,7 +43,6 @@ const DebugAssistantMessage = ({
     isRunning: _isRunning,
     message,
     isGenerating,
-    isGeneratingWithToolCall,
     generationFailed,
     isFinishedGenerating,
     hasToolCall,
@@ -56,7 +54,6 @@ const DebugAssistantMessage = ({
     isRunning: boolean;
     message: Message;
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
     generationFailed: boolean;
     isFinishedGenerating: boolean;
     hasToolCall: boolean;
@@ -84,12 +81,6 @@ const DebugAssistantMessage = ({
                             isGenerating:{' '}
                             <span className={isGenerating ? 'color-success' : 'color-danger'}>
                                 {String(isGenerating)}
-                            </span>
-                        </div>
-                        <div>
-                            isGeneratingWithToolCall:{' '}
-                            <span className={isGeneratingWithToolCall ? 'color-success' : 'color-danger'}>
-                                {String(isGeneratingWithToolCall)}
                             </span>
                         </div>
                         <div>
