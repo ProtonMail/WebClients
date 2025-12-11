@@ -16,17 +16,21 @@ const TRANSFER_MANAGER_MAX_VISIBLE_ROWS_SMALL = 3;
 
 type RowData = {
     items: TransferManagerEntry[];
-    share: (entry: TransferManagerEntry) => void;
+    share: (entry: TransferManagerEntry, deprecatedRootShareId: string) => void;
+    deprecatedRootShareId: string | undefined;
 };
 
 const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<RowData>) => {
-    const { items, share } = data;
+    const { items, share, deprecatedRootShareId } = data;
     const entry = items[index];
     // TODO: add conditional styling depending on some special cases like malaware detection
 
     return (
         <div style={style}>
-            <TransferItem entry={entry} onShare={() => share(entry)} />
+            <TransferItem
+                entry={entry}
+                onShare={deprecatedRootShareId ? () => share(entry, deprecatedRootShareId) : undefined}
+            />
         </div>
     );
 });
@@ -35,9 +39,10 @@ TransferListRow.displayName = 'TransferListRow';
 
 type TransferManagerListProps = {
     items: TransferManagerEntry[];
+    deprecatedRootShareId: string | undefined;
 };
 
-export const TransferManagerList = ({ items }: TransferManagerListProps) => {
+export const TransferManagerList = ({ items, deprecatedRootShareId }: TransferManagerListProps) => {
     const listContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(listContainerRef);
     const { viewportWidth } = useActiveBreakpoint();
@@ -64,7 +69,7 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
                     <FixedSizeList
                         height={listHeight}
                         itemCount={items.length}
-                        itemData={{ items, share }}
+                        itemData={{ items, share, deprecatedRootShareId }}
                         itemSize={itemSize}
                         width={listWidth}
                         itemKey={(index, { items }) => items[index].id}

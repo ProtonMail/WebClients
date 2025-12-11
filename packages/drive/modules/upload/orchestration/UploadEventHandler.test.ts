@@ -4,12 +4,14 @@ import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import { UploadStatus } from '../types';
+import { uploadLogError } from '../utils/uploadLogger';
 import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
 import { UploadEventHandler } from './UploadEventHandler';
 
 jest.mock('../store/uploadController.store');
 jest.mock('../store/uploadQueue.store');
+jest.mock('../utils/uploadLogger');
 
 describe('UploadEventHandler', () => {
     let handler: UploadEventHandler;
@@ -178,6 +180,28 @@ describe('UploadEventHandler', () => {
             expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
         });
 
+        it('should log error when file upload fails', async () => {
+            const error = new Error('Upload failed');
+            mockGetItem.mockReturnValue({
+                uploadId: 'task123',
+                name: 'test-file.pdf',
+                status: UploadStatus.InProgress,
+            });
+
+            const event = {
+                type: 'file:error' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(uploadLogError).toHaveBeenCalledWith('File upload failed', error, {
+                uploadId: 'task123',
+                fileName: 'test-file.pdf',
+            });
+        });
+
         it('should not mark file as failed when file is cancelled', async () => {
             mockGetItem.mockReturnValue({
                 uploadId: 'task123',
@@ -343,6 +367,28 @@ describe('UploadEventHandler', () => {
             });
             expect(mockCancelFolderChildren).toHaveBeenCalledWith('task123');
             expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should log error when folder creation fails', async () => {
+            const error = new Error('Folder creation failed');
+            mockGetItem.mockReturnValue({
+                uploadId: 'task123',
+                name: 'My Folder',
+                status: UploadStatus.InProgress,
+            });
+
+            const event = {
+                type: 'folder:error' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(uploadLogError).toHaveBeenCalledWith('Folder creation failed', error, {
+                uploadId: 'task123',
+                folderName: 'My Folder',
+            });
         });
     });
 

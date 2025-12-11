@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useBeforeUnload, useConfirmActionModal, useDrawerWidth } from '@proton/components';
+import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 
@@ -18,11 +18,15 @@ import { TransferManagerStatus, useTransferManagerState } from './useTransferMan
 
 import './TransferManager.scss';
 
-export const TransferManager = () => {
+interface TransferManagerProps {
+    drawerWidth?: number;
+    deprecatedRootShareId: string | undefined;
+}
+
+export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: TransferManagerProps) => {
     const { items, status } = useTransferManagerState();
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
-    const drawerWidth = useDrawerWidth();
     const [leaveMessage, setLeaveMessage] = useState('');
     const driveEventManager = useDriveEventManager();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -118,7 +122,7 @@ export const TransferManager = () => {
 
                 {!isMinimized && (
                     <div className="mt-3" data-testid="drive-transfers-manager:list">
-                        <TransferManagerList items={items} />
+                        <TransferManagerList items={items} deprecatedRootShareId={deprecatedRootShareId} />
                     </div>
                 )}
                 {uploadConflictModal}

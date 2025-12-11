@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom-v5-compat';
 
 import { getUnixTime } from 'date-fns';
 
-import { useTheme } from '@proton/components';
+import { useAuthentication, useTheme } from '@proton/components';
 import { type NodeEntity, NodeType, getDrive, splitNodeUid, useDrive } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -17,6 +18,7 @@ import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal
 import config from '../config';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
+import { logging } from '../modules/logging';
 import { setPublicLinkClient } from '../sections/publicPage/publicLinkClient';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload } from '../store';
@@ -44,11 +46,12 @@ export function PublicSharedLinkContainer() {
 }
 export const PUBLIC_SHARE_SIGNUP_MODAL_KEY = 'public-share-signup-modal';
 
-const loadRootNode = async (url: string, password: string | undefined) => {
+const loadRootNode = async (url: string, password: string | undefined, isAnonymous: boolean) => {
     const drive = getDrive();
     try {
-        const publicLinkClient = await drive.experimental.authPublicLink(url, password);
+        const publicLinkClient = await drive.experimental.authPublicLink(url, password, isAnonymous);
         setPublicLinkClient(publicLinkClient);
+        uploadManager.setDriveClient(publicLinkClient);
         const rootNode = await publicLinkClient.getRootNode();
         return rootNode;
     } catch (error) {
@@ -78,6 +81,7 @@ function PublicShareLinkInitContainer() {
     const bookmarksPublicView = useBookmarksPublicView({ customPassword });
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
     const isPartialView = usePartialPublicView();
+    const authentication = useAuthentication();
 
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const { openDocumentWindow } = useOpenDocument();
@@ -125,6 +129,7 @@ function PublicShareLinkInitContainer() {
             init({
                 appName: config.APP_NAME,
                 appVersion: config.APP_VERSION,
+                logging,
             });
         }
     }, [drive, init]);
@@ -168,7 +173,11 @@ function PublicShareLinkInitContainer() {
                 if (linkInfo.isCustomPasswordProtected) {
                     setIsPasswordNeeded(linkInfo.isCustomPasswordProtected);
                 } else {
-                    const maybeNode = await loadRootNode(window.location.href, customPassword);
+                    const maybeNode = await loadRootNode(
+                        window.location.href,
+                        customPassword,
+                        !authentication.getUID()
+                    );
                     if (!maybeNode) {
                         return;
                     }
