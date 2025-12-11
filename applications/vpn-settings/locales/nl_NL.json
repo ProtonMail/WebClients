@@ -683,9 +683,6 @@
       "Pay": [
         "Betalen"
       ],
-      "Pay ${ price }": [
-        "Betaal ${ price }"
-      ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
       ],
@@ -1398,12 +1395,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -5192,9 +5183,6 @@
       "Select your deal": [
         "Kies uw deal"
       ],
-      "Select your payment method": [
-        "Selecteer uw betalingsmethode"
-      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
       ],
@@ -8442,9 +8430,6 @@
       ],
       "Billing cycle": [
         "Facturatieperiode"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Geblokkeerd"
@@ -13314,14 +13299,6 @@
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Krijg tot wel ${ credits } als krediet."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
@@ -16385,9 +16362,6 @@
       ],
       "Your ${ selected } plan": [
         "Uw ${ selected } abonnement"
-      ],
-      "Your plan includes:": [
-        "Uw abonnement omvat:"
       ]
     },
     "vpn_2step: tooltip": {

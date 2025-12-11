@@ -686,9 +686,6 @@
       "Pay": [
         "Plătire"
       ],
-      "Pay ${ price }": [
-        "Plată ${ price }"
-      ],
       "Pay ${ price } now": [
         "Plătire ${ price } acum"
       ],
@@ -1413,12 +1410,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
       ],
@@ -5245,9 +5236,6 @@
       "Select your deal": [
         "Selectați oferta"
       ],
-      "Select your payment method": [
-        "Selectați metoda de plată"
-      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
       ],
@@ -8584,9 +8572,6 @@
       ],
       "Billing cycle": [
         "Ciclu de facturare"
-      ],
-      "Black Friday": [
-        "Vinerea Neagră"
       ],
       "Block": [
         "Blocate"
@@ -13550,14 +13535,6 @@
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } în credite."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invitați persoane la ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO)."
@@ -16690,9 +16667,6 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
-      ],
-      "Your plan includes:": [
-        "Planul actual include:"
       ]
     },
     "vpn_2step: tooltip": {

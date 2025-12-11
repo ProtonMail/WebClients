@@ -627,9 +627,6 @@
       "Pay": [
         "Оплатить"
       ],
-      "Pay ${ price }": [
-        "Оплатить ${ price }"
-      ],
       "Pay ${ price } now": [
         "Оплатите ${ price } сейчас"
       ],
@@ -4818,9 +4815,6 @@
       ],
       "Select your deal": [
         "Выберете свое предложение"
-      ],
-      "Select your payment method": [
-        "Выберите способ оплаты"
       ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
@@ -12229,14 +12223,6 @@
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Вы можете получить до ${ credits } в кредитах."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Пригласите друзей в ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } просит вас помочь ему войти в свой аккаунт ${ BRAND_NAME } с единым входом."
@@ -15150,9 +15136,6 @@
       ],
       "Your ${ selected } plan": [
         "Ваш ${ selected } тариф"
-      ],
-      "Your plan includes:": [
-        "Ваш тариф включает:"
       ]
     },
     "vpn_2step: tooltip": {

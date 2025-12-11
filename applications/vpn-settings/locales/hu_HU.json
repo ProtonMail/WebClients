@@ -651,9 +651,6 @@
       "Pay": [
         "Fizetés"
       ],
-      "Pay ${ price }": [
-        "${ price } fizetése"
-      ],
       "Pay ${ price } now": [
         "${ price } kifizetése"
       ],
@@ -1299,9 +1296,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "A próbaidőszak ekkor ér véget: ${ formattedDate }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate } előtt."
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ha lemondja, az ingyenes próbaidőszaka nem alakul át fizetős előfizetéssé, de a próbaidőszak végéig még használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free plan csomagra kerül át."
       ],
@@ -4910,9 +4904,6 @@
       "Select your deal": [
         "Válassza ki az ajánlatot"
       ],
-      "Select your payment method": [
-        "Válassza ki a fizetési módot"
-      ],
       "Select your pricing plan": [
         "Válasszon előfizetést"
       ],
@@ -7948,9 +7939,6 @@
       ],
       "Billing cycle": [
         "Számlázási ciklus"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Block": [
         "Letiltás"
@@ -12444,14 +12432,6 @@
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Szerezzen akár ${ credits } kreditet."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Hívjon meg barátokat a ${ BRAND_NAME }ba"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } felhasználó az Ön segítségét kéri, hogy egyszeri bejelentkezéssel bejelentkezzen a(z) ${ BRAND_NAME } fiókjába."
@@ -15325,9 +15305,6 @@
       ],
       "Your ${ selected } plan": [
         "Az Ön ${ selected } csomagja"
-      ],
-      "Your plan includes:": [
-        "A csomagja tartalma:"
       ]
     },
     "vpn_2step: tooltip": {

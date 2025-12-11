@@ -686,9 +686,6 @@
       "Pay": [
         "Öde"
       ],
-      "Pay ${ price }": [
-        "${ price } öde"
-      ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
       ],
@@ -1404,11 +1401,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -5207,8 +5204,8 @@
       "Select your deal": [
         "Teklifinizi seçin"
       ],
-      "Select your payment method": [
-        "Ödeme yönteminizi seçin"
+      "Select your payment method:": [
+        "Ödeme yönteminizi seçin:"
       ],
       "Select your pricing plan": [
         "Ücret tarifenizi seçin"
@@ -8470,9 +8467,6 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
       "Block": [
         "Engellenen"
       ],
@@ -9967,6 +9961,9 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
+      "Activity logs and policy": [
+        "Etkinlik günlükleri ve ilke"
+      ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
@@ -10201,6 +10198,9 @@
       ],
       "Secure link sharing": [
         "Güvenli bağlantı paylaşımı"
+      ],
+      "Secure password management": [
+        "Güvenli parola yönetimi"
       ],
       "See team's availability": [
         "Ekibin uygunluğuna bakın"
@@ -12259,6 +12259,9 @@
       "How your free trial works:": [
         "Ücretsiz deneme süreniz nasıl işler:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliğini koruyan güvenli bir e-posta, bulut depolama, parola yöneticisi ve VPN hizmetidir. Bu bağlantıdan hesap aç ve 14 gün boyunca ücretli özellikleri ücretsiz kullan: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
       ],
@@ -12279,6 +12282,9 @@
       ],
       "Refer friends": [
         "Arkadaşlarınıza önerin"
+      ],
+      "Share using ${ name }": [
+        "${ name } ile paylaş"
       ],
       "Start earning credits": [
         "Kredi kazanmaya başlayın"
@@ -13370,14 +13376,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "${ credits } tutarına kadar kredi kazanın."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
     "sso": {
@@ -16464,9 +16462,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
-      ],
-      "Your plan includes:": [
-        "Tarifenizin özellikleri:"
       ]
     },
     "vpn_2step: tooltip": {
