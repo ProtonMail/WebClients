@@ -1,4 +1,4 @@
-import { useDrive } from '@proton/drive';
+import { NodeWithSameNameExistsValidationError, useDrive } from '@proton/drive';
 
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
@@ -38,31 +38,55 @@ export const useCopyItems = () => {
 
     const copyItems = async (itemsToCopy: Item[], targetFolderUid: string) => {
         const itemsByUid = Object.fromEntries(itemsToCopy.map((item) => [item.uid, item]));
-        const sourceUids = Object.keys(itemsByUid);
-        const copies: { uid: string; name: any; parentUid: string }[] = [];
+        const copies: Record<string, { uid: string; name: any; parentUid: string }> = {};
         const errors = [];
 
         try {
-            for await (const result of drive.copyNodes(sourceUids, targetFolderUid)) {
+            for await (const result of drive.copyNodes(itemsToCopy, targetFolderUid)) {
                 if (result.ok) {
-                    copies.push({
+                    copies[result.newUid] = {
                         uid: result.newUid,
                         name: itemsByUid[result.uid].name,
                         parentUid: targetFolderUid,
-                    });
+                    };
                 } else {
+                    if (result.error instanceof NodeWithSameNameExistsValidationError) {
+                        // Try creating file with a different name in case of a conflict
+                        const availableName = await drive.getAvailableName(
+                            targetFolderUid,
+                            itemsByUid[result.uid].name
+                        );
+                        const { done, value } = await drive
+                            .copyNodes([{ uid: result.uid, name: availableName }], targetFolderUid)
+                            .next();
+                        if (!done) {
+                            const conflict = value;
+                            if (conflict.ok) {
+                                copies[conflict.newUid] = {
+                                    uid: conflict.newUid,
+                                    name: availableName,
+                                    parentUid: targetFolderUid,
+                                };
+                            } else {
+                                errors.push({ error: conflict.error.toString() });
+                            }
+
+                            continue;
+                        }
+                    }
                     errors.push({ error: result.error.toString() });
                 }
             }
         } catch (error) {
-            handleSdkError(error, { extra: { sourceUids, targetFolderUid, errors } });
+            handleSdkError(error, { extra: { itemsToCopy, targetFolderUid, errors } });
         }
 
-        await getActionEventManager().emit({ type: ActionEventName.CREATED_NODES, items: copies });
+        const copiesList = Object.values(copies);
+        await getActionEventManager().emit({ type: ActionEventName.CREATED_NODES, items: copiesList });
         const undoHandler = async () => {
-            await undoCopy(copies);
+            await undoCopy(copiesList);
         };
-        showCopiedItemsNotifications(copies, errors, undoHandler);
+        showCopiedItemsNotifications(copiesList, errors, undoHandler);
     };
 
     return copyItems;
