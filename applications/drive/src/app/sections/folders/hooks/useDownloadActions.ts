@@ -39,15 +39,19 @@ export const useDownloadActions = ({ selectedItems }: Props) => {
             }
         }
 
-        void download(
-            selectedItems.map((link) => ({
-                ...link,
-                shareId: link.rootShareId,
-            }))
-        );
+        if (isSDKTransferEnabled) {
+            void dm.download(selectedItems.map((item) => item.uid));
+        } else {
+            void download(
+                selectedItems.map((link) => ({
+                    ...link,
+                    shareId: link.rootShareId,
+                }))
+            );
+        }
     };
 
     return {
-        downloadItems: isSDKTransferEnabled ? () => dm.download(selectedItems.map((item) => item.uid)) : downloadItems,
+        downloadItems,
     };
 };
