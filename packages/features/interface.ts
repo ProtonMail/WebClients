@@ -164,4 +164,10 @@ export enum FeatureCode {
 
     // BYOE
     BYOESpotlightModal = 'BYOESpotlightModal',
+
+    // NPS
+    NPSFeedbackDesktopCalendar = 'NPSFeedbackDesktopCalendar',
+    NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
+    NPSFeedbackWebCalendar = 'NPSFeedbackWebCalendar',
+    NPSFeedbackWebMail = 'NPSFeedbackWebMail',
 }

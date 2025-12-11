@@ -57,6 +57,7 @@ enum CommonFeatureFlag {
     AvatarColorWeb = 'AvatarColorWeb',
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
     OlesM1 = 'OlesM1',
+    WebNPSModal = 'WebNPSModal',
 }
 
 enum AccountFlag {

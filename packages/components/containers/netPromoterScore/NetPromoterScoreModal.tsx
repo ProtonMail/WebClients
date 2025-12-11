@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { dismissNps, submitNps } from '@proton/shared/lib/api/netPromoterScore';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ScaleLadder from '../../components/input/ScaleLadder';
 import Modal from '../../components/modalTwo/Modal';
@@ -17,9 +18,8 @@ import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import type { NetPromoterScoreModalProps } from './interface';
 
-export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalProps) => {
+const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: NetPromoterScoreModalProps) => {
     // TODO: add telemetry
-    const [openModal, setOpenModal] = useState(show);
     const [loadingByKey, withLoadingByKey] = useLoadingByKey();
     const [optionalComment, setOptionalComment] = useState('');
     const errorHandler = useErrorHandler();
@@ -33,7 +33,8 @@ export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalPro
         } catch (error) {
             errorHandler(error);
         }
-        setOpenModal(false);
+        void updateFeatureValue(false);
+        onClose();
     };
 
     const submitNPSScore = async () => {
@@ -43,18 +44,19 @@ export const NetPromoterScoreModal = ({ show, config }: NetPromoterScoreModalPro
 
         try {
             await api(submitNps({ Score: selectedScale, Comment: optionalComment }));
-            setOpenModal(false);
+            void updateFeatureValue(false);
+            onClose();
         } catch (error) {
             errorHandler(error);
         }
     };
 
     return (
-        <Modal size="large" fullscreenOnMobile open={openModal}>
+        <Modal size="large" fullscreenOnMobile open={open}>
             <ModalHeader title={c('Title').t`We'd love to hear from you!`} hasClose={false} />
             <ModalContent className="pt-4">
                 <p className="m-0 mt-6 mb-3 text-semibold">{c('new_plans: label')
-                    .t`We're always striving to make ${config.appName} better. How satisfied are you with your experience?`}</p>
+                    .t`We're always striving to make ${BRAND_NAME} ${config.appName} better. How satisfied are you with your experience?`}</p>
                 <ScaleLadder
                     from={0}
                     to={10}

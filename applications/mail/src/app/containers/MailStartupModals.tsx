@@ -10,7 +10,9 @@ import {
     useTrialEndedModal,
 } from '@proton/components';
 import type { StartupModal } from '@proton/components';
+import { useNetPromoterScoreModal } from '@proton/components/components/startupModals/startupModalHooks';
 import useInboxFreeTrial from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrial';
+import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';
@@ -59,12 +61,17 @@ const useStartupModals: () => StartupModal[] = () => {
     const onboardingModal = useMailOnboardingModal();
     const inboxDesktopFreeTrialOnboardingModal = useInboxDesktopFreeTrialOnboardingModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
+    const netPromoterScoreModal = useNetPromoterScoreModal(
+        isElectronMail ? NPSApplication.DesktopMail : NPSApplication.WebMail
+    );
+
     return [
         trialEndedModal,
         reminderModal,
         inboxDesktopFreeTrialOnboardingModal,
         onboardingModal,
         lightLabellingFeatureModal,
+        netPromoterScoreModal,
     ];
 };
 
