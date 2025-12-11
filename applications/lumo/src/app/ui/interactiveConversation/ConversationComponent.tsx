@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleEditMessage, HandleRegenerateMessage, HandleSendMessage } from '../../hooks/useLumoActions';
-import { tryParseToolCall } from '../../lib/toolCall/types';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
@@ -160,9 +159,6 @@ const ConversationComponent = ({
     const composerContainerRef = useRef<HTMLDivElement>(null);
 
     const conversationId = conversation?.id;
-    const isGeneratingWithToolCall = isGenerating
-        ? !!tryParseToolCall(messageChain[messageChain.length - 1]?.toolCall ?? '')
-        : undefined;
 
     const conversationErrors = useLumoSelector((state) =>
         conversationId ? selectConversationErrors(state, conversationId) : []
@@ -258,7 +254,6 @@ const ConversationComponent = ({
                         handleEditMessage={handleEditMessage}
                         getSiblingInfo={getSiblingInfo}
                         isGenerating={isGenerating}
-                        isGeneratingWithToolCall={isGeneratingWithToolCall}
                         sourcesContainerRef={sourcesContainerRef}
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}

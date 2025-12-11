@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import type { ToolCallName } from '../../../../../lib/toolCall/types';
 import LumoAvatar from '../../../../components/LumoAvatar/LumoAvatar';
 
 import './AvatarAndNotice.scss';
@@ -8,14 +9,10 @@ import './AvatarAndNotice.scss';
 export type AvatarAndNoticeProps = {
     isFinishedGenerating: boolean;
     isGenerating: boolean;
-    isGeneratingWithToolCall: boolean;
+    toolCallName?: ToolCallName;
 };
 
-export function AvatarAndNotice({
-    isFinishedGenerating,
-    isGenerating,
-    isGeneratingWithToolCall,
-}: AvatarAndNoticeProps) {
+export function AvatarAndNotice({ isFinishedGenerating, isGenerating, toolCallName }: AvatarAndNoticeProps) {
     // The CSS contains special styling such that the Lumo cat avatar
     // and "Conversation Encrypted" notice never overlap, even if the
     // message width is too short.
@@ -33,7 +30,7 @@ export function AvatarAndNotice({
                     </div>
                 )}
                 <div className="avatar-and-notice__avatar">
-                    <LumoAvatar isGenerating={isGenerating} isGeneratingWithToolCall={isGeneratingWithToolCall} />
+                    <LumoAvatar isGenerating={isGenerating} toolCallName={toolCallName} />
                 </div>
             </div>
         </div>
