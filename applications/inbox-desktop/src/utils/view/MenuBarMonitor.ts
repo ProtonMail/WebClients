@@ -15,6 +15,10 @@ export class MenuBarMonitor {
 
         browserWindow.addListener("hide", this.onWindowHide.bind(this));
         browserWindow.addListener("show", this.onWindowShow.bind(this));
+        browserWindow.addListener("closed", () => {
+            clearInterval(this.intervalId);
+            this.emitter.removeAllListeners();
+        });
 
         if (browserWindow.isVisible()) {
             this.menuBarVisible = browserWindow.isMenuBarVisible();

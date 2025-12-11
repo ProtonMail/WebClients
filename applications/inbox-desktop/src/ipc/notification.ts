@@ -12,6 +12,7 @@ import { isWindows, isMac } from "../utils/helpers";
 import { parseURLParams } from "../utils/urls/urlHelpers";
 import { join } from "node:path";
 import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
+import { isWindowValid } from "../utils/view/windowUtils";
 
 const notifications: Map<string, Notification> = new Map();
 
@@ -57,7 +58,7 @@ async function setBadgeCount(value: number) {
     if (isWindows) {
         const mainWindow = getMainWindow();
 
-        if (!mainWindow || mainWindow.isDestroyed()) {
+        if (!isWindowValid(mainWindow)) {
             return;
         }
 

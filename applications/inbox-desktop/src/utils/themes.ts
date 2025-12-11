@@ -9,6 +9,7 @@ import {
 } from "@proton/shared/lib/themes/themes";
 import { getMainWindow } from "./view/viewManagement";
 import { ColorScheme, ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { isWindowValid } from "./view/windowUtils";
 
 export const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",
@@ -64,7 +65,7 @@ export function updateNativeTheme(theme: ThemeSetting) {
     }
 
     const mainWindow = getMainWindow();
-    if (!mainWindow.isDestroyed()) {
+    if (isWindowValid(mainWindow)) {
         const themeColors = nativeTheme.shouldUseDarkColors
             ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
             : PROTON_THEMES_MAP[ThemeTypes.Snow];

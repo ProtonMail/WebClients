@@ -18,6 +18,7 @@ import {
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";
+import { isWindowValid } from "./utils/view/windowUtils";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
@@ -71,7 +72,7 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
     app.on("before-quit", () => {
         const mainWindow = getMainWindow();
 
-        if (!mainWindow || mainWindow.isDestroyed() || updateDownloaded) {
+        if (!isWindowValid(mainWindow) || updateDownloaded) {
             return;
         }
 
