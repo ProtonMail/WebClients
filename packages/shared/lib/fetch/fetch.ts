@@ -68,7 +68,7 @@ const fetchHelper = ({
         });
 };
 
-export default ({ data, headers, input = 'json', ...config }: FetchConfig) => {
+export default ({ data, headers, input = 'json', ...config }: FetchConfig): Promise<Response> => {
     const { headers: dataHeaders, body } = serializeData(data, input);
 
     return fetchHelper({
