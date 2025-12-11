@@ -166,8 +166,20 @@
       "Continue offline": [
         "Continuar off-line"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy and close": [
         "Copiar e fechar"
+      ],
+      "Copy card number": [
+        "Copiar número do cartão"
+      ],
+      "Copy email": [
+        "Copiar e-mail"
+      ],
+      "Copy expiration date": [
+        "Copiar data de expiração"
       ],
       "Copy forwarding address": [
         "Copiar o endereço de encaminhamento"
@@ -175,8 +187,23 @@
       "Copy link": [
         "Copiar link"
       ],
+      "Copy name on card": [
+        "Copiar nome no cartão"
+      ],
+      "Copy note content": [
+        "Copiar conteúdo da nota"
+      ],
+      "Copy password": [
+        "Copiar senha"
+      ],
+      "Copy security code": [
+        "Copiar código de segurança"
+      ],
       "Copy to clipboard": [
         "Copiar para área de transferência"
+      ],
+      "Copy username": [
+        "Copiar nome de usuário"
       ],
       "Create": [
         "Criar"
@@ -219,6 +246,9 @@
       ],
       "Custom section": [
         "Seção personalizada"
+      ],
+      "Cut": [
+        "Recortar"
       ],
       "Delete": [
         "Excluir"
@@ -465,6 +495,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "Colar"
       ],
       "Pause monitoring": [
         "Pausar monitoramento"
@@ -1931,7 +1964,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
