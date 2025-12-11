@@ -3,8 +3,8 @@ import { type FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { PlanIDs } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
@@ -92,7 +92,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             title: (
                 <div className="flex items-center gap-2">
                     {PLAN_NAMES[PLANS.PASS]}
-                    <Icon name="checkmark-circle-filled" size={5} color="var(--optional-promotion-text-weak)" />
+                    <IcCheckmarkCircleFilled size={5} color="var(--optional-promotion-text-weak)" />
                 </div>
             ),
             price: getPrice(passPlus.planIDs),

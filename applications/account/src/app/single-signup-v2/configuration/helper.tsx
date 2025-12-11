@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcShield } from '@proton/icons/icons/IcShield';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
@@ -236,19 +239,19 @@ export const getSwissFeature = ({ fullText }: { fullText: boolean }) => ({
 
 export const getEncryptedFeature = ({ e2ee }: { e2ee: boolean }) => ({
     key: 'e2e',
-    left: <Icon size={6} className="color-primary" name="lock" />,
+    left: <IcLock size={6} className="color-primary" />,
     text: e2ee ? c('pass_signup_2023: Feature').t`End-to-end encrypted` : c('signup: Feature').t`Encrypted`,
 });
 
 export const getNoLogsFeature = () => ({
     key: 'no-logs',
-    left: <Icon size={6} className="color-primary" name="eye-slash" />,
+    left: <IcEyeSlash size={6} className="color-primary" />,
     text: c('signup: Feature').t`Strict no-logs policy`,
 });
 
 export const getOpenSourceFeature = () => ({
     key: 'open-source',
-    left: <Icon size={6} className="color-primary" name="globe" />,
+    left: <IcGlobe size={6} className="color-primary" />,
     text: c('pass_signup_2023: Feature').t`Open source`,
 });
 
@@ -261,7 +264,7 @@ export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience
 
     const gdpr = {
         key: 'gdpr',
-        left: <Icon size={6} className="color-primary" name="shield" />,
+        left: <IcShield size={6} className="color-primary" />,
         text: c('signup_2024: Feature').t`GDPR and HIPAA compliant`,
     };
 

@@ -9,7 +9,6 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { OnLoginCallback } from '@proton/components';
 import {
     ConfirmSignOutModal,
-    Icon,
     SkeletonLoader,
     useErrorHandler,
     useModalState,
@@ -17,6 +16,7 @@ import {
 } from '@proton/components';
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import { useLoading } from '@proton/hooks';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -143,7 +143,7 @@ const AccountItem = ({
                     <CircleLoader />
                 </div>
             ) : (
-                <Icon className="account-button-icon my-auto" name="arrow-right" aria-hidden="true" />
+                <IcArrowRight className="account-button-icon my-auto" aria-hidden="true" />
             )}
         </div>
     );

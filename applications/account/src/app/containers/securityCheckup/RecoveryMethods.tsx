@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useSecurityCheckup } from '@proton/components';
+import { useSecurityCheckup } from '@proton/components';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import {
     getIsPerfectDeviceRecoveryState,
@@ -67,7 +68,7 @@ const Email = () => {
                     title={
                         <>
                             {c('Safety review').t`Your recovery email`} &nbsp;
-                            <Icon className="shrink-0 color-danger mb-0.5" size={4} name="exclamation-circle-filled" />
+                            <IcExclamationCircleFilled className="shrink-0 color-danger mb-0.5" size={4} />
                         </>
                     }
                     subTitle={email.value}
@@ -133,7 +134,7 @@ const Phone = () => {
                     title={
                         <>
                             {c('Safety review').t`Your recovery phone`} &nbsp;
-                            <Icon className="shrink-0 color-danger mb-0.5" size={4} name="exclamation-circle-filled" />
+                            <IcExclamationCircleFilled className="shrink-0 color-danger mb-0.5" size={4} />
                         </>
                     }
                     subTitle={formattedPhoneNumber}

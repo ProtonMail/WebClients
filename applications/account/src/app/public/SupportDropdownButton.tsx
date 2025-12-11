@@ -2,7 +2,8 @@ import type { Ref } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownCaret, Icon } from '@proton/components';
+import { DropdownCaret } from '@proton/components';
+import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -15,7 +16,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 
 const defaultChildren = (
     <>
-        <Icon name="life-ring" className="shrink-0 mr-2 self-center my-auto" />
+        <IcLifeRing className="shrink-0 mr-2 self-center my-auto" />
         <span>{c('Action').t`Support`}</span>
     </>
 );
