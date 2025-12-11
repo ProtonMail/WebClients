@@ -27,6 +27,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'session'; data: Partial<AuthSession> }
         | { type: 'sessions_synced'; data: SwitchableSession[] }
         | { type: 'unauthorized' }
+        | { type: 'qa::downtime'; enabled: boolean }
     );
 
 export type WithOrigin<T> = T & {
