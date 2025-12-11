@@ -29,8 +29,8 @@
       "Authenticate": [
         "Autenticar"
       ],
-      "Blur background": [
-        "Desenfocar el fondo"
+      "Background blur": [
+        "Desenfoque de fondo"
       ],
       "Cancel": [
         "Cancelar"
@@ -170,11 +170,14 @@
       "Next page": [
         "Página siguiente"
       ],
-      "Noise filter": [
-        "Filtro de ruido"
+      "Noise cancellation": [
+        "Cancelación de ruido"
       ],
       "Open link": [
         "Abrir enlace"
+      ],
+      "Picture-in-picture mode": [
+        "Modo imagen en imagen"
       ],
       "Previous month": [
         "Mes anterior"
@@ -263,9 +266,6 @@
       "Stay in meeting": [
         "Permanecer en la reunión"
       ],
-      "Stop incoming video": [
-        "Detener video entrante"
-      ],
       "Stop presenting": [
         "Detener presentación"
       ],
@@ -283,6 +283,9 @@
       ],
       "Try another method": [
         "Intenta con otro método"
+      ],
+      "Turn off incoming video": [
+        "Desactivar video entrante"
       ],
       "Use authentication code": [
         "Usar un código de autenticación"
@@ -328,9 +331,6 @@
       "Go to dashboard": [
         "Ir al panel de control"
       ],
-      "Hide self view": [
-        "Ocultar mi vista"
-      ],
       "Leave": [
         "Abandonar"
       ],
@@ -342,9 +342,6 @@
       ],
       "Meeting details": [
         "Detalles de la reunión"
-      ],
-      "Noise filter": [
-        "Filtro de ruido"
       ],
       "Open chat message search": [
         "Abrir búsqueda de mensajes del chat"
@@ -369,9 +366,6 @@
       ],
       "Show passphrase": [
         "Mostrar contraseña"
-      ],
-      "Stop incoming video": [
-        "Detener video entrante"
       ],
       "Toggle camera": [
         "Activar/Desactivar cámara"
@@ -1386,15 +1380,6 @@
       "Failed to decrypt session key": [
         "Error al descifrar la clave de sesión"
       ],
-      "Failed to get meeting info": [
-        "Error al obtener información para compartir"
-      ],
-      "Failed to get room name": [
-        "Error al obtener el nombre de la sala"
-      ],
-      "Failed to initialize handshake": [
-        "No se pudo inicializar el protocolo de enlace"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Error al unirse a la reunión. Por favor, inténtalo de nuevo más tarde."
       ],
@@ -1781,7 +1766,7 @@
       "Meeting link": [
         "Enlace de la reunión"
       ],
-      "Meeting locked. No new participants can join": [
+      "Meeting locked. No new participants can join.": [
         "Reunión bloqueada. No pueden unirse nuevos participantes."
       ],
       "Meeting unlocked. Participants can join again.": [
@@ -2234,14 +2219,6 @@
         "Mejorar"
       ]
     },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Consigue hasta ${ credits } en créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invita amigos a ${ BRAND_NAME }"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Iniciar sesión"
@@ -2285,6 +2262,9 @@
       ],
       "Assign a new host": [
         "Asignar un nuevo anfitrión"
+      ],
+      "Audio": [
+        "Audio"
       ],
       "Authenticator": [
         "Autenticador"
@@ -2388,6 +2368,9 @@
       "Secure meeting": [
         "Reunión segura"
       ],
+      "Security": [
+        "Seguridad"
+      ],
       "Settings": [
         "Configuración"
       ],
@@ -2414,6 +2397,9 @@
       ],
       "Upcoming meetings": [
         "Próximas reuniones"
+      ],
+      "Video": [
+        "Vídeo"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -2422,10 +2408,10 @@
       ]
     },
     "Tooltip": {
-      "Blur background": [
-        "Desenfocar el fondo"
+      "Background blur": [
+        "Desenfoque de fondo"
       ],
-      "Blur background is not supported on your browser": [
+      "Background blur is not supported on your browser": [
         "El desenfoque de fondo no es compatible en tu navegador"
       ],
       "Recurring meeting": [
