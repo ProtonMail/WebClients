@@ -228,9 +228,6 @@
       "Create": [
         "Asnulfu"
       ],
-      "Create account": [
-        "Snulfu-d amiḍan"
-      ],
       "Create calendar": [
         "Snulfu-d awitay"
       ],
@@ -632,9 +629,6 @@
       ],
       "Pay": [
         "Xelleṣ"
-      ],
-      "Pay ${ price }": [
-        "Xelleṣ ${ price }"
       ],
       "Pay ${ price } now": [
         "Xelleṣ tura ${ price }"
@@ -1414,9 +1408,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Rnu aseɣwen ɣer sezmel-inek n yimayl"
-      ],
       "Close": [
         "Mdel"
       ],
@@ -1435,9 +1426,6 @@
       "Got it": [
         "Gziɣ-t"
       ],
-      "Invite": [
-        "Snubget"
-      ],
       "Maybe later": [
         "Ahat ticki"
       ],
@@ -1449,9 +1437,6 @@
       ],
       "Take a tour": [
         "Snirem"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -4482,9 +4467,6 @@
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
       ],
-      "${ current } of ${ total }": [
-        "${ current } n ${ total }"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } d tarameɣtut"
       ],
@@ -4567,9 +4549,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Sizdeg ma tella ɣas yiwet seg tewtilin-agi)"
       ],
-      "* No credit card required.": [
-        "* Ulac takarḍa n usmad yettwasran."
-      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } D wugar",
         "+ ${ invisibleCount } D wugar"
@@ -4580,12 +4559,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
         "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
-      ],
-      "2. They try ${ planName }": [
-        "2. Ttaɛraḍen ${ planName }"
-      ],
-      "3. You earn credits": [
-        "3. Trebḥeḍ isemdan"
       ],
       "30-day money-back guarantee": [
         "Aɣram ɣef 30 n wussan yettwaḍmen"
@@ -4767,9 +4740,6 @@
       ],
       "Creating your account": [
         "Timerna n umiḍan-ik·im"
-      ],
-      "Credits earned": [
-        "Ttwarebḥen isemdan"
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -5175,13 +5145,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Inedbalen-nniḍen llan di tuddsa-k. D kečč ara sen-yefken awal uffir amaynut."
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyur",
-        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyuren"
-      ],
-      "Paid for a monthly plan": [
-        "Yettwaxelleṣ i uɣawas n wayyur"
       ],
       "password": [
         "awal uffir"
@@ -6633,9 +6596,6 @@
       "Remove image metadata": [
         "Kkes idefrisefka n tugna"
       ],
-      "Repeat password": [
-        "Ales awal uffir"
-      ],
       "Require 2FA for administrators": [
         "2FA yettwasra i yinedbalen"
       ],
@@ -7161,9 +7121,6 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Qqen i wakken ad tkecmeḍ ɣer umiḍan-ik ${ appName }"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Ɛreḍ ${ BRAND_NAME } baṭel s useɣwen-a"
       ]
     },
     "Modal title": {
@@ -7397,9 +7354,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Kemmel s uɣawas n baṭel"
-      ],
       "Delete account": [
         "Kkes amiḍan"
       ],
@@ -7417,9 +7371,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Leqqem ɣer ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -7686,9 +7637,6 @@
       ]
     },
     "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
       "Popular": [
         "Mucaɛ"
       ]
@@ -7712,17 +7660,8 @@
       ]
     },
     "new_plans: signup": {
-      "Payment details": [
-        "Talqayt n lexlas"
-      ],
-      "Subscription": [
-        "Amultaɣ"
-      ],
       "terms and conditions": [
         "tiwtilin n useqdec"
-      ],
-      "Your selected plan: ${ planName }": [
-        "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -8963,9 +8902,6 @@
       "Display name": [
         "Isem n uskan"
       ],
-      "Email": [
-        "Imayl"
-      ],
       "Email address": [
         "Tansa n yimayl"
       ],
@@ -8977,17 +8913,6 @@
       ],
       "Username": [
         "Isem n useqdac"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Asesteb n umiḍan"
-      ],
-      "Payment": [
-        "Lexlaṣ"
-      ],
-      "Verification": [
-        "Asenqed"
       ]
     },
     "signup: Action": {
@@ -9156,14 +9081,6 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Sali, tḥerzeḍ ugar s 2 yiseggasen n ${ planName }"
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Ṭṭef alamma d ${ credits } deg yiselmadan."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -9942,9 +9859,6 @@
       "Create user accounts": [
         "Rnu imiḍanen n useqdac"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Rnu amiḍan-ik ${ BRAND_NAME }"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Rnu tansa-ik ${ BRAND_NAME }"
       ],
@@ -10186,9 +10100,6 @@
       "Home": [
         "Asebter agejdan"
       ],
-      "How does it work?": [
-        "Amek i iteddu?"
-      ],
       "Human verification": [
         "Asenqed b-umdan"
       ],
@@ -10403,9 +10314,6 @@
       "Schedule send:": [
         "Sɣiwes tuzna:"
       ],
-      "Secure email based in Switzerland": [
-        "Imayl aɣelsan yellan di Swis"
-      ],
       "Security and privacy": [
         "Taɣellist d tbaḍnit"
       ],
@@ -10559,14 +10467,8 @@
       "Users and addresses": [
         "Iseqdacen d tansiwin"
       ],
-      "Verification": [
-        "Asenqed"
-      ],
       "Verification failed": [
         "Icceḍ usenqed"
-      ],
-      "Verify email address": [
-        "Senqed tansa-inek imayl"
       ],
       "Verifying your card...": [
         "Asefqed n tkarḍa-ik•im..."
@@ -10603,9 +10505,6 @@
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Tettwanecdeḍ ad tɛerḍeḍ ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10821,16 +10720,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Sekles ${ price.uiData.discountPercent }%"
-      ]
-    },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Yettwasnebget-d s yimayl"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Kcem s useɣwen-ik"
       ]
     },
     "User role": {

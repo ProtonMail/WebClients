@@ -193,7 +193,7 @@
         "適用"
       ],
       "Apply filter “${ Name }” to existing messages": [
-        "既存のメッセージに「${ Name }」を適用する"
+        "既存のメッセージに「${ Name }」フィルタを適用する"
       ],
       "Apply to existing messages": [
         "既存のメッセージに適用する"
@@ -393,9 +393,6 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } 以外の人と共有するリンクを作成"
       ],
-      "Create account": [
-        "アカウントを作成"
-      ],
       "Create calendar": [
         "カレンダーを作成"
       ],
@@ -460,7 +457,7 @@
         "削除・確認"
       ],
       "Delete filter “${ Name }”": [
-        "フィルター「${ Name }」を削除"
+        "フィルタ「${ Name }」を削除"
       ],
       "Delete Gateway": [
         "ゲートウェイ削除"
@@ -646,7 +643,7 @@
         "Sieve を編集"
       ],
       "Edit Sieve filter “${ Name }”": [
-        "Sieve フィルター「${ Name }」を編集"
+        "Sieve フィルタ「${ Name }」を編集"
       ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
@@ -676,7 +673,7 @@
         "複数ユーザー対応を有効にする"
       ],
       "Enable post-quantum protection": [
-        "量子耐性保護を有効化"
+        "ポスト量子保護を有効にする"
       ],
       "Encrypt and export": [
         "暗号化してエクスポートする"
@@ -712,7 +709,7 @@
         "延長"
       ],
       "Filters are being applied. This might take a few minutes.": [
-        "フィルターを適用しています。 数分かかるかもしれません。"
+        "フィルタを適用しています。 数分かかるかもしれません。"
       ],
       "Fit to window": [
         "ウィンドウに合わせる"
@@ -1079,9 +1076,6 @@
       ],
       "Pay": [
         "支払う"
-      ],
-      "Pay ${ price }": [
-        "${ price } を支払う"
       ],
       "Pay ${ price } now": [
         "${ price } を支払う"
@@ -2025,12 +2019,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
       ],
@@ -2748,9 +2736,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "リンクをメールフッターに追加"
-      ],
       "Close": [
         "閉じる"
       ],
@@ -2775,9 +2760,6 @@
       "Got it": [
         "分かりました"
       ],
-      "Invite": [
-        "招待"
-      ],
       "Maybe later": [
         "たぶんあとで"
       ],
@@ -2795,9 +2777,6 @@
       ],
       "Take a tour": [
         "ツアーを開始"
-      ],
-      "Tweet": [
-        "ツイート"
       ]
     },
     "Calendar access select label": {
@@ -2866,7 +2845,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "他の ${ BRAND_NAME } ユーザーとカレンダーを共有します。みんながカレンダー内のイベントを追加・編集できるようにして、協力できるようにまります。ユーザーの権限はいつでも変更できます。"
+        "他の ${ BRAND_NAME } ユーザーとカレンダーを共有します。みんながカレンダー内のイベントを追加・編集できるようにして、協力できるようになります。ユーザーの権限はいつでも変更できます。"
       ]
     },
     "Calendar settings section title": {
@@ -4580,9 +4559,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "おめでとうございます! ${ plusPlanName } を ${ rewardsLimit } ヶ月間無料で獲得しました。"
-      ],
       "Connect your CRM, website, printers, and more.": [
         "CRM、ウェブサイト、プリンターなどを接続。"
       ],
@@ -4685,17 +4661,11 @@
       "Track the status and activity of your referrals": [
         "招待の状態やアクティビティを確認します"
       ],
-      "Track the status and activity of your referrals.": [
-        "招待の状態やアクティビティを確認します。"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "現在のメールアドレスに加えて、短くて覚えやすいメールアドレス（${ activatePmUser }）を取得するためにアップグレードしてください。"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "${ PASS_APP_NAME }ブラウザ拡張機能で、特定の自動機能（自動入力、自動提案、自動保存）を実行すべきではないドメインのリストをカスタマイズできます。"
@@ -5416,7 +5386,7 @@
         "条件を編集"
       ],
       "Got it": [
-        "はい"
+        "分かりました"
       ],
       "Next": [
         "次"
@@ -5451,7 +5421,7 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "条件が不完全です。トークンを追加してください"
+        "条件が不完全です、トークンを追加してください"
       ],
       "Token already exists": [
         "トークンは既に存在します"
@@ -5469,7 +5439,7 @@
     },
     "email_forwarding_2023: Header": {
       "Actions": [
-        "やること"
+        "操作"
       ],
       "Forward from": [
         "転送元:"
@@ -5518,7 +5488,7 @@
         "互換性のため、${ boldForwarderEmail }ではポスト量子暗号化は無効化されます。"
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "互換性を保つため、量子耐性暗号化は無効化され、${ boldForwarderEmail } には新しい暗号鍵が生成されます。"
+        "互換性を保つため、ポスト量子暗号化は無効化され、新しい暗号鍵が ${ boldForwarderEmail } に対して生成されます。"
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "転送先が招待されており、招待を承諾/拒否するか更新する必要があります"
@@ -6892,7 +6862,7 @@
         "カレンダーから予定を復号中：${ totalProcessed } / ${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "パスワード初期化のため、予定の復号およびエクスポートはみんな失敗しました。"
+        "パスワードのリセットにより、予定を復号化してエクスポートすることができませんでした。"
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "パスワード初期化のため、いくつかの予定の復号およびエクスポートができませんでした。"
@@ -6904,7 +6874,7 @@
         "古いパスワードで暗号化された予定の復元方法について"
       ],
       "Loading events": [
-        "イベントを読み込み中"
+        "予定を読み込み中"
       ],
       "None of the events could be exported.": [
         "どの予定もエクスポートできませんでした。"
@@ -7841,9 +7811,6 @@
       "Select your deal": [
         "取引を選択してください"
       ],
-      "Select your payment method": [
-        "支払い方法を選択してください"
-      ],
       "Select your pricing plan": [
         "料金プランを選択してください"
       ],
@@ -8420,9 +8387,6 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } か国が有効"
       ],
-      "${ current } of ${ total }": [
-        "${ current } / ${ total }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }%割引"
       ],
@@ -8606,9 +8570,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(以下のいずれかの条件が満たされた場合に動作します)"
       ],
-      "* No credit card required.": [
-        "* クレジットカードは必要ありません。"
-      ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** はあなたの組織 **${ organizationName }**ではサポートされていません。"
       ],
@@ -8654,17 +8615,8 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. 友達を ${ BRAND_NAME } に招待"
-      ],
-      "2. They try ${ planName }": [
-        "2. 友達は ${ planName } を試すことができます"
-      ],
       "2FA disabled": [
         "2要素認証は無効"
-      ],
-      "3. You earn credits": [
-        "3. あなたにクレジットが付与されます"
       ],
       "30-day money-back guarantee": [
         "30 日間返金保証"
@@ -9012,7 +8964,7 @@
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
       "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "量子耐性保護を有効にすると、量子コンピューターでも解読できない鍵がこのアカウント用に生成されます。"
+        "ポスト量子保護を有効にすることで、量子コンピューターに耐性を持つ鍵がお客様のアカウントに生成されます。"
       ],
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
@@ -9136,9 +9088,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
-      ],
-      "Credits earned": [
-        "獲得したクレジット"
       ],
       "Current plan": [
         "現在のプラン"
@@ -9486,7 +9435,7 @@
         "ログの読み込みに失敗しました。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "メールとカレンダーをデスクトップから直接。速くて集中できる。"
+        "高速かつ集中。 メールとカレンダーが、デスクトップで直接使えます。"
       ],
       "Featured in": [
         "注目の"
@@ -9854,17 +9803,11 @@
       "Item updated in vault": [
         "保管庫のアイテムが更新されました"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "@ProtonMail を使っているのですが、あなたにもおすすめです。これはプライバシーを保護する安全なメールサービスです。私の紹介リンクでサインアップすると、1 か月間のプレミアム機能が無料で利用できます: ${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB ロゴ"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
-      ],
-      "Just send them your personal referral link.": [
-        "個人用の招待リンクを送信します。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "これらのガイドとヒントを活用して、情報をより安全かつプライベートに保ちましょう。"
@@ -10124,9 +10067,6 @@
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで。"
-      ],
       "One time import": [
         "1 回限りのインポート"
       ],
@@ -10192,12 +10132,6 @@
       ],
       "P2P": [
         "P2P"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } か月プランで支払い済み"
-      ],
-      "Paid for a monthly plan": [
-        "月額プランで支払い済み"
       ],
       "Paid for a plan": [
         "支払い済みのプラン"
@@ -10644,7 +10578,7 @@
         "カスタムドメインと非 ${ BRAND_NAME } メールアドレスのモニタリング対応は、近日公開予定です。"
       ],
       "Support for post-quantum keys is enabled for your account.": [
-        "あなたのアカウントでは、量子耐性鍵のサポートは有効になっています。"
+        "あなたのアカウントでポスト量子鍵のサポートが有効になっています。"
       ],
       "support team": [
         "サポートチーム"
@@ -10762,9 +10696,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
-      ],
-      "They'll receive a free month of ${ planName }.": [
-        "友達は1か月間 ${ planName } を無料で利用できます。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -10948,9 +10879,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロードおよびインストールして、サーバーに接続してください。"
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "${ toAppName } とすべての ${ BRAND_NAME } サービスを使用します"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } を使用するには、${ MAIL_APP_NAME } アドレスが必要です。"
@@ -11257,9 +11185,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスに通知を送信します。"
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "紹介した友達がプランに登録すると、あなたのプランに使用できるクレジットが付与されます。"
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "現在の有料サブスクリプションをキャンセルすると、サブスクリプションの残高はアカウントクレジットとして返却され、${ BRAND_NAME } ${ PLANS.FREE } プランにダウングレードされます。"
@@ -12446,9 +12371,6 @@
       "Billing cycle": [
         "支払い間隔"
       ],
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
       "Block": [
         "ブロック"
       ],
@@ -13211,9 +13133,6 @@
       "Repeat backup password": [
         "バックアップパスワードを再度入力"
       ],
-      "Repeat password": [
-        "パスワードを再度入力"
-      ],
       "Reply (ACS) URL": [
         "返信(ACS)URL"
       ],
@@ -13511,9 +13430,6 @@
       "Your password (trusted contact)": [
         "パスワード (信頼済みの連絡先)"
       ],
-      "Your referral link": [
-        "あなたの招待リンク"
-      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -13615,7 +13531,7 @@
         "快適性"
       ],
       "Compact": [
-        "詰める"
+        "コンパクト"
       ]
     },
     "Label to change view layout": {
@@ -14253,6 +14169,12 @@
       "Create a new ${ appName } account": [
         "新しい ${ appName } アカウントを作成する"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "${ BRAND_NAME }の二週間の無料期間をお試し下さい。"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "真のオンラインプライバシーを体験してください。${ BRAND_NAME } を利用して、今後14日間無料でデータを保護してください。"
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } アカウントのユーザー名を見つける"
       ],
@@ -14270,12 +14192,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } アカウントにログインすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスのすべてにアクセスできます。 アカウントをお持ちでない場合は、 無料で作成してください。"
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "エンドツーエンド暗号化でデータを管理しましょう"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "このリンクから ${ BRAND_NAME } を無料でお試しください"
       ]
     },
     "Modal title": {
@@ -14539,9 +14455,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "無料で続ける"
-      ],
       "Delete account": [
         "アカウントを削除"
       ],
@@ -14562,9 +14475,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "${ upsellPlanHumanSize } へアップグレード"
       ]
     },
     "new_plans: Action": {
@@ -15091,21 +15001,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } で、メールアドレスを作成し、サブユーザーのアカウントを管理できます。家庭や組織に最適です。"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* 12 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 15 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* 24 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 30 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -15147,9 +15042,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "ほかのプランに変更するとすべての ${ visionary } プランの特典は失われ、${ visionary } プランに戻ることはできなくなります。"
-      ],
-      "Most popular": [
-        "最も人気"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } プランは、特別な機能と特典を備えた元の ${ BRAND_NAME } ユーザー向けの特別プランであるため、新規加入者は利用できなくなりました。"
@@ -15222,14 +15114,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
       ],
-      "Payment details": [
-        "支払いの詳細"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "アカウントのリセットが必要になったときの認証用に、メールアドレスまたは電話番号を登録してください"
-      ],
-      "Subscription": [
-        "サブスクリプション"
       ],
       "terms and conditions": [
         "利用規約"
@@ -15242,9 +15128,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "${ planTitleElement }サブスクリプションは現在有効です。"
-      ],
-      "Your selected plan: ${ planName }": [
-        "選択中のプラン: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -16193,10 +16076,10 @@
         "許可しない"
       ],
       "Off": [
-        "切"
+        "オフ"
       ],
       "On": [
-        "入"
+        "オン"
       ],
       "Optional ${ defaultLabel }": [
         "オプションの${ defaultLabel }"
@@ -17544,7 +17427,7 @@
     },
     "PQC account key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "お客様のアカウントで量子耐性保護を有効にしましたが、量子耐性アカウント鍵やアドレス鍵の生成など、一部の操作がうまくいきませんでした。それらの鍵は、${ encryptionAndKeysSettingsTitle } の設定から手動で生成することができます。"
+        "お客様のアカウントでポスト量子保護が有効になりましたが、一部の操作が成功しませんでした。ポスト量子アカウントキーとアドレスキーの生成に失敗しました。これらのキーは、${ encryptionAndKeysSettingsTitle } 設定から手動で生成することができます。"
       ]
     },
     "PQC adress key generation": {
@@ -17570,7 +17453,7 @@
         "ポスト量子保護を有効にする"
       ],
       "Enable post-quantum protection?": [
-        "量子耐性保護を有効にしますか？"
+        "ポスト量子保護を有効にしますか？"
       ],
       "Enabling post-quantum protection failed. Try again later.": [
         "量子耐性保護を有効化できませんでした。後でもう一度お試しください。"
@@ -17578,7 +17461,7 @@
     },
     "pqc-optin: Action": {
       "Got it": [
-        "はい"
+        "分かりました"
       ]
     },
     "pqc-optin: Info": {
@@ -17588,7 +17471,7 @@
     },
     "pqc-optin: Progress status": {
       "Generating post-quantum account key": [
-        "量子耐性アカウントキーを生成中"
+        "ポスト量子アカウントキーを生成中"
       ],
       "Generating post-quantum address keys for each address": [
         "量子耐性アドレス鍵を各アドレス用に生成中"
@@ -17852,7 +17735,7 @@
         "クラシック"
       ],
       "Post-quantum": [
-        "量子耐性"
+        "ポスト量子"
       ]
     },
     "Remove calendar section description": {
@@ -19247,6 +19130,9 @@
       "Highest VPN speed": [
         "最高速 VPN"
       ],
+      "Mail": [
+        "メール"
+      ],
       "Mailboxes and custom domains for aliases": [
         "メールボックスおよびエイリアスのカスタムドメイン"
       ],
@@ -19444,9 +19330,6 @@
       "Display name": [
         "表示名"
       ],
-      "Email": [
-        "メールアドレス"
-      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -19458,17 +19341,6 @@
       ],
       "Username": [
         "ユーザー名"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "アカウント設定"
-      ],
-      "Payment": [
-        "支払い"
-      ],
-      "Verification": [
-        "検証"
       ]
     },
     "signup: Action": {
@@ -19806,12 +19678,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "招待したお客様が${ BRAND_NAME }のプランに登録すると、クレジットを獲得できます。"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "最大${ credits }分のクレジットを獲得できます"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "友達を ${ BRAND_NAME } に招待"
       ]
     },
     "sso": {
@@ -21604,9 +21470,6 @@
       "Create user accounts": [
         "アカウントを作成"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } アドレスを作成"
       ],
@@ -22048,14 +21911,8 @@
       "Home": [
         "ホーム"
       ],
-      "How does it work?": [
-        "どのように動作しますか?"
-      ],
       "How to choose a good logo": [
         "良いロゴの選び方"
-      ],
-      "How to refer a friend and get credits": [
-        "友人を招待し、クレジットを獲得する方法"
       ],
       "How your free trial works": [
         "無料トライアルについて"
@@ -22423,9 +22280,6 @@
       "Search for additional servers": [
         "追加のサーバーを検索"
       ],
-      "Secure email based in Switzerland": [
-        "スイスに拠点を置くセキュアなメール"
-      ],
       "Secure your passwords. Everywhere.": [
         "お客様のパスワードを保護。どこででも。"
       ],
@@ -22720,14 +22574,8 @@
       "Vaults owned": [
         "所有している保管庫"
       ],
-      "Verification": [
-        "検証"
-      ],
       "Verification failed": [
         "検証に失敗しました"
-      ],
-      "Verify email address": [
-        "メールアドレスを認証"
       ],
       "Verifying your card...": [
         "カードを検証中..."
@@ -22824,9 +22672,6 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } の試用に招待されました"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22883,7 +22728,7 @@
     },
     "Title header for keys table": {
       "Actions": [
-        "やること"
+        "操作"
       ],
       "Creation date": [
         "作成日付"
@@ -23488,10 +23333,10 @@
         "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
-        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！一月${ fallBackString }だけで、全てご利用いただけます。"
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
-        "安全なメール、${ VPN_SHORT_APP_NAME }、プライバシーを尊重したクラウドサービス、それにパスワードマネージャーをみんな一つにまとめました！月々追加料金**${ priceString }**のみで、全てご利用いただけます。"
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月々たったの**${ priceString }**の追加料金でご利用いただけます。"
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
@@ -23521,16 +23366,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "${ price.uiData.discountPercent }%を節約"
-      ]
-    },
-    "User referee invited via email": {
-      "Invited via email": [
-        "メール経由の招待"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "リンク経由でサインアップ済み"
       ]
     },
     "User role": {
@@ -23802,9 +23637,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } プラン"
-      ],
-      "Your plan includes:": [
-        "プランには次のものが含まれます。"
       ]
     },
     "vpn_2step: tooltip": {

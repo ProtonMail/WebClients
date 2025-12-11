@@ -296,9 +296,6 @@
       "Create": [
         "Створити"
       ],
-      "Create account": [
-        "Зареєструватися"
-      ],
       "Create calendar": [
         "Створити календар"
       ],
@@ -778,9 +775,6 @@
       ],
       "Pay": [
         "Сплатити"
-      ],
-      "Pay ${ price }": [
-        "Сплатити ${ price }"
       ],
       "Pay ${ price } now": [
         "Сплатити ${ price } зараз"
@@ -1853,9 +1847,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "Додайте посилання у нижній колонтитул електронної пошти"
-      ],
       "Close": [
         "Закрити"
       ],
@@ -1877,9 +1868,6 @@
       "Got it": [
         "Зрозуміло"
       ],
-      "Invite": [
-        "Запросити"
-      ],
       "Maybe later": [
         "Можливо пізніше"
       ],
@@ -1891,9 +1879,6 @@
       ],
       "Take a tour": [
         "Показати знайомство"
-      ],
-      "Tweet": [
-        "Твітнути"
       ]
     },
     "Calendar access select label": {
@@ -3441,12 +3426,6 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Вітаємо! Ви отримали максимум — ${ rewardsLimit } безкоштовний місяць тарифу ${ plusPlanName }.",
-        "Вітаємо! Ви отримали максимум — ${ rewardsLimit } безкоштовні місяці тарифу ${ plusPlanName }.",
-        "Вітаємо! Ви отримали максимум — ${ rewardsLimit } безкоштовних місяців тарифу ${ plusPlanName }.",
-        "Вітаємо! Ви отримали максимум — ${ rewardsLimit } безкоштовний(і) місяць(і) тарифу ${ plusPlanName }."
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
@@ -3501,14 +3480,8 @@
       "Track the status and activity of your referrals": [
         "Відстежуйте стан і активність ваших запрошень"
       ],
-      "Track the status and activity of your referrals.": [
-        "Відстежуйте стан і активність ваших запрошень."
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Оновіться, щоб отримати ${ activatePmUser } для коротшої, легкої для запам'ятовування адреси електронної пошти на додаток до вашої поточної."
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -6234,9 +6207,6 @@
         "${ countriesCount } країн увімкнено",
         "${ countriesCount } країна(и) увімкнена/і"
       ],
-      "${ current } of ${ total }": [
-        "${ current } з ${ total }"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } е-пошти недійсна"
       ],
@@ -6423,9 +6393,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(Фільтрувати, якщо виконується БУДЬ-ЯКА із зазначених умов)"
       ],
-      "* No credit card required.": [
-        "* Кредитна картка не потрібна."
-      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Отримайте адресу ${ BRAND_NAME }**, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -6444,17 +6411,8 @@
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Запросіть друзів до ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. Вони випробовують ${ planName }"
-      ],
       "2FA disabled": [
         "Двофакторна автентифікація вимкнена"
-      ],
-      "3. You earn credits": [
-        "3. Ви заробляєте кредити"
       ],
       "30-day money-back guarantee": [
         "Гарантія повернення грошей протягом 30 днів"
@@ -6845,9 +6803,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
-      ],
-      "Credits earned": [
-        "Зароблені кредити"
       ],
       "Current plan": [
         "Поточний план"
@@ -7389,17 +7344,11 @@
       "Item updated in vault": [
         "Елемент оновлено в сховищі"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я користуюся службою @ProtonMail і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за моїм запрошувальним посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
-      ],
       "JCB logo": [
         "Логотип JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
-      ],
-      "Just send them your personal referral link.": [
-        "Просто надішліть їм ваше особисте реферальне посилання."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Скористайтеся цими настановами й порадами, щоб зберігати свою інформацію в безпеці та приватності."
@@ -7590,9 +7539,6 @@
       "Once you reset your password:": [
         "Після скидання пароля:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Один обліковий запис. Усі служби ${ BRAND_NAME }."
-      ],
       "Open source": [
         "Відкритий програмний код"
       ],
@@ -7631,15 +7577,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Понад 100 мільйонів людей і компаній зареєструвалися в ${ BRAND_NAME }."
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Передплачено на ${ rewardMonths } місяць",
-        "Передплачено на ${ rewardMonths } місяці",
-        "Передплачено на ${ rewardMonths } місяців",
-        "Передплачено на ${ rewardMonths } місяці"
-      ],
-      "Paid for a monthly plan": [
-        "Передплачено місячний тарифний план"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor – користувацьку пошту підтверджено"
@@ -8094,9 +8031,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "Вони отримають безплатно один місяць ${ planName }."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
       ],
@@ -8246,9 +8180,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "щоб користуватися ${ toAppName } і всіма службами ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
@@ -8492,9 +8423,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Увімкнувши SAML для ${ appName } у свого провайдера ідентифікації, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера ідентифікації."
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Якщо вони передплатять тарифний план, ви отримаєте кредити, які можна використати для передплати."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Коли ви скасуєте поточну платну підписку, залишок вашої підписки буде повернено як кредит облікового запису і вас буде переведено на ${ BRAND_NAME } ${ PLANS.FREE } план."
@@ -9953,9 +9881,6 @@
       "Repeat backup password": [
         "Повторити резервний пароль"
       ],
-      "Repeat password": [
-        "Повторити пароль"
-      ],
       "Reply (ACS) URL": [
         "URL-адреса відповіді (ACS)"
       ],
@@ -10147,9 +10072,6 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
-      ],
-      "Your referral link": [
-        "Ваше реферальне посилання"
       ],
       "ZIP code": [
         "Поштовий індекс"
@@ -10725,9 +10647,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увійдіть у свій обліковий запис ${ BRAND_NAME }, щоб отримати доступ до всіх зашифрованих сервісів ${ BRAND_NAME }, як-от ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та інших. Не маєте облікового запису? Створіть його БЕЗПЛАТНО."
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "Спробуйте ${ BRAND_NAME } безплатно за цим посиланням"
       ]
     },
     "Modal title": {
@@ -10997,9 +10916,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "Залишити безплатний"
-      ],
       "Delete account": [
         "Видалити обліковий запис"
       ],
@@ -11020,9 +10936,6 @@
       ],
       "Switch plan": [
         "Змінити тарифний план"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Покращити до ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -11591,21 +11504,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } дає вам змогу створювати адреси електронної пошти й керувати обліковими записами підлеглих користувачів. Ідеально для сім'ї та організацій."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 1 місяць. Інші варіанти передплати доступні під час оформлення замовлення."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 12 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 15 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 24 місяці. Інші варіанти передплати доступні під час оформлення замовлення."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 30 місяців. Інші варіанти передплати доступні під час оформлення замовлення."
-      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
       ],
@@ -11641,9 +11539,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Якщо ви зміните тарифний план, то втратите всі переваги плану ${ visionary } та не зможете повернутися знову до ${ visionary }."
-      ],
-      "Most popular": [
-        "Найпопулярніші"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарифний план ${ visionary } більше недоступний новим передплатникам, оскільки це особливий план для користувачів оригінального ${ BRAND_NAME } зі спеціальними функціями та перевагами."
@@ -11707,14 +11602,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }"
       ],
-      "Payment details": [
-        "Подробиці платежу"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Збережіть свою адресу електронної пошти чи номер телефону для відновлення доступу під час скидання облікового запису."
-      ],
-      "Subscription": [
-        "Передплата"
       ],
       "terms and conditions": [
         "умови та положення"
@@ -11727,9 +11616,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "Ваша підписка на ${ planTitleElement } активована."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Обраний вами тарифний план: ${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -14629,9 +14515,6 @@
       "Display name": [
         "Показувати як"
       ],
-      "Email": [
-        "Е-пошта"
-      ],
       "Email address": [
         "Адреса е-пошти"
       ],
@@ -14643,17 +14526,6 @@
       ],
       "Username": [
         "Ім'я користувача"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Налаштування облікового запису"
-      ],
-      "Payment": [
-        "Оплата"
-      ],
-      "Verification": [
-        "Перевірка"
       ]
     },
     "signup: Action": {
@@ -14936,14 +14808,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "Отримайте до ${ credits } кредиту."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Запросіть друзів до ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16635,9 +16499,6 @@
       "Create user accounts": [
         "Створити облікові записи користувачів"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Створіть свій обліковий запис ${ BRAND_NAME }"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "Створіть свою адресу ${ BRAND_NAME }"
       ],
@@ -16956,14 +16817,8 @@
       "Home": [
         "Дім"
       ],
-      "How does it work?": [
-        "Як це працює?"
-      ],
       "How to choose a good logo": [
         "Як обрати хороший логотип"
-      ],
-      "How to refer a friend and get credits": [
-        "Як запросити друзів і отримати кредити"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -17259,9 +17114,6 @@
       "Search for additional servers": [
         "Пошук додаткових серверів"
       ],
-      "Secure email based in Switzerland": [
-        "Захищена електронна пошта, що розташована у Швейцарії"
-      ],
       "Security and privacy": [
         "Безпека й приватність"
       ],
@@ -17487,14 +17339,8 @@
       "Users and addresses": [
         "Користувачі та адреси"
       ],
-      "Verification": [
-        "Перевірка"
-      ],
       "Verification failed": [
         "Не вдалося виконати перевірку"
-      ],
-      "Verify email address": [
-        "Підтвердити адресу е-пошти"
       ],
       "Verifying your card...": [
         "Ваша картка перевіряється..."
@@ -17561,9 +17407,6 @@
       ],
       "Your subscriptions": [
         "Ваші передплати"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Ви запрошені спробувати ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18018,16 +17861,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "Заощадьте ${ price.uiData.discountPercent }%"
-      ]
-    },
-    "User referee invited via email": {
-      "Invited via email": [
-        "Запрошено електронною поштою"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "Реєструється за вашим посиланням"
       ]
     },
     "User role": {

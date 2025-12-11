@@ -334,9 +334,6 @@
       "Create": [
         "創建"
       ],
-      "Create account": [
-        "創建帳號"
-      ],
       "Create calendar": [
         "創建行事曆"
       ],
@@ -867,9 +864,6 @@
       ],
       "Pay": [
         "付款"
-      ],
-      "Pay ${ price }": [
-        "支付 ${ price }"
       ],
       "Pay ${ price } now": [
         "繳款金額 ${ price }"
@@ -1606,9 +1600,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "在 ${ formattedDate } 試用結束後，其會變成付費訂閱，並將每月自動續訂。若您在 ${ formattedDate } 前取消，則不會被收費。"
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
       ],
@@ -2044,9 +2035,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        "將連結加入到您的電郵註腳"
-      ],
       "Close": [
         "關閉"
       ],
@@ -2071,9 +2059,6 @@
       "Got it": [
         "瞭解"
       ],
-      "Invite": [
-        "邀請"
-      ],
       "Maybe later": [
         "稍後再說"
       ],
@@ -2091,9 +2076,6 @@
       ],
       "Take a tour": [
         "瀏覽"
-      ],
-      "Tweet": [
-        "推文"
       ]
     },
     "Calendar access select label": {
@@ -3627,9 +3609,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
       ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "一鍵建立 Zoom 會議並新增加入活動的詳細資訊。"
       ],
@@ -3690,14 +3669,8 @@
       "Track the status and activity of your referrals": [
         "追蹤您推薦邀請的狀態和進度"
       ],
-      "Track the status and activity of your referrals.": [
-        "追蹤您推介的狀態和活動。"
-      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升級至${ activatePmUser }以取得更短更好記的電子郵件地址並增加於現有的。"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        "您可繼續邀請好友，惟不會賺取更多儲值"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -6371,9 +6344,6 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
-      "${ current } of ${ total }": [
-        "${ total } 中的 ${ current }"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }%折扣"
       ],
@@ -6503,9 +6473,6 @@
       "(Filter if ANY of the following conditions are met)": [
         "(篩選須符合下列「任一」條件)"
       ],
-      "* No credit card required.": [
-        "* 無需信用卡。"
-      ],
       "**Enable automatic backups** for peace of mind": [
         "**啟用自動備份**，讓您安枕無憂"
       ],
@@ -6530,17 +6497,8 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
-      "1. Invite friends to ${ BRAND_NAME }": [
-        "1. 邀請好友加入 ${ BRAND_NAME }"
-      ],
-      "2. They try ${ planName }": [
-        "2. 讓他們試試看 ${ planName }"
-      ],
       "2FA disabled": [
         "已停用 2FA"
-      ],
-      "3. You earn credits": [
-        "三、您賺取儲值"
       ],
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
@@ -6901,9 +6859,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
-      ],
-      "Credits earned": [
-        "獲得餘額了"
       ],
       "Current plan": [
         "當前方案"
@@ -7484,17 +7439,11 @@
       "Item updated in vault": [
         "於保管庫項目已更新"
       ],
-      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "我在用 @ProtonMail，覺得您也會喜歡的。它是一個安全的電子郵件服務，可以保護到您的隱私。用我的推介連結註冊的話，還可以免費獲得 1 個月的尊享功能哦：${ referrerLink }"
-      ],
       "JCB logo": [
         "JCB 符號"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
-      ],
-      "Just send them your personal referral link.": [
-        "只需將您的個人推介連結傳送給他們即可。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "透過導引及建議確保您的資料安全及隱私。"
@@ -7694,9 +7643,6 @@
       "Once you reset your password:": [
         "一旦您重設您的密碼："
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "單一帳號用於所有 ${ BRAND_NAME } 服務。"
-      ],
       "One time import": [
         "一次性匯入"
       ],
@@ -7744,12 +7690,6 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "超過億人及企業註冊${ BRAND_NAME }"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "已付費 ${ rewardMonths } 個月方案"
-      ],
-      "Paid for a monthly plan": [
-        "以每月方案付費"
       ],
       "Paid for a plan": [
         "已付款訂購方案"
@@ -8216,9 +8156,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "這些認證無法用於登入我們的官方 ${ VPN_APP_NAME } 應用程式。${ learnMore }"
       ],
-      "They'll receive a free month of ${ planName }.": [
-        "他們將會收到免費的月數在 ${ planName }。"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
       ],
@@ -8371,9 +8308,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "為保護網路連線安全，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "以便使用 ${ toAppName } 以及所有 ${ BRAND_NAME } 服務"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "若要使用 ${ toAppName }，您需要一個 ${ MAIL_APP_NAME } 電子郵件位址。"
@@ -8620,9 +8554,6 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "當前往您的身分提供者為 ${ appName } 啟用 SAML 時，可能會提示您使用回呼 (ACS) URL 和簽發者 ID。只需複製下方資料並在您的身分提供者提示的欄位中貼上即可。"
-      ],
-      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "當他們訂購了一個方案。您會得到點數可使用在您的訂購授權上。"
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "當您取消目前付費訂閱，您訂閱的餘額將轉換為帳號額度並降級至${ BRAND_NAME }${ PLANS.FREE }方案。"
@@ -10110,9 +10041,6 @@
       "Repeat backup password": [
         "再次輸入備份密碼"
       ],
-      "Repeat password": [
-        "重複輸入密碼"
-      ],
       "Reply (ACS) URL": [
         "回覆 (ACS) 網址"
       ],
@@ -10313,9 +10241,6 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
-      ],
-      "Your referral link": [
-        "您的推薦連結"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -10868,9 +10793,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登入您的 ${ BRAND_NAME } 帳號以存取所有加密的 ${ BRAND_NAME } 服務，如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與更多。還沒有帳號？免費創建一個吧。"
-      ],
-      "Try ${ BRAND_NAME } for free with this link": [
-        "免費 ${ BRAND_NAME } 滿意體驗連結請點擊這裡"
       ]
     },
     "Modal title": {
@@ -11131,9 +11053,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with Free": [
-        "繼續使用免費方案"
-      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -11154,9 +11073,6 @@
       ],
       "Switch plan": [
         "切換方案"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "升級到 ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -11671,21 +11587,6 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 可讓您為創建電郵位址給子使用者並具備管理帳號權限。非常適合家庭親人和機構組織。"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "＊月付方案訂購授權。更多授權選項可在結帳時加購。"
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "*為期 12 個月授權。更多授權選項可在結帳時加購。"
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* 長達 15 個月服務授權。其它訂購授權選項可在結帳時加購。"
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "*為期 24 個月授權。更多授權選項可在結帳時加購。"
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* 長達 30 個月服務授權。其它訂購授權選項可在結帳時加購。"
-      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
       ],
@@ -11718,9 +11619,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "如果你切換到不同的方案，你將失去所有 ${ visionary } 方案的福利，且無法切換回 ${ visionary } 。"
-      ],
-      "Most popular": [
-        "最受歡迎"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
@@ -11787,14 +11685,8 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "建立 ${ BRAND_NAME } 帳號即表示您同意我們的${ terms }"
       ],
-      "Payment details": [
-        "付款細節"
-      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "保存您的電子郵件或手機號碼，當您需要重設帳戶時可用於驗證。"
-      ],
-      "Subscription": [
-        "訂閱"
       ],
       "terms and conditions": [
         "條款及細則"
@@ -11807,9 +11699,6 @@
       ],
       "Your ${ planTitleElement } subscription is now active.": [
         "您的 ${ planTitleElement } 訂購授權現在已啟用。"
-      ],
-      "Your selected plan: ${ planName }": [
-        "您選擇的方案：${ planName }"
       ]
     },
     "new_plans: Subtext": {
@@ -14561,9 +14450,6 @@
       "Display name": [
         "顯示名稱"
       ],
-      "Email": [
-        "電郵"
-      ],
       "Email address": [
         "電子郵件位址"
       ],
@@ -14575,17 +14461,6 @@
       ],
       "Username": [
         "使用者名稱"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "帳號設定"
-      ],
-      "Payment": [
-        "付款"
-      ],
-      "Verification": [
-        "驗證"
       ]
     },
     "signup: Action": {
@@ -14858,14 +14733,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
-      ]
-    },
-    "Spotlight": {
-      "Get up to ${ credits } in credits.": [
-        "取得多達 ${ credits } 的積點。"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "揪親朋好友一起用 ${ BRAND_NAME }"
       ]
     },
     "sso": {
@@ -16419,9 +16286,6 @@
       "Create user accounts": [
         "創建使用者帳號"
       ],
-      "Create your ${ BRAND_NAME } Account": [
-        "創建您的 ${ BRAND_NAME } 帳號"
-      ],
       "Create your ${ BRAND_NAME } address": [
         "創建 ${ BRAND_NAME } 電郵位址"
       ],
@@ -16776,14 +16640,8 @@
       "Home": [
         "首頁"
       ],
-      "How does it work?": [
-        "那是如何運作的？"
-      ],
       "How to choose a good logo": [
         "如何選擇適當的標誌"
-      ],
-      "How to refer a friend and get credits": [
-        "如何引薦親友以獲得獎勵額度"
       ],
       "Human verification": [
         "真人身分驗證"
@@ -17088,9 +16946,6 @@
       "Schedule send:": [
         "排程送出:"
       ],
-      "Secure email based in Switzerland": [
-        "總部設於瑞士的安全電郵"
-      ],
       "Security": [
         "安全性"
       ],
@@ -17331,14 +17186,8 @@
       "Users and addresses": [
         "使用者及電郵位址"
       ],
-      "Verification": [
-        "驗證"
-      ],
       "Verification failed": [
         "驗證失敗"
-      ],
-      "Verify email address": [
-        "驗證電郵位址"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."
@@ -17417,9 +17266,6 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "您已獲邀滿意體驗 ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -17783,16 +17629,6 @@
       ],
       "Save ${ price.uiData.discountPercent }%": [
         "降價 ${ price.uiData.discountPercent }%"
-      ]
-    },
-    "User referee invited via email": {
-      "Invited via email": [
-        "透過 email 邀請"
-      ]
-    },
-    "User referee signed up using referral link": {
-      "Signed up via your link": [
-        "透過您的連結註冊"
       ]
     },
     "User role": {
