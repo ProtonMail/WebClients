@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "Crear nueva página de reservas"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandir la barra de navegación para ver las reservas"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandir la barra de navegación para ver calendarios"
       ]
     },
     "action": {
@@ -1201,6 +1207,12 @@
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -6472,6 +6493,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12048,6 +12072,15 @@
       ],
       "Cannot create more Booking pages": [
         "No puede crear más páginas de reserva"
+      ],
+      "The booking feature is currently unavailable.": [
+        "La función de reservas no está disponible."
+      ],
+      "This booking page can’t be shown.": [
+        "No se puede mostrar esta página de reservas."
+      ],
+      "This booking page has expired.": [
+        "Esta página de reservas ha expirado."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12621,6 +12654,17 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "No hay espacios disponibles."
+      ],
+      "Please check the link and try again.": [
+        "Compruebe el enlace e intente de nuevo."
+      ],
+      "Please try again later.": [
+        "Intente de nuevo más tarde."
       ]
     }
   }

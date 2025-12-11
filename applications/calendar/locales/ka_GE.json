@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "ახალი დაჯავშნის გვერდის შექმნა"
+      ],
+      "Expand navigation bar to see bookings": [
+        "ნავიგაციის პანელის გაშლა ჯავშნების სანახავად"
+      ],
+      "Expand navigation bar to see calendars": [
+        "ნავიგაციის პანელის გაშლა კალენდრების სანახავად"
       ]
     },
     "action": {
@@ -3300,6 +3306,15 @@
       ],
       "90 minutes": [
         "90 წუთი"
+      ],
+      "120m": [
+        "120წთ"
+      ],
+      "60m": [
+        "60წთ"
+      ],
+      "90m": [
+        "90წთ"
       ]
     },
     "Edit event button tooltip": {
@@ -6368,6 +6383,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } წთ"
       ]
     },
     "info": {
@@ -8201,6 +8219,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ]
     },
     "new_plans: Subtext": {
@@ -11876,6 +11897,15 @@
       ],
       "Cannot create more Booking pages": [
         "მეტი დაჯავშნის გვერდის შექმნა შეუძლებელია"
+      ],
+      "The booking feature is currently unavailable.": [
+        "დაჯავშნის ფუნქცია ამჟამად მიუწვდომელია."
+      ],
+      "This booking page can’t be shown.": [
+        "ამ ჯავშნის გვერდის ჩვენება შეუძლებელია."
+      ],
+      "This booking page has expired.": [
+        "ამ დაჯავშნის გვერდის ვადა ამოწურულია."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12440,6 +12470,17 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "ჯავშნები ხელმისაწვდომი არაა."
+      ],
+      "Please check the link and try again.": [
+        "შეამოწმეთ ბმული და თავიდან სცადეთ."
+      ],
+      "Please try again later.": [
+        "მოგვიანებით სცადეთ."
       ]
     }
   }

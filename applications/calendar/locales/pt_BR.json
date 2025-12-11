@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "Criar nova página de agendamento"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandir barra de navegação para ver os agendamentos"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandir barra de navegação para ver calendários"
       ]
     },
     "action": {
@@ -1201,6 +1207,12 @@
       ],
       "You have reached the trial limit.": [
         "Você atingiu o limite de avaliação."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate1 }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -6448,6 +6469,21 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Peça ao seu administrador para fazer upgrade do plano ou remover uma página da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, peça ao seu administrador para fazer upgrade do seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, faça upgrade do seu plano."
       ]
     },
     "info": {
@@ -12027,6 +12063,12 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Cannot create more Booking pages": [
+        "Não é possível criar mais páginas de agendamento"
+      ],
+      "This booking page has expired.": [
+        "Esta página de agendamento expirou."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12600,6 +12642,14 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Nenhum agendamento disponível."
+      ],
+      "Please try again later.": [
+        "Tente novamente mais tarde."
       ]
     }
   }

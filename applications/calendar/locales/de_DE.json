@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "Eine neue Buchungsseite erstellen"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Erweitere die Navigationsleiste, um Buchungen zu sehen"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Erweitere die Navigationsleiste, um Kalender zu sehen"
       ]
     },
     "action": {
@@ -1201,6 +1207,12 @@
       ],
       "You have reached the trial limit.": [
         "Du hast das Testversions-Limit erreicht."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nachdem deine Testversion am ${ formattedDate1 } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate2 } kündigst."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 Minuten"
+      ],
+      "120m": [
+        "120 Min."
+      ],
+      "60m": [
+        "60 Min."
+      ],
+      "90m": [
+        "90 Min."
       ]
     },
     "Edit billing address form note": {
@@ -6472,6 +6493,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } Min."
       ]
     },
     "info": {
@@ -12048,6 +12072,15 @@
       ],
       "Cannot create more Booking pages": [
         "Du kannst keine weiteren Buchungsseiten erstellen."
+      ],
+      "The booking feature is currently unavailable.": [
+        "Die Buchungsfunktion ist momentan nicht verfügbar."
+      ],
+      "This booking page can’t be shown.": [
+        "Diese Buchungsseite kann nicht angezeigt werden."
+      ],
+      "This booking page has expired.": [
+        "Diese Buchungsseite ist abgelaufen."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12621,6 +12654,17 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Keine Termine verfügbar."
+      ],
+      "Please check the link and try again.": [
+        "Bitte überprüfe den Link und versuche es erneut."
+      ],
+      "Please try again later.": [
+        "Bitte versuch es später noch einmal."
       ]
     }
   }

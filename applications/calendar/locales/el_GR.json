@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "Δημιουργήστε μια νέα σελίδα κρατήσεων"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Ανάπτυξη γραμμής περιήγησης για προβολή κρατήσεων"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Ανάπτυξη γραμμής περιήγησης για προβολή ημερολογίων"
       ]
     },
     "action": {
@@ -1201,6 +1207,12 @@
       ],
       "You have reached the trial limit.": [
         "Έχετε φτάσει το όριο της δοκιμής."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 λεπτά"
+      ],
+      "120m": [
+        "120λ"
+      ],
+      "60m": [
+        "60λ"
+      ],
+      "90m": [
+        "90λ"
       ]
     },
     "Edit billing address form note": {
@@ -6472,6 +6493,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } λ."
       ]
     },
     "info": {
@@ -12048,6 +12072,15 @@
       ],
       "Cannot create more Booking pages": [
         "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Η λειτουργία κράτησης δεν είναι διαθέσιμη προς το παρόν."
+      ],
+      "This booking page can’t be shown.": [
+        "Αυτή η σελίδα κράτησης δεν μπορεί να εμφανιστεί."
+      ],
+      "This booking page has expired.": [
+        "Αυτή η σελίδα κράτησης έχει λήξει."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12621,6 +12654,17 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Δεν υπάρχουν διαθέσιμες κρατήσεις."
+      ],
+      "Please check the link and try again.": [
+        "Παρακαλούμε ελέγξτε τον σύνδεσμο και δοκιμάστε ξανά."
+      ],
+      "Please try again later.": [
+        "Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ]
     }
   }

@@ -6716,6 +6716,9 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
       ]
     },
     "Link label (optional)": {
@@ -11768,6 +11771,19 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     }
   }

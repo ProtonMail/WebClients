@@ -1004,6 +1004,12 @@
       ],
       "Create a new booking page": [
         "Skapa en ny bokningssida"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Expandera navigeringsfält för att se bokningar"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandera navigeringsfält för att se kalendrar"
       ]
     },
     "action": {
@@ -3300,6 +3306,15 @@
       ],
       "90 minutes": [
         "90 minuter"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3957,6 +3972,9 @@
       ],
       "Location is required": [
         "Plats är obligatoriskt"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Kan inte skapa en bokning med en inaktiverad adress"
       ]
     },
     "error": {
@@ -6403,6 +6421,9 @@
       ],
       "To add a new booking page, upgrade your plan.": [
         "För att lägga till en ny bokningssida, uppgradera ditt paket."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -11965,6 +11986,15 @@
       ],
       "Cannot create more Booking pages": [
         "Kan inte skapa fler bokningssidor"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Bokningsfunktionen är för närvarande inte tillgänglig."
+      ],
+      "This booking page can’t be shown.": [
+        "Denna bokningssida kan inte visas."
+      ],
+      "This booking page has expired.": [
+        "Denna bokningssida har löpt ut."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12535,6 +12565,14 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Text": {
+      "Please check the link and try again.": [
+        "Kontrollera länken och försök igen."
+      ],
+      "Please try again later.": [
+        "Försök igen senare."
       ]
     }
   }

@@ -1010,6 +1010,12 @@
       ],
       "Create a new booking page": [
         "Opprett en ny bestillingsside"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Utvid navigasjonsfeltet for å se bestillinger"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Utvid navigasjonsfeltet for å se kalendere"
       ]
     },
     "action": {
@@ -1201,6 +1207,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 minutter"
+      ],
+      "120m": [
+        "120 min."
+      ],
+      "60m": [
+        "60 min."
+      ],
+      "90m": [
+        "90 min."
       ]
     },
     "Edit billing address form note": {
@@ -6472,6 +6493,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min."
       ]
     },
     "info": {
@@ -12048,6 +12072,15 @@
       ],
       "Cannot create more Booking pages": [
         "Kan ikke opprette flere bestillingssider"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Bestillingsfunksjonen er utilgjengelig for øyeblikket."
+      ],
+      "This booking page can’t be shown.": [
+        "Denne bestillingssiden kan ikke vises."
+      ],
+      "This booking page has expired.": [
+        "Denne bestillingssiden er utløpt."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12621,6 +12654,17 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Ingen bestillinger tilgjengelig."
+      ],
+      "Please check the link and try again.": [
+        "Sjekk koblingen og prøv igjen."
+      ],
+      "Please try again later.": [
+        "Prøv igjen senere."
       ]
     }
   }

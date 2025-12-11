@@ -1007,6 +1007,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Klap de navigatiebalk uit om reserveringen te zien"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Navigatiebalk uitklappen om andere agenda's te zien"
       ]
     },
     "action": {
@@ -3315,6 +3321,15 @@
       ],
       "90 minutes": [
         "90 minuten"
+      ],
+      "120m": [
+        "120m"
+      ],
+      "60m": [
+        "60m"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -6439,6 +6454,9 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "U heeft het maximale aantal beschikbare boekingspagina's voor uw abonnement bereikt."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -12012,6 +12030,15 @@
       ],
       "Cannot create more Booking pages": [
         "Kan niet meer boekingspagina's aanmaken."
+      ],
+      "The booking feature is currently unavailable.": [
+        "De reserveringsfunctionaliteit is momenteel onbeschikbaar."
+      ],
+      "This booking page can’t be shown.": [
+        "Deze reserveringspagina kan niet getoond worden."
+      ],
+      "This booking page has expired.": [
+        "Deze reserveringspagina is verlopen."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12585,6 +12612,17 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Geen reserveringen beschikbaar"
+      ],
+      "Please check the link and try again.": [
+        "Controleer de koppeling en probeer het opnieuw."
+      ],
+      "Please try again later.": [
+        "Probeer het later nog eens."
       ]
     }
   }

@@ -1018,6 +1018,12 @@
       ],
       "Create a new booking page": [
         "Vytvořit novou rezervační stránku"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Pro zobrazení rezervací rozbalte navigační panel"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Pro zobrazení kalendářů rozbalte navigační panel"
       ]
     },
     "action": {
@@ -1221,6 +1227,12 @@
       ],
       "You have reached the trial limit.": [
         "Dosáhli jste limitu zkušební verze."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po konci zkušební doby ${ formattedDate1 } začne placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate2 }, nebudou vám účtovány žádné poplatky."
       ]
     },
     "b2b_trials_Action": {
@@ -3362,6 +3374,15 @@
       ],
       "90 minutes": [
         "90 minut"
+      ],
+      "120m": [
+        "120 min."
+      ],
+      "60m": [
+        "60 min."
+      ],
+      "90m": [
+        "90 min."
       ]
     },
     "Edit billing address form note": {
@@ -6640,6 +6661,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min."
       ]
     },
     "info": {
@@ -12472,6 +12496,15 @@
       ],
       "Cannot create more Booking pages": [
         "Nelze vytvořit další rezervační stránky"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Funkce rezervací je momentálně nedostupná."
+      ],
+      "This booking page can’t be shown.": [
+        "Tato rezervační stránka nemůže být zobrazena."
+      ],
+      "This booking page has expired.": [
+        "Tato rezervační stránka vypršela."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13133,6 +13166,17 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Žádné rezervace nejsou dostupné."
+      ],
+      "Please check the link and try again.": [
+        "Zkontrolujte prosím odkaz a zkuste to znovu."
+      ],
+      "Please try again later.": [
+        "Zkuste to prosím později."
       ]
     }
   }

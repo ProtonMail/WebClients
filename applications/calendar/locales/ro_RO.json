@@ -1014,6 +1014,12 @@
       ],
       "Create a new booking page": [
         "Creare pagină de rezervări"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Extindere bară de navigare pentru a vedea rezervările"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Extindere bară de navigare pentru a vedea calendarele"
       ]
     },
     "action": {
@@ -3340,6 +3346,15 @@
       ],
       "90 minutes": [
         "90 de minute"
+      ],
+      "120m": [
+        "120 m"
+      ],
+      "60m": [
+        "60 m"
+      ],
+      "90m": [
+        "90 m"
       ]
     },
     "Edit billing address form note": {
@@ -6556,6 +6571,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ]
     },
     "info": {
@@ -6770,7 +6788,7 @@
         "Toată ziua"
       ],
       "All-day event notifications": [
-        "Notificări evenimente toată ziua"
+        "Notificări pentru evenimente care durează toată ziua"
       ],
       "Anderson": [
         "Andrei"
@@ -7153,7 +7171,7 @@
         "Fus orar secundar"
       ],
       "Show others when I'm busy": [
-        "Afișare stare disponibilitate celorlalți"
+        "Arată celorlalți stare mea"
       ],
       "Show week numbers": [
         "Afișare număr săptămână"
@@ -12260,6 +12278,15 @@
       ],
       "Cannot create more Booking pages": [
         "Nu se mai pot crea pagini de rezervare"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Funcția de rezervare nu este disponibilă momentan."
+      ],
+      "This booking page can’t be shown.": [
+        "Această pagină de rezervare nu poate fi afișată."
+      ],
+      "This booking page has expired.": [
+        "Această pagină de rezervare a expirat."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12877,6 +12904,17 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Nu există rezervări disponibile."
+      ],
+      "Please check the link and try again.": [
+        "Verificați legătura web și reîncercați."
+      ],
+      "Please try again later.": [
+        "Reîncercați mai târziu."
       ]
     }
   }
