@@ -285,9 +285,7 @@ const FeatureElement = ({
 }) => {
     return (
         <div className="flex flex-nowrap gap-2 items-center">
-            <div className="bg-norm color-hint rounded flex items-center justify-center ratio-square shrink-0">
-                {icon}
-            </div>
+            <div className="color-hint rounded flex items-center justify-center ratio-square shrink-0">{icon}</div>
             <p className="m-0 flex gap-0.5 flex-column">
                 <span className="text-sm color-hint flex items-center gap-1">
                     {title}
