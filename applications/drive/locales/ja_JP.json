@@ -1290,12 +1290,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -6554,7 +6548,7 @@
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
       "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "お客様のデータはあなただけのものです。エンドツーエンド暗号化で保護された全機能のスプレッドシートを使用して、創造や共同作業を行ってください。"
+        "あなたのデータはあなたのものです。 エンドツーエンドの暗号化で保護された、機能豊富なスプレッドシートを使って作成および共同作業を行いましょう。"
       ],
       "Your email address and password were leaked:": [
         "メールアドレスとパスワードが漏洩しました:"
@@ -6814,9 +6808,6 @@
       ],
       "Billing cycle": [
         "支払い間隔"
-      ],
-      "Black Friday": [
-        "ブラックフライデー"
       ],
       "Browser": [
         "ブラウザ"
@@ -10649,12 +10640,6 @@
       ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "最大${ credits }分のクレジットを獲得できます"
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "友達を ${ BRAND_NAME } に招待"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"

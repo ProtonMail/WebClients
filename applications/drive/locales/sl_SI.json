@@ -1236,6 +1236,14 @@
         "Nepodprt dogodek"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Še ${ hiddenResultsCount } zadetek, ki ni prikazan",
+        "Še ${ hiddenResultsCount } zadetka, ki nista prikazana",
+        "Še ${ hiddenResultsCount } zadetki, ki niso prikazani",
+        "Še ${ hiddenResultsCount } zadetkov, ki niso prikazani"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Prekliči naročnino"
@@ -2842,6 +2850,11 @@
       ],
       "Priority support": [
         "Prednostna podpora"
+      ]
+    },
+    "Duo offer": {
+      "2 user accounts": [
+        "2 uporabniška računa"
       ]
     },
     "Email body for invitation": {
@@ -7023,6 +7036,9 @@
       "Reactivate now": [
         "Ponovno aktivirajte zdaj"
       ],
+      "Reactivate subscription": [
+        "Obnovi naročnino"
+      ],
       "Request an invite": [
         "Zahtevaj povabilo"
       ],
@@ -9840,12 +9856,6 @@
     "Spotlight": {
       "Encrypted search is here": [
         "Šifrirano iskanje je tukaj"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Pridobite do ${ credits } kot dobropis."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Zdaj lahko preprosto iščete po datotekah v storitvi Drive, hkrati pa ohranjate varnost svojih podatkov."
