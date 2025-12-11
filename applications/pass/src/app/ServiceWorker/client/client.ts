@@ -112,5 +112,10 @@ export const createServiceWorkerClient = (clientID: string): ServiceWorkerClient
         },
     };
 
+    if (ENV === 'development') {
+        const self = window as any;
+        self['qa::downtime'] = (enabled: boolean) => sw.send({ type: 'qa::downtime', enabled });
+    }
+
     return sw;
 };

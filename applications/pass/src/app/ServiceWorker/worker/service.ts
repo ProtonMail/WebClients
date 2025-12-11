@@ -11,6 +11,7 @@ import { fetchController } from './fetch-controller';
 import { handleImage, matchImageRoute } from './image';
 import { cacheOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchPrivateAppNavigate } from './offline';
 import { handlePolling, matchPollingRoute } from './polling';
+import { matchAPIRoute, simulateDownTime } from './qa';
 import {
     handleLock,
     handleRefresh,
@@ -21,6 +22,13 @@ import {
 } from './session';
 
 declare let self: ServiceWorkerGlobalScope;
+
+const SW_FLAGS = { downtime: false };
+const DEV_MODE = ENV === 'development';
+
+const setDownTimeFlag = (enabled: boolean): void => {
+    SW_FLAGS.downtime = enabled && DEV_MODE;
+};
 
 /** Claims all clients to ensure they are controlled by the latest service worker.
  * After claiming, sends a message to all clients (including uncontrolled ones)
@@ -74,6 +82,8 @@ self.addEventListener('fetch', async (event) => {
     const { url, mode, destination } = event.request;
     const { pathname } = new URL(url);
 
+    if (DEV_MODE && SW_FLAGS.downtime && matchAPIRoute(pathname)) return simulateDownTime(event);
+
     if (matchPrivateAppNavigate(pathname, mode, destination)) return handleIndex(event);
     if (matchLockRoute(pathname)) return handleLock(event);
     if (matchSetLocalKeyRoute(pathname)) return handleSetLocalKey(event);
@@ -88,5 +98,6 @@ ServiceWorkerMessageBroker.register('abort', ({ requestId }) => fetchController.
 ServiceWorkerMessageBroker.register('claim', onClaim);
 ServiceWorkerMessageBroker.register('unauthorized', () => clearCache().then(noop));
 ServiceWorkerMessageBroker.register('fs_gc', ({ filenames }) => onFileStorageGC(filenames));
+if (DEV_MODE) ServiceWorkerMessageBroker.register('qa::downtime', ({ enabled }) => setDownTimeFlag(enabled));
 
 self.addEventListener('message', ServiceWorkerMessageBroker.onMessage);
