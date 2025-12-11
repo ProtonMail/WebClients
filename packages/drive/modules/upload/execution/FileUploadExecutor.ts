@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
-import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
+import {
+    NodeWithSameNameExistsValidationError,
+    type ProtonDriveClient,
+    type ProtonDrivePublicLinkClient,
+} from '../../../index';
 import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import type { FileUploadTask } from '../types';
@@ -22,7 +26,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 task.isUnfinishedUpload
             );
 
-            const drive = getDrive();
+            const drive = this.driveClient;
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
 
             const controller = await uploader.uploadFromFile(task.file, thumbnails, (uploadedBytes: number) => {
@@ -114,7 +118,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
     }
 
     private async getUploader(
-        drive: ReturnType<typeof getDrive>,
+        drive: ProtonDriveClient | ProtonDrivePublicLinkClient,
         task: FileUploadTask,
         metadata: {
             mediaType: string;

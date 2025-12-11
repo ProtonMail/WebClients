@@ -21,6 +21,10 @@ export class SDKTransferActivity {
         }
 
         const drive = getDrive();
+        // TODO: Update when public client will support onMessage
+        if (!drive) {
+            return;
+        }
 
         const unsubscribePaused = drive.onMessage(SDKEvent.TransfersPaused, () => this.handleTransfersPaused());
         const unsubscribeResumed = drive.onMessage(SDKEvent.TransfersResumed, () => this.handleTransfersResumed());

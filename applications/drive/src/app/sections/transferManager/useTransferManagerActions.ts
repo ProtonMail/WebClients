@@ -3,16 +3,13 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useConfirmActionModal } from '@proton/components/index';
-import { NodeType, splitNodeUid, useDrive } from '@proton/drive/index';
+import { useConfirmActionModal } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
-import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { BaseTransferStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
@@ -21,9 +18,6 @@ export const useTransferManagerActions = () => {
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [sharingModal, showSharingModal] = useSharingModal();
     const { getUploadItem } = useUploadQueueStore(useShallow((state) => ({ getUploadItem: state.getItem })));
-    const { activeFolder } = useActiveShare();
-    const { navigateToLink } = useDriveNavigation();
-    const { drive } = useDrive();
     const { clearDownloads, updateDownloadItem, getDownloadItem } = useDownloadManagerStore(
         useShallow((state) => {
             return {
@@ -95,35 +89,19 @@ export const useTransferManagerActions = () => {
         });
     };
 
-    const share = async (entry: TransferManagerEntry) => {
+    const share = async (
+        entry: TransferManagerEntry,
+        /** @deprecated: Should be removed once everything is migrated to sdk */
+        deprecatedShareId: string
+    ) => {
         const uploadedItem = getUploadItem(entry.id);
         if (uploadedItem && uploadedItem.nodeUid) {
             const { nodeId, volumeId } = splitNodeUid(uploadedItem.nodeUid);
             showSharingModal({
                 volumeId: volumeId,
                 linkId: nodeId,
-                shareId: activeFolder.shareId,
+                shareId: deprecatedShareId,
             });
-        }
-    };
-
-    const goToLocation = async (entry: TransferManagerEntry) => {
-        const uploadedItem = getUploadItem(entry.id);
-        if (!uploadedItem?.nodeUid) {
-            return;
-        }
-        if (uploadedItem.type === NodeType.Folder) {
-            const { nodeId } = splitNodeUid(uploadedItem.nodeUid);
-            navigateToLink(activeFolder.shareId, nodeId, false);
-        }
-
-        if (uploadedItem.type === NodeType.File) {
-            const maybeNode = await drive.getNode(uploadedItem.nodeUid);
-            const { node } = getNodeEntity(maybeNode);
-            if (node.parentUid) {
-                const { nodeId } = splitNodeUid(node.parentUid);
-                navigateToLink(activeFolder.shareId, nodeId, false);
-            }
         }
     };
 
@@ -143,7 +121,6 @@ export const useTransferManagerActions = () => {
         cancelAll,
         confirmModal,
         sharingModal,
-        goToLocation,
         retryFailedTransfers,
     };
 };

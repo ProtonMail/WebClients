@@ -4,6 +4,7 @@ import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadEvent, FolderCreationEvent, PhotosUploadEvent, UploadEvent } from '../types';
 import { UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { uploadLogError } from '../utils/uploadLogger';
 import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
 
@@ -108,6 +109,12 @@ export class UploadEventHandler {
         }
         const controllerStore = useUploadControllerStore.getState();
 
+        const uploadItem = queueStore.getItem(event.uploadId);
+        uploadLogError('File upload failed', event.error, {
+            uploadId: event.uploadId,
+            fileName: uploadItem?.name,
+        });
+
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.Failed,
             error: event.error,
@@ -136,6 +143,13 @@ export class UploadEventHandler {
 
     private handleFolderError(event: FolderCreationEvent & { type: 'folder:error' }): void {
         const queueStore = useUploadQueueStore.getState();
+
+        const uploadItem = queueStore.getItem(event.uploadId);
+        uploadLogError('Folder creation failed', event.error, {
+            uploadId: event.uploadId,
+            folderName: uploadItem?.name,
+        });
+
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.Failed,
             error: event.error,
