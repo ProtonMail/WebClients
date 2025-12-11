@@ -97,10 +97,12 @@ export type CancelablePromise<T> = Promise<T> & { cancel: () => void };
 
 export const cancelable = <T>(job: () => Promise<T>, canceled: boolean = false) => ({
     run: () =>
-        new Promise<T>(async (resolve, reject) => {
-            const result = await job();
-            return canceled ? reject() : resolve(result);
-        }),
+        canceled
+            ? Promise.reject()
+            : new Promise<T>(async (resolve, reject) => {
+                  const result = await job();
+                  return canceled ? reject() : resolve(result);
+              }),
     cancel: () => {
         canceled = true;
     },
