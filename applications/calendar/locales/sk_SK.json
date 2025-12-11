@@ -389,6 +389,12 @@
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
       ],
+      "Expand navigation bar to see bookings": [
+        "Rozbaliť navigačný panel pre zobrazenie rezervácií"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Rozbaliť navigačný panel pre zobrazenie kalendárov"
+      ],
       "Expand video conferencing widget": [
         "Rozšírenie widgetu pre videokonferencie"
       ],
@@ -1192,11 +1198,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate1 } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
@@ -6834,9 +6840,6 @@
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Prehliadač"
       ],
@@ -10730,12 +10733,6 @@
       ],
       "Custom event colors": [
         "Vlastné farby udalostí"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Získajte až ${ credits } v kreditoch."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Pozvite priateľov do ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Naplánujte si a pripojte sa k hovorom ${ MEET_APP_NAME } priamo zo svojho kalendára."

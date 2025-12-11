@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
+      "Expand navigation bar to see bookings": [
+        "Expandir la barra de navegación para ver las reservas"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandir la barra de navegación para ver calendarios"
+      ],
       "Expand video conferencing widget": [
         "Expandir el widget de videoconferencia"
       ],
@@ -1172,11 +1178,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará si cancela antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Cuando finalice la prueba el ${ formattedDate1 }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará nada si cancela antes del ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
@@ -6656,9 +6662,6 @@
       "Billing cycle": [
         "Ciclo de facturación"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Navegador"
       ],
@@ -10368,12 +10371,6 @@
       ],
       "Custom event colors": [
         "Colores de eventos personalizados"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Obtenga hasta ${ credits } en créditos."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Invite amistades a ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Programe y únase a las llamadas de ${ MEET_APP_NAME } directamente desde su calendario."

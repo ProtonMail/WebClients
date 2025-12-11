@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
+      "Expand navigation bar to see bookings": [
+        "Ανάπτυξη γραμμής περιήγησης για προβολή κρατήσεων"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Ανάπτυξη γραμμής περιήγησης για προβολή ημερολογίων"
+      ],
       "Expand video conferencing widget": [
         "Ανάπτυξη γραφικού στοιχείου τηλεδιάσκεψης"
       ],
@@ -1172,11 +1178,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate1 }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
@@ -6656,9 +6662,6 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
       ],
@@ -10368,12 +10371,6 @@
       ],
       "Custom event colors": [
         "Προσαρμοσμένα χρώματα εκδηλώσεων"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Λάβετε έως και ${ credits } σε πιστώσεις."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Προγραμματίστε και συμμετάσχετε στις κλήσεις του ${ MEET_APP_NAME } απευθείας από το ημερολόγιό σας."

@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
       ],
+      "Expand navigation bar to see bookings": [
+        "Utvid navigasjonsfeltet for å se bestillinger"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Utvid navigasjonsfeltet for å se kalendere"
+      ],
       "Expand video conferencing widget": [
         "Utvid widget for videokonferanser"
       ],
@@ -1172,12 +1178,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
       ],
@@ -3286,6 +3286,9 @@
       "120 minutes": [
         "120 minutter"
       ],
+      "120m": [
+        "120 min."
+      ],
       "30 minutes": [
         "30 minutter"
       ],
@@ -3295,8 +3298,14 @@
       "60 minutes": [
         "60 minutter"
       ],
+      "60m": [
+        "60 min."
+      ],
       "90 minutes": [
         "90 minutter"
+      ],
+      "90m": [
+        "90 min."
       ]
     },
     "Edit billing address form note": {
@@ -4931,6 +4940,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
@@ -6643,9 +6655,6 @@
       ],
       "Billing cycle": [
         "Faktureringssyklus"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Browser": [
         "Nettleser"
@@ -10357,12 +10366,6 @@
       "Custom event colors": [
         "Tilpassede hendelsesfarger"
       ],
-      "Get up to ${ credits } in credits.": [
-        "Få opptil ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
-      ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Planlegg og bli med i ${ MEET_APP_NAME }-samtaler rett fra kalenderen din."
       ],
@@ -11206,6 +11209,17 @@
         "Bli med på Teams-møte"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Ingen bestillinger tilgjengelig."
+      ],
+      "Please check the link and try again.": [
+        "Sjekk koblingen og prøv igjen."
+      ],
+      "Please try again later.": [
+        "Prøv igjen senere."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -11868,6 +11882,15 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Bestillingsfunksjonen er utilgjengelig for øyeblikket."
+      ],
+      "This booking page can’t be shown.": [
+        "Denne bestillingssiden kan ikke vises."
+      ],
+      "This booking page has expired.": [
+        "Denne bestillingssiden er utløpt."
       ],
       "Time": [
         "Tid"

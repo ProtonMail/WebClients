@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
+      "Expand navigation bar to see bookings": [
+        "Expandera navigeringsfält för att se bokningar"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Expandera navigeringsfält för att se kalendrar"
+      ],
       "Expand video conferencing widget": [
         "Expandera widget för videokonferenser"
       ],
@@ -1166,12 +1172,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -6602,9 +6602,6 @@
       "Billing cycle": [
         "Faktureringsperiod"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Browser": [
         "Webbläsare"
       ],
@@ -10300,12 +10297,6 @@
       ],
       "Custom event colors": [
         "Anpassade händelsefärger"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Få upp till ${ credits } i krediter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Bjud in vänner till ${ BRAND_NAME }"
       ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Schemalägg och anslut till ${ MEET_APP_NAME }-samtal direkt från din kalender."

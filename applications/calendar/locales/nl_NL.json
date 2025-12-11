@@ -380,6 +380,12 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
+      "Expand navigation bar to see bookings": [
+        "Klap de navigatiebalk uit om reserveringen te zien"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Navigatiebalk uitklappen om andere agenda's te zien"
+      ],
       "Expand video conferencing widget": [
         "Videoconferentie widget uitbreiden"
       ],
@@ -1169,12 +1175,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
       ],
@@ -3283,6 +3283,9 @@
       "120 minutes": [
         "120 minuten"
       ],
+      "120m": [
+        "120m"
+      ],
       "30 minutes": [
         "30 minuten"
       ],
@@ -3292,8 +3295,14 @@
       "60 minutes": [
         "60 minuten"
       ],
+      "60m": [
+        "60m"
+      ],
       "90 minutes": [
         "90 minuten"
+      ],
+      "90m": [
+        "90m"
       ]
     },
     "Edit billing address form note": {
@@ -4925,6 +4934,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -6619,9 +6631,6 @@
       ],
       "Billing cycle": [
         "Facturatieperiode"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Browser": [
         "Browser"
@@ -10333,12 +10342,6 @@
       "Custom event colors": [
         "Aangepaste kleuren voor afspraken"
       ],
-      "Get up to ${ credits } in credits.": [
-        "Krijg tot wel ${ credits } als krediet."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ],
       "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
         "Plan en neem deel aan ${ MEET_APP_NAME } oproepen direct vanuit uw agenda."
       ],
@@ -11182,6 +11185,17 @@
         "Deelnemen aan Teams vergadering"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Geen reserveringen beschikbaar"
+      ],
+      "Please check the link and try again.": [
+        "Controleer a.u.b. de koppeling en probeer het opnieuw."
+      ],
+      "Please try again later.": [
+        "Probeer het later nog eens."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -11841,6 +11855,15 @@
       ],
       "Summary": [
         "Overzicht"
+      ],
+      "The booking feature is currently unavailable.": [
+        "De reserveringsfunctionaliteit is momenteel onbeschikbaar."
+      ],
+      "This booking page can’t be shown.": [
+        "Deze reserveringspagina kan niet getoond worden."
+      ],
+      "This booking page has expired.": [
+        "Deze reserveringspagina is verlopen."
       ],
       "Time": [
         "Tijd"
