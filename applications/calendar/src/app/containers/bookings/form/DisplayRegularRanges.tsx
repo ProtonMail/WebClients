@@ -27,6 +27,7 @@ interface Props {
     onEndChange: (range: BookingRange, value: Date) => void;
     onDateChange: (id: string, range: BookingRange, value?: Date) => void;
     onPlusClick: (range: BookingRange) => void;
+    hasReachedMaxSlots: boolean;
 }
 
 export const DisplayRegularRanges = ({
@@ -36,6 +37,7 @@ export const DisplayRegularRanges = ({
     onEndChange,
     onDateChange,
     onPlusClick,
+    hasReachedMaxSlots,
 }: Props) => {
     const isPlusDisabled = (range: BookingRange) => {
         return formData.bookingRanges.filter((r) => isSameDay(r.start, range.start)).some(wouldOverflowDay);
@@ -56,7 +58,7 @@ export const DisplayRegularRanges = ({
                             className="booking-date-input"
                         />
                     </div>
-                    <RangeStartTimeLabel htmlFor={`range-start-input-${range.id}`} />
+                    <RangeStartTimeLabel htmlFor={`range-start-time-${range.id}`} />
                     <StartTimeInput
                         id={`range-start-time-${range.id}`}
                         range={range}
@@ -75,7 +77,10 @@ export const DisplayRegularRanges = ({
                     />
                 </div>
                 <div className="flex flex-nowrap shrink-0">
-                    <AddButton onClick={() => onPlusClick(range)} disabled={isPlusDisabled(range)} />
+                    <AddButton
+                        onClick={() => onPlusClick(range)}
+                        disabled={isPlusDisabled(range) || hasReachedMaxSlots}
+                    />
                     <RemoveButton onClick={() => removeBookingRange(range.id)} />
                 </div>
             </RangeWrapper>

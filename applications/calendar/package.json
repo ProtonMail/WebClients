@@ -16,9 +16,9 @@
         "lint:warning": "eslint",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --logical",
-        "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
-        "test:watch": "jest --watch --coverage=false"
+        "test": "cross-env TZ=UTC jest",
+        "test:ci": "yarn run test --ci --coverage --runInBand",
+        "test:watch": "yarn run test --coverage=false --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",

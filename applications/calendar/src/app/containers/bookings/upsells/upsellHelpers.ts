@@ -10,17 +10,12 @@ import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PA
  */
 export const hasUserReachPlanLimit = (
     user: UserModel,
-    bookingsPages?: InternalBookingPage[],
+    pageCount: number,
     organization?: OrganizationExtended
 ): boolean => {
     // Free mail users get no booking pages
     if (!user.hasPaidMail) {
         return true;
-    }
-
-    // Users with no booking pages didn't reach any limit yet or if the user cannot pay
-    if (!bookingsPages) {
-        return false;
     }
 
     const planName = organization?.PlanName;
@@ -31,17 +26,17 @@ export const hasUserReachPlanLimit = (
         case PLANS.BUNDLE_PRO_2024:
         case PLANS.BUNDLE_BIZ_2025:
             // TODO add the logic for the meetbiz2025
-            return bookingsPages.length >= MAX_BOOKING_PAGES;
+            return pageCount >= MAX_BOOKING_PAGES;
         // Those plans have 1 booking page and are upsell to budlebiz2025
         case PLANS.MAIL:
         case PLANS.BUNDLE:
         case PLANS.DUO:
         case PLANS.FAMILY:
         case PLANS.MAIL_PRO:
-            return bookingsPages.length >= MAX_BOOKING_PAGE_MAIL_PAID;
+            return pageCount >= MAX_BOOKING_PAGE_MAIL_PAID;
         // Any unhandled case will be limited at 0 booking pages
         default:
-            return bookingsPages.length >= MAX_BOOKING_PAGE_MAIL_FREE;
+            return pageCount >= MAX_BOOKING_PAGE_MAIL_FREE;
     }
 };
 
