@@ -169,6 +169,8 @@ enum DriveFeatureFlag {
     DriveWebNewThumbnailGeneration = 'DriveWebNewThumbnailGeneration',
     // Others
     DriveWebRecoveryASV = 'DriveWebRecoveryASV',
+    // DriveWebNewFileBrowser
+    DriveWebNewFileBrowser = 'DriveWebNewFileBrowser',
 }
 
 enum DocsFeatureFlag {
