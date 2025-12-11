@@ -1499,8 +1499,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1900,12 +1899,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -7387,7 +7380,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9187,9 +9181,6 @@
       ],
       "Billing cycle": [
         "Faktureringsperiod"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Blind Carbon Copy": [
         "Hemlig kopia"
@@ -13412,12 +13403,6 @@
       ],
       "Email tracking protection": [
         "E-postspårningsskydd"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Få upp till ${ credits } i krediter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Bjud in vänner till ${ BRAND_NAME }"
       ],
       "Schedule send": [
         "Schemalägg sändning"

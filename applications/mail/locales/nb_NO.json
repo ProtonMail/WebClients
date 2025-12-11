@@ -1498,10 +1498,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1900,12 +1896,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
       ],
@@ -7402,7 +7392,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9214,9 +9205,6 @@
       ],
       "Billing cycle": [
         "Faktureringssyklus"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Blind Carbon Copy": [
         "Blindkopi"
@@ -13450,12 +13438,6 @@
       ],
       "Email tracking protection": [
         "Sporingsbeskyttelse for e-post"
-      ],
-      "Get up to ${ credits } in credits.": [
-        "Få opptil ${ credits } i kreditter."
-      ],
-      "Invite friends to ${ BRAND_NAME }": [
-        "Inviter venner til ${ BRAND_NAME }"
       ],
       "Schedule send": [
         "Planlegg sending"
