@@ -1,7 +1,17 @@
-export type ToolCallData = WebSearchToolCallData | DescribeImageToolCallData | GenerateImageToolCallData;
+export type ToolCallData =
+    | WebSearchToolCallData
+    | DescribeImageToolCallData
+    | GenerateImageToolCallData
+    | ProtonInfoToolCallData;
+export type ToolCallName = ToolCallData['name'];
 
 export function isToolCallData(data: unknown): data is ToolCallData {
-    return isWebSearchToolCallData(data) || isDescribeImageToolCallData(data) || isGenerateImageToolCallData(data);
+    return (
+        isWebSearchToolCallData(data) ||
+        isDescribeImageToolCallData(data) ||
+        isGenerateImageToolCallData(data) ||
+        isProtonInfoToolCallData(data)
+    );
 }
 
 export type WebSearchToolCallData = { name: 'web_search'; arguments: WebSearchArguments };
@@ -11,10 +21,8 @@ export function isWebSearchToolCallData(data: unknown): data is WebSearchToolCal
     return (
         typeof data === 'object' &&
         data !== null &&
-        ('name' in data &&
-            data.name === 'web_search') &&
-        ('arguments' in data &&
-            isWebSearchArguments(data.arguments))
+        ('name' in data && data.name === 'web_search') &&
+        ('arguments' in data && isWebSearchArguments(data.arguments))
     );
 }
 
@@ -27,8 +35,7 @@ export function isWebSearchArguments(args: unknown): args is WebSearchArguments 
     return (
         typeof args === 'object' &&
         args !== null &&
-        ('query' in args &&
-            typeof args.query === 'string')
+        ('query' in args && typeof args.query === 'string')
     );
 }
 
@@ -39,10 +46,8 @@ export function isDescribeImageToolCallData(data: unknown): data is DescribeImag
     return (
         typeof data === 'object' &&
         data !== null &&
-        ('name' in data &&
-            data.name === 'describe_image') &&
-        ('arguments' in data &&
-            isDescribeImageArguments(data.arguments))
+        ('name' in data && data.name === 'describe_image') &&
+        ('arguments' in data && isDescribeImageArguments(data.arguments))
     );
 }
 
@@ -56,12 +61,8 @@ export function isDescribeImageArguments(args: unknown): args is DescribeImageAr
     return (
         typeof args === 'object' &&
         args !== null &&
-        ('image_id' in args &&
-            typeof args.image_id === 'string') &&
-        (!('question' in args) ||
-            args.question === null ||
-            args.question === undefined ||
-            typeof args.question === 'string')
+        ('image_id' in args && typeof args.image_id === 'string') &&
+        (!('question' in args) || args.question === null || args.question === undefined || typeof args.question === 'string')
     );
 }
 
@@ -72,10 +73,8 @@ export function isGenerateImageToolCallData(data: unknown): data is GenerateImag
     return (
         typeof data === 'object' &&
         data !== null &&
-        ('name' in data &&
-            data.name === 'generate_image') &&
-        ('arguments' in data &&
-            isGenerateImageArguments(data.arguments))
+        ('name' in data && data.name === 'generate_image') &&
+        ('arguments' in data && isGenerateImageArguments(data.arguments))
     );
 }
 
@@ -91,18 +90,21 @@ export function isGenerateImageArguments(args: unknown): args is GenerateImageAr
     return (
         typeof args === 'object' &&
         args !== null &&
-        (!('negative_prompt' in args) ||
-            args.negative_prompt === null ||
-            args.negative_prompt === undefined ||
-            typeof args.negative_prompt === 'string') &&
-        ('output_format' in args &&
-            typeof args.output_format === 'string') &&
-        ('prompt' in args &&
-            typeof args.prompt === 'string') &&
-        (!('seed' in args) ||
-            args.seed === null ||
-            args.seed === undefined ||
-            typeof args.seed === 'number')
+        (!('negative_prompt' in args) || args.negative_prompt === null || args.negative_prompt === undefined || typeof args.negative_prompt === 'string') &&
+        ('output_format' in args && typeof args.output_format === 'string') &&
+        ('prompt' in args && typeof args.prompt === 'string') &&
+        (!('seed' in args) || args.seed === null || args.seed === undefined || typeof args.seed === 'number')
+    );
+}
+
+export type ProtonInfoToolCallData = { name: 'proton_info' };
+
+export function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'proton_info')
     );
 }
 
