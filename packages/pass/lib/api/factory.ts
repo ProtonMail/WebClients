@@ -32,7 +32,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
-import { PassErrorCode } from './errors';
+import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
 import { getSilenced, isAccessRestricted } from './utils';
@@ -114,12 +114,12 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 /** If the server time isn't greater than the last seen
                  * server time value - then we may be dealing with a cached
                  * response. In such cases, avoid mutating API state */
-
                 if (sideEffects && serverTime.getTime() >= latestServerTime) {
                     const broadcast = !state.get('online') || state.get('unreachable');
                     state.set('serverTime', updateServerTime(serverTime));
                     state.set('unreachable', false);
                     state.set('online', true);
+
                     if (broadcast) pubsub.publish({ type: 'connectivity', online: true, unreachable: false });
                 }
 
@@ -137,7 +137,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 );
             })
             .catch((e: any) => {
-                if (!sideEffects) throw e;
+                if (!sideEffects || isAbortError(e)) throw e;
 
                 const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;
                 const { code } = getApiError(e);
