@@ -103,6 +103,54 @@ describe('FileUploadExecutor', () => {
         });
     });
 
+    describe('driveClient', () => {
+        it('should use getDrive by default', async () => {
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(getDrive).toHaveBeenCalled();
+            expect(mockGetFileUploader).toHaveBeenCalled();
+        });
+
+        it('should use custom drive client when set', async () => {
+            const customMockGetFileUploader = jest.fn().mockResolvedValue({
+                uploadFromFile: mockUploadFromFile,
+            });
+            const customDriveClient = {
+                getFileUploader: customMockGetFileUploader,
+            } as any;
+
+            executor.driveClient = customDriveClient;
+
+            const task = createFileTask();
+            await executor.execute(task);
+
+            expect(customMockGetFileUploader).toHaveBeenCalled();
+            expect(mockGetFileUploader).not.toHaveBeenCalled();
+        });
+
+        it('should persist custom drive client across multiple executions', async () => {
+            const customMockGetFileUploader = jest.fn().mockResolvedValue({
+                uploadFromFile: mockUploadFromFile,
+            });
+            const customDriveClient = {
+                getFileUploader: customMockGetFileUploader,
+            } as any;
+
+            executor.driveClient = customDriveClient;
+
+            const task1 = createFileTask({ uploadId: 'task1' });
+            const task2 = createFileTask({ uploadId: 'task2' });
+
+            await executor.execute(task1);
+            await executor.execute(task2);
+
+            expect(customMockGetFileUploader).toHaveBeenCalledTimes(2);
+            expect(mockGetFileUploader).not.toHaveBeenCalled();
+        });
+    });
+
     describe('execute', () => {
         it('should upload file successfully', async () => {
             const task = createFileTask();

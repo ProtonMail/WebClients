@@ -10,6 +10,7 @@ import {
     ModalsChildren,
     SubscriptionModalProvider,
     useApi,
+    useDrawerWidth,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useDrive } from '@proton/drive';
@@ -89,6 +90,7 @@ function InitContainer() {
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const { photosEnabled } = useUserSettings();
+    const drawerWidth = useDrawerWidth();
     const driveWebASVEnabled = useFlag('DriveWebRecoveryASV');
     useActivePing();
     useReactRouterNavigationLog();
@@ -229,7 +231,9 @@ function InitContainer() {
                 <GiftFloatingButton />
                 {!isSDKTransferEnabled && <TransferManagerLegacy />}
                 {/* TransferManager will be showed in case we don't have new upload/download */}
-                {isSDKTransferEnabled && <TransferManager />}
+                {isSDKTransferEnabled && (
+                    <TransferManager drawerWidth={drawerWidth} deprecatedRootShareId={defaultShareRoot.shareId} />
+                )}
             </FloatingElements>
             <DriveWindow>
                 <Routes>

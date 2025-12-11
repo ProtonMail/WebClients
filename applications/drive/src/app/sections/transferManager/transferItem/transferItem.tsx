@@ -17,7 +17,7 @@ import type { TransferManagerEntry } from '../useTransferManagerState';
 
 type Props = {
     entry: TransferManagerEntry;
-    onShare: () => void;
+    onShare?: () => void;
 };
 
 const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
@@ -164,7 +164,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 </div>
             </div>
             <div className="shrink-0 flex justify-end">
-                {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && (
+                {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && onShare && (
                     <Button color="weak" shape="solid" onClick={onShare}>
                         {c('Action').t`Share`}
                     </Button>

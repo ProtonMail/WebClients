@@ -377,4 +377,68 @@ describe('UploadOrchestrator', () => {
             expect(eventHandlerInstance.handleEvent).not.toHaveBeenCalled();
         });
     });
+
+    describe('setDriveClient', () => {
+        let mockFileExecutorDriveClient: any;
+        let mockFolderExecutorDriveClient: any;
+
+        beforeEach(() => {
+            mockFileExecutorDriveClient = undefined;
+            mockFolderExecutorDriveClient = undefined;
+
+            jest.mocked(FileUploadExecutor).mockImplementation(
+                () =>
+                    ({
+                        setEventCallback: mockSetEventCallback,
+                        execute: mockFileExecutorExecute,
+                        set driveClient(client: any) {
+                            mockFileExecutorDriveClient = client;
+                        },
+                    }) as any
+            );
+
+            jest.mocked(FolderCreationExecutor).mockImplementation(
+                () =>
+                    ({
+                        setEventCallback: mockSetEventCallback,
+                        execute: mockFolderExecutorExecute,
+                        set driveClient(client: any) {
+                            mockFolderExecutorDriveClient = client;
+                        },
+                    }) as any
+            );
+
+            orchestrator = new UploadOrchestrator();
+        });
+
+        it('should set drive client on all executors', () => {
+            const customDriveClient = {
+                getFileUploader: jest.fn(),
+                createFolder: jest.fn(),
+            } as any;
+
+            orchestrator.setDriveClient(customDriveClient);
+
+            expect(mockFileExecutorDriveClient).toBe(customDriveClient);
+            expect(mockFolderExecutorDriveClient).toBe(customDriveClient);
+        });
+
+        it('should allow different drive clients to be set', () => {
+            const publicLinkClient = {
+                getFileUploader: jest.fn(),
+                createFolder: jest.fn(),
+            } as any;
+
+            const mainDriveClient = {
+                getFileUploader: jest.fn(),
+                createFolder: jest.fn(),
+            } as any;
+
+            orchestrator.setDriveClient(publicLinkClient);
+            expect(mockFileExecutorDriveClient).toBe(publicLinkClient);
+
+            orchestrator.setDriveClient(mainDriveClient);
+            expect(mockFileExecutorDriveClient).toBe(mainDriveClient);
+        });
+    });
 });
