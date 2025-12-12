@@ -85,23 +85,49 @@ Retry a failed upload.
 uploadManager.retryUpload(uploadId);
 ```
 
-#### `resolveConflict(uploadId: string, strategy: UploadConflictStrategy, applyToAll?: boolean): Promise<void>`
+#### `setConflictResolver(callback: (name: string, nodeType: NodeType, conflictType: UploadConflictType, batchId: string) => Promise<{ strategy: UploadConflictStrategy; applyToAll: boolean }>): void`
 
-Resolve upload conflicts (file/folder already exists).
+Set a custom conflict resolution handler. Should be called once when initializing your app.
+
+If no resolver is set, conflicts are automatically resolved using the `Rename` strategy.
 
 ```typescript
-await uploadManager.resolveConflict(
-    uploadId,
-    UploadConflictStrategy.Replace,
-    true // apply to all conflicts in batch
-);
+uploadManager.setConflictResolver(async (name, nodeType, conflictType, batchId) => {
+    // Show your custom conflict resolution UI
+    const userChoice = await showConflictModal(name, nodeType, conflictType);
+
+    return {
+        strategy: userChoice.strategy,
+        applyToAll: userChoice.applyToAll,
+    };
+});
 ```
+
+**Parameters:**
+
+- `name` - Name of the conflicting file/folder
+- `nodeType` - `NodeType.File` or `NodeType.Folder`
+- `conflictType` - `UploadConflictType.Normal` or `UploadConflictType.Draft` (unfinished upload)
+- `batchId` - Batch identifier for grouping related uploads
+
+**Return value:**
+
+- `strategy` - The chosen resolution strategy (Skip, Replace, or Rename)
+- `applyToAll` - If true, applies the strategy to all future conflicts of the same node type in this batch
 
 **Strategies:**
 
 - `UploadConflictStrategy.Skip` - Skip the upload
 - `UploadConflictStrategy.Replace` - Replace existing file/folder
-- `UploadConflictStrategy.Rename` - Rename to avoid conflict (Automatically generate an available name)
+- `UploadConflictStrategy.Rename` - Rename to avoid conflict (automatically generates an available name)
+
+#### `removeConflictResolver(): void`
+
+Remove the custom conflict resolver. After calling this, conflicts will default to the `Rename` strategy.
+
+```typescript
+uploadManager.removeConflictResolver();
+```
 
 #### `clearUploadQueue(): void`
 
@@ -129,10 +155,12 @@ uploadManager.onUploadEvent(async (event) => {
 - `file:progress` - Upload progress updated
 - `file:complete` - Upload finished successfully
 - `file:error` - Upload failed
-- `file:conflict` - Name conflict detected
+- `file:conflict` - Name conflict detected (also handled internally by conflict resolver)
 - `folder:complete` - Folder created successfully
 - `folder:error` - Folder creation failed
-- `folder:conflict` - Folder name conflict detected
+- `folder:conflict` - Folder name conflict detected (also handled internally by conflict resolver)
+
+**Note:** Conflict events are emitted for observability but are automatically handled by the conflict resolver set via `setConflictResolver()`. If no resolver is set, conflicts default to the `Rename` strategy.
 
 ## Queue Store
 
