@@ -10,8 +10,16 @@
                 ],
                 "components": [
                     {
+                        "/": "/join/id-*",
+                        "comment": "Direct join links"
+                    },
+                    {
+                        "/": "/guest/join/id-*",
+                        "comment": "Guest join links"
+                    },
+                    {
                         "/": "/u/*/join/id-*",
-                        "comment": "Join links"
+                        "comment": "User-scoped join links"
                     }
                 ]
             }
