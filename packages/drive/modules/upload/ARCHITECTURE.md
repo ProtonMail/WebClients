@@ -57,7 +57,9 @@ The upload system is organized into several layers:
 - **ConflictManager** (`orchestration/ConflictManager.ts`)
     - Detects file/folder naming conflicts
     - Manages conflict resolution strategies (skip/rename/replace)
-    - Handles "apply to all" batch resolution
+    - Supports custom conflict resolver callback or defaults to Rename strategy
+    - Handles "apply to all" batch resolution per node type (files/folders separate)
+    - Queues concurrent conflicts to ensure sequential resolution
     - Manages folder children cancellation
 - **SDKTransferActivity** (`orchestration/SDKTransferActivity.ts`)
     - Tracks SDK pause/resume events
@@ -136,19 +138,33 @@ The upload system is organized into several layers:
    ↓
 2. Emits 'file:conflict' or 'folder:conflict' event
    ↓
-3. ConflictManager.handleConflict()
+3. Event emitted to subscribers (for observability)
+   ↓
+4. ConflictManager.handleConflict()
+   - Checks for existing batch strategy (skip if found)
+   - Queues if another conflict is being resolved
    - Marks item as ConflictFound
-   - Sets resolve callback
    ↓
-4. UI shows conflict modal
+5. Calls conflictResolver callback (if set)
+   - Passes name, nodeType, conflictType, batchId
+   - Awaits user decision
    ↓
-5. User chooses strategy (skip/rename/replace)
+   OR (if no resolver set)
    ↓
-6. ConflictManager.resolveConflictForItem()
-   - Calls retryWithStrategy()
+   Defaults to Rename strategy
+   ↓
+6. ConflictManager.chooseConflictStrategy()
+   - Applies chosen strategy
+   - If applyToAll=true, sets batch strategy for node type
+   - Resolves other pending conflicts with same criteria
+   ↓
+7. Calls retryWithStrategy()
    - Updates queue with resolution
+   - For Skip: cancels folder children
+   - For Rename: generates new name and resets to Pending
+   - For Replace: marks folder as Finished, updates children's parentUid
    ↓
-7. Orchestrator picks up resolved item
+8. Orchestrator picks up resolved item
 ```
 
 ## Key Concepts
@@ -169,9 +185,11 @@ Folders must be created before their children. The scheduler ensures:
 
 Items uploaded together share a `batchId`. This enables:
 
-- "Apply to all" conflict resolution
-- Setting `resolvedStrategy` on pending items
+- "Apply to all" conflict resolution per node type (files and folders handled separately)
+- Setting batch strategies for automatic resolution of future conflicts
 - Batch cancellation
+
+**Important:** Batch strategies are node-type specific. If a user chooses "Replace All" for a file conflict, it only applies to files in that batch, not folders.
 
 ## File Structure
 

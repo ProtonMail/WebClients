@@ -55,6 +55,8 @@ describe('UploadEventHandler', () => {
 
         mockConflictManager = {
             handleConflict: jest.fn(),
+            chooseConflictStrategy: jest.fn(),
+            setBatchStrategy: jest.fn(),
         } as any;
 
         mockSDKTransferActivity = {
@@ -226,7 +228,7 @@ describe('UploadEventHandler', () => {
     describe('handleEvent - file:conflict', () => {
         it('should delegate to conflict manager', async () => {
             const error = new NodeWithSameNameExistsValidationError('node123', 400);
-            const event = {
+            const event: any = {
                 type: 'file:conflict' as const,
                 uploadId: 'task123',
                 error,
