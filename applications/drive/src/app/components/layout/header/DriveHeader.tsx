@@ -2,12 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useActiveBreakpoint } from '@proton/components';
-import { PrivateHeader, UserDropdown } from '@proton/components';
+import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
-import { SearchField } from './search/SearchField';
+import isSearchFeatureEnabled from '../../../utils/isSearchFeatureEnabled';
+import { SearchField } from '../search/SearchField';
+import { SuggestBusinessButton } from './SuggestBusinessButton';
 
 interface Props {
     isHeaderExpanded: boolean;
@@ -15,6 +15,7 @@ interface Props {
     searchBox?: ReactNode;
     title?: string;
     settingsButton?: ReactNode;
+    upsellButton?: ReactNode;
 }
 
 export const DriveHeader = ({
@@ -23,6 +24,7 @@ export const DriveHeader = ({
     title = c('Title').t`Drive`,
     searchBox,
     settingsButton,
+    upsellButton,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -37,11 +39,12 @@ export const DriveHeader = ({
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={isSearchFeatureEnabled() && searchBox}
                 settingsButton={settingsButton}
+                upsellButton={upsellButton}
             />
         </>
     );
 };
 
 export const DriveHeaderPrivate = (props: Props) => {
-    return <DriveHeader {...props} searchBox={<SearchField />} />;
+    return <DriveHeader {...props} searchBox={<SearchField />} upsellButton={<SuggestBusinessButton />} />;
 };
