@@ -7,7 +7,7 @@ export const legacyTimestampToDate = (timestamp: number) => new Date(timestamp *
 export const getLegacyModifiedTime = (node: NodeEntity) => {
     const date = node.activeRevision?.claimedModificationTime
         ? node.activeRevision.claimedModificationTime
-        : node.creationTime;
+        : node.modificationTime;
 
     return dateToLegacyTimestamp(date);
 };
