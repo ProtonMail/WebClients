@@ -503,9 +503,26 @@ export const ProtonMeetContainer = ({
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
             // Turning auto subscribe off so we have better control over the quality of the tracks
-            await room.connect(websocketUrl, accessToken, {
-                autoSubscribe: false,
-            });
+            try {
+                await room.connect(websocketUrl, accessToken, {
+                    autoSubscribe: false,
+                });
+            } catch (livekitError) {
+                // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
+                try {
+                    await wasmApp?.leaveMeeting();
+                } catch (leaveError) {
+                    reportMeetError('Failed to leave MLS group after LiveKit connection failure', leaveError);
+                }
+                mlsSetupDone.current = false;
+                startHealthCheck.current = false;
+                if (isMeetSeamlessKeyRotationEnabled) {
+                    keyRotationSchedulerRef.current.clean();
+                } else {
+                    keyProvider.cleanCurrent();
+                }
+                throw livekitError;
+            }
 
             await room.setE2EEEnabled(true);
 
