@@ -9,8 +9,9 @@ describe('legacyTime utilities', () => {
         value: 'test@proton.me',
     };
 
-    const createTime = new Date('2023-01-01T00:00:00.000Z');
-    const modificationTime = new Date('2023-01-02T12:00:00.000Z');
+    const creationTime = new Date('2023-01-01T00:00:00.000Z');
+    const serverModificationTime = new Date('2023-01-02T06:00:00.000Z');
+    const claimedModificationTime = new Date('2023-01-02T12:00:00.000Z');
     const trashTime = new Date('2023-01-03T15:30:00.000Z');
 
     const createMockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
@@ -25,8 +26,8 @@ describe('legacyTime utilities', () => {
         mediaType: 'text/plain',
         isShared: false,
         isSharedPublicly: false,
-        creationTime: createTime,
-        modificationTime: modificationTime,
+        creationTime,
+        modificationTime: serverModificationTime,
         trashTime: undefined,
         totalStorageSize: 1024,
         activeRevision: undefined,
@@ -42,7 +43,7 @@ describe('legacyTime utilities', () => {
         contentAuthor: mockAuthor,
         storageSize: 1024,
         claimedSize: 1000,
-        claimedModificationTime: modificationTime,
+        claimedModificationTime,
         claimedDigests: { sha1: 'abc123' },
         claimedAdditionalMetadata: {},
         ...overrides,
@@ -63,18 +64,18 @@ describe('legacyTime utilities', () => {
             const node = createMockNode({ activeRevision: mockRevision });
 
             const result = getLegacyModifiedTime(node);
-            expect(result).toBe(Math.floor(modificationTime.getTime() / 1000));
+            expect(result).toBe(Math.floor(claimedModificationTime.getTime() / 1000));
         });
 
-        it('should fallback to node creationTime when claimedModificationTime is not available', () => {
+        it('should fallback to node modificationTime when claimedModificationTime is not available', () => {
             const mockRevision = createMockRevision({ claimedModificationTime: undefined });
             const node = createMockNode({ activeRevision: mockRevision });
 
             const result = getLegacyModifiedTime(node);
-            expect(result).toBe(Math.floor(createTime.getTime() / 1000));
+            expect(result).toBe(Math.floor(serverModificationTime.getTime() / 1000));
         });
 
-        it('should fallback to node creationTime when activeRevision is not available', () => {
+        it('should fallback to node modificationTime when activeRevision is not available', () => {
             const node = createMockNode({
                 name: 'test-folder',
                 type: NodeType.Folder,
@@ -86,7 +87,7 @@ describe('legacyTime utilities', () => {
             });
 
             const result = getLegacyModifiedTime(node);
-            expect(result).toBe(Math.floor(createTime.getTime() / 1000));
+            expect(result).toBe(Math.floor(serverModificationTime.getTime() / 1000));
         });
     });
 
