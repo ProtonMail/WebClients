@@ -47,7 +47,7 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
         case BookingLocation.MEET:
             icon = <MeetLogo variant="glyph-only" />;
             break;
-        case BookingLocation.IN_PERSON:
+        case BookingLocation.OTHER_LOCATION:
             icon = <IcMapPin />;
             break;
     }
