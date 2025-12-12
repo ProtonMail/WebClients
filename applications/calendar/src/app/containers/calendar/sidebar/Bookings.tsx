@@ -25,7 +25,7 @@ interface Props {
 
 export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [user] = useUser();
-    const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
+    const [displayBookings, toggleBookings] = useLocalState(true, `${user.ID || 'item'}-display-bookings`);
 
     const [calendars] = useCalendars();
 
@@ -54,8 +54,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                     {/* The div can be removed when the spotligh is removed */}
                     <div>
                         <SimpleSidebarListItemHeader
-                            toggle={displayView}
-                            onToggle={(value) => toggleView(value)}
+                            toggle={displayBookings}
+                            onToggle={toggleBookings}
                             text={c('Link').t`Booking pages`}
                             testId="calendar-sidebar:bookings-pages-button"
                             headerRef={headerRef}
@@ -75,7 +75,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                         />
                     </div>
                 </Spotlight>
-                {displayView &&
+                {displayBookings &&
                     bookings?.bookingPages.map((page, index) => (
                         <BookingItem
                             key={page.id}

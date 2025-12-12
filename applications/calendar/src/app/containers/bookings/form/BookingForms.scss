@@ -1,21 +1,6 @@
 @import '~@proton/styles/scss/lib';
 
 .booking-sidebar {
-	&-title-textarea {
-		&#{&} {
-			&#{&} {
-				padding-inline-start: 1em;
-				inset-inline-start: -1em;
-				border-radius: var(--border-radius-md);
-
-				&:focus-within {
-					border-color: var(--focus-outline);
-					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-				}
-			}
-		}
-	}
-
 	&-duration-button[aria-pressed='true'] {
 		border-color: color-mix(in srgb, var(--interaction-norm-active) 50%, transparent);
 		color: var(--interaction-norm-active);

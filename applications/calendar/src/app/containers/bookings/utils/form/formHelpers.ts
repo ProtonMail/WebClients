@@ -30,7 +30,10 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         };
     }
 
-    if (data.locationType === BookingLocation.IN_PERSON && (data.location?.trim().length === 0 || !data.location)) {
+    if (
+        data.locationType === BookingLocation.OTHER_LOCATION &&
+        (data.location?.trim().length === 0 || !data.location)
+    ) {
         return {
             type: 'warning',
             reason: BookingFormValidationReasons.MISSING_LOCATION,
