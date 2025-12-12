@@ -27,23 +27,6 @@ export type UploadItemInput =
     | Omit<FolderCreationItem, 'lastStatusUpdateTime' | 'uploadId'>
     | Omit<PhotosUploadItem, 'lastStatusUpdateTime' | 'uploadId'>;
 
-/**
- * Type guard to check if a QueueEntry is an UploadItemConflict.
- * An item is considered a conflict if it has ConflictFound status and has conflict metadata.
- *
- * @param item - The queue entry to check
- * @returns True if the item is an unresolved conflict, false otherwise
- */
-export function isUploadItemConflict(item: QueueEntry): item is UploadItemConflict {
-    return (
-        item.status === UploadStatus.ConflictFound &&
-        'conflictType' in item &&
-        item.conflictType !== undefined &&
-        'nodeType' in item &&
-        item.nodeType !== undefined
-    );
-}
-
 type QueueItemUpdate = {
     name?: string;
     modificationTime?: Date;
@@ -63,7 +46,6 @@ type QueueItemUpdate = {
 
 type UploadQueueStore = {
     queue: Map<string, QueueEntry>;
-    firstConflictItem: UploadItemConflict | null;
 
     /**
      * Adds a new upload item to the queue.
@@ -111,13 +93,6 @@ type UploadQueueStore = {
     clearQueue: () => void;
 
     /**
-     * Sets the first unresolved conflict item to show in the modal
-     *
-     * @param item - The conflict item to set, or null to clear
-     */
-    setFirstConflictItem: (item?: UploadItemConflict) => void;
-
-    /**
      * Checks if there are any unresolved conflicts in the queue without a resolved strategy.
      *
      * @returns True if any item has status ConflictFound and no resolvedStrategy
@@ -129,7 +104,6 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
     devtools(
         (set, get) => ({
             queue: new Map(),
-            firstConflictItem: null,
 
             addItem: (item) => {
                 const uploadId = generateUID();
@@ -178,11 +152,7 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
             getItem: (uploadId) => get().queue.get(uploadId),
 
             clearQueue: () => {
-                set({ queue: new Map(), firstConflictItem: null });
-            },
-
-            setFirstConflictItem: (item) => {
-                set({ firstConflictItem: item });
+                set({ queue: new Map() });
             },
 
             getHasPendingConflicts: () => {

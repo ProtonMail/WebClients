@@ -6,6 +6,7 @@ import generateUID from '@proton/utils/generateUID';
 import { UploadOrchestrator } from './orchestration/UploadOrchestrator';
 import { useUploadControllerStore } from './store/uploadController.store';
 import { useUploadQueueStore } from './store/uploadQueue.store';
+import type { UploadConflictType } from './types';
 import { type UploadConflictStrategy, type UploadEvent, UploadStatus } from './types';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
@@ -24,6 +25,23 @@ export class UploadManager {
         if (driveClientInstance) {
             this.orchestrator.setDriveClient(driveClientInstance);
         }
+    }
+
+    /**
+     * Set the conflict resolver callback. Can only be set once per app.
+     */
+    setConflictResolver(
+        callback: (
+            name: string,
+            nodeType: NodeType,
+            conflictType: UploadConflictType
+        ) => Promise<{ strategy: UploadConflictStrategy; applyToAll: boolean }>
+    ): void {
+        this.orchestrator.setConflictResolver(callback);
+    }
+
+    removeConflictResolver(): void {
+        this.orchestrator.removeConflictResolver();
     }
 
     /**

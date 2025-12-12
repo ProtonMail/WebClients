@@ -6,7 +6,7 @@ import { PhotosUploadExecutor } from '../execution/PhotosUploadExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { UploadEvent, UploadTask } from '../types';
-import { type UploadConflictStrategy, UploadStatus } from '../types';
+import { type UploadConflictStrategy, type UploadConflictType, UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
 import { ConflictManager } from './ConflictManager';
@@ -56,6 +56,20 @@ export class UploadOrchestrator {
         this.photosExecutor.driveClient = driveClientInstance;
     }
 
+    setConflictResolver(
+        callback: (
+            name: string,
+            nodeType: NodeType,
+            conflictType: UploadConflictType
+        ) => Promise<{ strategy: UploadConflictStrategy; applyToAll: boolean }>
+    ): void {
+        this.conflictManager.setConflictResolver(callback);
+    }
+
+    removeConflictResolver(): void {
+        this.conflictManager.removeConflictResolver();
+    }
+
     /**
      * Main orchestration loop
      */
@@ -81,7 +95,10 @@ export class UploadOrchestrator {
             if (tasks.length === 0) {
                 const hasActive = this.hasActiveUploads();
                 const hasMore = queueItems.some(
-                    (item) => item.status === UploadStatus.Pending || item.status === UploadStatus.InProgress
+                    (item) =>
+                        item.status === UploadStatus.Pending ||
+                        item.status === UploadStatus.InProgress ||
+                        item.status === UploadStatus.ConflictFound
                 );
 
                 if (hasActive || hasMore) {

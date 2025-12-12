@@ -441,4 +441,39 @@ describe('UploadOrchestrator', () => {
             expect(mockFileExecutorDriveClient).toBe(mainDriveClient);
         });
     });
+
+    describe('orchestrator loop with ConflictFound items', () => {
+        it('should keep running when items are in ConflictFound status', async () => {
+            let callCount = 0;
+            mockGetQueue.mockImplementation(() => {
+                callCount++;
+                if (callCount > 5) {
+                    return [];
+                }
+                return [{ uploadId: 'file1', status: UploadStatus.ConflictFound, type: NodeType.File }];
+            });
+            mockGetNextTasks.mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+
+            const startPromise = orchestrator.start();
+
+            await jest.advanceTimersByTimeAsync(600);
+
+            expect(mockGetQueue.mock.calls.length).toBeGreaterThan(5);
+
+            await startPromise;
+        });
+
+        it('should exit when no ConflictFound, Pending, or InProgress items remain', async () => {
+            mockGetQueue
+                .mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.ConflictFound, type: NodeType.File }])
+                .mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Finished, type: NodeType.File }]);
+            mockGetNextTasks.mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+
+            await orchestrator.start();
+
+            expect(mockUnsubscribe).toHaveBeenCalled();
+        });
+    });
 });
