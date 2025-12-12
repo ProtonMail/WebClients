@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -12,15 +10,15 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarListItemHeaderLink from '@proton/components/components/sidebar/SidebarListItemHeaderLink';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
-import { PersonalCalendarModal } from '@proton/components/index';
+import { PersonalCalendarModal, useLocalState } from '@proton/components/index';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
@@ -40,9 +38,9 @@ interface Props {
 }
 
 export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdownRef, onCreateCalendar }: Props) => {
-    const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
-
     const [user] = useUser();
+    const [displayMyCalendars, toggleMyCalendars] = useLocalState(true, `${user.ID || 'item'}-display-myCalendars`);
+
     const [addresses = []] = useAddresses();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
@@ -94,7 +92,7 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
             <SidebarList>
                 <SimpleSidebarListItemHeader
                     toggle={displayMyCalendars}
-                    onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
+                    onToggle={toggleMyCalendars}
                     right={
                         <div className="flex flex-nowrap items-center">
                             {!isOtherCalendarsLimitReached ? (
