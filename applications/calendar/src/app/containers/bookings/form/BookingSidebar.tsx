@@ -15,7 +15,7 @@ export const BookingSidebar = () => {
             </div>
 
             <Scroll className="flex-1 w-full">
-                <div className="mt-8 pl-6 pr-2 py-4">
+                <div className="mt-8 pl-6 pr-4 py-4">
                     <BookingManagement.Form />
                 </div>
             </Scroll>

@@ -1,11 +1,11 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
@@ -21,7 +21,11 @@ interface Props {
 }
 
 export const OtherCalendars = ({ calendars, otherCalendars, headerRef, loadingSubscribedCalendars }: Props) => {
-    const [displayOtherCalendars, setDisplayOtherCalendars] = useState(true);
+    const [user] = useUser();
+    const [displayOtherCalendars, toggleOtherCalendars] = useLocalState(
+        true,
+        `${user.ID || 'item'}-display-otherCalendars`
+    );
 
     const dispatch = useCalendarDispatch();
     const [addresses = []] = useAddresses();
@@ -35,7 +39,7 @@ export const OtherCalendars = ({ calendars, otherCalendars, headerRef, loadingSu
         <SidebarList>
             <SimpleSidebarListItemHeader
                 toggle={displayOtherCalendars}
-                onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
+                onToggle={toggleOtherCalendars}
                 text={c('Link').t`Other calendars`}
                 testId="calendar-sidebar:other-calendars-button"
                 headerRef={headerRef}

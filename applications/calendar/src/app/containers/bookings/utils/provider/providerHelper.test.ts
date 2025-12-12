@@ -274,7 +274,7 @@ describe('Provider helpers', () => {
                 },
                 {
                     description: 'locationType changed',
-                    current: { locationType: BookingLocation.IN_PERSON },
+                    current: { locationType: BookingLocation.OTHER_LOCATION },
                     initial: { locationType: BookingLocation.MEET },
                     expected: true,
                 },
