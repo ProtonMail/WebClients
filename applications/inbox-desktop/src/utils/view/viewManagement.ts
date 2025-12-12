@@ -20,7 +20,6 @@ import {
     isSameURL,
     trimLocalID,
 } from "../urls/urlTests";
-import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -36,6 +35,7 @@ import telemetry from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
+import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { isWindowValid } from "./windowUtils";
 
 type ViewID = keyof URLConfig;
@@ -377,6 +377,8 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
 
     const currentUrl = viewMap.mail!.webContents.getURL();
     const hasValidLabelAndElement = labelID && elementID;
+
+    const localID = getCurrentLocalID();
     const url = hasValidLabelAndElement
         ? addHashToCurrentURL(
               currentUrl,
@@ -386,7 +388,10 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
                   ...(messageID ? { messageID } : {}),
               }).toString()}`,
           )
-        : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
+        : // Case may occur when notifications are grouped together by the OS.
+          localID != null
+          ? `${getAppURL().mail}/u/${localID}/all-mail`
+          : `${getAppURL().mail}/u/0/all-mail`; // localID will be fixed by showView.
 
     showView("mail", url);
 

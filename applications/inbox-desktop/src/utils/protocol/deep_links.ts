@@ -1,7 +1,7 @@
 import { Event, app } from "electron";
 import { isMac, OneTimeArgument } from "../helpers";
 import { protocolLogger } from "../log";
-import { openMail, openCalendar, getCurrentLocalID } from "../view/viewManagement";
+import { openCalendar, getCurrentLocalID, openMail } from "../view/viewManagement";
 import { parseURLParams } from "../urls/urlHelpers";
 
 export const DEEPLINK_PROTOCOL = "proton-inbox";
@@ -35,10 +35,10 @@ const parseOpenMailParams = (url: string): { labelID?: string; elementID?: strin
     };
 };
 
-const handleOpenMail = (argv: string[]) => {
+export const handleOpenMail = (argv: string[]): boolean => {
     const url = findDeepLink(argv, DeepLinkActions.OpenMail);
     if (!url) {
-        return;
+        return false;
     }
 
     protocolLogger.log("open mail", argv);
@@ -54,31 +54,28 @@ const handleOpenMail = (argv: string[]) => {
                 `Skipping open_mail navigation: current localID ${currentLocalID} is different than notification localID ${urlLocalID}`,
             );
             // INDA-440: switch account.
-            return;
+            return true;
         }
     }
 
     const { labelID, elementID, messageID } = parseOpenMailParams(url);
 
     openMail(labelID, elementID, messageID);
+    return true;
 };
 
-const handleOpenCalendar = (argv: string[]) => {
+export const handleOpenCalendar = (argv: string[]): boolean => {
     const url = findDeepLink(argv, DeepLinkActions.OpenCalendar);
     if (!url) {
-        return;
+        return false;
     }
 
     protocolLogger.log("open calendar", argv);
     openCalendar();
+    return true;
 };
 
 export const handleDeepLink = () => {
-    app.on("second-instance", (_ev: Event, argv: string[]) => {
-        handleOpenMail(argv);
-        handleOpenCalendar(argv);
-    });
-
     if (!isMac) {
         return;
     }
