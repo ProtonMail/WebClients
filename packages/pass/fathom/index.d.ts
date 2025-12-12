@@ -21,12 +21,11 @@ declare const kHiddenUsernameSelector: string;
 declare const kHeadingSelector: string;
 declare const kButtonSubmitSelector: string;
 declare const kLayoutSelector = 'div, section, aside, main, nav';
-declare const kAnchorLinkSelector = 'a, span[role="button"]';
+declare const kAnchorLinkSelector = 'a, [role="link"], span[role="button"]';
 declare const formCandidateSelector: string;
 declare const inputCandidateSelector =
     'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
 declare const buttonSelector: string;
-declare const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
 
 type AnyRule = ReturnType<typeof rule>;
 type Ruleset = ReturnType<typeof ruleset>;
@@ -64,6 +63,7 @@ declare const getTextAttributes: (el: HTMLElement) => string[];
 declare const getFieldAttributes: (el: HTMLElement) => string[];
 declare const getFormAttributes: (el: HTMLElement) => string[];
 
+type CCFieldElement = HTMLInputElement | HTMLSelectElement;
 type CCExpirationMonthFormat = {
     padding: boolean;
 };
@@ -76,7 +76,6 @@ type CCExpirationFormat = {
     monthFirst: boolean;
 };
 type CCFieldMatchParams = {
-    type: string | null;
     visible: boolean;
 };
 declare const CC_ATTRIBUTES: string[];
@@ -93,8 +92,8 @@ declare const getSelectExpirationYearFormat: (select: HTMLSelectElement) => CCEx
 declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCExpirationMonthFormat | undefined;
 declare const getCCHaystack: (field: HTMLElement) => string;
 declare const getCachedCCSubtype: (el: HTMLElement) => CCFieldType | undefined;
-declare const getCCFieldType: (field: HTMLElement) => CCFieldType | undefined;
-declare const matchCCInputField: (input: HTMLInputElement, { type, visible }: CCFieldMatchParams) => boolean;
+declare const getCCFieldType: (field: CCFieldElement) => CCFieldType | undefined;
+declare const matchCCFieldCandidate: (input: HTMLInputElement, { visible }: CCFieldMatchParams) => boolean;
 declare const isCCInputField: (fnode: Fnode) => boolean;
 declare const isCCSelectField: (fnode: Fnode) => boolean;
 
@@ -107,6 +106,7 @@ type FormClassification = {
     noop: boolean;
 };
 
+type HTMLFieldElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
 declare const fType: (type: FieldType) => (fnode: Fnode) => boolean;
 declare const maybeEmail: (value: Fnode) => boolean;
@@ -114,14 +114,14 @@ declare const maybePassword: (value: Fnode) => boolean;
 declare const maybeOTP: (value: Fnode) => boolean;
 declare const maybeUsername: (value: Fnode) => boolean;
 declare const maybeHiddenUsername: (value: Fnode) => boolean;
-declare const isUsernameCandidate: (el: HTMLElement) => boolean;
-declare const isEmailCandidate: (el: HTMLElement) => boolean;
+declare const isUsernameCandidate: (el: HTMLInputElement) => boolean;
+declare const isEmailCandidate: (el: HTMLInputElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
+declare const isMFACandidate: (el: HTMLFieldElement) => boolean;
 declare const isBtnCandidate: (btn: HTMLElement) => boolean;
 declare const isProcessableField: (input: HTMLElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
-declare const isIFrameField: (iframe: HTMLIFrameElement) => boolean;
 
 declare const isCluster: (el: HTMLElement) => boolean;
 declare const flagCluster: (el: HTMLElement) => void;
@@ -174,11 +174,10 @@ type IdentityFieldMatchParams = {
 declare const getCachedIdentitySubType: (el: HTMLElement) => IdentityFieldType | undefined;
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
-declare const matchIdentityField: (
-    input: HTMLInputElement,
-    { form, searchField, type, visible }: IdentityFieldMatchParams
-) => boolean;
+declare const matchIdentityField: (input: HTMLInputElement, { visible }: IdentityFieldMatchParams) => boolean;
 declare const isIdentity: (fnode: Fnode) => boolean;
+
+declare const isIFrameField: (iframe: HTMLIFrameElement) => boolean;
 
 type Override = {
     form: HTMLElement;
@@ -232,6 +231,7 @@ export {
     type CCExpirationFormat,
     type CCExpirationMonthFormat,
     type CCExpirationYearFormat,
+    type CCFieldElement,
     CC_ATTRIBUTES,
     CC_INPUT_TYPES,
     type Coeff,
@@ -240,6 +240,7 @@ export {
     FORM_ATTRIBUTES,
     FORM_CLUSTER_ATTR,
     type FormInputIterator,
+    type HTMLFieldElement,
     OVERRIDE_FIELDS,
     OVERRIDE_FORMS,
     type Ruleset,
@@ -303,6 +304,7 @@ export {
     isIFrameField,
     isIdentity,
     isIgnored,
+    isMFACandidate,
     isOAuthCandidate,
     isPredictedField,
     isPredictedForm,
@@ -333,7 +335,7 @@ export {
     kPasswordSelector,
     kSocialSelector,
     kUsernameSelector,
-    matchCCInputField,
+    matchCCFieldCandidate,
     matchIdentityField,
     matchPredictedType,
     maybeEmail,
@@ -341,7 +343,6 @@ export {
     maybeOTP,
     maybePassword,
     maybeUsername,
-    otpSelector,
     overrides,
     prepass,
     removeClassifierFlags,
