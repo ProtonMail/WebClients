@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { MaybeNull } from '@proton/pass/types';
 import type { ContextMenuItem } from '@proton/pass/types/desktop/context-menu';
 import { logger } from '@proton/pass/utils/logger';
+import isTruthy from '@proton/utils/isTruthy';
 
 const COPY_PASTE_NODE_WHITELIST = ['INPUT', 'TEXTAREA'];
 
@@ -28,11 +29,14 @@ export const useDesktopContextMenu = () => {
             if (!matchNodeWhiteList(event.target)) return;
 
             try {
-                await openContextMenu([
-                    { label: c('Action').t`Cut`, role: 'cut' },
-                    { label: c('Action').t`Copy`, role: 'copy' },
-                    { label: c('Action').t`Paste`, role: 'paste' },
-                ]);
+                const isReadonly = (event.target as HTMLTextAreaElement | HTMLInputElement).readOnly;
+                const items: ContextMenuItem[] = [
+                    !isReadonly && { label: c('Action').t`Cut`, role: 'cut' as const },
+                    { label: c('Action').t`Copy`, role: 'copy' as const },
+                    !isReadonly && { label: c('Action').t`Paste`, role: 'paste' as const },
+                ].filter(isTruthy);
+
+                await openContextMenu(items);
             } catch (error) {
                 logger.error('[ContextMenu] Error opening context menu', error);
             }
