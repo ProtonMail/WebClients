@@ -1176,23 +1176,6 @@ const Step1B = ({
                         })}
                     </div>
                 )}
-                {(() => {
-                    if (!actualCheckout.discountPercent || checkTrial) {
-                        return;
-                    }
-
-                    const sharedClasses = 'mb-2';
-                    if (model.loadingDependencies) {
-                        return <SkeletonLoader height="2.5rem" width="30rem" className={sharedClasses} />;
-                    }
-                    return !isVpnPassBundleBusinessPlan ? (
-                        <DiscountBanner
-                            discountPercent={actualCheckout.discountPercent}
-                            selectedPlanTitle={selectedPlan.Title}
-                            className={sharedClasses}
-                        />
-                    ) : null;
-                })()}
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
@@ -1462,13 +1445,29 @@ const Step1B = ({
                                             startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
-                                        {isVpnPassBundleBusinessPlan && (
-                                            <DiscountBanner
-                                                discountPercent={actualCheckout.discountPercent}
-                                                selectedPlanTitle={selectedPlan.Title}
-                                                className="mb-2"
-                                            />
-                                        )}
+                                        {(() => {
+                                            if (!actualCheckout.discountPercent || checkTrial || signupTrial) {
+                                                return;
+                                            }
+
+                                            const sharedClasses = 'mb-2';
+                                            if (model.loadingDependencies) {
+                                                return (
+                                                    <SkeletonLoader
+                                                        height="2.5rem"
+                                                        width="30rem"
+                                                        className={sharedClasses}
+                                                    />
+                                                );
+                                            }
+                                            return (
+                                                <DiscountBanner
+                                                    discountPercent={actualCheckout.discountPercent}
+                                                    selectedPlanTitle={selectedPlan.Title}
+                                                    className={sharedClasses}
+                                                />
+                                            );
+                                        })()}
 
                                         {(() => {
                                             if (loadingPaymentsForm) {
