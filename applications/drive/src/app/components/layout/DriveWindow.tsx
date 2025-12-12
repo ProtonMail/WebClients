@@ -30,8 +30,8 @@ import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
-import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
+import { DriveHeaderPrivate } from './header/DriveHeader';
 import { DriveSidebarDeprecated } from './sidebar/DriveSidebar/DriveSidebar';
 
 const DriveWindow = ({ children }: { children: ReactNode }) => {
