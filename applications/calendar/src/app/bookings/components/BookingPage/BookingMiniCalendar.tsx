@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { startOfMonth, startOfToday } from 'date-fns';
 
 import { Loader, LocalizedMiniCalendar } from '@proton/components';
+import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
@@ -43,6 +45,8 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     const today = new Date();
     const highlightedDates = Array.from(getDateKeySet()).map((key) => new Date(key));
 
+    const weekdaysShort = getFormattedWeekdays('ccc', { locale: dateLocale });
+
     return (
         <div className="relative">
             {isLoading && (
@@ -63,6 +67,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
                     miniCalendarNextPrevButtonsColor="norm"
                     highlightedDates={highlightedDates}
                     disableNonHighlightedDates
+                    weekdaysShort={weekdaysShort}
                 />
             </div>
         </div>
