@@ -104,18 +104,18 @@
 .project-files-section-content {
     min-height: 60px;
 
-	&.files-section {
-		background-color: white;
-		border: 1px solid var(--border-weak);
-		border-radius: var(--border-radius-xl);
-		padding: 20px;
-		padding-bottom: 20px; // Ensure bottom padding is explicit
-		max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
-		overflow-y: auto;
-		overflow-x: hidden;
-		display: flex;
-		flex-direction: column;
-		position: relative; // Ensure border is visible
+		&.files-section {
+			background-color: white;
+			border: 1px solid var(--border-weak);
+			border-radius: var(--border-radius-xl);
+			padding: 20px;
+			padding-bottom: 20px; // Ensure bottom padding is explicit
+			max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
+			overflow-y: auto;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column;
+			position: relative; // Ensure border is visible
 
 		// When drive browser is active, remove height restriction and overflow
 		.has-drive-browser & {
