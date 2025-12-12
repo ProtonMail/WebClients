@@ -386,7 +386,7 @@ export const getPassBenefits = (
         ];
     }
 
-    if (plan === PLANS.PASS_BUSINESS) {
+    if (plan === PLANS.PASS_BUSINESS || plan === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
         return [
             getOpenSourceAndAuditedBenefit(),
             getBasedInSwitzerlandGDPRBenefit(),
