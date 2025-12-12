@@ -90,13 +90,13 @@ export const FilesPanel = ({
             try {
                 // Use the MIME type from the file metadata, or derive it from the extension
                 const detectedMimeType = getMimeTypeFromExtension(file.name);
-                const mimeType = file.mimeType || detectedMimeType;
+                const mimeType = file.mediaType || detectedMimeType;
                 const fileName = file.name;
 
                 const fileBlob = new Blob([content], { type: mimeType });
                 const fileObject = new File([fileBlob], fileName, {
                     type: mimeType,
-                    lastModified: file.modifiedTime || Date.now(),
+                    lastModified: file.modifiedTime?.getTime() || Date.now(),
                 });
 
                 // Process the file through the same pipeline as uploaded files

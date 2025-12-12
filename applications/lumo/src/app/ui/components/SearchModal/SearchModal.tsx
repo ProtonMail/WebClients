@@ -4,11 +4,12 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Icon } from '@proton/components';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { useLumoSelector } from '../../../redux/hooks';
-import { SearchService, type SearchResult } from '../../../services/searchService';
+import { SearchService, type SearchResult } from '../../../services/search/searchService';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import type { Attachment } from '../../../types';
 import { FileContentModal } from '../Files/KnowledgeBase/FileContentModal';
@@ -111,6 +112,11 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
                     <div className="search-result-title">
                         {highlightText(result.documentName || '', query)}
                     </div>
+                    {result.matchContext && (
+                        <div className="search-result-preview search-result-context">
+                            {highlightText(result.matchContext, query)}
+                        </div>
+                    )}
                     {result.documentPreview && (
                         <div className="search-result-preview search-result-folder-path">
                             <Icon name="folder" size={3} className="mr-1" color="var(--text-norm)" />
@@ -192,6 +198,7 @@ interface SearchModalInnerProps {
 
 const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     const history = useHistory();
+    const [user] = useUser();
     // Select only the slices needed for search; memoize to keep stable references
     const conversations = useLumoSelector((state) => state.conversations);
     const messages = useLumoSelector((state) => state.messages);
@@ -217,7 +224,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         setError(null);
 
         try {
-            const searchService = SearchService.get();
+            const searchService = SearchService.get(user?.ID);
             const allConversations = await searchService.getAllConversations(searchState);
             setResults(allConversations);
         } catch (err) {
@@ -227,7 +234,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [searchState]);
+    }, [searchState, user?.ID]);
 
     // Load conversations on mount
     useEffect(() => {
@@ -257,7 +264,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         setError(null);
 
         try {
-            const searchService = SearchService.get();
+            const searchService = SearchService.get(user?.ID);
             const searchResults = await searchService.searchAsync(searchQuery, searchState);
             setResults(searchResults);
         } catch (err) {
@@ -267,7 +274,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [searchState, loadAllConversations]);
+    }, [searchState, loadAllConversations, user?.ID]);
 
     // Handle search input changes with debouncing
     const handleSearchChange = (value: string) => {

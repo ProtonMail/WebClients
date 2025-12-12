@@ -25,11 +25,11 @@ export const DriveBreadcrumbs: React.FC<DriveBreadcrumbsProps> = ({
             <div className="flex items-center justify-between">
                 <div className="flex items-center">
                     {breadcrumbs.map((breadcrumb, index) => (
-                        <React.Fragment key={breadcrumb.node.nodeId}>
+                        <React.Fragment key={breadcrumb.node.nodeUid}>
                             <button
                                 onClick={() => onBreadcrumbClick(breadcrumb)}
                                 className={`text-sm px-2 py-1 rounded hover:bg-gray-200 ${
-                                    breadcrumb.node.nodeId === currentFolder.nodeId ? 'text-bold' : 'color-weak'
+                                    breadcrumb.node.nodeUid === currentFolder.nodeUid ? 'text-bold' : 'color-weak'
                                 }`}
                             >
                                 {breadcrumb.node.name}
