@@ -54,6 +54,20 @@
 		}
 	}
 
+	.minicalendar-day--selected,
+	.minicalendar-day[aria-current='date'] {
+		font-weight: normal;
+
+		&:hover,
+		&:focus {
+			background: #e2dbff;
+
+			&::before {
+				border: 1px solid #5c3be7;
+			}
+		}
+	}
+
 	.minicalendar-next-prev-button,
 	.minicalendar-day {
 		&,
