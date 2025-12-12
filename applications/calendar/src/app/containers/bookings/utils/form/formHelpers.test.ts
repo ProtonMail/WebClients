@@ -80,7 +80,11 @@ describe('booking helpers', () => {
         });
 
         it('should return warning if location type is in-person but location is missing', () => {
-            const result = validateFormData({ ...validForm, locationType: BookingLocation.IN_PERSON, location: '' });
+            const result = validateFormData({
+                ...validForm,
+                locationType: BookingLocation.OTHER_LOCATION,
+                location: '',
+            });
 
             expect(result).toEqual({
                 type: 'warning',

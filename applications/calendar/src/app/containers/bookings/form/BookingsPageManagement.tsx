@@ -35,7 +35,7 @@ import './BookingForms.scss';
 export const getBookingLocationOption = (isMeetEnabled: boolean) => {
     return [
         isMeetEnabled && { text: MEET_APP_NAME, value: BookingLocation.MEET },
-        { text: c('Location').t`In person`, value: BookingLocation.IN_PERSON },
+        { text: c('Info').t`Other location`, value: BookingLocation.OTHER_LOCATION },
     ].filter(isTruthy);
 };
 
@@ -129,7 +129,7 @@ export const Form = () => {
                     </InputField>
                 )}
 
-                {formData.locationType === BookingLocation.IN_PERSON && (
+                {formData.locationType === BookingLocation.OTHER_LOCATION && (
                     <InputField
                         id="booking-location"
                         className="mt-2"

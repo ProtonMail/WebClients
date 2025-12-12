@@ -91,7 +91,7 @@ export const computeInitialFormData = ({
         recurring,
         summary: '',
         selectedCalendar: preferredCalendarID,
-        locationType: canUseMeetLocation ? BookingLocation.MEET : BookingLocation.IN_PERSON,
+        locationType: canUseMeetLocation ? BookingLocation.MEET : BookingLocation.OTHER_LOCATION,
         duration,
         timezone,
         bookingRanges: fullSlotDuration,
@@ -162,13 +162,13 @@ export const computeEditFormData = ({
     const recurring = firstSlot ? !!firstSlot.rrule : DEFAULT_RECURRING;
     const ranges = generateRangeFromSlots(editData, timezone);
 
-    const locationType = bookingPage.withProtonMeetLink ? BookingLocation.MEET : BookingLocation.IN_PERSON;
+    const locationType = bookingPage.withProtonMeetLink ? BookingLocation.MEET : BookingLocation.OTHER_LOCATION;
 
     return {
         summary: bookingPage.summary,
         description: bookingPage.description,
         selectedCalendar: bookingPageCalendar.ID,
-        locationType: canUseMeetLocation ? locationType : BookingLocation.IN_PERSON,
+        locationType: canUseMeetLocation ? locationType : BookingLocation.OTHER_LOCATION,
         location: canUseMeetLocation && bookingPage.withProtonMeetLink ? undefined : bookingPage.location,
         timezone: timezone,
         recurring,

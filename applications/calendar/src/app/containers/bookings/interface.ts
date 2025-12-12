@@ -50,7 +50,7 @@ export interface Intersection {
 
 export enum BookingLocation {
     MEET = 'Meet',
-    IN_PERSON = 'in-person',
+    OTHER_LOCATION = 'other-location',
 }
 
 export enum BookingState {
