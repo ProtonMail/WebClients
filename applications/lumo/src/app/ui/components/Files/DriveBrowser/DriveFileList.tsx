@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { NodeType } from '@proton/drive';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
@@ -42,10 +43,10 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
 
     const sortedChildren = children.sort((a, b) => {
         // Sort folders first, then files
-        if (a.type === 'folder' && b.type !== 'folder') {
+        if (a.type === NodeType.Folder && b.type !== NodeType.Folder) {
             return -1;
         }
-        if (a.type !== 'folder' && b.type === 'folder') {
+        if (a.type !== NodeType.Folder && b.type === NodeType.Folder) {
             return 1;
         }
         // Within the same type, sort alphabetically by name (case-insensitive)
@@ -56,12 +57,12 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
         <>
             {sortedChildren.map((child) => {
                 const fileData: FileItemData = {
-                    id: child.nodeId,
+                    id: child.nodeUid,
                     name: child.name,
-                    mimeType: child.mimeType,
+                    mediaType: child.mediaType,
                     size: child.size,
                     type: child.type,
-                    downloadProgress: downloadingFile === child.nodeId ? downloadProgress || undefined : undefined,
+                    downloadProgress: downloadingFile === child.nodeUid ? downloadProgress || undefined : undefined,
                 };
 
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
@@ -74,7 +75,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                         return () => <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />;
                     if (estimatedTooLargeForPreview)
                         return () => <Icon name="exclamation-triangle-filled" className="color-warning" size={4} />;
-                    if (downloadingFile === child.nodeId)
+                    if (downloadingFile === child.nodeUid)
                         return () => (
                             <CircularProgress
                                 progress={fileData.downloadProgress || 0}
@@ -85,8 +86,8 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                     return () => <IcPlusCircle />;
                 };
 
-                const actions: any[] =
-                    child.type === 'file' && !isLinkedFolder && !folderSelectionMode
+                const actions: FileItemData[] =
+                    child.type === NodeType.File && !isLinkedFolder && !folderSelectionMode
                         ? [
                               {
                                   icon: getActionIcon(),
@@ -94,7 +95,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                       if (fileExists) return c('collider_2025: Action').t`Already in KB`;
                                       if (exceedsFileSizeLimit) return c('collider_2025: Info').t`Exceeds 10MB limit`;
                                       if (estimatedTooLargeForPreview) return c('collider_2025: Info').t`File too large`;
-                                      if (downloadingFile === child.nodeId) {
+                                      if (downloadingFile === child.nodeUid) {
                                           const progressPct = Math.round(fileData.downloadProgress || 0);
                                           return c('collider_2025: Info').t`Downloading (${progressPct}%)`;
                                       }
@@ -107,11 +108,11 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                       }
                                   },
                                   disabled:
-                                      downloadingFile === child.nodeId ||
+                                      downloadingFile === child.nodeUid ||
                                       fileExists ||
                                       exceedsFileSizeLimit ||
                                       estimatedTooLargeForPreview,
-                                  loading: downloadingFile === child.nodeId,
+                                  loading: downloadingFile === child.nodeUid,
                                   variant: fileExists
                                       ? 'secondary'
                                       : exceedsFileSizeLimit
@@ -124,13 +125,13 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                         : [];
 
                 const handleClick = () => {
-                    if (child.type === 'folder') {
+                    if (child.type === NodeType.Folder) {
                         onFolderClick(child);
                         return;
                     }
 
                     if (
-                        child.type === 'file' &&
+                        child.type === NodeType.File &&
                         !fileExists &&
                         !exceedsFileSizeLimit &&
                         !estimatedTooLargeForPreview &&
@@ -142,9 +143,9 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
 
                 return (
                     <FileItemCard
-                        key={child.nodeId}
+                        key={child.nodeUid}
                         file={fileData}
-                        actions={actions}
+                        actions={actions as any}
                         onClick={handleClick}
                         variant="simple"
                     />
