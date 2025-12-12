@@ -1,7 +1,9 @@
 import type { ESCiphertext } from '@proton/encrypted-search';
 import { apiHelper } from '@proton/encrypted-search';
+import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -10,6 +12,20 @@ import type { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/en
 import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
 import { queryMessage } from './esAPI';
+
+enum CONTENT_VERSION {
+    V1 = 1,
+    // Stop using turndown to clean the HTML before storing it in the database
+    DOM_INDEXING = 2,
+}
+
+const getContentVersion = (doNotUseTurndown: boolean): CONTENT_VERSION => {
+    if (doNotUseTurndown) {
+        return CONTENT_VERSION.DOM_INDEXING;
+    }
+
+    return CONTENT_VERSION.V1;
+};
 
 /**
  * Remove the specified tag from the given HTML element
@@ -26,13 +42,49 @@ export const removeTag = (element: HTMLElement, tagName: string) => {
     }
 };
 
+const prepareHTMLBody = (body: HTMLElement) => {
+    // Remove hidden elements
+    body.querySelectorAll('*').forEach((el) => {
+        const style = window.getComputedStyle(el);
+        if (style.display === 'none' || style.visibility === 'hidden') {
+            el.remove();
+        }
+    });
+
+    // Replace block elements with newlines to preserve the text structure
+    body.querySelectorAll(
+        'address, article, aside, blockquote, canvas, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hr, li, main, nav, noscript, ol, p, pre, section, table, tfoot, ul, video, tr, td, th, tbody, thead, caption'
+    ).forEach((el) => {
+        el.insertAdjacentText('beforebegin', '\n');
+    });
+
+    body.querySelectorAll('br').forEach((el) => {
+        el.textContent = '\n';
+    });
+
+    return body;
+};
+
+const getCleanMessageContent = (content: string) => {
+    return content
+        .replace(/[ \t]+/g, ' ') // Collapse spaces and tabs
+        .replace(/\n\s+/g, '\n') // Remove whitespace after newlines
+        .replace(/\n{2,}/g, '\n') // Collapse multiple newlines
+        .trim();
+};
+
 /**
  * Remove quoted text and HTML tags from body
  */
-export const cleanText = (text: string, includeQuote: boolean) => {
+export const cleanText = (text: string, includeQuote: boolean, doNotUseTurndown: boolean) => {
     const domParser = new DOMParser();
 
-    const { body } = domParser.parseFromString(text, 'text/html');
+    // No need to add comments and b64 images to the ES cache
+    const withoutComment = removeHTMLComments(text);
+    const value = removeBase64(withoutComment);
+
+    const doc = domParser.parseFromString(value, 'text/html');
+    const { body } = doc;
     removeTag(body, 'style');
     removeTag(body, 'script');
 
@@ -42,9 +94,18 @@ export const cleanText = (text: string, includeQuote: boolean) => {
         content = noQuoteContent;
     }
 
-    // Introduce new lines after every div, because the toText function joins
-    // the content of consecutive divs together and this might introduce
-    // unwanted matches. Then remove redundant consecutive new lines
+    /* Preserve as much as possible line breaks so that we don't get false positive in results.
+     E.g., with this content
+        <div>cat</div>
+        <div>her</div>
+
+     Here, "cat" and "her" should match, but not "cather".
+     */
+    if (doNotUseTurndown) {
+        const preparedBody = prepareHTMLBody(body);
+        return getCleanMessageContent(preparedBody.textContent || '');
+    }
+
     return toText(content.replaceAll('</div>', '</div><br>'))
         .replace(/\n{2,}/g, '\n')
         .trim();
@@ -148,6 +209,7 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
+    doNotUseTurndown: boolean,
     signal?: AbortSignal
 ): Promise<{ content?: ESMessageContent; error?: any }> => {
     try {
@@ -175,7 +237,7 @@ export const fetchMessage = async (
         const cleanDecryptedBody =
             typeof decryptedBody === 'string'
                 ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
-                    ? cleanText(decryptedBody, includeQuote)
+                    ? cleanText(decryptedBody, includeQuote, doNotUseTurndown)
                     : decryptedBody
                 : undefined;
 
@@ -183,6 +245,7 @@ export const fetchMessage = async (
             content: {
                 decryptedBody: cleanDecryptedBody,
                 decryptedSubject,
+                version: getContentVersion(doNotUseTurndown),
             },
         };
     } catch (error: any) {
