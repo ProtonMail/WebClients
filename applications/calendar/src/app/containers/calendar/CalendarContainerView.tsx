@@ -24,6 +24,7 @@ import {
     PrivateHeader,
     PrivateMainArea,
     QuickSettingsAppButton,
+    ReferralAppButton,
     SmartBanner,
     ToolbarButton,
     TopBanners,
@@ -596,6 +597,7 @@ const CalendarContainerView = ({
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
+        <ReferralAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.REFERRAL, appInView)} />,
     ].filter(isTruthy);
 
     const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
