@@ -30,6 +30,7 @@ import {
     hasVpnBusiness,
     isTrial,
 } from '@proton/payments';
+import { getHasVpnOnlyB2BPlan } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -490,13 +491,13 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return <p className="color-weak mt-1">{c('Info').jt`Ends on ${formattedPeriodEndDate}`}</p>;
     })();
 
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+    const hasVpnOnlyB2BPlan = getHasVpnOnlyB2BPlan(subscription);
 
     // In walletEA, we only show Visionary as the suggested plan, but if the user has that, there's no point in exploring other plans
     const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
     // For the VPN B2B plan, we don't want to show the action buttons
     // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons = !hasVpnB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
+    const showActionButtons = !hasVpnOnlyB2BPlan && !isWalletEA && !hasLumoBusiness(subscription);
 
     return (
         <>
