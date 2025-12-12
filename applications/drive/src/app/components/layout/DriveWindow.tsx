@@ -10,6 +10,7 @@ import {
     PrivateAppContainer,
     PrivateMainArea,
     QuickSettingsAppButton,
+    ReferralAppButton,
     TopBanners,
     useDrawer,
     useOpenDrawerOnLoad,
@@ -78,6 +79,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
                 disabled={loadingAllowedProducts}
             />
         ),
+        <ReferralAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.REFERRAL, appInView)} />,
     ].filter(isTruthy);
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;

@@ -46,7 +46,7 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
     const canShowTopBarButton =
         isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo && !!topButtonFeature.feature?.Value;
-    const canShowDrawerApp = isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo;
+    const canShowDrawerApp = isFeatureActive && isUserEligible;
 
     const onTopBarSpotlightDismiss = () => {
         void updateReferralTopBarButton(false);
