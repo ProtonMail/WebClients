@@ -28,6 +28,7 @@ import {
     getPassFamilyPlan,
     getPassLifetimePlan,
     getPassPlan,
+    getVPNPassProPlan,
     getVPNPlan,
     getVisionaryPlan,
 } from '@proton/components/containers/payments/features/plan';
@@ -82,7 +83,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS) {
+    if (plan?.Name === PLANS.PASS) {
         const shortPlan = getPassPlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
@@ -92,7 +93,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS_LIFETIME) {
+    if (plan?.Name === PLANS.PASS_LIFETIME) {
         const shortPlan = getPassLifetimePlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
@@ -104,7 +105,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS_PRO) {
+    if (plan?.Name === PLANS.PASS_PRO) {
         const shortPlan = getPassEssentialsSignupPlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
@@ -114,7 +115,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS_FAMILY) {
+    if (plan?.Name === PLANS.PASS_FAMILY) {
         const shortPlan = getPassFamilyPlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
@@ -124,7 +125,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS_BUSINESS) {
+    if (plan?.Name === PLANS.PASS_BUSINESS) {
         const shortPlan = getPassBusinessSignupPlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
@@ -134,7 +135,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.BUNDLE) {
+    if (plan?.Name === PLANS.BUNDLE) {
         const shortPlan = getBundlePlan({ plan, vpnServersCountData, freePlan });
         return {
             logo: (
@@ -156,7 +157,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.DRIVE) {
+    if (plan?.Name === PLANS.DRIVE) {
         const shortPlan = getDrivePlan({ plan, freePlan });
         return {
             logo: <DriveLogo variant="glyph-only" size={iconSize} />,
@@ -165,7 +166,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.DRIVE_1TB) {
+    if (plan?.Name === PLANS.DRIVE_1TB) {
         const shortPlan = getDrive1TBPlan({ plan, freePlan });
         return {
             logo: <DriveLogo variant="glyph-only" size={iconSize} />,
@@ -174,7 +175,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.DRIVE_BUSINESS) {
+    if (plan?.Name === PLANS.DRIVE_BUSINESS) {
         const shortPlan = getDriveBusinessPlan({ plan, freePlan });
         return {
             logo: <DriveLogo variant="glyph-only" size={iconSize} />,
@@ -183,7 +184,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.MAIL) {
+    if (plan?.Name === PLANS.MAIL) {
         const shortPlan = getMailPlan({ plan, freePlan });
         return {
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
@@ -192,7 +193,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.FAMILY) {
+    if (plan?.Name === PLANS.FAMILY) {
         const shortPlan = getFamilyPlan({ plan, serversCount: vpnServersCountData, freePlan });
         return {
             logo: (
@@ -217,7 +218,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.DUO) {
+    if (plan?.Name === PLANS.DUO) {
         const shortPlan = getDuoPlan({ plan, serversCount: vpnServersCountData, freePlan });
         return {
             logo: (
@@ -242,7 +243,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.VISIONARY) {
+    if (plan?.Name === PLANS.VISIONARY) {
         const shortPlan = getVisionaryPlan({ plan, freePlan, serversCount: vpnServersCountData });
         return {
             logo: (
@@ -261,7 +262,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+    if (plan?.Name === PLANS.VPN_PASS_BUNDLE) {
         return {
             logo: (
                 <div>
@@ -274,7 +275,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.BUNDLE_PRO_2024) {
+    if (plan?.Name === PLANS.BUNDLE_PRO_2024) {
         const shortPlan = getBundleProPlan(plan);
         return {
             logo: (
@@ -288,7 +289,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.BUNDLE_BIZ_2025) {
+    if (plan?.Name === PLANS.BUNDLE_BIZ_2025) {
         const shortPlan = getBundlePremiumPlan(plan);
         return {
             logo: (
@@ -302,7 +303,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.MAIL_PRO) {
+    if (plan?.Name === PLANS.MAIL_PRO) {
         const shortPlan = getMailProPlan(plan);
         return {
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
@@ -312,7 +313,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.MAIL_BUSINESS) {
+    if (plan?.Name === PLANS.MAIL_BUSINESS) {
         const shortPlan = getMailBusinessPlan(plan);
         return {
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
@@ -322,7 +323,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.LUMO) {
+    if (plan?.Name === PLANS.LUMO) {
         const shortPlan = getLumoPlan(plan);
         return {
             logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
@@ -331,12 +332,27 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.LUMO_BUSINESS) {
+    if (plan?.Name === PLANS.LUMO_BUSINESS) {
         const shortPlan = getLumoBusinessPlan(plan);
         return {
             logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
+            features: [],
+        };
+    }
+
+    if (plan?.Name === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
+        const shortPlan = getVPNPassProPlan(plan, vpnServersCountData);
+        return {
+            ...shortPlan,
+            logo: (
+                <div>
+                    <img src={bundleVpnPass} width={iconImgSize} height={iconImgSize} alt={plan.Title} />
+                </div>
+            ),
+            plan,
+            title: plan.Title,
             features: [],
         };
     }
