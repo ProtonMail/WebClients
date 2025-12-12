@@ -226,12 +226,12 @@ const AssistantMessage = ({
                         ref={markdownContainerRef}
                         className="markdown-rendering w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
                     >
-                        <div className="border-2 border-black bg-white">
-                            <p>DEBUG INFO</p>
-                            <p>isLoading: {JSON.stringify(isLoading)}</p>
-                            <p>hasToolCall: {JSON.stringify(hasToolCall)}</p>
-                            <p>toolCall: {JSON.stringify(toolCall)}</p>
-                            <p>searchResults: {JSON.stringify(searchResults)}</p>
+                        <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
+                            <p className="color-weak font-bold mb-1">DEBUG INFO</p>
+                            <p className="color-weak m-0">isLoading: {JSON.stringify(isLoading)}</p>
+                            <p className="color-weak m-0">hasToolCall: {JSON.stringify(hasToolCall)}</p>
+                            <p className="color-weak m-0 break-all">toolCall: {JSON.stringify(toolCall)}</p>
+                            <p className="color-weak m-0">searchResults: {JSON.stringify(searchResults)}</p>
                         </div>
                         {
                             // eslint-disable-next-line no-nested-ternary
