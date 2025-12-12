@@ -85,6 +85,7 @@ export const useDynamicDeviceHandling = ({
             if (
                 useSystemDefault &&
                 previousSystemDefaultDeviceId &&
+                systemDefaultDevice?.deviceId &&
                 previousSystemDefaultDeviceId !== systemDefaultDevice.deviceId
             ) {
                 updateFunction(systemDefaultDevice.deviceId);
@@ -101,6 +102,10 @@ export const useDynamicDeviceHandling = ({
 
             // Handle case where user unplugs device
             if (!currentDevice && deviceList.length > 0 && !isDefaultDevice(deviceId)) {
+                if (!systemDefaultDevice?.deviceId) {
+                    return;
+                }
+
                 if (!deviceList.find((device) => device.deviceId === systemDefaultDevice.deviceId)) {
                     updateFunction(deviceList[0].deviceId);
                     return;
@@ -209,9 +214,9 @@ export const useDynamicDeviceHandling = ({
 
         // Update the ref with current system default device IDs for next change detection
         previousSystemDefaultsRef.current = {
-            microphone: currentMicrophoneSystemDefault.deviceId,
-            camera: currentCameraSystemDefault.deviceId,
-            speaker: currentSpeakerSystemDefault.deviceId,
+            microphone: currentMicrophoneSystemDefault?.deviceId ?? null,
+            camera: currentCameraSystemDefault?.deviceId ?? null,
+            speaker: currentSpeakerSystemDefault?.deviceId ?? null,
         };
     }, [
         room,
