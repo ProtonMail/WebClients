@@ -2,24 +2,27 @@ import isEqual from 'lodash/isEqual';
 
 import { computeSha256AsBase64 } from '../crypto';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
+import type {
+    AssetId,
+    SerializedAsset,
+    SerializedConversationMap,
+    SerializedMessageMap,
+    SerializedSpaceMap
+} from '../types';
 import {
-    type AssetId,
     type AttachmentId,
     type ConversationId,
     type MessageId,
-    type SerializedAsset,
     type SerializedAttachment,
     type SerializedAttachmentMap,
     type SerializedConversation,
     type SerializedMessage,
     type SerializedSpace,
     type SpaceId,
-    cleanSerializedAsset,
     cleanSerializedAttachment,
     cleanSerializedConversation,
     cleanSerializedMessage,
-    cleanSerializedSpace,
+    cleanSerializedSpace, cleanSerializedAsset,
 } from '../types';
 import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
@@ -31,6 +34,7 @@ export const MESSAGE_STORE = 'messages_v4';
 export const ATTACHMENT_STORE = 'attachments_v4';
 export const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
+export const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
 
 export const DB_BASE_NAME = 'LumoDB';
 export const DB_NAME_SALT = 'AT8hqCBf9sDXLeCNXbaWXD769XdpPDfk';
@@ -52,6 +56,12 @@ export enum MessageStoreFields {
 export enum AttachmentStoreFields {
     Id = 'id',
     SpaceId = 'spaceId',
+}
+
+export enum FoundationSearchStoreFields {
+    BlobName = 'blobName',
+    BlobData = 'blobData',
+    LastUpdated = 'lastUpdated',
 }
 
 export enum RemoteIdStoreFields {
@@ -303,12 +313,12 @@ class StoreOperations<T extends BaseResource> {
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    markAsSynced(snapshot: T, resourceType: ResourceType, tx?: IDBTransaction): Promise<boolean> {
+    async markAsSynced(snapshot: T, resourceType: ResourceType, tx?: IDBTransaction): Promise<boolean> {
         const id = snapshot.id;
         console.log(`Marking ${resourceType} ${id} as synced`);
-        return this.getTransaction('readwrite')
-            .then((tx) => this.getById(id, tx).then((objectInDb) => ({ tx, objectInDb })))
+        if (!tx) tx = await this.getTransaction('readwrite');
+        return this.getById(id, tx)
+            .then((objectInDb) => ({ tx, objectInDb }))
             .then(({ tx, objectInDb }): Promise<boolean> => {
                 if (!objectInDb) {
                     throw new Error(`Error while marking ${resourceType} as synced: ${id} does not exist in db`);
@@ -558,6 +568,10 @@ export class DbApi {
         return this.assetStore.delete(id, tx);
     };
 
+    public getAllAssets = async (tx?: IDBTransaction): Promise<SerializedAsset[]> => {
+        return this.assetStore.getAll(tx);
+    };
+
     // Bulk operations
     public getAllSpaces = async (tx?: IDBTransaction): Promise<SerializedSpace[]> => {
         return this.spaceStore.getAll(tx);
@@ -573,10 +587,6 @@ export class DbApi {
 
     public getAllAttachments = async (tx?: IDBTransaction): Promise<SerializedAttachment[]> => {
         return this.attachmentStore.getAll(tx);
-    };
-
-    public getAllAssets = async (tx?: IDBTransaction): Promise<SerializedAsset[]> => {
-        return this.assetStore.getAll(tx);
     };
 
     public getAllIdMaps = async (tx?: IDBTransaction): Promise<IdMapEntry[]> => {
@@ -975,7 +985,7 @@ export class DbApi {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
-            const request = indexedDB.open(dbName, 9);
+            const request = indexedDB.open(dbName, 10);
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;
@@ -1042,8 +1052,8 @@ export class DbApi {
                         });
                     }
                 }
-                
-                // Migration 8 -> 9: Add assets store
+
+                // Migration 8 -> 9
                 if (event.oldVersion < 9) {
                     console.log('Upgrading IndexedDB from version', event.oldVersion, 'to 9 (adding assets store)');
                     if (!db.objectStoreNames.contains(ASSET_STORE)) {
@@ -1055,21 +1065,33 @@ export class DbApi {
                         });
                         console.log('Successfully created ASSET_STORE');
                     }
+
+                    if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+                        const F = FoundationSearchStoreFields;
+                        db.createObjectStore(FOUNDATION_SEARCH_STORE, {
+                            keyPath: F.BlobName,
+                        });
+                    }
+                }
+
+                // Migration 9 -> 10: ensure foundation_search exists for existing v9 DBs
+                if (event.oldVersion < 10) {
+                    if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+                        const F = FoundationSearchStoreFields;
+                        db.createObjectStore(FOUNDATION_SEARCH_STORE, {
+                            keyPath: F.BlobName,
+                        });
+                        console.log('Successfully created FOUNDATION_SEARCH_STORE');
+                    }
                 }
             };
 
             request.onsuccess = () => {
-                console.log('IndexedDB opened successfully, version:', request.result.version);
                 resolve(request.result);
             };
 
             request.onerror = () => {
-                console.error('IndexedDB open error:', request.error);
                 reject(request.error);
-            };
-            
-            request.onblocked = () => {
-                console.warn('IndexedDB upgrade blocked. Please close other tabs with this app open.');
             };
         });
     };
@@ -1095,5 +1117,117 @@ export class DbApi {
         const unsyncedAttachments = mapify(allAttachments.filter((a) => a.dirty === true));
 
         return { unsyncedMessages, unsyncedConversations, unsyncedSpaces, unsyncedAttachments };
+    };
+
+    // Foundation Search blob management
+    public saveSearchBlob = async (
+        blobName: string,
+        blobData: Uint8Array<ArrayBuffer> | string,
+        tx?: IDBTransaction
+    ): Promise<void> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const blobEntry = {
+            blobName,
+            blobData,
+            lastUpdated: Date.now(),
+        };
+
+        await requestToPromise(store.put(blobEntry));
+    };
+
+    public loadSearchBlob = async (
+        blobName: string,
+        tx?: IDBTransaction
+    ): Promise<Uint8Array<ArrayBuffer> | string | null> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const result = await requestToPromise(store.get(blobName));
+        return result?.blobData || null;
+    };
+
+    public removeSearchBlob = async (blobName: string, tx?: IDBTransaction): Promise<void> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+        await requestToPromise(store.delete(blobName));
+    };
+
+    public getAllSearchBlobs = async (tx?: IDBTransaction): Promise<Map<string, Uint8Array<ArrayBuffer>>> => {
+        tx ??= (await this.db).transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        const results = await requestToPromise(store.getAll());
+        const blobMap = new Map<string, Uint8Array<ArrayBuffer>>();
+
+        results.forEach((entry: any) => {
+            if (entry.blobName && entry.blobData) {
+                blobMap.set(entry.blobName, entry.blobData);
+            }
+        });
+
+        return blobMap;
+    };
+
+    public clearAllSearchBlobs = async (tx?: IDBTransaction): Promise<void> => {
+        const db = await this.db;
+        // Gracefully handle older DBs that don't have the foundation store yet
+        if (!db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE)) {
+            return;
+        }
+
+        tx ??= db.transaction([FOUNDATION_SEARCH_STORE], 'readwrite');
+        const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+
+        await requestToPromise(store.clear());
+    };
+
+    public checkFoundationSearchStatus = async (): Promise<{
+        tableExists: boolean;
+        hasEntries: boolean;
+        entryCount: number;
+        totalBytes?: number;
+        isEnabled: boolean;
+    }> => {
+        try {
+            const db = await this.db;
+            const tableExists = db.objectStoreNames.contains(FOUNDATION_SEARCH_STORE);
+
+            if (!tableExists) {
+                return { tableExists: false, hasEntries: false, entryCount: 0, totalBytes: 0, isEnabled: true };
+            }
+
+            const tx = db.transaction([FOUNDATION_SEARCH_STORE], 'readonly');
+            const store = tx.objectStore(FOUNDATION_SEARCH_STORE);
+            const entries = await requestToPromise(store.getAll());
+            const count = entries.length;
+            const totalBytes = entries.reduce((acc: number, entry: any) => {
+                const data = entry?.blobData;
+                if (!data) return acc;
+                if (typeof data === 'string') {
+                    // base64 size approximation
+                    return acc + Math.floor(data.length * 0.75);
+                }
+                if (data instanceof Uint8Array) {
+                    return acc + data.byteLength;
+                }
+                if (typeof data.byteLength === 'number') {
+                    return acc + data.byteLength;
+                }
+                return acc;
+            }, 0);
+
+            return {
+                tableExists: true,
+                hasEntries: count > 0,
+                entryCount: count,
+                totalBytes,
+                isEnabled: true,
+            };
+        } catch (error) {
+            console.warn('Failed to check foundation search status:', error);
+            return { tableExists: false, hasEntries: false, entryCount: 0, totalBytes: 0, isEnabled: true };
+        }
     };
 }
