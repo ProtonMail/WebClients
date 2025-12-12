@@ -8,6 +8,7 @@ import { useLumoDispatch } from '../redux/hooks';
 import { locallyDeleteSpaceFromLocalRequest, pushSpaceRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
 import { sendConversationDeleteEvent } from '../util/telemetry';
+import { useDriveFolderIndexing } from './useDriveFolderIndexing';
 import { useLumoNavigate } from './useLumoNavigate';
 
 interface UseConversationDeleteProps {
@@ -20,6 +21,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const confirmDeleteModal = useModalStateObject();
+    const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
 
     const openConfirmationModal = useCallback(() => {
         confirmDeleteModal.openModal(true);
@@ -29,6 +31,9 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
         sendConversationDeleteEvent();
 
         try {
+            // Clean up any Drive folders indexed for this space
+            await removeIndexedFoldersBySpace(spaceId);
+
             dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
             dispatch(pushSpaceRequest({ id: spaceId }));
 
@@ -39,7 +44,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
 
         confirmDeleteModal.openModal(false);
         navigate('/');
-    }, [spaceId, dispatch, createNotification, confirmDeleteModal, navigate]);
+    }, [spaceId, dispatch, createNotification, confirmDeleteModal, navigate, removeIndexedFoldersBySpace]);
 
     return {
         openConfirmationModal,
