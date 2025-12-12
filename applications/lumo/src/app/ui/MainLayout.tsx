@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { DriveIndexingProvider } from '../providers/DriveIndexingProvider';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { SidebarProvider, useSidebar } from '../providers/SidebarProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
@@ -44,7 +45,9 @@ export const MainLayout = ({ children, HeaderComponent }: Props) => {
         <GhostChatProvider>
             <SidebarProvider>
                 <SearchModalProvider>
-                    <MainLayoutContent children={children} HeaderComponent={HeaderComponent} />
+                    <DriveIndexingProvider>
+                        <MainLayoutContent children={children} HeaderComponent={HeaderComponent} />
+                    </DriveIndexingProvider>
                 </SearchModalProvider>
             </SidebarProvider>
         </GhostChatProvider>

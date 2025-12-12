@@ -1,19 +1,31 @@
+// TODO: Remove disable and fix the file
+/* eslint-disable no-nested-ternary, react/display-name */
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+
+import { useUser } from '@proton/account/user/hooks';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
-import { getAcceptAttributeString } from '../../../../util/filetypes';
+import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
+import { useDriveIndexing } from '../../../../providers/DriveIndexingProvider';
+import { fileProcessingService } from '../../../../services/fileProcessingService';
+import { SearchService } from '../../../../services/search/searchService';
+import type { DriveDocument } from '../../../../types/documents';
+import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../../util/filetypes';
 import { type BreadcrumbItem } from './DriveBreadcrumbs';
 import { DriveBrowserHeader } from './DriveBrowserHeader';
 import { DriveContent } from './DriveContent';
 import { DriveErrorState } from './DriveErrorState';
+import { EventIndexingBanner } from './EventIndexingBanner';
+import { IndexingStatusBanner } from './IndexingStatusBanner';
 import { type UploadProgress, UploadProgressOverlay } from './UploadProgressOverlay';
 
 export interface DriveBrowserHandle {
@@ -39,216 +51,201 @@ interface DriveBrowserProps {
     hideHeader?: boolean; // When true, hides the header (for project view)
 }
 
-export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(({
-    onFileSelect,
-    onError,
-    onClose,
-    onBack,
-    isModal = false,
-    initialShowDriveBrowser = true,
-    existingFiles = [],
-    onFolderSelect,
-    folderSelectionMode = false,
-    initialFolderId,
-    initialFolderName,
-    isLinkedFolder = false,
-    hideHeader = false,
-}, ref) => {
-    const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
-    const { createNotification } = useNotifications();
-    const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
-    const [children, setChildren] = useState<DriveNode[]>([]);
-    const [rootFolderId, setRootFolderId] = useState<string | null>(null);
+export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
+    (
+        {
+            onFileSelect,
+            onError,
+            onClose,
+            onBack,
+            isModal = false,
+            initialShowDriveBrowser = true,
+            existingFiles = [],
+            onFolderSelect,
+            folderSelectionMode = false,
+            initialFolderId,
+            initialFolderName,
+            isLinkedFolder = false,
+            hideHeader = false,
+        },
+        ref
+    ) => {
+        const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
+        const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
+        const { eventIndexingStatus, setIndexingFile } = useDriveIndexing();
+        const { createNotification } = useNotifications();
+        const [user] = useUser();
+        const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
+        const [children, setChildren] = useState<DriveNode[]>([]);
+        const [rootFolderId, setRootFolderId] = useState<string | null>(null);
 
-    const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
-    const [loading, setLoading] = useState(false);
-    const [isRefreshing, setIsRefreshing] = useState(false);
-    const [downloadingFile, setDownloadingFile] = useState<string | null>(null);
-    const [downloadProgress, setDownloadProgress] = useState<number | null>(null);
-    const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
-    const [localError, setLocalError] = useState<string | null>(null);
-    const initializedRef = useRef(false);
-    const fileInputRef = useRef<HTMLInputElement>(null);
+        const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
+        const [loading, setLoading] = useState(false);
+        const [isRefreshing, setIsRefreshing] = useState(false);
+        const [downloadingFile, setDownloadingFile] = useState<string | null>(null);
+        const [downloadProgress, setDownloadProgress] = useState<number | null>(null);
+        const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
+        const [localError, setLocalError] = useState<string | null>(null);
+        const initializedRef = useRef(false);
+        const fileInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        if (error) {
-            initializedRef.current = false;
-            setLocalError(null);
-        }
-    }, [error]);
-
-    const handleRefresh = useCallback(async () => {
-        if (!currentFolder) {
-            return;
-        }
-
-        try {
-            setIsRefreshing(true);
-
-            // Add a small delay to allow any pending operations to complete
-            await new Promise((resolve) => setTimeout(resolve, 100));
-
-            const folderChildren = await browseFolderChildren(currentFolder.nodeId, true);
-            setChildren(folderChildren);
-        } catch (error) {
-            console.error('Failed to refresh folder:', error);
-            onError?.(error instanceof Error ? error : new Error('Failed to refresh folder'));
-        } finally {
-            setIsRefreshing(false);
-        }
-    }, [browseFolderChildren, currentFolder, onError]);
-
-    // Refresh when window regains focus (user comes back to the tab)
-    useEffect(() => {
-        const handleFocus = () => {
-            if (currentFolder && !loading && !isRefreshing) {
-                handleRefresh();
+        useEffect(() => {
+            if (error) {
+                initializedRef.current = false;
+                setLocalError(null);
             }
-        };
+        }, [error]);
 
-        window.addEventListener('focus', handleFocus);
-        return () => window.removeEventListener('focus', handleFocus);
-    }, [currentFolder, loading, isRefreshing, handleRefresh]);
-
-    // Initialize with root folder or specific folder
-    const initializeRoot = useCallback(async () => {
-        try {
-            setLoading(true);
-            setLocalError(null); // Clear any previous local errors
-            initializedRef.current = true;
-
-            const rootFolder = await getRootFolder();
-            setRootFolderId(rootFolder.nodeId);
-
-            if (initialFolderId && initialFolderId !== rootFolder.nodeId) {
-                // Navigate to specific folder - this is the base/root for this browser
-                // Browse the folder to get its children
-                const folderChildren = await browseFolderChildren(initialFolderId);
-                setChildren(folderChildren);
-
-                // Create a DriveNode for the target folder
-                // Use the provided name if available, otherwise use a default
-                const targetFolder: DriveNode = {
-                    nodeId: initialFolderId,
-                    name: initialFolderName || 'Folder',
-                    type: 'folder',
-                    parentNodeId: rootFolder.nodeId, // Store parent for reference, but don't show in breadcrumbs
-                };
-                setCurrentFolder(targetFolder);
-
-                // Set breadcrumbs starting from the linked folder (not root)
-                // This prevents users from navigating back to root
-                setBreadcrumbs([
-                    { node: targetFolder, index: 0 },
-                ]);
-            } else {
-                // Start at root folder
-                setCurrentFolder(rootFolder);
-                setBreadcrumbs([{ node: rootFolder, index: 0 }]);
-                const rootChildren = await browseFolderChildren(rootFolder.nodeId);
-                setChildren(rootChildren);
-            }
-        } catch (err) {
-            console.error('Failed to initialize Drive browser:', err);
-            initializedRef.current = false; // Reset on error so we can try again
-
-            // Check if this is the Drive not initialized error
-            if (err instanceof Error && err.message === 'DRIVE_NOT_INITIALIZED') {
-                console.log('Setting localError to DRIVE_NOT_INITIALIZED');
-                setLocalError('DRIVE_NOT_INITIALIZED');
-            } else {
-                console.log(
-                    'Setting localError to:',
-                    err instanceof Error ? err.message : 'Failed to initialize Drive browser'
-                );
-                setLocalError(err instanceof Error ? err.message : 'Failed to initialize Drive browser');
-            }
-
-            onError?.(err instanceof Error ? err : new Error('Failed to initialize Drive browser'));
-        } finally {
-            setLoading(false);
-        }
-    }, [getRootFolder, browseFolderChildren, onError, initialFolderId]);
-
-    useEffect(() => {
-        if (!isInitialized || error || initializedRef.current) {
-            return;
-        }
-
-        void initializeRoot();
-    }, [isInitialized, error, initializeRoot]);
-
-    const handleFolderClick = useCallback(
-        async (folder: DriveNode) => {
-            if (folder.type !== 'folder') {
+        const handleRefresh = useCallback(async () => {
+            if (!currentFolder) {
                 return;
             }
 
-            // Always navigate into folders (even in folder selection mode)
+            try {
+                setIsRefreshing(true);
+
+                // Add a small delay to allow any pending operations to complete
+                await new Promise((resolve) => setTimeout(resolve, 100));
+
+                const folderChildren = await browseFolderChildren(currentFolder.nodeUid, true);
+                setChildren(folderChildren);
+            } catch (error) {
+                console.error('Failed to refresh folder:', error);
+                onError?.(error instanceof Error ? error : new Error('Failed to refresh folder'));
+            } finally {
+                setIsRefreshing(false);
+            }
+        }, [browseFolderChildren, currentFolder, onError]);
+
+        // Refresh when window regains focus (user comes back to the tab)
+        useEffect(() => {
+            const handleFocus = () => {
+                if (currentFolder && !loading && !isRefreshing) {
+                    handleRefresh().catch(console.error);
+                }
+            };
+
+            window.addEventListener('focus', handleFocus);
+            return () => window.removeEventListener('focus', handleFocus);
+        }, [currentFolder, loading, isRefreshing, handleRefresh]);
+
+        // Initialize with root folder or specific folder
+        const initializeRoot = useCallback(async () => {
             try {
                 setLoading(true);
-                const folderChildren = await browseFolderChildren(folder.nodeId);
-                setChildren(folderChildren);
-                setCurrentFolder(folder);
+                setLocalError(null); // Clear any previous local errors
+                initializedRef.current = true;
 
-                // Add to breadcrumbs
-                // If we have an initialFolderId, start breadcrumbs from that folder (not root)
-                const newBreadcrumb: BreadcrumbItem = {
-                    node: folder,
-                    index: breadcrumbs.length,
-                };
+                const rootFolder = await getRootFolder();
+                setRootFolderId(rootFolder.nodeUid);
 
-                // If this is the first navigation and we have initialFolderId, replace root with initial folder
-                if (initialFolderId && breadcrumbs.length === 0 && folder.nodeId === initialFolderId) {
-                    setBreadcrumbs([newBreadcrumb]);
+                if (initialFolderId && initialFolderId !== rootFolder.nodeUid) {
+                    // Navigate to specific folder - this is the base/root for this browser
+                    // Browse the folder to get its children
+                    const folderChildren = await browseFolderChildren(initialFolderId);
+                    setChildren(folderChildren);
+
+                    // Create a DriveNode for the target folder
+                    // Use the provided name if available, otherwise use a default
+                    const targetFolder: DriveNode = {
+                        nodeUid: initialFolderId,
+                        name: initialFolderName || c('Title').t`Folder`,
+                        type: NodeType.Folder,
+                        parentUid: rootFolder.nodeUid, // Store parent for reference, but don't show in breadcrumbs
+                    };
+                    setCurrentFolder(targetFolder);
+
+                    // Set breadcrumbs starting from the linked folder (not root)
+                    // This prevents users from navigating back to root
+                    setBreadcrumbs([{ node: targetFolder, index: 0 }]);
                 } else {
-                    setBreadcrumbs([...breadcrumbs, newBreadcrumb]);
+                    // Start at root folder
+                    setCurrentFolder(rootFolder);
+                    setBreadcrumbs([{ node: rootFolder, index: 0 }]);
+                    const rootChildren = await browseFolderChildren(rootFolder.nodeUid);
+                    setChildren(rootChildren);
+                }
+            } catch (err) {
+                console.error('Failed to initialize Drive browser:', err);
+                initializedRef.current = false; // Reset on error so we can try again
+
+                // Check if this is the Drive not initialized error
+                if (err instanceof Error && err.message === 'DRIVE_NOT_INITIALIZED') {
+                    console.log('Setting localError to DRIVE_NOT_INITIALIZED');
+                    setLocalError('DRIVE_NOT_INITIALIZED');
+                } else {
+                    console.log(
+                        'Setting localError to:',
+                        err instanceof Error ? err.message : 'Failed to initialize Drive browser'
+                    );
+                    setLocalError(err instanceof Error ? err.message : 'Failed to initialize Drive browser');
                 }
 
-                // In folder selection mode, notify parent of current folder for potential linking
-                if (folderSelectionMode && onFolderSelect) {
-                    onFolderSelect(folder);
-                }
-            } catch (error) {
-                console.error('Failed to browse folder:', error);
-                onError?.(error instanceof Error ? error : new Error('Failed to browse folder'));
+                onError?.(err instanceof Error ? err : new Error('Failed to initialize Drive browser'));
             } finally {
                 setLoading(false);
             }
-        },
-        [browseFolderChildren, breadcrumbs, onError, initialFolderId, folderSelectionMode, onFolderSelect]
-    );
+        }, [getRootFolder, browseFolderChildren, onError, initialFolderId, initialFolderName]);
 
-    const handleFileClick = useCallback(
-        async (file: DriveNode) => {
-            if (file.type !== 'file') {
+        useEffect(() => {
+            if (!isInitialized || error || initializedRef.current) {
                 return;
             }
 
-            // Check file size limit before downloading
-            if (file.size && file.size > MAX_FILE_SIZE) {
-                const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
-                const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
-                createNotification({
-                    text: c('collider_2025: Error')
-                        .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
-                    type: 'error',
-                });
-                return;
-            }
+            void initializeRoot();
+        }, [isInitialized, error, initializeRoot]);
 
-            try {
-                setDownloadingFile(file.nodeId);
-                setDownloadProgress(0);
+        const handleFolderClick = useCallback(
+            async (folder: DriveNode) => {
+                if (folder.type !== NodeType.Folder) {
+                    return;
+                }
 
-                const data = await downloadFile(file.nodeId, (progress) => {
-                    setDownloadProgress(progress);
-                });
+                // Always navigate into folders (even in folder selection mode)
+                try {
+                    setLoading(true);
+                    const folderChildren = await browseFolderChildren(folder.nodeUid);
+                    setChildren(folderChildren);
+                    setCurrentFolder(folder);
 
-                // Final size check after download (fallback validation)
-                if (data.byteLength > MAX_FILE_SIZE) {
+                    // Add to breadcrumbs
+                    // If we have an initialFolderId, start breadcrumbs from that folder (not root)
+                    const newBreadcrumb: BreadcrumbItem = {
+                        node: folder,
+                        index: breadcrumbs.length,
+                    };
+
+                    // If this is the first navigation and we have initialFolderId, replace root with initial folder
+                    if (initialFolderId && breadcrumbs.length === 0 && folder.nodeUid === initialFolderId) {
+                        setBreadcrumbs([newBreadcrumb]);
+                    } else {
+                        setBreadcrumbs([...breadcrumbs, newBreadcrumb]);
+                    }
+
+                    // In folder selection mode, notify parent of current folder for potential linking
+                    if (folderSelectionMode && onFolderSelect) {
+                        onFolderSelect(folder);
+                    }
+                } catch (error) {
+                    console.error('Failed to browse folder:', error);
+                    onError?.(error instanceof Error ? error : new Error('Failed to browse folder'));
+                } finally {
+                    setLoading(false);
+                }
+            },
+            [browseFolderChildren, breadcrumbs, onError, initialFolderId, folderSelectionMode, onFolderSelect]
+        );
+
+        const handleFileClick = useCallback(
+            async (file: DriveNode) => {
+                if (file.type !== NodeType.File) {
+                    return;
+                }
+
+                // Check file size limit before downloading
+                if (file.size && file.size > MAX_FILE_SIZE) {
                     const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
-                    const fileSizeFormatted = humanSize({ bytes: data.byteLength, unit: 'MB', fraction: 1 });
+                    const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                     createNotification({
                         text: c('collider_2025: Error')
                             .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
@@ -257,273 +254,369 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(({
                     return;
                 }
 
-                onFileSelect(file, new Uint8Array(data));
-            } catch (error) {
-                console.error('Failed to download file:', error);
-                onError?.(error instanceof Error ? error : new Error('Failed to download file'));
-            } finally {
-                setDownloadingFile(null);
-                setDownloadProgress(null);
-            }
-        },
-        [downloadFile, onFileSelect, onError, createNotification]
-    );
-
-    const handleBreadcrumbClick = useCallback(
-        async (breadcrumb: BreadcrumbItem) => {
-            if (breadcrumb.node.nodeId === currentFolder?.nodeId) {
-                return;
-            }
-
-            // Prevent navigating back to root if we have an initialFolderId
-            if (initialFolderId && breadcrumb.index === 0 && breadcrumb.node.nodeId === rootFolderId) {
-                return;
-            }
-
-            try {
-                setLoading(true);
-                const folderChildren = await browseFolderChildren(breadcrumb.node.nodeId);
-                setChildren(folderChildren);
-                setCurrentFolder(breadcrumb.node);
-
-                // Update breadcrumbs to remove items after the clicked one
-                setBreadcrumbs(breadcrumbs.slice(0, breadcrumb.index + 1));
-            } catch (error) {
-                console.error('Failed to navigate to folder:', error);
-                onError?.(error instanceof Error ? error : new Error('Failed to navigate to folder'));
-            } finally {
-                setLoading(false);
-            }
-        },
-        [browseFolderChildren, breadcrumbs, currentFolder, onError, initialFolderId, rootFolderId]
-    );
-
-    // Upload functionality
-    const handleFileUpload = useCallback(
-        async (files: FileList) => {
-            if (!currentFolder) {
-                return;
-            }
-
-            const fileArray = Array.from(files);
-
-            for (const file of fileArray) {
                 try {
-                    // Check file size limit first
-                    if (file.size > MAX_FILE_SIZE) {
+                    setDownloadingFile(file.nodeUid);
+                    setDownloadProgress(0);
+
+                    const data = await downloadFile(file.nodeUid, (progress) => {
+                        setDownloadProgress(progress);
+                    });
+
+                    // Final size check after download (fallback validation)
+                    if (data.byteLength > MAX_FILE_SIZE) {
                         const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
-                        const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                        const fileSizeFormatted = humanSize({ bytes: data.byteLength, unit: 'MB', fraction: 1 });
                         createNotification({
                             text: c('collider_2025: Error')
                                 .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                             type: 'error',
                         });
-                        continue; // Skip this file and continue with the next one
+                        return;
                     }
 
-                    setUploadProgress({ fileName: file.name, progress: 0 });
+                    onFileSelect(file, new Uint8Array(data));
+                } catch (error) {
+                    console.error('Failed to download file:', error);
+                    onError?.(error instanceof Error ? error : new Error('Failed to download file'));
+                } finally {
+                    setDownloadingFile(null);
+                    setDownloadProgress(null);
+                }
+            },
+            [downloadFile, onFileSelect, onError, createNotification]
+        );
 
-                    // Upload the file to Drive
-                    const nodeUid = await uploadFile(currentFolder.nodeId, file, (progress) => {
-                        setUploadProgress({ fileName: file.name, progress });
-                    });
+        const handleBreadcrumbClick = useCallback(
+            async (breadcrumb: BreadcrumbItem) => {
+                if (breadcrumb.node.nodeUid === currentFolder?.nodeUid) {
+                    return;
+                }
 
-                    console.log(`Successfully uploaded ${file.name}`);
+                // Prevent navigating back to root if we have an initialFolderId
+                if (initialFolderId && breadcrumb.index === 0 && breadcrumb.node.nodeUid === rootFolderId) {
+                    return;
+                }
 
-                    // If folder is linked, files are automatically active - don't process as assets
-                    if (!isLinkedFolder) {
-                        // Automatically download and process the uploaded file for knowledge base
-                        try {
-                            console.log(`Auto-processing uploaded file: ${file.name}`);
+                try {
+                    setLoading(true);
+                    const folderChildren = await browseFolderChildren(breadcrumb.node.nodeUid);
+                    setChildren(folderChildren);
+                    setCurrentFolder(breadcrumb.node);
 
-                            // Update progress to show processing state
-                            setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
+                    // Update breadcrumbs to remove items after the clicked one
+                    setBreadcrumbs(breadcrumbs.slice(0, breadcrumb.index + 1));
+                } catch (error) {
+                    console.error('Failed to navigate to folder:', error);
+                    onError?.(error instanceof Error ? error : new Error('Failed to navigate to folder'));
+                } finally {
+                    setLoading(false);
+                }
+            },
+            [browseFolderChildren, breadcrumbs, currentFolder, onError, initialFolderId, rootFolderId]
+        );
 
-                            // Create a DriveNode object for the uploaded file
-                            const uploadedFileNode: DriveNode = {
-                                nodeId: nodeUid,
-                                name: file.name,
-                                type: 'file',
-                                size: file.size,
-                                mimeType: file.type,
-                                modifiedTime: Date.now(),
-                                // Add other properties as needed
-                            };
+        // Upload functionality
+        const handleFileUpload = useCallback(
+            async (files: FileList) => {
+                if (!currentFolder) {
+                    return;
+                }
 
-                            // Read the file content directly from the uploaded file
-                            const fileContent = new Uint8Array(await file.arrayBuffer());
+                const fileArray = Array.from(files);
 
-                            // Process the file through the same pipeline as manual selection
-                            onFileSelect(uploadedFileNode, fileContent);
-
-                            // Show success notification
+                for (const file of fileArray) {
+                    try {
+                        // Check file size limit first
+                        if (file.size > MAX_FILE_SIZE) {
+                            const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                            const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                             createNotification({
-                                text: c('collider_2025: Success').t`File uploaded and added to knowledge base`,
-                                type: 'success',
-                            });
-
-                            console.log(`Auto-processed uploaded file: ${file.name}`);
-                        } catch (processingError) {
-                            console.error(`Failed to auto-process uploaded file ${file.name}:`, processingError);
-                            // Show error notification for processing failure
-                            createNotification({
-                                text: c('collider_2025: Error').t`File uploaded but failed to add to knowledge base`,
+                                text: c('collider_2025: Error')
+                                    .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                                 type: 'error',
                             });
+                            continue; // Skip this file and continue with the next one
                         }
-                    } else {
-                        // Just show success notification - file is in Drive and will be available automatically
-                        createNotification({
-                            text: c('collider_2025: Success').t`File uploaded to Drive folder`,
-                            type: 'success',
+
+                        setUploadProgress({ fileName: file.name, progress: 0 });
+
+                        // Upload the file to Drive
+                        const nodeUid = await uploadFile(currentFolder.nodeUid, file, (progress) => {
+                            setUploadProgress({ fileName: file.name, progress });
                         });
+
+                        console.log(`Successfully uploaded ${file.name}`);
+
+                        // If folder is linked, files are automatically active - don't process as assets
+                        if (!isLinkedFolder) {
+                            // Automatically download and process the uploaded file for knowledge base
+                            try {
+                                console.log(`Auto-processing uploaded file: ${file.name}`);
+
+                                // Update progress to show processing state
+                                setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
+
+                                // Create a DriveNode object for the uploaded file
+                                const uploadedFileNode: DriveNode = {
+                                    nodeUid: nodeUid,
+                                    name: file.name,
+                                    type: NodeType.File,
+                                    size: file.size,
+                                    mediaType: file.type,
+                                    modifiedTime: new Date(),
+                                    // Add other properties as needed
+                                };
+
+                                // Read the file content directly from the uploaded file
+                                const fileContent = new Uint8Array(await file.arrayBuffer());
+
+                                // Process the file through the same pipeline as manual selection
+                                onFileSelect(uploadedFileNode, fileContent);
+
+                                // Show success notification
+                                createNotification({
+                                    text: c('collider_2025: Success').t`File uploaded and added to knowledge base`,
+                                    type: 'success',
+                                });
+
+                                console.log(`Auto-processed uploaded file: ${file.name}`);
+                            } catch (processingError) {
+                                console.error(`Failed to auto-process uploaded file ${file.name}:`, processingError);
+                                // Show error notification for processing failure
+                                createNotification({
+                                    text: c('collider_2025: Error').t`File uploaded but failed to add to knowledge base`,
+                                    type: 'error',
+                                });
+                            }
+                        } else {
+                            // Linked folder - index the file immediately (no need to re-download)
+                            try {
+                                console.log(`[DriveBrowser] Indexing uploaded file immediately: ${file.name}`);
+                                setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
+                                setIndexingFile(file.name); // Show indexing banner
+                                
+                                // Yield to event loop to allow React to render the banner
+                                await new Promise(resolve => setTimeout(resolve, 0));
+
+                                // Process the file we already have in memory
+                                const result = await fileProcessingService.processFile(file);
+
+                                if (result.success && result.result && user?.ID) {
+                                    // Find the indexed folder for this upload
+                                    const indexedFolder = indexedFolders.find(
+                                        (f) => f.nodeUid === currentFolder.nodeUid || f.nodeUid === initialFolderId
+                                    );
+
+                                    const document: DriveDocument = {
+                                        id: nodeUid,
+                                        name: file.name,
+                                        content: result.result.convertedContent,
+                                        mimeType: file.type || getMimeTypeFromExtension(file.name) || 'application/octet-stream',
+                                        size: file.size,
+                                        modifiedTime: Date.now(),
+                                        folderId: currentFolder.nodeUid,
+                                        folderPath: currentFolder.name || '',
+                                        spaceId: indexedFolder?.spaceId,
+                                    };
+
+                                    if (document.content && document.content.length > 0) {
+                                        const searchService = SearchService.get(user.ID);
+                                        const indexResult = await searchService.indexDocuments([document]);
+
+                                        if (indexResult.success) {
+                                            console.log(`[DriveBrowser] Successfully indexed uploaded file: ${file.name}`);
+                                            createNotification({
+                                                text: c('collider_2025: Success').t`File uploaded and indexed for search`,
+                                                type: 'success',
+                                            });
+                                        } else {
+                                            console.error('[DriveBrowser] Failed to index uploaded file:', indexResult.error);
+                                            createNotification({
+                                                text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                                type: 'success',
+                                            });
+                                        }
+                                    } else {
+                                        createNotification({
+                                            text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                            type: 'success',
+                                        });
+                                    }
+                                } else {
+                                    // Processing failed or not supported, just show upload success
+                                    createNotification({
+                                        text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                        type: 'success',
+                                    });
+                                }
+                                setIndexingFile(null); // Clear indexing banner
+                            } catch (indexError) {
+                                console.error(`[DriveBrowser] Failed to index uploaded file:`, indexError);
+                                setIndexingFile(null); // Clear indexing banner
+                                // Still show success for upload, indexing will happen via event
+                                createNotification({
+                                    text: c('collider_2025: Success').t`File uploaded to Drive folder`,
+                                    type: 'success',
+                                });
+                            }
+                        }
+                    } catch (error) {
+                        console.error(`Failed to upload ${file.name}:`, error);
+                        onError?.(error instanceof Error ? error : new Error(`Failed to upload ${file.name}`));
                     }
-                } catch (error) {
-                    console.error(`Failed to upload ${file.name}:`, error);
-                    onError?.(error instanceof Error ? error : new Error(`Failed to upload ${file.name}`));
                 }
+
+                setUploadProgress(null);
+
+                // Refresh the folder contents to show the new files
+                try {
+                    await handleRefresh();
+                } catch (error) {
+                    console.error('Failed to refresh after upload:', error);
+                }
+            },
+            [currentFolder, uploadFile, onError, handleRefresh, onFileSelect, createNotification, isLinkedFolder, user?.ID, indexedFolders, initialFolderId, setIndexingFile]
+        );
+
+        const handleFileInputChange = useCallback(
+            (e: React.ChangeEvent<HTMLInputElement>) => {
+                const files = e.target.files;
+                if (files && files.length > 0) {
+                    void handleFileUpload(files);
+                }
+                // Reset the input value so the same file can be selected again
+                if (e.target) {
+                    e.target.value = '';
+                }
+            },
+            [handleFileUpload]
+        );
+
+        const handleUploadButtonClick = useCallback(() => {
+            fileInputRef.current?.click();
+        }, []);
+
+        // Expose imperative methods via ref
+        useImperativeHandle(
+            ref,
+            () => ({
+                triggerUpload: handleUploadButtonClick,
+                triggerRefresh: handleRefresh,
+            }),
+            [handleUploadButtonClick, handleRefresh]
+        );
+
+        // Check if we can show the "Link Current Folder" option
+        const canLinkCurrentFolder = (() => {
+            const hasCurrentFolder = !!currentFolder;
+            const isInFolderSelectionMode = folderSelectionMode;
+            const hasSelectionCallback = !!onFolderSelect;
+            const hasRootFolderId = !!rootFolderId;
+            const isNotRootFolder = currentFolder?.nodeUid !== rootFolderId;
+
+            return (
+                hasCurrentFolder && isInFolderSelectionMode && hasSelectionCallback && hasRootFolderId && isNotRootFolder
+            );
+        })();
+
+        const handleLinkCurrentFolder = useCallback(() => {
+            if (!currentFolder) return;
+
+            // Prevent selecting the root folder
+            if (currentFolder.nodeUid === rootFolderId) {
+                createNotification({
+                    text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
+                    type: 'error',
+                });
+                return;
             }
 
-            setUploadProgress(null);
+            onFolderSelect?.(currentFolder);
+        }, [currentFolder, rootFolderId, onFolderSelect, createNotification]);
 
-            // Refresh the folder contents to show the new files
-            try {
-                await handleRefresh();
-            } catch (error) {
-                console.error('Failed to refresh after upload:', error);
-            }
-        },
-        [currentFolder, uploadFile, onError, handleRefresh, onFileSelect, createNotification]
-    );
+        // Check for errors from both SDK and local initialization
+        const displayError = error || localError;
+        console.log('DriveBrowser render - SDK error:', error, 'localError:', localError, 'displayError:', displayError);
 
-    const handleFileInputChange = useCallback(
-        (e: React.ChangeEvent<HTMLInputElement>) => {
-            const files = e.target.files;
-            if (files && files.length > 0) {
-                handleFileUpload(files);
-            }
-            // Reset the input value so the same file can be selected again
-            if (e.target) {
-                e.target.value = '';
-            }
-        },
-        [handleFileUpload]
-    );
-
-    const handleUploadButtonClick = useCallback(() => {
-        fileInputRef.current?.click();
-    }, []);
-
-    // Expose imperative methods via ref
-    useImperativeHandle(ref, () => ({
-        triggerUpload: handleUploadButtonClick,
-        triggerRefresh: handleRefresh,
-    }), [handleUploadButtonClick, handleRefresh]);
-
-    // Check if we can show the "Link Current Folder" option
-    const canLinkCurrentFolder = (() => {
-        const hasCurrentFolder = !!currentFolder;
-        const isInFolderSelectionMode = folderSelectionMode;
-        const hasSelectionCallback = !!onFolderSelect;
-        const hasRootFolderId = !!rootFolderId;
-        const isNotRootFolder = currentFolder?.nodeId !== rootFolderId;
-        
-        return hasCurrentFolder && 
-               isInFolderSelectionMode && 
-               hasSelectionCallback && 
-               hasRootFolderId && 
-               isNotRootFolder;
-    })();
-
-    const handleLinkCurrentFolder = useCallback(() => {
-        if (!currentFolder) return;
-        
-        // Prevent selecting the root folder
-        if (currentFolder.nodeId === rootFolderId) {
-            createNotification({
-                text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
-                type: 'error',
-            });
-            return;
-        }
-        
-        onFolderSelect?.(currentFolder);
-    }, [currentFolder, rootFolderId, onFolderSelect, createNotification]);
-
-    // Check for errors from both SDK and local initialization
-    const displayError = error || localError;
-    console.log('DriveBrowser render - SDK error:', error, 'localError:', localError, 'displayError:', displayError);
-
-    return (
-        <div className={'flex flex-column flex-nowrap h-full relative' + (isModal ? '' : ' p-4')}>
-            <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                className="hidden"
-                onChange={handleFileInputChange}
-                accept={getAcceptAttributeString()}
-            />
-
-            {!hideHeader && (
-                <DriveBrowserHeader
-                    onBack={onBack}
-                    onClose={onClose}
-                    onRefresh={handleRefresh}
-                    onUpload={handleUploadButtonClick}
-                    initialShowDriveBrowser={initialShowDriveBrowser}
-                    displayError={!!displayError}
-                    loading={loading}
-                    isRefreshing={isRefreshing}
-                    hasCurrentFolder={!!currentFolder}
-                    folderSelectionMode={folderSelectionMode}
-                    onLinkCurrentFolder={canLinkCurrentFolder ? handleLinkCurrentFolder : undefined}
-                    currentFolderName={currentFolder?.name}
+        return (
+            <div className={'flex flex-column flex-nowrap h-full relative' + (isModal ? '' : ' p-4')}>
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    className="hidden"
+                    onChange={handleFileInputChange}
+                    accept={getAcceptAttributeString()}
                 />
-            )}
 
-            {displayError && (
-                <DriveErrorState
-                    onRetry={() => {
-                        initializedRef.current = false;
-                        void initializeRoot();
-                    }}
-                    loading={loading}
+                {!hideHeader && (
+                    <DriveBrowserHeader
+                        onBack={onBack}
+                        onClose={onClose}
+                        onRefresh={handleRefresh}
+                        onUpload={handleUploadButtonClick}
+                        initialShowDriveBrowser={initialShowDriveBrowser}
+                        displayError={!!displayError}
+                        loading={loading}
+                        isRefreshing={isRefreshing}
+                        hasCurrentFolder={!!currentFolder}
+                        folderSelectionMode={folderSelectionMode}
+                        onLinkCurrentFolder={canLinkCurrentFolder ? handleLinkCurrentFolder : undefined}
+                        currentFolderName={currentFolder?.name}
+                    />
+                )}
+
+                {/* Indexing status banners */}
+                <IndexingStatusBanner indexingStatus={indexingStatus} isIndexing={isIndexing} />
+                <EventIndexingBanner
+                    isIndexing={eventIndexingStatus.isIndexing}
+                    currentFile={eventIndexingStatus.currentFile}
+                    processedCount={eventIndexingStatus.processedCount}
+                    totalCount={eventIndexingStatus.totalCount}
                 />
-            )}
 
-            {/* Upload progress overlay */}
-            {uploadProgress && <UploadProgressOverlay uploadProgress={uploadProgress} />}
+                {displayError && (
+                    <DriveErrorState
+                        onRetry={() => {
+                            void initializeRoot();
+                        }}
+                        loading={loading}
+                    />
+                )}
 
-            {(!isInitialized || !currentFolder) && !displayError && (
-                <div className="flex items-center justify-center p-8 h-full">
-                    <div className="text-center">
-                        <Loader size={'medium'} />
-                        <p>Initializing Drive...</p>
+                {/* Upload progress overlay */}
+                {uploadProgress && <UploadProgressOverlay uploadProgress={uploadProgress} />}
+
+                {!currentFolder && !displayError && (
+                    <div className="flex items-center justify-center p-8 h-full">
+                        <div className="text-center">
+                            <Loader size={'medium'} />
+                            <p>Initializing Drive...</p>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
 
-            {isInitialized && currentFolder && !uploadProgress && (
-                <DriveContent
-                    loading={loading}
-                    isRefreshing={isRefreshing}
-                    children={children}
-                    currentFolder={currentFolder}
-                    breadcrumbs={breadcrumbs}
-                    existingFiles={existingFiles}
-                    downloadingFile={downloadingFile}
-                    downloadProgress={downloadProgress}
-                    onFileClick={handleFileClick}
-                    onFolderClick={handleFolderClick}
-                    onUpload={handleUploadButtonClick}
-                    isLinkedFolder={isLinkedFolder}
-                    folderSelectionMode={folderSelectionMode}
-                    handleBreadcrumbClick={handleBreadcrumbClick}
-                />
-            )}
-        </div>
-    );
-});
+                {currentFolder && !uploadProgress && (
+                    <DriveContent
+                        loading={loading}
+                        isRefreshing={isRefreshing}
+                        children={children}
+                        currentFolder={currentFolder}
+                        breadcrumbs={breadcrumbs}
+                        existingFiles={existingFiles}
+                        downloadingFile={downloadingFile}
+                        downloadProgress={downloadProgress}
+                        onFileClick={handleFileClick}
+                        onFolderClick={handleFolderClick}
+                        onUpload={handleUploadButtonClick}
+                        isLinkedFolder={isLinkedFolder}
+                        folderSelectionMode={folderSelectionMode}
+                        handleBreadcrumbClick={handleBreadcrumbClick}
+                    />
+                )}
+            </div>
+        );
+    }
+);
 
 DriveBrowser.displayName = 'DriveBrowser';

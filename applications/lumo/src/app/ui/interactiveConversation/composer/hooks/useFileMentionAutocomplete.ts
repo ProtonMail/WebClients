@@ -4,12 +4,14 @@ import type { Editor } from '@tiptap/react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
 
 import type { SpaceId, Attachment, Message } from '../../../../types';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { selectSpaceById, selectAssetsBySpaceId, selectAttachments, selectProvisionalAttachments } from '../../../../redux/selectors';
 import { upsertAttachment, newAttachmentId } from '../../../../redux/slices/core/attachments';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
+import { SearchService } from '../../../../services/search/searchService';
 import { getApproximateTokenCount } from '../../../../llm/tokenizer';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
 
@@ -137,6 +139,7 @@ export const useFileMentionAutocomplete = (
 } => {
     const [mentionState, setMentionState] = useState<FileMentionState>(INITIAL_MENTION_STATE);
 
+    const [user] = useUser();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
@@ -162,7 +165,7 @@ export const useFileMentionAutocomplete = (
             driveFilesLoadedRef.current = false;
             // Clear the file cache as well
             filesCacheRef.current = { key: '', files: EMPTY_FILES };
-        }
+            }
     }, [linkedDriveFolder]);
 
     // Recursive function to load all files from a folder and its subfolders
@@ -195,7 +198,7 @@ export const useFileMentionAutocomplete = (
             return [];
         }
     }, [driveSDK]);
-
+        
     // Load Drive files (with refresh capability)
     const refreshDriveFiles = useCallback(async () => {
         if (!linkedDriveFolder || !driveSDK) return;
@@ -306,7 +309,7 @@ export const useFileMentionAutocomplete = (
                         position: { top: finalTop, left: finalLeft },
                         selectedIndex: prev.isActive && prev.query === query ? prev.selectedIndex : 0,
                     };
-                });
+                    });
             } else {
                 setMentionState(prev => {
                     if (!prev.isActive) {
@@ -421,37 +424,37 @@ export const useFileMentionAutocomplete = (
                 // Process in background
                 (async () => {
                     try {
-                        const fileData = await driveSDK.downloadFile(file.id);
-                        const data = new Uint8Array(fileData);
+                        // Check if file is already in the search index (cached from indexing)
+                        let content: string | null = null;
+                        let fileSize = 0;
                         
-                        const fileBlob = new Blob([data], { type: mimeType });
-                        const driveFile = new File([fileBlob], file.name, {
-                            type: mimeType,
-                            lastModified: Date.now(),
-                        });
-                        
-                        try {
+                        if (user?.ID) {
+                            const searchService = SearchService.get(user.ID);
+                            const indexedDoc = searchService.getDocumentById(file.id);
+                            if (indexedDoc && indexedDoc.content) {
+                                console.log('[FileMention] Using cached content from search index for:', file.name);
+                                content = indexedDoc.content;
+                                fileSize = indexedDoc.size;
+                            }
+                        }
+
+                        // If not in index, download and process
+                        if (!content) {
+                            console.log('[FileMention] Downloading file from Drive:', file.name);
+                            const fileData = await driveSDK.downloadFile(file.id);
+                            const data = new Uint8Array(fileData);
+                            fileSize = data.byteLength;
+                            
+                            const fileBlob = new Blob([data], { type: mimeType });
+                            const driveFile = new File([fileBlob], file.name, {
+                                type: mimeType,
+                                lastModified: Date.now(),
+                            });
+                            
                             const result = await fileProcessingService.processFile(driveFile);
                             
                             if (result.success && result.result) {
-                                const filename = `Filename: ${file.name}`;
-                                const header = 'File contents:';
-                                const beginMarker = '----- BEGIN FILE CONTENTS -----';
-                                const endMarker = '----- END FILE CONTENTS -----';
-                                const content = result.result.convertedContent.trim();
-                                const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
-                                const tokenCount = getApproximateTokenCount(fullContext);
-                                
-                                dispatch(upsertAttachment({
-                                    ...provisionalAttachment,
-                                    rawBytes: driveFile.size,
-                                    markdown: result.result.convertedContent,
-                                    truncated: result.result.truncated,
-                                    originalRowCount: result.result.originalRowCount,
-                                    processedRowCount: result.result.processedRowCount,
-                                    tokenCount,
-                                    processing: false,
-                                }));
+                                content = result.result.convertedContent;
                             } else if (result.isUnsupported) {
                                 dispatch(upsertAttachment({
                                     ...provisionalAttachment,
@@ -463,6 +466,7 @@ export const useFileMentionAutocomplete = (
                                     text: c('collider_2025:Error').t`File format not supported: ${file.name}`,
                                     type: 'error',
                                 });
+                                return;
                             } else {
                                 dispatch(upsertAttachment({
                                     ...provisionalAttachment,
@@ -474,19 +478,27 @@ export const useFileMentionAutocomplete = (
                                     text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
                                     type: 'error',
                                 });
+                                return;
                             }
-                        } catch (processingError) {
-                            console.error('Failed to process Drive file:', processingError);
+                        }
+
+                        // Use the content (from cache or freshly processed)
+                        if (content) {
+                            const filename = `Filename: ${file.name}`;
+                            const header = 'File contents:';
+                            const beginMarker = '----- BEGIN FILE CONTENTS -----';
+                            const endMarker = '----- END FILE CONTENTS -----';
+                            const fullContext = [filename, header, beginMarker, content.trim(), endMarker].join('\n');
+                            const tokenCount = getApproximateTokenCount(fullContext);
+                            
                             dispatch(upsertAttachment({
                                 ...provisionalAttachment,
-                                error: true,
-                                errorMessage: processingError instanceof Error ? processingError.message : 'Failed to process file',
+                                rawBytes: fileSize,
+                                markdown: content,
+                                truncated: false,
+                                tokenCount,
                                 processing: false,
                             }));
-                            createNotification({
-                                text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
-                                type: 'error',
-                            });
                         }
                     } catch (error) {
                         console.error('Failed to download/process Drive file:', error);
