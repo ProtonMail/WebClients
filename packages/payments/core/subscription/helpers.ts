@@ -373,6 +373,10 @@ export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription) || hasVPNPassProfessional(subscription);
 };
 
+export const getHasVpnOnlyB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return hasVpnPro(subscription) || hasVpnBusiness(subscription);
+};
+
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
     return (
         hasDeprecatedVPN(subscription) ||

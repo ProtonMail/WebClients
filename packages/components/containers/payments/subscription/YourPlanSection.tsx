@@ -13,15 +13,8 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import {
-    FREE_PLAN,
-    getCanSubscriptionAccessDuoPlan,
-    getHasVpnB2BPlan,
-    hasLumo,
-    isAutoRenewTrial,
-    isTrial,
-} from '@proton/payments';
-import { hasVPNPassProfessional, isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, hasLumo, isAutoRenewTrial, isTrial } from '@proton/payments';
+import { getHasVpnOnlyB2BPlan, isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -83,9 +76,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     if (!subscription || !plans || loading) {
         return <Loader />;
     }
-
-    // Usage panel is displayed for members of B2B plans including VPN+Pass B2B but excluding VPN B2B
-    const planCanShowUsage = !getHasVpnB2BPlan(subscription) || hasVPNPassProfessional(subscription);
+    const planCanShowUsage = !getHasVpnOnlyB2BPlan(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
     const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
