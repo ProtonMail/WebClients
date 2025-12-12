@@ -58,6 +58,9 @@ body:has(.booking-main-container) {
 			border: 1px solid #efebff;
 			color: var(--booking-color-title);
 
+			--padding-block: #{rem(11)};
+			--padding-inline: #{rem(11)};
+
 			&:hover,
 			&:focus {
 				border: 1px solid #e2dbff;
@@ -83,6 +86,10 @@ body:has(.booking-main-container) {
 				display: none;
 			}
 		}
+	}
+
+	&-mini-calendar .minicalendar-weekdays .text-strong {
+		font-weight: normal;
 	}
 
 	&-time-slot-grid .booking-time-slot-grid-list {
@@ -140,6 +147,7 @@ body:has(.booking-main-container) {
 		&:focus {
 			border: 1px solid #e2dbff;
 			background: #f7f5ff;
+			color: #372580;
 		}
 
 		&:active {
@@ -175,12 +183,25 @@ body:has(.booking-main-container) {
 
 		.field-two-label-container {
 			margin-block-end: rem(8);
+			font-weight: normal;
+			color: #4b5563;
 		}
 	}
 
 	&-button-confirm-booking {
-		&#{&} {
-			flex-grow: 1.2;
+		&-container {
+			&#{&} {
+				flex-grow: 2.6;
+			}
+		}
+
+		&-inner {
+			transition: inset-inline-start 0.2s ease-in-out;
+			inset-inline-start: 0;
+		}
+
+		&[aria-busy='true'] &-inner {
+			inset-inline-start: -0.8em;
 		}
 	}
 

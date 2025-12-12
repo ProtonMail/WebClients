@@ -123,7 +123,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         type="text"
                         bigger
                         value={name}
-                        className="rounded-lg"
+                        className="rounded-lg booking-modal-slot-input"
                         onChange={(e) => setName(e.target.value)}
                         maxLength={NAME_MAX_LENGTH}
                         error={validator([requiredValidator(name)])}
@@ -134,7 +134,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         type="email"
                         bigger
                         value={email}
-                        className="rounded-lg"
+                        className="rounded-lg booking-modal-slot-input"
                         maxLength={EMAIL_MAX_LENGTH}
                         onChange={(e) => setEmail(e.target.value)}
                         error={validator([
@@ -145,20 +145,26 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                     />
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter className="flex *:min-size-auto flex-column sm:flex-row sm:gap-5">
-                <Button size="large" className="text-semibold flex-1" onClick={rest.onClose} pill>{c('Action')
-                    .t`Cancel`}</Button>
-                <Button
-                    size="large"
-                    className="text-semibold text-pre flex-1 "
-                    disabled={!name.trim() || !email.trim()}
-                    loading={isLoading}
-                    pill
-                    color="norm"
-                    type="submit"
-                >
-                    {c('Action').t`Confirm booking`}
-                </Button>
+            <ModalTwoFooter className="sm:flex *:min-size-auto flex-column sm:flex-row sm:gap-5">
+                <div className="flex-1">
+                    <Button size="large" fullWidth className="text-semibold" onClick={rest.onClose} pill>{c('Action')
+                        .t`Cancel`}</Button>
+                </div>
+                <div className="flex-1 booking-button-confirm-booking-container">
+                    <Button
+                        size="large"
+                        className="text-semibold text-pre flex-1 booking-button-confirm-booking"
+                        disabled={!name.trim() || !email.trim()}
+                        loading={isLoading}
+                        pill
+                        color="norm"
+                        type="submit"
+                        fullWidth
+                    >
+                        <span className="relative booking-button-confirm-booking-inner">{c('Action')
+                            .t`Confirm booking`}</span>
+                    </Button>
+                </div>
             </ModalTwoFooter>
         </ModalTwo>
     );
