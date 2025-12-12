@@ -269,7 +269,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.DRIVE_BUSINESS]: getStorageFeatureB2B(plansMap[PLANS.DRIVE_BUSINESS]?.MaxSpace ?? 1099511627776, {
                 subtext: true,
             }),
-            [PLANS.PASS]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.PASS]: getStorageFeature(plansMap[PLANS.PASS]?.MaxSpace ?? -1, { freePlan }),
             [PLANS.PASS_LIFETIME]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.PASS_FAMILY]: null,
             [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
@@ -298,7 +298,9 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
             }),
             [PLANS.PASS_PRO]: getStorageFeature(-1, { subtext: true, freePlan }),
-            [PLANS.PASS_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.PASS_BUSINESS]: getStorageFeature(plansMap[PLANS.PASS_BUSINESS]?.MaxSpace ?? -1, {
+                freePlan,
+            }),
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
             [PLANS.LUMO]: getStorageFeature(-1, { subtext: true, freePlan }),
@@ -307,7 +309,10 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
                 freePlan,
             }),
-            [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getStorageFeature(
+                plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxSpace ?? -1,
+                { subtext: true, freePlan }
+            ),
         },
     };
 };
