@@ -6,10 +6,23 @@ import type { FeatureFlag } from './featureFlags';
 import { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } from './lumoUserSettingsThunks';
 import type { PersonalizationSettings } from './personalization';
 
+export interface IndexedDriveFolder {
+    id: string;
+    nodeUid: string;
+    name: string;
+    path: string;
+    spaceId?: string;
+    indexedAt: number;
+    documentCount: number;
+    isActive: boolean;
+    treeEventScopeId?: string;
+}
+
 export interface LumoUserSettings {
     theme: 'light' | 'dark' | 'auto';
     personalization: PersonalizationSettings;
     featureFlags: FeatureFlag[];
+    indexedDriveFolders?: IndexedDriveFolder[];
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -37,6 +50,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
         enableForNewChats: true,
     },
     featureFlags: [],
+    indexedDriveFolders: [],
 };
 
 // Actions
