@@ -34,7 +34,6 @@ describe('ConflictManager', () => {
     let mockOnQueueEmptyCheck: jest.Mock;
     let mockGetState: jest.Mock;
     let mockUpdateQueueItems: jest.Mock;
-    let mockSetFirstConflictItem: jest.Mock;
     let mockGetItem: jest.Mock;
     let mockGetQueue: jest.Mock;
     let mockGetAvailableName: jest.Mock;
@@ -44,17 +43,14 @@ describe('ConflictManager', () => {
 
         mockOnQueueEmptyCheck = jest.fn();
         mockUpdateQueueItems = jest.fn();
-        mockSetFirstConflictItem = jest.fn();
         mockGetItem = jest.fn();
         mockGetQueue = jest.fn().mockReturnValue([]);
         mockGetAvailableName = jest.fn().mockResolvedValue('renamed-file');
 
         mockGetState = jest.fn().mockReturnValue({
             updateQueueItems: mockUpdateQueueItems,
-            setFirstConflictItem: mockSetFirstConflictItem,
             getItem: mockGetItem,
             getQueue: mockGetQueue,
-            firstConflictItem: null,
         });
 
         jest.mocked(useUploadQueueStore.getState).mockImplementation(mockGetState);
@@ -149,48 +145,6 @@ describe('ConflictManager', () => {
                     conflictType: UploadConflictType.Draft,
                 })
             );
-        });
-
-        it('should set firstConflictItem if none exists', async () => {
-            const error = createConflictError('node123');
-            const fileItem = createFileItem('test.txt', UploadStatus.InProgress);
-            const conflictItem = {
-                ...fileItem,
-                status: UploadStatus.ConflictFound,
-                error,
-                conflictType: UploadConflictType.Normal,
-                nodeType: NodeType.File,
-            };
-
-            mockGetItem.mockReturnValueOnce(fileItem).mockReturnValueOnce(conflictItem);
-
-            await conflictManager.handleConflict('task1', error);
-
-            expect(mockUpdateQueueItems).toHaveBeenCalledWith(
-                'task1',
-                expect.objectContaining({
-                    status: UploadStatus.ConflictFound,
-                    conflictType: UploadConflictType.Normal,
-                    nodeType: NodeType.File,
-                })
-            );
-
-            expect(mockGetItem).toHaveBeenCalledTimes(2);
-            expect(mockSetFirstConflictItem).toHaveBeenCalledWith(conflictItem);
-        });
-
-        it('should not update firstConflictItem if one already exists', async () => {
-            const error = createConflictError('node123');
-            const fileItem = createFileItem('test.txt', UploadStatus.InProgress);
-            mockGetItem.mockReturnValue(fileItem);
-            mockGetState.mockReturnValue({
-                ...mockGetState(),
-                firstConflictItem: { uploadId: 'existing-conflict' },
-            });
-
-            await conflictManager.handleConflict('task1', error);
-
-            expect(mockSetFirstConflictItem).not.toHaveBeenCalled();
         });
 
         it('should not do anything if item not found', async () => {

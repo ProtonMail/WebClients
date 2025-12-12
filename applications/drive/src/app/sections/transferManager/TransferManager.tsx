@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
-import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
+import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useDriveEventManager } from '../../store';
@@ -31,25 +30,8 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
     const driveEventManager = useDriveEventManager();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     useBeforeUnload(leaveMessage);
-    const { hasPendingConflicts, firstConflictItem } = useUploadQueueStore(
-        useShallow((state) => ({
-            hasPendingConflicts: state.getHasPendingConflicts(),
-            firstConflictItem: state.firstConflictItem,
-        }))
-    );
 
     const [uploadConflictModal, showUploadConflictModal] = useUploadConflictModal();
-    useEffect(() => {
-        if (hasPendingConflicts && firstConflictItem) {
-            showUploadConflictModal({
-                name: firstConflictItem.name,
-                nodeType: firstConflictItem.nodeType,
-                conflictType: firstConflictItem.conflictType,
-                onResolve: (strategy, applyToAll) =>
-                    uploadManager.resolveConflict(firstConflictItem.uploadId, strategy, applyToAll),
-            });
-        }
-    }, [hasPendingConflicts, firstConflictItem, showUploadConflictModal]);
 
     useEffect(() => {
         if (status === TransferManagerStatus.InProgress || status === TransferManagerStatus.Failed) {
@@ -61,6 +43,19 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
     }, [status]);
 
     useEffect(() => {
+        uploadManager.setConflictResolver(async (name, nodeType, conflictType) => {
+            return new Promise<{ strategy: any; applyToAll: boolean }>((resolve) => {
+                showUploadConflictModal({
+                    name,
+                    nodeType,
+                    conflictType,
+                    onResolve: (strategy, applyToAll) => {
+                        resolve({ strategy, applyToAll });
+                    },
+                });
+            });
+        });
+
         const actionEventManager = getActionEventManager();
         uploadManager.subscribeToEvents('transfer-manager', async (event) => {
             if (event.type === 'file:complete' && event.isUpdatedNode) {
@@ -82,8 +77,9 @@ export const TransferManager = ({ drawerWidth = 0, deprecatedRootShareId }: Tran
 
         return () => {
             uploadManager.unsubscribeFromEvents('transfer-manager');
+            uploadManager.removeConflictResolver();
         };
-    }, [driveEventManager.pollEvents]);
+    }, [driveEventManager.pollEvents, showUploadConflictModal]);
 
     const toggleMinimize = () => {
         setMinimized((value) => !value);

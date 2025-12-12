@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { NodeType, NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
-import { isUploadItemConflict, useUploadQueueStore } from '../store/uploadQueue.store';
+import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
@@ -44,36 +44,44 @@ const getResolutionData = async (
  * Handles batch strategies and conflict resolution workflows
  */
 export class ConflictManager {
+    private batchConflictStrategies = new Map<string, Map<NodeType, UploadConflictStrategy>>();
+    private conflictResolver?: (
+        name: string,
+        nodeType: NodeType,
+        conflictType: UploadConflictType
+    ) => Promise<{ strategy: UploadConflictStrategy; applyToAll: boolean }>;
+    private resolutionInProgress: Promise<void> | null = null;
+
     constructor(private onQueueEmptyCheck: () => void) {}
 
-    /**
-     * Finds and sets the next unresolved conflict as firstConflictItem.
-     * This updates the UI to show the next conflict modal after resolving the current one.
-     * Scans the queue for items with ConflictFound status and no resolvedStrategy.
-     */
-    private updateFirstConflictItem(): void {
-        const queueStore = useUploadQueueStore.getState();
-        const allItems = queueStore.getQueue();
+    setConflictResolver(
+        callback: (
+            name: string,
+            nodeType: NodeType,
+            conflictType: UploadConflictType
+        ) => Promise<{ strategy: UploadConflictStrategy; applyToAll: boolean }>
+    ): void {
+        this.conflictResolver = callback;
+    }
 
-        const nextConflict = allItems.find(
-            (item) => item.status === UploadStatus.ConflictFound && !item.resolvedStrategy
-        );
-
-        if (nextConflict && isUploadItemConflict(nextConflict)) {
-            queueStore.setFirstConflictItem(nextConflict);
-        } else {
-            queueStore.setFirstConflictItem(undefined);
-        }
+    removeConflictResolver(): void {
+        this.conflictResolver = undefined;
     }
 
     /**
-     * Handle conflict - set item to ConflictFound status
-     * Resolution happens later via resolveConflictForItem
+     * Handle conflict - calls conflict resolver if set, otherwise defaults to Rename
      */
     async handleConflict(uploadId: string, error: NodeWithSameNameExistsValidationError): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
         const item = queueStore.getItem(uploadId);
-        if (!item) {
+        if (!item || isPhotosUploadItem(item)) {
+            return;
+        }
+
+        const batchStrategies = this.batchConflictStrategies.get(item.batchId);
+        const batchStrategy = batchStrategies?.get(item.type);
+        if (batchStrategy) {
+            await this.retryWithStrategy(uploadId, item, error, batchStrategy);
             return;
         }
 
@@ -83,13 +91,66 @@ export class ConflictManager {
             error,
             conflictType,
             nodeType: item.type,
+            resolvedStrategy: undefined,
         });
 
-        if (!queueStore.firstConflictItem) {
+        if (this.resolutionInProgress) {
+            await this.resolutionInProgress;
+
             const updatedItem = queueStore.getItem(uploadId);
-            if (updatedItem && isUploadItemConflict(updatedItem)) {
-                queueStore.setFirstConflictItem(updatedItem);
+            if (!updatedItem || isPhotosUploadItem(updatedItem)) {
+                return;
             }
+
+            if (updatedItem.status !== UploadStatus.ConflictFound) {
+                return;
+            }
+
+            if (!updatedItem.error || !(updatedItem.error instanceof NodeWithSameNameExistsValidationError)) {
+                return;
+            }
+
+            const batchStrategiesAfterWait = this.batchConflictStrategies.get(updatedItem.batchId);
+            const batchStrategyAfterWait = batchStrategiesAfterWait?.get(updatedItem.type);
+            if (batchStrategyAfterWait) {
+                await this.retryWithStrategy(uploadId, updatedItem, updatedItem.error, batchStrategyAfterWait);
+                return;
+            }
+        }
+
+        if (this.conflictResolver) {
+            this.resolutionInProgress = (async () => {
+                try {
+                    const { strategy, applyToAll } = await this.conflictResolver!(item.name, item.type, conflictType);
+
+                    await this.chooseConflictStrategy(uploadId, strategy);
+
+                    if (applyToAll) {
+                        this.setBatchStrategy(item.batchId, item.type, strategy);
+
+                        const uploadIds = Array.from(queueStore.queue.values())
+                            .filter(
+                                (queueItem) =>
+                                    queueItem.status === UploadStatus.ConflictFound &&
+                                    !queueItem.resolvedStrategy &&
+                                    queueItem.batchId === item.batchId &&
+                                    queueItem.type === item.type &&
+                                    queueItem.uploadId !== uploadId
+                            )
+                            .map((queueItem) => queueItem.uploadId);
+
+                        for (const id of uploadIds) {
+                            await this.chooseConflictStrategy(id, strategy);
+                        }
+                    }
+                } finally {
+                    this.resolutionInProgress = null;
+                }
+            })();
+
+            await this.resolutionInProgress;
+        } else {
+            await this.chooseConflictStrategy(uploadId, UploadConflictStrategy.Rename);
         }
     }
 
@@ -160,6 +221,24 @@ export class ConflictManager {
     }
 
     /**
+     * Set conflict resolution strategy for a specific node type in a batch
+     * Future conflicts of the same type in this batch will automatically use this strategy
+     */
+    setBatchStrategy(batchId: string, nodeType: NodeType, strategy: UploadConflictStrategy): void {
+        if (!this.batchConflictStrategies.has(batchId)) {
+            this.batchConflictStrategies.set(batchId, new Map());
+        }
+        this.batchConflictStrategies.get(batchId)!.set(nodeType, strategy);
+    }
+
+    /**
+     * Clear batch strategy when batch is complete
+     */
+    clearBatchStrategy(batchId: string): void {
+        this.batchConflictStrategies.delete(batchId);
+    }
+
+    /**
      * Choose a conflict for a specific item
      * Called from uploadManager.chooseConflictStrategy()
      */
@@ -178,8 +257,6 @@ export class ConflictManager {
         }
 
         await this.retryWithStrategy(uploadId, item, item.error, strategy);
-
-        this.updateFirstConflictItem();
     }
 
     /**

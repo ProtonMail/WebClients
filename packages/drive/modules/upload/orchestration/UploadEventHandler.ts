@@ -63,7 +63,6 @@ export class UploadEventHandler {
                     return callback(event);
                 })
             );
-            // We have to cast here to be able to call the handler.
             await (handler as (event: UploadEvent) => void | Promise<void>)(event);
         }
     }
