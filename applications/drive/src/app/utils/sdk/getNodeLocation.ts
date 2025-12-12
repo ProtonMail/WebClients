@@ -15,12 +15,12 @@ function getNodeParentUid(node: MaybeNode): string | undefined {
 export async function getNodeLocation(
     drive: {
         getNode: (uid: string) => Promise<MaybeNode>;
-        getMyFilesRootFolder: () => Promise<MaybeNode>;
+        getMyFilesRootFolder?: () => Promise<MaybeNode>;
     },
     node: MaybeNode
 ): Promise<string> {
     const nodeType = node.ok ? node.value.type : node.error.type;
-    if (nodeType === NodeType.Album) {
+    if (nodeType === NodeType.Album || nodeType === NodeType.Photo) {
         return c('Title').t`Photos`;
     }
 
@@ -28,8 +28,11 @@ export async function getNodeLocation(
         return c('Title').t`Shared with me`;
     }
 
-    const myFilesRootFolder = await drive.getMyFilesRootFolder();
-    const myFilesRootFolderUid = myFilesRootFolder.ok ? myFilesRootFolder.value.uid : myFilesRootFolder.error.uid;
+    let myFilesRootFolderUid: string | undefined;
+    if (drive.getMyFilesRootFolder) {
+        const myFilesRootFolder = await drive.getMyFilesRootFolder();
+        myFilesRootFolderUid = myFilesRootFolder.ok ? myFilesRootFolder.value.uid : myFilesRootFolder.error.uid;
+    }
 
     const location = [];
 
