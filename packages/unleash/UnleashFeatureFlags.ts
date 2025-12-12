@@ -221,6 +221,7 @@ enum MailFeatureFlag {
     ApplyLabelsOptimisticRefactoring = 'ApplyLabelsOptimisticRefactoring',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
+    FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
 }
 
 enum AdminFeatureFlag {
