@@ -11,5 +11,16 @@ export const bootstrapEditorApp = async ({ config }: { config: ProtonConfig }) =
   bootstrap.init({ config, locales, authentication })
 
   const searchParams = new URLSearchParams(location.search)
-  await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
+
+  const { localeCode, browserLocale } = bootstrap.getLocaleCodePublicApp({
+    locales,
+    searchParams,
+    pathLocale: '',
+  })
+
+  await bootstrap.loadLocalesPublicApp({
+    localeCode,
+    browserLocale,
+    locales,
+  })
 }
