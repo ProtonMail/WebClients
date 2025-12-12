@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import lumoHardHat from '@proton/styles/assets/img/lumo/lumo-hard-hat.svg';
+import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { c } from 'ttag';
 
@@ -409,9 +409,9 @@ const ProjectDetailViewInner = () => {
                     <div className="project-detail-main flex flex-column justify-center items-center">
                     {sortedConversations.length === 0 ? (
                         <div className="project-detail-empty flex flex-column items-center justify-center flex-1">
-                            <img src={lumoHardHat} alt="Projects" width={80} />
+                            <img src={lumoProjects} alt="Projects" width={200} />
                             <h2 className="project-detail-empty-title text-lg pt-3">
-                                {c('collider_2025:Title').t`Start a new project conversation`}
+                                {c('collider_2025:Title').t`Start a new conversation`}
                             </h2>
                             {promptSuggestions.length > 0 && (
                                 <div className="project-detail-prompt-suggestions flex flex-column">
@@ -454,8 +454,8 @@ const ProjectDetailViewInner = () => {
                                                             </span>
                                                         </div>
                                                     </button>
-                                                    <ConversationDropdown 
-                                                        conversationId={conversation.id} 
+                                                    <ConversationDropdown
+                                                        conversationId={conversation.id}
                                                         onDelete={() => handleDeleteConversation(conversation.id)}
                                                     />
                                                 </div>
@@ -488,8 +488,8 @@ const ProjectDetailViewInner = () => {
                                                             </span>
                                                         </div>
                                                     </button>
-                                                    <ConversationDropdown 
-                                                        conversationId={conversation.id} 
+                                                    <ConversationDropdown
+                                                        conversationId={conversation.id}
                                                         onDelete={() => handleDeleteConversation(conversation.id)}
                                                     />
                                                 </div>
@@ -523,8 +523,8 @@ const ProjectDetailViewInner = () => {
                                                         </div>
                                                         <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
                                                     </button>
-                                                    <ConversationDropdown 
-                                                        conversationId={conversation.id} 
+                                                    <ConversationDropdown
+                                                        conversationId={conversation.id}
                                                         onDelete={() => handleDeleteConversation(conversation.id)}
                                                     />
                                                 </div>

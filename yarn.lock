@@ -9084,6 +9084,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/proton-foundation-search@npm:^0.5.4-preview-job29358964":
+  version: 0.5.4-preview-job29358964
+  resolution: "@proton/proton-foundation-search@npm:0.5.4-preview-job29358964"
+  checksum: 10/5dd29a7e95256fe53678aa4b831cba54e9e90e21d73f60136bbf5c18f82ffc5b445fe2b52d949a8c5c1b7c75ef9d058d4958fb3c5c5f768f17107d48c89dc22f
+  languageName: node
+  linkType: hard
+
 "@proton/raw-images@workspace:^, @proton/raw-images@workspace:packages/raw-images":
   version: 0.0.0-use.local
   resolution: "@proton/raw-images@workspace:packages/raw-images"
@@ -38136,6 +38143,7 @@ __metadata:
     "@proton/drive": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
+    "@proton/proton-foundation-search": "npm:^0.5.4-preview-job29358964"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"

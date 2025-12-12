@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 
+import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectSpaceById, selectAssetsBySpaceId } from '../../../redux/selectors';
@@ -25,6 +26,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const files = Object.values(spaceAssets).filter((asset) => !asset.error);
     const hasExistingFiles = files.length > 0;
     const { isInitialized, getRootFolder } = useDriveSDK();
+    const { indexFolder, isIndexing, removeIndexedFolder } = useDriveFolderIndexing();
     const [currentBrowsedFolder, setCurrentBrowsedFolder] = useState<DriveNode | null>(null);
     const [rootFolderId, setRootFolderId] = useState<string | null>(null);
     const [folderPath, setFolderPath] = useState<string[]>([]);
@@ -35,7 +37,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             void (async () => {
                 try {
                     const root = await getRootFolder();
-                    setRootFolderId(root.nodeId);
+                    setRootFolderId(root.nodeUid);
                     setCurrentBrowsedFolder(root);
                     setFolderPath([root.name]);
                 } catch (error) {
@@ -50,7 +52,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
         setFolderPath((prev) => [...prev, folder.name]);
     }, []);
 
-    const isAtRoot = !currentBrowsedFolder || currentBrowsedFolder.nodeId === rootFolderId;
+    const isAtRoot = !currentBrowsedFolder || currentBrowsedFolder.nodeUid === rootFolderId;
 
     const handleLinkFolder = useCallback(async () => {
         if (!currentBrowsedFolder || !space || isAtRoot) {
@@ -62,7 +64,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             const updatedSpace = {
                 ...space,
                 linkedDriveFolder: {
-                    folderId: currentBrowsedFolder.nodeId,
+                    folderId: currentBrowsedFolder.nodeUid,
                     folderName: currentBrowsedFolder.name,
                     folderPath: folderPath.join(' / '),
                 },
@@ -70,6 +72,20 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
 
             dispatch(addSpace(updatedSpace));
             dispatch(pushSpaceRequest({ id: projectId }));
+
+            // Kick off indexing for this folder, associated to the project space
+            void indexFolder(
+                currentBrowsedFolder.nodeUid,
+                currentBrowsedFolder.name,
+                folderPath.join(' / '),
+                { spaceId: projectId }
+            ).catch((error) => {
+                console.error('Drive folder indexing failed:', error);
+                createNotification({
+                    text: c('collider_2025:Error').t`Failed to index Drive folder for search`,
+                    type: 'error',
+                });
+            });
 
             createNotification({
                 text: c('collider_2025:Success').t`Drive folder linked successfully`,
@@ -84,7 +100,17 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 type: 'error',
             });
         }
-    }, [currentBrowsedFolder, space, folderPath, dispatch, projectId, createNotification, modalProps, isAtRoot]);
+    }, [
+        currentBrowsedFolder,
+        space,
+        folderPath,
+        dispatch,
+        projectId,
+        createNotification,
+        modalProps,
+        isAtRoot,
+        indexFolder,
+    ]);
 
     const handleUnlinkFolder = useCallback(() => {
         if (!space) {
@@ -100,6 +126,10 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             dispatch(addSpace(updatedSpace));
             dispatch(pushSpaceRequest({ id: projectId }));
 
+            if (space.linkedDriveFolder?.folderId) {
+                void removeIndexedFolder(space.linkedDriveFolder.folderId);
+            }
+
             createNotification({
                 text: c('collider_2025:Success').t`Drive folder unlinked`,
                 type: 'success',
@@ -113,7 +143,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 type: 'error',
             });
         }
-    }, [space, dispatch, projectId, createNotification, modalProps]);
+    }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFolder]);
 
     const isLinked = !!space?.linkedDriveFolder;
 

@@ -2,13 +2,15 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import Loader from '@proton/components/components/loader/Loader';
+import { NodeType } from '@proton/drive';
+
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
+import { isFileTypeSupported } from '../../../../util/filetypes';
 import { DriveBreadcrumbs, type BreadcrumbItem } from './DriveBreadcrumbs';
 import { DriveEmptyState } from './DriveEmptyState';
 import { DriveFileList } from './DriveFileList';
 import { DriveHiddenFilesNotice } from './DriveHiddenFilesNotice';
-import Loader from '@proton/components/components/loader/Loader';
-import { isFileTypeSupported } from '../../../../util/filetypes';
 
 interface DriveContentProps {
     loading: boolean;
@@ -75,20 +77,20 @@ export const DriveContent: React.FC<DriveContentProps> = ({
     }
 
     const filteredChildren = children.filter((child) => {
-        if (child.type === 'folder') return true;
-        if (child.type === 'file' && child.mediaType?.startsWith('application/vnd.proton')) return false;
-        if (!isFileTypeSupported(child.name, child.mimeType)) return false;
+        if (child.type === NodeType.Folder) return true;
+        if (child.type === NodeType.File && child.mediaType?.startsWith('application/vnd.proton')) return false;
+        if (!isFileTypeSupported(child.name, child.mediaType)) return false;
         return true;
     });
 
     const hiddenProtonDocsCount = children.filter(
-        (child) => child.type === 'file' && child.mediaType?.startsWith('application/vnd.proton')
+        (child) => child.type === NodeType.File && child.mediaType?.startsWith('application/vnd.proton')
     ).length;
     const hiddenUnsupportedCount = children.filter(
         (child) =>
-            child.type === 'file' &&
+            child.type === NodeType.File &&
             !child.mediaType?.startsWith('application/vnd.proton') &&
-            !isFileTypeSupported(child.name, child.mimeType)
+            !isFileTypeSupported(child.name, child.mediaType)
     ).length;
 
     return (
