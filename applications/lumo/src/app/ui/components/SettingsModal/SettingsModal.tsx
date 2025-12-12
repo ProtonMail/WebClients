@@ -28,6 +28,7 @@ import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
+import { SearchSettingsPanel } from './SearchIndex/SearchSettingsPanel';
 
 import './SettingsModal.scss';
 
@@ -100,6 +101,12 @@ const SettingsItems: SettingsItem[] = [
         icon: 'sliders',
         getText: () => c('collider_2025: Settings Item').t`Personalization`,
         guest: true,
+    },
+    {
+        id: 'search',
+        icon: 'magnifier',
+        getText: () => c('collider_2025: Settings Item').t`Search`,
+        guest: false,
     },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
 ];
@@ -294,12 +301,13 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
 
                             {/* Panel content */}
                             <div
-                                className="flex flex-column flex-nowrap gap-2 flex-1 overflow-hidden"
+                                className="flex flex-column flex-nowrap gap-2 flex-1 overflow-y-auto mb-5"
                                 style={{ minHeight: 0 }}
                             >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
+                                {activePanel === 'search' && <SearchSettingsPanel />}
                                 {activePanel === 'general' && (
                                     <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
                                 )}
@@ -338,6 +346,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {activePanel === 'account' &&
                                 (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                             {activePanel === 'personalization' && <PersonalizationPanel />}
+                            {activePanel === 'search' && <SearchSettingsPanel />}
                             {activePanel === 'general' && (
                                 <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
                             )}

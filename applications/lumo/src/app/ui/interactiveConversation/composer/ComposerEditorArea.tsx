@@ -49,7 +49,7 @@ export const ComposerEditorArea = ({
                 browseFolderChildren: async (folderId?: string) => {
                     const nodes = await browseFolderChildren(folderId);
                     return nodes.map(node => ({
-                        id: node.nodeId,
+                        id: node.nodeUid,
                         name: node.name,
                         type: node.type,
                     }));
