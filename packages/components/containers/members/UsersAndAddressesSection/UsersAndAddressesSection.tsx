@@ -156,7 +156,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         hasDriveB2BPlan ||
         hasPassBusiness(subscription) ||
         hasVPNPassProfessional(subscription);
-    const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
+    // VPN + Pass B2B bundle needs to disable VPN to be able to downgrade to Pass Professional
+    const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessional(subscription);
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     // Allow to display a toggle in the UI
     const allowAIAssistantConfiguration = accessToAssistant.enabled && isB2bPlanSupportingScribe(organization, user);
