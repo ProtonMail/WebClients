@@ -9,7 +9,7 @@ export function urlHasMailto(url: string): boolean {
     return url.includes("#mailto=");
 }
 
-function getMailtoArg(argv: string[]): string {
+export function getMailtoArg(argv: string[]): string {
     return argv.find((val: string): boolean => val.startsWith("mailto:")) ?? "";
 }
 
@@ -39,10 +39,6 @@ export function handleStartupMailto() {
 }
 
 export function handleAppReadyMailto() {
-    app.on("second-instance", (_ev: Event, argv: string[]) => {
-        handleMailToUrls(getMailtoArg(argv));
-    });
-
     if (!isMac) {
         return;
     }
