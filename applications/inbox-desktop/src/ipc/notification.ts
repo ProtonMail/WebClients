@@ -1,10 +1,10 @@
 import { Notification, app, Event, nativeImage, WebContentsView } from "electron";
 import {
     bringWindowToFront,
-    openMail,
     openCalendar,
     getMainWindow,
     getCurrentLocalID,
+    openMail,
 } from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
@@ -18,6 +18,11 @@ const notifications: Map<string, Notification> = new Map();
 
 const NOTIFICATION_ID_KEY = "notificationID";
 
+export const enum DeepLinkNotificationSource {
+    DEEP_LINK = "deep-link",
+    OPEN_LINK = "open-link",
+}
+
 const findNotificationID = (argv: string[]): string | undefined => {
     const url = argv.find((value: string) => value.includes(`${NOTIFICATION_ID_KEY}=`));
     if (!url) {
@@ -28,29 +33,22 @@ const findNotificationID = (argv: string[]): string | undefined => {
     return params?.get(NOTIFICATION_ID_KEY) ?? undefined;
 };
 
+export const cleanupDeeplinkNotifications = (argv: string[], source: DeepLinkNotificationSource) => {
+    const notificationID = findNotificationID(argv);
+    if (!notificationID) {
+        return;
+    }
+    notificationLogger.debug(`Clear notification from ${source}`, notificationID);
+    notifications.delete(notificationID);
+};
+
 export const handleWinNotification = () => {
-    app.on("second-instance", (_ev: Event, argv: string[]) => {
-        const notificationID = findNotificationID(argv);
-        if (!notificationID) {
-            return;
-        }
-
-        notificationLogger.debug("Clear notification from deep link", notificationID);
-        notifications.delete(notificationID);
-    });
-
     if (!isMac) {
         return;
     }
 
     app.on("open-url", (_ev: Event, url: string) => {
-        const notificationID = findNotificationID([url]);
-        if (!notificationID) {
-            return;
-        }
-
-        notificationLogger.debug("Clear notification from open link", notificationID);
-        notifications.delete(notificationID);
+        cleanupDeeplinkNotifications([url], DeepLinkNotificationSource.OPEN_LINK);
     });
 };
 
@@ -195,8 +193,13 @@ export const showNotification = (payload: ElectronNotification) => {
     notification.on("click", () => {
         const clickLocalID = getCurrentLocalID();
         notificationLogger.info("Notification clicked", uuid, clickLocalID);
-        if (!isWindows) bringWindowToFront();
 
+        if (isWindows) {
+            notifications.delete(uuid);
+            return;
+        }
+
+        bringWindowToFront();
         switch (app) {
             case "mail":
                 if (localID !== clickLocalID) {

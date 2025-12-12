@@ -31,6 +31,7 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
 import { measureRequestTime } from "./utils/log/measureRequestTime";
 import { initializeFeatureFlagManager } from "./utils/flags/manager";
+import { handleSecondInstance } from "./utils/event-handlers/second-instance";
 
 (async function () {
     initializeLog();
@@ -91,13 +92,6 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
         handleWebContents(contents);
     });
 
-    app.on("second-instance", (_ev, argv) => {
-        mainLogger.info("Second instance called", argv);
-
-        // Bring window to focus
-        bringWindowToFront();
-    });
-
     if (!app.requestSingleInstanceLock()) {
         mainLogger.info("App is already running");
         app.quit();
@@ -107,6 +101,7 @@ import { initializeFeatureFlagManager } from "./utils/flags/manager";
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
+    handleSecondInstance();
     checkDefaultProtocols();
     connectNetLogger(getWebContentsViewName);
     measureRequestTime();
