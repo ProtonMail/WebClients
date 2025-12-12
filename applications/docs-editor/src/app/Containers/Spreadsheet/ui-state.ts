@@ -528,7 +528,7 @@ export function useProtonSheetsUIState(
     }),
     chart: useEvent(() => {
       logger.info('action: create chart', state.activeSheetId, state.activeCell)
-      state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)
+      return state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)
     }),
     formula: useEvent((formula: string) =>
       state.grid.makeEditable?.(state.activeSheetId, state.activeCell, `=${formula}(`, true),
