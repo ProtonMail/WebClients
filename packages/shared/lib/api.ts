@@ -5,12 +5,13 @@ const addClientSecret = ['core/v4/auth', 'core/v4/auth/info', 'auth/v4/sessions'
 
 /**
  * Create a function that can call the API with the correct parameters.
- * @param {function} xhr - Fetch function
- * @param {String} API_URL - The URL to the API
- * @param {String} APP_VERSION - The app version
- * @param {String} CLIENT_ID - The id of the client
- * @param {String} [CLIENT_SECRET] - Optional client secret
- * @param {Object} defaultHeaders - This help to override parameters in the default headers
+ * @param {String} API_URL - The base URL of the API
+ * @param {String} APP_VERSION - The application version
+ * @param {String} CLIENT_SECRET - Optional client secret for authentication on specific endpoints
+ * @param {String} UID - The user ID for authentication (optional, used for user-specific headers)
+ * @param {String} clientID - The ID of the client
+ * @param {Object} defaultHeaders - Default headers to override or extend API requests
+ * @param {function} protonFetch - Fetch function to make HTTP requests
  * @return {function}
  */
 export function configureApi({
@@ -20,15 +21,15 @@ export function configureApi({
     UID,
     clientID,
     defaultHeaders: otherDefaultHeaders = {},
-    xhr,
+    protonFetch,
 }: {
     API_URL: string;
     APP_VERSION: string;
-    CLIENT_SECRET: string;
-    UID: string;
+    CLIENT_SECRET?: string;
+    UID?: string;
     clientID: string;
     defaultHeaders: Record<string, string>;
-    xhr: (config: FetchConfig) => Promise<Response>;
+    protonFetch: (config: FetchConfig) => Promise<Response>;
 }) {
     let authHeaders = UID ? getUIDHeaders(UID) : undefined;
     const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
@@ -46,7 +47,7 @@ export function configureApi({
 
         const fullUrl = /^https?:\/\//.test(url) ? url : `${API_URL}/${url}`;
 
-        return xhr({
+        return protonFetch({
             url: fullUrl,
             data: dataWithClientSecret,
             headers: {

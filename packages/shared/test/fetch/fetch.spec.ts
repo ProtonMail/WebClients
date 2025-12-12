@@ -1,4 +1,4 @@
-import performRequest from '../../lib/fetch/fetch';
+import { protonFetch } from '../../lib/fetch/fetch';
 import type { FetchConfig } from '../../lib/fetch/interface';
 
 class FormDataMockClass {
@@ -47,7 +47,7 @@ describe('fetch', () => {
         const config: FetchConfig = {
             url: 'http://foo.com/',
         };
-        const result = await performRequest(config).then((response) => response.json());
+        const result = await protonFetch(config).then((response) => response.json());
         expect(result).toEqual({ bar: 1 });
     });
 
@@ -58,7 +58,7 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             output: 'blob',
         };
-        const result = await performRequest(config).then((response) => response.blob());
+        const result = await protonFetch(config).then((response) => response.blob());
         expect(result).toEqual(blob);
     });
 
@@ -70,7 +70,7 @@ describe('fetch', () => {
                 foo: 'bar',
             },
         };
-        await performRequest(config).then((response) => response.json());
+        await protonFetch(config).then((response) => response.json());
         expect(spy.calls.all()[0].args).toEqual([
             new URL(config.url),
             jasmine.objectContaining({
@@ -94,7 +94,7 @@ describe('fetch', () => {
                 foo: 'bar',
             },
         };
-        await performRequest(config).then((response) => response.json());
+        await protonFetch(config).then((response) => response.json());
         const fd = new FormData();
         fd.append('foo', 'bar');
         expect(spy.calls.all()[0].args).toEqual([
@@ -115,7 +115,7 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             suppress: [123],
         };
-        await expectAsync(performRequest(config)).toBeRejectedWith(
+        await expectAsync(protonFetch(config)).toBeRejectedWith(
             jasmine.objectContaining({
                 name: 'StatusCodeError',
                 message: '',
