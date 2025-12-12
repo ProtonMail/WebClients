@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,6 +19,7 @@ interface FileContentModalProps extends Omit<ModalProps, 'children'> {
 
 export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileContentModalProps) => {
     const [showRaw, setShowRaw] = useState(false);
+    const [imageUrl, setImageUrl] = useState<string | null>(null);
 
     // Truncate long content to prevent UI lag
     // ~80 chars per line, ~50 lines per page, ~5 pages = 20,000 chars
@@ -42,6 +43,27 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             remaining: attachment.markdown.length - truncateAt,
         };
     }, [attachment?.markdown]);
+
+    // Check if this is an image
+    const attachmentData = attachment?.data;
+    const attachmentImagePreview = attachment?.imagePreview;
+    const attachmentMimeType = attachment?.mimeType;
+    const isImage = attachmentMimeType?.startsWith('image/');
+    const hasImageData = isImage && (attachmentData || attachmentImagePreview);
+
+    // Create and cleanup image URL
+    useEffect(() => {
+        if (hasImageData) {
+            const imageData = attachmentData || attachmentImagePreview;
+            const blob = new Blob([imageData!], { type: attachmentMimeType });
+            const url = URL.createObjectURL(blob);
+            setImageUrl(url);
+
+            return () => {
+                URL.revokeObjectURL(url);
+            };
+        }
+    }, [hasImageData, attachmentData, attachmentImagePreview, attachmentMimeType]);
 
     if (!attachment) return null;
 
@@ -261,6 +283,25 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             );
         }
 
+        // Show image if available
+        if (hasImageData && imageUrl) {
+            return (
+                <div className="flex flex-column items-center justify-center p-4">
+                    <img
+                        src={imageUrl}
+                        alt={attachment.filename}
+                        className="max-w-full max-h-custom rounded"
+                        style={{ '--max-h-custom': '70vh', objectFit: 'contain' }}
+                    />
+                    {attachment.imagePreview && !attachment.data && (
+                        <p className="text-xs color-weak mt-2">
+                            {c('collider_2025: Info').t`Preview quality - full resolution not loaded`}
+                        </p>
+                    )}
+                </div>
+            );
+        }
+
         if (!hasContent) {
             return (
                 <div className="flex flex-column items-center justify-center p-8 text-center">
@@ -376,7 +417,7 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                 />
 
                 <ModalTwoContent>
-                    {hasContent && (
+                    {hasContent && !hasImageData && (
                         <div className="flex flex-row justify-space-between items-center mb-4 p-2 bg-weak rounded">
                             <span className="text-sm color-weak">
                                 {isCSVOrExcel && !showRaw
