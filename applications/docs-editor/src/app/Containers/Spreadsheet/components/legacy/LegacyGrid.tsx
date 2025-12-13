@@ -175,6 +175,7 @@ export function LegacyGrid() {
       onRequestSearch={useUI((ui) => ui.legacy.searchState.onRequestSearch)}
       onRequestDataValidation={useUI((ui) => ui.legacy.onRequestDataValidation)}
       onRequestFormatCells={useUI((ui) => ui.legacy.onRequestFormatCells)}
+      onRequestResize={useUI((ui) => ui.legacy.onRequestResize)}
       users={useUI((ui) => ui.legacy.yjsState.users)}
       userId={useUI((ui) => ui.legacy.yjsState.userName)}
       getChartComponent={(props) => (
