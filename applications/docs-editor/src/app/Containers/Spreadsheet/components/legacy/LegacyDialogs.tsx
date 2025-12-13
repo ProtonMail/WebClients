@@ -9,6 +9,7 @@ import {
   InsertLinkDialog,
   InsertLinkEditor,
   NamedRangeEditor,
+  ResizeDimensionEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
@@ -93,6 +94,7 @@ export function LegacyDialogs({ state }: LegacyDialogsProps) {
           onInsertLink={state.onInsertLink}
         />
       </InsertLinkDialog>
+      <ResizeDimensionEditor onResize={state.onResize} onAutoResize={state.onAutoResize} />
     </>
   )
 }

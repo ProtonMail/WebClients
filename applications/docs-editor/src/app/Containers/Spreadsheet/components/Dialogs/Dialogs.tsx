@@ -2,6 +2,7 @@ import { SheetSearch } from './SheetSearch'
 import { InsertLinkDialog } from './InsertLink'
 import { useUI } from '../../ui-store'
 import { DeleteSheetDialog } from './DeleteSheet'
+import { ResizeDimensionEditor } from '@rowsncolumns/spreadsheet-state'
 
 export function Dialogs() {
   return (
@@ -20,6 +21,11 @@ export function Dialogs() {
         searchQuery={useUI((ui) => ui.legacy.searchState.searchQuery)}
       />
       <DeleteSheetDialog />
+      {/* TODO: Legacy dialog, should be replaced with new UI */}
+      <ResizeDimensionEditor
+        onResize={useUI((ui) => ui.legacy.onResize)}
+        onAutoResize={useUI((ui) => ui.legacy.onAutoResize)}
+      />
     </>
   )
 }

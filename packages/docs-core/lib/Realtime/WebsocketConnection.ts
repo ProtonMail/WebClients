@@ -1,14 +1,17 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
-import { ApiResult, type WebsocketConnectionInterface, type WebsocketCallbacks } from '@proton/docs-shared'
+import {
+  ApiResult,
+  type WebsocketConnectionInterface,
+  type WebsocketCallbacks,
+  isLocalEnvironment,
+} from '@proton/docs-shared'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
-import { isLocalEnvironment } from '@proton/docs-shared'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { MetricService } from '../Services/Metrics/MetricService'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
-import type { PublicDocumentState } from '../State/DocumentState'
-import type { DocumentState } from '../State/DocumentState'
+import type { PublicDocumentState, DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { hours_to_ms, seconds_to_ms } from '../Util/time-utils'
