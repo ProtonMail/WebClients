@@ -48,6 +48,7 @@ export const getIsSMPTEligible = (organization?: Organization) => {
         PLANS.DRIVE_PRO,
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
+        PLANS.BUNDLE_BIZ_2025,
         PLANS.FAMILY,
         PLANS.PASS_FAMILY,
         PLANS.DUO,
