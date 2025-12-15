@@ -110,6 +110,14 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
                         {Math.round((tokenSize / CONTEXT_LIMITS.MAX_CONTEXT) * 100)}%{' '}
                         {c('collider_2025: Info').t` of space`}
                     </span>
+                    {file.autoRetrieved && (
+                        <>
+                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
+                            <span className="text-xs color-primary">
+                                {c('collider_2025: Info').t`Auto-retrieved`}
+                            </span>
+                        </>
+                    )}
                 </div>
             </div>
 
