@@ -6,6 +6,7 @@ import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account/index';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
@@ -14,7 +15,6 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import {
     getPersistedSession,
     registerSessionRemovalListener,
@@ -28,7 +28,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
-import type { MeetDispatch, MeetStore } from './store/store';
+import type { MeetDispatch, MeetState, MeetStore } from './store/store';
 import { setupStore } from './store/store';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
@@ -207,11 +207,20 @@ export const executeBootstrapSteps = async ({
     initElectronClassnames();
     bootstrap.init({ config, authentication, locales });
 
-    const store = setupStore({
-        ...restServices,
+    const persistedState = await getDecryptedPersistedState<Partial<MeetState>>({
         authentication,
-        notificationsManager,
-        config,
+        user: sessionResult.session?.User,
+    });
+
+    const store = setupStore({
+        extraThunkArguments: {
+            ...restServices,
+            authentication,
+            notificationsManager,
+            config,
+        },
+        preloadedState: persistedState?.state,
+        persist: true,
     });
 
     const { userData, wasmApp } = await completeAppBootstrap({
@@ -247,7 +256,6 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
     const api = createApi({ config, sendLocaleHeaders: true });
 
     registerSessionListener({ type: 'all' });
-    handleLogoutFromURL({ api });
 
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, authentication, locales });
@@ -267,13 +275,15 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
 
     await unauthenticatedApi.startUnAuthFlow();
 
-    // @ts-ignore
     const store = setupStore({
-        api: unauthenticatedApi.apiCallback as ApiWithListener,
-        authentication,
-        unleashClient,
-        config,
-        history,
+        extraThunkArguments: {
+            api: unauthenticatedApi.apiCallback as ApiWithListener,
+            authentication,
+            unleashClient,
+            config,
+            history,
+            eventManager: undefined as any,
+        },
     });
 
     return {
