@@ -8,6 +8,7 @@ import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import type { ContextFilter } from '../../llm';
 import { ENABLE_U2L_ENCRYPTION, getFilteredTurns } from '../../llm';
+import { SearchService } from '../../services/search/searchService';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import { resolveFileReferences } from '../../util/fileReferences';
@@ -64,6 +65,50 @@ function getContextFilesForMessage(messageChain: Message[], contextFilters: Cont
 // Error handler for sendMessageWithRedux
 const createLumoErrorHandler = () => (message: GenerationToFrontendMessage, cId: string) =>
     createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
+
+/**
+ * Retrieve relevant documents from the project's indexed Drive folder and format them for the LLM context.
+ * This is the RAG (Retrieval Augmented Generation) function for automatic document injection.
+ * 
+ * @param query - The user's prompt/question
+ * @param spaceId - The project spaceId
+ * @param userId - The user's ID for accessing the search service
+ * @param isProject - Whether this is a project conversation
+ * @returns Formatted document context string, or undefined if no documents found
+ */
+async function retrieveDocumentContextForProject(
+    query: string,
+    spaceId: string,
+    userId: string | undefined,
+    isProject: boolean
+): Promise<string | undefined> {
+    console.log(`[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}`);
+    
+    // Only retrieve documents for project conversations
+    if (!isProject || !userId) {
+        console.log(`[RAG] Skipping: isProject=${isProject}, userId=${!!userId}`);
+        return undefined;
+    }
+
+    try {
+        const searchService = SearchService.get(userId);
+        // Use minScore=0 to include all documents, sorted by relevance
+        // The BM25 ranking will still prioritize more relevant documents
+        const relevantDocs = await searchService.retrieveForRAG(query, spaceId, 5, 0);
+        
+        if (relevantDocs.length === 0) {
+            console.log(`[RAG] No documents found for project ${spaceId}`);
+            return undefined;
+        }
+
+        console.log(`[RAG] Retrieved ${relevantDocs.length} relevant documents for project ${spaceId}:`, 
+            relevantDocs.map(d => `${d.name} (${d.score.toFixed(3)})`).join(', '));
+        return searchService.formatRAGContext(relevantDocs);
+    } catch (error) {
+        console.warn('[RAG] Failed to retrieve document context:', error);
+        return undefined;
+    }
+}
 
 // // TODO: break up logic between send and edit and improve error handling
 export function sendMessage({
@@ -250,12 +295,19 @@ export function sendMessage({
 
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
+            let isProject = false;
             if (spaceId) {
                 const space = state.spaces[spaceId];
-                if (space?.isProject && space?.projectInstructions) {
-                    projectInstructions = space.projectInstructions;
+                if (space?.isProject) {
+                    isProject = true;
+                    if (space?.projectInstructions) {
+                        projectInstructions = space.projectInstructions;
+                    }
                 }
             }
+
+            // Get user ID for RAG retrieval
+            const userId = state.user?.value?.ID;
 
             await fetchAssistantResponse({
                 api,
@@ -270,6 +322,8 @@ export function sendMessage({
                 contextFilters,
                 personalizationPrompt,
                 projectInstructions,
+                userId,
+                isProject,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -319,12 +373,37 @@ export function regenerateMessage(
 
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
+            let isProject = false;
             const space = state.spaces[spaceId];
-            if (space?.isProject && space?.projectInstructions) {
-                projectInstructions = space.projectInstructions;
+            if (space?.isProject) {
+                isProject = true;
+                if (space?.projectInstructions) {
+                    projectInstructions = space.projectInstructions;
+                }
             }
 
-            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt, projectInstructions);
+            // Retrieve document context for RAG (only for projects)
+            const userId = state.user?.value?.ID;
+            const lastUserMessage = messagesWithContext.filter(m => m.role === Role.User).pop();
+            const userQuery = lastUserMessage?.content || '';
+            const documentContext = await retrieveDocumentContextForProject(
+                userQuery,
+                spaceId,
+                userId,
+                isProject
+            );
+
+            console.log('[RAG] Context retrieval result:', {
+                personalizationPrompt: !!personalizationPrompt,
+                projectInstructions: !!projectInstructions,
+                documentContext: !!documentContext,
+                documentContextLength: documentContext?.length || 0,
+                userQuery: userQuery.slice(0, 50),
+                spaceId,
+                isProject,
+            });
+
+            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt, projectInstructions, documentContext);
 
             // Add retry instructions if provided
             if (retryInstructions) {
@@ -534,6 +613,8 @@ export async function fetchAssistantResponse({
     contextFilters = [],
     personalizationPrompt,
     projectInstructions,
+    userId,
+    isProject = false,
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -547,9 +628,32 @@ export async function fetchAssistantResponse({
     contextFilters?: any[];
     personalizationPrompt?: string;
     projectInstructions?: string;
+    userId?: string;
+    isProject?: boolean;
 }) {
+    // Extract the user's query from the last user message for RAG retrieval
+    const lastUserMessage = linearChain.filter(m => m.role === Role.User).pop();
+    const userQuery = lastUserMessage?.content || '';
 
-    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions);
+    // Retrieve relevant documents from the project's indexed Drive folder (RAG)
+    const documentContext = await retrieveDocumentContextForProject(
+        userQuery,
+        spaceId,
+        userId,
+        isProject
+    );
+
+    console.log('[RAG] fetchAssistantResponse context:', {
+        personalizationPrompt: !!personalizationPrompt,
+        projectInstructions: !!projectInstructions,
+        documentContext: !!documentContext,
+        documentContextLength: documentContext?.length || 0,
+        userQuery: userQuery.slice(0, 50),
+        spaceId,
+        isProject,
+    });
+
+    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions, documentContext);
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,
