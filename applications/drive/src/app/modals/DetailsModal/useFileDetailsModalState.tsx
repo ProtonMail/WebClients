@@ -3,7 +3,16 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import { type Author, type MaybeNode, MemberRole, NodeType, generateNodeUid, useDrive } from '@proton/drive';
+import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
+import {
+    type Author,
+    type MaybeNode,
+    MemberRole,
+    NodeType,
+    generateNodeUid,
+    getDrive,
+    getDriveForPhotos,
+} from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
@@ -49,8 +58,22 @@ export type UseFileDetailsModalProps = ModalStateProps & {
     shareId: string;
 };
 
-export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: UseFileDetailsModalProps) => {
-    const { drive } = useDrive();
+export function useDriveFileDetailsModalState({ volumeId, linkId, ...modalProps }: UseFileDetailsModalProps) {
+    const drive = getDrive();
+    return useFileDetailsModalState({ volumeId, linkId, ...modalProps, drive });
+}
+
+export function usePhotosFileDetailsModalState({ volumeId, linkId, ...modalProps }: UseFileDetailsModalProps) {
+    const drive = getDriveForPhotos();
+    return useFileDetailsModalState({ volumeId, linkId, ...modalProps, drive });
+}
+
+function useFileDetailsModalState({
+    volumeId,
+    linkId,
+    drive,
+    ...modalProps
+}: UseFileDetailsModalProps & { drive: ProtonDriveClient | ProtonDrivePhotosClient }) {
     const { handleError } = useSdkErrorHandler();
 
     const [isLoading, withLoading] = useLoading();
@@ -68,6 +91,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
                 const fileType = node.ok ? node.value.type : node.error.type;
                 const location = await getNodeLocation(drive, node);
                 const nodeEntity = node.ok ? node.value : node.error;
+                // eslint-disable-next-line no-nested-ternary
                 const activeRevision = node.ok
                     ? node.value.activeRevision
                     : node.error.activeRevision?.ok
@@ -136,7 +160,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
         hasError,
         details,
     };
-};
+}
 
 function getTitle(node?: MaybeNode): string {
     if (node === undefined) {

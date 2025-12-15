@@ -18,11 +18,11 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import PortalPreview from '../../../components/PortalPreview';
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { usePhotosDetailsModal } from '../../../modals/DetailsModal';
 import {
     type OnFileUploadSuccessCallbackData,
     type PhotoLink,
@@ -117,7 +117,7 @@ export const PhotosLayout = () => {
     const cachedSelectedItems = useMemoArrayNoMatterTheOrder(selectedItems);
 
     const createAlbum = useCreateAlbum();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [detailsModal, showDetailsModal] = usePhotosDetailsModal();
     const { navigateToAlbums, navigateToAlbum } = useNavigate();
     const addAlbumPhotosModal = useModalStateObject();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -233,12 +233,13 @@ export const PhotosLayout = () => {
     }, [createNotification, onSelectCover, previewItem]);
 
     const onShowDetails = useCallback(() => {
+        const linkVolumeId = previewItem ? previewItem.volumeId : album?.volumeId || volumeId;
         const linkId = previewItem ? previewItem.linkId : albumLinkId;
-        if (!previewShareId || !linkId || !volumeId) {
+        if (!previewShareId || !linkId || !linkVolumeId) {
             return;
         }
         showDetailsModal({
-            volumeId: volumeId,
+            volumeId: linkVolumeId,
             shareId: previewShareId,
             linkId: linkId,
         });
