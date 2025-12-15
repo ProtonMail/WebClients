@@ -20,11 +20,10 @@ import { fileProcessingService } from '../../../../services/fileProcessingServic
 import { SearchService } from '../../../../services/search/searchService';
 import type { DriveDocument } from '../../../../types/documents';
 import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../../util/filetypes';
-import { type BreadcrumbItem } from './DriveBreadcrumbs';
+import type { BreadcrumbItem } from './DriveBreadcrumbs';
 import { DriveBrowserHeader } from './DriveBrowserHeader';
 import { DriveContent } from './DriveContent';
 import { DriveErrorState } from './DriveErrorState';
-import { EventIndexingBanner } from './EventIndexingBanner';
 import { IndexingStatusBanner } from './IndexingStatusBanner';
 import { type UploadProgress, UploadProgressOverlay } from './UploadProgressOverlay';
 
@@ -72,7 +71,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
     ) => {
         const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
-        const { eventIndexingStatus, setIndexingFile } = useDriveIndexing();
+        const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
         const [user] = useUser();
         const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
@@ -566,14 +565,8 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     />
                 )}
 
-                {/* Indexing status banners */}
+                {/* Indexing status banner (state is now shared via context) */}
                 <IndexingStatusBanner indexingStatus={indexingStatus} isIndexing={isIndexing} />
-                <EventIndexingBanner
-                    isIndexing={eventIndexingStatus.isIndexing}
-                    currentFile={eventIndexingStatus.currentFile}
-                    processedCount={eventIndexingStatus.processedCount}
-                    totalCount={eventIndexingStatus.totalCount}
-                />
 
                 {displayError && (
                     <DriveErrorState

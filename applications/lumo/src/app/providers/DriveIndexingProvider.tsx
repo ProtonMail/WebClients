@@ -35,6 +35,8 @@ interface EventIndexingStatus {
     currentFile?: string;
     processedCount: number;
     totalCount: number;
+    /** Stage description for detailed progress */
+    stage?: string;
 }
 
 interface DriveIndexingContextType {
@@ -42,7 +44,9 @@ interface DriveIndexingContextType {
     subscribedScopes: string[];
     eventIndexingStatus: EventIndexingStatus;
     setIndexingFile: (fileName: string | null) => void;
-    setIndexingProgress: (processed: number, total: number) => void;
+    setIndexingProgress: (processed: number, total: number, stage?: string) => void;
+    /** Completely reset the indexing status to idle state */
+    resetIndexingStatus: () => void;
 }
 
 const DriveIndexingContext = createContext<DriveIndexingContextType | undefined>(undefined);
@@ -62,6 +66,7 @@ const DEFAULT_CONTEXT_VALUE: DriveIndexingContextType = {
     },
     setIndexingFile: () => {},
     setIndexingProgress: () => {},
+    resetIndexingStatus: () => {},
 };
 
 /**
@@ -206,6 +211,57 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             ) || null
         );
     }, []);
+
+    // Check if a file (identified by its parentNodeUid) is within the indexed folder or its subfolders
+    const isFileInIndexedFolder = useCallback(
+        async (parentNodeUid: string | undefined, indexedFolderUid: string): Promise<boolean> => {
+            if (!parentNodeUid) {
+                return false;
+            }
+
+            // Direct child of indexed folder
+            if (parentNodeUid === indexedFolderUid) {
+                return true;
+            }
+
+            // Check if parent is a subfolder of the indexed folder by recursively browsing
+            // We do a breadth-first search of the indexed folder's subfolders
+            try {
+                const visitedFolders = new Set<string>();
+                const queue: string[] = [indexedFolderUid];
+
+                while (queue.length > 0) {
+                    const currentFolderUid = queue.shift()!;
+                    if (visitedFolders.has(currentFolderUid)) {
+                        continue;
+                    }
+                    visitedFolders.add(currentFolderUid);
+
+                    const children = await browseFolderChildren(currentFolderUid);
+                    for (const child of children) {
+                        if (child.type === NodeType.Folder) {
+                            if (child.nodeUid === parentNodeUid) {
+                                return true; // Found the parent folder in the indexed tree
+                            }
+                            queue.push(child.nodeUid);
+                        }
+                    }
+
+                    // Limit depth to avoid infinite loops or excessive API calls
+                    if (visitedFolders.size > 100) {
+                        console.warn('[DriveIndexingProvider] isFileInIndexedFolder: depth limit reached');
+                        break;
+                    }
+                }
+
+                return false;
+            } catch (error) {
+                console.error('[DriveIndexingProvider] Failed to check if file is in indexed folder:', error);
+                return false;
+            }
+        },
+        [browseFolderChildren]
+    );
 
     // Fetch node name by browsing the folder and finding the node
     const fetchNodeName = useCallback(
@@ -399,11 +455,13 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                 const eventType = event.type;
                 const nodeType = event.nodeType?.toLowerCase();
                 const isTrashed = event.isTrashed;
+                const parentNodeUid = event.parentNodeUid;
 
                 console.log('[DriveIndexingProvider] Processing event:', {
                     eventType,
                     nodeType,
                     nodeUid,
+                    parentNodeUid,
                     treeEventScopeId,
                     fileName,
                     isTrashed,
@@ -421,14 +479,29 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                     continue;
                 }
 
-                // Find the indexed folder for this event
+                // Find the indexed folder for this event's scope
                 const indexedFolder = findFolderByScope(treeEventScopeId);
                 if (!indexedFolder) {
                     console.log('[DriveIndexingProvider] Event not for an indexed folder scope:', treeEventScopeId);
                     continue;
                 }
 
-                console.log('[DriveIndexingProvider] Event is for indexed folder:', indexedFolder.name);
+                console.log('[DriveIndexingProvider] Event is for indexed folder scope:', indexedFolder.name);
+
+                // Verify the file is actually within the indexed folder (not just the same tree scope)
+                // Skip this check for delete events since we want to remove any matching document
+                if (eventType !== DriveEventType.NodeDeleted && !isTrashed) {
+                    const isInFolder = await isFileInIndexedFolder(parentNodeUid, indexedFolder.nodeUid);
+                    if (!isInFolder) {
+                        console.log('[DriveIndexingProvider] File is not in indexed folder tree, skipping:', {
+                            parentNodeUid,
+                            indexedFolderUid: indexedFolder.nodeUid,
+                            indexedFolderName: indexedFolder.name,
+                        });
+                        continue;
+                    }
+                    console.log('[DriveIndexingProvider] Verified file is in indexed folder:', indexedFolder.name);
+                }
 
                 // Handle delete events OR trashed items (node_updated with isTrashed: true)
                 if (eventType === DriveEventType.NodeDeleted || isTrashed === true) {
@@ -477,7 +550,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             processedCount: 0,
             totalCount: 0,
         }));
-    }, [findFolderByScope, indexSingleFile, removeFileFromIndex]);
+    }, [findFolderByScope, indexSingleFile, removeFileFromIndex, isFileInIndexedFolder]);
 
     // Handle incoming tree event
     const handleTreeEvent = useCallback(
@@ -601,12 +674,25 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
     }, []);
 
     // Allow external components to update indexing progress
-    const setIndexingProgress = useCallback((processed: number, total: number) => {
+    const setIndexingProgress = useCallback((processed: number, total: number, stage?: string) => {
         setEventIndexingStatus(prev => ({
             ...prev,
             processedCount: processed,
             totalCount: total,
+            isIndexing: true,
+            ...(stage !== undefined && { stage }),
         }));
+    }, []);
+
+    // Reset indexing status to idle state
+    const resetIndexingStatus = useCallback(() => {
+        setEventIndexingStatus({
+            isIndexing: false,
+            processedCount: 0,
+            totalCount: 0,
+            currentFile: undefined,
+            stage: undefined,
+        });
     }, []);
 
     const value: DriveIndexingContextType = {
@@ -615,6 +701,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         eventIndexingStatus,
         setIndexingFile,
         setIndexingProgress,
+        resetIndexingStatus,
     };
 
     return <DriveIndexingContext.Provider value={value}>{children}</DriveIndexingContext.Provider>;
@@ -724,6 +811,7 @@ export const useDriveIndexing = (): DriveIndexingContextType => {
             eventIndexingStatus: DEFAULT_EVENT_INDEXING_STATUS,
             setIndexingFile: noop,
             setIndexingProgress: noop,
+            resetIndexingStatus: noop,
         };
     }
     return context;
