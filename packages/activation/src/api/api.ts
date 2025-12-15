@@ -9,11 +9,7 @@ import type {
     OAuthProps,
 } from '../interface';
 import { ImportType } from '../interface';
-import type {
-    ApiCreateImporterOrganization,
-    ApiCreateImporterOrganizationMigration,
-    ApiImportProvider,
-} from './api.interface';
+import type { ApiCreateImporterOrganization, ApiCreateImporterOrganizationMigration } from './api.interface';
 
 export const getTokens = () => ({
     url: 'oauth-token/v1/tokens',
@@ -206,8 +202,8 @@ export const getOrganizationUsers = () => ({
     method: 'GET',
 });
 
-export const getOrganizationImporter = (provider: ApiImportProvider) => ({
-    url: `importer/v1/organizations/${provider}`,
+export const getOrganizationImporter = () => ({
+    url: `importer/v1/organizations`,
     method: 'GET',
 });
 
