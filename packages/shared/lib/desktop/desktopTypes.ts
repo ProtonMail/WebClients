@@ -39,7 +39,8 @@ export type IPCInboxDesktopFeature =
     | 'RestrictedThemeSelection'
     | 'ClearAppModal'
     | 'SnapSupport'
-    | 'BugReportLogAttachments';
+    | 'BugReportLogAttachments'
+    | 'PrintDialog';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -78,7 +79,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'triggerCrash'; payload?: undefined }
     | { type: 'reportTestingError'; payload?: undefined }
     | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
-    | { type: 'toggleAppCache'; payload: boolean };
+    | { type: 'toggleAppCache'; payload: boolean }
+    | { type: 'togglePrintDialog'; payload: string };
 export type IPCInboxClientGetAsyncDataMessage = {
     type: 'getElectronLogs';
     args: [maxSize?: number];
