@@ -23,6 +23,7 @@ import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shar
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import {
     SpaceState,
+    getAppSpace,
     getAppStorage,
     getAppStorageAlmostFull,
     getAppStorageFull,
@@ -32,6 +33,7 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
+import { useSuggestBusinessModal } from '../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
 import SettingsLink from './SettingsLink';
 
 interface Props {
@@ -132,13 +134,28 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
+    const [modal, showModal] = useSuggestBusinessModal();
 
     if (!getCanAddStorage({ user, subscription })) {
         return null;
     }
 
-    // Storage upsell is completely hidden in drive.
-    const data = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user });
+    const upsellOutsideOfDrive = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user });
+
+    const suggestBusinessButton = (
+        <>
+            <ButtonLike
+                className="my-2 w-full flex gap-2 items-center justify-center"
+                color="norm"
+                shape="outline"
+                onClick={() => showModal({})}
+            >
+                <Icon name="briefcase" />
+                {c('Upsell').t`Get Drive for Business`}
+                {modal}
+            </ButtonLike>
+        </>
+    );
 
     const upsellButton = (
         <ButtonLike
@@ -148,7 +165,7 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
             color="norm"
             shape="outline"
             path={addUpsellPath(
-                getUpgradePath({ user, plan: data?.plan }),
+                getUpgradePath({ user, plan: upsellOutsideOfDrive?.plan }),
                 getUpsellRefFromApp({
                     app,
                     feature: DRIVE_UPSELL_PATHS.SIDEBAR,
@@ -161,11 +178,21 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
         </ButtonLike>
     );
 
-    if (!data) {
+    if (!upsellOutsideOfDrive) {
         const hasDriveSpecificUpsell =
             // Drive specific upsell if subscribed to a drive plan or free plan.
             app === APPS.PROTONDRIVE && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
         if (hasDriveSpecificUpsell) {
+            const space = getAppSpace(getSpace(user), APPS.PROTONDRIVE);
+            const usedSpaceRatio = space.usedSpace / space.maxSpace;
+
+            const dayOfMonth = new Date().getDate();
+
+            // Suggest business account for a week each month
+            if (usedSpaceRatio < 0.5 && dayOfMonth >= 15 && dayOfMonth <= 22) {
+                return suggestBusinessButton;
+            }
+
             return upsellButton;
         }
         return null;
@@ -178,7 +205,7 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
     return (
         <div className="p-4 pt-3">
             <div className="mb-2 flex justify-space-between">
-                <img src={data.icon} alt="" />
+                <img src={upsellOutsideOfDrive.icon} alt="" />
                 <Button
                     icon
                     shape="ghost"
@@ -190,8 +217,8 @@ const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
                     <Icon size={3} name="cross-big" />
                 </Button>
             </div>
-            <div className="text-bold">{data.description}</div>
-            <div className="color-weak">{data.info}</div>
+            <div className="text-bold">{upsellOutsideOfDrive.description}</div>
+            <div className="color-weak">{upsellOutsideOfDrive.info}</div>
             <div>{upsellButton}</div>
         </div>
     );
