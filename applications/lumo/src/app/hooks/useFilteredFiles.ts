@@ -26,9 +26,14 @@ export const useFilteredFiles = (
     }, [messageChain]);
     
     const spaceAttachmentsList = useMemo(() => {
-        // Filter out attachments that are attached to messages - those are conversation attachments, not project files
+        // Filter out:
+        // 1. Attachments that are attached to messages in current conversation
+        // 2. Auto-retrieved attachments (they're conversation-specific, not true project files)
         return Object.values(spaceAttachments)
-            .filter((attachment) => !messageAttachmentIds.has(attachment.id))
+            .filter((attachment) => 
+                !messageAttachmentIds.has(attachment.id) && 
+                !attachment.autoRetrieved
+            )
             .map((attachment, index) => ({
                 ...attachment,
                 messageId: '', // Space attachments don't belong to a specific message
@@ -168,10 +173,12 @@ export const useFilteredFiles = (
         return [...spaceAssetsList, ...spaceAttachmentsList];
     }, [spaceAssetsList, spaceAttachmentsList]);
 
-    // Filter activeHistoricalFiles to exclude project files (they're shown separately)
+    // Filter activeHistoricalFiles to exclude project files and auto-retrieved files (they're shown separately)
     const messageOnlyActiveFiles = useMemo(() => {
         const projectFileIds = new Set(projectFiles.map(f => f.id));
-        return activeHistoricalFiles.filter(file => !projectFileIds.has(file.id));
+        return activeHistoricalFiles.filter(file => 
+            !projectFileIds.has(file.id) && !file.autoRetrieved
+        );
     }, [activeHistoricalFiles, projectFiles]);
 
     return {

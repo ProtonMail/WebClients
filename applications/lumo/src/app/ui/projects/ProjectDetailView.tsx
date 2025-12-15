@@ -241,9 +241,9 @@ const ProjectDetailViewInner = () => {
     const projectInstructions = space.projectInstructions || '';
     const category = getProjectCategory(space.projectIcon);
 
-    // Count files for this space
+    // Count files for this space (exclude auto-retrieved as they're conversation-specific)
     const fileCount = Object.values(spaceAttachments).filter(
-        (att) => !att.error
+        (att) => !att.error && !att.autoRetrieved
     ).length;
 
     // Get prompt suggestions based on project category (only shown when no conversations exist)

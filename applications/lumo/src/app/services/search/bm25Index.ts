@@ -1,15 +1,45 @@
 /**
- * BM25 Search Index for relevance-based document ranking
+ * BM25 Search Index
  * 
- * This enables searching with sentences/paragraphs instead of just keywords,
- * ranking documents by relevance using the BM25 algorithm.
+ * Relevance-based document ranking using the BM25 algorithm. Supports searching
+ * with full sentences/paragraphs and ranks documents by semantic relevance.
+ * 
+ * How it works:
+ * 1. Tokenization: Text is normalized (compound words joined), lowercased, and 
+ *    split into words ≥3 chars, filtered against stopwords
+ * 
+ * 2. Indexing: Each document is tokenized and unique terms are tracked with their
+ *    document frequency (df). Document lengths are stored for normalization.
+ * 
+ * 3. IDF Calculation: Terms that appear in fewer documents get higher weights
+ *    Formula: log((N - df + 0.5) / (df + 0.5) + 1)
+ * 
+ * 4. BM25 Scoring: For each query term in a document, score combines:
+ *    - IDF: term importance across corpus
+ *    - TF saturation: diminishing returns for repeated terms (controlled by k1)
+ *    - Length normalization: adjusts for document length (controlled by b)
+ *    Formula: Σ IDF(term) × (tf × (k1+1)) / (tf + k1 × (1 - b + b × (docLen/avgLen)))
+ * 
+ * 5. Ranking: Documents scored against query, sorted by relevance
+ * 
+ * Parameters:
+ * - k1 (default 1.5): controls TF saturation (higher = more weight to term frequency)
+ * - b (default 0.75): controls length normalization (0 = no normalization, 1 = full)
  */
 
 import { STOPWORDS } from "./stopwords";
 
-// Simple tokenizer
-function tokenize(text: string): string[] {
+function normalizeCompoundWords(text: string): string {
     return text
+        .replace(/(\w+)\s*[-_]\s*(\w+)/g, '$1$2')
+        .replace(/(\w{3,})\s+(\w{3,})/g, (match, p1, p2) => {
+            return `${match} ${p1}${p2}`;
+        });
+}
+
+function tokenize(text: string): string[] {
+    const normalized = normalizeCompoundWords(text);
+    return normalized
         .toLowerCase()
         .replace(/[^\w\s]/g, ' ')
         .split(/\s+/)
@@ -36,7 +66,6 @@ export interface ScoredDocument<T extends BM25Document = BM25Document> {
 
 export class BM25Index {
     private idfIndex: IDFIndex;
-    // BM25 parameters
     private k1: number;
     private b: number;
 
@@ -51,39 +80,26 @@ export class BM25Index {
         };
     }
 
-    /**
-     * Add a document to the index
-     */
     addDocument(docId: string, text: string): void {
-        // If document already exists, remove it first to avoid double-counting
         if (this.idfIndex.docLengths.has(docId)) {
-            // We'd need the original text to properly remove, so just skip
-            // The index will be slightly off but will self-correct on rebuild
             return;
         }
 
         const tokens = tokenize(text);
         const uniqueTerms = new Set(tokens.filter((t) => !STOPWORDS.has(t)));
 
-        // Update document frequency for each unique term
         uniqueTerms.forEach((term) => {
             this.idfIndex.df.set(term, (this.idfIndex.df.get(term) || 0) + 1);
         });
 
-        // Store document length
         this.idfIndex.docLengths.set(docId, tokens.length);
-
-        // Update stats
         this.idfIndex.totalDocs++;
         this.updateAvgDocLength();
     }
 
-    /**
-     * Remove a document from the index
-     */
     removeDocument(docId: string, text: string): void {
         if (!this.idfIndex.docLengths.has(docId)) {
-            return; // Document not in index
+            return;
         }
 
         const tokens = tokenize(text);
@@ -114,25 +130,16 @@ export class BM25Index {
         this.idfIndex.avgDocLength = total / this.idfIndex.totalDocs;
     }
 
-    /**
-     * Compute IDF for a term
-     */
     private computeIDF(term: string): number {
         const df = this.idfIndex.df.get(term);
         if (!df || this.idfIndex.totalDocs === 0) return 0;
 
-        // BM25 IDF: log((N - df + 0.5) / (df + 0.5) + 1)
         const N = this.idfIndex.totalDocs;
         return Math.log((N - df + 0.5) / (df + 0.5) + 1);
     }
 
-    /**
-     * Extract top-k terms from a query using TF-IDF
-     * Useful for reformulating long queries into key terms
-     */
     reformulateQuery(queryText: string, topK: number = 10): string[] {
         const tokens = tokenize(queryText).filter((t) => !STOPWORDS.has(t));
-
         if (tokens.length === 0) return [];
 
         const tf = new Map<string, number>();
@@ -155,14 +162,10 @@ export class BM25Index {
             .map(([term]) => term);
     }
 
-    /**
-     * Compute BM25 score for a single document against query terms
-     */
     private computeBM25Score(docId: string, docText: string, queryTermFreqs: Map<string, number>): number {
         const docTokens = tokenize(docText).filter((t) => !STOPWORDS.has(t));
         const docLength = this.idfIndex.docLengths.get(docId) || docTokens.length;
 
-        // Compute term frequencies in document
         const docTermFreqs = new Map<string, number>();
         docTokens.forEach((token) => {
             docTermFreqs.set(token, (docTermFreqs.get(token) || 0) + 1);
@@ -172,11 +175,9 @@ export class BM25Index {
 
         queryTermFreqs.forEach((_, queryTerm) => {
             const tf = docTermFreqs.get(queryTerm) || 0;
-            if (tf === 0) return; // Term not in document
+            if (tf === 0) return;
 
             const idf = this.computeIDF(queryTerm);
-
-            // BM25 formula
             const numerator = tf * (this.k1 + 1);
             const denominator = tf + this.k1 * (1 - this.b + this.b * (docLength / this.idfIndex.avgDocLength));
 
@@ -186,14 +187,6 @@ export class BM25Index {
         return score;
     }
 
-    /**
-     * Rank candidate documents using BM25
-     * 
-     * @param queryText - The user's search query (can be a sentence or paragraph)
-     * @param candidates - Documents to rank
-     * @param topK - Number of results to return (undefined = all)
-     * @param minScore - Minimum score threshold (default 0)
-     */
     rankDocuments<T extends BM25Document>(
         queryText: string,
         candidates: T[],
@@ -203,49 +196,35 @@ export class BM25Index {
         const queryTokens = tokenize(queryText).filter((t) => !STOPWORDS.has(t));
 
         if (queryTokens.length === 0) {
-            // No meaningful query terms - return all with score 0
-            return candidates.map((doc) => ({ document: doc, score: 0 }));
+            return [];
         }
 
-        // Compute query term frequencies
         const queryTermFreqs = new Map<string, number>();
         queryTokens.forEach((token) => {
             queryTermFreqs.set(token, (queryTermFreqs.get(token) || 0) + 1);
         });
 
-        // Score all candidates
         const scored: ScoredDocument<T>[] = candidates
             .map((doc) => ({
                 document: doc,
                 score: this.computeBM25Score(doc.id, doc.text, queryTermFreqs),
             }))
-            .filter((result) => result.score >= minScore);
+            .filter((result) => result.score > minScore);
 
-        // Sort by score descending
         scored.sort((a, b) => b.score - a.score);
 
-        // Return top-k if specified
         return topK ? scored.slice(0, topK) : scored;
     }
 
-    /**
-     * Check if a term exists in the index vocabulary
-     */
     hasTermInVocabulary(term: string): boolean {
         return this.idfIndex.df.has(term.toLowerCase());
     }
 
-    /**
-     * Get terms from query that exist in the index
-     */
     getMatchingTerms(queryText: string): string[] {
         const tokens = tokenize(queryText).filter((t) => !STOPWORDS.has(t));
         return tokens.filter((t) => this.idfIndex.df.has(t));
     }
 
-    /**
-     * Clear the entire index
-     */
     clear(): void {
         this.idfIndex = {
             df: new Map(),
@@ -255,17 +234,11 @@ export class BM25Index {
         };
     }
 
-    /**
-     * Tune BM25 parameters
-     */
     setBM25Params(k1: number, b: number): void {
         this.k1 = k1;
         this.b = b;
     }
 
-    /**
-     * Serialize the index for storage
-     */
     serialize(): string {
         return JSON.stringify({
             df: Array.from(this.idfIndex.df.entries()),
@@ -277,9 +250,6 @@ export class BM25Index {
         });
     }
 
-    /**
-     * Deserialize the index from storage
-     */
     static deserialize(data: string): BM25Index {
         const parsed = JSON.parse(data);
         const index = new BM25Index(parsed.k1, parsed.b);
@@ -290,9 +260,6 @@ export class BM25Index {
         return index;
     }
 
-    /**
-     * Get index statistics
-     */
     getStats() {
         return {
             totalDocs: this.idfIndex.totalDocs,
@@ -302,4 +269,3 @@ export class BM25Index {
         };
     }
 }
-
