@@ -118,10 +118,14 @@ export const createFieldHandles = ({
             return anchor;
         },
 
-        setValue: (value) => {
-            field.autofilled = null;
+        setValue: withContext((ctx, value) => {
+            /** NOTE: when `setValue` is triggered as a side-effect of an
+             * autofill request (via the `onInput` handler), avoid resetting
+             * the `autofilled` flag. This should only be reset from actual
+             * user interaction with the field to allow autofill overriding. */
+            if (!ctx?.service.autofill.processing) field.autofilled = null;
             return (field.value = value);
-        },
+        }),
 
         setAction: (action) => {
             if (!action) field.action = null;
