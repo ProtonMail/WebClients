@@ -1,6 +1,9 @@
 import type { ChatMessage } from '@livekit/components-react';
 import { useRoomContext } from '@livekit/components-react';
+import { c } from 'ttag';
 
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
@@ -13,20 +16,45 @@ export const useChatMessage = () => {
     const room = useRoomContext();
     const { setChatMessages } = useMeetContext();
 
+    const reportMeetError = useMeetErrorReporting();
+
     const { displayName } = useMeetContext();
 
+    const notifications = useNotifications();
+
     const mls = useMLSContext();
+
+    const handleError = (errorCause: string) => {
+        reportMeetError('Failed to send chat message', {
+            level: 'error',
+            context: {
+                errorCause,
+            },
+        });
+
+        notifications.createNotification({
+            type: 'error',
+            text: c('Error').t`Failed to send chat message. Please try again.`,
+        });
+    };
 
     const sendMessage = async (content: string) => {
         const trimmedContent = trimMessage(content);
         const sanitizedContent = sanitizeMessage(trimmedContent);
 
         if (!room || !sanitizedContent) {
-            return;
+            return false;
         }
 
         try {
-            const encryptedMessage = await mls?.encryptMessage(sanitizedContent);
+            let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
+
+            try {
+                encryptedMessage = (await mls?.encryptMessage(sanitizedContent)) as Uint8Array<ArrayBuffer>;
+            } catch (error) {
+                handleError('Failed to encrypt chat message');
+                return false;
+            }
 
             const message: ChatMessage & { type: PublishableDataTypes.Message } = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
@@ -37,7 +65,13 @@ export const useChatMessage = () => {
 
             const encodedMessage = new TextEncoder().encode(JSON.stringify({ messageType: 'chat', ...message }));
 
-            await room.localParticipant.publishData(encodedMessage, { reliable: true });
+            try {
+                await room.localParticipant.publishData(encodedMessage, { reliable: true });
+            } catch (error) {
+                handleError('Failed to send chat message');
+
+                return false;
+            }
 
             setChatMessages((prev) => [
                 ...prev,
@@ -50,9 +84,11 @@ export const useChatMessage = () => {
                     type: 'message',
                 },
             ]);
+
+            return true;
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Error sending chat message:', error);
+            handleError('Unknown error');
+            return false;
         }
     };
 
