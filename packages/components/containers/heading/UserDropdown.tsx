@@ -44,6 +44,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     app: APP_NAMES;
     hasAppLinks?: boolean;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
+    logoutRedirectUrl?: string;
 }
 
 const ALLOWED_APPS_FOR_SELF_TROUBLESHOOT: Partial<APP_NAMES>[] = [
@@ -52,7 +53,15 @@ const ALLOWED_APPS_FOR_SELF_TROUBLESHOOT: Partial<APP_NAMES>[] = [
     APPS.PROTONACCOUNT,
 ];
 
-const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLinks, ...rest }: UserDropdownProps) => {
+const UserDropdown = ({
+    dropdownIcon,
+    app,
+    onOpenChat,
+    sessionOptions,
+    hasAppLinks,
+    logoutRedirectUrl,
+    ...rest
+}: UserDropdownProps) => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription] = useSubscription();
@@ -82,7 +91,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
     const accountSessions = useAccountSessions();
 
     const handleSignOut = (clearDeviceRecovery: boolean) => {
-        accountSessions.actions.signOut({ clearDeviceRecovery });
+        accountSessions.actions.signOut({ clearDeviceRecovery, logoutRedirectUrl });
     };
 
     const { switchHref, loginHref } = useMemo(() => {
@@ -217,7 +226,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
             {renderOpenSignOutAllPrompt && (
                 <ConfirmSignOutAllModal
                     onSignOut={() => {
-                        accountSessions.actions.signOutAll(accountSessions.state.value);
+                        accountSessions.actions.signOutAll(accountSessions.state.value, logoutRedirectUrl);
                     }}
                     {...openSignOutAllPrompt}
                 />

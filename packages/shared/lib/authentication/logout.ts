@@ -91,6 +91,12 @@ export const handleLogout = async ({
 
     authentication.logout();
 
+    // If a custom redirect URL is provided, use it directly
+    if (options.logoutRedirectUrl) {
+        replaceUrl(options.logoutRedirectUrl);
+        return;
+    }
+
     if (mode === 'standalone') {
         replaceUrl(getStandaloneLogoutURL({ options }));
         return;

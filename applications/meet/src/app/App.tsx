@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
-import { APPS } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
@@ -61,16 +59,6 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     }, [location.pathname]);
 
     useEffect(() => {
-        if (isGuest && isElectronApp) {
-            requestFork({
-                fromApp: APPS.PROTONMEET,
-                forkType: ForkType.LOGIN,
-                extra: {
-                    returnUrl: window.location.pathname.replace('/guest', ''),
-                },
-            });
-        }
-
         if (location.pathname.includes(landingPageRoute)) {
             if (isGuest) {
                 history.push('/join?instantJoin=true');
