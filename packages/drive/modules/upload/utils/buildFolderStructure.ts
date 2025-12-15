@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { filterIgnoredFiles } from './shouldIgnoreFile';
+import { filterIgnoredFiles, shouldIgnoreFile } from './shouldIgnoreFile';
 
 export interface FolderNode {
     name: string;
@@ -9,14 +9,21 @@ export interface FolderNode {
 }
 
 export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
-    const fileArray = Array.from(filterIgnoredFiles(files));
+    const allFiles = Array.from(files);
 
-    if (fileArray.length === 0) {
+    if (allFiles.length === 0) {
         throw new Error(c('Error').t`No file to upload`);
     }
 
-    const firstPath = fileArray[0].webkitRelativePath || fileArray[0].name;
+    const firstPath = allFiles[0].webkitRelativePath || allFiles[0].name;
     const rootFolderName = firstPath.split('/')[0];
+
+    if (!allFiles.some((f) => (f.webkitRelativePath || '').includes('/'))) {
+        const fileArray = filterIgnoredFiles(allFiles);
+        if (fileArray.length === 0) {
+            throw new Error(c('Error').t`No file to upload`);
+        }
+    }
 
     const root: FolderNode = {
         name: rootFolderName,
@@ -24,7 +31,7 @@ export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
         subfolders: new Map(),
     };
 
-    for (const file of fileArray) {
+    for (const file of allFiles) {
         const relativePath = file.webkitRelativePath || file.name;
         const pathParts = relativePath.split('/').filter((p) => p.length > 0);
 
@@ -48,7 +55,9 @@ export const buildFolderStructure = (files: FileList | File[]): FolderNode => {
             }
         }
 
-        currentNode.files.push(file);
+        if (!shouldIgnoreFile(file)) {
+            currentNode.files.push(file);
+        }
     }
 
     return root;

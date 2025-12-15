@@ -7,3 +7,7 @@ export const MAX_FOLDERS_CREATED_IN_PARALLEL = 5;
  * to not kill users device.
  */
 export const MAX_UPLOAD_JOBS = 5;
+
+// Placeholder for empty directories to preserve folder structure
+export const EMPTY_FOLDER_PLACEHOLDER_FILE = '.proton-drive-keep';
+export const EMPTY_FOLDER_PLACEHOLDER_MIMETYPE = 'application/x-empty-directory';
