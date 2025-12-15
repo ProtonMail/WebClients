@@ -45,9 +45,23 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const [user] = useUser();
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const { setIndexingFile, setIndexingProgress } = useDriveIndexing();
-    const [indexingStatus, setIndexingStatus] = useState<FolderIndexingStatus | null>(null);
-    const [isIndexing, setIsIndexing] = useState(false);
+    const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus } = useDriveIndexing();
+    
+    // Derive indexingStatus from the shared context eventIndexingStatus
+    const indexingStatus: FolderIndexingStatus | null = eventIndexingStatus.isIndexing
+        ? {
+            folderId: '', // We don't track folderId in context, but it's not used by the banner
+            status: 'indexing',
+            progress: {
+                indexed: eventIndexingStatus.processedCount,
+                total: eventIndexingStatus.totalCount,
+            },
+            stage: eventIndexingStatus.stage,
+        }
+        : null;
+    
+    // Derive isIndexing from the shared context
+    const isIndexing = eventIndexingStatus.isIndexing;
 
     const indexedFolders = lumoUserSettings.indexedDriveFolders || [];
 
@@ -141,13 +155,8 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
             const { spaceId } = options || {};
 
-            setIsIndexing(true);
             setIndexingFile(folderName); // Signal to context that indexing started
-            setIndexingStatus({
-                folderId: folderUid,
-                status: 'indexing',
-                progress: { indexed: 0, total: 0 },
-            });
+            setIndexingProgress(0, 0, 'Preparing...');
 
             try {
                 // Recursively collect all files from the folder and its subfolders
@@ -163,12 +172,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                 console.log('[DriveIndexing] Found', allFiles.length, 'total files in folder tree');
 
-                setIndexingStatus({
-                    folderId: folderUid,
-                    status: 'indexing',
-                    progress: { indexed: 0, total: allFiles.length },
-                });
-                setIndexingProgress(0, allFiles.length); // Update shared context
+                setIndexingProgress(0, allFiles.length);
 
                 const documents: DriveDocument[] = [];
                 let processedCount = 0;
@@ -215,13 +219,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     console.log(`[DriveIndexing] Processing batch ${batchNum}/${totalBatches} (${batch.length} files)`);
                     
                     // Show progress as "processing files X to Y"
-                    setIndexingStatus({
-                        folderId: folderUid,
-                        status: 'indexing',
-                        progress: { indexed: i, total: allFiles.length },
-                        stage: `Downloading files ${i + 1}-${batchEndIndex} of ${allFiles.length}`,
-                    });
-                    setIndexingProgress(i, allFiles.length); // Update shared context
+                    setIndexingProgress(i, allFiles.length, `Downloading files ${i + 1}-${batchEndIndex} of ${allFiles.length}`);
 
                     // Yield to allow UI to update
                     await new Promise(resolve => setTimeout(resolve, 0));
@@ -237,13 +235,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         processedCount++;
                     }
 
-                    setIndexingStatus({
-                        folderId: folderUid,
-                        status: 'indexing',
-                        progress: { indexed: processedCount, total: allFiles.length },
-                        stage: `Processed ${processedCount}/${allFiles.length} files`,
-                    });
-                    setIndexingProgress(processedCount, allFiles.length); // Update shared context
+                    setIndexingProgress(processedCount, allFiles.length, `Processed ${processedCount}/${allFiles.length} files`);
                 }
 
                 const documentsWithContent = documents.filter((d) => d.content && d.content.length > 0);
@@ -276,12 +268,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 });
 
                 console.log('[DriveIndexing] Indexing complete:', documentsWithContent.length, 'documents indexed');
-
-                setIndexingStatus({
-                    folderId: folderUid,
-                    status: 'complete',
-                    progress: { indexed: documentsWithContent.length, total: allFiles.length },
-                });
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
                 // If folder is missing/forbidden, clean it up
@@ -289,18 +275,12 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     await removeIndexedFolder(folderUid);
                 }
                 console.error('[DriveIndexing] Failed to index folder:', error);
-                setIndexingStatus({
-                    folderId: folderUid,
-                    status: 'error',
-                    progress: { indexed: 0, total: 0 },
-                    error: message || 'Unknown error',
-                });
             } finally {
-                setIsIndexing(false);
-                setIndexingFile(null); // Signal to context that indexing ended
+                // Always reset the indexing status to idle state
+                resetIndexingStatus();
             }
         },
-        [user?.ID, collectAllFiles, downloadFile, indexedFolders, updateSettings, removeIndexedFolder, setIndexingFile, setIndexingProgress]
+        [user?.ID, collectAllFiles, downloadFile, indexedFolders, updateSettings, removeIndexedFolder, setIndexingFile, setIndexingProgress, resetIndexingStatus]
     );
 
     const rehydrateFolders = useCallback(

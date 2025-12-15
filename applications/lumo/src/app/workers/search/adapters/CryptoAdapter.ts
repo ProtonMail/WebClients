@@ -1,3 +1,6 @@
+import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
+
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 
 export interface CryptoAdapter {
@@ -23,9 +26,9 @@ export class LumoCryptoAdapter implements CryptoAdapter {
     async deriveSearchKey(userId: string): Promise<CryptoKey> {
         const encoder = new TextEncoder();
         const material = encoder.encode(`lumo-foundation-search:${userId}`);
-        const hash = await crypto.subtle.digest('SHA-256', material);
+        const hash = await computeSHA256(material);
 
-        return crypto.subtle.importKey('raw', hash, { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']);
+        return importKey(hash);
     }
 
     async encrypt(data: Uint8Array<ArrayBuffer>, key: CryptoKey, ad?: string): Promise<string> {

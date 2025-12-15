@@ -304,11 +304,14 @@ export async function serializeAttachment(
 
         // We copy some metadata from Pub to Priv, because SQL does not have the columns to store them,
         // so we have to cram it in the encrypted payload.
-        const { mimeType, rawBytes } = attachmentPub;
+        const { mimeType, rawBytes, autoRetrieved, driveNodeId, relevanceScore } = attachmentPub;
         const privPlus = {
             ...attachmentPriv,
             mimeType,
             rawBytes,
+            autoRetrieved,
+            driveNodeId,
+            relevanceScore,
         };
 
         const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
@@ -349,11 +352,17 @@ export async function deserializeAttachment(
         // See analogous comment in `serializeAttachment()`.
         const mimeType = (decoded as { mimeType?: unknown }).mimeType;
         const rawBytes = (decoded as { rawBytes?: unknown }).rawBytes;
+        const autoRetrieved = (decoded as { autoRetrieved?: unknown }).autoRetrieved;
+        const driveNodeId = (decoded as { driveNodeId?: unknown }).driveNodeId;
+        const relevanceScore = (decoded as { relevanceScore?: unknown }).relevanceScore;
         return {
             ...attachmentPub,
             ...decoded,
             ...(mimeType && typeof mimeType === 'string' ? { mimeType } : {}),
             ...(!isNil(rawBytes) && typeof rawBytes === 'number' && Number.isInteger(rawBytes) ? { rawBytes } : {}),
+            ...(typeof autoRetrieved === 'boolean' ? { autoRetrieved } : {}),
+            ...(typeof driveNodeId === 'string' ? { driveNodeId } : {}),
+            ...(typeof relevanceScore === 'number' ? { relevanceScore } : {}),
         };
     } catch (e) {
         safeLogger.warn(`Cannot deserialize attachment ${serializedAttachment.id}:`, e);

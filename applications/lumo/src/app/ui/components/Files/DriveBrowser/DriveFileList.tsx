@@ -70,12 +70,16 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 const exceedsFileSizeLimit = child.size && child.size > MAX_FILE_SIZE;
 
                 const getActionIcon = () => {
-                    if (fileExists) return () => <IcCheckmarkCircle />;
-                    if (exceedsFileSizeLimit)
+                    if (fileExists) {
+                        return () => <IcCheckmarkCircle />;
+                    }
+                    if (exceedsFileSizeLimit) {
                         return () => <Icon name="exclamation-triangle-filled" className="color-danger" size={4} />;
-                    if (estimatedTooLargeForPreview)
+                    }
+                    if (estimatedTooLargeForPreview) {
                         return () => <Icon name="exclamation-triangle-filled" className="color-warning" size={4} />;
-                    if (downloadingFile === child.nodeUid)
+                    }
+                    if (downloadingFile === child.nodeUid) {
                         return () => (
                             <CircularProgress
                                 progress={fileData.downloadProgress || 0}
@@ -83,6 +87,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                 className="text-primary"
                             />
                         );
+                    }
                     return () => <IcPlusCircle />;
                 };
 
