@@ -1,3 +1,4 @@
+import { EMPTY_FOLDER_PLACEHOLDER_FILE } from '../constants';
 import { buildFolderStructure } from './buildFolderStructure';
 
 const createFileWithPath = (name: string, path: string) => {
@@ -115,6 +116,44 @@ describe('buildFolderStructure', () => {
                 SubFolder: {
                     name: 'SubFolder',
                     files: [expect.any(File)],
+                    subfolders: {},
+                },
+            },
+        });
+    });
+
+    it('should handle empty folders with .keep placeholder files', () => {
+        const keepFile = createFileWithPath(
+            EMPTY_FOLDER_PLACEHOLDER_FILE,
+            `EmptyFolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`
+        );
+        const structure = buildFolderStructure([keepFile]);
+
+        expect(convertMapToObject(structure)).toMatchObject({
+            name: 'EmptyFolder',
+            files: [],
+            subfolders: {},
+        });
+    });
+
+    it('should handle nested empty folders with .keep files', () => {
+        const keepFile1 = createFileWithPath(
+            EMPTY_FOLDER_PLACEHOLDER_FILE,
+            `ParentFolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`
+        );
+        const keepFile2 = createFileWithPath(
+            EMPTY_FOLDER_PLACEHOLDER_FILE,
+            `ParentFolder/EmptySubfolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`
+        );
+        const structure = buildFolderStructure([keepFile1, keepFile2]);
+
+        expect(convertMapToObject(structure)).toMatchObject({
+            name: 'ParentFolder',
+            files: [],
+            subfolders: {
+                EmptySubfolder: {
+                    name: 'EmptySubfolder',
+                    files: [],
                     subfolders: {},
                 },
             },
