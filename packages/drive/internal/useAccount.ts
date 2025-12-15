@@ -67,6 +67,16 @@ export function useAccount(): ProtonDriveAccount {
         };
     };
 
+    const getOwnAddresses = async (): Promise<ProtonDriveAccountAddress[]> => {
+        const addresses = await getAddresses();
+
+        const ownAddresses = [];
+        for (const address of addresses) {
+            ownAddresses.push(await getOwnAddress(address.ID));
+        }
+        return ownAddresses;
+    };
+
     const getPublicKeys = async (email: string): Promise<PublicKey[]> => {
         if (!authentication.getUID()) {
             return [];
@@ -128,12 +138,14 @@ export function useAccount(): ProtonDriveAccount {
     const account = useRef<ProtonDriveAccount>({
         getOwnPrimaryAddress,
         getOwnAddress,
+        getOwnAddresses,
         hasProtonAccount,
         getPublicKeys,
     });
 
     account.current.getOwnPrimaryAddress = getOwnPrimaryAddress;
     account.current.getOwnAddress = getOwnAddress;
+    account.current.getOwnAddresses = getOwnAddresses;
     account.current.hasProtonAccount = hasProtonAccount;
     account.current.getPublicKeys = getPublicKeys;
 
