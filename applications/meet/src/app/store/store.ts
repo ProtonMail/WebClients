@@ -6,17 +6,26 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import noop from '@proton/utils/noop';
 
 import { start } from './listeners';
-import { rootReducer } from './rootReducer';
+import { type MeetState, rootReducer } from './rootReducer';
 
 interface MeetExtraThunkArguments extends ProtonThunkArguments {
     notificationsManager?: NotificationsManager;
 }
 
-export const setupStore = (extraThunkArguments: MeetExtraThunkArguments) => {
+export const setupStore = ({
+    extraThunkArguments,
+    preloadedState,
+    persist,
+}: {
+    extraThunkArguments: MeetExtraThunkArguments;
+    preloadedState?: Partial<MeetState>;
+    persist?: boolean;
+}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
         reducer: rootReducer,
+        preloadedState,
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 serializableCheck: false,
@@ -25,21 +34,20 @@ export const setupStore = (extraThunkArguments: MeetExtraThunkArguments) => {
     });
 
     const startListening = listenerMiddleware.startListening as MeetAppStartListening;
-    start(startListening);
+    start({ startListening, persist });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listeners', () => {
             listenerMiddleware.clearListeners();
-            start(startListening);
+            start({ startListening, persist });
         });
     }
 
     return { ...store, unsubscribe: noop };
 };
 
-export type MeetState = ReturnType<typeof rootReducer>;
-
+export type { MeetState };
 export type MeetStore = ReturnType<typeof setupStore>;
 export type MeetDispatch = MeetStore['dispatch'];
 
