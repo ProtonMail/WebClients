@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -94,6 +94,22 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         link.click();
         document.body.removeChild(link);
     };
+
+    // Handle ESC key to close modal
+    useEffect(() => {
+        if (!showModal) return;
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setShowModal(false);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [showModal]);
 
     return (
         <>
