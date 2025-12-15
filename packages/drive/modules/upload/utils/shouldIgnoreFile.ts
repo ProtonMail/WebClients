@@ -1,3 +1,5 @@
+import { EMPTY_FOLDER_PLACEHOLDER_FILE } from '../constants';
+
 const DEFAULT_IGNORE_PATTERNS = [
     '.DS_Store', // macOS metadata
     'Thumbs.db', // Windows thumbnail cache
@@ -14,7 +16,7 @@ export const shouldIgnoreFile = (file: File, ignorePatterns: string[] = DEFAULT_
     const fileName = file.name;
     const filePath = file.webkitRelativePath || file.name;
 
-    for (const pattern of ignorePatterns) {
+    for (const pattern of ignorePatterns.concat(EMPTY_FOLDER_PLACEHOLDER_FILE)) {
         if (fileName === pattern) {
             return true;
         }
@@ -32,6 +34,6 @@ export const shouldIgnoreFile = (file: File, ignorePatterns: string[] = DEFAULT_
 };
 
 export const filterIgnoredFiles = (files: FileList | File[]): File[] => {
-    const patterns = DEFAULT_IGNORE_PATTERNS;
+    const patterns = DEFAULT_IGNORE_PATTERNS.concat(EMPTY_FOLDER_PLACEHOLDER_FILE);
     return Array.from(files).filter((file) => !shouldIgnoreFile(file, patterns));
 };
