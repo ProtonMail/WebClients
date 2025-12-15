@@ -9,7 +9,7 @@ import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
@@ -74,6 +74,7 @@ export const useLumoActions = ({
     const { hasTierErrors } = useTierErrors();
     const isLumoToolingEnabled = useFlag('LumoTooling');
     const contextFilters = useLumoSelector(selectContextFilters);
+    const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
 
@@ -183,6 +184,7 @@ export const useLumoActions = ({
             contextFilters,
             personalizationPrompt,
             projectInstructions,
+            allAttachments,
         });
     };
 
