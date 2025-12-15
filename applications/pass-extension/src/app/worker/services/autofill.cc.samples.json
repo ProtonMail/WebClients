@@ -1017,5 +1017,138 @@
                 "frameAttributes": {}
             }
         }
+    },
+    "mega.nz/payment": {
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "1191": {
+                "forms": [
+                    {
+                        "formId": "74ba84b1",
+                        "fields": [
+                            { "type": "field", "fieldId": "238fd93c", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://js.stripe.com/v3/elements-inner-card-94b3e57819cf246eb9be93ce34701a72.html#__shared_params__[version]=v3&__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%224b70084d-0e61-47bb-bc93-1bccc2451feb%22%2C%22assignments%22%3A%7B%22link_controller_safari_no_http_cookies%22%3A%22treatment%22%7D%7D&locale=en&wait=false&mids[guid]=NA&mids[muid]=NA&mids[sid]=NA&elementId=cardNumber-bf86cb09-87f9-4817-9adc-fc781b5121a2&style[base][color]=%23333333&style[base][fontFamily]=Lato%2C+Open+Sans%2C+Segoe+UI%2C+sans-serif&style[base][fontSize]=16px&style[base][::placeholder][color]=%23b4b4b4&style[invalid][color]=%23d41616&stripeJsMountedInIframe=true&rtl=false&componentName=cardNumber&keyMode=live&apiKey=pk_live_51PfY4qFq9EfLB3RCvwWNyddOT6dEZGstFkGEyxdYXBXEadBH5YimokKIW5BSBrTmxgcwG9I9Zi7VzQnTClFzWIyr00LH2hHuC8&frameMessagingStrategy=postMessage&referrer=https%3A%2F%2Fstripe.megapay.nz%2F%3Ft%3Delements%26s%3DcGlfM1NlZzFJRnE5RWZMQjNSQzFqSENmU2JLX3NlY3JldF9XYng1ZENIaVJscEFvZ05mcmZXVHBLM2ox%26e%3D4%26pp%3DMTcyLjk1%26v%3D2%26rtc%3D0%26pt%3Dstripe%26p%3D2%26r%3D1%26m%3D12%26g%3Dc3RyaXBl%26l%3Den&controllerId=__privateStripeController8921",
+                    "name": "__privateStripeFrame8923",
+                    "width": 603,
+                    "height": 19,
+                    "ariaLabel": "CVC"
+                }
+            },
+            "1192": {
+                "forms": [
+                    {
+                        "formId": "48dc2303",
+                        "fields": [
+                            { "type": "field", "fieldId": "e8d41029", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://js.stripe.com/v3/elements-inner-card-94b3e57819cf246eb9be93ce34701a72.html#__shared_params__[version]=v3&__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%224b70084d-0e61-47bb-bc93-1bccc2451feb%22%2C%22assignments%22%3A%7B%22link_controller_safari_no_http_cookies%22%3A%22treatment%22%7D%7D&locale=en&wait=false&mids[guid]=NA&mids[muid]=NA&mids[sid]=NA&elementId=cardExpiry-1b6f0ca4-5f45-4686-ac3c-63cf7dfc5c08&style[base][color]=%23333333&style[base][fontFamily]=Lato%2C+Open+Sans%2C+Segoe+UI%2C+sans-serif&style[base][fontSize]=16px&style[base][::placeholder][color]=%23b4b4b4&style[invalid][color]=%23d41616&stripeJsMountedInIframe=true&rtl=false&componentName=cardExpiry&keyMode=live&apiKey=pk_live_51PfY4qFq9EfLB3RCvwWNyddOT6dEZGstFkGEyxdYXBXEadBH5YimokKIW5BSBrTmxgcwG9I9Zi7VzQnTClFzWIyr00LH2hHuC8&frameMessagingStrategy=postMessage&referrer=https%3A%2F%2Fstripe.megapay.nz%2F%3Ft%3Delements%26s%3DcGlfM1NlZzFJRnE5RWZMQjNSQzFqSENmU2JLX3NlY3JldF9XYng1ZENIaVJscEFvZ05mcmZXVHBLM2ox%26e%3D4%26pp%3DMTcyLjk1%26v%3D2%26rtc%3D0%26pt%3Dstripe%26p%3D2%26r%3D1%26m%3D12%26g%3Dc3RyaXBl%26l%3Den&controllerId=__privateStripeController8921",
+                    "name": "__privateStripeFrame8924",
+                    "width": 279,
+                    "height": 19,
+                    "ariaLabel": "Credit or debit card expiration date"
+                }
+            },
+            "1193": {
+                "forms": [
+                    {
+                        "formId": "73539e18",
+                        "fields": [
+                            { "type": "field", "fieldId": "b5f08a3a", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://js.stripe.com/v3/elements-inner-card-94b3e57819cf246eb9be93ce34701a72.html#__shared_params__[version]=v3&__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%224b70084d-0e61-47bb-bc93-1bccc2451feb%22%2C%22assignments%22%3A%7B%22link_controller_safari_no_http_cookies%22%3A%22treatment%22%7D%7D&locale=en&wait=false&mids[guid]=NA&mids[muid]=NA&mids[sid]=NA&elementId=cardCvc-c09dad74-ad7f-4d60-877e-afcc480f432b&style[base][color]=%23333333&style[base][fontFamily]=Lato%2C+Open+Sans%2C+Segoe+UI%2C+sans-serif&style[base][fontSize]=16px&style[base][::placeholder][color]=%23b4b4b4&style[invalid][color]=%23d41616&placeholder=CSC&stripeJsMountedInIframe=true&rtl=false&componentName=cardCvc&keyMode=live&apiKey=pk_live_51PfY4qFq9EfLB3RCvwWNyddOT6dEZGstFkGEyxdYXBXEadBH5YimokKIW5BSBrTmxgcwG9I9Zi7VzQnTClFzWIyr00LH2hHuC8&frameMessagingStrategy=postMessage&referrer=https%3A%2F%2Fstripe.megapay.nz%2F%3Ft%3Delements%26s%3DcGlfM1NlZzFJRnE5RWZMQjNSQzFqSENmU2JLX3NlY3JldF9XYng1ZENIaVJscEFvZ05mcmZXVHBLM2ox%26e%3D4%26pp%3DMTcyLjk1%26v%3D2%26rtc%3D0%26pt%3Dstripe%26p%3D2%26r%3D1%26m%3D12%26g%3Dc3RyaXBl%26l%3Den&controllerId=__privateStripeController8921",
+                    "name": "__privateStripeFrame8925",
+                    "width": 279,
+                    "height": 19,
+                    "ariaLabel": "Credit or debit card CVC/CVV"
+                }
+            },
+            "1200": {
+                "forms": [],
+                "frameAttributes": {
+                    "src": "https://js.stripe.com/v3/elements-inner-link-button-for-card-c339283708afb9e2ab228bebc38d9822.html#locale=en&style[foregroundColor]=%23333333&frameId=__privateStripeFrame8923&publishableKey=pk_live_51PfY4qFq9EfLB3RCvwWNyddOT6dEZGstFkGEyxdYXBXEadBH5YimokKIW5BSBrTmxgcwG9I9Zi7VzQnTClFzWIyr00LH2hHuC8&stripeJsId=4b70084d-0e61-47bb-bc93-1bccc2451feb&controllerId=__privateStripeController8921&mids[guid]=NA&mids[muid]=NA&mids[sid]=NA&component=cardNumber&elementId=cardNumber-bf86cb09-87f9-4817-9adc-fc781b5121a2",
+                    "name": "cardNumberButton89210",
+                    "width": 527,
+                    "height": 39,
+                    "ariaLabel": "Save with Link"
+                }
+            }
+        },
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "mega.nz", "secure": true },
+                "crossOrigin": true,
+                "tabId": 1959882001
+            },
+            "1190": {
+                "frame": { "parent": 1189, "frameId": 1190, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1191": {
+                "frame": { "parent": 1189, "frameId": 1191, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1192": {
+                "frame": { "parent": 1189, "frameId": 1192, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1193": {
+                "frame": { "parent": 1189, "frameId": 1193, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1194": {
+                "frame": { "parent": 1189, "frameId": 1194, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1195": {
+                "frame": { "parent": 1189, "frameId": 1195, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1196": {
+                "frame": { "parent": 1189, "frameId": 1196, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1198": {
+                "frame": { "parent": 1189, "frameId": 1198, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1199": {
+                "frame": { "parent": 1189, "frameId": 1199, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1200": {
+                "frame": { "parent": 1189, "frameId": 1200, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1201": {
+                "frame": { "parent": 1189, "frameId": 1201, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            },
+            "1202": {
+                "frame": { "parent": 1189, "frameId": 1202, "origin": "stripe.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 1959882001
+            }
+        }
     }
 }

@@ -136,7 +136,8 @@ export const clusterCCFormFields = (
      * candidate roots when cross-frame autofilling is unambiguous. */
     const findUnambiguousChildRoots = (parentFrameId: FrameId): FrameRoot[] => {
         const parentCluster = clusters.get(parentFrameId);
-        if (parentCluster?.forms.length !== 0) return [];
+        const parentFormsCount = parentCluster?.forms.length ?? 0;
+        if (parentFormsCount > 0) return [];
 
         const seen = new Set<CCFieldType>();
         const roots: FrameRoot[] = [];
