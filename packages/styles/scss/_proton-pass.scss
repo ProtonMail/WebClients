@@ -1,14 +1,4 @@
-@use 'lib/im-to-em' as *;
-
-$breakpoints: im-to-em(
-	(
-		'xlarge': 1500px,
-		'large': 1100px,
-		'medium': 940px,
-		'small': 880px,
-		'xsmall': 450px,
-	)
-);
+@import 'pass/pass-breakpoints';
 
 // Library
 @import 'lib/';
