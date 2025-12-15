@@ -3,7 +3,7 @@ import { updateServerTime } from '@proton/crypto';
 import { configureApi } from '../api';
 import { getClientID } from '../apps/helper';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
-import xhr from '../fetch/fetch';
+import { protonFetch } from '../fetch/fetch';
 import { withLocaleHeaders } from '../fetch/headers';
 import { getDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
@@ -116,7 +116,7 @@ const createApi = ({
         ...config,
         defaultHeaders,
         clientID: getClientID(config.APP_NAME),
-        xhr,
+        protonFetch,
     }) as any;
 
     const listeners: ApiListenerCallback[] = [];
