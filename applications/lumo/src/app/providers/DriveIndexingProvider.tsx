@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Component, createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { NodeType } from '@proton/drive';
@@ -10,6 +10,7 @@ import { SearchService } from '../services/search/searchService';
 import type { DriveDocument } from '../types/documents';
 import { useDriveSDK, type DriveEvent, type DriveNode, type EventSubscription } from '../hooks/useDriveSDK';
 import { useLumoUserSettings } from '../hooks';
+import { useIsGuest } from './IsGuestProvider';
 
 // Debounce time for processing events (ms)
 const EVENT_DEBOUNCE_MS = 2000;
@@ -50,8 +51,24 @@ interface DriveIndexingProviderProps {
     children: ReactNode;
 }
 
-export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) => {
-    const [user] = useUser();
+// Default context value for guest mode
+const DEFAULT_CONTEXT_VALUE: DriveIndexingContextType = {
+    isSubscribed: false,
+    subscribedScopes: [],
+    eventIndexingStatus: {
+        isIndexing: false,
+        processedCount: 0,
+        totalCount: 0,
+    },
+    setIndexingFile: () => {},
+    setIndexingProgress: () => {},
+};
+
+/**
+ * Inner provider that handles the actual indexing logic.
+ * Only rendered when user is authenticated.
+ */
+const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode; userId: string }) => {
     const { browseFolderChildren, downloadFile, subscribeToTreeEvents, isInitialized: isDriveInitialized } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const [isSubscribed, setIsSubscribed] = useState(false);
@@ -68,12 +85,118 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
     const subscriptionsRef = useRef<Map<string, EventSubscription>>(new Map());
     const pendingEventsRef = useRef<Map<string, DriveEvent>>(new Map());
     const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const hasCheckedRehydrationRef = useRef(false);
 
     // Keep indexed folders in a ref so callbacks can access latest value
     const indexedFoldersRef = useRef<IndexedDriveFolder[]>(indexedFolders);
     useEffect(() => {
         indexedFoldersRef.current = indexedFolders;
     }, [indexedFolders]);
+
+    // Auto-rehydrate folders on startup if folders exist in settings but manifest is empty
+    // This handles the case when opening the app in a new browser where IndexedDB is empty
+    useEffect(() => {
+        if (hasCheckedRehydrationRef.current || !isDriveInitialized || indexedFolders.length === 0) {
+            return;
+        }
+
+        const checkAndRehydrate = async () => {
+            hasCheckedRehydrationRef.current = true;
+            
+            const searchService = SearchService.get(userId);
+            const documents = await searchService.getDriveDocuments();
+            
+            console.log('[DriveIndexingProvider] Auto-rehydration check:', {
+                indexedFoldersCount: indexedFolders.length,
+                documentsInManifest: documents.length,
+            });
+
+            // If we have indexed folders but no documents, trigger rehydration
+            if (indexedFolders.length > 0 && documents.length === 0) {
+                console.log('[DriveIndexingProvider] Manifest empty but folders exist - triggering auto-rehydration');
+                
+                setEventIndexingStatus({
+                    isIndexing: true,
+                    currentFile: 'Rehydrating index...',
+                    processedCount: 0,
+                    totalCount: indexedFolders.length,
+                });
+
+                // Rehydrate each folder
+                for (const folder of indexedFolders) {
+                    if (folder.isActive === false) continue;
+                    
+                    try {
+                        console.log('[DriveIndexingProvider] Rehydrating folder:', folder.name);
+                        setEventIndexingStatus(prev => ({
+                            ...prev,
+                            currentFile: `Rehydrating: ${folder.name}`,
+                        }));
+
+                        // Collect all files from the folder
+                        const allFiles: FileWithPath[] = [];
+                        const collectFiles = async (folderUid: string, basePath: string): Promise<void> => {
+                            const children = await browseFolderChildren(folderUid);
+                            for (const child of children) {
+                                if (child.type === NodeType.File) {
+                                    allFiles.push({ ...child, relativePath: basePath ? `${basePath}/${child.name}` : child.name });
+                                } else if (child.type === NodeType.Folder) {
+                                    await collectFiles(child.nodeUid, basePath ? `${basePath}/${child.name}` : child.name);
+                                }
+                            }
+                        };
+                        await collectFiles(folder.nodeUid, '');
+
+                        // Download and process files
+                        const documents: DriveDocument[] = [];
+                        for (const file of allFiles) {
+                            try {
+                                const fileContent = await downloadFile(file.nodeUid);
+                                const fileData = new Uint8Array(fileContent);
+                                const inferredMime = getMimeTypeFromExtension(file.name) || 'application/octet-stream';
+                                const fileObj = new File([fileData], file.name, { type: inferredMime });
+                                const result = await fileProcessingService.processFile(fileObj);
+                                
+                                if (result.success && result.result) {
+                                    documents.push({
+                                        id: file.nodeUid,
+                                        name: file.name,
+                                        content: result.result.convertedContent,
+                                        mimeType: inferredMime,
+                                        size: fileData.byteLength,
+                                        modifiedTime: Date.now(),
+                                        folderId: folder.nodeUid,
+                                        folderPath: folder.path,
+                                        spaceId: folder.spaceId,
+                                    });
+                                }
+                            } catch (error) {
+                                console.warn('[DriveIndexingProvider] Failed to process file during rehydration:', file.name, error);
+                            }
+                        }
+
+                        // Index the documents
+                        const docsWithContent = documents.filter(d => d.content && d.content.length > 0);
+                        if (docsWithContent.length > 0) {
+                            await searchService.indexDocuments(docsWithContent);
+                            console.log('[DriveIndexingProvider] Rehydrated', docsWithContent.length, 'documents for folder:', folder.name);
+                        }
+                    } catch (error) {
+                        console.error('[DriveIndexingProvider] Failed to rehydrate folder:', folder.name, error);
+                    }
+                }
+
+                setEventIndexingStatus({
+                    isIndexing: false,
+                    processedCount: 0,
+                    totalCount: 0,
+                });
+                console.log('[DriveIndexingProvider] Auto-rehydration complete');
+            }
+        };
+
+        void checkAndRehydrate();
+    }, [isDriveInitialized, indexedFolders, userId, browseFolderChildren, downloadFile]);
 
     // Find the indexed folder for a given treeEventScopeId
     const findFolderByScope = useCallback((treeEventScopeId: string): IndexedDriveFolder | null => {
@@ -122,9 +245,7 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
     // Index a single file (handles both new files and updates)
     const indexSingleFile = useCallback(
         async (folder: IndexedDriveFolder, fileNodeUid: string, fileName: string, isUpdate: boolean = false) => {
-            if (!user?.ID) return;
-
-            const searchService = SearchService.get(user.ID);
+            const searchService = SearchService.get(userId);
 
             // For new files (not updates), check if already indexed (e.g., indexed immediately after upload)
             if (!isUpdate && searchService.hasDocument(fileNodeUid)) {
@@ -221,18 +342,16 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
                 }));
             }
         },
-        [user?.ID, downloadFile, updateSettings]
+        [userId, downloadFile, updateSettings]
     );
 
     // Remove a file from the index
     const removeFileFromIndex = useCallback(
         async (folder: IndexedDriveFolder, fileNodeUid: string) => {
-            if (!user?.ID) return;
-
             console.log('[DriveIndexingProvider] Removing file from index:', fileNodeUid);
 
             try {
-                const searchService = SearchService.get(user.ID);
+                const searchService = SearchService.get(userId);
                 searchService.removeDocument(fileNodeUid);
 
                 // Update document count
@@ -251,7 +370,7 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
                 console.error('[DriveIndexingProvider] Failed to remove file from index:', error);
             }
         },
-        [user?.ID, updateSettings]
+        [userId, updateSettings]
     );
 
     // Process pending events (debounced)
@@ -383,7 +502,7 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
 
     // Set up event subscriptions for each indexed folder
     useEffect(() => {
-        if (!isDriveInitialized || !user?.ID) {
+        if (!isDriveInitialized) {
             return;
         }
 
@@ -460,7 +579,7 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
                 debounceTimerRef.current = null;
             }
         };
-    }, [isDriveInitialized, user?.ID, indexedFolders, subscribeToTreeEvents, handleTreeEvent]);
+    }, [isDriveInitialized, indexedFolders, subscribeToTreeEvents, handleTreeEvent]);
 
     // Allow external components to signal indexing status (e.g., immediate indexing after upload)
     const setIndexingFile = useCallback((fileName: string | null) => {
@@ -499,6 +618,91 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
     };
 
     return <DriveIndexingContext.Provider value={value}>{children}</DriveIndexingContext.Provider>;
+};
+
+/**
+ * Component for authenticated users only.
+ * Only rendered when NOT in guest mode.
+ */
+const DriveIndexingProviderAuthenticated = ({ children }: DriveIndexingProviderProps) => {
+    const [user] = useUser();
+
+    // If user is not available, render with default context
+    if (!user?.ID) {
+        return (
+            <DriveIndexingContext.Provider value={DEFAULT_CONTEXT_VALUE}>
+                {children}
+            </DriveIndexingContext.Provider>
+        );
+    }
+
+    // User is authenticated, render the full inner provider
+    return <DriveIndexingProviderInner userId={user.ID}>{children}</DriveIndexingProviderInner>;
+};
+
+/**
+ * Component that checks guest mode first before trying to use useUser.
+ */
+const DriveIndexingProviderWithUser = ({ children }: DriveIndexingProviderProps) => {
+    const isGuest = useIsGuest();
+
+    // In guest mode, skip useUser entirely and render with default context
+    if (isGuest) {
+        return (
+            <DriveIndexingContext.Provider value={DEFAULT_CONTEXT_VALUE}>
+                {children}
+            </DriveIndexingContext.Provider>
+        );
+    }
+
+    // Not a guest, safe to use useUser
+    return <DriveIndexingProviderAuthenticated>{children}</DriveIndexingProviderAuthenticated>;
+};
+
+/**
+ * Error boundary to catch errors from useUser() in guest mode.
+ * Falls back to rendering children with default (no-op) context.
+ */
+class DriveIndexingErrorBoundary extends Component<
+    { children: ReactNode },
+    { hasError: boolean }
+> {
+    constructor(props: { children: ReactNode }) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(): { hasError: boolean } {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error: Error): void {
+        console.warn('[DriveIndexingProvider] Error caught (likely guest mode):', error.message);
+    }
+
+    render(): ReactNode {
+        if (this.state.hasError) {
+            // Fall back to passthrough provider with default values
+            return (
+                <DriveIndexingContext.Provider value={DEFAULT_CONTEXT_VALUE}>
+                    {this.props.children}
+                </DriveIndexingContext.Provider>
+            );
+        }
+        return this.props.children;
+    }
+}
+
+/**
+ * Main provider component that handles guest mode gracefully.
+ * Wrapped in an error boundary to catch errors from useUser() hook.
+ */
+export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) => {
+    return (
+        <DriveIndexingErrorBoundary>
+            <DriveIndexingProviderWithUser>{children}</DriveIndexingProviderWithUser>
+        </DriveIndexingErrorBoundary>
+    );
 };
 
 const DEFAULT_EVENT_INDEXING_STATUS: EventIndexingStatus = {

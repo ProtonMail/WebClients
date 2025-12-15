@@ -26,6 +26,8 @@ export interface ComposerEditorAreaProps {
     // Optional Drive SDK functions - only provided for authenticated users
     browseFolderChildren?: (folderId?: string) => Promise<DriveNode[]>;
     downloadFile?: (nodeId: string) => Promise<ArrayBuffer>;
+    // Optional user ID - only provided for authenticated users
+    userId?: string;
 }
 
 export const ComposerEditorArea = ({
@@ -41,6 +43,7 @@ export const ComposerEditorArea = ({
     isAutocompleteActiveRef,
     browseFolderChildren,
     downloadFile,
+    userId,
 }: ComposerEditorAreaProps) => {
     // Create driveSDK object only if both functions are provided
     const driveSDK: DriveSDKFunctions | undefined = useMemo(() => {
@@ -60,7 +63,7 @@ export const ComposerEditorArea = ({
         return undefined;
     }, [browseFolderChildren, downloadFile]);
 
-    const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId, messageChain, driveSDK);
+    const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId, messageChain, driveSDK, undefined, userId);
     
     const [selectedIndex, setSelectedIndex] = useState(0);
 
