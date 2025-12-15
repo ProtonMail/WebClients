@@ -120,8 +120,6 @@ enum CalendarFeatureFlag {
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
     CalendarExternalBookings = 'CalendarExternalBookings',
-    RecurringCalendarBookings = 'RecurringCalendarBookings',
-    EditCalendarBookings = 'EditCalendarBookings',
 }
 
 enum DriveFeatureFlag {
