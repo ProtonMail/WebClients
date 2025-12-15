@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
+import { usePhotosDetailsModal } from '../../../modals/DetailsModal';
 import type { PhotoLink } from '../../../store';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 
 const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [detailsModal, showDetailsModal] = usePhotosDetailsModal();
 
     const link = selectedLinks[0];
 
