@@ -25,7 +25,7 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
-import xhr from '@proton/shared/lib/fetch/fetch';
+import { protonFetch } from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -74,7 +74,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
         unreachable: false,
     });
 
-    const call = configureApi({ ...config, clientID, xhr } as any) as ApiCallFn;
+    const call = configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn;
 
     const refreshHandler = refreshHandlerFactory({
         call,

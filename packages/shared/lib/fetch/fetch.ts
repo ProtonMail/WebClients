@@ -68,7 +68,7 @@ const fetchHelper = ({
         });
 };
 
-export default ({ data, headers, input = 'json', ...config }: FetchConfig): Promise<Response> => {
+export function protonFetch({ data, headers, input = 'json', ...config }: FetchConfig): Promise<Response> {
     const { headers: dataHeaders, body } = serializeData(data, input);
 
     return fetchHelper({
@@ -79,4 +79,4 @@ export default ({ data, headers, input = 'json', ...config }: FetchConfig): Prom
         },
         body,
     });
-};
+}
