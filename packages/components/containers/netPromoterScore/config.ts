@@ -1,22 +1,18 @@
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { NetPromoterScoreConfig } from './interface';
+import { NPSApplication, type NetPromoterScoreConfig } from './interface';
 
-const supportedAppsArray = [APPS.PROTONMAIL, APPS.PROTONCALENDAR] as const;
-type SupportedApps = (typeof supportedAppsArray)[number];
-
-export const npsConfig: Record<SupportedApps, NetPromoterScoreConfig> = {
-    [APPS.PROTONMAIL]: {
+export const npsConfig: Record<string, NetPromoterScoreConfig> = {
+    [NPSApplication.WebMail]: {
         appName: MAIL_APP_NAME,
-        telemetryApp: 'mail',
     },
-    [APPS.PROTONCALENDAR]: {
+    [NPSApplication.DesktopMail]: {
+        appName: MAIL_APP_NAME,
+    },
+    [NPSApplication.WebCalendar]: {
         appName: CALENDAR_APP_NAME,
-        telemetryApp: 'calendar',
+    },    
+    [NPSApplication.DesktopCalendar]: {
+        appName: CALENDAR_APP_NAME,
     },
-};
-
-export const isSupportedApp = (app: APP_NAMES): app is SupportedApps => {
-    return supportedAppsArray.includes(app as any);
 };

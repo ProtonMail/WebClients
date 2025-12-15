@@ -11,6 +11,7 @@ import { shouldOpenReminderModal } from '@proton/components/containers/payments/
 import TrialEndedModal from '@proton/components/containers/subscription/TrialEndedModal';
 import { FeatureCode, useFeature } from '@proton/features';
 
+import { npsConfig } from '../../containers/netPromoterScore/config';
 import { getFeatureCode } from '../../containers/netPromoterScore/helpers';
 import type { NPSApplication } from '../../containers/netPromoterScore/interface';
 import type { StartupModal } from './types';
@@ -62,16 +63,13 @@ export const useNetPromoterScoreModal = (application: NPSApplication): StartupMo
     const showModal = useNPSEligiblity(application);
     const featureCode = getFeatureCode(application);
     const { update } = useFeature(featureCode);
+    const appName = npsConfig[application];
 
     return {
         showModal,
         activateModal: () => setModal(true),
         component: renderModal ? (
-            <NetPromoterScoreModal
-                config={{ appName: 'Mail', telemetryApp: '' }}
-                updateFeatureValue={update}
-                {...modal}
-            />
+            <NetPromoterScoreModal config={appName} updateFeatureValue={update} {...modal} />
         ) : null,
     };
 };
