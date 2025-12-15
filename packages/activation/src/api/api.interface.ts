@@ -293,5 +293,5 @@ export interface ApiCreateImporterOrganization {
 
 export interface ApiCreateImporterOrganizationMigration {
     ImporterOrganizationId: string;
-    UserIds: string[];
+    AddressIds: string[];
 }
