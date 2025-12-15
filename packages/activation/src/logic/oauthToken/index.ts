@@ -7,7 +7,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 
 import { getTokens } from '../../api';
 
-interface OAuthToken {
+export interface OAuthToken {
     Account: string;
     ID: string;
     Provider: number;
