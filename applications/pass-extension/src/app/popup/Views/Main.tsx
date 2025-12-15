@@ -26,8 +26,6 @@ import { SpotlightMessage } from '@proton/pass/types';
 
 import { Header } from './Header/Header';
 
-import './Main.scss';
-
 const MainSwitch: FC = () => {
     const isSSO = useSelector(selectIsSSO);
 

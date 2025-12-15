@@ -1,11 +1,12 @@
-@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/pass/pass-lib';
 
 .pass-onboarding-upgrade {
 	.description {
 		&--banner-badge {
-			max-width: 80%;
-			background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
+			max-inline-size: 80%;
+			background: linear-gradient(30deg, #f6c592 50%, #d397be 90%), #191927;
 		}
+
 		&--banner-card {
 			border: 2px solid var(--signal-warning);
 
@@ -19,8 +20,9 @@
 
 	.table {
 		&--main-content {
-			th, td {
-				border-bottom: 0;
+			th,
+			td {
+				border-block-end: 0;
 			}
 
 			th:nth-child(3) {
