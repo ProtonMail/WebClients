@@ -7,7 +7,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, useNotifications } from '@proton/components/index';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
-import useFlag from '@proton/unleash/useFlag';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -27,8 +26,6 @@ export const FormRangeList = () => {
 
     const { createNotification } = useNotifications();
     const { date } = fromUrlParams(location.pathname);
-
-    const isRecurringEnabled = useFlag('RecurringCalendarBookings');
 
     const hasReachedMaxSlots = !!(validation && validation.reason === BookingFormValidationReasons.TIME_SLOT_LIMIT);
 
@@ -120,19 +117,17 @@ export const FormRangeList = () => {
 
     return (
         <div>
-            {isRecurringEnabled && (
-                <div className="flex flex-row items-start mb-3">
-                    <Checkbox
-                        id="repeat-weekly"
-                        className="mt-2 mr-2"
-                        checked={formData.recurring}
-                        onChange={() => updateFormData('recurring', !formData.recurring, date)}
-                    />
-                    <Label htmlFor="repeat-weekly" className="flex-1">
-                        {c('Label').t`Repeat weekly`}
-                    </Label>
-                </div>
-            )}
+            <div className="flex flex-row items-start mb-3">
+                <Checkbox
+                    id="repeat-weekly"
+                    className="mt-2 mr-2"
+                    checked={formData.recurring}
+                    onChange={() => updateFormData('recurring', !formData.recurring, date)}
+                />
+                <Label htmlFor="repeat-weekly" className="flex-1">
+                    {c('Label').t`Repeat weekly`}
+                </Label>
+            </div>
 
             {formData.recurring ? (
                 <DisplayRecurringRanges

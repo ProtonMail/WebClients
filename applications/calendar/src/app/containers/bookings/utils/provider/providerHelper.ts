@@ -20,11 +20,11 @@ import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/ra
 import { generateSlotsFromRange } from '../slot/slotHelpers';
 import { fromTimestampToUTCDate } from '../timeHelpers';
 
-export const getInitialBookingFormState = (isRecurringEnabled: boolean): InternalBookingFrom => {
+export const getInitialBookingFormState = (): InternalBookingFrom => {
     const localTimeZone = getTimezone();
 
     return {
-        recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
+        recurring: DEFAULT_RECURRING,
         summary: '',
         selectedCalendar: null,
         locationType: BookingLocation.MEET,
