@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ReferralInvitesContextProvider } from '@proton/components/containers/referral/ReferralInvitesContext';
 import Explanation from '@proton/components/containers/referral/drawer/Explanation';
 import FAQ from '@proton/components/containers/referral/drawer/Faq';
+import Footer from '@proton/components/containers/referral/drawer/Footer';
 import { FriendsSection } from '@proton/components/containers/referral/drawer/FriendsSection';
 import InviteShareLink from '@proton/components/containers/referral/drawer/InviteShareLink';
 
@@ -25,6 +26,7 @@ const DrawerReferralView = () => {
                     <InviteShareLink />
                     <FriendsSection />
                     <FAQ />
+                    <Footer />
                 </DrawerAppScrollContainer>
             </DrawerView>
         </ReferralInvitesContextProvider>

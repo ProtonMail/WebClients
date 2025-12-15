@@ -9,14 +9,19 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash';
 
 export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) => {
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
 
+    const hasNotificationsEnabled = hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS);
+
     const settingsSpotlightFeature = useFeature(FeatureCode.ReferralSpotlightSettings);
     const topButtonFeature = useFeature(FeatureCode.ReferralTopBarButton);
+    const drawerFeature = useFeature(FeatureCode.ReferralDrawerApp);
 
     const isFeatureActive = useFlag('ReferralExpansionDiscover');
     const isUserEligible = !!userSettings?.Referral?.Eligible;
@@ -26,10 +31,11 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
     const { update: updateReferralSpotlightSettings } = settingsSpotlightFeature;
     const { update: updateReferralTopBarButton } = topButtonFeature;
+    const { update: updateDrawerFeature } = drawerFeature;
 
     const { show: shouldShowSettingsSpotlight, onClose: onCloseSettingsSpotlight } = useSpotlightOnFeature(
         FeatureCode.ReferralSpotlightSettings,
-        isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo
+        isFeatureActive && isUserEligible && hasNotificationsEnabled && subscriptionStartedThirtyDaysAgo
     );
 
     const handleCloseSettingsSpotlight = useCallback(() => {
@@ -45,11 +51,20 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
     }, [location?.pathname, isFeatureActive]);
 
     const canShowTopBarButton =
-        isFeatureActive && isUserEligible && subscriptionStartedThirtyDaysAgo && !!topButtonFeature.feature?.Value;
-    const canShowDrawerApp = isFeatureActive && isUserEligible;
+        isFeatureActive &&
+        isUserEligible &&
+        hasNotificationsEnabled &&
+        subscriptionStartedThirtyDaysAgo &&
+        !!topButtonFeature.feature?.Value;
+
+    const canShowDrawerApp = isFeatureActive && isUserEligible && !!drawerFeature.feature?.Value;
 
     const onTopBarSpotlightDismiss = () => {
         void updateReferralTopBarButton(false);
+    };
+
+    const onDrawerAppDismiss = () => {
+        void updateDrawerFeature(false);
     };
 
     return {
@@ -59,7 +74,10 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
         // Top bar button and spotlight
         canShowTopBarButton,
-        canShowDrawerApp,
         onTopBarSpotlightDismiss,
+
+        // Drawer app
+        canShowDrawerApp,
+        onDrawerAppDismiss,
     };
 };
