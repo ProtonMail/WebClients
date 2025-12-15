@@ -10,7 +10,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { useApi, useModalState, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
@@ -207,7 +207,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <Banner
             variant="norm-outline"
-            icon={<IcExclamationTriangleFilled className="color-danger" />}
+            icon={<IcInfoCircleFilled className="color-info" />}
             link={
                 promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                     <InlineLinkButton
