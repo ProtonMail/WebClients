@@ -8,3 +8,5 @@ export const rootReducer = combineReducers({
     ...sharedReducers,
     ...meetReducers,
 });
+
+export type MeetState = ReturnType<typeof rootReducer>;
