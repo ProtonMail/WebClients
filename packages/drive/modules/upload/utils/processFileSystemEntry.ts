@@ -1,3 +1,5 @@
+import { EMPTY_FOLDER_PLACEHOLDER_FILE, EMPTY_FOLDER_PLACEHOLDER_MIMETYPE } from '../constants';
+
 function isFileSystemFileEntry(entry: FileSystemEntry): entry is FileSystemFileEntry {
     return entry.isFile;
 }
@@ -47,10 +49,20 @@ export async function processFileSystemEntry(entry: FileSystemEntry, path: strin
             readEntries();
         });
 
-        for (const childEntry of entries) {
-            const childPath = path.concat(entry.name).concat('/');
-            const childFiles = await processFileSystemEntry(childEntry, childPath);
-            files.push(...childFiles);
+        if (entries.length === 0) {
+            // Create placeholder for empty directories to preserve folder structure
+            const keepFile = new File([], EMPTY_FOLDER_PLACEHOLDER_FILE, { type: EMPTY_FOLDER_PLACEHOLDER_MIMETYPE });
+            Object.defineProperty(keepFile, 'webkitRelativePath', {
+                value: path.concat(entry.name).concat(`/${EMPTY_FOLDER_PLACEHOLDER_FILE}`),
+                writable: false,
+            });
+            files.push(keepFile);
+        } else {
+            for (const childEntry of entries) {
+                const childPath = path.concat(entry.name).concat('/');
+                const childFiles = await processFileSystemEntry(childEntry, childPath);
+                files.push(...childFiles);
+            }
         }
     }
 

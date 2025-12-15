@@ -1,3 +1,4 @@
+import { EMPTY_FOLDER_PLACEHOLDER_FILE, EMPTY_FOLDER_PLACEHOLDER_MIMETYPE } from '../constants';
 import { processFileSystemEntry } from './processFileSystemEntry';
 
 describe('processFileSystemEntry', () => {
@@ -95,12 +96,15 @@ describe('processFileSystemEntry', () => {
         expect((result[1] as any).webkitRelativePath).toBe('myFolder/subfolder/file2.txt');
     });
 
-    it('should process empty directory', async () => {
+    it('should process empty directory with .proton-drive-keep file', async () => {
         const dirEntry = createMockDirectoryEntry('emptyFolder', []);
 
         const result = await processFileSystemEntry(dirEntry);
 
-        expect(result).toHaveLength(0);
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe(EMPTY_FOLDER_PLACEHOLDER_FILE);
+        expect((result[0] as any).webkitRelativePath).toBe(`emptyFolder/${EMPTY_FOLDER_PLACEHOLDER_FILE}`);
+        expect(result[0].type).toBe(EMPTY_FOLDER_PLACEHOLDER_MIMETYPE);
     });
 
     it('should set webkitRelativePath as non-writable', async () => {

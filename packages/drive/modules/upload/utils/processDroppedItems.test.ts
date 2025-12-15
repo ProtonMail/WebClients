@@ -192,14 +192,15 @@ describe('processDroppedItems', () => {
         expect(result[0].name).toBe('from-fallback.txt');
     });
 
-    it('should dedupe files by name between items and fallback', async () => {
-        const file1 = createFile('from-items.txt');
-        const file2 = createFile('extra.txt');
-        const dataTransfer = createMockDataTransfer([file1, file1, file2], [null, null, null]);
+    it('should not deduplicate files without webkitRelativePath', async () => {
+        const file1 = createFile('file.txt');
+        const file2 = createFile('file.txt');
+        const dataTransfer = createMockDataTransfer([file1, file2], [null, null]);
 
         const result = await processDroppedItems(dataTransfer);
 
-        expect(result.map((f) => f.name).sort()).toEqual(['extra.txt', 'from-items.txt']);
+        expect(result).toHaveLength(2);
+        expect(result.map((f) => f.name)).toEqual(['file.txt', 'file.txt']);
     });
 
     it('should pick up files from fallback that are not in items', async () => {
@@ -284,7 +285,7 @@ describe('processDroppedItems', () => {
         expect(result.map((f) => f.name).sort()).toEqual(['file1.txt', 'file2.txt']);
     });
 
-    it('should deduplicate files with same name from different entries', async () => {
+    it('should NOT deduplicate files with same name from different folders', async () => {
         const file1 = createFile('duplicate.txt');
         const file2 = createFile('duplicate.txt');
         const dirEntry1 = createDirectoryEntry('folder1', [createFileEntry('duplicate.txt', file1)]);
@@ -295,8 +296,10 @@ describe('processDroppedItems', () => {
 
         const result = await processDroppedItems(dataTransfer);
 
-        expect(result).toHaveLength(1);
-        expect(result[0].name).toBe('duplicate.txt');
+        expect(result).toHaveLength(2);
+        expect(result.map((f) => f.name)).toEqual(['duplicate.txt', 'duplicate.txt']);
+        expect((result[0] as any).webkitRelativePath).toBe('folder1/duplicate.txt');
+        expect((result[1] as any).webkitRelativePath).toBe('folder2/duplicate.txt');
     });
 
     it('should not filter out legitimate files that have same name as a folder', async () => {
