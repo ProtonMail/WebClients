@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { Href } from '@proton/atoms/Href/Href';
 import Details from '@proton/components/components/container/Details';
 import Summary from '@proton/components/components/container/Summary';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -8,6 +9,7 @@ import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 const FAQ = () => {
     const [referralInfo] = useReferralInfo();
@@ -47,6 +49,9 @@ const FAQ = () => {
                     </p>
                 </li>
             </ul>
+
+            <Href className="mt-4 text-sm" href={getStaticURL('/legal/terms-referral-program')}>{c('Link')
+                .t`Terms and conditions`}</Href>
         </Details>
     );
 };
