@@ -7,6 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import { inboxDesktopHasPrintDialogOption, inboxDesktopPrintDialog } from '@proton/shared/lib/desktop/printing/print';
+import useFlag from '@proton/unleash/useFlag';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import MessageBody from '../MessageBody';
@@ -21,11 +23,20 @@ interface Props extends ModalProps {
 const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement | null>();
     const { onClose } = rest;
+    const isInboxDesktopPrintDialoglDisabled = useFlag('InboxDesktopSaveAsPdfPrintDialogDisabled');
 
-    const handlePrint = () => {
-        iframeRef.current?.contentWindow?.print();
+    const handlePrint = async () => {
+        if (!isInboxDesktopPrintDialoglDisabled && inboxDesktopHasPrintDialogOption()) {
+            const iframe = iframeRef.current;
+            if (!iframe?.contentDocument) {
+                return;
+            }
+
+            await inboxDesktopPrintDialog(iframe.contentDocument);
+        } else {
+            iframeRef.current?.contentWindow?.print();
+        }
     };
-
     useEffect(() => {
         document.body.classList.add('is-printed-version');
     }, []);

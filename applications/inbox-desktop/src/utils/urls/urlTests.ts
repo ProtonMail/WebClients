@@ -1,6 +1,7 @@
 import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
+import { PRINT_DATA_URL_PREFIX, validPrintContent } from "../printing/print";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getLocalID = (url?: string): string | null => {
@@ -196,8 +197,31 @@ export const isBookingURL = (urlString: string) => {
     }
 };
 
+const isElectronPrintingURL = (url: string): [isPrintUrl: boolean, isValidPrint: boolean] => {
+    if (!url.startsWith(PRINT_DATA_URL_PREFIX)) {
+        return [false, false];
+    }
+
+    const encodedContent = url.replace(PRINT_DATA_URL_PREFIX, "");
+    const content = decodeURIComponent(encodedContent);
+    const isValid = validPrintContent.has(content);
+    validPrintContent.delete(content);
+    mainLogger.info("isHostAllowed - Print Content Validation", {
+        contentLength: content.length,
+        encodedLength: encodedContent.length,
+        isValid,
+    });
+
+    return [true, isValid];
+};
+
 export const isHostAllowed = (host: string) => {
     try {
+        const [isPrintUrl, isValidPrint] = isElectronPrintingURL(host);
+        if (isPrintUrl) {
+            return isValidPrint;
+        }
+
         const appURL = getAppURL();
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {
