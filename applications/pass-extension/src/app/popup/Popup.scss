@@ -6,5 +6,5 @@ body {
 	// Extensions seem to have injected style sheets
 	// by default which override the font-family to
 	// "system-ui" and "font-size: 75%"
-	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+	font-family: var(--optional-font-family, 'Inter');
 }
