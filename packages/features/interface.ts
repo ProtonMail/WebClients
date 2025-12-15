@@ -137,6 +137,7 @@ export enum FeatureCode {
     ReferralProgramSpotlight = 'ReferralProgramSpotlight', // Legacy referral program
     ReferralSpotlightSettings = 'ReferralSpotlightSettings',
     ReferralTopBarButton = 'ReferralTopBarButton',
+    ReferralDrawerApp = 'ReferralDrawerApp',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
     SetExpiration = 'SetExpiration',
     SpotlightBreachAlertSecurityCenter = 'SpotlightBreachAlertSecurityCenter',
