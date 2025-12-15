@@ -70,6 +70,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.ImportUpdateSuccessful)
     eventBus.addEventHandler(this, SquashErrorEvent)
 
     documentState.subscribeToProperty('editorReady', (value) => {
@@ -194,6 +195,10 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
       this.handleWebsocketConnectingEvent()
+    } else if (event.type === WebsocketConnectionEvent.ImportUpdateSuccessful) {
+      this.handleImportUpdateSuccessfulEvent(
+        event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ImportUpdateSuccessful],
+      )
     } else if (event.type === WebsocketConnectionEvent.DocumentUpdateMessage) {
       const { message } =
         event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]
@@ -242,6 +247,17 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     this.documentState.emitEvent({
       name: 'RealtimeReceivedDocumentUpdate',
       payload: message,
+    })
+  }
+
+  handleImportUpdateSuccessfulEvent(
+    event: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ImportUpdateSuccessful],
+  ) {
+    void this.documentState.emitEvent({
+      name: 'ImportUpdateSuccessful',
+      payload: {
+        uuid: event.uuid,
+      },
     })
   }
 
@@ -358,6 +374,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
           this.documentState.getProperty('entitlements').nodeMeta,
           message.content,
           debugSource,
+          message.type.uuid,
         )
       }
     } else if (message.type.wrapper === 'conversion') {

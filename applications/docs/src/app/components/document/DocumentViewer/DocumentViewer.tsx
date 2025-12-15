@@ -66,6 +66,9 @@ import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useIsSheetsEditorEnabled } from '~/utils/misc'
+import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
+import { Button } from '@proton/atoms/Button/Button'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -217,7 +220,11 @@ export function DocumentViewer({
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
       (payload: GeneralUserDisplayableErrorOccurredPayload) => {
         if (payload.irrecoverable) {
-          setError({ message: payload.translatedError, userUnderstandableMessage: true })
+          setError({
+            message: payload.translatedError,
+            userUnderstandableMessage: true,
+            title: payload.translatedErrorTitle,
+          })
           application.metrics.reportFullyBlockingErrorModal()
           application.destroy()
           Availability.mark(AvailabilityTypes.CRITICAL)
@@ -232,6 +239,26 @@ export function DocumentViewer({
       ApplicationEvent.GeneralUserDisplayableErrorOccurred,
     )
   }, [application, application.eventBus, showGenericAlertModal])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback(() => {
+      setError({
+        title: c('Error').t`Unable to import file`,
+        message: c('Error')
+          .t`We couldn’t import this file into ${SHEETS_APP_NAME}. You can try to copy and paste the contents into a new ${SHEETS_APP_NAME}.`,
+        userUnderstandableMessage: true,
+        actionButton: (
+          <Button
+            color="norm"
+            shape="outline"
+            onClick={() => window.open(getAppHref('/sheet', APPS.PROTONDOCS, getLocalID()))}
+          >
+            {c('Action').t`Create new ${SHEETS_APP_NAME}`}
+          </Button>
+        ),
+      })
+    }, ApplicationEvent.SheetsImportErrorOccurred)
+  }, [application.eventBus, getLocalID])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(

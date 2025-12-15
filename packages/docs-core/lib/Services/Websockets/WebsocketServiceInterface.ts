@@ -14,6 +14,7 @@ export interface WebsocketServiceInterface {
     document: NodeMeta | PublicNodeMeta,
     rawContent: Uint8Array<ArrayBuffer> | Uint8Array<ArrayBuffer>[],
     source: BroadcastSource,
+    uuid?: string,
   ): Promise<void>
   sendEventMessage(
     document: NodeMeta | PublicNodeMeta,

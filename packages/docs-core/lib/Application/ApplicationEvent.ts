@@ -5,6 +5,7 @@ export enum ApplicationEvent {
   SquashVerificationObjectionDecisionMade = 'SquashVerificationObjectionDecisionMade',
   GeneralUserDisplayableErrorOccurred = 'GeneralUserDisplayableErrorOccurred',
   GenericInfo = 'GenericInfo',
+  SheetsImportErrorOccurred = 'SheetsImportErrorOccurred',
 }
 
 export type GenericInfoEventPayload = {

@@ -58,4 +58,6 @@ export interface ClientRequiresEditorMethods {
     value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
   ): Promise<void>
   syncEvent(event: SyncedEditorEvent): Promise<void>
+
+  markImportUpdateAsSuccessful(uuid: string): Promise<void>
 }

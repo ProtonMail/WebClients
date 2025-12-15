@@ -15,6 +15,7 @@ import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
 import { DocWillInitializeWithEmptyNodeEvent } from '../DocWillInitializeWithEmptyNodeEvent'
+import { GenerateUUID } from '../GenerateUuid'
 
 export enum DocUpdateOrigin {
   InitialLoad = 'InitialLoad',
@@ -40,6 +41,11 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   broadcastPresenceInterval: ReturnType<typeof setInterval>
   needsPresenceBroadcast?: BroadcastSource = undefined
+
+  isSheetsExcelImport = false
+  importUpdateUUIDs: string[] = []
+  successfullyImportedUpdateUUIDs: string[] = []
+  importSubscriptionCallbacks: (() => void)[] = []
 
   constructor(
     readonly callbacks: DocStateCallbacks,
@@ -225,6 +231,17 @@ export class DocState extends Observable<string> implements DocStateInterface {
       return
     }
 
+    if (this.isSheetsExcelImport) {
+      const uuid = GenerateUUID()
+      const updateMessage: RtsMessagePayload = {
+        type: { wrapper: 'du', uuid },
+        content: update,
+      }
+      this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.SheetsImport)
+      this.importUpdateUUIDs.push(uuid)
+      return
+    }
+
     const decodedUpdate = decodeUpdate(update)
 
     /**
@@ -301,5 +318,31 @@ export class DocState extends Observable<string> implements DocStateInterface {
   /** Invoked externally when a caller wants us to broadcast our state */
   broadcastPresenceState() {
     this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.ExternalCallerRequestingUsToBroadcastOurState)
+  }
+
+  startSheetsExcelImport() {
+    this.isInConversionFromOtherFormatFlow = false // We need custom flow for sheets conversion
+    this.isSheetsExcelImport = true
+  }
+
+  endSheetsExcelImport() {
+    this.isSheetsExcelImport = false
+  }
+
+  markImportUpdateAsSuccessful(uuid: string): void {
+    this.successfullyImportedUpdateUUIDs.push(uuid)
+    const didAllUpdatesSucceed = this.importUpdateUUIDs.every((uuid) =>
+      this.successfullyImportedUpdateUUIDs.includes(uuid),
+    )
+    if (didAllUpdatesSucceed) {
+      this.importSubscriptionCallbacks.forEach((callback) => callback())
+      this.importSubscriptionCallbacks.length = 0
+    }
+  }
+
+  waitForImportSuccess(): Promise<void> {
+    return new Promise((resolve) => {
+      this.importSubscriptionCallbacks.push(resolve)
+    })
   }
 }
