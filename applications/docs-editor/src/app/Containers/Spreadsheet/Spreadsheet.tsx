@@ -16,7 +16,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
@@ -39,6 +39,8 @@ import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { useActiveBreakpoint } from '@proton/components'
 import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
 import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
+import { c } from 'ttag'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -76,6 +78,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
+  const [isImportingExcelFile, setIsImportingExcelFile] = useState(false)
 
   // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
@@ -118,15 +121,20 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches, calculateNow } = state
   const handleExcelFileImport = useCallback(
     async (file: File) => {
+      setIsImportingExcelFile(true)
+      docState.startSheetsExcelImport()
       const { requiresRecalc } = await importExcelFile(file, 1000, 100)
+      const patches = await generateStatePatches()
+      state.yjsState.onBroadcastPatch([[patches]])
+      docState.endSheetsExcelImport()
+      await docState.waitForImportSuccess()
+      setIsImportingExcelFile(false)
       calculateNow({
         disableEvaluation: requiresRecalc,
         shouldResetCellDependencyGraph: true,
       })
-      const patches = await generateStatePatches()
-      state.yjsState.onBroadcastPatch([[patches]])
     },
-    [calculateNow, generateStatePatches, importExcelFile, state.yjsState],
+    [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState],
   )
   useEffect(() => {
     const canConvertFile =
@@ -212,7 +220,18 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
   }
 
-  if (useNewUIEnabled()) {
+  const isNewUIEnabled = useNewUIEnabled()
+
+  if (isImportingExcelFile) {
+    return (
+      <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4">
+        <CircleLoader size="large" />
+        <p className="text-sm">{c('Info').t`Importing Excel file...`}</p>
+      </div>
+    )
+  }
+
+  if (isNewUIEnabled) {
     return (
       <ProtonSheetsUIStoreProvider
         state={state}
@@ -224,6 +243,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       </ProtonSheetsUIStoreProvider>
     )
   }
+
   return (
     <ProtonSheetsUIStoreProvider
       state={state}

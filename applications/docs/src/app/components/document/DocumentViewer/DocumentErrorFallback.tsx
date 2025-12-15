@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { useEffect, useMemo } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
 import { useApplication } from '~/utils/application-context'
@@ -30,9 +31,11 @@ function reload() {
 }
 
 export type DocumentError = {
+  title?: string
   message: string
   userUnderstandableMessage: boolean
   code?: DocsApiErrorCode
+  actionButton?: ReactNode
 }
 
 export type DocumentErrorFallbackProps = { error: DocumentError }
@@ -64,11 +67,18 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
     return message
   }, [error.message, error.userUnderstandableMessage, isAccessError])
 
+  let title = c('Info').t`Something went wrong`
+  if (isAccessError) {
+    title = c('Info').t`You don't have access`
+  } else if (error.title) {
+    title = error.title
+  }
+
   return (
     <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center bg-signalInfoMinorCustom">
       <div className="border-weak bg-norm mx-auto max-w-md rounded-lg border p-8">
         <h1 className="text-[1.8rem] font-bold" data-testid="document-load-error">
-          {isAccessError ? c('Info').t`You don't have access` : c('Info').t`Something went wrong`}
+          {title}
         </h1>
         <div className="mt-1 max-w-lg whitespace-pre-line">{message}</div>
         <div className="mt-4 flex gap-2">
@@ -77,9 +87,11 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
               {c('Action').t`Switch accounts`}
             </Button>
           ) : (
-            <Button color="norm" shape="outline" onClick={reload}>
-              {c('Action').t`Reload`}
-            </Button>
+            error.actionButton || (
+              <Button color="norm" shape="outline" onClick={reload}>
+                {c('Action').t`Reload`}
+              </Button>
+            )
           )}
           <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_self')}>
             {c('Action').t`Open ${DRIVE_APP_NAME}`}

@@ -12,4 +12,9 @@ export interface DocStateInterface extends Observable<string> {
   getDoc(): Doc
 
   awareness: DocsAwareness
+
+  startSheetsExcelImport(): void
+  endSheetsExcelImport(): void
+  markImportUpdateAsSuccessful(uuid: string): void
+  waitForImportSuccess(): Promise<void>
 }

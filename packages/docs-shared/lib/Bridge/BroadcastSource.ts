@@ -9,4 +9,5 @@ export enum BroadcastSource {
   DocumentBufferFlush = 'DocumentBufferFlush',
   RetryingMessagesAfterReconnect = 'RetryingMessagesAfterReconnect',
   AwarenessInterval = 'AwarenessInterval',
+  SheetsImport = 'SheetsImport',
 }

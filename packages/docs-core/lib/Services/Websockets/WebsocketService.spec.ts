@@ -151,7 +151,11 @@ describe('WebsocketService', () => {
     it('should add to buffer', async () => {
       debouncer.addUpdates = jest.fn()
 
-      await service.sendDocumentUpdateMessage(document, new Uint8Array())
+      await service.sendDocumentUpdateMessage(
+        document,
+        new Uint8Array(),
+        BroadcastSource.HandleDocBeingUpdatedByLexical,
+      )
       expect(debouncer.addUpdates).toHaveBeenCalled()
     })
   })

@@ -11,4 +11,6 @@ export enum WebsocketConnectionEvent {
   FailedToGetTokenCommitIdOutOfSync = 'commit-id-out-of-sync',
   Saving = 'saving',
   Saved = 'saved',
+  ImportUpdateSuccessful = 'import-update-successful',
+  Destroyed = 'destroyed',
 }

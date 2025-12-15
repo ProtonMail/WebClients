@@ -137,6 +137,10 @@ export class EditorController implements EditorControllerInterface {
         content: payload.content,
       })
     })
+
+    this.documentState.subscribeToEvent('ImportUpdateSuccessful', (payload) => {
+      void this.editorInvoker?.markImportUpdateAsSuccessful(payload.uuid)
+    })
   }
 
   async sendBaseCommitToEditor() {
