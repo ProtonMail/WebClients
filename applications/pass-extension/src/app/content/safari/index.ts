@@ -9,9 +9,9 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { configureApi } from '@proton/shared/lib/api';
 import { pullForkSession } from '@proton/shared/lib/api/auth';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import xhr from '@proton/shared/lib/fetch/fetch';
+import { protonFetch } from '@proton/shared/lib/fetch/fetch';
 
-const api = configureApi({ ...config, clientID: getClientID(config.APP_NAME), xhr } as any) as ApiCallFn;
+const api = configureApi({ ...config, clientID: getClientID(config.APP_NAME), protonFetch } as any) as ApiCallFn;
 
 const handler: Runtime.OnMessageListenerCallback = (message: unknown, _, sendResponse: (res: any) => void) => {
     if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.AUTH_PULL_FORK })) {
