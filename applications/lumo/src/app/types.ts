@@ -471,6 +471,12 @@ export type AttachmentPub = {
     rawBytes?: number; // size of original binary as sent by user
     processing?: boolean; // not meant to be persisted
     error?: boolean; // not meant to be persisted
+    // Auto-retrieved from Drive index via RAG (not manually uploaded)
+    autoRetrieved?: boolean;
+    // Source Drive node ID (for auto-retrieved attachments)
+    driveNodeId?: string;
+    // Relevance score for auto-retrieved attachments (0-1 normalized, 1 = most relevant)
+    relevanceScore?: number;
 };
 
 // This is represents the sensitive data in its decrypted form.
@@ -506,7 +512,10 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         typeof value.uploadedAt === 'string' &&
         (typeof value.rawBytes === 'number' || value.rawBytes === undefined) &&
         (value.processing === undefined || typeof value.processing === 'boolean') &&
-        (value.error === undefined || typeof value.error === 'boolean')
+        (value.error === undefined || typeof value.error === 'boolean') &&
+        (value.autoRetrieved === undefined || typeof value.autoRetrieved === 'boolean') &&
+        (value.driveNodeId === undefined || typeof value.driveNodeId === 'string') &&
+        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number')
     );
 }
 
@@ -644,8 +653,8 @@ export function cleanAsset(asset: Asset): Asset {
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
-    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error } = attachment;
-    return { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error };
+    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, autoRetrieved, driveNodeId, relevanceScore } = attachment;
+    return { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, autoRetrieved, driveNodeId, relevanceScore };
 }
 
 export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
@@ -672,6 +681,9 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         rawBytes,
         processing,
         error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
         filename,
         data,
         markdown,
@@ -689,6 +701,9 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(rawBytes !== undefined && { rawBytes }),
         ...(processing && { processing: true }),
         ...(error && { error: true }),
+        ...(autoRetrieved !== undefined && { autoRetrieved }),
+        ...(driveNodeId !== undefined && { driveNodeId }),
+        ...(relevanceScore !== undefined && { relevanceScore }),
         filename,
         ...(data !== undefined && { data }),
         ...(markdown !== undefined && { markdown }),

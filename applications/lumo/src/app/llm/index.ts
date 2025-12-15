@@ -70,33 +70,53 @@ export function prepareTurns(
     // Insert the final turn, which should be assistant normally
     let turns: ExtraTurn[] = [...filteredMessageChain, finalTurn];
 
-    // Add personalization, project instructions, and document context to the user message
-    // This way it doesn't affect title generation or system-level behavior
-    if ((personalizationPrompt || projectInstructions || documentContext) && turns.length > 0) {
-        // Find the last user message (should be the first user message for new conversations)
-        const lastUserIndex = turns.findIndex(turn => turn.role === Role.User);
+    // Add RAG document context to the FIRST user message's context field (like an attachment)
+    // This ensures documents are included once and won't be duplicated across turns
+    if (documentContext && turns.length > 0) {
+        const firstUserIndex = turns.findIndex(turn => turn.role === Role.User);
+        if (firstUserIndex !== -1) {
+            const userTurn = turns[firstUserIndex];
+            // Prepend document context to existing context (which may have file attachments)
+            const existingContext = userTurn.context || '';
+            turns[firstUserIndex] = {
+                ...userTurn,
+                context: existingContext 
+                    ? `${documentContext}\n\n${existingContext}`
+                    : documentContext,
+            };
+            console.log('Added RAG document context to first user message context field');
+        }
+    }
+
+    // Add personalization and project instructions to the LAST user message content
+    // These are per-request instructions that should apply to the current question
+    if ((personalizationPrompt || projectInstructions) && turns.length > 0) {
+        // Find the last user message
+        let lastUserIndex = -1;
+        for (let i = turns.length - 1; i >= 0; i--) {
+            if (turns[i].role === Role.User) {
+                lastUserIndex = i;
+                break;
+            }
+        }
+        
         if (lastUserIndex !== -1) {
             const userTurn = turns[lastUserIndex];
             const originalContent = userTurn.content || '';
 
-            // Build context parts
-            const contextParts: string[] = [];
-            
-            // Document context comes first (RAG - retrieved documents)
-            if (documentContext) {
-                contextParts.push(documentContext);
-            }
+            // Build instruction parts
+            const instructionParts: string[] = [];
             if (personalizationPrompt) {
-                contextParts.push(`[Personal context: ${personalizationPrompt}]`);
+                instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
             }
             if (projectInstructions) {
-                contextParts.push(`[Project instructions: ${projectInstructions}]`);
+                instructionParts.push(`[Project instructions: ${projectInstructions}]`);
             }
 
-            // Prepend context to the user's message so documents come before the question
-            const contextText = contextParts.join('\n\n');
-            const updatedContent = contextText
-                ? `${contextText}\n\n${originalContent}`
+            // Prepend instructions to the user's message
+            const instructionText = instructionParts.join('\n\n');
+            const updatedContent = instructionText
+                ? `${instructionText}\n\n${originalContent}`
                 : originalContent;
 
             turns[lastUserIndex] = {
@@ -104,10 +124,9 @@ export function prepareTurns(
                 content: updatedContent,
             };
 
-            console.log('Updated user message with context:', { 
+            console.log('Updated user message with instructions:', { 
                 personalizationPrompt: !!personalizationPrompt, 
                 projectInstructions: !!projectInstructions,
-                documentContext: !!documentContext,
             });
         }
     }
