@@ -17,8 +17,6 @@ import { useMessageSearch } from '../../../../hooks/useMessageSearch';
 import { useUser } from '@proton/account/user/hooks';
 import { useLumoUserSettings } from '../../../../hooks';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
-import { useDriveIndexing } from '../../../../providers/DriveIndexingProvider';
-import { EventIndexingBanner } from '../../../components/Files/DriveBrowser/EventIndexingBanner';
 import { IndexingStatusBanner } from '../../../components/Files/DriveBrowser/IndexingStatusBanner';
 import { DbApi } from '../../../../indexedDb/db';
 import { useLumoSelector } from '../../../../redux/hooks';
@@ -70,7 +68,6 @@ export const SearchSettingsPanel = () => {
     const { indexingStatus: messageIndexingStatus } = useMessageSearch();
     const { lumoUserSettings } = useLumoUserSettings();
     const { indexedFolders: driveIndexedFolders, rehydrateFolders, isIndexing: isDriveIndexing, indexingStatus: driveIndexingStatus } = useDriveFolderIndexing();
-    const { eventIndexingStatus } = useDriveIndexing();
     const [isIndexing, setIsIndexing] = useState(false);
     const [foundationStatus, setFoundationStatus] = useState<SearchServiceStatus | undefined>();
     const [statusCheckCount, setStatusCheckCount] = useState(0);
@@ -348,20 +345,10 @@ export const SearchSettingsPanel = () => {
                     />
                 }
                 status={
-                    <>
-                        {isDriveIndexing && driveIndexingStatus && (
-                            <IndexingStatusBanner indexingStatus={driveIndexingStatus} isIndexing={isDriveIndexing} inline />
-                        )}
-                        {eventIndexingStatus.isIndexing && (
-                            <EventIndexingBanner
-                                isIndexing={eventIndexingStatus.isIndexing}
-                                currentFile={eventIndexingStatus.currentFile}
-                                processedCount={eventIndexingStatus.processedCount}
-                                totalCount={eventIndexingStatus.totalCount}
-                                inline
-                            />
-                        )}
-                    </>
+                    // Show indexing progress when active (state is now shared via context)
+                    isDriveIndexing && driveIndexingStatus ? (
+                        <IndexingStatusBanner indexingStatus={driveIndexingStatus} isIndexing={isDriveIndexing} inline />
+                    ) : null
                 }
             />
 

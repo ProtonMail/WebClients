@@ -16,7 +16,7 @@ import { useFilteredFiles } from '../../../../hooks';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
-import { selectContextFilters, selectSpaceById } from '../../../../redux/selectors';
+import { selectAttachments, selectContextFilters, selectSpaceById } from '../../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../../redux/slices/contextFilters';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
@@ -66,7 +66,7 @@ export const FilesPanel = ({
     // Knowledge explanation state
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
 
-    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, projectFiles } = useFilteredFiles(
+    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles } = useFilteredFiles(
         messageChain,
         currentAttachments,
         filterMessage,
@@ -76,6 +76,36 @@ export const FilesPanel = ({
     // Get space to check for linked Drive folder
     const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
     const linkedDriveFolder = space?.linkedDriveFolder;
+
+    // Get all attachments from Redux to find auto-retrieved ones
+    const allAttachmentsState = useLumoSelector(selectAttachments);
+    
+    // Collect all auto-retrieved attachments from this conversation
+    // Deduplicate by driveNodeId (same document may be retrieved multiple times across messages)
+    const autoRetrievedAttachments = React.useMemo(() => {
+        const attachmentsByDriveNode = new Map<string, Attachment>();
+        
+        messageChain.forEach(msg => {
+            if (msg.attachments) {
+                msg.attachments.forEach(shallowAtt => {
+                    const fullAtt = allAttachmentsState[shallowAtt.id];
+                    if (fullAtt?.autoRetrieved) {
+                        // Use driveNodeId for deduplication, fallback to id
+                        const key = fullAtt.driveNodeId || fullAtt.id;
+                        // Keep the one with highest relevance score
+                        const existing = attachmentsByDriveNode.get(key);
+                        if (!existing || (fullAtt.relevanceScore ?? 0) > (existing.relevanceScore ?? 0)) {
+                            attachmentsByDriveNode.set(key, fullAtt);
+                        }
+                    }
+                });
+            }
+        });
+        
+        // Sort by relevance score descending (highest relevance first)
+        return Array.from(attachmentsByDriveNode.values())
+            .sort((a, b) => (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0));
+    }, [messageChain, allAttachmentsState]);
 
     const handleIncludeHistoricalFile = (file: any) => {
         dispatch(removeContextFilter({ messageId: file.messageId, filename: file.filename }));
@@ -346,7 +376,7 @@ export const FilesPanel = ({
                 )}
 
                 <div className="flex-1 flex-row overflow-y-auto" style={{ minHeight: '35vh' }}>
-                    {/* When filtering, show all files from the message */}
+                    {/* When filtering, show all files from the message (including auto-retrieved) */}
                     {filterMessage && allFiles.length > 0 && (
                         <div className="mb-6 w-full">
                             <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
@@ -383,61 +413,73 @@ export const FilesPanel = ({
                                 </div>
                             )}
 
-                            {/* Project Files Section */}
-                            {projectFiles && projectFiles.length > 0 && (
-                                <div className="mb-3 w-full p-4 project-files-area">
-                                    <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
-                                        <Icon name="folder" size={4} />
-                                        {c('collider_2025: Info').t`Project files`}
-                                        <span className={'text-normal color-weak'}>{projectFiles.length}</span>
+                            {/* Auto-retrieved project files */}
+                            {autoRetrievedAttachments.length > 0 && (
+                                <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
+                                    <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
+                                        <Icon name="folder-open" size={4} className="color-primary" />
+                                        {c('collider_2025: Info').t`Auto-retrieved project files`}
+                                        <span className="text-normal color-weak">{autoRetrievedAttachments.length}</span>
                                     </h3>
-                                    {projectFiles.map((file) => (
-                                        <KnowledgeFileItem
-                                            key={file.id}
-                                            file={file}
-                                            onView={handleFileClick}
-                                            isActive={true}
-                                            showToggle={false}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-
-                            {/* Conversation Attachments - only show if there are non-project files */}
-                            {(currentAttachments.length > 0 || activeHistoricalFiles.length > 0) && (
-                                <div className="mb-3 w-full p-4 active-files-area">
-                                    <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
-                                        {c('collider_2025: Info').t`Active`}
-                                        <span className={'text-normal color-weak'}>
-                                            {currentAttachments.length + activeHistoricalFiles.length}
-                                        </span>
-                                    </h3>
-
-                                    {/* New uploads */}
-                                    {currentAttachments?.map((attachment) => (
+                                    <p className="text-xs color-weak mb-3">
+                                        {c('collider_2025: Info').t`Files automatically retrieved from the linked project folder based on your questions.`}
+                                    </p>
+                                    {autoRetrievedAttachments.map((attachment) => (
                                         <KnowledgeFileItem
                                             key={attachment.id}
                                             file={attachment}
-                                            onView={(file, fullAttachment, e) =>
-                                                onViewFile && onViewFile(fullAttachment)
-                                            }
-                                            onRemove={(id) => dispatch(deleteAttachment(id))}
+                                            onView={handleFileClick}
                                             isActive={true}
                                             showToggle={false}
-                                        />
-                                    ))}
-                                    {/* Active historical files */}
-                                    {activeHistoricalFiles.map((file) => (
-                                        <KnowledgeFileItem
-                                            key={`${file.messageId}-${file.id}`}
-                                            file={file}
-                                            onView={handleFileClick}
-                                            onExclude={() => handleExcludeHistoricalFile(file)}
-                                            isActive={true}
+                                            readonly={true}
                                         />
                                     ))}
                                 </div>
                             )}
+
+                            {/* Conversation Attachments - only show non-auto-retrieved files */}
+                            {(() => {
+                                // Filter out auto-retrieved from current attachments (historical files already filtered by hook)
+                                const nonAutoRetrievedCurrentAttachments = currentAttachments.filter(a => !a.autoRetrieved);
+                                const totalActive = nonAutoRetrievedCurrentAttachments.length + activeHistoricalFiles.length;
+                                
+                                if (totalActive === 0) return null;
+                                
+                                return (
+                                    <div className="mb-3 w-full p-4 active-files-area">
+                                        <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
+                                            {c('collider_2025: Info').t`Active`}
+                                            <span className={'text-normal color-weak'}>
+                                                {totalActive}
+                                            </span>
+                                        </h3>
+
+                                        {/* New uploads (non-auto-retrieved) */}
+                                        {nonAutoRetrievedCurrentAttachments.map((attachment) => (
+                                            <KnowledgeFileItem
+                                                key={attachment.id}
+                                                file={attachment}
+                                                onView={(file, fullAttachment, e) =>
+                                                    onViewFile && onViewFile(fullAttachment)
+                                                }
+                                                onRemove={(id) => dispatch(deleteAttachment(id))}
+                                                isActive={true}
+                                                showToggle={false}
+                                            />
+                                        ))}
+                                        {/* Active historical files (already filtered by hook to exclude auto-retrieved) */}
+                                        {activeHistoricalFiles.map((file) => (
+                                            <KnowledgeFileItem
+                                                key={`${file.messageId}-${file.id}`}
+                                                file={file}
+                                                onView={handleFileClick}
+                                                onExclude={() => handleExcludeHistoricalFile(file)}
+                                                isActive={true}
+                                            />
+                                        ))}
+                                    </div>
+                                );
+                            })()}
 
                             {/* Unused Knowledge */}
                             {unusedHistoricalFiles.length > 0 && (

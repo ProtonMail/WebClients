@@ -14,10 +14,14 @@ export const useAllRelevantAttachments = (
     const allAttachments = useLumoSelector((state) => state.attachments);
 
     // Get space-level attachments (project files)
+    // Exclude auto-retrieved attachments as they're conversation-specific
     const spaceAttachments = useLumoSelector((state) =>
         spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
     );
-    const spaceAttachmentsList = useMemo(() => Object.values(spaceAttachments), [spaceAttachments]);
+    const spaceAttachmentsList = useMemo(() => 
+        Object.values(spaceAttachments).filter(att => !att.autoRetrieved), 
+        [spaceAttachments]
+    );
 
     // Get space-level assets (project files stored as assets)
     const spaceAssets = useLumoSelector((state) =>
