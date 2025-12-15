@@ -1,4 +1,4 @@
-import { Notification, Event, app } from "electron";
+import { Notification, Event, app, BrowserWindow } from "electron";
 import { handleIPCCalls } from "./ipc/main";
 import { handleWinNotification } from "./ipc/notification";
 import { moveUninstaller } from "./macos/uninstall";
@@ -79,6 +79,12 @@ import { handleSecondInstance } from "./utils/event-handlers/second-instance";
 
         mainLogger.info("before-quit destroying main window");
         mainWindow.destroy();
+
+        BrowserWindow.getAllWindows().forEach((window) => {
+            if (!window.isDestroyed()) {
+                window.destroy();
+            }
+        });
     });
 
     app.on("window-all-closed", () => {
