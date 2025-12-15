@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
@@ -31,14 +32,16 @@ import './ComposerComponent.scss';
  * Wrapper component that provides Drive SDK functions to ComposerEditorArea.
  * This is a separate component so we can conditionally render it only for authenticated users.
  */
-const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile'>) => {
+const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile' | 'userId'>) => {
     const { browseFolderChildren, downloadFile } = useDriveSDK();
+    const [user] = useUser();
     
     return (
         <ComposerEditorArea
             {...props}
             browseFolderChildren={browseFolderChildren}
             downloadFile={downloadFile}
+            userId={user?.ID}
         />
     );
 };
