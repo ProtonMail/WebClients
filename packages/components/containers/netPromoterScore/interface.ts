@@ -9,7 +9,6 @@ export enum NPSApplication {
 
 export interface NetPromoterScoreConfig {
     appName: string;
-    telemetryApp: string;
 }
 
 export interface NetPromoterScoreModalProps {
