@@ -1,3 +1,4 @@
+import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import type { MailState } from '../rootReducer';
@@ -10,6 +11,7 @@ const mockApiFn = jest.fn();
 const mockApi = Object.assign(mockApiFn, {
     UID: undefined,
     addEventListener: jest.fn(),
+    apiRateLimiter: jest.fn() as unknown as ApiRateLimiter,
     removeEventListener: jest.fn(),
 });
 
