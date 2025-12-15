@@ -2,7 +2,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import NetPromoterScoreModal from '@proton/components/containers/netPromoterScore/NetPromoterScoreModal';
-import { useNPSEligiblity } from '@proton/components/containers/netPromoterScore/eligibility';
+import { useNPSEligiblity } from '@proton/components/containers/netPromoterScore/hooks/useNPSEligibility';
 import LightLabellingFeatureModal from '@proton/components/containers/organization/logoUpload/LightLabellingFeatureModal';
 import { useShowLightLabellingFeatureModal } from '@proton/components/containers/organization/logoUpload/useShowLightLabellingFeatureModal';
 import CancellationReminderModal from '@proton/components/containers/payments/subscription/cancellationReminder/CancellationReminderModal';
