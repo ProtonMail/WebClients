@@ -9,6 +9,7 @@ import { convertNewSpaceToApi, convertSpaceToApi } from '../../remote/conversion
 import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
+import { SearchService } from '../../services/search/searchService';
 import { type Asset, type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
@@ -495,9 +496,24 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
     const idbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
 
     if (localSpace) {
-        // Space exists in Redux - check if remote has linkedDriveFolder that local doesn't have
-        if (cleanRemote.linkedDriveFolder && !localSpace.linkedDriveFolder) {
-            console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating local`);
+        // Space exists in Redux - check if linkedDriveFolder state differs between local and remote
+        const remoteHasLinked = !!cleanRemote.linkedDriveFolder;
+        const localHasLinked = !!localSpace.linkedDriveFolder;
+        
+        if (remoteHasLinked !== localHasLinked) {
+            // linkedDriveFolder state differs - update local from remote
+            if (remoteHasLinked) {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating local`);
+            } else {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote removed linkedDriveFolder, updating local`);
+                // Clean up the search index for documents from this space
+                const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+                if (userId) {
+                    console.log(`refreshSpaceFromRemote ${localId}: Cleaning up search index for space`);
+                    const searchService = SearchService.get(userId);
+                    searchService.removeDocumentsBySpace(localId);
+                }
+            }
             yield put(addSpace(cleanRemote)); // Update Redux with remote data
             yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // Update IDB
         } else {
@@ -507,13 +523,27 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
     }
 
     if (idbSpace) {
-        // Space exists in IDB but not Redux - deserialize from IDB and check if remote is newer
+        // Space exists in IDB but not Redux - deserialize from IDB and check if remote differs
         console.log(`refreshSpaceFromRemote ${localId}: idb object exists, checking for updates`);
         const deserializedIdbSpace: Space | null | undefined = yield call(deserializeSpace, idbSpace, masterKey);
         
-        // If remote has linkedDriveFolder that IDB doesn't have, use remote
-        if (cleanRemote.linkedDriveFolder && (!deserializedIdbSpace || !deserializedIdbSpace.linkedDriveFolder)) {
-            console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating from remote`);
+        const remoteHasLinked = !!cleanRemote.linkedDriveFolder;
+        const idbHasLinked = !!(deserializedIdbSpace?.linkedDriveFolder);
+        
+        // If linkedDriveFolder state differs between remote and IDB, use remote
+        if (remoteHasLinked !== idbHasLinked) {
+            if (remoteHasLinked) {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating from remote`);
+            } else {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote removed linkedDriveFolder, updating from remote`);
+                // Clean up the search index for documents from this space
+                const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+                if (userId) {
+                    console.log(`refreshSpaceFromRemote ${localId}: Cleaning up search index for space`);
+                    const searchService = SearchService.get(userId);
+                    searchService.removeDocumentsBySpace(localId);
+                }
+            }
             yield put(addSpace(cleanRemote)); // Redux
             yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
             yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // IDB

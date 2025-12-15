@@ -56,8 +56,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const validSpaceAssets = Object.values(spaceAssets).filter(
         (asset) => !asset.error && !asset.processing
     );
+    // Exclude auto-retrieved attachments as they're conversation-specific, not space-level
     const validSpaceAttachments = Object.values(spaceAttachments).filter(
-        (att) => !att.error
+        (att) => !att.error && !att.autoRetrieved
     );
     
     // Create a set of all space-level file IDs (both assets and attachments) for deduplication
