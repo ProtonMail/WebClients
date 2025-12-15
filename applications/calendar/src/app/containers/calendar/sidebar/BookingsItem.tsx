@@ -22,7 +22,6 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarDispatch } from '../../../store/hooks';
@@ -53,8 +52,6 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
     const bookingCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
     const isCalendarDisabled = getIsCalendarDisabled(bookingCalendar);
 
-    const isEditingEnabled = useFlag('EditCalendarBookings');
-
     const handleCopy = (e: MouseEvent, link: string) => {
         e.stopPropagation();
         e.preventDefault();
@@ -64,7 +61,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
     };
 
     const handleEditClick = async () => {
-        if (!isEditingEnabled || isCalendarDisabled) {
+        if (isCalendarDisabled) {
             return;
         }
 
@@ -122,26 +119,24 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                         }
                                     >
                                         <DropdownMenu>
-                                            {isEditingEnabled && (
-                                                <DropdownMenuButton
-                                                    fakeDisabled={isCalendarDisabled}
-                                                    onClick={handleEditClick}
-                                                    className={clsx(
-                                                        'text-left flex items-center flex-nowrap',
-                                                        isCalendarDisabled && 'color-weak hover:color-weak'
-                                                    )}
-                                                >
-                                                    {isCalendarDisabled && (
-                                                        <Info
-                                                            fakeDisabled
-                                                            className="mr-2 shrink-0"
-                                                            title={c('Info')
-                                                                .t`This booking page cannot be edited, the associated calendar is disabled`}
-                                                        />
-                                                    )}
-                                                    {c('Action').t`Edit booking page`}
-                                                </DropdownMenuButton>
-                                            )}
+                                            <DropdownMenuButton
+                                                fakeDisabled={isCalendarDisabled}
+                                                onClick={handleEditClick}
+                                                className={clsx(
+                                                    'text-left flex items-center flex-nowrap',
+                                                    isCalendarDisabled && 'color-weak hover:color-weak'
+                                                )}
+                                            >
+                                                {isCalendarDisabled && (
+                                                    <Info
+                                                        fakeDisabled
+                                                        className="mr-2 shrink-0"
+                                                        title={c('Info')
+                                                            .t`This booking page cannot be edited, the associated calendar is disabled`}
+                                                    />
+                                                )}
+                                                {c('Action').t`Edit booking page`}
+                                            </DropdownMenuButton>
                                             <DropdownMenuButton onClick={handleDeleteClick} className="text-left">
                                                 {c('Action').t`Delete booking page`}
                                             </DropdownMenuButton>

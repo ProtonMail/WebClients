@@ -70,7 +70,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
-    const isRecurringEnabled = useFlag('RecurringCalendarBookings');
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
@@ -84,9 +83,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
     const touchedFormFields = useRef<Set<keyof InternalBookingFrom>>(new Set());
 
-    const [internalForm, setInternalForm] = useState<InternalBookingFrom>(
-        getInitialBookingFormState(isRecurringEnabled)
-    );
+    const [internalForm, setInternalForm] = useState<InternalBookingFrom>(getInitialBookingFormState());
 
     const bookingSlots = useMemo(() => {
         return recomputeSlotsForRanges(internalForm.bookingRanges, internalForm.duration);
@@ -111,7 +108,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             calendarBootstrap,
             currentUTCDate,
             preferredCalendarID: defaultCalendarID,
-            recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
+            recurring: DEFAULT_RECURRING,
             canUseMeetLocation,
         });
 
