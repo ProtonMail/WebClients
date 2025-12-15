@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
-import clsx from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -18,6 +17,7 @@ import {
 } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import Header from '../../components/header/Header';
 import useDrawer from '../../hooks/drawer/useDrawer';
@@ -150,10 +150,10 @@ const DrawerAppHeader = ({
     return (
         <div className="relative ui-standard color-norm shrink-0" ref={wrapperRef}>
             <Header className={clsx('header--drawer flex-column p-3', headerClassName)} style={{ blockSize: 'auto' }}>
-                <div className="drawer-app-header-actions flex justify-space-between items-center w-full">
+                <div className="drawer-app-header-actions flex flex-nowrap justify-space-between items-center w-full">
                     {isUsingTabs ? title : <h2 className="text-bold text-lg">{title}</h2>}
 
-                    <div className="flex items-center flex-nowrap gap-2">
+                    <div className="flex items-center flex-nowrap gap-2 shrink-0 self-start">
                         <Tooltip title={c('Action').t`Close`}>
                             <Button
                                 data-testid="drawer-app-header:close"
