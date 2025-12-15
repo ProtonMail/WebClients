@@ -49,6 +49,11 @@ export interface SearchServiceStatus {
     error?: string;
     driveDocuments?: number;
     indexedFolders?: number;
+    bm25Stats?: {
+        totalDocs: number;
+        vocabularySize: number;
+        avgDocLength: number;
+    };
 }
 
 export interface SearchService {
