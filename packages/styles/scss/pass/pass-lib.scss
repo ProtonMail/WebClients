@@ -1,0 +1,5 @@
+// Re-export breakpoints before main lib import to ensure consistent behavior.
+// This prevents breakpoint-related media queries from being sensitive to import order.
+// TODO: Remove this workaround once we migrate to SASS modules
+@import '~@proton/styles/scss/pass/pass-breakpoints';
+@import '~@proton/styles/scss/lib';

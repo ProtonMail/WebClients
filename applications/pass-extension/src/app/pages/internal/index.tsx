@@ -5,8 +5,6 @@ import { ExtensionSetup } from 'proton-pass-extension/lib/components/Extension/E
 
 import { Internal } from './Internal';
 
-import '@proton/pass/styles/common.scss';
-
 const container = document.getElementById('root');
 const root = createRoot(container!);
 

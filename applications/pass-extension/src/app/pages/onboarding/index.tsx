@@ -4,7 +4,6 @@ import { ExtensionRoot } from 'proton-pass-extension/lib/components/Extension/Ex
 import { ExtensionSetup } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import '@proton/pass/styles/common.scss';
 
 import { Onboarding } from './Onboarding';
 
