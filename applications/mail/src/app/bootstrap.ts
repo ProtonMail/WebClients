@@ -27,6 +27,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import logger from '@proton/shared/lib/logger';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { appMode } from '@proton/shared/lib/webpack.constants';
+import { MailFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
@@ -70,7 +71,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
+        const unleashPromise = bootstrap
+            .unleashReady({ unleashClient })
+            .then(() => {
+                if (unleashClient.isEnabled(MailFeatureFlag.MailWebApiRateLimiter)) {
+                    api.apiRateLimiter.enable();
+                }
+            })
+            .catch(noop);
 
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });

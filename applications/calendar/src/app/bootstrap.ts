@@ -31,6 +31,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { appMode } from '@proton/shared/lib/webpack.constants';
+import { CalendarFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
@@ -107,7 +108,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
+        const unleashPromise = bootstrap
+            .unleashReady({ unleashClient })
+            .then(() => {
+                if (unleashClient.isEnabled(CalendarFeatureFlag.CalendarWebApiRateLimiter)) {
+                    api.apiRateLimiter.enable();
+                }
+            })
+            .catch(noop);
 
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });

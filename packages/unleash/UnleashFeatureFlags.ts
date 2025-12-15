@@ -112,7 +112,7 @@ enum PaymentsFlag {
     GooglePay = 'GooglePay',
 }
 
-enum CalendarFeatureFlag {
+export enum CalendarFeatureFlag {
     CalendarEventsPrefetch = 'CalendarEventsPrefetch',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     VideoConferenceWidget = 'VideoConferenceWidget',
@@ -121,6 +121,7 @@ enum CalendarFeatureFlag {
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
     CalendarExternalBookings = 'CalendarExternalBookings',
+    CalendarWebApiRateLimiter = 'CalendarWebApiRateLimiter',
 }
 
 enum DriveFeatureFlag {
@@ -198,7 +199,7 @@ enum DocsFeatureFlag {
     SheetsUpdateChunkingEnabled = 'SheetsUpdateChunkingEnabled',
 }
 
-enum MailFeatureFlag {
+export enum MailFeatureFlag {
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
@@ -221,6 +222,7 @@ enum MailFeatureFlag {
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
+    MailWebApiRateLimiter = 'MailWebApiRateLimiter',
 }
 
 enum AdminFeatureFlag {

@@ -8,6 +8,7 @@ import { withLocaleHeaders } from '../fetch/headers';
 import { getDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
 import type { Api } from '../interfaces';
+import type { ApiRateLimiter } from './apiRateLimiter';
 import { getApiError, getApiErrorMessage, getIsOfflineError, getIsUnreachableError } from './helpers/apiErrorHelper';
 import { withApiHandlers } from './helpers/withApiHandlers';
 
@@ -97,6 +98,7 @@ export type ApiListenerCallback = (event: ApiEvent) => boolean;
 
 export type ApiWithListener = Api & {
     UID: string | undefined;
+    apiRateLimiter: ApiRateLimiter;
     addEventListener: (cb: ApiListenerCallback) => void;
     removeEventListener: (cb: ApiListenerCallback) => void;
 };
@@ -318,6 +320,11 @@ const createApi = ({
 
     const getCallbackWithListeners = (callback: Api) => {
         Object.defineProperties(callback, {
+            apiRateLimiter: {
+                get() {
+                    return call.apiRateLimiter;
+                },
+            },
             UID: {
                 set(value: string | undefined) {
                     callWithApiHandlers.UID = value;

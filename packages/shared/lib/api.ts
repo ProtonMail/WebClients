@@ -1,3 +1,4 @@
+import { ApiRateLimiter } from './api/apiRateLimiter';
 import { getAppVersionHeaders, getUIDHeaders } from './fetch/headers';
 import type { FetchConfig } from './fetch/interface';
 
@@ -33,6 +34,7 @@ export function configureApi({
 }) {
     let authHeaders = UID ? getUIDHeaders(UID) : undefined;
     const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
+    const apiRateLimiter = new ApiRateLimiter();
 
     const defaultHeaders = {
         accept: 'application/vnd.protonmail.v1+json',
@@ -47,6 +49,8 @@ export function configureApi({
 
         const fullUrl = /^https?:\/\//.test(url) ? url : `${API_URL}/${url}`;
 
+        apiRateLimiter.recordCallOrThrow(fullUrl);
+
         return protonFetch({
             url: fullUrl,
             data: dataWithClientSecret,
@@ -60,6 +64,11 @@ export function configureApi({
     };
 
     Object.defineProperties(cb, {
+        apiRateLimiter: {
+            get() {
+                return apiRateLimiter;
+            },
+        },
         UID: {
             set(value) {
                 authHeaders = value ? getUIDHeaders(value) : undefined;
