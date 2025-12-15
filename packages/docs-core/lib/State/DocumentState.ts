@@ -70,6 +70,12 @@ export type DocumentEvent =
         enabled: boolean
       }
     }
+  | {
+      name: 'ImportUpdateSuccessful'
+      payload: {
+        uuid: string
+      }
+    }
 
 export interface DocumentStateValues {
   documentName: string

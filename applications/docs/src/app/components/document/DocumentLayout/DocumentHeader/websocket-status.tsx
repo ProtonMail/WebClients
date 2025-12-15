@@ -82,7 +82,7 @@ export function useWebSocketStatus(document?: NodeMeta | PublicNodeMeta) {
             if (savingTimeoutRef.current) {
               clearTimeout(savingTimeoutRef.current)
             }
-            setCurrentStatus({ ...currentStatus, saving: true })
+            setCurrentStatus((currentStatus) => ({ ...currentStatus, saving: true }))
             setSaveStartTime(Date.now())
           }
         },
@@ -95,7 +95,7 @@ export function useWebSocketStatus(document?: NodeMeta | PublicNodeMeta) {
             const elapsedTime = Date.now() - saveStartTime
             const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
             savingTimeoutRef.current = setTimeout(() => {
-              setCurrentStatus({ ...currentStatus, saving: false })
+              setCurrentStatus((currentStatus) => ({ ...currentStatus, saving: false }))
             }, remainingTime)
           }
         },
@@ -106,19 +106,26 @@ export function useWebSocketStatus(document?: NodeMeta | PublicNodeMeta) {
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]) => {
           const hasErrored = payload.ledger.hasErroredMessages()
 
-          setCurrentStatus({
+          setCurrentStatus((currentStatus) => ({
             ...currentStatus,
             hasConcerningMessages: payload.ledger.hasConcerningMessages(),
             hasErroredMessages: payload.ledger.hasErroredMessages(),
             saving: hasErrored ? false : currentStatus.saving,
-          })
+          }))
         },
         WebsocketConnectionEvent.AckStatusChange,
       ),
+
+      application.eventBus.addEventCallback(() => {
+        setCurrentStatus({
+          state: WebsocketConnectionEvent.Disconnected,
+          saving: false,
+        })
+      }, WebsocketConnectionEvent.Destroyed),
     )
 
     return disposer
-  }, [application.eventBus, document, currentStatus, saveStartTime])
+  }, [application.eventBus, document, saveStartTime])
 
   return currentStatus
 }

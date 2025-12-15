@@ -35,4 +35,7 @@ export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.Saving]: BaseWebsocketPayload
   [WebsocketConnectionEvent.Saved]: BaseWebsocketPayload
   [WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.ImportUpdateSuccessful]: BaseWebsocketPayload & {
+    uuid: string
+  }
 }
