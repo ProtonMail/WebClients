@@ -166,8 +166,20 @@
       "Continue offline": [
         "Continuare în mod deconectat"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy and close": [
         "Copiere și închidere"
+      ],
+      "Copy card number": [
+        "Copiere număr card"
+      ],
+      "Copy email": [
+        "Copiere e-mail"
+      ],
+      "Copy expiration date": [
+        "Copiere dată de expirare"
       ],
       "Copy forwarding address": [
         "Copiere adresă de transferare"
@@ -175,11 +187,23 @@
       "Copy link": [
         "Copiere legătură web"
       ],
+      "Copy name on card": [
+        "Copiere nume de pe card"
+      ],
+      "Copy note content": [
+        "Copiere conținut notă"
+      ],
       "Copy password": [
         "Copiere parolă"
       ],
+      "Copy security code": [
+        "Copiere cod de securitate"
+      ],
       "Copy to clipboard": [
         "Copiere în memorie"
+      ],
+      "Copy username": [
+        "Copiere nume utilizator"
       ],
       "Create": [
         "Creare"
@@ -222,6 +246,9 @@
       ],
       "Custom section": [
         "Secțiune personală"
+      ],
+      "Cut": [
+        "Decupare"
       ],
       "Delete": [
         "Ștergere"
@@ -469,6 +496,9 @@
       "Pass Monitor": [
         "Pass Monitor"
       ],
+      "Paste": [
+        "Lipire"
+      ],
       "Pause monitoring": [
         "Suspendare monitorizare"
       ],
@@ -624,9 +654,6 @@
       ],
       "Skip": [
         "Omitere"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Sortare articole seif"
@@ -1223,9 +1250,6 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
-      ],
-      "Try reaching out to the link owner.": [
-        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -1960,11 +1984,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3677,9 +3696,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
       "Tier/Level": [
         "Rang/Nivel"

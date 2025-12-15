@@ -166,8 +166,20 @@
       "Continue offline": [
         "オフラインで続行"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Copy and close": [
         "コピーして閉じる"
+      ],
+      "Copy card number": [
+        "カード番号をコピー"
+      ],
+      "Copy email": [
+        "メールアドレスをコピー"
+      ],
+      "Copy expiration date": [
+        "有効期限をコピー"
       ],
       "Copy forwarding address": [
         "転送先のアドレスをコピー"
@@ -175,11 +187,23 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Copy name on card": [
+        "カードの氏名をコピー"
+      ],
+      "Copy note content": [
+        "メモの内容をコピー"
+      ],
       "Copy password": [
         "パスワードをコピー"
       ],
+      "Copy security code": [
+        "セキュリティコードのコピー"
+      ],
       "Copy to clipboard": [
         "クリップボードにコピー"
+      ],
+      "Copy username": [
+        "ユーザー名をコピー"
       ],
       "Create": [
         "作成"
@@ -222,6 +246,9 @@
       ],
       "Custom section": [
         "カスタムセクション"
+      ],
+      "Cut": [
+        "切り取り"
       ],
       "Delete": [
         "削除"
@@ -469,6 +496,9 @@
       "Pass Monitor": [
         "Pass Monitor"
       ],
+      "Paste": [
+        "貼り付け"
+      ],
       "Pause monitoring": [
         "監視を一時停止する"
       ],
@@ -624,9 +654,6 @@
       ],
       "Skip": [
         "スキップ"
-      ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
       ],
       "Sort vault items": [
         "保管庫のアイテムを並び替え"
@@ -1213,9 +1240,6 @@
       ],
       "Trashing item failed": [
         "アイテムの削除に失敗しました"
-      ],
-      "Try reaching out to the link owner.": [
-        "リンクの所有者に連絡してみてください。"
       ],
       "Unable to generate an OTP code for this item": [
         "このアイテムの OTP コードを生成できません"
@@ -1910,9 +1934,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -3585,9 +3606,6 @@
       ],
       "Theme": [
         "テーマ"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "このアイテムは、 ${ date } またはビューの上限に達するまでアクセスできます。"
       ],
       "Tier/Level": [
         "階級/レベル"
