@@ -498,4 +498,44 @@ describe('CC form clustering', () => {
             );
         });
     });
+
+    describe('mega.nz > ambiguous payment form', () => {
+        const { frames, clusters } = samples['mega.nz/payment'];
+
+        test('resolves from cc-number in sub-frame', () => {
+            const payload = { frameId: 1191, formId: '74ba84b1', fieldId: '238fd93c' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1191, [{ fieldId: '238fd93c', formId: '74ba84b1', frameId: 1191 }]],
+                    [1192, [{ fieldId: 'e8d41029', formId: '48dc2303', frameId: 1192 }]],
+                    [1193, [{ fieldId: 'b5f08a3a', formId: '73539e18', frameId: 1193 }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-number in sub-frame', () => {
+            const payload = { frameId: 1192, formId: '48dc2303', fieldId: 'e8d41029' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1191, [{ fieldId: '238fd93c', formId: '74ba84b1', frameId: 1191 }]],
+                    [1192, [{ fieldId: 'e8d41029', formId: '48dc2303', frameId: 1192 }]],
+                    [1193, [{ fieldId: 'b5f08a3a', formId: '73539e18', frameId: 1193 }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-number in sub-frame', () => {
+            const payload = { frameId: 1193, formId: '73539e18', fieldId: 'b5f08a3a' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1191, [{ fieldId: '238fd93c', formId: '74ba84b1', frameId: 1191 }]],
+                    [1192, [{ fieldId: 'e8d41029', formId: '48dc2303', frameId: 1192 }]],
+                    [1193, [{ fieldId: 'b5f08a3a', formId: '73539e18', frameId: 1193 }]],
+                ])
+            );
+        });
+    });
 });
