@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
@@ -16,7 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
-import { BitField, type Maybe } from '@proton/pass/types';
+import { BitField, type Maybe, OrganizationVaultCreateMode } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -28,7 +31,6 @@ import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm
 import './PassPolicies.scss';
 
 type GetPoliciesProps = {
-    showVaultCreation: boolean;
     showItemSharing: boolean;
 };
 type PolicyItem = {
@@ -39,7 +41,23 @@ type PolicyItem = {
     isBooleanInverted?: boolean;
 };
 
-const getPolicies = ({ showVaultCreation = false, showItemSharing = false }: GetPoliciesProps): PolicyItem[] => [
+const getVaultCreateOptions = (showAllOptions = false) => [
+    { value: OrganizationVaultCreateMode.ALLOWED, title: c('Label').t`Yes` },
+    ...(showAllOptions
+        ? [
+              {
+                  value: OrganizationVaultCreateMode.ONLYORGADMINSANDPERSONALVAULT,
+                  title: c('Label').t`Only a single personal vault can be created`,
+              },
+          ]
+        : []),
+    {
+        value: OrganizationVaultCreateMode.ONLYORGADMINS,
+        title: c('Label').t`No (users cannot use the app until a vault is shared with them)`,
+    },
+];
+
+const getPolicies = ({ showItemSharing = false }: GetPoliciesProps): PolicyItem[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Allow sharing outside the organization`,
@@ -63,17 +81,6 @@ const getPolicies = ({ showVaultCreation = false, showItemSharing = false }: Get
         description: c('Info').t`If disabled, only administrators will be able to export data.`,
         isBooleanInverted: true,
     },
-    ...(showVaultCreation
-        ? [
-              {
-                  setting: 'VaultCreateMode',
-                  label: c('Label').t`Allow all users to create vaults`,
-                  description: c('Info')
-                      .t`If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.`,
-                  isBooleanInverted: true,
-              } as const,
-          ]
-        : []),
 ];
 
 const PassPolicies = () => {
@@ -84,11 +91,12 @@ const PassPolicies = () => {
 
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
     const showVaultCreation = useFlag('PassB2BVaultCreation');
+    const showVaultCreationV2 = useFlag('PassB2BVaultCreationV2');
     const showItemSharing = useFlag('PassB2BItemSharing');
     const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
-    const policies = getPolicies({ showVaultCreation, showItemSharing });
+    const policies = getPolicies({ showItemSharing });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
@@ -122,6 +130,17 @@ const PassPolicies = () => {
 
         withLoading(
             organization.settings.set(setting, value).then((orgSettings) => {
+                setOrganizationSettings(orgSettings);
+                createNotification({ text: c('Info').t`Setting successfully saved` });
+            })
+        ).catch(handleError);
+    };
+
+    const handleCreateVaultsChange = (value: OrganizationVaultCreateMode) => {
+        touched.current = 'VaultCreateMode';
+
+        withLoading(
+            organization.settings.set('VaultCreateMode', value).then((orgSettings) => {
                 setOrganizationSettings(orgSettings);
                 createNotification({ text: c('Info').t`Setting successfully saved` });
             })
@@ -181,6 +200,34 @@ const PassPolicies = () => {
                                     </SettingsLayoutRight>
                                 </SettingsLayout>
                             ))}
+                            {showVaultCreation && (
+                                <SettingsLayout className="pb-4">
+                                    <SettingsLayoutLeft className="pass-policy-label">
+                                        <label htmlFor="pass-vault-creation" id="label-pass-vault-creation">
+                                            <div className="text-semibold">{c('Label')
+                                                .t`Allow all users to create vaults`}</div>
+                                            <div className="color-weak text-sm mr-2">
+                                                {c('Info')
+                                                    .t`Control whether organization members can create vaults or require an administrator to create and share a vault with them.`}
+                                            </div>
+                                        </label>
+                                    </SettingsLayoutLeft>
+                                    <SettingsLayoutRight>
+                                        <InputFieldTwo
+                                            as={SelectTwo<number>}
+                                            id="pass-vault-creation"
+                                            placeholder={c('Label').t`Yes`}
+                                            onValue={handleCreateVaultsChange}
+                                            value={organizationSettings.Settings.VaultCreateMode}
+                                            dense
+                                        >
+                                            {getVaultCreateOptions(showVaultCreationV2).map(({ title, value }) => (
+                                                <Option key={value} title={title} value={value} />
+                                            ))}
+                                        </InputFieldTwo>
+                                    </SettingsLayoutRight>
+                                </SettingsLayout>
+                            )}
                             <SettingsLayout className="pb-4">
                                 <SettingsLayoutLeft className="pass-policy-label">
                                     <label htmlFor="pass-lock-select" id="label-pass-lock-select">
