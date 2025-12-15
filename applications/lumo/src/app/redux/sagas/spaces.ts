@@ -5,7 +5,7 @@ import { base64ToMasterKey } from '../../crypto';
 import type { AesKwCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
-import { convertNewSpaceToApi } from '../../remote/conversion';
+import { convertNewSpaceToApi, convertSpaceToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
@@ -240,6 +240,18 @@ export function* httpPostSpace(serializedSpace: SerializedSpace, priority: Prior
     return entry;
 }
 
+export function* httpPutSpace(serializedSpace: SerializedSpace, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
+    console.log('Saga triggered: httpPutSpace', { localId: serializedSpace.id, remoteId, hasEncrypted: !!serializedSpace.encrypted });
+    const lumoApi: LumoApi = yield getContext('lumoApi');
+    // convertSpaceToApi uses local id, but PUT needs remote id
+    const baseSpaceToApi = convertSpaceToApi(serializedSpace);
+    const spaceToApi = { ...baseSpaceToApi, ID: remoteId };
+    console.log('httpPutSpace: Sending PUT request for space', { localId: serializedSpace.id, remoteId });
+    const status: RemoteStatus = yield call([lumoApi, lumoApi.putSpace], spaceToApi, priority);
+    console.log('httpPutSpace: PUT response status:', status);
+    return status;
+}
+
 export function* httpDeleteSpace(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
     console.log('Saga triggered: httpDeleteSpace', { localId, remoteId });
     const type: ResourceType = 'space';
@@ -306,10 +318,20 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
         // Check if space already exists remotely
         const remoteId = yield select(selectRemoteIdFromLocal(type, localId));
         if (remoteId) {
-            // Space was already posted, and we don't edit spaces remotely for now
-            // But we still need to save local changes (like linkedDriveFolder) to IndexedDB
+            // Space was already posted - update it remotely with PUT
+            // This ensures linkedDriveFolder and other changes sync across browsers
             yield call(saveDirtySpace, serializedSpace);
-            yield put(pushSpaceNoop(payload));
+            
+            // PUT to update remote
+            yield call(callWithRetry, httpPutSpace, [serializedSpace, remoteId, priority]);
+            
+            // Clear dirty flag
+            const updated: boolean = yield call(clearDirtyIfUnchanged, serializedSpace);
+            if (updated) {
+                yield put(pushSpaceSuccess(payload));
+            } else {
+                yield put(pushSpaceNeedsRetry(payload));
+            }
             return;
         }
 
@@ -449,14 +471,6 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
     const dbApi: DbApi = yield getContext('dbApi');
     const { id: localId, remoteId } = remoteSpace;
 
-    // Compare with object in IDB
-    console.log(`refreshSpaceFromRemote ${localId}: comparing with object in idb`);
-    const idbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
-    if (idbSpace) {
-        console.log(`refreshSpaceFromRemote ${localId}: idb object already exists, noop`);
-        return;
-    }
-
     // Deserialize before inserting into Redux
     console.log(`refreshSpaceFromRemote ${localId}: selecting masterkey`);
     const masterKeyBase64 = yield select(selectMasterKey);
@@ -465,7 +479,7 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
     }
     console.log(`refreshSpaceFromRemote ${localId}: got masterkey`);
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
-    console.log(`refreshSpaceFromRemote ${localId}: got masterkey decoded`, masterKeyBase64);
+    console.log(`refreshSpaceFromRemote ${localId}: got masterkey decoded`);
     console.log(`refreshSpaceFromRemote ${localId}: calling deserializeSpace for remote`);
     const deserializedRemoteSpace: Space | null | undefined = yield call(deserializeSpace, remoteSpace, masterKey);
     console.log(`refreshSpaceFromRemote ${localId}: got deserialized remote space result`, deserializedRemoteSpace);
@@ -473,15 +487,47 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
         console.error(`refreshSpaceFromRemote ${localId}: cannot deserialize space ${localId} from remote`);
         return;
     }
-    console.log(`refreshSpaceFromRemote ${localId}: selecting local space`);
+    const cleanRemote = cleanSpace(deserializedRemoteSpace);
+    console.log(`refreshSpaceFromRemote ${localId}: cleanRemote has linkedDriveFolder:`, !!cleanRemote.linkedDriveFolder);
+
+    // Check if space already exists locally
     const localSpace: Space | undefined = yield select(selectSpaceById(localId));
+    const idbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
+
     if (localSpace) {
-        console.log(`refreshSpaceFromRemote ${localId}: received space already exists in Redux, noop`);
+        // Space exists in Redux - check if remote has linkedDriveFolder that local doesn't have
+        if (cleanRemote.linkedDriveFolder && !localSpace.linkedDriveFolder) {
+            console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating local`);
+            yield put(addSpace(cleanRemote)); // Update Redux with remote data
+            yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // Update IDB
+        } else {
+            console.log(`refreshSpaceFromRemote ${localId}: received space already exists in Redux, noop`);
+        }
         return;
     }
-    const cleanRemote = cleanSpace(deserializedRemoteSpace);
 
-    // Update locally
+    if (idbSpace) {
+        // Space exists in IDB but not Redux - deserialize from IDB and check if remote is newer
+        console.log(`refreshSpaceFromRemote ${localId}: idb object exists, checking for updates`);
+        const deserializedIdbSpace: Space | null | undefined = yield call(deserializeSpace, idbSpace, masterKey);
+        
+        // If remote has linkedDriveFolder that IDB doesn't have, use remote
+        if (cleanRemote.linkedDriveFolder && (!deserializedIdbSpace || !deserializedIdbSpace.linkedDriveFolder)) {
+            console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating from remote`);
+            yield put(addSpace(cleanRemote)); // Redux
+            yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
+            yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // IDB
+        } else if (deserializedIdbSpace) {
+            // Use IDB version
+            const cleanIdb = cleanSpace(deserializedIdbSpace);
+            console.log(`refreshSpaceFromRemote ${localId}: Using IDB version`);
+            yield put(addSpace(cleanIdb)); // Redux
+            yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: false })); // Redux (don't re-save to IDB)
+        }
+        return;
+    }
+
+    // New space - insert from remote
     console.log(`refreshSpaceFromRemote ${localId}: updating locally: put(addSpace)`);
     yield put(addSpace(cleanRemote)); // Redux
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux

@@ -4,7 +4,6 @@ import type { Editor } from '@tiptap/react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { useUser } from '@proton/account/user/hooks';
 
 import type { SpaceId, Attachment, Message } from '../../../../types';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
@@ -14,6 +13,7 @@ import { fileProcessingService } from '../../../../services/fileProcessingServic
 import { SearchService } from '../../../../services/search/searchService';
 import { getApproximateTokenCount } from '../../../../llm/tokenizer';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
+import { useIsGuest } from '../../../../providers/IsGuestProvider';
 
 export interface FileMentionState {
     isActive: boolean;
@@ -129,7 +129,8 @@ export const useFileMentionAutocomplete = (
     spaceId?: SpaceId,
     messageChain: Message[] = [],
     driveSDK?: DriveSDKFunctions, // Optional - only provided for authenticated users
-    onDriveFilesRefresh?: () => void // Optional callback when drive files are refreshed
+    onDriveFilesRefresh?: () => void, // Optional callback when drive files are refreshed
+    userId?: string // Optional - only provided for authenticated users
 ): {
     mentionState: FileMentionState;
     files: FileItem[];
@@ -138,8 +139,7 @@ export const useFileMentionAutocomplete = (
     refreshDriveFiles: () => Promise<void>;
 } => {
     const [mentionState, setMentionState] = useState<FileMentionState>(INITIAL_MENTION_STATE);
-
-    const [user] = useUser();
+    const isGuest = useIsGuest();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
@@ -428,8 +428,8 @@ export const useFileMentionAutocomplete = (
                         let content: string | null = null;
                         let fileSize = 0;
                         
-                        if (user?.ID) {
-                            const searchService = SearchService.get(user.ID);
+                        if (userId && !isGuest) {
+                            const searchService = SearchService.get(userId);
                             const indexedDoc = searchService.getDocumentById(file.id);
                             if (indexedDoc && indexedDoc.content) {
                                 console.log('[FileMention] Using cached content from search index for:', file.name);
