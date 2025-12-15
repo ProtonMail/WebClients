@@ -39,10 +39,6 @@ export const loadBookingPage = createAsyncThunk<
         },
     };
 
-    if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
-        return emptyReturn;
-    }
-
     try {
         const { BookingPage } = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(getBookingPageDetails(payload));
 
@@ -137,10 +133,6 @@ export const editBookingPage = createAsyncThunk<
     SerializedFormData,
     CalendarThunkExtra
 >('internalBookings/editPage', async (payload, thunkExtra) => {
-    if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
-        return;
-    }
-
     if (!payload.selectedCalendar) {
         throw new Error('Missing selected calendar');
     }
