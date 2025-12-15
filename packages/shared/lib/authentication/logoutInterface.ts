@@ -30,4 +30,5 @@ export interface SignoutActionOptions extends SignoutSessions {
     type: 'all' | 'self';
     reason: 'signout' | 'session-expired';
     clearDeviceRecovery: boolean;
+    logoutRedirectUrl?: string;
 }

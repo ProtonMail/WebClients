@@ -18,7 +18,7 @@ import noop from '@proton/utils/noop';
 export const signoutAction = createAction(
     'auth/signout',
     (
-        payload: { clearDeviceRecovery: boolean } & (
+        payload: { clearDeviceRecovery: boolean; logoutRedirectUrl?: string } & (
             | { type?: 'self' }
             | {
                   type: 'all';
@@ -67,6 +67,7 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
                         sessions: sessions.sessions,
                         type: action.payload.type === 'all' ? 'all' : 'self',
                         reason: 'signout',
+                        logoutRedirectUrl: action.payload.logoutRedirectUrl,
                     },
                     authentication,
                 }).catch(noop);

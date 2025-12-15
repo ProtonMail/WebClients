@@ -23,19 +23,21 @@ export const useAccountSessions = () => {
             ping: useCallback(() => {
                 dispatch(accountSessionsEvent());
             }, []),
-            signOut: useCallback((options: { clearDeviceRecovery: boolean }) => {
+            signOut: useCallback((options: { clearDeviceRecovery: boolean; logoutRedirectUrl?: string }) => {
                 return dispatch(
                     signoutAction({
                         clearDeviceRecovery: options.clearDeviceRecovery,
+                        logoutRedirectUrl: options.logoutRedirectUrl,
                     })
                 );
             }, []),
-            signOutAll: useCallback((sessions: (typeof state)['value']) => {
+            signOutAll: useCallback((sessions: (typeof state)['value'], logoutRedirectUrl?: string) => {
                 return dispatch(
                     signoutAction({
                         clearDeviceRecovery: false,
                         type: 'all',
                         sessions,
+                        logoutRedirectUrl,
                     })
                 );
             }, []),

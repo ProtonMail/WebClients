@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -30,6 +30,7 @@ export const PageHeader = ({
     showAppSwitcher = true,
     isInstantJoin = false,
 }: PageHeaderProps) => {
+    const location = useLocation();
     const history = useHistory();
 
     const handleSignIn = (returnUrl: string) =>
@@ -120,7 +121,10 @@ export const PageHeader = ({
                             ) : (
                                 <>
                                     <UpgradeButton />
-                                    <UserDropdown app={APPS.PROTONMEET} />
+                                    <UserDropdown
+                                        app={APPS.PROTONMEET}
+                                        logoutRedirectUrl={`${location.pathname}${location.hash}`}
+                                    />
                                 </>
                             )}
                             {isJoinPage && (
