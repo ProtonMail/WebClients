@@ -14,7 +14,7 @@ import { trimMessage } from '../../utils/trim-message';
 import './ChatMessage.scss';
 
 interface ChatMessageProps {
-    onMessageSend: (message: string) => void;
+    onMessageSend: (message: string) => Promise<boolean>;
 }
 
 export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
@@ -41,10 +41,15 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         [
             [
                 'Enter',
-                (e) => {
+                async (e) => {
                     if (!e.shiftKey && message.trim() !== '') {
                         e.preventDefault();
-                        onMessageSend(message);
+                        const result = await onMessageSend(message);
+
+                        if (!result) {
+                            return;
+                        }
+
                         setMessage('');
                         textareaRef.current?.focus();
                     }
@@ -84,8 +89,13 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         'rounded-full border-none w-custom h-custom p-0 flex items-center justify-center color-norm shrink-0',
                         'send-message-button'
                     )}
-                    onClick={() => {
-                        onMessageSend(message);
+                    onClick={async () => {
+                        const result = await onMessageSend(message);
+
+                        if (!result) {
+                            return;
+                        }
+
                         setMessage('');
                     }}
                     style={{
