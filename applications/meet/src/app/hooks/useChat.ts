@@ -3,7 +3,9 @@ import { useCallback, useEffect } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import type { RemoteParticipant } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { useMLSContext } from '../contexts/MLSContext';
@@ -23,6 +25,8 @@ export const useChat = () => {
     const mls = useMLSContext();
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
+
+    const reportMeetError = useMeetErrorReporting();
 
     const handleDataReceive = useCallback(
         // This is the actual typing LiveKit uses for the payload
@@ -49,7 +53,33 @@ export const useChat = () => {
                     return;
                 }
 
-                const decryptedMessage = await mls?.decryptMessage(stringToUint8Array(decodedMessage.message));
+                const encryptedData = stringToUint8Array(decodedMessage.message);
+
+                // Trying the decryption 3 times with increasing delays, to work around temporary issues with the MLS
+                const tryDecrypt = async (attemptIndex: number) => {
+                    const delays = [0, 2000, 4000];
+
+                    if (attemptIndex >= delays.length) {
+                        return undefined;
+                    }
+
+                    if (delays[attemptIndex] > 0) {
+                        await wait(delays[attemptIndex]);
+                    }
+
+                    try {
+                        const result = await mls?.decryptMessage(encryptedData);
+                        if (!result) {
+                            return await tryDecrypt(attemptIndex + 1);
+                        }
+                        return result;
+                    } catch (_error) {
+                        reportMeetError('Failed to decrypt chat message', { level: 'error' });
+                        return tryDecrypt(attemptIndex + 1);
+                    }
+                };
+
+                const decryptedMessage = await tryDecrypt(0);
 
                 if (!decryptedMessage) {
                     return;

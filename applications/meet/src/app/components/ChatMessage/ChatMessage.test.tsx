@@ -48,7 +48,7 @@ describe('ChatMessage', () => {
     });
 
     it('clears message after sending via button click', async () => {
-        const mockOnMessageSend = vi.fn();
+        const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
@@ -80,7 +80,7 @@ describe('ChatMessage', () => {
     });
 
     it('calls onMessageSend when Enter key is pressed without Shift', async () => {
-        const mockOnMessageSend = vi.fn();
+        const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
@@ -127,7 +127,7 @@ describe('ChatMessage', () => {
     });
 
     it('maintains focus on textarea after sending message via Enter', async () => {
-        const mockOnMessageSend = vi.fn();
+        const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
