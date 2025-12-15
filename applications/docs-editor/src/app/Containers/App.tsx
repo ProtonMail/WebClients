@@ -476,6 +476,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           spreadsheetRef.current.focusSheet?.()
         }
       },
+
+      async markImportUpdateAsSuccessful(uuid: string) {
+        void docState.markImportUpdateAsSuccessful(uuid)
+      },
     }
 
     application.logger.info('Setting request handler for bridge')

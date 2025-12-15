@@ -47,7 +47,7 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
-import { PostApplicationError } from '../../Application/ApplicationEvent'
+import { ApplicationEvent, PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { doKeysBelongToAuthenticatedUser } from '../../Types/DocumentEntitlements'
@@ -102,6 +102,11 @@ export class WebsocketService implements WebsocketServiceInterface {
   destroy(): void {
     window.removeEventListener('beforeunload', this.handleWindowUnload)
     this.ledger.destroy()
+
+    this.eventBus.publish({
+      type: WebsocketConnectionEvent.Destroyed,
+      payload: undefined,
+    })
 
     for (const { debouncer, connection } of Object.values(this.connections)) {
       debouncer.destroy()
@@ -412,6 +417,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       content: Uint8Array<ArrayBuffer>,
       metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
     ) => Promise<void>,
+    source?: BroadcastSource,
   ): Promise<void> {
     let update = mergedUpdate
     if (isDocumentUpdateCompressionEnabled(this.unleashClient, this.documentType)) {
@@ -450,6 +456,13 @@ export class WebsocketService implements WebsocketServiceInterface {
         maxChunks: MAX_UPDATE_CHUNKS,
       })
       if (!canBeSplit) {
+        if (source === BroadcastSource.SheetsImport) {
+          this.eventBus.publish({
+            type: ApplicationEvent.SheetsImportErrorOccurred,
+            payload: undefined,
+          })
+          return
+        }
         PostApplicationError(this.eventBus, {
           translatedErrorTitle: c('Error').t`Update Too Large`,
           translatedError: c('Error')
@@ -494,6 +507,8 @@ export class WebsocketService implements WebsocketServiceInterface {
   async sendDocumentUpdateMessage(
     nodeMeta: NodeMeta | PublicNodeMeta,
     rawContent: Uint8Array<ArrayBuffer>,
+    source: BroadcastSource,
+    uuid?: string,
   ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
@@ -504,9 +519,23 @@ export class WebsocketService implements WebsocketServiceInterface {
     // with recalculating formulas, so we send updates immediately.
     if (this.documentType === 'sheet') {
       this.publishSavingEvent(nodeMeta)
-      void this.prepareAndBroadcastDocumentUpdate(nodeMeta, rawContent, async (_, content, metadata) => {
-        await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, content, metadata)
-      })
+      void this.prepareAndBroadcastDocumentUpdate(
+        nodeMeta,
+        rawContent,
+        async (_, content, metadata) => {
+          await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, content, metadata)
+          if (uuid) {
+            this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.ImportUpdateSuccessful]>({
+              type: WebsocketConnectionEvent.ImportUpdateSuccessful,
+              payload: {
+                document: nodeMeta,
+                uuid: uuid,
+              },
+            })
+          }
+        },
+        source,
+      )
       return
     }
 
