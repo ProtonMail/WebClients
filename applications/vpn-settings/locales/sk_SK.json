@@ -5280,6 +5280,9 @@
       "Select your deal": [
         "Vyberte si svoju ponuku"
       ],
+      "Select your payment method:": [
+        "Vyberte váš spôsob platby:"
+      ],
       "Select your pricing plan": [
         "Vyberte si plán predplatného"
       ],
@@ -10236,6 +10239,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Activity logs and policy": [
+        "Záznamy aktivít a pravidlá"
+      ],
       "Ad-blocker and malware protection": [
         "Blokovač reklám a ochrana pred malvérom"
       ],
@@ -10472,6 +10478,9 @@
       ],
       "Secure link sharing": [
         "Zdieľanie bezpečných odkazov"
+      ],
+      "Secure password management": [
+        "Bezpečná správa hesiel"
       ],
       "See team's availability": [
         "Pozrite si dostupnosť tímu"
@@ -12568,6 +12577,9 @@
       "How your free trial works:": [
         "Ako funguje vaša bezplatná skúšobná verzia:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Používam ${ BRAND_NAME } a myslím, že by sa vám to mohlo páčiť. Je to zabezpečený email, cloudové úložisko, správca hesiel a VPN, ktoré chránia vaše súkromie. Zaregistrujte sa cez tento odkaz a získajte 14 dní prémiových funkcií zadarmo: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Ak zrušíte pred týmto termínom, po skončení skúšobnej doby dôjde k zníženiu na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Ak nezrušíte, začne platiť váš plný plán a získate **${ referrerRewardAmount }** v kreditoch."
       ],
@@ -12588,6 +12600,9 @@
       ],
       "Refer friends": [
         "Odporučiť priateľov"
+      ],
+      "Share using ${ name }": [
+        "Zdieľať pomocou ${ name }"
       ],
       "Start earning credits": [
         "Začnite zarábať kredity"
