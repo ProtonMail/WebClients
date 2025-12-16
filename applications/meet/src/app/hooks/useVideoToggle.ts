@@ -72,7 +72,7 @@ export const useVideoToggle = (
 
         const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? systemDefaultCamera.deviceId : videoDeviceId;
 
-        if (toggleInProgress.current) {
+        if (toggleInProgress.current || !deviceId) {
             return;
         }
 
