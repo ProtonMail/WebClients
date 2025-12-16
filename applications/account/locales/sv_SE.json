@@ -2028,6 +2028,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -2060,6 +2066,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2460,6 +2469,9 @@
       "If you take your online safety seriously, you know you need to create a strong password to protect your online accounts. However, do you know that using the same username for all your accounts isn’t safe? In this article we go over why you should create varied and strong usernames.": [
         "Om du tar din säkerhet online på allvar vet du att du behöver skapa ett starkt lösenord för att skydda dina konton online. Men visste du att det inte är säkert att använda samma användarnamn för alla dina konton? I denna artikel går vi igenom varför du bör skapa varierade och starka användarnamn."
       ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Om du vill lyfta din professionella identitet är det viktigt att lära sig varför och hur man skapar en anpassad e-postdomän. De flesta använder gratis e-postadresser med standarddomäner som tillhandahålls av deras e-posttjänst."
+      ],
       "If you want to leave Google, one of the first things you must do is stop using its proprietary browser, Chrome, and its built-in password manager. A vital first step towards leaving Google is downloading your passwords so you can transition more easily to a new, better password manager.": [
         "Om du vill lämna Google är en av de första sakerna du måste göra att sluta använda deras egenutvecklade webbläsare, Chrome, och dess inbyggda lösenordshanterare. Ett viktigt första steg mot att lämna Google är att ladda ner dina lösenord så att du enklare kan övergå till en ny, bättre lösenordshanterare."
       ],
@@ -2546,6 +2558,12 @@
       ],
       "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
         "Dra nytta av den avancerade funktionen för e-postalias i ${ PASS_APP_NAME }"
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "De konsekvenser ett dataintrång kan ha för ditt liv beror i hög grad på vilken typ av information som exponerades och för vem. En snabb reaktion på ett dataintrång kan ofta skydda din digitala identitet och förhindra eventuella förluster."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Det mest privata och säkra sättet att kommunicera online är att använda end-to-end-kryptering. Om du skickar ett end-to-end-krypterat e-postmeddelande krypteras det på din enhet (din iPhone, Android eller bärbara dator) och dekrypteras inte förrän det når enheten för den person du skickade meddelandet till."
       ],
       "The most secure way to send pictures is with end-to-end encryption. Here are four ways to store and share photos privately.": [
         "Det säkraste sättet att skicka bilder är med end-to-end-kryptering. Här är fyra sätt att lagra och dela foton privat."
@@ -9963,6 +9981,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meddelanden i mappen \"Skickat\" eller \"Utkast\" kommer att fortsätta att visas i den mappen, även om du flyttar dem till annan mapp."
       ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Meddelanden i mapparna ”Skräppost” eller ”Papperskorg” kommer att exkluderas från platsen ”All e-post”."
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
@@ -11215,6 +11236,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "När du avbryter kommer din prenumeration inte att starta, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "När du klickar på en länk kommer denna funktion mot nätfiske be dig att bekräfta webbsidans URL."
       ],
@@ -11599,6 +11623,9 @@
       "You’re all set": [
         "Nu är det klart!"
       ],
+      "Zero charge today": [
+        "Ingen debitering idag"
+      ],
       "Zoom meeting": [
         "Zoom-möte"
       ]
@@ -11795,6 +11822,9 @@
     "Key generation": {
       "Generate key": [
         "Generera nyckel"
+      ],
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Om du genererade denna nyckel för att du misstänker att din tidigare nyckel har komprometterats, markera den som komprometterad i dina inställningar."
       ],
       "Key generation failed, please try again later.": [
         "Nyckelgenerering misslyckades, försök igen senare."
@@ -14059,6 +14089,11 @@
         "För individer"
       ]
     },
+    "mail_signup_2025: Info": {
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Alla ${ BRAND_NAME } för Business-appar och premiumfunktioner för att skydda hela ditt företag"
+      ]
+    },
     "mailtrial2024: Action": {
       "Special Offer": [
         "Specialerbjudande"
@@ -14182,6 +14217,12 @@
       ],
       "Create a new ${ appName } account": [
         "Skapa ett nytt ${ appName }-konto"
+      ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Njut av två veckor med ${ BRAND_NAME } gratis"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Upplev äkta integritet online. Skydda dina data med ${ BRAND_NAME } gratis under de kommande 14 dagarna."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Hitta användarnamnet för ditt ${ BRAND_NAME }-konto"
@@ -17745,6 +17786,9 @@
       ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Jag har använt ${ BRAND_NAME } och tänkte att du kanske skulle gilla det. Det är en säker e-post, molnlagring, lösenordshanterare och VPN som skyddar din integritet. Registrera dig med denna länk för att få 14 dagars premiumfunktioner gratis: ${ referralLink }"
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
@@ -21669,8 +21713,14 @@
       "Decrypt key": [
         "Avkryptera nyckel"
       ],
+      "Deep dive into cloud storage blog posts": [
+        "Djupdyk i blogginlägg om molnlagring"
+      ],
       "Deep dive into email blog posts": [
         "Djupdyk i e-postblogginlägg"
+      ],
+      "Deep dive into password manager blog posts": [
+        "Djupdyk i blogginlägg om lösenordshantering"
       ],
       "Deep dive into VPN blog posts": [
         "Djupdyk i VPN-blogginlägg"
