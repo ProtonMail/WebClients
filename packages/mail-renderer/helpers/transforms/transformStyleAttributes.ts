@@ -172,6 +172,17 @@ const replaceFixedPositionWithInherit = (element: HTMLElement) => {
     }
 };
 
+const replaceMinHeightWith100vh = (element: HTMLElement) => {
+    const minHeight = element.style.minHeight;
+    const minBlockSize = element.style.minBlockSize;
+    if (minHeight === '100vh') {
+        element.style.minHeight = 'auto';
+    }
+    if (minBlockSize === '100vh') {
+        element.style.minBlockSize = 'auto';
+    }
+};
+
 export const transformStyleAttributes = (document: Element) => {
     const nodesWithStyleAttribute = document.querySelectorAll('[style]');
 
@@ -189,5 +200,7 @@ export const transformStyleAttributes = (document: Element) => {
         replaceWhiteSpacePre(element);
 
         replaceFixedPositionWithInherit(element);
+
+        replaceMinHeightWith100vh(element);
     }
 };

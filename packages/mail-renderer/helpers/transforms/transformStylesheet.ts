@@ -13,6 +13,22 @@ const replaceAbsolutePositionOnFirstElement = (document: Element) => {
 };
 
 /**
+ * Min-height: 100vh makes our email display infinite height
+ * so we replace it with min-height: auto
+ */
+const replaceMinHeightWith100vh = (styleTag: HTMLStyleElement) => {
+    const minHeightRegex = /min-height[\s]*\:[\s]*100vh/gim;
+    const minBlockSizeRegex = /min-block-size[\s]*\:[\s]*100vh/gim;
+    const styleContent = styleTag.textContent;
+    if (styleContent && minHeightRegex.test(styleContent)) {
+        styleTag.textContent = styleContent.replaceAll(minHeightRegex, 'min-height: auto');
+    }
+    if (styleContent && minBlockSizeRegex.test(styleContent)) {
+        styleTag.textContent = styleContent.replaceAll(minBlockSizeRegex, 'min-block-size: auto');
+    }
+};
+
+/**
  * Because fixed position breaks some email layout it's safer to
  * replace it with inherit.
  *
@@ -84,5 +100,6 @@ export const transformStylesheet = (document: Element) => {
     styleTags.forEach((styleTag) => {
         replaceFixedPositionWithInherit(styleTag);
         replaceHeightDependentMediaQueries(styleTag);
+        replaceMinHeightWith100vh(styleTag);
     });
 };
