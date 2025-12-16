@@ -22948,6 +22948,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron@npm:39.2.7":
+  version: 39.2.7
+  resolution: "electron@npm:39.2.7"
+  dependencies:
+    "@electron/get": "npm:^2.0.0"
+    "@types/node": "npm:^22.7.7"
+    extract-zip: "npm:^2.0.1"
+  bin:
+    electron: cli.js
+  checksum: 10/a76dd5ee2568e533bd32e653f36795de6732b2a2a36d8af01b3a9105f5da47a8af18b7688454aa210ff03415dfba736a55acc191ef71887be1edceb536822b8f
+  languageName: node
+  linkType: hard
+
 "element-size@npm:^1.1.1":
   version: 1.1.1
   resolution: "element-size@npm:1.1.1"
@@ -37970,7 +37983,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.2"
     dotenv: "npm:^17.2.3"
-    electron: "npm:37.10.3"
+    electron: "npm:39.2.7"
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
