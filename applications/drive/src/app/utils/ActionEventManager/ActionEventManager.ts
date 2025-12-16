@@ -4,6 +4,7 @@ import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/even
 import { DriveEventType, getDrive } from '@proton/drive';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
+import { logging } from '../../modules/logging';
 import { sendErrorReport } from '../errorHandling';
 import { EnrichedError } from '../errorHandling/EnrichedError';
 import { handleSdkError } from '../errorHandling/useSdkErrorHandler';
@@ -13,6 +14,8 @@ import {
     type ActionEventMap,
     ActionEventName,
 } from './ActionEventManagerTypes';
+
+const logger = logging.getLogger('action-event-manager');
 
 /**
  * ActionEventManager - A type-safe event bus system for folder actions
@@ -111,6 +114,8 @@ class ActionEventManager {
         const allEventListeners = this.listeners.get(ActionEventName.ALL) || [];
 
         const allListeners = [...eventListeners, ...allEventListeners];
+
+        logger.debug(`Emitting action event ${event.type}`);
 
         // TODO: We need to verify the logic when we will have persisted storage
         await Promise.allSettled(
