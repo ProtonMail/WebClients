@@ -88,7 +88,6 @@ export const useVideoToggle = (
                   }
                 : {
                       deviceId: { exact: deviceId },
-                      facingMode,
                   };
 
         const currentVideoTrack = getCurrentVideoTrack();
