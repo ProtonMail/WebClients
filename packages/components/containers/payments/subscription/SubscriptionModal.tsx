@@ -12,6 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { usePaidUsersNudgeTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PaidUsersNudge/hooks/usePaidUsersNudgeTelemetry';
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
+import useConfig from '@proton/components/hooks/useConfig';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import {
     COUPON_CODES,
@@ -22,6 +23,7 @@ import {
     getAvailableSubscriptionActions,
     getHas2025OfferCoupon,
 } from '@proton/payments';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -63,6 +65,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
         const [organization, loadingOrganization] = useOrganization();
         const [modalState, setModalState, render] = useModalState();
+        const { APP_NAME } = useConfig();
 
         const depsLoading = loadingSubscription || loadingPlans || loadingOrganization || statusLoading;
 
@@ -149,6 +152,11 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             subscriptionPropsOnClose?.();
             modalState.onClose();
             subscriptionPropsRef.current = null;
+
+            checkoutTelemetry.subscriptionContainer.reportClosedByUser({
+                build: APP_NAME,
+                product: app,
+            });
         };
 
         const handleSubscribed = () => {

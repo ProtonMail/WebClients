@@ -1,5 +1,8 @@
-import type { PaymentStatus, Plan, Subscription } from '@proton/payments';
-import { type Currency, FREE_PLAN, PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments/core/constants';
+import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
+import type { Plan } from '@proton/payments/core/plan/interface';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces';

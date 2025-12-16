@@ -17,6 +17,7 @@ import {
     markPaymentMethodAsDefault,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import useModalState, { useModalStateWithData } from '../../../components/modalTwo/useModalState';
@@ -36,9 +37,10 @@ const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
 export interface Props {
     method: SavedPaymentMethod;
     methods: SavedPaymentMethod[];
+    app: APP_NAMES;
 }
 
-const PaymentMethodActions = ({ method, methods }: Props) => {
+const PaymentMethodActions = ({ method, methods, app }: Props) => {
     const { createNotification } = useNotifications();
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [confirmDeleteProps, setConfirmDeleteModal, renderConfirmDeleteModal] = useModalState();
@@ -100,6 +102,7 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
                     card={editModalPropsData.card}
                     renewState={editModalPropsData.method.Autopay}
                     paymentMethod={editModalPropsData.method}
+                    app={app}
                 />
             )}
             {renderConfirmDeleteModal && (

@@ -1,16 +1,14 @@
 import { getModelState } from '@proton/account/test';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
-import { CYCLE, FREE_PLAN, PLANS, Renew, type Subscription, changeRenewState } from '@proton/payments';
-import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { changeRenewState } from '@proton/payments/core/api/api';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { Renew, TrialType } from '@proton/payments/core/subscription/constants';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
 
 import SubscriptionsSection from './SubscriptionsSection';
-
-jest.mock('@proton/payments/core/subscription/helpers', () => ({
-    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
-    isReferralTrial: jest.fn(),
-}));
 
 const mockGetPaymentMethods = jest.fn();
 jest.mock('@proton/account/paymentMethods/hooks', () => ({
@@ -20,7 +18,6 @@ jest.mock('@proton/account/paymentMethods/hooks', () => ({
 describe('SubscriptionsSection', () => {
     let subscription: Subscription;
     let upcoming: Subscription | null = null;
-    const mockIsReferralTrial = isReferralTrial as jest.MockedFunction<typeof isReferralTrial>;
 
     beforeEach(() => {
         subscription = buildSubscription(
@@ -50,7 +47,6 @@ describe('SubscriptionsSection', () => {
         );
 
         jest.clearAllMocks();
-        mockIsReferralTrial.mockReturnValue(false);
         mockGetPaymentMethods.mockResolvedValue([{ ID: 'pm1' }]);
     });
 
@@ -190,7 +186,8 @@ describe('SubscriptionsSection', () => {
 
     it('should not call API when user presses reactivate button for referral trial without payment methods', async () => {
         subscription.Renew = Renew.Disabled;
-        mockIsReferralTrial.mockReturnValue(true);
+        subscription.TrialType = TrialType.ReferralProgram;
+        subscription.IsTrial = true;
         mockGetPaymentMethods.mockResolvedValue([]);
 
         const { getByText } = renderWithProviders(<SubscriptionsSection />, {
@@ -204,7 +201,6 @@ describe('SubscriptionsSection', () => {
         await new Promise((resolve) => setTimeout(resolve, 0));
 
         expect(mockGetPaymentMethods).toHaveBeenCalled();
-        expect(mockIsReferralTrial).toHaveBeenCalledWith(subscription);
         expect(apiMock).not.toHaveBeenCalled();
     });
 });

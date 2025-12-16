@@ -127,7 +127,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
 
     const planToCheck = {
         planIDs: { [payments.selectedPlan.name]: 1 },
-        currency: payments.currency,
+        currency: payments.selectedPlan.currency,
         cycle: payments.selectedPlan.cycle,
     };
 
@@ -285,7 +285,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
 
     const planToCheck = {
         planIDs: { [payments.selectedPlan.name]: 1 },
-        currency: payments.currency,
+        currency: payments.selectedPlan.currency,
         cycle: payments.selectedPlan.cycle,
     };
 

@@ -18,18 +18,6 @@ export const restrictedImports = {
             message: 'You should import from `@proton/` instead.',
         },
         {
-            group: ['@proton/payments/index'],
-            message: 'You should import from `@proton/payments` instead.',
-        },
-        {
-            group: ['@proton/payments/core/*'],
-            message: 'You should import from `@proton/payments` instead.',
-        },
-        {
-            group: ['@proton/payments/ui/*'],
-            message: 'You should import from `@proton/payments/ui` instead.',
-        },
-        {
             group: ['@proton/unleash/index'],
             message: 'You should import from `@proton/unleash` instead.',
         },

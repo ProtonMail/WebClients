@@ -15,14 +15,16 @@ import {
     PLAN_NAMES,
     type PLAN_SERVICES,
     PLAN_TYPES,
+    VPN_PASS_PROMOTION_COUPONS,
 } from '../constants';
 import { isRegionalCurrency } from '../currencies';
 import type { Currency, FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasLumoAddonFromPlanIDs, isIpAddon, isMemberAddon } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';
-import type { SubscriptionPlan } from '../plan/interface';
+import type { PlansMap, SubscriptionPlan } from '../plan/interface';
+import { getPlanFromIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
-import { SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
+import { Renew, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
 import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionCheckResponse } from './interface';
 
@@ -931,4 +933,151 @@ export function shouldHaveUpcomingSubscription(subscription: Subscription | Free
     }
 
     return false;
+}
+
+export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {
+    // If the user is on the bundlepro2022 plan, we keep showing that
+    if (planIDs?.[PLANS.BUNDLE_PRO]) {
+        return PLANS.BUNDLE_PRO;
+    }
+    if (plansMap[PLANS.BUNDLE_PRO_2024]) {
+        return PLANS.BUNDLE_PRO_2024;
+    }
+    if (plansMap[PLANS.BUNDLE_PRO]) {
+        return PLANS.BUNDLE_PRO;
+    }
+    return PLANS.BUNDLE_PRO_2024;
+};
+
+export const getIsVPNPassPromotion = (coupon: string | undefined, currency: Currency | undefined) => {
+    return VPN_PASS_PROMOTION_COUPONS.includes(coupon as any) && (!currency || !isRegionalCurrency(currency));
+};
+
+interface FreeSubscriptionResult {
+    subscriptionExpiresSoon: false;
+    renewDisabled: false;
+    renewEnabled: true;
+    expirationDate: null;
+}
+
+type SubscriptionResult = {
+    renewDisabled: boolean;
+    renewEnabled: boolean;
+    planName: string;
+} & (
+    | {
+          subscriptionExpiresSoon: true;
+          expirationDate: number;
+      }
+    | {
+          subscriptionExpiresSoon: false;
+          expirationDate: null;
+      }
+);
+
+export function subscriptionExpires(): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: undefined | null, cancelled?: boolean): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: FreeSubscription, cancelled?: boolean): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: Subscription | undefined, cancelled?: boolean): SubscriptionResult;
+export function subscriptionExpires(subscription: Subscription, cancelled?: boolean): SubscriptionResult;
+export function subscriptionExpires(
+    subscription: Subscription | FreeSubscription | undefined | null,
+    cancelled?: boolean
+): FreeSubscriptionResult | SubscriptionResult;
+export function subscriptionExpires(
+    subscription?: Subscription | FreeSubscription | undefined | null,
+    cancelled = false
+): FreeSubscriptionResult | SubscriptionResult {
+    if (!subscription || isFreeSubscription(subscription)) {
+        return {
+            subscriptionExpiresSoon: false,
+            renewDisabled: false,
+            renewEnabled: true,
+            expirationDate: null,
+        };
+    }
+
+    const latestSubscription = (() => {
+        if (subscription.Renew === Renew.Disabled || cancelled) {
+            return subscription;
+        }
+
+        return subscription.UpcomingSubscription ?? subscription;
+    })();
+    const renewDisabled = latestSubscription.Renew === Renew.Disabled || cancelled;
+    const renewEnabled = !renewDisabled;
+    const subscriptionExpiresSoon = renewDisabled;
+
+    // This will never be undefined but the empty string is here to make TS happy
+    const planName = getPlanTitle(latestSubscription) ?? '';
+
+    if (subscriptionExpiresSoon) {
+        return {
+            subscriptionExpiresSoon,
+            renewDisabled,
+            renewEnabled,
+            planName,
+            expirationDate: latestSubscription.PeriodEnd,
+        };
+    } else {
+        return {
+            subscriptionExpiresSoon,
+            renewDisabled,
+            renewEnabled,
+            planName,
+            expirationDate: null,
+        };
+    }
+}
+
+const getVpnAutoCoupon = ({ coupon, planIDs, cycle }: Parameters<typeof getAutoCoupon>[0]) => {
+    // user already provided a coupon
+    if (coupon) {
+        return;
+    }
+
+    const planAndCycleMatch =
+        [PLANS.VPN2024].some((plan) => planIDs?.[plan]) && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle as any);
+    if (!planAndCycleMatch) {
+        return;
+    }
+
+    return COUPON_CODES.VPN_INTRO_2025;
+};
+
+export const getAutoCoupon = ({
+    planIDs,
+    cycle,
+    coupon,
+    trial,
+    currency,
+}: {
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+    currency: Currency;
+    coupon?: string | null;
+    trial?: boolean;
+}) => {
+    // Don't apply automatic coupons for trials
+    if (trial) {
+        return coupon || undefined;
+    }
+
+    const vpnAutoCoupon = getVpnAutoCoupon({ coupon, planIDs, cycle, currency });
+    if (vpnAutoCoupon) {
+        return vpnAutoCoupon;
+    }
+
+    return coupon || undefined;
+};
+
+export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: PlansMap, cycle: CYCLE): CYCLE {
+    const plan = getPlanFromIDs(planIDs, plansMap);
+    if (!plan) {
+        return cycle;
+    }
+
+    const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
+    const maxCycle = Math.max(...availableCycles) as CYCLE;
+    return Math.min(cycle, maxCycle);
 }

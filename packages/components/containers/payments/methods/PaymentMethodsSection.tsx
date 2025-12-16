@@ -19,7 +19,7 @@ import {
     getAvailableSubscriptionActions,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
-import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
@@ -36,7 +36,7 @@ const AddPaypalButton = ({ onClick, ...rest }: ButtonProps) => {
     );
 };
 
-const PaymentMethodsSection = () => {
+const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
@@ -116,9 +116,11 @@ const PaymentMethodsSection = () => {
                     />
                 )}
             </div>
-            <PaymentMethodsTable loading={pollingEvents} methods={paymentMethods} />
-            {renderCreditCardModal && <EditCardModal onMethodAdded={loadAddedMethod} {...creditCardModalProps} />}
-            {renderPaypalV5Modal && <PayPalV5Modal onMethodAdded={loadAddedMethod} {...paypalV5ModalProps} />}
+            <PaymentMethodsTable loading={pollingEvents} methods={paymentMethods} app={app} />
+            {renderCreditCardModal && (
+                <EditCardModal app={app} onMethodAdded={loadAddedMethod} {...creditCardModalProps} />
+            )}
+            {renderPaypalV5Modal && <PayPalV5Modal app={app} onMethodAdded={loadAddedMethod} {...paypalV5ModalProps} />}
             {renderInAppPurchaseModal && subscription && (
                 <InAppPurchaseModal {...inAppPurchaseModalProps} subscription={subscription} />
             )}

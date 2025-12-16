@@ -5,7 +5,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { type CreatePaymentIntentApplePayData, fetchPaymentIntentV5, getTokenStatusV5 } from '../api';
+import { type CreatePaymentIntentApplePayData, fetchPaymentIntentV5, getTokenStatusV5 } from '../api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import { convertPaymentIntentData } from '../createPaymentToken';
 import type {

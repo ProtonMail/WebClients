@@ -5,7 +5,12 @@ import { c } from 'ttag';
 
 import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
 import { useLoading } from '@proton/hooks';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
+import type {
+    PaymentMethodType,
+    PaymentProcessorHook,
+    PaymentProcessorType,
+    PlainPaymentMethodType,
+} from '@proton/payments';
 import {
     type ADDON_NAMES,
     type AmountAndCurrency,
@@ -48,9 +53,15 @@ export interface Props {
     amountAndCurrency: AmountAndCurrency;
     onChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     onBeforeSepaPayment?: () => Promise<boolean>;
+    onValidationFailed: ({
+        selectedMethodType,
+        selectedMethodValue,
+    }: {
+        selectedMethodType: PlainPaymentMethodType;
+        selectedMethodValue: PaymentMethodType;
+    }) => void;
 }
 
 export interface Dependencies {
@@ -87,7 +98,7 @@ export type ChargebeeDirectDebitProcessorHook = Omit<PaymentProcessorHook, keyof
 type DirectDebitCustomerWithoutEmail = Omit<DirectDebitCustomer, 'email'>;
 
 export const useSepaDirectDebit = (
-    { amountAndCurrency, onChargeable, selectedPlanName, onBeforeSepaPayment }: Props,
+    { amountAndCurrency, onChargeable, selectedPlanName, onBeforeSepaPayment, onValidationFailed }: Props,
     { api, handles, verifyPayment, events }: Dependencies
 ): ChargebeeDirectDebitProcessorHook => {
     const fetchedPaymentTokenRef = useRef<ChargebeeFetchedPaymentToken | null>(null);
@@ -148,6 +159,11 @@ export const useSepaDirectDebit = (
         if (definedErrors.length === 0) {
             return;
         }
+
+        onValidationFailed({
+            selectedMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+        });
 
         throw new SepaFormInvalidError();
     };
@@ -240,6 +256,8 @@ export const useSepaDirectDebit = (
                     events,
                     v: 5,
                     token: fetchedPaymentTokenRef.current,
+                    paymentMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                    paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                 });
 
                 return tokenCreated(token);

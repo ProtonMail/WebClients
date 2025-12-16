@@ -15,6 +15,7 @@ import {
     SkeletonLoader,
     getCheckoutRenewNoticeTextFromCheckResult,
     useActiveBreakpoint,
+    useConfig,
     useErrorHandler,
     useHandler,
     useModalState,
@@ -29,6 +30,7 @@ import { useLoading } from '@proton/hooks';
 import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import {
+    type AvailablePaymentMethod,
     type BillingAddress,
     COUPON_CODES,
     CYCLE,
@@ -49,16 +51,24 @@ import {
     getOptimisticCheckResult,
     getOptimisticCheckout,
     getPlanFromPlanIDs,
+    getPlanNameFromIDs,
     getPlansMap,
     isRegionalCurrency,
     isSubscriptionCheckForbidden,
     switchPlan,
 } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import type {
+    EstimationChangeAction,
+    EstimationChangePayload,
+} from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -115,6 +125,10 @@ export interface Step1Rref {
     scrollIntoPayment: () => void;
 }
 
+type HandleOptimisticOptions = {
+    noTelemetry?: boolean;
+};
+
 const Step1 = ({
     signupConfiguration: {
         logo,
@@ -149,6 +163,7 @@ const Step1 = ({
     onChangeCurrency,
     signupTrial,
     subscription,
+    telemetryContext,
 }: {
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
@@ -185,7 +200,10 @@ const Step1 = ({
     // We do not use signupParameters.trial because trials only applies to the B2B audience
     signupTrial: boolean;
     subscription?: Subscription | FreeSubscription;
+    telemetryContext: PaymentTelemetryContext;
 }) => {
+    const { APP_NAME } = useConfig();
+
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
     const passTrialOfferEnabled = useFlag('PassTrialOffer');
@@ -335,6 +353,25 @@ const Step1 = ({
         }
     };
 
+    const selectedMethodRef = useRef<AvailablePaymentMethod>();
+    const reportEstimationChange = (action: EstimationChangeAction, overrides: Partial<EstimationChangePayload>) => {
+        checkoutTelemetry.reportSubscriptionEstimationChange({
+            action,
+            context: telemetryContext,
+            userCurrency: model.session?.resumedSessionResult.User?.Currency,
+            subscription: model.session?.subscription,
+            selectedPlanIDs: options.planIDs,
+            selectedCurrency: options.currency,
+            selectedCycle: options.cycle,
+            selectedCoupon: options.checkResult.Coupon?.Code,
+            paymentMethodType: selectedMethodRef.current?.type,
+            paymentMethodValue: selectedMethodRef.current?.value,
+            build: APP_NAME,
+            product: app,
+            ...overrides,
+        });
+    };
+
     const debouncedCheck = useHandler(
         (optimistic: Parameters<typeof check>[0], latest: any) => {
             handleOptimisticCheck(optimistic, latest).catch(noop);
@@ -342,10 +379,51 @@ const Step1 = ({
         { debounce: 400 }
     );
 
-    const handleOptimistic = (checkOptions: Partial<OptimisticOptions>) => {
+    const reportTelemetry = (checkOptions: Partial<OptimisticOptions>) => {
+        const sharedPayload = {
+            selectedCurrency: checkOptions.currency,
+            selectedCycle: checkOptions.cycle,
+            selectedCoupon: checkOptions.coupon,
+            selectedPlanIDs: checkOptions.planIDs,
+        };
+
+        if (checkOptions.planIDs && !isDeepEqual(options.planIDs, checkOptions.planIDs)) {
+            const currentlySelectedPlanName = getPlanNameFromIDs(options.planIDs);
+            const newlySelectedPlanName = getPlanNameFromIDs(checkOptions.planIDs);
+            const action = currentlySelectedPlanName === newlySelectedPlanName ? 'addon_changed' : 'plan_changed';
+            reportEstimationChange(action, sharedPayload);
+
+            // Do not report other telemetry if plan changed. For example, user can change both plan and currency when
+            // changing audience. If they selected a B2C plan with regional currency then we will change plan and
+            // currency (to USD/CHF/EUR) when user changes audience to B2B.
+            return;
+        }
+
+        if (checkOptions.currency && checkOptions.currency !== options.currency) {
+            reportEstimationChange('currency_changed', sharedPayload);
+        }
+
+        if (checkOptions.cycle && checkOptions.cycle !== options.cycle) {
+            reportEstimationChange('cycle_changed', sharedPayload);
+        }
+
+        if (checkOptions.coupon && checkOptions.coupon !== options.coupon) {
+            reportEstimationChange('coupon_changed', sharedPayload);
+        }
+    };
+
+    const handleOptimistic = (
+        checkOptions: Partial<OptimisticOptions>,
+        { noTelemetry }: HandleOptimisticOptions = {}
+    ) => {
         if (model.session?.state.payable === false) {
             return;
         }
+
+        if (!noTelemetry) {
+            reportTelemetry(checkOptions);
+        }
+
         const mergedCheckOptions = {
             ...model.optimistic,
             ...checkOptions,
@@ -395,7 +473,10 @@ const Step1 = ({
         debouncedCheck(completeCheckOptions, latest);
     };
 
-    const handleChangeCurrency = async (currency: Currency): Promise<Currency> => {
+    const handleChangeCurrency = async (
+        currency: Currency,
+        handleOptimisticOptions: HandleOptimisticOptions = {}
+    ): Promise<Currency> => {
         if (model.loadingDependencies) {
             return options.currency;
         }
@@ -405,9 +486,9 @@ const Step1 = ({
         const hasCurrentPlanInNewCurrency = !!newPlansMap[selectedPlan.Name];
 
         if (!hasCurrentPlanInNewCurrency) {
-            handleOptimistic({ currency, planIDs: {} });
+            handleOptimistic({ currency, planIDs: {} }, handleOptimisticOptions);
         } else {
-            handleOptimistic({ currency });
+            handleOptimistic({ currency }, handleOptimisticOptions);
         }
 
         return currency;
@@ -607,13 +688,18 @@ const Step1 = ({
             return;
         }
 
+        // this currency change isn't initiated by the user, so we don't want to send an event for this
+        const noTelemetryOptions: HandleOptimisticOptions = {
+            noTelemetry: true,
+        };
+
         // optionally switch B2C currency back to regional when the audience changes
         {
             const oldAudience = audience;
             // if user previously selected regional currency for B2C audience, then use it
             // if the previously selected currency isn't regional then preserve the current currency choice in B2B tab
             if (selectedB2CCurrency && isRegionalCurrency(selectedB2CCurrency) && newAudience === Audience.B2C) {
-                return handleChangeCurrency(selectedB2CCurrency);
+                return handleChangeCurrency(selectedB2CCurrency, noTelemetryOptions);
             }
 
             // save the user choice for future use
@@ -635,7 +721,7 @@ const Step1 = ({
 
         const newAvailableCurrency = getFallbackCurrency(options.currency);
 
-        return handleChangeCurrency(newAvailableCurrency);
+        return handleChangeCurrency(newAvailableCurrency, noTelemetryOptions);
     };
 
     const headerCenterElement = (() => {
@@ -1485,6 +1571,10 @@ const Step1 = ({
                                 }}
                                 paymentsApi={getPaymentsApi(silentApi)}
                                 offerBanner={isMailVariantB && offerBanner}
+                                telemetryContext={telemetryContext}
+                                onMethodChanged={(method) => {
+                                    selectedMethodRef.current = method;
+                                }}
                             />
                         </BoxContent>
                     </Box>

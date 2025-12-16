@@ -33,8 +33,7 @@ const setupHook = (props: Partial<Props> = {}, dependenciesProps: Partial<Depend
         },
         savedMethod: mockSavedMethod,
         onChargeable: jest.fn(),
-        onProcessPaymentToken: jest.fn(),
-        onProcessPaymentTokenFailed: jest.fn(),
+        onDeclined: jest.fn(),
     };
 
     const handles = getMockedIframeHandles();
@@ -133,37 +132,5 @@ describe('useSavedChargebeeMethod', () => {
             chargeable: true,
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         });
-    });
-
-    it('should process payment token', async () => {
-        const onProcessPaymentToken = jest.fn();
-        const { result } = setupHook({ onProcessPaymentToken });
-
-        mockPostV5Token({});
-        const processPaymentToken = result.current.processPaymentToken();
-
-        await processPaymentToken;
-
-        expect(onProcessPaymentToken).toHaveBeenCalledWith('saved-chargebee');
-        expect(result.current.paymentProcessor?.fetchedPaymentToken).toBeDefined();
-    });
-
-    it('should call onProcessPaymentTokenFailed if processing fails', async () => {
-        const onProcessPaymentTokenFailed = jest.fn();
-        const { result } = setupHook(
-            {
-                onProcessPaymentTokenFailed,
-            },
-            {
-                verifyPayment: jest.fn().mockRejectedValue(new Error('Verification failed')),
-            }
-        );
-
-        mockPostV5Token({});
-
-        await expect(result.current.processPaymentToken()).rejects.toThrow('Verification failed');
-
-        expect(onProcessPaymentTokenFailed).toHaveBeenCalledWith('saved-chargebee');
-        expect(result.current.paymentProcessor?.fetchedPaymentToken).toBe(null);
     });
 });

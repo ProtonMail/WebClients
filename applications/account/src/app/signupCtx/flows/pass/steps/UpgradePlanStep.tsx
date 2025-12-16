@@ -29,7 +29,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         const price = payments.getPriceOrFallback({
             planIDs,
             cycle: CYCLE.YEARLY,
-            currency: payments.currency,
+            currency: payments.selectedPlan.currency,
         });
 
         return getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerMonth);
@@ -39,13 +39,18 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         const price = payments.getPriceOrFallback({
             planIDs: passLifetime.planIDs,
             cycle: CYCLE.YEARLY,
-            currency: payments.currency,
+            currency: payments.selectedPlan.currency,
         });
         return getSimplePriceString(price.uiData.currency, price.uiData.regularAmountPerCycle);
     })();
 
     const handlePayPlan = (plan: PLANS, coupon?: string) => {
-        payments.selectPlan({ planIDs: { [plan]: 1 }, cycle: CYCLE.YEARLY, currency: payments.currency, coupon });
+        payments.selectPlan({
+            planIDs: { [plan]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: payments.selectedPlan.currency,
+            coupon,
+        });
         void onContinue(true);
     };
 
@@ -56,14 +61,14 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
 
         /** A limitation of the payments context initialisation means we need to
          * check the pricing with the coupon to ensure the UI data is available */
-        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
+        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
     }, [payments.initialized]);
 
     const openOfferModal = () =>
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
                 if (upgradeTo) {
-                    payments.selectPlan(getPassPlusOfferPlan(payments.currency));
+                    payments.selectPlan(getPassPlusOfferPlan(payments.selectedPlan.currency));
                     return onContinue(true);
                 }
 
@@ -168,7 +173,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             </div>
             {offerModal.state.open && (
                 <OfferModal
-                    uiData={payments.getPriceOrFallback(getPassPlusOfferPlan(payments.currency)).uiData}
+                    uiData={payments.getPriceOrFallback(getPassPlusOfferPlan(payments.selectedPlan.currency)).uiData}
                     onClose={offerModal.abort}
                     onContinue={offerModal.resolver}
                     loading={offerModal.state.loading}

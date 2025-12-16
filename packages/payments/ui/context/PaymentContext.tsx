@@ -5,27 +5,24 @@ import { useGetPlans, usePlans } from '@proton/account/plans/hooks';
 import { selectSubscription } from '@proton/account/subscription';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import {
-    type GetPreferredCurrencyParamsHook,
-    type OnChargeable,
-    useCurrencies,
-} from '@proton/components/payments/client-extensions';
+import type { GetPreferredCurrencyParamsHook, OnChargeable } from '@proton/components/payments/client-extensions';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { CheckSubscriptionData } from '../../core/api';
+import type { CheckSubscriptionData } from '../../core/api/api';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import {
     type PaymentsCheckout,
-    type RequiredCheckResponse,
     getCheckout,
     getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '../../core/checkout';
@@ -46,7 +43,7 @@ import { hasFreePlanIDs, planIDsPositiveDifference } from '../../core/planIDs';
 import { getPrice } from '../../core/price-helpers';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
-import { isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
+import { getAutoCoupon, isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
 import type {
     EnrichedCheckResponse,
     FullPlansMap,
@@ -55,6 +52,9 @@ import type {
 } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { isFreeSubscription } from '../../core/type-guards';
+import type { PaymentTelemetryContext } from '../../telemetry/helpers';
+import type { EstimationChangeAction } from '../../telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '../../telemetry/telemetry';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
 export interface PlanToCheck {
@@ -85,6 +85,8 @@ export interface InitializeProps {
     planToCheck?: Omit<PlanToCheck, 'currency'>;
     onChargeable: OnChargeable;
     availablePlans?: { planIDs: PlanIDs; cycle: Cycle }[];
+    telemetryContext: PaymentTelemetryContext;
+    product: ProductParam;
 }
 
 export interface PricesResult {
@@ -279,7 +281,6 @@ export interface PaymentsContextTypeInner {
     hasEssentialData: boolean;
     selectPlanIDs: (planIDs: PlanIDs) => Promise<void>;
     selectCycle: (cycle: Cycle) => Promise<void>;
-    currency: Currency;
     selectCurrency: (currency: Currency) => Promise<void>;
     selectBillingAddress: (billingAddress: BillingAddress) => Promise<void>;
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionCheckResponse[]>;
@@ -301,7 +302,7 @@ export interface PaymentsContextTypeInner {
     plansMap: PlansMap;
 
     // TODO: exposing for now. Will likely want to abstract this result
-    checkResult: RequiredCheckResponse;
+    checkResult: EnrichedCheckResponse;
     zipCodeValid: boolean;
 
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
@@ -331,6 +332,8 @@ export interface PaymentsContextTypeInner {
 
     setVatNumber: (vatNumber: string) => void;
     vatNumber: string | undefined;
+
+    telemetryContext: PaymentTelemetryContext;
 }
 
 export type PaymentsContextType = Pick<
@@ -343,7 +346,6 @@ export type PaymentsContextType = Pick<
     | 'availableCurrencies'
     | 'getAvailableCurrencies'
     | 'getPreferredCurrency'
-    | 'currency'
     | 'selectCurrency'
     | 'selectBillingAddress'
     | 'checkMultiplePlans'
@@ -364,6 +366,7 @@ export type PaymentsContextType = Pick<
     | 'zipCodeValid'
     | 'setVatNumber'
     | 'vatNumber'
+    | 'telemetryContext'
 >;
 
 export const PaymentsContext = createContext<PaymentsContextTypeInner | null>(null);
@@ -375,12 +378,19 @@ interface PaymentsContextProviderProps {
     cachedPlans?: Plan[];
 }
 
+interface PaymentsContextProviderState {
+    telemetryContext: PaymentTelemetryContext;
+    product: ProductParam;
+    billingAddress: BillingAddress;
+}
+
 export const PaymentsContextProvider = ({
     children,
     preload = true,
     authenticated = true,
     cachedPlans,
 }: PaymentsContextProviderProps) => {
+    const { APP_NAME } = useConfig();
     const store = useStore();
 
     const defaultApi = useApi();
@@ -400,8 +410,17 @@ export const PaymentsContextProvider = ({
         selectSubscription(store.getState())?.value || FREE_SUBSCRIPTION
     );
 
-    const billingAddressRef = useRef<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
     const [, rerender] = useState<{}>({});
+    const stateRef = useRef<PaymentsContextProviderState>({
+        telemetryContext: 'other',
+        product: 'generic',
+        billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+    });
+
+    const setState = (state: Partial<PaymentsContextProviderState>) => {
+        stateRef.current = { ...stateRef.current, ...state };
+        rerender({});
+    };
 
     const [vatNumber, setVatNumberInner] = useState<string | undefined>(undefined);
 
@@ -416,8 +435,6 @@ export const PaymentsContextProvider = ({
     const initialPlanIDs = { [PLANS.MAIL]: 1 };
 
     const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
-
-    //const plansMapCache = useRef<any>({});
 
     const getLocalizedPlansMap = (overrides?: { paramCurrency?: GetPreferredCurrencyParamsHook['paramCurrency'] }) => {
         const result = getPreferredPlansMap({
@@ -478,16 +495,59 @@ export const PaymentsContextProvider = ({
 
     const multiCheckGroups = useMultiCheckGroups();
 
-    const setBillingAddress = (billingAddress: BillingAddress) => {
-        billingAddressRef.current = billingAddress;
-        rerender({});
-    };
-
     const subscriptionState = subscription;
     const selectNewPlan = async (
         newPlanToCheck: PlanToCheck & { billingAddress?: BillingAddress },
         { subscription }: { subscription: Subscription | FreeSubscription } = { subscription: subscriptionState }
     ) => {
+        const action: EstimationChangeAction | null = (() => {
+            const newSelectedPlan = new SelectedPlan(
+                newPlanToCheck.planIDs,
+                plansMap,
+                newPlanToCheck.cycle,
+                newPlanToCheck.currency
+            );
+
+            if (newSelectedPlan.cycle !== selectedPlan.cycle) {
+                return 'cycle_changed';
+            }
+
+            if (newSelectedPlan.currency !== selectedPlan.currency) {
+                return 'currency_changed';
+            }
+
+            if (newPlanToCheck.coupon !== planToCheck.coupon) {
+                return 'coupon_changed';
+            }
+
+            if (newSelectedPlan.getPlanName() !== selectedPlan.getPlanName()) {
+                return 'plan_changed';
+            }
+
+            if (!newSelectedPlan.isEqualTo(selectedPlan)) {
+                return 'plan_changed';
+            }
+
+            return null;
+        })();
+
+        if (action && initialized) {
+            checkoutTelemetry.reportSubscriptionEstimationChange({
+                action,
+                context: stateRef.current.telemetryContext,
+                subscription: undefined,
+                userCurrency: undefined,
+                selectedPlanIDs: newPlanToCheck.planIDs,
+                selectedCurrency: newPlanToCheck.currency,
+                selectedCycle: newPlanToCheck.cycle,
+                selectedCoupon: newPlanToCheck.coupon,
+                paymentMethodType: undefined,
+                paymentMethodValue: undefined,
+                build: APP_NAME,
+                product: stateRef.current.product,
+            });
+        }
+
         const isFree = hasFreePlanIDs(newPlanToCheck.planIDs);
         if (isFree) {
             const plansMap = getLocalizedPlansMap({ paramCurrency: newPlanToCheck.currency });
@@ -507,11 +567,11 @@ export const PaymentsContextProvider = ({
 
         const subscriptionData = getSubscriptionDataFromPlanToCheck(
             { ...newPlanToCheck, ValidateZipCode: true },
-            billingAddressRef.current
+            stateRef.current.billingAddress
         );
         const newBillingAddress = newPlanToCheck.billingAddress;
         if (newBillingAddress) {
-            setBillingAddress(newBillingAddress);
+            setState({ billingAddress: newBillingAddress });
         }
 
         try {
@@ -562,6 +622,8 @@ export const PaymentsContextProvider = ({
         paramCurrency,
         planToCheck: planToCheckParam,
         availablePlans,
+        telemetryContext,
+        product,
         // paymentFlow,
         // onChargeable,
     }: InitializeProps) => {
@@ -581,7 +643,7 @@ export const PaymentsContextProvider = ({
         });
         setAvailableCurrencies(availableCurrencies);
 
-        setBillingAddress(getBillingAddressFromPaymentStatus(status));
+        setState({ billingAddress: getBillingAddressFromPaymentStatus(status) });
 
         const paymentsApi = getPaymentsApi(api);
         paymentsApiRef.current = paymentsApi;
@@ -606,7 +668,7 @@ export const PaymentsContextProvider = ({
                             ...planToCheckParam,
                             currency: preferredCurrency,
                         }),
-                        billingAddress: billingAddressRef.current,
+                        billingAddress: stateRef.current.billingAddress,
                     },
                     { subscription }
                 );
@@ -625,7 +687,7 @@ export const PaymentsContextProvider = ({
                                 ...planToCheckParam,
                                 currency: preferredCurrency,
                             }),
-                            billingAddress: billingAddressRef.current,
+                            billingAddress: stateRef.current.billingAddress,
                         },
                         { subscription }
                     );
@@ -640,7 +702,7 @@ export const PaymentsContextProvider = ({
                     currency: preferredCurrency,
                     coupon: planToCheckParam?.coupon,
                 }),
-                billingAddress: billingAddressRef.current,
+                billingAddress: stateRef.current.billingAddress,
             }))
             .filter((plan) => {
                 // There needs to be a coupon for it to be worth to ask the API.
@@ -658,9 +720,11 @@ export const PaymentsContextProvider = ({
                 paymentsApi,
                 subscription,
                 plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
-                billingAddress: billingAddressRef.current,
+                billingAddress: stateRef.current.billingAddress,
             }).catch(noop);
         }
+
+        setState({ telemetryContext, product });
 
         setInitialized(true);
     };
@@ -721,7 +785,7 @@ export const PaymentsContextProvider = ({
             return getFallbackPrice(planToCheck);
         }
 
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck, billingAddressRef.current);
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(planToCheck, stateRef.current.billingAddress);
         const result = paymentsApiRef.current.getCachedCheck(subscriptionData);
 
         // Cache is missing
@@ -794,7 +858,6 @@ export const PaymentsContextProvider = ({
                 subscription,
                 plans,
             }),
-        currency: selectedPlan.currency,
         selectNewPlan,
         selectCurrency,
         selectBillingAddress,
@@ -805,7 +868,7 @@ export const PaymentsContextProvider = ({
                 paymentsApi: paymentsApiRef.current,
                 subscription,
                 plansToCheck,
-                billingAddress: billingAddressRef.current,
+                billingAddress: stateRef.current.billingAddress,
             });
         },
         plans,
@@ -819,7 +882,7 @@ export const PaymentsContextProvider = ({
         checkResult,
         zipCodeValid,
         // paymentFacade,
-        billingAddress: billingAddressRef.current,
+        billingAddress: stateRef.current.billingAddress,
         uiData: {
             checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
         },
@@ -831,6 +894,7 @@ export const PaymentsContextProvider = ({
         subscription,
         setVatNumber,
         vatNumber,
+        telemetryContext: stateRef.current.telemetryContext,
     };
 
     return <PaymentsContext.Provider value={value}>{children}</PaymentsContext.Provider>;

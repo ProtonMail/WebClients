@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 
 import { ChargebeeIframe, getPaypalButtonWidth } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
+import type { PayButtonOnClickPayload } from './PayButton';
 
 import '@proton/components/containers/payments/StyledPayPalButton.scss';
 
@@ -45,12 +46,14 @@ export interface ChargebeePaypalButtonProps extends ChargebeeWrapperProps {
     className?: string;
     formInvalid?: boolean;
     loading?: boolean;
+    onClick?: (payload: PayButtonOnClickPayload) => void;
 }
 
 export const ChargebeePaypalButton = ({
     formInvalid,
     width: widthProp,
     loading,
+    onClick,
     ...props
 }: ChargebeePaypalButtonProps) => {
     const initializing = props.chargebeePaypal.initializing;
@@ -62,6 +65,7 @@ export const ChargebeePaypalButton = ({
     const fakePaypalButton = useMemo(() => {
         const fakeButtonProps = {
             width,
+            onClick: () => onClick?.({ source: 'fake-button', type: 'paypal' }),
         };
 
         let button: ReactNode;
@@ -82,7 +86,12 @@ export const ChargebeePaypalButton = ({
         <div className="relative" style={renderFakeButton ? { width } : undefined}>
             {fakePaypalButton}
             <div className={clsx(renderFakeButton && 'visibility-hidden absolute')}>
-                <ChargebeeIframe type="paypal" width={width} {...props} />
+                <ChargebeeIframe
+                    type="paypal"
+                    width={width}
+                    onClick={() => onClick?.({ source: 'real-button', type: 'paypal' })}
+                    {...props}
+                />
             </div>
         </div>
     );

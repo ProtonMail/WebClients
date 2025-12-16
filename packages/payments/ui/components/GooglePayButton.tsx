@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 import type { GooglePayProcessorHook } from '../../core/payment-processors/useGooglePay';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
+import type { PayButtonOnClickPayload } from './PayButton';
 
 import './GooglePayButton.scss';
 
@@ -44,9 +45,10 @@ export interface GooglePayButtonProps extends ChargebeeWrapperProps {
     className?: string;
     formInvalid?: boolean;
     loading?: boolean;
+    onClick?: (payload: PayButtonOnClickPayload) => void;
 }
 
-export const GooglePayButton = ({ formInvalid, loading, ...props }: GooglePayButtonProps) => {
+export const GooglePayButton = ({ formInvalid, loading, onClick, ...props }: GooglePayButtonProps) => {
     const initializing = props.googlePay.initializing;
     const disabled = props.disabled;
 
@@ -54,6 +56,7 @@ export const GooglePayButton = ({ formInvalid, loading, ...props }: GooglePayBut
     const fakeGooglePayButton = useMemo(() => {
         const sharedProps = {
             className: clsx('w-full', props.className),
+            onClick: () => onClick?.({ source: 'fake-button', type: 'google-pay' }),
         };
 
         let button: ReactNode;
@@ -74,7 +77,11 @@ export const GooglePayButton = ({ formInvalid, loading, ...props }: GooglePayBut
         <div className="relative">
             {fakeGooglePayButton}
             <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
-                <ChargebeeIframe type="google-pay" {...props} />
+                <ChargebeeIframe
+                    type="google-pay"
+                    {...props}
+                    onClick={() => onClick?.({ source: 'real-button', type: 'google-pay' })}
+                />
             </div>
         </div>
     );
