@@ -214,7 +214,7 @@ export const removeSignatureFromHTMLMessage = (contentBeforeBlockquote: string):
  * - look for the following string: ------- Forwarded Message -------
  *
  * REPLY CASE
- * - start by checking of the contents contains one line finishing with a colon (cheap)
+ * - start by checking of the contents contains one line finishing with a colon and includes an email address and a chevron (cheap)
  * - look for the following string: On Tuesday, 24 september 2024 at 4:00 PM, Sender <sender@address> wrote: (expensive)
  *
  */
@@ -231,15 +231,18 @@ export const locatePlaintextInternalBlockquotes = (content?: string) => {
     }
 
     // REPLY CASE
-    // Cheap test to check if the content contains a line ending with a colon
-    const lineEndsWithColon = content.split('\n').some((line) => line.endsWith(':'));
+    // Cheap test to check if the content contains a line ending with a colon and
+    // includes an email address and a chevron
+    const lineEndsWithColon = content
+        .split('\n')
+        .some((line) => line.endsWith(':') && line.includes('<') && line.includes('>'));
     if (!lineEndsWithColon) {
         return [content, ''];
     }
 
     // Expensive text, looking for a line containing an email, some backspace and a chevron
     const emailRegex = '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+';
-    const replyRegex = new RegExp(`.*<${emailRegex}>.*:\\s*\\n\\s*\\n^>`, 'm');
+    const replyRegex = new RegExp(`^[^\\n]*<${emailRegex}>[^\\n]*:\\s*\\n\\s*\\n>`, 'm');
     const replyMatchIndex = content.search(replyRegex);
     if (replyMatchIndex !== -1) {
         return [content.slice(0, replyMatchIndex), content.slice(replyMatchIndex)];

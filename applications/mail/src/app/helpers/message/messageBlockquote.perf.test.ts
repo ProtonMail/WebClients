@@ -53,7 +53,6 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed no blockquotes 500 in: ${duration} ms`);
             expect(duration).toBeLessThanOrEqual(1);
         });
 
@@ -63,7 +62,6 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed no blockquotes 10'000 in: ${duration} ms`);
             expect(duration).toBeLessThanOrEqual(1);
         });
 
@@ -73,38 +71,34 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed no blockquotes 100'000 in: ${duration} ms`);
             expect(duration).toBeLessThanOrEqual(1);
         });
 
-        it.only('should test text with a colon at end of line and 500 words content', () => {
+        it('should test text with a colon at end of line and 500 words content', () => {
             const text = generateWithRandomColon(500);
             const startTime = performance.now();
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed line with end colon 500 in: ${duration} ms`);
-            // expect(duration).toBeLessThanOrEqual(1);
+            expect(duration).toBeLessThanOrEqual(1);
         });
 
-        it.only('should test text with a colon at end of line and 10k words content', () => {
+        it('should test text with a colon at end of line and 10k words content', () => {
             const text = generateWithRandomColon(10_000);
             const startTime = performance.now();
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed line with end colon 10k in: ${duration} ms`);
-            // expect(duration).toBeLessThanOrEqual(1);
+            expect(duration).toBeLessThanOrEqual(1);
         });
 
-        it.only('should test text with a colon at end of line and 100k words content', () => {
+        it('should test text with a colon at end of line and 100k words content', () => {
             const text = generateWithRandomColon(100_000);
             const startTime = performance.now();
             locatePlaintextInternalBlockquotes(text);
             const endTime = performance.now();
             const duration = endTime - startTime;
-            console.log(`Parsed line with end colon 100k in: ${duration} ms`);
-            // expect(duration).toBeLessThanOrEqual(1);
+            expect(duration).toBeLessThanOrEqual(1);
         });
     });
 
@@ -116,7 +110,6 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed forward blockquotes 500 in: ${duration} ms`);
                 expect(duration).toBeLessThanOrEqual(1);
             });
 
@@ -126,7 +119,6 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed forward blockquotes 10'000 in: ${duration} ms`);
                 expect(duration).toBeLessThanOrEqual(1);
             });
 
@@ -136,7 +128,6 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed forward blockquotes 100'000 in: ${duration} ms`);
                 expect(duration).toBeLessThanOrEqual(1);
             });
         });
@@ -148,9 +139,7 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed reply blockquotes 500 in: ${duration} ms`);
-                // TODO define value after improving the method
-                // expect(duration).toBeLessThanOrEqual(10);
+                expect(duration).toBeLessThanOrEqual(1);
             });
 
             it('should test for 10k words', () => {
@@ -159,9 +148,7 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed reply blockquotes 10'000 in: ${duration} ms`);
-                // TODO define value after improving the method
-                // expect(duration).toBeLessThanOrEqual(10);
+                expect(duration).toBeLessThanOrEqual(1);
             });
 
             it('should test for 100k words', () => {
@@ -170,9 +157,7 @@ describe('locatePlaintextInternalBlockquotes performances', () => {
                 locatePlaintextInternalBlockquotes(text);
                 const endTime = performance.now();
                 const duration = endTime - startTime;
-                console.log(`Parsed reply blockquotes 100'000 in: ${duration} ms`);
-                // TODO define value after improving the method
-                // expect(duration).toBeLessThanOrEqual(10);
+                expect(duration).toBeLessThanOrEqual(1);
             });
         });
     });
