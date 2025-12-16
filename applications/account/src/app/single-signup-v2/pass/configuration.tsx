@@ -17,6 +17,7 @@ import {
     getFileAttachments,
     getLoginsAndNotes,
     getLoginsAndNotesText,
+    getPassCli,
     getPassMonitorText,
     getPassUsers,
     getPassUsersText,
@@ -439,6 +440,7 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
         getPassKeys(true),
         getPassDarkWebMonitoring(),
         getFileAttachments(),
+        getPassCli(),
     ].filter(isTruthy);
 };
 
@@ -468,6 +470,7 @@ export const getCustomPassFamilyFeatures = () => {
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
         getPassMonitor(true),
+        getPassCli(),
     ];
 };
 
