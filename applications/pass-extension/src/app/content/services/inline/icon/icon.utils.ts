@@ -81,7 +81,6 @@ export const computeIconShift = (
         const { x, y, maxShift, anchor, container } = options;
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
-
         /** Prepass: `document.elementsFromPoint` will exclude elements that are
          * set to `pointer-events: none`. These may be part of the shift we want
          * to resolve. Set them to `auto` temporarily and restore */
