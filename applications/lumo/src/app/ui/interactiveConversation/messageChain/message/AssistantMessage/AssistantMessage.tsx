@@ -18,7 +18,6 @@ import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
 import LinkWarningModal from '../../../../components/LumoMarkdown/LinkWarningModal';
 import SiblingSelector from '../../../../components/SiblingSelector';
-import ToolCallLoading from '../../../../components/ToolCallLoading/ToolCallLoading';
 import AssistantFeedbackModal from '../actionToolbar/AssistantFeedbackModal';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';

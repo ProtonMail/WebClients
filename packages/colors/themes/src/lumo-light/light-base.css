@@ -21,7 +21,7 @@
     --text-invert: white;
     --text-markdown: #24292E;
     /* Emphasized text */
-    --text-strong: rgb(186 186 247 / 0.3)
+    --text-strong: rgb(186 186 247 / 0.3);
 
     --field-norm: #ADABA8;
     --field-hover: #8F8D8A;
@@ -44,7 +44,7 @@
     /* lumo plus toggle background */
     --background-upsell-toggle: #e5e1f5;
      /* lumo plus toggle button background */
-    --background-upsell-toggle-button: white;    
+    --background-upsell-toggle-button: white;
     /* lumo plus toggle container ghost mode */
      --background-upsell-toggle-ghost-mode: rgba(91, 87, 107, 0.6);
      --background-upsell-toggle-ghost-mode-button: #292733;
