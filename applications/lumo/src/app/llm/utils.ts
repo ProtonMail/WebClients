@@ -1,16 +1,45 @@
 import type { MessageMap } from '../redux/slices/core/messages';
-import type { Attachment, Message } from '../types';
+import type { Attachment, ContentBlock, Message } from '../types';
 import { getApproximateTokenCount } from './tokenizer';
+
+/**
+ * Calculate token count for a single content block.
+ * Delegates to appropriate calculation based on block type.
+ */
+function calculateBlockTokens(block: ContentBlock): number {
+    switch (block.type) {
+        case 'text':
+            return getApproximateTokenCount(block.content);
+        case 'tool_call':
+            return getApproximateTokenCount(block.content);
+        case 'tool_result':
+            return getApproximateTokenCount(block.content);
+        default:
+            // Future-proof: unknown block types
+            return 0;
+    }
+}
 
 export const calculateContextSize = (messageMap: MessageMap): number => {
     // Use fast approximation for better performance (4 chars/token)
     return Object.values(messageMap).reduce((total, message) => {
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
+        // Calculate content tokens from blocks if available, otherwise use legacy fields
+        let contentTokens = 0;
+        if (message.blocks && message.blocks.length > 0) {
+            // New format: iterate through blocks and delegate to helper
+            contentTokens = message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
+        } else {
+            // Legacy format: calculate from individual fields
+            contentTokens =
+                getApproximateTokenCount(message.content || '') +
+                getApproximateTokenCount(message.toolCall || '') +
+                getApproximateTokenCount(message.toolResult || '');
+        }
+
+        // Context (from attachments) is not part of blocks
         const contextTokens = getApproximateTokenCount(message.context || '');
 
-        return total + contentTokens + toolCallTokens + toolResultTokens + contextTokens;
+        return total + contentTokens + contextTokens;
     }, 0);
 };
 
@@ -20,14 +49,22 @@ export const calculateContextSize = (messageMap: MessageMap): number => {
  */
 export const calculateMessageContentTokens = (messageChain: Message[]): number => {
     return messageChain.reduce((total, message) => {
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
-        return total + contentTokens + toolCallTokens + toolResultTokens;
+        if (message.blocks && message.blocks.length > 0) {
+            // New format: iterate through blocks and delegate to helper
+            return total + message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
+        } else {
+            // Legacy format
+            return (
+                total +
+                getApproximateTokenCount(message.content || '') +
+                getApproximateTokenCount(message.toolCall || '') +
+                getApproximateTokenCount(message.toolResult || '')
+            );
+        }
     }, 0);
 };
 
-// Calculate estimated token size for a single attachment
+// Calculate estimated tokn size for a single attachment
 export const calculateSingleAttachmentContextSize = (attachment: Attachment): number => {
     if (!attachment || attachment.processing || !attachment.markdown || !attachment.filename) {
         return 0;
@@ -137,15 +174,23 @@ export const calculateTotalContextSize = (messageChain: Message[], currentAttach
 // Calculate context size for the conversation history (messages + their attachments)
 export const calculateConversationContextSize = (messageChain: Message[]): number => {
     return messageChain.reduce((total, message) => {
-        // Message content, tool calls, and tool results (using fast approximation)
-        const contentTokens = getApproximateTokenCount(message.content || '');
-        const toolCallTokens = getApproximateTokenCount(message.toolCall || '');
-        const toolResultTokens = getApproximateTokenCount(message.toolResult || '');
+        // Calculate content tokens from blocks if available, otherwise use legacy fields
+        let contentTokens = 0;
+        if (message.blocks && message.blocks.length > 0) {
+            // New format: iterate through blocks and delegate to helper
+            contentTokens = message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
+        } else {
+            // Legacy format
+            contentTokens =
+                getApproximateTokenCount(message.content || '') +
+                getApproximateTokenCount(message.toolCall || '') +
+                getApproximateTokenCount(message.toolResult || '');
+        }
 
         // Context from attachments in this message (already formatted by flattenAttachmentsForLlm)
         const contextTokens = getApproximateTokenCount(message.context || '');
 
-        return total + contentTokens + toolCallTokens + toolResultTokens + contextTokens;
+        return total + contentTokens + contextTokens;
     }, 0);
 };
 
