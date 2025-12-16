@@ -62,7 +62,8 @@ body:has(.booking-main-container) {
 			--padding-inline: #{rem(11)};
 
 			&:hover,
-			&:focus {
+			&:focus,
+			&[aria-expanded='true'] {
 				border: 1px solid #e2dbff;
 				background: #f7f5ff;
 			}
