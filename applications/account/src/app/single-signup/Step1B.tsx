@@ -1112,14 +1112,14 @@ const Step1B = ({
         />
     );
 
-    const signInText = (
+    const signInText = !(signupTrial || checkTrial) ? (
         <div className="text-center color-norm">
             {
                 // translator: Full sentence "Already have an account? Sign in"
                 c('Go to sign in').jt`Already have an account? ${signIn}`
             }
         </div>
-    );
+    ) : null;
 
     const paymentSummary = (
         <PaymentSummary
@@ -1391,15 +1391,16 @@ const Step1B = ({
                                                                 </Button>
                                                             </div>
                                                         )}
-                                                        {isVpnPassBundleBusinessPlan && (
-                                                            <span>
-                                                                {
-                                                                    // translator: Full sentence "Already have an account? Sign in"
-                                                                    c('Go to sign in')
-                                                                        .jt`Already have an account? ${signIn}`
-                                                                }
-                                                            </span>
-                                                        )}
+                                                        {isVpnPassBundleBusinessPlan &&
+                                                            !(signupTrial || checkTrial) && (
+                                                                <span>
+                                                                    {
+                                                                        // translator: Full sentence "Already have an account? Sign in"
+                                                                        c('Go to sign in')
+                                                                            .jt`Already have an account? ${signIn}`
+                                                                    }
+                                                                </span>
+                                                            )}
                                                         {!isB2bPlan && (
                                                             <div className="mt-4 color-weak text-sm">
                                                                 {c('Info')
