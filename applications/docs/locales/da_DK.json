@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Opret nyt ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Opret ny mappe"
       ],
@@ -3088,7 +3091,7 @@
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
-        "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Venligst siden og prøv igen."
+        "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Indlæs siden igen og prøv så igen."
       ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
@@ -3113,6 +3116,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
+      "Unable to import file": [
+        "Filen kan ikke importeres"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
@@ -3143,6 +3149,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Vi har problemer med at synkronisere dit dokument. Opdatér siden."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Vi kunne ikke importere denne fil til ${ SHEETS_APP_NAME }. Du kan prøve at kopiere og indsætte indholdet i en ny ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
@@ -6823,7 +6832,7 @@
         "Støtte"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {

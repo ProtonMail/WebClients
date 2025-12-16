@@ -847,6 +847,11 @@
         "未顯示 ${ hiddenResultsCount } 個結果"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，將以${ renewCycle } 自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消訂購授權"
@@ -3799,6 +3804,9 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已經存在此位置。"
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
@@ -5341,6 +5349,9 @@
       ],
       "Resume now": [
         "立即恢復"
+      ],
+      "Terms and conditions": [
+        "合約條款"
       ],
       "What’s this?": [
         "這是什麼？"
@@ -7227,6 +7238,9 @@
       "Friend subscribed": [
         "已訂閱的親友"
       ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
+      ],
       "More sharing options": [
         "更多分享選項"
       ],
@@ -8728,6 +8742,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 尊重您隱私的 AI 助理"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
