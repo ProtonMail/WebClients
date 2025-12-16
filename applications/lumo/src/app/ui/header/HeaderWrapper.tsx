@@ -7,9 +7,10 @@ import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { getIsMobileDevice } from '../../util/device';
-import { NewLabel } from '../components/NewLabel';
+import LumoB2BUpsellLink from '../components/LumoB2BUpsellLink';
 import LumoLogoHeader from './LumoLogo';
 
 const HeaderRightSide = ({ children }: { children: React.ReactNode }) => {
@@ -31,6 +32,7 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isGuest = useIsGuest();
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu } = useSidebar();
     const { isSmallScreen } = useSidebar();
+    const { showForBusinessLink } = useLumoPlan();
 
     const isMobileDevice = getIsMobileDevice();
 
@@ -56,15 +58,11 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                                     className="inline-flex py-3 px-4 color-weak text-no-decoration"
                                 >{c('collider_2025: b2b').t`By ${BRAND_NAME}`}</Href>
                             </li>
-                            <li className="pt-1 no-print">
-                                <Href
-                                    href="https://lumo.proton.me/business"
-                                    className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1"
-                                >
-                                    {c('collider_2025: Top nav link').t`For Business`}
-                                    <NewLabel />
-                                </Href>
-                            </li>
+                            {showForBusinessLink && (
+                                <li className="pt-1 no-print">
+                                    <LumoB2BUpsellLink className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1" />
+                                </li>
+                            )}
                             {isGuest && !isMobileDevice && (
                                 <li className="ml-auto hidden lg:inline-flex no-print">
                                     <Href
