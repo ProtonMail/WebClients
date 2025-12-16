@@ -254,15 +254,15 @@ export class SearchService {
     private sanitizeWorkerQuery(query: string): string {
         // The worker interprets AND, OR, NOT as boolean operators
         // Remove trailing operators that would cause parse errors like "scala and"
-        let sanitized = query
+        const sanitized = query
             .replace(/\s+(and|or|not)\s*$/i, '') // trailing "and", "or", "not"
             .trim();
-        
+
         // If the entire query was just a boolean operator, return empty
         if (/^(and|or|not)$/i.test(sanitized)) {
             return '';
         }
-        
+
         return sanitized;
     }
 
@@ -274,24 +274,24 @@ export class SearchService {
         if (!this.userId || !this.worker) {
             return [];
         }
-        
+
         // Sanitize query to avoid parse errors with boolean operators
         const sanitizedQuery = this.sanitizeWorkerQuery(query);
         if (!sanitizedQuery) {
             return [];
         }
-        
+
         try {
             const response = await this.postToWorker({
                 type: WorkerMessageType.Search,
                 query: sanitizedQuery,
             });
-            
+
             if (response.error) {
                 console.warn('[SearchService] Worker search error:', response.error);
                 return [];
             }
-            
+
             return response.results || [];
         } catch (error) {
             console.warn('[SearchService] Worker search failed:', error);
@@ -330,15 +330,15 @@ export class SearchService {
         // Try foundation search first (full-text index)
         const workerResults = await this.searchWithWorker(normalizedQuery);
         const foundConversationIds = new Set<string>();
-        
+
         if (workerResults.length > 0) {
             console.log('[SearchService] Foundation search returned', workerResults.length, 'results');
-            
+
             // Map worker results (sorted by relevance) to SearchResult format
             for (const [_score, conversationId] of workerResults) {
                 const conversation = conversations[conversationId];
                 if (!conversation) continue;
-                
+
                 foundConversationIds.add(conversationId);
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
                 const timestamp = new Date(conversation.createdAt).getTime();
@@ -357,7 +357,7 @@ export class SearchService {
         // (in case index is stale or worker failed)
         Object.values(conversations).forEach((conversation) => {
             if (foundConversationIds.has(conversation.id)) return; // Already found by worker
-            
+
             const title = conversation.title?.toLowerCase() || '';
             if (title.includes(normalizedQuery)) {
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
@@ -381,7 +381,7 @@ export class SearchService {
 
             const projectName = space.projectName?.toLowerCase() || '';
             const projectDescription = space.projectInstructions?.toLowerCase() || '';
-            
+
             if (projectName.includes(normalizedQuery) || projectDescription.includes(normalizedQuery)) {
                 const timestamp = new Date(space.createdAt).getTime();
 
@@ -468,42 +468,42 @@ export class SearchService {
         if (docCandidates.length > 0) {
             // Use BM25 to rank documents by relevance
             const rankedDocs = this.bm25Index.rankDocuments(query, docCandidates, 50, 0.1);
-            
+
             for (const { document: candidate, score } of rankedDocs) {
                 const doc = candidate.doc as DriveDocument;
-                
+
                 // Extract context snippet - find the best matching part of content
                 let matchContext: string | undefined;
                 if (doc.content) {
                     // Get the most relevant terms from the query that exist in the document
                     const matchingTerms = this.bm25Index.getMatchingTerms(query);
-                    
+
                     if (matchingTerms.length > 0) {
                         // Find the first matching term in the content
                         const contentLower = doc.content.toLowerCase();
                         let bestMatchIndex = -1;
-                        
+
                         for (const term of matchingTerms) {
                             const idx = contentLower.indexOf(term);
                             if (idx !== -1 && (bestMatchIndex === -1 || idx < bestMatchIndex)) {
                                 bestMatchIndex = idx;
                             }
                         }
-                        
+
                         if (bestMatchIndex !== -1) {
                             const snippetRadius = 80;
                             const start = Math.max(0, bestMatchIndex - snippetRadius);
                             const end = Math.min(doc.content.length, bestMatchIndex + snippetRadius);
-                            
+
                             let snippet = doc.content.slice(start, end);
                             if (start > 0) snippet = '…' + snippet;
                             if (end < doc.content.length) snippet = snippet + '…';
-                            
+
                             matchContext = snippet.replace(/\s+/g, ' ').trim();
                         }
                     }
                 }
-                
+
                 deduplicated.push({
                     type: 'document',
                     documentId: doc.id,
@@ -522,13 +522,13 @@ export class SearchService {
             // Documents with scores should be sorted by score
             const aScore = (a as any)._score;
             const bScore = (b as any)._score;
-            
+
             if (aScore !== undefined && bScore !== undefined) {
                 return bScore - aScore; // Higher score first
             }
             if (aScore !== undefined) return -1; // Documents with scores first
             if (bScore !== undefined) return 1;
-            
+
             // Fall back to timestamp for non-documents
             return b.timestamp - a.timestamp;
         });
@@ -599,7 +599,7 @@ export class SearchService {
             // Remove from BM25 index
             const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
             this.bm25Index.removeDocument(doc.id, searchableText);
-            
+
             this.driveDocuments = this.driveDocuments.filter((d) => d.id !== documentId);
             console.log('[SearchService] Removed document:', documentId);
             void this.persistManifest();
@@ -661,7 +661,7 @@ export class SearchService {
     /**
      * Retrieve relevant documents for a query, filtered by spaceId (for RAG)
      * Used to automatically inject document context into prompts for projects
-     * 
+     *
      * @param query - The user's prompt/query
      * @param spaceId - The project spaceId to filter documents by
      * @param topK - Maximum number of documents to return (default 5)
@@ -676,7 +676,7 @@ export class SearchService {
     ): Promise<{ id: string; name: string; content: string; score: number }[]> {
         console.log(`[SearchService] RAG: Starting retrieval for space ${spaceId}, query: "${query.slice(0, 50)}..."`);
         console.log(`[SearchService] RAG: Total documents in index: ${this.driveDocuments.length}`);
-        
+
         if (this.userId && !this.manifestReady) {
             console.log('[SearchService] RAG: Loading manifest...');
             this.manifestReady = this.loadManifest();
@@ -690,7 +690,7 @@ export class SearchService {
         const uniqueSpaceIds = [...new Set(this.driveDocuments.map(d => d.spaceId))];
         console.log(`[SearchService] RAG: Unique spaceIds in index:`, uniqueSpaceIds);
         console.log(`[SearchService] RAG: Looking for spaceId:`, spaceId);
-        
+
         // Log all documents with their spaceIds
         console.log(`[SearchService] RAG: All documents:`, this.driveDocuments.map(d => ({
             name: d.name,
@@ -741,7 +741,7 @@ export class SearchService {
      * Format retrieved documents into a context string for the LLM prompt.
      * Documents are already sorted by relevance (highest first).
      * Will include as many documents as fit within the max context size.
-     * 
+     *
      * @param documents - Documents sorted by relevance score (highest first)
      * @param maxContextChars - Maximum characters for the entire context (default ~100k chars ≈ 25k tokens)
      */
