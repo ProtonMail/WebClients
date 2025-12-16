@@ -206,32 +206,36 @@ const AssistantMessage = ({
         [handleRegenerateMessage, message, isWebSearchButtonToggled]
     );
 
+    // Hide message if it's loading and truly empty (no content, no tool calls)
+    const shouldShow = !isLoading || hasContent || hasToolCall;
+
     return (
         <>
             <div className="gap-2 relative">
-                <div
-                    // ref={markdownContainerRef}
-                    className={clsx(
-                        'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-4 bg-norm'
-                    )}
-                    style={{
-                        '--min-h-custom': '62px',
-                    }}
-                >
+                {shouldShow && (
                     <div
-                        ref={markdownContainerRef}
-                        className="markdown-rendering w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                        // ref={markdownContainerRef}
+                        className={clsx(
+                            'assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm'
+                        )}
+                        style={{
+                            '--min-h-custom': '62px',
+                        }}
                     >
-                        <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
-                            <p className="color-weak font-bold mb-1">DEBUG INFO</p>
-                            <p className="color-weak m-0">isLoading: {JSON.stringify(isLoading)}</p>
-                            <p className="color-weak m-0">hasToolCall: {JSON.stringify(hasToolCall)}</p>
-                            <p className="color-weak m-0 break-all">blocks: {JSON.stringify(blocks.length)}</p>
-                            <p className="color-weak m-0">searchResults: {JSON.stringify(searchResults !== null)}</p>
-                        </div>
-                        {
-                            // eslint-disable-next-line no-nested-ternary
-                            isLoading && !hasToolCall ? (
+                        <div
+                            ref={markdownContainerRef}
+                            className="markdown-rendering flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
+                        >
+                            <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
+                                <p className="color-weak font-bold mb-1">DEBUG INFO</p>
+                                <p className="color-weak m-0">isLoading: {JSON.stringify(isLoading)}</p>
+                                <p className="color-weak m-0">hasToolCall: {JSON.stringify(hasToolCall)}</p>
+                                <p className="color-weak m-0 break-all">blocks: {JSON.stringify(blocks.length)}</p>
+                                <p className="color-weak m-0">
+                                    searchResults: {JSON.stringify(searchResults !== null)}
+                                </p>
+                            </div>
+                            {isLoading && !hasToolCall ? (
                                 <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                     <div className="rectangle-skeleton keep-motion"></div>
                                 </div>
@@ -267,10 +271,10 @@ const AssistantMessage = ({
                                         retryButtonRef={retryButtonRef}
                                     />
                                 </div>
-                            )
-                        }
+                            )}
+                        </div>
                     </div>
-                </div>
+                )}
                 {isLastMessage && (
                     <AvatarAndNotice
                         isFinishedGenerating={isFinishedGenerating}
