@@ -55,6 +55,7 @@ export interface DriveSDKMethods {
     browseFolderChildren: (folderUid?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
     downloadFile: (nodeUid: string, onProgress?: (progress: number) => void) => Promise<ArrayBuffer>;
     uploadFile: (folderUid: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+    createFolder: (parentFolderUid: string, folderName: string) => Promise<string>;
     navigateToFolder: (folderUid: string) => void;
     navigateUp: () => void;
     getRootFolder: () => Promise<DriveNode>;
@@ -387,6 +388,26 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
         [drive]
     );
 
+    const createFolder = useCallback(
+        async (parentFolderUid: string, folderName: string): Promise<string> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
+            }
+
+            try {
+                console.log(`Creating folder "${folderName}" in parent ${parentFolderUid}`);
+                const result = await drive.createFolder(parentFolderUid, folderName);
+                console.log(`Folder created successfully, node UID: ${result.nodeUid}`);
+                return result.nodeUid;
+            } catch (error) {
+                console.error('Failed to create folder:', error);
+                throw error;
+            }
+        },
+        [drive, isGuest]
+    );
+
     const subscribeToTreeEvents = useCallback(
         async (treeEventScopeId: string, callback: (event: DriveEvent) => Promise<void>): Promise<EventSubscription> => {
             if (!drive) {
@@ -425,6 +446,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
         browseFolderChildren,
         downloadFile,
         uploadFile,
+        createFolder,
         navigateToFolder,
         navigateUp,
         getRootFolder,
