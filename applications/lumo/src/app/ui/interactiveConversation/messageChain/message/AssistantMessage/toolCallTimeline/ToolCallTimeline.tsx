@@ -27,28 +27,24 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
     }
 }
 
-const ToolCallTimelineItemComponent = ({ toolCall, isInProgress, isLast }: ToolCallTimelineItemProps) => {
+const ToolCallTimelineItemComponent = ({ toolCall, isInProgress }: ToolCallTimelineItemProps) => {
     const [presentLabel, pastLabel] = getToolCallLabel(toolCall);
     const label = isInProgress ? presentLabel : pastLabel;
 
     return (
         <div className="tool-call-timeline-item">
-            <div className="flex flex-row items-center gap-2">
-                {/* Circle indicator */}
-                {/*<div className="items-center flex flex-center" style={{ height: '100%' }}>*/}
-                {/*    <div className={clsx('tool-call-circle', isInProgress && 'tool-call-circle--in-progress')} />*/}
-                {/*</div>*/}
+            {/* Circle indicator */}
+            <div className={clsx('tool-call-circle', isInProgress && 'tool-call-circle--in-progress')} />
 
-                {/* Label */}
-                <p
-                    className={clsx(
-                        'text-sm m-0 py-0.5',
-                        isInProgress ? 'color-norm tool-call-label--in-progress' : 'color-weak'
-                    )}
-                >
-                    {label}
-                </p>
-            </div>
+            {/* Label */}
+            <p
+                className={clsx(
+                    'text-sm m-0 py-0.5',
+                    isInProgress ? 'color-norm tool-call-label--in-progress' : 'color-weak'
+                )}
+            >
+                {label}
+            </p>
         </div>
     );
 };
