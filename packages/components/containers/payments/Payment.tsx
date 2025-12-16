@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
@@ -16,6 +15,7 @@ import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/r
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { useStableLoading } from '@proton/hooks';
 import {
+    type AvailablePaymentMethod,
     type BillingAddressStatus,
     type Currency,
     type FreeSubscription,
@@ -23,6 +23,7 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentMethodFlow,
     type PaymentMethodType,
+    type PlainPaymentMethodType,
     type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
@@ -62,11 +63,14 @@ import { NoPaymentRequiredNote } from './subscription/modal-components/NoPayment
 export interface Props {
     flow: PaymentMethodFlow;
     method?: PaymentMethodType;
-    onMethod: (value: PaymentMethodType | undefined) => void;
+    onMethod: (
+        paymentMethod: AvailablePaymentMethod | PlainPaymentMethodType | undefined,
+        source?: 'user_action'
+    ) => void;
     noMaxWidth?: boolean;
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;
-    defaultMethod?: PAYMENT_METHOD_TYPES;
+    defaultMethod?: PlainPaymentMethodType;
     iframeHandles: CbIframeHandles;
     chargebeeCard: ChargebeeCardProcessorHook;
     chargebeePaypal: ChargebeePaypalProcessorHook;
@@ -80,7 +84,6 @@ export interface Props {
     savedMethodExternal?: SavedPaymentMethodExternal;
     currency: Currency;
     amount: number;
-    paymentComponentLoaded: () => void;
     themeCode?: ThemeCode;
     bitcoinChargebee: BitcoinHook;
     directDebit: ChargebeeDirectDebitProcessorHook;
@@ -116,7 +119,6 @@ export const PaymentsNoApi = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
-    paymentComponentLoaded,
     themeCode,
     bitcoinChargebee,
     user,
@@ -141,10 +143,6 @@ export const PaymentsNoApi = ({
     const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
 
     useEffect(() => {
-        paymentComponentLoaded();
-    }, []);
-
-    useEffect(() => {
         if (loading) {
             return onMethod(undefined);
         }
@@ -154,9 +152,9 @@ export const PaymentsNoApi = ({
         }
 
         const selectedMethod = allMethods.find((otherMethod) => otherMethod.value === method);
-        const result = allMethods[0];
-        if (!selectedMethod && result) {
-            onMethod(result.value);
+        const firstMethod = allMethods[0];
+        if (!selectedMethod && firstMethod) {
+            onMethod(firstMethod);
         }
     }, [loading, allMethods.length]);
 
@@ -241,7 +239,7 @@ export const PaymentsNoApi = ({
     return (
         <>
             <div
-                className={clsx('payment-container center', noMaxWidth === false && 'max-w-full md:max-w-custom')}
+                className={clsx('payment-container mx-auto', noMaxWidth === false && 'max-w-full md:max-w-custom')}
                 style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
             >
                 {paymentMethodRequired && (
@@ -254,7 +252,7 @@ export const PaymentsNoApi = ({
                         <PaymentMethodSelector
                             options={allMethods}
                             method={method}
-                            onChange={(value) => onMethod(value)}
+                            onChange={(paymentMethod) => onMethod(paymentMethod, 'user_action')}
                             lastUsedMethod={lastUsedMethod}
                             narrow={isSingleSignup}
                             showCardIcons={showCardIcons}

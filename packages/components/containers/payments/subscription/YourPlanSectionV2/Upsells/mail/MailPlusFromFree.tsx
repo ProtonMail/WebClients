@@ -5,7 +5,6 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
@@ -69,7 +68,6 @@ export const useMailPlusFromFreeUpsells = ({
     user,
 }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
@@ -78,14 +76,12 @@ export const useMailPlusFromFreeUpsells = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 
@@ -109,7 +105,7 @@ export const useMailPlusFromFreeUpsells = ({
         }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, serversCount, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

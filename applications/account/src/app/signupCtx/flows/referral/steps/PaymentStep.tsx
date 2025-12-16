@@ -68,6 +68,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
+        product: signup.app,
+        telemetryContext: payments.telemetryContext,
     });
 
     const validatePayment = () => {
@@ -83,6 +85,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         zipCodeBackendValid: payments.zipCodeValid,
         previosValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
+        telemetryContext: payments.telemetryContext,
     });
 
     const vatNumber = useVatNumber({
@@ -189,6 +192,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     data-testid="pay"
                     className="py-4 text-semibold"
                     paypalClassName=""
+                    product={signup.app}
+                    telemetryContext={payments.telemetryContext}
                     suffix={
                         <div className="text-center mt-4">
                             <span className="color-success text-semibold">

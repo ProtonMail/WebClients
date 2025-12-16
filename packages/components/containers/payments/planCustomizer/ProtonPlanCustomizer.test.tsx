@@ -20,6 +20,7 @@ const defaultProps: Props = {
     onChangePlanIDs: onChangePlanIDsMock,
     plansMap: PLANS_MAP,
     latestSubscription: FREE_SUBSCRIPTION,
+    telemetryContext: 'other',
 };
 
 const mockUseFlag = jest.fn().mockReturnValue(false);

@@ -12,7 +12,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -32,8 +32,11 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const payments = usePaymentOptimistic();
     const [loading, setLoading] = useState(false);
     const { options } = payments;
-    const amountDue = getSimplePriceString(payments.currency, options.checkResult.AmountDue);
-    const monthlyPrice = getSimplePriceString(payments.currency, payments.uiData.checkout.withDiscountPerMonth);
+    const amountDue = getSimplePriceString(payments.selectedPlan.currency, options.checkResult.AmountDue);
+    const monthlyPrice = getSimplePriceString(
+        payments.selectedPlan.currency,
+        payments.uiData.checkout.withDiscountPerMonth
+    );
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -51,6 +54,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
+        product: APPS.PROTONPASS,
+        telemetryContext: payments.telemetryContext,
     });
 
     const validatePayment = () => {
@@ -66,6 +71,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         zipCodeBackendValid: payments.zipCodeValid,
         previosValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
+        telemetryContext: payments.telemetryContext,
     });
 
     const vatNumber = useVatNumber({
@@ -157,6 +163,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                                 audience={Audience.B2C}
                                 scribeAddonEnabled
                                 showUsersTooltip
+                                telemetryContext={payments.telemetryContext}
                             />
                         );
                     })()}
@@ -179,6 +186,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                         paymentFacade={paymentFacade}
                         loading={loading}
                         data-testid="pay"
+                        product={APPS.PROTONPASS}
+                        telemetryContext={payments.telemetryContext}
                         className="py-4 text-semibold"
                         suffix={
                             <div className="text-center mt-8">

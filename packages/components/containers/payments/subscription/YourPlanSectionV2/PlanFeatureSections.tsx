@@ -21,14 +21,12 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
-import { type Subscription, getRenewalTime } from '@proton/payments';
+import { type Subscription, getRenewalTime, subscriptionExpires } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
-
-import { subscriptionExpires } from '../helpers';
 
 const FeatureElement = ({
     icon,

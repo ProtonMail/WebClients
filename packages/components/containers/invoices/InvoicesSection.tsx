@@ -14,6 +14,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -31,7 +32,7 @@ enum DocumentType {
     Transactions = 'Transactions',
 }
 
-const InvoicesSection = () => {
+const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const enableTransactions = useFlag('TransactionsView');
 
     const [user] = useUser();
@@ -201,6 +202,7 @@ const InvoicesSection = () => {
                 ) : (
                     <InvoiceGroup
                         {...(hook as InvoicesHook)}
+                        app={app}
                         onEdit={(invoice) => openBillingAddressModal({ editExistingInvoice: true, invoice })}
                     />
                 )}

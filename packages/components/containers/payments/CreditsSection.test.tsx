@@ -1,8 +1,8 @@
 import { getModelState } from '@proton/account/test';
 import { userDefault } from '@proton/components/hooks/helpers/test';
 import { CYCLE, PLANS, type Subscription } from '@proton/payments';
-import { renderWithProviders } from '@proton/testing';
-import { applyHOCs, getSubscriptionState, withApi, withCache } from '@proton/testing';
+import { APPS } from '@proton/shared/lib/constants';
+import { applyHOCs, getSubscriptionState, renderWithProviders, withApi, withCache } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
 
 import CreditsSection from './CreditsSection';
@@ -37,7 +37,7 @@ beforeEach(() => {
 });
 
 it('should render', () => {
-    const { container } = renderWithProviders(<ContextCreditsSection />, {
+    const { container } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(subscription),
@@ -47,7 +47,7 @@ it('should render', () => {
 });
 
 it('should display the number of available credits', () => {
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
+    const { getByTestId } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(subscription),
@@ -59,7 +59,7 @@ it('should display the number of available credits', () => {
 it('should render positive amount of credits if there are more credits than upcoming subscription price', () => {
     user.Credit = 12988;
     subscription.UpcomingSubscription = upcoming;
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
+    const { getByTestId } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(subscription),
@@ -72,7 +72,7 @@ it('should render credits as-is if subscription is managed by Chargebee', () => 
     subscription.UpcomingSubscription = upcoming;
     user.Credit = 12988;
 
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
+    const { getByTestId } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(subscription),
@@ -82,7 +82,7 @@ it('should render credits as-is if subscription is managed by Chargebee', () => 
 });
 
 it('should display loader if subscription is not available', () => {
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
+    const { getByTestId } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(null as any),
@@ -94,7 +94,7 @@ it('should display loader if subscription is not available', () => {
 it('should take into account discount', () => {
     subscription.UpcomingSubscription = upcoming;
     subscription.UpcomingSubscription!.Discount = 1988;
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
+    const { getByTestId } = renderWithProviders(<ContextCreditsSection app={APPS.PROTONMAIL} />, {
         preloadedState: {
             user: getModelState(user),
             subscription: getSubscriptionState(subscription as any),

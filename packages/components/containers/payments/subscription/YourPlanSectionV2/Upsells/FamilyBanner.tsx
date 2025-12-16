@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -24,7 +23,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.FAMILY;
     const [openSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;
 
@@ -33,7 +31,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
-            telemetryFlow,
         });
     };
 
@@ -42,7 +39,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 

@@ -2,7 +2,6 @@ export {
     buyCredit,
     changeRenewState,
     checkInvoice,
-    createSubscription,
     createToken,
     createTokenV4,
     createTokenV5,
@@ -14,7 +13,6 @@ export {
     getFreePlan,
     getInvoicePDF,
     getLatestCancelledSubscription,
-    getLifetimeProductType,
     getPaymentMethods,
     getPaymentMethodStatus,
     getPaymentsVersion,
@@ -48,7 +46,7 @@ export {
     type FetchPaymentIntentV5Response,
     type GetChargebeeConfigurationResponse,
     type PaymentsVersion,
-} from './core/api';
+} from './core/api/api';
 export { PAYMENTS_API_ERROR_CODES } from './core/api-error-codes';
 export {
     BILLING_ADDRESS_VALID,
@@ -238,12 +236,8 @@ export {
     ChargebeePaypalPaymentProcessor,
     type ChargebeePaypalModalHandles,
 } from './core/payment-processors/chargebeePaypalPayment';
-export {
-    getSystemByHookType,
-    type PaymentProcessorHook,
-    type PaymentProcessorType,
-} from './core/payment-processors/interface';
-export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
+export { type PaymentProcessorHook, type PaymentProcessorType } from './core/payment-processors/interface';
+export { PaymentProcessor, InvalidDataError } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
@@ -432,6 +426,11 @@ export {
     PLANS_WITH_AI_INCLUDED,
     regularCycles,
     willTrialExpireInLessThan1Week,
+    notHigherThanAvailableOnBackend,
+    getBundleProPlanToUse,
+    subscriptionExpires,
+    isReferralTrial,
+    getIsVPNPassPromotion,
 } from './core/subscription/helpers';
 export {
     type Coupon,
@@ -477,6 +476,7 @@ export {
     isV5PaymentToken,
     isValidPlanName,
     methodMatches,
+    isSavedPaymentMethod,
 } from './core/type-guards';
 export { toV5PaymentToken, v5PaymentTokenToLegacyPaymentToken } from './core/utils';
 export { getDefaultPostalCodeByStateCode } from './postal-codes/default-postal-codes';

@@ -14,6 +14,7 @@ import {
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
+    useConfig,
     useModalState,
 } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
@@ -36,10 +37,10 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type {
     BillingAddress,
+    EnrichedCheckResponse,
     ExtendedTokenPayment,
     PaymentProcessorHook,
     PaymentsCheckout,
-    RequiredCheckResponse,
     TokenPayment,
 } from '@proton/payments';
 import {
@@ -60,13 +61,21 @@ import {
     getOptimisticCheckResult,
     getPaymentsVersion,
     getPlanFromPlanIDs,
+    getPlanNameFromIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import type {
+    EstimationChangeAction,
+    EstimationChangePayload,
+} from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
+    type APP_NAMES,
     PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
@@ -200,6 +209,8 @@ const Step1B = ({
     signupTrial,
     toAppName,
     couponUrlParam,
+    toApp,
+    telemetryContext,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -225,6 +236,8 @@ const Step1B = ({
     signupTrial: boolean; // true iff trial detected through signupParameters (thus the signup prefix)
     toAppName: string;
     couponUrlParam: string | undefined;
+    toApp: APP_NAMES;
+    telemetryContext: PaymentTelemetryContext;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const silentApi = useSilentApi();
@@ -233,6 +246,7 @@ const Step1B = ({
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
     const { viewportWidth } = activeBreakpoint;
+    const { APP_NAME } = useConfig();
 
     const [isFormValid, setIsFormValid] = useState(false);
 
@@ -284,178 +298,6 @@ const Step1B = ({
                 [step]: true,
             };
         }
-    };
-
-    const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
-        setModel((old) => ({
-            ...old,
-            optimistic: {
-                ...old.optimistic,
-                ...diff,
-            },
-        }));
-    };
-
-    const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
-        if (model.loadingDependencies) {
-            return;
-        }
-
-        const newCurrency = optimistic.currency || options.currency;
-        const newPlanIDs = optimistic.planIDs || options.planIDs;
-        const newCycle = optimistic.cycle || options.cycle;
-        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
-        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
-
-        // Try a pre-saved check first. If it's not available, then use the default optimistic one.
-        // With the regular cycles, it should be available.
-        let subscriptionMapping = model.subscriptionDataCycleMapping?.[newPlan?.Name as PLANS]?.[newCycle];
-        if (!isDeepEqual(newPlanIDs, subscriptionMapping?.planIDs)) {
-            subscriptionMapping = undefined;
-        }
-
-        const optimisticCheckResult =
-            subscriptionMapping?.checkResult ??
-            getOptimisticCheckResult({
-                plansMap: model.plansMap,
-                planIDs: newPlanIDs,
-                cycle: newCycle,
-                currency: newCurrency,
-            });
-
-        // Taxes shouldn't be part of optimistic updated because it can be misleading.
-        const optimisticCheckResultWithoutTaxes: RequiredCheckResponse = {
-            ...optimisticCheckResult,
-            Taxes: [],
-        };
-
-        const newOptimistic = {
-            ...optimistic,
-            checkResult: optimisticCheckResultWithoutTaxes,
-        };
-
-        try {
-            const validateFlow = createFlow();
-
-            setOptimisticDiff(newOptimistic);
-
-            const coupon =
-                couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
-
-            const checkResult = await getSubscriptionPrices({
-                paymentsApi: getPaymentsApi(silentApi),
-                planIDs: newPlanIDs,
-                currency: newCurrency,
-                cycle: newCycle,
-                billingAddress: newBillingAddress,
-                coupon: coupon,
-                trial: signupTrial,
-                ValidateZipCode: true,
-            });
-
-            if (!validateFlow()) {
-                return;
-            }
-
-            setModel((old) => ({
-                ...old,
-                subscriptionData: {
-                    ...model.subscriptionData,
-                    currency: newCurrency,
-                    cycle: newCycle,
-                    planIDs: newPlanIDs,
-                    checkResult,
-                    billingAddress: newBillingAddress,
-                    zipCodeValid: true,
-                },
-                optimistic: {},
-            }));
-        } catch (e) {
-            // Reset any optimistic state on failures
-            setModel((old) => ({
-                ...old,
-                optimistic: {},
-            }));
-
-            if (e instanceof InvalidZipCodeError) {
-                setModel((old) => ({
-                    ...old,
-                    subscriptionData: {
-                        ...old.subscriptionData,
-                        zipCodeValid: false,
-                    },
-                }));
-            }
-        }
-    };
-
-    const handleChangePlanIds = async (planIDs: PlanIDs, planName: PLANS) => {
-        handleUpdate('plan');
-        void measure({
-            event: TelemetryAccountSignupEvents.planSelect,
-            dimensions: { plan: planName },
-        });
-        void handleOptimistic({ planIDs });
-    };
-
-    const handleChangeCurrency = (currency: Currency) => {
-        handleUpdate('plan');
-        void measure({
-            event: TelemetryAccountSignupEvents.currencySelect,
-            dimensions: { currency: currency },
-        });
-
-        void withChangingCurrency(
-            onCurrencyChange(currency)
-                .then(() => {
-                    metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                        status: 'success',
-                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                    });
-                })
-                .catch((error) => {
-                    observeApiError(error, (status) =>
-                        metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                            status,
-                            flow: isB2bPlan ? 'b2b' : 'b2c',
-                        })
-                    );
-                })
-        );
-    };
-
-    const handleChangeCycle = ({ cycle, mode, planIDs }: { cycle: Cycle; mode?: 'upsell'; planIDs?: PlanIDs }) => {
-        if (mode === 'upsell') {
-            void measure({
-                event: TelemetryAccountSignupEvents.interactUpsell,
-                dimensions: {
-                    upsell_to: `${options.plan.Name}_${cycle}m`,
-                    upsell_from: `${options.plan.Name}_${options.cycle}m`,
-                },
-            });
-        } else {
-            void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
-        }
-        handleOptimistic({ cycle, planIDs })
-            .then((result) => {
-                metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
-                    status: 'success',
-                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                });
-                return result;
-            })
-            .catch((error) => {
-                observeApiError(error, (status) =>
-                    metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
-                        status,
-                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                    })
-                );
-            });
-    };
-
-    const handleChangeBillingAddress = (billingAddress: BillingAddress) => {
-        void handleOptimistic({ billingAddress });
     };
 
     const handleCompletion = async (subscriptionData: SubscriptionData) => {
@@ -528,13 +370,14 @@ const Step1B = ({
         billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
         paymentStatus: model.paymentStatus,
-        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, source }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
-                    paymentProcessorType,
+                    paymentMethodType: sourceType,
+                    paymentMethodValue: source,
                 };
 
                 if (isFreeSignup) {
@@ -577,7 +420,227 @@ const Step1B = ({
             }
         },
         isTrial: signupTrial,
+        product: APPS.PROTONVPN_SETTINGS,
+        telemetryContext,
     });
+
+    const reportEstimationChange = (action: EstimationChangeAction, overrides: Partial<EstimationChangePayload>) => {
+        checkoutTelemetry.reportSubscriptionEstimationChange({
+            action,
+            context: telemetryContext,
+            userCurrency: undefined,
+            subscription: undefined,
+            selectedPlanIDs: options.planIDs,
+            selectedCurrency: options.currency,
+            selectedCycle: options.cycle,
+            selectedCoupon: options.checkResult.Coupon?.Code,
+            paymentMethodType: paymentFacade.selectedMethodType,
+            paymentMethodValue: paymentFacade.selectedMethodValue,
+            build: APP_NAME,
+            product: toApp,
+            ...overrides,
+        });
+    };
+
+    const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
+        setModel((old) => ({
+            ...old,
+            optimistic: {
+                ...old.optimistic,
+                ...diff,
+            },
+        }));
+    };
+
+    const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
+        if (model.loadingDependencies) {
+            return;
+        }
+
+        if (optimistic.planIDs && !isDeepEqual(options.planIDs, optimistic.planIDs)) {
+            const currentlySelectedPlanName = getPlanNameFromIDs(options.planIDs);
+            const newlySelectedPlanName = getPlanNameFromIDs(optimistic.planIDs);
+            const action = currentlySelectedPlanName === newlySelectedPlanName ? 'addon_changed' : 'plan_changed';
+            reportEstimationChange(action, {
+                selectedPlanIDs: optimistic.planIDs,
+            });
+        }
+
+        if (optimistic.cycle) {
+            reportEstimationChange('cycle_changed', {
+                selectedCycle: optimistic.cycle,
+            });
+        }
+
+        const newCurrency = optimistic.currency || options.currency;
+        const newPlanIDs = optimistic.planIDs || options.planIDs;
+        const newCycle = optimistic.cycle || options.cycle;
+        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
+        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
+
+        // Try a pre-saved check first. If it's not available, then use the default optimistic one.
+        // With the regular cycles, it should be available.
+        let subscriptionMapping = model.subscriptionDataCycleMapping?.[newPlan?.Name as PLANS]?.[newCycle];
+        if (!isDeepEqual(newPlanIDs, subscriptionMapping?.planIDs)) {
+            subscriptionMapping = undefined;
+        }
+
+        const optimisticCheckResult =
+            subscriptionMapping?.checkResult ??
+            getOptimisticCheckResult({
+                plansMap: model.plansMap,
+                planIDs: newPlanIDs,
+                cycle: newCycle,
+                currency: newCurrency,
+            });
+
+        // Taxes shouldn't be part of optimistic updated because it can be misleading.
+        const optimisticCheckResultWithoutTaxes = {
+            ...optimisticCheckResult,
+            Taxes: [],
+        } satisfies EnrichedCheckResponse;
+
+        const newOptimistic = {
+            ...optimistic,
+            checkResult: optimisticCheckResultWithoutTaxes,
+        };
+
+        try {
+            const validateFlow = createFlow();
+
+            setOptimisticDiff(newOptimistic);
+
+            const coupon =
+                couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
+
+            const checkResult = await getSubscriptionPrices({
+                paymentsApi: getPaymentsApi(silentApi),
+                planIDs: newPlanIDs,
+                currency: newCurrency,
+                cycle: newCycle,
+                billingAddress: newBillingAddress,
+                coupon: coupon,
+                trial: signupTrial,
+                ValidateZipCode: true,
+            });
+
+            if (!validateFlow()) {
+                return;
+            }
+
+            setModel((old) => ({
+                ...old,
+                subscriptionData: {
+                    ...model.subscriptionData,
+                    currency: newCurrency,
+                    cycle: newCycle,
+                    planIDs: newPlanIDs,
+                    checkResult,
+                    billingAddress: newBillingAddress,
+                    zipCodeValid: true,
+                },
+                optimistic: {},
+            }));
+        } catch (e) {
+            // Reset any optimistic state on failures
+            setModel((old) => ({
+                ...old,
+                optimistic: {},
+            }));
+
+            if (e instanceof InvalidZipCodeError) {
+                setModel((old) => ({
+                    ...old,
+                    subscriptionData: {
+                        ...old.subscriptionData,
+                        zipCodeValid: false,
+                    },
+                }));
+            }
+        }
+    };
+
+    const handleChangeCurrency = (currency: Currency) => {
+        handleUpdate('plan');
+        void measure({
+            event: TelemetryAccountSignupEvents.currencySelect,
+            dimensions: { currency: currency },
+        });
+
+        void withChangingCurrency(
+            onCurrencyChange(currency)
+                .then(() => {
+                    metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+                        status: 'success',
+                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                    });
+                })
+                .catch((error) => {
+                    observeApiError(error, (status) =>
+                        metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+                            status,
+                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                        })
+                    );
+                })
+        );
+
+        reportEstimationChange('currency_changed', {
+            selectedCurrency: currency,
+        });
+    };
+
+    const handleChangePlanIds = async (planIDs: PlanIDs, planName: PLANS) => {
+        handleUpdate('plan');
+        void measure({
+            event: TelemetryAccountSignupEvents.planSelect,
+            dimensions: { plan: planName },
+        });
+
+        void handleOptimistic({ planIDs });
+    };
+
+    const handleChangeCycle = ({ cycle, mode, planIDs }: { cycle: Cycle; mode?: 'upsell'; planIDs?: PlanIDs }) => {
+        if (mode === 'upsell') {
+            void measure({
+                event: TelemetryAccountSignupEvents.interactUpsell,
+                dimensions: {
+                    upsell_to: `${options.plan.Name}_${cycle}m`,
+                    upsell_from: `${options.plan.Name}_${options.cycle}m`,
+                },
+            });
+        } else {
+            void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
+        }
+
+        handleOptimistic({ cycle, planIDs })
+            .then((result) => {
+                metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
+                    status: 'success',
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                });
+                return result;
+            })
+            .catch((error) => {
+                observeApiError(error, (status) =>
+                    metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
+                        status,
+                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                    })
+                );
+            });
+    };
+
+    const handleChangeCoupon = (coupon: string | undefined) => {
+        setCouponCode(coupon);
+        reportEstimationChange('coupon_changed', {
+            selectedCoupon: coupon,
+        });
+    };
+
+    const handleChangeBillingAddress = (billingAddress: BillingAddress) => {
+        void handleOptimistic({ billingAddress });
+    };
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: handleChangeBillingAddress,
@@ -585,6 +648,7 @@ const Step1B = ({
         zipCodeBackendValid: model.subscriptionData.zipCodeValid,
         previosValidZipCode: model.subscriptionData.billingAddress.ZipCode,
         paymentFacade,
+        telemetryContext,
     });
 
     const vatNumber = useVatNumber({
@@ -753,11 +817,10 @@ const Step1B = ({
     const handleCloseUpsellModal = () => {
         handleUpdate('plan');
         if (![PLANS.VPN_PASS_BUNDLE, PLANS.VPN2024].some((plan) => options.planIDs[plan])) {
+            const newPlanIDs = { [PLANS.VPN2024]: 1 };
             withLoadingPaymentDetails(
                 handleOptimistic({
-                    planIDs: {
-                        [PLANS.VPN2024]: 1,
-                    },
+                    planIDs: newPlanIDs,
                     cycle: cycleData.cycles[0] || DEFAULT_CYCLE,
                 })
             ).catch(noop);
@@ -799,7 +862,9 @@ const Step1B = ({
             });
             return withLoadingPaymentDetails(
                 handleOptimistic({
-                    planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                    planIDs: {
+                        [PLANS.VPN_PASS_BUNDLE]: 1,
+                    },
                     cycle: upsellToCycle,
                 })
             ).catch(noop);
@@ -1099,7 +1164,7 @@ const Step1B = ({
                             },
                         }));
 
-                        setCouponCode(code);
+                        handleChangeCoupon(code);
 
                         if (!checkResult.Coupon) {
                             throw new Error(c('Notification').t`Invalid code`);
@@ -1125,7 +1190,7 @@ const Step1B = ({
                             },
                         }));
 
-                        setCouponCode(undefined);
+                        handleChangeCoupon(undefined);
                     }}
                 />
             }
@@ -1513,6 +1578,8 @@ const Step1B = ({
                                                         </>
                                                     )}
                                                     formInvalid={!isFormValid}
+                                                    product={APPS.PROTONVPN_SETTINGS}
+                                                    telemetryContext={telemetryContext}
                                                 >
                                                     {(() => {
                                                         if (checkTrial) {

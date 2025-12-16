@@ -1,16 +1,17 @@
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
-import {
-    type BillingAddress,
-    type BillingAddressProperty,
-    normalizeBillingAddress,
-} from './billing-address/billing-address';
-import type { Autopay, InvoiceOwner, InvoiceState, InvoiceType, PAYMENT_TOKEN_STATUS } from './constants';
-import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
+import type { BillingAddress } from '../billing-address/billing-address';
+import type {
+    Autopay,
+    InvoiceOwner,
+    InvoiceState,
+    InvoiceType,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+} from '../constants';
+import { PLAN_TYPES } from '../constants';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
@@ -26,16 +27,14 @@ import type {
     WrappedCardPayment,
     WrappedCryptoPayment,
     WrappedPaypalPayment,
-} from './interface';
-import { formatPaymentMethods } from './methods';
-import { normalizePaymentMethodStatus } from './payment-status';
-import { PlanState } from './plan/constants';
-import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
-import type { FreePlanDefault, SubscriptionPlan } from './plan/interface';
-import type { Renew } from './subscription/constants';
-import { FREE_PLAN } from './subscription/freePlans';
-import type { Subscription } from './subscription/interface';
-import { isTokenPaymentMethod, isV5PaymentToken } from './type-guards';
+} from '../interface';
+import { formatPaymentMethods } from '../methods';
+import { normalizePaymentMethodStatus } from '../payment-status';
+import { PlanState } from '../plan/constants';
+import type { FreePlanDefault, SubscriptionPlan } from '../plan/interface';
+import type { Renew } from '../subscription/constants';
+import { FREE_PLAN } from '../subscription/freePlans';
+import type { Subscription } from '../subscription/interface';
 
 const queryPaymentMethodStatus = () => ({
     url: `payments/v5/status`,
@@ -108,162 +107,6 @@ export type CheckSubscriptionData = {
     ProrationMode?: ProrationMode;
     IsTrial?: boolean;
     ValidateZipCode?: boolean;
-};
-
-type CommonSubscribeData = {
-    Plans: PlanIDs;
-    Currency: Currency;
-    Cycle: Cycle;
-    Codes?: string[];
-    StartTrial?: boolean;
-    VatId?: string;
-} & AmountAndCurrency;
-
-type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
-type SubscribeDataV5 = CommonSubscribeData & V5PaymentToken & BillingAddressProperty;
-type SubscribeDataNoPayment = CommonSubscribeData;
-export type SubscribeData = SubscribeDataV4 | SubscribeDataV5 | SubscribeDataNoPayment;
-
-function isCommonSubscribeData(data: any): data is CommonSubscribeData {
-    const props = ['Plans', 'Currency', 'Cycle', 'Amount'];
-    return data && props.every((prop) => Object.prototype.hasOwnProperty.call(data, prop));
-}
-
-function isSubscribeDataV4(data: any): data is SubscribeDataV4 {
-    return isCommonSubscribeData(data) && isTokenPaymentMethod(data as any);
-}
-
-function isSubscribeDataV5(data: any): data is SubscribeDataV5 {
-    return isCommonSubscribeData(data) && isV5PaymentToken(data as any);
-}
-
-function isSubscribeDataNoPayment(data: any): data is SubscribeDataNoPayment {
-    return isCommonSubscribeData(data);
-}
-
-export function isSubscribeData(data: any): data is SubscribeData {
-    return isSubscribeDataV4(data) || isSubscribeDataV5(data) || isSubscribeDataNoPayment(data);
-}
-
-function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
-    const allowedProps: (keyof SubscribeDataV4 | keyof SubscribeDataV5)[] = [
-        'Plans',
-        'Currency',
-        'Cycle',
-        'Codes',
-        'PaymentToken',
-        'Payment',
-        'Amount',
-        'Currency',
-        'BillingAddress',
-        'StartTrial',
-        'VatId',
-    ];
-    const payload: any = {};
-    Object.keys(data).forEach((key: any) => {
-        if (allowedProps.includes(key)) {
-            payload[key] = (data as any)[key];
-        }
-    });
-
-    return payload as SubscribeData;
-}
-
-function getPaymentTokenFromSubscribeData(data: SubscribeData): string | undefined {
-    return (data as any)?.PaymentToken ?? (data as any)?.Payment?.Details?.Token;
-}
-
-export function getLifetimeProductType(data: Pick<SubscribeData, 'Plans'>) {
-    const planName = getPlanNameFromIDs(data.Plans);
-    if (planName === PLANS.PASS_LIFETIME) {
-        return 'pass-lifetime' as const;
-    }
-}
-
-export const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
-    const sanitizedData = prepareSubscribeDataPayload(rawData) as SubscribeDataV5;
-
-    const url = 'payments/v5/products';
-    const config = {
-        url,
-        method: 'post',
-        data: {
-            Quantity: 1,
-            PaymentToken: getPaymentTokenFromSubscribeData(sanitizedData),
-            ProductType: getLifetimeProductType(sanitizedData),
-            Amount: sanitizedData.Amount,
-            Currency: sanitizedData.Currency,
-            BillingAddress: sanitizedData.BillingAddress,
-        },
-        headers: getProductHeaders(product, {
-            endpoint: url,
-            product,
-        }),
-        timeout: 60000 * 2,
-    };
-
-    return config;
-};
-
-export const createSubscription = (
-    rawData: SubscribeData,
-    product: ProductParam,
-    version: PaymentsVersion,
-    hasZipCodeValidation: boolean
-) => {
-    const sanitizedData = prepareSubscribeDataPayload(rawData);
-
-    // This covers both buyProduct + v4 and v5 createSubscription.
-    if ('BillingAddress' in sanitizedData && sanitizedData.BillingAddress) {
-        sanitizedData.BillingAddress = normalizeBillingAddress(sanitizedData.BillingAddress, hasZipCodeValidation);
-    }
-
-    if (isLifetimePlanSelected(sanitizedData.Plans)) {
-        return buyProduct(sanitizedData, product);
-    }
-
-    let data: SubscribeData = sanitizedData;
-    if (version === 'v5' && isSubscribeDataV4(sanitizedData)) {
-        const v5Data: SubscribeDataV5 = {
-            ...sanitizedData,
-            PaymentToken: sanitizedData.Payment.Details.Token,
-            v: 5,
-        };
-
-        data = v5Data;
-        delete (data as any).Payment;
-    } else if (version === 'v4' && isSubscribeDataV5(sanitizedData)) {
-        const v4Data: SubscribeDataV4 = {
-            ...sanitizedData,
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: sanitizedData.PaymentToken,
-                },
-            },
-        };
-
-        data = v4Data;
-        delete (data as any).PaymentToken;
-    }
-
-    if (data.VatId) {
-        (data as any).BillingAddress.VatId = data.VatId;
-        delete (data as any).VatId;
-    }
-
-    const config = {
-        url: `payments/${version}/subscription`,
-        method: 'post',
-        data,
-        headers: getProductHeaders(product, {
-            endpoint: `payments/${version}/subscription`,
-            product,
-        }),
-        timeout: 60000 * 2,
-    };
-
-    return config;
 };
 
 export enum InvoiceDocument {

@@ -66,7 +66,9 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private events: ChargebeeIframeEvents,
         public verifyOnly: boolean,
         paymentStatus: PaymentStatus | undefined,
-        public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
+        public onTokenIsChargeable: (data: ChargeableV5PaymentParameters) => Promise<unknown>,
+        public onDeclined: () => void,
+        public onValidationFailed: () => void
     ) {
         super(
             {
@@ -86,7 +88,14 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
             return null;
         }
 
-        await this.validateBeforeSubmit();
+        try {
+            await this.validateBeforeSubmit();
+        } catch (error) {
+            if (error instanceof InvalidDataError) {
+                this.onValidationFailed();
+            }
+            throw error;
+        }
 
         const chargebeeParams: ChargebeeCardParams = {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
@@ -102,6 +111,8 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
                 events: this.events,
             });
         } catch (error: any) {
+            this.onDeclined();
+
             // if that's not a form validation error, then we have something unexpected,
             // and we need to switch back to the old flow
             if (!this.mustIgnoreError(error)) {
@@ -128,6 +139,8 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
             events: this.events,
             v: 5,
             addCardMode: this.verifyOnly,
+            paymentMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            paymentMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
         });
 
         return this.tokenCreated(token);

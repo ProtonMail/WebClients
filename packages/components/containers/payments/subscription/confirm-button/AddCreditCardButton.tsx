@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { EditCardModal } from '@proton/payments/ui';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { InfoBanner } from './InfoBanner';
 
@@ -13,6 +14,7 @@ export type PublicProps = {
     onDone?: () => void;
     onSubmit: () => void;
     hasPaymentMethod: boolean;
+    app: ProductParam;
 };
 
 type Props = PublicProps & {
@@ -28,6 +30,7 @@ export const AddCreditCardButton = ({
     willCreateScheduledSubscription,
     onDone,
     onSubmit,
+    app,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
 
@@ -46,6 +49,7 @@ export const AddCreditCardButton = ({
                 .t`Payment method required for the subscription to be activated after the trial ends.`}</InfoBanner>
             {renderCreditCardModal && (
                 <EditCardModal
+                    app={app}
                     enableRenewToggle={false}
                     onMethodAdded={() => {
                         if (userKeepsBillingCycle) {

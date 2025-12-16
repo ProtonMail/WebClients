@@ -41,7 +41,7 @@ const PassSignup = () => {
          * A limitation of the payments context initialisation means we need to
          * check the pricing with the coupon to ensure the UI data is available
          */
-        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
+        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
     }, []);
 
     return (
@@ -126,6 +126,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
                     cycle: CYCLE.YEARLY, // free plans still need a cycle value
                     coupon: undefined,
                 },
+                telemetryContext: 'ctx-signup-pass',
             }}
             accountFormDataConfig={{
                 defaultEmail: searchParams.get('email') || '',

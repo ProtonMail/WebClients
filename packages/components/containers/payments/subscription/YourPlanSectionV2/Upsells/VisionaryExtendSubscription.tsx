@@ -4,7 +4,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -35,14 +34,12 @@ export const useVisionaryExtendSubscription = ({
     show24MonthPlan,
 }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
-            telemetryFlow,
         });
     };
 
@@ -53,7 +50,6 @@ export const useVisionaryExtendSubscription = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const upsells = [
@@ -80,7 +76,7 @@ export const useVisionaryExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, serversCount, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

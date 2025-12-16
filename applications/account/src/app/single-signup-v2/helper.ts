@@ -1,4 +1,3 @@
-import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
 import {
     type ADDON_NAMES,
@@ -48,6 +47,7 @@ import {
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
+import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

@@ -25,7 +25,6 @@ it('should render', () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -41,8 +40,8 @@ it('should render', () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -59,7 +58,6 @@ it('should fetch payment token', async () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -75,8 +73,8 @@ it('should fetch payment token', async () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -122,7 +120,6 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -141,9 +138,8 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
-
+                onValidationFailed: jest.fn(),
                 onBeforeSepaPayment,
             },
             dependencies
@@ -178,7 +174,6 @@ it('should verify payment token', async () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -199,8 +194,8 @@ it('should verify payment token', async () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -241,7 +236,6 @@ it('should not verify token if amount is 0', async () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -257,8 +251,8 @@ it('should not verify token if amount is 0', async () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -298,7 +292,6 @@ it('should reset token if verification fails', async () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -317,8 +310,8 @@ it('should reset token if verification fails', async () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -364,6 +357,7 @@ it('automatically sets customer name type to company if plan is B2B', () => {
                 {
                     amountAndCurrency,
                     selectedPlanName,
+                    onValidationFailed: jest.fn(),
                 },
                 dependencies
             ),
@@ -387,7 +381,6 @@ it('should throw an error when email is not provided', async () => {
 
     const onChargeable = jest.fn();
     const onProcessPaymentToken = jest.fn();
-    const onProcessPaymentTokenFailed = jest.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -403,8 +396,8 @@ it('should throw an error when email is not provided', async () => {
                 amountAndCurrency,
                 onChargeable,
                 onProcessPaymentToken,
-                onProcessPaymentTokenFailed,
                 selectedPlanName,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -468,8 +461,8 @@ it('should report the errors reported by the validator - B2B plan', async () => 
                 },
                 onChargeable: jest.fn(),
                 onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
                 selectedPlanName: PLANS.MAIL_PRO,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -506,8 +499,8 @@ it('should report the errors reported by the validator - B2C plan', async () => 
                 },
                 onChargeable: jest.fn(),
                 onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
                 selectedPlanName: PLANS.MAIL,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )
@@ -544,8 +537,8 @@ it('should report the errors reported by the validator - no address provided', a
                 },
                 onChargeable: jest.fn(),
                 onProcessPaymentToken: jest.fn(),
-                onProcessPaymentTokenFailed: jest.fn(),
                 selectedPlanName: PLANS.MAIL,
+                onValidationFailed: jest.fn(),
             },
             dependencies
         )

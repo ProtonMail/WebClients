@@ -338,7 +338,7 @@ const MainContainer: FunctionComponent = () => {
                                     >
                                         <YourPlanSectionV2 app={app} />
                                         <YourPlanUpsellsSectionV2 app={app} />
-                                        <VpnDownloadAndInfoSection app={app} />
+                                        <VpnDownloadAndInfoSection />
                                         <VpnAlsoInYourPlanSection app={app} />
                                         <VpnBlogSection />
                                     </PrivateMainSettingsArea>
@@ -355,10 +355,10 @@ const MainContainer: FunctionComponent = () => {
                                     >
                                         <YourPlanSectionV2 app={app} editBillingCycle={true} />
                                         <SubscriptionsSection />
-                                        <PaymentMethodsSection />
-                                        <CreditsSection />
+                                        <PaymentMethodsSection app={app} />
+                                        <CreditsSection app={app} />
                                         <GiftCodeSection />
-                                        <InvoicesSection />
+                                        <InvoicesSection app={app} />
                                         <CancelSubscriptionSection app={app} />
                                         <DowngradeSubscriptionSection app={app} />
                                         <CancelSubscriptionViaSupportSection />
@@ -374,10 +374,10 @@ const MainContainer: FunctionComponent = () => {
                                         <YourPlanSection app={app} />
                                         <UpgradeVpnSection app={app} />
                                         <SubscriptionsSection />
-                                        <PaymentMethodsSection />
-                                        <CreditsSection />
+                                        <PaymentMethodsSection app={app} />
+                                        <CreditsSection app={app} />
                                         <GiftCodeSection />
-                                        <InvoicesSection />
+                                        <InvoicesSection app={app} />
                                         <CancelSubscriptionSection app={app} />
                                         <DowngradeSubscriptionSection app={app} />
                                         <CancelSubscriptionViaSupportSection />

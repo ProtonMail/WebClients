@@ -18,6 +18,7 @@ import {
     getPlanFromPlanIDs,
 } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -62,6 +63,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
+        product: APPS.PROTONDRIVE,
+        telemetryContext: payments.telemetryContext,
     });
 
     const validatePayment = () => {
@@ -77,6 +80,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         zipCodeBackendValid: payments.zipCodeValid,
         previosValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
+        telemetryContext: payments.telemetryContext,
     });
 
     const vatNumber = useVatNumber({
@@ -166,6 +170,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled
                             showUsersTooltip
+                            telemetryContext={payments.telemetryContext}
                         />
                     );
                 })()}
@@ -190,6 +195,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     data-testid="pay"
                     className="py-4 text-semibold"
                     paypalClassName=""
+                    product={APPS.PROTONDRIVE}
+                    telemetryContext={payments.telemetryContext}
                     suffix={
                         <div className="text-center mt-8">
                             <span className="color-success">

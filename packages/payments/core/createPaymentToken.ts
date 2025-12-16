@@ -16,7 +16,7 @@ import {
     createTokenV4,
     fetchPaymentIntentForExistingV5,
     fetchPaymentIntentV5,
-} from './api';
+} from './api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 import type {
     AmountAndCurrency,
@@ -32,6 +32,7 @@ import type {
     NonAuthorizedV5PaymentToken,
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
+    PaymentMethodType,
     PaymentTokenResult,
     PaypalPayment,
     PlainPaymentMethodType,
@@ -164,6 +165,8 @@ export type PaymentVerificatorV5Params = {
     abortController?: AbortController;
     onCancelled?: () => void;
     onError?: (error: any) => void;
+    paymentMethodType: PlainPaymentMethodType;
+    paymentMethodValue: PaymentMethodType;
 };
 
 export type PaymentVerificatorV5 = (params: PaymentVerificatorV5Params) => Promise<V5PaymentToken>;

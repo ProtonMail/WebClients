@@ -12,6 +12,7 @@ import {
     isSavedPaymentMethodGooglePay,
     isSavedPaymentMethodSepa,
 } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
@@ -21,6 +22,7 @@ const NBSP_HTML = '\u00A0';
 export interface Props {
     methods: SavedPaymentMethod[];
     loading: boolean;
+    app: APP_NAMES;
 }
 
 const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
@@ -77,7 +79,7 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
     return null;
 };
 
-const PaymentMethodsTable = ({ methods, loading }: Props) => {
+const PaymentMethodsTable = ({ methods, loading, app }: Props) => {
     if (!loading && !methods.length) {
         return <p data-testid="no-payments">{c('Info').t`You have no saved payment methods.`}</p>;
     }
@@ -99,7 +101,7 @@ const PaymentMethodsTable = ({ methods, loading }: Props) => {
                             cells={[
                                 <MethodCell method={method} />,
                                 <PaymentMethodState key={method.ID} method={method} />,
-                                <PaymentMethodActions key={method.ID} method={method} methods={methods} />,
+                                <PaymentMethodActions key={method.ID} app={app} method={method} methods={methods} />,
                             ]}
                         />
                     );

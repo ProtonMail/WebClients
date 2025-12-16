@@ -2,16 +2,25 @@ import { type ElementType, type ReactNode, useMemo } from 'react';
 
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
 import { PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PlainPaymentMethodType } from '../../core/interface';
+import type { PaymentTelemetryContext } from '../../telemetry/helpers';
+import { checkoutTelemetry } from '../../telemetry/telemetry';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { ApplePayButton } from './ApplePayButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
+
+export type PayButtonOnClickPayload = {
+    type: 'paypal' | 'apple-pay' | 'google-pay' | 'card';
+    source: 'fake-button' | 'real-button';
+};
 
 type Props = {
     taxCountry: TaxCountryHook;
@@ -22,6 +31,9 @@ type Props = {
     as?: ElementType;
     paypalClassName?: string;
     formInvalid?: boolean;
+    onClick?: (payload: PayButtonOnClickPayload) => void;
+    product: ProductParam;
+    telemetryContext: PaymentTelemetryContext;
 } & ButtonProps;
 
 export const PayButton = ({
@@ -34,8 +46,13 @@ export const PayButton = ({
     className: classNameProp,
     paypalClassName,
     formInvalid,
+    onClick,
+    product,
+    telemetryContext,
     ...rest
 }: Props) => {
+    const { APP_NAME } = useConfig();
+
     const suffixElement = useMemo(() => {
         if (isFunction(suffix)) {
             return suffix(paymentFacade.selectedMethodType);
@@ -43,6 +60,28 @@ export const PayButton = ({
 
         return suffix;
     }, [paymentFacade.selectedMethodType, suffix]);
+
+    const handleOnClick = (payload: PayButtonOnClickPayload) => {
+        if (paymentFacade.checkResult) {
+            checkoutTelemetry.reportPayment({
+                stage: 'attempt',
+                userCurrency: paymentFacade.user?.Currency,
+                subscription: paymentFacade.subscription,
+                selectedCycle: paymentFacade.checkResult.Cycle,
+                selectedPlanIDs: paymentFacade.checkResult.requestData.Plans,
+                selectedCurrency: paymentFacade.currency,
+                selectedCoupon: paymentFacade.checkResult.Coupon?.Code,
+                build: APP_NAME,
+                product,
+                context: telemetryContext,
+                amount: paymentFacade.checkResult.AmountDue,
+                paymentMethodType: paymentFacade.selectedMethodType,
+                paymentMethodValue: paymentFacade.selectedMethodValue,
+            });
+        }
+
+        onClick?.(payload);
+    };
 
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
@@ -64,6 +103,7 @@ export const PayButton = ({
                     formInvalid={formInvalid}
                     loading={rest.loading}
                     width="100%"
+                    onClick={handleOnClick}
                 />
             );
         } else if (isApplePay) {
@@ -74,6 +114,7 @@ export const PayButton = ({
                     disabled={submitButtonDisabled}
                     formInvalid={formInvalid}
                     loading={rest.loading}
+                    onClick={handleOnClick}
                 />
             );
         } else if (isGooglePay) {
@@ -84,11 +125,20 @@ export const PayButton = ({
                     disabled={submitButtonDisabled}
                     formInvalid={formInvalid}
                     loading={rest.loading}
+                    onClick={handleOnClick}
                 />
             );
         } else {
             return (
-                <Component type="submit" disabled={submitButtonDisabled} className={className} {...rest}>
+                <Component
+                    type="submit"
+                    disabled={submitButtonDisabled}
+                    className={className}
+                    onClick={() => {
+                        handleOnClick({ type: 'card', source: 'real-button' });
+                    }}
+                    {...rest}
+                >
                     {children}
                 </Component>
             );

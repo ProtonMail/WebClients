@@ -14,8 +14,6 @@ import {
     PLANS,
     type Plan,
     type SubscriptionCheckResponse,
-    createSubscription,
-    createTokenV4,
     getOptimisticCheckResult,
     getPlansMap,
 } from '@proton/payments';
@@ -189,16 +187,13 @@ describe('SubscriptionContainer', () => {
         await waitFor(() => {});
         fireEvent.submit(form);
 
-        const createTokenUrl = createTokenV4({} as any).url;
-        const subscribeUrl = createSubscription({} as any, '' as any, 'v4', true).url;
-
         await waitFor(() => {});
-        expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));
+        expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: 'payments/v5/tokens' }));
 
         await waitFor(() => {
             expect(apiMock).toHaveBeenCalledWith(
                 expect.objectContaining({
-                    url: subscribeUrl,
+                    url: 'payments/v5/subscription',
                     data: expect.objectContaining({
                         Amount: 0,
                     }),

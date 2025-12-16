@@ -18,10 +18,9 @@ import {
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlow, PaymentProcessorType } from '@proton/payments';
+import type { FullPlansMap } from '@proton/payments';
 import {
     type Currency,
     DEFAULT_CYCLE,
@@ -31,10 +30,10 @@ import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getPlanIDs,
-    getPlanNameFromIDs,
     getPlansMap,
     hasPlanIDs,
 } from '@proton/payments';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 // eslint-disable-next-line no-restricted-imports
@@ -237,9 +236,6 @@ const SingleSignupContainerV2 = ({
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
     const { getPreferredCurrency } = useCurrencies();
-    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
-        flow: 'signup-pass',
-    });
     const [error, setError] = useState<any>();
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
@@ -486,6 +482,11 @@ const SingleSignupContainerV2 = ({
         return plansMap;
     };
 
+    const getTelemetryContext = (session: SessionData | undefined) => {
+        const isAuthenticated = !!session?.resumedSessionResult.UID;
+        return isAuthenticated ? 'v2-signup-modification' : 'v2-signup';
+    };
+
     useEffect(() => {
         const fetchDependencies = async () => {
             await onStartAuth().catch(noop);
@@ -629,6 +630,19 @@ const SingleSignupContainerV2 = ({
                     ...userInfo,
                 };
             }
+
+            checkoutTelemetry.reportInitialization({
+                userCurrency: resumedSession?.User?.Currency,
+                subscription: session?.subscription,
+                selectedCurrency: currency,
+                selectedPlanIDs: planParameters.planIDs,
+                selectedCycle: cycle,
+                selectedCoupon: coupon,
+                selectedStep: null,
+                build: APP_NAME,
+                product: toApp,
+                context: getTelemetryContext(session),
+            });
 
             // TODO: How to define already paid behavior?
             if (resumedSession && userInfo.state.access && signupParameters.invite?.type === 'porkbun') {
@@ -1070,42 +1084,6 @@ const SingleSignupContainerV2 = ({
             ? getSimplePriceString(model.optimistic.currency || model.subscriptionData.currency, relativePricePerMonth)
             : undefined;
 
-    const getTelemetryParams = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-        const plan = getPlanNameFromIDs(subscriptionData.planIDs);
-
-        const flow: PaymentMethodFlow = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
-
-        return {
-            method,
-            overrides: {
-                plan,
-                flow,
-                cycle: subscriptionData.cycle,
-                amount: subscriptionData.checkResult.AmountDue,
-            },
-        };
-    };
-
-    const getReportPaymentSuccess = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        return () => {
-            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
-            reportPaymentSuccess(method, overrides);
-        };
-    };
-
-    const getReportPaymentFailure = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        return async () => {
-            // in case if fails, for example, on the subscription stage, then this page will abort all
-            // API calls by triggering startUnAuthFlow which in turn calls the abort controller.
-            // This delay is to ensure that the reportPaymentFailure is called after the abort controller
-            // is called
-            await wait(0);
-            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
-            reportPaymentFailure(method, overrides);
-        };
-    };
-
     const handleSetupExistingUser = async (cache: UserCacheResult) => {
         const getMnemonicData = async () => {
             if (!canGenerateMnemonic) {
@@ -1131,15 +1109,14 @@ const SingleSignupContainerV2 = ({
         };
 
         const run = async () => {
-            const isAuthenticated = !!model.session?.resumedSessionResult.UID;
-            await handleSubscribeUser(
-                silentApi,
-                cache.subscriptionData,
+            await handleSubscribeUser(silentApi, cache.subscriptionData, {
                 productParam,
                 hasZipCodeValidation,
-                getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
-                getReportPaymentFailure(cache.subscriptionData, isAuthenticated)
-            );
+                userCurrency: cache.session.resumedSessionResult.User.Currency,
+                subscription: cache.session.subscription,
+                build: APP_NAME,
+                telemetryContext: getTelemetryContext(cache.session),
+            });
 
             if (cache.setupData) {
                 return cache.setupData;
@@ -1161,17 +1138,14 @@ const SingleSignupContainerV2 = ({
     };
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
-        const isAuthenticated = !!model.session?.resumedSessionResult.UID;
-
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
                 canGenerateMnemonic,
-                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
-                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 hasZipCodeValidation,
+                telemetryContext: getTelemetryContext(model.session),
             }),
             wait(3500),
         ]);
@@ -1478,6 +1452,7 @@ const SingleSignupContainerV2 = ({
                         mode={signupParameters.mode}
                         signupTrial={signupTrial}
                         subscription={model.session?.subscription}
+                        telemetryContext={getTelemetryContext(model.session)}
                     />
                 )}
                 {model.step === Steps.Loading && (
