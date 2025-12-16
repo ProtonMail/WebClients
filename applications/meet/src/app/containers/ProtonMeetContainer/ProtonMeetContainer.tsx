@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
-import type { Room } from 'livekit-client';
+import { type Room, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -46,9 +46,10 @@ import { useMeetDispatch } from '../../store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
 import { toggleMeetingLockThunk } from '../../store/slices/settings';
 import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
-import { LoadingState, UpsellModalTypes } from '../../types';
+import { LoadingState, PopUpControls, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
+import { isLocalParticipantAdmin } from '../../utils/isLocalParticipantAdmin';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -120,6 +121,8 @@ export const ProtonMeetContainer = ({
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
 
     const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
+
+    const { setPopupStateValue } = useUIStateContext();
 
     const instantMeetingRef = useRef(!token);
 
@@ -194,6 +197,12 @@ export const ProtonMeetContainer = ({
     });
 
     const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
+
+    const {
+        isLocalParticipantHost,
+        isLocalParticipantAdmin: isLocalParticipantAdminLevelUser,
+        hasAnotherAdmin,
+    } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
@@ -855,6 +864,40 @@ export const ProtonMeetContainer = ({
     useEffect(() => {
         void handleInstantJoin();
     }, []);
+
+    useEffect(() => {
+        if (!joinedRoom) {
+            return;
+        }
+
+        const unblock = history.block((location, action) => {
+            if (action === 'POP') {
+                const userIsAdminLevel = isLocalParticipantHost || isLocalParticipantAdminLevelUser;
+                if (!userIsAdminLevel || hasAnotherAdmin) {
+                    if (
+                        [...room.localParticipant.videoTrackPublications.values()].some(
+                            (publication) => publication.source === Track.Source.ScreenShare
+                        )
+                    ) {
+                        setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, true);
+                        return false;
+                    }
+                    handleLeave();
+                } else if (userIsAdminLevel && !hasAnotherAdmin) {
+                    setPopupStateValue(PopUpControls.LeaveMeeting, true);
+                    return false;
+                }
+
+                return false;
+            }
+
+            return undefined;
+        });
+
+        return () => {
+            unblock();
+        };
+    }, [joinedRoom, isLocalParticipantHost, isLocalParticipantAdminLevelUser, hasAnotherAdmin, history]);
 
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;
