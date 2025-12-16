@@ -5,14 +5,8 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    hasAnyB2bBundle,
-    hasBundleBiz2025,
-    hasLumoBusiness,
-    hasVisionary,
-    isManagedExternally,
-} from '@proton/payments';
-import { isOrganization } from '@proton/shared/lib/organization/helper';
+import { PLANS, hasBundleBiz2025, hasVisionary, isManagedExternally } from '@proton/payments';
+import { isOrganization, isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { canPay, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { LUMO_USER_TYPE } from '../types';
@@ -50,9 +44,10 @@ export interface LumoPlanData {
     // Loading state
     isLumoPlanLoading: boolean;
 
+    // B2B
     hasLumoB2B: boolean;
-    isB2BAudience: boolean;
     userIsMember: boolean;
+    showForBusinessLink: boolean;
 }
 
 const LumoPlanContext = createContext<LumoPlanData | null>(null);
@@ -84,8 +79,8 @@ const GuestLumoPlanProvider = ({ children }: { children: ReactNode }) => {
         // Loading state
         isLumoPlanLoading: false,
         hasLumoB2B: false,
-        isB2BAudience: true,
         userIsMember: false,
+        showForBusinessLink: true, //always show for guest users
     };
 
     return <LumoPlanContext.Provider value={guestDefaults}>{children}</LumoPlanContext.Provider>;
@@ -127,8 +122,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
             // Loading state
             isLumoPlanLoading: true,
             hasLumoB2B: false,
-            isB2BAudience: false,
             userIsMember: false,
+            showForBusinessLink: false,
         };
         return <LumoPlanContext.Provider value={loadingDefaults}>{children}</LumoPlanContext.Provider>;
     }
@@ -140,11 +135,11 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     const hasOrganization = organization ? isOrganization(organization) : false;
     const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
 
-    // hasLumoSeat is on user's level, b2b checks are on subscription level
-    // so we only need to check: 1. if the user has a lumo seat 2. if the subscription belongs to any of b2b plans
-    const hasLumoB2B = hasLumoSeat && (hasLumoBusiness(subscription) || hasAnyB2bBundle(subscription));
+    const isOrgB2B = organization ? isOrganizationB2B(organization) : false;
 
-    // Calculate user type
+    // used to show Lumo for Business logos and messages
+    const hasLumoB2B = isOrgB2B && hasLumoSeat;
+
     const lumoUserType = getUserType(false, hasLumoSeat, isVisionary);
 
     // Calculate upsell eligibility
@@ -154,8 +149,12 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
     const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
     const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
-    const isB2BAudience = !hasLumoB2B && userCanPay;
     const userIsMember = isMember(user);
+
+    // Show "For Business" link unless user has a business organization plan with lumo seat included
+    const hasB2BPlanWithLumoSeatIncluded =
+        organization?.PlanName === PLANS.LUMO_BUSINESS || organization?.PlanName === PLANS.BUNDLE_BIZ_2025;
+    const showForBusinessLink = !hasB2BPlanWithLumoSeatIncluded;
 
     const value: LumoPlanData = {
         // Basic user classification
@@ -184,8 +183,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
 
         //B2B
         hasLumoB2B,
-        isB2BAudience,
         userIsMember,
+        showForBusinessLink,
     };
 
     return <LumoPlanContext.Provider value={value}>{children}</LumoPlanContext.Provider>;
