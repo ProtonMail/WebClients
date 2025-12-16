@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CYCLE, PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import * as signupSearchParams from '../../helpers/signupSearchParams';
 import { availablePlans } from './DriveSignup';
@@ -40,6 +40,8 @@ const DrivePricing = () => {
                 },
                 paramCurrency: signupSearchParams.getCurrency(searchParams),
                 availablePlans: availablePlans,
+                product: APPS.PROTONDRIVE,
+                telemetryContext: 'ctx-signup-drive',
             });
         };
         void run();

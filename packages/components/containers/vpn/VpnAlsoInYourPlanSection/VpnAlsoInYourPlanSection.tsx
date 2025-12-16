@@ -7,12 +7,12 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import {
+    DashboardGrid,
+    DashboardGridSection,
+    DashboardGridSectionHeader,
+} from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
@@ -20,7 +20,6 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
@@ -175,7 +174,6 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const plan = PLANS.BUNDLE;
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const planIsManagedExternally = isManagedExternally(subscription);
 
     useLoad();
@@ -235,7 +233,6 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 

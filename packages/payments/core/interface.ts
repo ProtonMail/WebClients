@@ -20,7 +20,7 @@ import type {
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
 
-import type { CheckSubscriptionData, PaymentsVersion } from './api';
+import type { CheckSubscriptionData, PaymentsVersion } from './api/api';
 import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,
@@ -37,7 +37,6 @@ import type {
     TransactionState,
     TransactionType,
 } from './constants';
-import type { PaymentProcessorType } from './payment-processors/interface';
 import type { PlansMap } from './plan/interface';
 import type { EnrichedCheckResponse } from './subscription/interface';
 
@@ -67,7 +66,8 @@ export type WrappedPaymentsVersion = {
 };
 
 export type WrappedProcessorType = {
-    paymentProcessorType: PaymentProcessorType;
+    paymentMethodType: PlainPaymentMethodType;
+    paymentMethodValue: PaymentMethodType;
 };
 
 export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType & WrappedPaymentsVersion;

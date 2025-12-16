@@ -18,7 +18,6 @@ import {
     type RequestOptions,
     SubscriptionMode,
     captureWrongPlanIDs,
-    getLifetimeProductType,
     getOptimisticCheckResult,
     getPaymentMethodStatus,
     getPaymentsVersion,
@@ -27,6 +26,7 @@ import {
     isSubscriptionCheckForbidden,
     normalizeBillingAddress,
 } from '@proton/payments';
+import { getLifetimeProductType } from '@proton/payments/core/api/createSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';

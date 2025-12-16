@@ -11,7 +11,7 @@ import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
 import { getInvoicePDF } from '@proton/payments';
 import type { Invoice } from '@proton/payments';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { type APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import InvoiceActions from './InvoiceActions';
@@ -25,9 +25,10 @@ import type { InvoicesHook } from './useInvoices';
 
 type Props = InvoicesHook & {
     onEdit: (invoice: Invoice) => Promise<void>;
+    app: APP_NAMES;
 };
 
-const InvoiceGroup = ({ invoices, loading, error, page, request, onEdit }: Props) => {
+const InvoiceGroup = ({ invoices, loading, error, page, request, onEdit, app }: Props) => {
     const previewRef = useRef<PdfPreviewControls>(null);
     const api = useApi();
 
@@ -85,6 +86,7 @@ const InvoiceGroup = ({ invoices, loading, error, page, request, onEdit }: Props
                                             </Time>,
                                             <InvoiceActions
                                                 key={key}
+                                                app={app}
                                                 invoice={invoice}
                                                 fetchInvoices={request}
                                                 onPreview={previewRef.current?.preview}

@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -10,20 +9,17 @@ import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
-import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from './UpsellMultiBox';
 
-const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
+const VPNB2BBanner = () => {
     const plan = PLANS.VPN_BUSINESS;
     const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.B2B,
-            telemetryFlow,
         });
     };
 

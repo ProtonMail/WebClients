@@ -7,12 +7,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { subscriptionExpires } from '@proton/components/containers/payments/subscription/helpers';
 import {
     getReactivateSubscriptionAction,
     getSubscriptionExpiresDaysLeft,
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
+import { subscriptionExpires } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 import isBetween from '@proton/utils/isBetween';
 

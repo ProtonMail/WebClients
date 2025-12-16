@@ -36,6 +36,7 @@ import {
     setQuantity,
 } from '@proton/payments';
 import type { AddonBalanceKey } from '@proton/payments/core/subscription/selected-plan';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -64,6 +65,7 @@ interface AddonCustomizerProps {
     audience?: Audience;
     mode: CustomiserMode;
     isTrialMode: boolean;
+    telemetryContext: PaymentTelemetryContext;
 }
 
 const getTrialProps = (
@@ -120,6 +122,7 @@ const AddonCustomizer = ({
     audience,
     mode,
     isTrialMode,
+    telemetryContext,
 }: AddonCustomizerProps) => {
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
@@ -378,6 +381,7 @@ const AddonCustomizer = ({
                 onAddLumo={() => {
                     onChangePlanIDs(setQuantity(selectedPlanIDs, addon.Name, max));
                 }}
+                telemetryContext={telemetryContext}
                 {...sharedNumberCustomizerProps}
                 {...trialProps}
             />
@@ -403,6 +407,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     lumoAddonEnabled?: boolean;
     separator?: boolean;
     isTrialMode?: boolean;
+    telemetryContext: PaymentTelemetryContext;
 }
 
 function getAddonDisplayOrder(addonName: ADDON_NAMES): number {
@@ -428,6 +433,7 @@ export const ProtonPlanCustomizer = ({
     lumoAddonEnabled = false,
     separator = false,
     isTrialMode = false,
+    telemetryContext,
     ...rest
 }: Props) => {
     const normalizedSelectedPlan = SelectedPlan.createNormalized(selectedPlanIDs, plansMap, cycle, currency);
@@ -522,6 +528,7 @@ export const ProtonPlanCustomizer = ({
                         audience={audience}
                         mode={mode}
                         isTrialMode={isTrialMode}
+                        telemetryContext={telemetryContext}
                     />
                 );
             })}

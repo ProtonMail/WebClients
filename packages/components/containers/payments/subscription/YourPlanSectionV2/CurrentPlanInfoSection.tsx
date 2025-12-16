@@ -7,7 +7,6 @@ import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import type { ADDON_NAMES } from '@proton/payments';
 import {
     type Subscription,
@@ -22,6 +21,7 @@ import {
     isAutoRenewTrial,
     isManagedExternally,
     isTrial,
+    subscriptionExpires,
 } from '@proton/payments';
 import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -32,7 +32,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { SUBSCRIPTION_STEPS } from '../constants';
-import { subscriptionExpires } from '../helpers';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
 import {
@@ -152,7 +151,6 @@ export const CurrentPlanInfoSection = ({
 }: CurrentPlanInfoSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { isFree, canPay, isMember } = user;
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
 
     const { MaxMembers = 1 } = organization || {};
@@ -179,7 +177,6 @@ export const CurrentPlanInfoSection = ({
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 
@@ -190,7 +187,6 @@ export const CurrentPlanInfoSection = ({
             metrics: {
                 source: 'plans',
             },
-            telemetryFlow,
         });
 
     const handleCancelSubscription = () => {
