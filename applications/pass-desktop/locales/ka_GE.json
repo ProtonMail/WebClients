@@ -166,8 +166,20 @@
       "Continue offline": [
         "გაგრძელება ქსელის გარეშე"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Copy and close": [
         "კოპირება და დახურვა"
+      ],
+      "Copy card number": [
+        "ბარათის ნომრის კოპირება"
+      ],
+      "Copy email": [
+        "ელფოსტის კოპირება"
+      ],
+      "Copy expiration date": [
+        "ვადის ამოწურვის თარიღის კოპირება"
       ],
       "Copy forwarding address": [
         "გადაგზავნის მისამართის კოპირება"
@@ -175,11 +187,23 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Copy name on card": [
+        "ბარათზე სახელის კოპირება"
+      ],
+      "Copy note content": [
+        "შენიშვნის შემცველობის კოპირება"
+      ],
       "Copy password": [
         "პაროლის კოპირება"
       ],
+      "Copy security code": [
+        "უსაფრთხოების კოდის კოპირება"
+      ],
       "Copy to clipboard": [
         "ბუფერში კოპირება"
+      ],
+      "Copy username": [
+        "მომხმარებლის სახელის კოპირება"
       ],
       "Create": [
         "შექმნა"
@@ -222,6 +246,9 @@
       ],
       "Custom section": [
         "მორგებული განყოფილება"
+      ],
+      "Cut": [
+        "ამოჭრა"
       ],
       "Delete": [
         "წაშლა"
@@ -468,6 +495,9 @@
       ],
       "Pass Monitor": [
         "Pass Monitor"
+      ],
+      "Paste": [
+        "ჩასმა"
       ],
       "Pause monitoring": [
         "მონიტორინგის შეჩერება"
@@ -1914,10 +1944,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
