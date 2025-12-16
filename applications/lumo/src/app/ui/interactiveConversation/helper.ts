@@ -1003,6 +1003,7 @@ export function retrySendMessage({
             role: Role.Assistant,
             placeholder: true,
             conversationId: c.conversationId,
+            blocks: [],
         };
 
         // Note: Project files are retrieved via RAG
@@ -1190,6 +1191,7 @@ function createMessagePair(
         status: 'succeeded', //This should align with ConversationStatus?
         content,
         context,
+        blocks: [{ type: 'text', content }],
         ...(shallowAttachments.length && { attachments: shallowAttachments }),
     };
 
@@ -1201,6 +1203,7 @@ function createMessagePair(
         role: Role.Assistant,
         placeholder: true,
         conversationId,
+        blocks: [],
     };
 
     return { userMessage, assistantMessage };
