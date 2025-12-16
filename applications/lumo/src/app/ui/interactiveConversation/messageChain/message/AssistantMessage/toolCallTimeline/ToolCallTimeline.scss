@@ -1,48 +1,45 @@
 .tool-call-timeline {
-    border: 1px solid var(--border-weak);
-    border-radius: 8px;
-    padding: 12px;
-    margin: 8px 0;
-    background: var(--background-norm);
+	border: 1px solid var(--border-norm);
+	border-radius: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 8px 0;
+	background: var(--background-norm);
 }
 
 .tool-call-timeline-item {
-    &:not(:last-child) {
-        margin-bottom: 4px;
-    }
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	&:not(:last-child) {
+		border-bottom: 1px solid var(--border-weak);
+	}
 }
 
 .tool-call-circle {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--text-weak);
-    flex-shrink: 0;
-    margin-top: 4px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: var(--text-weak);
+	opacity: 60%;
+	flex-shrink: 0;
 
-    &--in-progress {
-        background-color: var(--interaction-norm);
-        animation: pulse 1.5s ease-in-out infinite;
-    }
-}
-
-.tool-call-line {
-    width: 1px;
-    flex: 1;
-    background-color: var(--border-weak);
-    margin: 2px 0;
-    min-height: 16px;
+	&--in-progress {
+		background-color: var(--interaction-norm);
+		animation: pulse 1.5s ease-in-out infinite;
+	}
 }
 
 .tool-call-label--in-progress {
-    font-weight: 500;
+	font-weight: 500;
 }
 
 @keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.4;
-    }
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
 }

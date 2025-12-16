@@ -232,14 +232,10 @@ const AssistantMessage = ({
                         </div>
                         {
                             // eslint-disable-next-line no-nested-ternary
-                            isLoading ? (
-                                hasToolCall ? (
-                                    <ToolCallLoading toolCallName={lastToolCallParsed?.name} />
-                                ) : (
-                                    <div className="w-full pt-1" style={{ minHeight: '2em' }}>
-                                        <div className="rectangle-skeleton keep-motion"></div>
-                                    </div>
-                                )
+                            isLoading && !hasToolCall ? (
+                                <div className="w-full pt-1" style={{ minHeight: '2em' }}>
+                                    <div className="rectangle-skeleton keep-motion"></div>
+                                </div>
                             ) : (
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {hasContent || doNotShowEmptyMessage ? (
