@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { dismissNps, submitNps } from '@proton/shared/lib/api/netPromoterScore';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ScaleLadder from '../../components/input/ScaleLadder';
 import Modal from '../../components/modalTwo/Modal';
@@ -55,7 +54,7 @@ const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: Ne
             <ModalHeader title={c('Title').t`We'd love to hear from you!`} hasClose={false} />
             <ModalContent className="pt-4">
                 <p className="m-0 mt-6 mb-3 text-semibold">{c('new_plans: label')
-                    .t`We're always striving to make ${BRAND_NAME} ${config.appName} better. How satisfied are you with your experience?`}</p>
+                    .t`We're always striving to make ${config.appName} better. How satisfied are you with your experience?`}</p>
                 <ScaleLadder
                     from={0}
                     to={10}
