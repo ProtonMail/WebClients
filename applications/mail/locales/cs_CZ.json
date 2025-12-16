@@ -1284,6 +1284,9 @@
       "Select date and time": [
         "Vyberte datum a čas"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnocení ${ n } z ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Samozničit za 7 dní"
       ],
@@ -1301,6 +1304,9 @@
       ],
       "send auto-reply email": [
         "odeslat automatickou odpověď"
+      ],
+      "Send Feedback": [
+        "Odeslat zpětnou vazbu"
       ],
       "Send read receipt": [
         "Odeslat potvrzení o přečtení"
@@ -1507,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7633,10 +7642,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9694,6 +9700,9 @@
       "Extended address": [
         "Rozšířená adresa"
       ],
+      "Extremely Satisfied": [
+        "Velmi spokojen(a)"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Vytvoření složky ${ newFolderName } selhalo"
       ],
@@ -10063,6 +10072,9 @@
       "System information": [
         "Informace o systému"
       ],
+      "Tell us more about your experience": [
+        "Řekněte nám více o svých zkušenostech"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategorie byla aktualizována, děkujeme za vaši zpětnou vazbu!"
       ],
@@ -10113,6 +10125,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Very Dissatisfied": [
+        "Velmi nespokojen(a)"
       ],
       "Video conference": [
         "Videokonference"
@@ -10469,6 +10484,9 @@
       ],
       "Terms": [
         "Podmínky"
+      ],
+      "Terms and conditions": [
+        "Smluvní podmínky užívání"
       ],
       "terms of service": [
         "podmínky použití"
@@ -11525,6 +11543,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále se snažíme vylepšovat ${ BRAND_NAME } ${ config.appName }. Jak jste spokojeni s našimi službami?"
       ]
     },
     "new_plans: Subtext": {
@@ -12794,6 +12817,9 @@
       ],
       "Name or email address": [
         "Jméno nebo e-mail"
+      ],
+      "Optional feedback": [
+        "Volitelná zpětná vazba"
       ],
       "Organization name": [
         "Název organizace"
@@ -16107,6 +16133,9 @@
         "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
         "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
         "Ochránili jsme vás před ${ trackersCount } sledovacími prvky"
+      ],
+      "We'd love to hear from you!": [
+        "Budeme rádi za váš názor!"
       ],
       "Welcome": [
         "Vítejte"

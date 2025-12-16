@@ -1149,6 +1149,9 @@
       "Reset to default": [
         "還原成預設值"
       ],
+      "Resize panel": [
+        "重新調整介面"
+      ],
       "Restore": [
         "還原"
       ],
@@ -1221,6 +1224,9 @@
       "Select date and time": [
         "選取日期和時間"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "選取評價 ${ n } 之 ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "7天內自毀"
       ],
@@ -1238,6 +1244,9 @@
       ],
       "send auto-reply email": [
         "傳送自動回覆電郵"
+      ],
+      "Send Feedback": [
+        "傳送意見回饋"
       ],
       "Send read receipt": [
         "傳送已讀回條"
@@ -1424,6 +1433,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1810,6 +1822,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，將以${ renewCycle } 自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
       ],
@@ -6212,6 +6230,9 @@
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
@@ -6361,6 +6382,9 @@
       ],
       "Applying actions to messages": [
         "於訊息套用程序"
+      ],
+      "Archive existing messages": [
+        "封存現有訊息"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "您確定要刪除此資料夾中的全部郵件？"
@@ -6933,7 +6957,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7400,6 +7424,9 @@
       "Scheduled send of this message will be canceled.": [
         "此郵件的寄送預定將被取消。"
       ],
+      "Scheduling message": [
+        "正在排程訊息"
+      ],
       "Scribe panel": [
         "側邊面板"
       ],
@@ -7615,6 +7642,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "主題視覺讓您的收件匣煥然一新。"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "收件匣中無來自此寄件者的訊息。"
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "用來驗證連絡人詳細資料的簽章發生錯誤，可能是重設密碼所導致。"
@@ -9114,6 +9144,9 @@
       "System information": [
         "系統資訊"
       ],
+      "Tell us more about your experience": [
+        "告訴我們您的體驗"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "類別已更新，感謝您的意見回饋！"
       ],
@@ -9472,6 +9505,9 @@
       ],
       "Terms": [
         "條款"
+      ],
+      "Terms and conditions": [
+        "合約條款"
       ],
       "terms of service": [
         "服務條款"
@@ -10938,6 +10974,9 @@
       "Industry-leading spam protection": [
         "業界領導的垃圾郵件防護"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "Let's get started": [
         "讓我們開始吧"
       ],
@@ -11200,6 +11239,9 @@
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
       ]
@@ -11339,6 +11381,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
+      ],
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
       ]
@@ -11720,6 +11765,9 @@
       ],
       "Friend subscribed": [
         "已訂閱的親友"
+      ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
       ],
       "More sharing options": [
         "更多分享選項"
@@ -13158,6 +13206,9 @@
       "Message removed from ${ labelName }.": [
         "${ labelName } 標籤已移除。"
       ],
+      "Message removed from Starred.": [
+        "已移除訊息的星號。"
+      ],
       "Message updated": [
         "訊息已更新"
       ],
@@ -13611,6 +13662,9 @@
       ],
       "Create folder \"${ search }\"": [
         "建立資料夾「${ search }」"
+      ],
+      "Create label \"${ search }\"": [
+        "創建標籤「${ search }」"
       ],
       "Create new group": [
         "創建新群組"
@@ -14302,6 +14356,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "我們已保護您免受 ${ trackersCount } 個追蹤程式的侵害"
       ],
+      "We'd love to hear from you!": [
+        "我們很想聽見您的想法!"
+      ],
       "Welcome": [
         "歡迎"
       ],
@@ -14437,6 +14494,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 尊重您隱私的 AI 助理"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]

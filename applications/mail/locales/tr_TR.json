@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Tarih ve saat seçin"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Puan seçin ${ n } / ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "7 gün içinde kendini yok et"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
+      ],
+      "Send Feedback": [
+        "Geri Bildirim Gönder"
       ],
       "Send read receipt": [
         "Okundu bilgisi gönderilsin"
@@ -1499,7 +1505,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7401,8 +7408,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Açık adres"
       ],
+      "Extremely Satisfied": [
+        "Son Derece Memnun"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "${ newFolderName } klasörü oluşturulamadı"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Very Dissatisfied": [
+        "Çok Memnun Değil"
       ],
       "Video conference": [
         "Görüntülü görüşme"
@@ -10173,6 +10188,9 @@
       ],
       "Terms": [
         "Koşullar"
+      ],
+      "Terms and conditions": [
+        "Hüküm ve koşullar"
       ],
       "terms of service": [
         "Hizmet koşulları"
@@ -11163,6 +11181,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ BRAND_NAME } ${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {
@@ -12412,6 +12435,9 @@
       ],
       "Name or email address": [
         "Ad ya da e-posta adresi"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -15537,6 +15563,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Sizi ${ trackersCount } izleyiciden koruduk",
         "Sizi ${ trackersCount } izleyiciden koruduk"
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ],
       "Welcome": [
         "Hoş geldiniz"
