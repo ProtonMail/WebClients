@@ -4,15 +4,16 @@ import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
-import type { Subscription } from '@proton/payments';
+import type { Currency, FreeSubscription, Subscription } from '@proton/payments';
 import {
     type PaymentsVersion,
     SubscriptionMode,
-    createSubscription,
     getIsPassB2BPlan,
     getIsVpnB2BPlan,
     hasPlanIDs,
 } from '@proton/payments';
+import { createSubscription } from '@proton/payments/core/api/createSubscription';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -26,7 +27,14 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    type APP_NAMES,
+    CLIENT_TYPES,
+    KEYGEN_CONFIGS,
+    KEYGEN_TYPES,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -330,55 +338,66 @@ export const getSubscriptionMetricsData = (
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,
-    productParam: ProductParam,
-    hasZipCodeValidation: boolean,
-    reportPaymentSuccess: () => void,
-    reportPaymentFailure: () => void
+    {
+        productParam,
+        hasZipCodeValidation,
+        build,
+        userCurrency,
+        subscription,
+        telemetryContext,
+    }: {
+        productParam: ProductParam;
+        hasZipCodeValidation: boolean;
+        build: APP_NAMES;
+        userCurrency: Currency | undefined;
+        subscription: Subscription | FreeSubscription | undefined;
+        telemetryContext: PaymentTelemetryContext;
+    }
 ) => {
     if (!hasPlanIDs(subscriptionData.planIDs)) {
         return;
     }
 
-    try {
-        let paymentsVersion: PaymentsVersion;
-        if (subscriptionData.payment?.paymentsVersion) {
-            paymentsVersion = subscriptionData.payment.paymentsVersion;
-        } else {
-            paymentsVersion = 'v4';
-        }
-
-        const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-
-        const { Subscription } = await api<{ Subscription: Subscription }>(
-            createSubscription(
-                {
-                    Plans: subscriptionData.planIDs,
-                    Currency: subscriptionData.currency,
-                    Cycle: subscriptionData.cycle,
-                    BillingAddress: subscriptionData.billingAddress,
-                    VatId: subscriptionData.vatNumber,
-                    ...{
-                        Payment: subscriptionData.payment,
-                        Amount: subscriptionData.checkResult.AmountDue,
-                        ...(subscriptionData.checkResult.Coupon?.Code
-                            ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                            : undefined),
-                        ...(isTrial ? { StartTrial: true } : {}),
-                    },
-                },
-                productParam,
-                paymentsVersion,
-                hasZipCodeValidation
-            )
-        );
-
-        reportPaymentSuccess();
-
-        return Subscription;
-    } catch (error: any) {
-        reportPaymentFailure();
-        throw error;
+    let paymentsVersion: PaymentsVersion;
+    if (subscriptionData.payment?.paymentsVersion) {
+        paymentsVersion = subscriptionData.payment.paymentsVersion;
+    } else {
+        paymentsVersion = 'v4';
     }
+
+    const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
+    const { Subscription } = await createSubscription(
+        api,
+        {
+            Plans: subscriptionData.planIDs,
+            Currency: subscriptionData.currency,
+            Cycle: subscriptionData.cycle,
+            BillingAddress: subscriptionData.billingAddress,
+            VatId: subscriptionData.vatNumber,
+            ...{
+                Payment: subscriptionData.payment,
+                Amount: subscriptionData.checkResult.AmountDue,
+                ...(subscriptionData.checkResult.Coupon?.Code
+                    ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                    : undefined),
+                ...(isTrial ? { StartTrial: true } : {}),
+            },
+        },
+        {
+            build,
+            userCurrency,
+            subscription,
+            product: productParam,
+            version: paymentsVersion,
+            hasZipCodeValidation,
+            telemetryContext,
+            paymentMethodType: subscriptionData.payment?.paymentMethodType,
+            paymentMethodValue: subscriptionData.payment?.paymentMethodValue,
+        }
+    );
+
+    return Subscription;
 };
 
 export const handleSetupUser = async ({
@@ -387,18 +406,16 @@ export const handleSetupUser = async ({
     ignoreVPN,
     canGenerateMnemonic,
     setupKeys = true,
-    reportPaymentSuccess,
-    reportPaymentFailure,
     hasZipCodeValidation,
+    telemetryContext,
 }: {
     cache: SignupCacheResult;
     api: Api;
     ignoreVPN?: boolean;
     canGenerateMnemonic: boolean;
     setupKeys?: boolean;
-    reportPaymentSuccess: () => void;
-    reportPaymentFailure: () => void;
     hasZipCodeValidation: boolean;
+    telemetryContext: PaymentTelemetryContext;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -435,14 +452,17 @@ export const handleSetupUser = async ({
     // so we don't need to subscribe anymore on the frontend
     let subscription: Subscription | undefined;
     if (!referralData) {
-        subscription = await handleSubscribeUser(
-            api,
-            subscriptionData,
+        subscription = await handleSubscribeUser(api, subscriptionData, {
             productParam,
             hasZipCodeValidation,
-            reportPaymentSuccess,
-            reportPaymentFailure
-        );
+            build: cache.appName,
+            telemetryContext,
+
+            // handleSetupUser always creates and subscribes new user. It means that previously user didn't exist,
+            // and we can (and should) drop the parameters that describe the current user state.
+            userCurrency: undefined,
+            subscription: undefined,
+        });
     }
 
     api(updateLocale(localeCode)).catch(noop);

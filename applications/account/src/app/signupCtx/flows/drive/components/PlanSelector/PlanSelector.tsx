@@ -108,7 +108,7 @@ const PlanSelector = ({ onPlanCTAClick, title, highlightedPlan }: PlanSelectorPr
         const availableCurrencies = payments.getAvailableCurrencies(plan);
         const preferredCurrency = payments.getPreferredCurrency(plan);
 
-        const planIsAvailableForSelectedCurrency = availableCurrencies.includes(payments.currency);
+        const planIsAvailableForSelectedCurrency = availableCurrencies.includes(payments.selectedPlan.currency);
 
         if (!planIsAvailableForSelectedCurrency) {
             /**

@@ -6,6 +6,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type Invoice, InvoiceState, isRegularInvoice } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
@@ -17,9 +18,10 @@ interface Props {
     onPreview?: (invoice: Invoice) => void;
     onDownload: (invoice: Invoice) => void;
     onEdit: (invoice: Invoice) => Promise<void>;
+    app: APP_NAMES;
 }
 
-const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit }: Props) => {
+const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit, app }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { paymentsApi } = usePaymentsApi();
@@ -48,7 +50,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
                     return;
                 }
 
-                createModal(<PayInvoiceModal invoice={invoice} fetchInvoices={fetchInvoices} />);
+                createModal(<PayInvoiceModal app={app} invoice={invoice} fetchInvoices={fetchInvoices} />);
             },
         },
         {

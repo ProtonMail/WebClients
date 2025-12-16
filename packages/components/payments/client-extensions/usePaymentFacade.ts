@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import {
     type ADDON_NAMES,
@@ -10,6 +11,7 @@ import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type Currency,
+    type EnrichedCheckResponse,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type PLANS,
@@ -20,12 +22,15 @@ import {
     type PaymentsVersion,
     type PlainPaymentMethodType,
     type PlanIDs,
-    type RequiredCheckResponse,
     type SavedPaymentMethod,
     type Subscription,
     SubscriptionMode,
 } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useCbIframe } from '@proton/payments/ui';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -35,7 +40,6 @@ import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';
-import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     getDefaultVerifyPayment,
     getDefaultVerifyPaypal,
@@ -74,7 +78,6 @@ type PaymentFacadeProps = {
      * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
      */
     flow: PaymentMethodFlow;
-    telemetryFlow?: TelemetryPaymentFlow;
     /**
      * The main callback that will be called when the payment is ready to be charged
      * after the payment token is fetched and verified with 3DS or other confirmation from the user.
@@ -94,7 +97,7 @@ type PaymentFacadeProps = {
      * The selected plan will impact the displayed payment methods.
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
-    checkResult?: RequiredCheckResponse;
+    checkResult?: EnrichedCheckResponse;
     theme?: ThemeLike;
     billingAddress?: BillingAddress;
     user?: User;
@@ -102,6 +105,8 @@ type PaymentFacadeProps = {
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
     isTrial?: boolean;
+    product: ProductParam;
+    telemetryContext: PaymentTelemetryContext;
 };
 
 /**
@@ -118,7 +123,6 @@ export const usePaymentFacade = ({
     onChargeable,
     coupon,
     flow,
-    telemetryFlow,
     onMethodChanged,
     paymentMethods,
     paymentStatus,
@@ -132,7 +136,11 @@ export const usePaymentFacade = ({
     onBeforeSepaPayment,
     planIDs,
     isTrial: isTrialOverride,
+    product,
+    telemetryContext,
 }: PaymentFacadeProps) => {
+    const { APP_NAME } = useConfig();
+
     const enableSepa = useFlag('SepaPayments');
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
 
@@ -149,31 +157,58 @@ export const usePaymentFacade = ({
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
 
-    const telemetry = usePaymentsTelemetry({
-        apiOverride: api,
-        plan: selectedPlanName,
-        flow: telemetryFlow ?? flow,
-        amount,
-        cycle: checkResult?.Cycle,
+    const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api, {
+        checkResult,
+        user,
+        subscription,
+        product,
+        telemetryContext,
     });
 
-    const { reportPaymentLoad, reportPaymentAttempt, reportPaymentFailure } = telemetry;
+    const reportPaymentEvent = (
+        stage: PaymentStage,
+        paymentMethodType: PlainPaymentMethodType,
+        paymentMethodValueParam?: PaymentMethodType
+    ) => {
+        if (checkResult) {
+            checkoutTelemetry.reportPayment({
+                stage,
+                userCurrency: user?.Currency,
+                subscription,
+                amount: checkResult.AmountDue,
+                paymentMethodType,
+                paymentMethodValue: paymentMethodValueParam ?? paymentMethodType,
+                selectedCurrency: checkResult.Currency,
+                selectedPlanIDs: checkResult.requestData.Plans,
+                selectedCycle: checkResult.Cycle,
+                selectedCoupon: checkResult.Coupon?.Code,
+                build: APP_NAME,
+                product,
+                context: telemetryContext,
+            });
+        }
+    };
 
-    const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api);
     const chargebeePaypalModalHandles = useChargebeePaypalHandles({
-        onPaymentAttempt: reportPaymentAttempt,
-        onPaymentFailure: reportPaymentFailure,
+        onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL),
+        onVerificationCancelled: () =>
+            reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL),
+        onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL),
     });
 
     const isTrial = isTrialOverride ?? checkResult?.SubscriptionMode === SubscriptionMode.Trial;
     const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
-        onPaymentAttempt: reportPaymentAttempt,
-        onPaymentFailure: reportPaymentFailure,
+        onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.APPLE_PAY),
+        onVerificationCancelled: () =>
+            reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.APPLE_PAY),
+        onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.APPLE_PAY),
     });
 
     const { canUseGooglePay, googlePayModalHandles } = useGooglePayDependencies(chargebeeHandles, {
-        onPaymentAttempt: reportPaymentAttempt,
-        onPaymentFailure: reportPaymentFailure,
+        onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
+        onVerificationCancelled: () =>
+            reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
+        onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
     });
 
     const hook = useInnerPaymentFacade(
@@ -186,16 +221,11 @@ export const usePaymentFacade = ({
             paymentMethods,
             paymentStatus,
             selectedPlanName,
-            onProcessPaymentToken: reportPaymentAttempt,
             billingAddress,
-            onProcessPaymentTokenFailed: (type) => {
-                reportPaymentFailure(type);
-            },
             onChargeable: async (operations, data) => {
                 try {
                     return await onChargeable(operations, data);
                 } catch (error) {
-                    reportPaymentFailure(data.paymentProcessorType);
                     hook.reset();
                     throw error;
                 }
@@ -209,6 +239,11 @@ export const usePaymentFacade = ({
             isTrial,
             canUseApplePay,
             canUseGooglePay,
+            telemetryContext,
+            onDeclined: ({ selectedMethodType, selectedMethodValue }) =>
+                reportPaymentEvent('payment_declined', selectedMethodType, selectedMethodValue),
+            onValidationFailed: ({ selectedMethodType, selectedMethodValue }) =>
+                reportPaymentEvent('attempt_declined_invalid_data', selectedMethodType, selectedMethodValue),
         },
         {
             api,
@@ -402,10 +437,12 @@ export const usePaymentFacade = ({
         userCanTriggerSelected,
         iframeHandles,
         selectedPlanName,
-        paymentComponentLoaded: reportPaymentLoad,
-        telemetry,
         themeCode,
         user,
+        checkResult,
+        subscription,
+        telemetryContext,
+        product,
     };
 };
 

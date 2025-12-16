@@ -1,6 +1,5 @@
 import type { Location } from 'history';
 
-import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import {
     type BillingAddress,
     type CheckSubscriptionData,
@@ -13,6 +12,7 @@ import {
     getFreeCheckResult,
     hasPlanIDs,
 } from '@proton/payments';
+import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
