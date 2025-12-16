@@ -319,7 +319,7 @@ export const ParticipantControls = () => {
                         />
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
-                        <ChatButton />
+                        {isMobile() ? <ChatButton /> : <ScreenShareButton />}
                         <RecordingControls />
                         <MenuButton />
                     </div>
