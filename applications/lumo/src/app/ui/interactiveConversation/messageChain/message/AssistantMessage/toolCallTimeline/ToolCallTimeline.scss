@@ -1,0 +1,48 @@
+.tool-call-timeline {
+    border: 1px solid var(--border-weak);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    background: var(--background-norm);
+}
+
+.tool-call-timeline-item {
+    &:not(:last-child) {
+        margin-bottom: 4px;
+    }
+}
+
+.tool-call-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-weak);
+    flex-shrink: 0;
+    margin-top: 4px;
+
+    &--in-progress {
+        background-color: var(--interaction-norm);
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+}
+
+.tool-call-line {
+    width: 1px;
+    flex: 1;
+    background-color: var(--border-weak);
+    margin: 2px 0;
+    min-height: 16px;
+}
+
+.tool-call-label--in-progress {
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}

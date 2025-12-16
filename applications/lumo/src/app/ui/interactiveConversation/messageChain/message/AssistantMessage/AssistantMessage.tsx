@@ -7,10 +7,10 @@ import { c } from 'ttag';
 
 import { Icon, useModalStateObject } from '@proton/components';
 
-import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
+import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
@@ -24,7 +24,7 @@ import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { AvatarAndNotice } from './AvatarAndNotice';
-import { BlockRenderer } from './BlockRenderer';
+import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
 
@@ -173,7 +173,10 @@ const AssistantMessage = ({
     const retryButtonRef = useRef<HTMLButtonElement>(null);
 
     // Get blocks for interleaved rendering
-    const blocks = useMemo(() => getMessageBlocks(message), [message.blocks, message.content, message.toolCall, message.toolResult]);
+    const blocks = useMemo(
+        () => getMessageBlocks(message),
+        [message.blocks, message.content, message.toolCall, message.toolResult]
+    );
     const hasContent = blocks.length > 0;
 
     // Extract search results for legacy sources button
@@ -241,18 +244,14 @@ const AssistantMessage = ({
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {hasContent || doNotShowEmptyMessage ? (
                                         <div className="w-full">
-                                            {blocks.map((block, idx) => (
-                                                <BlockRenderer
-                                                    key={idx}
-                                                    block={block}
-                                                    blockIndex={idx}
-                                                    message={message}
-                                                    isStreaming={isGenerating && isLastMessage}
-                                                    isLastBlock={idx === blocks.length - 1}
-                                                    handleLinkClick={handleLinkClick}
-                                                    sourcesContainerRef={sourcesContainerRef}
-                                                />
-                                            ))}
+                                            <RenderBlocks
+                                                blocks={blocks}
+                                                message={message}
+                                                isGenerating={isGenerating}
+                                                isLastMessage={isLastMessage}
+                                                handleLinkClick={handleLinkClick}
+                                                sourcesContainerRef={sourcesContainerRef}
+                                            />
                                         </div>
                                     ) : (
                                         <EmptyMessage />
