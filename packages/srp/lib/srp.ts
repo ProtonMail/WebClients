@@ -5,7 +5,7 @@ import {
     modExp,
     uint8ArrayToBigInt,
 } from '@proton/crypto/lib/bigInteger';
-import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -245,7 +245,7 @@ export const getRandomSrpVerifier = async (
         version,
         username,
         password,
-        salt: arrayToBinaryString(saltBytes),
+        salt: uint8ArrayToBinaryString(saltBytes),
         modulus,
     });
 

@@ -1,8 +1,8 @@
-import { arrayToBinaryString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 
-export const uint8ArrayToString = arrayToBinaryString;
+export const uint8ArrayToString = uint8ArrayToBinaryString;
 
-export const stringToUint8Array = binaryStringToArray;
+export const stringToUint8Array = binaryStringToUint8Array;
 
 /**
  * Convert a utf8 string to a so-called binary string, where each character can be encoded as one byte.

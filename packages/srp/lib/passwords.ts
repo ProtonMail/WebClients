@@ -1,7 +1,7 @@
 import { encodeBase64 as bcryptEncodeBase64, hash as bcryptHash } from 'bcryptjs';
 
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray, stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array, stringToUtf8Array } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { BCRYPT_PREFIX } from './constants';
@@ -25,14 +25,14 @@ export const expandHash = async (input: Uint8Array<ArrayBuffer>) => {
  */
 const formatHash = async (password: string, salt: string, modulus: Uint8Array<ArrayBuffer>) => {
     const unexpandedHash = await bcryptHash(password, BCRYPT_PREFIX + salt);
-    return expandHash(mergeUint8Arrays([binaryStringToArray(unexpandedHash), modulus]));
+    return expandHash(mergeUint8Arrays([binaryStringToUint8Array(unexpandedHash), modulus]));
 };
 
 /**
  * Hash password in version 3.
  */
 const hashPassword3 = (password: string, salt: string, modulus: Uint8Array<ArrayBuffer>) => {
-    const saltBinary = binaryStringToArray(`${salt}proton`);
+    const saltBinary = binaryStringToUint8Array(`${salt}proton`);
     return formatHash(password, bcryptEncodeBase64(saltBinary, 16), modulus);
 };
 

@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -21,7 +21,7 @@ const getVRFKey = () => Uint8Array.fromHex(getBaseDomain() === KT_DOMAINS.PROD ?
 const verifyVRFProof = async (proof: Proof, email: string) => {
     try {
         const vrfHash = await vrfVerify(
-            binaryStringToArray(canonicalizeInternalEmail(email)),
+            binaryStringToUint8Array(canonicalizeInternalEmail(email)),
             Uint8Array.fromHex(proof.Verifier),
             getVRFKey()
         );
@@ -145,7 +145,10 @@ export const verifyProofOfAbsenceForAllRevision = async (proof: Proof, email: st
  * Compute the leaf value as the SHA256 of the concatenation of the content,
  * either an obsolescence token or a SKL's data, and the revision
  */
-const computeLeafValue = async (content: Uint8Array<ArrayBuffer>, minEpochID: number): Promise<Uint8Array<ArrayBuffer>> => {
+const computeLeafValue = async (
+    content: Uint8Array<ArrayBuffer>,
+    minEpochID: number
+): Promise<Uint8Array<ArrayBuffer>> => {
     return CryptoProxy.computeHash({
         algorithm: 'SHA256',
         data: mergeUint8Arrays([
@@ -189,7 +192,7 @@ export const verifyProofOfObsolescence = async (
         });
     }
     const vrfHash = await verifyVRFProof(proof, email);
-    const leafValue = await computeLeafValue(binaryStringToArray(ObsolescenceToken), MinEpochID);
+    const leafValue = await computeLeafValue(binaryStringToUint8Array(ObsolescenceToken), MinEpochID);
 
     await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
@@ -218,7 +221,7 @@ export const verifyProofOfExistence = async (
         });
     }
     const vrfHash = await verifyVRFProof(proof, email);
-    const leafValue = await computeLeafValue(binaryStringToArray(Data), MinEpochID);
+    const leafValue = await computeLeafValue(binaryStringToUint8Array(Data), MinEpochID);
 
     await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
