@@ -2,7 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useMediaDeviceSelect, useRoomContext } from '@livekit/components-react';
 import { ConnectionState, Track } from 'livekit-client';
+import { c } from 'ttag';
 
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useMeetErrorReporting } from '@proton/meet';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useAudioToggle } from '../hooks/useAudioToggle';
@@ -16,6 +19,8 @@ import { MediaManagementContext } from './MediaManagementContext';
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
+    const { createNotification } = useNotifications();
+    const reportMeetError = useMeetErrorReporting();
 
     const [initialCameraState, setInitialCameraState] = useState<boolean>(false);
     const [initialAudioState, setInitialAudioState] = useState<boolean>(false);
@@ -107,6 +112,17 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
     };
 
+    const initializeCamera = async (initialCameraState: boolean) => {
+        try {
+            if (initialCameraState) {
+                await toggleVideo({ isEnabled: true, preserveCache: true });
+            }
+        } catch (error) {
+            reportMeetError('Failed to initialize camera', error);
+            throw error;
+        }
+    };
+
     const initializeMicrophone = async (initialAudioState: boolean) => {
         try {
             // If starting muted, mute the track (keeps it published but silent)
@@ -122,26 +138,44 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 await toggleAudio({ isEnabled: true, preserveCache: true });
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(error);
+            reportMeetError('Failed to initialize microphone', error);
+            throw error;
         }
     };
 
     const initializeDevices = async () => {
-        await Promise.all([
-            room.localParticipant.setCameraEnabled(initialCameraState, isMobile() ? { facingMode } : undefined),
+        const results = await Promise.allSettled([
+            initializeCamera(initialCameraState),
             initializeMicrophone(initialAudioState),
         ]);
 
-        // We need to restart the video track on mobile to make sure the facing mode is applied
-        if (isMobile() && initialCameraState) {
-            const videoTrack = [...room.localParticipant.trackPublications.values()].filter(
-                (track) => track.kind === Track.Kind.Video && track.source !== Track.Source.ScreenShare
-            )[0]?.track;
+        const cameraError = results[0].status === 'rejected' ? results[0].reason : null;
+        const microphoneError = results[1].status === 'rejected' ? results[1].reason : null;
 
-            if (videoTrack) {
-                await videoTrack.restartTrack({ facingMode: { exact: facingMode } });
+        if (cameraError || microphoneError) {
+            if (cameraError) {
+                reportMeetError('Failed to initialize camera', cameraError);
             }
+            if (microphoneError) {
+                reportMeetError('Failed to initialize microphone', microphoneError);
+            }
+
+            let errorMessage: string;
+            if (cameraError && microphoneError) {
+                errorMessage = c('Warning')
+                    .t`Could not access camera or microphone. You can try enabling them again from the meeting controls.`;
+            } else if (cameraError) {
+                errorMessage = c('Warning')
+                    .t`Could not access camera. You can try enabling it again from the meeting controls.`;
+            } else {
+                errorMessage = c('Warning')
+                    .t`Could not access microphone. You can try enabling it again from the meeting controls.`;
+            }
+
+            createNotification({
+                type: 'warning',
+                text: errorMessage,
+            });
         }
     };
 
