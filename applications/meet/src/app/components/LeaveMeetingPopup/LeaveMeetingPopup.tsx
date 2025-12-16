@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,7 +13,7 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
-import { MeetingSideBars } from '../../types';
+import { MeetingSideBars, PopUpControls } from '../../types';
 import { ScreenShareLeaveWarningModal } from '../ScreenShareLeaveWarningModal/ScreenShareLeaveWarningModal';
 
 import './LeaveMeetingPopup.scss';
@@ -23,10 +21,9 @@ import './LeaveMeetingPopup.scss';
 export const LeaveMeetingPopup = () => {
     const allowNewHostAssignment = useFlag('MeetAllowNewHostAssignment');
 
-    const [isScreenShareLeaveWarningModalOpen, setIsScreenShareLeaveWarningModalOpen] = useState(false);
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef } = usePopperAnchor<HTMLButtonElement>();
     const { handleEndMeeting, handleLeave, isLocalScreenShare } = useMeetContext();
-    const { toggleSideBarState } = useUIStateContext();
+    const { toggleSideBarState, popupState, togglePopupState, setPopupStateValue } = useUIStateContext();
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
 
     const isLargerThanMd = useIsLargerThanMd();
@@ -36,15 +33,19 @@ export const LeaveMeetingPopup = () => {
 
     const handleButtonClick = () => {
         if (isLocalScreenShare) {
-            setIsScreenShareLeaveWarningModalOpen(true);
+            setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, true);
         } else if (
             (isLocalParticipantHost && !hasAnotherAdmin) ||
             (isLocalParticipantAdmin && !hasAnotherAdmin && !hostIsPresent)
         ) {
-            toggle();
+            togglePopupState(PopUpControls.LeaveMeeting);
         } else {
             handleLeave();
         }
+    };
+
+    const handleClose = () => {
+        setPopupStateValue(PopUpControls.LeaveMeeting, false);
     };
 
     return (
@@ -61,16 +62,16 @@ export const LeaveMeetingPopup = () => {
             </Button>
             <Dropdown
                 className="meet-radius"
-                isOpen={isOpen}
+                isOpen={popupState[PopUpControls.LeaveMeeting]}
                 anchorRef={anchorRef}
-                onClose={close}
+                onClose={handleClose}
                 originalPlacement="top-start"
                 availablePlacements={['top-start', 'top', 'top-end', 'bottom-start', 'bottom', 'bottom-end']}
                 size={{ width: '24.5rem', maxWidth: '24.5rem' }}
             >
                 <div className="px-4 pb-4 pt-2 flex flex-column flex-nowrap gap-2">
                     <div className="w-full flex justify-end">
-                        <CloseButton onClose={close} />
+                        <CloseButton onClose={handleClose} />
                     </div>
 
                     <Button
@@ -94,7 +95,7 @@ export const LeaveMeetingPopup = () => {
                             className="assign-new-host-button border-none rounded-full w-full py-4"
                             onClick={() => {
                                 toggleSideBarState(MeetingSideBars.AssignHost);
-                                close();
+                                handleClose();
                             }}
                             disabled={loadingEndMeeting}
                             size="large"
@@ -104,8 +105,10 @@ export const LeaveMeetingPopup = () => {
                     )}
                 </div>
             </Dropdown>
-            {isScreenShareLeaveWarningModalOpen && (
-                <ScreenShareLeaveWarningModal onClose={() => setIsScreenShareLeaveWarningModalOpen(false)} />
+            {popupState[PopUpControls.ScreenShareLeaveWarning] && (
+                <ScreenShareLeaveWarningModal
+                    onClose={() => setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, false)}
+                />
             )}
         </>
     );

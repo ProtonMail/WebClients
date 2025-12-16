@@ -9,7 +9,6 @@ import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
-import { UIStateProvider } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
@@ -198,14 +197,12 @@ export const MeetContainer = ({
                         decryptionErrorLogs,
                     }}
                 >
-                    <UIStateProvider instantMeeting={instantMeeting}>
-                        <MeetingBody
-                            isScreenShare={isScreenShare}
-                            isLocalScreenShare={isLocalScreenShare}
-                            screenShareTrack={screenShareTrack}
-                            screenShareParticipant={screenShareParticipant}
-                        />
-                    </UIStateProvider>
+                    <MeetingBody
+                        isScreenShare={isScreenShare}
+                        isLocalScreenShare={isLocalScreenShare}
+                        screenShareTrack={screenShareTrack}
+                        screenShareParticipant={screenShareParticipant}
+                    />
                 </MeetContext.Provider>
                 <AutoCloseMeetingModal onLeave={() => handleLeave()} />
             </MeetingRecorderContext.Provider>
