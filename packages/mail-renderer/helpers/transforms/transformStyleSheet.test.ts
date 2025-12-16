@@ -80,4 +80,17 @@ describe('transformStylesheet', () => {
         const styleTag = element.querySelector('style');
         expect(styleTag?.textContent).toBe('article {padding: 1rem;}\n');
     });
+
+    it('should replace min-height: 100vh with min-height: auto', () => {
+        element.innerHTML = '<style>div { min-height: 100vh; }</style>';
+        transformStylesheet(element);
+        const styleTag = element.querySelector('style');
+        expect(styleTag?.textContent).toBe('div { min-height: auto; }');
+    });
+    it('should replace min-height: 100vh with min-block-size: auto', () => {
+        element.innerHTML = '<style>div { min-block-size: 100vh; }</style>';
+        transformStylesheet(element);
+        const styleTag = element.querySelector('style');
+        expect(styleTag?.textContent).toBe('div { min-block-size: auto; }');
+    });
 });

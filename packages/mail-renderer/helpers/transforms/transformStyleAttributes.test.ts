@@ -51,6 +51,25 @@ describe('transformStyleAttributes', () => {
         });
     });
 
+    describe('replaceMinHeightWith100vh', () => {
+        it('Should replace min-height/min-block-size: 100vh with auto value', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="min-height: 100vh;">
+                </div>
+                <div id="b" style="min-block-size: 100vh;">
+                </div>
+            `;
+
+            transformStyleAttributes(document.body as unknown as Element);
+
+            const a = document.getElementById('a');
+            const b = document.getElementById('b');
+            expect(a?.style.minHeight).toBe('auto');
+            expect(b?.style.minBlockSize).toBe('auto');
+        });
+    });
+
     // had to extract the method for testing, because of a crazy issue of JSDOM - see after
     describe('handleTopLeftPropertiesRemoval', () => {
         it('Should remove top and left from style attributes', () => {
