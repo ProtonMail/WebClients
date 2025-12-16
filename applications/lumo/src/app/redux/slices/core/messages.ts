@@ -1,6 +1,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
+import { appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks } from '../../../messageHelpers';
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
 import type {
@@ -71,9 +72,14 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`appendChunk: message ${chunk.messageId} not found`);
                 return;
             }
+            // Update legacy field (backward compat)
             message.content ??= '';
             console.log('appendChunk: ', chunk.content);
             message.content += chunk.content;
+
+            // Update blocks
+            message.blocks ??= [];
+            message.blocks = appendTextToBlocks(message.blocks, chunk.content);
         })
         .addCase(setToolCall, (state, action) => {
             const chunk = action.payload;
@@ -82,7 +88,13 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`setToolCall: message ${chunk.messageId} not found`);
                 return;
             }
+
+            // Update legacy field (backward compat)
             message.toolCall = chunk.content;
+
+            // Update blocks (replace if streaming, else append)
+            message.blocks ??= [];
+            message.blocks = setToolCallInBlocks(message.blocks, chunk.content);
         })
         .addCase(setToolResult, (state, action) => {
             const chunk = action.payload;
@@ -91,7 +103,13 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`setToolResult: message ${chunk.messageId}: not found`);
                 return;
             }
+
+            // Update legacy field (backward compat)
             message.toolResult = chunk.content;
+
+            // Update blocks
+            message.blocks ??= [];
+            message.blocks = setToolResultInBlocks(message.blocks, chunk.content);
         })
         .addCase(addImageAttachment, (state, action) => {
             const { messageId, attachment } = action.payload;
