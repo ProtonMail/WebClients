@@ -181,7 +181,7 @@ const AssistantMessage = ({
     const messageContent = preprocessContent(message?.content);
 
     console.log(`in AssistantMessage component body: message = ${JSON.stringify(message)}`);
-    const { toolCall, toolResult } = useToolCallInfo(message.toolCall, message.toolResult);
+    const { toolCall, toolResult } = useToolCallInfo(message);
     const hasToolCall = toolCall !== null;
 
     // Extract search results if this is a web_search tool
@@ -330,10 +330,19 @@ export default memo(AssistantMessage, (prevProps, nextProps) => {
     const contentEqual = prevProps.message.content === nextProps.message.content;
     const toolCallEqual = prevProps.message.toolCall === nextProps.message.toolCall;
     const toolResultEqual = prevProps.message.toolResult === nextProps.message.toolResult;
+    const blocksEqual = prevProps.message.blocks === nextProps.message.blocks;
     const statusEqual = prevProps.message.status === nextProps.message.status;
     const streamingEqual = prevProps.isGenerating === nextProps.isGenerating;
     const lastMessageEqual = prevProps.isLastMessage === nextProps.isLastMessage;
 
     // Don't re-render if nothing meaningful changed
-    return contentEqual && toolCallEqual && toolResultEqual && statusEqual && streamingEqual && lastMessageEqual;
+    return (
+        contentEqual &&
+        toolCallEqual &&
+        toolResultEqual &&
+        blocksEqual &&
+        statusEqual &&
+        streamingEqual &&
+        lastMessageEqual
+    );
 });

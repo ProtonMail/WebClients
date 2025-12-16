@@ -300,6 +300,27 @@ export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
 }
 
 // *** Message ***
+
+// Content block types for structured message content
+export type TextBlock = {
+    type: 'text';
+    content: string; // Markdown
+};
+
+export type ToolCallBlock = {
+    type: 'tool_call';
+    content: string; // JSON string (for serialization/prepareTurns)
+    toolCall?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+};
+
+export type ToolResultBlock = {
+    type: 'tool_result';
+    content: string; // JSON string (for serialization/prepareTurns)
+    toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
+};
+
+export type ContentBlock = TextBlock | ToolCallBlock | ToolResultBlock;
+
 export type MessagePub = {
     id: MessageId; // uuid
     createdAt: string; // date
@@ -311,18 +332,45 @@ export type MessagePub = {
 };
 
 export type MessagePriv = {
-    content?: string;
+    // Legacy fields (kept for backward compatibility)
     context?: string;
     attachments?: ShallowAttachment[]; // with empty .data and .markdown; full payloads are in IndexedDB
-    toolCall?: string;
-    toolResult?: string;
     contextFiles?: AttachmentId[]; // Files that were used in LLM context for this response
+
+    // Content v1: could not have more than one tool call, and cannot interleave content and tools
+    content?: string; // User-visible message string (as markdown)
+    toolCall?: string; // Stringified JSON from backend
+    toolResult?: string; // Stringified JSON from backend
+
+    // Content v2: message content and tool calls are now interleaved in a clear sequence `blocks`,
+    // making other fields (`content`, `toolCall`, `toolResult`) legacy.
+    blocks?: ContentBlock[];
 };
 
 export type Message = MessagePub & MessagePriv;
 export type SerializedMessage = MessagePub & Partial<Encrypted> & LocalFlags;
 export type DeletedMessage = Omit<SerializedMessage, 'encrypted'> & Deleted;
 export type SerializedMessageMap = Record<MessageId, SerializedMessage>;
+
+export function isTextBlock(block: any): block is TextBlock {
+    return typeof block === 'object' && block !== null && block.type === 'text' && typeof block.content === 'string';
+}
+
+export function isToolCallBlock(block: any): block is ToolCallBlock {
+    return (
+        typeof block === 'object' && block !== null && block.type === 'tool_call' && typeof block.content === 'string'
+    );
+}
+
+export function isToolResultBlock(block: any): block is ToolResultBlock {
+    return (
+        typeof block === 'object' && block !== null && block.type === 'tool_result' && typeof block.content === 'string'
+    );
+}
+
+export function isContentBlock(value: any): value is ContentBlock {
+    return isTextBlock(value) || isToolCallBlock(value) || isToolResultBlock(value);
+}
 
 export function isMessagePub(value: any): value is MessagePub {
     return (
@@ -338,6 +386,7 @@ export function isMessagePub(value: any): value is MessagePub {
     );
 }
 
+// FIXME: nulls are not valid
 export function isMessagePriv(value: any): value is MessagePriv {
     return (
         typeof value === 'object' &&
@@ -351,7 +400,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.toolResult === undefined || value.toolResult === null || typeof value.toolResult === 'string') &&
         (value.contextFiles === undefined ||
             value.contextFiles === null ||
-            (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string')))
+            (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string'))) &&
+        (value.blocks === undefined || (Array.isArray(value.blocks) && value.blocks.every(isContentBlock)))
     );
 }
 
@@ -361,8 +411,8 @@ export function getMessagePub(message: MessagePub): MessagePub {
 }
 
 export function getMessagePriv(m: MessagePriv): MessagePriv {
-    const { content, context, attachments, toolCall, toolResult, contextFiles } = m;
-    return { content, context, attachments, toolCall, toolResult, contextFiles };
+    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks } = m;
+    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks };
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -387,6 +437,7 @@ export function cleanMessage(message: Message): Message {
         toolCall,
         toolResult,
         contextFiles,
+        blocks,
     } = message;
     return {
         id,
@@ -402,6 +453,7 @@ export function cleanMessage(message: Message): Message {
         ...(toolCall !== undefined && { toolCall }),
         ...(toolResult !== undefined && { toolResult }),
         ...(contextFiles !== undefined && { contextFiles }),
+        ...(blocks !== undefined && { blocks }),
     };
 }
 
@@ -444,7 +496,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.attachments === undefined &&
         value.toolCall === undefined &&
         value.toolResult === undefined &&
-        value.contextFiles === undefined
+        value.contextFiles === undefined &&
+        (value.blocks === undefined || value.blocks.length === 0)
     );
 }
 
