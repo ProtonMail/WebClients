@@ -251,6 +251,9 @@
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Creare ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Creare folder"
       ],
@@ -589,7 +592,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -963,6 +966,14 @@
         "Rezultate neafișate: ${ hiddenResultsCount }",
         "Rezultate neafișate: ${ hiddenResultsCount }",
         "Rezultate neafișate: ${ hiddenResultsCount }"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3124,6 +3135,9 @@
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
       ],
+      "Unable to import file": [
+        "Fișierul nu se poate importa."
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nu se poate încărca panoul general VPN. Verificați conexiunea și reîncercați."
       ],
@@ -3153,6 +3167,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Există probleme la sincronizarea documentului. Împrospătați pagina."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Nu s-a putut importa acest fișier în ${ SHEETS_APP_NAME }. Puteți încerca să copiați și să inserați conținutul într-un fișier ${ SHEETS_APP_NAME } nou."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
@@ -4179,13 +4196,13 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
@@ -6017,6 +6034,9 @@
       ],
       "Resume now": [
         "Reluare acum"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ],
       "Types of recovery methods": [
         "Tipuri de metode de recuperare"
@@ -8181,7 +8201,7 @@
         "Persoane abonate"
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invited friends": [
         "Persoane invitate"
