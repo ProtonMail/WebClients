@@ -12,7 +12,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 
 interface Props {
-    title: string;
+    title: ReactNode;
     link?: string;
     icon: IconName;
     items?: ReactNode[];
