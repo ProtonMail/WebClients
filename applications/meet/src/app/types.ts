@@ -38,6 +38,8 @@ export enum MeetingSideBars {
 export enum PopUpControls {
     Microphone = 'Microphone',
     Camera = 'Camera',
+    LeaveMeeting = 'LeaveMeeting',
+    ScreenShareLeaveWarning = 'ScreenShareLeaveWarning',
 }
 
 export enum QualityScenarios {

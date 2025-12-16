@@ -16,8 +16,11 @@ export interface UIStateContextType {
     popupState: {
         [PopUpControls.Microphone]: boolean;
         [PopUpControls.Camera]: boolean;
+        [PopUpControls.LeaveMeeting]: boolean;
+        [PopUpControls.ScreenShareLeaveWarning]: boolean;
     };
     togglePopupState: (popupState: PopUpControls) => void;
+    setPopupStateValue: (popupState: PopUpControls, value: boolean) => void;
     permissionPromptStatus: PermissionPromptStatus;
     setPermissionPromptStatus: (permissionPromptStatus: PermissionPromptStatus) => void;
     noDeviceDetected: PermissionPromptStatus;
@@ -38,8 +41,11 @@ export const UIStateContext = createContext<UIStateContextType>({
     popupState: {
         [PopUpControls.Microphone]: false,
         [PopUpControls.Camera]: false,
+        [PopUpControls.LeaveMeeting]: false,
+        [PopUpControls.ScreenShareLeaveWarning]: false,
     },
     togglePopupState: () => {},
+    setPopupStateValue: () => {},
     permissionPromptStatus: PermissionPromptStatus.CLOSED,
     setPermissionPromptStatus: () => {},
     noDeviceDetected: PermissionPromptStatus.CLOSED,
@@ -71,6 +77,8 @@ export const UIStateProvider = ({
     const [popupState, setPopupState] = useState<UIStateContextType['popupState']>({
         [PopUpControls.Microphone]: false,
         [PopUpControls.Camera]: false,
+        [PopUpControls.LeaveMeeting]: false,
+        [PopUpControls.ScreenShareLeaveWarning]: false,
     });
 
     const [permissionPromptStatus, setPermissionPromptStatus] = useState(PermissionPromptStatus.CLOSED);
@@ -102,6 +110,18 @@ export const UIStateProvider = ({
         [setPopupState]
     );
 
+    const setPopupStateValue = useCallback(
+        (popup: PopUpControls, value: boolean) => {
+            setPopupState(
+                (prev) =>
+                    Object.fromEntries(
+                        Object.entries(prev).map(([key, v]) => [key, key === popup ? value : v])
+                    ) as Record<PopUpControls, boolean>
+            );
+        },
+        [setPopupState]
+    );
+
     return (
         <UIStateContext.Provider
             value={{
@@ -111,6 +131,7 @@ export const UIStateProvider = ({
                 toggleSideBarState,
                 popupState,
                 togglePopupState,
+                setPopupStateValue: setPopupStateValue,
                 permissionPromptStatus,
                 setPermissionPromptStatus,
                 noDeviceDetected,
