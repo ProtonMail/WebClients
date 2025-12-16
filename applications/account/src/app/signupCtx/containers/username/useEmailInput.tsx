@@ -3,7 +3,8 @@ import { type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Challenge, DropdownSizeUnit, Icon, InputFieldTwo, Option, SelectTwo } from '@proton/components';
+import { Challenge, DropdownSizeUnit, InputFieldTwo, Option, SelectTwo } from '@proton/components';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
 
 import { usePublicTheme } from '../../../containers/PublicThemeProvider';
@@ -86,7 +87,9 @@ const useEmailInput = ({
                         setLoadingChallenge(false);
                     }}
                 >
-                    <div className={clsx(inputsWrapper, inputClassName, theme.dark && 'ui-prominent', 'bg-transparent')}>
+                    <div
+                        className={clsx(inputsWrapper, inputClassName, theme.dark && 'ui-prominent', 'bg-transparent')}
+                    >
                         {state.signupType === SignupType.External && (
                             <InputFieldTwo
                                 bigger={bigger}
@@ -101,8 +104,7 @@ const useEmailInput = ({
                                     }
                                     if (asyncStates.email.state === AsyncValidationStateValue.Success) {
                                         return (
-                                            <Icon
-                                                name="checkmark-circle"
+                                            <IcCheckmarkCircle
                                                 className="color-success"
                                                 size={4}
                                                 data-testid="email-valid"
@@ -118,6 +120,7 @@ const useEmailInput = ({
                                 })()}
                                 disabled={emailDisabled}
                                 dense={dense ? !errors.email : undefined}
+                                // eslint-disable-next-line no-nested-ternary
                                 rootClassName={dense ? (!errors.email ? 'pb-2' : undefined) : undefined}
                                 value={state.email}
                                 onValue={(value: string) => onValue.onEmailValue(value, state.domains)}
@@ -168,8 +171,7 @@ const useEmailInput = ({
                                         };
                                         if (asyncStates.username.state === AsyncValidationStateValue.Success) {
                                             return wrap(
-                                                <Icon
-                                                    name="checkmark-circle"
+                                                <IcCheckmarkCircle
                                                     className="color-success"
                                                     size={4}
                                                     data-testid="email-valid"
@@ -221,6 +223,7 @@ const useEmailInput = ({
                                     );
                                 })()}
                                 dense={dense ? !errors.username : undefined}
+                                // eslint-disable-next-line no-nested-ternary
                                 rootClassName={dense ? (!errors.username ? 'pb-2' : undefined) : undefined}
                                 value={state.username}
                                 onValue={(value: string) => {

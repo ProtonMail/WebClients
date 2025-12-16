@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import BYOESignupButton from '@proton/activation/src/components/Signup/BYOESignupButton';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
+import { Challenge, DropdownSizeUnit, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -121,7 +122,7 @@ const AccountStepDetails = ({
             return;
         }
         try {
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.userCheckout,
                 dimensions: {
                     type: 'free',
@@ -206,8 +207,7 @@ const AccountStepDetails = ({
                                         }
                                         if (asyncStates.email.state === AsyncValidationStateValue.Success) {
                                             return (
-                                                <Icon
-                                                    name="checkmark-circle"
+                                                <IcCheckmarkCircle
                                                     className="color-success"
                                                     size={4}
                                                     data-testid="email-valid"
@@ -223,6 +223,7 @@ const AccountStepDetails = ({
                                     })()}
                                     disabled={emailDisabled}
                                     dense={dense ? !errors.email : undefined}
+                                    // eslint-disable-next-line no-nested-ternary
                                     rootClassName={dense ? (!errors.email ? 'pb-2' : undefined) : undefined}
                                     value={state.email}
                                     onValue={(value) => onValue.onEmailValue(value, state.domains)}
@@ -232,7 +233,7 @@ const AccountStepDetails = ({
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
-                                            handleSubmit();
+                                            handleSubmit().catch(noop);
                                         }
                                         if (event.key === 'Tab') {
                                             onValue.onInputsStateDiff({ email: { focus: true } });
@@ -272,8 +273,7 @@ const AccountStepDetails = ({
                                             };
                                             if (asyncStates.username.state === AsyncValidationStateValue.Success) {
                                                 return wrap(
-                                                    <Icon
-                                                        name="checkmark-circle"
+                                                    <IcCheckmarkCircle
                                                         className="color-success"
                                                         size={4}
                                                         data-testid="email-valid"
@@ -329,6 +329,7 @@ const AccountStepDetails = ({
                                         );
                                     })()}
                                     dense={dense ? !errors.username : undefined}
+                                    // eslint-disable-next-line no-nested-ternary
                                     rootClassName={dense ? (!errors.username ? 'pb-2' : undefined) : undefined}
                                     value={state.username}
                                     onValue={(value: string) => {
@@ -340,7 +341,7 @@ const AccountStepDetails = ({
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
-                                            handleSubmit();
+                                            handleSubmit().catch(noop);
                                         }
                                         if (event.key === 'Tab') {
                                             onValue.onInputsStateDiff({ username: { focus: true } });
