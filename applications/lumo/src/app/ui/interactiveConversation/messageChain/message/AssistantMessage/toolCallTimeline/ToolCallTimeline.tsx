@@ -33,12 +33,11 @@ const ToolCallTimelineItemComponent = ({ toolCall, isInProgress, isLast }: ToolC
 
     return (
         <div className="tool-call-timeline-item">
-            <div className="flex flex-row items-start gap-2">
+            <div className="flex flex-row items-center gap-2">
                 {/* Circle indicator */}
-                <div className="flex flex-column items-center" style={{ width: '16px' }}>
-                    <div className={clsx('tool-call-circle', isInProgress && 'tool-call-circle--in-progress')} />
-                    {!isLast && <div className="tool-call-line" />}
-                </div>
+                {/*<div className="items-center flex flex-center" style={{ height: '100%' }}>*/}
+                {/*    <div className={clsx('tool-call-circle', isInProgress && 'tool-call-circle--in-progress')} />*/}
+                {/*</div>*/}
 
                 {/* Label */}
                 <p
