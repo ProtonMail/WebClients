@@ -1,7 +1,7 @@
 import { memo, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
+import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -26,6 +26,8 @@ import { AvatarAndNotice } from './AvatarAndNotice';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
+
+const ENABLE_DEBUG_INFO = false;
 
 interface AssistantActionToolbarProps {
     message: Message;
@@ -147,6 +149,26 @@ interface AssistantMessageProps {
 //     boxSizing: 'border-box' as const,
 // };
 
+function DebugInfo(props: {
+    isLoading: boolean;
+    hasToolCall: boolean;
+    blocks: ContentBlock[];
+    searchResults: SearchItem[];
+}) {
+    if (!ENABLE_DEBUG_INFO) {
+        return null;
+    }
+    return (
+        <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
+            <p className="color-weak font-bold mb-1">DEBUG INFO</p>
+            <p className="color-weak m-0">isLoading: {JSON.stringify(props.isLoading)}</p>
+            <p className="color-weak m-0">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>
+            <p className="color-weak m-0 break-all">blocks: {JSON.stringify(props.blocks.length)}</p>
+            <p className="color-weak m-0">searchResults: {JSON.stringify(props.searchResults !== null)}</p>
+        </div>
+    );
+}
+
 const AssistantMessage = ({
     isLoading,
     isRunning: _isRunning,
@@ -226,15 +248,12 @@ const AssistantMessage = ({
                             ref={markdownContainerRef}
                             className="markdown-rendering flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
                         >
-                            <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
-                                <p className="color-weak font-bold mb-1">DEBUG INFO</p>
-                                <p className="color-weak m-0">isLoading: {JSON.stringify(isLoading)}</p>
-                                <p className="color-weak m-0">hasToolCall: {JSON.stringify(hasToolCall)}</p>
-                                <p className="color-weak m-0 break-all">blocks: {JSON.stringify(blocks.length)}</p>
-                                <p className="color-weak m-0">
-                                    searchResults: {JSON.stringify(searchResults !== null)}
-                                </p>
-                            </div>
+                            <DebugInfo
+                                isLoading={isLoading || false}
+                                hasToolCall={hasToolCall}
+                                blocks={blocks}
+                                searchResults={searchResults ?? []}
+                            />
                             {isLoading && !hasToolCall ? (
                                 <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                     <div className="rectangle-skeleton keep-motion"></div>
