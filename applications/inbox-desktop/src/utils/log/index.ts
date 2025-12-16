@@ -27,6 +27,8 @@ export const notificationLogger = Logger.scope("notification");
 export const flagManagerLogger = Logger.scope("flag-manager");
 export const networkLogger = Logger.scope("network");
 
+const protonDomains = ["proton.ch", "proton.me", "protonmail.com", "pm.me"];
+
 const filterSensitiveLogMessage: Hook = (msg: LogMessage, _transport?: Transport): LogMessage => {
     return {
         ...msg,
@@ -63,7 +65,7 @@ const isEmail = (str: string) => {
 const getFilteredEmail = (email: string) => {
     const [, domain] = email.split("@");
 
-    if (["proton.ch", "proton.me", "protonmail.com", "pm.me"].includes(domain.toLowerCase())) {
+    if (protonDomains.includes(domain.toLowerCase())) {
         return "__EMAIL_PROTON__";
     }
 
@@ -116,6 +118,14 @@ const filterSensitiveString = (data: string): string => {
 
     if (URL.canParse(filteredData)) {
         const url = new URL(filteredData);
+
+        // Filter out everything beyond the domain name for non-pm requests for these protocols
+        if (
+            /^(https?):\/\//i.test(filteredData) &&
+            !protonDomains.some((domain) => url.hostname.toLowerCase().endsWith(domain))
+        ) {
+            return `${url.protocol}//${url.hostname}/__REST_OF_URL__`;
+        }
 
         filterSearchParams(url.searchParams);
 

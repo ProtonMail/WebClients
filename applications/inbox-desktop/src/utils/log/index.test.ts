@@ -131,3 +131,45 @@ describe("filter sensitve data", () => {
         );
     });
 });
+
+describe("filter http/s URLs", () => {
+    it("does not filter out Proton domains", () => {
+        expectFilterStringIsSame("GET https://mail.proton.me/path1/path2/path3#someParam=1&paramTwo=2");
+    });
+
+    it("does not filter out Proton domains", () => {
+        expectFilterStringIsSame("GET http://mail.proton.me/path1/path2/path3#someParam=1&paramTwo=2");
+    });
+
+    it("filters URLs beyond the domain for non Proton hosts", () => {
+        expectFilterSensitiveString(
+            "GET http://account.bankamerica.com/money/dispatch#arg1=222",
+            "GET http://account.bankamerica.com/__REST_OF_URL__",
+        );
+    });
+
+    it("filters URLs beyond the domain for non Proton hosts", () => {
+        expectFilterSensitiveString(
+            "GET https://account.bankamerica.com/money/dispatch#arg1=222",
+            "GET https://account.bankamerica.com/__REST_OF_URL__",
+        );
+    });
+
+    it("filters URLs beyond the domain for non Proton hosts", () => {
+        expectFilterSensitiveString("GET https://joy.com/harlem/oost", "GET https://joy.com/__REST_OF_URL__");
+    });
+
+    it("does not filter other protocol URLs", () => {
+        expectFilterSensitiveString(
+            `loadURL from file:///${encodeURI(app.getPath("home"))}/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/`,
+            "loadURL from file:////__HOME_NONASCII_8889dffe3531b138c1c6dad2f4fba23da5f8765c__/AppData/Local/proton_mail/app-1.3.1/resources/loading.html?message=Loading%20Proton%20Calendar%E2%80%A6&theme=dark to https://calendar.proton.me/u/0/",
+        );
+    });
+
+    it("does not filter other protocol URLs for non Proton hosts", () => {
+        expectFilterSensitiveString(
+            "GET file://account.bankamerica.com/money/dispatch#arg1=222",
+            "GET file://account.bankamerica.com/money/dispatch#arg1=222",
+        );
+    });
+});
