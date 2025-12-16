@@ -2,7 +2,7 @@
  * Feature flag list from Unleash
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
-enum CommonFeatureFlag {
+export enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
     CollectLogs = 'CollectLogs',
     AutoReloadPage = 'AutoReloadPage',
@@ -59,6 +59,7 @@ enum CommonFeatureFlag {
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
     OlesM1 = 'OlesM1',
     WebNPSModal = 'WebNPSModal',
+    WebApiRateLimiter = 'WebApiRateLimiter',
 }
 
 enum AccountFlag {
@@ -122,7 +123,6 @@ export enum CalendarFeatureFlag {
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
     CalendarExternalBookings = 'CalendarExternalBookings',
-    CalendarWebApiRateLimiter = 'CalendarWebApiRateLimiter',
 }
 
 enum DriveFeatureFlag {
@@ -223,7 +223,6 @@ export enum MailFeatureFlag {
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
-    MailWebApiRateLimiter = 'MailWebApiRateLimiter',
 }
 
 enum AdminFeatureFlag {
