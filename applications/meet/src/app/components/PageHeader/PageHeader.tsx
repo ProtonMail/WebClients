@@ -76,7 +76,7 @@ export const PageHeader = ({
             <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
                 <button
                     className="logo-button rounded-full hidden md:block p-2"
-                    onClick={() => history.push('/dashboard')}
+                    onClick={() => history.push(guestMode ? '/anonymous' : '/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
                     <img className="logo cursor-pointer " src={logo} alt="" />
