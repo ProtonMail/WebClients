@@ -15,7 +15,7 @@
 		content: '';
 		position: absolute;
 		left: 5px;
-		top: calc(50% - 1px + 5.5px);
+		top: calc(50% + 5.5px);
 		bottom: 0;
 		width: 1px;
 		background-color: var(--border-norm);
@@ -31,7 +31,7 @@
 		position: absolute;
 		left: 5px;
 		top: 0;
-		height: calc(50% - 1px - 5.5px);
+		height: calc(50% - 5.5px);
 		width: 1px;
 		background-color: var(--border-norm);
 	}
@@ -45,7 +45,7 @@
 	position: absolute;
 	left: 0;
 	top: 50%;
-	transform: translateY(calc(-50% - 1px));
+	transform: translateY(calc(-50%));
 	width: 11px;
 	height: 11px;
 	border-radius: 50%;
