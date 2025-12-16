@@ -45,7 +45,8 @@ const generateWithRandomColon = (targetLength: number): string => {
     return result;
 };
 
-describe('locatePlaintextInternalBlockquotes performances', () => {
+// Those tests could be used to profile performances of the locatePlaintextInternalBlockquotes method
+describe.skip('locatePlaintextInternalBlockquotes performances', () => {
     describe('no match', () => {
         it('should test simple text for no match and 500 words content', () => {
             const text = generateText(500);
