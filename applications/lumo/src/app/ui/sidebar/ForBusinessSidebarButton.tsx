@@ -1,28 +1,25 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
 
-import { NewLabel } from '../components/NewLabel';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import LumoB2BUpsellLink from '../components/LumoB2BUpsellLink';
 
-const LumoB2BUpsellLink = ({ isSmallScreen }: { isSmallScreen: boolean }) => {
-    if (!isSmallScreen) {
+const ForBusinessSidebarButton = ({ isSmallScreen }: { isSmallScreen: boolean }) => {
+    const { showForBusinessLink } = useLumoPlan();
+    if (!isSmallScreen || !showForBusinessLink) {
         return null;
     }
     return (
-        <Href
-            href="https://lumo.proton.me/business"
-            className="sidebar-item color-norm flex flex-row items-center flex-nowrap"
-        >
+        <LumoB2BUpsellLink className="sidebar-item color-norm flex flex-row items-center flex-nowrap">
             <div className="sidebar-item-icon">
                 <Icon name="buildings" size={4} className="rtl:mirror" />
             </div>
             <span className="flex flex-row items-center flex-nowrap">
                 <span className="sidebar-item-text">{c('collider_2025: b2b').t`For Business`} </span>
-                <NewLabel className="ml-1" />
             </span>
-        </Href>
+        </LumoB2BUpsellLink>
     );
 };
 
-export default LumoB2BUpsellLink;
+export default ForBusinessSidebarButton;
