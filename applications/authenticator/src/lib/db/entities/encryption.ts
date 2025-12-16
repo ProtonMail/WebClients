@@ -1,7 +1,7 @@
 import type { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 
 import { decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 
 type JsonPrimitive = string | number | boolean | null;
 type JsonArray = JsonValue[];
@@ -59,8 +59,8 @@ export const defineEncryptedEntity =
                  * This can cause data loss for non-JSON types (Dates become strings,
                  * Uint8Array<ArrayBuffer>s become objects, etc.). The `JsonObject` type constraint
                  * prevents most issues, but we should use structured serialization.. */
-                const data = stringToUtf8Array(JSON.stringify(toEncrypt));
-                entity.__encryptedData = await encryptData(key, data, stringToUtf8Array(definition.tag));
+                const data = utf8StringToUint8Array(JSON.stringify(toEncrypt));
+                entity.__encryptedData = await encryptData(key, data, utf8StringToUint8Array(definition.tag));
 
                 return entity;
             },
@@ -72,9 +72,9 @@ export const defineEncryptedEntity =
                 const decryptedData = await decryptData(
                     key,
                     encrypted.__encryptedData,
-                    stringToUtf8Array(definition.tag)
+                    utf8StringToUint8Array(definition.tag)
                 );
-                const decryptedProps = JSON.parse(utf8ArrayToString(decryptedData));
+                const decryptedProps = JSON.parse(uint8ArrayToUtf8String(decryptedData));
 
                 const entity = { ...encrypted, ...decryptedProps } as T;
                 delete (entity as any).__encryptedData;

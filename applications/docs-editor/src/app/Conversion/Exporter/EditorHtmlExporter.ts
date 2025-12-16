@@ -1,5 +1,5 @@
 import { $generateHtmlFromNodes } from '@lexical/html'
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
 import { EditorExporter } from './EditorExporter'
 
 export class EditorHtmlExporter extends EditorExporter {
@@ -8,6 +8,6 @@ export class EditorHtmlExporter extends EditorExporter {
       return $generateHtmlFromNodes(this.editor)
     })
 
-    return stringToUtf8Array(html)
+    return utf8StringToUint8Array(html)
   }
 }

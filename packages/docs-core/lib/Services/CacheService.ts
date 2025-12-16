@@ -9,7 +9,7 @@ import { Result } from '@proton/docs-shared'
 import type { DatabaseSchema } from '../Database/Schema'
 import type { IndexedDatabase } from '../Database/IndexedDB'
 import { Commit } from '@proton/docs-proto'
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 
 type CachedValue = {
   encryptedValue: string
@@ -51,7 +51,7 @@ export class CacheService {
       const key = await this.encryptionKey
 
       const encryptedValue = await this.encryptionService.encryptDataForLocalStorage(
-        stringToUtf8Array(dto.value),
+        utf8StringToUint8Array(dto.value),
         this.cacheConfig.namespace,
         key,
       )
@@ -100,7 +100,7 @@ export class CacheService {
       }
 
       this.logger.info(`[CacheService] ✅ Loaded cached value for key ${dto.key}`)
-      return Result.ok(utf8ArrayToString(decryptedValue.getValue()))
+      return Result.ok(uint8ArrayToUtf8String(decryptedValue.getValue()))
     } catch (error) {
       this.logger.error(`[CacheService] Failed to load cached value for key ${dto.key}: ${error}`)
       return Result.fail(`Failed to load cached value for key ${dto.key}: ${error}`)

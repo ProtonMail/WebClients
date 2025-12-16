@@ -1,4 +1,4 @@
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { omit } from '@proton/shared/lib/helpers/object';
 import isEnumValue from '@proton/utils/isEnumValue';
@@ -177,7 +177,7 @@ export const getDecryptedPersistedSessionBlob = async (
     const decryptedBlob = await getDecryptedBlob(
         key,
         blob,
-        payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+        payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined
     ).catch(() => {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted blob');
     });
@@ -247,7 +247,7 @@ export const getPersistedSessionData = async (
         blob: await getEncryptedBlob(
             key,
             JSON.stringify(encryptedPayloadData),
-            payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+            payloadVersion === 2 ? utf8StringToUint8Array('session') : undefined
         ),
         persistedAt: data.persistedAt,
     };

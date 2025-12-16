@@ -1,5 +1,5 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -77,7 +77,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 ];
 
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array<ArrayBuffer>> =>
-    version === 2 ? stringToUtf8Array('session') : undefined;
+    version === 2 ? utf8StringToUint8Array('session') : undefined;
 
 /* Given a local session key, encrypts sensitive session components of
  * the `AuthSession` before persisting. Additionally stores a SHA-256

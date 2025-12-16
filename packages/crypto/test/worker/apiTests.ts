@@ -16,7 +16,7 @@ import {
 
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
-import { binaryStringToUint8Array, stringToUtf8Array, utf8ArrayToString } from '../../lib/utils';
+import { binaryStringToUint8Array, utf8StringToUint8Array, uint8ArrayToUtf8String } from '../../lib/utils';
 import {
     ecc25519Key,
     eddsaElGamalSubkey,
@@ -117,7 +117,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
             passwords: 'password',
             format: 'binary',
         });
-        expect(decryptionResult.data).to.deep.equal(stringToUtf8Array('hello world'));
+        expect(decryptionResult.data).to.deep.equal(utf8StringToUint8Array('hello world'));
         expect(decryptionResult.signatures).to.have.length(0);
         expect(decryptionResult.verificationErrors).to.not.exist;
         expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
@@ -220,7 +220,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             passphrase: null,
         });
         const { message: armoredEncryptedWithSEIPDv1 } = await CryptoApiImplementation.encryptMessage({
-            binaryData: stringToUtf8Array('Hello world!'),
+            binaryData: utf8StringToUint8Array('Hello world!'),
             encryptionKeys: privateKey,
         });
 
@@ -317,7 +317,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             verificationKeys: privateKeyRef,
             format: 'binary',
         });
-        expect(invalidVerificationResult.data).to.deep.equal(stringToUtf8Array('not signed data'));
+        expect(invalidVerificationResult.data).to.deep.equal(utf8StringToUint8Array('not signed data'));
         expect(invalidVerificationResult.signatures).to.have.length(1);
         expect(invalidVerificationResult.errors).to.have.length(1);
         expect(invalidVerificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
@@ -485,7 +485,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
             userIDs: { name: 'bob', email: 'bob@test.com' },
         });
 
-        const plaintext = stringToUtf8Array('hello world');
+        const plaintext = utf8StringToUint8Array('hello world');
         const {
             message: encryptedBinaryMessage,
             signature: detachedBinarySignature,
@@ -532,7 +532,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         const bobKeyRef = await CryptoApiImplementation.generateKey({
             userIDs: { name: 'bob', email: 'bob@test.com' },
         });
-        const plaintext = stringToUtf8Array('hello world');
+        const plaintext = utf8StringToUint8Array('hello world');
 
         const encryptionOptions = {
             binaryData: plaintext,
@@ -741,7 +741,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(attachment.contentId.endsWith('@pmcrypto>')).to.be.true;
         expect(attachment.content.length > 0).to.be.true;
         expect(attachment.content.length).to.equal(attachment.size);
-        expect(utf8ArrayToString(attachment.content)).to.equal('this is the attachment text\n');
+        expect(uint8ArrayToUtf8String(attachment.content)).to.equal('this is the attachment text\n');
     });
 
     it('processMIME - it can parse message with empty signature', async () => {

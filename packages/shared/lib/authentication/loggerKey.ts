@@ -1,13 +1,13 @@
 import { type AesGcmCryptoKey, deriveKey as deriveAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { getParsedClientKey } from './clientKey';
 import type { AuthenticationStore } from './createAuthenticationStore';
 
 export type LoggerKey = AesGcmCryptoKey;
-const HKDF_INFO = stringToUtf8Array('web-logger-key'); // context identifier for domain separation
+const HKDF_INFO = utf8StringToUint8Array('web-logger-key'); // context identifier for domain separation
 
 export interface GeneratedLoggerKey {
     key: LoggerKey;
@@ -32,7 +32,7 @@ export const generateLoggerKey = async (authentication: AuthenticationStore): Pr
     const clientKeyBytes = getParsedClientKey(clientKey);
     // random and bound to the session (same lifetime as the clientKey);
     // technically this salt is not necessary but it does not hurt either
-    const salt = stringToUtf8Array(authentication.UID);
+    const salt = utf8StringToUint8Array(authentication.UID);
 
     const [loggerKeyBoundToSession, loggerKeyID] = await Promise.all([
         // We run a key derivation step (HKDF) to get a new AES-GCM key bound to the UID

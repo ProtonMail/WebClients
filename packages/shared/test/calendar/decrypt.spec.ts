@@ -1,6 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 
 import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import {
@@ -245,7 +245,7 @@ Y3X/iRfq/cJoDMJYtiKGdUFF6yH96xE5vSs=
          * So no fallback verification is needed in this case.
          */
         const { verificationStatus: verificationStatusBinarySigned } = await CryptoProxy.verifyMessage({
-            binaryData: stringToUtf8Array(signedCard),
+            binaryData: utf8StringToUint8Array(signedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureSignedCard,
         });
@@ -327,7 +327,7 @@ kUoztkcHA+E9tez5X7KdhUMMHPr7gnAlf10XGVGT/s8DaJ96lg0=
 
         // this legacy signature is verified in binary without need of fallback
         const { verificationStatus: verificationStatusBinarySigned } = await CryptoProxy.verifyMessage({
-            binaryData: stringToUtf8Array(signedCard),
+            binaryData: utf8StringToUint8Array(signedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureSignedCard,
         });
@@ -379,6 +379,6 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
             sessionKeys: sessionKey,
         });
         expect(verificationStatusBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_INVALID);
-        expect(getNeedsLegacyVerification(verificationStatusBinaryEncrypted, utf8ArrayToString(decryptedData))).toEqual(true);
+        expect(getNeedsLegacyVerification(verificationStatusBinaryEncrypted, uint8ArrayToUtf8String(decryptedData))).toEqual(true);
     });
 });

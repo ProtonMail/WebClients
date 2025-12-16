@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
@@ -31,7 +31,7 @@ export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) 
     const encryptionKey = await deriveKey(
         sessionKey.data,
         new Uint8Array(32),
-        stringToUtf8Array('aeskey.link.meet.proton'),
+        utf8StringToUint8Array('aeskey.link.meet.proton'),
         { keyUsage: ['decrypt', 'encrypt'] }
     );
 
@@ -39,7 +39,7 @@ export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) 
 };
 
 export const encryptMetadataWithKey = async (key: CryptoKey, data: string) => {
-    const encryptedData = await encryptData(key, stringToUtf8Array(data), stringToUtf8Array('metadata.meet.proton'));
+    const encryptedData = await encryptData(key, utf8StringToUint8Array(data), utf8StringToUint8Array('metadata.meet.proton'));
 
     return encryptedData.toBase64();
 };
@@ -47,9 +47,9 @@ export const encryptMetadataWithKey = async (key: CryptoKey, data: string) => {
 export const decryptMetadataWithKey = async (key: CryptoKey, encryptedData: string) => {
     const encryptedDataUint8Array = Uint8Array.fromBase64(encryptedData);
 
-    const decryptedData = await decryptData(key, encryptedDataUint8Array, stringToUtf8Array('metadata.meet.proton'));
+    const decryptedData = await decryptData(key, encryptedDataUint8Array, utf8StringToUint8Array('metadata.meet.proton'));
 
-    return utf8ArrayToString(decryptedData);
+    return uint8ArrayToUtf8String(decryptedData);
 };
 
 interface DecryptSessionKeyParams {
