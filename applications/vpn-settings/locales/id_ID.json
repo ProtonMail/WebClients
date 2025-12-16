@@ -1392,6 +1392,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
@@ -1884,6 +1890,9 @@
       "Close": [
         "Tutup"
       ],
+      "Configure your network": [
+        "Atur jaringan Anda"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ],
@@ -1902,6 +1911,9 @@
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
       ],
+      "Invite your team": [
+        "Undang tim Anda"
+      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
@@ -1913,6 +1925,9 @@
       ],
       "Set up other features": [
         "Siapkan fitur lainnya"
+      ],
+      "Set up SSO": [
+        "Atur SSO"
       ],
       "Take a tour": [
         "Ikuti tur kami"
@@ -5130,6 +5145,9 @@
       "Select your deal": [
         "Pilih penawaran Anda"
       ],
+      "Select your payment method:": [
+        "Pilih metode pembayaran Anda:"
+      ],
       "Select your pricing plan": [
         "Pilih struktur pembayaran paket Anda"
       ],
@@ -6883,6 +6901,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Dibayar untuk paket"
@@ -8940,6 +8961,9 @@
       "Verification code": [
         "Kode verifikasi"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Rentan"
       ],
@@ -9763,6 +9787,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Log dan kebijakan aktivitas"
+      ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
@@ -9996,6 +10023,9 @@
       ],
       "Secure link sharing": [
         "Pembagian tautan aman"
+      ],
+      "Secure password management": [
+        "Pengelolaan kata sandi aman"
       ],
       "See team's availability": [
         "Lihat ketersediaan tim"
@@ -10925,6 +10955,9 @@
       "Allowed ${ defaultLabel }": [
         "Diizinkan ${ defaultLabel }"
       ],
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Konfigurasi negara"
       ],
@@ -10933,6 +10966,9 @@
       ],
       "Free server configs": [
         "Konfigurasi server gratis"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
@@ -10945,6 +10981,9 @@
       ],
       "Ignore group": [
         "Abaikan grup"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Tidak ada fitur penting yang saya butuhkan"
@@ -14344,6 +14383,9 @@
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } untuk organisasi"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "Klien ${ VPN_APP_NAME }"
+      ],
       "(active)": [
         "(aktif)"
       ],
@@ -15021,6 +15063,9 @@
       ],
       "Phone": [
         "Telepon"
+      ],
+      "Plans": [
+        "Paket"
       ],
       "Preview": [
         "Pratinjau"
@@ -16119,6 +16164,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
       ]
     },
     "wallet_signup_2024: Info": {

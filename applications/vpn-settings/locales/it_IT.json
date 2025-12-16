@@ -677,6 +677,9 @@
       "Or": [
         "O"
       ],
+      "Or use a different Gmail address": [
+        "Oppure usa un diverso indirizzo Gmail"
+      ],
       "Organization": [
         "Organizzazione"
       ],
@@ -1088,6 +1091,9 @@
       "Use recovery code": [
         "Usa un codice di recupero"
       ],
+      "Use this Gmail address": [
+        "Usa questo indirizzo Gmail"
+      ],
       "Use your current email instead": [
         "Usa invece il tuo indirizzo email attuale"
       ],
@@ -1395,6 +1401,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Facendo clic su \"Prova\", accetti i nostri ${ termsAndConditions }."
       ],
@@ -1732,6 +1744,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Qualcuno può vedere la mia cronologia Internet se utilizziamo la stessa rete WiFi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Connetti ${ VPN_CONNECTIONS } dispositivi contemporaneamente"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Abilita il kill switch e la connessione automatica nelle impostazioni VPN."
       ],
@@ -1758,6 +1773,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Scopri come abilitare ${ VPN_APP_NAME } sul tuo router."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Proteggi tutti i tuoi dispositivi domestici contemporaneamente con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteggi la tua azienda dalle violazioni dei dati e rendi più sicuro il lavoro da remoto con una VPN aziendale."
@@ -4826,6 +4844,9 @@
       "15 GB storage": [
         "15 GB di archiviazione"
       ],
+      "4 more privacy services": [
+        "4 altri servizi privacy"
+      ],
       "@pm.me address": [
         "Indirizzo breve @pm.me"
       ],
@@ -5183,6 +5204,9 @@
       "Select your deal": [
         "Seleziona la tua offerta"
       ],
+      "Select your payment method:": [
+        "Seleziona il tuo metodo di pagamento:"
+      ],
       "Select your pricing plan": [
         "Seleziona il tuo piano tariffario."
       ],
@@ -5251,6 +5275,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Sblocca 4 servizi premium per la privacy a soli **${ priceString }** in più ogni mese"
       ],
       "Upgrade your privacy": [
         "Migliora la tua privacy"
@@ -7839,6 +7866,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
+      ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando rimuovi un server da un Gateway, entra in un periodo di disattivazione di 10 giorni. Questo server può essere aggiunto a un nuovo Gateway, ma il suo paese non può essere modificato."
       ],
@@ -8316,6 +8346,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } di ${ maxAddresses } indirizzo email disponibile",
+        "${ addressesAvailable } di ${ maxAddresses } indirizzi email disponibili"
+      ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
@@ -9936,6 +9970,9 @@
       "99.95% SLA": [
         "SLA del 99,95%"
       ],
+      "Activity logs and policy": [
+        "Log attività e politica"
+      ],
       "Ad-blocker and malware protection": [
         "Blocco degli annunci e protezione da malware"
       ],
@@ -10170,6 +10207,9 @@
       ],
       "Secure link sharing": [
         "Condivisione tramite link sicuro"
+      ],
+      "Secure password management": [
+        "Gestione sicura delle password"
       ],
       "See team's availability": [
         "Visualizza la disponibilità del team"
@@ -10846,6 +10886,9 @@
       ],
       "A disabled address cannot be default": [
         "Un indirizzo disabilitato non può essere l'indirizzo predefinito."
+      ],
+      "Address reconnected.": [
+        "Indirizzo riconnesso."
       ],
       "An external address cannot be default": [
         "Un indirizzo esterno non può essere l'indirizzo predefinito."
@@ -11764,6 +11807,19 @@
         "I crediti verranno aggiunti al tuo saldo."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Gli account a vita possono essere trasferiti o venduti"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Contatta l'Assistenza clienti per confermare il cambio di proprietà"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Mai"
+      ]
+    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Sei sicuro di voler procedere?"
@@ -12039,6 +12095,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suite per la privacy con servizi premium e ${ unlimitedPlanMaxSpace } di archiviazione cloud crittografata, tutto in un unico pacchetto."
       ]
     },
     "Plans": {
@@ -12216,8 +12275,14 @@
       "How your free trial works:": [
         "Come funziona la tua prova gratuita:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Sto usando ${ BRAND_NAME } e ho pensato che ti potrebbe piacere. È una posta elettronica sicura, archiviazione cloud, un gestore di password e una VPN che protegge la tua privacy. Iscriviti con questo link per ottenere 14 giorni di funzionalità premium gratis: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Se annulli prima di allora, sarai declassato a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando la prova scade. Se non annulli, il tuo piano completo si attiverà e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Se annulli, perderai il tuo premio in credito di **${ referrerRewardAmount }**."
       ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Se ti abboni prima di questa data, riceverai **${ referrerRewardAmount }** in crediti. Se non ti abboni, ti verrà eseguito il downgrade al piano ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -12233,6 +12298,9 @@
       ],
       "Refer friends": [
         "Segnala amici"
+      ],
+      "Share using ${ name }": [
+        "Condividi ${ name }"
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
@@ -13503,6 +13571,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Imposta una password di backup per aggiungere un ulteriore livello di protezione. Ti consentirà di accedere se rimani bloccato, quindi assicurati di conservarlo in un posto sicuro."
       ],
+      "Set identity": [
+        "Imposta Identità"
+      ],
       "Set your backup password": [
         "Imposta la tua password di backup"
       ],
@@ -13526,6 +13597,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Accesso richiesto su un altro dispositivo. Eri tu?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Il Single sign-on potrebbe non funzionare correttamente senza un'identità dell'organizzazione. Imposta un'identità per garantire un'autenticazione affidabile."
       ],
       "Single sign-on removed": [
         "Single sign-on rimosso"
@@ -14823,6 +14897,9 @@
       "Confirm phone number": [
         "Conferma il numero di telefono"
       ],
+      "Connect a Gmail address": [
+        "Connetti un indirizzo Gmail"
+      ],
       "Connect apps and devices": [
         "Connetti app e dispositivi"
       ],
@@ -14831,6 +14908,9 @@
       ],
       "Connect organization": [
         "Connetti l'organizzazione"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Connettiti a ${ VPN_CONNECTIONS } dispositivi contemporaneamente con ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Connettiti alla videoconferenza"
@@ -15346,6 +15426,9 @@
       "Remove domain": [
         "Rimuovi dominio"
       ],
+      "Remove forwarding address": [
+        "Rimuovere indirizzo d'inoltro"
+      ],
       "Remove server?": [
         "Rimuovere il server?"
       ],
@@ -15486,6 +15569,9 @@
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Inizia a proteggere i tuoi dispositivi con l'app ${ VPN_APP_NAME }."
       ],
       "State": [
         "Stato"
@@ -16075,11 +16161,23 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Risparmia fino a ${ priceString }** con un abbonamento più lungo. Stesse funzionalità premium, prezzo più basso."
       ],
+      "Advanced security for your company": [
+        "Sicurezza avanzata per la tua azienda"
+      ],
       "Advanced security for your company?": [
         "Sicurezza avanzata per la tua azienda?"
       ],
       "Did you know?": [
         "Lo sapevi?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Ottieni ${ drivePlusPlanMaxSpace } di archiviazione per i tuoi file, foto e documenti, e recupera le versioni dei file con recupero file di 10 anni."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Suite per la privacy con posta elettronica sicura, ${ VPN_SHORT_APP_NAME }, archiviazione cloud e gestore di password in un unico pacchetto. A partire da soli ${ fallBackString } al mese"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Suite per la privacy con posta elettronica sicura, ${ VPN_SHORT_APP_NAME }, archiviazione cloud e gestore di password in un unico pacchetto. Solo **${ priceString }** in più ogni mese."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Proteggi la tua organizzazione dalle violazioni dei dati con ${ PLAN_NAMES[plan] }."
@@ -16087,8 +16185,14 @@
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Proteggi la tua organizzazione dalle violazioni dei dati con ${ VPN_APP_NAME } per le aziende."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privacy illimitata per un massimo di ${ FAMILY_MAX_USERS } persone. A partire da soli ${ priceString }/mese."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privacy illimitata per te e una persona cara. Da soli ${ priceString }/mese."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Puoi proteggere fino a ${ DUO_MAX_USERS } persone con ${ PLAN_NAMES[PLANS.DUO] }, e fino a ${ FAMILY_MAX_USERS } con ${ PLAN_NAMES[PLANS.FAMILY] }. A partire da soli ${ priceString }/mese per account."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puoi proteggere fino a ${ FAMILY_MAX_USERS } persone con ${ PLAN_NAMES[plan] }. A partire da soli ${ priceString }/mese per account."

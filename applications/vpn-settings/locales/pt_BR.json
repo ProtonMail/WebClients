@@ -5204,6 +5204,9 @@
       "Select your deal": [
         "Selecione sua oferta"
       ],
+      "Select your payment method:": [
+        "Selecione o seu método de pagamento:"
+      ],
       "Select your pricing plan": [
         "Selecione o seu plano"
       ],
@@ -9970,6 +9973,9 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
+      "Activity logs and policy": [
+        "Registros de atividade e política"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
       ],
@@ -10204,6 +10210,9 @@
       ],
       "Secure link sharing": [
         "Compartilhamento de link seguro"
+      ],
+      "Secure password management": [
+        "Gerenciamento seguro de senhas"
       ],
       "See team's availability": [
         "Veja a disponibilidade da equipe"
@@ -11804,6 +11813,9 @@
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Contas vitalícias podem ser transferidas ou vendidas"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Entre em contato com o suporte ao cliente para confirmar a mudança de titularidade"
       ]
     },
     "Payments.Lifetime Subscription.Renewal time": {
@@ -12266,8 +12278,17 @@
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Estou usando o ${ BRAND_NAME } e achei que você poderia gostar. É um e-mail seguro, armazenamento em nuvem, gerenciador de senhas e VPN que protege sua privacidade. Inscreva-se com este link para obter 14 dias de recursos premium de graça: ${ referralLink }"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Se você cancelar antes disso, você fará o downgrade para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar. Se você não cancelar, seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
+      ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Se você cancelar, você perderá sua recompensa de crédito **${ referrerRewardAmount }**."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Se você se inscrever antes desta data, você receberá **${ referrerRewardAmount }** em créditos. Se você não se inscrever, você fará o downgrade para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "Invite friends. Get credits.": [
         "Convide amigos. Ganhe créditos."
@@ -12281,6 +12302,9 @@
       "Refer friends": [
         "Indicar amigos"
       ],
+      "Share using ${ name }": [
+        "Compartilhar usando ${ name }"
+      ],
       "Start earning credits": [
         "Comece a ganhar créditos"
       ],
@@ -12290,6 +12314,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
         "Você tem **${ daysRemaining } dias restantes** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Seu amigo também receberá ${ refereeRewardAmount } para resgatar em sua próxima fatura!"
       ],
       "your subscription": [
         "sua assinatura"
@@ -13573,6 +13600,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Solicitação de início de sessão em outro dispositivo. Foi você?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "O login único pode não funcionar corretamente sem uma identidade de organização. Defina uma identidade para garantir uma autenticação confiável."
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
@@ -16143,14 +16173,29 @@
       "Did you know?": [
         "Você sabia?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obtenha ${ drivePlusPlanMaxSpace } de armazenamento para seus arquivos, fotos e documentos, e recupere versões de arquivos com recuperação de arquivos de 10 anos."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Pacote de privacidade com e-mail seguro, ${ VPN_SHORT_APP_NAME }, armazenamento em nuvem e gerenciador de senhas em um só pacote. A partir de apenas ${ fallBackString } por mês"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Pacote de privacidade com e-mail seguro, ${ VPN_SHORT_APP_NAME }, armazenamento em nuvem e gerenciador de senhas em um só pacote. Apenas **${ priceString }** a mais por mês."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Proteja sua organização de violações de dados com ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Proteja sua organização de violações de dados com ${ VPN_APP_NAME } para Empresas."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privacidade ilimitada para até ${ FAMILY_MAX_USERS } pessoas. A partir de apenas ${ priceString }/mês."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privacidade ilimitada para você e para quem você ama. A partir de ${ priceString }/mês."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Você pode proteger até ${ DUO_MAX_USERS } pessoas com ${ PLAN_NAMES[PLANS.DUO] }, e até ${ FAMILY_MAX_USERS } com ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de apenas ${ priceString }/mês por conta."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[plan] }. A partir de apenas ${ priceString }/mês por conta."

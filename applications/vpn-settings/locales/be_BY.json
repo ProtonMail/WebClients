@@ -1419,6 +1419,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Націскаючы на кнопку \"Паспрабаваць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
       ],
@@ -3756,7 +3762,7 @@
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
       "${ name } moved to allow list": [
-        "${ name } перамешчаны ў спіс дазволеных"
+        "${ name } перамешчаны ў спіс дазволеных адрасоў"
       ],
       "${ name } moved to block list": [
         "${ name } перамешчана ў спіс заблакіраваных"
@@ -5273,6 +5279,9 @@
       ],
       "Select your deal": [
         "Выберыце сваю прапанову"
+      ],
+      "Select your payment method:": [
+        "Выберыце спосаб аплаты:"
       ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
@@ -7758,7 +7767,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
+        "Вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
@@ -10230,6 +10239,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Журналы актыўнасці і палітыка"
+      ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
@@ -10466,6 +10478,9 @@
       ],
       "Secure link sharing": [
         "Бяспечнае абагульванне спасылкі"
+      ],
+      "Secure password management": [
+        "Бяспечнае кіраванне паролямі"
       ],
       "See team's availability": [
         "Прагляд даступнасці каманды"
@@ -11308,7 +11323,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -12577,6 +12592,9 @@
       "How your free trial works:": [
         "Як працуе бясплатны пробны перыяд:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Я выкарыстоўваю ${ BRAND_NAME } і падумаў, што вам таксама ён можа спадабацца. Гэта бяспечная электронная пошта, воблачнае сховішча, менеджар пароляў і VPN, якія абараняюць вашу прыватнасць. Зарэгіструйцеся па гэтай спасылцы, каб атрымаць 14 дзён прэміяльных функцый бясплатна: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі скасуеце тарыфны план да завяршэння пробнага перыяду. Ваш поўны тарыфны план пачне дзейнічаць і вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі не зробіце гэтага."
       ],
@@ -12597,6 +12615,9 @@
       ],
       "Refer friends": [
         "Параіць сябрам"
+      ],
+      "Share using ${ name }": [
+        "Абагуліць з дапамогай ${ name }"
       ],
       "Start earning credits": [
         "Пачніце зарабляць крэдыты"

@@ -1209,8 +1209,8 @@
         "${ price } per bruger"
       ],
       "${ quantity } custom domain": [
-        "${ quantity } brugerdomæne",
-        "${ quantity } brugerdomæner"
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
@@ -1426,7 +1426,7 @@
         "Gratis afprøvning i ${ TRIAL_DURATION_DAYS } dage"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Siger du op vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } Free plan."
+        "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } gratis abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
@@ -1787,7 +1787,7 @@
         "Streaming fra alle større platforme med ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
-        "Denne artikel er blevet opdateret til at inkludere WireGuard- og Stealth VPN-protokollerne."
+        "Denne artikel er blevet opdateret til at inkludere WireGuard- og Stealth-VPN-protokollerne."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator bruger en kombination af avancerede VPN-teknologier til at forbedre forbindelsesstabiliteten og øge din forbindelseshastighed."
@@ -2257,7 +2257,7 @@
         "${ selectedCitiesCount } byer valgt"
       ],
       "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } valgte",
+        "${ selectedCountriesCount } valgt",
         "${ selectedCountriesCount } valgte"
       ]
     },
@@ -3579,11 +3579,11 @@
     },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto, opgradér til ${ planName }",
-        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti, skal du opgradere til ${ planName }."
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto skal du opgradere til ${ planName }.",
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
       ]
     },
@@ -4457,7 +4457,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
+        "Certifikatet ${ name } blev ikke fundet eller er allerede tilbagekaldt"
       ],
       "Display name cannot be empty": [
         "Visningsnavnet kan ikke være tomt"
@@ -4809,8 +4809,8 @@
         "Tilføj (${ totalAddedCount })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Forbindelse for op til ${ plusVpnConnections } enhed",
-        "Forbindelse for op til ${ plusVpnConnections } enheder"
+        "Forbindelse af op til ${ plusVpnConnections } enhed",
+        "Forbindelse af op til ${ plusVpnConnections } enheder"
       ],
       "Continue": [
         "Fortsæt"
@@ -5644,8 +5644,8 @@
         " og andre sikkerhedsfunktioner."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere",
-        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere"
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere.",
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -5694,7 +5694,7 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine familiemedlemmer bruger to-faktor-godkendelse."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.to-faktor-godkendelse",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
@@ -5966,7 +5966,7 @@
       ],
       "Affected user is on row": [
         "Berørt bruger er på række",
-        "Berørte brugere er på rækker"
+        "Berørte brugere er på rækkerne"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -7639,7 +7639,7 @@
         "Prøv ${ productName } helt uden risiko – hvis du af en eller anden grund ombestemmer dig, får du fuld refusion. Helt uden spørgsmål fra os."
       ],
       "Two-factor authentication": [
-        "To-faktor-godkendelse"
+        "Tofaktorgodkendelse"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
@@ -8173,7 +8173,7 @@
         "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "De vil kunne tilføje disse servere til en anden gateway med det samme."
+        "Du vil kunne tilføje disse servere til en anden gateway med det samme."
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du vil miste adgangen til ${ boldPlanTitle } ${ boldEndDate }."
@@ -8933,7 +8933,7 @@
         "Tilføj følgende 3 CNAME-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Tilføj følgende MX-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+        "Tilføj følgende to MX-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Tilføj følgende TXT-post. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
@@ -9327,7 +9327,7 @@
         "her"
       ],
       "How does monitoring work?": [
-        "Hvordan fungerer monitoreringen?"
+        "Hvordan fungerer overvågning?"
       ],
       "How to add users": [
         "Sådan tilføjes brugere"
@@ -10362,7 +10362,7 @@
         "Support"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {
@@ -11431,7 +11431,7 @@
         "pr. måned, faktureres hver måned"
       ],
       "per month, billed every two years": [
-        "pr. måned, faktureres hver andet år"
+        "pr. måned, faktureres hvert andet år"
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
@@ -12384,7 +12384,7 @@
     "retention_policy_2025_Error": {
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Levetiden skal være længere end ${ MIN_LIFETIME } dag",
-        "Levetiden skal være større end ${ MIN_LIFETIME } dage."
+        "Levetiden skal være større end ${ MIN_LIFETIME } dage"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Livsvarigt må ikke angives for handlingen \"Behold alt\""
@@ -15717,7 +15717,7 @@
         "Slet alle logge?"
       ],
       "WireGuard configuration": [
-        "WireGuard konfiguration"
+        "Konfiguration af WireGuard"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
@@ -16140,7 +16140,7 @@
         "Dette vil annuller afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Dette vil tilbagekalde administratorens tilladelse til at håndtere denne brugers konto."
+        "Dette vil tilbagekalde administratortilladelsen til håndtering af denne brugers konto."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
         "For at opnå administratorrettigheder skal de indstille en backupadgangskode næste gang de logger ind på ${ BRAND_NAME }."
