@@ -178,6 +178,7 @@ export function LegacyGrid() {
       onRequestResize={useUI((ui) => ui.legacy.onRequestResize)}
       users={useUI((ui) => ui.legacy.yjsState.users)}
       userId={useUI((ui) => ui.legacy.yjsState.userName)}
+      getDataValidation={useUI((ui) => ui.legacy.getDataValidation)}
       getChartComponent={(props) => (
         <ChartComponent
           {...props}
