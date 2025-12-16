@@ -288,6 +288,9 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
+      "Create business account": [
+        "Skapa företagskonto"
+      ],
       "Create folder": [
         "Skapa mapp"
       ],
@@ -449,6 +452,9 @@
       "Expand folder": [
         "Expandera mapp"
       ],
+      "Explore more": [
+        "Utforska mer"
+      ],
       "Explore other plans": [
         "Utforska andra paket"
       ],
@@ -487,6 +493,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Skaffa en gratis ${ BRAND_NAME }-adress"
+      ],
+      "Get Drive for Business": [
+        "Skaffa Drive for Business"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -1070,6 +1079,9 @@
       "Toggle Contacts app": [
         "Växla kontaktapp"
       ],
+      "Toggle referral": [
+        "Slå på/av hänvisning"
+      ],
       "Toggle settings": [
         "Öppna/stäng inställningar"
       ],
@@ -1302,6 +1314,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -1316,6 +1334,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
@@ -5115,6 +5136,9 @@
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
       ],
+      "Cloud storage for businesses that take security seriously": [
+        "Molnlagring för företag som tar säkerhet på allvar"
+      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -7582,6 +7606,9 @@
       ],
       "Shared with me": [
         "Delat med mig"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ],
       "Trash": [
         "Papperskorg"
@@ -12348,6 +12375,9 @@
       "Recover data": [
         "Återställ data"
       ],
+      "Referral": [
+        "Hänvisning"
+      ],
       "Remove device?": [
         "Ta bort enhet?"
       ],
@@ -12480,6 +12510,9 @@
       ],
       "The link expired": [
         "Länken har löpt ut"
+      ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Verifieringen av krypteringsnycklarnas signatur av den ursprungliga skaparen (${ claimedKeyAuthor }) som skapade noden misslyckades. Orsaken är: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Verifieringen av filens innehållssignatur av uppladdaren (${ claimedContentAuthor }) som laddade upp den senaste versionen misslyckades. Orsaken är: ${ activeRevision.contentAuthor.error.error }"
@@ -12792,6 +12825,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Skaffa Drive for Business"
       ]
     },
     "Validation": {

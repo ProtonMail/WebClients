@@ -291,6 +291,9 @@
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
+      "Create business account": [
+        "Creare cont de afaceri"
+      ],
       "Create folder": [
         "Creare folder"
       ],
@@ -454,6 +457,9 @@
       "Expand folder": [
         "Extindere folder"
       ],
+      "Explore more": [
+        "Explorați mai mult"
+      ],
       "Explore other plans": [
         "Explorare alte planuri"
       ],
@@ -492,6 +498,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Obțineți o adresă gratuită ${ BRAND_NAME }"
+      ],
+      "Get Drive for Business": [
+        "Luați Drive for Business"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -797,7 +806,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -1075,6 +1084,9 @@
       "Toggle Contacts app": [
         "Comutare aplicație Contacte"
       ],
+      "Toggle referral": [
+        "Comutare recomandat"
+      ],
       "Toggle settings": [
         "Comutare setări"
       ],
@@ -1314,6 +1326,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
       ],
@@ -4987,13 +5005,13 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
@@ -5209,6 +5227,12 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Cloud storage for businesses that take security seriously": [
+        "Stocare în cloud pentru afaceri care iau securitatea în serios"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "Colaborați eficient, protejând în același timp datele clienților și ale afacerii proprii împotriva divulgărilor, a programelor de tip răscumpărare și a supravegherii."
       ],
       "Conflict": [
         "Conflict"
@@ -6984,6 +7008,9 @@
       "App password": [
         "Parola aplicației"
       ],
+      "Applications in a business setting": [
+        "Aplicații într-un mediu de afaceri"
+      ],
       "Apply to all duplicated files": [
         "Aplicare la toate fișierele duplicate"
       ],
@@ -7714,6 +7741,9 @@
       ],
       "Shared with me": [
         "Partajate cu mine"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ],
       "Trash": [
         "Gunoi"
@@ -10427,7 +10457,7 @@
         "Persoane abonate"
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invited friends": [
         "Persoane invitate"
@@ -12557,6 +12587,9 @@
       "Recover data": [
         "Recuperare date"
       ],
+      "Referral": [
+        "Recomandare"
+      ],
       "Remove device?": [
         "Eliminați dispozitivul?"
       ],
@@ -13008,6 +13041,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Luați Drive for Business"
       ]
     },
     "Validation": {
