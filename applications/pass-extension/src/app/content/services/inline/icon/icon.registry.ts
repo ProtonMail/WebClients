@@ -30,6 +30,8 @@ export type IconRegistryOptions = {
     tag: string;
 };
 
+const MAX_IFRAME_PARENT_DEPTH = 3;
+
 /** Icon registry ensures only one icon can be injected at a time.
  * We keep a reference on the field itself */
 export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRegistryOptions): IconRegistry => {
@@ -44,7 +46,7 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
             if (target) {
                 requestAnimationFrame(() => {
                     const rect = target.getBoundingClientRect();
-                    const anchor = getNthParent(target, 2);
+                    const anchor = getNthParent(target, MAX_IFRAME_PARENT_DEPTH);
                     const parser = createStyleParser(target);
                     const offsetX = getOffsetLeft(parser);
                     const offsetY = getOffsetTop(parser);
