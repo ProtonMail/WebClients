@@ -1114,7 +1114,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refresh": [
         "Împrospătare"
@@ -2037,6 +2037,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
       ],
@@ -4658,7 +4664,7 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Obțineți până la ${ credits } în credite invitând persoane la ${ BRAND_NAME }."
+        "Obțineți până la ${ credits } în credite invitând alte persoane la ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
@@ -7915,6 +7921,9 @@
       "Select your deal": [
         "Selectați oferta"
       ],
+      "Select your payment method:": [
+        "Selectați metoda de plată:"
+      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
       ],
@@ -8762,16 +8771,16 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc **două săptămâni gratuite** pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc **două săptămâni gratuite** pentru planul ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți **${ referrerRewardAmount } credite** pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți **${ referrerRewardAmount } în credite** pentru fiecare persoană care se abonează la un plan."
       ],
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
@@ -10842,7 +10851,7 @@
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "Unealta de exportare a ${ MAIL_APP_NAME } vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
+        "Unealta de exportare a ${ MAIL_APP_NAME } vă permite să exportați mesajele decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
       ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
@@ -14920,6 +14929,9 @@
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
       ],
+      "Activity logs and policy": [
+        "Jurnale de activitate și politică"
+      ],
       "Ad-blocker and malware protection": [
         "Protecție malware și antireclame"
       ],
@@ -15161,6 +15173,9 @@
       ],
       "Secure link sharing": [
         "Partajare securizată legături web"
+      ],
+      "Secure password management": [
+        "Gestionare securizată a parolelor"
       ],
       "See team's availability": [
         "Vedeți disponibilitatea echipei"
@@ -18068,10 +18083,13 @@
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
       ],
       "Give 2 weeks, get ${ referrerRewardAmount }": [
-        "Oferiți două săptămâni, primiți ${ referrerRewardAmount }"
+        "Oferiți două săptămâni gratuite, primiți ${ referrerRewardAmount } în credite."
       ],
       "How your free trial works:": [
         "Cum funcționează probarea gratuită:"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Am folosit ${ BRAND_NAME } și am crezut că v-ar plăcea. Este un serviciu de e-mail securizat, stocare în cloud, manager de parole și VPN care vă protejează confidențialitatea. Înscrieți-vă folosind această legătură pentru a obține 14 zile de funcții premium gratuit: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de probare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
@@ -18083,7 +18101,7 @@
         "Dacă vă abonați înainte de această dată, veți primi **${ referrerRewardAmount }** în credite. Dacă nu vă abonați, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ultima șansă de a explora toate funcțiile puternice pe care le oferă **${ planTitle }**."
@@ -18093,6 +18111,9 @@
       ],
       "Refer friends": [
         "Recomandați persoane"
+      ],
+      "Share using ${ name }": [
+        "Partajare prin ${ name }"
       ],
       "Start earning credits": [
         "Începeți să câștigați credite"
@@ -18106,7 +18127,7 @@
         "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
       ],
       "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
-        "Și persoana recomandată va primi ${ refereeRewardAmount } pentru răscumpărare la următoarea factură!"
+        "Persoana invitată va primi și ea ${ refereeRewardAmount } pentru răscumpărare la următoarea factură!"
       ],
       "your subscription": [
         "abonament personal"
@@ -21853,7 +21874,7 @@
         "Semnare automată mesaje trimise?"
       ],
       "Backup and export": [
-        "Copie de rezervă și export"
+        "Conservare și exportare"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -22521,7 +22542,7 @@
         "Invitații"
       ],
       "Invite friends. Get credits.": [
-        "Invitați prieteni. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invoices": [
         "Facturi"
@@ -22755,7 +22776,7 @@
         "Fișier de recuperare"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Reject device?": [
         "Respingeți dispozitivul?"

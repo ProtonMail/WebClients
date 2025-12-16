@@ -5006,6 +5006,9 @@
       "120 minutes": [
         "120 წუთი"
       ],
+      "120m": [
+        "120წთ"
+      ],
       "30 minutes": [
         "30 წუთი"
       ],
@@ -5015,8 +5018,14 @@
       "60 minutes": [
         "60 წუთი"
       ],
+      "60m": [
+        "60წთ"
+      ],
       "90 minutes": [
         "90 წუთი"
+      ],
+      "90m": [
+        "90წთ"
       ]
     },
     "Easy switch": {
@@ -7717,6 +7726,9 @@
       "Select your deal": [
         "აირჩიეთ ტარიფი"
       ],
+      "Select your payment method:": [
+        "აირჩიეთ თქვენი გადახდის მეთოდი:"
+      ],
       "Select your pricing plan": [
         "აირჩიეთ თქვენი ტარიფი"
       ],
@@ -9075,6 +9087,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "გათიშვის თარიღი ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
       "Discount": [
         "ფასდაკლება"
@@ -10648,6 +10663,9 @@
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "თქვენი მიმდინარე აღდგენის ფრაზა გაითიშება. ანგარიშთან წვდომას და თქვენი მონაცემების გაშიფვრას ვეღარ შეძლებთ."
+      ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "გადმოიწერება თქვენი პირადი გასაღების შემცველი ფაილი. დაიცავით ეს ფაილი მისი პაროლით დაშიფვრით."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "მოგცემთ ${ BRAND_NAME }-ის გამოწერის გადასახდელად PayPal-ის გამოყენების საშუალებას. მოხდება თქვენი გადამისამართება PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
@@ -13950,6 +13968,12 @@
       "Create a new ${ appName } account": [
         "შექმენით ახალი ${ appName }-ის ანგარიში"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "ისიამოვნეთ ${ BRAND_NAME }-ით ორი კვირის განმავლობაში უფასოდ"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "განიცადეთ ჭეშმარიტი ონლაინ კონფიდენციალობა. დაიცავით თქვენი მონაცემები ${ BRAND_NAME }-ით უფასოდ მომდევნო 14 დღის განმავლობაში."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
       ],
@@ -14395,6 +14419,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "აქტივობის ჟურნალი და პოლიტიკა"
+      ],
       "Ad-blocker and malware protection": [
         "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
       ],
@@ -14636,6 +14663,9 @@
       "Secure link sharing": [
         "დაცული ბმულის გაზიარება"
       ],
+      "Secure password management": [
+        "დაცული პაროლების მართვა"
+      ],
       "See team's availability": [
         "გუნდის ხელმისაწვდომობის ნახვა"
       ],
@@ -14804,6 +14834,9 @@
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } საშუალებას გაძლევთ, შექმნათ ელფოსტის მისამართები და მართოთ ქვემომხმარებლების ანგარიშები. იდეალურია ოჯახისა და ორგანიზაციებისთვის."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
@@ -17454,6 +17487,9 @@
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
       ],
+      "Share using ${ name }": [
+        "გაზიარება ${ name }-ით"
+      ],
       "Start earning credits": [
         "დაიწყეთ კრედიტების გამომუშავება"
       ],
@@ -18878,6 +18914,9 @@
       ],
       "Highest VPN speed": [
         "უსწრაფესი VPN"
+      ],
+      "Mail": [
+        "ელფოსტა"
       ],
       "Mailboxes and custom domains for aliases": [
         "საფოსტო ყუთები და მორგებული დომენები ფსევდონიმებისთვის"

@@ -2019,6 +2019,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik \"Coba\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
@@ -5071,6 +5077,9 @@
       "120 minutes": [
         "120 menit"
       ],
+      "120m": [
+        "120mnt"
+      ],
       "30 minutes": [
         "30 menit"
       ],
@@ -5080,8 +5089,14 @@
       "60 minutes": [
         "60 menit"
       ],
+      "60m": [
+        "60mnt"
+      ],
       "90 minutes": [
         "90 menit"
+      ],
+      "90m": [
+        "90mnt"
       ]
     },
     "Easy switch": {
@@ -7802,6 +7817,9 @@
       "Select your deal": [
         "Pilih penawaran Anda"
       ],
+      "Select your payment method:": [
+        "Pilih metode pembayaran Anda:"
+      ],
       "Select your pricing plan": [
         "Pilih struktur pembayaran paket Anda"
       ],
@@ -10120,6 +10138,9 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Lebih dari 100 juta orang dan bisnis telah mendaftar ke ${ BRAND_NAME }."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Dibayar untuk paket"
@@ -13367,6 +13388,9 @@
       "Video conferencing with Zoom": [
         "Konferensi video dengan Zoom"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "Vulnerable": [
         "Rentan"
       ],
@@ -14579,6 +14603,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Log dan kebijakan aktivitas"
+      ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
@@ -14818,6 +14845,9 @@
       ],
       "Secure link sharing": [
         "Pembagian tautan aman"
+      ],
+      "Secure password management": [
+        "Pengelolaan kata sandi aman"
       ],
       "See team's availability": [
         "Lihat ketersediaan tim"
@@ -15970,6 +16000,9 @@
       "Allowed (default)": [
         "Diizinkan (bawaan)"
       ],
+      "Android": [
+        "Android"
+      ],
       "Archive": [
         "Arsipkan"
       ],
@@ -15994,6 +16027,9 @@
       "Free server configs": [
         "Konfigurasi server gratis"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
       ],
@@ -16005,6 +16041,9 @@
       ],
       "Ignore group": [
         "Abaikan grup"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Tidak ada fitur penting yang saya butuhkan"
@@ -19084,6 +19123,9 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mailboxes and custom domains for aliases": [
         "Kotak surat dan domain khusus untuk alias"
@@ -23591,6 +23633,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
       ]
     },
     "wallet_signup_2024: Info": {
