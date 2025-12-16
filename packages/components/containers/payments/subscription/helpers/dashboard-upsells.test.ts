@@ -64,7 +64,6 @@ describe('resolveUpsellsToDisplay', () => {
             openSubscriptionModal: mockedOpenSubscriptionModal,
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
-            telemetryFlow: 'subscription',
         };
     });
 
@@ -82,7 +81,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -95,7 +93,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -134,7 +131,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -147,7 +143,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -195,7 +190,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -208,7 +202,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -242,7 +235,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -274,7 +266,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -287,7 +278,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -340,7 +330,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -372,7 +361,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -385,7 +373,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -463,7 +450,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -489,7 +475,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -538,7 +523,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -572,7 +556,6 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: 'subscription',
             });
 
             const upsell2 = upsells[1];

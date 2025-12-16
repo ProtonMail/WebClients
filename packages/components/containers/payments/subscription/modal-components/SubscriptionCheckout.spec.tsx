@@ -27,6 +27,7 @@ jest.mock('../../Checkout', () => {
 const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry'>) => {
     const taxCountry = useTaxCountry({
         zipCodeBackendValid: true,
+        telemetryContext: 'other',
     });
     return <SubscriptionCheckout {...props} taxCountry={taxCountry} />;
 };

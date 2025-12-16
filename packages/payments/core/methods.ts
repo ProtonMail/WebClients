@@ -3,7 +3,7 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import orderBy from '@proton/utils/orderBy';
 
-import { getPaymentMethods } from './api';
+import { getPaymentMethods } from './api/api';
 import type { BillingAddress } from './billing-address/billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {

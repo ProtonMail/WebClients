@@ -7,10 +7,9 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
-import { APPS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 
-import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
 import type { DashboardMoreInfoSection } from '../../account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,
@@ -26,14 +25,12 @@ import tv from './illustrations/tv.svg';
 export const VpnGetMoreSection = () => {
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONDRIVE);
     const [openSubscriptionModal] = useSubscriptionModal();
     const handleUnlimitedUpsell = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.BUNDLE,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 

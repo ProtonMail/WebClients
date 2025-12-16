@@ -11,6 +11,7 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import type {
+    AvailablePaymentMethod,
     ExtendedTokenPayment,
     PaymentMethodFlow,
     PaymentProcessorHook,
@@ -26,6 +27,7 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -76,6 +78,8 @@ interface Props {
     paymentsApi: PaymentsApi;
     onVatNumberChange: (vatNumber: string) => void;
     offerBanner: ReactElement | undefined | false;
+    telemetryContext: PaymentTelemetryContext;
+    onMethodChanged: (method: AvailablePaymentMethod) => void;
 }
 
 const AccountStepPayment = ({
@@ -103,7 +107,9 @@ const AccountStepPayment = ({
     setCurrencySelectorDisabled,
     paymentsApi,
     onVatNumberChange,
-    offerBanner, // temporary for A/B test
+    offerBanner, // temporary for A/B test,
+    telemetryContext,
+    onMethodChanged,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -159,7 +165,6 @@ const AccountStepPayment = ({
 
     const user = model.session?.resumedSessionResult.User;
 
-    const billingAddress = model.subscriptionData.billingAddress;
     const isTrial = model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
@@ -172,15 +177,16 @@ const AccountStepPayment = ({
         paymentStatus: model.paymentStatus,
         api: normalApi,
         theme: publicTheme,
-        billingAddress,
+        billingAddress: model.subscriptionData.billingAddress,
         user,
         subscription: model.session?.subscription,
         planIDs: model.subscriptionData.planIDs,
-        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType, source }) => {
+        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, source, sourceType }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
                     paymentsVersion,
-                    paymentProcessorType,
+                    paymentMethodType: sourceType,
+                    paymentMethodValue: source,
                 };
 
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
@@ -223,8 +229,12 @@ const AccountStepPayment = ({
                     dimensions: { type: value },
                 });
             }
+
+            onMethodChanged(newMethod);
         },
         isTrial: signupParameters.trial,
+        product: app,
+        telemetryContext,
     });
 
     useEffect(
@@ -242,10 +252,11 @@ const AccountStepPayment = ({
         zipCodeBackendValid: subscriptionData.zipCodeValid,
         previosValidZipCode: subscriptionData.billingAddress.ZipCode,
         paymentFacade,
+        telemetryContext,
     });
 
     const vatNumber = useVatNumber({
-        isAuthenticated: !!model.session?.resumedSessionResult.UID,
+        isAuthenticated,
         paymentsApi,
         selectedPlanName: selectedPlan?.Name,
         onChange: onVatNumberChange,
@@ -387,6 +398,7 @@ const AccountStepPayment = ({
                                 // Remember: Lumo already includes Scribe.
                                 !showLumoCustomizer
                             }
+                            telemetryContext={telemetryContext}
                         />
                     );
                 })()}
@@ -480,6 +492,8 @@ const AccountStepPayment = ({
                                 // forbidden due to combination of current subscription and the new plan/cycle/currency.
                                 // We aren't allowed to re-subscribe the same plan.
                                 disabled={model.subscriptionData.checkResult.optimistic}
+                                product={app}
+                                telemetryContext={telemetryContext}
                                 {...buttonProps}
                             >
                                 {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}

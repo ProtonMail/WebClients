@@ -8,10 +8,12 @@ import {
     type ChargebeeCardPaymentProcessorState,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
+    PAYMENT_METHOD_TYPES,
+    type PaymentMethodType,
     type PaymentProcessorHook,
-    type PaymentProcessorType,
     type PaymentStatus,
     type PaymentVerificatorV5,
+    type PlainPaymentMethodType,
 } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -20,11 +22,23 @@ import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    onChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>;
+    onChargeable: (data: ChargeableV5PaymentParameters) => Promise<unknown>;
     verifyOnly?: boolean;
-    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
     paymentStatus?: PaymentStatus;
+    onDeclined: ({
+        selectedMethodType,
+        selectedMethodValue,
+    }: {
+        selectedMethodType: PlainPaymentMethodType;
+        selectedMethodValue: PaymentMethodType;
+    }) => void;
+    onValidationFailed: ({
+        selectedMethodType,
+        selectedMethodValue,
+    }: {
+        selectedMethodType: PlainPaymentMethodType;
+        selectedMethodValue: PaymentMethodType;
+    }) => void;
 }
 
 export interface Dependencies {
@@ -50,14 +64,7 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
 } & Overrides;
 
 export const useChargebeeCard = (
-    {
-        amountAndCurrency,
-        onChargeable,
-        verifyOnly,
-        onProcessPaymentToken,
-        onProcessPaymentTokenFailed,
-        paymentStatus,
-    }: Props,
+    { amountAndCurrency, onChargeable, verifyOnly, paymentStatus, onDeclined, onValidationFailed }: Props,
     { api, verifyPayment, handles, events }: Dependencies
 ): ChargebeeCardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -80,7 +87,19 @@ export const useChargebeeCard = (
                 events,
                 !!verifyOnly,
                 paymentStatus,
-                onChargeable
+                onChargeable,
+                () => {
+                    onDeclined({
+                        selectedMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                        selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                    });
+                },
+                () => {
+                    onValidationFailed({
+                        selectedMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                        selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                    });
+                }
             )
     );
 
@@ -135,8 +154,6 @@ export const useChargebeeCard = (
     };
 
     const processPaymentToken = async () => {
-        onProcessPaymentToken?.('chargebee-card');
-
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -145,7 +162,6 @@ export const useChargebeeCard = (
             const token = await verifyPaymentToken();
             return token;
         } catch (error) {
-            onProcessPaymentTokenFailed?.('chargebee-card');
             reset();
             throw error;
         }

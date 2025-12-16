@@ -39,7 +39,6 @@ export const useGetUpsell = () => {
             openSubscriptionModal,
             canAccessDuoPlan,
             user,
-            telemetryFlow: 'subscription',
             ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
         });
         if (isUpsellWithPlan(resolvedUpsell) && isPaymentsPreloaded(payments)) {

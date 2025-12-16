@@ -16,6 +16,7 @@ import { useLoading } from '@proton/hooks';
 import type { Invoice, PaymentProcessorHook } from '@proton/payments';
 import { type Currency, PAYMENT_METHOD_TYPES, checkInvoice, getPaymentsVersion } from '@proton/payments';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 
@@ -42,9 +43,10 @@ export interface Props {
     invoice: Invoice;
     fetchInvoices: () => void;
     onClose?: () => void;
+    app: APP_NAMES;
 }
 
-const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
+const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -77,6 +79,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         },
         flow: 'invoice',
         user,
+        product: app,
+        telemetryContext: 'other',
     });
 
     const process = async (processor?: PaymentProcessorHook) =>

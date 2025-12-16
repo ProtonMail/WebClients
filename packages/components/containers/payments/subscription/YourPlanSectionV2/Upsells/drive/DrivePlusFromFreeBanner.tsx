@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -10,13 +9,11 @@ import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
-import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from '../UpsellMultiBox';
 
-const DrivePlusFromFreeBanner = ({ app }: UpsellSectionBaseProps) => {
+const DrivePlusFromFreeBanner = () => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { plansMap } = usePreferredPlansMap();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.DRIVE;
 
@@ -25,7 +22,6 @@ const DrivePlusFromFreeBanner = ({ app }: UpsellSectionBaseProps) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 

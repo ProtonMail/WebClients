@@ -9,13 +9,13 @@ import {
     type Subscription,
     getNormalCycleFromCustomCycle,
     isFreeSubscription,
+    notHigherThanAvailableOnBackend,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getAllowedCycles, isSupportedCycle } from './getAllowedCycles';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
-import { notHigherThanAvailableOnBackend } from './payment';
 
 interface GetInitialCycleParams {
     cycleParam: Cycle | undefined;

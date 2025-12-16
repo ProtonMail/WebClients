@@ -30,7 +30,12 @@ export function isCardPayment(payment: CardPayment | undefined): payment is Card
 }
 
 export function isTokenPayment(
-    payment: Omit<ExtendedTokenPayment, 'paymentProcessorType' | 'paymentsVersion'> | undefined
+    payment:
+        | Omit<
+              ExtendedTokenPayment,
+              'paymentProcessorType' | 'paymentsVersion' | 'paymentMethodType' | 'paymentMethodValue'
+          >
+        | undefined
 ): payment is TokenPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!payment?.Details?.Token;
 }
@@ -140,4 +145,11 @@ export function isFreeSubscription(obj: any): obj is FreeSubscription {
 
 export function isTransaction(obj: any): obj is Transaction {
     return !!obj && !!obj.TransactionID;
+}
+
+export function isSavedPaymentMethod(paymentMethodType: PaymentMethodType): boolean {
+    // PAYMENT_METHOD_TYPES lists all plain payment methods. Plain == new == unsaved. Once the payment method is saved
+    // then its type/value becomes a string (ID). So if the paymentMethodType isn't in the list of plain methods, then
+    // it must be an ID and then it means that the method is saved.
+    return !(Object.values(PAYMENT_METHOD_TYPES) as PaymentMethodType[]).includes(paymentMethodType);
 }
