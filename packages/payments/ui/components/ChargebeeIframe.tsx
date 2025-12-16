@@ -56,7 +56,11 @@ import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
-import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration, getPaymentsVersion } from '../../core/api';
+import {
+    type GetChargebeeConfigurationResponse,
+    getChargebeeConfiguration,
+    getPaymentsVersion,
+} from '../../core/api/api';
 import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -280,6 +284,7 @@ type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
     isNarrow?: boolean;
     themeCode?: ThemeCode;
     width?: number | string;
+    onClick?: () => void;
 };
 
 interface ChargebeeConfiguration {
@@ -881,6 +886,7 @@ export const ChargebeeIframe = ({
     onInitialized,
     isNarrow,
     themeCode,
+    onClick,
     ...rest
 }: ChargebeeIframeProps) => {
     const [initialized, setInitialized] = useState(false);
@@ -898,6 +904,22 @@ export const ChargebeeIframe = ({
             } else if (type === 'google-pay' && googlePay) {
                 googlePay.googlePayIframeLoadedRef.current = false;
             }
+        };
+    }, []);
+
+    useEffect(function initializeEventListeners() {
+        const eventListeners: RemoveEventListener[] = [];
+
+        if (type === 'paypal') {
+            eventListeners.push(iframeHandles.events.onPaypalClicked(() => onClick?.()));
+        } else if (type === 'apple-pay') {
+            eventListeners.push(iframeHandles.events.onApplePayClicked(() => onClick?.()));
+        } else if (type === 'google-pay') {
+            eventListeners.push(iframeHandles.events.onGooglePayClicked(() => onClick?.()));
+        }
+
+        return () => {
+            eventListeners.forEach((removeEventListener) => removeEventListener());
         };
     }, []);
 

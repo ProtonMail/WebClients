@@ -17,8 +17,6 @@ interface Props {
     amountAndCurrency: AmountAndCurrency;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
     ignoreAmountCheck?: boolean;
-    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 interface Dependencies {
@@ -41,7 +39,7 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
  * like `processPaymentToken` method that supposed to be the main action.
  */
 export const usePaypal = (
-    { amountAndCurrency, onChargeable, ignoreAmountCheck, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
+    { amountAndCurrency, onChargeable, ignoreAmountCheck }: Props,
     { api, verifyPayment }: Dependencies
 ): PaypalProcessorHook => {
     const paymentProcessor = usePaymentProcessor(
@@ -95,8 +93,6 @@ export const usePaypal = (
 
     const metaType: PaymentProcessorType = 'paypal';
     const processPaymentToken = async () => {
-        onProcessPaymentToken?.(metaType);
-
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -104,7 +100,6 @@ export const usePaypal = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
-            onProcessPaymentTokenFailed?.(metaType);
             reset();
             throw error;
         }

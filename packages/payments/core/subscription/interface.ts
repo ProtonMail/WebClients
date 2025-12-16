@@ -1,6 +1,6 @@
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
-import type { CheckSubscriptionData, ProrationMode } from '../api';
+import type { CheckSubscriptionData, ProrationMode } from '../api/api';
 import type { Currency, Cycle, PlanIDs } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';

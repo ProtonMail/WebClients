@@ -88,6 +88,7 @@ const GenericStartSignup = (props: BaseSignupContextProps) => {
                     cycle: CYCLE.YEARLY, // free plans still need a cycle value
                     coupon: undefined,
                 },
+                telemetryContext: 'ctx-signup-generic',
             }}
             accountFormDataConfig={{
                 defaultEmail: searchParams.get('email') || '',

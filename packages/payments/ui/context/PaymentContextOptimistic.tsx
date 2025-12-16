@@ -7,11 +7,12 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { BillingAddress } from '../../core/billing-address/billing-address';
-import { type RequiredCheckResponse, getCheckout } from '../../core/checkout';
+import { getCheckout } from '../../core/checkout';
 import { CYCLE, FREE_SUBSCRIPTION } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';
 import { SubscriptionMode } from '../../core/subscription/constants';
+import type { EnrichedCheckResponse } from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import type { InitializeProps } from './PaymentContext';
 import {
@@ -35,7 +36,7 @@ interface InitializationStatus {
 
 type OptimisticOptions = PlanToCheck & {
     billingAddress: BillingAddress;
-    checkResult: RequiredCheckResponse;
+    checkResult: EnrichedCheckResponse;
     vatNumber: string | undefined;
 };
 
@@ -81,6 +82,8 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         planToCheck: planToCheckParam,
         availablePlans,
         paymentFlow,
+        telemetryContext,
+        product,
     }) => {
         /**
          * Track this initialization to prevent race conditions with user actions
@@ -124,6 +127,8 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 planToCheck: planToCheckParam,
                 availablePlans,
                 paramCurrency,
+                telemetryContext,
+                product,
             }),
             fetchVpnServersCount,
         ]);

@@ -29,6 +29,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -37,7 +38,9 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should initialize with default values when paymentStatus is not provided', () => {
-            const { result } = renderHook(() => useTaxCountry({ zipCodeBackendValid: true }));
+            const { result } = renderHook(() =>
+                useTaxCountry({ zipCodeBackendValid: true, telemetryContext: 'other' })
+            );
 
             expect(result.current.selectedCountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
             expect(result.current.federalStateCode).toBe(null);
@@ -51,6 +54,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
                 },
             });
 
@@ -65,6 +69,7 @@ describe('useTaxCountry hook', () => {
                     State: 'ON',
                 },
                 zipCodeBackendValid: true,
+                telemetryContext: 'other',
             });
 
             // Values should be updated
@@ -82,6 +87,7 @@ describe('useTaxCountry hook', () => {
                     },
                     onBillingAddressChange,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
                 },
             });
 
@@ -93,6 +99,7 @@ describe('useTaxCountry hook', () => {
                 },
                 onBillingAddressChange,
                 zipCodeBackendValid: true,
+                telemetryContext: 'other',
             });
 
             // onBillingAddressChange should not be called during initial render if the values are the same
@@ -109,6 +116,7 @@ describe('useTaxCountry hook', () => {
                         State: 'AL',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -130,6 +138,7 @@ describe('useTaxCountry hook', () => {
                 useTaxCountry({
                     onBillingAddressChange,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -162,6 +171,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -182,6 +192,7 @@ describe('useTaxCountry hook', () => {
                     },
                     zipCodeBackendValid: false,
                     previosValidZipCode: '90210', // Previous valid zip code
+                    telemetryContext: 'other' as const,
                 },
             });
 
@@ -197,6 +208,7 @@ describe('useTaxCountry hook', () => {
                 },
                 zipCodeBackendValid: true,
                 previosValidZipCode: '90210',
+                telemetryContext: 'other',
             });
 
             expect(result.current.zipCode).toBe('90210');
@@ -216,6 +228,7 @@ describe('useTaxCountry hook', () => {
                     },
                     zipCodeBackendValid: true,
                     previosValidZipCode: '90001',
+                    telemetryContext: 'other' as const,
                 },
             });
 
@@ -231,6 +244,7 @@ describe('useTaxCountry hook', () => {
                 },
                 zipCodeBackendValid: true,
                 previosValidZipCode: '90001',
+                telemetryContext: 'other',
             });
 
             expect(result.current.zipCode).toBe('90210'); // Should remain unchanged
@@ -248,6 +262,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -286,6 +301,7 @@ describe('useTaxCountry hook', () => {
                     },
                     paymentFacade: mockPaymentFacade as any,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -313,6 +329,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -334,6 +351,7 @@ describe('useTaxCountry hook', () => {
                         // No State provided
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -350,6 +368,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: '',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -364,6 +383,7 @@ describe('useTaxCountry hook', () => {
                         // No ZipCode
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -377,6 +397,7 @@ describe('useTaxCountry hook', () => {
                         // No ZipCode
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -394,6 +415,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: 'invalid',
                     },
                     zipCodeBackendValid: false,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -407,6 +429,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: 'invalid',
                     },
                     zipCodeBackendValid: false,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -419,6 +442,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -435,6 +459,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -453,6 +478,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -473,6 +499,7 @@ describe('useTaxCountry hook', () => {
                         State: 'AL',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -492,6 +519,7 @@ describe('useTaxCountry hook', () => {
                         State: 'AL',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -513,6 +541,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -541,6 +570,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -566,6 +596,7 @@ describe('useTaxCountry hook', () => {
                 useTaxCountry({
                     onBillingAddressChange,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -595,6 +626,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -631,6 +663,7 @@ describe('useTaxCountry hook', () => {
                 useTaxCountry({
                     paymentFacade: mockPaymentFacade as any,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -647,6 +680,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -673,6 +707,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -687,6 +722,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: false,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -704,6 +740,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -717,6 +754,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: '',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -732,6 +770,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: false,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -747,6 +786,7 @@ describe('useTaxCountry hook', () => {
                 useTaxCountry({
                     onBillingAddressChange,
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 })
             );
 
@@ -790,6 +830,7 @@ describe('useTaxCountry hook', () => {
                             ZipCode: '90210',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other',
                     })
                 );
 
@@ -818,6 +859,7 @@ describe('useTaxCountry hook', () => {
                             State: 'AL',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other',
                     })
                 );
 
@@ -843,6 +885,7 @@ describe('useTaxCountry hook', () => {
                             State: 'CA',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other',
                     })
                 );
 
@@ -866,6 +909,7 @@ describe('useTaxCountry hook', () => {
                             ZipCode: '90210',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other' as const,
                     },
                 });
 
@@ -878,6 +922,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: 'M5H 2N2',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other',
                 });
 
                 expect(onBillingAddressChange).toHaveBeenCalledWith({
@@ -904,6 +949,7 @@ describe('useTaxCountry hook', () => {
                             ZipCode: '90210',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other' as const,
                     })
                 );
 
@@ -929,6 +975,7 @@ describe('useTaxCountry hook', () => {
                             State: 'CA',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other',
                     })
                 );
 
@@ -962,6 +1009,7 @@ describe('useTaxCountry hook', () => {
                             ZipCode: '90210',
                         },
                         zipCodeBackendValid: true,
+                        telemetryContext: 'other' as const,
                     },
                 });
 
@@ -988,6 +1036,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: 'T5J 2R7',
                     },
                     zipCodeBackendValid: true,
+                    telemetryContext: 'other' as const,
                 });
 
                 // Make another change with flag enabled

@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
-import { type OnLoginCallback, StandardErrorPage, useApi } from '@proton/components';
+import { type OnLoginCallback, StandardErrorPage, useApi, useConfig } from '@proton/components';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
@@ -16,6 +16,8 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { PaymentsContextOptimisticType, PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
@@ -96,7 +98,7 @@ interface SignupContextType {
      */
     createUser: () => Promise<void>;
     /**
-     * Sets up the newly created user account
+     * Sets up the newly created user account and creates the subscription
      */
     setupUser: () => Promise<void>;
     /**
@@ -159,6 +161,8 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
          * Initially selected plan
          */
         plan: Optional<PlanToCheck, 'currency'>;
+
+        telemetryContext: PaymentTelemetryContext;
     };
 
     /**
@@ -182,7 +186,8 @@ const getPaymentDataFromChargeableCallback = (
     {
         chargeablePaymentParameters,
         paymentsVersion,
-        paymentProcessorType,
+        sourceType,
+        source,
     }: Parameters<SignupContextType['submitPaymentData']>[1]
 ): SignupData['paymentData'] => {
     const legacyTokenPayment: TokenPayment | undefined = isV5PaymentToken(chargeablePaymentParameters)
@@ -192,7 +197,8 @@ const getPaymentDataFromChargeableCallback = (
     const extendedTokenPayment: ExtendedTokenPayment = {
         ...legacyTokenPayment,
         paymentsVersion,
-        paymentProcessorType,
+        paymentMethodType: sourceType,
+        paymentMethodValue: source,
     };
 
     return {
@@ -230,6 +236,7 @@ export const InnerSignupContextProvider = ({
     unverifiedReferralData,
     onReferralCheckError,
 }: SignupContextProviderProps) => {
+    const { APP_NAME } = useConfig();
     const clientType = getClientType(app);
     const [loading, setLoading] = useState({ init: true, submitting: false });
     const setLoadingDiff = (data: Partial<typeof loading>) => setLoading((prev) => ({ ...prev, ...data }));
@@ -285,6 +292,8 @@ export const InnerSignupContextProvider = ({
                     planToCheck: paymentsDataConfig?.plan,
                     paramCurrency: paymentsDataConfig?.plan?.currency,
                     availablePlans: paymentsDataConfig?.availablePlans,
+                    telemetryContext: paymentsDataConfig?.telemetryContext ?? 'other',
+                    product: app,
                     onChargeable: async () => {},
                 });
             };
@@ -333,6 +342,19 @@ export const InnerSignupContextProvider = ({
             productIntent: app,
             currency: paymentsContext.selectedPlan.currency,
             cycle: paymentsContext.selectedPlan.cycle,
+        });
+
+        checkoutTelemetry.reportInitialization({
+            context: paymentsContext.telemetryContext,
+            userCurrency: undefined,
+            subscription: undefined,
+            selectedCurrency: paymentsContext.selectedPlan.currency,
+            selectedPlanIDs: paymentsContext.selectedPlan.planIDs,
+            selectedCycle: paymentsContext.selectedPlan.cycle,
+            selectedCoupon: paymentsContext.checkResult.Coupon?.Code,
+            selectedStep: null,
+            build: APP_NAME,
+            product: app,
         });
     }, [paymentsContext.initialized]);
 
@@ -490,6 +512,8 @@ export const InnerSignupContextProvider = ({
                 traceSignupSentryError: traceSentryError,
                 referralData,
                 referralRegistrationPlan,
+                build: APP_NAME,
+                telemetryContext: paymentsContext.telemetryContext,
             });
 
             setupUserResponseRef.current = setupUserResponse;
@@ -552,7 +576,14 @@ export const InnerSignupContextProvider = ({
         const subscriptionData = signupDataRef.current?.paymentData?.subscriptionData;
 
         if (subscriptionData) {
-            await handleSubscribeUser(api, subscriptionData, app, hasZipCodeValidation);
+            await handleSubscribeUser(api, subscriptionData, {
+                productParam: app,
+                hasZipCodeValidation,
+                build: APP_NAME,
+                telemetryContext: paymentsContext.telemetryContext,
+                userCurrency: undefined,
+                subscription: undefined,
+            });
         }
 
         if (setupUserResponseRef.current) {

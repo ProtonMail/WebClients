@@ -12,13 +12,10 @@ import {
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
-import { hasDeprecatedVPN } from '@proton/payments';
-import { hasVPN2024 } from '@proton/payments';
+import { hasDeprecatedVPN, hasVPN2024, subscriptionExpires } from '@proton/payments';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-
-import { subscriptionExpires } from '../payments/subscription/helpers';
 
 const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();

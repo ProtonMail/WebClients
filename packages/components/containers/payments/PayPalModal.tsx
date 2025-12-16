@@ -7,6 +7,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
@@ -14,9 +15,10 @@ const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';
 
 type PaypalV5Props = ModalProps & {
     onMethodAdded: () => void;
+    app: APP_NAMES;
 };
 
-export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props) => {
+export const PayPalV5Modal = ({ onClose, onMethodAdded, app, ...rest }: PaypalV5Props) => {
     const { createNotification } = useNotifications();
     const [user] = useUser();
 
@@ -38,6 +40,8 @@ export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props
             }
         },
         user,
+        product: app,
+        telemetryContext: 'other',
     });
 
     return (

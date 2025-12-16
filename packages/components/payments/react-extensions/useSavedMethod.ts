@@ -11,7 +11,7 @@ import {
     type SavedPaymentMethodInternal,
     SavedPaymentProcessor,
 } from '@proton/payments';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
+import type { PaymentProcessorHook } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -19,8 +19,6 @@ export interface Props {
     amountAndCurrency: AmountAndCurrency;
     savedMethod?: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
-    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export interface Dependencies {
@@ -38,7 +36,7 @@ export interface SavedMethodProcessorHook extends PaymentProcessorHook {
  * or PayPal.
  */
 export const useSavedMethod = (
-    { amountAndCurrency, savedMethod, onChargeable, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
+    { amountAndCurrency, savedMethod, onChargeable }: Props,
     { verifyPayment, api }: Dependencies
 ): SavedMethodProcessorHook => {
     const paymentProcessorRef = useRef<SavedPaymentProcessor | undefined>(undefined);
@@ -92,7 +90,6 @@ export const useSavedMethod = (
         return tokenPromise;
     };
     const processPaymentToken = async () => {
-        onProcessPaymentToken?.('saved');
         if (!paymentProcessor?.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -100,7 +97,6 @@ export const useSavedMethod = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
-            onProcessPaymentTokenFailed?.('saved');
             reset();
             throw error;
         }

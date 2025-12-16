@@ -149,7 +149,6 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 bitcoinChargebee={{} as any}
-                paymentComponentLoaded={jest.fn()}
                 user={undefined}
                 directDebit={
                     {
@@ -189,7 +188,6 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 bitcoinChargebee={{} as any}
-                paymentComponentLoaded={jest.fn()}
                 user={undefined}
                 directDebit={
                     {
@@ -271,7 +269,6 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 bitcoinChargebee={{} as any}
-                paymentComponentLoaded={jest.fn()}
                 user={undefined}
                 directDebit={
                     {
@@ -346,7 +343,6 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 bitcoinChargebee={{} as any}
-                paymentComponentLoaded={jest.fn()}
                 user={undefined}
                 directDebit={
                     {
@@ -389,7 +385,6 @@ describe('Payment', () => {
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
                 bitcoinChargebee={{} as any}
-                paymentComponentLoaded={jest.fn()}
                 user={undefined}
                 directDebit={
                     {

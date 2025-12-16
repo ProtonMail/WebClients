@@ -15,7 +15,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getAvailableSubscriptionActions } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { openLinkInBrowser } from '../desktop/openExternalLink';
@@ -24,7 +24,7 @@ import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 
 const redirectFromDesktop = '?open=credit-modal';
 
-const CreditsSection = () => {
+const CreditsSection = ({ app }: { app: APP_NAMES }) => {
     const location = useLocation();
     const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
@@ -82,7 +82,9 @@ const CreditsSection = () => {
                 </span>
             </div>
             <hr />
-            {renderCreditModal && paymentStatus && <CreditsModal paymentStatus={paymentStatus} {...creditModalProps} />}
+            {renderCreditModal && paymentStatus && (
+                <CreditsModal app={app} paymentStatus={paymentStatus} {...creditModalProps} />
+            )}
             {externalSubscriptionModal}
         </SettingsSection>
     );

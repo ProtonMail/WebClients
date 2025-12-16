@@ -1,6 +1,5 @@
-import { getIsVPNPassPromotion } from '@proton/components/containers/payments/subscription/helpers';
 import type { PLANS, Plan } from '@proton/payments';
-import { CYCLE, type Currency, FREE_PLAN } from '@proton/payments';
+import { CYCLE, type Currency, FREE_PLAN, getIsVPNPassPromotion } from '@proton/payments';
 
 import type { CycleData } from './interface';
 

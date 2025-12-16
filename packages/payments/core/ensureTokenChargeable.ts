@@ -2,7 +2,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import { getTokenStatusV4, getTokenStatusV5 } from './api';
+import { getTokenStatusV4, getTokenStatusV5 } from './api/api';
 import { PAYMENT_TOKEN_STATUS } from './constants';
 import type {
     ChargebeeFetchedPaymentToken,
@@ -153,7 +153,7 @@ export const ensureTokenChargeable = (
         signal.addEventListener('abort', abort);
         window.addEventListener('message', onMessage, false);
         listen = true;
-        listenTab();
+        void listenTab();
     });
 };
 

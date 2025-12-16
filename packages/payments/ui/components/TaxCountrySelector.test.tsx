@@ -34,6 +34,7 @@ const TestTaxCountrySelector = ({
         },
         onBillingAddressChange,
         zipCodeBackendValid: zipCodeValid,
+        telemetryContext: 'other',
     });
 
     return <TaxCountrySelector {...taxCountry} />;

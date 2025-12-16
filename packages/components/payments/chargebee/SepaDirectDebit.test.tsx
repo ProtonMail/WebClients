@@ -26,6 +26,7 @@ const TestComponent = () => {
             onChargeable: jest.fn(),
             selectedPlanName: PLANS.VPN2024,
             onBeforeSepaPayment: jest.fn(),
+            onValidationFailed: jest.fn(),
         },
         {
             api: apiMock,

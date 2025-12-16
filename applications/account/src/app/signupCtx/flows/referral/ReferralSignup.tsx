@@ -157,6 +157,7 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
                     cycle: REFERRAL_DEAFULT_CYCLE,
                     ...getReferralSelectedPlan(planParam as SupportedReferralPlans),
                 },
+                telemetryContext: 'ctx-signup-referral',
             }}
             accountFormDataConfig={{
                 defaultEmail,

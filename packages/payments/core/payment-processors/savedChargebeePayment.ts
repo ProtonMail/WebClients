@@ -43,7 +43,8 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
          * In this case the frontend will send the internal saved method to v5 and the backend will do the migration.
          */
         savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod,
-        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        public onTokenIsChargeable: (data: ChargeablePaymentParameters) => Promise<unknown>,
+        public onDeclined: () => void
     ) {
         super(
             {
@@ -61,14 +62,19 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
             return null;
         }
 
-        this.fetchedPaymentToken = await createPaymentTokenForExistingChargebeePayment(
-            this.state.method.paymentMethodId,
-            this.state.method.type,
-            this.api,
-            this.handles,
-            this.events,
-            this.amountAndCurrency
-        );
+        try {
+            this.fetchedPaymentToken = await createPaymentTokenForExistingChargebeePayment(
+                this.state.method.paymentMethodId,
+                this.state.method.type,
+                this.api,
+                this.handles,
+                this.events,
+                this.amountAndCurrency
+            );
+        } catch (error) {
+            this.onDeclined();
+            throw error;
+        }
 
         return this.fetchedPaymentToken;
     }
@@ -82,15 +88,22 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
             throw new Error('Payment token was not fetched. Please call fetchPaymentToken() first.');
         }
 
-        // We can't avoid this step, because we need to request the token status at least once
-        // to make sure that it is actually chargebable
-        const token = await this.verifyPayment({
-            token: this.fetchedPaymentToken,
-            events: this.events,
-            v: 5,
-        });
+        try {
+            // We can't avoid this step, because we need to request the token status at least once
+            // to make sure that it is actually chargebable
+            const token = await this.verifyPayment({
+                token: this.fetchedPaymentToken,
+                events: this.events,
+                v: 5,
+                paymentMethodType: this.state.method.type,
+                paymentMethodValue: this.state.method.paymentMethodId,
+            });
 
-        return this.tokenCreated(token);
+            return this.tokenCreated(token);
+        } catch (error) {
+            this.onDeclined();
+            throw error;
+        }
     }
 
     updateSavedMethod(savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod) {
@@ -117,17 +130,4 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
 
         return result;
     }
-
-    // private tokenCreated(token?: V5PaymentToken): ChargeablePaymentParameters {
-    //     const result: ChargeablePaymentParameters = {
-    //         type: PAYMENT_METHOD_TYPES.CARD,
-    //         chargeable: true,
-    //         ...this.amountAndCurrency,
-    //         ...token,
-    //     };
-
-    //     void this.onTokenIsChargeable?.(result);
-
-    //     return result;
-    // }
 }

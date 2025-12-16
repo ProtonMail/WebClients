@@ -6,6 +6,7 @@ import clsx from '@proton/utils/clsx';
 import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
+import type { PayButtonOnClickPayload } from './PayButton';
 
 import './ApplePayButton.scss';
 
@@ -41,9 +42,10 @@ export interface ApplePayButtonProps extends ChargebeeWrapperProps {
     className?: string;
     formInvalid?: boolean;
     loading?: boolean;
+    onClick?: (payload: PayButtonOnClickPayload) => void;
 }
 
-export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButtonProps) => {
+export const ApplePayButton = ({ formInvalid, loading, onClick, ...props }: ApplePayButtonProps) => {
     const initializing = props.applePay.initializing;
     const disabled = props.disabled;
 
@@ -51,6 +53,7 @@ export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButto
     const fakeApplePayButton = useMemo(() => {
         const sharedProps = {
             className: clsx('w-full', props.className),
+            onClick: () => onClick?.({ source: 'fake-button', type: 'apple-pay' }),
         };
 
         let button: ReactNode;
@@ -71,7 +74,11 @@ export const ApplePayButton = ({ formInvalid, loading, ...props }: ApplePayButto
         <div className="relative">
             {fakeApplePayButton}
             <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
-                <ChargebeeIframe type="apple-pay" {...props} />
+                <ChargebeeIframe
+                    type="apple-pay"
+                    {...props}
+                    onClick={() => onClick?.({ source: 'real-button', type: 'apple-pay' })}
+                />
             </div>
         </div>
     );
