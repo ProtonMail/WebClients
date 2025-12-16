@@ -4,7 +4,7 @@ The crypto package interfaces the apps with the underlying OpenPGP crypto libs o
 
 ## Usage
 
-The utils functions that `pmcrypto` exported (e.g. `arrayToBinaryString`) are now accessible under `@proton/crypto/lib/utils`.
+The utils functions that `pmcrypto` exported (e.g. `uint8ArrayToBinaryString`) are now accessible under `@proton/crypto/lib/utils`.
 
 Crypto-related functions runnable in web workers are handled by the `CryptoProxy`, which is initialized together with the apps (see [this section](web-worker-integration) for more info on the setup).
 

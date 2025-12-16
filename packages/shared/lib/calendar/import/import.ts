@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import { binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports, sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -116,7 +116,10 @@ export const parseIcs = async (ics: File) => {
     const filename = ics.name;
     try {
         const icsAsString = await readFileAsString(ics);
-        const hashPromise = CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: binaryStringToArray(icsAsString) })
+        const hashPromise = CryptoProxy.computeHash({
+            algorithm: 'unsafeSHA1',
+            data: binaryStringToUint8Array(icsAsString),
+        })
             .then((result) => result.toHex())
             .catch((error: any) => {
                 captureMessage('Failed to hash ics', {
