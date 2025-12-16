@@ -1303,13 +1303,15 @@ const Step1 = ({
                                                                 </Button>
                                                             </div>
                                                         )}
-                                                        <span>
-                                                            {
-                                                                // translator: Full sentence "Already have an account? Sign in"
-                                                                c('Go to sign in')
-                                                                    .jt`Already have an account? ${signIn}`
-                                                            }
-                                                        </span>
+                                                        {!(signupTrial || checkTrial) && (
+                                                            <span>
+                                                                {
+                                                                    // translator: Full sentence "Already have an account? Sign in"
+                                                                    c('Go to sign in')
+                                                                        .jt`Already have an account? ${signIn}`
+                                                                }
+                                                            </span>
+                                                        )}
                                                         {!isB2bPlan && (
                                                             <div className="mt-4 color-weak text-sm">
                                                                 {c('Info')

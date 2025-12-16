@@ -1220,7 +1220,8 @@ const Step1 = ({
                                     signupParameters.invite?.type === 'drive' ||
                                     signupParameters.invite?.type === 'porkbun') &&
                                 signupParameters.mode !== SignupMode.MailReferral &&
-                                signupParameters.mode !== SignupMode.PassSimpleLogin;
+                                signupParameters.mode !== SignupMode.PassSimpleLogin &&
+                                !(signupTrial || checkTrial);
 
                             const inviteProps = (() => {
                                 const contextProps: Partial<
