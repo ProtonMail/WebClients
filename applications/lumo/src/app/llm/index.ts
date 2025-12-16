@@ -1,6 +1,7 @@
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
+import { getMessageBlocks } from '../messageHelpers';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
     changeConversationTitle,
@@ -89,24 +90,61 @@ export function prepareTurns(
     documentContext?: string,
     c?: ConversationContext
 ): Turn[] {
-    // Step 1: Transform messages to turns with filtered attachments
-    let turns: TurnInProgress[] = linearChain.map((message) => ({
-        role: message.role,
-        content: message.content, // Just the typed message, NOT message.context
-        toolCall: message.toolCall,
-        toolResult: message.toolResult,
-        attachments: filterMessageAttachments(message.attachments, message.id, c?.contextFilters ?? []),
-    }));
+    // Step 1: Transform messages to turns by iterating over blocks
+    let turns: TurnInProgress[] = [];
 
-    // Step 2: Expand attachments into separate turns (one turn per attachment)
-    if (c?.allConversationAttachments) {
-        turns = turns.flatMap((turn) => expandAttachmentsIntoTurns(turn, c.allConversationAttachments));
+    for (const message of linearChain) {
+        const blocks = getMessageBlocks(message);
+        const filteredAttachments = filterMessageAttachments(message.attachments, message.id, c?.contextFilters ?? []);
+
+        // Convert each block to appropriate turn(s)
+        for (const block of blocks) {
+            if (block.type === 'text') {
+                // Text block becomes a turn with the message's role
+                const textTurn: Turn = {
+                    role: message.role,
+                    content: block.content,
+                };
+                turns.push(textTurn);
+            } else if (block.type === 'tool_call') {
+                // Tool call block becomes a ToolCall turn
+                turns.push({
+                    role: Role.ToolCall,
+                    content: block.content,
+                });
+            } else if (block.type === 'tool_result') {
+                // Tool result block becomes a ToolResult turn
+                turns.push({
+                    role: Role.ToolResult,
+                    content: block.content,
+                });
+            }
+        }
+
+        // Add attachments to the last turn of this message if it's a user message
+        if (
+            c?.allConversationAttachments &&
+            filteredAttachments &&
+            filteredAttachments.length > 0 &&
+            message.role === Role.User &&
+            turns.length > 0
+        ) {
+            // Expand attachments into separate turns
+            const lastTurnIndex = turns.length - 1;
+            const lastTurn = turns[lastTurnIndex];
+            const attachmentTurns = expandAttachmentsIntoTurns(
+                { ...lastTurn, attachments: filteredAttachments } as TurnInProgress,
+                c.allConversationAttachments
+            );
+            // Replace last turn with expanded turns
+            turns = [...turns.slice(0, lastTurnIndex), ...attachmentTurns];
+        }
     }
 
-    // Step 3: Insert the final empty assistant turn
+    // Step 2: Insert the final empty assistant turn
     turns.push(EMPTY_ASSISTANT_TURN);
 
-    // Step 4.1: Add RAG document context to the FIRST user message's context field (like an attachment)
+    // Step 3: Add RAG document context to the FIRST user message's context field (like an attachment)
     // This ensures documents are included once and won't be duplicated across turns
     if (documentContext && turns.length > 0) {
         const firstUserIndex = turns.findIndex((turn) => turn.role === Role.User);
@@ -122,7 +160,7 @@ export function prepareTurns(
         }
     }
 
-    // Step 4.2: Add personalization to the last user message
+    // Step 4: Add personalization and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
     if (personalizationPrompt || projectInstructions) {
@@ -165,17 +203,7 @@ export function prepareTurns(
         }
     }
 
-    // Step 5: Expand tool calls into separate turns (if any)
-    turns = turns.flatMap(({ toolCall, toolResult, images, ...turn }) => {
-        const baseTurn = { ...turn, ...(images && { images }) };
-        if (!toolCall && !toolResult) return [baseTurn];
-
-        const tcTurn = { role: Role.ToolCall, content: toolCall };
-        const trTurn = { role: Role.ToolResult, content: toolResult };
-        return [tcTurn, trTurn, baseTurn];
-    });
-
-    // Step 6: Remove empty assistant turns
+    // Step 4: Remove empty assistant turns
     turns = removeEmptyAssistantTurns(turns);
 
     return turns;
