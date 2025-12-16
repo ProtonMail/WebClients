@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getPassCliText } from '@proton/components/containers/payments/features/pass';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { PlanIDs } from '@proton/payments';
@@ -114,6 +115,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
                 c('Label').t`Credit cards`,
                 DARK_WEB_MONITORING_NAME,
                 c('Label').t`File attachments (up to 10GB)`,
+                getPassCliText(),
             ],
         },
         {
