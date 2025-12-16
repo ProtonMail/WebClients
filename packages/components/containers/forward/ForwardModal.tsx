@@ -117,7 +117,7 @@ const getEncryptionFixupDetails = (
                   setup: c('email_forwarding_2023: Info')
                       .jt`For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${boldForwarderEmail}.`,
                   success: c('email_forwarding_2023: Info')
-                      .jt`For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${boldForwarderEmail}.`,
+                      .jt`For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${boldForwarderEmail}.`,
               }
             : {
                   setup: c('email_forwarding_2023: Info')
