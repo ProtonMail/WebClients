@@ -8,6 +8,7 @@ import TurndownService from 'turndown';
 
 import { Icon, useModalStateObject } from '@proton/components';
 
+import { messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
@@ -326,23 +327,9 @@ function preprocessContent(content: string | undefined): string {
 
 // Memoize to prevent unnecessary re-renders
 export default memo(AssistantMessage, (prevProps, nextProps) => {
-    // Only re-render if message content or streaming state changed
-    const contentEqual = prevProps.message.content === nextProps.message.content;
-    const toolCallEqual = prevProps.message.toolCall === nextProps.message.toolCall;
-    const toolResultEqual = prevProps.message.toolResult === nextProps.message.toolResult;
-    const blocksEqual = prevProps.message.blocks === nextProps.message.blocks;
-    const statusEqual = prevProps.message.status === nextProps.message.status;
-    const streamingEqual = prevProps.isGenerating === nextProps.isGenerating;
-    const lastMessageEqual = prevProps.isLastMessage === nextProps.isLastMessage;
-
-    // Don't re-render if nothing meaningful changed
     return (
-        contentEqual &&
-        toolCallEqual &&
-        toolResultEqual &&
-        blocksEqual &&
-        statusEqual &&
-        streamingEqual &&
-        lastMessageEqual
+        messagesEqualForRendering(prevProps.message, nextProps.message) &&
+        prevProps.isGenerating === nextProps.isGenerating &&
+        prevProps.isLastMessage === nextProps.isLastMessage
     );
 });

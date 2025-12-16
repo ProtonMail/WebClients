@@ -1,3 +1,7 @@
+// TODO use tiktoken.js or similar
+// TODO use tiktoken.js or similar
+// TODO use tiktoken.js or similar
+
 // Simple approximation for token counting (4 characters per token)
 const CHARS_PER_TOKEN = 4;
 

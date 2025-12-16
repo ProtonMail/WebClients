@@ -192,3 +192,74 @@ export function addToolResultBlock(blocks: ContentBlock[], toolResult: string, t
         },
     ];
 }
+
+// ============================================================================
+// Message Equality Functions (for memoization)
+// ============================================================================
+
+/**
+ * Check if message content has changed (for rendering).
+ * Uses reference equality for blocks and string equality for legacy fields.
+ * This is fast and sufficient since blocks array is replaced on each update.
+ */
+export function messageContentEqual(a: Message, b: Message): boolean {
+    return (
+        a.content === b.content &&
+        a.toolCall === b.toolCall && // String comparison (cheap)
+        a.toolResult === b.toolResult && // String comparison (cheap)
+        a.blocks === b.blocks // Reference equality (cheap, blocks array replaced on update)
+    );
+}
+
+/**
+ * Check if message display state has changed.
+ */
+export function messageStateEqual(a: Message, b: Message): boolean {
+    return a.status === b.status && a.placeholder === b.placeholder;
+}
+
+/**
+ * Check if message attachments have changed.
+ */
+export function messageAttachmentsEqual(a: Message, b: Message): boolean {
+    return a.attachments === b.attachments; // Reference equality
+}
+
+/**
+ * Specialized equality check for message rendering.
+ * Checks only fields that affect display, uses cheap comparisons.
+ * Use this for component memoization.
+ */
+export function messagesEqualForRendering(a: Message, b: Message): boolean {
+    return a.id === b.id && messageContentEqual(a, b) && messageStateEqual(a, b) && messageAttachmentsEqual(a, b);
+}
+
+/**
+ * Strict equality check for messages.
+ * Checks all fields including metadata.
+ * Use for tests or when complete equality verification is needed.
+ */
+export function messagesDeepEqual(a: Message, b: Message): boolean {
+    return (
+        a.id === b.id &&
+        a.createdAt === b.createdAt &&
+        a.role === b.role &&
+        a.parentId === b.parentId &&
+        a.conversationId === b.conversationId &&
+        messageStateEqual(a, b) &&
+        messageContentEqual(a, b) &&
+        a.context === b.context &&
+        messageAttachmentsEqual(a, b) &&
+        deepEqualArray(a.contextFiles, b.contextFiles)
+    );
+}
+
+/**
+ * Helper for array reference equality comparison.
+ */
+function deepEqualArray<T>(a: T[] | undefined, b: T[] | undefined): boolean {
+    if (a === b) return true;
+    if (!a || !b) return false;
+    if (a.length !== b.length) return false;
+    return a.every((item, i) => item === b[i]);
+}
