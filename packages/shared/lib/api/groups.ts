@@ -155,3 +155,16 @@ export const declineExternalGroupMembership = (jwt: string, groupID: string | nu
     url: `core/v4/groups/external/${jwt}`,
     params: groupID ? { GroupID: groupID } : {},
 });
+
+export interface InviteGroupOwnerParameters {
+    GroupMemberID: string;
+    EncryptionAddress: string;
+    TokenKeyPacket: string;
+    TokenKeySignature: string;
+}
+
+export const inviteGroupOwner = (inviteGroupOwnerParams: InviteGroupOwnerParameters) => ({
+    method: 'post',
+    url: 'core/v4/groups/owners/invites',
+    data: inviteGroupOwnerParams,
+});
