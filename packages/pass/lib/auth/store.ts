@@ -1,4 +1,4 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -44,12 +44,12 @@ const PASS_SSO = 'pass:sso';
 export const encodeUserData = (email: string = '', displayName: string = '') => {
     const encodedEmail = JSON.stringify(obfuscate(email));
     const encodedDisplayName = JSON.stringify(obfuscate(displayName));
-    return stringToUtf8Array(`${encodedEmail}.${encodedDisplayName}`).toBase64();
+    return utf8StringToUint8Array(`${encodedEmail}.${encodedDisplayName}`).toBase64();
 };
 
 export const decodeUserData = (userData: string): { PrimaryEmail?: string; DisplayName?: string } => {
     try {
-        const [encodedEmail, encodedDisplayName] = utf8ArrayToString(Uint8Array.fromBase64(userData)).split('.');
+        const [encodedEmail, encodedDisplayName] = uint8ArrayToUtf8String(Uint8Array.fromBase64(userData)).split('.');
         return {
             PrimaryEmail: deobfuscate(JSON.parse(encodedEmail)),
             DisplayName: deobfuscate(JSON.parse(encodedDisplayName)),

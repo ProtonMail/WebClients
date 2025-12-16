@@ -4,14 +4,14 @@ import { useUser } from '@proton/account/user/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CryptoProxy } from '@proton/crypto';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const getID = async (text: string) => {
     const id = (
         await CryptoProxy.computeHash({
             algorithm: 'SHA256',
-            data: stringToUtf8Array(text),
+            data: utf8StringToUint8Array(text),
         })
     ).toHex();
     return `NOTICE-${id}`;

@@ -1,4 +1,4 @@
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import {
     KEY_LENGTH_BYTES,
     generateKey,
@@ -11,7 +11,7 @@ import type { PassEncryptionTag } from '@proton/pass/types';
 export { generateKey, importKey as importSymmetricKey, KEY_LENGTH_BYTES };
 
 export const encryptData = async (key: CryptoKey, data: Uint8Array<ArrayBuffer>, tag: PassEncryptionTag) =>
-    genericEncryptData(key, data, stringToUtf8Array(tag));
+    genericEncryptData(key, data, utf8StringToUint8Array(tag));
 
 export const decryptData = async (key: CryptoKey, data: Uint8Array<ArrayBuffer>, tag: PassEncryptionTag) =>
-    genericDecryptData(key, data, stringToUtf8Array(tag));
+    genericDecryptData(key, data, utf8StringToUint8Array(tag));

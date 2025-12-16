@@ -1,7 +1,7 @@
 import { useApi, usePreventLeave } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,
@@ -164,7 +164,7 @@ export default function useLegacyShareUrl() {
             publicKey,
         } = await driveCrypto.getOwnAddressAndPrimaryKeys(addressId);
         const password = await encryptUnsigned({
-            message: stringToUtf8Array(decryptedPassword),
+            message: utf8StringToUint8Array(decryptedPassword),
             publicKey,
         });
 

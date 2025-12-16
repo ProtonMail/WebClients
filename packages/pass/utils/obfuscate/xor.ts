@@ -1,4 +1,4 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 
 // Browser-imposed limitation - maximum byte length for crypto.getRandomValues
 const MAX_ENTROPY = 65536;
@@ -6,7 +6,7 @@ const MAX_ENTROPY = 65536;
 export type XorObfuscation = { v: string; m: string };
 
 export const obfuscate = (str: string): XorObfuscation => {
-    const bytes = stringToUtf8Array(str);
+    const bytes = utf8StringToUint8Array(str);
     const xor = new Uint8Array(Math.min(bytes.length, MAX_ENTROPY));
     crypto.getRandomValues(xor);
 
@@ -28,7 +28,7 @@ export const deobfuscate = (obfuscation: XorObfuscation): string => {
         data[i] ^= xor[i % xor.length];
     }
 
-    return utf8ArrayToString(data);
+    return uint8ArrayToUtf8String(data);
 };
 
 /** For credit card numbers, each digit should be represented by a single
@@ -45,7 +45,7 @@ export const deobfuscatePartialCCField = (obfuscation: XorObfuscation): string =
         else data[i] = 0x2a; /* ASCII single byte for '*' */
     }
 
-    return utf8ArrayToString(data);
+    return uint8ArrayToUtf8String(data);
 };
 
 export const deobfuscateCCField = (obfuscation: XorObfuscation, partial: boolean): string =>

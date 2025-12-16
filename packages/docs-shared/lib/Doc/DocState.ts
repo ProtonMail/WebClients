@@ -1,5 +1,5 @@
 import type { LoggerInterface } from '@proton/utils/logs'
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
 import { Observable } from 'lib0/observable'
 import { Doc, decodeUpdate, encodeStateAsUpdate, mergeUpdates } from 'yjs'
 import * as encoding from 'lib0/encoding'
@@ -113,7 +113,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   public performOpeningCeremony(): void {
     const message: RtsMessagePayload = {
       type: { wrapper: 'events', eventType: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState },
-      content: stringToUtf8Array(JSON.stringify(true)),
+      content: utf8StringToUint8Array(JSON.stringify(true)),
     }
 
     void this.callbacks.docStateRequestsPropagationOfUpdate(message, BroadcastSource.AwarenessWebSocketOpen)

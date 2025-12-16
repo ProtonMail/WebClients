@@ -7,7 +7,7 @@ import {
     importKey as importAesGcmKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
 import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 export enum WalletSignatureContextEnum {
@@ -199,7 +199,7 @@ export const decryptWalletKeyForHmac = async (walletKey: string, walletKeySignat
 };
 
 export const hmac = async (hmacKey: CryptoKey, data: string) => {
-    return computeHmacSignature(hmacKey, stringToUtf8Array(data));
+    return computeHmacSignature(hmacKey, utf8StringToUint8Array(data));
 };
 
 /**

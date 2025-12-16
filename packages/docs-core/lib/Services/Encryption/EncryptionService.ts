@@ -8,7 +8,7 @@ import {
   encryptData,
 } from '@proton/crypto/lib/subtle/aesGcm'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
 import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
@@ -35,7 +35,7 @@ export class EncryptionService<C extends EncryptionContext> {
   ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextString = this.getContext(associatedData)
-      const contextBytes = stringToUtf8Array(contextString)
+      const contextBytes = utf8StringToUint8Array(contextString)
       const signature = await CryptoProxy.signMessage({
         binaryData: data,
         signingKeys: signingKey,
@@ -64,7 +64,7 @@ export class EncryptionService<C extends EncryptionContext> {
   ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextString = this.getContext(associatedData)
-      const contextBytes = stringToUtf8Array(contextString)
+      const contextBytes = utf8StringToUint8Array(contextString)
       const contentToEncrypt = new SignedPlaintextContent({
         content: data,
       })
@@ -84,7 +84,7 @@ export class EncryptionService<C extends EncryptionContext> {
     encryptionKey: CryptoKey,
   ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
-      const contextBytes = stringToUtf8Array(this.getContext(associatedData))
+      const contextBytes = utf8StringToUint8Array(this.getContext(associatedData))
       const cipherbytes = await encryptData(encryptionKey, data, contextBytes)
       return Result.ok(cipherbytes)
     } catch (error) {
@@ -98,7 +98,7 @@ export class EncryptionService<C extends EncryptionContext> {
     encryptionKey: CryptoKey,
   ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
-      const contextBytes = stringToUtf8Array(this.getContext(associatedData))
+      const contextBytes = utf8StringToUint8Array(this.getContext(associatedData))
       const decryptedData = await gcmDecrypt(encryptionKey, data, contextBytes)
       return Result.ok(decryptedData)
     } catch (error) {
@@ -113,7 +113,7 @@ export class EncryptionService<C extends EncryptionContext> {
   ): Promise<Result<SignedPlaintextContent>> {
     try {
       const contextString = this.getContext(associatedData)
-      const contextBytes = stringToUtf8Array(contextString)
+      const contextBytes = utf8StringToUint8Array(contextString)
       const hkdfSalt = encryptedData.subarray(0, HKDF_SALT_SIZE)
       const ciphertext = encryptedData.subarray(HKDF_SALT_SIZE)
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)

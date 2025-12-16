@@ -54,7 +54,7 @@ import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
 import { Spreadsheet } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
-import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
 import { ErrorBoundary, useNotifications } from '@proton/components'
 import type { OpenLinkEventData } from './Spreadsheet/constants'
@@ -427,7 +427,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           const result = await exportDataFromEditorState(editorState, format, {
             fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
           })
-          const resultString = utf8ArrayToString(result)
+          const resultString = uint8ArrayToUtf8String(result)
           copyTextToClipboard(resultString)
           createNotification({
             type: 'success',

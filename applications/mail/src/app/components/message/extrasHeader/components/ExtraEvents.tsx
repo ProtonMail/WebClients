@@ -9,7 +9,7 @@ import { useApi, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/comp
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { CryptoProxy } from '@proton/crypto';
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -188,7 +188,7 @@ const ExtraEvents = ({ message }: Props) => {
                                         return new EventInvitationError(INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                     }
                                     const icsBytes = download.data;
-                                    const icsString = utf8ArrayToString(icsBytes);
+                                    const icsString = uint8ArrayToUtf8String(icsBytes);
                                     hashedIcs = await CryptoProxy.computeHash({
                                         algorithm: 'unsafeSHA1',
                                         data: download.data,

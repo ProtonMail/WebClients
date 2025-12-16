@@ -1,4 +1,4 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
@@ -74,14 +74,14 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
             set(MAILBOX_PASSWORD_KEY, password);
             return;
         }
-        set(MAILBOX_PASSWORD_KEY, stringToUtf8Array(password).toBase64());
+        set(MAILBOX_PASSWORD_KEY, utf8StringToUint8Array(password).toBase64());
     };
     const getPassword = () => {
         const value: string | undefined = get(MAILBOX_PASSWORD_KEY);
         if (value === undefined) {
             return '';
         }
-        return utf8ArrayToString(Uint8Array.fromBase64(value));
+        return uint8ArrayToUtf8String(Uint8Array.fromBase64(value));
     };
 
     const getLocalID = () => get(LOCAL_ID_KEY);

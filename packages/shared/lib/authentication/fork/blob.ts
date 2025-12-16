@@ -1,4 +1,4 @@
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 
 import { getDecryptedBlob, getEncryptedBlob } from '../sessionBlobCryptoHelper';
 
@@ -15,7 +15,7 @@ export type ForkEncryptedBlob =
       };
 
 export const getForkEncryptedBlob = async (key: CryptoKey, data: ForkEncryptedBlob, payloadVersion: 1 | 2) => {
-    return getEncryptedBlob(key, JSON.stringify(data), payloadVersion === 2 ? stringToUtf8Array('fork') : undefined);
+    return getEncryptedBlob(key, JSON.stringify(data), payloadVersion === 2 ? utf8StringToUint8Array('fork') : undefined);
 };
 
 export const getForkDecryptedBlob = async (
@@ -23,7 +23,7 @@ export const getForkDecryptedBlob = async (
     data: string,
     payloadVersion: 1 | 2
 ): Promise<ForkEncryptedBlob | undefined> => {
-    const string = await getDecryptedBlob(key, data, payloadVersion === 2 ? stringToUtf8Array('fork') : undefined);
+    const string = await getDecryptedBlob(key, data, payloadVersion === 2 ? utf8StringToUint8Array('fork') : undefined);
     const parsedValue: ForkEncryptedBlob = JSON.parse(string);
 
     const keyPassword = parsedValue.keyPassword ?? '';

@@ -1,6 +1,6 @@
 import { useApi } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import useStateRef from '@proton/hooks/useStateRef';
 import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
 import {
@@ -123,7 +123,7 @@ export const useAssistantServer = ({ commonState }: Props): AssistantHooksProps 
                 }
 
                 const array = new Uint8Array(value);
-                const serverChunk = utf8ArrayToString(array);
+                const serverChunk = uint8ArrayToUtf8String(array);
 
                 fullServerContent += serverChunk;
                 generatedTokens++;

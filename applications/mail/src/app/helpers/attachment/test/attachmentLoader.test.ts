@@ -1,4 +1,4 @@
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -22,7 +22,7 @@ const attachment1 = {
     ID: attachmentID,
     Name: attachmentName,
     Preview: stringToUint8Array('message preview'),
-    KeyPackets: stringToUtf8Array('keypackets').toBase64(),
+    KeyPackets: utf8StringToUint8Array('keypackets').toBase64(),
     MIMEType: attachmentMimeType,
 } as Attachment;
 

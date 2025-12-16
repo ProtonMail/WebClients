@@ -2,7 +2,7 @@ import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
 import { importKey, signData, verifyData } from '../../lib/subtle/hmac';
-import { stringToUtf8Array } from '../../lib/utils';
+import { utf8StringToUint8Array } from '../../lib/utils';
 
 chaiUse(chaiAsPromised);
 
@@ -15,7 +15,7 @@ describe('Subtle - HMAC-SHA256 helpers', () => {
     it('importKey/signData/verifyData - correctly confirms authenticity of signed data', async () => {
         const secretBytes = crypto.getRandomValues(new Uint8Array(32));
         const key = await importKey(secretBytes);
-        const data = stringToUtf8Array('hello world');
+        const data = utf8StringToUint8Array('hello world');
         const signed = await signData(key, data);
 
         const verified = await verifyData(key, signed, data);
