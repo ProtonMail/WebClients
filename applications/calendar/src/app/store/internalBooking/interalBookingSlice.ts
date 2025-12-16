@@ -38,19 +38,15 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
         if (!extraArgument.unleashClient?.isEnabled('CalendarBookings')) {
             return {
                 bookingPages: [],
-                pageCount: 0,
             };
         }
 
         const pagesArray: InternalBookingPage[] = [];
-        let pageCount = 0;
         try {
             const [calendars, bookingPages] = await Promise.all([
                 dispatch(calendarsThunk()),
                 extraArgument.api<{ BookingPages: InternalBookingPagePayload[] }>(getUserBookingPage()),
             ]);
-
-            pageCount = bookingPages.BookingPages.length;
 
             for (const bookingPage of bookingPages.BookingPages) {
                 const calData = getCalendarAndOwner(bookingPage.CalendarID, calendars);
@@ -112,7 +108,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
             // eslint-disable-next-line no-console
             console.warn({ error });
         } finally {
-            return { bookingPages: pagesArray, pageCount: pageCount };
+            return { bookingPages: pagesArray };
         }
     },
     previous: previousSelector(selectInternalBooking),
