@@ -209,24 +209,32 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                 return;
             }
 
-            const validationErrorSecondRange = validateRangeOperation({
-                operation: 'update',
-                start: secondRange.start,
-                end: secondRange.end,
-                timezone: oldRange.timezone,
-                rangeId: secondRange.id,
-                existingRanges: internalForm.bookingRanges,
-                excludeRangeId: oldRangeId,
-                recurring: formData.recurring,
-            });
+            const rangesToAdd = [firstRange];
 
-            if (validationErrorSecondRange) {
-                createNotification({ text: validationErrorSecondRange });
-                return;
+            // When moving a range to the last hour of the last day of the week, we're creating a second range with no duration
+            // We don't want to push this one to the ranges because it will show an error
+            if (secondRange.start.getTime() !== secondRange.end.getTime()) {
+                const validationErrorSecondRange = validateRangeOperation({
+                    operation: 'update',
+                    start: secondRange.start,
+                    end: secondRange.end,
+                    timezone: oldRange.timezone,
+                    rangeId: secondRange.id,
+                    existingRanges: internalForm.bookingRanges,
+                    excludeRangeId: oldRangeId,
+                    recurring: formData.recurring,
+                });
+
+                if (validationErrorSecondRange) {
+                    createNotification({ text: validationErrorSecondRange });
+                    return;
+                }
+
+                rangesToAdd.push(secondRange);
             }
 
             // Add new ranges and remove the old one
-            newBookingRanges = [...internalForm.bookingRanges, firstRange, secondRange]
+            newBookingRanges = [...internalForm.bookingRanges, ...rangesToAdd]
                 .filter((range) => range.id !== oldRangeId)
                 .sort((a, b) => a.start.getTime() - b.start.getTime());
         } else {
