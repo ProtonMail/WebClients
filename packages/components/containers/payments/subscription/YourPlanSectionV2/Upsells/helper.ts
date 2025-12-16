@@ -137,7 +137,6 @@ export const getDashboardUpsellV2 = ({ plan, openSubscriptionModal, ...rest }: G
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });

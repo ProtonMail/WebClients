@@ -10,7 +10,7 @@ import {
     type PaymentVerificator,
     getErrors,
 } from '@proton/payments';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
+import type { PaymentProcessorHook } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -44,8 +44,6 @@ export interface Props {
     initialCard?: CardModel;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
     verifyOnly?: boolean;
-    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
 }
 
 export type CardProcessorHook = PaymentProcessorHook & {
@@ -63,14 +61,7 @@ export type CardProcessorHook = PaymentProcessorHook & {
  * the credit card component.
  */
 export const useCard = (
-    {
-        amountAndCurrency,
-        initialCard,
-        verifyOnly,
-        onChargeable,
-        onProcessPaymentToken,
-        onProcessPaymentTokenFailed,
-    }: Props,
+    { amountAndCurrency, initialCard, verifyOnly, onChargeable }: Props,
     { api, verifyPayment }: Dependencies
 ): CardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -132,8 +123,6 @@ export const useCard = (
     };
 
     const processPaymentToken = async () => {
-        onProcessPaymentToken?.('card');
-
         if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -141,7 +130,6 @@ export const useCard = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
-            onProcessPaymentTokenFailed?.('card');
             reset();
             throw error;
         }

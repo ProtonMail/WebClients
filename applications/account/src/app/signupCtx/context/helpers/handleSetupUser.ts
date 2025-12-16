@@ -3,14 +3,16 @@ import {
     type BillingAddress,
     type Currency,
     type Cycle,
+    type EnrichedCheckResponse,
     type ExtendedTokenPayment,
+    type FreeSubscription,
     type PaymentsVersion,
     type PlanIDs,
-    type RequiredCheckResponse,
     type Subscription,
-    createSubscription,
     hasFreePlanIDs,
 } from '@proton/payments';
+import { createSubscription } from '@proton/payments/core/api/createSubscription';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import type { ReferralRegistrationPlan } from '@proton/shared/lib/api/core/referrals';
@@ -21,6 +23,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, ReferralData, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
@@ -34,7 +37,7 @@ export interface SignupContextSubscriptionData {
     currency: Currency;
     cycle: Cycle;
     planIDs: PlanIDs;
-    checkResult: RequiredCheckResponse;
+    checkResult: EnrichedCheckResponse;
     paymentToken: ExtendedTokenPayment | undefined;
     billingAddress: BillingAddress;
     vatNumber: string | undefined;
@@ -44,53 +47,64 @@ export interface SignupContextSubscriptionData {
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SignupContextSubscriptionData,
-    productParam: ProductParam,
-    hasZipCodeValidation: boolean,
-    onPaymentSuccess?: () => void,
-    onPaymentFailure?: () => void
+    {
+        productParam,
+        hasZipCodeValidation,
+        build,
+        telemetryContext,
+        userCurrency,
+        subscription,
+    }: {
+        productParam: ProductParam;
+        hasZipCodeValidation: boolean;
+        build: APP_NAMES;
+        telemetryContext: PaymentTelemetryContext;
+        userCurrency: Currency | undefined;
+        subscription: Subscription | FreeSubscription | undefined;
+    }
 ) => {
     if (hasFreePlanIDs(subscriptionData.planIDs)) {
         return;
     }
 
-    try {
-        let paymentsVersion: PaymentsVersion;
-        if (subscriptionData.paymentToken?.paymentsVersion) {
-            paymentsVersion = subscriptionData.paymentToken.paymentsVersion;
-        } else {
-            paymentsVersion = 'v4';
-        }
-
-        const { Subscription } = await api<{ Subscription: Subscription }>(
-            createSubscription(
-                {
-                    Plans: subscriptionData.planIDs,
-                    Currency: subscriptionData.currency,
-                    Cycle: subscriptionData.cycle,
-                    BillingAddress: subscriptionData.billingAddress,
-                    VatId: subscriptionData.vatNumber,
-                    ...(subscriptionData.trial ? { StartTrial: true } : {}),
-                    ...{
-                        Payment: subscriptionData.paymentToken,
-                        Amount: subscriptionData.checkResult.AmountDue,
-                        ...(subscriptionData.checkResult.Coupon?.Code
-                            ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                            : undefined),
-                    },
-                },
-                productParam,
-                paymentsVersion,
-                hasZipCodeValidation
-            )
-        );
-
-        onPaymentSuccess?.();
-
-        return Subscription;
-    } catch (error: any) {
-        onPaymentFailure?.();
-        throw error;
+    let paymentsVersion: PaymentsVersion;
+    if (subscriptionData.paymentToken?.paymentsVersion) {
+        paymentsVersion = subscriptionData.paymentToken.paymentsVersion;
+    } else {
+        paymentsVersion = 'v4';
     }
+
+    const { Subscription } = await createSubscription(
+        api,
+        {
+            Plans: subscriptionData.planIDs,
+            Currency: subscriptionData.currency,
+            Cycle: subscriptionData.cycle,
+            BillingAddress: subscriptionData.billingAddress,
+            VatId: subscriptionData.vatNumber,
+            ...(subscriptionData.trial ? { StartTrial: true } : {}),
+            ...{
+                Payment: subscriptionData.paymentToken,
+                Amount: subscriptionData.checkResult.AmountDue,
+                ...(subscriptionData.checkResult.Coupon?.Code
+                    ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                    : undefined),
+            },
+        },
+        {
+            product: productParam,
+            version: paymentsVersion,
+            hasZipCodeValidation,
+            build,
+            telemetryContext,
+            userCurrency,
+            subscription,
+            paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
+            paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
+        }
+    );
+
+    return Subscription;
 };
 
 const setupKeys = async ({
@@ -145,6 +159,8 @@ export const handleSetupUser = async ({
     traceSignupSentryError,
     referralData,
     referralRegistrationPlan,
+    build,
+    telemetryContext,
 }: {
     accountData: AccountData;
     api: Api;
@@ -157,6 +173,8 @@ export const handleSetupUser = async ({
     traceSignupSentryError: (error: any) => void;
     referralData: ReferralData | undefined;
     referralRegistrationPlan: ReferralRegistrationPlan | undefined;
+    build: APP_NAMES;
+    telemetryContext: PaymentTelemetryContext;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -189,7 +207,14 @@ export const handleSetupUser = async ({
         !referralData
     ) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
-        subscription = await handleSubscribeUser(api, subscriptionData, productParam, hasZipCodeValidation);
+        subscription = await handleSubscribeUser(api, subscriptionData, {
+            productParam,
+            hasZipCodeValidation,
+            build,
+            telemetryContext,
+            userCurrency: undefined,
+            subscription: undefined,
+        });
     }
 
     void api(updateLocale(localeCode)).catch(noop);

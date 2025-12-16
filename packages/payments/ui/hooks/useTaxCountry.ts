@@ -15,6 +15,8 @@ import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates }
 import type { PaymentStatus } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
+import type { PaymentTelemetryContext } from '../../telemetry/helpers';
+import { checkoutTelemetry } from '../../telemetry/telemetry';
 
 export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 
@@ -24,6 +26,7 @@ interface HookProps {
     zipCodeBackendValid: boolean;
     paymentFacade?: PaymentFacade;
     previosValidZipCode?: string | null;
+    telemetryContext: PaymentTelemetryContext;
 }
 
 export interface TaxCountryHook {
@@ -125,6 +128,15 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             ZipCode,
         };
 
+        checkoutTelemetry.reportBillingCountryChange({
+            action: 'change_country',
+            context: props.telemetryContext,
+            currentCountry: current.CountryCode,
+            selectedCountry: newCountryCode,
+            currentState: current.State ?? null,
+            selectedState: State,
+        });
+
         setTaxBillingAddress(newValue);
         billingAddressChanged(newValue);
     };
@@ -142,6 +154,15 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
                 ? getDefaultPostalCodeByStateCode(current.CountryCode, newFederalStateCode)
                 : null,
         };
+
+        checkoutTelemetry.reportBillingCountryChange({
+            action: 'change_state',
+            context: props.telemetryContext,
+            currentCountry: current.CountryCode,
+            selectedCountry: current.CountryCode,
+            currentState: current.State ?? null,
+            selectedState: newFederalStateCode,
+        });
 
         setTaxBillingAddress(newValue);
         billingAddressChanged(newValue);

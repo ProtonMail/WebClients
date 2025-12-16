@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { formattedSavedSepaDetails } from '@proton/components/payments/client-extensions/useMethods';
 import type { PayPalDetails, PaymentMethodSepa, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 
 import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
@@ -14,7 +15,7 @@ jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
 
 describe('PaymentMethodsTable', () => {
     it('should render message that user has no payment methods', () => {
-        const { container } = render(<PaymentMethodsTable loading={false} methods={[]} />);
+        const { container } = render(<PaymentMethodsTable loading={false} methods={[]} app={APPS.PROTONMAIL} />);
 
         expect(container).toHaveTextContent('You have no saved payment methods.');
     });
@@ -24,7 +25,7 @@ describe('PaymentMethodsTable', () => {
         TableBodyMock.mockReset();
         TableBodyMock.mockReturnValue(<span>Table Body</span>);
 
-        const { container } = render(<PaymentMethodsTable loading={true} methods={[]} />);
+        const { container } = render(<PaymentMethodsTable loading={true} methods={[]} app={APPS.PROTONMAIL} />);
 
         expect(TableBodyMock).toHaveBeenCalled();
         expect(TableBodyMock.mock.calls[0][0].loading).toEqual(true);
@@ -64,7 +65,9 @@ describe('PaymentMethodsTable', () => {
             </>
         ));
 
-        const { container } = render(<PaymentMethodsTable methods={[cardPaymentMethod]} loading={false} />);
+        const { container } = render(
+            <PaymentMethodsTable methods={[cardPaymentMethod]} loading={false} app={APPS.PROTONMAIL} />
+        );
 
         expect(container).toHaveTextContent(Details.Brand);
         expect(container).toHaveTextContent(Details.Last4);
@@ -97,7 +100,9 @@ describe('PaymentMethodsTable', () => {
             </>
         ));
 
-        const { container } = render(<PaymentMethodsTable methods={[paypalMethod]} loading={false} />);
+        const { container } = render(
+            <PaymentMethodsTable methods={[paypalMethod]} loading={false} app={APPS.PROTONMAIL} />
+        );
 
         expect(container).toHaveTextContent('PayPal');
         expect(container).toHaveTextContent('John Smith');
@@ -118,7 +123,7 @@ describe('PaymentMethodsTable', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        render(<PaymentMethodsTable methods={[sepaMethod]} loading={false} />);
+        render(<PaymentMethodsTable methods={[sepaMethod]} loading={false} app={APPS.PROTONMAIL} />);
 
         expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('SEPA Direct Debit');
 
@@ -189,7 +194,11 @@ describe('PaymentMethodsTable', () => {
         ));
 
         const { container } = render(
-            <PaymentMethodsTable methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod]} loading={false} />
+            <PaymentMethodsTable
+                methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod]}
+                loading={false}
+                app={APPS.PROTONMAIL}
+            />
         );
 
         expect(container).toHaveTextContent('John Smith PayPal');
@@ -280,6 +289,7 @@ describe('PaymentMethodsTable', () => {
             <PaymentMethodsTable
                 methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod, sepaMethod]}
                 loading={false}
+                app={APPS.PROTONMAIL}
             />
         );
 

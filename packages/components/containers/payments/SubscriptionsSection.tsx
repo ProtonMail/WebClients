@@ -35,6 +35,7 @@ import {
     isFreeSubscription,
     isManagedExternally,
     isUpcomingSubscriptionUnpaid,
+    subscriptionExpires,
 } from '@proton/payments';
 import {
     shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription,
@@ -48,7 +49,6 @@ import noop from '@proton/utils/noop';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { getSubscriptionManagerName } from './subscription/InAppPurchaseModal';
-import { subscriptionExpires } from './subscription/helpers';
 
 interface SubscriptionRowProps {
     subscription: Subscription;

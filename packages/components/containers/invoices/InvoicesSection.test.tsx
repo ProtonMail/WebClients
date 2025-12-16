@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { APPS } from '@proton/shared/lib/constants';
 import { applyHOCs, withConfig, withNotifications, withReduxStore } from '@proton/testing';
 
 import InvoicesSection from './InvoicesSection';
@@ -70,7 +71,7 @@ describe('InvoicesSection', () => {
             // Simulate immediate subscription
             return () => {};
         });
-        render(<InvoicesSectionContext />);
+        render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
 
         expect(subscribeMock).toHaveBeenCalledTimes(1);
         const callback = subscribeMock.mock.calls[0][0];
@@ -86,7 +87,7 @@ describe('InvoicesSection', () => {
         subscribeMock.mockImplementation(() => {
             return () => {};
         });
-        render(<InvoicesSectionContext />);
+        render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
 
         expect(subscribeMock).toHaveBeenCalledTimes(1);
         const callback = subscribeMock.mock.calls[0][0];
@@ -102,7 +103,7 @@ describe('InvoicesSection', () => {
         subscribeMock.mockImplementation(() => {
             return () => {};
         });
-        render(<InvoicesSectionContext />);
+        render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
 
         expect(subscribeMock).toHaveBeenCalledTimes(1);
         const callback = subscribeMock.mock.calls[0][0];
@@ -116,7 +117,7 @@ describe('InvoicesSection', () => {
         subscribeMock.mockImplementation(() => {
             return () => {};
         });
-        render(<InvoicesSectionContext />);
+        render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
 
         expect(subscribeMock).toHaveBeenCalledTimes(1);
         const callback = subscribeMock.mock.calls[0][0];

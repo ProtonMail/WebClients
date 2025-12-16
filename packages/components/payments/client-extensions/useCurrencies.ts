@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
-import { getAvailableCurrencies, getPreferredCurrency } from '@proton/payments';
-import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments';
+import { NEW_BATCH_CURRENCIES_FEATURE_FLAG, getAvailableCurrencies, getPreferredCurrency } from '@proton/payments';
 import { useGetFlag } from '@proton/unleash';
 
 export type GetPreferredCurrencyParamsHook = Omit<

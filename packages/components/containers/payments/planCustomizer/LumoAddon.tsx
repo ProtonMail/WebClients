@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { Plan } from '@proton/payments';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import useSubscriptionModalTelemetry from '../subscription/useSubscriptionModalTelemetry';
@@ -37,9 +39,10 @@ interface LumoAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
     price: ReactElement;
     addon: Plan;
     onAddLumo: () => void;
+    telemetryContext: PaymentTelemetryContext;
 }
 
-const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
+const LumoAddon = ({ price, onAddLumo, value, telemetryContext, ...rest }: LumoAddonProps) => {
     const { reportAddLumo } = useSubscriptionModalTelemetry();
 
     const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
@@ -53,6 +56,7 @@ const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
                         setShowLumoBanner(false);
                         onAddLumo();
                         void reportAddLumo();
+                        checkoutTelemetry.reportAddLumo({ context: telemetryContext });
                     }}
                 />
             </div>
