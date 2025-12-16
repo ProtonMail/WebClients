@@ -502,6 +502,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -516,6 +522,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
