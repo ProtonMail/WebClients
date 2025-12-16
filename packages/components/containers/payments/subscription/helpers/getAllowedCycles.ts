@@ -12,12 +12,12 @@ import {
     isBF2025Offer,
     isRegularCycle,
     isTrial,
+    notHigherThanAvailableOnBackend,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
-import { notHigherThanAvailableOnBackend } from './payment';
 
 type CycleCapper = (
     subscription: Subscription | FreeSubscription | undefined,

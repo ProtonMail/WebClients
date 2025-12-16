@@ -8,6 +8,7 @@ import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES, deletePaymentMethod, orderPaymentMethods } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { mockUseSubscription } from '@proton/testing/lib/mockUseSubscription';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
@@ -61,7 +62,7 @@ describe('PaymentMethodActions', () => {
             IsDefault: true,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -80,7 +81,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -104,7 +105,7 @@ describe('PaymentMethodActions', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -129,7 +130,7 @@ describe('PaymentMethodActions', () => {
             IsDefault: true,
         };
 
-        const { container } = render(<PaymentMethodActions method={method} methods={[method]} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -141,7 +142,7 @@ describe('PaymentMethodActions', () => {
             const DropdownActionsMock: jest.Mock = DropdownActions as any;
             DropdownActionsMock.mockReset().mockImplementation(({ list }: { list: any[] }) =>
                 list.map(({ text, onClick }, actionIndex) => (
-                    <button onClick={onClick} data-testid={`actionIndex-${actionIndex}`}>
+                    <button type="button" onClick={onClick} data-testid={`actionIndex-${actionIndex}`}>
                         {text}
                     </button>
                 ))
@@ -165,7 +166,9 @@ describe('PaymentMethodActions', () => {
                 Autopay: Autopay.ENABLE,
             };
 
-            const { findByTestId, findByText } = render(<PaymentMethodActions method={method} methods={[method]} />);
+            const { findByTestId, findByText } = render(
+                <PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />
+            );
 
             await userEvent.click(await findByTestId('actionIndex-0'));
 
@@ -216,7 +219,9 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(<PaymentMethodActions method={method1} methods={[method0, method1]} />);
+            const { findByTestId } = render(
+                <PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />
+            );
 
             await userEvent.click(await findByTestId('actionIndex-1'));
 
@@ -259,7 +264,9 @@ describe('PaymentMethodActions', () => {
             const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} />);
+            const { findByTestId } = render(
+                <PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />
+            );
 
             await userEvent.click(await findByTestId('actionIndex-1'));
             await userEvent.click(await findByTestId('confirm-deletion'));

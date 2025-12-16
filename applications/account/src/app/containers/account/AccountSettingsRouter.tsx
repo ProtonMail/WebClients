@@ -129,7 +129,7 @@ const AccountSettingsRouter = ({
                     >
                         <YourPlanSectionV2 app={app} />
                         <YourPlanUpsellsSectionV2 app={app} />
-                        <VpnDownloadAndInfoSection app={app} />
+                        <VpnDownloadAndInfoSection />
                         <VpnAlsoInYourPlanSection app={app} />
                         <VpnBlogSection />
                     </PrivateMainSettingsArea>
@@ -151,17 +151,13 @@ const AccountSettingsRouter = ({
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
                     >
-                        <YourPlanSectionV2
-                            app={app}
-                            editBillingCycle={true}
-                            cta={<DashboardComparePlansCTA app={app} />}
-                        />
+                        <YourPlanSectionV2 app={app} editBillingCycle={true} cta={<DashboardComparePlansCTA />} />
                         <AssistantToggle />
                         <SubscriptionsSection />
-                        <PaymentMethodsSection />
-                        <CreditsSection />
+                        <PaymentMethodsSection app={app} />
+                        <CreditsSection app={app} />
                         <GiftCodeSection />
-                        <InvoicesSection />
+                        <InvoicesSection app={app} />
                         <EmailSubscriptionSection />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
@@ -178,10 +174,10 @@ const AccountSettingsRouter = ({
                         <YourPlanSection app={app} />
                         <AssistantToggle />
                         <SubscriptionsSection />
-                        <PaymentMethodsSection />
-                        <CreditsSection />
+                        <PaymentMethodsSection app={app} />
+                        <CreditsSection app={app} />
                         <GiftCodeSection />
-                        <InvoicesSection />
+                        <InvoicesSection app={app} />
                         <EmailSubscriptionSection />
                         <CancelSubscriptionSection app={app} />
                         <CancelSubscriptionViaSupportSection />
@@ -230,9 +226,9 @@ const AccountSettingsRouter = ({
                         <EmergencyAccessSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
-                        <PaymentMethodsSection />
-                        <CreditsSection />
-                        <InvoicesSection />
+                        <PaymentMethodsSection app={app} />
+                        <CreditsSection app={app} />
+                        <InvoicesSection app={app} />
                         <DeleteSection />
                     </PrivateMainSettingsArea>
                 </Route>

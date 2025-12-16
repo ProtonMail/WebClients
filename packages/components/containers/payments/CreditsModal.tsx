@@ -35,7 +35,7 @@ import {
     isFreeSubscription,
 } from '@proton/payments';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -57,6 +57,7 @@ const getCurrenciesI18N = () => ({
 });
 
 type Props = {
+    app: APP_NAMES;
     paymentStatus: PaymentStatus;
 } & ModalProps;
 
@@ -68,7 +69,7 @@ const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
     PAYMENT_METHOD_TYPES.CASH,
 ]);
 
-const CreditsModal = ({ paymentStatus, ...props }: Props) => {
+const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -115,6 +116,8 @@ const CreditsModal = ({ paymentStatus, ...props }: Props) => {
         },
         flow: 'credit',
         user,
+        product: app,
+        telemetryContext: 'other',
     });
 
     if (loadingSubscription || loadingUser) {

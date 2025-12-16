@@ -38,6 +38,9 @@ export interface Props {
     onProcess: () => PromiseWithController;
     initialProcess?: PromiseWithController;
     processingDelay?: number;
+    onVerificationAttempted?: () => void;
+    onVerificationFailed?: () => void;
+    onVerificationRejectedByUser?: () => void;
 }
 
 const PaymentVerificationModal = ({
@@ -48,6 +51,9 @@ const PaymentVerificationModal = ({
     onProcess,
     initialProcess,
     processingDelay = DEFAULT_PROCESSING_DELAY,
+    onVerificationAttempted,
+    onVerificationFailed,
+    onVerificationRejectedByUser,
     ...rest
 }: Props) => {
     const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL].includes(type);
@@ -78,8 +84,14 @@ const PaymentVerificationModal = ({
         rest.onClose('cancelled');
     };
 
+    const handleCancelByUser = () => {
+        onVerificationRejectedByUser?.();
+        handleCancel();
+    };
+
     const handleSubmit = async ({ abort, promise }: PromiseWithController) => {
         try {
+            onVerificationAttempted?.();
             setStep(STEPS.REDIRECTING);
             timeoutRef.current = window.setTimeout(() => {
                 setStep(STEPS.REDIRECTED);
@@ -89,6 +101,7 @@ const PaymentVerificationModal = ({
             onSubmit();
             rest.onClose('succeeded');
         } catch (error: any) {
+            onVerificationFailed?.();
             window.clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
             setError(error);
@@ -192,7 +205,7 @@ const PaymentVerificationModal = ({
                     if (step === STEPS.REDIRECT) {
                         return (
                             <>
-                                <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                                <Button onClick={handleCancelByUser}>{c('Action').t`Cancel`}</Button>
                                 <Button color="norm" type="submit">{c('Action').t`Verify`}</Button>
                             </>
                         );
@@ -200,7 +213,7 @@ const PaymentVerificationModal = ({
                     if (step === STEPS.REDIRECTED) {
                         return (
                             <>
-                                <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                                <Button onClick={handleCancelByUser}>{c('Action').t`Cancel`}</Button>
                             </>
                         );
                     }

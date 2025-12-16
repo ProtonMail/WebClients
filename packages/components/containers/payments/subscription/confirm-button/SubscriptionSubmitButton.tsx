@@ -19,20 +19,19 @@ import {
     isTrial,
 } from '@proton/payments';
 import { InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
-import type { SUBSCRIPTION_STEPS } from '../constants';
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { InfoBanner } from './InfoBanner';
 
 export type Props = {
     className?: string;
     currency: Currency;
-    step: SUBSCRIPTION_STEPS;
     onDone?: () => void;
-    checkResult?: EnrichedCheckResponse;
+    checkResult: EnrichedCheckResponse;
     loading?: boolean;
     disabled?: boolean;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
@@ -42,6 +41,7 @@ export type Props = {
     couponConfig?: CouponConfigRendered;
     showVisionaryWarning: boolean;
     onSubmit: () => void;
+    app: ProductParam;
 };
 
 export const SubscriptionSubmitButton = ({
@@ -57,6 +57,7 @@ export const SubscriptionSubmitButton = ({
     paymentFacade,
     couponConfig,
     showVisionaryWarning,
+    app,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -174,6 +175,8 @@ export const SubscriptionSubmitButton = ({
                 disabled={disabled}
                 type="submit"
                 data-testid="confirm"
+                product={app}
+                telemetryContext="subscription-modification"
                 {...payButtonProps}
             />
             <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />

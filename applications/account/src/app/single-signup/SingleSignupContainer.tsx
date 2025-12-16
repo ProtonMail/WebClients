@@ -12,13 +12,10 @@ import {
     useConfig,
     useErrorHandler,
 } from '@proton/components';
-import { getIsVPNPassPromotion } from '@proton/components/containers/payments/subscription/helpers';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { PaymentProcessorType } from '@proton/payments';
 import {
     ADDON_NAMES,
     type BillingAddress,
@@ -31,13 +28,14 @@ import {
     SubscriptionMode,
     getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
+    getIsVPNPassPromotion,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
-    getPlanNameFromIDs,
     getPlansMap,
     hasPlanIDs,
 } from '@proton/payments';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -177,9 +175,6 @@ const SingleSignupContainer = ({
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
     const getPaymentStatus = useGetPaymentStatus();
-    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
-        flow: 'signup-vpn',
-    });
     const activeBreakpoint = useActiveBreakpoint();
 
     const getPlans = useGetPlans();
@@ -459,6 +454,8 @@ const SingleSignupContainer = ({
         });
     };
 
+    const telemetryContext = 'v1-signup';
+
     useEffect(() => {
         const fetchDependencies = async () => {
             await onStartAuth().catch(noop);
@@ -503,6 +500,20 @@ const SingleSignupContainer = ({
                 currency: preferredCurrency,
                 cycle: subscriptionData.cycle,
             });
+
+            checkoutTelemetry.reportInitialization({
+                context: telemetryContext,
+                userCurrency: undefined,
+                subscription: undefined,
+                selectedCurrency: subscriptionData.currency,
+                selectedPlanIDs: subscriptionData.planIDs,
+                selectedCycle: subscriptionData.cycle,
+                selectedCoupon: subscriptionData.checkResult.Coupon?.Code,
+                selectedStep: null,
+                build: APP_NAME,
+                product: toApp,
+            });
+
             setModelDiff({
                 domains,
                 plans,
@@ -536,38 +547,15 @@ const SingleSignupContainer = ({
     }, []);
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
-        const getTelemetryParams = () => {
-            const subscriptionData = cache.subscriptionData;
-
-            const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-            const plan = getPlanNameFromIDs(subscriptionData.planIDs);
-
-            return {
-                method,
-                overrides: {
-                    plan,
-                    cycle: subscriptionData.cycle,
-                    amount: subscriptionData.checkResult.AmountDue,
-                },
-            };
-        };
-
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
                 setupKeys: false,
-                reportPaymentSuccess: () => {
-                    const { method, overrides } = getTelemetryParams();
-                    reportPaymentSuccess(method, overrides);
-                },
-                reportPaymentFailure: () => {
-                    const { method, overrides } = getTelemetryParams();
-                    reportPaymentFailure(method, overrides);
-                },
                 hasZipCodeValidation,
                 canGenerateMnemonic: false,
+                telemetryContext,
             }),
             wait(3500),
         ]);
@@ -714,6 +702,8 @@ const SingleSignupContainer = ({
                             signupTrial={signupParameters.trial}
                             toAppName={toAppName}
                             couponUrlParam={signupParameters.coupon}
+                            telemetryContext={telemetryContext}
+                            toApp={toApp}
                         />
                     ) : (
                         <Step1
@@ -786,6 +776,8 @@ const SingleSignupContainer = ({
                             hideFreePlan={signupParameters.hideFreePlan}
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
                             couponUrlParam={signupParameters.coupon}
+                            telemetryContext={telemetryContext}
+                            toApp={toApp}
                         />
                     ))}
                 {model.step === Steps.Loading && (

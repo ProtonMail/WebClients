@@ -16,11 +16,12 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { getPaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '../../core/api';
+import { getPaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
 import type { CardModel } from '../../core/cardDetails';
 import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
@@ -34,6 +35,7 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     paymentMethod?: PaymentMethodCardDetails;
     onMethodAdded?: () => void;
     enableRenewToggle?: boolean;
+    app: ProductParam;
 }
 
 const EditCardModal = ({
@@ -42,6 +44,7 @@ const EditCardModal = ({
     paymentMethod,
     onMethodAdded,
     enableRenewToggle = true,
+    app,
     ...rest
 }: Props) => {
     const api = useApi();
@@ -99,6 +102,8 @@ const EditCardModal = ({
             }).catch(noop);
         },
         user,
+        product: app,
+        telemetryContext: 'other',
     });
 
     const paymentMethodId = paymentMethod?.ID;

@@ -34,6 +34,7 @@ import {
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    getBundleProPlanToUse,
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
@@ -55,8 +56,10 @@ import {
     isRegionalCurrency,
     isSubscriptionCheckForbidden,
     isTrial,
+    notHigherThanAvailableOnBackend,
     switchPlan,
 } from '@proton/payments';
+import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -79,7 +82,6 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { getAutoCoupon, getBundleProPlanToUse, notHigherThanAvailableOnBackend } from './helpers/payment';
 
 import './PlanSelection.scss';
 

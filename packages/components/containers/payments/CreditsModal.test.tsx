@@ -2,6 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { PAYMENT_TOKEN_STATUS, buyCredit, createTokenV4 } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     addApiMock,
@@ -68,19 +69,19 @@ const ContextCreditsModal = applyHOCs(
 const status = {} as any;
 
 it.skip('should render', () => {
-    const { container } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { container } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
 
     expect(container).not.toBeEmptyDOMElement();
 });
 
 it.skip('should display the credit card form by default', async () => {
-    const { findByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { findByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
     const ccnumber = await findByTestId('ccnumber');
     expect(ccnumber).toBeTruthy();
 });
 
 it.skip('should display the payment method selector', async () => {
-    const { queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
 
     await waitFor(() => {
         /**
@@ -104,7 +105,9 @@ function selectMethod(container: HTMLElement, value: string) {
 }
 
 it.skip('should select the payment method when user clicks it', async () => {
-    const { container, queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { container, queryByTestId } = render(
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
+    );
     await waitFor(() => {
         selectMethod(container, 'PayPal');
     });
@@ -126,14 +129,16 @@ it.skip('should select the payment method when user clicks it', async () => {
 });
 
 it.skip('should display the credit card form initially', async () => {
-    const { queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
     await waitFor(() => {
         expect(queryByTestId('ccnumber')).toBeTruthy();
     });
 });
 
 it.skip('should remember credit card details when switching back and forth', async () => {
-    const { container, getByTestId, findByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { container, getByTestId, findByTestId } = render(
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
+    );
     await waitFor(() => {});
 
     const ccnumber = await findByTestId('ccnumber');
@@ -158,7 +163,7 @@ it.skip('should remember credit card details when switching back and forth', asy
 
 it.skip('should display validation errors after user submits credit card', async () => {
     const { container, findByTestId, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} />
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {});
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
@@ -186,7 +191,7 @@ it.skip('should display validation errors after user submits credit card', async
 // mock the CB iframe response.
 it.skip('should display invalid expiration date error', async () => {
     const { container, findByTestId, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} />
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {});
 
@@ -213,7 +218,7 @@ it.skip('should display invalid expiration date error', async () => {
 it.skip('should create payment token and then buy credits with it', async () => {
     const onClose = jest.fn();
     const { findByTestId, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {});
 
@@ -266,7 +271,7 @@ it.skip('should create payment token and then buy credits with it', async () => 
 it.skip('should create payment token and then buy credits with it - custom amount', async () => {
     const onClose = jest.fn();
     const { findByTestId, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {});
 
@@ -321,7 +326,7 @@ it.skip('should create payment token and then buy credits with it - custom amoun
 it.skip('should create payment token for paypal and then buy credits with it', async () => {
     const onClose = jest.fn();
     const { container, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {
         selectMethod(container, 'PayPal');
@@ -366,7 +371,7 @@ it.skip('should create payment token for paypal and then buy credits with it', a
 it.skip('should create payment token for paypal and then buy credits with it - custom amount', async () => {
     const onClose = jest.fn();
     const { container, queryByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {
         selectMethod(container, 'PayPal');
@@ -425,7 +430,9 @@ it.skip('should display the saved credit cards', async () => {
         ZIP: '11111',
     });
 
-    const { container, queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { container, queryByTestId } = render(
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
+    );
 
     await waitFor(() => {
         expect(container.querySelector('#select-method')).toBeTruthy();
@@ -447,7 +454,9 @@ it.skip('should display the saved paypal account', async () => {
         Payer: '',
     });
 
-    const { container, queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} />);
+    const { container, queryByTestId } = render(
+        <ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />
+    );
 
     await waitFor(() => {
         expect(container.querySelector('#select-method')).toBeTruthy();
@@ -471,7 +480,7 @@ it.skip('should create payment token for saved card and then buy credits with it
 
     const onClose = jest.fn();
     const { container, findByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
     await waitFor(() => {
         selectMethod(container, 'Visa ending in 4242');
@@ -518,7 +527,7 @@ it.skip('should create payment token for saved paypal and then buy credits with 
 
     const onClose = jest.fn();
     const { container, findByTestId } = render(
-        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} />
+        <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
 
     await waitFor(() => {

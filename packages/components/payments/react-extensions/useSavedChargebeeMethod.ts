@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
+import type { PaymentMethodType, PaymentProcessorHook, PlainPaymentMethodType } from '@proton/payments';
 import {
     type AmountAndCurrency,
     type ChargeablePaymentParameters,
@@ -14,7 +15,6 @@ import {
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
 } from '@proton/payments';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -22,9 +22,14 @@ export interface Props {
     amountAndCurrency: AmountAndCurrency;
     savedMethod?: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
-    onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
-    onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
     onBeforeSepaPayment?: () => Promise<boolean>;
+    onDeclined: ({
+        selectedMethodType,
+        selectedMethodValue,
+    }: {
+        selectedMethodType: PlainPaymentMethodType;
+        selectedMethodValue: PaymentMethodType;
+    }) => void;
 }
 
 export interface Dependencies {
@@ -39,14 +44,7 @@ export interface SavedChargebeeMethodProcessorHook extends PaymentProcessorHook 
 }
 
 export const useSavedChargebeeMethod = (
-    {
-        amountAndCurrency,
-        savedMethod,
-        onChargeable,
-        onProcessPaymentToken,
-        onProcessPaymentTokenFailed,
-        onBeforeSepaPayment,
-    }: Props,
+    { amountAndCurrency, savedMethod, onChargeable, onBeforeSepaPayment, onDeclined }: Props,
     { verifyPayment, api, handles, events }: Dependencies
 ): SavedChargebeeMethodProcessorHook => {
     const paymentProcessorRef = useRef<SavedChargebeePaymentProcessor | undefined>(undefined);
@@ -59,7 +57,12 @@ export const useSavedChargebeeMethod = (
             amountAndCurrency,
             savedMethod,
             (chargeablePaymentParameters: ChargeablePaymentParameters) =>
-                onChargeable(chargeablePaymentParameters, savedMethod.ID)
+                onChargeable(chargeablePaymentParameters, savedMethod.ID),
+            () =>
+                onDeclined({
+                    selectedMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                    selectedMethodValue: savedMethod.ID,
+                })
         );
     }
 
@@ -113,8 +116,6 @@ export const useSavedChargebeeMethod = (
         return tokenPromise;
     };
     const processPaymentToken = async () => {
-        onProcessPaymentToken?.('saved-chargebee');
-
         if (!paymentProcessor?.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
@@ -122,7 +123,6 @@ export const useSavedChargebeeMethod = (
         try {
             return await verifyPaymentToken();
         } catch (error) {
-            onProcessPaymentTokenFailed?.('saved-chargebee');
             reset();
             throw error;
         }

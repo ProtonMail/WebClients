@@ -1,8 +1,15 @@
-import { COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, Renew } from '@proton/payments';
+import {
+    COUPON_CODES,
+    CYCLE,
+    FREE_SUBSCRIPTION,
+    PLANS,
+    Renew,
+    notHigherThanAvailableOnBackend,
+    subscriptionExpires,
+} from '@proton/payments';
+import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
-
-import { getAutoCoupon, notHigherThanAvailableOnBackend, subscriptionExpires } from './payment';
 
 describe('subscriptionExpires()', () => {
     it('should handle the case when subscription is not loaded yet', () => {

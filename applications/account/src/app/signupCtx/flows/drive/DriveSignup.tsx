@@ -193,6 +193,7 @@ const DriveSignup = (props: BaseSignupContextProps) => {
                     cycle: signupSearchParams.getCycle(searchParams) || CYCLE.YEARLY,
                     coupon: signupSearchParams.getCoupon(searchParams),
                 },
+                telemetryContext: 'ctx-signup-drive',
             }}
             accountFormDataConfig={{
                 defaultEmail: searchParams.get('email') || '',

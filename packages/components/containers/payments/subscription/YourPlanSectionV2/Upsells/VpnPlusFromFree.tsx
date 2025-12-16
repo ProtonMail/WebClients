@@ -1,13 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
-import { getHasConsumerVpnPlan } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -96,7 +93,6 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
                 metrics: {
                     source: 'upsells',
                 },
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -112,7 +108,6 @@ export const useVpnPlusFromFreeUpsells = ({
     user,
 }: UpsellSectionProps): UpsellsHook => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
@@ -121,14 +116,12 @@ export const useVpnPlusFromFreeUpsells = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            telemetryFlow,
         });
     };
 
@@ -156,7 +149,7 @@ export const useVpnPlusFromFreeUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, serversCount, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, serversCount, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

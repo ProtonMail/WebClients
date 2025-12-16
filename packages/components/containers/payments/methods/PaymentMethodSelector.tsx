@@ -8,7 +8,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { IconName } from '@proton/icons/types';
-import { PAYMENT_METHOD_TYPES, type PaymentMethodType } from '@proton/payments';
+import { type AvailablePaymentMethod, PAYMENT_METHOD_TYPES, type PaymentMethodType } from '@proton/payments';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';
@@ -20,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 interface Props {
     options: ViewPaymentMethod[];
     method?: PaymentMethodType;
-    onChange: (value: PaymentMethodType) => void;
+    onChange: (paymentMethod: AvailablePaymentMethod) => void;
     lastUsedMethod?: ViewPaymentMethod;
     forceDropdown?: boolean;
     narrow?: boolean;
@@ -78,7 +78,9 @@ const PaymentMethodSelector = ({
     if (showRadioButtons) {
         return (
             <>
-                {options.map(({ text, value, icon, type }) => {
+                {options.map((viewPaymentMethod) => {
+                    const { text, value, icon, type } = viewPaymentMethod;
+
                     return (
                         <label
                             htmlFor={value}
@@ -94,7 +96,7 @@ const PaymentMethodSelector = ({
                                     id={value}
                                     name="value"
                                     checked={value === method}
-                                    onChange={() => onChange(value)}
+                                    onChange={() => onChange(viewPaymentMethod)}
                                     data-testid={`payment-method-${value}`}
                                 />
                                 {<PaymentMethodIcon icon={icon} type={type} className="mr-2" />}
@@ -150,7 +152,12 @@ const PaymentMethodSelector = ({
         <SelectTwo
             id="select-method"
             value={method}
-            onChange={({ value }) => onChange(value)}
+            onChange={({ value }) => {
+                const viewPaymentMethod = options.find((option) => option.value === value);
+                if (viewPaymentMethod) {
+                    onChange(viewPaymentMethod);
+                }
+            }}
             className={clsx(narrow && 'w-auto')}
             size={size}
             data-testid="payment-method-selector"

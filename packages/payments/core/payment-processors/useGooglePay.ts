@@ -7,7 +7,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { type CreatePaymentIntentGooglePayData, fetchPaymentIntentV5, getTokenStatusV5 } from '../api';
+import { type CreatePaymentIntentGooglePayData, fetchPaymentIntentV5, getTokenStatusV5 } from '../api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import { type PaymentVerificatorV5, convertPaymentIntentData } from '../createPaymentToken';
 import type {
@@ -181,6 +181,8 @@ export const useGooglePay = (
                     onError: (error) => {
                         googlePayModalHandles?.onFailure(error);
                     },
+                    paymentMethodType: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+                    paymentMethodValue: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
                 });
 
                 removeAuthorizedListener?.();

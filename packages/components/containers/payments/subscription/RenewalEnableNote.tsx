@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import type { CheckoutModifiers, FreeSubscription, Subscription } from '@proton/payments';
-
-import { subscriptionExpires } from './helpers';
+import { subscriptionExpires } from '@proton/payments';
 
 type Props = {
     subscription: Subscription | FreeSubscription | undefined;
