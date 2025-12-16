@@ -19,7 +19,6 @@ import useErrorHandler from '../../hooks/useErrorHandler';
 import type { NetPromoterScoreModalProps } from './interface';
 
 const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: NetPromoterScoreModalProps) => {
-    // TODO: add telemetry
     const [loadingByKey, withLoadingByKey] = useLoadingByKey();
     const [optionalComment, setOptionalComment] = useState('');
     const errorHandler = useErrorHandler();
