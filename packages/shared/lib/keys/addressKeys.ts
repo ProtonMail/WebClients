@@ -162,18 +162,21 @@ interface DectyptAddressKeyUsingOrgKeyTokenArguments {
     Token: string;
     organizationKey: PrivateKeyReference;
     Signature: string;
+    signatureContext?: ContextVerificationOptions;
 }
 
 export const decryptAddressKeyUsingOrgKeyToken = async ({
     Token,
     organizationKey,
     Signature,
+    signatureContext,
 }: DectyptAddressKeyUsingOrgKeyTokenArguments) => {
     const { data: decryptedToken, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: Token,
         armoredSignature: Signature,
         decryptionKeys: [organizationKey],
         verificationKeys: [organizationKey],
+        signatureContext,
     });
 
     if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

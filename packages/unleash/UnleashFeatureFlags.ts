@@ -79,6 +79,7 @@ enum AccountFlag {
     B2BDarkWebMonitoring = 'B2BDarkWebMonitoring',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
+    UserGroupsGroupOwner = 'UserGroupsGroupOwner',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',

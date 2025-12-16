@@ -1,3 +1,4 @@
+import type { ContextVerificationOptions } from '@proton/crypto';
 import { type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
@@ -80,19 +81,37 @@ export const createGroupAddressKey = async ({
     return [Key];
 };
 
-export const getDecryptedGroupAddressKey = async (
+export const getGroupAddressKeyPassword = async (
     addressKeys: AddressKey[],
-    organizationKey: PrivateKeyReference
-): Promise<DecryptedAddressKey | undefined> => {
+    organizationKey: PrivateKeyReference,
+    signatureContext?: ContextVerificationOptions
+): Promise<string | undefined> => {
     const [primaryKey] = addressKeys;
     const { Token, Signature } = primaryKey;
 
     if (Token) {
-        const primaryKeyResult = await decryptAddressKeyUsingOrgKeyToken({ Token, organizationKey, Signature })
-            .then((password) => getDecryptedAddressKey(primaryKey, password))
-            .catch(noop);
+        return decryptAddressKeyUsingOrgKeyToken({
+            Token,
+            organizationKey,
+            Signature,
+            signatureContext,
+        }).catch(noop);
+    }
 
-        return Promise.resolve(primaryKeyResult);
+    return undefined;
+};
+
+export const getDecryptedGroupAddressKey = async (
+    addressKeys: AddressKey[],
+    organizationKey: PrivateKeyReference,
+    signatureContext?: ContextVerificationOptions
+): Promise<DecryptedAddressKey | undefined> => {
+    const [primaryKey] = addressKeys;
+
+    const password = await getGroupAddressKeyPassword(addressKeys, organizationKey, signatureContext).catch(noop);
+
+    if (password) {
+        return getDecryptedAddressKey(primaryKey, password).catch(noop);
     }
 
     return undefined;
