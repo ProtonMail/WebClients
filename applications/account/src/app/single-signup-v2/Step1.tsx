@@ -835,9 +835,17 @@ const Step1 = ({
             });
 
             const discount = modelCheckout.discountPercent;
+
+            // BF25 ended, but affiliate coupon is still valid till January 2026. So we replace the text with the end of
+            // year promo. During BF2026, adjust these copies as needed.
+
+            //  return wrap( 'bag-percent', c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday
+            // discount has been applied`
+            // );
+
             return wrap(
                 'bag-percent',
-                c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
+                c('pass_signup_2023: Info').jt`Your ${discount}% End of Year discount has been applied`
             );
         }
 
