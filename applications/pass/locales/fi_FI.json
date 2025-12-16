@@ -1287,6 +1287,10 @@
         "${ count } avaus",
         "${ count } avausta"
       ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } avaus",
+        "${ count }/${ maxReads } avausta"
+      ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } välitetty",
         "${ forwardedEmailsCount } välitetty"

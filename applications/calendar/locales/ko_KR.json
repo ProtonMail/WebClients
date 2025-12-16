@@ -380,6 +380,12 @@
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
       ],
+      "Expand navigation bar to see bookings": [
+        "네비게이션 바를 펼쳐서 예약 보기"
+      ],
+      "Expand navigation bar to see calendars": [
+        "네비게이션 바를 펼쳐서 캘린더 보기"
+      ],
       "Expand video conferencing widget": [
         "화상 회의 위젯 펼치기"
       ],
@@ -788,11 +794,17 @@
       "Select country": [
         "국가 선택"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
       "Select time zone": [
         "시간대 선택"
       ],
       "Send": [
         "보내기"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
       ],
       "Set recovery methods": [
         "복구 방법 마련하기"
@@ -883,6 +895,9 @@
       ],
       "Toggle Contacts app": [
         "연락처 앱 열기/닫기"
+      ],
+      "Toggle referral": [
+        "추천 표시"
       ],
       "Toggle settings": [
         "설정 켜기/끄기"
@@ -1162,6 +1177,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -3258,6 +3279,9 @@
       "120 minutes": [
         "120분"
       ],
+      "120m": [
+        "120분"
+      ],
       "30 minutes": [
         "30분"
       ],
@@ -3267,7 +3291,13 @@
       "60 minutes": [
         "60분"
       ],
+      "60m": [
+        "60분"
+      ],
       "90 minutes": [
+        "90분"
+      ],
+      "90m": [
         "90분"
       ]
     },
@@ -3449,6 +3479,9 @@
       ],
       "Cancellation failed to be sent": [
         "취소 전송 실패"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "비활성화된 주소로는 예약을 생성할 수 없습니다."
       ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
@@ -4871,6 +4904,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration }분"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -5093,6 +5129,9 @@
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "관리자에게 플랜을 업그레이드하거나 예약 페이지 사이드바에서 페이지를 삭제하도록 요청하십시오."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
@@ -5146,6 +5185,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "원하는 이벤트를 찾지 못했나요? 숨겨진 캘린더에서 일치하는 일부 이벤트가 일치합니다. 확인하려면 ${ hiddenWithItemsCalendarList }를 표시할 수 있도록 켜 주세요."
+      ],
+      "Cannot create a range across days.": [
+        "여러 날에 걸쳐 범위를 생성할 수 없습니다."
+      ],
+      "Cannot create a range in the past.": [
+        "과거로 예약 범위를 설정할 수 없습니다."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -5747,6 +5792,9 @@
       "Range is too short.": [
         "기간이 너무 짧습니다."
       ],
+      "Range overlaps with an existing range.": [
+        "범위가 기존 범위와 중복됩니다."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
       ],
@@ -5932,6 +5980,15 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "예약 페이지를 생성하려면, 관리자에게 플랜 업그레이드를 요청하십시오."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "예약 페이지를 생성하려면, 예약 페이지 사이드바에서 기존 페이지를 제거해야 합니다."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "예약 페이지를 생성하려면, 플랜 업그레이드가 필요합니다."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
@@ -6200,6 +6257,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "사용자 플랜의 사용 가능한 최대 수의 예약 페이지에 도달했습니다."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
@@ -6295,6 +6355,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6675,6 +6738,9 @@
       "Extended address": [
         "상세 주소"
       ],
+      "Extremely Satisfied": [
+        "매우 만족"
+      ],
       "First name": [
         "이름"
       ],
@@ -6909,6 +6975,9 @@
       "System information": [
         "시스템 정보"
       ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
       "Theme": [
         "테마"
       ],
@@ -6938,6 +7007,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ],
       "Video conference": [
         "화상 회의"
@@ -7203,11 +7275,6 @@
       ],
       "Your import is starting": [
         "가져오기 작업이 시작 중입니다!"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "대면"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8095,6 +8162,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ BRAND_NAME } ${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
       ]
     },
     "new_plans: Subtext": {
@@ -9323,6 +9395,9 @@
       ],
       "Name or email address": [
         "이름 또는 이메일 주소"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ],
       "Organization name": [
         "조직 이름"
@@ -10964,6 +11039,17 @@
         "Teams 회의 참여"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "사용 가능한 예약이 없습니다."
+      ],
+      "Please check the link and try again.": [
+        "링크 확인 후 다시 시도해주세요."
+      ],
+      "Please try again later.": [
+        "나중에 다시 시도하세요."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }일"
@@ -11104,6 +11190,9 @@
       ],
       "Cannot add more addresses": [
         "더 많이 주소를 추가할 수 없습니다."
+      ],
+      "Cannot create more Booking pages": [
+        "예약 페이지를 더 생성할 수 없음"
       ],
       "Card verification": [
         "카드 확인"
@@ -11486,6 +11575,9 @@
       "Recover data": [
         "데이터 복구"
       ],
+      "Referral": [
+        "추천"
+      ],
       "Remove participants": [
         "참가자 제거"
       ],
@@ -11609,6 +11701,15 @@
       "Summary": [
         "요약"
       ],
+      "The booking feature is currently unavailable.": [
+        "예약 기능을 현재 사용할 수 없습니다."
+      ],
+      "This booking page can’t be shown.": [
+        "이 예약 페이지는 확인할 수 없습니다."
+      ],
+      "This booking page has expired.": [
+        "이 예약 페이지는 만료되었습니다."
+      ],
       "Time": [
         "시간"
       ],
@@ -11665,6 +11766,9 @@
       ],
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
+      ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
       ],
       "We're setting up calendar search": [
         "캘린더 검색을 준비하고 있습니다"

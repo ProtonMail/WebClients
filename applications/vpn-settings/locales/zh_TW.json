@@ -1254,6 +1254,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，將以${ renewCycle } 自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您可在鑑賞體驗期內盡情享用多達 ${ TRIAL_MAX_SCRIBE_SEATS } 組 Scribe 帳號。"
       ],
@@ -10076,6 +10082,9 @@
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
       ]
@@ -10221,6 +10230,9 @@
       ]
     },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
+      ],
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
       ]
@@ -10571,6 +10583,9 @@
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
+      ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
       ],
       "Refer friends": [
         "推薦朋友"
@@ -13570,6 +13585,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 尊重您隱私的 AI 助理"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ],

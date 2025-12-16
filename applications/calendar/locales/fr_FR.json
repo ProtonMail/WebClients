@@ -797,11 +797,17 @@
       "Select country": [
         "Sélectionnez un pays."
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
       "Select time zone": [
         "Sélectionner le fuseau horaire"
       ],
       "Send": [
         "Envoyer"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
       ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Afficher/Masquer l'application Contacts"
+      ],
+      "Toggle referral": [
+        "Activer/désactiver le parrainage"
       ],
       "Toggle settings": [
         "Afficher ou masquer les paramètres"
@@ -5755,6 +5764,9 @@
       "Other accounts": [
         "Autres comptes"
       ],
+      "Other location": [
+        "Autre emplacement"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur les événements n'est partagée."
       ],
@@ -6818,6 +6830,9 @@
       "Extended address": [
         "Complément d’adresse"
       ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
       "First name": [
         "Prénom"
       ],
@@ -7053,6 +7068,9 @@
       "System information": [
         "Informations système"
       ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
       "Theme": [
         "Thème"
       ],
@@ -7082,6 +7100,9 @@
       ],
       "Verification code": [
         "Code de vérification"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ],
       "Video conference": [
         "Vidéoconférence"
@@ -7304,6 +7325,9 @@
       "settings": [
         "paramètres"
       ],
+      "Terms and conditions": [
+        "Conditions générales"
+      ],
       "Types of recovery methods": [
         "Types de méthodes de récupération"
       ],
@@ -7348,11 +7372,6 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
-      ]
-    },
-    "Location": {
-      "In person": [
-        "En présentiel"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8272,6 +8291,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ BRAND_NAME } ${ config.appName }. En êtes-vous satisfait ?"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9559,9 @@
       ],
       "Name or email address": [
         "Nom ou adresse e-mail"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -11766,6 +11793,9 @@
       "Recover data": [
         "Récupérer les données"
       ],
+      "Referral": [
+        "Parrainage"
+      ],
       "Remove participants": [
         "Retirer des participants"
       ],
@@ -11954,6 +11984,9 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ],
       "We're setting up calendar search": [
         "Nous configurons la recherche dans le calendrier."

@@ -690,6 +690,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Odpri krmarjenje"
       ],
@@ -1625,6 +1628,11 @@
       ],
       "Expand": [
         "Razširi"
+      ]
+    },
+    "collider_2025: feature": {
+      "Large file upload support": [
+        "Podpora za nalaganje velikih datotek"
       ]
     },
     "color": {
@@ -2853,8 +2861,14 @@
       ]
     },
     "Duo offer": {
+      "/month": [
+        "/mesec"
+      ],
       "2 user accounts": [
         "2 uporabniška računa"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Email body for invitation": {
@@ -3941,6 +3955,9 @@
       "Create new shared album": [
         "Ustvari nov album v skupni rabi"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Drawer": [
         "Obrobni stolpec"
       ],
@@ -4752,6 +4769,9 @@
       "Checking signatures": [
         "Preverjanje podpisov"
       ],
+      "Choose a plan that works best for you.": [
+        "Izberite paket, ki vam najbolj ustreza"
+      ],
       "Clear data": [
         "Počisti podatke"
       ],
@@ -4781,6 +4801,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Stik odstranjen iz skupine ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Nadaljuj"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Nadaljujte z uporabo ${ DRIVE_APP_NAME } in odklenite pogon pozneje"
@@ -7821,6 +7844,9 @@
       "Share files with no size limit": [
         "Souporaba datotek brez omejitve velikosti"
       ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
+      ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
       ],
@@ -8644,6 +8670,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don't show this again": [
+        "Ne prikazuj več"
+      ],
       "Don’t show this again": [
         "Tega ne prikaži več"
       ],
@@ -8983,6 +9012,9 @@
       "Credit/debit card": [
         "Kreditna / debetna kartica"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nova kreditna/debetna kartica"
       ]
@@ -9011,6 +9043,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -9026,6 +9061,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",
         "Kupon velja za ${ couponRedemptions } podaljšanji.",
@@ -9037,6 +9075,12 @@
       ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
+      ],
+      "VAT": [
+        "DDV"
+      ],
+      "You already have a subscription to this plan.": [
+        "Na ta paket ste že naročeni."
       ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
@@ -9060,6 +9104,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Obdrži paket ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, prepričan(a) sem"
       ]
     },
     "Payments.plan_name": {
@@ -9319,8 +9371,14 @@
       ]
     },
     "Referral": {
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "your subscription": [
+        "vaša naročnina"
       ]
     },
     "Safety review": {

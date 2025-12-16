@@ -1284,6 +1284,9 @@
       "Select date and time": [
         "Выберыце дату і час"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выберыце ацэнку ${ n } з ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Самазнішчэнне праз 7 дзён"
       ],
@@ -1301,6 +1304,9 @@
       ],
       "send auto-reply email": [
         "адправіць ліст з аўтаматычным адказам"
+      ],
+      "Send Feedback": [
+        "Адправіць водгук"
       ],
       "Send read receipt": [
         "Адправіць апавяшчэнне аб прачытанні"
@@ -1507,7 +1513,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1921,6 +1930,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -7366,7 +7381,7 @@
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+        "Электронныя лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "embedded image": [
         "убудаваны відарыс",
@@ -7627,10 +7642,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8521,7 +8533,7 @@
         "Выкарыстоўвайце праграму для камп'ютара, каб не адцягваць увагу на іншыя адкрытыя ўкладкі ў вашым браўзеры."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -8731,7 +8743,7 @@
         "Выдалены звесткі сачэння з наступных спасылак, каб дапамагчы абараніць вас ад рэкламадаўцаў і іншых асоб, якія спрабуюць адсачыць вашу актыўнасць у інтэрнэце."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -9253,7 +9265,7 @@
         "Перайсці ў пазначаныя зорачкай"
       ],
       "Go to Trash": [
-        "Перайсці ў Сметніцу"
+        "Перайсці ў cметніцу"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9688,6 +9700,9 @@
       "Extended address": [
         "Пашыраны адрас"
       ],
+      "Extremely Satisfied": [
+        "Вельмі задаволены"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Не ўдалося стварыць папку ${ newFolderName }"
       ],
@@ -10057,6 +10072,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "Tell us more about your experience": [
+        "Раскажыце нам больш пра свой досвед"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Катэгорыя абноўлена. Дзякуй за зваротную сувязь!"
       ],
@@ -10107,6 +10125,9 @@
       ],
       "Verification code": [
         "Код спраўджання"
+      ],
+      "Very Dissatisfied": [
+        "Вельмі незадаволены"
       ],
       "Video conference": [
         "Відэаканферэнцыя"
@@ -10463,6 +10484,9 @@
       ],
       "Terms": [
         "Умовы"
+      ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
       ],
       "terms of service": [
         "умовы абслугоўвання"
@@ -11521,6 +11545,11 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ BRAND_NAME } ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "Пачатковы кошт ${ priceLine }"
@@ -11958,7 +11987,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -12788,6 +12817,9 @@
       ],
       "Name or email address": [
         "Імя або адрас пошты"
+      ],
+      "Optional feedback": [
+        "Неабавязковы водгук"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -16101,6 +16133,9 @@
         "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
         "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
         "Мы абаранілі вас ад ${ trackersCount } праграм сачэння"
+      ],
+      "We'd love to hear from you!": [
+        "Нам было б прыемна пачуць гэта!"
       ],
       "Welcome": [
         "Вітаем"

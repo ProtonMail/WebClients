@@ -2452,8 +2452,14 @@
       ]
     },
     "Duo offer": {
+      "/month": [
+        "/mesec"
+      ],
       "2 user accounts": [
         "2 uporabniška računa"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Email body for invitation": {
@@ -3439,6 +3445,9 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "Domena"
+      ],
       "Drawer": [
         "Obrobni stolpec"
       ],
@@ -4071,6 +4080,9 @@
       "Checking signatures": [
         "Preverjanje podpisov"
       ],
+      "Choose a plan that works best for you.": [
+        "Izberite paket, ki vam najbolj ustreza"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
@@ -4085,6 +4097,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Stik odstranjen iz skupine ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Nadaljuj"
       ],
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
@@ -6387,6 +6402,9 @@
       "Share files with no size limit": [
         "Souporaba datotek brez omejitve velikosti"
       ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
+      ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
       ],
@@ -7177,6 +7195,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don't show this again": [
+        "Ne prikazuj več"
+      ],
       "Don’t show this again": [
         "Tega ne prikaži več"
       ],
@@ -7428,6 +7449,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",
         "Kupon velja za ${ couponRedemptions } podaljšanji.",
@@ -7649,8 +7673,14 @@
       ]
     },
     "Referral": {
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "your subscription": [
+        "vaša naročnina"
       ]
     },
     "Safety review": {

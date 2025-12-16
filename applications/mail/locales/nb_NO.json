@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Velg dato og klokkeslett"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Selvdestruksjon om 7 dager"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "send e-post med autosvar"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
       ],
       "Send read receipt": [
         "Send lesebekreftelse"
@@ -1497,6 +1503,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1896,6 +1906,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
       ],
@@ -7392,8 +7408,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9389,6 +9404,9 @@
       "Extended address": [
         "Utvidet adresse"
       ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Klarte ikke å opprette mappe ${ newFolderName }"
       ],
@@ -9758,6 +9776,9 @@
       "System information": [
         "Systeminformasjon"
       ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategorien er oppdatert, takk for tilbakemeldingen!"
       ],
@@ -9808,6 +9829,9 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ],
       "Video conference": [
         "Videokonferanse"
@@ -11156,6 +11180,11 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ BRAND_NAME } ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "Starter fra ${ priceLine }"
@@ -12403,6 +12432,9 @@
       ],
       "Name or email address": [
         "Navn eller e-postadresse"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -15528,6 +15560,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Vi beskyttet deg mot ${ trackersCount } sporer",
         "Vi beskyttet deg mot ${ trackersCount } sporere"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
       ],
       "Welcome": [
         "Velkommen"

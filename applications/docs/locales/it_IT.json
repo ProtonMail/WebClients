@@ -90,6 +90,9 @@
       "Apply": [
         "Applica"
       ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
         "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
@@ -657,6 +660,9 @@
       "Save changes": [
         "Salva le modifiche"
       ],
+      "Save preferences": [
+        "Salva le preferenze"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -946,6 +952,14 @@
       "${ hiddenResultsCount } more result not shown": [
         "${ hiddenResultsCount } altro risultato non mostrato",
         "${ hiddenResultsCount } altri risultati non mostrati"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -4268,6 +4282,9 @@
       "Continue": [
         "Continua"
       ],
+      "Converting document...": [
+        "Conversione del documento..."
+      ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
       ],
@@ -4296,6 +4313,9 @@
       "Create an end-to-end encrypted document.": [
         "Crea un documento crittografato end-to-end."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Crea documenti e fogli di calcolo crittografati end-to-end."
+      ],
       "Create in": [
         "Crea in"
       ],
@@ -4310,6 +4330,9 @@
       ],
       "Creating link to folder": [
         "Creazione del link alla cartella"
+      ],
+      "Creating new document...": [
+        "Creazione di un nuovo documento..."
       ],
       "Current plan": [
         "Piano attuale"
@@ -4404,6 +4427,12 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Errore durante la conversione del documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Errore durante il caricamento del documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
       ],
@@ -4463,6 +4492,12 @@
       ],
       "Geoblocking": [
         "Blocco geografico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
@@ -4600,6 +4635,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Making a copy...": [
+        "Creazione di una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caratteri"
@@ -4630,6 +4668,9 @@
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e selezionane uno."
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -4914,6 +4955,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi collegamenti lunghi da Slack, fai clic con il pulsante destro del mouse sul collegamento, quindi scegli \"Copia collegamento\" anziché copiare direttamente il testo dell'URL tagliato."
       ],
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
@@ -5523,6 +5567,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable email notifications": [
+        "Attiva le notifiche email"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -5570,6 +5617,9 @@
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"

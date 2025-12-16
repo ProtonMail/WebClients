@@ -797,11 +797,17 @@
       "Select country": [
         "Velg land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
       "Select time zone": [
         "Velg tidssone"
       ],
       "Send": [
         "Send"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
       ],
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Slå av/på Kontakter-appen"
+      ],
+      "Toggle referral": [
+        "Slå verving av/på"
       ],
       "Toggle settings": [
         "Åpne/lukke innstillinger"
@@ -1178,6 +1187,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
       ],
@@ -3674,7 +3689,7 @@
         "Etternavnet er for langt"
       ],
       "Location is required": [
-        "Plassering kreves"
+        "Sted kreves"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
@@ -5244,7 +5259,7 @@
         "Finner ikke hendelsene som du ser etter? Noen hendelser i skjulte kalendere samsvarer med søket ditt. For å se disse resultatene, slå på synlighet for ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot create a range across days.": [
-        "Kan ikke opprette et intervall som strekker seg over flere dager."
+        "Kan ikke opprette et tidsintervall som strekker seg over flere dager."
       ],
       "Cannot create a range in the past.": [
         "Kan ikke opprette et tidsintervall bakover i tid."
@@ -5749,6 +5764,9 @@
       "Other accounts": [
         "Andre kontoer"
       ],
+      "Other location": [
+        "Annen plassering"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brukere i organisasjonen din vil se de travle tidslukene dine. Ingen hendelsesdetaljer deles."
       ],
@@ -5850,13 +5868,13 @@
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
       "Range already exists.": [
-        "Tidsrommet finnes allerede."
+        "Tidsintervallet finnes allerede."
       ],
       "Range is too short.": [
-        "Intervallet er for kort."
+        "Tidsintervallet er for kort."
       ],
       "Range overlaps with an existing range.": [
-        "Tidsrommet overlapper med et eksisterende tidsrom."
+        "Tidsintervallet overlapper med et eksisterende tidsrom."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
@@ -6812,6 +6830,9 @@
       "Extended address": [
         "Utvidet adresse"
       ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -7047,6 +7068,9 @@
       "System information": [
         "Systeminformasjon"
       ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7076,6 +7100,9 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ],
       "Video conference": [
         "Videokonferanse"
@@ -7342,11 +7369,6 @@
       ],
       "Your import is starting": [
         "Importen din starter"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Personlig"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8266,6 +8288,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ BRAND_NAME } ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     },
     "new_plans: Subtext": {
@@ -9529,6 +9556,9 @@
       ],
       "Name or email address": [
         "Navn eller e-postadresse"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -11760,6 +11790,9 @@
       "Recover data": [
         "Gjenopprett data"
       ],
+      "Referral": [
+        "Verving"
+      ],
       "Remove participants": [
         "Fjern deltakere"
       ],
@@ -11948,6 +11981,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
       ],
       "We're setting up calendar search": [
         "Vi setter opp kalendersøk"

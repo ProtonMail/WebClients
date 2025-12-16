@@ -294,6 +294,9 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
+      "Create business account": [
+        "Стварыць уліковы запіс для бізнесу"
+      ],
       "Create folder": [
         "Стварыць папку"
       ],
@@ -459,6 +462,9 @@
       "Expand folder": [
         "Разгарнуць папку"
       ],
+      "Explore more": [
+        "Даследуйце больш"
+      ],
       "Explore other plans": [
         "Даследаваць іншыя тарыфныя планы"
       ],
@@ -497,6 +503,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Атрымайце бясплатны адрас ${ BRAND_NAME }"
+      ],
+      "Get Drive for Business": [
+        "Атрымаць Drive for Business"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -1080,6 +1089,9 @@
       "Toggle Contacts app": [
         "Пераключыць праграму Кантакты"
       ],
+      "Toggle referral": [
+        "Пераключыць рэфералаў"
+      ],
       "Toggle settings": [
         "Пераключэнне налад"
       ],
@@ -1326,6 +1338,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -5287,6 +5305,12 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "Cloud storage for businesses that take security seriously": [
+        "Воблачнае сховішча для бізнесу, які сур'ёзна ставіцца да бяспекі"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "Эфектыўна супрацоўнічайце, абараняючы даныя сваіх кліентаў і бізнесу ад парушэнняў, праграм-вымагальнікаў і сачэння."
+      ],
       "Conflict": [
         "Канфлікт"
       ],
@@ -5618,7 +5642,7 @@
         "Як працуе зашыфраваны пошук?"
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "Вы страціце доступ да файлаў, калі гэтыя яны не будуць цалкам спампаваны лакальна на прыладу ${ deviceName }."
+        "Вы страціце доступ да файлаў, калі яны не будуць цалкам спампаваны лакальна на прыладу ${ deviceName }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -6431,7 +6455,7 @@
         "Час"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
         "Для спампоўвання файлаў ${ DOCS_APP_NAME }, адкрыйце іх у ${ DOCS_APP_NAME } і экспартуйце."
@@ -6617,7 +6641,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -6824,7 +6848,7 @@
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Вашыя даныя застаюцца вашымі. Стварайце і супрацоўнічайце, выкарыстоўваючы поўнафункцыянальныя электронныя табліцы, абароненыя скразным шыфраваннем."
+        "Вашы даныя застаюцца вашымі. Стварайце і супрацоўнічайце, выкарыстоўваючы поўнафункцыянальныя электронныя табліцы, якія абаронены скразным шыфраваннем."
       ],
       "Your email address and password were leaked:": [
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
@@ -7081,6 +7105,9 @@
       ],
       "App password": [
         "Пароль праграмы"
+      ],
+      "Applications in a business setting": [
+        "Праграмы ў бізнес абстаноўцы"
       ],
       "Apply to all duplicated files": [
         "Ужыць да ўсіх дублікатаў файлаў"
@@ -7813,6 +7840,9 @@
       ],
       "Shared with me": [
         "Абагулена са мной"
+      ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
       ],
       "Trash": [
         "Сметніца"
@@ -9651,7 +9681,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -12827,6 +12857,9 @@
       "Recover data": [
         "Аднаўленне даных"
       ],
+      "Referral": [
+        "Рэферал"
+      ],
       "Remove device?": [
         "Выдаліць прыладу?"
       ],
@@ -12963,7 +12996,7 @@
         "Спасылка пратэрмінавана"
       ],
       "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
-        "Збой праверкі подпісу ключоў шыфравання арыгінальным стваральнікам (${ claimedKeyAuthor }), які стварыў вузел. Прычына: ${ nodeEntity.keyAuthor.error.error }"
+        "Збой спраўджання подпісу ключоў шыфравання арыгінальным стваральнікам (${ claimedKeyAuthor }), які стварыў вузел. Прычына: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "Збой спраўджання подпісу змесціва файла запампавальнікам (${ claimedContentAuthor }), які запампаваны апошняй рэдакцыяй. Прычына: ${ activeRevision.contentAuthor.error.error }"
@@ -13279,6 +13312,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Атрымаць Drive for Business"
       ]
     },
     "Validation": {

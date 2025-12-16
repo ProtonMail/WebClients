@@ -2046,6 +2046,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Націскаючы на кнопку \"Паспрабаваць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
       ],
@@ -5074,7 +5080,7 @@
         "**Абарона:** скразное шыфраванне"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Просты і зручны:** імпартуйце свае файны і наладжвайце іх за хвіліны"
+        "**Просты і зручны карыстальніцкі інтэрфейс:** імпартуйце свае файлы і наладжвайце іх за хвіліны"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Пашыраная бяспека, якая выходзіць за рамкі прамысловых стандартаў"
@@ -5351,7 +5357,7 @@
         "Не ўдалося перамясціць ${ name } у спіс са спамам"
       ],
       "${ name } moved to allow list": [
-        "${ name } перамешчаны ў спіс дазволеных"
+        "${ name } перамешчаны ў спіс дазволеных адрасоў"
       ],
       "${ name } moved to block list": [
         "${ name } перамешчана ў спіс заблакіраваных"
@@ -5506,7 +5512,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Лісты, якія перасылаюцца вам, выключаюцца і больш перасылацца не будуць."
+        "Электронныя лісты, якія перасылаюцца вам, выключаюцца і больш перасылацца не будуць."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -7967,6 +7973,9 @@
       "Select your deal": [
         "Выберыце сваю прапанову"
       ],
+      "Select your payment method:": [
+        "Выберыце спосаб аплаты:"
+      ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
       ],
@@ -9270,7 +9279,7 @@
         "Змяніць свой пароль"
       ],
       "Check the status of imports and forwarding.": [
-        "Праверыць статус імпартавання і перасылкі."
+        "Праверка статусу імпартавання і перасылкі."
       ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
@@ -9591,7 +9600,7 @@
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+        "Электронныя лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да сервераў Plus і іх функцый."
@@ -11166,7 +11175,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
+        "Вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Выдаляйце даныя толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях, каб пазбегнуць іх страты."
@@ -11175,7 +11184,7 @@
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
@@ -11466,7 +11475,7 @@
         "Мы захавалі рэзервовы файл у гэтым браўзеры, бо вы дазволілі аднаўленне даных на гэтай ${ deviceLink }. Калі рэзервовы файл з'яўляецца сапраўдным, то вы неадкладна атрымаеце поўны або частковы доступ да сваіх зашыфраваных даных."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -12286,7 +12295,7 @@
         "Перайсці ў пазначаныя зорачкай"
       ],
       "Go to Trash": [
-        "Перайсці ў Сметніцу"
+        "Перайсці ў cметніцу"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -15080,6 +15089,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Activity logs and policy": [
+        "Журналы актыўнасці і палітыка"
+      ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
@@ -15322,6 +15334,9 @@
       ],
       "Secure link sharing": [
         "Бяспечнае абагульванне спасылкі"
+      ],
+      "Secure password management": [
+        "Бяспечнае кіраванне паролямі"
       ],
       "See team's availability": [
         "Прагляд даступнасці каманды"
@@ -16295,7 +16310,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -17088,7 +17103,7 @@
         "Усталяваць ${ PASS_APP_NAME }"
       ],
       "Install app": [
-        "Усталяваць праграму"
+        "Усталюйце праграму,"
       ],
       "Install app and extension": [
         "Усталяваць праграму і пашырэнне"
@@ -17130,7 +17145,7 @@
         "Падрыхтоўка камплекту аднаўлення"
       ],
       "Protected by Swiss privacy laws": [
-        "Абаронены швейцарскімі законамі аб прыватнасці"
+        "Абарону швейцарскімі законамі аб прыватнасці"
       ],
       "Save your recovery kit to continue": [
         "Захавайце свой камплект аднаўлення для працягу"
@@ -18031,7 +18046,7 @@
     },
     "pqc-optin: Action": {
       "Got it": [
-        "Добра"
+        "Зразумела"
       ]
     },
     "pqc-optin: Info": {
@@ -18263,6 +18278,9 @@
       "How your free trial works:": [
         "Як працуе бясплатны пробны перыяд:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Я выкарыстоўваю ${ BRAND_NAME } і падумаў, што вам таксама ён можа спадабацца. Гэта бяспечная электронная пошта, воблачнае сховішча, менеджар пароляў і VPN, якія абараняюць вашу прыватнасць. Зарэгіструйцеся па гэтай спасылцы, каб атрымаць 14 дзён прэміяльных функцый бясплатна: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі скасуеце тарыфны план да завяршэння пробнага перыяду. Ваш поўны тарыфны план пачне дзейнічаць і вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі не зробіце гэтага."
       ],
@@ -18283,6 +18301,9 @@
       ],
       "Refer friends": [
         "Параіць сябрам"
+      ],
+      "Share using ${ name }": [
+        "Абагуліць з дапамогай ${ name }"
       ],
       "Start earning credits": [
         "Пачніце зарабляць крэдыты"
@@ -19818,7 +19839,7 @@
         "Крэдытная картка не патрабуецца:"
       ],
       "Online document editor": [
-        "Воблачны рэдактар дакументаў"
+        "Рэдактар дакументаў у інтэрнэце"
       ],
       "Online documents": [
         "Дакументы ў сетцы"
@@ -19863,7 +19884,7 @@
         "Бяспечна абагульвайце файлы, фатаграфіі і дакументы"
       ],
       "Select ${ title }": [
-        "Выберыце ${ title }"
+        "Выбераць ${ title }"
       ],
       "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
         "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу ${ TRIAL_DURATION_DAYS } дзён бясплатна."
@@ -20039,7 +20060,7 @@
         "Пашыраныя функцыі бяспекі ад ${ BRAND_NAME }"
       ],
       "Advanced sharing security": [
-        "Дадатковая бяспека пры абагульванні"
+        "Дадатковую бяспеку пры абагульванні"
       ],
       "Apps for all devices": [
         "Праграмы для ўсіх прылад"
@@ -20048,10 +20069,10 @@
         "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
       ],
       "Built-in encryption": [
-        "Убудаванае шыфраванне"
+        "Убудаванага шыфравання"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Уключае каляндар, менеджар пароляў, файлавае сховішча і VPN"
+        "Каляндар, менеджар пароляў, файлавае сховішча і VPN"
       ],
       "Device sync": [
         "Сінхранізаваць прыладу"
@@ -20060,7 +20081,7 @@
         "Псеўданімы электроннай пошты"
       ],
       "Email, calendar, password manager, and VPN included": [
-        "Уключае электронную пошту, каляндар, менеджар пароляў і VPN"
+        "Электронную пошту, каляндар, менеджар пароляў і VPN"
       ],
       "End-to-end encrypted transactions": [
         "Трансакцыі зашыфраваныя скразным метадам"
@@ -20093,13 +20114,13 @@
         "Самазахоўванне: толькі пры ўмове, што ў вас ёсць доступ да ключоў кашалька"
       ],
       "The only business solution that is:": [
-        "Адзінае рашэнне для бізнесу, якое:"
+        "Адзінае рашэнне для бізнесу, якое аб'ядноўвае наступныя функцыі:"
       ],
       "The only cloud storage with:": [
-        "Адзінае воблачнае сховішча ў якога ёсць:"
+        "Адзінае воблачнае сховішча, якое аб'ядноўвае наступныя функцыі:"
       ],
       "The only email service with:": [
-        "Адзіны сэрвіс электроннай пошты з:"
+        "Адзіны сэрвіс электроннай пошты, які аб'ядноўвае наступныя функцыі:"
       ],
       "The only password manager with:": [
         "Адзіны менеджар пароляў з:"

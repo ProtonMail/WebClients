@@ -1276,6 +1276,12 @@
         "${ count } просмотров",
         "${ count } просмотров"
       ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } просмотр",
+        "${ count }/${ maxReads } просмотров",
+        "${ count }/${ maxReads } просмотров",
+        "${ count }/${ maxReads } просмотров"
+      ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
         "${ forwardedEmailsCount } пересланы",
@@ -1815,12 +1821,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"

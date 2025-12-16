@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Luo uusi ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Luo uusi kansio"
       ],
@@ -3068,6 +3071,9 @@
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
+      "Unable to import file": [
+        "Tiedoston tuonti epäonnistui"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-hallintapaneelia ei voi ladata. Tarkista yhteytesi ja yritä uudelleen."
       ],
@@ -3094,6 +3100,9 @@
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Ongelmia tallennettaessa viimeisimpiä muokkauksia. Päivitä sivu."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Emme voineet tuoda tätä tiedostoa kohteeseen ${ SHEETS_APP_NAME }. Voit yrittää kopioida ja liittää sisällön uuteen ${ SHEETS_APP_NAME }-tiedostoon."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -5879,6 +5888,9 @@
       ],
       "Resume now": [
         "Jatka nyt"
+      ],
+      "Terms and conditions": [
+        "Käyttöehdot"
       ],
       "Types of recovery methods": [
         "Palautustapojen tyypit"

@@ -261,6 +261,9 @@
       "Create a free account": [
         "Crea un account gratuito"
       ],
+      "Create a new booking page": [
+        "Crea pagina di prenotazione"
+      ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
@@ -379,6 +382,12 @@
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Espandi la barra di navigazione per visualizzare le prenotazioni"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Espandi la barra di navigazione per visualizzare il calendario"
       ],
       "Expand video conferencing widget": [
         "Espandi il widget della videoconferenza"
@@ -788,11 +797,17 @@
       "Select country": [
         "Seleziona il paese"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleziona valutazione ${ n } su ${ to }"
+      ],
       "Select time zone": [
         "Seleziona il fuso orario"
       ],
       "Send": [
         "Invia"
+      ],
+      "Send Feedback": [
+        "Invia Feedback"
       ],
       "Set recovery methods": [
         "Imposta i metodi di recupero"
@@ -883,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Pulsante app Contatti"
+      ],
+      "Toggle referral": [
+        "Attiva/disattiva referral"
       ],
       "Toggle settings": [
         "Cambia le impostazioni"
@@ -1169,6 +1187,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
       ],
@@ -3277,6 +3301,9 @@
       "120 minutes": [
         "120 minuti"
       ],
+      "120m": [
+        "120 min"
+      ],
       "30 minutes": [
         "30 minuti"
       ],
@@ -3286,8 +3313,14 @@
       "60 minutes": [
         "60 minuti"
       ],
+      "60m": [
+        "60 min"
+      ],
       "90 minutes": [
         "90 minuti"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3654,6 +3687,9 @@
       ],
       "Last name is too long": [
         "Il cognome è troppo lungo"
+      ],
+      "Location is required": [
+        "La posizione è obbligatoria"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unisci almeno ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
@@ -4920,6 +4956,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
@@ -5218,6 +5257,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Non trovi gli eventi che cerchi? Alcuni eventi nei calendari nascosti corrispondono alla tua ricerca. Per vedere questi risultati, attiva la visibilità per ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create a range across days.": [
+        "Non puoi creare un intervallo di prenotazione su più giorni."
+      ],
+      "Cannot create a range in the past.": [
+        "Non puoi creare un intervallo di prenotazione nel passato."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -5719,6 +5764,9 @@
       "Other accounts": [
         "Altri account"
       ],
+      "Other location": [
+        "Altra posizione"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Gli altri utenti all'interno della tua organizzazione vedranno quando sei occupato. Non verranno condivisi i dettagli degli eventi."
       ],
@@ -5818,6 +5866,15 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navigazione privata (o modalità \"incognito\") è utile solo per tenere nascosta la tua attività sul tuo dispositivo. Impedisce al tuo browser di salvare cronologia e cookie, ma non ti rende invisibile. Il tuo ISP, l'amministratore di rete e i siti Web che visiti possono comunque vedere cosa fai online."
+      ],
+      "Range already exists.": [
+        "L'intervallo esiste già."
+      ],
+      "Range is too short.": [
+        "L'intervallo è troppo corto."
+      ],
+      "Range overlaps with an existing range.": [
+        "L'intervallo si sovrappone a un intervallo esistente."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
@@ -6385,6 +6442,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6770,6 +6830,9 @@
       "Extended address": [
         "Indirizzo completo"
       ],
+      "Extremely Satisfied": [
+        "Estremamente soddisfatto"
+      ],
       "First name": [
         "Nome"
       ],
@@ -7005,6 +7068,9 @@
       "System information": [
         "Informazioni sul sistema"
       ],
+      "Tell us more about your experience": [
+        "Raccontaci di più sulla tua esperienza"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7034,6 +7100,9 @@
       ],
       "Verification code": [
         "Codice di verifica"
+      ],
+      "Very Dissatisfied": [
+        "Molto insoddisfatto"
       ],
       "Video conference": [
         "Videoconferenza"
@@ -7300,11 +7369,6 @@
       ],
       "Your import is starting": [
         "La tua importazione sta iniziando"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Di persona"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8224,6 +8288,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siamo sempre alla ricerca di migliorare ${ BRAND_NAME } ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
       ]
     },
     "new_plans: Subtext": {
@@ -9487,6 +9556,9 @@
       ],
       "Name or email address": [
         "Nome o indirizzo email"
+      ],
+      "Optional feedback": [
+        "Feedback opzionale"
       ],
       "Organization name": [
         "Nome dell'organizzazione"
@@ -11167,6 +11239,17 @@
         "Partecipa alla riunione su Teams"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "Nessuna prenotazione disponibile."
+      ],
+      "Please check the link and try again.": [
+        "Controlla il link e riprova."
+      ],
+      "Please try again later.": [
+        "Per favore, riprova più tardi."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } giorno",
@@ -11707,6 +11790,9 @@
       "Recover data": [
         "Recupera dati"
       ],
+      "Referral": [
+        "Segnalazione"
+      ],
       "Remove participants": [
         "Rimuovi partecipanti"
       ],
@@ -11830,6 +11916,15 @@
       "Summary": [
         "Riepilogo"
       ],
+      "The booking feature is currently unavailable.": [
+        "Questa funzionalità non è attualmente disponibile."
+      ],
+      "This booking page can’t be shown.": [
+        "Questa pagina di prenotazione non può essere visualizzata."
+      ],
+      "This booking page has expired.": [
+        "Questa pagina di prenotazione è scaduta."
+      ],
       "Time": [
         "Ora"
       ],
@@ -11886,6 +11981,9 @@
       ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
+      ],
+      "We'd love to hear from you!": [
+        "Ci piacerebbe sapere cosa ne pensi!"
       ],
       "We're setting up calendar search": [
         "Stiamo configurando la ricerca nel calendario"

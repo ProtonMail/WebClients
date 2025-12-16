@@ -1272,6 +1272,9 @@
       "Select date and time": [
         "날짜 및 시간 선택"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
       "Self-destruct in 7 days": [
         "7일 내에 자동 폭파"
       ],
@@ -1289,6 +1292,9 @@
       ],
       "send auto-reply email": [
         "자동 회신 이메일 보내기"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
       ],
       "Send read receipt": [
         "수신 확인 보내기"
@@ -1888,6 +1894,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -9244,6 +9256,9 @@
       "Extended address": [
         "상세 주소"
       ],
+      "Extremely Satisfied": [
+        "매우 만족"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "${ newFolderName } 폴더 생성 실패"
       ],
@@ -9613,6 +9628,9 @@
       "System information": [
         "시스템 정보"
       ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "카테고리가 업데이트되었습니다. 피드백 주셔서 감사합니다!"
       ],
@@ -9663,6 +9681,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ],
       "Video conference": [
         "화상 회의"
@@ -10978,6 +10999,11 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ BRAND_NAME } ${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "${ priceLine }부터 시작"
@@ -12215,6 +12241,9 @@
       ],
       "Name or email address": [
         "이름 또는 이메일 주소"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ],
       "Organization name": [
         "조직 이름"
@@ -15246,6 +15275,9 @@
       ],
       "We protected you from ${ trackersCount } tracker": [
         "${ trackersCount }개 트래커로부터 보호되었습니다"
+      ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
       ],
       "Welcome": [
         "환영합니다"

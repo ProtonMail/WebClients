@@ -1284,6 +1284,9 @@
       "Select date and time": [
         "Vyberte dátum a čas"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Samodeštrukcia za 7 dní"
       ],
@@ -1301,6 +1304,9 @@
       ],
       "send auto-reply email": [
         "odoslať automatickú odpoveď"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
       ],
       "Send read receipt": [
         "Odoslať potvrdenie o prečítaní"
@@ -1507,7 +1513,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -7633,10 +7642,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9694,6 +9700,9 @@
       "Extended address": [
         "Rozšírená adresa"
       ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Nepodarilo sa vytvoriť priečinok ${ newFolderName }"
       ],
@@ -10063,6 +10072,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategória bola aktualizovaná, ďakujeme za vašu spätnú väzbu!"
       ],
@@ -10113,6 +10125,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ],
       "Video conference": [
         "Videokonferencia"
@@ -11527,6 +11542,11 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ BRAND_NAME } ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "Cena od ${ priceLine }"
@@ -12794,6 +12814,9 @@
       ],
       "Name or email address": [
         "Meno alebo emailová adresa"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -16107,6 +16130,9 @@
         "Ochránili sme vás od ${ trackersCount } trackerov",
         "Ochránili sme vás pred ${ trackersCount } sledovačmi",
         "Ochránili sme vás pred ${ trackersCount } sledovačmi"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ],
       "Welcome": [
         "Vitajte"

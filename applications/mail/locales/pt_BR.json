@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Selecione data e hora"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Autodestruir em 7 dias"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
       ],
       "Send read receipt": [
         "Enviar confirmação de leitura"
@@ -1499,7 +1505,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7401,8 +7408,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Endereço completo"
       ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Erro ao criar a pasta ${ newFolderName }"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Informações do sistema"
       ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "A categoria foi atualizada, agradecemos por seu feedback."
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ],
       "Video conference": [
         "Videoconferência"
@@ -11165,6 +11180,11 @@
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre trabalhando para melhorar o ${ BRAND_NAME } ${ config.appName }. Quão satisfeito você está com sua experiência?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "A partir de ${ priceLine }"
@@ -12418,6 +12438,9 @@
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ],
       "Organization name": [
         "Nome da organização"
@@ -15543,6 +15566,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Nós protegemos você de ${ trackersCount } rastreador",
         "Nós protegemos você de ${ trackersCount } rastreadores"
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ],
       "Welcome": [
         "Bem-vindo"

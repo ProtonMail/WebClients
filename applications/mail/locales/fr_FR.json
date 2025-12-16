@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Sélectionner la date et l'heure"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Autodétruire dans 7 jours"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "envoyer un message de réponse automatique"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -1499,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "La clé est fiable"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7401,8 +7408,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Complément d’adresse"
       ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Impossible de créer le dossier ${ newFolderName }"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Informations système"
       ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "La catégorie a été mise à jour. Merci pour votre commentaire !"
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Code de vérification"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ],
       "Video conference": [
         "Vidéoconférence"
@@ -10173,6 +10188,9 @@
       ],
       "Terms": [
         "Conditions générales d'utilisation"
+      ],
+      "Terms and conditions": [
+        "Conditions générales"
       ],
       "terms of service": [
         "conditions d’utilisation du service"
@@ -11163,6 +11181,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ BRAND_NAME } ${ config.appName }. En êtes-vous satisfait ?"
       ]
     },
     "new_plans: Subtext": {
@@ -12412,6 +12435,9 @@
       ],
       "Name or email address": [
         "Nom ou adresse e-mail"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ],
       "Organization name": [
         "Nom de l'organisation"
@@ -15537,6 +15563,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Protégé contre le ${ trackersCount } traqueur",
         "Vous êtes protégé contre les ${ trackersCount } traqueurs"
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ],
       "Welcome": [
         "Bienvenue"

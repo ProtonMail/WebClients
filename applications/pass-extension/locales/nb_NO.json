@@ -155,17 +155,38 @@
       "Copy and close": [
         "Kopier og lukk"
       ],
+      "Copy card number": [
+        "Kopier kortnummer"
+      ],
+      "Copy email": [
+        "Kopier e-post"
+      ],
+      "Copy expiration date": [
+        "Kopier utløpsdato"
+      ],
       "Copy forwarding address": [
         "Kopier videresendingsadresse"
       ],
       "Copy link": [
         "Kopier kobling"
       ],
+      "Copy name on card": [
+        "Kopier navn på kort"
+      ],
+      "Copy note content": [
+        "Kopier notatinnhold"
+      ],
       "Copy password": [
         "Kopier passord"
       ],
+      "Copy security code": [
+        "Kopier sikkerhetskode"
+      ],
       "Copy to clipboard": [
         "Kopier til utklippstavlen"
+      ],
+      "Copy username": [
+        "Kopier brukernavn"
       ],
       "Create": [
         "Opprett"
@@ -1840,10 +1861,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2440,6 +2457,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du blir logget ut og må logge på igjen på alle de andre enhetene dine."
+      ],
+      "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
+        "Du vil ikke lenger ha tilgang til deling, 2FA og andre avanserte funksjoner i ${ PASS_APP_NAME }"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "Du vil ikke lenger ha tilgang til deling, 2FA, kredittkort og andre avanserte funksjoner i ${ PASS_APP_NAME }"

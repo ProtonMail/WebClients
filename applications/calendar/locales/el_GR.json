@@ -797,11 +797,17 @@
       "Select country": [
         "Επιλογή Χώρας"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
       "Select time zone": [
         "Επιλογή ζώνης ώρας"
       ],
       "Send": [
         "Αποστολή"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
       ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Εναλλαγή στο πρόγραμμα Επαφών"
+      ],
+      "Toggle referral": [
+        "Εναλλαγή παραπομπής"
       ],
       "Toggle settings": [
         "Εναλλαγή ρυθμίσεων"
@@ -5755,6 +5764,9 @@
       "Other accounts": [
         "Άλλοι λογαριασμοί"
       ],
+      "Other location": [
+        "Άλλη τοποθεσία"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
       ],
@@ -6818,6 +6830,9 @@
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
       "First name": [
         "Όνομα"
       ],
@@ -7053,6 +7068,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
       "Theme": [
         "Θέμα"
       ],
@@ -7082,6 +7100,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ],
       "Video conference": [
         "Τηλεδιάσκεψη"
@@ -7304,6 +7325,9 @@
       "settings": [
         "ρυθμίσεις"
       ],
+      "Terms and conditions": [
+        "Όροι & Προϋποθέσεις"
+      ],
       "Types of recovery methods": [
         "Τύποι μεθόδων ανάκτησης"
       ],
@@ -7348,11 +7372,6 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Αυτοπροσώπως"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8272,6 +8291,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ BRAND_NAME } ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9559,9 @@
       ],
       "Name or email address": [
         "Όνομα ή ηλ. διεύθυνση"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -11766,6 +11793,9 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
+      "Referral": [
+        "Παραπομπή"
+      ],
       "Remove participants": [
         "Κατάργηση συμμετεχόντων"
       ],
@@ -11954,6 +11984,9 @@
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ],
       "We're setting up calendar search": [
         "Ρυθμίζουμε την αναζήτηση ημερολογίου"

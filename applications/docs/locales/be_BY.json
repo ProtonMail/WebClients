@@ -979,6 +979,14 @@
         "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -5398,7 +5406,7 @@
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Вашыя даныя застаюцца вашымі. Стварайце і супрацоўнічайце, выкарыстоўваючы поўнафункцыянальныя электронныя табліцы, абароненыя скразным шыфраваннем."
+        "Вашы даныя застаюцца вашымі. Стварайце і супрацоўнічайце, выкарыстоўваючы поўнафункцыянальныя электронныя табліцы, якія абаронены скразным шыфраваннем."
       ],
       "Your email address and password were leaked:": [
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
@@ -6090,6 +6098,9 @@
       ],
       "Resume now": [
         "Узнавіць"
+      ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
       ],
       "Types of recovery methods": [
         "Тыпы спосабаў аднаўлення"
@@ -7805,7 +7816,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
