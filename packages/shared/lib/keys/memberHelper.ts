@@ -1,6 +1,12 @@
 import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
 
-import { MEMBER_STATE, type Member, type MemberInvitationData, MemberUnprivatizationState } from '../interfaces';
+import {
+    type EnhancedMember,
+    MEMBER_STATE,
+    type Member,
+    type MemberInvitationData,
+    MemberUnprivatizationState,
+} from '../interfaces';
 
 export const getHasMemberUnprivatization = (
     member?: Member
@@ -75,4 +81,8 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
 
 export const getMemberEmailOrName = (member: Member) => {
     return member.Addresses?.[0]?.Email || member.Name || '';
+};
+
+export const getMemberByAddressId = (members: EnhancedMember[], addressID: string) => {
+    return members.find((member: EnhancedMember) => member.Addresses?.some((address) => address.ID === addressID));
 };

@@ -16,6 +16,7 @@ export enum GROUP_MEMBER_PERMISSIONS {
     NONE = 0, // 0000
     SEND = 1 << 0, // 0001
     LEAVE = 1 << 1, // 0010
+    OWNER = 1 << 2, // 0100
 }
 
 export enum GROUP_MEMBERSHIP_STATUS {
@@ -64,4 +65,12 @@ export interface GroupMembershipReturn {
     AddressId: string;
     ID: string;
     Permissions: number;
+}
+
+export interface GroupOwnerInvite {
+    GroupOwnerInviteID: string;
+    EncryptionAddressID: string;
+    SignatureAddress: string;
+    Token: string;
+    TokenSignaturePacket: string;
 }
