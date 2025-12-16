@@ -11,7 +11,7 @@ import getCssLoaders from '@proton/pack/webpack/css.loader';
 import { getJsLoader } from '@proton/pack/webpack/js.loader.swc.js';
 import getOptimizations from '@proton/pack/webpack/optimization';
 import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
-import { sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
+import { coreJsUint8ArrayFromBase64Rule, sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
 
 import envVars from './tools/env';
 import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
@@ -108,6 +108,15 @@ scriptJSLoader.use.options.env = {};
 /** Force "usage" mode for other extension components */
 const appJSLoader = getJsLoader({ ...webpackOptions, hasReactRefresh });
 appJSLoader.use.options.env.mode = 'usage';
+appJSLoader.use.options.env.shippedProposals = false;
+appJSLoader.use.options.env.include = [
+    'esnext.uint8-array.from-base64',
+    'esnext.uint8-array.from-hex',
+    'esnext.uint8-array.set-from-hex',
+    'esnext.uint8-array.set-from-base64',
+    'esnext.uint8-array.to-base64',
+    'esnext.uint8-array.to-hex',
+];
 
 const layeredJSLoaders = { oneOf: [{ issuerLayer: 'injection', ...scriptJSLoader }, appJSLoader] };
 
@@ -182,6 +191,7 @@ const config: Configuration = {
             sideEffectsRule,
             zipJSRule,
             layeredJSLoaders,
+            ...(BUILD_TARGET === 'safari' ? [coreJsUint8ArrayFromBase64Rule] : []),
             ...getCssLoaders({ browserslist: undefined, logical: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
