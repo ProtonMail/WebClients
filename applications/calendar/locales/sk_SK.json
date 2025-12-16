@@ -803,11 +803,17 @@
       "Select country": [
         "Vyberte krajinu"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
       "Select time zone": [
         "Vyberte časové pásmo"
       ],
       "Send": [
         "Odoslať"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
       ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
@@ -898,6 +904,9 @@
       ],
       "Toggle Contacts app": [
         "Prepnúť na aplikáciu Kontakty"
+      ],
+      "Toggle referral": [
+        "Prepnúť odporúčanie"
       ],
       "Toggle settings": [
         "Prepnúť nastavenia"
@@ -5909,6 +5918,9 @@
       "Other accounts": [
         "Ďalšie účty"
       ],
+      "Other location": [
+        "Iné umiestnenie"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
       ],
@@ -6996,6 +7008,9 @@
       "Extended address": [
         "Rozšírená adresa"
       ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
       "First name": [
         "Krstné meno"
       ],
@@ -7233,6 +7248,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
       "Theme": [
         "Vzhľad"
       ],
@@ -7262,6 +7280,9 @@
       ],
       "Verification code": [
         "Overovací kód"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ],
       "Video conference": [
         "Videokonferencia"
@@ -7530,11 +7551,6 @@
       ],
       "Your import is starting": [
         "Váš import bol zahájený"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Osobne"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8518,6 +8534,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ BRAND_NAME } ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     },
     "new_plans: Subtext": {
@@ -9851,6 +9872,9 @@
       ],
       "Name or email address": [
         "Meno alebo emailová adresa"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ],
       "Organization name": [
         "Názov organizácie"
@@ -12190,6 +12214,9 @@
       "Recover data": [
         "Obnoviť dáta"
       ],
+      "Referral": [
+        "Odporúčanie"
+      ],
       "Remove participants": [
         "Odstrániť účastníkov"
       ],
@@ -12378,6 +12405,9 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ],
       "We're setting up calendar search": [
         "Nastavujeme vyhľadávanie v kalendári"

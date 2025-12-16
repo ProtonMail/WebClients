@@ -770,11 +770,17 @@
       "Select country": [
         "Valitse maa"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Valitse arvosana ${ n } - ${ to }"
+      ],
       "Select time zone": [
         "Valitse aikavyöhyke"
       ],
       "Send": [
         "Lähetä"
+      ],
+      "Send Feedback": [
+        "Lähetä palautetta"
       ],
       "Set recovery methods": [
         "Aseta palautustavat"
@@ -865,6 +871,9 @@
       ],
       "Toggle Contacts app": [
         "Kytke Yhteystiedot-sovellus"
+      ],
+      "Toggle referral": [
+        "Kytke suositus päälle tai pois"
       ],
       "Toggle settings": [
         "Kytke asetuksia"
@@ -5617,6 +5626,9 @@
       "Other accounts": [
         "Muut tilit"
       ],
+      "Other location": [
+        "Muu sijainti"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
       ],
@@ -6635,6 +6647,9 @@
       "Extended address": [
         "Laajennettu osoite"
       ],
+      "Extremely Satisfied": [
+        "Erittäin tyytyväinen"
+      ],
       "First name": [
         "Etunimi"
       ],
@@ -6867,6 +6882,9 @@
       "System information": [
         "Järjestelmätiedot"
       ],
+      "Tell us more about your experience": [
+        "Kerro kokemuksestasi tarkemmin"
+      ],
       "Theme": [
         "Teema"
       ],
@@ -6896,6 +6914,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Very Dissatisfied": [
+        "Erittäin tyytymätön"
       ],
       "Video conference": [
         "Videoneuvottelu"
@@ -7103,6 +7124,9 @@
       "settings": [
         "asetuksissa"
       ],
+      "Terms and conditions": [
+        "Käyttöehdot"
+      ],
       "Types of recovery methods": [
         "Palautustapojen tyypit"
       ],
@@ -7147,11 +7171,6 @@
       ],
       "Your import is starting": [
         "Tuontisi alkaa"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Paikan päällä"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8059,6 +8078,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Pyrimme jatkuvasti parantamaan ${ BRAND_NAME } ${ config.appName } -palvelua. Kuinka tyytyväinen olet kokemukseesi?"
       ]
     },
     "new_plans: Subtext": {
@@ -9250,6 +9274,9 @@
       ],
       "Name or email address": [
         "Nimi tai sähköpostiosoite"
+      ],
+      "Optional feedback": [
+        "Valinnainen palaute"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -11403,6 +11430,9 @@
       "Recover data": [
         "Palauta tiedot"
       ],
+      "Referral": [
+        "Suosittelu"
+      ],
       "Remove participants": [
         "Poista osallistujia"
       ],
@@ -11585,6 +11615,9 @@
       ],
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
+      ],
+      "We'd love to hear from you!": [
+        "Haluaisimme kuulla palautettasi!"
       ],
       "We're setting up calendar search": [
         "Määritämme kalenterihakua"

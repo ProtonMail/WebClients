@@ -791,11 +791,17 @@
       "Select country": [
         "Välj land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Välj betyg ${ n } av ${ to }"
+      ],
       "Select time zone": [
         "Välj tidszon"
       ],
       "Send": [
         "Skicka"
+      ],
+      "Send Feedback": [
+        "Skicka feedback"
       ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
@@ -886,6 +892,9 @@
       ],
       "Toggle Contacts app": [
         "Växla kontaktapp"
+      ],
+      "Toggle referral": [
+        "Slå på/av hänvisning"
       ],
       "Toggle settings": [
         "Öppna/stäng inställningar"
@@ -1172,6 +1181,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -1186,6 +1201,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
@@ -3104,6 +3122,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "Du kommer få en säker e-post med detaljerna inom kort."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -5713,6 +5734,9 @@
       "Other accounts": [
         "Andra konton"
       ],
+      "Other location": [
+        "Annan plats"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andra användare inom din organisation kommer att se dina upptagna tidsluckor. Inga händelsedetaljer delas."
       ],
@@ -6280,6 +6304,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nått det maximala antalet bokningssidor tillgängliga i ditt paket."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
@@ -6758,6 +6785,9 @@
       "Extended address": [
         "Utökad adress"
       ],
+      "Extremely Satisfied": [
+        "Extremt nöjd"
+      ],
       "First name": [
         "Förnamn"
       ],
@@ -6993,6 +7023,9 @@
       "System information": [
         "Systeminformation"
       ],
+      "Tell us more about your experience": [
+        "Berätta mer om din upplevelse"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7022,6 +7055,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Very Dissatisfied": [
+        "Väldigt missnöjd"
       ],
       "Video conference": [
         "Videokonferens"
@@ -7238,6 +7274,9 @@
       "settings": [
         "inställningar"
       ],
+      "Terms and conditions": [
+        "Användarvillkor"
+      ],
       "Types of recovery methods": [
         "Typer av återställningsmetoder"
       ],
@@ -7282,11 +7321,6 @@
       ],
       "Your import is starting": [
         "Din import har startat"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Personligen"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8206,6 +8240,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ BRAND_NAME } ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -9461,6 +9500,9 @@
       ],
       "Name or email address": [
         "Namn eller e-postadress"
+      ],
+      "Optional feedback": [
+        "Valfri feedback"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -11689,6 +11731,9 @@
       "Recover data": [
         "Återställ data"
       ],
+      "Referral": [
+        "Hänvisning"
+      ],
       "Remove participants": [
         "Ta bort deltagare"
       ],
@@ -11877,6 +11922,9 @@
       ],
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vill gärna att du hör av dig!"
       ],
       "We're setting up calendar search": [
         "Vi konfigurerar kalendersökning"

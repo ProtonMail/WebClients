@@ -705,7 +705,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -800,11 +800,17 @@
       "Select country": [
         "Selectare țară"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selectare evaluare ${ n } din ${ to }"
+      ],
       "Select time zone": [
         "Selectare fus orar"
       ],
       "Send": [
         "Trimitere"
+      ],
+      "Send Feedback": [
+        "Trimitere feedback"
       ],
       "Set recovery methods": [
         "Setați metode de recuperare"
@@ -895,6 +901,9 @@
       ],
       "Toggle Contacts app": [
         "Comutare aplicație Contacte"
+      ],
+      "Toggle referral": [
+        "Comutare recomandat"
       ],
       "Toggle settings": [
         "Comutare setări"
@@ -1188,6 +1197,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
       ],
@@ -5131,13 +5146,13 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
@@ -5825,6 +5840,9 @@
       ],
       "Other accounts": [
         "Alte conturi"
+      ],
+      "Other location": [
+        "Alt loc"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
@@ -6901,6 +6919,9 @@
       "Extended address": [
         "Adresa extinsă"
       ],
+      "Extremely Satisfied": [
+        "Extrem de mulțumit(ă)"
+      ],
       "First name": [
         "Prenume"
       ],
@@ -7137,6 +7158,9 @@
       "System information": [
         "Informații sistem"
       ],
+      "Tell us more about your experience": [
+        "Spuneți-ne mai multe despre experiența proprie"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7166,6 +7190,9 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Very Dissatisfied": [
+        "Foarte nemulțumit(ă)"
       ],
       "Video conference": [
         "Conferință video"
@@ -7388,6 +7415,9 @@
       "settings": [
         "setări"
       ],
+      "Terms and conditions": [
+        "Termeni și condiții"
+      ],
       "Types of recovery methods": [
         "Tipuri de metode de recuperare"
       ],
@@ -7433,11 +7463,6 @@
       ],
       "Your import is starting": [
         "Începe importarea"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "În persoană"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8389,6 +8414,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Ne străduim mereu să îmbunătățim ${ BRAND_NAME } ${ config.appName }. Cum evaluați experiența avută?"
       ]
     },
     "new_plans: Subtext": {
@@ -9688,6 +9718,9 @@
       "Name or email address": [
         "Nume utilizator/adresa de e-mail"
       ],
+      "Optional feedback": [
+        "Feedback opțional"
+      ],
       "Organization name": [
         "Nume organizație"
       ],
@@ -9890,7 +9923,7 @@
         "Persoane abonate"
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invited friends": [
         "Persoane invitate"
@@ -11972,6 +12005,9 @@
       "Recover data": [
         "Recuperare date"
       ],
+      "Referral": [
+        "Recomandare"
+      ],
       "Remove participants": [
         "Eliminare participanți"
       ],
@@ -12160,6 +12196,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "We'd love to hear from you!": [
+        "Ne-ar plăcea să avem vești de la tine!"
       ],
       "We're setting up calendar search": [
         "Se setează căutarea calendarului"

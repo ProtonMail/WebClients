@@ -797,11 +797,17 @@
       "Select country": [
         "Ülke seçin"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Puan seçin ${ n } / ${ to }"
+      ],
       "Select time zone": [
         "Saat dilimini seçin"
       ],
       "Send": [
         "Gönder"
+      ],
+      "Send Feedback": [
+        "Geri Bildirim Gönder"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Kişiler uygulamasına geç"
+      ],
+      "Toggle referral": [
+        "Öneriyi aç/kapat"
       ],
       "Toggle settings": [
         "Ayarları aç / kapat"
@@ -5755,6 +5764,9 @@
       "Other accounts": [
         "Diğer hesaplar"
       ],
+      "Other location": [
+        "Diğer konum"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
       ],
@@ -6818,6 +6830,9 @@
       "Extended address": [
         "Açık adres"
       ],
+      "Extremely Satisfied": [
+        "Son Derece Memnun"
+      ],
       "First name": [
         "Ad"
       ],
@@ -7053,6 +7068,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7082,6 +7100,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Very Dissatisfied": [
+        "Çok Memnun Değil"
       ],
       "Video conference": [
         "Görüntülü görüşme"
@@ -7304,6 +7325,9 @@
       "settings": [
         "ayarlar"
       ],
+      "Terms and conditions": [
+        "Hüküm ve koşullar"
+      ],
       "Types of recovery methods": [
         "Kurtarma yöntemi türleri"
       ],
@@ -7348,11 +7372,6 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Bizzat"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8272,6 +8291,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ BRAND_NAME } ${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9559,9 @@
       ],
       "Name or email address": [
         "Ad ya da e-posta adresi"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -11766,6 +11793,9 @@
       "Recover data": [
         "Verileri kurtar"
       ],
+      "Referral": [
+        "Yönlendirme"
+      ],
       "Remove participants": [
         "Katılımcıları kaldır"
       ],
@@ -11954,6 +11984,9 @@
       ],
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ],
       "We're setting up calendar search": [
         "Takvim araması hazırlanıyor"
