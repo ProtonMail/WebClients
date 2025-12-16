@@ -803,11 +803,17 @@
       "Select country": [
         "Выберыце краіну"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выберыце ацэнку ${ n } з ${ to }"
+      ],
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
       "Send": [
         "Адправіць"
+      ],
+      "Send Feedback": [
+        "Адправіць водгук"
       ],
       "Set recovery methods": [
         "Задаць спосабы аднаўлення"
@@ -898,6 +904,9 @@
       ],
       "Toggle Contacts app": [
         "Пераключыць праграму Кантакты"
+      ],
+      "Toggle referral": [
+        "Пераключыць рэфералаў"
       ],
       "Toggle settings": [
         "Пераключэнне налад"
@@ -1198,6 +1207,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -5903,6 +5918,9 @@
       "Other accounts": [
         "Іншыя ўліковыя запісы"
       ],
+      "Other location": [
+        "Іншае месцазнаходжанне"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы прамежкі занятасці. Падрабязнасці аб падзеі не абагульваюцца."
       ],
@@ -6216,7 +6234,7 @@
         "Палепшыце свой тарыфны план, каб дадаць новую старонку браніравання."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -6297,7 +6315,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -6990,6 +7008,9 @@
       "Extended address": [
         "Пашыраны адрас"
       ],
+      "Extremely Satisfied": [
+        "Вельмі задаволены"
+      ],
       "First name": [
         "Імя"
       ],
@@ -7227,6 +7248,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "Tell us more about your experience": [
+        "Раскажыце нам больш пра свой досвед"
+      ],
       "Theme": [
         "Тэма"
       ],
@@ -7256,6 +7280,9 @@
       ],
       "Verification code": [
         "Код спраўджання"
+      ],
+      "Very Dissatisfied": [
+        "Вельмі незадаволены"
       ],
       "Video conference": [
         "Відэаканферэнцыя"
@@ -7478,6 +7505,9 @@
       "settings": [
         "налады"
       ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
+      ],
       "Types of recovery methods": [
         "Тыпы спосабаў аднаўлення"
       ],
@@ -7524,11 +7554,6 @@
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Асабістае"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8514,6 +8539,11 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ BRAND_NAME } ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
+      ]
+    },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
         "Пачатковы кошт ${ priceLine }"
@@ -9119,7 +9149,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -9845,6 +9875,9 @@
       ],
       "Name or email address": [
         "Імя або адрас пошты"
+      ],
+      "Optional feedback": [
+        "Неабавязковы водгук"
       ],
       "Organization name": [
         "Назва арганізацыі"
@@ -12184,6 +12217,9 @@
       "Recover data": [
         "Аднаўленне даных"
       ],
+      "Referral": [
+        "Рэферал"
+      ],
       "Remove participants": [
         "Выдаліць удзельнікаў"
       ],
@@ -12372,6 +12408,9 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "We'd love to hear from you!": [
+        "Нам было б прыемна пачуць гэта!"
       ],
       "We're setting up calendar search": [
         "Наладжванне пошуку ў календары"

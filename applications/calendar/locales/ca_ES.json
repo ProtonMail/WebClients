@@ -797,11 +797,17 @@
       "Select country": [
         "Seleccioneu el país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
       "Select time zone": [
         "Selecciona el fus horari"
       ],
       "Send": [
         "Enviar"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
       ],
       "Set recovery methods": [
         "Estableix mètodes de recuperació"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Alterna l'aplicació Contactes"
+      ],
+      "Toggle referral": [
+        "Activa/desactiva la referència"
       ],
       "Toggle settings": [
         "Commuta les preferències"
@@ -5755,6 +5764,9 @@
       "Other accounts": [
         "Altres comptes"
       ],
+      "Other location": [
+        "Una altra ubicació"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Altres usuaris de l'organització veuran els vostres espais ocupats. No es comparteix cap detall dels esdeveniments."
       ],
@@ -6818,6 +6830,9 @@
       "Extended address": [
         "Adreça completa"
       ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
       "First name": [
         "Nom"
       ],
@@ -7053,6 +7068,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7082,6 +7100,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ],
       "Video conference": [
         "Videoconferència"
@@ -7304,6 +7325,9 @@
       "settings": [
         "preferències"
       ],
+      "Terms and conditions": [
+        "Termes i condicions"
+      ],
       "Types of recovery methods": [
         "Tipus de mètodes de recuperació"
       ],
@@ -7348,11 +7372,6 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "En persona"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8272,6 +8291,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ BRAND_NAME } ${ config.appName }. Quin és el vostre grau de satisfacció amb l'experiència?"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9559,9 @@
       ],
       "Name or email address": [
         "Nom o adreça de correu electrònic"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -11766,6 +11793,9 @@
       "Recover data": [
         "Recuperar dades"
       ],
+      "Referral": [
+        "Referència"
+      ],
       "Remove participants": [
         "Esborra participants"
       ],
@@ -11954,6 +11984,9 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ],
       "We're setting up calendar search": [
         "Estem configurant la cerca al calendari."

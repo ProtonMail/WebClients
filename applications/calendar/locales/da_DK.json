@@ -797,11 +797,17 @@
       "Select country": [
         "Vælg land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vælg vurdering ${ n } ud af ${ to }"
+      ],
       "Select time zone": [
         "Vælg tidszone"
       ],
       "Send": [
         "Send"
+      ],
+      "Send Feedback": [
+        "Send feedback"
       ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Skift Kontakt-app"
+      ],
+      "Toggle referral": [
+        "Slå henvisning til/fra"
       ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
@@ -5755,6 +5764,9 @@
       "Other accounts": [
         "Andre konti"
       ],
+      "Other location": [
+        "Anden placering"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brugere i din organisation vil se dine optagede tidsrum. Ingen detaljer om begivenheden deles."
       ],
@@ -6818,6 +6830,9 @@
       "Extended address": [
         "Udvidet adresse"
       ],
+      "Extremely Satisfied": [
+        "Yderst tilfreds"
+      ],
       "First name": [
         "Fornavn"
       ],
@@ -7053,6 +7068,9 @@
       "System information": [
         "Systemoplysninger"
       ],
+      "Tell us more about your experience": [
+        "Fortæl os mere om din oplevelse"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7082,6 +7100,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Very Dissatisfied": [
+        "Meget utilfreds"
       ],
       "Video conference": [
         "Videokonference"
@@ -7348,11 +7369,6 @@
       ],
       "Your import is starting": [
         "Din import starter"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Personligt"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8185,7 +8201,7 @@
         "Støtte"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {
@@ -8272,6 +8288,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi bestræber os på stadigt at forbedre ${ BRAND_NAME } ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9556,9 @@
       ],
       "Name or email address": [
         "Navn eller e-mailadresse"
+      ],
+      "Optional feedback": [
+        "Valgfri feedback"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -11766,6 +11790,9 @@
       "Recover data": [
         "Gendan data"
       ],
+      "Referral": [
+        "Henvisning"
+      ],
       "Remove participants": [
         "Fjern deltagere"
       ],
@@ -11954,6 +11981,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil meget gerne høre fra dig"
       ],
       "We're setting up calendar search": [
         "Vi konfigurere kalender-søgning"

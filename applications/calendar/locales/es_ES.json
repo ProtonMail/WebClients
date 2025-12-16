@@ -797,11 +797,17 @@
       "Select country": [
         "Seleccionar un país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecciona la puntuación ${ n } de ${ to }"
+      ],
       "Select time zone": [
         "Seleccionar la zona horaria"
       ],
       "Send": [
         "Enviar"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
       ],
       "Set recovery methods": [
         "Establecer los métodos de recuperación"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Alternar la aplicación Contactos"
+      ],
+      "Toggle referral": [
+        "Alternar referidos"
       ],
       "Toggle settings": [
         "Alternar los ajustes"
@@ -5192,6 +5201,9 @@
       "Are you sure you want to discard your import?": [
         "¿Estás seguro de que quieres descartar la importación?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pide a tu administrador que mejore el plan o elimina una página de la barra lateral de páginas de reserva."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
       ],
@@ -5752,6 +5764,9 @@
       "Other accounts": [
         "Otras cuentas"
       ],
+      "Other location": [
+        "Otra ubicación"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Otros usuarios en tu organización verán tus espacios ocupados. No se comparten los detalles del evento."
       ],
@@ -5851,6 +5866,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
+      ],
+      "Range already exists.": [
+        "El rango ya existe."
       ],
       "Range is too short.": [
         "El rango es demasiado corto."
@@ -6812,6 +6830,9 @@
       "Extended address": [
         "Dirección extendida"
       ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfecho"
+      ],
       "First name": [
         "Nombre"
       ],
@@ -7047,6 +7068,9 @@
       "System information": [
         "Información del sistema"
       ],
+      "Tell us more about your experience": [
+        "Cuéntanos más sobre tu experiencia."
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7076,6 +7100,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Very Dissatisfied": [
+        "Muy insatisfecho"
       ],
       "Video conference": [
         "Videoconferencia"
@@ -7298,6 +7325,9 @@
       "settings": [
         "ajustes"
       ],
+      "Terms and conditions": [
+        "Términos y condiciones"
+      ],
       "Types of recovery methods": [
         "Tipos de métodos de recuperación"
       ],
@@ -7342,11 +7372,6 @@
       ],
       "Your import is starting": [
         "Tu importación está empezando."
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Presencial"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8266,6 +8291,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ BRAND_NAME } ${ config.appName }. ¿Qué tan satisfecho estás con tu experiencia?"
       ]
     },
     "new_plans: Subtext": {
@@ -9529,6 +9559,9 @@
       ],
       "Name or email address": [
         "Nombre o dirección de correo electrónico"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -11760,6 +11793,9 @@
       "Recover data": [
         "Recuperar datos"
       ],
+      "Referral": [
+        "Referido"
+      ],
       "Remove participants": [
         "Eliminar los participantes"
       ],
@@ -11948,6 +11984,9 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber tu opinión"
       ],
       "We're setting up calendar search": [
         "Estamos configurando la búsqueda en el calendario."

@@ -794,11 +794,17 @@
       "Select country": [
         "国を選択"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "${ to }段階中の${ n }評価を選択"
+      ],
       "Select time zone": [
         "タイムゾーンを選択"
       ],
       "Send": [
         "送信"
+      ],
+      "Send Feedback": [
+        "フィードバックを送信"
       ],
       "Set recovery methods": [
         "回復手段を設定"
@@ -889,6 +895,9 @@
       ],
       "Toggle Contacts app": [
         "連絡先アプリを切り替える"
+      ],
+      "Toggle referral": [
+        "紹介の切り替え"
       ],
       "Toggle settings": [
         "設定を切り替え"
@@ -1168,6 +1177,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -5672,6 +5687,9 @@
       "Other accounts": [
         "その他のアカウント"
       ],
+      "Other location": [
+        "その他の位置"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "組織内の他のユーザーには、あなたの埋まっているスロットが表示されます。イベントの詳細は共有されません。"
       ],
@@ -6723,6 +6741,9 @@
       "Extended address": [
         "拡張アドレス"
       ],
+      "Extremely Satisfied": [
+        "非常に満足"
+      ],
       "First name": [
         "名"
       ],
@@ -6957,6 +6978,9 @@
       "System information": [
         "システム情報"
       ],
+      "Tell us more about your experience": [
+        "ご利用時の体験について詳しいご意見をお聞かせください"
+      ],
       "Theme": [
         "テーマ"
       ],
@@ -6986,6 +7010,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Very Dissatisfied": [
+        "非常に不満"
       ],
       "Video conference": [
         "ビデオ会議"
@@ -7251,11 +7278,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "対面"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8143,6 +8165,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ BRAND_NAME } ${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足いただいておりますでしょうか？"
       ]
     },
     "new_plans: Subtext": {
@@ -9371,6 +9398,9 @@
       ],
       "Name or email address": [
         "名前またはメールアドレス"
+      ],
+      "Optional feedback": [
+        "フィードバック(任意)"
       ],
       "Organization name": [
         "組織名"
@@ -11548,6 +11578,9 @@
       "Recover data": [
         "データを復元する"
       ],
+      "Referral": [
+        "紹介"
+      ],
       "Remove participants": [
         "参加者を削除"
       ],
@@ -11736,6 +11769,9 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "We'd love to hear from you!": [
+        "ぜひ、ご意見をお寄せください！"
       ],
       "We're setting up calendar search": [
         "カレンダー検索を設定しています。"

@@ -383,6 +383,12 @@
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
+      "Expand navigation bar to see bookings": [
+        "ნავიგაციის პანელის გაშლა ჯავშნების სანახავად"
+      ],
+      "Expand navigation bar to see calendars": [
+        "ნავიგაციის პანელის გაშლა კალენდრების სანახავად"
+      ],
       "Expand video conferencing widget": [
         "ვიდეოკონფერენცის ვიჯეტის გადიდება"
       ],
@@ -791,11 +797,17 @@
       "Select country": [
         "აირჩიეთ ქვეყანა"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "შეაფასეთ ${ n } ${ to }-დან"
+      ],
       "Select time zone": [
         "დროის სარტყლის არჩევა"
       ],
       "Send": [
         "გაგზავნა"
+      ],
+      "Send Feedback": [
+        "უკუკავშირის გაგზავნა"
       ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
@@ -886,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "კონტაქტების აპის გადართვა"
+      ],
+      "Toggle referral": [
+        "რეფერალის გადართვა"
       ],
       "Toggle settings": [
         "პარამეტრების გადართვა"
@@ -3268,6 +3283,9 @@
       "120 minutes": [
         "120 წუთი"
       ],
+      "120m": [
+        "120წთ"
+      ],
       "30 minutes": [
         "30 წუთი"
       ],
@@ -3277,8 +3295,14 @@
       "60 minutes": [
         "60 წუთი"
       ],
+      "60m": [
+        "60წთ"
+      ],
       "90 minutes": [
         "90 წუთი"
+      ],
+      "90m": [
+        "90წთ"
       ]
     },
     "Edit event button tooltip": {
@@ -4900,6 +4924,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } წთ"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
@@ -5668,6 +5695,9 @@
       ],
       "Other accounts": [
         "სხვა ანგარიშები"
+      ],
+      "Other location": [
+        "სხვა მდებარეობა"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
@@ -6696,6 +6726,9 @@
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
+      "Extremely Satisfied": [
+        "ძალიან კმაყოფილი"
+      ],
       "First name": [
         "სახელი"
       ],
@@ -6931,6 +6964,9 @@
       "System information": [
         "სისტემის ინფორმაცია"
       ],
+      "Tell us more about your experience": [
+        "გვიამბეთ მეტი თქვენი გამოცდილების შესახებ"
+      ],
       "Theme": [
         "თემა"
       ],
@@ -6960,6 +6996,9 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "Very Dissatisfied": [
+        "ძალიან უკმაყოფილო"
       ],
       "Video conference": [
         "ვიდეოკონფერენცია"
@@ -7226,11 +7265,6 @@
       ],
       "Your import is starting": [
         "შემოტანის დასაწყისი"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "პირადად"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8066,6 +8100,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
@@ -9378,6 +9415,9 @@
       ],
       "Name or email address": [
         "სახელი ან ელფოსტის მისამართი"
+      ],
+      "Optional feedback": [
+        "არასავალდებულო უკუკავშირი"
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
@@ -11025,6 +11065,17 @@
         "Teams-ის შეხვედრასთან მიერთება"
       ]
     },
+    "Text": {
+      "No bookings available.": [
+        "ჯავშნები ხელმისაწვდომი არაა."
+      ],
+      "Please check the link and try again.": [
+        "შეამოწმეთ ბმული და თავიდან სცადეთ."
+      ],
+      "Please try again later.": [
+        "მოგვიანებით სცადეთ."
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } დღე",
@@ -11565,6 +11616,9 @@
       "Recover data": [
         "მონაცემების აღდგენა"
       ],
+      "Referral": [
+        "რეფერალი"
+      ],
       "Remove participants": [
         "მონაწილეების წაშლა"
       ],
@@ -11688,6 +11742,15 @@
       "Summary": [
         "შეჯამება"
       ],
+      "The booking feature is currently unavailable.": [
+        "დაჯავშნის ფუნქცია ამჟამად მიუწვდომელია."
+      ],
+      "This booking page can’t be shown.": [
+        "ამ ჯავშნის გვერდის ჩვენება შეუძლებელია."
+      ],
+      "This booking page has expired.": [
+        "ამ დაჯავშნის გვერდის ვადა ამოწურულია."
+      ],
       "Time": [
         "დრო"
       ],
@@ -11744,6 +11807,9 @@
       ],
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
+      ],
+      "We'd love to hear from you!": [
+        "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ],
       "We're setting up calendar search": [
         "მიმდინარეობს კალენდრის ძებნის მორგება"
