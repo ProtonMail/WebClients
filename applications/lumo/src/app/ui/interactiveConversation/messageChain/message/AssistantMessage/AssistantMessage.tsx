@@ -1,40 +1,32 @@
-import { memo, useCallback, useRef, useState } from 'react';
+import { memo, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
 import type { Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
-import TurndownService from 'turndown';
 
 import { Icon, useModalStateObject } from '@proton/components';
 
-import { messagesEqualForRendering } from '../../../../../messageHelpers';
+import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
-import { isWebSearchToolResultData } from '../../../../../lib/toolCall/types';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
 import LinkWarningModal from '../../../../components/LumoMarkdown/LinkWarningModal';
-import StreamingMarkdownRenderer from '../../../../components/LumoMarkdown/StreamingMarkdownRenderer';
 import SiblingSelector from '../../../../components/SiblingSelector';
 import ToolCallLoading from '../../../../components/ToolCallLoading/ToolCallLoading';
 import AssistantFeedbackModal from '../actionToolbar/AssistantFeedbackModal';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
-import { useToolCallInfo } from '../toolCall/useToolCallInfo';
+import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { AvatarAndNotice } from './AvatarAndNotice';
+import { BlockRenderer } from './BlockRenderer';
 
 import './AssistantMessage.scss';
-
-// Initialize turndown service once
-const turndownService = new TurndownService({
-    headingStyle: 'atx',
-    codeBlockStyle: 'fenced',
-});
 
 interface AssistantActionToolbarProps {
     message: Message;
@@ -179,17 +171,18 @@ const AssistantMessage = ({
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
-    const messageContent = preprocessContent(message?.content);
 
-    console.log(`in AssistantMessage component body: message = ${JSON.stringify(message)}`);
-    const { toolCall, toolResult } = useToolCallInfo(message);
-    const hasToolCall = toolCall !== null;
+    // Get blocks for interleaved rendering
+    const blocks = useMemo(() => getMessageBlocks(message), [message.blocks, message.content, message.toolCall, message.toolResult]);
+    const hasContent = blocks.length > 0;
 
-    // Extract search results if this is a web_search tool
-    const searchResults =
-        toolCall?.name === 'web_search' && toolResult && isWebSearchToolResultData(toolResult)
-            ? toolResult.results
-            : null;
+    // Extract search results for legacy sources button
+    const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
+
+    // Check if any block is a tool call (for loading state)
+    const hasToolCall = blocks.some((b) => b.type === 'tool_call');
+    const lastToolCall = blocks.findLast((b) => b.type === 'tool_call');
+    const lastToolCallParsed = lastToolCall?.type === 'tool_call' ? parseToolCallBlock(lastToolCall) : null;
 
     const handleLinkClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -231,14 +224,14 @@ const AssistantMessage = ({
                             <p className="color-weak font-bold mb-1">DEBUG INFO</p>
                             <p className="color-weak m-0">isLoading: {JSON.stringify(isLoading)}</p>
                             <p className="color-weak m-0">hasToolCall: {JSON.stringify(hasToolCall)}</p>
-                            <p className="color-weak m-0 break-all">toolCall: {JSON.stringify(toolCall)}</p>
-                            <p className="color-weak m-0">searchResults: {JSON.stringify(searchResults)}</p>
+                            <p className="color-weak m-0 break-all">blocks: {JSON.stringify(blocks.length)}</p>
+                            <p className="color-weak m-0">searchResults: {JSON.stringify(searchResults !== null)}</p>
                         </div>
                         {
                             // eslint-disable-next-line no-nested-ternary
                             isLoading ? (
                                 hasToolCall ? (
-                                    <ToolCallLoading toolCallName={toolCall?.name} />
+                                    <ToolCallLoading toolCallName={lastToolCallParsed?.name} />
                                 ) : (
                                     <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                         <div className="rectangle-skeleton keep-motion"></div>
@@ -246,22 +239,25 @@ const AssistantMessage = ({
                                 )
                             ) : (
                                 <div className="w-full" style={{ minHeight: '2em' }}>
-                                    {messageContent || doNotShowEmptyMessage ? (
+                                    {hasContent || doNotShowEmptyMessage ? (
                                         <div className="w-full">
-                                            <StreamingMarkdownRenderer
-                                                message={message}
-                                                content={messageContent}
-                                                isStreaming={isGenerating && isLastMessage}
-                                                handleLinkClick={handleLinkClick}
-                                                toolCallResults={searchResults}
-                                                sourcesContainerRef={sourcesContainerRef}
-                                            />
+                                            {blocks.map((block, idx) => (
+                                                <BlockRenderer
+                                                    key={idx}
+                                                    block={block}
+                                                    blockIndex={idx}
+                                                    message={message}
+                                                    isStreaming={isGenerating && isLastMessage}
+                                                    isLastBlock={idx === blocks.length - 1}
+                                                    handleLinkClick={handleLinkClick}
+                                                    sourcesContainerRef={sourcesContainerRef}
+                                                />
+                                            ))}
                                         </div>
                                     ) : (
                                         <EmptyMessage />
                                     )}
 
-                                    {/* <SourcesBlock results={results} onClick={onToggleMessageSource} /> */}
                                     <AssistantActionToolbar
                                         message={message}
                                         isFinishedGenerating={isFinishedGenerating}
@@ -285,7 +281,7 @@ const AssistantMessage = ({
                     <AvatarAndNotice
                         isFinishedGenerating={isFinishedGenerating}
                         isGenerating={isGenerating}
-                        toolCallName={toolCall?.name}
+                        toolCallName={lastToolCallParsed?.name}
                     />
                 )}
             </div>
@@ -309,21 +305,6 @@ const EmptyMessage = () => (
         </div>
     </>
 );
-
-function preprocessContent(content: string | undefined): string {
-    if (!content) return '';
-    content = content.trim();
-    // Sometimes the model replies in raw html, e.g. "<p>Hello World</p>", even though we expect Markdown.
-    if (
-        content.startsWith('<div>') ||
-        content.startsWith('<p>') ||
-        content.endsWith('</div>') ||
-        content.endsWith('</p>')
-    ) {
-        return turndownService.turndown(content);
-    }
-    return content;
-}
 
 // Memoize to prevent unnecessary re-renders
 export default memo(AssistantMessage, (prevProps, nextProps) => {
