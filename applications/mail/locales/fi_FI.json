@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Valitse päivämäärä ja aika"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Valitse arvosana ${ n } - ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Tuhoudu seitsemän päivän kuluttua"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "lähetä automaattivastaus"
+      ],
+      "Send Feedback": [
+        "Lähetä palautetta"
       ],
       "Send read receipt": [
         "Lähetä lukukuittaus"
@@ -1497,6 +1503,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7349,8 +7359,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9328,6 +9337,9 @@
       "Extended address": [
         "Laajennettu osoite"
       ],
+      "Extremely Satisfied": [
+        "Erittäin tyytyväinen"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Kansion ${ newFolderName } luominen epäonnistui."
       ],
@@ -9694,6 +9706,9 @@
       "System information": [
         "Järjestelmätiedot"
       ],
+      "Tell us more about your experience": [
+        "Kerro kokemuksestasi tarkemmin"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Tämä kategoria on päivitetty, kiitos palautteestasi!"
       ],
@@ -9744,6 +9759,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Very Dissatisfied": [
+        "Erittäin tyytymätön"
       ],
       "Video conference": [
         "Videoneuvottelu"
@@ -10097,6 +10115,9 @@
       ],
       "Terms": [
         "Ehdot"
+      ],
+      "Terms and conditions": [
+        "Käyttöehdot"
       ],
       "terms of service": [
         "käyttöehdot"
@@ -11075,6 +11096,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Pyrimme jatkuvasti parantamaan ${ BRAND_NAME } ${ config.appName } -palvelua. Kuinka tyytyväinen olet kokemukseesi?"
       ]
     },
     "new_plans: Subtext": {
@@ -12261,6 +12287,9 @@
       ],
       "Name or email address": [
         "Nimi tai sähköpostiosoite"
+      ],
+      "Optional feedback": [
+        "Valinnainen palaute"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -15317,6 +15346,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Suojasimme sinua ${ trackersCount } seurannalta",
         "Suojasimme sinua ${ trackersCount } seurannalta"
+      ],
+      "We'd love to hear from you!": [
+        "Haluaisimme kuulla palautettasi!"
       ],
       "Welcome": [
         "Tervetuloa"

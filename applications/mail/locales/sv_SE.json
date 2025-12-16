@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Välj datum och tid"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Välj betyg ${ n } av ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Självförstörelse om 7 dagar"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "skicka automatiskt svar"
+      ],
+      "Send Feedback": [
+        "Skicka feedback"
       ],
       "Send read receipt": [
         "Skicka läskvitto"
@@ -1499,7 +1505,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1899,6 +1906,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -1913,6 +1926,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
@@ -7380,8 +7396,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9362,6 +9377,9 @@
       "Extended address": [
         "Utökad adress"
       ],
+      "Extremely Satisfied": [
+        "Extremt nöjd"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Misslyckades att skapa mapp ${ newFolderName }"
       ],
@@ -9731,6 +9749,9 @@
       "System information": [
         "Systeminformation"
       ],
+      "Tell us more about your experience": [
+        "Berätta mer om din upplevelse"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategorin har uppdaterats, tack för din feedback!"
       ],
@@ -9781,6 +9802,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Very Dissatisfied": [
+        "Väldigt missnöjd"
       ],
       "Video conference": [
         "Videokonferens"
@@ -10137,6 +10161,9 @@
       ],
       "Terms": [
         "Villkor"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ],
       "terms of service": [
         "användarvillkor"
@@ -11127,6 +11154,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ BRAND_NAME } ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -12368,6 +12400,9 @@
       ],
       "Name or email address": [
         "Namn eller e-postadress"
+      ],
+      "Optional feedback": [
+        "Valfri feedback"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -15493,6 +15528,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Vi skyddade dig från ${ trackersCount } spårare",
         "Vi skyddade dig från ${ trackersCount } spårare"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vill gärna att du hör av dig!"
       ],
       "Welcome": [
         "Välkommen"

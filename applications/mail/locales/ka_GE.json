@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "აირჩიეთ თარიღი და დრო"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "შეაფასეთ ${ n } ${ to }-დან"
+      ],
       "Self-destruct in 7 days": [
         "თვითგანადგურება 7 დღეში"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "ელ-ფოსტაზე პასუხის ავტომატურად გაცემა"
+      ],
+      "Send Feedback": [
+        "უკუკავშირის გაგზავნა"
       ],
       "Send read receipt": [
         "წაკითხულობის ანგარიშის გაგზავნა"
@@ -1497,6 +1503,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -7324,8 +7334,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -9273,6 +9282,9 @@
       "Extended address": [
         "გაფართოებული მისამართი"
       ],
+      "Extremely Satisfied": [
+        "ძალიან კმაყოფილი"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "შექმნის შეცდომა საქაღალდისთვის ${ newFolderName }"
       ],
@@ -9639,6 +9651,9 @@
       "System information": [
         "სისტემის ინფორმაცია"
       ],
+      "Tell us more about your experience": [
+        "გვიამბეთ მეტი თქვენი გამოცდილების შესახებ"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "კატეგორია განახლდა. მადლობა უკუკავშირისთვის!"
       ],
@@ -9689,6 +9704,9 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "Very Dissatisfied": [
+        "ძალიან უკმაყოფილო"
       ],
       "Video conference": [
         "ვიდეოკონფერენცია"
@@ -10951,6 +10969,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
@@ -12246,6 +12267,9 @@
       ],
       "Name or email address": [
         "სახელი ან ელფოსტის მისამართი"
+      ],
+      "Optional feedback": [
+        "არასავალდებულო უკუკავშირი"
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
@@ -15338,6 +15362,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "${ trackersCount } ტრეკერისგან დაგიცავით",
         "${ trackersCount } ტრეკერისგან დაგიცავით"
+      ],
+      "We'd love to hear from you!": [
+        "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ],
       "Welcome": [
         "მოგესალმებით"

@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Επιλέξτε ημερομηνία και ώρα"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Αυτοκαταστροφή σε 7 ημέρες"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
       ],
       "Send read receipt": [
         "Αποστολή αποδεικτικού ανάγνωσης"
@@ -1499,7 +1505,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -7401,8 +7408,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Αποτυχία δημιουργίας φακέλου ${ newFolderName }"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Η κατηγορία έχει ενημερωθεί, ευχαριστούμε για τα σχόλιά σας!"
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ],
       "Video conference": [
         "Τηλεδιάσκεψη"
@@ -10173,6 +10188,9 @@
       ],
       "Terms": [
         "Όροι"
+      ],
+      "Terms and conditions": [
+        "Όροι & Προϋποθέσεις"
       ],
       "terms of service": [
         "όροι χρήσης"
@@ -11163,6 +11181,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ BRAND_NAME } ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     },
     "new_plans: Subtext": {
@@ -12412,6 +12435,9 @@
       ],
       "Name or email address": [
         "Όνομα ή ηλ. διεύθυνση"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ],
       "Organization name": [
         "Όνομα οργανισμού"
@@ -15537,6 +15563,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτη",
         "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτες"
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ],
       "Welcome": [
         "Καλώς ήρθατε"
