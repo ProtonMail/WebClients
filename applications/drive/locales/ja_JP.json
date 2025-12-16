@@ -285,6 +285,9 @@
       "Create and copy alias": [
         "エイリアスを作成してコピー"
       ],
+      "Create business account": [
+        "ビジネスアカウントを作成"
+      ],
       "Create folder": [
         "フォルダを作成"
       ],
@@ -444,6 +447,9 @@
       "Expand folder": [
         "フォルダーを展開"
       ],
+      "Explore more": [
+        "もっと見る"
+      ],
       "Explore other plans": [
         "その他のプランを表示"
       ],
@@ -482,6 +488,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "無料の${ BRAND_NAME }アドレスを入手"
+      ],
+      "Get Drive for Business": [
+        "Drive for Businessを入手"
       ],
       "Get in touch": [
         "連絡する"
@@ -1065,6 +1074,9 @@
       "Toggle Contacts app": [
         "連絡先アプリを切り替える"
       ],
+      "Toggle referral": [
+        "紹介の切り替え"
+      ],
       "Toggle settings": [
         "設定を切り替え"
       ],
@@ -1290,6 +1302,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -5056,6 +5074,12 @@
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
       ],
+      "Cloud storage for businesses that take security seriously": [
+        "セキュリティを真剣に考える企業向けのクラウドストレージ"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "侵害、ランサムウェア、監視からお客様のクライアントデータとビジネスデータを保護しつつ、効率的に共同作業を行えます。"
+      ],
       "Conflict": [
         "競合"
       ],
@@ -6787,6 +6811,9 @@
       ],
       "App password": [
         "アプリのパスワード"
+      ],
+      "Applications in a business setting": [
+        "ビジネス環境におけるアプリ"
       ],
       "Apply to all duplicated files": [
         "重複しているすべてのファイルに適用"
@@ -12118,6 +12145,9 @@
       ],
       "Recover data": [
         "データを復元する"
+      ],
+      "Referral": [
+        "紹介"
       ],
       "Remove device?": [
         "デバイスを削除しますか？"
