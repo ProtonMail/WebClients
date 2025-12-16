@@ -1256,6 +1256,12 @@
         "${ count } переглядів",
         "${ count } переглядів"
       ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } перегляд",
+        "${ count }/${ maxReads } переглядів",
+        "${ count }/${ maxReads } переглядів",
+        "${ count }/${ maxReads } переглядів"
+      ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
         "${ forwardedEmailsCount } переслано",
@@ -2011,6 +2017,12 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Додатковий пароль буде потрібен для використання ${ PASS_APP_NAME }. Він діє як додатковий пароль до вашого пароля ${ BRAND_NAME }."
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Не вдалося імпортувати цей ${ totalIgnored } елемент:",
+        "Наступні ${ totalIgnored } елементи не вдалося імпортувати:",
+        "Не вдалося імпортувати ці ${ totalIgnored } елементів:",
+        "Не вдалося імпортувати ці ${ totalIgnored } елементів:"
       ],
       "The secure link has been removed": [
         "Безпечне посилання було вилучено"

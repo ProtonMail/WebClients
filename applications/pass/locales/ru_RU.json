@@ -1319,6 +1319,12 @@
         "${ count } просмотров",
         "${ count } просмотров"
       ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } просмотр",
+        "${ count }/${ maxReads } просмотров",
+        "${ count }/${ maxReads } просмотров",
+        "${ count }/${ maxReads } просмотров"
+      ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } переслано",
         "${ forwardedEmailsCount } пересланы",
