@@ -105,7 +105,7 @@
         "Slet tråd"
       ],
       "Divider": [
-        "Skillevæg"
+        "Adskillelsestegn"
       ],
       "Duplicate": [
         "Duplikér"
@@ -439,14 +439,11 @@
       "Failed to initialize editor due to unknown error.": [
         "Kunne ikke starte redigeringsværktøjet pga. en ukendt fejl."
       ],
-      "Request timed out": [
-        "Forespørgsel fik timeout"
-      ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
-        "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Venligst siden og prøv igen."
+        "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Indlæs siden igen og prøv så igen."
       ],
       "Tried to import Sheet data into Lexical": [
-        "Forsøgte at importér regnearksdata i Lexical."
+        "Forsøgte at importere regnearksdata i Lexical."
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Ikke muligt at konvertere Word-dokument. Er det adgangskodebeskyttet? Hvis ja, så fjern adgangskoden og prøv igen."
@@ -523,8 +520,8 @@
       "Highlight": [
         "Fremhæv"
       ],
-      "Internet connection lost": [
-        "Internetforbindelse mistet"
+      "Importing Excel file...": [
+        "Importerer Excel-fil..."
       ],
       "Just now": [
         "Lige nu"
@@ -534,12 +531,6 @@
       ],
       "No comments": [
         "Ingen kommentarer"
-      ],
-      "Servers are unreachable. Please try again in a few minutes": [
-        "Servere er utilgængelige. Prøv igen om nogle få minutter"
-      ],
-      "Session timed out": [
-        "Session er udløbet"
       ],
       "Something went wrong:": [
         "Et eller andet gik galt:"
@@ -592,7 +583,7 @@
         "Slet"
       ],
       "Delete divider": [
-        "Slet skiller"
+        "Slet adskillelsestegn"
       ],
       "Delete image": [
         "Slet billede"
@@ -625,7 +616,7 @@
         "Indsæt"
       ],
       "Insert divider": [
-        "Indsæt skiller"
+        "Indsæt adskillelsestegn"
       ],
       "Insert image": [
         "Indsæt billede"

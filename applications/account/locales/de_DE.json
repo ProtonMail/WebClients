@@ -181,6 +181,9 @@
       "Apply": [
         "Übernehmen"
       ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Filter „${ Name }“ auf vorhandene Nachrichten anwenden"
+      ],
       "Apply to existing messages": [
         "Auf vorhandene Nachrichten anwenden"
       ],
@@ -354,6 +357,9 @@
       ],
       "Copy password": [
         "Passwort kopieren"
+      ],
+      "Copy SMTP server": [
+        "SMTP-Server kopieren"
       ],
       "Copy SMTP token": [
         "SMTP-Token kopieren"
@@ -654,6 +660,9 @@
       ],
       "Export": [
         "Exportieren"
+      ],
+      "Export as CSV": [
+        "Als CSV exportieren"
       ],
       "Export key": [
         "Schlüssel exportieren"
@@ -5333,6 +5342,9 @@
       "Automatically forward emails to another email address.": [
         "E-Mails automatisch an eine andere E-Mail-Adresse weiterleiten."
       ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Die Ende-zu-Ende-Verschlüsselung wurde für deine ${ boldForwarderEmail }-Adresse deaktiviert, aber die Null-Zugriff-Verschlüsselung bleibt aktiviert. ${ learnMoreLink }"
+      ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Aus Kompatibilitätsgründen wird die Post-Quanten-Verschlüsselung deaktiviert und ein neuer Verschlüsselungsschlüssel für ${ boldForwarderEmail } generiert."
       ],
@@ -5385,6 +5397,11 @@
         "An mich"
       ]
     },
+    "email_forwarding_2023: Placeholder": {
+      "Enter email address": [
+        "E-Mail-Adresse eingeben"
+      ]
+    },
     "email_forwarding_2023: Progress status": {
       "Setting up forwarding": [
         "Weiterleitung wird eingerichtet"
@@ -5401,6 +5418,9 @@
       ],
       "Declined": [
         "Abgelehnt"
+      ],
+      "Outdated": [
+        "Veraltet"
       ],
       "Paused": [
         "Angehalten"
@@ -6653,6 +6673,9 @@
       ],
       "Loading events": [
         "Termine werden geladen"
+      ],
+      "None of the events could be exported.": [
+        "Keiner der Termine konnte exportiert werden."
       ],
       "Password reset - multiple events cannot be decrypted": [
         "Passwort zurückgesetzt – mehrere Ereignisse konnten nicht entschlüsselt werden"
@@ -8650,6 +8673,9 @@
       "Authenticator app 2FA enabled": [
         "2FA-Authentifizierungs-App aktiviert"
       ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Die automatische Antwort ist jede Woche zwischen der ausgewählten Start- und Endzeit aktiv."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatisches Löschen von E-Mails, die vor mehr als 30 Tagen in den Papierkorb und in den Spam verschoben wurden."
       ],
@@ -10258,6 +10284,9 @@
       ],
       "Storage used by this user": [
         "Von diesem Benutzer verwendeter Speicherplatz"
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Bewahre das Passwort und die Datei an einem sicheren Ort auf. Du benötigst sie erneut, um deinen Schlüssel zu importieren."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -13086,6 +13115,9 @@
       ]
     },
     "Label to change composer mode": {
+      "Maximized": [
+        "Maximiert"
+      ],
       "Normal": [
         "Standard"
       ]
@@ -15217,6 +15249,9 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Einladung gelöscht"
+      ],
       "Invitation revoked": [
         "Einladung widerrufen"
       ],
@@ -15525,6 +15560,9 @@
       ],
       "5th of the month": [
         "5. des Monats"
+      ],
+      "6th of the month": [
+        "6. des Monats"
       ],
       "7th of the month": [
         "7. des Monats"
@@ -21199,6 +21237,9 @@
       "Edit servers": [
         "Server bearbeiten"
       ],
+      "Edit Sieve filter": [
+        "Sieve-Filter bearbeiten"
+      ],
       "Edit the list of servers of the gateway": [
         "Bearbeite die Liste der Server des Gateways"
       ],
@@ -21689,6 +21730,9 @@
       ],
       "Remove all members?": [
         "Alle Mitglieder entfernen?"
+      ],
+      "Remove calendar": [
+        "Kalender entfernen"
       ],
       "Remove device?": [
         "Gerät entfernen?"
@@ -23181,6 +23225,9 @@
       ],
       "Must be between ${ minimumNumber } and ${ maximumNumber }": [
         "Muss zwischen ${ minimumNumber } und ${ maximumNumber } sein"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Muss kleiner oder gleich ${ maximumNumber } sein"
       ],
       "Please add at least one recipient.": [
         "Bitte füge mindestens einen Empfänger hinzu."

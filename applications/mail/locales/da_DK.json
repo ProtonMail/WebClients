@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Vælg dato og tid"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vælg vurdering ${ n } ud af ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Selvdestruér om 7 dage"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
+      ],
+      "Send Feedback": [
+        "Send feedback"
       ],
       "Send read receipt": [
         "Send læsekvittering"
@@ -1499,7 +1505,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7401,8 +7408,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9002,7 +9008,7 @@
         "Flyt ned"
       ],
       "Move left / collapse": [
-        "Flyt til venstre / kollaps"
+        "Flyt til venstre / fold sammen"
       ],
       "Move right / expand": [
         "Flyt til højre / udvid"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Udvidet adresse"
       ],
+      "Extremely Satisfied": [
+        "Yderst tilfreds"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Kunne ikke oprette mappe ${ newFolderName }"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Systemoplysninger"
       ],
+      "Tell us more about your experience": [
+        "Fortæl os mere om din oplevelse"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategorien er blevet opdateret, tak for din feedback!"
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Very Dissatisfied": [
+        "Meget utilfreds"
       ],
       "Video conference": [
         "Videokonference"
@@ -11076,7 +11091,7 @@
         "Støtte"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {
@@ -11163,6 +11178,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi bestræber os på stadigt at forbedre ${ BRAND_NAME } ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -12412,6 +12432,9 @@
       ],
       "Name or email address": [
         "Navn eller e-mailadresse"
+      ],
+      "Optional feedback": [
+        "Valgfri feedback"
       ],
       "Organization name": [
         "Organisationsnavn"
@@ -15537,6 +15560,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Vi beskyttede dig mod ${ trackersCount } tracker",
         "Vi beskyttede dig mod ${ trackersCount } trackere"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil meget gerne høre fra dig"
       ],
       "Welcome": [
         "Velkommen"

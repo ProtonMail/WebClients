@@ -1392,6 +1392,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
       ],
@@ -4809,7 +4815,7 @@
         "15 GB のストレージ"
       ],
       "4 more privacy services": [
-        "プライバシーサービスが4つも増える"
+        "4つのプライバシーサービスをさらに提供"
       ],
       "@pm.me address": [
         "@pm.me メールアドレス"
@@ -5159,6 +5165,9 @@
       ],
       "Select your deal": [
         "取引を選択してください"
+      ],
+      "Select your payment method:": [
+        "お支払方法を選択してください："
       ],
       "Select your pricing plan": [
         "料金プランを選択してください"
@@ -9825,6 +9834,9 @@
       "99.95% SLA": [
         "SLA 99.95%"
       ],
+      "Activity logs and policy": [
+        "アクティビティログとポリシー"
+      ],
       "Ad-blocker and malware protection": [
         "広告ブロックとマルウェア保護"
       ],
@@ -10058,6 +10070,9 @@
       ],
       "Secure link sharing": [
         "セキュアリンク共有"
+      ],
+      "Secure password management": [
+        "安全なパスワード管理"
       ],
       "See team's availability": [
         "チームの空き状況を確認"
@@ -12097,6 +12112,9 @@
       "How your free trial works:": [
         "無料トライアルについて："
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "私は ${ BRAND_NAME } を使用しており、あなたにも気に入っていただけると思いました。これは、プライバシーを保護する安全なメール、クラウドストレージ、パスワードマネージャー、VPNです。このリンクからサインアップすると、プレミアム機能を14日間無料でご利用いただけます：${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "それまでにキャンセルすると、トライアル終了時に${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }にダウングレードされます。キャンセルしない場合、お客様のフルプランが開始され、**${ referrerRewardAmount }** のクレジットを獲得できます。"
       ],
@@ -12117,6 +12135,9 @@
       ],
       "Refer friends": [
         "友達を招待"
+      ],
+      "Share using ${ name }": [
+        "${ name } を使って共有"
       ],
       "Start earning credits": [
         "クレジット獲得を開始する"

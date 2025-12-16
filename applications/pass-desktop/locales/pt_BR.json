@@ -1219,6 +1219,9 @@
       "Secure link could not be opened.": [
         "Não foi possível abrir o link seguro."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Os servidores estão inacessíveis. Tente desbloquear ${ PASS_SHORT_APP_NAME } em alguns minutos."
+      ],
       "Settings update failed": [
         "Erro ao atualizar as configurações"
       ],
@@ -1964,8 +1967,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

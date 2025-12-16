@@ -2382,8 +2382,20 @@
       "Descriptor copied to clipboard": [
         "Descritor copiado para a área de transferência"
       ],
+      "I want the ${ prefix } instead": [
+        "Eu quero o ${ prefix } em vez disso."
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importe este descritor em outro software de carteira para monitorar seu saldo e gerar endereços de recebimento sem expor suas chaves privadas."
+      ],
       "Public key (${ prefix }) copied to clipboard": [
         "Chave pública (${ prefix }) copiada para a área de transferência"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verifique se os primeiros endereços derivados correspondem aos do ${ WALLET_APP_NAME } antes de prosseguir."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Recomendamos fortemente usar o descritor acima, pois ele contém todas as informações necessárias para garantir a geração correta do endereço. xpub, ypub e zpub não fazem parte dos BIPs padrão e devem ser usados apenas com cautela."
       ]
     },
     "familyOffer_2023:Error": {
@@ -3039,6 +3051,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "Seu checkout foi aberto em uma nova guia. Por favor, finalize seu pagamento lá e retorne a esta página quando terminar."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."

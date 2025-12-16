@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Animate code change": [
+        "Animar cambio de código"
+      ],
+      "Backup and reset": [
+        "Copia de seguridad y restablecimiento"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -81,6 +87,9 @@
       ]
     },
     "authenticator-2025:Info": {
+      "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
+        "Elige ${ plainTextBold }, esto creará un archivo txt que puedes usar aquí."
+      ],
       "Code added": [
         "Código añadido"
       ],
@@ -95,6 +104,12 @@
       ],
       "Importing codes...": [
         "Importando códigos..."
+      ],
+      "Last backup: ${ lastBackupDateDisplay }.": [
+        "Última copia de seguridad: ${ lastBackupDateDisplay }."
+      ],
+      "Lock updated": [
+        "Bloqueo actualizado"
       ],
       "New version ${ latestVersion.version } is available": [
         "Una versión nueva de ${ latestVersion.version } está disponible"
@@ -186,6 +201,14 @@
       "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
         "Contraseña incorrecta. Te queda ${ remainingCount } intento, después de eso, tus datos serán borrados.",
         "Contraseña incorrecta. Te quedan ${ remainingCount } intentos; después de eso, tus datos se borrarán."
+      ],
+      "You have ${ backupsCount } previous backup on your device that can be removed.": [
+        "Tienes ${ backupsCount } copia de seguridad anterior en tu dispositivo que se puede eliminar.",
+        "Tienes ${ backupsCount } copias de seguridad anteriores en tu dispositivo que se pueden eliminar."
+      ],
+      "You have ${ remainingCount } attempt left - after that, your data will be erased.": [
+        "Te queda ${ remainingCount } intento - después de eso, tus datos serán borrados.",
+        "Te quedan ${ remainingCount } intentos - después de eso, tus datos se borrarán."
       ]
     },
     "Error": {
@@ -266,6 +289,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "No entries matching your search": [
+        "No hay entradas que coincidan con tu búsqueda"
+      ],
       "Reveal password": [
         "Mostrar contraseña"
       ]
@@ -284,6 +310,9 @@
       ],
       "Device sync": [
         "Sincronización de dispositivos"
+      ],
+      "Set backup password": [
+        "Establecer contraseña de respaldo"
       ]
     },
     "Warning": {

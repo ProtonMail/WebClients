@@ -713,6 +713,9 @@
       "Send": [
         "Pošlji"
       ],
+      "Send Feedback": [
+        "Pošlji povratne informacije"
+      ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
       ],
@@ -1657,6 +1660,11 @@
       ],
       "Expand": [
         "Razširi"
+      ]
+    },
+    "collider_2025: feature": {
+      "Large file upload support": [
+        "Podpora za nalaganje velikih datotek"
       ]
     },
     "colon": {
@@ -3018,8 +3026,14 @@
       ]
     },
     "Duo offer": {
+      "/month": [
+        "/mesec"
+      ],
       "2 user accounts": [
         "2 uporabniška računa"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Duplicate event button tooltip": {
@@ -4217,6 +4231,9 @@
       "Contacts": [
         "Stiki"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Drawer": [
         "Obrobni stolpec"
       ],
@@ -4900,6 +4917,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
       ],
+      "Choose a plan that works best for you.": [
+        "Izberite paket, ki vam najbolj ustreza"
+      ],
       "Clear data": [
         "Počisti podatke"
       ],
@@ -4926,6 +4946,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Stik odstranjen iz skupine ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Nadaljuj"
       ],
       "Copy the link to clipboard": [
         "Kopiraj povezavo v odložišče"
@@ -5328,6 +5351,9 @@
       ],
       "Other accounts": [
         "Drugi računi"
+      ],
+      "Other location": [
+        "Druga lokacija"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Drugi uporabniki v vaši organizaciji bodo videli, da so vaši časovni intervali zasedeni. Informacije o dogodku se ne delijo."
@@ -6293,6 +6319,9 @@
       "Extended address": [
         "Razširjeni naslov"
       ],
+      "Extremely Satisfied": [
+        "Izjemno zadovoljen/-na"
+      ],
       "First name": [
         "Ime"
       ],
@@ -6532,6 +6561,9 @@
       ],
       "Verification code": [
         "Koda za preverjanje"
+      ],
+      "Very Dissatisfied": [
+        "Zelo nezadovoljen/-na"
       ],
       "Vulnerable": [
         "Ranljivo"
@@ -7498,6 +7530,9 @@
       "Share files with no size limit": [
         "Souporaba datotek brez omejitve velikosti"
       ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
+      ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
       ],
@@ -7712,6 +7747,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Venomer se trudimo izboljšati ${ BRAND_NAME } ${ config.appName }. Kako ste zadovoljni s svojo izkušnjo?"
       ]
     },
     "new_plans: Subtext": {
@@ -8258,6 +8298,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don't show this again": [
+        "Ne prikazuj več"
+      ],
       "Don’t show this again": [
         "Tega ne prikaži več"
       ],
@@ -8607,6 +8650,9 @@
       "Credit/debit card": [
         "Kreditna / debetna kartica"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nova kreditna/debetna kartica"
       ]
@@ -8635,6 +8681,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "V tem času ne boste mogli spreminjati ali preklicati svoje naročnine. Počakajte, da bo vaše plačilo zaključeno, preden poskusite s kakršnimi koli spremembami. Hvala za vašo potrpežljivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -8650,6 +8699,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",
         "Kupon velja za ${ couponRedemptions } podaljšanji.",
@@ -8661,6 +8713,12 @@
       ],
       "Timeout exceeded": [
         "Časovna omejitev je presežena"
+      ],
+      "VAT": [
+        "DDV"
+      ],
+      "You already have a subscription to this plan.": [
+        "Na ta paket ste že naročeni."
       ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
@@ -8684,6 +8742,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Obdrži paket ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, prepričan(a) sem"
       ]
     },
     "Payments.plan_name": {
@@ -8957,8 +9023,14 @@
       ]
     },
     "Referral": {
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "your subscription": [
+        "vaša naročnina"
       ]
     },
     "Reload event button tooltip": {

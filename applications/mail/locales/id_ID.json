@@ -1272,6 +1272,9 @@
       "Select date and time": [
         "Pilih tanggal dan waktu"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Pilih penilaian ${ n } dari ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Hapus otomatis dalam 7 hari"
       ],
@@ -1289,6 +1292,9 @@
       ],
       "send auto-reply email": [
         "kirim pesan balasan otomatis"
+      ],
+      "Send Feedback": [
+        "Kirim Tanggapan"
       ],
       "Send read receipt": [
         "Kirim bukti baca"
@@ -1493,6 +1499,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1885,6 +1894,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Anda dapat memiliki hingga ${ TRIAL_MAX_DEDICATED_IPS } server khusus selama masa uji coba."
       ],
@@ -9241,6 +9256,9 @@
       "Extended address": [
         "Alamat lengkap"
       ],
+      "Extremely Satisfied": [
+        "Sangat Puas"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Folder ${ newFolderName } gagal dibuat"
       ],
@@ -9610,6 +9628,9 @@
       "System information": [
         "Informasi sistem"
       ],
+      "Tell us more about your experience": [
+        "Beri tahu kami lebih lanjut mengenai pengalaman Anda"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "Kategori ini telah diperbarui. Terima kasih atas tanggapan Anda!"
       ],
@@ -9660,6 +9681,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Very Dissatisfied": [
+        "Sangat Tidak Puas"
       ],
       "Video conference": [
         "Konferensi video"
@@ -10016,6 +10040,9 @@
       ],
       "Terms": [
         "Ketentuan layanan"
+      ],
+      "Terms and conditions": [
+        "Syarat dan ketentuan"
       ],
       "terms of service": [
         "ketentuan layanan"
@@ -10973,6 +11000,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Kami selalu berupaya untuk menjadikan ${ BRAND_NAME } ${ config.appName } lebih baik. Seberapa puaskah Anda dengan pengalaman Anda?"
       ]
     },
     "new_plans: Subtext": {
@@ -12212,6 +12244,9 @@
       ],
       "Name or email address": [
         "Nama atau alamat email"
+      ],
+      "Optional feedback": [
+        "Tanggapan opsional"
       ],
       "Organization name": [
         "Nama organisasi"
@@ -15243,6 +15278,9 @@
       ],
       "We protected you from ${ trackersCount } tracker": [
         "Kami melindungi Anda dari ${ trackersCount } pelacak"
+      ],
+      "We'd love to hear from you!": [
+        "Kami ingin mendengar dari Anda!"
       ],
       "Welcome": [
         "Selamat Datang"

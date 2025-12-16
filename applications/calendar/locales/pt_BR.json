@@ -797,11 +797,17 @@
       "Select country": [
         "Selecionar país"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
       "Select time zone": [
         "Selecionar fuso horário"
       ],
       "Send": [
         "Enviar"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
       ],
       "Set recovery methods": [
         "Definir métodos de recuperação"
@@ -892,6 +898,9 @@
       ],
       "Toggle Contacts app": [
         "Alternar o aplicativo Contatos"
+      ],
+      "Toggle referral": [
+        "Alternar indicação"
       ],
       "Toggle settings": [
         "Alternar configurações"
@@ -3497,6 +3506,9 @@
       "Cancellation failed to be sent": [
         "O cancelamento não foi enviado"
       ],
+      "Cannot create a booking with a disabled address": [
+        "Não é possível criar uma reserva com um endereço desativado"
+      ],
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
@@ -5752,6 +5764,9 @@
       "Other accounts": [
         "Outras contas"
       ],
+      "Other location": [
+        "Outras localizações"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
@@ -6328,6 +6343,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Você alcançou o número máximo de endereços no grupo de contato."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Você alcançou o número máximo de páginas de agendamento disponíveis no seu plano."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
       ],
@@ -6812,6 +6830,9 @@
       "Extended address": [
         "Endereço completo"
       ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
       "First name": [
         "Primeiro nome"
       ],
@@ -7047,6 +7068,9 @@
       "System information": [
         "Informações do sistema"
       ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -7076,6 +7100,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ],
       "Video conference": [
         "Videoconferência"
@@ -7342,11 +7369,6 @@
       ],
       "Your import is starting": [
         "Sua importação está começando"
-      ]
-    },
-    "Location": {
-      "In person": [
-        "Em pessoa"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -8266,6 +8288,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre trabalhando para melhorar o ${ BRAND_NAME } ${ config.appName }. Quão satisfeito você está com sua experiência?"
       ]
     },
     "new_plans: Subtext": {
@@ -9535,6 +9562,9 @@
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ],
       "Organization name": [
         "Nome da organização"
@@ -11219,6 +11249,9 @@
       "No bookings available.": [
         "Nenhum agendamento disponível."
       ],
+      "Please check the link and try again.": [
+        "Verifique o link e tente novamente."
+      ],
       "Please try again later.": [
         "Tente novamente mais tarde."
       ]
@@ -11763,6 +11796,9 @@
       "Recover data": [
         "Recuperar dados"
       ],
+      "Referral": [
+        "Indicação"
+      ],
       "Remove participants": [
         "Remover participantes"
       ],
@@ -11886,6 +11922,12 @@
       "Summary": [
         "Resumo"
       ],
+      "The booking feature is currently unavailable.": [
+        "O recurso de reserva está indisponível no momento."
+      ],
+      "This booking page can’t be shown.": [
+        "Esta página de agendamento não pode ser mostrada."
+      ],
       "This booking page has expired.": [
         "Esta página de agendamento expirou."
       ],
@@ -11945,6 +11987,9 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ],
       "We're setting up calendar search": [
         "Estamos configurando a pesquisa de calendário"

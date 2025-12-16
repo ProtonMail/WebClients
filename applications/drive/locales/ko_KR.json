@@ -285,6 +285,9 @@
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
+      "Create business account": [
+        "비즈니스 계정 생성"
+      ],
       "Create folder": [
         "폴더 생성"
       ],
@@ -444,6 +447,9 @@
       "Expand folder": [
         "폴더 확장"
       ],
+      "Explore more": [
+        "더 둘러보기"
+      ],
       "Explore other plans": [
         "다른 플랜 알아보기"
       ],
@@ -482,6 +488,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소 받기"
+      ],
+      "Get Drive for Business": [
+        "Drive for Business 구매"
       ],
       "Get in touch": [
         "연락하기"
@@ -894,6 +903,9 @@
       "Retry": [
         "재시도"
       ],
+      "Retry failed items": [
+        "실패된 항목 다시 시도"
+      ],
       "Run diagnostics": [
         "진단 실행"
       ],
@@ -1061,6 +1073,9 @@
       ],
       "Toggle Contacts app": [
         "연락처 앱 열기/닫기"
+      ],
+      "Toggle referral": [
+        "추천 표시"
       ],
       "Toggle settings": [
         "설정 켜기/끄기"
@@ -1287,6 +1302,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -5053,6 +5074,12 @@
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
       ],
+      "Cloud storage for businesses that take security seriously": [
+        "보안을 중요시하는 기업을 위한 클라우드 스토리지"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "보안 사고, 랜섬웨어 및 감시로부터 고객 및 비즈니스 데이터를 보호하며 효율적으로 협업하세요."
+      ],
       "Conflict": [
         "충돌"
       ],
@@ -6784,6 +6811,9 @@
       ],
       "App password": [
         "앱 비밀번호"
+      ],
+      "Applications in a business setting": [
+        "비즈니스 환경내의 어플리케이션"
       ],
       "Apply to all duplicated files": [
         "모든 복제된 파일에 적용"
@@ -12115,6 +12145,9 @@
       ],
       "Recover data": [
         "데이터 복구"
+      ],
+      "Referral": [
+        "추천"
       ],
       "Remove device?": [
         "기기를 삭제할까요?"

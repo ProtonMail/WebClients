@@ -2460,7 +2460,7 @@
         "Objevte naše tipy pro efektivní správu doručené pošty, abyste mohli zůstat produktivní a soustředění."
       ],
       "Easily manage your inbox": [
-        "Snadná správa doručené pošty"
+        "Spravujte doručenou poštu snadno"
       ],
       "Easily manage your inbox with ${ mailPlusPlanName }": [
         "Snadno spravujte svou doručenou poštu s ${ mailPlusPlanName }"
@@ -2583,7 +2583,7 @@
         "Zabezpečte svou práci"
       ],
       "See and manage all your email subscriptions": [
-        "Zobrazit a spravovat všechny své e-mailové odběry"
+        "Zobrazte a spravujte všechny své e-mailové odběry"
       ],
       "Send files via secure links or email, revoke access whenever needed.": [
         "Odesílejte soubory prostřednictvím bezpečných odkazů nebo e-mailu, přístup můžete kdykoli zrušit."
@@ -3424,7 +3424,7 @@
     },
     "Condition label": {
       "If": [
-        "Když"
+        "Pokud"
       ]
     },
     "Confirm modal title": {
@@ -7972,6 +7972,9 @@
       ],
       "Select your deal": [
         "Vyberte svoji nabídku"
+      ],
+      "Select your payment method:": [
+        "Vyberte platební metodu:"
       ],
       "Select your pricing plan": [
         "Vyberte si tarif"
@@ -14599,7 +14602,7 @@
         "Užijte si dva týdny služeb ${ BRAND_NAME } zdarma"
       ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
-        "Zažijte skutečné online soukromí. Chraňte svá data pomocí služeb ${ BRAND_NAME } zdarma v následujících 14 dnů."
+        "Zažijte skutečné online soukromí. Chraňte svá data pomocí služeb ${ BRAND_NAME } zdarma po následujících 14 dnů."
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Zjistěte své uživatelské jméno ${ BRAND_NAME }"
@@ -15086,6 +15089,9 @@
       "99.95% SLA": [
         "99,95 % SLA"
       ],
+      "Activity logs and policy": [
+        "Logy aktivit a zásady"
+      ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
       ],
@@ -15328,6 +15334,9 @@
       ],
       "Secure link sharing": [
         "Sdílení bezpečných odkazů"
+      ],
+      "Secure password management": [
+        "Bezpečná správa hesel"
       ],
       "See team's availability": [
         "Podívejte se, jaká je dostupnost týmu"
@@ -18269,6 +18278,9 @@
       "How your free trial works:": [
         "Jak funguje bezplatná zkušební verze:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Používám ${ BRAND_NAME } a myslím, že by se vám to mohlo líbit. Jedná se o zabezpečený e-mail, cloudové úložiště, správce hesel a VPN, které chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte 14 dnů prémiových funkcí zdarma: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Pokud zrušíte před tímto datem, po skončení zkušební doby bude váš tarif snížen na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Pokud nezrušíte, začne platit váš plný tarif a získáte **${ referrerRewardAmount }** v kreditech."
       ],
@@ -18289,6 +18301,9 @@
       ],
       "Refer friends": [
         "Doporučte přátele"
+      ],
+      "Share using ${ name }": [
+        "Sdílet pomocí ${ name }"
       ],
       "Start earning credits": [
         "Začněte získávat kredity"

@@ -1279,7 +1279,7 @@
         "Søg lande"
       ],
       "Search settings": [
-        "Søg indstillinger"
+        "Søgeindstillinger"
       ],
       "See DNS TXT record": [
         "Se DNS TXT-post"
@@ -1759,8 +1759,8 @@
         "${ price } per bruger"
       ],
       "${ quantity } custom domain": [
-        "${ quantity } brugerdomæne",
-        "${ quantity } brugerdomæner"
+        "${ quantity } brugerdefineret domæne",
+        "${ quantity } brugerdefinerede domæner"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
@@ -2053,7 +2053,7 @@
         "Gratis afprøvning i ${ TRIAL_DURATION_DAYS } dage"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Siger du op vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } Free plan."
+        "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } gratis abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
@@ -2158,7 +2158,7 @@
         "Hjælp os i kampen for privatliv på nettet"
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
-        "Premium-udgaver af alle ${ BRAND_NAME }-tjenester"
+        "Premiumudgaver af alle ${ BRAND_NAME }-tjenester"
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
@@ -2518,7 +2518,7 @@
         "Lær hvor mange GB der er i en TB, og opdag den bedste måde at lagre og dele dine filer sikkert på — uanset deres størrelse."
       ],
       "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
-        "Lær hvordan du sikkerhedskopierer dine filer til skyen eller til et eksternt drev, mens du samtidig holder dine data sikre."
+        "Lær, hvordan du sikkerhedskopierer dine filer til skyen eller til et eksternt drev, mens du samtidig holder dine data sikre."
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
         "Lær, hvordan du slår irriterende og potentielt skadelige junkmails ihjel. Spam e-mails, også kendt som junkmail, kan være mere end bare irriterende rod i din indbakke. Cyberkriminelle kan bruge disse uopfordrede og uønskede meddelelser til at starte phishing-angreb og sprede malware."
@@ -2548,7 +2548,7 @@
         "Beskyt din virksomhed med stærke adgangskoder og sikker deling."
       ],
       "Protect your family online and make account sharing easy": [
-        "Beskyt din familie og gør det nemt at dele din konto"
+        "Beskyt din familie og gør kontodeling nemt"
       ],
       "Protect your whole household with 1 device": [
         "Beskyt hele din husstand med 1 enhed"
@@ -2596,7 +2596,7 @@
         "Den mest sikre måde at sende billeder på, er med end-to-end kryptering. Her er fire måder at lagre og dele billeder privat på."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
-        "Denne artikel er blevet opdateret til at inkludere WireGuard- og Stealth VPN-protokollerne."
+        "Denne artikel er blevet opdateret til at inkludere WireGuard- og Stealth-VPN-protokollerne."
       ],
       "Try out **Newsletters view** to declutter your inbox.": [
         "Prøv **Nyhedsbrevsvisning** for at rydde op i din indbakke."
@@ -2623,7 +2623,7 @@
         "Hvad er et e-mail-alias?"
       ],
       "What is end-to-end encryption and how does it work?": [
-        "Hvad er end-to-end kryptering, og hvordan virker det?"
+        "Hvad er end-to-end-kryptering, og hvordan fungerer det?"
       ],
       "What to do if your data is leaked in a data breach": [
         "Hvad gør man, hvis ens data lækkes ved et databrud"
@@ -3516,7 +3516,7 @@
         "${ selectedCitiesCount } byer valgt"
       ],
       "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } valgte",
+        "${ selectedCountriesCount } valgt",
         "${ selectedCountriesCount } valgte"
       ]
     },
@@ -4660,7 +4660,7 @@
         "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
-        "Gør din e-mail-sidefod til din egen – fremvis dit unikke brand, ikke vores."
+        "Gør din e-mailsidefod til din egen – fremvis dit unikke brand, ikke vores."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan forbinde til delte servere."
@@ -5123,11 +5123,11 @@
     },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto, opgradér til ${ planName }",
-        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti, skal du opgradere til ${ planName }."
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto skal du opgradere til ${ planName }.",
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
       ]
     },
@@ -5521,7 +5521,7 @@
         "Kompatibilitetshensyn gør at post-kvantumkryptering deaktiveres, og en ny krypteringsnøgle vil blive genereret for ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Modtageren af videresendelsen er inviteret og skal acceptere/afvise invitationen eller opdatere."
+        "Modtageren af videresendelsen er inviteret og skal acceptere/afvise invitationen eller opdateringen."
       ],
       "Forwarding is active": [
         "Videresending er aktiv"
@@ -5802,7 +5802,7 @@
         "Giv adgang nu"
       ],
       "Give immediate access?": [
-        "Giv umiddelbar adgang?"
+        "Giv adgang med det samme?"
       ],
       "Immediate": [
         "Øjeblikkelig"
@@ -5923,8 +5923,8 @@
         "Du er endnu ikke blevet udpeget som nødkontakt for nogen."
       ],
       "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Du har nået max-antal på ${ controller.meta.count } betroet kontakt",
-        "Du har nået max-antal på ${ controller.meta.count } betroede kontakter"
+        "Du har nået max-antal på ${ controller.meta.count } betroet kontakt.",
+        "Du har nået max-antal på ${ controller.meta.count } betroede kontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du bliver adviseret, når nogen anmoder om nødadgang."
@@ -6824,7 +6824,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
+        "Certifikatet ${ name } blev ikke fundet eller er allerede tilbagekaldt"
       ],
       "Display name cannot be empty": [
         "Visningsnavnet kan ikke være tomt"
@@ -7013,7 +7013,7 @@
         "Konti med tilpassede domæner kan ikke deltage i et familieabonnement."
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
-        "Når du forlader flyttes du til en ${ BRAND_NAME } Free plan."
+        "Når du afmelder, flyttes du til et ${ BRAND_NAME } gratis abonnement."
       ],
       "customer support": [
         "kundeservice"
@@ -7270,8 +7270,8 @@
         "Tilføj (${ totalAddedCount })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Forbindelse for op til ${ plusVpnConnections } enhed",
-        "Forbindelse for op til ${ plusVpnConnections } enheder"
+        "Forbindelse af op til ${ plusVpnConnections } enhed",
+        "Forbindelse af op til ${ plusVpnConnections } enheder"
       ],
       "Continue": [
         "Fortsæt"
@@ -8415,8 +8415,8 @@
         " og andre sikkerhedsfunktioner."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere",
-        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere"
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere.",
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -8483,7 +8483,7 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine familiemedlemmer bruger to-faktor-godkendelse."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.to-faktor-godkendelse",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
@@ -8818,7 +8818,7 @@
       ],
       "Affected user is on row": [
         "Berørt bruger er på række",
-        "Berørte brugere er på rækker"
+        "Berørte brugere er på rækkerne"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -9378,7 +9378,7 @@
         "Rediger e-mailadresse"
       ],
       "Edit label": [
-        "Rediger etikette"
+        "Rediger etiket"
       ],
       "Edit link": [
         "Rediger link"
@@ -11034,7 +11034,7 @@
         "Prøv ${ productName } helt uden risiko – hvis du af en eller anden grund ombestemmer dig, får du fuld refusion. Helt uden spørgsmål fra os."
       ],
       "Two-factor authentication": [
-        "To-faktor-godkendelse"
+        "Tofaktorgodkendelse"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
@@ -11704,7 +11704,7 @@
         "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "De vil kunne tilføje disse servere til en anden gateway med det samme."
+        "Du vil kunne tilføje disse servere til en anden gateway med det samme."
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du vil miste adgangen til ${ boldPlanTitle } ${ boldEndDate }."
@@ -12082,7 +12082,7 @@
         "Flyt ned"
       ],
       "Move left / collapse": [
-        "Flyt til venstre / kollaps"
+        "Flyt til venstre / fold sammen"
       ],
       "Move right / expand": [
         "Flyt til højre / udvid"
@@ -12485,7 +12485,7 @@
         "Autosvar"
       ],
       "Auto-unsubscribe": [
-        "Auto-afmelding"
+        "Automatisk afmelding"
       ],
       "Autofill": [
         "Autofyld"
@@ -13208,7 +13208,7 @@
         "Tilføj følgende 3 CNAME-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Tilføj følgende MX-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+        "Tilføj følgende to MX-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Tilføj følgende TXT-post. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
@@ -13824,7 +13824,7 @@
         "her"
       ],
       "How does monitoring work?": [
-        "Hvordan fungerer monitoreringen?"
+        "Hvordan fungerer overvågning?"
       ],
       "How to add users": [
         "Sådan tilføjes brugere"
@@ -14226,8 +14226,8 @@
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Du har nået det maksimale på ${ MAX_CALENDAR_MEMBERS } medlem.",
-        "Du har nået det maksimale på ${ MAX_CALENDAR_MEMBERS } medlemmer."
+        "Du har nået maksimum på ${ MAX_CALENDAR_MEMBERS } medlem.",
+        "Du har nået maksimum på ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
     "Member action": {
@@ -15178,7 +15178,7 @@
         "Støtte"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {
@@ -16304,7 +16304,7 @@
         "Påkrævet"
       ],
       "Right to Left": [
-        "Højre mod Venstre"
+        "Højre mod venstre"
       ],
       "Router": [
         "Router"
@@ -16690,7 +16690,7 @@
         "Nuværende abonnent"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
-        "Download og installér de relevante apps og udvidelser for at starte med at bruge ${ PASS_APP_NAME }"
+        "Download og installér de relevante apps og udvidelser for at komme i gang med at bruge ${ PASS_APP_NAME }"
       ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Download ${ PASS_APP_NAME } appen fra Google Play og installér den for at starte med at bruge ${ PASS_APP_NAME2 } på din telefon."
@@ -16780,7 +16780,7 @@
         "pr. måned, faktureres hver måned"
       ],
       "per month, billed every two years": [
-        "pr. måned, faktureres hver andet år"
+        "pr. måned, faktureres hvert andet år"
       ],
       "Preparing your Recovery Kit": [
         "Forbereder dit gendannelseskit"
@@ -17603,7 +17603,7 @@
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
       "The ideal plan for privacy-conscious power users.": [
-        "Den ideelle plan for privatlivsbevidste superbrugere"
+        "Det ideelle abonnement til privatlivsbevidste superbrugere."
       ]
     },
     "Plans": {
@@ -17867,7 +17867,7 @@
     },
     "RecoveryPhrase: Title": {
       "Save your Recovery Kit": [
-        "Gem dit Recovery Kit"
+        "Gem dit gendannelsessæt"
       ],
       "Save your recovery phrase": [
         "Gem din gendannelsessætning"
@@ -17955,7 +17955,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Hvis du afmelder dig vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i dit oprindelige offentlige link."
+        "Hvis du afmelder dig vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i det oprindelige offentlige link."
       ],
       "You will no longer have access to this calendar.": [
         "Du vil ikke længere have adgang til denne kalender."
@@ -18056,7 +18056,7 @@
     "retention_policy_2025_Error": {
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Levetiden skal være længere end ${ MIN_LIFETIME } dag",
-        "Levetiden skal være større end ${ MIN_LIFETIME } dage."
+        "Levetiden skal være større end ${ MIN_LIFETIME } dage"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Livsvarigt må ikke angives for handlingen \"Behold alt\""
@@ -18327,7 +18327,7 @@
         "Hvis adgangskoden til ${ BRAND_NAME } bortfalder og skal nulstilles, får du fuld adgang til din ${ BRAND_NAME }, næste gang du logger ind på denne enhed med din nye adgangskode. Kontoen bliver gendannet."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
-        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil dit gendannelsessæt gøre det muligt for dig at logge på og gendanne data."
+        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, gør dit gendannelsessæt det muligt for dig at logge på og gendanne dine data."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister dine adgangsoplysninger og har brug for at nulstille din konto, **er det afgørende**, at du har både **konto- og datagendannelsesmetode** på plads, ellers kan du måske ikke tilgå nogen af dine e-mails, kontakter, filer eller adgangskoder."
@@ -18528,7 +18528,7 @@
         "Dit gendannelsessæt"
       ],
       "Your Recovery Kit is set": [
-        "Din gendannelsessæt er indstillet"
+        "Dit gendannelsessæt er indstillet"
       ],
       "Your recovery methods": [
         "Dine gendannelsesmetoder"
@@ -19200,11 +19200,11 @@
         "${ DRIVE_APP_NAME } for Business"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
-        "${ FREE_PASS_ALIASES } hide-my-email alias til at bekæmpe spam",
+        "${ FREE_PASS_ALIASES } hide-my-email-alias til at bekæmpe spam",
         "${ FREE_PASS_ALIASES } hide-my-email-aliasser til at bekæmpe spam"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop applikation."
+        "${ MAIL_APP_NAME }-skrivebordsapplikation"
       ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresse",
@@ -19223,11 +19223,11 @@
         "${ maxCalendars } kalendere"
       ],
       "${ maxDomains } email domain": [
-        "${ maxDomains } e-mail-domæne",
-        "${ maxDomains } e-mail-domæner"
+        "${ maxDomains } e-maildomæne",
+        "${ maxDomains } e-maildomæner"
       ],
       "${ PASS_PLUS_VAULTS } vault for your passwords": [
-        "${ PASS_PLUS_VAULTS } boks til din adgangskode",
+        "${ PASS_PLUS_VAULTS } boks til dine adgangskoder",
         "${ PASS_PLUS_VAULTS } bokse til dine adgangskoder"
       ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
@@ -19246,8 +19246,8 @@
         "${ value } lagerplads i alt"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
-        "${ VPN_CONNECTIONS } højhastigheds VPN-forbindelse",
-        "${ VPN_CONNECTIONS } højhastigheds VPN-forbindelser"
+        "${ VPN_CONNECTIONS } højhastigheds-VPN-forbindelse",
+        "${ VPN_CONNECTIONS } højhastigheds-VPN-forbindelser"
       ],
       "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.servers }+ VPN-servere i ${ vpnServersCountData.free.countries } land",
@@ -19551,7 +19551,7 @@
         "brug din egen e-mail."
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "Servere i ${ vpnServersCountData.free.countries } land",
+        "VPN med servere i ${ vpnServersCountData.free.countries } land",
         "VPN med servere i ${ vpnServersCountData.free.countries } lande"
       ],
       "We’ll email you before your trial ends.": [
@@ -22927,7 +22927,7 @@
         "Slet alle logge?"
       ],
       "WireGuard configuration": [
-        "WireGuard konfiguration"
+        "Konfiguration af WireGuard"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
@@ -23579,7 +23579,7 @@
         "Dette vil annuller afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Dette vil tilbagekalde administratorens tilladelse til at håndtere denne brugers konto."
+        "Dette vil tilbagekalde administratortilladelsen til håndtering af denne brugers konto."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
         "For at opnå administratorrettigheder skal de indstille en backupadgangskode næste gang de logger ind på ${ BRAND_NAME }."

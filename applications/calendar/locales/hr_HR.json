@@ -546,6 +546,9 @@
       "Send": [
         "Pošalji"
       ],
+      "Send Feedback": [
+        "Pošalji povratne informacije"
+      ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
       ],
@@ -5014,6 +5017,11 @@
         "${ n } kalendara po korisniku",
         "${ n } kalendara po korisniku"
       ],
+      "${ n } custom email domain": [
+        "${ n } prilagođena domena e-pošte",
+        "${ n } prilagođene domene e-pošte",
+        "${ n } prilagođenih domena e-pošte"
+      ],
       "${ n } email address": [
         "${ n } adresa e-pošte",
         "${ n } adresa e-pošte/pseudonim",
@@ -6060,6 +6068,16 @@
     "Referral": {
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Ako se pretplatite prije ovog datuma,** dobit žete **${ referrerRewardAmount }** u kreditima."
+      ],
+      "Friend joined": [
+        "Prijatelj se pridružio",
+        "Prijatelji su se pridružili",
+        "Prijatelji su se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se pretplatio",
+        "Prijatelji su se pretplatili",
+        "Prijatelji su se pretplatili"
       ],
       "More sharing options": [
         "Više opcija dijeljenja"

@@ -954,6 +954,14 @@
         "${ hiddenResultsCount } fler resultat visas inte"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -5929,6 +5937,9 @@
       ],
       "Resume now": [
         "Återuppta nu"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ],
       "Types of recovery methods": [
         "Typer av återställningsmetoder"

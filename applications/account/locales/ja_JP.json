@@ -2019,6 +2019,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
       ],
@@ -6892,7 +6898,7 @@
         "一部の予定がエクスポートできませんでした。"
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "インターネット接続切断のため、エクスポートに失敗しました。再度お試しください。"
+        "インターネット接続が切断されたため、エクスポートに失敗しました。再度お試しください。"
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "エクスポートできた予定のICSファイルを保存することができます。"
@@ -7253,7 +7259,7 @@
         "15 GB のストレージ"
       ],
       "4 more privacy services": [
-        "プライバシーサービスが4つも増える"
+        "4つのプライバシーサービスをさらに提供"
       ],
       "@pm.me address": [
         "@pm.me メールアドレス"
@@ -7810,6 +7816,9 @@
       ],
       "Select your deal": [
         "取引を選択してください"
+      ],
+      "Select your payment method:": [
+        "お支払方法を選択してください："
       ],
       "Select your pricing plan": [
         "料金プランを選択してください"
@@ -9993,7 +10002,7 @@
         "次回請求日"
       ],
       "No account keys exist": [
-        "アカウント鍵が存在しません"
+        "アカウントキーが存在しません"
       ],
       "No action selected": [
         "アクションが選択されていません"
@@ -12867,7 +12876,7 @@
         "リンクラベル(オプション)"
       ],
       "Lock app after inactivity": [
-        "アプリを自動ロック"
+        "非アクティブ状態が続いた後にアプリをロック"
       ],
       "Logo": [
         "ロゴ"
@@ -14170,7 +14179,7 @@
         "新しい ${ appName } アカウントを作成する"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
-        "${ BRAND_NAME }の二週間の無料期間をお試し下さい。"
+        "${ BRAND_NAME }の 2 週間の無料期間をお試し下さい"
       ],
       "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
         "真のオンラインプライバシーを体験してください。${ BRAND_NAME } を利用して、今後14日間無料でデータを保護してください。"
@@ -14600,6 +14609,9 @@
       "99.95% SLA": [
         "SLA 99.95%"
       ],
+      "Activity logs and policy": [
+        "アクティビティログとポリシー"
+      ],
       "Ad-blocker and malware protection": [
         "広告ブロッカーとマルウェア防止"
       ],
@@ -14839,6 +14851,9 @@
       ],
       "Secure link sharing": [
         "セキュアリンク共有"
+      ],
+      "Secure password management": [
+        "安全なパスワード管理"
       ],
       "See team's availability": [
         "チームの空き状況を確認"
@@ -17474,7 +17489,7 @@
         "ポスト量子アカウントキーを生成中"
       ],
       "Generating post-quantum address keys for each address": [
-        "量子耐性アドレス鍵を各アドレス用に生成中"
+        "ポスト量子アドレスキーを各アドレス用に生成しています"
       ],
       "Opting into post-quantum protection": [
         "ポスト量子保護を有効にしています"
@@ -17693,6 +17708,9 @@
       "How your free trial works:": [
         "無料トライアルについて："
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "私は ${ BRAND_NAME } を使用しており、あなたにも気に入っていただけると思いました。これは、プライバシーを保護する安全なメール、クラウドストレージ、パスワードマネージャー、VPNです。このリンクからサインアップすると、プレミアム機能を14日間無料でご利用いただけます：${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "それまでにキャンセルすると、トライアル終了時に${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }にダウングレードされます。キャンセルしない場合、お客様のフルプランが開始され、**${ referrerRewardAmount }** のクレジットを獲得できます。"
       ],
@@ -17713,6 +17731,9 @@
       ],
       "Refer friends": [
         "友達を招待"
+      ],
+      "Share using ${ name }": [
+        "${ name } を使って共有"
       ],
       "Start earning credits": [
         "クレジット獲得を開始する"
@@ -21357,7 +21378,7 @@
         "パスワードを変更"
       ],
       "Change primary key?": [
-        "プライマリー鍵を変更しますか？"
+        "プライマリーキーを変更しますか？"
       ],
       "Change role": [
         "役割の変更"

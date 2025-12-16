@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Selecciona la data i l'hora"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Destrueix automàticament en 7 dies"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "envia un correu de resposta automàtica"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
       ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
@@ -1499,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7401,8 +7408,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9398,6 +9404,9 @@
       "Extended address": [
         "Adreça completa"
       ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "No s'ha pogut crear la carpeta ${ newFolderName }"
       ],
@@ -9767,6 +9776,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "La categoria s'ha actualitzat, gràcies pels vostres comentaris!"
       ],
@@ -9817,6 +9829,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ],
       "Video conference": [
         "Videoconferència"
@@ -10173,6 +10188,9 @@
       ],
       "Terms": [
         "Termes"
+      ],
+      "Terms and conditions": [
+        "Termes i condicions"
       ],
       "terms of service": [
         "condicions de servei"
@@ -11163,6 +11181,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ BRAND_NAME } ${ config.appName }. Quin és el vostre grau de satisfacció amb l'experiència?"
       ]
     },
     "new_plans: Subtext": {
@@ -12412,6 +12435,9 @@
       ],
       "Name or email address": [
         "Nom o adreça de correu electrònic"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -15537,6 +15563,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "Us hem protegit contra ${ trackersCount } rastrejador",
         "Us hem protegit contra ${ trackersCount } rastrejadors"
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ],
       "Welcome": [
         "Us donem la benvinguda"

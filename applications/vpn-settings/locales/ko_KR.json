@@ -1392,6 +1392,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -5124,6 +5130,9 @@
       "Select your deal": [
         "특가를 골라보세요"
       ],
+      "Select your payment method:": [
+        "결제 수단을 선택하세요:"
+      ],
       "Select your pricing plan": [
         "플랜을 선택하세요"
       ],
@@ -5192,6 +5201,9 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
       ],
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
@@ -9993,6 +10005,9 @@
       ],
       "Secure link sharing": [
         "안전한 링크 공유"
+      ],
+      "Secure password management": [
+        "안전한 비밀번호 관리"
       ],
       "See team's availability": [
         "팀의 가용성 확인"

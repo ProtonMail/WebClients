@@ -390,6 +390,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
       ],
@@ -2067,6 +2073,11 @@
       ],
       "Sign in required": [
         "Login richiesto"
+      ]
+    },
+    "collider_2025:Prompt": {
+      "What are the origins of Thanksgiving?": [
+        "Quali sono le origini del Giorno del Ringraziamento?"
       ]
     },
     "collider_2025:Title": {

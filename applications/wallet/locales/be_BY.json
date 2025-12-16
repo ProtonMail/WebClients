@@ -515,6 +515,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
       ],
@@ -2958,7 +2964,7 @@
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -3003,7 +3009,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
