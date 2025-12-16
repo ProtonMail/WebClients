@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import { type GroupKeyInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -35,6 +35,7 @@ import { useWasmApp } from '../../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
+import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
@@ -168,6 +169,7 @@ export const ProtonMeetContainer = ({
 
     const loadingStartTimeRef = useRef(0);
     const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
+    const mlsGroupStateRef = useRef(mlsGroupState);
 
     const wasmApp = useWasmApp();
 
@@ -182,6 +184,14 @@ export const ProtonMeetContainer = ({
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
+
+    useConnectionHealthCheck({
+        wasmApp,
+        mlsGroupStateRef,
+        startHealthCheck,
+        setConnectionLost,
+        reportMeetError,
+    });
 
     const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
 
@@ -221,10 +231,12 @@ export const ProtonMeetContainer = ({
             const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
             currentKeyRef.current = newGroupKeyInfo.key;
             const displayCode = await wasmApp?.getGroupDisplayCode();
-            setMlsGroupState({
+            const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
                 epoch: newGroupKeyInfo.epoch,
-            });
+            };
+            setMlsGroupState(nextMlsGroupState);
+            mlsGroupStateRef.current = nextMlsGroupState;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
             reportMeetError('Error while calling getGroupKeyInfo', err);
@@ -242,10 +254,12 @@ export const ProtonMeetContainer = ({
             }
 
             const displayCode = await wasmApp?.getGroupDisplayCode();
-            setMlsGroupState({
+            const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
                 epoch: epoch,
-            });
+            };
+            setMlsGroupState(nextMlsGroupState);
+            mlsGroupStateRef.current = nextMlsGroupState;
 
             const errorMessage = hasEpochError(epoch);
 
@@ -309,7 +323,12 @@ export const ProtonMeetContainer = ({
             currentKeyRef.current = groupKeyData.key;
 
             const displayCode = await wasmApp?.getGroupDisplayCode();
-            setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: groupKeyData.epoch });
+            const nextMlsGroupState = {
+                displayCode: displayCode?.full_code || null,
+                epoch: groupKeyData.epoch,
+            };
+            setMlsGroupState(nextMlsGroupState);
+            mlsGroupStateRef.current = nextMlsGroupState;
 
             startHealthCheck.current = true;
 
@@ -335,49 +354,6 @@ export const ProtonMeetContainer = ({
     const updateAccessToken = (accessToken: string) => {
         accessTokenRef.current = accessToken;
     };
-
-    useEffect(() => {
-        let timeout: NodeJS.Timeout | null = null;
-
-        const checkConnection = async () => {
-            let isWebsocketHasReconnected = false;
-            if (wasmApp?.getWsState && startHealthCheck.current) {
-                try {
-                    isWebsocketHasReconnected = await wasmApp.isWebsocketHasReconnected();
-                    const connectionStatus = await wasmApp.getWsState();
-
-                    if (connectionStatus !== ConnectionStateInfo.Reconnecting) {
-                        try {
-                            const isMlsUpToDate = await wasmApp.isMlsUpToDate();
-
-                            if (!isMlsUpToDate) {
-                                setConnectionLost(true);
-                            }
-                        } catch (error) {
-                            reportMeetError('Failed to check MLS status', error);
-                            setConnectionLost(true);
-                        }
-                    } else {
-                        setConnectionLost(false);
-                    }
-                } catch (error) {
-                    reportMeetError('Failed to get connection status', error);
-                }
-            }
-
-            // If the websocket has reconnected, check the connection every 5 seconds.
-            // Otherwise, check the connection every 30 seconds to avoid overwhelming the server.
-            timeout = setTimeout(checkConnection, isWebsocketHasReconnected ? 5_000 : 30_000);
-        };
-
-        void checkConnection();
-
-        return () => {
-            if (timeout) {
-                clearTimeout(timeout);
-            }
-        };
-    }, []);
 
     // Log connection lost when connectionLost state changes to true
     useEffect(() => {
