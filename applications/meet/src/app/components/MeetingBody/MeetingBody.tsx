@@ -13,6 +13,7 @@ import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
+import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
@@ -32,7 +33,6 @@ import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
 import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
-import { ScreenShareHeading } from '../ScreenShareHeading/ScreenShareHeading';
 import { Settings } from '../Settings/Settings';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
@@ -41,7 +41,6 @@ import './MeetingBody.scss';
 interface MeetingBodyProps {
     isScreenShare: boolean;
     isLocalScreenShare: boolean;
-    stopScreenShare: () => void;
     screenShareTrack: TrackReference;
     screenShareParticipant: Participant;
 }
@@ -49,7 +48,6 @@ interface MeetingBodyProps {
 export const MeetingBody = ({
     isScreenShare,
     isLocalScreenShare,
-    stopScreenShare,
     screenShareTrack,
     screenShareParticipant,
 }: MeetingBodyProps) => {
@@ -89,6 +87,12 @@ export const MeetingBody = ({
     const defaultScreenShareFlexGrow = isSideBarOpen ? 6 : 8;
     // Using 0 instead of removing the video element to avoid reinitializing the screenshare video
     const smallScreenScreenShareFlexGrow = isSideBarOpen ? 0 : 8;
+
+    const presenterName = participantNameMap[screenShareParticipant?.identity ?? null] ?? '';
+
+    const screenShareLabel = isLocalScreenShare
+        ? c('Info').t`${presenterName} (you) is presenting`
+        : c('Info').t`${presenterName} is presenting`;
 
     return (
         <div
@@ -133,13 +137,6 @@ export const MeetingBody = ({
                     </div>
                 </div>
             )}
-            {isScreenShare && (
-                <ScreenShareHeading
-                    name={participantNameMap[screenShareParticipant?.identity ?? ''] ?? ''}
-                    isLocalUser={isLocalScreenShare}
-                    onStopScreenShare={stopScreenShare}
-                />
-            )}
             <div
                 className={clsx(
                     'flex flex-nowrap w-full flex-1 overflow-hidden',
@@ -154,6 +151,7 @@ export const MeetingBody = ({
                             flexBasis: 0,
                         }}
                     >
+                        <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
                         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                         <video
                             className="screen-share-video w-full h-full block object-contain"
@@ -162,6 +160,17 @@ export const MeetingBody = ({
                             playsInline
                             muted={isLocalScreenShare}
                         />
+                        <div
+                            className="absolute bottom-custom left-custom"
+                            style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
+                        >
+                            <SecurityShield
+                                title={c('Info').t`End-to-end encryption is active for screen share`}
+                                size={3}
+                                tooltipPlacement="top-start"
+                            />
+                            {screenShareLabel}
+                        </div>
                     </div>
                 )}
                 {isScreenShare && isLargerThanMd ? (
