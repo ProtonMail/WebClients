@@ -3,6 +3,7 @@ import { traceError } from '../helpers/sentry';
 export class ApiRateLimiter {
     private enabled: boolean;
     private maxRequests: number;
+    private tracingEnabled: boolean;
     private urlTimestamps: Map<string, number[]>;
     private windowMs: number;
 
@@ -11,9 +12,11 @@ export class ApiRateLimiter {
         enabled = false,
         maxRequests = 10,
         windowMs = 1000,
-    }: { enabled?: boolean; maxRequests?: number; windowMs?: number } = {}) {
+        tracingEnabled = true,
+    }: { enabled?: boolean; maxRequests?: number; windowMs?: number; tracingEnabled?: boolean } = {}) {
         this.enabled = enabled;
         this.maxRequests = maxRequests;
+        this.tracingEnabled = tracingEnabled;
         this.urlTimestamps = new Map();
         this.windowMs = windowMs;
     }
@@ -72,7 +75,9 @@ export class ApiRateLimiter {
             const error = new Error(
                 `API rate limit exceeded: ${this.getCallCount(url)} requests to ${url} in the last ${this.windowMs}ms (max: ${this.maxRequests})`
             );
-            traceError(error);
+            if (this.tracingEnabled) {
+                traceError(error);
+            }
             throw error;
         }
 
