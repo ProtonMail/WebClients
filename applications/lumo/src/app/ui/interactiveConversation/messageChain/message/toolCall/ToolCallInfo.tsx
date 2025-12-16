@@ -1,8 +1,15 @@
 import React, { useMemo } from 'react';
 
+import type { SearchItem } from '../../../../../lib/toolCall/types';
+import {
+    isToolResultError,
+    isWebSearchToolCallData,
+    isWebSearchToolResultData,
+    tryParseToolCall,
+    tryParseToolResult,
+} from '../../../../../lib/toolCall/types';
 import SourceLink from '../../../../components/SourceLink/SourceLink';
 import { decodeHtml } from './helpers';
-import { useToolCallInfo } from './useToolCallInfo';
 
 export type ToolCallInfoProps = {
     toolCall: string | undefined;
@@ -11,7 +18,18 @@ export type ToolCallInfoProps = {
 };
 
 export const ToolCallInfo = ({ toolCall, toolResult, handleLinkClick }: ToolCallInfoProps) => {
-    const { query, hasError, results, errorMessage } = useToolCallInfo(toolCall, toolResult);
+    // Parse tool call and tool result directly
+    const parsedToolCall = toolCall ? tryParseToolCall(toolCall) : null;
+    const parsedToolResult = toolResult ? tryParseToolResult(toolResult) : null;
+
+    const query = parsedToolCall && isWebSearchToolCallData(parsedToolCall) ? parsedToolCall.arguments.query : null;
+    const hasError = parsedToolResult ? isToolResultError(parsedToolResult) : false;
+    const results: SearchItem[] | null =
+        parsedToolResult && isWebSearchToolResultData(parsedToolResult) ? parsedToolResult.results : null;
+    const errorMessage =
+        hasError && parsedToolCall && isWebSearchToolCallData(parsedToolCall)
+            ? `Error while searching for: ${parsedToolCall.arguments.query}`
+            : undefined;
 
     const cleanedResults = useMemo(() => {
         return (

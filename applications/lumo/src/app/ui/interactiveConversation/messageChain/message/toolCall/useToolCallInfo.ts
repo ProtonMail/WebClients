@@ -1,5 +1,7 @@
 import type { ToolCallData, ToolResultData } from '../../../../../lib/toolCall/types';
 import { isToolResultError, tryParseToolCall, tryParseToolResult } from '../../../../../lib/toolCall/types';
+import { getMessageToolCalls, getMessageToolResults } from '../../../../../messageHelpers';
+import type { Message } from '../../../../../types';
 
 export interface ToolCallInfoResult {
     toolCall: ToolCallData | null;
@@ -8,25 +10,34 @@ export interface ToolCallInfoResult {
     errorMessage?: string;
 }
 
-export const useToolCallInfo = (toolCall: string | undefined, toolResult: string | undefined): ToolCallInfoResult => {
-    console.log('useToolCallInfo: toolCall = ', toolCall);
-    console.log('useToolCallInfo: toolResult = ', toolResult);
+// FIXME: now fully incorrect with the blocks structure (message v2), fix this function and the call sites entirely
+export const useToolCallInfo = (message: Message): ToolCallInfoResult => {
+    // Get tool calls and results using helper functions
+    const toolCallBlocks = getMessageToolCalls(message);
+    const toolResultBlocks = getMessageToolResults(message);
 
-    if (!toolCall) {
+    // For now, use the first tool call (backward compat)
+    const toolCallContent = toolCallBlocks.length > 0 ? toolCallBlocks[0].content : undefined;
+    const toolResultContent = toolResultBlocks.length > 0 ? toolResultBlocks[0].content : undefined;
+
+    console.log('useToolCallInfo: toolCall = ', toolCallContent);
+    console.log('useToolCallInfo: toolResult = ', toolResultContent);
+
+    if (!toolCallContent) {
         return { toolCall: null, hasError: false, toolResult: null };
     }
 
-    const parsedToolCall = tryParseToolCall(toolCall);
+    const parsedToolCall = tryParseToolCall(toolCallContent);
     if (!parsedToolCall) {
         return { toolCall: null, hasError: false, toolResult: null };
     }
 
     // If we have a toolCall but no toolResult yet, show the toolCall
-    if (!toolResult) {
+    if (!toolResultContent) {
         return { toolCall: parsedToolCall, hasError: false, toolResult: null };
     }
 
-    const parsedToolResult = tryParseToolResult(toolResult);
+    const parsedToolResult = tryParseToolResult(toolResultContent);
     if (!parsedToolResult) {
         return { toolCall: parsedToolCall, hasError: false, toolResult: null };
     }
