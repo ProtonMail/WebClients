@@ -155,17 +155,38 @@
       "Copy and close": [
         "Copia e chiudi"
       ],
+      "Copy card number": [
+        "Copia il numero della carta"
+      ],
+      "Copy email": [
+        "Copia l'indirizzo email"
+      ],
+      "Copy expiration date": [
+        "Copia la data di scadenza"
+      ],
       "Copy forwarding address": [
         "Copia l'indirizzo d'inoltro"
       ],
       "Copy link": [
         "Copia link"
       ],
+      "Copy name on card": [
+        "Copia nome sulla carta"
+      ],
+      "Copy note content": [
+        "Copia il contenuto della nota"
+      ],
       "Copy password": [
         "Copia la password"
       ],
+      "Copy security code": [
+        "Copia il codice di sicurezza"
+      ],
       "Copy to clipboard": [
         "Copia negli appunti"
+      ],
+      "Copy username": [
+        "Copia il nome utente"
       ],
       "Create": [
         "Crea"
@@ -1841,8 +1862,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
