@@ -202,7 +202,6 @@ export const MeetContainer = ({
                         <MeetingBody
                             isScreenShare={isScreenShare}
                             isLocalScreenShare={isLocalScreenShare}
-                            stopScreenShare={stopScreenShare}
                             screenShareTrack={screenShareTrack}
                             screenShareParticipant={screenShareParticipant}
                         />
