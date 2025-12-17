@@ -90,8 +90,8 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
     return bestCandidate;
 };
 
-/** Checks if the current frame is visible in the parent window by querying the service
- * worker. Uses async locking to prevent concurrent requests and brief memoization (1s)
+/** Checks if the current frame is visible in the parent window. Uses
+ * async locking to prevent concurrent requests and brief memoization (500ms)
  * to dedupe rapid successive calls (eg: during autofill sequence). */
 export const getFrameParentVisibility = maxAgeMemoize(
     asyncLock(async (): Promise<boolean> => {
@@ -104,19 +104,20 @@ export const getFrameParentVisibility = maxAgeMemoize(
             return false;
         }
     }),
-    { maxAge: 1_000 }
+    { maxAge: 500 }
 );
 
-/** Used during frame hierarchy traversal when walking up from child to parent frames.
- * Brief memoization (1s) dedupes calls when multiple frames check the same iframe
- * during visibility detection sequences that work in conjunction with getFrameParentVisibility. */
+/** Used during frame hierarchy traversal when walking up from child to
+ * parent frames. Brief memoization (500ms) dedupes calls when multiple
+ * frames check the same iframe during visibility detection sequences
+ * that work in conjunction with getFrameParentVisibility. */
 export const getFrameVisibility = maxAgeMemoize(
     (frame: HTMLIFrameElement) => {
         const rect = frame.getBoundingClientRect();
         if (isNegligableFrameRect(rect.width, rect.height)) return false;
         return isVisible(frame, { opacity: false, skipCache: true });
     },
-    { maxAge: 1_000, cache: createWeakRefCache(identity) }
+    { maxAge: 500, cache: createWeakRefCache(identity) }
 );
 
 /** Quick-checks if the current frame has a null origin and
@@ -139,4 +140,22 @@ export const isSandboxedFrame = (frame: HTMLIFrameElement): boolean => {
     } catch {
         return false;
     }
+};
+
+/** Multi-layer visibility validation to avoid unnecessary work in hidden contexts.
+ * Main frames only check document visibility; sub-frames validate size and parent visibility. */
+export const assertFrameVisible = async (mainFrame: boolean) => {
+    if (document.visibilityState !== 'visible') return false;
+    if (mainFrame) return true;
+
+    const { childElementCount, clientHeight, clientWidth } = document.documentElement;
+    if (childElementCount === 0) return false; /** Empty frame */
+    if (isNegligableFrameRect(clientWidth, clientHeight)) return false;
+    if (document.querySelector('input, select, iframe') === null) return false;
+
+    /** Do not rely on frame parent visibility cache during
+     * frame visibility assertions. This could lead to false
+     * positives when the frame visibility change triggers
+     * are within the cache's max-age time window. */
+    return getFrameParentVisibility.flush();
 };
