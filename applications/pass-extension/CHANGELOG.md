@@ -1,3 +1,8 @@
+### Version 1.33.2
+
+- Support right click on items (behind feature flag)
+- Fix reported passkeys issues
+
 ### Version 1.33.1
 
 - Fix clipboard action discarded when accepting permissions for the first time
