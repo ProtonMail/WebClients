@@ -161,6 +161,7 @@ describe('FileUploadExecutor', () => {
                 expect.objectContaining({
                     type: 'file:started',
                     uploadId: 'task123',
+                    isForPhotos: false,
                 })
             );
 
@@ -169,6 +170,7 @@ describe('FileUploadExecutor', () => {
                     type: 'file:complete',
                     uploadId: 'task123',
                     nodeUid: 'uploaded-node-123',
+                    isForPhotos: false,
                 })
             );
         });
@@ -201,6 +203,7 @@ describe('FileUploadExecutor', () => {
                 type: 'file:progress',
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             });
         });
 
@@ -363,6 +366,7 @@ describe('FileUploadExecutor', () => {
                 type: 'file:conflict',
                 uploadId: 'task123',
                 error: conflictError,
+                isForPhotos: false,
             });
         });
 
@@ -378,6 +382,7 @@ describe('FileUploadExecutor', () => {
                 type: 'file:error',
                 uploadId: 'task123',
                 error: uploadError,
+                isForPhotos: false,
             });
         });
 
@@ -388,14 +393,14 @@ describe('FileUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const callArgs = mockEventCallback.mock.calls[0][0] as {
-                type: 'file:error';
-                uploadId: string;
-                error: Error;
-            };
-            expect(callArgs.type).toBe('file:error');
-            expect(callArgs.uploadId).toBe('task123');
-            expect(callArgs.error).toBeInstanceOf(Error);
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    type: 'file:error',
+                    uploadId: 'task123',
+                    error: expect.any(Error),
+                    isForPhotos: false,
+                })
+            );
         });
 
         it('should use file modification time for metadata', async () => {

@@ -33,7 +33,6 @@ describe('PhotosUploadExecutor', () => {
     let mockUploadFromFile: jest.Mock;
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
-    let mockIsDuplicatePhoto: jest.Mock;
 
     // TODO: Remove that once jest/node include newly added toHex
     beforeAll(() => {
@@ -53,7 +52,6 @@ describe('PhotosUploadExecutor', () => {
         mockUploadFromFile = jest.fn();
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
-        mockIsDuplicatePhoto = jest.fn();
 
         jest.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({
@@ -80,7 +78,7 @@ describe('PhotosUploadExecutor', () => {
 
         jest.mocked(CryptoProxy.computeHashStream).mockResolvedValue(new Uint8Array([1, 2, 3, 4]));
 
-        mockIsDuplicatePhoto.mockResolvedValue(false);
+        const mockFindPhotoDuplicates = jest.fn().mockResolvedValue([]);
 
         mockUploadFromFile.mockResolvedValue({
             completion: mockCompletion,
@@ -96,7 +94,7 @@ describe('PhotosUploadExecutor', () => {
 
         jest.mocked(getDriveForPhotos).mockReturnValue({
             getFileUploader: mockGetFileUploader,
-            isDuplicatePhoto: mockIsDuplicatePhoto,
+            findPhotoDuplicates: mockFindPhotoDuplicates,
         } as any);
 
         executor = new PhotosUploadExecutor();
@@ -142,10 +140,11 @@ describe('PhotosUploadExecutor', () => {
     describe('execute', () => {
         it('should check for duplicate photo before upload', async () => {
             const task = createFileTask();
+            const driveForPhotos = jest.mocked(getDriveForPhotos)();
 
             await executor.execute(task);
 
-            expect(mockIsDuplicatePhoto).toHaveBeenCalledWith(
+            expect(driveForPhotos.findPhotoDuplicates).toHaveBeenCalledWith(
                 'test.jpg',
                 expect.any(Function),
                 expect.any(AbortSignal)
@@ -153,7 +152,8 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:exist event when photo is duplicate', async () => {
-            mockIsDuplicatePhoto.mockResolvedValue(true);
+            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue(['duplicate-uid-123']);
             const task = createFileTask();
 
             await executor.execute(task);
@@ -161,6 +161,27 @@ describe('PhotosUploadExecutor', () => {
             expect(mockEventCallback).toHaveBeenCalledWith({
                 type: 'photo:exist',
                 uploadId: 'task123',
+                duplicateUids: ['duplicate-uid-123'],
+            });
+
+            expect(mockGetFileUploader).not.toHaveBeenCalled();
+        });
+
+        it('should emit photo:exist event with multiple duplicates', async () => {
+            const driveForPhotos = jest.mocked(getDriveForPhotos)();
+            jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue([
+                'duplicate-uid-1',
+                'duplicate-uid-2',
+                'duplicate-uid-3',
+            ]);
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).toHaveBeenCalledWith({
+                type: 'photo:exist',
+                uploadId: 'task123',
+                duplicateUids: ['duplicate-uid-1', 'duplicate-uid-2', 'duplicate-uid-3'],
             });
 
             expect(mockGetFileUploader).not.toHaveBeenCalled();
@@ -175,6 +196,7 @@ describe('PhotosUploadExecutor', () => {
                 expect.objectContaining({
                     type: 'file:started',
                     uploadId: 'task123',
+                    isForPhotos: true,
                 })
             );
 
@@ -183,6 +205,7 @@ describe('PhotosUploadExecutor', () => {
                     type: 'file:complete',
                     uploadId: 'task123',
                     nodeUid: 'uploaded-node-123',
+                    isForPhotos: true,
                 })
             );
         });
@@ -215,6 +238,7 @@ describe('PhotosUploadExecutor', () => {
                 type: 'file:progress',
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: true,
             });
         });
 
@@ -442,6 +466,7 @@ describe('PhotosUploadExecutor', () => {
                 type: 'file:conflict',
                 uploadId: 'task123',
                 error: conflictError,
+                isForPhotos: true,
             });
         });
 
@@ -457,6 +482,7 @@ describe('PhotosUploadExecutor', () => {
                 type: 'file:error',
                 uploadId: 'task123',
                 error: uploadError,
+                isForPhotos: true,
             });
         });
 
@@ -467,14 +493,14 @@ describe('PhotosUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const callArgs = mockEventCallback.mock.calls[0][0] as {
-                type: 'file:error';
-                uploadId: string;
-                error: Error;
-            };
-            expect(callArgs.type).toBe('file:error');
-            expect(callArgs.uploadId).toBe('task123');
-            expect(callArgs.error).toBeInstanceOf(Error);
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    type: 'file:error',
+                    uploadId: 'task123',
+                    error: expect.any(Error),
+                    isForPhotos: true,
+                })
+            );
         });
 
         it('should use file modification time for metadata', async () => {
@@ -511,10 +537,11 @@ describe('PhotosUploadExecutor', () => {
 
         it('should compute SHA1 hash for duplicate detection', async () => {
             const task = createFileTask();
+            const driveForPhotos = jest.mocked(getDriveForPhotos)();
 
             await executor.execute(task);
 
-            const hashFunction = mockIsDuplicatePhoto.mock.calls[0][1];
+            const hashFunction = jest.mocked(driveForPhotos.findPhotoDuplicates).mock.calls[0][1];
             await hashFunction();
 
             expect(CryptoProxy.computeHashStream).toHaveBeenCalledWith({
