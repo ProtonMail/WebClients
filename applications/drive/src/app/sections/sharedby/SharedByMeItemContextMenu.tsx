@@ -1,10 +1,10 @@
 import { useConfirmActionModal } from '@proton/components';
 
 import type { ContextMenuProps } from '../../components/FileBrowser';
-import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';

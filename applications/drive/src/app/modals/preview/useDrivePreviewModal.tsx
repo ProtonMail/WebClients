@@ -6,7 +6,7 @@ import { Preview, type PreviewProps } from './Preview';
 
 type PreviewPropsWithoutOnClose = Omit<PreviewProps, 'onNodeChange' | 'onClose'>;
 
-export function usePreviewModal() {
+export function useDrivePreviewModal() {
     const [open, setOpen] = useState(false);
     const [props, setProps] = useState<PreviewPropsWithoutOnClose | undefined>(undefined);
 

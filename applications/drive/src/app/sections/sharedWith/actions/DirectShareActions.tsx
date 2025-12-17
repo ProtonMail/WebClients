@@ -16,6 +16,7 @@ import {
     OpenInDocsButton as ToolbarOpenInDocsButton,
     PreviewButton as ToolbarPreviewButton,
 } from '../../../components/sections/ToolbarButtons';
+import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { usePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
@@ -27,7 +28,7 @@ interface BaseDirectShareActionsProps {
     selectedItems: DirectShareItem[];
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
-    showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
+    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showCopyModal: (items: DirectShareItem[]) => void;
 }

@@ -10,7 +10,11 @@ export function isNodeFile(node: MaybeNode): boolean {
     return type === NodeType.File;
 }
 
-export function getNodeMimeType(node: MaybeNode): string | undefined {
+export function getNodeMimeType(node?: MaybeNode): string | undefined {
+    if (!node) {
+        return undefined;
+    }
+
     return node.ok ? node.value.mediaType : node.error.mediaType;
 }
 

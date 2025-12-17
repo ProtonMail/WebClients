@@ -1,12 +1,12 @@
 import { useConfirmActionModal } from '@proton/components';
 
 import type { ContextMenuProps } from '../../components/FileBrowser';
-import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
-import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { usePreviewModal } from '../../modals/preview';
+import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
 export function SharedWithMeContextMenu({

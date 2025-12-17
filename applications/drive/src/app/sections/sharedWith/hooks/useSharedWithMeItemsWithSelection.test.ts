@@ -98,8 +98,8 @@ jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
     getKeyUid: (item: any) => item.nodeUid || item.bookmark?.uid || 'volume-123~node-456',
 }));
 
-jest.mock('../../../modals/preview/usePreviewModal', () => ({
-    usePreviewModal: () => [null, jest.fn()],
+jest.mock('../../../modals/preview/useDrivePreviewModal', () => ({
+    useDrivePreviewModal: () => [null, jest.fn()],
 }));
 
 describe('useSharedWithMeItemsWithSelection', () => {

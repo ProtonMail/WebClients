@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { ThumbnailType, getDrive, splitNodeRevisionUid } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
+import { ThumbnailType, splitNodeRevisionUid } from '@proton/drive';
 
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
@@ -41,10 +42,10 @@ export function useThumbnailLoader() {
 }
 
 export const getLargeThumbnail = async (
+    drive: Pick<ProtonDriveClient, 'iterateThumbnails'>,
     nodeUid: string
 ): Promise<{ url: string; data: Uint8Array<ArrayBuffer>[] } | undefined> => {
     // TODO: Add support of HD thumbnails to thumbnail provider.
-    const drive = getDrive();
     for await (const thumbnailResult of drive.iterateThumbnails([nodeUid], ThumbnailType.Type2)) {
         if (thumbnailResult.ok) {
             const data = [thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>];
