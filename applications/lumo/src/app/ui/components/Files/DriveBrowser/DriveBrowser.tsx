@@ -1,20 +1,18 @@
 // TODO: Remove disable and fix the file
-/* eslint-disable no-nested-ternary, react/display-name */
 import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { useUser } from '@proton/account/user/hooks';
-
 import { MAX_FILE_SIZE } from '../../../../constants';
+import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
-import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import { useDriveIndexing } from '../../../../providers/DriveIndexingProvider';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
 import { SearchService } from '../../../../services/search/searchService';
@@ -383,7 +381,8 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                 console.error(`Failed to auto-process uploaded file ${file.name}:`, processingError);
                                 // Show error notification for processing failure
                                 createNotification({
-                                    text: c('collider_2025: Error').t`File uploaded but failed to add to knowledge base`,
+                                    text: c('collider_2025: Error')
+                                        .t`File uploaded but failed to add to knowledge base`,
                                     type: 'error',
                                 });
                             }
@@ -393,9 +392,9 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                 console.log(`[DriveBrowser] Indexing uploaded file immediately: ${file.name}`);
                                 setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
                                 setIndexingFile(file.name); // Show indexing banner
-                                
+
                                 // Yield to event loop to allow React to render the banner
-                                await new Promise(resolve => setTimeout(resolve, 0));
+                                await new Promise((resolve) => setTimeout(resolve, 0));
 
                                 // Process the file we already have in memory
                                 const result = await fileProcessingService.processFile(file);
@@ -410,7 +409,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                         id: nodeUid,
                                         name: file.name,
                                         content: result.result.convertedContent,
-                                        mimeType: file.type || getMimeTypeFromExtension(file.name) || 'application/octet-stream',
+                                        mimeType:
+                                            file.type ||
+                                            getMimeTypeFromExtension(file.name) ||
+                                            'application/octet-stream',
                                         size: file.size,
                                         modifiedTime: Date.now(),
                                         folderId: currentFolder.nodeUid,
@@ -423,13 +425,19 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                                         const indexResult = await searchService.indexDocuments([document]);
 
                                         if (indexResult.success) {
-                                            console.log(`[DriveBrowser] Successfully indexed uploaded file: ${file.name}`);
+                                            console.log(
+                                                `[DriveBrowser] Successfully indexed uploaded file: ${file.name}`
+                                            );
                                             createNotification({
-                                                text: c('collider_2025: Success').t`File uploaded and indexed for search`,
+                                                text: c('collider_2025: Success')
+                                                    .t`File uploaded and indexed for search`,
                                                 type: 'success',
                                             });
                                         } else {
-                                            console.error('[DriveBrowser] Failed to index uploaded file:', indexResult.error);
+                                            console.error(
+                                                '[DriveBrowser] Failed to index uploaded file:',
+                                                indexResult.error
+                                            );
                                             createNotification({
                                                 text: c('collider_2025: Success').t`File uploaded to Drive folder`,
                                                 type: 'success',
@@ -474,7 +482,19 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     console.error('Failed to refresh after upload:', error);
                 }
             },
-            [currentFolder, uploadFile, onError, handleRefresh, onFileSelect, createNotification, isLinkedFolder, user?.ID, indexedFolders, initialFolderId, setIndexingFile]
+            [
+                currentFolder,
+                uploadFile,
+                onError,
+                handleRefresh,
+                onFileSelect,
+                createNotification,
+                isLinkedFolder,
+                user?.ID,
+                indexedFolders,
+                initialFolderId,
+                setIndexingFile,
+            ]
         );
 
         const handleFileInputChange = useCallback(
@@ -514,7 +534,11 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             const isNotRootFolder = currentFolder?.nodeUid !== rootFolderId;
 
             return (
-                hasCurrentFolder && isInFolderSelectionMode && hasSelectionCallback && hasRootFolderId && isNotRootFolder
+                hasCurrentFolder &&
+                isInFolderSelectionMode &&
+                hasSelectionCallback &&
+                hasRootFolderId &&
+                isNotRootFolder
             );
         })();
 
@@ -535,10 +559,21 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
 
         // Check for errors from both SDK and local initialization
         const displayError = error || localError;
-        console.log('DriveBrowser render - SDK error:', error, 'localError:', localError, 'displayError:', displayError);
+        console.log(
+            'DriveBrowser render - SDK error:',
+            error,
+            'localError:',
+            localError,
+            'displayError:',
+            displayError
+        );
 
         return (
-            <div className={'flex flex-column flex-nowrap h-full relative' + (isModal ? '' : ' p-4')}>
+            <div
+                className={
+                    'drive-browser-container flex flex-column flex-nowrap h-full relative' + (isModal ? '' : ' p-4')
+                }
+            >
                 <input
                     ref={fileInputRef}
                     type="file"
