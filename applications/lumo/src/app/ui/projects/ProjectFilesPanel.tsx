@@ -1,25 +1,33 @@
-import { useRef, useState, useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useNotifications, InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { useModalStateObject } from '@proton/components';
+import {
+    Icon,
+    InputFieldTwo,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    useModalStateObject,
+    useNotifications,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { Asset } from '../../types';
+import { useDriveSDK } from '../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAssetsBySpaceId, selectSpaceById } from '../../redux/selectors';
-import { handleSpaceAssetFileAsync } from '../../services/files';
 import { locallyDeleteAssetFromLocalRequest } from '../../redux/slices/core/assets';
-import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFileItem';
-import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
+import { handleSpaceAssetFileAsync } from '../../services/files';
+import type { Asset } from '../../types';
 import { DriveBrowser, type DriveBrowserHandle } from '../components/Files/DriveBrowser/DriveBrowser';
-import { UploadProgressOverlay, type UploadProgress } from '../components/Files/DriveBrowser/UploadProgressOverlay';
+import { type UploadProgress, UploadProgressOverlay } from '../components/Files/DriveBrowser/UploadProgressOverlay';
+import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
+import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFileItem';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
-import { useDriveSDK } from '../../hooks/useDriveSDK';
 
 import './ProjectFilesPanel.scss';
 
@@ -104,12 +112,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         for (const file of selectedFiles) {
             try {
                 console.log('Processing file as space asset:', file.name, projectId);
-                
+
                 // Show processing indicator
                 setUploadProgress({ fileName: file.name, progress: 0, isProcessing: true });
 
                 const result = await dispatch(handleSpaceAssetFileAsync(file, projectId));
-                
+
                 // Clear progress indicator
                 setUploadProgress(null);
 
@@ -143,7 +151,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 });
             }
         }
-        
+
         // Clear progress indicator after all files are processed
         setUploadProgress(null);
 
@@ -205,235 +213,242 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
             <div className="project-files-panel-content">
                 {/* Instructions Section */}
                 <div className="project-files-section">
-                <div className="project-files-section-header">
-                    <h3 className="project-files-section-title">{c('collider_2025:Title').t`Instructions`}</h3>
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        onClick={onEditInstructions}
-                        title={c('collider_2025:Action').t`Edit instructions`}
-                    >
-                        <Icon name="pen" size={4} />
-                    </Button>
-                </div>
-                <div className="project-files-section-content">
-                    {instructions ? (
-                        <p className="project-instructions-text">{instructions}</p>
-                    ) : (
-                        <button className="project-instructions-add" onClick={onEditInstructions}>
-                            <Icon name="plus" size={4} />
-                            <span>{c('collider_2025:Button').t`Add instructions to tailor ${LUMO_SHORT_APP_NAME}'s responses`}</span>
-                        </button>
-                    )}
-                </div>
-            </div>
-
-            {/* Files Section */}
-            <div className="project-files-section">
-                <div className="project-files-section-header">
-                    <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
-                    <div className="flex items-center gap-1">
-                        {!linkedDriveFolder && files.length !== 0 && (
-                            <Button
-                                shape="ghost"
-                                size="small"
-                                onClick={handleAddFiles}
-                                className="project-files-add-header-button"
-                                title={c('collider_2025:Action').t`Add files`}
-                            >
-                                <Icon name="arrow-up-line" size={4} />
-                            </Button>
-                        )}
-                        {linkedDriveFolder && (
-                            <Button
-                                icon
-                                shape="ghost"
-                                size="small"
-                                onClick={() => linkDriveFolderModal.openModal(true)}
-                                title={c('collider_2025:Action').t`Manage Drive folder link`}
-                            >
-                                <Icon name="meet-settings" size={4} />
-                            </Button>
+                    <div className="project-files-section-header">
+                        <h3 className="project-files-section-title">{c('collider_2025:Title').t`Instructions`}</h3>
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            onClick={onEditInstructions}
+                            title={c('collider_2025:Action').t`Edit instructions`}
+                        >
+                            <Icon name="pen" size={4} />
+                        </Button>
+                    </div>
+                    <div className="project-files-section-content">
+                        {instructions ? (
+                            <p className="project-instructions-text">{instructions}</p>
+                        ) : (
+                            <button className="project-instructions-add" onClick={onEditInstructions}>
+                                <Icon name="plus" size={4} />
+                                <span>{c('collider_2025:Button')
+                                    .t`Add instructions to tailor ${LUMO_SHORT_APP_NAME}'s responses`}</span>
+                            </button>
                         )}
                     </div>
                 </div>
-                <div className="project-files-section-content files-section">
-                    {/* Upload progress overlay */}
-                    {uploadProgress && (
-                        <div className="project-files-progress-overlay">
-                            <UploadProgressOverlay uploadProgress={uploadProgress} />
-                        </div>
-                    )}
-                    {linkedDriveFolder ? (
-                        <div className="project-drive-browser">
-                            <div className="flex items-start justify-between gap-3">
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <Icon name="brand-proton-drive-filled" size={4} className="color-norm flex-shrink-0" />
-                                        <span className="text-sm font-semibold">{c('collider_2025:Info').t`Connected to ${DRIVE_APP_NAME}`}</span>
-                                        <div className="drive-connection-indicator"></div>
-                                    </div>
-                                    <div className="text-xs color-weak">/{linkedDriveFolder.folderPath}/{linkedDriveFolder.folderName}</div>
-                                </div>
-                                <div className="flex items-center gap-1 flex-shrink-0">
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        size="small"
-                                        onClick={() => {
-                                            setFolderName('');
-                                            setCreateFolderModalOpen(true);
-                                        }}
-                                        title={c('collider_2025:Action').t`Create folder`}
-                                    >
-                                        <Icon name="folder-plus" size={4} />
-                                    </Button>
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        size="small"
-                                        onClick={handleAddFiles}
-                                        title={c('collider_2025:Action').t`Upload file`}
-                                    >
-                                        <Icon name="arrow-up-line" size={4} />
-                                    </Button>
-                                </div>
-                            </div>
-                            <DriveBrowser
-                                ref={driveBrowserRef}
-                                onFileSelect={handleDriveFileSelect}
-                                initialShowDriveBrowser={true}
-                                isModal={false}
-                                initialFolderId={linkedDriveFolder.folderId}
-                                initialFolderName={linkedDriveFolder.folderName}
-                                isLinkedFolder={true}
-                                hideHeader={true}
-                            />
-                        </div>
-                    ) : files.length === 0 ? (
-                        <div className="project-files-empty">
-                            <div className="project-files-options">
-                                <button className="project-files-option" onClick={handleAddFiles}>
-                                    <Icon name="paper-clip" size={5} />
-                                    <div className="project-files-option-content">
-                                        <span className="project-files-option-text">
-                                            {c('collider_2025:Button').t`Add files`}
-                                        </span>
-                                        <span className="project-files-option-subtext">
-                                            {c('collider_2025:Info').t`Load files to be used by ${LUMO_SHORT_APP_NAME} in answering all your questions`}
-                                        </span>
-                                    </div>
-                                </button>
-                                <button
-                                    className="project-files-option"
-                                    onClick={() => linkDriveFolderModal.openModal(true)}
+
+                {/* Files Section */}
+                <div className="project-files-section flex flex-column flex-nowrap flex-1">
+                    <div className="project-files-section-header">
+                        <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
+                        <div className="flex items-center gap-1">
+                            {!linkedDriveFolder && files.length !== 0 && (
+                                <Button
+                                    shape="ghost"
+                                    size="small"
+                                    onClick={handleAddFiles}
+                                    className="project-files-add-header-button"
+                                    title={c('collider_2025:Action').t`Add files`}
                                 >
-                                    <IcBrandProtonDrive size={5} />
-                                    <div className="project-files-option-content">
-                                        <span className="project-files-option-text">
-                                            {c('collider_2025:Button').t`Link ${DRIVE_APP_NAME}`}
-                                        </span>
-                                        <span className="project-files-option-subtext">
-                                            {c('collider_2025:Info').t`Link a folder in your ${DRIVE_APP_NAME} which will be indexed locally and usable by ${LUMO_SHORT_APP_NAME} when generating answers`}
-                                        </span>
-                                    </div>
-                                </button>
-                            </div>
+                                    <Icon name="arrow-up-line" size={4} />
+                                </Button>
+                            )}
+                            {linkedDriveFolder && (
+                                <Button
+                                    icon
+                                    shape="ghost"
+                                    size="small"
+                                    onClick={() => linkDriveFolderModal.openModal(true)}
+                                    title={c('collider_2025:Action').t`Manage Drive folder link`}
+                                >
+                                    <Icon name="meet-settings" size={4} />
+                                </Button>
+                            )}
                         </div>
-                    ) : (
-                        <>
-                            <div className="project-files-list">
-                                {files.map((file) => (
-                                    <KnowledgeFileItem
-                                        key={file.id}
-                                        file={file}
-                                        onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
-                                        onRemove={handleRemoveFile}
-                                        isActive={true}
-                                        showToggle={false}
-                                    />
-                                ))}
+                    </div>
+                    <div className="project-files-section-content files-section flex-1">
+                        {/* Upload progress overlay */}
+                        {uploadProgress && (
+                            <div className="project-files-progress-overlay">
+                                <UploadProgressOverlay uploadProgress={uploadProgress} />
                             </div>
-                        </>
-                    )}
+                        )}
+                        {/* eslint-disable no-nested-ternary */}
+                        {linkedDriveFolder ? (
+                            <div className="project-drive-browser">
+                                <div className="flex items-start justify-between gap-3">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <Icon
+                                                name="brand-proton-drive-filled"
+                                                size={4}
+                                                className="color-norm flex-shrink-0"
+                                            />
+                                            <span className="text-sm font-semibold">{c('collider_2025:Info')
+                                                .t`Connected to ${DRIVE_APP_NAME}`}</span>
+                                            <div className="drive-connection-indicator"></div>
+                                        </div>
+                                        <div className="text-xs color-weak">
+                                            /{linkedDriveFolder.folderPath}/{linkedDriveFolder.folderName}
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-1 flex-shrink-0">
+                                        <Button
+                                            icon
+                                            shape="ghost"
+                                            size="small"
+                                            onClick={() => {
+                                                setFolderName('');
+                                                setCreateFolderModalOpen(true);
+                                            }}
+                                            title={c('collider_2025:Action').t`Create folder`}
+                                        >
+                                            <Icon name="folder-plus" size={4} />
+                                        </Button>
+                                        <Button
+                                            icon
+                                            shape="ghost"
+                                            size="small"
+                                            onClick={handleAddFiles}
+                                            title={c('collider_2025:Action').t`Upload file`}
+                                        >
+                                            <Icon name="arrow-up-line" size={4} />
+                                        </Button>
+                                    </div>
+                                </div>
+                                <DriveBrowser
+                                    ref={driveBrowserRef}
+                                    onFileSelect={handleDriveFileSelect}
+                                    initialShowDriveBrowser={true}
+                                    isModal={false}
+                                    initialFolderId={linkedDriveFolder.folderId}
+                                    initialFolderName={linkedDriveFolder.folderName}
+                                    isLinkedFolder={true}
+                                    hideHeader={true}
+                                />
+                            </div>
+                        ) : files.length === 0 ? (
+                            <div className="project-files-empty">
+                                <div className="project-files-options">
+                                    <button className="project-files-option" onClick={handleAddFiles}>
+                                        <Icon name="paper-clip" size={5} />
+                                        <div className="project-files-option-content">
+                                            <span className="project-files-option-text">
+                                                {c('collider_2025:Button').t`Add files`}
+                                            </span>
+                                            <span className="project-files-option-subtext">
+                                                {c('collider_2025:Info')
+                                                    .t`Load files to be used by ${LUMO_SHORT_APP_NAME} in answering all your questions`}
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <button
+                                        className="project-files-option"
+                                        onClick={() => linkDriveFolderModal.openModal(true)}
+                                    >
+                                        <IcBrandProtonDrive size={5} />
+                                        <div className="project-files-option-content">
+                                            <span className="project-files-option-text">
+                                                {c('collider_2025:Button').t`Link ${DRIVE_APP_NAME}`}
+                                            </span>
+                                            <span className="project-files-option-subtext">
+                                                {c('collider_2025:Info')
+                                                    .t`Link a folder in your ${DRIVE_APP_NAME} which will be indexed locally and usable by ${LUMO_SHORT_APP_NAME} when generating answers`}
+                                            </span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <>
+                                <div className="project-files-list">
+                                    {files.map((file) => (
+                                        <KnowledgeFileItem
+                                            key={file.id}
+                                            file={file}
+                                            onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
+                                            onRemove={handleRemoveFile}
+                                            isActive={true}
+                                            showToggle={false}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>
-            </div>
 
-            <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                onChange={handleFileChange}
-                style={{ display: 'none' }}
-                accept="*/*"
-            />
-
-            {/* File preview modal */}
-            {fileToView && (
-                <FileContentModal attachment={fileToView} onClose={handleCloseFileView} open={!!fileToView} />
-            )}
-
-            {/* Link Drive Folder Modal */}
-            {linkDriveFolderModal.render && (
-                <LinkDriveFolderModal
-                    {...linkDriveFolderModal.modalProps}
-                    projectId={projectId}
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
+                    accept="*/*"
                 />
-            )}
 
-            {/* Create Folder Modal */}
-            {createFolderModal && (
-                <ModalTwo
-                    as="form"
-                    disableCloseOnEscape={loading}
-                    onClose={() => {
-                        setCreateFolderModalOpen(false);
-                        setFolderName('');
-                    }}
-                    onSubmit={(e: React.FormEvent) => {
-                        e.preventDefault();
-                        if (folderName.trim()) {
-                            void withLoading(handleCreateFolder());
-                        }
-                    }}
-                    size="large"
-                    open={createFolderModal}
-                >
-                    <ModalTwoHeader
-                        closeButtonProps={{ disabled: loading }}
-                        title={c('Title').t`Create a new folder`}
-                    />
-                    <ModalTwoContent>
-                        <InputFieldTwo
-                            id="folder-name"
-                            autoFocus
-                            value={folderName}
-                            label={c('Label').t`Folder name`}
-                            placeholder={c('Placeholder').t`Enter a new folder name`}
-                            onChange={(e) => setFolderName(e.target.value)}
-                            required
+                {/* File preview modal */}
+                {fileToView && (
+                    <FileContentModal attachment={fileToView} onClose={handleCloseFileView} open={!!fileToView} />
+                )}
+
+                {/* Link Drive Folder Modal */}
+                {linkDriveFolderModal.render && (
+                    <LinkDriveFolderModal {...linkDriveFolderModal.modalProps} projectId={projectId} />
+                )}
+
+                {/* Create Folder Modal */}
+                {createFolderModal && (
+                    <ModalTwo
+                        as="form"
+                        disableCloseOnEscape={loading}
+                        onClose={() => {
+                            setCreateFolderModalOpen(false);
+                            setFolderName('');
+                        }}
+                        onSubmit={(e: React.FormEvent) => {
+                            e.preventDefault();
+                            if (folderName.trim()) {
+                                void withLoading(handleCreateFolder());
+                            }
+                        }}
+                        size="large"
+                        open={createFolderModal}
+                    >
+                        <ModalTwoHeader
+                            closeButtonProps={{ disabled: loading }}
+                            title={c('Title').t`Create a new folder`}
                         />
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button
-                            type="button"
-                            onClick={() => {
-                                setCreateFolderModalOpen(false);
-                                setFolderName('');
-                            }}
-                            disabled={loading}
-                        >
-                            {c('Action').t`Cancel`}
-                        </Button>
-                        <Button color="norm" type="submit" loading={loading} disabled={!folderName.trim()}>
-                            {c('Action').t`Create`}
-                        </Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </div>
+                        <ModalTwoContent>
+                            <InputFieldTwo
+                                id="folder-name"
+                                autoFocus
+                                value={folderName}
+                                label={c('Label').t`Folder name`}
+                                placeholder={c('Placeholder').t`Enter a new folder name`}
+                                onChange={(e) => setFolderName(e.target.value)}
+                                required
+                            />
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button
+                                type="button"
+                                onClick={() => {
+                                    setCreateFolderModalOpen(false);
+                                    setFolderName('');
+                                }}
+                                disabled={loading}
+                            >
+                                {c('Action').t`Cancel`}
+                            </Button>
+                            <Button color="norm" type="submit" loading={loading} disabled={!folderName.trim()}>
+                                {c('Action').t`Create`}
+                            </Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+            </div>
         </div>
     );
 };
-
