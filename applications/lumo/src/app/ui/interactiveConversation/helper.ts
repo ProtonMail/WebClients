@@ -44,6 +44,7 @@ import type { GenerationToFrontendMessage } from '../../types-api';
 // Helper function to determine which files will actually be used in the LLM context
 function getContextFilesForMessage(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
     const contextFiles: AttachmentId[] = [];
+    const seenIds = new Set<AttachmentId>();
 
     for (const message of messageChain) {
         if (!message.attachments) continue;
@@ -52,9 +53,13 @@ function getContextFilesForMessage(messageChain: Message[], contextFilters: Cont
         const filter = contextFilters.find((f) => f.messageId === message.id);
 
         for (const attachment of message.attachments) {
+            // Skip if we've already seen this attachment ID
+            if (seenIds.has(attachment.id)) continue;
+
             // If there's no filter, or the file is not in the excluded list, include it
             if (!filter || !filter.excludedFiles.includes(attachment.filename)) {
                 contextFiles.push(attachment.id);
+                seenIds.add(attachment.id);
             }
         }
     }
@@ -77,16 +82,16 @@ interface RAGRetrievalResult {
 /**
  * Retrieve relevant documents from the project's indexed Drive folder and format them for the LLM context.
  * This is the RAG (Retrieval Augmented Generation) function for automatic document injection.
- * 
+ *
  * Documents are only retrieved for the FIRST user message in a conversation.
  * Follow-up questions already have the document context from the first turn in the conversation history,
  * so re-injecting would cause duplication.
- * 
+ *
  * Smart filtering:
  * - Gets top N documents by BM25 score
  * - Filters out documents with < 10% relevance relative to the top document
  * - Creates real Attachment objects for persistence and UI display
- * 
+ *
  * @param query - The user's prompt/question
  * @param spaceId - The project spaceId
  * @param userId - The user's ID for accessing the search service
@@ -103,9 +108,9 @@ async function retrieveDocumentContextForProject(
     allAttachments: Record<string, Attachment> = {}
 ): Promise<RAGRetrievalResult | undefined> {
     const userMessageCount = messageChain.filter(m => m.role === Role.User).length;
-    
+
     console.log(`[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}, userMessages=${userMessageCount}`);
-    
+
     // Only retrieve documents for project conversations
     if (!isProject || !userId) {
         console.log(`[RAG] Skipping: isProject=${isProject}, userId=${!!userId}`);
@@ -122,19 +127,19 @@ async function retrieveDocumentContextForProject(
             }
         });
     });
-    
+
     console.log(`[RAG] Already retrieved ${alreadyRetrievedNodeIds.size} documents in this conversation`);
 
     try {
         const searchService = SearchService.get(userId);
         // Get candidates for intelligent filtering
         const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 10, 0);
-        
+
         // Filter out zero-score documents and already-retrieved documents
-        const nonZeroDocs = candidateDocs.filter(doc => 
+        const nonZeroDocs = candidateDocs.filter(doc =>
             doc.score > 0 && !alreadyRetrievedNodeIds.has(doc.id)
         );
-        
+
         if (nonZeroDocs.length === 0) {
             console.log(`[RAG] No relevant documents found for project ${spaceId}`);
             return undefined;
@@ -143,35 +148,35 @@ async function retrieveDocumentContextForProject(
         // Smart percentile-based filtering
         const topScore = nonZeroDocs[0]?.score || 0;
         const scores = nonZeroDocs.map(d => d.score);
-        
+
         // Calculate the 75th percentile threshold (top 25% of documents)
         // This means we only include documents scoring in the top quarter
         const sortedScores = [...scores].sort((a, b) => b - a);
         const percentile75Index = Math.floor(sortedScores.length * 0.25);
         const percentile75Threshold = sortedScores[Math.min(percentile75Index, sortedScores.length - 1)] || 0;
-        
+
         // Also require at least 40% of top score (absolute quality gate)
         const MIN_RELATIVE_SCORE = 0.40;
         const absoluteThreshold = topScore * MIN_RELATIVE_SCORE;
-        
+
         // Use the higher of the two thresholds
         const effectiveThreshold = Math.max(percentile75Threshold, absoluteThreshold);
-        
+
         console.log(`[RAG] Thresholds: top=${topScore.toFixed(4)}, p75=${percentile75Threshold.toFixed(4)}, min40%=${absoluteThreshold.toFixed(4)}, effective=${effectiveThreshold.toFixed(4)}`);
-        
+
         // Select documents above threshold, with gap detection
         const relevantDocs: typeof nonZeroDocs = [];
         const MAX_DOCS = 5; // Cap to avoid context overload
-        
+
         for (let i = 0; i < nonZeroDocs.length && relevantDocs.length < MAX_DOCS; i++) {
             const doc = nonZeroDocs[i];
-            
+
             // Must meet the effective threshold
             if (doc.score < effectiveThreshold) {
                 console.log(`[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`);
                 break;
             }
-            
+
             // Check for score gap with previous doc (if not first) - detect relevance cliffs
             if (i > 0) {
                 const prevScore = nonZeroDocs[i - 1].score;
@@ -182,18 +187,35 @@ async function retrieveDocumentContextForProject(
                     break;
                 }
             }
-            
+
             relevantDocs.push(doc);
         }
-        
+
         if (relevantDocs.length === 0) {
             console.log(`[RAG] No sufficiently relevant documents found for project ${spaceId}`);
             return undefined;
         }
 
         // Create Attachment objects from retrieved documents
+        // Reuse existing attachment IDs if we already have this document (by driveNodeId)
         const attachments: Attachment[] = relevantDocs.map(doc => {
             const normalizedScore = topScore > 0 ? doc.score / topScore : 0;
+
+            // Check if we already have an attachment for this driveNodeId
+            const existingAttachment = Object.values(allAttachments).find(
+                att => att.autoRetrieved && att.driveNodeId === doc.id
+            );
+
+            if (existingAttachment) {
+                // Reuse the existing attachment, but update the relevance score
+                console.log(`[RAG] Reusing existing attachment for ${doc.name} (ID: ${existingAttachment.id})`);
+                return {
+                    ...existingAttachment,
+                    relevanceScore: normalizedScore, // Update score for this query
+                };
+            }
+
+            // Create a new attachment
             return {
                 // AttachmentPub
                 id: newAttachmentId(),
@@ -210,11 +232,11 @@ async function retrieveDocumentContextForProject(
             };
         });
 
-        console.log(`[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`, 
+        console.log(`[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
             `\n  Candidates: ${candidateDocs.length}, Non-zero: ${nonZeroDocs.length}, Selected: ${relevantDocs.length}`,
             `\n  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * MIN_RELATIVE_SCORE).toFixed(4)}`,
             `\n  Selected: ${attachments.map(a => `${a.filename} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`).join(', ')}`);
-        
+
         return {
             context: searchService.formatRAGContext(relevantDocs),
             attachments,
@@ -347,15 +369,15 @@ export function sendMessage({
 
         // Identify which attachments came from @ file references
         const referencedFileNames = new Set(referencedFiles.map(f => f.fileName.toLowerCase()));
-        
+
         // For space assignment, only consider provisional attachments (those without spaceId)
         // Referenced files should not be assigned to space regardless of their source
-        const nonReferencedAttachments = attachments.filter(att => 
+        const nonReferencedAttachments = attachments.filter(att =>
             !referencedFileNames.has(att.filename.toLowerCase())
         );
-        
+
         // Identify provisional referenced attachments (from composer)
-        const provisionalReferencedAttachments = attachments.filter(att => 
+        const provisionalReferencedAttachments = attachments.filter(att =>
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
@@ -393,11 +415,11 @@ export function sendMessage({
             ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
         };
         dispatch(addMessage(assistantMessageWithContext));
-        
+
         // Only assign non-referenced attachments to the space
         // Referenced files (from @ mentions) should remain conversation-specific
         dispatch(assignProvisionalAttachmentsToSpace(nonReferencedAttachments, spaceId));
-        
+
         // Push referenced attachments to server without assigning them to space
         // Only push provisional referenced attachments (those from the composer)
         provisionalReferencedAttachments.forEach((attachment) => {
@@ -544,29 +566,48 @@ export function regenerateMessage(
             });
 
             // If we have RAG attachments, store them and add to the user message
+            let updatedMessagesWithContext = messagesWithContext;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
                 // Store each attachment in Redux and persist
                 for (const attachment of ragResult.attachments) {
                     dispatch(upsertAttachment(attachment));
                     dispatch(pushAttachmentRequest({ id: attachment.id }));
                 }
-                
+
                 // Create shallow attachment refs for the message
                 const existingAttachments = lastUserMessage.attachments || [];
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments.map(att => {
                     const { data, markdown, ...shallow } = att;
                     return shallow as ShallowAttachment;
                 });
-                
+
                 const updatedUserMessage: Message = {
                     ...lastUserMessage,
                     attachments: [...existingAttachments, ...newShallowAttachments],
                 };
                 dispatch(addMessage(updatedUserMessage));
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
+
+                // Update messagesWithContext to include the updated user message
+                updatedMessagesWithContext = messagesWithContext.map(msg =>
+                    msg.id === lastUserMessage.id ? updatedUserMessage : msg
+                );
+
+                // Recalculate contextFiles to include the auto-retrieved attachments
+                const updatedContextFiles = getContextFilesForMessage(updatedMessagesWithContext, contextFilters);
+
+                // Update the assistant message's contextFiles
+                const assistantMessage = state.messages[assistantMessageId];
+                if (assistantMessage) {
+                    const updatedAssistantMessage: Message = {
+                        ...assistantMessage,
+                        contextFiles: updatedContextFiles,
+                    };
+                    dispatch(addMessage(updatedAssistantMessage));
+                }
             }
 
-            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
+            const turns = getFilteredTurns(updatedMessagesWithContext, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
 
             // Add retry instructions if provided
             if (retryInstructions) {
@@ -826,29 +867,60 @@ export async function fetchAssistantResponse({
     });
 
     // If we have RAG attachments, store them and add to the user message
+    let updatedLinearChain = linearChain;
     if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
         // Store each attachment in Redux and persist
         for (const attachment of ragResult.attachments) {
             dispatch(upsertAttachment(attachment));
             dispatch(pushAttachmentRequest({ id: attachment.id }));
         }
-        
+
         // Create shallow attachment refs for the message
         const existingAttachments = lastUserMessage.attachments || [];
-        const newShallowAttachments: ShallowAttachment[] = ragResult.attachments.map(att => {
-            const { data, markdown, ...shallow } = att;
-            return shallow as ShallowAttachment;
-        });
-        
+        const existingAttachmentIds = new Set(existingAttachments.map(att => att.id));
+
+        // Only add new attachments that aren't already in the message (avoid duplicates when reusing IDs)
+        const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
+            .filter(att => !existingAttachmentIds.has(att.id))
+            .map(att => {
+                const { data, markdown, ...shallow } = att;
+                return shallow as ShallowAttachment;
+            });
+
         const updatedUserMessage: Message = {
             ...lastUserMessage,
             attachments: [...existingAttachments, ...newShallowAttachments],
         };
         dispatch(addMessage(updatedUserMessage));
         dispatch(pushMessageRequest({ id: lastUserMessage.id }));
+
+        // Update the linearChain with the updated user message
+        updatedLinearChain = linearChain.map(msg =>
+            msg.id === lastUserMessage.id ? updatedUserMessage : msg
+        );
+
+        // Recalculate contextFiles to include the auto-retrieved attachments
+        const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
+
+        console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
+
+        // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
+        // This ensures the "X files" button appears right away
+        dispatch((innerDispatch: AppDispatch, getState: () => any) => {
+            const state = getState();
+            const assistantMessage = state.messages[assistantMessageId];
+            if (assistantMessage) {
+                const updatedAssistantMessage: Message = {
+                    ...assistantMessage,
+                    contextFiles: updatedContextFiles,
+                };
+                innerDispatch(addMessage(updatedAssistantMessage));
+                // Note: Don't push to server yet - the message is still being generated
+            }
+        });
     }
 
-    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
+    const turns = getFilteredTurns(updatedLinearChain, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,
@@ -863,6 +935,12 @@ export async function fetchAssistantResponse({
             errorHandler: createLumoErrorHandler(),
         })
     );
+
+    // After sending the message, persist the assistant message with contextFiles
+    if (ragResult?.attachments && ragResult.attachments.length > 0) {
+        // Persist the assistant message with its contextFiles after the stream completes
+        dispatch(pushMessageRequest({ id: assistantMessageId }));
+    }
 }
 
 export function generateFakeConversationToShowTierError({
