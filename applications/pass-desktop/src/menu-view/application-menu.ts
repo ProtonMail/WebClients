@@ -5,7 +5,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import config from '../app/config';
 import { uninstallProton } from '../uninstallers/macos/uninstall';
-import { isMac, isProdEnv } from '../utils/platform';
+import { isMAS, isMac, isProdEnv } from '../utils/platform';
 
 type MenuKey = 'app' | 'file' | 'edit' | 'view' | 'window';
 type MenuProps = MenuItemConstructorOptions & { key: MenuKey };
@@ -117,11 +117,15 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
                         app.setLoginItemSettings({ openAtLogin: !app.getLoginItemSettings().openAtLogin });
                     },
                 },
-                {
-                    label: c('App menu').t`Uninstall ${PASS_APP_NAME}`,
-                    type: 'normal',
-                    click: () => uninstallProton(),
-                },
+                ...(!isMAS
+                    ? [
+                          {
+                              label: c('App menu').t`Uninstall ${PASS_APP_NAME}`,
+                              type: 'normal' as const,
+                              click: () => uninstallProton(),
+                          },
+                      ]
+                    : []),
                 { type: 'separator' },
                 { role: 'quit' },
             ],
