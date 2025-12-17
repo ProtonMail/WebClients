@@ -71,6 +71,11 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             return callWithTimeout(postXmlHttpRequest(options));
         }
 
+        const requestDetails = {
+            url: options.url,
+            method: options.method,
+        };
+
         const request = new Request(options.url, {
             method: options.method,
             headers: options.headers,
@@ -78,7 +83,9 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
             signal: options.signal,
             credentials: 'omit',
         });
-        return callWithTimeout(fetch(request));
+        return callWithTimeout(fetch(request)).catch((error) => {
+            throw categorizeNetworkFailure(error, requestDetails);
+        });
     };
 
     // Ensure the reference is stable across renders. Never update the whole object.
@@ -103,6 +110,10 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         }
 
         const xhr = new XMLHttpRequest();
+        const requestDetails = {
+            url: options.url,
+            method: options.method,
+        };
 
         let lastLoaded = 0;
         let total = 0;
@@ -131,14 +142,14 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         };
 
         xhr.onerror = () => {
-            reject(new Error('Request failed'));
+            reject(categorizeNetworkFailure(new Error('Request failed'), requestDetails));
         };
         xhr.upload.onerror = () => {
-            reject(new Error('Upload request failed'));
+            reject(categorizeNetworkFailure(new Error('Upload request failed'), requestDetails));
         };
 
         const onTimeout = () => {
-            const error = new Error('Request timed out');
+            const error = new Error(withRequestSummary('Request timed out', requestDetails));
             error.name = 'TimeoutError';
             reject(error);
         };
@@ -152,7 +163,16 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         }
         xhr.responseType = 'json';
 
-        xhr.send(options.body);
+        try {
+            xhr.send(options.body);
+        } catch (error) {
+            reject(
+                categorizeNetworkFailure(
+                    error instanceof Error ? error : new Error('Failed to send upload request'),
+                    requestDetails
+                )
+            );
+        }
     }).finally(() => {
         if (listener) {
             options.signal?.removeEventListener('abort', listener);
@@ -176,4 +196,43 @@ function replaceLocalURL(href: string) {
     const subdomain = window.location.hostname.split('.')[0];
 
     return href.replace(url.host, window.location.host.replace(subdomain, newSubdomain));
+}
+
+type TransferRequestDetails = Pick<ProtonDriveHTTPClientBlobRequest, 'url' | 'method'>;
+
+function categorizeNetworkFailure(error: unknown, request: TransferRequestDetails) {
+    const normalizedError = error instanceof Error ? error : new Error('Network error');
+
+    if (!['AbortError', 'TimeoutError', 'OfflineError'].includes(normalizedError.name)) {
+        normalizedError.name = navigator?.onLine === false ? 'OfflineError' : 'NetworkError';
+    }
+
+    normalizedError.message = withRequestSummary(normalizedError.message, request);
+    return normalizedError;
+}
+
+function withRequestSummary(message: string, request: TransferRequestDetails) {
+    const summary = summarizeRequest(request);
+    if (!summary || message.includes(summary)) {
+        return message;
+    }
+    return `${message} (${summary})`;
+}
+
+function summarizeRequest({ url, method }: TransferRequestDetails) {
+    if (!url && !method) {
+        return '';
+    }
+
+    const safeMethod = method || 'GET';
+    if (!url) {
+        return safeMethod;
+    }
+
+    try {
+        const parsed = new URL(url);
+        return `${safeMethod} ${parsed.origin}${parsed.pathname}`;
+    } catch {
+        return `${safeMethod} ${url}`;
+    }
 }
