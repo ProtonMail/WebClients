@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { NodeType } from '@proton/drive';
