@@ -36,7 +36,7 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
     };
 
     // Get files to display - use the attachments that were available at the time of this message
-    const relevantFiles = message
+    const relevantFilesRaw = message
         ? (() => {
               if (message.role === 'assistant' && message.contextFiles) {
                   // For assistant messages, show the files that were used in context
@@ -58,6 +58,19 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
                   .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined)
                   .filter((file) => !isFileExcludedForNextMessage(file, msg.id));
           });
+
+    // Deduplicate files by driveNodeId (for auto-retrieved) or by filename (for manual)
+    const relevantFiles = (() => {
+        const seen = new Set<string>();
+        return relevantFilesRaw.filter((file) => {
+            const key = file.driveNodeId || file.filename;
+            if (seen.has(key)) {
+                return false;
+            }
+            seen.add(key);
+            return true;
+        });
+    })();
 
     // Only show button if there are relevant files to display
     if (relevantFiles.length === 0) {
