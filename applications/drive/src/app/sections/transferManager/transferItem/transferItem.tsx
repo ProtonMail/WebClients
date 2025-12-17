@@ -34,13 +34,13 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
-        [UploadStatus.PhotosDuplicate]: c('Info').t`Same photo or video already exist`,
+        [UploadStatus.PhotosDuplicate]: c('Info').t`Already in your library`,
     };
     return labels[entry.status];
 };
 
 const getItemIconByStatus = (entry: TransferManagerEntry) => {
-    if (entry.status === BaseTransferStatus.Finished) {
+    if (entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) {
         return <Icon size={5} className="color-success" name="checkmark-circle-filled" />;
     }
     if (entry.status === BaseTransferStatus.Pending) {
@@ -52,7 +52,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === BaseTransferStatus.Cancelled) {
         return <Icon size={5} className="color-weak" name="cross-circle" />;
     }
-    if (entry.status === UploadStatus.Skipped || entry.status === UploadStatus.PhotosDuplicate) {
+    if (entry.status === UploadStatus.Skipped) {
         return <Icon size={5} className="color-weak" name="cross-circle" />;
     }
     if (entry.status === BaseTransferStatus.Failed) {
@@ -164,11 +164,13 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 </div>
             </div>
             <div className="shrink-0 flex justify-end">
-                {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && onShare && (
-                    <Button color="weak" shape="solid" onClick={onShare}>
-                        {c('Action').t`Share`}
-                    </Button>
-                )}
+                {(entry.status === BaseTransferStatus.Finished || entry.status === UploadStatus.PhotosDuplicate) &&
+                    entry.type === 'upload' &&
+                    onShare && (
+                        <Button color="weak" shape="solid" onClick={onShare}>
+                            {c('Action').t`Share`}
+                        </Button>
+                    )}
                 {(entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending) && (
                     <Tooltip title={c('Action').t`Cancel`}>
                         <Button

@@ -12,6 +12,8 @@ import {
     useModalStateObject,
     useNotifications,
 } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import useFlag from '@proton/unleash/useFlag';
@@ -39,6 +41,7 @@ import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
 import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosModal';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
@@ -645,6 +648,76 @@ export const PhotosLayout = () => {
             abortController.abort();
         };
     }, [initializePhotosView]);
+
+    const isOwner = album?.permissions.isOwner;
+
+    // Subscribe to upload events to automatically add uploaded photos to the current album.
+    // This subscription persists across navigation to handle background uploads - it only
+    // unsubscribes when all queued uploads complete or when unmounting with no pending uploads.
+    useEffect(() => {
+        if (!albumShareId || !albumLinkId) {
+            return;
+        }
+        let needUnsubscribe = false;
+        uploadManager.subscribeToEvents('photos-layout', async (event) => {
+            if (event.type === 'file:queued' && event.isForPhotos) {
+                useAlbumPhotoUploadSDKStore
+                    .getState()
+                    .setContext(event.uploadId, { albumShareId, albumLinkId, isOwner: !!isOwner });
+            } else if ((event.type === 'file:complete' && event.isForPhotos) || event.type === 'photo:exist') {
+                const uploadContext = useAlbumPhotoUploadSDKStore.getState().getContext(event.uploadId);
+                if (uploadContext) {
+                    const abortSignal = new AbortController().signal;
+                    try {
+                        const nodeUid = event.type === 'file:complete' ? event.nodeUid : event.duplicateUids[0];
+                        const nodeId = splitNodeUid(nodeUid).nodeId;
+                        // We have to get the newNodeIds to add them to album cache as adding them to an album as not owner will create a copy
+                        const newNodeIds = await addAlbumPhotos(
+                            abortSignal,
+                            uploadContext.albumShareId,
+                            uploadContext.albumLinkId,
+                            [nodeId],
+                            true
+                        );
+                        if (!uploadContext.isOwner) {
+                            void addNewAlbumPhotoToCache(
+                                abortSignal,
+                                uploadContext.albumShareId,
+                                uploadContext.albumLinkId,
+                                newNodeIds[0]
+                            );
+                        }
+                    } catch (e) {
+                        if (e instanceof Error && e.message) {
+                            createNotification({ text: e.message, type: 'error' });
+                        }
+                        sendErrorReport(e);
+                    }
+                    useAlbumPhotoUploadSDKStore.getState().deleteContext(event.uploadId);
+
+                    if (needUnsubscribe && !useAlbumPhotoUploadSDKStore.getState().hasPendingUploads()) {
+                        uploadManager.unsubscribeFromEvents('photos-layout');
+                    }
+                }
+            }
+        });
+
+        return () => {
+            if (!useAlbumPhotoUploadSDKStore.getState().hasPendingUploads()) {
+                uploadManager.unsubscribeFromEvents('photos-layout');
+            } else {
+                needUnsubscribe = true;
+            }
+        };
+    }, [
+        currentPageType,
+        albumShareId,
+        albumLinkId,
+        isOwner,
+        createNotification,
+        // addAlbumPhotos,
+        // addNewAlbumPhotoToCache,
+    ]);
 
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;

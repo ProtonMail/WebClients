@@ -6,7 +6,7 @@ import { PhotosUploadExecutor } from '../execution/PhotosUploadExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { UploadEvent, UploadTask } from '../types';
-import { type UploadConflictStrategy, type UploadConflictType, UploadStatus } from '../types';
+import { type UploadConflictStrategy, type UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import { getNextTasks } from '../utils/schedulerHelpers';
 import { ConflictManager } from './ConflictManager';
@@ -68,6 +68,14 @@ export class UploadOrchestrator {
 
     removeConflictResolver(): void {
         this.conflictManager.removeConflictResolver();
+    }
+
+    emitFileQueued(uploadId: string, isForPhotos: boolean): void {
+        void this.eventHandler.handleEvent({
+            type: 'file:queued',
+            uploadId,
+            isForPhotos,
+        });
     }
 
     /**
@@ -217,10 +225,18 @@ export class UploadOrchestrator {
             return;
         }
 
-        await this.eventHandler.handleEvent({
-            type: item.type === NodeType.File ? 'file:cancelled' : 'folder:cancelled',
-            uploadId,
-        });
+        if (item.type === NodeType.File) {
+            await this.eventHandler.handleEvent({
+                type: 'file:cancelled',
+                uploadId,
+                isForPhotos: isPhotosUploadItem(item),
+            });
+        } else {
+            await this.eventHandler.handleEvent({
+                type: 'folder:cancelled',
+                uploadId,
+            });
+        }
     }
 
     stop(): void {

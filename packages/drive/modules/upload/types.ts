@@ -1,19 +1,31 @@
 import type { NodeType, NodeWithSameNameExistsValidationError, UploadController } from '@protontech/drive-sdk';
 
 export type FileUploadEvent =
-    | { type: 'file:started'; uploadId: string; controller: UploadController; abortController: AbortController }
-    | { type: 'file:progress'; uploadId: string; uploadedBytes: number }
+    | { type: 'file:queued'; uploadId: string; isForPhotos: boolean }
+    | {
+          type: 'file:started';
+          uploadId: string;
+          controller: UploadController;
+          abortController: AbortController;
+          isForPhotos: boolean;
+      }
+    | { type: 'file:progress'; uploadId: string; uploadedBytes: number; isForPhotos: boolean }
     | {
           type: 'file:complete';
           uploadId: string;
           nodeUid: string;
           parentUid: string | undefined;
           isUpdatedNode: boolean | undefined;
-          isForPhotos: boolean | undefined;
+          isForPhotos: boolean;
       }
-    | { type: 'file:error'; uploadId: string; error: Error }
-    | { type: 'file:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
-    | { type: 'file:cancelled'; uploadId: string };
+    | { type: 'file:error'; uploadId: string; error: Error; isForPhotos: boolean }
+    | {
+          type: 'file:conflict';
+          uploadId: string;
+          error: NodeWithSameNameExistsValidationError;
+          isForPhotos: boolean;
+      }
+    | { type: 'file:cancelled'; uploadId: string; isForPhotos: boolean };
 
 export type FolderCreationEvent =
     | { type: 'folder:complete'; uploadId: string; nodeUid: string; parentUid: string | undefined }
@@ -21,10 +33,7 @@ export type FolderCreationEvent =
     | { type: 'folder:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
     | { type: 'folder:cancelled'; uploadId: string };
 
-export type PhotosUploadEvent = {
-    type: 'photo:exist';
-    uploadId: string;
-};
+export type PhotosUploadEvent = { type: 'photo:exist'; uploadId: string; duplicateUids: string[] };
 
 export type UploadEvent = FileUploadEvent | FolderCreationEvent | PhotosUploadEvent;
 
