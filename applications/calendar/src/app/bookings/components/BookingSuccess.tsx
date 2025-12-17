@@ -1,4 +1,5 @@
 import type { ReactElement, ReactNode } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { addMinutes, format } from 'date-fns';
 import { c } from 'ttag';
@@ -104,6 +105,12 @@ export const BookingSuccess = () => {
     const { isGuest } = useBookingsProvider();
 
     if (!bookingDetails || !selectedBookingSlot) {
+        // Redirect the user on the main page on reload
+        const hash = window.location.hash;
+        if (hash) {
+            const redirectPath = isGuest ? '/bookings/guest' : '/bookings';
+            return <Redirect to={`${redirectPath}${hash}`} />;
+        }
         return <NoMatch reason={Reason.notFound} />;
     }
 

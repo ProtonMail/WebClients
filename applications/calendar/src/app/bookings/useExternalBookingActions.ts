@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -26,7 +26,6 @@ interface AttendeeInfo {
 
 export const useExternalBookingActions = () => {
     const api = useApi();
-    const location = useLocation();
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const setSelectedBookingSlot = useBookingStore((state) => state.setSelectedBookingSlot);
     const saveMeeting = useSaveMeeting();
@@ -41,7 +40,7 @@ export const useExternalBookingActions = () => {
     const getAddresses = useGetAddresses();
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
-    const bookingSecretBase64Url = location.hash.substring(1);
+    const bookingSecretBase64Url = history.location.hash.substring(1);
 
     const submitBooking = async (timeslot: BookingTimeslot, attendeeInfo: AttendeeInfo) => {
         if (!bookingDetails) {
@@ -101,7 +100,7 @@ export const useExternalBookingActions = () => {
             );
 
             setSelectedBookingSlot(timeslot);
-            history.push('/bookings/success');
+            history.push(`/bookings/success#${bookingSecretBase64Url}`);
             return 'success';
         } catch (error: unknown) {
             traceError(error);
