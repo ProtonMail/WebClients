@@ -62,8 +62,23 @@ describe('booking helpers', () => {
             });
         });
 
-        it('should return error if booking slots exceed limit', () => {
+        it('should not return an error if the booking slots are right at the limit', () => {
             const slots = Array.from({ length: MAX_BOOKING_SLOTS }, (_, i) => ({
+                id: `${i}`,
+                rangeID: 'rangeID',
+                start: new Date(),
+                end: new Date(),
+                timezone: 'Europe/Zurich',
+            }));
+
+            const result = validateFormData({ ...validForm, bookingSlots: slots });
+
+            expect(result).toEqual(undefined);
+        });
+
+        it('should return error if booking slots exceed limit', () => {
+            const count = MAX_BOOKING_SLOTS + 1;
+            const slots = Array.from({ length: count }, (_, i) => ({
                 id: `${i}`,
                 rangeID: 'rangeID',
                 start: new Date(),
@@ -75,7 +90,7 @@ describe('booking helpers', () => {
             expect(result).toEqual({
                 type: 'error',
                 reason: BookingFormValidationReasons.TIME_SLOT_LIMIT,
-                message: BookingErrorMessages.maxSlotsReached(MAX_BOOKING_SLOTS),
+                message: BookingErrorMessages.maxSlotsReached(count),
             });
         });
 
