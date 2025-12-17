@@ -13,8 +13,10 @@ export const hydrateAndCheckNodes = async (uids: string[]) => {
     const drive = getDrive();
     const nodes: NodeEntity[] = [];
     let containsUnsupportedFile;
-    for (const uid of uids) {
-        const maybeNode = await drive.getNode(uid);
+    for await (const maybeNode of drive.iterateNodes(uids)) {
+        if (!maybeNode.ok) {
+            continue;
+        }
         const { node } = getNodeEntity(maybeNode);
         nodes.push(node);
         if (checkUnsupportedNode(node)) {
@@ -28,8 +30,10 @@ export const hydrateAndCheckNodes = async (uids: string[]) => {
 export const hydratePhotos = async (uids: string[]) => {
     const drive = getDriveForPhotos();
     const nodes: NodeEntity[] = [];
-    for (const uid of uids) {
-        const maybeNode = await drive.getNode(uid);
+    for await (const maybeNode of drive.iterateNodes(uids)) {
+        if (!maybeNode.ok) {
+            continue;
+        }
         const { node, photoAttributes } = getNodeEntity(maybeNode);
         nodes.push(node);
         if (photoAttributes?.relatedPhotoNodeUids) {

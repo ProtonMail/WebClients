@@ -112,7 +112,7 @@ export class DownloadManager {
         const { addDownloadItem } = useDownloadManagerStore.getState();
         this.addListeners();
 
-        const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.File;
+        const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.Photo;
         let downloadId;
         if (isSingleFileDownload) {
             const node = nodes[0];
