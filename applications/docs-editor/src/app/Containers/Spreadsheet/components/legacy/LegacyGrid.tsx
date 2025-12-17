@@ -8,6 +8,7 @@ import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { GridFooter } from '../GridFooter/GridFooter'
 import { ContextMenu, ContextMenuWrapper } from '../ContextMenu'
+import { FilterBox } from '../FilterBox/FilterBox'
 
 const exposeCanvasGrid = (
   instance: CanvasGridMethods | null,
@@ -198,6 +199,7 @@ export function LegacyGrid() {
       footerComponent={
         isReadonly ? undefined : <GridFooter sheetId={activeSheetId} onRequestAddRows={onRequestAddRows} />
       }
+      FilterBox={FilterBox}
     />
   )
 }
