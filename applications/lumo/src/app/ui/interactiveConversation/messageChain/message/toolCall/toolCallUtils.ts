@@ -55,12 +55,20 @@ export function getToolCallErrorMessage(toolCall: ToolCallData): string {
     }
 
     switch (toolCall.name) {
+        case 'weather':
+            return `Error while checking weather`;
+        case 'stock':
+            return `Error while looking up stock prices`;
+        case 'cryptocurrency':
+            return `Error while checking cryptocurrency prices`;
         case 'describe_image':
             return `Error while describing image`;
         case 'generate_image':
             return `Error while generating image`;
         case 'edit_image':
-            return `Error while generating image`;
+            return `Error while editing image`;
+        case 'proton_info':
+            return `Error while checking Proton knowledge`;
         default:
             return 'Error while executing tool';
     }
