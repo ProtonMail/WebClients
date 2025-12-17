@@ -1021,6 +1021,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Pro zobrazení kalendářů rozbalte navigační panel"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnocení ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odeslat zpětnou vazbu"
+      ],
+      "Toggle referral": [
+        "Přepnout doporučení"
       ]
     },
     "action": {
@@ -6628,6 +6637,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } min."
+      ],
+      "Other location": [
+        "Jiné umístění"
       ]
     },
     "info": {
@@ -7343,6 +7355,15 @@
       ],
       "Zoom meeting": [
         "Schůzka na Zoomu"
+      ],
+      "Extremely Satisfied": [
+        "Velmi spokojen(a)"
+      ],
+      "Tell us more about your experience": [
+        "Řekněte nám více o svých zkušenostech"
+      ],
+      "Very Dissatisfied": [
+        "Velmi nespokojen(a)"
       ]
     },
     "label": {
@@ -7519,6 +7540,9 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ],
+      "Terms and conditions": [
+        "Smluvní podmínky užívání"
       ]
     },
     "Link label (optional)": {
@@ -9938,6 +9962,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Optional feedback": [
+        "Volitelná zpětná vazba"
       ]
     },
     "Placeholder for contact group name": {
@@ -12469,6 +12496,12 @@
       ],
       "This booking page has expired.": [
         "Tato rezervační stránka vypršela."
+      ],
+      "Referral": [
+        "Doporučení"
+      ],
+      "We'd love to hear from you!": [
+        "Budeme rádi za váš názor!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13141,6 +13174,11 @@
       ],
       "Please try again later.": [
         "Zkuste to prosím později."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále se snažíme vylepšovat ${ config.appName }. Nakolik uspokojivá je vaše zkušenost?"
       ]
     }
   }

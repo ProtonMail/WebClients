@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Expandir la barra de navegación para ver calendarios"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecciona la puntuación ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
+      ],
+      "Toggle referral": [
+        "Alternar referidos"
       ]
     },
     "action": {
@@ -3990,6 +3999,9 @@
       ],
       "Cannot create a booking with a disabled address": [
         "No se puede crear una reserva con una dirección deshabilitada"
+      ],
+      "You cannot enter the organizer's email": [
+        "No puedes ingresar el correo electrónico del organizador"
       ]
     },
     "error": {
@@ -6451,6 +6463,15 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } min"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pide a tu administrador que mejore el plan o elimina una página de la barra lateral de páginas de reserva."
+      ],
+      "Other location": [
+        "Otra ubicación"
+      ],
+      "Range already exists.": [
+        "El rango ya existe."
       ]
     },
     "info": {
@@ -7154,6 +7175,15 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfecho"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntanos más sobre tu experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Muy insatisfecho"
       ]
     },
     "label": {
@@ -7330,6 +7360,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ]
     },
     "Link label (optional)": {
@@ -9613,6 +9646,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -12036,6 +12072,12 @@
       ],
       "This booking page has expired.": [
         "Esta página de reservas ha expirado."
+      ],
+      "Referral": [
+        "Referido"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber tu opinión"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12620,6 +12662,11 @@
       ],
       "Please try again later.": [
         "Inténtalo más tarde."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Qué tan satisfecho estás con tu experiencia?"
       ]
     }
   }

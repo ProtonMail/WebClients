@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Expandiu la barra de navegació per veure els calendaris"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
+      ],
+      "Toggle referral": [
+        "Activa/desactiva la referència"
       ]
     },
     "action": {
@@ -3990,6 +3999,9 @@
       ],
       "Cannot create a booking with a disabled address": [
         "No es pot crear una reserva amb una adreça deshabilitada"
+      ],
+      "You cannot enter the organizer's email": [
+        "No podeu introduir el correu electrònic de l'organitzador"
       ]
     },
     "error": {
@@ -6460,6 +6472,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } min"
+      ],
+      "Other location": [
+        "Una altra ubicació"
       ]
     },
     "info": {
@@ -7163,6 +7178,15 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ]
     },
     "label": {
@@ -7339,6 +7363,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "Terms and conditions": [
+        "Termes i condicions"
       ]
     },
     "Link label (optional)": {
@@ -9622,6 +9649,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ]
     },
     "Placeholder for contact group name": {
@@ -12045,6 +12075,12 @@
       ],
       "This booking page has expired.": [
         "Aquesta pàgina de reserves ha caducat."
+      ],
+      "Referral": [
+        "Referència"
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12629,6 +12665,11 @@
       ],
       "Please try again later.": [
         "Proveu-ho més tard."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
       ]
     }
   }

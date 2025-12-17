@@ -1021,6 +1021,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Rozbaliť navigačný panel pre zobrazenie kalendárov"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
+      ],
+      "Toggle referral": [
+        "Prepnúť odporúčanie"
       ]
     },
     "action": {
@@ -4058,6 +4067,9 @@
       ],
       "Cannot create a booking with a disabled address": [
         "Nie je možné vytvoriť rezerváciu s deaktivovanou adresou"
+      ],
+      "You cannot enter the organizer's email": [
+        "Nemôžete zadať email organizátora"
       ]
     },
     "error": {
@@ -6628,6 +6640,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } min"
+      ],
+      "Other location": [
+        "Iné umiestnenie"
       ]
     },
     "info": {
@@ -7343,6 +7358,15 @@
       ],
       "Zoom meeting": [
         "Zoom stretnutie"
+      ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ]
     },
     "label": {
@@ -7519,6 +7543,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
       ]
     },
     "Link label (optional)": {
@@ -9938,6 +9965,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ]
     },
     "Placeholder for contact group name": {
@@ -12469,6 +12499,12 @@
       ],
       "This booking page has expired.": [
         "Táto rezervačná stránka vypršala."
+      ],
+      "Referral": [
+        "Odporúčanie"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13141,6 +13177,11 @@
       ],
       "Please try again later.": [
         "Skúste to znova neskôr, prosím."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     }
   }

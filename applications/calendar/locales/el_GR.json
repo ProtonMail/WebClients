@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Ανάπτυξη γραμμής περιήγησης για προβολή ημερολογίων"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
+      ],
+      "Toggle referral": [
+        "Εναλλαγή παραπομπής"
       ]
     },
     "action": {
@@ -6460,6 +6469,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } λ."
+      ],
+      "Other location": [
+        "Άλλη τοποθεσία"
       ]
     },
     "info": {
@@ -7163,6 +7175,15 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ]
     },
     "label": {
@@ -7339,6 +7360,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Terms and conditions": [
+        "Όροι & Προϋποθέσεις"
       ]
     },
     "Link label (optional)": {
@@ -9622,6 +9646,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ]
     },
     "Placeholder for contact group name": {
@@ -12045,6 +12072,12 @@
       ],
       "This booking page has expired.": [
         "Αυτή η σελίδα κράτησης έχει λήξει."
+      ],
+      "Referral": [
+        "Παραπομπή"
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12629,6 +12662,11 @@
       ],
       "Please try again later.": [
         "Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     }
   }

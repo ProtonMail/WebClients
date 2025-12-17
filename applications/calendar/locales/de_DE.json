@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Erweitere die Navigationsleiste, um Kalender zu sehen"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Wähle Bewertung ${ n } von ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback senden"
+      ],
+      "Toggle referral": [
+        "Empfehlung umschalten"
       ]
     },
     "action": {
@@ -3990,6 +3999,9 @@
       ],
       "Cannot create a booking with a disabled address": [
         "Du kannst keine Buchung mit einer deaktivierten Adresse erstellen."
+      ],
+      "You cannot enter the organizer's email": [
+        "Du kannst die E-Mail-Adresse des Organisators nicht eingeben."
       ]
     },
     "error": {
@@ -6460,6 +6472,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } Min."
+      ],
+      "Other location": [
+        "Anderer Ort"
       ]
     },
     "info": {
@@ -7163,6 +7178,15 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Extremely Satisfied": [
+        "Sehr zufrieden"
+      ],
+      "Tell us more about your experience": [
+        "Erzähl uns mehr von deiner Erfahrung"
+      ],
+      "Very Dissatisfied": [
+        "Sehr unzufrieden"
       ]
     },
     "label": {
@@ -7339,6 +7363,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Terms and conditions": [
+        "Nutzungsbedingungen"
       ]
     },
     "Link label (optional)": {
@@ -9622,6 +9649,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Optional feedback": [
+        "Optionales Feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -12045,6 +12075,12 @@
       ],
       "This booking page has expired.": [
         "Diese Buchungsseite ist abgelaufen."
+      ],
+      "Referral": [
+        "Empfehlung"
+      ],
+      "We'd love to hear from you!": [
+        "Wir würden uns freuen, von dir zu hören."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12629,6 +12665,11 @@
       ],
       "Please try again later.": [
         "Bitte versuch es später noch einmal."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
       ]
     }
   }

@@ -1004,6 +1004,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Crea pagina di prenotazione"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Espandi la barra di navigazione per visualizzare le prenotazioni"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Espandi la barra di navigazione per visualizzare il calendario"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleziona valutazione ${ n } su ${ to }"
+      ],
+      "Send Feedback": [
+        "Invia Feedback"
+      ],
+      "Toggle referral": [
+        "Attiva/disattiva referral"
       ]
     },
     "action": {
@@ -1195,6 +1213,12 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3306,6 +3330,15 @@
       ],
       "90 minutes": [
         "90 minuti"
+      ],
+      "120m": [
+        "120 min"
+      ],
+      "60m": [
+        "60 min"
+      ],
+      "90m": [
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -3963,6 +3996,12 @@
       ],
       "Cannot create a booking with a disabled address": [
         "Non è possibile creare una prenotazione con un indirizzo disabilitato"
+      ],
+      "Location is required": [
+        "La posizione è obbligatoria"
+      ],
+      "You cannot enter the organizer's email": [
+        "Non puoi inserire l'email dell'organizzatore"
       ]
     },
     "error": {
@@ -6412,6 +6451,30 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Hai raggiunto il numero massimo di calendari disponibili nel tuo piano."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } min"
+      ],
+      "Cannot create a range across days.": [
+        "Non puoi creare un intervallo di prenotazione su più giorni."
+      ],
+      "Cannot create a range in the past.": [
+        "Non puoi creare un intervallo di prenotazione nel passato."
+      ],
+      "Other location": [
+        "Altra posizione"
+      ],
+      "Range already exists.": [
+        "L'intervallo esiste già."
+      ],
+      "Range is too short.": [
+        "L'intervallo è troppo corto."
+      ],
+      "Range overlaps with an existing range.": [
+        "L'intervallo si sovrappone a un intervallo esistente."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -7115,6 +7178,15 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Estremamente soddisfatto"
+      ],
+      "Tell us more about your experience": [
+        "Raccontaci di più sulla tua esperienza"
+      ],
+      "Very Dissatisfied": [
+        "Molto insoddisfatto"
       ]
     },
     "label": {
@@ -7291,6 +7363,9 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ],
+      "Terms and conditions": [
+        "Termini e condizioni"
       ]
     },
     "Link label (optional)": {
@@ -9574,6 +9649,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Optional feedback": [
+        "Feedback opzionale"
       ]
     },
     "Placeholder for contact group name": {
@@ -11988,6 +12066,21 @@
       ],
       "Cannot create more Booking pages": [
         "Impossibile creare altre pagine di prenotazione"
+      ],
+      "Referral": [
+        "Segnalazione"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Questa funzionalità non è attualmente disponibile."
+      ],
+      "This booking page can’t be shown.": [
+        "Questa pagina di prenotazione non può essere visualizzata."
+      ],
+      "This booking page has expired.": [
+        "Questa pagina di prenotazione è scaduta."
+      ],
+      "We'd love to hear from you!": [
+        "Ci piacerebbe sapere cosa ne pensi!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12561,6 +12654,22 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Cerchiamo sempre di migliorare ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Nessuna prenotazione disponibile."
+      ],
+      "Please check the link and try again.": [
+        "Controlla il link e riprova."
+      ],
+      "Please try again later.": [
+        "Per favore, riprova più tardi."
       ]
     }
   }

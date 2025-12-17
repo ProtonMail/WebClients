@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Takvimleri görmek için gezinme çubuğunu genişletin"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Puan seçin ${ n } / ${ to }"
+      ],
+      "Send Feedback": [
+        "Geri Bildirim Gönder"
+      ],
+      "Toggle referral": [
+        "Öneriyi aç/kapat"
       ]
     },
     "action": {
@@ -6460,6 +6469,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } dk"
+      ],
+      "Other location": [
+        "Diğer konum"
       ]
     },
     "info": {
@@ -7163,6 +7175,15 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Extremely Satisfied": [
+        "Son Derece Memnun"
+      ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+      ],
+      "Very Dissatisfied": [
+        "Çok Memnun Değil"
       ]
     },
     "label": {
@@ -7339,6 +7360,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Terms and conditions": [
+        "Hüküm ve koşullar"
       ]
     },
     "Link label (optional)": {
@@ -9622,6 +9646,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ]
     },
     "Placeholder for contact group name": {
@@ -12045,6 +12072,12 @@
       ],
       "This booking page has expired.": [
         "Bu rezervasyon sayfasının süresi geçmiş."
+      ],
+      "Referral": [
+        "Yönlendirme"
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12629,6 +12662,11 @@
       ],
       "Please try again later.": [
         "Lütfen bir süre sonra yeniden deneyin."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çaba gösteriyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     }
   }

@@ -1013,6 +1013,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "Expandir la barra de navegación para ver calendarios"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccione una puntuación del ${ n } al ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
+      ],
+      "Toggle referral": [
+        "Alternar referidos"
       ]
     },
     "action": {
@@ -6460,6 +6469,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } min"
+      ],
+      "Other location": [
+        "Otra ubicación"
       ]
     },
     "info": {
@@ -7163,6 +7175,15 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfactoria"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntenos más sobre su experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Poco satisfactoria"
       ]
     },
     "label": {
@@ -7339,6 +7360,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ]
     },
     "Link label (optional)": {
@@ -9622,6 +9646,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -12045,6 +12072,12 @@
       ],
       "This booking page has expired.": [
         "Esta página de reservas ha expirado."
+      ],
+      "Referral": [
+        "Referido"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber su opinión"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12629,6 +12662,11 @@
       ],
       "Please try again later.": [
         "Intente de nuevo más tarde."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     }
   }

@@ -1009,6 +1009,15 @@
       ],
       "Expand navigation bar to see calendars": [
         "ナビゲーションバーを展開してカレンダーを表示"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "${ to }段階中の${ n }評価を選択"
+      ],
+      "Send Feedback": [
+        "フィードバックを送信"
+      ],
+      "Toggle referral": [
+        "紹介の切り替え"
       ]
     },
     "action": {
@@ -6376,6 +6385,9 @@
       ],
       "${ bookingDetails.duration } min": [
         "${ bookingDetails.duration } 分"
+      ],
+      "Other location": [
+        "その他の場所"
       ]
     },
     "info": {
@@ -7073,6 +7085,15 @@
       ],
       "Create shareable pages where people can book time with you.": [
         "お客様と日程を調整できる共有ページを作成します。"
+      ],
+      "Extremely Satisfied": [
+        "非常に満足"
+      ],
+      "Tell us more about your experience": [
+        "ご利用時の体験について詳しいご意見をお聞かせください"
+      ],
+      "Very Dissatisfied": [
+        "非常に不満"
       ]
     },
     "label": {
@@ -7249,6 +7270,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Terms and conditions": [
+        "利用規約"
       ]
     },
     "Link label (optional)": {
@@ -9464,6 +9488,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Optional feedback": [
+        "フィードバック(任意)"
       ]
     },
     "Placeholder for contact group name": {
@@ -11833,6 +11860,12 @@
       ],
       "This booking page has expired.": [
         "この予約ページは有効期限切れです。"
+      ],
+      "Referral": [
+        "紹介"
+      ],
+      "We'd love to hear from you!": [
+        "ぜひ、ご意見をお寄せください！"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12373,6 +12406,11 @@
       ],
       "Please try again later.": [
         "後ほど再度お試しください。"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     }
   }

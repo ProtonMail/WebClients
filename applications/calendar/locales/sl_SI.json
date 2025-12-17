@@ -913,6 +913,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Send Feedback": [
+        "Pošlji povratne informacije"
       ]
     },
     "action": {
@@ -4224,6 +4227,9 @@
       ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "Domain": [
+        "Domena"
       ]
     },
     "Hint": {
@@ -5903,6 +5909,15 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "Choose a plan that works best for you.": [
+        "Izberite paket, ki vam najbolj ustreza"
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "Other location": [
+        "Druga lokacija"
       ]
     },
     "info": {
@@ -6561,6 +6576,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Extremely Satisfied": [
+        "Izjemno zadovoljen/-na"
+      ],
+      "Very Dissatisfied": [
+        "Zelo nezadovoljen/-na"
       ]
     },
     "Label for contact group color": {
@@ -7580,6 +7601,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -8292,6 +8316,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Don't show this again": [
+        "Ne prikazuj več"
       ]
     },
     "Offer fearue": {
@@ -8596,6 +8623,9 @@
       ],
       "New credit/debit card": [
         "Nova kreditna/debetna kartica"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8651,6 +8681,18 @@
       ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
+      "VAT": [
+        "DDV"
+      ],
+      "You already have a subscription to this plan.": [
+        "Na ta paket ste že naročeni."
       ]
     },
     "Payments.Error": {
@@ -8946,6 +8988,12 @@
     "Referral": {
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
+      "your subscription": [
+        "vaša naročnina"
       ]
     },
     "Reload event button tooltip": {
@@ -11776,6 +11824,25 @@
     "Duo offer": {
       "2 user accounts": [
         "2 uporabniška računa"
+      ],
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
+      ]
+    },
+    "collider_2025: feature": {
+      "Large file upload support": [
+        "Podpora za nalaganje velikih datotek"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Obdrži paket ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, prepričan(a) sem"
       ]
     }
   }
