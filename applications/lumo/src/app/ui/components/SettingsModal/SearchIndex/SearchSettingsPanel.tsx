@@ -2,32 +2,30 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import { SearchIndexStats } from './SearchIndexStats';
-import { SearchIndexManagement } from './SearchIndexManagement';
-import { SearchIndexPrivacy } from './SearchIndexPrivacy';
-import { SearchInspectList } from './SearchInspectList';
-import { SearchInspectDetail } from './SearchInspectDetail';
 
 import { ENABLE_FOUNDATION_SEARCH } from '../../../../config/search';
-import { useMessageSearch } from '../../../../hooks/useMessageSearch';
-import { useUser } from '@proton/account/user/hooks';
 import { useLumoUserSettings } from '../../../../hooks';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
-import { IndexingStatusBanner } from '../../../components/Files/DriveBrowser/IndexingStatusBanner';
+import { useMessageSearch } from '../../../../hooks/useMessageSearch';
 import { DbApi } from '../../../../indexedDb/db';
 import { useLumoSelector } from '../../../../redux/hooks';
 import { selectConversations, selectMessages } from '../../../../redux/selectors';
 import { selectSpaceMap } from '../../../../redux/slices/core/spaces';
-import type { SpaceId } from '../../../../types';
 import { SearchService } from '../../../../services/search/searchService';
 import type { SearchServiceStatus } from '../../../../services/search/types';
-import type { Conversation } from '../../../../types';
+import type { Conversation, Message, SpaceId } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
-import type { Message } from '../../../../types';
+import { IndexingStatusBanner } from '../../../components/Files/DriveBrowser/IndexingStatusBanner';
+import { SearchIndexManagement } from './SearchIndexManagement';
+import { SearchIndexPrivacy } from './SearchIndexPrivacy';
+import { SearchIndexStats } from './SearchIndexStats';
+import { SearchInspectDetail } from './SearchInspectDetail';
+import { SearchInspectList } from './SearchInspectList';
 
 const SettingsSectionItem = ({
     icon,
@@ -67,7 +65,12 @@ export const SearchSettingsPanel = () => {
     const userId = user?.ID;
     const { indexingStatus: messageIndexingStatus } = useMessageSearch();
     const { lumoUserSettings } = useLumoUserSettings();
-    const { indexedFolders: driveIndexedFolders, rehydrateFolders, isIndexing: isDriveIndexing, indexingStatus: driveIndexingStatus } = useDriveFolderIndexing();
+    const {
+        indexedFolders: driveIndexedFolders,
+        rehydrateFolders,
+        isIndexing: isDriveIndexing,
+        indexingStatus: driveIndexingStatus,
+    } = useDriveFolderIndexing();
     const [isIndexing, setIsIndexing] = useState(false);
     const [foundationStatus, setFoundationStatus] = useState<SearchServiceStatus | undefined>();
     const [statusCheckCount, setStatusCheckCount] = useState(0);
@@ -102,22 +105,22 @@ export const SearchSettingsPanel = () => {
 
     // Get valid space IDs to filter out folders linked to deleted spaces
     const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
-    
+
     const allIndexedFolders = driveIndexedFolders ?? lumoUserSettings.indexedDriveFolders ?? [];
     // Filter to only include folders whose space still exists (or have no spaceId)
-    const indexedFolders = allIndexedFolders.filter(
-        (f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId)
-    );
+    const indexedFolders = allIndexedFolders.filter((f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId));
     const totalIndexedDocuments = indexedFolders.reduce((sum, folder) => sum + (folder.documentCount || 0), 0);
     const indexedFoldersCount = indexedFolders.filter((f) => f.isActive).length;
     const hasIndexEntries = !!foundationStatus?.hasEntries || (foundationStatus?.entryCount ?? 0) > 0;
 
+    /* eslint-disable no-nested-ternary */
     const displayDriveDocs =
         hasIndexEntries && foundationStatus?.driveDocuments && foundationStatus.driveDocuments > 0
             ? foundationStatus.driveDocuments
             : hasIndexEntries
               ? totalIndexedDocuments
               : 0;
+    /* eslint-disable no-nested-ternary */
     const displayFolders =
         hasIndexEntries && foundationStatus?.indexedFolders && foundationStatus.indexedFolders > 0
             ? foundationStatus.indexedFolders
@@ -164,7 +167,7 @@ export const SearchSettingsPanel = () => {
 
             // Get valid space IDs to skip folders linked to deleted spaces
             const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
-            
+
             console.log('[SearchSettings] Reindex Drive - starting rehydrate');
             const rehydratedCount = await rehydrateFolders(validSpaceIds);
             if (rehydratedCount === 0) {
@@ -185,7 +188,8 @@ export const SearchSettingsPanel = () => {
 
         if (
             !window.confirm(
-                c('Confirmation').t`Are you sure you want to clear the search index? You will need to re-index to search again.`
+                c('Confirmation')
+                    .t`Are you sure you want to clear the search index? You will need to re-index to search again.`
             )
         ) {
             return;
@@ -229,7 +233,11 @@ export const SearchSettingsPanel = () => {
     // Inspect detail
     if (viewMode === 'inspectDetail' && selectedDoc) {
         return (
-            <SearchInspectDetail doc={selectedDoc} formatBytes={formatBytes} onBack={() => setViewMode('inspectList')} />
+            <SearchInspectDetail
+                doc={selectedDoc}
+                formatBytes={formatBytes}
+                onBack={() => setViewMode('inspectList')}
+            />
         );
     }
 
@@ -252,12 +260,13 @@ export const SearchSettingsPanel = () => {
     // Inspect detail
     if (viewMode === 'inspectDetail' && selectedDoc) {
         const doc = selectedDoc;
+        /* eslint-disable no-nested-ternary */
         const sizeText =
             doc.size && doc.size > 0
                 ? formatBytes(doc.size)
                 : doc.content
-                    ? formatBytes(new TextEncoder().encode(doc.content).byteLength)
-                    : c('Info').t`Unknown size`;
+                  ? formatBytes(new TextEncoder().encode(doc.content).byteLength)
+                  : c('Info').t`Unknown size`;
         return (
             <div className="flex flex-column gap-3">
                 <div className="flex items-center gap-2">
@@ -268,11 +277,17 @@ export const SearchSettingsPanel = () => {
                     <span className="text-semibold truncate">{doc.name}</span>
                 </div>
 
-                <div className="p-3 rounded border bg-weak flex gap-3 items-start" style={{ borderColor: 'var(--border-weak)' }}>
+                <div
+                    className="p-3 rounded border bg-weak flex gap-3 items-start"
+                    style={{ borderColor: 'var(--border-weak)' }}
+                >
                     <FileIcon mimeType={doc.mimeType || 'application/octet-stream'} size={5} />
                     <div className="flex-1 min-w-0">
                         <div className="text-semibold text-lg truncate mb-2">{doc.name}</div>
-                        <div className="grid" style={{ gridTemplateColumns: 'max-content 1fr', rowGap: '0.35rem', columnGap: '0.75rem' }}>
+                        <div
+                            className="grid"
+                            style={{ gridTemplateColumns: 'max-content 1fr', rowGap: '0.35rem', columnGap: '0.75rem' }}
+                        >
                             <span className="text-sm color-weak">{c('Info').t`Folder:`}</span>
                             <span className="text-sm truncate">{doc.folderPath || doc.folderId || '—'}</span>
 
@@ -313,7 +328,7 @@ export const SearchSettingsPanel = () => {
 
     // Stats view (default)
     return (
-        <div className="flex flex-column gap-4">
+        <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
             <SettingsSectionItem
                 icon="list-bullets"
                 text={c('Title').t`Index Statistics`}
@@ -347,7 +362,11 @@ export const SearchSettingsPanel = () => {
                 status={
                     // Show indexing progress when active (state is now shared via context)
                     isDriveIndexing && driveIndexingStatus ? (
-                        <IndexingStatusBanner indexingStatus={driveIndexingStatus} isIndexing={isDriveIndexing} inline />
+                        <IndexingStatusBanner
+                            indexingStatus={driveIndexingStatus}
+                            isIndexing={isDriveIndexing}
+                            inline
+                        />
                     ) : null
                 }
             />
@@ -376,10 +395,12 @@ export const SearchSettingsPanel = () => {
                     </div>
                     <div className="text-sm color-weak">
                         <p className="mb-2">
-                            {c('Info').t`You have ${conversationCount} conversations but no search index has been created yet.`}
+                            {c('Info')
+                                .t`You have ${conversationCount} conversations but no search index has been created yet.`}
                         </p>
                         <p>
-                            <strong>{c('Info').t`To fix:`}</strong> Click "Index Now" to create the search index for all your conversations.
+                            <strong>{c('Info').t`To fix:`}</strong> Click "Index Now" to create the search index for all
+                            your conversations.
                         </p>
                     </div>
                 </div>
@@ -387,4 +408,3 @@ export const SearchSettingsPanel = () => {
         </div>
     );
 };
-
