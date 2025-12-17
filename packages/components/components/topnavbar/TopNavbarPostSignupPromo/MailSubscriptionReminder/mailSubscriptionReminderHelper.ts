@@ -1,6 +1,5 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { domIsBusy } from '@proton/shared/lib/busy';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
@@ -45,9 +44,5 @@ export const getIsUserEligibleForSubscriptionReminder = ({
         ? displaySixMonthReminder
         : daysSinceOneDollarOffer >= POST_SIGNUP_ONE_DOLLAR_DURATION + PROMOTION_BUFFER_DAYS;
 
-    const isDomBusy = domIsBusy();
-
-    return (
-        user.isFree && !user.isDelinquent && hasValidApp && shouldDisplayOffer && !isDomBusy && !hasPassLifetime(user)
-    );
+    return user.isFree && !user.isDelinquent && hasValidApp && shouldDisplayOffer && !hasPassLifetime(user);
 };
