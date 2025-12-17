@@ -7,7 +7,7 @@ import type {
     VERIFICATION_STATUS,
 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -22,7 +22,7 @@ import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachme
 import { convert } from '../attachment/attachmentConverter';
 
 const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
-    utf8ArrayToString(data)
+    uint8ArrayToUtf8String(data)
         .replace(/\r\n/g, '\n')
         // nbsp can be contained in message body and "crash" DOMPurify
         .replace(/\u00A0/g, ' ');

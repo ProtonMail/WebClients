@@ -1,9 +1,9 @@
 import mimemessage from '@protontech/mimemessage';
 
-import { encodeUtf8 } from '@proton/crypto/lib/utils';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import type { AttachmentDirect } from '../../interfaces/mail/crypto';
+import { utf8StringToBinaryString } from '../../helpers/encoding';
 
 /**
  * Remove '; name=' and '; filename=' values
@@ -29,7 +29,7 @@ const buildAttachment = (attachmentData: { attachment: AttachmentDirect; data: s
         contentTransferEncoding: 'base64',
         // the mimemessage library requires a particular transformation of the string `data` into a binary string
         // to produce the right body when data contains non Latin1 characters
-        body: encodeUtf8(data),
+        body: utf8StringToBinaryString(data),
     });
 
     entity.header(

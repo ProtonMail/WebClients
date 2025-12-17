@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { isElectronMail } from '../../helpers/desktop';
@@ -90,7 +90,7 @@ export const verifySignedCard = async (
     publicKeys: PublicKeyReference | PublicKeyReference[]
 ) => {
     const { verificationStatus: verifiedBinary } = await CryptoProxy.verifyMessage({
-        binaryData: stringToUtf8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
+        binaryData: utf8StringToUint8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
         verificationKeys: publicKeys,
         armoredSignature: signature,
     });
@@ -116,7 +116,7 @@ export const decryptCard = async (
         armoredSignature: signature || undefined,
         sessionKeys: [sessionKey],
     });
-    const decryptedText = utf8ArrayToString(decryptedData);
+    const decryptedText = uint8ArrayToUtf8String(decryptedData);
     const maybeLegacyVerificationStatus =
         signature && getNeedsLegacyVerification(verifiedBinary, decryptedText)
             ? await getVerifiedLegacy({ textData: decryptedText, signature, publicKeys })
@@ -124,7 +124,7 @@ export const decryptCard = async (
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(maybeLegacyVerificationStatus, hasPublicKeys);
 
-    return { data: utf8ArrayToString(decryptedData), verificationStatus };
+    return { data: uint8ArrayToUtf8String(decryptedData), verificationStatus };
 };
 
 export const decryptAndVerifyCalendarEvent = (

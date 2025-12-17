@@ -1,4 +1,4 @@
-import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { type CommentVerificationResult, Result, ServerTime } from '@proton/docs-shared'
@@ -52,7 +52,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         dto.CommentID,
         new ServerTime(dto.CreateTime),
         new ServerTime(dto.ModifyTime),
-        utf8ArrayToString(decrypted.getValue().content as Uint8Array<ArrayBuffer>),
+        uint8ArrayToUtf8String(decrypted.getValue().content as Uint8Array<ArrayBuffer>),
         dto.ParentCommentID,
         emailToUse,
         [],

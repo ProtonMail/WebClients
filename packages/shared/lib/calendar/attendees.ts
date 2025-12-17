@@ -1,5 +1,5 @@
 import { CryptoProxy, type SessionKey } from '@proton/crypto';
-import { binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
@@ -35,7 +35,7 @@ export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
-    const byteArray = binaryStringToArray(uidEmail);
+    const byteArray = binaryStringToUint8Array(uidEmail);
     const hash = await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: byteArray });
     return hash.toHex();
 };

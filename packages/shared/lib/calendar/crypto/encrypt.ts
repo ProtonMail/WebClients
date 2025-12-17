@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 
 import type { SimpleMap } from '../../interfaces';
 import type { EncryptPartResult, SignPartResult } from '../../interfaces/calendar';
@@ -20,7 +20,7 @@ export async function signPart(
     }
 
     const signature = await CryptoProxy.signMessage({
-        binaryData: stringToUtf8Array(dataToSign),
+        binaryData: utf8StringToUint8Array(dataToSign),
         signingKeys: [signingKey],
         detached: true,
     });
@@ -50,7 +50,7 @@ export async function encryptPart(
         return;
     }
     const { message: encryptedData, signature: binarySignature } = await CryptoProxy.encryptMessage({
-        binaryData: stringToUtf8Array(dataToEncrypt),
+        binaryData: utf8StringToUint8Array(dataToEncrypt),
         signingKeys: [signingKey],
         sessionKey,
         format: 'binary',

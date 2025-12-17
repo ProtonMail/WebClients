@@ -1,7 +1,7 @@
 import type { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 
 import { decryptData, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { defineEncryptedEntity } from './encryption';
@@ -34,7 +34,7 @@ describe('EncryptedEntity', () => {
             expect('secret' in encrypted).toBe(false);
             expect('data' in encrypted).toBe(false);
 
-            const additionalContext = stringToUtf8Array(TestAuthenticatorTag);
+            const additionalContext = utf8StringToUint8Array(TestAuthenticatorTag);
             const { __encryptedData: data } = encrypted;
             const decrypted = await decryptData(key, data, additionalContext);
             const parsed = JSON.parse(uint8ArrayToString(decrypted));

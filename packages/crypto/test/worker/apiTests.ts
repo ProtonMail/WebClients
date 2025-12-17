@@ -16,11 +16,7 @@ import {
 
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
-import {
-    binaryStringToArray,
-    stringToUtf8Array,
-    utf8ArrayToString,
-} from '../../lib/utils';
+import { binaryStringToUint8Array, utf8StringToUint8Array, uint8ArrayToUtf8String } from '../../lib/utils';
 import {
     ecc25519Key,
     eddsaElGamalSubkey,
@@ -121,7 +117,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
             passwords: 'password',
             format: 'binary',
         });
-        expect(decryptionResult.data).to.deep.equal(stringToUtf8Array('hello world'));
+        expect(decryptionResult.data).to.deep.equal(utf8StringToUint8Array('hello world'));
         expect(decryptionResult.signatures).to.have.length(0);
         expect(decryptionResult.verificationErrors).to.not.exist;
         expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
@@ -224,7 +220,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             passphrase: null,
         });
         const { message: armoredEncryptedWithSEIPDv1 } = await CryptoApiImplementation.encryptMessage({
-            binaryData: stringToUtf8Array('Hello world!'),
+            binaryData: utf8StringToUint8Array('Hello world!'),
             encryptionKeys: privateKey,
         });
 
@@ -321,7 +317,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             verificationKeys: privateKeyRef,
             format: 'binary',
         });
-        expect(invalidVerificationResult.data).to.deep.equal(stringToUtf8Array('not signed data'));
+        expect(invalidVerificationResult.data).to.deep.equal(utf8StringToUint8Array('not signed data'));
         expect(invalidVerificationResult.signatures).to.have.length(1);
         expect(invalidVerificationResult.errors).to.have.length(1);
         expect(invalidVerificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
@@ -489,7 +485,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
             userIDs: { name: 'bob', email: 'bob@test.com' },
         });
 
-        const plaintext = stringToUtf8Array('hello world');
+        const plaintext = utf8StringToUint8Array('hello world');
         const {
             message: encryptedBinaryMessage,
             signature: detachedBinarySignature,
@@ -536,7 +532,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         const bobKeyRef = await CryptoApiImplementation.generateKey({
             userIDs: { name: 'bob', email: 'bob@test.com' },
         });
-        const plaintext = stringToUtf8Array('hello world');
+        const plaintext = utf8StringToUint8Array('hello world');
 
         const encryptionOptions = {
             binaryData: plaintext,
@@ -745,7 +741,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(attachment.contentId.endsWith('@pmcrypto>')).to.be.true;
         expect(attachment.content.length > 0).to.be.true;
         expect(attachment.content.length).to.equal(attachment.size);
-        expect(utf8ArrayToString(attachment.content)).to.equal('this is the attachment text\n');
+        expect(uint8ArrayToUtf8String(attachment.content)).to.equal('this is the attachment text\n');
     });
 
     it('processMIME - it can parse message with empty signature', async () => {
@@ -931,26 +927,26 @@ Z3SSOseslp6+4nnQ3zOqnisO
     it('computeHash', async () => {
         const testHashMD5 = await CryptoApiImplementation.computeHash({
             algorithm: 'unsafeMD5',
-            data: binaryStringToArray('The quick brown fox jumps over the lazy dog'),
-        }).then(bytes => bytes.toHex());
+            data: binaryStringToUint8Array('The quick brown fox jumps over the lazy dog'),
+        }).then((bytes) => bytes.toHex());
         expect(testHashMD5).to.equal('9e107d9d372bb6826bd81d3542a419d6');
 
         const testHashSHA1 = await CryptoApiImplementation.computeHash({
             algorithm: 'unsafeSHA1',
             data: new Uint8Array(),
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
         expect(testHashSHA1).to.equal('da39a3ee5e6b4b0d3255bfef95601890afd80709');
 
         const testHashSHA256 = await CryptoApiImplementation.computeHash({
             algorithm: 'SHA256',
             data: new Uint8Array(),
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
         expect(testHashSHA256).to.equal('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
 
         const testHashSHA512 = await CryptoApiImplementation.computeHash({
             algorithm: 'SHA512',
             data: new Uint8Array(),
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
         expect(testHashSHA512).to.equal(
             'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e'
         );
@@ -968,7 +964,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const testHashSHA1Empty = await CryptoApiImplementation.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream: emptyDataStream,
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
         expect(testHashSHA1Empty).to.equal('da39a3ee5e6b4b0d3255bfef95601890afd80709');
 
         // `data` and `dataStream` share the underlying buffer: this is to test that no byte transferring is taking place
@@ -984,9 +980,9 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const testHashSHA1Streamed = await CryptoApiImplementation.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream,
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
         const testHashSHA1 = await CryptoApiImplementation.computeHash({ algorithm: 'unsafeSHA1', data }).then(
-            bytes => bytes.toHex()
+            (bytes) => bytes.toHex()
         );
         expect(testHashSHA1).to.equal('3f3feea4f73d400fe98b7518a4b21ad4fc80476d');
         expect(testHashSHA1Streamed).to.equal(testHashSHA1);
@@ -1253,9 +1249,7 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
         expect(charlieKey.subkeys.length).to.equal(1);
         expect(proxyInstances[0].keyVersion).to.equal(4);
         expect(proxyInstances[0].forwarderKeyFingerprint.toHex()).to.include(bobKey.subkeys[0].getKeyID());
-        expect(proxyInstances[0].forwardeeKeyFingerprint.toHex()).to.include(
-            charlieKey.subkeys[0].getKeyID()
-        );
+        expect(proxyInstances[0].forwardeeKeyFingerprint.toHex()).to.include(charlieKey.subkeys[0].getKeyID());
     });
 
     it('generateE2EEForwardingMaterial - supports proxying multiple subkeys', async () => {
@@ -1309,12 +1303,8 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
         proxyInstances.forEach((proxyInstance, i) => {
             expect(proxyInstance.proxyParameter).to.have.length(32);
             expect(proxyInstance.keyVersion).to.equal(4);
-            expect(proxyInstance.forwarderKeyFingerprint.toHex()).to.include(
-                bobForwardingSubkeys[i].getKeyID()
-            );
-            expect(proxyInstance.forwardeeKeyFingerprint.toHex()).to.include(
-                charlieKey.subkeys[i].getKeyID()
-            );
+            expect(proxyInstance.forwarderKeyFingerprint.toHex()).to.include(bobForwardingSubkeys[i].getKeyID());
+            expect(proxyInstance.forwardeeKeyFingerprint.toHex()).to.include(charlieKey.subkeys[i].getKeyID());
         });
     });
 

@@ -1,6 +1,6 @@
 import { systemPreferences } from 'electron';
 
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as macBiometrics } from '../../../native';
@@ -23,7 +23,7 @@ const factory: BiometricsFactory = () => {
              * Rust would store the bytes of this string using `as_bytes()` and
              * retrieve using `String::from_utf8()`. As such treat the uint8 array
              * as an utf8 array for proper string conversion */
-            if (version === 1) return utf8ArrayToString(secretBytes);
+            if (version === 1) return uint8ArrayToUtf8String(secretBytes);
 
             /* Version 2+: Secrets are stored as raw byte arrays without
              * any conversions to and from strings */

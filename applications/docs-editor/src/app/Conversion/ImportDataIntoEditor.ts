@@ -6,7 +6,7 @@ import { $convertFromMarkdownString } from '@lexical/markdown'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
-import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { c } from 'ttag'
 
@@ -66,7 +66,7 @@ export async function $importDataIntoEditor(
     return result
   }
 
-  const otherFormatString = utf8ArrayToString(data)
+  const otherFormatString = uint8ArrayToUtf8String(data)
 
   if (dataFormat.dataType === 'json' && isValidSuperString(editor, otherFormatString)) {
     return TranslatedResult.ok()

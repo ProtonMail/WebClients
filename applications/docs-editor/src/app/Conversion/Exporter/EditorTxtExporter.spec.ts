@@ -1,4 +1,4 @@
-import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import type { ExporterRequiredCallbacks } from './EditorExporter'
 import { EditorTxtExporter } from './EditorTxtExporter'
 
@@ -10,6 +10,6 @@ describe('EditorTxtExporter', () => {
 
     const plaintext = await exporter.export()
 
-    expect(utf8ArrayToString(plaintext)).toBe('Hello world.')
+    expect(uint8ArrayToUtf8String(plaintext)).toBe('Hello world.')
   })
 })

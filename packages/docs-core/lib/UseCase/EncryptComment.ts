@@ -4,7 +4,7 @@ import type { EncryptionService } from '../Services/Encryption/EncryptionService
 import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
 import metrics from '@proton/metrics'
 import { canKeysSign } from '../Types/DocumentEntitlements'
 import type { PublicDocumentKeys } from '@proton/drive-store'
@@ -15,7 +15,7 @@ export class EncryptComment implements UseCaseInterface<string> {
   async execute(comment: string, markId: string, keys: DocumentKeys | PublicDocumentKeys): Promise<Result<string>> {
     const encrypted = canKeysSign(keys)
       ? await this.encryption.signAndEncryptData(
-          stringToUtf8Array(comment),
+          utf8StringToUint8Array(comment),
           GetAssociatedEncryptionDataForComment({
             authorAddress: keys.userOwnAddress,
             markId: markId,
@@ -24,7 +24,7 @@ export class EncryptComment implements UseCaseInterface<string> {
           keys.userAddressPrivateKey,
         )
       : await this.encryption.encryptAnonymousData(
-          stringToUtf8Array(comment),
+          utf8StringToUint8Array(comment),
           GetAssociatedEncryptionDataForComment({
             authorAddress: undefined,
             markId: markId,
