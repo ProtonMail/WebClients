@@ -705,7 +705,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -1014,6 +1014,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selectare evaluare ${ n } din ${ to }"
+      ],
+      "Send Feedback": [
+        "Trimitere feedback"
+      ],
+      "Toggle referral": [
+        "Comutare recomandat"
       ]
     },
     "action": {
@@ -1205,6 +1214,12 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de probare."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -5131,13 +5146,13 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
@@ -6511,6 +6526,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Alt loc"
       ]
     },
     "info": {
@@ -7217,6 +7235,15 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extrem de mulțumit(ă)"
+      ],
+      "Tell us more about your experience": [
+        "Spuneți-ne mai multe despre experiența proprie"
+      ],
+      "Very Dissatisfied": [
+        "Foarte nemulțumit(ă)"
       ]
     },
     "label": {
@@ -7393,6 +7420,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ]
     },
     "Link label (optional)": {
@@ -9744,6 +9774,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Optional feedback": [
+        "Feedback opțional"
       ]
     },
     "Placeholder for contact group name": {
@@ -9890,7 +9923,7 @@
         "Persoane abonate"
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invited friends": [
         "Persoane invitate"
@@ -12220,6 +12253,12 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Referral": [
+        "Recomandare"
+      ],
+      "We'd love to hear from you!": [
+        "Ne-ar plăcea să avem vești de la tine!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12837,6 +12876,11 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Ne străduim mereu să îmbunătățim ${ config.appName }. Cum evaluați experiența avută?"
       ]
     }
   }

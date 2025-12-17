@@ -1018,6 +1018,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
+      ],
+      "Toggle referral": [
+        "Prepnúť odporúčanie"
       ]
     },
     "action": {
@@ -4040,6 +4049,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "You cannot enter the organizer's email": [
+        "Nemôžete zadať email organizátora"
       ]
     },
     "error": {
@@ -6601,6 +6613,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Iné umiestnenie"
       ]
     },
     "info": {
@@ -7313,6 +7328,15 @@
       ],
       "Zoom meeting": [
         "Zoom stretnutie"
+      ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ]
     },
     "label": {
@@ -7489,6 +7513,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
       ]
     },
     "Link label (optional)": {
@@ -9908,6 +9935,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ]
     },
     "Placeholder for contact group name": {
@@ -12438,6 +12468,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Referral": [
+        "Odporúčanie"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13099,6 +13135,11 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     }
   }

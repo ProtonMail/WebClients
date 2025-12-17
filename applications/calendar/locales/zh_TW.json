@@ -907,6 +907,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "選取評價 ${ n } 之 ${ to }"
+      ],
+      "Send Feedback": [
+        "傳送意見回饋"
       ]
     },
     "action": {
@@ -1074,6 +1080,12 @@
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，將以${ renewCycle } 自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
       ]
     },
     "b2b_trials_Action": {
@@ -5780,6 +5792,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
       ]
     },
     "info": {
@@ -6423,6 +6438,9 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Tell us more about your experience": [
+        "告訴我們您的體驗"
       ]
     },
     "Label for contact group color": {
@@ -6546,6 +6564,9 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ],
+      "Terms and conditions": [
+        "合約條款"
       ]
     },
     "Link label (optional)": {
@@ -8239,6 +8260,9 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8378,6 +8402,9 @@
     "Payments.info": {
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
       ]
     },
     "Payments.ModificationWarning": {
@@ -8685,6 +8712,9 @@
       ],
       "Refer friends": [
         "推薦朋友"
+      ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
       ]
     },
     "Reload event button tooltip": {
@@ -10697,6 +10727,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "We'd love to hear from you!": [
+        "我們很想聽見您的想法!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10796,6 +10829,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 尊重您隱私的 AI 助理"
       ]
     },
     "Tooltip; share calendar modal ": {

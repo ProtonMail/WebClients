@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vælg vurdering ${ n } ud af ${ to }"
+      ],
+      "Send Feedback": [
+        "Send feedback"
+      ],
+      "Toggle referral": [
+        "Slå henvisning til/fra"
       ]
     },
     "action": {
@@ -5648,7 +5657,7 @@
         "Administrer dine kalendere"
       ],
       "Mastercard SecureCode logo": [
-        "Mastercard SecureCode logo"
+        "Mastercard SecureCode-logo"
       ],
       "Medium Priority": [
         "Mellem prioritet"
@@ -6433,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Anden placering"
       ]
     },
     "info": {
@@ -7133,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Extremely Satisfied": [
+        "Yderst tilfreds"
+      ],
+      "Tell us more about your experience": [
+        "Fortæl os mere om din oplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Meget utilfreds"
       ]
     },
     "label": {
@@ -7309,6 +7330,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ]
     },
     "Link label (optional)": {
@@ -8185,7 +8209,7 @@
         "Støtte"
       ],
       "Team management": [
-        "Brugeradministration"
+        "Teamadministration"
       ]
     },
     "new_plans: info": {
@@ -8404,7 +8428,7 @@
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+        "På hverdage kan du modtage support fra ${ BRAND_NAME }-kundesupportteamet inden for 24 timer efter en henvendelse."
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
@@ -9592,6 +9616,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Optional feedback": [
+        "Valgfri feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -12014,6 +12041,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Referral": [
+        "Henvisning"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil meget gerne høre fra dig"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12620,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi stræber altid efter at forbedre ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     }
   }

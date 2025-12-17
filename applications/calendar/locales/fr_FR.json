@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
+      ],
+      "Toggle referral": [
+        "Activer/désactiver le parrainage"
       ]
     },
     "action": {
@@ -6433,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Other location": [
+        "Autre emplacement"
       ]
     },
     "info": {
@@ -7133,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ]
     },
     "label": {
@@ -7309,6 +7330,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Terms and conditions": [
+        "Conditions générales"
       ]
     },
     "Link label (optional)": {
@@ -9592,6 +9616,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ]
     },
     "Placeholder for contact group name": {
@@ -12014,6 +12041,12 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Referral": [
+        "Parrainage"
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12620,11 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ config.appName }. Dans quelle mesure êtes-vous satisfait de votre expérience ?"
       ]
     }
   }

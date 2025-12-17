@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccione una puntuación del ${ n } al ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
+      ],
+      "Toggle referral": [
+        "Alternar referidos"
       ]
     },
     "action": {
@@ -6433,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Otra ubicación"
       ]
     },
     "info": {
@@ -7133,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfactoria"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntenos más sobre su experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Poco satisfactoria"
       ]
     },
     "label": {
@@ -7309,6 +7330,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ]
     },
     "Link label (optional)": {
@@ -9592,6 +9616,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -12014,6 +12041,12 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Referral": [
+        "Referido"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber su opinión"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12620,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     }
   }

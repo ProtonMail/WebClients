@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Επιλέξτε βαθμολογία ${ n } από ${ to }"
+      ],
+      "Send Feedback": [
+        "Αποστολή Σχολίων"
+      ],
+      "Toggle referral": [
+        "Εναλλαγή παραπομπής"
       ]
     },
     "action": {
@@ -6433,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Άλλη τοποθεσία"
       ]
     },
     "info": {
@@ -7133,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Εξαιρετικά Ικανοποιημένος"
+      ],
+      "Tell us more about your experience": [
+        "Πείτε μας περισσότερα για την εμπειρία σας"
+      ],
+      "Very Dissatisfied": [
+        "Πολύ Δυσαρεστημένος"
       ]
     },
     "label": {
@@ -7309,6 +7330,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Terms and conditions": [
+        "Όροι & Προϋποθέσεις"
       ]
     },
     "Link label (optional)": {
@@ -9592,6 +9616,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Optional feedback": [
+        "Προαιρετικά σχόλια"
       ]
     },
     "Placeholder for contact group name": {
@@ -12014,6 +12041,12 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Referral": [
+        "Παραπομπή"
+      ],
+      "We'd love to hear from you!": [
+        "Θα χαρούμε να ακούσουμε τη γνώμη σας!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12620,11 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     }
   }

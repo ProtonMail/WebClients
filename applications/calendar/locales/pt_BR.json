@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
+      ],
+      "Toggle referral": [
+        "Alternar indicação"
       ]
     },
     "action": {
@@ -3969,6 +3978,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Não é possível criar uma reserva com um endereço desativado"
       ]
     },
     "error": {
@@ -6427,6 +6439,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Outras localizações"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Você alcançou o número máximo de páginas de agendamento disponíveis no seu plano."
       ]
     },
     "info": {
@@ -7127,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ]
     },
     "label": {
@@ -7303,6 +7330,9 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ]
     },
     "Link label (optional)": {
@@ -9592,6 +9622,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ]
     },
     "Placeholder for contact group name": {
@@ -11221,6 +11254,9 @@
       ],
       "Please try again later.": [
         "Tente novamente mais tarde."
+      ],
+      "Please check the link and try again.": [
+        "Verifique o link e tente novamente."
       ]
     },
     "Time unit": {
@@ -12005,6 +12041,18 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Referral": [
+        "Indicação"
+      ],
+      "The booking feature is currently unavailable.": [
+        "O recurso de reserva está indisponível no momento."
+      ],
+      "This booking page can’t be shown.": [
+        "Esta página de agendamento não pode ser mostrada."
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12578,6 +12626,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre trabalhando para melhorar o ${ config.appName } . Quão satisfeito você está com sua experiência?"
       ]
     }
   }

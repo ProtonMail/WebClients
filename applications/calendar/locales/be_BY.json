@@ -1018,6 +1018,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Выберыце ацэнку ${ n } з ${ to }"
+      ],
+      "Send Feedback": [
+        "Адправіць водгук"
+      ],
+      "Toggle referral": [
+        "Пераключыць рэфералаў"
       ]
     },
     "action": {
@@ -1215,6 +1224,12 @@
       ],
       "You have reached the trial limit.": [
         "Дасягнута абмежаванне пробнага перыяду."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate1 }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -6216,7 +6231,7 @@
         "Палепшыце свой тарыфны план, каб дадаць новую старонку браніравання."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+        "Адпраўце ${ btcAmountBold } на ўказаны ніжэй адрас, каб завяршыць плацеж."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -6297,7 +6312,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
+        "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -6595,6 +6610,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Іншае месцазнаходжанне"
       ]
     },
     "info": {
@@ -7307,6 +7325,15 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Вельмі задаволены"
+      ],
+      "Tell us more about your experience": [
+        "Раскажыце нам больш пра свой досвед"
+      ],
+      "Very Dissatisfied": [
+        "Вельмі незадаволены"
       ]
     },
     "label": {
@@ -7483,6 +7510,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
       ]
     },
     "Link label (optional)": {
@@ -9119,7 +9149,7 @@
         "Гэта прапанова больш не будзе паказвацца."
       ],
       "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
-        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
+        "Палепшыце сваю прадукцыйнасць усяго за ${ pricingTitle } з дапамогай ${ planName }"
       ],
       "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
         "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
@@ -9902,6 +9932,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Optional feedback": [
+        "Неабавязковы водгук"
       ]
     },
     "Placeholder for contact group name": {
@@ -12432,6 +12465,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Referral": [
+        "Рэферал"
+      ],
+      "We'd love to hear from you!": [
+        "Нам было б прыемна пачуць гэта!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

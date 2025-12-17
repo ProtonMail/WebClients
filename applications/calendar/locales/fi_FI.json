@@ -980,6 +980,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Valitse arvosana ${ n } - ${ to }"
+      ],
+      "Send Feedback": [
+        "Lähetä palautetta"
+      ],
+      "Toggle referral": [
+        "Kytke suositus päälle tai pois"
       ]
     },
     "action": {
@@ -3884,6 +3893,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "You cannot enter the organizer's email": [
+        "Et voi syöttää järjestäjän sähköpostia"
       ]
     },
     "error": {
@@ -6253,6 +6265,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Other location": [
+        "Muu sijainti"
       ]
     },
     "info": {
@@ -6944,6 +6959,15 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Extremely Satisfied": [
+        "Erittäin tyytyväinen"
+      ],
+      "Tell us more about your experience": [
+        "Kerro kokemuksestasi tarkemmin"
+      ],
+      "Very Dissatisfied": [
+        "Erittäin tyytymätön"
       ]
     },
     "label": {
@@ -7108,6 +7132,9 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "Terms and conditions": [
+        "Käyttöehdot"
       ]
     },
     "Link label (optional)": {
@@ -9307,6 +9334,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Optional feedback": [
+        "Valinnainen palaute"
       ]
     },
     "Placeholder for contact group name": {
@@ -11636,6 +11666,12 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Referral": [
+        "Suosittelu"
+      ],
+      "We'd love to hear from you!": [
+        "Haluaisimme kuulla palautettasi!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12203,6 +12239,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Pyrimme jatkuvasti parantamaan ${ config.appName } -palvelua. Kuinka tyytyväinen olet kokemukseesi?"
       ]
     }
   }

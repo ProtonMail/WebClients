@@ -1004,6 +1004,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Välj betyg ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Skicka feedback"
+      ],
+      "Toggle referral": [
+        "Slå på/av hänvisning"
       ]
     },
     "action": {
@@ -1186,6 +1195,15 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
@@ -3107,6 +3125,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "Du kommer få en säker e-post med detaljerna inom kort."
       ]
     },
     "description": {
@@ -6373,6 +6394,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Other location": [
+        "Annan plats"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nått det maximala antalet bokningssidor tillgängliga i ditt paket."
       ]
     },
     "info": {
@@ -7073,6 +7100,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Extremely Satisfied": [
+        "Extremt nöjd"
+      ],
+      "Tell us more about your experience": [
+        "Berätta mer om din upplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Väldigt missnöjd"
       ]
     },
     "label": {
@@ -7243,6 +7279,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ]
     },
     "Link label (optional)": {
@@ -9518,6 +9557,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Optional feedback": [
+        "Valfri feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -11937,6 +11979,12 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Referral": [
+        "Hänvisning"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vill gärna att du hör av dig!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12507,6 +12555,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     }
   }

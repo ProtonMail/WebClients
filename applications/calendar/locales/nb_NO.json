@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
+      ],
+      "Toggle referral": [
+        "Slå verving av/på"
       ]
     },
     "action": {
@@ -1195,6 +1204,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3674,7 +3689,7 @@
         "Etternavnet er for langt"
       ],
       "Location is required": [
-        "Plassering kreves"
+        "Sted kreves"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
@@ -5244,7 +5259,7 @@
         "Finner ikke hendelsene som du ser etter? Noen hendelser i skjulte kalendere samsvarer med søket ditt. For å se disse resultatene, slå på synlighet for ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot create a range across days.": [
-        "Kan ikke opprette et intervall som strekker seg over flere dager."
+        "Kan ikke opprette et tidsintervall som strekker seg over flere dager."
       ],
       "Cannot create a range in the past.": [
         "Kan ikke opprette et tidsintervall bakover i tid."
@@ -5850,13 +5865,13 @@
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
       "Range already exists.": [
-        "Tidsrommet finnes allerede."
+        "Tidsintervallet finnes allerede."
       ],
       "Range is too short.": [
-        "Intervallet er for kort."
+        "Tidsintervallet er for kort."
       ],
       "Range overlaps with an existing range.": [
-        "Tidsrommet overlapper med et eksisterende tidsrom."
+        "Tidsintervallet overlapper med et eksisterende tidsrom."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
@@ -6427,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Annen plassering"
       ]
     },
     "info": {
@@ -7127,6 +7145,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
+      ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ]
     },
     "label": {
@@ -7303,6 +7330,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ]
     },
     "Link label (optional)": {
@@ -9586,6 +9616,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ]
     },
     "Placeholder for contact group name": {
@@ -12008,6 +12041,12 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Referral": [
+        "Verving"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12581,6 +12620,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     }
   }

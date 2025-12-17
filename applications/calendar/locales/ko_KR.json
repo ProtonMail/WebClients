@@ -1000,6 +1000,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "네비게이션 바를 펼쳐서 예약 보기"
+      ],
+      "Expand navigation bar to see calendars": [
+        "네비게이션 바를 펼쳐서 캘린더 보기"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
+      ],
+      "Toggle referral": [
+        "추천 표시"
       ]
     },
     "action": {
@@ -1179,6 +1194,12 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -3269,6 +3290,15 @@
       ],
       "90 minutes": [
         "90분"
+      ],
+      "120m": [
+        "120분"
+      ],
+      "60m": [
+        "60분"
+      ],
+      "90m": [
+        "90분"
       ]
     },
     "Edit billing address form note": {
@@ -3914,6 +3944,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "비활성화된 주소로는 예약을 생성할 수 없습니다."
       ]
     },
     "error": {
@@ -6295,6 +6328,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration }분"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "관리자에게 플랜을 업그레이드하거나 예약 페이지 사이드바에서 페이지를 삭제하도록 요청하십시오."
+      ],
+      "Cannot create a range across days.": [
+        "여러 날에 걸쳐 범위를 생성할 수 없습니다."
+      ],
+      "Cannot create a range in the past.": [
+        "과거로 예약 범위를 설정할 수 없습니다."
+      ],
+      "Range overlaps with an existing range.": [
+        "범위가 기존 범위와 중복됩니다."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "예약 페이지를 생성하려면, 관리자에게 플랜 업그레이드를 요청하십시오."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "예약 페이지를 생성하려면, 예약 페이지 사이드바에서 기존 페이지를 제거해야 합니다."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "예약 페이지를 생성하려면, 플랜 업그레이드가 필요합니다."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "사용자 플랜의 사용 가능한 최대 수의 예약 페이지에 도달했습니다."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -6989,6 +7052,15 @@
       ],
       "Zoom meeting": [
         "줌 미팅"
+      ],
+      "Extremely Satisfied": [
+        "매우 만족"
+      ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ]
     },
     "label": {
@@ -9380,6 +9452,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ]
     },
     "Placeholder for contact group name": {
@@ -11725,6 +11800,24 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Cannot create more Booking pages": [
+        "예약 페이지를 더 생성할 수 없음"
+      ],
+      "Referral": [
+        "추천"
+      ],
+      "The booking feature is currently unavailable.": [
+        "예약 기능을 현재 사용할 수 없습니다."
+      ],
+      "This booking page can’t be shown.": [
+        "이 예약 페이지는 확인할 수 없습니다."
+      ],
+      "This booking page has expired.": [
+        "이 예약 페이지는 만료되었습니다."
+      ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12254,6 +12347,17 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "사용 가능한 예약이 없습니다."
+      ],
+      "Please check the link and try again.": [
+        "링크 확인 후 다시 시도해주세요."
+      ],
+      "Please try again later.": [
+        "나중에 다시 시도하세요."
       ]
     }
   }

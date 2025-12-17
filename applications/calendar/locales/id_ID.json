@@ -1000,6 +1000,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "Perluas bilah navigasi untuk melihat pemesanan"
+      ],
+      "Expand navigation bar to see calendars": [
+        "Perluas bilah navigasi untuk melihat kalender"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Pilih penilaian ${ n } dari ${ to }"
+      ],
+      "Send Feedback": [
+        "Kirim Tanggapan"
+      ],
+      "Toggle referral": [
+        "Aktifkan rujukan"
       ]
     },
     "action": {
@@ -1179,6 +1194,12 @@
       ],
       "You have reached the trial limit.": [
         "Anda telah mencapai batas uji coba Anda."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -3269,6 +3290,15 @@
       ],
       "90 minutes": [
         "90 menit"
+      ],
+      "120m": [
+        "120mnt"
+      ],
+      "60m": [
+        "60mnt"
+      ],
+      "90m": [
+        "90mnt"
       ]
     },
     "Edit billing address form note": {
@@ -3914,6 +3944,9 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "Pemesanan tidak dapat dibuat dengan alamat yang dinonaktifkan"
       ]
     },
     "error": {
@@ -6322,6 +6355,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } menit"
+      ],
+      "Other location": [
+        "Lokasi lainnya"
       ]
     },
     "info": {
@@ -7016,6 +7055,15 @@
       ],
       "Zoom meeting": [
         "Pertemuan Zoom"
+      ],
+      "Extremely Satisfied": [
+        "Sangat Puas"
+      ],
+      "Tell us more about your experience": [
+        "Beri tahu kami lebih lanjut mengenai pengalaman Anda"
+      ],
+      "Very Dissatisfied": [
+        "Sangat Tidak Puas"
       ]
     },
     "label": {
@@ -7192,6 +7240,9 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ],
+      "Terms and conditions": [
+        "Syarat dan ketentuan"
       ]
     },
     "Link label (optional)": {
@@ -9407,6 +9458,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Optional feedback": [
+        "Tanggapan opsional"
       ]
     },
     "Placeholder for contact group name": {
@@ -11755,6 +11809,21 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Referral": [
+        "Rujukan"
+      ],
+      "The booking feature is currently unavailable.": [
+        "Fitur pemesanan ini untuk saat ini tidak tersedia."
+      ],
+      "This booking page can’t be shown.": [
+        "Halaman pemesanan ini tidak dapat ditampilkan."
+      ],
+      "This booking page has expired.": [
+        "Halaman pemesanan ini telah kedaluwarsa."
+      ],
+      "We'd love to hear from you!": [
+        "Kami ingin mendengar dari Anda!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12284,6 +12353,17 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "Tidak ada pemesanan yang tersedia."
+      ],
+      "Please check the link and try again.": [
+        "Silakan periksa tautan ini dan coba lagi."
+      ],
+      "Please try again later.": [
+        "Silakan coba lagi nanti."
       ]
     }
   }

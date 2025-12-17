@@ -1010,6 +1010,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Wähle Bewertung ${ n } von ${ to }"
+      ],
+      "Send Feedback": [
+        "Feedback senden"
+      ],
+      "Toggle referral": [
+        "Empfehlung umschalten"
       ]
     },
     "action": {
@@ -3972,6 +3981,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "You cannot enter the organizer's email": [
+        "Du kannst die E-Mail-Adresse des Organisators nicht eingeben."
       ]
     },
     "error": {
@@ -6433,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Other location": [
+        "Anderer Ort"
       ]
     },
     "info": {
@@ -7133,6 +7148,15 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Extremely Satisfied": [
+        "Sehr zufrieden"
+      ],
+      "Tell us more about your experience": [
+        "Erzähl uns mehr von deiner Erfahrung"
+      ],
+      "Very Dissatisfied": [
+        "Sehr unzufrieden"
       ]
     },
     "label": {
@@ -7309,6 +7333,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Terms and conditions": [
+        "Nutzungsbedingungen"
       ]
     },
     "Link label (optional)": {
@@ -9592,6 +9619,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Optional feedback": [
+        "Optionales Feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -12014,6 +12044,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Referral": [
+        "Empfehlung"
+      ],
+      "We'd love to hear from you!": [
+        "Wir würden uns freuen, von dir zu hören."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12623,11 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
       ]
     }
   }

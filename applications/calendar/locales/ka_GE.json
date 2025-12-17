@@ -1004,6 +1004,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Expand navigation bar to see bookings": [
+        "ნავიგაციის პანელის გაშლა ჯავშნების სანახავად"
+      ],
+      "Expand navigation bar to see calendars": [
+        "ნავიგაციის პანელის გაშლა კალენდრების სანახავად"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "შეაფასეთ ${ n } ${ to }-დან"
+      ],
+      "Send Feedback": [
+        "უკუკავშირის გაგზავნა"
+      ],
+      "Toggle referral": [
+        "რეფერალის გადართვა"
       ]
     },
     "action": {
@@ -3279,6 +3294,15 @@
       ],
       "90 minutes": [
         "90 წუთი"
+      ],
+      "120m": [
+        "120წთ"
+      ],
+      "60m": [
+        "60წთ"
+      ],
+      "90m": [
+        "90წთ"
       ]
     },
     "Edit event button tooltip": {
@@ -6311,6 +6335,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ bookingDetails.duration } min": [
+        "${ bookingDetails.duration } წთ"
+      ],
+      "Other location": [
+        "სხვა მდებარეობა"
       ]
     },
     "info": {
@@ -7011,6 +7041,15 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Extremely Satisfied": [
+        "ძალიან კმაყოფილი"
+      ],
+      "Tell us more about your experience": [
+        "გვიამბეთ მეტი თქვენი გამოცდილების შესახებ"
+      ],
+      "Very Dissatisfied": [
+        "ძალიან უკმაყოფილო"
       ]
     },
     "label": {
@@ -8141,6 +8180,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ]
     },
     "new_plans: Subtext": {
@@ -9435,6 +9477,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Optional feedback": [
+        "არასავალდებულო უკუკავშირი"
       ]
     },
     "Placeholder for contact group name": {
@@ -11804,6 +11849,21 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Referral": [
+        "რეფერალი"
+      ],
+      "The booking feature is currently unavailable.": [
+        "დაჯავშნის ფუნქცია ამჟამად მიუწვდომელია."
+      ],
+      "This booking page can’t be shown.": [
+        "ამ ჯავშნის გვერდის ჩვენება შეუძლებელია."
+      ],
+      "This booking page has expired.": [
+        "ამ დაჯავშნის გვერდის ვადა ამოწურულია."
+      ],
+      "We'd love to hear from you!": [
+        "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12368,6 +12428,17 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Text": {
+      "No bookings available.": [
+        "ჯავშნები ხელმისაწვდომი არაა."
+      ],
+      "Please check the link and try again.": [
+        "შეამოწმეთ ბმული და თავიდან სცადეთ."
+      ],
+      "Please try again later.": [
+        "მოგვიანებით სცადეთ."
       ]
     }
   }

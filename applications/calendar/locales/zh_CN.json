@@ -928,6 +928,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Send Feedback": [
+        "发送反馈"
       ]
     },
     "action": {
@@ -1647,7 +1650,7 @@
         "总计"
       ],
       "Total for ${ n } month": [
-        "每${ n }月支付"
+        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -5902,6 +5905,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Other location": [
+        "其他地点"
       ]
     },
     "info": {
@@ -6704,6 +6710,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Reactivate subscription": [
+        "重新激活订阅"
       ]
     },
     "Link label (optional)": {
@@ -7504,6 +7513,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "与多至 ${ n } 个人分享保险库"
       ]
     },
     "new_plans: feature highlight": {
@@ -8539,6 +8551,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
       ]
     },
     "Payments.Error": {
@@ -8848,6 +8866,15 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
+      ],
+      "Friend joined": [
+        "好友已加入"
+      ],
+      "Friend subscribed": [
+        "已订阅的好友"
+      ],
+      "More sharing options": [
+        "更多分享选项1"
       ]
     },
     "Reload event button tooltip": {
@@ -11477,6 +11504,16 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您确定要继续操作吗？"
       ]
     }
   }

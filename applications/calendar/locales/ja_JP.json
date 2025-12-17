@@ -1006,6 +1006,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "${ to }段階中の${ n }評価を選択"
+      ],
+      "Send Feedback": [
+        "フィードバックを送信"
+      ],
+      "Toggle referral": [
+        "紹介の切り替え"
       ]
     },
     "action": {
@@ -1185,6 +1194,12 @@
       ],
       "You have reached the trial limit.": [
         "トライアルの制限に達しました。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルすると、課金されることはありません。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 } にトライアルが終了後、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate2 } までにキャンセルされれば、課金されることはありません。"
       ]
     },
     "b2b_trials_Action": {
@@ -6343,6 +6358,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "Other location": [
+        "その他の場所"
       ]
     },
     "info": {
@@ -7037,6 +7055,15 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Extremely Satisfied": [
+        "非常に満足"
+      ],
+      "Tell us more about your experience": [
+        "ご利用時の体験について詳しいご意見をお聞かせください"
+      ],
+      "Very Dissatisfied": [
+        "非常に不満"
       ]
     },
     "label": {
@@ -7213,6 +7240,9 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Terms and conditions": [
+        "利用規約"
       ]
     },
     "Link label (optional)": {
@@ -9428,6 +9458,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Optional feedback": [
+        "フィードバック(任意)"
       ]
     },
     "Placeholder for contact group name": {
@@ -11796,6 +11829,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Referral": [
+        "紹介"
+      ],
+      "We'd love to hear from you!": [
+        "ぜひ、ご意見をお寄せください！"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12325,6 +12364,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     }
   }

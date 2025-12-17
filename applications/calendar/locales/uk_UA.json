@@ -2697,7 +2697,7 @@
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
+        "Створіть зустріч у Zoom та додайте деталі для приєднання до своєї події одним клацанням."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
@@ -5608,6 +5608,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
+      ],
+      "Google Pay mark": [
+        "Знак Google Pay"
+      ],
+      "In which calendar should bookings appear?": [
+        "У якому календарі мають відображатися бронювання?"
+      ],
+      "Where will the appointment take place?": [
+        "Де відбудеться зустріч?"
       ]
     },
     "info": {
@@ -8086,6 +8095,9 @@
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
+      ],
+      "Google Pay": [
+        "Google платіж"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8135,6 +8147,12 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Вас невдовзі буде перенаправлено для підтвердження платежу."
       ]
     },
     "Payments.Error": {
@@ -11114,6 +11132,21 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Duration": {
+      "30m": [
+        "30 м"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Щось пішло не так. Перевірка Google Pay не вдалася."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
       ]
     }
   }
