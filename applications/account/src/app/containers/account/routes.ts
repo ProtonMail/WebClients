@@ -45,8 +45,14 @@ import type {
 
 import { recoveryIds } from './recoveryIds';
 
-function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolean) {
+function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolean, hasPendingInvitations: boolean) {
     return [
+        {
+            text: c('Title').t`Pending invitations`,
+            id: 'PendingInvitations',
+            available: hasPendingInvitations,
+            invisibleTitle: true,
+        },
         {
             text: c('Title').t`Your plan`,
             invisibleTitle: true,
@@ -183,6 +189,7 @@ export const getAccountAppRoutes = ({
     showMailDashboard,
     showPassDashboard,
     showDriveDashboard,
+    hasPendingInvitations,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -215,6 +222,7 @@ export const getAccountAppRoutes = ({
     showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
     showDriveDashboard: boolean;
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
+    hasPendingInvitations: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
@@ -324,7 +332,7 @@ export const getAccountAppRoutes = ({
                 id: shouldShowV2Dashboard ? 'dashboardV2' : 'dashboard',
                 to: '/dashboard',
                 subsections: shouldShowV2Dashboard
-                    ? getV2DashboardSections(canPay, planIsManagedExternally)
+                    ? getV2DashboardSections(canPay, planIsManagedExternally, hasPendingInvitations)
                     : getV1DashboardSections(
                           hasSplitStorage,
                           showStorageSection,
