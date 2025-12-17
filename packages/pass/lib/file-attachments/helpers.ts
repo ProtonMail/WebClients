@@ -1,4 +1,4 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '@proton/pass/types';
@@ -99,5 +99,5 @@ export const mimetypeForDownload = (mimeType: string) => {
 export type FileParam = { file: string };
 export type FileRef = { filename: string; mimeType: string; ref: string };
 
-export const intoFileParam = (fileRef: FileRef): string => stringToUtf8Array(JSON.stringify(fileRef)).toBase64();
-export const intoFileRef = (param: string): FileRef => JSON.parse(utf8ArrayToString(Uint8Array.fromBase64(param)));
+export const intoFileParam = (fileRef: FileRef): string => utf8StringToUint8Array(JSON.stringify(fileRef)).toBase64();
+export const intoFileRef = (param: string): FileRef => JSON.parse(uint8ArrayToUtf8String(Uint8Array.fromBase64(param)));

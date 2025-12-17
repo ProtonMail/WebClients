@@ -1,7 +1,7 @@
 import { useApi, usePreventLeave } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { encodeUtf8 } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,
@@ -16,9 +16,6 @@ import {
     RESPONSE_CODE,
     SHARE_GENERATED_PASSWORD_LENGTH,
 } from '@proton/shared/lib/drive/constants';
-import {
-    stringToUint8Array
-} from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type {
     ShareURL as ShareURLPayload,
@@ -167,7 +164,7 @@ export default function useLegacyShareUrl() {
             publicKey,
         } = await driveCrypto.getOwnAddressAndPrimaryKeys(addressId);
         const password = await encryptUnsigned({
-            message: stringToUint8Array(encodeUtf8(decryptedPassword)),
+            message: utf8StringToUint8Array(decryptedPassword),
             publicKey,
         });
 

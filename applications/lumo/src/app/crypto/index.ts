@@ -11,7 +11,7 @@ import {
     wrapKey,
 } from '@proton/crypto/lib/subtle/aesGcm';
 import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 
 import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from '../types';
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './types';
@@ -28,8 +28,8 @@ export async function encryptString(
     { encryptKey }: AesGcmCryptoKey,
     adString?: string
 ): Promise<string> {
-    const plaintextBytes = stringToUtf8Array(plaintext);
-    const adBytes = adString ? stringToUtf8Array(adString) : undefined;
+    const plaintextBytes = utf8StringToUint8Array(plaintext);
+    const adBytes = adString ? utf8StringToUint8Array(adString) : undefined;
     const result = await encryptData(encryptKey, plaintextBytes, adBytes);
     return result.toBase64();
 }
@@ -39,7 +39,7 @@ export async function encryptUint8Array(
     { encryptKey }: AesGcmCryptoKey,
     adString?: string
 ): Promise<string> {
-    const adBytes = adString ? stringToUtf8Array(adString) : undefined;
+    const adBytes = adString ? utf8StringToUint8Array(adString) : undefined;
     const result = await encryptData(encryptKey, plaintextBytes, adBytes);
     return result.toBase64();
 }
@@ -103,7 +103,7 @@ export async function decryptUint8Array(
     } else {
         throw new Error('Unexpected shape for EncryptedData');
     }
-    const adBytes = stringToUtf8Array(ad);
+    const adBytes = utf8StringToUint8Array(ad);
     try {
         const decryptedBytes = await decryptData(encryptKey, encryptedBytes, adBytes);
         return decryptedBytes;
@@ -126,14 +126,14 @@ export async function decryptString(
     ad: AdString
 ): Promise<string> {
     const decryptedBytes = await decryptUint8Array(encryptedBase64, key, ad);
-    return utf8ArrayToString(decryptedBytes);
+    return uint8ArrayToUtf8String(decryptedBytes);
 }
 
 const SPACE_KEY_DERIVATION_SALT = 'Xd6V94/+5BmLAfc67xIBZcjsBPimm9/j02kHPI7Vsuc=';
 const SPACE_DEK_CONTEXT = 'dek.space.lumo';
 const HKDF_PARAMS_SPACE_DATA_ENCRYPTION = {
     salt: Uint8Array.fromBase64(SPACE_KEY_DERIVATION_SALT),
-    info: stringToUtf8Array(SPACE_DEK_CONTEXT),
+    info: utf8StringToUint8Array(SPACE_DEK_CONTEXT),
 };
 
 export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
@@ -175,7 +175,7 @@ export async function unwrapAesKey(
 }
 
 export async function computeSha256AsBase64(input: string, urlSafe: boolean = false): Promise<Base64> {
-    const data = stringToUtf8Array(input);
+    const data = utf8StringToUint8Array(input);
     const hashBytes = await computeSHA256(data);
     let hashString = hashBytes.toBase64();
     if (urlSafe) {

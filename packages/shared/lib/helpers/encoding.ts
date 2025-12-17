@@ -1,8 +1,15 @@
-import { arrayToBinaryString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 
-export const uint8ArrayToString = arrayToBinaryString;
+export const uint8ArrayToString = uint8ArrayToBinaryString;
 
-export const stringToUint8Array = binaryStringToArray;
+export const stringToUint8Array = binaryStringToUint8Array;
+
+/**
+ * Convert a utf8 string to a so-called binary string, where each character can be encoded as one byte.
+ * The conversion done is equivalent to encoding the utf8 string to bytes (using the utf8 encoder)
+ * and decoding them back as 8-bit ASCII characters.
+ */
+export const utf8StringToBinaryString = (input: string) => unescape(encodeURIComponent(input));
 
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
     const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/;

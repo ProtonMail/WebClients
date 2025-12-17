@@ -1,4 +1,4 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import type { DocumentKeys, NodeMeta, PublicNodeMeta, PublicDocumentKeys } from '@proton/drive-store'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
@@ -279,7 +279,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     let readinessInformation: ConnectionReadyPayload | undefined
     try {
-      const parsed = JSON.parse(utf8ArrayToString(content))
+      const parsed = JSON.parse(uint8ArrayToUtf8String(content))
       if (this.isConnectionReadyPayload(parsed)) {
         readinessInformation = parsed
       }
@@ -862,7 +862,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const content = stringToUtf8Array(JSON.stringify({ authorAddress: keys.userOwnAddress }))
+    const content = utf8StringToUint8Array(JSON.stringify({ authorAddress: keys.userOwnAddress }))
 
     void this.sendEventMessage(
       document,

@@ -1,5 +1,5 @@
 import { type AesGcmCryptoKey, deriveKey, exportKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import { isChromiumBased, isMinimumSafariVersion, isWindows } from '@proton/shared/lib/helpers/browser';
@@ -54,7 +54,7 @@ export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credentia
 
     if (extractable) {
         const exported = await exportKey(key);
-        return arrayToBinaryString(new Uint8Array(exported));
+        return uint8ArrayToBinaryString(new Uint8Array(exported));
     }
 
     return key;

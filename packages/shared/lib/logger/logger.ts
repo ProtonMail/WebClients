@@ -1,7 +1,7 @@
 import log, { type Logger as LogLevelLogger } from 'loglevel';
 
 import { type AesGcmCryptoKey, decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { DAY } from '@proton/shared/lib/constants';
 
 import {
@@ -351,7 +351,7 @@ export class Logger {
                 timestamp,
                 level,
                 encryptedMessage: (
-                    await encryptData(this.encryptionKey, stringToUtf8Array(message), this.encryptionContext)
+                    await encryptData(this.encryptionKey, utf8StringToUint8Array(message), this.encryptionContext)
                 ).toBase64(),
                 encryptedArgs: await this.processArgs(args),
             };
@@ -378,7 +378,7 @@ export class Logger {
         return Promise.all(
             processedArgs.map(async (arg) =>
                 (
-                    await encryptData(this.encryptionKey!, stringToUtf8Array(arg), this.encryptionContext!)
+                    await encryptData(this.encryptionKey!, utf8StringToUint8Array(arg), this.encryptionContext!)
                 ).toBase64()
             )
         );
@@ -509,14 +509,14 @@ export class Logger {
                         this.encryptionKey!,
                         Uint8Array.fromBase64(log.encryptedMessage),
                         this.encryptionContext!
-                    ).then(utf8ArrayToString);
+                    ).then(uint8ArrayToUtf8String);
                     const decryptedArgs = await Promise.all(
                         log.encryptedArgs.map(async (encryptedArg) =>
                             decryptData(
                                 this.encryptionKey!,
                                 Uint8Array.fromBase64(encryptedArg),
                                 this.encryptionContext!
-                            ).then(utf8ArrayToString)
+                            ).then(uint8ArrayToUtf8String)
                         )
                     );
                     const argsStr = decryptedArgs.length > 0 ? ' ' + decryptedArgs.join(' ') : '';
@@ -664,7 +664,7 @@ export class Logger {
         if (!this.encryptionContext) {
             return null;
         }
-        return utf8ArrayToString(this.encryptionContext);
+        return uint8ArrayToUtf8String(this.encryptionContext);
     }
 
     async destroy(): Promise<void> {
@@ -743,7 +743,7 @@ export class Logger {
         // Create encryption context
         const loggerName = options.loggerName || this.loggerName;
         const contextString = `${options.appName}#${loggerName}`;
-        this.encryptionContext = stringToUtf8Array(contextString);
+        this.encryptionContext = utf8StringToUint8Array(contextString);
 
         // Create loglevel instance with unique name
         this.loglevelInstance = log.getLogger(contextString);

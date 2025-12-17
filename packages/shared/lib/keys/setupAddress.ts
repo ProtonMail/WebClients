@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
-import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
@@ -387,13 +387,13 @@ export const getEncryptedSetupBlob = async (clientKey: string, loginPassword: st
     const setupBlob: SetupBlob = {
         loginPassword,
     };
-    return getEncryptedBlob(key, JSON.stringify(setupBlob), stringToUtf8Array('setup'));
+    return getEncryptedBlob(key, JSON.stringify(setupBlob), utf8StringToUint8Array('setup'));
 };
 
 export const getDecryptedSetupBlob = async (clientKey: string, blob: string): Promise<SetupBlob | undefined> => {
     try {
         const key = await getClientKey(clientKey);
-        const result = await getDecryptedBlob(key, blob, stringToUtf8Array('setup'));
+        const result = await getDecryptedBlob(key, blob, utf8StringToUint8Array('setup'));
         const json = JSON.parse(result);
         if (!json?.loginPassword) {
             return undefined;

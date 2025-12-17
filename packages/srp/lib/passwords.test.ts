@@ -1,7 +1,6 @@
-import { binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
 
 import { hashedResult0, hashedResult2, hashedResult4, watResult } from '../test/passwords.data';
-import '../test/setup';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/setup';
 import { expandHash, hashPassword } from './passwords';
 
@@ -10,7 +9,7 @@ describe('passwords', () => {
     afterAll(releaseCryptoProxy);
 
     it('should expand a hash', async () => {
-        const result = await expandHash(binaryStringToArray('wat'));
+        const result = await expandHash(binaryStringToUint8Array('wat'));
         expect(result).toEqual(watResult);
     });
 

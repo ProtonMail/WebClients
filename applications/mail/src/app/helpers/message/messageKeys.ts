@@ -1,5 +1,5 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
-import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -40,7 +40,7 @@ export const extractKeysFromAttachments = async (
                         messageFlags
                     );
                     const key = await CryptoProxy.importPublicKey({
-                        armoredKey: arrayToBinaryString(data),
+                        armoredKey: uint8ArrayToBinaryString(data),
                         checkCompatibility: supportV6Keys
                             ? KeyCompatibilityLevel.V6_COMPATIBLE
                             : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,

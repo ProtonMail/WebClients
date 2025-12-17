@@ -16,7 +16,7 @@ import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
-import { utf8ArrayToString } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import type { DocSizeTracker } from '../SizeTracker/SizeTracker'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import type { RealtimeControllerInterface } from './RealtimeControllerInterface'
@@ -432,7 +432,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
           this.documentState.emitEvent({ name: 'RealtimeRequestingClientToBroadcastItsState', payload: undefined })
           break
         case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
-          const decodedContent = utf8ArrayToString(event.props.content)
+          const decodedContent = uint8ArrayToUtf8String(event.props.content)
           const parsedMessage = JSON.parse(decodedContent)
           this.documentState.setProperty('currentCommitId', parsedMessage.commitId)
           break

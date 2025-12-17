@@ -1,6 +1,6 @@
 import mimemessage from '@protontech/mimemessage';
 
-import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
 import type {
     MessageEmbeddedImage,
     MessageImages,
@@ -58,7 +58,7 @@ const buildAttachments = (attachments: Download[]) =>
         const entity = mimemessage.factory({
             contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
             contentTransferEncoding: 'base64',
-            body: arrayToBinaryString(data),
+            body: uint8ArrayToBinaryString(data),
         });
 
         entity.header(

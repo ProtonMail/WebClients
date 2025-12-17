@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
 import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUser } from '@proton/shared/lib/api/user';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -126,7 +126,7 @@ const serializeAuthDeviceSecret = (value: Uint8Array<ArrayBuffer>) => {
 
 export const getAuthDeviceSecretConfirmationCode = async (data: string) => {
     const sha256DeviceSecret = await getSHA256String(data);
-    return base32crockford.encode(stringToUtf8Array(sha256DeviceSecret)).slice(0, 4);
+    return base32crockford.encode(utf8StringToUint8Array(sha256DeviceSecret)).slice(0, 4);
 };
 
 export const deserializeAuthDeviceSecretData = async (
@@ -247,8 +247,8 @@ export const encryptAuthDeviceSecret = async ({
 }) => {
     const encryptedSecret = await encryptData(
         deviceSecretData.key,
-        stringToUtf8Array(keyPassword),
-        stringToUtf8Array(AesContext.deviceSecret)
+        utf8StringToUint8Array(keyPassword),
+        utf8StringToUint8Array(AesContext.deviceSecret)
     );
     return encryptedSecret.toBase64();
 };
@@ -264,9 +264,9 @@ export const getDecryptedAuthDeviceSecret = async ({
         const decryptedSecret = await decryptData(
             deviceDataSerialized.deviceSecretData.key,
             Uint8Array.fromBase64(encryptedSecret),
-            stringToUtf8Array(AesContext.deviceSecret)
+            utf8StringToUint8Array(AesContext.deviceSecret)
         );
-        return utf8ArrayToString(decryptedSecret);
+        return uint8ArrayToUtf8String(decryptedSecret);
     } catch {
         throw new AuthDeviceInvalidError(deviceDataSerialized.serializedDeviceData.id, 'Unable to decrypt');
     }
