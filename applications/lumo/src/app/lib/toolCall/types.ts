@@ -2,6 +2,7 @@ export type ToolCallData =
     | WebSearchToolCallData
     | DescribeImageToolCallData
     | GenerateImageToolCallData
+    | EditImageToolCallData
     | ProtonInfoToolCallData;
 export type ToolCallName = ToolCallData['name'];
 
@@ -10,6 +11,7 @@ export function isToolCallData(data: unknown): data is ToolCallData {
         isWebSearchToolCallData(data) ||
         isDescribeImageToolCallData(data) ||
         isGenerateImageToolCallData(data) ||
+        isEditImageToolCallData(data) ||
         isProtonInfoToolCallData(data)
     );
 }
@@ -93,6 +95,37 @@ export function isGenerateImageArguments(args: unknown): args is GenerateImageAr
         (!('negative_prompt' in args) || args.negative_prompt === null || args.negative_prompt === undefined || typeof args.negative_prompt === 'string') &&
         (!('output_format' in args) || args.output_format === undefined || typeof args.output_format === 'string') &&
         ('prompt' in args && typeof args.prompt === 'string') &&
+        (!('seed' in args) || args.seed === null || args.seed === undefined || typeof args.seed === 'number')
+    );
+}
+
+export type EditImageToolCallData = { name: 'edit_image'; arguments: EditImageArguments };
+
+export function isEditImageToolCallData(data: unknown): data is EditImageToolCallData {
+    // prettier-ignore
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        ('name' in data && data.name === 'edit_image') &&
+        ('arguments' in data && isEditImageArguments(data.arguments))
+    );
+}
+
+export type EditImageArguments = {
+    image: string[];
+    prompt: string;
+    cfg_scale?: number | null;
+    seed?: number | null;
+};
+
+export function isEditImageArguments(args: unknown): args is EditImageArguments {
+    // prettier-ignore
+    return (
+        typeof args === 'object' &&
+        args !== null &&
+        ('image' in args && Array.isArray(args.image) && args.image.every((id) => typeof id === 'string')) &&
+        ('prompt' in args && typeof args.prompt === 'string') &&
+        (!('cfg_scale' in args) || args.cfg_scale === null || args.cfg_scale === undefined || typeof args.cfg_scale === 'number') &&
         (!('seed' in args) || args.seed === null || args.seed === undefined || typeof args.seed === 'number')
     );
 }
