@@ -16,16 +16,16 @@ import type {
     FrameMessageHandler,
 } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { createFrameMessageBroker } from 'proton-pass-extension/app/content/services/client/client.channel';
+import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import {
     type ClientObserver,
     createClientObserver,
 } from 'proton-pass-extension/app/content/services/client/client.observer';
 import {
+    assertFrameVisible,
     getFrameAttributes,
     getFrameElement,
-    getFrameParentVisibility,
     getFrameVisibility,
-    isNegligableFrameRect,
     isSandboxedFrame,
 } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -33,22 +33,26 @@ import 'proton-pass-extension/lib/polyfills/shim';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import { createActivityProbe } from '@proton/pass/utils/time/probe';
 import debounce from '@proton/utils/debounce';
-import noop from '@proton/utils/noop';
 
 export interface ClientController {
-    /** Destroys controller and cleans up all resources. Safe to call at any lifecycle stage.
-     * Passed to `ExtensionContext` for handling SW termination cases where unload events fail. */
+    /** Destroys controller and cleans up all resources. Safe to call at any
+     * lifecycle stage. Passed to `ExtensionContext` for handling SW termination
+     * cases where unload events fail. */
     destroy: (err?: unknown) => void;
     init: () => Promise<void>;
-    start: DebouncedFunc<() => Promise<void>>;
+    defer: () => void;
+    start: DebouncedFunc<() => void>;
+    startImmediate: () => void;
     stop: (reason: string) => void;
 
     deferred: boolean;
+    deferredUnsubscribe: Maybe<() => void>;
     instance: MaybeNull<ContentScriptClient>;
     observer: ClientObserver;
     channel: FrameMessageBroker;
@@ -58,8 +62,9 @@ type ClientControllerOptions = Omit<ContentScriptClientFactoryOptions, 'controll
     clientFactory: (options: ContentScriptClientFactoryOptions) => ContentScriptClient;
 };
 
-const ACTIVITY_PROBE_MS = 25_000;
-const sendActivityProbe = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING }));
+export const CLIENT_START_TIMEOUT_MS = 350;
+export const CLIENT_ACTIVITY_PROBE_MS = 25_000;
+const ping = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING }));
 
 /** Validates frame visibility to prevent autofill in hidden iframes and ensure
  * UI overlays only appear on visible frames. Rejects if any parent frame is hidden. */
@@ -93,21 +98,10 @@ const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = withCon
                     break;
             }
         }
+
         return true;
     }
 );
-
-/** Multi-layer visibility validation to avoid unnecessary work in hidden contexts.
- * Main frames only check document visibility; sub-frames validate size and parent visibility. */
-const assertFrameVisible = async (mainFrame: boolean) => {
-    if (document.visibilityState !== 'visible') return false;
-    if (mainFrame) return true;
-
-    const { childElementCount, clientHeight, clientWidth } = document.documentElement;
-    if (childElementCount === 0) return false; /** Empty frame */
-    if (isNegligableFrameRect(clientWidth, clientHeight)) return false;
-    return getFrameParentVisibility();
-};
 
 export const createClientController = ({
     clientFactory,
@@ -115,7 +109,7 @@ export const createClientController = ({
     scriptId,
     mainFrame,
 }: ClientControllerOptions): ClientController => {
-    const probe = createActivityProbe();
+    const probe = mainFrame ? createActivityProbe() : null;
     const listeners = createListenerStore();
     const observer = createClientObserver(mainFrame);
     const transport = createFrameMessageBroker();
@@ -125,10 +119,61 @@ export const createClientController = ({
         channel: transport,
         observer,
         deferred: false,
+        deferredUnsubscribe: undefined,
+
+        /** Sub-frames: defer until observer detects activity to avoid loading the client
+         * in irrelevant frames. This optimization prevents resource allocation in frames
+         * that may never become interactive (e.g., tracking pixels, analytics iframes).
+         *
+         * 1. Set up DOM mutation observer immediately
+         * 2. Wait for meaningful activity (DOM mutations or resize events)
+         * 3. Validate frame visibility before actually starting the client
+         * 4. Start client only if frame becomes active and visible */
+        defer: () => {
+            logger.debug(`[ClientController::${scriptId}] Deferring sub-frame initialization`);
+            observer.observe();
+            controller.deferred = true;
+
+            const isDeferredStartTrigger = async (evt: ClientObserverEvent): Promise<boolean> => {
+                /** DOM mutations are considered valid triggers as they indicate the frame
+                 * is actively being modified, suggesting it's not a static/tracking frame */
+                if (evt.type === 'mutation') return true;
+                /** Resize events require additional visibility validation since they can
+                 * fire for hidden frames during layout changes. We verify the frame is
+                 * actually visible before considering it a valid trigger. */
+                if (evt.type === 'event' && evt.event.type === 'resize') return assertFrameVisible(mainFrame);
+
+                return false;
+            };
+
+            const unsubscribe = observer.subscribe(async (evt) => {
+                if (controller.instance) return controller.deferredUnsubscribe?.();
+                if (await isDeferredStartTrigger(evt)) void controller.start();
+            });
+
+            controller.deferredUnsubscribe = () => {
+                unsubscribe();
+                delete controller.deferredUnsubscribe;
+            };
+        },
 
         init: async () => {
-            controller.channel.register(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, () => controller.destroy('unload'));
+            const onContentScriptUnload = () => controller.destroy('unload');
+
+            /** Handles deferred initialization messages from sibling frame: when
+             * a deferred sub-frame starts up, it may indicate that sibling frames
+             * should also be re-evaluated for initialization. This prevents scenarios
+             * where forms spanning multiple frames are only partially detected because
+             * some sibling frames remain deferred. */
+            const onFrameDeferredInit = () => {
+                getFrameVisibility.clear();
+                if (controller.instance || !controller.deferred) return;
+                void assertFrameVisible(mainFrame).then((visible) => visible && controller.startImmediate());
+            };
+
+            controller.channel.register(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, onContentScriptUnload);
             controller.channel.register(WorkerMessageType.FRAME_QUERY, onFrameQuery);
+            controller.channel.register(WorkerMessageType.FRAME_DEFERRED_INIT, onFrameDeferredInit);
 
             registerLoggerEffect((...logs) =>
                 sendMessage(
@@ -139,78 +184,81 @@ export const createClientController = ({
                 )
             );
 
-            const visible = await assertFrameVisible(mainFrame);
+            let abortCtrl = new AbortController();
+
+            const startWhenVisible = safeAsyncCall(async (options: { immediate: boolean }, signal: AbortSignal) => {
+                const visible = await assertFrameVisible(mainFrame);
+
+                if (!signal.aborted) {
+                    if (visible) controller[options.immediate ? 'startImmediate' : 'start']();
+                    else {
+                        if (mainFrame) controller.stop('frame-hidden');
+                        else controller.defer();
+                    }
+                }
+            });
 
             listeners.addListener(document, 'visibilitychange', () => {
                 switch (document.visibilityState) {
                     case 'visible':
-                        if (controller.deferred) observer.observe();
-                        return assertFrameVisible(mainFrame)
-                            .then((visible) => {
-                                if (visible) return controller.start();
-                                else controller.stop('frame-hidden');
-                            })
-                            .catch(noop);
+                        abortCtrl = new AbortController();
+                        return startWhenVisible({ immediate: false }, abortCtrl.signal);
                     case 'hidden':
+                        abortCtrl.abort();
                         return controller.stop('hidden');
                 }
             });
 
-            const startImmediate = () => {
-                controller.start()?.catch(controller.destroy);
-                controller.start.flush()?.catch(controller.destroy);
-            };
-
-            if (visible) return startImmediate();
-            else if (!mainFrame) {
-                /** Sub-frames: defer until observer detects activity
-                 * to avoid loading the client in irrelevant frames. */
-                observer.observe();
-                controller.deferred = true;
-
-                logger.debug(`[ClientController::${scriptId}] Deferring sub-frame initialization`);
-
-                const unsub = observer.subscribe(async (evt) => {
-                    if (controller.instance) return unsub();
-
-                    const shouldStart = await (async () => {
-                        if (evt.type === 'mutation') return true;
-                        if (evt.type === 'event' && evt.event.type === 'resize') return assertFrameVisible(mainFrame);
-                    })();
-
-                    if (shouldStart && !controller.instance) {
-                        logger.debug(`[ClientController::${scriptId}] Starting sub-frame client`);
-                        startImmediate();
-                        unsub();
-                    }
-                });
-            }
+            /** If visible on first initialization: start immediately */
+            await startWhenVisible({ immediate: true }, abortCtrl.signal);
         },
 
         /** Debounced with trailing-only execution to coalesce rapid tab switches.
          * The 350ms delay with trailing: true ensures final visibility state is
          * captured while preventing thrashing during quick changes in Safari. */
         start: debounce(
-            async () => {
+            () => {
                 observer.observe();
+                controller.deferredUnsubscribe?.();
 
                 if (!controller.instance) {
-                    controller.deferred = false;
-                    controller.instance = clientFactory({ scriptId, elements, mainFrame, controller });
-                    probe.start(sendActivityProbe, ACTIVITY_PROBE_MS);
-                    return controller.instance.start();
+                    try {
+                        if (!mainFrame && controller.deferred) {
+                            /** NOTE: child/sibling frames of this sub-frame may have been deferred as
+                             * well due to their parent having been deferred. Forward this event
+                             * to children which may now be considered "active". */
+                            void sendMessage(contentScriptMessage({ type: WorkerMessageType.FRAME_DEFERRED_INIT }));
+                            logger.debug(`[ClientController::${scriptId}] Starting sub-frame client`);
+                        }
+
+                        controller.deferred = false;
+                        controller.instance = clientFactory({ scriptId, elements, mainFrame, controller });
+                        controller.instance.start();
+                        probe?.start(ping, CLIENT_ACTIVITY_PROBE_MS);
+                    } catch {
+                        controller.destroy();
+                    }
                 }
             },
-            350,
+            CLIENT_START_TIMEOUT_MS,
             { leading: false, trailing: true }
         ),
 
+        startImmediate: () => {
+            if (!controller.instance) {
+                controller.start();
+                controller.start.flush();
+            }
+        },
+
         stop: (reason: string) => {
-            probe.cancel();
+            probe?.cancel();
             controller.start.cancel();
             controller.observer.destroy();
+            controller.deferredUnsubscribe?.();
             controller.instance?.destroy({ reason });
             controller.instance = null;
+            controller.deferred = false;
         },
 
         /** Stops the client and removes all listeners. Once called
@@ -220,7 +268,6 @@ export const createClientController = ({
             listeners.removeAll();
             controller.stop(String(reason ?? 'destroyed'));
             controller.channel.destroy();
-            controller.observer.destroy();
         },
     };
 
