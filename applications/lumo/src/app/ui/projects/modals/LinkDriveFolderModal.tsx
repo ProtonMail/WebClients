@@ -26,7 +26,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const files = Object.values(spaceAssets).filter((asset) => !asset.error);
     const hasExistingFiles = files.length > 0;
     const { isInitialized, getRootFolder } = useDriveSDK();
-    const { indexFolder, isIndexing, removeIndexedFolder } = useDriveFolderIndexing();
+    const { indexFolder, removeIndexedFolder } = useDriveFolderIndexing();
     const [currentBrowsedFolder, setCurrentBrowsedFolder] = useState<DriveNode | null>(null);
     const [rootFolderId, setRootFolderId] = useState<string | null>(null);
     const [folderPath, setFolderPath] = useState<string[]>([]);

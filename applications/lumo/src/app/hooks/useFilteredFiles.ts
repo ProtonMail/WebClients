@@ -177,7 +177,7 @@ export const useFilteredFiles = (
     const messageOnlyActiveFiles = useMemo(() => {
         const projectFileIds = new Set(projectFiles.map(f => f.id));
         return activeHistoricalFiles.filter(file => 
-            !projectFileIds.has(file.id) && !file.autoRetrieved
+            !projectFileIds.has(file.id) && !(file as any).autoRetrieved
         );
     }, [activeHistoricalFiles, projectFiles]);
 
