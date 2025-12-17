@@ -409,11 +409,9 @@
 	flex: 1;
 	min-block-size: 0; // Allow flex child to shrink
 
-	// // The drive browser main container
-	// > div {
-	//     flex: 1;
-	//     min-height: 0; // Allow flex child to shrink
-	// }
+	.drive-content-container {
+		flex: 1 0 0px;
+	}
 }
 
 .drive-connection-indicator {

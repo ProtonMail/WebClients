@@ -101,7 +101,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                 onBreadcrumbClick={handleBreadcrumbClick}
             />
 
-            <div className="flex-1 overflow-auto h-full">
+            <div className="drive-content-container overflow-auto h-full">
                 <DriveHiddenFilesNotice
                     hiddenProtonDocsCount={hiddenProtonDocsCount}
                     hiddenUnsupportedCount={hiddenUnsupportedCount}
