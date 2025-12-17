@@ -6,15 +6,15 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
-// body::before {
-// 	position: fixed;
-// 	display: flex;
-// 	inset-block-start: 0;
-// 	background-color: red;
-// 	color: white;
-// 	inset-inline-start: 0;
-// 	z-index: 12000;
-// }
+body::before {
+	position: fixed;
+	display: flex;
+	inset-block-start: 0;
+	background-color: red;
+	color: white;
+	inset-inline-start: 0;
+	z-index: 12000;
+}
 
 .main-text-container {
 	container-type: inline-size;
