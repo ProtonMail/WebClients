@@ -40,7 +40,7 @@ const DrivePlusFromFreeBanner = () => {
                     logo={<PlanIcon planName={plan} />}
                     topLine={planName}
                     bottomLine={c('Upsell')
-                        .t`Get ${drivePlusPlanMaxSpace} storage for your for files, photos and documents, and recover file versions with 10-year file recovery.`}
+                        .t`Get ${drivePlusPlanMaxSpace} storage for your files, photos and documents, and recover file versions with 10-year file recovery.`}
                 />
             }
             headerActionArea={
