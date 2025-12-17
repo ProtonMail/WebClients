@@ -101,6 +101,7 @@ enum AccountFlag {
     PassDashboard = 'PassDashboard',
     DriveDashboard = 'DriveDashboard',
     FirstEmail = 'FirstEmail',
+    DelightfulProductSwitcher = 'DelightfulProductSwitcher',
 }
 
 enum PaymentsFlag {

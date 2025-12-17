@@ -26,6 +26,7 @@ import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
 import PublicUserItem from './PublicUserItem';
+import DelightfulProductSwitcher from './delightfulProductSwitcher/DelightfulProductSwitcher';
 
 interface EnhancedAuthSession extends OnLoginCallbackArguments {
     data: OnLoginCallbackArguments['data'] & {
@@ -57,12 +58,12 @@ const Disabled = ({ children }: { children: ReactElement }) => {
     );
 };
 
-const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationExtended }) => {
+export const UnsupportedAppError = ({ app, organization }: { app: APP_NAMES; organization?: OrganizationExtended }) => {
     const appName = getAppName(app);
     const organizationName = organization?.Name || '';
     return (
         <div
-            className="flex flex-row items-center gap-2 px-3 py-2 border rounded border-weak mb-6 mt-6"
+            className="flex flex-row items-center gap-2 px-3 py-2 border rounded bg-norm border-weak mb-6 mt-6"
             data-testid="app-unsupported"
         >
             <div className="shrink-0">
@@ -92,7 +93,7 @@ interface Props {
     state: AppSwitcherState;
 }
 
-const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
+const ProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
@@ -163,6 +164,16 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
             </Main>
         </Layout>
     );
+};
+
+const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
+    const isDelightfulProductSwitcherEnabled = useFlag('DelightfulProductSwitcher');
+
+    if (isDelightfulProductSwitcherEnabled) {
+        return <DelightfulProductSwitcher onLogin={onLogin} onSwitch={onSwitch} state={state} />;
+    }
+
+    return <ProductSwitcher onLogin={onLogin} onSwitch={onSwitch} state={state} />;
 };
 
 export default AppSwitcherContainer;
