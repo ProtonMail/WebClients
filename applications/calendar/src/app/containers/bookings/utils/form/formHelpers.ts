@@ -8,7 +8,7 @@ import type { BookingFormData, BookingFormValidation, BookingRange } from '../..
 import { BookingErrorMessages } from '../bookingCopy';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
-    if (data.bookingSlots.length >= MAX_BOOKING_SLOTS) {
+    if (data.bookingSlots.length > MAX_BOOKING_SLOTS) {
         return {
             type: 'error',
             reason: BookingFormValidationReasons.TIME_SLOT_LIMIT,
