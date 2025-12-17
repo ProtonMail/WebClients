@@ -386,25 +386,6 @@ export const SearchSettingsPanel = () => {
                     <span className="text-sm color-weak">{messageIndexingStatus.error}</span>
                 </div>
             )}
-
-            {!foundationStatus?.hasEntries && conversationCount > 0 && (
-                <div className="p-3 bg-warning-weak rounded">
-                    <div className="flex items-center gap-2 mb-2">
-                        <Icon name="exclamation-triangle-filled" size={4} className="color-warning" />
-                        <span className="text-semibold color-warning">{c('Warning').t`Index Not Created`}</span>
-                    </div>
-                    <div className="text-sm color-weak">
-                        <p className="mb-2">
-                            {c('Info')
-                                .t`You have ${conversationCount} conversations but no search index has been created yet.`}
-                        </p>
-                        <p>
-                            <strong>{c('Info').t`To fix:`}</strong> Click "Index Now" to create the search index for all
-                            your conversations.
-                        </p>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
