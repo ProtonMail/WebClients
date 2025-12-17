@@ -27,6 +27,9 @@ function messageFor(toolCallName: ToolCallName | undefined): string | undefined 
     if (toolCallName === 'generate_image') {
         return 'Creating your image...';
     }
+    if (toolCallName === 'edit_image') {
+        return 'Creating your image...';
+    }
     if (toolCallName === 'web_search') {
         return 'Searching the web...';
     }
