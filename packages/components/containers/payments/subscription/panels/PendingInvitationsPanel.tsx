@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -42,9 +42,11 @@ const PendingInvitationPanel = ({ invites }: Props) => {
                 <div className="flex">
                     <h3 className="text-lg mb-6">
                         <strong>
-                            {invites.length === 1
-                                ? c('familyOffer_2023:Family plan').t`Pending invitation`
-                                : c('familyOffer_2023:Family plan').t`Pending invitations`}
+                            {c('familyOffer_2023:Family plan').ngettext(
+                                msgid`Pending invitation`,
+                                `Pending invitations`,
+                                invites.length
+                            )}
                         </strong>
                     </h3>
                     {invites && (
