@@ -8,8 +8,10 @@
     "scripts": {
         "build:desktop": "cross-env-shell NODE_ENV=production 'yarn run build:native && electron-forge package'",
         "build:desktop:dev": "cross-env-shell NODE_ENV=production API_ENV=proton.black 'yarn run build:native && electron-forge package'",
+        "build:mas": "cross-env-shell NODE_ENV=production SKIP_CODESIGN=1 'yarn run build:native && electron-forge package && cp -r .webpack/*/* .webpack/ && rm -rf .webpack/arm64 && electron-builder --config electron-builder.config.js'",
         "build:native": "cd native && yarn build:multi",
         "check-types": "tsc",
+        "clean:build:artifacts": "rm -rf dist && rm -rf out && rm -rf .webpack",
         "i18n:extract:desktop": "proton-i18n extract",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
@@ -48,6 +50,7 @@
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
         "cross-env": "^10.1.0",
         "electron": "39.2.4",
+        "electron-builder": "26.0.12",
         "eslint": "^9.39.1",
         "jest": "^30.2.0",
         "node-loader": "^2.1.0",
