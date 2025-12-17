@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
+import PendingInvitations from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PendingInvitations';
 import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -39,6 +40,7 @@ const DashboardWrapper = ({ children, config }: PropsWithChildren<Props>) => {
 const AccountMailDashboard = ({ app, config }: Props) => {
     return (
         <DashboardWrapper config={config} app={app}>
+            <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <MailDownloadAndInfoSection app={app} />
@@ -55,6 +57,7 @@ const AccountMailDashboard = ({ app, config }: Props) => {
 const AccountPassDashboard = ({ app, config }: Props) => {
     return (
         <DashboardWrapper config={config} app={app}>
+            <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <PassDownloadAndInfoSection app={app} />
@@ -71,6 +74,7 @@ const AccountPassDashboard = ({ app, config }: Props) => {
 const AccountDriveDashboard = ({ app, config }: Props) => {
     return (
         <DashboardWrapper config={config} app={app}>
+            <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <DriveDownloadAndInfoSection app={app} />

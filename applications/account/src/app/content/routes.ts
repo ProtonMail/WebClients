@@ -62,6 +62,7 @@ export const getRoutes = ({
     showDriveDashboard,
     showDriveDashboardVariant,
     isAuthenticatorAvailable,
+    hasPendingInvitations,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -92,6 +93,7 @@ export const getRoutes = ({
             showPassDashboardVariant,
             showDriveDashboard,
             showDriveDashboardVariant,
+            hasPendingInvitations,
         }),
         mail: getMailAppRoutes({
             app,
