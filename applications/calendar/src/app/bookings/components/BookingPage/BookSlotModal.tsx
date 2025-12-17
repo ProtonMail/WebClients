@@ -69,7 +69,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
         const isOrganizerEmail =
             canonicalizeInternalEmail(email) === canonicalizeInternalEmail(bookingDetails?.inviterEmail || '');
 
-        return isOrganizerEmail ? c('Error').t`You cannot enter the organizer email` : '';
+        return isOrganizerEmail ? c('Error').t`You cannot enter the organizer's email` : '';
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
