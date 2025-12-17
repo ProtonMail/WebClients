@@ -21,11 +21,15 @@ import useLoading from '@proton/hooks/useLoading';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
 import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
+import { useUser } from '@proton/account/user/hooks';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 
 interface Props extends ModalProps {}
 
@@ -40,74 +44,89 @@ enum Step {
 
 interface Model {
     step: Step;
+    hadManualRecoveryMethodBeforeOptIn: boolean;
     error?: ReactNode;
 }
 
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const dispatch = useDispatch();
+
+    const [user] = useUser();
+    const canRevokeRecoveryFiles = useRecoverySecrets().length > 0;
+    const hasManualRecoveryMethod =
+        user.MnemonicStatus === MNEMONIC_STATUS.SET ||
+        (user.MnemonicStatus === MNEMONIC_STATUS.ENABLED && canRevokeRecoveryFiles);
+
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
     const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
     const loadingDependencies = loadingOutgoingAddressForwardings || loadingDeviceRecovery;
     const [loading, withLoading] = useLoading();
-    const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION });
+    const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION, hadManualRecoveryMethodBeforeOptIn: hasManualRecoveryMethod });
     const [understoodForceUpgrade, setUnderstoodForceUpgrade] = useState(false);
     const handleError = useErrorHandler();
 
     const handleGenerateAddressKeyForAllAddresses = async () => {
         try {
             await dispatch(generatePqcAddressKeys());
-            setModel({ step: Step.SUCCESS });
+            setModel(prev => ({ step: Step.SUCCESS, hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn }));
         } catch (error) {
             console.error(error);
             handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
-            setModel({
+            setModel(prev => ({
+                hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,
                 step: Step.ERROR,
                 error: c('PQC adress key generation')
                     .t`Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${encryptionAndKeysSettingsTitle} settings.`,
-            });
+            }));
         }
     };
 
     const handleGenerateUserKey = async () => {
         try {
             await dispatch(generatePqcUserKey({ isDeviceRecoveryEnabled, isDeviceRecoveryAvailable }));
-            setModel({ step: Step.IN_PROGRESS_ADDRESS_KEYS });
+            setModel(prev => ({ step: Step.IN_PROGRESS_ADDRESS_KEYS, hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn }));
             return await handleGenerateAddressKeyForAllAddresses();
         } catch (error) {
             console.error(error);
             handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
-            setModel({
+            setModel(prev => ({
                 step: Step.ERROR,
                 error: c('PQC account key generation')
                     .t`Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${encryptionAndKeysSettingsTitle} settings.`,
-            });
+                hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn
+            }));
         }
     };
 
     const handleOptIn = async () => {
         try {
             await dispatch(optInToPqc());
-            setModel({
+            setModel(prev => ({
                 step: Step.IN_PROGRESS_ACCOUNT_KEY,
-            });
+                hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn
+            }));
             return await handleGenerateUserKey();
         } catch (error) {
             console.error(error);
             handleError(error);
-            setModel({
+            setModel(prev => ({
                 step: Step.ERROR,
                 error: c('PQC optin').t`Enabling post-quantum protection failed. Try again later.`,
-            });
+                hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn
+            }));
         }
     };
 
     const handleSubmit = async () => {
         if (model.step === Step.CONFIRMATION) {
-            setModel({ step: Step.IN_PROGRESS_OPTIN });
+            setModel(prev => ({
+                step: Step.IN_PROGRESS_OPTIN,
+                hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn
+            }));
             return handleOptIn();
         }
     };
@@ -167,6 +186,16 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                     </Link> */}
                                 </p>
                             </div>
+                            {model.hadManualRecoveryMethodBeforeOptIn && (
+                                <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
+                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                    <p className="text-sm color-weak flex-1 pl-4 my-0">{getBoldFormattedText(
+                                        c('Info')
+                                            .t`**Your recovery methods will be invalidated:** you can generate new recovery data later.`
+                                    )}
+                                    </p>
+                                </div>
+                            )}
                             <div className="flex flex-row items-start">
                                 <Checkbox
                                     id="understood-pqc-force-upgrade"
@@ -207,7 +236,10 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                         <>
                             <div className="text-center">
                                 <p>
-                                    {c('pqc-optin: Info').jt`Post-quantum protection has been enabled on your account!`}
+                                    {model.hadManualRecoveryMethodBeforeOptIn ?
+                                        c('pqc-optin: Info').jt`Post-quantum protection is enabled. Don't forget to generate new recovery data.` :
+                                        c('pqc-optin: Info').jt`Post-quantum protection is enabled`
+                                    }
                                 </p>
                             </div>
                         </>
@@ -237,9 +269,21 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                     </>
                 )}
                 {(model.step === Step.SUCCESS || model.step === Step.ERROR) && (
-                    <Button onClick={rest.onClose} fullWidth={true}>
-                        {c('pqc-optin: Action').t`Got it`}
-                    </Button>
+                    <>
+                        {model.hadManualRecoveryMethodBeforeOptIn && (
+                            <ButtonLike
+                                as={SettingsLink}
+                                path={'/recovery#data'}
+                                color="norm"
+                                target="_self"
+                            >
+                                {c('Action').t`Open recovery settings`}
+                            </ButtonLike>
+                        )}
+                        <Button onClick={rest.onClose} fullWidth={!model.hadManualRecoveryMethodBeforeOptIn}>
+                            {c('pqc-optin: Action').t`Close`}
+                        </Button>
+                    </>
                 )}
             </ModalTwoFooter>
         </ModalTwo>
