@@ -1,3 +1,8 @@
+### Version 1.33.2
+
+- Support right click on items (behind feature flag)
+- Offline detection fixes
+
 ### Version 1.33.0
 
 - Allow offline mode fallback when services are down
