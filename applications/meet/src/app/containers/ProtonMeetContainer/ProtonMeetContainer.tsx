@@ -270,6 +270,14 @@ export const ProtonMeetContainer = ({
             setMlsGroupState(nextMlsGroupState);
             mlsGroupStateRef.current = nextMlsGroupState;
 
+            if (isMeetClientMetricsLogEnabled) {
+                try {
+                    await wasmApp?.tryLogDesignatedCommitter(Number(epoch));
+                } catch (error) {
+                    reportMeetError('Failed to log designated committer rank', error);
+                }
+            }
+
             const errorMessage = hasEpochError(epoch);
 
             const newLog = {
