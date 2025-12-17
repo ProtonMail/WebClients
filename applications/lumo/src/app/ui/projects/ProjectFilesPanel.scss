@@ -1,456 +1,450 @@
 .project-files-panel {
-    // Match files-panel structure: h-full w-1/3 pt-2 pr-4 pb-6
-    height: 100%;
-    width: 33.333333%; // w-1/3 equivalent
-    padding-top: 8px; // pt-2 equivalent
-    padding-right: 16px; // pr-4 equivalent
-    padding-bottom: 24px; // pb-6 equivalent
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    flex-shrink: 0;
+	// Match files-panel structure: h-full w-1/3 pt-2 pr-4 pb-6
+	block-size: 100%;
+	inline-size: 33.33%; // w-1/3 equivalent
+	padding-block: 8px 24px; // pt-2 equivalent
+	padding-inline-end: 16px; // pr-4 equivalent // pb-6 equivalent
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	flex-shrink: 0;
 
-    // When drive browser is active, remove outer scroll and let drive browser handle it
-    &.has-drive-browser {
-        overflow-y: hidden;
-        
-        .project-files-panel-content {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-    }
+	// When drive browser is active, remove outer scroll and let drive browser handle it
+	&.has-drive-browser {
+		overflow-y: hidden;
 
-    // Smooth panel entrance animation
-    animation: slideInFromRight 0.3s ease-out;
+		.project-files-panel-content {
+			display: flex;
+			flex-direction: column;
+			block-size: 100%;
+		}
+	}
 
-    // When sidebar is shown, give it more space (like files-panel)
-    .project-detail-content.with-sidebar & {
-        width: 40%; // Slightly wider when shown
-    }
+	// Smooth panel entrance animation
+	animation: slideInFromRight 0.3s ease-out;
 
-    @media (max-width: 1024px) {
-        width: 50%; // w-1/2 at smaller screens
+	// When sidebar is shown, give it more space (like files-panel)
+	.project-detail-content.with-sidebar & {
+		inline-size: 40%; // Slightly wider when shown
+	}
 
-        .project-detail-content.with-sidebar & {
-            width: 50%;
-        }
-    }
+	@media (width <= 1024px) {
+		inline-size: 50%; // w-1/2 at smaller screens
 
-    @media (max-width: 768px) {
-        display: none;
-    }
+		.project-detail-content.with-sidebar & {
+			inline-size: 50%;
+		}
+	}
+
+	@media (width <= 768px) {
+		display: none;
+	}
 }
 
 // Panel entrance animation (same as files-panel)
 @keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 .project-files-panel-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100%;
-    border-radius: 12px 0 0 12px; // Rounded left corners only, attach to right
-    background-color: transparent;
-    height: 75vh;
-		overflow-y: hidden;
-    padding: 16px;
-    margin-right: 0; // Ensure no margin on right side
+	display: flex;
+	flex-flow: column nowrap;
+	inline-size: 100%;
+	border-radius: 12px 0 0 12px; // Rounded left corners only, attach to right
+	background-color: transparent;
+	block-size: 75vh;
+	overflow-y: hidden;
+	padding: 16px;
+	margin-inline-end: 0; // Ensure no margin on right side
 }
 
 .project-files-section {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+	padding-block-end: 20px;
+	margin-block-end: 20px;
 
-    &:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
+	&:last-child {
+		border-block-end: none;
+		margin-block-end: 0;
+		padding-block-end: 0;
+	}
 
-    // When drive browser is active, the files section should expand to fill remaining space
-    .has-drive-browser &:last-child {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        min-height: 0; // Allow flex child to shrink
-    }
+	// When drive browser is active, the files section should expand to fill remaining space
+	.has-drive-browser &:last-child {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		min-block-size: 0; // Allow flex child to shrink
+	}
 }
 
 .project-files-section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-block-end: 12px;
 }
 
 .project-files-section-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0;
-    color: var(--text-norm);
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0;
+	color: var(--text-norm);
 }
 
 .project-files-section-content {
-    min-height: 60px;
+	min-block-size: 60px;
 
-		&.files-section {
-			background-color: white;
-			border: 1px solid var(--border-weak);
-			border-radius: var(--border-radius-xl);
-			padding: 20px;
-			padding-bottom: 20px; // Ensure bottom padding is explicit
-			max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
-			overflow-y: auto;
-			overflow-x: hidden;
-			display: flex;
-			flex-direction: column;
-			position: relative; // Ensure border is visible
+	&.files-section {
+		border: 1px solid var(--border-weak);
+		border-radius: var(--border-radius-xl);
+		padding: 20px;
+		padding-block-end: 20px; // Ensure bottom padding is explicit
+		max-block-size: calc(50vh - 100px); // Account for instructions section (50vh) and headers
+		overflow: hidden auto;
+		display: flex;
+		flex-direction: column;
+		position: relative; // Ensure border is visible
 
 		// When drive browser is active, remove height restriction and overflow
 		.has-drive-browser & {
-			max-height: none;
+			max-block-size: none;
 			overflow-y: visible;
 			flex: 1;
 		}
-			box-sizing: border-box; // Ensure padding is included in height calculation
-			
-			.project-files-progress-overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background-color: rgba(255, 255, 255, 0.95);
-				backdrop-filter: blur(2px);
-				z-index: 10;
-				border-radius: var(--border-radius-xl);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			
-			// Ensure border-radius is preserved with scrolling
-			&::-webkit-scrollbar {
-				width: 8px;
-			}
-			
-			&::-webkit-scrollbar-track {
-				background: transparent;
-				border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
-			}
-			
-			&::-webkit-scrollbar-thumb {
-				background: var(--border-norm);
-				border-radius: 4px;
-				
-				&:hover {
-					background: var(--border-strong);
-				}
-			}
-			
-			// Ensure content doesn't touch the bottom border
-			> *:last-child {
-				margin-bottom: 0;
+
+		box-sizing: border-box; // Ensure padding is included in height calculation
+
+		.project-files-progress-overlay {
+			position: absolute;
+			inset: 0;
+			background-color: rgb(255 255 255 / 0.95);
+			backdrop-filter: blur(2px);
+			z-index: 10;
+			border-radius: var(--border-radius-xl);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		// Ensure border-radius is preserved with scrolling
+		&::-webkit-scrollbar {
+			inline-size: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+			border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--border-norm);
+			border-radius: 4px;
+
+			&:hover {
+				background: var(--border-strong);
 			}
 		}
+
+		// Ensure content doesn't touch the bottom border
+		> *:last-child {
+			margin-block-end: 0;
+		}
+	}
 }
 
 .project-instructions-text {
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--text-weak);
-    margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-		border: 1px solid var(--border-weak);
-		border-radius: var(--border-radius-xl);
-		padding: 15px;
-		max-height: 30vh;
-		overflow-y: auto;
-		overflow-x: hidden;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--text-weak);
+	margin: 0;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	border: 1px solid var(--border-weak);
+	border-radius: var(--border-radius-xl);
+	padding: 15px;
+	max-block-size: 30vh;
+	overflow: hidden auto;
 }
 
 .project-instructions-add {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    padding: 12px;
-    background-color: var(--background-weak);
-    border: 1px solid var(--border-norm);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    color: var(--text-weak);
-    transition: all 0.15s ease;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	inline-size: 100%;
+	padding: 12px;
+	background-color: var(--background-weak);
+	border: 1px solid var(--border-norm);
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 13px;
+	color: var(--text-weak);
+	transition: all 0.15s ease;
 
-    &:hover {
-        background-color: var(--background-strong);
-        border-color: var(--interaction-norm);
-        color: var(--text-norm);
-    }
+	&:hover {
+		background-color: var(--background-strong);
+		border-color: var(--interaction-norm);
+		color: var(--text-norm);
+	}
 
-    &:focus {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
 .project-files-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-block-size: 120px;
 }
 
 .project-files-options {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+	inline-size: 100%;
 }
 
 .project-files-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
-    flex: 1;
-    padding: 20px 16px;
-    background-color: var(--background-weak);
-    border: 1px dashed var(--border-norm);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    min-height: 140px;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 12px;
+	flex: 1;
+	padding-block: 20px;
+	padding-inline: 16px;
+	background-color: var(--background-weak);
+	border: 1px dashed var(--border-norm);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	min-block-size: 140px;
+	text-align: center;
 
-    &:hover {
-        background-color: var(--background-strong);
-        border-color: var(--interaction-norm);
-    }
+	&:hover {
+		background-color: var(--background-strong);
+		border-color: var(--interaction-norm);
+	}
 
-    &:focus {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
 .project-files-option-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	inline-size: 100%;
 }
 
 .project-files-option-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-norm);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-norm);
 }
 
 .project-files-option-subtext {
-    font-size: 12px;
-    color: var(--text-weak);
-    line-height: 1.4;
-    text-align: center;
+	font-size: 12px;
+	color: var(--text-weak);
+	line-height: 1.4;
+	text-align: center;
 }
 
 .project-files-add {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 24px 16px;
-    background-color: var(--background-weak);
-    border: 1px dashed var(--border-norm);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.15s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	inline-size: 100%;
+	padding-block: 24px;
+	padding-inline: 16px;
+	background-color: var(--background-weak);
+	border: 1px dashed var(--border-norm);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.15s ease;
 
-    &:hover {
-        background-color: var(--background-strong);
-        border-color: var(--interaction-norm);
-    }
+	&:hover {
+		background-color: var(--background-strong);
+		border-color: var(--interaction-norm);
+	}
 
-    &:focus {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 2px;
-    }
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
 }
 
 .project-files-add-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-norm);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-norm);
 }
 
 .project-files-add-hint {
-    font-size: 12px;
-    color: var(--text-weak);
-    text-align: center;
+	font-size: 12px;
+	color: var(--text-weak);
+	text-align: center;
 }
 
 .project-files-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .project-files-add-header-button {
-    flex-shrink: 0;
+	flex-shrink: 0;
 }
 
 .project-file-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px;
-    background-color: var(--background-weak);
-    border: 1px solid var(--border-weak);
-    border-radius: 8px;
-    transition: all 0.15s ease;
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 12px;
+	background-color: var(--background-weak);
+	border: 1px solid var(--border-weak);
+	border-radius: 8px;
+	transition: all 0.15s ease;
 
-    &:hover {
-        background-color: var(--background-norm);
-        border-color: var(--border-norm);
+	&:hover {
+		background-color: var(--background-norm);
+		border-color: var(--border-norm);
 
-        .project-file-remove {
-            opacity: 1;
-        }
-    }
+		.project-file-remove {
+			opacity: 1;
+		}
+	}
 }
 
 .project-file-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    background-color: var(--interaction-norm-minor-2);
-    color: var(--interaction-norm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+	inline-size: 32px;
+	block-size: 32px;
+	border-radius: 6px;
+	background-color: var(--interaction-norm-minor-2);
+	color: var(--interaction-norm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
 }
 
 .project-file-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-inline-size: 0;
 }
 
 .project-file-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-norm);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--text-norm);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .project-file-meta {
-    font-size: 12px;
-    color: var(--text-weak);
+	font-size: 12px;
+	color: var(--text-weak);
 }
 
 .project-file-badge {
-    display: inline-block;
-    padding: 2px 6px;
-    background-color: var(--background-strong);
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-weak);
-    text-transform: uppercase;
-    align-self: flex-start;
+	display: inline-block;
+	padding-block: 2px;
+	padding-inline: 6px;
+	background-color: var(--background-strong);
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 500;
+	color: var(--text-weak);
+	text-transform: uppercase;
+	align-self: flex-start;
 }
 
 .project-file-remove {
-    background: transparent;
-    border: none;
-    padding: 4px;
-    cursor: pointer;
-    color: var(--text-weak);
-    border-radius: 4px;
-    flex-shrink: 0;
-    opacity: 0;
-    transition: all 0.15s ease;
+	background: transparent;
+	border: none;
+	padding: 4px;
+	cursor: pointer;
+	color: var(--text-weak);
+	border-radius: 4px;
+	flex-shrink: 0;
+	opacity: 0;
+	transition: all 0.15s ease;
 
-    &:hover {
-        background-color: var(--background-strong);
-        color: var(--signal-danger);
-        opacity: 1 !important;
-    }
+	&:hover {
+		background-color: var(--background-strong);
+		color: var(--signal-danger);
+		opacity: 1 !important;
+	}
 
-    &:focus {
-        outline: 2px solid var(--focus-outline);
-        outline-offset: 1px;
-        opacity: 1 !important;
-    }
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 1px;
+		opacity: 1 !important;
+	}
 }
 
 .project-drive-browser {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-height: 0; // Allow flex child to shrink
-    
-    // The drive browser main container
-    > div {
-        flex: 1;
-        min-height: 0; // Allow flex child to shrink
-    }
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-block-size: 0; // Allow flex child to shrink
+
+	// // The drive browser main container
+	// > div {
+	//     flex: 1;
+	//     min-height: 0; // Allow flex child to shrink
+	// }
 }
 
 .drive-connection-indicator {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--signal-success);
-    flex-shrink: 0;
-    position: relative;
-    
-    // Subtle pulse animation to indicate active connection
-    &::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 50%;
-        background-color: var(--signal-success);
-        opacity: 0.3;
-        animation: pulse-connection 2s ease-in-out infinite;
-    }
+	inline-size: 6px;
+	block-size: 6px;
+	border-radius: 50%;
+	background-color: var(--signal-success);
+	flex-shrink: 0;
+	position: relative;
+
+	// Subtle pulse animation to indicate active connection
+	&::before {
+		content: '';
+		position: absolute;
+		inset: -2px;
+		border-radius: 50%;
+		background-color: var(--signal-success);
+		opacity: 0.3;
+		animation: pulse-connection 2s ease-in-out infinite;
+	}
 }
 
 @keyframes pulse-connection {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.3;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.1;
-    }
-}
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0.3;
+	}
 
+	50% {
+		transform: scale(1.2);
+		opacity: 0.1;
+	}
+}
