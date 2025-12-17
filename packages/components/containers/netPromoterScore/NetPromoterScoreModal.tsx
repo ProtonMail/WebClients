@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { dismissNps, submitNps } from '@proton/shared/lib/api/netPromoterScore';
+import { getOs } from '@proton/shared/lib/helpers/browser';
 
 import ScaleLadder from '../../components/input/ScaleLadder';
 import Modal from '../../components/modalTwo/Modal';
@@ -22,12 +23,13 @@ const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: Ne
     const [optionalComment, setOptionalComment] = useState('');
     const errorHandler = useErrorHandler();
     const api = useApi();
+    const { name = 'other' } = getOs();
 
     const [selectedScale, setSelectedScale] = useState<number | undefined>(undefined);
 
     const dismissNPSModal = async () => {
         try {
-            await api(dismissNps());
+            await api(dismissNps({ OS: name }));
         } catch (error) {
             errorHandler(error);
         }
@@ -41,7 +43,7 @@ const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: Ne
         }
 
         try {
-            await api(submitNps({ Score: selectedScale, Comment: optionalComment }));
+            await api(submitNps({ Score: selectedScale, Comment: optionalComment, OS: name }));
             void updateFeatureValue(false);
             onClose();
         } catch (error) {
