@@ -91,7 +91,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                     return () => <IcPlusCircle />;
                 };
 
-                const actions: FileItemData[] =
+                const actions: any[] =
                     child.type === NodeType.File && !isLinkedFolder && !folderSelectionMode
                         ? [
                               {
