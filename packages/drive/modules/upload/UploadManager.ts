@@ -182,7 +182,22 @@ export class UploadManager {
                     });
                 }
             } else {
-                const rootFolders = this.groupFilesByRootFolder(filesArray);
+                const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filesArray);
+
+                for (const file of standaloneFiles) {
+                    queueStore.addItem({
+                        type: NodeType.File,
+                        file,
+                        parentUid,
+                        name: file.name,
+                        uploadedBytes: 0,
+                        clearTextExpectedSize: file.size,
+                        status: UploadStatus.Pending,
+                        batchId,
+                    });
+                }
+
+                const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
                     const structure = buildFolderStructure(rootFiles);
                     this.addFolderStructureToQueue(structure, parentUid, batchId);
@@ -248,11 +263,32 @@ export class UploadManager {
         queueStore.clearQueue();
     }
 
+    private separateFilesAndFolders(files: File[]): {
+        filesWithStructure: File[];
+        standaloneFiles: File[];
+    } {
+        const filesWithStructure: File[] = [];
+        const standaloneFiles: File[] = [];
+
+        for (const file of files) {
+            const relativePath = file.webkitRelativePath || '';
+            const pathSegments = relativePath.split('/').filter((path) => path.length > 0);
+
+            if (pathSegments.length > 1) {
+                filesWithStructure.push(file);
+            } else {
+                standaloneFiles.push(file);
+            }
+        }
+
+        return { filesWithStructure, standaloneFiles };
+    }
+
     private groupFilesByRootFolder(files: File[]): Map<string, File[]> {
         const rootFolders = new Map<string, File[]>();
 
         for (const file of files) {
-            const relativePath = file.webkitRelativePath || file.name;
+            const relativePath = file.webkitRelativePath || '';
             const rootName = relativePath.split('/')[0];
 
             if (!rootFolders.has(rootName)) {
