@@ -11,7 +11,7 @@ import { useConversationStar } from '../../../hooks/useConversationStar';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectAssetsBySpaceId, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
+import { selectAssetsBySpaceId, selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { Conversation, Message } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
@@ -42,7 +42,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         location: 'header',
     });
     const { isSmallScreen } = useSidebar();
-    
+
     // Get space/project info if this conversation is part of a project
     const space = useLumoSelector(selectSpaceById(spaceId));
     const isProjectConversation = space?.isProject;
@@ -52,7 +52,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     // Get space-level assets (persistent project files) and attachments
     const spaceAssets = useLumoSelector(selectAssetsBySpaceId(spaceId));
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
-    
+
+    const allAttachments = useLumoSelector(selectAttachments);
+
     const validSpaceAssets = Object.values(spaceAssets).filter(
         (asset) => !asset.error && !asset.processing
     );
@@ -60,26 +62,34 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const validSpaceAttachments = Object.values(spaceAttachments).filter(
         (att) => !att.error && !att.autoRetrieved
     );
-    
-    // Create a set of all space-level file IDs (both assets and attachments) for deduplication
-    const spaceFileIds = new Set([
-        ...validSpaceAssets.map(a => a.id),
-        ...validSpaceAttachments.map(a => a.id)
-    ]);
-    
-    // Collect all unique message attachment IDs (deduplicate across messages AND against space files)
-    const seenMessageAttachmentIds = new Set<string>();
+
+    // Count unique files by FILENAME (not ID) since the same file can exist as:
+    // - space asset, space attachment, or message attachment with different IDs
+    const uniqueFilenames = new Set<string>();
+
+    // Add space assets
+    validSpaceAssets.forEach(asset => {
+        if (asset.filename) uniqueFilenames.add(asset.filename);
+    });
+
+    // Add space attachments
+    validSpaceAttachments.forEach(att => {
+        if (att.filename) uniqueFilenames.add(att.filename);
+    });
+
+    // Add message attachments (excluding auto-retrieved)
     messageChain.forEach((message) => {
         (message.attachments || []).forEach((att) => {
-            // Only count if not already seen and not in space files
-            if (!seenMessageAttachmentIds.has(att.id) && !spaceFileIds.has(att.id)) {
-                seenMessageAttachmentIds.add(att.id);
+            const fullAtt = allAttachments[att.id];
+            // Skip auto-retrieved files - they're shown in Linked Drive Folder section
+            if (fullAtt && fullAtt.filename) {
+                uniqueFilenames.add(fullAtt.filename);
             }
         });
     });
-    
-    // Total = space files (assets + attachments) + unique message attachments
-    const totalFiles = validSpaceAssets.length + validSpaceAttachments.length + seenMessageAttachmentIds.size;
+
+    // Total = unique filenames across all sources
+    const totalFiles = uniqueFilenames.size;
 
     // Handler for opening the full knowledge base (no filter)
     const handleOpenFilesClick = useCallback(() => {
