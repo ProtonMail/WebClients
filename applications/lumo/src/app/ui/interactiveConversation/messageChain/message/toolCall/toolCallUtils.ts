@@ -59,6 +59,8 @@ export function getToolCallErrorMessage(toolCall: ToolCallData): string {
             return `Error while describing image`;
         case 'generate_image':
             return `Error while generating image`;
+        case 'edit_image':
+            return `Error while generating image`;
         default:
             return 'Error while executing tool';
     }
