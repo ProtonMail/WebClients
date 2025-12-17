@@ -22,6 +22,8 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
             return ['Looking at your image...', 'Looked at your image'];
         case 'generate_image':
             return ['Generating image...', 'Generated image'];
+        case 'edit_image':
+            return ['Generating image...', 'Generated image'];
         default:
             return ['Executing tool...', 'Executed tool'];
     }
