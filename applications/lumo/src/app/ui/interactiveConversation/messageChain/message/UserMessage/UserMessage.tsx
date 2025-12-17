@@ -63,10 +63,10 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
+    onOpenFiles?: (message: Message) => void;
 }
 
-const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef }: UserMessageProps) => {
-    const hasAttachments = (message.attachments ?? []).length > 0;
+const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFiles }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
@@ -75,6 +75,10 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     const allAttachments = useLumoSelector(selectAttachments);
     const fullAttachments =
         message.attachments?.map((shallowAttachment) => allAttachments[shallowAttachment.id]).filter(Boolean) || [];
+
+    // Only show manually uploaded attachments (auto-retrieved files are shown in assistant response and chat knowledge)
+    const manualAttachments = fullAttachments.filter(att => !att.autoRetrieved);
+    const hasAttachments = manualAttachments.length > 0;
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
     const canBeCollapsed = showCollapseButton || hasAttachments;
@@ -126,9 +130,10 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                 </div>
             )}
 
+            {/* Show manual attachments as cards (auto-retrieved files are not shown here) */}
             {hasAttachments && (!isCollapsed || isEditing) && (
                 <div className={clsx('overflow-x-scroll flex-nowrap min-w-full max-w-full flex flex-row gap-3')}>
-                    {fullAttachments.map((attachment) => (
+                    {manualAttachments.map((attachment) => (
                         <FileCard key={attachment.id} attachment={attachment} readonly onView={handleViewFile} />
                     ))}
                 </div>
