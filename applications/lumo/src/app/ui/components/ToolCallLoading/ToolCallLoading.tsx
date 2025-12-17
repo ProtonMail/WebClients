@@ -33,6 +33,15 @@ function messageFor(toolCallName: ToolCallName | undefined): string | undefined 
     if (toolCallName === 'web_search') {
         return 'Searching the web...';
     }
+    if (toolCallName === 'weather') {
+        return 'Checking the weather...';
+    }
+    if (toolCallName === 'stock') {
+        return 'Looking up stock prices...';
+    }
+    if (toolCallName === 'cryptocurrency') {
+        return 'Checking cryptocurrency prices...';
+    }
     if (toolCallName === 'proton_info') {
         return 'Checking the latest Proton knowledge...';
     }
