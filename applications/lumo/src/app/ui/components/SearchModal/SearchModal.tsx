@@ -9,7 +9,8 @@ import { Icon } from '@proton/components';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { useLumoSelector } from '../../../redux/hooks';
-import { SearchService, type SearchResult } from '../../../services/search/searchService';
+import { SearchService } from '../../../services/search/searchService';
+import type { SearchResult } from '../../../services/search/types';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import type { Attachment } from '../../../types';
 import { FileContentModal } from '../Files/KnowledgeBase/FileContentModal';
