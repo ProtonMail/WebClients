@@ -90,3 +90,13 @@ typings/
 
 # Electron-Forge
 out/
+
+### Xcode ###
+xcuserdata/
+#*.xcuserstate
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+
+*/fastlane/report.xml

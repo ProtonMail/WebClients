@@ -1,0 +1,62 @@
+PROJECT_PATH = "Proton Pass Extensions.xcodeproj"
+BUILD_PATH = "build"
+
+desc "Bump version from VERSION environment variable"
+lane :bump_version do
+  version = ENV["VERSION"]
+  UI.user_error!("VERSION environment variable is not set") if version.nil? || version.empty?
+
+  project = Xcodeproj::Project.open("../#{PROJECT_PATH}")
+  project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings["MARKETING_VERSION"] = version
+    end
+  end
+  project.save
+
+  UI.success("Version updated to #{version}")
+end
+
+desc "Bump build number from BUILD_NUMBER environment variable"
+lane :bump_build_number do
+  build_number = ENV["BUILD_NUMBER"]
+  UI.user_error!("BUILD_NUMBER environment variable is not set") if build_number.nil? || build_number.empty?
+
+   increment_build_number(
+    xcodeproj: PROJECT_PATH,
+    build_number: build_number
+  )
+
+  UI.success("Build number updated to #{build_number}")
+end
+
+desc "Build and sign the macOS app for App Store"
+  lane :build_mas do
+    sh("rm -rf #{BUILD_PATH}")
+    FileUtils.mkdir_p(BUILD_PATH)
+
+    install_provisioning_profile(path: "../mas/MacAppStore.provisionprofile")
+    install_provisioning_profile(path: "../mas/AutoFillAppStore.provisionprofile")
+
+    gym(
+      project: PROJECT_PATH,
+      scheme: "Proton Pass Extensions",
+      clean: true,
+      output_directory: BUILD_PATH,
+      output_name: "Proton Pass",
+      export_method: "app-store",
+      destination: "generic/platform=macOS",
+      configuration: "Release",
+      archive_path: "#{BUILD_PATH}/Proton Pass.xcarchive",
+      export_options: {
+        method: "app-store",
+        signingStyle: "manual",
+        provisioningProfiles: {
+          "me.proton.pass.electron" => "Proton Pass Electron",
+          "me.proton.pass.electron.autofill" => "Proton Pass Electron AutoFill"
+        }
+      }
+    )
+
+    UI.success("Build completed! App available at #{BUILD_PATH}/Proton Pass.app")
+  end

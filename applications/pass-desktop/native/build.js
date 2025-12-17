@@ -19,8 +19,14 @@ for (const target of targets) {
 if (process.platform === 'darwin') {
     execSync('mv *.node artifacts');
     execSync('npm run universal');
-    // HACK: @electron-forge/plugin-webpack requires .node files to come from ./node_modules
-    const codesignIdentity = process.env.PASS_CODESIGN_IDENTITY || "$(security find-identity -p codesigning -v | sed '$d' | awk '{print $2}' | head -n 1)"
-    execSync(`codesign -s ${codesignIdentity} -f *.node`);
+
+    // Only skip codesigning when building for Mac App Store because signing happens afterward.
+    if (!process.env.SKIP_CODESIGN) {
+        // HACK: @electron-forge/plugin-webpack requires .node files to come from ./node_modules
+        const codesignIdentity =
+            process.env.PASS_CODESIGN_IDENTITY ||
+            "$(security find-identity -p codesigning -v | sed '$d' | awk '{print $2}' | head -n 1)";
+        execSync(`codesign -s ${codesignIdentity} -f *.node`);
+    }
     execSync('mkdir -p ../node_modules/_forgenative && cp -R *.node ../node_modules/_forgenative');
 }
