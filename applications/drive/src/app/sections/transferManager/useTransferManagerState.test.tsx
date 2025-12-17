@@ -30,6 +30,9 @@ const seedUploadStore = (items: Parameters<typeof useUploadQueueStore.setState>[
     });
 };
 
+const FUTURE_STATUS_UPDATE_OFFSET = 10_000;
+const createFutureStatusDate = (offset = 0) => new Date(Date.now() + FUTURE_STATUS_UPDATE_OFFSET + offset);
+
 const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem => ({
     downloadId: 'download-1',
     name: 'Download item',
@@ -41,7 +44,7 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     speedBytesPerSecond: 0,
     nodeUids: [],
     malwareDetected: undefined,
-    lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
+    lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? createFutureStatusDate(),
     ...overrides,
 });
 
@@ -54,7 +57,7 @@ const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem =>
         status: UploadStatus.Pending,
         speedBytesPerSecond: undefined,
         batchId: 'batch-1',
-        lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
+        lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? createFutureStatusDate(),
         type: NodeType.File,
         ...overrides,
     }) as UploadItem;
@@ -167,6 +170,30 @@ describe('useTransferManagerState', () => {
         expect(result.current.uploads[0].clearTextSize).toBe(100);
     });
 
+    it('should ignore transfers whose last status update happened before the reset window', () => {
+        const staleDate = new Date('2000-01-01T00:00:00Z');
+        addDownloadItems(
+            createDownloadItem({
+                downloadId: 'stale-download',
+                name: 'Stale download',
+                status: DownloadStatus.InProgress,
+                downloadedBytes: 50,
+                lastStatusUpdateTime: staleDate,
+            }),
+            createDownloadItem({
+                downloadId: 'fresh-download',
+                name: 'Fresh download',
+                status: DownloadStatus.InProgress,
+                downloadedBytes: 80,
+            })
+        );
+
+        const { result } = renderHook(() => useTransferManagerState());
+
+        expect(result.current.items).toHaveLength(2);
+        expect(result.current.progressPercentage).toBe(80);
+    });
+
     it('should return 0 transferredBytes for pending folders', () => {
         addUploadItems(
             createUploadItem({
@@ -202,10 +229,11 @@ describe('useTransferManagerState', () => {
     });
 
     it('should prioritize in-progress transfers over failed and pending, then order by last status update', () => {
-        const mostRecent = new Date('2024-03-01T00:00:00Z');
-        const recent = new Date('2024-02-15T00:00:00Z');
-        const older = new Date('2024-02-01T00:00:00Z');
-        const oldest = new Date('2024-01-01T00:00:00Z');
+        const baseTime = Date.now() + FUTURE_STATUS_UPDATE_OFFSET;
+        const oldest = new Date(baseTime + 1_000);
+        const older = new Date(baseTime + 2_000);
+        const recent = new Date(baseTime + 3_000);
+        const mostRecent = new Date(baseTime + 4_000);
 
         addDownloadItems(
             createDownloadItem({
@@ -289,7 +317,7 @@ describe('useTransferManagerState', () => {
                 speedBytesPerSecond: 0,
                 nodeUids: [],
                 malwareDetected: undefined,
-                lastStatusUpdateTime: new Date('2024-01-01T00:00:00Z'),
+                lastStatusUpdateTime: createFutureStatusDate(),
             });
             queueIds.add(id);
         }
