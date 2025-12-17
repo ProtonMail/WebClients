@@ -7,7 +7,7 @@ import { NodeType } from '@proton/drive';
 
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { isFileTypeSupported } from '../../../../util/filetypes';
-import { DriveBreadcrumbs, type BreadcrumbItem } from './DriveBreadcrumbs';
+import { type BreadcrumbItem, DriveBreadcrumbs } from './DriveBreadcrumbs';
 import { DriveEmptyState } from './DriveEmptyState';
 import { DriveFileList } from './DriveFileList';
 import { DriveHiddenFilesNotice } from './DriveHiddenFilesNotice';
@@ -64,7 +64,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                     currentFolder={currentFolder}
                     onBreadcrumbClick={handleBreadcrumbClick}
                 />
-                <div className="flex-1 overflow-auto h-full" style={{ minHeight: '40vh' }}>
+                <div className="flex-1 overflow-auto h-full">
                     <DriveEmptyState
                         onUpload={onUpload}
                         loading={loading}
@@ -101,7 +101,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                 onBreadcrumbClick={handleBreadcrumbClick}
             />
 
-            <div className="flex-1 overflow-auto h-full" style={{ minHeight: '40vh' }}>
+            <div className="flex-1 overflow-auto h-full">
                 <DriveHiddenFilesNotice
                     hiddenProtonDocsCount={hiddenProtonDocsCount}
                     hiddenUnsupportedCount={hiddenUnsupportedCount}
