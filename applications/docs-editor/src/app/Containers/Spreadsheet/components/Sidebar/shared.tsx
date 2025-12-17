@@ -178,6 +178,7 @@ export const Select = createComponent(function Select({ children, ...props }: Ar
 export const SelectPopover = createComponent(function (props: Ariakit.SelectPopoverProps) {
   return (
     <Ariakit.SelectPopover
+      fixed
       gutter={4}
       {...props}
       className={clsx(
