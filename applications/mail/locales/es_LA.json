@@ -1499,7 +1499,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccione una puntuación del ${ n } al ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
       ]
     },
     "action": {
@@ -7401,8 +7408,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9877,6 +9883,15 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfactoria"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntenos más sobre su experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Poco satisfactoria"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10215,6 +10230,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesita reactivar las claves para ver la invitación actualizada"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ]
     },
     "Link to calendar event": {
@@ -12514,6 +12532,9 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -15591,6 +15612,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber su opinión"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16168,6 +16192,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     }
   }

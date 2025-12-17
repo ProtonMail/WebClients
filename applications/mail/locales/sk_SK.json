@@ -1507,7 +1507,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1700,6 +1703,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnotenie ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odoslať spätnú väzbu"
       ]
     },
     "action": {
@@ -7633,10 +7642,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10173,6 +10179,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Extremely Satisfied": [
+        "Mimoriadna spokojnosť"
+      ],
+      "Tell us more about your experience": [
+        "Povedzte nám viac o svojich skúsenostiach"
+      ],
+      "Very Dissatisfied": [
+        "Veľká nespokojnosť"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10511,6 +10526,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
       ]
     },
     "Link to calendar event": {
@@ -12896,6 +12914,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Optional feedback": [
+        "Voliteľná spätná väzba"
       ]
     },
     "Placeholder for contact group name": {
@@ -16161,6 +16182,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "We'd love to hear from you!": [
+        "Radi si vypočujeme váš názor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16828,6 +16852,11 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     }
   }

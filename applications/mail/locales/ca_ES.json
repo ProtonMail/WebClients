@@ -1499,7 +1499,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleccioneu la valoració ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Envieu-nos els vostres comentaris"
       ]
     },
     "action": {
@@ -7401,8 +7408,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9877,6 +9883,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Extremely Satisfied": [
+        "Altament satisfet"
+      ],
+      "Tell us more about your experience": [
+        "Expliqueu-nos més sobre la vostra experiència"
+      ],
+      "Very Dissatisfied": [
+        "Molt insatisfet"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10215,6 +10230,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Cal que reactiveu les vostres claus per veure la invitació actualitzada"
+      ],
+      "Terms and conditions": [
+        "Termes i condicions"
       ]
     },
     "Link to calendar event": {
@@ -12514,6 +12532,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Optional feedback": [
+        "Comentaris opcionals"
       ]
     },
     "Placeholder for contact group name": {
@@ -15591,6 +15612,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "We'd love to hear from you!": [
+        "Ens agradaria rebre la vostra opinió!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16168,6 +16192,11 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
       ]
     }
   }

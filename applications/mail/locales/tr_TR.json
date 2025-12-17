@@ -1499,7 +1499,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Puan seçin ${ n } / ${ to }"
+      ],
+      "Send Feedback": [
+        "Geri Bildirim Gönder"
       ]
     },
     "action": {
@@ -7401,8 +7408,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9877,6 +9883,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Extremely Satisfied": [
+        "Son Derece Memnun"
+      ],
+      "Tell us more about your experience": [
+        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+      ],
+      "Very Dissatisfied": [
+        "Çok Memnun Değil"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10215,6 +10230,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+      ],
+      "Terms and conditions": [
+        "Hüküm ve koşullar"
       ]
     },
     "Link to calendar event": {
@@ -12514,6 +12532,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Optional feedback": [
+        "İsteğe bağlı geri bildirim"
       ]
     },
     "Placeholder for contact group name": {
@@ -15591,6 +15612,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "We'd love to hear from you!": [
+        "Sizden haber almak isteriz!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16168,6 +16192,11 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çaba gösteriyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     }
   }

@@ -1687,6 +1687,16 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Velg vurdering ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Send tilbakemelding"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -1913,6 +1923,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -7392,8 +7408,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9868,6 +9883,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Extremely Satisfied": [
+        "Ekstremt fornøyd"
+      ],
+      "Tell us more about your experience": [
+        "Fortell oss mer om din opplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Svært misfornøyd"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10206,6 +10230,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ]
     },
     "Link to calendar event": {
@@ -12505,6 +12532,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Optional feedback": [
+        "Valgfri tilbakemelding"
       ]
     },
     "Placeholder for contact group name": {
@@ -15582,6 +15612,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vil gjerne høre fra deg!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16159,6 +16192,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     }
   }

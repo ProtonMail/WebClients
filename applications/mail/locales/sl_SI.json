@@ -1628,6 +1628,27 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Continue without categories": [
+        "Nadaljuj brez kategorij"
+      ],
+      "Customize categories": [
+        "Prilagodi kategorije"
+      ],
+      "Edit categories": [
+        "Uredi kategorije"
+      ],
+      "Is this private?": [
+        "Ali je to zasebno?"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Odpri v ${ SHEETS_APP_NAME }"
+      ],
+      "Send Feedback": [
+        "Pošlji povratne informacije"
+      ],
+      "Toggle notifications": [
+        "Vklopi/izklopi obvestila"
       ]
     },
     "action": {
@@ -4081,6 +4102,12 @@
     "Duo offer": {
       "2 user accounts": [
         "2 uporabniška računa"
+      ],
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Email body for invitation": {
@@ -5710,6 +5737,9 @@
       ],
       "Username": [
         "Uporabniško ime"
+      ],
+      "Domain": [
+        "Domena"
       ]
     },
     "Hint": {
@@ -7173,10 +7203,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8560,6 +8587,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "Addresses settings": [
+        "Nastavitve naslovov"
+      ],
+      "Choose a plan that works best for you.": [
+        "Izberite paket, ki vam najbolj ustreza"
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavi ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto."
+      ],
+      "Saving draft": [
+        "Shranjevanje osnutka"
+      ],
+      "Sending message": [
+        "Pošiljanje sporočila"
       ]
     },
     "info": {
@@ -9518,6 +9563,18 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Premakni vsa sporočila v mapo ${ boldFolderName }"
+      ],
+      "Extremely Satisfied": [
+        "Izjemno zadovoljen/-na"
+      ],
+      "Very Dissatisfied": [
+        "Zelo nezadovoljen/-na"
+      ],
+      "Why am I seeing this?": [
+        "Zakaj se mi to prikazuje?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10706,6 +10763,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "Short domain (@pm.me)": [
+        "Kratka domena (@pm.me)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11250,6 +11310,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Don't show this again": [
+        "Ne prikazuj več"
       ]
     },
     "Offer fearue": {
@@ -11661,6 +11724,9 @@
       ],
       "New credit/debit card": [
         "Nova kreditna/debetna kartica"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11716,6 +11782,18 @@
       ],
       "Your payment is still being processed": [
         "Vaše plačilo je še vedno v obdelavi"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Brez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
+      "VAT": [
+        "DDV"
+      ],
+      "You already have a subscription to this plan.": [
+        "Na ta paket ste že naročeni."
       ]
     },
     "Payments.Error": {
@@ -12086,6 +12164,12 @@
     "Referral": {
       "More sharing options": [
         "Več možnosti skupne rabe"
+      ],
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
+      "your subscription": [
+        "vaša naročnina"
       ]
     },
     "Remaining days before the message expire": {
@@ -14960,6 +15044,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše naročnine na enem mestu"
+      ],
+      "Create folder \"${ search }\"": [
+        "Ustvari mapo \"${ search }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15604,6 +15691,19 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Large file upload support": [
+        "Podpora za nalaganje velikih datotek"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Keep ${ planTitle }": [
+        "Obdrži paket ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, prepričan(a) sem"
       ]
     }
   }

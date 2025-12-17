@@ -1255,6 +1255,21 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Manage Snooze": [
+        "Upravljaj odgodom"
+      ],
+      "Send Feedback": [
+        "Pošalji povratne informacije"
+      ],
+      "Send unsubscribe email": [
+        "Pošalji e-poruku za otkazivanje pretplate"
+      ],
+      "Stop moving to Trash": [
+        "Prestani premještati u otpad"
+      ],
+      "Unsnooze": [
+        "Neodgodi"
       ]
     },
     "action": {
@@ -3100,6 +3115,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Označite za brisanje kontakte koje ne želite ni spajati ni zadržavati. Brisanje će se izvršiti tek kad se pritisne gumb za spajanje"
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "S prilagođenom odgodom možete sakriti e-poštu i postaviti da se ponovno pojavi u bolje vrijeme."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3552,6 +3570,11 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Ne možete otvoriti više od ${ maxActiveComposer } prozora za novu poruku istovremeno",
+        "Ne možete otvoriti više od ${ maxActiveComposer } prozora za novu poruku istovremeno",
+        "Ne možete otvoriti više od ${ maxActiveComposer } prozora za novu poruku istovremeno"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4926,9 +4949,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -5367,7 +5388,7 @@
         "Da biste otkazali pretplatu s ove mailing liste, e-poruka će biti poslana s ${ boldFrom } sa sljedećim pojedinostima kako ih definira pošiljatelj biltena:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Da biste otkazali pretplatu s ove mailing liste, biti će te preusmjereni na sljedeći URL gdje će te dobiti upute dane od pošiljatelja biltena:"
+        "Da biste otkazali pretplatu s ove mailing liste, bit ćete preusmjereni na sljedeći URL gdje ćete dobiti upute od pošiljatelja biltena:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
@@ -5578,6 +5599,132 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } od ${ totalProgress }",
+        "${ currentProgress } od ${ totalProgress }",
+        "${ currentProgress } od ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } razgovor bit će označen kao:",
+        "${ elementsCount } razgovora bit će označena kao:",
+        "${ elementsCount } razgovora bit će označeno kao:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } razgovor bit će označen kao pročitan.",
+        "${ elementsCount } razgovora bit će označena kao pročitana.",
+        "${ elementsCount } razgovora bit će označeno kao pročitano."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } poruka bit će označena kao:",
+        "${ elementsCount } poruke bit će označene kao:",
+        "${ elementsCount } poruka bit će označeno kao:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } poruka bit će označena kao pročitana.",
+        "${ elementsCount } poruke bit će označene kao pročitane.",
+        "${ elementsCount } poruka bit će označeno kao pročitano."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } poruka bit će označena kao nepročitana.",
+        "${ elementsCount } poruke bit će označene kao nepročitane.",
+        "${ elementsCount } poruka bit će označeno kao nepročitano."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } poruka bit će premještena",
+        "${ elementsCount } poruke bit će premještene",
+        "${ elementsCount } poruka bit će premješteno"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } podudaranje pronađeno",
+        "${ numOccurrences } podudaranja pronađena",
+        "${ numOccurrences } podudaranja pronađeno"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } podudaranje pronađeno u sadržaju e-poruke",
+        "${ numOccurrences } podudaranja pronađena u sadržaju e-poruke",
+        "${ numOccurrences } podudaranja pronađeno u sadržaju e-poruke"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } nepročitana",
+        "${ subscription.UnreadMessageCount } nepročitane",
+        "${ subscription.UnreadMessageCount } nepročitanih"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } bilten",
+        "${ unreadCount } biltena",
+        "${ unreadCount } biltena"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } zakazana poruka",
+        "${ unreadCount } zakazane poruke",
+        "${ unreadCount } zakazanih poruka"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** rezultat pronađen u ${ labelName }",
+        "**${ total }** rezultata pronađena u ${ labelName }",
+        "**${ total }** rezultata pronađeno u ${ labelName }"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Sve zakazane ili odgođene poruke bit će otkazane."
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Ističe za manje od ${ hoursDiff } sata",
+        "Ističe za manje od ${ hoursDiff } sata",
+        "Ističe za manje od ${ hoursDiff } sati"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Besplatno probno razdoblje od ${ ASSISTANT_TRIAL_TIME_DAYS } dana",
+        "Besplatno probno razdoblje od ${ ASSISTANT_TRIAL_TIME_DAYS } dana",
+        "Besplatno probno razdoblje od ${ ASSISTANT_TRIAL_TIME_DAYS } dana"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Odaberi svih ${ elementsCount } u ${ location }",
+        "Odaberi svih ${ elementsCount } u ${ location }",
+        "Odaberi svih ${ elementsCount } u ${ location }"
+      ],
+      "Snooze messages for later so they are top of your inbox when you want": [
+        "Odgodite poruke na kasnije vrijeme kako bi bile na vrhu Vaše pristigle pošte kada to Vi želite"
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Odgođeno do ${ dateString } u ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Odgođeno do danas, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Odgođeno do sutra, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Odgoda ovog razgovora bit će otkazana."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ova poruka bit će označena kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?",
+        "Ove poruke bit će označene kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?",
+        "Ove poruke bit će označene kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Za otključavanje, nadogradite na pretplatu „${ plan }”"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Imate **${ count } razgovor** označen ovom oznakom",
+        "Imate **${ count } razgovora** označena ovom oznakom",
+        "Imate **${ count } razgovora** označenih ovom oznakom"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Imate **${ count } poruku** označenu ovom oznakom",
+        "Imate **${ count } poruke** označene ovom oznakom",
+        "Imate **${ count } poruka** označenih ovom oznakom"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Odabrali ste **${ count } razgovor** iz ove mape",
+        "Odabrali ste **${ count } razgovora** iz ove mape",
+        "Odabrali ste **${ count } razgovora** iz ove mape"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Odabrali ste **${ elementsCount } poruku**.",
+        "Odabrali ste **${ elementsCount } poruke**.",
+        "Odabrali ste **${ elementsCount } poruka**."
       ]
     },
     "info": {
@@ -6087,7 +6234,7 @@
         "Idi na Forume"
       ],
       "Go to Newsletters": [
-        "Idi na Newslettere"
+        "Idi na biltene"
       ],
       "Go to Promotions": [
         "Idi na Promocije"
@@ -6430,6 +6577,12 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Moved to ${ labelName }": [
+        "Premješteno u ${ labelName }"
+      ],
+      "Newsletter entry deleted": [
+        "Unos biltena je izbrisan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6675,6 +6828,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "Snoozed": [
+        "Odgođeno"
       ]
     },
     "Link to calendar event": {
@@ -7170,6 +7326,11 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neograničen kapacitet/promet"
+      ],
+      "${ n } custom email domain": [
+        "${ n } prilagođena domena e-pošte",
+        "${ n } prilagođene domene e-pošte",
+        "${ n } prilagođenih domena e-pošte"
       ]
     },
     "new_plans: feature highlight": {
@@ -7961,11 +8122,26 @@
       ],
       "your subscription": [
         "Vaša pretplata"
+      ],
+      "Friend joined": [
+        "Prijatelj se pridružio",
+        "Prijatelji su se pridružili",
+        "Prijatelji su se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se pretplatio",
+        "Prijatelji su se pretplatili",
+        "Prijatelji su se pretplatili"
       ]
     },
     "Remaining days before the message expire": {
       "<1 d": [
         "<1 dan"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d"
       ]
     },
     "Reply to calendar invitation": {
@@ -7994,6 +8170,9 @@
       ],
       "No results found": [
         "Nema rezultata"
+      ],
+      "No snoozed messages": [
+        "Nema odgođenih poruka"
       ]
     },
     "Security Center": {
@@ -8865,6 +9044,46 @@
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } razgovor označen kao pročitan.",
+        "${ elementsCount } razgovora označena kao pročitana.",
+        "${ elementsCount } razgovora označeno kao pročitano."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } razgovor označen kao nepročitan.",
+        "${ elementsCount } razgovora označena kao nepročitana.",
+        "${ elementsCount } razgovora označeno kao nepročitano."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } razgovor uklonjen iz oznake Sa zvjezdicom",
+        "${ elementsCount } razgovora uklonjena iz oznake Sa zvjezdicom",
+        "${ elementsCount } razgovora uklonjeno iz oznake Sa zvjezdicom"
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } razgovor odgođen",
+        "${ elementsCount } razgovora odgođena",
+        "${ elementsCount } razgovora odgođeno"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } razgovor neodgođen",
+        "${ elementsCount } razgovora neodgođena",
+        "${ elementsCount } razgovora neodgođeno"
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } poruka označena kao pročitana.",
+        "${ elementsCount } poruke označene kao pročitane.",
+        "${ elementsCount } poruka označeno kao pročitano."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } poruka je premještena u neželjenu poštu i pošiljatelj je stavljen na popis neželjene pošte.",
+        "${ elementsCount } poruke su premještene u neželjenu poštu i pošiljatelji su stavljeni na popis neželjene pošte.",
+        "${ elementsCount } poruka je premješteno u neželjenu poštu i pošiljatelji su stavljeni na popis neželjene pošte."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Promijenjena je kategorija ${ elementsCount } poruke.",
+        "Promijenjena je kategorija ${ elementsCount } poruka.",
+        "Promijenjena je kategorija ${ elementsCount } poruka."
       ]
     },
     "Success notification": {
@@ -9463,7 +9682,7 @@
         "Noćna tema"
       ],
       "No active newsletters": [
-        "Nema aktivnih newslettera"
+        "Nema aktivnih biltena"
       ],
       "No attachment found": [
         "Nije pronađen nijedan privitak"
@@ -9733,6 +9952,20 @@
       ],
       "✨ Categories are coming!": [
         "✨Kategorije stižu!"
+      ],
+      "Bad time for this email?": [
+        "Loše vrijeme za ovu poruku e-pošte?"
+      ],
+      "Moving a snoozed message": [
+        "Premještanje odgođene poruke"
+      ],
+      "Newsletters view": [
+        "Prikaz biltena"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Zaštitili smo Vas od ${ trackersCount } programa za praćenje",
+        "Zaštitili smo Vas od ${ trackersCount } programa za praćenje",
+        "Zaštitili smo Vas od ${ trackersCount } programa za praćenje"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9918,6 +10151,12 @@
     "WeekDay": {
       "Mon, ${ formatTime }": [
         "Pon, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sub, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Ned, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -10198,6 +10437,14 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Odgodi poruku"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Kada bi se poruka trebala ponovno prikazati u ulaznoj pošti?"
       ]
     }
   }

@@ -1507,7 +1507,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1700,6 +1703,12 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Vyberte hodnocení ${ n } z ${ to }"
+      ],
+      "Send Feedback": [
+        "Odeslat zpětnou vazbu"
       ]
     },
     "action": {
@@ -7633,10 +7642,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10173,6 +10179,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Extremely Satisfied": [
+        "Velmi spokojen(a)"
+      ],
+      "Tell us more about your experience": [
+        "Řekněte nám více o svých zkušenostech"
+      ],
+      "Very Dissatisfied": [
+        "Velmi nespokojen(a)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10511,6 +10526,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pro zobrazení upravené pozvánky musíte znovu aktivovat své klíče"
+      ],
+      "Terms and conditions": [
+        "Smluvní podmínky užívání"
       ]
     },
     "Link to calendar event": {
@@ -12896,6 +12914,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Optional feedback": [
+        "Volitelná zpětná vazba"
       ]
     },
     "Placeholder for contact group name": {
@@ -16161,6 +16182,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "We'd love to hear from you!": [
+        "Budeme rádi za váš názor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16828,6 +16852,11 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále se snažíme vylepšovat ${ config.appName }. Nakolik uspokojivá je vaše zkušenost?"
       ]
     }
   }

@@ -1685,6 +1685,12 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "평점을 ${ to }점 중 ${ n }점 선택"
+      ],
+      "Send Feedback": [
+        "피드백 보내기"
       ]
     },
     "action": {
@@ -1905,6 +1911,12 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate2 } 이전에 취소 시 요금 청구가 되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "${ formattedDate1 }에 무료 체험이 종료되면, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate2 } 이전 취소시 요금 청구가 되지 않습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -9723,6 +9735,15 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Extremely Satisfied": [
+        "매우 만족"
+      ],
+      "Tell us more about your experience": [
+        "회원님의 경험에 대해 더 자세히 알려주세요"
+      ],
+      "Very Dissatisfied": [
+        "매우 불만족"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12317,6 +12338,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Optional feedback": [
+        "선택 피드백"
       ]
     },
     "Placeholder for contact group name": {
@@ -15300,6 +15324,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "We'd love to hear from you!": [
+        "회원님의 의견을 기다리고 있어요!"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1499,7 +1499,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "La clé est fiable"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Choisir une note entre ${ n } et ${ to }"
+      ],
+      "Send Feedback": [
+        "Envoyer un commentaire"
       ]
     },
     "action": {
@@ -7401,8 +7408,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9877,6 +9883,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Extremely Satisfied": [
+        "Extrêmement satisfait"
+      ],
+      "Tell us more about your experience": [
+        "Faites-nous part de votre expérience"
+      ],
+      "Very Dissatisfied": [
+        "Très insatisfaisant"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10215,6 +10230,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour."
+      ],
+      "Terms and conditions": [
+        "Conditions générales"
       ]
     },
     "Link to calendar event": {
@@ -12514,6 +12532,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Optional feedback": [
+        "Commentaire facultatif"
       ]
     },
     "Placeholder for contact group name": {
@@ -15591,6 +15612,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "We'd love to hear from you!": [
+        "N'hésitez pas à nous donner votre avis !"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16168,6 +16192,11 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Nous nous efforçons toujours d'améliorer ${ config.appName }. Dans quelle mesure êtes-vous satisfait de votre expérience ?"
       ]
     }
   }

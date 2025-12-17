@@ -1499,7 +1499,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Välj betyg ${ n } av ${ to }"
+      ],
+      "Send Feedback": [
+        "Skicka feedback"
       ]
     },
     "action": {
@@ -1913,6 +1920,15 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Efter provperioden slutar den ${ formattedDate1 } kommer den bli en betald prenumeration som förnyas automatiskt månadsvis. Du kommer inte att debiteras om du avbryter före ${ formattedDate2 }."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nått provperiodsgränsen."
       ]
     },
     "b2b_trials_Action": {
@@ -7380,8 +7396,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9841,6 +9856,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Extremely Satisfied": [
+        "Extremt nöjd"
+      ],
+      "Tell us more about your experience": [
+        "Berätta mer om din upplevelse"
+      ],
+      "Very Dissatisfied": [
+        "Väldigt missnöjd"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10179,6 +10203,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ]
     },
     "Link to calendar event": {
@@ -12470,6 +12497,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Optional feedback": [
+        "Valfri feedback"
       ]
     },
     "Placeholder for contact group name": {
@@ -15547,6 +15577,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "We'd love to hear from you!": [
+        "Vi vill gärna att du hör av dig!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16121,6 +16154,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     }
   }
