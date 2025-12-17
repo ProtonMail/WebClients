@@ -83,7 +83,7 @@ export const PhotosWithAlbumsContext = createContext<{
         albumLinkId: string,
         LinkIDs: string[],
         fromUpload?: boolean
-    ) => Promise<void>;
+    ) => Promise<string[]>;
     addPhotoAsCover: (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => void;
     loadAlbumPhotos: (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => Promise<void>;
     loadAlbums: (abortSignal: AbortSignal) => Promise<void>;
@@ -748,7 +748,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             albumLinkId: string,
             linkIds: string[],
             fromUpload: boolean = false
-        ): Promise<void> => {
+        ): Promise<string[]> => {
             if (!shareId || !volumeId) {
                 throw new Error('Photo volume or share not found');
             }
@@ -827,6 +827,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     void loadAlbums(abortSignal);
                 }
             }
+            return result.successes;
         },
         [
             shareId,

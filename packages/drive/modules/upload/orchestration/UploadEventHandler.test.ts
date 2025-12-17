@@ -81,6 +81,7 @@ describe('UploadEventHandler', () => {
                 uploadId: 'task123',
                 controller: mockUploadController,
                 abortController: mockAbortController,
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -98,6 +99,7 @@ describe('UploadEventHandler', () => {
                 type: 'file:progress' as const,
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -114,6 +116,7 @@ describe('UploadEventHandler', () => {
                 type: 'file:progress' as const,
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -132,6 +135,7 @@ describe('UploadEventHandler', () => {
                 type: 'file:progress' as const,
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -169,6 +173,7 @@ describe('UploadEventHandler', () => {
             const event = {
                 type: 'file:error' as const,
                 uploadId: 'task123',
+                isForPhotos: false,
                 error,
             };
 
@@ -193,6 +198,7 @@ describe('UploadEventHandler', () => {
             const event = {
                 type: 'file:error' as const,
                 uploadId: 'task123',
+                isForPhotos: false,
                 error,
             };
 
@@ -214,6 +220,7 @@ describe('UploadEventHandler', () => {
             const event = {
                 type: 'file:error' as const,
                 uploadId: 'task123',
+                isForPhotos: false,
                 error,
             };
 
@@ -420,6 +427,7 @@ describe('UploadEventHandler', () => {
             const event = {
                 type: 'file:cancelled' as const,
                 uploadId: 'task123',
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -439,6 +447,7 @@ describe('UploadEventHandler', () => {
             const event = {
                 type: 'file:cancelled' as const,
                 uploadId: 'task123',
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -479,18 +488,21 @@ describe('UploadEventHandler', () => {
                 uploadId: 'task123',
                 controller: mockController,
                 abortController: mockAbortController,
+                isForPhotos: false,
             });
 
             await handler.handleEvent({
                 type: 'file:progress',
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             });
 
             await handler.handleEvent({
                 type: 'file:progress',
                 uploadId: 'task123',
                 uploadedBytes: 1000,
+                isForPhotos: false,
             });
 
             await handler.handleEvent({
@@ -518,18 +530,21 @@ describe('UploadEventHandler', () => {
                 uploadId: 'task123',
                 controller: mockController,
                 abortController: mockAbortController,
+                isForPhotos: false,
             });
 
             await handler.handleEvent({
                 type: 'file:progress',
                 uploadId: 'task123',
                 uploadedBytes: 500,
+                isForPhotos: false,
             });
 
             await handler.handleEvent({
                 type: 'file:error',
                 uploadId: 'task123',
                 error,
+                isForPhotos: false,
             });
 
             expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {

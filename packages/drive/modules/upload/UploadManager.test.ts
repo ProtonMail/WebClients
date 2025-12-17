@@ -24,6 +24,7 @@ jest.mock('./orchestration/UploadOrchestrator', () => {
                 subscribeToEvents: jest.fn().mockReturnValue(() => {}),
                 hasSubscriptions: jest.fn().mockReturnValue(false),
                 setDriveClient: jest.fn(),
+                emitFileQueued: jest.fn(),
             };
         }),
     };
