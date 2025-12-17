@@ -11,6 +11,7 @@ import { hasFoldersSelected, noSelection } from './utils';
 interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
     rootShareId: string;
     mimeType: string;
+    volumeId: string;
 }
 interface Props {
     selectedBrowserItems: SelectedBrowserItem[];
