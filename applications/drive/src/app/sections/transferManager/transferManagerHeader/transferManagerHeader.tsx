@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon, Progress, useActiveBreakpoint } from '@proton/components';
+import { UploadStatus } from '@proton/drive/modules/upload';
 import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
@@ -48,7 +49,9 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
     const cancelText = c('Action').t`Cancel all`;
     const retryAllText = c('Action').t`Retry failed items`;
     const pbStatus = getProgressBarStatus(status);
-    const completedItems = items.filter((item) => item.status === BaseTransferStatus.Finished);
+    const completedItems = items.filter(
+        (item) => item.status === BaseTransferStatus.Finished || item.status === UploadStatus.PhotosDuplicate
+    );
     const completedText = c('Info').t`${completedItems.length} of ${items.length} transfers completed`;
     const { viewportWidth } = useActiveBreakpoint();
     return (

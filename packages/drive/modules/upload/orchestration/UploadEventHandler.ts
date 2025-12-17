@@ -25,6 +25,7 @@ export class UploadEventHandler {
         private cancelFolderChildren: (uploadId: string) => void
     ) {
         this.eventHandlers = {
+            'file:queued': () => {},
             'file:started': (event: Extract<UploadEvent, { type: 'file:started' }>) => this.handleFileStarted(event),
             'file:progress': (event: Extract<UploadEvent, { type: 'file:progress' }>) => this.handleFileProgress(event),
             'file:complete': (event: Extract<UploadEvent, { type: 'file:complete' }>) => this.handleFileComplete(event),
@@ -56,13 +57,14 @@ export class UploadEventHandler {
     }
 
     async handleEvent(event: UploadEvent): Promise<void> {
+        await Promise.all(
+            Array.from(this.eventSubscriptions.values()).map((callback) => {
+                return callback(event);
+            })
+        );
+
         const handler = this.eventHandlers[event.type];
         if (handler) {
-            await Promise.all(
-                Array.from(this.eventSubscriptions.values()).map((callback) => {
-                    return callback(event);
-                })
-            );
             await (handler as (event: UploadEvent) => void | Promise<void>)(event);
         }
     }
@@ -93,6 +95,7 @@ export class UploadEventHandler {
     private async handleFileComplete(event: FileUploadEvent & { type: 'file:complete' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
         const controllerStore = useUploadControllerStore.getState();
+
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.Finished,
             nodeUid: event.nodeUid,
@@ -101,7 +104,7 @@ export class UploadEventHandler {
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
     }
 
-    private handleFileError(event: FileUploadEvent & { type: 'file:error' }): void {
+    private async handleFileError(event: FileUploadEvent & { type: 'file:error' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
         if (queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled) {
             return;
@@ -157,14 +160,16 @@ export class UploadEventHandler {
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
     }
 
-    private handlePhotoExist(event: PhotosUploadEvent & { type: 'photo:exist' }): void {
+    private async handlePhotoExist(event: PhotosUploadEvent & { type: 'photo:exist' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
+
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.PhotosDuplicate,
+            nodeUid: event.duplicateUids[0],
         });
     }
 
-    private handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): void {
+    private async handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
         const controllerStore = useUploadControllerStore.getState();
 

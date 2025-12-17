@@ -17,6 +17,7 @@ import { TaskExecutor } from './TaskExecutor';
 export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
     async execute(task: FileUploadTask): Promise<void> {
         const abortController = new AbortController();
+
         try {
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
             const metadata = await this.createFileUploaderMetadata(
@@ -34,6 +35,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                     type: 'file:progress',
                     uploadId: task.uploadId,
                     uploadedBytes,
+                    isForPhotos: false,
                 });
             });
 
@@ -42,6 +44,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 uploadId: task.uploadId,
                 controller,
                 abortController,
+                isForPhotos: false,
             });
 
             const { nodeUid } = await controller.completion();
@@ -52,7 +55,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 nodeUid,
                 parentUid: task.parentUid,
                 isUpdatedNode: Boolean(task.existingNodeUid),
-                isForPhotos: task.isForPhotos,
+                isForPhotos: false,
             });
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError) {
@@ -60,12 +63,14 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                     type: 'file:conflict',
                     uploadId: task.uploadId,
                     error,
+                    isForPhotos: false,
                 });
             } else {
                 this.eventCallback?.({
                     type: 'file:error',
                     uploadId: task.uploadId,
                     error: error instanceof Error ? error : new Error(c('Error').t`Upload failed`),
+                    isForPhotos: false,
                 });
             }
         }

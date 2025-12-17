@@ -18,7 +18,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
 
         try {
             const driveForPhotos = getDriveForPhotos();
-            const photoAlreadyExist = await driveForPhotos.isDuplicatePhoto(
+            const duplicateUids = await driveForPhotos.findPhotoDuplicates(
                 task.file.name,
                 async () => {
                     const fileStream = task.file.stream();
@@ -30,10 +30,11 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 },
                 abortController.signal
             );
-            if (photoAlreadyExist) {
+            if (duplicateUids.length > 0) {
                 this.eventCallback?.({
                     type: 'photo:exist',
                     uploadId: task.uploadId,
+                    duplicateUids,
                 });
                 return;
             }
@@ -50,6 +51,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                     type: 'file:progress',
                     uploadId: task.uploadId,
                     uploadedBytes,
+                    isForPhotos: true,
                 });
             });
 
@@ -58,6 +60,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 uploadId: task.uploadId,
                 controller,
                 abortController,
+                isForPhotos: true,
             });
 
             const { nodeUid } = await controller.completion();
@@ -68,7 +71,6 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 nodeUid,
                 parentUid: undefined,
                 isUpdatedNode: false,
-                // TODO: Not needed after Photos section migrated to SDK
                 isForPhotos: true,
             });
         } catch (error) {
@@ -77,12 +79,14 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                     type: 'file:conflict',
                     uploadId: task.uploadId,
                     error,
+                    isForPhotos: true,
                 });
             } else {
                 this.eventCallback?.({
                     type: 'file:error',
                     uploadId: task.uploadId,
                     error: error instanceof Error ? error : new Error(c('Error').t`Upload failed`),
+                    isForPhotos: true,
                 });
             }
         }

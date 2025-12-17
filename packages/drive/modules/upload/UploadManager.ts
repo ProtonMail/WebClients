@@ -152,7 +152,7 @@ export class UploadManager {
 
         if (isForPhotos) {
             for (const file of filesArray) {
-                queueStore.addItem({
+                const uploadId = queueStore.addItem({
                     type: NodeType.File,
                     file,
                     name: file.name,
@@ -162,6 +162,7 @@ export class UploadManager {
                     batchId,
                     isForPhotos,
                 });
+                this.orchestrator.emitFileQueued(uploadId, true);
             }
         } else {
             if (!parentUid) {
@@ -170,7 +171,7 @@ export class UploadManager {
             }
             if (!hasStructure) {
                 for (const file of filesArray) {
-                    queueStore.addItem({
+                    const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -180,12 +181,13 @@ export class UploadManager {
                         status: UploadStatus.Pending,
                         batchId,
                     });
+                    this.orchestrator.emitFileQueued(uploadId, false);
                 }
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filesArray);
 
                 for (const file of standaloneFiles) {
-                    queueStore.addItem({
+                    const uploadId = queueStore.addItem({
                         type: NodeType.File,
                         file,
                         parentUid,
@@ -195,6 +197,7 @@ export class UploadManager {
                         status: UploadStatus.Pending,
                         batchId,
                     });
+                    this.orchestrator.emitFileQueued(uploadId, false);
                 }
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
@@ -353,7 +356,7 @@ export class UploadManager {
         }
 
         for (const file of node.files) {
-            queueStore.addItem({
+            const uploadId = queueStore.addItem({
                 type: NodeType.File,
                 file,
                 parentUid,
@@ -364,6 +367,7 @@ export class UploadManager {
                 status: UploadStatus.Pending,
                 batchId,
             });
+            this.orchestrator.emitFileQueued(uploadId, false);
         }
     }
 }

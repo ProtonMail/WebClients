@@ -349,6 +349,7 @@ describe('UploadOrchestrator', () => {
             expect(eventHandlerInstance.handleEvent).toHaveBeenCalledWith({
                 type: 'file:cancelled',
                 uploadId: 'file1',
+                isForPhotos: false,
             });
         });
 
