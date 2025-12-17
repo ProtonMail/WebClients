@@ -9,11 +9,7 @@ import type {
     BookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
-import {
-    type PrimaryAddressKeyForEncryption,
-    type PrimaryAddressKeysForSigning,
-    splitKeys,
-} from '@proton/shared/lib/keys';
+import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
 import type { SerializedFormData } from '../../bookingsTypes';
 import { BookingLocation } from '../../interface';
@@ -265,7 +261,7 @@ export const encryptSlotBookingSharedKeyPackets = async ({
     const calendarKeys = await getCalendarKeys(calendarID);
     return CryptoProxy.encryptSessionKey({
         ...sharedSessionKey,
-        encryptionKeys: splitKeys(calendarKeys).privateKeys,
+        encryptionKeys: getPrimaryCalendarKey(calendarKeys).publicKey,
         format: 'binary',
     });
 };
