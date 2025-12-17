@@ -3,16 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
-import {
-    type Author,
-    type MaybeNode,
-    MemberRole,
-    NodeType,
-    generateNodeUid,
-    getDrive,
-    getDriveForPhotos,
-} from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
+import { type Author, type MaybeNode, MemberRole, NodeType, generateNodeUid } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
@@ -21,6 +13,15 @@ import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { isOwnFile } from '../../utils/sdk/isOwnFile';
 import { getAuthorshipStatus } from './authorship';
+
+/**
+ * Drive client required by the details modal.
+ *
+ * To show the details, getNode is required, as it gets the node metadata.
+ * Optionally, if the client supports it, getSharingInfo can add ability
+ * to show the sharing info.
+ */
+type Drive = Pick<ProtonDriveClient, 'getNode'> & Partial<Pick<ProtonDriveClient, 'getSharingInfo'>>;
 
 export type FileDetails = {
     uid: string;
@@ -53,27 +54,13 @@ export type UseFileDetailsModalProps = ModalStateProps & {
     onClose?: () => void;
     volumeId: string;
     linkId: string;
+    drive: Drive;
 
     // Only required for the legacy modal.
     shareId: string;
 };
 
-export function useDriveFileDetailsModalState({ volumeId, linkId, ...modalProps }: UseFileDetailsModalProps) {
-    const drive = getDrive();
-    return useFileDetailsModalState({ volumeId, linkId, ...modalProps, drive });
-}
-
-export function usePhotosFileDetailsModalState({ volumeId, linkId, ...modalProps }: UseFileDetailsModalProps) {
-    const drive = getDriveForPhotos();
-    return useFileDetailsModalState({ volumeId, linkId, ...modalProps, drive });
-}
-
-function useFileDetailsModalState({
-    volumeId,
-    linkId,
-    drive,
-    ...modalProps
-}: UseFileDetailsModalProps & { drive: ProtonDriveClient | ProtonDrivePhotosClient }) {
+export function useFileDetailsModalState({ volumeId, linkId, drive, ...modalProps }: UseFileDetailsModalProps) {
     const { handleError } = useSdkErrorHandler();
 
     const [isLoading, withLoading] = useLoading();
@@ -213,14 +200,11 @@ function hasDecryptionError(node: MaybeNode): boolean {
     return false;
 }
 
-async function getNumberOfDownloads(
-    drive: {
-        getSharingInfo: (
-            nodeUid: string
-        ) => Promise<{ publicLink?: { numberOfInitializedDownloads: number } } | undefined>;
-    },
-    nodeUid: string
-): Promise<number | string | undefined> {
+async function getNumberOfDownloads(drive: Drive, nodeUid: string): Promise<number | string | undefined> {
+    if (!drive.getSharingInfo) {
+        return undefined;
+    }
+
     try {
         const sharingInfo = await drive.getSharingInfo(nodeUid);
         if (!sharingInfo?.publicLink) {

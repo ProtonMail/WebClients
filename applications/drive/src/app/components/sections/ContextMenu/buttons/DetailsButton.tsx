@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { getDrive } from '@proton/drive/index';
+
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import ContextMenuButton from '../ContextMenuButton';
@@ -20,6 +22,7 @@ const DetailsButton = ({ selectedBrowserItems, showDetailsModal, showFilesDetail
             action={() => {
                 if (selectedBrowserItems.length === 1) {
                     void showDetailsModal({
+                        drive: getDrive(), // TODO: pass Drive client from context
                         volumeId: selectedBrowserItems[0].volumeId,
                         shareId: selectedBrowserItems[0].rootShareId,
                         linkId: selectedBrowserItems[0].linkId,
