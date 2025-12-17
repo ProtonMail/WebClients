@@ -18,12 +18,20 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
     switch (toolCall.name) {
         case 'web_search':
             return ['Searching the web...', 'Searched the web'];
+        case 'weather':
+            return ['Checking the weather...', 'Checked the weather'];
+        case 'stock':
+            return ['Looking up stock prices...', 'Looked up stock prices'];
+        case 'cryptocurrency':
+            return ['Checking cryptocurrency prices...', 'Checked cryptocurrency prices'];
         case 'describe_image':
             return ['Looking at your image...', 'Looked at your image'];
         case 'generate_image':
             return ['Generating image...', 'Generated image'];
         case 'edit_image':
-            return ['Generating image...', 'Generated image'];
+            return ['Editing image...', 'Edited image'];
+        case 'proton_info':
+            return ['Checking Proton knowledge...', 'Checked Proton knowledge'];
         default:
             return ['Executing tool...', 'Executed tool'];
     }
