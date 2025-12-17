@@ -53,7 +53,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
 
                 nodesQueue.push(node);
 
-                if (node.type === NodeType.File) {
+                if (node.type !== NodeType.Folder) {
                     totalEncryptedSize += getNodeStorageSize(node);
                 } else {
                     const childrenParentPath = [...(parentPathByUid.get(node.uid) ?? []), node.name];

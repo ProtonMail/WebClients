@@ -3,6 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
@@ -10,6 +11,8 @@ import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { hasValidAnonymousSignature } from '../../../components/hasValidAnonymousSignature';
 import { useDownloadIsTooBigModal } from '../../../components/modals/useDownloadIsTooBigModal';
+import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { errorToString, logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
 import {
@@ -40,6 +43,7 @@ type Item = {
     name: string;
     mimeType: string;
     size: number;
+    volumeId: string;
 };
 
 export default function useDownloadProvider(user: UserModel | undefined, initDownload: InitDownloadCallback) {
@@ -64,13 +68,21 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
 
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
+
     /**
      * download should be considered as main entry point for download files
      * in Drive app. It does all necessary checks, such as checking if the
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
+    const dm = DownloadManager.getInstance();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: true });
     const download = async (links: Item[], options?: { virusScan?: boolean; zipName?: string }): Promise<void> => {
+        if (isSDKTransferEnabled) {
+            await dm.download(links.map((link) => generateNodeUid(link.volumeId, link.linkId)));
+            return;
+        }
+
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({

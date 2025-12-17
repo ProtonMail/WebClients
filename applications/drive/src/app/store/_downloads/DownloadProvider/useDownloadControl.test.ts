@@ -31,6 +31,7 @@ function makeDownloadLink(name: string, size = 2 * FILE_CHUNK_SIZE): LinkDownloa
         mimeType: 'text/plain',
         size,
         signatureEmail: 'address',
+        volumeId: 'volumeId',
     };
 }
 

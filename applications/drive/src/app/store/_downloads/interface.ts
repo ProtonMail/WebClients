@@ -21,6 +21,7 @@ export interface LinkDownload {
     buffer?: Uint8Array<ArrayBuffer>[];
     isAnonymous?: boolean;
     parentLinkId?: string;
+    volumeId: string;
 }
 
 export type DownloadControls = {
@@ -105,6 +106,7 @@ export type ChildrenLinkMeta = Pick<
     | 'signatureIssues'
     | 'createTime'
     | 'isAnonymous'
+    | 'volumeId'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,
