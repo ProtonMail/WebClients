@@ -119,6 +119,55 @@ describe('`maxAgeMemoize`', () => {
         await memoizedFunction(element3, 'test');
         expect(elementFn).toHaveBeenCalledTimes(3);
     });
+
+    test('should clear all cached results via `clear`', async () => {
+        const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
+
+        const result1 = await memoizedFunction(1);
+        const result2 = await memoizedFunction(2);
+        expect(asyncFn).toHaveBeenCalledTimes(2);
+
+        jest.advanceTimersByTime(5_000);
+
+        await memoizedFunction(1);
+        await memoizedFunction(2);
+        expect(asyncFn).toHaveBeenCalledTimes(2);
+
+        memoizedFunction.clear();
+
+        const result3 = await memoizedFunction(1);
+        const result4 = await memoizedFunction(2);
+        expect(result3).not.toBe(result1);
+        expect(result4).not.toBe(result2);
+        expect(asyncFn).toHaveBeenCalledTimes(4);
+    });
+
+    test('should clear cache with `createWeakRefCache` via `clear`', async () => {
+        const elementFn = jest.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
+        const memoizedFunction = maxAgeMemoize(elementFn, {
+            maxAge: 10_000,
+            cache: createWeakRefCache((element) => element),
+        });
+
+        const element1 = document.createElement('div');
+        const element2 = document.createElement('span');
+
+        const result1 = await memoizedFunction(element1, 'test');
+        const result2 = await memoizedFunction(element2, 'test');
+        expect(elementFn).toHaveBeenCalledTimes(2);
+
+        jest.advanceTimersByTime(5_000);
+
+        expect(await memoizedFunction(element1, 'test')).toEqual(result1);
+        expect(await memoizedFunction(element2, 'test')).toEqual(result2);
+        expect(elementFn).toHaveBeenCalledTimes(2);
+
+        memoizedFunction.clear();
+
+        await memoizedFunction(element1, 'test');
+        await memoizedFunction(element2, 'test');
+        expect(elementFn).toHaveBeenCalledTimes(4);
+    });
 });
 
 describe('`dynMemo`', () => {

@@ -1,13 +1,14 @@
 import type { Callback, Maybe } from '@proton/pass/types';
 
 export type MaxAgeMemoCacheEntry<F extends Callback> = { validUntil: number; result: ReturnType<F> };
-export type MaxAgeMemoizedFn<F extends Callback> = F & { flush: F };
+export type MaxAgeMemoizedFn<F extends Callback> = F & { flush: F; clear: () => void };
 
 export interface MaxAgeMemoCache<K, F extends Callback> {
     key: (...args: Parameters<F>) => K;
     get: (key: K) => Maybe<MaxAgeMemoCacheEntry<F>>;
     set: (key: K, value: MaxAgeMemoCacheEntry<F>) => void;
     delete: (key: K) => void;
+    clear: () => void;
 }
 
 export type MaxAgeMemoizeOptions<F extends Callback, K> = {
@@ -29,6 +30,7 @@ export const createSerializedArgsCache = <F extends Callback>(): MaxAgeMemoCache
         get: cache.get.bind(cache),
         set: cache.set.bind(cache),
         delete: cache.delete.bind(cache),
+        clear: cache.clear.bind(cache),
     };
 };
 
@@ -37,13 +39,16 @@ export const createSerializedArgsCache = <F extends Callback>(): MaxAgeMemoCache
 export const createWeakRefCache = <F extends Callback, K extends WeakKey>(
     key: (...args: Parameters<F>) => K
 ): MaxAgeMemoCache<K, F> => {
-    const cache: WeakMap<K, MaxAgeMemoCacheEntry<F>> = new WeakMap();
+    let cache: WeakMap<K, MaxAgeMemoCacheEntry<F>> = new WeakMap();
 
     return {
         key,
-        get: cache.get.bind(cache),
-        set: cache.set.bind(cache),
-        delete: cache.delete.bind(cache),
+        get: (key) => cache.get(key),
+        set: (key, value) => cache.set(key, value),
+        delete: (key) => cache.delete(key),
+        clear: () => {
+            cache = new WeakMap();
+        },
     };
 };
 
@@ -75,6 +80,7 @@ export const maxAgeMemoize = <F extends Callback, K>(fn: F, options: MaxAgeMemoi
 
     const memoized = withMaxAge() as MaxAgeMemoizedFn<F>;
     memoized.flush = withMaxAge(true);
+    memoized.clear = () => cache.clear();
 
     return memoized;
 };
