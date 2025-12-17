@@ -398,8 +398,9 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
             try {
                 console.log(`Creating folder "${folderName}" in parent ${parentFolderUid}`);
                 const result = await drive.createFolder(parentFolderUid, folderName);
-                console.log(`Folder created successfully, node UID: ${result.nodeUid}`);
-                return result.nodeUid;
+                const { node } = getNodeEntity(result);
+                console.log(`Folder created successfully, node UID: ${node.uid}`);
+                return node.uid;
             } catch (error) {
                 console.error('Failed to create folder:', error);
                 throw error;

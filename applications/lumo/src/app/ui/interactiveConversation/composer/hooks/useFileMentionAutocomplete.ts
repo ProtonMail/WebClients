@@ -442,15 +442,15 @@ export const useFileMentionAutocomplete = (
                         if (!content) {
                             console.log('[FileMention] Downloading file from Drive:', file.name);
                             const fileData = await driveSDK.downloadFile(file.id);
-                            const data = new Uint8Array(fileData);
+                        const data = new Uint8Array(fileData);
                             fileSize = data.byteLength;
-                            
-                            const fileBlob = new Blob([data], { type: mimeType });
-                            const driveFile = new File([fileBlob], file.name, {
-                                type: mimeType,
-                                lastModified: Date.now(),
-                            });
-                            
+                        
+                        const fileBlob = new Blob([data], { type: mimeType });
+                        const driveFile = new File([fileBlob], file.name, {
+                            type: mimeType,
+                            lastModified: Date.now(),
+                        });
+                        
                             const result = await fileProcessingService.processFile(driveFile);
                             
                             if (result.success && result.result) {
