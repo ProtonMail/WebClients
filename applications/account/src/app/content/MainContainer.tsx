@@ -14,6 +14,7 @@ import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AppLink,
@@ -230,6 +231,9 @@ const MainContainer = () => {
 
     const canDisplayNonPrivateEmailPhone = useFlag('B2BNonPrivateEmailPhone');
 
+    const [invites = []] = useUserInvitations();
+    const hasPendingInvitations = invites.length > 0;
+
     const routes = getRoutes({
         app,
         user,
@@ -273,6 +277,7 @@ const MainContainer = () => {
         showDriveDashboard,
         showDriveDashboardVariant: showDriveDashboardVariant.name,
         isAuthenticatorAvailable,
+        hasPendingInvitations,
     });
 
     useEffect(() => {

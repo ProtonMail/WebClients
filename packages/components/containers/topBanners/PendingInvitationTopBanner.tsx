@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -35,6 +35,7 @@ const PendingInvitationTopBanner = () => {
             return;
         }
 
+        // TODO: VJ - Change the bookmark to point to new ID once the new dashboard is released to all. No impact now as the section is above the fold
         goToSettings('/dashboard#your-plan');
     };
 
@@ -45,9 +46,11 @@ const PendingInvitationTopBanner = () => {
             type="button"
             onClick={handleTopBannerClick}
         >
-            {inviteLengths === 1
-                ? c('familyOffer_2023:Action').t`View the invitation`
-                : c('familyOffer_2023:Action').t`View the invitations`}
+            {c('familyOffer_2023:Family plan').ngettext(
+                msgid`View the invitation`,
+                `View the invitations`,
+                inviteLengths
+            )}
         </button>
     );
 
