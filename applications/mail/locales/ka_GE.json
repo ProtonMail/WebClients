@@ -1687,6 +1687,16 @@
       ],
       "Open in ${ SHEETS_APP_NAME }": [
         "${ SHEETS_APP_NAME }-ში გახსნა"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "შეაფასეთ ${ n } ${ to }-დან"
+      ],
+      "Send Feedback": [
+        "უკუკავშირის გაგზავნა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ]
     },
     "action": {
@@ -7312,8 +7322,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -9752,6 +9761,15 @@
       ],
       "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
         "ჩვენ ვაუმჯობესებთ ელფოსტის კატეგორიზაციის მეთოდს. თქვენი უკუკავშირი ხელს უწყობს მის უფრო ჭკვიანს და ზუსტს გახდას."
+      ],
+      "Extremely Satisfied": [
+        "ძალიან კმაყოფილი"
+      ],
+      "Tell us more about your experience": [
+        "გვიამბეთ მეტი თქვენი გამოცდილების შესახებ"
+      ],
+      "Very Dissatisfied": [
+        "ძალიან უკმაყოფილო"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11029,6 +11047,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 ტბ ღრუბლოვანი საცავი, რომელიც გაძლევთ საშუალებას ადვილად შეინახოთ, დაასინქრონოთ და გააზიაროთ ფაილები. დაცულია გამჭოლი დაშიფვრით."
       ]
     },
     "new_plans: Subtext": {
@@ -12351,6 +12372,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Optional feedback": [
+        "არასავალდებულო უკუკავშირი"
       ]
     },
     "Placeholder for contact group name": {
@@ -15401,6 +15425,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "ამ ელცხრილის გადასახედად გახსენით ${ SHEETS_APP_NAME }-ში, ან გადმოწერეთ ის."
+      ],
+      "We'd love to hear from you!": [
+        "სიამოვნებით მოვისმენდით თქვენს აზრს!"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1687,6 +1687,16 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Seleziona valutazione ${ n } su ${ to }"
+      ],
+      "Send Feedback": [
+        "Invia Feedback"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ]
     },
     "action": {
@@ -1919,6 +1929,12 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Al termine del periodo di prova il ${ formattedDate1 }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -7398,8 +7414,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9877,6 +9892,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Extremely Satisfied": [
+        "Estremamente soddisfatto"
+      ],
+      "Tell us more about your experience": [
+        "Raccontaci di più sulla tua esperienza"
+      ],
+      "Very Dissatisfied": [
+        "Molto insoddisfatto"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10215,6 +10239,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Terms and conditions": [
+        "Termini e condizioni"
       ]
     },
     "Link to calendar event": {
@@ -12514,6 +12541,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Optional feedback": [
+        "Feedback opzionale"
       ]
     },
     "Placeholder for contact group name": {
@@ -15597,6 +15627,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "We'd love to hear from you!": [
+        "Ci piacerebbe sapere cosa ne pensi!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16174,6 +16207,11 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Cerchiamo sempre di migliorare ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
       ]
     }
   }

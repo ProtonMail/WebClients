@@ -1682,6 +1682,15 @@
       ],
       "Open in ${ SHEETS_APP_NAME }": [
         "Buka di ${ SHEETS_APP_NAME }"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Pilih penilaian ${ n } dari ${ to }"
+      ],
+      "Send Feedback": [
+        "Kirim Tanggapan"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ]
     },
     "action": {
@@ -1908,6 +1917,12 @@
       ],
       "You have reached the trial limit.": [
         "Anda telah mencapai batas uji coba Anda."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Setelah masa uji coba ini berakhir pada ${ formattedDate1 }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis secara bulanan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -9729,6 +9744,15 @@
       ],
       "Get the deal": [
         "Dapatkan penawaran ini"
+      ],
+      "Extremely Satisfied": [
+        "Sangat Puas"
+      ],
+      "Tell us more about your experience": [
+        "Beri tahu kami lebih lanjut mengenai pengalaman Anda"
+      ],
+      "Very Dissatisfied": [
+        "Sangat Tidak Puas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10067,6 +10091,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
+      ],
+      "Terms and conditions": [
+        "Syarat dan ketentuan"
       ]
     },
     "Link to calendar event": {
@@ -12318,6 +12345,9 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Optional feedback": [
+        "Tanggapan opsional"
       ]
     },
     "Placeholder for contact group name": {
@@ -15307,6 +15337,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Untuk mempratinjau lembar kerja ini, buka di ${ SHEETS_APP_NAME } atau unduh."
+      ],
+      "We'd love to hear from you!": [
+        "Kami ingin mendengar dari Anda!"
       ]
     },
     "Today icon tooltip in mini calendar": {

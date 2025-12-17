@@ -6847,9 +6847,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -8084,6 +8081,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "Google Pay mark": [
+        "Знак Google Pay"
       ]
     },
     "info": {
@@ -8956,6 +8956,15 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Always label sender's emails": [
+        "Завжди позначати мітками е-пошту відправника"
+      ],
+      "Always move sender's emails": [
+        "Завжди переміщувати е-пошту відправника"
+      ],
+      "Move messages to": [
+        "Перемістити повідомлення до"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10911,6 +10920,9 @@
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
+      ],
+      "Google Pay": [
+        "Google платіж"
       ]
     },
     "Payment.Sepa.Action": {
@@ -10960,6 +10972,12 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Вас невдовзі буде перенаправлено для підтвердження платежу."
       ]
     },
     "Payments.Error": {
@@ -14029,6 +14047,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Create folder \"${ search }\"": [
+        "Створити папку ${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Створи мітку \"${ search }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14670,6 +14694,16 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Щось пішло не так. Перевірка Google Pay не вдалася."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
       ]
     }
   }

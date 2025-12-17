@@ -1682,6 +1682,15 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "${ to }段階中の${ n }評価を選択"
+      ],
+      "Send Feedback": [
+        "フィードバックを送信"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -7288,7 +7297,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9735,6 +9744,15 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Extremely Satisfied": [
+        "非常に満足"
+      ],
+      "Tell us more about your experience": [
+        "ご利用時の体験について詳しいご意見をお聞かせください"
+      ],
+      "Very Dissatisfied": [
+        "非常に不満"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10073,6 +10091,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Terms and conditions": [
+        "利用規約"
       ]
     },
     "Link to calendar event": {
@@ -12329,6 +12350,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Optional feedback": [
+        "フィードバック(任意)"
       ]
     },
     "Placeholder for contact group name": {
@@ -15318,6 +15342,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "We'd love to hear from you!": [
+        "ぜひ、ご意見をお寄せください！"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15850,6 +15877,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     }
   }

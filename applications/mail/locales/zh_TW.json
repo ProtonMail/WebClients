@@ -1607,6 +1607,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Resize panel": [
+        "重新調整介面"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "選取評價 ${ n } 之 ${ to }"
+      ],
+      "Send Feedback": [
+        "傳送意見回饋"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ]
     },
     "action": {
@@ -1818,6 +1830,12 @@
       ],
       "You have reached the trial limit.": [
         "您已達到試用限制。"
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "在 ${ formattedDate1 } 試用結束後，它會變成付費訂閱，將以${ renewCycle } 自動續訂。若您在 ${ formattedDate2 } 前取消，則不會被收費。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "您可在試用內享用多達 ${ TRIAL_MAX_DEDICATED_IPS } 臺獨立伺服器。"
       ]
     },
     "b2b_trials_Action": {
@@ -6936,7 +6954,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8245,6 +8263,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
+      ],
+      "Archive existing messages": [
+        "封存現有訊息"
+      ],
+      "Scheduling message": [
+        "正在排程訊息"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "收件匣中無來自此寄件者的訊息。"
       ]
     },
     "info": {
@@ -9215,6 +9245,9 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Tell us more about your experience": [
+        "告訴我們您的體驗"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9511,6 +9544,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "Terms and conditions": [
+        "合約條款"
       ]
     },
     "Link to calendar event": {
@@ -10985,6 +11021,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "您的網域和訂閱已就緒。"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -11205,6 +11244,9 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11344,6 +11386,9 @@
     "Payments.info": {
       "Credits will be added to your balance": [
         "可用額度將會增加到您的餘額"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
       ]
     },
     "Payments.ModificationWarning": {
@@ -11729,6 +11774,9 @@
       ],
       "Refer friends": [
         "推薦朋友"
+      ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
       ]
     },
     "Remaining days before the message expire": {
@@ -13247,6 +13295,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Message removed from Starred.": [
+        "已移除訊息的星號。"
       ]
     },
     "Success notification": {
@@ -14355,6 +14406,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ 分類功能即將推出！"
+      ],
+      "Create label \"${ search }\"": [
+        "創建標籤「${ search }」"
+      ],
+      "We'd love to hear from you!": [
+        "我們很想聽見您的想法!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14448,6 +14505,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: 尊重您隱私的 AI 助理"
       ]
     },
     "Tor out of date": {

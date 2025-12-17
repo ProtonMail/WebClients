@@ -1631,6 +1631,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Most frequent": [
+        "最常"
+      ],
+      "Send Feedback": [
+        "发送反馈"
       ]
     },
     "action": {
@@ -2488,7 +2494,7 @@
         "总计"
       ],
       "Total for ${ n } month": [
-        "每${ n }月支付"
+        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -7016,7 +7022,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8379,6 +8385,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "How hide-my-email aliases works": [
+        "hide-my-email 邮箱别名如何运作"
       ]
     },
     "info": {
@@ -9364,6 +9373,21 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ count } unread conversation": [
+        "${ count } 个未读会话"
+      ],
+      "${ count } unread message": [
+        "${ count } 条未读消息"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "添加或移除类别。设置或关闭通知。可随时在 ${ menuIcon } 菜单中调整。"
+      ],
+      "Move messages to": [
+        "移动消息至"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "不再错过重要消息！这些现在显示在 ${ primaryCopy } 下方。其他内容则按类别排序，易于查找，且不会占用您的收件箱。"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9693,6 +9717,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要重新激活您的密钥才能看到更新的邀请"
+      ],
+      "Reactivate subscription": [
+        "重新激活订阅"
       ]
     },
     "Link to calendar event": {
@@ -10483,6 +10510,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "与多至 ${ n } 个人分享保险库"
       ]
     },
     "new_plans: feature highlight": {
@@ -11529,6 +11559,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
       ]
     },
     "Payments.Error": {
@@ -11913,6 +11949,15 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
+      ],
+      "Friend joined": [
+        "好友已加入"
+      ],
+      "Friend subscribed": [
+        "已订阅的好友"
+      ],
+      "More sharing options": [
+        "更多分享选项1"
       ]
     },
     "Remaining days before the message expire": {
@@ -13471,6 +13516,15 @@
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
+      ],
+      "Conversation updated": [
+        "会话已更新"
+      ],
+      "Message updated": [
+        "消息已更新"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "已重新分类 ${ elementsCount } 封消息。"
       ]
     },
     "Success notification": {
@@ -15153,6 +15207,16 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您确定要继续操作吗？"
       ]
     }
   }

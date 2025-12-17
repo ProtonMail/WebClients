@@ -1687,6 +1687,16 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecciona la puntuación ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentarios"
+      ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
       ]
     },
     "action": {
@@ -7404,8 +7414,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9883,6 +9892,15 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Extremely Satisfied": [
+        "Extremadamente satisfecho"
+      ],
+      "Tell us more about your experience": [
+        "Cuéntanos más sobre tu experiencia."
+      ],
+      "Very Dissatisfied": [
+        "Muy insatisfecho"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10221,6 +10239,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesitas reactivar tus claves para ver la invitación actualizada."
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ]
     },
     "Link to calendar event": {
@@ -12520,6 +12541,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Optional feedback": [
+        "Comentarios opcionales"
       ]
     },
     "Placeholder for contact group name": {
@@ -15603,6 +15627,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "We'd love to hear from you!": [
+        "Nos encantaría saber tu opinión"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16180,6 +16207,11 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Qué tan satisfecho estás con tu experiencia?"
       ]
     }
   }

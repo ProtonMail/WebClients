@@ -1499,7 +1499,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1690,6 +1691,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecionar avaliação ${ n } de ${ to }"
+      ],
+      "Send Feedback": [
+        "Enviar comentários"
       ]
     },
     "action": {
@@ -7407,8 +7414,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9886,6 +9892,15 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Extremely Satisfied": [
+        "Extremamente satisfeito"
+      ],
+      "Tell us more about your experience": [
+        "Conte-nos mais sobre sua experiência"
+      ],
+      "Very Dissatisfied": [
+        "Muito insatisfeito"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10224,6 +10239,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ]
     },
     "Link to calendar event": {
@@ -12529,6 +12547,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Optional feedback": [
+        "Feedback opcional"
       ]
     },
     "Placeholder for contact group name": {
@@ -15612,6 +15633,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "We'd love to hear from you!": [
+        "Adoraríamos ouvir você!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16189,6 +16213,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Estamos sempre trabalhando para melhorar o ${ config.appName } . Quão satisfeito você está com sua experiência?"
       ]
     }
   }

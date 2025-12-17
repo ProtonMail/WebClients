@@ -1122,7 +1122,7 @@
         "Recuperare date"
       ],
       "Refer a friend": [
-        "Recomandați pe cineva"
+        "Recomandați persoane"
       ],
       "Refine it": [
         "Cizelare"
@@ -1692,6 +1692,17 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selectare evaluare ${ n } din ${ to }"
+      ],
+      "Send Feedback": [
+        "Trimitere feedback"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -1930,6 +1941,12 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de probare."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate1 }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate2 }."
       ]
     },
     "b2b_trials_Action": {
@@ -6707,13 +6724,13 @@
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
-        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+        "**Pasul 2:** Persoanele invitate vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
-        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+        "**Pasul 2:** Persoanele invitate primesc 2 săptămâni gratuite pentru planul ales."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
-        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } în credite pentru fiecare persoană care se abonează la un plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
@@ -7514,9 +7531,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8333,10 +8348,10 @@
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
       ],
       "This message will be automatically deleted at ${ value }": [
-        "Acest mesaj va fi șters automat la ora ${ value }."
+        "Acest mesaj va fi șters automat ${ value }."
       ],
       "This message will be automatically deleted on ${ value }": [
-        "Acest mesaj va fi șters automat la ora ${ value }"
+        "Acest mesaj va fi șters automat ${ value }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Acest mesaj va fi marcat ca nedorit. Doriți să vă dezabonați și de la mesajele ulterioare?",
@@ -10025,6 +10040,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Extremely Satisfied": [
+        "Extrem de mulțumit(ă)"
+      ],
+      "Tell us more about your experience": [
+        "Spuneți-ne mai multe despre experiența proprie"
+      ],
+      "Very Dissatisfied": [
+        "Foarte nemulțumit(ă)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10363,6 +10387,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ]
     },
     "Link to calendar event": {
@@ -12705,6 +12732,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Optional feedback": [
+        "Feedback opțional"
       ]
     },
     "Placeholder for contact group name": {
@@ -12881,7 +12911,7 @@
         "Persoane abonate"
       ],
       "Invite friends. Get credits.": [
-        "Invitați persoane. Obțineți credite."
+        "Invitați alte persoane. Obțineți credite."
       ],
       "Invited friends": [
         "Persoane invitate"
@@ -15882,6 +15912,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "We'd love to hear from you!": [
+        "Ne-ar plăcea să avem vești de la tine!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16504,6 +16537,11 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Ne străduim mereu să îmbunătățim ${ config.appName }. Cum evaluați experiența avută?"
       ]
     }
   }
