@@ -290,6 +290,30 @@ export const createInlineService = () => {
         })
     );
 
+    /** Sibling frame activation: when a deferred frame starts, notify siblings
+     * to re-evaluate initialization. Prevents partial form detection across frames. */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.FRAME_DEFERRED_INIT,
+        withSender(async (_, tabId, parentFrameId) => {
+            const frames = await getTabFrames(tabId);
+            const current = frames.get(parentFrameId);
+            if (!current || current.parent === null) return false;
+
+            frames.forEach(({ parent, frameId }) => {
+                if (parent === current.parent && frameId !== parentFrameId) {
+                    void sendTabMessage(
+                        backgroundMessage({
+                            type: WorkerMessageType.FRAME_DEFERRED_INIT,
+                        }),
+                        { tabId, frameId }
+                    ).catch(noop);
+                }
+            });
+
+            return true;
+        })
+    );
+
     return { getTabFrames, queryFrame, getFrameCoords };
 };
 

@@ -143,11 +143,12 @@ export enum WorkerMessageType {
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
     INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
+    FRAME_DEFERRED_INIT = 'FRAME_DEFERRED_INIT',
     FRAME_FIELD_LOCK = 'FRAME_FIELD_LOCK',
+    FRAME_FORM_CLUSTER = 'FRAME_FORM_CLUSTER',
     FRAME_FORMS_QUERY = 'FRAME_FORMS_QUERY',
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
-    FRAME_FORM_CLUSTER = 'FRAME_FORM_CLUSTER',
 
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
@@ -235,6 +236,7 @@ export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormS
 export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, FileTransferWriteDTO>;
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 
+export type FrameDeferredInitMessage = { type: WorkerMessageType.FRAME_DEFERRED_INIT };
 export type FrameFieldLockMessage = WithPayload<WorkerMessageType.FRAME_FIELD_LOCK, FrameField & { locked: boolean }>;
 export type FrameFormClusterMessage = { type: WorkerMessageType.FRAME_FORM_CLUSTER };
 export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
@@ -326,6 +328,7 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
+    | FrameDeferredInitMessage
     | FrameFieldLockMessage
     | FrameFormClusterMessage
     | FrameFormsQueryMessage
