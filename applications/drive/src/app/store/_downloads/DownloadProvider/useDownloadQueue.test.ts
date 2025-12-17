@@ -15,6 +15,7 @@ function makeDownloadLink(name: string, isFile = true): LinkDownload {
         size: 1234,
         signatureEmail: 'address',
         createTime: 10,
+        volumeId: 'volumeId',
     };
 }
 
