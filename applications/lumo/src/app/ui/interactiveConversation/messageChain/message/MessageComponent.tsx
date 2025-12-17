@@ -97,6 +97,7 @@ const MessageComponentPure = ({
                     siblingInfo={siblingInfo}
                     handleEditMessage={handleEditMessage}
                     newMessageRef={newMessageRef}
+                    onOpenFiles={handleOpenFiles}
                 />
             ) : (
                 <AssistantMessage
