@@ -88,6 +88,18 @@ const getShouldIgnoreTransferProgress = (
     );
 };
 
+const PROGRESS_RESET_DELAY = 3_000;
+let lastCompletionDate = Date.now();
+
+// Logic for Progress Reset:
+// If the files are added while download is in progress, count them in the current downloaded batch
+// If the files are added less than PROGRESS_RESET_DELAY from the last finished batch, count them in that batch
+// If the files are addded after the last batch has finished + delay, start a new progress count
+// All of this is achieved by simply skipping bytes counting for old, finished, transfers
+const doesTransferBelongToPreviousBatch = (transfer: TransferManagerEntry) => {
+    return transfer.lastStatusUpdateTime.getTime() - lastCompletionDate < PROGRESS_RESET_DELAY;
+};
+
 export const useTransferManagerState = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
     const uploadQueue = useUploadQueueStore(useShallow((state) => state.getQueue()));
@@ -105,13 +117,17 @@ export const useTransferManagerState = () => {
             const statesCounter = (statesMap.get(transfer.status) ?? 0) + 1;
             statesMap.set(transfer.status, statesCounter);
             const shouldIgnore = getShouldIgnoreTransferProgress(transfer.status);
+            const belongsToPreviousBatch = doesTransferBelongToPreviousBatch(transfer);
+            if (shouldIgnore || transfer.status === BaseTransferStatus.Finished) {
+                transfersFinished.push(transfer);
+            }
+            if (belongsToPreviousBatch) {
+                continue;
+            }
             if (!shouldIgnore) {
                 const size = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
                 sumOfBytes += size;
                 sumOfTransferredBytes += Math.min(transfer.transferredBytes, size);
-            }
-            if (shouldIgnore || transfer.status === BaseTransferStatus.Finished) {
-                transfersFinished.push(transfer);
             }
         }
 
@@ -131,6 +147,9 @@ export const useTransferManagerState = () => {
         // Edge case in which all transfers are cancelled/failed we should still show 100%
         if (allTransfers.length && allTransfers.length === transfersFinished.length) {
             progressPercentage = 100;
+        }
+        if (progressPercentage === 100 && status !== TransferManagerStatus.InProgress) {
+            lastCompletionDate = Date.now();
         }
 
         let transferType: TransferType = 'empty';
