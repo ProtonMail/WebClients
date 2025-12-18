@@ -151,8 +151,15 @@ export const ProtonMeetContainer = ({
 
     const accessTokenRef = useRef<string | null>(null);
 
-    const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap, updateAdminParticipant } =
-        useParticipantNameMap();
+    const {
+        getParticipants,
+        participantNameMap,
+        participantsMap,
+        resetParticipantNameMap,
+        updateAdminParticipant,
+        getQueryParticipantsCount,
+        participantsCount,
+    } = useParticipantNameMap();
 
     const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup, preparePictureInPicture } =
         usePictureInPicture({
@@ -162,8 +169,6 @@ export const ProtonMeetContainer = ({
         });
 
     const isRecordingInProgress = useIsRecordingInProgress();
-
-    const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
     const joinBlockedRef = useRef(false);
     const lastEpochRef = useRef<bigint | null>(null);
@@ -458,15 +463,14 @@ export const ProtonMeetContainer = ({
         setDisplayName(displayName);
 
         try {
-            await getParticipants(meetingToken);
-            setInitialisedParticipantNameMap(true);
-
             const sanitizedParticipantName = sanitizeMessage(displayName);
 
             const { websocketUrl, accessToken } = await getAccessDetails({
                 displayName: sanitizedParticipantName,
                 token: meetingToken,
             });
+
+            void getQueryParticipantsCount(meetingToken);
 
             accessTokenRef.current = accessToken;
 
@@ -542,7 +546,6 @@ export const ProtonMeetContainer = ({
                 mlsSetupDone.current = false;
                 startHealthCheck.current = false;
 
-                setInitialisedParticipantNameMap(false);
                 setJoinedRoom(false);
                 joinedRoomLoggedRef.current = false;
                 void stopPiP();
@@ -775,7 +778,6 @@ export const ProtonMeetContainer = ({
             keyRotationSchedulerRef.current.clean();
         }
 
-        setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
@@ -798,7 +800,6 @@ export const ProtonMeetContainer = ({
         instantMeetingRef.current = false;
         resetParticipantNameMap();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
-        setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
@@ -971,8 +972,7 @@ export const ProtonMeetContainer = ({
                         roomName={meetingDetails.meetingName as string}
                         roomId={token}
                         instantMeeting={instantMeetingRef.current}
-                        initialisedParticipantNameMap={initialisedParticipantNameMap}
-                        participantNameMap={participantNameMap}
+                        participantsCount={participantsCount}
                         displayName={displayName}
                         setDisplayName={setDisplayName}
                         isInstantJoin={isInstantJoin}

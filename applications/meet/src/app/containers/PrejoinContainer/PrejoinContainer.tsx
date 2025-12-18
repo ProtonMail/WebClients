@@ -21,8 +21,7 @@ interface PrejoinContainerProps {
     roomName: string;
     roomId: string;
     instantMeeting: boolean;
-    initialisedParticipantNameMap: boolean;
-    participantNameMap: Record<string, string>;
+    participantsCount: number | null;
     displayName: string;
     setDisplayName: (displayName: string) => void;
     isInstantJoin: boolean;
@@ -37,8 +36,7 @@ export const PrejoinContainer = ({
     roomName,
     roomId,
     instantMeeting = false,
-    initialisedParticipantNameMap,
-    participantNameMap,
+    participantsCount,
     displayName,
     setDisplayName,
     isInstantJoin,
@@ -139,10 +137,7 @@ export const PrejoinContainer = ({
                     {isLoading ? (
                         <>
                             {loadingState === LoadingState.JoiningInProgress && (
-                                <JoiningRoomLoader
-                                    participantsLoaded={initialisedParticipantNameMap}
-                                    participantCount={Object.keys(participantNameMap).length}
-                                />
+                                <JoiningRoomLoader participantCount={participantsCount} />
                             )}
                         </>
                     ) : (
