@@ -24,6 +24,7 @@ interface DriveContentProps {
     onFileClick: (file: DriveNode) => void;
     onFolderClick: (folder: DriveNode) => void;
     onUpload: () => void;
+    onCreateFolder?: () => void;
     isLinkedFolder?: boolean;
     folderSelectionMode?: boolean;
     handleBreadcrumbClick: (breadcrumb: BreadcrumbItem) => void;
@@ -41,6 +42,7 @@ export const DriveContent: React.FC<DriveContentProps> = ({
     onFileClick,
     onFolderClick,
     onUpload,
+    onCreateFolder,
     isLinkedFolder = false,
     folderSelectionMode = false,
     handleBreadcrumbClick,
@@ -53,26 +55,6 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                     <p className={'text-center'}>{c('collider_2025: Info').t`Loading`}...</p>
                 </div>
             </div>
-        );
-    }
-
-    if (children.length === 0) {
-        return (
-            <>
-                <DriveBreadcrumbs
-                    breadcrumbs={breadcrumbs}
-                    currentFolder={currentFolder}
-                    onBreadcrumbClick={handleBreadcrumbClick}
-                />
-                <div className="flex-1 overflow-auto h-full">
-                    <DriveEmptyState
-                        onUpload={onUpload}
-                        loading={loading}
-                        isRefreshing={isRefreshing}
-                        disabled={!currentFolder}
-                    />
-                </div>
-            </>
         );
     }
 
@@ -93,6 +75,8 @@ export const DriveContent: React.FC<DriveContentProps> = ({
             !isFileTypeSupported(child.name, child.mediaType)
     ).length;
 
+    const isEmpty = children.length === 0 || filteredChildren.length === 0;
+
     return (
         <>
             <DriveBreadcrumbs
@@ -101,16 +85,20 @@ export const DriveContent: React.FC<DriveContentProps> = ({
                 onBreadcrumbClick={handleBreadcrumbClick}
             />
 
-            <div className="drive-content-container overflow-auto h-full">
+            <div className="drive-content-container overflow-auto" style={{ minHeight: '200px' }}>
                 <DriveHiddenFilesNotice
                     hiddenProtonDocsCount={hiddenProtonDocsCount}
                     hiddenUnsupportedCount={hiddenUnsupportedCount}
                 />
 
-                {filteredChildren.length === 0 && (hiddenProtonDocsCount > 0 || hiddenUnsupportedCount > 0) ? (
-                    <div className="text-center py-8 text-gray-500">
-                        <p>{c('collider_2025: Info').t`No supported files in this folder`}</p>
-                    </div>
+                {isEmpty ? (
+                    <DriveEmptyState
+                        onUpload={onUpload}
+                        onCreateFolder={onCreateFolder}
+                        loading={loading}
+                        isRefreshing={isRefreshing}
+                        disabled={!currentFolder}
+                    />
                 ) : (
                     <DriveFileList
                         children={filteredChildren}
