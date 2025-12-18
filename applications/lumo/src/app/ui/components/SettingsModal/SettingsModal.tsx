@@ -16,10 +16,19 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 import useFlag from '@proton/unleash/useFlag';
 
+import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useMessageSearch } from '../../../hooks/useMessageSearch';
+import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import { selectConversations, selectMessages } from '../../../redux/selectors';
+import { selectSpaceMap } from '../../../redux/slices/core/spaces';
+import { SearchService } from '../../../services/search/searchService';
+import type { Conversation, Message, SpaceId } from '../../../types';
 import { getInitials } from '../../../util/username';
+import { IndexingStatusBanner } from '../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoSettingsPanelUpsell } from '../../upsells/composed/LumoSettingsPanelUpsell';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
@@ -28,7 +37,7 @@ import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
-import { SearchSettingsPanel } from './SearchIndex/SearchSettingsPanel';
+import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 
 import './SettingsModal.scss';
 
@@ -102,12 +111,6 @@ const SettingsItems: SettingsItem[] = [
         getText: () => c('collider_2025: Settings Item').t`Personalization`,
         guest: true,
     },
-    {
-        id: 'search',
-        icon: 'magnifier',
-        getText: () => c('collider_2025: Settings Item').t`Search`,
-        guest: false,
-    },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
 ];
 const LumoSettingsSidebar = ({
@@ -159,10 +162,90 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
+    const [user] = useUser();
+    const userId = user?.ID;
+    
+    // Index management state
+    const conversations = useLumoSelector(selectConversations);
+    const messages = useLumoSelector(selectMessages);
+    const spaceMap = useLumoSelector(selectSpaceMap);
+    const { indexingStatus: messageIndexingStatus } = useMessageSearch();
+    const {
+        rehydrateFolders,
+        isIndexing: isDriveIndexing,
+        indexingStatus: driveIndexingStatus,
+    } = useDriveFolderIndexing();
+    const [isIndexing, setIsIndexing] = useState(false);
+    const [indexError, setIndexError] = useState<string | null>(null);
+
+    const handleReindex = React.useCallback(async () => {
+        if (isIndexing || isDriveIndexing || !userId) return;
+
+        setIsIndexing(true);
+        setIndexError(null);
+
+        try {
+            const db = new DbApi(userId);
+            await db.clearAllSearchBlobs();
+            await new Promise((resolve) => setTimeout(resolve, 100));
+
+            const searchService = SearchService.get(userId);
+            if (!searchService) {
+                setIndexError(c('collider_2025: Error').t`Search service not available`);
+                return;
+            }
+
+            const conversationList = Object.values(conversations) as Conversation[];
+            const conversationsWithMessages: Record<string, any> = {};
+            for (const conversation of conversationList) {
+                const conversationMessages = Object.values(messages).filter(
+                    (msg: Message) => msg.conversationId === conversation.id
+                ) as Message[];
+                conversationsWithMessages[conversation.id] = {
+                    ...conversation,
+                    messages: conversationMessages,
+                };
+            }
+
+            try {
+                await searchService.populateEngine(conversationsWithMessages);
+            } catch (error) {
+                console.error('[Settings] Conversation populate failed:', error);
+            }
+
+            const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
+            await rehydrateFolders(validSpaceIds);
+        } catch (error) {
+            console.error('[Settings] Re-indexing failed:', error);
+            setIndexError(c('collider_2025: Error').t`Re-indexing failed. Please try again.`);
+        } finally {
+            setIsIndexing(false);
+        }
+    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap]);
+
+    const handleClearIndex = React.useCallback(async () => {
+        if (!userId) return;
+
+        if (!window.confirm(c('Confirmation').t`Are you sure you want to clear the search index? You will need to re-index to search again.`)) {
+            return;
+        }
+
+        try {
+            const db = new DbApi(userId);
+            await db.clearAllSearchBlobs();
+            setIndexError(null);
+        } catch (error) {
+            console.error('[Settings] Failed to clear index:', error);
+            setIndexError(c('collider_2025: Error').t`Failed to clear index. Please try again.`);
+        }
+    }, [userId]);
 
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+    const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
+    const hasError = indexError || messageIndexingStatus.error;
+
     return (
-        <div>
+        <div className="flex flex-column gap-4">
             {isLumoDarkModeEnabled && (
                 <div className="flex flex-column flex-nowrap gap-4 mb-4">
                     <SettingsSectionItem
@@ -173,6 +256,40 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     <LumoThemeButton />
                 </div>
             )}
+            
+            {/* Search Index Management - only for logged in users */}
+            {!isGuest && (
+                <SettingsSectionItem
+                    icon="magnifier"
+                    text={c('collider_2025: Title').t`Search Index`}
+                    subtext={
+                        <div className="flex flex-column gap-2">
+                            <span>{c('collider_2025: Description').t`Manage your local search index for chats and Drive files.`}</span>
+                            
+                            {showIndexingProgress && (
+                                <IndexingStatusBanner
+                                    indexingStatus={driveIndexingStatus}
+                                    isIndexing={isDriveIndexing}
+                                    inline
+                                />
+                            )}
+                            {hasError && (
+                                <span className="color-danger text-sm">
+                                    {indexError || messageIndexingStatus.error}
+                                </span>
+                            )}
+                        </div>
+                    }
+                    button={
+                        <SearchIndexManagement
+                            onReindex={handleReindex}
+                            onClear={handleClearIndex}
+                            disabled={isIndexing || isDriveIndexing}
+                        />
+                    }
+                />
+            )}
+            
             {!isGuest && (
                 <SettingsSectionItem
                     icon="speech-bubble"
@@ -307,7 +424,6 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
-                                {activePanel === 'search' && <SearchSettingsPanel />}
                                 {activePanel === 'general' && (
                                     <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
                                 )}
@@ -346,7 +462,6 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {activePanel === 'account' &&
                                 (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                             {activePanel === 'personalization' && <PersonalizationPanel />}
-                            {activePanel === 'search' && <SearchSettingsPanel />}
                             {activePanel === 'general' && (
                                 <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
                             )}
