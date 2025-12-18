@@ -3,7 +3,8 @@ import type { SquashDocument } from '../UseCase/SquashDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DriveCompat } from '@proton/drive-store'
-import type { InternalEventBusInterface, YjsState, Result } from '@proton/docs-shared'
+import type { InternalEventBusInterface, YjsState } from '@proton/docs-shared'
+import { Result, TranslatedResult } from '@proton/docs-shared'
 import type { AuthenticatedDocControllerInterface } from './AuthenticatedDocControllerInterface'
 import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
 import type { VersionHistoryUpdate } from '../VersionHistory'
@@ -12,8 +13,10 @@ import { DocControllerEvent } from './AuthenticatedDocControllerEvent'
 
 import type { DocsClientSquashVerificationObjectionMadePayload } from '../Application/ApplicationEvent'
 import { ApplicationEvent, PostApplicationError } from '../Application/ApplicationEvent'
-import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
-import { TranslatedResult } from '@proton/docs-shared'
+import {
+  SquashVerificationObjectionDecision,
+  type SquashVerificationObjectionCallback,
+} from '../Types/SquashVerificationObjection'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
@@ -292,6 +295,32 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       handleVerificationObjection,
       documentType: this.documentType,
     })
+  }
+
+  public async squashEverythingInBaseCommit(): Promise<Result<boolean>> {
+    if (!isDocumentState(this.documentState)) {
+      throw new Error('Cannot perform squashEverythingInBaseCommit as a public user')
+    }
+
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (!baseCommit) {
+      this.logger.info('No initial commit to squash')
+      return Result.fail('No initial commit to squash')
+    }
+
+    const { keys, nodeMeta } = this.documentState.getProperty('entitlements')
+
+    const result = await this._squashDocument.squashEverythingInBaseCommit({
+      nodeMeta,
+      commitId: baseCommit.commitId,
+      keys,
+      documentType: this.documentType,
+      handleVerificationObjection: async () => {
+        return SquashVerificationObjectionDecision.ContinueSquash
+      },
+    })
+
+    return result
   }
 
   public async duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void> {

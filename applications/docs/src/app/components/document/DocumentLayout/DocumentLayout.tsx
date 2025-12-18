@@ -10,6 +10,7 @@ import type { DocumentAction } from '@proton/drive-store'
 import { useDocsContext } from '../context'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
+import { DocumentSizeLimitModal } from '../DocumentSizeLimitModal'
 
 export type DocumentLayoutProps = {
   children: ReactNode
@@ -28,7 +29,10 @@ export function DocumentLayout({ children, documentType, actionMode }: DocumentL
         sidebar={null}
         drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}
       >
-        <PrivateMainArea hasToolbar>{children}</PrivateMainArea>
+        <PrivateMainArea hasToolbar>
+          {children}
+          <DocumentSizeLimitModal documentType={documentType} />
+        </PrivateMainArea>
       </PrivateAppContainer>
     </DebugModeProvider>
   )

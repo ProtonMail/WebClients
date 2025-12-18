@@ -17,7 +17,8 @@ import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketCo
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
-import type { DocSizeTracker } from '../SizeTracker/SizeTracker'
+import type { DocSizeTrackerEventPayload, DocSizeTracker } from '../SizeTracker/SizeTracker'
+import { DocSizeTrackerEvent } from '../SizeTracker/SizeTracker'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import type { RealtimeControllerInterface } from './RealtimeControllerInterface'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
@@ -71,6 +72,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.ImportUpdateSuccessful)
+    eventBus.addEventHandler(this, DocSizeTrackerEvent)
     eventBus.addEventHandler(this, SquashErrorEvent)
 
     documentState.subscribeToProperty('editorReady', (value) => {
@@ -232,6 +234,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         translatedError: c('Error').t`We are having trouble syncing your document. Please refresh the page.`,
       })
       this.documentState.setProperty('realtimeIsLockedDueToSquashError', true)
+    } else if (event.type === DocSizeTrackerEvent) {
+      this.documentState.setProperty('realtimeIsLockedDueToSizeContraint', true)
+      if ((event.payload as DocSizeTrackerEventPayload).exceededMaxSize) {
+        this.websocketService.destroy()
+      }
     } else {
       return
     }

@@ -85,6 +85,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.documentType = type
   }
 
+  destroyed = false
+
   constructor(
     private _createRealtimeValetToken: FetchRealtimeToken,
     private _encryptMessage: EncryptMessage,
@@ -114,6 +116,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
 
     this.connections = {}
+    this.destroyed = true
   }
 
   handleLedgerStatusChangeCallback(): void {
@@ -390,6 +393,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.sizeTracker.incrementSize(size)
     this.knownUpdateUUIDs.add(uuid)
 
+    if (!this.sizeTracker.canPostUpdateOfSize(size)) {
+      return
+    }
+
     const message = CreateDocumentUpdateMessage(documentUpdate)
 
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
@@ -548,6 +555,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     type: EventTypeEnum,
     source: BroadcastSource,
   ): Promise<void> {
+    if (this.destroyed) {
+      return
+    }
+
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
