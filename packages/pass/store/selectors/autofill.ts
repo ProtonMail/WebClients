@@ -1,3 +1,5 @@
+import { createSelector } from '@reduxjs/toolkit';
+
 import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem, itemEq } from '@proton/pass/lib/items/item.predicates';
 import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
@@ -5,11 +7,13 @@ import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItemsFactory, selectVisibleItems } from '@proton/pass/store/selectors/items';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
+import { selectAutofillSettings } from '@proton/pass/store/selectors/settings';
 import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
-import { selectPassPlan } from '@proton/pass/store/selectors/user';
+import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors/user';
 import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionWithOptimistic, ShareId } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -115,3 +119,10 @@ export const selectPasskeys = (payload: PasskeyQueryPayload) =>
                   )
             : [];
     });
+
+/** NOTE: when enabling other of sub-frame autofill types,
+ * remove the `PassCreditCardWebAutofill` check */
+export const selectIFrameAutofillEnabled = createSelector(
+    [selectFeatureFlag(PassFeature.PassIFrameKillswitch), selectFeatureFlag(PassFeature.PassCreditCardWebAutofill), selectAutofillSettings],
+    (iframeKillSwitch, ccAutofill, { cc }) => Boolean(!iframeKillSwitch && ccAutofill && cc)
+);
