@@ -9,7 +9,6 @@ import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
-import { webNavigation } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
@@ -338,7 +337,7 @@ export const createActivationService = () => {
 
         if (frameId !== undefined && frameId > 0) {
             /** For sub-frames : resolve the iframe's document origin as the url */
-            const result = await webNavigation.getFrame({ frameId, tabId });
+            const result = await browser.webNavigation.getFrame({ frameId, tabId });
             if (!result) throw new Error('Invalid sender frame');
             const frameUrl = parseUrl(result.url);
             return { tabId, url: frameUrl, tabUrl, senderTabId: tabId, frameId };
