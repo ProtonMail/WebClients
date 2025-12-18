@@ -144,9 +144,6 @@
       "Add label": [
         "Afegeix una etiqueta"
       ],
-      "add more seats": [
-        "afegeix més llicències"
-      ],
       "Add notification": [
         "Afegeix una notificació"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "D'acord"
+      ],
+      "Group owner": [
+        "Propietari del grup"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -1623,9 +1623,6 @@
       "User": [
         "Usuari"
       ],
-      "Users and addresses": [
-        "Usuaris i adreces"
-      ],
       "Verify": [
         "Verifica"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "S'està reprenent el reenviament"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "Afegiu-hi més llicències"
       ]
     },
     "Action for user session": {
@@ -1951,6 +1953,32 @@
       ],
       "Talk confidentially": [
         "Parleu amb confidencialitat"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Cartera de Bitcoins"
+      ],
+      "Confidential video calls": [
+        "Videotrucades confidencials"
+      ],
+      "Encrypted email": [
+        "Correu electrònic xifrat"
+      ],
+      "Passwords and identity": [
+        "Contrasenyes i identitat"
+      ],
+      "Private AI assistant": [
+        "Assistent d'iA privat"
+      ],
+      "Private browsing": [
+        "Navegació privada"
+      ],
+      "Private scheduling": [
+        "Programació privada"
+      ],
+      "Secure cloud storage": [
+        "Emmagatzematge segur al núvol"
       ]
     },
     "Apps dropdown": {
@@ -2674,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Hi ha hagut un problema amb l'autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -5508,11 +5533,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Per compatibilitat, es generarà una nova clau de xifratge per ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Per compatibilitat, s'ha desactivat el xifratge postquàntic i s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Per compatibilitat, s'ha desactivat el xifratge postquàntic per a ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Per compatibilitat, s'ha desactivat el xifratge postquàntic i s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Per compatibilitat, es desactivarà el xifratge postquàntic per a ${ boldForwarderEmail }."
@@ -6976,17 +7001,17 @@
       "Set up family group": [
         "Configura el grup familiar"
       ],
+      "Show all (${ invites.length })": [
+        "Mostreu-les totes (${ invites.length })"
+      ],
+      "Show less": [
+        "Mostrar menys"
+      ],
       "Switch plans": [
         "Canvia de pla"
       ],
       "View invitation": [
         "Mostra la invitació"
-      ],
-      "View the invitation": [
-        "Mostra la invitació"
-      ],
-      "View the invitations": [
-        "Mostra les invitacions"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7061,12 +7086,6 @@
       "Pending": [
         "Pendent"
       ],
-      "Pending invitation": [
-        "Invitació pendent"
-      ],
-      "Pending invitations": [
-        "Invitacions pendents"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -7078,6 +7097,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Per facilitar la transició, us oferim una prova gratuïta de 30 dies de ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Mostra la invitació",
+        "Veure les invitacions"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
@@ -7116,6 +7139,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Perdreu qualsevol accés a les funcions prèmium incloses en ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Heu estat convidat per **${ invite.InviterEmail }** a enllaçar el vostre compte a aquest pla de grup."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla familiar i gaudir junts de totes les característiques prèmium de ${ brandOrAppName }."
@@ -9653,9 +9682,6 @@
       "Groups": [
         "Grups"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ajuda a escriure, respondre i revisar correus electrònics. Si està desactivat, només els administradors hi tindran accés. Gestioneu-ho per a usuaris individuals a ${ userAndAddress } o ${ addMoreSeats }"
-      ],
       "here": [
         "aquí"
       ],
@@ -11731,6 +11757,11 @@
       ],
       "Selected color:": [
         "Color seleccionat:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ajuda a redactar, respondre i revisar correus electrònics. Si es desactiva, només els administradors hi tindran accés. Gestioneu-ho per a usuaris individuals a ${ userAndAddresses } o ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -13957,6 +13988,11 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuaris i adreces"
       ]
     },
     "Link label (optional)": {
@@ -16845,8 +16881,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Se us ha convidat a unir-vos a ${ PASS_APP_NAME }."
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "S'ha aplicat el vostre descompte de Black Friday del ${ discount }%."
+      "Your ${ discount }% End of Year discount has been applied": [
+        "S'ha aplicat el vostre descompte de Fi d'Any del ${ discount }%"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "La vostra organització té accés a ${ free }. Si voleu accedir a les característiques prèmium de ${ appName }, demaneu a l'administrador de la vostra organització que millori el pla."
@@ -22445,6 +22481,9 @@
       "PayPal verification failed": [
         "La verificació de PayPal no s'ha pogut completar."
       ],
+      "Pending invitations": [
+        "Invitacions pendents"
+      ],
       "Personalize your email footer": [
         "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
@@ -23632,8 +23671,8 @@
       "Did you know?": [
         "Ho sabíeu?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Aconseguiu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb una recuperació de fitxers de 10 anys."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obtingueu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb la recuperació de fitxers de 10 anys."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de privacitat amb correu electrònic segur, ${ VPN_SHORT_APP_NAME }, emmagatzematge al núvol i gestor de contrasenyes en un sol paquet. A partir de només ${ fallBackString } al mes"

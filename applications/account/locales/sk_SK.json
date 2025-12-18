@@ -144,9 +144,6 @@
       "Add label": [
         "Pridať štítok"
       ],
-      "add more seats": [
-        "pridať viac miest"
-      ],
       "Add notification": [
         "Pridať notifikáciu"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Rozumiem"
+      ],
+      "Group owner": [
+        "Vlastník skupiny"
       ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
@@ -1623,9 +1623,6 @@
       "User": [
         "Používateľ"
       ],
-      "Users and addresses": [
-        "Používatelia a adresy"
-      ],
       "Verify": [
         "Overiť"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Obnovenie preposielania"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "pridajte viac miest"
       ]
     },
     "Action for user session": {
@@ -2700,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Problém s overovačom"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikáciou Bridge"
@@ -5556,11 +5555,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Z dôvodu kompatibility bude pre adresu ${ boldForwarderEmail } vygenerovaný nový šifrovací kľúč."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Z dôvodu kompatibility bolo deaktivované postkvantové šifrovanie a pre adresu ${ boldForwarderEmail } bol vygenerovaný nový šifrovací kľúč."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Z dôvodu kompatibility bolo pre ${ boldForwarderEmail } vypnuté postkvantové šifrovanie."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Z dôvodu kompatibility bolo deaktivované post kvantové šifrovanie a pre adresu ${ boldForwarderEmail } bol vygenerovaný nový šifrovací kľúč."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Z dôvodu kompatibility bude pre adresu ${ boldForwarderEmail } deaktivované postkvantové šifrovanie."
@@ -7057,12 +7056,6 @@
       ],
       "View invitation": [
         "Zobraziť pozvánku"
-      ],
-      "View the invitation": [
-        "Zobraziť pozvánku"
-      ],
-      "View the invitations": [
-        "Zobraziť pozvánky"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7138,12 +7131,6 @@
       ],
       "Pending": [
         "Čakajúce"
-      ],
-      "Pending invitation": [
-        "Čaká na pozvánku"
-      ],
-      "Pending invitations": [
-        "Čakajúce pozvánky"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -9851,9 +9838,6 @@
       "Groups": [
         "Skupiny"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Pomáha písať, odpovedať na emaily a korigovať ich. Ak je táto funkcia vypnutá, prístup k nej majú len správcovia. Spravujte ho pre jednotlivých používateľov v ${ userAndAddress } alebo ${ addMoreSeats }."
-      ],
       "here": [
         "tu"
       ],
@@ -11979,6 +11963,11 @@
       ],
       "Selected color:": [
         "Vybraná farba:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Pomáha písať, odpovedať na e-maily a korigovať ich. Ak je táto funkcia vypnutá, prístup k nej majú len správcovia. Spravujte ju pre jednotlivých používateľov v časti ${ userAndAddresses } alebo ${ addMoreSeats }."
       ]
     },
     "Info - folder colouring feature": {
@@ -14223,6 +14212,11 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Používatelia a adresy"
       ]
     },
     "Link label (optional)": {
@@ -17207,8 +17201,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Dostali ste pozvanie pripojiť sa do ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Vaša Black Friday zľava ${ discount }% bola uplatnená"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Vaša koncoročná zľava ${ discount }% bola uplatnená"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Vaša organizácia má prístup k ${ free }. Ak chcete získať prístup k prémiovým funkciám ${ appName }, požiadajte správcu vašej organizácie o upgrade."
@@ -24186,9 +24180,6 @@
       ],
       "Did you know?": [
         "Vedeli ste?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Získajte úložisko s kapacitou ${ drivePlusPlanMaxSpace } pre svoje súbory, fotografie a dokumenty a obnovu verzií súborov s 10-ročnou zárukou obnovy súborov."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Balík na ochranu súkromia s bezpečným emailom, ${ VPN_SHORT_APP_NAME }, cloudovým úložiskom a správcom hesiel v jednom produkte. Už od ${ fallBackString } mesačne."

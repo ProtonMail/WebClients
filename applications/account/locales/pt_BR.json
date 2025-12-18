@@ -144,9 +144,6 @@
       "Add label": [
         "Adicionar marcador"
       ],
-      "add more seats": [
-        "adicionar mais licenças"
-      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Entendi"
+      ],
+      "Group owner": [
+        "Proprietário do grupo"
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -1623,9 +1623,6 @@
       "User": [
         "Usuário"
       ],
-      "Users and addresses": [
-        "Usuários e endereços"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Continuar encaminhamento"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "adicionar mais licenças"
       ]
     },
     "Action for user session": {
@@ -1951,6 +1953,32 @@
       ],
       "Talk confidentially": [
         "Converse confidencialmente"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Carteira de Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Chamadas por vídeo confidenciais"
+      ],
+      "Encrypted email": [
+        "E-mail criptografado"
+      ],
+      "Passwords and identity": [
+        "Senhas e identidade"
+      ],
+      "Private AI assistant": [
+        "Assistente de IA privado"
+      ],
+      "Private browsing": [
+        "Navegação privada"
+      ],
+      "Private scheduling": [
+        "Agendamento privado"
+      ],
+      "Secure cloud storage": [
+        "Armazenamento na nuvem seguro"
       ]
     },
     "Apps dropdown": {
@@ -2674,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Problema de autenticação"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de bridge"
@@ -5508,11 +5533,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Para fins de compatibilidade, uma nova chave de criptografia será gerada para ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Para fins de compatibilidade, a criptografia pós-quântica foi desativada e uma nova chave de criptografia foi gerada para ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Para fins de compatibilidade, a criptografia pós-quântica foi desativada para ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Para fins de compatibilidade, a criptografia pós-quântica foi desativada e uma nova chave de criptografia foi gerada para ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Para fins de compatibilidade, a criptografia pós-quântica será desativada para ${ boldForwarderEmail }."
@@ -6976,17 +7001,17 @@
       "Set up family group": [
         "Configurar grupo familiar"
       ],
+      "Show all (${ invites.length })": [
+        "Mostrar todos (${ invites.length })"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
       "Switch plans": [
         "Trocar de plano"
       ],
       "View invitation": [
         "Visualizar convite"
-      ],
-      "View the invitation": [
-        "Visualizar o convite"
-      ],
-      "View the invitations": [
-        "Visualizar os convites"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7062,9 +7087,7 @@
         "Pendente"
       ],
       "Pending invitation": [
-        "Convite pendente"
-      ],
-      "Pending invitations": [
+        "Convite pendente",
         "Convites pendentes"
       ],
       "Sorry, you can't switch plans at this time.": [
@@ -7078,6 +7101,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar a transição, oferecemos a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Ilimitado*."
+      ],
+      "View the invitation": [
+        "Visualizar o convite",
+        "Visualizar os convites"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -7116,6 +7143,9 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Você perderá o acesso a todos os recursos premium incluídos no ${ plan }."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Você foi convidado a participar de ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Você está convidado a vincular sua conta ${ BRAND_NAME } a este plano familiar e, juntos, aproveitarem todos os recursos premium do ${ brandOrAppName }."
@@ -9656,9 +9686,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ajuda a escrever, responder e revisar e-mails. Se desativado, apenas os administradores terão acesso. Gerencie para usuários individuais em ${ userAndAddress } ou ${ addMoreSeats }"
-      ],
       "here": [
         "aqui"
       ],
@@ -11734,6 +11761,11 @@
       ],
       "Selected color:": [
         "Cor selecionada:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ajuda a escrever, responder e revisar e-mails. Se desativado, apenas os administradores terão acesso. Gerencie para usuários individuais em ${ userAndAddresses } ou ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -13960,6 +13992,11 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuários e endereços"
       ]
     },
     "Link label (optional)": {
@@ -16851,8 +16888,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Você foi convidado a participar de ${ PASS_APP_NAME }."
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Seu desconto de ${ discount }% da Black Friday foi aplicado"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Seu desconto de ${ discount }% de fim de ano foi aplicado"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Sua organização tem acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, solicite a atualização ao administrador da sua organização."
@@ -22463,6 +22500,9 @@
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
       ],
+      "Pending invitations": [
+        "Convites pendentes"
+      ],
       "Personalize your email footer": [
         "Personalize o rodapé do seu e-mail"
       ],
@@ -23653,7 +23693,7 @@
       "Did you know?": [
         "Você sabia?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenha ${ drivePlusPlanMaxSpace } de armazenamento para seus arquivos, fotos e documentos, e recupere versões de arquivos com recuperação de arquivos de 10 anos."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

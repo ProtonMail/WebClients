@@ -144,9 +144,6 @@
       "Add label": [
         "ラベルを追加する"
       ],
-      "add more seats": [
-        "シートを増やす"
-      ],
       "Add notification": [
         "通知を追加"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "はい"
+      ],
+      "Group owner": [
+        "グループオーナー"
       ],
       "Help and feedback": [
         "ヘルプとフィードバック"
@@ -1623,9 +1623,6 @@
       "User": [
         "ユーザー"
       ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
-      ],
       "Verify": [
         "検証"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "転送再開"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "シートを増やす"
       ]
     },
     "Action for user session": {
@@ -1943,6 +1945,26 @@
       ],
       "Talk confidentially": [
         "安心して会話する"
+      ]
+    },
+    "app-switcher_2025": {
+      "Confidential video calls": [
+        "機密ビデオ通話"
+      ],
+      "Encrypted email": [
+        "暗号化メール"
+      ],
+      "Private AI assistant": [
+        "プライベートAIアシスタント"
+      ],
+      "Private browsing": [
+        "プライベートブラウジング"
+      ],
+      "Private scheduling": [
+        "プライベートスケジュール"
+      ],
+      "Secure cloud storage": [
+        "安全なクラウドストレージ"
       ]
     },
     "Apps dropdown": {
@@ -2661,9 +2683,6 @@
       ],
       "Authenticator problem": [
         "認証の問題"
-      ],
-      "Black Friday": [
-        "ブラックフライデー"
       ],
       "Bridge problem": [
         "Bridge に関する問題"
@@ -5484,11 +5503,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "互換性のため、${ boldForwarderEmail }に対して新しい暗号鍵が生成されます。"
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "互換性のため、ポスト量子暗号化は無効化され、新しい暗号鍵が ${ boldForwarderEmail } に対して生成されました。"
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "互換性のため、${ boldForwarderEmail } のポスト量子暗号化は無効になっています。"
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "互換性のため、ポスト量子暗号化は無効化され、新しい暗号鍵が ${ boldForwarderEmail } に対して生成されました。"
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "互換性のため、${ boldForwarderEmail }ではポスト量子暗号化は無効化されます。"
@@ -6943,12 +6962,6 @@
       ],
       "View invitation": [
         "招待状を確認する"
-      ],
-      "View the invitation": [
-        "招待を見る"
-      ],
-      "View the invitations": [
-        "招待を見る"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7021,12 +7034,6 @@
       ],
       "Pending": [
         "保留中"
-      ],
-      "Pending invitation": [
-        "保留中の招待状"
-      ],
-      "Pending invitations": [
-        "保留中の招待状"
       ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
@@ -9554,9 +9561,6 @@
       "Groups": [
         "グループ"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "メールの作成、返信、校正を支援します。無効にすると、管理者のみがアクセスできます。${ userAndAddress } または ${ addMoreSeats } の個々のユーザーを管理します。"
-      ],
       "here": [
         "こちら"
       ],
@@ -11607,6 +11611,11 @@
       ],
       "Selected color:": [
         "選択した色:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "メールの作成、返信、校正を支援します。無効にすると、管理者(${ userAndAddresses })のみがアクセスできます。 または ${ addMoreSeats } の個々のユーザーを管理します。"
       ]
     },
     "Info - folder colouring feature": {
@@ -13824,6 +13833,11 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "ユーザー名とアドレス"
       ]
     },
     "Link label (optional)": {
@@ -16664,8 +16678,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } への参加に招待されました"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "${ discount }%のブラックフライデー割引が適用されました"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "${ discount }％の年末割引が適用されました"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "あなたの組織は ${ free } にアクセスできます。 ${ appName } のプレミアム機能にアクセスしたい場合は、組織の管理者にアップグレードを依頼してください。"
@@ -23349,9 +23363,6 @@
       ],
       "Did you know?": [
         "知ってましたか？"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"
