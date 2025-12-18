@@ -25,8 +25,7 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
     const { status, progress } = indexingStatus;
     const percentage = progress.total > 0 ? Math.round((progress.indexed / progress.total) * 100) : 0;
 
-    // Format progress text
-    const progressText = progress.total > 0 
+    const progressText = progress.total > 0
         ? `${progress.indexed}/${progress.total} files (${percentage}%)`
         : 'Preparing...';
 
@@ -47,13 +46,6 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
                         <span className="text-sm color-hint">
                             {progressText}
                         </span>
-                    </div>
-                    {/* Subtle progress bar */}
-                    <div className="h-0.5 bg-weak rounded-full overflow-hidden mt-1" style={{ maxWidth: '200px' }}>
-                        <div
-                            className="h-full bg-primary rounded-full transition-all duration-300"
-                            style={{ width: `${percentage}%` }}
-                        />
                     </div>
                 </div>
             </div>
@@ -77,7 +69,6 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
                         {progressText}
                     </span>
                 </div>
-                {/* Subtle progress bar */}
                 <div className="h-0.5 bg-weak rounded-full overflow-hidden mt-1" style={{ maxWidth: '300px' }}>
                     <div
                         className="h-full bg-primary rounded-full transition-all duration-300"
