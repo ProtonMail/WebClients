@@ -7,7 +7,6 @@ import { splitNodeUid } from '@proton/drive';
 
 import { useSelection } from '../../../components/FileBrowser';
 import { LayoutButton } from '../../../components/sections/ToolbarButtons';
-import DesktopDownloadDropdown from '../../../components/sections/ToolbarButtons/DesktopDownloadDropdown';
 import { getSelectedDevice } from '../DevicesView/getSelectedDevice';
 import { useDeviceStore } from '../devices.store';
 import { DeviceRemoveButton } from './buttons/RemoveButton';
@@ -15,7 +14,7 @@ import { DeviceRenameButton } from './buttons/RenameButton';
 
 export const DevicesToolbar = () => {
     const { deviceList } = useDeviceStore(useShallow((state) => ({ deviceList: state.deviceList })));
-    const selectionControls = useSelection()!;
+    const selectionControls = useSelection();
 
     // TODO: remove once useSelection is converted
     // File selection relies on ID
@@ -29,8 +28,11 @@ export const DevicesToolbar = () => {
     );
 
     const selectedItems = useMemo(
-        () => getSelectedDevice(browserItems, selectionControls!.selectedItemIds),
-        [browserItems, selectionControls!.selectedItemIds]
+        () =>
+            selectionControls?.selectedItemIds
+                ? getSelectedDevice(browserItems, selectionControls.selectedItemIds)
+                : [],
+        [browserItems, selectionControls?.selectedItemIds]
     );
 
     const renderSelectionActions = () => {
@@ -50,7 +52,6 @@ export const DevicesToolbar = () => {
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap">
-                <DesktopDownloadDropdown className="self-center mr-2" />
                 <LayoutButton />
             </span>
         </Toolbar>

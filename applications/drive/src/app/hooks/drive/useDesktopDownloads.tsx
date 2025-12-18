@@ -16,45 +16,51 @@ type PlatformDownload = PlatformInfo & {
  */
 export const useDesktopDownloads = () => {
     const [isLoading, withLoading] = useLoading();
+    const [hasError, setHasError] = useState(false);
     const [downloads, setDownloads] = useState<PlatformDownload[]>([]);
 
     useEffect(
         () => {
             void withLoading(
-                fetchDesktopDownloads().then((result) => {
-                    setDownloads(
-                        appPlatforms
-                            .map<PlatformDownload | undefined>((platform) => {
-                                const url = result[platform.platform];
+                fetchDesktopDownloads()
+                    .then((result) => {
+                        setDownloads(
+                            appPlatforms
+                                .map<PlatformDownload | undefined>((platform) => {
+                                    const url = result[platform.platform];
 
-                                if (platform.hideIfUnavailable && !url) {
-                                    return undefined;
-                                }
+                                    if (platform.hideIfUnavailable && !url) {
+                                        return undefined;
+                                    }
 
-                                return {
-                                    ...platform,
-                                    url,
-                                    startDownload: () => {
-                                        if (!url) {
-                                            return;
-                                        }
+                                    return {
+                                        ...platform,
+                                        url,
+                                        startDownload: () => {
+                                            if (!url) {
+                                                return;
+                                            }
 
-                                        window.location.href = url;
-                                    },
-                                };
-                            })
-                            .filter(isTruthy)
-                    );
-                })
+                                            window.location.href = url;
+                                        },
+                                    };
+                                })
+                                .filter(isTruthy)
+                        );
+                    })
+                    .catch(() => {
+                        setHasError(true);
+                    })
             );
         },
         // We specifically pass an empty object as withLoading is not memoized
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         []
     );
 
     return {
         isLoading,
+        hasError,
         downloads,
     };
 };

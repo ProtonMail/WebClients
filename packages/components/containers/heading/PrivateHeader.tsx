@@ -20,6 +20,7 @@ import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 
 interface Props extends HeaderProps {
     onBoardingButton?: ReactNode;
+    downloadAppButton?: ReactNode;
     settingsButton?: ReactNode;
     hideSettingsButton?: boolean;
     userDropdown?: ReactNode;
@@ -40,6 +41,7 @@ const PrivateHeader = ({
     onBoardingButton,
     upsellButton,
     userDropdown,
+    downloadAppButton,
     settingsButton,
     hideSettingsButton = false,
     feedbackButton,
@@ -73,6 +75,7 @@ const PrivateHeader = ({
                     {!isSmallViewport && onBoardingButton}
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
+                    {downloadAppButton ? <TopNavbarListItem noShrink>{downloadAppButton}</TopNavbarListItem> : null}
                     {settingsButton && !hideSettingsButton ? (
                         <TopNavbarListItem noShrink className="hidden md:flex">
                             {settingsButton}
