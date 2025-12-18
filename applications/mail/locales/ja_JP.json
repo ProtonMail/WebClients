@@ -1500,9 +1500,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -2149,9 +2146,6 @@
       ],
       "Authenticator problem": [
         "認証の問題"
-      ],
-      "Black Friday": [
-        "ブラックフライデー"
       ],
       "Bridge problem": [
         "Bridge に関する問題"
@@ -5313,12 +5307,6 @@
       ],
       "Switch plans": [
         "プランを変更"
-      ],
-      "View the invitation": [
-        "招待を見る"
-      ],
-      "View the invitations": [
-        "招待を見る"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7291,7 +7279,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -10041,6 +10029,9 @@
       "Terms": [
         "利用規約"
       ],
+      "Terms and conditions": [
+        "利用規約"
+      ],
       "terms of service": [
         "利用規約"
       ],
@@ -11000,8 +10991,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "私たちは常に${ BRAND_NAME } ${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足いただいておりますでしょうか？"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     },
     "new_plans: Subtext": {
