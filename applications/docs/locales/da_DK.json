@@ -1181,9 +1181,6 @@
       "Authenticator problem": [
         "Autentificeringsproblem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Bridge-problem"
       ],
@@ -2781,7 +2778,7 @@
         "Der opstod en fejl under forsøget på at konvertere dokumentet. Prøv igen."
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
-        "Der opstod en fejl under forsøget på at duplikere dokumentet. Prøv da igen."
+        "Der opstod en fejl under forsøget på at duplikere dokumentet. Prøv igen."
       ],
       "An error occurred while attempting to restore the document. Please try again.": [
         "Der opstod en fejl under forsøget på at gendanne dokumentet. Prøv igen."
@@ -3413,12 +3410,6 @@
       ],
       "Switch plans": [
         "Skift abonnement"
-      ],
-      "View the invitation": [
-        "Se invitationen"
-      ],
-      "View the invitations": [
-        "Se invitationerne"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3470,6 +3461,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
+      ],
+      "View the invitation": [
+        "Vis invitationen",
+        "Vis invitationerne"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
@@ -4021,7 +4016,7 @@
         "\"${ documentTitle }\" er blevet flyttet til papirkurven. Det bliver der, indtil du gendanner det eller sletter det permanent."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
-        "\"${ documentTitle }\" ligger i papirkurven og bliver der, indtil du sletter den permanent."
+        "\"${ documentTitle }\" ligger i papirkurven og bliver der, indtil du sletter det permanent."
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
@@ -5008,7 +5003,7 @@
         "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
       ],
       "This message will be presented again later": [
-        "Dette besked vil blive fremlagt igen senere"
+        "Denne besked vil blive fremlagt igen senere"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
@@ -5272,7 +5267,7 @@
         "Dine ændringer kunne ikke synkroniseres. Drive vil forsøge at gemme ændringerne automatisk. Luk ikke websiden."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug venligst de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
+        "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Dit nuværende dokument vil blive erstattet med denne version. Kommentarer og forslag vil blive fjernet fra dokumentet, men vil fortsat være tilgængelige i kommentarhistorikken."
@@ -5967,6 +5962,9 @@
       ],
       "Resume now": [
         "Genoptag nu"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ],
       "Types of recovery methods": [
         "Typer af gendannelsesmetoder"
@@ -6942,7 +6940,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
+        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end-kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
@@ -7042,7 +7040,7 @@
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+        "På hverdage kan du modtage support fra ${ BRAND_NAME }-kundesupportteamet inden for 24 timer efter en henvendelse."
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."

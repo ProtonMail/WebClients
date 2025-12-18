@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Criar nova ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Criar uma pasta"
       ],
@@ -1177,9 +1180,6 @@
       ],
       "Authenticator problem": [
         "Problema de autenticação"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de bridge"
@@ -3114,6 +3114,9 @@
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
+      "Unable to import file": [
+        "Não foi possível importar o arquivo"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Não foi possível carregar o painel de controle da VPN. Verifique sua conexão e tente novamente."
       ],
@@ -3404,12 +3407,6 @@
       ],
       "Switch plans": [
         "Trocar de plano"
-      ],
-      "View the invitation": [
-        "Visualizar o convite"
-      ],
-      "View the invitations": [
-        "Visualizar os convites"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3461,6 +3458,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
+      ],
+      "View the invitation": [
+        "Visualizar o convite",
+        "Visualizar os convites"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -5958,6 +5959,9 @@
       ],
       "Resume now": [
         "Retomar agora"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ],
       "Types of recovery methods": [
         "Tipos de métodos de recuperação"
