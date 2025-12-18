@@ -30,7 +30,6 @@ import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-te
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getChargebeeErrorMessage } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -414,9 +413,6 @@ export const useGooglePayDependencies = (
     }
 ) => {
     const googlePayEnabled = useFlag('GooglePay');
-    const isWhitelistedDomain =
-        ['account.proton.me'].includes(window.location.hostname) || !isProduction(window.location.hostname);
-    const canUseGooglePay = googlePayEnabled && isWhitelistedDomain;
 
     const { createNotification } = useNotifications();
     const modalIdRef = useRef<string | null>(null);
@@ -477,5 +473,5 @@ export const useGooglePayDependencies = (
         onInitialize: () => {},
     };
 
-    return { canUseGooglePay, googlePayModalHandles };
+    return { canUseGooglePay: googlePayEnabled, googlePayModalHandles };
 };
