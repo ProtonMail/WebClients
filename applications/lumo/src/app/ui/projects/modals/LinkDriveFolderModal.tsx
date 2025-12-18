@@ -220,8 +220,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                     </div>
                                 )}
                                 {isAtRoot && (
-                                    <div className="mt-4 p-3 bg-info rounded text-sm">
-                                        <div className="flex items-center gap-2">
+                                    <div className="mt-4 p-3 bg-weak rounded text-sm">
+                                        <div className="flex items-center gap-2 color-weak">
                                             <Icon name="info-circle" size={4} />
                                             <span>{c('collider_2025:Info').t`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
                                         </div>

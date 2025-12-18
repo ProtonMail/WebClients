@@ -4,6 +4,8 @@ import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef,
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
@@ -67,7 +69,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         },
         ref
     ) => {
-        const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
+        const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile, createFolder } = useDriveSDK();
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
         const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
@@ -83,6 +85,9 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         const [downloadProgress, setDownloadProgress] = useState<number | null>(null);
         const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
         const [localError, setLocalError] = useState<string | null>(null);
+        const [createFolderModalOpen, setCreateFolderModalOpen] = useState(false);
+        const [newFolderName, setNewFolderName] = useState('');
+        const [isCreatingFolder, setIsCreatingFolder] = useState(false);
         const initializedRef = useRef(false);
         const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -515,6 +520,41 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             fileInputRef.current?.click();
         }, []);
 
+        const handleCreateFolderClick = useCallback(() => {
+            setNewFolderName('');
+            setCreateFolderModalOpen(true);
+        }, []);
+
+        const handleCreateFolder = useCallback(async () => {
+            if (!currentFolder || !newFolderName.trim()) {
+                return;
+            }
+
+            try {
+                setIsCreatingFolder(true);
+                await createFolder(currentFolder.nodeUid, newFolderName.trim());
+                
+                createNotification({
+                    text: c('collider_2025:Success').t`Folder created successfully`,
+                    type: 'success',
+                });
+                
+                setCreateFolderModalOpen(false);
+                setNewFolderName('');
+                
+                // Refresh to show the new folder
+                await handleRefresh();
+            } catch (error) {
+                console.error('Failed to create folder:', error);
+                createNotification({
+                    text: c('collider_2025:Error').t`Failed to create folder`,
+                    type: 'error',
+                });
+            } finally {
+                setIsCreatingFolder(false);
+            }
+        }, [currentFolder, newFolderName, createFolder, createNotification, handleRefresh]);
+
         // Expose imperative methods via ref
         useImperativeHandle(
             ref,
@@ -612,7 +652,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     />
                 )}
 
-                {/* Upload progress overlay */}
+                {/* Upload progress banner */}
                 {uploadProgress && <UploadProgressOverlay uploadProgress={uploadProgress} />}
 
                 {!currentFolder && !displayError && (
@@ -624,7 +664,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     </div>
                 )}
 
-                {currentFolder && !uploadProgress && (
+                {currentFolder && (
                     <DriveContent
                         loading={loading}
                         isRefreshing={isRefreshing}
@@ -637,11 +677,48 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                         onFileClick={handleFileClick}
                         onFolderClick={handleFolderClick}
                         onUpload={handleUploadButtonClick}
+                        onCreateFolder={handleCreateFolderClick}
                         isLinkedFolder={isLinkedFolder}
                         folderSelectionMode={folderSelectionMode}
                         handleBreadcrumbClick={handleBreadcrumbClick}
                     />
                 )}
+
+                {/* Create Folder Modal */}
+                <ModalTwo
+                    open={createFolderModalOpen}
+                    onClose={() => setCreateFolderModalOpen(false)}
+                    size="small"
+                >
+                    <ModalTwoHeader title={c('collider_2025:Title').t`Create folder`} />
+                    <ModalTwoContent>
+                        <InputFieldTwo
+                            label={c('collider_2025:Label').t`Folder name`}
+                            placeholder={c('collider_2025:Placeholder').t`Enter folder name`}
+                            value={newFolderName}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewFolderName(e.target.value)}
+                            autoFocus
+                            onKeyDown={(e: React.KeyboardEvent) => {
+                                if (e.key === 'Enter' && newFolderName.trim()) {
+                                    void handleCreateFolder();
+                                }
+                            }}
+                        />
+                    </ModalTwoContent>
+                    <ModalTwoFooter>
+                        <Button onClick={() => setCreateFolderModalOpen(false)} color="weak">
+                            {c('collider_2025:Action').t`Cancel`}
+                        </Button>
+                        <Button
+                            onClick={handleCreateFolder}
+                            color="norm"
+                            loading={isCreatingFolder}
+                            disabled={!newFolderName.trim()}
+                        >
+                            {c('collider_2025:Action').t`Create`}
+                        </Button>
+                    </ModalTwoFooter>
+                </ModalTwo>
             </div>
         );
     }
