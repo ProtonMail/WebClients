@@ -268,7 +268,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
                 [PLANS.LUMO]: getSentinel(),
-                [PLANS.LUMO_BUSINESS]: getSentinel(),
+                [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: getSentinel(true),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSentinel(true),
             },

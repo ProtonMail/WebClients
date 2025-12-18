@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cloneElement, isValidElement, useState } from 'react';
+import { Fragment, cloneElement, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -295,102 +295,40 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
         </div>
     );
 
-    if (app === APPS.PROTONPASS) {
-        return (
-            <>
-                {highlightFeatures}
-                {passFeatures}
-                {mailFeatures}
-                {calendarFeatures}
-                {driveFeatures}
-                {vpnFeatures}
-                {walletFeatures}
-                {lumoFeatures}
-                {teamFeatures}
-                {supportFeatures}
-            </>
-        );
-    }
+    const defaultProductOrder = [
+        APPS.PROTONMAIL,
+        APPS.PROTONCALENDAR,
+        APPS.PROTONDRIVE,
+        APPS.PROTONVPN_SETTINGS,
+        APPS.PROTONPASS,
+        APPS.PROTONLUMO,
+        APPS.PROTONWALLET,
+    ] as const;
+    type ProductApp = (typeof defaultProductOrder)[number];
 
-    if (app === APPS.PROTONVPN_SETTINGS) {
-        return (
-            <>
-                {highlightFeatures}
-                {vpnFeatures}
-                {mailFeatures}
-                {calendarFeatures}
-                {driveFeatures}
-                {passFeatures}
-                {walletFeatures}
-                {lumoFeatures}
-                {teamFeatures}
-                {supportFeatures}
-            </>
-        );
-    }
+    const productFeatures: Record<ProductApp, JSX.Element> = {
+        [APPS.PROTONMAIL]: mailFeatures,
+        [APPS.PROTONCALENDAR]: calendarFeatures,
+        [APPS.PROTONDRIVE]: driveFeatures,
+        [APPS.PROTONVPN_SETTINGS]: vpnFeatures,
+        [APPS.PROTONPASS]: passFeatures,
+        [APPS.PROTONLUMO]: lumoFeatures,
+        [APPS.PROTONWALLET]: walletFeatures,
+    };
 
-    if (app === APPS.PROTONDRIVE) {
-        return (
-            <>
-                {highlightFeatures}
-                {driveFeatures}
-                {mailFeatures}
-                {calendarFeatures}
-                {vpnFeatures}
-                {passFeatures}
-                {walletFeatures}
-                {lumoFeatures}
-                {teamFeatures}
-                {supportFeatures}
-            </>
-        );
-    }
-
-    if (app === APPS.PROTONWALLET) {
-        return (
-            <>
-                {highlightFeatures}
-                {walletFeatures}
-                {mailFeatures}
-                {calendarFeatures}
-                {driveFeatures}
-                {vpnFeatures}
-                {passFeatures}
-                {lumoFeatures}
-                {teamFeatures}
-                {supportFeatures}
-            </>
-        );
-    }
-
-    if (app === APPS.PROTONLUMO) {
-        return (
-            <>
-                {highlightFeatures}
-                {lumoFeatures}
-                {walletFeatures}
-                {mailFeatures}
-                {calendarFeatures}
-                {driveFeatures}
-                {vpnFeatures}
-                {passFeatures}
-                {teamFeatures}
-                {supportFeatures}
-            </>
-        );
-    }
+    // Reorder: if the current app is in the list, move it to the front
+    const currentAppIndex = defaultProductOrder.indexOf(app as ProductApp);
+    const productOrder =
+        currentAppIndex > 0
+            ? [app as ProductApp, ...defaultProductOrder.filter((p) => p !== app)]
+            : defaultProductOrder;
 
     return (
         <>
             {highlightFeatures}
-            {mailFeatures}
-            {calendarFeatures}
-            {driveFeatures}
-            {vpnFeatures}
-            {passFeatures}
-            {walletFeatures}
-
-            {lumoFeatures}
+            {productOrder.map((product) => (
+                <Fragment key={product}>{productFeatures[product]}</Fragment>
+            ))}
             {teamFeatures}
             {supportFeatures}
         </>

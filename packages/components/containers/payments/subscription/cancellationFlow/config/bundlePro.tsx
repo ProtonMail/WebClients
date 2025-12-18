@@ -1,7 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { hasCancellablePlan } from '@proton/payments';
+import { PLANS, PLAN_NAMES, hasCancellablePlan } from '@proton/payments';
 import {
     APPS,
     BRAND_NAME,
@@ -13,6 +12,7 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import { getPrioritySupport } from '../../../features/shared';
 import type {
     ConfirmationModal,
     PlanConfig,
@@ -96,10 +96,7 @@ export const getBundleProConfig = ({ app, plan, subscription }: ConfigProps): Pl
                 icon: 'shield-half-filled',
                 text: c('Subscription reminder').t`${PROTON_SENTINEL_NAME} advanced account protection`,
             },
-            {
-                icon: 'life-ring',
-                text: c('Subscription reminder').t`Priority support`,
-            },
+            getPrioritySupport(),
             {
                 icon: 'app-switch',
                 text: c('Subscription reminder')
