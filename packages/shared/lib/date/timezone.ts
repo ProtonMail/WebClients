@@ -346,8 +346,12 @@ export const convertUTCDateTimeToZone = (dateTime: DateTime, tzid: string) => {
     return fromUTCDate(date);
 };
 
+export const fromUTCDateToTimezone = (date: Date, tzid: string) => {
+    return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(date), tzid));
+};
+
 export const fromUTCDateToLocalFakeUTCDate = (utcDate: Date, isAllDay: boolean, tzid = 'UTC') => {
-    return isAllDay ? utcDate : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+    return isAllDay ? utcDate : fromUTCDateToTimezone(utcDate, tzid);
 };
 
 export const convertTimestampToTimezone = (timestamp: number, timezone: string) => {

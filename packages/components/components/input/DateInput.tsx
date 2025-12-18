@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
@@ -208,7 +208,7 @@ const DateInput = ({
             return now;
         }
 
-        return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
+        return fromUTCDateToTimezone(now, tzid);
     }, [tzid]);
 
     return (

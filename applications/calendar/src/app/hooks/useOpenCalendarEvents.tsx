@@ -3,12 +3,7 @@ import { useCallback } from 'react';
 
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { startOfDay } from '@proton/shared/lib/date-fns-utc';
-import {
-    convertUTCDateTimeToZone,
-    fromUTCDate,
-    fromUTCDateToLocalFakeUTCDate,
-    toUTCDate,
-} from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToLocalFakeUTCDate, fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { getViewEventDateProperties } from '../containers/calendar/eventHelper';
@@ -36,7 +31,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
     const goToEvent = useCallback(
         (eventData: CalendarEventSharedData, eventComponent: VcalVeventComponent) => {
             const { utcStart, isAllDay, isAllPartDay } = getViewEventDateProperties(eventComponent);
-            const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
+            const startInTzid = fromUTCDateToTimezone(utcStart, tzid);
 
             navigateToEvent(utcStart, isAllDay);
             setEventTargetAction({
@@ -61,7 +56,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
             const withOccurrenceDtstart = getDateOrDateTimeProperty(eventComponent.dtstart, occurrence.localStart);
 
             const utcDate = propertyToUTCDate(withOccurrenceDtstart);
-            const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+            const startInTzid = fromUTCDateToTimezone(utcDate, tzid);
 
             navigateToEvent(utcDate, isAllDay);
             setEventTargetAction({
