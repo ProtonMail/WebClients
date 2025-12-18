@@ -1450,9 +1450,6 @@
       "Authenticator problem": [
         "Πρόβλημα ταυτοποίησης"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Πρόβλημα Bridge"
       ],
@@ -3961,7 +3958,7 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "Δεν μπορείτε να εισάγετε το email του διοργανωτή"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4294,12 +4291,6 @@
       ],
       "Switch plans": [
         "Αλλαγή πλάνου"
-      ],
-      "View the invitation": [
-        "Δείτε την πρόσκληση"
-      ],
-      "View the invitations": [
-        "Δείτε τις προσκλήσεις"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4351,6 +4342,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του πλάνου."
+      ],
+      "View the invitation": [
+        "Δείτε την πρόσκληση",
+        "Δείτε τις προσκλήσεις"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
@@ -8294,8 +8289,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Προσπαθούμε πάντα να βελτιώνουμε το ${ BRAND_NAME } ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     },
     "new_plans: Subtext": {

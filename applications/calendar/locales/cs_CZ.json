@@ -1474,9 +1474,6 @@
       "Authenticator problem": [
         "Problém s ověřovací aplikací"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problém s aplikací Bridge"
       ],
@@ -4029,7 +4026,7 @@
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou"
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "Nelze zadat e-mail organizátora"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4368,12 +4365,6 @@
       ],
       "Switch plans": [
         "Změnit tarif"
-      ],
-      "View the invitation": [
-        "Zobrazit pozvánku"
-      ],
-      "View the invitations": [
-        "Zobrazit pozvánky"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -8540,8 +8531,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Neustále se snažíme vylepšovat ${ BRAND_NAME } ${ config.appName }. Jak jste spokojeni s našimi službami?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále se snažíme vylepšovat ${ config.appName }. Nakolik uspokojivá je vaše zkušenost?"
       ]
     },
     "new_plans: Subtext": {

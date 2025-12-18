@@ -1462,9 +1462,6 @@
       "Authenticator problem": [
         "Problemă autentificator"
       ],
-      "Black Friday": [
-        "Vinerea Neagră"
-      ],
       "Bridge problem": [
         "Problemă „Bridge”"
       ],
@@ -3995,8 +3992,8 @@
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }"
       ],
-      "You cannot enter the organizer email": [
-        "Nu puteți introduce e-mailul organizatorului"
+      "You cannot enter the organizer's email": [
+        "Nu puteți introduce adresa de e-mail a organizatorului."
       ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
@@ -4331,12 +4328,6 @@
       ],
       "Switch plans": [
         "Schimbare plan"
-      ],
-      "View the invitation": [
-        "Afișare invitație"
-      ],
-      "View the invitations": [
-        "Afișare invitații"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -8417,8 +8408,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Ne străduim mereu să îmbunătățim ${ BRAND_NAME } ${ config.appName }. Cum evaluați experiența avută?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Ne străduim mereu să îmbunătățim ${ config.appName }. Cum evaluați experiența avută?"
       ]
     },
     "new_plans: Subtext": {
