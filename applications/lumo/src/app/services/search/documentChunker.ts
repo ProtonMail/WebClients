@@ -72,14 +72,10 @@ function extractChunkTitle(text: string, startPos: number): string | undefined {
 
 export function chunkDocument(doc: DriveDocument): DriveDocument[] {
     const content = doc.content;
-    const tokens = estimateTokens(content);
     
     if (!needsChunking(content)) {
-        console.log(`[Chunker] "${doc.name}" has ${tokens} tokens (threshold: ${CHUNKING_THRESHOLD_TOKENS}), no chunking needed`);
         return [doc];
     }
-    
-    console.log(`[Chunker] "${doc.name}" has ${tokens} tokens, will be chunked`);
     
     const maxChunkChars = MAX_CHUNK_TOKENS * CHARS_PER_TOKEN;
     const overlapChars = OVERLAP_TOKENS * CHARS_PER_TOKEN;
@@ -163,13 +159,10 @@ export function chunkDocument(doc: DriveDocument): DriveDocument[] {
         chunkIndex++;
     }
     
-    // Update totalChunks on all chunks
     const totalChunks = chunks.length;
     chunks.forEach(chunk => {
         chunk.totalChunks = totalChunks;
     });
-    
-    console.log(`[DocumentChunker] Split "${doc.name}" (${estimateTokens(content)} tokens) into ${totalChunks} chunks`);
     
     return chunks;
 }
