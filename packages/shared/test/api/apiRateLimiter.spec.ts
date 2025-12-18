@@ -49,5 +49,19 @@ describe('ApiRateLimiter', () => {
 
             expect(rateLimiter.getCallCount('https://api.example.com/test')).toBe(1);
         });
+
+        it('should configure the rate limiter', () => {
+            const rateLimiter = new ApiRateLimiter({
+                maxRequests: 1,
+                tracingEnabled: false,
+                windowMs: 10 * 1000,
+            });
+            rateLimiter.configure({ maxRequests: 2, windowMs: 2000 });
+            rateLimiter.enable();
+            expect(rateLimiter.getCallCount('https://api.example.com/test')).toBe(0);
+            rateLimiter.recordCallOrThrow('https://api.example.com/test');
+            rateLimiter.recordCallOrThrow('https://api.example.com/test');
+            expect(rateLimiter.getCallCount('https://api.example.com/test')).toBe(2);
+        });
     });
 });
