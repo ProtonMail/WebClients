@@ -1,10 +1,9 @@
-import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
-
 import type { AesGcmCryptoKey } from '../../../crypto/types';
+import { deriveSearchIndexDek } from '../../../crypto';
 
 export interface CryptoAdapter {
-    deriveSearchKey(userId: string): Promise<CryptoKey>;
+    setSearchIndexKey(searchIndexKeyBase64: string): void;
+    deriveSearchDek(): Promise<CryptoKey>;
     encrypt(data: Uint8Array<ArrayBuffer>, key: CryptoKey, ad?: string): Promise<string>;
     decrypt(
         encrypted: string | Uint8Array<ArrayBuffer>,
@@ -14,21 +13,40 @@ export interface CryptoAdapter {
 }
 
 /**
- * Crypto adapter that derives a deterministic per-user search key and reuses
- * the existing crypto helpers to encrypt/decrypt blobs stored in IndexedDB.
+ * Crypto adapter that derives the search index DEK from the search index key
+ * using the same HKDF pattern as space DEK derivation.
+ * 
+ * The search index key should be:
+ * 1. Generated once per user
+ * 2. Wrapped with the master key and stored
+ * 3. Passed to this adapter after being unwrapped
  */
 export class LumoCryptoAdapter implements CryptoAdapter {
+    private searchIndexKeyBytes: Uint8Array<ArrayBuffer> | null = null;
+    private cachedDek: CryptoKey | null = null;
+
     constructor(
         private encryptFn: (data: Uint8Array<ArrayBuffer>, key: AesGcmCryptoKey, ad?: string) => Promise<string>,
         private decryptFn: (data: string, key: AesGcmCryptoKey, ad: string) => Promise<Uint8Array<ArrayBuffer>>
     ) {}
 
-    async deriveSearchKey(userId: string): Promise<CryptoKey> {
-        const encoder = new TextEncoder();
-        const material = encoder.encode(`lumo-foundation-search:${userId}`);
-        const hash = await computeSHA256(material);
+    setSearchIndexKey(searchIndexKeyBase64: string): void {
+        this.searchIndexKeyBytes = Uint8Array.fromBase64(searchIndexKeyBase64);
+        this.cachedDek = null; // Clear cache when key changes
+    }
 
-        return importKey(hash);
+    async deriveSearchDek(): Promise<CryptoKey> {
+        if (this.cachedDek) {
+            return this.cachedDek;
+        }
+
+        if (!this.searchIndexKeyBytes) {
+            throw new Error('Search index key not set. Call setSearchIndexKey() before deriving DEK.');
+        }
+
+        const dek = await deriveSearchIndexDek(this.searchIndexKeyBytes);
+        this.cachedDek = dek.encryptKey;
+        return this.cachedDek;
     }
 
     async encrypt(data: Uint8Array<ArrayBuffer>, key: CryptoKey, ad?: string): Promise<string> {
