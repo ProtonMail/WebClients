@@ -3,6 +3,7 @@ import type { DriveDocument } from '../../types/documents';
 import { DbApi } from '../../indexedDb/db';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 import { BM25Index } from './bm25Index';
+import { chunkDocument, estimateTokens } from './documentChunker';
 
 // Mirror worker message types to avoid drift
 const WorkerMessageType = {
@@ -548,16 +549,50 @@ export class SearchService {
             return { success: false, error: 'No content to index' };
         }
 
-        // Deduplicate by id; last write wins
-        const remaining = this.driveDocuments.filter(
-            (existing) => !docsWithContent.some((incoming) => incoming.id === existing.id)
-        );
-        this.driveDocuments = [...remaining, ...docsWithContent];
-
-        // Add documents to BM25 index for relevance ranking
+        // Chunk large documents into smaller, more searchable pieces
+        const processedDocs: DriveDocument[] = [];
+        let chunkedCount = 0;
+        
         for (const doc of docsWithContent) {
+            const chunks = chunkDocument(doc);
+            if (chunks.length > 1) {
+                chunkedCount++;
+                console.log(`[SearchService] Chunked "${doc.name}" (${estimateTokens(doc.content)} tokens) into ${chunks.length} chunks`);
+            }
+            processedDocs.push(...chunks);
+        }
+        
+        if (chunkedCount > 0) {
+            console.log(`[SearchService] Chunked ${chunkedCount} large documents into ${processedDocs.length} total pieces`);
+        }
+
+        // Identify which documents are being updated
+        const incomingParentIds = new Set(docsWithContent.map(d => d.id));
+        
+        // First remove old entries from BM25 (need to do this BEFORE updating driveDocuments)
+        const oldDocsToRemove = this.driveDocuments.filter((existing) => {
+            const parentId = existing.parentDocumentId || existing.id;
+            return incomingParentIds.has(parentId) || incomingParentIds.has(existing.id);
+        });
+        
+        for (const oldDoc of oldDocsToRemove) {
+            const searchableText = `${oldDoc.name} ${oldDoc.folderPath || ''} ${oldDoc.content}`;
+            this.bm25Index.removeDocument(oldDoc.id, searchableText);
+        }
+        
+        // Now update driveDocuments - remove old, add new
+        const remaining = this.driveDocuments.filter((existing) => {
+            const parentId = existing.parentDocumentId || existing.id;
+            return !incomingParentIds.has(parentId) && !incomingParentIds.has(existing.id);
+        });
+        this.driveDocuments = [...remaining, ...processedDocs];
+
+        // Add new entries to BM25
+        for (const doc of processedDocs) {
             // Include name and path in the searchable text
-            const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
+            // For chunks, also include the chunk title if available
+            const chunkContext = doc.chunkTitle ? ` [${doc.chunkTitle}]` : '';
+            const searchableText = `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
             this.bm25Index.addDocument(doc.id, searchableText);
         }
 
@@ -635,20 +670,69 @@ export class SearchService {
      * Get a document by its ID (nodeUid for Drive files)
      */
     getDocumentById(documentId: string): DriveDocument | null {
-        return this.driveDocuments.find((doc) => doc.id === documentId) || null;
+        // Try exact ID match first
+        const exactMatch = this.driveDocuments.find((doc) => doc.id === documentId);
+        if (exactMatch) return exactMatch;
+        
+        // If not found, check if this is a parent ID and return the first chunk
+        // This handles the case where we look up by parent ID after chunking
+        const chunkMatch = this.driveDocuments.find((doc) => doc.parentDocumentId === documentId);
+        if (chunkMatch) {
+            // Return a "virtual" document representing the full content
+            // by finding all chunks and combining them
+            const allChunks = this.driveDocuments
+                .filter(doc => doc.parentDocumentId === documentId)
+                .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+            
+            if (allChunks.length > 0) {
+                // Return a combined document
+                return {
+                    ...allChunks[0],
+                    id: documentId,
+                    content: allChunks.map(c => c.content).join('\n\n'),
+                    isChunk: false,
+                    parentDocumentId: undefined,
+                    chunkIndex: undefined,
+                    totalChunks: undefined,
+                };
+            }
+        }
+        
+        return null;
     }
 
     /**
      * Get a document by its name (for file mentions)
+     * For chunked documents, returns combined content from all chunks
      */
     getDocumentByName(name: string): DriveDocument | null {
-        // Try exact match first
-        const exactMatch = this.driveDocuments.find((doc) => doc.name === name);
+        // Try exact match first (non-chunked documents)
+        const exactMatch = this.driveDocuments.find((doc) => doc.name === name && !doc.isChunk);
         if (exactMatch) return exactMatch;
-
-        // Try case-insensitive match
+        
+        // For chunked documents, find all chunks with this name and combine them
+        const chunks = this.driveDocuments
+            .filter((doc) => doc.name === name && doc.isChunk)
+            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+        
+        if (chunks.length > 0) {
+            // Return a combined document
+            return {
+                ...chunks[0],
+                id: chunks[0].parentDocumentId || chunks[0].id,
+                content: chunks.map(c => c.content).join('\n\n'),
+                isChunk: false,
+                parentDocumentId: undefined,
+                chunkIndex: undefined,
+                totalChunks: undefined,
+            };
+        }
+        
+        // Fallback: try case-insensitive match (non-chunked)
         const lowerName = name.toLowerCase();
-        return this.driveDocuments.find((doc) => doc.name.toLowerCase() === lowerName) || null;
+        return this.driveDocuments.find(
+            (doc) => doc.name.toLowerCase() === lowerName && !doc.isChunk
+        ) || null;
     }
 
     /**
@@ -710,9 +794,10 @@ export class SearchService {
             return [];
         }
 
-        // If there are few documents (≤ topK), just return all of them sorted by relevance
-        // This ensures we always provide context when documents exist
-        const effectiveTopK = Math.min(topK, spaceDocuments.length);
+        // For chunks, we want to rank all chunks but then merge by parent document
+        // Request more candidates initially to ensure we get best chunks from each doc
+        const initialTopK = topK * 3; // Get more candidates for merging
+        const effectiveTopK = Math.min(initialTopK, spaceDocuments.length);
 
         // Prepare candidates for BM25 ranking
         const candidates = spaceDocuments.map((doc) => ({
@@ -724,16 +809,47 @@ export class SearchService {
         // Use BM25 to rank documents by relevance (minScore=0 to include all, then take topK)
         const rankedResults = this.bm25Index.rankDocuments(query, candidates, effectiveTopK, minScore);
 
-        console.log(`[SearchService] RAG: Ranked ${rankedResults.length} documents for query "${query.slice(0, 50)}..."`);
-        rankedResults.forEach((r, i) => {
-            console.log(`  [${i + 1}] ${r.document.doc.name} (score: ${r.score.toFixed(4)})`);
+        console.log(`[SearchService] RAG: Ranked ${rankedResults.length} candidates for query "${query.slice(0, 50)}..."`);
+
+        // Merge chunks from the same parent document (keep best scoring chunk per document)
+        const docBestChunk = new Map<string, { doc: DriveDocument; score: number }>();
+        
+        for (const { document: candidate, score } of rankedResults) {
+            const doc = candidate.doc;
+            // Use parentDocumentId for chunks, otherwise use the document id
+            const parentId = doc.parentDocumentId || doc.id;
+            
+            const existing = docBestChunk.get(parentId);
+            if (!existing || score > existing.score) {
+                docBestChunk.set(parentId, { doc, score });
+            }
+        }
+        
+        // Convert to array and take top K documents (not chunks)
+        const mergedResults = Array.from(docBestChunk.values())
+            .sort((a, b) => b.score - a.score)
+            .slice(0, topK);
+
+        console.log(`[SearchService] RAG: After merging chunks, ${mergedResults.length} unique documents:`);
+        mergedResults.forEach((r, i) => {
+            const chunkInfo = r.doc.isChunk ? ` (chunk ${r.doc.chunkIndex}/${r.doc.totalChunks})` : '';
+            console.log(`  [${i + 1}] ${r.doc.name}${chunkInfo} (score: ${r.score.toFixed(4)})`);
         });
 
-        return rankedResults.map(({ document: candidate, score }) => ({
-            id: candidate.doc.id,
-            name: candidate.doc.name,
-            content: candidate.doc.content,
+        return mergedResults.map(({ doc, score }) => ({
+            // Use parent document ID for consistent referencing
+            id: doc.parentDocumentId || doc.id,
+            name: doc.name,
+            // Return chunk content (not full document) - this is more relevant to the query
+            content: doc.content,
             score,
+            // Include chunk metadata for display
+            ...(doc.isChunk && {
+                isChunk: true,
+                chunkIndex: doc.chunkIndex,
+                totalChunks: doc.totalChunks,
+                chunkTitle: doc.chunkTitle,
+            }),
         }));
     }
 
@@ -798,6 +914,12 @@ export class SearchService {
         }, 0);
 
         const bm25Stats = this.bm25Index.getStats();
+        
+        // Count unique documents vs chunks
+        const chunks = this.driveDocuments.filter(doc => doc.isChunk);
+        const nonChunks = this.driveDocuments.filter(doc => !doc.isChunk);
+        const uniqueParentIds = new Set(chunks.map(doc => doc.parentDocumentId));
+        const uniqueDocCount = nonChunks.length + uniqueParentIds.size;
 
         // Prefer worker/IDB status when user is known
         if (this.userId) {
@@ -812,6 +934,8 @@ export class SearchService {
             return {
                 ...status,
                 driveDocuments: this.driveDocuments.length,
+                driveDocumentsUnique: uniqueDocCount,
+                driveChunks: chunks.length,
                 bm25Stats: {
                     totalDocs: bm25Stats.totalDocs,
                     vocabularySize: bm25Stats.vocabularySize,
@@ -827,6 +951,8 @@ export class SearchService {
             isEnabled: true,
             totalBytes,
             driveDocuments: this.driveDocuments.length,
+            driveDocumentsUnique: uniqueDocCount,
+            driveChunks: chunks.length,
             bm25Stats: {
                 totalDocs: bm25Stats.totalDocs,
                 vocabularySize: bm25Stats.vocabularySize,
