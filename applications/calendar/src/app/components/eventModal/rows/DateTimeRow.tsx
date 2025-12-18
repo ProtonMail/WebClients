@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -47,7 +47,7 @@ export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn,
     const [showTzSelector, setShowTzSelector] = useState<boolean>(!canToggleTzSelector);
     const handleChangeStart = (tzid: string) => {
         const startUtcDate = getTimeInUtc(start, false);
-        const newStartUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), tzid));
+        const newStartUtcDate = fromUTCDateToTimezone(startUtcDate, tzid);
         const newStart = getDateTimeState(newStartUtcDate, tzid);
         const newFrequencyModel = getFrequencyModelChange(start, newStart, frequencyModel);
 
@@ -59,7 +59,7 @@ export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn,
     };
     const handleChangeEnd = (tzid: string) => {
         const endUtcDate = getTimeInUtc(end, false);
-        const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));
+        const newEndUtcDate = fromUTCDateToTimezone(endUtcDate, tzid);
 
         setModel({
             ...model,

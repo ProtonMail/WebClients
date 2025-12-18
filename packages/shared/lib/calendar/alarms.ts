@@ -2,7 +2,7 @@ import truncate from '@proton/utils/truncate';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { MINUTE } from '../constants';
-import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
+import { fromUTCDateToTimezone, getTimezoneOffset } from '../date/timezone';
 import { omit } from '../helpers/object';
 import type {
     NotificationModel,
@@ -37,8 +37,8 @@ export const getAlarmMessage = ({ component, start, now, tzid, formatOptions }: 
 
     // To determine if the event is happening in timezoned today, tomorrow, this month or this year,
     // we pass fake UTC dates to the getAlarmMessage helper
-    const startFakeUTCDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStartDate), tzid));
-    const nowFakeUTCDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
+    const startFakeUTCDate = fromUTCDateToTimezone(utcStartDate, tzid);
+    const nowFakeUTCDate = fromUTCDateToTimezone(now, tzid);
     const isAllDay = getIsAllDay(component);
 
     return getAlarmMessageText({

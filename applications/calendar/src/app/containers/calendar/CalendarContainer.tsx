@@ -29,10 +29,10 @@ import {
 import { HOUR, SECOND } from '@proton/shared/lib/constants';
 import { MILLISECONDS_IN_MINUTE, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import {
-    convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     formatGMTOffsetAbbreviation,
     fromUTCDate,
+    fromUTCDateToTimezone,
     getIsEquivalentTimeZone,
     getTimezone,
     getTimezoneOffset,
@@ -264,7 +264,7 @@ const CalendarContainer = ({
     }, [startupModalOpen]);
 
     const utcNowDateInTimezone = useMemo(() => {
-        return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));
+        return fromUTCDateToTimezone(nowDate, tzid);
     }, [nowDate, tzid]);
 
     const utcDefaultDateRef = useRef<{ prev: Date; value: Date }>();
