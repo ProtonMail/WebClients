@@ -39,7 +39,7 @@ export type UploadEvent = FileUploadEvent | FolderCreationEvent | PhotosUploadEv
 
 type BaseFileUploadTask = {
     uploadId: string;
-    type: NodeType.File;
+    type: NodeType.File | NodeType.Photo;
     name: string;
     batchId: string;
     file: File;
@@ -49,11 +49,13 @@ type BaseFileUploadTask = {
 };
 
 export type FileUploadTask = BaseFileUploadTask & {
+    type: NodeType.File;
     parentUid: string;
     isForPhotos?: false;
 };
 
 export type PhotosUploadTask = BaseFileUploadTask & {
+    type: NodeType.Photo;
     isForPhotos: true;
 };
 
@@ -132,7 +134,7 @@ export type BaseUploadItem = {
 };
 
 type BaseFileUploadItem = BaseUploadItem & {
-    type: NodeType.File;
+    type: NodeType.File | NodeType.Photo;
     file: File;
     parentUploadId?: string;
     uploadedBytes: number;
@@ -144,10 +146,12 @@ type BaseFileUploadItem = BaseUploadItem & {
 };
 
 export type FileUploadItem = BaseFileUploadItem & {
+    type: NodeType.File;
     parentUid: string;
 };
 
 export type PhotosUploadItem = BaseFileUploadItem & {
+    type: NodeType.Photo;
     isForPhotos: true;
 };
 

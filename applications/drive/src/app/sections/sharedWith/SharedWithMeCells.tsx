@@ -22,7 +22,6 @@ import { AcceptRejectCell } from './driveExplorerCells/AcceptRejectCell';
 import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/SharedByCell';
 import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
-import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
 
 export const getSharedWithMeCells = ({
     viewportWidth,
@@ -59,7 +58,9 @@ export const getSharedWithMeCells = ({
                         uid={uid}
                         name={item.name}
                         type={item.type}
-                        mediaType={item.type === NodeType.File ? item.mediaType : undefined}
+                        mediaType={
+                            item.type === NodeType.File || item.type === NodeType.Photo ? item.mediaType : undefined
+                        }
                         thumbnail={thumbnail}
                         isInvitation={item.itemType === ItemType.INVITATION}
                         haveSignatureIssues={item.itemType === ItemType.DIRECT_SHARE ? item.haveSignatureIssues : false}
@@ -109,7 +110,6 @@ export const getSharedWithMeCells = ({
             const RenderedSharedOnCell = () => {
                 const { setVolumeShareIds } = useVolumesState();
                 const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
-                const { acceptLegacyInvitation, rejectLegacyInvitation } = useLegacyInvitationsActions();
                 const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
                 if (!item) {
                     return null;
@@ -121,27 +121,16 @@ export const getSharedWithMeCells = ({
                             uid={uid}
                             invitationUid={item.invitation.uid}
                             onAcceptInvitation={async (uid, invitationUid) => {
-                                if (item.type === NodeType.Album) {
-                                    await acceptLegacyInvitation(uid, invitationUid);
-                                } else {
-                                    await acceptInvitation(uid, invitationUid);
-                                    onRenderItem(uid);
-                                }
+                                await acceptInvitation(uid, invitationUid, item.type);
+                                onRenderItem(uid);
                             }}
                             onRejectInvitation={async (uid, invitationUid) => {
-                                if (item.type === NodeType.Album) {
-                                    await rejectLegacyInvitation(showConfirmModal, {
-                                        uid: uid,
-                                        invitationUid: invitationUid,
-                                    });
-                                } else {
-                                    await rejectInvitation(showConfirmModal, {
-                                        uid,
-                                        invitationUid,
-                                        name: item.name,
-                                        type: item.type,
-                                    });
-                                }
+                                await rejectInvitation(showConfirmModal, {
+                                    uid,
+                                    invitationUid,
+                                    name: item.name,
+                                    type: item.type,
+                                });
                             }}
                         />
                     );
@@ -218,7 +207,7 @@ export const getSharedWithMeGrid = ({
                         haveSignatureIssues={
                             (item.itemType === ItemType.DIRECT_SHARE && item.haveSignatureIssues) || false
                         }
-                        isFile={item.type === NodeType.File}
+                        isFile={item.type === NodeType.File || item.type === NodeType.Photo}
                         className="mr-2 shrink-0"
                     />
 
@@ -243,7 +232,7 @@ export const getSharedWithMeGrid = ({
             const iconText = getLinkIconText({
                 linkName: item.name,
                 mimeType: item.mediaType || '',
-                isFile: item.type === NodeType.File,
+                isFile: item.type === NodeType.File || item.type === NodeType.Photo,
             });
 
             const IconComponent = (
@@ -273,7 +262,10 @@ export const getSharedWithMeGrid = ({
                     )}
                     {!thumbnail?.sdUrl && item.type !== NodeType.Album && (
                         <FileIcon
-                            mimeType={(item.type === NodeType.File && item.mediaType) || 'Folder'}
+                            mimeType={
+                                ((item.type === NodeType.File || item.type === NodeType.Photo) && item.mediaType) ||
+                                'Folder'
+                            }
                             alt={iconText}
                             size={12}
                             style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}

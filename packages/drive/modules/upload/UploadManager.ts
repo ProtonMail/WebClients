@@ -153,7 +153,7 @@ export class UploadManager {
         if (isForPhotos) {
             for (const file of filesArray) {
                 const uploadId = queueStore.addItem({
-                    type: NodeType.File,
+                    type: NodeType.Photo,
                     file,
                     name: file.name,
                     uploadedBytes: 0,

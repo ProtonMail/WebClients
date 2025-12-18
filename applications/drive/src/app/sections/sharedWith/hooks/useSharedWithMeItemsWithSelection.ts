@@ -94,7 +94,7 @@ export const useSharedWithMeItemsWithSelection = () => {
     // Map regular items for sorting
     const regularItemsToSort = regularItems.map((item) => ({
         uid: getKeyUid(item),
-        isFile: item.type === NodeType.File,
+        isFile: item.type === NodeType.File || item.type === NodeType.Photo,
         name: item.name,
         mimeType: item.mediaType || '',
         size: 0,
@@ -140,7 +140,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                         rootShareId: '',
                         mimeType: storeItem.mediaType || '',
                         linkId: '',
-                        isFile: storeItem.type === NodeType.File,
+                        isFile: storeItem.type === NodeType.File || storeItem.type === NodeType.Photo,
                         name: storeItem.name,
                         size: storeItem.size || 0,
                         isInvitation: false,
@@ -156,7 +156,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                         rootShareId: storeItem.shareId,
                         mimeType: storeItem.mediaType || '',
                         linkId: nodeId,
-                        isFile: storeItem.type === NodeType.File,
+                        isFile: storeItem.type === NodeType.File || storeItem.type === NodeType.Photo,
                         name: storeItem.name,
                         size: storeItem.size || 0,
                         thumbnailId: storeItem.thumbnailId,
@@ -181,7 +181,7 @@ export const useSharedWithMeItemsWithSelection = () => {
     const handleOpenItem = useCallback(
         (uid: string) => {
             const item = getSharedWithMeStoreItem(uid);
-            if (!item) {
+            if (!item || item.itemType === ItemType.INVITATION) {
                 return;
             }
             if (item.itemType === ItemType.BOOKMARK) {
@@ -226,7 +226,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                 return;
             }
 
-            navigateToLink(item.shareId, nodeId, item.type === NodeType.File);
+            navigateToLink(item.shareId, nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
         },
         [navigateToLink, openBookmark, isDocsEnabled, openDocument, navigateToAlbum, getSharedWithMeStoreItem]
     );
