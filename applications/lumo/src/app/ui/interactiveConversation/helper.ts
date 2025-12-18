@@ -200,6 +200,9 @@ async function retrieveDocumentContextForProject(
         // Reuse existing attachment IDs if we already have this document (by driveNodeId)
         const attachments: Attachment[] = relevantDocs.map(doc => {
             const normalizedScore = topScore > 0 ? doc.score / topScore : 0;
+            // Extract chunk info from doc if present
+            const isChunk = (doc as { isChunk?: boolean }).isChunk;
+            const chunkTitle = (doc as { chunkTitle?: string }).chunkTitle;
 
             // Check if we already have an attachment for this driveNodeId
             const existingAttachment = Object.values(allAttachments).find(
@@ -207,11 +210,12 @@ async function retrieveDocumentContextForProject(
             );
 
             if (existingAttachment) {
-                // Reuse the existing attachment, but update the relevance score
+                // Reuse the existing attachment, but update the relevance score and chunk info
                 console.log(`[RAG] Reusing existing attachment for ${doc.name} (ID: ${existingAttachment.id})`);
                 return {
                     ...existingAttachment,
                     relevanceScore: normalizedScore, // Update score for this query
+                    ...(isChunk && { isChunk, chunkTitle }),
                 };
             }
 
@@ -226,6 +230,7 @@ async function retrieveDocumentContextForProject(
                 autoRetrieved: true,
                 driveNodeId: doc.id,
                 relevanceScore: normalizedScore,
+                ...(isChunk && { isChunk, chunkTitle }),
                 // AttachmentPriv
                 filename: doc.name,
                 markdown: doc.content,
@@ -235,7 +240,10 @@ async function retrieveDocumentContextForProject(
         console.log(`[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
             `\n  Candidates: ${candidateDocs.length}, Non-zero: ${nonZeroDocs.length}, Selected: ${relevantDocs.length}`,
             `\n  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * MIN_RELATIVE_SCORE).toFixed(4)}`,
-            `\n  Selected: ${attachments.map(a => `${a.filename} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`).join(', ')}`);
+            `\n  Selected: ${attachments.map(a => {
+                const chunkInfo = a.isChunk ? ` [CHUNK: ${a.chunkTitle || 'untitled'}]` : '';
+                return `${a.filename}${chunkInfo} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`;
+            }).join(', ')}`);
 
         return {
             context: searchService.formatRAGContext(relevantDocs),

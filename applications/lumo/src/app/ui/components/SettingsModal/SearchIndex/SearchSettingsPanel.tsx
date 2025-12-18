@@ -4,9 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 
 import { ENABLE_FOUNDATION_SEARCH } from '../../../../config/search';
 import { useLumoUserSettings } from '../../../../hooks';
@@ -25,7 +23,7 @@ import { SearchIndexManagement } from './SearchIndexManagement';
 import { SearchIndexPrivacy } from './SearchIndexPrivacy';
 import { SearchIndexStats } from './SearchIndexStats';
 import { SearchInspectDetail } from './SearchInspectDetail';
-import { SearchInspectList } from './SearchInspectList';
+import { SearchInspectList, type GroupedDocument } from './SearchInspectList';
 
 const SettingsSectionItem = ({
     icon,
@@ -76,7 +74,7 @@ export const SearchSettingsPanel = () => {
     const [statusCheckCount, setStatusCheckCount] = useState(0);
     const [viewMode, setViewMode] = useState<'stats' | 'inspectList' | 'inspectDetail'>('stats');
     const [inspectDocs, setInspectDocs] = useState<DriveDocument[]>([]);
-    const [selectedDoc, setSelectedDoc] = useState<DriveDocument | null>(null);
+    const [selectedGrouped, setSelectedGrouped] = useState<GroupedDocument | null>(null);
 
     useEffect(() => {
         if (!ENABLE_FOUNDATION_SEARCH || !userId) return;
@@ -220,21 +218,21 @@ export const SearchSettingsPanel = () => {
             const service = SearchService.get(userId);
             const docs = await service.getDriveDocuments();
             setInspectDocs(docs);
-            setSelectedDoc(null);
+            setSelectedGrouped(null);
             setViewMode('inspectList');
         } catch (error) {
             console.error('[SearchSettings] Failed to inspect index', error);
             setInspectDocs([]);
-            setSelectedDoc(null);
+            setSelectedGrouped(null);
             setViewMode('inspectList');
         }
     };
 
     // Inspect detail
-    if (viewMode === 'inspectDetail' && selectedDoc) {
+    if (viewMode === 'inspectDetail' && selectedGrouped) {
         return (
             <SearchInspectDetail
-                doc={selectedDoc}
+                grouped={selectedGrouped}
                 formatBytes={formatBytes}
                 onBack={() => setViewMode('inspectList')}
             />
@@ -249,80 +247,11 @@ export const SearchSettingsPanel = () => {
                 docs={inspectDocs}
                 formatBytes={formatBytes}
                 onBack={() => setViewMode('stats')}
-                onSelect={(doc) => {
-                    setSelectedDoc(doc);
+                onSelect={(grouped) => {
+                    setSelectedGrouped(grouped);
                     setViewMode('inspectDetail');
                 }}
             />
-        );
-    }
-
-    // Inspect detail
-    if (viewMode === 'inspectDetail' && selectedDoc) {
-        const doc = selectedDoc;
-        /* eslint-disable no-nested-ternary */
-        const sizeText =
-            doc.size && doc.size > 0
-                ? formatBytes(doc.size)
-                : doc.content
-                  ? formatBytes(new TextEncoder().encode(doc.content).byteLength)
-                  : c('Info').t`Unknown size`;
-        return (
-            <div className="flex flex-column gap-3">
-                <div className="flex items-center gap-2">
-                    <Button shape="ghost" size="small" onClick={() => setViewMode('inspectList')}>
-                        <Icon name="arrow-left" size={4} className="mr-1" />
-                        {c('Action').t`Back to Drive documents`}
-                    </Button>
-                    <span className="text-semibold truncate">{doc.name}</span>
-                </div>
-
-                <div
-                    className="p-3 rounded border bg-weak flex gap-3 items-start"
-                    style={{ borderColor: 'var(--border-weak)' }}
-                >
-                    <FileIcon mimeType={doc.mimeType || 'application/octet-stream'} size={5} />
-                    <div className="flex-1 min-w-0">
-                        <div className="text-semibold text-lg truncate mb-2">{doc.name}</div>
-                        <div
-                            className="grid"
-                            style={{ gridTemplateColumns: 'max-content 1fr', rowGap: '0.35rem', columnGap: '0.75rem' }}
-                        >
-                            <span className="text-sm color-weak">{c('Info').t`Folder:`}</span>
-                            <span className="text-sm truncate">{doc.folderPath || doc.folderId || '—'}</span>
-
-                            <span className="text-sm color-weak">{c('Info').t`Space:`}</span>
-                            <span className="text-sm truncate">{doc.spaceId || '—'}</span>
-
-                            <span className="text-sm color-weak">{c('Info').t`MIME:`}</span>
-                            <span className="text-sm">{doc.mimeType || c('Info').t`Unknown`}</span>
-
-                            <span className="text-sm color-weak">{c('Info').t`Size:`}</span>
-                            <span className="text-sm">{sizeText}</span>
-
-                            <span className="text-sm color-weak">{c('Info').t`Modified:`}</span>
-                            <span className="text-sm">
-                                {doc.modifiedTime ? new Date(doc.modifiedTime).toLocaleString() : '—'}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                {doc.content && (
-                    <div
-                        className="p-3 border rounded bg-weak"
-                        style={{ borderColor: 'var(--border-weak)', maxHeight: 400, overflowY: 'auto' }}
-                    >
-                        <div className="text-xs color-weak mb-2">
-                            {c('Info').t`Indexed content (first 2000 chars):`}
-                        </div>
-                        <pre className="text-sm whitespace-pre-wrap break-words m-0" style={{ lineHeight: 1.4 }}>
-                            {doc.content.slice(0, 2000)}
-                            {doc.content.length > 2000 ? '…' : ''}
-                        </pre>
-                    </div>
-                )}
-            </div>
         );
     }
 

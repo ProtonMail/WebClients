@@ -28,5 +28,11 @@ export interface DriveDocument {
     folderId: string;
     folderPath: string;
     spaceId?: string;
+    // Chunking metadata (for large documents split into sections)
+    isChunk?: boolean;
+    parentDocumentId?: string; // Original document ID for chunks
+    chunkIndex?: number;
+    totalChunks?: number;
+    chunkTitle?: string; // Section title or context for this chunk
 }
 
