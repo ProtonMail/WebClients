@@ -83,9 +83,6 @@
       "Add external address": [
         "Añadir una dirección externa"
       ],
-      "add more seats": [
-        "añadir más licencias"
-      ],
       "Add PayPal": [
         "Añadir PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "Group owner": [
+        "Propietario de grupo"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -1100,9 +1100,6 @@
       "User": [
         "Usuario"
       ],
-      "Users and addresses": [
-        "Usuarios y direcciones"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Reanudar el reenvío"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "añadir más licencias"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Problema con el autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Ver invitación"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "Pendiente"
       ],
-      "Pending invitation": [
-        "Invitación pendiente"
-      ],
-      "Pending invitations": [
-        "Invitaciones pendientes"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Lo sentimos, no puedes cambiar de plan en este momento."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
@@ -5200,6 +5191,9 @@
       ],
       "Select your deal": [
         "Elige tu oferta"
+      ],
+      "Select your payment method:": [
+        "Selecciona tu método de pago:"
       ],
       "Select your pricing plan": [
         "Selecciona el precio del plan"
@@ -6558,9 +6552,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ayuda a escribir, responder y corregir correos electrónicos. Si está deshabilitado, solo los administradores tendrán acceso. Administrar para usuarios individuales en ${ userAndAddress } o ${ addMoreSeats }"
-      ],
       "here": [
         "aquí"
       ],
@@ -7008,6 +6999,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nuestras alertas ponen la seguridad en primer lugar. Si no reconoces la información vulnerada, puedes ignorar este informe."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a plan": [
         "Pagado por un plan"
@@ -8188,6 +8182,11 @@
       ],
       "Selected color:": [
         "Color seleccionado:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ayuda a escribir, responder y corregir correos electrónicos. Si se desactiva, solo los administradores tendrán acceso. Gestiónalo para usuarios individuales en ${ userAndAddresses } o ${ addMoreSeats }."
       ]
     },
     "Info for cash payment method": {
@@ -9433,6 +9432,11 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ]
     },
     "Live Chat Modal": {
@@ -16143,8 +16147,8 @@
       "Did you know?": [
         "¿Lo sabías?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Obtén ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones con una recuperación de archivos de 10 años."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Consigue ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones anteriores con el historial de archivos de 10 años."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un paquete. Solo desde ${ fallBackString } cada mes."

@@ -83,9 +83,6 @@
       "Add external address": [
         "Tambah alamat eksternal"
       ],
-      "add more seats": [
-        "tambah lebih banyak kuota"
-      ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Dimengerti"
+      ],
+      "Group owner": [
+        "Pemilik grup"
       ],
       "Help and feedback": [
         "Bantuan dan saran"
@@ -1099,9 +1099,6 @@
       ],
       "User": [
         "Pengguna"
-      ],
-      "Users and addresses": [
-        "Pengguna dan perangkat"
       ],
       "Verify": [
         "Verifikasi"
@@ -1807,9 +1804,6 @@
       "Authenticator problem": [
         "Kesalahan autentikator"
       ],
-      "Black Friday": [
-        "Jumat Hitam"
-      ],
       "Bridge problem": [
         "Masalah bridge"
       ],
@@ -1887,6 +1881,9 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Tambah pengguna secara manual"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -1914,11 +1911,17 @@
       "Invite your team": [
         "Undang tim Anda"
       ],
+      "Manage global VPN permissions": [
+        "Kelola perizinan VPN global"
+      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
+      ],
+      "Secure your organization": [
+        "Amankan organisasi Anda"
       ],
       "Send": [
         "Kirim"
@@ -3189,14 +3192,23 @@
       "Connect your CRM, website, printers, and more.": [
         "Hubungkan CRM, situs web, printer, dan berbagai hal lainnya yang Anda miliki dengan mudah."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Buat Gateway untuk memberikan pengguna Anda akses ke sumber daya IT Anda melalui server khusus."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Buat pertemuan Zoom dan tambahkan rincian untuk bergabung ke acara Anda hanya dengan sekali klik."
       ],
       "Create groups you can email with a single address.": [
         "Buat grup yang dapat Anda kirimi email dengan satu alamat."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Buat akun pengguna baru atau impor pengguna dengan penyediaan SCIM SSO (single sign-on)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Tentukan pengguna mana saja yang dapat terhubung ke masing-masing dari 120+ lokasi server terbagi kami."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Akses email dan kalender Anda pada desktop dan perangkat seluler dengan mudah."
@@ -3242,6 +3254,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Apabila Anda belum memiliki metode yang terpasang, aktifkan sebagian metode pemulihan yang ada untuk memastikan Anda tidak akan pernah kehilangan akses ke ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
@@ -4508,12 +4523,6 @@
       ],
       "View invitation": [
         "Tampilkan undangan"
-      ],
-      "View the invitation": [
-        "Lihat undangan"
-      ],
-      "View the invitations": [
-        "Tampilkan undangan"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4568,12 +4577,6 @@
       ],
       "Pending": [
         "Ditunda"
-      ],
-      "Pending invitation": [
-        "Undangan belum ditanggapi"
-      ],
-      "Pending invitations": [
-        "Undangan belum ditanggapi"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -6437,6 +6440,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dapatkan notifikasi apabila kata sandi atau data pribadi Anda lainnya dibocorkan. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "Mulai"
+      ],
       "Get started with the referral link above.": [
         "Mulai peroleh imbalan Anda dengan tautan rujukan di atas."
       ],
@@ -6454,9 +6460,6 @@
       ],
       "Groups": [
         "Grup"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddress } atau ${ addMoreSeats }"
       ],
       "here": [
         "di sini"
@@ -7172,6 +7175,9 @@
       "Set up your organization": [
         "Atur organisasi Anda"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Atur organisasi Anda dan mulai lindungi data Anda dalam beberapa langkah mudah."
+      ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
       ],
@@ -7855,6 +7861,9 @@
       ],
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Anda hanya dapat membuka satu percakapan dalam satu waktu. Silakan tutup percakapan sebelumnya sebelum memulai percakapan baru."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
@@ -9295,6 +9304,20 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Fitur live chat tersedia dengan paket ${ planName }"
+      ],
+      "Open support form": [
+        "Buka formulir dukungan"
+      ],
+      "Upgrade subscription": [
+        "Tingkatkan langganan"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Tingkatkan paket langganan Anda untuk memperoleh dukungan melalui chat dan berbagai fitur premium lainnya, atau gunakan formulir dukungan gratis kami untuk melaporkan masalah Anda."
       ]
     },
     "Loading info": {
@@ -10991,6 +11014,9 @@
       "It's too expensive": [
         "Terlalu mahal"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "My reason isn't listed": [
         "Alasan saya tidak ada di daftar"
       ],
@@ -11033,8 +11059,17 @@
       "Standard server configs": [
         "Konfigurasi server standar"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Seluruh organisasi"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -12056,6 +12091,9 @@
       "How your free trial works:": [
         "Bagaimana masa uji coba gratis Anda bekerja:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Saya telah menggunakan ${ BRAND_NAME } dan saya rasa Anda juga akan menyukainya. Layanan ini merupakan layanan email, ruang penyimpanan cloud, pengelola kata sandi, dan VPN aman yang melindungi privasi Anda. Daftar dengan tautan berikut untuk menikmati berbagai fitur premium selama 14 hari secara gratis: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Apabila Anda membatalkan sebelum tanggal ini, Anda akan diturunkan ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba Anda berakhir. Apabila Anda tidak membatalkan, paket penuh Anda akan dimulai dan Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
       ],
@@ -12076,6 +12114,9 @@
       ],
       "Refer friends": [
         "Rujuk teman"
+      ],
+      "Share using ${ name }": [
+        "Bagikan menggunakan ${ name }"
       ],
       "Start earning credits": [
         "Mulai peroleh saldo"
@@ -14350,6 +14391,11 @@
         "Kolom vCard"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Tema"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } hari"
@@ -14412,6 +14458,9 @@
       ],
       "Access control": [
         "Kontrol akses"
+      ],
+      "Account": [
+        "Akun"
       ],
       "Account recovery": [
         "Pemulihan akun"
@@ -14770,6 +14819,9 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
+      "Dismiss setup checklist": [
+        "Tutup ceklis pengaturan"
+      ],
       "Domain names": [
         "Nama domain"
       ],
@@ -14839,6 +14891,9 @@
       "Email categories": [
         "Kategori email"
       ],
+      "Email subscriptions": [
+        "Langganan email"
+      ],
       "Enable advanced account protection": [
         "Aktifkan perlindungan akun lanjutan"
       ],
@@ -14907,6 +14962,9 @@
       ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
+      ],
+      "Get started": [
+        "Mulai"
       ],
       "Get the apps": [
         "Dapatkan aplikasinya"
@@ -15015,6 +15073,9 @@
       ],
       "Open pagination": [
         "Buka paginasi"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Nama pengguna OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
@@ -15337,6 +15398,9 @@
       "Upgrade to keep your premium benefits.": [
         "Tingkatkan untuk mempertahankan berbagai keutamaan premium Anda."
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Tingkatkan perlindungan jaringan Anda dengan server khusus"
+      ],
       "Upgrade your privacy": [
         "Tingkatkan privasi Anda"
       ],
@@ -15426,6 +15490,9 @@
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
+      ],
+      "Your current plan": [
+        "Paket Anda saat ini"
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
@@ -15851,9 +15918,6 @@
       "Did you know?": [
         "Tahukah Anda?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi lawas berkas dengan pemulihan berkas hingga 10 tahun."
-      ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Rangkaian privasi dengan email aman, ${ VPN_SHORT_APP_NAME }, ruang penyimpanan cloud, dan pengelola kata sandi dalam satu bundel. Hanya dari ${ fallBackString } per bulannya"
       ],
@@ -16172,6 +16236,21 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

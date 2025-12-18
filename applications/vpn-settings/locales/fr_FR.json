@@ -83,9 +83,6 @@
       "Add external address": [
         "Ajouter une adresse externe"
       ],
-      "add more seats": [
-        "ajouter plus d'accès"
-      ],
       "Add PayPal": [
         "Ajouter PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "J'ai compris"
+      ],
+      "Group owner": [
+        "Propriétaire du groupe"
       ],
       "Help and feedback": [
         "Aide et commentaires"
@@ -1100,9 +1100,6 @@
       "User": [
         "Utilisateur"
       ],
-      "Users and addresses": [
-        "Utilisateurs et adresses"
-      ],
       "Verify": [
         "Vérifier"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Reprise du transfert"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "ajouter plus d'accès"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Problème d'authentification"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problème avec Bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Voir l'invitation"
-      ],
-      "View the invitation": [
-        "Voir l'invitation"
-      ],
-      "View the invitations": [
-        "Voir les invitations"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "En attente"
       ],
-      "Pending invitation": [
-        "Invitation en attente"
-      ],
-      "Pending invitations": [
-        "Invitations en attente"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Vous ne pouvez malheureusement pas changer d'abonnement pour l'instant."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abonnement sera facturé à l'administrateur principal."
+      ],
+      "View the invitation": [
+        "Voir l'invitation",
+        "Voir les invitations"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -6564,9 +6555,6 @@
       "Groups": [
         "Groupes"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddress } ou ${ addMoreSeats }"
-      ],
       "here": [
         "ici"
       ],
@@ -8199,6 +8187,11 @@
         "Couleur sélectionnée :"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Comment envoyer un paiement en espèces ?"
@@ -8697,6 +8690,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pour ${ DRIVE_SHORT_APP_NAME } et ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pour ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } et ${ SHEETS_SHORT_APP_NAME }."
       ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
@@ -9442,6 +9438,11 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ]
     },
     "Live Chat Modal": {
@@ -11185,6 +11186,9 @@
       ],
       "It's too expensive": [
         "C'est trop cher."
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Ma raison n'est pas proposée ici."
@@ -16170,7 +16174,7 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, et récupérez les versions de fichiers avec une récupération de fichiers sur 10 ans."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

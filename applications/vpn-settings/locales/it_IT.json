@@ -83,9 +83,6 @@
       "Add external address": [
         "Aggiungi indirizzo esterno"
       ],
-      "add more seats": [
-        "aggiungi più licenze"
-      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Ho capito"
+      ],
+      "Group owner": [
+        "Proprietario del gruppo"
       ],
       "Help and feedback": [
         "Aiuto e feedback"
@@ -1100,9 +1100,6 @@
       "User": [
         "Utente"
       ],
-      "Users and addresses": [
-        "Utenti e indirizzi"
-      ],
       "Verify": [
         "Verifica"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Ripristino inoltro"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "aggiungi più licenze"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Problema con l'autenticatore"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con Bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Guarda l'invito"
-      ],
-      "View the invitation": [
-        "Guarda l'invito"
-      ],
-      "View the invitations": [
-        "Guarda gli inviti"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "In attesa"
       ],
-      "Pending invitation": [
-        "Invito in attesa"
-      ],
-      "Pending invitations": [
-        "Inviti in attesa"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
+      ],
+      "View the invitation": [
+        "Guarda l'invito",
+        "Guarda gli inviti"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
@@ -6564,9 +6555,6 @@
       "Groups": [
         "Gruppi"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddress } o ${ addMoreSeats }"
-      ],
       "here": [
         "qui"
       ],
@@ -8196,6 +8184,11 @@
         "Colore selezionato:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddresses } o ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Come inviare un pagamento in contanti?"
@@ -9442,6 +9435,11 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Utenti e indirizzi"
       ]
     },
     "Live Chat Modal": {
@@ -16170,7 +16168,7 @@
       "Did you know?": [
         "Lo sapevi?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Ottieni ${ drivePlusPlanMaxSpace } di archiviazione per i tuoi file, foto e documenti, e recupera le versioni dei file con recupero file di 10 anni."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
