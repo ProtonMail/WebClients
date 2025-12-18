@@ -477,6 +477,9 @@ export type AttachmentPub = {
     driveNodeId?: string;
     // Relevance score for auto-retrieved attachments (0-1 normalized, 1 = most relevant)
     relevanceScore?: number;
+    // Chunk-related fields for large documents split into sections
+    isChunk?: boolean; // Whether this attachment represents a section of a larger document
+    chunkTitle?: string; // Section title or context for this chunk
 };
 
 // This is represents the sensitive data in its decrypted form.
@@ -515,7 +518,9 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         (value.error === undefined || typeof value.error === 'boolean') &&
         (value.autoRetrieved === undefined || typeof value.autoRetrieved === 'boolean') &&
         (value.driveNodeId === undefined || typeof value.driveNodeId === 'string') &&
-        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number')
+        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number') &&
+        (value.isChunk === undefined || typeof value.isChunk === 'boolean') &&
+        (value.chunkTitle === undefined || typeof value.chunkTitle === 'string')
     );
 }
 
@@ -684,6 +689,8 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         autoRetrieved,
         driveNodeId,
         relevanceScore,
+        isChunk,
+        chunkTitle,
         filename,
         data,
         markdown,
@@ -704,6 +711,8 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(autoRetrieved !== undefined && { autoRetrieved }),
         ...(driveNodeId !== undefined && { driveNodeId }),
         ...(relevanceScore !== undefined && { relevanceScore }),
+        ...(isChunk !== undefined && { isChunk }),
+        ...(chunkTitle !== undefined && { chunkTitle }),
         filename,
         ...(data !== undefined && { data }),
         ...(markdown !== undefined && { markdown }),
