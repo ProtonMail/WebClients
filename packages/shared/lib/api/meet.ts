@@ -7,6 +7,13 @@ export const queryParticipants = (meetingLinkName: string) => {
     };
 };
 
+export const queryParticipantsCount = (meetingLinkName: string) => {
+    return {
+        method: 'get',
+        url: `meet/v1/meetings/links/${meetingLinkName}/participants/count`,
+    };
+};
+
 export const queryInitMeetSRPHandshake = (meetingLinkName: string) => {
     return {
         method: 'get',
