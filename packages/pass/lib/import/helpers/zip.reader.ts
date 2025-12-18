@@ -2,7 +2,7 @@ import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
 
-const wasmURI = new URL('@zip.js/zip.js/dist/zip-module.wasm', import.meta.url).toString();
+import { wasmURI } from './zip.reader.wasm';
 
 export const readZIP = async (file: File): Promise<ImportFileReader> => {
     const zip = await import(/* webpackChunkName: "zip.reader" */ '@zip.js/zip.js');
