@@ -412,11 +412,10 @@ export const FilesPanel = ({
                                     <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
                                         <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
                                             <Icon name="folder-open" size={4} className="color-norm" />
-                                            {c('collider_2025: Info').t`Auto-retrieved project files`}
-                                            <span className="text-normal color-weak">{activeAutoFiles.length}</span>
+                                            {c('collider_2025: Info').t`Auto-retrieved project information`}
                                         </h3>
                                         <p className="text-xs color-weak mb-3">
-                                            {c('collider_2025: Info').t`Files automatically retrieved from the linked project folder based on your questions.`}
+                                            {c('collider_2025: Info').t`Information automatically retrieved from the linked project folder based on your questions.`}
                                         </p>
                                         {activeAutoFiles.map((file) => (
                                             <KnowledgeFileItem
