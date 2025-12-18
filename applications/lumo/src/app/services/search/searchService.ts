@@ -3,15 +3,29 @@ import type { DriveDocument } from '../../types/documents';
 import { DbApi } from '../../indexedDb/db';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 import { BM25Index } from './bm25Index';
-import { chunkDocument, estimateTokens } from './documentChunker';
+import { chunkDocument } from './documentChunker';
 
-// Mirror worker message types to avoid drift
 const WorkerMessageType = {
     Search: 0,
     Populate: 1,
     IndexConversation: 2,
     Status: 3,
 } as const;
+
+const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): string => {
+    const chunkContext = includeChunkTitle && doc.chunkTitle ? ` [${doc.chunkTitle}]` : '';
+    return `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
+};
+
+type SpaceMap = Record<string, { isProject?: boolean; projectName?: string; projectIcon?: string }>;
+
+const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
+    const space = spaces[spaceId];
+    if (space?.isProject) {
+        return { projectName: space.projectName, projectIcon: space.projectIcon };
+    }
+    return {};
+};
 
 export class SearchService {
     private static instances: Map<string, SearchService> = new Map();
@@ -202,37 +216,17 @@ export class SearchService {
         this.bm25Index = new BM25Index();
         for (const doc of this.driveDocuments) {
             if (doc.content) {
-                const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
-                this.bm25Index.addDocument(doc.id, searchableText);
+                this.bm25Index.addDocument(doc.id, buildSearchableText(doc));
             }
         }
-        console.log('[SearchService] Rebuilt BM25 index:', this.bm25Index.getStats());
     }
 
-    /**
-     * Get all conversations (for default view)
-     * @param state Redux state
-     */
     async getAllConversations(state: SearchState): Promise<SearchResult[]> {
-        const conversations = state.conversations;
-        const spaces = state.spaces;
+        const { conversations, spaces } = state;
         const results: SearchResult[] = [];
 
-        // Helper to get project info for a space
-        const getProjectInfo = (spaceId: string): { projectName?: string; projectIcon?: string } => {
-            const space = spaces[spaceId];
-            if (space?.isProject) {
-                return {
-                    projectName: space.projectName,
-                    projectIcon: space.projectIcon,
-                };
-            }
-            return {};
-        };
-
-        // Convert all conversations to SearchResult format
         Object.values(conversations).forEach((conversation) => {
-            const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
+            const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
             const timestamp = new Date(conversation.createdAt).getTime();
 
             results.push({
@@ -244,7 +238,6 @@ export class SearchService {
             });
         });
 
-        // Sort by timestamp (newest first)
         return results.sort((a, b) => b.timestamp - a.timestamp);
     }
 
@@ -300,11 +293,6 @@ export class SearchService {
         }
     }
 
-    /**
-     * Search conversations and messages
-     * @param query Search query string
-     * @param state Redux state to search in
-     */
     async searchAsync(query: string, state: SearchState): Promise<SearchResult[]> {
         const normalizedQuery = query.toLowerCase().trim();
         if (!normalizedQuery) {
@@ -312,36 +300,18 @@ export class SearchService {
         }
 
         const results: SearchResult[] = [];
-        const conversations = state.conversations;
-        const messages = state.messages;
-        const spaces = state.spaces;
+        const { conversations, messages, spaces } = state;
 
-        // Helper to get project info for a space
-        const getProjectInfo = (spaceId: string): { projectName?: string; projectIcon?: string } => {
-            const space = spaces[spaceId];
-            if (space?.isProject) {
-                return {
-                    projectName: space.projectName,
-                    projectIcon: space.projectIcon,
-                };
-            }
-            return {};
-        };
-
-        // Try foundation search first (full-text index)
         const workerResults = await this.searchWithWorker(normalizedQuery);
         const foundConversationIds = new Set<string>();
 
         if (workerResults.length > 0) {
-            console.log('[SearchService] Foundation search returned', workerResults.length, 'results');
-
-            // Map worker results (sorted by relevance) to SearchResult format
             for (const [_score, conversationId] of workerResults) {
                 const conversation = conversations[conversationId];
                 if (!conversation) continue;
 
                 foundConversationIds.add(conversationId);
-                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
+                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
                 const timestamp = new Date(conversation.createdAt).getTime();
 
                 results.push({
@@ -354,14 +324,12 @@ export class SearchService {
             }
         }
 
-        // Fallback: also do substring search for conversations not found by worker
-        // (in case index is stale or worker failed)
         Object.values(conversations).forEach((conversation) => {
-            if (foundConversationIds.has(conversation.id)) return; // Already found by worker
+            if (foundConversationIds.has(conversation.id)) return;
 
             const title = conversation.title?.toLowerCase() || '';
             if (title.includes(normalizedQuery)) {
-                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
+                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
                 const timestamp = new Date(conversation.createdAt).getTime();
 
                 results.push({
@@ -397,9 +365,7 @@ export class SearchService {
             }
         });
 
-        // Search messages by content
         Object.values(messages).forEach((message) => {
-            // Only search user and assistant messages (skip system/tool messages)
             if (message.role !== Role.User && message.role !== Role.Assistant) {
                 return;
             }
@@ -407,14 +373,10 @@ export class SearchService {
             const content = message.content?.toLowerCase() || '';
             if (content.includes(normalizedQuery)) {
                 const conversation = conversations[message.conversationId];
-                if (!conversation) {
-                    return;
-                }
+                if (!conversation) return;
 
-                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId) : {};
+                const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
                 const timestamp = new Date(message.createdAt).getTime();
-
-                // Extract preview text (first 100 chars)
                 const preview = message.content?.substring(0, 100) || '';
 
                 results.push({
@@ -456,14 +418,12 @@ export class SearchService {
             }
         });
 
-        // Search Drive documents using BM25 relevance ranking
-        // This allows searching with sentences/paragraphs and finding relevant documents
         const docCandidates = this.driveDocuments
             .filter((doc) => doc.content)
             .map((doc) => ({
                 id: doc.id,
-                text: `${doc.name} ${doc.folderPath || ''} ${doc.content}`,
-                doc, // Keep reference to original document
+                text: buildSearchableText(doc),
+                doc,
             }));
 
         if (docCandidates.length > 0) {
@@ -549,51 +509,30 @@ export class SearchService {
             return { success: false, error: 'No content to index' };
         }
 
-        // Chunk large documents into smaller, more searchable pieces
         const processedDocs: DriveDocument[] = [];
-        let chunkedCount = 0;
-        
         for (const doc of docsWithContent) {
-            const chunks = chunkDocument(doc);
-            if (chunks.length > 1) {
-                chunkedCount++;
-                console.log(`[SearchService] Chunked "${doc.name}" (${estimateTokens(doc.content)} tokens) into ${chunks.length} chunks`);
-            }
-            processedDocs.push(...chunks);
-        }
-        
-        if (chunkedCount > 0) {
-            console.log(`[SearchService] Chunked ${chunkedCount} large documents into ${processedDocs.length} total pieces`);
+            processedDocs.push(...chunkDocument(doc));
         }
 
-        // Identify which documents are being updated
         const incomingParentIds = new Set(docsWithContent.map(d => d.id));
         
-        // First remove old entries from BM25 (need to do this BEFORE updating driveDocuments)
         const oldDocsToRemove = this.driveDocuments.filter((existing) => {
             const parentId = existing.parentDocumentId || existing.id;
             return incomingParentIds.has(parentId) || incomingParentIds.has(existing.id);
         });
         
         for (const oldDoc of oldDocsToRemove) {
-            const searchableText = `${oldDoc.name} ${oldDoc.folderPath || ''} ${oldDoc.content}`;
-            this.bm25Index.removeDocument(oldDoc.id, searchableText);
+            this.bm25Index.removeDocument(oldDoc.id, buildSearchableText(oldDoc));
         }
         
-        // Now update driveDocuments - remove old, add new
         const remaining = this.driveDocuments.filter((existing) => {
             const parentId = existing.parentDocumentId || existing.id;
             return !incomingParentIds.has(parentId) && !incomingParentIds.has(existing.id);
         });
         this.driveDocuments = [...remaining, ...processedDocs];
 
-        // Add new entries to BM25
         for (const doc of processedDocs) {
-            // Include name and path in the searchable text
-            // For chunks, also include the chunk title if available
-            const chunkContext = doc.chunkTitle ? ` [${doc.chunkTitle}]` : '';
-            const searchableText = `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
-            this.bm25Index.addDocument(doc.id, searchableText);
+            this.bm25Index.addDocument(doc.id, buildSearchableText(doc, true));
         }
 
         await this.persistManifest();
@@ -608,14 +547,12 @@ export class SearchService {
         if (this.manifestReady) {
             await this.manifestReady;
         }
-        // return a copy to avoid mutation
         return [...this.driveDocuments];
     }
 
     async clearDriveDocuments(): Promise<void> {
         this.driveDocuments = [];
         this.bm25Index.clear();
-        // Reset manifest promise so a future load will fetch fresh state
         this.manifestReady = null;
         if (this.userId) {
             const dbApi = new DbApi(this.userId);
@@ -631,12 +568,8 @@ export class SearchService {
     removeDocument(documentId: string): void {
         const doc = this.driveDocuments.find((d) => d.id === documentId);
         if (doc) {
-            // Remove from BM25 index
-            const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
-            this.bm25Index.removeDocument(doc.id, searchableText);
-
+            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
             this.driveDocuments = this.driveDocuments.filter((d) => d.id !== documentId);
-            console.log('[SearchService] Removed document:', documentId);
             void this.persistManifest();
             void this.persistBM25Index();
         }
@@ -644,10 +577,8 @@ export class SearchService {
 
     removeDocumentsByFolder(folderId: string): void {
         const docsToRemove = this.driveDocuments.filter((doc) => doc.folderId === folderId);
-        // Remove from BM25 index
         for (const doc of docsToRemove) {
-            const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
-            this.bm25Index.removeDocument(doc.id, searchableText);
+            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
         }
         this.driveDocuments = this.driveDocuments.filter((doc) => doc.folderId !== folderId);
         void this.persistManifest();
@@ -656,10 +587,8 @@ export class SearchService {
 
     removeDocumentsBySpace(spaceId: string): void {
         const docsToRemove = this.driveDocuments.filter((doc) => doc.spaceId === spaceId);
-        // Remove from BM25 index
         for (const doc of docsToRemove) {
-            const searchableText = `${doc.name} ${doc.folderPath || ''} ${doc.content}`;
-            this.bm25Index.removeDocument(doc.id, searchableText);
+            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
         }
         this.driveDocuments = this.driveDocuments.filter((doc) => doc.spaceId !== spaceId);
         void this.persistManifest();
@@ -758,92 +687,52 @@ export class SearchService {
         topK: number = 5,
         minScore: number = 0
     ): Promise<{ id: string; name: string; content: string; score: number }[]> {
-        console.log(`[SearchService] RAG: Starting retrieval for space ${spaceId}, query: "${query.slice(0, 50)}..."`);
-        console.log(`[SearchService] RAG: Total documents in index: ${this.driveDocuments.length}`);
-
         if (this.userId && !this.manifestReady) {
-            console.log('[SearchService] RAG: Loading manifest...');
             this.manifestReady = this.loadManifest();
         }
         if (this.manifestReady) {
             await this.manifestReady;
-            console.log(`[SearchService] RAG: Manifest loaded, total documents: ${this.driveDocuments.length}`);
         }
 
-        // Log all unique spaceIds in the index for debugging
-        const uniqueSpaceIds = [...new Set(this.driveDocuments.map(d => d.spaceId))];
-        console.log(`[SearchService] RAG: Unique spaceIds in index:`, uniqueSpaceIds);
-        console.log(`[SearchService] RAG: Looking for spaceId:`, spaceId);
-
-        // Log all documents with their spaceIds
-        console.log(`[SearchService] RAG: All documents:`, this.driveDocuments.map(d => ({
-            name: d.name,
-            spaceId: d.spaceId,
-            hasContent: !!(d.content && d.content.length > 0),
-        })));
-
-        // Filter documents by spaceId
         const spaceDocuments = this.driveDocuments.filter(
             (doc) => doc.spaceId === spaceId && doc.content && doc.content.length > 0
         );
 
-        console.log(`[SearchService] RAG: Found ${spaceDocuments.length} documents for space ${spaceId}`);
-
         if (spaceDocuments.length === 0) {
-            console.log('[SearchService] RAG: No documents found for space:', spaceId);
             return [];
         }
 
-        // For chunks, we want to rank all chunks but then merge by parent document
-        // Request more candidates initially to ensure we get best chunks from each doc
-        const initialTopK = topK * 3; // Get more candidates for merging
+        const initialTopK = topK * 3;
         const effectiveTopK = Math.min(initialTopK, spaceDocuments.length);
 
-        // Prepare candidates for BM25 ranking
         const candidates = spaceDocuments.map((doc) => ({
             id: doc.id,
-            text: `${doc.name} ${doc.folderPath || ''} ${doc.content}`,
+            text: buildSearchableText(doc),
             doc,
         }));
 
-        // Use BM25 to rank documents by relevance (minScore=0 to include all, then take topK)
         const rankedResults = this.bm25Index.rankDocuments(query, candidates, effectiveTopK, minScore);
 
-        console.log(`[SearchService] RAG: Ranked ${rankedResults.length} candidates for query "${query.slice(0, 50)}..."`);
-
-        // Merge chunks from the same parent document (keep best scoring chunk per document)
         const docBestChunk = new Map<string, { doc: DriveDocument; score: number }>();
         
         for (const { document: candidate, score } of rankedResults) {
             const doc = candidate.doc;
-            // Use parentDocumentId for chunks, otherwise use the document id
             const parentId = doc.parentDocumentId || doc.id;
-            
             const existing = docBestChunk.get(parentId);
             if (!existing || score > existing.score) {
                 docBestChunk.set(parentId, { doc, score });
             }
         }
         
-        // Convert to array and take top K documents (not chunks)
         const mergedResults = Array.from(docBestChunk.values())
             .sort((a, b) => b.score - a.score)
             .slice(0, topK);
 
-        console.log(`[SearchService] RAG: After merging chunks, ${mergedResults.length} unique documents:`);
-        mergedResults.forEach((r, i) => {
-            const chunkInfo = r.doc.isChunk ? ` (chunk ${r.doc.chunkIndex}/${r.doc.totalChunks})` : '';
-            console.log(`  [${i + 1}] ${r.doc.name}${chunkInfo} (score: ${r.score.toFixed(4)})`);
-        });
-
         return mergedResults.map(({ doc, score }) => ({
-            // Use parent document ID for consistent referencing
             id: doc.parentDocumentId || doc.id,
             name: doc.name,
-            // Return chunk content (not full document) - this is more relevant to the query
             content: doc.content,
             score,
-            // Include chunk metadata for display
             ...(doc.isChunk && {
                 isChunk: true,
                 chunkIndex: doc.chunkIndex,
@@ -853,14 +742,6 @@ export class SearchService {
         }));
     }
 
-    /**
-     * Format retrieved documents into a context string for the LLM prompt.
-     * Documents are already sorted by relevance (highest first).
-     * Will include as many documents as fit within the max context size.
-     *
-     * @param documents - Documents sorted by relevance score (highest first)
-     * @param maxContextChars - Maximum characters for the entire context (default ~100k chars ≈ 25k tokens)
-     */
     formatRAGContext(
         documents: { name: string; content: string; score?: number }[],
         maxContextChars: number = 100000
@@ -871,15 +752,13 @@ export class SearchService {
 
         const contextParts: string[] = [];
         let totalLength = 0;
-        const headerFooterOverhead = 50; // Approximate overhead for wrapper text
+        const headerFooterOverhead = 50;
 
         for (const doc of documents) {
             const docText = `--- Document: ${doc.name} ---\n${doc.content}`;
-            const newLength = totalLength + docText.length + 4; // +4 for "\n\n" separator
+            const newLength = totalLength + docText.length + 4;
 
-            // Check if adding this document would exceed the limit
             if (totalLength > 0 && newLength + headerFooterOverhead > maxContextChars) {
-                console.log(`[RAG] Stopping at ${contextParts.length} documents (would exceed ${maxContextChars} char limit)`);
                 break;
             }
 
@@ -891,7 +770,6 @@ export class SearchService {
             return '';
         }
 
-        console.log(`[RAG] Including ${contextParts.length}/${documents.length} documents (${totalLength} chars)`);
         return `[Relevant project documents for context:\n\n${contextParts.join('\n\n')}\n]`;
     }
 

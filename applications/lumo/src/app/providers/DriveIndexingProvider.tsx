@@ -55,18 +55,21 @@ interface DriveIndexingProviderProps {
     children: ReactNode;
 }
 
-// Default context value for guest mode
+const DEFAULT_EVENT_INDEXING_STATUS: EventIndexingStatus = {
+    isIndexing: false,
+    processedCount: 0,
+    totalCount: 0,
+};
+
+const noop = () => {};
+
 const DEFAULT_CONTEXT_VALUE: DriveIndexingContextType = {
     isSubscribed: false,
     subscribedScopes: [],
-    eventIndexingStatus: {
-        isIndexing: false,
-        processedCount: 0,
-        totalCount: 0,
-    },
-    setIndexingFile: () => {},
-    setIndexingProgress: () => {},
-    resetIndexingStatus: () => {},
+    eventIndexingStatus: DEFAULT_EVENT_INDEXING_STATUS,
+    setIndexingFile: noop,
+    setIndexingProgress: noop,
+    resetIndexingStatus: noop,
 };
 
 /**
@@ -791,15 +794,6 @@ export const DriveIndexingProvider = ({ children }: DriveIndexingProviderProps) 
         </DriveIndexingErrorBoundary>
     );
 };
-
-const DEFAULT_EVENT_INDEXING_STATUS: EventIndexingStatus = {
-    isIndexing: false,
-    processedCount: 0,
-    totalCount: 0,
-};
-
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {};
 
 export const useDriveIndexing = (): DriveIndexingContextType => {
     const context = useContext(DriveIndexingContext);
