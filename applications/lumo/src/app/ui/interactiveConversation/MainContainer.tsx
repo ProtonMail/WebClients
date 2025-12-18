@@ -1,7 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
-import { c } from 'ttag';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -20,7 +19,7 @@ import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
 import LumoCat from './MainContainer/LumoCat';
 import LumoMainText from './MainContainer/LumoMainText';
 import LumoOnboarding from './MainContainer/Onboarding/LumoOnboarding';
-import PromptSuggestion from './MainContainer/PromptSuggestion';
+import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
 import TermsAndConditions from './MainContainer/TermsAndConditions';
 import { ComposerComponent } from './composer/ComposerComponent';
 
@@ -115,11 +114,12 @@ const MainContainer = ({
                             isGhostMode={isGhostChatMode}
                         />
                         {isLumoSpecialThemeEnabled && !isSmallScreen && (
-                            <PromptSuggestion
-                                prompt={c('collider_2025:Prompt').t`What are the origins of Thanksgiving?`}
-                                icon="🍂"
-                                onPromptClick={handlePromptSuggestionClick}
-                            />
+                            // <PromptSuggestion
+                            //     prompt={c('collider_2025:Prompt').t`What are the origins of Christmas?`}
+                            //     icon="🎄"
+                            //     onPromptClick={handlePromptSuggestionClick}
+                            // />
+                            <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} />
                         )}
                     </div>
                     <LumoCat
@@ -130,17 +130,18 @@ const MainContainer = ({
                 </div>
 
                 {isLumoSpecialThemeEnabled && isSmallScreen && isEditorEmpty && (
-                    <PromptSuggestion
-                        prompt={c('collider_2025:Prompt').t`What are the origins of Thanksgiving?`}
-                        icon="🍂"
-                        onPromptClick={handlePromptSuggestionClick}
-                        className={clsx('align-self-center')}
-                    />
+                    // <PromptSuggestion
+                    //     prompt={c('collider_2025:Prompt').t`What are the origins of Christmas?`}
+                    //     icon="🎄"
+                    //     onPromptClick={handlePromptSuggestionClick}
+                    //     className={clsx('align-self-center')}
+                    // />
+                    <ThemedPromptSuggestion onClick={handlePromptSuggestionClick} className="align-self-center" />
                 )}
 
                 <div
                     className={clsx('composer-container md:px-4 w-full', {
-                        'without-margin': isLumoSpecialThemeEnabled && !isGhostChatMode,
+                        'themed-margin': isLumoSpecialThemeEnabled && !isGhostChatMode,
                     })}
                 >
                     <ComposerComponent

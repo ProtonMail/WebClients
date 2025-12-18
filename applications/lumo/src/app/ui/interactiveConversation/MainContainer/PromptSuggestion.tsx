@@ -1,6 +1,24 @@
 import { clsx } from 'clsx';
+import { c } from 'ttag';
+
+import { isNewYearsSeason } from '../../../utils/dateUtils';
 
 import './PromptSuggestion.scss';
+
+interface ThemedPromptProps {
+    onClick: (prompt: string) => void;
+    className?: string;
+}
+export const ThemedPromptSuggestion = ({ onClick, className }: ThemedPromptProps) => {
+    const showNewYearsVariant = isNewYearsSeason();
+
+    const prompt = showNewYearsVariant
+        ? c('collider_2025:Prompt').t`How do people celebrate New Year's Eve around the world?`
+        : c('collider_2025:Prompt').t`What are the origins of Christmas?`;
+    const icon = showNewYearsVariant ? '✨' : '🎄';
+
+    return <PromptSuggestion prompt={prompt} icon={icon} onPromptClick={onClick} className={className} />;
+};
 
 interface PromptSuggestionProps {
     /** The text prompt to display and send */

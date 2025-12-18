@@ -4,8 +4,7 @@
 	display: flex !important;
 	justify-content: start;
 	align-items: center;
-	margin-block-start: 16px;
-	margin-block-end: 32px;
+	margin-block: 16px 32px;
 	animation: fadeInUp 0.5s ease-out;
 	inline-size: 100%;
 	max-inline-size: 100%;
@@ -19,8 +18,7 @@
 	}
 
 	@include media('<=small') {
-		margin-block-start: 16px;
-		margin-block-end: 0;
+		margin-block: 16px 0;
 		padding-inline: 0;
 		inline-size: 100%;
 		max-inline-size: 100%;
@@ -33,7 +31,8 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	padding: 10px 16px;
+	padding-block: 10px;
+	padding-inline: 16px;
 	border: 1px solid var(--border-weak);
 	border-radius: 24px;
 	background-color: var(--background-weak);
@@ -43,7 +42,6 @@
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
-	white-space: nowrap;
 
 	&:hover {
 		background-color: var(--interaction-default-hover);
@@ -64,7 +62,8 @@
 
 	@include media('<=small') {
 		font-size: 13px;
-		padding: 8px 12px;
+		padding-block: 8px;
+		padding-inline: 12px;
 		gap: 6px;
 		white-space: normal; // Allow text to wrap on mobile
 		text-align: center;
@@ -103,4 +102,3 @@
 		transform: translateY(0);
 	}
 }
-
