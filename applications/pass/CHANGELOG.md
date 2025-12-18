@@ -1,3 +1,8 @@
+### Version 1.33.3
+
+- Fix zip.js WASM incorrectly loaded
+- Disable inline zip.js web-workers blocked by CSPs
+
 ### Version 1.33.2
 
 - Support right click on items (behind feature flag)
