@@ -903,6 +903,9 @@
       "More search options": [
         "展开搜索选项"
       ],
+      "Most frequent": [
+        "最常"
+      ],
       "Most read": [
         "阅读次数最多"
       ],
@@ -1251,6 +1254,9 @@
       "send auto-reply email": [
         "自动回复"
       ],
+      "Send Feedback": [
+        "发送反馈"
+      ],
       "Send read receipt": [
         "发送回执"
       ],
@@ -1445,6 +1451,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1825,6 +1834,11 @@
         "发送方验证通过"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
@@ -2033,9 +2047,6 @@
       ],
       "Application problem": [
         "应用程序问题"
-      ],
-      "Black Friday": [
-        "黑色星期五"
       ],
       "Bridge problem": [
         "Bridge 问题"
@@ -2485,7 +2496,7 @@
         "总计"
       ],
       "Total for ${ n } month": [
-        "每${ n }月支付"
+        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -5104,12 +5115,6 @@
       ],
       "Switch plans": [
         "变更账户等级"
-      ],
-      "View the invitation": [
-        "查看邀请"
-      ],
-      "View the invitations": [
-        "查看所有邀请"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -6931,6 +6936,9 @@
       "High Priority": [
         "首要优先顺序"
       ],
+      "How hide-my-email aliases works": [
+        "hide-my-email 邮箱别名如何运作"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我需要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
       ],
@@ -7013,7 +7021,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8657,6 +8665,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
+      "${ count } unread conversation": [
+        "${ count } 个未读会话"
+      ],
+      "${ count } unread message": [
+        "${ count } 条未读消息"
+      ],
       "${ n } month": [
         "${ n } 个月"
       ],
@@ -8680,6 +8694,9 @@
       ],
       "Add image URL": [
         "添加图像网址"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "添加或移除类别。设置或关闭通知。可随时在 ${ menuIcon } 菜单中调整。"
       ],
       "Add to group": [
         "添加至群组"
@@ -9062,6 +9079,9 @@
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
       ],
+      "Move messages to": [
+        "移动消息至"
+      ],
       "Move to": [
         "移动到"
       ],
@@ -9100,6 +9120,9 @@
       ],
       "No label found": [
         "未找到标签"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "不再错过重要消息！这些现在显示在 ${ primaryCopy } 下方。其他内容则按类别排序，易于查找，且不会占用您的收件箱。"
       ],
       "Non-promotional content and news": [
         "非促销内容和新闻"
@@ -9618,6 +9641,9 @@
       ],
       "Reactivate now": [
         "立即重新激活"
+      ],
+      "Reactivate subscription": [
+        "重新激活订阅"
       ],
       "Request an invite": [
         "申请注册"
@@ -10477,6 +10503,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "密码分享（最多 ${ n } 个人）"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "与多至 ${ n } 个人分享保险库"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
@@ -11500,6 +11529,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
       ],
@@ -11546,6 +11581,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您确定要继续操作吗？"
       ]
     },
     "Payments.plan_name": {
@@ -11905,6 +11945,15 @@
       ]
     },
     "Referral": {
+      "Friend joined": [
+        "好友已加入"
+      ],
+      "Friend subscribed": [
+        "已订阅的好友"
+      ],
+      "More sharing options": [
+        "更多分享选项1"
+      ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
@@ -13316,6 +13365,9 @@
       "Conversation removed from ${ labelName }.": [
         "会话已移除 ${ labelName } 标签。"
       ],
+      "Conversation updated": [
+        "会话已更新"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "来自 ${ sendersList } 的对话将被标记为 ${ labelsList }"
       ],
@@ -13388,6 +13440,9 @@
       "Message removed from ${ labelName }.": [
         "邮件已移除 ${ labelName } 标签。"
       ],
+      "Message updated": [
+        "消息已更新"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "来自 ${ sendersList } 的邮件将被标记为 ${ labelsList }"
       ],
@@ -13429,6 +13484,9 @@
       ],
       "Read receipt sent": [
         "回执已发送"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "已重新分类 ${ elementsCount } 封消息。"
       ],
       "Secret passphrase updated": [
         "密码短语已更新"

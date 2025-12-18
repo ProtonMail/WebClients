@@ -1276,6 +1276,9 @@
       "Select date and time": [
         "Selecteer datum en tijd"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecteer beoordeling ${ n } van de ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Zelfvernietiging over 7 dagen"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "send auto-reply email": [
         "automatisch antwoord versturen"
+      ],
+      "Send Feedback": [
+        "Feedback Versturen"
       ],
       "Send read receipt": [
         "Leesbevestiging verzenden"
@@ -1497,6 +1503,9 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1896,6 +1905,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
       ],
@@ -2147,9 +2162,6 @@
       ],
       "Authenticator problem": [
         "Authenticatieprobleem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -5333,12 +5345,6 @@
       ],
       "Switch plans": [
         "Van abonnement wisselen"
-      ],
-      "View the invitation": [
-        "Bekijk de uitnodiging"
-      ],
-      "View the invitations": [
-        "Bekijk de uitnodigingen"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5390,6 +5396,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging",
+        "Bekijk de uitnodigingen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
@@ -7392,7 +7402,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9388,6 +9399,9 @@
       "Extended address": [
         "Adrestoevoeging"
       ],
+      "Extremely Satisfied": [
+        "Zeer tevreden"
+      ],
       "Failed to create folder ${ newFolderName }": [
         "Mislukt om map ${ newFolderName } aan te maken"
       ],
@@ -9757,6 +9771,9 @@
       "System information": [
         "Systeeminformatie"
       ],
+      "Tell us more about your experience": [
+        "Vertel ons meer over uw ervaring"
+      ],
       "The category has been updated, thanks for your feedback!": [
         "De categorie is bijgewerkt, bedankt voor uw feedback!"
       ],
@@ -9807,6 +9824,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Very Dissatisfied": [
+        "Erg ontevreden"
       ],
       "Video conference": [
         "Videoconferentie"
@@ -10163,6 +10183,9 @@
       ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "Terms and conditions": [
+        "Algemene voorwaarden"
       ],
       "terms of service": [
         "servicevoorwaarden"
@@ -11153,6 +11176,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wij streven er altijd naar om ${ config.appName } te verbeteren. Hoe tevreden bent u met uw ervaring?"
       ]
     },
     "new_plans: Subtext": {
@@ -12402,6 +12430,9 @@
       ],
       "Name or email address": [
         "Naam of e-mailadres"
+      ],
+      "Optional feedback": [
+        "Optionele feedback"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -15524,6 +15555,9 @@
       "We protected you from ${ trackersCount } tracker": [
         "We beschermden u van ${ trackersCount } tracker",
         "We beschermden u van ${ trackersCount } trackers"
+      ],
+      "We'd love to hear from you!": [
+        "We horen graag van jou!"
       ],
       "Welcome": [
         "Welkom"

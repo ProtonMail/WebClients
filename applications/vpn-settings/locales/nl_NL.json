@@ -83,9 +83,6 @@
       "Add external address": [
         "Extern adres toevoegen"
       ],
-      "add more seats": [
-        "meer licenties toevoegen"
-      ],
       "Add PayPal": [
         "PayPal toevoegen"
       ],
@@ -1097,9 +1094,6 @@
       "User": [
         "Gebruiker"
       ],
-      "Users and addresses": [
-        "Gebruikers en adressen"
-      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -1158,6 +1152,11 @@
     "action": {
       "Resuming forward": [
         "Doorsturen hervatten"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "meer licenties toevoegen"
       ]
     },
     "Action for user session": {
@@ -1395,6 +1394,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -1804,9 +1809,6 @@
       ],
       "Authenticator problem": [
         "Authenticatieprobleem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -4535,12 +4537,6 @@
       ],
       "View invitation": [
         "Uitnodiging weergeven"
-      ],
-      "View the invitation": [
-        "Bekijk de uitnodiging"
-      ],
-      "View the invitations": [
-        "Bekijk de uitnodigingen"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4597,12 +4593,6 @@
       "Pending": [
         "In behandeling"
       ],
-      "Pending invitation": [
-        "Openstaande uitnodiging"
-      ],
-      "Pending invitations": [
-        "Openstaande uitnodigingen"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
       ],
@@ -4611,6 +4601,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging",
+        "Bekijk de uitnodigingen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
@@ -6534,9 +6528,6 @@
       "Groups": [
         "Groepen"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddress } of ${ addMoreSeats }"
-      ],
       "here": [
         "hier"
       ],
@@ -8163,6 +8154,11 @@
         "Geselecteerde kleur:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddresses } of ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Hoe een contante betaling versturen?"
@@ -9403,6 +9399,11 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ]
     },
     "Live Chat Modal": {
@@ -16049,7 +16050,7 @@
       "Did you know?": [
         "Wist u dat?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Ontvang ${ drivePlusPlanMaxSpace } opslag voor uw bestanden, foto's en documenten, en herstel bestandsversies tot 10 jaar oud."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

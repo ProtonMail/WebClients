@@ -144,9 +144,6 @@
       "Add label": [
         "Legg til etikett"
       ],
-      "add more seats": [
-        "legg til flere lisenser"
-      ],
       "Add notification": [
         "Legg til varsel"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Skjønner"
+      ],
+      "Group owner": [
+        "Gruppeeier"
       ],
       "Help and feedback": [
         "Hjelp og tilbakemelding"
@@ -1622,9 +1622,6 @@
       ],
       "User": [
         "Bruker"
-      ],
-      "Users and addresses": [
-        "Brukere og adresser"
       ],
       "Verify": [
         "Verifiser"
@@ -2674,9 +2671,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -5508,11 +5502,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "For å sikre kompatibilitet genereres en ny krypteringsnøkkel for ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "For kompatibilitet er postkvantekryptering deaktivert, og en ny krypteringsnøkkel er generert for ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "For å sikre kompatibilitet er postkvantekryptering deaktivert for ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "For kompatibilitet er postkvantekryptering deaktivert, og en ny krypteringsnøkkel er generert for ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "For kompatibilitet vil postkvantekryptering bli deaktivert for ${ boldForwarderEmail }."
@@ -6981,12 +6975,6 @@
       ],
       "View invitation": [
         "Se invitasjon"
-      ],
-      "View the invitation": [
-        "Se invitasjonen"
-      ],
-      "View the invitations": [
-        "Se invitasjonene"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7060,12 +7048,6 @@
       ],
       "Pending": [
         "Ventende"
-      ],
-      "Pending invitation": [
-        "Ventende invitasjon"
-      ],
-      "Pending invitations": [
-        "Ventende invitasjoner"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
@@ -8781,7 +8763,7 @@
         "Legg til bildenettadresse"
       ],
       "Add label": [
-        "Legge til en etikett"
+        "Legg til etikett"
       ],
       "Add multiple users to your organization at once.": [
         "Legg til flere brukere til din organisasjon på engang."
@@ -9652,9 +9634,6 @@
       ],
       "Groups": [
         "Grupper"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddress } eller ${ addMoreSeats }"
       ],
       "here": [
         "her"
@@ -16845,8 +16824,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Du er blitt invitert til å bli med ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Din ${ discount }% Black Friday-rabatt er anvendt"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Din rabatt på ${ discount } ved årets slutt er trukket fra"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisasjonen din har tilgang til ${ free }. Hvis du ønsker å få tilgang til ${ appName }-premiumfunksjoner, spør organisasjonsadministratoren om å oppgradere."
@@ -23628,9 +23607,6 @@
       ],
       "Did you know?": [
         "Visste du at?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filene, bildene og dokumentene dine og gjenopprett filversjoner med 10-års filgjenoppretting."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke. Fra kun ${ fallBackString } per måned"

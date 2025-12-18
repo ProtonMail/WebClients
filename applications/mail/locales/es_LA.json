@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2163,9 +2162,6 @@
       ],
       "Authenticator problem": [
         "Problema con el autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de Bridge"
@@ -5349,12 +5345,6 @@
       ],
       "Switch plans": [
         "Cambiar planes"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5396,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -7408,7 +7402,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11184,8 +11179,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Siempre nos esforzamos por mejorar ${ BRAND_NAME } ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     },
     "new_plans: Subtext": {

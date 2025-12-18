@@ -252,6 +252,9 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Стварыць новы ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Стварыць новую папку"
       ],
@@ -1203,9 +1206,6 @@
       ],
       "Authenticator problem": [
         "Праблема з аўтэнтыфікатарам"
-      ],
-      "Black Friday": [
-        "Чорная пятніца"
       ],
       "Bridge problem": [
         "Праблема з Bridge"
@@ -3156,6 +3156,9 @@
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
+      "Unable to import file": [
+        "Немагчыма імпартаваць файл"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
       ],
@@ -3185,6 +3188,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Праблема падчас сінхранізацыі вашага дакумента. Абнавіце старонку."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Нам не ўдалося імпартаваць гэты файл у ${ SHEETS_APP_NAME }. Вы можаце паспрабаваць скапіяваць і ўставіць змесціва ў новы файл ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
@@ -3450,12 +3456,6 @@
       ],
       "Switch plans": [
         "Змяніць тарыфны план"
-      ],
-      "View the invitation": [
-        "Паглядзець запрашэнне"
-      ],
-      "View the invitations": [
-        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Deal details": {

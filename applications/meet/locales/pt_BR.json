@@ -266,9 +266,6 @@
       "Stay in meeting": [
         "Ficar na reunião"
       ],
-      "Stop presenting": [
-        "Parar de apresentar"
-      ],
       "Stop receiving video": [
         "Parar de receber vídeo"
       ],
@@ -411,9 +408,6 @@
       ],
       "Authenticator problem": [
         "Problema de autenticação"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de bridge"
@@ -1392,6 +1386,9 @@
       "Failed to save recording": [
         "Erro ao salvar a gravação"
       ],
+      "Failed to send chat message. Please try again.": [
+        "Falha ao enviar a mensagem do chat."
+      ],
       "Failed to start recording": [
         "Erro ao iniciar a gravação"
       ],
@@ -1580,6 +1577,12 @@
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } de ${ maxParticipants } participantes"
       ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (você) está apresentando"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } está apresentando"
+      ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } convidou você para uma reunião ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
       ],
@@ -1591,9 +1594,6 @@
       ],
       "(You)": [
         "(Você)"
-      ],
-      "(you)": [
-        "(você)"
       ],
       "<Removed dangerous URL>": [
         "<Removed dangerous URL>"
@@ -1726,9 +1726,6 @@
       ],
       "Invitation preview": [
         "Pré-visualização do convite"
-      ],
-      "is presenting": [
-        "está apresentando"
       ],
       "Joined": [
         "Entrou"

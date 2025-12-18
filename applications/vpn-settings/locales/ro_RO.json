@@ -83,9 +83,6 @@
       "Add external address": [
         "Adăugare adresă externă"
       ],
-      "add more seats": [
-        "adăugați mai multe licențe"
-      ],
       "Add PayPal": [
         "Adăugare PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Am înțeles"
+      ],
+      "Group owner": [
+        "Proprietar grup"
       ],
       "Help and feedback": [
         "Ajutor și feedback"
@@ -1100,9 +1100,6 @@
       "User": [
         "Utilizator"
       ],
-      "Users and addresses": [
-        "Utilizatori și adrese"
-      ],
       "Verify": [
         "Verifică"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Reluare transferare"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "mai adăugați licențe"
       ]
     },
     "Action for user session": {
@@ -1832,9 +1834,6 @@
       ],
       "Authenticator problem": [
         "Problemă autentificator"
-      ],
-      "Black Friday": [
-        "Vinerea Neagră"
       ],
       "Bridge problem": [
         "Problemă „Bridge”"
@@ -4577,12 +4576,6 @@
       ],
       "View invitation": [
         "Afișare invitație"
-      ],
-      "View the invitation": [
-        "Afișare invitație"
-      ],
-      "View the invitations": [
-        "Afișare invitații"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4639,12 +4632,6 @@
       ],
       "Pending": [
         "În așteptare"
-      ],
-      "Pending invitation": [
-        "Invitație în așteptare"
-      ],
-      "Pending invitations": [
-        "Invitații în așteptare"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ne pare rău, nu puteți schimba planurile în acest moment."
@@ -6649,9 +6636,6 @@
       "Groups": [
         "Grupuri"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ajută la scrierea, răspunderea și corectarea mesajelor. Dacă este dezactivat, doar administratorii vor avea acces. Pentru utilizatorii individuali puteți gestiona în ${ userAndAddress } sau ${ addMoreSeats }."
-      ],
       "here": [
         "aici"
       ],
@@ -8308,6 +8292,11 @@
         "Culoare selectată:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Vă ajută să scrieți, să răspundeți și să corectați mesajele. Dacă e dezactivată, doar administratorii vor avea acces. Gestionați opțiunea pentru fiecare utilizator în ${ userAndAddresses } sau ${ addMoreSeats }."
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Cum se trimite o plată în numerar?"
@@ -9562,6 +9551,11 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ]
     },
     "Live Chat Modal": {
@@ -16365,9 +16359,6 @@
       ],
       "Did you know?": [
         "Știați că?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suită de confidențialitate cu e-mail securizat, ${ VPN_SHORT_APP_NAME }, stocare în cloud și manager de parole într-un singur pachet. Doar cu ${ fallBackString } lunar."

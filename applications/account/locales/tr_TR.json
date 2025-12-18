@@ -144,9 +144,6 @@
       "Add label": [
         "Etiket ekle"
       ],
-      "add more seats": [
-        "daha fazla koltuk ekle"
-      ],
       "Add notification": [
         "Bildirim ekle"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Anladım"
+      ],
+      "Group owner": [
+        "Grup sahibi"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -1623,9 +1623,6 @@
       "User": [
         "Kullanıcı"
       ],
-      "Users and addresses": [
-        "Kullanıcılar ve adresler"
-      ],
       "Verify": [
         "Doğrula"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "İletme sürdürülüyor"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "daha fazla koltuk ekle"
       ]
     },
     "Action for user session": {
@@ -1951,6 +1953,32 @@
       ],
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoin cüzdanı"
+      ],
+      "Confidential video calls": [
+        "Gizli görüntülü aramalar"
+      ],
+      "Encrypted email": [
+        "Şifrelenmiş e-posta"
+      ],
+      "Passwords and identity": [
+        "Parolalar ve kimlik"
+      ],
+      "Private AI assistant": [
+        "Gizli Yapay Zeka asistanı"
+      ],
+      "Private browsing": [
+        "Özel tarama"
+      ],
+      "Private scheduling": [
+        "Özel planlama"
+      ],
+      "Secure cloud storage": [
+        "Güvenli bulut depolama"
       ]
     },
     "Apps dropdown": {
@@ -2674,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Kimlik doğrulayıcı sorunu"
-      ],
-      "Black Friday": [
-        "Muhteşem Cuma"
       ],
       "Bridge problem": [
         "Bridge sorunu"
@@ -5508,11 +5533,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacak."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Uyumluluk nedeniyle, kuantum sonrası şifreleme kapatıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme kapatıldı."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Uyumluluk için kuantum sonrası şifreleme devre dışı bırakıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme kapatılacak."
@@ -6976,17 +7001,17 @@
       "Set up family group": [
         "Aile grubunu ayarla"
       ],
+      "Show all (${ invites.length })": [
+        "Tümünü görüntüle (${ invites.length })"
+      ],
+      "Show less": [
+        "Daha az görüntüle"
+      ],
       "Switch plans": [
         "Tarife değiştir"
       ],
       "View invitation": [
         "Daveti görüntüle"
-      ],
-      "View the invitation": [
-        "Daveti görüntüle"
-      ],
-      "View the invitations": [
-        "Davetleri görüntüle"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7061,12 +7086,6 @@
       "Pending": [
         "Bekliyor"
       ],
-      "Pending invitation": [
-        "Bekleyen davet"
-      ],
-      "Pending invitations": [
-        "Bekleyen davetler"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarife değiştiremezsiniz."
       ],
@@ -7078,6 +7097,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
+      ],
+      "View the invitation": [
+        "Daveti görüntüle",
+        "Davetleri görüntüle"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } ailesine davet edildiniz"
@@ -7116,6 +7139,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "${ plan } tarifesindeki tüm ücretli özelliklere erişiminizi kaybedeceksiniz."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Hesabınızı bu grup tarifesine bağlamanız için **${ invite.InviterEmail }** tarafından davet edildiniz."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } katılmaya davetlisiniz"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
@@ -9653,9 +9682,6 @@
       "Groups": [
         "Gruplar"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Kapatılırsa yalnızca yöneticiler erişebilir. Bireysel kullanıcıları ${ userAndAddress } veya ${ addMoreSeats } içinden yönetin"
-      ],
       "here": [
         "buraya"
       ],
@@ -11731,6 +11757,11 @@
       ],
       "Selected color:": [
         "Seçilmiş renk:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Devre dışı bırakıldığında yalnızca yöneticiler erişebilir. ${ userAndAddresses } veya ${ addMoreSeats } içindeki bireysel kullanıcılar için yönetin."
       ]
     },
     "Info - folder colouring feature": {
@@ -13957,6 +13988,11 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ]
     },
     "Link label (optional)": {
@@ -16845,8 +16881,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ailesine davet edildiniz"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "%${ discount } Muhteşem Cuma indiriminiz uygulandı"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Yıl Sonu indiriminiz %${ discount } olarak uygulanmıştır"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
@@ -22442,6 +22478,9 @@
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
       ],
+      "Pending invitations": [
+        "Bekleyen davetler"
+      ],
       "Personalize your email footer": [
         "E-posta alt bilginizi isteğinize göre değiştirin"
       ],
@@ -23629,8 +23668,8 @@
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini kurtarın."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıllık dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini bir arada sunan gizlilik paketi. Ayda yalnızca ${ fallBackString } ile başlayarak"

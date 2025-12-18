@@ -144,9 +144,6 @@
       "Add label": [
         "Agregar una etiqueta"
       ],
-      "add more seats": [
-        "añada más licencias"
-      ],
       "Add notification": [
         "Agregar notificación"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "Group owner": [
+        "Persona propietaria del grupo"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -1623,9 +1623,6 @@
       "User": [
         "Usuario"
       ],
-      "Users and addresses": [
-        "Usuarios y direcciones"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Reanudar reenvío"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "añadir más licencias"
       ]
     },
     "Action for user session": {
@@ -1951,6 +1953,32 @@
       ],
       "Talk confidentially": [
         "Hablar confidencialmente"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Cartera Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Videollamadas confidenciales"
+      ],
+      "Encrypted email": [
+        "Correo electrónico cifrado"
+      ],
+      "Passwords and identity": [
+        "Contraseñas e identidad"
+      ],
+      "Private AI assistant": [
+        "Asistente de IA privado"
+      ],
+      "Private browsing": [
+        "Navegación privada"
+      ],
+      "Private scheduling": [
+        "Calendario privado"
+      ],
+      "Secure cloud storage": [
+        "Almacenamiento en la nube seguro"
       ]
     },
     "Apps dropdown": {
@@ -2674,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Problema con el autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de Bridge"
@@ -5508,11 +5533,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Por motivos de compatibilidad, se generará una nueva clave de cifrado para ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Por motivos de compatibilidad, el cifrado poscuántico se ha desactivado y se ha generado una nueva clave de cifrado para ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Por motivos de compatibilidad, el cifrado postcuántico se ha desactivado para ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Por motivos de compatibilidad, el cifrado poscuántico se ha desactivado y se ha generado una nueva clave de cifrado para ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Por motivos de compatibilidad, el cifrado poscuántico se desactivará para ${ boldForwarderEmail }."
@@ -6976,17 +7001,17 @@
       "Set up family group": [
         "Configurar grupo familiar"
       ],
+      "Show all (${ invites.length })": [
+        "Mostrar todo (${ invites.length })"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
       "Switch plans": [
         "Cambiar planes"
       ],
       "View invitation": [
         "Ver invitación"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7061,12 +7086,6 @@
       "Pending": [
         "Pendiente"
       ],
-      "Pending invitation": [
-        "Invitación pendiente"
-      ],
-      "Pending invitations": [
-        "Invitaciones pendientes"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentablemente, no puede cambiar de plan en este momento."
       ],
@@ -7078,6 +7097,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar la transición, le daremos una prueba gratuita de 30 días de ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -7116,6 +7139,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Perderá todo acceso a las funciones premium incluidas en ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Recibió una invitación de **${ invite.InviterEmail }** para vincular su cuenta a este plan de grupo."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Recibió una invitación para unirse a ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Se le invitó a vincular la cuenta de ${ BRAND_NAME } a este plan familiar y disfrutar juntos de todas las funciones premium de ${ brandOrAppName }."
@@ -9656,9 +9685,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ayuda a redactar, responder y corregir correos electrónicos. Si está desactivado, solo los administradores tendrán acceso. Gestione para usuarios individuales en ${ userAndAddress } o ${ addMoreSeats }."
-      ],
       "here": [
         "aquí"
       ],
@@ -11734,6 +11760,11 @@
       ],
       "Selected color:": [
         "Color seleccionado:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ayuda a escribir, responder y corregir correos electrónicos. Si se desactiva, solo los administradores tendrán acceso. Gestiónelo para usuarios individuales en ${ userAndAddresses } o ${ addMoreSeats }."
       ]
     },
     "Info - folder colouring feature": {
@@ -13960,6 +13991,11 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ]
     },
     "Link label (optional)": {
@@ -16848,8 +16884,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Recibió una invitación para unirse a ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Se aplicó su ${ discount }% de descuento de Black Friday."
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Se ha aplicado su ${ discount }% de descuento de fin de año"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "la organización tiene acceso a ${ free }. Si quiere acceder a las funciones premium de ${ appName }, solicite al administrador de la organización que actualice la versión."
@@ -22445,6 +22481,9 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
+      "Pending invitations": [
+        "Invitaciones pendientes"
+      ],
       "Personalize your email footer": [
         "Personalice su pie de correo electrónico"
       ],
@@ -23632,7 +23671,7 @@
       "Did you know?": [
         "¿Lo sabía?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenga ${ drivePlusPlanMaxSpace } de almacenamiento para sus archivos, fotos y documentos, y recupere versiones con una recuperación de archivos de 10 años."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Hi ha hagut un problema amb l'autenticador"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problema a Bridge"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Canvia de pla"
-      ],
-      "View the invitation": [
-        "Mostra la invitació"
-      ],
-      "View the invitations": [
-        "Mostra les invitacions"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La subscripció es facturarà a l'administrador principal d'aquest pla."
+      ],
+      "View the invitation": [
+        "Mostra la invitació",
+        "Veure les invitacions"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }",
         "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Ja és a la vostra biblioteca"
       ],
       "Also try looking in Trash.": [
         "Proveu també de mirar a la Paperera."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "S'estan executant els diagnòstics..."
-      ],
-      "Same photo or video already exist": [
-        "La mateixa foto o vídeo ja existeix"
       ],
       "Saving...": [
         "Desant..."

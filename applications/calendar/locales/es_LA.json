@@ -1450,9 +1450,6 @@
       "Authenticator problem": [
         "Problema con el autenticador"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problema de Bridge"
       ],
@@ -3961,7 +3958,7 @@
         "No puede enviar un correo a más de ${ maxContacts } destinatario.",
         "No puede enviar un correo a más de ${ maxContacts } destinatarios."
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "No puede ingresar el correo electrónico del organizador"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4294,12 +4291,6 @@
       ],
       "Switch plans": [
         "Cambiar planes"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4351,6 +4342,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -8294,8 +8289,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Siempre nos esforzamos por mejorar ${ BRAND_NAME } ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Su experiencia ha sido satisfactoria?"
       ]
     },
     "new_plans: Subtext": {

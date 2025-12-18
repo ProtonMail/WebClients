@@ -83,9 +83,6 @@
       "Add external address": [
         "Dış e-posta adresi ekle"
       ],
-      "add more seats": [
-        "daha fazla koltuk ekle"
-      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Anladım"
+      ],
+      "Group owner": [
+        "Grup sahibi"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -1100,9 +1100,6 @@
       "User": [
         "Kullanıcı"
       ],
-      "Users and addresses": [
-        "Kullanıcılar ve adresler"
-      ],
       "Verify": [
         "Doğrula"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "İletme sürdürülüyor"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "daha fazla koltuk ekle"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Kimlik doğrulayıcı sorunu"
-      ],
-      "Black Friday": [
-        "Muhteşem Cuma"
       ],
       "Bridge problem": [
         "Bridge sorunu"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Daveti görüntüle"
-      ],
-      "View the invitation": [
-        "Daveti görüntüle"
-      ],
-      "View the invitations": [
-        "Davetleri görüntüle"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "Bekliyor"
       ],
-      "Pending invitation": [
-        "Bekleyen davet"
-      ],
-      "Pending invitations": [
-        "Bekleyen davetler"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarife değiştiremezsiniz."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
+      ],
+      "View the invitation": [
+        "Daveti görüntüle",
+        "Davetleri görüntüle"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } ailesine davet edildiniz"
@@ -6564,9 +6555,6 @@
       "Groups": [
         "Gruplar"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Kapatılırsa yalnızca yöneticiler erişebilir. Bireysel kullanıcıları ${ userAndAddress } veya ${ addMoreSeats } içinden yönetin"
-      ],
       "here": [
         "buraya"
       ],
@@ -8199,6 +8187,11 @@
         "Seçilmiş renk:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Devre dışı bırakıldığında yalnızca yöneticiler erişebilir. ${ userAndAddresses } veya ${ addMoreSeats } içindeki bireysel kullanıcılar için yönetin."
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Nakit ödeme nasıl yapılır?"
@@ -9445,6 +9438,11 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ]
     },
     "Live Chat Modal": {
@@ -16146,8 +16144,8 @@
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini kurtarın."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıllık dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini bir arada sunan gizlilik paketi. Ayda yalnızca ${ fallBackString } ile başlayarak"

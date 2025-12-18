@@ -1444,9 +1444,6 @@
       "Authenticator problem": [
         "Autentiseringsproblem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problem med Bridge"
       ],
@@ -3946,9 +3943,6 @@
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
       ],
-      "You cannot enter the organizer email": [
-        "Du kan inte ange organisatörens e-post"
-      ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
       ],
@@ -4279,12 +4273,6 @@
       ],
       "Switch plans": [
         "Byt paket"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4336,6 +4324,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -8243,8 +8235,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Vi strävar alltid efter att göra ${ BRAND_NAME } ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     },
     "new_plans: Subtext": {

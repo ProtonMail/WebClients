@@ -1513,10 +1513,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -2191,9 +2188,6 @@
       ],
       "Authenticator problem": [
         "Праблема з аўтэнтыфікатарам"
-      ],
-      "Black Friday": [
-        "Чорная пятніца"
       ],
       "Bridge problem": [
         "Праблема з Bridge"
@@ -5421,12 +5415,6 @@
       ],
       "Switch plans": [
         "Змяніць тарыфны план"
-      ],
-      "View the invitation": [
-        "Паглядзець запрашэнне"
-      ],
-      "View the invitations": [
-        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7381,7 +7369,7 @@
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Электронныя лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "embedded image": [
         "убудаваны відарыс",
@@ -7642,7 +7630,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -11546,8 +11537,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Мы заўсёды імкнёмся зрабіць ${ BRAND_NAME } ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
       ]
     },
     "new_plans: Subtext": {

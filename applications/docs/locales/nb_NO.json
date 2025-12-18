@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Opprett og kopier alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Opprett ny ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Opprett ny mappe"
       ],
@@ -1174,9 +1177,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -3111,6 +3111,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
       ],
+      "Unable to import file": [
+        "Kan ikke importere filen"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
       ],
@@ -3140,6 +3143,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Vi har problemer med å synkronisere dokumentet ditt. Oppdater siden."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Vi kunne ikke importere denne filen til ${ SHEETS_APP_NAME }. Du kan prøve å kopiere og lime inn innholdet i en ny ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
@@ -3401,12 +3407,6 @@
       ],
       "Switch plans": [
         "Bytt plan"
-      ],
-      "View the invitation": [
-        "Se invitasjonen"
-      ],
-      "View the invitations": [
-        "Se invitasjonene"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5955,6 +5955,9 @@
       ],
       "Resume now": [
         "Gjenoppta nå"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ],
       "Types of recovery methods": [
         "Typer av gjenopprettingsmetoder"

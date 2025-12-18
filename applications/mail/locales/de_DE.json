@@ -1504,10 +1504,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -2163,9 +2159,6 @@
       ],
       "Authenticator problem": [
         "Authenticator-Problem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem mit „Bridge“"
@@ -5349,12 +5342,6 @@
       ],
       "Switch plans": [
         "Tarife wechseln"
-      ],
-      "View the invitation": [
-        "Sieh dir die Einladung an"
-      ],
-      "View the invitations": [
-        "Sieh dir die Einladungen an"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5393,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
+      ],
+      "View the invitation": [
+        "Einladung ansehen",
+        "Einladungen ansehen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -7408,7 +7399,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11184,8 +11176,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Wir sind stets bemüht, ${ BRAND_NAME } ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wir sind stets bemüht, ${ config.appName } zu verbessern. Wie zufrieden bist du mit deiner Erfahrung?"
       ]
     },
     "new_plans: Subtext": {

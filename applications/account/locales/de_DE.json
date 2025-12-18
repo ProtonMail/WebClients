@@ -136,9 +136,6 @@
       "Add label": [
         "Kategorie hinzufügen"
       ],
-      "add more seats": [
-        "Mehr Lizenzen hinzufügen"
-      ],
       "Add notification": [
         "Benachrichtigung hinzufügen"
       ],
@@ -801,6 +798,9 @@
       ],
       "Got it": [
         "Verstanden"
+      ],
+      "Group owner": [
+        "Gruppenbesitzer"
       ],
       "Help and feedback": [
         "Hilfe und Feedback"
@@ -1570,9 +1570,6 @@
       "User": [
         "Benutzer"
       ],
-      "Users and addresses": [
-        "Benutzer und E-Mail-Adressen"
-      ],
       "Verify": [
         "Verifizieren"
       ],
@@ -1645,6 +1642,11 @@
         "Weiterleitung wird fortgesetzt"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "Mehr Lizenzen hinzufügen"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Widerrufen"
@@ -1658,6 +1660,16 @@
     "Action subscription": {
       "Reactivate": [
         "Reaktivieren"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Annehmen"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Ablehnen"
       ]
     },
     "Addon": {
@@ -1882,6 +1894,32 @@
       ],
       "Talk confidentially": [
         "Vertraulich sprechen"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoin-Wallet"
+      ],
+      "Confidential video calls": [
+        "Sichere Videoanrufe"
+      ],
+      "Encrypted email": [
+        "Verschlüsselte E-Mails"
+      ],
+      "Passwords and identity": [
+        "Passwörter und Identitäten"
+      ],
+      "Private AI assistant": [
+        "Privater KI-Assistent"
+      ],
+      "Private browsing": [
+        "Privates Surfen"
+      ],
+      "Private scheduling": [
+        "Privates Planen"
+      ],
+      "Secure cloud storage": [
+        "Sicherer Cloud-Speicher"
       ]
     },
     "Apps dropdown": {
@@ -2601,9 +2639,6 @@
       "Authenticator problem": [
         "Authenticator-Problem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problem mit „Bridge“"
       ],
@@ -2805,6 +2840,9 @@
     "Calendar status": {
       "Active": [
         "Aktiv"
+      ],
+      "Default": [
+        "Standard"
       ],
       "Disabled": [
         "Deaktiviert"
@@ -5269,6 +5307,9 @@
       "Back": [
         "Zurück"
       ],
+      "Cancel": [
+        "Abbrechen"
+      ],
       "Decline": [
         "Ablehnen"
       ],
@@ -5331,11 +5372,19 @@
       "Forward to": [
         "Weiterleiten an"
       ],
+      "From": [
+        "Von"
+      ],
       "Status": [
         "Status"
       ],
       "To": [
         "An"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Von mir"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -5344,6 +5393,9 @@
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Die Ende-zu-Ende-Verschlüsselung wurde für deine ${ boldForwarderEmail }-Adresse deaktiviert, aber die Null-Zugriff-Verschlüsselung bleibt aktiviert. ${ learnMoreLink }"
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Aus Kompatibilitätsgründen wurde die Post-Quantum-Verschlüsselung deaktiviert und ein neuer Verschlüsselungsschlüssel für ${ boldForwarderEmail } generiert."
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Aus Kompatibilitätsgründen wird die Post-Quanten-Verschlüsselung deaktiviert und ein neuer Verschlüsselungsschlüssel für ${ boldForwarderEmail } generiert."
@@ -5382,6 +5434,9 @@
       ],
       "or": [
         "oder"
+      ],
+      "Or": [
+        "Oder"
       ],
       "With attachment": [
         "Mit Anhang"
@@ -6727,17 +6782,17 @@
       "Set up family group": [
         "Familiengruppe einrichten"
       ],
+      "Show all (${ invites.length })": [
+        "Alle anzeigen (${ invites.length })"
+      ],
+      "Show less": [
+        "Weniger anzeigen"
+      ],
       "Switch plans": [
         "Tarife wechseln"
       ],
       "View invitation": [
         "Einladung ansehen"
-      ],
-      "View the invitation": [
-        "Sieh dir die Einladung an"
-      ],
-      "View the invitations": [
-        "Sieh dir die Einladungen an"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -6812,12 +6867,6 @@
       "Pending": [
         "Ausstehend"
       ],
-      "Pending invitation": [
-        "Offene Einladung"
-      ],
-      "Pending invitations": [
-        "Offene Einladungen"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
@@ -6829,6 +6878,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Einladung ansehen",
+        "Einladungen ansehen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -6867,6 +6920,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Du verlierst den Zugang zu allen Premium-Funktionen, die in ${ plan } enthalten sind."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Du wurdest von **${ invite.InviterEmail }** eingeladen, dein Konto mit diesem Gruppenabonnement zu verknüpfen."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Familienabonnement zu verknüpfen und gemeinsam alle ${ brandOrAppName } Premium-Funktionen zu nutzen."
@@ -7677,6 +7736,9 @@
       ],
       "Email address": [
         "E‐Mail‐Adresse"
+      ],
+      "Last used": [
+        "Zuletzt verwendet"
       ]
     },
     "Header; Table with list of calendars arranged by type": {
@@ -8325,6 +8387,9 @@
       ],
       "${ url } added.": [
         "${ url } hinzugefügt."
+      ],
+      "${ url } deleted.": [
+        "${ url } gelöscht."
       ],
       "${ userFound } user found": [
         "${ userFound } Benutzer gefunden",
@@ -9310,9 +9375,6 @@
       ],
       "Groups": [
         "Gruppen"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hilft beim Schreiben, Antworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Verwalte dies für einzelne Benutzer in ${ userAndAddress } oder ${ addMoreSeats }"
       ],
       "here": [
         "hier"
@@ -11319,6 +11381,11 @@
         "Ausgewählte Farbe:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hilft beim Schreiben, Antworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Verwalte dies für einzelne Benutzer in ${ userAndAddresses } oder ${ addMoreSeats }"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Wenn aktiviert, übernehmen Unterordner die Farbe des übergeordneten Ordners."
@@ -12019,6 +12086,9 @@
       "Backup password": [
         "Passwort sichern"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
@@ -12258,6 +12328,9 @@
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
+      ],
+      "Duration": [
+        "Dauer"
       ],
       "e.g. example.com": [
         "z. B. beispiel.de"
@@ -13122,6 +13195,14 @@
         "Standard"
       ]
     },
+    "Label to change density": {
+      "Comfortable": [
+        "Großflächig"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
     "Label to change view layout": {
       "Column": [
         "Spalte"
@@ -13365,6 +13446,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "Snap store": [
+        "Snap Store"
+      ],
       "switch account": [
         "Konto wechseln"
       ],
@@ -13397,6 +13481,11 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
       ]
     },
     "Link label (optional)": {
@@ -15528,11 +15617,29 @@
       "15th of the month": [
         "15. des Monats"
       ],
+      "16th of the month": [
+        "16. des Monats"
+      ],
+      "17th of the month": [
+        "17. des Monats"
+      ],
+      "18th of the month": [
+        "18. des Monats"
+      ],
       "19th of the month": [
         "19. des Monats"
       ],
       "1st of the month": [
         "1. des Monats"
+      ],
+      "20th of the month": [
+        "20. des Monats"
+      ],
+      "21st of the month": [
+        "21. des Monats"
+      ],
+      "22nd of the month": [
+        "22. des Monats"
       ],
       "23rd of the month": [
         "23. des Monats"
@@ -15546,8 +15653,14 @@
       "26th of the month": [
         "26. des Monats"
       ],
+      "27th of the month": [
+        "27. des Monats"
+      ],
       "28th of the month": [
         "28. des Monats"
+      ],
+      "29th of the month": [
+        "29. des Monats"
       ],
       "2nd of the month": [
         "2. des Monats"
@@ -15557,6 +15670,12 @@
       ],
       "31st of the month": [
         "31. des Monats"
+      ],
+      "3rd of the month": [
+        "3. des Monats"
+      ],
+      "4th of the month": [
+        "4. des Monats"
       ],
       "5th of the month": [
         "5. des Monats"
@@ -15633,6 +15752,12 @@
       "Label as...": [
         "Kategorisieren als …"
       ],
+      "Left to Right": [
+        "Links nach Rechts"
+      ],
+      "macOS": [
+        "macOS"
+      ],
       "Mark as read": [
         "Als gelesen markieren"
       ],
@@ -15708,11 +15833,20 @@
       "Star": [
         "Favorisieren"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Die gesamte Organisation"
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -15856,6 +15990,9 @@
       ],
       ".dmg (12.0 or later)": [
         ".dmg (12.0 oder neuer)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-Bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (für Fedora/openSUSE)"
@@ -16203,8 +16340,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Du wurdest eingeladen, ${ PASS_APP_NAME } beizutreten."
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Dein ${ discount }% Black Friday Rabatt wurde angewendet"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Dein ${ discount } % Jahresendrabatt wurde angewendet"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Deine Organisation hat Zugang zu ${ free }. Wenn du auf die Premiumfunktionen von ${ appName } zugreifen möchtest, bitte den Administrator deiner Organisation um ein Upgrade."
@@ -16989,6 +17126,11 @@
       ],
       "Enabling post-quantum protection failed. Try again later.": [
         "Aktivierung des Post-Quantum-Schutzes fehlgeschlagen. Versuche es später erneut."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Verstanden"
       ]
     },
     "pqc-optin: Progress status": {
@@ -21671,6 +21813,9 @@
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
       ],
+      "Pending invitations": [
+        "Ausstehende Einladungen"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -22248,6 +22393,9 @@
       "Function": [
         "Funktion"
       ],
+      "Status": [
+        "Status"
+      ],
       "Type": [
         "Typ"
       ]
@@ -22775,7 +22923,7 @@
       "Did you know?": [
         "Wusstest du das?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "${ drivePlusPlanMaxSpace } Speicherplatz für deine Dateien, Fotos und Dokumente erhalten und Dateiversionen mit 10-jähriger Dateiwiederherstellung wiederherstellen."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
@@ -23103,8 +23251,26 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

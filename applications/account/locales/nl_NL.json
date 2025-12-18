@@ -127,9 +127,6 @@
       "Add label": [
         "Label toevoegen"
       ],
-      "add more seats": [
-        "meer licenties toevoegen"
-      ],
       "Add notification": [
         "Melding toevoegen"
       ],
@@ -1486,9 +1483,6 @@
       "User": [
         "Gebruiker"
       ],
-      "Users and addresses": [
-        "Gebruikers en adressen"
-      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -1559,6 +1553,11 @@
     "action": {
       "Resuming forward": [
         "Doorsturen hervatten"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "meer licenties toevoegen"
       ]
     },
     "Action for user session": {
@@ -1864,6 +1863,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -2458,9 +2463,6 @@
       ],
       "Authenticator problem": [
         "Authenticatieprobleem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -6382,17 +6384,17 @@
       "Set up family group": [
         "Gezinsgroep configureren"
       ],
+      "Show all (${ invites.length })": [
+        "Toon alle (${ invites.length })"
+      ],
+      "Show less": [
+        "Minder weergeven"
+      ],
       "Switch plans": [
         "Van abonnement wisselen"
       ],
       "View invitation": [
         "Uitnodiging weergeven"
-      ],
-      "View the invitation": [
-        "Bekijk de uitnodiging"
-      ],
-      "View the invitations": [
-        "Bekijk de uitnodigingen"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -6467,12 +6469,6 @@
       "Pending": [
         "In behandeling"
       ],
-      "Pending invitation": [
-        "Openstaande uitnodiging"
-      ],
-      "Pending invitations": [
-        "Openstaande uitnodigingen"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
       ],
@@ -6484,6 +6480,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Om de overstap makkelijker te maken, geven we u 30 dagen toegang tot ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging",
+        "Bekijk de uitnodigingen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
@@ -6522,6 +6522,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "U verliest toegang tot alle premium-functies van ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "U bent uitgenodigd door **${ invite.InviterEmail }** om uw account te koppelen aan dit groepsabonnement."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "U bent uitgenodigd om uw ${ BRAND_NAME } account te linken aan dit familieplan en samen te genieten van de premiumfuncties van ${ brandOrAppName }."
@@ -8900,9 +8906,6 @@
       "Groups": [
         "Groepen"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddress } of ${ addMoreSeats }"
-      ],
       "here": [
         "hier"
       ],
@@ -10840,6 +10843,11 @@
       ],
       "Selected color:": [
         "Geselecteerde kleur:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddresses } of ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -12786,6 +12794,11 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Gebruikers en adressen"
       ]
     },
     "Link label (optional)": {
@@ -15496,9 +15509,6 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "U bent uitgenodigd u aan te sluiten bij ${ PASS_APP_NAME }"
-      ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Uw ${ discount }% Black Friday korting is toegepast"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Uw organisatie heeft toegang tot ${ free }. Neem contact op met uw organisatiebeheerder om te upgraden als u premium toegang wil tot ${ appName }-functies."
@@ -20842,6 +20852,9 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
+      "Pending invitations": [
+        "Uitnodigingen in behandeling"
+      ],
       "Phone": [
         "Telefoon"
       ],
@@ -21890,7 +21903,7 @@
       "Did you know?": [
         "Wist u dat?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Ontvang ${ drivePlusPlanMaxSpace } opslag voor uw bestanden, foto's en documenten, en herstel bestandsversies tot 10 jaar oud."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

@@ -1505,8 +1505,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2163,9 +2162,6 @@
       ],
       "Authenticator problem": [
         "Πρόβλημα ταυτοποίησης"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Πρόβλημα Bridge"
@@ -5349,12 +5345,6 @@
       ],
       "Switch plans": [
         "Αλλαγή πλάνου"
-      ],
-      "View the invitation": [
-        "Δείτε την πρόσκληση"
-      ],
-      "View the invitations": [
-        "Δείτε τις προσκλήσεις"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5396,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του πλάνου."
+      ],
+      "View the invitation": [
+        "Δείτε την πρόσκληση",
+        "Δείτε τις προσκλήσεις"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
@@ -7408,7 +7402,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -11184,8 +11179,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Προσπαθούμε πάντα να βελτιώνουμε το ${ BRAND_NAME } ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Προσπαθούμε πάντα να βελτιώνουμε το ${ config.appName }. Πόσο ικανοποιημένοι είστε από την εμπειρία σας;"
       ]
     },
     "new_plans: Subtext": {

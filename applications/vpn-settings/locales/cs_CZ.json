@@ -83,9 +83,6 @@
       "Add external address": [
         "Přidat externí adresu"
       ],
-      "add more seats": [
-        "přidat více licencí"
-      ],
       "Add PayPal": [
         "Přidat PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Rozumím"
+      ],
+      "Group owner": [
+        "Vlastník skupiny"
       ],
       "Help and feedback": [
         "Nápověda a zpětná vazba"
@@ -1100,9 +1100,6 @@
       "User": [
         "Uživatel"
       ],
-      "Users and addresses": [
-        "Uživatelé a adresy"
-      ],
       "Verify": [
         "Ověřit"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Obnovení přeposílání"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "přidejte více licencí"
       ]
     },
     "Action for user session": {
@@ -1845,9 +1847,6 @@
       ],
       "Authenticator problem": [
         "Problém s ověřovací aplikací"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikací Bridge"
@@ -4601,12 +4600,6 @@
       ],
       "View invitation": [
         "Zobrazit pozvánku"
-      ],
-      "View the invitation": [
-        "Zobrazit pozvánku"
-      ],
-      "View the invitations": [
-        "Zobrazit pozvánky"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4664,12 +4657,6 @@
       ],
       "Pending": [
         "Čekající"
-      ],
-      "Pending invitation": [
-        "Čekající pozvánka"
-      ],
-      "Pending invitations": [
-        "Čekající pozvánky"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
@@ -6734,9 +6721,6 @@
       "Groups": [
         "Skupiny"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Pomáhá psát, kontrolovat a odpovídat na e-maily. Po deaktivaci budou mít přístup pouze správci. Spravujte pro jednotlivé uživatele v ${ userAndAddress } nebo ${ addMoreSeats }"
-      ],
       "here": [
         "zde"
       ],
@@ -8417,6 +8401,11 @@
         "Vybraná barva:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Pomáhá s psaním, odpovídáním a jazykovou kontrolou e-mailů. Po deaktivaci budou mít přístup pouze správci. Spravujte pro jednotlivé uživatele v části ${ userAndAddresses } nebo ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Jak poslat platbu v hotovosti?"
@@ -9679,6 +9668,11 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Uživatelé a adresy"
       ]
     },
     "Live Chat Modal": {
@@ -16598,9 +16592,6 @@
       ],
       "Did you know?": [
         "Věděli jste?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Získejte úložiště o velikosti ${ drivePlusPlanMaxSpace } pro své soubory, fotky a dokumenty a obnovujte verze souborů díky 10letému obnovení souborů."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Sada pro soukromí se zabezpečeným e-mailem, ${ VPN_SHORT_APP_NAME }, cloudovým úložištěm a správcem hesel v jednom balíčku. Již od ${ fallBackString } měsíčně"
