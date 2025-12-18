@@ -103,6 +103,9 @@
       "Add another account": [
         "Añadir otra cuenta"
       ],
+      "Add calendar from URL": [
+        "Añadir calendario desde una URL"
+      ],
       "Add condition": [
         "Añadir una condición"
       ],
@@ -126,9 +129,6 @@
       ],
       "Add label": [
         "Añadir una etiqueta"
-      ],
-      "add more seats": [
-        "añadir más licencias"
       ],
       "Add notification": [
         "Añadir notificación"
@@ -408,6 +408,9 @@
       ],
       "Delete account": [
         "Eliminar la cuenta"
+      ],
+      "Delete filter “${ Name }”": [
+        "Eliminar el filtro \"${ Name }\""
       ],
       "Delete Gateway": [
         "Eliminar la puerta de enlace"
@@ -738,6 +741,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "Group owner": [
+        "Propietario de grupo"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -1150,6 +1156,9 @@
       "Save changes": [
         "Guardar los cambios"
       ],
+      "Save ICS file": [
+        "Guardar archivo ICS"
+      ],
       "Save SAML configuration": [
         "Guardar la configuración SAML"
       ],
@@ -1194,6 +1203,9 @@
       ],
       "select file": [
         "seleccionar un archivo"
+      ],
+      "Select language for invitation emails": [
+        "Seleccionar el idioma para los correos de invitación"
       ],
       "Select time zone": [
         "Seleccionar la zona horaria"
@@ -1486,9 +1498,6 @@
       "User": [
         "Usuario"
       ],
-      "Users and addresses": [
-        "Usuarios y direcciones"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -1559,6 +1568,11 @@
     "action": {
       "Resuming forward": [
         "Reanudar el reenvío"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "añadir más licencias"
       ]
     },
     "Action for user session": {
@@ -1748,6 +1762,9 @@
       ]
     },
     "Alias promotion": {
+      "Try ${ PASS_APP_NAME }": [
+        "Prueba ${ PASS_APP_NAME }"
+      ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Con ${ PASS_APP_NAME } puedes generar alias únicos para ocultar tu identidad y reenviar correos electrónicos a tu bandeja de entrada principal."
       ]
@@ -1795,6 +1812,32 @@
       ],
       "Talk confidentially": [
         "Hablar confidencialmente"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Cartera Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Videollamada privada"
+      ],
+      "Encrypted email": [
+        "Correo cifrado"
+      ],
+      "Passwords and identity": [
+        "Claves e identidad"
+      ],
+      "Private AI assistant": [
+        "Asistente de IA privado"
+      ],
+      "Private browsing": [
+        "Navegación privada"
+      ],
+      "Private scheduling": [
+        "Agenda privada"
+      ],
+      "Secure cloud storage": [
+        "Nube segura"
       ]
     },
     "Apps dropdown": {
@@ -2486,9 +2529,6 @@
       ],
       "Authenticator problem": [
         "Problema con el autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -4219,6 +4259,11 @@
         "Miércoles"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Ajustes predeterminados de eventos"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconocido"
@@ -5099,6 +5144,12 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Delete": [
+        "Eliminar"
+      ],
+      "Edit conditions": [
+        "Editar condiciones"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -5125,6 +5176,9 @@
       ]
     },
     "email_forwarding_2023: Header": {
+      "Actions": [
+        "Acciones"
+      ],
       "Forward from": [
         "Reenviar desde"
       ],
@@ -5133,6 +5187,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Por motivos de compatibilidad, el cifrado poscuántico se ha desactivado y se ha generado una nueva clave de cifrado para ${ boldForwarderEmail }."
+      ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Por motivos de compatibilidad, se desactivará el cifrado post-cuántico y se generará una nueva clave de cifrado para ${ boldForwarderEmail }."
       ],
@@ -5190,6 +5247,9 @@
       ],
       "Forwarding deleted": [
         "Se ha eliminado el reenvío."
+      ],
+      "Forwarding resumed": [
+        "El reenvío se ha reanudado"
       ]
     },
     "email_forwarding_2023: Title": {
@@ -6388,11 +6448,23 @@
         "${ totalProcessed }/${ totalToProcess } evento exportado",
         "${ totalProcessed }/${ totalToProcess } eventos exportados"
       ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "Descifrando eventos de tu calendario: ${ totalProcessed }/${ totalToProcess }"
+      ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Debido a un restablecimiento de contraseña, no se han podido descifrar y exportar algunos de tus eventos."
       ],
+      "Loading events": [
+        "Cargando eventos"
+      ],
       "Password reset - multiple events cannot be decrypted": [
         "Contraseña restablecida - no se pueden descifrar eventos múltiples"
+      ],
+      "Some of your events could not be exported.": [
+        "No se han podido exportar algunos de tus eventos."
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "La conexión a internet fue interrumpida, lo que provocó un fallo en el proceso de exportación. Inténtalo de nuevo."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -6429,17 +6501,17 @@
       "Set up family group": [
         "Configurar el grupo familiar"
       ],
+      "Show all (${ invites.length })": [
+        "Mostrar todas (${ invites.length })"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
       "Switch plans": [
         "Cambiar de plan"
       ],
       "View invitation": [
         "Ver invitación"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -6514,12 +6586,6 @@
       "Pending": [
         "Pendiente"
       ],
-      "Pending invitation": [
-        "Invitación pendiente"
-      ],
-      "Pending invitations": [
-        "Invitaciones pendientes"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Lo sentimos, no puedes cambiar de plan en este momento."
       ],
@@ -6531,6 +6597,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar la transición, te ofrecemos una prueba gratuita de 30 días de ${ BRAND_NAME } Ilimitada*."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
@@ -6569,6 +6639,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Perderás todo acceso a las funciones premium incluidas en ${ plan }"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "**${ invite.InviterEmail }** te ha invitado a vincular tu cuenta a este plan de grupo."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan familiar y disfrutes así de todas las funciones premium de ${ brandOrAppName }."
@@ -7296,6 +7372,9 @@
       ],
       "Select your deal": [
         "Elige tu oferta"
+      ],
+      "Select your payment method:": [
+        "Selecciona tu método de pago:"
       ],
       "Select your pricing plan": [
         "Selecciona el precio del plan"
@@ -8745,6 +8824,9 @@
       "Enable single sign-on to keep your organization safe": [
         "Activa el inicio de sesión único para mantener segura tu organización."
       ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Activa TLS o SSL en el servicio externo si es compatible."
+      ],
       "Enabled countries": [
         "Países activados"
       ],
@@ -8960,9 +9042,6 @@
       ],
       "Groups": [
         "Grupos"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ayuda a escribir, responder y corregir correos electrónicos. Si está deshabilitado, solo los administradores tendrán acceso. Administrar para usuarios individuales en ${ userAndAddress } o ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -9505,6 +9584,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Más de 100 millones de personas y negocios se han registrado en ${ BRAND_NAME }."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a plan": [
         "Pagado por un plan"
       ],
@@ -9975,6 +10057,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrás seguir desbloqueando tus datos en ${ encryptionAndKeysLink }."
       ],
+      "The calendar will be removed from your account.": [
+        "El calendario se eliminará de tu cuenta."
+      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "La dark web es una parte de internet oculta donde información robada, como identidades, pueden ser compradas y vendidas."
       ],
@@ -10311,6 +10396,9 @@
       "URL link": [
         "Enlace del URL"
       ],
+      "URL settings updated.": [
+        "Ajustes de la URL actualizados."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Usa un gestor de contraseñas para generar y almacenar de manera segura tus contraseñas, asegurando contraseñas fuertes e inicios de sesión más sencillos."
       ],
@@ -10373,6 +10461,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Version history": [
+        "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
@@ -10897,6 +10988,11 @@
         "Color seleccionado:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ayuda a escribir, responder y corregir correos electrónicos. Si se desactiva, solo los administradores tendrán acceso. Gestiónalo para usuarios individuales en ${ userAndAddresses } o ${ addMoreSeats }."
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Cuando está activada, las subcarpetas heredan el color de la carpeta principal."
@@ -11308,6 +11404,9 @@
       ]
     },
     "Keys actions": {
+      "Delete": [
+        "Eliminar"
+      ],
       "Export public key": [
         "Exportar clave pública"
       ],
@@ -11472,6 +11571,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Permitir recuperación con un dispositivo de confianza"
+      ],
+      "Allow sharing outside the organization": [
+        "Permitir compartir fuera de la organización"
       ],
       "Allowed Domain": [
         "Dominio permitido"
@@ -11697,6 +11799,9 @@
       ],
       "Country": [
         "País"
+      ],
+      "Create password": [
+        "Crear contraseña"
       ],
       "Credit cards": [
         "Tarjetas de crédito"
@@ -12004,6 +12109,9 @@
       "Limited time": [
         "Por tiempo limitado"
       ],
+      "Lock app after inactivity": [
+        "Bloquear la aplicación después de inactividad"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -12025,6 +12133,9 @@
       "Members without 2FA": [
         "Miembros sin 2FA"
       ],
+      "Message": [
+        "Mensaje"
+      ],
       "Metadata file for ${ appName }": [
         "Archivo de metadatos para ${ appName }"
       ],
@@ -12042,6 +12153,9 @@
       ],
       "Minimum number of characters is ${ MIN_CHARS }": [
         "El mínimo número de caracteres es ${ MIN_CHARS }"
+      ],
+      "Minimum number of words": [
+        "Número mínimo de palabras"
       ],
       "Moderate NAT": [
         "NAT moderada"
@@ -12274,6 +12388,9 @@
       "Secure password generator": [
         "Generador de contraseñas seguro"
       ],
+      "Select Linux platform": [
+        "Seleccionar la distribución Linux"
+      ],
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
@@ -12334,6 +12451,9 @@
       ],
       "Start date": [
         "Fecha de inicio"
+      ],
+      "Start time": [
+        "Hora de inicio"
       ],
       "State": [
         "Estado"
@@ -12557,6 +12677,11 @@
       ],
       "Expired": [
         "Expirado"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change view layout": {
@@ -12831,6 +12956,11 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ]
     },
     "Link label (optional)": {
@@ -15565,8 +15695,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Has recibido una invitación para unirte a ${ PASS_APP_NAME }."
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Se ha aplicado tu ${ discount }% de descuento Black Friday."
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Se ha aplicado tu ${ discount }% de descuento de fin de año"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Tu organización tiene acceso a ${ free }. Si quieres acceder a las características premium de ${ appName }, solicita al administrador de tu organización que actualice la versión."
@@ -16183,6 +16313,9 @@
       "Postal code": [
         "Código postal"
       ],
+      "Printer": [
+        "Impresora"
+      ],
       "Search": [
         "Buscar"
       ],
@@ -16598,6 +16731,11 @@
       ],
       "your subscription": [
         "tu suscripción"
+      ]
+    },
+    "Remark about a key type option": {
+      "Post-quantum": [
+        "Postcuántico"
       ]
     },
     "Remove calendar section description": {
@@ -17740,6 +17878,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Error al actualizar la configuración"
+      ]
+    },
+    "Settings/filters - table": {
+      "Action": [
+        "Acción"
       ]
     },
     "Settings/labels": {
@@ -18968,6 +19111,11 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Aprende a obtener un enlace de calendario privado."
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars.": [
+        "Añade calendarios públicos, externos o compartidos."
       ]
     },
     "Subscription": {
@@ -20950,6 +21098,9 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
+      "Pending invitations": [
+        "Invitaciones pendientes"
+      ],
       "Phone": [
         "Teléfono"
       ],
@@ -21344,6 +21495,9 @@
       "Upload your organization’s logo": [
         "Carga el logo de tu organización"
       ],
+      "Usage Report": [
+        "Informe de uso"
+      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
       ],
@@ -21509,6 +21663,9 @@
       ]
     },
     "Title header for keys table": {
+      "Creation date": [
+        "Fecha de creación"
+      ],
       "Function": [
         "Función"
       ],
@@ -22010,8 +22167,8 @@
       "Did you know?": [
         "¿Lo sabías?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Obtén ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones con una recuperación de archivos de 10 años."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Consigue ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones anteriores con el historial de archivos de 10 años."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un paquete. Solo desde ${ fallBackString } cada mes."

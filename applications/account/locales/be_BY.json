@@ -144,9 +144,6 @@
       "Add label": [
         "Дадаць метку"
       ],
-      "add more seats": [
-        "дадаць больш ліцэнзій"
-      ],
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Group owner": [
+        "Уладальнік групы"
       ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
@@ -1623,9 +1623,6 @@
       "User": [
         "Карыстальнік"
       ],
-      "Users and addresses": [
-        "Карыстальнікі і адрасы"
-      ],
       "Verify": [
         "Спраўдзіць"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Перасылка ўзнаўляецца"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "дадаць больш ліцэнзій"
       ]
     },
     "Action for user session": {
@@ -2700,9 +2702,6 @@
       ],
       "Authenticator problem": [
         "Праблема з аўтэнтыфікатарам"
-      ],
-      "Black Friday": [
-        "Чорная пятніца"
       ],
       "Bridge problem": [
         "Праблема з Bridge"
@@ -5512,7 +5511,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Электронныя лісты, якія перасылаюцца вам, выключаюцца і больш перасылацца не будуць."
+        "Лісты, якія перасылаюцца вам, выключаюцца і больш перасылацца не будуць."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5556,11 +5555,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Для сумяшчальнасці будзе згенерыраваны новы ключ шыфравання для ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Для сумяшчальнасці постквантавае шыфраванне было адключана, а новыя ключы шыфравання будуць згенерыраваны для ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Для сумяшчальнасці постквантавае шыфраванне было адключана для ${ boldForwarderEmail }"
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Для сумяшчальнасці постквантавае шыфраванне было адключана, а новыя ключы шыфравання будуць згенерыраваны для ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Для сумяшчальнасці постквантавае шыфраванне будзе адключана для ${ boldForwarderEmail }"
@@ -7057,12 +7056,6 @@
       ],
       "View invitation": [
         "Паглядзець запрашэнне"
-      ],
-      "View the invitation": [
-        "Паглядзець запрашэнне"
-      ],
-      "View the invitations": [
-        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7138,12 +7131,6 @@
       ],
       "Pending": [
         "У чаканні"
-      ],
-      "Pending invitation": [
-        "Запрашэнне, якое чакае адказу"
-      ],
-      "Pending invitations": [
-        "Запрашэнні, якія чакаюць адказу"
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -9600,7 +9587,7 @@
         "Лісты, якія перамешчаны ў папку Сметніца і Спам больш за 30 дзён таму, будуць выдаляцца аўтаматычна."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Электронныя лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Уключыце аўтаматычнае падаўжэнне для захавання доступу да сервераў Plus і іх функцый."
@@ -9850,9 +9837,6 @@
       ],
       "Groups": [
         "Групы"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Дапамагае пісаць, адказваць і вычытваць лісты. Калі адключана, то толькі адміністратары будуць мець доступ да гэтай функцыі. Кіраванне для асобных карыстальнікаў у ${ userAndAddress } або ${ addMoreSeats }"
       ],
       "here": [
         "тут"
@@ -11979,6 +11963,11 @@
       ],
       "Selected color:": [
         "Выбраны колер:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Дапамагае пісаць, адказваць і вычытваць лісты. Калі адключана, то толькі адміністратары будуць мець доступ да гэтай функцыі. Кіраванне для асобных карыстальнікаў у ${ userAndAddresses } або ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -14225,6 +14214,11 @@
         "Што гэта?"
       ]
     },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
+      ]
+    },
     "Link label (optional)": {
       "Access": [
         "Доступ"
@@ -14467,7 +14461,7 @@
     },
     "mail_signup_2025: Info": {
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
-        "Усе праграмы ${ BRAND_NAME } for Business і прэміяльныя функцыі для яго комплекснай абароны"
+        "Усе праграмы ${ BRAND_NAME } for Business і прэміяльныя функцыі для комплекснай абароны вашага бізнесу"
       ]
     },
     "mailtrial2024: Action": {
@@ -17207,8 +17201,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Вас запрасілі далучыцца да ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Ваша скідка ў памеры ${ discount }% з нагоды \"Чорнай Пятніцы\" ўжыта"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Ваша скідка ў памеры ${ discount }% з нагоды завяршэння года ўжыта"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашай арганізацыі ёсць доступ да ${ free }. Калі вы хочаце атрымаць прэміяльныя функцыі ${ appName }, папрасіце адміністратара сваёй арганізацыі абнавіць тарыфны план."
@@ -19884,7 +19878,7 @@
         "Бяспечна абагульвайце файлы, фатаграфіі і дакументы"
       ],
       "Select ${ title }": [
-        "Выбераць ${ title }"
+        "Выберыце ${ title }"
       ],
       "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
         "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу ${ TRIAL_DURATION_DAYS } дзён бясплатна."
@@ -24186,9 +24180,6 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"

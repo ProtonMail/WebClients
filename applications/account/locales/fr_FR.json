@@ -144,9 +144,6 @@
       "Add label": [
         "Ajouter un label"
       ],
-      "add more seats": [
-        "ajouter plus d'accès"
-      ],
       "Add notification": [
         "Ajouter une notification"
       ],
@@ -390,6 +387,9 @@
       "Create": [
         "Créer"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Créez un lien de partage que vous pouvez transmettre à des personnes qui n'utilisent pas ${ BRAND_NAME }"
+      ],
       "Create calendar": [
         "Créer un calendrier"
       ],
@@ -404,6 +404,9 @@
       ],
       "Create label": [
         "Créez un label"
+      ],
+      "Create link": [
+        "Créer un lien"
       ],
       "Create new password": [
         "Créer un nouveau mot de passe"
@@ -479,6 +482,9 @@
       ],
       "Delete record": [
         "Supprimer l'enregistrement"
+      ],
+      "Delete token “${ token.Name }”": [
+        "Supprimer le token “${ token.Name }”"
       ],
       "Delete user": [
         "Supprimer un utilisateur"
@@ -827,6 +833,9 @@
       ],
       "Got it": [
         "J'ai compris"
+      ],
+      "Group owner": [
+        "Propriétaire du groupe"
       ],
       "Help and feedback": [
         "Aide et commentaires"
@@ -1308,6 +1317,9 @@
       "select file": [
         "sélectionnez un fichier."
       ],
+      "Select files": [
+        "Sélectionner les fichiers"
+      ],
       "Select language for invitation emails": [
         "Choisir la langue des e-mails d'invitation"
       ],
@@ -1611,9 +1623,6 @@
       "User": [
         "Utilisateur"
       ],
-      "Users and addresses": [
-        "Utilisateurs et adresses"
-      ],
       "Verify": [
         "Vérifier"
       ],
@@ -1684,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Reprise du transfert"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "ajouter plus d'accès"
       ]
     },
     "Action for user session": {
@@ -1939,6 +1953,32 @@
       ],
       "Talk confidentially": [
         "Parler en toute confidentialité"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Portefeuille Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Appels vidéo privés"
+      ],
+      "Encrypted email": [
+        "Boîte mail chiffrée"
+      ],
+      "Passwords and identity": [
+        "Mot de passe et identité"
+      ],
+      "Private AI assistant": [
+        "Assistant IA privé"
+      ],
+      "Private browsing": [
+        "Navigation privée"
+      ],
+      "Private scheduling": [
+        "Calendrier privé"
+      ],
+      "Secure cloud storage": [
+        "Stockage cloud sécurisé"
       ]
     },
     "Apps dropdown": {
@@ -2663,9 +2703,6 @@
       "Authenticator problem": [
         "Problème d'authentification"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problème avec Bridge"
       ],
@@ -2799,6 +2836,11 @@
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Téléchargez un fichier ICS avec tous les événements du calendrier sélectionné."
+      ]
+    },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Vous pouvez importer des fichiers ICS d'un autre calendrier vers ${ CALENDAR_APP_NAME }. Cela vous permet d'importer rapidement un événement ou tout votre calendrier."
       ]
     },
     "Calendar invite status label": {
@@ -4564,6 +4606,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
       ],
+      "Available with ${ title }": [
+        "Disponible avec ${ title }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
       ],
@@ -5380,6 +5425,9 @@
       "Back": [
         "Retour"
       ],
+      "Cancel": [
+        "Annuler"
+      ],
       "Decline": [
         "Refuser"
       ],
@@ -5454,6 +5502,9 @@
       "Forward to": [
         "Transférer à"
       ],
+      "From": [
+        "De"
+      ],
       "Status": [
         "Statut"
       ],
@@ -5461,7 +5512,15 @@
         "À"
       ]
     },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "De ma part"
+      ]
+    },
     "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "Un message de confirmation sera envoyé à ${ boldForwardeeEmail }"
+      ],
       "Automatically forward emails to another email address.": [
         "Transférez automatiquement les messages vers une autre adresse électronique."
       ],
@@ -5474,11 +5533,11 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Pour des raisons de compatibilité, une nouvelle clé de chiffrement sera générée pour ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Pour des raisons de compatibilité, le chiffrement post-quantique a été désactivé et une nouvelle clé de chiffrement a été générée pour ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Pour des raisons de compatibilité, le chiffrement post-quantique a été désactivé pour ${ boldForwarderEmail }."
+      ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Pour des raisons de compatibilité, le chiffrement post-quantique a été désactivé et une nouvelle clé de chiffrement a été générée pour ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Pour des raisons de compatibilité, le chiffrement post-quantique sera désactivé pour ${ boldForwarderEmail }."
@@ -6889,6 +6948,9 @@
       "None of the events could be exported.": [
         "Aucun événement n'a pu être exporté."
       ],
+      "Password reset - event cannot be decrypted": [
+        "Réinitialisation du mot de passe - l'élément ne peut pas être déchiffré"
+      ],
       "Password reset - multiple events cannot be decrypted": [
         "Réinitialisation du mot de passe : plusieurs événements ne peuvent pas être déchiffrés."
       ],
@@ -6939,17 +7001,17 @@
       "Set up family group": [
         "Configurer le groupe familial"
       ],
+      "Show all (${ invites.length })": [
+        "Montrer tout (${ invites.length })"
+      ],
+      "Show less": [
+        "Montrer moins"
+      ],
       "Switch plans": [
         "Changer d'abonnement"
       ],
       "View invitation": [
         "Voir l'invitation"
-      ],
-      "View the invitation": [
-        "Voir l'invitation"
-      ],
-      "View the invitations": [
-        "Voir les invitations"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7024,12 +7086,6 @@
       "Pending": [
         "En attente"
       ],
-      "Pending invitation": [
-        "Invitation en attente"
-      ],
-      "Pending invitations": [
-        "Invitations en attente"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Vous ne pouvez malheureusement pas changer d'abonnement pour l'instant."
       ],
@@ -7041,6 +7097,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Voir l'invitation",
+        "Voir les invitations"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -7079,6 +7139,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Vous n'aurez plus accès à toutes les fonctionnalités premium inclus dans ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Vous êtes invitée par **${ invite.InviterEmail }** à associer votre compte à cet abonnement groupé."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Vous êtes invitée à rejoindre ${ invite.OrganizationName }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
@@ -7823,6 +7889,9 @@
       "Payment details": [
         "Informations de paiement"
       ],
+      "Permissions": [
+        "Autorisations"
+      ],
       "Protection": [
         "Protection"
       ],
@@ -7920,6 +7989,9 @@
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
         "Jours fériés"
+      ],
+      "Other": [
+        "Autres"
       ],
       "Subscribed": [
         "Abonné"
@@ -8861,6 +8933,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "Les personnes qui disposent de ce lien ne pourront pas synchroniser votre calendrier ni recevoir ses futures mises à jour. Si vous voulez leur redonner l'accès, vous devrez créer un nouveau lien."
+      ],
       "Are you sure you want to cancel editing the group?": [
         "Êtes-vous sûr de vouloir annuler la modification du groupe ?"
       ],
@@ -9212,6 +9287,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Supprimez les autres enregistrements MX ou assurez-vous que la priorité de ${ MAIL_APP_NAME } est le nombre le plus bas."
       ],
+      "Delete link?": [
+        "Supprimer le lien ?"
+      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Supprimez les indésirables/spam et la corbeille après 30 jours. L'activation de la suppression automatique attribue aux messages déjà présents dans la corbeille ou les indésirables/spam une date de suppression en fonction de leur date d'arrivée."
       ],
@@ -9306,6 +9384,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
+      ],
+      "Download your PGP keys for use with other PGP-compatible services.": [
+        "Téléchargez vos clés PGP pour les utiliser avec d'autres services compatibles."
       ],
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
@@ -9580,6 +9661,9 @@
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "Donnez un nom descriptif au jeton, comme le service avec lequel vous prévoyez de l'utiliser, et sélectionnez une de vos adresses de domaine personnalisées actives. Seule cette adresse pourra envoyer des messages avec ce jeton."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Communiquez votre clé publique à vos amis ou publiez-la en ligne pour que tout le monde puisse vous envoyer des messages chiffrés de bout en bout."
       ],
@@ -9600,9 +9684,6 @@
       ],
       "Groups": [
         "Groupes"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddress } ou ${ addMoreSeats }"
       ],
       "here": [
         "ici"
@@ -9636,6 +9717,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Si les raccourcis clavier sont activés, vous pouvez utiliser les touches suivantes pour des actions rapides ou pour accéder à différentes vues. Le raccourci ${ metaKey } + K est toujours activé."
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "Si le fuseau horaire du système ne correspond pas à vos préférences actuelles, il vous sera demandé de le mettre à jour (au plus une fois par jour)."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si cela est lié à une ancienne réinitialisation du mot de passe, vous pouvez empêcher le message de s'afficher à nouveau."
@@ -10561,6 +10645,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages prévus par heure et par jour."
@@ -11488,6 +11575,9 @@
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Nous vous recommandons d'exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer les données qu'elle a chiffrées."
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "Vous devez répondre aux invitations pour que l'hôte voie votre réponse."
+      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Vous pourrez promouvoir l'utilisateur au rang d'administrateur une fois qu'il aura accepté l'invitation."
       ],
@@ -11672,6 +11762,11 @@
         "Couleur sélectionnée :"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -11842,6 +11937,9 @@
       ],
       "Decryption, verification": [
         "Déchiffrement, vérification"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "Chiffrement, déchiffrement, signature, vérification"
       ]
     },
     "Key generation": {
@@ -11853,6 +11951,9 @@
       ],
       "Key generation failed, please try again later.": [
         "La génération de la clé a échoué, veuillez réessayer plus tard."
+      ],
+      "Key successfully generated.": [
+        "Génération de la clé réussie."
       ],
       "New key generated": [
         "Nouvelle clé générée"
@@ -11874,6 +11975,9 @@
       "Disabled": [
         "Désactivé"
       ],
+      "Fallback": [
+        "Solution de secours"
+      ],
       "Forwarding": [
         "Transfert"
       ],
@@ -11893,9 +11997,15 @@
     "Key type hint": {
       "Faster": [
         "Plus rapide"
+      ],
+      "Slower, but stronger long-term security": [
+        "Une sécurité à long terme plus lente, mais plus forte"
       ]
     },
     "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
       "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
         "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
       ]
@@ -12163,6 +12273,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Voici comment procéder"
+      ],
+      "Learn more": [
+        "En savoir plus"
       ]
     },
     "Label": {
@@ -12188,6 +12301,9 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "Adresse ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "Pied de page de ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } mois",
@@ -12786,6 +12902,9 @@
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pour ${ DRIVE_SHORT_APP_NAME } et ${ DOCS_SHORT_APP_NAME }."
       ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pour ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } et ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "pour le premier mois"
       ],
@@ -13308,6 +13427,9 @@
       ],
       "Start time": [
         "Heure de début"
+      ],
+      "Start weekday": [
+        "Premier jour de la semaine"
       ],
       "State": [
         "État"
@@ -13869,6 +13991,11 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Utilisateurs et adresses"
       ]
     },
     "Link label (optional)": {
@@ -16053,6 +16180,9 @@
       "28th of the month": [
         "Le 28 du mois"
       ],
+      "29th of the month": [
+        "29 du mois"
+      ],
       "2nd of the month": [
         "2ème jour du mois"
       ],
@@ -16064,6 +16194,9 @@
       ],
       "3rd of the month": [
         "3 du mois"
+      ],
+      "4th of the month": [
+        "4 du mois"
       ],
       "5th of the month": [
         "Le 5 du mois"
@@ -16145,6 +16278,9 @@
       ],
       "Left to Right": [
         "De gauche à droite"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Marquer comme lu"
@@ -16401,6 +16537,9 @@
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (pour Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (pour les autres distributions)"
       ]
     },
     "Participant name": {
@@ -16745,8 +16884,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Vous avez une invitation à rejoindre ${ PASS_APP_NAME }."
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Votre réduction Black Friday de ${ discount } % a été appliquée."
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Votre réduction de fin d'année de ${ discount } % a été appliquée"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Votre organisation a accès à ${ free }. Pour profiter des fonctionnalités premium de ${ appName }, demandez à l'administrateur de votre organisation de changer d'abonnement."
@@ -17580,6 +17719,9 @@
       ],
       "Generating post-quantum address keys for each address": [
         "Génération de clés d'adresse post-quantiques pour chaque adresse"
+      ],
+      "Opting into post-quantum protection": [
+        "Opter pour la protection post-quantique"
       ]
     },
     "Price": {
@@ -17590,6 +17732,9 @@
     "Primary timezone": {
       "Primary time zone": [
         "Fuseau horaire principal"
+      ],
+      "Secondary time zone": [
+        "Fuseau horaire secondaire"
       ]
     },
     "Property type": {
@@ -19019,6 +19164,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Order": [
+        "Ordre"
       ]
     },
     "Settings/labels": {
@@ -20792,6 +20940,9 @@
       "Administrator privileges restored": [
         "Les droits administrateur ont été restaurés."
       ],
+      "Auto-reply disabled": [
+        "Réponse automatique désactivée"
+      ],
       "Auto-reply updated": [
         "Réponse automatique mise à jour"
       ],
@@ -20936,14 +21087,23 @@
       "Policy deleted. It will take effect only after you publish the changes.": [
         "La politique a été supprimée. Ceci ne prendra effet qu'une fois les modifications publiées."
       ],
+      "Port copied to clipboard": [
+        "Port copié dans le presse-papiers"
+      ],
       "Preference saved": [
         "La préférence a été enregistrée."
+      ],
+      "Premium address created": [
+        "Adresse Premium créée"
       ],
       "Problem reported": [
         "Le problème a été signalé."
       ],
       "Resuming import": [
         "Reprendre l'importation"
+      ],
+      "Server copied to clipboard": [
+        "Serveur copié dans le presse-papiers"
       ],
       "Session revoked": [
         "La session a été révoquée."
@@ -21277,6 +21437,9 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor Report": [
+        "Rapport de surveillance de ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pour les organisations"
@@ -22318,6 +22481,9 @@
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
       ],
+      "Pending invitations": [
+        "Invitations en attente"
+      ],
       "Personalize your email footer": [
         "Personnalisez le pied de page de vos messages."
       ],
@@ -22985,6 +23151,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Cliquez ici pour apprendre à créer une signature HTML personnalisée."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiez et coller cette URL dans le champ URL ACS (Assertion Consumer Service) de votre fournisseur d'identité."
       ],
@@ -23059,6 +23228,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Les membres qui n'utilisent pas l'A2F recevront un e-mail leur demandant de l'activer dès que possible. Les utilisateurs avec authentification unique ne recevront pas d'e-mail de rappel."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "Not all information listed here was exposed for all users.": [
         "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
@@ -23481,6 +23653,11 @@
         "Passez à ${ planName } pour connecter jusqu'à ${ n } appareils en même temps au VPN."
       ]
     },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Passez à un abonnement payant ${ MAIL_SHORT_APP_NAME } pour partager votre calendrier."
+      ]
+    },
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Économisez jusqu'à ${ priceString }** avec un abonnement plus long. Les mêmes fonctionnalités premium à un prix réduit."
@@ -23494,7 +23671,7 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, et récupérez les versions de fichiers avec une récupération de fichiers sur 10 ans."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
@@ -23965,6 +24142,9 @@
       ],
       "Must be between ${ minimumNumber } and ${ maximumNumber }": [
         "La valeur doit être entre ${ minimumNumber } et ${ maximumNumber }."
+      ],
+      "Must be greater than or equal to ${ minimumNumber }": [
+        "Doit être supérieur ou égal à ${ minimumNumber }"
       ],
       "Must be lower than or equal to ${ maximumNumber }": [
         "La valeur doit être inférieure ou égale à ${ maximumNumber }."

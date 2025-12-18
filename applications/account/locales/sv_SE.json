@@ -144,9 +144,6 @@
       "Add label": [
         "Lägg till etikett"
       ],
-      "add more seats": [
-        "lägg till fler licenser"
-      ],
       "Add notification": [
         "Lägg till avisering"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Förstått"
+      ],
+      "Group owner": [
+        "Gruppägare"
       ],
       "Help and feedback": [
         "Hjälp och feedback"
@@ -1623,9 +1623,6 @@
       "User": [
         "Användare"
       ],
-      "Users and addresses": [
-        "Användare och adresser"
-      ],
       "Verify": [
         "Verifiera"
       ],
@@ -1696,6 +1693,11 @@
     "action": {
       "Resuming forward": [
         "Återupptar vidarebefordran"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "lägg till fler licenser"
       ]
     },
     "Action for user session": {
@@ -1951,6 +1953,29 @@
       ],
       "Talk confidentially": [
         "Prata konfidentiellt"
+      ]
+    },
+    "app-switcher_2025": {
+      "Confidential video calls": [
+        "Konfidentiella videosamtal"
+      ],
+      "Encrypted email": [
+        "Krypterad e-post"
+      ],
+      "Passwords and identity": [
+        "Lösenord och identitet"
+      ],
+      "Private AI assistant": [
+        "Privat AI-assistent"
+      ],
+      "Private browsing": [
+        "Privat surfning"
+      ],
+      "Private scheduling": [
+        "Privat schemaläggning"
+      ],
+      "Secure cloud storage": [
+        "Säker molnlagring"
       ]
     },
     "Apps dropdown": {
@@ -2638,9 +2663,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -5457,9 +5479,6 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "För kompatibilitet kommer en ny krypteringsnyckel att genereras för ${ boldForwarderEmail }."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "För kompatibilitet har post-kvantumkryptering inaktiverats och en ny krypteringsnyckel har genererats för ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "För kompatibilitet har postkvantkryptering inaktiveras för ${ boldForwarderEmail }."
       ],
@@ -6915,17 +6934,17 @@
       "Set up family group": [
         "Konfigurera familjegrupp"
       ],
+      "Show all (${ invites.length })": [
+        "Visa alla (${ invites.length })"
+      ],
+      "Show less": [
+        "Visa mindre"
+      ],
       "Switch plans": [
         "Byt paket"
       ],
       "View invitation": [
         "Visa inbjudan"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7000,12 +7019,6 @@
       "Pending": [
         "Väntande"
       ],
-      "Pending invitation": [
-        "Väntande inbjudning"
-      ],
-      "Pending invitations": [
-        "Väntande inbjudningar"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kan inte byta paket just nu."
       ],
@@ -7017,6 +7030,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "För att underlätta övergången ger vi dig en 30-dagars gratis provperiod på ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -7055,6 +7072,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Du kommer förlora åtkomst till alla premiumfunktioner inkluderat med ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Du inbjuden av **${ invite.InviterEmail }** för att länka ditt konto till detta gruppaket."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Du är inbjuden att gå med ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta familjepaket och tillsammans njuta av alla ${ brandOrAppName } premiumfunktioner."
@@ -9586,9 +9609,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddress } eller ${ addMoreSeats }"
-      ],
       "here": [
         "här"
       ],
@@ -11642,6 +11662,11 @@
       ],
       "Selected color:": [
         "Vald färg:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddresses } eller ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -13862,6 +13887,11 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Användare och adresser"
       ]
     },
     "Link label (optional)": {
@@ -16747,9 +16777,6 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Du har blivit inbjuden att gå med i ${ PASS_APP_NAME }"
-      ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Din ${ discount } % Black Friday-rabatt har tillämpats"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har åtkomst till ${ free }. Om du vill komma åt premiumfunktioner för ${ appName }, be din organisations administratör att uppgradera."
@@ -22330,6 +22357,9 @@
       ],
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
+      ],
+      "Pending invitations": [
+        "Väntande inbjudningar"
       ],
       "Personalize your email footer": [
         "Personifiera sidfoten för din e-post"

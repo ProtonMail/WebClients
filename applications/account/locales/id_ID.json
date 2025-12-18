@@ -144,9 +144,6 @@
       "Add label": [
         "Tambah label"
       ],
-      "add more seats": [
-        "tambah lebih banyak kuota"
-      ],
       "Add notification": [
         "Tambah notifikasi"
       ],
@@ -836,6 +833,9 @@
       ],
       "Got it": [
         "Dimengerti"
+      ],
+      "Group owner": [
+        "Pemilik grup"
       ],
       "Help and feedback": [
         "Bantuan dan saran"
@@ -1622,9 +1622,6 @@
       ],
       "User": [
         "Pengguna"
-      ],
-      "Users and addresses": [
-        "Pengguna dan perangkat"
       ],
       "Verify": [
         "Verifikasi"
@@ -2661,9 +2658,6 @@
       ],
       "Authenticator problem": [
         "Kesalahan autentikator"
-      ],
-      "Black Friday": [
-        "Jumat Hitam"
       ],
       "Bridge problem": [
         "Masalah bridge"
@@ -5484,9 +5478,6 @@
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Demi kompatibilitas, kunci enkripsi baru untuk ${ boldForwarderEmail } akan dihasilkan."
       ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Demi kompatibilitas, enkripsi post-quantum telah dinonaktifkan, dan kunci enkripsi baru telah dihasilkan untuk ${ boldForwarderEmail }."
-      ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Demi kompatibilitas, enkripsi post-kuantum telah dinonaktifkan untuk ${ boldForwarderEmail }."
       ],
@@ -6943,12 +6934,6 @@
       ],
       "View invitation": [
         "Tampilkan undangan"
-      ],
-      "View the invitation": [
-        "Lihat undangan"
-      ],
-      "View the invitations": [
-        "Tampilkan undangan"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7021,12 +7006,6 @@
       ],
       "Pending": [
         "Ditunda"
-      ],
-      "Pending invitation": [
-        "Undangan belum ditanggapi"
-      ],
-      "Pending invitations": [
-        "Undangan belum ditanggapi"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -9553,9 +9532,6 @@
       ],
       "Groups": [
         "Grup"
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddress } atau ${ addMoreSeats }"
       ],
       "here": [
         "di sini"
@@ -14178,6 +14154,12 @@
       "Create a new ${ appName } account": [
         "Buat akun ${ appName } baru"
       ],
+      "Enjoy two weeks of ${ BRAND_NAME } for free": [
+        "Nikmati ${ BRAND_NAME } secara cuma-cuma selama dua minggu"
+      ],
+      "Experience true online privacy. Protect your data with ${ BRAND_NAME } for free for the next 14 days.": [
+        "Rasakan privasi online yang sesungguhnya. Lindungi data Anda dengan ${ BRAND_NAME } secara cuma-cuma selama 14 hari ke depan."
+      ],
       "Find your ${ BRAND_NAME } Account username": [
         "Temukan nama pengguna Akun ${ BRAND_NAME } Anda"
       ],
@@ -16057,6 +16039,9 @@
       "Left to Right": [
         "Kiri ke Kanan"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "Mark as read": [
         "Tandai sebagai terbaca"
       ],
@@ -16141,11 +16126,20 @@
       "Star": [
         "Bintangi"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Seluruh organisasi"
       ],
       "Trash": [
         "Buang ke Sampah"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -16645,9 +16639,6 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Anda telah diundang untuk bergabung ke ${ PASS_APP_NAME }"
-      ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Diskon Jumat Hitam ${ discount }% Anda telah diterapkan"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisasi Anda memiliki akses ke ${ free }. Apabila Anda ingin mengakses berbagai fitur premium ${ appName }, silakan minta administrator organisasi Anda untuk meningkatkan paket langganan."
@@ -17690,6 +17681,9 @@
       "How your free trial works:": [
         "Bagaimana masa uji coba gratis Anda bekerja:"
       ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Saya telah menggunakan ${ BRAND_NAME } dan saya rasa Anda juga akan menyukainya. Layanan ini merupakan layanan email, ruang penyimpanan cloud, pengelola kata sandi, dan VPN aman yang melindungi privasi Anda. Daftar dengan tautan berikut untuk menikmati berbagai fitur premium selama 14 hari secara gratis: ${ referralLink }"
+      ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Apabila Anda membatalkan sebelum tanggal ini, Anda akan diturunkan ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba Anda berakhir. Apabila Anda tidak membatalkan, paket penuh Anda akan dimulai dan Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
       ],
@@ -17710,6 +17704,9 @@
       ],
       "Refer friends": [
         "Rujuk teman"
+      ],
+      "Share using ${ name }": [
+        "Bagikan menggunakan ${ name }"
       ],
       "Start earning credits": [
         "Mulai peroleh saldo"
@@ -19058,6 +19055,9 @@
       "Collaborative document editing": [
         "Penyuntingan dokumen kolaboratif"
       ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumen dan lembar kerja kolaboratif"
+      ],
       "Compare plans": [
         "Bandingkan paket"
       ],
@@ -19162,6 +19162,9 @@
       ],
       "Pick your perfect plan": [
         "Pilih paket yang sempurna untuk Anda"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Asisten AI pribadi dengan riwayat percakapan yang terenkripsi"
       ],
       "Promo applied – ${ checkout.discountPercent }% off": [
         "Promo diterapkan – hemat ${ checkout.discountPercent }%"
@@ -23320,9 +23323,6 @@
       "Did you know?": [
         "Tahukah Anda?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi lawas berkas dengan pemulihan berkas hingga 10 tahun."
-      ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Rangkaian privasi dengan email aman, ${ VPN_SHORT_APP_NAME }, ruang penyimpanan cloud, dan pengelola kata sandi dalam satu bundel. Hanya dari ${ fallBackString } per bulannya"
       ],
@@ -23641,6 +23641,21 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {
