@@ -1328,7 +1328,15 @@ const SubscriptionContainerInner = ({
         />
     );
 
-    const gift = !model.paymentForbiddenReason.forbidden && !couponConfig?.hidden && (
+    const showGiftInput =
+        // if the selected modification is forbidden, then it doesn't make sense to show the coupon code input
+        !model.paymentForbiddenReason.forbidden &&
+        // For some coupons, we want explicitly hide the coupon code input
+        !couponConfig?.hidden &&
+        // If the modification causes a scheduled unpaid subscription, then the coupon won't be applied anyways, so we
+        // don't show the coupon code input either
+        checkResult.SubscriptionMode !== SubscriptionMode.ScheduledChargedLater;
+    const gift = showGiftInput && (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
