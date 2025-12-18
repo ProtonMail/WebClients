@@ -266,9 +266,6 @@
       "Stay in meeting": [
         "Resta nella riunione"
       ],
-      "Stop presenting": [
-        "Interrompi la presentazione"
-      ],
       "Stop receiving video": [
         "Interrompi la ricezione del video"
       ],
@@ -411,9 +408,6 @@
       ],
       "Authenticator problem": [
         "Problema con l'autenticatore"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con Bridge"
@@ -1580,6 +1574,12 @@
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } di ${ maxParticipants } partecipanti"
       ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (tu) sta presentando"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } sta presentando"
+      ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } ti ha invitato a una riunione di ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
       ],
@@ -1591,9 +1591,6 @@
       ],
       "(You)": [
         "(Voi)"
-      ],
-      "(you)": [
-        "(tu)"
       ],
       "<Removed dangerous URL>": [
         "<Removed dangerous URL>"
@@ -1726,9 +1723,6 @@
       ],
       "Invitation preview": [
         "Anteprima invito"
-      ],
-      "is presenting": [
-        "sta presentando"
       ],
       "Joined": [
         "Si è unito"
@@ -2451,6 +2445,15 @@
       ]
     },
     "Warning": {
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Non è stato possibile accedere alla fotocamera o al microfono. Puoi provare ad attivarli di nuovo dai controlli della riunione."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Non è stato possibile accedere alla fotocamera. Puoi provare ad attivarla di nuovo dai controlli della riunione."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Non è stato possibile accedere al microfono. Puoi provare ad attivarlo di nuovo dai controlli della riunione."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
