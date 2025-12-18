@@ -48,6 +48,8 @@ export interface SearchServiceStatus {
     totalBytes?: number;
     error?: string;
     driveDocuments?: number;
+    driveDocumentsUnique?: number;
+    driveChunks?: number;
     indexedFolders?: number;
     bm25Stats?: {
         totalDocs: number;
