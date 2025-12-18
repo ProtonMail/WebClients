@@ -93,7 +93,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                             <Icon name="star" size={4} />
                             <span>{c('collider_2025:Title').t`Favorites`}</span>
                         </div>
-                        <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
+                        <div className="max-h-custom overflow-y-auto ml-5" style={{ '--max-h-custom': '20%' }}>
                             <RecentChatsList
                                 conversations={favorites}
                                 selectedConversationId={conversationId}
@@ -167,11 +167,11 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         )}
                     </>
                 )}
-                </div>
+
                 {/* Only show earlier chats for paid users */}
                 {hasLumoPlus && earlier.length > 0 && (
                     <>
-                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-2">{c('collider_2025:Title')
+                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
                             .t`Earlier`}</h4>
 
                         <RecentChatsList
@@ -181,6 +181,8 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         />
                     </>
                 )}
+                </div>
+                
             </Scroll>
         </div>
     );
