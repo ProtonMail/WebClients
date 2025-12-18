@@ -1474,9 +1474,6 @@
       "Authenticator problem": [
         "Праблема з аўтэнтыфікатарам"
       ],
-      "Black Friday": [
-        "Чорная пятніца"
-      ],
       "Bridge problem": [
         "Праблема з Bridge"
       ],
@@ -4029,9 +4026,6 @@
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
-      "You cannot enter the organizer email": [
-        "Вы не можаце ўвесці электронную пошту арганізатара"
-      ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
       ],
@@ -4368,12 +4362,6 @@
       ],
       "Switch plans": [
         "Змяніць тарыфны план"
-      ],
-      "View the invitation": [
-        "Паглядзець запрашэнне"
-      ],
-      "View the invitations": [
-        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -8540,8 +8528,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Мы заўсёды імкнёмся зрабіць ${ BRAND_NAME } ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Мы заўсёды імкнёмся зрабіць ${ config.appName } лепш. Наколькі вы задаволеныя сваім досведам?"
       ]
     },
     "new_plans: Subtext": {
