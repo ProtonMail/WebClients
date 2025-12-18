@@ -86,7 +86,7 @@
 	}
 
 	&:not(.sidebar--collapsed) {
-		inline-size: 260px; // Expanded width - comfortable for text
+		inline-size: 300px; // Expanded width - comfortable for text
 	}
 
 	// Mobile sidebar transitions - true overlay that doesn't affect layout
@@ -94,9 +94,9 @@
 		position: fixed !important;
 		inset-block-start: 0 !important;
 		inset-inline-start: 0 !important;
-		block-size: 100% !important; // Use percentage instead of viewport units for Safari compatibility
+		block-size: 100% !important;
 		z-index: 100 !important;
-		inline-size: 260px !important; // Always full width on mobile
+		inline-size: 100% !important; 
 
 		// Force transitions to work even with immediate class changes
 		transition: transform 0.3s ease-in-out !important;
