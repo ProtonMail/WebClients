@@ -148,6 +148,26 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuf
     };
 }
 
+/**
+ * Generate a new search index key (same as space key generation).
+ */
+export const generateSearchIndexKeyBytes = () => generateAesGcmKeyBytes();
+export const generateSearchIndexKeyBase64 = () => generateSearchIndexKeyBytes().toBase64();
+
+/**
+ * Derives the DEK for the search index from the search index key.
+ * Uses the same HKDF parameters as space DEK derivation for consistency.
+ * The domain separation comes from using a different key (searchIndexKey vs spaceKey).
+ */
+export async function deriveSearchIndexDek(searchIndexKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
+    return deriveDataEncryptionKey(searchIndexKeyBytes);
+}
+
+/**
+ * Convert base64 search index key to AesGcmCryptoKey
+ */
+export const base64ToSearchIndexKey = base64ToAesGcmCryptoKey;
+
 export async function wrapAesKey(
     keyToWrap: AesGcmCryptoKey,
     { wrappingKey }: AesKwCryptoKey
