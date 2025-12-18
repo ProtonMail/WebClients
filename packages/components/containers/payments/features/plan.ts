@@ -30,7 +30,7 @@ import {
 } from './drive';
 import { get24x7Support, getAdminPanel, getPassMonitor, getSentinel, getSupport, getUsersFeature } from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan } from './interface';
-import { getLumoPlusFeatures } from './lumo';
+import { getLumoPlusFeatures, getLumoProfessionalFeatures } from './lumo';
 import {
     getContactGroupsManagement,
     getDarkWebMonitoringFeature,
@@ -746,7 +746,7 @@ export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
         label: '',
         description: c('collider_2025: Info').t`High-speed chats and advanced AI features.`,
         cta: getCTA(plan.Title),
-        features: [],
+        features: getLumoProfessionalFeatures(),
     };
 };
 

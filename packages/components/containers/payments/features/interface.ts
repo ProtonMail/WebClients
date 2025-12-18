@@ -17,6 +17,11 @@ export interface PlanCardFeatureDefinition {
     highResIcon?: string;
 }
 
+export interface StandardPlanCardFeatureDefinition extends PlanCardFeatureDefinition {
+    text: string;
+    icon: IconName;
+}
+
 export interface PlanCardFeature {
     name: string;
     /* If targeting a specific audience */
