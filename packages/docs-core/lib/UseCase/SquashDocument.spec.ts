@@ -69,7 +69,7 @@ describe('SquashDocument', () => {
     } as unknown as EncryptMessage
 
     squashAlgorithm = {
-      execute: jest.fn().mockReturnValue(
+      squashNormal: jest.fn().mockReturnValue(
         Result.ok({
           updatesAsSquashed: new Uint8Array(),
           unmodifiedUpdates: [],

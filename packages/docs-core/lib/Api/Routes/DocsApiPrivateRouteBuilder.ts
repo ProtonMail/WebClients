@@ -35,6 +35,7 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
       url: `${this.basePath}/seed-initial-commit`,
       input: 'protobuf',
       data: params.data,
+      timeout: 120_000,
     }
   }
 

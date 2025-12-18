@@ -6,7 +6,7 @@ export function GetCommitDULimit(documentType: DocumentType) {
   if (isDevOrBlack()) {
     return 50
   } else if (documentType === 'sheet') {
-    return 300
+    return 250
   } else {
     return 500
   }

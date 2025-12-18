@@ -1,4 +1,3 @@
-import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { DocumentUpdate } from '@proton/docs-proto'
 import type { DecryptedMessage } from '@proton/docs-shared'
@@ -16,10 +15,10 @@ export type SquashResult = {
   updatesAsSquashed: Uint8Array<ArrayBuffer> | undefined
 }
 
-export class SquashAlgorithm implements UseCaseInterface<SquashResult> {
+export class SquashAlgorithm {
   constructor(private logger: LoggerInterface) {}
 
-  async execute(updates: UpdatePair[], config: { limit: number; factor: number }): Promise<Result<SquashResult>> {
+  async squashNormal(updates: UpdatePair[], config: { limit: number; factor: number }): Promise<Result<SquashResult>> {
     this.logger.info(
       `[Squash] Executing squash algorithm with ${updates.length} updates and config ${JSON.stringify(config)}`,
     )
@@ -58,6 +57,26 @@ export class SquashAlgorithm implements UseCaseInterface<SquashResult> {
     return Result.ok({
       updatesAsSquashed,
       unmodifiedUpdates,
+    })
+  }
+
+  squashEverything(updates: UpdatePair[]): Result<SquashResult> {
+    this.logger.info(`[Squash] Squashing everything...`)
+
+    const updatesAsSquashed = mergeUpdates(
+      updates.map((update) => {
+        const decryptedContent = update.decrypted.content
+        if (isCompressedDocumentUpdate(decryptedContent)) {
+          return decompressDocumentUpdate(decryptedContent)
+        } else {
+          return decryptedContent
+        }
+      }),
+    ) as Uint8Array<ArrayBuffer>
+
+    return Result.ok({
+      updatesAsSquashed,
+      unmodifiedUpdates: [],
     })
   }
 }

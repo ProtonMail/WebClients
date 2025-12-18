@@ -21,7 +21,7 @@ import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 import type UnleashClient from '@proton/unleash/UnleashClient'
-import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
+import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -100,13 +100,7 @@ describe('WebsocketService', () => {
         isReady: jest.fn().mockReturnValue(true),
         isEnabled: jest.fn().mockReturnValue(true),
       } as unknown as jest.Mocked<UnleashClient>,
-      {
-        incrementSize: jest.fn(),
-        canIncrementSize: jest.fn(),
-        canPostUpdateOfSize: jest.fn(),
-        resetWithSize: jest.fn(),
-        currentSize: 0,
-      } as unknown as jest.Mocked<DocSizeTracker>,
+      new DocSizeTracker(logger, eventBus),
     )
 
     service.createConnection(documentState)
@@ -184,9 +178,11 @@ describe('WebsocketService', () => {
     })
 
     it('should track size', async () => {
+      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
+
       await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
-      expect(service.sizeTracker.incrementSize).toHaveBeenCalled()
+      expect(incrementSize).toHaveBeenCalled()
     })
 
     it('should track known update UUIDs', async () => {
@@ -422,6 +418,8 @@ describe('WebsocketService', () => {
     it('should not put us into realtime mode if message is ours', async () => {
       const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
 
+      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
+
       await service.handleIncomingDocumentUpdatesMessage(record, {
         updates: {
           documentUpdates: [
@@ -433,13 +431,15 @@ describe('WebsocketService', () => {
           ],
         },
       } as unknown as ServerMessageWithDocumentUpdates)
-      expect(service.sizeTracker.incrementSize).toHaveBeenCalledWith(new Uint8Array().byteLength)
+      expect(incrementSize).toHaveBeenCalledWith(new Uint8Array().byteLength)
 
       expect(switchToRealtimeMode).not.toHaveBeenCalled()
     })
 
     it('should not process updates with known UUIDs', async () => {
       const decryptAndPublishDocumentUpdate = jest.spyOn(service, 'decryptAndPublishDocumentUpdate')
+
+      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
 
       await service.handleIncomingDocumentUpdatesMessage(record, {
         updates: {
@@ -469,7 +469,7 @@ describe('WebsocketService', () => {
         },
       } as unknown as ServerMessageWithDocumentUpdates)
 
-      expect(service.sizeTracker.incrementSize).toHaveBeenCalledTimes(1)
+      expect(incrementSize).toHaveBeenCalledTimes(1)
       expect(decryptAndPublishDocumentUpdate).toHaveBeenCalledTimes(1)
     })
   })
