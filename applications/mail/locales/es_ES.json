@@ -1504,10 +1504,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -2163,9 +2159,6 @@
       ],
       "Authenticator problem": [
         "Problema con el autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -5349,12 +5342,6 @@
       ],
       "Switch plans": [
         "Cambiar de plan"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5393,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
@@ -7408,7 +7399,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11184,8 +11176,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Siempre nos esforzamos por mejorar ${ BRAND_NAME } ${ config.appName }. ¿Qué tan satisfecho estás con tu experiencia?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Siempre nos esforzamos por mejorar ${ config.appName }. ¿Qué tan satisfecho estás con tu experiencia?"
       ]
     },
     "new_plans: Subtext": {

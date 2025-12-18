@@ -1504,10 +1504,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2163,9 +2159,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -5349,12 +5342,6 @@
       ],
       "Switch plans": [
         "Bytt plan"
-      ],
-      "View the invitation": [
-        "Se invitasjonen"
-      ],
-      "View the invitations": [
-        "Se invitasjonene"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7408,7 +7395,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -10189,6 +10177,9 @@
       "Terms": [
         "Vilkår"
       ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
+      ],
       "terms of service": [
         "brukervilkår"
       ],
@@ -11181,8 +11172,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Vi streber alltid etter å gjøre ${ BRAND_NAME } ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi streber alltid etter å gjøre ${ config.appName } bedre. Hvor fornøyd er du med opplevelsen din?"
       ]
     },
     "new_plans: Subtext": {
