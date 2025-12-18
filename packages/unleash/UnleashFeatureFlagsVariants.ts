@@ -12,6 +12,7 @@ export const FLAGS_WITH_VARIANT = [
     'PassDashboard',
     'DriveDashboard',
     'InboxBringYourOwnEmailSignup',
+    'WebApiRateLimiter',
 ] satisfies FeatureFlag[];
 
 /**
@@ -26,6 +27,7 @@ export type MailDashboardVariant = 'A' | 'B';
 export type PassDashboardVariant = 'A' | 'B';
 export type DriveDashboardVariant = 'A' | 'B';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
+export type WebApiRateLimiterVariant = 'Config';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -50,6 +52,7 @@ type FeatureFlagVariantMap = {
     PassDashboard: VariantReturnType<PassDashboardVariant>;
     DriveDashboard: VariantReturnType<DriveDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
+    WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
 };
 
 /**
