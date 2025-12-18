@@ -135,7 +135,7 @@ export const SharedByMeActions = ({
                         linkId: splitedSingleItemUid.nodeId,
                         volumeId: splitedSingleItemUid.volumeId,
                         mimeType: singleItem.mediaType || '',
-                        isFile: singleItem.type === NodeType.File,
+                        isFile: singleItem.type === NodeType.File || singleItem.type === NodeType.Photo,
                         rootShareId: singleItem.rootShareId,
                     }}
                     showRenameModal={showRenameModal}

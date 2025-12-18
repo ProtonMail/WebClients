@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType, splitNodeUid, useDrive } from '@proton/drive';
+import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
@@ -17,11 +17,11 @@ interface UseInvitationsActions {
 }
 
 export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActions) => {
-    const { drive } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const handleAcceptInvitation = async (uid: string, invitationUid: string) => {
+    const handleAcceptInvitation = async (uid: string, invitationUid: string, type: NodeType) => {
+        const drive = getDrivePerNodeType(type);
         try {
             await drive.acceptInvitation(invitationUid);
             const maybeNode = await drive.getNode(uid);
@@ -53,7 +53,8 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
         }
     };
 
-    const rejectInvitationInternal = async (uid: string, invitationUid: string) => {
+    const rejectInvitationInternal = async (uid: string, invitationUid: string, type: NodeType) => {
+        const drive = getDrivePerNodeType(type);
         try {
             await drive.rejectInvitation(invitationUid);
 
@@ -85,9 +86,11 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
             type: NodeType;
         }
     ) => {
-        const invitationName = <strong key="eslint-autofix-947A46">{`${name} `}</strong>;
-
         let message: ReactNode;
+
+        // Casting here is necessary to prevent eslint warning bellow.
+        // TODO: Investigate why we need that thing
+        const invitationName = (<strong key="eslint-autofix-947A46">{`${name}`}</strong>) as ReactNode;
 
         switch (type) {
             case NodeType.Album:
@@ -111,7 +114,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
             message,
             submitText: c('Action').t`Decline invite`,
             cancelText: c('Action').t`Go back`,
-            onSubmit: () => rejectInvitationInternal(uid, invitationUid),
+            onSubmit: () => rejectInvitationInternal(uid, invitationUid, type),
             canUndo: true,
         });
     };

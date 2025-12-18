@@ -36,7 +36,7 @@ function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTa
     const readyFiles = queueItems
         .filter((entry): entry is FileUploadItems => {
             return (
-                entry.type === NodeType.File &&
+                (entry.type === NodeType.File || entry.type === NodeType.Photo) &&
                 entry.status === UploadStatus.Pending &&
                 isParentReady(entry, queueItems)
             );
@@ -47,7 +47,7 @@ function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTa
         if (isPhotosUploadItem(entry)) {
             return {
                 uploadId: entry.uploadId,
-                type: NodeType.File,
+                type: NodeType.Photo,
                 name: entry.name,
                 batchId: entry.batchId,
                 file: entry.file,

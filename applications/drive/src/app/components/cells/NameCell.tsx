@@ -18,7 +18,7 @@ interface NameCellProps {
 
 export const NameCell = ({ name, mediaType, type, thumbnailUrl, isInvitation, haveSignatureIssues }: NameCellProps) => {
     const isAlbum = type === NodeType.Album;
-    const isFile = type === NodeType.File;
+    const isFile = type === NodeType.File || type === NodeType.Photo;
     //TODO: Move that out of sections with FileBrowser refactor
     const iconText = getLinkIconText({
         linkName: name,

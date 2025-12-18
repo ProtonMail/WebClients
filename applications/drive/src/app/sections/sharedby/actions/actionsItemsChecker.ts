@@ -20,7 +20,7 @@ export interface ItemTypeChecker {
 export const createItemChecker = (items: SharedByMeItem[]): ItemTypeChecker => {
     const metadata = items.reduce(
         (acc, item) => {
-            if (item.type === NodeType.File) {
+            if (item.type === NodeType.File || item.type === NodeType.Photo) {
                 acc.hasFiles = true;
             } else {
                 acc.hasFolders = true;
@@ -50,11 +50,11 @@ export const createItemChecker = (items: SharedByMeItem[]): ItemTypeChecker => {
         hasFolders: metadata.hasFolders,
         hasAlbums: metadata.hasAlbums,
         isOnlyOneItem: isOnlyOneItem,
-        isOnlyOneFile: isOnlyOneItem && singleItem.type === NodeType.File,
+        isOnlyOneFile: isOnlyOneItem && (singleItem.type === NodeType.File || singleItem.type === NodeType.Photo),
         hasPreviewAvailable: (isPreviewAvailableFn) => {
             return (
                 isOnlyOneItem &&
-                singleItem.type === NodeType.File &&
+                (singleItem.type === NodeType.File || singleItem.type === NodeType.Photo) &&
                 !!singleItem.mediaType &&
                 isPreviewAvailableFn(singleItem.mediaType, singleItem.size)
             );
@@ -76,7 +76,7 @@ export const mapToLegacyFormat = (items: SharedByMeItem[]) => {
             rootShareId: item.rootShareId,
             mimeType: item.mediaType || '',
             linkId: nodeId,
-            isFile: item.type === NodeType.File,
+            isFile: item.type === NodeType.File || item.type === NodeType.Photo,
             name: item.name,
             size: item.size || 0,
             parentLinkId: parentNodeId,
