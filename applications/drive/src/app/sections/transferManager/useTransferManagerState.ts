@@ -61,7 +61,7 @@ const mapDownload = ({
 });
 
 const getUploadTransferredBytes = (item: UploadItem): number => {
-    if (item.type === NodeType.File) {
+    if (item.type === NodeType.File || item.type === NodeType.Photo) {
         return item.uploadedBytes;
     }
     return item.status === UploadStatus.Finished ? 100 : 0;
@@ -73,7 +73,7 @@ const mapUpload = (item: UploadItem): TransferManagerUploadEntry => ({
     name: item.name,
     status: item.status,
     transferredBytes: getUploadTransferredBytes(item),
-    clearTextSize: item.type === NodeType.File ? item.clearTextExpectedSize : 0,
+    clearTextSize: item.type === NodeType.File || item.type === NodeType.Photo ? item.clearTextExpectedSize : 0,
     lastStatusUpdateTime: item.lastStatusUpdateTime,
 });
 

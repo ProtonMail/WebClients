@@ -225,7 +225,7 @@ export class UploadOrchestrator {
             return;
         }
 
-        if (item.type === NodeType.File) {
+        if (item.type === NodeType.File || item.type === NodeType.Photo) {
             await this.eventHandler.handleEvent({
                 type: 'file:cancelled',
                 uploadId,

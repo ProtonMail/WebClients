@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { MemoryCache, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
+import { MemoryCache, NodeType, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 import type { LogHandler } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
@@ -227,3 +227,7 @@ export const getDrive = (): ProtonDriveClient => {
 export const getDriveForPhotos = (): ProtonDrivePhotosClient => {
     return photosSingleton;
 };
+
+export function getDrivePerNodeType(nodeType: NodeType): ProtonDriveClient | ProtonDrivePhotosClient {
+    return nodeType === NodeType.Photo || nodeType === NodeType.Album ? photosSingleton : driveSingleton;
+}

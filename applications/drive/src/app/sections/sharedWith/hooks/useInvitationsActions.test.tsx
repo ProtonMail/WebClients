@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
-import { MemberRole, type NodeEntity, NodeType, useDrive } from '@proton/drive/index';
+import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
 
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
@@ -16,11 +16,12 @@ jest.mock('@proton/components', () => ({
 
 jest.mock('@proton/drive', () => ({
     ...jest.requireActual('@proton/drive'),
-    useDrive: jest.fn(),
+    getDrivePerNodeType: jest.fn(),
     NodeType: {
         Folder: 'folder',
         File: 'file',
         Album: 'album',
+        Photo: 'photo',
     },
     splitNodeUid: jest.fn(),
 }));
@@ -69,13 +70,13 @@ describe('useInvitationsActions', () => {
             createNotification: mockCreateNotification,
         } as any);
 
-        jest.mocked(useDrive).mockReturnValue({
-            drive: {
-                acceptInvitation: mockAcceptInvitation,
-                rejectInvitation: mockRejectInvitation,
-                getNode: mockGetNode,
-            },
-        } as any);
+        const mockDrive = {
+            acceptInvitation: mockAcceptInvitation,
+            rejectInvitation: mockRejectInvitation,
+            getNode: mockGetNode,
+        };
+
+        jest.mocked(getDrivePerNodeType).mockReturnValue(mockDrive as any);
 
         jest.mocked(useSdkErrorHandler).mockReturnValue({
             handleError: mockHandleError,
@@ -103,12 +104,14 @@ describe('useInvitationsActions', () => {
             const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
+            const type = NodeType.Folder;
 
             mockAcceptInvitation.mockResolvedValue(undefined);
             mockGetNode.mockResolvedValue({});
 
-            await result.current.acceptInvitation(uid, invitationUid);
+            await result.current.acceptInvitation(uid, invitationUid, type);
 
+            expect(getDrivePerNodeType).toHaveBeenCalled();
             expect(mockAcceptInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockGetNode).toHaveBeenCalledWith(uid);
             expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
@@ -126,6 +129,7 @@ describe('useInvitationsActions', () => {
             const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
+            const type = NodeType.Folder;
 
             mockAcceptInvitation.mockResolvedValue(undefined);
             mockGetNode.mockResolvedValue({});
@@ -133,7 +137,7 @@ describe('useInvitationsActions', () => {
                 node: { ...mockNode, deprecatedShareId: undefined },
             } as any);
 
-            await result.current.acceptInvitation(uid, invitationUid);
+            await result.current.acceptInvitation(uid, invitationUid, type);
 
             expect(mockHandleError).toHaveBeenCalledWith(expect.any(EnrichedError), {
                 fallbackMessage: 'Failed to accept share invitation',
@@ -144,11 +148,12 @@ describe('useInvitationsActions', () => {
             const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
+            const type = NodeType.Folder;
             const error = new Error('API Error');
 
             mockAcceptInvitation.mockRejectedValue(error);
 
-            await result.current.acceptInvitation(uid, invitationUid);
+            await result.current.acceptInvitation(uid, invitationUid, type);
 
             expect(mockHandleError).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'Failed to accept share invitation',
@@ -229,6 +234,7 @@ describe('useInvitationsActions', () => {
             const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
             await onSubmit();
 
+            expect(getDrivePerNodeType).toHaveBeenCalled();
             expect(mockRejectInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: ActionEventName.REJECT_INVITATIONS,
@@ -263,6 +269,31 @@ describe('useInvitationsActions', () => {
 
             expect(mockHandleError).toHaveBeenCalledWith(error, {
                 fallbackMessage: 'Failed to reject share invitation',
+            });
+        });
+
+        it('should show correct message for Album type rejection', async () => {
+            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const mockShowConfirmModal = jest.fn();
+            const uid = 'node-uid-1';
+            const invitationUid = 'invitation-uid-1';
+            const name = 'Test Album';
+            const type = NodeType.Album;
+
+            await result.current.rejectInvitation(mockShowConfirmModal, {
+                uid,
+                invitationUid,
+                name,
+                type,
+            });
+
+            expect(mockShowConfirmModal).toHaveBeenCalledWith({
+                title: 'Decline invitation?',
+                message: expect.any(Array),
+                submitText: 'Decline invite',
+                cancelText: 'Go back',
+                onSubmit: expect.any(Function),
+                canUndo: true,
             });
         });
     });

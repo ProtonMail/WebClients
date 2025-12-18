@@ -134,7 +134,11 @@ export const useSharedByMeItemsWithSelection = () => {
                 return;
             }
 
-            navigateToLink(storeItem.rootShareId, nodeId, storeItem.type === NodeType.File);
+            navigateToLink(
+                storeItem.rootShareId,
+                nodeId,
+                storeItem.type === NodeType.File || storeItem.type === NodeType.Photo
+            );
         },
         [getSharedByMeItem, openDocument, navigateToAlbum, navigateToLink, isSDKPreviewEnabled, showPreviewModal]
     );

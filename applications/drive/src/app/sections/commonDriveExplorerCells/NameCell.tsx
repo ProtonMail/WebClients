@@ -39,7 +39,7 @@ export const NameCell = ({
                 />
             ) : (
                 <FileIcon
-                    mimeType={(type === NodeType.File && mediaType) || 'Folder'}
+                    mimeType={((type === NodeType.File || type === NodeType.Photo) && mediaType) || 'Folder'}
                     alt={name}
                     className="file-browser-list-item--icon mr-2"
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
@@ -47,7 +47,7 @@ export const NameCell = ({
             )}
             <SignatureIcon
                 haveSignatureIssues={haveSignatureIssues}
-                isFile={type === NodeType.File}
+                isFile={type === NodeType.File || type === NodeType.Photo}
                 className="mr-2 shrink-0"
             />
             <FileName text={name} testId="name-cell" />

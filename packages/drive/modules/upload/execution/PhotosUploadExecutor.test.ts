@@ -116,7 +116,7 @@ describe('PhotosUploadExecutor', () => {
 
         return {
             uploadId: 'task123',
-            type: NodeType.File,
+            type: NodeType.Photo,
             name: 'test.jpg',
             batchId: 'batch1',
             file: finalFile,

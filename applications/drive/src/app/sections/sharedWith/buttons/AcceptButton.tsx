@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import type { NodeType } from '@proton/drive';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { useInvitationsActions } from '../hooks/useInvitationsActions';
-import { useLegacyInvitationsActions } from '../legacy/useLegacyInvitationsActions';
 
 interface BaseProps {
     nodeUid: string;
@@ -29,14 +28,9 @@ export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }
     // TODO: Remove that when we will have sdk for upload
     const { setVolumeShareIds } = useVolumesState();
     const { acceptInvitation } = useInvitationsActions({ setVolumeShareIds });
-    const { acceptLegacyInvitation } = useLegacyInvitationsActions();
 
     const handleAcceptInvitation = async () => {
-        if (type === NodeType.Album) {
-            await acceptLegacyInvitation(nodeUid, invitationUid);
-        } else {
-            await acceptInvitation(nodeUid, invitationUid);
-        }
+        await acceptInvitation(nodeUid, invitationUid, type);
     };
 
     if (buttonType === 'toolbar') {

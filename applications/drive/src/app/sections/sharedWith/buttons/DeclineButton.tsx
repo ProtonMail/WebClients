@@ -2,12 +2,11 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import type { NodeType } from '@proton/drive';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { useInvitationsActions } from '../hooks/useInvitationsActions';
-import { useLegacyInvitationsActions } from '../legacy/useLegacyInvitationsActions';
 
 interface BaseProps {
     nodeUid: string;
@@ -42,14 +41,9 @@ export const DeclineButton = ({
     // TODO: Remove that when we will have sdk for upload
     const { setVolumeShareIds } = useVolumesState();
     const { rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
-    const { rejectLegacyInvitation } = useLegacyInvitationsActions();
 
     const handleDecline = () => {
-        if (type === NodeType.Album) {
-            void rejectLegacyInvitation(showConfirmModal, { uid: nodeUid, invitationUid });
-        } else {
-            void rejectInvitation(showConfirmModal, { uid: nodeUid, invitationUid, name, type });
-        }
+        void rejectInvitation(showConfirmModal, { uid: nodeUid, invitationUid, name, type });
     };
 
     if (buttonType === 'toolbar') {
