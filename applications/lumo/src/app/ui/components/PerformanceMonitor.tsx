@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useLumoSelector } from '../../redux/hooks';
+import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDebugModal';
 
 /**
  * Performance Monitor Component
@@ -129,6 +130,7 @@ export const PerformanceMonitor: React.FC = () => {
         },
     });
     const [isVisible, setIsVisible] = useState(false);
+    const [showSearchIndexDebug, setShowSearchIndexDebug] = useState(false);
 
     // Check if debug mode is enabled
     useEffect(() => {
@@ -300,106 +302,117 @@ export const PerformanceMonitor: React.FC = () => {
         }));
     };
 
+    // Clean white theme with purple accents
+    const purple = '#6d4aff';
+    const bgWhite = '#ffffff';
+    const textPrimary = '#1a1a2e';
+    const textMuted = '#6b7280';
+    const borderColor = '#e5e7eb';
+    const goodColor = '#10b981'; // green
+    const warnColor = '#f59e0b'; // amber
+    const dangerColor = '#ef4444'; // red
+
     return (
         <div
             style={{
                 position: 'fixed',
                 bottom: '20px',
                 right: '20px',
-                backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                color: '#00ff00',
-                padding: '12px 16px',
-                borderRadius: '8px',
-                fontFamily: 'monospace',
+                backgroundColor: bgWhite,
+                color: textPrimary,
+                padding: '16px 20px',
+                borderRadius: '12px',
+                fontFamily: 'system-ui, -apple-system, sans-serif',
                 fontSize: '12px',
                 zIndex: 99999,
-                minWidth: '250px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
-                border: '1px solid rgba(0, 255, 0, 0.3)',
+                minWidth: '260px',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                border: `2px solid ${purple}`,
             }}
         >
-            <div style={{ marginBottom: '8px', fontSize: '14px', fontWeight: 'bold', color: '#00ff00' }}>
-                ⚡ Performance Monitor
+            <div style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600', color: purple, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ fontSize: '16px' }}>⚡</span> Performance Monitor
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Status:</span>{' '}
-                <span style={{ color: isStreaming ? '#00ff00' : '#888' }}>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Status</span>
+                <span style={{ fontWeight: '500', color: textPrimary }}>
                     {isStreaming ? '🔴 Streaming' : '⚪ Idle'}
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Tokens/sec:</span>{' '}
-                <span style={{ color: metrics.tokensPerSecond > 50 ? '#00ff00' : '#555' }}>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Tokens/sec</span>
+                <span style={{ fontWeight: '500', color: metrics.tokensPerSecond > 50 ? goodColor : textMuted }}>
                     {metrics.tokensPerSecond}
                 </span>
-                <span style={{ fontSize: '9px', color: '#555', marginLeft: '4px' }}>(~chars÷4)</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Redux/sec:</span>{' '}
-                <span style={{ color: metrics.reduxUpdatesPerSecond < 100 ? '#00ff00' : '#ff0000' }}>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Redux/sec</span>
+                <span style={{ fontWeight: '500', color: metrics.reduxUpdatesPerSecond < 100 ? textPrimary : dangerColor }}>
                     {metrics.reduxUpdatesPerSecond}
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Redux updates:</span>{' '}
-                <span style={{ color: '#00aaff' }}>{metrics.renderCount}</span>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Redux updates</span>
+                <span style={{ fontWeight: '500', color: textPrimary }}>{metrics.renderCount}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>FPS:</span>{' '}
-                <span style={{ color: (metrics.fps || 0) >= 60 ? '#00ff00' : '#ffaa00' }}>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>FPS</span>
+                <span style={{ fontWeight: '500', color: (metrics.fps || 0) >= 60 ? goodColor : warnColor }}>
                     {metrics.fps || 0}
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Memory:</span>{' '}
-                <span style={{ color: '#00aaff' }}>{metrics.memoryUsage}MB</span>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Memory</span>
+                <span style={{ fontWeight: '500', color: textPrimary }}>{metrics.memoryUsage}MB</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Messages:</span>{' '}
-                <span style={{ color: '#888' }}>{metrics.messageCount}</span>
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Messages</span>
+                <span style={{ fontWeight: '500', color: textPrimary }}>{metrics.messageCount}</span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Last token:</span>{' '}
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Last token</span>
                 <span style={{
-                    color: (metrics.timeSinceLastToken || 0) < 100 ? '#00ff00' :
-                           (metrics.timeSinceLastToken || 0) < 500 ? '#ffaa00' : '#ff0000'
+                    fontWeight: '500',
+                    color: (metrics.timeSinceLastToken || 0) < 100 ? goodColor :
+                           (metrics.timeSinceLastToken || 0) < 500 ? warnColor : dangerColor
                 }}>
                     {metrics.timeSinceLastToken || 0}ms
                 </span>
             </div>
 
-            <div style={{ marginBottom: '4px' }}>
-                <span style={{ color: '#888' }}>Render time:</span>{' '}
+            <div style={{ marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ color: textMuted }}>Render time</span>
                 <span style={{
-                    color: (metrics.renderTime || 0) < 16 ? '#00ff00' :
-                           (metrics.renderTime || 0) < 33 ? '#ffaa00' : '#ff0000'
+                    fontWeight: '500',
+                    color: (metrics.renderTime || 0) < 16 ? goodColor :
+                           (metrics.renderTime || 0) < 33 ? warnColor : dangerColor
                 }}>
                     {metrics.renderTime || 0}ms
-                </span>
-                <span style={{ fontSize: '9px', color: '#555', marginLeft: '4px' }}>
-                    (max: {metrics.longestRenderTime}ms)
+                    <span style={{ fontSize: '10px', color: textMuted, marginLeft: '4px' }}>
+                        (max: {metrics.longestRenderTime}ms)
+                    </span>
                 </span>
             </div>
 
-            {/* Sparklines with fixed bounds - always show */}
-            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                <div style={{ marginBottom: '8px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Token delays: 0-500ms <span style={{ color: '#555' }}>(warn: 200ms, danger: 400ms)</span>
+            {/* Sparklines with fixed bounds */}
+            <div style={{ marginTop: '14px', paddingTop: '12px', borderTop: `1px solid ${borderColor}` }}>
+                <div style={{ marginBottom: '10px' }}>
+                    <div style={{ fontSize: '10px', color: textMuted, marginBottom: '4px' }}>
+                        Token delays (0-500ms)
                     </div>
                     <Sparkline
                         data={metrics.history?.tokenDelays || []}
                         width={220}
-                        height={35}
-                        color="#00aaff"
+                        height={30}
+                        color={purple}
                         minValue={0}
                         maxValue={500}
                         warningThreshold={200}
@@ -407,15 +420,15 @@ export const PerformanceMonitor: React.FC = () => {
                     />
                 </div>
 
-                <div style={{ marginBottom: '8px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Render time: 0-50ms <span style={{ color: '#555' }}>(warn: 16ms, danger: 33ms)</span>
+                <div style={{ marginBottom: '10px' }}>
+                    <div style={{ fontSize: '10px', color: textMuted, marginBottom: '4px' }}>
+                        Render time (0-50ms)
                     </div>
                     <Sparkline
                         data={metrics.history?.renderTimes || []}
                         width={220}
-                        height={35}
-                        color="#00ff00"
+                        height={30}
+                        color={purple}
                         minValue={0}
                         maxValue={50}
                         warningThreshold={16}
@@ -423,45 +436,72 @@ export const PerformanceMonitor: React.FC = () => {
                     />
                 </div>
 
-                <div style={{ marginBottom: '4px' }}>
-                    <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>
-                        Tokens/sec: 0-200 <span style={{ color: '#555' }}>(good: &gt;50)</span>
+                <div style={{ marginBottom: '6px' }}>
+                    <div style={{ fontSize: '10px', color: textMuted, marginBottom: '4px' }}>
+                        Tokens/sec (0-200)
                     </div>
                     <Sparkline
                         data={metrics.history?.tokensPerSecHistory || []}
                         width={220}
-                        height={35}
-                        color="#00ff00"
+                        height={30}
+                        color={goodColor}
                         minValue={0}
                         maxValue={200}
                     />
                 </div>
             </div>
 
-            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+            <div style={{ marginTop: '14px', paddingTop: '12px', borderTop: `1px solid ${borderColor}` }}>
                 <button
                     onClick={handleClearHistory}
                     style={{
-                        fontSize: '10px',
-                        padding: '4px 8px',
+                        fontSize: '11px',
+                        padding: '8px 12px',
                         marginBottom: '8px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                        color: '#00ff00',
-                        border: '1px solid rgba(0, 255, 0, 0.3)',
-                        borderRadius: '4px',
+                        backgroundColor: '#f3f4f6',
+                        color: textPrimary,
+                        border: 'none',
+                        borderRadius: '6px',
                         cursor: 'pointer',
                         width: '100%',
+                        fontWeight: '500',
+                        transition: 'background-color 0.2s',
                     }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#f3f4f6'}
                 >
                     Clear History
                 </button>
-                <div style={{ fontSize: '10px', color: '#666', lineHeight: '1.4' }}>
-                    <div>Toggle: <strong>Cmd/Ctrl + Shift + P</strong></div>
-                    <div style={{ marginTop: '4px', color: '#555' }}>
-                        or localStorage.setItem('lumo_debug_perf', 'false')
-                    </div>
+                <button
+                    onClick={() => setShowSearchIndexDebug(true)}
+                    style={{
+                        fontSize: '11px',
+                        padding: '8px 12px',
+                        marginBottom: '10px',
+                        backgroundColor: purple,
+                        color: bgWhite,
+                        border: 'none',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        width: '100%',
+                        fontWeight: '500',
+                        transition: 'opacity 0.2s',
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
+                    onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+                >
+                    🔍 Search Index Debug
+                </button>
+                <div style={{ fontSize: '10px', color: textMuted, lineHeight: '1.5', textAlign: 'center' }}>
+                    <div><strong style={{ color: textPrimary }}>Cmd/Ctrl + Shift + P</strong> to toggle</div>
                 </div>
             </div>
+
+            {/* Search Index Debug Modal */}
+            <SearchIndexDebugModal
+                open={showSearchIndexDebug}
+                onClose={() => setShowSearchIndexDebug(false)}
+            />
         </div>
     );
 };

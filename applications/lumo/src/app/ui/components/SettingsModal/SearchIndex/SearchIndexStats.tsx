@@ -95,11 +95,6 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
                 </span>
             </div>
         )}
-        <div className="flex justify-end mt-1">
-            <Button shape="ghost" size="small" onClick={onInspect} disabled={!userId}>
-                {c('Action').t`Inspect index`}
-            </Button>
-        </div>
     </div>
 );
 
