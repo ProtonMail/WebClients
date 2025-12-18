@@ -9,13 +9,23 @@ export class ApiRateLimiter {
     // Default values are set to 10 requests per second for the same URL
     constructor({
         enabled = false,
-        maxRequests = 10,
+        maxRequests = 100,
         windowMs = 1000,
     }: { enabled?: boolean; maxRequests?: number; windowMs?: number } = {}) {
         this.enabled = enabled;
         this.maxRequests = maxRequests;
         this.urlTimestamps = new Map();
         this.windowMs = windowMs;
+    }
+
+    configure({
+        maxRequests,
+        windowMs,
+        tracingEnabled,
+    }: { maxRequests?: number; windowMs?: number; tracingEnabled?: boolean } = {}): void {
+        this.maxRequests = maxRequests ?? this.maxRequests;
+        this.tracingEnabled = tracingEnabled ?? this.tracingEnabled;
+        this.windowMs = windowMs ?? this.windowMs;
     }
 
     enable(): void {
