@@ -4,7 +4,7 @@ import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
+import { usePaymentOptimistic } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
@@ -20,6 +20,7 @@ import {
     availableReferralPlans,
     getAppIntentFromReferralPlan,
     getReferralSelectedPlan,
+    plansPrioritizingExternalSignupType,
     plansRequiringPaymentToken,
 } from './helpers/plans';
 import PaymentStep from './steps/PaymentStep';
@@ -129,7 +130,7 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
      */
     useReferralInfo();
 
-    const payments = usePaymentsInner();
+    const payments = usePaymentOptimistic();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
@@ -161,9 +162,12 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             }}
             accountFormDataConfig={{
                 defaultEmail,
-                availableSignupTypes: defaultEmail
-                    ? new Set([SignupType.External, SignupType.Proton])
-                    : new Set([SignupType.Proton, SignupType.External]),
+                availableSignupTypes:
+                    plansPrioritizingExternalSignupType.includes(
+                        payments.selectedPlan.name as SupportedReferralPlans
+                    ) || defaultEmail
+                        ? new Set([SignupType.External, SignupType.Proton])
+                        : new Set([SignupType.Proton, SignupType.External]),
             }}
             unverifiedReferralData={{
                 referralIdentifier: signupSearchParams.getReferralIdentifier(searchParams) || '',
