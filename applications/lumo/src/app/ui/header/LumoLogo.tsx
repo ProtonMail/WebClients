@@ -6,7 +6,6 @@ import lumoBusinessLogoDark from '@proton/styles/assets/img/lumo/lumo-business-l
 import lumoBusinessLogo from '@proton/styles/assets/img/lumo/lumo-business-logo.svg';
 import lumoLogoDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
 import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
@@ -16,8 +15,8 @@ import LumoPlusLogoInline from '../components/LumoPlusLogoInline';
 
 const LOGO_HEIGHT = '21px';
 
-const getLogoSrc = (theme: ThemeTypes, hasLumoB2B: boolean, hasLumoSeat: boolean, isLumoB2BEnabled: boolean) => {
-    if (hasLumoB2B && isLumoB2BEnabled) {
+const getLogoSrc = (theme: ThemeTypes, hasLumoB2B: boolean, hasLumoSeat: boolean) => {
+    if (hasLumoB2B) {
         return theme === ThemeTypes.LumoDark ? lumoBusinessLogoDark : lumoBusinessLogo;
     }
     if (hasLumoSeat) {
@@ -30,12 +29,8 @@ const LumoLogoHeader = memo(() => {
     const { isGuest, handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
     const { theme } = useLumoTheme();
     const { hasLumoSeat, hasLumoB2B, isLumoPlanLoading } = useLumoPlan();
-    const isLumoB2BEnabled = useFlag('LumoB2B');
 
-    const logoSrc = useMemo(
-        () => getLogoSrc(theme, hasLumoB2B, hasLumoSeat, isLumoB2BEnabled),
-        [theme, hasLumoB2B, hasLumoSeat, isLumoB2BEnabled]
-    );
+    const logoSrc = useMemo(() => getLogoSrc(theme, hasLumoB2B, hasLumoSeat), [theme, hasLumoB2B, hasLumoSeat]);
 
     const onGuestClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
