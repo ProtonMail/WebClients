@@ -2,12 +2,12 @@ import { addDays, addMonths, endOfDay, endOfMonth, endOfWeek, startOfDay, startO
 
 import type { DateTuple } from '@proton/components/components/miniCalendar/interface';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 
 import { DateRangeUnit, getDateRangeUnit } from './getDateRangeUnit';
 import { getNoonDate } from './getNoonDate';
 import { getOffsetAdjustedRange } from './getOffsetAdjustedRange';
 import { getTimezoneAdjustedDateRange } from './getTimezoneAdjustedDateRange';
-import { toSpecificTimezone } from './toSpecificTimezone';
 
 const getMonthRange = (date: Date, weekStartsOn: WeekStartsOn) => {
     // Because the displayed first and last days on the calendar may be in a
@@ -29,7 +29,7 @@ const getDaysRange = (date: Date, dateDifference: DateRangeUnit) => {
 
 export const getNextDateRange = (dateRange: DateTuple, weekStartsOn: WeekStartsOn, tzid: string): DateTuple => {
     const [, end] = dateRange;
-    const timezoneAdjustedEnd = toSpecificTimezone(end, tzid);
+    const timezoneAdjustedEnd = fromUTCDateToTimezone(end, tzid);
     const noon = getNoonDate(timezoneAdjustedEnd, false);
 
     const dateDifference = getDateRangeUnit(dateRange);

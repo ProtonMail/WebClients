@@ -8,7 +8,7 @@ import { LoaderPage, useNotifications } from '@proton/components';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ACTION_VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -69,7 +69,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
                         occurrence.localStart
                     );
                     const utcDate = propertyToUTCDate(withOccurrenceDtstart);
-                    const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+                    const startInTzid = fromUTCDateToTimezone(utcDate, tzid);
                     setEventTargetAction({
                         uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}-${
                             occurrence.occurrenceNumber
@@ -86,7 +86,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
                     const { isAllDay, isAllPartDay } = getCalendarEventStoreRecord(eventComponent, eventData);
 
                     const utcDate = propertyToUTCDate(eventComponent.dtstart);
-                    const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+                    const startInTzid = fromUTCDateToTimezone(utcDate, tzid);
                     setEventTargetAction({
                         uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}`,
                         isAllDay,
