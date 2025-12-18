@@ -286,12 +286,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                                 className="color-norm flex-shrink-0"
                                             />
                                             <span className="text-sm font-semibold">{c('collider_2025:Info')
-                                                .t`Connected to ${DRIVE_APP_NAME}`}</span>
+                                                .t`Linked with folder in ${DRIVE_APP_NAME}`}</span>
                                             <div className="drive-connection-indicator"></div>
                                         </div>
-                                        <div className="text-xs color-weak">
-                                            /{linkedDriveFolder.folderPath}/{linkedDriveFolder.folderName}
-                                        </div>
+                                        <div className="text-xs color-weak">{linkedDriveFolder.folderPath}</div>
                                     </div>
                                     <div className="flex items-center gap-1 flex-shrink-0">
                                         <Button
