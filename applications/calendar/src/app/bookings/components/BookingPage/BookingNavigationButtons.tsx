@@ -46,7 +46,7 @@ export const BookingNavigationButtons = ({ gridSize, disabled }: Props) => {
                     icon
                     pill
                     size={viewportWidth['<=small'] ? 'medium' : 'large'}
-                    className="booking-buttons"
+                    className="booking-buttons rtl:mirror"
                     onClick={handleLoadPreviousPage}
                     disabled={isInEarliestRange || disabled}
                 >
@@ -60,7 +60,7 @@ export const BookingNavigationButtons = ({ gridSize, disabled }: Props) => {
                     size={viewportWidth['<=small'] ? 'medium' : 'large'}
                     onClick={handleLoadNextPage}
                     disabled={disabled}
-                    className="booking-buttons"
+                    className="booking-buttons rtl:mirror"
                 >
                     <IcChevronRight size={6} alt={c('Action').t`See upcoming availability`} />
                 </Button>
