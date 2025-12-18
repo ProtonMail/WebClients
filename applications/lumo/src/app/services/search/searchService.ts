@@ -53,6 +53,64 @@ export class SearchService {
     >();
     private manifestReady: Promise<void> | null = null;
     private static readonly MANIFEST_BLOB = 'drive_manifest';
+    private static readonly SEARCH_INDEX_KEY_BLOB = 'search_index_key';
+    // Search index key (unwrapped) for deriving the search DEK
+    private searchIndexKey: string | null = null;
+
+    /**
+     * Get the master key from the Redux store.
+     */
+    private getMasterKey(): string | null {
+        const { getStoreRef } = require('../../redux/storeRef');
+        const { selectMasterKey } = require('../../redux/selectors');
+        const store = getStoreRef();
+        if (!store) return null;
+        return selectMasterKey(store.getState());
+    }
+
+    /**
+     * Get the search index key, generating and storing it if needed.
+     * The search index key is wrapped with the master key and stored in IndexedDB.
+     */
+    async getSearchIndexKey(): Promise<string> {
+        if (this.searchIndexKey) {
+            return this.searchIndexKey;
+        }
+
+        const masterKey = this.getMasterKey();
+        if (!this.userId || !masterKey) {
+            throw new Error('User ID and master key required to get search index key');
+        }
+
+        const dbApi = new DbApi(this.userId);
+        const { base64ToMasterKey, unwrapAesKey, cryptoKeyToBase64, generateSearchIndexKeyBase64, bytesToAesGcmCryptoKey, wrapAesKey } = await import('../../crypto');
+
+        // Try to load existing wrapped key
+        const wrappedKeyBlob = await dbApi.loadSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB);
+        const masterKeyObj = await base64ToMasterKey(masterKey);
+
+        if (wrappedKeyBlob && typeof wrappedKeyBlob === 'string') {
+            // Unwrap the existing key
+            const wrappedKeyBytes = Uint8Array.fromBase64(wrappedKeyBlob);
+            const unwrappedKey = await unwrapAesKey(wrappedKeyBytes, masterKeyObj, true);
+            this.searchIndexKey = await cryptoKeyToBase64(unwrappedKey.encryptKey);
+            return this.searchIndexKey;
+        }
+
+        // Generate a new search index key
+        const newKeyBase64 = generateSearchIndexKeyBase64();
+        const newKeyObj = await bytesToAesGcmCryptoKey(Uint8Array.fromBase64(newKeyBase64), true);
+
+        // Wrap it with the master key
+        const wrappedKeyBytes = await wrapAesKey(newKeyObj, masterKeyObj);
+        const wrappedKeyBase64 = wrappedKeyBytes.toBase64();
+
+        // Store the wrapped key
+        await dbApi.saveSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB, wrappedKeyBase64);
+
+        this.searchIndexKey = newKeyBase64;
+        return this.searchIndexKey;
+    }
 
     private ensureWorker() {
         if (this.worker || !this.userId) return;
@@ -85,13 +143,17 @@ export class SearchService {
 
     private async postToWorker(message: any): Promise<any> {
         if (!this.userId) throw new Error('User ID required for search worker');
+
+        // Get or generate the search index key (this will get master key from store)
+        const searchIndexKey = await this.getSearchIndexKey();
+
         this.ensureWorker();
         if (!this.worker || !this.workerReady) {
             throw new Error('Search worker unavailable');
         }
         await this.workerReady;
         const id = message.id ?? crypto.randomUUID();
-        const payload = { ...message, id, userId: this.userId };
+        const payload = { ...message, id, userId: this.userId, searchIndexKey };
         const result = new Promise((resolve, reject) => {
             this.pending.set(id, { resolve, reject });
             this.worker!.postMessage(payload);

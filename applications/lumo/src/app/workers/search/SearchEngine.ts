@@ -38,10 +38,19 @@ export class SearchEngine {
         return ad;
     }
 
-    // Helper function to get a consistent search key for all search blobs
-    // This ensures all search blobs use the same encryption key regardless of which space they're created from
-    private async getSearchKey(userId: string): Promise<CryptoKey> {
-        return this.cryptoAdapter.deriveSearchKey(userId);
+    /**
+     * Set the search index key for deriving the search index DEK.
+     * The search index key should be unwrapped from storage using the master key.
+     * Must be called before any encryption/decryption operations.
+     */
+    setSearchIndexKey(searchIndexKeyBase64: string): void {
+        this.cryptoAdapter.setSearchIndexKey(searchIndexKeyBase64);
+    }
+
+    // Helper function to get a consistent DEK for all search blobs
+    // This ensures all search blobs use the same encryption key derived from the search index key
+    private async getSearchDek(): Promise<CryptoKey> {
+        return this.cryptoAdapter.deriveSearchDek();
     }
 
     private async loadBlob(name: string): Promise<Uint8Array<ArrayBuffer>> {
@@ -56,9 +65,9 @@ export class SearchEngine {
         console.log(`loadBlob: Attempting to decrypt blob "${name}" with AD "${ad}"`);
 
         try {
-            // Use consistent search key instead of space-specific key
-            const searchKey = await this.getSearchKey(this.userId);
-            const decrypted = await this.cryptoAdapter.decrypt(blobEncrypted, searchKey, ad);
+            // Use DEK derived from search index key
+            const dek = await this.getSearchDek();
+            const decrypted = await this.cryptoAdapter.decrypt(blobEncrypted, dek, ad);
             console.log(`loadBlob: Successfully decrypted blob "${name}" (${decrypted.length} bytes)`);
             return decrypted as Uint8Array<ArrayBuffer>;
         } catch (error) {
@@ -72,9 +81,9 @@ export class SearchEngine {
         console.log(`saveBlob: Encrypting blob "${name}" with AD "${ad}" (${blobDecrypted.length} bytes)`);
 
         try {
-            // Use consistent search key instead of space-specific key
-            const searchKey = await this.getSearchKey(this.userId);
-            const blobEncrypted = await this.cryptoAdapter.encrypt(blobDecrypted, searchKey, ad);
+            // Use DEK derived from search index key
+            const dek = await this.getSearchDek();
+            const blobEncrypted = await this.cryptoAdapter.encrypt(blobDecrypted, dek, ad);
             await this.databaseAdapter.saveSearchBlob(name, blobEncrypted);
             console.log(`saveBlob: Successfully saved encrypted blob "${name}"`);
         } catch (error) {

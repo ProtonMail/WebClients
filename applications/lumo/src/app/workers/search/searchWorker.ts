@@ -19,6 +19,7 @@ export interface SearchRequest {
     type: MessageType.Search;
     query: string;
     userId: string;
+    searchIndexKey: string; // Unwrapped search index key
 }
 
 export interface PopulateRequest {
@@ -26,6 +27,7 @@ export interface PopulateRequest {
     type: MessageType.Populate;
     conversations: Record<string, any>;
     userId: string;
+    searchIndexKey: string; // Unwrapped search index key
 }
 
 export interface PopulateResponse {
@@ -45,6 +47,7 @@ export interface StatusRequest {
     id: string;
     type: MessageType.Status;
     userId: string;
+    searchIndexKey: string; // Unwrapped search index key
 }
 
 export interface StatusResponse {
@@ -66,6 +69,7 @@ export interface IndexConversationRequest {
     type: MessageType.IndexConversation;
     conversations: any[];
     userId: string;
+    searchIndexKey: string; // Unwrapped search index key
 }
 
 export interface IndexConversationResponse {
@@ -94,7 +98,9 @@ function isStatusRequest(item: any): item is StatusRequest {
 
 // Global search engine instances per user
 let searchEngine: SearchEngine | null = null;
-function getSearchEngine(userId: string): SearchEngine | null {
+let currentSearchIndexKey: string | null = null;
+
+function getSearchEngine(userId: string, searchIndexKey: string): SearchEngine | null {
     if (!ENABLE_FOUNDATION_SEARCH) {
         return null;
     }
@@ -107,22 +113,29 @@ function getSearchEngine(userId: string): SearchEngine | null {
         );
         const databaseAdapter = new LumoDatabaseAdapter(userDbApi);
         searchEngine = new SearchEngine(userId, cryptoAdapter, databaseAdapter);
+        currentSearchIndexKey = null; // Reset key when creating new engine
+    }
+
+    // Update search index key if changed
+    if (searchIndexKey && searchIndexKey !== currentSearchIndexKey) {
+        searchEngine.setSearchIndexKey(searchIndexKey);
+        currentSearchIndexKey = searchIndexKey;
     }
 
     return searchEngine;
 }
 
-async function status(userId: string): Promise<Status> {
-    const searchEngine = getSearchEngine(userId);
+async function status(userId: string, searchIndexKey: string): Promise<Status> {
+    const searchEngine = getSearchEngine(userId, searchIndexKey);
     if (!searchEngine) {
         return { tableExists: false, hasEntries: false, entryCount: 0 };
     }
     return searchEngine.getStatus();
 }
 
-async function postStatus(userId: string, id: string): Promise<void> {
+async function postStatus(userId: string, searchIndexKey: string, id: string): Promise<void> {
     try {
-        const currentStatus = await status(userId);
+        const currentStatus = await status(userId, searchIndexKey);
 
         const response: StatusResponse = {
             id,
@@ -202,7 +215,7 @@ async function immediately(task: () => Promise<void>) {
 }
 
 async function search(request: SearchRequest) {
-    const { id, query, userId } = request;
+    const { id, query, userId, searchIndexKey } = request;
     console.log(`Search worker received search request ${id} with query: "${query}"`);
 
     if (!query) {
@@ -211,7 +224,7 @@ async function search(request: SearchRequest) {
     }
 
     try {
-        const searchEngine = getSearchEngine(userId);
+        const searchEngine = getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -276,11 +289,11 @@ We're working on adding support for advanced search syntax and Unicode character
 }
 
 async function populate(request: PopulateRequest) {
-    const { id, conversations, userId } = request;
+    const { id, conversations, userId, searchIndexKey } = request;
     console.log(`Search worker received populate request ${id} for ${Object.keys(conversations).length} conversations`);
 
     try {
-        const searchEngine = getSearchEngine(userId);
+        const searchEngine = getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -307,16 +320,16 @@ async function populate(request: PopulateRequest) {
 
         self.postMessage(response);
     } finally {
-        await postStatus(userId, id);
+        await postStatus(userId, searchIndexKey, id);
     }
 }
 
 async function index(request: IndexConversationRequest) {
-    const { id, conversations, userId } = request;
+    const { id, conversations, userId, searchIndexKey } = request;
     console.log(`Search worker received indexing request ${id} for conversation: ${conversations.length}`);
 
     try {
-        const searchEngine = getSearchEngine(userId);
+        const searchEngine = getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
@@ -343,17 +356,17 @@ async function index(request: IndexConversationRequest) {
 
         self.postMessage(response);
     } finally {
-        await postStatus(userId, id);
+        await postStatus(userId, searchIndexKey, id);
     }
 }
 
 async function cleanup(request: StatusRequest) {
-    const { id, userId } = request;
+    const { id, userId, searchIndexKey } = request;
     console.log(`Search worker received status request ${id}`);
-    const searchEngine = getSearchEngine(userId);
+    const searchEngine = getSearchEngine(userId, searchIndexKey);
     if (!searchEngine) {
         throw new Error('Search engine not available');
     }
     await searchEngine.cleanup();
-    await postStatus(userId, id);
+    await postStatus(userId, searchIndexKey, id);
 }
