@@ -7,6 +7,7 @@ import getAvailablePlansWithCycles from '../../../helpers/getAvailablePlansWithC
 type ReferralSelectedPlan = {
     planIDs: PlanIDs;
     requiresPaymentMethod?: boolean;
+    prioritizeExternalSignupType?: boolean;
 };
 
 export const unlimited: ReferralSelectedPlan = {
@@ -20,15 +21,18 @@ const mailPlus: ReferralSelectedPlan = {
 
 const drivePlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.DRIVE]: 1 },
+    prioritizeExternalSignupType: true,
 };
 
 const passPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.PASS]: 1 },
+    prioritizeExternalSignupType: true,
 };
 
 const vpnPlus: ReferralSelectedPlan = {
     planIDs: { [PLANS.VPN2024]: 1 },
     requiresPaymentMethod: true,
+    prioritizeExternalSignupType: true,
 };
 
 export type SupportedReferralPlans = PLANS.BUNDLE | PLANS.MAIL | PLANS.DRIVE | PLANS.PASS | PLANS.VPN2024;
@@ -50,6 +54,13 @@ export const plansRequiringPaymentToken: SupportedReferralPlans[] = Object.entri
 
 export const autoRenewingPlans: SupportedReferralPlans[] = Object.entries(referralPlanMap)
     .filter(([, { requiresPaymentMethod }]) => requiresPaymentMethod)
+    .map(([plan]) => plan as SupportedReferralPlans);
+
+/**
+ * Plans that prioritize External signup type
+ */
+export const plansPrioritizingExternalSignupType: SupportedReferralPlans[] = Object.entries(referralPlanMap)
+    .filter(([, { prioritizeExternalSignupType }]) => prioritizeExternalSignupType)
     .map(([plan]) => plan as SupportedReferralPlans);
 
 export const getReferralSelectedPlan = (plan: SupportedReferralPlans | undefined): ReferralSelectedPlan => {
