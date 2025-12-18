@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Autentificeringsproblem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Bridge-problem"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Skift abonnement"
-      ],
-      "View the invitation": [
-        "Se invitationen"
-      ],
-      "View the invitations": [
-        "Se invitationerne"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
+      ],
+      "View the invitation": [
+        "Vis invitationen",
+        "Vis invitationerne"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
@@ -5010,6 +5005,9 @@
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
         "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in your library": [
+        "Allerede i dit bibliotek"
+      ],
       "Also try looking in Trash.": [
         "Prøv også at kigge i papirkurven."
       ],
@@ -5661,7 +5659,7 @@
         "Mar"
       ],
       "Mastercard SecureCode logo": [
-        "Mastercard SecureCode logo"
+        "Mastercard SecureCode-logo"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Kører diagnosticering..."
-      ],
-      "Same photo or video already exist": [
-        "Samme foto eller video eksisterer allerede"
       ],
       "Saving...": [
         "Gemmer..."
@@ -7643,6 +7638,9 @@
       "Shared with me": [
         "Delt med mig"
       ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
+      ],
       "Trash": [
         "Papirkurv"
       ],
@@ -8635,7 +8633,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
+        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end-kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
@@ -8735,7 +8733,7 @@
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+        "På hverdage kan du modtage support fra ${ BRAND_NAME }-kundesupportteamet inden for 24 timer efter en henvendelse."
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
@@ -11108,7 +11106,7 @@
         "${ planName } hjælper dig med at sikre, at alle dine familiemedlemmer - og deres data - er beskyttet, hver gang de er online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, events, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
+        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, begivenheder, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine filer og fotos. Du er også berettiget til årlige lagerbonusser."
@@ -12822,7 +12820,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Få Drive til virksomheder"
+        "Få Drive for Business"
       ]
     },
     "Validation": {

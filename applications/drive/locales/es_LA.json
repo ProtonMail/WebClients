@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Problema con el autenticador"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problema de Bridge"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Cambiar planes"
-      ],
-      "View the invitation": [
-        "Ver la invitación"
-      ],
-      "View the invitations": [
-        "Ver las invitaciones"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
+      ],
+      "View the invitation": [
+        "Ver la invitación",
+        "Ver las invitaciones"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }",
         "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Ya está en su biblioteca"
       ],
       "Also try looking in Trash.": [
         "Pruebe también buscando en la Papelera."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Ejecutando diagnósticos..."
-      ],
-      "Same photo or video already exist": [
-        "Esta foto o video ya existe."
       ],
       "Saving...": [
         "Guardando..."

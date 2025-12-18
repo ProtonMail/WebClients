@@ -1554,9 +1554,6 @@
       "Authenticator problem": [
         "Todennusvirhe"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Bridge-ongelma"
       ],
@@ -3982,12 +3979,6 @@
       ],
       "Switch plans": [
         "Vaihda tilausta"
-      ],
-      "View the invitation": [
-        "Näytä kutsu"
-      ],
-      "View the invitations": [
-        "Näytä kutsut"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4039,6 +4030,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
+      ],
+      "View the invitation": [
+        "Näytä kutsu",
+        "Näytä kutsut"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
@@ -4903,6 +4898,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
+      ],
+      "Already in your library": [
+        "On jo kirjastossasi"
       ],
       "Also try looking in Trash.": [
         "Yritä etsiä myös roskakorista."
@@ -5846,9 +5844,6 @@
       ],
       "Running diagnostics...": [
         "Diagnostiikkaa suoritetaan..."
-      ],
-      "Same photo or video already exist": [
-        "Sama kuva tai video on jo olemassa"
       ],
       "Saving...": [
         "Tallennetaan..."
