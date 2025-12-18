@@ -194,7 +194,6 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
-    const isLumoB2BEnabled = useFlag('LumoB2B');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
 
     const history = useHistory();
@@ -279,7 +278,6 @@ const SingleSignupContainerV2 = ({
             theme,
             model: defaultSignupModel,
             vpnServersCountData: defaultSignupModel.vpnServersCountData,
-            isLumoB2BEnabled,
             isNewB2BPlanEnabled,
         });
 
@@ -328,7 +326,6 @@ const SingleSignupContainerV2 = ({
         theme,
         model,
         vpnServersCountData,
-        isLumoB2BEnabled,
         isNewB2BPlanEnabled,
     });
     const {
