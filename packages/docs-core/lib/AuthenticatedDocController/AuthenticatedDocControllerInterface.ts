@@ -21,4 +21,5 @@ export interface AuthenticatedDocControllerInterface {
   restoreDocument(): Promise<void>
   squashDocument(): Promise<void>
   trashDocument(): Promise<void>
+  downloadAllUpdatesAsZip(): Promise<void>
 }

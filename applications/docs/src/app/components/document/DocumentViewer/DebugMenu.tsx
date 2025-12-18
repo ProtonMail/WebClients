@@ -28,10 +28,13 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const [clientId, setClientId] = useState<string | null>()
 
   useEffect(() => {
+    if (!isOpen) {
+      return
+    }
     void editorController.getDocumentClientId().then((id) => {
       setClientId(`${id}`)
     })
-  }, [editorController])
+  }, [isOpen, editorController])
 
   const commitToRTS = async () => {
     void docController.debugSendCommitCommandToRTS()
@@ -88,6 +91,21 @@ export function DebugMenu({ docController, editorController, documentState, docu
 
   const toggleDebugTreeView = () => {
     void editorController.toggleDebugTreeView()
+  }
+
+  const downloadYJSStateAsUpdate = async () => {
+    const yjsStateAsUpdate = await editorController.getDocumentState()
+    if (!yjsStateAsUpdate) {
+      return
+    }
+    const blob = new Blob([yjsStateAsUpdate], { type: 'application/octet-stream' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'yjs-state-as-update.bin'
+    a.click()
+    URL.revokeObjectURL(url)
+    a.remove()
   }
 
   const isDocument = documentType === 'doc'
@@ -174,6 +192,12 @@ export function DebugMenu({ docController, editorController, documentState, docu
             </Button>
           </>
         )}
+        <Button size="small" onClick={downloadYJSStateAsUpdate}>
+          Download YJS state as single update
+        </Button>
+        <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
+          Download All Updates as ZIP
+        </Button>
       </div>
     </div>
   )
