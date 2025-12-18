@@ -138,7 +138,7 @@ export class ArchiveStreamGenerator {
      * It does not wait for the network transfer to finish.
      */
     private async createArchiveItem(taskId: string, node: NodeEntity, parentPath: string[]): Promise<ArchiveItem> {
-        if (node.type !== NodeType.File) {
+        if (node.type !== NodeType.File && node.type !== NodeType.Photo) {
             return {
                 isFile: false,
                 name: node.name,
