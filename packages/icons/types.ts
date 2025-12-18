@@ -179,6 +179,7 @@ export type IconName =
     | 'density-low'
     | 'density-high'
     | 'desktop'
+    | 'devices'
     | 'dots'
     | 'drawer-dividers'
     | 'drive'
