@@ -3,12 +3,13 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
 interface JoiningRoomLoaderProps {
-    participantCount?: number;
-    participantsLoaded: boolean;
+    participantCount: number | null;
 }
 
-export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: JoiningRoomLoaderProps) => {
-    const joiningRoomTitles: { heading: (participantCount?: number) => string; description: string }[] = [
+export const JoiningRoomLoader = ({ participantCount }: JoiningRoomLoaderProps) => {
+    const participantsLoaded = participantCount !== null;
+
+    const joiningRoomTitles: { heading: (participantCount: number | null) => string; description: string }[] = [
         {
             heading: () => c('Title').t`Protecting meeting with end-to-end encryption...`,
             description: c('Description')

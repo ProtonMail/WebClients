@@ -4,7 +4,7 @@ import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import useApi from '@proton/components/hooks/useApi';
-import { queryParticipants } from '@proton/shared/lib/api/meet';
+import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
 
 import { ParticipantCapabilityPermission, type ParticipantEntity } from '../types';
 
@@ -17,6 +17,7 @@ export const useParticipantNameMap = () => {
 
     const [participantNameMap, setParticipantNameMap] = useState<Record<string, string>>({});
     const [participantsMap, setParticipantsMap] = useState<Record<string, ParticipantEntity>>({});
+    const [participantsCount, setParticipantsCount] = useState<number | null>(null);
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -46,6 +47,7 @@ export const useParticipantNameMap = () => {
         setParticipantsMap((prev) => ({ ...prev, ...updatedParticipantsMap }));
 
         countRef.current = participants.length;
+        setParticipantsCount(participants.length);
 
         isFetchingRef.current = false;
 
@@ -87,9 +89,21 @@ export const useParticipantNameMap = () => {
         }
     };
 
+    const getQueryParticipantsCount = async (meetingLinkName: string) => {
+        try {
+            const response = await api<{ Current: number }>(queryParticipantsCount(meetingLinkName));
+            setParticipantsCount(response.Current);
+            return response.Current;
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+        }
+    };
+
     const resetParticipantNameMap = () => {
         setParticipantNameMap({});
         setParticipantsMap({});
+        setParticipantsCount(null);
     };
 
     const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
@@ -123,6 +137,7 @@ export const useParticipantNameMap = () => {
                 const { [participant.identity]: removed, ...rest } = prev;
                 return rest;
             });
+            setParticipantsCount(Object(participantsMap).length);
         };
 
         room.on('participantDisconnected', handleParticipantDisconnected);
@@ -140,5 +155,13 @@ export const useParticipantNameMap = () => {
         };
     }, []);
 
-    return { participantNameMap, getParticipants, participantsMap, resetParticipantNameMap, updateAdminParticipant };
+    return {
+        participantNameMap,
+        getParticipants,
+        participantsMap,
+        resetParticipantNameMap,
+        updateAdminParticipant,
+        getQueryParticipantsCount,
+        participantsCount,
+    };
 };
