@@ -174,7 +174,6 @@ export const getLumoConfiguration = ({
     freePlan,
     audience,
     planParameters,
-    isLumoB2BEnabled,
     isNewB2BPlanEnabled,
     vpnServersCountData,
     signupParameters,
@@ -184,7 +183,6 @@ export const getLumoConfiguration = ({
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
     planParameters: PlanParameters | undefined;
-    isLumoB2BEnabled: boolean;
     isNewB2BPlanEnabled: boolean;
     vpnServersCountData: VPNServersCountData;
     signupParameters?: { trial?: boolean };
@@ -307,7 +305,7 @@ export const getLumoConfiguration = ({
                 title: c('lumo_signup_2025: title').t`For individuals`,
                 defaultPlan: PLANS.LUMO,
             },
-            isLumoB2BEnabled && {
+            {
                 value: Audience.B2B,
                 locationDescriptor: {
                     pathname: SSO_PATHS.LUMO_SIGNUP_B2B,
