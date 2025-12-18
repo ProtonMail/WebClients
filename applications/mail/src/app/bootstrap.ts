@@ -74,7 +74,18 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const unleashPromise = bootstrap
             .unleashReady({ unleashClient })
             .then(() => {
+                // If the WebApiRateLimiter flag is enabled, configure the rate limiter with the payload value
                 if (unleashClient.isEnabled(CommonFeatureFlag.WebApiRateLimiter)) {
+                    const config = unleashClient.getVariant(CommonFeatureFlag.WebApiRateLimiter).payload?.value;
+
+                    if (config) {
+                        const configParsed = JSON.parse(config);
+                        api.apiRateLimiter.configure({
+                            maxRequests: configParsed.maxRequests,
+                            windowMs: configParsed.windowMs,
+                        });
+                    }
+
                     api.apiRateLimiter.enable();
                 }
             })
