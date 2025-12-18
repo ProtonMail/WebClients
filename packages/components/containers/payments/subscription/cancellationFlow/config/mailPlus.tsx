@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { hasCancellablePlan } from '@proton/payments';
+import { PLANS, PLAN_NAMES, hasCancellablePlan } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import { getPrioritySupport } from '../../../features/shared';
 import type {
     ConfirmationModal,
     PlanConfig,
@@ -47,10 +47,7 @@ export const getMailPlusConfig = ({ plan, subscription }: ConfigProps): PlanConf
                 icon: 'shield-2-bolt',
                 text: DARK_WEB_MONITORING_NAME,
             },
-            {
-                icon: 'life-ring',
-                text: c('Subscription reminder').t`Priority support`,
-            },
+            getPrioritySupport(),
             {
                 icon: 'envelopes',
                 text: c('Subscription reminder').ngettext(

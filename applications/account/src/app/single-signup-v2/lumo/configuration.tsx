@@ -1,6 +1,18 @@
 import { c } from 'ttag';
 
 import { LumoLogo } from '@proton/components';
+import {
+    getAccessToAdvancedAI,
+    getChatHistory,
+    getDailyChats,
+    getDataProtectionCompliance,
+    getFavourites,
+    getNeverUsedForTraining,
+    getNoLogsPolicy,
+    getUploadAndQuery,
+    getWebSearchAccess,
+    getZeroAccessEncryption,
+} from '@proton/components/containers/payments/features/lumo';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
@@ -36,21 +48,17 @@ const getBuiltInEuropeFeature = () => ({
 const getNoLogsBenefit = (): BenefitItem => {
     return {
         key: `no-logs`,
-        text: c('collider_2025: Info').t`Strict no-logs policy`,
+        text: getNoLogsPolicy().text,
         icon: {
             name: 'eye-slash',
         },
     };
 };
 
-const neverUsedForTrainingText = () => {
-    return c('collider_2025: Info').t`Data never used for AI training`;
-};
-
 const getNoModelTrainingBenefit = (): BenefitItem => {
     return {
         key: `no-model-training`,
-        text: neverUsedForTrainingText(),
+        text: getNeverUsedForTraining().text,
         icon: {
             name: 'alias',
         },
@@ -71,87 +79,24 @@ const getLumoBenefits = (): BenefitItem[] => {
     return [getBuiltInEncryptionBenefit(), getNoLogsBenefit(), getNoModelTrainingBenefit(), getOpenSourceBenefit()];
 };
 
-const unlimitedChatsText = () => {
-    return c('collider_2025: Info').t`Unlimited daily chats`;
-};
-
-const webSearchAccessText = () => {
-    return c('collider_2025: Info').t`Web search access`;
-};
-
-const fullChatHistoryText = () => {
-    return c('collider_2025: Info').t`Full chat history with search`;
-};
-
-const fileAnalysisText = () => {
-    return c('collider_2025: Info').t`Upload and query multiple large files`;
-};
-
-const advancedModelsText = () => {
-    return c('collider_2025: Info').t`Access to advanced AI models`;
-};
-
-const zeroAccessEncryptionText = () => {
-    return c('collider_2025: Info').t`Zero-access encryption`;
-};
-
-const dataProtectionComplianceText = () => {
-    return c('collider_2025: Info').t`Compliance with data protection regulations`;
-};
-
 const getFreeLumoFeatures = () => {
     return [
-        {
-            text: c('collider_2025: Info').t`Limited daily chats`,
-            included: true,
-        },
-        {
-            text: webSearchAccessText(),
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info').t`Basic chat history`,
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info').t`Limited favorites`,
-            included: true,
-        },
-
-        {
-            text: c('collider_2025: Info').t`Upload and query small files`,
-            included: true,
-        },
+        getDailyChats('limited'),
+        getWebSearchAccess(),
+        getChatHistory('basic'),
+        getFavourites('limited'),
+        getUploadAndQuery('small'),
     ];
 };
 
 const getLumoPlusFeatures = () => {
     return [
-        {
-            text: unlimitedChatsText(),
-            included: true,
-        },
-        {
-            text: webSearchAccessText(),
-            included: true,
-        },
-        {
-            text: fullChatHistoryText(),
-            included: true,
-        },
-        {
-            text: c('collider_2025: Info').t`Unlimited favorites for quick access`,
-            included: true,
-        },
-
-        {
-            text: fileAnalysisText(),
-            included: true,
-        },
-        {
-            text: advancedModelsText(),
-            included: true,
-        },
+        getDailyChats('unlimited'),
+        getWebSearchAccess(),
+        getChatHistory('full'),
+        getFavourites('unlimited'),
+        getUploadAndQuery('large'),
+        getAccessToAdvancedAI(true),
     ];
 };
 
@@ -159,56 +104,56 @@ const getLumoBusinessBenefits = (): BenefitItem[] => {
     return [
         {
             key: 'zero-access-encryption',
-            text: zeroAccessEncryptionText(),
+            text: getZeroAccessEncryption().text,
             icon: {
                 name: 'lock',
             },
         },
         {
             key: 'unlimited-chats',
-            text: unlimitedChatsText(),
+            text: getDailyChats('unlimited').text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'web-search-access',
-            text: webSearchAccessText(),
+            text: getWebSearchAccess().text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'full-chat-history',
-            text: fullChatHistoryText(),
+            text: getChatHistory('full').text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'file-analysis',
-            text: fileAnalysisText(),
+            text: getUploadAndQuery('large').text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'advanced-models',
-            text: advancedModelsText(),
+            text: getAccessToAdvancedAI(true).text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'never-used-for-training',
-            text: neverUsedForTrainingText(),
+            text: getNeverUsedForTraining().text,
             icon: {
                 name: 'checkmark',
             },
         },
         {
             key: 'data-protection-compliance',
-            text: dataProtectionComplianceText(),
+            text: getDataProtectionCompliance().text,
             icon: {
                 name: 'checkmark',
             },

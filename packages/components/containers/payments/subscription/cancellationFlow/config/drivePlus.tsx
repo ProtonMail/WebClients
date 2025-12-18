@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { hasCancellablePlan } from '@proton/payments';
+import { PLANS, PLAN_NAMES, hasCancellablePlan } from '@proton/payments';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import { getPrioritySupport } from '../../../features/shared';
 import type { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
 import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './b2cCommonConfig';
 import type { ConfigProps } from './types';
@@ -44,10 +44,7 @@ export const getDrivePlusConfig = ({ plan, subscription }: ConfigProps): PlanCon
                 icon: 'clock',
                 text: c('Subscription reminder').t`Version history`,
             },
-            {
-                icon: 'life-ring',
-                text: c('Subscription reminder').t`Priority support`,
-            },
+            getPrioritySupport(),
         ],
     };
 

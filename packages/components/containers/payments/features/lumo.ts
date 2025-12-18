@@ -4,6 +4,7 @@ import { PLANS } from '@proton/payments';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import { getPrioritySupport } from './shared';
 
 export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
     return {
@@ -18,7 +19,7 @@ export const getUnlimitedChatsText = () => {
     return c('collider_2025: feature').t`Unlimited daily chats`;
 };
 
-const getDailyChats = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
+export const getDailyChats = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text: type === 'limited' ? c('collider_2025: feature').t`Limited daily chats` : getUnlimitedChatsText(),
         included: true,
@@ -26,7 +27,7 @@ const getDailyChats = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition
     };
 };
 
-const getWebSearchAccess = (): PlanCardFeatureDefinition => {
+export const getWebSearchAccess = (): PlanCardFeatureDefinition => {
     return {
         text: c('collider_2025: feature').t`Web search access`,
         included: true,
@@ -38,7 +39,7 @@ export const getFullChatHistoryText = () => {
     return c('collider_2025: feature').t`Full chat history with search`;
 };
 
-const getChatHistory = (type: 'basic' | 'full'): PlanCardFeatureDefinition => {
+export const getChatHistory = (type: 'basic' | 'full'): PlanCardFeatureDefinition => {
     return {
         text: type === 'basic' ? c('collider_2025: feature').t`Basic chat history` : getFullChatHistoryText(),
         included: true,
@@ -46,7 +47,7 @@ const getChatHistory = (type: 'basic' | 'full'): PlanCardFeatureDefinition => {
     };
 };
 
-const getFavourites = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
+export const getFavourites = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text:
             type === 'limited'
@@ -57,7 +58,7 @@ const getFavourites = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition
     };
 };
 
-const getUploadAndQuery = (type: 'small' | 'large'): PlanCardFeatureDefinition => {
+export const getUploadAndQuery = (type: 'small' | 'large'): PlanCardFeatureDefinition => {
     return {
         text:
             type === 'small'
@@ -72,11 +73,51 @@ export const getAccessToAdvancedAIText = () => {
     return c('collider_2025: feature').t`Access to advanced AI models`;
 };
 
-const getAccessToAdvancedAI = (included: boolean): PlanCardFeatureDefinition => {
+export const getAccessToAdvancedAI = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: getAccessToAdvancedAIText(),
         included,
         icon: 'bolt',
+    };
+};
+
+export const getNeverUsedForTraining = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('collider_2025: feature').t`Data never used for AI training`,
+        included: true,
+        icon: 'alias',
+    };
+};
+
+export const getZeroAccessEncryption = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('collider_2025: feature').t`Zero-access encryption`,
+        included: true,
+        icon: 'lock',
+    };
+};
+
+export const getDataProtectionCompliance = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('collider_2025: feature').t`Compliance with data protection regulations`,
+        included: true,
+        icon: 'shield',
+    };
+};
+
+export const getNoLogsPolicy = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('collider_2025: feature').t`Strict no-logs policy`,
+        included: true,
+        icon: 'eye-slash',
+    };
+};
+
+export const getBuiltInEurope = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('collider_2025: feature').t`Built and based in Europe`,
+        included: true,
+        icon: 'map-pin',
     };
 };
 
@@ -100,14 +141,23 @@ export const getLumoPlusFeatures = () => {
         getFavourites('unlimited'),
         getUploadAndQuery('large'),
         getAccessToAdvancedAI(true),
-        {
-            text: c('Subscription reminder').t`Priority support`,
-            included: true,
-            icon: 'life-ring',
-        },
+        getPrioritySupport(),
     ];
 
     return items;
+};
+
+export const getLumoProfessionalFeatures = () => {
+    return [
+        getZeroAccessEncryption(),
+        getDailyChats('unlimited'),
+        getWebSearchAccess(),
+        getChatHistory('full'),
+        getUploadAndQuery('large'),
+        getAccessToAdvancedAI(true),
+        getNeverUsedForTraining(),
+        getDataProtectionCompliance(),
+    ];
 };
 
 export const getLumoFeatures = (): PlanCardFeature[] => {
