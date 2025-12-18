@@ -83,9 +83,6 @@
       "Add external address": [
         "Дадаць знешні адрас"
       ],
-      "add more seats": [
-        "дадаць больш ліцэнзій"
-      ],
       "Add PayPal": [
         "Дадаць PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Group owner": [
+        "Уладальнік групы"
       ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
@@ -1100,9 +1100,6 @@
       "User": [
         "Карыстальнік"
       ],
-      "Users and addresses": [
-        "Карыстальнікі і адрасы"
-      ],
       "Verify": [
         "Спраўдзіць"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Перасылка ўзнаўляецца"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "дадаць больш ліцэнзій"
       ]
     },
     "Action for user session": {
@@ -1845,9 +1847,6 @@
       ],
       "Authenticator problem": [
         "Праблема з аўтэнтыфікатарам"
-      ],
-      "Black Friday": [
-        "Чорная пятніца"
       ],
       "Bridge problem": [
         "Праблема з Bridge"
@@ -4601,12 +4600,6 @@
       ],
       "View invitation": [
         "Паглядзець запрашэнне"
-      ],
-      "View the invitation": [
-        "Паглядзець запрашэнне"
-      ],
-      "View the invitations": [
-        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4664,12 +4657,6 @@
       ],
       "Pending": [
         "У чаканні"
-      ],
-      "Pending invitation": [
-        "Запрашэнне, якое чакае адказу"
-      ],
-      "Pending invitations": [
-        "Запрашэнні, якія чакаюць адказу"
       ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
@@ -6734,9 +6721,6 @@
       "Groups": [
         "Групы"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Дапамагае пісаць, адказваць і вычытваць лісты. Калі адключана, то толькі адміністратары будуць мець доступ да гэтай функцыі. Кіраванне для асобных карыстальнікаў у ${ userAndAddress } або ${ addMoreSeats }"
-      ],
       "here": [
         "тут"
       ],
@@ -8417,6 +8401,11 @@
         "Выбраны колер:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Дапамагае пісаць, адказваць і вычытваць лісты. Калі адключана, то толькі адміністратары будуць мець доступ да гэтай функцыі. Кіраванне для асобных карыстальнікаў у ${ userAndAddresses } або ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Як адправіць плацеж наяўнымі грашыма?"
@@ -9679,6 +9668,11 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
       ]
     },
     "Live Chat Modal": {
@@ -16616,9 +16610,6 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"

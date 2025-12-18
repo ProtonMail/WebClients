@@ -83,9 +83,6 @@
       "Add external address": [
         "Adicionar endereço externo"
       ],
-      "add more seats": [
-        "adicionar mais licenças"
-      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Entendi"
+      ],
+      "Group owner": [
+        "Proprietário do grupo"
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -1100,9 +1100,6 @@
       "User": [
         "Usuário"
       ],
-      "Users and addresses": [
-        "Usuários e endereços"
-      ],
       "Verify": [
         "Verificar"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Continuar encaminhamento"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "adicionar mais licenças"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Problema de autenticação"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema de bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Visualizar convite"
-      ],
-      "View the invitation": [
-        "Visualizar o convite"
-      ],
-      "View the invitations": [
-        "Visualizar os convites"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4616,9 +4609,7 @@
         "Pendente"
       ],
       "Pending invitation": [
-        "Convite pendente"
-      ],
-      "Pending invitations": [
+        "Convite pendente",
         "Convites pendentes"
       ],
       "Sorry, you can't switch plans at this time.": [
@@ -4629,6 +4620,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
+      ],
+      "View the invitation": [
+        "Visualizar o convite",
+        "Visualizar os convites"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -6564,9 +6559,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ajuda a escrever, responder e revisar e-mails. Se desativado, apenas os administradores terão acesso. Gerencie para usuários individuais em ${ userAndAddress } ou ${ addMoreSeats }"
-      ],
       "here": [
         "aqui"
       ],
@@ -8199,6 +8191,11 @@
         "Cor selecionada:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ajuda a escrever, responder e revisar e-mails. Se desativado, apenas os administradores terão acesso. Gerencie para usuários individuais em ${ userAndAddresses } ou ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Como enviar um pagamento em dinheiro?"
@@ -9445,6 +9442,11 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuários e endereços"
       ]
     },
     "Live Chat Modal": {
@@ -16173,7 +16175,7 @@
       "Did you know?": [
         "Você sabia?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenha ${ drivePlusPlanMaxSpace } de armazenamento para seus arquivos, fotos e documentos, e recupere versões de arquivos com recuperação de arquivos de 10 anos."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

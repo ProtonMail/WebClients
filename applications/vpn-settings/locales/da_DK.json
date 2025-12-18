@@ -83,9 +83,6 @@
       "Add external address": [
         "Tilføj ekstern adresse"
       ],
-      "add more seats": [
-        "tilføj flere pladser"
-      ],
       "Add PayPal": [
         "Tilføj PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Forstået"
+      ],
+      "Group owner": [
+        "Gruppeejer"
       ],
       "Help and feedback": [
         "Hjælp og feedback"
@@ -1100,9 +1100,6 @@
       "User": [
         "Bruger"
       ],
-      "Users and addresses": [
-        "Brugere og adresser"
-      ],
       "Verify": [
         "Bekræft"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Genoptager videresendelse"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "tilføj flere pladser"
       ]
     },
     "Action for user session": {
@@ -1778,7 +1780,7 @@
         "Beskyt alle enheder i din husstand med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
-        "Beskyt din virksomhed mod databrud, og gør fjernarbejde sikrere med en virksomheds-VPN."
+        "Beskyt din virksomhed mod databrud og gør fjernarbejde sikrere med en virksomheds-VPN."
       ],
       "Protect your whole household with 1 device": [
         "Beskyt hele din husstand med 1 enhed"
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Autentificeringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Bridge-problem"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Vis invitation"
-      ],
-      "View the invitation": [
-        "Se invitationen"
-      ],
-      "View the invitations": [
-        "Se invitationerne"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4616,9 +4609,7 @@
         "Afventer"
       ],
       "Pending invitation": [
-        "Invitation afventer"
-      ],
-      "Pending invitations": [
+        "Afventende invitation",
         "Afventende invitationer"
       ],
       "Sorry, you can't switch plans at this time.": [
@@ -4629,6 +4620,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
+      ],
+      "View the invitation": [
+        "Vis invitationen",
+        "Vis invitationerne"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
@@ -5280,7 +5275,7 @@
         "Lås op for 4 premium privatlivstjenester for kun **${ priceString }** mere om måneden"
       ],
       "Upgrade your privacy": [
-        "Opgradér dit privatlivs fred"
+        "Opgradér beskyttelsen af dit privatliv"
       ],
       "You currently pay": [
         "Du betaler lige nu"
@@ -5867,7 +5862,7 @@
         "**Trin 3:** Få **${ referrerRewardAmount } i kredit** for hver person, der opretter et abonnement."
       ],
       "**Sync codes** to all your devices": [
-        "**Synkroniser koder** til alle dine enheder"
+        "**Synkroniser koder** med alle dine enheder"
       ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } mere",
@@ -6564,9 +6559,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hjælper med at skrive, svare på og korrekturlæse e-mails. Hvis deaktiveret, vil kun administratorer få adgang. Administrér for individuelle brugere i ${ userAndAddress } eller ${ addMoreSeats }"
-      ],
       "here": [
         "her"
       ],
@@ -6849,7 +6841,7 @@
         "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
-        "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
+        "Store e-mailtjenester kan afvise eller filtrere dine e-mails som spam, hvis SPF/DKIM/DMARC mangler eller ikke er sat ordentligt op."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
@@ -7408,7 +7400,7 @@
         "Tak for din tilmelding. Sikker browsing starter nu."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
-        "Tak, fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
+        "Tak fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
@@ -8197,6 +8189,11 @@
       ],
       "Selected color:": [
         "Valgte farve:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjælper med at skrive, svare på og korrekturlæse e-mails. Hvis deaktiveret, vil kun administratorer få adgang. Administrér for individuelle brugere i ${ userAndAddresses } eller ${ addMoreSeats }"
       ]
     },
     "Info for cash payment method": {
@@ -9447,6 +9444,11 @@
         "Hvad er dette?"
       ]
     },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Brugere og adresser"
+      ]
+    },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
         "Live chat er tilgængelig med ${ planName }"
@@ -9516,7 +9518,7 @@
     },
     "Log event": {
       "Account password change": [
-        "Kontoadgangskode ændring"
+        "Ædring af kontoadgangskode"
       ],
       "Authentication failure (second factor failed)": [
         "Godkendelsesfejl (anden faktor fejlede)"
@@ -13941,7 +13943,7 @@
         "${ planName } hjælper dig med at sikre, at alle dine familiemedlemmer - og deres data - er beskyttet, hver gang de er online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, events, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
+        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, begivenheder, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine filer og fotos. Du er også berettiget til årlige lagerbonusser."
@@ -14285,7 +14287,7 @@
         "Adresse tilføjet"
       ],
       "Address successfully added": [
-        "Adresse blev tilføjet med succes"
+        "Adressen blev tilføjet"
       ],
       "Administrator privileges restored": [
         "Administratorrettigheder gendannet"
@@ -14896,7 +14898,7 @@
         "Forbind apps og enheder"
       ],
       "Connect more addresses": [
-        "Tilføj flere adresser"
+        "Tilslut flere adresser"
       ],
       "Connect organization": [
         "Forbind organisation"
@@ -14930,7 +14932,7 @@
         "Opret ${ selectedUserIds.length } brugere"
       ],
       "Create a new Gateway": [
-        "Opret en ny Gateway"
+        "Opret en ny gateway"
       ],
       "Create a new gateway": [
         "Opret en ny gateway"
@@ -15229,7 +15231,7 @@
         "Hjem"
       ],
       "How to choose a good logo": [
-        "Hvordan vælger man et godt logo"
+        "Sådan vælger man et godt logo"
       ],
       "How your free trial works": [
         "Sådan fungerer din gratis prøveperiode"
@@ -16162,8 +16164,8 @@
       "Did you know?": [
         "Vidste du det?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med mulighed for 10-års filgendannelse."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med 10-års filgendannelse."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Privatlivspakke med sikker e-mail, ${ VPN_SHORT_APP_NAME }, skylagring og adgangskodeadministrator. Fra kun ${ fallBackString } om måneden"

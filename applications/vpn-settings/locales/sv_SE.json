@@ -83,9 +83,6 @@
       "Add external address": [
         "Lägg till extern adress"
       ],
-      "add more seats": [
-        "lägg till fler licenser"
-      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Förstått"
+      ],
+      "Group owner": [
+        "Gruppägare"
       ],
       "Help and feedback": [
         "Hjälp och feedback"
@@ -1100,9 +1100,6 @@
       "User": [
         "Användare"
       ],
-      "Users and addresses": [
-        "Användare och adresser"
-      ],
       "Verify": [
         "Verifiera"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Återupptar vidarebefordran"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "lägg till fler licenser"
       ]
     },
     "Action for user session": {
@@ -1816,9 +1818,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -4541,12 +4540,6 @@
       ],
       "View invitation": [
         "Visa inbjudan"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4603,12 +4596,6 @@
       "Pending": [
         "Väntande"
       ],
-      "Pending invitation": [
-        "Väntande inbjudning"
-      ],
-      "Pending invitations": [
-        "Väntande inbjudningar"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kan inte byta paket just nu."
       ],
@@ -4617,6 +4604,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -6543,9 +6534,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddress } eller ${ addMoreSeats }"
-      ],
       "here": [
         "här"
       ],
@@ -8165,6 +8153,11 @@
         "Vald färg:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Hur skickar man en kontant betalning?"
@@ -9411,6 +9404,11 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Användare och adresser"
       ]
     },
     "Live Chat Modal": {

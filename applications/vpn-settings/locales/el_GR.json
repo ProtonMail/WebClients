@@ -83,9 +83,6 @@
       "Add external address": [
         "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
-      "add more seats": [
-        "προσθήκη περισσότερων θέσεων"
-      ],
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Group owner": [
+        "Κάτοχος ομάδας"
       ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
@@ -1100,9 +1100,6 @@
       "User": [
         "Χρήστης"
       ],
-      "Users and addresses": [
-        "Χρήστες και διευθύνσεις"
-      ],
       "Verify": [
         "Επαλήθευση"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Συνέχιση προώθησης"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "προσθήκη περισσότερων θέσεων"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Πρόβλημα ταυτοποίησης"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Πρόβλημα Bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Προβολή πρόσκλησης"
-      ],
-      "View the invitation": [
-        "Δείτε την πρόσκληση"
-      ],
-      "View the invitations": [
-        "Δείτε τις προσκλήσεις"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4616,10 +4609,8 @@
         "Σε εκκρεμότητα"
       ],
       "Pending invitation": [
-        "Πρόσκληση σε αναμονή"
-      ],
-      "Pending invitations": [
-        "Προσκλήσεις σε αναμονή"
+        "Εκκρεμής πρόσκληση",
+        "Εκκρεμείς προσκλήσεις"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Λυπούμαστε, δεν μπορείτε να αλλάξετε πλάνο αυτήν τη στιγμή."
@@ -4629,6 +4620,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του πλάνου."
+      ],
+      "View the invitation": [
+        "Δείτε την πρόσκληση",
+        "Δείτε τις προσκλήσεις"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
@@ -6564,9 +6559,6 @@
       "Groups": [
         "Ομάδες"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση μηνυμάτων ηλεκτρονικού ταχυδρομείου. Εάν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddress } ή ${ addMoreSeats }"
-      ],
       "here": [
         "εδώ"
       ],
@@ -8199,6 +8191,11 @@
         "Επιλεγμένο χρώμα:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση μηνυμάτων ηλεκτρονικού ταχυδρομείου. Εάν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddresses } ή ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Πώς να στείλετε μια πληρωμή σε μετρητά;"
@@ -9445,6 +9442,11 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ]
     },
     "Live Chat Modal": {
@@ -16166,7 +16168,7 @@
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Αποκτήστε ${ drivePlusPlanMaxSpace } χώρο αποθήκευσης για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας και ανακτήστε εκδόσεις αρχείων με ιστορικό 10 ετών."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [

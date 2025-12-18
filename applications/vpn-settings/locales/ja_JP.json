@@ -83,9 +83,6 @@
       "Add external address": [
         "他のアドレスを追加"
       ],
-      "add more seats": [
-        "シートを増やす"
-      ],
       "Add PayPal": [
         "PayPal を追加"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "はい"
+      ],
+      "Group owner": [
+        "グループオーナー"
       ],
       "Help and feedback": [
         "ヘルプとフィードバック"
@@ -1100,9 +1100,6 @@
       "User": [
         "ユーザー"
       ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
-      ],
       "Verify": [
         "検証"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "転送再開"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "シートを増やす"
       ]
     },
     "Action for user session": {
@@ -1806,9 +1808,6 @@
       ],
       "Authenticator problem": [
         "認証の問題"
-      ],
-      "Black Friday": [
-        "ブラックフライデー"
       ],
       "Bridge problem": [
         "Bridge に関する問題"
@@ -4529,12 +4528,6 @@
       ],
       "View invitation": [
         "招待状を確認する"
-      ],
-      "View the invitation": [
-        "招待を見る"
-      ],
-      "View the invitations": [
-        "招待を見る"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4589,12 +4582,6 @@
       ],
       "Pending": [
         "保留中"
-      ],
-      "Pending invitation": [
-        "保留中の招待状"
-      ],
-      "Pending invitations": [
-        "保留中の招待状"
       ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
@@ -6479,9 +6466,6 @@
       "Groups": [
         "グループ"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "メールの作成、返信、校正を支援します。無効にすると、管理者のみがアクセスできます。${ userAndAddress } または ${ addMoreSeats } の個々のユーザーを管理します。"
-      ],
       "here": [
         "こちら"
       ],
@@ -8090,6 +8074,11 @@
         "選択した色:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "メールの作成、返信、校正を支援します。無効にすると、管理者(${ userAndAddresses })のみがアクセスできます。 または ${ addMoreSeats } の個々のユーザーを管理します。"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "現金での支払いを送る方法は?"
@@ -9328,6 +9317,11 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "ユーザー名とアドレス"
       ]
     },
     "Live Chat Modal": {
@@ -15938,9 +15932,6 @@
       ],
       "Did you know?": [
         "知ってましたか？"
-      ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"
