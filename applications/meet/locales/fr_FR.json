@@ -266,9 +266,6 @@
       "Stay in meeting": [
         "Rester dans la réunion"
       ],
-      "Stop presenting": [
-        "Arrêtez de présenter"
-      ],
       "Stop receiving video": [
         "Arrêter de recevoir la vidéo"
       ],
@@ -411,9 +408,6 @@
       ],
       "Authenticator problem": [
         "Problème d'authentification"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problème avec Bridge"
@@ -1393,7 +1387,7 @@
         "L'enregistrement n'a pas abouti."
       ],
       "Failed to send chat message. Please try again.": [
-        "Une erreur est survenue lors de l'envoi du message. Nous vous invitons à réessayer."
+        "Une erreur est survenue lors de l'envoi du message. Essayez à nouveau."
       ],
       "Failed to start recording": [
         "Le démarrage de l'enregistrement n'a pas abouti."
@@ -1432,7 +1426,7 @@
         "Les adresses e-mail ne correspondent pas."
       ],
       "The meeting link you are trying to access does not exist or may have been deleted.": [
-        "Le lien de la réunion n'est pas valide ou peut avoir été supprimé."
+        "Le lien de la réunion que vous tentez d'accéder n'existe pas ou a peut-être été supprimé."
       ],
       "The meeting password is incorrect": [
         "Le mot de passe de la réunion est incorrect."
@@ -1583,6 +1577,12 @@
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } sur ${ maxParticipants } participants"
       ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (vous) est en train de présenter"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } est en train de présenter"
+      ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } vous a invité(e) à une réunion ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } :"
       ],
@@ -1594,9 +1594,6 @@
       ],
       "(You)": [
         "(Vous)"
-      ],
-      "(you)": [
-        "(vous)"
       ],
       "<Removed dangerous URL>": [
         "<Removed dangerous URL>"
@@ -1729,9 +1726,6 @@
       ],
       "Invitation preview": [
         "Aperçu de l'invitation"
-      ],
-      "is presenting": [
-        "présente"
       ],
       "Joined": [
         "A rejoint"
@@ -2363,7 +2357,7 @@
         "Salle de réunion personnelle"
       ],
       "Protecting meeting with end-to-end encryption...": [
-        "Protection de la réunion avec un chiffrement de bout en bout..."
+        "Protection de la réunion par chiffrement de bout en bout..."
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -2454,6 +2448,15 @@
       ]
     },
     "Warning": {
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Impossible d'accéder à la caméra ou au microphone. Vous pouvez essayer de les activer à nouveau depuis les paramètres de la réunion."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Impossible d'accéder à la caméra. Vous pouvez essayer de l'activer à nouveau depuis les commandes de la réunion."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Impossible d'accéder au microphone. Vous pouvez essayer de l'activer à nouveau depuis les paramètres de la réunion."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
       ],

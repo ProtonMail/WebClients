@@ -266,9 +266,6 @@
       "Stay in meeting": [
         "Görüşmede kal"
       ],
-      "Stop presenting": [
-        "Sunumu durdur"
-      ],
       "Stop receiving video": [
         "Gelen görüntüyü kapat"
       ],
@@ -411,9 +408,6 @@
       ],
       "Authenticator problem": [
         "Kimlik doğrulayıcı sorunu"
-      ],
-      "Black Friday": [
-        "Muhteşem Cuma"
       ],
       "Bridge problem": [
         "Bridge sorunu"
@@ -1583,6 +1577,12 @@
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ maxParticipants } / ${ participantCount } katılımcı"
       ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (siz) sunum yapıyorsunuz"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } sunum yapıyor"
+      ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:"
       ],
@@ -1594,9 +1594,6 @@
       ],
       "(You)": [
         "(Siz)"
-      ],
-      "(you)": [
-        "(siz)"
       ],
       "<Removed dangerous URL>": [
         "<Removed dangerous URL>"
@@ -1729,9 +1726,6 @@
       ],
       "Invitation preview": [
         "Davet ön izlemesi"
-      ],
-      "is presenting": [
-        "sunum yapıyor"
       ],
       "Joined": [
         "Katıldı"
@@ -2454,6 +2448,15 @@
       ]
     },
     "Warning": {
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Kameraya veya mikrofona erişilemiyor. Toplantı kontrollerinden tekrar etkinleştirmeyi deneyebilirsiniz."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Kameraya erişilemiyor. Toplantı kontrollerinden tekrar etkinleştirmeyi deneyebilirsiniz."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Mikrofona erişilemiyor. Toplantı kontrollerinden tekrar etkinleştirmeyi deneyebilirsiniz."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
