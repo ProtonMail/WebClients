@@ -20,6 +20,7 @@ export interface AuthenticatedDocControllerInterface {
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   restoreDocument(): Promise<void>
   squashDocument(): Promise<void>
+  squashEverythingInBaseCommit(): Promise<Result<boolean>>
   trashDocument(): Promise<void>
   downloadAllUpdatesAsZip(): Promise<void>
 }

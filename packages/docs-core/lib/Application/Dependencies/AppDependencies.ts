@@ -355,7 +355,10 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.SizeTracker, () => {
-      return new DocSizeTracker(this.get<LoggerInterface>(App_TYPES.Logger))
+      return new DocSizeTracker(
+        this.get<LoggerInterface>(App_TYPES.Logger),
+        this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+      )
     })
 
     this.bind(App_TYPES.WebsocketService, () => {
