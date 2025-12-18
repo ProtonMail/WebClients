@@ -37,6 +37,7 @@ import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
+import { IndexStatusIndicator } from './SearchIndex/IndexStatusIndicator';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 
 import './SettingsModal.scss';
@@ -164,7 +165,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
     const [user] = useUser();
     const userId = user?.ID;
-    
+
     // Index management state
     const conversations = useLumoSelector(selectConversations);
     const messages = useLumoSelector(selectMessages);
@@ -256,16 +257,18 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     <LumoThemeButton />
                 </div>
             )}
-            
+
             {/* Search Index Management - only for logged in users */}
             {!isGuest && (
                 <SettingsSectionItem
                     icon="magnifier"
                     text={c('collider_2025: Title').t`Search Index`}
                     subtext={
-                        <div className="flex flex-column gap-2">
-                            <span>{c('collider_2025: Description').t`Manage your local search index for chats and Drive files.`}</span>
-                            
+                        <div className="flex flex-column gap-1">
+                            <span className="color-weak">{c('collider_2025: Description').t`Encrypted search index for chats and Drive files.`}</span>
+
+                            <IndexStatusIndicator />
+
                             {showIndexingProgress && (
                                 <IndexingStatusBanner
                                     indexingStatus={driveIndexingStatus}
@@ -289,7 +292,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     }
                 />
             )}
-            
+
             {!isGuest && (
                 <SettingsSectionItem
                     icon="speech-bubble"
