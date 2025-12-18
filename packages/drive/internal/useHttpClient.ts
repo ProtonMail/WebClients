@@ -201,13 +201,19 @@ function replaceLocalURL(href: string) {
 type TransferRequestDetails = Pick<ProtonDriveHTTPClientBlobRequest, 'url' | 'method'>;
 
 function categorizeNetworkFailure(error: unknown, request: TransferRequestDetails) {
-    const normalizedError = error instanceof Error ? error : new Error('Network error');
+    const errorMessage = error instanceof Error ? error.message : 'Network error';
+    const normalizedError = new Error(withRequestSummary(errorMessage, request));
 
     if (!['AbortError', 'TimeoutError', 'OfflineError'].includes(normalizedError.name)) {
         normalizedError.name = navigator?.onLine === false ? 'OfflineError' : 'NetworkError';
+    } else if (error instanceof Error) {
+        normalizedError.name = error.name;
+    }
+    if (error instanceof Error) {
+        normalizedError.cause = error.cause;
+        normalizedError.stack = error.stack;
     }
 
-    normalizedError.message = withRequestSummary(normalizedError.message, request);
     return normalizedError;
 }
 
