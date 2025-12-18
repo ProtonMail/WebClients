@@ -9,7 +9,7 @@ import { KT_CERTIFICATE_ISSUER } from './constants';
  * Thus, it is imperative to regularly update this data within specified intervals to ensure
  * the continuous operation of key transparency.
  */
-export const KT_DATA_VALIDITY_PERIOD = 365 * DAY;
+export const KT_DATA_VALIDITY_PERIOD = 70 * DAY;
 
 const letsEncryptCerts: string[] = [
     // ISRGRootX1:
