@@ -44,7 +44,7 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
                 acc.hasAlbums = true;
                 acc.hasNonDownloadableItems = true;
             }
-            if (item.type === NodeType.File) {
+            if (item.type === NodeType.File || item.type === NodeType.Photo) {
                 acc.hasFiles = true;
             }
             if (item.type === NodeType.Folder) {
@@ -83,11 +83,11 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
         isOnlyBookmarks: metadata.allBookmarks,
         isOnlyInvitations: metadata.allInvitations,
         isOnlyOneItem: isOnlyOneItem,
-        isOnlyOneFile: isOnlyOneItem && singleItem?.type === NodeType.File,
+        isOnlyOneFile: isOnlyOneItem && (singleItem?.type === NodeType.File || singleItem?.type === NodeType.Photo),
         hasPreviewAvailable: (isPreviewAvailableFn) => {
             return (
                 isOnlyOneItem &&
-                singleItem?.type === NodeType.File &&
+                (singleItem?.type === NodeType.File || singleItem?.type === NodeType.Photo) &&
                 !!singleItem.mediaType &&
                 isPreviewAvailableFn(singleItem.mediaType, singleItem.size)
             );
@@ -107,7 +107,7 @@ export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
                 rootShareId: '',
                 mimeType: item.mediaType || '',
                 linkId: '',
-                isFile: item.type === NodeType.File,
+                isFile: item.type === NodeType.File || item.type === NodeType.Photo,
                 name: item.name,
                 size: item.size || 0,
                 parentLinkId: '', // No parentLinkId on shared with me items
@@ -120,7 +120,7 @@ export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
             rootShareId: item.shareId,
             mimeType: item.mediaType || '',
             linkId: nodeId,
-            isFile: item.type === NodeType.File,
+            isFile: item.type === NodeType.File || item.type === NodeType.Photo,
             name: item.name,
             size: item.size || 0,
             parentLinkId: '', // No parentLinkId on shared with me items

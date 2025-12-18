@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
+import type { NodeType } from '@proton/drive';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { AcceptOrRejectInviteCell } from '../../components/cells/AcceptOrRejectInviteCell';
@@ -22,7 +22,6 @@ import {
 } from '../../zustand/sections/sharedWithMeListing.store';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
-import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
 
 const getSharedBy = (item: any): string => {
     if (item.itemType === ItemType.DIRECT_SHARE) {
@@ -100,24 +99,15 @@ const AcceptOrRejectCellComponent = ({
     // TODO: Remove that when we will have sdk for upload
     const { setVolumeShareIds } = useVolumesState();
     const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
-    const { acceptLegacyInvitation, rejectLegacyInvitation } = useLegacyInvitationsActions();
 
     return (
         <>
             <AcceptOrRejectInviteCell
                 onAccept={async () => {
-                    if (type === NodeType.Album) {
-                        await acceptLegacyInvitation(uid, invitationUid);
-                    } else {
-                        await acceptInvitation(uid, invitationUid);
-                    }
+                    await acceptInvitation(uid, invitationUid, type);
                 }}
                 onReject={() => {
-                    if (type === NodeType.Album) {
-                        void rejectLegacyInvitation(showConfirmModal, { uid, invitationUid });
-                    } else {
-                        void rejectInvitation(showConfirmModal, { uid, invitationUid, name, type });
-                    }
+                    void rejectInvitation(showConfirmModal, { uid, invitationUid, name, type });
                 }}
             />
             {confirmModal}

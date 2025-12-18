@@ -151,7 +151,7 @@ describe('UploadManager', () => {
             const folderItems = queueItems.filter((item) => item.type === NodeType.Folder);
             expect(folderItems).toHaveLength(0);
 
-            const fileItems = queueItems.filter((item) => item.type === NodeType.File);
+            const fileItems = queueItems.filter((item) => item.type === NodeType.Photo);
             expect(fileItems).toHaveLength(3);
 
             fileItems.forEach((item) => {
@@ -174,7 +174,7 @@ describe('UploadManager', () => {
             const queueItems = Array.from(queueState.queue.values());
 
             expect(queueItems).toHaveLength(2);
-            expect(queueItems.every((item) => item.type === NodeType.File)).toBe(true);
+            expect(queueItems.every((item) => item.type === NodeType.Photo)).toBe(true);
             expect(queueItems.every((item) => isPhotosUploadItem(item))).toBe(true);
         });
     });
