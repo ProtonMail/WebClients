@@ -236,8 +236,6 @@ export function useAccessiblePlans({
     currency,
     audience,
 }: AccessiblePlansHookProps) {
-    const isLumoB2BEnabled = useFlag('LumoB2B');
-
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR;
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
@@ -371,7 +369,7 @@ export function useAccessiblePlans({
             return driveB2BPlans;
         } else if (isWalletB2BPlans) {
             return walletB2BPlans;
-        } else if (isLumoB2BPlans && isLumoB2BEnabled) {
+        } else if (isLumoB2BPlans) {
             return lumoB2BPlans;
         }
 
