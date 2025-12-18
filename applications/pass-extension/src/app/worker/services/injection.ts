@@ -9,9 +9,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import { selectFeatureFlag } from '@proton/pass/store/selectors';
+import { selectIFrameAutofillEnabled } from '@proton/pass/store/selectors';
 import type { Maybe, TabId } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -63,9 +62,7 @@ export const createContentScriptService = () => {
             await Promise.all(
                 tabs.map(async (tab) => {
                     logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
-                    if (tab.id !== undefined) {
-                        await inject({ tabId: tab.id, allFrames: true, js: ['orchestrator.js'] });
-                    }
+                    if (tab.id !== undefined) await inject({ tabId: tab.id, allFrames: true, js: ['orchestrator.js'] });
                 })
             );
         }
@@ -121,13 +118,12 @@ export const createContentScriptService = () => {
     );
 
     const loadContentScript = withTabEffect(
-        withContext((ctx, tabId, frameId) => {
+        withContext(async (ctx, tabId, frameId) => {
             if (frameId === undefined) throw new Error('Invalid frame');
 
             if (frameId > 0) {
                 const state = ctx.service.store.getState();
-                const killswitch = selectFeatureFlag(PassFeature.PassIFrameKillswitch)(state);
-                if (killswitch) throw new Error('Not allowed');
+                if (!selectIFrameAutofillEnabled(state)) return;
             }
 
             return inject({ tabId, frameId, js: ['client.js'] });

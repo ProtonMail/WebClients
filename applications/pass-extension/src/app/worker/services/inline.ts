@@ -1,19 +1,31 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { FrameData, FrameID, Frames } from 'proton-pass-extension/lib/utils/frames';
-import { getFramePath, getTabFrames } from 'proton-pass-extension/lib/utils/frames';
+import { getTabFrames as getAllTabFrames, getFramePath } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
 import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { selectIFrameAutofillEnabled } from '@proton/pass/store/selectors';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
+
+const FRAMES_FALLBACK = new Map([[0, { parent: null, frameId: 0, secure: null, origin: null }]]);
+
+const getTabFrames: typeof getAllTabFrames = withContext(async (ctx, tabId, options) => {
+    const state = ctx.service.store.getState();
+    const iframeAutofillEnabled = selectIFrameAutofillEnabled(state);
+
+    if (iframeAutofillEnabled) return getAllTabFrames(tabId, options);
+    else return FRAMES_FALLBACK;
+});
 
 /**
  * Cross-frame autofill positioning service for nested iframe scenarios.
