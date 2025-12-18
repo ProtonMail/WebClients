@@ -1,4 +1,3 @@
-import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import type { FunctionComponent } from 'react';
 
