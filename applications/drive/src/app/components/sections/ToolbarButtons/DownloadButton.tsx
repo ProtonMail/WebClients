@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSDKTransfer } from '../../../flags/useFlagsDriveSDKTransfer';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
 import type { LinkDownload } from '../../../store';
 import { useDownload } from '../../../store';
 import { useDocumentActions } from '../../../store/_documents';
@@ -22,6 +25,8 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
     const { download } = useDownload();
     const { downloadDocument } = useDocumentActions();
 
+    const dm = DownloadManager.getInstance();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
     const onClick = () => {
         // Document downloads are handled in two ways:
         //  1. single files are redirected to the Docs app using `downloadDocument`
@@ -45,12 +50,16 @@ const DownloadButton = ({ selectedBrowserItems, disabledFolders }: Props) => {
             }
         }
 
-        void download(
-            selectedBrowserItems.map((link) => ({
-                ...link,
-                shareId: link.rootShareId,
-            }))
-        );
+        if (isSDKTransferEnabled) {
+            void dm.download(selectedBrowserItems.map((item) => generateNodeUid(item.volumeId, item.linkId)));
+        } else {
+            void download(
+                selectedBrowserItems.map((link) => ({
+                    ...link,
+                    shareId: link.rootShareId,
+                }))
+            );
+        }
     };
 
     if (noSelection(selectedBrowserItems) || (disabledFolders && hasFoldersSelected(selectedBrowserItems))) {
