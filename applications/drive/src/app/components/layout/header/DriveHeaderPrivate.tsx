@@ -7,6 +7,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import isSearchFeatureEnabled from '../../../utils/isSearchFeatureEnabled';
 import { SearchField } from '../search/SearchField';
+import { DownloadAppButton } from './DownloadAppButton';
 import { SuggestBusinessButton } from './SuggestBusinessButton';
 
 interface Props {
@@ -18,13 +19,11 @@ interface Props {
     upsellButton?: ReactNode;
 }
 
-export const DriveHeader = ({
+export const DriveHeaderPrivate = ({
     isHeaderExpanded,
     toggleHeaderExpanded,
     title = c('Title').t`Drive`,
-    searchBox,
     settingsButton,
-    upsellButton,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -37,14 +36,11 @@ export const DriveHeader = ({
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
                 isSmallViewport={viewportWidth['<=small']}
-                actionArea={isSearchFeatureEnabled() && searchBox}
+                actionArea={isSearchFeatureEnabled() && <SearchField />}
                 settingsButton={settingsButton}
-                upsellButton={upsellButton}
+                upsellButton={<SuggestBusinessButton />}
+                downloadAppButton={<DownloadAppButton />}
             />
         </>
     );
-};
-
-export const DriveHeaderPrivate = (props: Props) => {
-    return <DriveHeader {...props} searchBox={<SearchField />} upsellButton={<SuggestBusinessButton />} />;
 };

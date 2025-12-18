@@ -5,13 +5,13 @@ import appleAppStoreImage from '@proton/components/containers/vpn/VpnDownloadSec
 import googlePlayStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/google-play-store.svg';
 import type { IconName } from '@proton/icons/types';
 import { APPS, DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
+import macosPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-macos.png';
+import windowsPreview from '@proton/styles/assets/img/onboarding/drive-download-preview-windows.png';
 
 import DashboardDownloadSection from '../../../shared/DashboardDownloadSection/DashboardDownloadSection';
 import useDownloadDesktopAppURL from '../../../shared/DashboardDownloadSection/useDownloadDesktopAppURL';
 import androidPreview from './images/download-preview-android.png';
 import iosPreview from './images/download-preview-ios.png';
-import macosPreview from './images/download-preview-macos.png';
-import windowsPreview from './images/download-preview-windows.png';
 
 const DriveDownloadSection = () => {
     const macOsDownloadUrl = useDownloadDesktopAppURL(APPS.PROTONDRIVE, DESKTOP_PLATFORMS.MACOS);
