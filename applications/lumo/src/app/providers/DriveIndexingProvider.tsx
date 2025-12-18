@@ -206,8 +206,6 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         void checkAndRehydrate();
     }, [isDriveInitialized, indexedFolders, userId, browseFolderChildren, downloadFile]);
 
-    // Find all indexed folders for a given treeEventScopeId
-    // Multiple folders can share the same scopeId if they're in the same Drive tree
     const findFoldersByScope = useCallback((treeEventScopeId: string): IndexedDriveFolder[] => {
         return indexedFoldersRef.current.filter(
             (f) => f.isActive !== false && f.treeEventScopeId === treeEventScopeId
