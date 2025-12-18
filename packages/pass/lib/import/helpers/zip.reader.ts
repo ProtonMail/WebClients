@@ -2,12 +2,12 @@ import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
 
+const wasmURI = new URL('@zip.js/zip.js/dist/zip-module.wasm', import.meta.url).toString();
+
 export const readZIP = async (file: File): Promise<ImportFileReader> => {
     const zip = await import(/* webpackChunkName: "zip.reader" */ '@zip.js/zip.js');
-    const reader = new zip.ZipReader(new zip.BlobReader(file), {
-        useWebWorkers: !EXTENSION_BUILD,
-        useCompressionStream: false,
-    });
+    zip.configure({ useWebWorkers: false, useCompressionStream: false, wasmURI });
+    const reader = new zip.ZipReader(new zip.BlobReader(file));
 
     const entries = await reader.getEntries();
     const files = new Set(entries.filter(not(prop('directory'))).map(prop('filename')));
