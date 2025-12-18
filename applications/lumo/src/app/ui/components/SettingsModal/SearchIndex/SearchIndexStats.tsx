@@ -68,9 +68,20 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
                 {c('Info').t`Indexed Drive documents:`}
             </span>
             <span className="text-semibold" style={{ color: progressColor(displayDriveDocs) }}>
-                {displayDriveDocs}/{displayDriveDocs} ({displayDriveDocs > 0 ? '100%' : '0%'})
+                {foundationStatus?.driveDocumentsUnique ?? displayDriveDocs}
             </span>
         </div>
+        {foundationStatus?.driveChunks && foundationStatus.driveChunks > 0 && (
+            <div className="flex justify-space-between">
+                <span className="flex items-center gap-2 pl-6">
+                    <Icon name={'squares'} size={4} className="color-weak" />
+                    <span className="color-weak">{c('Info').t`Searchable chunks:`}</span>
+                </span>
+                <span className="text-semibold color-weak">
+                    {foundationStatus.driveChunks}
+                </span>
+            </div>
+        )}
         <hr className={'mt-3'} />
         <div className="flex justify-space-between">
             <span>{c('Info').t`Index size:`}</span>
