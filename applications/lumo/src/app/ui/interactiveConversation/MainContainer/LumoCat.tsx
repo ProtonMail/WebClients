@@ -5,8 +5,12 @@ import lumoGhost from '@proton/styles/assets/img/lumo/lumo-sit-side-ghost.svg';
 
 import lumoCatDark from '../../../components/Animations/lumo-cat-dark.json';
 import lumoCatLight from '../../../components/Animations/lumo-cat.json';
-import lumoThanksgiving from '../../../components/Animations/lumo-thanksgiving.json';
+import lumoNewYearsDark from '../../../components/Animations/lumo-new-years-dark.json';
+import lumoNewYearsLight from '../../../components/Animations/lumo-new-years-light.json';
+import lumoXmasDark from '../../../components/Animations/lumo-xmas-dark.json';
+import lumoXmasLight from '../../../components/Animations/lumo-xmas-light.json';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { isNewYearsSeason } from '../../../utils/dateUtils';
 
 interface LumoCatProps {
     isSmallScreen: boolean;
@@ -16,18 +20,28 @@ interface LumoCatProps {
 
 const LumoCat = ({ isSmallScreen, isGhostChatMode, isLumoSpecialThemeEnabled }: LumoCatProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
+    const showNewYearsVariant = isNewYearsSeason();
 
     const getAnimationData = () => {
         if (isLumoSpecialThemeEnabled) {
-            return lumoThanksgiving;
+            // After December 29th, 2025 for New Year's variants
+            if (showNewYearsVariant) {
+                return isDarkLumoTheme ? lumoNewYearsDark : lumoNewYearsLight;
+            }
+            // Before December 29th, show Christmas variants
+            return isDarkLumoTheme ? lumoXmasDark : lumoXmasLight;
         }
+
+        // Special theme disabled, show normal variants
         return isDarkLumoTheme ? lumoCatDark : lumoCatLight;
     };
 
     return (
         <div
-            className={clsx('shrink-0 mt-auto text-center relative', {
+            className={clsx('lumo-cat-container shrink-0 mt-auto text-center relative', {
                 'mx-auto': isSmallScreen,
+                'new-years-variant': showNewYearsVariant && !isGhostChatMode,
+                'christmas-variant': isLumoSpecialThemeEnabled && !showNewYearsVariant && !isGhostChatMode,
             })}
             style={{ width: isSmallScreen ? 200 : 170, height: isSmallScreen ? 200 : 170 }}
         >

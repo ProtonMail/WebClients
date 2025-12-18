@@ -1,7 +1,17 @@
 .composer-container {
 	margin-block-start: -1.188rem;
 
-	&.without-margin {
-		margin-block-start: 0;
+	// &.themed-margin {
+	// 	margin-block-start: -15px;
+	// }
+}
+
+.lumo-cat-container {
+	&.new-years-variant {
+		margin-block-end: 15px;
+	}
+
+	&.christmas-variant {
+		margin-block-end: 7px;
 	}
 }
