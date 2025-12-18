@@ -34,11 +34,9 @@ const useTextVisibility = (isCollapsed: boolean) => {
 
     useEffect(() => {
         if (isCollapsed) {
-            // Delay hiding text to allow sidebar to start collapsing first
-            const timer = setTimeout(() => setShowText(false), 200); // 200ms delay for more visible effect
+            const timer = setTimeout(() => setShowText(false), 200);
             return () => clearTimeout(timer);
         } else {
-            // Show text immediately as sidebar starts expanding
             setShowText(true);
         }
     }, [isCollapsed]);
@@ -333,8 +331,6 @@ const LumoSidebar = () => {
 
     return (
         <>
-            {/* Mobile backdrop */}
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
