@@ -23,6 +23,7 @@ import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import type { DocumentUpdate } from '@proton/docs-proto'
+import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -103,6 +104,38 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const updates = [...(baseCommit ? getVersionHistoryUpdatesFromCommit(baseCommit) : []), ...this.receivedOrSentDUs]
 
     return updates.length > 0 ? new NativeVersionHistory(updates, this.documentType) : undefined
+  }
+
+  async downloadAllUpdatesAsZip(): Promise<void> {
+    const JSZip = (await import('jszip')).default
+    const zip = new JSZip()
+
+    const baseCommit = this.documentState.getProperty('baseCommit')
+    if (baseCommit) {
+      for (const message of baseCommit.messages) {
+        const content = message.content
+        if (isCompressedDocumentUpdate(content)) {
+          const decompressed = decompressDocumentUpdate(content)
+          zip.file(`${message.timestamp}.bin`, decompressed)
+        } else {
+          zip.file(`${message.timestamp}.bin`, content)
+        }
+      }
+    }
+
+    for (const update of this.receivedOrSentDUs) {
+      zip.file(`${update.timestamp}.bin`, update.content)
+    }
+
+    const zipBlob = await zip.generateAsync({ type: 'blob' })
+    const zipUrl = URL.createObjectURL(zipBlob)
+    const zipLink = document.createElement('a')
+    zipLink.href = zipUrl
+    zipLink.download = 'all-updates.zip'
+    document.body.appendChild(zipLink)
+    zipLink.click()
+    document.body.removeChild(zipLink)
+    URL.revokeObjectURL(zipUrl)
   }
 
   /**
