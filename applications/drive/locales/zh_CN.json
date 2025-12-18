@@ -1233,6 +1233,11 @@
         "不支持的日程"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
@@ -1447,9 +1452,6 @@
       "Application problem": [
         "应用程序问题"
       ],
-      "Black Friday": [
-        "黑色星期五"
-      ],
       "Bridge problem": [
         "Bridge 问题"
       ],
@@ -1621,7 +1623,7 @@
         "总计"
       ],
       "Total for ${ n } month": [
-        "每${ n }月支付"
+        "${ n } 月合计"
       ]
     },
     "Collapsible tooltip": {
@@ -3787,12 +3789,6 @@
       ],
       "Switch plans": [
         "变更账户等级"
-      ],
-      "View the invitation": [
-        "查看邀请"
-      ],
-      "View the invitations": [
-        "查看所有邀请"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7125,6 +7121,9 @@
       "Reactivate now": [
         "立即重新激活"
       ],
+      "Reactivate subscription": [
+        "重新激活订阅"
+      ],
       "Request an invite": [
         "申请注册"
       ],
@@ -7939,6 +7938,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "密码分享（最多 ${ n } 个人）"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "与多至 ${ n } 个人分享保险库"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
@@ -9121,6 +9123,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
       ],
@@ -9167,6 +9175,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您确定要继续操作吗？"
       ]
     },
     "Payments.plan_name": {
@@ -9434,6 +9447,15 @@
       ]
     },
     "Referral": {
+      "Friend joined": [
+        "好友已加入"
+      ],
+      "Friend subscribed": [
+        "已订阅的好友"
+      ],
+      "More sharing options": [
+        "更多分享选项1"
+      ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
       ],

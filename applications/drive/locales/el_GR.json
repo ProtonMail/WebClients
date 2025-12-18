@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Πρόβλημα ταυτοποίησης"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Πρόβλημα Bridge"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Αλλαγή πλάνου"
-      ],
-      "View the invitation": [
-        "Δείτε την πρόσκληση"
-      ],
-      "View the invitations": [
-        "Δείτε τις προσκλήσεις"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του πλάνου."
+      ],
+      "View the invitation": [
+        "Δείτε την πρόσκληση",
+        "Δείτε τις προσκλήσεις"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο της ${ MAX_CONTACTS_PER_USER }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Ήδη στη βιβλιοθήκη σας"
       ],
       "Also try looking in Trash.": [
         "Δοκιμάστε επίσης αναζήτηση στα Διαγραμμένα."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Εκτέλεση διαγνωστικών..."
-      ],
-      "Same photo or video already exist": [
-        "Η ίδια φωτογραφία ή το ίδιο βίντεο υπάρχει ήδη"
       ],
       "Saving...": [
         "Αποθήκευση..."
@@ -12825,7 +12820,7 @@
     },
     "Upsell": {
       "Get Drive for Business": [
-        "Αποκτήστε το Drive για Business"
+        "Αποκτήστε το Drive για Επιχειρήσεις"
       ]
     },
     "Validation": {
