@@ -1450,9 +1450,6 @@
       "Authenticator problem": [
         "Autentificeringsproblem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Bridge-problem"
       ],
@@ -3961,7 +3958,7 @@
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "Du kan ikke indtaste arrangørens e-mail"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4294,12 +4291,6 @@
       ],
       "Switch plans": [
         "Skift abonnement"
-      ],
-      "View the invitation": [
-        "Se invitationen"
-      ],
-      "View the invitations": [
-        "Se invitationerne"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4351,6 +4342,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
+      ],
+      "View the invitation": [
+        "Vis invitationen",
+        "Vis invitationerne"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
@@ -5657,7 +5652,7 @@
         "Administrer dine kalendere"
       ],
       "Mastercard SecureCode logo": [
-        "Mastercard SecureCode logo"
+        "Mastercard SecureCode-logo"
       ],
       "Medium Priority": [
         "Mellem prioritet"
@@ -7325,6 +7320,9 @@
       "settings": [
         "indstillinger"
       ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
+      ],
       "Types of recovery methods": [
         "Typer af gendannelsesmetoder"
       ],
@@ -8291,8 +8289,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Vi bestræber os på stadigt at forbedre ${ BRAND_NAME } ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi stræber altid efter at forbedre ${ config.appName }. Hvor tilfreds er du med din oplevelse?"
       ]
     },
     "new_plans: Subtext": {
@@ -8325,7 +8323,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
+        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end-kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
@@ -8425,7 +8423,7 @@
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+        "På hverdage kan du modtage support fra ${ BRAND_NAME }-kundesupportteamet inden for 24 timer efter en henvendelse."
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
@@ -10651,7 +10649,7 @@
         "${ planName } hjælper dig med at sikre, at alle dine familiemedlemmer - og deres data - er beskyttet, hver gang de er online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
-        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, events, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
+        "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, begivenheder, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine filer og fotos. Du er også berettiget til årlige lagerbonusser."

@@ -1505,8 +1505,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2163,9 +2162,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -5343,12 +5339,6 @@
       ],
       "Switch plans": [
         "Byt paket"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5400,6 +5390,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -7396,7 +7390,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -11157,8 +11152,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Vi strävar alltid efter att göra ${ BRAND_NAME } ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Vi strävar alltid efter att göra ${ config.appName } bättre. Hur nöjd är du med din upplevelse?"
       ]
     },
     "new_plans: Subtext": {

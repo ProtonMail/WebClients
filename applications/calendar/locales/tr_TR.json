@@ -1450,9 +1450,6 @@
       "Authenticator problem": [
         "Kimlik doğrulayıcı sorunu"
       ],
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
       "Bridge problem": [
         "Bridge sorunu"
       ],
@@ -3961,7 +3958,7 @@
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz"
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "Düzenleyicinin e-posta adresini yazamazsınız"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4294,12 +4291,6 @@
       ],
       "Switch plans": [
         "Tarife değiştir"
-      ],
-      "View the invitation": [
-        "Daveti görüntüle"
-      ],
-      "View the invitations": [
-        "Davetleri görüntüle"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4351,6 +4342,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
+      ],
+      "View the invitation": [
+        "Daveti görüntüle",
+        "Davetleri görüntüle"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } ailesine davet edildiniz"
@@ -8294,8 +8289,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "${ BRAND_NAME } ${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çaba gösteriyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {

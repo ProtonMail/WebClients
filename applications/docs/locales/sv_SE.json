@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Skapa nytt ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Skapa ny mapp"
       ],
@@ -1174,9 +1177,6 @@
       ],
       "Authenticator problem": [
         "Autentiseringsproblem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem med Bridge"
@@ -3105,6 +3105,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
       ],
+      "Unable to import file": [
+        "Kan inte importera fil"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan inte ladda VPN-adminpanel. Kontrollera din anslutning och försök igen."
       ],
@@ -3134,6 +3137,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Vi har problem att synkronisera ditt dokument. Uppdatera sidan."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Vi kunde inte importera denna fil till ${ SHEETS_APP_NAME }. Du kan försöka kopiera och klistra in innehållet i ett nytt ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -3395,12 +3401,6 @@
       ],
       "Switch plans": [
         "Byt paket"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3452,6 +3452,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"

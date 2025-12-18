@@ -3430,7 +3430,7 @@
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
+        "Створіть зустріч у Zoom та додайте деталі для приєднання до своєї події одним клацанням."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Створюйте стільки міток або тек, скільки вам потрібно щоб зберігати вхідну скриньку охайною."
@@ -3714,6 +3714,11 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
+      ]
+    },
+    "Duration": {
+      "30m": [
+        "30 м"
       ]
     },
     "Easy switch": {
@@ -4847,12 +4852,6 @@
       ],
       "View invitation": [
         "Переглянути запрошення"
-      ],
-      "View the invitation": [
-        "Переглянути запрошення"
-      ],
-      "View the invitations": [
-        "Переглянути запрошення"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4925,12 +4924,6 @@
       ],
       "Pending": [
         "У черзі"
-      ],
-      "Pending invitation": [
-        "Очікування запрошення"
-      ],
-      "Pending invitations": [
-        "Черга запрошень"
       ],
       "Sorry, you can't switch plans at this time.": [
         "На жаль, зараз вам не дозволено змінити план."
@@ -7112,6 +7105,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
+      ],
+      "Google Pay mark": [
+        "Знак Google Pay"
       ],
       "Got it": [
         "Зрозуміло"
@@ -12742,9 +12738,6 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Вас запросили приєднатися до ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "Ваша знижка ${ discount }% на Чорну п'ятницю була застосована"
-      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Ваша організація має доступ до ${ free }. Якщо ви хочете отримати доступ до преміальних функцій ${ appName }, попросіть адміністратора вашої організації передплатити тарифний план."
       ]
@@ -12924,6 +12917,9 @@
       "Credit/debit card": [
         "Банківська картка"
       ],
+      "Google Pay": [
+        "Google платіж"
+      ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
       ]
@@ -12984,6 +12980,12 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Вас невдовзі буде перенаправлено для підтвердження платежу."
       ]
     },
     "Payments.Error": {
@@ -13006,9 +13008,19 @@
         "Вашу картку відхилено. Спробуйте скористатися іншою картою або зверніться до свого банку, щоб авторизувати платіж."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Щось пішло не так. Перевірка Google Pay не вдалася."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay – картка, що закінчується на ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {

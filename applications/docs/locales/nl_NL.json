@@ -954,6 +954,14 @@
         "${ hiddenResultsCount } resultaten worden niet getoond"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Abonnement opzeggen"
@@ -1166,9 +1174,6 @@
       ],
       "Authenticator problem": [
         "Authenticatieprobleem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -3393,12 +3398,6 @@
       ],
       "Switch plans": [
         "Van abonnement wisselen"
-      ],
-      "View the invitation": [
-        "Bekijk de uitnodiging"
-      ],
-      "View the invitations": [
-        "Bekijk de uitnodigingen"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3450,6 +3449,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging",
+        "Bekijk de uitnodigingen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
@@ -5947,6 +5950,9 @@
       ],
       "Resume now": [
         "Nu hervatten"
+      ],
+      "Terms and conditions": [
+        "Algemene voorwaarden"
       ],
       "Types of recovery methods": [
         "Soorten herstelmethoden"

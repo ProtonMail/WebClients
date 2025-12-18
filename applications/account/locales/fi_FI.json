@@ -1477,9 +1477,6 @@
       "User": [
         "Käyttäjä"
       ],
-      "Users and addresses": [
-        "Käyttäjät ja osoitteet"
-      ],
       "Verify": [
         "Vahvista"
       ],
@@ -1550,6 +1547,11 @@
     "action": {
       "Resuming forward": [
         "Jatketaan välitystä"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "lisää paikkoja"
       ]
     },
     "Action for user session": {
@@ -2197,9 +2199,6 @@
       ],
       "Authenticator problem": [
         "Todennusvirhe"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Bridge-ongelma"
@@ -5897,17 +5896,17 @@
       "Set up family group": [
         "Määritä perheryhmä"
       ],
+      "Show all (${ invites.length })": [
+        "Näyt kaikki ${ invites.length }"
+      ],
+      "Show less": [
+        "Näytä vähemmän"
+      ],
       "Switch plans": [
         "Vaihda tilausta"
       ],
       "View invitation": [
         "Näytä kutsu"
-      ],
-      "View the invitation": [
-        "Näytä kutsu"
-      ],
-      "View the invitations": [
-        "Näytä kutsut"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5982,12 +5981,6 @@
       "Pending": [
         "Odottaa"
       ],
-      "Pending invitation": [
-        "Odottava kutsu"
-      ],
-      "Pending invitations": [
-        "Odottavat kutsut"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
       ],
@@ -5999,6 +5992,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Helpottaaksemme siirtymää tarjoamme sinulle 30 päivän maksuttoman kokeilujakson ${ BRAND_NAME } Unlimitediin.*"
+      ],
+      "View the invitation": [
+        "Näytä kutsu",
+        "Näytä kutsut"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
@@ -6037,6 +6034,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Menetät pääsyn kaikkiin ${ plan } -tilauksen sisältämiin premium-ominaisuuksiin."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "**${ invite.InviterEmail }** on kutsunut sinut yhdistämään tilisi tähän ryhmätilaukseen."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Sinut on kutsuttu yhdistämään ${ BRAND_NAME } -tilisi tähän perhetilaukseen ja nauttimaan kaikista ${ brandOrAppName } -premium-ominaisuuksista yhdessä."
@@ -10156,6 +10159,11 @@
         "Valittu väri:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Auttaa kirjoittamaan, vastaamaan ja oikolukemaan sähköposteja. Jos toiminto on poistettu käytöstä, vain järjestelmänvalvojat voivat käyttää sitä. Hallitse yksittäisiä käyttäjiä kohdassa ${ userAndAddresses } tai ${ addMoreSeats }."
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
@@ -11994,6 +12002,11 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ]
     },
     "Link label (optional)": {
@@ -14665,8 +14678,8 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "${ discount }% Black Friday -alennuksesi on käytetty"
+      "Your ${ discount }% End of Year discount has been applied": [
+        "${ discount }% End of Year -alennuksesi on käytetty"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisaatiollasi on ${ free }-palvelu. Jos haluat käyttää ${ appName } -premium-ominaisuuksia, pyydä organisaatiosi ylläpitoa päivittämään tilaus."
@@ -19525,6 +19538,9 @@
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
+      "Pending invitations": [
+        "Odottavat kutsut"
+      ],
       "Phone": [
         "Puhelin"
       ],
@@ -20501,6 +20517,9 @@
     "Upsell": {
       "Did you know?": [
         "Tiesitkö?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Hanki ${ drivePlusPlanMaxSpace } tallennustilaa tiedostoillesi, valokuvillesi ja dokumenteillesi ja palauta tiedostoversioita 10 vuoden tiedostojen palautustakuun avulla."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Yksityisyyspaketti, joka sisältää suojatun sähköpostin, ${ VPN_SHORT_APP_NAME }:n, pilvitallennustilan ja salasananhallinnan yhdessä paketissa. Alkaen ${ fallBackString } kuukaudessa."

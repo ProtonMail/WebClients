@@ -1661,6 +1661,11 @@
         "不支持的日程"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 个结果未显示"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
@@ -2017,9 +2022,6 @@
       "Application problem": [
         "应用程序问题"
       ],
-      "Black Friday": [
-        "黑色星期五"
-      ],
       "Bridge problem": [
         "Bridge 问题"
       ],
@@ -2305,7 +2307,7 @@
         "总计"
       ],
       "Total for ${ n } month": [
-        "每${ n }月支付"
+        "${ n } 月合计"
       ]
     },
     "Checkout summary": {
@@ -5345,12 +5347,6 @@
       ],
       "View invitation": [
         "查看邀请详情"
-      ],
-      "View the invitation": [
-        "查看邀请"
-      ],
-      "View the invitations": [
-        "查看所有邀请"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5420,12 +5416,6 @@
       ],
       "Pending": [
         "等待"
-      ],
-      "Pending invitation": [
-        "待发出的邀请"
-      ],
-      "Pending invitations": [
-        "待发出的邀请"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，您目前无法变更账户等级。"
@@ -11229,6 +11219,9 @@
       "Reactivate now": [
         "立即重新激活"
       ],
+      "Reactivate subscription": [
+        "重新激活订阅"
+      ],
       "Request an invite": [
         "申请注册"
       ],
@@ -12354,6 +12347,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "密码分享（最多 ${ n } 个人）"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "与多至 ${ n } 个人分享保险库"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
@@ -13785,9 +13781,6 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "有人邀请您加入 ${ PASS_APP_NAME }"
       ],
-      "Your ${ discount }% Black Friday discount has been applied": [
-        "您的 ${ discount }% 黑色星期五折扣已应用"
-      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "您的组织可以访问 ${ free }。如果您想访问高级 ${ appName } 功能，请让您的组织管理员升级。"
       ]
@@ -14034,6 +14027,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "特惠价格仅限前 ${ subscriptionLength } 个月有效。"
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价仅限首月有效。本优惠券适用于 ${ couponRedemptions } 次续费周期。之后将自动以 1 个月 ${ renewPriceStr } 的价格续费，您可以随时取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
       ],
@@ -14086,6 +14085,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "您确定要继续操作吗？"
       ]
     },
     "Payments.plan_name": {

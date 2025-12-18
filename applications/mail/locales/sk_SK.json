@@ -1513,10 +1513,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2191,9 +2188,6 @@
       ],
       "Authenticator problem": [
         "Problém s overovačom"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikáciou Bridge"
@@ -5421,12 +5415,6 @@
       ],
       "Switch plans": [
         "Zmeniť plán"
-      ],
-      "View the invitation": [
-        "Zobraziť pozvánku"
-      ],
-      "View the invitations": [
-        "Zobraziť pozvánky"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7642,7 +7630,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10485,6 +10476,9 @@
       "Terms": [
         "Podmienky"
       ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
+      ],
       "terms of service": [
         "podmienky používania"
       ],
@@ -11543,8 +11537,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Neustále sa snažíme vylepšovať ${ BRAND_NAME } ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Neustále sa snažíme vylepšovať ${ config.appName }. Aká je vaša spokojnosť s našimi službami?"
       ]
     },
     "new_plans: Subtext": {

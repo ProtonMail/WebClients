@@ -266,9 +266,6 @@
       "Stay in meeting": [
         "Im Meeting bleiben"
       ],
-      "Stop presenting": [
-        "Präsentation beenden"
-      ],
       "Stop receiving video": [
         "Eingehendes Video stoppen"
       ],
@@ -411,9 +408,6 @@
       ],
       "Authenticator problem": [
         "Authenticator-Problem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem mit „Bridge“"
@@ -1583,6 +1577,12 @@
       "${ participantCount } of ${ maxParticipants } participants": [
         "${ participantCount } von ${ maxParticipants } Teilnehmern"
       ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (du) präsentiert"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } präsentiert"
+      ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } hat dich zu einem ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }-Meeting eingeladen:"
       ],
@@ -1593,9 +1593,6 @@
         "${ user.DisplayName }s Meeting"
       ],
       "(You)": [
-        "(Du)"
-      ],
-      "(you)": [
         "(Du)"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
@@ -1726,9 +1723,6 @@
       ],
       "Invitation preview": [
         "Einladungsvorschau"
-      ],
-      "is presenting": [
-        "präsentiert gerade"
       ],
       "Joined": [
         "Beigetreten"
@@ -2451,6 +2445,15 @@
       ]
     },
     "Warning": {
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Auf die Kamera oder das Mikrofon konnte nicht zugegriffen werden. Du kannst versuchen, sie über die Meeting-Steuerung wieder zu aktivieren."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Auf die Kamera konnte nicht zugegriffen werden. Du kannst versuchen, sie über die Meeting-Steuerung wieder zu aktivieren."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Auf das Mikrofon konnte nicht zugegriffen werden. Du kannst versuchen, es über die Meeting-Steuerung wieder zu aktivieren."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],

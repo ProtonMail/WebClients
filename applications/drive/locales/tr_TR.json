@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Kimlik doğrulayıcı sorunu"
       ],
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ],
       "Bridge problem": [
         "Bridge sorunu"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Tarife değiştir"
-      ],
-      "View the invitation": [
-        "Daveti görüntüle"
-      ],
-      "View the invitations": [
-        "Davetleri görüntüle"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
+      ],
+      "View the invitation": [
+        "Daveti görüntüle",
+        "Davetleri görüntüle"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } ailesine davet edildiniz"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
+      ],
+      "Already in your library": [
+        "Zaten kütüphanenizde"
       ],
       "Also try looking in Trash.": [
         "Çöp kutusuna da bakmayı deneyin."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Tanılama yapılıyor..."
-      ],
-      "Same photo or video already exist": [
-        "Aynı fotoğraf veya video zaten var"
       ],
       "Saving...": [
         "Kaydediliyor..."

@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Problema de autenticação"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problema de bridge"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Trocar de plano"
-      ],
-      "View the invitation": [
-        "Visualizar o convite"
-      ],
-      "View the invitations": [
-        "Visualizar os convites"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
+      ],
+      "View the invitation": [
+        "Visualizar o convite",
+        "Visualizar os convites"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Já está na sua biblioteca"
       ],
       "Also try looking in Trash.": [
         "Verifique sua lixeira."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Executando diagnósticos..."
-      ],
-      "Same photo or video already exist": [
-        "Essa foto ou vídeo já existe."
       ],
       "Saving...": [
         "Salvando..."
@@ -7645,6 +7640,9 @@
       ],
       "Shared with me": [
         "Compartilhado comigo"
+      ],
+      "Terms and conditions": [
+        "Termos e condições"
       ],
       "Trash": [
         "Lixeira"
@@ -12878,6 +12876,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Obter Drive for Business"
       ]
     },
     "Validation": {

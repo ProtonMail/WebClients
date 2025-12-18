@@ -261,6 +261,9 @@
       "Create a free account": [
         "Maak een gratis account aan"
       ],
+      "Create a new booking page": [
+        "Maak een nieuwe boekingspagina"
+      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
@@ -794,11 +797,17 @@
       "Select country": [
         "Selecteer land"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Selecteer beoordeling ${ n } van de ${ to }"
+      ],
       "Select time zone": [
         "Kies tijdzone"
       ],
       "Send": [
         "Verstuur"
+      ],
+      "Send Feedback": [
+        "Feedback Versturen"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
@@ -1178,6 +1187,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate1 }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate2 } annuleert."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
       ],
@@ -1434,9 +1449,6 @@
       ],
       "Authenticator problem": [
         "Authenticatieprobleem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -3943,9 +3955,6 @@
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
       ],
-      "You cannot enter the organizer email": [
-        "U kunt het e-mailadres van de organisator niet invoeren."
-      ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
       ],
@@ -4276,12 +4285,6 @@
       ],
       "Switch plans": [
         "Van abonnement wisselen"
-      ],
-      "View the invitation": [
-        "Bekijk de uitnodiging"
-      ],
-      "View the invitations": [
-        "Bekijk de uitnodigingen"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4333,6 +4336,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
+      ],
+      "View the invitation": [
+        "Bekijk de uitnodiging",
+        "Bekijk de uitnodigingen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
@@ -5240,6 +5247,12 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Kunt u de evenementen die u zoekt niet vinden? Sommige evenementen in verborgen agenda's komen overeen met uw zoekopdracht. Om die resultaten te zien, schakel de zichtbaarheid in voor ${ hiddenWithItemsCalendarList }."
       ],
+      "Cannot create a range across days.": [
+        "Kan geen boekingsbereik over meerdere dagen aanmaken."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan geen boekingsbereik in het verleden aanmaken."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
@@ -5839,6 +5852,9 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+      ],
+      "Range is too short.": [
+        "Bereik is te kort."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
@@ -6791,6 +6807,9 @@
       "Extended address": [
         "Adrestoevoeging"
       ],
+      "Extremely Satisfied": [
+        "Zeer tevreden"
+      ],
       "First name": [
         "Voornaam"
       ],
@@ -7026,6 +7045,9 @@
       "System information": [
         "Systeeminformatie"
       ],
+      "Tell us more about your experience": [
+        "Vertel ons meer over uw ervaring"
+      ],
       "Theme": [
         "Thema"
       ],
@@ -7055,6 +7077,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Very Dissatisfied": [
+        "Erg ontevreden"
       ],
       "Video conference": [
         "Videoconferentie"
@@ -7276,6 +7301,9 @@
       ],
       "settings": [
         "instellingen"
+      ],
+      "Terms and conditions": [
+        "Algemene voorwaarden"
       ],
       "Types of recovery methods": [
         "Soorten herstelmethoden"
@@ -8240,6 +8268,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Wij streven er altijd naar om ${ config.appName } te verbeteren. Hoe tevreden bent u met uw ervaring?"
       ]
     },
     "new_plans: Subtext": {
@@ -9503,6 +9536,9 @@
       ],
       "Name or email address": [
         "Naam of e-mailadres"
+      ],
+      "Optional feedback": [
+        "Optionele feedback"
       ],
       "Organization name": [
         "Organisatienaam"
@@ -11922,6 +11958,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "We'd love to hear from you!": [
+        "We horen graag van jou!"
       ],
       "We're setting up calendar search": [
         "We stellen de agendazoekfunctie in."

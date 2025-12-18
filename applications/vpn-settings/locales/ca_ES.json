@@ -83,9 +83,6 @@
       "Add external address": [
         "Afegeix una adreça externa"
       ],
-      "add more seats": [
-        "afegeix més llicències"
-      ],
       "Add PayPal": [
         "Afegeix PayPal"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "D'acord"
+      ],
+      "Group owner": [
+        "Propietari del grup"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -1100,9 +1100,6 @@
       "User": [
         "Usuari"
       ],
-      "Users and addresses": [
-        "Usuaris i adreces"
-      ],
       "Verify": [
         "Verifica"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "S'està reprenent el reenviament"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "Afegiu-hi més llicències"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Hi ha hagut un problema amb l'autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Mostra la invitació"
-      ],
-      "View the invitation": [
-        "Mostra la invitació"
-      ],
-      "View the invitations": [
-        "Mostra les invitacions"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "Pendent"
       ],
-      "Pending invitation": [
-        "Invitació pendent"
-      ],
-      "Pending invitations": [
-        "Invitacions pendents"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La subscripció es facturarà a l'administrador principal d'aquest pla."
+      ],
+      "View the invitation": [
+        "Mostra la invitació",
+        "Veure les invitacions"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
@@ -6564,9 +6555,6 @@
       "Groups": [
         "Grups"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Ajuda a escriure, respondre i revisar correus electrònics. Si està desactivat, només els administradors hi tindran accés. Gestioneu-ho per a usuaris individuals a ${ userAndAddress } o ${ addMoreSeats }"
-      ],
       "here": [
         "aquí"
       ],
@@ -8199,6 +8187,11 @@
         "Color seleccionat:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Ajuda a redactar, respondre i revisar correus electrònics. Si es desactiva, només els administradors hi tindran accés. Gestioneu-ho per a usuaris individuals a ${ userAndAddresses } o ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Com enviar un pagament en efectiu?"
@@ -9445,6 +9438,11 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Usuaris i adreces"
       ]
     },
     "Live Chat Modal": {
@@ -16176,8 +16174,8 @@
       "Did you know?": [
         "Ho sabíeu?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Aconseguiu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb una recuperació de fitxers de 10 anys."
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obtingueu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb la recuperació de fitxers de 10 anys."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de privacitat amb correu electrònic segur, ${ VPN_SHORT_APP_NAME }, emmagatzematge al núvol i gestor de contrasenyes en un sol paquet. A partir de només ${ fallBackString } al mes"

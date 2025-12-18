@@ -83,9 +83,6 @@
       "Add external address": [
         "Externe Adresse hinzufügen"
       ],
-      "add more seats": [
-        "Mehr Lizenzen hinzufügen"
-      ],
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
@@ -529,6 +526,9 @@
       ],
       "Got it": [
         "Verstanden"
+      ],
+      "Group owner": [
+        "Gruppenbesitzer"
       ],
       "Help and feedback": [
         "Hilfe und Feedback"
@@ -1100,9 +1100,6 @@
       "User": [
         "Benutzer"
       ],
-      "Users and addresses": [
-        "Benutzer und E-Mail-Adressen"
-      ],
       "Verify": [
         "Verifizieren"
       ],
@@ -1161,6 +1158,11 @@
     "action": {
       "Resuming forward": [
         "Weiterleitung wird fortgesetzt"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "Mehr Lizenzen hinzufügen"
       ]
     },
     "Action for user session": {
@@ -1819,9 +1821,6 @@
       ],
       "Authenticator problem": [
         "Authenticator-Problem"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problem mit „Bridge“"
@@ -4553,12 +4552,6 @@
       ],
       "View invitation": [
         "Einladung ansehen"
-      ],
-      "View the invitation": [
-        "Sieh dir die Einladung an"
-      ],
-      "View the invitations": [
-        "Sieh dir die Einladungen an"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4615,12 +4608,6 @@
       "Pending": [
         "Ausstehend"
       ],
-      "Pending invitation": [
-        "Offene Einladung"
-      ],
-      "Pending invitations": [
-        "Offene Einladungen"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
@@ -4629,6 +4616,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
+      ],
+      "View the invitation": [
+        "Einladung ansehen",
+        "Einladungen ansehen"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
@@ -6564,9 +6555,6 @@
       "Groups": [
         "Gruppen"
       ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Hilft beim Schreiben, Antworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Verwalte dies für einzelne Benutzer in ${ userAndAddress } oder ${ addMoreSeats }"
-      ],
       "here": [
         "hier"
       ],
@@ -8199,6 +8187,11 @@
         "Ausgewählte Farbe:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hilft beim Schreiben, Antworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Verwalte dies für einzelne Benutzer in ${ userAndAddresses } oder ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Wie sendet man eine Bargeldzahlung?"
@@ -9445,6 +9438,11 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Benutzer und E-Mail-Adressen"
       ]
     },
     "Live Chat Modal": {
@@ -11177,6 +11175,9 @@
       "It's too expensive": [
         "Es ist mir zu teuer"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "My reason isn't listed": [
         "Mein Grund ist nicht aufgeführt"
       ],
@@ -11219,8 +11220,17 @@
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -16142,7 +16152,7 @@
       "Did you know?": [
         "Wusstest du das?"
       ],
-      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "${ drivePlusPlanMaxSpace } Speicherplatz für deine Dateien, Fotos und Dokumente erhalten und Dateiversionen mit 10-jähriger Dateiwiederherstellung wiederherstellen."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
@@ -16470,8 +16480,26 @@
       ]
     },
     "VPNClient": {
+      "Android": [
+        "Android"
+      ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

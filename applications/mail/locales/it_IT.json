@@ -1504,10 +1504,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -2163,9 +2159,6 @@
       ],
       "Authenticator problem": [
         "Problema con l'autenticatore"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con Bridge"
@@ -5349,12 +5342,6 @@
       ],
       "Switch plans": [
         "Cambia piano"
-      ],
-      "View the invitation": [
-        "Guarda l'invito"
-      ],
-      "View the invitations": [
-        "Guarda gli inviti"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5393,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
+      ],
+      "View the invitation": [
+        "Guarda l'invito",
+        "Guarda gli inviti"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
@@ -7408,7 +7399,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10189,6 +10181,9 @@
       "Terms": [
         "Termini"
       ],
+      "Terms and conditions": [
+        "Termini e condizioni"
+      ],
       "terms of service": [
         "termini di servizio"
       ],
@@ -11181,8 +11176,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Siamo sempre alla ricerca di migliorare ${ BRAND_NAME } ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Cerchiamo sempre di migliorare ${ config.appName }. Quanto sei soddisfatto della tua esperienza?"
       ]
     },
     "new_plans: Subtext": {

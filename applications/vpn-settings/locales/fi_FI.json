@@ -1079,9 +1079,6 @@
       "User": [
         "Käyttäjä"
       ],
-      "Users and addresses": [
-        "Käyttäjät ja osoitteet"
-      ],
       "Verify": [
         "Vahvista"
       ],
@@ -1140,6 +1137,11 @@
     "action": {
       "Resuming forward": [
         "Jatketaan välitystä"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "lisää paikkoja"
       ]
     },
     "Action for user session": {
@@ -1695,9 +1697,6 @@
       ],
       "Authenticator problem": [
         "Todennusvirhe"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Bridge-ongelma"
@@ -4382,12 +4381,6 @@
       ],
       "View invitation": [
         "Näytä kutsu"
-      ],
-      "View the invitation": [
-        "Näytä kutsu"
-      ],
-      "View the invitations": [
-        "Näytä kutsut"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4444,12 +4437,6 @@
       "Pending": [
         "Odottaa"
       ],
-      "Pending invitation": [
-        "Odottava kutsu"
-      ],
-      "Pending invitations": [
-        "Odottavat kutsut"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
       ],
@@ -4458,6 +4445,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
+      ],
+      "View the invitation": [
+        "Näytä kutsu",
+        "Näytä kutsut"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
@@ -7841,6 +7832,11 @@
         "Valittu väri:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Auttaa kirjoittamaan, vastaamaan ja oikolukemaan sähköposteja. Jos toiminto on poistettu käytöstä, vain järjestelmänvalvojat voivat käyttää sitä. Hallitse yksittäisiä käyttäjiä kohdassa ${ userAndAddresses } tai ${ addMoreSeats }."
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Miten käteismaksu lähetetään?"
@@ -9029,6 +9025,11 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Käyttäjät ja osoitteet"
       ]
     },
     "Live Chat Modal": {
@@ -15335,6 +15336,9 @@
     "Upsell": {
       "Did you know?": [
         "Tiesitkö?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Hanki ${ drivePlusPlanMaxSpace } tallennustilaa tiedostoillesi, valokuvillesi ja dokumenteillesi ja palauta tiedostoversioita 10 vuoden tiedostojen palautustakuun avulla."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Yksityisyyspaketti, joka sisältää suojatun sähköpostin, ${ VPN_SHORT_APP_NAME }:n, pilvitallennustilan ja salasananhallinnan yhdessä paketissa. Alkaen ${ fallBackString } kuukaudessa."

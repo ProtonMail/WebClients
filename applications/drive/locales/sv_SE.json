@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Autentiseringsproblem"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problem med Bridge"
       ],
@@ -4067,12 +4064,6 @@
       ],
       "Switch plans": [
         "Byt paket"
-      ],
-      "View the invitation": [
-        "Visa inbjudan"
-      ],
-      "View the invitations": [
-        "Visa inbjudningarna"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4124,6 +4115,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
+      ],
+      "View the invitation": [
+        "Visa inbjudan",
+        "Visa inbjudningarna"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -4994,6 +4989,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Redan i ditt bibliotek"
       ],
       "Also try looking in Trash.": [
         "Prova också att titta i papperskorgen."
@@ -5964,9 +5962,6 @@
       ],
       "Running diagnostics...": [
         "Kör diagnostik …"
-      ],
-      "Same photo or video already exist": [
-        "Samma foto eller videoklipp finns redan"
       ],
       "Saving...": [
         "Sparar …"

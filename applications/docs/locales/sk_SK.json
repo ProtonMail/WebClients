@@ -252,6 +252,9 @@
       "Create and copy alias": [
         "Vytvoriť a kopírovať alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Vytvoriť nový ${ SHEETS_APP_NAME }"
+      ],
       "Create new folder": [
         "Vytvoriť nový priečinok"
       ],
@@ -1200,9 +1203,6 @@
       ],
       "Authenticator problem": [
         "Problém s overovačom"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problém s aplikáciou Bridge"
@@ -3153,6 +3153,9 @@
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
       ],
+      "Unable to import file": [
+        "Súbor nie je možné importovať"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Nie je možné načítať VPN nástenku. Skontrolujte vaše pripojenie a skúste to znova, prosím."
       ],
@@ -3182,6 +3185,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Máme problémy so synchronizáciou vášho dokumentu. Obnovte stránku, prosím."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "Tento súbor sa nepodarilo importovať do aplikácie ${ SHEETS_APP_NAME }. Môžete skúsiť skopírovať a vložiť obsah do nového dokumentu ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -3447,12 +3453,6 @@
       ],
       "Switch plans": [
         "Zmeniť plán"
-      ],
-      "View the invitation": [
-        "Zobraziť pozvánku"
-      ],
-      "View the invitations": [
-        "Zobraziť pozvánky"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -6095,6 +6095,9 @@
       ],
       "Resume now": [
         "Pokračovať teraz"
+      ],
+      "Terms and conditions": [
+        "Zmluvné podmienky používania"
       ],
       "Types of recovery methods": [
         "Typy spôsobov obnovenia"

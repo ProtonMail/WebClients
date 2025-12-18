@@ -1577,9 +1577,6 @@
       "Authenticator problem": [
         "Problema con l'autenticatore"
       ],
-      "Black Friday": [
-        "Black Friday"
-      ],
       "Bridge problem": [
         "Problema con Bridge"
       ],
@@ -4082,12 +4079,6 @@
       ],
       "Switch plans": [
         "Cambia piano"
-      ],
-      "View the invitation": [
-        "Guarda l'invito"
-      ],
-      "View the invitations": [
-        "Guarda gli inviti"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -4139,6 +4130,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
+      ],
+      "View the invitation": [
+        "Guarda l'invito",
+        "Guarda gli inviti"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
@@ -5009,6 +5004,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Already in your library": [
+        "Già nella tua libreria"
       ],
       "Also try looking in Trash.": [
         "Prova a cercare anche nel cestino."
@@ -5985,9 +5983,6 @@
       ],
       "Running diagnostics...": [
         "Diagnostica in corso..."
-      ],
-      "Same photo or video already exist": [
-        "La stessa foto o video esiste già"
       ],
       "Saving...": [
         "Salvataggio..."
@@ -7642,6 +7637,9 @@
       ],
       "Shared with me": [
         "Condiviso con me"
+      ],
+      "Terms and conditions": [
+        "Termini e condizioni"
       ],
       "Trash": [
         "Cestino"
@@ -12866,6 +12864,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Ottieni Drive for Business"
       ]
     },
     "Validation": {

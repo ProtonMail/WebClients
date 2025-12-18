@@ -1438,9 +1438,6 @@
       "Authenticator problem": [
         "認証の問題"
       ],
-      "Black Friday": [
-        "ブラックフライデー"
-      ],
       "Bridge problem": [
         "Bridge に関する問題"
       ],
@@ -3927,7 +3924,7 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
       ],
-      "You cannot enter the organizer email": [
+      "You cannot enter the organizer's email": [
         "主催者メールアドレスを入力できません"
       ],
       "You have reached the maximum number of calendars.": [
@@ -4257,12 +4254,6 @@
       ],
       "Switch plans": [
         "プランを変更"
-      ],
-      "View the invitation": [
-        "招待を見る"
-      ],
-      "View the invitations": [
-        "招待を見る"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5688,7 +5679,7 @@
         "その他のアカウント"
       ],
       "Other location": [
-        "その他の位置"
+        "その他の場所"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "組織内の他のユーザーには、あなたの埋まっているスロットが表示されます。イベントの詳細は共有されません。"
@@ -7235,6 +7226,9 @@
       "settings": [
         "設定"
       ],
+      "Terms and conditions": [
+        "利用規約"
+      ],
       "Types of recovery methods": [
         "回復手段の種類"
       ],
@@ -8168,8 +8162,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "私たちは常に${ BRAND_NAME } ${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足いただいておりますでしょうか？"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "私たちは常に${ config.appName }をより良くするよう努めております。お客様は、ご利用時の体験にどの程度ご満足されておりますでしょうか？"
       ]
     },
     "new_plans: Subtext": {

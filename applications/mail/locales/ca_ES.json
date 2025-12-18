@@ -1505,8 +1505,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2163,9 +2162,6 @@
       ],
       "Authenticator problem": [
         "Hi ha hagut un problema amb l'autenticador"
-      ],
-      "Black Friday": [
-        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -5349,12 +5345,6 @@
       ],
       "Switch plans": [
         "Canvia de pla"
-      ],
-      "View the invitation": [
-        "Mostra la invitació"
-      ],
-      "View the invitations": [
-        "Mostra les invitacions"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -5406,6 +5396,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La subscripció es facturarà a l'administrador principal d'aquest pla."
+      ],
+      "View the invitation": [
+        "Mostra la invitació",
+        "Veure les invitacions"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
@@ -7408,7 +7402,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11184,8 +11179,8 @@
       ]
     },
     "new_plans: label": {
-      "We're always striving to make ${ BRAND_NAME } ${ config.appName } better. How satisfied are you with your experience?": [
-        "Treballem constantment per millorar ${ BRAND_NAME } ${ config.appName }. Quin és el vostre grau de satisfacció amb l'experiència?"
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Treballem constantment per millorar ${ config.appName }. Quin grau de satisfacció teniu amb la vostra experiència?"
       ]
     },
     "new_plans: Subtext": {
