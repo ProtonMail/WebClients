@@ -286,7 +286,6 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     button={
                         <SearchIndexManagement
                             onReindex={handleReindex}
-                            onClear={handleClearIndex}
                             disabled={isIndexing || isDriveIndexing}
                         />
                     }
