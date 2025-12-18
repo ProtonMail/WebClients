@@ -82,27 +82,31 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
             }`}
             onClick={handleFileClick}
         >
-            {/* File icon */}
             <FileIcon mimeType={mimeTypeIcon} size={6} className="shrink-0 mr-3" />
 
-            {/* File info */}
             <div className="flex-1 min-w-0">
                 <div className="flex flex-row flex-nowrap items-center gap-2 mb-1">
                     <p
-                        className="m-0 text-sm font-semibold"
-                        style={{
-                            display: 'block',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap',
-                            flex: 1,
-                            maxWidth: 'calc(85%)',
-                        }}
+                        className="m-0 text-sm font-semibold truncate"
                         title={file.filename}
                     >
                         {file.filename}
                     </p>
                 </div>
+                
+                {/* Chunk/section indicator - show which part of the document was used */}
+                {file.isChunk && (
+                    <div className="flex items-center gap-1 mb-1">
+                        <Icon name="text-quote" size={3} className="color-info shrink-0" />
+                        <span 
+                            className="text-xs color-info truncate"
+                            title={file.chunkTitle || c('collider_2025: Info').t`Relevant section`}
+                        >
+                            {file.chunkTitle || c('collider_2025: Info').t`Relevant section of document`}
+                        </span>
+                    </div>
+                )}
+                
                 <div className="flex flex-row flex-nowrap items-center">
                     <span className="text-xs color-weak">{prettyType}</span>
                     <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
@@ -114,7 +118,9 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
                         <>
                             <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
                             <span className="text-xs color-primary">
-                                {c('collider_2025: Info').t`Auto-retrieved`}
+                                {file.isChunk 
+                                    ? c('collider_2025: Info').t`Auto-matched`
+                                    : c('collider_2025: Info').t`Auto-retrieved`}
                             </span>
                         </>
                     )}
