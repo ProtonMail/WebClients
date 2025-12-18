@@ -3,9 +3,9 @@ import { addDays, isValid } from 'date-fns';
 import { DAY } from '@proton/shared/lib/constants';
 import { startOfDay } from '@proton/shared/lib/date-fns-utc';
 import {
-    convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
+    fromUTCDateToTimezone,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
 import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -27,7 +27,7 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
     const endUtcDate = getTimeInUtc(end, false);
 
     const isDuration = +endUtcDate - +startUtcDate < DAY;
-    const minEndTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), end.tzid));
+    const minEndTimeInTimezone = fromUTCDateToTimezone(startUtcDate, end.tzid);
     const { time: minEndTime } = getDateTimeState(isDuration ? minEndTimeInTimezone : DEFAULT_MIN_TIME, '');
 
     const getMinEndDate = () => {
@@ -44,7 +44,7 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
         const diffInMs = +newStartUtcDate - +startUtcDate;
 
         const newEndDate = new Date(+endUtcDate + diffInMs);
-        const endLocalDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(newEndDate), end.tzid));
+        const endLocalDate = fromUTCDateToTimezone(newEndDate, end.tzid);
         const newEnd = getDateTimeState(endLocalDate, end.tzid);
 
         return {
@@ -56,13 +56,13 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
     const getEndTimeChange = (newTime: Date) => {
         const diffMs = +newTime - +minEndTime;
 
-        const endTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), end.tzid));
+        const endTimeInTimezone = fromUTCDateToTimezone(endUtcDate, end.tzid);
 
         const minEndUtcDateBase = isDuration ? minEndTimeInTimezone : startOfDay(endTimeInTimezone);
 
         const endUtcDateBase = toUTCDate(convertZonedDateTimeToUTC(fromUTCDate(minEndUtcDateBase), end.tzid));
         const newEndUtcDate = new Date(+endUtcDateBase + diffMs);
-        const endLocalDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(newEndUtcDate), end.tzid));
+        const endLocalDate = fromUTCDateToTimezone(newEndUtcDate, end.tzid);
 
         return getDateTimeState(endLocalDate, end.tzid);
     };

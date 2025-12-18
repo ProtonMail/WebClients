@@ -5,6 +5,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
+    fromUTCDateToTimezone,
     getAbbreviatedTimezoneName,
     getReadableCityTimezone,
     getSupportedTimezone,
@@ -296,5 +297,61 @@ describe('getTimezoneAndOffset', () => {
         const result = getTimezoneAndOffset(timezone);
 
         expect(['GMT+1 • Europe/Paris', 'GMT+2 • Europe/Paris']).toContain(result);
+    });
+});
+
+describe('fromUTCDateToTimezone', () => {
+    it('should return the same date for UTC timezone', () => {
+        const date = new Date('2024-10-15T00:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'UTC');
+        expect(result).toEqual(new Date('2024-10-15T00:00:00.000Z'));
+    });
+
+    it('should convert UTC date for positive offsets', () => {
+        // In October 2024, London is in BST (UTC+1)
+        const date = new Date('2024-10-15T00:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'Europe/London');
+        expect(result).toEqual(new Date('2024-10-15T01:00:00.000Z'));
+    });
+
+    it('should convert UTC date for negative offsets', () => {
+        // New York is UTC-5 in January (winter time)
+        const date = new Date('2024-01-15T12:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'America/New_York');
+        expect(result).toEqual(new Date('2024-01-15T07:00:00.000Z'));
+    });
+
+    it('should handle DST transition correctly (Europe/Zurich winter)', () => {
+        // Zurich is UTC+1 in December (winter time)
+        const date = new Date('2019-12-15T00:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'Europe/Zurich');
+        expect(result).toEqual(new Date('2019-12-15T01:00:00.000Z'));
+    });
+
+    it('should handle DST transition correctly (Europe/Zurich summer)', () => {
+        // Zurich is UTC+2 in June (summer time)
+        const date = new Date('2019-06-15T00:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'Europe/Zurich');
+        expect(result).toEqual(new Date('2019-06-15T02:00:00.000Z'));
+    });
+
+    it('should handle dates with non-zero hours, minutes, and seconds', () => {
+        const date = new Date('2024-10-15T14:30:45.000Z');
+        const result = fromUTCDateToTimezone(date, 'Europe/London');
+        expect(result).toEqual(new Date('2024-10-15T15:30:45.000Z'));
+    });
+
+    it('should handle date boundaries correctly (crossing to previous day)', () => {
+        // 3 AM UTC on Jan 15 in New York (UTC-5) is 10 PM on Jan 14 (previous day)
+        const date = new Date('2024-01-15T03:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'America/New_York');
+        expect(result).toEqual(new Date('2024-01-14T22:00:00.000Z'));
+    });
+
+    it('should handle date boundaries correctly (crossing to next day)', () => {
+        // 1 PM UTC in Sydney (UTC+11) is midnight next day
+        const date = new Date('2019-01-15T13:00:00.000Z');
+        const result = fromUTCDateToTimezone(date, 'Australia/Sydney');
+        expect(result).toEqual(new Date('2019-01-16T00:00:00.000Z'));
     });
 });
