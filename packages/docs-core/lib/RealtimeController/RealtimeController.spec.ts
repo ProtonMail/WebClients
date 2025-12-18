@@ -111,7 +111,7 @@ describe('RealtimeController', () => {
         isEnabled: jest.fn().mockReturnValue(false),
       } as unknown as jest.Mocked<UnleashClient>,
       'doc',
-      new DocSizeTracker(logger),
+      new DocSizeTracker(logger, eventBus),
     )
 
     documentState.setProperty('editorReady', true)

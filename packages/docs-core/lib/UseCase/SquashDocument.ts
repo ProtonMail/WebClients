@@ -201,7 +201,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     this.logger.info('[Squash] Executing squash algorithm...')
 
-    const squashResult = await this.squashAlgoritm.execute(updatePairs, {
+    const squashResult = await this.squashAlgoritm.squashNormal(updatePairs, {
       limit: GetCommitDULimit(documentType),
       factor: SQUASH_FACTOR,
     })
@@ -216,9 +216,28 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       return Result.ok(undefined)
     }
 
+    const squashCommitResult = await this.createSquashCommitFromSquashResult(
+      squashValue,
+      squashLock,
+      keys,
+      documentType,
+    )
+    if (squashCommitResult.isFailed()) {
+      return Result.fail(squashCommitResult.getError())
+    }
+
+    return Result.ok(squashCommitResult.getValue())
+  }
+
+  async createSquashCommitFromSquashResult(
+    squashResult: SquashResult,
+    squashLock: SquashLock,
+    keys: DocumentKeys,
+    documentType: DocumentType,
+  ): Promise<Result<SquashCommit>> {
     this.logger.info('[Squash] Encrypting squash result...')
 
-    const encryptedResult = await this.encryptSquashResult(squashValue, keys, documentType)
+    const encryptedResult = await this.encryptSquashResult(squashResult, keys, documentType)
     if (encryptedResult.isFailed()) {
       metrics.docs_aborted_squashes_total.increment({ reason: 'encryption_error' })
       return Result.fail(encryptedResult.getError())
@@ -300,5 +319,62 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     }
 
     return Result.ok(resultingUpdates)
+  }
+
+  async squashEverythingInBaseCommit(dto: SquashDocumentDTO): Promise<Result<boolean>> {
+    const { nodeMeta, commitId, keys, documentType } = dto
+
+    this.logger.info(`[Squash] Squashing everything in base commit...`)
+
+    try {
+      const lockResult = await this.docsApi.lockDocument(nodeMeta, commitId)
+      if (lockResult.isFailed()) {
+        this.logger.error(`[Squash] Failed to lock document: ${lockResult.getErrorMessage()}`)
+        throw new Error(lockResult.getErrorMessage())
+      }
+
+      const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
+
+      this.logger.info('[Squash] Decrypting commit...')
+
+      const decryptionResult = await this.decryptCommit.execute({
+        commit: squashLock.commit,
+        documentContentKey: keys.documentContentKey,
+        commitId: squashLock.commitId,
+      })
+      if (decryptionResult.isFailed()) {
+        throw new Error(decryptionResult.getError())
+      }
+      const decryptedCommit = decryptionResult.getValue()
+
+      const updatePairs: UpdatePair[] = decryptedCommit.messages.map((update, index) => ({
+        encrypted: squashLock.commit.updates.documentUpdates[index],
+        decrypted: update,
+      }))
+
+      const squashResult = this.squashAlgoritm.squashEverything(updatePairs).getValue()
+
+      const squashCommitResult = await this.createSquashCommitFromSquashResult(
+        squashResult,
+        squashLock,
+        keys,
+        documentType,
+      )
+      if (squashCommitResult.isFailed()) {
+        return Result.fail(squashCommitResult.getError())
+      }
+      const squashCommit = squashCommitResult.getValue()
+
+      const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
+      if (commitResult.isFailed()) {
+        throw new Error(commitResult.getErrorMessage())
+      }
+
+      void this.removeCommitFromCache(squashLock.commitId)
+
+      return Result.ok(true)
+    } catch (error) {
+      return Result.fail(`Failed to squash everything in base commit`)
+    }
   }
 }
