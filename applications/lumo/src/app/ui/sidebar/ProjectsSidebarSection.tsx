@@ -9,10 +9,12 @@ import { Icon, useModalStateObject } from '@proton/components';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { useProjects } from '../projects';
 import { getProjectCategory } from '../projects/constants';
 import { NewProjectModal } from '../projects/modals/NewProjectModal';
+import { ProjectLimitModal } from '../projects/modals/ProjectLimitModal';
 import { LumoLink } from '../../components/LumoLink';
 
 interface ProjectsSidebarSectionProps {
@@ -27,8 +29,10 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     const history = useHistory();
     const location = useLocation();
     const isGuest = useIsGuest();
+    const { hasLumoPlus } = useLumoPlan();
     const { isCollapsed, isVisible, isSmallScreen, toggle } = useSidebar();
     const newProjectModal = useModalStateObject();
+    const projectLimitModal = useModalStateObject();
 
     // Collapse Projects section when sidebar starts collapsing, expand when sidebar expands
     // On mobile, expand when sidebar is visible (overlay mode)
@@ -98,6 +102,12 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                 onItemClick();
             }
             history.push('/projects');
+            return;
+        }
+
+        // Check project limit for non-Plus users
+        if (!hasLumoPlus && projects.length >= 1) {
+            projectLimitModal.openModal(true);
             return;
         }
 
@@ -270,6 +280,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
 
             {/* New Project Modal */}
             {newProjectModal.render && <NewProjectModal {...newProjectModal.modalProps} />}
+            {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </div>
     );
 };
