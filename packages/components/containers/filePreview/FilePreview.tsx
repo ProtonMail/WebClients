@@ -165,15 +165,6 @@ export const FilePreviewContent = ({
             );
         }
 
-        // Check file size limit early for types that load content into memory
-        if (isTooLarge) {
-            return (
-                <div className="file-preview-container">
-                    <UnsupportedPreview onDownload={onDownload} tooLarge={true} />
-                </div>
-            );
-        }
-
         if (mimeType && isVideo(mimeType) && videoStreaming) {
             return (
                 <VideoStreamingPreview
@@ -182,6 +173,15 @@ export const FilePreviewContent = ({
                     videoStreaming={videoStreaming}
                     imgThumbnailUrl={imgThumbnailUrl}
                 />
+            );
+        }
+
+        // Check file size limit early for types that load content into memory
+        if (isTooLarge) {
+            return (
+                <div className="file-preview-container">
+                    <UnsupportedPreview onDownload={onDownload} tooLarge={true} />
+                </div>
             );
         }
 
