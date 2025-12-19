@@ -27,7 +27,7 @@ export interface EditSlotData {
 
 export interface BookingPageEditData {
     slots: EditSlotData[];
-    bookingId: string;
+    bookingUID: string;
     encryptedSecret: string;
     encryptedContent: string;
     bookingKeySalt: string;

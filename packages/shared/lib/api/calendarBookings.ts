@@ -15,41 +15,41 @@ export const createBookingPage = (data: BookingPageCreationPayload) => ({
     data,
 });
 
-export const updateBookingPage = (bookingId: string, data: BookingPageEditPayload) => ({
-    url: `calendar/v1/booking/${bookingId}`,
+export const updateBookingPage = (bookingUID: string, data: BookingPageEditPayload) => ({
+    url: `calendar/v1/booking/${bookingUID}`,
     method: 'PUT',
     data,
 });
 
-export const getBookingPageDetails = (bookingUid: string) => ({
-    url: `calendar/v1/booking/${bookingUid}`,
+export const getBookingPageDetails = (bookingUID: string) => ({
+    url: `calendar/v1/booking/${bookingUID}`,
     method: 'GET',
 });
 
 export const queryPublicBookingPage = (
-    bookingId: string,
+    bookingUID: string,
     { startTime, endTime }: { startTime: number; endTime: number }
 ) => ({
-    url: `calendar/v1/booking/external/${bookingId}`,
+    url: `calendar/v1/booking/external/${bookingUID}`,
     method: 'GET',
     params: {
         Start: startTime,
         End: endTime,
     },
 });
-export const confirmBookingSlot = (bookingId: string, slotId: string, data: BookingSlotConfirmationPayload) => ({
-    url: `calendar/v1/booking/external/${bookingId}/slots/${slotId}/confirm`,
+export const confirmBookingSlot = (bookingUID: string, slotId: string, data: BookingSlotConfirmationPayload) => ({
+    url: `calendar/v1/booking/external/${bookingUID}/slots/${slotId}/confirm`,
     method: 'POST',
     data,
 });
 
-export const deleteBookingPage = (bookingId: string) => ({
-    url: `calendar/v1/booking/${bookingId}`,
+export const deleteBookingPage = (bookingUID: string) => ({
+    url: `calendar/v1/booking/${bookingUID}`,
     method: 'DELETE',
 });
 
-export const getNextAvailableSlot = (bookingId: string, startTime: number) => ({
-    url: `calendar/v1/booking/external/${bookingId}/next-slot`,
+export const getNextAvailableSlot = (bookingUID: string, startTime: number) => ({
+    url: `calendar/v1/booking/external/${bookingUID}/next-slot`,
     method: 'GET',
     params: {
         StartTime: startTime,
