@@ -21,7 +21,7 @@ export type BookingTimeslot = {
 
 export type BookingDetails = {
     calendarId: string;
-    bookingUid: string;
+    bookingUID: string;
     summary: string;
     description: string;
     location: string;

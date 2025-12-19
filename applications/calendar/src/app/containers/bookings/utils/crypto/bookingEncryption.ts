@@ -30,7 +30,7 @@ interface EncryptionParams {
 const encryptBookingData = async (
     formData: SerializedFormData,
     bookingKeyPassword: string,
-    bookingUid: string,
+    bookingUID: string,
     signingKeys: PrimaryAddressKeysForSigning
 ) => {
     const { message: encryptedContent } = await CryptoProxy.encryptMessage({
@@ -43,7 +43,7 @@ const encryptBookingData = async (
         passwords: bookingKeyPassword,
         signingKeys: signingKeys,
         format: 'binary',
-        signatureContext: { critical: true, value: bookingContentSignatureContextValue(bookingUid) },
+        signatureContext: { critical: true, value: bookingContentSignatureContextValue(bookingUID) },
     });
 
     return encryptedContent;
@@ -51,7 +51,7 @@ const encryptBookingData = async (
 
 const encryptBookingSlots = async (
     formData: SerializedFormData,
-    bookingUid: string,
+    bookingUID: string,
     bookingKeyPassword: string,
     signingKeys: PrimaryAddressKeysForSigning,
     primaryCalendarPublicKey: PublicKeyReference
@@ -80,7 +80,7 @@ const encryptBookingSlots = async (
             signingKeys,
             detached: true,
             format: 'binary',
-            signatureContext: { critical: true, value: bookingSlotSignatureContextValue(bookingUid) },
+            signatureContext: { critical: true, value: bookingSlotSignatureContextValue(bookingUID) },
         });
 
         return {
@@ -158,12 +158,12 @@ export const encryptBookingPage = async ({
     const secretBytes = generateKey();
 
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, secretBytes, salt)).toBase64();
-    const bookingUid = (await deriveBookingUid(secretBytes)).toBase64();
+    const bookingUID = (await deriveBookingUid(secretBytes)).toBase64();
     const primaryCalendarPublicKey = getPrimaryCalendarKey(calendarKeys).publicKey;
 
     const [Slots, encryptedContent, encryptedSecret] = await Promise.all([
-        encryptBookingSlots(formData, bookingUid, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
-        encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys),
+        encryptBookingSlots(formData, bookingUID, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
+        encryptBookingData(formData, bookingKeyPassword, bookingUID, signingKeys),
         CryptoProxy.encryptMessage({
             binaryData: secretBytes,
             encryptionKeys: encryptionKey,
@@ -177,7 +177,7 @@ export const encryptBookingPage = async ({
     ]);
 
     return {
-        BookingUID: bookingUid,
+        BookingUID: bookingUID,
         BookingLink: createBookingLink(secretBytes),
         BookingKeySalt: salt.toBase64(),
         EncryptedSecret: encryptedSecret.message.toBase64(),
@@ -206,11 +206,11 @@ export const encryptBookingPageEdition = async ({
     const saltBytes = Uint8Array.fromBase64(editData.bookingKeySalt);
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
 
-    const bookingID = (await deriveBookingUid(decryptedSecret)).toBase64();
+    const bookingUID = (await deriveBookingUid(decryptedSecret)).toBase64();
     const primaryCalendarPublicKey = getPrimaryCalendarKey(calendarKeys).publicKey;
 
     const [Slots, encryptedContent, encryptedSecret] = await Promise.all([
-        encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
+        encryptBookingSlots(updateData, bookingUID, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
         CryptoProxy.encryptMessage({
             textData: JSONFormatData({
                 description: updateData.description,
@@ -223,7 +223,7 @@ export const encryptBookingPageEdition = async ({
             format: 'binary',
             signatureContext: {
                 critical: true,
-                value: bookingContentSignatureContextValue(bookingID),
+                value: bookingContentSignatureContextValue(bookingUID),
             },
         }),
         CryptoProxy.encryptMessage({

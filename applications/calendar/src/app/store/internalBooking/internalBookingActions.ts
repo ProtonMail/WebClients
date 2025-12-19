@@ -30,7 +30,7 @@ export const loadBookingPage = createAsyncThunk<
 >('internalBookings/loadPage', async (payload, thunkExtra) => {
     const emptyReturn = {
         slots: [],
-        bookingId: payload,
+        bookingUID: payload,
         encryptedSecret: '',
         encryptedContent: '',
         bookingKeySalt: '',
@@ -66,7 +66,7 @@ export const loadBookingPage = createAsyncThunk<
 
         return {
             slots: formattedSlots,
-            bookingId: BookingPage.ID,
+            bookingUID: BookingPage.ID,
             encryptedSecret: BookingPage.EncryptedSecret,
             encryptedContent: BookingPage.EncryptedContent,
             bookingKeySalt: BookingPage.BookingKeySalt,
@@ -141,7 +141,7 @@ export const editBookingPage = createAsyncThunk<
         const editData = thunkExtra.getState().internalBookings.value?.bookingPageEditData;
         const bookingPage = thunkExtra
             .getState()
-            .internalBookings.value?.bookingPages.find((page) => page.id === editData?.bookingId);
+            .internalBookings.value?.bookingPages.find((page) => page.id === editData?.bookingUID);
 
         if (!editData || !bookingPage) {
             throw new Error('No booking page edit data found');
@@ -187,7 +187,7 @@ export const editBookingPage = createAsyncThunk<
         });
 
         const response = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
-            updateBookingPage(editData.bookingId, {
+            updateBookingPage(editData.bookingUID, {
                 EncryptedContent,
                 EncryptedSecret: bookingPage.verificationErrors.secretVerificationError
                     ? NewEncryptedSecret

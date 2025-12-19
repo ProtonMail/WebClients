@@ -70,7 +70,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
     };
 
     const handleDeleteClick = () => {
-        void showDeleteModal({ bookingId: page.id });
+        void showDeleteModal({ bookingUID: page.id });
     };
 
     return (
