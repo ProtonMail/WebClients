@@ -10,7 +10,6 @@ import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
-import { selectIFrameAutofillEnabled } from '@proton/pass/store/selectors';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
@@ -20,10 +19,7 @@ type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords
 const FRAMES_FALLBACK = new Map([[0, { parent: null, frameId: 0, secure: null, origin: null }]]);
 
 const getTabFrames: typeof getAllTabFrames = withContext(async (ctx, tabId, options) => {
-    const state = ctx.service.store.getState();
-    const iframeAutofillEnabled = selectIFrameAutofillEnabled(state);
-
-    if (iframeAutofillEnabled) return getAllTabFrames(tabId, options);
+    if (await ctx.service.autofill.iframeAutofillEnabled()) return getAllTabFrames(tabId, options);
     else return FRAMES_FALLBACK;
 });
 
