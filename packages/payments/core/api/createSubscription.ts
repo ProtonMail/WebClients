@@ -3,6 +3,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
+import type { PaymentTelemetryPayload } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
 import { type BillingAddressProperty, normalizeBillingAddress } from '../billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '../constants';
@@ -204,7 +205,7 @@ export const createSubscription = async (
     }
 ) => {
     const config = createSubscriptionQuery(data, product, version, hasZipCodeValidation);
-    const telemetryProps = {
+    const telemetryProps: Omit<PaymentTelemetryPayload, 'stage'> = {
         userCurrency,
         subscription,
         amount: data.Amount,
