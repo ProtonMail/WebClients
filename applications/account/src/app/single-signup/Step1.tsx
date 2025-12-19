@@ -424,6 +424,10 @@ const Step1 = ({
     });
 
     const reportEstimationChange = (action: EstimationChangeAction, overrides: Partial<EstimationChangePayload>) => {
+        const nonEmptyOverrides = Object.fromEntries(
+            Object.entries(overrides).filter(([_, value]) => value !== undefined)
+        );
+
         checkoutTelemetry.reportSubscriptionEstimationChange({
             action,
             context: telemetryContext,
@@ -437,7 +441,7 @@ const Step1 = ({
             paymentMethodValue: paymentFacade.selectedMethodValue,
             build: APP_NAME,
             product: toApp,
-            ...overrides,
+            ...nonEmptyOverrides,
         });
     };
 

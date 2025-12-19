@@ -899,12 +899,15 @@ const SubscriptionContainerInner = ({
     };
 
     const reportChangeTelemetry = ({ action, ...overrides }: RequireOnly<EstimationChangePayload, 'action'>) => {
+        const nonEmptyOverrides = Object.fromEntries(
+            Object.entries(overrides).filter(([_, value]) => value !== undefined)
+        );
         const payload: EstimationChangePayload = {
             action,
             ...getCommonTelemetryPayload(),
             paymentMethodType: paymentFacade.selectedMethodType,
             paymentMethodValue: paymentFacade.selectedMethodValue,
-            ...overrides,
+            ...nonEmptyOverrides,
         };
 
         checkoutTelemetry.reportSubscriptionEstimationChange(payload);
