@@ -61,6 +61,7 @@ export type LocalStoreData = {
     privateDomains: string;
     ps: string;
     salt: string;
+    features: string;
     settings: string;
     snapshot: string;
     state: string;

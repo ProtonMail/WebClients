@@ -14,14 +14,11 @@ import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import { getRuleVersion } from '@proton/pass/lib/extension/rules/rules';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
-import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import { sagaEvents } from '@proton/pass/store/events';
 import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
@@ -145,18 +142,7 @@ export const options: RootSagaOptions = {
         } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
     }),
 
-    onFeatureFlags: withContext((ctx, features) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.FEATURE_FLAGS_UPDATE,
-                payload: features,
-            })
-        );
-
-        const currentRuleVersion = ctx.service.autofill.getRules()?.version;
-        const shouldRevalidate = currentRuleVersion !== getRuleVersion(features.PassExperimentalWebsiteRules ?? false);
-        if (shouldRevalidate) ctx.service.store.dispatch(withRevalidate(resolveWebsiteRules.intent()));
-    }),
+    onFeatureFlags: withContext((ctx, features) => ctx.service.featureFlags.sync(features)),
 
     onItemsUpdated: withContext((ctx, options) => {
         /* Update the extension's badge count on every item state change */

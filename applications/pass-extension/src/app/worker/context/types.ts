@@ -4,6 +4,7 @@ import type { APIProxyService } from 'proton-pass-extension/app/worker/services/
 import type { AutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
+import type { FeatureFlagService } from 'proton-pass-extension/app/worker/services/feature-flags';
 import type { FormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n';
 import type { ContentScriptService } from 'proton-pass-extension/app/worker/services/injection';
@@ -44,6 +45,7 @@ export interface WorkerContextInterface {
         b2bEvents: MaybeNull<B2BEventsService>;
         clipboard: ClipboardService;
         core: PassCoreProxy;
+        featureFlags: FeatureFlagService;
         formTracker: FormTrackerService;
         i18n: I18NService;
         injection: ContentScriptService;
