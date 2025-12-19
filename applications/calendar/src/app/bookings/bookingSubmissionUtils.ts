@@ -40,10 +40,11 @@ import {
 } from '../components/eventModal/eventForm/modelToProperties';
 import config from '../config';
 import { decryptBookingSessionKey } from '../containers/bookings/utils/crypto/bookingDecryption';
-import type { BookingDetails, BookingTimeslot } from './booking.store';
+import type { BookingDetails, BookingTimeslot, OldBookingTimeslot } from './booking.store';
 
-interface PrepareBookingSubmissionParams {
-    timeslot: BookingTimeslot;
+// V1 Crypto model
+interface OldPrepareBookingSubmissionParams {
+    timeslot: OldBookingTimeslot;
     bookingDetails: BookingDetails;
     bookingSecretBase64Url: string;
     bookingKeySalt: string;
@@ -205,7 +206,8 @@ const encryptBookingParts = async (vevent: VcalVeventComponent, sharedSessionKey
     };
 };
 
-export const prepareBookingSubmission = async ({
+// V1 Crypto model
+export const oldPrepareBookingSubmission = async ({
     timeslot,
     bookingDetails,
     bookingSecretBase64Url,
@@ -217,7 +219,7 @@ export const prepareBookingSubmission = async ({
     saveMeeting,
     getCanonicalEmailsMap,
     getVTimezonesMap,
-}: PrepareBookingSubmissionParams) => {
+}: OldPrepareBookingSubmissionParams) => {
     const sharedSessionKey = await decryptBookingSessionKey(
         bookingSecretBase64Url,
         bookingKeySalt,

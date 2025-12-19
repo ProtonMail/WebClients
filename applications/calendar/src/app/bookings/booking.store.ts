@@ -15,6 +15,18 @@ export type BookingTimeslot = {
     endTime: number;
     timezone: string;
     rrule?: string;
+    detachedSignature: string;
+};
+
+// V1 Crypto model
+export type OldBookingTimeslot = {
+    id: string;
+    // This date is adjusted to the selected timezone of the page. Use this to avoid problems.
+    tzDate: Date;
+    startTime: number;
+    endTime: number;
+    timezone: string;
+    rrule?: string;
     bookingKeyPacket: string;
     detachedSignature: string;
 };

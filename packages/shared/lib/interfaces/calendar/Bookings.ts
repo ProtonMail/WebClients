@@ -56,7 +56,8 @@ export interface InternalBookingPagePayload {
     ModifyTime: number;
 }
 
-export interface BookingSlotConfirmationPayload {
+// V1 Crypto model
+export interface OldBookingSlotConfirmationPayload {
     ContentPart: string;
     TimePart: string;
     AttendeeData: string;
