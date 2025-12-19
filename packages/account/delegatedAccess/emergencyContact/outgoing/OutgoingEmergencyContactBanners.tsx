@@ -1,0 +1,125 @@
+import { c } from 'ttag';
+
+import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import {
+    getReactivateSubscriptionAction,
+    getSubscriptionExpiresDaysLeft,
+    getSubscriptionExpiresText,
+} from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
+import { subscriptionExpires } from '@proton/payments';
+import { SECOND } from '@proton/shared/lib/constants';
+import isBetween from '@proton/utils/isBetween';
+
+import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
+
+const subscriptionDaysLeftBeforeWarning = 7;
+
+const OutgoingSubscriptionExpiredBanner = () => {
+    const {
+        notify,
+        meta: {
+            emergencyContacts: { hasUpsell },
+        },
+    } = useOutgoingController();
+    const [previousSubscription] = usePreviousSubscription();
+    if (!previousSubscription) {
+        return null;
+    }
+
+    const showSubscriptionExpired =
+        /* Checking hasUpsell true for the case when a user downgrades their subscription but they still have emergency access through pass lifetime */
+        hasUpsell &&
+        previousSubscription &&
+        previousSubscription.hasHadSubscription &&
+        isBetween(previousSubscription.previousSubscriptionEndTime * SECOND, 1, Date.now());
+
+    if (!showSubscriptionExpired) {
+        return null;
+    }
+
+    return (
+        <div className="mb-6">
+            <Banner
+                variant="danger"
+                action={
+                    <Button
+                        onClick={() => {
+                            notify({ type: 'upsell' });
+                        }}
+                    >{c('emergency_access').t`Upgrade`}</Button>
+                }
+            >
+                <span className="color-danger text-bold">{c('emergency_access').t`Subscription expired`}.</span>{' '}
+                {c('emergency_access').t`Renew to get emergency access again.`}
+            </Banner>
+        </div>
+    );
+};
+
+const OutgoingSubscriptionExpiresBanner = () => {
+    const [subscription] = useSubscription();
+    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
+    if (!subscriptionExpiresSoon || !subscription) {
+        return null;
+    }
+
+    const subscriptionDaysLeft = getSubscriptionExpiresDaysLeft(expirationDate, new Date());
+    const subscriptionExpiresText = getSubscriptionExpiresText(planName, subscriptionDaysLeft);
+
+    const showSubscriptionExpiring =
+        subscription &&
+        isBetween(subscriptionDaysLeft, 0, subscriptionDaysLeftBeforeWarning) &&
+        subscriptionExpiresSoon;
+
+    if (!showSubscriptionExpiring) {
+        return;
+    }
+
+    const reactivateSubscriptionAction = getReactivateSubscriptionAction(subscription);
+
+    return (
+        <div className="mb-6">
+            <Banner
+                variant="danger-outline"
+                action={
+                    reactivateSubscriptionAction.type === 'external' ? (
+                        <ButtonLike as={Href} href={reactivateSubscriptionAction.href} target="_blank">
+                            {c('emergency_access').t`Enable auto-renew`}
+                        </ButtonLike>
+                    ) : (
+                        <ButtonLike as={SettingsLink} path={reactivateSubscriptionAction.path}>
+                            {c('emergency_access').t`Enable auto-renew`}
+                        </ButtonLike>
+                    )
+                }
+            >
+                <span className="color-danger text-bold">{subscriptionExpiresText}</span>{' '}
+                {c('emergency_access').t`Don't lose emergency access. Enable auto-renew today.`}
+            </Banner>
+        </div>
+    );
+};
+
+const OutgoingEmergencyContactBanners = () => {
+    const { items } = useOutgoingController();
+
+    const hasOutgoingEmergencyContacts = items.emergencyContacts.length > 0;
+    if (!hasOutgoingEmergencyContacts) {
+        return;
+    }
+
+    return (
+        <>
+            <OutgoingSubscriptionExpiresBanner />
+            <OutgoingSubscriptionExpiredBanner />
+        </>
+    );
+};
+
+export default OutgoingEmergencyContactBanners;

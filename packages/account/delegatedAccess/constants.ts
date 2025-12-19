@@ -1,1 +1,1 @@
-export const maxOutgoingDelegatedAccessContacts = 5;
+export const maxOutgoingEmergencyContacts = 5;
