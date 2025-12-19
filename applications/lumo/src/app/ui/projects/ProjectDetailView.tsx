@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -33,6 +33,7 @@ import {
     selectSpaceById,
 } from '../../redux/selectors';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { addSpace, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
@@ -113,6 +114,11 @@ const ProjectDetailViewInner = () => {
     const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
+    
+    // Editable title state
+    const [isEditingTitle, setIsEditingTitle] = useState(false);
+    const [editedTitle, setEditedTitle] = useState('');
+    const titleInputRef = useRef<HTMLInputElement>(null);
 
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
     const conversations = useLumoSelector((state) => selectConversationsBySpaceId(projectId)(state));
@@ -214,6 +220,33 @@ const ProjectDetailViewInner = () => {
         [api, dispatch, projectId, provisionalAttachments, createConversationInProject, history]
     );
 
+    // Derived values - compute before conditional return but may be empty
+    const projectName = space?.projectName || 'Untitled Project';
+    const projectInstructions = space?.projectInstructions || '';
+    const category = getProjectCategory(space?.projectIcon);
+
+    // Title editing handlers - must be defined before conditional return (Rules of Hooks)
+    const handleSaveTitle = useCallback(() => {
+        const trimmedTitle = editedTitle.trim();
+        if (trimmedTitle && trimmedTitle !== projectName && space) {
+            const updatedSpace = {
+                ...space,
+                projectName: trimmedTitle,
+            };
+            dispatch(addSpace(updatedSpace));
+            dispatch(pushSpaceRequest({ id: projectId }));
+        }
+        setIsEditingTitle(false);
+    }, [editedTitle, projectName, space, dispatch, projectId]);
+
+    // Focus input when editing starts
+    useEffect(() => {
+        if (isEditingTitle && titleInputRef.current) {
+            titleInputRef.current.focus();
+            titleInputRef.current.select();
+        }
+    }, [isEditingTitle]);
+
     if (!space || !space.isProject) {
         return (
             <div className="project-detail-not-found flex flex-column items-center justify-center">
@@ -225,10 +258,6 @@ const ProjectDetailViewInner = () => {
             </div>
         );
     }
-
-    const projectName = space.projectName || 'Untitled Project';
-    const projectInstructions = space.projectInstructions || '';
-    const category = getProjectCategory(space.projectIcon);
 
     // Count files for this space (exclude auto-retrieved as they're conversation-specific)
     const fileCount = Object.values(spaceAttachments).filter((att) => !att.error && !att.autoRetrieved).length;
@@ -274,6 +303,21 @@ const ProjectDetailViewInner = () => {
         }
     };
 
+    const handleStartEditingTitle = () => {
+        setEditedTitle(projectName);
+        setIsEditingTitle(true);
+    };
+
+    const handleTitleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSaveTitle();
+        } else if (e.key === 'Escape') {
+            setIsEditingTitle(false);
+            setEditedTitle(projectName);
+        }
+    };
+
     return (
         <div className="project-detail-view flex flex-column">
             {isMobileViewport && (
@@ -311,7 +355,26 @@ const ProjectDetailViewInner = () => {
 
                     <div className="project-detail-title-section flex items-center flex-nowrap w-full">
                         <Icon name={category.icon as any} size={6} className="project-detail-title-icon shrink-0" />
-                        <h1 className="project-detail-title text-2xl text-ellipsis">{projectName}</h1>
+                        {isEditingTitle ? (
+                            <input
+                                ref={titleInputRef}
+                                type="text"
+                                className="project-detail-title-input text-2xl"
+                                value={editedTitle}
+                                onChange={(e) => setEditedTitle(e.target.value)}
+                                onBlur={handleSaveTitle}
+                                onKeyDown={handleTitleKeyDown}
+                                maxLength={100}
+                            />
+                        ) : (
+                            <h1
+                                className="project-detail-title text-2xl text-ellipsis"
+                                onClick={handleStartEditingTitle}
+                                title={c('collider_2025:Action').t`Click to edit title`}
+                            >
+                                {projectName}
+                            </h1>
+                        )}
                         <Button
                             ref={anchorRef}
                             icon
