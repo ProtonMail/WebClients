@@ -63,6 +63,7 @@ export const getRoutes = ({
     showDriveDashboardVariant,
     isAuthenticatorAvailable,
     hasPendingInvitations,
+    isOLESEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -94,6 +95,7 @@ export const getRoutes = ({
             showDriveDashboard,
             showDriveDashboardVariant,
             hasPendingInvitations,
+            isOLESEnabled,
         }),
         mail: getMailAppRoutes({
             app,
@@ -128,6 +130,7 @@ export const getRoutes = ({
             isSharedServerFeatureEnabled,
             isSsoForPbsEnabled,
             isRetentionPoliciesEnabled,
+            isOLESEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

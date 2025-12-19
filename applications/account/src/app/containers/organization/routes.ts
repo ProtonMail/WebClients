@@ -11,9 +11,9 @@ import {
     hasAnyB2bBundle,
     hasBundleBiz2025,
     hasBundlePro2024,
+    hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
-    hasVPNPassProfessional,
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments';
@@ -29,7 +29,11 @@ import {
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
-import { getOrganizationDenomination, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
+import {
+    getOrganizationDenomination,
+    isOrganizationB2B,
+    isOrganizationPassFamily,
+} from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
@@ -47,6 +51,7 @@ interface Props {
     isSharedServerFeatureEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
+    isOLESEnabled?: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -68,6 +73,7 @@ export const getOrganizationAppRoutes = ({
     isSharedServerFeatureEnabled,
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
+    isOLESEnabled,
 }: Props): SidebarConfig => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -90,9 +96,8 @@ export const getOrganizationAppRoutes = ({
     const canShowB2BActivityMonitorEvents = isOrgConfigured && isAdmin;
 
     //vpnbiz2023, and all business bundle plans have the Connection Events feature
-    const hasPlanWithEventLogging = hasVpnBusiness(subscription)
-        || hasAnyB2bBundle(subscription)
-        || hasVPNPassProfessional(subscription);
+    const hasPlanWithEventLogging =
+        hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
     const canShowB2BConnectionEvents =
         canDisplayB2BLogsVPN &&
         hasPlanWithEventLogging &&
@@ -163,10 +168,23 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
+    const showBusinessMigrationSection =
+        isOLESEnabled &&
+        isAdmin &&
+        isOrganizationB2B(organization) &&
+        (hasActiveOrganizationKey || hasActiveOrganization);
+
     return {
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
+            migrationAssistant: {
+                id: 'migration-assistant',
+                text: c('Title').t`Migration assistant`,
+                to: '/migration-assistant',
+                icon: 'arrow-down-to-square',
+                available: showBusinessMigrationSection,
+            },
             users: {
                 id: 'users',
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,

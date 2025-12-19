@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { EmergencyAccessSection } from '@proton/account/delegatedAccess/emergencyAccess/EmergencyAccessSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
+import OLESOnboarding from '@proton/activation/src/oles/components/DashboardGuide/DashboardGuide';
 import type { SectionConfig } from '@proton/components';
 import {
     AccessibilitySection,
@@ -170,6 +171,7 @@ const AccountSettingsRouter = ({
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea config={dashboard}>
+                        <OLESOnboarding />
                         <YourStorageSection app={app} />
                         <YourPlanSection app={app} />
                         <AssistantToggle />
