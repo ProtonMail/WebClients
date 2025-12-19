@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useMediaDeviceSelect, useRoomContext } from '@livekit/components-react';
-import { ConnectionState, Track } from 'livekit-client';
+import type { LocalTrack } from 'livekit-client';
+import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -233,6 +234,70 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         microphoneState.preferredDevice?.deviceId,
         speakerState.preferredDevice?.deviceId,
     ]);
+
+    useEffect(() => {
+        const wasConnectedRef = { current: false };
+        const cleanupInProgressRef = { current: false };
+
+        const handleCleanup = async () => {
+            if (cleanupInProgressRef.current) {
+                return;
+            }
+
+            cleanupInProgressRef.current = true;
+
+            const localParticipant = room.localParticipant;
+
+            try {
+                await Promise.allSettled([
+                    localParticipant.setScreenShareEnabled(false),
+                    localParticipant.setCameraEnabled(false),
+                    localParticipant.setMicrophoneEnabled(false),
+                ]);
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error(error);
+            }
+
+            const tracks = [...localParticipant.trackPublications.values()]
+                .map((pub) => pub.track)
+                .filter((track): track is LocalTrack => !!track);
+
+            tracks.forEach((track) => {
+                try {
+                    track.stop();
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error(error);
+                }
+            });
+
+            cleanupInProgressRef.current = false;
+        };
+
+        const handleConnected = () => {
+            wasConnectedRef.current = true;
+        };
+
+        const handleDisconnected = () => {
+            if (!wasConnectedRef.current) {
+                return;
+            }
+
+            wasConnectedRef.current = false;
+            void handleCleanup();
+        };
+
+        room.on(RoomEvent.Connected, handleConnected);
+        room.on(RoomEvent.Disconnected, handleDisconnected);
+
+        return () => {
+            room.off(RoomEvent.Connected, handleConnected);
+            room.off(RoomEvent.Disconnected, handleDisconnected);
+
+            void handleCleanup();
+        };
+    }, []);
 
     return (
         <MediaManagementContext.Provider
