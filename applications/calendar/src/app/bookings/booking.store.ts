@@ -45,6 +45,7 @@ export type BookingDetails = {
     inviterDisplayName?: string;
     inviterEmail: string;
     withProtonMeetLink: boolean;
+    version: 1 | 2;
 };
 
 interface BookingStore {
