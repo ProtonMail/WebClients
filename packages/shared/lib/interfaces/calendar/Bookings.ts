@@ -4,8 +4,6 @@ export interface BookingPageSlotsPayload {
     Timezone: string;
     RRule: string | null;
     DetachedSignature: string;
-    BookingKeyPacket: string;
-    SharedKeyPacket: string;
 }
 
 export interface BookingPageCreationPayload {
@@ -14,12 +12,14 @@ export interface BookingPageCreationPayload {
     BookingKeySalt: string;
     EncryptedSecret: string;
     EncryptedContent: string;
+    CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
 }
 
 export interface BookingPageEditPayload {
     EncryptedContent: string;
     EncryptedSecret: string;
+    CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
 }
 
