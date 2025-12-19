@@ -34,7 +34,11 @@ import {
     getIsGlobalSSOAccount,
     getIsSSOVPNOnlyAccount,
 } from '@proton/shared/lib/keys';
-import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
+import {
+    getOrganizationDenomination,
+    isOrganizationB2B,
+    isOrganizationVisionary,
+} from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type {
     DriveDashboardVariant,
@@ -93,9 +97,15 @@ function getV1DashboardSections(
     cancellablePlan: boolean,
     subscription: Subscription | undefined,
     cancellableOnlyViaSupport: boolean,
-    hasExternalMemberCapableB2BPlan: boolean
+    hasExternalMemberCapableB2BPlan: boolean,
+    showBusinessActivation: boolean,
 ) {
     return [
+        {
+            text: c('Title').t`Finish setting up your business account`,
+            id: 'business-activation',
+            available: showBusinessActivation,
+        },
         // do not show Your Plan section for Pass users
         {
             text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
@@ -190,6 +200,7 @@ export const getAccountAppRoutes = ({
     showPassDashboard,
     showDriveDashboard,
     hasPendingInvitations,
+    isOLESEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -223,6 +234,7 @@ export const getAccountAppRoutes = ({
     showDriveDashboard: boolean;
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
     hasPendingInvitations: boolean;
+    isOLESEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
@@ -282,6 +294,9 @@ export const getAccountAppRoutes = ({
 
     // As VPN dashboard has its own route for v2 dashboard, we need to check for APP and Feature flag to decide between v1 vs v2 dashboard
     const isVPNDashboardEnabled = app === APPS.PROTONVPN_SETTINGS && showVPNDashboard;
+
+    // Show B2B onboarding to admins of B2B orgs when OLES is available
+    const showBusinessActivation = isOLESEnabled && isOrganizationB2B(organization) && isAdmin;
 
     return <const>{
         available: true,
@@ -344,7 +359,8 @@ export const getAccountAppRoutes = ({
                           cancellablePlan,
                           subscription,
                           cancellableOnlyViaSupport,
-                          hasExternalMemberCapableB2BPlan
+                          hasExternalMemberCapableB2BPlan,
+                          showBusinessActivation
                       ),
             },
             subscription: {
