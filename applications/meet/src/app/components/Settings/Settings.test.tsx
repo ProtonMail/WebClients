@@ -50,6 +50,7 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
         preloadedState: {
             meetSettings: {
                 disableVideos: false,
+                participantsWithDisabledVideos: [],
                 selfView: true,
                 meetingLocked: false,
                 pipEnabled: true,

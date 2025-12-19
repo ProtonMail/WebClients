@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
+import type { RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -101,6 +102,21 @@ export function useCurrentScreenShare({
             }
         };
     }, [screenShareTrack?.publication?.trackSid]);
+
+    useEffect(() => {
+        const handleTrackPublished = (publication: RemoteTrackPublication) => {
+            if (publication.source === Track.Source.ScreenShare) {
+                publication.setSubscribed(true);
+                publication.setEnabled(true);
+            }
+        };
+
+        room.on('trackPublished', handleTrackPublished);
+
+        return () => {
+            room.off('trackPublished', handleTrackPublished);
+        };
+    }, []);
 
     return {
         isLocalScreenShare,

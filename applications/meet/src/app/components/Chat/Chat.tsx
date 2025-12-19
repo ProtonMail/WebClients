@@ -35,7 +35,7 @@ export const Chat = () => {
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
-    const { sortedParticipants } = useMeetContext();
+    const { sortedParticipantsMap } = useMeetContext();
 
     const sendMessage = useChatMessage();
 
@@ -85,9 +85,7 @@ export const Chat = () => {
     }, [sideBarState[MeetingSideBars.Chat]]);
 
     const colors = meetingRoomUpdates.map((item) =>
-        getParticipantDisplayColors(
-            sortedParticipants.find((p) => p.identity === item.identity) as LocalParticipant | RemoteParticipant
-        )
+        getParticipantDisplayColors(sortedParticipantsMap.get(item.identity) as RemoteParticipant | LocalParticipant)
     );
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
