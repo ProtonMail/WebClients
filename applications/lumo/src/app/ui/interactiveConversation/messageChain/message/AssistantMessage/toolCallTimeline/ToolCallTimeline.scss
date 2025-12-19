@@ -39,6 +39,15 @@
 	&:first-child::after {
 		opacity: 0;
 	}
+
+	// Single item: no circle, no padding
+	&--single {
+		padding-left: 0;
+
+		.tool-call-circle {
+			display: none;
+		}
+	}
 }
 
 .tool-call-circle {

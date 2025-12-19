@@ -8,6 +8,7 @@ interface ToolCallTimelineItemProps {
     toolCall: ToolCallData;
     isInProgress: boolean;
     isLast: boolean;
+    isSingleItem: boolean;
 }
 
 /**
@@ -37,12 +38,12 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
     }
 }
 
-const ToolCallTimelineItemComponent = ({ toolCall, isInProgress }: ToolCallTimelineItemProps) => {
+const ToolCallTimelineItemComponent = ({ toolCall, isInProgress, isSingleItem }: ToolCallTimelineItemProps) => {
     const [presentLabel, pastLabel] = getToolCallLabel(toolCall);
     const label = isInProgress ? presentLabel : pastLabel;
 
     return (
-        <div className="tool-call-timeline-item">
+        <div className={clsx('tool-call-timeline-item', isSingleItem && 'tool-call-timeline-item--single')}>
             {/* Circle indicator */}
             <div className={clsx('tool-call-circle', isInProgress && 'tool-call-circle--in-progress')} />
 
@@ -68,6 +69,8 @@ interface ToolCallTimelineProps {
 export const ToolCallTimeline = ({ toolCalls }: ToolCallTimelineProps) => {
     if (toolCalls.length === 0) return null;
 
+    const isSingleItem = toolCalls.length === 1;
+
     return (
         <div className="tool-call-timeline">
             {toolCalls.map((item, idx) => (
@@ -76,6 +79,7 @@ export const ToolCallTimeline = ({ toolCalls }: ToolCallTimelineProps) => {
                     toolCall={item.toolCall}
                     isInProgress={item.isInProgress}
                     isLast={idx === toolCalls.length - 1}
+                    isSingleItem={isSingleItem}
                 />
             ))}
         </div>
