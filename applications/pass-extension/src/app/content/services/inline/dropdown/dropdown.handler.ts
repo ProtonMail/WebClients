@@ -1,5 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
+import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
 
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -57,23 +58,23 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const onFocusChange = onFocusChangeFactory(dropdown, request);
                 const onKeyDown = (evt: KeyboardEvent) => evt.key === 'Escape' && close();
 
-                const scrollParent = form?.scrollParent;
-                const scrollOptions = { capture: true, once: true, passive: true } as const;
+                const parent = form?.scrollParent;
 
                 /** Auto-close listeners for dropdown lifecycle:
                  * - resize/scroll: immediate close on layout changes
                  * - popstate/hashchange/beforeunload: close on navigation
                  * - focus/blur: conditional close (see: `dropdown.utils.ts`) */
                 listeners.addListener(window, 'resize', close, { once: true, passive: true });
-                listeners.addListener(window, 'scroll', close, scrollOptions);
+                listeners.addListener(window, 'scroll', onActualScroll(window, close), SCROLL_OPTIONS);
                 listeners.addListener(window, 'popstate', close);
                 listeners.addListener(window, 'hashchange', close);
                 listeners.addListener(window, 'beforeunload', close);
                 listeners.addListener(window, 'focus', onFocusChange);
                 listeners.addListener(window, 'blur', onFocusChange);
                 listeners.addListener(window, 'mousedown', onBackdropClick(getAnchorField, close));
-                listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
                 listeners.addListener(document, 'keydown', onKeyDown);
+
+                if (parent) listeners.addListener(parent, 'scroll', onActualScroll(parent, close), SCROLL_OPTIONS);
 
                 /** Dropdown app may be closed from within its internal
                  * lifecycle. In such cases clean-up listeners. */
