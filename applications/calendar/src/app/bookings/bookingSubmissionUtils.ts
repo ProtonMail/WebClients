@@ -270,7 +270,7 @@ export const prepareBookingSubmission = async ({
         dtstart,
         dtend,
         component: 'vevent',
-        'x-pm-BookingUID': { value: bookingDetails.bookingUid },
+        'x-pm-BookingUID': { value: bookingDetails.bookingUID },
         sequence: { value: 0 },
         // TODO add frequencyProperties (rrule) once we support recurring events
         // TODO check if we need to support valarmComponents

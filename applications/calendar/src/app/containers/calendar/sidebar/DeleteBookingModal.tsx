@@ -10,12 +10,12 @@ import { useCalendarDispatch } from '../../../store/hooks';
 import { deleteBookingPageThunk } from '../../../store/internalBooking/interalBookingSlice';
 
 interface Props extends ModalProps {
-    bookingId: string;
+    bookingUID: string;
     onResolve: () => void;
     onReject: () => void;
 }
 
-export const DeleteBookingModal = ({ bookingId, onReject, onResolve, ...rest }: Props) => {
+export const DeleteBookingModal = ({ bookingUID, onReject, onResolve, ...rest }: Props) => {
     const [loading, withLoading] = useLoading(false);
     const dispatch = useCalendarDispatch();
     const { createNotification } = useNotifications();
@@ -25,7 +25,7 @@ export const DeleteBookingModal = ({ bookingId, onReject, onResolve, ...rest }: 
     };
 
     const handleSubmit = async () => {
-        await withLoading(dispatch(deleteBookingPageThunk(bookingId)));
+        await withLoading(dispatch(deleteBookingPageThunk(bookingUID)));
         createNotification({ type: 'success', text: c('Info').t`Booking page deleted` });
         onResolve();
         rest.onClose?.();

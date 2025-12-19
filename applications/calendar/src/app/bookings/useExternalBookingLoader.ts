@@ -194,7 +194,7 @@ export const useExternalBookingLoader = () => {
                         bookingSecretBytes,
                         bookingKeySalt: bookingPageData.BookingKeySalt,
                         calendarId: bookingPageData.CalendarID,
-                        bookingUid: bookingPageData.BookingUID,
+                        bookingUID: bookingPageData.BookingUID,
                         verificationPreferences,
                     });
 
@@ -202,7 +202,7 @@ export const useExternalBookingLoader = () => {
 
                 setBookingDetails({
                     calendarId: bookingPageData.CalendarID,
-                    bookingUid: bookingPageData.BookingUID,
+                    bookingUID: bookingPageData.BookingUID,
                     summary,
                     description,
                     location,

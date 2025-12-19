@@ -81,14 +81,14 @@ export const decryptBookingContent = async ({
     bookingSecretBytes,
     bookingKeySalt,
     calendarId,
-    bookingUid,
+    bookingUID,
     verificationPreferences,
 }: {
     encryptedContent: string;
     bookingSecretBytes: Uint8Array<ArrayBuffer>;
     bookingKeySalt: string;
     calendarId: string;
-    bookingUid: string;
+    bookingUID: string;
     verificationPreferences: VerificationPreferences | null;
 }): Promise<{
     summary: string;
@@ -110,7 +110,7 @@ export const decryptBookingContent = async ({
         verificationKeys: verificationPreferences?.verifyingKeys,
         signatureContext:
             verificationPreferences && verificationPreferences.verifyingKeys.length > 0
-                ? { required: true, value: bookingContentSignatureContextValue(bookingUid) }
+                ? { required: true, value: bookingContentSignatureContextValue(bookingUID) }
                 : undefined,
     });
 
@@ -123,7 +123,7 @@ export const decryptBookingContent = async ({
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
             type: 'encryptedContent',
             verificationErrors,
-            bookingUID: bookingUid,
+            bookingUID,
         });
 
         failedToVerify = true;
