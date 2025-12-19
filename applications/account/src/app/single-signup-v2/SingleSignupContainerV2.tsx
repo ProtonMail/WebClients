@@ -80,7 +80,7 @@ import type {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
-import { getPlanIDsFromParams } from '../signup/searchParams';
+import { getPlanIDsFromParamsWithForcedAddons } from '../signup/searchParams';
 import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import {
@@ -281,7 +281,13 @@ const SingleSignupContainerV2 = ({
             isNewB2BPlanEnabled,
         });
 
-        const planParameters = getPlanIDsFromParams(plans, 'CHF', signupParameters, signupConfiguration.defaults);
+        const planParameters = getPlanIDsFromParamsWithForcedAddons({
+            plans,
+            currency,
+            signupParameters,
+            defaults: signupConfiguration.defaults,
+            plansMap,
+        });
         const planIDs = planParameters.planIDs;
 
         const billingAddress = {
@@ -552,12 +558,20 @@ const SingleSignupContainerV2 = ({
                 signupParameters,
                 api: silentApi,
             });
-            const planParameters = getPlanIDsFromParams(plans, currency, modifiedSignupParameters, defaults);
+
             const cycle = modifiedSignupParameters.cycle || defaults.cycle;
             const invite = modifiedSignupParameters.invite;
             const coupon = modifiedSignupParameters.coupon;
 
             const plansMap = getPlansMap(plans, currency, false);
+
+            const planParameters = getPlanIDsFromParamsWithForcedAddons({
+                plans,
+                currency,
+                signupParameters: modifiedSignupParameters,
+                defaults,
+                plansMap,
+            });
 
             sendSignupLoadTelemetry({
                 planIDs: planParameters.planIDs,
@@ -881,12 +895,13 @@ const SingleSignupContainerV2 = ({
                     return {
                         cycle: signupParameters.cycle ?? modelCycle,
                         currency: signupParameters.currency ?? modelCurrency,
-                        planIDs: getPlanIDsFromParams(
-                            model.plans,
-                            model.subscriptionData.currency,
+                        planIDs: getPlanIDsFromParamsWithForcedAddons({
+                            plans: model.plans,
+                            currency: model.subscriptionData.currency,
                             signupParameters,
-                            signupConfiguration.defaults
-                        ).planIDs,
+                            defaults: signupConfiguration.defaults,
+                            plansMap: model.plansMap,
+                        }).planIDs,
                     };
                 } else {
                     return {
