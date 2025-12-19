@@ -23,15 +23,21 @@ const manifestPath = path.resolve(__dirname, manifest);
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 const version = getManifestVersion();
 
+/**
+ * - chrome 140 = 1.2% of chrome users
+ * - firefox 140 = 2.7% of firefox users
+ * - safari 17 = 3.8% of safari users
+ * - measured on 19/12/2025
+ */
 const options: Partial<ProtonPackOptions> = {
     browserslist: (() => {
         switch (BUILD_TARGET) {
             case 'chrome':
-                return dev ? 'last 1 chrome version' : 'Chrome 102';
+                return dev ? 'last 1 chrome version' : 'Chrome 140';
             case 'firefox':
-                return dev ? 'last 1 firefox version' : 'Firefox 109';
+                return dev ? 'last 1 firefox version' : 'Firefox 140';
             case 'safari':
-                return dev ? 'last 1 safari version' : 'Safari 16';
+                return dev ? 'last 1 safari version' : 'Safari 17';
             default:
                 '';
         }
