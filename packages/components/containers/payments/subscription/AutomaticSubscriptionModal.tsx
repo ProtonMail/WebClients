@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
-import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -194,7 +193,6 @@ const AutomaticSubscriptionModal = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [loadingPreviousSubscription] = usePreviousSubscription();
 
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
@@ -215,7 +213,6 @@ const AutomaticSubscriptionModal = () => {
             loadingPlans ||
             loadingSubscription ||
             loadingModal ||
-            loadingPreviousSubscription ||
             loadingPaymentStatus ||
             !paymentStatus
         ) {
@@ -336,7 +333,7 @@ const AutomaticSubscriptionModal = () => {
 
             openSubscriptionModal(openProps);
         }
-    }, [loadingPlans, loadingSubscription, loadingModal, loadingPreviousSubscription, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 
     const tmp = tmpProps.current;
 
