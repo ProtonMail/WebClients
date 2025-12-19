@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
+import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -11,11 +11,12 @@ import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
+import { useCameraTrackSubscriptionCache } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionCacheProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { useMeetSelector } from '../../store/hooks';
-import { selectMeetSettings } from '../../store/slices/settings';
+import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '../../store/slices/settings';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
@@ -25,12 +26,6 @@ interface ParticipantTileProps {
     participant: Participant;
     viewSize?: 'small' | 'medium' | 'large';
 }
-
-const getCameraVideoPublication = (participant: Participant) => {
-    return Array.from(participant.trackPublications.values()).find(
-        (pub) => pub.kind === Track.Kind.Video && pub.source !== Track.Source.ScreenShare && pub.track
-    );
-};
 
 const audioIconSize = {
     small: '1.5rem',
@@ -51,19 +46,31 @@ const indicatorSizeBySize = {
 };
 
 export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
+    const { participantNameMap, displayName } = useMeetContext();
+    const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
+    const { register, unregister } = useCameraTrackSubscriptionCache();
+
     const { localParticipant } = useLocalParticipant();
-    const { participantNameMap, participantsWithDisabledVideos, displayName } = useMeetContext();
+
+    const isSpeaking = useDebouncedSpeakingStatus(participant);
+
     const { facingMode } = useMediaManagementContext();
-    const cameraVideoPublication = getCameraVideoPublication(participant);
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
-    const videoRef = useRef<HTMLVideoElement>();
+    // Use useParticipantTracks to get camera tracks for this specific participant
+    // This properly subscribes to track state changes
+    const cameraTrackRefs = useParticipantTracks([Track.Source.Camera], participant.identity);
+    const cameraTrackRef = cameraTrackRefs[0];
+    const cameraVideoPublication = cameraTrackRef?.publication;
 
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
     );
 
-    const audioIsOn = audioPublication ? !audioPublication.isMuted : false;
+    const audioIsOn = audioPublication?.track && !audioPublication?.track?.isMuted;
+
+    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColors(participant);
+
     const shouldShowVideo =
         !!cameraVideoPublication &&
         !!cameraVideoPublication.track &&
@@ -71,33 +78,24 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
         ((!disableVideos && !participantsWithDisabledVideos.includes(participant.identity)) ||
             participant.identity === localParticipant.identity);
 
-    const isSpeaking = useDebouncedSpeakingStatus(participant);
-
-    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColors(participant);
-
     const speakingIndicatorClassName =
         (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) +
         (viewSize === 'large' ? '' : '-small');
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
-    const participantNameFallback =
-        participant.identity === localParticipant.identity ? displayName : c('Info').t`Loading...`;
+    const participantName =
+        participantNameMap[participant.identity] ?? (isLocalParticipant ? displayName : c('Info').t`Loading...`);
 
-    const participantName = participantNameMap[participant.identity] ?? participantNameFallback;
-
+    // Queue-based subscription: ParticipantTile enqueues work by registering the remote publication.
+    // Provider is responsible for subscribing/enabling/quality selection & stuck resets.
     useEffect(() => {
-        const videoElement = videoRef.current;
-        if (videoElement && cameraVideoPublication?.track) {
-            cameraVideoPublication.track.attach(videoElement);
-        }
-
+        register(cameraVideoPublication, participant.identity);
         return () => {
-            if (videoElement && cameraVideoPublication?.track) {
-                cameraVideoPublication.track.detach(videoElement);
-            }
+            unregister(cameraVideoPublication);
         };
-    }, [cameraVideoPublication?.track?.sid, shouldShowVideo]);
+        // Intentionally track sid so we cleanup/re-register on publication changes.
+    }, [cameraVideoPublication?.trackSid, participant.identity, register, unregister]);
 
     return (
         <div
@@ -148,10 +146,11 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
             {shouldShowVideo ? (
                 <>
                     <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                    <video
+                    <VideoTrack
+                        key={cameraVideoPublication?.trackSid}
                         className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
-                        ref={(el) => (videoRef.current = el ?? undefined)}
+                        trackRef={cameraTrackRef}
+                        manageSubscription={false}
                         muted={participant.isLocal}
                         style={{
                             transform:
@@ -159,6 +158,8 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                                     ? 'scaleX(-1)'
                                     : undefined,
                         }}
+                        autoPlay={true}
+                        playsInline={true}
                     />
                 </>
             ) : (

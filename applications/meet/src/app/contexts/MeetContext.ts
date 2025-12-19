@@ -1,7 +1,6 @@
 import { createContext, useContext } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
-import { VideoQuality } from 'livekit-client';
 import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
 
 import { PAGE_SIZE } from '../constants';
@@ -20,9 +19,7 @@ export interface MeetContextValues {
     maxParticipants: number;
     paidUser: boolean;
     page: number;
-    quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;
-    setQuality: (quality: VideoQuality) => void;
     roomName: string;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
@@ -37,8 +34,6 @@ export interface MeetContextValues {
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
-    participantsWithDisabledVideos: string[];
-    setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
     displayName: string;
     sortedParticipants: (RemoteParticipant | LocalParticipant)[];
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
@@ -65,6 +60,7 @@ export interface MeetContextValues {
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
     decryptionErrorLogs: DecryptionErrorLog[];
+    sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -73,9 +69,7 @@ export const MeetContext = createContext<MeetContextValues>({
     maxParticipants: 0,
     paidUser: false,
     page: 0,
-    quality: VideoQuality.HIGH,
     setPage: () => {},
-    setQuality: () => {},
     roomName: '',
     resolution: null,
     setResolution: () => {},
@@ -90,8 +84,6 @@ export const MeetContext = createContext<MeetContextValues>({
     participantsMap: {},
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
-    participantsWithDisabledVideos: [],
-    setParticipantsWithDisabledVideos: () => {},
     displayName: '',
     sortedParticipants: [],
     pagedParticipants: [],
@@ -118,6 +110,7 @@ export const MeetContext = createContext<MeetContextValues>({
     isRecordingInProgress: false,
     getKeychainIndexInformation: () => [],
     decryptionErrorLogs: [],
+    sortedParticipantsMap: new Map(),
 });
 
 export const useMeetContext = () => {

@@ -1,20 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { VideoQuality } from 'livekit-client';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
-import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
-import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
-import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { DecryptionErrorLog, KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 interface MeetContainerProps {
@@ -48,9 +44,29 @@ interface MeetContainerProps {
     isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
     decryptionErrorLogs: DecryptionErrorLog[];
+    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
+    pagedParticipants: (RemoteParticipant | LocalParticipant)[];
+    sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
+    pageCount: number;
+    pagedParticipantsWithoutSelfView: (RemoteParticipant | LocalParticipant)[];
+    pageCountWithoutSelfView: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    setPageSize: React.Dispatch<React.SetStateAction<number>>;
+    page: number;
+    pageSize: number;
 }
 
 export const MeetContainer = ({
+    sortedParticipants,
+    sortedParticipantsMap,
+    pagedParticipants,
+    pageCount,
+    pagedParticipantsWithoutSelfView,
+    pageCountWithoutSelfView,
+    setPage,
+    setPageSize,
+    page,
+    pageSize,
     locked,
     maxDuration,
     maxParticipants,
@@ -82,29 +98,9 @@ export const MeetContainer = ({
     getKeychainIndexInformation,
     decryptionErrorLogs,
 }: MeetContainerProps) => {
-    const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
-    const [page, setPage] = useState(0);
-
-    const isLargerThanMd = useIsLargerThanMd();
-    const isNarrowHeight = useIsNarrowHeight();
-
-    const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
 
     const participantEvents = useParticipantEvents(participantNameMap);
-
-    const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
-
-    const {
-        sortedParticipants,
-        pagedParticipants,
-        pageCount,
-        pagedParticipantsWithoutSelfView,
-        pageCountWithoutSelfView,
-    } = useSortedParticipants({
-        page,
-        pageSize,
-    });
 
     const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
         participantNameMap,
@@ -145,10 +141,13 @@ export const MeetContainer = ({
             >
                 <MeetContext.Provider
                     value={{
-                        page,
-                        quality,
+                        sortedParticipants,
+                        pagedParticipants,
+                        pageCount,
+                        pagedParticipantsWithoutSelfView,
+                        pageCountWithoutSelfView,
                         setPage,
-                        setQuality,
+                        setPageSize,
                         roomName,
                         resolution,
                         setResolution,
@@ -156,19 +155,14 @@ export const MeetContainer = ({
                         chatMessages,
                         setChatMessages,
                         participantEvents,
-                        pageSize,
-                        setPageSize,
                         handleLeave: leaveWithStopRecording,
                         handleEndMeeting: endMeetingWithStopRecording,
                         participantsMap,
                         participantNameMap,
                         getParticipants,
-                        participantsWithDisabledVideos,
-                        setParticipantsWithDisabledVideos,
                         displayName,
-                        sortedParticipants,
-                        pagedParticipants,
-                        pageCount,
+                        page,
+                        pageSize,
                         passphrase,
                         guestMode,
                         mlsGroupState,
@@ -187,14 +181,13 @@ export const MeetContainer = ({
                         maxDuration,
                         maxParticipants,
                         instantMeeting,
-                        pagedParticipantsWithoutSelfView,
-                        pageCountWithoutSelfView,
                         assignHost,
                         paidUser,
                         keyRotationLogs,
                         isRecordingInProgress,
                         getKeychainIndexInformation,
                         decryptionErrorLogs,
+                        sortedParticipantsMap,
                     }}
                 >
                     <MeetingBody

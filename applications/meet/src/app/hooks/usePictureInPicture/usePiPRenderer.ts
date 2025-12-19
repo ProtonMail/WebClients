@@ -23,10 +23,21 @@ export function usePiPRenderer() {
             videoElement.playsInline = true;
             videoElement.crossOrigin = 'anonymous';
 
-            // Use track.attach() method instead of directly accessing mediaStreamTrack
+            videoElementsRef.current.set(trackId, videoElement);
+        }
+
+        const hasMediaTrack = !!track.mediaStreamTrack;
+        const currentStream = videoElement.srcObject as MediaStream | null;
+        const isAttached = currentStream?.getTracks().includes(track.mediaStreamTrack!);
+
+        if (hasMediaTrack && !isAttached) {
+            if (currentStream) {
+                track.detach(videoElement);
+            }
+
+            // Attach the track
             track.attach(videoElement);
 
-            // ensure video starts playing and stays playing
             const playVideo = async () => {
                 try {
                     if (videoElement) {
@@ -38,9 +49,11 @@ export function usePiPRenderer() {
                 }
             };
 
-            videoElement.addEventListener('canplay', playVideo, { once: true });
-
-            videoElementsRef.current.set(trackId, videoElement);
+            if (videoElement.readyState >= 2) {
+                void playVideo();
+            } else {
+                videoElement.addEventListener('canplay', playVideo, { once: true });
+            }
         }
 
         return videoElement;

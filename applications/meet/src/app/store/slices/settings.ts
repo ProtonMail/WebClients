@@ -14,6 +14,7 @@ interface MeetExtraThunkArguments extends ProtonThunkArguments {
 
 export interface MeetSettingsState {
     disableVideos: boolean;
+    participantsWithDisabledVideos: string[];
     selfView: boolean;
     meetingLocked: boolean;
     pipEnabled: boolean;
@@ -21,6 +22,7 @@ export interface MeetSettingsState {
 
 const initialState: MeetSettingsState = {
     disableVideos: false,
+    participantsWithDisabledVideos: [],
     selfView: true,
     meetingLocked: false,
     pipEnabled: true,
@@ -64,6 +66,9 @@ const slice = createSlice({
         setDisableVideos: (state, action: PayloadAction<boolean>) => {
             state.disableVideos = action.payload;
         },
+        setParticipantsWithDisabledVideos: (state, action: PayloadAction<string[]>) => {
+            state.participantsWithDisabledVideos = action.payload;
+        },
         setSelfView: (state, action: PayloadAction<boolean>) => {
             state.selfView = action.payload;
         },
@@ -81,8 +86,11 @@ const slice = createSlice({
     },
 });
 
-export const { setDisableVideos, setSelfView, setMeetingLocked, setPipEnabled } = slice.actions;
+export const { setDisableVideos, setParticipantsWithDisabledVideos, setSelfView, setMeetingLocked, setPipEnabled } =
+    slice.actions;
 
 export const selectMeetSettings = (state: MeetState) => state.meetSettings;
+export const selectParticipantsWithDisabledVideos = (state: MeetState) =>
+    state.meetSettings.participantsWithDisabledVideos;
 
 export const settingsReducer = { meetSettings: slice.reducer };
