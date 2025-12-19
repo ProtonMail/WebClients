@@ -10,7 +10,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { useApi, useModalState, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
@@ -67,37 +67,50 @@ const getPromptKeyPinningType = ({
     const isAttachedKeyPinned =
         firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key));
 
-    if (
-        verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID ||
-        verificationStatus === MAIL_VERIFICATION_STATUS.NOT_VERIFIED
-    ) {
-        if (!signingPublicKey) {
-            if (firstAttachedPublicKey) {
-                return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
-            }
+    switch (verificationStatus) {
+        case undefined:
             return;
+        case MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID: {
+            // with KT enabled, verification will succeed even with no pinned keys;
+            // we still want to prompt for key pinning if the user has opted-in for that
+            const signingFingerprint = signingPublicKey!.getFingerprint();
+            const isSigningKeyPinned = senderPinnedKeys.find((key) => key.getFingerprint() === signingFingerprint);
+            if (!isSigningKeyPinned && PromptPin) {
+                return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
+            }
         }
-        const signingFingerprint = signingPublicKey.getFingerprint();
-        if (senderHasPinnedKeys) {
-            if (senderPinnableKeys.find((key) => key.getFingerprint() === signingFingerprint)) {
-                // TODO: Exclude case where signature is invalid due to message modification (cf. OpenPGP.js v5)
-                return PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
-            } else {
+        case MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID:
+        case MAIL_VERIFICATION_STATUS.NOT_VERIFIED: {
+            if (!signingPublicKey) {
+                if (firstAttachedPublicKey) {
+                    return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
+                }
                 return;
             }
+            const signingFingerprint = signingPublicKey.getFingerprint();
+            if (senderHasPinnedKeys) {
+                if (senderPinnableKeys.find((key) => key.getFingerprint() === signingFingerprint)) {
+                    // TODO: Exclude case where signature is invalid due to message modification (cf. OpenPGP.js v5)
+                    return PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
+                } else {
+                    return;
+                }
+            }
+            if (isSignedByAttachedKey) {
+                return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
+            }
+            if (PromptPin) {
+                return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
+            }
         }
-        if (isSignedByAttachedKey) {
-            return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED_SIGNING;
+        case MAIL_VERIFICATION_STATUS.NOT_SIGNED: {
+            if (!firstAttachedPublicKey || isAttachedKeyPinned) {
+                return;
+            }
+            return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
         }
-        if (PromptPin) {
-            return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
-        }
-    }
-    if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
-        if (!firstAttachedPublicKey || isAttachedKeyPinned) {
-            return;
-        }
-        return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
+        default:
+            throw new Error('Unknown verification status');
     }
 };
 
@@ -194,7 +207,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <Banner
             variant="norm-outline"
-            icon={<IcExclamationTriangleFilled className="color-danger" />}
+            icon={<IcInfoCircleFilled className="color-info" />}
             link={
                 promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                     <InlineLinkButton
