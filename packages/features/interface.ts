@@ -91,43 +91,6 @@ export enum FeatureCode {
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
     BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
 
-    // Black Friday 2025
-    OfferBlackFriday2025InboxFreeYearly = 'OfferBlackFriday2025InboxFreeYearly',
-    OfferBlackFriday2025InboxFreeMonthly = 'OfferBlackFriday2025InboxFreeMonthly',
-    OfferBlackFriday2025InboxPlusMonthly = 'OfferBlackFriday2025InboxPlusMonthly',
-    OfferBlackFriday2025InboxPlusYearly = 'OfferBlackFriday2025InboxPlusYearly',
-    OfferBlackFriday2025InboxPlusYearlyExperiment = 'OfferBlackFriday2025InboxPlusYearlyExperiment',
-    OfferBlackFriday2025InboxPlusYearlyExperiment2 = 'OfferBlackFriday2025InboxPlusYearlyExperiment2',
-    OfferBlackFriday2025Unlimited = 'OfferBlackFriday2025Unlimited',
-    OfferBlackFriday2025Duo = 'OfferBlackFriday2025Duo',
-    OfferBlackFriday2025FamilyMonthly = 'OfferBlackFriday2025FamilyMonthly',
-
-    BlackFridayWave2InboxExperiment = 'BlackFridayWave2InboxExperiment',
-    BlackFridayWave2VPNExperiment = 'BlackFridayWave2VPNExperiment',
-
-    OfferBlackFriday2025VPNFreeYearly = 'OfferBlackFriday2025VPNFreeYearly',
-    OfferBlackFriday2025VPNFreeMonthly = 'OfferBlackFriday2025VPNFreeMonthly',
-    OfferBlackFriday2025VPNPlusMonthly = 'OfferBlackFriday2025VPNPlusMonthly',
-    OfferBlackFriday2025VPNPlusMonthly2 = 'OfferBlackFriday2025VPNPlusMonthly2',
-    OfferBlackFriday2025VPNPlusYearly = 'OfferBlackFriday2025VPNPlusYearly',
-    OfferBlackFriday2025VPNPlusYearlyExperiment = 'OfferBlackFriday2025VPNPlusYearlyExperiment',
-    OfferBlackFriday2025VPNPlusYearlyExperiment2 = 'OfferBlackFriday2025VPNPlusYearlyExperiment2',
-    OfferBlackFriday2025VPNPlusTwoYear = 'OfferBlackFriday2025VPNPlusTwoYear',
-
-    OfferBlackFriday2025DriveFreeYearly = 'OfferBlackFriday2025DriveFreeYearly',
-    OfferBlackFriday2025DriveFreeMonthly = 'OfferBlackFriday2025DriveFreeMonthly',
-    OfferBlackFriday2025DrivePlusMonthly = 'OfferBlackFriday2025DrivePlusMonthly',
-    OfferBlackFriday2025DrivePlusYearly = 'OfferBlackFriday2025DrivePlusYearly',
-
-    OfferBlackFriday2025PassFreeYearly = 'OfferBlackFriday2025PassFreeYearly',
-    OfferBlackFriday2025PassFreeMonthly = 'OfferBlackFriday2025PassFreeMonthly',
-    OfferBlackFriday2025PassPlusMonthly = 'OfferBlackFriday2025PassPlusMonthly',
-    OfferBlackFriday2025PassPlusMonthly2 = 'OfferBlackFriday2025PassPlusMonthly2',
-    OfferBlackFriday2025PassPlusYearly = 'OfferBlackFriday2025PassPlusYearly',
-
-    OfferBlackFriday2025LumoFreeYearly = 'OfferBlackFriday2025LumoFreeYearly',
-    OfferBlackFriday2025LumoPlusMonthly = 'OfferBlackFriday2025LumoPlusMonthly',
-
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
