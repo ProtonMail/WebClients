@@ -28,6 +28,7 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
     const [streamId] = useState<string>(() => uuidv4());
     const swTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [isBrokenVideo, setIsBrokenVideo] = useState(false);
+    const [isServiceWorkerReady, setIsServiceWorkerReady] = useState(false);
 
     const isServiceWorkerAvailable = useMemo(() => 'serviceWorker' in navigator, []);
     const isStreamableVideo = useMemo(() => {
@@ -95,6 +96,7 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
                     clearTimeout(swTimeoutRef.current);
                     swTimeoutRef.current = null;
                 }
+                setIsServiceWorkerReady(true);
             })
             .catch((err) => {
                 handleBrokenVideo(err);
@@ -174,10 +176,21 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
         };
     }, [nodeUid, isStreamableVideo]);
 
-    return isStreamableVideo
-        ? {
-              url: `/sw/stream/${streamId}`,
-              onVideoPlaybackError: handleBrokenVideo,
-          }
-        : undefined;
+    if (!isStreamableVideo) {
+        return undefined;
+    }
+
+    if (!isServiceWorkerReady) {
+        return {
+            url: undefined,
+            onVideoPlaybackError: handleBrokenVideo,
+            isLoading: true,
+        };
+    }
+
+    return {
+        url: `/sw/stream/${streamId}`,
+        onVideoPlaybackError: handleBrokenVideo,
+        isLoading: false,
+    };
 }

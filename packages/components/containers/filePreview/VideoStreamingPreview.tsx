@@ -9,7 +9,7 @@ import './VideoStreamingPreview.scss';
 type VideoStreamingPreviewProps = {
     isLoading: boolean;
     videoStreaming: {
-        url: string;
+        url?: string;
         onVideoPlaybackError?: (error?: SyntheticEvent<HTMLVideoElement, Event>) => void;
     };
     imgThumbnailUrl?: string;
@@ -37,6 +37,7 @@ export const VideoStreamingPreview: React.FC<VideoStreamingPreviewProps> = ({
         >
             {!isLoading ? (
                 <div className="w-full h-full p-8 flex justify-center items-center">
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
                     <video
                         poster={imgThumbnailUrl}
                         ref={videoAutoPlay?.videoRef || videoRef}
