@@ -61,7 +61,7 @@ export type OnePassLegacyItem = {
     updatedAt: number;
     location?: string;
     title: string;
-    secureContents: {
+    secureContents?: {
         cardholder?: string;
         ccnum?: string;
         cvv?: string;

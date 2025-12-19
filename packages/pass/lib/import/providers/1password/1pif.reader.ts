@@ -33,7 +33,7 @@ import { OnePassLoginDesignation } from './1pux.types';
 const ENTRY_SEPARATOR_1PIF = '***';
 
 export const processLoginItem = async (item: OnePassLegacyItem): Promise<ItemImportIntent<'login'>> => {
-    const fields = item.secureContents.fields;
+    const fields = item.secureContents?.fields;
 
     const [totp, extraFields] = extractFirst(
         extract1PasswordLegacyExtraFields(item),
@@ -79,18 +79,18 @@ export const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'
 
 export const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'creditCard'> => {
     const expirationDate =
-        item.secureContents.expiry_mm && item.secureContents.expiry_yy
-            ? `${String(item.secureContents.expiry_mm).padStart(2, '0')}${item.secureContents.expiry_yy}`
+        item.secureContents?.expiry_mm && item.secureContents?.expiry_yy
+            ? `${String(item.secureContents?.expiry_mm).padStart(2, '0')}${item.secureContents?.expiry_yy}`
             : undefined;
 
     return importCreditCardItem({
         name: item.title,
-        note: item.secureContents.notesPlain,
-        cardholderName: item.secureContents.cardholder,
-        number: item.secureContents.ccnum,
-        verificationNumber: item.secureContents.cvv,
+        note: item.secureContents?.notesPlain,
+        cardholderName: item.secureContents?.cardholder,
+        number: item.secureContents?.ccnum,
+        verificationNumber: item.secureContents?.cvv,
         expirationDate,
-        pin: item.secureContents.pin,
+        pin: item.secureContents?.pin,
         extraFields: extract1PasswordLegacyExtraFields(item),
     });
 };
@@ -98,23 +98,23 @@ export const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent
 export const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'identity'> =>
     importIdentityItem({
         name: item.title,
-        note: item.secureContents.notesPlain,
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
-        ...extract1PasswordLegacyIdentity(item.secureContents.sections),
+        ...extract1PasswordLegacyIdentity(item.secureContents?.sections),
     });
 
 export const processCustomItem = (item: OnePassLegacyItem): ItemImportIntent<'custom'> =>
     importCustomItem({
         name: item.title,
-        note: item.secureContents.notesPlain,
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
     });
 
 export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'sshKey'> => {
-    const fields = item.secureContents.unknown_details?.sections?.flatMap(prop('fields'));
+    const fields = item.secureContents?.unknown_details?.sections?.flatMap(prop('fields'));
     const privateKey = fields?.find((f) => f?.n === 'sshKey-privateKey')?.v as string;
     const publicKey = fields?.find((f) => f?.n === 'sshKey-publicKey')?.v as string;
 
@@ -122,7 +122,7 @@ export const processSshKeyItem = (item: OnePassLegacyItem): ItemImportIntent<'ss
         privateKey,
         publicKey,
         name: item.title,
-        note: item.secureContents.notesPlain,
+        note: item.secureContents?.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
@@ -136,7 +136,7 @@ export const processWifiItem = (item: OnePassLegacyItem): ItemImportIntent<'wifi
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
         extraFields: [...extract1PasswordLegacyUnknownExtraFields(item), ...extract1PasswordLegacyExtraFields(item)],
-        ...extractLegacy1PasswordWifiFields(item.secureContents.sections),
+        ...extractLegacy1PasswordWifiFields(item.secureContents?.sections),
     });
 
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
