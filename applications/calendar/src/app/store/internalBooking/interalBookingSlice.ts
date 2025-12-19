@@ -83,7 +83,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         encryptedContent: bookingPage.EncryptedContent,
                         bookingKeySalt: bookingPage.BookingKeySalt,
                         calendarId: bookingPage.CalendarID,
-                        bookingUid: bookingPage.BookingUID,
+                        bookingUID: bookingPage.BookingUID,
                         verificationPreferences,
                     });
 
@@ -118,9 +118,9 @@ export const deleteBookingPageThunk = createAsyncThunk<
     string,
     string,
     { extra: ProtonThunkArguments; state: InternalBookingState }
->(`${name}/delete`, async (bookingId, { extra }) => {
-    await extra.api(deleteBookingPage(bookingId));
-    return bookingId;
+>(`${name}/delete`, async (bookingUId, { extra }) => {
+    await extra.api(deleteBookingPage(bookingUId));
+    return bookingUId;
 });
 
 const initialState = getInitialModelState<Model>();
@@ -145,7 +145,7 @@ const slice = createSlice({
                 return;
             }
 
-            const bookingPage = state.value.bookingPages.find((page) => page.id === payload?.bookingId);
+            const bookingPage = state.value.bookingPages.find((page) => page.id === payload?.bookingUID);
             if (!bookingPage) {
                 return;
             }
