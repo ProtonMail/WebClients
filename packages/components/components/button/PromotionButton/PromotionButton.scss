@@ -64,18 +64,6 @@
 				border: 0;
 			}
 		}
-
-		&#{&}.lumo-bf2025-promotion {
-			&,
-			&:hover,
-			&:focus {
-				background: linear-gradient(7.46deg, #ffac2e 4.37%, #dd5dcc 42.93%, #1ba3fd 106.9%, #5325a2 147.64%);
-
-				--text-norm: white;
-
-				border: 0;
-			}
-		}
 	}
 
 	&--pinkblue {
@@ -103,56 +91,6 @@
 				color: #08031f;
 				border: 0;
 				border-radius: var(--border-radius-md);
-			}
-		}
-	}
-
-	// BF 2025 temporary layouts
-	&--bf-2025-free {
-		&#{&} {
-			&,
-			&:hover,
-			&:focus {
-				background: #d8ff00;
-				color: #251b4e;
-				border: 1px solid #251b4e;
-				border-radius: var(--border-radius-md);
-			}
-
-			&:hover,
-			&:focus {
-				background: #cff402;
-			}
-		}
-	}
-
-	&--bf-2025-paid {
-		&#{&} {
-			// --button-hover-background-color: --interaction-default-hover;
-			// --button-active-background-color: --interaction-default-hover;
-			--button-default-text-color: var(--primary);
-			--button-hover-text-color: var(--primary);
-			--button-active-text-color: var(--primary);
-
-			border-color: var(--primary);
-		}
-	}
-
-	&--bf-2025-wave2 {
-		&#{&} {
-			&,
-			&:hover,
-			&:focus {
-				background-color: #251b4e;
-				color: #d8ff00;
-				border: 1px solid #d8ff00;
-				border-radius: var(--border-radius-md);
-				background-clip: padding-box; // to avoid issues with radiuses rendering between background and border
-			}
-
-			&:hover,
-			&:focus {
-				background-color: #040209;
 			}
 		}
 	}

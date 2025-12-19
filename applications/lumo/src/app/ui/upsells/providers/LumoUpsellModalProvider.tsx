@@ -96,8 +96,8 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
     const [offerConfig, loadingOffer] = useGuestSafeOfferConfig();
 
     const offerFlags = useMemo(() => {
-        const hasBlackFridayFreeOffer = offerConfig?.ID === 'black-friday-2025-lumo-free-yearly';
-        const hasBlackFridayPaidOffer = offerConfig?.ID === 'black-friday-2025-lumo-plus-monthly';
+        const hasBlackFridayFreeOffer = false;
+        const hasBlackFridayPaidOffer = false;
         return {
             hasBlackFridayFreeOffer,
             hasBlackFridayPaidOffer,

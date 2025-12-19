@@ -2,16 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
-import blackFridayImg2PlansPl from '@proton/styles/assets/img/promotions/bf2025-2plans-pl.svg';
-import blackFridayImg2PlansTr from '@proton/styles/assets/img/promotions/bf2025-2plans-tr.svg';
 import blackFridayImg2Plans from '@proton/styles/assets/img/promotions/bf2025-2plans.svg';
-import blackFridayImgLumoPl from '@proton/styles/assets/img/promotions/bf2025-lumo-pl.svg';
-import blackFridayImgLumoTr from '@proton/styles/assets/img/promotions/bf2025-lumo-tr.svg';
 import blackFridayImgLumo from '@proton/styles/assets/img/promotions/bf2025-lumo.svg';
-import blackFridayImgPl from '@proton/styles/assets/img/promotions/bf2025-pl.svg';
-import blackFridayImgTr from '@proton/styles/assets/img/promotions/bf2025-tr.svg';
 import blackFridayImgAll from '@proton/styles/assets/img/promotions/bf2025.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -24,8 +16,8 @@ interface Props extends OfferProps {
 }
 
 const OfferLayoutBF = ({ children, offer }: Props) => {
-    const [userSettings] = useUserSettings();
-    const userLocale = getLanguageCode(userSettings?.Locale); // "en_US" → "en"
+    // const [userSettings] = useUserSettings();
+    // const userLocale = getLanguageCode(userSettings?.Locale); // "en_US" → "en"
 
     const hasMultipleDeals = offer?.deals?.length > 1;
     const has3Deals = offer?.deals?.length > 2;
@@ -33,35 +25,21 @@ const OfferLayoutBF = ({ children, offer }: Props) => {
     const subTitle = offer?.subTitle;
 
     // in some languages, we need to translate the images
-    const getImages = (userLocale: string) => {
-        if (userLocale === 'pl') {
-            return {
-                lumoImg: blackFridayImgLumoPl,
-                twoPlansImg: blackFridayImg2PlansPl,
-                blackFridayImg: blackFridayImgPl,
-            };
-        } else if (userLocale === 'tr') {
-            return {
-                lumoImg: blackFridayImgLumoTr,
-                twoPlansImg: blackFridayImg2PlansTr,
-                blackFridayImg: blackFridayImgTr,
-            };
-        } else {
-            return {
-                lumoImg: blackFridayImgLumo,
-                twoPlansImg: blackFridayImg2Plans,
-                blackFridayImg: blackFridayImgAll,
-            };
-        }
+    const getImages = (/*userLocale: string*/) => {
+        // if (userLocale === 'pl') {
+
+        return {
+            lumoImg: blackFridayImgLumo,
+            twoPlansImg: blackFridayImg2Plans,
+            blackFridayImg: blackFridayImgAll,
+        };
     };
 
-    const { lumoImg, twoPlansImg, blackFridayImg } = getImages(userLocale);
+    const { lumoImg, twoPlansImg, blackFridayImg } = getImages(/*userLocale*/);
 
     const imgHeader =
-        offer?.ID === 'black-friday-2025-lumo-free-yearly' ||
-        offer?.ID === 'black-friday-2025-lumo-plus-monthly'
-            ? lumoImg
-            : blackFridayImg;
+        // @ts-ignore
+        offer?.ID === 'something-lumo-something' ? lumoImg : blackFridayImg;
 
     // translator: translate "Black Friday" only if it's problematic in your language (offensive/unknown/etc.)
     const imgAlt = c('BF2025: Heading alt').t`Black Friday`;
