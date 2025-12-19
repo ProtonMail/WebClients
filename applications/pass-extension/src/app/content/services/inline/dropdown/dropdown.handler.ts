@@ -42,7 +42,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
              * **after** potentially closing the dropdown as the `close`
              * call will force abort the active signal. */
             state.ctrl = ctrl;
-            const valid = anchorChanged && (await validateDropdownRequest(request));
+            const valid = anchorChanged && (await validateDropdownRequest(request).catch(() => false));
 
             if (valid) {
                 const field = request.type === 'field' ? request.field : undefined;
