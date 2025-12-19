@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { getDrive } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
@@ -48,6 +49,7 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
                         const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
                         if (isSDKPreviewEnabled && nodeUid) {
                             showPreviewModal({
+                                drive: getDrive(), // TODO: pass Drive client from context
                                 deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
                                 nodeUid,
                             });

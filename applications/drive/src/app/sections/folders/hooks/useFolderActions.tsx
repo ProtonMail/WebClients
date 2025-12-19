@@ -2,7 +2,6 @@ import { generateNodeUid, useDrive } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
@@ -10,6 +9,7 @@ import useOpenPreview from '../../../components/useOpenPreview';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useCopyItemsModal } from '../../../modals/CopyItemsModal/CopyItemsModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
@@ -76,6 +76,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
                 .map((item) => item.nodeUid);
 
             showPreviewModal({
+                drive,
                 deprecatedContextShareId: shareId,
                 nodeUid: item.uid,
                 previewableNodeUids,
@@ -112,6 +113,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         if (selectedItems.length === 1) {
             const item = selectedItems[0];
             void showDetailsModal({
+                drive,
                 volumeId: item.volumeId,
                 shareId: item.rootShareId,
                 linkId: item.linkId,

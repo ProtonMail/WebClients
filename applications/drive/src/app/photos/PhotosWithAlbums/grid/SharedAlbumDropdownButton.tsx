@@ -11,9 +11,10 @@ import {
     useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
+import { getDriveForPhotos } from '@proton/drive';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { usePhotosDetailsModal } from '../../../modals/DetailsModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useSharedWithMeActions } from '../../../store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
 
@@ -28,12 +29,13 @@ interface SharedAlbumDropdownButtonProps {
 export const SharedAlbumDropdownButton = ({ volumeId, linkId, shareId }: SharedAlbumDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const [detailsModal, showDetailsModal] = usePhotosDetailsModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
     const onShowDetails = useCallback(() => {
         if (!shareId) {
             return;
         }
         showDetailsModal({
+            drive: getDriveForPhotos(),
             volumeId: volumeId,
             shareId: shareId,
             linkId: linkId,

@@ -69,9 +69,9 @@ const isHEICSupported = () => {
     const { name, version } = getBrowser();
     return Boolean(
         ['mac os', 'ios'].includes(os.name.toLowerCase()) &&
-            ['Safari', 'Mobile Safari'].includes(name || '') &&
-            version &&
-            new Version(version).isGreaterThanOrEqual('17')
+        ['Safari', 'Mobile Safari'].includes(name || '') &&
+        version &&
+        new Version(version).isGreaterThanOrEqual('17')
     );
 };
 
@@ -104,6 +104,7 @@ export const isSupportedImage = (mimeType: string) =>
         SupportedMimeTypes.ico,
         SupportedMimeTypes.vdnMicrosoftIcon,
         SupportedMimeTypes.jpg,
+        'image/jpg', // Support also wrongly labeled JPG files
         SupportedMimeTypes.png,
         SupportedMimeTypes.svg,
         isWebpSupported() && SupportedMimeTypes.webp,

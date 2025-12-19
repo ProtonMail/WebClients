@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -15,7 +15,7 @@ import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { SortField } from '../../../hooks/util/useSorting';
 import { useSortingWithDefault } from '../../../hooks/util/useSorting';
-import { usePreviewModal } from '../../../modals/preview/usePreviewModal';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import { useUserSettings } from '../../../store';
 import { useSharingInfoStore } from '../../../zustand/share/sharingInfo.store';
 import type { MappedLegacyItem } from '../SharedByMeCells';
@@ -52,7 +52,7 @@ export const useSharedByMeItemsWithSelection = () => {
     );
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const [previewModal, showPreviewModal] = useDrivePreviewModal();
 
     // TODO: Cleanup mappedItems as we probably don't need all of this
     const mappedItems = useMemo((): MappedLegacyItem[] => {
@@ -128,6 +128,7 @@ export const useSharedByMeItemsWithSelection = () => {
 
             if (storeItem.type === NodeType.File && isSDKPreviewEnabled) {
                 showPreviewModal({
+                    drive: getDrivePerNodeType(storeItem.type),
                     deprecatedContextShareId: storeItem.rootShareId,
                     nodeUid: storeItem.nodeUid,
                 });

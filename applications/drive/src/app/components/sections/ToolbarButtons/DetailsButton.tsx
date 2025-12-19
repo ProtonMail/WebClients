@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { getDrive } from '@proton/drive';
 
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
@@ -32,6 +33,7 @@ const DetailsButton = ({ selectedBrowserItems }: Props) => {
                 onClick={() => {
                     if (selectedBrowserItems.length === 1) {
                         void showDetailsModal({
+                            drive: getDrive(), // TODO: pass Drive client from context
                             volumeId: selectedBrowserItems[0].volumeId,
                             shareId: selectedBrowserItems[0].rootShareId,
                             linkId: selectedBrowserItems[0].linkId,

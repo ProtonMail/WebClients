@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { MemberRole, NodeType, splitNodeUid } from '@proton/drive/index';
+import { MemberRole, NodeType, getDrive, splitNodeUid } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -247,6 +247,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                         .map((item) => item.uid);
 
                     showPreviewModal({
+                        drive: getDrive(),
                         deprecatedContextShareId: shareId,
                         nodeUid: item.uid,
                         previewableNodeUids,

@@ -1,7 +1,8 @@
 import type { useConfirmActionModal } from '@proton/components';
 
-import type { DirectShareItem, SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
+import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { usePreviewModal } from '../../../modals/preview';
+import type { DirectShareItem, SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
 import { BookmarkActions } from './BookmarkActions';
 import { DirectShareActions } from './DirectShareActions';
 import { InvitationActions } from './InvitationActions';
@@ -12,7 +13,7 @@ interface BaseSharedWithMeActionsProps {
     selectedItems: SharedWithMeListingItemUI[];
     showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
-    showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
+    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
     showCopyModal: (items: DirectShareItem[]) => void;
 }

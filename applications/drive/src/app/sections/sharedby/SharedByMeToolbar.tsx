@@ -5,10 +5,10 @@ import { Toolbar, useConfirmActionModal } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
-import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';

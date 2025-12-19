@@ -3,10 +3,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { MaybeNode } from '@proton/drive';
-import { AbortError, MemberRole, ProtonDriveError, getDrive } from '@proton/drive';
+import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
+import type { Drive } from './interface';
 import { logger } from './logger';
 import { getNavigation } from './navigation';
 import {
@@ -22,10 +23,12 @@ import { getLargeThumbnail, useThumbnailLoader } from './thumbnails';
 import usePreviewActions from './usePreviewActions';
 
 export function usePreviewState({
+    drive,
     nodeUid: passedNodeUid,
     previewableNodeUids,
     onNodeChange,
 }: {
+    drive: Drive;
     nodeUid: string;
     previewableNodeUids?: string[];
     onNodeChange?: (nodeUid: string) => void;
@@ -59,7 +62,6 @@ export function usePreviewState({
         setErrorMessage(undefined);
         setSmallThumbnailUrl(undefined);
         setLargeThumbnail(undefined);
-        const drive = getDrive();
         void withIsLoading(
             drive
                 .getNode(nodeUid)
@@ -101,7 +103,7 @@ export function usePreviewState({
 
     const loadLargeThumbnail = useCallback(() => {
         void withIsLargeThumbnailLoading(
-            getLargeThumbnail(nodeUid)
+            getLargeThumbnail(drive, nodeUid)
                 .then((thumbnail) => {
                     setLargeThumbnail(thumbnail);
                 })
@@ -121,7 +123,6 @@ export function usePreviewState({
                 return;
             }
 
-            const drive = getDrive();
             void withIsContentLoading(
                 downloadContent(drive, nodeUid, abortSignal)
                     .then((contents) => {
@@ -174,7 +175,7 @@ export function usePreviewState({
         onNodeChange?.(nodeUid);
     });
 
-    const actions = usePreviewActions({ nodeUid, node, nodeData });
+    const actions = usePreviewActions({ drive, nodeUid, node, nodeData });
 
     const result = {
         node: {

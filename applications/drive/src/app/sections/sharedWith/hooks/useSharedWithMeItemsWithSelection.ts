@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
@@ -13,7 +13,7 @@ import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailL
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { type SortField, type SortParams, useSortingWithDefault } from '../../../hooks/util/useSorting';
-import { usePreviewModal } from '../../../modals/preview/usePreviewModal';
+import { useDrivePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
@@ -72,7 +72,7 @@ export const useSharedWithMeItemsWithSelection = () => {
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const [previewModal, showPreviewModal] = usePreviewModal();
+    const [previewModal, showPreviewModal] = useDrivePreviewModal();
 
     // Do not add logic here, it will be removed later
     const handleRenderItem = useCallback(
@@ -218,8 +218,9 @@ export const useSharedWithMeItemsWithSelection = () => {
                 return;
             }
 
-            if (item.type === NodeType.File && isSDKPreviewEnabled) {
+            if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
                 showPreviewModal({
+                    drive: getDrivePerNodeType(item.type),
                     deprecatedContextShareId: item.shareId,
                     nodeUid: item.nodeUid,
                 });

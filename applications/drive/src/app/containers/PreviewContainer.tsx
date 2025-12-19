@@ -4,7 +4,7 @@ import { useLocation, useParams } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import { splitNodeUid, useDrive } from '@proton/drive';
+import { getDrive, splitNodeUid } from '@proton/drive';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -33,10 +33,12 @@ export default function PreviewContainer() {
 function PreviewContainerSDK() {
     const [nodeUid, setNodeUid] = useState<string | undefined>();
     const [parentFolderId, setParentFolderId] = useState<string | undefined>();
-    const { drive } = useDrive();
     const { shareId, linkId } = useParams<{ shareId: string; linkId: string }>() as { shareId: string; linkId: string };
 
     const { navigateToLink, navigateToRoot } = useDriveNavigation();
+
+    // Using Drive client as a context as only normal files have a file URL.
+    const drive = getDrive();
 
     useEffect(() => {
         void drive.getNodeUid(shareId, linkId).then((nodeUid) => {
@@ -57,6 +59,7 @@ function PreviewContainerSDK() {
 
     return (
         <Preview
+            drive={drive}
             deprecatedContextShareId={shareId}
             nodeUid={nodeUid}
             onClose={() => {
@@ -245,7 +248,11 @@ function PreviewContainerDeprecated() {
                 onDownload={downloadFile}
                 videoStreaming={videoStreaming}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
-                onDetails={!link ? undefined : () => showDetailsModal({ volumeId: link.volumeId, shareId, linkId })}
+                onDetails={
+                    !link
+                        ? undefined
+                        : () => showDetailsModal({ drive: getDrive(), volumeId: link.volumeId, shareId, linkId })
+                }
                 onShare={
                     !isAdmin || isLinkLoading || !link || !!link?.trashed
                         ? undefined

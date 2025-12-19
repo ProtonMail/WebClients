@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
+import { getDrive } from '@proton/drive';
 import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
@@ -87,7 +88,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showDetailsModal({ volumeId, shareId, linkId: selectedLinkIds[0] }),
+            action: () => showDetailsModal({ drive: getDrive(), volumeId, shareId, linkId: selectedLinkIds[0] }),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
