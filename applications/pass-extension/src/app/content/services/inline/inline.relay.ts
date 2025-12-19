@@ -8,6 +8,7 @@ import {
     onFocusChangeFactory,
 } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
+import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { cons } from '@proton/pass/utils/fp/lens';
@@ -52,13 +53,12 @@ export const createInlineRelay = ({
             /** Sub-frame scroll handling: close dropdown immediately instead of
              * expensive cross-frame repositioning. Top-frame UI elements cannot
              * be efficiently repositioned via messaging. */
-            const scrollParent = form.scrollParent;
-            const scrollOptions = { capture: true, once: true, passive: true } as const;
+            const parent = form.scrollParent;
 
-            dropdown.listeners.addListener(window, 'scroll', close, scrollOptions);
+            dropdown.listeners.addListener(window, 'scroll', onActualScroll(window, close), SCROLL_OPTIONS);
             dropdown.listeners.addListener(window, 'blur', onFocusChange);
             dropdown.listeners.addListener(window, 'focus', onFocusChange);
-            dropdown.listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
+            dropdown.listeners.addListener(parent, 'scroll', onActualScroll(parent, close), SCROLL_OPTIONS);
             dropdown.listeners.addListener(window, 'mousedown', onBackdropClick(cons(field), close));
         }
     );

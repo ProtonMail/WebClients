@@ -1,6 +1,7 @@
 import type { Coords } from 'proton-pass-extension/types/inline';
 
 import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
+import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 
 export const debugPosition = (left: number, top: number, width: number, height: number) => {
     const div = document.createElement('div');
@@ -26,4 +27,15 @@ export const getNodePosition = (node: HTMLElement): Coords => {
 
     const coords = { top: top + offsetTop, left: left + offsetLeft };
     return coords;
+};
+
+export const SCROLL_OPTIONS = { capture: true, once: true, passive: true } as const;
+
+export const onActualScroll = (target: HTMLElement | Window, fn: () => void) => {
+    const getScrollLeft = () => (isHTMLElement(target) ? target.scrollLeft : target.scrollX);
+    const getScrollTop = () => (isHTMLElement(target) ? target.scrollTop : target.scrollY);
+    const baseX = getScrollLeft();
+    const baseY = getScrollTop();
+
+    return (_: Event) => (getScrollLeft() !== baseX || getScrollTop() !== baseY) && fn();
 };

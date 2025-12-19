@@ -3,6 +3,7 @@ import type {
     FrameMessageHandler,
 } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -42,7 +43,7 @@ export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
                 ).catch(noop);
             };
 
-            listeners.addListener(window, 'scroll', close, { passive: true, once: true, capture: true });
+            listeners.addListener(window, 'scroll', onActualScroll(window, close), SCROLL_OPTIONS);
             listeners.addListener(window, 'focus', close, { once: true });
         }
     };
