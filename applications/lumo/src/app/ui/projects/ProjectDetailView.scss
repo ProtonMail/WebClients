@@ -111,6 +111,37 @@
 	margin: 0;
 	color: var(--text-norm);
 	line-height: 1.2;
+	cursor: text;
+	border-radius: var(--border-radius-sm);
+	padding-block: 2px;
+	padding-inline: 4px;
+	margin-inline: -4px;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+}
+
+.project-detail-title-input {
+	font-weight: 600;
+	margin: 0;
+	color: var(--text-norm);
+	line-height: 1.2;
+	background: var(--background-weak);
+	border: 1px solid var(--primary);
+	border-radius: var(--border-radius-sm);
+	padding-block: 2px;
+	padding-inline: 4px;
+	margin-inline: -4px;
+	flex: 1;
+	min-inline-size: 0;
+	outline: none;
+
+	&:focus {
+		border-color: var(--primary);
+		box-shadow: 0 0 0 2px rgb(var(--primary-rgb) / 0.2);
+	}
 }
 
 .project-detail-settings-button {
