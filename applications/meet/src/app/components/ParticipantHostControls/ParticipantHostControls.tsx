@@ -16,7 +16,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { ParticipantCapabilityPermission } from '../../types';
 
 import './ParticipantHostControls.scss';
@@ -25,20 +24,22 @@ interface ParticipantHostControlsProps {
     participant: Participant;
     isAudioEnabled: boolean;
     isVideoEnabled: boolean;
+    isLocalParticipantAdmin: boolean;
+    isLocalParticipantHost: boolean;
 }
 
 export const ParticipantHostControls = ({
     participant,
     isAudioEnabled,
     isVideoEnabled,
+    isLocalParticipantAdmin,
+    isLocalParticipantHost,
 }: ParticipantHostControlsProps) => {
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { participantNameMap } = useMeetContext();
     const participantName = participantNameMap[participant.identity] ?? c('Info').t`participant`;
-
-    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const mls = useMLSContext();
 
@@ -52,10 +53,6 @@ export const ParticipantHostControls = ({
     const hasAccessToParticipantAdminControls =
         (isLocalParticipantHost || (isLocalParticipantAdmin && !participantHasAdminPermission)) &&
         localParticipant?.identity !== participant.identity;
-
-    if (!isLocalParticipantAdmin && !isLocalParticipantHost) {
-        return null;
-    }
 
     return (
         <>

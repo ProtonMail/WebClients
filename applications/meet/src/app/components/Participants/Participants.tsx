@@ -21,6 +21,9 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
+import { useMeetDispatch, useMeetSelector } from '../../store/hooks';
+import { selectParticipantsWithDisabledVideos, setParticipantsWithDisabledVideos } from '../../store/slices/settings';
 import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ParticipantHostControls } from '../ParticipantHostControls/ParticipantHostControls';
@@ -38,8 +41,9 @@ export const Participants = () => {
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
-    const { participantNameMap, participantsWithDisabledVideos, setParticipantsWithDisabledVideos, maxParticipants } =
-        useMeetContext();
+    const { participantNameMap, maxParticipants } = useMeetContext();
+    const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
+    const dispatch = useMeetDispatch();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -53,6 +57,8 @@ export const Participants = () => {
             : participants.filter((participant) => {
                   return participantNameMap[participant.identity]?.toLowerCase().includes(lowerCaseSearchExpression);
               });
+
+    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     if (!sideBarState[MeetingSideBars.Participants]) {
         return null;
@@ -189,16 +195,20 @@ export const Participants = () => {
                                                 }
 
                                                 if (isParticipantVideoDisabled) {
-                                                    setParticipantsWithDisabledVideos(
-                                                        participantsWithDisabledVideos.filter(
-                                                            (id) => id !== participant.identity
+                                                    dispatch(
+                                                        setParticipantsWithDisabledVideos(
+                                                            participantsWithDisabledVideos.filter(
+                                                                (id) => id !== participant.identity
+                                                            )
                                                         )
                                                     );
                                                 } else {
-                                                    setParticipantsWithDisabledVideos([
-                                                        ...participantsWithDisabledVideos,
-                                                        participant.identity,
-                                                    ]);
+                                                    dispatch(
+                                                        setParticipantsWithDisabledVideos([
+                                                            ...participantsWithDisabledVideos,
+                                                            participant.identity,
+                                                        ])
+                                                    );
                                                 }
                                             }}
                                             aria-label={c('Action').t`Enable video`}
@@ -217,11 +227,15 @@ export const Participants = () => {
                                     </div>
                                 )}
 
-                                <ParticipantHostControls
-                                    participant={participant}
-                                    isVideoEnabled={!!videoPub && videoPub.isEnabled && !videoPub.isMuted}
-                                    isAudioEnabled={!isMuted && !audioPublication?.isMuted}
-                                />
+                                {isLocalParticipantAdmin || isLocalParticipantHost ? (
+                                    <ParticipantHostControls
+                                        participant={participant}
+                                        isVideoEnabled={!!videoPub && videoPub.isEnabled && !videoPub.isMuted}
+                                        isAudioEnabled={!isMuted && !audioPublication?.isMuted}
+                                        isLocalParticipantAdmin={isLocalParticipantAdmin}
+                                        isLocalParticipantHost={isLocalParticipantHost}
+                                    />
+                                ) : null}
                             </div>
                         </div>
                     );

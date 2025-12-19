@@ -18,7 +18,7 @@ const PARTICIPANT_COUNT_THRESHOLD = 5;
 export const ChatPreview = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { sortedParticipants, roomName } = useMeetContext();
+    const { sortedParticipants, sortedParticipantsMap, roomName } = useMeetContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
@@ -76,9 +76,7 @@ export const ChatPreview = () => {
             <ChatItem
                 item={latestMeetingRoomUpdate}
                 colors={getParticipantDisplayColors(
-                    sortedParticipants.find((p) => p.identity === latestMeetingRoomUpdate.identity) as
-                        | RemoteParticipant
-                        | LocalParticipant
+                    sortedParticipantsMap.get(latestMeetingRoomUpdate.identity) as RemoteParticipant | LocalParticipant
                 )}
                 displayDate={false}
                 shouldGrow={false}

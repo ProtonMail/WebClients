@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
-import { RoomAudioRenderer } from '@livekit/components-react';
+import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -152,13 +152,14 @@ export const MeetingBody = ({
                         }}
                     >
                         <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
-                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                        <video
+                        <VideoTrack
+                            key={screenShareTrack?.publication?.track?.sid}
                             className="screen-share-video w-full h-full block object-contain"
-                            ref={screenShareVideoRef}
+                            trackRef={screenShareTrack}
                             autoPlay
                             playsInline
                             muted={isLocalScreenShare}
+                            manageSubscription={false}
                         />
                         <div
                             className="absolute bottom-custom left-custom"
