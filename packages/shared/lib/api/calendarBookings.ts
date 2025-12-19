@@ -1,6 +1,7 @@
 import type {
     BookingPageCreationPayload,
     BookingPageEditPayload,
+    BookingSlotConfirmationPayload,
     OldBookingSlotConfirmationPayload,
 } from '../interfaces/calendar/Bookings';
 
@@ -36,6 +37,12 @@ export const queryPublicBookingPage = (
         Start: startTime,
         End: endTime,
     },
+});
+
+export const confirmBookingSlot = (bookingUID: string, slotId: string, data: BookingSlotConfirmationPayload) => ({
+    url: `calendar/v1/booking/external/${bookingUID}/slots/${slotId}/confirm`,
+    method: 'POST',
+    data,
 });
 
 // V1 Crypto model

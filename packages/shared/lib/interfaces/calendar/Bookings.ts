@@ -37,6 +37,9 @@ export interface ExternalBookingPagePayload {
     CalendarID: string;
     BookingUID: string;
     BookingKeySalt: string;
+    // Optional because of V1 Crypto model, can be mandatory once all pages migrated
+    CalendarKeySignature?: string;
+    CalendarPublicKey?: string;
     EncryptedContent: string;
     Duration: number | null;
     Timezone: string | null;
@@ -54,6 +57,23 @@ export interface InternalBookingPagePayload {
     EncryptedContent: string;
     CreateTime: number;
     ModifyTime: number;
+}
+
+export interface BookingSlotConfirmationPayload {
+    ContentPart: string;
+    TimePart: string;
+    AttendeeData: string;
+    AttendeeToken: string;
+    AttendeeSharedKeyPacket?: string;
+    SharedKeyPacket: string;
+    EmailData: {
+        Name: string;
+        Email: string;
+        Subject: string;
+        Body: string;
+        Ics: string;
+        Type: 'external'; // TODO always use external for now, but we might want to do E2EE confirmation mail for logged-in users later
+    };
 }
 
 // V1 Crypto model

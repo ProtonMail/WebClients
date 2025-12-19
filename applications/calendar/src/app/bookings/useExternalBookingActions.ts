@@ -9,15 +9,16 @@ import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
-import { oldConfirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
+import { confirmBookingSlot, oldConfirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
-import type { OldBookingTimeslot } from './booking.store';
-import { oldPrepareBookingSubmission } from './bookingSubmissionUtils';
+import type { BookingTimeslot, OldBookingTimeslot } from './booking.store';
+import { oldPrepareBookingSubmission, prepareBookingSubmission } from './bookingSubmissionUtils';
 import { useBookingsProvider } from './entryPoints/BookingsExternalProvider';
 import { getAttendeeSharedKeyPacket } from './utils/attendeeKeyPacketHelper';
+import { getBookingSharedKeyPacket } from './utils/attendeeSharedKeyPacketHelper';
 
 interface AttendeeInfo {
     name: string;
@@ -41,6 +42,76 @@ export const useExternalBookingActions = () => {
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const bookingSecretBase64Url = history.location.hash.substring(1);
+
+    const submitBooking = async (timeslot: BookingTimeslot, attendeeInfo: AttendeeInfo) => {
+        if (!bookingDetails) {
+            throw new Error('Booking details not available');
+        }
+
+        try {
+            const bookingUidBase64Url = await extractBookingUidFromSecret(bookingSecretBase64Url);
+
+            const attendeeSharedKey = await getBookingSharedKeyPacket({
+                isGuest,
+                bookingDetails,
+                getAddresses,
+                getCalendarUserSettings,
+                getCalendarKeys,
+                attendeeEmail: attendeeInfo.email,
+            });
+
+            if (!attendeeSharedKey) {
+                throw new Error('Failed to generate attendee shared key');
+            }
+
+            if (attendeeSharedKey.attendeeSharedKeyPacket.type === 'disabled_address') {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Cannot create a booking with a disabled address`,
+                });
+                return;
+            }
+
+            const submissionData = await prepareBookingSubmission({
+                timeslot,
+                bookingDetails,
+                attendeeName: attendeeInfo.name,
+                attendeeEmail: attendeeInfo.email,
+                organizerName: bookingDetails.inviterDisplayName || '',
+                organizerEmail: bookingDetails.inviterEmail,
+                saveMeeting,
+                getCanonicalEmailsMap,
+                getVTimezonesMap,
+                sharedSessionKey: attendeeSharedKey.sharedSessionKey,
+            });
+
+            await api(
+                confirmBookingSlot(bookingUidBase64Url, timeslot.id, {
+                    ContentPart: submissionData.contentPart,
+                    TimePart: submissionData.timePart,
+                    AttendeeData: submissionData.attendeeData,
+                    AttendeeToken: submissionData.attendeeToken,
+                    AttendeeSharedKeyPacket: attendeeSharedKey.attendeeSharedKeyPacket.keyPacket,
+                    SharedKeyPacket: attendeeSharedKey.sharedKeyPacket,
+                    EmailData: {
+                        Name: submissionData.emailData.name,
+                        Email: submissionData.emailData.email,
+                        Subject: submissionData.emailData.subject,
+                        Body: submissionData.emailData.body,
+                        Ics: submissionData.ics,
+                        Type: 'external',
+                    },
+                })
+            );
+
+            setSelectedBookingSlot(timeslot);
+            history.push(`/bookings/success#${bookingSecretBase64Url}`);
+            return 'success';
+        } catch (error: unknown) {
+            traceError(error);
+            throw error;
+        }
+    };
 
     // V1 Crypto model
     const submitOldCryptoModel = async (timeslot: OldBookingTimeslot, attendeeInfo: AttendeeInfo) => {
@@ -112,9 +183,7 @@ export const useExternalBookingActions = () => {
     return {
         bookingSecretBase64Url,
         bookingDetails,
-        submitBooking: () => {
-            alert('TODO');
-        },
+        submitBooking,
         submitOldCryptoModel,
     };
 };
