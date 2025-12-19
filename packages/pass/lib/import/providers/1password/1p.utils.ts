@@ -220,12 +220,12 @@ const mapLegacyFieldIntoExtraField = (
 };
 
 export const extract1PasswordLegacyExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] =>
-    item.secureContents.sections?.flatMap(
+    item.secureContents?.sections?.flatMap(
         ({ fields }) => fields?.flatMap(mapLegacyFieldIntoExtraField).filter(truthy) ?? []
     ) ?? [];
 
 export const extract1PasswordLegacyUnknownExtraFields = (item: OnePassLegacyItem): DeobfuscatedItemExtraField[] =>
-    item.secureContents.unknown_details?.sections?.flatMap(
+    item.secureContents?.unknown_details?.sections?.flatMap(
         ({ fields }) =>
             fields
                 ?.filter(({ n }) => !ONE_PASS_SSH_KEYS.includes(n))
