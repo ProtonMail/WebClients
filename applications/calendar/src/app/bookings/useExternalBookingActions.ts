@@ -9,13 +9,13 @@ import { useApi, useNotifications } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
-import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
+import { oldConfirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
-import type { BookingTimeslot } from './booking.store';
-import { prepareBookingSubmission } from './bookingSubmissionUtils';
+import type { OldBookingTimeslot } from './booking.store';
+import { oldPrepareBookingSubmission } from './bookingSubmissionUtils';
 import { useBookingsProvider } from './entryPoints/BookingsExternalProvider';
 import { getAttendeeSharedKeyPacket } from './utils/attendeeKeyPacketHelper';
 
@@ -42,7 +42,8 @@ export const useExternalBookingActions = () => {
 
     const bookingSecretBase64Url = history.location.hash.substring(1);
 
-    const submitBooking = async (timeslot: BookingTimeslot, attendeeInfo: AttendeeInfo) => {
+    // V1 Crypto model
+    const submitOldCryptoModel = async (timeslot: OldBookingTimeslot, attendeeInfo: AttendeeInfo) => {
         if (!bookingDetails) {
             throw new Error('Booking details not available');
         }
@@ -50,7 +51,7 @@ export const useExternalBookingActions = () => {
         try {
             const bookingUidBase64Url = await extractBookingUidFromSecret(bookingSecretBase64Url);
 
-            const submissionData = await prepareBookingSubmission({
+            const submissionData = await oldPrepareBookingSubmission({
                 timeslot,
                 bookingDetails,
                 bookingSecretBase64Url,
@@ -82,7 +83,7 @@ export const useExternalBookingActions = () => {
             }
 
             await api(
-                confirmBookingSlot(bookingUidBase64Url, timeslot.id, {
+                oldConfirmBookingSlot(bookingUidBase64Url, timeslot.id, {
                     ContentPart: submissionData.contentPart,
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
@@ -111,6 +112,9 @@ export const useExternalBookingActions = () => {
     return {
         bookingSecretBase64Url,
         bookingDetails,
-        submitBooking,
+        submitBooking: () => {
+            alert('TODO');
+        },
+        submitOldCryptoModel,
     };
 };
