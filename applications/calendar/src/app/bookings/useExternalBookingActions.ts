@@ -72,6 +72,11 @@ export const useExternalBookingActions = () => {
                 return;
             }
 
+            const attendeeSharedKeyPacket =
+                attendeeSharedKey.attendeeSharedKeyPacket.type === 'success'
+                    ? attendeeSharedKey.attendeeSharedKeyPacket.keyPacket
+                    : undefined;
+
             const submissionData = await prepareBookingSubmission({
                 timeslot,
                 bookingDetails,
@@ -91,7 +96,7 @@ export const useExternalBookingActions = () => {
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
                     AttendeeToken: submissionData.attendeeToken,
-                    AttendeeSharedKeyPacket: attendeeSharedKey.attendeeSharedKeyPacket.keyPacket,
+                    AttendeeSharedKeyPacket: attendeeSharedKeyPacket,
                     SharedKeyPacket: attendeeSharedKey.sharedKeyPacket,
                     EmailData: {
                         Name: submissionData.emailData.name,
@@ -153,13 +158,16 @@ export const useExternalBookingActions = () => {
                 return;
             }
 
+            const attendeeSharedKeyPacket =
+                attendeeSharedKeyPacketResult.type === 'success' ? attendeeSharedKeyPacketResult.keyPacket : undefined;
+
             await api(
                 oldConfirmBookingSlot(bookingUidBase64Url, timeslot.id, {
                     ContentPart: submissionData.contentPart,
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
                     AttendeeToken: submissionData.attendeeToken,
-                    AttendeeSharedKeyPacket: attendeeSharedKeyPacketResult.keyPacket,
+                    AttendeeSharedKeyPacket: attendeeSharedKeyPacket,
                     EmailData: {
                         Name: submissionData.emailData.name,
                         Email: submissionData.emailData.email,

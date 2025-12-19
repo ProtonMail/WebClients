@@ -7,7 +7,8 @@ import type { CalendarUserSettings, DecryptedCalendarKey } from '@proton/shared/
 import { encryptSlotBookingSharedKeyPackets } from '../../containers/bookings/utils/crypto/bookingEncryption';
 
 export type AttendeeSharedKeyPacketResult =
-    | { type: 'success'; keyPacket: string | undefined }
+    | { type: 'success'; keyPacket: string }
+    | { type: 'skipped' }
     | { type: 'disabled_address' };
 
 export const getAttendeeSharedKeyPacket = async ({
@@ -26,7 +27,7 @@ export const getAttendeeSharedKeyPacket = async ({
     getCalendarKeys: (calendarID: string) => Promise<DecryptedCalendarKey[]>;
 }): Promise<AttendeeSharedKeyPacketResult> => {
     if (isGuest) {
-        return { type: 'success', keyPacket: undefined };
+        return { type: 'skipped' };
     }
 
     const [calendarSettings, addresses] = await Promise.all([getCalendarUserSettings(), getAddresses()]);
@@ -34,18 +35,15 @@ export const getAttendeeSharedKeyPacket = async ({
     const usedAddress = addresses.find(
         (address) => canonicalizeInternalEmail(address.Email) === canonicalizeInternalEmail(attendeeEmail)
     );
-    if (!calendarSettings.DefaultCalendarID) {
-        throw new Error('Default calendar ID or used address not found');
-    }
 
-    // The user could have entered an address which is not part of his addresses
-    if (!usedAddress) {
-        return { type: 'success', keyPacket: undefined };
+    // The user could have entered an address which is not part of his addresses or has no calendar yet
+    if (!calendarSettings.DefaultCalendarID || !usedAddress) {
+        return { type: 'skipped' };
     }
 
     // We don't want to auto-add events for external addresses
     if (getIsAddressExternal(usedAddress) || getIsBYOEAddress(usedAddress)) {
-        return { type: 'success', keyPacket: undefined };
+        return { type: 'skipped' };
     }
 
     // Block booking submission for disabled addresses
@@ -59,5 +57,9 @@ export const getAttendeeSharedKeyPacket = async ({
         sharedSessionKey,
     });
 
-    return { type: 'success', keyPacket: sharedKeyPacket?.toBase64() };
+    if (!sharedKeyPacket) {
+        return { type: 'skipped' };
+    }
+
+    return { type: 'success', keyPacket: sharedKeyPacket.toBase64() };
 };
