@@ -16,13 +16,7 @@ import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/clie
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions';
-import {
-    selectCanCreateItems,
-    selectFeatureFlags,
-    selectFilters,
-    selectItem,
-    selectTabState,
-} from '@proton/pass/store/selectors';
+import { selectCanCreateItems, selectFilters, selectItem, selectTabState } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -231,15 +225,11 @@ export const createActivationService = () => {
                 });
             }
 
-            const state = ctx.service.store.getState();
-            const canCreateItems = selectCanCreateItems(state);
-            const settings = await ctx.service.settings.resolve();
+            const canCreateItems = selectCanCreateItems(ctx.service.store.getState());
+            const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
+            const features = await ctx.service.featureFlags.read();
 
-            return {
-                state: ctx.getState(),
-                features: selectFeatureFlags(state) ?? {},
-                settings: sanitizeSettings(settings, { canCreateItems }),
-            };
+            return { state: ctx.getState(), features, settings };
         }
     );
 

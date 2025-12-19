@@ -68,6 +68,15 @@ type AutofillServiceState = {
 export const createAutoFillService = () => {
     const state: AutofillServiceState = { privateDomains: null, rules: null };
 
+    /** Avoids reading feature flags and settings from redux state which may
+     * be absent when the extension is locked. When enabling other sub-frame
+     * autofill types, remove the `PassCreditCardWebAutofill` condition */
+    const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
+        const { autofill } = await ctx.service.settings.read();
+        const features = await ctx.service.featureFlags.read();
+        return Boolean(!features.PassIFrameKillswitch && features.PassCreditCardWebAutofill && autofill.cc);
+    });
+
     const init = withContext(async (ctx) => {
         const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains']);
 
@@ -360,6 +369,7 @@ export const createAutoFillService = () => {
 
     return {
         basicAuth: createBasicAuthController(),
+        iframeAutofillEnabled,
         init,
         clear,
         getLoginCandidates,
