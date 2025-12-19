@@ -4,7 +4,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
-import { EmergencyAccessSection } from '@proton/account/delegatedAccess/emergencyAccess/EmergencyAccessSection';
+import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import OLESOnboarding from '@proton/activation/src/oles/components/DashboardGuide/DashboardGuide';
@@ -209,7 +209,7 @@ const AccountSettingsRouter = ({
                         <OverviewSection />
                         <AccountRecoverySection />
                         <DataRecoverySection />
-                        <EmergencyAccessSection app={app} />
+                        <EmergencyContactSection app={app} />
                         <SessionRecoverySection />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -225,7 +225,7 @@ const AccountSettingsRouter = ({
                         {/* The following two sections are for non-private users */}
                         <NonPrivateRecoverySection />
                         <SignInWithAnotherDeviceSettings />
-                        <EmergencyAccessSection app={app} />
+                        <EmergencyContactSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
                         <PaymentMethodsSection app={app} />
