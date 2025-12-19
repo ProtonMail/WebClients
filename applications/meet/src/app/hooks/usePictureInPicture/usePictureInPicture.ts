@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
@@ -41,10 +42,12 @@ export function usePictureInPicture({
     isDisconnected,
     participantNameMap,
     chatMessages,
+    sortedParticipants,
 }: {
     isDisconnected: boolean;
     participantNameMap: Record<string, string>;
     chatMessages: MeetChatMessage[];
+    sortedParticipants: (RemoteParticipant | LocalParticipant)[];
 }) {
     const room = useRoomContext();
 
@@ -62,7 +65,7 @@ export function usePictureInPicture({
 
     // Use the smaller hooks
     const { messages, addSystemMessage, addChatMessage } = usePiPMessages();
-    const { tracksForDisplay } = usePiPTracks();
+    const { tracksForDisplay, tracksKey } = usePiPTracks(sortedParticipants);
     const { startRendering, stopRendering } = usePiPRenderer();
 
     // PiP session manager for resource management
@@ -83,13 +86,13 @@ export function usePictureInPicture({
         audioDeviceId: selectedMicrophoneId || undefined,
     });
 
-    const pipCleanup = useCallback(async () => {
+    const pipCleanup = async () => {
         stopRendering();
         await sessionManager.current.destroy();
-    }, [stopRendering]);
+    };
 
     // Stop PiP - properly async and awaits cleanup
-    const stopPiP = useCallback(async () => {
+    const stopPiP = async () => {
         if (!isSafari()) {
             // Non-Safari: Stop rendering and destroy all resources
             await pipCleanup();
@@ -105,7 +108,7 @@ export function usePictureInPicture({
         }
 
         setIsPipActive(false);
-    }, [stopRendering, startRendering, tracksForDisplay, messages, participantNameMapRef]);
+    };
 
     const pipSetup = async (throttle: boolean = false) => {
         if (isMobile() || !pipEnabled) {
@@ -123,7 +126,7 @@ export function usePictureInPicture({
     };
 
     // Start PiP
-    const startPiP = useCallback(async () => {
+    const startPiP = async () => {
         if (!pipEnabled) {
             return;
         }
@@ -165,17 +168,7 @@ export function usePictureInPicture({
         } finally {
             preventBlur.current = false;
         }
-    }, [
-        isPipActive,
-        tracksForDisplay,
-        notifications,
-        startRendering,
-        messages,
-        setIsPipActive,
-        setupMediaSession,
-        stopPiP,
-        pipEnabled,
-    ]);
+    };
 
     const preparePictureInPicture = () => {
         preventBlur.current = true;
@@ -207,7 +200,7 @@ export function usePictureInPicture({
             stopRendering();
             startRendering(canvas, tracksForDisplay, messages, participantNameMapRef.current, false);
         }
-    }, [isPipActive, tracksForDisplay, messages, startRendering, stopRendering]);
+    }, [isPipActive, tracksKey, messages, startRendering, stopRendering, tracksForDisplay]);
 
     useEffect(() => {
         if (!isChromiumBased() || isMobile() || !pipEnabled) {

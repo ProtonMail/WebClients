@@ -27,7 +27,7 @@ import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingL
 import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
-import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
+import { MEETING_LOCKED_ERROR_CODE, PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
@@ -38,9 +38,12 @@ import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
+import { useSortedParticipants } from '../../hooks/useSortedParticipants';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { useMeetDispatch } from '../../store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
@@ -161,11 +164,29 @@ export const ProtonMeetContainer = ({
         participantsCount,
     } = useParticipantNameMap(meetingDetails.meetingId as string);
 
+    const [page, setPage] = useState(0);
+    const isLargerThanMd = useIsLargerThanMd();
+    const isNarrowHeight = useIsNarrowHeight();
+    const [pageSize, setPageSize] = useState(isLargerThanMd && !isNarrowHeight ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
+
+    const {
+        sortedParticipants,
+        pagedParticipants,
+        sortedParticipantsMap,
+        pageCount,
+        pagedParticipantsWithoutSelfView,
+        pageCountWithoutSelfView,
+    } = useSortedParticipants({
+        page,
+        pageSize,
+    });
+
     const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup, preparePictureInPicture } =
         usePictureInPicture({
             isDisconnected: connectionLost,
             participantNameMap,
             chatMessages,
+            sortedParticipants,
         });
 
     const isRecordingInProgress = useIsRecordingInProgress();
@@ -961,6 +982,16 @@ export const ProtonMeetContainer = ({
                         isRecordingInProgress={isRecordingInProgress}
                         getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
                         decryptionErrorLogs={decryptionErrorLogs}
+                        sortedParticipants={sortedParticipants}
+                        pagedParticipants={pagedParticipants}
+                        pageCount={pageCount}
+                        pagedParticipantsWithoutSelfView={pagedParticipantsWithoutSelfView}
+                        pageCountWithoutSelfView={pageCountWithoutSelfView}
+                        setPage={setPage}
+                        setPageSize={setPageSize}
+                        page={page}
+                        pageSize={pageSize}
+                        sortedParticipantsMap={sortedParticipantsMap}
                     />
                 ) : (
                     <PrejoinContainer

@@ -7,6 +7,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import useFlag from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
+import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
 import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import type { DecryptionErrorLog, KeyRotationLog } from '../../types';
@@ -115,30 +116,32 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
 
     return (
         <RoomContext.Provider value={roomRef.current}>
-            <MediaManagementProvider>
-                <UIStateProvider instantMeeting={false}>
-                    {guestMode ? (
-                        <ProtonMeetContainer
-                            guestMode={true}
-                            room={roomRef.current}
-                            keyProvider={keyProviderRef.current}
-                            hasSubscription={false}
-                            keyRotationLogs={keyRotationLogs}
-                            setKeyRotationLogs={setKeyRotationLogs}
-                            decryptionErrorLogs={decryptionErrorLogs}
-                        />
-                    ) : (
-                        <ProtonMeetContainerWithUser
-                            guestMode={false}
-                            room={roomRef.current}
-                            keyProvider={keyProviderRef.current}
-                            keyRotationLogs={keyRotationLogs}
-                            setKeyRotationLogs={setKeyRotationLogs}
-                            decryptionErrorLogs={decryptionErrorLogs}
-                        />
-                    )}
-                </UIStateProvider>
-            </MediaManagementProvider>
+            <SubscriptionManagementProvider>
+                <MediaManagementProvider>
+                    <UIStateProvider instantMeeting={false}>
+                        {guestMode ? (
+                            <ProtonMeetContainer
+                                guestMode={true}
+                                room={roomRef.current}
+                                keyProvider={keyProviderRef.current}
+                                hasSubscription={false}
+                                keyRotationLogs={keyRotationLogs}
+                                setKeyRotationLogs={setKeyRotationLogs}
+                                decryptionErrorLogs={decryptionErrorLogs}
+                            />
+                        ) : (
+                            <ProtonMeetContainerWithUser
+                                guestMode={false}
+                                room={roomRef.current}
+                                keyProvider={keyProviderRef.current}
+                                keyRotationLogs={keyRotationLogs}
+                                setKeyRotationLogs={setKeyRotationLogs}
+                                decryptionErrorLogs={decryptionErrorLogs}
+                            />
+                        )}
+                    </UIStateProvider>
+                </MediaManagementProvider>
+            </SubscriptionManagementProvider>
         </RoomContext.Provider>
     );
 };

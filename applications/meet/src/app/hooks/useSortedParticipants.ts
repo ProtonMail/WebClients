@@ -1,11 +1,13 @@
-import { useMemo, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 
-import { useLocalParticipant, useParticipants } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import { useParticipants, useRoomContext } from '@livekit/components-react';
+import { type LocalParticipant, type RemoteParticipant, RoomEvent } from 'livekit-client';
 
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 
 type ParticipantWithMetadata = RemoteParticipant | LocalParticipant;
+
+const THROTTLE_INTERVAL_MS = 2000;
 
 const getParticipantWithEnhancedMetadata = (participant: RemoteParticipant | LocalParticipant, index: number) =>
     ({
@@ -20,76 +22,112 @@ const getParticipantWithEnhancedMetadata = (participant: RemoteParticipant | Loc
     }) as ParticipantWithMetadata;
 
 export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSize: number }) => {
-    const participants = useParticipants();
-    const activeSpeakers = useDebouncedActiveSpeakers();
-    const { localParticipant } = useLocalParticipant();
+    const room = useRoomContext();
+
+    // Only updating on specific events
+    const participants = useParticipants({
+        updateOnlyOn: [
+            RoomEvent.ParticipantConnected,
+            RoomEvent.ParticipantDisconnected,
+            RoomEvent.ConnectionStateChanged,
+            RoomEvent.RoomMetadataChanged,
+            RoomEvent.ParticipantPermissionsChanged,
+            RoomEvent.ParticipantMetadataChanged,
+            RoomEvent.ParticipantNameChanged,
+            RoomEvent.ParticipantAttributesChanged,
+            RoomEvent.TrackMuted,
+            RoomEvent.TrackUnmuted,
+            RoomEvent.TrackPublished,
+            RoomEvent.TrackUnpublished,
+            RoomEvent.TrackSubscriptionFailed,
+            RoomEvent.TrackSubscriptionPermissionChanged,
+            RoomEvent.TrackSubscriptionStatusChanged,
+            RoomEvent.LocalTrackPublished,
+            RoomEvent.LocalTrackUnpublished,
+        ],
+    });
+    const activeSpeakers = useDebouncedActiveSpeakers(THROTTLE_INTERVAL_MS);
+
+    const localParticipant = room.localParticipant;
     const localIdentity = localParticipant?.identity;
 
     const prevFirstPageParticipants = useRef<ParticipantWithMetadata[]>([]);
 
-    const { sortedParticipants, pagedParticipants, pagedParticipantsWithoutSelfView } = useMemo(() => {
-        // Add visual metadata to all participants
-        const participantsWithColors = participants.map((participant, index) =>
-            getParticipantWithEnhancedMetadata(participant, index)
-        );
+    const computeSortedParticipants = useCallback(
+        (currentParticipants: typeof participants, currentPage: number, currentPageSize: number) => {
+            // Add visual metadata to all participants
+            const participantsWithColors = currentParticipants.map((participant, index) =>
+                getParticipantWithEnhancedMetadata(participant, index)
+            );
 
-        const activeIdentities = new Set(activeSpeakers.map((p) => p.identity));
-        const prevFirstPageIdentities = new Set(prevFirstPageParticipants.current.map((p) => p.identity));
+            const activeIdentities = new Set(activeSpeakers.map((p) => p.identity));
+            const prevFirstPageIdentities = new Set(prevFirstPageParticipants.current.map((p) => p.identity));
 
-        // Helper functions for categorizing participants
-        const isLocal = (p: ParticipantWithMetadata) => p.identity === localIdentity;
-        const isCurrentlySpeaking = (p: ParticipantWithMetadata) => activeIdentities.has(p.identity);
-        const wasOnPreviousFirstPage = (p: ParticipantWithMetadata) => prevFirstPageIdentities.has(p.identity);
-        const stillExists = (identity: string) => participants.some((p) => p.identity === identity);
+            // Helper functions for categorizing participants
+            const isLocal = (p: ParticipantWithMetadata) => p.identity === localIdentity;
+            const isCurrentlySpeaking = (p: ParticipantWithMetadata) => activeIdentities.has(p.identity);
+            const wasOnPreviousFirstPage = (p: ParticipantWithMetadata) => prevFirstPageIdentities.has(p.identity);
+            const stillExists = (identity: string) => currentParticipants.some((p) => p.identity === identity);
 
-        // 1. Local participant (always first)
-        const localParticipant = participantsWithColors.find(isLocal) as LocalParticipant;
+            // 1. Local participant (always first)
+            const localParticipantData = participantsWithColors.find(isLocal) as LocalParticipant;
 
-        // 2. New active speakers (speaking now but weren't on first page before)
-        const newActiveSpeakers = participantsWithColors.filter(
-            (p) => !isLocal(p) && isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
-        );
+            // 2. New active speakers (speaking now but weren't on first page before)
+            const newActiveSpeakers = participantsWithColors.filter(
+                (p) => !isLocal(p) && isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
+            );
 
-        // 3. Previous first page participants (for stability, excluding those now speaking)
-        const stablePreviousFirstPageParticipants = prevFirstPageParticipants.current.filter(
-            (p) => !isLocal(p) && stillExists(p.identity)
-        );
+            // 3. Previous first page participants (for stability, excluding those now speaking)
+            const stablePreviousFirstPageParticipants = prevFirstPageParticipants.current.filter(
+                (p) => !isLocal(p) && stillExists(p.identity)
+            );
 
-        // 4. Remaining inactive participants
-        const remainingParticipants = participantsWithColors.filter(
-            (p) => !isLocal(p) && !isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
-        );
+            // 4. Remaining inactive participants
+            const remainingParticipants = participantsWithColors.filter(
+                (p) => !isLocal(p) && !isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
+            );
 
-        // Combine in priority order
-        const sortedResult = [
-            localParticipant,
-            ...newActiveSpeakers,
-            ...stablePreviousFirstPageParticipants,
-            ...remainingParticipants,
-        ];
+            // Combine in priority order
+            const sortedResult = [
+                localParticipantData,
+                ...newActiveSpeakers,
+                ...stablePreviousFirstPageParticipants,
+                ...remainingParticipants,
+            ];
 
-        // Calculate pagination
-        const start = page * pageSize;
-        const firstPage = sortedResult.slice(0, pageSize);
-        const currentPageParticipants = sortedResult.slice(start, start + pageSize);
+            // Calculate pagination
+            const start = currentPage * currentPageSize;
+            const firstPage = sortedResult.slice(0, currentPageSize);
+            const currentPageParticipants = sortedResult.slice(start, start + currentPageSize);
 
-        const pagedParticipantsWithoutSelfView =
-            participants.length === 1
-                ? sortedResult
-                : sortedResult.filter((p) => p.identity !== localIdentity).slice(start, start + pageSize);
+            const pagedParticipantsWithoutSelfView =
+                currentParticipants.length === 1
+                    ? sortedResult
+                    : sortedResult.filter((p) => p.identity !== localIdentity).slice(start, start + currentPageSize);
 
-        // Update the reference for next render
-        prevFirstPageParticipants.current = firstPage;
+            // Update the reference for next render
+            prevFirstPageParticipants.current = firstPage;
 
-        return {
-            sortedParticipants: sortedResult,
-            pagedParticipants: currentPageParticipants,
-            pagedParticipantsWithoutSelfView,
-        };
-    }, [participants, activeSpeakers, localIdentity, page, pageSize]);
+            const sortedParticipantsMap = new Map(sortedResult.map((p) => [p.identity, p]));
+
+            return {
+                sortedParticipants: sortedResult,
+                pagedParticipants: currentPageParticipants,
+                pagedParticipantsWithoutSelfView,
+                sortedParticipantsMap,
+            };
+        },
+        [activeSpeakers, localIdentity]
+    );
+
+    const { sortedParticipants, sortedParticipantsMap, pagedParticipants, pagedParticipantsWithoutSelfView } = useMemo(
+        () => computeSortedParticipants(participants, page, pageSize),
+        [computeSortedParticipants, participants, page, pageSize]
+    );
 
     return {
         sortedParticipants,
+        sortedParticipantsMap,
         pagedParticipants,
         pageCount: Math.ceil(sortedParticipants.length / pageSize),
         pagedParticipantsWithoutSelfView,

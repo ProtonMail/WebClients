@@ -13,6 +13,12 @@ const mockLocalParticipant = {
     setScreenShareEnabled: vi.fn(),
 };
 
+const mockRoom = {
+    localParticipant: mockLocalParticipant,
+    on: vi.fn(),
+    off: vi.fn(),
+};
+
 const mockTracks = [
     {
         track: {},
@@ -56,6 +62,9 @@ const mockGetDisplayMedia = vi.fn().mockResolvedValue(mockMediaStream);
 
 const useLocalParticipantMock = useLocalParticipant as Mock;
 const useParticipantsMock = useParticipants as Mock;
+const useRoomContextMock = useRoomContext as Mock;
+const useTracksMock = useTracks as Mock;
+
 describe('useCurrentScreenShare', () => {
     beforeEach(() => {
         vi.clearAllMocks();
@@ -64,6 +73,10 @@ describe('useCurrentScreenShare', () => {
             ...global.navigator.mediaDevices,
             getDisplayMedia: mockGetDisplayMedia,
         };
+
+        // Set up default mocks
+        useRoomContextMock.mockReturnValue(mockRoom);
+        useTracksMock.mockReturnValue([]);
     });
 
     afterAll(() => {
@@ -73,7 +86,7 @@ describe('useCurrentScreenShare', () => {
     });
 
     it('should have isLocal true if the local participant is the one sharing the screen', () => {
-        (useTracks as Mock).mockReturnValue(mockTracks);
+        useTracksMock.mockReturnValue(mockTracks);
         useLocalParticipantMock.mockReturnValue({
             localParticipant: mockLocalParticipant,
         });
@@ -92,7 +105,7 @@ describe('useCurrentScreenShare', () => {
             identity: 'other-participant',
         };
 
-        (useTracks as Mock).mockReturnValue([{ ...mockTracks[0], participant: mockParticipant }]);
+        useTracksMock.mockReturnValue([{ ...mockTracks[0], participant: mockParticipant }]);
         useLocalParticipantMock.mockReturnValue({
             localParticipant: mockLocalParticipant,
         });
@@ -118,7 +131,8 @@ describe('useCurrentScreenShare', () => {
         });
         useParticipantsMock.mockReturnValue([newLocalParticipant]);
 
-        (useRoomContext as Mock).mockReturnValue({
+        useRoomContextMock.mockReturnValue({
+            ...mockRoom,
             localParticipant: {
                 getTrackPublication: vi.fn().mockReturnValue(mockTracks[0]),
                 setScreenShareEnabled,
