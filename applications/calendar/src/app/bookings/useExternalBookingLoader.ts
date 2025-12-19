@@ -214,6 +214,7 @@ export const useExternalBookingLoader = () => {
                     bookingKeySalt: bookingPageData.BookingKeySalt,
                     inviterDisplayName: bookingPageData.DisplayName,
                     inviterEmail: bookingPageData.Email,
+                    version: bookingPageData.Version || 1,
                 });
 
                 setFailedToVerify(failedToVerify);

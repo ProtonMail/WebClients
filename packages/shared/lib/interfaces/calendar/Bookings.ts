@@ -46,6 +46,7 @@ export interface ExternalBookingPagePayload {
     DisplayName: string;
     Email: string;
     AvailableSlots: ExternalBookingPageSlotsPayload[];
+    Version: 1 | 2;
 }
 
 export interface InternalBookingPagePayload {
