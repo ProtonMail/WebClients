@@ -2,7 +2,7 @@ import { DOMParser, onErrorStopParsing } from '@xmldom/xmldom';
 import ExifReader from 'exifreader';
 import type { ExpandedTags } from 'exifreader';
 
-import { isImage } from '@proton/shared/lib/helpers/mimetype';
+import { isImage, isSVG } from '@proton/shared/lib/helpers/mimetype';
 
 if (typeof DOMParser !== 'undefined') {
     class CustomDOMParser extends DOMParser {
@@ -15,7 +15,7 @@ if (typeof DOMParser !== 'undefined') {
 }
 
 export const getExifInfo = async (file: File, mimeType: string): Promise<ExpandedTags | undefined> => {
-    if (!isImage(mimeType)) {
+    if (!isImage(mimeType) || isSVG(mimeType)) {
         return undefined;
     }
 

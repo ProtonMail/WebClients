@@ -2,7 +2,6 @@ import type { ThumbnailType } from '@protontech/drive-sdk';
 
 import { type SupportedMimeTypes, THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
 import { FileLoadError, ThumbnailError } from '../thumbnailError';
@@ -63,24 +62,36 @@ export class SVGHandler extends BaseHandler {
         }
     }
 
-    private parseSvg(svgString: string) {
-        return parseStringToDOM(svgString, 'image/svg+xml');
-    }
-
+    // Adjusts SVG dimensions using regex-based string manipulation.
     private async setSvgSize(blob: Blob, size: number): Promise<Blob> {
         const text = await blob.text();
 
-        const doc = this.parseSvg(text);
-        const svgElement = doc.querySelector('svg');
+        const svgTagMatch = text.match(/<svg([^>]*)>/i);
+        if (!svgTagMatch) {
+            throw new FileLoadError('No SVG opening tag found', {
+                context: {
+                    stage: 'SVG tag extraction',
+                },
+            });
+        }
 
-        const svgWidth = svgElement?.getAttribute('width') || `${size}px`;
-        const svgHeight = svgElement?.getAttribute('height') || `${size}px`;
+        let svgAttributes = svgTagMatch[1];
+        const sizeValue = `${size}px`;
 
-        svgElement?.setAttribute('width', svgWidth);
-        svgElement?.setAttribute('height', svgHeight);
+        if (/(^|\s)width\s*=/i.test(svgAttributes)) {
+            svgAttributes = svgAttributes.replace(/(^|\s)width\s*=\s*["'][^"']*["']/gi, `$1width="${sizeValue}"`);
+        } else {
+            svgAttributes += ` width="${sizeValue}"`;
+        }
 
-        const svgString = svgElement?.outerHTML || '';
+        if (/(^|\s)height\s*=/i.test(svgAttributes)) {
+            svgAttributes = svgAttributes.replace(/(^|\s)height\s*=\s*["'][^"']*["']/gi, `$1height="${sizeValue}"`);
+        } else {
+            svgAttributes += ` height="${sizeValue}"`;
+        }
 
-        return new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+        const modifiedSvg = text.replace(/<svg[^>]*>/i, `<svg${svgAttributes}>`);
+
+        return new Blob([modifiedSvg], { type: 'image/svg+xml;charset=utf-8' });
     }
 }
