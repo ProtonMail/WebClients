@@ -2,7 +2,6 @@ import type { Reducer } from 'redux';
 
 import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import type { OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import {
     type MaybeNull,
     OrganizationExportMode,
@@ -19,8 +18,7 @@ export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ExportMode: OrganizationExportMode.UNRESTRICTED,
     ShareMode: OrganizationShareMode.UNRESTRICTED,
     ForceLockSeconds: 0,
-    // null is allowed
-    PasswordPolicy: null as unknown as OrganizationUpdatePasswordPolicyInput,
+    PasswordPolicy: null,
     ShareAcceptMode: OrganizationShareMode.UNRESTRICTED,
     VaultCreateMode: OrganizationVaultCreateMode.ALLOWED,
     ItemShareMode: OrganizationItemShareMode.DISABLED,

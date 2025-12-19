@@ -23,14 +23,10 @@ import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/
 import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
-import {
-    selectAliasLimits,
-    selectCanCreateItems,
-    selectOrganizationVaultCreationDisabled,
-    selectPassPlan,
-} from '@proton/pass/store/selectors';
+import { selectAliasLimits, selectCanCreateItems, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -101,7 +97,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     }, [showCustomItem, isFreePlan]);
 
     const disabled = !useSelector(selectCanCreateItems);
-    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const { vaultCreationDisabled } = useVaultCreationPolicy();
     const orgDisabled = disabled && vaultCreationDisabled;
 
     return (
