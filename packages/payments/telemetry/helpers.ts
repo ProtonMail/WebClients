@@ -13,6 +13,16 @@ import type { Subscription } from '../core/subscription/interface';
 import { isFreeSubscription, isSavedPaymentMethod } from '../core/type-guards';
 
 /**
+ * Safely gets plan name from PlanIDs, returning null if planIDs is undefined or invalid.
+ */
+function safeGetPlanNameFromIDs(planIDs: PlanIDs | null | undefined): PLANS | null {
+    if (!planIDs || typeof planIDs !== 'object') {
+        return null;
+    }
+    return getPlanNameFromIDs(planIDs) ?? null;
+}
+
+/**
  * Extracts telemetry-relevant properties from user and subscription data.
  *
  * These "current*" properties represent the user's existing subscription state
@@ -62,7 +72,7 @@ function extractPropertiesFromUserAndSubscription(
         subscription && !isFreeSubscription(subscription) ? subscription.Currency : userCurrency;
     const currentPlanIDs: PlanIDs | null =
         subscription && !isFreeSubscription(subscription) ? getPlanIDs(subscription) : null;
-    const currentPlanName = currentPlanIDs ? (getPlanNameFromIDs(currentPlanIDs) ?? null) : null;
+    const currentPlanName = safeGetPlanNameFromIDs(currentPlanIDs);
     const currentCycle: Cycle | null = subscription && !isFreeSubscription(subscription) ? subscription.Cycle : null;
 
     // make sure to map undefined and empty strings to null
@@ -74,16 +84,16 @@ function extractPropertiesFromUserAndSubscription(
 export function formatPaymentTelemetryPayload(
     userCurrency: Currency | undefined,
     subscription: Subscription | FreeSubscription | undefined,
-    selectedPlanIDs: PlanIDs
+    selectedPlanIDs: PlanIDs | undefined
 ): ReturnType<typeof extractPropertiesFromUserAndSubscription> & {
-    selectedPlanIDs: PlanIDs;
+    selectedPlanIDs: PlanIDs | undefined;
     selectedPlanName: PLANS | null;
 } {
     const extractedProps = extractPropertiesFromUserAndSubscription(userCurrency, subscription);
     return {
         ...extractedProps,
         selectedPlanIDs,
-        selectedPlanName: getPlanNameFromIDs(selectedPlanIDs) ?? null,
+        selectedPlanName: safeGetPlanNameFromIDs(selectedPlanIDs),
     };
 }
 
