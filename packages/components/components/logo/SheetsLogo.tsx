@@ -19,7 +19,7 @@ const SheetsLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: Log
             logoWidth = 245;
             break;
         default:
-            logoWidth = 140;
+            logoWidth = 142;
             break;
     }
     return (
@@ -27,7 +27,6 @@ const SheetsLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: Log
             uid={uid}
             logoWidth={logoWidth}
             logoHeight={logoHeight}
-            viewBox={`0 0 ${logoWidth + 2} ${logoHeight}`}
             title={hasTitle ? SHEETS_APP_NAME : undefined}
             variant={variant}
             {...rest}

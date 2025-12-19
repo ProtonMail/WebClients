@@ -134,6 +134,32 @@
 		-moz-text-fill-color: transparent;
 		/* stylelint-disable-next-line property-no-unknown */
 		text-fill-color: transparent;
+		opacity: 1;
+		transform: translateY(0);
+
+		@include media('>small') {
+			position: absolute;
+			transition: all var(--transition-duration) ease 0s;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: 1px solid color-mix(in srgb, var(--primary) 70%, var(--primary-contrast));
+			border-radius: inherit;
+			opacity: 1;
+			z-index: -1;
+		}
+	}
+
+	&:hover &-plan-badge,
+	&:focus-visible &-plan-badge {
+		@include media('>small') {
+			opacity: 0;
+			transform: translateY(rem(-2));
+			transition: all var(--transition-duration) ease calc(var(--transition-duration) * 0.7);
+		}
 	}
 
 	&-new-badge {

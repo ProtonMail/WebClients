@@ -17,6 +17,8 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
+import LumoLogoAnimated from './LumoLogoAnimated';
+
 import './ExploreAppsListV2.scss';
 
 interface App {
@@ -68,33 +70,19 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
         {
-            name: APPS.PROTONDRIVE,
-            bit: PRODUCT_BIT.DRIVE,
+            name: APPS.PROTONMEET,
+            bit: PRODUCT_BIT.MEET,
+            isNew: true,
             description: () => {
-                // translator: Description for Proton Drive. As concise as possible, under 20 characters please
-                return c('app-switcher_2025').t`Secure cloud storage`;
+                // translator: Description for Proton Meet. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Confidential video calls`;
             },
             style: {
                 '--gradient-hover':
-                    'radial-gradient(112.87% 100% at 73.72% 0%, rgb(109 74 255 / 0.5) 0%, rgb(229 117 202 / 0.5) 100%)',
-                '--shadow-color-1': 'rgb(134 84 255 / 0.1)',
-                '--shadow-color-2': 'rgb(171 63 255 / 0.2)',
-                '--shadow-color-3': 'rgb(244 80 200 / 0.3)',
-            } as CSSProperties,
-        },
-        {
-            name: APPS.PROTONVPN_SETTINGS,
-            bit: PRODUCT_BIT.VPN,
-            description: () => {
-                // translator: Description for Proton VPN. As concise as possible, under 20 characters please
-                return c('app-switcher_2025').t`Private browsing`;
-            },
-            style: {
-                '--gradient-hover':
-                    'radial-gradient(113.78% 100% at 87.82% 0%, rgb(109 74 255 / 0.5) 0%, rgb(84 221 195 / 0.5) 99.44%)',
-                '--shadow-color-1': 'rgb(91 103 245 / 0.1)',
-                '--shadow-color-2': 'rgb(82 116 240 / 0.2)',
-                '--shadow-color-3': 'rgb(24 205 208 / 0.3)',
+                    'radial-gradient(92.31% 87.1% at 18.21% 97.43%, rgb(158 188 255 / 0.5) 0%, rgb(136 123 255 / 0.5) 41.88%, rgb(109 74 255 / 0.5) 71.63%)',
+                '--shadow-color-1': 'rgb(109 74 255 / 0.1)',
+                '--shadow-color-2': 'rgb(115 100 255 / 0.2)',
+                '--shadow-color-3': 'rgb(113 157 255 / 0.3)',
             } as CSSProperties,
         },
         {
@@ -114,23 +102,24 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
         {
-            name: APPS.PROTONWALLET,
-            bit: PRODUCT_BIT.WALLET,
+            name: APPS.PROTONVPN_SETTINGS,
+            bit: PRODUCT_BIT.VPN,
             description: () => {
-                // translator: Description for Proton Wallet. As concise as possible, under 20 characters please
-                return c('app-switcher_2025').t`Bitcoin wallet`;
+                // translator: Description for Proton VPN. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Private browsing`;
             },
             style: {
                 '--gradient-hover':
-                    'linear-gradient(208.15deg, rgb(109 74 255 / 0.5) 25.04%, rgb(255 128 101 / 0.5) 74.79%, rgb(255 165 31 / 0.5) 99.12%)',
-                '--shadow-color-1': 'rgb(123 76 244 / 0.1)',
-                '--shadow-color-2': 'rgb(220 110 142 / 0.2)',
-                '--shadow-color-3': 'rgb(240 139 86 / 0.3)',
+                    'radial-gradient(113.78% 100% at 87.82% 0%, rgb(109 74 255 / 0.5) 0%, rgb(84 221 195 / 0.5) 99.44%)',
+                '--shadow-color-1': 'rgb(91 103 245 / 0.1)',
+                '--shadow-color-2': 'rgb(82 116 240 / 0.2)',
+                '--shadow-color-3': 'rgb(24 205 208 / 0.3)',
             } as CSSProperties,
         },
         {
             name: APPS.PROTONLUMO,
             bit: PRODUCT_BIT.LUMO,
+            isNew: true,
             description: () => {
                 // translator: Description for Lumo. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Private AI assistant`;
@@ -143,18 +132,64 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
         {
-            name: APPS.PROTONMEET,
-            bit: PRODUCT_BIT.MEET,
+            name: APPS.PROTONDRIVE,
+            bit: PRODUCT_BIT.DRIVE,
             description: () => {
-                // translator: Description for Proton Meet. As concise as possible, under 20 characters please
-                return c('app-switcher_2025').t`Confidential video calls`;
+                // translator: Description for Proton Drive. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Secure cloud storage`;
             },
             style: {
                 '--gradient-hover':
-                    'radial-gradient(92.31% 87.1% at 18.21% 97.43%, rgb(158 188 255 / 0.5) 0%, rgb(136 123 255 / 0.5) 41.88%, rgb(109 74 255 / 0.5) 71.63%)',
-                '--shadow-color-1': 'rgb(109 74 255 / 0.1)',
-                '--shadow-color-2': 'rgb(115 100 255 / 0.2)',
-                '--shadow-color-3': 'rgb(113 157 255 / 0.3)',
+                    'radial-gradient(112.87% 100% at 73.72% 0%, rgb(109 74 255 / 0.5) 0%, rgb(229 117 202 / 0.5) 100%)',
+                '--shadow-color-1': 'rgb(134 84 255 / 0.1)',
+                '--shadow-color-2': 'rgb(171 63 255 / 0.2)',
+                '--shadow-color-3': 'rgb(244 80 200 / 0.3)',
+            } as CSSProperties,
+        },
+        {
+            name: APPS.PROTONDOCS,
+            bit: PRODUCT_BIT.DRIVE,
+            description: () => {
+                // translator: Description for Proton Docs. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Secure online docs`;
+            },
+            style: {
+                '--gradient-hover':
+                    'radial-gradient(112.03% 101.5% at 94.23% 0%, rgb(95 103 251 / 0.5) 0%, rgb(105 212 255 / 0.5) 99.44%)',
+                '--shadow-color-1': 'rgb(108 75 255 / 0.1)',
+                '--shadow-color-2': 'rgb(66 121 255 / 0.2)',
+                '--shadow-color-3': 'rgb(26 163 255 / 0.3)',
+            } as CSSProperties,
+        },
+        {
+            name: APPS.PROTONSHEETS,
+            bit: PRODUCT_BIT.DRIVE,
+            description: () => {
+                // translator: Description for Proton Sheets. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Secure online sheets`;
+            },
+            isNew: true,
+            style: {
+                '--gradient-hover':
+                    'radial-gradient(112.03% 101.5% at 94.23% 0%, rgb(95 103 251 / 0.5) 0%, rgb(39 218 122 / 0.5) 99.44%)',
+                '--shadow-color-1': 'rgb(31 158 89 / 0.1)',
+                '--shadow-color-2': 'rgb(36 199 112 / 0.2)',
+                '--shadow-color-3': 'rgb(38 218 121 / 0.3)',
+            } as CSSProperties,
+        },
+        {
+            name: APPS.PROTONWALLET,
+            bit: PRODUCT_BIT.WALLET,
+            description: () => {
+                // translator: Description for Proton Wallet. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Bitcoin wallet`;
+            },
+            style: {
+                '--gradient-hover':
+                    'linear-gradient(208.15deg, rgb(109 74 255 / 0.5) 25.04%, rgb(255 128 101 / 0.5) 74.79%, rgb(255 165 31 / 0.5) 99.12%)',
+                '--shadow-color-1': 'rgb(123 76 244 / 0.1)',
+                '--shadow-color-2': 'rgb(220 110 142 / 0.2)',
+                '--shadow-color-3': 'rgb(240 139 86 / 0.3)',
             } as CSSProperties,
         },
     ]
@@ -188,7 +223,13 @@ interface Props {
 const allBits =
     PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN | PRODUCT_BIT.WALLET | PRODUCT_BIT.LUMO;
 
-const professionalPlans = new Set([PLANS.MAIL_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS]);
+const professionalPlans = new Set([
+    PLANS.MAIL_BUSINESS,
+    PLANS.PASS_BUSINESS,
+    PLANS.VPN_BUSINESS,
+    PLANS.LUMO_BUSINESS,
+    PLANS.VPN_PASS_BUNDLE_BUSINESS,
+]);
 
 const essentialsPlans = new Set([PLANS.MAIL_PRO, PLANS.PASS_PRO, PLANS.VPN_PRO, PLANS.DRIVE_PRO]);
 
@@ -285,14 +326,23 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
                             >
                                 <div className="relative">
                                     <AppIcon appName={appName}>
-                                        <Logo
-                                            appName={appName}
-                                            size={12}
-                                            variant="glyph-only"
-                                            className="shrink-0"
-                                            aria-hidden="true"
-                                            hasTitle={false}
-                                        />
+                                        {appName === APPS.PROTONLUMO ? (
+                                            <LumoLogoAnimated
+                                                size={12}
+                                                variant="glyph-only"
+                                                className="shrink-0"
+                                                hasTitle={false}
+                                            />
+                                        ) : (
+                                            <Logo
+                                                appName={appName}
+                                                size={12}
+                                                variant="glyph-only"
+                                                className="shrink-0"
+                                                aria-hidden="true"
+                                                hasTitle={false}
+                                            />
+                                        )}
                                     </AppIcon>
                                     {isNew && (
                                         <span className="explore-app-new-badge absolute text-xs rounded-full px-2 py-1 color-norm text-semibold">
@@ -300,6 +350,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
                                         </span>
                                     )}
                                 </div>
+
                                 <div className="explore-app-name relative">
                                     <span className={clsx(showLoader && 'opacity-0')}>{name}</span>
                                     {showLoader && (
@@ -308,13 +359,15 @@ const ExploreAppsListV2 = ({ onExplore, apps, subscription }: Props) => {
                                         </span>
                                     )}
                                 </div>
-                                {paid && planName ? (
-                                    <span className="explore-app-plan-badge color-primary text-semibold">
-                                        {planName}
-                                    </span>
-                                ) : undefined}
-                                <div className="explore-app-description hidden md:block text-sm color-weak">
-                                    {description}
+                                <div className="relative flex justify-center">
+                                    {paid && planName ? (
+                                        <span className="explore-app-plan-badge color-primary text-semibold text-sm rounded-full px-2 py-0.5">
+                                            {planName}
+                                        </span>
+                                    ) : undefined}
+                                    <div className="explore-app-description hidden md:block text-sm color-weak">
+                                        {description}
+                                    </div>
                                 </div>
                             </button>
                         </li>
