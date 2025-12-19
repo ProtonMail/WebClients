@@ -6,38 +6,7 @@ import type { IconName, IconSize } from '@proton/icons/types';
 import type { COUPON_CODES, CYCLE, Currency, PlanIDs } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId =
-    | 'black-friday-2025-inbox-free-yearly'
-    | 'black-friday-2025-inbox-free-monthly'
-    | 'black-friday-2025-inbox-plus-monthly'
-    | 'black-friday-2025-inbox-plus-yearly'
-    | 'black-friday-2025-inbox-plus-yearly-experiment'
-    | 'black-friday-2025-inbox-plus-yearly-experiment2'
-    | 'black-friday-2025-unlimited'
-    | 'black-friday-2025-duo'
-    | 'black-friday-2025-family-monthly'
-    | 'black-friday-2025-vpn-free-yearly'
-    | 'black-friday-2025-vpn-free-monthly'
-    | 'black-friday-2025-vpn-plus-monthly'
-    | 'black-friday-2025-vpn-plus-monthly2'
-    | 'black-friday-2025-vpn-plus-yearly'
-    | 'black-friday-2025-vpn-plus-yearly-experiment'
-    | 'black-friday-2025-vpn-plus-yearly-experiment2'
-    | 'black-friday-2025-vpn-plus-two-year'
-    | 'black-friday-2025-drive-free-yearly'
-    | 'black-friday-2025-drive-free-monthly'
-    | 'black-friday-2025-drive-plus-monthly'
-    | 'black-friday-2025-drive-plus-yearly'
-    | 'black-friday-2025-pass-free-yearly'
-    | 'black-friday-2025-pass-free-monthly'
-    | 'black-friday-2025-pass-plus-monthly'
-    | 'black-friday-2025-pass-plus-monthly2'
-    | 'black-friday-2025-pass-plus-yearly'
-    | 'black-friday-2025-lumo-free-yearly'
-    | 'black-friday-2025-lumo-plus-monthly'
-    | 'go-unlimited-2022'
-    | 'mail-trial-2023'
-    | 'pass-family-plan-2024-yearly';
+export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 

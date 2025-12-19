@@ -17,7 +17,6 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { PLANS } from '@proton/payments';
@@ -38,62 +37,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { blackFriday2025DriveFreeMonthlyConfig } from '../../offers/operations/blackFriday2025DriveFreeMonthly/configuration';
-import blackFriday2025DriveFreeMonthlyConfigEligibility from '../../offers/operations/blackFriday2025DriveFreeMonthly/eligibility';
-import { blackFriday2025DriveFreeYearlyConfig } from '../../offers/operations/blackFriday2025DriveFreeYearly/configuration';
-import blackFriday2025DriveFreeYearlyConfigEligibility from '../../offers/operations/blackFriday2025DriveFreeYearly/eligibility';
-import { blackFriday2025DrivePlusMonthlyConfig } from '../../offers/operations/blackFriday2025DrivePlusMonthly/configuration';
-import blackFriday2025DrivePlusMonthlyConfigEligibility from '../../offers/operations/blackFriday2025DrivePlusMonthly/eligibility';
-import { blackFriday2025DrivePlusYearlyConfig } from '../../offers/operations/blackFriday2025DrivePlusYearly/configuration';
-import blackFriday2025DrivePlusYearlyConfigEligibility from '../../offers/operations/blackFriday2025DrivePlusYearly/eligibility';
-import { blackFriday2025DuoConfig } from '../../offers/operations/blackFriday2025Duo/configuration';
-import blackFriday2025DuoConfigEligibility from '../../offers/operations/blackFriday2025Duo/eligibility';
-import { blackFriday2025FamilyMonthlyConfig } from '../../offers/operations/blackFriday2025FamilyMonthly/configuration';
-import blackFriday2025FamilyMonthlyConfigEligibility from '../../offers/operations/blackFriday2025FamilyMonthly/eligibility';
-import { blackFriday2025InboxFreeMonthlyConfig } from '../../offers/operations/blackFriday2025InboxFreeMonthly/configuration';
-import blackFriday2025InboxFreeMonthlyConfigEligibility from '../../offers/operations/blackFriday2025InboxFreeMonthly/eligibility';
-import { blackFriday2025InboxFreeYearlyConfig } from '../../offers/operations/blackFriday2025InboxFreeYearly/configuration';
-import blackFriday2025InboxFreeYearlyConfigEligibility from '../../offers/operations/blackFriday2025InboxFreeYearly/eligibility';
-import { blackFriday2025InboxPlusMonthlyConfig } from '../../offers/operations/blackFriday2025InboxPlusMonthly/configuration';
-import blackFriday2025InboxPlusMonthlyConfigEligibility from '../../offers/operations/blackFriday2025InboxPlusMonthly/eligibility';
-import { blackFriday2025InboxPlusYearlyConfig } from '../../offers/operations/blackFriday2025InboxPlusYearly/configuration';
-import blackFriday2025InboxPlusYearlyConfigEligibility from '../../offers/operations/blackFriday2025InboxPlusYearly/eligibility';
-import { blackFriday2025InboxPlusYearlyExperiment2Config } from '../../offers/operations/blackFriday2025InboxPlusYearlyExperiment2/configuration';
-import blackFriday2025InboxPlusYearlyExperiment2ConfigEligibility from '../../offers/operations/blackFriday2025InboxPlusYearlyExperiment2/eligibility';
-import { blackFriday2025InboxPlusYearlyExperimentConfig } from '../../offers/operations/blackFriday2025InboxPlusYearlyExperiment/configuration';
-import blackFriday2025InboxPlusYearlyExperimentConfigEligibility from '../../offers/operations/blackFriday2025InboxPlusYearlyExperiment/eligibility';
-import { blackFriday2025LumoFreeYearlyConfig } from '../../offers/operations/blackFriday2025LumoFreeYearly/configuration';
-import blackFriday2025LumoFreeYearlyConfigEligibility from '../../offers/operations/blackFriday2025LumoFreeYearly/eligibility';
-import { blackFriday2025LumoPlusMonthlyConfig } from '../../offers/operations/blackFriday2025LumoPlusMonthly/configuration';
-import blackFriday2025LumoPlusMonthlyConfigEligibility from '../../offers/operations/blackFriday2025LumoPlusMonthly/eligibility';
-import { blackFriday2025PassFreeMonthlyConfig } from '../../offers/operations/blackFriday2025PassFreeMonthly/configuration';
-import blackFriday2025PassFreeMonthlyConfigEligibility from '../../offers/operations/blackFriday2025PassFreeMonthly/eligibility';
-import { blackFriday2025PassFreeYearlyConfig } from '../../offers/operations/blackFriday2025PassFreeYearly/configuration';
-import blackFriday2025PassFreeYearlyConfigEligibility from '../../offers/operations/blackFriday2025PassFreeYearly/eligibility';
-import { blackFriday2025PassPlusMonthly2Config } from '../../offers/operations/blackFriday2025PassPlusMonthly2/configuration';
-import blackFriday2025PassPlusMonthly2ConfigEligibility from '../../offers/operations/blackFriday2025PassPlusMonthly2/eligibility';
-import { blackFriday2025PassPlusMonthlyConfig } from '../../offers/operations/blackFriday2025PassPlusMonthly/configuration';
-import blackFriday2025PassPlusMonthlyConfigEligibility from '../../offers/operations/blackFriday2025PassPlusMonthly/eligibility';
-import { blackFriday2025PassPlusYearlyConfig } from '../../offers/operations/blackFriday2025PassPlusYearly/configuration';
-import blackFriday2025PassPlusYearlyConfigEligibility from '../../offers/operations/blackFriday2025PassPlusYearly/eligibility';
-import { blackFriday2025UnlimitedConfig } from '../../offers/operations/blackFriday2025Unlimited/configuration';
-import blackFriday2025UnlimitedConfigEligibility from '../../offers/operations/blackFriday2025Unlimited/eligibility';
-import { blackFriday2025VPNFreeMonthlyConfig } from '../../offers/operations/blackFriday2025VPNFreeMonthly/configuration';
-import blackFriday2025VPNFreeMonthlyConfigEligibility from '../../offers/operations/blackFriday2025VPNFreeMonthly/eligibility';
-import { blackFriday2025VPNFreeYearlyConfig } from '../../offers/operations/blackFriday2025VPNFreeYearly/configuration';
-import blackFriday2025VPNFreeYearlyConfigEligibility from '../../offers/operations/blackFriday2025VPNFreeYearly/eligibility';
-import { blackFriday2025VPNPlusMonthly2Config } from '../../offers/operations/blackFriday2025VPNPlusMonthly2/configuration';
-import blackFriday2025VPNPlusMonthly2ConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusMonthly2/eligibility';
-import { blackFriday2025VPNPlusMonthlyConfig } from '../../offers/operations/blackFriday2025VPNPlusMonthly/configuration';
-import blackFriday2025VPNPlusMonthlyConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusMonthly/eligibility';
-import { blackFriday2025VPNPlusTwoYearConfig } from '../../offers/operations/blackFriday2025VPNPlusTwoYear/configuration';
-import blackFriday2025VPNPlusTwoYearConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusTwoYear/eligibility';
-import { blackFriday2025VPNPlusYearlyConfig } from '../../offers/operations/blackFriday2025VPNPlusYearly/configuration';
-import blackFriday2025VPNPlusYearlyConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusYearly/eligibility';
-import { blackFriday2025VPNPlusYearlyExperiment2Config } from '../../offers/operations/blackFriday2025VPNPlusYearlyExperiment2/configuration';
-import blackFriday2025VPNPlusYearlyExperiment2ConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusYearlyExperiment2/eligibility';
-import { blackFriday2025VPNPlusYearlyExperimentConfig } from '../../offers/operations/blackFriday2025VPNPlusYearlyExperiment/configuration';
-import blackFriday2025VPNPlusYearlyExperimentConfigEligibility from '../../offers/operations/blackFriday2025VPNPlusYearlyExperiment/eligibility';
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
@@ -245,13 +188,13 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
 const AutomaticSubscriptionModal = () => {
     const history = useHistory();
     const location = useLocation();
-    const protonConfig = useConfig();
+    // const protonConfig = useConfig();
 
     const [openSubscriptionModal, loadingModal] = useSubscriptionModal();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [previousSubscription, loadingPreviousSubscription] = usePreviousSubscription();
+    const [loadingPreviousSubscription] = usePreviousSubscription();
 
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
@@ -291,135 +234,24 @@ const AutomaticSubscriptionModal = () => {
             disableCycleSelector,
             plansMap,
             addon,
-            preferredCurrency,
+            // preferredCurrency,
         } = getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
 
         if (!plan) {
             return;
         }
 
-        // When you clean up this section after BF2025, please just empty the array without removing .map below. It can
+        // When you clean up this section after BF2026, please just empty the array without removing .map below. It can
         // help us in the next BF.
-        const eligibleBlackFridayConfigs = [
+        const eligibleBlackFridayConfigs = [].filter(isTruthy);
+        /* const eligibleBlackFridayConfigs = [
             // example:
             // {
             //     // a function that returns true if the offer is eligible
-            //     eligibility: blackFriday2025InboxFreeYearlyConfigEligibility,
+            //     eligibility: blackFriday2026InboxFreeYearlyConfigEligibility,
             //     // the offer config
-            //     config: blackFriday2025InboxFreeYearlyConfig,
+            //     config: blackFriday2026InboxFreeYearlyConfig,
             // }
-            {
-                eligibility: blackFriday2025InboxFreeYearlyConfigEligibility,
-                config: blackFriday2025InboxFreeYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025InboxFreeMonthlyConfigEligibility,
-                config: blackFriday2025InboxFreeMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025InboxPlusMonthlyConfigEligibility,
-                config: blackFriday2025InboxPlusMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025InboxPlusYearlyConfigEligibility,
-                config: blackFriday2025InboxPlusYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025UnlimitedConfigEligibility,
-                config: blackFriday2025UnlimitedConfig,
-            },
-            {
-                eligibility: blackFriday2025DuoConfigEligibility,
-                config: blackFriday2025DuoConfig,
-            },
-            {
-                eligibility: blackFriday2025FamilyMonthlyConfigEligibility,
-                config: blackFriday2025FamilyMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNFreeYearlyConfigEligibility,
-                config: blackFriday2025VPNFreeYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNFreeMonthlyConfigEligibility,
-                config: blackFriday2025VPNFreeMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusMonthlyConfigEligibility,
-                config: blackFriday2025VPNPlusMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusMonthly2ConfigEligibility,
-                config: blackFriday2025VPNPlusMonthly2Config,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusYearlyConfigEligibility,
-                config: blackFriday2025VPNPlusYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusYearlyExperimentConfigEligibility,
-                config: blackFriday2025VPNPlusYearlyExperimentConfig,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusYearlyExperiment2ConfigEligibility,
-                config: blackFriday2025VPNPlusYearlyExperiment2Config,
-            },
-            {
-                eligibility: blackFriday2025VPNPlusTwoYearConfigEligibility,
-                config: blackFriday2025VPNPlusTwoYearConfig,
-            },
-            {
-                eligibility: blackFriday2025DriveFreeYearlyConfigEligibility,
-                config: blackFriday2025DriveFreeYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025DriveFreeMonthlyConfigEligibility,
-                config: blackFriday2025DriveFreeMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025DrivePlusMonthlyConfigEligibility,
-                config: blackFriday2025DrivePlusMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025DrivePlusYearlyConfigEligibility,
-                config: blackFriday2025DrivePlusYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025PassFreeYearlyConfigEligibility,
-                config: blackFriday2025PassFreeYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025PassFreeMonthlyConfigEligibility,
-                config: blackFriday2025PassFreeMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025PassPlusMonthlyConfigEligibility,
-                config: blackFriday2025PassPlusMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025PassPlusMonthly2ConfigEligibility,
-                config: blackFriday2025PassPlusMonthly2Config,
-            },
-            {
-                eligibility: blackFriday2025PassPlusYearlyConfigEligibility,
-                config: blackFriday2025PassPlusYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025LumoFreeYearlyConfigEligibility,
-                config: blackFriday2025LumoFreeYearlyConfig,
-            },
-            {
-                eligibility: blackFriday2025LumoPlusMonthlyConfigEligibility,
-                config: blackFriday2025LumoPlusMonthlyConfig,
-            },
-            {
-                eligibility: blackFriday2025InboxPlusYearlyExperiment2ConfigEligibility,
-                config: blackFriday2025InboxPlusYearlyExperiment2Config,
-            },
-            {
-                eligibility: blackFriday2025InboxPlusYearlyExperimentConfigEligibility,
-                config: blackFriday2025InboxPlusYearlyExperimentConfig,
-            },
         ]
             .map(({ eligibility, config }) => {
                 const options = {
@@ -433,7 +265,7 @@ const AutomaticSubscriptionModal = () => {
 
                 return eligibility(options) && config;
             })
-            .filter(isTruthy);
+            .filter(isTruthy);*/
 
         const eligibility = getEligibility({
             plansMap,
