@@ -3126,6 +3126,21 @@
       ],
       "Web search access": [
         "Acces la căutare pe internet"
+      ],
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
+      ],
+      "Zero-access encryption": [
+        "Criptare cu acces zero"
       ]
     },
     "collider_2025: Feature": {
@@ -7018,6 +7033,12 @@
       ],
       "View invitation": [
         "Afișare invitație"
+      ],
+      "Show all (${ invites.length })": [
+        "Afișați toate (${ invites.length })"
+      ],
+      "Show less": [
+        "Arată mai puține"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7153,6 +7174,22 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Pending invitation": [
+        "Invitație în așteptare",
+        "Invitații în așteptare",
+        "Invitații în așteptare"
+      ],
+      "View the invitation": [
+        "Afișare invitație",
+        "Afișare invitații",
+        "Afișare invitații"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "**${ invite.InviterEmail }** v-a invitat să vă alăturați contul la acest plan de grup."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Ați primit o invitație la ${ invite.OrganizationName }"
       ]
     },
     "familyOffer_2023:Info": {
@@ -23241,6 +23278,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Pending invitations": [
+        "Invitații în așteptare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23925,6 +23965,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[plan] }. Începând de la doar ${ priceString }/lună per cont."
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
       ]
     },
     "upsell panel": {
@@ -24733,6 +24776,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Portofel bitcoin"
+      ],
+      "Confidential video calls": [
+        "Apeluri video private"
+      ],
+      "Encrypted email": [
+        "E-mail criptat"
+      ],
+      "Passwords and identity": [
+        "Parole și identități"
+      ],
+      "Private AI assistant": [
+        "Asistent de IA privat"
+      ],
+      "Private browsing": [
+        "Navigare web privată"
+      ],
+      "Private scheduling": [
+        "Planificări private"
+      ],
+      "Secure cloud storage": [
+        "Stocare securizată în cloud"
       ]
     }
   }

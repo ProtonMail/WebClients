@@ -1965,6 +1965,12 @@
       ],
       "Secure cloud storage": [
         "安全なクラウドストレージ"
+      ],
+      "Bitcoin wallet": [
+        "Bitcoinウォレット"
+      ],
+      "Passwords and identity": [
+        "パスワードとユーザー情報"
       ]
     },
     "Apps dropdown": {
@@ -3114,6 +3120,21 @@
       ],
       "Web search access": [
         "ウェブ検索アクセス"
+      ],
+      "Built and based in Europe": [
+        "ヨーロッパに拠点を置き、創立されました"
+      ],
+      "Compliance with data protection regulations": [
+        "データ保護規則の遵守"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
+      ],
+      "Zero-access encryption": [
+        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Feature": {
@@ -5089,7 +5110,7 @@
         "${ BRAND_NAME } Duo でストレージを4倍に"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+        "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
     "Duration": {
@@ -6962,6 +6983,12 @@
       ],
       "View invitation": [
         "招待状を確認する"
+      ],
+      "Show all (${ invites.length })": [
+        "表示を増やす (${ invites.length })"
+      ],
+      "Show less": [
+        "表示を減らす"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7091,6 +7118,18 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Pending invitation": [
+        "保留中の招待"
+      ],
+      "View the invitation": [
+        "招待を表示"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "あなたのアカウントをこのグループプランにリンクするよう、**${ invite.InviterEmail }**から招待されています。"
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } に招待されました"
       ]
     },
     "familyOffer_2023:Info": {
@@ -9373,7 +9412,7 @@
         "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+        "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "${ BRAND_NAME } アカウントを確定し、すべてのデバイスで ${ VPN_APP_NAME } の使用を開始するにはパスワードを入力してください！"
@@ -17018,7 +17057,7 @@
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+        "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
@@ -17696,7 +17735,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } 紹介ごとに"
+        "紹介ごとに ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
@@ -22707,6 +22746,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Pending invitations": [
+        "保留中の招待"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23387,6 +23429,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ]
     },
     "upsell panel": {

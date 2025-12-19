@@ -3136,6 +3136,21 @@
       ],
       "Web search access": [
         "Accès à la recherche web"
+      ],
+      "Built and based in Europe": [
+        "Développé et basé en Europe"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformité aux réglementations sur la protection des données"
+      ],
+      "Data never used for AI training": [
+        "Données jamais utilisées pour l'entraînement de l'IA"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
+      ],
+      "Zero-access encryption": [
+        "Chiffrement zéro accès"
       ]
     },
     "collider_2025: Feature": {
@@ -7154,6 +7169,10 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
+      ],
+      "Pending invitation": [
+        "Invitation en attente",
+        "Invitations en attente"
       ]
     },
     "familyOffer_2023:Info": {
@@ -11764,7 +11783,7 @@
     },
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
-        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
+        "Aide pour rédiger, répondre et relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -23012,6 +23031,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Pause list": [
+        "Liste de pause"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23672,7 +23694,7 @@
         "Le saviez-vous ?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, et récupérez les versions de fichiers avec une récupération de fichiers sur 10 ans."
+        "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, ainsi que les versions des fichiers des 10 dernières années."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de confidentialité avec une boite mail sécurisée, ${ VPN_SHORT_APP_NAME }, un espace de stockage cloud et un gestionnaire de mots de passe en une seule offre groupée. À partir de seulement ${ fallBackString } par mois"

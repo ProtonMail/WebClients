@@ -2561,7 +2561,7 @@
         "Даведайцеся, як абагуліць асобны элемент, зашыфраваную спасылку або сховішча праз ${ PASS_APP_NAME }."
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
-        "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } не толькі дапамагае вам кіраваць, захоўваць і аўтаматычна запаўняць вашы паролі, але і забяспечвае вас інструментамі для кантролю прыватнасці і абароны паштовых скрынь з дапамогай псеўданімаў hide-my-email."
+        "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } дапамагае не толькі кіраваць, захоўваць і аўтаматычна запаўняць паролі, але і кантраляваць прыватнасць, а таксама абараняць паштовыя скрыні з дапамогай псеўданімаў hide-my-email."
       ],
       "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Абараніце ўсе свае дамашнія прылады адначасова з ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3142,6 +3142,21 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Built and based in Europe": [
+        "Створана і базіруецца ў Еўропе"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпавядае прававым нормам па абароне даных"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Feature": {
@@ -7056,6 +7071,12 @@
       ],
       "View invitation": [
         "Паглядзець запрашэнне"
+      ],
+      "Show all (${ invites.length })": [
+        "Паказаць усе (${ invites.length })"
+      ],
+      "Show less": [
+        "Паказаць менш"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7194,6 +7215,24 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Pending invitation": [
+        "Запрашэнне, якое чакае адказу",
+        "Запрашэнні, якія чакаюць адказу",
+        "Запрашэнні, якія чакаюць адказу",
+        "Запрашэнні, якія чакаюць адказу"
+      ],
+      "View the invitation": [
+        "Паглядзець запрашэнне",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Вас запрашае **${ invite.InviterEmail }** звязаць ваш уліковы запіс з гэтым групавым тарыфным планам."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ]
     },
     "familyOffer_2023:Info": {
@@ -23518,6 +23557,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Pending invitations": [
+        "Запрашэнні, якія чакаюць адказу"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24204,6 +24246,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ]
     },
     "upsell panel": {
@@ -25054,6 +25099,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Кашалёк Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Канфідэнцыяльныя відэазванкі"
+      ],
+      "Encrypted email": [
+        "Зашыфраваная пошта"
+      ],
+      "Passwords and identity": [
+        "Паролі і ідэнтычнасць"
+      ],
+      "Private AI assistant": [
+        "Прыватны памочнік ШІ"
+      ],
+      "Private browsing": [
+        "Прыватны аглядальнік"
+      ],
+      "Private scheduling": [
+        "Прыватнае планаванне"
+      ],
+      "Secure cloud storage": [
+        "Бяспечнае воблачнае сховішча"
       ]
     }
   }
