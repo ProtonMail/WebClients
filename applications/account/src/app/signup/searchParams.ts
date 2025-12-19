@@ -1,5 +1,6 @@
 import type { Location } from 'history';
 
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
 import {
     type ADDON_NAMES,
     AddonLimit,
@@ -11,6 +12,7 @@ import {
     MAX_MEMBER_ADDON,
     PLANS,
     type Plan,
+    type PlansMap,
     fixPlanName,
     getHas2025OfferCoupon,
     getPlanByName,
@@ -297,4 +299,33 @@ export const getPlanIDsFromParams = (
     }
 
     return { planIDs, defined: true, plan };
+};
+
+export const getPlanIDsFromParamsWithForcedAddons = ({
+    plans,
+    currency,
+    signupParameters,
+    defaults,
+    plansMap,
+}: {
+    plans: Plan[];
+    currency: Currency;
+    signupParameters: {
+        preSelectedPlan?: string;
+        domains?: number;
+        ips?: number;
+        users?: number;
+    };
+    defaults: Pick<SignupDefaults, 'plan' | 'addons'>;
+    plansMap: PlansMap;
+}) => {
+    const result = getPlanIDsFromParams(plans, currency, signupParameters, defaults);
+    const planIDs =
+        forceAddonsMinMaxConstraints({
+            selectedPlanIDs: result.planIDs,
+            plansMap,
+            currency,
+            subscription: undefined,
+        }) ?? result.planIDs;
+    return { ...result, planIDs };
 };

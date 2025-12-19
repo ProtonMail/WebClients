@@ -111,7 +111,7 @@ import GenericError from '../../error/GenericError';
 import { changeDefaultPaymentMethodBeforePayment } from '../DefaultPaymentMethodMessage';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
-import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
+import { ProtonPlanCustomizer, forceAddonsMinMaxConstraints } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanSelection from './PlanSelection';
@@ -383,7 +383,16 @@ const SubscriptionContainerInner = ({
             });
         }
 
-        return maybePlanIDs || subscriptionPlanIDs;
+        const planIDs = maybePlanIDs || subscriptionPlanIDs;
+
+        return (
+            forceAddonsMinMaxConstraints({
+                selectedPlanIDs: planIDs,
+                plansMap: plansMapRef.current,
+                currency: preferredCurrencyRef.current,
+                subscription,
+            }) ?? planIDs
+        );
     }, [subscription, organization, plans, maybePlanIDs]);
 
     const [model, setModel] = useState<Model>(() => {
@@ -770,21 +779,23 @@ const SubscriptionContainerInner = ({
             isSubscriptionCheckForbidden(subscription, newModel.planIDs, cycle)
         );
 
-        const additionalPayloads = additionalCycles.map(
-            (Cycle) =>
-                ({
-                    ...checkPayload,
-                    Cycle,
-                    Codes: [
-                        ...(checkPayload.Codes ?? []),
-                        getAutoCoupon({
-                            planIDs: newModel.planIDs,
-                            cycle: Cycle,
-                            currency: newModel.currency,
-                        }),
-                    ],
-                }) as CheckSubscriptionData
-        );
+        const additionalPayloads = additionalCycles.map((Cycle) => {
+            const autoCoupon = getAutoCoupon({
+                planIDs: newModel.planIDs,
+                cycle: Cycle,
+                currency: newModel.currency,
+            });
+
+            const uniqueCodes = [...new Set([...(checkPayload.Codes ?? []), autoCoupon].filter(isTruthy))];
+
+            const payload: CheckSubscriptionData = {
+                ...checkPayload,
+                Cycle,
+                Codes: uniqueCodes,
+            };
+
+            return payload;
+        });
 
         const noCoupons = additionalPayloads.every((payload) => !payload.Codes || payload.Codes.length === 0);
 
@@ -896,6 +907,14 @@ const SubscriptionContainerInner = ({
         } else {
             hideVisionaryDowngradeWarning();
         }
+
+        newModel.planIDs =
+            forceAddonsMinMaxConstraints({
+                selectedPlanIDs: newModel.planIDs,
+                plansMap: plansMapRef.current,
+                currency: newModel.currency,
+                subscription,
+            }) ?? newModel.planIDs;
     };
 
     const reportChangeTelemetry = ({ action, ...overrides }: RequireOnly<EstimationChangePayload, 'action'>) => {
