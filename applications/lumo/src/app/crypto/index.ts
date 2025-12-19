@@ -136,6 +136,13 @@ const HKDF_PARAMS_SPACE_DATA_ENCRYPTION = {
     info: utf8StringToUint8Array(SPACE_DEK_CONTEXT),
 };
 
+const SEARCH_INDEX_KEY_DERIVATION_SALT = 'pct0RupKjBBJ/mTxU0XxJQnA+jfcvkn9IFcnB/FNdLA=';
+const SEARCH_INDEX_DEK_CONTEXT = 'dek.search_index.lumo';
+const HKDF_PARAMS_SEARCH_INDEX_ENCRYPTION = {
+    salt: Uint8Array.fromBase64(SEARCH_INDEX_KEY_DERIVATION_SALT),
+    info: utf8StringToUint8Array(SEARCH_INDEX_DEK_CONTEXT),
+};
+
 export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
     const encryptKey = await deriveKey(
         spaceKeyBytes,
@@ -156,11 +163,18 @@ export const generateSearchIndexKeyBase64 = () => generateSearchIndexKeyBytes().
 
 /**
  * Derives the DEK for the search index from the search index key.
- * Uses the same HKDF parameters as space DEK derivation for consistency.
- * The domain separation comes from using a different key (searchIndexKey vs spaceKey).
+ * Uses a separate HKDF context ('dek.search_index.lumo') for proper domain separation.
  */
 export async function deriveSearchIndexDek(searchIndexKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
-    return deriveDataEncryptionKey(searchIndexKeyBytes);
+    const encryptKey = await deriveKey(
+        searchIndexKeyBytes,
+        HKDF_PARAMS_SEARCH_INDEX_ENCRYPTION.salt,
+        HKDF_PARAMS_SEARCH_INDEX_ENCRYPTION.info
+    );
+    return {
+        type: 'AesGcmCryptoKey',
+        encryptKey,
+    };
 }
 
 /**
