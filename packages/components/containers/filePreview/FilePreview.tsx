@@ -66,7 +66,7 @@ interface FilePreviewProps {
 
     // For Video Streaming
     videoStreaming?: {
-        url: string;
+        url?: string;
         onVideoPlaybackError?: (error?: unknown) => void;
     };
 
@@ -129,7 +129,8 @@ export const FilePreviewContent = ({
 
     // For Video Streaming
     videoStreaming?: {
-        url: string;
+        isLoading?: boolean;
+        url?: string;
         onVideoPlaybackError?: (error?: unknown) => void;
     };
 
@@ -166,6 +167,9 @@ export const FilePreviewContent = ({
         }
 
         if (mimeType && isVideo(mimeType) && videoStreaming) {
+            if (videoStreaming.isLoading) {
+                return <PreviewLoader />;
+            }
             return (
                 <VideoStreamingPreview
                     isLoading={isLoading}
