@@ -3,16 +3,16 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
+import { MemberRole, getDrive } from '@proton/drive/index';
 import type { IconName } from '@proton/icons/types';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import generateUID from '@proton/utils/generateUID';
 
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
 import { useRenameModal } from '../../../components/modals/RenameModal';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useActions } from '../../../store';
 
 type Item = {
@@ -93,7 +93,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showDetailsModal({ shareId, linkId: selectedLinkIds[0], volumeId: '' }),
+            action: () => showDetailsModal({ drive: getDrive(), shareId, linkId: selectedLinkIds[0], volumeId: '' }),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,

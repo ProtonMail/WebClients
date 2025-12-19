@@ -220,13 +220,13 @@ export function useDrive() {
     };
 }
 
-export const getDrive = (): ProtonDriveClient => {
+export function getDrive(): ProtonDriveClient {
     return driveSingleton;
-};
+}
 
-export const getDriveForPhotos = (): ProtonDrivePhotosClient => {
+export function getDriveForPhotos(): ProtonDrivePhotosClient {
     return photosSingleton;
-};
+}
 
 export function getDrivePerNodeType(nodeType: NodeType): ProtonDriveClient | ProtonDrivePhotosClient {
     return nodeType === NodeType.Photo || nodeType === NodeType.Album ? photosSingleton : driveSingleton;

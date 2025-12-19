@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { getDriveForPhotos } from '@proton/drive';
 import clsx from '@proton/utils/clsx';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
-import { usePhotosDetailsModal } from '../../../modals/DetailsModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import type { PhotoLink } from '../../../store';
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 
 const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [detailsModal, showDetailsModal] = usePhotosDetailsModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
 
     const link = selectedLinks[0];
 
@@ -32,6 +33,7 @@ const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton =
                 onClick={() => {
                     if (selectedLinks.length === 1) {
                         void showDetailsModal({
+                            drive: getDriveForPhotos(),
                             volumeId: selectedLinks[0].volumeId,
                             shareId: selectedLinks[0].rootShareId,
                             linkId: selectedLinks[0].linkId,

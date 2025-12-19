@@ -1,8 +1,8 @@
 import type { MaybeNode } from '@proton/drive';
-import { useDrive } from '@proton/drive';
 import {
     isProtonDocsDocument,
     isProtonDocsSpreadsheet,
+    isSupportedText,
     mimeTypeToOpenInDocsType,
 } from '@proton/shared/lib/helpers/mimetype';
 
@@ -10,26 +10,28 @@ import { downloadManager } from '../../managers/download/DownloadManager';
 import { useDocumentActions } from '../../store/_documents';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
+import type { Drive } from './interface';
 import { getNodeMimeType } from './nodeUtils';
 
 export default function usePreviewActions({
+    drive,
     nodeUid,
     node,
     nodeData,
 }: {
+    drive: Drive;
     nodeUid: string;
     node?: MaybeNode;
     nodeData?: Uint8Array<ArrayBuffer>[];
 }) {
-    const { drive } = useDrive();
-
     // TODO: Do not use legacy document actions - convert to new document actions.
     const { openDocumentWithNodeUid, convertDocumentWithNodeUid, downloadDocumentWithNodeUid } = useDocumentActions();
+
+    const mimeType = getNodeMimeType(node);
 
     const downloadFile = !node
         ? undefined
         : async () => {
-              const mimeType = getNodeMimeType(node);
               if (mimeType && isProtonDocsDocument(mimeType)) {
                   await downloadDocumentWithNodeUid({
                       type: 'doc',
@@ -48,7 +50,7 @@ export default function usePreviewActions({
               // In case we have related photos we should use the standard download
               if (nodeData) {
                   const { node: nodeEntity } = getNodeEntity(node);
-                  await downloadManager.downloadFromBuffer(nodeEntity, nodeData, getNodeMimeType(node));
+                  await downloadManager.downloadFromBuffer(nodeEntity, nodeData, mimeType);
                   return;
               }
 
@@ -56,14 +58,14 @@ export default function usePreviewActions({
           };
 
     const saveFile = async (content: Uint8Array<ArrayBuffer>[]) => {
-        if (!node) {
+        if (!drive.getFileRevisionUploader || !node) {
             return;
         }
 
         const expectedSize = content.reduce((acc, curr) => acc + curr.byteLength, 0);
 
         const uploader = await drive.getFileRevisionUploader(nodeUid, {
-            mediaType: getNodeMimeType(node) ?? 'application/octet-stream',
+            mediaType: mimeType ?? 'application/octet-stream',
             expectedSize,
             modificationTime: new Date(),
         });
@@ -72,7 +74,7 @@ export default function usePreviewActions({
         await uploadController.completion();
     };
 
-    const openInDocsType = node ? mimeTypeToOpenInDocsType(getNodeMimeType(node)) : undefined;
+    const openInDocsType = node ? mimeTypeToOpenInDocsType(mimeType) : undefined;
     const openInDocs = () => {
         if (!openInDocsType) {
             return;
@@ -98,7 +100,7 @@ export default function usePreviewActions({
 
     return {
         downloadFile,
-        saveFile,
+        saveFile: mimeType && isSupportedText(mimeType) && drive.getFileRevisionUploader ? saveFile : undefined,
         openInDocs: openInDocsType ? openInDocs : undefined,
     };
 }

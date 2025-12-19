@@ -22,7 +22,7 @@ import type { Revision } from '@proton/drive';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { FileDetailsModal } from '../../modals/DetailsModal';
+import { DetailsModal } from '../../modals/DetailsModal';
 import type { useLinkPath } from '../../store';
 import { type SignatureIssues, useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
@@ -450,7 +450,7 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
 }
 
 export const useDetailsModal = () => {
-    return useModalTwoStatic(FileDetailsModal);
+    return useModalTwoStatic(DetailsModal);
 };
 
 export const usePublicDetailsModal = () => {

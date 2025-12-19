@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { getDrive } from '@proton/drive';
+
 import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import type { usePreviewModal } from '../../../../modals/preview';
 import useOpenPreview from '../../../useOpenPreview';
@@ -26,6 +28,7 @@ const PreviewButton = ({ shareId, linkId, nodeUid, showPreviewModal, close }: Pr
             action={() => {
                 if (showPreviewModal && isSDKPreviewEnabled && nodeUid) {
                     showPreviewModal({
+                        drive: getDrive(), // TODO: pass Drive client from context
                         deprecatedContextShareId: shareId,
                         nodeUid,
                     });

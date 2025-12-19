@@ -12,7 +12,7 @@ import {
     useModalStateObject,
     useNotifications,
 } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -23,8 +23,10 @@ import PortalPreview from '../../../components/PortalPreview';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { usePhotosDetailsModal } from '../../../modals/DetailsModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
+import { usePhotosPreviewModal } from '../../../modals/preview';
 import {
     type OnFileUploadSuccessCallbackData,
     type PhotoLink,
@@ -56,12 +58,14 @@ export const PhotosLayout = () => {
     */
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { pathname } = useLocation();
     const { createNotification } = useNotifications();
     const { removeMe } = useSharedWithMeActions();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const photosView = usePhotosWithAlbumsView();
+    const [previewModal, showPreviewModal] = usePhotosPreviewModal();
 
     const {
         volumeId,
@@ -120,7 +124,7 @@ export const PhotosLayout = () => {
     const cachedSelectedItems = useMemoArrayNoMatterTheOrder(selectedItems);
 
     const createAlbum = useCreateAlbum();
-    const [detailsModal, showDetailsModal] = usePhotosDetailsModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
     const { navigateToAlbums, navigateToAlbum } = useNavigate();
     const addAlbumPhotosModal = useModalStateObject();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -242,6 +246,7 @@ export const PhotosLayout = () => {
             return;
         }
         showDetailsModal({
+            drive: getDriveForPhotos(),
             volumeId: linkVolumeId,
             shareId: previewShareId,
             linkId: linkId,
@@ -719,6 +724,48 @@ export const PhotosLayout = () => {
         // addNewAlbumPhotoToCache,
     ]);
 
+    useEffect(() => {
+        if (!previewItem || !isSDKPreviewEnabled) {
+            return;
+        }
+
+        const previewableLinkIds =
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIds : photoLinkIds;
+        const previewableNodeUids = previewableLinkIds.map((linkId) => generateNodeUid(previewItem.volumeId, linkId));
+
+        showPreviewModal({
+            drive: getDriveForPhotos(),
+            deprecatedContextShareId: previewItem.rootShareId,
+            nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
+            previewableNodeUids: previewableNodeUids,
+            onNodeChange: (nodeUid: string) => setPreviewLinkId(splitNodeUid(nodeUid).nodeId),
+            onClose: () => setPreviewLinkId(undefined),
+            photos: {
+                date:
+                    previewItem.activeRevision?.photo?.captureTime ||
+                    (isDecryptedLink(previewItem) ? previewItem.createTime : undefined),
+                isFavorite: previewItem.photoProperties?.isFavorite,
+                onFavorite: () => {
+                    if (previewItem.photoProperties) {
+                        void favoritePhotoToggle(
+                            previewItem.linkId,
+                            previewItem.rootShareId,
+                            previewItem.photoProperties.isFavorite
+                        );
+                    }
+                },
+                onSelectCover:
+                    canChangeAlbumCoverInPreview &&
+                    currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
+                    album?.cover?.linkId !== previewItem.linkId
+                        ? () => {
+                              void onSelectCoverPreview();
+                          }
+                        : undefined,
+            },
+        });
+    }, [isSDKPreviewEnabled, hasPreview, previewItem, albumPhotosLinkIds, photoLinkIds]);
+
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;
     }
@@ -743,7 +790,7 @@ export const PhotosLayout = () => {
             {/* TODO: Remove this hack when albums cache is fixed and refactored */}
             <PhotosRecoveryBanner onSucceed={refreshAlbums} />
 
-            {hasPreview && (
+            {hasPreview && !isSDKPreviewEnabled && (
                 <PortalPreview
                     ref={previewRef}
                     shareId={previewShareId}
@@ -891,6 +938,8 @@ export const PhotosLayout = () => {
                     {removeAlbumPhotosModal}
                 </>
             )}
+
+            {previewModal}
         </UploadDragDrop>
     );
 };

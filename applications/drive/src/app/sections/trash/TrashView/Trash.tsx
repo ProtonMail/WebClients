@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { NodeType, getDrive } from '@proton/drive';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -192,6 +192,7 @@ export function Trash({ shareId, trashView }: Props) {
 
         if (isSDKPreviewEnabled) {
             showPreviewModal({
+                drive: getDrive(), // TODO: pass Drive client from context
                 deprecatedContextShareId: item.rootShareId,
                 nodeUid: item.uid,
             });

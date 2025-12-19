@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom-v5-compat';
 import { c } from 'ttag';
 
 import { type BreadcrumbInfo, CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDrive } from '@proton/drive/index';
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -16,7 +16,7 @@ import type { Share } from '../../store/_shares';
 import { ShareType, useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { sendErrorReport } from '../../utils/errorHandling';
-import SignatureIcon from '../SignatureIcon';
+import { DeprecatedSignatureIcon } from '../SignatureIcon';
 import { useDetailsModal } from '../modals/DetailsModal';
 import { getDevicesSectionName } from '../sections/Devices/constants';
 
@@ -54,6 +54,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         onClick = link.signatureIssues
                             ? () =>
                                   showDetailsModal({
+                                      drive: getDrive(), // Breadcrumb is supported only in main SDK.
                                       volumeId: activeFolder.volumeId,
                                       shareId: activeFolder.shareId,
                                       linkId,
@@ -68,7 +69,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         text: name,
                         richText: (
                             <span className="flex items-center flex-nowrap flex-1">
-                                <SignatureIcon
+                                <DeprecatedSignatureIcon
                                     isFile={link.isFile}
                                     mimeType={link.mimeType}
                                     signatureIssues={link.signatureIssues}

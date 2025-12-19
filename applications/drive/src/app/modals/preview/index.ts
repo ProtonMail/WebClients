@@ -23,4 +23,10 @@
  */
 
 export { Preview } from './Preview';
-export { usePreviewModal } from './usePreviewModal';
+export {
+    // TODO: For backwards compatibility only.
+    // Update all places to use the specific hook explicitely.
+    useDrivePreviewModal as usePreviewModal,
+    useDrivePreviewModal,
+} from './useDrivePreviewModal';
+export { usePhotosPreviewModal } from './usePhotosPreviewModal';
