@@ -3105,6 +3105,21 @@
       ],
       "Web search access": [
         "Tilgang til nettsøk"
+      ],
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
+      ],
+      "Zero-access encryption": [
+        "Nulltilgangskryptering"
       ]
     },
     "collider_2025: Feature": {
@@ -6975,6 +6990,12 @@
       ],
       "View invitation": [
         "Se invitasjon"
+      ],
+      "Show all (${ invites.length })": [
+        "Vis alle (${ invites.length })"
+      ],
+      "Show less": [
+        "Vis mindre"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7107,6 +7128,20 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Pending invitation": [
+        "Ventende invitasjon",
+        "Ventende invitasjoner"
+      ],
+      "View the invitation": [
+        "Se invitasjonen",
+        "Se invitasjonene"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Du er invitert av **${ invite.InviterEmail }** til å koble kontoen din til denne gruppeplanen."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Du er invitert til å bli med i ${ invite.OrganizationName }"
       ]
     },
     "familyOffer_2023:Info": {
@@ -22949,6 +22984,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Pending invitations": [
+        "Ventende invitasjoner"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23631,6 +23669,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] } . Fra bare ${ priceString }/måned per konto."
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filer, bilder og dokumenter, og gjenopprett filversjoner med 10-års filgjenoppretting."
       ]
     },
     "upsell panel": {
@@ -24394,6 +24435,47 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Action (Scribe)": {
+      "add more seats": [
+        "legg til flere lisenser"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoin-lommebok"
+      ],
+      "Confidential video calls": [
+        "Sikre videosamtaler"
+      ],
+      "Encrypted email": [
+        "Kryptert e-post"
+      ],
+      "Passwords and identity": [
+        "Passord og identitet"
+      ],
+      "Private AI assistant": [
+        "Privat KI-assistent"
+      ],
+      "Private browsing": [
+        "Privat surfing"
+      ],
+      "Private scheduling": [
+        "Privat planlegging"
+      ],
+      "Secure cloud storage": [
+        "Sikker skylagring"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Brukere og adresser"
       ]
     }
   }

@@ -3142,6 +3142,21 @@
       ],
       "Web search access": [
         "Přístup k vyhledávání na webu"
+      ],
+      "Built and based in Europe": [
+        "Vyvinuto a umístěno v Evropě"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržování předpisů o ochraně osobních údajů"
+      ],
+      "Data never used for AI training": [
+        "Data nikdy nepoužita pro výcvik AI"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
+      ],
+      "Zero-access encryption": [
+        "Šifrování s nulovým přístupem"
       ]
     },
     "collider_2025: Feature": {
@@ -7056,6 +7071,12 @@
       ],
       "View invitation": [
         "Zobrazit pozvánku"
+      ],
+      "Show all (${ invites.length })": [
+        "Zobrazit všechny (${ invites.length })"
+      ],
+      "Show less": [
+        "Zobrazit méně"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -7194,6 +7215,24 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
+      ],
+      "Pending invitation": [
+        "Čekající pozvánka",
+        "Čekající pozvánky",
+        "Čekající pozvánky",
+        "Čekající pozvánky"
+      ],
+      "View the invitation": [
+        "Zobrazit pozvánku",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "**${ invite.InviterEmail }** vás zve k propojení vašeho účtu s tímto skupinovým tarifem."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Byli jste pozváni do organizace ${ invite.OrganizationName }"
       ]
     },
     "familyOffer_2023:Info": {
@@ -23518,6 +23557,9 @@
       ],
       "Your subscriptions": [
         "Vaše předplatné"
+      ],
+      "Pending invitations": [
+        "Čekající pozvánky"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24204,6 +24246,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Můžete chránit až ${ FAMILY_MAX_USERS } osob s ${ PLAN_NAMES[plan] }. Již od ${ priceString }/měsíc za jeden účet."
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Získejte úložiště o velikosti ${ drivePlusPlanMaxSpace } pro své soubory, fotky a dokumenty a obnovujte až 10 let staré verze souborů."
       ]
     },
     "upsell panel": {
@@ -25057,6 +25102,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoinová peněženka"
+      ],
+      "Confidential video calls": [
+        "Důvěrné videohovory"
+      ],
+      "Encrypted email": [
+        "Šifrovaný e-mail"
+      ],
+      "Passwords and identity": [
+        "Hesla a identity"
+      ],
+      "Private AI assistant": [
+        "Soukromý AI asistent"
+      ],
+      "Private browsing": [
+        "Soukromé procházení"
+      ],
+      "Private scheduling": [
+        "Soukromé plánování"
+      ],
+      "Secure cloud storage": [
+        "Bezpečné cloudové úložiště"
       ]
     }
   }

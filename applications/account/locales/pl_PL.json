@@ -1444,6 +1444,9 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Subscribe now": [
+        "Subskrybuj teraz"
       ]
     },
     "action": {
@@ -10092,6 +10095,21 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1: Zaproś znajomych** do ${ BRAND_NAME } za pomocą linku polecającego."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają **2 tygodnie planu za darmo**."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
       ]
     },
     "info": {
@@ -19919,6 +19937,9 @@
       ],
       "Your subscriptions": [
         "Twoja subskrypcja"
+      ],
+      "How your free trial works": [
+        "Jak działa darmowa wersja próbna"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21223,6 +21244,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za polecenie"
+      ],
+      "Invite friends. Get credits.": [
+        "Zaproś znajomych. Zdobądź środki."
+      ],
+      "Share using ${ name }": [
+        "Udostępnij przez ${ name }"
+      ],
+      "Start earning credits": [
+        "Zacznij zarabiać środki"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
       ]
     }
   }
