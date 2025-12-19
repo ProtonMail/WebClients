@@ -34,6 +34,8 @@ export type OldBookingTimeslot = {
 export type BookingDetails = {
     calendarId: string;
     bookingUID: string;
+    calendarKeySignature: string;
+    calendarPublicKey: string;
     summary: string;
     description: string;
     location: string;

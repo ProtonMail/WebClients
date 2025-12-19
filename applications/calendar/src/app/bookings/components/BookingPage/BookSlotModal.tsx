@@ -83,7 +83,9 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
         // We use the old crypto model for legacy booking pages
         // TODO use something else to determine the crypto model version
         const result =
-            'bookingKeyPacket' in timeslot ? await submitOldCryptoModel(timeslot, { name, email }) : submitBooking();
+            'bookingKeyPacket' in timeslot && timeslot.bookingKeyPacket
+                ? await submitOldCryptoModel(timeslot, { name, email })
+                : await submitBooking(timeslot, { name, email });
         if (result === 'success') {
             rest.onClose?.();
         }
