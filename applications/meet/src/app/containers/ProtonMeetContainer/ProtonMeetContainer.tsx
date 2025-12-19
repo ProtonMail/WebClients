@@ -159,7 +159,7 @@ export const ProtonMeetContainer = ({
         updateAdminParticipant,
         getQueryParticipantsCount,
         participantsCount,
-    } = useParticipantNameMap();
+    } = useParticipantNameMap(meetingDetails.meetingId as string);
 
     const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup, preparePictureInPicture } =
         usePictureInPicture({
