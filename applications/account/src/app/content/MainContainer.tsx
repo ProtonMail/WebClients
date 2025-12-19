@@ -188,6 +188,7 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isOLESEnabled = useFlag('OlesM1');
 
     const [referralInfo] = useReferralInfo();
 
@@ -278,6 +279,7 @@ const MainContainer = () => {
         showDriveDashboardVariant: showDriveDashboardVariant.name,
         isAuthenticatorAvailable,
         hasPendingInvitations,
+        isOLESEnabled,
     });
 
     useEffect(() => {
