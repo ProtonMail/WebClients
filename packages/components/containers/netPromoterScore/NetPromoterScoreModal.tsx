@@ -70,6 +70,7 @@ const NetPromoterScoreModal = ({ open, onClose, config, updateFeatureValue }: Ne
                 <InputFieldTwo
                     as={TextAreaTwo}
                     id="feedback-input"
+                    maxLength={250}
                     label={c('Label').t`Tell us more about your experience`}
                     placeholder={c('Placeholder').t`Optional feedback`}
                     onValue={(value: string) => {
