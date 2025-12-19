@@ -14,7 +14,7 @@ const useStartupModals: () => StartupModal[] = () => {
     const reminderModal = useCancellationReminderModal();
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
     const netPromoterScoreModal = useNetPromoterScoreModal(
-        isElectronMail ? NPSApplication.DesktopCalendar : NPSApplication.DesktopMail
+        isElectronMail ? NPSApplication.DesktopCalendar : NPSApplication.WebCalendar
     );
 
     return [trialEndedModal, reminderModal, lightLabellingFeatureModal, netPromoterScoreModal];
