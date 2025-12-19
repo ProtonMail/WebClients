@@ -1,5 +1,4 @@
 import type { FC, ReactNode } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -19,8 +18,8 @@ import { getMonitorRoute } from '@proton/pass/components/Navigation/routing';
 import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 
 import { MenuActions } from './MenuActions';
 
@@ -33,7 +32,7 @@ type Props = {
 export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
     const menu = useMenuItems();
     const vaultActions = useVaultActions();
-    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const { vaultCreationDisabled } = useVaultCreationPolicy();
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">

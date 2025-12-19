@@ -9,9 +9,9 @@ import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
-import { selectAllShares, selectItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
+import { selectAllShares, selectItems, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, Share, ShareGetResponse, ShareType } from '@proton/pass/types';
+import { type Maybe, OrganizationVaultCreateMode, type Share, type ShareGetResponse, type ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -100,7 +100,7 @@ export function* synchronize(type: SyncType) {
      * For b2b users, don't create vault if org doesn't allow it.
      * This accounts for first login, default vault being disabled. */
     if (!hasDefaultVault) {
-        const canCreateVault = !selectOrganizationVaultCreationDisabled(state);
+        const canCreateVault = selectOrganizationVaultCreationPolicy(state) !== OrganizationVaultCreateMode.ONLYORGADMINS;
 
         if (canCreateVault) {
             logger.info(`[Sync] No default vault found, creating initial vault..`);
