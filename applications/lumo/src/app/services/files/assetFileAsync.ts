@@ -1,8 +1,16 @@
 import { getApproximateTokenCount } from '../../llm/tokenizer';
-import { newAssetId, pushAssetRequest, upsertAsset } from '../../redux/slices/core/assets';
 import { selectAssets } from '../../redux/selectors';
+import { pushAssetRequest } from '../../redux/sagas/assets';
+import { newAttachmentId, upsertAttachment } from '../../redux/slices/core/attachments';
 import type { LumoDispatch, LumoState } from '../../redux/store';
-import type { Asset, SpaceId } from '../../types';
+import type { Attachment, SpaceId } from '../../types';
+import type { DriveDocument } from '../../types/documents';
+import { SearchService } from '../search/searchService';
+
+// Type alias for backwards compatibility
+type Asset = Attachment;
+const newAssetId = newAttachmentId;
+const upsertAsset = upsertAttachment;
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
 import { fileProcessingService } from '../fileProcessingService';
 import { storePendingAsset } from './pendingAssets';
@@ -106,6 +114,39 @@ export const handleSpaceAssetFileAsync = (file: File, spaceId: SpaceId) => async
     // Trigger persistence to backend (saga will fetch full asset from pendingAssetsMap)
     if (!hasError) {
         dispatch(pushAssetRequest({ id: processedAsset.id }));
+    }
+
+    // Index the file into the search service for RAG retrieval
+    // This uses the same chunking as Drive files for large documents
+    if (!hasError && processedAsset.markdown) {
+        try {
+            const userId = currentState.user?.value?.ID;
+            if (userId) {
+                const searchService = SearchService.get(userId);
+                const document: DriveDocument = {
+                    id: processedAsset.id, // Use attachment ID as document ID
+                    name: processedAsset.filename,
+                    content: processedAsset.markdown,
+                    mimeType: processedAsset.mimeType || 'application/octet-stream',
+                    size: processedAsset.rawBytes || 0,
+                    modifiedTime: Date.now(),
+                    folderId: spaceId, // Use spaceId as the folder
+                    folderPath: 'Uploaded Files', // Virtual folder path
+                    spaceId,
+                };
+
+                // indexDocuments will automatically chunk large files
+                const indexResult = await searchService.indexDocuments([document]);
+                if (indexResult.success) {
+                    console.log(`[AssetFileAsync] Successfully indexed file: ${processedAsset.filename}`);
+                } else {
+                    console.warn(`[AssetFileAsync] Failed to index file: ${processedAsset.filename}`, indexResult.error);
+                }
+            }
+        } catch (indexError) {
+            console.warn('[AssetFileAsync] Failed to index file for search:', indexError);
+            // Don't fail the upload if indexing fails
+        }
     }
 
     const endTime = performance.now();

@@ -2,58 +2,23 @@ import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm';
 import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectAttachmentsBySpaceId, selectAssetsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectContextFilters } from '../redux/selectors';
 import type { Attachment, Message, SpaceId } from '../types';
 
+/**
+ * Hook to get filtered files for the knowledge panel.
+ * 
+ * Note: Project files are now indexed and retrieved via RAG (same as Drive files).
+ * This hook primarily handles message attachments and context filtering.
+ */
 export const useFilteredFiles = (
     messageChain: Message[],
     currentAttachments: Attachment[] = [],
     filterMessage?: Message,
-    spaceId?: SpaceId
+    _spaceId?: SpaceId // Kept for API compatibility, but no longer used
 ) => {
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
-
-    // Get space-level attachments (project files)
-    // These are attachments with spaceId that are NOT attached to any message in the conversation
-    const spaceAttachments = useLumoSelector((state) =>
-        spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
-    );
-
-    // Get all attachment IDs that are referenced in messages (these are conversation attachments, not project files)
-    const messageAttachmentIds = useMemo(() => {
-        return new Set(messageChain.flatMap((message) => message.attachments?.map((att) => att.id) || []));
-    }, [messageChain]);
-
-    const spaceAttachmentsList = useMemo(() => {
-        // Filter out:
-        // 1. Attachments that are attached to messages in current conversation
-        // 2. Auto-retrieved attachments (they're conversation-specific, not true project files)
-        return Object.values(spaceAttachments)
-            .filter((attachment) =>
-                !messageAttachmentIds.has(attachment.id) &&
-                !attachment.autoRetrieved
-            )
-            .map((attachment, index) => ({
-                ...attachment,
-                messageId: '', // Space attachments don't belong to a specific message
-                messageIndex: -1 - index, // Negative index to sort them before message files
-            }));
-    }, [spaceAttachments, messageAttachmentIds]);
-
-    // Get space-level assets (project files stored as assets)
-    const spaceAssets = useLumoSelector((state) =>
-        spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
-    );
-    const spaceAssetsList = useMemo(() =>
-        Object.values(spaceAssets)
-            .filter((asset) => !asset.error && !asset.processing)
-            .map((asset, index) => ({
-                ...asset,
-                messageId: '', // Space assets don't belong to a specific message
-                messageIndex: -2 - index, // Even more negative to sort assets before attachments
-            }))
-    , [spaceAssets]);
 
     // Helper to get full attachment from shallow attachment reference
     const getFullAttachmentFromShallow = (shallowAttachment: any) => {
@@ -63,14 +28,19 @@ export const useFilteredFiles = (
     // Get files to display based on filtering
     const allFiles = useMemo(() => {
         if (!filterMessage) {
+            // Show all files from messages in the conversation
             const messageFiles = messageChain.flatMap(
                 (message) =>
                     message.attachments
                         ?.map((shallowAttachment) => {
                             const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                             if (!fullAttachment) return null;
+                            // Merge autoRetrieved flag from shallow attachment (for project files)
+                            // since we skip upserting modified attachments to Redux
                             return {
                                 ...fullAttachment,
+                                autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
+                                isUploadedProjectFile: shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                                 messageId: message.id,
                                 messageIndex: messageChain.indexOf(message),
                             };
@@ -80,12 +50,13 @@ export const useFilteredFiles = (
                         ) || []
             );
 
-            // Remove duplicates: if a space asset/attachment is already in a message, don't show it twice
-            const spaceFileIds = new Set([...spaceAssetsList.map(a => a.id), ...spaceAttachmentsList.map(a => a.id)]);
-            const uniqueMessageFiles = messageFiles.filter(file => !spaceFileIds.has(file.id));
-
-            // Include space-level files (assets first, then attachments) at the beginning, then unique message files
-            return [...spaceAssetsList, ...spaceAttachmentsList, ...uniqueMessageFiles];
+            // Deduplicate by ID
+            const seen = new Set<string>();
+            return messageFiles.filter(file => {
+                if (seen.has(file.id)) return false;
+                seen.add(file.id);
+                return true;
+            });
         }
 
         // For assistant messages with contextFiles, show exactly the files that were used for that response
@@ -124,8 +95,11 @@ export const useFilteredFiles = (
                 message.attachments?.map((shallowAttachment) => {
                     const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                     if (!fullAttachment) return null;
+                    // Merge autoRetrieved flag from shallow attachment
                     return {
                         ...fullAttachment,
+                        autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
+                        isUploadedProjectFile: shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                         messageId: message.id,
                         messageIndex: messageChain.indexOf(message),
                     };
@@ -133,36 +107,25 @@ export const useFilteredFiles = (
             );
         });
 
-        const filteredFiles = files.filter((file): file is Attachment & { messageId: string; messageIndex: number } => file !== null);
-
-        // Remove duplicates: if a space attachment is already in filteredFiles, don't show it twice
-        const spaceAttachmentIds = new Set(spaceAttachmentsList.map(a => a.id));
-        const uniqueFilteredFiles = filteredFiles.filter(file => !spaceAttachmentIds.has(file.id));
-
-        // Include space-level attachments at the beginning when filtering
-        return [...spaceAttachmentsList, ...uniqueFilteredFiles];
-    }, [messageChain, allAttachments, filterMessage, spaceAttachmentsList]);
+        return files.filter((file): file is Attachment & { messageId: string; messageIndex: number } => file !== null);
+    }, [messageChain, allAttachments, filterMessage]);
 
     // Check if a file is excluded based on context filters
     const isFileExcluded = (file: any) => {
-        // Space-level attachments (with empty messageId) are never excluded
         if (!file.messageId) return false;
-
         const filter = contextFilters.find((f: ContextFilter) => f.messageId === file.messageId);
         return filter ? filter.excludedFiles.includes(file.filename) : false;
     };
 
-    // When filtering, show all files from the message (no active/unused distinction)
-    // When not filtering, separate historical files: by default all are ACTIVE unless filtered out
+    // Separate active vs excluded files (excluding auto-retrieved which are shown separately)
     const activeHistoricalFiles = useMemo(() => {
-        return filterMessage ? allFiles : allFiles.filter((file) => !isFileExcluded(file));
+        if (filterMessage) return allFiles;
+        return allFiles.filter((file) => !isFileExcluded(file) && !(file as any).autoRetrieved);
     }, [allFiles, filterMessage, contextFilters]);
 
     const unusedHistoricalFiles = useMemo(() => {
-        // Filter out auto-retrieved files - they're handled separately in the FilesPanel
-        return filterMessage ? [] : allFiles.filter((file) =>
-            isFileExcluded(file) && !(file as any).autoRetrieved
-        );
+        if (filterMessage) return [];
+        return allFiles.filter((file) => isFileExcluded(file) && !(file as any).autoRetrieved);
     }, [allFiles, filterMessage, contextFilters]);
 
     // Calculate context based on files that will be used for next question
@@ -170,27 +133,12 @@ export const useFilteredFiles = (
         return filterMessage ? allFiles : [...currentAttachments, ...activeHistoricalFiles];
     }, [filterMessage, allFiles, currentAttachments, activeHistoricalFiles]);
 
-    // Separate project files (space-level assets and attachments) from message files
-    const projectFiles = useMemo(() => {
-        // Include both space assets and space attachments as project files
-        return [...spaceAssetsList, ...spaceAttachmentsList];
-    }, [spaceAssetsList, spaceAttachmentsList]);
-
-    // Filter activeHistoricalFiles to exclude project files and auto-retrieved files (they're shown separately)
-    const messageOnlyActiveFiles = useMemo(() => {
-        const projectFileIds = new Set(projectFiles.map(f => f.id));
-        return activeHistoricalFiles.filter(file =>
-            !projectFileIds.has(file.id) && !(file as any).autoRetrieved
-        );
-    }, [activeHistoricalFiles, projectFiles]);
-
     return {
         allFiles,
-        activeHistoricalFiles: messageOnlyActiveFiles,
+        activeHistoricalFiles,
         unusedHistoricalFiles,
         nextQuestionFiles,
         isFileExcluded,
         contextFilters,
-        projectFiles, // New: separate list of project files
     };
 };
