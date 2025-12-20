@@ -3,8 +3,6 @@ import isEqual from 'lodash/isEqual';
 import { computeSha256AsBase64 } from '../crypto';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
 import type {
-    AssetId,
-    SerializedAsset,
     SerializedConversationMap,
     SerializedMessageMap,
     SerializedSpaceMap
@@ -22,8 +20,13 @@ import {
     cleanSerializedAttachment,
     cleanSerializedConversation,
     cleanSerializedMessage,
-    cleanSerializedSpace, cleanSerializedAsset,
+    cleanSerializedSpace,
 } from '../types';
+
+// Type aliases for backwards compatibility (assets are now attachments)
+type AssetId = AttachmentId;
+type SerializedAsset = SerializedAttachment;
+const cleanSerializedAsset = cleanSerializedAttachment;
 import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
 import { requestToPromise, withCursor } from './util';

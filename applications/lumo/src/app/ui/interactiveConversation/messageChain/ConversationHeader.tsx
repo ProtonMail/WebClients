@@ -55,8 +55,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
     const allAttachments = useLumoSelector(selectAttachments);
 
+    // Exclude auto-retrieved files as they're from Drive indexing, not user uploads
     const validSpaceAssets = Object.values(spaceAssets).filter(
-        (asset) => !asset.error && !asset.processing
+        (asset) => !asset.error && !asset.processing && !asset.autoRetrieved
     );
     // Exclude auto-retrieved attachments as they're conversation-specific, not space-level
     const validSpaceAttachments = Object.values(spaceAttachments).filter(
