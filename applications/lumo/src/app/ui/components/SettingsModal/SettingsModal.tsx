@@ -224,23 +224,6 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
         }
     }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap]);
 
-    const handleClearIndex = React.useCallback(async () => {
-        if (!userId) return;
-
-        if (!window.confirm(c('Confirmation').t`Are you sure you want to clear the search index? You will need to re-index to search again.`)) {
-            return;
-        }
-
-        try {
-            const db = new DbApi(userId);
-            await db.clearAllSearchBlobs();
-            setIndexError(null);
-        } catch (error) {
-            console.error('[Settings] Failed to clear index:', error);
-            setIndexError(c('collider_2025: Error').t`Failed to clear index. Please try again.`);
-        }
-    }, [userId]);
-
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
     const hasError = indexError || messageIndexingStatus.error;
