@@ -2,7 +2,7 @@ import {
     ICON_MAX_HEIGHT,
     ICON_MIN_HEIGHT,
     ICON_PADDING,
-    INPUT_BASE_STYLES_ATTR,
+    OVERRIDE_STYLES_ATTR,
 } from 'proton-pass-extension/app/content/constants.static';
 import type { ProtonPassControl } from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl';
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl.raw.scss';
@@ -16,6 +16,7 @@ import {
     pixelParser,
 } from '@proton/pass/utils/dom/computed-styles';
 import { createCustomElement, createElement } from '@proton/pass/utils/dom/create-element';
+import { isContainingBlock } from '@proton/pass/utils/dom/position';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
@@ -193,20 +194,20 @@ export const resolveInjectionAnchor = (input: HTMLInputElement): Element => {
     return nextSibling?.tagName === 'LABEL' ? nextSibling : input;
 };
 
-export const getInputInitialStyles = (el: HTMLElement): FieldOverrides => {
-    const initialStyles = el.getAttribute(INPUT_BASE_STYLES_ATTR);
+export const getBaseStyles = (el: HTMLElement): FieldOverrides => {
+    const initialStyles = el.getAttribute(OVERRIDE_STYLES_ATTR);
     return initialStyles ? JSON.parse(initialStyles) : {};
 };
 
-export const cleanupInputStyles = (input: HTMLInputElement) => {
-    Object.entries(getInputInitialStyles(input)).forEach(
+export const cleanupStyleOverrides = (el: HTMLElement) => {
+    Object.entries(getBaseStyles(el)).forEach(
         ([prop, value]) =>
             Boolean(value)
-                ? input.style.setProperty(prop, value) /* if has initial style -> reset */
-                : input.style.removeProperty(prop) /* else remove override */
+                ? el.style.setProperty(prop, value) /* if has initial style -> reset */
+                : el.style.removeProperty(prop) /* else remove override */
     );
 
-    input.removeAttribute(INPUT_BASE_STYLES_ATTR);
+    el.removeAttribute(OVERRIDE_STYLES_ATTR);
 };
 
 /* Force re-render/re-paint of the input element
@@ -219,7 +220,7 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
     const { anchor, input, control, form } = options;
     const boxed = anchor !== input;
 
-    cleanupInputStyles(input);
+    cleanupStyleOverrides(input);
 
     repaint(input, control);
     if (boxed) repaint(anchor);
@@ -320,7 +321,7 @@ export const applyIconInjectionStyles = ({ icon, input }: IconElementRefs, style
 
     /* Store the original input styles to handle potential clean-up
      * on extension updates or code hot-reload. */
-    input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify({ 'padding-right': input.style.paddingRight }));
+    input.setAttribute(OVERRIDE_STYLES_ATTR, JSON.stringify({ 'padding-right': input.style.paddingRight }));
 
     input.style.setProperty('padding-right', pixelEncoder(styles.input.paddingRight), 'important');
     const widthAfter = input.getBoundingClientRect().width;
@@ -350,4 +351,36 @@ export const createIcon = ({ tag, zIndex }: CreateIconConfig): IconElement => {
     control.shadowRoot.appendChild(icon);
 
     return { icon, control: control.customElement };
+};
+
+/** Determines if the target container needs `position: relative` to fix scroll positioning :
+ * Injected field icons use `position: absolute` to stay anchored to their inputs. When a
+ * scrollable ancestor lacks a containing block in its descendants, these icons escape
+ * the scroll boundary and can potentially "detach" during scroll.
+ *
+ * This walks from the target up to the scroll parent or form boundary. In most cases, an
+ * existing containing block is found early (field wrappers commonly use positioning for
+ * tooltips and overlays), making the fix unnecessary. When no containing block exists on
+ * this path, it's safe to add `position: relative` to the target to contain the icon. */
+export const shouldCreateContainingBlock = (
+    target: HTMLElement,
+    form: HTMLElement,
+    scrollParent: HTMLElement
+): boolean => {
+    /** Page-level only scrolling should not require positioning fixes */
+    if (scrollParent === document.body) return false;
+
+    let current: HTMLElement = target;
+
+    while (current) {
+        if (isContainingBlock(current)) return false;
+
+        /** Stop at form/scrollParent boundaries */
+        const parent = current.parentElement;
+        if (!parent || parent === form || parent === scrollParent) return true;
+
+        current = parent;
+    }
+
+    return false;
 };

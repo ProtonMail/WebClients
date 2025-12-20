@@ -1,4 +1,4 @@
-export const INPUT_BASE_STYLES_ATTR = `data-protonpass-base-css`;
+export const OVERRIDE_STYLES_ATTR = `data-protonpass-base-css`;
 
 export const ICON_MAX_HEIGHT = 28;
 export const ICON_MIN_HEIGHT = 16;

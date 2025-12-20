@@ -1,8 +1,8 @@
-import { INPUT_BASE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
+import { OVERRIDE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
 
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
-import { cleanupInputStyles } from './icon/icon.utils';
+import { cleanupStyleOverrides } from './icon/icon.utils';
 
 export const DOMCleanUp = ({ root, control }: PassElementsConfig) => {
     /* remove all injected DOM nodes */
@@ -10,6 +10,6 @@ export const DOMCleanUp = ({ root, control }: PassElementsConfig) => {
     injectedNodes.forEach((node) => node.remove());
 
     /* reset input field styles */
-    const inputs = document.querySelectorAll<HTMLInputElement>(`input[${INPUT_BASE_STYLES_ATTR}]`);
-    inputs.forEach((input) => cleanupInputStyles(input));
+    const els = document.querySelectorAll<HTMLInputElement>(`[${OVERRIDE_STYLES_ATTR}]`);
+    els.forEach((el) => cleanupStyleOverrides(el));
 };
