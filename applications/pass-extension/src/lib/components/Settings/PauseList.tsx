@@ -16,11 +16,15 @@ import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria';
+import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
+import {
+    CRITERIAS_SETTING_CREATE,
+    CRITERIA_MASKS,
+    hasCriteria,
+    toggleCriteria,
+} from '@proton/pass/lib/settings/pause-list';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectDisallowedDomains } from '@proton/pass/store/selectors';
-import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
-import { CRITERIAS_SETTING_CREATE, CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';

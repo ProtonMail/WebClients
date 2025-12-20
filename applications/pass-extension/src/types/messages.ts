@@ -33,6 +33,7 @@ import type {
     SelectedPasskey,
 } from '@proton/pass/lib/passkeys/types';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
+import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -72,7 +73,6 @@ import type {
     AutofillLoginResult,
     AutofillOptions,
 } from '@proton/pass/types/worker/autofill';
-import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
