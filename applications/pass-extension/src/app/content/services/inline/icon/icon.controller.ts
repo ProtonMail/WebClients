@@ -5,6 +5,7 @@ import {
     DropdownAction,
     LOCKED_ICON_SRC,
 } from 'proton-pass-extension/app/content/constants.runtime';
+import { OVERRIDE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import { FIELD_ATTRS_FILTER } from 'proton-pass-extension/app/content/services/form/field.utils';
@@ -18,6 +19,7 @@ import { animatePositionChange, freezeAnimations, waitForTransitions } from '@pr
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
@@ -25,11 +27,12 @@ import type { IconStyles } from './icon.utils';
 import {
     ICON_MAX_SHIFT_RATIO,
     applyIconInjectionStyles,
-    cleanupInputStyles,
+    cleanupStyleOverrides,
     computeIconInjectionStyles,
     createIcon,
     hasIconInjectionStylesChanged,
     resolveInjectionAnchor,
+    shouldCreateContainingBlock,
 } from './icon.utils';
 
 type IconControllerOptions = {
@@ -61,11 +64,12 @@ export type IconState = {
 const MIN_FIELD_WIDTH = 100;
 
 export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
-    const { field, tag } = options;
+    const { field, tag, mainFrame } = options;
     const input = field.element;
-    const form = field.getFormHandle().element;
+    const formHandle = field.getFormHandle();
+    const form = formHandle.element;
     const anchor = field.getAnchor({ reflow: true });
-    const zIndex = field.getFormHandle().zIndex;
+    const zIndex = formHandle.zIndex;
 
     if (!isInputElement(input)) return null;
 
@@ -74,6 +78,13 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     const noAnchor = anchor.element === input || anchor.element === input.parentElement;
     const container = noAnchor ? input.parentElement! : anchor.element;
+    const checkParentFrame = !mainFrame && formHandle.fields.size === 1;
+
+    if (shouldCreateContainingBlock(container, form, formHandle.scrollParent)) {
+        logger.debug(`[IconController] injection requires containing block`);
+        container.setAttribute(OVERRIDE_STYLES_ATTR, JSON.stringify({ position: container.style.position }));
+        container.style.position = 'relative';
+    }
 
     if (noAnchor) resolveInjectionAnchor(input).after(control);
     else container.appendChild(control);
@@ -107,9 +118,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
          * The compositor layer becomes stale despite successful resource loading. Cache-busting
          * forces a fresh render pass. See: intermittent rendering on show/hide, but renders
          * correctly after tab switches (which trigger full repaints). */
-        if (BUILD_TARGET === 'safari' && !options.mainFrame) {
-            iconUrl += `?v=${field.fieldId}-${+Date.now()}`;
-        }
+        if (BUILD_TARGET === 'safari' && !mainFrame) iconUrl += `?v=${field.fieldId}-${+Date.now()}`;
 
         icon.style.setProperty('background-image', `url("${iconUrl}")`, 'important');
     };
@@ -210,7 +219,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
                         const styles = computeIconInjectionStyles(refs);
 
-                        if (!options.mainFrame) await checkParentCollision(styles, ctrl);
+                        if (checkParentFrame) await checkParentCollision(styles, ctrl);
                         if (ctrl.signal.aborted) return;
 
                         /** Only apply if there's a non-negligable change */
@@ -270,7 +279,8 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         icon.remove();
         control.remove();
 
-        cleanupInputStyles(input);
+        cleanupStyleOverrides(input);
+        cleanupStyleOverrides(container);
     });
 
     const debouncedReposition = debounce(reposition, 150, { leading: true, trailing: true });
