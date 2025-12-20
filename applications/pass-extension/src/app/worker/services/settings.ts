@@ -14,6 +14,8 @@ import { logger } from '@proton/pass/utils/logger';
 type SettingsServiceState = { settings: MaybeNull<ProxiedSettings> };
 
 export const createSettingsService = () => {
+    /** Cache the settings to avoid constantly reading from extension
+     * storage when resolving settings for content-scripts. */
     const state: SettingsServiceState = { settings: null };
 
     const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {
@@ -47,8 +49,8 @@ export const createSettingsService = () => {
         ),
 
         /* We have to proxy the redux store settings in local storage
-         * in case the user is logged out (session invalidated, locked etc..)
-         * but need to preserve the user settings in the content-script */
+         * in case the user is logged or locked out but need to preserve
+         * the user settings in content-scripts (eg: autofill settings). */
         sync: withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
             logger.info('[Worker::Settings] synced settings');
             state.settings = settings;

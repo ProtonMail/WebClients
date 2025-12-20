@@ -227,7 +227,7 @@ export const createActivationService = () => {
 
             const canCreateItems = selectCanCreateItems(ctx.service.store.getState());
             const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
-            const features = await ctx.service.featureFlags.read();
+            const features = await ctx.service.featureFlags.resolve();
 
             return { state: ctx.getState(), features, settings };
         }

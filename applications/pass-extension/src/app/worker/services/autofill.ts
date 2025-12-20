@@ -72,8 +72,8 @@ export const createAutoFillService = () => {
      * be absent when the extension is locked. When enabling other sub-frame
      * autofill types, remove the `PassCreditCardWebAutofill` condition */
     const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
-        const { autofill } = await ctx.service.settings.read();
-        const features = await ctx.service.featureFlags.read();
+        const { autofill } = await ctx.service.settings.resolve();
+        const features = await ctx.service.featureFlags.resolve();
         return Boolean(!features.PassIFrameKillswitch && features.PassCreditCardWebAutofill && autofill.cc);
     });
 
