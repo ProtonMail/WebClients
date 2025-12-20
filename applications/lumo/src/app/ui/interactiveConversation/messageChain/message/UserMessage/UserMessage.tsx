@@ -73,11 +73,24 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
     const allAttachments = useLumoSelector(selectAttachments);
-    const fullAttachments =
-        message.attachments?.map((shallowAttachment) => allAttachments[shallowAttachment.id]).filter(Boolean) || [];
-
-    // Only show manually uploaded attachments (auto-retrieved files are shown in assistant response and chat knowledge)
-    const manualAttachments = fullAttachments.filter(att => !att.autoRetrieved);
+    
+    // Only show manually uploaded attachments to THIS message
+    // Exclude auto-retrieved files (both Drive files and project files retrieved via RAG)
+    // We check BOTH the shallow attachment (from message) AND full attachment (from Redux)
+    // because the autoRetrieved flag may only exist on the shallow attachment
+    const manualAttachments = (message.attachments || [])
+        .map((shallowAttachment) => {
+            const fullAttachment = allAttachments[shallowAttachment.id];
+            // Check autoRetrieved on both shallow and full attachment
+            const isAutoRetrieved = shallowAttachment.autoRetrieved || fullAttachment?.autoRetrieved;
+            
+            if (isAutoRetrieved) {
+                return null; // Exclude auto-retrieved files (Drive or project files)
+            }
+            return fullAttachment || null;
+        })
+        .filter(Boolean) as Attachment[];
+    
     const hasAttachments = manualAttachments.length > 0;
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);

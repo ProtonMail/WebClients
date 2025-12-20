@@ -290,7 +290,12 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
 
         // Encrypt the attachment for IDB and the remote
         const attachment: Attachment | undefined = yield select(selectAttachmentById(localId));
-        if (!attachment) throw new Error(`cannot find ${type} ${localId} in Redux`);
+        if (!attachment) {
+            // Attachment was deleted (e.g., auto-retrieved file cleaned up on folder unlink)
+            console.log(`pushAttachment: attachment ${localId} not found in Redux, skipping`);
+            yield put(pushAttachmentNoop(payload));
+            return;
+        }
 
         if (!attachment.spaceId) {
             console.log(

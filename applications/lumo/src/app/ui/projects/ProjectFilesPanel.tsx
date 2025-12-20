@@ -18,11 +18,15 @@ import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useDriveSDK } from '../../hooks/useDriveSDK';
+import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAssetsBySpaceId, selectSpaceById } from '../../redux/selectors';
-import { locallyDeleteAssetFromLocalRequest } from '../../redux/slices/core/assets';
+import { locallyDeleteAssetFromLocalRequest } from '../../redux/sagas/assets';
 import { handleSpaceAssetFileAsync } from '../../services/files';
-import type { Asset } from '../../types';
+import type { Attachment } from '../../types';
+
+// Type alias for backwards compatibility
+type Asset = Attachment;
 import { DriveBrowser, type DriveBrowserHandle } from '../components/Files/DriveBrowser/DriveBrowser';
 import { type UploadProgress, UploadProgressOverlay } from '../components/Files/DriveBrowser/UploadProgressOverlay';
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
@@ -45,18 +49,21 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const [fileToView, setFileToView] = useState<Asset | null>(null);
     const linkDriveFolderModal = useModalStateObject();
     const [createFolderModal, setCreateFolderModalOpen] = useState(false);
+    const [removeAllModal, setRemoveAllModalOpen] = useState(false);
     const { createFolder } = useDriveSDK();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
     const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
+    const searchService = useSearchService();
 
     // Get space and check if Drive folder is linked
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
     const linkedDriveFolder = space?.linkedDriveFolder;
 
     // Get space assets (persistent files) - only if no Drive folder is linked
+    // Filter out auto-retrieved Drive files - those are indexed, not uploaded
     const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
-    const files = Object.values(spaceAssets).filter((asset) => !asset.error);
+    const files = Object.values(spaceAssets).filter((asset) => !asset.error && !asset.autoRetrieved);
 
     const handleCreateFolder = useCallback(async () => {
         if (!linkedDriveFolder || !folderName.trim()) {
@@ -202,8 +209,32 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     const handleRemoveFile = (id: string) => {
         dispatch(locallyDeleteAssetFromLocalRequest(id));
+        // Also remove from search index
+        if (searchService) {
+            searchService.removeDocument(id);
+        }
         createNotification({
             text: c('collider_2025:Success').t`File removed from project`,
+            type: 'success',
+        });
+    };
+
+    const handleRemoveAllFilesClick = () => {
+        setRemoveAllModalOpen(true);
+    };
+
+    const handleConfirmRemoveAllFiles = () => {
+        // Remove each file individually to trigger proper cleanup
+        for (const file of files) {
+            dispatch(locallyDeleteAssetFromLocalRequest(file.id));
+        }
+        // Also clear from search index
+        if (searchService) {
+            searchService.removeDocumentsBySpace(projectId);
+        }
+        setRemoveAllModalOpen(false);
+        createNotification({
+            text: c('collider_2025:Success').t`All files removed from project`,
             type: 'success',
         });
     };
@@ -244,15 +275,26 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                         <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
                         <div className="flex items-center gap-1">
                             {!linkedDriveFolder && files.length !== 0 && (
-                                <Button
-                                    shape="ghost"
-                                    size="small"
-                                    onClick={handleAddFiles}
-                                    className="project-files-add-header-button"
-                                    title={c('collider_2025:Action').t`Add files`}
-                                >
-                                    <Icon name="arrow-up-line" size={4} />
-                                </Button>
+                                <>
+                                    <Button
+                                        shape="ghost"
+                                        size="small"
+                                        onClick={handleRemoveAllFilesClick}
+                                        className="project-files-remove-all-button"
+                                        title={c('collider_2025:Action').t`Remove all files`}
+                                    >
+                                        <Icon name="trash" size={4} />
+                                    </Button>
+                                    <Button
+                                        shape="ghost"
+                                        size="small"
+                                        onClick={handleAddFiles}
+                                        className="project-files-add-header-button"
+                                        title={c('collider_2025:Action').t`Add files`}
+                                    >
+                                        <Icon name="arrow-up-line" size={4} />
+                                    </Button>
+                                </>
                             )}
                             {linkedDriveFolder && (
                                 <Button
@@ -442,6 +484,31 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             </Button>
                             <Button color="norm" type="submit" loading={loading} disabled={!folderName.trim()}>
                                 {c('Action').t`Create`}
+                            </Button>
+                        </ModalTwoFooter>
+                    </ModalTwo>
+                )}
+
+                {/* Remove All Files Confirmation Modal */}
+                {removeAllModal && (
+                    <ModalTwo
+                        onClose={() => setRemoveAllModalOpen(false)}
+                        size="small"
+                        open={removeAllModal}
+                    >
+                        <ModalTwoHeader title={c('collider_2025:Title').t`Remove all files?`} />
+                        <ModalTwoContent>
+                            <p className="m-0">
+                                {c('collider_2025:Info')
+                                    .t`This will remove all ${files.length} files from this project. This action cannot be undone.`}
+                            </p>
+                        </ModalTwoContent>
+                        <ModalTwoFooter>
+                            <Button type="button" onClick={() => setRemoveAllModalOpen(false)}>
+                                {c('Action').t`Cancel`}
+                            </Button>
+                            <Button color="danger" onClick={handleConfirmRemoveAllFiles}>
+                                {c('collider_2025:Action').t`Remove all`}
                             </Button>
                         </ModalTwoFooter>
                     </ModalTwo>

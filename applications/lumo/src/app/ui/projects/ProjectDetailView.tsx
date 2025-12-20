@@ -38,6 +38,7 @@ import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
+import { SelectableConversationList, type ConversationGroup } from '../components/Conversations';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
@@ -295,6 +296,17 @@ const ProjectDetailViewInner = () => {
         }
     };
 
+    // Handler for deleting multiple conversations (from SelectableConversationList)
+    const handleDeleteSelectedConversations = useCallback(
+        async (conversationIds: string[]) => {
+            for (const id of conversationIds) {
+                dispatch(locallyDeleteConversationFromLocalRequest(id));
+                dispatch(pushConversationRequest({ id }));
+            }
+        },
+        [dispatch]
+    );
+
     const handleProjectSettingsButtonClick = () => {
         if (isMobileViewport) {
             sidebarModal.openModal(true);
@@ -431,135 +443,30 @@ const ProjectDetailViewInner = () => {
                         ) : (
                             <div className="project-detail-conversations flex flex-column pt-5">
                                 <div className="project-detail-conversation-list flex flex-column p-0 md:py-4 md:pl-8 md:pr-6">
-                                    {todayConversations.length > 0 && (
-                                        <>
-                                            <h3 className="project-detail-section-title text-sm">
-                                                {c('collider_2025:Title').t`Today`}
-                                            </h3>
-                                            {todayConversations.map((conversation) => {
-                                                const createdAt = new Date(conversation.createdAt);
-                                                const formattedDate = createdAt.toLocaleTimeString([], {
-                                                    hour: 'numeric',
-                                                    minute: '2-digit',
-                                                });
-
-                                                return (
-                                                    <div
-                                                        key={conversation.id}
-                                                        className="project-detail-conversation-item flex items-center"
-                                                    >
-                                                        <button
-                                                            aria-label={c('collider_2025:Action').t`Open conversation`}
-                                                            className="flex items-center flex-1 text-left"
-                                                            onClick={() => history.push(`/c/${conversation.id}`)}
-                                                        >
-                                                            <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                                <span className="project-detail-conversation-title text-md">
-                                                                    {conversation.title ||
-                                                                        c('collider_2025:Label').t`Untitled chat`}
-                                                                </span>
-                                                                <span className="project-detail-conversation-date text-xs">
-                                                                    {formattedDate}
-                                                                </span>
-                                                            </div>
-                                                        </button>
-                                                        <ConversationDropdown
-                                                            conversationId={conversation.id}
-                                                            onDelete={() => handleDeleteConversation(conversation.id)}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </>
-                                    )}
-
-                                    {last7DaysConversations.length > 0 && (
-                                        <>
-                                            <h3 className="project-detail-section-title text-sm">
-                                                {c('collider_2025:Title').t`Last 7 days`}
-                                            </h3>
-                                            {last7DaysConversations.map((conversation) => {
-                                                const createdAt = new Date(conversation.createdAt);
-                                                const formattedDate = createdAt.toLocaleDateString([], {
-                                                    month: 'short',
-                                                    day: 'numeric',
-                                                });
-
-                                                return (
-                                                    <div
-                                                        key={conversation.id}
-                                                        className="project-detail-conversation-item flex items-center"
-                                                    >
-                                                        <button
-                                                            aria-label={c('collider_2025:Action').t`Open conversation`}
-                                                            className="flex items-center flex-1 text-left"
-                                                            onClick={() => history.push(`/c/${conversation.id}`)}
-                                                        >
-                                                            <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                                <span className="project-detail-conversation-title text-md">
-                                                                    {conversation.title ||
-                                                                        c('collider_2025:Label').t`Untitled chat`}
-                                                                </span>
-                                                                <span className="project-detail-conversation-date text-xs">
-                                                                    {formattedDate}
-                                                                </span>
-                                                            </div>
-                                                        </button>
-                                                        <ConversationDropdown
-                                                            conversationId={conversation.id}
-                                                            onDelete={() => handleDeleteConversation(conversation.id)}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </>
-                                    )}
-
-                                    {olderConversations.length > 0 && (
-                                        <>
-                                            <h3 className="project-detail-section-title text-sm">
-                                                {c('collider_2025:Title').t`Older`}
-                                            </h3>
-                                            {olderConversations.map((conversation) => {
-                                                const createdAt = new Date(conversation.createdAt);
-                                                const formattedDate = createdAt.toLocaleDateString([], {
-                                                    month: 'short',
-                                                    day: 'numeric',
-                                                });
-
-                                                return (
-                                                    <div
-                                                        key={conversation.id}
-                                                        className="project-detail-conversation-item flex items-center"
-                                                    >
-                                                        <button
-                                                            className="flex items-center flex-1 text-left"
-                                                            onClick={() => history.push(`/c/${conversation.id}`)}
-                                                        >
-                                                            <div className="project-detail-conversation-content flex flex-column flex-1">
-                                                                <span className="project-detail-conversation-title text-md">
-                                                                    {conversation.title ||
-                                                                        c('collider_2025:Label').t`Untitled chat`}
-                                                                </span>
-                                                                <span className="project-detail-conversation-date text-xs">
-                                                                    {formattedDate}
-                                                                </span>
-                                                            </div>
-                                                            <Icon
-                                                                name="arrow-right"
-                                                                size={3}
-                                                                className="project-detail-conversation-arrow shrink-0"
-                                                            />
-                                                        </button>
-                                                        <ConversationDropdown
-                                                            conversationId={conversation.id}
-                                                            onDelete={() => handleDeleteConversation(conversation.id)}
-                                                        />
-                                                    </div>
-                                                );
-                                            })}
-                                        </>
-                                    )}
+                                    <SelectableConversationList
+                                        groups={[
+                                            {
+                                                title: c('collider_2025:Title').t`Today`,
+                                                conversations: todayConversations,
+                                            },
+                                            {
+                                                title: c('collider_2025:Title').t`Last 7 days`,
+                                                conversations: last7DaysConversations,
+                                            },
+                                            {
+                                                title: c('collider_2025:Title').t`Older`,
+                                                conversations: olderConversations,
+                                            },
+                                        ].filter((g) => g.conversations.length > 0) as ConversationGroup[]}
+                                        onConversationClick={(id) => history.push(`/c/${id}`)}
+                                        onDeleteSelected={handleDeleteSelectedConversations}
+                                        renderConversationActions={(conversation) => (
+                                            <ConversationDropdown
+                                                conversationId={conversation.id}
+                                                onDelete={() => handleDeleteConversation(conversation.id)}
+                                            />
+                                        )}
+                                    />
                                 </div>
                             </div>
                         )}

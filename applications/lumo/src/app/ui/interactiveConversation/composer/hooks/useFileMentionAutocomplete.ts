@@ -58,8 +58,9 @@ function computeFileList(
     // Get local files from space assets (project knowledge base only)
     // We don't include spaceAttachments because those are files used in conversations
     // that may not be in the project's knowledge base
+    // Exclude auto-retrieved files - they're shown via driveFiles from Drive indexing
     const localFiles: FileItem[] = Object.values(spaceAssets)
-        .filter((asset) => asset && !asset.error && !asset.processing)
+        .filter((asset) => asset && !asset.error && !asset.processing && !asset.autoRetrieved)
         .map((file) => {
             const attachment = allAttachments[file.id];
             return {
@@ -380,11 +381,19 @@ export const useFileMentionAutocomplete = (
             let attachmentToAdd: Attachment | null = null;
 
             if (file.source === 'local' && file.attachment) {
-                attachmentToAdd = {
-                    ...file.attachment,
-                    id: newAttachmentId(),
-                    spaceId: undefined,
-                };
+                // For project files, don't create a new attachment - just insert the @mention
+                // The file already exists in space assets and will be resolved by fileResolver in sendMessage
+                // This prevents duplicates and avoids showing thumbnails for project file @mentions
+                editor
+                    .chain()
+                    .focus()
+                    .setTextSelection({ from: startPos, to: endPos })
+                    .deleteSelection()
+                    .insertContent(`@${file.name}`)
+                    .run();
+                
+                setMentionState(INITIAL_MENTION_STATE);
+                return;
             } else if (file.source === 'drive') {
                 // Drive files require driveSDK
                 if (!driveSDK) {

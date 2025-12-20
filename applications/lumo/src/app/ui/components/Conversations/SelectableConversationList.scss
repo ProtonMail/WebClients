@@ -1,0 +1,75 @@
+.selectable-conversation-list {
+    width: 100%;
+
+    .selectable-conversation-list-header {
+        padding: 0.5rem 0;
+    }
+
+    .selectable-conversation-select-link {
+        padding: 0;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: none;
+            text-decoration: underline;
+        }
+    }
+
+    .selectable-conversation-list-actions {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-weak);
+    }
+
+    .selectable-conversation-group {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .selectable-conversation-group-title {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin: 0;
+        padding: 0.5rem 0;
+    }
+
+    // Ensure all checkboxes in this list are clearly visible
+    .checkbox-container {
+        flex-shrink: 0;
+    }
+
+    .selectable-conversation-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        min-width: 0; // Allow text truncation
+    }
+
+    .selectable-conversation-content {
+        min-width: 0; // Allow text truncation
+        overflow: hidden;
+    }
+
+    .selectable-conversation-title {
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .selectable-conversation-date {
+        margin-top: 0.125rem;
+    }
+}
+
+.checkbox-fakecheck, .radio-fakeradio {
+    border: 1px solid var(--border-weak) !important;
+}

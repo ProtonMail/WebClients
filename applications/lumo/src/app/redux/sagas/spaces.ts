@@ -10,20 +10,23 @@ import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
 import { SearchService } from '../../services/search/searchService';
-import { type Asset, type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
+import { type Attachment, type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
-    selectAttachmentsBySpaceId,
     selectAssetsBySpaceId,
+    selectAttachmentsBySpaceId,
     selectConversationsBySpaceId,
     selectMasterKey,
     selectMessagesBySpaceId,
     selectRemoteIdFromLocal,
     selectSpaceById,
 } from '../selectors';
-import { type AttachmentMap, deleteAllAttachments, deleteAttachment } from '../slices/core/attachments';
-import { deleteAsset, locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from '../slices/core/assets';
+import { type AttachmentMap, deleteAllAttachments, deleteAttachment, deleteAttachmentsBySpaceId } from '../slices/core/attachments';
+import { locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from './assets';
+
+// Type alias for backwards compatibility
+type Asset = Attachment;
 import type { ConversationMap } from '../slices/core/conversations';
 import {
     deleteAllConversations,
@@ -209,6 +212,13 @@ export function* handleDeleteAllSpaces(): SagaIterator<any> {
         // Soft delete all data in IndexedDB (set deleted: true flags)
         // Use dirty: false since we already synced with the server
         yield call([dbApi, dbApi.softDeleteAllData], { dirty: false });
+
+        // Clear the search index for all documents (uploaded files + Drive files)
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (userId) {
+            const searchService = SearchService.get(userId);
+            yield call([searchService, searchService.clearDriveDocuments]);
+        }
 
         // Clear all Redux state (since Redux doesn't load deleted items)
         yield put(deleteAllSpaces());
@@ -460,7 +470,7 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
             // If asset is not in valid remote assets list and not in deleted assets list, remove it from Redux
             if (!validAssetIds.has(asset.id) && !deletedAssetIds.has(asset.id)) {
                 console.log(`Removing asset ${asset.id} from Redux - not in remote assets list`);
-                yield put(deleteAsset(asset.id));
+                yield put(deleteAttachment(asset.id));
             }
         }
     }
