@@ -23,6 +23,7 @@ export interface LumoUserSettings {
     personalization: PersonalizationSettings;
     featureFlags: FeatureFlag[];
     indexedDriveFolders?: IndexedDriveFolder[];
+    showProjectChatsInHistory?: boolean;
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -51,6 +52,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
     },
     featureFlags: [],
     indexedDriveFolders: [],
+    showProjectChatsInHistory: true,
 };
 
 // Actions
