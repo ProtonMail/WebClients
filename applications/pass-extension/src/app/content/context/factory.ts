@@ -9,15 +9,14 @@ import { createInlineRelay } from 'proton-pass-extension/app/content/services/in
 import { createInlineService } from 'proton-pass-extension/app/content/services/inline/inline.service';
 import { createPasskeyService } from 'proton-pass-extension/app/content/services/webauthn/passkey.service';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { computeFeatures } from 'proton-pass-extension/lib/utils/features';
 
 import { FieldType } from '@proton/pass/fathom/labels';
-import { DEFAULT_PAUSE_CRITERIAS, combinePauseCriteria, hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -97,23 +96,10 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
         getExtensionContext: () => ExtensionContext.read(),
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
-            const { disallowedDomains } = settings ?? {};
-            const { autofill, autosuggest, autosave, passkeys } = settings;
-            const { url, tabUrl } = context.getExtensionContext() ?? {};
-
-            const criterias = [url, tabUrl].filter(truthy).map((url) => hasPauseCriteria({ disallowedDomains, url }));
-            const hasPause = criterias.length > 0 ? criterias.reduce(combinePauseCriteria) : DEFAULT_PAUSE_CRITERIAS;
-
-            return {
-                /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
-                Autofill: (autofill.login || autofill.identity) && !hasPause.Autofill,
-                Autofill2FA: autofill.twofa && !hasPause.Autofill2FA,
-                Autosave: autosave.prompt && !hasPause.Autosave,
-                AutosuggestAlias: autosuggest.email && !hasPause.Autosuggest,
-                AutosuggestPassword: autosuggest.password && !hasPause.Autosuggest,
-                CreditCard: Boolean(autofill.cc) && !hasPause.Autofill,
-                Passkeys: (passkeys.create || passkeys.get) && !hasPause.Passkey,
-            };
+            const ctx = context.getExtensionContext();
+            const frameUrl = ctx?.url ?? null;
+            const tabUrl = ctx?.tabUrl ?? null;
+            return computeFeatures(settings, frameUrl, tabUrl);
         },
         getSettings: () => settings,
         getState: () => state,

@@ -8,6 +8,7 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
+import { shouldEnableDetector, shouldInjectContentScript } from 'proton-pass-extension/lib/utils/features';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
@@ -116,17 +117,20 @@ export const createContentScriptClient = ({
 
             if (res.type === 'error') throw new Error('Client initialization failure');
 
-            /** NOTE: set settings BEFORE calling `getFeatures` in order */
+            /** NOTE: set settings/features BEFORE calling `getFeatures` in order
+             * to properly resolve the content-script behaviours to activate */
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
             context.service.inline.setTheme(res.settings.theme);
 
-            /* if the user has disabled every injection setting or added the current
-             * domain to the pause list we can safely destroy the content-script context */
             const features = context.getFeatures();
-            const enableDetector = context.service.detector.isEnabled(features);
-            const killswitch = !(enableDetector || features.Passkeys);
-            if (killswitch) return context.destroy({ reason: 'injection settings' });
+
+            if (!shouldInjectContentScript(features)) {
+                /** if the user has disabled every injection setting or added the current
+                 * domain to the pause list we can safely destroy the content-script context.
+                 * This is also handled in the `LOAD_CONTENT_SCRIPT` handler sw-side. */
+                return context.destroy({ reason: 'injection settings' });
+            }
 
             context.setState({ ...res.state, ready: true, stale: false });
             reconciliate();
@@ -138,7 +142,7 @@ export const createContentScriptClient = ({
 
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.state.status}"`);
 
-            if (enableDetector) {
+            if (shouldEnableDetector(features)) {
                 await context.service.detector.init();
                 await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
 
@@ -174,7 +178,7 @@ export const createContentScriptClient = ({
                      * context and the content-script context */
                     onError: controller.destroy,
                     onRecycle: async (next) => {
-                        await controller.start();
+                        controller.start();
                         return handleStart(next);
                     },
                 });
