@@ -3,6 +3,7 @@ import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
 import { hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
@@ -320,20 +321,7 @@ export const createActivationService = () => {
             return { tabId: current.id, url, tabUrl: url, senderTabId, frameId };
         }
 
-        if (tab?.id === undefined) throw new Error('Invalid sender tab');
-
-        const { id: tabId } = tab;
-        const tabUrl = parseUrl(tab.url);
-
-        if (frameId !== undefined && frameId > 0) {
-            /** For sub-frames : resolve the iframe's document origin as the url */
-            const result = await browser.webNavigation.getFrame({ frameId, tabId });
-            if (!result) throw new Error('Invalid sender frame');
-            const frameUrl = parseUrl(result.url);
-            return { tabId, url: frameUrl, tabUrl, senderTabId: tabId, frameId };
-        }
-
-        return { tabId, senderTabId: tabId, url: tabUrl, tabUrl, frameId };
+        return resolveEndpointContext(tab, frameId);
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
