@@ -2,8 +2,11 @@ import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
 import { isFirefoxMainWorldInjectionSupported } from 'proton-pass-extension/app/content/firefox/version';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
+import { computeFeatures, shouldInjectContentScript } from 'proton-pass-extension/lib/utils/features';
 import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
@@ -116,12 +119,24 @@ export const createContentScriptService = () => {
         withSender(async ({ payload }, tabId, frameId) => registerElements(payload.hash, tabId, frameId))
     );
 
-    const loadContentScript = withTabEffect(
-        withContext(async (ctx, tabId, frameId) => {
-            if (frameId === undefined) return;
-            if (frameId > 0 && !(await ctx.service.autofill.iframeAutofillEnabled())) return;
-            return inject({ tabId, frameId, js: ['client.js'] });
-        })
+    const loadContentScript: MessageHandlerCallback<WorkerMessageType.LOAD_CONTENT_SCRIPT> = withContext(
+        async (ctx, _, sender) => {
+            try {
+                if (sender.frameId === undefined) return true;
+                if (sender.frameId > 0 && !(await ctx.service.autofill.iframeAutofillEnabled())) return true;
+
+                const { tabId, frameId, url, tabUrl } = await resolveEndpointContext(sender.tab, sender.frameId);
+
+                const settings = await ctx.service.settings.resolve();
+                const features = computeFeatures(settings, url, tabUrl);
+                if (!shouldInjectContentScript(features)) return true;
+
+                await inject({ tabId, frameId, js: ['client.js'] });
+                return true;
+            } catch {
+                return true;
+            }
+        }
     );
 
     const unloadContentScript = withTabEffect((tabId, frameId) => {
