@@ -10,6 +10,7 @@ import type { Conversation } from '../types';
 import { sendConversationDeleteEvent } from '../util/telemetry';
 import { useDriveFolderIndexing } from './useDriveFolderIndexing';
 import { useLumoNavigate } from './useLumoNavigate';
+import { useSearchService } from './useSearchService';
 
 interface UseConversationDeleteProps {
     conversation: Conversation;
@@ -22,6 +23,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
     const { createNotification } = useNotifications();
     const confirmDeleteModal = useModalStateObject();
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
+    const searchService = useSearchService();
 
     const openConfirmationModal = useCallback(() => {
         confirmDeleteModal.openModal(true);
@@ -34,6 +36,11 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
             // Clean up any Drive folders indexed for this space
             await removeIndexedFoldersBySpace(spaceId);
 
+            // Clean up search index for uploaded files in this space
+            if (searchService) {
+                searchService.removeDocumentsBySpace(spaceId);
+            }
+
             dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
             dispatch(pushSpaceRequest({ id: spaceId }));
 
@@ -44,7 +51,7 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
 
         confirmDeleteModal.openModal(false);
         navigate('/');
-    }, [spaceId, dispatch, createNotification, confirmDeleteModal, navigate, removeIndexedFoldersBySpace]);
+    }, [spaceId, dispatch, createNotification, confirmDeleteModal, navigate, removeIndexedFoldersBySpace, searchService]);
 
     return {
         openConfirmationModal,
