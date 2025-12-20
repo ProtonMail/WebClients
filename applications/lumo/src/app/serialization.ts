@@ -22,8 +22,6 @@ import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
 import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
 import {
     type AdString,
-    type Asset,
-    type AssetPub,
     type Attachment,
     type AttachmentPub,
     type Conversation,
@@ -32,7 +30,6 @@ import {
     type Message,
     type MessagePriv,
     type MessagePub,
-    type SerializedAsset,
     type SerializedAttachment,
     type SerializedConversation,
     type SerializedMessage,
@@ -41,24 +38,29 @@ import {
     type SpaceKeyClear,
     type SpaceKeyEnc,
     type SpacePub,
-    getAssetPub,
     getAttachmentPub,
     getConversationPub,
     getMessagePriv,
     getMessagePub,
     getSpaceDek,
     getSpacePub,
-    isAssetPriv,
     isAttachmentPriv,
     isConversationPriv,
     isEmptyMessagePriv,
-    splitAsset,
     isMessagePriv,
     isSpacePriv,
     splitAttachment,
     splitConversation,
     splitSpace,
 } from './types';
+
+// Type aliases for backwards compatibility (assets are now attachments)
+type Asset = Attachment;
+type AssetPub = AttachmentPub;
+type SerializedAsset = SerializedAttachment;
+const getAssetPub = getAttachmentPub;
+const isAssetPriv = isAttachmentPriv;
+const splitAsset = splitAttachment;
 import { objectMapV } from './util/objects';
 
 const APP_NAME = 'lumo';
