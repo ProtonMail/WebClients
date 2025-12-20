@@ -9,33 +9,43 @@ import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import type { MaybeNull } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 
 export interface FeatureFlagService {
-    read: () => Promise<FeatureFlagState>;
+    clear: () => Promise<void>;
+    resolve: () => Promise<FeatureFlagState>;
     sync: (features: FeatureFlagState) => void;
 }
 
 type FeatureFlagServiceState = { features: MaybeNull<FeatureFlagState> };
 
 export const createFeatureFlagService = (): FeatureFlagService => {
+    /** Cache the settings to avoid constantly reading from extension
+     * storage when resolving feature flags for content-scripts. */
     const state: FeatureFlagServiceState = { features: null };
 
     return {
-        read: withContext(
-            async (ctx) =>
+        resolve: withContext(
+            async ({ service }) =>
                 (state.features =
                     state.features ??
                     (await (async () => {
                         try {
-                            const data = await ctx.service.storage.local.getItem('features');
+                            const data = await service.storage.local.getItem('features');
                             return data ? JSON.parse(data) : DEFAULT_PASS_FEATURES;
                         } catch {
+                            logger.error('[FeatureFlagService] Failed parsing local feature flags');
                             return DEFAULT_PASS_FEATURES;
                         }
                     })()))
         ),
 
-        sync: withContext((ctx, features) => {
+        clear: withContext(async ({ service }) => {
+            state.features = null;
+            await service.storage.local.removeItem('features');
+        }),
+
+        sync: withContext(({ service }, features) => {
             state.features = features;
 
             WorkerMessageBroker.ports.broadcast(
@@ -45,13 +55,13 @@ export const createFeatureFlagService = (): FeatureFlagService => {
                 })
             );
 
-            void ctx.service.storage.local.setItem('features', JSON.stringify(features));
+            void service.storage.local.setItem('features', JSON.stringify(features));
 
             const { PassExperimentalWebsiteRules = false } = features;
-            const currentRuleVersion = ctx.service.autofill.getRules()?.version;
+            const currentRuleVersion = service.autofill.getRules()?.version;
             const shouldRevalidate = currentRuleVersion !== getRuleVersion(PassExperimentalWebsiteRules ?? false);
 
-            if (shouldRevalidate) ctx.service.store.dispatch(withRevalidate(resolveWebsiteRules.intent()));
+            if (shouldRevalidate) service.store.dispatch(withRevalidate(resolveWebsiteRules.intent()));
         }),
     };
 };
