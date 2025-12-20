@@ -7,37 +7,73 @@ import type { LumoApi, RemoteStatus } from '../../remote/api';
 import { convertNewAssetToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../../remote/types';
-import { deserializeAsset, serializeAsset } from '../../serialization';
+import { deserializeAttachment, serializeAttachment } from '../../serialization';
 import type {
-    Asset,
-    AssetId,
-    DeletedAsset,
-    SerializedAsset,
+    Attachment,
+    AttachmentId,
+    DeletedAttachment,
+    SerializedAttachment,
     SpaceId,
 } from '../../types';
 import { getSpaceDek } from '../../types';
-import { selectAssetById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
+import { selectAttachmentById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
 import {
-    type PullAssetRequest,
-    type PushAssetFailure,
-    type PushAssetRequest,
-    type PushAssetSuccess,
-    addAsset,
-    deleteAsset,
-    locallyDeleteAssetFromRemoteRequest,
-    pullAssetFailure,
-    pullAssetSuccess,
-    pushAssetFailure,
-    pushAssetNeedsRetry,
-    pushAssetNoop,
-    pushAssetRequest,
-    pushAssetSuccess,
-} from '../slices/core/assets';
+    addAttachment,
+    deleteAttachment,
+} from '../slices/core/attachments';
 import { addIdMapEntry } from '../slices/core/idmap';
 import { waitForMapping } from './idmap';
 import { ClientError, RETRY_PUSH_EVERY_MS, isClientError } from './index';
 import { waitForSpace } from './spaces';
 import { getPendingAsset, removePendingAsset } from '../../services/files/pendingAssets';
+
+// Type aliases for space-level attachment operations (formerly "assets")
+type AssetId = AttachmentId;
+type Asset = Attachment;
+type SerializedAsset = SerializedAttachment;
+type DeletedAsset = DeletedAttachment;
+
+// Action types for space-level attachments
+export type PushAssetRequest = {
+    id: AssetId;
+    priority?: Priority;
+};
+
+export type PushAssetSuccess = PushAssetRequest & {
+    asset?: Asset;
+    serializedAsset?: SerializedAsset;
+    entry?: IdMapEntry;
+};
+
+export type PushAssetFailure = PushAssetRequest & {
+    error: string;
+};
+
+export type PullAssetRequest = {
+    id: AssetId;
+    spaceId: SpaceId;
+};
+
+// Action creators for space-level attachments (using attachment slice internally)
+import { createAction } from '@reduxjs/toolkit';
+
+export const pushAssetRequest = createAction<PushAssetRequest>('lumo/asset/pushRequest');
+export const pushAssetSuccess = createAction<PushAssetSuccess>('lumo/asset/pushSuccess');
+export const pushAssetNoop = createAction<PushAssetRequest>('lumo/asset/pushNoop');
+export const pushAssetNeedsRetry = createAction<PushAssetRequest>('lumo/asset/pushNeedsRetry');
+export const pushAssetFailure = createAction<PushAssetFailure>('lumo/asset/pushFailure');
+export const locallyDeleteAssetFromLocalRequest = createAction<AssetId>('lumo/asset/locallyDeleteFromLocalRequest');
+export const locallyDeleteAssetFromRemoteRequest = createAction<{ id: AssetId; spaceId: SpaceId }>('lumo/asset/locallyDeleteFromRemoteRequest');
+export const pullAssetRequest = createAction<PullAssetRequest>('lumo/asset/pullRequest');
+export const pullAssetSuccess = createAction<Asset>('lumo/asset/pullSuccess');
+export const pullAssetFailure = createAction<AssetId>('lumo/asset/pullFailure');
+
+// Helper function aliases
+const serializeAsset = serializeAttachment;
+const deserializeAsset = deserializeAttachment;
+const selectAssetById = selectAttachmentById;
+const addAsset = addAttachment;
+const deleteAsset = deleteAttachment;
 
 /*** helpers ***/
 

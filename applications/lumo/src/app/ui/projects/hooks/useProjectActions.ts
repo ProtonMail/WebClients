@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { generateSpaceKeyBase64 } from '../../../crypto';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useSearchService } from '../../../hooks/useSearchService';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequest } from '../../../redux/slices/core/spaces';
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
@@ -13,6 +14,7 @@ export const useProjectActions = () => {
     const dispatch = useLumoDispatch();
     const history = useHistory();
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
+    const searchService = useSearchService();
 
     const createProject = useCallback(
         async (projectName: string, projectInstructions?: string, files?: File[], projectIcon?: string) => {
@@ -76,6 +78,11 @@ export const useProjectActions = () => {
             // Clean up any Drive folders indexed for this space
             await removeIndexedFoldersBySpace(spaceId);
 
+            // Clean up search index for uploaded project files
+            if (searchService) {
+                searchService.removeDocumentsBySpace(spaceId);
+            }
+
             // Delete the space and all its conversations, messages, and attachments
             // This uses the cascade delete saga which handles all related data
             dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
@@ -84,7 +91,7 @@ export const useProjectActions = () => {
             // Navigate to projects list after deletion
             history.push('/projects');
         },
-        [dispatch, history, removeIndexedFoldersBySpace]
+        [dispatch, history, removeIndexedFoldersBySpace, searchService]
     );
 
     return {

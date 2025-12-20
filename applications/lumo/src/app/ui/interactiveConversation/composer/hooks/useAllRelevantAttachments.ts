@@ -24,11 +24,12 @@ export const useAllRelevantAttachments = (
     );
 
     // Get space-level assets (project files stored as assets)
+    // Exclude auto-retrieved files as they're from Drive indexing, not user uploads
     const spaceAssets = useLumoSelector((state) =>
         spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
     );
     const spaceAssetsList = useMemo(() => 
-        Object.values(spaceAssets).filter((asset) => !asset.error && !asset.processing)
+        Object.values(spaceAssets).filter((asset) => !asset.error && !asset.processing && !asset.autoRetrieved)
     , [spaceAssets]);
 
     // Get all attachment IDs from the message chain
