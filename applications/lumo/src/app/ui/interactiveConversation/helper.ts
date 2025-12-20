@@ -42,7 +42,11 @@ import {
 import type { GenerationToFrontendMessage } from '../../types-api';
 
 // Helper function to determine which files will actually be used in the LLM context
-function getContextFilesForMessage(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
+// Note: Project files are now retrieved via RAG (same as Drive files) - no special handling needed
+function getContextFilesForMessage(
+    messageChain: Message[],
+    contextFilters: ContextFilter[] = []
+): AttachmentId[] {
     const contextFiles: AttachmentId[] = [];
     const seenIds = new Set<AttachmentId>();
 
@@ -105,7 +109,8 @@ async function retrieveDocumentContextForProject(
     userId: string | undefined,
     isProject: boolean,
     messageChain: Message[] = [],
-    allAttachments: Record<string, Attachment> = {}
+    allAttachments: Record<string, Attachment> = {},
+    referencedFileNames: Set<string> = new Set()
 ): Promise<RAGRetrievalResult | undefined> {
     const userMessageCount = messageChain.filter(m => m.role === Role.User).length;
 
@@ -117,28 +122,41 @@ async function retrieveDocumentContextForProject(
         return undefined;
     }
 
-    // Collect driveNodeIds that have already been auto-retrieved in this conversation
-    const alreadyRetrievedNodeIds = new Set<string>();
+    // Collect document IDs that have already been used in this conversation
+    // This includes both driveNodeIds (for Drive files) and attachment IDs (for uploaded files)
+    const alreadyRetrievedDocIds = new Set<string>();
     messageChain.forEach(msg => {
         msg.attachments?.forEach(shallowAtt => {
             const fullAtt = allAttachments[shallowAtt.id];
-            if (fullAtt?.autoRetrieved && fullAtt.driveNodeId) {
-                alreadyRetrievedNodeIds.add(fullAtt.driveNodeId);
+            if (fullAtt) {
+                // For auto-retrieved files (Drive), check driveNodeId
+                if (fullAtt.autoRetrieved && fullAtt.driveNodeId) {
+                    alreadyRetrievedDocIds.add(fullAtt.driveNodeId);
+                }
+                // For uploaded files, the attachment ID IS the document ID
+                alreadyRetrievedDocIds.add(fullAtt.id);
             }
         });
     });
 
-    console.log(`[RAG] Already retrieved ${alreadyRetrievedNodeIds.size} documents in this conversation`);
+    console.log(`[RAG] Already retrieved ${alreadyRetrievedDocIds.size} documents in this conversation`);
 
     try {
         const searchService = SearchService.get(userId);
         // Get candidates for intelligent filtering
         const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 10, 0);
 
-        // Filter out zero-score documents and already-retrieved documents
-        const nonZeroDocs = candidateDocs.filter(doc =>
-            doc.score > 0 && !alreadyRetrievedNodeIds.has(doc.id)
-        );
+        // Filter out zero-score documents, already-retrieved documents, and @mentioned files
+        const nonZeroDocs = candidateDocs.filter(doc => {
+            if (doc.score <= 0) return false;
+            if (alreadyRetrievedDocIds.has(doc.id)) return false;
+            // Exclude files that were explicitly @mentioned (their content is already in the message)
+            if (referencedFileNames.has(doc.name.toLowerCase())) {
+                console.log(`[RAG] Excluding @mentioned file from RAG: ${doc.name}`);
+                return false;
+            }
+            return true;
+        });
 
         if (nonZeroDocs.length === 0) {
             console.log(`[RAG] No relevant documents found for project ${spaceId}`);
@@ -197,29 +215,47 @@ async function retrieveDocumentContextForProject(
         }
 
         // Create Attachment objects from retrieved documents
-        // Reuse existing attachment IDs if we already have this document (by driveNodeId)
+        // - For uploaded files: reuse existing attachment (document ID = attachment ID)
+        // - For Drive files: check driveNodeId, or create new attachment
         const attachments: Attachment[] = relevantDocs.map(doc => {
             const normalizedScore = topScore > 0 ? doc.score / topScore : 0;
             // Extract chunk info from doc if present
             const isChunk = (doc as { isChunk?: boolean }).isChunk;
             const chunkTitle = (doc as { chunkTitle?: string }).chunkTitle;
+            // Get parent document ID for chunks
+            const parentDocumentId = (doc as { parentDocumentId?: string }).parentDocumentId;
+            const originalDocId = parentDocumentId || doc.id;
 
-            // Check if we already have an attachment for this driveNodeId
-            const existingAttachment = Object.values(allAttachments).find(
-                att => att.autoRetrieved && att.driveNodeId === doc.id
-            );
-
-            if (existingAttachment) {
-                // Reuse the existing attachment, but update the relevance score and chunk info
-                console.log(`[RAG] Reusing existing attachment for ${doc.name} (ID: ${existingAttachment.id})`);
+            // Check if this is an uploaded file (document ID matches an existing attachment ID)
+            const uploadedFileAttachment = allAttachments[originalDocId];
+            if (uploadedFileAttachment && !uploadedFileAttachment.autoRetrieved) {
+                // This is an uploaded project file - mark as autoRetrieved for consistent handling with Drive files
+                console.log(`[RAG] Using uploaded file attachment for ${doc.name} (ID: ${uploadedFileAttachment.id})`);
                 return {
-                    ...existingAttachment,
-                    relevanceScore: normalizedScore, // Update score for this query
+                    ...uploadedFileAttachment,
+                    relevanceScore: normalizedScore,
+                    autoRetrieved: true, // Mark as auto-retrieved (same as Drive files)
+                    isUploadedProjectFile: true, // Also mark that this came from project files
                     ...(isChunk && { isChunk, chunkTitle }),
                 };
             }
 
-            // Create a new attachment
+            // Check if we already have an auto-retrieved attachment for this driveNodeId
+            const existingAutoRetrieved = Object.values(allAttachments).find(
+                att => att.autoRetrieved && att.driveNodeId === originalDocId
+            );
+
+            if (existingAutoRetrieved) {
+                // Reuse the existing auto-retrieved attachment, update the relevance score
+                console.log(`[RAG] Reusing existing auto-retrieved attachment for ${doc.name} (ID: ${existingAutoRetrieved.id})`);
+                return {
+                    ...existingAutoRetrieved,
+                    relevanceScore: normalizedScore,
+                    ...(isChunk && { isChunk, chunkTitle }),
+                };
+            }
+
+            // Create a new attachment for Drive files
             return {
                 // AttachmentPub
                 id: newAttachmentId(),
@@ -228,7 +264,7 @@ async function retrieveDocumentContextForProject(
                 mimeType: getMimeTypeFromName(doc.name),
                 rawBytes: new TextEncoder().encode(doc.content).length,
                 autoRetrieved: true,
-                driveNodeId: doc.id,
+                driveNodeId: originalDocId,
                 relevanceScore: normalizedScore,
                 ...(isChunk && { isChunk, chunkTitle }),
                 // AttachmentPriv
@@ -323,16 +359,15 @@ export function sendMessage({
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
 
-        // Get space-level attachments and assets (project files) and include them with the message
+        // Get space-level attachments (project files) and include them with the message
         const allAttachmentsState = state.attachments;
-        const allAssetsState = state.assets;
 
-        // Get space assets (project-level files) - these should be available for @ references
-        const spaceAssets: Attachment[] = Object.values(allAssetsState)
-            .filter((asset: any) => {
-                return asset && typeof asset === 'object' && asset.spaceId === spaceId && !asset.processing && !asset.error;
+        // Get space attachments (project-level files) - these should be available for @ references
+        const spaceAssets: Attachment[] = Object.values(allAttachmentsState || {})
+            .filter((attachment: any) => {
+                return attachment && typeof attachment === 'object' && attachment.spaceId === spaceId && !attachment.processing && !attachment.error;
             })
-            .map((asset: any) => asset as Attachment);
+            .map((attachment: any) => attachment as Attachment);
 
         // Get attachments from current conversation messages - these should be available for @ references
         const conversationAttachments: Attachment[] = [];
@@ -389,9 +424,16 @@ export function sendMessage({
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
+        // Only attach provisional files from the composer (files explicitly uploaded to this message)
+        // Project files (spaceAssets) should NOT be attached to messages even if @referenced:
+        // - Their content is already resolved into the message via resolveFileReferences
+        // - They're tracked in the project's knowledge base
+        // - RAG will retrieve them if relevant (with isUploadedProjectFile flag)
+        const messageAttachments = attachments;
+
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
-            allMessageAttachments,
+            messageAttachments,
             conversationId,
             lastMessage,
             date1,
@@ -415,6 +457,7 @@ export function sendMessage({
         const newLinearChain = [...messageChain, userMessage];
 
         // Calculate which files will actually be used for the assistant response
+        // Note: Project files are retrieved via RAG, so only message attachments are tracked here
         const contextFilesForResponse = getContextFilesForMessage(newLinearChain, contextFilters);
 
         // Update the assistant message with the context files that will be used
@@ -489,6 +532,7 @@ export function sendMessage({
                 userId,
                 isProject,
                 allAttachments: state.attachments,
+                referencedFileNames,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -515,6 +559,8 @@ export function regenerateMessage(
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
 
         // Calculate which files will actually be used for the regenerated response
+        // Note: Project files are retrieved via RAG
+        const state = getState();
         const contextFilesForResponse = getContextFilesForMessage(messagesWithContext, contextFilters);
 
         // Update the assistant message with context files before regenerating
@@ -529,7 +575,6 @@ export function regenerateMessage(
 
         try {
             // Get personalization prompt for regeneration as well
-            const state = getState();
             const personalization = state.personalization;
             let personalizationPrompt: string | undefined;
             if (personalization?.enableForNewChats) {
@@ -576,18 +621,32 @@ export function regenerateMessage(
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
             if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-                // Store each attachment in Redux and persist
+                // Store each attachment in Redux
+                // Skip uploaded project files (they're already in Redux)
+                // Don't persist auto-retrieved Drive files to server
                 for (const attachment of ragResult.attachments) {
+                    if (attachment.isUploadedProjectFile) {
+                        // Skip - uploaded files are already in Redux
+                        console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
+                        continue;
+                    }
                     dispatch(upsertAttachment(attachment));
-                    dispatch(pushAttachmentRequest({ id: attachment.id }));
+                    if (!attachment.autoRetrieved) {
+                        dispatch(pushAttachmentRequest({ id: attachment.id }));
+                    }
                 }
 
                 // Create shallow attachment refs for the message
                 const existingAttachments = lastUserMessage.attachments || [];
-                const newShallowAttachments: ShallowAttachment[] = ragResult.attachments.map(att => {
-                    const { data, markdown, ...shallow } = att;
-                    return shallow as ShallowAttachment;
-                });
+                const existingAttachmentIds = new Set(existingAttachments.map(att => att.id));
+
+                // Only add attachments that aren't already in the message (avoid duplicates)
+                const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
+                    .filter(att => !existingAttachmentIds.has(att.id))
+                    .map(att => {
+                        const { data, markdown, ...shallow } = att;
+                        return shallow as ShallowAttachment;
+                    });
 
                 const updatedUserMessage: Message = {
                     ...lastUserMessage,
@@ -692,6 +751,7 @@ export async function retrySendMessage({
         conversationId,
     };
 
+    // Note: Project files are retrieved via RAG
     const contextFilesForResponse = getContextFilesForMessage(messageChain, contextFilters);
 
     // Update the assistant message with the context files that will be used
@@ -831,6 +891,7 @@ export async function fetchAssistantResponse({
     userId,
     isProject = false,
     allAttachments = {},
+    referencedFileNames = new Set<string>(),
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -847,6 +908,7 @@ export async function fetchAssistantResponse({
     userId?: string;
     isProject?: boolean;
     allAttachments?: Record<string, Attachment>;
+    referencedFileNames?: Set<string>;
 }) {
     // Extract the user's query from the last user message for RAG retrieval
     const lastUserMessage = linearChain.filter(m => m.role === Role.User).pop();
@@ -854,13 +916,15 @@ export async function fetchAssistantResponse({
 
     // Retrieve relevant documents from the project's indexed Drive folder (RAG)
     // Pass allAttachments so we can filter out already-retrieved documents
+    // Pass referencedFileNames to exclude files that were explicitly @mentioned
     const ragResult = await retrieveDocumentContextForProject(
         userQuery,
         spaceId,
         userId,
         isProject,
         linearChain,
-        allAttachments || {}
+        allAttachments || {},
+        referencedFileNames
     );
 
     console.log('[RAG] fetchAssistantResponse context:', {
@@ -877,10 +941,19 @@ export async function fetchAssistantResponse({
     // If we have RAG attachments, store them and add to the user message
     let updatedLinearChain = linearChain;
     if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-        // Store each attachment in Redux and persist
+        // Store each attachment in Redux
+        // Skip uploaded project files (they're already in Redux)
+        // Don't persist auto-retrieved Drive files to server
         for (const attachment of ragResult.attachments) {
+            if (attachment.isUploadedProjectFile) {
+                // Skip - uploaded files are already in Redux
+                console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
+                continue;
+            }
             dispatch(upsertAttachment(attachment));
-            dispatch(pushAttachmentRequest({ id: attachment.id }));
+            if (!attachment.autoRetrieved) {
+                dispatch(pushAttachmentRequest({ id: attachment.id }));
+            }
         }
 
         // Create shallow attachment refs for the message
