@@ -1,4 +1,8 @@
-import type { Asset, AssetId } from '../../types';
+import type { Attachment, AttachmentId } from '../../types';
+
+// Type aliases for backwards compatibility (assets are now attachments)
+type Asset = Attachment;
+type AssetId = AttachmentId;
 
 // Temporary storage for assets with full data before they're persisted to IndexedDB
 // This avoids storing non-serializable Uint8Array in Redux actions
