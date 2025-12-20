@@ -393,6 +393,47 @@ im.$media-expressions: $media-expressions;
 	font-weight: bold;
 }
 
+// Toggle styling for settings - ensure visibility in both states
+.lumo-settings-modal .toggle-container {
+	background-color: var(--background-strong);
+
+	&::before {
+		background-color: var(--field-norm, var(--text-hint));
+	}
+
+	&::after {
+		border-color: var(--border-norm);
+	}
+
+	&--checked {
+		background-color: var(--interaction-norm-minor-2, rgba(109, 74, 255, 0.2));
+
+		&::before {
+			background-color: var(--interaction-norm);
+		}
+
+		&::after {
+			border-color: var(--interaction-norm);
+		}
+	}
+
+	&.toggle-container {
+		background-color: var(--background-strong);
+	}
+
+	&:not(.toggle-container--disabled):hover {
+		&::before {
+			background-color: var(--field-hover, var(--text-weak));
+		}
+	}
+
+	&--checked:not(.toggle-container--disabled):hover {
+		&::before {
+			background-color: var(--interaction-norm-hover);
+		}
+	}
+}
+
 .settings-section-icon {
 	background-color: var(--background-norm);
 	border: 1px solid var(--border-weak);
