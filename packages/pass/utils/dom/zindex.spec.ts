@@ -1,4 +1,4 @@
-import { getOverlayZIndex, isStackingContext } from './zindex';
+import { analyzeElementStack, getOverlayZIndex } from './zindex';
 
 describe('z-index utilities', () => {
     const root = document.createElement('body');
@@ -7,7 +7,7 @@ describe('z-index utilities', () => {
         test('should return true when reaching root node', () => {
             const el = document.createElement('div');
             el.style.setProperty('position', 'absolute');
-            expect(isStackingContext(el)).toEqual([true, 0]);
+            expect(analyzeElementStack(el)).toEqual([true, 0]);
         });
 
         test('should return false if z-index value in non-stacking context', () => {
@@ -18,7 +18,7 @@ describe('z-index utilities', () => {
             child.style.setProperty('position', 'static');
             child.style.setProperty('z-index', '10');
 
-            expect(isStackingContext(child)).toEqual([false, 10]);
+            expect(analyzeElementStack(child)).toEqual([false, 10]);
         });
 
         test('should return true if position is not static', () => {
@@ -28,25 +28,25 @@ describe('z-index utilities', () => {
             parent.appendChild(child);
             child.style.setProperty('position', 'relative');
             child.style.setProperty('z-index', '10');
-            expect(isStackingContext(child)).toEqual([true, 10]);
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
             child = document.createElement('div');
             parent.appendChild(child);
             child.style.setProperty('position', 'absolute');
             child.style.setProperty('z-index', '11');
-            expect(isStackingContext(child)).toEqual([true, 11]);
+            expect(analyzeElementStack(child)).toEqual([true, 11]);
 
             child = document.createElement('div');
             parent.appendChild(child);
             child.style.setProperty('position', 'fixed');
             child.style.setProperty('z-index', '12');
-            expect(isStackingContext(child)).toEqual([true, 12]);
+            expect(analyzeElementStack(child)).toEqual([true, 12]);
 
             child = document.createElement('div');
             parent.appendChild(child);
             child.style.setProperty('position', 'sticky');
             child.style.setProperty('z-index', '13');
-            expect(isStackingContext(child)).toEqual([true, 13]);
+            expect(analyzeElementStack(child)).toEqual([true, 13]);
         });
 
         test('should return true for container-type stacking contexts', () => {
@@ -56,13 +56,13 @@ describe('z-index utilities', () => {
             parent.appendChild(child);
             child.style.setProperty('container-type', 'size');
             child.style.setProperty('z-index', '10');
-            expect(isStackingContext(child)).toEqual([true, 10]);
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
             child = document.createElement('div');
             parent.appendChild(child);
             child.style.setProperty('container-type', 'inline-size');
             child.style.setProperty('z-index', '100');
-            expect(isStackingContext(child)).toEqual([true, 100]);
+            expect(analyzeElementStack(child)).toEqual([true, 100]);
         });
 
         test('should return true is stack created by parent', () => {
@@ -72,7 +72,7 @@ describe('z-index utilities', () => {
             parent.appendChild(child);
             parent.style.display = 'flex';
             child.style.setProperty('z-index', '10');
-            expect(isStackingContext(child)).toEqual([true, 10]);
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
             parent = document.createElement('div');
             child = document.createElement('div');
@@ -80,7 +80,7 @@ describe('z-index utilities', () => {
             parent.style.display = 'grid';
             child.style.setProperty('z-index', '100');
 
-            expect(isStackingContext(child)).toEqual([true, 100]);
+            expect(analyzeElementStack(child)).toEqual([true, 100]);
         });
     });
 
