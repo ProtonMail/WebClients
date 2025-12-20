@@ -51,7 +51,6 @@ export interface FormHandle {
     otp: boolean;
     zIndex: number;
     scrollParent: HTMLElement;
-    scrollChild: HTMLElement;
     detach: () => void;
     detachField: (field: FieldElement) => void;
     getFieldById: <T extends FieldType = FieldType>(fieldId: string) => Maybe<FieldHandle<T>>;
@@ -64,7 +63,6 @@ export interface FormHandle {
 
 type ComputedFormData = {
     scrollParent?: HTMLElement;
-    scrollChild?: HTMLElement;
     zIndex?: number;
 };
 
@@ -97,16 +95,14 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             return data.zIndex;
         },
 
+        /** Resolve scroll parent from the first field (or form itself
+         * as fallback). We use the first field as the heuristic in case
+         * the scrollable container is nested inside the form element. */
         get scrollParent() {
             if (data.scrollParent) return data.scrollParent;
-            return (data.scrollParent = scrollableParent(form));
-        },
 
-        get scrollChild() {
-            if (data.scrollChild) return data.scrollChild;
-
-            const target = formHandle.getFields()[0]?.element;
-            return (data.scrollChild = target ? scrollableParent(target, form) : form);
+            const target = formHandle.getFields()[0]?.element ?? form;
+            return (data.scrollParent = scrollableParent(target));
         },
 
         get busy() {
