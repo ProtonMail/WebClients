@@ -1,5 +1,5 @@
 import type {
-    AssetId,
+    AttachmentId,
     Base64,
     ConversationId,
     MessageId,
@@ -9,6 +9,9 @@ import type {
     SerializedSpace,
     SpaceId,
 } from '../types';
+
+// Type alias for backwards compatibility (assets are now attachments)
+type AssetId = AttachmentId;
 
 // prettier-ignore
 export type MessageFromApi = {

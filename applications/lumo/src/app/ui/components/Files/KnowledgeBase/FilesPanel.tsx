@@ -80,7 +80,7 @@ export const FilesPanel = ({
     // Get all attachments from Redux to find auto-retrieved ones
     const allAttachmentsState = useLumoSelector(selectAttachments);
 
-    // Collect all auto-retrieved attachments from this conversation
+    // Collect all auto-retrieved attachments from this conversation (both Drive and project files)
     // Deduplicate by driveNodeId or filename (same document may be retrieved multiple times across messages)
     // Also track which message they belong to so we can use context filters
     const autoRetrievedAttachments = React.useMemo(() => {
@@ -90,14 +90,33 @@ export const FilesPanel = ({
             if (msg.attachments) {
                 msg.attachments.forEach(shallowAtt => {
                     const fullAtt = allAttachmentsState[shallowAtt.id];
-                    if (fullAtt?.autoRetrieved) {
+                    // Check autoRetrieved on BOTH shallow and full attachment
+                    // For project files, autoRetrieved is on the shallow attachment (we skip upserting to Redux)
+                    // For Drive files, it's on both
+                    const isAutoRetrieved = shallowAtt.autoRetrieved || fullAtt?.autoRetrieved;
+
+                    if (isAutoRetrieved) {
+                        // Use the fullAtt data if available, otherwise construct from shallow
+                        const attachment = fullAtt || {
+                            ...shallowAtt,
+                            filename: shallowAtt.filename || 'Unknown file',
+                        } as Attachment;
+
+                        // Merge autoRetrieved and isUploadedProjectFile from shallow if not in full
+                        const mergedAtt = {
+                            ...attachment,
+                            autoRetrieved: true,
+                            isUploadedProjectFile: shallowAtt.isUploadedProjectFile || fullAtt?.isUploadedProjectFile,
+                            relevanceScore: shallowAtt.relevanceScore ?? fullAtt?.relevanceScore,
+                        };
+
                         // Use driveNodeId for deduplication, fallback to filename
-                        const key = fullAtt.driveNodeId || fullAtt.filename;
+                        const key = mergedAtt.driveNodeId || mergedAtt.filename;
                         // Keep the one with highest relevance score
                         const existing = attachmentsByKey.get(key);
-                        if (!existing || (fullAtt.relevanceScore ?? 0) > (existing.relevanceScore ?? 0)) {
+                        if (!existing || (mergedAtt.relevanceScore ?? 0) > (existing.relevanceScore ?? 0)) {
                             // Include messageId so context filters can work
-                            attachmentsByKey.set(key, { ...fullAtt, messageId: msg.id });
+                            attachmentsByKey.set(key, { ...mergedAtt, messageId: msg.id });
                         }
                     }
                 });
@@ -390,10 +409,11 @@ export const FilesPanel = ({
                 )}
 
                 <div className="flex-1 flex-row overflow-y-auto" style={{ minHeight: '35vh' }}>
-                    {/* When filtering, show files from the message (excluding auto-retrieved, they're shown separately) */}
+                    {/* When filtering, show files from the message */}
                     {filterMessage && (() => {
-                        const manualFiles = allFiles.filter(f => !(f as any).autoRetrieved);
+                        // All files retrieved for this message (both uploaded and Drive files now use RAG)
                         const autoRetrievedFiles = allFiles.filter(f => (f as any).autoRetrieved);
+                        const manualFiles = allFiles.filter(f => !(f as any).autoRetrieved);
 
                         // Split auto-retrieved by active/excluded
                         const activeAutoFiles = autoRetrievedFiles.filter(f => {
@@ -412,10 +432,10 @@ export const FilesPanel = ({
                                     <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
                                         <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
                                             <Icon name="folder-open" size={4} className="color-norm" />
-                                            {c('collider_2025: Info').t`Auto-retrieved project information`}
+                                            {c('collider_2025: Info').t`Retrieved Project Knowledge`}
                                         </h3>
                                         <p className="text-xs color-weak mb-3">
-                                            {c('collider_2025: Info').t`Information automatically retrieved from the linked project folder based on your questions.`}
+                                            {c('collider_2025: Info').t`Files automatically retrieved based on your question.`}
                                         </p>
                                         {activeAutoFiles.map((file) => (
                                             <KnowledgeFileItem
@@ -452,7 +472,7 @@ export const FilesPanel = ({
                                     <div className="mb-6 w-full">
                                         <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
                                             <Icon name="file" size={4} />
-                                            {c('collider_2025: Info').t`Files`} ({manualFiles.length})
+                                            {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
                                         </h3>
 
                                         {manualFiles.map((file) => (
@@ -473,26 +493,23 @@ export const FilesPanel = ({
                     {/* When not filtering, show normal view */}
                     {!filterMessage && (
                         <>
-                            {/* Linked Drive Folder + Auto-retrieved files (merged section) */}
+                            {/* Auto-retrieved files section - includes both uploaded files and Drive files */}
+                            {/* All project knowledge is now retrieved via RAG */}
                             {(linkedDriveFolder || autoRetrievedAttachments.length > 0) && (
                                 <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
                                     <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                                        <Icon name="brand-proton-drive" size={4} className="color-primary" />
-                                        {c('collider_2025: Info').t`Linked Drive Folder`}
+                                        <Icon name="folder-open" size={4} className="color-norm" />
+                                        {c('collider_2025: Info').t`Retrieved Project Knowledge`}
                                     </h3>
-                                    {linkedDriveFolder && (
-                                        <div className="text-sm color-weak mb-2">{linkedDriveFolder.folderName}</div>
-                                    )}
 
-                                    {/* Show different description based on whether files have been retrieved */}
                                     {activeAutoRetrieved.length === 0 ? (
                                         <p className="text-xs color-weak mb-3">
-                                            {c('collider_2025: Info').t`Relevant files from this folder will be automatically added to your questions.`}
+                                            {c('collider_2025: Info').t`Relevant files will be automatically retrieved based on your questions.`}
                                         </p>
                                     ) : (
                                         <>
                                             <p className="text-xs color-weak mb-3">
-                                                {c('collider_2025: Info').t`Files automatically added based on your questions:`}
+                                                {c('collider_2025: Info').t`Files automatically retrieved based on your questions:`}
                                             </p>
                                             {/* Active auto-retrieved files */}
                                             {activeAutoRetrieved.map((attachment) => (
@@ -509,22 +526,26 @@ export const FilesPanel = ({
                                 </div>
                             )}
 
-                            {/* Conversation Attachments - only show non-auto-retrieved files */}
+                            {/* Manually Attached Files - only show non-auto-retrieved files */}
                             {(() => {
                                 // Filter out auto-retrieved from current attachments (historical files already filtered by hook)
                                 const nonAutoRetrievedCurrentAttachments = currentAttachments.filter(a => !a.autoRetrieved);
-                                const totalActive = nonAutoRetrievedCurrentAttachments.length + activeHistoricalFiles.length;
+                                const totalManual = nonAutoRetrievedCurrentAttachments.length + activeHistoricalFiles.length;
 
-                                if (totalActive === 0) return null;
+                                if (totalManual === 0) return null;
 
                                 return (
-                                    <div className="mb-3 w-full p-4 active-files-area">
-                                        <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
-                                            {c('collider_2025: Info').t`Active`}
+                                    <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
+                                        <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
+                                            <Icon name="paper-clip" size={4} className="color-norm" />
+                                            {c('collider_2025: Info').t`Attached Files`}
                                             <span className={'text-normal color-weak'}>
-                                                {totalActive}
+                                                {totalManual}
                                             </span>
                                         </h3>
+                                        <p className="text-xs color-weak mb-3">
+                                            {c('collider_2025: Info').t`Files you've added to this conversation.`}
+                                        </p>
 
                                         {/* New uploads (non-auto-retrieved) */}
                                         {nonAutoRetrievedCurrentAttachments.map((attachment) => (
@@ -553,15 +574,19 @@ export const FilesPanel = ({
                                 );
                             })()}
 
-                            {/* Removed from future questions - combines excluded auto-retrieved + unused historical files */}
+                            {/* Excluded files - files removed from future questions */}
                             {(excludedAutoRetrieved.length > 0 || unusedHistoricalFiles.length > 0) && (
-                                <div className="mb-4 w-full p-4">
-                                    <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
-                                        {c('collider_2025: Info').t`Removed from future questions`}
+                                <div className="mb-4 w-full p-4 bg-weak rounded border border-weak opacity-70">
+                                    <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
+                                        <Icon name="eye-slash" size={4} className="color-weak" />
+                                        {c('collider_2025: Info').t`Excluded`}
                                         <span className={'text-normal color-weak'}>
                                             {excludedAutoRetrieved.length + unusedHistoricalFiles.length}
                                         </span>
                                     </h3>
+                                    <p className="text-xs color-weak mb-3">
+                                        {c('collider_2025: Info').t`These files won't be used for future questions.`}
+                                    </p>
                                     <div className="space-y-2">
                                         {/* Excluded auto-retrieved files */}
                                         {excludedAutoRetrieved.map((attachment) => (
@@ -590,7 +615,7 @@ export const FilesPanel = ({
                     )}
 
                     {/* Empty State */}
-                    {allFiles.length === 0 && currentAttachments?.length === 0 && (
+                    {allFiles.length === 0 && currentAttachments?.length === 0 && autoRetrievedAttachments.length === 0 && !linkedDriveFolder && (
                         <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
                             <Icon name="file" size={8} className="color-weak mb-2" />
                             <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No files available`}</p>

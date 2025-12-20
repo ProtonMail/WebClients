@@ -1,6 +1,9 @@
 import isNil from 'lodash/isNil';
 
-import type { SerializedAsset, SerializedAttachment } from '../types';
+import type { SerializedAttachment } from '../types';
+
+// Type alias for backwards compatibility (assets are now attachments)
+type SerializedAsset = SerializedAttachment;
 import {
     type Base64,
     type EncryptedData,
