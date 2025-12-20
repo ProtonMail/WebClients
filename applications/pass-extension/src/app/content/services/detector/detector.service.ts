@@ -1,5 +1,4 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
-import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
 import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -124,14 +123,6 @@ const selectBestForm: PredictionBestSelector<FormType> = (candidates) => {
     else return login;
 };
 
-const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
-    features.Autofill ||
-    features.Autofill2FA ||
-    features.Autosave ||
-    features.AutosuggestAlias ||
-    features.AutosuggestPassword ||
-    features.CreditCard;
-
 export const createDetectorService = (config: DetectorConfig) => {
     const state: DetectorState = { rules: null };
 
@@ -232,8 +223,6 @@ export const createDetectorService = (config: DetectorConfig) => {
                 });
             }
         },
-
-        isEnabled,
 
         /* Run pre-detection checks with proper timing to avoid blocking the UI.
          * Triggers rule application to exclude/include nodes for the classifier,
