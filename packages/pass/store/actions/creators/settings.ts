@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
@@ -9,7 +10,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
-import type { CriteriaMasks, OfflineModeDTO } from '@proton/pass/types/worker/settings';
+import type { OfflineModeDTO } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
@@ -45,9 +46,8 @@ export const settingsEditSuccess = createAction(
     )
 );
 
-export const updatePauseListItem = createAction(
-    'settings::pause-list::update',
-    (payload: { hostname: string; criteria: CriteriaMasks }) => pipe(withSettings, withCache)({ payload })
+export const updatePauseListItem = createAction('settings::pause-list::update', (payload: { hostname: string; criteria: CriteriaMasks }) =>
+    pipe(withSettings, withCache)({ payload })
 );
 
 export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, boolean>('offline::toggle')({
@@ -66,8 +66,7 @@ export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, bool
                 withSettings,
                 withNotification({
                     text: enabled
-                        ? c('Info')
-                              .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`
+                        ? c('Info').t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`
                         : c('Info').t`Offline support successfully disabled`,
                     type: 'info',
                 })

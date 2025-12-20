@@ -1,7 +1,7 @@
-import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
+import { CRITERIA_MASKS } from '@proton/pass/lib/settings/pause-list';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
-import { hasPauseCriteria } from './utils';
+import { hasPauseCriteria } from './pause-list';
 
 describe('hasPauseCriteria', () => {
     it('should return false for all criterias when domain pauselist is empty', () => {

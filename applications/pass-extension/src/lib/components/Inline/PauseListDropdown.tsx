@@ -7,8 +7,8 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { MODEL_VERSION } from '@proton/pass/constants';
+import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 
 import { useIFrameAppController, useIFrameAppState } from './IFrameApp';
 
@@ -18,6 +18,7 @@ type Props = {
     hostname: string;
     label: string;
 };
+
 export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();

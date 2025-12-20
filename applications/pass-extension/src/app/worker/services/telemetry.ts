@@ -1,4 +1,3 @@
-import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/utils';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
@@ -7,6 +6,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
+import { hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
     type TelemetryService as CoreTelemetryService,
     createCoreTelemetryService,

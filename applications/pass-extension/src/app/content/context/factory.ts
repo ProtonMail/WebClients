@@ -11,6 +11,7 @@ import { createPasskeyService } from 'proton-pass-extension/app/content/services
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import { FieldType } from '@proton/pass/fathom/labels';
+import { DEFAULT_PAUSE_CRITERIAS, combinePauseCriteria, hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
@@ -22,7 +23,6 @@ import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
-import { DEFAULT_PAUSE_CRITERIAS, combinePauseCriteria, hasPauseCriteria } from './utils';
 
 export type ContentScriptContextFactoryOptions = {
     scriptId: string;
