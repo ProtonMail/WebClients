@@ -6,16 +6,12 @@ export const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number
     return isNaN(parsedZIndex) ? 0 : parsedZIndex;
 };
 
-type StackResult = [stacking: boolean, zIndex: number];
-
 /* This function provides a minimal version of stacking context detection.
  * check MDN documentation for missing cases in case they become relevant :
  * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context */
-export const isStackingContext = (el: HTMLElement): StackResult => {
+export const isStackingContext = (el: HTMLElement, styles?: CSSStyleDeclaration): boolean => {
     const parent = el.parentElement;
-    const styles = getComputedStyle(el);
-    const { zIndex, position, containerType } = getComputedStyle(el);
-    const value = getZIndex(el, styles);
+    const { zIndex, position, containerType } = styles ?? getComputedStyle(el);
     const hasZIndex = zIndex !== '' && zIndex !== 'auto';
 
     if (
@@ -32,15 +28,22 @@ export const isStackingContext = (el: HTMLElement): StackResult => {
         containerType === 'size' ||
         containerType === 'inline-size'
     ) {
-        return [true, value];
+        return true;
     }
 
     /* Element that is a child of a flex/grid container,
      * with z-index value other than auto */
     const { display } = getComputedStyle(parent);
-    if (hasZIndex && (display === 'flex' || display === 'grid')) return [true, value];
+    if (hasZIndex && (display === 'flex' || display === 'grid')) return true;
 
-    return [false, value];
+    return false;
+};
+
+type StackResult = [stacking: boolean, zIndex: number];
+
+export const analyzeElementStack = (el: HTMLElement): StackResult => {
+    const styles = getComputedStyle(el);
+    return [isStackingContext(el, styles), getZIndex(el, styles)];
 };
 
 /** Calculates the minimum z-index needed for an overlay to appear above target elements.
@@ -61,7 +64,7 @@ export const getOverlayZIndex = (els: HTMLElement[], container: HTMLElement) => 
         let current = el.parentElement;
 
         while (current && current !== container) {
-            const result = cache?.get(current) ?? isStackingContext(current);
+            const result = cache?.get(current) ?? analyzeElementStack(current);
             const [stacking, zIndex] = result;
 
             if (stacking) maxZIndex = zIndex;
