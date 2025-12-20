@@ -26,8 +26,8 @@ import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import {
-    addAsset,
-    deleteAllAssets,
+    deserializeAssetSaga,
+    softDeleteAssetFromRemote,
     locallyDeleteAssetFromLocalRequest,
     locallyDeleteAssetFromRemoteRequest,
     pullAssetFailure,
@@ -36,8 +36,7 @@ import {
     pushAssetNeedsRetry,
     pushAssetRequest,
     pushAssetSuccess,
-} from '../slices/core/assets';
-import { deserializeAssetSaga, softDeleteAssetFromRemote } from './assets';
+} from './assets';
 import {
     addAttachment,
     deleteAllAttachments,
@@ -409,7 +408,7 @@ export function* loadReduxFromIdb(): SagaIterator {
             // Remove binary data before storing in Redux (but keep markdown for LLM context)
             // This avoids non-serializable Uint8Array in Redux state
             const { data, ...assetForRedux } = asset;
-            yield put(addAsset(assetForRedux));
+            yield put(addAttachment(assetForRedux));
             
             // Yield control every 5 assets to prevent blocking the main thread and allow webpack HMR to process
             if ((i + 1) % 5 === 0) {
@@ -428,7 +427,6 @@ export function* unloadRedux(): SagaIterator {
     yield put(deleteAllConversations());
     yield put(deleteAllMessages());
     yield put(deleteAllAttachments());
-    yield put(deleteAllAssets());
     yield put(deleteAllIdMaps());
 }
 
