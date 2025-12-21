@@ -7,17 +7,16 @@ import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
 import { computeFeatures, shouldInjectContentScript } from 'proton-pass-extension/lib/utils/features';
-import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe, TabId } from '@proton/pass/types';
+import type { FrameId, Maybe, TabId } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const withTabEffect =
-    (fn: (tabId: TabId, frameId: Maybe<number>) => Promise<void>) =>
+    (fn: (tabId: TabId, frameId: Maybe<FrameId>) => Promise<void>) =>
     async (_: any, { tab, frameId }: Runtime.MessageSender) => {
         try {
             await (tab?.id && fn(tab.id, frameId));
@@ -70,7 +69,7 @@ export const createContentScriptService = () => {
         }
     };
 
-    const registerElements = async (hash: string, tabId: TabId, frameId: FrameID) => {
+    const registerElements = async (hash: string, tabId: TabId, frameId: FrameId) => {
         await browser.scripting.executeScript({
             target: { tabId, frameIds: [frameId] },
             world: 'MAIN',

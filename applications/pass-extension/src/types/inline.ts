@@ -1,7 +1,8 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extension/types/frames';
+
+import type { FrameId } from '@proton/pass/types';
 
 export type Coords = { top: number; left: number };
 
@@ -36,5 +37,5 @@ export type DropdownClosedDTO = FrameRelay<InlineCloseOptions & Required<FrameFi
 export type IconShiftResult = { dx: number };
 export type IconShiftRequest = FrameRelay<
     Coords & { maxShift: number; radius: number; frameAttributes: FrameAttributes },
-    { frameId: FrameID }
+    { frameId: FrameId }
 >;

@@ -1,19 +1,19 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { type FrameID, getFrameScore } from 'proton-pass-extension/lib/utils/frames';
+import { getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { FrameId, Maybe } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
 
-export const getFrameID = withContext<() => FrameID>((ctx) => {
+export const getFrameID = withContext<() => FrameId>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;
     if (frameId === undefined) throw new Error('Unknown frameID');
     return frameId;

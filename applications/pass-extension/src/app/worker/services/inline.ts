@@ -2,7 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { withSender } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameData, FrameID, Frames } from 'proton-pass-extension/lib/utils/frames';
+import type { FrameData, Frames } from 'proton-pass-extension/lib/utils/frames';
 import { getTabFrames as getAllTabFrames, getFramePath } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
 import type { Coords, DropdownStateDTO } from 'proton-pass-extension/types/inline';
@@ -10,7 +10,7 @@ import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull, TabId } from '@proton/pass/types';
+import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
@@ -78,7 +78,7 @@ export const createInlineService = () => {
      * Returns `null` if any frame in the hierarchy is hidden, missing, or query fails. */
     const getFrameCoords = async (
         tabId: TabId,
-        frameId: FrameID,
+        frameId: FrameId,
         { coords, frameAttributes }: Omit<FrameQueryResponse<'position'>, 'type'>,
         frames: Frames
     ): Promise<MaybeNull<CurrentFrame>> => {
