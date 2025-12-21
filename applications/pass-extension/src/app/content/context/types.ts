@@ -43,7 +43,7 @@ export interface ContentScriptContext {
         passkey: Maybe<PasskeyService>;
     };
 
-    destroy: (options: { reason: string; recycle?: boolean }) => void;
+    destroy: (options: { reason: string }) => void;
     getExtensionContext: () => Maybe<ExtensionContextType>;
     getFeatureFlags: () => FeatureFlagState;
     getFeatures: () => Record<CSFeatures, boolean>;

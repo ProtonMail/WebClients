@@ -169,18 +169,18 @@ export const createContentScriptClient = ({
             try {
                 const ext = await setupExtensionContext({
                     endpoint: 'contentscript',
+
                     onDisconnect: () => {
+                        /** Restart the controller. SW re-registration timeout is
+                         * handled by `controller.start` debounce (350ms). */
                         controller.stop('port disconnected');
-                        return { recycle: true };
+                        controller.start();
                     },
+
                     /** if the extension context errors out: destroy the parent
                      * controller. This will cascade to remove both the extension
                      * context and the content-script context */
                     onError: controller.destroy,
-                    onRecycle: async (next) => {
-                        controller.start();
-                        return handleStart(next);
-                    },
                 });
 
                 logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
