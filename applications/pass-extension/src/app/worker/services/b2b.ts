@@ -8,9 +8,9 @@ import type { B2BEventDispatcher } from '@proton/pass/lib/b2b/b2b.dispatcher';
 import { createB2BEventDispatcher } from '@proton/pass/lib/b2b/b2b.dispatcher';
 import { clientReady } from '@proton/pass/lib/client';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
-import type { ExtensionStorage } from '@proton/pass/types';
+import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 
 export const B2B_EVENTS_ALARM_NAME = 'PassB2BEventsAlarm';
 export const B2B_EVENTS_STORAGE_KEY = 'b2bEvents';

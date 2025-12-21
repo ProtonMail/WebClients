@@ -25,7 +25,8 @@ import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { selectLockEnabled, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
+import { selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors/organization';
+import { selectLockEnabled } from '@proton/pass/store/selectors/settings';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

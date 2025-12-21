@@ -4,7 +4,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { WebNavigation } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 

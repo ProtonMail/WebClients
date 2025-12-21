@@ -8,7 +8,7 @@ import { getRuleVersion } from '@proton/pass/lib/extension/rules/rules';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 
 export interface FeatureFlagService {

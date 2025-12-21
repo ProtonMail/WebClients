@@ -12,8 +12,10 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType } from '@proton/pass/fathom/labels';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
-import type { AsyncCallback, FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
+import type { ItemContent } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { AsyncCallback, MaybeNull } from '@proton/pass/types/utils/index';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
 import { first } from '@proton/pass/utils/array/first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

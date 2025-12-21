@@ -2,7 +2,7 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extension/types/frames';
 
-import type { FrameId } from '@proton/pass/types';
+import type { FrameId } from '@proton/pass/types/worker/runtime';
 
 export type Coords = { top: number; left: number };
 

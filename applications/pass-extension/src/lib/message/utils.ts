@@ -1,6 +1,6 @@
 import type { WorkerMessage, WorkerMessageType, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
 export const isExtensionMessage = (message: unknown): message is WorkerMessageWithSender =>

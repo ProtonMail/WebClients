@@ -2,7 +2,7 @@ import type { FieldHandle } from 'proton-pass-extension/app/content/services/for
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
 
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
 import type { DropdownHandler } from './dropdown.abstract';

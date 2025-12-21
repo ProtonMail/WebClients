@@ -25,7 +25,8 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { ClipboardService } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
-import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
 
 export type WorkerInitOptions = {
     sync?: boolean /* will clear local storage */;

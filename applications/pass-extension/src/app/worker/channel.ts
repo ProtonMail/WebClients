@@ -8,7 +8,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
-import { cacheRequest } from '@proton/pass/store/actions';
+import { cacheRequest } from '@proton/pass/store/actions/creators/client';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectPendingPopupRequests, selectPendingSettingsRequests } from '@proton/pass/store/selectors/extension';
 import { or } from '@proton/pass/utils/fp/predicates';

@@ -6,7 +6,7 @@ import { InlinePortMessageType } from 'proton-pass-extension/app/content/service
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
 
 export type IFrameFocusControllerValue = { focusRef: RefObject<HTMLInputElement> };

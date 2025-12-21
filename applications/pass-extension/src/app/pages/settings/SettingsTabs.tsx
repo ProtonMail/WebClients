@@ -22,9 +22,9 @@ import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { RequestForkData } from '@proton/pass/lib/auth/fork';
 import { clientSessionLocked } from '@proton/pass/lib/client';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
-import type { Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Aliases } from './Views/Aliases';

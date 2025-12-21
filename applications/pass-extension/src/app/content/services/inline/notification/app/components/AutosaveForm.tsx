@@ -11,9 +11,9 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH, MODEL_VERSION } from '@proton/pass/constants';
-import type { AutosavePayload } from '@proton/pass/types';
-import { type AutosaveFormValues, AutosaveMode } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 
 type Props = {
     busy: boolean;

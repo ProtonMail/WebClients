@@ -16,8 +16,9 @@ import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { OtpRequest } from '@proton/pass/types/worker/otp';
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.OTP }>;
 

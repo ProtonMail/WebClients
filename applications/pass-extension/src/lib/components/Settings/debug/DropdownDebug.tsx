@@ -6,7 +6,7 @@ import { Dropdown } from 'proton-pass-extension/app/content/services/inline/drop
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import { AppStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { MockIFrameApp } from './MockIFrameApp';
 

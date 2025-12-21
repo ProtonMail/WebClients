@@ -33,7 +33,7 @@ import 'proton-pass-extension/lib/polyfills/shim';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';

@@ -5,7 +5,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
-import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types/worker/form';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';

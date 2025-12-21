@@ -21,8 +21,9 @@ import { MODEL_VERSION } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import { type AutosaveFormValues, AutosaveMode, type AutosavePayload } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
@@ -51,9 +52,9 @@ export const Autosave: FC<Props> = ({ data }) => {
          * - if the autosave reconciliation re-triggers (can happen on resize) */
         return Boolean(
             prev &&
-                (data.password !== prev?.password ||
-                    data.type !== prev?.type ||
-                    data.userIdentifier !== prev?.userIdentifier)
+            (data.password !== prev?.password ||
+                data.type !== prev?.type ||
+                data.userIdentifier !== prev?.userIdentifier)
         );
     }, [data]);
 

@@ -8,7 +8,7 @@ import type { ProtonPassControl } from 'proton-pass-extension/app/content/servic
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl.raw.scss';
 import type { Coords } from 'proton-pass-extension/types/inline';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import {
     createStyleParser,
     getComputedHeight,

@@ -11,7 +11,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { AutosavePayload, LoginItemPreview } from '@proton/pass/types';
+import type { AutosavePayload } from '@proton/pass/types/worker/autosave';
+import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';
 
 export type NotificationRequest =

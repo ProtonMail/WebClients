@@ -1,4 +1,4 @@
-import type { Callback, Maybe } from '@proton/pass/types';
+import type { Callback, Maybe } from '@proton/pass/types/utils/index';
 import type { ContextHandler, ContextInjector } from '@proton/pass/utils/context';
 import { InjectionMode, contextHandlerFactory, contextInjectorFactory } from '@proton/pass/utils/context';
 
