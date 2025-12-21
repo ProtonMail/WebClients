@@ -1,11 +1,10 @@
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
 import { generatePortName } from 'proton-pass-extension/lib/utils/port';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint, EndpointContext, MaybeNull, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, EndpointContext, FrameId, MaybeNull, TabId } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -19,7 +18,7 @@ export type ExtensionContextType = {
     /** The currently active tab's ID. In popup contexts,
      * represents the focused tab visible to the user. */
     tabId: TabId;
-    frameId: FrameID;
+    frameId: FrameId;
     /** The tab ID that originated the context. Matches `tabId`
      * for content scripts and extension pages, but differs in
      * popup contexts where it represents the popup's source tab. */

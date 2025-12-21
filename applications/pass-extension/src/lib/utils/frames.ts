@@ -9,14 +9,13 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
 export type FrameData = {
-    parent: MaybeNull<FrameID>;
+    parent: MaybeNull<FrameId>;
     frameId: number;
     origin: MaybeNull<string>;
     secure: MaybeNull<boolean>;
 };
 
-export type FrameID = number;
-export type Frames = Map<FrameID, FrameData>;
+export type Frames = Map<FrameId, FrameData>;
 export type FrameMapper<R> = (frame: WebNavigation.GetAllFramesCallbackDetailsItemType) => R;
 
 /** Frame hierarchy tracker: Creates parent-child relationship map
@@ -47,7 +46,7 @@ export const getTabFrames = async (tabId: TabId, options?: { parseUrl: boolean }
     });
 
 /** Returns the path from target frame to root frame (leaf to root order) */
-export const getFramePath = (frames: Frames, frameId: FrameID): FrameID[] => {
+export const getFramePath = (frames: Frames, frameId: FrameId): FrameId[] => {
     if (frameId === 0) return [0];
 
     const path = [];
@@ -66,7 +65,7 @@ export const getFramePath = (frames: Frames, frameId: FrameID): FrameID[] => {
  * only allowed origins and secure protocols. Prevents cross-origin injection
  * attacks and protocol downgrade attacks by ensuring no malicious or insecure
  * intermediate frames in the ancestry chain. */
-export const validateFramePath = (frames: Frames, frameID: FrameID, trustedOrigins: Set<string>): boolean => {
+export const validateFramePath = (frames: Frames, frameID: FrameId, trustedOrigins: Set<string>): boolean => {
     const path = getFramePath(frames, frameID);
     return path.every((pathFrameID) => {
         const pathFrame = frames.get(pathFrameID);
@@ -79,7 +78,7 @@ export const validateFramePath = (frames: Frames, frameID: FrameID, trustedOrigi
 };
 
 export type AutofillableFrame = { frame: FrameData; crossOrigin: boolean; tabId: TabId };
-export type AutofillableFrames = Map<FrameID, AutofillableFrame>;
+export type AutofillableFrames = Map<FrameId, AutofillableFrame>;
 
 /** Determines which frames are safe to autofill based on origin validation.
  * - Validates complete frame ancestry to prevent malicious intermediate frames
@@ -88,7 +87,7 @@ export type AutofillableFrames = Map<FrameID, AutofillableFrame>;
 export const getAutofillableFrames = async (
     tabId: TabId,
     sourceOrigin: string,
-    sourceFrameID: FrameID
+    sourceFrameID: FrameId
 ): Promise<AutofillableFrames> => {
     const frames = await getTabFrames(tabId, { parseUrl: true });
     const trustedOrigins = new Set<string>();
