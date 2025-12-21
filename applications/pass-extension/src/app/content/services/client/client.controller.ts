@@ -257,8 +257,8 @@ export const createClientController = ({
             controller.observer.destroy();
             controller.deferredUnsubscribe?.();
             controller.instance?.destroy({ reason });
-            controller.instance = null;
             controller.deferred = false;
+            controller.instance = null;
         },
 
         /** Stops the client and removes all listeners. Once called
