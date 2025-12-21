@@ -13,8 +13,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import type { AppState } from '@proton/pass/types/worker/state';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';

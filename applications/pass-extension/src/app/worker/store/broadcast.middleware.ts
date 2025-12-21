@@ -4,7 +4,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Action } from 'redux';
 import { type Middleware, isAction } from 'redux';
 
-import { actionStream } from '@proton/pass/store/actions';
+import { actionStream } from '@proton/pass/store/actions/creators/client';
 import { isBackgroundAction, isStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { State } from '@proton/pass/store/types';

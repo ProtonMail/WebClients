@@ -11,7 +11,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint, Maybe, TabId } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 
 export class MessageVersionMismatchError extends Error {
     name = 'MessageVersionMismatchError';

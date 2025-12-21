@@ -23,8 +23,8 @@ import {
     hasCriteria,
     toggleCriteria,
 } from '@proton/pass/lib/settings/pause-list';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectDisallowedDomains } from '@proton/pass/store/selectors';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
+import { selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';

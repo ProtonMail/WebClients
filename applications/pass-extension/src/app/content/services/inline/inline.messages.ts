@@ -13,8 +13,11 @@ import type {
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, ClientEndpoint, FormCredentials, ItemContent } from '@proton/pass/types';
+import type { ItemContent } from '@proton/pass/types/data/items';
 import type { Rect } from '@proton/pass/types/utils/dom';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
+import type { AppState } from '@proton/pass/types/worker/state';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
 import type { DropdownActions } from './dropdown/dropdown.app';

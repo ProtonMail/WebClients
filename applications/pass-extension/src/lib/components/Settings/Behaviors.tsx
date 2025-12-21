@@ -10,12 +10,13 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { settingsEditIntent } from '@proton/pass/store/actions';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectFeatureFlags, selectPassPlan, selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { MaybeNull, RecursivePartial } from '@proton/pass/types';
+import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
+import { selectFeatureFlags, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
+import type { MaybeNull, RecursivePartial } from '@proton/pass/types/utils/index';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

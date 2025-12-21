@@ -11,7 +11,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { FrameId, Maybe, TabId } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 

@@ -4,7 +4,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { ApiCallFn } from '@proton/pass/types';
+import type { ApiCallFn } from '@proton/pass/types/api/api';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { configureApi } from '@proton/shared/lib/api';
 import { pullForkSession } from '@proton/shared/lib/api/auth';

@@ -1,4 +1,4 @@
-import type { ClientEndpoint, FrameId, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export const generatePortName = (endpoint: ClientEndpoint, tabId: TabId, frameId: FrameId) =>

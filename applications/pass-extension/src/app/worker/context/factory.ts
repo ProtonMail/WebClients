@@ -39,8 +39,9 @@ import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusRe
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
-import { selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { type AppState, AppStatus } from '@proton/pass/types';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
+import type { AppState } from '@proton/pass/types/worker/state';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import createStore from '@proton/shared/lib/helpers/store';

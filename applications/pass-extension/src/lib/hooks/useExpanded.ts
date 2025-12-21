@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
 import noop from '@proton/utils/noop';
 
 export const useExpanded = () => {

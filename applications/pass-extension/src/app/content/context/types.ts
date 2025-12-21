@@ -10,8 +10,9 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, Maybe } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { AppState } from '@proton/pass/types/worker/state';
 
 export type CSContextState = AppState & { stale: boolean; ready: boolean };
 

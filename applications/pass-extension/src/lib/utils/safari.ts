@@ -7,7 +7,7 @@ import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { PullForkCall } from '@proton/pass/lib/auth/fork';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';

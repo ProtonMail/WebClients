@@ -10,8 +10,8 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectPendingBrowserAutofill } from '@proton/pass/store/selectors';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
+import { selectPendingBrowserAutofill } from '@proton/pass/store/selectors/settings';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

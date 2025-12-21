@@ -2,7 +2,7 @@ import type { Permissions } from 'webextension-polyfill';
 
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types/utils/index';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 export type Permission = Unpack<Permissions.Permissions['permissions']>;

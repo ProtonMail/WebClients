@@ -27,7 +27,7 @@ import {
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { itemAutofilled } from '@proton/pass/store/actions';
+import { itemAutofilled } from '@proton/pass/store/actions/creators/item';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
@@ -35,24 +35,17 @@ import {
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
     selectAutofillableShareIDs,
-    selectAutosuggestCopyToClipboard,
-    selectItem,
-    selectOrganizationPasswordGeneratorPolicy,
-    selectPassPlan,
-    selectPasswordOptions,
-    selectVaultLimits,
-} from '@proton/pass/store/selectors';
-import type {
-    CCItemData,
-    FormCredentials,
-    FrameId,
-    ItemContent,
-    ItemRevision,
-    Maybe,
-    MaybeNull,
-    SelectedItem,
-    TabId,
-} from '@proton/pass/types';
+} from '@proton/pass/store/selectors/autofill';
+import { selectItem } from '@proton/pass/store/selectors/items';
+import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
+import { selectOrganizationPasswordGeneratorPolicy } from '@proton/pass/store/selectors/organization';
+import { selectAutosuggestCopyToClipboard, selectPasswordOptions } from '@proton/pass/store/selectors/settings';
+import { selectPassPlan } from '@proton/pass/store/selectors/user';
+import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { CCItemData } from '@proton/pass/types/worker/data';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';

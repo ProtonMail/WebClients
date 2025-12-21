@@ -14,9 +14,9 @@ import { computeFeatures } from 'proton-pass-extension/lib/utils/features';
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 

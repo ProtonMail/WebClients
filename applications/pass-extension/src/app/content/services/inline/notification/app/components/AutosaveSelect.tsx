@@ -8,8 +8,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { AutosaveFormValues, AutosaveUpdatePayload, LoginItemPreview } from '@proton/pass/types';
-import { AutosaveMode } from '@proton/pass/types';
+import type { AutosaveFormValues, AutosaveUpdatePayload } from '@proton/pass/types/worker/autosave';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import type { LoginItemPreview } from '@proton/pass/types/worker/data';
 
 type Props = {
     busy: boolean;

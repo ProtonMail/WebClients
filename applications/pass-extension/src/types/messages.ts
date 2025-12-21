@@ -37,42 +37,33 @@ import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type {
-    AliasCreateRequest,
-    AliasOptions,
-    AppState,
-    AutosaveFormEntry,
-    AutosaveRequest,
-    ClientEndpoint,
-    EndpointContext,
-    FileTransferErrorDTO,
-    FileTransferWriteDTO,
-    FormCredentials,
-    FormStatusPayload,
-    FormSubmitPayload,
-    ItemContent,
-    LoginItemPreview,
-    Maybe,
-    MaybeNull,
-    OtpCode,
-    OtpRequest,
-    PopupInitialState,
-    Result,
-    SelectedItem,
-    SpotlightMessage,
-    TabId,
-    UniqueItem,
-} from '@proton/pass/types';
 import type { ForkPayload } from '@proton/pass/types/api/fork';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
+import type { AliasOptions } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
+import type { FileTransferErrorDTO, FileTransferWriteDTO } from '@proton/pass/types/data/files';
+import type { ItemContent, SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
+import type { AliasCreateRequest } from '@proton/pass/types/data/items.dto';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
+import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils/index';
 import type {
     AutofillCCResult,
     AutofillIdentityResult,
     AutofillLoginResult,
     AutofillOptions,
 } from '@proton/pass/types/worker/autofill';
+import type { AutosaveRequest } from '@proton/pass/types/worker/autosave';
+import type { LoginItemPreview } from '@proton/pass/types/worker/data';
+import type {
+    AutosaveFormEntry,
+    FormCredentials,
+    FormStatusPayload,
+    FormSubmitPayload,
+} from '@proton/pass/types/worker/form';
+import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
+import type { ClientEndpoint, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
+import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
+import type { AppState, PopupInitialState } from '@proton/pass/types/worker/state';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';

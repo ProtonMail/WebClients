@@ -4,7 +4,7 @@ import { type Middleware, isAction } from 'redux';
 
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionFrom, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
-import type { ClientEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 import noop from '@proton/utils/noop';
 
 type ProxyActionsMiddlewareOptions = {

@@ -21,7 +21,7 @@ import {
 import type { FormType } from '@proton/pass/fathom/labels';
 import { FieldType } from '@proton/pass/fathom/labels';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { scrollableParent } from '@proton/pass/utils/dom/scroll';

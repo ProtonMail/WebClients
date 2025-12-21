@@ -20,7 +20,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';

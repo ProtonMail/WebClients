@@ -5,7 +5,7 @@ import type { PopoverController } from 'proton-pass-extension/app/content/servic
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

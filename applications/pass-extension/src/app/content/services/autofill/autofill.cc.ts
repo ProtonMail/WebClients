@@ -10,7 +10,8 @@ import {
     getSelectExpirationYearFormat,
 } from '@proton/pass/fathom';
 import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
-import type { CCItemData, Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { CCItemData } from '@proton/pass/types/worker/data';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { head, last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';

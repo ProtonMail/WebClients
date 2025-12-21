@@ -10,7 +10,8 @@ import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 

@@ -12,15 +12,10 @@ import {
     createCoreTelemetryService,
 } from '@proton/pass/lib/telemetry/service';
 import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
-import {
-    selectAutofillSettings,
-    selectDisallowedDomains,
-    selectFeatureFlags,
-    selectTelemetryEnabled,
-    selectUserTier,
-} from '@proton/pass/store/selectors';
-import type { ExtensionStorage } from '@proton/pass/types';
+import { selectAutofillSettings, selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
+import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { isSupportedSenderUrl } from '@proton/pass/utils/url/utils';

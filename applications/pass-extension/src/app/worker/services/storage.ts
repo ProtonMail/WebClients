@@ -1,6 +1,7 @@
 import { getExtensionLocalStorage, getExtensionSessionStorage } from '@proton/pass/lib/extension/storage';
 import { fileStorageReady } from '@proton/pass/lib/file-storage/fs';
-import type { ExtensionStorage, LocalStoreData, SessionStoreData } from '@proton/pass/types';
+import type { LocalStoreData, SessionStoreData } from '@proton/pass/types/worker/state';
+import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
 import { logger } from '@proton/pass/utils/logger';
 import { isObject } from '@proton/pass/utils/object/is-object';

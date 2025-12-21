@@ -1,8 +1,8 @@
 import type { Action } from 'redux';
 import { type Middleware, isAction } from 'redux';
 
-import { actionStream } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
+import { actionStream } from '@proton/pass/store/actions/creators/client';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { unary } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import type { Chunk } from '@proton/pass/utils/object/chunk';

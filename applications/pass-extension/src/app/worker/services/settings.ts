@@ -5,10 +5,11 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
-import { updatePauseListItem } from '@proton/pass/store/actions';
+import { updatePauseListItem } from '@proton/pass/store/actions/creators/settings';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectCanCreateItems, selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
+import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
+import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 
 type SettingsServiceState = { settings: MaybeNull<ProxiedSettings> };

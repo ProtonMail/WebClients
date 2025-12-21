@@ -20,8 +20,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';
-import type { MaybeNull } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -16,11 +16,13 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { clientReady } from '@proton/pass/lib/client';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { syncRequest } from '@proton/pass/store/actions/requests';
-import { selectLatestDraft, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectRequestInFlight } from '@proton/pass/store/selectors/../request/selectors';
+import { selectLatestDraft } from '@proton/pass/store/selectors/items';
 import type { State } from '@proton/pass/store/types';
-import type { MaybeNull, PopupInitialState } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { PopupInitialState } from '@proton/pass/types/worker/state';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 type Props = { ready: boolean };
 export interface PopupContextValue {

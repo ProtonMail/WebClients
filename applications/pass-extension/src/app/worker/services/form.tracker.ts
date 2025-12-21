@@ -5,8 +5,10 @@ import { isFormEntryCommitted, setFormEntryStatus } from 'proton-pass-extension/
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { FormEntry, FormEntryBase, FormStatusPayload, Maybe, TabId } from '@proton/pass/types';
-import { FormEntryStatus } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { FormEntry, FormEntryBase, FormStatusPayload } from '@proton/pass/types/worker/form';
+import { FormEntryStatus } from '@proton/pass/types/worker/form';
+import type { TabId } from '@proton/pass/types/worker/runtime';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';

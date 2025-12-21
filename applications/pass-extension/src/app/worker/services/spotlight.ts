@@ -22,7 +22,8 @@ import {
 } from '@proton/pass/lib/spotlight/rules';
 import { createSpotlightService as createCoreSpotlightService } from '@proton/pass/lib/spotlight/service';
 import type { State } from '@proton/pass/store/types';
-import type { ExtensionStorage, TabId } from '@proton/pass/types';
+import type { TabId } from '@proton/pass/types/worker/runtime';
+import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 

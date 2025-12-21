@@ -17,7 +17,7 @@ import type { Fnode } from '@proton/pass/fathom/fathom';
 import type { FieldType } from '@proton/pass/fathom/labels';
 import { FormType, fieldTypes, formTypes } from '@proton/pass/fathom/labels';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
-import type { Callback, MaybeNull } from '@proton/pass/types';
+import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';

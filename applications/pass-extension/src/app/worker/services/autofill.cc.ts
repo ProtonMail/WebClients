@@ -8,7 +8,8 @@ import type { FrameAttributes, FrameField } from 'proton-pass-extension/types/fr
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
-import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import noop from '@proton/utils/noop';
 
 export type ClusterFrameForm = { fields: ClusterFrameFormItem[]; formId: string };

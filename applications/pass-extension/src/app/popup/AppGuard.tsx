@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
-import { selectLockSetupRequired } from '@proton/pass/store/selectors';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 
 import { usePopupContext } from './PopupProvider';
 import { Lobby } from './Views/Lobby/Lobby';

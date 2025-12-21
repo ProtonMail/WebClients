@@ -16,7 +16,7 @@ import {
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { getActiveElement } from '@proton/pass/utils/dom/active-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';

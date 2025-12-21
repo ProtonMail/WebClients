@@ -6,8 +6,9 @@ import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extensi
 import { Notification } from 'proton-pass-extension/app/content/services/inline/notification/app/Notification';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { selectAllLoginItems } from '@proton/pass/store/selectors';
-import { AppStatus, AutosaveMode } from '@proton/pass/types';
+import { selectAllLoginItems } from '@proton/pass/store/selectors/items';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { MockIFrameApp } from './MockIFrameApp';
 

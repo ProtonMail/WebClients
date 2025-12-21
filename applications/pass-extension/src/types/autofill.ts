@@ -1,7 +1,9 @@
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
-import type { CCItemData, ItemType, SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '@proton/pass/types/data/items';
+import type { ItemType } from '@proton/pass/types/protobuf/index';
+import type { CCItemData } from '@proton/pass/types/worker/data';
 
 export type WithAutofillOrigin<T> = T &
     FrameField & {

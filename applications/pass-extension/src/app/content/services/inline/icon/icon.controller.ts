@@ -14,7 +14,8 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
-import type { AppStatus, Callback, MaybeNull } from '@proton/pass/types';
+import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
+import type { AppStatus } from '@proton/pass/types/worker/state';
 import { animatePositionChange, freezeAnimations, waitForTransitions } from '@proton/pass/utils/dom/animation';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';

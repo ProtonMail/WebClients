@@ -6,7 +6,8 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
-import type { FrameId, Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { FrameId } from '@proton/pass/types/worker/runtime';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
