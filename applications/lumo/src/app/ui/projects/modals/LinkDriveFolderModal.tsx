@@ -13,7 +13,7 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAssetsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
-import type { ProjectSpace } from '../../../types';
+import { getProjectInfo, type ProjectSpace } from '../../../types';
 import { DriveBrowser } from '../../components/Files/DriveBrowser/DriveBrowser';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
@@ -35,9 +35,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const [folderPath, setFolderPath] = useState<string[]>([]);
 
     // Project variables
-    const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
-    const linkedDriveFolder = spaceProject?.linkedDriveFolder;
-    const isLinkedToDrive = linkedDriveFolder !== undefined;
+    const { project: spaceProject, linkedDriveFolder, isLinked: isLinkedToDrive } = space ? getProjectInfo(space) : { project: undefined, linkedDriveFolder: undefined, isLinked: false as const };
 
     // Initialize root folder ID when Drive is ready
     useEffect(() => {
