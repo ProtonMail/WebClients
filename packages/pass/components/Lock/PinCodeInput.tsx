@@ -1,6 +1,8 @@
-import { type FC, useEffect, useRef } from 'react';
+import type { ForwardRefRenderFunction } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
+import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
 import './PinCodeInput.scss';
@@ -14,8 +16,12 @@ type Props = {
     onValue: (value: string) => void;
 };
 
-export const PinCodeInput: FC<Props> = ({ autoFocus = true, className, disabled, loading = false, value, onValue }) => {
+const PinCodeInputRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+    { autoFocus = true, className, disabled, loading = false, value, onValue },
+    ref
+) => {
     const focusRef = useRef<HTMLInputElement>(null);
+    const combinedRef = useCombinedRefs(focusRef, ref);
 
     useEffect(() => {
         if (autoFocus) focusRef.current?.focus();
@@ -25,7 +31,7 @@ export const PinCodeInput: FC<Props> = ({ autoFocus = true, className, disabled,
     return (
         <div className={clsx('pass-pin--input', className, (loading || disabled) && 'opacity-30 pointer-events-none')}>
             <TotpInput
-                ref={focusRef}
+                ref={combinedRef}
                 length={6}
                 value={value}
                 onValue={onValue}
@@ -37,3 +43,5 @@ export const PinCodeInput: FC<Props> = ({ autoFocus = true, className, disabled,
         </div>
     );
 };
+
+export const PinCodeInput = forwardRef(PinCodeInputRender);

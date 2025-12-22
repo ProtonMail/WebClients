@@ -22,17 +22,14 @@ import {
 } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
-import {
-    cacheCancel,
-    lockSync,
-    notification,
-    stateDestroy,
-    stopEventPolling,
-    unlock,
-} from '@proton/pass/store/actions';
+import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
+import { cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
+import { notification } from '@proton/pass/store/actions/creators/notification';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { type Api, AppStatus, type MaybeNull } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types/api/api';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
@@ -189,7 +186,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                  * TTL duration, leading to an unsuccessful boot for the user */
                 if (ready && mode !== LockMode.NONE && ttl) {
                     const when = epochToMs(getEpoch() + ttl);
-                    browser.alarms.create(SESSION_LOCK_ALARM, { when });
+                    void browser.alarms.create(SESSION_LOCK_ALARM, { when });
                 }
             } catch {}
         }),
@@ -240,7 +237,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
 
                     await browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
-                    browser.alarms.create(SESSION_RESUME_ALARM, { when });
+                    void browser.alarms.create(SESSION_RESUME_ALARM, { when }).catch(noop);
                 } else logger.info(`[AuthService] Reached max number of resume retries ${retryInfo}`);
             }
         }),

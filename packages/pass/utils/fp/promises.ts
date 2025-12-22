@@ -109,11 +109,11 @@ export const cancelable = <T>(job: () => Promise<T>, canceled: boolean = false) 
 });
 
 /** Processes array items sequentially through an async function */
-export const seq = async <T, R>(items: T[], job: (item: T) => MaybePromise<R>): Promise<R[]> => {
+export const seq = async <T, R>(items: T[], job: (item: T, acc: R[]) => MaybePromise<R>): Promise<R[]> => {
     const results: R[] = [];
 
     for (const item of items) {
-        const result = await job(item);
+        const result = await job(item, results);
         results.push(result);
     }
 
@@ -150,4 +150,23 @@ export const abortableSequence = async (operations: AsyncCallback[], signal: Abo
 
     const generator = sequence();
     while (!(await generator.next()).done) {}
+};
+
+export const createAsyncQueue = () => {
+    let chain = Promise.resolve() as Promise<unknown>;
+    let active = true;
+
+    return {
+        push: <T extends any>(job: () => MaybePromise<T>) => {
+            active = true;
+            return (chain = chain.then(() => (active ? Promise.resolve(job()) : undefined)).catch(noop));
+        },
+
+        cancel: () => {
+            active = false;
+            chain = Promise.resolve();
+        },
+
+        settled: () => chain.then(() => true).catch(() => true),
+    };
 };

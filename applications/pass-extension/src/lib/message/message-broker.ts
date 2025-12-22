@@ -8,7 +8,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -101,6 +101,7 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
 
             return successMessage(res);
         } catch (error: any) {
+            void browser.runtime.lastError;
             logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
             options.onError(error);
             return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
@@ -178,3 +179,10 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
         },
     };
 };
+
+export const withSender =
+    <T, R>(fn: (message: T, tabId: number, frameId: number) => R) =>
+    (message: T, sender: Runtime.MessageSender) => {
+        if (!(sender.tab?.id && sender.frameId !== undefined)) throw new Error('Invalid sender');
+        return fn(message, sender.tab.id, sender.frameId);
+    };

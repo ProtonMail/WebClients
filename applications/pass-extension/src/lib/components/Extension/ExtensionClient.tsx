@@ -17,11 +17,12 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored } from '@proton/pass/lib/client';
 import { telemetryBool } from '@proton/pass/lib/telemetry/utils';
-import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
+import { lock, signoutIntent } from '@proton/pass/store/actions/creators/auth';
+import { syncIntent } from '@proton/pass/store/actions/creators/client';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import type { MaybeNull } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 

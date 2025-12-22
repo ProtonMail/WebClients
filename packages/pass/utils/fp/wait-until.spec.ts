@@ -34,11 +34,13 @@ describe('waitUntil', () => {
         const checkFalse = jest.fn(() => false);
         const job = waitUntil(checkFalse, 100, TIMEOUT);
         expect(checkFalse).toHaveBeenCalledTimes(1);
-        jest.advanceTimersByTime(TIMEOUT);
+        await jest.advanceTimersByTimeAsync(TIMEOUT);
         await expect(job).rejects.toBeUndefined();
         expect(checkFalse).toHaveBeenCalledTimes(5);
         expect(clearIntervalSpy).toHaveBeenCalledTimes(1);
         expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
+
+        await jest.runAllTimersAsync();
     });
 
     test('should reject if cancel returns true', async () => {
@@ -54,7 +56,7 @@ describe('waitUntil', () => {
     test('should resolve if condition becomes true before timeout', async () => {
         const check = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(false).mockReturnValueOnce(true);
         const job = waitUntil(check, 100, TIMEOUT);
-        jest.advanceTimersByTime(TIMEOUT);
+        await jest.advanceTimersByTimeAsync(TIMEOUT);
         await expect(job).resolves.toBeUndefined();
         expect(check).toHaveBeenCalledTimes(3);
         expect(clearIntervalSpy).toHaveBeenCalledTimes(1);
@@ -65,11 +67,12 @@ describe('waitUntil', () => {
         const checkFalse = jest.fn(() => false);
         const cancel = jest.fn().mockReturnValueOnce(false).mockReturnValueOnce(false).mockReturnValueOnce(true);
         const job = waitUntil({ check: checkFalse, cancel }, 100, TIMEOUT);
-        jest.advanceTimersByTime(TIMEOUT);
+        await jest.advanceTimersByTimeAsync(TIMEOUT);
         await expect(job).rejects.toBeUndefined();
         expect(checkFalse).toHaveBeenCalledTimes(2);
         expect(cancel).toHaveBeenCalledTimes(3);
         expect(clearIntervalSpy).toHaveBeenCalledTimes(1);
         expect(clearTimeoutSpy).toHaveBeenCalledTimes(1);
+        await jest.runAllTimersAsync();
     });
 });

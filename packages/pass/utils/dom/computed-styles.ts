@@ -1,71 +1,81 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Identity } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-export type BoundComputeStyles = ReturnType<typeof createStyleCompute>;
+export interface StyleParser {
+    <T extends (value: string, node: HTMLElement) => any = Identity<string>>(
+        prop: string,
+        transform?: T
+    ): ReturnType<T>;
+    node: HTMLElement;
+}
 
-export const createStyleCompute: (
-    el: HTMLElement
-) => <T extends Maybe<(computedProperty: string) => any> = Maybe<(computedProperty: string) => any>>(
-    property: string,
-    transformer?: T
-) => T extends (...args: any[]) => any ? ReturnType<T> : string = (el) => {
-    const style = getComputedStyle(el);
-    return (property, transformer) => {
+export const createStyleParser = (node: HTMLElement): StyleParser => {
+    const style = getComputedStyle(node);
+
+    const parser: StyleParser = (property, transformer) => {
         const value = style.getPropertyValue(property);
-        return transformer?.(value) ?? value;
+        return transformer?.(value, node) ?? value;
     };
+
+    parser.node = node;
+    return parser;
 };
 
 export const pixelParser = (value: string) => parseInt(value.replace('px', ''), 10);
-export const pixelEncoder = (value: number): string => `${value}px`;
+export const pixelEncoder = (value: number): string => `${Math.round(value)}px`;
 export const pixelTransformer = (value: string, transformer: (value: number) => number): string =>
     pipe(pixelParser, transformer, pixelEncoder)(value);
 
+const getOffsetFor = (dir: 'top' | 'left' | 'bottom' | 'right') => (parser: StyleParser) => {
+    const padding = parser(`padding-${dir}`, pixelParser);
+    const border = parser(`border-${dir}-width`, pixelParser);
+    return padding + border;
+};
+
+export const getOffsetTop = getOffsetFor('top');
+export const getOffsetBottom = getOffsetFor('bottom');
+export const getOffsetLeft = getOffsetFor('left');
+export const getOffsetRight = getOffsetFor('right');
+
+/* certain target nodes will be have their height/width set to 'auto',
+ * in this case fallback to the element's `offsetHeight` */
+const readSize = (value: string, node: HTMLElement) =>
+    value === 'auto' || !value ? node.offsetHeight : pixelParser(value);
+
 export const getComputedHeight = (
-    boundCompute: ReturnType<typeof createStyleCompute>,
-    { node, mode }: { node: HTMLElement; mode: 'inner' | 'outer' }
+    parser: StyleParser,
+    mode: 'inner' | 'outer'
 ): { value: number; offset: { top: number; bottom: number } } => {
-    const isContentBox = boundCompute('box-sizing') === 'content-box';
-
-    /* certain target nodes will be set to height: 'auto' - fallback
-     * to the element's offsetHeight in that case*/
-    const h = boundCompute('height', (height) =>
-        height === 'auto' || !height ? node.offsetHeight : pixelParser(height)
-    );
-
-    const pt = boundCompute('padding-top', pixelParser);
-    const pb = boundCompute('padding-bottom', pixelParser);
-    const bt = boundCompute('border-top', pixelParser);
-    const bb = boundCompute('border-bottom', pixelParser);
-    const offset = pt + bt + pb + bb;
+    const isContentBox = parser('box-sizing') === 'content-box';
+    const height = parser('height', readSize);
+    const offsetTop = getOffsetTop(parser);
+    const offsetBottom = getOffsetBottom(parser);
+    const offset = offsetTop + offsetBottom;
 
     return {
-        value: isContentBox ? h + (mode === 'outer' ? offset : 0) : h - (mode === 'inner' ? offset : 0),
+        value: isContentBox ? height + (mode === 'outer' ? offset : 0) : height - (mode === 'inner' ? offset : 0),
         offset: {
-            top: mode === 'outer' ? 0 : pt + bt,
-            bottom: mode === 'outer' ? 0 : pb + bb,
+            top: mode === 'outer' ? 0 : offsetTop,
+            bottom: mode === 'outer' ? 0 : offsetBottom,
         },
     };
 };
 
 export const getComputedWidth = (
-    boundCompute: ReturnType<typeof createStyleCompute>,
-    { node, mode }: { node: HTMLElement; mode: 'inner' | 'outer' }
+    parser: StyleParser,
+    mode: 'inner' | 'outer'
 ): { value: number; offset: { left: number; right: number } } => {
-    const isContentBox = boundCompute('box-sizing') === 'content-box';
-    const w = boundCompute('width', (width) => (width === 'auto' || !width ? node.offsetWidth : pixelParser(width)));
-
-    const pl = boundCompute('padding-left', pixelParser);
-    const pr = boundCompute('padding-right', pixelParser);
-    const bl = boundCompute('border-left', pixelParser);
-    const br = boundCompute('border-right', pixelParser);
-    const offset = pl + bl + pr + br;
+    const isContentBox = parser('box-sizing') === 'content-box';
+    const width = parser('width', readSize);
+    const offsetLeft = getOffsetLeft(parser);
+    const offsetRight = getOffsetRight(parser);
+    const offset = offsetLeft + offsetRight;
 
     return {
-        value: isContentBox ? w + (mode === 'outer' ? offset : 0) : w - (mode === 'inner' ? offset : 0),
+        value: isContentBox ? width + (mode === 'outer' ? offset : 0) : width - (mode === 'inner' ? offset : 0),
         offset: {
-            left: mode === 'outer' ? 0 : pl + bl,
-            right: mode === 'outer' ? 0 : pr + br,
+            left: mode === 'outer' ? 0 : offsetLeft,
+            right: mode === 'outer' ? 0 : offsetRight,
         },
     };
 };

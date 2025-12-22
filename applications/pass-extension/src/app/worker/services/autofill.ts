@@ -1,45 +1,57 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
+import { getAutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
-import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
+import type { AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
+import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import type { CCFieldType } from '@proton/pass/fathom/labels';
+import { FormType } from '@proton/pass/fathom/labels';
 import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
-import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
+import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
+import {
+    intoAutofillableCCItem,
+    intoCCItemPreview,
+    intoIdentityItemPreview,
+    intoLoginItemPreview,
+    intoUserIdentifier,
+} from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
-import { itemAutofilled } from '@proton/pass/store/actions';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { itemAutofilled } from '@proton/pass/store/actions/creators/item';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
+    selectAutofillCCCandidates,
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
     selectAutofillableShareIDs,
-    selectAutosuggestCopyToClipboard,
-    selectItem,
-    selectOrganizationPasswordGeneratorPolicy,
-    selectPasswordOptions,
-    selectVaultLimits,
-} from '@proton/pass/store/selectors';
-import type {
-    FormCredentials,
-    ItemContent,
-    ItemRevision,
-    Maybe,
-    MaybeNull,
-    SelectedItem,
-    TabId,
-} from '@proton/pass/types';
+} from '@proton/pass/store/selectors/autofill';
+import { selectItem } from '@proton/pass/store/selectors/items';
+import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
+import { selectOrganizationPasswordGeneratorPolicy } from '@proton/pass/store/selectors/organization';
+import { selectAutosuggestCopyToClipboard, selectPasswordOptions } from '@proton/pass/store/selectors/settings';
+import { selectPassPlan } from '@proton/pass/store/selectors/user';
+import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import type { CCItemData } from '@proton/pass/types/worker/data';
+import type { FormCredentials } from '@proton/pass/types/worker/form';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
+
+import { resolveCCFormFields } from './autofill.cc';
 
 type AutofillServiceState = {
     privateDomains: MaybeNull<Set<string>>;
@@ -48,6 +60,15 @@ type AutofillServiceState = {
 
 export const createAutoFillService = () => {
     const state: AutofillServiceState = { privateDomains: null, rules: null };
+
+    /** Avoids reading feature flags and settings from redux state which may
+     * be absent when the extension is locked. When enabling other sub-frame
+     * autofill types, remove the `PassCreditCardWebAutofill` condition */
+    const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
+        const { autofill } = await ctx.service.settings.resolve();
+        const features = await ctx.service.featureFlags.resolve();
+        return Boolean(!features.PassIFrameKillswitch && features.PassCreditCardWebAutofill && autofill.cc);
+    });
 
     const init = withContext(async (ctx) => {
         const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains']);
@@ -97,14 +118,25 @@ export const createAutoFillService = () => {
         }
     );
 
+    const getCreditCard = withContext<(item: SelectedItem) => Maybe<CCItemData>>((ctx, { shareId, itemId }) => {
+        const state = ctx.service.store.getState();
+        const item = selectItem<'creditCard'>(shareId, itemId)(state);
+
+        if (item?.data.type === 'creditCard') {
+            ctx.service.store.dispatch(itemAutofilled({ shareId, itemId }));
+            return deobfuscateItem<'creditCard'>(item.data).content;
+        }
+    });
+
     const getAutofillOptions = withContext<
-        (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]> }
+        (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]>; isPaid: boolean }
     >((ctx, writableOnly) => {
         const state = ctx.service.store.getState();
         const shareIds = selectAutofillableShareIDs(state, writableOnly);
         const needsUpgrade = selectVaultLimits(state).didDowngrade;
+        const isPaid = isPaidPlan(selectPassPlan(state));
 
-        return { needsUpgrade, shareIds };
+        return { needsUpgrade, shareIds, isPaid };
     });
 
     const sync = withContext(({ status }) => {
@@ -138,20 +170,42 @@ export const createAutoFillService = () => {
             .catch(noop);
     };
 
-    const queryTabLoginForms = async (tabID: TabId): Promise<boolean> => {
+    const queryFrameForms = async (tabId: TabId, frameId: FrameId): Promise<Maybe<FrameFormsResult>> => {
+        const message = backgroundMessage({ type: WorkerMessageType.FRAME_FORMS_QUERY });
+        return sendTabMessage(message, { tabId, frameId }).catch(noop);
+    };
+
+    const queryTabLoginForms = async (tabId: TabId): Promise<boolean> => {
         try {
-            return (
-                (
-                    await browser.tabs.sendMessage<
-                        AutofillCheckFormMessage,
-                        WorkerMessageResponse<WorkerMessageType.AUTOFILL_CHECK_FORM>
-                    >(tabID, backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM }))
-                )?.hasLoginForm ?? false
-            );
-        } catch (err) {
+            const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
+
+            for (const frame of frames) {
+                const formTypes = (await queryFrameForms(tabId, frame.frameId))?.formTypes;
+                if (formTypes?.some((type) => type === FormType.LOGIN)) return true;
+            }
+
+            return false;
+        } catch {
             return false;
         }
     };
+
+    const onAutofillSequenceUpdate = <T extends AutofillSequence['status']>(
+        payload: Extract<AutofillRequest, { status: T }>,
+        tabId: TabId,
+        frames: AutofillableFrame[]
+    ) =>
+        Promise.all(
+            frames.map(({ frame }) =>
+                sendTabMessage(
+                    backgroundMessage({
+                        type: WorkerMessageType.AUTOFILL_SEQUENCE,
+                        payload,
+                    }),
+                    { tabId, frameId: frame.frameId }
+                ).catch(noop)
+            )
+        );
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
@@ -182,6 +236,20 @@ export const createAutoFillService = () => {
             const state = ctx.service.store.getState();
             const { shareIds, needsUpgrade } = getAutofillOptions();
             const items = selectAutofillIdentityCandidates(shareIds)(state).map(intoIdentityItemPreview);
+
+            return { items, needsUpgrade };
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_CC_QUERY,
+        onContextReady(async (ctx, _, sender) => {
+            const tabId = sender.tab?.id;
+            if (!ctx.getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
+
+            const state = ctx.service.store.getState();
+            const { shareIds, needsUpgrade } = getAutofillOptions();
+            const items = selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
 
             return { items, needsUpgrade };
         })
@@ -221,6 +289,46 @@ export const createAutoFillService = () => {
         rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null,
     }));
 
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_CC,
+        onContextReady(async (_, { payload }, sender) => {
+            const tabId = sender.tab?.id;
+            const item = getCreditCard(payload);
+            if (!(item && tabId)) throw new Error('Could not get credit card for autofill request');
+
+            const { frameOrigin, frameId, fieldId, formId } = payload;
+            const refocus = { fieldId, formId, frameId };
+
+            /** Collect autofilled field types across frames to avoid duplicate autofill
+             * attempts. Frames are ordered by sender frame origin to start the autofill
+             * sequence from the source field. */
+            const autofilledFields = new Set<CCFieldType>();
+            const autofillableFrames = await getAutofillableFrames(tabId, frameOrigin, frameId);
+            const frames = Array.from(autofillableFrames.values());
+
+            await onAutofillSequenceUpdate({ status: 'start' }, tabId, frames);
+            const frameFields = await resolveCCFormFields(autofillableFrames, tabId, payload);
+
+            /** Process each cluster sequentially, building up the set of autofilled fields.
+             * Generates frame-specific autofill data that respects cross-origin restrictions
+             * and previously filled fields, then tracks which fields were successfully filled
+             * for use in subsequent frames. */
+            for (const { frameId, fields } of frameFields) {
+                const frame = autofillableFrames.get(frameId);
+                if (!frame) continue;
+
+                const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
+                const request = { status: 'fill', type: 'creditCard', data, fields } as const;
+                const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
+                if (res && res.type === 'creditCard') res.autofilled.forEach((type) => autofilledFields.add(type));
+            }
+
+            await onAutofillSequenceUpdate({ status: 'completed', refocus }, tabId, frames);
+
+            return true;
+        })
+    );
+
     /* onUpdated will be triggered every time a tab has been loaded with a new url :
      * update the badge count accordingly. `ensureReady` is used in place instead of
      * leveraging `onContextReady` to properly handle errors.  */
@@ -254,6 +362,7 @@ export const createAutoFillService = () => {
 
     return {
         basicAuth: createBasicAuthController(),
+        iframeAutofillEnabled,
         init,
         clear,
         getLoginCandidates,

@@ -3,6 +3,7 @@ import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
 import { hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
@@ -15,16 +16,12 @@ import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
-import { bootIntent, clientInit } from '@proton/pass/store/actions';
-import {
-    selectCanCreateItems,
-    selectFeatureFlags,
-    selectFilters,
-    selectItem,
-    selectTabState,
-} from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
+import { bootIntent, clientInit } from '@proton/pass/store/actions/creators/client';
+import { selectFilters, selectTabState } from '@proton/pass/store/selectors/filters';
+import { selectItem } from '@proton/pass/store/selectors/items';
+import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
@@ -85,7 +82,7 @@ export const createActivationService = () => {
             logger.info('[Activation] activating worker [alarms cleared - checking for update]');
             await browser.alarms.clearAll();
             const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
-            if (!alarmRegistered) browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
+            if (!alarmRegistered) void browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
         } catch {}
     };
 
@@ -127,7 +124,7 @@ export const createActivationService = () => {
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
-            void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateScripts();
             ctx.service.spotlight.onUpdate();
 
             return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
@@ -145,7 +142,7 @@ export const createActivationService = () => {
                 void ctx.service.spotlight.onInstall();
             }
 
-            void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateScripts();
         }
     });
 
@@ -231,15 +228,11 @@ export const createActivationService = () => {
                 });
             }
 
-            const state = ctx.service.store.getState();
-            const canCreateItems = selectCanCreateItems(state);
-            const settings = await ctx.service.settings.resolve();
+            const canCreateItems = selectCanCreateItems(ctx.service.store.getState());
+            const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
+            const features = await ctx.service.featureFlags.resolve();
 
-            return {
-                state: ctx.getState(),
-                features: selectFeatureFlags(state) ?? {},
-                settings: sanitizeSettings(settings, { canCreateItems }),
-            };
+            return { state: ctx.getState(), features, settings };
         }
     );
 
@@ -318,15 +311,19 @@ export const createActivationService = () => {
     /** If the `current` flag is passed : resolve the active tab for the
      * current window (ie when requesting the active tab for the popup).
      * Else parse the sender data (ie: content-script) */
-    const handleResolveTab: MessageHandlerCallback<WorkerMessageType.TABS_QUERY> = async ({ payload }, sender) => {
-        if (payload.current) {
-            const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
-            if (!(tab && tab?.id)) throw new Error('No active tabs');
-            return { tabId: tab.id, url: parseUrl(tab.url), senderTabId: sender.tab?.id };
+    const handleEndpointInit: MessageHandlerCallback<WorkerMessageType.ENDPOINT_INIT> = async (
+        { payload },
+        { tab, frameId = -1 }
+    ) => {
+        if (payload.popup) {
+            const current = first(await browser.tabs.query({ active: true, currentWindow: true }));
+            if (!(current && current?.id)) throw new Error('No active tabs');
+            const url = parseUrl(current.url);
+            const senderTabId = tab?.id ?? 0; /** NOTE: on firefox, popup does not have a tab */
+            return { tabId: current.id, url, tabUrl: url, senderTabId, frameId };
         }
 
-        if (!sender.tab?.id) throw new Error('Invalid sender tab');
-        return { tabId: sender.tab.id, url: parseUrl(sender.tab.url), senderTabId: sender.tab.id };
+        return resolveEndpointContext(tab, frameId);
     };
 
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
@@ -335,7 +332,7 @@ export const createActivationService = () => {
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.CLIENT_INIT, handleClientInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.TABS_QUERY, handleResolveTab);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ENDPOINT_INIT, handleEndpointInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));

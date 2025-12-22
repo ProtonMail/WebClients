@@ -4,15 +4,20 @@
 import 'proton-pass-extension/lib/polyfills/shim';
 
 import { exporter } from './bridge/utils';
-import { ProtonPassControl } from './injections/custom-elements/ProtonPassControl';
-import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
+import { ProtonPassControl } from './services/inline/custom-elements/ProtonPassControl';
+import { ProtonPassRoot } from './services/inline/custom-elements/ProtonPassRoot';
+
+export type PassElementsRegister = (hash: string, mainFrame: boolean) => void;
 
 /** The `registerPassElements` function is temporarily exposed on the
  * global object to facilitate its invocation from an `executeScript`
  * function within the service worker. This setup enables passing the
- * `PassElementsConfig` to this script operating in the MAIN world */
-exporter(
-    (hash: string) => {
+ * `PassElementsConfig` to this script operating in the MAIN world.
+ *
+ * NOTE: These custom elements contain no business logic whatsoever, they
+ * merely are UI wrappers used to isolate injected elements. */
+exporter<PassElementsRegister>(
+    (hash, mainFrame) => {
         /** Handle Polymer.js interference: since we inject at `document_end`,
          * Polymer may have already patched customElements. Get original references
          * through CustomElementRegistry.prototype to bypass interference. */
@@ -30,7 +35,8 @@ exporter(
 
         const root = ProtonPassRoot.getTagName(hash);
         const control = ProtonPassControl.getTagName(hash);
-        if (!registry.get(root)) registry.define(root, ProtonPassRoot);
+
+        if (mainFrame && !registry.get(root)) registry.define(root, ProtonPassRoot);
         if (!registry.get(control)) registry.define(control, ProtonPassControl);
 
         delete window.registerPassElements;

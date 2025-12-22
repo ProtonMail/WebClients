@@ -6,7 +6,7 @@ import {
     intoAuthenticatorAttestationResponse,
     intoPublicKeyCredential,
 } from '@proton/pass/lib/passkeys/webauthn';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { logger } from '@proton/pass/utils/logger';
 

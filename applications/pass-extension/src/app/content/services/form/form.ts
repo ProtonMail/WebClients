@@ -1,0 +1,323 @@
+import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
+import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
+import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/services/autofill.cc';
+import { isCCField } from 'proton-pass-extension/lib/utils/field';
+import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
+
+import {
+    buttonSelector,
+    getCCFieldType,
+    getIdentityFieldType,
+    isIFrameField,
+    isIgnored,
+    isVisibleForm,
+    removeClassifierFlags,
+    shadowPiercingContains,
+} from '@proton/pass/fathom';
+import type { FormType } from '@proton/pass/fathom/labels';
+import { FieldType } from '@proton/pass/fathom/labels';
+import browser from '@proton/pass/lib/globals/browser';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
+import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
+import { scrollableParent } from '@proton/pass/utils/dom/scroll';
+import { getOverlayZIndex } from '@proton/pass/utils/dom/zindex';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import debounce from '@proton/utils/debounce';
+
+import type { FieldElement, FieldHandle } from './field';
+import { createFieldHandles } from './field';
+import type { FormTracker } from './form.tracker';
+import { createFormTracker } from './form.tracker';
+
+export type FormHandlesProps = { zIndex: number };
+
+export interface FormHandle {
+    busy: boolean;
+    canAutosave: boolean;
+    detached: boolean;
+    element: HTMLElement;
+    fields: Map<FieldElement, FieldHandle>;
+    formType: FormType;
+    formId: string;
+    tracker?: FormTracker;
+    otp: boolean;
+    zIndex: number;
+    scrollParent: HTMLElement;
+    detach: () => void;
+    detachField: (field: FieldElement) => void;
+    getFieldById: <T extends FieldType = FieldType>(fieldId: string) => Maybe<FieldHandle<T>>;
+    getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => FieldHandle<T>[];
+    getClusterables: () => ClusterFrameFormItem[];
+    hasFrameFields: () => boolean;
+    reconciliate: (type: FormType, fields: DetectedField[]) => void;
+}
+
+type ComputedFormData = {
+    scrollParent?: HTMLElement;
+    zIndex?: number;
+};
+
+export const createFormHandles = (options: DetectedForm): FormHandle => {
+    const { form, formType, fields: detectedFields } = options;
+    const listeners = createListenerStore();
+    const data: ComputedFormData = {};
+    const formId = uniqueId(8);
+
+    const formHandle: FormHandle = {
+        formId,
+        canAutosave: canAutosave(options.form),
+        element: form,
+        formType: formType,
+        fields: new Map(
+            detectedFields.map(({ fieldType, field }) => [
+                field,
+                createFieldHandles({
+                    element: field,
+                    formId,
+                    formType,
+                    fieldType,
+                    getFormHandle: () => formHandle,
+                }),
+            ])
+        ),
+
+        get zIndex() {
+            data.zIndex = data.zIndex ?? getOverlayZIndex(options.fields.map(prop('field')), form) + 5;
+            return data.zIndex;
+        },
+
+        /** Resolve scroll parent from the first field (or form itself
+         * as fallback). We use the first field as the heuristic in case
+         * the scrollable container is nested inside the form element. */
+        get scrollParent() {
+            if (data.scrollParent) return data.scrollParent;
+
+            const target = formHandle.getFields()[0]?.element ?? form;
+            return (data.scrollParent = scrollableParent(target));
+        },
+
+        get busy() {
+            const btns = Array.from(form.querySelectorAll<HTMLElement>(buttonSelector));
+            const busyFields = formHandle.getFields(({ element }) => isElementBusy(element));
+            return isElementBusy(form) || btns.some(isElementBusy) || busyFields.length > 0 || isParentBusy(form);
+        },
+
+        get detached() {
+            return !shadowPiercingContains(document.body, form) || !isVisibleForm(form, { skipCache: true });
+        },
+
+        get otp() {
+            return !isIgnored(formHandle.element) && formHandle.getFieldsFor(FieldType.OTP).length > 0;
+        },
+
+        getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => {
+            const fields = Array.from(formHandle.fields.values());
+            return fields.filter(
+                (field): field is FieldHandle<T> => field.fieldType === type && (predicate?.(field) ?? true)
+            );
+        },
+
+        getFieldById: <T extends FieldType = FieldType>(fieldId: string) => {
+            return formHandle.getFields().find((field) => field.fieldId === fieldId) as Maybe<FieldHandle<T>>;
+        },
+
+        getFields: (predicate) => {
+            const fields = Array.from(formHandle.fields.values());
+            return predicate ? fields.filter(predicate) : fields;
+        },
+
+        /** Detach a field to prevent unwanted actions during attribute changes.
+         * This is useful when a field's attributes are updated, like changing its `type`.
+         * The page might automatically refocus such a field, but we want to avoid
+         * triggering actions on it while it's in an intermediate state. This function
+         * blocks actions, removes the field from tracking, and clears its flags. */
+        detachField: withContext((ctx, element) => {
+            const field = formHandle.fields.get(element);
+
+            formHandle.fields.delete(element);
+            removeClassifierFlags(element, { preserveIgnored: false });
+
+            if (field) {
+                ctx?.service.inline.dropdown.close({ type: 'field', field });
+                field.preventAction();
+                field.detach();
+            }
+        }),
+
+        reconciliate: withContext((ctx, formType, fields) => {
+            /** Attach the form tracker only to the top frame.
+             * FIXME: supporting cross-frame autosave */
+            if (ctx?.mainFrame && !formHandle.tracker) {
+                formHandle.tracker = createFormTracker(formHandle);
+                formHandle.tracker.attach();
+            }
+
+            let didChange = formType !== formHandle.formType;
+            let hasSections: boolean = false;
+
+            formHandle.formType = formType;
+            formHandle.canAutosave = canAutosave(options.form);
+
+            /* Detach fields that are no longer present */
+            formHandle.getFields().forEach((field) => {
+                const shouldDetach = !fields.some((incoming) => field.element === incoming.field);
+
+                if (shouldDetach) {
+                    didChange = true;
+                    formHandle.detachField(field.element);
+                }
+            });
+
+            /* Attach new incoming fields, if not already tracked
+             * while maintaining the detected fields order */
+            const currentFields = formHandle.fields;
+            const nextFields = new Map<FieldElement, FieldHandle>();
+
+            fields.forEach(({ field, fieldType }) => {
+                const currField = formHandle.fields.get(field);
+                didChange = currField === undefined;
+                hasSections = hasSections || fieldType === FieldType.IDENTITY || fieldType === FieldType.CREDIT_CARD;
+
+                const handle =
+                    currField ??
+                    createFieldHandles({
+                        element: field,
+                        formId,
+                        formType,
+                        fieldType,
+                        getFormHandle: () => formHandle,
+                    });
+
+                switch (handle.fieldType) {
+                    case FieldType.IDENTITY:
+                        handle.fieldSubType = handle.fieldSubType ?? getIdentityFieldType(field);
+                        break;
+                    case FieldType.CREDIT_CARD:
+                        handle.fieldSubType = handle.fieldSubType ?? getCCFieldType(field);
+                        break;
+                }
+
+                nextFields.set(handle.element, handle);
+            });
+
+            formHandle.fields = nextFields;
+            currentFields.clear();
+
+            /** resolve potential identity sections only if we have identity
+             * fields to process. Avoids unnecessary runs of section detection. */
+            if (hasSections) resolveFieldSections(formHandle.getFields());
+
+            /** Reset form tracker state if fields were added or removed. Some
+             * forms have appearing fields and may trigge multiple submissions.
+             * As such, reset the loading/submitted state everytime a new field
+             * appears/disappears (ie: github.com dynamic sign-up page) */
+            if (didChange) formHandle.tracker?.reset();
+
+            /** Set up the relevant field actions based on `FORM_TRACKER_CONFIG`.
+             * If no config is found for the detected field: detach as we're most
+             * likely not interested in this specific detected field. */
+            nextFields.forEach((field) => {
+                const config = FORM_TRACKER_CONFIG[formType][field.fieldType];
+                if (!config) return field.detach();
+
+                const { action, filterable } = config;
+                field.setAction(action ? { type: action, filterable } : null);
+                field.attach(formHandle.tracker);
+
+                /* Trigger focus on empty active field to open dropdown :
+                 * Handles autofocused simple forms and dynamically added fields.
+                 * Note: This doesn't trigger a real DOM focus event. */
+                if (isActiveElement(field.element)) field.focus();
+            });
+        }),
+
+        detach: withContext((ctx) => {
+            logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.formId}]`);
+            listeners.removeAll();
+
+            /** If an OTP inline notification had been triggered
+             * because of this form, close it when detaching */
+            if (formHandle.otp) ctx?.service.inline.notification.close(NotificationAction.OTP);
+
+            formHandle.tracker?.detach();
+
+            formHandle.getFields().forEach((field) => {
+                /** FIXME(@ecandon) we should probably emit only one close even */
+                ctx?.service.inline.dropdown.close({ type: 'field', field });
+                field.detach();
+            });
+
+            removeClassifierFlags(form, {
+                preserveIgnored: true,
+                fields: formHandle.getFields().map(prop('element')),
+            });
+        }),
+
+        hasFrameFields: () => {
+            for (const iframe of form.querySelectorAll('iframe')) {
+                if (isIFrameField(iframe)) return true;
+            }
+
+            return false;
+        },
+
+        /** Builds clusterable items for cross-frame form reconciliation.
+         * Extracts credit card fields and iframes in document order, enabling the
+         * service worker to reconstruct forms spanning multiple frames. Only invoke
+         * before autofill operations due to performance cost. */
+        getClusterables: () => {
+            const clusterables: ClusterFrameFormItem[] = [];
+
+            /** `querySelectorAll` returns elements in document order, preserving the
+             * structural layout needed for cross-frame form reconstruction */
+            for (const candidate of form.querySelectorAll('input, select, iframe')) {
+                const field = formHandle.fields.get(candidate as FieldElement);
+                if (field && isCCField(field)) {
+                    const { fieldId, fieldType, fieldSubType } = field;
+                    clusterables.push({ type: 'field', fieldId, fieldType, fieldSubType });
+                } else if (candidate instanceof HTMLIFrameElement) {
+                    if (isNegligableFrameRect(candidate.offsetWidth, candidate.offsetHeight)) continue;
+                    const canResolveFrameID = BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime;
+                    const frameId = canResolveFrameID ? browser.runtime.getFrameId(candidate) : undefined;
+                    const frameAttributes = !canResolveFrameID ? getFrameAttributesFromElement(candidate) : undefined;
+                    clusterables.push({ type: 'frame', frameId, frameAttributes });
+                }
+            }
+
+            return clusterables;
+        },
+    };
+
+    /**
+     * Detection trigger & repositioning via Form Resize
+     *
+     * This handler is responsible for triggering the repositioning flow for
+     * our injections when tooltips or error messages appear. Additionally, it
+     * checks if the form's parent element has unprocessed fields. This detection
+     * mechanism during a resize is particularly useful for "stacked" or "multi-
+     * step" forms where multiple forms (or clusters of inputs) are overlayed on
+     * top of each other. The purpose is to handle dynamic changes in form layouts
+     * and stacked forms effectively without looking for unprocessed fields
+     * on the full DOM as this may lead to too many detection triggers */
+    const onFormResize = debounce(
+        withContext((ctx) => {
+            const formParent = options.form.parentElement;
+            const triggerDetection = formParent === null || hasProcessableFields(formParent);
+            if (triggerDetection) void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
+        }),
+        50
+    );
+
+    listeners.addResizeObserver(options.form, onFormResize);
+
+    return formHandle;
+};

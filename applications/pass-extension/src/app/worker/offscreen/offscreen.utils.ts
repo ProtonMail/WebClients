@@ -1,5 +1,5 @@
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
-import type { AsyncCallback, Maybe } from '@proton/pass/types';
+import type { AsyncCallback, Maybe } from '@proton/pass/types/utils/index';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import noop from '@proton/utils/noop';
 

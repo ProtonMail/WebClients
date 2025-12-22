@@ -21,8 +21,9 @@ import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightPr
 import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { selectIsSSO, selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
+import { selectIsSSO } from '@proton/pass/store/selectors/user';
+import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 
 import { Header } from './Header/Header';
 

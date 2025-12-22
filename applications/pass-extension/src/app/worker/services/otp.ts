@@ -1,13 +1,14 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
-import type { Maybe, OtpCode, OtpRequest } from '@proton/pass/types';
-import { withPayload } from '@proton/pass/utils/fp/lens';
+import { selectOTPCandidate } from '@proton/pass/store/selectors/autofill';
+import { selectItem } from '@proton/pass/store/selectors/items';
+import type { Maybe } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseSender } from '@proton/pass/utils/url/parser';
@@ -20,37 +21,39 @@ import { parseSender } from '@proton/pass/utils/url/parser';
  * - an invalid string
  * Each of the following OTP-related operations may throw. */
 export const createOTPService = () => {
-    const handleTOTPRequest = withContext<(payload: OtpRequest) => OtpCode>((ctx, payload) => {
-        try {
-            const totpUri: Maybe<string> = (() => {
-                if (payload.type === 'uri') return payload.totpUri;
-                if (payload.type === 'item') {
-                    const { shareId, itemId } = payload.item;
-                    const state = ctx.service.store.getState();
-                    const item = selectItem<'login'>(shareId, itemId)(state);
+    const onOTPRequest = withContext<MessageHandlerCallback<WorkerMessageType.OTP_CODE_GENERATE>>(
+        (ctx, { payload }) => {
+            try {
+                const totpUri: Maybe<string> = (() => {
+                    if (payload.type === 'uri') return payload.totpUri;
+                    if (payload.type === 'item') {
+                        const { shareId, itemId } = payload.item;
+                        const state = ctx.service.store.getState();
+                        const item = selectItem<'login'>(shareId, itemId)(state);
 
-                    /** First check if we have a top-level totp URI */
-                    if (item?.data.content.totpUri.v) return deobfuscate(item.data.content.totpUri);
+                        /** First check if we have a top-level totp URI */
+                        if (item?.data.content.totpUri.v) return deobfuscate(item.data.content.totpUri);
 
-                    /** Check if any extra fields are of type TOTP */
-                    const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
-                    if (extraOTPs && extraOTPs.length > 0) return deobfuscate(extraOTPs[0].data.totpUri);
+                        /** Check if any extra fields are of type TOTP */
+                        const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
+                        if (extraOTPs && extraOTPs.length > 0) return deobfuscate(extraOTPs[0].data.totpUri);
+                    }
+                })();
+
+                if (totpUri) {
+                    const otp = generateTOTPCode(totpUri);
+                    if (otp) return otp;
                 }
-            })();
 
-            if (totpUri) {
-                const otp = generateTOTPCode(totpUri);
-                if (otp) return otp;
+                throw new Error('Cannot generate an OTP code from such item');
+            } catch (err: unknown) {
+                logger.error(`[Worker::OTP] OTP generation error`);
+                throw err;
             }
-
-            throw new Error('Cannot generate an OTP code from such item');
-        } catch (err: unknown) {
-            logger.error(`[Worker::OTP] OTP generation error`);
-            throw err;
         }
-    });
+    );
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleTOTPRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, onOTPRequest);
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_OTP_CHECK,

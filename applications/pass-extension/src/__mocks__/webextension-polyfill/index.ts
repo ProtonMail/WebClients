@@ -2,7 +2,6 @@ import { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel
 import { sender } from 'proton-pass-extension/__mocks__/mocks';
 
 const browser = {
-    tabs: {},
     runtime: {
         getVersion: jest.fn(() => '0.0.1'),
         getURL: jest.fn((asset: string) => `test://${asset}`),
@@ -31,10 +30,10 @@ const browser = {
         create: jest.fn(),
         clear: jest.fn().mockResolvedValue(undefined),
         get: jest.fn(),
-        onAlarm: {
-            addListener: jest.fn(),
-        },
+        onAlarm: { addListener: jest.fn() },
     },
+    webNavigation: { getAllFrames: jest.fn(async () => []) },
+    tabs: { sendMessage: jest.fn(async () => ({})) },
 };
 
 export const clearBrowserMocks = () => {
@@ -52,6 +51,8 @@ export const clearBrowserMocks = () => {
     browser.alarms.clear.mockClear();
     browser.alarms.get.mockClear();
     browser.alarms.onAlarm.addListener.mockClear();
+    browser.webNavigation.getAllFrames.mockClear();
+    browser.tabs.sendMessage.mockClear();
 };
 
 export default browser;

@@ -8,9 +8,10 @@ import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { VaultIcon, type VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { Maybe, ShareType } from '@proton/pass/types';
+import { selectShare } from '@proton/pass/store/selectors/shares';
+import type { ShareType } from '@proton/pass/types/data/shares';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1.static';
+import type { Maybe } from '@proton/pass/types/utils/index';
 
 type Props = { toggle: () => void; isOpen: boolean };
 

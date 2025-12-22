@@ -1,5 +1,5 @@
 import browser from '@proton/pass/lib/globals/browser';
-import type { ClientEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 
 const CONTENT_SCRIPT_ENDPOINTS: ClientEndpoint[] = ['contentscript', 'dropdown', 'notification'];
 

@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 
+import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { Dropdown } from 'proton-pass-extension/app/content/injections/apps/dropdown/Dropdown';
-import { DropdownAction } from 'proton-pass-extension/app/content/types';
+import { Dropdown } from 'proton-pass-extension/app/content/services/inline/dropdown/app/Dropdown';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import { AppStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { MockIFrameApp } from './MockIFrameApp';
 
@@ -22,8 +22,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -32,8 +36,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -42,8 +50,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -52,8 +64,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -62,8 +78,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             startsWith: '',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -73,9 +93,13 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOSUGGEST_PASSWORD,
                             config: DEFAULT_RANDOM_PW_OPTIONS,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             copy: false,
                             policy: null,
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>
@@ -84,8 +108,12 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOSUGGEST_ALIAS,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
+                            frameId: 0,
+                            frameOrigin: '',
                             prefix: 'secret',
+                            fieldId: '',
+                            formId: '',
                         }}
                     />
                 </MockIFrameApp>

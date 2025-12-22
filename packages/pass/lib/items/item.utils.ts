@@ -1,11 +1,14 @@
 import { c, msgid } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
+import { CCFieldType } from '@proton/pass/fathom/labels';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers/drafts';
 import type {
     BulkSelectionDTO,
+    CCItemData,
+    CCItemPreview,
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
     IdentityItemPreview,
@@ -20,7 +23,7 @@ import type {
     UniqueItem,
 } from '@proton/pass/types';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
@@ -168,6 +171,39 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
     name: item.data.metadata.name,
     fullName: item.data.content.fullName,
 });
+
+export const intoCCItemPreview = (item: ItemRevision<'creditCard'>): CCItemPreview => ({
+    itemId: item.itemId,
+    shareId: item.shareId,
+    name: item.data.metadata.name,
+    obfuscatedNumber: deobfuscateCCField(item.data.content.number, true),
+    expirationDate: item.data.content.expirationDate,
+    cardType: item.data.content.cardType,
+});
+
+/** Generates frame-appropriate credit card data for autofill operations.
+ * Applies security restrictions based on context:
+ * - Always removes PIN field (never autofilled)
+ * - Cross-origin: strips number and CVV to prevent data leakage
+ * - Deduplication: removes fields already autofilled in previous frames */
+export const intoAutofillableCCItem = (
+    item: CCItemData,
+    autofilled: Set<CCFieldType>,
+    crossOrigin: boolean
+): Partial<CCItemData> => {
+    const data: Partial<CCItemData> = { ...item };
+    delete data.pin;
+
+    if (crossOrigin) {
+        delete data.number;
+        delete data.verificationNumber;
+    }
+
+    if (autofilled.has(CCFieldType.NUMBER)) delete data.number;
+    if (autofilled.has(CCFieldType.CSC)) delete data.verificationNumber;
+
+    return data;
+};
 
 export const getSanitizedUserIdentifiers = async ({
     itemEmail,

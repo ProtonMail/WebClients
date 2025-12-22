@@ -4,9 +4,11 @@ import type { APIProxyService } from 'proton-pass-extension/app/worker/services/
 import type { AutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
+import type { FeatureFlagService } from 'proton-pass-extension/app/worker/services/feature-flags';
 import type { FormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n';
-import type { InjectionService } from 'proton-pass-extension/app/worker/services/injection';
+import type { ContentScriptService } from 'proton-pass-extension/app/worker/services/injection';
+import type { InlineService } from 'proton-pass-extension/app/worker/services/inline';
 import type { LoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import type { OTPService } from 'proton-pass-extension/app/worker/services/otp';
 import type { Passkeyservice } from 'proton-pass-extension/app/worker/services/passkey';
@@ -23,7 +25,8 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { ClipboardService } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
-import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
 
 export type WorkerInitOptions = {
     sync?: boolean /* will clear local storage */;
@@ -43,9 +46,11 @@ export interface WorkerContextInterface {
         b2bEvents: MaybeNull<B2BEventsService>;
         clipboard: ClipboardService;
         core: PassCoreProxy;
+        featureFlags: FeatureFlagService;
         formTracker: FormTrackerService;
         i18n: I18NService;
-        injection: InjectionService;
+        injection: ContentScriptService;
+        inline: InlineService;
         logger: LoggerService;
         monitor: MonitorService;
         otp: OTPService;

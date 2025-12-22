@@ -35,8 +35,9 @@ module.exports = {
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     testTimeout: 30000,
     moduleNameMapper: {
-        'proton-pass-extension/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+        '\\.raw.scss$': '@proton/components/__mocks__/styleMock.js',
+        'proton-pass-extension/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
     },
     globals: {
         BUILD_TARGET: 'test',

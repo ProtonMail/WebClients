@@ -1,4 +1,3 @@
-import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/utils';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
@@ -7,20 +6,16 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
+import { hasPauseCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
     type TelemetryService as CoreTelemetryService,
     createCoreTelemetryService,
 } from '@proton/pass/lib/telemetry/service';
 import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
-import {
-    selectAutofillSettings,
-    selectDisallowedDomains,
-    selectFeatureFlags,
-    selectTelemetryEnabled,
-    selectUserTier,
-} from '@proton/pass/store/selectors';
-import type { ExtensionStorage } from '@proton/pass/types';
+import { selectAutofillSettings, selectDisallowedDomains } from '@proton/pass/store/selectors/settings';
+import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors/user';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { isSupportedSenderUrl } from '@proton/pass/utils/url/utils';

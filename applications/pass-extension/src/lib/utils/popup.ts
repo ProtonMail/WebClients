@@ -3,7 +3,7 @@ import type { Tabs } from 'webextension-polyfill';
 
 import type { PopupController } from '@proton/pass/components/Core/PassCoreProvider';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types/utils/index';
 import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import debounce from '@proton/utils/debounce';

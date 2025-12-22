@@ -2541,8 +2541,8 @@ class OutwardRule extends Rule {
  * A shortcut for creating a new :class:`Ruleset`, for symmetry with
  * :func:`rule`
  */
-function ruleset(rules, coeffs = [], biases = []) {
-    return new Ruleset(rules, coeffs, biases);
+function ruleset(rules, coeffs = [], biases = [], prepass = () => {}) {
+    return new Ruleset(rules, coeffs, biases, prepass);
 }
 
 /**
@@ -2559,8 +2559,10 @@ class Ruleset {
      * @arg biases {object} A map of type names to neural-net biases. These
      *      enable accurate confidence estimates. Example: ``[['someType',
      *      -2.08], ...]``. If absent, biases default to 0.
+     * @arg prepass {Function} An optional function to run before running
+     *      the ruleset against a document during vectorization.
      */
-    constructor(rules, coeffs = [], biases = []) {
+    constructor(rules, coeffs = [], biases = [], prepass = () => {}) {
         this._inRules = [];
         this._outRules = new Map(); // key -> rule
         this._rulesThatCouldEmit = new Map(); // type -> [rules]
@@ -2568,6 +2570,7 @@ class Ruleset {
         // Private to the framework:
         this._coeffs = new Map(coeffs); // rule name => coefficient
         this.biases = new Map(biases); // type name => bias
+        this.prepass = prepass;
 
         // Separate rules into out ones and in ones, and sock them away. We do
         // this here so mistakes raise errors early.

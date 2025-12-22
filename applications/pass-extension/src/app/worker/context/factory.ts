@@ -8,9 +8,11 @@ import { createAutoSaveService } from 'proton-pass-extension/app/worker/services
 import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
 import { createClipboardService } from 'proton-pass-extension/app/worker/services/clipboard';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
+import { createFeatureFlagService } from 'proton-pass-extension/app/worker/services/feature-flags';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
-import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
+import { createContentScriptService } from 'proton-pass-extension/app/worker/services/injection';
+import { createInlineService } from 'proton-pass-extension/app/worker/services/inline';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
@@ -37,8 +39,9 @@ import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusRe
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
-import { selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { type AppState, AppStatus } from '@proton/pass/types';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
+import type { AppState } from '@proton/pass/types/worker/state';
+import { AppStatus } from '@proton/pass/types/worker/state';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -80,9 +83,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
             b2bEvents: createB2BEventsService(storage.local, store),
             clipboard: createClipboardService(),
             core,
+            featureFlags: createFeatureFlagService(),
             formTracker: createFormTrackerService(),
+            inline: createInlineService(),
             i18n: createI18nService(),
-            injection: createInjectionService(),
+            injection: createContentScriptService(),
             logger: createLoggerService(storage.local),
             monitor: createMonitorService(core, store),
             otp: createOTPService(),
@@ -131,7 +136,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     /* Watch for `lockSetup` state changes. Notify all extension
      * components on update in order for clients' states to sync. */
-    registerStoreEffect(store, selectLockSetupRequired, (_) => onStateUpdate(context.getState()));
+    registerStoreEffect(store, selectLockSetupRequired, (lockSetup) => {
+        if (lockSetup !== context.getState().lockSetup) {
+            onStateUpdate(context.getState());
+        }
+    });
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {

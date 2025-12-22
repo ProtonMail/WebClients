@@ -5,7 +5,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors/user';
 import clsx from '@proton/utils/clsx';
 
 export const MenuUser = memo(() => {

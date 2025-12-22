@@ -3,7 +3,8 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import { selectItem, selectPasskeys } from '@proton/pass/store/selectors';
+import { selectPasskeys } from '@proton/pass/store/selectors/autofill';
+import { selectItem } from '@proton/pass/store/selectors/items';
 
 export const createPasskeyService = () => {
     WorkerMessageBroker.registerMessage(

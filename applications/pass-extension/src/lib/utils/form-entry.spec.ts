@@ -1,4 +1,4 @@
-import { FormType } from '@proton/pass/fathom';
+import { FormType } from '@proton/pass/fathom/labels';
 import type { AutosaveFormEntry, FormCredentials, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, FormEntryStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';

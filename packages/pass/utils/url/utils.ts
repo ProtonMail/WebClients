@@ -82,5 +82,7 @@ export const globToRegExp = (globPattern: string) => {
     return new RegExp(`^${regexString}$`);
 };
 
-export const resolveDomain = ({ domain, subdomain, hostname }: ParsedUrl): MaybeNull<string> =>
+export const resolveSubdomain = ({ domain, subdomain, hostname }: ParsedUrl): MaybeNull<string> =>
     subdomain ?? domain ?? hostname;
+
+export const resolveDomain = ({ domain, hostname }: ParsedUrl): MaybeNull<string> => domain ?? hostname;

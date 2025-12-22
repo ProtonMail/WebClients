@@ -11,7 +11,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;
     const { vaultId } = share;
-    const { createTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
+    const { createTime, modifyTime, revision: revisionNumber, shareId, itemId, lastUseTime } = revision;
 
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
@@ -20,7 +20,12 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
                     <SecureLinkCardList shareId={shareId} itemId={itemId} />
                     <CreditCardContent revision={revision} />
                     <FileAttachmentsContentView revision={revision} />
-                    <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
+                    <ItemHistoryStats
+                        createTime={createTime}
+                        lastUseTime={lastUseTime}
+                        modifyTime={modifyTime}
+                        handleHistoryClick={onHistory}
+                    />
                     <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={vaultId} />
                 </>
             )}

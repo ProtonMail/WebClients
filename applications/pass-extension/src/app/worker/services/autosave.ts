@@ -8,14 +8,13 @@ import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers'
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier, matchesLoginPassword, matchesLoginURL } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
-import { itemCreate, itemEdit } from '@proton/pass/store/actions';
-import {
-    selectAutosaveCandidate,
-    selectNonOptimisticItem,
-    selectVisibleWritableShares,
-} from '@proton/pass/store/selectors';
-import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
-import { AutosaveMode } from '@proton/pass/types';
+import { itemCreate, itemEdit } from '@proton/pass/store/actions/creators/item';
+import { selectAutosaveCandidate } from '@proton/pass/store/selectors/autosave';
+import { selectNonOptimisticItem } from '@proton/pass/store/selectors/items';
+import { selectVisibleWritableShares } from '@proton/pass/store/selectors/shares';
+import type { AutosavePrompt } from '@proton/pass/types/worker/autosave';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import type { FormEntry } from '@proton/pass/types/worker/form';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
