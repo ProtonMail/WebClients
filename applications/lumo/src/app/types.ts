@@ -75,6 +75,12 @@ export type SpacePub = {
     // todo: updatedAt (for sorting)
 };
 
+export type LinkedDriveFolder = {
+    folderId: string; // Drive folder nodeId
+    folderName: string;
+    folderPath: string;
+};
+
 export type ProjectSpace = {
     isProject: true; // Flag to indicate this space is being used as a project
     // Project metadata (optional - only for spaces used as projects)
@@ -82,11 +88,7 @@ export type ProjectSpace = {
     projectInstructions?: string;
     projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
     // Linked Drive folder (optional - only for projects with linked Drive folders)
-    linkedDriveFolder?: {
-        folderId: string; // Drive folder nodeId
-        folderName: string;
-        folderPath: string;
-    };
+    linkedDriveFolder?: LinkedDriveFolder;
 };
 
 export type SimpleSpace = {
@@ -210,6 +212,23 @@ export function cleanSpace(space: Space): Space {
     }
 }
 
+// Helper to extract project and drive folder information from a space
+type ProjectInfoLinked = {
+    space: Space;
+    project: ProjectSpace;
+    linkedDriveFolder: LinkedDriveFolder;
+    isLinked: true;
+};
+
+type ProjectInfoNotLinked = {
+    space: Space;
+    project: ProjectSpace | undefined;
+    linkedDriveFolder: undefined;
+    isLinked: false;
+};
+
+type ProjectInfo = ProjectInfoLinked | ProjectInfoNotLinked;
+
 export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
     const { id, createdAt, encrypted, wrappedSpaceKey, dirty, deleted } = space;
 
@@ -237,6 +256,30 @@ export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
 export async function getSpaceDek(s: SpaceKeyClear): Promise<AesGcmCryptoKey> {
     const spaceKeyBytes = Uint8Array.fromBase64(s.spaceKey);
     return deriveDataEncryptionKey(spaceKeyBytes);
+}
+
+export function getProjectInfo(space: Space): ProjectInfo;
+export function getProjectInfo(space: undefined): undefined;
+export function getProjectInfo(space: Space | undefined): ProjectInfo | undefined {
+    if (space === undefined) return undefined;
+    const project = space.isProject ? (space satisfies ProjectSpace) : undefined;
+    const linkedDriveFolder = project?.linkedDriveFolder;
+
+    if (project !== undefined && linkedDriveFolder !== undefined) {
+        return {
+            space,
+            project: project,
+            linkedDriveFolder,
+            isLinked: true,
+        };
+    }
+
+    return {
+        space,
+        project,
+        linkedDriveFolder: undefined,
+        isLinked: false,
+    };
 }
 
 // *** Message ***

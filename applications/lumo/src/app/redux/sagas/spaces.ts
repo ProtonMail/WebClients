@@ -10,7 +10,6 @@ import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
 import { SearchService } from '../../services/search/searchService';
-import type { ProjectSpace } from '../../types';
 import {
     type Attachment,
     type SerializedSpace,
@@ -18,6 +17,7 @@ import {
     type SpaceId,
     cleanSerializedSpace,
     cleanSpace,
+    getProjectInfo,
 } from '../../types';
 import { listify, mapIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
@@ -523,9 +523,7 @@ export function* refreshSpaceFromRemote({
         return;
     }
     const remoteSpace = cleanSpace(deserializedRemoteSpace);
-    const remoteSpaceProject = remoteSpace.isProject ? (remoteSpace satisfies ProjectSpace) : undefined;
-    const remoteLinkedDriveFolder = remoteSpaceProject?.linkedDriveFolder;
-    const remoteIsLinkedToDrive = remoteLinkedDriveFolder !== undefined;
+    const { isLinked: remoteIsLinkedToDrive } = getProjectInfo(remoteSpace);
     console.log(`refreshSpaceFromRemote ${localId}: remote space is linked to drive:`, remoteIsLinkedToDrive);
 
     // Check if space already exists locally
@@ -534,9 +532,7 @@ export function* refreshSpaceFromRemote({
 
     if (localSpace) {
         // Space exists in Redux - check if linkedDriveFolder state differs between local and remote
-        const localSpaceProject = localSpace.isProject ? (localSpace satisfies ProjectSpace) : undefined;
-        const localLinkedDriveFolder = localSpaceProject?.linkedDriveFolder;
-        const localIsLinkedToDrive = localLinkedDriveFolder !== undefined;
+        const { isLinked: localIsLinkedToDrive } = getProjectInfo(localSpace);
 
         if (remoteIsLinkedToDrive !== localIsLinkedToDrive) {
             // linkedDriveFolder state differs - update local from remote
@@ -564,9 +560,8 @@ export function* refreshSpaceFromRemote({
         // Space exists in IDB but not Redux - deserialize from IDB and check if remote differs
         console.log(`refreshSpaceFromRemote ${localId}: idb object exists, checking for updates`);
         const idbSpace: Space | null | undefined = yield call(deserializeSpace, encryptedIdbSpace, masterKey);
-        const idbSpaceProject = idbSpace?.isProject ? (idbSpace satisfies ProjectSpace) : undefined;
-        const idbLinkedDriveFolder = idbSpaceProject?.linkedDriveFolder;
-        const idbIsLinkedToDrive = idbLinkedDriveFolder !== undefined;
+        const idbProjectInfo = idbSpace ? getProjectInfo(idbSpace) : null;
+        const idbIsLinkedToDrive = idbProjectInfo?.isLinked ?? false;
 
         // If linkedDriveFolder state differs between remote and IDB, use remote
         if (remoteIsLinkedToDrive !== idbIsLinkedToDrive) {
