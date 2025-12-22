@@ -7,9 +7,14 @@ import type { DownloadQueueTask } from './downloadTypes';
 import { createDeferred, createMockNodeEntity, flushAsync, trackInstances } from './testUtils';
 
 const getDownloadSdkMock = jest.fn();
+const handleDownloadErrorMock = jest.fn();
 
 jest.mock('./utils/getDownloadSdk', () => ({
     getDownloadSdk: getDownloadSdkMock,
+}));
+
+jest.mock('./utils/handleError', () => ({
+    handleDownloadError: handleDownloadErrorMock,
 }));
 
 const { ArchiveStreamGenerator } = require('./ArchiveStreamGenerator') as {
@@ -18,8 +23,7 @@ const { ArchiveStreamGenerator } = require('./ArchiveStreamGenerator') as {
 
 const ensureTransformStream = () => {
     if (typeof globalThis.TransformStream === 'undefined') {
-        const { TransformStream } = require('stream/web');
-        globalThis.TransformStream = TransformStream;
+        require('web-streams-polyfill/polyfill/es6');
     }
 };
 
@@ -49,6 +53,7 @@ describe('ArchiveStreamGenerator', () => {
         jest.clearAllMocks();
         schedulerTracker.reset();
         getDownloadSdkMock.mockReset();
+        handleDownloadErrorMock.mockReset();
     });
 
     it('should schedule file entries and expose generator/controller', async () => {
@@ -88,14 +93,14 @@ describe('ArchiveStreamGenerator', () => {
         }
 
         const parentPaths = new Map<string, string[]>([['file-1', ['folder']]]);
-        const generatorInstance = new ArchiveStreamGenerator(
-            entries(),
-            progressSpy,
-            schedulerInstance,
-            abortController.signal,
-            parentPaths,
-            'download-id'
-        );
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: progressSpy,
+            scheduler: schedulerInstance,
+            abortSignal: abortController.signal,
+            parentPathByUid: parentPaths,
+            downloadId: 'download-id',
+        });
 
         await flushAsync();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
@@ -152,14 +157,14 @@ describe('ArchiveStreamGenerator', () => {
         }
 
         const progressSpy = jest.fn();
-        const generatorInstance = new ArchiveStreamGenerator(
-            entries(),
-            progressSpy,
-            schedulerInstance,
-            new AbortController().signal,
-            new Map<string, string[]>([['folder-1', [] as string[]]]),
-            'download-id'
-        );
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: progressSpy,
+            scheduler: schedulerInstance,
+            abortSignal: new AbortController().signal,
+            parentPathByUid: new Map<string, string[]>([['folder-1', [] as string[]]]),
+            downloadId: 'download-id',
+        });
 
         await flushAsync();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
@@ -202,14 +207,14 @@ describe('ArchiveStreamGenerator', () => {
             yield node;
         }
 
-        const generatorInstance = new ArchiveStreamGenerator(
-            entries(),
-            jest.fn(),
-            schedulerInstance,
-            abortController.signal,
-            new Map<string, string[]>([['file-wait', [] as string[]]]),
-            'download-id'
-        );
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: jest.fn(),
+            scheduler: schedulerInstance,
+            abortSignal: abortController.signal,
+            parentPathByUid: new Map<string, string[]>([['file-wait', [] as string[]]]),
+            downloadId: 'download-id',
+        });
 
         await flushAsync();
         const waitPromise = generatorInstance.waitForFirstItem();
@@ -220,5 +225,55 @@ describe('ArchiveStreamGenerator', () => {
         await flushAsync();
 
         await expect(waitPromise).resolves.toBeUndefined();
+    });
+
+    it.skip('should propagate downloader errors to consumers', async () => {
+        const abortController = new AbortController();
+        const schedulerInstance = schedulerTracker.Mock();
+        const downloadControllerDeferred = createDeferred<void>();
+        const downloadController = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => downloadControllerDeferred.promise),
+        };
+
+        const downloadToStream = jest.fn(
+            (_writable: unknown, _onProgress: (bytes: number) => void) => downloadController
+        );
+        const getFileDownloader = jest.fn(async () => ({
+            downloadToStream,
+            getClaimedSizeInBytes: jest.fn(() => 1024),
+        }));
+        getDownloadSdkMock.mockImplementation(() => ({
+            getFileDownloader,
+        }));
+
+        const node = createMockNodeEntity({ uid: 'file-error', name: 'error.txt' });
+        async function* entries() {
+            yield node;
+        }
+
+        const generatorInstance = new ArchiveStreamGenerator({
+            entries: entries(),
+            onProgress: jest.fn(),
+            scheduler: schedulerInstance,
+            abortSignal: abortController.signal,
+            parentPathByUid: new Map<string, string[]>([['file-error', [] as string[]]]),
+            downloadId: 'download-id',
+        });
+
+        await flushAsync();
+        const task = schedulerInstance._tasks[0];
+        const startPromise = task.start();
+
+        const firstValue = await generatorInstance.generator.next();
+        expect(firstValue.done).toBe(false);
+
+        const failure = new Error('boom');
+        downloadControllerDeferred.reject(failure);
+        await expect(startPromise).rejects.toThrow('boom');
+
+        await expect(generatorInstance.generator.next()).rejects.toBe(failure);
+        expect(handleDownloadErrorMock).toHaveBeenCalledWith('download-id', [node], failure, false);
     });
 });

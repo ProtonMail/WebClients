@@ -1,9 +1,9 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
-import { AbortError, NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
+import { NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
 import { bufferToStream, streamToBuffer } from '../../utils/stream';
-import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
+import { TransferCancel } from '../../utils/transfer';
 import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
     DownloadStatus,
@@ -13,10 +13,11 @@ import {
 import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
+import { createStreamSaver } from './utils/createStreamSaver';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
-import { handleError } from './utils/handleError';
+import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
@@ -46,7 +47,9 @@ export class DownloadManager {
 
     constructor() {
         this.hasListeners = false;
-        this.scheduler = new DownloadScheduler();
+        this.scheduler = new DownloadScheduler((error, task) =>
+            handleDownloadError(task.downloadId, [task.node], error)
+        );
     }
 
     static getInstance(): DownloadManager {
@@ -240,7 +243,7 @@ export class DownloadManager {
     }
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<void> {
-        const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
+        const { updateDownloadItem } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(downloadId);
 
         const abortController = new AbortController();
@@ -253,54 +256,41 @@ export class DownloadManager {
             const storageSize = getNodeStorageSize(node);
             updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
-            const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
-            const streamWrapperPromise = loadCreateReadableStreamWrapper(readable);
+            const log = (message: string) => downloadLogDebug('FileSaver', message);
+            const streamSaver = createStreamSaver(
+                { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: storageSize },
+                log
+            );
 
-            const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
+            const controller = fileDownloader.downloadToStream(streamSaver.writable, (downloadedBytes) => {
                 currentDownloadedBytes = downloadedBytes;
                 updateDownloadItem(downloadId, { downloadedBytes });
                 this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
             });
 
-            const streamForSaver: ReadableStream<Uint8Array<ArrayBuffer>> = await streamWrapperPromise;
-
-            const log = (message: string) => downloadLogDebug('FileSaver', message);
-            const savePromise = fileSaver.instance.saveAsFile(
-                streamForSaver,
-                { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: getNodeStorageSize(node) },
-                log
-            );
-
-            const controllerCompletion = controller.completion();
-
-            this.activeDownloads.set(downloadId, {
+            completionPromise = this.attachActiveDownload({
+                downloadId,
                 controller,
                 abortController,
-            });
-
-            completionPromise = Promise.all([controllerCompletion, savePromise])
-                .then(() => {
+                onCompleted: async () => {
+                    try {
+                        await streamSaver.finalize();
+                    } catch (error) {
+                        await streamSaver.abort(error);
+                        handleDownloadError(downloadId, [node], error);
+                    }
                     // At the moment images storageSize mistakenly includes the thumbnail, to avoid progress showing <100%
                     // we force the downloaded size to match the storage size until this is fixed
                     updateDownloadItem(downloadId, { status: DownloadStatus.Finished, downloadedBytes: storageSize });
                     downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, storageSize });
-                })
-                .catch((error) => {
-                    const existing = getQueueItem(downloadId);
-                    if (!existing) {
-                        return;
-                    }
-                    if (existing.status === DownloadStatus.Cancelled || error instanceof AbortError) {
-                        updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-                    } else {
-                        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
-                    }
-                })
-                .finally(() => {
-                    this.activeDownloads.delete(downloadId);
-                });
+                },
+                onError: async (error) => {
+                    await streamSaver.abort(error);
+                    handleDownloadError(downloadId, [node], error);
+                },
+            });
         } catch (error) {
-            handleError(error, downloadId, [node]);
+            handleDownloadError(downloadId, [node], error);
             completionPromise = Promise.reject(error);
         }
 
@@ -313,24 +303,7 @@ export class DownloadManager {
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
         let currentDownloadedBytes = 0;
         let totalEncryptedSize = 0;
-
         const abortController = new AbortController();
-
-        const handleArchiveError = (error: unknown) => {
-            const existing = getQueueItem(downloadId);
-            if (!existing) {
-                return;
-            }
-            if (
-                existing.status === DownloadStatus.Cancelled ||
-                abortController.signal.aborted ||
-                error instanceof AbortError
-            ) {
-                updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-            } else {
-                handleError(error, downloadId, nodes);
-            }
-        };
 
         try {
             // Traversing all folders to get the node entities + parentPath
@@ -355,19 +328,19 @@ export class DownloadManager {
                 currentDownloadedBytes = downloadedBytes;
             };
 
-            const archiveStreamGenerator = new ArchiveStreamGenerator(
-                nodesQueue.iterator(),
-                updateProgress,
-                this.scheduler,
-                abortController.signal,
+            const archiveGenerator = new ArchiveGenerator();
+            const archiveStreamGenerator = new ArchiveStreamGenerator({
+                entries: nodesQueue.iterator(),
+                onProgress: updateProgress,
+                scheduler: this.scheduler,
+                abortSignal: abortController.signal,
                 parentPathByUid,
-                downloadId
-            );
+                downloadId,
+            });
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
 
             const log = (message: string) => downloadLogDebug('FileSaver', message);
-            const archiveGenerator = new ArchiveGenerator();
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
             const waitForFirstItemPromise = archiveStreamGenerator.waitForFirstItem();
@@ -409,6 +382,8 @@ export class DownloadManager {
                 downloadLogDebug('Archive writeLinks done', { downloadId });
             })();
 
+            const archiveBufferPromise = streamToBuffer(archiveGenerator.stream);
+
             const savingPromise = (async () => {
                 const traversalResult = await traversalCompletedPromise;
                 const meta = {
@@ -417,62 +392,91 @@ export class DownloadManager {
                     size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
                 } as const;
 
-                // No unsupported files: wait for first item, then stream archive to FileSaver
-                if (!traversalResult.containsUnsupportedFile) {
-                    await waitForFirstItemPromise;
-                    downloadLogDebug('Archive saveAsFile (stream) start', { downloadId });
-                    await fileSaver.instance.saveAsFile(archiveGenerator.stream, meta, log);
-                    downloadLogDebug('Archive saveAsFile (stream) done', { downloadId });
-                    return;
+                if (traversalResult.containsUnsupportedFile) {
+                    await waitForUnsupportedDecision();
                 }
 
-                // Unsupported files present:
-                // buffer the archive so SDK downloads keep flowing while we wait
-                downloadLogDebug('Archive saving (buffered, unsupported files)', { downloadId });
-                const bufferPromise = streamToBuffer(archiveGenerator.stream);
-
-                await waitForUnsupportedDecision();
                 await waitForFirstItemPromise;
-                const buffer = await bufferPromise;
-                downloadLogDebug('Archive saveAsFile (buffer) start', { downloadId });
+                await trackerController.completion(); // propagates the first failure
+
+                const buffer = await archiveBufferPromise;
+                if (abortController.signal.aborted || archiveStreamGenerator.lastError) {
+                    // Super important that we don't save the file if cancelled or erroring
+                    return;
+                }
                 await fileSaver.instance.saveAsFile(bufferToStream(buffer), meta, log);
                 downloadLogDebug('Archive saveAsFile (buffer) done', { downloadId });
             })();
 
-            const combinedPromise = (async () => {
-                await Promise.all([archivePromise, savingPromise]);
-            })();
+            const combinedPromise = Promise.all([archivePromise, savingPromise]).then(() => {});
 
             const controllerProxy: DownloadController = {
                 pause: () => trackerController.pause(),
                 resume: () => trackerController.resume(),
-                completion: () => combinedPromise.then(() => {}),
+                completion: () => combinedPromise,
+                // TBI isDownloadCompleteWithSignatureIssues
+                isDownloadCompleteWithSignatureIssues: () => false,
             };
 
-            this.activeDownloads.set(downloadId, {
+            await this.attachActiveDownload({
+                downloadId,
                 controller: controllerProxy,
                 abortController,
-            });
-
-            combinedPromise
-                .then(() => {
+                onCompleted: async () => {
                     // At the moment images storageSize mistakenly includes the thumbnail, to avoid progress showing <100%
                     // we force the downloaded size to match the storage size until this is fixed
-                    updateDownloadItem(downloadId, {
-                        status: DownloadStatus.Finished,
-                        downloadedBytes: totalEncryptedSize,
-                    });
+                    const currentItem = getQueueItem(downloadId);
+                    if (
+                        currentItem?.status !== DownloadStatus.Cancelled &&
+                        currentItem?.status !== DownloadStatus.Failed
+                    ) {
+                        updateDownloadItem(downloadId, {
+                            status: DownloadStatus.Finished,
+                            downloadedBytes: totalEncryptedSize,
+                        });
+                    }
                     downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, totalEncryptedSize });
-                })
-                .catch((error) => {
-                    handleArchiveError(error);
-                })
-                .finally(() => {
-                    this.activeDownloads.delete(downloadId);
-                });
+                },
+                onError: async (error) => {
+                    handleDownloadError(downloadId, nodes, error, abortController.signal.aborted);
+                },
+            });
         } catch (error) {
-            handleArchiveError(error);
+            handleDownloadError(downloadId, nodes, error, abortController.signal.aborted);
         }
+    }
+
+    private attachActiveDownload({
+        downloadId,
+        controller,
+        abortController,
+        onCompleted,
+        onError,
+    }: {
+        downloadId: string;
+        controller: DownloadController;
+        abortController: AbortController;
+        onCompleted: () => Promise<void>;
+        onError: (error: unknown) => Promise<void> | void;
+    }): Promise<void> {
+        const activeDownload: ActiveDownload = {
+            controller,
+            abortController,
+        };
+        this.activeDownloads.set(downloadId, activeDownload);
+
+        const completionPromise = controller
+            .completion()
+            .then(onCompleted)
+            .catch(async (error) => {
+                await onError(error);
+            })
+            .finally(() => {
+                this.activeDownloads.delete(downloadId);
+            });
+
+        activeDownload.completionPromise = completionPromise;
+        return completionPromise;
     }
 
     private getArchiveName(nodes: NodeEntity[]): string {
@@ -561,7 +565,7 @@ export class DownloadManager {
     private async stopDownload(downloadIds: string[]) {
         downloadIds.forEach((id) => {
             const active = this.activeDownloads.get(id);
-            active?.abortController.abort();
+            active?.abortController.abort(new TransferCancel({ id }));
         });
     }
 

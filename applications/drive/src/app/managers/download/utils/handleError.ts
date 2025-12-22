@@ -3,10 +3,12 @@ import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
+import { isTransferCancelError } from '../../../utils/transfer';
 import { DownloadStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
+import { downloadLogDebug } from './downloadLogger';
 import { getNodeStorageSize } from './getNodeStorageSize';
 
-export function handleError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
+function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
     const { updateDownloadItem } = useDownloadManagerStore.getState();
     const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
     updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToHandle });
@@ -22,4 +24,16 @@ export function handleError(error: unknown, downloadId: string, nodes: NodeEntit
             },
         })
     );
+}
+
+export function handleDownloadError(downloadId: string, nodes: NodeEntity[], error: unknown, aborted?: boolean) {
+    const { updateDownloadItem } = useDownloadManagerStore.getState();
+    const isCancelled = Boolean(aborted) || isTransferCancelError(error);
+
+    if (isCancelled) {
+        updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
+    } else {
+        downloadLogDebug('Download error', { downloadId });
+        trackError(error, downloadId, nodes);
+    }
 }
