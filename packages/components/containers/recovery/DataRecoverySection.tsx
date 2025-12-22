@@ -64,7 +64,7 @@ export const DataRecoverySection = () => {
 
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const recoverySecrets = useRecoverySecrets();
-    const canRevokeRecoveryFiles = recoverySecrets?.length > 0;
+    const canRevokeRecoveryFiles = recoverySecrets.length > 0;
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
 
