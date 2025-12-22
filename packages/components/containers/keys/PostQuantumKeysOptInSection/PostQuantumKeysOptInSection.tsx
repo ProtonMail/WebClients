@@ -25,7 +25,7 @@ const PostQuantumKeysOptInSection = () => {
                 <SettingsSectionWide>
                     <SettingsParagraph>
                         {c('Info')
-                            .t`By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.`}
+                            .t`Protect your account from quantum computing threats with quantum-resistant cryptographic keys.`}
                     </SettingsParagraph>
                     {
                         <div className="mb-4">
