@@ -46,6 +46,8 @@ function makeTask(start: jest.Mock<Promise<void>>, overrides: Partial<DownloadQu
     };
 }
 
+const createScheduler = () => new DownloadScheduler(jest.fn());
+
 const saturateConcurrency = (scheduler: DownloadScheduler, count = MAX_DOWNLOADING_FILES_LOAD) =>
     Array.from({ length: count }, () => {
         const completion = createDeferred<void>();
@@ -61,7 +63,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should respect the maximum number of concurrent downloads', async () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
         const pendingStart = jest.fn(async () => Promise.resolve());
         scheduler.scheduleDownload(makeTask(pendingStart));
@@ -78,7 +80,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should not start a task that was cancelled while pending', async () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
         const secondStart = jest.fn(async () => Promise.resolve());
 
@@ -97,7 +99,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should clear pending and active downloads', async () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
         const pendingStart = jest.fn(async () => Promise.resolve());
 
@@ -111,7 +113,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should generate unique task identifiers', () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
 
         const ids = new Set([scheduler.generateTaskId(), scheduler.generateTaskId(), scheduler.generateTaskId()]);
 
@@ -120,7 +122,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should throttle downloads when starting another exceeds block load budget', async () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
 
         const firstCompletion = createDeferred<void>();
         const firstStart = jest.fn(async () => firstCompletion.promise);
@@ -143,7 +145,7 @@ describe('DownloadScheduler', () => {
     });
 
     it('should start additional downloads even when a prior task lacks a size estimate', async () => {
-        const scheduler = new DownloadScheduler();
+        const scheduler = createScheduler();
 
         const firstCompletion = createDeferred<void>();
         const firstStart = jest.fn(async () => firstCompletion.promise);

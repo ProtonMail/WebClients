@@ -8,6 +8,8 @@ export type ArchiveStreamGeneratorResult = {
 };
 
 export type ArchiveTracker = {
+    readonly lastError?: unknown;
+    recordError(error: unknown): void;
     registerFile(taskId: string): void;
     updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number): void;
     attachController(taskId: string, controller: DownloadController): void;

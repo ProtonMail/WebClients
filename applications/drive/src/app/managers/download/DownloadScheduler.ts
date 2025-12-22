@@ -1,7 +1,6 @@
 import type { DownloadQueueTask } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
-import { handleError } from './utils/handleError';
 
 const ALLOWED_BYTES_PER_FILE = 40 * 1024 * 1024; // 40 MiB
 const ALLOWED_BYTES_TOTAL_LOAD = 60 * 1024 * 1024; // 60 MiB
@@ -24,6 +23,7 @@ export class DownloadScheduler {
     private readonly activeTasksLoad = new Map<string, TaskLoad>();
     private lastProgressUpdate = 0;
     private taskCounter = 0;
+    constructor(private readonly onTaskError: (error: unknown, task: DownloadQueueTask) => void) {}
 
     // Enqueue a task and try to start it immediately if capacity allows.
     scheduleDownload(task: DownloadQueueTask): string {
@@ -112,7 +112,7 @@ export class DownloadScheduler {
         });
 
         task.start()
-            .catch((e) => handleError(e, task.downloadId, [task.node]))
+            .catch((error) => this.onTaskError(error, task))
             .finally(() => {
                 downloadLogDebug('Download Scheduler handle completion', {
                     downloadId: task.downloadId,
