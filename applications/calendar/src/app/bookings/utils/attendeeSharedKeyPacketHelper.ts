@@ -33,7 +33,7 @@ export const getBookingSharedKeyPacket = async ({
         return null;
     }
 
-    const calendarPublicKey = await CryptoProxy.importPublicKey({ armoredKey: bookingDetails.calendarPublicKey });
+    const calendarPublicKey = bookingDetails.calendarPublicKey;
 
     let attendeeCalendarKey;
     if (!isGuest) {

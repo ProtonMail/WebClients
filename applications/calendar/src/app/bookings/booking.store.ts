@@ -1,6 +1,7 @@
 import { isSameDay, startOfDay } from 'date-fns';
 import { create } from 'zustand';
 
+import type { PublicKeyReference } from '@proton/crypto';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import uniqueBy from '@proton/utils/uniqueBy';
 
@@ -35,7 +36,7 @@ export type BookingDetails = {
     calendarId: string;
     bookingUID: string;
     calendarKeySignature: string;
-    calendarPublicKey: string;
+    calendarPublicKey: PublicKeyReference | undefined;
     summary: string;
     description: string;
     location: string;
