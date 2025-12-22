@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,11 +8,12 @@ import type { ModalStateProps } from '@proton/components';
 
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
+import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectSpaceById, selectAssetsBySpaceId } from '../../../redux/selectors';
+import { selectAssetsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
-import type { DriveNode } from '../../../hooks/useDriveSDK';
+import type { ProjectSpace } from '../../../types';
 import { DriveBrowser } from '../../components/Files/DriveBrowser/DriveBrowser';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
@@ -32,6 +33,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const [currentBrowsedFolder, setCurrentBrowsedFolder] = useState<DriveNode | null>(null);
     const [rootFolderId, setRootFolderId] = useState<string | null>(null);
     const [folderPath, setFolderPath] = useState<string[]>([]);
+
+    // Project variables
+    const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
+    const linkedDriveFolder = spaceProject?.linkedDriveFolder;
+    const isLinkedToDrive = linkedDriveFolder !== undefined;
 
     // Initialize root folder ID when Drive is ready
     useEffect(() => {
@@ -76,12 +82,9 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             dispatch(pushSpaceRequest({ id: projectId }));
 
             // Kick off indexing for this folder, associated to the project space
-            void indexFolder(
-                currentBrowsedFolder.nodeUid,
-                currentBrowsedFolder.name,
-                folderPath.join(' / '),
-                { spaceId: projectId }
-            ).catch((error) => {
+            void indexFolder(currentBrowsedFolder.nodeUid, currentBrowsedFolder.name, folderPath.join(' / '), {
+                spaceId: projectId,
+            }).catch((error) => {
                 console.error('Drive folder indexing failed:', error);
                 createNotification({
                     text: c('collider_2025:Error').t`Failed to index Drive folder for search`,
@@ -128,8 +131,9 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             dispatch(addSpace(updatedSpace));
             dispatch(pushSpaceRequest({ id: projectId }));
 
-            if (space.linkedDriveFolder?.folderId) {
-                void removeIndexedFolder(space.linkedDriveFolder.folderId);
+            const folderId = linkedDriveFolder?.folderId;
+            if (folderId) {
+                void removeIndexedFolder(folderId);
             }
 
             // Clean up auto-retrieved attachments from this space
@@ -156,13 +160,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
         }
     }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFolder, spaceAssets]);
 
-    const isLinked = !!space?.linkedDriveFolder;
-
     return (
         <ModalTwo {...modalProps} size="large" className="link-drive-folder-modal">
             <ModalTwoHeader
                 title={
-                    isLinked
+                    isLinkedToDrive
                         ? c('collider_2025:Title').t`Linked Drive Folder`
                         : c('collider_2025:Title').t`Link Drive Folder`
                 }
@@ -173,14 +175,14 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                         <Icon name="brand-proton-drive-filled" className="mr-2" />
                         <span>{c('collider_2025:Info').t`Initializing Drive...`}</span>
                     </div>
-                ) : isLinked ? (
+                ) : isLinkedToDrive ? (
                     <div className="p-4">
                         <div className="mb-4 p-4 bg-weak rounded border border-weak">
                             <div className="flex items-center gap-2 mb-2">
                                 <Icon name="folder" size={5} className="color-primary" />
-                                <span className="text-bold">{space.linkedDriveFolder?.folderName}</span>
+                                <span className="text-bold">{linkedDriveFolder.folderName}</span>
                             </div>
-                            <div className="text-sm color-weak">{space.linkedDriveFolder?.folderPath}</div>
+                            <div className="text-sm color-weak">{linkedDriveFolder.folderPath}</div>
                         </div>
                         <p className="text-sm color-weak mb-4">
                             {c('collider_2025:Info')
@@ -196,7 +198,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             <div className="p-4 bg-warning-weak rounded border border-warning">
                                 <div className="flex items-center gap-2 mb-2">
                                     <Icon name="exclamation-triangle-filled" className="color-warning" />
-                                    <span className="text-bold">{c('collider_2025:Warning').t`Cannot Link Drive Folder`}</span>
+                                    <span className="text-bold">{c('collider_2025:Warning')
+                                        .t`Cannot Link Drive Folder`}</span>
                                 </div>
                                 <p className="text-sm mb-0">
                                     {c('collider_2025:Info')
@@ -234,7 +237,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                     <div className="mt-4 p-3 bg-weak rounded text-sm">
                                         <div className="flex items-center gap-2 color-weak">
                                             <Icon name="info-circle" size={4} />
-                                            <span>{c('collider_2025:Info').t`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
+                                            <span>{c('collider_2025:Info')
+                                                .t`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
                                         </div>
                                     </div>
                                 )}
@@ -243,7 +247,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                     </div>
                 )}
             </ModalTwoContent>
-            {!isLinked && !hasExistingFiles && (
+            {!isLinkedToDrive && !hasExistingFiles && (
                 <ModalTwoFooter>
                     <Button onClick={modalProps.onClose} color="weak">
                         {c('collider_2025:Button').t`Cancel`}

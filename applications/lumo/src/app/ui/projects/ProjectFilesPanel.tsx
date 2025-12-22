@@ -21,13 +21,10 @@ import { MAX_ASSET_SIZE } from '../../constants';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
-import { selectAssetsBySpaceId, selectSpaceById } from '../../redux/selectors';
 import { locallyDeleteAssetFromLocalRequest } from '../../redux/sagas/assets';
+import { selectAssetsBySpaceId, selectSpaceById } from '../../redux/selectors';
 import { handleSpaceAssetFileAsync } from '../../services/files';
-import type { Attachment } from '../../types';
-
-// Type alias for backwards compatibility
-type Asset = Attachment;
+import type { Attachment, ProjectSpace } from '../../types';
 import { DriveBrowser, type DriveBrowserHandle } from '../components/Files/DriveBrowser/DriveBrowser';
 import { type UploadProgress, UploadProgressOverlay } from '../components/Files/DriveBrowser/UploadProgressOverlay';
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
@@ -35,6 +32,9 @@ import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFi
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 
 import './ProjectFilesPanel.scss';
+
+// Type alias for backwards compatibility
+type Asset = Attachment;
 
 interface ProjectFilesPanelProps {
     projectId: string;
@@ -59,7 +59,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     // Get space and check if Drive folder is linked
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
-    const linkedDriveFolder = space?.linkedDriveFolder;
+    const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
+    const linkedDriveFolder = spaceProject?.linkedDriveFolder;
 
     // Get space assets (persistent files) - only if no Drive folder is linked
     // Filter out auto-retrieved Drive files - those are indexed, not uploaded
@@ -422,7 +423,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                     <KnowledgeFileItem
                                         key={file.id}
                                         file={file}
-                                        onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
+                                        onView={(_file, fullAttachment) => handleViewFile(fullAttachment)}
                                         onRemove={handleRemoveFile}
                                         isActive={true}
                                         showToggle={false}
@@ -505,11 +506,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
                 {/* Remove All Files Confirmation Modal */}
                 {removeAllModal && (
-                    <ModalTwo
-                        onClose={() => setRemoveAllModalOpen(false)}
-                        size="small"
-                        open={removeAllModal}
-                    >
+                    <ModalTwo onClose={() => setRemoveAllModalOpen(false)} size="small" open={removeAllModal}>
                         <ModalTwoHeader title={c('collider_2025:Title').t`Remove all files?`} />
                         <ModalTwoContent>
                             <p className="m-0">
