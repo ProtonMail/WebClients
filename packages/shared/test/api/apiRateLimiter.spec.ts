@@ -28,6 +28,7 @@ describe('ApiRateLimiter', () => {
         it('should throw an error and not record a call if rate limit is exceeded', () => {
             const rateLimiter = new ApiRateLimiter({
                 maxRequests: 1,
+                tracingEnabled: false,
                 windowMs: 10 * 1000,
             });
             rateLimiter.enable();
