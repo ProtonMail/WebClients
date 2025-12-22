@@ -14,6 +14,7 @@ interface ProjectFilesModalProps extends ModalStateProps {
     onBack: () => void;
 }
 
+// FIXME: unused, TBR
 export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...modalProps }: ProjectFilesModalProps) => {
     const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -61,14 +62,10 @@ export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...mod
                                 {c('collider_2025:Title').t`Add Project Files`}
                             </h3>
                             <p className="project-files-empty-description">
-                                {c('collider_2025:Info').t`Start by attaching files to your project. They will be used in all chats in this project.`}
+                                {c('collider_2025:Info')
+                                    .t`Start by attaching files to your project. They will be used in all chats in this project.`}
                             </p>
-                            <Button
-                                color="norm"
-                                shape="outline"
-                                onClick={handleAttachClick}
-                                className="mt-4"
-                            >
+                            <Button color="norm" shape="outline" onClick={handleAttachClick} className="mt-4">
                                 <Icon name="paper-clip" className="mr-2" />
                                 {c('collider_2025:Button').t`Attach`}
                             </Button>
@@ -95,18 +92,13 @@ export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...mod
                                     </div>
                                 ))}
                             </div>
-                            <Button
-                                color="weak"
-                                shape="ghost"
-                                onClick={handleAttachClick}
-                                className="w-full mt-2"
-                            >
+                            <Button color="weak" shape="ghost" onClick={handleAttachClick} className="w-full mt-2">
                                 <Icon name="paper-clip" className="mr-2" />
                                 {c('collider_2025:Button').t`Add more files`}
                             </Button>
                         </>
                     )}
-                    
+
                     <input
                         ref={fileInputRef}
                         type="file"
@@ -128,4 +120,3 @@ export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...mod
         </ModalTwo>
     );
 };
-
