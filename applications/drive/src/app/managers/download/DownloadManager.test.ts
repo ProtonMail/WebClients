@@ -1,6 +1,7 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { NodeType } from '@proton/drive/index';
 
+import { TransferCancel } from '../../components/TransferManager/transfer';
 import {
     createDeferred,
     createEmptyAsyncGenerator,
@@ -34,8 +35,15 @@ const archiveStreamGeneratorTracker = trackInstances((...args: unknown[]) => ({
     waitForFirstItem: jest.fn().mockResolvedValue(undefined),
 }));
 
+const createClosedReadableStream = () =>
+    new ReadableStream<Uint8Array<ArrayBuffer>>({
+        start(controller) {
+            controller.close();
+        },
+    });
+
 const archiveGeneratorTracker = trackInstances(() => ({
-    stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
+    stream: createClosedReadableStream(),
     writeLinks: jest.fn().mockResolvedValue(undefined),
     cancel: jest.fn(),
 }));
@@ -221,6 +229,7 @@ beforeEach(() => {
     storeMockState.queue = new Map();
 
     loadCreateReadableStreamWrapperMock.mockReset();
+    loadCreateReadableStreamWrapperMock.mockImplementation(async (stream) => stream);
     fileSaverSaveAsFileMock.mockReset();
     traverseNodeStructureMock.mockReset();
     hydrateAndCheckNodesMock.mockReset();
@@ -349,6 +358,56 @@ describe('DownloadManager', () => {
         expect(activeDownloads.has('download-1')).toBe(false);
     });
 
+    it('should mark downloads as cancelled when a TransferCancel error occurs', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('download-cancel');
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-cancel',
+            name: 'file-cancel.txt',
+        });
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+                onProgress(32);
+                return controller;
+            }),
+        };
+
+        sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
+
+        const readableStream = {} as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        await manager.download([node.uid]);
+
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        controllerCompletion.reject(new TransferCancel({ message: 'cancelled' }));
+        await flushAsync();
+        await completionPromise;
+
+        expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
+            'download-cancel',
+            expect.objectContaining({ status: DownloadStatus.Cancelled, error: undefined }),
+        ]);
+    });
+
     it('should mark a single file download as failed when the SDK throws', async () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();
@@ -428,7 +487,7 @@ describe('DownloadManager', () => {
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
         archiveGeneratorTracker.setFactory(() => ({
-            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
+            stream: createClosedReadableStream(),
             writeLinks: jest.fn().mockResolvedValue(undefined),
             cancel: jest.fn(),
         }));
@@ -480,7 +539,7 @@ describe('DownloadManager', () => {
 
         const writeLinksDeferred = createDeferred<void>();
         archiveGeneratorTracker.setFactory(() => ({
-            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
+            stream: createClosedReadableStream(),
             writeLinks: jest.fn().mockReturnValue(writeLinksDeferred.promise),
             cancel: jest.fn(),
         }));
@@ -504,30 +563,36 @@ describe('DownloadManager', () => {
         await flushAsync();
 
         const archiveInstance = getArchiveStreamGeneratorInstance();
-        expect(archiveInstance.constructorArgs[0]).toBe(iteratorMock.mock.results[0].value);
-        expect(archiveInstance.constructorArgs[2]).toBe(getSchedulerInstance());
-        expect(archiveInstance.constructorArgs[4]).toBe(parentPathByUid);
+        const constructorParams = archiveInstance.constructorArgs[0] as {
+            entries: AsyncIterable<NodeEntity>;
+            onProgress: (downloadedBytes: number) => void;
+            scheduler: unknown;
+            parentPathByUid: Map<string, string[]>;
+        };
+        expect(constructorParams.entries).toBe(iteratorMock.mock.results[0].value);
+        expect(constructorParams.scheduler).toBe(getSchedulerInstance());
+        expect(constructorParams.parentPathByUid).toBe(parentPathByUid);
 
-        const onProgress = archiveInstance.constructorArgs[1] as (downloadedBytes: number) => void;
+        const { onProgress } = constructorParams;
         onProgress(512);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('archive-id', { downloadedBytes: 512 });
 
         const archiveGeneratorInstance = getArchiveGeneratorInstance();
         expect(archiveGeneratorInstance.writeLinks).toHaveBeenCalledWith(archiveInstance.generator);
 
-        const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
+        const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<
+            string,
+            { completionPromise?: Promise<void> }
+        >;
         expect(activeDownloads.has('archive-id')).toBe(true);
+        const activeDownload = activeDownloads.get('archive-id');
 
         writeLinksDeferred.resolve();
         saveDeferred.resolve();
         await flushAsync(2);
 
-        await waitForCondition(() =>
-            storeMockState.updateDownloadItem.mock.calls.some(
-                ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
-                    id === 'archive-id' && update.status === DownloadStatus.Finished
-            )
-        );
+        await activeDownload?.completionPromise;
+
         expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
             'archive-id',
             expect.objectContaining({ status: DownloadStatus.Finished }),
@@ -571,7 +636,7 @@ describe('DownloadManager', () => {
         }));
 
         archiveGeneratorTracker.setFactory(() => ({
-            stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
+            stream: createClosedReadableStream(),
             writeLinks: jest.fn().mockResolvedValue(undefined),
             cancel: jest.fn(),
         }));

@@ -2,6 +2,13 @@ import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
 import type { Transfer, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
 import { TransferState } from '../components/TransferManager/transfer';
 
+export class TransferCancel extends Error {
+    constructor(options: { id: string } | { message: string }) {
+        super('id' in options ? `Transfer ${options.id} canceled` : options.message);
+        this.name = 'TransferCancel';
+    }
+}
+
 export const isTransferFinished = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled, TransferState.Skipped, TransferState.Done].includes(state);
 
@@ -60,7 +67,16 @@ export const isTransferOngoing = ({ state }: { state: TransferState }) => {
     ].includes(state);
 };
 
-export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
+const hasErrorName = (error: unknown): error is { name: unknown } =>
+    typeof error === 'object' && error !== null && 'name' in error;
+
+export const isTransferCancelError = (error: unknown): error is Error => {
+    if (!hasErrorName(error) || typeof error.name !== 'string') {
+        return false;
+    }
+
+    return error.name === 'TransferCancel' || error.name === 'AbortError';
+};
 export const isPhotosDisabledUploadError = (error: Error) => error.name === 'PhotosUploadDisabled';
 export const isTransferRetry = (error: Error) => error.name === 'TransferRetry';
 export const isTransferSkipError = (error: Error) => error.name === 'TransferSkipped';
