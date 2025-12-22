@@ -68,6 +68,7 @@ import {
     getLoginsAndNotes,
     getPassAdminPanel,
     getPassAppFeature,
+    getPassCli,
     getPassUsers,
     getPasswordManager,
     getProtonPassFeature,
@@ -387,6 +388,7 @@ export const getPassBusinessSignupPlan = (plan?: Plan): ShortPlan => {
             getRequire2FA(true),
             getActivityLog(),
             getSentinel(true),
+            getPassCli(),
         ],
     };
 };

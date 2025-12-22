@@ -360,6 +360,20 @@ export const getPassMonitorText = () => {
     return c('new_plans: feature').t`${DARK_WEB_MONITORING_NAME} and ${PROTON_SENTINEL_NAME}`;
 };
 
+export const getPassCliText = () => {
+    return c('Label').t`Command line interface (CLI)`;
+};
+
+export const getPassCli = (): PlanCardFeatureDefinition => {
+    return {
+        text: getPassCliText(),
+        icon: 'window-terminal',
+        included: true,
+        tooltip: c('Label')
+            .t`Access ${PASS_APP_NAME} securely from the terminal, ideal for scripting, automation, and development workflows.`,
+    };
+};
+
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 export const PAID_VAULTS = 10;
