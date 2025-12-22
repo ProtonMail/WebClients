@@ -11,7 +11,8 @@ interface Client {
         | 'brand-windows'
         | 'brand-mac'
         | 'brand-linux'
-        | 'brand-safari';
+        | 'brand-safari'
+        | 'window-terminal';
 }
 
 export enum Clients {
@@ -25,6 +26,7 @@ export enum Clients {
     Firefox,
     Edge,
     Safari,
+    CLI,
 }
 
 export const clients: { [key in Clients]: Client } = {
@@ -77,5 +79,10 @@ export const clients: { [key in Clients]: Client } = {
         title: 'Safari',
         link: 'https://apps.apple.com/app/id6502835663',
         icon: 'brand-safari',
+    },
+    [Clients.CLI]: {
+        title: 'Command line interface',
+        link: 'https://protonpass.github.io/pass-cli/',
+        icon: 'window-terminal',
     },
 } as const;
