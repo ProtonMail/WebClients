@@ -358,16 +358,17 @@
 		margin-block-start: 0.5rem;
 	}
 
-	/* Set consistent paragraph line height */
-	p {
-		line-height: 1.6;
-		margin: 0;
-		padding: 0;
+	// Note: these are older styles, either transfer markdown styles to LumoMarkdown.scss or delete
+	// /* Set consistent paragraph line height */
+	// p {
+	// 	line-height: 1.6;
+	// 	margin: 0;
+	// 	padding: 0;
 
-		+ p {
-			margin-block-start: 0.5rem;
-		}
-	}
+	// 	+ p {
+	// 		margin-block-start: 0.5rem;
+	// 	}
+	// }
 
 	ul,
 	ol {
