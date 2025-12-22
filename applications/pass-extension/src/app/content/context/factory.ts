@@ -1,29 +1,37 @@
-import { createAutofillService } from 'proton-pass-extension/app/content/services/form/autofill';
-import { createAutosaveService } from 'proton-pass-extension/app/content/services/form/autosave';
-import { createDetectorService } from 'proton-pass-extension/app/content/services/form/detector';
-import { createFormManager } from 'proton-pass-extension/app/content/services/form/manager';
-import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
-import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
-import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
+import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
+import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
+import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
+import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
+import { createDetectorService } from 'proton-pass-extension/app/content/services/detector/detector.service';
+import { IGNORED_TAGS } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { createFormManager } from 'proton-pass-extension/app/content/services/form/form.manager';
+import { createInlineRelay } from 'proton-pass-extension/app/content/services/inline/inline.relay';
+import { createInlineService } from 'proton-pass-extension/app/content/services/inline/inline.service';
+import { createPasskeyService } from 'proton-pass-extension/app/content/services/webauthn/passkey.service';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { computeFeatures } from 'proton-pass-extension/lib/utils/features';
 
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { AppStatus } from '@proton/pass/types/worker/state';
+import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
-import { hasPauseCriteria } from './utils';
 
-export const createContentScriptContext = (options: {
+export type ContentScriptContextFactoryOptions = {
     scriptId: string;
     mainFrame: boolean;
     elements: PassElementsConfig;
+    controller: ClientController;
     destroy: (options: { reason: string }) => void;
-}): ContentScriptContext => {
+};
+
+export const createContentScriptContext = (options: ContentScriptContextFactoryOptions): ContentScriptContext => {
     const state: CSContextState = {
         authorized: false,
         booted: false,
@@ -46,54 +54,61 @@ export const createContentScriptContext = (options: {
         elements: options.elements,
         mainFrame: options.mainFrame,
         scriptId: options.scriptId,
+        channel: options.controller.channel,
+        observer: options.controller.observer,
 
         service: {
-            autofill: createAutofillService(),
-            autosave: createAutosaveService(),
-            detector: createDetectorService(),
-            formManager: createFormManager({
-                onDetection: async (forms) => {
-                    /* attach or detach dropdown based on the detection results */
-                    const didDetect = forms.length > 0;
-                    if (didDetect) context.service.iframe.attachDropdown(document.body);
-                    else context.service.iframe.dropdown?.destroy();
+            autofill: createAutofillService(options),
 
-                    /* Always prompt for OTP autofill before autosave. */
-                    await context.service.autofill.sync().catch(noop);
-                    const prompted = await context.service.autofill.promptOTP();
-                    await (!prompted && context.service.autosave.reconciliate());
+            autosave: options.mainFrame ? createAutosaveService() : createAutosaveRelay(),
+
+            detector: createDetectorService({
+                ...(options.mainFrame ? {} : { fieldTypes: [FieldType.CREDIT_CARD] }),
+                root: document,
+                onBottleneck: ({ detectionTime }) => {
+                    logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
+                    context.destroy({ reason: 'bottleneck' });
                 },
             }),
-            iframe: createIFrameService(options.elements),
-            webauthn: createWebAuthNService(),
+
+            formManager: createFormManager({
+                channel: options.controller.channel,
+                onDetection: async (forms) => {
+                    /* attach or detach dropdown based on the detection results */
+                    if (forms.length === 0) context.service.inline.dropdown.destroy();
+                    else {
+                        context.service.inline.dropdown.attach();
+                        await context.service.autofill.sync().catch(noop);
+                    }
+
+                    /** Always prompt for OTP autofill before autosave to support
+                     * OTP -> autosave sequence on SPA websites */
+                    const promptedOTP = await context.service.autofill.evaluateOTP(forms);
+                    await (!promptedOTP && context.service.autosave.reconciliate());
+                },
+            }),
+
+            inline: options.mainFrame ? createInlineService(options) : createInlineRelay(options),
+            passkey: options.mainFrame ? createPasskeyService() : undefined,
         },
 
         destroy: options.destroy,
         getExtensionContext: () => ExtensionContext.read(),
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
-            const disallowed = settings.disallowedDomains ?? {};
-            const url = context.getExtensionContext()?.url;
-
-            const { autofill, autosuggest, autosave, passkeys } = settings;
-            const hasPause = hasPauseCriteria({ disallowedDomains: disallowed, url });
-
-            return {
-                /** autofill can only be active if user has `autofill.login` or `autofill.identity` */
-                Autofill: (autofill.login || autofill.identity) && !hasPause.Autofill,
-                Autofill2FA: autofill.twofa && !hasPause.Autofill2FA,
-                AutosuggestPassword: autosuggest.password && !hasPause.Autosuggest,
-                AutosuggestAlias: autosuggest.email && !hasPause.Autosuggest,
-                Autosave: autosave.prompt && !hasPause.Autosave,
-                Passkeys: (passkeys.create || passkeys.get) && !hasPause.Passkey,
-            };
+            const ctx = context.getExtensionContext();
+            const frameUrl = ctx?.url ?? null;
+            const tabUrl = ctx?.tabUrl ?? null;
+            return computeFeatures(settings, frameUrl, tabUrl);
         },
         getSettings: () => settings,
         getState: () => state,
+
         setFeatureFlags: (update) => {
             (Object.keys(featureFlags) as PassFeature[]).forEach((key) => delete featureFlags[key]);
             return Object.assign(featureFlags, update);
         },
+
         setSettings: (update) => Object.assign(settings, update),
         setState: (update) => Object.assign(state, update),
     });

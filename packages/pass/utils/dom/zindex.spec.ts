@@ -1,4 +1,4 @@
-import { getMaxZIndex, isStackingContext, resolveClosestStackZIndex } from './zindex';
+import { analyzeElementStack, getOverlayZIndex } from './zindex';
 
 describe('z-index utilities', () => {
     const root = document.createElement('body');
@@ -7,170 +7,190 @@ describe('z-index utilities', () => {
         test('should return true when reaching root node', () => {
             const el = document.createElement('div');
             el.style.setProperty('position', 'absolute');
-            expect(isStackingContext(el)).toEqual([true, 0]);
+            expect(analyzeElementStack(el)).toEqual([true, 0]);
         });
 
         test('should return false if z-index value in non-stacking context', () => {
             const parent = document.createElement('div');
-            const el = document.createElement('div');
-            parent.appendChild(el);
+            const child = document.createElement('div');
+            parent.appendChild(child);
 
-            el.style.setProperty('position', 'static');
-            el.style.setProperty('z-index', '10');
-            expect(isStackingContext(el)).toEqual([false, null]);
+            child.style.setProperty('position', 'static');
+            child.style.setProperty('z-index', '10');
+
+            expect(analyzeElementStack(child)).toEqual([false, 10]);
         });
 
         test('should return true if position is not static', () => {
-            const el = document.createElement('div');
+            const parent = document.createElement('div');
+            let child = document.createElement('div');
 
-            el.style.setProperty('position', 'relative');
-            el.style.setProperty('z-index', '10');
-            expect(isStackingContext(el)).toEqual([true, 10]);
+            parent.appendChild(child);
+            child.style.setProperty('position', 'relative');
+            child.style.setProperty('z-index', '10');
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
-            const el2 = document.createElement('div');
+            child = document.createElement('div');
+            parent.appendChild(child);
+            child.style.setProperty('position', 'absolute');
+            child.style.setProperty('z-index', '11');
+            expect(analyzeElementStack(child)).toEqual([true, 11]);
 
-            el2.style.setProperty('position', 'absolute');
-            el2.style.setProperty('z-index', '100');
-            expect(isStackingContext(el2)).toEqual([true, 100]);
+            child = document.createElement('div');
+            parent.appendChild(child);
+            child.style.setProperty('position', 'fixed');
+            child.style.setProperty('z-index', '12');
+            expect(analyzeElementStack(child)).toEqual([true, 12]);
 
-            const el3 = document.createElement('div');
-
-            el3.style.setProperty('position', 'fixed');
-            el3.style.setProperty('z-index', '1000');
-            expect(isStackingContext(el3)).toEqual([true, 1_000]);
-
-            const el4 = document.createElement('div');
-
-            el4.style.setProperty('position', 'sticky');
-            el4.style.setProperty('z-index', '10000');
-            expect(isStackingContext(el4)).toEqual([true, 10_000]);
+            child = document.createElement('div');
+            parent.appendChild(child);
+            child.style.setProperty('position', 'sticky');
+            child.style.setProperty('z-index', '13');
+            expect(analyzeElementStack(child)).toEqual([true, 13]);
         });
 
         test('should return true for container-type stacking contexts', () => {
-            const el = document.createElement('div');
+            const parent = document.createElement('div');
+            let child = document.createElement('div');
 
-            el.style.setProperty('containerType', 'size');
-            el.style.setProperty('z-index', '10');
-            expect(isStackingContext(el)).toEqual([true, 10]);
+            parent.appendChild(child);
+            child.style.setProperty('container-type', 'size');
+            child.style.setProperty('z-index', '10');
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
-            const el2 = document.createElement('div');
-
-            el2.style.setProperty('containerType', 'inline-size');
-            el2.style.setProperty('z-index', '100');
-            expect(isStackingContext(el2)).toEqual([true, 100]);
+            child = document.createElement('div');
+            parent.appendChild(child);
+            child.style.setProperty('container-type', 'inline-size');
+            child.style.setProperty('z-index', '100');
+            expect(analyzeElementStack(child)).toEqual([true, 100]);
         });
 
         test('should return true is stack created by parent', () => {
-            const el = document.createElement('div');
-            const parent = document.createElement('div');
-            parent.appendChild(el);
+            let parent = document.createElement('div');
+            let child = document.createElement('div');
 
-            el.style.setProperty('z-index', '10');
+            parent.appendChild(child);
             parent.style.display = 'flex';
-            expect(isStackingContext(el)).toEqual([true, 10]);
+            child.style.setProperty('z-index', '10');
+            expect(analyzeElementStack(child)).toEqual([true, 10]);
 
-            const el2 = document.createElement('div');
-
-            el2.style.setProperty('z-index', '100');
+            parent = document.createElement('div');
+            child = document.createElement('div');
+            parent.appendChild(child);
             parent.style.display = 'grid';
-            expect(isStackingContext(el2)).toEqual([true, 100]);
+            child.style.setProperty('z-index', '100');
+
+            expect(analyzeElementStack(child)).toEqual([true, 100]);
         });
     });
 
-    describe('`resolveClosestStackZIndex`', () => {
-        test('should return 0 if empty document', () => {
-            expect(resolveClosestStackZIndex(root)).toBe(0);
-        });
-
-        test('should return 0 if no stacking contexts', () => {
+    describe('overlay z-index resolution', () => {
+        test('should accumulate z-index when no stacking contexts', () => {
             root.innerHTML = `
-                <div style="position: static; z-index: 101;">
-                    <div style="position: static; z-index: 100;">
-                        <div id="target"></div>
-                    </div>
-                </div>
-            `;
-
-            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(0);
-        });
-
-        test('should handle stacking contexts created by `flex` parent', () => {
-            root.innerHTML = `
-                <div style="position: static; z-index: 101; display: flex;">
-                    <div style="position: static; z-index: 100;">
-                        <div id="target"></div>
-                    </div>
-                </div>
-            `;
-
-            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
-        });
-
-        test('should handle stacking contexts created by `grid` parent', () => {
-            root.innerHTML = `
-                <div style="position: static; z-index: 101; display: grid;">
-                    <div style="position: static; z-index: 100;">
-                        <div id="target"></div>
-                    </div>
-                </div>
-            `;
-
-            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
-        });
-
-        test('should handle nested stacking contexts created by `flex` parent', () => {
-            root.innerHTML = `
-                <div style="display: flex">
-                    <div style="position: static; z-index: 101; display: flex;">
-                        <div style="position: static; z-index: 100;">
-                            <div id="target"></div>
+                <div id="container">
+                    <div style="z-index: 10">
+                        <div style="z-index: 200">
+                            <div id="target" style="z-index: 100" />
                         </div>
                     </div>
                 </div>
             `;
-
-            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(200);
         });
 
-        test('should resolve inner-most stacking context', () => {
+        test('should reset at stacking context boundaries', () => {
             root.innerHTML = `
-                <div style="position: absolute; z-index: 10">
-                    <div style="position: relative; z-index: 50">
-                        <div style="display: flex;">
-                            <div style="position: static; z-index: 101; display: flex;">
-                                <div style="position: static;">
-                                    <div id="target"></div>
-                                </div>
+                <div id="container">
+                    <div style="position: relative; z-index: 5">        <!-- Relative stacking context -->
+                        <div style="z-index: 100">                      <!-- Non-stacking context -->
+                            <div id="target" style="z-index: 10" />     <!-- Non-stacking context -->
+                        </div>
+                    </div>
+                </div>
+            `;
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(5);
+        });
+
+        test('should handle flex/grid children with z-index', () => {
+            root.innerHTML = `
+                <div id="container">
+                    <div style="display: flex; z-index: 10">            <!-- Non-stacking context -->
+                        <div style="z-index: 200">                      <!-- Flex child stacking context -->
+                             <div id="target" style="z-index: 300" />   <!-- Non-stacking context -->
+                        </div>
+                    </div>
+                </div>
+            `;
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(200);
+        });
+
+        test('should handle multiple nested stacking contexts', () => {
+            root.innerHTML = `
+                <div id="container">
+                    <div style="position: relative; z-index: 10">        <!-- Relative stacking context -->
+                        <div style="position: absolute; z-index: 50">    <!-- Absolute stacking context -->
+                            <div id="target" style="z-index: 25" />      <!-- Non-stacking context -->
+                        </div>
+                    </div>
+                </div>
+            `;
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(10);
+        });
+
+        test('should return max across multiple elements', () => {
+            root.innerHTML = `
+                <div id="container">
+                    <div id="target1" style="z-index: 10"></div>        <!-- Non-stacking context -->
+                    <div style="position: relative; z-index: 300">      <!-- Relative stacking context -->
+                        <div id="target2" style="z-index: 500" />       <!-- Non-stacking context -->
+                    </div>
+                    <div style="display: flex">                         <!-- Non-stacking context -->
+                        <div id="target3" style="z-index: 1000" />      <!-- Flex child stacking context -->
+                    </div>
+                </div>
+            `;
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const targets = [
+                root.querySelector<HTMLElement>('#target1')!,
+                root.querySelector<HTMLElement>('#target2')!,
+                root.querySelector<HTMLElement>('#target3')!,
+            ];
+
+            expect(getOverlayZIndex(targets, container)).toBe(300);
+        });
+
+        test('should handle mixed stacking and non-stacking contexts', () => {
+            root.innerHTML = `
+                <div id="container">
+                    <div style="z-index: 20">                               <!-- Non-stacking context -->
+                        <div style="position: relative; z-index: 50">       <!-- Relative stacking context -->
+                            <div style="z-index: 999">                      <!-- Non-stacking context -->
+                                <div id="target" style="z-index: 888" />    <!-- Non-stacking context -->
                             </div>
                         </div>
-                        <div style="position: relative; z-index: 5">
-                        </div>
                     </div>
                 </div>
             `;
-
-            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(101);
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(50);
         });
-    });
 
-    describe('max z-index', () => {
-        test('should resolve maximum value found for multiple anchors', () => {
-            root.innerHTML = `
-                <div style="display: flex">
-                    <div style="position: static; z-index: 101; display: flex;">
-                        <div style="position: static; z-index: 100;">
-                            <div id="target_1">
-                                <div style="position: relative; z-index: 1000">
-                                    <div id="target_2">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+        test('should return 0 for empty array or no z-index', () => {
+            expect(getOverlayZIndex([], document.createElement('div'))).toBe(0);
 
-            expect(getMaxZIndex([root.querySelector('#target_1')!, root.querySelector('#target_2')!])).toBe(1_000);
+            root.innerHTML = `<div id="container"><div id="target"></div></div>`;
+            const container = root.querySelector<HTMLElement>('#container')!;
+            const target = root.querySelector<HTMLElement>('#target')!;
+            expect(getOverlayZIndex([target], container)).toBe(0);
         });
     });
 });

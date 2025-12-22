@@ -10,7 +10,7 @@ import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { default as Tabs } from '@proton/components/components/tabs/Tabs';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -22,9 +22,9 @@ import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { RequestForkData } from '@proton/pass/lib/auth/fork';
 import { clientSessionLocked } from '@proton/pass/lib/client';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
-import type { Unpack } from '@proton/pass/types';
+import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Aliases } from './Views/Aliases';

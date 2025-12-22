@@ -9,7 +9,7 @@ import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client
 import { isActionFor, isActionFrom } from '@proton/pass/store/actions/enhancers/endpoint';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
-import type { ClientEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 import { not } from '@proton/pass/utils/fp/predicates';
 
 import { relayMiddleware } from './relay.middleware';

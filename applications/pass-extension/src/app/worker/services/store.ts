@@ -5,7 +5,7 @@ import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/m
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
-import { selectUser } from '@proton/pass/store/selectors';
+import { selectUser } from '@proton/pass/store/selectors/user';
 
 export const createStoreService = () => {
     runSagas();

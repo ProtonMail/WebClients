@@ -12,7 +12,7 @@ import {
     selectPlanDisplayName,
     selectTrialDaysRemaining,
     selectUser,
-} from '@proton/pass/store/selectors';
+} from '@proton/pass/store/selectors/user';
 
 export const SettingsHeader = memo(() => {
     const user = useSelector(selectUser);

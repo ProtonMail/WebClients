@@ -1,7 +1,7 @@
 {
     "name": "Proton Pass: Free Password Manager",
     "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
-    "version": "1.33.1",
+    "version": "1.34.0",
     "manifest_version": 3,
     "minimum_chrome_version": "102",
     "background": {
@@ -14,7 +14,7 @@
         {
             "matches": ["https://*/*", "http://*/*"],
             "js": ["orchestrator.js"],
-            "all_frames": false,
+            "all_frames": true,
             "run_at": "document_end"
         },
         {
@@ -41,7 +41,16 @@
             "https://*.protontech.ch/*"
         ]
     },
-    "permissions": ["activeTab", "alarms", "scripting", "storage", "unlimitedStorage", "webRequest", "offscreen"],
+    "permissions": [
+        "activeTab",
+        "alarms",
+        "offscreen",
+        "scripting",
+        "storage",
+        "unlimitedStorage",
+        "webNavigation",
+        "webRequest"
+    ],
     "optional_permissions": ["privacy", "webRequestAuthProvider", "clipboardRead", "clipboardWrite"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "options_ui": {

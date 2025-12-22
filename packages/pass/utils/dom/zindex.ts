@@ -1,18 +1,17 @@
 import type { MaybeNull } from '@proton/pass/types';
 
-type StackResult =
-    | [true, number] /* Represents a stacking context with a z-index value */
-    | [false, null] /* Indicates that there is no stacking context or no z-index value */;
+export const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number => {
+    const { zIndex } = styles ?? getComputedStyle(el);
+    const parsedZIndex = parseInt(zIndex, 10);
+    return isNaN(parsedZIndex) ? 0 : parsedZIndex;
+};
 
 /* This function provides a minimal version of stacking context detection.
  * check MDN documentation for missing cases in case they become relevant :
  * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context */
-export const isStackingContext = (el: HTMLElement): StackResult => {
+export const isStackingContext = (el: HTMLElement, styles?: CSSStyleDeclaration): boolean => {
     const parent = el.parentElement;
-
-    const { zIndex, position, containerType } = getComputedStyle(el);
-    const parsedZIndex = parseInt(zIndex, 10);
-    const value = isNaN(parsedZIndex) ? 0 : parsedZIndex;
+    const { zIndex, position, containerType } = styles ?? getComputedStyle(el);
     const hasZIndex = zIndex !== '' && zIndex !== 'auto';
 
     if (
@@ -29,45 +28,56 @@ export const isStackingContext = (el: HTMLElement): StackResult => {
         containerType === 'size' ||
         containerType === 'inline-size'
     ) {
-        return [true, value];
+        return true;
     }
 
     /* Element that is a child of a flex/grid container,
      * with z-index value other than auto */
     const { display } = getComputedStyle(parent);
-    if (hasZIndex && (display === 'flex' || display === 'grid')) return [true, value];
+    if (hasZIndex && (display === 'flex' || display === 'grid')) return true;
 
-    return [false, null];
+    return false;
 };
 
-/* Recursively determines the maximum z-index value required for overlaying
- * a direct root child element & over the specified element. During traversal,
- * z-index evaluation occurs only if the current element is a valid stacking
- * context */
-export const resolveClosestStackZIndex = (el: HTMLElement, cache?: WeakMap<HTMLElement, MaybeNull<number>>): number => {
-    const parent = el.parentElement;
+type StackResult = [stacking: boolean, zIndex: number];
 
-    if (cache?.has(el)) {
-        const seen = cache.get(el)!;
-        if (seen !== null) return seen;
-        if (seen === null && parent) return resolveClosestStackZIndex(parent, cache);
-    }
-
-    const [stack, zIndex] = isStackingContext(el);
-    cache?.set(el, stack ? zIndex : null);
-
-    if (stack) return zIndex;
-    return parent ? resolveClosestStackZIndex(parent, cache) : 0;
+export const analyzeElementStack = (el: HTMLElement): StackResult => {
+    const styles = getComputedStyle(el);
+    return [isStackingContext(el, styles), getZIndex(el, styles)];
 };
 
-/* Gets the maximum z-index value for an HTML element and its descendants */
-export const getMaxZIndex = (anchors: HTMLElement[]) => {
-    let cache: MaybeNull<WeakMap<HTMLElement, MaybeNull<number>>> = anchors.length > 1 ? new WeakMap() : null;
+/** Calculates the minimum z-index needed for an overlay to appear above target elements.
+ * Designed for injecting overlay elements as direct children of the supplied container.
+ * Walks up DOM from each target to container boundary:
+ * - Non-stacking contexts: accumulates z-index values (Math.max)
+ * - Stacking contexts: resets to context's z-index for atomic layering
+ * - Returns maximum across all target elements
+ *
+ * Elements within a stacking context are stacked independently from elements outside
+ * of that stacking context." When we hit a stacking context, we reset because its z-index
+ * determines where the entire context is positioned. */
+export const getOverlayZIndex = (els: HTMLElement[], container: HTMLElement) => {
+    let cache: MaybeNull<WeakMap<HTMLElement, StackResult>> = new WeakMap();
 
-    const zIndexes = anchors.map((el) => resolveClosestStackZIndex(el, cache!));
-    const max = Math.max(0, ...zIndexes);
+    const maxs = els.map((el) => {
+        let maxZIndex = getZIndex(el);
+        let current = el.parentElement;
+
+        while (current && current !== container) {
+            const result = cache?.get(current) ?? analyzeElementStack(current);
+            const [stacking, zIndex] = result;
+
+            if (stacking) maxZIndex = zIndex;
+            else maxZIndex = Math.max(maxZIndex, zIndex);
+
+            cache?.set(current, result);
+            current = current.parentElement;
+        }
+
+        return maxZIndex;
+    });
 
     cache = null;
 
-    return max;
+    return Math.max(0, ...maxs);
 };

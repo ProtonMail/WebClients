@@ -1,13 +1,14 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { Notification } from 'proton-pass-extension/app/content/injections/apps/notification/Notification';
-import { NotificationAction } from 'proton-pass-extension/app/content/types';
+import { Notification } from 'proton-pass-extension/app/content/services/inline/notification/app/Notification';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { selectAllLoginItems } from '@proton/pass/store/selectors';
-import { AppStatus, AutosaveMode } from '@proton/pass/types';
+import { selectAllLoginItems } from '@proton/pass/store/selectors/items';
+import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { MockIFrameApp } from './MockIFrameApp';
 

@@ -14,7 +14,7 @@ import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
-import { SpotlightMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';

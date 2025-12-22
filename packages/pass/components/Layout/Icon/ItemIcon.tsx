@@ -7,7 +7,11 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { IconName, IconSize } from '@proton/icons/types';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import type { ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';
+import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
+import amex from '@proton/styles/assets/img/credit-card-icons/cc-american-express.svg';
+import masterCard from '@proton/styles/assets/img/credit-card-icons/cc-mastercard.svg';
+import visa from '@proton/styles/assets/img/credit-card-icons/cc-visa.svg';
 import clsx from '@proton/utils/clsx';
 
 import { DomainIcon, ImageStatus } from './DomainIcon';
@@ -34,6 +38,7 @@ type BaseItemIconProps = {
     iconClassName?: string;
     loadImage?: boolean;
     normColor?: boolean;
+    customIcon?: ReactNode;
     pill?: boolean;
     size: IconSize;
     url?: MaybeNull<string>;
@@ -47,6 +52,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
     iconClassName,
     loadImage = true,
     normColor = true,
+    customIcon,
     pill,
     size,
     url,
@@ -62,30 +68,46 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
             mode={url && ready ? 'image' : 'icon'}
             size={size}
             pill={pill}
-            style={{ '--anime-delay': '0s' }}
+            style={{
+                '--anime-delay': '0s',
+            }}
         >
             <span className="sr-only">{alt}</span>
 
             {loadImage && (
                 <DomainIcon
                     className={clsx('w-custom h-custom absolute inset-center', iconClassName)}
-                    style={{
-                        '--w-custom': `${getIconSizePx(size)}px`,
-                        '--h-custom': `${getIconSizePx(size)}px`,
-                        '--anime-delay': '0s',
-                    }}
                     onStatusChange={handleStatusChange}
                     status={imageStatus}
                     url={url ?? ''}
+                    style={{
+                        '--w-custom': `${getIconSizePx(size)}px`,
+                        '--h-custom': `${getIconSizePx(size)}px`,
+                    }}
                 />
             )}
 
-            <Icon
-                className={clsx('absolute inset-center', iconClassName, ready && 'anime-fade-out')}
-                color={normColor ? 'var(--interaction-norm)' : ''}
-                name={icon}
-                size={size}
-            />
+            {customIcon ? (
+                <div
+                    className={clsx(
+                        'pass-item-icon--custom flex items-center w-custom h-custom absolute inset-center',
+                        iconClassName
+                    )}
+                    style={{
+                        '--w-custom': `${getIconSizePx(size)}px`,
+                        '--h-custom': `${getIconSizePx(size)}px`,
+                    }}
+                >
+                    {customIcon}
+                </div>
+            ) : (
+                <Icon
+                    className={clsx('absolute inset-center', iconClassName, ready && 'anime-fade-out')}
+                    color={normColor ? 'var(--interaction-norm)' : ''}
+                    name={icon}
+                    size={size}
+                />
+            )}
 
             {renderIndicators?.(size)}
         </IconBox>
@@ -101,10 +123,23 @@ type ItemIconProps = {
     renderIndicators?: (size: IconSize) => ReactNode;
 };
 
+export const getCreditCardIcon = (cardType: CardType): Maybe<ReactNode> => {
+    switch (cardType) {
+        case CardType.AmericanExpress:
+            return <img src={amex} alt={cardType.toString()} />;
+        case CardType.Mastercard:
+            return <img src={masterCard} alt={cardType.toString()} />;
+        case CardType.Visa:
+            return <img src={visa} alt={cardType.toString()} />;
+    }
+};
+
 export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item, pill, size, renderIndicators }) => {
     const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
+
+    const customIcon = data.type === 'creditCard' ? getCreditCardIcon(data.content.cardType) : undefined;
 
     return (
         <ItemIcon
@@ -116,6 +151,7 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
             pill={pill}
             renderIndicators={(size) => renderIndicators?.(size)}
             size={size}
+            customIcon={customIcon}
             url={domainURL}
         />
     );

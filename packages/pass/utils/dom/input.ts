@@ -1,15 +1,16 @@
 import type { RectOffset } from '@proton/pass/types/utils/dom';
 
-import { createStyleCompute, getComputedHeight, pixelParser } from './computed-styles';
+import { createStyleParser, getComputedHeight, pixelParser } from './computed-styles';
 import { allChildrenOverlap } from './overlap';
 
 const containsTextNode = (el: HTMLElement) =>
-    [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim() !== '');
+    [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim() !== '') ||
+    el.querySelector('[role="alert"]') !== null;
 
 /* Constants for fine-tuning the bounding element selection algorithm */
 
 const BOUNDING_ELEMENT_OFFSET: RectOffset = { x: 10, y: 0 };
-const BOUNDING_ELEMENT_MAX_RATIO = 1.2;
+const BOUNDING_ELEMENT_MAX_RATIO = 1.25;
 const INVALID_BOUNDING_TAGS = ['TD', 'TR', 'FORM'];
 
 /** Retrieves the child elements of a given element, excluding any injected
@@ -42,6 +43,84 @@ const isBorderedElement = (el: HTMLElement): boolean => {
     return false;
 };
 
+type Constraints = {
+    input: HTMLInputElement;
+    minHeight: number;
+    maxWidth: number;
+    layoutShift: boolean;
+};
+
+/** Checks if current element has acceptable margins for continued DOM traversal.
+ * Elements with significant margins create positioning complexity that interferes
+ * with accurate UI element placement calculations.  */
+const isSuitableCandidate = (element: HTMLElement, _: Constraints) => {
+    const currentStyles = getComputedStyle(element);
+    const mb = pixelParser(currentStyles.marginBottom);
+    const mt = pixelParser(currentStyles.marginTop);
+
+    if (mb > 1 || mt > 1) return false;
+
+    return true;
+};
+
+/** Determines if we can safely traverse from current element to its parent
+ * during bounding box search. This function acts as a filter in the DOM traversal
+ * process - we're trying to find the optimal container element to use as a bounding
+ * box for positioning injected UI elements relative to input fields. It must :
+ * - Tightly wrap the input without excessive spacing/padding
+ * - Not introduce positioning complexity or layout interference
+ * - Have predictable dimensions for reliable positioning calculations */
+const isSuitableParent = (
+    element: HTMLElement,
+    constraints: Constraints
+): element is HTMLElement & { parentElement: HTMLElement } => {
+    const isInput = element === constraints.input;
+    const parent = element.parentElement;
+
+    /** DOM boundary hit - nowhere left to go,
+     * Cannot traverse further up the DOM tree */
+    if (!parent || parent === document.body) return false;
+
+    /* Exclude unsuitable elements (e.g., table-related, forms) */
+    if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return false;
+
+    /** Parent dimensions don't meet size constraints for viable
+     * bounding box. Parent must be visible and reasonably sized
+     * relative to input for accurate positioning */
+    const { offsetHeight } = parent;
+    const { height, width } = parent.getBoundingClientRect();
+    const { minHeight, maxWidth } = constraints;
+    if (!(offsetHeight && height)) return false;
+    if (height < minHeight || width > maxWidth) return false;
+
+    /** Parent contains text nodes or alert elements that affect layout and
+     * may introduce unpredictable spacing affecting positioning. */
+    if (containsTextNode(parent)) return false;
+
+    const parentStyles = createStyleParser(parent);
+    const pb = parentStyles('padding-bottom', pixelParser);
+    const pt = parentStyles('padding-top', pixelParser);
+
+    /** Handle parent elements with padding (tolerance: one level only)
+     * One level of padding is manageable for positioning, multiple nested
+     * padded containers create cumulative offset complexity. */
+    if (pb > 1 || pt > 1) {
+        if (!constraints.layoutShift) constraints.layoutShift = true;
+        else return false;
+    }
+
+    /** Parent significantly taller than child (only applies to non-input elements)
+     * Large height discrepancy suggests either a CSS layout complexity (flexbox stretch,
+     * grid areas, absolute positioning) and/or a parent container too loosely coupled to
+     * input dimensions. Both scenarios make the parent unsuitable. */
+    if (!isInput) {
+        const parentInnerHeight = getComputedHeight(parentStyles, 'inner');
+        if (parentInnerHeight.value > offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return false;
+    }
+
+    return true;
+};
+
 /** Recursively finds the optimal bounding element for an input element.
  * This function traverses up the DOM tree to find the most appropriate
  * container for positioning injected UI page-elements.
@@ -51,14 +130,7 @@ const isBorderedElement = (el: HTMLElement): boolean => {
  * 2. Not introduce positioning offsets that could affect UI element placement
  * 3. Be large enough to contain the input but not excessively larger
  * 4. Not be a table-related element (TD, TR) or a form element */
-export const findBoundingInputElement = (
-    curr: HTMLElement,
-    constraints?: {
-        input: HTMLInputElement;
-        minHeight: number;
-        maxWidth: number;
-    }
-): HTMLElement => {
+export const findInputBoundingElement = (curr: HTMLElement, constraints?: Constraints): HTMLElement => {
     constraints =
         constraints ??
         (() => {
@@ -67,80 +139,61 @@ export const findBoundingInputElement = (
             const { height, width } = curr.getBoundingClientRect();
             return {
                 input: curr as HTMLInputElement,
+                layoutShift: false,
                 minHeight: height,
                 maxWidth: width * BOUNDING_ELEMENT_MAX_RATIO,
             };
         })();
 
-    const { input, minHeight, maxWidth } = constraints;
+    const { input } = constraints;
     const isInput = curr === input;
 
     if (isInput) {
-        /** Case 1: Input has a bottom border. Likely the best
-         * bounding candidate as it's visually "boxed"  */
+        /** Early quick-checks for best-case scenarios */
+        const inputStyles = getComputedStyle(curr);
+        const pb = pixelParser(inputStyles.paddingBottom);
+        const pt = pixelParser(inputStyles.paddingTop);
+        const py = pb + pt;
+
+        if (py > 0) {
+            constraints.layoutShift = true;
+            constraints.minHeight -= py;
+        }
+
+        /** Case 1: Input has visible border - optimal bounding candidate :
+         * Bordered inputs are visually "boxed" and provide a clear reference */
         const inputHasBorder = pixelParser(getComputedStyle(input).borderBottomWidth) !== 0;
         if (inputHasBorder) return input;
 
-        /** Case 2: Input wrapped in a label. If it's the only input
-         * and fits size criteria, use label as bounding element */
+        /** Case 2: Input wrapped in suitable label element. Labels containing one
+         * visible input and meeting criterias are good bounding candidates.
+         * Suitable if: adequate height + overlapping children + no text nodes */
         const label = input.closest('label');
 
         if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
-            const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
+            const labelHeightCheck = label.getBoundingClientRect().height >= constraints.minHeight;
             const labelChildrenOverlap = allChildrenOverlap(getChildren(label), BOUNDING_ELEMENT_OFFSET);
-            if (labelHeightCheck && labelChildrenOverlap) return label;
+            if (labelHeightCheck && labelChildrenOverlap && !containsTextNode(label)) return label;
         }
     }
 
-    /** Check for significant padding/margins that could affect positioning.
-     * Large offsets can interfere with accurate placement of injected UI
-     * elements relative to the input field. We aim to preserve precise
-     * positioning information.
-     *
-     * Note: We tolerate padding on the initial input element itself, as
-     * inputs often have padding for text alignment. For parent elements,
-     * any padding could lead to misalignment of injected elements.. */
-    const currStyles = getComputedStyle(curr);
+    if (!isSuitableCandidate(curr, constraints)) return curr;
+    if (!isSuitableParent(curr, constraints)) return curr;
 
-    if (!isInput) {
-        const pb = pixelParser(currStyles.paddingBottom);
-        const pt = pixelParser(currStyles.paddingTop);
-        if (pb > 1 || pt > 1) return curr;
-    }
+    const parent = curr.parentElement;
 
-    const mb = pixelParser(currStyles.marginBottom);
-    const mt = pixelParser(currStyles.marginTop);
-    if (mb > 1 || mt > 1) return curr;
-
-    /* Analyze the parent element next */
-    const parent = curr.parentElement!;
-
-    /* Exclude unsuitable elements (e.g., table-related, forms) */
-    if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return curr;
-
-    /* Ensure parent dimensions meet criteria */
-    const { height: parentHeight, width: parentWidth } = parent.getBoundingClientRect();
-    if (!parentHeight || parentHeight < minHeight || parentWidth > maxWidth) return curr;
-
-    /* Avoid parents with non-empty text nodes (may affect layout) */
-    if (containsTextNode(parent)) return curr;
-
-    /* If the parent is fully bordered consider it to be the bounding box */
+    /** Fully bordered parent: excellent bounding candidate.
+     * Parents with complete borders provide clear visual boundaries */
     if (isBorderedElement(parent)) return parent;
 
-    /* If a parent is much taller than its child, stop.
-     * Indicates container size affected by CSS (float, flexbox) */
-    const styles = createStyleCompute(parent);
-    const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
-    if (!isInput && parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
-
-    /* Check for single child, excluding injected elements */
+    /* Single child scenario - When parent has only one child,
+     * it's probably a container that closely wraps the input */
     const children = getChildren(parent);
-    if (children.length === 1) return findBoundingInputElement(parent, constraints);
+    if (children.length === 1) return findInputBoundingElement(parent, constraints);
 
-    /* If all children overlap, parent might be suitable  */
+    /* All children overlap spatially:  parent is likely a tight layout container */
     const childrenOverlap = allChildrenOverlap(children, BOUNDING_ELEMENT_OFFSET);
-    if (childrenOverlap) return findBoundingInputElement(parent, constraints);
+    if (childrenOverlap) return findInputBoundingElement(parent, constraints);
 
     return curr;
 };

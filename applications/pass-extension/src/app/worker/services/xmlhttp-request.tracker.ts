@@ -1,7 +1,7 @@
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { TabId } from '@proton/pass/types';
+import type { TabId } from '@proton/pass/types/worker/runtime';
 import { isFailedRequest } from '@proton/pass/utils/requests';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';

@@ -5,12 +5,20 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
-import { updatePauseListItem } from '@proton/pass/store/actions';
+import { updatePauseListItem } from '@proton/pass/store/actions/creators/settings';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectCanCreateItems, selectProxiedSettings } from '@proton/pass/store/selectors';
+import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
+import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
+import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 
+type SettingsServiceState = { settings: MaybeNull<ProxiedSettings> };
+
 export const createSettingsService = () => {
+    /** Cache the settings to avoid constantly reading from extension
+     * storage when resolving settings for content-scripts. */
+    const state: SettingsServiceState = { settings: null };
+
     const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {
         const state = service.store.getState();
         const canCreateItems = selectCanCreateItems(state);
@@ -24,18 +32,29 @@ export const createSettingsService = () => {
     });
 
     const service = createCoreSettingsService({
-        clear: withContext(({ service }) => service.storage.local.removeItem('settings')),
-        read: withContext(async ({ service }) => {
-            const settings = await service.storage.local.getItem('settings');
-            if (!settings) throw new Error('settings not found');
-
-            return JSON.parse(settings);
+        clear: withContext(async ({ service }) => {
+            state.settings = null;
+            await service.storage.local.removeItem('settings');
         }),
+
+        read: withContext(
+            async ({ service }) =>
+                (state.settings =
+                    state.settings ??
+                    (await (async () => {
+                        const settings = await service.storage.local.getItem('settings');
+                        if (!settings) throw new Error('settings not found');
+
+                        return JSON.parse(settings);
+                    })()))
+        ),
+
         /* We have to proxy the redux store settings in local storage
-         * in case the user is logged out (session invalidated, locked etc..)
-         * but need to preserve the user settings in the content-script */
+         * in case the user is logged or locked out but need to preserve
+         * the user settings in content-scripts (eg: autofill settings). */
         sync: withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
             logger.info('[Worker::Settings] synced settings');
+            state.settings = settings;
             await service.storage.local.setItem('settings', JSON.stringify(settings));
             broadcast(settings);
         }),

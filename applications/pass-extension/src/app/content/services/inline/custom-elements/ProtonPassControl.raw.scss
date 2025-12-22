@@ -1,0 +1,115 @@
+$base-font-size: 14 !default;
+
+@use 'sass:meta';
+@import '@proton/styles/scss/lib/em';
+@import './reset';
+
+:host {
+	@include reset;
+
+	pointer-events: none;
+	position: absolute !important;
+	isolation: unset !important;
+
+	/* force reset element */
+	margin: 0 !important;
+	opacity: 1;
+	z-index: unset !important;
+	order: 0 !important;
+	block-size: 0 !important;
+	inline-size: 0 !important;
+	/* stylelint-disable-next-line */
+	float: left !important;
+	animation: none !important;
+
+	/* if parent display: flex */
+	flex: 0 0 0;
+
+	/* if parent display: grid */
+	grid-row: auto / span 1 !important;
+	grid-column: auto / span 1 !important;
+
+	> input {
+		pointer-events: all;
+	}
+}
+
+button {
+	@include reset;
+
+	pointer-events: all;
+	margin: auto;
+	inset-block-start: 0;
+	opacity: 0;
+	inset-inline-end: em(5);
+	max-inline-size: 0;
+	margin-block-start: 0 !important;
+	cursor: pointer !important;
+	position: absolute !important;
+	background-size: cover !important;
+	border-radius: unset !important;
+
+	/* Only animate icon after positioning to prevent flicker */
+	&.visible {
+		animation: icon-fade-in 0.125s ease-in-out both !important;
+
+		&::after {
+			animation: counter-fade-in 0.125s 0.05s ease-in-out both !important;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		transform: none !important;
+	}
+
+	&::before {
+		content: none !important;
+	}
+
+	&::after {
+		content: var(--control-count) !important;
+		position: absolute !important;
+		inset: 0 !important;
+		margin: auto !important;
+		color: white !important;
+		text-align: center !important;
+		font-family: system-ui, sans-serif !important;
+		line-height: var(--control-lineheight) !important;
+		font-size: var(--control-fontsize) !important;
+		display: block !important;
+		font-weight: bold !important;
+		text-shadow: 0 0.5px 3px #320dc5 !important;
+		opacity: 0;
+		inline-size: 0;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@keyframes icon-fade-in {
+	from {
+		opacity: 0;
+		max-inline-size: 0;
+	}
+
+	to {
+		opacity: 0.9;
+		max-inline-size: em(35);
+	}
+}
+
+@keyframes counter-fade-in {
+	from {
+		opacity: 0;
+		inline-size: 0;
+	}
+
+	to {
+		opacity: 1;
+		inline-size: var(--control-lineheight);
+	}
+}

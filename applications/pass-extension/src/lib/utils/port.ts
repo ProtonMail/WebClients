@@ -1,7 +1,8 @@
-import type { ClientEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-export const generatePortName = (endpoint: ClientEndpoint, tabId: TabId) => `${endpoint}-${tabId}-${uniqueId(16)}`;
+export const generatePortName = (endpoint: ClientEndpoint, tabId: TabId, frameId: FrameId) =>
+    `${endpoint}-${tabId}-${frameId}-${uniqueId(16)}`;
 
 export const tabIDFromPortName = (portName: string): TabId => {
     const parts = portName.split('-');

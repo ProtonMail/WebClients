@@ -5,7 +5,8 @@ import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
+import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
+import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
 import {
     extraPasswordToggle,
     itemCreate,
@@ -18,13 +19,7 @@ import {
 } from '@proton/pass/store/actions';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull, Unpack } from '@proton/pass/types';
-import type {
-    AutoFillSettings,
-    AutoSaveSettings,
-    AutoSuggestSettings,
-    DomainCriterias,
-    PasskeySettings,
-} from '@proton/pass/types/worker/settings';
+import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySettings } from '@proton/pass/types/worker/settings';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 

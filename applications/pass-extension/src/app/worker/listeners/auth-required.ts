@@ -5,7 +5,7 @@ import type { WebRequest } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { selectAutofillSettings } from '@proton/pass/store/selectors/settings';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types/data/items';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 

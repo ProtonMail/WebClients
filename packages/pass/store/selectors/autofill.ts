@@ -30,6 +30,11 @@ export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
         items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
     );
 
+export const selectAutofillCCCandidates = (shareIds?: string[]) =>
+    createUncachedSelector(selectItemsFactory('creditCard', true), (items) =>
+        items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
+    );
+
 /** Autofill candidates resolution strategy : If we have a match on the subdomain :
  * return the subdomain matches first, then the top-level domain matches and finally
  * the other subdomain matches excluding any previously matched direct subdomain matches.

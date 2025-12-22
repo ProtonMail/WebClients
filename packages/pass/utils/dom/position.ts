@@ -1,33 +1,15 @@
-import type { Rect } from '@proton/pass/types/utils/dom';
+/** Checks if an element creates a containing block for absolutely positioned
+ * descendants. This function provides a minimal version of containing block
+ * detection. check MDN documentation for missing cases in case they become relevant
+ * See: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block */
+export const isContainingBlock = (el: HTMLElement, styles?: CSSStyleDeclaration): boolean => {
+    const computed = styles ?? getComputedStyle(el);
 
-const REFRESH_RATE = 1000 / 24;
-
-export const animatePositionChange = (options: {
-    get: () => Partial<Rect>;
-    set: () => void;
-    onAnimate: (request: number) => void;
-}): void => {
-    options.set();
-    let { top, left, right, bottom } = options.get();
-    let updatedAt = 0;
-
-    const check = () =>
-        options.onAnimate(
-            requestAnimationFrame((timestamp) => {
-                if (timestamp - updatedAt >= REFRESH_RATE) {
-                    updatedAt = timestamp;
-                    const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = options.get();
-                    if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
-                        options.set();
-                        top = nTop;
-                        left = nLeft;
-                        right = nRight;
-                        bottom = nBottom;
-                        check();
-                    }
-                } else check();
-            })
-        );
-
-    return check();
+    return Boolean(
+        (computed.position && computed.position !== 'static') ||
+        (computed.transform && computed.transform !== 'none') ||
+        (computed.filter && computed.filter !== 'none') ||
+        (computed.perspective && computed.perspective !== 'none') ||
+        (computed.backdropFilter && computed.backdropFilter !== 'none')
+    );
 };

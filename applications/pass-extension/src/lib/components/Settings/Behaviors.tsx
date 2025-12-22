@@ -10,11 +10,13 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { settingsEditIntent } from '@proton/pass/store/actions';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectFeatureFlags, selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { MaybeNull, RecursivePartial } from '@proton/pass/types';
+import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
+import { selectFeatureFlags, selectPassPlan } from '@proton/pass/store/selectors/user';
+import type { UserPassPlan } from '@proton/pass/types/api/plan';
+import type { MaybeNull, RecursivePartial } from '@proton/pass/types/utils/index';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -39,6 +41,7 @@ type SettingsSection = {
 
 type SettingsSectionsOptions = {
     features: MaybeNull<FeatureFlagState>;
+    plan: UserPassPlan;
     settings: ProxiedSettings;
     webReqPermissions: PermissionHandles;
     dispatch: Dispatch;
@@ -75,6 +78,13 @@ const getSettingsSections = ({
                     checked: settings.autofill.twofa,
                     disabled: !settings.autofill.login,
                     onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
+                },
+                {
+                    label: c('Label').t`Credit-card autofill`,
+                    description: c('Info').t`Automatically fill in your saved payment information.`,
+                    checked: settings.autofill.cc ?? false,
+                    hidden: !features?.PassCreditCardWebAutofill,
+                    onChange: (checked) => onSettingsUpdate({ autofill: { cc: checked } }),
                 },
                 {
                     label: c('Label').t`Basic Auth autofill`,
@@ -185,12 +195,13 @@ const getSettingsSections = ({
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
+    const plan = useSelector(selectPassPlan);
     const webReqPermissions = usePermissions(BASIC_AUTH_PERMISSIONS);
     const features = useSelector(selectFeatureFlags);
 
     const sections = useMemo(
-        () => getSettingsSections({ settings, features, webReqPermissions, dispatch }),
-        [settings, webReqPermissions, features]
+        () => getSettingsSections({ features, plan, settings, webReqPermissions, dispatch }),
+        [features, plan, settings, webReqPermissions]
     );
 
     return (

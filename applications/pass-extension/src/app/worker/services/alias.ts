@@ -4,9 +4,11 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { itemCreate, requestAliasOptions } from '@proton/pass/store/actions';
-import { selectAliasLimits, selectMostRecentVaultShareID } from '@proton/pass/store/selectors';
-import type { ItemCreateIntent } from '@proton/pass/types';
+import { requestAliasOptions } from '@proton/pass/store/actions/creators/alias';
+import { itemCreate } from '@proton/pass/store/actions/creators/item';
+import { selectAliasLimits } from '@proton/pass/store/selectors/limits';
+import { selectMostRecentVaultShareID } from '@proton/pass/store/selectors/vaults';
+import type { ItemCreateIntent } from '@proton/pass/types/data/items.dto';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -42,7 +44,7 @@ export const createAliasService = () => {
             const shareId = selectMostRecentVaultShareID(state);
             if (!shareId) throw new Error("Could not resolve user's default vault.");
 
-            const { url, alias } = message.payload;
+            const { origin: url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();
 
