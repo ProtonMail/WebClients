@@ -10,7 +10,15 @@ import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
 import { SearchService } from '../../services/search/searchService';
-import { type Attachment, type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
+import type { ProjectSpace } from '../../types';
+import {
+    type Attachment,
+    type SerializedSpace,
+    type Space,
+    type SpaceId,
+    cleanSerializedSpace,
+    cleanSpace,
+} from '../../types';
 import { listify, mapIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
@@ -22,11 +30,7 @@ import {
     selectRemoteIdFromLocal,
     selectSpaceById,
 } from '../selectors';
-import { type AttachmentMap, deleteAllAttachments, deleteAttachment, deleteAttachmentsBySpaceId } from '../slices/core/attachments';
-import { locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from './assets';
-
-// Type alias for backwards compatibility
-type Asset = Attachment;
+import { type AttachmentMap, deleteAllAttachments, deleteAttachment } from '../slices/core/attachments';
 import type { ConversationMap } from '../slices/core/conversations';
 import {
     deleteAllConversations,
@@ -55,7 +59,11 @@ import {
     pushSpaceSuccess,
 } from '../slices/core/spaces';
 import type { LumoState } from '../store';
+import { locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from './assets';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError } from './index';
+
+// Type alias for backwards compatibility
+type Asset = Attachment;
 
 /*** helpers ***/
 export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
@@ -251,8 +259,16 @@ export function* httpPostSpace(serializedSpace: SerializedSpace, priority: Prior
     return entry;
 }
 
-export function* httpPutSpace(serializedSpace: SerializedSpace, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
-    console.log('Saga triggered: httpPutSpace', { localId: serializedSpace.id, remoteId, hasEncrypted: !!serializedSpace.encrypted });
+export function* httpPutSpace(
+    serializedSpace: SerializedSpace,
+    remoteId: RemoteId,
+    priority: Priority
+): SagaIterator<RemoteStatus> {
+    console.log('Saga triggered: httpPutSpace', {
+        localId: serializedSpace.id,
+        remoteId,
+        hasEncrypted: !!serializedSpace.encrypted,
+    });
     const lumoApi: LumoApi = yield getContext('lumoApi');
     // convertSpaceToApi uses local id, but PUT needs remote id
     const baseSpaceToApi = convertSpaceToApi(serializedSpace);
@@ -332,10 +348,10 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
             // Space was already posted - update it remotely with PUT
             // This ensures linkedDriveFolder and other changes sync across browsers
             yield call(saveDirtySpace, serializedSpace);
-            
+
             // PUT to update remote
             yield call(callWithRetry, httpPutSpace, [serializedSpace, remoteId, priority]);
-            
+
             // Clear dirty flag
             const updated: boolean = yield call(clearDirtyIfUnchanged, serializedSpace);
             if (updated) {
@@ -432,9 +448,9 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
     for (const conversation of listify(conversations)) {
         yield put(locallyRefreshConversationFromRemoteRequest(conversation));
     }
-    
+
     // Process deleted assets FIRST to ensure they're removed before processing active assets
-    const deletedAssetIds = new Set(listify(deletedAssets).map(asset => asset.id));
+    const deletedAssetIds = new Set(listify(deletedAssets).map((asset) => asset.id));
     for (const asset of listify(deletedAssets)) {
         if (!asset.spaceId) {
             console.warn(`Deleted asset ${asset.id} has no spaceId, skipping`);
@@ -442,7 +458,7 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
         }
         yield put(locallyDeleteAssetFromRemoteRequest({ id: asset.id, spaceId: asset.spaceId }));
     }
-    
+
     // Process active assets, but skip any that are in the deletedAssets list
     const validAssetIds = new Set<string>();
     for (const asset of listify(assets)) {
@@ -461,9 +477,9 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
         // Assets in /spaces response have Encrypted: null, need to fetch individually via /assets/:id
         yield put(pullAssetRequest({ id: asset.id, spaceId: asset.spaceId }));
     }
-    
+
     // Clean up: Remove any assets from Redux that belong to synced spaces but aren't in the valid remote assets list
-    const syncedSpaceIds = new Set([...listify(spaces).map(s => s.id), ...listify(deletedSpaces).map(s => s.id)]);
+    const syncedSpaceIds = new Set([...listify(spaces).map((s) => s.id), ...listify(deletedSpaces).map((s) => s.id)]);
     for (const spaceId of syncedSpaceIds) {
         const localAssets: Record<string, Asset> = yield select(selectAssetsBySpaceId(spaceId));
         for (const asset of Object.values(localAssets)) {
@@ -476,11 +492,15 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
     }
 }
 
-export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: RemoteSpace }): SagaIterator<any> {
-    console.log('Saga triggered: refreshSpaceFromRemote', remoteSpace);
+export function* refreshSpaceFromRemote({
+    payload: encryptedRemoteSpace,
+}: {
+    payload: RemoteSpace;
+}): SagaIterator<any> {
+    console.log('Saga triggered: refreshSpaceFromRemote', encryptedRemoteSpace);
     const type = 'space';
     const dbApi: DbApi = yield getContext('dbApi');
-    const { id: localId, remoteId } = remoteSpace;
+    const { id: localId, remoteId } = encryptedRemoteSpace;
 
     // Deserialize before inserting into Redux
     console.log(`refreshSpaceFromRemote ${localId}: selecting masterkey`);
@@ -492,30 +512,38 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
     console.log(`refreshSpaceFromRemote ${localId}: got masterkey decoded`);
     console.log(`refreshSpaceFromRemote ${localId}: calling deserializeSpace for remote`);
-    const deserializedRemoteSpace: Space | null | undefined = yield call(deserializeSpace, remoteSpace, masterKey);
+    const deserializedRemoteSpace: Space | null | undefined = yield call(
+        deserializeSpace,
+        encryptedRemoteSpace,
+        masterKey
+    );
     console.log(`refreshSpaceFromRemote ${localId}: got deserialized remote space result`, deserializedRemoteSpace);
     if (!deserializedRemoteSpace) {
         console.error(`refreshSpaceFromRemote ${localId}: cannot deserialize space ${localId} from remote`);
         return;
     }
-    const cleanRemote = cleanSpace(deserializedRemoteSpace);
-    console.log(`refreshSpaceFromRemote ${localId}: cleanRemote has linkedDriveFolder:`, !!cleanRemote.linkedDriveFolder);
+    const remoteSpace = cleanSpace(deserializedRemoteSpace);
+    const remoteSpaceProject = remoteSpace.isProject ? (remoteSpace satisfies ProjectSpace) : undefined;
+    const remoteLinkedDriveFolder = remoteSpaceProject?.linkedDriveFolder;
+    const remoteIsLinkedToDrive = remoteLinkedDriveFolder !== undefined;
+    console.log(`refreshSpaceFromRemote ${localId}: remote space is linked to drive:`, remoteIsLinkedToDrive);
 
     // Check if space already exists locally
     const localSpace: Space | undefined = yield select(selectSpaceById(localId));
-    const idbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
+    const encryptedIdbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
 
     if (localSpace) {
         // Space exists in Redux - check if linkedDriveFolder state differs between local and remote
-        const remoteHasLinked = !!cleanRemote.linkedDriveFolder;
-        const localHasLinked = !!localSpace.linkedDriveFolder;
-        
-        if (remoteHasLinked !== localHasLinked) {
+        const localSpaceProject = localSpace.isProject ? (localSpace satisfies ProjectSpace) : undefined;
+        const localLinkedDriveFolder = localSpaceProject?.linkedDriveFolder;
+        const localIsLinkedToDrive = localLinkedDriveFolder !== undefined;
+
+        if (remoteIsLinkedToDrive !== localIsLinkedToDrive) {
             // linkedDriveFolder state differs - update local from remote
-            if (remoteHasLinked) {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating local`);
+            if (remoteIsLinkedToDrive) {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote is linked to drive, updating local`);
             } else {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote removed linkedDriveFolder, updating local`);
+                console.log(`refreshSpaceFromRemote ${localId}: Remote is not linked to drive, updating local`);
                 // Clean up the search index for documents from this space
                 const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
                 if (userId) {
@@ -524,28 +552,28 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
                     searchService.removeDocumentsBySpace(localId);
                 }
             }
-            yield put(addSpace(cleanRemote)); // Update Redux with remote data
-            yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // Update IDB
+            yield put(addSpace(remoteSpace)); // Update Redux with remote data
+            yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // Update IDB
         } else {
             console.log(`refreshSpaceFromRemote ${localId}: received space already exists in Redux, noop`);
         }
         return;
     }
 
-    if (idbSpace) {
+    if (encryptedIdbSpace) {
         // Space exists in IDB but not Redux - deserialize from IDB and check if remote differs
         console.log(`refreshSpaceFromRemote ${localId}: idb object exists, checking for updates`);
-        const deserializedIdbSpace: Space | null | undefined = yield call(deserializeSpace, idbSpace, masterKey);
-        
-        const remoteHasLinked = !!cleanRemote.linkedDriveFolder;
-        const idbHasLinked = !!(deserializedIdbSpace?.linkedDriveFolder);
-        
+        const idbSpace: Space | null | undefined = yield call(deserializeSpace, encryptedIdbSpace, masterKey);
+        const idbSpaceProject = idbSpace?.isProject ? (idbSpace satisfies ProjectSpace) : undefined;
+        const idbLinkedDriveFolder = idbSpaceProject?.linkedDriveFolder;
+        const idbIsLinkedToDrive = idbLinkedDriveFolder !== undefined;
+
         // If linkedDriveFolder state differs between remote and IDB, use remote
-        if (remoteHasLinked !== idbHasLinked) {
-            if (remoteHasLinked) {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote has linkedDriveFolder, updating from remote`);
+        if (remoteIsLinkedToDrive !== idbIsLinkedToDrive) {
+            if (remoteIsLinkedToDrive) {
+                console.log(`refreshSpaceFromRemote ${localId}: Remote is linked to drive, updating from remote`);
             } else {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote removed linkedDriveFolder, updating from remote`);
+                console.log(`refreshSpaceFromRemote ${localId}: Remote is not linked to drive, updating from remote`);
                 // Clean up the search index for documents from this space
                 const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
                 if (userId) {
@@ -554,12 +582,12 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
                     searchService.removeDocumentsBySpace(localId);
                 }
             }
-            yield put(addSpace(cleanRemote)); // Redux
+            yield put(addSpace(remoteSpace)); // Redux
             yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
-            yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // IDB
-        } else if (deserializedIdbSpace) {
+            yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // IDB
+        } else if (idbSpace) {
             // Use IDB version
-            const cleanIdb = cleanSpace(deserializedIdbSpace);
+            const cleanIdb = cleanSpace(idbSpace);
             console.log(`refreshSpaceFromRemote ${localId}: Using IDB version`);
             yield put(addSpace(cleanIdb)); // Redux
             yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: false })); // Redux (don't re-save to IDB)
@@ -569,8 +597,8 @@ export function* refreshSpaceFromRemote({ payload: remoteSpace }: { payload: Rem
 
     // New space - insert from remote
     console.log(`refreshSpaceFromRemote ${localId}: updating locally: put(addSpace)`);
-    yield put(addSpace(cleanRemote)); // Redux
+    yield put(addSpace(remoteSpace)); // Redux
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
     console.log(`refreshSpaceFromRemote ${localId}: updating locally: call(dbApi.updateSpace)`);
-    yield call([dbApi, dbApi.updateSpace], remoteSpace, { dirty: false }); // IDB
+    yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // IDB
 }
