@@ -1,11 +1,13 @@
 import type { NodeEntity } from '@proton/drive/index';
-import { NodeType } from '@proton/drive/index';
+import { AbortError, NodeType } from '@proton/drive/index';
 
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
+import { downloadLogDebug } from './utils/downloadLogger';
 import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { handleDownloadError } from './utils/handleError';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
 
 export type { ArchiveItem, ArchiveTracker } from './downloadTypes';
@@ -23,12 +25,20 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
     let firstItemSettled = false;
     let resolveFirstItem: () => void;
     let rejectFirstItem: (error: unknown) => void;
+    let lastError: unknown;
+    const recordError = (error: unknown) => {
+        lastError = error;
+    };
     const firstItemPromise = new Promise<void>((resolve, reject) => {
         resolveFirstItem = resolve;
         rejectFirstItem = reject;
     });
 
     return {
+        get lastError() {
+            return lastError;
+        },
+        recordError,
         registerFile(taskId: string) {
             downloadedBytesMap[taskId] = 0;
         },
@@ -76,6 +86,7 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
             }
         },
         notifyError(error: unknown) {
+            recordError(error);
             if (!firstItemSettled) {
                 firstItemSettled = true;
                 rejectFirstItem(error);
@@ -94,8 +105,21 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
  * Instantiates an ArchiveTracker and uses the shared scheduler to start downloading the archive files individually.
  * All the logic related to when and why files start downloading must be kept inside the Scheduler.
  */
+type ArchiveStreamGeneratorParams = {
+    entries: AsyncIterable<NodeEntity>;
+    onProgress: (downloadedBytes: number, claimedSize: number) => void;
+    scheduler: DownloadScheduler;
+    abortSignal: AbortSignal;
+    parentPathByUid: Map<string, string[]>;
+    downloadId: string;
+};
+
 export class ArchiveStreamGenerator {
-    private readonly tracker: ArchiveTracker;
+    private readonly entries: AsyncIterable<NodeEntity>;
+    private readonly scheduler: DownloadScheduler;
+    private readonly abortSignal: AbortSignal;
+    private readonly parentPathByUid: Map<string, string[]>;
+    private readonly downloadId: string;
     // Queue of the items that have started actively downloading
     private readonly archiveItemsQueue = createAsyncQueue<ArchiveItem>();
     private pendingArchiveTasks = 0;
@@ -104,28 +128,40 @@ export class ArchiveStreamGenerator {
     private hasProducedItem = false;
     private totalClaimedSize = 0;
 
+    readonly tracker: ArchiveTracker;
     readonly generator: AsyncGenerator<ArchiveItem>;
     readonly controller: DownloadController;
 
-    constructor(
-        private readonly entries: AsyncIterable<NodeEntity>,
-        onProgress: (downloadedBytes: number, claimedSize: number) => void,
-        private readonly scheduler: DownloadScheduler,
-        private readonly abortSignal: AbortSignal,
-        private readonly parentPathByUid: Map<string, string[]>,
-        private readonly downloadId: string
-    ) {
+    get lastError(): unknown {
+        return this.tracker.lastError;
+    }
+
+    constructor({
+        entries,
+        onProgress,
+        scheduler,
+        abortSignal,
+        parentPathByUid,
+        downloadId,
+    }: ArchiveStreamGeneratorParams) {
+        this.entries = entries;
+        this.scheduler = scheduler;
+        this.abortSignal = abortSignal;
+        this.parentPathByUid = parentPathByUid;
+        this.downloadId = downloadId;
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
         this.controller = {
             pause: () => this.tracker.pauseAll(),
             resume: () => this.tracker.resumeAll(),
             completion: () => this.tracker.waitForCompletion(),
+            // TBI isDownloadCompleteWithSignatureIssues
+            isDownloadCompleteWithSignatureIssues: () => false,
         };
 
         this.abortSignal.addEventListener('abort', () => {
-            const abortError = new Error('Archive download aborted');
-            this.tracker.notifyError(abortError);
+            const abortError = new AbortError();
+            this.handleTrackerError(abortError);
             this.archiveItemsQueue.error(abortError);
         });
 
@@ -150,13 +186,58 @@ export class ArchiveStreamGenerator {
         const downloader = await drive.getFileDownloader(node.uid, this.abortSignal);
         const claimedSize = downloader.getClaimedSizeInBytes();
 
-        const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
+        const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
+        const streamWriter = transformStream.writable.getWriter();
+        let writerClosed = false;
+        // SDK expects a WritableStream, so wrap our writer while keeping control over it
+        const writableForDownloader = new WritableStream<Uint8Array<ArrayBuffer>>({
+            write(chunk) {
+                return streamWriter.write(chunk);
+            },
+            close() {
+                writerClosed = true;
+                return streamWriter.close();
+            },
+            abort(reason) {
+                writerClosed = true;
+                return streamWriter.abort(reason);
+            },
+        });
+
         this.tracker.registerFile(taskId);
 
-        const controller = downloader.downloadToStream(writable, (downloadedBytes) => {
+        const controller = downloader.downloadToStream(writableForDownloader, (downloadedBytes) => {
             this.tracker.updateDownloadProgress(taskId, downloadedBytes, this.totalClaimedSize);
             this.scheduler.updateDownloadProgress(taskId, downloadedBytes);
         });
+
+        void controller
+            .completion()
+            .catch(async (error) => {
+                try {
+                    await writableForDownloader.abort(error);
+                } catch (abortError) {
+                    downloadLogDebug('WritableStream abort failed', {
+                        downloadId: this.downloadId,
+                        error: abortError,
+                    });
+                }
+
+                handleDownloadError(this.downloadId, [node], error, this.abortSignal.aborted);
+                this.handleTrackerError(error);
+                this.archiveItemsQueue.error(error);
+                throw error;
+            })
+            .finally(() => {
+                if (writerClosed) {
+                    return;
+                }
+                // writableForDownloader is locked by the SDK so we can't close it,
+                // but we own the underlying streamWriter so we can close that
+                streamWriter.close().catch(() => {
+                    downloadLogDebug('Download error', { downloadId: this.downloadId });
+                });
+            });
 
         this.tracker.attachController(taskId, controller);
 
@@ -164,7 +245,7 @@ export class ArchiveStreamGenerator {
             isFile: true,
             name: node.name,
             parentPath,
-            stream: readable,
+            stream: transformStream.readable,
             fileModifyTime: getNodeModifiedTime(node),
             claimedSize,
         };
@@ -210,10 +291,9 @@ export class ArchiveStreamGenerator {
                         this.archiveItemsQueue.push(item);
                     })
                     .catch((error) => {
-                        if (!this.hasProducedItem) {
-                            this.tracker.notifyError(error);
-                        }
+                        this.handleTrackerError(error);
                         this.archiveItemsQueue.error(error);
+                        throw error;
                     })
                     .finally(() => {
                         this.pendingArchiveTasks -= 1;
@@ -244,14 +324,19 @@ export class ArchiveStreamGenerator {
             this.schedulingCompleted = true;
             this.maybeCloseQueue();
         } catch (error) {
-            if (!this.hasProducedItem) {
-                this.tracker.notifyError(error);
-            }
+            this.handleTrackerError(error);
             this.archiveItemsQueue.error(error);
         }
     }
 
     waitForFirstItem(): Promise<void> {
         return this.tracker.waitForFirstItem();
+    }
+
+    private handleTrackerError(error: unknown) {
+        this.tracker.recordError(error);
+        if (!this.hasProducedItem) {
+            this.tracker.notifyError(error);
+        }
     }
 }
