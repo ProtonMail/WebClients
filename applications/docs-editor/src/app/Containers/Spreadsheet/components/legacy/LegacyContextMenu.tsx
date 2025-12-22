@@ -341,7 +341,6 @@ export function LegacyContextMenu({
           </DropdownLeftSlot>
           Paste <DropdownRightSlot>⌘V</DropdownRightSlot>
         </DropdownMenuItem>
-        {/* 
         <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={readonly}>
             <DropdownLeftSlot>
@@ -358,7 +357,7 @@ export function LegacyContextMenu({
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onPaste?.('Transposed')}>Transposed</DropdownMenuItem>
           </DropdownMenuSubContent>
-        </DropdownMenuSub> */}
+        </DropdownMenuSub>
 
         {/* {enableMagicFill ? (
           <>

@@ -254,6 +254,24 @@ export function ContextMenu({
       </UI.MenuItem>
 
       <Ariakit.MenuProvider>
+        <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.clipboard} />} disabled={readonly}>
+          {s('Paste special')}
+        </UI.SubMenuButton>
+        <UI.SubMenu unmountOnHide>
+          <UI.MenuItem onClick={() => onPaste?.('Value')} disabled={readonly}>
+            {s('Values only')}
+          </UI.MenuItem>
+          <UI.MenuItem onClick={() => onPaste?.('Formatting')} disabled={readonly}>
+            {s('Formatting only')}
+          </UI.MenuItem>
+          <UI.MenuSeparator />
+          <UI.MenuItem onClick={() => onPaste?.('Transposed')} disabled={readonly}>
+            {s('Transposed')}
+          </UI.MenuItem>
+        </UI.SubMenu>
+      </Ariakit.MenuProvider>
+
+      <Ariakit.MenuProvider>
         <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="cross-big" />} disabled={readonly}>
           {s('Clear')}
         </UI.SubMenuButton>
