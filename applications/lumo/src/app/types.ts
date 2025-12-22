@@ -75,11 +75,11 @@ export type SpacePub = {
     // todo: updatedAt (for sorting)
 };
 
-export type SpacePriv = {
+export type ProjectSpace = {
+    isProject: true; // Flag to indicate this space is being used as a project
     // Project metadata (optional - only for spaces used as projects)
     projectName?: string;
     projectInstructions?: string;
-    isProject?: boolean; // Flag to indicate this space is being used as a project
     projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
     // Linked Drive folder (optional - only for projects with linked Drive folders)
     linkedDriveFolder?: {
@@ -87,8 +87,13 @@ export type SpacePriv = {
         folderName: string;
         folderPath: string;
     };
-    // do not remove
 };
+
+export type SimpleSpace = {
+    isProject?: false; // Not a project (false, undefined, or unspecified)
+};
+
+export type SpacePriv = ProjectSpace | SimpleSpace;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
@@ -120,7 +125,15 @@ export function isSpacePub(value: any): value is SpacePub {
 }
 
 export function isSpacePriv(value: any): value is SpacePriv {
-    return typeof value === 'object' && value !== null;
+    return isProjectSpace(value) || isSimpleSpace(value);
+}
+
+export function isProjectSpace(value: any): value is ProjectSpace {
+    return typeof value === 'object' && value !== null && value.isProject === true;
+}
+
+export function isSimpleSpace(value: any): value is SimpleSpace {
+    return typeof value === 'object' && value !== null && (value.isProject === false || value.isProject === undefined);
 }
 
 export function isSpaceKeyClear(value: any): value is SpaceKeyClear {
@@ -131,14 +144,23 @@ export function isSpaceKeyEnc(value: any): value is SpaceKeyEnc {
     return typeof value === 'object' && value !== null && typeof value.wrappedSpaceKey === 'string';
 }
 
+export function isSpace(value: any): value is Space {
+    return isSpacePub(value) && isSpacePriv(value) && isSpaceKeyClear(value);
+}
+
 export function isDeletedSpace(value: any): value is DeletedSpace {
     return isSpacePub(value) && 'deleted' in value && value.deleted === true;
 }
 
 export function getSpacePriv(s: SpacePriv): SpacePriv {
-    // Do not remove
-    const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } = s;
-    return { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder };
+    if (s.isProject) {
+        const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
+            s satisfies ProjectSpace;
+        return { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder };
+    } else {
+        const { isProject } = s;
+        return { isProject };
+    }
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
@@ -164,17 +186,28 @@ export function splitSpace(s: Space): {
 }
 
 export function cleanSpace(space: Space): Space {
-    const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } = space;
-    return {
-        id,
-        createdAt,
-        spaceKey,
-        ...(projectName !== undefined && { projectName }),
-        ...(projectInstructions !== undefined && { projectInstructions }),
-        ...(isProject !== undefined && { isProject }),
-        ...(projectIcon !== undefined && { projectIcon }),
-        ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
-    };
+    if (space.isProject === true) {
+        const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
+            space;
+        return {
+            id,
+            createdAt,
+            spaceKey,
+            isProject,
+            ...(projectName !== undefined && { projectName }),
+            ...(projectInstructions !== undefined && { projectInstructions }),
+            ...(projectIcon !== undefined && { projectIcon }),
+            ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
+        };
+    } else {
+        const { id, createdAt, spaceKey, isProject } = space;
+        return {
+            id,
+            createdAt,
+            spaceKey,
+            ...(isProject !== undefined && { isProject }),
+        };
+    }
 }
 
 export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
@@ -327,8 +360,7 @@ export function cleanSerializedMessage(message: SerializedMessage): SerializedMe
 }
 
 export function cleanSerializedAttachment(attachment: SerializedAttachment): SerializedAttachment {
-    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, encrypted, dirty, deleted } =
-        attachment;
+    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, encrypted, dirty, deleted } = attachment;
     return {
         id,
         ...(spaceId !== undefined && { spaceId }),
@@ -549,8 +581,30 @@ export function isShallowAttachment(value: any): value is ShallowAttachment {
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
-    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, autoRetrieved, driveNodeId, relevanceScore } = attachment;
-    return { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, autoRetrieved, driveNodeId, relevanceScore };
+    const {
+        id,
+        spaceId,
+        mimeType,
+        uploadedAt,
+        rawBytes,
+        processing,
+        error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
+    } = attachment;
+    return {
+        id,
+        spaceId,
+        mimeType,
+        uploadedAt,
+        rawBytes,
+        processing,
+        error,
+        autoRetrieved,
+        driveNodeId,
+        relevanceScore,
+    };
 }
 
 export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
