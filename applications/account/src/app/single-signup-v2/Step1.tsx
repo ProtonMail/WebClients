@@ -21,6 +21,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -437,6 +438,14 @@ const Step1 = ({
             trial: subscriptionCheckOptions.trial || signupTrial,
             ...mergedCheckOptions,
         };
+
+        completeCheckOptions.planIDs =
+            forceAddonsMinMaxConstraints({
+                selectedPlanIDs: completeCheckOptions.planIDs,
+                plansMap: model.plansMap,
+                currency: completeCheckOptions.currency,
+                subscription: model.session?.subscription,
+            }) ?? completeCheckOptions.planIDs;
 
         const plan = getPlanFromPlanIDs(model.plansMap, completeCheckOptions.planIDs);
         const cycle = completeCheckOptions.cycle;
