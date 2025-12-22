@@ -1,10 +1,10 @@
+import type { AesGcmCryptoKey } from '../../crypto/types';
+import { DbApi } from '../../indexedDb/db';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
-import { DbApi } from '../../indexedDb/db';
-import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
-import type { AesGcmCryptoKey } from '../../crypto/types';
+import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 
 const WorkerMessageType = {
     Search: 0,
@@ -18,6 +18,7 @@ const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): str
     return `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
 };
 
+// TODO: looks like it can be replaced by SpaceMap in core/spaces.ts
 type SpaceMap = Record<string, { isProject?: boolean; projectName?: string; projectIcon?: string }>;
 
 const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: string; projectIcon?: string } => {
@@ -88,7 +89,14 @@ export class SearchService {
         }
 
         const dbApi = new DbApi(this.userId);
-        const { base64ToMasterKey, unwrapAesKey, cryptoKeyToBase64, generateSearchIndexKeyBase64, bytesToAesGcmCryptoKey, wrapAesKey } = await import('../../crypto');
+        const {
+            base64ToMasterKey,
+            unwrapAesKey,
+            cryptoKeyToBase64,
+            generateSearchIndexKeyBase64,
+            bytesToAesGcmCryptoKey,
+            wrapAesKey,
+        } = await import('../../crypto');
 
         // Try to load existing wrapped key
         const wrappedKeyBlob = await dbApi.loadSearchBlob(SearchService.SEARCH_INDEX_KEY_BLOB);
@@ -186,7 +194,7 @@ export class SearchService {
         if (!userId) {
             if (!SearchService.defaultInstance) {
                 SearchService.defaultInstance = new SearchService();
-        }
+            }
             return SearchService.defaultInstance;
         }
         const existing = SearchService.instances.get(userId);
@@ -605,17 +613,17 @@ export class SearchService {
             processedDocs.push(...chunkDocument(doc));
         }
 
-        const incomingParentIds = new Set(docsWithContent.map(d => d.id));
-        
+        const incomingParentIds = new Set(docsWithContent.map((d) => d.id));
+
         const oldDocsToRemove = this.driveDocuments.filter((existing) => {
             const parentId = existing.parentDocumentId || existing.id;
             return incomingParentIds.has(parentId) || incomingParentIds.has(existing.id);
         });
-        
+
         for (const oldDoc of oldDocsToRemove) {
             this.bm25Index.removeDocument(oldDoc.id, buildSearchableText(oldDoc));
         }
-        
+
         const remaining = this.driveDocuments.filter((existing) => {
             const parentId = existing.parentDocumentId || existing.id;
             return !incomingParentIds.has(parentId) && !incomingParentIds.has(existing.id);
@@ -773,7 +781,7 @@ export class SearchService {
         // Try exact ID match first
         const exactMatch = this.driveDocuments.find((doc) => doc.id === documentId);
         if (exactMatch) return exactMatch;
-        
+
         // If not found, check if this is a parent ID and return the first chunk
         // This handles the case where we look up by parent ID after chunking
         const chunkMatch = this.driveDocuments.find((doc) => doc.parentDocumentId === documentId);
@@ -781,15 +789,15 @@ export class SearchService {
             // Return a "virtual" document representing the full content
             // by finding all chunks and combining them
             const allChunks = this.driveDocuments
-                .filter(doc => doc.parentDocumentId === documentId)
+                .filter((doc) => doc.parentDocumentId === documentId)
                 .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
-            
+
             if (allChunks.length > 0) {
                 // Return a combined document
                 return {
                     ...allChunks[0],
                     id: documentId,
-                    content: allChunks.map(c => c.content).join('\n\n'),
+                    content: allChunks.map((c) => c.content).join('\n\n'),
                     isChunk: false,
                     parentDocumentId: undefined,
                     chunkIndex: undefined,
@@ -797,7 +805,7 @@ export class SearchService {
                 };
             }
         }
-        
+
         return null;
     }
 
@@ -809,30 +817,28 @@ export class SearchService {
         // Try exact match first (non-chunked documents)
         const exactMatch = this.driveDocuments.find((doc) => doc.name === name && !doc.isChunk);
         if (exactMatch) return exactMatch;
-        
+
         // For chunked documents, find all chunks with this name and combine them
         const chunks = this.driveDocuments
             .filter((doc) => doc.name === name && doc.isChunk)
             .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
-        
+
         if (chunks.length > 0) {
             // Return a combined document
             return {
                 ...chunks[0],
                 id: chunks[0].parentDocumentId || chunks[0].id,
-                content: chunks.map(c => c.content).join('\n\n'),
+                content: chunks.map((c) => c.content).join('\n\n'),
                 isChunk: false,
                 parentDocumentId: undefined,
                 chunkIndex: undefined,
                 totalChunks: undefined,
             };
         }
-        
+
         // Fallback: try case-insensitive match (non-chunked)
         const lowerName = name.toLowerCase();
-        return this.driveDocuments.find(
-            (doc) => doc.name.toLowerCase() === lowerName && !doc.isChunk
-        ) || null;
+        return this.driveDocuments.find((doc) => doc.name.toLowerCase() === lowerName && !doc.isChunk) || null;
     }
 
     /**
@@ -860,10 +866,14 @@ export class SearchService {
      * Get documents that reference spaces not in the provided valid set
      * Returns orphaned documents grouped by space ID (counting unique documents, not chunks)
      */
-    getOrphanedDocuments(validSpaceIds: Set<string>): { bySpace: Map<string, string[]>; totalDocs: number; totalChunks: number } {
+    getOrphanedDocuments(validSpaceIds: Set<string>): {
+        bySpace: Map<string, string[]>;
+        totalDocs: number;
+        totalChunks: number;
+    } {
         const bySpace = new Map<string, Set<string>>();
         let totalChunks = 0;
-        
+
         for (const doc of this.driveDocuments) {
             if (doc.spaceId && !validSpaceIds.has(doc.spaceId)) {
                 totalChunks++;
@@ -874,7 +884,7 @@ export class SearchService {
                 bySpace.set(doc.spaceId, existing);
             }
         }
-        
+
         // Convert Sets to Arrays and count unique docs
         const result = new Map<string, string[]>();
         let totalDocs = 0;
@@ -882,7 +892,7 @@ export class SearchService {
             result.set(spaceId, Array.from(docIds));
             totalDocs += docIds.size;
         }
-        
+
         return { bySpace: result, totalDocs, totalChunks };
     }
 
@@ -893,7 +903,7 @@ export class SearchService {
     async cleanupOrphanedDocuments(validSpaceIds: Set<string>): Promise<string[]> {
         const orphaned = this.getOrphanedDocuments(validSpaceIds);
         const orphanedSpaceIds = Array.from(orphaned.bySpace.keys());
-        
+
         if (orphanedSpaceIds.length === 0) {
             return [];
         }
@@ -960,7 +970,7 @@ export class SearchService {
         const rankedResults = this.bm25Index.rankDocuments(query, candidates, effectiveTopK, minScore);
 
         const docBestChunk = new Map<string, { doc: DriveDocument; score: number }>();
-        
+
         for (const { document: candidate, score } of rankedResults) {
             const doc = candidate.doc;
             const parentId = doc.parentDocumentId || doc.id;
@@ -969,7 +979,7 @@ export class SearchService {
                 docBestChunk.set(parentId, { doc, score });
             }
         }
-        
+
         const mergedResults = Array.from(docBestChunk.values())
             .sort((a, b) => b.score - a.score)
             .slice(0, topK);
@@ -1038,11 +1048,11 @@ export class SearchService {
         }, 0);
 
         const bm25Stats = this.bm25Index.getStats();
-        
+
         // Count unique documents vs chunks
-        const chunks = this.driveDocuments.filter(doc => doc.isChunk);
-        const nonChunks = this.driveDocuments.filter(doc => !doc.isChunk);
-        const uniqueParentIds = new Set(chunks.map(doc => doc.parentDocumentId));
+        const chunks = this.driveDocuments.filter((doc) => doc.isChunk);
+        const nonChunks = this.driveDocuments.filter((doc) => !doc.isChunk);
+        const uniqueParentIds = new Set(chunks.map((doc) => doc.parentDocumentId));
         const uniqueDocCount = nonChunks.length + uniqueParentIds.size;
 
         // Prefer worker/IDB status when user is known
@@ -1103,4 +1113,3 @@ export class SearchService {
         }
     }
 }
-
