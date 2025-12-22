@@ -525,7 +525,7 @@ export const getMailConfiguration = ({
                     })(),
                 },
                 title: c('mail_signup_2024: title').t`For individuals`,
-                defaultPlan: PLANS.FREE,
+                defaultPlan: PLANS.BUNDLE,
             },
             {
                 value: Audience.B2B,
