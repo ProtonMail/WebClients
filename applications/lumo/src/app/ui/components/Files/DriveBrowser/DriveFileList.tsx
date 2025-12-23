@@ -6,8 +6,9 @@ import { Icon } from '@proton/components';
 import { NodeType } from '@proton/drive';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_FILE_SIZE } from '../../../../constants';
+import { MAX_ASSET_SIZE } from '../../../../constants';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { CircularProgress } from './CircularProgress';
 import { FileItemCard, type FileItemData } from './FileItemCard';
@@ -67,7 +68,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
 
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
                 const estimatedTooLargeForPreview = child.size && child.size > 750 * 1024; // 750KB threshold
-                const exceedsFileSizeLimit = child.size && child.size > MAX_FILE_SIZE;
+                const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const getActionIcon = () => {
                     if (fileExists) {
@@ -98,7 +99,10 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                   icon: getActionIcon(),
                                   label: (() => {
                                       if (fileExists) return c('collider_2025: Action').t`Already in KB`;
-                                      if (exceedsFileSizeLimit) return c('collider_2025: Info').t`Exceeds 10MB limit`;
+                                      if (exceedsFileSizeLimit) {
+                                          const maxSize = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
+                                          return c('collider_2025: Info').t`Exceeds ${maxSize} limit`;
+                                      }
                                       if (estimatedTooLargeForPreview) return c('collider_2025: Info').t`File too large`;
                                       if (downloadingFile === child.nodeUid) {
                                           const progressPct = Math.round(fileData.downloadProgress || 0);
