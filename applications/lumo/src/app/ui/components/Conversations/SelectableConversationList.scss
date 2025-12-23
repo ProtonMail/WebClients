@@ -19,6 +19,14 @@
         }
     }
 
+    .selectable-conversation-item {
+        &:hover {
+            background-color: var(--background-weak);
+            transition: background-color 0.15s ease-out;
+            
+        }
+    }
+
     .selectable-conversation-list-actions {
         padding-bottom: 0.5rem;
         border-bottom: 1px solid var(--border-weak);
@@ -40,7 +48,6 @@
         padding: 0.5rem 0;
     }
 
-    // Ensure all checkboxes in this list are clearly visible
     .checkbox-container {
         flex-shrink: 0;
     }
