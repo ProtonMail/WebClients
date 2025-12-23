@@ -1,5 +1,12 @@
 .selectable-conversation-list {
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    .selectable-conversation-list-content {
+        overflow: hidden;
+        width: 100%;
+    }
 
     .selectable-conversation-list-header {
         display: flex;
@@ -24,10 +31,14 @@
     }
 
     .selectable-conversation-item {
+        overflow: hidden;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+
         &:hover {
             background-color: var(--background-weak);
             transition: background-color 0.15s ease-out;
-            
         }
     }
 
@@ -38,10 +49,17 @@
 
     .selectable-conversation-group {
         margin-bottom: 1rem;
+        overflow: hidden;
+        width: 100%;
 
         &:last-child {
             margin-bottom: 0;
         }
+    }
+
+    .selectable-conversation-group-items {
+        overflow: hidden;
+        width: 100%;
     }
 
     .selectable-conversation-group-title {
@@ -50,6 +68,7 @@
         letter-spacing: 0.02em;
         margin: 0;
         padding: 0.5rem 0;
+        text-wrap: wrap;
     }
 
     .checkbox-container {
@@ -62,10 +81,14 @@
         padding: 0;
         cursor: pointer;
         min-width: 0; // Allow text truncation
+        width: 0; // Force flex item to use flex-grow only
+        flex: 1 1 0%;
+        overflow: hidden;
     }
 
     .selectable-conversation-content {
         min-width: 0; // Allow text truncation
+        width: 100%;
         overflow: hidden;
     }
 
@@ -74,6 +97,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        display: block;
+        width: 100%;
     }
 
     .selectable-conversation-date {
