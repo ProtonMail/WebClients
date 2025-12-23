@@ -419,9 +419,9 @@ const ProjectDetailViewInner = () => {
             >
                 {/* Main area - similar to 'outer' in lumo-chat-container */}
                 <div className="outer flex flex-column flex-nowrap flex-1">
-                    <div className="project-detail-main flex flex-column justify-center items-center">
+                    <div className="project-detail-main flex flex-column items-center">
                         {sortedConversations.length === 0 ? (
-                            <div className="project-detail-empty flex flex-column items-center justify-center flex-1">
+                            <div className="project-detail-empty flex flex-column items-center justify-center">
                                 <img src={lumoProjects} alt="Projects" width={200} />
                                 <h2 className="project-detail-empty-title text-lg pt-3">
                                     {c('collider_2025:Title').t`Start a new conversation`}
