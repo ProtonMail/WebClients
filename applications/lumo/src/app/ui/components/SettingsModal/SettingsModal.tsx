@@ -23,14 +23,14 @@ import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectAssets, selectConversations, selectMessages } from '../../../redux/selectors';
+import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
 import { getInitials } from '../../../util/username';
-import { IndexingStatusBanner } from '../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoSettingsPanelUpsell } from '../../upsells/composed/LumoSettingsPanelUpsell';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
+import { IndexingStatusBanner } from '../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
 import LumoThemeButton from '../LumoThemeButton';
 import { SignInLinkButton } from '../SignInLink';
@@ -170,7 +170,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const conversations = useLumoSelector(selectConversations);
     const messages = useLumoSelector(selectMessages);
     const spaceMap = useLumoSelector(selectSpaceMap);
-    const assets = useLumoSelector(selectAssets);
+    const attachments = useLumoSelector(selectAttachments);
     const { indexingStatus: messageIndexingStatus } = useMessageSearch();
     const {
         rehydrateFolders,
@@ -220,16 +220,16 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
             const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
             await rehydrateFolders(validSpaceIds);
 
-            // Reindex uploaded project assets (non-Drive files)
+            // Reindex uploaded project attachments (non-Drive files)
             try {
-                const assetList = Object.values(assets);
-                if (assetList.length > 0) {
-                    console.log('[Settings] Reindexing uploaded assets...');
-                    const result = await searchService.reindexUploadedAssets(assetList);
-                    console.log('[Settings] Asset reindexing result:', result);
+                const attachmentList = Object.values(attachments);
+                if (attachmentList.length > 0) {
+                    console.log('[Settings] Reindexing uploaded attachments...');
+                    const result = await searchService.reindexUploadedAttachments(attachmentList);
+                    console.log('[Settings] Attachment reindexing result:', result);
                 }
             } catch (error) {
-                console.error('[Settings] Asset reindexing failed:', error);
+                console.error('[Settings] Attachment reindexing failed:', error);
             }
         } catch (error) {
             console.error('[Settings] Re-indexing failed:', error);
@@ -237,7 +237,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
         } finally {
             setIsIndexing(false);
         }
-    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, assets]);
+    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, attachments]);
 
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
@@ -263,7 +263,8 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     text={c('collider_2025: Title').t`Search Index`}
                     subtext={
                         <div className="flex flex-column gap-1">
-                            <span className="color-weak">{c('collider_2025: Description').t`Encrypted search index for chats and Drive files.`}</span>
+                            <span className="color-weak">{c('collider_2025: Description')
+                                .t`Encrypted search index for chats and Drive files.`}</span>
 
                             <IndexStatusIndicator />
 
@@ -282,10 +283,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                         </div>
                     }
                     button={
-                        <SearchIndexManagement
-                            onReindex={handleReindex}
-                            disabled={isIndexing || isDriveIndexing}
-                        />
+                        <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
                     }
                 />
             )}

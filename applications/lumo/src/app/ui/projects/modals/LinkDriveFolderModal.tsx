@@ -10,10 +10,10 @@ import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectAssetsBySpaceId, selectSpaceById } from '../../../redux/selectors';
+import { selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
-import { getProjectInfo, type ProjectSpace } from '../../../types';
+import { getProjectInfo } from '../../../types';
 import { DriveBrowser } from '../../components/Files/DriveBrowser/DriveBrowser';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
@@ -24,9 +24,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
-    const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
+    const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
     // Filter out auto-retrieved files - they're from Drive indexing, not user uploads
-    const files = Object.values(spaceAssets).filter((asset) => !asset.error && !asset.autoRetrieved);
+    const files = Object.values(spaceAttachments).filter(
+        (attachment) => !attachment.error && !attachment.autoRetrieved
+    );
     const hasExistingFiles = files.length > 0;
     const { isInitialized, getRootFolder } = useDriveSDK();
     const { indexFolder, removeIndexedFolder } = useDriveFolderIndexing();
@@ -35,7 +37,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const [folderPath, setFolderPath] = useState<string[]>([]);
 
     // Project variables
-    const { project: spaceProject, linkedDriveFolder, isLinked: isLinkedToDrive } = space ? getProjectInfo(space) : { project: undefined, linkedDriveFolder: undefined, isLinked: false as const };
+    const {
+        project: spaceProject,
+        linkedDriveFolder,
+        isLinked: isLinkedToDrive,
+    } = space ? getProjectInfo(space) : { project: undefined, linkedDriveFolder: undefined, isLinked: false as const };
 
     // Initialize root folder ID when Drive is ready
     useEffect(() => {
@@ -136,8 +142,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
 
             // Clean up auto-retrieved attachments from this space
             // These are Drive files that were indexed but shouldn't be persisted
-            const autoRetrievedAttachments = Object.values(spaceAssets).filter(
-                (asset) => asset.autoRetrieved || asset.driveNodeId
+            const autoRetrievedAttachments = Object.values(spaceAttachments).filter(
+                (attachment) => attachment.autoRetrieved || attachment.driveNodeId
             );
             for (const attachment of autoRetrievedAttachments) {
                 dispatch(deleteAttachment(attachment.id));
@@ -156,7 +162,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 type: 'error',
             });
         }
-    }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFolder, spaceAssets]);
+    }, [space, dispatch, projectId, createNotification, modalProps, removeIndexedFolder, spaceAttachments]);
 
     return (
         <ModalTwo {...modalProps} size="large" className="link-drive-folder-modal">

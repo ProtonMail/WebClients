@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useLumoSelector } from '../../../../redux/hooks';
-import { selectAttachmentsBySpaceId, selectAssetsBySpaceId } from '../../../../redux/selectors';
+import { selectAttachmentsBySpaceId } from '../../../../redux/selectors';
 import type { Attachment, Message, SpaceId } from '../../../../types';
 
 // Custom hook to get all attachments relevant for context calculations
@@ -15,22 +15,11 @@ export const useAllRelevantAttachments = (
 
     // Get space-level attachments (project files)
     // Exclude auto-retrieved attachments as they're conversation-specific
-    const spaceAttachments = useLumoSelector((state) =>
-        spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
-    );
-    const spaceAttachmentsList = useMemo(() => 
-        Object.values(spaceAttachments).filter(att => !att.autoRetrieved), 
+    const spaceAttachments = useLumoSelector((state) => (spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}));
+    const spaceAttachmentsList = useMemo(
+        () => Object.values(spaceAttachments).filter((att) => !att.error && !att.processing && !att.autoRetrieved),
         [spaceAttachments]
     );
-
-    // Get space-level assets (project files stored as assets)
-    // Exclude auto-retrieved files as they're from Drive indexing, not user uploads
-    const spaceAssets = useLumoSelector((state) =>
-        spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
-    );
-    const spaceAssetsList = useMemo(() => 
-        Object.values(spaceAssets).filter((asset) => !asset.error && !asset.processing && !asset.autoRetrieved)
-    , [spaceAssets]);
 
     // Get all attachment IDs from the message chain
     const messageAttachmentIds = useMemo(() => {
@@ -47,12 +36,7 @@ export const useAllRelevantAttachments = (
     // Combine all attachments: space assets + space attachments + provisional + message attachments
     // Filter out duplicates (space attachments and provisional attachments take precedence)
     const combinedAttachments = useMemo(() => {
-        const allSources = [
-            ...spaceAssetsList,
-            ...spaceAttachmentsList,
-            ...(provisionalAttachments || []),
-            ...(messageAttachments || []),
-        ];
+        const allSources = [...spaceAttachmentsList, ...(provisionalAttachments || []), ...(messageAttachments || [])];
 
         // Remove duplicates by ID
         const seen = new Set<string>();
@@ -66,7 +50,7 @@ export const useAllRelevantAttachments = (
         }
 
         return unique;
-    }, [spaceAssetsList, spaceAttachmentsList, provisionalAttachments, messageAttachments]);
+    }, [spaceAttachmentsList, provisionalAttachments, messageAttachments]);
 
     return combinedAttachments;
 };
