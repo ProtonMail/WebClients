@@ -55,7 +55,6 @@ export const SelectableConversationList = ({
     const totalConversations = allConversationIds.length;
     const selectedCount = selectedIds.size;
     const allSelected = totalConversations > 0 && selectedCount === totalConversations;
-    const someSelected = selectedCount > 0 && selectedCount < totalConversations;
 
     const toggleSelectionMode = useCallback(() => {
         setIsSelectionMode((prev) => !prev);
@@ -122,9 +121,9 @@ export const SelectableConversationList = ({
         <div className={`selectable-conversation-list ${className}`}>
             {/* Header row */}
             <div
-                className={`selectable-conversation-list-header flex items-center gap-2 mb-2 ${isSelectionMode ? 'is-selection-mode' : ''}`}
+                className={`selectable-conversation-list-header flex items-center justify-between mb-2 ${isSelectionMode ? 'is-selection-mode' : ''}`}
             >
-                <span className="text-md color-norm">
+                <span className="text-md color-weak">
                     {totalConversations}{c('collider_2025:Info').ngettext(
                         msgid` Chat in Project`,
                         ` Chats in Project`,
@@ -132,10 +131,10 @@ export const SelectableConversationList = ({
                     )}
                 </span>
                 <button
-                    className="selectable-conversation-select-link text-md color-primary ml-1 bg-transparent border-none cursor-pointer hover:underline"
+                    className="selectable-conversation-select-link text-sm color-weak bg-transparent border-none cursor-pointer hover:underline"
                     onClick={toggleSelectionMode}
                 >
-                    {isSelectionMode ? c('collider_2025:Action').t`Cancel` : c('collider_2025:Action').t`Selection mode`}
+                    {isSelectionMode ? c('collider_2025:Action').t`Cancel` : c('collider_2025:Action').t`Manage chats`}
                 </button>
             </div>
 
@@ -145,7 +144,8 @@ export const SelectableConversationList = ({
                     <Button size="small" shape="ghost" onClick={toggleSelectAll} className="text-sm">
                         {allSelected
                             ? c('collider_2025:Action').t`Deselect all`
-                            : c('collider_2025:Action').t`Select all`}
+                            : c('collider_2025:Action').t`Select all`
+                        }
                     </Button>
                     {selectedCount > 0 && (
                         <Button
