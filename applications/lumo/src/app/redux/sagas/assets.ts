@@ -1,6 +1,7 @@
 import type { SagaIterator } from 'redux-saga';
 import { call, delay, getContext, put, select } from 'redux-saga/effects';
 
+import { SearchService } from '../../services/search/searchService';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
@@ -422,5 +423,37 @@ export function* handlePullAssetRequest({ payload: request }: { payload: PullAss
 
 export function* logPullAssetFailure({ payload: assetId }: { payload: AssetId }): SagaIterator<any> {
     console.error(`get asset ${assetId} failure`);
+}
+
+/**
+ * Index an asset for search after it's pulled from remote.
+ * This ensures uploaded project files are available for RAG after app reload.
+ */
+export function* indexAssetAfterPull({ payload: asset }: { payload: Asset }): SagaIterator<any> {
+    // Only index project assets (have spaceId, have markdown, not from Drive)
+    if (!asset.spaceId || !asset.markdown || asset.driveNodeId) {
+        return;
+    }
+
+    try {
+        // Get userId from Redux state
+        const user: { ID?: string } | undefined = yield select((state: any) => state.user?.value);
+        const userId = user?.ID;
+        if (!userId) {
+            return;
+        }
+
+        const searchService = SearchService.get(userId);
+        const result: { success: boolean; indexed: number } = yield call(
+            [searchService, searchService.reindexUploadedAssets],
+            [asset]
+        );
+
+        if (result.indexed > 0) {
+            console.log(`[indexAssetAfterPull] Indexed asset: ${asset.filename}`);
+        }
+    } catch (error) {
+        console.warn('[indexAssetAfterPull] Failed to index asset:', error);
+    }
 }
 
