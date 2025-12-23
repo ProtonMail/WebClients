@@ -9,16 +9,16 @@ import { SortField } from '../../../hooks/util/useSorting';
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
 
-export interface SharedOnCellProps {
-    sharedOn: Date;
+export interface CreatedCellProps {
+    time: Date;
     className?: string;
 }
 
-export const SharedOnCell = ({ sharedOn, className }: SharedOnCellProps) => {
+export function CreatedCell({ time, className }: CreatedCellProps) {
     return (
         <span
             className={clsx('text-pre', className)}
-            title={readableTime(dateToLegacyTimestamp(sharedOn), {
+            title={readableTime(dateToLegacyTimestamp(time), {
                 locale: dateLocale,
                 format: 'PP',
             })}
@@ -32,16 +32,16 @@ export const SharedOnCell = ({ sharedOn, className }: SharedOnCellProps) => {
                     minute: 'numeric',
                 }}
             >
-                {dateToLegacyTimestamp(sharedOn)}
+                {dateToLegacyTimestamp(time)}
             </TimeIntl>
         </span>
     );
-};
+}
 
-export const defaultSharedOnCellConfig: CellDefinitionConfig = {
-    id: 'sharedOn',
-    headerText: c('Label').t`Shared on`,
+export const defaultCreatedCellConfig: CellDefinitionConfig = {
+    id: 'created',
+    headerText: c('Label').t`Created`,
     className: 'w-1/6',
-    sortField: SortField.sharedOn,
-    testId: 'column-shared-on',
+    sortField: SortField.linkCreateTime,
+    testId: 'column-share-created',
 };

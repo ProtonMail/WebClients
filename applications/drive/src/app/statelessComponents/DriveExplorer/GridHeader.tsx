@@ -13,6 +13,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { SortField } from '../../hooks/util/useSorting';
@@ -70,7 +71,13 @@ export function GridHeader({
     return (
         <>
             {showCheckboxColumn ? (
-                <TableHeaderCell className="m-0 w-custom" style={{ '--w-custom': '2.5rem' }}>
+                <TableHeaderCell
+                    className={clsx(
+                        'm-0 flex items-center',
+                        selectedCount && selectedCount > 0 ? 'w-full' : 'w-custom'
+                    )}
+                    style={{ '--w-custom': '2.75rem' }}
+                >
                     <Checkbox
                         className="ml-2 expand-click-area"
                         checked={headerCheckboxState.checked}
@@ -85,16 +92,18 @@ export function GridHeader({
                                     selectedCount
                                 )}
                             </span>
-                        ) : null}
+                        ) : (
+                            <span className="ml-2" />
+                        )}
                     </Checkbox>
                 </TableHeaderCell>
             ) : (
-                <TableHeaderCell className="w-0" />
+                <TableHeaderCell className="m-0 w-0" />
             )}
             {showSortControls && (
                 <>
                     <TableHeaderCell
-                        className="m-0 w-custom"
+                        className="m-0 w-custom flex items-center"
                         style={{ '--w-custom': '10em' }}
                         direction={isCurrentSort ? sortDirection : undefined}
                         onSort={isSortable ? handleSort : undefined}
@@ -106,7 +115,7 @@ export function GridHeader({
                             cellSortField={currentSortCell.sortField}
                         />
                     </TableHeaderCell>
-                    <TableHeaderCell className="m-0">
+                    <TableHeaderCell className="m-0 flex-1 flex items-center">
                         <Button
                             aria-describedby={uid}
                             ref={anchorRef}
@@ -117,8 +126,10 @@ export function GridHeader({
                             shape="ghost"
                             size="small"
                             icon
+                            // TODO: Find a better way than this hack
+                            style={{ margin: '-0.5rem' }}
                         >
-                            <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon my-auto" size={4} />
+                            <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon" size={4} />
                         </Button>
                         <Dropdown
                             id={uid}

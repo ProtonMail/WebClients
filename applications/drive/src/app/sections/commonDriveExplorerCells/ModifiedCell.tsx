@@ -5,20 +5,20 @@ import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { SortField } from '../../../hooks/util/useSorting';
-import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
-import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
+import { SortField } from '../../hooks/util/useSorting';
+import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
+import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
 
-export interface SharedOnCellProps {
-    sharedOn: Date;
+export interface ModifiedCellProps {
+    modifiedTime: Date;
     className?: string;
 }
 
-export const SharedOnCell = ({ sharedOn, className }: SharedOnCellProps) => {
+export function ModifiedCell({ modifiedTime, className }: ModifiedCellProps) {
     return (
         <span
             className={clsx('text-pre', className)}
-            title={readableTime(dateToLegacyTimestamp(sharedOn), {
+            title={readableTime(dateToLegacyTimestamp(modifiedTime), {
                 locale: dateLocale,
                 format: 'PP',
             })}
@@ -32,16 +32,16 @@ export const SharedOnCell = ({ sharedOn, className }: SharedOnCellProps) => {
                     minute: 'numeric',
                 }}
             >
-                {dateToLegacyTimestamp(sharedOn)}
+                {dateToLegacyTimestamp(modifiedTime)}
             </TimeIntl>
         </span>
     );
-};
+}
 
-export const defaultSharedOnCellConfig: CellDefinitionConfig = {
-    id: 'sharedOn',
-    headerText: c('Label').t`Shared on`,
+export const defaultModifiedCellConfig: CellDefinitionConfig = {
+    id: 'modified',
+    headerText: c('Label').t`Modified`,
     className: 'w-1/6',
-    sortField: SortField.sharedOn,
-    testId: 'column-shared-on',
+    sortField: SortField.fileModifyTime,
+    testId: 'column-modified',
 };

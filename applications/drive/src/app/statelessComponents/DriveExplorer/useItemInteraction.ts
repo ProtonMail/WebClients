@@ -48,6 +48,11 @@ export const useItemInteraction = ({
                 return;
             }
 
+            // Right click
+            if (event.button === 2) {
+                return;
+            }
+
             performSelection(event);
 
             events?.onItemClick?.(itemId, event);
@@ -66,6 +71,11 @@ export const useItemInteraction = ({
                 target.closest('input') ||
                 target.closest('[role="button"]')
             ) {
+                return;
+            }
+
+            // Right click
+            if (event.button === 2) {
                 return;
             }
 
