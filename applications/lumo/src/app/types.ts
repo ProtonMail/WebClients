@@ -258,10 +258,18 @@ export async function getSpaceDek(s: SpaceKeyClear): Promise<AesGcmCryptoKey> {
     return deriveDataEncryptionKey(spaceKeyBytes);
 }
 
+export function getProjectInfo(space: Space | undefined): ProjectInfo | Partial<ProjectInfo>;
 export function getProjectInfo(space: Space): ProjectInfo;
-export function getProjectInfo(space: undefined): undefined;
-export function getProjectInfo(space: Space | undefined): ProjectInfo | undefined {
-    if (space === undefined) return undefined;
+export function getProjectInfo(space: undefined): Partial<ProjectInfo>;
+export function getProjectInfo(space: Space | undefined): Partial<ProjectInfo> {
+    if (space === undefined) {
+        return {
+            space: undefined,
+            project: undefined,
+            linkedDriveFolder: undefined,
+            isLinked: false,
+        } satisfies Partial<ProjectInfo>;
+    }
     const project = space.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = project?.linkedDriveFolder;
 
@@ -271,7 +279,7 @@ export function getProjectInfo(space: Space | undefined): ProjectInfo | undefine
             project: project,
             linkedDriveFolder,
             isLinked: true,
-        };
+        } satisfies ProjectInfo;
     }
 
     return {
@@ -279,7 +287,7 @@ export function getProjectInfo(space: Space | undefined): ProjectInfo | undefine
         project,
         linkedDriveFolder: undefined,
         isLinked: false,
-    };
+    } satisfies ProjectInfo;
 }
 
 // *** Message ***
