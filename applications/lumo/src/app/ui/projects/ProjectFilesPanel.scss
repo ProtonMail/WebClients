@@ -257,6 +257,8 @@
 .project-files-empty-actions {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 	align-items: center;
 	gap: 12px;
 }
