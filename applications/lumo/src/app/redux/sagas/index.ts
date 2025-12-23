@@ -1,9 +1,18 @@
 // Redux sagas for handling async operations and side effects
 import type { Saga, SagaIterator } from 'redux-saga';
-import { all, call, cancel, delay, getContext, put, select, spawn, take, takeEvery, takeLeading } from 'redux-saga/effects';
-
-import { SearchService } from '../../services/search/searchService';
-import type { LumoState } from '../store';
+import {
+    all,
+    call,
+    cancel,
+    delay,
+    getContext,
+    put,
+    select,
+    spawn,
+    take,
+    takeEvery,
+    takeLeading,
+} from 'redux-saga/effects';
 
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
@@ -16,6 +25,7 @@ import {
     SPACE_STORE,
     type UnsyncedMaps,
 } from '../../indexedDb/db';
+import { SearchService } from '../../services/search/searchService';
 import {
     type Attachment,
     type Conversation,
@@ -27,20 +37,6 @@ import {
 } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
-import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
-import {
-    deserializeAssetSaga,
-    softDeleteAssetFromRemote,
-    locallyDeleteAssetFromLocalRequest,
-    locallyDeleteAssetFromRemoteRequest,
-    pullAssetFailure,
-    pullAssetRequest,
-    pullAssetSuccess,
-    pushAssetFailure,
-    pushAssetNeedsRetry,
-    pushAssetRequest,
-    pushAssetSuccess,
-} from './assets';
 import {
     addAttachment,
     deleteAllAttachments,
@@ -104,16 +100,8 @@ import {
     pushSpaceRequest,
     pushSpaceSuccess,
 } from '../slices/core/spaces';
-import {
-    handleLocallyDeleteAssetFromLocalRequest,
-    handlePullAssetRequest,
-    handlePushAssetFailure,
-    handlePushAssetNeedsRetry,
-    handlePushAssetRequest,
-    handlePushAssetSuccess,
-    indexAssetAfterPull,
-    logPullAssetFailure,
-} from './assets';
+import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
+import type { LumoState } from '../store';
 import {
     deserializeAttachmentSaga,
     logPullAttachmentFailure,
@@ -174,6 +162,7 @@ import {
 } from './spaces';
 
 export let RETRY_PUSH_EVERY_MS = 30000;
+
 export function setRetryPushEveryMs(ms: number) {
     RETRY_PUSH_EVERY_MS = ms;
 }
@@ -301,18 +290,21 @@ export function* loadReduxFromIdb(): SagaIterator {
         const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, ASSET_STORE, REMOTE_ID_STORE];
         // prettier-ignore
         return dbApi.newTransaction(stores, 'readonly')
-            .then(tx => ({ tx }))
-            .then(({ tx, ...rest }) => dbApi.getAllIdMaps(tx)       .then((idMapEntries) =>  ({ tx, ...rest, idMapEntries })))
-            .then(({ tx, ...rest }) => dbApi.getAllSpaces(tx)       .then((spaces) =>        ({ tx, ...rest, spaces })))
-            .then(({ tx, ...rest }) => dbApi.getAllConversations(tx).then((conversations) => ({ tx, ...rest, conversations })))
-            .then(({ tx, ...rest }) => dbApi.getAllMessages(tx)     .then((messages) =>      ({ tx, ...rest, messages })))
-            .then(({ tx, ...rest }) => dbApi.getAllAttachments(tx)  .then((attachments) =>   ({ tx, ...rest, attachments })))
-            .then(({ tx, ...rest }) => dbApi.getAllAssets(tx)       .then((assets) =>        ({ tx, ...rest, assets })))
-            .then(({ tx, ...rest }) => rest)
+            .then(tx => ({tx}))
+            .then(({tx, ...rest}) => dbApi.getAllIdMaps(tx).then((idMapEntries) => ({tx, ...rest, idMapEntries})))
+            .then(({tx, ...rest}) => dbApi.getAllSpaces(tx).then((spaces) => ({tx, ...rest, spaces})))
+            .then(({tx, ...rest}) => dbApi.getAllConversations(tx).then((conversations) => ({
+                tx, ...rest,
+                conversations
+            })))
+            .then(({tx, ...rest}) => dbApi.getAllMessages(tx).then((messages) => ({tx, ...rest, messages})))
+            .then(({tx, ...rest}) => dbApi.getAllAttachments(tx).then((attachments) => ({tx, ...rest, attachments})))
+            .then(({tx, ...rest}) => dbApi.getAllAssets(tx).then((assets) => ({tx, ...rest, assets})))
+            .then(({tx, ...rest}) => rest)
     };
 
     const allIdbData = yield call(getAllIdbData);
-    const { idMapEntries, spaces, conversations, messages, assets } = allIdbData;
+    const { idMapEntries, spaces, conversations, messages } = allIdbData;
 
     for (const entry of idMapEntries) {
         try {
@@ -326,7 +318,7 @@ export function* loadReduxFromIdb(): SagaIterator {
     const spaceStats = { total: spaces.length, deleted: 0, loaded: 0, failed: 0, projects: 0 };
     for (const serializedSpace of spaces) {
         try {
-            const { id, deleted, isProject } = serializedSpace;
+            const { id, deleted } = serializedSpace;
             if (deleted) {
                 spaceStats.deleted++;
                 continue;
@@ -403,91 +395,65 @@ export function* loadReduxFromIdb(): SagaIterator {
         }
     }
 
-    // Load assets from IDB
-    console.log(`Loading ${assets?.length || 0} assets from IndexedDB`);
-    for (let i = 0; i < (assets?.length || 0); i++) {
-        const serializedAsset = assets![i];
-        try {
-            const { id, spaceId, deleted } = serializedAsset;
-            console.log(`Loading asset ${id} for space ${spaceId}, deleted: ${deleted}`);
-            // Skip deleted assets explicitly
-            if (deleted === true) continue;
-            const spaceDek = spaceDekMap[spaceId];
-            if (!spaceDek) {
-                console.warn(`deserializing asset ${id} failed: cannot get space dek for space ${spaceId}`);
-                continue;
-            }
-            const asset = yield call(deserializeAssetSaga, serializedAsset, spaceDek);
-            console.log(`Successfully deserialized asset ${id}, has markdown: ${!!asset.markdown}`);
-            
-            // Remove binary data before storing in Redux (but keep markdown for LLM context)
-            // This avoids non-serializable Uint8Array in Redux state
-            const { data, ...assetForRedux } = asset;
-            yield put(addAttachment(assetForRedux));
-            
-            // Yield control every 5 assets to prevent blocking the main thread and allow webpack HMR to process
-            if ((i + 1) % 5 === 0) {
-                yield delay(0);
-            }
-        } catch (e) {
-            console.warn('Error while loading asset from IndexedDB:', e);
-        }
-    }
-
     // Reindex uploaded assets into the search service
     // This ensures project files are available for RAG after app restart
-    yield spawn(reindexUploadedAssets);
+    yield spawn(reindexUploadedAttachments);
 
     yield put(setReduxLoadedFromIdb());
 }
 
 /**
- * Saga to reindex uploaded assets (non-Drive files) for search.
- * Runs after assets are loaded from IDB to ensure they're indexed for RAG.
+ * Saga to reindex uploaded attachments (non-Drive files) for search.
+ * Runs after attachments are loaded from IDB to ensure they're indexed for RAG.
  */
-function* reindexUploadedAssets(): SagaIterator {
+function* reindexUploadedAttachments(): SagaIterator {
     try {
         // Get userId from Redux state
         const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
         if (!userId) {
-            console.log('[reindexUploadedAssets] No userId available, skipping');
+            console.log('[reindexUploadedAttachments] No userId available, skipping');
             return;
         }
 
-        // Get assets and spaces from Redux state
+        // TODO: the filtering logic below would be better as a Redux selector on the attachments slice
+
+        // Get attachments and spaces from Redux state
         const attachments: Record<string, Attachment> = yield select((state: LumoState) => state.attachments);
         const spaces: Record<string, Space> = yield select((state: LumoState) => state.spaces);
         const validSpaceIds = new Set(Object.keys(spaces));
 
-        const assetList = Object.values(attachments);
-        
-        // Filter to project assets that:
+        const attachmentList = Object.values(attachments);
+
+        // Filter to project attachments that:
         // - Have spaceId and markdown content
         // - Are not from Drive (no driveNodeId)
         // - Belong to a space that still exists
-        const projectAssets = assetList.filter(
-            (asset) => asset.spaceId && 
-                       asset.markdown && 
-                       !asset.driveNodeId &&
-                       validSpaceIds.has(asset.spaceId)
+        const projectAttachments = attachmentList.filter(
+            (attachment) =>
+                attachment.spaceId &&
+                attachment.markdown &&
+                !attachment.driveNodeId &&
+                validSpaceIds.has(attachment.spaceId)
         );
 
-        if (projectAssets.length === 0) {
-            console.log('[reindexUploadedAssets] No uploaded assets to reindex');
+        if (projectAttachments.length === 0) {
+            console.log('[reindexUploadedAttachments] No uploaded attachments to reindex');
             return;
         }
 
-        console.log(`[reindexUploadedAssets] Checking ${projectAssets.length} uploaded assets for indexing`);
+        console.log(
+            `[reindexUploadedAttachments] Checking ${projectAttachments.length} uploaded attachments for indexing`
+        );
 
         const searchService = SearchService.get(userId);
         const result: { success: boolean; indexed: number } = yield call(
-            [searchService, searchService.reindexUploadedAssets],
-            projectAssets
+            [searchService, searchService.reindexUploadedAttachments],
+            projectAttachments
         );
 
-        console.log('[reindexUploadedAssets] Result:', result);
+        console.log('[reindexUploadedAttachments] Result:', result);
     } catch (error) {
-        console.error('[reindexUploadedAssets] Failed:', error);
+        console.error('[reindexUploadedAttachments] Failed:', error);
     }
 }
 
@@ -617,18 +583,6 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(locallyDeleteAttachmentFromLocalRequest, softDeleteAttachmentFromLocal)},
         function*() { yield takeEvery(locallyDeleteAttachmentFromRemoteRequest, softDeleteAttachmentFromRemote)},
         function*() { yield takeEvery(locallyRefreshAttachmentFromRemoteRequest, refreshAttachmentFromRemote)},
-
-        // Assets (space-level files)
-        function*() { yield takeEvery(pushAssetRequest, handlePushAssetRequest)},
-        function*() { yield takeEvery(pushAssetSuccess, handlePushAssetSuccess)},
-        function*() { yield takeEvery(pushAssetFailure, handlePushAssetFailure)},
-        function*() { yield takeEvery(pushAssetNeedsRetry, handlePushAssetNeedsRetry)},
-        function*() { yield takeEvery(pullAssetRequest, handlePullAssetRequest)},
-        function*() { yield takeEvery(pullAssetSuccess, indexAssetAfterPull)},
-        function*() { yield takeEvery(pullAssetFailure, logPullAssetFailure)},
-        function*() { yield takeEvery(locallyDeleteAssetFromLocalRequest, handleLocallyDeleteAssetFromLocalRequest)},
-        function*() { yield takeEvery(locallyDeleteAssetFromRemoteRequest, softDeleteAssetFromRemote)},
-        // function*() { yield takeEvery(locallyRefreshAttachmentFromRemoteMessageRequest, refreshAttachmentFromRemoteMessage)},
 
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
         function*() { yield takeEvery(reloadReduxRequest, reloadRedux) },
