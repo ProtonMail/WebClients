@@ -33,6 +33,7 @@ import {
     type SerializedConversation,
     type SerializedMessage,
     type SerializedSpace,
+    type ShallowAttachment,
     type Space,
     type SpaceKeyClear,
     type SpaceKeyEnc,
@@ -47,6 +48,7 @@ import {
     isConversationPriv,
     isEmptyMessagePriv,
     isMessagePriv,
+    isShallowAttachment,
     isSpacePriv,
     splitAttachment,
     splitConversation,
@@ -257,7 +259,35 @@ export async function deserializeMessage(
         let messagePriv: MessagePriv = {};
         if (encrypted !== undefined) {
             const messagePrivJson = await decryptString(encrypted, spaceDek, ad);
-            messagePriv = JSON.parse(messagePrivJson);
+            const parsed = JSON.parse(messagePrivJson);
+
+            // Filter out invalid attachments instead of failing the entire message
+            // This can happen when attachments have unexpected fields from newer clients
+            if (parsed.attachments && Array.isArray(parsed.attachments)) {
+                const validAttachments: ShallowAttachment[] = [];
+                for (const att of parsed.attachments) {
+                    if (isShallowAttachment(att)) {
+                        validAttachments.push(att);
+                    } else {
+                        // Log the issue but don't fail - attachment may have extra fields
+                        safeLogger.warn(
+                            `deserializeMessage: Invalid attachment in message ${serializedMessage.id}, attempting recovery`,
+                            { attachmentId: att?.id, hasData: !!att?.data, hasMarkdown: !!att?.markdown }
+                        );
+                        // Try to recover by removing data and markdown if they exist
+                        if (att && typeof att === 'object' && att.id && att.uploadedAt) {
+                            const { data, markdown, ...shallowAtt } = att;
+                            if (isShallowAttachment(shallowAtt)) {
+                                validAttachments.push(shallowAtt);
+                            }
+                        }
+                    }
+                }
+                parsed.attachments = validAttachments.length > 0 ? validAttachments : undefined;
+            }
+
+            messagePriv = parsed;
+            // Re-validate after fixing attachments
             if (!isMessagePriv(messagePriv)) {
                 throw new Error('Deserialized object is not a MessagePriv');
             }
