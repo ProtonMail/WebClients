@@ -47,6 +47,11 @@ const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'brows
     );
 };
 
+/** Inner props that include the optional Drive upload function */
+type ComposerComponentInnerProps = ComposerComponentProps & {
+    uploadToDrive?: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+};
+
 export type ComposerComponentProps = {
     handleSendMessage: HandleSendMessage;
     onAbort?: () => void;
@@ -67,7 +72,11 @@ export type ComposerComponentProps = {
     spaceId?: string; // Optional space ID to include space-level attachments
 };
 
-export const ComposerComponent = ({
+/**
+ * Inner component that handles the actual composer logic.
+ * Receives optional uploadToDrive from wrapper.
+ */
+const ComposerComponentInner = ({
     handleSendMessage,
     onAbort,
     isGenerating,
@@ -85,7 +94,8 @@ export const ComposerComponent = ({
     initialQuery,
     prefillQuery,
     spaceId,
-}: ComposerComponentProps) => {
+    uploadToDrive,
+}: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { hasTierErrors } = useTierErrors();
@@ -104,7 +114,7 @@ export const ComposerComponent = ({
     // Get all relevant attachments for context calculations (includes space-level attachments if spaceId is provided)
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
-    // File handling hook
+    // File handling hook - pass uploadToDrive only for authenticated users
     const {
         fileInputRef,
         handleFileProcessing,
@@ -112,7 +122,7 @@ export const ComposerComponent = ({
         handleOpenFileDialog,
         handleBrowseDrive,
         handleDeleteAttachment,
-    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder });
+    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder, uploadToDrive });
 
     const sendGenerateMessage = useCallback(
         async (editor: any) => {
@@ -326,4 +336,28 @@ export const ComposerComponent = ({
             )}
         </>
     );
+};
+
+/**
+ * Wrapper component that provides Drive SDK upload function for authenticated users.
+ * For guest users, uploadToDrive is not provided.
+ */
+const ComposerComponentWithDrive = (props: ComposerComponentProps) => {
+    const { uploadFile } = useDriveSDK();
+    return <ComposerComponentInner {...props} uploadToDrive={uploadFile} />;
+};
+
+/**
+ * Main exported component that conditionally uses Drive SDK based on guest status.
+ */
+export const ComposerComponent = (props: ComposerComponentProps) => {
+    const isGuest = useIsGuest();
+    
+    // For guest users, render without Drive SDK (avoids useUser() error)
+    if (isGuest) {
+        return <ComposerComponentInner {...props} />;
+    }
+    
+    // For authenticated users, provide Drive SDK upload function
+    return <ComposerComponentWithDrive {...props} />;
 };
