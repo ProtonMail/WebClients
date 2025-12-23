@@ -251,7 +251,6 @@ export const useExternalBookingLoader = () => {
                 setBookingDetails({
                     calendarId: bookingPageData.CalendarID,
                     bookingUID: bookingPageData.BookingUID,
-                    calendarKeySignature: bookingPageData?.CalendarKeySignature || '',
                     calendarPublicKey,
                     summary,
                     description,

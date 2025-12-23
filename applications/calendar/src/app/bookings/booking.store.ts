@@ -35,7 +35,6 @@ export type OldBookingTimeslot = {
 export type BookingDetails = {
     calendarId: string;
     bookingUID: string;
-    calendarKeySignature: string;
     calendarPublicKey: PublicKeyReference | undefined;
     summary: string;
     description: string;
