@@ -46,13 +46,11 @@ export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
             onClick={onClick}
         >
             <div className="flex flex-row flex-nowrap">
-                {firstThreeDomains.map((domain) => {
-                    return (
-                        <div className="source-favicon rounded-full bg-norm border border-weak flex">
-                            <SourceFavIcon domain={domain} />
-                        </div>
-                    );
-                })}
+                {firstThreeDomains.map((domain) => (
+                    <div key={domain} className="source-favicon rounded-full bg-norm border border-weak flex">
+                        <SourceFavIcon domain={domain} />
+                    </div>
+                ))}
             </div>
             <span className="">{c('collider_2025: Web Search').t`Sources`}</span>
         </Button>

@@ -1,6 +1,9 @@
 // Redux sagas for handling async operations and side effects
 import type { Saga, SagaIterator } from 'redux-saga';
-import { all, call, cancel, delay, getContext, put, spawn, take, takeEvery, takeLeading } from 'redux-saga/effects';
+import { all, call, cancel, delay, getContext, put, select, spawn, take, takeEvery, takeLeading } from 'redux-saga/effects';
+
+import { SearchService } from '../../services/search/searchService';
+import type { LumoState } from '../store';
 
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
@@ -32,6 +35,7 @@ import {
     locallyDeleteAssetFromRemoteRequest,
     pullAssetFailure,
     pullAssetRequest,
+    pullAssetSuccess,
     pushAssetFailure,
     pushAssetNeedsRetry,
     pushAssetRequest,
@@ -107,6 +111,7 @@ import {
     handlePushAssetNeedsRetry,
     handlePushAssetRequest,
     handlePushAssetSuccess,
+    indexAssetAfterPull,
     logPullAssetFailure,
 } from './assets';
 import {
@@ -429,7 +434,61 @@ export function* loadReduxFromIdb(): SagaIterator {
         }
     }
 
+    // Reindex uploaded assets into the search service
+    // This ensures project files are available for RAG after app restart
+    yield spawn(reindexUploadedAssets);
+
     yield put(setReduxLoadedFromIdb());
+}
+
+/**
+ * Saga to reindex uploaded assets (non-Drive files) for search.
+ * Runs after assets are loaded from IDB to ensure they're indexed for RAG.
+ */
+function* reindexUploadedAssets(): SagaIterator {
+    try {
+        // Get userId from Redux state
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (!userId) {
+            console.log('[reindexUploadedAssets] No userId available, skipping');
+            return;
+        }
+
+        // Get assets and spaces from Redux state
+        const attachments: Record<string, Attachment> = yield select((state: LumoState) => state.attachments);
+        const spaces: Record<string, Space> = yield select((state: LumoState) => state.spaces);
+        const validSpaceIds = new Set(Object.keys(spaces));
+
+        const assetList = Object.values(attachments);
+        
+        // Filter to project assets that:
+        // - Have spaceId and markdown content
+        // - Are not from Drive (no driveNodeId)
+        // - Belong to a space that still exists
+        const projectAssets = assetList.filter(
+            (asset) => asset.spaceId && 
+                       asset.markdown && 
+                       !asset.driveNodeId &&
+                       validSpaceIds.has(asset.spaceId)
+        );
+
+        if (projectAssets.length === 0) {
+            console.log('[reindexUploadedAssets] No uploaded assets to reindex');
+            return;
+        }
+
+        console.log(`[reindexUploadedAssets] Checking ${projectAssets.length} uploaded assets for indexing`);
+
+        const searchService = SearchService.get(userId);
+        const result: { success: boolean; indexed: number } = yield call(
+            [searchService, searchService.reindexUploadedAssets],
+            projectAssets
+        );
+
+        console.log('[reindexUploadedAssets] Result:', result);
+    } catch (error) {
+        console.error('[reindexUploadedAssets] Failed:', error);
+    }
 }
 
 export function* unloadRedux(): SagaIterator {
@@ -565,6 +624,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pushAssetFailure, handlePushAssetFailure)},
         function*() { yield takeEvery(pushAssetNeedsRetry, handlePushAssetNeedsRetry)},
         function*() { yield takeEvery(pullAssetRequest, handlePullAssetRequest)},
+        function*() { yield takeEvery(pullAssetSuccess, indexAssetAfterPull)},
         function*() { yield takeEvery(pullAssetFailure, logPullAssetFailure)},
         function*() { yield takeEvery(locallyDeleteAssetFromLocalRequest, handleLocallyDeleteAssetFromLocalRequest)},
         function*() { yield takeEvery(locallyDeleteAssetFromRemoteRequest, softDeleteAssetFromRemote)},

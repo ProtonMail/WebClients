@@ -23,7 +23,7 @@ import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectConversations, selectMessages } from '../../../redux/selectors';
+import { selectAssets, selectConversations, selectMessages } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
@@ -170,6 +170,7 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const conversations = useLumoSelector(selectConversations);
     const messages = useLumoSelector(selectMessages);
     const spaceMap = useLumoSelector(selectSpaceMap);
+    const assets = useLumoSelector(selectAssets);
     const { indexingStatus: messageIndexingStatus } = useMessageSearch();
     const {
         rehydrateFolders,
@@ -180,7 +181,9 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const [indexError, setIndexError] = useState<string | null>(null);
 
     const handleReindex = React.useCallback(async () => {
-        if (isIndexing || isDriveIndexing || !userId) return;
+        if (isIndexing || isDriveIndexing || !userId) {
+            return;
+        }
 
         setIsIndexing(true);
         setIndexError(null);
@@ -216,13 +219,25 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
 
             const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
             await rehydrateFolders(validSpaceIds);
+
+            // Reindex uploaded project assets (non-Drive files)
+            try {
+                const assetList = Object.values(assets);
+                if (assetList.length > 0) {
+                    console.log('[Settings] Reindexing uploaded assets...');
+                    const result = await searchService.reindexUploadedAssets(assetList);
+                    console.log('[Settings] Asset reindexing result:', result);
+                }
+            } catch (error) {
+                console.error('[Settings] Asset reindexing failed:', error);
+            }
         } catch (error) {
             console.error('[Settings] Re-indexing failed:', error);
             setIndexError(c('collider_2025: Error').t`Re-indexing failed. Please try again.`);
         } finally {
             setIsIndexing(false);
         }
-    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap]);
+    }, [conversations, messages, isIndexing, isDriveIndexing, userId, rehydrateFolders, spaceMap, assets]);
 
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
