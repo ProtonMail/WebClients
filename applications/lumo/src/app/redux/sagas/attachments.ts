@@ -473,5 +473,51 @@ export function* processPullAttachmentResult({ payload }: { payload: RemoteAttac
         yield put(locallyDeleteAttachmentFromRemoteRequest(id));
     } else {
         yield put(locallyRefreshAttachmentFromRemoteRequest(payload));
+        yield call(indexPulledAttachment, payload);
+    }
+}
+
+/**
+ * Index a pulled attachment for search if it's a project file with content.
+ * This ensures files added in other browsers are indexed for RAG.
+ */
+function* indexPulledAttachment(remoteAttachment: RemoteAttachment): SagaIterator<void> {
+    try {
+        const { id, spaceId } = remoteAttachment;
+
+        if (!spaceId) {
+            return;
+        }
+
+        const space: Space | undefined = yield select(selectSpaceById(spaceId));
+        if (!space) {
+            console.log(`[indexPulledAttachment] Space ${spaceId} not found, skipping indexing`);
+            return;
+        }
+
+        const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, space);
+        const attachment: Attachment | null = yield call(deserializeAttachment, remoteAttachment, spaceDek);
+
+        if (!attachment || !attachment.markdown || attachment.driveNodeId) {
+            return;
+        }
+
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (!userId) {
+            return;
+        }
+
+        const { SearchService } = yield call(() => import('../../services/search/searchService'));
+        const searchService = SearchService.get(userId);
+        
+        // Index the attachment
+        const result: { success: boolean; indexed: number } = yield call(
+            [searchService, searchService.reindexUploadedAttachments],
+            [attachment]
+        );
+
+        console.log(`[indexPulledAttachment] Indexed attachment ${id}:`, result);
+    } catch (error) {
+        console.warn('[indexPulledAttachment] Failed to index pulled attachment:', error);
     }
 }
