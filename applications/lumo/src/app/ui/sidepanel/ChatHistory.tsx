@@ -62,7 +62,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
-    const { isSmallScreen } = useSidebar();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
@@ -71,7 +70,13 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const isLoading = false; // fixme is this correct?
 
     const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, showProjectConversationsInHistory, conversationId);
+        const conversations = getVisibleConversations(
+            conversationMap,
+            isGuest,
+            isGhostChatMode,
+            showProjectConversationsInHistory,
+            conversationId
+        );
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
         const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
@@ -128,62 +133,61 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                     </>
                 )}
                 <div className="chat-history-list ml-5">
-                {today.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
-                        <RecentChatsList
-                            conversations={today}
-                            selectedConversationId={conversationId}
-                            disabled={isGuest}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
-                {lastWeek.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
-                            {c('collider_2025:Title').t`Last 7 days`}
-                        </h4>
-                        <RecentChatsList
-                            conversations={lastWeek}
-                            selectedConversationId={conversationId}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
-                {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
-                {lastMonth.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
-                            {c('collider_2025:Title').t`Last 30 days`}
-                        </h4>
-                        {hasLumoPlus ? (
+                    {today.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
                             <RecentChatsList
-                                conversations={lastMonth}
+                                conversations={today}
+                                selectedConversationId={conversationId}
+                                disabled={isGuest}
+                                onItemClick={onItemClick}
+                            />
+                        </>
+                    )}
+                    {lastWeek.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-3 mb-2 ml-3">
+                                {c('collider_2025:Title').t`Last 7 days`}
+                            </h4>
+                            <RecentChatsList
+                                conversations={lastWeek}
                                 selectedConversationId={conversationId}
                                 onItemClick={onItemClick}
                             />
-                        ) : (
-                            <LumoChatHistoryUpsell />
-                        )}
-                    </>
-                )}
+                        </>
+                    )}
+                    {/* For free users, an upsell is shown when they have conversations beyond 30 days */}
+                    {lastMonth.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">
+                                {c('collider_2025:Title').t`Last 30 days`}
+                            </h4>
+                            {hasLumoPlus ? (
+                                <RecentChatsList
+                                    conversations={lastMonth}
+                                    selectedConversationId={conversationId}
+                                    onItemClick={onItemClick}
+                                />
+                            ) : (
+                                <LumoChatHistoryUpsell />
+                            )}
+                        </>
+                    )}
 
-                {/* Only show earlier chats for paid users */}
-                {hasLumoPlus && earlier.length > 0 && (
-                    <>
-                        <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
-                            .t`Earlier`}</h4>
+                    {/* Only show earlier chats for paid users */}
+                    {hasLumoPlus && earlier.length > 0 && (
+                        <>
+                            <h4 className="block color-weak text-sm mt-4 mb-2 ml-3">{c('collider_2025:Title')
+                                .t`Earlier`}</h4>
 
-                        <RecentChatsList
-                            conversations={earlier}
-                            selectedConversationId={conversationId}
-                            onItemClick={onItemClick}
-                        />
-                    </>
-                )}
+                            <RecentChatsList
+                                conversations={earlier}
+                                selectedConversationId={conversationId}
+                                onItemClick={onItemClick}
+                            />
+                        </>
+                    )}
                 </div>
-                
             </Scroll>
         </div>
     );
