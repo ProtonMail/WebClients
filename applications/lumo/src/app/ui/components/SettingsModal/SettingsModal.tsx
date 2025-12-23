@@ -8,7 +8,7 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
@@ -18,6 +18,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useLumoUserSettings } from '../../../hooks';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -165,6 +166,8 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
     const [user] = useUser();
     const userId = user?.ID;
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
     // Index management state
     const conversations = useLumoSelector(selectConversations);
@@ -256,6 +259,27 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                 </div>
             )}
 
+            {/* Project conversations in history toggle - only for logged in users */}
+            {!isGuest && (
+                <SettingsSectionItem
+                    icon="folder"
+                    text={c('collider_2025: Title').t`Show project chats in history`}
+                    subtext={c('collider_2025: Description').t`Include project conversations in the main chat history`}
+                    button={
+                        <Toggle
+                            id="show-project-conversations-toggle"
+                            checked={showProjectConversationsInHistory}
+                            onChange={() => {
+                                updateSettings({
+                                    showProjectConversationsInHistory: !showProjectConversationsInHistory,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
+                />
+            )}
+
             {/* Search Index Management - only for logged in users */}
             {!isGuest && (
                 <SettingsSectionItem
@@ -291,8 +315,8 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
             {!isGuest && (
                 <SettingsSectionItem
                     icon="speech-bubble"
-                    text={c('collider_2025: Title').t`Delete all chats`}
-                    subtext={c('collider_2025: Description').t`Permanently delete your chats. This is irreversible.`}
+                    text={c('collider_2025: Title').t`Delete everything`}
+                    subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
                     button={<DeleteAllButton onClose={onClose} />}
                 />
             )}
