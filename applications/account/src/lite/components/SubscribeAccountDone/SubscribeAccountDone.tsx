@@ -10,7 +10,7 @@ const SubscribeAccountDone = ({ type }: { type: SubscribeType }) => {
                 <>
                     <img src={updateSuccess} alt="" />
                     <h1 className="text-bold text-2xl my-2">
-                        {c('Info').t`Your account has been successfully updated`}
+                        {c('Info').t`Your account has been successfully updated.`}
                     </h1>
                 </>
             )}

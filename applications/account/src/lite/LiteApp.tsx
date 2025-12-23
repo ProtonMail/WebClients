@@ -22,6 +22,7 @@ import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getValidatedProtonProtocolRedirect } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppVersionHeader } from '@proton/shared/lib/fetch/headers';
@@ -40,7 +41,7 @@ import LiteLayout from './components/LiteLayout';
 import LiteLoaderPage from './components/LiteLoaderPage';
 import { SupportedActions, getApp } from './helper';
 
-const bootstrapApp = ({ appVersion }: { appVersion: string | null }) => {
+const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: ProductParam }) => {
     const defaultHeaders = appVersion ? getAppVersionHeader(appVersion) : undefined;
     const config = {
         ...defaultConfig,
@@ -56,7 +57,12 @@ const bootstrapApp = ({ appVersion }: { appVersion: string | null }) => {
     initSafariFontFixClassnames();
 
     const cache = createCache<string, any>();
-    const store = setupStore({ mode: 'lite' });
+    const store = setupStore({
+        mode: 'lite',
+        preloadedState: {
+            appName: app,
+        },
+    });
 
     extendStore({ api, config, authentication });
 
@@ -76,9 +82,7 @@ const App = () => {
         return new URLSearchParams(location.search);
     });
     const appVersion = searchParams.get('app-version');
-    const { api, config, store, authentication, cache } = useInstance(() => bootstrapApp({ appVersion }));
 
-    const [UID, setUID] = useState<string | undefined>(() => authentication.UID);
     const [isLogout, setLogout] = useState(false);
 
     const action = searchParams.get('action') as SupportedActions | null;
@@ -96,6 +100,9 @@ const App = () => {
     );
     const app = getApp({ app: initialSearchParams.get('app'), plan: initialSearchParams.get('plan'), redirect });
 
+    const { api, config, store, authentication, cache } = useInstance(() => bootstrapApp({ appVersion, app }));
+
+    const [UID, setUID] = useState<string | undefined>(() => authentication.UID);
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
         sentry.setUID(UID);

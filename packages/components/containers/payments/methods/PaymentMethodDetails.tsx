@@ -13,7 +13,7 @@ import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
 
 import './PaymentMethodDetails.scss';
 
-const getCreditCardTypeByBrand = (brand: string): CreditCardType => {
+export const getCreditCardTypeByBrand = (brand: string): CreditCardType => {
     const CREDIT_CARD_TYPES: {
         [brand: string]: CreditCardType;
     } = {
