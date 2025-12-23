@@ -13,7 +13,7 @@ import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
-import type { Conversation, Message } from '../../../types';
+import { type Conversation, type Message, getProjectInfo } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import FavoritesUpsellPrompt from '../../components/FavoritesUpsellPrompt';
 import LumoButton from '../../components/LumoButton';
@@ -45,8 +45,9 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
     // Get space/project info if this conversation is part of a project
     const space = useLumoSelector(selectSpaceById(spaceId));
-    const isProjectConversation = space?.isProject;
-    const projectName = space?.projectName;
+    const { project } = getProjectInfo(space);
+    const isProjectConversation = project !== undefined;
+    const projectName = project?.projectName;
 
     // Count total files in conversation: message attachments + space-level files (deduplicated)
     // Get space-level assets (persistent project files) and attachments
