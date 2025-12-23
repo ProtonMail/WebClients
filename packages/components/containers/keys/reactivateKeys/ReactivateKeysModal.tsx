@@ -23,6 +23,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { FileForm, FileFormId } from './FileForm';
 import { MnemonicForm, MnemonicFormId } from './MnemonicForm';
 import { PasswordForm, PasswordFormId } from './PasswordForm';
+import type { ReactivateKeysContentProps } from './interface';
 
 interface Props extends ModalProps {
     userKeys: DecryptedKey[];
@@ -36,11 +37,19 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, ...rest }: Pro
     const [user] = useUser();
     const [loading, setLoading] = useState(false);
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
+
     const [maybeId, setId] = useState<string | null>(null);
 
     const showMnemonicTab =
         isMnemonicAvailable &&
         (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED);
+
+    const sharedProps: ReactivateKeysContentProps = {
+        keyReactivationStates,
+        onLoading: setLoading,
+        loading,
+        onClose: rest.onClose,
+    };
 
     const forms = [
         showMnemonicTab
@@ -48,32 +57,18 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, ...rest }: Pro
                   id: MnemonicFormId,
                   // translator: 'Phrase' here refers to the 'Recovery phrase'
                   title: c('Label').t`Phrase`,
-                  content: (
-                      <MnemonicForm
-                          keyReactivationStates={keyReactivationStates}
-                          onLoading={setLoading}
-                          onClose={rest.onClose}
-                      />
-                  ),
+                  content: <MnemonicForm {...sharedProps} />,
               }
             : undefined,
         {
             id: PasswordFormId,
             title: c('Label').t`Password`,
-            content: (
-                <PasswordForm
-                    keyReactivationStates={keyReactivationStates}
-                    onLoading={setLoading}
-                    onClose={rest.onClose}
-                />
-            ),
+            content: <PasswordForm {...sharedProps} />,
         },
         {
             id: FileFormId,
             title: c('Label').t`File`,
-            content: (
-                <FileForm keyReactivationStates={keyReactivationStates} onLoading={setLoading} onClose={rest.onClose} />
-            ),
+            content: <FileForm {...sharedProps} />,
         },
     ].filter(isTruthy);
 

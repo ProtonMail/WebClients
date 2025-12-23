@@ -19,8 +19,7 @@ import type { ReactivateKeysContentProps } from './interface';
 
 export const FileFormId = 'file-form';
 
-export const FileForm = ({ keyReactivationStates, onLoading, onClose }: ReactivateKeysContentProps) => {
-    const isSubmitting = false;
+export const FileForm = ({ keyReactivationStates, loading, onLoading, onClose }: ReactivateKeysContentProps) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [uploadedFileKeys, setUploadedFileKeys] = useState<ProcessedKey[]>([]);
     const { createNotification } = useNotifications();
@@ -97,7 +96,7 @@ export const FileForm = ({ keyReactivationStates, onLoading, onClose }: Reactiva
                 recoverySecrets={recoverySecrets}
                 uploadedKeys={uploadedFileKeys}
                 setUploadedKeys={setUploadedFileKeys}
-                disabled={isSubmitting}
+                disabled={loading}
                 error={validator([
                     requiredValidator(uploadedFileKeys.map((key) => key.armoredKeyWithInfo.fingerprint).join()),
                 ])}

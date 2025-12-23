@@ -16,8 +16,7 @@ import { getKeyReactivationNotification } from './reactivateHelper';
 
 export const PasswordFormId = 'password-form';
 
-export const PasswordForm = ({ keyReactivationStates, onLoading, onClose }: ReactivateKeysContentProps) => {
-    const isSubmitting = false;
+export const PasswordForm = ({ keyReactivationStates, loading, onLoading, onClose }: ReactivateKeysContentProps) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [password, setPassword] = useState('');
     const { createNotification } = useNotifications();
@@ -62,7 +61,7 @@ export const PasswordForm = ({ keyReactivationStates, onLoading, onClose }: Reac
                 value={password}
                 onValue={setPassword}
                 autoFocus
-                disabled={isSubmitting}
+                disableChange={loading}
             />
         </form>
     );

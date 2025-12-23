@@ -15,8 +15,7 @@ import type { ReactivateKeysContentProps } from './interface';
 
 export const MnemonicFormId = 'mnemonic-form';
 
-export const MnemonicForm = ({ keyReactivationStates, onLoading, onClose }: ReactivateKeysContentProps) => {
-    const isSubmitting = false;
+export const MnemonicForm = ({ keyReactivationStates, loading, onLoading, onClose }: ReactivateKeysContentProps) => {
     const [mnemonic, setMnemonic] = useState('');
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
     const { validator, onFormSubmit } = useFormErrors();
@@ -71,7 +70,7 @@ export const MnemonicForm = ({ keyReactivationStates, onLoading, onClose }: Reac
         >
             <div className="mb-4">{c('Info').t`This is a 12-word phrase that you were prompted to set.`}</div>
             <MnemonicInputField
-                disableChange={isSubmitting}
+                disableChange={loading}
                 value={mnemonic}
                 onValue={setMnemonic}
                 autoFocus
