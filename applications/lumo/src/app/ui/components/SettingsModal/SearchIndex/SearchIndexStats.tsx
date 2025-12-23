@@ -64,7 +64,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
         <div className="flex justify-space-between">
             <span className="flex items-center gap-2">
                 <Icon name={'brand-proton-docs'} size={4} />
-                {c('Info').t`Indexed Drive documents:`}
+                {c('Info').t`Indexed files:`}
             </span>
             <span className="text-semibold" style={{ color: progressColor(displayDriveDocs) }}>
                 {foundationStatus?.driveDocumentsUnique ?? displayDriveDocs}
@@ -86,14 +86,6 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
             <span>{c('Info').t`Index size:`}</span>
             <span className="text-semibold">{formatBytes(foundationStatus?.totalBytes)}</span>
         </div>
-        {foundationStatus?.bm25Stats && foundationStatus.bm25Stats.vocabularySize > 0 && (
-            <div className="flex justify-space-between">
-                <span>{c('Info').t`Vocabulary size:`}</span>
-                <span className="text-semibold">
-                    {foundationStatus.bm25Stats.vocabularySize.toLocaleString()} terms
-                </span>
-            </div>
-        )}
     </div>
 );
 

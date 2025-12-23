@@ -583,7 +583,9 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         isChunk,
         chunkTitle,
         filename,
-        data,
+        // Note: `data` (raw Uint8Array) is intentionally excluded from cleaned attachments
+        // to prevent large binary blobs from being stored in Redux state.
+        // The data is only needed temporarily during file processing and serialization.
         markdown,
         errorMessage,
         truncated,
@@ -605,7 +607,7 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(isChunk !== undefined && { isChunk }),
         ...(chunkTitle !== undefined && { chunkTitle }),
         filename,
-        ...(data !== undefined && { data }),
+        // data is intentionally NOT included - see comment above
         ...(markdown !== undefined && { markdown }),
         ...(errorMessage !== undefined && { errorMessage }),
         ...(truncated !== undefined && { truncated }),
