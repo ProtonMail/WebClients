@@ -296,6 +296,13 @@
 	max-inline-size: 51.25rem;
 	margin-inline: auto;
 	align-items: stretch;
+	box-sizing: border-box;
+
+	// Ensure children don't overflow on mobile
+	> * {
+		max-inline-size: 100%;
+		box-sizing: border-box;
+	}
 
 	@media (width <= 768px) {
 		max-inline-size: 100%;
@@ -318,6 +325,9 @@
 	display: flex;
 	flex-direction: column;
 	inline-size: 100%;
+	max-inline-size: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
 
 	@media (width <= 1024px) {
 		padding-block: 0;
@@ -326,6 +336,8 @@
 
 	@include media('<small') {
 		padding: 0;
+		inline-size: 100%;
+		max-inline-size: 100%;
 	}
 }
 
