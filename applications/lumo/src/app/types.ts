@@ -333,13 +333,15 @@ export function isMessagePriv(value: any): value is MessagePriv {
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.content === undefined || typeof value.content === 'string') &&
-        (value.context === undefined || typeof value.context === 'string') &&
+        (value.content === undefined || value.content === null || typeof value.content === 'string') &&
+        (value.context === undefined || value.context === null || typeof value.context === 'string') &&
         (value.attachments === undefined ||
+            value.attachments === null ||
             (Array.isArray(value.attachments) && value.attachments.every((a: unknown) => isShallowAttachment(a)))) &&
-        (value.toolCall === undefined || typeof value.toolCall === 'string') &&
-        (value.toolResult === undefined || typeof value.toolResult === 'string') &&
+        (value.toolCall === undefined || value.toolCall === null || typeof value.toolCall === 'string') &&
+        (value.toolResult === undefined || value.toolResult === null || typeof value.toolResult === 'string') &&
         (value.contextFiles === undefined ||
+            value.contextFiles === null ||
             (Array.isArray(value.contextFiles) && value.contextFiles.every((id: unknown) => typeof id === 'string')))
     );
 }
@@ -594,17 +596,18 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
         typeof value === 'object' &&
         value !== null &&
         typeof value.id === 'string' &&
-        (value.spaceId === undefined || typeof value.spaceId === 'string') &&
-        (typeof value.mimeType === 'string' || value.mimeType === undefined) &&
+        (value.spaceId === undefined || value.spaceId === null || typeof value.spaceId === 'string') &&
+        (value.mimeType === undefined || value.mimeType === null || typeof value.mimeType === 'string') &&
         typeof value.uploadedAt === 'string' &&
-        (typeof value.rawBytes === 'number' || value.rawBytes === undefined) &&
-        (value.processing === undefined || typeof value.processing === 'boolean') &&
-        (value.error === undefined || typeof value.error === 'boolean') &&
-        (value.autoRetrieved === undefined || typeof value.autoRetrieved === 'boolean') &&
-        (value.driveNodeId === undefined || typeof value.driveNodeId === 'string') &&
-        (value.relevanceScore === undefined || typeof value.relevanceScore === 'number') &&
-        (value.isChunk === undefined || typeof value.isChunk === 'boolean') &&
-        (value.chunkTitle === undefined || typeof value.chunkTitle === 'string')
+        (value.rawBytes === undefined || value.rawBytes === null || typeof value.rawBytes === 'number') &&
+        (value.processing === undefined || value.processing === null || typeof value.processing === 'boolean') &&
+        (value.error === undefined || value.error === null || typeof value.error === 'boolean') &&
+        (value.autoRetrieved === undefined || value.autoRetrieved === null || typeof value.autoRetrieved === 'boolean') &&
+        (value.driveNodeId === undefined || value.driveNodeId === null || typeof value.driveNodeId === 'string') &&
+        (value.relevanceScore === undefined || value.relevanceScore === null || typeof value.relevanceScore === 'number') &&
+        (value.isChunk === undefined || value.isChunk === null || typeof value.isChunk === 'boolean') &&
+        (value.chunkTitle === undefined || value.chunkTitle === null || typeof value.chunkTitle === 'string') &&
+        (value.isUploadedProjectFile === undefined || value.isUploadedProjectFile === null || typeof value.isUploadedProjectFile === 'boolean')
     );
 }
 
@@ -612,14 +615,14 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
     return (
         typeof value === 'object' &&
         value !== null &&
-        (value.filename === undefined || typeof value.filename === 'string') &&
-        (value.data === undefined || value.data instanceof Uint8Array) &&
-        (value.markdown === undefined || typeof value.markdown === 'string') &&
-        (value.errorMessage === undefined || typeof value.errorMessage === 'string') &&
-        (value.truncated === undefined || typeof value.truncated === 'boolean') &&
-        (value.originalRowCount === undefined || typeof value.originalRowCount === 'number') &&
-        (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
-        (value.tokenCount === undefined || typeof value.tokenCount === 'number')
+        (value.filename === undefined || value.filename === null || typeof value.filename === 'string') &&
+        (value.data === undefined || value.data === null || value.data instanceof Uint8Array) &&
+        (value.markdown === undefined || value.markdown === null || typeof value.markdown === 'string') &&
+        (value.errorMessage === undefined || value.errorMessage === null || typeof value.errorMessage === 'string') &&
+        (value.truncated === undefined || value.truncated === null || typeof value.truncated === 'boolean') &&
+        (value.originalRowCount === undefined || value.originalRowCount === null || typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined || value.processedRowCount === null || typeof value.processedRowCount === 'number') &&
+        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number')
     );
 }
 
@@ -628,7 +631,10 @@ export function isAttachment(value: any): value is Attachment {
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
-    return isAttachment(value) && value.data === undefined && value.markdown === undefined;
+    // Check that data and markdown are not present (undefined, null, or missing after JSON parsing)
+    const hasNoData = value.data === undefined || value.data === null;
+    const hasNoMarkdown = value.markdown === undefined || value.markdown === null;
+    return isAttachment(value) && hasNoData && hasNoMarkdown;
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
