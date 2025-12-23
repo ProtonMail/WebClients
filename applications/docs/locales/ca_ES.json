@@ -291,6 +291,9 @@
       "Delete contact group": [
         "Eliminar grup de contactes"
       ],
+      "Delete older revisions": [
+        "Elimineu les revisions antigues"
+      ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
@@ -314,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Descarregueu-ne una còpia (en format docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Descarregueu-ne una còpia (en format xlsx)"
       ],
       "Download anyway": [
         "Baixa igualment"
@@ -544,6 +553,9 @@
         "Ara no"
       ],
       "OK": [
+        "D'acord"
+      ],
+      "Okay": [
         "D'acord"
       ],
       "Open": [
@@ -865,6 +877,9 @@
       "View invoice": [
         "Mostra la factura"
       ],
+      "View only": [
+        "De només lectura"
+      ],
       "Web page (.html)": [
         "Pàgina web (.html)"
       ],
@@ -1050,9 +1065,6 @@
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1083,11 +1095,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebaixes del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1129,36 +1136,6 @@
       ],
       "Unlimited daily chats": [
         "Xats diaris sense límits"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Divendres negre"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regali als seus una protecció digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1339,6 +1316,15 @@
       "Basic chat history": [
         "Historial de xat bàsic"
       ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
       ],
@@ -1347,6 +1333,9 @@
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar registres"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -1362,6 +1351,9 @@
       ],
       "Web search access": [
         "Accés a la cerca web"
+      ],
+      "Zero-access encryption": [
+        "Xifratge d'accés zero"
       ]
     },
     "collider_2025: Info": {
@@ -2862,6 +2854,9 @@
       ],
       "Failed to open to contact": [
         "No s'ha pogut obrir el contacte"
+      ],
+      "Failed to remove older revisions": [
+        "No s'han pogut esborrar les revisions antigues"
       ],
       "Failed to rename document. Please try again later.": [
         "No s'ha pogut canviar el nom del document. Torneu-ho a provar més tard."
@@ -4975,6 +4970,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Aquest document és massa gran per editar-lo. Podeu esborrar les versions anteriors per continuar-lo editant."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Aquest document és massa gran i no s’han pogut desar els darrers canvis. Descarregueu-ne una còpia per a no perdre la vostra feina."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Aquest document té molta activitat. Algunes funcions poden estar temporalment no disponibles."
       ],
@@ -5433,6 +5434,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
       ],
@@ -5501,6 +5505,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
@@ -9353,6 +9360,12 @@
       ],
       "Docs": [
         "Documents"
+      ],
+      "Document Size Limit Exceeded": [
+        "S’ha superat el límit de mida del document"
+      ],
+      "Document Size Limit Reached": [
+        "S'ha arribat al límit de mida del document"
       ],
       "Document verification failed": [
         "No s'ha pogut verificar el document."

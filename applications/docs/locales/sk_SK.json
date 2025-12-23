@@ -297,6 +297,9 @@
       "Delete contact group": [
         "Zmazať skupinu kontaktov"
       ],
+      "Delete older revisions": [
+        "Vymazať staršie revízie"
+      ],
       "Delete permanently": [
         "Navždy vymazať"
       ],
@@ -320,6 +323,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Stiahnuť kópiu (ako docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Stiahnuť kópiu (ako xlsx)"
       ],
       "Download anyway": [
         "Napriek tomu stiahnuť"
@@ -548,6 +557,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Okay": [
+        "Dobre"
       ],
       "Open": [
         "Otvoriť"
@@ -870,6 +882,9 @@
       "View invoice": [
         "Zobraziť faktúru"
       ],
+      "View only": [
+        "Len na zobrazenie"
+      ],
       "Web page (.html)": [
         "Webová stránka (.html)"
       ],
@@ -1069,9 +1084,6 @@
       "Billed at ${ amount } once": [
         "Účtovaná suma ${ amount } jednorazovo"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
@@ -1106,11 +1118,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday zľavy"
       ]
     },
     "BF2025: Deal details": {
@@ -1152,36 +1159,6 @@
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -1364,6 +1341,15 @@
       "Basic chat history": [
         "Základná história chatu"
       ],
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržiavanie predpisov o ochrane údajov"
+      ],
+      "Data never used for AI training": [
+        "Údaje nikdy nepoužívané na trénovanie AI"
+      ],
       "Full chat history with search": [
         "Úplná história chatu s vyhľadávaním"
       ],
@@ -1372,6 +1358,9 @@
       ],
       "Limited favorites": [
         "Obmedzené obľúbené položky"
+      ],
+      "Strict no-logs policy": [
+        "Prísna zásada neuchovávania záznamov"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -1387,6 +1376,9 @@
       ],
       "Web search access": [
         "Prístup k webovému vyhľadávaniu"
+      ],
+      "Zero-access encryption": [
+        "Šifrovanie s nulovým prístupom"
       ]
     },
     "collider_2025: Info": {
@@ -2892,6 +2884,9 @@
       "Failed to open to contact": [
         "Nepodarilo sa otvoriť kontakt"
       ],
+      "Failed to remove older revisions": [
+        "Nepodarilo sa odstrániť staršie revízie"
+      ],
       "Failed to rename document. Please try again later.": [
         "Pomenovanie dokumentu sa nepodarilo. Skúste to neskôr, prosím."
       ],
@@ -3504,6 +3499,12 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
+      ],
+      "View the invitation": [
+        "Zobraziť pozvánku",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -5095,6 +5096,12 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Tento dokument je príliš veľký na úpravu. Ak chcete pokračovať v úpravách, môžete odstrániť staršie revízie."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Tento dokument je príliš veľký a vaše najnovšie zmeny sa nepodarilo uložiť. Stiahnite si kópiu, aby ste si uchovali svoju prácu."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Tento dokument obsahuje veľa aktivít. Niektoré funkcie môžu byť dočasne nedostupné."
@@ -9625,6 +9632,12 @@
       ],
       "Docs": [
         "Dokumenty"
+      ],
+      "Document Size Limit Exceeded": [
+        "Prekročený limit veľkosti dokumentu"
+      ],
+      "Document Size Limit Reached": [
+        "Dosiahnutý limit veľkosti dokumentu"
       ],
       "Document verification failed": [
         "Overenie dokumentu zlyhalo"
