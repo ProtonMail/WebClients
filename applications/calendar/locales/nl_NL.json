@@ -1299,9 +1299,6 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
-      "forever": [
-        "voor altijd"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
@@ -1332,11 +1329,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-aanbieding"
       ]
     },
     "BF2025: Deal details": {
@@ -1378,36 +1370,6 @@
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Help uw dierbaren deelnemen aan de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Doe mee met de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Bespaar ${ savedAmount } met onze voordeligste, tijdelijke aanbieding!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Stap over op ons 2-jarig abonnement en bespaar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Stap over op ons jaarabonnement en bespaar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Trakteer uw naasten op complete digitale bescherming."
       ]
     },
     "BF2025: Tooltip": {
@@ -1822,6 +1784,15 @@
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
       ],
+      "Built and based in Europe": [
+        "Gebouwd en gevestigd in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Naleving van de regelgeving inzake gegevensbescherming"
+      ],
+      "Data never used for AI training": [
+        "Data wordt nooit gebruikt voor het trainen van AI"
+      ],
       "Full chat history with search": [
         "Volledige chatgeschiedenis met zoeken"
       ],
@@ -1833,6 +1804,9 @@
       ],
       "Limited favorites": [
         "Beperkte favorieten"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logsbeleid"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -1848,6 +1822,9 @@
       ],
       "Web search access": [
         "Toegang tot webzoekopdrachten"
+      ],
+      "Zero-access encryption": [
+        "Zero-access encryptie"
       ]
     },
     "collider_2025: Info": {
@@ -3502,6 +3479,9 @@
       ],
       "Cancellation failed to be sent": [
         "Annulering kon niet worden verzonden"
+      ],
+      "Cannot create a booking with a disabled address": [
+        "U kunt geen boeking aanmaken met een uitgeschakeld adres"
       ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
@@ -5853,8 +5833,14 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
       ],
+      "Range already exists.": [
+        "Periode bestaat al."
+      ],
       "Range is too short.": [
         "Bereik is te kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Periode overlapt met een bestaande periode."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
@@ -6422,6 +6408,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
+        "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {

@@ -401,8 +401,14 @@
       "Download app": [
         "Λήψη εφαρμογής"
       ],
-      "Download apps": [
-        "Λήψη εφαρμογών"
+      "Download for Mac": [
+        "Λήψη για Mac"
+      ],
+      "Download for MacOS": [
+        "Λήψη για macOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
       ],
       "Download info": [
         "Λήψη πληροφοριών"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "Τι θα αποκτήσω;"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
       ],
-      "forever": [
-        "για πάντα"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Προσφορά Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
       ],
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ],
+      "Compliance with data protection regulations": [
+        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
       "Full chat history with search": [
         "Πλήρης ιστορία συνομιλίας με αναζήτηση"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Περιορισμένα αγαπημένα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Πρόσβαση στην αναζήτηση ιστού"
+      ],
+      "Zero-access encryption": [
+        "Κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Οι λήψεις εφαρμογών για επιτραπέζιους υπολογιστές δεν είναι διαθέσιμες προς το παρόν."
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Η επεξεργασία της διεύθυνσης χρέωσης δεν είναι διαθέσιμη προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
@@ -3782,9 +3774,6 @@
       ],
       "We were not able to load some of your shared items": [
         "Δεν μπορέσαμε να φορτώσουμε μερικά από τα κοινόχρηστα αντικείμενά σας"
-      ],
-      "We were not able to load some of your shared items info": [
-        "Δεν μπορέσαμε να φορτώσουμε πληροφορίες για ορισμένα από τα κοινοποιημένα αντικείμενά σας"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
@@ -5559,6 +5548,9 @@
       "Invite link copied": [
         "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
       ],
+      "iOS and Android Apps": [
+        "Εφαρμογές για iOS και Android"
+      ],
       "Issues found": [
         "Βρέθηκαν προβλήματα"
       ],
@@ -5992,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
+      ],
+      "Scan to download": [
+        "Κάντε σάρωση για να κατεβάσετε"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν είναι δυνατό να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -6869,6 +6864,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
@@ -6976,6 +6974,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Command line interface (CLI)": [
+        "Διεπαφή γραμμής εντολών (CLI)"
       ],
       "Comment": [
         "Σχόλιο"
@@ -12082,6 +12083,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Αποκτήστε πλήρη πρόσβαση στο ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."

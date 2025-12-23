@@ -1293,9 +1293,6 @@
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
       ],
-      "forever": [
-        "för alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
       ]
@@ -1326,11 +1323,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-rea"
       ]
     },
     "BF2025: Deal details": {
@@ -1372,36 +1364,6 @@
       ],
       "Unlimited daily chats": [
         "Obegränsat antal dagliga chattar"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjälp dina nära och kära att gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "för ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spara ${ savedAmount } med vårt mest prisvärda, tidsbegränsade erbjudande!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Byt till vår 2-årsplan och spara ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Byt till vår årsplan och spara ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Unna dina nära och kära ett komplett digitalt skydd."
       ]
     },
     "BF2025: Tooltip": {
@@ -1816,6 +1778,15 @@
       "Basic chat history": [
         "Grundläggande chatthistorik"
       ],
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Efterlevnad av dataskyddsföreskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data används aldrig för AI-träning"
+      ],
       "Full chat history with search": [
         "Fullständig chatthistorik med sök"
       ],
@@ -1828,6 +1799,9 @@
       "Limited favorites": [
         "Begränsat antal favoriter"
       ],
+      "Strict no-logs policy": [
+        "Strikt policy att inte logga"
+      ],
       "Unlimited daily chats": [
         "Obegränsat antal dagliga chattar"
       ],
@@ -1836,6 +1810,9 @@
       ],
       "Web search access": [
         "Webbsökningsåtkomst"
+      ],
+      "Zero-access encryption": [
+        "Kryptering med noll åtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -3942,6 +3919,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
+      ],
+      "You cannot enter the organizer's email": [
+        "Du kan inte ange organisatörens e-post"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
@@ -6573,6 +6553,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
+      ],
       "Account holder": [
         "Kontoinnehavare"
       ],
@@ -6665,6 +6648,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandoradsgränssnitt (CLI)"
       ],
       "Company": [
         "Företag"
@@ -9261,6 +9247,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"

@@ -492,9 +492,6 @@
       "Billed at ${ amount } once": [
         "Addebito di ${ amount } una volta"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Si rinnova dopo 1 mese a ${ regularAmount }."
       ]
@@ -525,11 +522,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Saldi del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -571,36 +563,6 @@
       ],
       "Unlimited daily chats": [
         "Numero illimitato di chat al giorno"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Aiuta i tuoi cari a unirsi alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Unisciti alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Risparmia ${ savedAmount } con la nostra migliore offerta a tempo limitato!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Passa al nostro piano biennale e risparmia ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Passa al nostro piano annuale e risparmia ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Offri al tuo gruppo una protezione digitale completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1163,6 +1125,15 @@
       "Basic chat history": [
         "Cronologia chat di base"
       ],
+      "Built and based in Europe": [
+        "Sviluppato e basato in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformità con le normative sulla protezione dei dati"
+      ],
+      "Data never used for AI training": [
+        "I dati non vengono mai utilizzati per l’addestramento dell’IA"
+      ],
       "Full chat history with search": [
         "Cronologia chat completa con ricerca"
       ],
@@ -1174,6 +1145,9 @@
       ],
       "Limited favorites": [
         "Numero limitato di preferiti"
+      ],
+      "Strict no-logs policy": [
+        "Rigida politica contro i registri"
       ],
       "Unlimited daily chats": [
         "Numero illimitato di chat al giorno"
@@ -1189,6 +1163,9 @@
       ],
       "Web search access": [
         "Accesso alla Ricerca Web"
+      ],
+      "Zero-access encryption": [
+        "Crittografia ad accesso zero"
       ]
     },
     "collider_2025: Feature": {
@@ -1488,65 +1465,6 @@
       ],
       "Your information is zero-access encrypted": [
         "Le tue informazioni sono crittografate a conoscenza zero"
-      ]
-    },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "Indirizzo email non valido"
-      ],
-      "Email address is required": [
-        "Indirizzo email richiesto"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Chiudi"
-      ],
-      "Invite friends": [
-        "Invita degli amici"
-      ],
-      "Maybe later": [
-        "Forse più tardi"
-      ],
-      "Send invitation": [
-        "Spedisci l'invito"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "L'email del tuo amico"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Conosci qualcuno che trarrebbe beneficio da un'AI attenta alla privacy? Invitalo a entrare nella lista d'attesa di ${ LUMO_SHORT_APP_NAME }. Ti rimangono ${ remainingInvitesText } inviti."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "Ti rimangono${ remainingInvitesText } inviti."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Invito inviato"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Invito spedito!"
-      ],
-      "No invites left  ": [
-        "Nessun invito rimasto  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Grazie per aver aiutato gli altri a scoprire ${ LUMO_SHORT_APP_NAME }! Se saranno disponibili altri inviti, ti faremo sapere."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Abbiamo invitato ${ emailText }. Riceverà istruzioni su come entrare in lista d'attesa."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Invita amici a provare ${ LUMO_APP_NAME }"
       ]
     },
     "collider_2025: Job": {
@@ -2067,11 +1985,6 @@
       ],
       "Sign in required": [
         "Login richiesto"
-      ]
-    },
-    "collider_2025:Prompt": {
-      "What are the origins of Thanksgiving?": [
-        "Quali sono le origini del Giorno del Ringraziamento?"
       ]
     },
     "collider_2025:Title": {

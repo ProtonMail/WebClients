@@ -1494,6 +1494,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Kopiera automatiskt det genererade lösenordet till urklipp"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Fyll i din sparade betalningsinformation automatiskt."
+      ],
       "Autosaved on ${ url }": [
         "Automatiskt sparad på ${ url }"
       ],
@@ -1855,10 +1858,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -1876,6 +1875,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No credit cards found": [
+        "Inga kreditkort hittades"
       ],
       "No identity item found": [
         "Inget identitetsobjekt hittades"
@@ -2775,6 +2777,9 @@
       ],
       "Created at": [
         "Skapad"
+      ],
+      "Credit-card autofill": [
+        "Fyll i kreditkort automatiskt"
       ],
       "Crypto Wallet": [
         "Kryptoplånbok"

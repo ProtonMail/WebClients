@@ -506,10 +506,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -1033,6 +1033,15 @@
       "Basic chat history": [
         "Temel sohbet geçmişi"
       ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
       "Full chat history with search": [
         "Arama ile tüm sohbet geçmişi"
       ],
@@ -1044,6 +1053,9 @@
       ],
       "Limited favorites": [
         "Sınırlı sayıda sık kullanılan"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
       ],
       "Unlimited daily chats": [
         "Günlük sınırsız sayıda sohbet"
@@ -1059,6 +1071,9 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Info": {
@@ -3107,6 +3122,9 @@
         "${ n } ay",
         "${ n } ay"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -3160,6 +3178,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arabirimi (CLI)"
       ],
       "Company": [
         "Kuruluş"

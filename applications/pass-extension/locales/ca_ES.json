@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Copia automàticament la contrasenya generada al porta-retalls"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Empleneu-ho automàticament amb la vostra informació de pagament desada."
+      ],
       "Autosaved on ${ url }": [
         "S'ha desat automàticament en ${ url }"
       ],
@@ -1862,8 +1865,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1885,6 +1887,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "No credit cards found": [
+        "No s'ha trobat cap targeta de crèdit."
       ],
       "No identity item found": [
         "No s'ha trobat cap element didentitat."
@@ -2799,6 +2804,9 @@
       ],
       "Created at": [
         "Creat a"
+      ],
+      "Credit-card autofill": [
+        "Emplenament automàtic de la targeta de crèdit"
       ],
       "Crypto Wallet": [
         "Cartera de criptomonedes"

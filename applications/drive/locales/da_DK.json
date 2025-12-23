@@ -401,8 +401,14 @@
       "Download app": [
         "Download app"
       ],
-      "Download apps": [
-        "Download apps"
+      "Download for Mac": [
+        "Download til Mac"
+      ],
+      "Download for MacOS": [
+        "Download til MacOS"
+      ],
+      "Download for Windows": [
+        "Download til Windows"
       ],
       "Download info": [
         "Download info"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "Hvad får jeg?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Faktureret med ${ amount } én gang"
       ],
-      "forever": [
-        "for evigt"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes efter 1 måned til ${ regularAmount }."
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-udsalg"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjælp dine kære med at deltage i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Deltag i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vores mest fordelagtige, tidsbegrænsede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Skift til vores 2-års abonnement, og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Skift til vores årlige abonnement, og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Forkæl dine nærmeste med komplet digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Grundlæggende chathistorik"
       ],
+      "Built and based in Europe": [
+        "Bygget og baseret i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compliance med databeskyttelsesregulativer"
+      ],
+      "Data never used for AI training": [
+        "Data bruges aldrig til AI-træning"
+      ],
       "Full chat history with search": [
         "Fuld chathistorik med søgning"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Begrænsede favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Streng nul-log-politik"
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Adgang til websøgning"
+      ],
+      "Zero-access encryption": [
+        "Nul-adgang-kryptering"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Downloads af desktop-apps er i øjeblikket ikke tilgængelige"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering af faktureringsadresse er ikke tilgængelig i øjeblikket. Prøv igen senere."
       ],
@@ -3782,9 +3774,6 @@
       ],
       "We were not able to load some of your shared items": [
         "Vi kunne ikke indlæse nogle af dine delte elementer."
-      ],
-      "We were not able to load some of your shared items info": [
-        "Vi kunne ikke indlæse oplysninger om nogle af dine delte elementer."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
@@ -5559,6 +5548,9 @@
       "Invite link copied": [
         "Invitationslink kopieret"
       ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apps"
+      ],
       "Issues found": [
         "Problemer fundet"
       ],
@@ -5992,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
+      ],
+      "Scan to download": [
+        "Scan for at downloade"
       ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
@@ -12082,6 +12077,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Få fuld adgang til ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Få mobil- og desktop-apps"
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"

@@ -1542,6 +1542,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Automaticky zkopírovat vygenerované heslo do schránky"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Automatické vyplňování vašich uložených platebních údajů."
+      ],
       "Autosaved on ${ url }": [
         "Automaticky uloženo na ${ url }"
       ],
@@ -1912,10 +1915,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -1937,6 +1937,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "No credit cards found": [
+        "Nebyly nalezeny žádné platební karty"
       ],
       "No identity item found": [
         "Nenalezena žádná položka identity"
@@ -2889,6 +2892,9 @@
       ],
       "Created at": [
         "Vytvořeno"
+      ],
+      "Credit-card autofill": [
+        "Automatické vyplňování platebních karet"
       ],
       "Crypto Wallet": [
         "Peněženka kryptoměny"

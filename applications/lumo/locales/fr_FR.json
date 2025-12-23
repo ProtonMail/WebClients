@@ -492,9 +492,6 @@
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
       ],
-      "forever": [
-        "pour toujours"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
       ]
@@ -525,11 +522,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Offres Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -571,36 +563,6 @@
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Aidez vos proches à rejoindre la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Rejoignez la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Économisez ${ savedAmount } grâce à notre meilleure offre à durée limitée !"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement de 2 ans et économisez ${ savedAmount } !"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ savedAmount } !"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Offrez à votre tribu une protection numérique complète."
       ]
     },
     "BF2025: Tooltip": {
@@ -1163,6 +1125,15 @@
       "Basic chat history": [
         "Historique de chat basique"
       ],
+      "Built and based in Europe": [
+        "Développé et basé en Europe"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformité aux réglementations sur la protection des données"
+      ],
+      "Data never used for AI training": [
+        "Les données ne sont jamais utilisées pour l'entraînement de l'IA"
+      ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
@@ -1174,6 +1145,9 @@
       ],
       "Limited favorites": [
         "Favoris limités"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -1189,6 +1163,9 @@
       ],
       "Web search access": [
         "Accès à la recherche web"
+      ],
+      "Zero-access encryption": [
+        "Chiffrement zéro accès"
       ]
     },
     "collider_2025: Feature": {
@@ -1495,7 +1472,7 @@
         "L'adresse e-mail n'est pas valide."
       ],
       "Email address is required": [
-        "L'adresse e-mail est nécessaire."
+        "Une adresse e-mail est requise"
       ]
     },
     "collider_2025: Invite Button": {
@@ -1509,7 +1486,7 @@
         "Peut-être plus tard"
       ],
       "Send invitation": [
-        "Envoyer l'invitation"
+        "Envoyer une invitation"
       ]
     },
     "collider_2025: Invite Email Placeholder": {
@@ -1519,7 +1496,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Vous connaissez quelqu'un qui bénéficierait d'une IA respectueuse de la vie privée ? Invitez-le à rejoindre la liste d'attente de ${ LUMO_SHORT_APP_NAME }. Il vous reste ${ remainingInvitesText } invitations."
+        "Vous connaissez des personnes qui souhaitent bénéficier d'une IA respectueuse de la vie privée ? Invitez-les à rejoindre la liste d'attente de ${ LUMO_SHORT_APP_NAME }. Il vous reste ${ remainingInvitesText } invitations."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "Il vous reste ${ remainingInvitesText } invitations."
@@ -1541,7 +1518,7 @@
         "Merci d'aider les autres à découvrir ${ LUMO_SHORT_APP_NAME } ! Si d'autres invitations deviennent disponibles, nous vous en informerons."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Nous avons invité ${ emailText }. Le destinataire recevra des instructions sur la façon de rejoindre la liste d'attente."
+        "Nous avons envoyé une invitation à ${ emailText }. Le destinataire recevra des instructions sur la façon de rejoindre la liste d'attente."
       ]
     },
     "collider_2025: Invite Title": {
@@ -2070,8 +2047,11 @@
       ]
     },
     "collider_2025:Prompt": {
-      "What are the origins of Thanksgiving?": [
-        "Quelles sont les origines de Thanksgiving ?"
+      "How do people celebrate New Year's Eve around the world?": [
+        "Comment les personnes célèbrent-ils le réveillon du Nouvel An à travers le monde ?"
+      ],
+      "What are the origins of Christmas?": [
+        "Quelles sont les origines de Noël ?"
       ]
     },
     "collider_2025:Title": {
@@ -4070,6 +4050,9 @@
         "${ n } mois",
         "${ n } mois"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
+      ],
       "Account holder": [
         "Titulaire du compte"
       ],
@@ -4126,6 +4109,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de ligne de commande (CLI)"
       ],
       "Company": [
         "Entreprise"

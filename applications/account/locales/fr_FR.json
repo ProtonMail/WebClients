@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open recovery settings": [
+        "Ouvrir les paramètres de récupération"
+      ],
       "Opt out": [
         "Renoncer"
       ],
@@ -1979,6 +1982,12 @@
       ],
       "Secure cloud storage": [
         "Stockage cloud sécurisé"
+      ],
+      "Secure online docs": [
+        "Docs protégé sur web"
+      ],
+      "Secure online sheets": [
+        "Sheets protégé sur web"
       ]
     },
     "Apps dropdown": {
@@ -2267,9 +2276,6 @@
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
       ],
-      "forever": [
-        "pour toujours"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
       ]
@@ -2300,11 +2306,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Offres Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2347,6 @@
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Aidez vos proches à rejoindre la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Rejoignez la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Économisez ${ savedAmount } grâce à notre meilleure offre à durée limitée !"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement de 2 ans et économisez ${ savedAmount } !"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ savedAmount } !"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Offrez à votre tribu une protection numérique complète."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2647,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Votre adresse e-mail personnelle est une partie essentielle de votre identité numérique. Comme votre numéro de téléphone, vous ne la donnez pas à toutes les personnes que vous rencontrez. C'est pourquoi il est utile d'avoir d'autres adresses e-mail que vous pouvez utiliser à des fins différentes."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } sur ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "Il y a ${ n } an",
+        "Il y a ${ n } ans"
+      ],
+      "Add a custom domain": [
+        "Ajouter un domaine personnalisé"
+      ],
+      "Add a domain": [
+        "Ajouter un domaine"
+      ],
+      "Add more users...": [
+        "Ajouter plus d'utilisateurs..."
+      ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
+      "Calendar": [
+        "Calendrier"
+      ],
+      "Change": [
+        "Modifier"
+      ],
+      "Configure": [
+        "Configurer"
+      ],
+      "Configure migration": [
+        "Configurer la migration"
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Domain ownership verified": [
+        "La propriété du domaine a été vérifiée"
+      ],
+      "Domain setup": [
+        "Configuration du domaine"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Des notifications par e-mail vous seront envoyées au lancement et à la fin de la migration. Vous serez également informé en cas d'erreurs et si la migration est suspendue en raison de liens expirés."
+      ],
+      "Estimated size": [
+        "Taille estimée"
+      ],
+      "Everything": [
+        "Tout"
+      ],
+      "Failed to load OAuth": [
+        "Echec du chargement du OAuth"
+      ],
+      "Install migration app": [
+        "Installer l'application de migration"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "En savoir plus sur la migration. En savoir plus"
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrer depuis Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrer des utilisateurs"
+      ],
+      "Migration includes": [
+        "La migration comprend"
+      ],
+      "Not started": [
+        "Non démarré"
+      ],
+      "Required to create user accounts": [
+        "Requis pour créer des comptes utilisateur."
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Sélectionnez ce que vous souhaitez migrer, cela s'appliquera à tous les utilisateurs, qu'ils soient créés maintenant ou plus tard. La migration commencera après la création des comptes utilisateurs."
+      ],
+      "Set up": [
+        "Configurer"
+      ],
+      "Set up billing information": [
+        "Configurer les informations de facturation"
+      ],
+      "Set up two-factor authentication": [
+        "Configurer l'authentification à deux facteurs"
+      ],
+      "Sign in to Google Workspace": [
+        "Se connecter à Google Workspace"
+      ],
+      "Start migration": [
+        "Lancer la migration"
+      ],
+      "Status": [
+        "Statut"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Pour migrer les données de votre organisation, vous devez installer l'application ${ BRAND_NAME } Migration Assistant depuis le Google Workspace Marketplace. Cela accordera l'autorisation à ${ BRAND_NAME } de copier vos données. Après l'avoir installée, revenez ici pour continuer. En savoir plus"
+      ],
+      "Transfer data from": [
+        "Transférer des données depuis"
+      ],
+      "User": [
+        "Utilisateur"
+      ],
+      "Users migrated": [
+        "Utilisateurs migrés"
+      ],
+      "Verify your domain": [
+        "Vérifiez votre domaine"
+      ],
+      "Verify your domain ownership": [
+        "Vérifiez la propriété de votre domaine"
+      ],
+      "What are you migrating?": [
+        "Que migrez-vous ?"
+      ],
+      "Who will be notified?": [
+        "Qui sera notifié ?"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3207,15 @@
       "Basic chat history": [
         "Historique de chat basique"
       ],
+      "Built and based in Europe": [
+        "Développé et basé en Europe"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformité aux réglementations sur la protection des données"
+      ],
+      "Data never used for AI training": [
+        "Les données ne sont jamais utilisées pour l'entraînement de l'IA"
+      ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
@@ -3121,6 +3227,9 @@
       ],
       "Limited favorites": [
         "Favoris limités"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -3136,6 +3245,9 @@
       ],
       "Web search access": [
         "Accès à la recherche web"
+      ],
+      "Zero-access encryption": [
+        "Chiffrement zéro accès"
       ]
     },
     "collider_2025: Feature": {
@@ -3146,9 +3258,6 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
-      ],
-      "Access to advanced AI models": [
-        "Accès aux modèles d'IA avancés"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
@@ -3162,50 +3271,11 @@
       "AI assistant that respects your privacy": [
         "Assistant IA qui respecte votre vie privée"
       ],
-      "Basic chat history": [
-        "Historique de chat basique"
-      ],
-      "Compliance with data protection regulations": [
-        "Conformité aux réglementations sur la protection des données"
-      ],
-      "Data never used for AI training": [
-        "Données jamais utilisées pour l'entraînement de l'IA"
-      ],
-      "Full chat history with search": [
-        "Historique complet des discussions avec recherche"
-      ],
       "High-speed chats and advanced AI features.": [
         "Discussions rapides et fonctionnalités d'IA avancées."
       ],
-      "Limited daily chats": [
-        "Chats quotidiens limités"
-      ],
-      "Limited favorites": [
-        "Favoris limités"
-      ],
       "Open source": [
         "Open source"
-      ],
-      "Strict no-logs policy": [
-        "Politique stricte de non-journalisation (no log)"
-      ],
-      "Unlimited daily chats": [
-        "Chats quotidiens illimités"
-      ],
-      "Unlimited favorites for quick access": [
-        "Favoris illimités pour un accès rapide"
-      ],
-      "Upload and query multiple large files": [
-        "Importer et consulter plusieurs fichiers volumineux"
-      ],
-      "Upload and query small files": [
-        "Importer et consulter de petits fichiers"
-      ],
-      "Web search access": [
-        "Accès à la recherche web"
-      ],
-      "Zero-access encryption": [
-        "Chiffrement zéro accès"
       ]
     },
     "collider_2025: Navigation": {
@@ -5947,9 +6017,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Vous n'avez pas encore été désigné comme contact d'urgence pour qui que ce soit."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Vous avez atteint le maximum d'${ controller.meta.count } contact approuvé.",
-        "Vous avez atteint le maximum de ${ controller.meta.count } contacts approuvés."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Vous avez atteint le maximum de ${ limit } contact d'urgence.",
+        "Vous avez atteint le maximum de ${ limit } contacts d'urgence."
       ],
       "You will be notified when someone requests emergency access.": [
         "Vous recevrez une notification lorsque quelqu'un demandera un accès d'urgence."
@@ -7086,6 +7156,10 @@
       "Pending": [
         "En attente"
       ],
+      "Pending invitation": [
+        "Invitation en attente",
+        "Invitations en attente"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Vous ne pouvez malheureusement pas changer d'abonnement pour l'instant."
       ],
@@ -7688,8 +7762,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Je comprends que je ne pourrai plus me connecter à partir d'anciennes versions des applications mobiles ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Je comprends que je ne pourrai plus me connecter sur des anciennes versions des applications mobiles ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -8732,6 +8806,12 @@
       "**Sync codes** to all your devices": [
         "**Synchronisez les codes** sur tous vos appareils"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Ceci va désactiver les transferts de messages chiffrés de bout en bout** : vous pourrez les configurer à nouveau plus tard."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Vos méthodes de récupération seront invalidées :** vous pourrez générer de nouvelles données de récupération ultérieurement."
+      ],
       "+ ${ invisibleCount } More": [
         "${ invisibleCount } de plus",
         "${ invisibleCount } de plus"
@@ -9097,9 +9177,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "En activant la protection post-quantique, des clés fortes contre les ordinateurs quantiques seront générées pour votre compte."
       ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
@@ -10416,6 +10493,9 @@
       ],
       "Private AI assistant": [
         "Assistant IA privé"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Protégez votre compte contre les menaces de l'informatique quantique avec des clés cryptographiques résistantes au quantique."
       ],
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
@@ -11764,7 +11844,7 @@
     },
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
-        "Aide à rédiger, à répondre et à relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
+        "Aide pour rédiger, répondre et relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -12368,6 +12448,9 @@
       "6 Pass Plus accounts": [
         "6 comptes Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
+      ],
       "Account holder": [
         "Titulaire du compte"
       ],
@@ -12616,6 +12699,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de ligne de commande (CLI)"
       ],
       "Common passwords": [
         "Mots de passe communs"
@@ -13168,6 +13254,9 @@
       ],
       "Online privacy for your whole family": [
         "Respect de la vie privée en ligne pour toute votre famille"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Seulement disponible avec les abonnements payants ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Mot de passe OpenVPN/IKEv2"
@@ -17670,47 +17759,65 @@
       ]
     },
     "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "La protection post-quantique a été activée sur votre compte, mais certaines opérations n'ont pas pu aboutir : la génération des clés de compte et d'adresse post-quantiques a échoué. Vous pouvez générer ces clés manuellement dans les paramètres ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Impossible de générer les clés. Pour activer la protection post-quantique, vous devrez générer manuellement vos nouvelles clés de chiffrement.\n\n${ settingsLink } et sélectionnez « Générer une clé » pour votre compte et pour chaque adresse."
       ]
     },
     "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "La protection post-quantique a été activée sur votre compte, mais certaines opérations n'ont pas pu aboutir : la génération de clés d'adresse post-quantique pour une ou plusieurs adresses a échoué. Vous pouvez générer ces clés manuellement dans les paramètres ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Impossible de générer les clés d'adresse. Pour activer la protection post-quantique, vous devrez générer manuellement vos nouvelles clés de chiffrement.\n\nAllez à ${ settingsLink } et sélectionnez « Générer une clé » pour chaque adresse."
       ]
     },
     "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Veuillez mettre à jour **toutes vos applications mobiles ${ BRAND_NAME }** vers la dernière version."
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Vous devez mettre à jour toutes les applications mobiles ${ BRAND_NAME }** : vos nouvelles clés ne fonctionneront pas sur les anciennes versions d'application."
       ]
     },
     "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Pour chaque adresse, une nouvelle clé de compte et une nouvelle clé de chiffrement de courriels seront ainsi générées ; celles-ci serviront à encrypter et décrypter les futurs courriels et autres données."
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Cela générera de nouvelles clés de chiffrement résistantes aux attaques quantiques pour votre compte."
       ]
     },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "La protection post-quantique n'a pas pu être activée."
+      ],
       "Enable and generate keys": [
         "Activer et générer des clés"
-      ],
-      "Enable post-quantum protection": [
-        "Activer la protection post-quantique"
       ],
       "Enable post-quantum protection?": [
         "Activer la protection post-quantique ?"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Échec de l'activation de la protection post-quantique. Veuillez réessayer plus tard."
+      "Enabling post-quantum protection...": [
+        "Activation de la protection post-quantique en cours..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Aller à ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Veuillez réessayer. Si cela ne fonctionne pas, contactez notre équipe du service client."
+      ],
+      "Post-quantum protection": [
+        "Protection post-quantique"
+      ],
+      "Post-quantum protection is enabled": [
+        "La protection post-quantique est activée."
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Fermer"
+      ],
       "Got it": [
         "C'est compris"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "La protection post-quantique a été activée sur votre compte !"
+      "Don't forget to generate new recovery data.": [
+        "N'oubliez pas de générer de nouvelles données de récupération."
+      ],
+      "Post-quantum protection is enabled.": [
+        "La protection post-quantique a été activée."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22141,6 +22248,9 @@
       "Find email or username": [
         "Trouver une adresse e-mail ou un nom d'utilisateur"
       ],
+      "Finish setting up your business account": [
+        "Terminer la configuration de votre compte entreprise"
+      ],
       "Folders": [
         "Dossiers"
       ],
@@ -22361,6 +22471,9 @@
       "Messages and composing": [
         "Messages et rédaction"
       ],
+      "Migration assistant": [
+        "Assistant de migration"
+      ],
       "Minicalendar": [
         "Mini calendrier"
       ],
@@ -22465,6 +22578,9 @@
       ],
       "Passwords made easy": [
         "Vos mots de passe en toute simplicité"
+      ],
+      "Pause list": [
+        "Liste de pause"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -23672,7 +23788,7 @@
         "Le saviez-vous ?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, et récupérez les versions de fichiers avec une récupération de fichiers sur 10 ans."
+        "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, ainsi que les versions des fichiers des 10 dernières années."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suite de confidentialité avec une boite mail sécurisée, ${ VPN_SHORT_APP_NAME }, un espace de stockage cloud et un gestionnaire de mots de passe en une seule offre groupée. À partir de seulement ${ fallBackString } par mois"

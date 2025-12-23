@@ -291,6 +291,9 @@
       "Delete contact group": [
         "Διαγραφή ομάδας επαφών"
       ],
+      "Delete older revisions": [
+        "Κατάργηση παλαιότερων αναθεωρήσεων"
+      ],
       "Delete permanently": [
         "Οριστική διαγραφή"
       ],
@@ -314,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Λήψη αντιγράφου (ως docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Λήψη αντιγράφου (ως xlsx)"
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
@@ -542,6 +551,9 @@
       ],
       "OK": [
         "ΟΚ"
+      ],
+      "Okay": [
+        "Εντάξει"
       ],
       "Open": [
         "Άνοιγμα"
@@ -862,6 +874,9 @@
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
+      "View only": [
+        "Μόνο προβολή"
+      ],
       "Web page (.html)": [
         "Ιστοσελίδα (.html)"
       ],
@@ -1047,9 +1062,6 @@
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
       ],
-      "forever": [
-        "για πάντα"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
@@ -1080,11 +1092,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Προσφορά Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1126,36 +1133,6 @@
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -1336,6 +1313,15 @@
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
       ],
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ],
+      "Compliance with data protection regulations": [
+        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
       "Full chat history with search": [
         "Πλήρης ιστορία συνομιλίας με αναζήτηση"
       ],
@@ -1344,6 +1330,9 @@
       ],
       "Limited favorites": [
         "Περιορισμένα αγαπημένα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -1359,6 +1348,9 @@
       ],
       "Web search access": [
         "Πρόσβαση στην αναζήτηση ιστού"
+      ],
+      "Zero-access encryption": [
+        "Κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
     "collider_2025: Info": {
@@ -2859,6 +2851,9 @@
       ],
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
+      ],
+      "Failed to remove older revisions": [
+        "Αποτυχία κατάργησης παλαιότερων αναθεωρήσεων"
       ],
       "Failed to rename document. Please try again later.": [
         "Αποτυχία μετονομασίας εγγράφου. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -4972,6 +4967,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Αυτό το έγγραφο έχει γίνει πολύ μεγάλο για να επεξεργαστείτε. Μπορείτε να καταργήσετε παλαιότερες αναθεωρήσεις για να συνεχίσετε την επεξεργασία."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Αυτό το έγγραφο έχει γίνει πολύ μεγάλο και οι τελευταίες αλλαγές σας δεν μπόρεσαν να αποθηκευτούν. Κατεβάστε ένα αντίγραφο για να διατηρήσετε την εργασία σας."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Αυτό το έγγραφο έχει πολλή δραστηριότητα. Ορισμένες δυνατότητες ενδέχεται να μην είναι διαθέσιμες προσωρινά."
       ],
@@ -5430,6 +5431,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
       ],
@@ -5498,6 +5502,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Command line interface (CLI)": [
+        "Διεπαφή γραμμής εντολών (CLI)"
       ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
@@ -9293,6 +9300,12 @@
       ],
       "Docs": [
         "Έγγραφα"
+      ],
+      "Document Size Limit Exceeded": [
+        "Το Όριο Μεγέθους Εγγράφου έχει Ξεπεραστεί"
+      ],
+      "Document Size Limit Reached": [
+        "Το Όριο Μεγέθους Εγγράφου έχει Επιτευχθεί"
       ],
       "Document verification failed": [
         "Η επαλήθευση εγγράφου απέτυχε"

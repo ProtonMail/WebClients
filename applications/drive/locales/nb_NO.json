@@ -401,8 +401,14 @@
       "Download app": [
         "Last ned app"
       ],
-      "Download apps": [
-        "Last ned apper"
+      "Download for Mac": [
+        "Last ned for Mac"
+      ],
+      "Download for MacOS": [
+        "Last ned for macOS"
+      ],
+      "Download for Windows": [
+        "Last ned for Windows"
       ],
       "Download info": [
         "Last ned info"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "Hva får jeg?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
       ],
-      "forever": [
-        "for alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-salg"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Bytt til vår årsplan og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Grunnleggende chatlogg"
       ],
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
       "Full chat history with search": [
         "Full chatlogg med søk"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Begrenset antall favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Tilgang til nettsøk"
+      ],
+      "Zero-access encryption": [
+        "Nulltilgangskryptering"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Nedlastinger av skrivebordsapper er for øyeblikket utilgjengelig"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering av faktureringsadresse er ikke tilgjengelig for øyeblikket. Prøv igjen senere."
       ],
@@ -3783,9 +3775,6 @@
       "We were not able to load some of your shared items": [
         "Noen av dine delte elementer kunne ikke lastes inn"
       ],
-      "We were not able to load some of your shared items info": [
-        "Vi kunne ikke laste inn informasjon om enkelte av dine delte elementer"
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
@@ -4130,6 +4119,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administratoren for denne planen."
+      ],
+      "View the invitation": [
+        "Se invitasjonen",
+        "Se invitasjonene"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er invitert til å bli med ${ invite.OrganizationName }"
@@ -5001,6 +4994,9 @@
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
       ],
+      "Already in your library": [
+        "Allerede i biblioteket ditt"
+      ],
       "Also try looking in Trash.": [
         "Prøv også å se i papirkurven."
       ],
@@ -5552,6 +5548,9 @@
       "Invite link copied": [
         "Invitasjonskobling kopiert"
       ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apper"
+      ],
       "Issues found": [
         "Problemer funnet"
       ],
@@ -5985,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
+      ],
+      "Scan to download": [
+        "Skann for å laste ned"
       ],
       "Search cannot be enabled in this browser": [
         "Søk kan ikke aktiveres i denne nettleseren"
@@ -6862,6 +6864,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
       "Account holder": [
         "Kontoinnehaver"
       ],
@@ -6969,6 +6974,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandolinjegrensesnitt (CLI)"
       ],
       "Comment": [
         "Kommentar"
@@ -12132,6 +12140,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Få full tilgang til ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Skaff deg mobil- og skrivebordsapper"
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"

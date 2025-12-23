@@ -1434,6 +1434,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1917,11 +1920,6 @@
         "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "黑色星期五特賣"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB 資料儲存空間"
@@ -1961,36 +1959,6 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "黑色星期五"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "幫助您的摯愛加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "加入隱私革命，選購我們最超值的組合包，現正 5 折優惠！"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "為期 ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "選購我們最超值的限時優惠，節省 ${ savedAmount }！"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "改用我們的 2 年方案，節省 ${ savedAmount }！"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "改用我們的年度方案，節省 ${ savedAmount }！"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "為您的團隊提供完整的數位保護。"
       ]
     },
     "BF2025: Tooltip": {
@@ -6945,7 +6913,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"

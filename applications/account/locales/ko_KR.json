@@ -2102,9 +2102,6 @@
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
       ],
-      "forever": [
-        "평생"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
       ]
@@ -2133,11 +2130,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "블랙프라이데이 세일"
       ]
     },
     "BF2025: Deal details": {
@@ -2179,36 +2171,6 @@
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "지금 50% 할인된 최고 가성비 번들로 소중한 사람들이 프라이버시 혁명에 참여하도록 도와주세요."
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "지금 50% 할인된 최고 가성비 번들로 프라이버시 혁명에 참여하세요!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal }간"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "최고 가성비의 기간 한정 혜택으로 ${ savedAmount }를 절약하세요!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2년 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "연간 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "소속 그룹에 완벽한 디지털 보호를 제공하세요."
       ]
     },
     "BF2025: Tooltip": {
@@ -2885,6 +2847,12 @@
       "Basic chat history": [
         "기본 채팅 기록"
       ],
+      "Compliance with data protection regulations": [
+        "데이터 보호 규정 준수"
+      ],
+      "Data never used for AI training": [
+        "대화 데이터가 AI학습에 절대 사용되지 않음"
+      ],
       "Full chat history with search": [
         "검색 기능이 포함된 전체 채팅 기록"
       ],
@@ -2922,9 +2890,6 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
       ],
-      "Access to advanced AI models": [
-        "고급 AI 모델 이용"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } 추가"
       ],
@@ -2937,50 +2902,11 @@
       "AI assistant that respects your privacy": [
         "당신의 프라이버시를 존중하는 AI 어시스턴트"
       ],
-      "Basic chat history": [
-        "기본 채팅 기록"
-      ],
-      "Compliance with data protection regulations": [
-        "데이터 보호 규정 준수"
-      ],
-      "Data never used for AI training": [
-        "대화 데이터가 AI학습에 절대 사용되지 않음"
-      ],
-      "Full chat history with search": [
-        "검색 기능이 포함된 전체 채팅 기록"
-      ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
       ],
-      "Limited daily chats": [
-        "제한된 일일 채팅"
-      ],
-      "Limited favorites": [
-        "제한된 즐겨찾기"
-      ],
       "Open source": [
         "오픈 소스"
-      ],
-      "Strict no-logs policy": [
-        "엄격한 노로그 정책"
-      ],
-      "Unlimited daily chats": [
-        "무제한 일일 채팅"
-      ],
-      "Unlimited favorites for quick access": [
-        "빠른 접근을 위한 무제한 즐겨찾기"
-      ],
-      "Upload and query multiple large files": [
-        "다중 대용량 파일 업로드 및 확인"
-      ],
-      "Upload and query small files": [
-        "저용량 파일 업로드 및 확인"
-      ],
-      "Web search access": [
-        "웹 검색 접근"
-      ],
-      "Zero-access encryption": [
-        "제로 엑세스 암호화"
       ]
     },
     "collider_2025: Navigation": {
@@ -5529,9 +5455,6 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "아직 나를 비상 연락처로 지정한 사용자가 없습니다."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "최대 신뢰할 수 있는 연락처 개수, ${ controller.meta.count }개에 도달했습니다."
-      ],
       "You will be notified when someone requests emergency access.": [
         "누군가 긴급 접근을 요청하면 알림을 받게 됩니다."
       ],
@@ -6629,6 +6552,9 @@
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "원활한 플랜 전환을 위해 ${ BRAND_NAME } Unlimited*의 30일간의 무료 체험판을 제공해 드립니다."
       ],
+      "View the invitation": [
+        "초대장 보기"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } 에 가입이 초대되었습니다"
       ],
@@ -7188,11 +7114,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "${ BRAND_NAME } 모바일 앱의 구식 버전에서는 더 이상 로그인할 수 없음을 확인했습니다."
       ]
     },
     "Free trial dekstop": {
@@ -8473,9 +8394,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "양자 내성 암호화를 활성화하면 양자 컴퓨터에 대한 저항력이 있는 키가 사용자의 계정에 생성됩니다."
       ],
       "By leaving now, changes may not be saved": [
         "지금 나갈 경우 변경사항이 저장되지 않을 수도 있습니다"
@@ -16536,20 +16454,12 @@
         "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "사용자의 계정에 양자 내성 암호화가 활성화되었습니다. 하지만 일부 작업이 성공하지 못했습니다: 양자 내성 계정 및 주소 키 생성에 실패했습니다. 이 키들을 ${ encryptionAndKeysSettingsTitle } 설정에서 수동으로 생성할 수 있습니다."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "활성화 및 키 생성"
       ],
       "Enable post-quantum protection?": [
         "양자 내성 암호화를 활성화하시겠습니까?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "양자 내성 암호화를 활성화할 수 없습니다. 나중에 다시 시도해주세요."
       ]
     },
     "pqc-optin: Action": {
@@ -21824,6 +21734,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "출처 IP 주소 및 인터넷 서비스 제공자(ISP)"
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "기본 작성기 팝업 크기를 작게 할지 전체 화면으로 할지 설정하세요."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "보내는 이메일에 다음 바닥 글을 설정합니다: ${ signature } 해당 링크는 회원님의 추천 링크로 연결됩니다. 바닥 글은 서명 아래에 표시됩니다. 언제든지 설정에서 서명을 개인화할 수 있습니다."

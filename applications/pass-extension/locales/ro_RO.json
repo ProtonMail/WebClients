@@ -1521,6 +1521,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Copiați automat parola generată în memorie."
       ],
+      "Automatically fill in your saved payment information.": [
+        "Completați automat informațiile de plată salvate."
+      ],
       "Autosaved on ${ url }": [
         "Autosalvat la ${ url }"
       ],
@@ -1886,11 +1889,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -1911,6 +1909,9 @@
       ],
       "Never": [
         "Niciodată"
+      ],
+      "No credit cards found": [
+        "Nu există carduri de plată"
       ],
       "No identity item found": [
         "Nu s-au găsit articole de identitate."
@@ -2844,6 +2845,9 @@
       ],
       "Created at": [
         "Creat la"
+      ],
+      "Credit-card autofill": [
+        "Autocompletare card de plată"
       ],
       "Crypto Wallet": [
         "Portofel cripto"

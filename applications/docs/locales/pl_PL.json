@@ -741,6 +741,9 @@
       "Submit": [
         "Wyślij"
       ],
+      "Subscribe now": [
+        "Subskrybuj teraz"
+      ],
       "Switch accounts": [
         "Przełącz konto"
       ],
@@ -1047,11 +1050,6 @@
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Wyprzedaż Black Friday"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB przestrzeni dyskowej na dane"
@@ -1091,36 +1089,6 @@
       ],
       "Unlimited daily chats": [
         "Nieograniczone codzienne czaty"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomóż swoim bliskim dołączyć do rewolucji prywatności z naszymi najkorzystniejszymi pakietami, teraz z 50% zniżki!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Dołącz do rewolucji prywatności z naszymi najkorzystniejszymi pakietami, teraz z 50% zniżki!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Zaoszczędź ${ savedAmount } dzięki naszej najkorzystniejszej, ograniczonej czasowo ofercie!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Przejdź na nasz plan dwuletni i zaoszczędź ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Przejdź na nasz plan roczny i zaoszczędź ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Zapewnij swoim bliskim kompletną ochronę cyfrową."
       ]
     },
     "BF2025: Tooltip": {
@@ -4048,6 +4016,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Zatrzymuje wycieki danych, blokując dostęp do Internetu w przypadku nieoczekiwanego przerwania połączenia VPN."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu ${ BRAND_NAME } za darmo."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego znajomego, który zasubskrybuje plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -5818,6 +5801,9 @@
       ],
       "Resume now": [
         "Wznów teraz"
+      ],
+      "Terms and conditions": [
+        "Regulamin"
       ],
       "Types of recovery methods": [
         "Metody odzyskiwania"
@@ -8014,6 +8000,26 @@
         "Wczoraj"
       ]
     },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za polecenie"
+      ],
+      "Invite friends. Get credits.": [
+        "Zaproś znajomych. Zdobądź środki."
+      ],
+      "Invited friends": [
+        "Zaproszeni znajomi"
+      ],
+      "More sharing options": [
+        "Więcej opcji udostępniania"
+      ],
+      "Start earning credits": [
+        "Zacznij zarabiać środki"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
@@ -9357,6 +9363,9 @@
       "How does it work?": [
         "Jak to działa?"
       ],
+      "How your free trial works": [
+        "Jak działa darmowa wersja próbna"
+      ],
       "Human verification": [
         "Weryfikacja antyspamowa"
       ],
@@ -9533,6 +9542,9 @@
       ],
       "Share your calendar with your team": [
         "Udostępnij kalendarz zespołowi"
+      ],
+      "Share your link": [
+        "Udostępnij link"
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"

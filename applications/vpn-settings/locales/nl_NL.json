@@ -1576,9 +1576,6 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
-      "forever": [
-        "voor altijd"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
@@ -1609,11 +1606,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-aanbieding"
       ]
     },
     "BF2025: Deal details": {
@@ -1655,36 +1647,6 @@
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Help uw dierbaren deelnemen aan de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Doe mee met de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Bespaar ${ savedAmount } met onze voordeligste, tijdelijke aanbieding!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Stap over op ons 2-jarig abonnement en bespaar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Stap over op ons jaarabonnement en bespaar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Trakteer uw naasten op complete digitale bescherming."
       ]
     },
     "BF2025: Tooltip": {
@@ -1793,6 +1755,27 @@
       ],
       "Working with sensitive data?": [
         "Werkt u met gevoelige gegevens?"
+      ]
+    },
+    "BOSS": {
+      "${ n } year ago": [
+        "${ n } jaar geleden",
+        "${ n } jaren geleden"
+      ],
+      "Domain setup": [
+        "Domeinconfiguratie"
+      ],
+      "Everything": [
+        "Alles"
+      ],
+      "Migrate users": [
+        "Gebruikers migreren"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
+      ],
+      "Set up": [
+        "Configureren"
       ]
     },
     "Browser": {
@@ -2028,6 +2011,15 @@
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
       ],
+      "Built and based in Europe": [
+        "Gebouwd en gevestigd in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Naleving van de regelgeving inzake gegevensbescherming"
+      ],
+      "Data never used for AI training": [
+        "Data wordt nooit gebruikt voor het trainen van AI"
+      ],
       "Full chat history with search": [
         "Volledige chatgeschiedenis met zoeken"
       ],
@@ -2039,6 +2031,9 @@
       ],
       "Limited favorites": [
         "Beperkte favorieten"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logsbeleid"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -2054,6 +2049,9 @@
       ],
       "Web search access": [
         "Toegang tot webzoekopdrachten"
+      ],
+      "Zero-access encryption": [
+        "Zero-access encryptie"
       ]
     },
     "collider_2025: Info": {
@@ -4592,6 +4590,10 @@
       ],
       "Pending": [
         "In behandeling"
+      ],
+      "Pending invitation": [
+        "Openstaande uitnodiging",
+        "Openstaande uitnodigingen"
       ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
@@ -10147,6 +10149,9 @@
       ],
       "Secure link sharing": [
         "Veilig delen van links"
+      ],
+      "Secure password management": [
+        "Veilig wachtwoordbeheer"
       ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"

@@ -289,7 +289,7 @@
         "Takma ad ekle ve kopyala"
       ],
       "Create business account": [
-        "İşletme hesabı oluştur"
+        "Kuruluş hesabı aç"
       ],
       "Create folder": [
         "Klasör oluştur"
@@ -401,8 +401,14 @@
       "Download app": [
         "Uygulamayı indir"
       ],
-      "Download apps": [
-        "Uygulamaları indirin"
+      "Download for Mac": [
+        "Mac için indir"
+      ],
+      "Download for MacOS": [
+        "macOS için indir"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
       ],
       "Download info": [
         "Bilgileri indir"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "Ne alacağım?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
@@ -1315,10 +1327,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Bir kez ${ amount } olarak faturalanır"
       ],
-      "forever": [
-        "sonsuza dek"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } ile yenilenir."
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday İndirimi"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Sevdiklerinizin, şimdi %50 indirimli en avantajlı paketlerimizle gizlilik devrimine katılmasına yardımcı olun!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Şimdi %50 indirimli, en avantajlı paketlerimizle gizlilik devrimine katılın!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "En avantajlı, sınırlı süreli fırsatımızla ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2 yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Sevdiklerinize tam dijital koruma sağlayın."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Temel sohbet geçmişi"
       ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
       "Full chat history with search": [
         "Arama ile tüm sohbet geçmişi"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Sınırlı sayıda sık kullanılan"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
       ],
       "Unlimited daily chats": [
         "Günlük sınırsız sayıda sohbet"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Bilgisayar uygulamaları şu anda indirilemiyor"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -3782,9 +3774,6 @@
       ],
       "We were not able to load some of your shared items": [
         "Paylaşılan ögelerinizden bazıları yüklenemedi"
-      ],
-      "We were not able to load some of your shared items info": [
-        "Paylaşılan öge bilgilerinizin bazıları yüklenemedi"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
@@ -5006,7 +4995,7 @@
         "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
       ],
       "Already in your library": [
-        "Zaten kütüphanenizde"
+        "Zaten kitaplığınızda"
       ],
       "Also try looking in Trash.": [
         "Çöp kutusuna da bakmayı deneyin."
@@ -5150,10 +5139,10 @@
         "Çıkmak için bu ekranı kapatın."
       ],
       "Cloud storage for businesses that take security seriously": [
-        "Güvenliği ciddiye alan işletmeler için bulut depolama"
+        "Güvenliği ciddiye alan kuruluşlar için bulut depolama alanı"
       ],
       "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
-        "Müşterilerinizin ve işletmenizin verileri ele geçirilmeden, fidye yazılımlarından ve gözetimden korurken verimli bir şekilde işbirliği yapın."
+        "Müşterilerinizin ve kuruluşunuzun verilerinin ele geçirilmesi endişesi yaşamadan, fidye yazılımlarından ve gözetimden korunun ve verimli bir şekilde iş birliği yapın."
       ],
       "Conflict": [
         "Çakışma"
@@ -5558,6 +5547,9 @@
       ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
+      ],
+      "iOS and Android Apps": [
+        "iOS ve Android uygulamaları"
       ],
       "Issues found": [
         "Sorunlar bulundu"
@@ -5992,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
+      ],
+      "Scan to download": [
+        "İndirmek için tara"
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
@@ -6869,6 +6864,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -6906,7 +6904,7 @@
         "Uygulama parolası"
       ],
       "Applications in a business setting": [
-        "İş ortamında kullanım alanları"
+        "Bir kuruluş içindeki uygulamalar"
       ],
       "Apply to all duplicated files": [
         "Tüm çift dosyalara uygula"
@@ -6976,6 +6974,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arabirimi (CLI)"
       ],
       "Comment": [
         "Yorum"
@@ -12082,6 +12083,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasına tam erişim edinin"
+      ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"

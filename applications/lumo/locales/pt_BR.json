@@ -492,9 +492,6 @@
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
       ],
-      "forever": [
-        "para sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
       ]
@@ -525,11 +522,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Oferta Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -571,36 +563,6 @@
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajude quem você ama a se juntar à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Junte-se à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economize ${ savedAmount } com nossa melhor oferta por tempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Mude para nosso plano de 2 anos e economize ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Mude para nosso plano anual e economize ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Ofereça à sua galera proteção digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1163,6 +1125,15 @@
       "Basic chat history": [
         "Histórico de bate-papo básico"
       ],
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
       "Full chat history with search": [
         "Histórico completo de bate-papos com pesquisa"
       ],
@@ -1174,6 +1145,9 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa de inexistência de registros"
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
@@ -1189,6 +1163,9 @@
       ],
       "Web search access": [
         "Acesso à pesquisa na web"
+      ],
+      "Zero-access encryption": [
+        "Criptografia de acesso zero"
       ]
     },
     "collider_2025: Feature": {
@@ -1514,7 +1491,7 @@
     },
     "collider_2025: Invite Email Placeholder": {
       "Your friend's email": [
-        "O e-mail do seu amigo"
+        "E-mail do amigo"
       ]
     },
     "collider_2025: Invite Info": {
@@ -2070,8 +2047,11 @@
       ]
     },
     "collider_2025:Prompt": {
-      "What are the origins of Thanksgiving?": [
-        "Quais são as origens do Dia de Ação de Graças?"
+      "How do people celebrate New Year's Eve around the world?": [
+        "Como as pessoas celebram a véspera de Ano Novo ao redor do mundo?"
+      ],
+      "What are the origins of Christmas?": [
+        "Quais são as origens do Natal?"
       ]
     },
     "collider_2025:Title": {
@@ -4070,6 +4050,9 @@
         "${ n } mês",
         "${ n } meses"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -4126,6 +4109,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comando (CLI)"
       ],
       "Company": [
         "Empresa"
