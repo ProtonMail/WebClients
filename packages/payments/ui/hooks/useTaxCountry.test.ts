@@ -191,7 +191,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90000', // Some zip code that might be invalid
                     },
                     zipCodeBackendValid: false,
-                    previosValidZipCode: '90210', // Previous valid zip code
+                    previousValidZipCode: '90210', // Previous valid zip code
                     telemetryContext: 'other' as const,
                 },
             });
@@ -207,7 +207,7 @@ describe('useTaxCountry hook', () => {
                     ZipCode: '90000',
                 },
                 zipCodeBackendValid: true,
-                previosValidZipCode: '90210',
+                previousValidZipCode: '90210',
                 telemetryContext: 'other',
             });
 
@@ -227,7 +227,7 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     zipCodeBackendValid: true,
-                    previosValidZipCode: '90001',
+                    previousValidZipCode: '90001',
                     telemetryContext: 'other' as const,
                 },
             });
@@ -243,7 +243,7 @@ describe('useTaxCountry hook', () => {
                     ZipCode: '90210',
                 },
                 zipCodeBackendValid: true,
-                previosValidZipCode: '90001',
+                previousValidZipCode: '90001',
                 telemetryContext: 'other',
             });
 
