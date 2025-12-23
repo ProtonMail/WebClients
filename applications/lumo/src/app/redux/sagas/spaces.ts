@@ -477,7 +477,7 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
         }
         validAssetIds.add(asset.id);
         // Add idmap entry for the asset (local -> remote mapping)
-        yield put(addIdMapEntry({ type: 'asset', localId: asset.id, remoteId: asset.remoteId, saveToIdb: true }));
+        yield put(addIdMapEntry({ type: 'attachment', localId: asset.id, remoteId: asset.remoteId, saveToIdb: true }));
         // Assets in /spaces response have Encrypted: null, need to fetch individually via /assets/:id
         yield put(pullAttachmentRequest({ id: asset.id }));
     }
