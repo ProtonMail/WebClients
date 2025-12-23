@@ -196,8 +196,17 @@
 	margin-block-start: 4px;
 }
 
-// Chat history section
-.chat-history-section {
+// Chat history sidebar section - structured like projects
+.chat-history-sidebar-section {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-block-size: 0;
+	overflow: hidden;
+}
+
+// Chat history content area
+.chat-history-content {
 	flex: 1;
 	min-block-size: 0;
 	margin-block: 0;
@@ -229,7 +238,7 @@
 
 // Prevent text reflow during sidebar transitions by maintaining fixed layout
 // Target the ChatHistory container to prevent responsive width changes
-.chat-history-section .chat-history-container {
+.chat-history-content .chat-history-container {
 	position: absolute;
 	inset-block-start: 0;
 	inset-inline-start: 0;
