@@ -127,7 +127,7 @@ export const SelectableConversationList = ({
                 <span className="text-md color-norm">
                     {totalConversations}{c('collider_2025:Info').ngettext(
                         msgid` Chat in Project`,
-                        `Chats in Project`,
+                        ` Chats in Project`,
                         totalConversations
                     )}
                 </span>
@@ -183,7 +183,7 @@ export const SelectableConversationList = ({
                                         return (
                                             <div
                                                 key={conversation.id}
-                                                className={`selectable-conversation-item flex items-center ${
+                                                className={`selectable-conversation-item flex items-center mb-3 p-2 rounded ${
                                                     isSelected ? 'is-selected' : ''
                                                 }`}
                                             >

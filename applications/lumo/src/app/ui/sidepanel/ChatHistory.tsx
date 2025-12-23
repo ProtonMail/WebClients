@@ -6,15 +6,12 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Icon } from '@proton/components';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';
-import { useLumoUserSettings } from '../../hooks/useLumoUserSettings';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
-import { selectSpaceMap } from '../../redux/slices/core/spaces';
-import type { Conversation, SpaceMap } from '../../types';
 import { sortByDate } from '../../util/date';
 import ChatHistorySkeleton from '../components/ChatHistorySkeleton';
 import { ChatHistoryGuestUserUpsell } from '../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
@@ -29,16 +26,14 @@ interface Props {
 }
 
 /**
- * Filters conversations based on user type, ghost chat mode, and project chat visibility setting
+ * Filters conversations based on user type and ghost chat mode
  */
 const getVisibleConversations = (
-    conversationMap: Record<string, Conversation>,
+    conversationMap: Record<string, any>,
     isGuest: boolean,
     isGhostChatMode: boolean,
-    conversationId?: string,
-    showProjectChatsInHistory?: boolean,
-    spaceMap?: SpaceMap
-): Conversation[] => {
+    conversationId?: string
+) => {
     // Guest users in ghost chat mode see no conversations
     if (isGuest && isGhostChatMode) {
         return [];
@@ -51,44 +46,23 @@ const getVisibleConversations = (
     }
 
     // Regular users see all non-ghost conversations
-    let conversations = Object.values(conversationMap).filter((conversation) => !conversation.ghost);
-
-    // Filter out project chats if the setting is disabled
-    if (showProjectChatsInHistory === false && spaceMap) {
-        conversations = conversations.filter((conversation) => {
-            const space = conversation.spaceId ? spaceMap[conversation.spaceId] : null;
-            // Keep conversation if it's not associated with a project space
-            return !space?.isProject;
-        });
-    }
-
-    return conversations;
+    return Object.values(conversationMap).filter((conversation) => !conversation.ghost);
 };
 
 export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const conversationMap = useLumoSelector(selectConversations);
-    const spaceMap = useLumoSelector(selectSpaceMap);
     const { conversationId } = useConversation(); //switch to using react-router-dom parameters
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
     const { isSmallScreen } = useSidebar();
-    const { lumoUserSettings } = useLumoUserSettings();
-    const showProjectChatsInHistory = lumoUserSettings.showProjectChatsInHistory ?? true;
 
     // Only show loading state during initial data fetch
     // const isLoading = !isGuest && !persistence.ready;
     const isLoading = false; // fixme is this correct?
 
     const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const conversations = getVisibleConversations(
-            conversationMap,
-            isGuest,
-            isGhostChatMode,
-            conversationId,
-            showProjectChatsInHistory,
-            spaceMap
-        );
+        const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, conversationId);
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
         const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
@@ -102,7 +76,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             noConversationAtAll: sortedConversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && sortedConversations.length > 0,
         };
-    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectChatsInHistory, spaceMap]);
+    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode]);
 
     const { today, lastWeek, lastMonth, earlier } = categorizedConversations;
 
