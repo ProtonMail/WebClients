@@ -1971,6 +1971,38 @@
         "Размаўляйце канфідэнцыяльна"
       ]
     },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Кашалёк Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Канфідэнцыяльныя відэазванкі"
+      ],
+      "Encrypted email": [
+        "Зашыфраваная пошта"
+      ],
+      "Passwords and identity": [
+        "Паролі і ідэнтычнасць"
+      ],
+      "Private AI assistant": [
+        "Прыватны памочнік ШІ"
+      ],
+      "Private browsing": [
+        "Прыватны аглядальнік"
+      ],
+      "Private scheduling": [
+        "Прыватнае планаванне"
+      ],
+      "Secure cloud storage": [
+        "Бяспечнае воблачнае сховішча"
+      ],
+      "Secure online docs": [
+        "Бяспечныя дакументы"
+      ],
+      "Secure online sheets": [
+        "Бяспечныя эл. табліцы"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
@@ -2261,9 +2293,6 @@
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
       ],
-      "forever": [
-        "назаўсёды"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
       ]
@@ -2298,11 +2327,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Распродаж з нагоды \"Чорнай пятніцы\""
       ]
     },
     "BF2025: Deal details": {
@@ -2344,36 +2368,6 @@
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Чорная пятніца"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -2561,7 +2555,7 @@
         "Даведайцеся, як абагуліць асобны элемент, зашыфраваную спасылку або сховішча праз ${ PASS_APP_NAME }."
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
-        "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } не толькі дапамагае вам кіраваць, захоўваць і аўтаматычна запаўняць вашы паролі, але і забяспечвае вас інструментамі для кантролю прыватнасці і абароны паштовых скрынь з дапамогай псеўданімаў hide-my-email."
+        "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } дапамагае не толькі кіраваць, захоўваць і аўтаматычна запаўняць паролі, але і кантраляваць прыватнасць, а таксама абараняць паштовыя скрыні з дапамогай псеўданімаў hide-my-email."
       ],
       "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Абараніце ўсе свае дамашнія прылады адначасова з ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -2676,6 +2670,134 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Ваш асабісты адрас электроннай пошты - гэта важная частка вашай лічбавай ідэнтычнасці. Як і ваш нумар тэлефона, які вы не распаўсюджваеце сярод незнаёмых людзей. Вось чаму карысна мець іншыя адрасы электроннай пошты, якія можна выкарыстоўваць для розных мэт."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } з ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } год таму",
+        "${ n } гады таму",
+        "${ n } гадоў таму",
+        "${ n } гадоў таму"
+      ],
+      "Add a custom domain": [
+        "Дадаць карыстальніцкі дамен"
+      ],
+      "Add a domain": [
+        "Дадаць дамен"
+      ],
+      "Add more users...": [
+        "Дадаць больш карыстальнікаў..."
+      ],
+      "Authenticate": [
+        "Аўтэнтыфікаваць"
+      ],
+      "Calendar": [
+        "Каляндар"
+      ],
+      "Change": [
+        "Змяніць"
+      ],
+      "Configure": [
+        "Сканфігурыраваць"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
+      ],
+      "Contacts": [
+        "Кантакты"
+      ],
+      "Domain ownership verified": [
+        "Уладальнік дамена спраўджаны"
+      ],
+      "Domain setup": [
+        "Наладка дамена"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі міграцыя пачнецца і калі яна будзе завершана. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі міграцыя будзе прыпынена з прычыны пратэрмінаваных спасылак."
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Everything": [
+        "Усе"
+      ],
+      "Failed to load OAuth": [
+        "Не ўдалося загрузіць OAuth"
+      ],
+      "Install migration app": [
+        "Усталяваць праграму міграцыі"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Даведайцеся больш аб тым, што можна перанесці. Даведацца больш"
+      ],
+      "Mail": [
+        "Пошта"
+      ],
+      "Migrate": [
+        "Перанесці"
+      ],
+      "Migrate from Google Workspace": [
+        "Мігрыраваць з Google Workspace"
+      ],
+      "Migrate users": [
+        "Міграцыя карыстальнікаў"
+      ],
+      "Migration includes": [
+        "Міграцыя ўключана"
+      ],
+      "Not started": [
+        "Не запушчана"
+      ],
+      "Required to create user accounts": [
+        "Неабходна, каб стараць уліковыя запісы карыстальнікаў"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе ўжыта да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
+      ],
+      "Set up": [
+        "Наладзіць"
+      ],
+      "Set up billing information": [
+        "Наладзіць плацежную інфармацыю"
+      ],
+      "Set up two-factor authentication": [
+        "Наладзіць двухфактарную аўтэнтыфікацыю"
+      ],
+      "Sign in to Google Workspace": [
+        "Увайсці ў Google Workspace"
+      ],
+      "Start migration": [
+        "Пачаць міграцыю"
+      ],
+      "Status": [
+        "Статус"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана. Даведацца больш"
+      ],
+      "Transfer data from": [
+        "Перанесці даныя з"
+      ],
+      "User": [
+        "Карыстальнік"
+      ],
+      "Users migrated": [
+        "Карыстальнікі перанесены"
+      ],
+      "Verify your domain": [
+        "Спраўдзіць свой дамен"
+      ],
+      "Verify your domain ownership": [
+        "Спраўдзіце, што вы валодаеце даменам"
+      ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
+      "Who will be notified?": [
+        "Хто будзе апавешчаны?"
       ]
     },
     "breadcrumb": {
@@ -3116,6 +3238,15 @@
       "Basic chat history": [
         "Базавая гісторыя чата"
       ],
+      "Built and based in Europe": [
+        "Створана і базіруецца ў Еўропе"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпавядае прававым нормам па абароне даных"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
       "Full chat history with search": [
         "Поўная гісторыя чатаў з пошукам"
       ],
@@ -3127,6 +3258,9 @@
       ],
       "Limited favorites": [
         "Абмежаваная колькасць абраных"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
       "Unlimited daily chats": [
         "Неабмежаваныя штодзённыя чаты"
@@ -3142,6 +3276,9 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Feature": {
@@ -3152,9 +3289,6 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } — гэта ШІ, дзе прыватнасць знаходзіцца на першым месцы. Ён дапамагае рашаць больш задач і пры гэтым захоўвае вашы даныя ў бяспецы. Раскрыйце поўны патэнцыял праграмы і атрымлівайце асалоду ад ранняга доступу да новых функцый па меры іх укаранення."
-      ],
-      "Access to advanced AI models": [
-        "Доступ да перадавых мадэляў ШІ"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Дадайце праграму ${ LUMO_APP_NAME }"
@@ -3168,50 +3302,11 @@
       "AI assistant that respects your privacy": [
         "Памочнік ШІ, які паважае вашу прыватнасць"
       ],
-      "Basic chat history": [
-        "Базавая гісторыя чата"
-      ],
-      "Compliance with data protection regulations": [
-        "Адпаведнасць прававым нормам па абароне даных"
-      ],
-      "Data never used for AI training": [
-        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
-      ],
-      "Full chat history with search": [
-        "Поўная гісторыя чатаў з пошукам"
-      ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
       ],
-      "Limited daily chats": [
-        "Абмежаваная колькасць штодзённых чатаў"
-      ],
-      "Limited favorites": [
-        "Абмежаваная колькасць абраных"
-      ],
       "Open source": [
         "Адкрыты зыходны код"
-      ],
-      "Strict no-logs policy": [
-        "Палітыка строгай адсутнасці журналаў актыўнасці"
-      ],
-      "Unlimited daily chats": [
-        "Неабмежаваная колькасць штодзённых чатаў"
-      ],
-      "Unlimited favorites for quick access": [
-        "Неабмежаваная колькасць абраных для хуткага доступу"
-      ],
-      "Upload and query multiple large files": [
-        "Запампаваць і запытаць некалькі вялікіх файлаў"
-      ],
-      "Upload and query small files": [
-        "Запампаваць і запытаць маленькія файлы"
-      ],
-      "Web search access": [
-        "Доступ да пошуку ў інтэрнэце"
-      ],
-      "Zero-access encryption": [
-        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Navigation": {
@@ -5979,11 +6074,11 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Вас пакуль яшчэ ніхто не прызначаў у якасці экстраннага кантакту."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давераны кантакт.",
-        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давераныя кантакты.",
-        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давераных кантактаў.",
-        "Вы дасягнулі максімальнай колькасці ў ${ controller.meta.count } давераных кантактаў."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранны кантакт.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранныя кантакты.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў.",
+        "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў."
       ],
       "You will be notified when someone requests emergency access.": [
         "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстраны доступ."
@@ -7051,6 +7146,12 @@
       "Set up family group": [
         "Наладзіць сямейную групу"
       ],
+      "Show all (${ invites.length })": [
+        "Паказаць усе (${ invites.length })"
+      ],
+      "Show less": [
+        "Паказаць менш"
+      ],
       "Switch plans": [
         "Змяніць тарыфны план"
       ],
@@ -7132,6 +7233,12 @@
       "Pending": [
         "У чаканні"
       ],
+      "Pending invitation": [
+        "Запрашэнне, якое чакае адказу",
+        "Запрашэнні, якія чакаюць адказу",
+        "Запрашэнні, якія чакаюць адказу",
+        "Запрашэнні, якія чакаюць адказу"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "У дадзены момант змена тарыфнага плана недаступна."
       ],
@@ -7143,6 +7250,12 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Для спрашчэння пераходу мы даём вам магчымасць на працягу 30 дзён карыстацца пробнай версіяй ${ BRAND_NAME } Unlimited* абсалютна бясплатна."
+      ],
+      "View the invitation": [
+        "Паглядзець запрашэнне",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
@@ -7185,6 +7298,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Вы згубіце доступ да ўсіх прэміяльных функцый, які ўключае тарыфны план ${ plan } пасля таго, як выйдзіце з яго."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Вас запрашае **${ invite.InviterEmail }** звязаць ваш уліковы запіс з гэтым групавым тарыфным планам."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Вас запрашаюць далучыць свой уліковы запіс ${ BRAND_NAME } да гэтага сямейнага тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ brandOrAppName }."
@@ -7742,11 +7861,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Я разумею, што я больш не змагу ўвайсці са старых версій мабільных праграм ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -9240,9 +9354,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Для вашага ўліковага запісу будуць згенерыраваны ключы, якія ўстойлівыя да квантавых камп'ютараў пры ўключэнні постквантавай абароны."
       ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
@@ -12585,6 +12696,9 @@
       "6 Pass Plus accounts": [
         "6 уліковых запісаў Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
+      ],
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
@@ -12833,6 +12947,9 @@
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Command line interface (CLI)": [
+        "Інтэрфейс каманднага радка (CLI)"
       ],
       "Common passwords": [
         "Агульныя паролі"
@@ -13385,6 +13502,9 @@
       ],
       "Online privacy for your whole family": [
         "Прыватнасць у інтэрнэце для ўсёй вашай сям'і"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Даступна толькі на платных тарыфных планах ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
@@ -18004,48 +18124,17 @@
         "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў уліковага запісу і адраса. Вы можаце ўручную згенерыраваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў для аднаго або некалькі адрасоў. Вы можаце ўручную згенерыраваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Абнавіце **усе свае мабільныя праграмы ${ BRAND_NAME }** да апошняй версіі."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Гэта дзеянне прывядзе да генерацыі новага ключа ўліковага запісу і новага ключа шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфроўкі і расшыфроўкі будучых лістоў і іншых даных."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Уключыць і згенерыраваць ключы"
       ],
-      "Enable post-quantum protection": [
-        "Уключыць постквантавую абарону"
-      ],
       "Enable post-quantum protection?": [
         "Уключыць постквантавую абарону?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Збой уключэння постквантавай абароны. Паспрабуйце яшчэ раз пазней."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Зразумела"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Постквантавая абарона ўключана ў вашым уліковым запісе!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -22643,6 +22732,9 @@
       "Find email or username": [
         "Знайсці электронную пошту або імя карыстальніка"
       ],
+      "Finish setting up your business account": [
+        "Завяршэнне наладкі вашага ўліковага запісу для бізнесу"
+      ],
       "Folders": [
         "Папкі"
       ],
@@ -22865,6 +22957,9 @@
       "Messages and composing": [
         "Паведамленні і напісанне лістоў"
       ],
+      "Migration assistant": [
+        "Памочнік па міграцыі"
+      ],
       "Minicalendar": [
         "Мінікаляндар"
       ],
@@ -22987,6 +23082,9 @@
       ],
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
+      ],
+      "Pending invitations": [
+        "Запрашэнні, якія чакаюць адказу"
       ],
       "Personalize your email footer": [
         "Персаналізуйце свой ніжні калонтытул ліста"
@@ -24180,6 +24278,9 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"

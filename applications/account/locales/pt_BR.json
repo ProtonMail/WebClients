@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Open recovery settings": [
+        "Abrir configurações de recuperação"
+      ],
       "Opt out": [
         "Rejeitar"
       ],
@@ -1979,6 +1982,12 @@
       ],
       "Secure cloud storage": [
         "Armazenamento na nuvem seguro"
+      ],
+      "Secure online docs": [
+        "Documentos on-line seguros"
+      ],
+      "Secure online sheets": [
+        "Planilhas on-line seguras"
       ]
     },
     "Apps dropdown": {
@@ -2267,9 +2276,6 @@
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
       ],
-      "forever": [
-        "para sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
       ]
@@ -2300,11 +2306,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Oferta Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2347,6 @@
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajude quem você ama a se juntar à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Junte-se à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economize ${ savedAmount } com nossa melhor oferta por tempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Mude para nosso plano de 2 anos e economize ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Mude para nosso plano anual e economize ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Ofereça à sua galera proteção digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2647,114 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Seu endereço de e-mail pessoal é uma parte essencial da sua identidade digital. Assim como seu número de telefone, você não o fornece a todas as pessoas que conhece. Por isso, é útil ter outros endereços de e-mail que você possa usar para diferentes finalidades."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } ano atrás",
+        "${ n } anos atrás"
+      ],
+      "Add a custom domain": [
+        "Adicionar um domínio adicional"
+      ],
+      "Add a domain": [
+        "Adicionar um domínio"
+      ],
+      "Add more users...": [
+        "Adicionar mais usuários..."
+      ],
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Change": [
+        "Alterar"
+      ],
+      "Configure": [
+        "Configurar"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Domain ownership verified": [
+        "Propriedade do domínio verificada"
+      ],
+      "Domain setup": [
+        "Configuração de domínio"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Everything": [
+        "Tudo"
+      ],
+      "Install migration app": [
+        "Instalar aplicativo de migração"
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrar do Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrar usuários"
+      ],
+      "Migration includes": [
+        "A migração foi concluída"
+      ],
+      "Not started": [
+        "Não iniciado"
+      ],
+      "Set up": [
+        "Configurar"
+      ],
+      "Set up billing information": [
+        "Configurar informações de faturamento"
+      ],
+      "Set up two-factor authentication": [
+        "Configurar autenticação de dois fatores"
+      ],
+      "Sign in to Google Workspace": [
+        "Iniciar sessão do Google Workspace"
+      ],
+      "Start migration": [
+        "Iniciar migração"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Transfer data from": [
+        "Transferir dados de"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "Users migrated": [
+        "Usuários migrados"
+      ],
+      "Verify your domain": [
+        "Verifique seu domínio"
+      ],
+      "Verify your domain ownership": [
+        "Verifique a propriedade do seu domínio"
+      ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
+      "Who will be notified?": [
+        "Quem será notificado?"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3189,15 @@
       "Basic chat history": [
         "Histórico de bate-papo básico"
       ],
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
       "Full chat history with search": [
         "Histórico completo de bate-papos com pesquisa"
       ],
@@ -3121,70 +3209,6 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
-      ],
-      "Unlimited daily chats": [
-        "Bate-papos diários ilimitados"
-      ],
-      "Unlimited favorites for quick access": [
-        "Favoritos ilimitados para acesso rápido"
-      ],
-      "Upload and query multiple large files": [
-        "Enviar e consultar vários arquivos grandes"
-      ],
-      "Upload and query small files": [
-        "Enviar e consultar arquivos pequenos"
-      ],
-      "Web search access": [
-        "Acesso à pesquisa na web"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Construído e baseado na Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
-      ],
-      "Access to advanced AI models": [
-        "Acesso a modelos de IA avançados"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Adicionar ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Segurança avançada de conta e rede em um único plano"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "Assistente de IA que respeita a confidencialidade dos negócios"
-      ],
-      "AI assistant that respects your privacy": [
-        "Um assistente IA que respeita sua privacidade"
-      ],
-      "Basic chat history": [
-        "Histórico de bate-papo básico"
-      ],
-      "Compliance with data protection regulations": [
-        "Conformidade com os regulamentos de proteção de dados"
-      ],
-      "Data never used for AI training": [
-        "Os dados nunca são usados para treinamento de IA"
-      ],
-      "Full chat history with search": [
-        "Histórico completo de bate-papos com pesquisa"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Bate-papos de alta velocidade e recursos avançados de IA."
-      ],
-      "Limited daily chats": [
-        "Bate-papos diários limitados"
-      ],
-      "Limited favorites": [
-        "Favoritos limitados"
-      ],
-      "Open source": [
-        "Código aberto"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de inexistência de registros"
@@ -3206,6 +3230,34 @@
       ],
       "Zero-access encryption": [
         "Criptografia de acesso zero"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Assistente de IA que respeita a confidencialidade dos negócios"
+      ],
+      "AI assistant that respects your privacy": [
+        "Um assistente IA que respeita sua privacidade"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Bate-papos de alta velocidade e recursos avançados de IA."
+      ],
+      "Open source": [
+        "Código aberto"
       ]
     },
     "collider_2025: Navigation": {
@@ -5947,9 +5999,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Você ainda não foi designado como contato de emergência para ninguém."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Você atingiu o máximo de ${ controller.meta.count } contato de confiança.",
-        "Você atingiu o máximo de ${ controller.meta.count } contato de confiança."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Você atingiu o máximo de ${ limit } contato de emergência",
+        "Você atingiu o máximo de ${ limit } contatos de emergência."
       ],
       "You will be notified when someone requests emergency access.": [
         "Você será notificado quando alguém solicitar acesso de emergência."
@@ -7688,11 +7740,6 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Eu entendo que não conseguirei mais iniciar sessão a partir de versões mais antigas dos aplicativos móveis ${ BRAND_NAME }."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "aplicativo para web"
@@ -9098,9 +9145,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Ao ativar a proteção pós-quântica, chaves resistentes a computadores quânticos serão geradas para sua conta."
       ],
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
@@ -12369,6 +12413,9 @@
       "6 Pass Plus accounts": [
         "6 contas Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -12617,6 +12664,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comando (CLI)"
       ],
       "Common passwords": [
         "Senhas comuns"
@@ -13169,6 +13219,9 @@
       ],
       "Online privacy for your whole family": [
         "Privacidade online para toda sua família"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Disponível apenas nos planos pagos do ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN / IKEv2"
@@ -17679,48 +17732,37 @@
         "Faça upgrade para ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "A proteção pós-quântica foi ativada em sua conta, mas algumas operações não foram bem-sucedidas: a geração de chaves pós-quânticas da conta e de endereço falhou. Você pode gerar essas chaves manualmente nas configurações de ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "A proteção pós-quântica foi ativada em sua conta, mas algumas operações não foram bem-sucedidas: a geração de chaves de endereço pós-quânticas para um ou mais endereços falhou. Você pode gerar essas chaves manualmente nas configurações de ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Atualize **todos os seus aplicativos móveis ${ BRAND_NAME }** para a versão mais recente."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Isso vai gerar uma nova chave de conta e uma nova chave de criptografia de e-mail para cada endereço; elas serão usadas para criptografar e descriptografar futuros e-mails e outros dados."
-      ]
-    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Não foi possível ativar a proteção pós-quântica"
+      ],
       "Enable and generate keys": [
         "Ativar e gerar chaves"
-      ],
-      "Enable post-quantum protection": [
-        "Ativar proteção pós-quântica"
       ],
       "Enable post-quantum protection?": [
         "Ativar proteção pós-quântica?"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Ativação da proteção pós-quântica falhou. Tente novamente mais tarde."
+      "Enabling post-quantum protection...": [
+        "Ativando proteção pós-quântica..."
+      ],
+      "Post-quantum protection": [
+        "Proteção pós-quântica"
+      ],
+      "Post-quantum protection is enabled": [
+        "Proteção pós-quântica está ativada"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Fechar"
+      ],
       "Got it": [
         "Entendi"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "A proteção pós-quântica foi ativada na sua conta!"
+      "Post-quantum protection is enabled.": [
+        "Proteção pós-quântica está ativada."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22151,6 +22193,9 @@
       "Find email or username": [
         "Encontrar e-mail ou nome de usuário"
       ],
+      "Finish setting up your business account": [
+        "Conclua a configuração da sua conta empresarial"
+      ],
       "Folders": [
         "Pastas"
       ],
@@ -22373,6 +22418,9 @@
       ],
       "Messages and composing": [
         "Mensagens e composição"
+      ],
+      "Migration assistant": [
+        "Assistente de migração"
       ],
       "Minicalendar": [
         "Mini calendário"

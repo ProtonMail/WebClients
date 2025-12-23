@@ -2167,9 +2167,6 @@
       "Billed at ${ amount } once": [
         "Addebito di ${ amount } una volta"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Si rinnova dopo 1 mese a ${ regularAmount }."
       ]
@@ -2200,11 +2197,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Saldi del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2246,36 +2238,6 @@
       ],
       "Unlimited daily chats": [
         "Numero illimitato di chat al giorno"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Aiuta i tuoi cari a unirsi alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Unisciti alla rivoluzione della privacy con i nostri pacchetti dal miglior rapporto qualità-prezzo, ora con il 50% di sconto."
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Risparmia ${ savedAmount } con la nostra migliore offerta a tempo limitato!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Passa al nostro piano biennale e risparmia ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Passa al nostro piano annuale e risparmia ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Offri al tuo gruppo una protezione digitale completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -2974,6 +2936,15 @@
       "Basic chat history": [
         "Cronologia chat di base"
       ],
+      "Built and based in Europe": [
+        "Sviluppato e basato in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformità con le normative sulla protezione dei dati"
+      ],
+      "Data never used for AI training": [
+        "I dati non vengono mai utilizzati per l’addestramento dell’IA"
+      ],
       "Full chat history with search": [
         "Cronologia chat completa con ricerca"
       ],
@@ -2986,72 +2957,8 @@
       "Limited favorites": [
         "Numero limitato di preferiti"
       ],
-      "Unlimited daily chats": [
-        "Numero illimitato di chat al giorno"
-      ],
-      "Unlimited favorites for quick access": [
-        "Preferiti senza limiti per consultazione rapida"
-      ],
-      "Upload and query multiple large files": [
-        "Carica e consulta più file grandi"
-      ],
-      "Upload and query small files": [
-        "Carica e consulta file piccoli"
-      ],
-      "Web search access": [
-        "Accesso alla Ricerca Web"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Sviluppato e basato in Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
-      ],
-      "Access to advanced AI models": [
-        "Accesso a modelli IA avanzati"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Aggiungi ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Sicurezza avanzata dell'account e della rete in un unico piano"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "Assistente AI che tutela la riservatezza aziendale"
-      ],
-      "AI assistant that respects your privacy": [
-        "Assistente AI che tutela la tua privacy"
-      ],
-      "Basic chat history": [
-        "Cronologia chat di base"
-      ],
-      "Compliance with data protection regulations": [
-        "Conformità con le normative sulla protezione dei dati"
-      ],
-      "Data never used for AI training": [
-        "I dati non vengono mai utilizzati per l’addestramento dell’IA"
-      ],
-      "Full chat history with search": [
-        "Cronologia chat completa con ricerca"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Chat veloci e funzioni AI avanzate."
-      ],
-      "Limited daily chats": [
-        "Numero limitato di chat al giorno"
-      ],
-      "Limited favorites": [
-        "Numero limitato di preferiti"
-      ],
-      "Open source": [
-        "Open source"
-      ],
       "Strict no-logs policy": [
-        "Rigorosa politica di non conservazione dei log"
+        "Rigida politica contro i registri"
       ],
       "Unlimited daily chats": [
         "Numero illimitato di chat al giorno"
@@ -3070,6 +2977,34 @@
       ],
       "Zero-access encryption": [
         "Crittografia ad accesso zero"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Sviluppato e basato in Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Aggiungi ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Sicurezza avanzata dell'account e della rete in un unico piano"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Assistente AI che tutela la riservatezza aziendale"
+      ],
+      "AI assistant that respects your privacy": [
+        "Assistente AI che tutela la tua privacy"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chat veloci e funzioni AI avanzate."
+      ],
+      "Open source": [
+        "Open source"
       ]
     },
     "collider_2025: Navigation": {
@@ -5681,10 +5616,6 @@
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Non sei stato ancora designato come contatto di emergenza per nessuno."
-      ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Hai raggiunto il massimo di ${ controller.meta.count } contatto attendibile.",
-        "Hai raggiunto il numero massimo di ${ controller.meta.count } contatti attendibili."
       ],
       "You will be notified when someone requests emergency access.": [
         "Sarai avvisato quando qualcuno richiede accesso di emergenza."
@@ -8732,9 +8663,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Attivando la protezione post-quantistica, verranno generate chiavi resistenti contro i computer quantistici per il tuo account."
       ],
       "By leaving now, changes may not be saved": [
         "Uscendo ora, le modifiche potrebbero non essere salvate"
@@ -16963,27 +16891,9 @@
         "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "La protezione post-quantistica è stata attivata sul tuo account, ma alcune operazioni non sono riuscite: la generazione delle chiavi post-quantistiche dell'account e dell'indirizzo è fallita. Puoi generare manualmente queste chiavi sotto le impostazioni ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "La protezione post-quantistica è stata attivata sul tuo account, ma alcune operazioni non sono riuscite: la generazione delle chiavi di indirizzo post-quantistiche per uno o più indirizzi è fallita. Puoi generare manualmente queste chiavi sotto le impostazioni ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Attiva e genera chiavi"
-      ],
-      "Enable post-quantum protection": [
-        "Attiva la protezione post-quantistica"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "La protezione post-quantum è stata attivata sul tuo account!"
       ]
     },
     "pqc-optin: Progress status": {

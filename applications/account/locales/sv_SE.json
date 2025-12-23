@@ -2261,9 +2261,6 @@
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
       ],
-      "forever": [
-        "för alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
       ]
@@ -2294,11 +2291,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-rea"
       ]
     },
     "BF2025: Deal details": {
@@ -2340,36 +2332,6 @@
       ],
       "Unlimited daily chats": [
         "Obegränsat antal dagliga chattar"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjälp dina nära och kära att gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "för ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spara ${ savedAmount } med vårt mest prisvärda, tidsbegränsade erbjudande!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Byt till vår 2-årsplan och spara ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Byt till vår årsplan och spara ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Unna dina nära och kära ett komplett digitalt skydd."
       ]
     },
     "BF2025: Tooltip": {
@@ -2637,6 +2599,126 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personliga e-postadress är en viktig del av din digitala identitet. Precis som ditt telefonnummer ger du det inte till alla du möter. Därför är det bra att ha andra e-postadresser som du kan använda för olika ändamål."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } år sedan",
+        "${ n } år sedan"
+      ],
+      "Add a custom domain": [
+        "Lägg till en anpassad domän"
+      ],
+      "Add a domain": [
+        "Lägg till en domän"
+      ],
+      "Add more users...": [
+        "Lägg till fler användare …"
+      ],
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Change": [
+        "Ändra"
+      ],
+      "Configure": [
+        "Konfigurera"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Domain ownership verified": [
+        "Domänens äganderätt verifierad"
+      ],
+      "Domain setup": [
+        "Domäninställning"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Everything": [
+        "Allting"
+      ],
+      "Failed to load OAuth": [
+        "Misslyckades att ladda OAuth"
+      ],
+      "Install migration app": [
+        "Installera migreringsappen"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lär dig mer om vad som kan migreras. Lär dig mer"
+      ],
+      "Mail": [
+        "E-post"
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrera från Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrera användare"
+      ],
+      "Migration includes": [
+        "Migrering inkluderar"
+      ],
+      "Not started": [
+        "Inte startad"
+      ],
+      "Required to create user accounts": [
+        "Krävs för att skapa användarkonton"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Välj vad du vill migrera, detta kommer tillämpas på alla användare oavsett om de skapas nu eller senare. Migrering kommer starta efter användarkonton är skapade."
+      ],
+      "Set up": [
+        "Ställ in"
+      ],
+      "Set up billing information": [
+        "Ställ in faktureringsinformation"
+      ],
+      "Set up two-factor authentication": [
+        "Ställ in tvåfaktorsautentisering"
+      ],
+      "Sign in to Google Workspace": [
+        "Logga in på Google Workspace"
+      ],
+      "Start migration": [
+        "Starta migrering"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Transfer data from": [
+        "Överför data från"
+      ],
+      "User": [
+        "Användare"
+      ],
+      "Users migrated": [
+        "Användare migrerade"
+      ],
+      "Verify your domain": [
+        "Verifiera din domän"
+      ],
+      "Verify your domain ownership": [
+        "Verifiera ditt domänägarskap"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
+      "Who will be notified?": [
+        "Vem kommer bli aviserad?"
       ]
     },
     "breadcrumb": {
@@ -3071,6 +3153,15 @@
       "Basic chat history": [
         "Grundläggande chatthistorik"
       ],
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Efterlevnad av dataskyddsföreskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data används aldrig för AI-träning"
+      ],
       "Full chat history with search": [
         "Fullständig chatthistorik med sök"
       ],
@@ -3082,64 +3173,6 @@
       ],
       "Limited favorites": [
         "Begränsat antal favoriter"
-      ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ],
-      "Unlimited favorites for quick access": [
-        "Obegränsade favoriter för snabb åtkomst"
-      ],
-      "Web search access": [
-        "Webbsökningsåtkomst"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Byggd och baserad i Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
-      ],
-      "Access to advanced AI models": [
-        "Åtkomst till avancerade AI-modeller"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Lägg till ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Avancerad konto- och nätverkssäkerhet i ett paket"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "AI-assistent som respekterar företagskonfidentialitet"
-      ],
-      "AI assistant that respects your privacy": [
-        "AI-assistent som respekterar din integritet"
-      ],
-      "Basic chat history": [
-        "Grundläggande chatthistorik"
-      ],
-      "Compliance with data protection regulations": [
-        "Efterlevnad av dataskyddsföreskrifter"
-      ],
-      "Data never used for AI training": [
-        "Data används aldrig för AI-träning"
-      ],
-      "Full chat history with search": [
-        "Fullständig chatthistorik med sök"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Chattar med hög hastighet och avancerade AI-funktioner."
-      ],
-      "Limited daily chats": [
-        "Begränsat antal dagliga chattar"
-      ],
-      "Limited favorites": [
-        "Begränsat antal favoriter"
-      ],
-      "Open source": [
-        "Öppen källkod"
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
@@ -3155,6 +3188,34 @@
       ],
       "Zero-access encryption": [
         "Kryptering med noll åtkomst"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } är en AI som prioriterar integritet som hjälper dig att få mer gjort samtidigt som dina data hålls säkra. Lås upp dess fulla potential och njut av förhandstillgång till nya funktioner allt eftersom de introduceras."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avancerad konto- och nätverkssäkerhet i ett paket"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "AI-assistent som respekterar företagskonfidentialitet"
+      ],
+      "AI assistant that respects your privacy": [
+        "AI-assistent som respekterar din integritet"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chattar med hög hastighet och avancerade AI-funktioner."
+      ],
+      "Open source": [
+        "Öppen källkod"
       ]
     },
     "collider_2025: Navigation": {
@@ -5880,9 +5941,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Du har inte blivit utsedd som en nödkontakt för någon än."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Du har nått maximala antalet av ${ controller.meta.count } betrodd kontakt.",
-        "Du har nått maximalt antal av ${ controller.meta.count } betrodda kontakter."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Du har nått maximala antalet av ${ limit } nödkontakt.",
+        "Du har nått maximalt antal av ${ limit } nödkontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du kommer bli aviserad när någon begär nödåtkomst."
@@ -7019,6 +7080,10 @@
       "Pending": [
         "Väntande"
       ],
+      "Pending invitation": [
+        "Väntande inbjudan",
+        "Väntande inbjudningar"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kan inte byta paket just nu."
       ],
@@ -7615,11 +7680,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Jag förstår att jag inte längre kommer att kunna logga in från äldre versioner av mobilappar för ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -9024,9 +9084,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Genom att aktivera post-kvantumskydd kommer nycklar som är resistenta mot kvantdatorer att genereras för ditt konto."
       ],
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
@@ -12264,6 +12321,9 @@
       "6 Pass Plus accounts": [
         "6 Pass Plus-konton"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
+      ],
       "Account holder": [
         "Kontoinnehavare"
       ],
@@ -12512,6 +12572,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandoradsgränssnitt (CLI)"
       ],
       "Common passwords": [
         "Vanliga lösenord"
@@ -13064,6 +13127,9 @@
       ],
       "Online privacy for your whole family": [
         "Integritet online för hela din familj"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Endast tillgängligt på ${ PASS_SHORT_APP_NAME } betalda paket"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-lösenord"
@@ -17122,6 +17188,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
+      ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
       ],
@@ -17549,48 +17618,25 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Post-kvantumskydd har aktiverats på ditt konto, men vissa åtgärder lyckades inte: Genereringen av post-kvantumkonto- och adressnycklar misslyckades. Du kan manuellt generera dessa nycklar under inställningarna ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Post-kvantumskydd har aktiverats på ditt konto, men vissa åtgärder lyckades inte: Genereringen av adressnycklar för post-kvantum för en eller flera adresser misslyckades. Du kan manuellt generera dessa nycklar under inställningarna ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Uppdatera **alla dina ${ BRAND_NAME }-mobilappar** till senaste versionen."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Detta kommer generera en ny kontonyckel och en ny krypteringsnyckel för e-post för varje adress. Dessa kommer att användas för att kryptera och dekryptera framtida e-post och annan data."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Aktivera och generera nycklar"
       ],
-      "Enable post-quantum protection": [
-        "Aktivera post-kvantumskydd"
-      ],
       "Enable post-quantum protection?": [
         "Aktivera post-kvantumskydd?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Aktivering av post-kvantumskydd misslyckades. Försök igen senare."
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Stäng"
+      ],
       "Got it": [
         "Jag förstår"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Post-kvantumskydd har aktiverats på ditt konto!"
+      "Don't forget to generate new recovery data.": [
+        "Glöm inte att generera nya återställningsdata."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22009,6 +22055,9 @@
       "Find email or username": [
         "Hitta e-post eller användarnamn"
       ],
+      "Finish setting up your business account": [
+        "Slutför inställningen av ditt företagskonto"
+      ],
       "Folders": [
         "Mappar"
       ],
@@ -22231,6 +22280,9 @@
       ],
       "Messages and composing": [
         "Meddelanden och skrivning"
+      ],
+      "Migration assistant": [
+        "Migreringsassistent"
       ],
       "Minicalendar": [
         "Minikalender"

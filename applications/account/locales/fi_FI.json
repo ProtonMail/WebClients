@@ -961,6 +961,9 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
+      "Open recovery settings": [
+        "Avaa palautusasetukset"
+      ],
       "Opt out": [
         "Kieltäydy"
       ],
@@ -1748,6 +1751,14 @@
         "Keskustele luottamuksellisesti"
       ]
     },
+    "app-switcher_2025": {
+      "Secure online docs": [
+        "Suojatut verkkoasiakirjat"
+      ],
+      "Secure online sheets": [
+        "Suojatut verkkotaulukot"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-sovellukset"
@@ -1984,9 +1995,6 @@
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
       ],
-      "forever": [
-        "ikuisesti"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
       ]
@@ -2017,11 +2025,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday -ale"
       ]
     },
     "BF2025: Deal details": {
@@ -2063,36 +2066,6 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Auta läheisiäsi liittymään yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Liity yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "hintaan ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Säästä ${ savedAmount } parhaalla, rajoitetun ajan voimassa olevalla tarjouksellamme!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Vaihda kahden vuoden tilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Tarjoa ryhmällesi täydellinen digitaalinen suojaus."
       ]
     },
     "BF2025: Tooltip": {
@@ -2186,6 +2159,132 @@
       ],
       "Working with sensitive data?": [
         "Työskenteletkö arkaluonteisten tietojen kanssa?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } vuosi sitten",
+        "${ n } vuotta sitten"
+      ],
+      "Add a custom domain": [
+        "Lisää oma verkkotunnus"
+      ],
+      "Add a domain": [
+        "Lisää verkkotunnus"
+      ],
+      "Add more users...": [
+        "Lisää käyttäjiä..."
+      ],
+      "Authenticate": [
+        "Tunnistaudu"
+      ],
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Change": [
+        "Muuta"
+      ],
+      "Configure": [
+        "Määritä"
+      ],
+      "Configure migration": [
+        "Määritä siirto"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Domain ownership verified": [
+        "Verkkotunnuksen omistajuus vahvistettu"
+      ],
+      "Domain setup": [
+        "Verkkotunnuksen määritys"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Sähköposti-ilmoitukset lähetetään, kun siirto alkaa ja kun se on valmis. Saat myös ilmoituksen, jos siirrossa ilmenee virheitä tai se keskeytyy vanhentuneiden linkkien vuoksi."
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Everything": [
+        "Kaikki"
+      ],
+      "Failed to load OAuth": [
+        "OAuthin lataaminen epäonnistui"
+      ],
+      "Install migration app": [
+        "Asenna migraatio-sovellus"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lisätietoja siirrettävistä tiedoista. Lisätietoja"
+      ],
+      "Mail": [
+        "Sähköposti"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrate from Google Workspace": [
+        "Siirrä Google Workspace -palvelusta"
+      ],
+      "Migrate users": [
+        "Siirrä käyttäjät"
+      ],
+      "Migration includes": [
+        "Migraatio sisältää"
+      ],
+      "Not started": [
+        "Ei aloitettu"
+      ],
+      "Required to create user accounts": [
+        "Vaaditaan käyttäjätilien luomiseen"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Valitse, mitä haluat siirtää. Tämä koskee kaikkia käyttäjiä riippumatta siitä, luodaanko heidät nyt vai myöhemmin. Siirto alkaa, kun käyttäjätilit on luotu."
+      ],
+      "Set up": [
+        "Määritä"
+      ],
+      "Set up billing information": [
+        "Määritä laskutustiedot"
+      ],
+      "Set up two-factor authentication": [
+        "Määritä kaksivaiheinen tunnistautuminen"
+      ],
+      "Sign in to Google Workspace": [
+        "Kirjaudu Google Workspace -palveluun"
+      ],
+      "Start migration": [
+        "Aloita siirto"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Organisaatiosi tietojen siirtämiseksi sinun on asennettava ${ BRAND_NAME } Migration Assistant -sovellus Google Workspace Marketplacesta. Tämä antaa ${ BRAND_NAME }:lle luvan kopioida tietosi. Asennuksen jälkeen palaa takaisin tänne jatkaaksesi. Lisätietoja"
+      ],
+      "Transfer data from": [
+        "Siirrä tiedot kohteesta"
+      ],
+      "User": [
+        "Käyttäjä"
+      ],
+      "Users migrated": [
+        "Käyttäjät siirretty"
+      ],
+      "Verify your domain": [
+        "Vahvista verkkotunnuksesi"
+      ],
+      "Verify your domain ownership": [
+        "Vahvista verkkotunnuksesi omistajuus"
+      ],
+      "What are you migrating?": [
+        "Mitä olet siirtämässä?"
+      ],
+      "Who will be notified?": [
+        "Kenelle ilmoitetaan?"
       ]
     },
     "Browser": {
@@ -2576,35 +2675,17 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } on yksityisyyteen keskittyvä tekoäly, joka auttaa sinua saamaan enemmän aikaan pitäen samalla tietosi turvassa. Avaa sen täysi potentiaali ja nauti varhaisesta pääsystä uusiin ominaisuuksiin kun niitä julkaistaan."
       ],
-      "Access to advanced AI models": [
-        "Pääsy kehittyneisiin tekoälymalleihin"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "Lisää ${ LUMO_APP_NAME }"
       ],
       "Advanced account and network security in one plan": [
         "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
       ],
-      "Basic chat history": [
-        "Rajoitettu keskusteluhistoria"
-      ],
-      "Full chat history with search": [
-        "Täysi keskusteluhistoria haulla"
-      ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
       ],
-      "Limited daily chats": [
-        "Rajoitetusti päivittäisiä keskusteluja"
-      ],
       "Open source": [
         "Avoin lähdekoodi"
-      ],
-      "Unlimited daily chats": [
-        "Rajattomasti päivittäisiä keskusteluja"
-      ],
-      "Web search access": [
-        "Verkkohakuun pääsy"
       ]
     },
     "collider_2025: Navigation": {
@@ -4940,9 +5021,9 @@
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Voit poistaa heidän käyttöoikeutensa milloin tahansa palauttaaksesi tilisi yksinhallinnan."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Olet saavuttanut ${ controller.meta.count } luotetun yhteyshenkilön enimmäismäärän.",
-        "Olet saavuttanut ${ controller.meta.count } luotetun yhteyshenkilön enimmäismäärän."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän.",
+        "Olet saavuttanut ${ limit } hätäyhteyshenkilön enimmäismäärän."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Et voi enää pyytää pääsyä käyttäjän ${ user } tilille hätätilanteessa."
@@ -6558,6 +6639,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Ymmärrän, etten voi enää kirjautua sisään vanhempiin ${ BRAND_NAME } -mobiilisovellusten versioihin."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "verkkosovellus"
@@ -7516,6 +7602,12 @@
       ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Tämä poistaa käytöstä päästä päähän -salatut sähköpostin edelleenlähetykset:** voit asettaa ne uudelleen myöhemmin."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Palautusmenetelmäsi mitätöidään:** voit luoda uudet palautustiedot myöhemmin."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lisää",
@@ -8982,6 +9074,9 @@
       ],
       "Private AI assistant": [
         "Yksityinen tekoälyavustaja"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Suojaa tiliäsi kvanttitietokoneiden uhilta kvanttikestävillä kryptografisilla avaimilla."
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
@@ -10631,6 +10726,9 @@
       "6 Pass Plus accounts": [
         "Kuusi Pass Plus -tiliä"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
+      ],
       "Account holder": [
         "Tilinhaltija"
       ],
@@ -10840,6 +10938,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Command line interface (CLI)": [
+        "Komentoriviliittymä (CLI)"
       ],
       "Common passwords": [
         "Yleiset salasanat"
@@ -11305,6 +11406,9 @@
       ],
       "Numbers": [
         "Numerot"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Saatavilla vain ${ PASS_SHORT_APP_NAME } -maksullisissa tilauksissa"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-salasana"
@@ -15387,6 +15491,59 @@
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Avaimia ei voitu luoda. Aktivoidaksesi post-kvanttisuojauksen, sinun on luotava uudet salausavaimet manuaalisesti.\n\n${ settingsLink } ja valitse ”Luo avain” tilillesi ja jokaiselle osoitteelle."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Osoiteavaimia ei voitu luoda. Aktivoidaksesi post-kvanttisuojauksen, sinun on luotava uudet salausavaimet manuaalisesti.\n\nMene ${ settingsLink } ja valitse ”Luo avain” jokaiselle osoitteelle."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Sinun on päivitettävä kaikki ${ BRAND_NAME } -mobiilisovellukset**: uudet avaimesi eivät toimi vanhemmissa sovellusversioissa."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Tämä luo uusia kvanttikestävät salausavaimet tilillesi."
+      ]
+    },
+    "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Post-kvanttisuojausta ei voitu ottaa käyttöön"
+      ],
+      "Enabling post-quantum protection...": [
+        "Post-kvanttisuojausta otetaan käyttöön..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Avaa ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Yritä uudelleen. Jos se ei toimi, ota yhteyttä asiakaspalveluumme."
+      ],
+      "Post-quantum protection": [
+        "Post-kvanttisuojaus"
+      ],
+      "Post-quantum protection is enabled": [
+        "Post-kvanttisuojaus on käytössä"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Close": [
+        "Sulje"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Muista luoda uudet palautustiedot."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Post-kvanttisuojaus on käytössä."
+      ]
+    },
     "Price": {
       "Free": [
         "Ilmainen"
@@ -19246,6 +19403,9 @@
       "Find email or username": [
         "Etsi osoite tai tunnus"
       ],
+      "Finish setting up your business account": [
+        "Viimeistele yritystilisi asetukset"
+      ],
       "Folders": [
         "Kansiot"
       ],
@@ -19426,6 +19586,9 @@
       ],
       "Messages and composing": [
         "Viestit ja kirjoitus"
+      ],
+      "Migration assistant": [
+        "Migraatio-avustaja"
       ],
       "Minicalendar": [
         "Pienoiskalenteri"

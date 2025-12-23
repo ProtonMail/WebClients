@@ -946,6 +946,9 @@
       "Open navigation": [
         "Navigatie openen"
       ],
+      "Open recovery settings": [
+        "Herstelinstellingen weergeven"
+      ],
       "Opt out": [
         "Opt-out"
       ],
@@ -1793,6 +1796,11 @@
         "Vertrouwelijk communiceren"
       ]
     },
+    "app-switcher_2025": {
+      "Encrypted email": [
+        "Versleutelde e-mail"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-applicaties"
@@ -2071,9 +2079,6 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
-      "forever": [
-        "voor altijd"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
@@ -2104,11 +2109,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-aanbieding"
       ]
     },
     "BF2025: Deal details": {
@@ -2150,36 +2150,6 @@
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Help uw dierbaren deelnemen aan de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Doe mee met de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Bespaar ${ savedAmount } met onze voordeligste, tijdelijke aanbieding!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Stap over op ons 2-jarig abonnement en bespaar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Stap over op ons jaarabonnement en bespaar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Trakteer uw naasten op complete digitale bescherming."
       ]
     },
     "BF2025: Tooltip": {
@@ -2447,6 +2417,30 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Uw persoonlijke e-mailadres is een essentieel onderdeel van uw digitale identiteit. Net als uw telefoonnummer geeft u het niet aan iedereen die u ontmoet. Daarom is het handig om andere e-mailadressen te hebben die u voor verschillende doeleinden kunt gebruiken."
+      ]
+    },
+    "BOSS": {
+      "${ n } year ago": [
+        "${ n } jaar geleden",
+        "${ n } jaren geleden"
+      ],
+      "Domain setup": [
+        "Domeinconfiguratie"
+      ],
+      "Everything": [
+        "Alles"
+      ],
+      "Migrate users": [
+        "Gebruikers migreren"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
+      ],
+      "Set up": [
+        "Configureren"
+      ],
+      "Start migration": [
+        "Migratie starten"
       ]
     },
     "Browser": {
@@ -2804,6 +2798,15 @@
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
       ],
+      "Built and based in Europe": [
+        "Gebouwd en gevestigd in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Naleving van de regelgeving inzake gegevensbescherming"
+      ],
+      "Data never used for AI training": [
+        "Data wordt nooit gebruikt voor het trainen van AI"
+      ],
       "Full chat history with search": [
         "Volledige chatgeschiedenis met zoeken"
       ],
@@ -2815,6 +2818,9 @@
       ],
       "Limited favorites": [
         "Beperkte favorieten"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logsbeleid"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -2830,14 +2836,14 @@
       ],
       "Web search access": [
         "Toegang tot webzoekopdrachten"
+      ],
+      "Zero-access encryption": [
+        "Zero-access encryptie"
       ]
     },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
-      ],
-      "Access to advanced AI models": [
-        "Toegang tot geavanceerde AI-modellen"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
@@ -2851,50 +2857,11 @@
       "AI assistant that respects your privacy": [
         "AI-assistent die uw privacy respecteert"
       ],
-      "Basic chat history": [
-        "Basis gespreksgeschiedenis"
-      ],
-      "Compliance with data protection regulations": [
-        "Naleving van de regelgeving inzake gegevensbescherming"
-      ],
-      "Data never used for AI training": [
-        "Gegevens nooit gebruikt voor AI-training"
-      ],
-      "Full chat history with search": [
-        "Volledige chatgeschiedenis met zoeken"
-      ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
-      "Limited daily chats": [
-        "Beperkt aantal dagelijkse gesprekken"
-      ],
-      "Limited favorites": [
-        "Beperkte favorieten"
-      ],
       "Open source": [
         "Open source"
-      ],
-      "Strict no-logs policy": [
-        "Strikt zero-loggingsbeleid"
-      ],
-      "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse gesprekken"
-      ],
-      "Unlimited favorites for quick access": [
-        "Onbeperkt aantal favorieten voor snelle toegang"
-      ],
-      "Upload and query multiple large files": [
-        "Meerdere grote bestanden uploaden en opvragen"
-      ],
-      "Upload and query small files": [
-        "Kleine bestanden uploaden en opzoeken"
-      ],
-      "Web search access": [
-        "Toegang tot webzoekopdrachten"
-      ],
-      "Zero-access encryption": [
-        "Zero-access versleuteling"
       ]
     },
     "collider_2025: Navigation": {
@@ -5110,6 +5077,9 @@
       "Forwarding is active": [
         "Doorsturen is actief"
       ],
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Doorsturen naar een adres zonder end-to-end encryptie zal end-to-end encryptie uitschakelen voor uw ${ boldForwarderEmail } adres, maar zero-access encryptie blijft ingeschakeld. ${ learnMoreLink }"
+      ],
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
       ],
@@ -5398,9 +5368,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "U bent nog niet aangewezen als noodcontact voor iemand."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "U hebt het maximum van ${ controller.meta.count } vertrouwd contact bereikt.",
-        "U hebt het maximum van ${ controller.meta.count } vertrouwde contacten bereikt."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "U hebt het maximum van ${ limit } contactpersoon bereikt.",
+        "U hebt het maximum van ${ limit } contactpersonen bereikt."
       ],
       "You will be notified when someone requests emergency access.": [
         "U wordt op de hoogte gesteld wanneer iemand noodtoegang aanvraagt."
@@ -6469,6 +6439,10 @@
       "Pending": [
         "In behandeling"
       ],
+      "Pending invitation": [
+        "Openstaande uitnodiging",
+        "Openstaande uitnodigingen"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "U kunt op dit moment niet van abonnement wisselen."
       ],
@@ -7059,6 +7033,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy standaard"
+      ]
+    },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Ik begrijp dat ik niet langer kan inloggen via oudere versies van de ${ BRAND_NAME } mobiele app."
       ]
     },
     "Free trial dekstop": {
@@ -8028,6 +8007,12 @@
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Dit zal end-to-end versleutelde e-mail doorsturingen uitschakelen:** u kunt deze later opnieuw instellen."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Uw herstelmethoden worden ongeldig gemaakt:** u kunt later nieuwe herstelgegevens genereren."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Meer",
         "+ ${ invisibleCount } Meer"
@@ -8089,6 +8074,9 @@
       ],
       "active": [
         "actief"
+      ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Voeg een @pm.me-e-mailadres toe aan uw account.\nDit eenvoudige en kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Stuur mij een privébericht.\""
       ],
       "add a recovery method": [
         "een herstelmethode toe voegt"
@@ -8909,6 +8897,9 @@
       "here": [
         "hier"
       ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Verbergt identificeerbare informatie door externe inhoud via een proxy te laden. Optie om inhoud als bijlagen op te slaan."
+      ],
       "High Priority": [
         "Hoge Prioriteit"
       ],
@@ -9584,6 +9575,9 @@
       "Private AI assistant": [
         "Privé AI-assistent"
       ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Bescherm uw account tegen bedreigingen van kwantumcomputing met kwantumbestendige cryptografische sleutels."
+      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
       ],
@@ -9803,6 +9797,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Met SMTP-indiening kunnen services of apparaten van derden e-mail verzenden via ${ MAIL_APP_NAME } voor uw aangepaste domeinadressen. Om toegang aan te vragen, ${ createTicket } met een beschrijving van uw gebruiksscenario's, welke aangepaste domeinen u wilt gebruiken en verwachte e-mailvolumes per uur en per dag."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooze berichten voor later zodat ze bovenaan uw inbox staan wanneer u wilt"
@@ -13838,6 +13835,9 @@
       "Secure link sharing": [
         "Veilig delen van links"
       ],
+      "Secure password management": [
+        "Veilig wachtwoordbeheer"
+      ],
       "See team's availability": [
         "Bekijk beschikbaarheid van het team"
       ],
@@ -15510,6 +15510,9 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "U bent uitgenodigd u aan te sluiten bij ${ PASS_APP_NAME }"
       ],
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Uw ${ discount }% Eindejaarskorting is toegepast"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Uw organisatie heeft toegang tot ${ free }. Neem contact op met uw organisatiebeheerder om te upgraden als u premium toegang wil tot ${ appName }-functies."
       ]
@@ -16284,9 +16287,60 @@
         "Upgraden naar ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Sleutels konden niet worden gegenereerd. Om post-kwantumbescherming te activeren, dient u uw nieuwe encryptiesleutels handmatig te genereren.\\n\\n${ settingsLink } en selecteer 'Sleutel genereren' voor uw account en voor elk adres."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Kon geen adressleutels genereren. Om post-kwantumbescherming te activeren, dient u uw nieuwe encryptiesleutels handmatig te genereren.\n\nGa naar ${ settingsLink } en selecteer 'Sleutel genereren' voor elk adres."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**U moet alle ${ BRAND_NAME } mobiele apps updaten**: uw nieuwe sleutels werken niet op oudere app-versies."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Dit zal nieuwe quantumresistente encryptiesleutels voor uw account genereren."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Kon post-kwantumbescherming niet inschakelen"
+      ],
       "Enable and generate keys": [
         "Inschakelen en sleutels genereren"
+      ],
+      "Enabling post-quantum protection...": [
+        "Post-kwantumbescherming inschakelen..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Ga naar ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Probeer opnieuw. Als dat niet werkt, neem dan contact op met ons klantenondersteuningsteam."
+      ],
+      "Post-quantum protection": [
+        "Post-kwantumbescherming"
+      ],
+      "Post-quantum protection is enabled": [
+        "Post-kwantumbescherming is ingeschakeld"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Close": [
+        "Sluiten"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Vergeet u niet nieuwe herstelgegevens te genereren."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Post-kwantumbescherming is ingeschakeld."
       ]
     },
     "pqc-optin: Progress status": {
@@ -21492,6 +21546,9 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Verwijder prullenbak- en spamberichten na 30 dagen. Door automatisch verwijderen in te schakelen, krijgen berichten die al in de prullenbak/spam staan een verwijderingsdatum op basis van de datum waarop ze daarheen zijn verplaatst."
+      ],
       "Device name and app version": [
         "Naam van apparaat en app-versie"
       ],
@@ -22363,6 +22420,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "De datum- en tijdinstellingen op uw apparaat zijn niet meer gesynchroniseerd. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Het apparaat of de dienst die het token gebruikt, zal geen e-mails meer kunnen verzenden via ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."
