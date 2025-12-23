@@ -1504,6 +1504,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2009,9 +2013,6 @@
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
       ],
-      "forever": [
-        "for alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
       ]
@@ -2042,11 +2043,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-salg"
       ]
     },
     "BF2025: Deal details": {
@@ -2088,36 +2084,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Bytt til vår årsplan og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -2631,6 +2597,15 @@
       "Basic chat history": [
         "Grunnleggende chatlogg"
       ],
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
       "Full chat history with search": [
         "Full chatlogg med søk"
       ],
@@ -2642,6 +2617,9 @@
       ],
       "Limited favorites": [
         "Begrenset antall favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -2657,6 +2635,9 @@
       ],
       "Web search access": [
         "Tilgang til nettsøk"
+      ],
+      "Zero-access encryption": [
+        "Nulltilgangskryptering"
       ]
     },
     "collider_2025: Info": {
@@ -5394,6 +5375,10 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administratoren for denne planen."
       ],
+      "View the invitation": [
+        "Se invitasjonen",
+        "Se invitasjonene"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er invitert til å bli med ${ invite.OrganizationName }"
       ],
@@ -7395,8 +7380,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9125,6 +9109,9 @@
       "/month": [
         "/måned"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
       "Account holder": [
         "Kontoinnehaver"
       ],
@@ -9271,6 +9258,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandolinjegrensesnitt (CLI)"
       ],
       "Company": [
         "Firma"
