@@ -7,19 +7,19 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 
-import type { ImportKey } from './interface';
+import type { ImportKeyState } from './interface';
 import { Status } from './interface';
 
 interface Props {
-    keys: ImportKey[];
+    keys: ImportKeyState[];
 }
 
 const ImportKeysList = ({ keys }: Props) => {
-    const list = keys.map(({ status, fingerprint, result }, i) => {
+    const list = keys.map(({ importKeyData, status, fingerprint, result }) => {
         const keyStatus = (() => {
             if (status === Status.ERROR) {
                 return (
-                    <Badge type="error" tooltip={result === 'ok' ? '' : result?.message} tooltipOpenDelay={0}>
+                    <Badge type="error" tooltip={result === 'ok' ? '' : result} tooltipOpenDelay={0}>
                         {c('Title').t`Error`}
                     </Badge>
                 );
@@ -32,7 +32,7 @@ const ImportKeysList = ({ keys }: Props) => {
 
         return (
             <TableRow
-                key={i}
+                key={importKeyData.id}
                 cells={[
                     <span key={0} className="max-w-full inline-block text-ellipsis">
                         {fingerprint}
