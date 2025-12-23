@@ -1426,11 +1426,6 @@
         "Proteja seus e-mails e agendamentos com encriptação ponta a ponta. Inclui 15 endereços de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais."
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Promoção da Black Friday"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB de armazenamento de dados"
@@ -1470,36 +1465,6 @@
       ],
       "Unlimited daily chats": [
         "Conversas diárias ilimitadas"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajude os seus entes queridos a juntarem-se à revolução da privacidade com os nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Junte-se à revolução da privacidade com os nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Poupe ${ savedAmount } com a nossa oferta de tempo limitado e de melhor valor!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Mude para o nosso plano de 2 anos e poupe ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Mude para o nosso plano anual e poupe ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Ofereça ao seu grupo proteção digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1681,8 +1646,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Adicionar utilizadores manualmente"
+      ],
       "Close": [
         "Fechar"
+      ],
+      "Configure your network": [
+        "Configure a sua rede"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
@@ -1702,17 +1673,29 @@
       "Discover and set up features": [
         "Descubra e configure as funcionalidades"
       ],
+      "Invite your team": [
+        "Convide a sua equipa"
+      ],
+      "Manage global VPN permissions": [
+        "Gerir permissões globais da VPN"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembrar mais tarde"
       ],
+      "Secure your organization": [
+        "Proteja a sua organização"
+      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configure outras funcionalidades"
+      ],
+      "Set up SSO": [
+        "Configurar SSO"
       ],
       "Take a tour": [
         "Visita guiada"
@@ -2926,14 +2909,23 @@
       "Connect your CRM, website, printers, and more.": [
         "Ligue o seu CRM, sítio web, impressoras e muito mais."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Crie um Gateway para dar aos seus utilizadores acesso aos seus recursos de TI através de servidores dedicados."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
       ],
       "Create groups you can email with a single address.": [
         "Crie grupos aos quais pode enviar e-mails com um único endereço."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Crie novas contas de utilizador ou importe utilizadores com provisionamento SCIM (single sign-on)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crie políticas para decidir quem pode conectar-se a servidores partilhados em cada país."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decida quais utilizadores podem se conectar a cada um dos nossos mais de 120 locais de servidores partilhados."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Aceda facilmente ao seu e-mail e calendário no computador e no telemóvel."
@@ -2979,6 +2971,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajude a sua equipa a armazenar de forma segura as palavras-passe para informações confidenciais de negócios e clientes."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Se ainda não o fez, ative alguns métodos de recuperação para garantir que nunca perderá o acesso ao ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
@@ -5998,6 +5993,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Seja notificado se a sua palavra-passe ou outros dados pessoais foram divulgados. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "Comece agora"
+      ],
       "Get started with the referral link above.": [
         "Comece a utilizar a ligação de referência acima."
       ],
@@ -6697,6 +6695,9 @@
       "Set up your organization": [
         "Defina a sua organização"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configure a sua organização e comece a proteger os seus dados em algumas etapas simples."
+      ],
       "Setting up ${ feature }…": [
         "A configurar ${ feature }…"
       ],
@@ -6977,7 +6978,7 @@
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
       ],
       "To continue to ${ product }": [
-        "Para continuar para o ${ product }"
+        "Para continuar para ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para melhorar continuamente os nossos serviços, por vezes recolhemos dados para monitorizar o bom funcionamento das nossas aplicações. Esta informação não é partilhada com quaisquer serviços de terceiros."
@@ -7341,6 +7342,9 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "Só é possível ter uma instância de chat aberta de cada vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -8733,6 +8737,20 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "O chat ao vivo está disponível com o ${ planName }"
+      ],
+      "Open support form": [
+        "Abrir o formulário de suporte"
+      ],
+      "Upgrade subscription": [
+        "Atualizar subscrição"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Atualize para desbloquear o suporte por chat e outros recursos premium ou use o nosso formulário de suporte gratuito para relatar o seu problema."
       ]
     },
     "Loading info": {
@@ -13447,6 +13465,11 @@
         "Campo vCard"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "Temas"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -13475,6 +13498,9 @@
       "${ feature } is now active": [
         "A funcionalidade ${ feature } agora está ativa."
       ],
+      "${ VPN_APP_NAME } clients": [
+        "${ VPN_APP_NAME } clientes"
+      ],
       "(active)": [
         "(ativo)"
       ],
@@ -13501,6 +13527,9 @@
       ],
       "Access control": [
         "Controlo de acesso"
+      ],
+      "Account": [
+        "Conta"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -13838,6 +13867,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Dismiss setup checklist": [
+        "Ignorar lista de verificação de configuração"
+      ],
       "Domain names": [
         "Nomes de domínio"
       ],
@@ -13900,6 +13932,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email subscriptions": [
+        "Subscrições de email"
       ],
       "Enable advanced account protection": [
         "Ativar a proteção avançada da conta"
@@ -13964,6 +13999,9 @@
       ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
+      ],
+      "Get started": [
+        "Comece agora"
       ],
       "Get the apps": [
         "Obter as aplicações"
@@ -14068,6 +14106,9 @@
       "Open pagination": [
         "Abrir paginação"
       ],
+      "OpenVPN / IKEv2 username": [
+        "Nome de utilizador OpenVPN / IKEv2"
+      ],
       "OpenVPN configuration files": [
         "Ficheiros de configuração OpenVPN"
       ],
@@ -14115,6 +14156,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Plans": [
+        "Planos"
       ],
       "Preview": [
         "Pré-visualização"
@@ -14357,6 +14401,9 @@
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
       ],
+      "Upgrade your network protection with dedicated servers": [
+        "Atualize a proteção da sua rede com servidores dedicados"
+      ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
@@ -14434,6 +14481,9 @@
       ],
       "Your changes are not synced yet": [
         "As suas alterações ainda não foram sincronizadas"
+      ],
+      "Your current plan": [
+        "O teu plano atual"
       ],
       "Your exposed information": [
         "As suas informações expostas"

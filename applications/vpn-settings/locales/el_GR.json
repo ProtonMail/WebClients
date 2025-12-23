@@ -1588,9 +1588,6 @@
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
       ],
-      "forever": [
-        "για πάντα"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
@@ -1621,11 +1618,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Προσφορά Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1667,36 +1659,6 @@
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -1805,6 +1767,111 @@
       ],
       "Working with sensitive data?": [
         "Εργάζεστε με ευαίσθητα δεδομένα;"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } από ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } χρόνο πριν",
+        "${ n } χρόνια πριν"
+      ],
+      "Add a domain": [
+        "Προσθήκη τομέα"
+      ],
+      "Add more users...": [
+        "Προσθήκη περισσότερων χρηστών..."
+      ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Domain ownership verified": [
+        "Επαληθεύτηκε η ιδιοκτησία τομέα"
+      ],
+      "Domain setup": [
+        "Εγκατάσταση τομέα"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Θα σας αποσταλούν ειδοποιήσεις μέσω email όταν ξεκινήσει η μετεγκατάσταση και όταν ολοκληρωθεί. Θα ειδοποιηθείτε επίσης σε περίπτωση σφαλμάτων και αν η μετεγκατάσταση διακοπεί λόγω λήξης των συνδέσμων."
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Everything": [
+        "Όλα"
+      ],
+      "Failed to load OAuth": [
+        "Αποτυχία φόρτωσης OAuth"
+      ],
+      "Install migration app": [
+        "Εγκατάσταση εφαρμογής μετεγκατάστασης"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Μάθετε περισσότερα για το τι μπορεί να μετεγκατασταθεί. Μάθετε περισσότερα"
+      ],
+      "Mail": [
+        "Ταχυδρομείο"
+      ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
+      "Migrate from Google Workspace": [
+        "Μετάβαση από το Google Workspace"
+      ],
+      "Migrate users": [
+        "Μετεγκατάσταση χρηστών"
+      ],
+      "Migration includes": [
+        "Η μετεγκατάσταση περιλαμβάνει"
+      ],
+      "Not started": [
+        "Δεν ξεκίνησε"
+      ],
+      "Required to create user accounts": [
+        "Απαιτείται για τη δημιουργία λογαριασμών χρηστών"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Επιλέξτε τι θέλετε να μετεγκαταστήσετε, αυτό θα εφαρμοστεί σε όλους τους χρήστες είτε δημιουργηθούν τώρα είτε αργότερα. Η μετεγκατάσταση θα ξεκινήσει αφού δημιουργηθούν οι λογαριασμοί χρηστών."
+      ],
+      "Set up": [
+        "Ρύθμιση"
+      ],
+      "Sign in to Google Workspace": [
+        "Σύνδεση στο Google Workspace"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Markeplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
+      ],
+      "Transfer data from": [
+        "Μεταφορά δεδομένων από"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Users migrated": [
+        "Οι χρήστες μεταφέρθηκαν"
+      ],
+      "Verify your domain": [
+        "Επαληθεύστε τον τομέα σας"
+      ],
+      "What are you migrating?": [
+        "Τι μεταφέρετε;"
+      ],
+      "Who will be notified?": [
+        "Ποιος θα ειδοποιηθεί;"
       ]
     },
     "Browser": {
@@ -2040,6 +2107,15 @@
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
       ],
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ],
+      "Compliance with data protection regulations": [
+        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
       "Full chat history with search": [
         "Πλήρης ιστορία συνομιλίας με αναζήτηση"
       ],
@@ -2051,6 +2127,9 @@
       ],
       "Limited favorites": [
         "Περιορισμένα αγαπημένα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -2066,6 +2145,9 @@
       ],
       "Web search access": [
         "Πρόσβαση στην αναζήτηση ιστού"
+      ],
+      "Zero-access encryption": [
+        "Κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
     "collider_2025: Info": {
@@ -8380,6 +8462,9 @@
       "1 of 1 email address available": [
         "1 από 1 ηλεκτρονική διεύθυνση διαθέσιμη"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
@@ -8523,6 +8608,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Command line interface (CLI)": [
+        "Διεπαφή γραμμής εντολών (CLI)"
       ],
       "Common passwords": [
         "Κοινοί κωδικοί πρόσβασης"
@@ -15282,6 +15370,9 @@
       ],
       "Main password": [
         "Κύριος κωδικός πρόσβασης"
+      ],
+      "Migration assistant": [
+        "Βοηθός μετεγκατάστασης"
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"

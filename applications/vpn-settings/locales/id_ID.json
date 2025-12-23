@@ -1573,9 +1573,6 @@
       "Billed at ${ amount } once": [
         "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
       ],
-      "forever": [
-        "selamanya"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
       ]
@@ -1604,11 +1601,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Diskon Jumat Hitam"
       ]
     },
     "BF2025: Deal details": {
@@ -1650,36 +1642,6 @@
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Jumat Hitam"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bantu orang yang Anda cintai bergabung dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bergabunglah dengan revolusi privasi dengan bundel bernilai terbaik kami, kini diskon 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "untuk ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Hemat ${ savedAmount } dengan penawaran bernilai terbaik kami yang terbatas!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Beralih ke paket 2 tahun kami dan hemat ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Beralih ke paket tahunan kami dan hemat ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Manjakan kelompok Anda dengan perlindungan digital lengkap."
       ]
     },
     "BF2025: Tooltip": {
@@ -2020,6 +1982,15 @@
       "Basic chat history": [
         "Riwayat percakapan dasar"
       ],
+      "Built and based in Europe": [
+        "Dirancang dan berbasis di Eropa"
+      ],
+      "Compliance with data protection regulations": [
+        "Patuh terhadap peraturan perlindungan data"
+      ],
+      "Data never used for AI training": [
+        "Data tidak pernah digunakan untuk melatih AI"
+      ],
       "Full chat history with search": [
         "Riwayat percakapan utuh dengan fitur pencarian"
       ],
@@ -2031,6 +2002,9 @@
       ],
       "Limited favorites": [
         "Favorit dalam jumlah yang terbatas"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log yang ketat"
       ],
       "Unlimited daily chats": [
         "Tanpa batasan jumlah percakapan harian"
@@ -2046,6 +2020,9 @@
       ],
       "Web search access": [
         "Akses pencarian web"
+      ],
+      "Zero-access encryption": [
+        "Enkripsi zero-access"
       ]
     },
     "collider_2025: Info": {
@@ -4586,6 +4563,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
+      ],
+      "View the invitation": [
+        "Lihat undangan"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"

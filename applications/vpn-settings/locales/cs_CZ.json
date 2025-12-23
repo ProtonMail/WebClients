@@ -1608,9 +1608,6 @@
       "Billed at ${ amount } once": [
         "Účtováno ${ amount } jednorázově"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
@@ -1645,11 +1642,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Výprodej Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1691,36 +1683,6 @@
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Dopřejte svým blízkým kompletní digitální ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -1831,6 +1793,80 @@
       ],
       "Working with sensitive data?": [
         "Pracujete s citlivými údaji?"
+      ]
+    },
+    "BOSS": {
+      "${ n } year ago": [
+        "před ${ n } rokem",
+        "před ${ n } lety",
+        "před ${ n } lety",
+        "před ${ n } lety"
+      ],
+      "Add a domain": [
+        "Přidat doménu"
+      ],
+      "Add more users...": [
+        "Přidejte další uživatele..."
+      ],
+      "Authenticate": [
+        "Ověřit"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Domain ownership verified": [
+        "Vlastnictví domény ověřeno"
+      ],
+      "Domain setup": [
+        "Nastavení domény"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-mailová upozornění budou zaslána při zahájení migrace a po jejím dokončení. Budete také informováni, pokud dojde k chybám a pokud bude migrace pozastavena z důvodu vypršení platnosti odkazů."
+      ],
+      "Everything": [
+        "Vše"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Zjistěte více o tom, co lze migrovat. Více informací"
+      ],
+      "Mail": [
+        "Mail"
+      ],
+      "Migrate": [
+        "Migrovat"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrovat z Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrovat uživatele"
+      ],
+      "Migration includes": [
+        "Migrace zahrnuje"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Vyberte, co chcete migrovat. Toto nastavení se použije pro všechny uživatele, ať už jsou vytvořeni nyní nebo později. Migrace začne po vytvoření uživatelských účtů."
+      ],
+      "Set up": [
+        "Nastavení"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte. Více informací"
+      ],
+      "Transfer data from": [
+        "Přenést data z"
+      ],
+      "User": [
+        "Uživatel"
+      ],
+      "Users migrated": [
+        "Uživatelé migrováni"
+      ],
+      "Who will be notified?": [
+        "Kdo bude informován?"
       ]
     },
     "Browser": {
@@ -2070,6 +2106,15 @@
       "Basic chat history": [
         "Základní historie konverzací"
       ],
+      "Built and based in Europe": [
+        "Vyvinuto a umístěno v Evropě"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržování předpisů o ochraně osobních údajů"
+      ],
+      "Data never used for AI training": [
+        "Data nejsou nikdy použita pro výcvik AI"
+      ],
       "Full chat history with search": [
         "Úplná historie konverzací s vyhledáním"
       ],
@@ -2081,6 +2126,9 @@
       ],
       "Limited favorites": [
         "Omezený počet oblíbených"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
@@ -2096,6 +2144,9 @@
       ],
       "Web search access": [
         "Přístup k vyhledávání na webu"
+      ],
+      "Zero-access encryption": [
+        "Šifrování s nulovým přístupem"
       ]
     },
     "collider_2025: Info": {
@@ -4658,6 +4709,12 @@
       "Pending": [
         "Čekající"
       ],
+      "Pending invitation": [
+        "Čekající pozvánka",
+        "Čekající pozvánky",
+        "Čekající pozvánky",
+        "Čekající pozvánky"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Omlouváme se, ale v tuto chvíli nemůžete změnit tarif."
       ],
@@ -4666,6 +4723,12 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
+      ],
+      "View the invitation": [
+        "Zobrazit pozvánku",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
@@ -8602,6 +8665,9 @@
       "1 of 1 email address available": [
         "1 z 1 e-mailové adresy k dispozici"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
+      ],
       "Account holder": [
         "Majitel účtu"
       ],
@@ -8745,6 +8811,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhraní příkazového řádku (CLI)"
       ],
       "Common passwords": [
         "Běžná hesla"
@@ -15704,6 +15773,9 @@
       "Main password": [
         "Hlavní heslo"
       ],
+      "Migration assistant": [
+        "Asistent migrace"
+      ],
       "Minicalendar": [
         "Minikalendář"
       ],
@@ -16592,6 +16664,9 @@
       ],
       "Did you know?": [
         "Věděli jste?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Získejte úložiště o velikosti ${ drivePlusPlanMaxSpace } pro své soubory, fotky a dokumenty a obnovujte až 10 let staré verze souborů."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Sada pro soukromí se zabezpečeným e-mailem, ${ VPN_SHORT_APP_NAME }, cloudovým úložištěm a správcem hesel v jednom balíčku. Již od ${ fallBackString } měsíčně"

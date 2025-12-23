@@ -1588,9 +1588,6 @@
       "Billed at ${ amount } once": [
         "Zum Preis von einmalig ${ amount }"
       ],
-      "forever": [
-        "dauerhaft"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
       ]
@@ -1621,11 +1618,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black-Friday-Aktion"
       ]
     },
     "BF2025: Deal details": {
@@ -1667,36 +1659,6 @@
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hilf deinen Liebsten, sich der Privatsphäre-Revolution anzuschließen – mit unseren Vorteilspaketen, jetzt mit 50 % Rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Schliesse dich der Privatsphäre-Revolution an mit unseren Vorteilspaketen – jetzt mit 50 % Rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "Für ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spare ${ savedAmount } mit unserem preisgünstigsten, zeitlich begrenzten Angebot!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Wechsle zu unserem 2-Jahres-Abo und spare ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Wechsle zu unserem Jahresabo und spare ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Gönne deinen Liebsten vollständigen digitalen Schutz."
       ]
     },
     "BF2025: Tooltip": {
@@ -1805,6 +1767,111 @@
       ],
       "Working with sensitive data?": [
         "Arbeitest du mit sensiblen Daten?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } von ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "Vor ${ n } Jahr",
+        "Vor ${ n } Jahren"
+      ],
+      "Add a domain": [
+        "Domain hinzufügen"
+      ],
+      "Add more users...": [
+        "Mehr Benutzer hinzufügen..."
+      ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
+      ],
+      "Contacts": [
+        "Kontakte"
+      ],
+      "Domain ownership verified": [
+        "Inhaberschaft der Domain bestätigt"
+      ],
+      "Domain setup": [
+        "Domain-Einrichtung"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-Mail-Benachrichtigungen werden gesendet, wenn die Übernahme beginnt und wenn sie abgeschlossen ist. Du wirst auch benachrichtigt, wenn es Fehler gibt und wenn die Übernahme aufgrund abgelaufener Links pausiert wird."
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Everything": [
+        "Alles"
+      ],
+      "Failed to load OAuth": [
+        "OAuth konnte nicht geladen werden"
+      ],
+      "Install migration app": [
+        "Übernahme-App installieren"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Erfahre mehr darüber, was übernommen werden kann. Mehr erfahren"
+      ],
+      "Mail": [
+        "E-Mail"
+      ],
+      "Migrate": [
+        "Übernehmen"
+      ],
+      "Migrate from Google Workspace": [
+        "Von Google Workspace übernehmen"
+      ],
+      "Migrate users": [
+        "Benutzer übernehmen"
+      ],
+      "Migration includes": [
+        "Übernahme beinhaltet"
+      ],
+      "Not started": [
+        "Nicht gestartet"
+      ],
+      "Required to create user accounts": [
+        "Zum Erstellen von Benutzerkonten erforderlich"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Wähle aus, was du übernehmen möchtest. Dies gilt für alle Benutzer, unabhängig davon, ob sie jetzt oder später erstellt werden. Die Übernahme beginnt, nachdem die Benutzerkonten erstellt wurden."
+      ],
+      "Set up": [
+        "Einrichten"
+      ],
+      "Sign in to Google Workspace": [
+        "Bei Google Workspace anmelden"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Um die Daten deiner Organisation zu übernehmen, musst du die ${ BRAND_NAME } Übernahmeassistenten-App aus dem Google Workspace Marketplace installieren. Dadurch wird ${ BRAND_NAME } die Berechtigung erteilt, deine Daten zu kopieren. Nach der Installation komm zurück hierher, um fortzufahren. Mehr erfahren"
+      ],
+      "Transfer data from": [
+        "Daten übertragen von"
+      ],
+      "User": [
+        "Benutzer"
+      ],
+      "Users migrated": [
+        "Benutzer übernommen"
+      ],
+      "Verify your domain": [
+        "Deine Domain verifizieren"
+      ],
+      "What are you migrating?": [
+        "Was übernimmst du?"
+      ],
+      "Who will be notified?": [
+        "Wer wird benachrichtigt?"
       ]
     },
     "Browser": {
@@ -2040,6 +2107,15 @@
       "Basic chat history": [
         "Einfacher Chatverlauf"
       ],
+      "Built and based in Europe": [
+        "Entwickelt und Ansässig in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Einhaltung der Datenschutzbestimmungen"
+      ],
+      "Data never used for AI training": [
+        "Deine Daten werden niemals für KI-Training verwendet"
+      ],
       "Full chat history with search": [
         "Vollständiger Chat-Verlauf mit Suche"
       ],
@@ -2051,6 +2127,9 @@
       ],
       "Limited favorites": [
         "Begrenzte Favoriten"
+      ],
+      "Strict no-logs policy": [
+        "Strenge \"No Logs\"-Richtlinie"
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"
@@ -2066,6 +2145,9 @@
       ],
       "Web search access": [
         "Websuche-Zugriff"
+      ],
+      "Zero-access encryption": [
+        "Zero-Access Verschlüsselung"
       ]
     },
     "collider_2025: Info": {
@@ -8376,6 +8458,9 @@
       "1 of 1 email address available": [
         "1 von 1 E-Mail-Adresse verfügbar"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
+      ],
       "Account holder": [
         "Kontoinhaber"
       ],
@@ -8519,6 +8604,9 @@
       ],
       "Colors": [
         "Farben"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandozeilen-Schnittstelle (CLI)"
       ],
       "Common passwords": [
         "Gängige Passwörter"
@@ -15266,6 +15354,9 @@
       ],
       "Main password": [
         "Primäres Passwort"
+      ],
+      "Migration assistant": [
+        "Übernahmeassistent"
       ],
       "Minicalendar": [
         "Minikalender"

@@ -1588,9 +1588,6 @@
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
       ],
-      "forever": [
-        "para sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
       ]
@@ -1621,11 +1618,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Oferta Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1667,36 +1659,6 @@
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajude quem você ama a se juntar à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Junte-se à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economize ${ savedAmount } com nossa melhor oferta por tempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Mude para nosso plano de 2 anos e economize ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Mude para nosso plano anual e economize ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Ofereça à sua galera proteção digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1805,6 +1767,93 @@
       ],
       "Working with sensitive data?": [
         "Trabalhando com dados confidenciais?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } ano atrás",
+        "${ n } anos atrás"
+      ],
+      "Add a domain": [
+        "Adicionar um domínio"
+      ],
+      "Add more users...": [
+        "Adicionar mais usuários..."
+      ],
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Calendar": [
+        "Calendário"
+      ],
+      "Configure migration": [
+        "Configurar migração"
+      ],
+      "Contacts": [
+        "Contatos"
+      ],
+      "Domain ownership verified": [
+        "Propriedade do domínio verificada"
+      ],
+      "Domain setup": [
+        "Configuração de domínio"
+      ],
+      "Estimated size": [
+        "Tempo estimado"
+      ],
+      "Everything": [
+        "Tudo"
+      ],
+      "Install migration app": [
+        "Instalar aplicativo de migração"
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrar do Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrar usuários"
+      ],
+      "Migration includes": [
+        "A migração foi concluída"
+      ],
+      "Not started": [
+        "Não iniciado"
+      ],
+      "Set up": [
+        "Configurar"
+      ],
+      "Sign in to Google Workspace": [
+        "Iniciar sessão do Google Workspace"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Transfer data from": [
+        "Transferir dados de"
+      ],
+      "User": [
+        "Usuário"
+      ],
+      "Users migrated": [
+        "Usuários migrados"
+      ],
+      "Verify your domain": [
+        "Verifique seu domínio"
+      ],
+      "What are you migrating?": [
+        "O que você está migrando?"
+      ],
+      "Who will be notified?": [
+        "Quem será notificado?"
       ]
     },
     "Browser": {
@@ -2040,6 +2089,15 @@
       "Basic chat history": [
         "Histórico de bate-papo básico"
       ],
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
       "Full chat history with search": [
         "Histórico completo de bate-papos com pesquisa"
       ],
@@ -2051,6 +2109,9 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa de inexistência de registros"
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
@@ -2066,6 +2127,9 @@
       ],
       "Web search access": [
         "Acesso à pesquisa na web"
+      ],
+      "Zero-access encryption": [
+        "Criptografia de acesso zero"
       ]
     },
     "collider_2025: Info": {
@@ -8380,6 +8444,9 @@
       "1 of 1 email address available": [
         "1 de 1 endereço de e-mail disponível"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -8523,6 +8590,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comando (CLI)"
       ],
       "Common passwords": [
         "Senhas comuns"
@@ -15289,6 +15359,9 @@
       ],
       "Main password": [
         "Senha principal"
+      ],
+      "Migration assistant": [
+        "Assistente de migração"
       ],
       "Minicalendar": [
         "Mini calendário"

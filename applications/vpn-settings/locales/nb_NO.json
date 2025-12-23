@@ -1160,6 +1160,11 @@
         "Gjenopptar videresending"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "legg til flere lisenser"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Tilbakekall"
@@ -1583,9 +1588,6 @@
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
       ],
-      "forever": [
-        "for alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
       ]
@@ -1616,11 +1618,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-salg"
       ]
     },
     "BF2025: Deal details": {
@@ -1662,36 +1659,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Bytt til vår årsplan og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -1800,6 +1767,111 @@
       ],
       "Working with sensitive data?": [
         "Jobber du med sensitive data?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } år siden",
+        "${ n } år siden"
+      ],
+      "Add a domain": [
+        "Legg til et domene"
+      ],
+      "Add more users...": [
+        "Legg til flere brukere..."
+      ],
+      "Authenticate": [
+        "Autentiser"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Domain ownership verified": [
+        "Domeneeierskap er verifisert"
+      ],
+      "Domain setup": [
+        "Domeneoppsett"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-postvarsler vil bli sendt når migreringen starter og når den er fullført. Du vil også bli varslet hvis det er feil og hvis migreringen blir satt på pause på grunn av utløpte koblinger."
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Everything": [
+        "Alt"
+      ],
+      "Failed to load OAuth": [
+        "Kunne ikke laste inn OAuth"
+      ],
+      "Install migration app": [
+        "Installer migreringsappen"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lær mer om hva som kan migreres. Lær mer"
+      ],
+      "Mail": [
+        "E-post"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrer fra Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrer brukere"
+      ],
+      "Migration includes": [
+        "Migrering inkluderer"
+      ],
+      "Not started": [
+        "Ikke påbegynt"
+      ],
+      "Required to create user accounts": [
+        "Kreves for å opprette brukerkontoer"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Velg hva du vil migrere, dette vil anvendes på alle brukere enten de opprettes nå eller senere. Migreringen starter etter at brukerkontoer er opprettet."
+      ],
+      "Set up": [
+        "Konfigurer"
+      ],
+      "Sign in to Google Workspace": [
+        "Logg på Google Workspace"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
+      ],
+      "Transfer data from": [
+        "Overfør data fra"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "Users migrated": [
+        "Brukere migrert"
+      ],
+      "Verify your domain": [
+        "Verifiser domenet ditt"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "Who will be notified?": [
+        "Hvem vil bli varslet?"
       ]
     },
     "Browser": {
@@ -2035,6 +2107,15 @@
       "Basic chat history": [
         "Grunnleggende chatlogg"
       ],
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
       "Full chat history with search": [
         "Full chatlogg med søk"
       ],
@@ -2046,6 +2127,9 @@
       ],
       "Limited favorites": [
         "Begrenset antall favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
@@ -2061,6 +2145,9 @@
       ],
       "Web search access": [
         "Tilgang til nettsøk"
+      ],
+      "Zero-access encryption": [
+        "Nulltilgangskryptering"
       ]
     },
     "collider_2025: Info": {
@@ -4603,6 +4690,10 @@
       "Pending": [
         "Ventende"
       ],
+      "Pending invitation": [
+        "Ventende invitasjon",
+        "Ventende invitasjoner"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
       ],
@@ -4611,6 +4702,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administratoren for denne planen."
+      ],
+      "View the invitation": [
+        "Se invitasjonen",
+        "Se invitasjonene"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er invitert til å bli med ${ invite.OrganizationName }"
@@ -8178,6 +8273,11 @@
         "Valgt farge:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Hvordan sende en kontant betaling?"
@@ -8362,6 +8462,9 @@
       "1 of 1 email address available": [
         "1 av 1 e-postadresse tilgjengelig"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
       "Account holder": [
         "Kontoinnehaver"
       ],
@@ -8505,6 +8608,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandolinjegrensesnitt (CLI)"
       ],
       "Common passwords": [
         "Vanlige passord"
@@ -9424,6 +9530,11 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Brukere og adresser"
       ]
     },
     "Live Chat Modal": {
@@ -15248,6 +15359,9 @@
       "Main password": [
         "Hovedpassord"
       ],
+      "Migration assistant": [
+        "Migreringsassistent"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -16132,6 +16246,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filer, bilder og dokumenter, og gjenopprett filversjoner med 10-års filgjenoppretting."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke. Fra kun ${ fallBackString } per måned"

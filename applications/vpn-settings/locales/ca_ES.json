@@ -1588,9 +1588,6 @@
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1621,11 +1618,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebaixes del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1667,36 +1659,6 @@
       ],
       "Unlimited daily chats": [
         "Xats diaris sense límits"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Divendres negre"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regali als seus una protecció digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1805,6 +1767,111 @@
       ],
       "Working with sensitive data?": [
         "Treballeu amb dades sensibles?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "fa ${ n } any",
+        "fa ${ n } anys"
+      ],
+      "Add a domain": [
+        "Afegiu un domini"
+      ],
+      "Add more users...": [
+        "Afegiu més usuaris..."
+      ],
+      "Authenticate": [
+        "Autentiqueu-vos"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Domain ownership verified": [
+        "S'ha verificat la propietat del domini"
+      ],
+      "Domain setup": [
+        "Configuració del domini"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "S’enviaran notificacions per correu electrònic quan s’iniciï la migració i quan s’hagi completat. També se us notificarà si hi ha errors o si la migració s’atura a causa d’enllaços caducats."
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Everything": [
+        "Tot"
+      ],
+      "Failed to load OAuth": [
+        "No s'ha pogut carregar OAuth"
+      ],
+      "Install migration app": [
+        "Instal·leu l’aplicació de migració"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Obtingueu més informació sobre què es pot migrar. Per saber-ne més"
+      ],
+      "Mail": [
+        "Correu"
+      ],
+      "Migrate": [
+        "Migreu"
+      ],
+      "Migrate from Google Workspace": [
+        "Migreu des de Google Workspace"
+      ],
+      "Migrate users": [
+        "Migreu els usuaris"
+      ],
+      "Migration includes": [
+        "La migració inclou"
+      ],
+      "Not started": [
+        "No s'ha iniciat"
+      ],
+      "Required to create user accounts": [
+        "Necessari per crear comptes d’usuari"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Seleccioneu què voleu migrar; això s'aplicarà a tots els usuaris, tant si es creen ara com més endavant. La migració començarà un cop s'hagin creat els comptes d'usuari."
+      ],
+      "Set up": [
+        "Configureu-ho"
+      ],
+      "Sign in to Google Workspace": [
+        "Inicieu la sessió a Google Workspace"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Per migrar les dades de la vostra organització, cal que instal·leu l’aplicació Migration Asistant de ${ BRAND_NAME } des de Google Workspace Marketplace. Això donarà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Més informació"
+      ],
+      "Transfer data from": [
+        "Transferiu dades des de"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users migrated": [
+        "S'han migrat els usuaris"
+      ],
+      "Verify your domain": [
+        "Verifiqueu el vostre domini"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "Who will be notified?": [
+        "Qui rebrà les notificacions?"
       ]
     },
     "Browser": {
@@ -2040,6 +2107,15 @@
       "Basic chat history": [
         "Historial de xat bàsic"
       ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
       ],
@@ -2051,6 +2127,9 @@
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar registres"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -2066,6 +2145,9 @@
       ],
       "Web search access": [
         "Accés a la cerca web"
+      ],
+      "Zero-access encryption": [
+        "Xifratge d'accés zero"
       ]
     },
     "collider_2025: Info": {
@@ -4607,6 +4689,10 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "Pending invitation": [
+        "Invitació pendent",
+        "Invitacions pendents"
       ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
@@ -8376,6 +8462,9 @@
       "1 of 1 email address available": [
         "1 d'1 adreça de correu electrònic disponible"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
       "Account holder": [
         "Titular del compte"
       ],
@@ -8519,6 +8608,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ],
       "Common passwords": [
         "Contrasenyes comunes"
@@ -15288,6 +15380,9 @@
       ],
       "Main password": [
         "Contrasenya principal"
+      ],
+      "Migration assistant": [
+        "Assistent de migració"
       ],
       "Minicalendar": [
         "Minicalendari"

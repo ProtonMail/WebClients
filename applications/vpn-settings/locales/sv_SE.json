@@ -1585,9 +1585,6 @@
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
       ],
-      "forever": [
-        "för alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
       ]
@@ -1618,11 +1615,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-rea"
       ]
     },
     "BF2025: Deal details": {
@@ -1664,36 +1656,6 @@
       ],
       "Unlimited daily chats": [
         "Obegränsat antal dagliga chattar"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjälp dina nära och kära att gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Gå med i integritetsrevolutionen med våra mest prisvärda paket, nu med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "för ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spara ${ savedAmount } med vårt mest prisvärda, tidsbegränsade erbjudande!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Byt till vår 2-årsplan och spara ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Byt till vår årsplan och spara ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Unna dina nära och kära ett komplett digitalt skydd."
       ]
     },
     "BF2025: Tooltip": {
@@ -1802,6 +1764,105 @@
       ],
       "Working with sensitive data?": [
         "Arbetar du med känslig data?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } år sedan",
+        "${ n } år sedan"
+      ],
+      "Add a domain": [
+        "Lägg till en domän"
+      ],
+      "Add more users...": [
+        "Lägg till fler användare …"
+      ],
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Konfigurera migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Domain ownership verified": [
+        "Domänens äganderätt verifierad"
+      ],
+      "Domain setup": [
+        "Domäninställning"
+      ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
+      "Everything": [
+        "Allting"
+      ],
+      "Failed to load OAuth": [
+        "Misslyckades att ladda OAuth"
+      ],
+      "Install migration app": [
+        "Installera migreringsappen"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lär dig mer om vad som kan migreras. Lär dig mer"
+      ],
+      "Mail": [
+        "E-post"
+      ],
+      "Migrate": [
+        "Migrera"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrera från Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrera användare"
+      ],
+      "Migration includes": [
+        "Migrering inkluderar"
+      ],
+      "Not started": [
+        "Inte startad"
+      ],
+      "Required to create user accounts": [
+        "Krävs för att skapa användarkonton"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Välj vad du vill migrera, detta kommer tillämpas på alla användare oavsett om de skapas nu eller senare. Migrering kommer starta efter användarkonton är skapade."
+      ],
+      "Set up": [
+        "Ställ in"
+      ],
+      "Sign in to Google Workspace": [
+        "Logga in på Google Workspace"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Transfer data from": [
+        "Överför data från"
+      ],
+      "User": [
+        "Användare"
+      ],
+      "Users migrated": [
+        "Användare migrerade"
+      ],
+      "Verify your domain": [
+        "Verifiera din domän"
+      ],
+      "What are you migrating?": [
+        "Vad migrerar du?"
+      ],
+      "Who will be notified?": [
+        "Vem kommer bli aviserad?"
       ]
     },
     "Browser": {
@@ -2037,6 +2098,15 @@
       "Basic chat history": [
         "Grundläggande chatthistorik"
       ],
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Efterlevnad av dataskyddsföreskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data används aldrig för AI-träning"
+      ],
       "Full chat history with search": [
         "Fullständig chatthistorik med sök"
       ],
@@ -2049,6 +2119,9 @@
       "Limited favorites": [
         "Begränsat antal favoriter"
       ],
+      "Strict no-logs policy": [
+        "Strikt policy att inte logga"
+      ],
       "Unlimited daily chats": [
         "Obegränsat antal dagliga chattar"
       ],
@@ -2057,6 +2130,9 @@
       ],
       "Web search access": [
         "Webbsökningsåtkomst"
+      ],
+      "Zero-access encryption": [
+        "Kryptering med noll åtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -4595,6 +4671,10 @@
       ],
       "Pending": [
         "Väntande"
+      ],
+      "Pending invitation": [
+        "Väntande inbjudan",
+        "Väntande inbjudningar"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Du kan inte byta paket just nu."
@@ -8342,6 +8422,9 @@
       "1 of 1 email address available": [
         "1 av 1 e-postadress tillgänglig"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
+      ],
       "Account holder": [
         "Kontoinnehavare"
       ],
@@ -8485,6 +8568,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandoradsgränssnitt (CLI)"
       ],
       "Common passwords": [
         "Vanliga lösenord"
@@ -11710,6 +11796,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
@@ -15213,6 +15302,9 @@
       ],
       "Main password": [
         "Huvudlösenord"
+      ],
+      "Migration assistant": [
+        "Migreringsassistent"
       ],
       "Minicalendar": [
         "Minikalender"
