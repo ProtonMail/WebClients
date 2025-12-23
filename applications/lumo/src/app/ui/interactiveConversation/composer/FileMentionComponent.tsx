@@ -55,13 +55,27 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
         return null;
     }
 
+    // Calculate dropdown height and check if it would overflow the viewport
+    const maxDropdownHeight = 320; // max-h-80 = 320px
+    const estimatedItemHeight = 56; // Approximate height per item
+    const estimatedHeight = Math.min(files.length * estimatedItemHeight + 8, maxDropdownHeight);
+    const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+    const bottomMargin = 16;
+    
+    // Position above if dropdown would overflow bottom of viewport
+    const wouldOverflow = mentionState.position.top + estimatedHeight + bottomMargin > viewportHeight;
+    const topPosition = wouldOverflow 
+        ? Math.max(8, mentionState.position.top - estimatedHeight - 8)
+        : mentionState.position.top;
+
     return (
         <div
-            className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] max-h-80 overflow-y-auto min-w-72 py-1"
+            className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] overflow-y-auto min-w-72 py-1"
             style={{
-                top: `${mentionState.position.top}px`,
+                top: `${topPosition}px`,
                 left: `${mentionState.position.left}px`,
-                maxWidth: `min(calc(100vw - ${mentionState.position.left + 16}px), 24rem)`
+                maxWidth: `min(calc(100vw - ${mentionState.position.left + 16}px), 24rem)`,
+                maxHeight: `${maxDropdownHeight}px`,
             }}
         >
             {files.map((file, index) => {
@@ -87,13 +101,13 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                         onMouseEnter={() => setSelectedIndex(index)}
                     >
                         {mimeType ? (
-                            <FileIcon mimeType={mimeType} className="flex-shrink-0" size={3.5} />
+                            <FileIcon mimeType={mimeType} className="shrink-0" size={3.5} />
                         ) : (
-                            <Icon name="file-lines" size={3.5} className="color-weak flex-shrink-0" />
+                            <Icon name="file-lines" size={3.5} className="color-weak shrink-0" />
                         )}
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 min-w-0 overflow-hidden">
                             {folderPath && (
-                                <div className="text-xs color-weak truncate mb-0.5">
+                                <div className="text-xs color-weak whitespace-nowrap overflow-hidden text-ellipsis mb-0.5">
                                     {highlightedFolderParts.map((part, partIndex) => (
                                         <span
                                             key={partIndex}
@@ -104,7 +118,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                                     ))}
                                 </div>
                             )}
-                            <div className="text-sm truncate">
+                            <div className="text-sm whitespace-nowrap overflow-hidden text-ellipsis">
                                 {highlightedFileNameParts.map((part, partIndex) => (
                                     <span
                                         key={partIndex}
@@ -116,7 +130,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                             </div>
                         </div>
                         {file.source === 'drive' && (
-                            <IcBrandProtonDrive size={3} className="color-primary flex-shrink-0 opacity-70" />
+                            <IcBrandProtonDrive size={3} className="color-primary shrink-0 opacity-70 ml-1" />
                         )}
                     </button>
                 );
