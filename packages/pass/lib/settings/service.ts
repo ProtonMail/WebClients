@@ -1,29 +1,42 @@
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybePromise } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
-export interface SettingsServiceConfig {
+export interface SettingsServiceOptions {
     clear: (localID?: number) => MaybePromise<void>;
     read: (localID?: number) => Promise<ProxiedSettings>;
     sync: (settings: ProxiedSettings, localID?: number) => MaybePromise<void>;
+    onResolve?: (settings: ProxiedSettings, localID?: number) => void;
 }
 
-export interface SettingsService extends SettingsServiceConfig {
+type SettingsServiceState = { settings: MaybeNull<ProxiedSettings> };
+export interface SettingsService extends Pick<SettingsServiceOptions, 'clear' | 'sync'> {
     resolve: (localID?: number) => Promise<ProxiedSettings>;
 }
 
-export const createSettingsService = (options: SettingsServiceConfig): SettingsService => {
+export const createSettingsService = (options: SettingsServiceOptions): SettingsService => {
+    const state: SettingsServiceState = { settings: null };
+
     return {
-        clear: options.clear,
-        read: options.read,
-        resolve: async (localID) => {
-            try {
-                const settings = await options.read(localID);
-                return merge(getInitialSettings(), settings ?? {});
-            } catch {
-                return getInitialSettings();
-            }
+        clear: async (localID) => {
+            state.settings = null;
+            await options.clear(localID);
         },
-        sync: options.sync,
+        resolve: async (localID) =>
+            (state.settings =
+                state.settings ??
+                (await (async () => {
+                    try {
+                        const settings = await options.read(localID);
+                        return merge(getInitialSettings(), settings ?? {});
+                    } catch {
+                        return getInitialSettings();
+                    }
+                })())),
+
+        sync: async (settings, localID) => {
+            state.settings = settings;
+            await options.sync(settings, localID);
+        },
     };
 };

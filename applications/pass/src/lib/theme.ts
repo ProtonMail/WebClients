@@ -8,7 +8,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import noop from '@proton/utils/noop';
 
 export const getThemeForLocalID = async (localID?: number): Promise<Maybe<PassThemeOption>> =>
-    settings.read(localID).then(prop('theme')).catch(noop);
+    settings.resolve(localID).then(prop('theme')).catch(noop);
 
 export const getTheme = async (): Promise<Maybe<PassThemeOption>> => {
     const localID = authStore.getLocalID() ?? getDefaultLocalID(getPersistedSessions());
