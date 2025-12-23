@@ -35,6 +35,10 @@ export const mapIds = <T extends { id: string }>(xs: Record<string, T>): string[
     return listIds(listify(xs));
 };
 
+export const setIds = <T extends { id: string }>(xs: Iterable<T> | Record<string, T>): Set<string> => {
+    return new Set(listIds(listify(xs)));
+};
+
 export const setify = <T>(xs: Iterable<T> | Record<string, T>): Set<T> => {
     return new Set(Array.isArray(xs) ? xs : Object.values(xs));
 };

@@ -33,12 +33,12 @@ import {
     selectSpaceById,
 } from '../../redux/selectors';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
-import { addSpace, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
-import { SelectableConversationList, type ConversationGroup } from '../components/Conversations';
+import { addSpace, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import { type ConversationGroup, SelectableConversationList } from '../components/Conversations';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
@@ -115,7 +115,7 @@ const ProjectDetailViewInner = () => {
     const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
-    
+
     // Editable title state
     const [isEditingTitle, setIsEditingTitle] = useState(false);
     const [editedTitle, setEditedTitle] = useState('');
@@ -444,20 +444,22 @@ const ProjectDetailViewInner = () => {
                             <div className="project-detail-conversations pt-5">
                                 <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
                                     <SelectableConversationList
-                                        groups={[
-                                            {
-                                                title: c('collider_2025:Title').t`Today`,
-                                                conversations: todayConversations,
-                                            },
-                                            {
-                                                title: c('collider_2025:Title').t`Last 7 days`,
-                                                conversations: last7DaysConversations,
-                                            },
-                                            {
-                                                title: c('collider_2025:Title').t`Older`,
-                                                conversations: olderConversations,
-                                            },
-                                        ].filter((g) => g.conversations.length > 0) as ConversationGroup[]}
+                                        groups={
+                                            [
+                                                {
+                                                    title: c('collider_2025:Title').t`Today`,
+                                                    conversations: todayConversations,
+                                                },
+                                                {
+                                                    title: c('collider_2025:Title').t`Last 7 days`,
+                                                    conversations: last7DaysConversations,
+                                                },
+                                                {
+                                                    title: c('collider_2025:Title').t`Older`,
+                                                    conversations: olderConversations,
+                                                },
+                                            ].filter((g) => g.conversations.length > 0) as ConversationGroup[]
+                                        }
                                         onConversationClick={(id) => history.push(`/c/${id}`)}
                                         onDeleteSelected={handleDeleteSelectedConversations}
                                         renderConversationActions={(conversation) => (

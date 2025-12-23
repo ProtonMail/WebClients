@@ -11,7 +11,7 @@ import { useConversationStar } from '../../../hooks/useConversationStar';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectAssetsBySpaceId, selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { Conversation, Message } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
@@ -50,7 +50,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
     // Count total files in conversation: message attachments + space-level files (deduplicated)
     // Get space-level assets (persistent project files) and attachments
-    const spaceAssets = useLumoSelector(selectAssetsBySpaceId(spaceId));
+    const spaceAssets = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
 
     const allAttachments = useLumoSelector(selectAttachments);
@@ -60,21 +60,19 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         (asset) => !asset.error && !asset.processing && !asset.autoRetrieved
     );
     // Exclude auto-retrieved attachments as they're conversation-specific, not space-level
-    const validSpaceAttachments = Object.values(spaceAttachments).filter(
-        (att) => !att.error && !att.autoRetrieved
-    );
+    const validSpaceAttachments = Object.values(spaceAttachments).filter((att) => !att.error && !att.autoRetrieved);
 
     // Count unique files by FILENAME (not ID) since the same file can exist as:
     // - space asset, space attachment, or message attachment with different IDs
     const uniqueFilenames = new Set<string>();
 
     // Add space assets
-    validSpaceAssets.forEach(asset => {
+    validSpaceAssets.forEach((asset) => {
         if (asset.filename) uniqueFilenames.add(asset.filename);
     });
 
     // Add space attachments
-    validSpaceAttachments.forEach(att => {
+    validSpaceAttachments.forEach((att) => {
         if (att.filename) uniqueFilenames.add(att.filename);
     });
 
@@ -267,7 +265,11 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                 {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                 <span role="heading" aria-level={2} className="min-w-0 flex-1">
                     <span className="sr-only">{c('collider_2025:Info').t`Current chat:`}</span>
-                    <Button shape="ghost" onClick={startEditing} className="py-1 px-2 text-ellipsis w-full hide-on-small-screens">
+                    <Button
+                        shape="ghost"
+                        onClick={startEditing}
+                        className="py-1 px-2 text-ellipsis w-full hide-on-small-screens"
+                    >
                         {conversationTitle}
                     </Button>
                 </span>
