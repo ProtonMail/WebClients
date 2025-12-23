@@ -3,11 +3,26 @@ import { useMemo } from 'react';
 import type { ContextFilter } from '../llm';
 import { useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters } from '../redux/selectors';
-import type { Attachment, Message, SpaceId } from '../types';
+import { type Attachment, type Message, type SpaceId, isAttachment } from '../types';
+
+// An attachment connected to a message.
+export type LinkedAttachment = Attachment & {
+    messageId: string;
+    messageIndex: number;
+};
+
+// prettier-ignore
+export function isLinkedAttachment(value: any): value is LinkedAttachment {
+    return (
+        isAttachment(value) &&
+        ('messageId' in value && typeof value.messageId === 'string') &&
+        ('messageIndex' in value && typeof value.messageIndex === 'number')
+    );
+}
 
 /**
  * Hook to get filtered files for the knowledge panel.
- * 
+ *
  * Note: Project files are now indexed and retrieved via RAG (same as Drive files).
  * This hook primarily handles message attachments and context filtering.
  */
@@ -29,7 +44,7 @@ export const useFilteredFiles = (
     const allFiles = useMemo(() => {
         if (!filterMessage) {
             // Show all files from messages in the conversation
-            const messageFiles = messageChain.flatMap(
+            const messageFiles: LinkedAttachment[] = messageChain.flatMap(
                 (message) =>
                     message.attachments
                         ?.map((shallowAttachment) => {
@@ -40,19 +55,18 @@ export const useFilteredFiles = (
                             return {
                                 ...fullAttachment,
                                 autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
-                                isUploadedProjectFile: shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
+                                isUploadedProjectFile:
+                                    shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                                 messageId: message.id,
                                 messageIndex: messageChain.indexOf(message),
-                            };
+                            } satisfies LinkedAttachment;
                         })
-                        .filter(
-                            (file): file is Attachment & { messageId: string; messageIndex: number } => file !== null
-                        ) || []
+                        .filter((f) => f != null && isLinkedAttachment(f)) || []
             );
 
             // Deduplicate by ID
             const seen = new Set<string>();
-            return messageFiles.filter(file => {
+            return messageFiles.filter((file) => {
                 if (seen.has(file.id)) return false;
                 seen.add(file.id);
                 return true;
@@ -99,7 +113,8 @@ export const useFilteredFiles = (
                     return {
                         ...fullAttachment,
                         autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
-                        isUploadedProjectFile: shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
+                        isUploadedProjectFile:
+                            shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
                         messageId: message.id,
                         messageIndex: messageChain.indexOf(message),
                     };
@@ -107,7 +122,7 @@ export const useFilteredFiles = (
             );
         });
 
-        return files.filter((file): file is Attachment & { messageId: string; messageIndex: number } => file !== null);
+        return files.filter((f) => f != null && isLinkedAttachment(f));
     }, [messageChain, allAttachments, filterMessage]);
 
     // Check if a file is excluded based on context filters
