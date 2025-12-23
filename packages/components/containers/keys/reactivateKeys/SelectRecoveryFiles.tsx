@@ -128,7 +128,13 @@ const SelectRecoveryFiles = (
                 displayRecoveryFileNotifications(recoveryFileKeys, recoveryFilesAsStrings.length);
                 displayBackupKeyNotifications(backupKeyFileKeys, backupKeysAsStrings.length);
 
-                onUpload([...recoveryFileKeys, ...backupKeyFileKeys]);
+                const allKeys = [...recoveryFileKeys, ...backupKeyFileKeys];
+
+                if (allKeys.length === 0) {
+                    return;
+                }
+
+                onUpload(allKeys);
             }}
             disabled={disabled}
             shape={shape}

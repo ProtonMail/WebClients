@@ -1,23 +1,20 @@
-import type { Dispatch, SetStateAction } from 'react';
-
 import { c } from 'ttag';
 
-import type { PrivateKeyReference } from '@proton/crypto';
 import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 
-import KeyUploadContent from './KeyUploadContent';
+import { KeyUploadContent, type KeyUploadContentProps } from './KeyUploadContent';
 import type { Props as SelectRecoveryFilesProps } from './SelectRecoveryFiles';
 import SelectRecoveryFiles from './SelectRecoveryFiles';
 
 interface Props {
     recoverySecrets: KeyWithRecoverySecret[];
-    uploadedKeys: PrivateKeyReference[];
-    setUploadedKeys: Dispatch<SetStateAction<PrivateKeyReference[]>>;
+    uploadedKeys: KeyUploadContentProps['uploadedKeys'];
+    setUploadedKeys: KeyUploadContentProps['setUploadedKeys'];
     disabled?: boolean;
     error?: string;
 }
 
-const RecoveryFileTabContent = ({ recoverySecrets, ...rest }: Props) => {
+export const FileContent = ({ recoverySecrets, ...rest }: Props) => {
     const SelectFilesComponent = (props: Omit<SelectRecoveryFilesProps, 'recoverySecrets'>) => (
         <SelectRecoveryFiles recoverySecrets={recoverySecrets} {...props} />
     );
@@ -37,5 +34,3 @@ const RecoveryFileTabContent = ({ recoverySecrets, ...rest }: Props) => {
         />
     );
 };
-
-export default RecoveryFileTabContent;

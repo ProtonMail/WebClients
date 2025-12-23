@@ -140,23 +140,17 @@ export const attemptDeviceRecovery = async ({
 
     const keyTransparencyVerify = preAuthKTVerify(userKeys);
 
-    let numberOfReactivatedKeys = 0;
-    await reactivateKeysProcess({
+    const result = await reactivateKeysProcess({
         api,
         user,
         userKeys,
         addresses,
         keyReactivationRecords,
         keyPassword,
-        onReactivation: (_, result) => {
-            if (result === 'ok') {
-                numberOfReactivatedKeys++;
-            }
-        },
         keyTransparencyVerify,
     });
 
-    return numberOfReactivatedKeys;
+    return result.details.reduce<number>((acc, { type }) => (type === 'success' ? acc + 1 : acc), 0);
 };
 
 const storeRecoveryMessage = async ({

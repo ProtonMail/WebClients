@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
+import { importKeysThunk } from '@proton/account/addressKeys/importKeysActions';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -10,27 +10,26 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModals from '@proton/components/hooks/useModals';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
-import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib/keys';
+import GenericError from '@proton/components/containers/error/GenericError';
+import getPausedForwardingNotice from '@proton/components/containers/keys/changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
+import { type ProcessedKey, useProcessKey } from '@proton/components/containers/keys/importKeys/useProcessKey';
+import SelectKeyFiles from '@proton/components/containers/keys/shared/SelectKeyFiles';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import getRandomString from '@proton/utils/getRandomString';
 
-import GenericError from '../../error/GenericError';
-import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
-import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
-import SelectKeyFiles from '../shared/SelectKeyFiles';
 import ImportKeysList from './ImportKeysList';
-import type { ImportKey } from './interface';
-import { Status } from './interface';
-import { updateKey } from './state';
+import { type ImportKeyState, Status } from './interface';
 
-const getNewKey = (privateKey: PrivateKeyReference): ImportKey => {
+const getState = ({ armoredKeyWithInfo, privateKey }: ProcessedKey): ImportKeyState => {
     return {
-        id: getRandomString(12),
-        privateKey,
-        fingerprint: privateKey.getFingerprint(),
+        importKeyData: {
+            id: getRandomString(12),
+            privateKey,
+        },
+        fingerprint: armoredKeyWithInfo.fingerprint,
         status: Status.LOADING,
         result: undefined,
     };
@@ -45,97 +44,63 @@ enum STEPS {
 }
 
 interface Props extends ModalProps {
-    onProcess: (keys: ImportKey[], cb: OnKeyImportCallback) => Promise<void>;
     hasOutgoingE2EEForwardings: boolean;
+    address: Address;
 }
 
-const ImportKeyModal = ({ onProcess, hasOutgoingE2EEForwardings, ...rest }: Props) => {
-    const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+const ImportKeyModal = ({ hasOutgoingE2EEForwardings, address, ...rest }: Props) => {
     const selectRef = useRef<HTMLInputElement>(null);
-    const [
-        {
-            Flags: { SupportPgpV6Keys },
-        },
-    ] = useUserSettings();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
 
     const [step, setStep] = useState<STEPS>(STEPS.WARNING);
-    const [state, setState] = useState<ImportKey[]>([]);
+    const [state, setState] = useState<ImportKeyState[]>([]);
 
-    const handleSubmit = (promise: Promise<void>) => {
-        setStep(STEPS.PROCESS);
-        promise
-            .then(() => {
-                setStep(STEPS.DONE);
-            })
-            .catch(() => {
-                setStep(STEPS.FAILURE);
-            });
-    };
-
-    const handleUpload = (privateKeyInfos: ArmoredKeyWithInfo[], acc: ImportKey[]) => {
-        const [first, ...rest] = privateKeyInfos;
-
-        if (privateKeyInfos.length === 0) {
-            handleSubmit(
-                onProcess(acc, (id: string, result) => {
-                    setState((oldKeys) => {
-                        return updateKey(oldKeys, id, {
-                            status: result === 'ok' ? Status.SUCCESS : Status.ERROR,
-                            result,
-                        });
-                    });
+    const handleSubmit = async (importKeyRecords: ProcessedKey[]) => {
+        try {
+            setStep(STEPS.PROCESS);
+            const state = importKeyRecords.map(getState);
+            setState(state);
+            const result = await dispatch(
+                importKeysThunk({
+                    importKeyData: state.map(({ importKeyData }) => importKeyData),
+                    address,
                 })
             );
-            return;
+            const map = result.details.reduce<{ [key: string]: (typeof result.details)[0] }>((acc, cur) => {
+                acc[cur.id] = cur;
+                return acc;
+            }, {});
+            setState(
+                state.map((keyImportRecord) => {
+                    const keyResult = map[keyImportRecord.importKeyData.id];
+                    let status: Status;
+                    let result;
+                    if (keyResult && keyResult.type === 'error') {
+                        const { message } = getApiError(keyResult.error);
+                        result = message || keyResult.error.message || 'Unknown error';
+                        status = Status.ERROR;
+                    } else if (keyResult.type === 'success') {
+                        status = Status.SUCCESS;
+                    } else {
+                        status = Status.ERROR;
+                        result = 'Unknown error';
+                    }
+                    return { ...keyImportRecord, status, result };
+                })
+            );
+            setStep(STEPS.DONE);
+        } catch (error) {
+            setStep(STEPS.FAILURE);
+            handleError(error);
         }
-
-        const handleAddKey = (decryptedPrivateKey: PrivateKeyReference) => {
-            const newList = [...acc, getNewKey(decryptedPrivateKey)];
-            setState(newList);
-            handleUpload(rest, newList);
-        };
-
-        if (first.keyIsDecrypted) {
-            CryptoProxy.importPrivateKey({
-                armoredKey: first.armoredKey,
-                passphrase: null,
-                // the BE will enforce this as well, but the returned error messages might be less user friendly
-                checkCompatibility: SupportPgpV6Keys
-                    ? KeyCompatibilityLevel.V6_COMPATIBLE
-                    : KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
-            })
-                .then(handleAddKey)
-                .catch((e: Error) => {
-                    createNotification({
-                        type: 'error',
-                        text: e.message,
-                    });
-                });
-            return;
-        }
-
-        createModal(
-            <DecryptFileKeyModal
-                privateKeyInfo={first}
-                onSuccess={(decryptedPrivateKey) => {
-                    handleAddKey(decryptedPrivateKey);
-                }}
-            />
-        );
     };
 
-    const handleUploadKeys = (keys: ArmoredKeyWithInfo[]) => {
-        const privateKeyInfos = keys.filter(({ keyIsPrivate }) => keyIsPrivate);
-        if (privateKeyInfos.length === 0) {
-            return createNotification({
-                type: 'error',
-                text: c('Error').t`Invalid private key file`,
-            });
-        }
-
-        handleUpload(privateKeyInfos, []);
-    };
+    const processKey = useProcessKey({
+        onProcessed: (data) => {
+            void handleSubmit(data);
+        },
+    });
 
     const { children, submit, onNext, loading } = (() => {
         if (step === STEPS.WARNING) {
@@ -175,11 +140,12 @@ Please also note that the public key corresponding to this private key will be p
                         <div>{c('Label').t`Please select files to upload`}</div>
                         <SelectKeyFiles
                             ref={selectRef}
-                            onUpload={handleUploadKeys}
+                            onUpload={processKey.handleUploadKeys}
                             multiple
                             className="hidden"
                             autoClick
                         />
+                        {processKey.component}
                     </>
                 ),
             };
