@@ -60,10 +60,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
 
     // Get space attachments (persistent files) - only if no Drive folder is linked
-    // Filter out auto-retrieved Drive files - those are indexed, not uploaded
+    // Filter out auto-retrieved Drive files and incomplete attachments (no filename = still syncing)
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const files = Object.values(spaceAttachments).filter(
-        (attachment) => !attachment.error && !attachment.autoRetrieved
+        (attachment) => !attachment.error && !attachment.autoRetrieved && attachment.filename
     );
 
     const handleCreateFolder = useCallback(async () => {

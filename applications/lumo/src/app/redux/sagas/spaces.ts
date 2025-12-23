@@ -35,6 +35,7 @@ import {
     deleteAttachment,
     locallyDeleteAttachmentFromRemoteRequest,
     pullAttachmentRequest,
+    upsertAttachment,
 } from '../slices/core/attachments';
 import type { ConversationMap } from '../slices/core/conversations';
 import {
@@ -476,6 +477,19 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
             continue;
         }
         validAssetIds.add(asset.id);
+
+        // Add a shallow/placeholder attachment to Redux first so pullAttachment can work
+        // The /spaces response has Encrypted: null, so we only have metadata at this point
+        const shallowAttachment: Attachment = {
+            id: asset.id,
+            spaceId: asset.spaceId,
+            uploadedAt: asset.uploadedAt,
+            mimeType: asset.mimeType,
+            rawBytes: asset.rawBytes,
+            filename: '', // Will be populated when full attachment is pulled
+        };
+        yield put(upsertAttachment(shallowAttachment));
+
         // Add idmap entry for the asset (local -> remote mapping)
         yield put(addIdMapEntry({ type: 'attachment', localId: asset.id, remoteId: asset.remoteId, saveToIdb: true }));
         // Assets in /spaces response have Encrypted: null, need to fetch individually via /assets/:id
