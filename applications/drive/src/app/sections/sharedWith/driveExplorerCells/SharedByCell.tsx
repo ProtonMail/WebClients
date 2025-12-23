@@ -5,7 +5,8 @@ import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAva
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { SortField } from '../../../hooks/util/useSorting';
+import { stringComparator } from '../../../modules/sorting/comparators';
+import { SortField } from '../../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 
 export interface SharedByCellProps {
@@ -48,5 +49,9 @@ export const defaultSharedByCellConfig: CellDefinitionConfig = {
     headerText: c('Label').t`Shared by`,
     className: 'w-1/5',
     sortField: SortField.sharedBy,
+    sortConfig: [
+        { field: SortField.sharedBy, comparator: stringComparator },
+        { field: SortField.name, comparator: stringComparator },
+    ],
     testId: 'column-shared-by',
 };
