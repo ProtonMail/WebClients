@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -8,6 +8,11 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 import { EXAMPLE_PROJECTS } from './exampleProjects';
+
+const getRandomProjects = (count: number) => {
+    const shuffled = [...EXAMPLE_PROJECTS].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+};
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -28,6 +33,7 @@ export const ProjectsView = () => {
     const myProjects = useProjects();
     const { isSmallScreen } = useSidebar();
     const [templateData, setTemplateData] = useState<{ name: string; instructions: string; icon: string } | null>(null);
+    const randomProjects = useMemo(() => getRandomProjects(3), []);
 
     const handleCreateProject = () => {
         if (isGuest) {
@@ -104,7 +110,7 @@ export const ProjectsView = () => {
                             {c('collider_2025:Title').t`Inspiration`}
                         </h2>
                         <div className="projects-grid projects-grid--inspiration">
-                            {EXAMPLE_PROJECTS.slice(0, 3).map((project) => (
+                            {randomProjects.map((project) => (
                                 <ProjectCard
                                     key={project.id}
                                     project={project}
@@ -137,7 +143,7 @@ export const ProjectsView = () => {
                         {c('collider_2025:Title').t`Inspiration`}
                     </h2>
                     <div className="projects-grid projects-grid--inspiration">
-                        {EXAMPLE_PROJECTS.slice(0, 3).map((project) => (
+                        {randomProjects.map((project) => (
                             <ProjectCard
                                 key={project.id}
                                 project={project}
