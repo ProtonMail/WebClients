@@ -208,6 +208,93 @@
 	min-block-size: 120px;
 }
 
+// New cleaner empty zone design
+.project-files-empty-zone {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 24px;
+	background-color: var(--background-weak);
+	border-radius: var(--border-radius-lg);
+	text-align: center;
+}
+
+.project-files-empty-title {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 8px;
+	color: var(--text-norm);
+}
+
+.project-files-empty-subtitle {
+	font-size: 14px;
+	margin: 0 0 4px;
+}
+
+.project-files-empty-hint {
+	font-size: 13px;
+	margin: 0 0 20px;
+}
+
+.project-files-empty-actions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+}
+
+.project-files-action-button {
+	white-space: nowrap;
+}
+
+// When files exist - container for list + add zone
+.project-files-with-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+// Add more files zone (shown when files already exist)
+.project-files-add-zone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	padding: 12px;
+	background-color: var(--background-weak);
+	border-radius: var(--border-radius-md);
+}
+
+.project-files-add-inline {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 8px;
+	background: transparent;
+	border: none;
+	border-radius: var(--border-radius-sm);
+	font-size: 13px;
+	color: var(--text-weak);
+	cursor: pointer;
+	transition: all 0.15s ease;
+
+	&:hover {
+		background-color: var(--background-strong);
+		color: var(--text-norm);
+	}
+
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
+}
+
+.project-files-add-divider {
+	color: var(--border-norm);
+	font-size: 14px;
+}
+
 .project-files-options {
 	display: flex;
 	flex-direction: row;
