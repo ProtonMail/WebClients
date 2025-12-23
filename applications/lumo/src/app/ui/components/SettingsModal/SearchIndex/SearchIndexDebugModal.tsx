@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,13 +28,25 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
     const [user] = useUser();
     const userId = user?.ID;
     const spaceMap = useLumoSelector(selectSpaceMap);
-    const { lumoUserSettings } = useLumoUserSettings();
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { indexedFolders: driveIndexedFolders } = useDriveFolderIndexing();
     
     const [foundationStatus, setFoundationStatus] = useState<SearchServiceStatus | undefined>();
     const [viewMode, setViewMode] = useState<'stats' | 'inspectList' | 'inspectDetail'>('stats');
     const [inspectDocs, setInspectDocs] = useState<DriveDocument[]>([]);
     const [selectedGrouped, setSelectedGrouped] = useState<GroupedDocument | null>(null);
+    const [orphanedDocCount, setOrphanedDocCount] = useState<number>(0);
+    const [orphanedChunkCount, setOrphanedChunkCount] = useState<number>(0);
+    const [orphanedSpaceIds, setOrphanedSpaceIds] = useState<string[]>([]);
+    const [isCleaningUp, setIsCleaningUp] = useState(false);
+
+    // Get valid space IDs - must be defined before useEffect that uses it
+    const validSpaceIds = useMemo(() => new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]), [spaceMap]);
+    const allIndexedFolders = driveIndexedFolders ?? lumoUserSettings.indexedDriveFolders ?? [];
+    const indexedFolders = allIndexedFolders.filter((f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId));
+    const totalIndexedDocuments = indexedFolders.reduce((sum, folder) => sum + (folder.documentCount || 0), 0);
+    const indexedFoldersCount = indexedFolders.filter((f) => f.isActive).length;
+    const hasIndexEntries = !!foundationStatus?.hasEntries || (foundationStatus?.entryCount ?? 0) > 0;
 
     useEffect(() => {
         if (!open || !ENABLE_FOUNDATION_SEARCH || !userId) return;
@@ -45,6 +57,22 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                 if (service) {
                     const status = await service.status();
                     setFoundationStatus(status);
+                    
+                    // Check for orphaned documents (docs referencing deleted spaces)
+                    const orphaned = service.getOrphanedDocuments(validSpaceIds);
+                    const orphanSpaceList = Array.from(orphaned.bySpace.keys());
+                    setOrphanedSpaceIds(orphanSpaceList);
+                    setOrphanedDocCount(orphaned.totalDocs);
+                    setOrphanedChunkCount(orphaned.totalChunks);
+                    
+                    if (orphaned.totalDocs > 0) {
+                        console.warn('[SearchDebug] Found orphaned documents:', {
+                            uniqueDocs: orphaned.totalDocs,
+                            chunks: orphaned.totalChunks,
+                            spaceIds: orphanSpaceList,
+                            validSpaceIds: Array.from(validSpaceIds),
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('[SearchDebug] Failed to get status', error);
@@ -54,15 +82,7 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
         void checkStatus();
         const interval = setInterval(checkStatus, 2000);
         return () => clearInterval(interval);
-    }, [open, userId]);
-
-    // Get valid space IDs to filter out folders linked to deleted spaces
-    const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
-    const allIndexedFolders = driveIndexedFolders ?? lumoUserSettings.indexedDriveFolders ?? [];
-    const indexedFolders = allIndexedFolders.filter((f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId));
-    const totalIndexedDocuments = indexedFolders.reduce((sum, folder) => sum + (folder.documentCount || 0), 0);
-    const indexedFoldersCount = indexedFolders.filter((f) => f.isActive).length;
-    const hasIndexEntries = !!foundationStatus?.hasEntries || (foundationStatus?.entryCount ?? 0) > 0;
+    }, [open, userId, validSpaceIds]);
 
     /* eslint-disable no-nested-ternary */
     const displayDriveDocs =
@@ -106,6 +126,50 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
             setViewMode('inspectList');
         }
     }, [userId]);
+
+    const handleCleanupOrphaned = useCallback(async () => {
+        if (!userId || isCleaningUp) return;
+        
+        setIsCleaningUp(true);
+        try {
+            const service = SearchService.get(userId);
+            
+            // Clean up orphaned documents from search index
+            const cleanedSpaceIds = await service.cleanupOrphanedDocuments(validSpaceIds);
+            
+            if (cleanedSpaceIds.length > 0) {
+                // Also clean up indexedDriveFolders in user settings
+                const currentFolders = allIndexedFolders;
+                const cleanedSpaceIdSet = new Set(cleanedSpaceIds);
+                const updatedFolders = currentFolders.filter(
+                    (folder) => !folder.spaceId || !cleanedSpaceIdSet.has(folder.spaceId)
+                );
+                
+                if (updatedFolders.length !== currentFolders.length) {
+                    console.log('[SearchDebug] Removing orphaned folders from settings:', {
+                        before: currentFolders.length,
+                        after: updatedFolders.length,
+                        removed: currentFolders.length - updatedFolders.length,
+                    });
+                    updateSettings({
+                        indexedDriveFolders: updatedFolders,
+                        _autoSave: true,
+                    });
+                }
+            }
+            
+            // Reset orphaned state
+            setOrphanedDocCount(0);
+            setOrphanedChunkCount(0);
+            setOrphanedSpaceIds([]);
+            
+            console.log('[SearchDebug] Cleanup complete, removed data for spaces:', cleanedSpaceIds);
+        } catch (error) {
+            console.error('[SearchDebug] Failed to cleanup orphaned documents', error);
+        } finally {
+            setIsCleaningUp(false);
+        }
+    }, [userId, isCleaningUp, validSpaceIds, allIndexedFolders, updateSettings]);
 
     const handleClose = () => {
         setViewMode('stats');
@@ -167,6 +231,52 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                         </div>
                     </div>
                 )}
+                
+                {/* Orphaned Documents Warning */}
+                {orphanedDocCount > 0 && (
+                    <div className="p-3 bg-danger rounded">
+                        <h4 className="text-sm text-semibold mb-2" style={{ color: 'var(--text-invert)' }}>
+                            ⚠️ {c('Title').t`Orphaned Documents Detected`}
+                        </h4>
+                        <div className="text-sm" style={{ color: 'var(--text-invert)' }}>
+                            <p className="mb-2">
+                                {c('Warning').t`Found ${orphanedDocCount} documents (${orphanedChunkCount} chunks) referencing ${orphanedSpaceIds.length} missing space(s).`}
+                            </p>
+                            <p className="mb-2">
+                                {c('Info').t`This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.`}
+                            </p>
+                            <details className="mb-3">
+                                <summary className="cursor-pointer">{c('Action').t`Show orphaned space IDs`}</summary>
+                                <ul className="mt-2 ml-4 text-xs" style={{ wordBreak: 'break-all' }}>
+                                    {orphanedSpaceIds.map((id) => (
+                                        <li key={id}>{id}</li>
+                                    ))}
+                                </ul>
+                            </details>
+                            <Button
+                                onClick={handleCleanupOrphaned}
+                                loading={isCleaningUp}
+                                color="danger"
+                                shape="solid"
+                                size="small"
+                            >
+                                <Icon name="trash" size={3.5} className="mr-1" />
+                                {c('Action').t`Clean up orphaned documents`}
+                            </Button>
+                        </div>
+                    </div>
+                )}
+                
+                {/* Spaces Info */}
+                <div className="p-3 bg-weak rounded">
+                    <h4 className="text-sm text-semibold mb-2">{c('Title').t`Spaces in Redux`}</h4>
+                    <div className="grid gap-2 text-sm" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                        <span className="color-weak">{c('Label').t`Total spaces:`}</span>
+                        <span>{Object.keys(spaceMap).length}</span>
+                        <span className="color-weak">{c('Label').t`Projects:`}</span>
+                        <span>{Object.values(spaceMap).filter((s) => s.isProject).length}</span>
+                    </div>
+                </div>
 
                 <Button onClick={handleInspect} shape="outline" className="self-start">
                     <Icon name="eye" size={4} className="mr-2" />

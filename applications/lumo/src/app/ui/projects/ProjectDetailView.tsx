@@ -248,18 +248,6 @@ const ProjectDetailViewInner = () => {
         }
     }, [isEditingTitle]);
 
-    // Handler for deleting multiple conversations (from SelectableConversationList)
-    // Must be defined before conditional return to satisfy Rules of Hooks
-    const handleDeleteSelectedConversations = useCallback(
-        async (conversationIds: string[]) => {
-            for (const id of conversationIds) {
-                dispatch(locallyDeleteConversationFromLocalRequest(id));
-                dispatch(pushConversationRequest({ id }));
-            }
-        },
-        [dispatch]
-    );
-
     if (!space || !space.isProject) {
         return (
             <div className="project-detail-not-found flex flex-column items-center justify-center">
@@ -307,6 +295,17 @@ const ProjectDetailViewInner = () => {
             deleteConversationModal.modalProps.onClose?.();
         }
     };
+
+    // Handler for deleting multiple conversations (from SelectableConversationList)
+    const handleDeleteSelectedConversations = useCallback(
+        async (conversationIds: string[]) => {
+            for (const id of conversationIds) {
+                dispatch(locallyDeleteConversationFromLocalRequest(id));
+                dispatch(pushConversationRequest({ id }));
+            }
+        },
+        [dispatch]
+    );
 
     const handleProjectSettingsButtonClick = () => {
         if (isMobileViewport) {

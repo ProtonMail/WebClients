@@ -1,5 +1,4 @@
 import type { Selector } from 'react-redux';
-import { createSelector } from '@reduxjs/toolkit';
 
 import type { UserState } from '@proton/account';
 
@@ -78,13 +77,10 @@ export const selectSpaceByConversationId =
         return conversation && state.spaces[conversation.spaceId];
     };
 
-export const selectProvisionalAttachments = createSelector(
-    [selectAttachments],
-    (attachments) =>
-        listify(attachments)
-            .filter((a: Attachment) => !a.spaceId)
-            .toSorted(sortByDate('asc', 'uploadedAt'))
-);
+export const selectProvisionalAttachments = (state: LumoState) =>
+    listify(state.attachments)
+        .filter((a: Attachment) => !a.spaceId)
+        .toSorted(sortByDate('asc', 'uploadedAt'));
 
 export const selectLocalIdFromRemote =
     (type: ResourceType, remoteId: RemoteId) =>

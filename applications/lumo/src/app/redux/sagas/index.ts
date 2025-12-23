@@ -318,19 +318,29 @@ export function* loadReduxFromIdb(): SagaIterator {
     }
 
     const spaceDekMap: Record<SpaceId, AesGcmCryptoKey> = {};
+    const spaceStats = { total: spaces.length, deleted: 0, loaded: 0, failed: 0, projects: 0 };
     for (const serializedSpace of spaces) {
         try {
-            const { id, deleted } = serializedSpace;
-            if (deleted) continue;
+            const { id, deleted, isProject } = serializedSpace;
+            if (deleted) {
+                spaceStats.deleted++;
+                continue;
+            }
             const space: Space = yield call(deserializeSpaceSaga, serializedSpace);
             yield put(addSpace(space));
+            spaceStats.loaded++;
+            if (space.isProject) {
+                spaceStats.projects++;
+            }
             if (!spaceDekMap[id]) {
                 spaceDekMap[id] = yield call(getSpaceDek, space);
             }
         } catch (e) {
-            console.warn('Error while loading Redux state from IndexedDB:', e);
+            spaceStats.failed++;
+            console.warn(`Error loading space ${serializedSpace?.id} from IndexedDB:`, e);
         }
     }
+    console.log('[loadReduxFromIdb] Space loading stats:', spaceStats);
 
     const spaceDekMapByConversation: Record<ConversationId, AesGcmCryptoKey> = {};
     for (const serializedConversation of conversations) {
