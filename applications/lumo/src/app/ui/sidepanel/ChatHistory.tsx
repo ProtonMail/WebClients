@@ -93,7 +93,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                             <Icon name="star" size={4} />
                             <span>{c('collider_2025:Title').t`Favorites`}</span>
                         </div>
-                        <div className="max-h-custom overflow-y-auto ml-5" style={{ '--max-h-custom': '20%' }}>
+                        <div className="max-h-custom overflow-y-auto ml-6" style={{ '--max-h-custom': '20%' }}>
                             <RecentChatsList
                                 conversations={favorites}
                                 selectedConversationId={conversationId}
@@ -102,14 +102,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         </div>
                     </>
                 )}
-                {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
-                {(searchInput || !(isSmallScreen && isGuest)) && (
-                    <div className="sidebar-section-header">
-                        <Icon name="clock-rotate-left" size={4} />
-                        <span>{c('collider_2025:Title').t`History`}</span>
-                    </div>
-                )}
-
                 {/* Enhanced sign-in section for all guest users */}
                 {isGuest && <ChatHistoryGuestUserUpsell />}
 
