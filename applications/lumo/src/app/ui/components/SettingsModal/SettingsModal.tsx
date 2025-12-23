@@ -160,7 +160,36 @@ const LumoSettingsSidebar = ({
     );
 };
 
-const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?: () => void }) => {
+/** Guest-safe General settings panel - only shows theme and about */
+const GeneralSettingsPanelGuest = () => {
+    const { DATE_VERSION } = useConfig();
+    const { isDarkLumoTheme } = useLumoTheme();
+    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
+    const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
+
+    return (
+        <div className="flex flex-column gap-4">
+            {isLumoDarkModeEnabled && (
+                <div className="flex flex-column flex-nowrap gap-4 mb-4">
+                    <SettingsSectionItem
+                        icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                        text={c('collider_2025: Title').t`Theme`}
+                        subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                    />
+                    <LumoThemeButton />
+                </div>
+            )}
+            <SettingsSectionItem
+                icon="info-circle"
+                text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
+                subtext={c('collider_2025: Description').jt`Last updated on ${formattedDate}`}
+            />
+        </div>
+    );
+};
+
+/** Full General settings panel for authenticated users */
+const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
@@ -259,67 +288,61 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                 </div>
             )}
 
-            {/* Project conversations in history toggle - only for logged in users */}
-            {!isGuest && (
-                <SettingsSectionItem
-                    icon="folder"
-                    text={c('collider_2025: Title').t`Show project chats in history`}
-                    subtext={c('collider_2025: Description').t`Include project conversations in the main chat history`}
-                    button={
-                        <Toggle
-                            id="show-project-conversations-toggle"
-                            checked={showProjectConversationsInHistory}
-                            onChange={() => {
-                                updateSettings({
-                                    showProjectConversationsInHistory: !showProjectConversationsInHistory,
-                                    _autoSave: true,
-                                });
-                            }}
-                        />
-                    }
-                />
-            )}
+            {/* Project conversations in history toggle */}
+            <SettingsSectionItem
+                icon="folder"
+                text={c('collider_2025: Title').t`Show project chats in history`}
+                subtext={c('collider_2025: Description').t`Include project conversations in the main chat history`}
+                button={
+                    <Toggle
+                        id="show-project-conversations-toggle"
+                        checked={showProjectConversationsInHistory}
+                        onChange={() => {
+                            updateSettings({
+                                showProjectConversationsInHistory: !showProjectConversationsInHistory,
+                                _autoSave: true,
+                            });
+                        }}
+                    />
+                }
+            />
 
-            {/* Search Index Management - only for logged in users */}
-            {!isGuest && (
-                <SettingsSectionItem
-                    icon="magnifier"
-                    text={c('collider_2025: Title').t`Search Index`}
-                    subtext={
-                        <div className="flex flex-column gap-1">
-                            <span className="color-weak">{c('collider_2025: Description')
-                                .t`Encrypted search index for chats and Drive files.`}</span>
+            {/* Search Index Management */}
+            <SettingsSectionItem
+                icon="magnifier"
+                text={c('collider_2025: Title').t`Search Index`}
+                subtext={
+                    <div className="flex flex-column gap-1">
+                        <span className="color-weak">{c('collider_2025: Description')
+                            .t`Encrypted search index for chats and Drive files.`}</span>
 
-                            <IndexStatusIndicator />
+                        <IndexStatusIndicator />
 
-                            {showIndexingProgress && (
-                                <IndexingStatusBanner
-                                    indexingStatus={driveIndexingStatus}
-                                    isIndexing={isDriveIndexing}
-                                    inline
-                                />
-                            )}
-                            {hasError && (
-                                <span className="color-danger text-sm">
-                                    {indexError || messageIndexingStatus.error}
-                                </span>
-                            )}
-                        </div>
-                    }
-                    button={
-                        <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
-                    }
-                />
-            )}
+                        {showIndexingProgress && (
+                            <IndexingStatusBanner
+                                indexingStatus={driveIndexingStatus}
+                                isIndexing={isDriveIndexing}
+                                inline
+                            />
+                        )}
+                        {hasError && (
+                            <span className="color-danger text-sm">
+                                {indexError || messageIndexingStatus.error}
+                            </span>
+                        )}
+                    </div>
+                }
+                button={
+                    <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
+                }
+            />
 
-            {!isGuest && (
-                <SettingsSectionItem
-                    icon="speech-bubble"
-                    text={c('collider_2025: Title').t`Delete everything`}
-                    subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
-                    button={<DeleteAllButton onClose={onClose} />}
-                />
-            )}
+            <SettingsSectionItem
+                icon="speech-bubble"
+                text={c('collider_2025: Title').t`Delete everything`}
+                subtext={c('collider_2025: Description').t`Permanently delete your project and chats. This is irreversible.`}
+                button={<DeleteAllButton onClose={onClose} />}
+            />
             <SettingsSectionItem
                 icon="info-circle"
                 text={c('collider_2025: Title').t`About ${LUMO_SHORT_APP_NAME}`}
@@ -446,9 +469,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
-                                {activePanel === 'general' && (
-                                    <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
-                                )}
+                                {activePanel === 'general' &&
+                                    (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
                             </div>
                         </div>
                     </div>
@@ -484,9 +506,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {activePanel === 'account' &&
                                 (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                             {activePanel === 'personalization' && <PersonalizationPanel />}
-                            {activePanel === 'general' && (
-                                <GeneralSettingsPanel isGuest={isGuest} onClose={closeModal} />
-                            )}
+                            {activePanel === 'general' &&
+                                (isGuest ? <GeneralSettingsPanelGuest /> : <GeneralSettingsPanelAuth onClose={closeModal} />)}
                         </div>
                     </div>
                 </div>
