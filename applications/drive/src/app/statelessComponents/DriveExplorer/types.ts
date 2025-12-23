@@ -66,6 +66,12 @@ export interface CellDefinition {
 }
 
 /**
+ * Cell configuration without the render function
+ * Used for defining reusable cell configurations
+ */
+export type CellDefinitionConfig = Omit<CellDefinition, 'render'>;
+
+/**
  * Display configuration options
  */
 export interface DriveExplorerConfig {

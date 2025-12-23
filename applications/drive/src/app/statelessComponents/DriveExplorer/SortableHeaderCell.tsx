@@ -27,7 +27,7 @@ export function SortableHeaderCell({
     return (
         <TableHeaderCell
             key={cell.id}
-            className={clsx('m-0', cell.className, cell.headerClassName, cell.width && 'w-custom')}
+            className={clsx('flex items-center m-0', cell.className, cell.headerClassName, cell.width && 'w-custom')}
             style={{
                 ...(cell.width && {
                     '--w-custom': cell.width,

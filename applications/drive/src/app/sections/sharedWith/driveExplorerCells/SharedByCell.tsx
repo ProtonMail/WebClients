@@ -6,7 +6,7 @@ import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { SortField } from '../../../hooks/util/useSorting';
-import type { CellDefinition } from '../../../statelessComponents/DriveExplorer/types';
+import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 
 export interface SharedByCellProps {
     uid: string;
@@ -43,7 +43,7 @@ export const SharedByCell = ({ displayName, isPublicLink = false, className }: S
     );
 };
 
-export const defaultSharedByCellConfig: Omit<CellDefinition, 'render'> = {
+export const defaultSharedByCellConfig: CellDefinitionConfig = {
     id: 'sharedBy',
     headerText: c('Label').t`Shared by`,
     className: 'w-1/5',
