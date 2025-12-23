@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Icon } from '@proton/components';
 
+import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -26,12 +27,13 @@ interface Props {
 }
 
 /**
- * Filters conversations based on user type and ghost chat mode
+ * Filters conversations based on user type, ghost chat mode, and project settings
  */
 const getVisibleConversations = (
     conversationMap: Record<string, any>,
     isGuest: boolean,
     isGhostChatMode: boolean,
+    showProjectConversations: boolean,
     conversationId?: string
 ) => {
     // Guest users in ghost chat mode see no conversations
@@ -46,7 +48,12 @@ const getVisibleConversations = (
     }
 
     // Regular users see all non-ghost conversations
-    return Object.values(conversationMap).filter((conversation) => !conversation.ghost);
+    // Optionally filter out project conversations (those with spaceId) based on setting
+    return Object.values(conversationMap).filter((conversation) => {
+        if (conversation.ghost) return false;
+        if (!showProjectConversations && conversation.spaceId) return false;
+        return true;
+    });
 };
 
 export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
@@ -56,13 +63,15 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const { hasLumoPlus } = useLumoPlan();
     const { isGhostChatMode } = useGhostChat();
     const { isSmallScreen } = useSidebar();
+    const { lumoUserSettings } = useLumoUserSettings();
+    const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
 
     // Only show loading state during initial data fetch
     // const isLoading = !isGuest && !persistence.ready;
     const isLoading = false; // fixme is this correct?
 
     const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
-        const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, conversationId);
+        const conversations = getVisibleConversations(conversationMap, isGuest, isGhostChatMode, showProjectConversationsInHistory, conversationId);
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
         const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
@@ -76,7 +85,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             noConversationAtAll: sortedConversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && sortedConversations.length > 0,
         };
-    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode]);
+    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
 
     const { today, lastWeek, lastMonth, earlier } = categorizedConversations;
 

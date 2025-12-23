@@ -23,6 +23,8 @@ export interface LumoUserSettings {
     personalization: PersonalizationSettings;
     featureFlags: FeatureFlag[];
     indexedDriveFolders?: IndexedDriveFolder[];
+    /** When true, project conversations are shown in the main chat history */
+    showProjectConversationsInHistory?: boolean;
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
