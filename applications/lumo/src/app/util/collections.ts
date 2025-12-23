@@ -2,7 +2,7 @@ export const mapify = <T extends { id: string }>(xs: T[]): Record<string, T> => 
     return Object.fromEntries(xs.map((x) => [x.id, x]));
 };
 
-export const listify = <T>(xs: Record<string, T> | Map<string, T> | Set<T>): T[] => {
+export const listify = <T>(xs: Iterable<T> | Record<string, T> | Map<string, T> | Set<T>): T[] => {
     if (xs instanceof Map) {
         return Array.from(xs.values());
     }
