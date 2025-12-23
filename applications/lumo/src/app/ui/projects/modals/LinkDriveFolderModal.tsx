@@ -23,8 +23,8 @@ interface LinkDriveFolderModalProps extends ModalStateProps {
 export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFolderModalProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
-    const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
-    const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
+    const space = useLumoSelector(selectSpaceById(projectId));
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     // Filter out auto-retrieved files - they're from Drive indexing, not user uploads
     const files = Object.values(spaceAttachments).filter(
         (attachment) => !attachment.error && !attachment.autoRetrieved
