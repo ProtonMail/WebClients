@@ -2,13 +2,9 @@ import type { ReactNode } from 'react';
 
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import type { SortField } from '../../hooks/util/useSorting';
+import type { SelectionState } from '../../modules/selection';
+import type { SortConfig, SortField } from '../../modules/sorting/types';
 
-export enum SelectionState {
-    NONE,
-    ALL,
-    SOME,
-}
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
     handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
@@ -45,6 +41,8 @@ export interface CellDefinition {
     headerText?: string;
     /** Sort field to enable sorting for this column */
     sortField?: SortField;
+    /** Sort configuration array (can be multi-level) */
+    sortConfig?: SortConfig;
     /** CSS classes for the cell */
     className?: string;
     /** Additional CSS classes for the header cell */
@@ -138,7 +136,7 @@ export interface DriveExplorerSort {
     /** Current sort direction (ASC or DESC) */
     sortDirection?: SORT_DIRECTION;
     /** Called when user changes sort */
-    onSort?: (sortBy: SortField, direction: SORT_DIRECTION) => void;
+    onSort?: (params: { sortField: SortField; sortConfig: SortConfig; direction: SORT_DIRECTION }) => void;
 }
 
 /**

@@ -2,10 +2,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactEmailsProvider, Loader, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { ContactEmailsProvider, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useItemContextMenu, useSelection } from '../../components/FileBrowser';
+import { useItemContextMenu } from '../../components/FileBrowser';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
     DriveExplorerConditions,
@@ -13,22 +13,21 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../statelessComponents/DriveExplorer/types';
-import { ItemType, getKeyUid, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import EmptySharedWithMe from './EmptySharedWithMe';
 import { getSharedWithMeCells, getSharedWithMeContextMenu, getSharedWithMeGrid } from './SharedWithMeCells';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 import SharedWithMeOld from './SharedWithMeOld';
-import { useSharedWithMeItemsWithSelection } from './hooks/useSharedWithMeItemsWithSelection';
+import { useSharedWithMeItems } from './hooks/useSharedWithMeItems';
 
 const SharedWithMe = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const contextMenuControls = useItemContextMenu();
-    const selectionControls = useSelection();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     const {
-        items,
+        uids,
         selectedItems,
         isLoading,
         sortParams,
@@ -38,7 +37,8 @@ const SharedWithMe = () => {
         handleRenderItem,
         layout,
         previewModal,
-    } = useSharedWithMeItemsWithSelection();
+        selectionControls,
+    } = useSharedWithMeItems();
 
     const events: DriveExplorerEvents = {
         onItemClick: () => {
@@ -60,24 +60,15 @@ const SharedWithMe = () => {
     const sort: DriveExplorerSort = {
         sortBy: sortParams.sortField,
         sortDirection: sortParams.sortOrder,
-        onSort: (sortField, direction) => {
-            handleSorting({
-                sortField,
-                sortOrder: direction,
-            });
-        },
+        onSort: handleSorting,
     };
 
     if (isEmpty) {
         return <EmptySharedWithMe />;
     }
 
-    if (!selectionControls) {
-        return <Loader />;
-    }
-
-    const selection: DriveExplorerSelection | undefined = {
-        selectedItems: new Set(selectedItems.map((item) => getKeyUid(item))),
+    const selection: DriveExplorerSelection = {
+        selectedItems: new Set(selectionControls.selectedItemIds),
         selectionMethods: selectionControls,
     };
 
@@ -129,7 +120,7 @@ const SharedWithMe = () => {
             />
             <div ref={contextMenuAnchorRef} className="flex flex-1">
                 <DriveExplorer
-                    itemIds={items.map(({ id }) => id)}
+                    itemIds={uids}
                     layout={layout}
                     cells={cells}
                     grid={grid}
