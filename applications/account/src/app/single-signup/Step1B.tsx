@@ -649,7 +649,7 @@ const Step1B = ({
         onBillingAddressChange: handleChangeBillingAddress,
         paymentStatus: model.paymentStatus,
         zipCodeBackendValid: model.subscriptionData.zipCodeValid,
-        previosValidZipCode: model.subscriptionData.billingAddress.ZipCode,
+        previousValidZipCode: model.subscriptionData.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext,
     });

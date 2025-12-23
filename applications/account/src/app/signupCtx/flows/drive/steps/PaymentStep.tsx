@@ -78,7 +78,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         onBillingAddressChange: payments.selectBillingAddress,
         paymentStatus: payments.paymentStatus,
         zipCodeBackendValid: payments.zipCodeValid,
-        previosValidZipCode: payments.options.billingAddress.ZipCode,
+        previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
     });

@@ -1282,7 +1282,7 @@ const SubscriptionContainerInner = ({
         zipCodeBackendValid: model.zipCodeValid,
         paymentStatus,
         paymentFacade,
-        previosValidZipCode: model.taxBillingAddress.ZipCode,
+        previousValidZipCode: model.taxBillingAddress.ZipCode,
         telemetryContext,
     });
 
