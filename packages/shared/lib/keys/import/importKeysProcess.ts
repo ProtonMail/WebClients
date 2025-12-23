@@ -18,7 +18,6 @@ export const importKeysProcess = async ({
     addresses,
     keyImportRecords,
     keyPassword,
-    onImport,
     keyTransparencyVerify,
 }: Arguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
@@ -37,7 +36,6 @@ export const importKeysProcess = async ({
         keyPassword,
         address,
         addressKeys,
-        onImport,
         userKey: primaryPrivateUserKey,
         keyTransparencyVerify,
     });

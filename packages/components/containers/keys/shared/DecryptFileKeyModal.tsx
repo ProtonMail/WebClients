@@ -76,7 +76,7 @@ const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Pr
         >
             <ModalHeader title={c('Title').t`Decrypt key`} />
             <ModalContent>
-                <div className="mb-4">
+                <div className="mb-4 text-break">
                     {c('Label').jt`Enter the password for key with fingerprint: ${fingerprintCode}`}
                 </div>
 

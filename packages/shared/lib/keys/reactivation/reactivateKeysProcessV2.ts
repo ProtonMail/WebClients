@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy, canKeyEncryptAndDecrypt } from '@proton/crypto';
-import { USER_KEY_USERID, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
+import { getDefaultKeyFlags } from '../';
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
@@ -31,7 +31,8 @@ import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
-import type { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
+import { USER_KEY_USERID } from '../userKeys';
+import type { KeyReactivationData, KeyReactivationRecord, ReactivateKeysResult } from './interface';
 import {
     getAddressReactivationPayload,
     getReactivatedAddressesKeys,
@@ -44,7 +45,6 @@ interface ReactivateUserKeysArguments {
     addresses: Address[];
     user: tsUser;
     activeKeys: ActiveKey[]; // user keys do not need to be differentiated by key version
-    onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
     keyPassword: string;
     keyTransparencyVerify: KeyTransparencyVerify;
@@ -57,7 +57,6 @@ export const reactivateUserKeys = async ({
     user,
     activeKeys,
     keysToReactivate,
-    onReactivation,
     keyPassword,
     keyTransparencyVerify,
 }: ReactivateUserKeysArguments) => {
@@ -69,6 +68,9 @@ export const reactivateUserKeys = async ({
     }, {});
     const reactivatedAddressKeysMap: SimpleMap<boolean> = {};
     const allReactivatedAddressKeysMap: SimpleMap<boolean> = {};
+    const result: ReactivateKeysResult = {
+        details: [],
+    };
 
     let mutableActiveKeys = activeKeys;
     let mutableAddresses = addresses;
@@ -153,7 +155,7 @@ export const reactivateUserKeys = async ({
 
             mutableActiveKeys = updatedActiveKeys;
 
-            onReactivation(id, 'ok');
+            result.details.push({ id, type: 'success' });
 
             // Notify all the address keys that got reactivated from this user key
             reactivatedAddressKeysResult.forEach(({ reactivatedKeys }) => {
@@ -161,14 +163,14 @@ export const reactivateUserKeys = async ({
                     allReactivatedAddressKeysMap[ID] = true;
                     const reactivationData = keyReactivationDataMap[ID];
                     if (reactivationData) {
-                        onReactivation(reactivationData.id, 'ok');
+                        result.details.push({ id: reactivationData.id, type: 'success' });
                         reactivatedAddressKeysMap[reactivationData.id] = true;
                     }
                 });
             });
-        } catch (e: any) {
-            onReactivation(id, e);
-            const { status } = getApiError(e);
+        } catch (error: any) {
+            result.details.push({ id, type: 'error', error: error });
+            const { status } = getApiError(error);
             if (status === HTTP_STATUS_CODE.FORBIDDEN) {
                 // The password prompt has been cancelled. No need to attempt to reactivate the other keys.
                 break;
@@ -179,7 +181,7 @@ export const reactivateUserKeys = async ({
     addressRecordsInV2Format.forEach(({ keysToReactivate }) => {
         keysToReactivate.forEach(({ id, privateKey }) => {
             if (!reactivatedAddressKeysMap[id] && !privateKey) {
-                onReactivation(id, new Error('User key inactivate'));
+                result.details.push({ id, type: 'error', error: new Error('User key inactive') });
             }
         });
     });
@@ -188,6 +190,7 @@ export const reactivateUserKeys = async ({
         userKeys: mutableActiveKeys,
         addresses: mutableAddresses,
         allReactivatedAddressKeysMap,
+        result,
     };
 };
 
@@ -196,7 +199,6 @@ interface ReactivateAddressKeysV2Arguments {
     address: Address;
     activeKeys: ActiveAddressKeysByVersion;
     userKey: PrivateKeyReference;
-    onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
     keyTransparencyVerify: KeyTransparencyVerify;
 }
@@ -206,10 +208,13 @@ export const reactivateAddressKeysV2 = async ({
     address,
     activeKeys,
     keysToReactivate,
-    onReactivation,
     userKey,
     keyTransparencyVerify,
 }: ReactivateAddressKeysV2Arguments) => {
+    const result: ReactivateKeysResult = {
+        details: [],
+    };
+
     let mutableActiveKeys = activeKeys;
 
     for (const keyToReactivate of keysToReactivate) {
@@ -269,13 +274,16 @@ export const reactivateAddressKeysV2 = async ({
 
             mutableActiveKeys = updatedActiveKeys;
 
-            onReactivation(id, 'ok');
-        } catch (e: any) {
-            onReactivation(id, e);
+            result.details.push({ id, type: 'success' });
+        } catch (error: any) {
+            result.details.push({ id, type: 'error', error });
         }
     }
 
-    return mutableActiveKeys;
+    return {
+        result,
+        activeKeys: mutableActiveKeys,
+    };
 };
 
 export interface ReactivateKeysProcessV2Arguments {
@@ -285,7 +293,6 @@ export interface ReactivateKeysProcessV2Arguments {
     addresses: tsAddress[];
     userKeys: DecryptedKey[];
     keyReactivationRecords: KeyReactivationRecord[];
-    onReactivation: OnKeyReactivationCallback;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
@@ -293,12 +300,15 @@ const reactivateKeysProcessV2 = async ({
     api,
     user,
     keyReactivationRecords,
-    onReactivation,
     keyPassword,
     addresses: oldAddresses,
     userKeys: oldUserKeys,
     keyTransparencyVerify,
-}: ReactivateKeysProcessV2Arguments) => {
+}: ReactivateKeysProcessV2Arguments): Promise<ReactivateKeysResult> => {
+    const result: ReactivateKeysResult = {
+        details: [],
+    };
+
     const { userRecord, addressRecordsInV2Format, addressRecordsInLegacyFormatOrWithBackup } =
         keyReactivationRecords.reduce<{
             addressRecordsInV2Format: KeyReactivationRecord[];
@@ -350,7 +360,6 @@ const reactivateKeysProcessV2 = async ({
                 activeKeys: activeUserKeys,
                 addresses: oldAddresses,
                 keysToReactivate: userRecord.keysToReactivate,
-                onReactivation,
                 keyPassword,
                 addressRecordsInV2Format,
                 keyTransparencyVerify,
@@ -358,10 +367,16 @@ const reactivateKeysProcessV2 = async ({
             userKeys = userKeysReactivationResult.userKeys;
             addresses = userKeysReactivationResult.addresses;
             allReactivatedAddressKeysMap = userKeysReactivationResult.allReactivatedAddressKeysMap;
-        } catch (e: any) {
-            userRecord.keysToReactivate.forEach(({ id }) => onReactivation(id, e));
+
+            result.details = [...result.details, ...userKeysReactivationResult.result.details];
+        } catch (error: any) {
+            userRecord.keysToReactivate.forEach(({ id }) => {
+                result.details.push({ id, type: 'error', error });
+            });
             addressRecordsInV2Format.forEach(({ keysToReactivate }) => {
-                keysToReactivate.forEach(({ id }) => onReactivation(id, e));
+                keysToReactivate.forEach(({ id }) => {
+                    result.details.push({ id, type: 'error', error });
+                });
             });
         }
     }
@@ -375,7 +390,7 @@ const reactivateKeysProcessV2 = async ({
             // should not be attempted to be reactivated again
             const alreadyReactivated = allReactivatedAddressKeysMap[x.Key.ID] === true;
             if (alreadyReactivated) {
-                onReactivation(x.id, 'ok');
+                result.details.push({ id: x.id, type: 'success' });
             } else {
                 keysLeftToReactivate.push(x);
             }
@@ -389,19 +404,24 @@ const reactivateKeysProcessV2 = async ({
             const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
             const activeAddressKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
 
-            await reactivateAddressKeysV2({
+            const reactivateAddressKeyResult = await reactivateAddressKeysV2({
                 api,
                 address,
                 activeKeys: activeAddressKeys,
                 userKey: primaryPrivateUserKey,
-                onReactivation,
                 keysToReactivate: keysLeftToReactivate,
                 keyTransparencyVerify,
             });
-        } catch (e: any) {
-            keysLeftToReactivate.forEach(({ id }) => onReactivation(id, e));
+
+            result.details = [...result.details, ...reactivateAddressKeyResult.result.details];
+        } catch (error: any) {
+            keysLeftToReactivate.forEach(({ id }) => {
+                result.details.push({ id, type: 'error', error });
+            });
         }
     }
+
+    return result;
 };
 
 export default reactivateKeysProcessV2;
