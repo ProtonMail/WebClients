@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,6 +26,29 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
     const hasError = attachment.error;
     const isUnsupported = !isFileTypeSupported(attachment.filename, attachment.mimeType);
     const isProcessing = attachment.processing;
+
+    // Truncate long content to prevent UI lag
+    // ~80 chars per line, ~50 lines per page, ~10 pages = 40,000 chars
+    const MAX_DISPLAY_CHARS = 40000;
+    const truncatedContent = useMemo(() => {
+        if (!attachment.markdown) {
+            return { content: '', truncated: false, remaining: 0 };
+        }
+
+        if (attachment.markdown.length <= MAX_DISPLAY_CHARS) {
+            return { content: attachment.markdown, truncated: false, remaining: 0 };
+        }
+
+        // Find the last newline before the limit to truncate on line boundaries
+        const lastNewline = attachment.markdown.lastIndexOf('\n', MAX_DISPLAY_CHARS);
+        const truncateAt = lastNewline > 0 ? lastNewline : MAX_DISPLAY_CHARS;
+
+        return {
+            content: attachment.markdown.substring(0, truncateAt),
+            truncated: true,
+            remaining: attachment.markdown.length - truncateAt,
+        };
+    }, [attachment.markdown]);
 
     // Check if this is a CSV or Excel file
     const isCSVOrExcel =
@@ -255,12 +278,20 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
 
         if (showRaw) {
             return (
-                <div
-                    className="bg-weak p-4 rounded border font-mono text-sm overflow-auto max-h-custom"
-                    style={{ '--max-h-custom': isCSVOrExcel ? '60vh' : '70vh' }}
-                >
-                    <pre className="whitespace-pre-wrap break-words m-0">{attachment.markdown}</pre>
-                </div>
+                <>
+                    <div
+                        className="bg-weak p-4 rounded border font-mono text-sm overflow-auto max-h-custom"
+                        style={{ '--max-h-custom': isCSVOrExcel ? '60vh' : '70vh' }}
+                    >
+                        <pre className="whitespace-pre-wrap break-words m-0">{truncatedContent.content}</pre>
+                    </div>
+                    {truncatedContent.truncated && (
+                        <div className="mt-2 text-sm text-center color-weak">
+                            +{truncatedContent.remaining.toLocaleString()}{' '}
+                            {c('collider_2025: Info').t`characters not shown`}
+                        </div>
+                    )}
+                </>
             );
         }
 
@@ -270,21 +301,29 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
         }
 
         return (
-            <div
-                className="prose prose-sm max-w-none overflow-auto max-h-custom p-6"
-                style={{ '--max-h-custom': '70vh' }}
-            >
-                <LumoMarkdown
-                    message={{
-                        id: 'file-content',
-                        content: attachment.markdown,
-                        role: Role.Assistant,
-                        conversationId: '',
-                        createdAt: new Date().toISOString(),
-                    }}
-                    content={attachment.markdown}
-                />
-            </div>
+            <>
+                <div
+                    className="prose prose-sm max-w-none overflow-auto max-h-custom p-6"
+                    style={{ '--max-h-custom': '70vh' }}
+                >
+                    <LumoMarkdown
+                        message={{
+                            id: 'file-content',
+                            content: truncatedContent.content,
+                            role: Role.Assistant,
+                            conversationId: '',
+                            createdAt: new Date().toISOString(),
+                        }}
+                        content={truncatedContent.content}
+                    />
+                </div>
+                {truncatedContent.truncated && (
+                    <div className="mt-2 text-sm text-center color-weak">
+                        +{truncatedContent.remaining.toLocaleString()}{' '}
+                        {c('collider_2025: Info').t`characters not shown`}
+                    </div>
+                )}
+            </>
         );
     };
 
