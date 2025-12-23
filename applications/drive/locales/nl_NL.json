@@ -288,6 +288,9 @@
       "Create and copy alias": [
         "Maak en kopieer alias"
       ],
+      "Create business account": [
+        "Maak een bedrijfsaccount aan"
+      ],
       "Create folder": [
         "Maak map"
       ],
@@ -398,8 +401,11 @@
       "Download app": [
         "App downloaden"
       ],
-      "Download apps": [
-        "Apps downloaden"
+      "Download for Mac": [
+        "Downloaden voor Mac"
+      ],
+      "Download for MacOS": [
+        "Downloaden voor macOS"
       ],
       "Download info": [
         "Info downloaden"
@@ -449,6 +455,9 @@
       "Expand folder": [
         "Map uitklappen"
       ],
+      "Explore more": [
+        "Meer ontdekken"
+      ],
       "Explore other plans": [
         "Ontdek andere abonnementen"
       ],
@@ -487,6 +496,9 @@
       ],
       "Get a free ${ BRAND_NAME } address": [
         "Krijg een gratis ${ BRAND_NAME }-adres"
+      ],
+      "Get Drive for Business": [
+        "Gebruik Drive for Business"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -1190,6 +1202,12 @@
       "What do I get?": [
         "Wat krijg ik?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
@@ -1417,9 +1435,6 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
-      "forever": [
-        "voor altijd"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
@@ -1450,11 +1465,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-aanbieding"
       ]
     },
     "BF2025: Deal details": {
@@ -1496,36 +1506,6 @@
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Help uw dierbaren deelnemen aan de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Doe mee met de privacyrevolutie met onze voordeligste bundels, nu met 50% korting!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Bespaar ${ savedAmount } met onze voordeligste, tijdelijke aanbieding!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Stap over op ons 2-jarig abonnement en bespaar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Stap over op ons jaarabonnement en bespaar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Trakteer uw naasten op complete digitale bescherming."
       ]
     },
     "BF2025: Tooltip": {
@@ -1762,6 +1742,15 @@
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
       ],
+      "Built and based in Europe": [
+        "Gebouwd en gevestigd in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Naleving van de regelgeving inzake gegevensbescherming"
+      ],
+      "Data never used for AI training": [
+        "Data wordt nooit gebruikt voor het trainen van AI"
+      ],
       "Full chat history with search": [
         "Volledige chatgeschiedenis met zoeken"
       ],
@@ -1773,6 +1762,9 @@
       ],
       "Limited favorites": [
         "Beperkte favorieten"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logsbeleid"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -1788,6 +1780,9 @@
       ],
       "Web search access": [
         "Toegang tot webzoekopdrachten"
+      ],
+      "Zero-access encryption": [
+        "Zero-access encryptie"
       ]
     },
     "collider_2025: Info": {
@@ -3310,6 +3305,9 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Downloads van desktop-apps zijn momenteel niet beschikbaar"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Factuuradres bewerken is op dit moment niet beschikbaar. Probeer het later opnieuw."
       ],
@@ -3773,9 +3771,6 @@
       ],
       "We were not able to load some of your shared items": [
         "We konden een aantal van uw gedeelde items niet laden."
-      ],
-      "We were not able to load some of your shared items info": [
-        "We konden de informatie over enkele van uw gedeelde items niet laden."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -5140,6 +5135,12 @@
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
       ],
+      "Cloud storage for businesses that take security seriously": [
+        "Cloudopslag voor bedrijven die veiligheid serieus nemen"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "Efficiënt samenwerken terwijl u uw klant- en bedrijfsgegevens beschermt tegen inbreuken, ransomware en surveillance."
+      ],
       "Conflict": [
         "Probleem"
       ],
@@ -5543,6 +5544,9 @@
       ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
+      ],
+      "iOS and Android Apps": [
+        "iOS en Android Apps"
       ],
       "Issues found": [
         "Problemen gevonden"
@@ -5977,6 +5981,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
+      ],
+      "Scan to download": [
+        "Scan om te downloaden"
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
@@ -6889,6 +6896,9 @@
       ],
       "App password": [
         "App-wachtwoord"
+      ],
+      "Applications in a business setting": [
+        "Toepassingen in een zakelijke omgeving"
       ],
       "Apply to all duplicated files": [
         "Toepassen op alle gedupliceerde bestanden"
@@ -12065,6 +12075,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Krijg volledige toegang tot ${ CALENDAR_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Download mobiele en desktop apps"
+      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -12795,6 +12808,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Gebruik Drive for Business"
       ]
     },
     "Validation": {

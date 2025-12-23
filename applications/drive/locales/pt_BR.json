@@ -401,8 +401,14 @@
       "Download app": [
         "Baixar aplicativo"
       ],
-      "Download apps": [
-        "Baixar aplicativos"
+      "Download for Mac": [
+        "Baixar para Mac"
+      ],
+      "Download for MacOS": [
+        "Baixar para macOS"
+      ],
+      "Download for Windows": [
+        "Baixar para Windows"
       ],
       "Download info": [
         "Fazer download de informações"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "O que eu recebo?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Com o preço único de ${ amount }"
       ],
-      "forever": [
-        "para sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Oferta Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajude quem você ama a se juntar à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Junte-se à revolução da privacidade com nossos pacotes de melhor valor, agora com 50% de desconto!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economize ${ savedAmount } com nossa melhor oferta por tempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Mude para nosso plano de 2 anos e economize ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Mude para nosso plano anual e economize ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Ofereça à sua galera proteção digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Histórico de bate-papo básico"
       ],
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
       "Full chat history with search": [
         "Histórico completo de bate-papos com pesquisa"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa de inexistência de registros"
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Acesso à pesquisa na web"
+      ],
+      "Zero-access encryption": [
+        "Criptografia de acesso zero"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Downloads de aplicativos de computador não estão disponíveis no momento"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "A edição do endereço de cobrança não está disponível no momento. Tente novamente mais tarde."
       ],
@@ -3782,9 +3774,6 @@
       ],
       "We were not able to load some of your shared items": [
         "Não foi possível carregar alguns dos seus itens compartilhados"
-      ],
-      "We were not able to load some of your shared items info": [
-        "Não foi possível carregar algumas informações dos seus itens compartilhados"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -5559,6 +5548,9 @@
       "Invite link copied": [
         "Link de convite copiado"
       ],
+      "iOS and Android Apps": [
+        "Aplicativos para iOS e Android"
+      ],
       "Issues found": [
         "Problemas encontrados"
       ],
@@ -5992,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
+      ],
+      "Scan to download": [
+        "Digitalizar para baixar"
       ],
       "Search cannot be enabled in this browser": [
         "Não é possível ativar a pesquisa nesse navegador."
@@ -6869,6 +6864,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -6979,6 +6977,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comando (CLI)"
       ],
       "Comment": [
         "Comentário"
@@ -12142,6 +12143,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obter acesso total ao ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha aplicativos móveis e para computador"
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"

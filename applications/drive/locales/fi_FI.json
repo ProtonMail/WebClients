@@ -401,8 +401,14 @@
       "Download app": [
         "Lataa sovellus"
       ],
-      "Download apps": [
-        "Lataa sovellukset"
+      "Download for Mac": [
+        "Lataa Macille"
+      ],
+      "Download for MacOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
       ],
       "Download info": [
         "Lataa tiedot"
@@ -1193,6 +1199,12 @@
       "What do I get?": [
         "Mitä saan?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
@@ -1406,9 +1418,6 @@
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
       ],
-      "forever": [
-        "ikuisesti"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
       ]
@@ -1439,11 +1448,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday -ale"
       ]
     },
     "BF2025: Deal details": {
@@ -1485,36 +1489,6 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Auta läheisiäsi liittymään yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Liity yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "hintaan ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Säästä ${ savedAmount } parhaalla, rajoitetun ajan voimassa olevalla tarjouksellamme!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Vaihda kahden vuoden tilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Tarjoa ryhmällesi täydellinen digitaalinen suojaus."
       ]
     },
     "BF2025: Tooltip": {
@@ -3269,6 +3243,9 @@
       ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Työpöytäsovellusten lataaminen ei ole tällä hetkellä mahdollista."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Laskutusosoitteen muokkaus ei ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
@@ -5435,6 +5412,9 @@
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
       ],
+      "iOS and Android Apps": [
+        "iOS- ja Android-sovellukset"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
@@ -5853,6 +5833,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
+      ],
+      "Scan to download": [
+        "Skannaa ladataksesi"
       ],
       "Search cannot be enabled in this browser": [
         "Hakua ei voida käyttää tässä selaimessa"
@@ -6688,6 +6671,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
+      ],
       "Account holder": [
         "Tilinhaltija"
       ],
@@ -6795,6 +6781,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Command line interface (CLI)": [
+        "Komentoriviliittymä (CLI)"
       ],
       "Comment": [
         "Viesti"
@@ -11672,6 +11661,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"

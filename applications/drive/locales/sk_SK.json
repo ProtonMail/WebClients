@@ -411,8 +411,14 @@
       "Download app": [
         "Stiahnuť aplikáciu"
       ],
-      "Download apps": [
-        "Stiahnuť aplikácie"
+      "Download for Mac": [
+        "Stiahnuť pre Mac"
+      ],
+      "Download for MacOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
       ],
       "Download info": [
         "Stiahnuť informácie"
@@ -1209,6 +1215,12 @@
       "What do I get?": [
         "Čo získam?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
@@ -1450,9 +1462,6 @@
       "Billed at ${ amount } once": [
         "Účtovaná suma ${ amount } jednorazovo"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
@@ -1487,11 +1496,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday zľavy"
       ]
     },
     "BF2025: Deal details": {
@@ -1533,36 +1537,6 @@
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -1803,6 +1777,15 @@
       "Basic chat history": [
         "Základná história chatu"
       ],
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržiavanie predpisov o ochrane údajov"
+      ],
+      "Data never used for AI training": [
+        "Údaje nikdy nepoužívané na trénovanie AI"
+      ],
       "Full chat history with search": [
         "Úplná história chatu s vyhľadávaním"
       ],
@@ -1814,6 +1797,9 @@
       ],
       "Limited favorites": [
         "Obmedzené obľúbené položky"
+      ],
+      "Strict no-logs policy": [
+        "Prísna zásada neuchovávania záznamov"
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
@@ -1829,6 +1815,9 @@
       ],
       "Web search access": [
         "Prístup k webovému vyhľadávaniu"
+      ],
+      "Zero-access encryption": [
+        "Šifrovanie s nulovým prístupom"
       ]
     },
     "collider_2025: Info": {
@@ -3355,6 +3344,9 @@
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Stiahnutia desktopových aplikácií momentálne nie sú k dispozícii"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturačnej adresy momentálne nie je k dispozícii. Skúste to neskôr, prosím."
       ],
@@ -3829,9 +3821,6 @@
       "We were not able to load some of your shared items": [
         "Neboli sme schopní načítať niektoré z vašich zdieľaných položiek"
       ],
-      "We were not able to load some of your shared items info": [
-        "Neboli sme schopní načítať informácie o niektorých vašich zdieľaných položkách"
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
@@ -4182,6 +4171,12 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
+      ],
+      "View the invitation": [
+        "Zobraziť pozvánku",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -5155,6 +5150,9 @@
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in your library": [
+        "Už máte vo svojej knižnici"
+      ],
       "Also try looking in Trash.": [
         "Skúste tiež pohľadať v Koši."
       ],
@@ -5716,6 +5714,9 @@
       "Invite link copied": [
         "Pozývací odkaz skopírovaný"
       ],
+      "iOS and Android Apps": [
+        "iOS a Android aplikácie"
+      ],
       "Issues found": [
         "Nájdené problémy"
       ],
@@ -6153,6 +6154,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte QR kód pomocou mobilného zariadenia"
+      ],
+      "Scan to download": [
+        "Naskenujte na prevzatie"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie"
@@ -12511,6 +12515,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Získajte plný prístup k ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
