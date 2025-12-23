@@ -415,19 +415,19 @@ const ProjectDetailViewInner = () => {
             </div>
 
             <div
-                className={`project-detail-content flex flex-row flex-nowrap flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
+                className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
             >
                 {/* Main area - similar to 'outer' in lumo-chat-container */}
-                <div className="outer flex flex-column flex-nowrap flex-1">
-                    <div className="project-detail-main flex flex-column items-center">
+                <div className="outer">
+                    <div className="project-detail-main">
                         {sortedConversations.length === 0 ? (
-                            <div className="project-detail-empty flex flex-column items-center justify-center">
+                            <div className="project-detail-empty">
                                 <img src={lumoProjects} alt="Projects" width={200} />
                                 <h2 className="project-detail-empty-title text-lg pt-3">
                                     {c('collider_2025:Title').t`Start a new conversation`}
                                 </h2>
                                 {promptSuggestions.length > 0 && (
-                                    <div className="project-detail-prompt-suggestions flex flex-column">
+                                    <div className="project-detail-prompt-suggestions">
                                         {promptSuggestions.map((suggestion, index) => (
                                             <button
                                                 key={index}
@@ -441,8 +441,8 @@ const ProjectDetailViewInner = () => {
                                 )}
                             </div>
                         ) : (
-                            <div className="project-detail-conversations flex flex-column pt-5">
-                                <div className="project-detail-conversation-list flex flex-column p-0 md:py-4 md:pl-8 md:pr-6">
+                            <div className="project-detail-conversations pt-5">
+                                <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
                                     <SelectableConversationList
                                         groups={[
                                             {
@@ -471,7 +471,7 @@ const ProjectDetailViewInner = () => {
                             </div>
                         )}
 
-                        <div className="project-detail-composer flex flex-column items-center">
+                        <div className="project-detail-composer">
                             <ComposerComponent
                                 handleSendMessage={handleSendInProject}
                                 isProcessingAttachment={isProcessingAttachment}
