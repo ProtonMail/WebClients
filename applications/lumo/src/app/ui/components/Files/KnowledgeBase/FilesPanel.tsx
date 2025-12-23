@@ -21,8 +21,8 @@ import { addContextFilter, removeContextFilter } from '../../../../redux/slices/
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
-import type { DriveDocument } from '../../../../types/documents';
 import { type Attachment, type Message, getProjectInfo } from '../../../../types';
+import type { DriveDocument } from '../../../../types/documents';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
 import { DriveBrowser } from '../DriveBrowser';
 import { ContextProgressBar } from './ContextProgressBar';
@@ -410,20 +410,19 @@ export const FilesPanel = ({
                 {/* Filter chip - replaces breadcrumb navigation */}
                 {filterMessage && (
                     <div className="mb-4 flex flex-row items-center gap-2">
-
-                            {onClearFilter && (
-                                <Button
-                                    size="small"
-                                    shape="solid"
-                                    icon={true}
-                                    onClick={onClearFilter}
-                                    className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
-                                    title={c('collider_2025: Info').t`Show all files`}
-                                >
-                                    <Icon name="cross" size={3} />
-                                    <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
-                                </Button>
-                            )}
+                        {onClearFilter && (
+                            <Button
+                                size="small"
+                                shape="solid"
+                                icon={true}
+                                onClick={onClearFilter}
+                                className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
+                                title={c('collider_2025: Info').t`Show all files`}
+                            >
+                                <Icon name="cross" size={3} />
+                                <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
+                            </Button>
+                        )}
                     </div>
                 )}
 
