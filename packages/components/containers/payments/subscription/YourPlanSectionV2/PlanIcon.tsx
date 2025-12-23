@@ -150,7 +150,7 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (user && hasPassLifetime(user)) {
+    if ((user && hasPassLifetime(user)) || planName === PLANS.PASS_LIFETIME) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.PASS_LIFETIME} app={app} />

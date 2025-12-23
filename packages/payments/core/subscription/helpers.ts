@@ -1081,3 +1081,17 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     const maxCycle = Math.max(...availableCycles) as CYCLE;
     return Math.min(cycle, maxCycle);
 }
+
+/**
+ * If user already has mobile lumo subscription then they can't buy lumo addon.
+ */
+export function canAddLumoAddon(subscription: Subscription | FreeSubscription): boolean {
+    if (isFreeSubscription(subscription)) {
+        return true;
+    }
+
+    // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
+    return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
+        (sub) => hasLumo(sub) && isManagedExternally(sub)
+    );
+}

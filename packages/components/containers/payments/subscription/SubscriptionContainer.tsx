@@ -67,18 +67,16 @@ import {
     getPlanNameFromIDs,
     getPlansMap,
     hasDeprecatedVPN,
-    hasLumo,
     hasLumoAddonFromPlanIDs,
     hasPlanIDs,
     isBF2025Offer,
     isFreeSubscription,
-    isManagedExternally,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import { canAddLumoAddon, getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
@@ -262,20 +260,6 @@ export interface SubscriptionContainerProps {
     allowedAddonTypes?: AddonGuard[];
     paymentStatus: PaymentStatus;
 }
-
-/**
- * If user already has mobile lumo subscription then they can't buy lumo addon.
- */
-const canAddLumoAddon = (subscription: Subscription | FreeSubscription): boolean => {
-    if (isFreeSubscription(subscription)) {
-        return true;
-    }
-
-    // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
-    return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
-        (sub) => hasLumo(sub) && isManagedExternally(sub)
-    );
-};
 
 const SubscriptionContainerInner = ({
     topRef: customTopRef,
