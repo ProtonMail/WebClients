@@ -2,7 +2,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 
-import { SortField } from '../../hooks/util/useSorting';
+import { SortField } from '../../modules/sorting/types';
 
 interface HeaderCellContentProps {
     headerText?: string;
@@ -15,11 +15,12 @@ export function HeaderCellContent({ headerText, currentSortField, cellSortField 
     return (
         <>
             {headerText}
-            {currentSortField === SortField.numAccesses && cellSortField === SortField.numAccesses && (
-                <Tooltip className="pl-1" title={numAccessesTooltipMessage}>
-                    <Icon name="info-circle" size={3.5} alt={numAccessesTooltipMessage} />
-                </Tooltip>
-            )}
+            {currentSortField === SortField.numberOfInitializedDownloads &&
+                cellSortField === SortField.numberOfInitializedDownloads && (
+                    <Tooltip className="pl-1" title={numAccessesTooltipMessage}>
+                        <Icon name="info-circle" size={3.5} alt={numAccessesTooltipMessage} />
+                    </Tooltip>
+                )}
         </>
     );
 }

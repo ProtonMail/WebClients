@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { FileIcon } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
+import { NodeType } from '@proton/drive';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { FileName } from '../../components/FileName';
 import { SignatureIcon } from '../../components/SignatureIcon';
-import { SortField } from '../../hooks/util/useSorting';
+import { nodeTypeComparator, stringComparator } from '../../modules/sorting/comparators';
+import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 
 export interface NameCellProps {
@@ -30,21 +32,31 @@ export const NameCell = ({
 }: NameCellProps) => {
     return (
         <span className="flex items-center flex-nowrap mr-4" aria-label={name}>
-            {thumbnail?.sdUrl ? (
-                <img
-                    src={thumbnail.sdUrl}
-                    alt={name}
-                    className="file-browser-list-item--thumbnail shrink-0 mr-2"
-                    style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
-                />
-            ) : (
+            {type === NodeType.Album && (
                 <FileIcon
-                    mimeType={((type === NodeType.File || type === NodeType.Photo) && mediaType) || 'Folder'}
-                    alt={name}
+                    mimeType="Album"
+                    alt={c('Label').t`Album`}
                     className="file-browser-list-item--icon mr-2"
+                    // TODO: Create a proper scss file for this cell
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
             )}
+            {type !== NodeType.Album &&
+                (thumbnail?.sdUrl ? (
+                    <img
+                        src={thumbnail.sdUrl}
+                        alt={name}
+                        className="file-browser-list-item--thumbnail shrink-0 mr-2"
+                        style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
+                    />
+                ) : (
+                    <FileIcon
+                        mimeType={((type === NodeType.File || type === NodeType.Photo) && mediaType) || 'Folder'}
+                        alt={name}
+                        className="file-browser-list-item--icon mr-2"
+                        style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
+                    />
+                ))}
             <SignatureIcon
                 haveSignatureIssues={haveSignatureIssues}
                 isFile={type === NodeType.File || type === NodeType.Photo}
@@ -60,5 +72,9 @@ export const defaultNameCellConfig: CellDefinitionConfig = {
     headerText: c('Label').t`Name`,
     className: 'flex-1',
     sortField: SortField.name,
+    sortConfig: [
+        { field: SortField.nodeType, comparator: nodeTypeComparator, direction: SORT_DIRECTION.ASC },
+        { field: SortField.name, comparator: stringComparator },
+    ],
     testId: 'column-name',
 };

@@ -7,7 +7,6 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import clsx from '@proton/utils/clsx';
 
-import type { SortField } from '../../hooks/util/useSorting';
 import { GridHeader } from './GridHeader';
 import { SortableHeaderCell } from './SortableHeaderCell';
 import type { CellDefinition, DriveExplorerConfig, DriveExplorerSelection, DriveExplorerSort } from './types';
@@ -73,13 +72,17 @@ export const DriveExplorerHeader = ({
                     return;
                 }
 
-                if (cell.sortField && sort?.onSort) {
+                if (cell.sortField && cell.sortConfig && sort?.onSort) {
                     const isCurrentSort = sort.sortBy === cell.sortField;
                     const newDirection =
                         isCurrentSort && sort.sortDirection === SORT_DIRECTION.ASC
                             ? SORT_DIRECTION.DESC
                             : SORT_DIRECTION.ASC;
-                    sort.onSort(cell.sortField as SortField, newDirection);
+                    sort.onSort({
+                        sortField: cell.sortField,
+                        sortConfig: cell.sortConfig,
+                        direction: newDirection,
+                    });
                 }
             };
         },

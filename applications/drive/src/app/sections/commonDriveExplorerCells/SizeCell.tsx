@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
-import { SortField } from '../../hooks/util/useSorting';
+import { numberComparator } from '../../modules/sorting/comparators';
+import { SortField } from '../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 
 export interface SizeCellProps {
@@ -20,5 +21,6 @@ export const defaultSizeCellConfig: CellDefinitionConfig = {
     headerText: c('Label').t`Size`,
     className: 'w-1/10',
     sortField: SortField.size,
+    sortConfig: [{ field: SortField.size, comparator: numberComparator }],
     testId: 'column-size',
 };

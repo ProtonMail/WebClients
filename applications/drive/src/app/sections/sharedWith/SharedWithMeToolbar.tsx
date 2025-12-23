@@ -2,6 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
@@ -9,8 +10,9 @@ import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
-import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
 import { usePreviewModal } from '../../modals/preview';
+import { useSelectionStore } from '../../modules/selection';
+import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
 import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
@@ -22,24 +24,33 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
-    const selectionControls = useSelection();
-    const { getSharedWithMeStoreItem } = useSharedWithMeListingStore(
-        useShallow((state) => ({
-            getSharedWithMeStoreItem: state.getSharedWithMeItem,
-        }))
-    );
     const [previewModal, showPreviewModal] = usePreviewModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+
+    const useNewSelectionStore = useFlag('DriveWebNewFileBrowser');
 
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     function convertDataShowModal(items: DirectShareItem[]) {
         showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));
     }
 
-    const selectedItemsIds = getSelectedItemsId(uids, selectionControls?.selectedItemIds || []);
-    const selectedItems = selectedItemsIds.map((uid) => getSharedWithMeStoreItem(uid)).filter(isTruthy);
+    const legacySelection = useSelection();
+    const { selectedItemIds: newSelectedItemIds } = useSelectionStore(
+        useShallow((state) => ({
+            selectedItemIds: state.selectedItemIds,
+        }))
+    );
+
+    const selectedItemsIds = getSelectedItemsId(
+        uids,
+        useNewSelectionStore ? Array.from(newSelectedItemIds) : legacySelection?.selectedItemIds || []
+    );
+
+    const selectedItems = selectedItemsIds
+        .map((uid) => useSharedWithMeListingStore.getState().getSharedWithMeItem(uid))
+        .filter(isTruthy);
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {

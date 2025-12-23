@@ -16,7 +16,6 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { SortField } from '../../hooks/util/useSorting';
 import { HeaderCellContent } from './HeaderCellContent';
 import type { CellDefinition, DriveExplorerSort } from './types';
 
@@ -54,10 +53,14 @@ export function GridHeader({
     const isSortable = Boolean(currentSortCell.sortField);
 
     const handleSort = () => {
-        if (isSortable && sort?.onSort && currentSortCell.sortField) {
+        if (isSortable && sort?.onSort && currentSortCell.sortField && currentSortCell.sortConfig) {
             const newDirection =
                 isCurrentSort && sortDirection === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC;
-            sort.onSort(currentSortCell.sortField as SortField, newDirection);
+            sort.onSort({
+                sortField: currentSortCell.sortField,
+                sortConfig: currentSortCell.sortConfig,
+                direction: newDirection,
+            });
         }
     };
 
@@ -144,9 +147,15 @@ export function GridHeader({
                                     <DropdownMenuButton
                                         key={cell.id}
                                         className="flex flex-nowrap text-left"
-                                        onClick={() =>
-                                            sort && cell.sortField && sort.onSort?.(cell.sortField, SORT_DIRECTION.ASC)
-                                        }
+                                        onClick={() => {
+                                            if (sort && cell.sortField && currentSortCell.sortConfig && sort.onSort) {
+                                                sort.onSort({
+                                                    sortField: cell.sortField,
+                                                    sortConfig: currentSortCell.sortConfig,
+                                                    direction: SORT_DIRECTION.ASC,
+                                                });
+                                            }
+                                        }}
                                         aria-current={cell.sortField === sort?.sortBy}
                                     >
                                         {cell.headerText}
