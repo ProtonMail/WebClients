@@ -51,7 +51,7 @@ export const createStorageService = () => {
         setItems: handleStorageError(localStorage.setItems),
         removeItem: (key) => localStorage.removeItem(key).catch(noop),
         removeItems: (keys) => localStorage.removeItems(keys).catch(noop),
-        clear: () => localStorage.clear().catch(noop),
+        clear: (preserveKeys) => localStorage.clear(preserveKeys).catch(noop),
     };
 
     const session: ExtensionStorage<SessionStoreData> = {
