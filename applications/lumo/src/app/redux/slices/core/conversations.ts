@@ -49,7 +49,7 @@ export const pullConversationSuccess = createAction<GetConversationRemote>('lumo
 export const pullConversationFailure = createAction<ConversationId>('lumo/conversation/pullFailure');
 
 export type ConversationMap = Record<ConversationId, Conversation>;
-export const EMPTY_CONVERSATION_MAP = {};
+export const EMPTY_CONVERSATION_MAP: ConversationMap = {};
 const initialState: ConversationMap = EMPTY_CONVERSATION_MAP;
 
 const conversationsReducer = createReducer<ConversationMap>(initialState, (builder) => {
