@@ -17,9 +17,17 @@ interface GetFileDownloader {
 }
 
 interface FileDownloader {
-    downloadToStream: (writable: WritableStream<Uint8Array<ArrayBuffer>>) => {
-        completion: () => Promise<void>;
-    };
+    downloadToStream: (
+        writable: WritableStream<Uint8Array<ArrayBuffer>>,
+        onProgress: (downloadedBytes: number) => void
+    ) => DownloadController;
+}
+
+interface DownloadController {
+    pause: () => void;
+    resume: () => void;
+    completion: () => Promise<void>;
+    isDownloadCompleteWithSignatureIssues: () => boolean;
 }
 
 export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
@@ -49,13 +57,35 @@ export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
 }
 
 export async function downloadContent(drive: GetFileDownloader, nodeUid: string, abortSignal: AbortSignal) {
-    const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
-    const stream = await loadCreateReadableStreamWrapper(readable);
+    const transformStream = new TransformStream<Uint8Array<ArrayBuffer>>();
+    const stream = await loadCreateReadableStreamWrapper(transformStream.readable);
+    const writer = transformStream.writable.getWriter();
+
+    const wrappedWritable = new WritableStream<Uint8Array<ArrayBuffer>>({
+        write: (chunk) => writer.write(chunk),
+        close: () => writer.close(),
+        abort: (reason) => writer.abort(reason),
+    });
 
     const downloader = await drive.getFileDownloader(nodeUid, abortSignal);
-    const controller = downloader.downloadToStream(writable);
-    const contents = await streamToBuffer(stream);
+    const controller = downloader.downloadToStream(wrappedWritable, () => {});
 
-    await controller.completion();
-    return contents;
+    const bufferPromise = streamToBuffer(stream);
+
+    try {
+        await controller.completion();
+        await writer.close();
+    } catch (error) {
+        await writer.abort(error).catch(() => {});
+        throw error;
+    } finally {
+        try {
+            writer.releaseLock();
+        } catch {
+            // Some browser handle releaseLock in a way where it can throw TypeError.
+            // This is fine but as it can cause crash in the logic we hanld it here
+        }
+    }
+
+    return bufferPromise;
 }
