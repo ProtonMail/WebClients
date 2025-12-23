@@ -143,8 +143,8 @@ async function retrieveDocumentContextForProject(
 
     try {
         const searchService = SearchService.get(userId);
-        // Get candidates for intelligent filtering
-        const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 10, 0);
+        // Get candidates for intelligent filtering (use higher limit to allow more relevant docs through)
+        const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 50, 0);
 
         // Filter out zero-score documents, already-retrieved documents, and @mentioned files
         const nonZeroDocs = candidateDocs.filter(doc => {
