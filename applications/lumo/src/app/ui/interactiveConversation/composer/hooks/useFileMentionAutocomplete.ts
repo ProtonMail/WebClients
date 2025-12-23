@@ -12,7 +12,7 @@ import {
     selectAttachments,
     selectAttachmentsBySpaceId,
     selectProvisionalAttachments,
-    selectSpaceById,
+    selectSpaceByIdOptional,
 } from '../../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../../redux/slices/core/attachments';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
@@ -155,13 +155,13 @@ export const useFileMentionAutocomplete = (
     const isGuest = useIsGuest();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
-    const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
+    const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
     const allAttachments = useLumoSelector(selectAttachments);
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
-    const spaceAttachments = useLumoSelector((state) => (spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}));
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
 
     // Drive files state
     const [driveFiles, setDriveFiles] = useState<{ id: string; name: string }[]>([]);
