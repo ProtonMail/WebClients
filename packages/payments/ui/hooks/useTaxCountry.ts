@@ -25,7 +25,7 @@ interface HookProps {
     paymentStatus?: Pick<PaymentStatus, 'CountryCode' | 'State' | 'ZipCode'>;
     zipCodeBackendValid: boolean;
     paymentFacade?: PaymentFacade;
-    previosValidZipCode?: string | null;
+    previousValidZipCode?: string | null;
     telemetryContext: PaymentTelemetryContext;
 }
 
@@ -234,13 +234,13 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             const prevZipCodeValid = prevZipCodeValidRef.current;
             const currentZipCodeValid = props.zipCodeBackendValid;
 
-            if (props.previosValidZipCode && currentZipCodeValid && prevZipCodeValid === false) {
-                setZipCode(props.previosValidZipCode, { skipCallback: true });
+            if (props.previousValidZipCode && currentZipCodeValid && prevZipCodeValid === false) {
+                setZipCode(props.previousValidZipCode, { skipCallback: true });
             }
 
             prevZipCodeValidRef.current = currentZipCodeValid;
         },
-        [props.previosValidZipCode, props.zipCodeBackendValid]
+        [props.previousValidZipCode, props.zipCodeBackendValid]
     );
 
     return {
