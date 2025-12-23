@@ -12,6 +12,7 @@ import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversations } from '../../redux/selectors';
+import type { Space } from '../../types';
 import { sortByDate } from '../../util/date';
 import ChatHistorySkeleton from '../components/ChatHistorySkeleton';
 import { ChatHistoryGuestUserUpsell } from '../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
@@ -30,6 +31,7 @@ interface Props {
  */
 const getVisibleConversations = (
     conversationMap: Record<string, any>,
+    spaceMap: Record<string, Space>,
     isGuest: boolean,
     isGhostChatMode: boolean,
     showProjectConversations: boolean,
@@ -46,17 +48,20 @@ const getVisibleConversations = (
         return activeConversation ? [activeConversation] : [];
     }
 
-    // Regular users see all non-ghost conversations
-    // Optionally filter out project conversations (those with spaceId) based on setting
     return Object.values(conversationMap).filter((conversation) => {
         if (conversation.ghost) return false;
-        if (!showProjectConversations && conversation.spaceId) return false;
+        if (!showProjectConversations) {
+            const space = conversation.spaceId ? spaceMap[conversation.spaceId] : undefined;
+            // Only filter out if the space is explicitly marked as a project
+            if (space?.isProject === true) return false;
+        }
         return true;
     });
 };
 
 export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const conversationMap = useLumoSelector(selectConversations);
+    const spaceMap = useLumoSelector((state) => state.spaces) as Record<string, Space>;
     const { conversationId } = useConversation(); //switch to using react-router-dom parameters
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
@@ -71,6 +76,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
         const conversations = getVisibleConversations(
             conversationMap,
+            spaceMap,
             isGuest,
             isGhostChatMode,
             showProjectConversationsInHistory,
@@ -89,7 +95,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
             noConversationAtAll: sortedConversations.length === 0,
             noSearchMatch: filteredConversations.length === 0 && sortedConversations.length > 0,
         };
-    }, [conversationMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
+    }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
 
     const { today, lastWeek, lastMonth, earlier } = categorizedConversations;
 
