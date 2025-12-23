@@ -121,8 +121,8 @@ const ProjectDetailViewInner = () => {
     const [editedTitle, setEditedTitle] = useState('');
     const titleInputRef = useRef<HTMLInputElement>(null);
 
-    const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
-    const conversations = useLumoSelector((state) => selectConversationsBySpaceId(projectId)(state));
+    const space = useLumoSelector(selectSpaceById(projectId));
+    const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
 
     // Sort conversations by date (most recent first)
@@ -156,7 +156,7 @@ const ProjectDetailViewInner = () => {
         }
     });
 
-    const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
