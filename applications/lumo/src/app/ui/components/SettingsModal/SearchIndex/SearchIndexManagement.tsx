@@ -10,13 +10,15 @@ interface Props {
 
 export const SearchIndexManagement: FunctionComponent<Props> = ({ onReindex, disabled }) => (
     <div className="flex gap-2">
-        {!disabled &&
-            <Button color="norm"
-                    onClick={onReindex}
-                    title={c('Action').t`Re-index all conversations`}>
-                    {c('Action').t`Reindex`}
-            </Button>
-        }
+        <Button 
+            color="norm"
+            onClick={onReindex}
+            disabled={disabled}
+            loading={disabled}
+            title={c('Action').t`Re-index all conversations`}
+        >
+            {c('Action').t`Reindex`}
+        </Button>
     </div>
 );
 
