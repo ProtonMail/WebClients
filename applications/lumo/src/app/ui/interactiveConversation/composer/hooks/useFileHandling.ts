@@ -7,7 +7,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
-import { useDriveSDK } from '../../../../hooks/useDriveSDK';
+import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
@@ -24,14 +24,16 @@ export interface UseFileHandlingProps {
     spaceId?: string;
     /** Optional linked Drive folder - when present, uploads go to this folder */
     linkedDriveFolder?: LinkedDriveFolder;
+    /** Optional Drive upload function - only provided for authenticated users */
+    uploadToDrive?: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
 }
 
-export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder }: UseFileHandlingProps) => {
+export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder, uploadToDrive }: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const fileInputRef = useRef<HTMLInputElement>(null);
     const userId = useLumoSelector((state) => state.user?.value?.ID);
-    const { uploadFile: uploadToDrive } = useDriveSDK();
+    const isGuest = useIsGuest();
 
     const handleFileProcessing = useCallback(
         async (file: File) => {
@@ -48,8 +50,8 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, lin
                     return;
                 }
 
-                // If a Drive folder is linked, upload directly to Drive
-                if (linkedDriveFolder && spaceId && userId) {
+                // If a Drive folder is linked, upload directly to Drive (only for authenticated users with Drive access)
+                if (linkedDriveFolder && spaceId && userId && uploadToDrive && !isGuest) {
                     try {
                         console.log(`Uploading file to linked Drive folder: ${file.name}`);
                         createNotification({
@@ -188,7 +190,7 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, lin
                 });
             }
         },
-        [dispatch, createNotification, messageChain, spaceId, userId, linkedDriveFolder, uploadToDrive]
+        [dispatch, createNotification, messageChain, spaceId, userId, linkedDriveFolder, uploadToDrive, isGuest]
     );
 
     const handleFileInputChange = useCallback(
