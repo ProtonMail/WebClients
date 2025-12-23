@@ -450,7 +450,8 @@ export function sendMessage({
                 role: Role.User,
             })
         );
-        dispatch(pushMessageRequest({ id: userMessage.id }));
+        // NOTE: Don't push the user message here - it will be pushed in fetchAssistantResponse
+        // after RAG attachments are added. This ensures attachments are included in the push.
 
         // Define the sequence of message the assistant will respond to.
         // Obviously this must include the new user message containing the latest request.
@@ -999,6 +1000,10 @@ export async function fetchAssistantResponse({
                 // Note: Don't push to server yet - the message is still being generated
             }
         });
+    } else if (lastUserMessage) {
+        // No RAG attachments, but still need to push the user message
+        // (it wasn't pushed earlier to allow for RAG attachments to be added first)
+        dispatch(pushMessageRequest({ id: lastUserMessage.id }));
     }
 
     const turns = getFilteredTurns(updatedLinearChain, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);

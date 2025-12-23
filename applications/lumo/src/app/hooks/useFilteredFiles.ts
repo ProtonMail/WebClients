@@ -35,9 +35,25 @@ export const useFilteredFiles = (
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
 
+    // Build a lookup map that includes both Redux attachments AND shallow attachments from messages
+    // This is important because auto-retrieved Drive attachments are not pushed to server,
+    // so on synced browsers they only exist as shallow attachments in the message chain
+    const combinedAttachments = useMemo(() => {
+        const combined: Record<string, Attachment> = {};
+        // First add shallow attachments from message chain
+        messageChain.forEach((msg) => {
+            msg.attachments?.forEach((att) => {
+                combined[att.id] = att as Attachment;
+            });
+        });
+        // Then overlay with Redux attachments (which have full data if available)
+        Object.assign(combined, allAttachments);
+        return combined;
+    }, [messageChain, allAttachments]);
+
     // Helper to get full attachment from shallow attachment reference
     const getFullAttachmentFromShallow = (shallowAttachment: any) => {
-        return allAttachments[shallowAttachment.id];
+        return combinedAttachments[shallowAttachment.id];
     };
 
     // Get files to display based on filtering
@@ -77,7 +93,9 @@ export const useFilteredFiles = (
         if (filterMessage.role === 'assistant' && filterMessage.contextFiles) {
             return filterMessage.contextFiles
                 .map((attachmentId) => {
-                    const fullAttachment = allAttachments[attachmentId];
+                    // Use combinedAttachments to find attachments even if not in Redux
+                    // (auto-retrieved Drive attachments are only in message chain on synced browsers)
+                    const fullAttachment = combinedAttachments[attachmentId];
                     if (!fullAttachment) return null;
 
                     // Find which message this attachment belongs to for display purposes
@@ -123,7 +141,7 @@ export const useFilteredFiles = (
         });
 
         return files.filter((f) => f != null && isLinkedAttachment(f));
-    }, [messageChain, allAttachments, filterMessage]);
+    }, [messageChain, combinedAttachments, filterMessage]);
 
     // Check if a file is excluded based on context filters
     const isFileExcluded = (file: any) => {
