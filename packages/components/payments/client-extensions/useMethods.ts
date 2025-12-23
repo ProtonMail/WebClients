@@ -14,7 +14,7 @@ export interface ViewPaymentMethod extends AvailablePaymentMethod {
     readonly text: string;
 }
 
-interface ClientMethodsHook extends MethodsHook {
+export interface ClientMethodsHook extends MethodsHook {
     usedMethods: ViewPaymentMethod[];
     newMethods: ViewPaymentMethod[];
     allMethods: ViewPaymentMethod[];

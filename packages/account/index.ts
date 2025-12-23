@@ -2,6 +2,7 @@ export * from './init';
 export { authDevicesReducer } from './sso/authDevices';
 export { memberAuthDevicesReducer } from './sso/memberAuthDevices';
 export * from './apiStatus';
+export * from './appName';
 export * from './addresses';
 export * from './addressKeys';
 export * from './addressKeys/listener';
