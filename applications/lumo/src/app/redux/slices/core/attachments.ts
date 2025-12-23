@@ -54,7 +54,7 @@ export const pullAttachmentSuccess = createAction<RemoteAttachment>('lumo/attach
 export const pullAttachmentFailure = createAction<AttachmentId>('lumo/attachment/pullFailure');
 
 export type AttachmentMap = Record<AttachmentId, Attachment>;
-export const EMPTY_ATTACHMENT_MAP = {};
+export const EMPTY_ATTACHMENT_MAP: AttachmentMap = {};
 export const EMPTY_ATTACHMENT_ARRAY = [];
 
 const initialState: AttachmentMap = EMPTY_ATTACHMENT_MAP;
