@@ -20,6 +20,8 @@ import { selectAttachments, selectContextFilters, selectSpaceById } from '../../
 import { addContextFilter, removeContextFilter } from '../../../../redux/slices/contextFilters';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
+import { SearchService } from '../../../../services/search/searchService';
+import type { DriveDocument } from '../../../../types/documents';
 import type { Attachment, Message } from '../../../../types';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
 import { DriveBrowser } from '../DriveBrowser';
@@ -76,6 +78,9 @@ export const FilesPanel = ({
     // Get space to check for linked Drive folder
     const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
     const linkedDriveFolder = space?.linkedDriveFolder;
+
+    // Get user for search service
+    const user = useLumoSelector((state) => state.user?.value);
 
     // Get all attachments from Redux to find auto-retrieved ones
     const allAttachmentsState = useLumoSelector(selectAttachments);
@@ -190,6 +195,32 @@ export const FilesPanel = ({
                         text: c('collider_2025: Success').t`File added to knowledge base: ${result.fileName}`,
                         type: 'success',
                     });
+
+                    // If we're in a project context, also index the file for RAG search
+                    if (spaceId && result.success && result.attachmentId && result.markdown) {
+                        try {
+                            const userId = user?.ID;
+                            if (userId) {
+                                const searchService = SearchService.get(userId);
+                                const document: DriveDocument = {
+                                    id: result.attachmentId,
+                                    name: fileName,
+                                    content: result.markdown,
+                                    mimeType: mimeType,
+                                    size: content.length,
+                                    modifiedTime: Date.now(),
+                                    folderId: spaceId,
+                                    folderPath: 'Uploaded Files',
+                                    spaceId,
+                                };
+                                await searchService.indexDocuments([document]);
+                                console.log(`[FilesPanel] Indexed file for RAG: ${fileName}`);
+                            }
+                        } catch (indexError) {
+                            console.warn('[FilesPanel] Failed to index file for RAG:', indexError);
+                            // Don't fail the upload if indexing fails
+                        }
+                    }
                 }
             } catch (error) {
                 console.error('Failed to process downloaded Drive file:', error);
@@ -199,7 +230,7 @@ export const FilesPanel = ({
                 });
             }
         },
-        [dispatch, createNotification]
+        [dispatch, createNotification, spaceId, user]
     );
 
     const handleDriveError = React.useCallback((error: Error) => {
@@ -382,10 +413,10 @@ export const FilesPanel = ({
                             {onClearFilter && (
                                 <Button
                                     size="small"
-                                    shape="ghost"
+                                    shape="solid"
                                     icon={true}
                                     onClick={onClearFilter}
-                                    className="text-info hover:text-info-dark p-1 -mr-1 shrink-0 inline-flex items-center gap-2"
+                                    className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
                                     title={c('collider_2025: Info').t`Show all files`}
                                 >
                                     <Icon name="cross" size={3} />
