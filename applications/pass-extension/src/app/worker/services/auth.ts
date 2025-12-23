@@ -134,7 +134,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             void ctx.service.settings.clear();
             void ctx.service.storage.session.clear();
-            void ctx.service.storage.local.clear();
+            void ctx.service.storage.local.clear({ preserve: ['features'] });
             void fileStorage.clearAll();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
