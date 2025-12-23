@@ -21,9 +21,9 @@ import { MAX_ASSET_SIZE } from '../../constants';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
-import { locallyDeleteAssetFromLocalRequest } from '../../redux/sagas/assets';
-import { selectAssetsBySpaceId, selectSpaceById } from '../../redux/selectors';
-import { handleSpaceAssetFileAsync } from '../../services/files';
+import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selectors';
+import { locallyDeleteAttachmentFromLocalRequest } from '../../redux/slices/core/attachments';
+import { handleSpaceAttachmentFileAsync } from '../../services/files';
 import type { Attachment, ProjectSpace } from '../../types';
 import { DriveBrowser, type DriveBrowserHandle } from '../components/Files/DriveBrowser/DriveBrowser';
 import { type UploadProgress, UploadProgressOverlay } from '../components/Files/DriveBrowser/UploadProgressOverlay';
@@ -32,9 +32,6 @@ import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFi
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 
 import './ProjectFilesPanel.scss';
-
-// Type alias for backwards compatibility
-type Asset = Attachment;
 
 interface ProjectFilesPanelProps {
     projectId: string;
@@ -47,7 +44,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const driveBrowserRef = useRef<DriveBrowserHandle>(null);
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
-    const [fileToView, setFileToView] = useState<Asset | null>(null);
+    const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const linkDriveFolderModal = useModalStateObject();
     const [createFolderModal, setCreateFolderModalOpen] = useState(false);
     const [removeAllModal, setRemoveAllModalOpen] = useState(false);
@@ -62,10 +59,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
 
-    // Get space assets (persistent files) - only if no Drive folder is linked
+    // Get space attachments (persistent files) - only if no Drive folder is linked
     // Filter out auto-retrieved Drive files - those are indexed, not uploaded
-    const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
-    const files = Object.values(spaceAssets).filter((asset) => !asset.error && !asset.autoRetrieved);
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
+    const files = Object.values(spaceAttachments).filter(
+        (attachment) => !attachment.error && !attachment.autoRetrieved
+    );
 
     const handleCreateFolder = useCallback(async () => {
         if (!linkedDriveFolder || !folderName.trim()) {
@@ -117,7 +116,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
             return;
         }
 
-        // Process each file as a space asset (when no Drive folder is linked)
+        // Process each file as a space attachment (when no Drive folder is linked)
         for (const file of selectedFiles) {
             try {
                 // Check file size limit for direct uploads
@@ -133,12 +132,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                     continue; // Skip this file and continue with the next one
                 }
 
-                console.log('Processing file as space asset:', file.name, projectId);
+                console.log('Processing file as space attachment:', file.name, projectId);
 
                 // Show processing indicator
                 setUploadProgress({ fileName: file.name, progress: 0, isProcessing: true });
 
-                const result = await dispatch(handleSpaceAssetFileAsync(file, projectId));
+                const result = await dispatch(handleSpaceAttachmentFileAsync(file, projectId));
 
                 // Clear progress indicator
                 setUploadProgress(null);
@@ -185,17 +184,17 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     const handleDriveFileSelect = useCallback(
         async (file: any, content: Uint8Array<ArrayBuffer>) => {
-            // When folder is linked, files are automatically available - don't create assets
+            // When folder is linked, files are automatically available - don't create attachments
             if (linkedDriveFolder) {
                 // Files in linked folder are automatically active, no need to process
                 return;
             }
 
-            // When a file is selected from Drive (and folder is not linked), process it as a space asset
+            // When a file is selected from Drive (and folder is not linked), process it as a space attachment
             try {
                 const blob = new Blob([content]);
                 const fileObj = new File([blob], file.name, { type: file.mimeType || 'application/octet-stream' });
-                const result = await dispatch(handleSpaceAssetFileAsync(fileObj, projectId));
+                const result = await dispatch(handleSpaceAttachmentFileAsync(fileObj, projectId));
 
                 if (result.success) {
                     createNotification({
@@ -214,8 +213,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         [dispatch, projectId, createNotification, linkedDriveFolder]
     );
 
-    const handleViewFile = (asset: Asset) => {
-        setFileToView(asset);
+    const handleViewFile = (attachment: Attachment) => {
+        setFileToView(attachment);
     };
 
     const handleCloseFileView = () => {
@@ -223,7 +222,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     };
 
     const handleRemoveFile = (id: string) => {
-        dispatch(locallyDeleteAssetFromLocalRequest(id));
+        dispatch(locallyDeleteAttachmentFromLocalRequest(id));
         // Also remove from search index
         if (searchService) {
             searchService.removeDocument(id);
@@ -241,7 +240,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const handleConfirmRemoveAllFiles = () => {
         // Remove each file individually to trigger proper cleanup
         for (const file of files) {
-            dispatch(locallyDeleteAssetFromLocalRequest(file.id));
+            dispatch(locallyDeleteAttachmentFromLocalRequest(file.id));
         }
         // Also clear from search index
         if (searchService) {

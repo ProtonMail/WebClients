@@ -9,8 +9,8 @@ import { getApproximateTokenCount } from '../../../../llm/tokenizer';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import {
-    selectAssetsBySpaceId,
     selectAttachments,
+    selectAttachmentsBySpaceId,
     selectProvisionalAttachments,
     selectSpaceById,
 } from '../../../../redux/selectors';
@@ -52,20 +52,21 @@ const INITIAL_MENTION_STATE: FileMentionState = {
 };
 
 /**
- * Computes the list of available files from space assets, attachments, and drive files.
+ * Computes the list of available files from space attachments and drive files.
  */
 function computeFileList(
-    spaceAssets: Record<string, any>,
+    spaceAttachments: Record<string, any>,
     driveFiles: { id: string; name: string }[],
     allAttachments: Record<string, Attachment>,
     provisionalAttachments: Attachment[]
 ): FileItem[] {
-    // Get local files from space assets (project knowledge base only)
+    // Get local files from space attachments (project knowledge base only)
     // We don't include spaceAttachments because those are files used in conversations
     // that may not be in the project's knowledge base
     // Exclude auto-retrieved files - they're shown via driveFiles from Drive indexing
-    const localFiles: FileItem[] = Object.values(spaceAssets)
-        .filter((asset) => asset && !asset.error && !asset.processing && !asset.autoRetrieved)
+    const localFiles: FileItem[] = Object.values(spaceAttachments)
+        // todo write a selector on the attachments slide instead
+        .filter((attachment) => attachment && !attachment.error && !attachment.processing && !attachment.autoRetrieved)
         .map((file) => {
             const attachment = allAttachments[file.id];
             return {
@@ -73,7 +74,7 @@ function computeFileList(
                 name: file.filename,
                 source: 'local' as const,
                 attachment,
-                // Use mimeType from the file (asset) directly, fallback to attachment
+                // Use mimeType from the file (attachment) directly, fallback to attachment
                 mimeType: file.mimeType || attachment?.mimeType,
             };
         });
@@ -120,11 +121,11 @@ function filterFiles(files: FileItem[], query: string, limit: number = 10): File
  * Creates a stable cache key from the file-related dependencies
  */
 function createFileCacheKey(
-    spaceAssets: Record<string, any>,
+    spaceAttachments: Record<string, any>,
     driveFiles: { id: string; name: string }[],
     provisionalAttachments: Attachment[]
 ): string {
-    const assetIds = Object.keys(spaceAssets).sort().join(',');
+    const attachmentIds = Object.keys(spaceAttachments).sort().join(',');
     const driveIds = driveFiles
         .map((f) => `${f.id}:${f.name}`)
         .sort()
@@ -133,7 +134,7 @@ function createFileCacheKey(
         .map((att) => att.filename.toLowerCase())
         .sort()
         .join(',');
-    return `${assetIds}|${driveIds}|${provisionalNames}`;
+    return `${attachmentIds}|${driveIds}|${provisionalNames}`;
 }
 
 export const useFileMentionAutocomplete = (
@@ -160,7 +161,7 @@ export const useFileMentionAutocomplete = (
     const allAttachments = useLumoSelector(selectAttachments);
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
-    const spaceAssets = useLumoSelector((state) => (spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}));
+    const spaceAttachments = useLumoSelector((state) => (spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}));
 
     // Drive files state
     const [driveFiles, setDriveFiles] = useState<{ id: string; name: string }[]>([]);
@@ -241,16 +242,16 @@ export const useFileMentionAutocomplete = (
 
     // Compute files with manual caching
     const getAllFiles = useCallback((): FileItem[] => {
-        const cacheKey = createFileCacheKey(spaceAssets, driveFiles, provisionalAttachments);
+        const cacheKey = createFileCacheKey(spaceAttachments, driveFiles, provisionalAttachments);
 
         if (cacheKey === filesCacheRef.current.key) {
             return filesCacheRef.current.files;
         }
 
-        const files = computeFileList(spaceAssets, driveFiles, allAttachments, provisionalAttachments);
+        const files = computeFileList(spaceAttachments, driveFiles, allAttachments, provisionalAttachments);
         filesCacheRef.current = { key: cacheKey, files: files.length === 0 ? EMPTY_FILES : files };
         return filesCacheRef.current.files;
-    }, [spaceAssets, driveFiles, allAttachments, provisionalAttachments]);
+    }, [spaceAttachments, driveFiles, allAttachments, provisionalAttachments]);
 
     // Detect @ mentions in editor
     useEffect(() => {
@@ -392,7 +393,7 @@ export const useFileMentionAutocomplete = (
 
             if (file.source === 'local' && file.attachment) {
                 // For project files, don't create a new attachment - just insert the @mention
-                // The file already exists in space assets and will be resolved by fileResolver in sendMessage
+                // The file already exists in space attachments and will be resolved by fileResolver in sendMessage
                 // This prevents duplicates and avoids showing thumbnails for project file @mentions
                 editor
                     .chain()
