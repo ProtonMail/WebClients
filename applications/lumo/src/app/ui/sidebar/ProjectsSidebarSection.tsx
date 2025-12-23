@@ -229,22 +229,6 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                 <span className="flex-1 text-ellipsis text-sm" title={project.name}>
                                     {project.name}
                                 </span>
-                                {(project.fileCount !== undefined || project.conversationCount !== undefined) && (
-                                    <div className="flex items-center gap-1 text-xs color-weak flex-shrink-0">
-                                        {project.fileCount !== undefined && project.fileCount > 0 && (
-                                            <span className="flex items-center gap-0.5">
-                                                <Icon name="paper-clip" size={3} />
-                                                {project.fileCount}
-                                            </span>
-                                        )}
-                                        {project.conversationCount !== undefined && project.conversationCount > 0 && (
-                                            <span className="flex items-center gap-0.5">
-                                                <Icon name="speech-bubble" size={3} />
-                                                {project.conversationCount}
-                                            </span>
-                                        )}
-                                    </div>
-                                )}
                             </LumoLink>
                         );
                     })}
