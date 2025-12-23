@@ -4,7 +4,7 @@ import type { UserState } from '@proton/account';
 
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { Attachment, Conversation, Message, Space } from '../types';
-import { type AttachmentId, type ConversationId, type MessageId, Role, type SpaceId } from '../types';
+import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
@@ -15,7 +15,14 @@ import type { LumoState, LumoState as RootState } from './store';
 export type LumoSelector<T> = Selector<LumoState, T>;
 
 /*
- * Selectors specific to this app's state.
+ * Selectors from the shared Proton state.
+ */
+
+export const selectDisplayName = (state: UserState) => state.user.value?.DisplayName;
+export const selectDisplayNameInitials = (state: UserState) => getInitials(selectDisplayName(state));
+
+/*
+ * Selectors specific to Lumo.
  */
 
 export const selectMessages = (state: RootState) => state.messages;
@@ -86,14 +93,6 @@ export const selectRemoteIdFromLocal =
     (state: LumoState): RemoteId | undefined =>
         state.idmap.local2remote[type][localId];
 
-/*
- * Selectors from the shared Proton state.
- */
-
-export const selectDisplayName = (state: UserState) => state.user.value?.DisplayName;
-export const selectDisplayNameInitials = (state: UserState) => getInitials(selectDisplayName(state));
-
-// Context filters selectors
 export const selectContextFilters = (state: any) => state.contextFilters.filters;
 
 export const selectContextFiltersForMessage = (messageId: string) => (state: any) => {
