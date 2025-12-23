@@ -250,7 +250,7 @@ const AccountStepPayment = ({
         onBillingAddressChange,
         paymentStatus: paymentFacade.paymentStatus,
         zipCodeBackendValid: subscriptionData.zipCodeValid,
-        previosValidZipCode: subscriptionData.billingAddress.ZipCode,
+        previousValidZipCode: subscriptionData.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext,
     });
