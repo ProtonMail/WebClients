@@ -1505,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "La clé est fiable"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2012,9 +2013,6 @@
       "Billed at ${ amount } once": [
         "Facturé ${ amount } en une fois"
       ],
-      "forever": [
-        "pour toujours"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
       ]
@@ -2045,11 +2043,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Offres Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2091,36 +2084,6 @@
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Aidez vos proches à rejoindre la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Rejoignez la révolution du respect de la vie privée avec nos meilleures offres groupées, maintenant à -50 % !"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Économisez ${ savedAmount } grâce à notre meilleure offre à durée limitée !"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement de 2 ans et économisez ${ savedAmount } !"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ savedAmount } !"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Offrez à votre tribu une protection numérique complète."
       ]
     },
     "BF2025: Tooltip": {
@@ -2634,6 +2597,15 @@
       "Basic chat history": [
         "Historique de chat basique"
       ],
+      "Built and based in Europe": [
+        "Développé et basé en Europe"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformité aux réglementations sur la protection des données"
+      ],
+      "Data never used for AI training": [
+        "Les données ne sont jamais utilisées pour l'entraînement de l'IA"
+      ],
       "Full chat history with search": [
         "Historique complet des discussions avec recherche"
       ],
@@ -2645,6 +2617,9 @@
       ],
       "Limited favorites": [
         "Favoris limités"
+      ],
+      "Strict no-logs policy": [
+        "Politique stricte de non-journalisation (no log)"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -2660,6 +2635,9 @@
       ],
       "Web search access": [
         "Accès à la recherche web"
+      ],
+      "Zero-access encryption": [
+        "Chiffrement zéro accès"
       ]
     },
     "collider_2025: Info": {
@@ -7402,8 +7380,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images."
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9132,6 +9109,9 @@
       "/month": [
         "/mois"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
+      ],
       "Account holder": [
         "Titulaire du compte"
       ],
@@ -9278,6 +9258,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Command line interface (CLI)": [
+        "Interface de ligne de commande (CLI)"
       ],
       "Company": [
         "Entreprise"

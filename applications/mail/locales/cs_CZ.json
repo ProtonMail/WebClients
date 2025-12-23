@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2034,9 +2037,6 @@
       "Billed at ${ amount } once": [
         "Účtováno ${ amount } jednorázově"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
@@ -2071,11 +2071,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Výprodej Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2117,36 +2112,6 @@
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Dopřejte svým blízkým kompletní digitální ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -2664,6 +2629,15 @@
       "Basic chat history": [
         "Základní historie konverzací"
       ],
+      "Built and based in Europe": [
+        "Vyvinuto a umístěno v Evropě"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržování předpisů o ochraně osobních údajů"
+      ],
+      "Data never used for AI training": [
+        "Data nejsou nikdy použita pro výcvik AI"
+      ],
       "Full chat history with search": [
         "Úplná historie konverzací s vyhledáním"
       ],
@@ -2675,6 +2649,9 @@
       ],
       "Limited favorites": [
         "Omezený počet oblíbených"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
@@ -2690,6 +2667,9 @@
       ],
       "Web search access": [
         "Přístup k vyhledávání na webu"
+      ],
+      "Zero-access encryption": [
+        "Šifrování s nulovým přístupem"
       ]
     },
     "collider_2025: Info": {
@@ -5467,6 +5447,12 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
+      "View the invitation": [
+        "Zobrazit pozvánku",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
       ],
@@ -7630,10 +7616,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9424,6 +9407,9 @@
       "/month": [
         "/měsíčně"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
+      ],
       "Account holder": [
         "Majitel účtu"
       ],
@@ -9570,6 +9556,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhraní příkazového řádku (CLI)"
       ],
       "Company": [
         "Společnost"
