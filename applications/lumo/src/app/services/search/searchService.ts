@@ -687,6 +687,86 @@ export class SearchService {
     }
 
     /**
+     * Reindex uploaded assets (non-Drive files) for search.
+     * This should be called on app initialization to ensure uploaded project files
+     * are indexed for RAG retrieval.
+     * 
+     * @param assets - Array of attachments with spaceId (project assets)
+     * @returns Object with success status and count of indexed assets
+     */
+    async reindexUploadedAssets(
+        assets: Array<{
+            id: string;
+            spaceId?: string;
+            filename: string;
+            mimeType?: string;
+            rawBytes?: number;
+            markdown?: string;
+            uploadedAt: string;
+            driveNodeId?: string;
+        }>
+    ): Promise<{ success: boolean; indexed: number }> {
+        if (this.userId && !this.manifestReady) {
+            this.manifestReady = this.loadManifest();
+        }
+        if (this.manifestReady) {
+            await this.manifestReady;
+        }
+
+        // Filter to only project assets (have spaceId, have markdown, not from Drive)
+        const projectAssets = assets.filter(
+            (asset) => asset.spaceId && asset.markdown && !asset.driveNodeId
+        );
+
+        if (projectAssets.length === 0) {
+            console.log('[SearchService] No uploaded assets to reindex');
+            return { success: true, indexed: 0 };
+        }
+
+        console.log(`[SearchService] Reindexing ${projectAssets.length} uploaded assets`);
+
+        let indexed = 0;
+        for (const asset of projectAssets) {
+            try {
+                // Check if this asset is already indexed
+                const existingDoc = this.driveDocuments.find(
+                    (doc) => doc.id === asset.id || doc.parentDocumentId === asset.id
+                );
+
+                if (existingDoc) {
+                    console.log(`[SearchService] Asset ${asset.id} already indexed, skipping`);
+                    continue;
+                }
+
+                // Create a DriveDocument from the asset
+                const document: DriveDocument = {
+                    id: asset.id,
+                    name: asset.filename,
+                    content: asset.markdown!,
+                    mimeType: asset.mimeType || 'application/octet-stream',
+                    size: asset.rawBytes || 0,
+                    modifiedTime: new Date(asset.uploadedAt).getTime(),
+                    folderId: asset.spaceId!, // Use spaceId as the folder
+                    folderPath: 'Uploaded Files', // Virtual folder path for uploaded files
+                    spaceId: asset.spaceId!,
+                };
+
+                // Index the document (will chunk if large)
+                const result = await this.indexDocuments([document]);
+                if (result.success) {
+                    indexed++;
+                    console.log(`[SearchService] Indexed uploaded asset: ${asset.filename}`);
+                }
+            } catch (error) {
+                console.warn(`[SearchService] Failed to index asset ${asset.id}:`, error);
+            }
+        }
+
+        console.log(`[SearchService] Finished reindexing: ${indexed}/${projectAssets.length} assets indexed`);
+        return { success: true, indexed };
+    }
+
+    /**
      * Get a document by its ID (nodeUid for Drive files)
      */
     getDocumentById(documentId: string): DriveDocument | null {
