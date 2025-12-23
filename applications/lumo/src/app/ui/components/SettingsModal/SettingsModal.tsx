@@ -8,7 +8,7 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, SettingsLink, Toggle, useConfig } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';
@@ -18,7 +18,6 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
-import { useLumoUserSettings } from '../../../hooks/useLumoUserSettings';
 import { useMessageSearch } from '../../../hooks/useMessageSearch';
 import { DbApi } from '../../../indexedDb/db';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -166,8 +165,6 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
     const [user] = useUser();
     const userId = user?.ID;
-    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const showProjectChatsInHistory = lumoUserSettings.showProjectChatsInHistory ?? true;
 
     // Index management state
     const conversations = useLumoSelector(selectConversations);
@@ -242,28 +239,6 @@ const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?
                     />
                     <LumoThemeButton />
                 </div>
-            )}
-
-            {/* Project chats in history - only for logged in users */}
-            {!isGuest && (
-                <SettingsSectionItem
-                    icon="grid-2"
-                    text={c('collider_2025: Title').t`Show project chats in history`}
-                    subtext={c('collider_2025: Description').t`Display chats from projects in the history sidebar`}
-                    button={
-                        <Toggle
-                            id="show-project-chats-toggle"
-                            checked={showProjectChatsInHistory}
-                            className={'bg-weak'}
-                            onChange={(e) =>
-                                updateSettings({
-                                    showProjectChatsInHistory: e.target.checked,
-                                    _autoSave: true,
-                                })
-                            }
-                        />
-                    }
-                />
             )}
 
             {/* Search Index Management - only for logged in users */}
