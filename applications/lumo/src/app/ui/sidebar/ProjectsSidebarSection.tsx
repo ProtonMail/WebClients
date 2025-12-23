@@ -34,31 +34,24 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
 
-    // Collapse Projects section when sidebar starts collapsing, expand when sidebar expands
-    // On mobile, expand when sidebar is visible (overlay mode)
     useEffect(() => {
         if (isSmallScreen) {
-            // On mobile, expand when sidebar is visible
             setIsExpanded(isVisible);
         } else if (isCollapsed) {
-            // Collapse Projects section immediately when sidebar starts collapsing
             setIsExpanded(false);
         } else {
-            // Expand Projects section after a short delay when sidebar expands
             const timer = setTimeout(() => {
                 setIsExpanded(true);
-            }, 200); // Delay to allow sidebar expansion animation to start
+            }, 200);
             return () => clearTimeout(timer);
         }
     }, [isCollapsed, isVisible, isSmallScreen]);
 
-    // Determine if we're currently viewing a project
     const currentProjectId = useMemo(() => {
         const match = location.pathname.match(/^\/projects\/([^/]+)/);
         return match ? match[1] : null;
     }, [location.pathname]);
 
-    // Determine if we're on the projects list page
     const isProjectsPage = location.pathname === '/projects';
 
     const handleToggle = (e: React.MouseEvent) => {
@@ -68,7 +61,6 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
 
     const handleProjectsHeaderClick = () => {
         if (isGuest) {
-            // For guests, always navigate to projects page
             if (onItemClick) {
                 onItemClick();
             }
@@ -77,10 +69,8 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
         }
 
         if (isCollapsed) {
-            // When collapsed, expand the sidebar
             toggle();
         } else {
-            // When expanded, navigate to projects page
             if (onItemClick) {
                 onItemClick();
             }
@@ -97,7 +87,6 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
 
     const handleCreateProject = () => {
         if (isGuest) {
-            // For guests, navigate to projects page which will show sign-in prompt
             if (onItemClick) {
                 onItemClick();
             }
@@ -105,7 +94,6 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             return;
         }
 
-        // Check project limit for non-Plus users
         if (!hasLumoPlus && projects.length >= 1) {
             projectLimitModal.openModal(true);
             return;
@@ -229,9 +217,9 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                 key={project.id}
                                 to={`/projects/${project.id}`}
                                 className={clsx(
-                                    'project-sidebar-item',
+                                    'project-sidebar-item navigation-link',
                                     isSelected && 'is-active',
-                                    'flex items-center gap-2 px-3 py-2 rounded-md hover:bg-weak transition-colors'
+                                    'flex items-center gap-2 px-3 py-2 rounded-md transition-colors'
                                 )}
                                 onClick={onItemClick}
                             >
@@ -245,13 +233,13 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                     <div className="flex items-center gap-1 text-xs color-weak flex-shrink-0">
                                         {project.fileCount !== undefined && project.fileCount > 0 && (
                                             <span className="flex items-center gap-0.5">
-                                                <Icon name="paper-clip" size={2.5} />
+                                                <Icon name="paper-clip" size={3} />
                                                 {project.fileCount}
                                             </span>
                                         )}
                                         {project.conversationCount !== undefined && project.conversationCount > 0 && (
                                             <span className="flex items-center gap-0.5">
-                                                <Icon name="speech-bubble" size={2.5} />
+                                                <Icon name="speech-bubble" size={3} />
                                                 {project.conversationCount}
                                             </span>
                                         )}

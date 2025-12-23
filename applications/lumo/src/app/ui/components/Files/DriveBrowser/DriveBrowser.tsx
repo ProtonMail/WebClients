@@ -11,7 +11,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_FILE_SIZE } from '../../../../constants';
+import { MAX_ASSET_SIZE, MAX_FILE_SIZE } from '../../../../constants';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
@@ -244,15 +244,30 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     return;
                 }
 
+                // For adding files to KB (not linked folder mode), use asset size limit
+                // Linked folders can handle larger files since they're indexed directly
+                const sizeLimit = isLinkedFolder ? MAX_FILE_SIZE : MAX_ASSET_SIZE;
+                
                 // Check file size limit before downloading
-                if (file.size && file.size > MAX_FILE_SIZE) {
-                    const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                if (file.size && file.size > sizeLimit) {
+                    const maxSizeFormatted = humanSize({ bytes: sizeLimit, unit: 'MB', fraction: 0 });
                     const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
-                    createNotification({
-                        text: c('collider_2025: Error')
-                            .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
-                        type: 'error',
-                    });
+                    
+                    if (!isLinkedFolder) {
+                        // Suggest linking a Drive folder for large files
+                        createNotification({
+                            text: c('collider_2025: Error')
+                                .t`File "${file.name}" (${fileSizeFormatted}) exceeds the ${maxSizeFormatted} limit. Link a Drive folder to your project to work with larger files.`,
+                            type: 'error',
+                            expiration: 8000,
+                        });
+                    } else {
+                        createNotification({
+                            text: c('collider_2025: Error')
+                                .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                            type: 'error',
+                        });
+                    }
                     return;
                 }
 
@@ -265,8 +280,8 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     });
 
                     // Final size check after download (fallback validation)
-                    if (data.byteLength > MAX_FILE_SIZE) {
-                        const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                    if (data.byteLength > sizeLimit) {
+                        const maxSizeFormatted = humanSize({ bytes: sizeLimit, unit: 'MB', fraction: 0 });
                         const fileSizeFormatted = humanSize({ bytes: data.byteLength, unit: 'MB', fraction: 1 });
                         createNotification({
                             text: c('collider_2025: Error')
@@ -285,7 +300,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     setDownloadProgress(null);
                 }
             },
-            [downloadFile, onFileSelect, onError, createNotification]
+            [downloadFile, onFileSelect, onError, createNotification, isLinkedFolder]
         );
 
         const handleBreadcrumbClick = useCallback(
