@@ -14,7 +14,6 @@ import {
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -289,9 +288,20 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                     <div className="project-files-section-header">
                         <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
                         <div className="flex items-center gap-1">
-                            {!linkedDriveFolder && files.length !== 0 && (
+                            {/* Show upload and trash buttons when files exist and no Drive folder */}
+                            {!linkedDriveFolder && files.length > 0 && (
                                 <>
                                     <Button
+                                        icon
+                                        shape="ghost"
+                                        size="small"
+                                        onClick={handleAddFiles}
+                                        title={c('collider_2025:Action').t`Upload files`}
+                                    >
+                                        <Icon name="arrow-up-line" size={4} />
+                                    </Button>
+                                    <Button
+                                        icon
                                         shape="ghost"
                                         size="small"
                                         onClick={handleRemoveAllFilesClick}
@@ -300,17 +310,9 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                     >
                                         <Icon name="trash" size={4} />
                                     </Button>
-                                    <Button
-                                        shape="ghost"
-                                        size="small"
-                                        onClick={handleAddFiles}
-                                        className="project-files-add-header-button"
-                                        title={c('collider_2025:Action').t`Add files`}
-                                    >
-                                        <Icon name="arrow-up-line" size={4} />
-                                    </Button>
                                 </>
                             )}
+                            {/* Settings button for linked Drive folder */}
                             {linkedDriveFolder && (
                                 <Button
                                     icon
@@ -324,7 +326,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             )}
                         </div>
                     </div>
-                    <div className="project-files-section-content files-section flex-1">
+                    <div className="project-files-section-content bg-weak files-section flex-1">
                         {/* Upload progress overlay */}
                         {uploadProgress && (
                             <div className="project-files-progress-overlay">
@@ -384,52 +386,49 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                 />
                             </div>
                         ) : files.length === 0 ? (
-                            <div className="project-files-empty">
-                                <div className="project-files-options">
-                                    <button className="project-files-option" onClick={handleAddFiles}>
-                                        <Icon name="paper-clip" size={5} />
-                                        <div className="project-files-option-content">
-                                            <span className="project-files-option-text">
-                                                {c('collider_2025:Button').t`Add files`}
-                                            </span>
-                                            <span className="project-files-option-subtext">
-                                                {c('collider_2025:Info')
-                                                    .t`Load files to be used by ${LUMO_SHORT_APP_NAME} in answering all your questions`}
-                                            </span>
-                                        </div>
-                                    </button>
-                                    <button
-                                        className="project-files-option"
-                                        onClick={() => linkDriveFolderModal.openModal(true)}
+                            /* Empty state with upload options */
+                            <div className="project-files-empty-zone">
+                                <h4 className="project-files-empty-title">
+                                    {c('collider_2025:Title').t`No knowledge yet`}
+                                </h4>
+                                <p className="project-files-empty-subtitle color-weak">
+                                    {c('collider_2025:Info').t`Upload files or connect ${DRIVE_APP_NAME}.`}
+                                </p>
+                                <p className="project-files-empty-hint color-weak">
+                                    {c('collider_2025:Info')
+                                        .t`Use of ${DRIVE_APP_NAME} allows ${LUMO_SHORT_APP_NAME} to use larger files.`}
+                                </p>
+                                <div className="project-files-empty-actions">
+                                    <Button
+                                        shape="outline"
+                                        onClick={handleAddFiles}
+                                        className="project-files-action-button"
                                     >
-                                        <IcBrandProtonDrive size={5} />
-                                        <div className="project-files-option-content">
-                                            <span className="project-files-option-text">
-                                                {c('collider_2025:Button').t`Link ${DRIVE_APP_NAME}`}
-                                            </span>
-                                            <span className="project-files-option-subtext">
-                                                {c('collider_2025:Info')
-                                                    .t`Link a folder in your ${DRIVE_APP_NAME} which will be indexed locally and usable by ${LUMO_SHORT_APP_NAME} when generating answers`}
-                                            </span>
-                                        </div>
-                                    </button>
+                                        {c('collider_2025:Button').t`Add files`}
+                                    </Button>
+                                    <Button
+                                        shape="outline"
+                                        onClick={() => linkDriveFolderModal.openModal(true)}
+                                        className="project-files-action-button"
+                                    >
+                                        {c('collider_2025:Button').t`Connect to ${DRIVE_APP_NAME}`}
+                                    </Button>
                                 </div>
                             </div>
                         ) : (
-                            <>
-                                <div className="project-files-list">
-                                    {files.map((file) => (
-                                        <KnowledgeFileItem
-                                            key={file.id}
-                                            file={file}
-                                            onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
-                                            onRemove={handleRemoveFile}
-                                            isActive={true}
-                                            showToggle={false}
-                                        />
-                                    ))}
-                                </div>
-                            </>
+                            /* Files exist - show list only (upload button is in header) */
+                            <div className="project-files-list">
+                                {files.map((file) => (
+                                    <KnowledgeFileItem
+                                        key={file.id}
+                                        file={file}
+                                        onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
+                                        onRemove={handleRemoveFile}
+                                        isActive={true}
+                                        showToggle={false}
+                                    />
+                                ))}
+                            </div>
                         )}
                     </div>
                 </div>
