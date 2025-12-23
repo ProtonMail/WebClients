@@ -54,13 +54,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
     const searchService = useSearchService();
 
-    // Get space and check if Drive folder is linked
     const space = useLumoSelector(selectSpaceById(projectId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
 
-    // Get space attachments (persistent files) - only if no Drive folder is linked
-    // Filter out auto-retrieved Drive files and incomplete attachments (no filename = still syncing)
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const files = Object.values(spaceAttachments).filter(
         (attachment) => !attachment.error && !attachment.autoRetrieved && attachment.filename
@@ -116,10 +113,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
             return;
         }
 
-        // Process each file as a space attachment (when no Drive folder is linked)
         for (const file of selectedFiles) {
             try {
-                // Check file size limit for direct uploads
                 if (file.size > MAX_ASSET_SIZE) {
                     const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                     const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
@@ -134,12 +129,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
                 console.log('Processing file as space attachment:', file.name, projectId);
 
-                // Show processing indicator
                 setUploadProgress({ fileName: file.name, progress: 0, isProcessing: true });
 
                 const result = await dispatch(handleSpaceAttachmentFileAsync(file, projectId));
 
-                // Clear progress indicator
                 setUploadProgress(null);
 
                 if (result.success) {
@@ -173,10 +166,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
             }
         }
 
-        // Clear progress indicator after all files are processed
         setUploadProgress(null);
 
-        // Reset input
         if (fileInputRef.current) {
             fileInputRef.current.value = '';
         }
@@ -184,13 +175,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     const handleDriveFileSelect = useCallback(
         async (file: any, content: Uint8Array<ArrayBuffer>) => {
-            // When folder is linked, files are automatically available - don't create attachments
             if (linkedDriveFolder) {
-                // Files in linked folder are automatically active, no need to process
                 return;
             }
 
-            // When a file is selected from Drive (and folder is not linked), process it as a space attachment
             try {
                 const blob = new Blob([content]);
                 const fileObj = new File([blob], file.name, { type: file.mimeType || 'application/octet-stream' });
