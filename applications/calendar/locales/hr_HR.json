@@ -174,7 +174,7 @@
         "Stvori novi kontakt"
       ],
       "Current plan": [
-        "Trenutni plan"
+        "Trenutna pretplata"
       ],
       "Customize": [
         "Prilagodi"
@@ -824,11 +824,6 @@
         "Online uređivač dokumenata"
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday rasprodaja"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 TB prostora za pohranu"
@@ -868,36 +863,6 @@
       ],
       "Unlimited daily chats": [
         "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomozite svojim voljenima da se pridruže revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pridružite se revoluciji privatnosti uz naše najpovoljnije pakete, sada uz 50% popusta!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Uštedite ${ savedAmount } uz našu najpovoljniju ponudu s ograničenim vremenom!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Prijeđite na naš dvogodišnji plan i uštedite ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Prijeđite na naš godišnji plan i uštedite ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Osigurajte svom plemenu potpunu digitalnu zaštitu."
       ]
     },
     "BF2025: Tooltip": {
@@ -2976,7 +2941,7 @@
         "Razumijem"
       ],
       "Switch plans": [
-        "Promijeniti plan"
+        "Promijeni pretplatu"
       ]
     },
     "familyOffer_2023:Deal details": {
@@ -3000,10 +2965,15 @@
         "korisnička podrška"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
+        "Obiteljske pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridruživanja. ${ link }"
       ],
       "Manage addresses": [
         "Upravljanje adresama"
+      ],
+      "View the invitation": [
+        "Prikaži pozivnicu",
+        "Prikaži pozivnice",
+        "Prikaži pozivnice"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -3443,6 +3413,11 @@
         "${ groupCounts } grupe pronađene",
         "${ groupCounts } grupa pronađeno"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } ističe za ${ daysLeft } dan.",
+        "${ planName } ističe za ${ daysLeft } dana.",
+        "${ planName } ističe za ${ daysLeft } dana."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapa pronađena",
         "${ providerFoldersNumLocalized } mape pronađene",
@@ -3576,7 +3551,7 @@
         "Stvori u"
       ],
       "Current plan": [
-        "Trenutni plan"
+        "Trenutna pretplata"
       ],
       "Custom": [
         "Prilagođeno"
@@ -3873,7 +3848,7 @@
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Odaberite koje kalendare želite uvesti. Novi kalendar bit će stvoren za svaki uvezeni kalendar, ovisno o broju kalendara dostupnih u vašem planu."
+        "Odaberite koje kalendare želite uvesti. Novi kalendar bit će stvoren za svaki uvezeni kalendar, ovisno o broju kalendara dostupnih u Vašoj pretplati."
       ],
       "Session timed out": [
         "Sesija je istekla"
@@ -4086,7 +4061,7 @@
         "Ažurirat ćete sve događaje iz ovog niza. Uklonjeni sudionici bit će obaviješteni."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Vaša ${ plan } pretplata bit će zamijenjena s ${ PASS_SHORT_APP_NAME } Lifetime. Preostali iznos vaše pretplate bit će dodan na vaš korisnički račun. ${ PASS_SHORT_APP_NAME } doživotna ponuda nema cijenu obnove, to je jednokratno plaćanje za doživotni pristup ${ PASS_SHORT_APP_NAME }."
+        "Vaša ${ plan } pretplata bit će zamijenjena s ${ PASS_SHORT_APP_NAME } Lifetime. Preostali iznos Vaše pretplate bit će dodan na Vaš korisnički račun. Doživotna ponuda za ${ PASS_SHORT_APP_NAME } nema cijenu obnove, to je jednokratno plaćanje za doživotni pristup usluzi ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
@@ -4740,7 +4715,7 @@
         "Više informacija"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
-        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
+        "Za nastavak korištenja usluge ${ BRAND_NAME }, provjerite da Vaše premium značajke više nisu u upotrebi ili nadogradite svoju pretplatu."
       ]
     },
     "Log preference": {
@@ -4982,7 +4957,7 @@
         "Ukloni račun"
       ],
       "Downgrade account": [
-        "Smanjite svoj plan"
+        "Smanji pretplatu računa"
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
@@ -4994,7 +4969,7 @@
         "Zadržite račun"
       ],
       "Switch plan": [
-        "Promijeniti plan"
+        "Promijeni pretplatu"
       ]
     },
     "new_plans: feature": {
@@ -5276,7 +5251,7 @@
         "Uživate u promotivnoj cijeni na Vašem trenutnom planu. Ako obrišete svoj račun, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna ako stvorite novi račun."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Uživate u promotivnoj cijeni na Vašem trenutnom planu. Ako smanjite svoju pretplatu, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna ako se pokušate ponovo pretplatiti."
+        "Uživate u promotivnoj cijeni na Vašoj trenutnoj pretplati. Ako smanjite svoju pretplatu, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna, ako se pokušate ponovo pretplatiti."
       ]
     },
     "new_plans: title": {
@@ -5284,10 +5259,10 @@
         "Izbriši račun?"
       ],
       "Downgrade account?": [
-        "Smanjite svoj plan?"
+        "Smanjiti pretplatu računa?"
       ],
       "Switch plans?": [
-        "Promijeniti plan?"
+        "Promijeniti pretplatu?"
       ]
     },
     "new_plans: tooltip": {
@@ -6001,7 +5976,7 @@
         "Više ${ BRAND_NAME } usluga.${ br }Jedna jednostavna pretplata."
       ],
       "Upgrade to ${ upsellPlanTitle }": [
-        "Nadogradite za ${ upsellPlanTitle }"
+        "Nadogradite na ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -6078,6 +6053,11 @@
       ],
       "More sharing options": [
         "Više opcija dijeljenja"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Preostao Vam je **${ daysRemaining } dan** za istraživanje svih moćnih značajki koje nudi **${ planTitle }**.",
+        "Preostala su Vam **${ daysRemaining } dana** za istraživanje svih moćnih značajki koje nudi **${ planTitle }**.",
+        "Preostalo Vam je **${ daysRemaining } dana** za istraživanje svih moćnih značajki koje nudi **${ planTitle }**."
       ],
       "your subscription": [
         "Vaša pretplata"
@@ -6415,6 +6395,11 @@
       "Storage used": [
         "Iskorištena pohrana"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Preostao Vam je još **${ daysRemaining }** dan u okviru pretplate **${ currentPlanName }**.",
+        "Preostala su Vam još **${ daysRemaining }** dana u okviru pretplate **${ currentPlanName }**.",
+        "Preostalo Vam je još **${ daysRemaining }** dana u okviru pretplate **${ currentPlanName }**."
+      ],
       "Your storage is full": [
         "Pohrana je puna"
       ],
@@ -6476,7 +6461,7 @@
         "Pretplate"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Vaš plan je kupljen pomoću Android aplikacije. Stoga, za izmjene Vašeg plana ili ažuriranje podataka o plaćanju, morat ćete otići na trgovinu Google Play."
+        "Vaša pretplata je kupljena pomoću Android aplikacije. Stoga, za izmjene Vašeg plana ili ažuriranje podataka o plaćanju, morat ćete otići na trgovinu Google Play."
       ]
     },
     "Subscription price": {
@@ -6492,7 +6477,7 @@
         "${ planMaxSpace } prostora za pohranu po korisniku"
       ],
       "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } ukupno prostora za pohranu"
+        "${ planMaxSpace } ukupnog prostora za pohranu"
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } daje Vam sve aplikacije, sve značajke, rani pristup novim izdanjima i sve što Vam je potrebno da imate kontrolu nad svojim podacima i njihovom sigurnošću."
@@ -6507,18 +6492,18 @@
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } prilagođena domena e-pošte",
-        "${ planNumberOfDomains } prilagođenih domena e-pošte",
+        "${ planNumberOfDomains } prilagođene domene e-pošte",
         "${ planNumberOfDomains } prilagođenih domena e-pošte"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } adresa e-pošte",
         "${ planNumberOfEmails } adrese e-pošte",
-        "${ planNumberOfEmails } adrese e-pošte"
+        "${ planNumberOfEmails } adresa e-pošte"
       ],
       "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-pošta po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku"
+        "${ planNumberOfEmails } adresa e-pošte po korisniku",
+        "${ planNumberOfEmails } adrese e-pošte po korisniku",
+        "${ planNumberOfEmails } adresa e-pošte po korisniku"
       ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } korisnik",
@@ -6529,10 +6514,10 @@
         "2 korisnika"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Nakon što vaša pretplata na ${ planName } istekne, bit ćete unazađeni na ${ BRAND_NAME } Free, koje nudi samo do 1 GB pohrane za Mail i do 5 GB Drive pohrane. Izgubit ćete i sve prethodno dodijeljene bonuse za pohranu."
+        "Nakon što Vaša pretplata na ${ planName } istekne, bit ćete unazađeni na ${ BRAND_NAME } Free, koje nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Izgubit ćete i sve prethodno dodijeljene bonuse za pohranu."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Nakon što vaša pretplata na ${ planName } istekne, bit ćete unazađeni na ${ BRAND_NAME } Free, koje nudi samo do 1 GB pohrane za Mail i do 5 GB Drive pohrane. Vaš će tim iskusiti prekide u radu jer dodatni korisnici nisu podržani na besplatnom planu."
+        "Nakon što Vaša pretplata na ${ planName } istekne, bit ćete unazađeni na ${ BRAND_NAME } Free, koje nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Vaš će tim iskusiti prekide u radu jer dodatni korisnici nisu podržani na besplatnoj pretplati."
       ],
       "Comprehensive privacy and security": [
         "Sveobuhvatna privatnost i sigurnost"
@@ -6571,7 +6556,7 @@
         "Čega se odričete kada poništite ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kada poništite ${ planName }, bit ćete unazađeni na ${ BRAND_NAME } Free, koji nudi samo do 1 GB pohrane za poštu i do 5 GB pohrane za disk. Vaš će tim iskusiti prekide u radu budući da dodatni korisnici nisu podržani na besplatnom planu."
+        "Kada otkažete ${ planName }, bit ćete unazađeni na ${ BRAND_NAME } Free, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Vaš će tim iskusiti prekide u radu budući da dodatni korisnici nisu podržani na besplatnoj pretplati."
       ],
       "Yearly free storage bonuses": [
         "Godišnji besplatni bonusi za pohranu"
@@ -7057,7 +7042,7 @@
         "Ne ponavlja se"
       ],
       "Downgrade account": [
-        "Smanjite svoj plan"
+        "Smanjite pretplatu računa"
       ],
       "Download the app": [
         "Preuzmite aplikaciju"
@@ -7348,7 +7333,7 @@
         "Ažuriraj ponavljajući događaj"
       ],
       "Upgrade to ${ planName }": [
-        "Nadogradite za ${ planName }"
+        "Nadogradite na ${ planName }"
       ],
       "Verification failed": [
         "Neuspješna provjera"
@@ -7372,7 +7357,7 @@
         "Poveznica vašeg kalendara"
       ],
       "Your plan": [
-        "Vaš plan"
+        "Vaša pretplata"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

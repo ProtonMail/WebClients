@@ -1299,9 +1299,6 @@
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1332,11 +1329,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebaixes del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1378,36 +1370,6 @@
       ],
       "Unlimited daily chats": [
         "Xats diaris sense límits"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Divendres negre"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regali als seus una protecció digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1822,6 +1784,15 @@
       "Basic chat history": [
         "Historial de xat bàsic"
       ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
       ],
@@ -1833,6 +1804,9 @@
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar registres"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -1848,6 +1822,9 @@
       ],
       "Web search access": [
         "Accés a la cerca web"
+      ],
+      "Zero-access encryption": [
+        "Xifratge d'accés zero"
       ]
     },
     "collider_2025: Info": {
@@ -6621,6 +6598,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
       "Account holder": [
         "Titular del compte"
       ],
@@ -6713,6 +6693,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ],
       "Company": [
         "Empresa"
