@@ -9,8 +9,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
-import { CONTEXT_LIMITS } from '../../../../llm/utils';
-import { getSizeColor, useFileItemData } from '../fileUtils';
+import { useFileItemData } from '../fileUtils';
 
 interface KnowledgeFileItemProps {
     file: any;
@@ -39,8 +38,6 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
         canView,
         mimeTypeIcon,
         prettyType,
-        tokenSize,
-        sizeLevel,
         isTooLargeForPreview,
     } = useFileItemData(file);
 
@@ -94,33 +91,21 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
                     </p>
                 </div>
                 
-                {/* Chunk/section indicator - show which part of the document was used */}
-                {file.isChunk && (
-                    <div className="flex items-center gap-1 mb-1">
-                        <Icon name="text-quote" size={3} className="color-info shrink-0" />
-                        <span 
-                            className="text-xs color-info truncate"
-                            title={file.chunkTitle || c('collider_2025: Info').t`Relevant section`}
-                        >
-                            {file.chunkTitle || c('collider_2025: Info').t`Relevant section of document`}
-                        </span>
-                    </div>
-                )}
-                
                 <div className="flex flex-row flex-nowrap items-center">
                     <span className="text-xs color-weak">{prettyType}</span>
-                    <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
-                    <span className={`text-xs ${getSizeColor(sizeLevel)} `}>
-                        {Math.round((tokenSize / CONTEXT_LIMITS.MAX_CONTEXT) * 100)}%{' '}
-                        {c('collider_2025: Info').t` of space`}
-                    </span>
+                    {file.isChunk && (
+                        <>
+                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
+                            <span className="text-xs color-weak">
+                                {c('collider_2025: Info').t`Partial content`}
+                            </span>
+                        </>
+                    )}
                     {file.autoRetrieved && (
                         <>
                             <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
                             <span className="text-xs color-primary">
-                                {file.isChunk 
-                                    ? c('collider_2025: Info').t`Auto-matched`
-                                    : c('collider_2025: Info').t`Auto-retrieved`}
+                                {c('collider_2025: Info').t`Auto-matched`}
                             </span>
                         </>
                     )}
