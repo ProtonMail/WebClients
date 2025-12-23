@@ -378,22 +378,20 @@ export const FilesPanel = ({
                 {/* Filter chip - replaces breadcrumb navigation */}
                 {filterMessage && (
                     <div className="mb-4 flex flex-row items-center gap-2">
-                        <span className="inline-flex items-center gap-2 px-3 py-2 bg-secondary-minor text-info rounded-lg border border-info">
-                            <Icon name="filter" size={3} />
-                            <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
+                       
                             {onClearFilter && (
                                 <Button
                                     size="small"
                                     shape="ghost"
-                                    icon
+                                    icon={true}
                                     onClick={onClearFilter}
-                                    className="text-info hover:text-info-dark p-1 -mr-1"
+                                    className="text-info hover:text-info-dark p-1 -mr-1 shrink-0 inline-flex items-center gap-2"
                                     title={c('collider_2025: Info').t`Show all files`}
                                 >
                                     <Icon name="cross" size={3} />
+                                    <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
                                 </Button>
                             )}
-                        </span>
                     </div>
                 )}
 
