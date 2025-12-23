@@ -219,19 +219,6 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                     enableFoundationSearch={ENABLE_FOUNDATION_SEARCH}
                 />
                 
-                {/* BM25 Stats */}
-                {foundationStatus?.bm25Stats && (
-                    <div className="p-3 bg-weak rounded">
-                        <h4 className="text-sm text-semibold mb-2">{c('Title').t`BM25 Index Statistics`}</h4>
-                        <div className="grid gap-2 text-sm" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                            <span className="color-weak">{c('Label').t`Vocabulary size:`}</span>
-                            <span>{(foundationStatus.bm25Stats.vocabularySize ?? 0).toLocaleString()}</span>
-                            <span className="color-weak">{c('Label').t`Average doc length:`}</span>
-                            <span>{(foundationStatus.bm25Stats.avgDocLength ?? 0).toFixed(1)} {c('Label').t`tokens`}</span>
-                        </div>
-                    </div>
-                )}
-                
                 {/* Orphaned Documents Warning */}
                 {orphanedDocCount > 0 && (
                     <div className="p-3 bg-danger rounded">
@@ -267,17 +254,6 @@ export const SearchIndexDebugModal = ({ open, onClose }: SearchIndexDebugModalPr
                     </div>
                 )}
                 
-                {/* Spaces Info */}
-                <div className="p-3 bg-weak rounded">
-                    <h4 className="text-sm text-semibold mb-2">{c('Title').t`Spaces in Redux`}</h4>
-                    <div className="grid gap-2 text-sm" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                        <span className="color-weak">{c('Label').t`Total spaces:`}</span>
-                        <span>{Object.keys(spaceMap).length}</span>
-                        <span className="color-weak">{c('Label').t`Projects:`}</span>
-                        <span>{Object.values(spaceMap).filter((s) => s.isProject).length}</span>
-                    </div>
-                </div>
-
                 <Button onClick={handleInspect} shape="outline" className="self-start">
                     <Icon name="eye" size={4} className="mr-2" />
                     {c('Action').t`Inspect indexed documents`}
