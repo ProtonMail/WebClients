@@ -19,7 +19,7 @@ import {
     cleanSerializedMessage,
     getSpaceDek,
 } from '../../types';
-import { selectConversationById, selectMessageById, selectSpaceById } from '../selectors';
+import { selectConversationById, selectMessageById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
 import { locallyRefreshAttachmentFromRemoteRequest } from '../slices/core/attachments';
 import { pullConversationRequest } from '../slices/core/conversations';
 import { addIdMapEntry } from '../slices/core/idmap';
@@ -47,14 +47,16 @@ import { waitForSpace } from './spaces';
 
 export function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIterator {
     console.log('Saga triggered: saveDirtyMessage', serializedMessage);
-    
+
     // Check if this message belongs to a ghost conversation - if so, skip saving to IndexedDB
-    const conversation: Conversation | undefined = yield select(selectConversationById(serializedMessage.conversationId));
+    const conversation: Conversation | undefined = yield select(
+        selectConversationById(serializedMessage.conversationId)
+    );
     if (conversation?.ghost) {
         console.log('saveDirtyMessage: Message belongs to ghost conversation, skipping IndexedDB persistence');
         return;
     }
-    
+
     const dbApi: DbApi = yield getContext('dbApi');
     yield call([dbApi, dbApi.updateMessage], serializedMessage, {
         dirty: true,
@@ -382,9 +384,7 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
             const attachmentRemoteId: RemoteId | undefined = yield select(
                 selectRemoteIdFromLocal('attachment', shallowAttachment.id)
             );
-            const spaceRemoteId: RemoteId | undefined = yield select(
-                selectRemoteIdFromLocal('space', localSpaceId)
-            );
+            const spaceRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal('space', localSpaceId));
 
             if (!attachmentRemoteId) {
                 console.warn(
@@ -393,9 +393,7 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
                 continue;
             }
             if (!spaceRemoteId) {
-                console.warn(
-                    `refreshMessageFromRemote: space ${localSpaceId} has no remote ID in idmap, skipping`
-                );
+                console.warn(`refreshMessageFromRemote: space ${localSpaceId} has no remote ID in idmap, skipping`);
                 continue;
             }
 
