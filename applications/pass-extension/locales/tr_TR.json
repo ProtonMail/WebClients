@@ -159,7 +159,7 @@
         "Kart numarasını kopyala"
       ],
       "Copy email": [
-        "E-postayı kopyala"
+        "E-posta adresini kopyala"
       ],
       "Copy expiration date": [
         "Son kullanma tarihini kopyala"
@@ -171,7 +171,7 @@
         "Bağlantıyı kopyala"
       ],
       "Copy name on card": [
-        "Kart üzerindeki ismi kopyala"
+        "Kart üzerindeki adı kopyala"
       ],
       "Copy note content": [
         "Not içeriğini kopyala"
@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Oluşturulan parola otomatik olarak panoya kopyalansın"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Kaydedilmiş ödeme bilgilerinizi otomatik olarak doldurun."
+      ],
       "Autosaved on ${ url }": [
         "${ url } üzerinden otomatik olarak kaydedildi"
       ],
@@ -1862,8 +1865,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -1885,6 +1887,9 @@
       ],
       "Never": [
         "Asla"
+      ],
+      "No credit cards found": [
+        "Kredi kartı bulunamadı"
       ],
       "No identity item found": [
         "Herhangi bir kimlik ögesi bulunamadı"
@@ -2799,6 +2804,9 @@
       ],
       "Created at": [
         "Oluşturulma tarihi"
+      ],
+      "Credit-card autofill": [
+        "Kredi kartı otomatik doldurma"
       ],
       "Crypto Wallet": [
         "Kripto cüzdan"

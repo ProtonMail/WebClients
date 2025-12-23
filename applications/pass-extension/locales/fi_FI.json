@@ -1393,6 +1393,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Kopioi luotu salasana leikepöydälle automaattisesti."
       ],
+      "Automatically fill in your saved payment information.": [
+        "Täytä tallennetut maksutietosi automaattisesti."
+      ],
       "Autosaved on ${ url }": [
         "Tallennettiin automaattisesti osoitteesta ${ url }"
       ],
@@ -1748,10 +1751,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1769,6 +1768,9 @@
       ],
       "Never": [
         "Ei koskaan"
+      ],
+      "No credit cards found": [
+        "Maksukortteja ei löytynyt"
       ],
       "No identity item found": [
         "Identiteetti-kohdetta ei löytynyt"
@@ -2620,6 +2622,9 @@
       ],
       "Created at": [
         "Luotu"
+      ],
+      "Credit-card autofill": [
+        "Maksukortin automaattinen täyttö"
       ],
       "Crypto Wallet": [
         "Kryptolompakko"

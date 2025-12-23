@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Copier automatiquement le mot de passe généré dans le presse-papiers"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Remplissage automatique de vos informations de paiement enregistrées."
+      ],
       "Autosaved on ${ url }": [
         "Enregistrement automatique sur ${ url }"
       ],
@@ -1862,8 +1865,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -1885,6 +1887,9 @@
       ],
       "Never": [
         "Jamais"
+      ],
+      "No credit cards found": [
+        "Aucune carte de paiement n'a été trouvée."
       ],
       "No identity item found": [
         "Aucun élément d'identité n'a été trouvé."
@@ -2799,6 +2804,9 @@
       ],
       "Created at": [
         "Créée le"
+      ],
+      "Credit-card autofill": [
+        "Remplissage automatique des cartes de paiement"
       ],
       "Crypto Wallet": [
         "Portefeuille de cryptomonnaies"
