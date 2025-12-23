@@ -79,9 +79,24 @@
 }
 
 .projects-grid--inspiration {
+	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 12px;
 	max-inline-size: 900px;
+
+	@media (width <= 768px) {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		padding-block-end: 8px; // Space for scrollbar
+
+		> * {
+			flex: 0 0 auto;
+			inline-size: 260px;
+			scroll-snap-align: start;
+		}
+	}
 
 	@include media('<=small') {
 		display: none;
@@ -138,6 +153,14 @@
 	max-inline-size: 900px;
 	padding-block-start: 32px;
 	flex-shrink: 0;
+	overflow-x: visible;
+
+	@media (width <= 768px) {
+		overflow-x: auto;
+		margin-inline: -16px;
+		padding-inline: 16px;
+		inline-size: calc(100% + 32px);
+	}
 
 	@include media('<=small') {
 		display: none;
