@@ -12,6 +12,8 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
     isDuplicate?: boolean;
     fileName: string;
     errorMessage?: string;
+    attachmentId?: string;
+    markdown?: string;
 }> => {
     // Record start time for performance tracking
     const startTime = performance.now();
@@ -189,5 +191,7 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
         success: !hasError && !isUnsupported,
         fileName: file.name,
         errorMessage: hasError ? processedAttachment.errorMessage : undefined,
+        attachmentId: processedAttachment.id,
+        markdown: processedAttachment.markdown,
     };
 };

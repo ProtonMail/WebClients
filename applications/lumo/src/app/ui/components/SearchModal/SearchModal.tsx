@@ -218,6 +218,9 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     const searchTimeoutRef = useRef<NodeJS.Timeout>();
     // Guard against double-invocation in React 18 StrictMode (dev) to prevent duplicate loads
     const hasLoadedOnceRef = useRef(false);
+    
+    // Check if debug mode is enabled (only show file results in debug mode)
+    const isDebugMode = localStorage.getItem('lumo_debug_perf') === 'true';
 
     // Load all conversations on mount and when query is cleared
     const loadAllConversations = useCallback(async () => {
@@ -335,8 +338,8 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             groups.Projects = projects.sort((a, b) => b.timestamp - a.timestamp);
         }
         
-        // Add document group if there are any
-        if (documents.length > 0) {
+        // Add document group if there are any (only in debug mode)
+        if (documents.length > 0 && isDebugMode) {
             groups['Files in Drive'] = documents.sort((a, b) => b.timestamp - a.timestamp);
         }
         
@@ -363,7 +366,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         }
         
         return groups;
-    }, [results]);
+    }, [results, isDebugMode]);
 
     const groupOrder = [
         'Projects',
