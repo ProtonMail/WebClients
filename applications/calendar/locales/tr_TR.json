@@ -798,7 +798,7 @@
         "Ülke seçin"
       ],
       "Select rating ${ n } out of ${ to }": [
-        "Puan seçin ${ n } / ${ to }"
+        "Değerlendirin ${ n } / ${ to }"
       ],
       "Select time zone": [
         "Saat dilimini seçin"
@@ -807,7 +807,7 @@
         "Gönder"
       ],
       "Send Feedback": [
-        "Geri Bildirim Gönder"
+        "Geri bildirim gönder"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
@@ -1188,10 +1188,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -1299,9 +1299,6 @@
       "Billed at ${ amount } once": [
         "Bir kez ${ amount } olarak faturalanır"
       ],
-      "forever": [
-        "sonsuza dek"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } ile yenilenir."
       ]
@@ -1332,11 +1329,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday İndirimi"
       ]
     },
     "BF2025: Deal details": {
@@ -1378,36 +1370,6 @@
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Sevdiklerinizin, şimdi %50 indirimli en avantajlı paketlerimizle gizlilik devrimine katılmasına yardımcı olun!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Şimdi %50 indirimli, en avantajlı paketlerimizle gizlilik devrimine katılın!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "En avantajlı, sınırlı süreli fırsatımızla ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2 yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Sevdiklerinize tam dijital koruma sağlayın."
       ]
     },
     "BF2025: Tooltip": {
@@ -1822,6 +1784,15 @@
       "Basic chat history": [
         "Temel sohbet geçmişi"
       ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
       "Full chat history with search": [
         "Arama ile tüm sohbet geçmişi"
       ],
@@ -1833,6 +1804,9 @@
       ],
       "Limited favorites": [
         "Sınırlı sayıda sık kullanılan"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
       ],
       "Unlimited daily chats": [
         "Günlük sınırsız sayıda sohbet"
@@ -1848,6 +1822,9 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Info": {
@@ -6621,6 +6598,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -6713,6 +6693,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arabirimi (CLI)"
       ],
       "Company": [
         "Kuruluş"
@@ -6826,7 +6809,7 @@
         "Açık adres"
       ],
       "Extremely Satisfied": [
-        "Son Derece Memnun"
+        "Çok memnunum"
       ],
       "First name": [
         "Ad"
@@ -7064,7 +7047,7 @@
         "Sistem bilgileri"
       ],
       "Tell us more about your experience": [
-        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+        "Bize deneyiminiz ile ilgili bilgi verin"
       ],
       "Theme": [
         "Tema"
@@ -7097,7 +7080,7 @@
         "Doğrulama kodu"
       ],
       "Very Dissatisfied": [
-        "Çok Memnun Değil"
+        "Hiç memnun değilim"
       ],
       "Video conference": [
         "Görüntülü görüşme"
@@ -8290,7 +8273,7 @@
     },
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
-        "${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çaba gösteriyoruz. Deneyiminizden ne kadar memnun kaldınız?"
+        "${ config.appName } uygulamasını geliştirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {

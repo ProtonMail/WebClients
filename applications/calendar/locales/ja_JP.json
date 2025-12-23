@@ -1289,9 +1289,6 @@
       "Billed at ${ amount } once": [
         "一度に${ amount }が請求されます"
       ],
-      "forever": [
-        "永久"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }で1ヶ月後に自動更新されます。"
       ]
@@ -1320,11 +1317,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "ブラックフライデーセール"
       ]
     },
     "BF2025: Deal details": {
@@ -1366,36 +1358,6 @@
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "大切な人がプライバシー革命に参加できるようサポートしましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "プライバシー革命に参加しましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } の場合"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "期間限定の最もお得なセールで、${ savedAmount }を節約！"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2年プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "年間プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "大切な人たちに、完全なデジタル保護を。"
       ]
     },
     "BF2025: Tooltip": {
@@ -1805,6 +1767,15 @@
       "Basic chat history": [
         "基本チャット履歴"
       ],
+      "Built and based in Europe": [
+        "ヨーロッパに拠点を置き、創立されました"
+      ],
+      "Compliance with data protection regulations": [
+        "データ保護規則の遵守"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
       "Full chat history with search": [
         "検索機能付きの完全なチャット履歴"
       ],
@@ -1816,6 +1787,9 @@
       ],
       "Limited favorites": [
         "お気に入りの制限"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
@@ -1831,6 +1805,9 @@
       ],
       "Web search access": [
         "ウェブ検索アクセス"
+      ],
+      "Zero-access encryption": [
+        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Info": {
@@ -3264,7 +3241,7 @@
         "${ BRAND_NAME } Duo でストレージを4倍に"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+        "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
     "Duplicate event button tooltip": {
@@ -4305,6 +4282,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "サブスクリプションはこのプランのプライマリー管理者に請求されます。"
+      ],
+      "View the invitation": [
+        "招待を表示"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
@@ -5352,7 +5332,7 @@
         "自動消去を有効にしています…"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+        "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
       "Enter the code from your authenticator app": [
         "認証アプリからのコードを入力してください"
@@ -9154,7 +9134,7 @@
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+        "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
@@ -9558,7 +9538,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } 紹介ごとに"
+        "紹介ごとに ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
