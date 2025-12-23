@@ -5,7 +5,8 @@ import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { SortField } from '../../../hooks/util/useSorting';
+import { dateComparator } from '../../../modules/sorting/comparators';
+import { SortField } from '../../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
 
@@ -51,6 +52,7 @@ export const defaultExpirationCellConfig: CellDefinitionConfig = {
     id: 'expiration',
     headerText: c('Label').t`Expires`,
     className: 'w-1/5',
-    sortField: SortField.linkExpireTime,
+    sortField: SortField.expirationTime,
+    sortConfig: [{ field: SortField.expirationTime, comparator: dateComparator }],
     testId: 'column-share-expires',
 };

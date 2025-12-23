@@ -2,7 +2,10 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 import { type NodeType, getDrive } from '@proton/drive';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { type SortConfig, SortField, sortItems } from '../../modules/sorting';
+import { getSharedWithMeSortValue } from '../../sections/sharedWith/sharedWithMe.sorting';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -69,6 +72,10 @@ type SharedWithMeListingStore = {
     itemsWithInvitationPosition: Set<string>;
     hasEverLoaded: boolean;
 
+    sortField: SortField;
+    direction: SORT_DIRECTION;
+    sortedRegularItemUids: string[] | null;
+
     isLoadingNodes: boolean;
     isLoadingInvitations: boolean;
     isLoadingBookmarks: boolean;
@@ -98,6 +105,8 @@ type SharedWithMeListingStore = {
 
     clearItemsWithInvitationPosition: () => void;
 
+    setSorting: (params: { sortField: SortField; direction: SORT_DIRECTION; sortConfig: SortConfig }) => void;
+
     setLoadingNodes: (loading: boolean) => void;
     setLoadingInvitations: (loading: boolean) => void;
     setLoadingBookmarks: (loading: boolean) => void;
@@ -124,6 +133,10 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             itemUids: new Set(),
             itemsWithInvitationPosition: new Set(),
             hasEverLoaded: false,
+
+            sortField: SortField.sharedOn,
+            direction: SORT_DIRECTION.DESC,
+            sortedRegularItemUids: null,
 
             isLoadingNodes: false,
             isLoadingInvitations: false,
@@ -271,7 +284,32 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             clearItemsWithInvitationPosition: () => {
                 set({ itemsWithInvitationPosition: new Set() });
             },
-            getItemUids: () => Array.from(get().itemUids),
+            setSorting: ({ sortField, direction, sortConfig }) => {
+                // Clear invitation positions first so accepted items are included in sorting
+                set({ itemsWithInvitationPosition: new Set() });
+
+                const state = get();
+                const regularItems = state.getRegularItems();
+
+                const sortedUids = sortItems(regularItems, sortConfig, direction, getSharedWithMeSortValue, getKeyUid);
+
+                set({ sortField, direction, sortedRegularItemUids: sortedUids });
+            },
+            getItemUids: () => {
+                const state = get();
+                const invitationPositionedItems = state.getInvitationPositionedItems();
+                const invitationUids = invitationPositionedItems.map((item) => getKeyUid(item));
+
+                // If no manual sorting has been applied, return items in natural order
+                if (state.sortedRegularItemUids === null) {
+                    const regularItems = state.getRegularItems();
+                    const regularUids = regularItems.map((item) => getKeyUid(item));
+                    return [...invitationUids, ...regularUids];
+                }
+
+                // Return manually sorted items
+                return [...invitationUids, ...state.sortedRegularItemUids];
+            },
             getInvitationCount: () => {
                 const items = Array.from(get().sharedWithMeItems.values());
                 return items.filter((item) => item.itemType === ItemType.INVITATION).length;

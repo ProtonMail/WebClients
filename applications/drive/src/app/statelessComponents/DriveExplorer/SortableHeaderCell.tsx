@@ -2,7 +2,7 @@ import { TableHeaderCell } from '@proton/components';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { SortField } from '../../hooks/util/useSorting';
+import type { SortField } from '../../modules/sorting/types';
 import { HeaderCellContent } from './HeaderCellContent';
 import type { CellDefinition } from './types';
 
