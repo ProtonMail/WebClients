@@ -28,8 +28,8 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
     const isProcessing = attachment.processing;
 
     // Truncate long content to prevent UI lag
-    // ~80 chars per line, ~50 lines per page, ~10 pages = 40,000 chars
-    const MAX_DISPLAY_CHARS = 40000;
+    // ~80 chars per line, ~50 lines per page, ~5 pages = 20,000 chars
+    const MAX_DISPLAY_CHARS = 20000;
     const truncatedContent = useMemo(() => {
         if (!attachment.markdown) {
             return { content: '', truncated: false, remaining: 0 };
@@ -278,20 +278,20 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
 
         if (showRaw) {
             return (
-                <>
+                <div className="flex flex-column">
                     <div
-                        className="bg-weak p-4 rounded border font-mono text-sm overflow-auto max-h-custom"
-                        style={{ '--max-h-custom': isCSVOrExcel ? '60vh' : '70vh' }}
+                        className="bg-weak p-4 rounded border font-mono text-sm overflow-auto --max-h-custom"
+                        // style={{ '--max-h-custom': isCSVOrExcel ? '60vh' : '70vh' }}
                     >
                         <pre className="whitespace-pre-wrap break-words m-0">{truncatedContent.content}</pre>
                     </div>
                     {truncatedContent.truncated && (
-                        <div className="mt-2 text-sm text-center color-weak">
-                            +{truncatedContent.remaining.toLocaleString()}{' '}
-                            {c('collider_2025: Info').t`characters not shown`}
+                        <div className="pt-2 pb-4 px-6 text-sm color-weak">
+                            [+{truncatedContent.remaining.toLocaleString()}{' '}
+                            {c('collider_2025: Info').t`characters not shown`}]
                         </div>
                     )}
-                </>
+                </div>
             );
         }
 
@@ -301,10 +301,10 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
         }
 
         return (
-            <>
+            <div className="flex flex-column">
                 <div
-                    className="prose prose-sm max-w-none overflow-auto max-h-custom p-6"
-                    style={{ '--max-h-custom': '70vh' }}
+                    className="prose prose-sm max-w-none overflow-auto p-6 --max-h-custom"
+                    // style={{ '--max-h-custom': '70vh' }}
                 >
                     <LumoMarkdown
                         message={{
@@ -318,12 +318,12 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
                     />
                 </div>
                 {truncatedContent.truncated && (
-                    <div className="mt-2 text-sm text-center color-weak">
-                        +{truncatedContent.remaining.toLocaleString()}{' '}
-                        {c('collider_2025: Info').t`characters not shown`}
+                    <div className="pt-2 pb-4 px-6 text-sm color-weak">
+                        [+{truncatedContent.remaining.toLocaleString()}{' '}
+                        {c('collider_2025: Info').t`characters not shown`}]
                     </div>
                 )}
-            </>
+            </div>
         );
     };
 
