@@ -20,18 +20,11 @@ interface FileContentModalProps extends Omit<ModalProps, 'children'> {
 export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileContentModalProps) => {
     const [showRaw, setShowRaw] = useState(false);
 
-    if (!attachment) return null;
-
-    const hasContent = attachment.markdown && attachment.markdown.trim() !== '';
-    const hasError = attachment.error;
-    const isUnsupported = !isFileTypeSupported(attachment.filename, attachment.mimeType);
-    const isProcessing = attachment.processing;
-
     // Truncate long content to prevent UI lag
     // ~80 chars per line, ~50 lines per page, ~5 pages = 20,000 chars
     const MAX_DISPLAY_CHARS = 20000;
     const truncatedContent = useMemo(() => {
-        if (!attachment.markdown) {
+        if (!attachment?.markdown) {
             return { content: '', truncated: false, remaining: 0 };
         }
 
@@ -48,7 +41,14 @@ export const FileContentModal = ({ attachment, onClose, ...modalProps }: FileCon
             truncated: true,
             remaining: attachment.markdown.length - truncateAt,
         };
-    }, [attachment.markdown]);
+    }, [attachment?.markdown]);
+
+    if (!attachment) return null;
+
+    const hasContent = attachment.markdown && attachment.markdown.trim() !== '';
+    const hasError = attachment.error;
+    const isUnsupported = !isFileTypeSupported(attachment.filename, attachment.mimeType);
+    const isProcessing = attachment.processing;
 
     // Check if this is a CSV or Excel file
     const isCSVOrExcel =
