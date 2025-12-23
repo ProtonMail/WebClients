@@ -4,7 +4,7 @@ import { getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isVisible } from '@proton/pass/fathom';
+import { isEditorFrame, isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
@@ -125,6 +125,17 @@ export const getFrameVisibility = maxAgeMemoize(
  * is likely sandboxed without `allow-same-origin` */
 export const isNullOriginFrame = (): boolean => {
     return String(globalThis.origin).toLowerCase() === 'null' || globalThis.location.hostname === '';
+};
+
+export const isIgnorableFrame = () => {
+    /** Sandboxed frames should not load the content-script */
+    if (isNullOriginFrame()) return true;
+    /** Load on all top-frames */
+    if (isMainFrame()) return false;
+    /** If the frame matches a content-editable frame -> skip */
+    if (isEditorFrame()) return true;
+
+    return false;
 };
 
 /** Checks if an iframe is sandboxed without both allow-scripts and
