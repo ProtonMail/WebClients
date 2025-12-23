@@ -76,7 +76,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
     };
 
     return (
-        <div 
+        <div
             className="project-card p-6 border border-weak rounded-lg"
             onClick={handleClick}
             role="button"
@@ -129,12 +129,6 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
 
                 {!project.isExample && (
                     <div className="project-card-stats">
-                        {project.fileCount !== undefined && (
-                            <span className="project-card-stat">
-                                <Icon name="paper-clip" size={3.5} className="mr-1" />
-                                {project.fileCount} {project.fileCount === 1 ? c('collider_2025:Label').t`file` : c('collider_2025:Label').t`files`}
-                            </span>
-                        )}
                         {project.conversationCount !== undefined && (
                             <span className="project-card-stat">
                                 <Icon name="speech-bubble" size={3.5} className="mr-1" />
