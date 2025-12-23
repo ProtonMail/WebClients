@@ -10,11 +10,11 @@ import { MAX_FILE_SIZE } from '../../../../constants';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
-import { handleFileAsync } from '../../../../services/files';
 import { fileProcessingService } from '../../../../services/fileProcessingService';
+import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
-import type { DriveDocument } from '../../../../types/documents';
 import type { AttachmentId, LinkedDriveFolder, Message } from '../../../../types';
+import type { DriveDocument } from '../../../../types/documents';
 import { sendFileUploadEvent, sendFileUploadFromDriveEvent } from '../../../../util/telemetry';
 
 export interface UseFileHandlingProps {
@@ -28,7 +28,13 @@ export interface UseFileHandlingProps {
     uploadToDrive?: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
 }
 
-export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder, uploadToDrive }: UseFileHandlingProps) => {
+export const useFileHandling = ({
+    messageChain,
+    onShowDriveBrowser,
+    spaceId,
+    linkedDriveFolder,
+    uploadToDrive,
+}: UseFileHandlingProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -73,7 +79,7 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, lin
                         try {
                             console.log(`[useFileHandling] Processing uploaded Drive file for indexing: ${file.name}`);
                             const processingResult = await fileProcessingService.processFile(file);
-                            
+
                             if (processingResult.success && processingResult.result) {
                                 const searchService = SearchService.get(userId);
                                 const document: DriveDocument = {
@@ -84,7 +90,7 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, lin
                                     size: file.size,
                                     modifiedTime: Date.now(),
                                     folderId: linkedDriveFolder.folderId,
-                                    folderPath: linkedDriveFolder.path || 'Drive',
+                                    folderPath: linkedDriveFolder.folderPath || 'Drive',
                                     spaceId,
                                 };
                                 await searchService.indexDocuments([document]);
