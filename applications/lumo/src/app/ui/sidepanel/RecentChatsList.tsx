@@ -31,17 +31,20 @@ const RecentChatsList = ({ conversations, selectedConversationId, disabled = fal
                         <LumoLink
                             to={`/c/${conversation.id}`}
                             className={clsx(
-                                'flex flex-1 items-center pl-2',
+                                'absolute inset-0 pl-4',
+                                'flex items-center',
                                 'text-ellipsis hover:text-primary',
                                 isSelected && 'text-semibold'
                             )}
                             onClick={onItemClick}
                         >
-                            <span className="text-ellipsis" title={title}>
+                            <span className="text-ellipsis pr-8" title={title}>
                                 {title}
                             </span>
                         </LumoLink>
-                        <ChatDropdownMenu conversation={conversation} />
+                        <div className="relative z-1 ml-auto">
+                            <ChatDropdownMenu conversation={conversation} />
+                        </div>
                     </li>
                 );
             })}

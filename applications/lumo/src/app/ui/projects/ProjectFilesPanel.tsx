@@ -16,7 +16,9 @@ import {
 import { useLoading } from '@proton/hooks';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import { MAX_ASSET_SIZE } from '../../constants';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
@@ -118,6 +120,19 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         // Process each file as a space asset (when no Drive folder is linked)
         for (const file of selectedFiles) {
             try {
+                // Check file size limit for direct uploads
+                if (file.size > MAX_ASSET_SIZE) {
+                    const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
+                    const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                    createNotification({
+                        text: c('collider_2025:Error')
+                            .t`File "${file.name}" (${fileSizeFormatted}) exceeds the ${maxSizeFormatted} limit. Link a ${DRIVE_APP_NAME} folder to upload larger files.`,
+                        type: 'error',
+                        expiration: 8000, // Show longer so user can read the guidance
+                    });
+                    continue; // Skip this file and continue with the next one
+                }
+
                 console.log('Processing file as space asset:', file.name, projectId);
 
                 // Show processing indicator
