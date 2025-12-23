@@ -276,7 +276,11 @@ export const createAuthService = ({
         onLogoutComplete: async (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
-            if (localID !== undefined) clearUserLocalData(localID);
+
+            if (localID !== undefined) {
+                clearUserLocalData(localID);
+                await core.settings.clear(localID);
+            }
 
             await authSwitch.sync({ revalidate: false });
             await logStore.clear().catch(noop);
