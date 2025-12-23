@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Open recovery settings": [
+        "Άνοιγμα ρυθμίσεων αποκατάστασης"
+      ],
       "Opt out": [
         "Εξαίρεση"
       ],
@@ -1979,6 +1982,12 @@
       ],
       "Secure cloud storage": [
         "Ασφαλής αποθήκευση στο cloud"
+      ],
+      "Secure online docs": [
+        "Ασφαλή ηλεκτρονικά έγγραφα"
+      ],
+      "Secure online sheets": [
+        "Ασφαλή ηλεκτρονικά φύλλα"
       ]
     },
     "Apps dropdown": {
@@ -2267,9 +2276,6 @@
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
       ],
-      "forever": [
-        "για πάντα"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
@@ -2300,11 +2306,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Προσφορά Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2347,6 @@
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2647,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Η προσωπική σας διεύθυνση ηλεκτρονικού ταχυδρομείου αποτελεί ουσιαστικό μέρος της ψηφιακής σας ταυτότητας. Όπως και τον αριθμό τηλεφώνου σας, δεν τον δίνετε σε όλους όσους συναντάτε. Γι' αυτό είναι χρήσιμο να έχετε άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου που μπορείτε να χρησιμοποιείτε για διαφορετικούς σκοπούς."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } από ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } χρόνο πριν",
+        "${ n } χρόνια πριν"
+      ],
+      "Add a custom domain": [
+        "Προσθήκη προσαρμοσμένου τομέα"
+      ],
+      "Add a domain": [
+        "Προσθήκη τομέα"
+      ],
+      "Add more users...": [
+        "Προσθήκη περισσότερων χρηστών..."
+      ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Change": [
+        "Αλλαγή"
+      ],
+      "Configure": [
+        "Διαμόρφωση"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
+      ],
+      "Contacts": [
+        "Επαφές"
+      ],
+      "Domain ownership verified": [
+        "Επαληθεύτηκε η ιδιοκτησία τομέα"
+      ],
+      "Domain setup": [
+        "Εγκατάσταση τομέα"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Θα σας αποσταλούν ειδοποιήσεις μέσω email όταν ξεκινήσει η μετεγκατάσταση και όταν ολοκληρωθεί. Θα ειδοποιηθείτε επίσης σε περίπτωση σφαλμάτων και αν η μετεγκατάσταση διακοπεί λόγω λήξης των συνδέσμων."
+      ],
+      "Estimated size": [
+        "Εκτιμώμενος χρόνος"
+      ],
+      "Everything": [
+        "Όλα"
+      ],
+      "Failed to load OAuth": [
+        "Αποτυχία φόρτωσης OAuth"
+      ],
+      "Install migration app": [
+        "Εγκατάσταση εφαρμογής μετεγκατάστασης"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Μάθετε περισσότερα για το τι μπορεί να μετεγκατασταθεί. Μάθετε περισσότερα"
+      ],
+      "Mail": [
+        "Ταχυδρομείο"
+      ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
+      "Migrate from Google Workspace": [
+        "Μετάβαση από το Google Workspace"
+      ],
+      "Migrate users": [
+        "Μετεγκατάσταση χρηστών"
+      ],
+      "Migration includes": [
+        "Η μετεγκατάσταση περιλαμβάνει"
+      ],
+      "Not started": [
+        "Δεν ξεκίνησε"
+      ],
+      "Required to create user accounts": [
+        "Απαιτείται για τη δημιουργία λογαριασμών χρηστών"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Επιλέξτε τι θέλετε να μετεγκαταστήσετε, αυτό θα εφαρμοστεί σε όλους τους χρήστες είτε δημιουργηθούν τώρα είτε αργότερα. Η μετεγκατάσταση θα ξεκινήσει αφού δημιουργηθούν οι λογαριασμοί χρηστών."
+      ],
+      "Set up": [
+        "Ρύθμιση"
+      ],
+      "Set up billing information": [
+        "Ρύθμιση στοιχείων χρέωσης"
+      ],
+      "Set up two-factor authentication": [
+        "Δημιουργήστε έλεγχο ταυτότητας δύο παραγόντων"
+      ],
+      "Sign in to Google Workspace": [
+        "Σύνδεση στο Google Workspace"
+      ],
+      "Start migration": [
+        "Έναρξη μετεγκατάστασης"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Markeplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε. Μάθετε περισσότερα"
+      ],
+      "Transfer data from": [
+        "Μεταφορά δεδομένων από"
+      ],
+      "User": [
+        "Χρήστης"
+      ],
+      "Users migrated": [
+        "Οι χρήστες μεταφέρθηκαν"
+      ],
+      "Verify your domain": [
+        "Επαληθεύστε τον τομέα σας"
+      ],
+      "Verify your domain ownership": [
+        "Επαληθεύστε την ιδιοκτησία του τομέα σας"
+      ],
+      "What are you migrating?": [
+        "Τι μεταφέρετε;"
+      ],
+      "Who will be notified?": [
+        "Ποιος θα ειδοποιηθεί;"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3207,15 @@
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
       ],
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ],
+      "Compliance with data protection regulations": [
+        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
       "Full chat history with search": [
         "Πλήρης ιστορία συνομιλίας με αναζήτηση"
       ],
@@ -3121,70 +3227,6 @@
       ],
       "Limited favorites": [
         "Περιορισμένα αγαπημένα"
-      ],
-      "Unlimited daily chats": [
-        "Απεριόριστες καθημερινές συνομιλίες"
-      ],
-      "Unlimited favorites for quick access": [
-        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
-      ],
-      "Upload and query multiple large files": [
-        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
-      ],
-      "Upload and query small files": [
-        "Ανεβάστε και αναζητήστε μικρά αρχεία"
-      ],
-      "Web search access": [
-        "Πρόσβαση στην αναζήτηση ιστού"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
-      ],
-      "Access to advanced AI models": [
-        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Προσθήκη ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "Βοηθός τεχνητής νοημοσύνης που σέβεται την επιχειρηματική εμπιστευτικότητα"
-      ],
-      "AI assistant that respects your privacy": [
-        "Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
-      ],
-      "Basic chat history": [
-        "Βασικό ιστορικό συνομιλιών"
-      ],
-      "Compliance with data protection regulations": [
-        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
-      ],
-      "Data never used for AI training": [
-        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
-      ],
-      "Full chat history with search": [
-        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
-      ],
-      "Limited daily chats": [
-        "Περιορισμένες καθημερινές συνομιλίες"
-      ],
-      "Limited favorites": [
-        "Περιορισμένα αγαπημένα"
-      ],
-      "Open source": [
-        "Ανοιχτού κώδικα"
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
@@ -3206,6 +3248,34 @@
       ],
       "Zero-access encryption": [
         "Κρυπτογράφηση μηδενικής πρόσβασης"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Βοηθός τεχνητής νοημοσύνης που σέβεται την επιχειρηματική εμπιστευτικότητα"
+      ],
+      "AI assistant that respects your privacy": [
+        "Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Open source": [
+        "Ανοιχτού κώδικα"
       ]
     },
     "collider_2025: Navigation": {
@@ -5947,9 +6017,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Δεν έχετε ορίσει ως επαφή έκτακτης ανάγκης για κανέναν ακόμα."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Έχετε συμπληρώσει το μέγιστο όριο της ${ controller.meta.count } έμπιστης επαφής.",
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό των ${ controller.meta.count } έμπιστων επαφών."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφής έκτακτης ανάγκης.",
+        "Έχετε φτάσει το μέγιστο όριο ${ limit } επαφών έκτακτης ανάγκης."
       ],
       "You will be notified when someone requests emergency access.": [
         "Θα ειδοποιηθείτε όταν κάποιος ζητήσει επείγουσα πρόσβαση."
@@ -7689,8 +7759,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Καταλαβαίνω ότι δε θα μπορώ να συνδεθώ από παλαιότερες εκδόσεις των κινητών εφαρμογών ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME } για κινητά."
       ]
     },
     "Free trial dekstop": {
@@ -8733,6 +8803,12 @@
       "**Sync codes** to all your devices": [
         "**Συγχρονίστε τους κωδικούς** σε όλες τις συσκευές σας"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Αυτό θα απενεργοποιήσει τις προωθήσεις email με διατερματική κρυπτογράφηση:** μπορείτε να τις ρυθμίσετε ξανά αργότερα."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Οι μέθοδοι ανάκτησης θα ακυρωθούν:** μπορείτε να δημιουργήσετε νέα δεδομένα ανάκτησης αργότερα."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Περισσότερο",
         "+ ${ invisibleCount } Περισσότερα"
@@ -9098,9 +9174,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Με την ενεργοποίηση της μετα-κβαντικής προστασίας, θα δημιουργηθούν κλειδιά ανθεκτικά σε κβαντικούς υπολογιστές για τον λογαριασμό σας."
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
@@ -10417,6 +10490,9 @@
       ],
       "Private AI assistant": [
         "Ιδιωτικός βοηθός AI"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Προστατέψτε τον λογαριασμό σας από απειλές κβαντικής υπολογιστικής με κρυπτογραφικά κλειδιά ανθεκτικά στην κβαντική υπολογιστική."
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
@@ -12369,6 +12445,9 @@
       "6 Pass Plus accounts": [
         "6 Pass Plus λογαριασμοί"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
@@ -12617,6 +12696,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Command line interface (CLI)": [
+        "Διεπαφή γραμμής εντολών (CLI)"
       ],
       "Common passwords": [
         "Κοινοί κωδικοί πρόσβασης"
@@ -13169,6 +13251,9 @@
       ],
       "Online privacy for your whole family": [
         "Online ιδιωτικότητα για όλη την οικογένειά σας"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Διαθέσιμο μόνο στα προγράμματα επί πληρωμή ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
@@ -17671,47 +17756,65 @@
       ]
     },
     "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Η μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας, αλλά ορισμένες ενέργειες δεν ήταν επιτυχείς: η μετα-κβαντική δημιουργία κλειδιών λογαριασμού και διεύθυνσης απέτυχε. Μπορείτε να δημιουργήσετε αυτά τα κλειδιά χειροκίνητα στις ρυθμίσεις ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\n${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για τον λογαριασμό σας και για κάθε διεύθυνση."
       ]
     },
     "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας, αλλά ορισμένες ενέργειες δεν ήταν επιτυχείς: η δημιουργία μετα-κβαντικών κλειδιών διευθύνσεων για μία ή περισσότερες διευθύνσεις απέτυχε. Μπορείτε να δημιουργήσετε αυτά τα κλειδιά χειροκίνητα υπό τις ρυθμίσεις ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Δεν ήταν δυνατή η δημιουργία κλειδιών διεύθυνσης. Για να ενεργοποιήσετε την προστασία μετά την κβαντική εποχή, θα πρέπει να δημιουργήσετε τα νέα κλειδιά κρυπτογράφησης χειροκίνητα.\n\nΜεταβείτε στο ${ settingsLink } και επιλέξτε 'Δημιουργία κλειδιού' για κάθε διεύθυνση."
       ]
     },
     "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Παρακαλούμε ενημερώστε **όλες τις εφαρμογές σας για κινητά ${ BRAND_NAME }** στην τελευταία έκδοση."
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Πρέπει να ενημερώσετε όλες τις εφαρμογές για κινητά ${ BRAND_NAME }**: τα νέα κλειδιά σας δε θα λειτουργούν σε παλαιότερες εκδόσεις της εφαρμογής."
       ]
     },
     "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Αυτό θα δημιουργήσει ένα νέο κλειδί λογαριασμού και ένα νέο κλειδί κρυπτογράφησης ηλεκτρονικής διεύθυνσης για κάθε διεύθυνση· αυτά θα χρησιμοποιηθούν για κρυπτογράφηση και αποκρυπτογράφηση μελλοντικών ηλεκτρονικών διευθύνσεων και άλλων δεδομένων."
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Αυτό θα δημιουργήσει νέα κλειδιά κρυπτογράφησης ανθεκτικά στην κβαντική τεχνολογία για τον λογαριασμό σας."
       ]
     },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Δεν ήταν δυνατή η ενεργοποίηση της προστασίας μετά το κβαντικό επίπεδο"
+      ],
       "Enable and generate keys": [
         "Ενεργοποίηση και δημιουργία κλειδιών"
-      ],
-      "Enable post-quantum protection": [
-        "Ενεργοποίηση μετά-κβαντικής προστασίας"
       ],
       "Enable post-quantum protection?": [
         "Ενεργοποίηση μετά-κβαντικής προστασίας;"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Η ενεργοποίηση της μετα-κβαντικής προστασίας απέτυχε. Δοκιμάστε ξανά αργότερα."
+      "Enabling post-quantum protection...": [
+        "Ενεργοποίηση μετά-κβαντικής προστασίας..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Πηγαίνετε στο ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Παρακαλούμε δοκιμάστε ξανά. Εάν αυτό δε λειτουργήσει, επικοινωνήστε με την ομάδα υποστήριξης πελατών μας."
+      ],
+      "Post-quantum protection": [
+        "Μετα-κβαντική προστασία"
+      ],
+      "Post-quantum protection is enabled": [
+        "Η μετα-κβαντική προστασία είναι ενεργοποιημένη"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Η μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας!"
+      "Don't forget to generate new recovery data.": [
+        "Μην ξεχάσετε να δημιουργήσετε νέα δεδομένα ανάκτησης."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Η μετα-κβαντική προστασία είναι ενεργοποιημένη."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22139,6 +22242,9 @@
       "Find email or username": [
         "Αναζήτηση E-mail ή όνομα χρήστη"
       ],
+      "Finish setting up your business account": [
+        "Ολοκληρώστε τη ρύθμιση του επαγγελματικού σας λογαριασμού"
+      ],
       "Folders": [
         "Φάκελοι"
       ],
@@ -22358,6 +22464,9 @@
       ],
       "Messages and composing": [
         "Μηνύματα και σύνταξη"
+      ],
+      "Migration assistant": [
+        "Βοηθός μετεγκατάστασης"
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"

@@ -391,10 +391,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -492,9 +492,6 @@
       "Billed at ${ amount } once": [
         "Bir kez ${ amount } olarak faturalanır"
       ],
-      "forever": [
-        "sonsuza dek"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } ile yenilenir."
       ]
@@ -525,11 +522,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday İndirimi"
       ]
     },
     "BF2025: Deal details": {
@@ -571,36 +563,6 @@
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Sevdiklerinizin, şimdi %50 indirimli en avantajlı paketlerimizle gizlilik devrimine katılmasına yardımcı olun!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Şimdi %50 indirimli, en avantajlı paketlerimizle gizlilik devrimine katılın!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "En avantajlı, sınırlı süreli fırsatımızla ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2 yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Sevdiklerinize tam dijital koruma sağlayın."
       ]
     },
     "BF2025: Tooltip": {
@@ -1163,6 +1125,15 @@
       "Basic chat history": [
         "Temel sohbet geçmişi"
       ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
       "Full chat history with search": [
         "Arama ile tüm sohbet geçmişi"
       ],
@@ -1174,6 +1145,9 @@
       ],
       "Limited favorites": [
         "Sınırlı sayıda sık kullanılan"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
       ],
       "Unlimited daily chats": [
         "Günlük sınırsız sayıda sohbet"
@@ -1189,6 +1163,9 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Feature": {
@@ -1506,7 +1483,7 @@
         "Arkadaşlarınızı davet edin"
       ],
       "Maybe later": [
-        "Belki daha sonra"
+        "Belki sonra"
       ],
       "Send invitation": [
         "Davet gönder"
@@ -1519,7 +1496,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. ${ remainingInvitesText } davet gönderebilirsiniz."
+        "Gizlilik odaklı bir yapay zekadan faydalanabilecek birini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine davet edin. ${ remainingInvitesText } davet hakkınız kaldı."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "${ remainingInvitesText } davet hakkınız kaldı."
@@ -1535,18 +1512,18 @@
         "Davet gönderildi!"
       ],
       "No invites left  ": [
-        "Gönderilebilecek bir davet kalmamış  "
+        "Davet gönderme hakkınız kalmamış  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Başkalarının ${ LUMO_SHORT_APP_NAME } yardımcısını keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davet hakkı verebilirsek sizi bilgilendireceğiz."
+        "Başkalarının ${ LUMO_SHORT_APP_NAME } uygulamasını keşfetmesine yardımcı olduğunuz için teşekkür ederiz! Daha fazla davet hakkı verebildiğimizde sizi bilgilendireceğiz."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "${ emailText } davet edildi. Bekleme listesine nasıl katılacağı ile ilgili yönerge gönderildi."
+        "${ emailText } davet edildi. Kendisine bekleme listesine nasıl katılacağı bilgisini vereceğiz."
       ]
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimlemeye davet edin"
+        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimini yaşamaya davet edin"
       ]
     },
     "collider_2025: Job": {
@@ -1951,7 +1928,7 @@
         "Dosyayı kaldır"
       ],
       "Request a shorter, more focused response": [
-        "Daha kısa, daha odaklı bir yanıt isteyin."
+        "Daha kısa, daha odaklanmış bir yanıt isteyin."
       ],
       "Retry with the same prompt": [
         "Aynı istemle yeniden dene"
@@ -2070,8 +2047,11 @@
       ]
     },
     "collider_2025:Prompt": {
-      "What are the origins of Thanksgiving?": [
-        "Şükran Günü nasıl ortaya çıkmıştır?"
+      "How do people celebrate New Year's Eve around the world?": [
+        "Tüm dünyadan insanlar yılbaşı gecesini nasıl kutlar?"
+      ],
+      "What are the origins of Christmas?": [
+        "Noel nasıl ortaya çıkmıştır?"
       ]
     },
     "collider_2025:Title": {
@@ -4070,6 +4050,9 @@
         "${ n } ay",
         "${ n } ay"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -4126,6 +4109,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arabirimi (CLI)"
       ],
       "Company": [
         "Kuruluş"

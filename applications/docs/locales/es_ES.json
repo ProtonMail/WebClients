@@ -291,6 +291,9 @@
       "Delete contact group": [
         "Eliminar grupo de contactos"
       ],
+      "Delete older revisions": [
+        "Eliminar revisiones más antiguas"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -314,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargar las aplicaciones de ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Descargar una copia (como docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Descargar una copia (como xlsx)"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -544,6 +553,9 @@
         "Ahora no"
       ],
       "OK": [
+        "Aceptar"
+      ],
+      "Okay": [
         "Aceptar"
       ],
       "Open": [
@@ -865,6 +877,9 @@
       "View invoice": [
         "Ver la factura"
       ],
+      "View only": [
+        "Solo lectura"
+      ],
       "Web page (.html)": [
         "Página web (.html)"
       ],
@@ -1050,9 +1065,6 @@
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
       ],
-      "forever": [
-        "para siempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
       ]
@@ -1083,11 +1095,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebajas de Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1129,36 +1136,6 @@
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "¡Ayuda a tus seres queridos a unirse a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "¡Únete a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "¡Ahorra ${ savedAmount } con nuestra mejor oferta por tiempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "¡Pásate a nuestro plan de 2 años y ahorra ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "¡Pásate a nuestro plan anual y ahorra ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regala a los tuyos una protección digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1339,6 +1316,15 @@
       "Basic chat history": [
         "Historial de chat básico"
       ],
+      "Built and based in Europe": [
+        "Creado y con sede en Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Cumplimiento con las normativas de protección de datos"
+      ],
+      "Data never used for AI training": [
+        "Tus datos nunca se usan para entrenar la IA"
+      ],
       "Full chat history with search": [
         "Historial de chat completo con búsqueda"
       ],
@@ -1347,6 +1333,9 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de cero registros"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -1362,6 +1351,9 @@
       ],
       "Web search access": [
         "Acceso a la búsqueda web"
+      ],
+      "Zero-access encryption": [
+        "Cifrado de acceso cero"
       ]
     },
     "collider_2025: Info": {
@@ -2862,6 +2854,9 @@
       ],
       "Failed to open to contact": [
         "Error al abrir el contacto"
+      ],
+      "Failed to remove older revisions": [
+        "Error al eliminar revisiones más antiguas"
       ],
       "Failed to rename document. Please try again later.": [
         "Error al renombrar el documento. Inténtalo de nuevo más tarde."
@@ -4975,6 +4970,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Este documento es demasiado grande para editarlo. Puedes eliminar versiones anteriores para continuar editando."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Este documento es demasiado grande y no se han podido guardar los últimos cambios. Descarga una copia para conservar tu trabajo."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tiene mucha actividad. Algunas funciones pueden no estar disponibles temporalmente."
       ],
@@ -5433,6 +5434,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accede a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
+      ],
       "Add email address": [
         "Añadir correo electrónico"
       ],
@@ -5501,6 +5505,9 @@
       ],
       "Colors": [
         "Colores"
+      ],
+      "Command line interface (CLI)": [
+        "Interfaz de línea de comandos (CLI)"
       ],
       "Confirm password": [
         "Confirmar contraseña"
@@ -9353,6 +9360,12 @@
       ],
       "Docs": [
         "Documentos"
+      ],
+      "Document Size Limit Exceeded": [
+        "Se ha excedido el límite de tamaño del documento"
+      ],
+      "Document Size Limit Reached": [
+        "Límite de tamaño del documento alcanzado"
       ],
       "Document verification failed": [
         "Error de verificación de documento"

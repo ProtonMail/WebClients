@@ -291,6 +291,9 @@
       "Delete contact group": [
         "Slet kontaktgruppe"
       ],
+      "Delete older revisions": [
+        "Slet ældre versioner"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -314,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME }-apps"
+      ],
+      "Download a copy (as docx)": [
+        "Download en kopi (som docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Download en kopi (som xlsx)"
       ],
       "Download anyway": [
         "Download alligevel"
@@ -545,6 +554,9 @@
       ],
       "OK": [
         "Ok"
+      ],
+      "Okay": [
+        "Okay"
       ],
       "Open": [
         "Åbn"
@@ -865,6 +877,9 @@
       "View invoice": [
         "Vis faktura"
       ],
+      "View only": [
+        "Kun visning"
+      ],
       "Web page (.html)": [
         "Webside (.html)"
       ],
@@ -1050,9 +1065,6 @@
       "Billed at ${ amount } once": [
         "Faktureret med ${ amount } én gang"
       ],
-      "forever": [
-        "for evigt"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes efter 1 måned til ${ regularAmount }."
       ]
@@ -1083,11 +1095,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-udsalg"
       ]
     },
     "BF2025: Deal details": {
@@ -1129,36 +1136,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjælp dine kære med at deltage i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Deltag i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vores mest fordelagtige, tidsbegrænsede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Skift til vores 2-års abonnement, og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Skift til vores årlige abonnement, og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Forkæl dine nærmeste med komplet digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -1339,6 +1316,15 @@
       "Basic chat history": [
         "Grundlæggende chathistorik"
       ],
+      "Built and based in Europe": [
+        "Bygget og baseret i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compliance med databeskyttelsesregulativer"
+      ],
+      "Data never used for AI training": [
+        "Data bruges aldrig til AI-træning"
+      ],
       "Full chat history with search": [
         "Fuld chathistorik med søgning"
       ],
@@ -1347,6 +1333,9 @@
       ],
       "Limited favorites": [
         "Begrænsede favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Streng nul-log-politik"
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
@@ -1362,6 +1351,9 @@
       ],
       "Web search access": [
         "Adgang til websøgning"
+      ],
+      "Zero-access encryption": [
+        "Nul-adgang-kryptering"
       ]
     },
     "collider_2025: Info": {
@@ -2862,6 +2854,9 @@
       ],
       "Failed to open to contact": [
         "Kunne ikke oprette kontakten"
+      ],
+      "Failed to remove older revisions": [
+        "Kunne ikke fjerne ældre versioner"
       ],
       "Failed to rename document. Please try again later.": [
         "Det lykkedes ikke at omdøbe dokumentet. Prøv igen senere."
@@ -4974,6 +4969,12 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Dette dokument er blevet for stort til at redigere. Du kan fjerne ældre revisioner for at fortsætte redigeringen."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Dette dokument er blevet for stort, og dine seneste ændringer kunne ikke gemmes. Download en kopi for at beholde dit arbejde."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dette dokument har stor aktivitet. Nogle funktioner kan være kortvarigt utilgængelige."
@@ -9296,6 +9297,12 @@
       ],
       "Docs": [
         "Dokumenter"
+      ],
+      "Document Size Limit Exceeded": [
+        "Størrelsesgrænse for dokument overskredet"
+      ],
+      "Document Size Limit Reached": [
+        "Størrelsesgrænse for dokument nået"
       ],
       "Document verification failed": [
         "Dokumentbekræftelse mislykkedes"

@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
+      "Open recovery settings": [
+        "Deschidere setări de recuperare"
+      ],
       "Opt out": [
         "Renunțare"
       ],
@@ -1963,6 +1966,38 @@
         "Discutați confidențial"
       ]
     },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Portofel bitcoin"
+      ],
+      "Confidential video calls": [
+        "Apeluri video private"
+      ],
+      "Encrypted email": [
+        "E-mail criptat"
+      ],
+      "Passwords and identity": [
+        "Parole și identități"
+      ],
+      "Private AI assistant": [
+        "Asistent de IA privat"
+      ],
+      "Private browsing": [
+        "Navigare web privată"
+      ],
+      "Private scheduling": [
+        "Planificări private"
+      ],
+      "Secure cloud storage": [
+        "Stocare securizată în cloud"
+      ],
+      "Secure online docs": [
+        "Documente online sigure"
+      ],
+      "Secure online sheets": [
+        "Foi de calcul online sigure"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -2251,9 +2286,6 @@
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
       ],
-      "forever": [
-        "permanent"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
       ]
@@ -2286,11 +2318,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Reduceri de Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2332,36 +2359,6 @@
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Vinerea Neagră"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajutați-i pe cei dragi să se alăture revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Alăturați-vă revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economisiți ${ savedAmount } cu oferta noastră cu cea mai bună valoare, pe timp limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru pe 2 ani și economisiți ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Oferiți-le celor dragi protecție digitală completă."
       ]
     },
     "BF2025: Tooltip": {
@@ -2663,6 +2660,133 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Adresa personală de e-mail este o parte esențială a identității dvs. digitale. Asemănător cu numărul de telefon, nu-l oferiți oricui vă întâlniți. De aceea, este util să aveți alte adrese de e-mail pe care le puteți utiliza în diverse scopuri."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } din ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "acum ${ n } an",
+        "acum ${ n } ani",
+        "acum ${ n } de ani"
+      ],
+      "Add a custom domain": [
+        "Adăugați un domeniu personal"
+      ],
+      "Add a domain": [
+        "Adăugare domeniu"
+      ],
+      "Add more users...": [
+        "Adăugare utilizatori..."
+      ],
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Change": [
+        "Modificare"
+      ],
+      "Configure": [
+        "Configurare"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Domain ownership verified": [
+        "Deținerea domeniului verificată"
+      ],
+      "Domain setup": [
+        "Setare domeniu"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Notificările prin e-mail vă vor fi trimise când migrarea începe și când este finalizată. Veți primi o notificare și în cazul în care apar erori și dacă migrarea este suspendată din cauza legăturilor web expirate."
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Everything": [
+        "Toate"
+      ],
+      "Failed to load OAuth": [
+        "Încărcarea OAuth a eșuat"
+      ],
+      "Install migration app": [
+        "Instalare aplicație de migrare"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Aflați mai multe despre ce poate fi migrat. Detalii."
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrați de la Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrare utilizatori"
+      ],
+      "Migration includes": [
+        "Migrarea include"
+      ],
+      "Not started": [
+        "Neîncepută"
+      ],
+      "Required to create user accounts": [
+        "Este necesar pentru a crea conturi de utilizator"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Selectați ce doriți să migrați. Aceasta se va aplica tuturor utilizatorilor, indiferent dacă sunt creați acum sau mai târziu. Migrarea va începe după ce conturile de utilizator sunt create."
+      ],
+      "Set up": [
+        "Configurare"
+      ],
+      "Set up billing information": [
+        "Setare date de facturare"
+      ],
+      "Set up two-factor authentication": [
+        "Setare autentificare cu doi factori"
+      ],
+      "Sign in to Google Workspace": [
+        "Conectare la Google Workspace"
+      ],
+      "Start migration": [
+        "Start migrare"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Pentru a migra datele organizației proprii, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalarea acesteia, reveniți aici pentru a continua. Detalii"
+      ],
+      "Transfer data from": [
+        "Transferare date din"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users migrated": [
+        "Utilizatori migrați"
+      ],
+      "Verify your domain": [
+        "Verificați-vă domeniul"
+      ],
+      "Verify your domain ownership": [
+        "Verificare deținere domeniu"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "Who will be notified?": [
+        "Cine va fi notificat?"
       ]
     },
     "breadcrumb": {
@@ -3100,6 +3224,15 @@
       "Basic chat history": [
         "Istoric de bază conversații"
       ],
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
       "Full chat history with search": [
         "Istoric complet al conversațiilor cu căutare"
       ],
@@ -3112,72 +3245,8 @@
       "Limited favorites": [
         "Favorite limitate"
       ],
-      "Unlimited daily chats": [
-        "Conversații zilnice nelimitate"
-      ],
-      "Unlimited favorites for quick access": [
-        "Favorite nelimitate pentru o accesare rapidă"
-      ],
-      "Upload and query multiple large files": [
-        "Încărcați și interogați mai multe fișiere mari"
-      ],
-      "Upload and query small files": [
-        "Încărcați și interogați fișiere mici"
-      ],
-      "Web search access": [
-        "Acces la căutare pe internet"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Construit și cu sediul în Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
-      ],
-      "Access to advanced AI models": [
-        "Acces la modele AI avansate"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Adăugare ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Securitate avansată a contului și a rețelei într-un singur plan"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "Asistent de IA care respectă confidențialitatea afacerii"
-      ],
-      "AI assistant that respects your privacy": [
-        "Asistent de IA care vă respectă confidențialitatea"
-      ],
-      "Basic chat history": [
-        "Istoric de bază conversații"
-      ],
-      "Compliance with data protection regulations": [
-        "Respectare reguli de protecție a datelor"
-      ],
-      "Data never used for AI training": [
-        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
-      ],
-      "Full chat history with search": [
-        "Istoric complet al conversațiilor cu căutare"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Conversații rapide și funcții avansate de inteligență artificială."
-      ],
-      "Limited daily chats": [
-        "Conversații zilnice limitate"
-      ],
-      "Limited favorites": [
-        "Favorite limitate"
-      ],
-      "Open source": [
-        "Cod sursă public"
-      ],
       "Strict no-logs policy": [
-        "Politică strictă fără înregistrarea activității"
+        "Politică strictă fără înregistrări"
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
@@ -3196,6 +3265,34 @@
       ],
       "Zero-access encryption": [
         "Criptare cu acces zero"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Securitate avansată a contului și a rețelei într-un singur plan"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Asistent de IA care respectă confidențialitatea afacerii"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asistent de IA care vă respectă confidențialitatea"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
+      ],
+      "Open source": [
+        "Cod sursă public"
       ]
     },
     "collider_2025: Navigation": {
@@ -5950,10 +6047,10 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Încă nu v-a desemnat nimeni ca persoană de contact de urgență."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }.",
-        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }.",
-        "Ați atins maximul de contacte aprobate: ${ controller.meta.count }."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Ați atins maximul de contacte de urgență: ${ limit }.",
+        "Ați atins maximul de contacte de urgență: ${ limit }.",
+        "Ați atins maximul de contacte de urgență: ${ limit }."
       ],
       "You will be notified when someone requests emergency access.": [
         "Veți primi o notificare când cineva vă solicită acces de urgență."
@@ -7013,6 +7110,12 @@
       "Set up family group": [
         "Setare grup de familie"
       ],
+      "Show all (${ invites.length })": [
+        "Afișați toate (${ invites.length })"
+      ],
+      "Show less": [
+        "Arată mai puține"
+      ],
       "Switch plans": [
         "Schimbare plan"
       ],
@@ -7093,6 +7196,11 @@
       "Pending": [
         "În așteptare"
       ],
+      "Pending invitation": [
+        "Invitație în așteptare",
+        "Invitații în așteptare",
+        "Invitații în așteptare"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Ne pare rău, nu puteți schimba planurile în acest moment."
       ],
@@ -7104,6 +7212,11 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Pentru a vă ușura tranziția, vă oferim o perioadă de probare de 30 de zile pentru ${ BRAND_NAME } Unlimited.*"
+      ],
+      "View the invitation": [
+        "Afișare invitație",
+        "Afișare invitații",
+        "Afișare invitații"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }."
@@ -7144,6 +7257,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Veți pierde accesul la toate funcțiile premium incluse în ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "**${ invite.InviterEmail }** v-a invitat să vă alăturați contul la acest plan de grup."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Ați primit o invitație la ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de familie și să vă bucurați împreună de toate funcțiile premium ale ${ brandOrAppName }."
@@ -7691,11 +7810,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Confidențialitate implicită."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Înțeleg că nu mă voi mai putea conecta de pe versiuni mai vechi ale aplicațiilor ${ BRAND_NAME } pentru mobile."
       ]
     },
     "Free trial dekstop": {
@@ -8772,6 +8886,9 @@
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Aceasta va dezactiva transferurile mesajelor criptate bilateral:** le veți putea configura din nou mai târziu."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mai multe",
         "+ ${ invisibleCount } Mai multe",
@@ -9146,9 +9263,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Activând protecția post-cuantică, vor fi generate chei rezistente la calculatoarele cuantice pentru acest cont."
       ],
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
@@ -10476,6 +10590,9 @@
       ],
       "Private AI assistant": [
         "Asistent de IA privat"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Protejați-vă contul de amenințările prin calcul cuantic cu chei criptografice rezistente la atacurile cuantice."
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
@@ -12454,6 +12571,9 @@
       "6 Pass Plus accounts": [
         "6 conturi Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
       "Account holder": [
         "Titular cont"
       ],
@@ -12702,6 +12822,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Command line interface (CLI)": [
+        "Interfață în linie de comandă (CLI)"
       ],
       "Common passwords": [
         "Parole comune"
@@ -17814,48 +17937,31 @@
         "Trecere la ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Protecția post-cuantică a fost activată pentru acest cont, dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru cont și adresă a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Protecția post-cuantică a fost activată pentru acest cont, dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru una sau mai multe adrese a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
-      ]
-    },
     "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Actualizați **toate aplicațiile ${ BRAND_NAME } pentru mobile ** la cea mai recentă versiune."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Aceasta va genera o nouă cheie de cont și o nouă cheie de criptare a mesajelor pentru fiecare adresă; acestea vor fi utilizate pentru a cripta și a decripta mesajele viitoare și alte date."
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Trebuie să actualizați toate aplicațiile ${ BRAND_NAME } pentru mobile**: noile chei nu vor funcționa pe versiunile mai vechi ale aplicației."
       ]
     },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Nu s-a putut activa protecția post-cuantică"
+      ],
       "Enable and generate keys": [
         "Activare și generare chei"
-      ],
-      "Enable post-quantum protection": [
-        "Activare protecție post-cuantică"
       ],
       "Enable post-quantum protection?": [
         "Activați protecția post-cuantică?"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Activarea protecției post-cuantice a eșuat. Reîncercați mai târziu."
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Accesare ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Post-quantum protection": [
+        "Protecție post-cuantică"
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Am înțeles"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Protecția post-cuantică a fost activată în acest cont!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -22368,6 +22474,9 @@
       "Find email or username": [
         "Căutare e-mail sau utilizator"
       ],
+      "Finish setting up your business account": [
+        "Finalizați configurarea contului de afaceri"
+      ],
       "Folders": [
         "Foldere"
       ],
@@ -22589,6 +22698,9 @@
       "Messages and composing": [
         "Mesaje și compunere"
       ],
+      "Migration assistant": [
+        "Asistent de migrare"
+      ],
       "Minicalendar": [
         "Minicalendar"
       ],
@@ -22711,6 +22823,9 @@
       ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
+      ],
+      "Pending invitations": [
+        "Invitații în așteptare"
       ],
       "Personalize your email footer": [
         "Personalizați-vă subsolul mesajelor"
@@ -23901,6 +24016,9 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suită de confidențialitate cu e-mail securizat, ${ VPN_SHORT_APP_NAME }, stocare în cloud și manager de parole într-un singur pachet. Doar cu ${ fallBackString } lunar."

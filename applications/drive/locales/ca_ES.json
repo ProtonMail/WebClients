@@ -401,8 +401,14 @@
       "Download app": [
         "Descarregueu l'aplicació"
       ],
-      "Download apps": [
-        "Descarrega les aplicacions"
+      "Download for Mac": [
+        "Descarregueu-ho per Mac"
+      ],
+      "Download for MacOS": [
+        "Descarregueu-ho per MacOS"
+      ],
+      "Download for Windows": [
+        "Descarregueu-lo per Windows"
       ],
       "Download info": [
         "Descarregar la informació"
@@ -1199,6 +1205,12 @@
       "What do I get?": [
         "Què n'obtinc?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
@@ -1426,9 +1438,6 @@
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1459,11 +1468,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebaixes del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1505,36 +1509,6 @@
       ],
       "Unlimited daily chats": [
         "Xats diaris sense límits"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Divendres negre"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regali als seus una protecció digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -1771,6 +1745,15 @@
       "Basic chat history": [
         "Historial de xat bàsic"
       ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
       ],
@@ -1782,6 +1765,9 @@
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar registres"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -1797,6 +1783,9 @@
       ],
       "Web search access": [
         "Accés a la cerca web"
+      ],
+      "Zero-access encryption": [
+        "Xifratge d'accés zero"
       ]
     },
     "collider_2025: Info": {
@@ -3319,6 +3308,9 @@
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Les descàrregues d'aplicacions d'escriptori no estan disponibles actualment"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "L'edició de l'adreça de facturació no està disponible en aquests moments. Torneu a provar més tard."
       ],
@@ -3782,9 +3774,6 @@
       ],
       "We were not able to load some of your shared items": [
         "No s'han pogut carregar alguns dels vostres elements compartits"
-      ],
-      "We were not able to load some of your shared items info": [
-        "No s'ha pogut carregar la informació d'alguns dels vostres elements compartits."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -5559,6 +5548,9 @@
       "Invite link copied": [
         "S'ha copiat l'enllaç de la invitació."
       ],
+      "iOS and Android Apps": [
+        "Aplicacions per iOS i Android"
+      ],
       "Issues found": [
         "Hi ha hagut problemes"
       ],
@@ -5992,6 +5984,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
+      ],
+      "Scan to download": [
+        "Escanegeu-lo per descarregar-lo"
       ],
       "Search cannot be enabled in this browser": [
         "La cerca no es pot activar en aquest navegador"
@@ -6869,6 +6864,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
       "Account holder": [
         "Titular del compte"
       ],
@@ -6979,6 +6977,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ],
       "Comment": [
         "Comentari"
@@ -12142,6 +12143,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obtingueu accés complet a ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtingueu les aplicacions per mòbil i escriptori"
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"

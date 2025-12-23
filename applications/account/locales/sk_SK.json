@@ -1971,6 +1971,38 @@
         "Diskutujte dôverne"
       ]
     },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoinová peňaženka"
+      ],
+      "Confidential video calls": [
+        "Dôverné videohovory"
+      ],
+      "Encrypted email": [
+        "Šifrovaný email"
+      ],
+      "Passwords and identity": [
+        "Heslá a identita"
+      ],
+      "Private AI assistant": [
+        "Súkromný AI asistent"
+      ],
+      "Private browsing": [
+        "Súkromné sufrovanie"
+      ],
+      "Private scheduling": [
+        "Súkromné plánovanie"
+      ],
+      "Secure cloud storage": [
+        "Bezpečný cloud"
+      ],
+      "Secure online docs": [
+        "Zabezpečené dokumenty"
+      ],
+      "Secure online sheets": [
+        "Zabezpečené tabuľky"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikácia ${ BRAND_NAME }"
@@ -2261,9 +2293,6 @@
       "Billed at ${ amount } once": [
         "Účtovaná suma ${ amount } jednorazovo"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnoví sa po 1 mesiaci za ${ regularAmount }."
       ]
@@ -2298,11 +2327,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday zľavy"
       ]
     },
     "BF2025: Deal details": {
@@ -2344,36 +2368,6 @@
       ],
       "Unlimited daily chats": [
         "Neobmedzené denné chaty"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomôžte svojim blízkym pripojiť sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pripojte sa k revolúcii súkromia s našimi najvýhodnejšími balíčkami, teraz so zľavou 50 %!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetrite ${ savedAmount } s našou najvýhodnejšou ponukou na obmedzený čas!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Prejdite na náš 2-ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Doprajte svojmu kmeňu kompletnú digitálnu ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2670,134 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Vaša osobná emailová adresa je dôležitou súčasťou vašej digitálnej identity. Rovnako ako telefónne číslo, nedávate ju každému, koho stretnete. Preto je užitočné mať ďalšie emailové adresy, ktoré môžete používať na rôzne účely."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } z ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "Pred ${ n } rokom",
+        "Pred ${ n } rokmi",
+        "Pred ${ n } rokmi",
+        "Pred ${ n } rokmi"
+      ],
+      "Add a custom domain": [
+        "Pridať vlastnú doménu"
+      ],
+      "Add a domain": [
+        "Pridať doménu"
+      ],
+      "Add more users...": [
+        "Pridať viac používateľov..."
+      ],
+      "Authenticate": [
+        "Autentifikovať"
+      ],
+      "Calendar": [
+        "Kalendár"
+      ],
+      "Change": [
+        "Zmeniť"
+      ],
+      "Configure": [
+        "Konfigurovať"
+      ],
+      "Configure migration": [
+        "Nastaviť migráciu"
+      ],
+      "Contacts": [
+        "Kontakty"
+      ],
+      "Domain ownership verified": [
+        "Vlastníctvo domény je overené"
+      ],
+      "Domain setup": [
+        "Nastavenie domény"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Emailové notifikácie Vám budú odoslané po začatí a dokončení migrácie. Budete tiež informovaní, ak sa vyskytnú chyby alebo ak sa migrácia pozastaví z dôvodu vypršaných odkazov."
+      ],
+      "Estimated size": [
+        "Odhadovaná veľkosť"
+      ],
+      "Everything": [
+        "Všetko"
+      ],
+      "Failed to load OAuth": [
+        "Nepodarilo sa načítať OAuth"
+      ],
+      "Install migration app": [
+        "Inštalovať migračnú aplikáciu"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Zistite viac o tom, čo môže byť zmigrované. Zistite viac"
+      ],
+      "Mail": [
+        "Pošta"
+      ],
+      "Migrate": [
+        "Migrovať"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrovať z Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrovať používateľov"
+      ],
+      "Migration includes": [
+        "Migrácia zahŕňa"
+      ],
+      "Not started": [
+        "Nezačaté"
+      ],
+      "Required to create user accounts": [
+        "Potrebné na vytvorenie používateľských účtov"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Vyberte, čo chcete migrovať. Toto sa bude vzťahovať na všetkých používateľov, bez ohľadu na to, či sú vytvorení teraz alebo neskôr. Migrácia sa spustí po vytvorení používateľských účtov."
+      ],
+      "Set up": [
+        "Nastaviť"
+      ],
+      "Set up billing information": [
+        "Nastaviť fakturačné údaje"
+      ],
+      "Set up two-factor authentication": [
+        "Nastaviť dvojfaktorové overenie"
+      ],
+      "Sign in to Google Workspace": [
+        "Prihlásiť sa do Google Workspace"
+      ],
+      "Start migration": [
+        "Spustiť migráciu"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali. Zistiť viac"
+      ],
+      "Transfer data from": [
+        "Preniesť údaje z"
+      ],
+      "User": [
+        "Používateľ"
+      ],
+      "Users migrated": [
+        "Používatelia zmigrovaní"
+      ],
+      "Verify your domain": [
+        "Overte svoju doménu"
+      ],
+      "Verify your domain ownership": [
+        "Overte vlastníctvo svojej domény"
+      ],
+      "What are you migrating?": [
+        "Čo migrujete?"
+      ],
+      "Who will be notified?": [
+        "Kto bude upozornený?"
       ]
     },
     "breadcrumb": {
@@ -3116,6 +3238,15 @@
       "Basic chat history": [
         "Základná história chatu"
       ],
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržiavanie predpisov o ochrane údajov"
+      ],
+      "Data never used for AI training": [
+        "Údaje nikdy nepoužívané na trénovanie AI"
+      ],
       "Full chat history with search": [
         "Úplná história chatu s vyhľadávaním"
       ],
@@ -3127,70 +3258,6 @@
       ],
       "Limited favorites": [
         "Obmedzené obľúbené položky"
-      ],
-      "Unlimited daily chats": [
-        "Neobmedzené denné chaty"
-      ],
-      "Unlimited favorites for quick access": [
-        "Neobmedzené obľúbené položky pre rýchly prístup"
-      ],
-      "Upload and query multiple large files": [
-        "Nahrávanie a vyhľadávanie viacerých veľkých súborov"
-      ],
-      "Upload and query small files": [
-        "Nahrávanie a vyhľadávanie malých súborov"
-      ],
-      "Web search access": [
-        "Prístup k webovému vyhľadávaniu"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Vytvorené a umiestnené v Európe"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
-      ],
-      "Access to advanced AI models": [
-        "Prístup k pokročilým modelom AI"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Pridať ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "AI asistent, ktorý rešpektuje obchodné tajomstvo"
-      ],
-      "AI assistant that respects your privacy": [
-        "AI asistent, ktorý rešpektuje vaše súkromie"
-      ],
-      "Basic chat history": [
-        "Základná história chatu"
-      ],
-      "Compliance with data protection regulations": [
-        "Dodržiavanie predpisov o ochrane údajov"
-      ],
-      "Data never used for AI training": [
-        "Údaje nikdy nepoužívané na trénovanie AI"
-      ],
-      "Full chat history with search": [
-        "Úplná história chatu s vyhľadávaním"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Vysokorýchlostné chaty a pokročilé funkcie AI"
-      ],
-      "Limited daily chats": [
-        "Obmedzené denné chaty"
-      ],
-      "Limited favorites": [
-        "Obmedzené obľúbené položky"
-      ],
-      "Open source": [
-        "Open source"
       ],
       "Strict no-logs policy": [
         "Prísna zásada neuchovávania záznamov"
@@ -3212,6 +3279,34 @@
       ],
       "Zero-access encryption": [
         "Šifrovanie s nulovým prístupom"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je AI, ktorá kladie dôraz na ochranu súkromia a pomáha vám dosiahnuť viac pri zachovaní bezpečnosti vašich údajov. Využite jej plný potenciál a získajte skorý prístup k novým funkciám hneď po ich zavedení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "AI asistent, ktorý rešpektuje obchodné tajomstvo"
+      ],
+      "AI assistant that respects your privacy": [
+        "AI asistent, ktorý rešpektuje vaše súkromie"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Open source": [
+        "Open source"
       ]
     },
     "collider_2025: Navigation": {
@@ -5979,11 +6074,11 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Zatiaľ ste neboli určený ako kontaktná osoba v prípade núdze pre nikoho."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Dosiahli ste maximálny počet ${ controller.meta.count } dôveryhodného kontaktu.",
-        "Dosiahli ste maximálny počet ${ controller.meta.count } dôveryhodných kontaktov.",
-        "Dosiahli ste maximálny počet ${ controller.meta.count } dôveryhodných kontaktov.",
-        "Dosiahli ste maximálny počet ${ controller.meta.count } dôveryhodných kontaktov."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Dosiahli ste maximálny počet ${ limit } núdzového kontaktu.",
+        "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov.",
+        "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov.",
+        "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov."
       ],
       "You will be notified when someone requests emergency access.": [
         "Dostanete upozornenie, keď niekto požiada o núdzový prístup."
@@ -7051,6 +7146,12 @@
       "Set up family group": [
         "Nastaviť rodinnú skupinu"
       ],
+      "Show all (${ invites.length })": [
+        "Zobraziť všetky (${ invites.length })"
+      ],
+      "Show less": [
+        "Zobraziť menej"
+      ],
       "Switch plans": [
         "Zmeniť plán"
       ],
@@ -7132,6 +7233,12 @@
       "Pending": [
         "Čakajúce"
       ],
+      "Pending invitation": [
+        "Čakajúca pozvánka",
+        "Čakajúce pozvánky",
+        "Čakajúce pozvánky",
+        "Čakajúce pozvánky"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
       ],
@@ -7143,6 +7250,12 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Aby sme vám uľahčili prechod, poskytujeme vám 30-dňovú bezplatnú skúšobnú verziu produktu ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Zobraziť pozvánku",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -7185,6 +7298,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Stratíte prístup ku všetkým prémiovým funkciám, ktoré sú súčasťou ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Dostali ste pozvánku od **${ invite.InviterEmail }**, na prepojenie vášho účtu s týmto skupinovým plánom."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Ste pozvaní prepojiť svoj ${ BRAND_NAME } účet s týmto rodinným plánom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
@@ -7742,11 +7861,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Rozumiem, že sa už nebudem môcť prihlásiť zo starších verzií mobilných aplikácií ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -9240,9 +9354,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Povolením postkvantovej ochrany sa pre váš účet vygenerujú kľúče, ktoré sú odolné voči kvantovým počítačom."
       ],
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
@@ -18004,48 +18115,17 @@
         "Navýšiť na ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Váš účet bol vybavený postkvantovou ochranou, ale niektoré operácie neboli úspešné: generovanie postkvantových kľúčov účtu a adresy zlyhalo. Tieto kľúče môžete ručne vygenerovať v nastaveniach ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Váš účet má povolenú postkvantovú ochranu, ale niektoré operácie neboli úspešné: generovanie postkvantových adresných kľúčov pre jednu alebo viaceré adresy zlyhalo. Tieto kľúče môžete ručne vygenerovať v nastaveniach ${ encryptionAndKeysSettingsTitle }."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Aktualizujte **všetky vaše mobilné aplikácie ${ BRAND_NAME }** na najnovšiu verziu, prosím."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Týmto sa vytvorí nový kľúč účtu a nový kľúč na šifrovanie emailov pre každú adresu; tieto kľúče sa budú používať na šifrovanie a dešifrovanie budúcich emailov a iných údajov."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Povoliť a generovať kľúče"
       ],
-      "Enable post-quantum protection": [
-        "Povoliť postkvantovú ochranu"
-      ],
       "Enable post-quantum protection?": [
         "Povoliť postkvantovú ochranu?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Povolenie postkvantovej ochrany zlyhalo. Skúste to znova neskôr."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Rozumiem"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Na vašom účte bola aktivovaná postkvantová ochrana!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -22643,6 +22723,9 @@
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
       ],
+      "Finish setting up your business account": [
+        "Dokončite nastavenie vášho firemného účtu"
+      ],
       "Folders": [
         "Priečinky"
       ],
@@ -22865,6 +22948,9 @@
       "Messages and composing": [
         "Správy a písanie"
       ],
+      "Migration assistant": [
+        "Asistent migrácie"
+      ],
       "Minicalendar": [
         "Minikalendár"
       ],
@@ -22987,6 +23073,9 @@
       ],
       "PayPal verification failed": [
         "Overenie platby PayPal zlyhalo"
+      ],
+      "Pending invitations": [
+        "Čakajúce pozvánky"
       ],
       "Personalize your email footer": [
         "Prispôsobte si pätičku vašich emailov"
@@ -24180,6 +24269,9 @@
       ],
       "Did you know?": [
         "Vedeli ste?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Získajte úložisko s kapacitou ${ drivePlusPlanMaxSpace } na svoje súbory, fotografie a dokumenty a obnovu verzií súborov s 10-ročnou zárukou obnovy súborov."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Balík na ochranu súkromia s bezpečným emailom, ${ VPN_SHORT_APP_NAME }, cloudovým úložiskom a správcom hesiel v jednom produkte. Už od ${ fallBackString } mesačne."

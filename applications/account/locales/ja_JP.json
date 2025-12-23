@@ -1948,11 +1948,17 @@
       ]
     },
     "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoinウォレット"
+      ],
       "Confidential video calls": [
         "機密ビデオ通話"
       ],
       "Encrypted email": [
         "暗号化メール"
+      ],
+      "Passwords and identity": [
+        "パスワードとユーザー情報"
       ],
       "Private AI assistant": [
         "プライベートAIアシスタント"
@@ -1965,6 +1971,12 @@
       ],
       "Secure cloud storage": [
         "安全なクラウドストレージ"
+      ],
+      "Secure online docs": [
+        "安全なオンラインドキュメント"
+      ],
+      "Secure online sheets": [
+        "安全なオンラインシート"
       ]
     },
     "Apps dropdown": {
@@ -2251,9 +2263,6 @@
       "Billed at ${ amount } once": [
         "一度に${ amount }が請求されます"
       ],
-      "forever": [
-        "永久"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }で1ヶ月後に自動更新されます。"
       ]
@@ -2282,11 +2291,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "ブラックフライデーセール"
       ]
     },
     "BF2025: Deal details": {
@@ -2328,36 +2332,6 @@
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "大切な人がプライバシー革命に参加できるようサポートしましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "プライバシー革命に参加しましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } の場合"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "期間限定の最もお得なセールで、${ savedAmount }を節約！"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2年プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "年間プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "大切な人たちに、完全なデジタル保護を。"
       ]
     },
     "BF2025: Tooltip": {
@@ -2657,6 +2631,131 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "お客様の個人のメールアドレスは、お客様のデジタルユーザー情報の不可欠な一部です。電話番号と同様に、お客様は出会うすべての人にそれを教えることはありません。そのため、さまざまな目的に使用できる他のメールアドレスを持つことが役立ちます。"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } 年前"
+      ],
+      "Add a custom domain": [
+        "カスタムドメインを追加"
+      ],
+      "Add a domain": [
+        "ドメインを追加"
+      ],
+      "Add more users...": [
+        "さらにユーザーを追加..."
+      ],
+      "Authenticate": [
+        "認証"
+      ],
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Change": [
+        "変更"
+      ],
+      "Configure": [
+        "構成"
+      ],
+      "Configure migration": [
+        "移行を設定"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Domain ownership verified": [
+        "ドメイン所有権は検証済みです"
+      ],
+      "Domain setup": [
+        "ドメインセットアップ"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "移行の開始時および完了時にメール通知が送信されます。エラーが発生した場合、および有効期限切れのリンクにより移行が一時停止された場合にも通知されます。"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Everything": [
+        "すべて"
+      ],
+      "Failed to load OAuth": [
+        "OAuthの読み込みに失敗しました"
+      ],
+      "Install migration app": [
+        "移行アプリをインストール"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "移行可能な内容の詳細をご確認ください。より詳しく"
+      ],
+      "Mail": [
+        "メール"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Migrate from Google Workspace": [
+        "Google Workspaceから移行"
+      ],
+      "Migrate users": [
+        "ユーザーを移行"
+      ],
+      "Migration includes": [
+        "移行に含まれるもの"
+      ],
+      "Not started": [
+        "開始されていません"
+      ],
+      "Required to create user accounts": [
+        "ユーザーアカウントの作成のために必須です"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "移行したいものを選択してください。これは、今後作成されるものも含め、すべてのユーザーに適用されます。ユーザーアカウントが作成された後、移行が開始されます。"
+      ],
+      "Set up": [
+        "セットアップ"
+      ],
+      "Set up billing information": [
+        "請求情報をセットアップ"
+      ],
+      "Set up two-factor authentication": [
+        "2 要素認証の設定"
+      ],
+      "Sign in to Google Workspace": [
+        "Google Workspaceにサインイン"
+      ],
+      "Start migration": [
+        "移行を開始"
+      ],
+      "Status": [
+        "ステータス"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME }移行アシスタントアプリをインストールする必要があります。これにより、${ BRAND_NAME }がお客様のデータをコピーするための許可が付与されます。インストールが完了したら、ここに戻って続行してください。より詳しく"
+      ],
+      "Transfer data from": [
+        "データ転送元"
+      ],
+      "User": [
+        "ユーザー"
+      ],
+      "Users migrated": [
+        "ユーザーが移行されました"
+      ],
+      "Verify your domain": [
+        "ドメインの検証"
+      ],
+      "Verify your domain ownership": [
+        "ドメイン所有権の検証"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
+      ],
+      "Who will be notified?": [
+        "誰に通知されますか？"
       ]
     },
     "breadcrumb": {
@@ -3088,6 +3187,15 @@
       "Basic chat history": [
         "基本チャット履歴"
       ],
+      "Built and based in Europe": [
+        "ヨーロッパに拠点を置き、創立されました"
+      ],
+      "Compliance with data protection regulations": [
+        "データ保護規則の遵守"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
       "Full chat history with search": [
         "検索機能付きの完全なチャット履歴"
       ],
@@ -3099,6 +3207,9 @@
       ],
       "Limited favorites": [
         "お気に入りの制限"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
@@ -3114,6 +3225,9 @@
       ],
       "Web search access": [
         "ウェブ検索アクセス"
+      ],
+      "Zero-access encryption": [
+        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Feature": {
@@ -3124,9 +3238,6 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
-      ],
-      "Access to advanced AI models": [
-        "高度なAIモデルへのアクセス"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }を追加"
@@ -3140,50 +3251,11 @@
       "AI assistant that respects your privacy": [
         "プライバシーを尊重するAIアシスタント"
       ],
-      "Basic chat history": [
-        "基本のチャット履歴"
-      ],
-      "Compliance with data protection regulations": [
-        "データ保護規則の遵守"
-      ],
-      "Data never used for AI training": [
-        "データはAI学習には決して使用されません"
-      ],
-      "Full chat history with search": [
-        "検索機能付きの完全なチャット履歴"
-      ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
       ],
-      "Limited daily chats": [
-        "毎日のチャットの制限"
-      ],
-      "Limited favorites": [
-        "お気に入りの制限"
-      ],
       "Open source": [
         "オープンソース"
-      ],
-      "Strict no-logs policy": [
-        "厳格なノーログポリシー"
-      ],
-      "Unlimited daily chats": [
-        "無制限の毎日のチャット"
-      ],
-      "Unlimited favorites for quick access": [
-        "無制限のクイックアクセスのお気に入り"
-      ],
-      "Upload and query multiple large files": [
-        "複数の大容量ファイルのアップロードと検索"
-      ],
-      "Upload and query small files": [
-        "小さなファイルのアップロードと検索"
-      ],
-      "Web search access": [
-        "ウェブ検索アクセス"
-      ],
-      "Zero-access encryption": [
-        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Navigation": {
@@ -5089,7 +5161,7 @@
         "${ BRAND_NAME } Duo でストレージを4倍に"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+        "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
     "Duration": {
@@ -5912,8 +5984,8 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "まだ、どなたの緊急連絡先にも指定されていません。"
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "信頼できる連絡先の最大数 ${ controller.meta.count } に達しました。"
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "緊急連絡先の最大数${ limit }件に達しました。"
       ],
       "You will be notified when someone requests emergency access.": [
         "緊急アクセスがリクエストされた場合、お客様に通知されます。"
@@ -6957,6 +7029,12 @@
       "Set up family group": [
         "家族グループを設定"
       ],
+      "Show all (${ invites.length })": [
+        "表示を増やす (${ invites.length })"
+      ],
+      "Show less": [
+        "表示を減らす"
+      ],
       "Switch plans": [
         "プランを変更"
       ],
@@ -7035,6 +7113,9 @@
       "Pending": [
         "保留中"
       ],
+      "Pending invitation": [
+        "保留中の招待"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
@@ -7046,6 +7127,9 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "移行をスムーズにするために、${ BRAND_NAME } 無制限*の 30 日間の無料トライアルを提供しています。"
+      ],
+      "View the invitation": [
+        "招待を表示"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
@@ -7082,6 +7166,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "${ plan }に含まれる全てのプレミアム機能へのアクセスを失います。"
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "あなたのアカウントをこのグループプランにリンクするよう、**${ invite.InviterEmail }**から招待されています。"
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "${ invite.OrganizationName } に招待されました"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "${ BRAND_NAME }アカウントをこのファミリープランにリンクして、${ brandOrAppName }の全てのプレミアム機能を一緒にお楽しみください。"
@@ -7609,11 +7699,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "旧バージョンの${ BRAND_NAME }モバイルアプリからはサインインできなくなることを理解しました。"
       ]
     },
     "Free trial dekstop": {
@@ -8979,9 +9064,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "ポスト量子保護を有効にすることで、量子コンピューターに耐性を持つ鍵がお客様のアカウントに生成されます。"
-      ],
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
       ],
@@ -9373,7 +9455,7 @@
         "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+        "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "${ BRAND_NAME } アカウントを確定し、すべてのデバイスで ${ VPN_APP_NAME } の使用を開始するにはパスワードを入力してください！"
@@ -17018,7 +17100,7 @@
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+        "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
@@ -17454,48 +17536,17 @@
         "${ upsellPlanTitle }にアップグレード"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "お客様のアカウントでポスト量子保護が有効になりましたが、一部の操作が成功しませんでした。ポスト量子アカウントキーとアドレスキーの生成に失敗しました。これらのキーは、${ encryptionAndKeysSettingsTitle } 設定から手動で生成することができます。"
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "お客様のアカウントでポスト量子保護が有効になりましたが、一部の操作が成功しませんでした。具体的には、1つ以上のアドレスに対するポスト量子アドレスキーの生成に失敗しました。これらのキーは、${ encryptionAndKeysSettingsTitle } 設定から手動で生成することができます。"
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "お客様の**すべての${ BRAND_NAME }モバイルアプリ**を最新バージョンに更新してください。"
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "これにより、各メールアドレスに対して新しいアカウントキーと新しいメール暗号鍵が生成されます。これらは、今後のメールやその他のデータの暗号化および復号化に用いられます。"
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "鍵を生成・有効化"
       ],
-      "Enable post-quantum protection": [
-        "ポスト量子保護を有効にする"
-      ],
       "Enable post-quantum protection?": [
         "ポスト量子保護を有効にしますか？"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "量子耐性保護を有効化できませんでした。後でもう一度お試しください。"
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "分かりました"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "ポスト量子保護がお客様のアカウントで有効になりました！"
       ]
     },
     "pqc-optin: Progress status": {
@@ -17696,7 +17747,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } 紹介ごとに"
+        "紹介ごとに ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
@@ -21838,6 +21889,9 @@
       "Find email or username": [
         "メールアドレスまたはユーザー名を探す"
       ],
+      "Finish setting up your business account": [
+        "ビジネスアカウントのセットアップを完了する"
+      ],
       "Folders": [
         "フォルダー"
       ],
@@ -22057,6 +22111,9 @@
       "Messages and composing": [
         "メッセージと作成"
       ],
+      "Migration assistant": [
+        "移行アシスタント"
+      ],
       "Minicalendar": [
         "ミニカレンダー"
       ],
@@ -22179,6 +22236,9 @@
       ],
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
+      ],
+      "Pending invitations": [
+        "保留中の招待"
       ],
       "Personalize your email footer": [
         "メールフッターを個別にカスタマイズする"
@@ -23363,6 +23423,9 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"

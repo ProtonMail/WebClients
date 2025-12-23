@@ -1598,9 +1598,6 @@
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
       ],
-      "forever": [
-        "permanent"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
       ]
@@ -1633,11 +1630,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Reduceri de Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1679,36 +1671,6 @@
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Vinerea Neagră"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajutați-i pe cei dragi să se alăture revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Alăturați-vă revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economisiți ${ savedAmount } cu oferta noastră cu cea mai bună valoare, pe timp limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru pe 2 ani și economisiți ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Oferiți-le celor dragi protecție digitală completă."
       ]
     },
     "BF2025: Tooltip": {
@@ -1818,6 +1780,112 @@
       ],
       "Working with sensitive data?": [
         "Lucrați cu date confidențiale?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } din ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "acum ${ n } an",
+        "acum ${ n } ani",
+        "acum ${ n } de ani"
+      ],
+      "Add a domain": [
+        "Adăugare domeniu"
+      ],
+      "Add more users...": [
+        "Adăugare utilizatori..."
+      ],
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Configure migration": [
+        "Configurare migrare"
+      ],
+      "Contacts": [
+        "Contacte"
+      ],
+      "Domain ownership verified": [
+        "Deținerea domeniului verificată"
+      ],
+      "Domain setup": [
+        "Setare domeniu"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Notificările prin e-mail vă vor fi trimise când migrarea începe și când este finalizată. Veți primi o notificare și în cazul în care apar erori și dacă migrarea este suspendată din cauza legăturilor web expirate."
+      ],
+      "Estimated size": [
+        "Mărime estimată"
+      ],
+      "Everything": [
+        "Toate"
+      ],
+      "Failed to load OAuth": [
+        "Încărcarea OAuth a eșuat"
+      ],
+      "Install migration app": [
+        "Instalare aplicație de migrare"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Aflați mai multe despre ce poate fi migrat. Detalii."
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migrare"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrați de la Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrare utilizatori"
+      ],
+      "Migration includes": [
+        "Migrarea include"
+      ],
+      "Not started": [
+        "Neîncepută"
+      ],
+      "Required to create user accounts": [
+        "Este necesar pentru a crea conturi de utilizator"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Selectați ce doriți să migrați. Aceasta se va aplica tuturor utilizatorilor, indiferent dacă sunt creați acum sau mai târziu. Migrarea va începe după ce conturile de utilizator sunt create."
+      ],
+      "Set up": [
+        "Configurare"
+      ],
+      "Sign in to Google Workspace": [
+        "Conectare la Google Workspace"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Pentru a migra datele organizației proprii, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalarea acesteia, reveniți aici pentru a continua. Detalii"
+      ],
+      "Transfer data from": [
+        "Transferare date din"
+      ],
+      "User": [
+        "Utilizator"
+      ],
+      "Users migrated": [
+        "Utilizatori migrați"
+      ],
+      "Verify your domain": [
+        "Verificați-vă domeniul"
+      ],
+      "What are you migrating?": [
+        "Ce migrați?"
+      ],
+      "Who will be notified?": [
+        "Cine va fi notificat?"
       ]
     },
     "Browser": {
@@ -2055,6 +2123,15 @@
       "Basic chat history": [
         "Istoric de bază conversații"
       ],
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
       "Full chat history with search": [
         "Istoric complet al conversațiilor cu căutare"
       ],
@@ -2066,6 +2143,9 @@
       ],
       "Limited favorites": [
         "Favorite limitate"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
@@ -2081,6 +2161,9 @@
       ],
       "Web search access": [
         "Acces la căutare pe internet"
+      ],
+      "Zero-access encryption": [
+        "Criptare cu acces zero"
       ]
     },
     "collider_2025: Info": {
@@ -4633,6 +4716,11 @@
       "Pending": [
         "În așteptare"
       ],
+      "Pending invitation": [
+        "Invitație în așteptare",
+        "Invitații în așteptare",
+        "Invitații în așteptare"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Ne pare rău, nu puteți schimba planurile în acest moment."
       ],
@@ -4641,6 +4729,11 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonamentul va fi facturat administratorului principal al acestui plan."
+      ],
+      "View the invitation": [
+        "Afișare invitație",
+        "Afișare invitații",
+        "Afișare invitații"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }."
@@ -8487,6 +8580,9 @@
       "1 of 1 email address available": [
         "Adrese de e-mail disponibile: 1 din 1"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
       "Account holder": [
         "Titular cont"
       ],
@@ -8630,6 +8726,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Command line interface (CLI)": [
+        "Interfață în linie de comandă (CLI)"
       ],
       "Common passwords": [
         "Parole comune"
@@ -15473,6 +15572,9 @@
       "Main password": [
         "Parola principală"
       ],
+      "Migration assistant": [
+        "Asistent de migrare"
+      ],
       "Minicalendar": [
         "Minicalendar"
       ],
@@ -16359,6 +16461,9 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Suită de confidențialitate cu e-mail securizat, ${ VPN_SHORT_APP_NAME }, stocare în cloud și manager de parole într-un singur pachet. Doar cu ${ fallBackString } lunar."

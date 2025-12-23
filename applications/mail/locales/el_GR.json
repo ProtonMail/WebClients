@@ -1505,7 +1505,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2012,9 +2013,6 @@
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
       ],
-      "forever": [
-        "για πάντα"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
@@ -2045,11 +2043,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Προσφορά Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2091,36 +2084,6 @@
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Βοηθήστε τα αγαπημένα σας πρόσωπα να συμμετάσχουν στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Συμμετάσχετε στην επανάσταση της ιδιωτικότητας με τα πακέτα μας με την καλύτερη σχέση ποιότητας-τιμής, τώρα με έκπτωση 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "για ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Εξοικονομήστε ${ savedAmount } με την καλύτερη προσφορά περιορισμένου χρόνου!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο διετές πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Μεταβείτε στο ετήσιο πλάνο μας και εξοικονομήστε ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Προσφέρετε στην ομάδα σας πλήρη ψηφιακή προστασία."
       ]
     },
     "BF2025: Tooltip": {
@@ -2634,6 +2597,15 @@
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
       ],
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ],
+      "Compliance with data protection regulations": [
+        "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
       "Full chat history with search": [
         "Πλήρης ιστορία συνομιλίας με αναζήτηση"
       ],
@@ -2645,6 +2617,9 @@
       ],
       "Limited favorites": [
         "Περιορισμένα αγαπημένα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
       ],
       "Unlimited daily chats": [
         "Απεριόριστες καθημερινές συνομιλίες"
@@ -2660,6 +2635,9 @@
       ],
       "Web search access": [
         "Πρόσβαση στην αναζήτηση ιστού"
+      ],
+      "Zero-access encryption": [
+        "Κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
     "collider_2025: Info": {
@@ -7402,8 +7380,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9132,6 +9109,9 @@
       "/month": [
         "/μήνα"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
+      ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
@@ -9278,6 +9258,9 @@
       ],
       "Colors": [
         "Χρώματα"
+      ],
+      "Command line interface (CLI)": [
+        "Διεπαφή γραμμής εντολών (CLI)"
       ],
       "Company": [
         "Εταιρεια"

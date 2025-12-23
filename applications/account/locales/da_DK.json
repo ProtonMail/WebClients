@@ -1979,6 +1979,12 @@
       ],
       "Secure cloud storage": [
         "Sikker skylagring"
+      ],
+      "Secure online docs": [
+        "Sikre online dokumenter"
+      ],
+      "Secure online sheets": [
+        "Sikre online ark"
       ]
     },
     "Apps dropdown": {
@@ -2267,9 +2273,6 @@
       "Billed at ${ amount } once": [
         "Faktureret med ${ amount } én gang"
       ],
-      "forever": [
-        "for evigt"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes efter 1 måned til ${ regularAmount }."
       ]
@@ -2300,11 +2303,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-udsalg"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2344,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjælp dine kære med at deltage i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Deltag i privacy-revolutionen med vores mest fordelagtige pakker, nu med 50 % rabat!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vores mest fordelagtige, tidsbegrænsede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Skift til vores 2-års abonnement, og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Skift til vores årlige abonnement, og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Forkæl dine nærmeste med komplet digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -2549,7 +2517,7 @@
         "Lær, hvordan du sikkerhedskopierer dine filer til skyen eller til et eksternt drev, mens du samtidig holder dine data sikre."
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
-        "Lær, hvordan du slår irriterende og potentielt skadelige junkmails ihjel. Spam e-mails, også kendt som junkmail, kan være mere end bare irriterende rod i din indbakke. Cyberkriminelle kan bruge disse uopfordrede og uønskede meddelelser til at starte phishing-angreb og sprede malware."
+        "Lær, hvordan du overvinder irriterende og potentielt skadelige junkmails. Spam-e-mails, også kendt som junkmail, kan være mere end bare irriterende rod i din indbakke. Cyberkriminelle kan bruge disse uopfordrede og uønskede meddelelser til at starte phishing-angreb og sprede malware."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Se hvordan du aktiverer ${ VPN_APP_NAME } i din router."
@@ -2676,6 +2644,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personlige e-mailadresse er en væsentlig del af din digitale identitet. Ligesom dit telefonnummer giver du det ikke til alle, du møder. Derfor er det nyttigt at have andre e-mailadresser, du kan bruge til forskellige formål."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } af ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } år siden",
+        "${ n } år siden"
+      ],
+      "Add a custom domain": [
+        "Tilføj et specielt domæne"
+      ],
+      "Add a domain": [
+        "Tilføj et domæne"
+      ],
+      "Add more users...": [
+        "Tilføj flere brugere..."
+      ],
+      "Authenticate": [
+        "Godkend"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Change": [
+        "Skift"
+      ],
+      "Configure": [
+        "Opsæt"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Domain ownership verified": [
+        "Domæneejerskab verificeret"
+      ],
+      "Domain setup": [
+        "Domænekonfiguration"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-mail-notifikationer vil blive sendt, når migreringen starter, og når den er fuldført. Du vil også blive underrettet, hvis der opstår fejl, og hvis migreringen sættes på pause på grund af udløbne links."
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
+      ],
+      "Everything": [
+        "Alt"
+      ],
+      "Failed to load OAuth": [
+        "Kunne ikke indlæse OAuth"
+      ],
+      "Install migration app": [
+        "Installer migrations app."
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Få mere at vide om, hvad der kan migreres. Få mere at vide"
+      ],
+      "Mail": [
+        "Mail"
+      ],
+      "Migrate": [
+        "Migrér"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrer fra Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrer brugere"
+      ],
+      "Migration includes": [
+        "Migreringen omfatter"
+      ],
+      "Not started": [
+        "Ikke startet"
+      ],
+      "Required to create user accounts": [
+        "Påkrævet for at oprette brugerkonti"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Vælg, hvad du ønsker at migrere. Dette vil blive anvendt på alle brugere, uanset om de oprettes nu eller senere. Migrationen starter, når brugerkonti oprettes."
+      ],
+      "Set up": [
+        "Opsætning"
+      ],
+      "Set up billing information": [
+        "Konfigurer faktureringsoplysninger"
+      ],
+      "Set up two-factor authentication": [
+        "Opsæt to-faktor-godkendelse"
+      ],
+      "Sign in to Google Workspace": [
+        "Log ind på Google Workspace"
+      ],
+      "Start migration": [
+        "Start migrering"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "For at migrere dine organisations data skal du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, skal du vende tilbage hertil for at fortsætte. Få mere at vide"
+      ],
+      "Transfer data from": [
+        "Overfør data fra"
+      ],
+      "User": [
+        "Bruger"
+      ],
+      "Users migrated": [
+        "Brugere migreret"
+      ],
+      "Verify your domain": [
+        "Bekræft dit domæne"
+      ],
+      "Verify your domain ownership": [
+        "Bekræft dit domæneejerskab"
+      ],
+      "What are you migrating?": [
+        "Hvad migrerer du?"
+      ],
+      "Who will be notified?": [
+        "Hvem vil modtage besked?"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3204,15 @@
       "Basic chat history": [
         "Grundlæggende chathistorik"
       ],
+      "Built and based in Europe": [
+        "Bygget og baseret i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compliance med databeskyttelsesregulativer"
+      ],
+      "Data never used for AI training": [
+        "Data bruges aldrig til AI-træning"
+      ],
       "Full chat history with search": [
         "Fuld chathistorik med søgning"
       ],
@@ -3121,6 +3224,9 @@
       ],
       "Limited favorites": [
         "Begrænsede favoritter"
+      ],
+      "Strict no-logs policy": [
+        "Streng nul-log-politik"
       ],
       "Unlimited daily chats": [
         "Ubegrænsede daglige chats"
@@ -3136,6 +3242,9 @@
       ],
       "Web search access": [
         "Adgang til websøgning"
+      ],
+      "Zero-access encryption": [
+        "Nul-adgang-kryptering"
       ]
     },
     "collider_2025: Feature": {
@@ -3146,9 +3255,6 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } er en privatlivsfokuseret AI, der hjælper dig med at få mere fra hånden, samtidig med at dine data forbliver sikre. Frigør dets fulde potentiale, og få tidlig adgang til nye funktioner, efterhånden som de introduceres."
-      ],
-      "Access to advanced AI models": [
-        "Adgang til avancerede AI-modeller"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tilføj ${ LUMO_APP_NAME }"
@@ -3162,50 +3268,11 @@
       "AI assistant that respects your privacy": [
         "En AI-assistent, der respekterer dit privatliv"
       ],
-      "Basic chat history": [
-        "Grundlæggende chathistorik"
-      ],
-      "Compliance with data protection regulations": [
-        "Compliance med databeskyttelsesregulationer"
-      ],
-      "Data never used for AI training": [
-        "Data bruges aldrig til AI-træning"
-      ],
-      "Full chat history with search": [
-        "Fuld chathistorik med søgning"
-      ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
       ],
-      "Limited daily chats": [
-        "Begrænset antal daglige chats"
-      ],
-      "Limited favorites": [
-        "Begrænset atal favoritter"
-      ],
       "Open source": [
         "Open source"
-      ],
-      "Strict no-logs policy": [
-        "Streng nul-logningspolitik"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrænset antal daglige chats"
-      ],
-      "Unlimited favorites for quick access": [
-        "Ubegrænsede favoritter til hurtig adgang"
-      ],
-      "Upload and query multiple large files": [
-        "Upload og forespørg til flere store filer"
-      ],
-      "Upload and query small files": [
-        "Upload og forespørg små filer"
-      ],
-      "Web search access": [
-        "Adgang til websøgning"
-      ],
-      "Zero-access encryption": [
-        "Nul-adgang-kryptering"
       ]
     },
     "collider_2025: Navigation": {
@@ -4461,7 +4528,7 @@
         "Kommunikér og planlæg med end-to-end kryptering."
       ],
       "Experience true freedom online and safeguard your privacy.": [
-        "Oplev sand frihed online og beskyt dit privatliv"
+        "Oplev sand frihed online og beskyt dit privatliv."
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Få mere ud af dit ${ planTitle } abonnement."
@@ -4473,7 +4540,7 @@
         "Angiv sikre adgangskoder uden besvær."
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
-        "Med ${ planTitlePlusMaybeBrand } får du gratis adgang til alle ${ VPN_APP_NAME } privatlivstjenester."
+        "Med ${ planTitlePlusMaybeBrand } får du gratis adgang til ${ VPN_APP_NAME } og andre privatlivstjenester."
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Med ${ planTitlePlusMaybeBrand } får du gratis adgang til alle ${ BRAND_NAME } privatlivstjenester."
@@ -4625,7 +4692,7 @@
         "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
-        "Opret politikker for at afgøre, hvem der kan forbinde til delte servere i hvert land"
+        "Opret politikker for at afgøre, hvem der kan forbinde til delte servere i hvert land."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tilgå nemt din e-mail og kalender på desktop og mobil."
@@ -5570,7 +5637,7 @@
         "Opdater dine videresendelsesnøgler"
       ],
       "The forwardee rejected the forwarding request": [
-        "Modtageren afviste anmodningen om videresendelse."
+        "Modtageren afviste anmodningen om videresendelse"
       ],
       "The forwarding is temporarily paused": [
         "Videresendelsen er midlertidigt sat på pause"
@@ -5947,9 +6014,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Du er endnu ikke blevet udpeget som nødkontakt for nogen."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Du har nået max-antal på ${ controller.meta.count } betroet kontakt.",
-        "Du har nået max-antal på ${ controller.meta.count } betroede kontakter."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "De har nået det maksimale antal på ${ limit } nødkontakt.",
+        "Du har nået det maksimale antal på ${ limit } nødkontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du bliver adviseret, når nogen anmoder om nødadgang."
@@ -7691,11 +7758,6 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Jeg forstår, at jeg ikke længere vil kunne logge ind fra ældre versioner af ${ BRAND_NAME }-mobilapps."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "web- app"
@@ -9102,9 +9164,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Ved at aktivere post-kvantebeskyttelse vil nøgler, der er modstandsdygtige over for kvantecomputere, blive genereret til din konto."
-      ],
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
       ],
@@ -9118,7 +9177,7 @@
         "Kan du ikke få adgang til din gendannelses-e-mail?"
       ],
       "Can’t access your recovery phone?": [
-        "Kan du ikke få adgang til din gendannelses telefon?"
+        "Kan du ikke få adgang til din gendannelsestelefon?"
       ],
       "Center": [
         "Centrér"
@@ -13871,7 +13930,7 @@
         "Sådan samarbejder du i ${ DOCS_SHORT_APP_NAME }"
       ],
       "How to create strong passwords": [
-        "Sådan opret stærke adgangskoder"
+        "Sådan laves stærke adgangskoder"
       ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Sådan aktiveres ${ PROTON_SENTINEL_NAME }"
@@ -14062,7 +14121,7 @@
     },
     "Log event": {
       "Account password change": [
-        "Ædring af kontoadgangskode"
+        "Ændring af kontoadgangskode"
       ],
       "Authentication failure (second factor failed)": [
         "Godkendelsesfejl (anden faktor fejlede)"
@@ -14183,7 +14242,7 @@
         "**Få ${ plan }** i en begrænset periode!"
       ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Bliv en Visionary og vær en del af ${ BRAND_NAME }'s historie"
+        "Bliv en Visionary og vær en del af ${ BRAND_NAME }s historie"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17673,48 +17732,17 @@
         "Opgradér til ${ upsellPlanTitle }"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Post-kvantumbeskyttelse er blevet aktiveret på din konto, men nogle handlinger lykkedes ikke: Generering af post-kvantum-konto- og adressenøgler mislykkedes. Du kan manuelt generere disse nøgler via ${ encryptionAndKeysSettingsTitle } indstillingerne."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Post-kvantebeskyttelse er blevet aktiveret på din konto, men nogle handlinger lykkedes ikke: Generering af post-kvante-adressenøgler mislykkedes for en eller flere adresser. Du kan manuelt generere disse nøgler via ${ encryptionAndKeysSettingsTitle }-indstillingerne."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Opdater **alle dine ${ BRAND_NAME } mobilapps** til den seneste version."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Dette vil generere en ny kontonøgle og en ny e-mail-krypteringsnøgle for hver adresse; disse vil blive brugt til at kryptere og dekryptere fremtidige e-mails og andre data."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Aktivér og generér nøgler"
       ],
-      "Enable post-quantum protection": [
-        "Aktivér post-kvantebeskyttelse"
-      ],
       "Enable post-quantum protection?": [
         "Aktivér post-quantum beskyttelse?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Aktivering af post-kvantum beskyttelse mislykkedes. Prøv igen senere."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Forstået"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Post-kvantebeskyttelse er blevet aktiveret på din konto!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -22142,6 +22170,9 @@
       "Find email or username": [
         "Find e-mail eller brugernavn"
       ],
+      "Finish setting up your business account": [
+        "Færdiggør konfigurering af din virksomhedskonto"
+      ],
       "Folders": [
         "Mapper"
       ],
@@ -22361,6 +22392,9 @@
       ],
       "Messages and composing": [
         "Beskeder og skrivning"
+      ],
+      "Migration assistant": [
+        "Migrationsassistent"
       ],
       "Minicalendar": [
         "Minikalender"

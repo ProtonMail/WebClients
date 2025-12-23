@@ -1289,9 +1289,6 @@
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
       ],
-      "forever": [
-        "평생"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
       ]
@@ -1320,11 +1317,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "블랙프라이데이 세일"
       ]
     },
     "BF2025: Deal details": {
@@ -1366,36 +1358,6 @@
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "지금 50% 할인된 최고 가성비 번들로 소중한 사람들이 프라이버시 혁명에 참여하도록 도와주세요."
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "지금 50% 할인된 최고 가성비 번들로 프라이버시 혁명에 참여하세요!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal }간"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "최고 가성비의 기간 한정 혜택으로 ${ savedAmount }를 절약하세요!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2년 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "연간 플랜으로 전환하고 ${ savedAmount }를 절약하세요!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "소속 그룹에 완벽한 디지털 보호를 제공하세요."
       ]
     },
     "BF2025: Tooltip": {
@@ -1804,6 +1766,12 @@
       ],
       "Basic chat history": [
         "기본 채팅 기록"
+      ],
+      "Compliance with data protection regulations": [
+        "데이터 보호 규정 준수"
+      ],
+      "Data never used for AI training": [
+        "대화 데이터가 AI학습에 절대 사용되지 않음"
       ],
       "Full chat history with search": [
         "검색 기능이 포함된 전체 채팅 기록"
@@ -4302,6 +4270,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
+      ],
+      "View the invitation": [
+        "초대장 보기"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } 에 가입이 초대되었습니다"
@@ -7220,6 +7191,9 @@
       "settings": [
         "설정"
       ],
+      "Terms and conditions": [
+        "이용 약관"
+      ],
       "Types of recovery methods": [
         "복구 방법 유형"
       ],
@@ -8150,6 +8124,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
       ]
     },
     "new_plans: Subtext": {

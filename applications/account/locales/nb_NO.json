@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
+      "Open recovery settings": [
+        "Åpne innstillinger for gjenoppretting"
+      ],
       "Opt out": [
         "Takke nei"
       ],
@@ -1695,6 +1698,11 @@
         "Gjenopptar videresending"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "legg til flere lisenser"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Tilbakekall"
@@ -1948,6 +1956,38 @@
       ],
       "Talk confidentially": [
         "Snakk konfidensielt"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoin-lommebok"
+      ],
+      "Confidential video calls": [
+        "Konfidensielle videosamtaler"
+      ],
+      "Encrypted email": [
+        "Kryptert e-post"
+      ],
+      "Passwords and identity": [
+        "Passord og identitet"
+      ],
+      "Private AI assistant": [
+        "Privat KI-assistent"
+      ],
+      "Private browsing": [
+        "Privat surfing"
+      ],
+      "Private scheduling": [
+        "Privat planlegging"
+      ],
+      "Secure cloud storage": [
+        "Sikker skylagring"
+      ],
+      "Secure online docs": [
+        "Sikre dokumenter på nett"
+      ],
+      "Secure online sheets": [
+        "Sikre regneark på nett"
       ]
     },
     "Apps dropdown": {
@@ -2236,9 +2276,6 @@
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
       ],
-      "forever": [
-        "for alltid"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
       ]
@@ -2269,11 +2306,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday-salg"
       ]
     },
     "BF2025: Deal details": {
@@ -2315,36 +2347,6 @@
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Hjelp dine kjære med å bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Bli med på personvernrevolusjonen med våre mest prisgunstige pakker, nå med 50 % rabatt!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Spar ${ savedAmount } med vårt mest prisgunstige tidsbegrensede tilbud!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Bytt til vår 2-års plan og spar ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Bytt til vår årsplan og spar ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Gi dine kjære fullstendig digital beskyttelse."
       ]
     },
     "BF2025: Tooltip": {
@@ -2645,6 +2647,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personlige e-postadresse er en viktig del av din digitale identitet. Som telefonnummeret ditt, gir du det ikke til alle du møter. Derfor er det nyttig å ha andre e-postadresser du kan bruke til forskjellige formål."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } av ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } år siden",
+        "${ n } år siden"
+      ],
+      "Add a custom domain": [
+        "Legg til et egendefinert domene"
+      ],
+      "Add a domain": [
+        "Legg til et domene"
+      ],
+      "Add more users...": [
+        "Legg til flere brukere..."
+      ],
+      "Authenticate": [
+        "Autentiser"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Change": [
+        "Endre"
+      ],
+      "Configure": [
+        "Konfigurer"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Contacts": [
+        "Kontakter"
+      ],
+      "Domain ownership verified": [
+        "Domeneeierskap er verifisert"
+      ],
+      "Domain setup": [
+        "Domeneoppsett"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-postvarsler vil bli sendt når migreringen starter og når den er fullført. Du vil også bli varslet hvis det er feil og hvis migreringen blir satt på pause på grunn av utløpte koblinger."
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Everything": [
+        "Alt"
+      ],
+      "Failed to load OAuth": [
+        "Kunne ikke laste inn OAuth"
+      ],
+      "Install migration app": [
+        "Installer migreringsappen"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lær mer om hva som kan migreres. Lær mer"
+      ],
+      "Mail": [
+        "E-post"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrer fra Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrer brukere"
+      ],
+      "Migration includes": [
+        "Migrering inkluderer"
+      ],
+      "Not started": [
+        "Ikke påbegynt"
+      ],
+      "Required to create user accounts": [
+        "Kreves for å opprette brukerkontoer"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Velg hva du vil migrere, dette vil anvendes på alle brukere enten de opprettes nå eller senere. Migreringen starter etter at brukerkontoer er opprettet."
+      ],
+      "Set up": [
+        "Konfigurer"
+      ],
+      "Set up billing information": [
+        "Konfigurer faktureringsinformasjon"
+      ],
+      "Set up two-factor authentication": [
+        "Konfigurer tofaktorautentisering"
+      ],
+      "Sign in to Google Workspace": [
+        "Logg på Google Workspace"
+      ],
+      "Start migration": [
+        "Start migrering"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
+      ],
+      "Transfer data from": [
+        "Overfør data fra"
+      ],
+      "User": [
+        "Bruker"
+      ],
+      "Users migrated": [
+        "Brukere migrert"
+      ],
+      "Verify your domain": [
+        "Verifiser domenet ditt"
+      ],
+      "Verify your domain ownership": [
+        "Verifiser domeneeierskapet ditt"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "Who will be notified?": [
+        "Hvem vil bli varslet?"
       ]
     },
     "breadcrumb": {
@@ -3079,6 +3207,15 @@
       "Basic chat history": [
         "Grunnleggende chatlogg"
       ],
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Samsvar med databeskyttelsesforskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
       "Full chat history with search": [
         "Full chatlogg med søk"
       ],
@@ -3090,70 +3227,6 @@
       ],
       "Limited favorites": [
         "Begrenset antall favoritter"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ],
-      "Unlimited favorites for quick access": [
-        "Ubegrenset antall favoritter for rask tilgang"
-      ],
-      "Upload and query multiple large files": [
-        "Last opp og vis flere store filer"
-      ],
-      "Upload and query small files": [
-        "Last opp og vis små filer"
-      ],
-      "Web search access": [
-        "Tilgang til nettsøk"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Utviklet og basert i Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
-      ],
-      "Access to advanced AI models": [
-        "Tilgang til avanserte KI-modeller"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Legg til ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Avansert konto- og nettverkssikkerhet i én plan"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "KI-assistent som respekterer forretningskonfidensialitet"
-      ],
-      "AI assistant that respects your privacy": [
-        "KI-assistent som respekterer personvernet ditt"
-      ],
-      "Basic chat history": [
-        "Grunnleggende chatlogg"
-      ],
-      "Compliance with data protection regulations": [
-        "Samsvar med databeskyttelsesforskrifter"
-      ],
-      "Data never used for AI training": [
-        "Data blir aldri brukt til KI-trening"
-      ],
-      "Full chat history with search": [
-        "Full chatlogg med søk"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Høyhastighetschatter og avanserte KI-funksjoner."
-      ],
-      "Limited daily chats": [
-        "Begrenset antall daglige chatter"
-      ],
-      "Limited favorites": [
-        "Begrenset antall favoritter"
-      ],
-      "Open source": [
-        "Åpen kildekode"
       ],
       "Strict no-logs policy": [
         "Strenge retningslinjer mot loggføring"
@@ -3175,6 +3248,34 @@
       ],
       "Zero-access encryption": [
         "Nulltilgangskryptering"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "KI-assistent som respekterer forretningskonfidensialitet"
+      ],
+      "AI assistant that respects your privacy": [
+        "KI-assistent som respekterer personvernet ditt"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Open source": [
+        "Åpen kildekode"
       ]
     },
     "collider_2025: Navigation": {
@@ -5916,9 +6017,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Du har ikke blitt utpekt som nødkontakt for noen ennå."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Du har nådd maksimalt ${ controller.meta.count } betrodd kontakt.",
-        "Du har nådd maksimalt ${ controller.meta.count } betrodde kontakter."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Du har nådd maksimalt ${ limit } nødkontakt.",
+        "Du har nådd maksimalt ${ limit } nødkontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du vil bli varslet når noen ber om nødtilgang."
@@ -6970,6 +7071,12 @@
       "Set up family group": [
         "Konfigurer familiegruppe"
       ],
+      "Show all (${ invites.length })": [
+        "Vis alle (${ invites.length })"
+      ],
+      "Show less": [
+        "Vis mindre"
+      ],
       "Switch plans": [
         "Bytt plan"
       ],
@@ -7049,6 +7156,10 @@
       "Pending": [
         "Ventende"
       ],
+      "Pending invitation": [
+        "Ventende invitasjon",
+        "Ventende invitasjoner"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
       ],
@@ -7060,6 +7171,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "For å lette overgangen gir vi deg en 30-dagers prøveperiode på ${ BRAND_NAME } Unlimited*."
+      ],
+      "View the invitation": [
+        "Se invitasjonen",
+        "Se invitasjonene"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er invitert til å bli med ${ invite.OrganizationName }"
@@ -7098,6 +7213,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Du vil miste tilgang til alle premiumfunksjoner inkludert med ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Du er invitert av **${ invite.InviterEmail }** til å koble kontoen din til denne gruppeplanen."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Du er invitert til å bli med i ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne familieplanen og sammen nyte alle ${ brandOrAppName }-premiumfunksjoner."
@@ -7638,7 +7759,7 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
         "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av mobilappene til ${ BRAND_NAME }."
       ]
     },
@@ -8682,6 +8803,12 @@
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** til alle enhetene dine"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Dette vil deaktivere ende-til-ende-krypterte e-postvideresendinger:** du kan sette dem opp igjen senere."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Gjenopprettingsmetodene dine blir ugyldige:** du kan generere nye gjenopprettingsdata senere."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } til",
         "+ ${ invisibleCount } til"
@@ -9047,9 +9174,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Ved å aktivere postkvantebeskyttelse, vil nøkler som er motstandsdyktige mot kvantedatamaskiner bli generert for din konto."
       ],
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
@@ -10366,6 +10490,9 @@
       ],
       "Private AI assistant": [
         "Privat KI-assistent"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Beskytt kontoen din mot kvantedatatrusler med kvantebestandige kryptografiske nøkler."
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
@@ -11712,6 +11839,11 @@
         "Valgt farge:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktivert, arver undermapper fargen på den overordnede mappen."
@@ -12313,6 +12445,9 @@
       "6 Pass Plus accounts": [
         "6 Pass Plus-kontoer"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
       "Account holder": [
         "Kontoinnehaver"
       ],
@@ -12561,6 +12696,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandolinjegrensesnitt (CLI)"
       ],
       "Common passwords": [
         "Vanlige passord"
@@ -13113,6 +13251,9 @@
       ],
       "Online privacy for your whole family": [
         "Personvern på nettet for hele familien din"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Kun tilgjengelig på betalte planer for ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-passord"
@@ -13936,6 +14077,11 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Brukere og adresser"
       ]
     },
     "Link label (optional)": {
@@ -17610,47 +17756,65 @@
       ]
     },
     "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Postkvantebeskyttelse er aktivert på kontoen din, men noen operasjoner var mislykkede: generering av postkvantekonto- og adressenøkler mislyktes. Du kan generere disse nøklene manuelt under innstillingene ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Kunne ikke generere nøkler. For å aktivere postkvantebeskyttelse, må du generere dine nye krypteringsnøkler manuelt.\n\n${ settingsLink } og velge 'Generer nøkkel' for din konto og for hver adresse."
       ]
     },
     "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Postkvantebeskyttelse er aktivert på kontoen din, men noen operasjoner var mislykkede: generering av postkvanteadressenøkler for én eller flere adresser mislyktes. Du kan generere disse nøklene manuelt under innstillingene ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Kunne ikke generere adressenøkler. For å aktivere postkvantebeskyttelse, må du generere de nye krypteringsnøklene manuelt.\n\nGå til ${ settingsLink } og velg 'Generer nøkkel' for hver adresse."
       ]
     },
     "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Oppdater **alle dine ${ BRAND_NAME } mobilapper** til den nyeste versjonen."
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Du må oppdatere alle ${ BRAND_NAME }-mobilapper**: de nye nøklene dine vil ikke fungere på eldre appversjoner."
       ]
     },
     "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Dette vil generere en ny kontonøkkel og en ny e-postkrypteringsnøkkel for hver adresse; disse vil bli brukt til å kryptere og dekryptere fremtidige e-poster og andre data."
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Dette vil generere nye kvantebestandige krypteringsnøkler for kontoen din."
       ]
     },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Kunne ikke aktivere postkvantebeskyttelse"
+      ],
       "Enable and generate keys": [
         "Aktiver og generer nøkler"
-      ],
-      "Enable post-quantum protection": [
-        "Aktiver postkvantebeskyttelse"
       ],
       "Enable post-quantum protection?": [
         "Aktivere postkvantebeskyttelse?"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Aktivering av postkvantebeskyttelse mislyktes. Prøv igjen senere."
+      "Enabling post-quantum protection...": [
+        "Aktiverer postkvantebeskyttelse..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Gå til ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Vennligst prøv igjen. Hvis det ikke fungerer, kontakt vårt kundestøtteteam."
+      ],
+      "Post-quantum protection": [
+        "Postkvantebeskyttelse"
+      ],
+      "Post-quantum protection is enabled": [
+        "Postkvantebeskyttelse er aktivert"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Lukk"
+      ],
       "Got it": [
         "Skjønner"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Postkvantebeskyttelse er aktivert på kontoen din!"
+      "Don't forget to generate new recovery data.": [
+        "Ikke glem å generere nye gjenopprettingsdata."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Postkvantebeskyttelse er aktivert."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22078,6 +22242,9 @@
       "Find email or username": [
         "Finn e-post eller brukernavn"
       ],
+      "Finish setting up your business account": [
+        "Fullfør konfigurasjonen av bedriftskontoen din"
+      ],
       "Folders": [
         "Mapper"
       ],
@@ -22298,6 +22465,9 @@
       "Messages and composing": [
         "Meldinger og skriving"
       ],
+      "Migration assistant": [
+        "Migreringsassistent"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -22420,6 +22590,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
+      ],
+      "Pending invitations": [
+        "Ventende invitasjoner"
       ],
       "Personalize your email footer": [
         "Tilpass bunnteksten i e-post"
@@ -23607,6 +23780,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filer, bilder og dokumenter, og gjenopprett filversjoner med 10-års filgjenoppretting."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke. Fra kun ${ fallBackString } per måned"

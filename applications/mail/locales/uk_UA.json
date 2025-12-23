@@ -1308,9 +1308,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1761,11 +1758,6 @@
         "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Розпродаж у Чорну П'ятницю"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 ТБ сховища даних"
@@ -1805,36 +1797,6 @@
       ],
       "Unlimited daily chats": [
         "Необмежена кількість щоденних чатів"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Допоможіть своїм близьким приєднатися до революції приватності з нашими найвигіднішими наборами, зараз зі знижкою 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Приєднайтеся до революції приватності з нашими найвигіднішими наборами, зараз зі знижкою 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Заощаджуйте ${ savedAmount } з нашою найвигіднішою пропозицією обмеженого часу!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Перейдіть на наш 2-річний тарифний план та заощадьте ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Перейдіть на наш річний тарифний план та заощадьте ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Надайте своєму «племені» повний цифровий захист."
       ]
     },
     "BF2025: Tooltip": {
@@ -6844,9 +6806,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -12771,6 +12730,12 @@
         "${ elementsCount } повідомлення вилучено з ${ labelName }.",
         "${ elementsCount } повідомлень вилучено з ${ labelName }.",
         "${ elementsCount } повідомлень вилучено з ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } повідомлення вилучено з Вибраного.",
+        "${ elementsCount } повідомлень вилучені з Вибраних.",
+        "${ elementsCount } повідомлень вилучені з Вибраного.",
+        "${ elementsCount } повідомлення видалено з Вибраних."
       ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"

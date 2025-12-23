@@ -1319,9 +1319,6 @@
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
       ],
-      "forever": [
-        "назаўсёды"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
       ]
@@ -1356,11 +1353,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Распродаж з нагоды \"Чорнай пятніцы\""
       ]
     },
     "BF2025: Deal details": {
@@ -1402,36 +1394,6 @@
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Чорная пятніца"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -1856,6 +1818,15 @@
       "Basic chat history": [
         "Базавая гісторыя чата"
       ],
+      "Built and based in Europe": [
+        "Створана і базіруецца ў Еўропе"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпавядае прававым нормам па абароне даных"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
       "Full chat history with search": [
         "Поўная гісторыя чатаў з пошукам"
       ],
@@ -1867,6 +1838,9 @@
       ],
       "Limited favorites": [
         "Абмежаваная колькасць абраных"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
       "Unlimited daily chats": [
         "Неабмежаваныя штодзённыя чаты"
@@ -1882,6 +1856,9 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Info": {
@@ -4414,6 +4391,12 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
+      "View the invitation": [
+        "Паглядзець запрашэнне",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
@@ -6792,6 +6775,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
+      ],
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
@@ -6884,6 +6870,9 @@
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Command line interface (CLI)": [
+        "Інтэрфейс каманднага радка (CLI)"
       ],
       "Company": [
         "Кампанія"

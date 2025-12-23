@@ -297,6 +297,9 @@
       "Delete contact group": [
         "Выдаліць групу кантактаў"
       ],
+      "Delete older revisions": [
+        "Выдаліць больш старую рэдакцыю"
+      ],
       "Delete permanently": [
         "Выдаліць незваротна"
       ],
@@ -320,6 +323,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Спампаваць копію (у фармаце *.docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Спампаваць копію (у фармаце *.xlsx)"
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
@@ -550,6 +559,9 @@
         "Не зараз"
       ],
       "OK": [
+        "OK"
+      ],
+      "Okay": [
         "OK"
       ],
       "Open": [
@@ -873,6 +885,9 @@
       "View invoice": [
         "Паглядзець рахунак"
       ],
+      "View only": [
+        "Толькі прагляд"
+      ],
       "Web page (.html)": [
         "Вэб-старонка (.html)"
       ],
@@ -1072,9 +1087,6 @@
       "Billed at ${ amount } once": [
         "Аплачваецца ${ amount } аднаразова"
       ],
-      "forever": [
-        "назаўсёды"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
       ]
@@ -1109,11 +1121,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Распродаж з нагоды \"Чорнай пятніцы\""
       ]
     },
     "BF2025: Deal details": {
@@ -1155,36 +1162,6 @@
       ],
       "Unlimited daily chats": [
         "Неабмежаваная колькасць штодзённых чатаў"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Чорная пятніца"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Дапамажыце сваім блізкім далучыцца да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Далучайцеся да рэвалюцыі прыватнасці з нашымі самымі выгаднымі камплектамі, зараз са зніжкай 50%!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Зэканомце ${ savedAmount } з нашай самай выгаднай абмежаванай па часе прапановай!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш 2-гадовы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Пераключыцеся на наш гадавы тарыфны план і зэканомце ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Абараніце сваё плямя поўнай лічбавай абаронай."
       ]
     },
     "BF2025: Tooltip": {
@@ -1367,6 +1344,15 @@
       "Basic chat history": [
         "Базавая гісторыя чата"
       ],
+      "Built and based in Europe": [
+        "Створана і базіруецца ў Еўропе"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпавядае прававым нормам па абароне даных"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
       "Full chat history with search": [
         "Поўная гісторыя чатаў з пошукам"
       ],
@@ -1375,6 +1361,9 @@
       ],
       "Limited favorites": [
         "Абмежаваная колькасць абраных"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
       "Unlimited daily chats": [
         "Неабмежаваныя штодзённыя чаты"
@@ -1390,6 +1379,9 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Info": {
@@ -2895,6 +2887,9 @@
       "Failed to open to contact": [
         "Не ўдалося адкрыць кантакт"
       ],
+      "Failed to remove older revisions": [
+        "Не ўдалося выдаліць больш старую рэдакцыю"
+      ],
       "Failed to rename document. Please try again later.": [
         "Не ўдалося перайменаваць дакумент. Паспрабуйце яшчэ раз пазней."
       ],
@@ -3507,6 +3502,12 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
+      ],
+      "View the invitation": [
+        "Паглядзець запрашэнне",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
@@ -5099,6 +5100,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Гэты дакумент стаў занадта вялікім для рэдагавання. Вы можаце выдаліць больш старыя версіі, каб працягнуць рэдагаванне."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Гэты дакумент стаў занадта вялікі, і вашы апошнія змены немагчыма захаваць. Спампуйце копію, каб захаваць сваю працу."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "У гэтага дакумента занадта высокая актыўнасць. Некаторыя функцыі могуць быць часова недаступныя."
       ],
@@ -5569,6 +5576,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
+      ],
       "Add email address": [
         "Дадаць адрас электроннай пошты"
       ],
@@ -5637,6 +5647,9 @@
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Command line interface (CLI)": [
+        "Інтэрфейс каманднага радка (CLI)"
       ],
       "Confirm password": [
         "Пацвердзіць пароль"
@@ -9691,6 +9704,12 @@
       ],
       "Docs": [
         "Дакументы"
+      ],
+      "Document Size Limit Exceeded": [
+        "Перавышана абмежаванне па памеры дакумента"
+      ],
+      "Document Size Limit Reached": [
+        "Дасягнута абмежаванне па памеры дакумента"
       ],
       "Document verification failed": [
         "Збой праверкі дакумента"
