@@ -262,7 +262,7 @@ const ProjectDetailViewInner = () => {
     if (!space || !space.isProject) {
         return (
             <div className="project-detail-not-found flex flex-column items-center justify-center">
-                <Icon name="exclamation-circle" size={4} />
+                <img src={lumoProjects} alt="Projects" width={200} />
                 <h2 className="text-lg">{c('collider_2025:Error').t`Project not found`}</h2>
                 <Button onClick={() => history.push('/projects')}>
                     {c('collider_2025:Button').t`Back to projects`}
