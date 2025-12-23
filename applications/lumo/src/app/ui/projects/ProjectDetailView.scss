@@ -160,7 +160,7 @@
 }
 
 .project-detail-main {
-	overflow: hidden;
+	overflow: hidden auto; // Allow vertical scrolling
 	padding-block: 8px 0;
 	padding-inline: 6px 8px;
 	position: relative;
@@ -177,17 +177,18 @@
 
 .project-detail-empty {
 	text-align: center;
-	padding-block: 60px;
+	padding-block: 40px;
 	padding-inline: 20px;
 	inline-size: 100%;
 	max-inline-size: 51.25rem;
-	margin-block: 0;
+	margin-block: auto; // Center vertically in available space
 	margin-inline: auto;
 
 	@media (width <= 768px) {
 		max-inline-size: 100%;
 		inline-size: 100%;
-		margin: 0;
+		margin-inline: 0;
+		padding-block: 20px;
 	}
 }
 
@@ -219,6 +220,11 @@
 	gap: 12px;
 	max-inline-size: 600px;
 	inline-size: 100%;
+
+	// Hide suggestions when viewport height is too small
+	@media (max-height: 700px) {
+		display: none;
+	}
 }
 
 .project-detail-prompt-suggestion {
@@ -412,6 +418,7 @@
 	}
 }
 
-.project-detail-conversation-item:hover .conversation-menu-button {
+.project-detail-conversation-item:hover .conversation-menu-button,
+.selectable-conversation-item:hover .conversation-menu-button {
 	opacity: 1;
 }
