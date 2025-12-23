@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { addressThunk, useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
-import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
@@ -18,7 +17,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
@@ -26,12 +24,10 @@ import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hoo
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
 import { ForwardingState, ForwardingType, type KeyGenConfig, type KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
-import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
     addAddressKeysProcess,
     deleteAddressKey,
     getPrimaryAddressKeysForSigning,
-    importKeysProcess,
     setAddressKeyFlags,
     setPrimaryAddressKey,
 } from '@proton/shared/lib/keys';
@@ -45,13 +41,11 @@ import DeleteKeyModal from './deleteKey/DeleteKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
-import type { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import { getKeyByID } from './shared/helper';
 import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
-    const handleError = useErrorHandler();
     const { createModal } = useModals();
     const { stop, start } = useEventManager();
     const authentication = useAuthentication();
@@ -291,31 +285,6 @@ const AddressKeysSection = () => {
         setImportKeyModalOpen(true);
     };
 
-    const onProcessImport = async (keyImportRecords: ImportKey[], cb: OnKeyImportCallback) => {
-        if (!Address || !addressKeys || !userKeys || !Addresses) {
-            throw new Error('Missing address or address keys');
-        }
-        try {
-            stop();
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            await importKeysProcess({
-                api,
-                address: Address,
-                addressKeys: addressKeys,
-                addresses: Addresses,
-                userKeys,
-                keyImportRecords,
-                keyPassword: authentication.getPassword(),
-                onImport: cb,
-                keyTransparencyVerify,
-            });
-            await keyTransparencyCommit(User, userKeys);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-        } finally {
-            start();
-        }
-    };
-
     const handleExportPrivate = (ID: string) => {
         if (isLoadingKey || !addressKeys) {
             return;
@@ -429,10 +398,10 @@ const AddressKeysSection = () => {
                     {...addKeyProps}
                 />
             )}
-            {renderImportKey && (
+            {renderImportKey && Address && (
                 <ImportKeyModal
-                    onProcess={onProcessImport}
                     hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
+                    address={Address}
                     {...importKeyProps}
                 />
             )}
@@ -440,14 +409,6 @@ const AddressKeysSection = () => {
                 <ReactivateKeysModal
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
-                    onProcess={async (keyReactivationRecords, onReactivation) => {
-                        await dispatch(
-                            reactivateKeysThunk({
-                                keyReactivationRecords,
-                                onReactivation,
-                            })
-                        ).catch(handleError);
-                    }}
                     {...reactivateKeyProps}
                 />
             )}

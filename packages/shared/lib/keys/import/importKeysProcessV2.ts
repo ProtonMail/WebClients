@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+import { type ReactivateKeysResult, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
 import {
@@ -22,12 +22,11 @@ import { getInactiveKeys } from '../getInactiveKeys';
 import { reactivateAddressKeysV2 } from '../reactivation/reactivateKeysProcessV2';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
-import type { KeyImportData, OnKeyImportCallback } from './interface';
+import type { ImportKeyData } from './interface';
 
 export interface ImportKeysProcessV2Arguments {
     api: Api;
-    keyImportRecords: KeyImportData[];
-    onImport: OnKeyImportCallback;
+    keyImportRecords: ImportKeyData[];
     keyPassword: string;
     address: Address;
     addressKeys: DecryptedAddressKey[];
@@ -35,10 +34,11 @@ export interface ImportKeysProcessV2Arguments {
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
+export type ImportKeysResult = ReactivateKeysResult;
+
 const importKeysProcessV2 = async ({
     api,
     keyImportRecords,
-    onImport,
     address,
     addressKeys,
     userKey,
@@ -47,6 +47,9 @@ const importKeysProcessV2 = async ({
     const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
     const activeKeysList = [...activeKeys.v4, ...activeKeys.v6];
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeysList);
+    const result: ImportKeysResult = {
+        details: [],
+    };
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
         keyImportRecords,
@@ -55,7 +58,7 @@ const importKeysProcessV2 = async ({
     );
 
     existingKeys.forEach((keyImportRecord) => {
-        onImport(keyImportRecord.id, new Error('Key already active'));
+        result.details.push({ id: keyImportRecord.id, error: new Error('Key already active'), type: 'error' });
     });
 
     let mutableActiveKeys = activeKeys;
@@ -111,21 +114,24 @@ const importKeysProcessV2 = async ({
 
             mutableActiveKeys = updatedActiveKeys;
 
-            onImport(keyImportRecord.id, 'ok');
+            result.details.push({ id: keyImportRecord.id, type: 'success' });
         } catch (e: any) {
-            onImport(keyImportRecord.id, e);
+            result.details.push({ id: keyImportRecord.id, error: e, type: 'error' });
         }
     }
 
-    await reactivateAddressKeysV2({
+    const reactivationResult = await reactivateAddressKeysV2({
         api,
         address,
         activeKeys: mutableActiveKeys,
         userKey,
         keysToReactivate,
-        onReactivation: onImport,
         keyTransparencyVerify,
     });
+
+    return {
+        details: [...reactivationResult.result.details, ...result.details],
+    };
 };
 
 export default importKeysProcessV2;

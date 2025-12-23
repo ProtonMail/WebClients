@@ -261,24 +261,21 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup1();
-        const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
-        await reactivateKeysProcess({
+        const result = await reactivateKeysProcess({
             api,
             user: User,
             userKeys,
             addresses: Addresses,
             keyReactivationRecords,
             keyPassword,
-            onReactivation,
             keyTransparencyVerify: async () => {},
         });
         expect(api.calls.count()).toEqual(1);
-        expect(onReactivation.calls.count()).toEqual(3);
-        expect(onReactivation.calls.allArgs()).toEqual([
-            ['2', 'ok'],
-            ['c', 'ok'],
-            ['d', 'ok'],
+        expect(result.details).toEqual([
+            { id: '2', type: 'success' },
+            { id: 'c', type: 'success' },
+            { id: 'd', type: 'success' },
         ]);
         const keyReactivationCall = api.calls.argsFor(0)[0];
         expect(keyReactivationCall).toEqual({
@@ -300,28 +297,25 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys, and legacy address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup2();
-        const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
-        await reactivateKeysProcess({
+        const result = await reactivateKeysProcess({
             api,
             user: User,
             userKeys,
             addresses: Addresses,
             keyReactivationRecords,
             keyPassword,
-            onReactivation,
             keyTransparencyVerify: async () => {},
         });
 
-        expect(onReactivation.calls.count()).toEqual(7);
-        expect(onReactivation.calls.allArgs()).toEqual([
-            ['2', 'ok'],
-            ['b', 'ok'],
-            ['a2', 'ok'],
-            ['b2', 'ok'],
-            ['b1', jasmine.any(Error)],
-            ['c1', 'ok'],
-            ['c2', 'ok'],
+        expect(result.details).toEqual([
+            { id: '2', type: 'success' },
+            { id: 'b', type: 'success' },
+            { id: 'a2', type: 'success' },
+            { id: 'b2', type: 'success' },
+            { id: 'b1', error: jasmine.objectContaining({ message: 'User key inactive' }), type: 'error' },
+            { id: 'c1', type: 'success' },
+            { id: 'c2', type: 'success' },
         ]);
 
         expect(api.calls.count()).toEqual(3);
@@ -377,23 +371,20 @@ describe('reactivate keys', () => {
     it('reactivate user keys and the connected address keys', async () => {
         const { keyPassword, keyReactivationRecords, User, Addresses, userKeys, expectedAddressKeysReactivated } =
             await getSetup3();
-        const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.callFake(() => Promise.resolve());
-        await reactivateKeysProcess({
+        const result = await reactivateKeysProcess({
             api,
             user: User,
             userKeys,
             addresses: Addresses,
             keyReactivationRecords,
             keyPassword,
-            onReactivation,
             keyTransparencyVerify: async () => {},
         });
 
-        expect(onReactivation.calls.count()).toEqual(2);
-        expect(onReactivation.calls.allArgs()).toEqual([
-            ['2', 'ok'],
-            ['b', 'ok'],
+        expect(result.details).toEqual([
+            { id: '2', type: 'success' },
+            { id: 'b', type: 'success' },
         ]);
 
         expect(api.calls.count()).toEqual(1);

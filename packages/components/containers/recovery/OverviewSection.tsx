@@ -1,10 +1,7 @@
 import { useInactiveKeys } from '@proton/account';
-import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
@@ -13,9 +10,7 @@ import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryCard from './RecoveryCard';
 
 export const OverviewSection = () => {
-    const handleError = useErrorHandler();
     const [userKeys] = useUserKeys();
-    const dispatch = useDispatch();
 
     const keyReactivationRequests = useInactiveKeys();
 
@@ -41,14 +36,6 @@ export const OverviewSection = () => {
                 <ReactivateKeysModal
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
-                    onProcess={async (keyReactivationRecords, onReactivation) => {
-                        await dispatch(
-                            reactivateKeysThunk({
-                                keyReactivationRecords,
-                                onReactivation,
-                            })
-                        ).catch(handleError);
-                    }}
                     {...reactivateKeyProps}
                 />
             )}

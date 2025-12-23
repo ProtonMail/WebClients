@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { ImportKeyData } from '@proton/shared/lib/keys';
 
 export enum Status {
     SUCCESS = 1,
@@ -6,10 +6,9 @@ export enum Status {
     ERROR = 3,
 }
 
-export interface ImportKey {
-    id: string;
+export interface ImportKeyState {
+    importKeyData: ImportKeyData;
     fingerprint: string;
-    privateKey: PrivateKeyReference;
     status: Status;
-    result?: 'ok' | Error;
+    result?: string;
 }

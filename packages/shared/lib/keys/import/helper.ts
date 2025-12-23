@@ -1,13 +1,13 @@
 import type { ActiveKey, InactiveKey } from '../../interfaces';
 import type { KeyReactivationData } from '../reactivation/interface';
-import type { KeyImportData } from './interface';
+import type { ImportKeyData } from './interface';
 
 export const getFilteredImportRecords = (
-    keyImportRecords: KeyImportData[],
+    keyImportRecords: ImportKeyData[],
     activeKeys: ActiveKey[],
     inactiveKeys: InactiveKey[]
 ) => {
-    return keyImportRecords.reduce<[KeyReactivationData[], KeyImportData[], KeyImportData[]]>(
+    return keyImportRecords.reduce<[KeyReactivationData[], ImportKeyData[], ImportKeyData[]]>(
         (acc, keyImportRecord) => {
             const { privateKey: uploadedPrivateKey } = keyImportRecord;
             const fingerprint = uploadedPrivateKey.getFingerprint();

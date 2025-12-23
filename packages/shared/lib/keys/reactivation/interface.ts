@@ -20,8 +20,6 @@ export type KeyReactivationRecord =
           keysToReactivate: KeyReactivationData[];
       };
 
-export type OnKeyReactivationCallback = (id: string, result: 'ok' | Error) => void;
-
 export interface KeyReactivationRequestStateData {
     id: string;
     Key: Key;
@@ -52,3 +50,18 @@ export type KeyReactivationRequest =
           address: Address;
           keysToReactivate: InactiveKey[];
       };
+
+export type ReactivateKeyResult =
+    | {
+          id: string;
+          type: 'success';
+      }
+    | {
+          id: string;
+          type: 'error';
+          error: Error;
+      };
+
+export interface ReactivateKeysResult {
+    details: ReactivateKeyResult[];
+}
