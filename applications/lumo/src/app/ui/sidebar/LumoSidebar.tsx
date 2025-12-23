@@ -109,29 +109,33 @@ const NewChatButton = ({ showText, isSmallScreen }: { showText: boolean; isSmall
     );
 };
 
-// Chat History Section
+// Chat History Section - structured like Projects section for consistency
 const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; showText: boolean }) => {
     const { shouldShowContent, closeOnItemClick, isCollapsed, toggle } = useSidebar();
 
     return (
-        <>
-            {isCollapsed ? (
-                <div className="sidebar-section">
-                    <Tooltip title={c('collider_2025:Title').t`History`} originalPlacement="right">
-                        <button
-                            className="sidebar-item"
-                            onClick={toggle}
-                            aria-label={c('collider_2025:Title').t`History`}
-                        >
-                            <div className="sidebar-item-icon">
-                                <Icon name="clock-rotate-left" size={4} />
-                            </div>
-                        </button>
-                    </Tooltip>
-                </div>
-            ) : (
+        <div className="chat-history-sidebar-section">
+            {/* History header button - same structure as other sidebar items */}
+            <Tooltip title={c('collider_2025:Title').t`History`} originalPlacement="right">
+                <button
+                    className={clsx('sidebar-item', !showText && 'collapsed')}
+                    onClick={isCollapsed ? toggle : undefined}
+                    aria-label={c('collider_2025:Title').t`History`}
+                    style={{ cursor: isCollapsed ? 'pointer' : 'default' }}
+                >
+                    <div className="sidebar-item-icon">
+                        <Icon name="clock-rotate-left" size={4} />
+                    </div>
+                    <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
+                        {c('collider_2025:Title').t`History`}
+                    </span>
+                </button>
+            </Tooltip>
+
+            {/* History content - only show when expanded */}
+            {!isCollapsed && (
                 <div
-                    className={clsx('chat-history-section', {
+                    className={clsx('chat-history-content', {
                         'content-visible': shouldShowContent,
                         'text-visible': showText,
                     })}
@@ -139,7 +143,7 @@ const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; sh
                     <ChatHistory refInputSearch={{ current: null }} onItemClick={closeOnItemClick} searchInput={searchValue} />
                 </div>
             )}
-        </>
+        </div>
     );
 };
 
@@ -263,24 +267,18 @@ const LumoSidebarContent = () => {
                     </div>
                 )}
 
-                {/* Top Section - hide on mobile for guests */}
-                {!(isSmallScreen && isGuest) && (
-                    <div className="sidebar-section">
-                        <NewChatButton showText={showText} isSmallScreen={isSmallScreen} />
-                    </div>
-                )}
+                <div className="sidebar-section">
+                    <NewChatButton showText={showText} isSmallScreen={isSmallScreen} />
+                </div>
 
-                {/* Projects Section */}
                 {isLumoProjectsEnabled &&
                     <div className="sidebar-section">
                         <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 }
 
-                {/* Chat History Section */}
                 <ChatHistorySection searchValue={searchValue} showText={showText} />
 
-                {/* Bottom Section */}
                 <div className="sidebar-section sidebar-bottom">
                     <LumoSidebarUpsell collapsed={isCollapsed} />
 
