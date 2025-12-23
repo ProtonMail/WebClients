@@ -45,7 +45,7 @@ export const deleteAllSpacesSuccess = createAction<void>('lumo/space/deleteAll/s
 export const deleteAllSpacesFailure = createAction<DeleteAllSpacesFailure>('lumo/space/deleteAll/failure');
 
 export type SpaceMap = Record<SpaceId, Space>;
-export const EMPTY_SPACE_MAP = {};
+export const EMPTY_SPACE_MAP: SpaceMap = {};
 const initialState: SpaceMap = EMPTY_SPACE_MAP;
 
 const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
