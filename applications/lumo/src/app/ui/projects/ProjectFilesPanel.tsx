@@ -55,7 +55,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const searchService = useSearchService();
 
     // Get space and check if Drive folder is linked
-    const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
+    const space = useLumoSelector(selectSpaceById(projectId));
     const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
 
