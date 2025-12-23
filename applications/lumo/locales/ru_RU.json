@@ -490,11 +490,6 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Распродажа «Чёрная пятница»"
-      ]
-    },
     "BF2025: Deal details": {
       "2 TB data storage": [
         "2 ТБ для хранения данных"
@@ -534,36 +529,6 @@
       ],
       "Unlimited daily chats": [
         "Неограниченное количество ежедневных чатов"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Помогите своим близким присоединиться к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Присоединяйтесь к революции в области конфиденциальности с нашими самыми выгодными комплектами, теперь со скидкой 50 %!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Экономьте ${ savedAmount } с нашим самым выгодным предложением с ограниченным сроком действия!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Перейдите на наш 2-летний план и сэкономьте ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Перейдите на наш годовой план и сэкономьте ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Подарите своим близким полную цифровую защиту."
       ]
     },
     "BF2025: Tooltip": {
@@ -1129,6 +1094,65 @@
       ],
       "You are about to visit an external website:": [
         "Вы собираетесь посетить внешний веб-сайт:"
+      ]
+    },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "Адрес электронной почты недействителен"
+      ],
+      "Email address is required": [
+        "Адрес электронной почты обязателен"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Invite friends": [
+        "Пригласить друзей"
+      ],
+      "Maybe later": [
+        "Может, позже"
+      ],
+      "Send invitation": [
+        "Отправить приглашение"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "Электронная почта вашего друга"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Знаете кого-то, кому пригодился бы ИИ, ориентированный на конфиденциальность? Пригласите их присоединиться к списку ожидания ${ LUMO_SHORT_APP_NAME }. Осталось приглашений: ${ remainingInvitesText }."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Осталось приглашений: ${ remainingInvitesText }."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Приглашение отправлено."
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Приглашение отправлено!"
+      ],
+      "No invites left  ": [
+        "Приглашений не осталось  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Спасибо, что помогаете другим узнать о ${ LUMO_SHORT_APP_NAME }! Если появятся новые приглашения, мы сообщим вам."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Мы пригласили ${ emailText }. Они получат инструкции о том, как присоединиться к списку ожидания."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Пригласить друзей попробовать ${ LUMO_APP_NAME }"
       ]
     },
     "collider_2025: Label": {
