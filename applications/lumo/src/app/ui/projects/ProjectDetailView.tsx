@@ -38,6 +38,7 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import { getProjectInfo } from '../../types';
 import { type ConversationGroup, SelectableConversationList } from '../components/Conversations';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { HeaderWrapper } from '../header/HeaderWrapper';
@@ -124,6 +125,12 @@ const ProjectDetailViewInner = () => {
     const space = useLumoSelector(selectSpaceById(projectId));
     const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
+
+    // Project data
+    const { project } = getProjectInfo(space);
+    const projectName = project?.projectName || 'Untitled Project';
+    const projectInstructions = project?.projectInstructions || '';
+    const category = getProjectCategory(project?.projectIcon);
 
     // Sort conversations by date (most recent first)
     const sortedConversations = [...allConversations].sort((a, b) => {
@@ -220,11 +227,6 @@ const ProjectDetailViewInner = () => {
         },
         [api, dispatch, projectId, provisionalAttachments, createConversationInProject, history]
     );
-
-    // Derived values - compute before conditional return but may be empty
-    const projectName = space?.projectName || 'Untitled Project';
-    const projectInstructions = space?.projectInstructions || '';
-    const category = getProjectCategory(space?.projectIcon);
 
     // Title editing handlers - must be defined before conditional return (Rules of Hooks)
     const handleSaveTitle = useCallback(() => {

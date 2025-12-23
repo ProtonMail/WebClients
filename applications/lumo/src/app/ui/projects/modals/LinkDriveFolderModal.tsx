@@ -37,11 +37,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const [folderPath, setFolderPath] = useState<string[]>([]);
 
     // Project variables
-    const {
-        project: spaceProject,
-        linkedDriveFolder,
-        isLinked: isLinkedToDrive,
-    } = space ? getProjectInfo(space) : { project: undefined, linkedDriveFolder: undefined, isLinked: false as const };
+    const { linkedDriveFolder } = getProjectInfo(space);
+    const isLinkedToDrive = linkedDriveFolder !== undefined;
 
     // Initialize root folder ID when Drive is ready
     useEffect(() => {
