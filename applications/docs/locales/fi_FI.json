@@ -1019,9 +1019,6 @@
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
       ],
-      "forever": [
-        "ikuisesti"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
       ]
@@ -1052,11 +1049,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday -ale"
       ]
     },
     "BF2025: Deal details": {
@@ -1098,36 +1090,6 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Auta läheisiäsi liittymään yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Liity yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "hintaan ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Säästä ${ savedAmount } parhaalla, rajoitetun ajan voimassa olevalla tarjouksellamme!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Vaihda kahden vuoden tilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Tarjoa ryhmällesi täydellinen digitaalinen suojaus."
       ]
     },
     "BF2025: Tooltip": {
@@ -5360,6 +5322,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
+      ],
       "Add email address": [
         "Lisää sähköpostiosoite"
       ],
@@ -5428,6 +5393,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Command line interface (CLI)": [
+        "Komentoriviliittymä (CLI)"
       ],
       "Confirm password": [
         "Vahvista salasana"

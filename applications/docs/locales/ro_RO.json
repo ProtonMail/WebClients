@@ -294,6 +294,9 @@
       "Delete contact group": [
         "Ștergere grup de contacte"
       ],
+      "Delete older revisions": [
+        "Șterge revizii vechi"
+      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -317,6 +320,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Descărcare copie (ca docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Descărcare copie (ca xlsx)"
       ],
       "Download anyway": [
         "Descărcare așa"
@@ -545,6 +554,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Okay": [
+        "Ok"
       ],
       "Open": [
         "Deschidere"
@@ -866,6 +878,9 @@
       "View invoice": [
         "Afișare factură"
       ],
+      "View only": [
+        "Doar vizualizare"
+      ],
       "Web page (.html)": [
         "Pagină web (.html)"
       ],
@@ -1058,9 +1073,6 @@
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
       ],
-      "forever": [
-        "permanent"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
       ]
@@ -1093,11 +1105,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Reduceri de Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1139,36 +1146,6 @@
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Vinerea Neagră"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajutați-i pe cei dragi să se alăture revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Alăturați-vă revoluției confidențialității cu pachetele noastre cu cea mai bună valoare, acum cu 50% reducere!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Economisiți ${ savedAmount } cu oferta noastră cu cea mai bună valoare, pe timp limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru pe 2 ani și economisiți ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Oferiți-le celor dragi protecție digitală completă."
       ]
     },
     "BF2025: Tooltip": {
@@ -1350,6 +1327,15 @@
       "Basic chat history": [
         "Istoric de bază conversații"
       ],
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
       "Full chat history with search": [
         "Istoric complet al conversațiilor cu căutare"
       ],
@@ -1358,6 +1344,9 @@
       ],
       "Limited favorites": [
         "Favorite limitate"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
@@ -1373,6 +1362,9 @@
       ],
       "Web search access": [
         "Acces la căutare pe internet"
+      ],
+      "Zero-access encryption": [
+        "Criptare cu acces zero"
       ]
     },
     "collider_2025: Info": {
@@ -2876,6 +2868,9 @@
       "Failed to open to contact": [
         "Nu s-a putut deschide contactul."
       ],
+      "Failed to remove older revisions": [
+        "Eroare la eliminarea reviziilor mai vechi."
+      ],
       "Failed to rename document. Please try again later.": [
         "Redenumirea documentului nu a reușit. Reîncercați mai târziu."
       ],
@@ -3481,6 +3476,11 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonamentul va fi facturat administratorului principal al acestui plan."
+      ],
+      "View the invitation": [
+        "Afișare invitație",
+        "Afișare invitații",
+        "Afișare invitații"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }."
@@ -5032,6 +5032,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Acest document a devenit prea mare pentru editare. Puteți elimina reviziile mai vechi pentru a continua editarea."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Acest document a devenit prea mare, iar cele mai recente modificări nu au putut fi salvate. Descărcați o copie pentru a vă păstra datele."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Acest document are multă activitate. Este posibil ca unele funcții să fie temporar indisponibile."
       ],
@@ -5496,6 +5502,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
       "Add email address": [
         "Adăugare e-mail"
       ],
@@ -5564,6 +5573,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Command line interface (CLI)": [
+        "Interfață în linie de comandă (CLI)"
       ],
       "Confirm password": [
         "Confirmare parolă"
@@ -9463,6 +9475,12 @@
       ],
       "Docs": [
         "Documente"
+      ],
+      "Document Size Limit Exceeded": [
+        "Limită mărime document depășită."
+      ],
+      "Document Size Limit Reached": [
+        "Limită mărime document atinsă"
       ],
       "Document verification failed": [
         "Verificarea documentului a eșuat"
