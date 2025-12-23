@@ -933,14 +933,14 @@ export class SearchService {
      *
      * @param query - The user's prompt/query
      * @param spaceId - The project spaceId to filter documents by
-     * @param topK - Maximum number of documents to return (default 5)
+     * @param topK - Maximum number of documents to return (default 50)
      * @param minScore - Minimum relevance score threshold (default 0 - include all)
      * @returns Array of relevant documents with their content
      */
     async retrieveForRAG(
         query: string,
         spaceId: string,
-        topK: number = 5,
+        topK: number = 50,
         minScore: number = 0
     ): Promise<{ id: string; name: string; content: string; score: number }[]> {
         if (this.userId && !this.manifestReady) {

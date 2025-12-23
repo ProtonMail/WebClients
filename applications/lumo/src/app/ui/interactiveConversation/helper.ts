@@ -184,7 +184,7 @@ async function retrieveDocumentContextForProject(
 
         // Select documents above threshold, with gap detection
         const relevantDocs: typeof nonZeroDocs = [];
-        const MAX_DOCS = 5; // Cap to avoid context overload
+        const MAX_DOCS = 50; // Allow retrieving all relevant documents (quality gates will filter)
 
         for (let i = 0; i < nonZeroDocs.length && relevantDocs.length < MAX_DOCS; i++) {
             const doc = nonZeroDocs[i];
