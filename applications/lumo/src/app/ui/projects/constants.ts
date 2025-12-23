@@ -19,6 +19,7 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
     { id: 'work', name: 'Work', icon: 'pass-work', color: '#625DF5' }, 
     { id: 'personal', name: 'Personal', icon: 'user-filled', color: '#FFAC2E' }, 
     { id: 'coding', name: 'Coding', icon: 'code', color: '#1BA3FD' }, 
+    { id: 'language', name: 'Language', icon: 'speech-bubble', color: '#DD5DCC' },
     { id: 'other', name: 'Other', icon: 'folder-filled', color: '#625DF5' },
 ];
 
