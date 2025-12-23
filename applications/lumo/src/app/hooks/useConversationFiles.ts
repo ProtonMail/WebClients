@@ -16,9 +16,7 @@ export const useConversationFiles = (
     
     // Get space-level attachments (project files)
     // Exclude auto-retrieved attachments as they're conversation-specific
-    const spaceAttachments = useLumoSelector((state) =>
-        spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
-    );
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     const spaceAttachmentsList = useMemo(() => 
         Object.values(spaceAttachments).filter(att => !att.autoRetrieved), 
         [spaceAttachments]

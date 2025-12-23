@@ -16,7 +16,7 @@ import { useFilteredFiles } from '../../../../hooks';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
-import { selectAttachments, selectContextFilters, selectSpaceById } from '../../../../redux/selectors';
+import { selectAttachments, selectContextFilters, selectSpaceByIdOptional } from '../../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../../redux/slices/contextFilters';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
@@ -76,7 +76,7 @@ export const FilesPanel = ({
     );
 
     // Get space to check for linked Drive folder
-    const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
+    const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
     const { linkedDriveFolder } = getProjectInfo(space);
 
     // Get user for search service
