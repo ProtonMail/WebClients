@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { type FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -63,12 +62,13 @@ const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Pr
 
     return (
         <Modal
-            as={Form}
-            onSubmit={() => {
+            as="form"
+            onSubmit={(event: FormEvent<HTMLFormElement>) => {
+                event.stopPropagation();
+                event.preventDefault();
                 if (!onFormSubmit()) {
                     return;
                 }
-
                 void withLoading(handleSubmit());
             }}
             onClose={handleClose}
