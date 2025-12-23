@@ -107,17 +107,19 @@
 		border-radius: var(--border-radius-xl);
 		padding: 20px;
 		padding-block-end: 20px; // Ensure bottom padding is explicit
-		max-block-size: calc(50vh - 100px); // Account for instructions section (50vh) and headers
-		overflow: hidden auto;
+		flex: 1; // Fill available space
 		display: flex;
 		flex-direction: column;
 		position: relative; // Ensure border is visible
 
-		// When drive browser is active, remove height restriction and overflow
+		// Enable scroll when there are files (uploaded or Drive)
+		&.has-files {
+			overflow: hidden auto;
+		}
+
+		// When drive browser is active, let drive browser handle its own scrolling
 		.has-drive-browser & {
-			max-block-size: none;
-			overflow-y: visible;
-			flex: 1;
+			overflow-y: hidden;
 		}
 
 		box-sizing: border-box; // Ensure padding is included in height calculation
@@ -214,7 +216,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 40px 24px;
+	flex: 1; // Fill available space
+	padding: 10px;
 	background-color: var(--background-weak);
 	border-radius: var(--border-radius-lg);
 	text-align: center;
@@ -224,17 +227,32 @@
 	font-size: 16px;
 	font-weight: 600;
 	margin: 0 0 8px;
-	color: var(--text-norm);
+	color: var(--text-weak);
+
+	// Reduce margin at small heights
+	@media (max-height: 700px) {
+		margin: 0 0 12px; // Go straight to buttons
+	}
 }
 
 .project-files-empty-subtitle {
 	font-size: 14px;
 	margin: 0 0 4px;
+
+	// Hide at small heights to prioritize showing buttons
+	@media (max-height: 700px) {
+		display: none;
+	}
 }
 
 .project-files-empty-hint {
 	font-size: 13px;
 	margin: 0 0 20px;
+
+	// Hide at small heights to prioritize showing buttons
+	@media (max-height: 700px) {
+		display: none;
+	}
 }
 
 .project-files-empty-actions {

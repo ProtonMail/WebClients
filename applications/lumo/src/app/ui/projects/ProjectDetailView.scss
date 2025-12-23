@@ -6,6 +6,9 @@
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
+	min-block-size: 0; // Allow shrinking
+	display: flex;
+	flex-direction: column;
 }
 
 .project-detail-header {
@@ -149,6 +152,12 @@
 }
 
 .project-detail-content {
+	// Ensure the flex direction stays row regardless of height
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	min-block-size: 0;
+
 	&.without-sidebar {
 		justify-content: center;
 	}
@@ -156,18 +165,28 @@
 	.outer {
 		block-size: 100%;
 		min-block-size: 0;
+		min-inline-size: 0; // Allow shrinking
+		flex: 1 1 0%; // Take remaining space, allow shrinking
+		display: flex !important;
+		flex-direction: column !important;
+		overflow: hidden;
 	}
 }
 
 .project-detail-main {
-	overflow: hidden auto; // Allow vertical scrolling
+	overflow-x: hidden; // Prevent horizontal scrolling
+	overflow-y: auto; // Allow vertical scrolling
 	padding-block: 8px 0;
 	padding-inline: 6px 8px;
 	position: relative;
 	min-inline-size: 0;
 	min-block-size: 0;
-	block-size: 100%;
+	flex: 1 1 auto;
 	inline-size: 100%;
+	max-inline-size: 100%; // Constrain to parent width
+	display: flex !important;
+	flex-direction: column !important; // Ensure column layout is enforced
+	align-items: center; // Center children horizontally
 
 	@media (width <= 768px) {
 		padding-block: 8px 0;
@@ -183,12 +202,26 @@
 	max-inline-size: 51.25rem;
 	margin-block: auto; // Center vertically in available space
 	margin-inline: auto;
+	flex: 1 1 auto; // Grow and shrink as needed
+	min-block-size: 0; // Allow shrinking below content size
+	overflow: hidden auto; // Allow scrolling if content overflows
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	@media (width <= 768px) {
 		max-inline-size: 100%;
 		inline-size: 100%;
 		margin-inline: 0;
 		padding-block: 20px;
+	}
+
+	// At small heights, don't try to center - just stack
+	@media (max-height: 500px) {
+		padding-block: 10px;
+		margin-block: 0;
+		justify-content: flex-start;
 	}
 }
 
@@ -217,6 +250,8 @@
 }
 
 .project-detail-prompt-suggestions {
+	display: flex;
+	flex-direction: column;
 	gap: 12px;
 	max-inline-size: 600px;
 	inline-size: 100%;
@@ -251,6 +286,8 @@
 }
 
 .project-detail-conversations {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
 	overflow: hidden auto;
 	min-block-size: 0;
@@ -278,6 +315,8 @@
 }
 
 .project-detail-conversation-list {
+	display: flex;
+	flex-direction: column;
 	inline-size: 100%;
 
 	@media (width <= 1024px) {
@@ -351,22 +390,28 @@
 }
 
 .project-detail-composer {
-	position: sticky;
-	inset-block-end: 0;
 	background: var(--background-norm);
 	z-index: 10;
 	padding-block: 24px 0;
 	padding-inline: 0;
-	margin-block-start: auto;
+	margin-block-start: auto; // Push to bottom
 	inline-size: 100%;
 	max-inline-size: 51.25rem;
 	margin-inline: auto;
 	flex-shrink: 0;
+	display: flex !important;
+	flex-direction: column !important; // Ensure column layout
+	align-items: center;
 
 	@media (width <= 768px) {
 		max-inline-size: 100%;
 		padding-block: 24px 0;
 		padding-inline: 20px;
+	}
+
+	// Reduce padding at small heights
+	@media (max-height: 500px) {
+		padding-block: 8px 0;
 	}
 }
 

@@ -327,7 +327,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             )}
                         </div>
                     </div>
-                    <div className="project-files-section-content bg-weak files-section flex-1">
+                    <div className={`project-files-section-content bg-weak files-section flex-1 ${files.length > 0 || linkedDriveFolder ? 'has-files' : ''}`}>
                         {/* Upload progress overlay */}
                         {uploadProgress && (
                             <div className="project-files-progress-overlay">
