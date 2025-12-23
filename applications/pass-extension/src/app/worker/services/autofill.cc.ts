@@ -64,7 +64,7 @@ export const clusterCCFormFields = (
         frameId: FrameId,
         field: ClusterFrameFormItem & { type: 'frame' }
     ): MaybeNull<FrameId> => {
-        if (field.frameId && clusters.has(field.frameId)) return field.frameId;
+        if (field.frameId !== undefined && clusters.has(field.frameId)) return field.frameId;
         if (field.frameAttributes) {
             let bestFrameId: MaybeNull<FrameId> = null;
             let bestScore = 0;
