@@ -13,7 +13,7 @@ const CreateNewDocumentButton = ({ close, action }: Props) => {
     return (
         <ContextMenuButton
             testId="context-menu-new-document"
-            icon={<MimeIcon name="proton-doc" className="mr-2" />}
+            icon={<MimeIcon name="proton-doc" />}
             name={c('Action').t`New document`}
             action={action}
             close={close}

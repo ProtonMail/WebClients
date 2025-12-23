@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { Pill } from '@proton/atoms/Pill/Pill';
 import { MimeIcon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
@@ -28,9 +27,7 @@ export const CreateNewSheetButton = ({ type, close, onClick }: FolderButtonProps
                 name={title}
                 action={onClick}
                 close={close}
-            >
-                <Pill className="ml-2">{c('Label').t`New`}</Pill>
-            </ContextMenuButton>
+            />
         );
     }
 };
