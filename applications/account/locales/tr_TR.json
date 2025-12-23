@@ -1697,7 +1697,7 @@
     },
     "Action (Scribe)": {
       "add more seats": [
-        "daha fazla koltuk ekle"
+        "daha fazla koltuk ekleyin"
       ]
     },
     "Action for user session": {
@@ -1960,7 +1960,7 @@
         "Bitcoin cüzdanı"
       ],
       "Confidential video calls": [
-        "Gizli görüntülü aramalar"
+        "Gizli görüntülü görüşmeler"
       ],
       "Encrypted email": [
         "Şifrelenmiş e-posta"
@@ -1969,16 +1969,22 @@
         "Parolalar ve kimlik"
       ],
       "Private AI assistant": [
-        "Gizli Yapay Zeka asistanı"
+        "Gizliliği koruyan yapay zeka yardımcısı"
       ],
       "Private browsing": [
-        "Özel tarama"
+        "Gizliliği koruyarak gezinme"
       ],
       "Private scheduling": [
-        "Özel planlama"
+        "Gizliliği koruyan planlama"
       ],
       "Secure cloud storage": [
-        "Güvenli bulut depolama"
+        "Güvenli bulut depolama alanı"
+      ],
+      "Secure online docs": [
+        "Güvenli çevrim içi belgeler"
+      ],
+      "Secure online sheets": [
+        "Güvenli çevrim içi hesap tabloları"
       ]
     },
     "Apps dropdown": {
@@ -2057,10 +2063,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -2267,9 +2273,6 @@
       "Billed at ${ amount } once": [
         "Bir kez ${ amount } olarak faturalanır"
       ],
-      "forever": [
-        "sonsuza dek"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } ile yenilenir."
       ]
@@ -2300,11 +2303,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday İndirimi"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2344,6 @@
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Muhteşem Cuma"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Sevdiklerinizin, şimdi %50 indirimli en avantajlı paketlerimizle gizlilik devrimine katılmasına yardımcı olun!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Şimdi %50 indirimli, en avantajlı paketlerimizle gizlilik devrimine katılın!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "En avantajlı, sınırlı süreli fırsatımızla ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2 yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Yıllık planımıza geçin ve ${ savedAmount } tasarruf edin!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Sevdiklerinize tam dijital koruma sağlayın."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2644,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Kişisel e-posta adresiniz, dijital kimliğinizin önemli bir parçasıdır. Onu da, telefon numaranız gibi, tanıştığınız herkese vermezsiniz. Bu nedenle, farklı amaçlar için kullanabileceğiniz başka e-posta adreslerinizin olması yararlıdır."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } yıl önce",
+        "${ n } yıl önce"
+      ],
+      "Add a custom domain": [
+        "Bir özel etki alanı ekleyin"
+      ],
+      "Add a domain": [
+        "Bir etki alanı ekleyin"
+      ],
+      "Add more users...": [
+        "Daha fazla kullanıcı ekle..."
+      ],
+      "Authenticate": [
+        "Kimliği doğrulayın"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Change": [
+        "Değiştir"
+      ],
+      "Configure": [
+        "Yapılandırma"
+      ],
+      "Configure migration": [
+        "Aktarımı yapılandırın"
+      ],
+      "Contacts": [
+        "Kişiler"
+      ],
+      "Domain ownership verified": [
+        "Etki alanı sahipliği doğrulandı"
+      ],
+      "Domain setup": [
+        "Etki alanı kurulumu"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Aktarım başladığında ve tamamlandığında e-posta bildirimleri gönderilecek. Ayrıca sorunlar çıkarsa ve aktarım, süresi geçmiş bağlantılar nedeniyle duraklatılırsa bilgilendirileceksiniz."
+      ],
+      "Estimated size": [
+        "Öngörülen boyut"
+      ],
+      "Everything": [
+        "Her şey"
+      ],
+      "Failed to load OAuth": [
+        "OAuth yüklenemedi"
+      ],
+      "Install migration app": [
+        "Aktarım uygulamasını kurun"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Nelerin aktarılabileceğini öğrenin. Ayrıntılı bilgi alın"
+      ],
+      "Mail": [
+        "E-posta"
+      ],
+      "Migrate": [
+        "Aktar"
+      ],
+      "Migrate from Google Workspace": [
+        "Google Workspace üzerinden aktar"
+      ],
+      "Migrate users": [
+        "Kullanıcıları aktar"
+      ],
+      "Migration includes": [
+        "Şunlar aktarılır"
+      ],
+      "Not started": [
+        "Başlatılmadı"
+      ],
+      "Required to create user accounts": [
+        "Kullanıcı hesaplarını açmak için gereklidir"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Aktarmak istediğiniz ögeleri seçin. Bu ayar ister şimdi ister daha sonra oluşturulmuş olsun, tüm kullanıcılara uygulanır. Aktarım işlemi kullanıcı hesapları oluşturulduktan sonra başlayacaktır."
+      ],
+      "Set up": [
+        "Ayarla"
+      ],
+      "Set up billing information": [
+        "Fatura bilgilerini ayarlayın"
+      ],
+      "Set up two-factor authentication": [
+        "İki adımlı doğrulamayı ayarla"
+      ],
+      "Sign in to Google Workspace": [
+        "Google Workspace oturumu açın"
+      ],
+      "Start migration": [
+        "Aktarımı başlat"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Kuruluşunuzun verilerini taşımak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmanız gerekir. Bu işlem, ${ BRAND_NAME } uygulamasına verilerinizi kopyalama izni verir. Uygulamayı kurduktan sonra buraya geri dönerek ilerleyin. Ayrıntılı bilgi alın"
+      ],
+      "Transfer data from": [
+        "Verileri şuradan aktarın"
+      ],
+      "User": [
+        "Kullanıcı"
+      ],
+      "Users migrated": [
+        "Kullanıcılar aktarıldı"
+      ],
+      "Verify your domain": [
+        "Etki alanınızı doğrulayın"
+      ],
+      "Verify your domain ownership": [
+        "Etki alanı sahipliğinizi doğrulayın"
+      ],
+      "What are you migrating?": [
+        "Neyi aktarıyorsunuz?"
+      ],
+      "Who will be notified?": [
+        "Kim bilgilendirilecek?"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3204,15 @@
       "Basic chat history": [
         "Temel sohbet geçmişi"
       ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
       "Full chat history with search": [
         "Arama ile tüm sohbet geçmişi"
       ],
@@ -3121,6 +3224,9 @@
       ],
       "Limited favorites": [
         "Sınırlı sayıda sık kullanılan"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
       ],
       "Unlimited daily chats": [
         "Günlük sınırsız sayıda sohbet"
@@ -3136,6 +3242,9 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Feature": {
@@ -3146,9 +3255,6 @@
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
-      ],
-      "Access to advanced AI models": [
-        "Gelişmiş yapay zeka modellerine erişim"
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
@@ -3162,50 +3268,11 @@
       "AI assistant that respects your privacy": [
         "Gizliliğinize saygı duyan yapay zeka yardımcısı"
       ],
-      "Basic chat history": [
-        "Temel sohbet ekibi"
-      ],
-      "Compliance with data protection regulations": [
-        "Veri koruma düzenlemeleri ile uyumlu"
-      ],
-      "Data never used for AI training": [
-        "Veriler asla yapay zekayı eğitmek için kullanılmaz"
-      ],
-      "Full chat history with search": [
-        "Arama ile tüm sohbet geçmişi"
-      ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ],
-      "Limited daily chats": [
-        "Sınırlı sayıda günlük sohbet"
-      ],
-      "Limited favorites": [
-        "Sınırlı sık kullanılanlar"
-      ],
       "Open source": [
         "Açık kaynaklı"
-      ],
-      "Strict no-logs policy": [
-        "Sıkı kayıt tutmama ilkesi"
-      ],
-      "Unlimited daily chats": [
-        "Sınırsız sayıda günlük sohbet"
-      ],
-      "Unlimited favorites for quick access": [
-        "Hızlı erişim için sınırsız sayıda sık kullanılan"
-      ],
-      "Upload and query multiple large files": [
-        "Birden fazla büyük dosyayı yükleyip sorgulayın"
-      ],
-      "Upload and query small files": [
-        "Küçük dosyaları yükleyin ve sorgulayın"
-      ],
-      "Web search access": [
-        "Site arama erişimi"
-      ],
-      "Zero-access encryption": [
-        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Navigation": {
@@ -5537,7 +5604,7 @@
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme kapatıldı."
       ],
       "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Uyumluluk için kuantum sonrası şifreleme devre dışı bırakıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
+        "Uyumluluk nedeniyle, kuantum sonrası şifreleme kapatıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme kapatılacak."
@@ -5947,9 +6014,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Henüz kimse sizi acil durum kişisi olarak atamamış."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız.",
-        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız.",
+        "Olabilecek en fazla ${ limit } acil durum kişisi sayısına ulaştınız."
       ],
       "You will be notified when someone requests emergency access.": [
         "Birisi acil durumda erişme izni isteğinde bulunduğunda bilgilendirileceksiniz."
@@ -7005,7 +7072,7 @@
         "Tümünü görüntüle (${ invites.length })"
       ],
       "Show less": [
-        "Daha az görüntüle"
+        "Ayrıntıları gizle"
       ],
       "Switch plans": [
         "Tarife değiştir"
@@ -7086,6 +7153,10 @@
       "Pending": [
         "Bekliyor"
       ],
+      "Pending invitation": [
+        "Bekleyen davet",
+        "Bekleyen davetler"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Ne yazık ki şu anda tarife değiştiremezsiniz."
       ],
@@ -7141,10 +7212,10 @@
         "${ plan } tarifesindeki tüm ücretli özelliklere erişiminizi kaybedeceksiniz."
       ],
       "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
-        "Hesabınızı bu grup tarifesine bağlamanız için **${ invite.InviterEmail }** tarafından davet edildiniz."
+        "**${ invite.InviterEmail }** tarafından hesabınızı bu grup tarifesiyle ilişkilendirmeye davet edildiniz."
       ],
       "You're invited to join ${ invite.OrganizationName }": [
-        "${ invite.OrganizationName } katılmaya davetlisiniz"
+        "${ invite.OrganizationName } grubuna katılmaya davet edildiniz"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "${ BRAND_NAME } hesabınızı bu aile tarifesine bağlamaya ve birlikte ücretli tüm ${ brandOrAppName } özelliklerinin tadını çıkarmaya davet edildiniz."
@@ -7682,11 +7753,6 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Gizlilik odaklı."
-      ]
-    },
-    "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Artık ${ BRAND_NAME } mobil uygulamalarının eski sürümlerinden oturum açamayacağımı anladım."
       ]
     },
     "Free trial dekstop": {
@@ -9094,9 +9160,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Kuantum sonrası korumasını açtığınızda, hesabınız için kuantum bilgisayarların çözmekte zorlanacağı anahtarlar oluşturulur."
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
@@ -11761,7 +11824,7 @@
     },
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
-        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Devre dışı bırakıldığında yalnızca yöneticiler erişebilir. ${ userAndAddresses } veya ${ addMoreSeats } içindeki bireysel kullanıcılar için yönetin."
+        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Kapatılırsa yalnızca yöneticiler erişebilir. Bireysel kullanıcıları ${ userAndAddresses } veya ${ addMoreSeats } içinden yönetin"
       ]
     },
     "Info - folder colouring feature": {
@@ -12365,6 +12428,9 @@
       "6 Pass Plus accounts": [
         "6 Pass Plus hesabı"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -12613,6 +12679,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arabirimi (CLI)"
       ],
       "Common passwords": [
         "Yaygın parolalar"
@@ -13165,6 +13234,9 @@
       ],
       "Online privacy for your whole family": [
         "Tüm aileniz için çevrim içi gizlilik"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Sadece ${ PASS_SHORT_APP_NAME } ücretli tarifelerinde kullanılabilir"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
@@ -16882,7 +16954,7 @@
         "${ PASS_APP_NAME } ailesine davet edildiniz"
       ],
       "Your ${ discount }% End of Year discount has been applied": [
-        "Yıl Sonu indiriminiz %${ discount } olarak uygulanmıştır"
+        "%${ discount } yıl sonu indiriminiz uygulandı"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
@@ -17666,48 +17738,17 @@
         "${ upsellPlanTitle } tarifesine yükselt"
       ]
     },
-    "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Hesabınızda kuantum sonrası koruması açıldı. Ancak bazı işlemler tamamlanamadı: Kuantum sonrası hesabı ve adres anahtarları oluşturulamadı. Bu anahtarları ${ encryptionAndKeysSettingsTitle } ayarları altından el ile oluşturabilirsiniz."
-      ]
-    },
-    "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Hesabınızda kuantum sonrası koruması açıldı, ancak bazı işlemler tamamlanamadı: Bir veya daha fazla adres için kuantum sonrası adres anahtarları oluşturulamadı. Bu anahtarları ${ encryptionAndKeysSettingsTitle } ayarları altından el ile oluşturabilirsiniz."
-      ]
-    },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Lütfen **tüm ${ BRAND_NAME } mobil uygulamalarınızı** son sürüme güncelleyin."
-      ]
-    },
-    "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Bu işlem, her adres için yeni bir hesap anahtarı ve yeni bir e-posta şifreleme anahtarı oluşturur. Bunlar, gelecekteki e-postaları ve diğer verileri şifrelemek ve şifrelerini çözmek için kullanılır."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "Anahtarları kullanıma al ve oluştur"
       ],
-      "Enable post-quantum protection": [
-        "Kuantum sonrası korumasını aç"
-      ],
       "Enable post-quantum protection?": [
         "Kuantum sonrası koruması açılsın mı?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Kuantum sonrası koruması açılamadı. Lütfen bir süre sonra yeniden deneyin."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "Anladım"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "Hesabınızda kuantum sonrası koruması açıldı!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -17935,7 +17976,7 @@
         "Ücretsiz deneme süreniz nasıl işler:"
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
-        "${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliğini koruyan güvenli bir e-posta, bulut depolama, parola yöneticisi ve VPN hizmetidir. Bu bağlantıdan hesap aç ve 14 gün boyunca ücretli özellikleri ücretsiz kullan: ${ referralLink }"
+        "${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliğini koruyan güvenli bir e-posta, bulut depolama, parola yöneticisi ve VPN hizmeti sunuyor. Bu bağlantıdan hesap açarak 14 gün boyunca ücretli özellikleri ücretsiz olarak kullanabilirsin: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
@@ -17959,7 +18000,7 @@
         "Arkadaşlarınıza önerin"
       ],
       "Share using ${ name }": [
-        "${ name } ile paylaş"
+        "${ name } ile paylaşın"
       ],
       "Start earning credits": [
         "Kredi kazanmaya başlayın"
@@ -22135,6 +22176,9 @@
       "Find email or username": [
         "E-posta adresi veya kullanıcı adı bulun"
       ],
+      "Finish setting up your business account": [
+        "Kuruluş hesabınızın kurulumunu tamamlayın"
+      ],
       "Folders": [
         "Klasörler"
       ],
@@ -22354,6 +22398,9 @@
       ],
       "Messages and composing": [
         "İletiler ve ileti oluşturma"
+      ],
+      "Migration assistant": [
+        "Aktarım yardımcısı"
       ],
       "Minicalendar": [
         "Mini takvim"
@@ -23669,7 +23716,7 @@
         "Biliyor muydunuz?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
-        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıllık dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
+        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini geri yükleyin."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini bir arada sunan gizlilik paketi. Ayda yalnızca ${ fallBackString } ile başlayarak"

@@ -2221,9 +2221,6 @@
       "Billed at ${ amount } once": [
         "გადაიხადეთ ${ amount } ერთხელ"
       ],
-      "forever": [
-        "სამუდამოდ"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."
       ]
@@ -2254,11 +2251,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "შავი პარასკევი"
       ]
     },
     "BF2025: Deal details": {
@@ -2300,36 +2292,6 @@
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "დაეხმარეთ თქვენს საყვარელ ადამიანებს შეუერთდნენ კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "შეუერთდით კონფიდენციალურობის რევოლუციას ჩვენი საუკეთესო ღირებულების პაკეტებით, ახლა 50%-იანი ფასდაკლებით!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal }-სთვის"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "დაზოგეთ ${ savedAmount } ჩვენი საუკეთესო ღირებულების, შეზღუდული დროის შეთავაზებით!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "გადადით ჩვენს 2-წლიან გეგმაზე და დაზოგეთ ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "გადადით ჩვენს წლიურ გეგმაზე და დაზოგეთ ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "მიანიჭეთ თქვენს ახლობლებს სრული ციფრული დაცვა."
       ]
     },
     "BF2025: Tooltip": {
@@ -3032,9 +2994,6 @@
       ]
     },
     "collider_2025: Info": {
-      "Access to advanced AI models": [
-        "წვდომა განვითარებულ ხი მოდელებთან"
-      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
       ],
@@ -3047,50 +3006,11 @@
       "AI assistant that respects your privacy": [
         "დამხმარე ხი, რომელიც თქვენს კონფიდენციალობას ითვალისწინებს"
       ],
-      "Basic chat history": [
-        "საბაზისო ჩატის ისტორია"
-      ],
-      "Compliance with data protection regulations": [
-        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
-      ],
-      "Data never used for AI training": [
-        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
-      ],
-      "Full chat history with search": [
-        "სრული ჩატის ისტორია ძებნით"
-      ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ],
-      "Limited daily chats": [
-        "შეზღუდული ყოველდღიური ჩატები"
-      ],
-      "Limited favorites": [
-        "შეზღუდული რჩეულები"
-      ],
       "Open source": [
         "ღია კოდი"
-      ],
-      "Strict no-logs policy": [
-        "ჩვენ არ ვინახავთ ჟურნალს"
-      ],
-      "Unlimited daily chats": [
-        "შეუზღუდავი ყოველდღიური ჩატები"
-      ],
-      "Unlimited favorites for quick access": [
-        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
-      ],
-      "Upload and query multiple large files": [
-        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
-      ],
-      "Upload and query small files": [
-        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
-      ],
-      "Web search access": [
-        "წვდომა ვებში ძებნასთან"
-      ],
-      "Zero-access encryption": [
-        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Navigation": {
@@ -5780,10 +5700,6 @@
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "თქვენ ჯერ არავის მოუნიშნიხართ, როგორც სასწრაფო კონტაქტი."
-      ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "მიაღწიეთ მაქსიმალურ ${ controller.meta.count } სანდო კონტაქტს.",
-        "მიაღწიეთ მაქსიმალურ ${ controller.meta.count } სანდო კონტაქტს."
       ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
@@ -17204,33 +17120,17 @@
         "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
-    "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "განაახლეთ **ყველა თქვენი ${ BRAND_NAME }-ის მობილური აპი** უახლეს ვერსიამდე."
-      ]
-    },
     "PQC optin": {
       "Enable and generate keys": [
         "ჩართვა და გასაღების გენერაცია"
       ],
-      "Enable post-quantum protection": [
-        "პოსტკვანტური დაცვის ჩართვა"
-      ],
       "Enable post-quantum protection?": [
         "ჩავრთო პოსტკვანტური დაცვა?"
-      ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "პოსტკვანტური დაცვის ჩართვა ჩავარდა. მოგვიანებით სცადეთ."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
         "გავიგე"
-      ]
-    },
-    "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "პოსტკვანტური დაცვა ჩაირთო თქვენი ანგარიშისთვის!"
       ]
     },
     "pqc-optin: Progress status": {

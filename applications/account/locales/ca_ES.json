@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Open recovery settings": [
+        "Obriu les preferències de recuperació"
+      ],
       "Opt out": [
         "Renuncia"
       ],
@@ -1979,6 +1982,12 @@
       ],
       "Secure cloud storage": [
         "Emmagatzematge segur al núvol"
+      ],
+      "Secure online docs": [
+        "Documents en línia segurs"
+      ],
+      "Secure online sheets": [
+        "Fulls de càlcul en línia segurs"
       ]
     },
     "Apps dropdown": {
@@ -2267,9 +2276,6 @@
       "Billed at ${ amount } once": [
         "Facturat a ${ amount } una vegada"
       ],
-      "forever": [
-        "per sempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -2300,11 +2306,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebaixes del Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2346,36 +2347,6 @@
       ],
       "Unlimited daily chats": [
         "Xats diaris sense límits"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Divendres negre"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Ajudi els seus éssers estimats a unir-se a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Uneixi's a la revolució de la privadesa amb els nostres paquets de millor valor, ara amb un 50 % de descompte!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Estalviï ${ savedAmount } amb la nostra millor oferta per temps limitat!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla de 2 anys i estalviï ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Canviï al nostre pla anual i estalviï ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regali als seus una protecció digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -2676,6 +2647,132 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "La vostra adreça de correu electrònic personal és una part essencial de la vostra identitat digital. Com el vostre número de telèfon, no la doneu a tothom que conegueu. Per això és útil tenir altres adreces de correu electrònic que podeu utilitzar per a diferents propòsits."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "fa ${ n } any",
+        "fa ${ n } anys"
+      ],
+      "Add a custom domain": [
+        "Afegiu un domini personalitzat"
+      ],
+      "Add a domain": [
+        "Afegiu un domini"
+      ],
+      "Add more users...": [
+        "Afegiu més usuaris..."
+      ],
+      "Authenticate": [
+        "Autentiqueu-vos"
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Change": [
+        "Canvieu"
+      ],
+      "Configure": [
+        "Configureu"
+      ],
+      "Configure migration": [
+        "Configureu la migració"
+      ],
+      "Contacts": [
+        "Contactes"
+      ],
+      "Domain ownership verified": [
+        "S'ha verificat la propietat del domini"
+      ],
+      "Domain setup": [
+        "Configuració del domini"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "S’enviaran notificacions per correu electrònic quan s’iniciï la migració i quan s’hagi completat. També se us notificarà si hi ha errors o si la migració s’atura a causa d’enllaços caducats."
+      ],
+      "Estimated size": [
+        "Mida estimada"
+      ],
+      "Everything": [
+        "Tot"
+      ],
+      "Failed to load OAuth": [
+        "No s'ha pogut carregar OAuth"
+      ],
+      "Install migration app": [
+        "Instal·leu l’aplicació de migració"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Obtingueu més informació sobre què es pot migrar. Per saber-ne més"
+      ],
+      "Mail": [
+        "Correu"
+      ],
+      "Migrate": [
+        "Migreu"
+      ],
+      "Migrate from Google Workspace": [
+        "Migreu des de Google Workspace"
+      ],
+      "Migrate users": [
+        "Migreu els usuaris"
+      ],
+      "Migration includes": [
+        "La migració inclou"
+      ],
+      "Not started": [
+        "No s'ha iniciat"
+      ],
+      "Required to create user accounts": [
+        "Necessari per crear comptes d’usuari"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Seleccioneu què voleu migrar; això s'aplicarà a tots els usuaris, tant si es creen ara com més endavant. La migració començarà un cop s'hagin creat els comptes d'usuari."
+      ],
+      "Set up": [
+        "Configureu-ho"
+      ],
+      "Set up billing information": [
+        "Configureu la informació de facturació"
+      ],
+      "Set up two-factor authentication": [
+        "Configureu l’autenticació de doble factor"
+      ],
+      "Sign in to Google Workspace": [
+        "Inicieu la sessió a Google Workspace"
+      ],
+      "Start migration": [
+        "Inicieu la migració"
+      ],
+      "Status": [
+        "Estat"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Per migrar les dades de la vostra organització, cal que instal·leu l’aplicació Migration Asistant de ${ BRAND_NAME } des de Google Workspace Marketplace. Això donarà permís a ${ BRAND_NAME } per copiar les vostres dades. Un cop instal·lada, torneu aquí per continuar. Més informació"
+      ],
+      "Transfer data from": [
+        "Transferiu dades des de"
+      ],
+      "User": [
+        "Usuari"
+      ],
+      "Users migrated": [
+        "S'han migrat els usuaris"
+      ],
+      "Verify your domain": [
+        "Verifiqueu el vostre domini"
+      ],
+      "Verify your domain ownership": [
+        "Verifiqueu la propietat del vostre domini"
+      ],
+      "What are you migrating?": [
+        "Què esteu migrant?"
+      ],
+      "Who will be notified?": [
+        "Qui rebrà les notificacions?"
       ]
     },
     "breadcrumb": {
@@ -3110,6 +3207,15 @@
       "Basic chat history": [
         "Historial de xat bàsic"
       ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
       ],
@@ -3122,72 +3228,8 @@
       "Limited favorites": [
         "Nombre de preferits limitat"
       ],
-      "Unlimited daily chats": [
-        "Xats diaris il·limitats"
-      ],
-      "Unlimited favorites for quick access": [
-        "Preferits il·limitats per a un accés ràpid"
-      ],
-      "Upload and query multiple large files": [
-        "Carregueu i consulteu múltiples fitxers grans"
-      ],
-      "Upload and query small files": [
-        "Carregueu i consulteu fitxers petits"
-      ],
-      "Web search access": [
-        "Accés a la cerca web"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Desenvolupat i amb seu a Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
-      ],
-      "Access to advanced AI models": [
-        "Accés a models d'IA avançats"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Afegiu ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Seguretat avançada del compte i de la xarxa amb un sol pla"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "L'assistent d'IA que respecta la confidencialitat empresarial"
-      ],
-      "AI assistant that respects your privacy": [
-        "Un assistent d'IA que respecta la vostra privacitat"
-      ],
-      "Basic chat history": [
-        "Historial de xat bàsic"
-      ],
-      "Compliance with data protection regulations": [
-        "Compleix la normativa de protecció de dades"
-      ],
-      "Data never used for AI training": [
-        "Mai s'utilitzen les dades per a l'entrenament de la IA"
-      ],
-      "Full chat history with search": [
-        "Historial de xat complet amb cerca"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Xats d'alta velocitat i característiques d'IA avançades."
-      ],
-      "Limited daily chats": [
-        "Xats diaris limitats"
-      ],
-      "Limited favorites": [
-        "Nombre de preferits limitat"
-      ],
-      "Open source": [
-        "De codi obert"
-      ],
       "Strict no-logs policy": [
-        "Política estricta de no conservació de registres"
+        "Política estricta de no guardar registres"
       ],
       "Unlimited daily chats": [
         "Xats diaris il·limitats"
@@ -3206,6 +3248,34 @@
       ],
       "Zero-access encryption": [
         "Xifratge d'accés zero"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguretat avançada del compte i de la xarxa amb un sol pla"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "L'assistent d'IA que respecta la confidencialitat empresarial"
+      ],
+      "AI assistant that respects your privacy": [
+        "Un assistent d'IA que respecta la vostra privacitat"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
+      ],
+      "Open source": [
+        "De codi obert"
       ]
     },
     "collider_2025: Navigation": {
@@ -5947,9 +6017,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Encara no heu estat designat com a contacte d'emergència per a ningú."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Heu arribat al màxim d'${ controller.meta.count } contacte de confiança.",
-        "Heu arribat al màxim de ${ controller.meta.count } contactes de confiança."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Heu arribat al màxim d'${ limit } contacte d'emergència.",
+        "Heu arribat al màxim de ${ limit } contactes d'emergència."
       ],
       "You will be notified when someone requests emergency access.": [
         "Se us notificarà quan algú sol·liciti accés d'emergència."
@@ -7086,6 +7156,10 @@
       "Pending": [
         "Pendent"
       ],
+      "Pending invitation": [
+        "Invitació pendent",
+        "Invitacions pendents"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
       ],
@@ -7685,8 +7759,8 @@
       ]
     },
     "Force upgrade safety review": {
-      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Entenc que ja no podré iniciar la sessió des de versions antigues de les aplicacions mòbils de ${ BRAND_NAME }."
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Entenc que ja no podré iniciar la sessió en versions antigues de les aplicacions mòbils de ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -8729,6 +8803,12 @@
       "**Sync codes** to all your devices": [
         "**Sincronitzeu els codis** a tots els dispositius"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Això desactivarà els reenviaments de correus electrònics xifrats d’extrem a extrem:** els podreu configurar de nou més tard."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Els vostres mètodes de recuperació quedaran invalidats:** podreu generar noves dades de recuperació més endavant."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
         "+ ${ invisibleCount } més"
@@ -9094,9 +9174,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
-      ],
-      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Si habiliteu la protecció postquàntica, es generaran claus resistents als ordinadors quàntics per al vostre compte."
       ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
@@ -10413,6 +10490,9 @@
       ],
       "Private AI assistant": [
         "Assistent d'IA privat"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Protegiu el vostre compte de les amenaces de la computació quàntica amb claus criptogràfiques quàntic-resistents."
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
@@ -12365,6 +12445,9 @@
       "6 Pass Plus accounts": [
         "6 comptes Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
       "Account holder": [
         "Titular del compte"
       ],
@@ -12613,6 +12696,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ],
       "Common passwords": [
         "Contrasenyes comunes"
@@ -13165,6 +13251,9 @@
       ],
       "Online privacy for your whole family": [
         "Privacitat en línia per a tota la família"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Disponible només amb els plans de pagament de ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
@@ -17667,47 +17756,65 @@
       ]
     },
     "PQC account key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han tingut èxit: ha fallat la generació de claus de compte i d'adreça postquàntiques. Podeu generar aquestes claus manualment a la configuració de ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "No s'han pogut generar les claus. Per activar la protecció postquàntica, haureu de generar les vostres noves claus de xifratge manualment.\n\n${ settingsLink } i seleccioneu \"Genera clau\" per al vostre compte i per a cada adreça."
       ]
     },
     "PQC adress key generation": {
-      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han tingut èxit: ha fallat la generació de claus d'adreça postquàntiques per una o més adreces. Podeu generar aquestes claus manualment a la configuració de ${ encryptionAndKeysSettingsTitle }."
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "No s'han pogut generar les claus d'adreça. Per activar la protecció postquàntica, haureu de generar les noves claus de xifratge manualment.\\n\\nAneu a ${ settingsLink } i seleccioneu 'Generar clau' per a cada adreça."
       ]
     },
     "PQC compatibility warning": {
-      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Actualitzeu **totes les vostres aplicacions mòbils de ${ BRAND_NAME }** a la darrera versió."
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Heu d'actualitzar totes les aplicacions mòbils de ${ BRAND_NAME }**: les vostres noves claus no funcionaran en versions antigues de l'aplicació."
       ]
     },
     "PQC key generation": {
-      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Això generarà una nova clau de compte i una nova clau de xifratge de correu electrònic per a cada adreça, les quals s'utilitzaran per a xifrar i desxifrar futurs correus electrònics i altres dades."
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Això generarà noves claus de xifratge quàntic-resistents per al vostre compte."
       ]
     },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "No s'ha pogut habilitar la protecció postquàntica"
+      ],
       "Enable and generate keys": [
         "Habiliteu-ho i genereu les claus"
-      ],
-      "Enable post-quantum protection": [
-        "Habiliteu la protecció postquàntica"
       ],
       "Enable post-quantum protection?": [
         "Voleu habilitar la protecció postquàntica?"
       ],
-      "Enabling post-quantum protection failed. Try again later.": [
-        "Ha fallat l'habilitació de la protecció postquàntica. Torneu-ho a provar més tard."
+      "Enabling post-quantum protection...": [
+        "S'està habilitant la protecció postquàntica..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Aneu a ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Torneu-ho a provar. Si això no funciona, poseu-vos en contacte amb el nostre servei d'atenció al client."
+      ],
+      "Post-quantum protection": [
+        "Protecció postquàntica"
+      ],
+      "Post-quantum protection is enabled": [
+        "S'ha habilitat la protecció postquàntica"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Tanqueu"
+      ],
       "Got it": [
         "Entesos"
       ]
     },
     "pqc-optin: Info": {
-      "Post-quantum protection has been enabled on your account!": [
-        "S'ha habilitat la protecció postquàntica al vostre compte!"
+      "Don't forget to generate new recovery data.": [
+        "No us oblideu de generar noves dades de recuperació."
+      ],
+      "Post-quantum protection is enabled.": [
+        "S'ha habilitat la protecció postquàntica."
       ]
     },
     "pqc-optin: Progress status": {
@@ -22138,6 +22245,9 @@
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
       ],
+      "Finish setting up your business account": [
+        "Acabeu de configurar el vostre compte d'empresa"
+      ],
       "Folders": [
         "Carpetes"
       ],
@@ -22357,6 +22467,9 @@
       ],
       "Messages and composing": [
         "Missatges i redacció"
+      ],
+      "Migration assistant": [
+        "Assistent de migració"
       ],
       "Minicalendar": [
         "Minicalendari"

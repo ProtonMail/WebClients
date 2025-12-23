@@ -958,6 +958,9 @@
       "Open navigation": [
         "Abrir la navegación"
       ],
+      "Open recovery settings": [
+        "Abrir ajustes de recuperación"
+      ],
       "Opt out": [
         "No participar"
       ],
@@ -1838,6 +1841,12 @@
       ],
       "Secure cloud storage": [
         "Nube segura"
+      ],
+      "Secure online docs": [
+        "Documentos online seguros"
+      ],
+      "Secure online sheets": [
+        "Hojas de cálculo online seguras"
       ]
     },
     "Apps dropdown": {
@@ -2116,9 +2125,6 @@
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
       ],
-      "forever": [
-        "para siempre"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
       ]
@@ -2149,11 +2155,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Rebajas de Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -2195,36 +2196,6 @@
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "¡Ayuda a tus seres queridos a unirse a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "¡Únete a la revolución de la privacidad con nuestros paquetes de mejor valor, ahora con un 50 % de descuento!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "¡Ahorra ${ savedAmount } con nuestra mejor oferta por tiempo limitado!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "¡Pásate a nuestro plan de 2 años y ahorra ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "¡Pásate a nuestro plan anual y ahorra ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Regala a los tuyos una protección digital completa."
       ]
     },
     "BF2025: Tooltip": {
@@ -2513,6 +2484,129 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Tu dirección de correo electrónico personal es una parte esencial de tu identidad digital. Al igual que tu número de teléfono, no lo das a todo el mundo que conoces. Por eso es útil disponer de otras direcciones de correo electrónico que puedas usar para diferentes propósitos."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } de ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "hace ${ n } año",
+        "hace ${ n } años"
+      ],
+      "Add a custom domain": [
+        "Añadir un dominio personalizado"
+      ],
+      "Add a domain": [
+        "Añadir un dominio"
+      ],
+      "Add more users...": [
+        "Añadir más usuarios..."
+      ],
+      "Authenticate": [
+        "Autentificar"
+      ],
+      "Calendar": [
+        "Calendario"
+      ],
+      "Change": [
+        "Cambiar"
+      ],
+      "Configure": [
+        "Configurar"
+      ],
+      "Configure migration": [
+        "Configurar migración"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
+      "Domain ownership verified": [
+        "Se ha verificado la propiedad del dominio"
+      ],
+      "Domain setup": [
+        "Configuración de dominio"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Se enviarán notificaciones por correo al iniciar y finalizar la migración. También te avisaremos si hay errores o si la migración se pausa debido a enlaces caducados."
+      ],
+      "Estimated size": [
+        "Tamaño estimado"
+      ],
+      "Everything": [
+        "Todo"
+      ],
+      "Failed to load OAuth": [
+        "Error al cargar OAuth"
+      ],
+      "Install migration app": [
+        "Instalar aplicación de migración"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Consulta qué se puede migrar. Más información"
+      ],
+      "Migrate": [
+        "Migrar"
+      ],
+      "Migrate from Google Workspace": [
+        "Migra desde Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrar usuarios"
+      ],
+      "Migration includes": [
+        "La migración incluye"
+      ],
+      "Not started": [
+        "No iniciado"
+      ],
+      "Required to create user accounts": [
+        "Necesario para crear cuentas de usuario"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Selecciona qué quieres migrar. Esto se aplicará a todos los usuarios, tanto actuales como futuros. La migración comenzará una vez creadas las cuentas de usuario."
+      ],
+      "Set up": [
+        "Configurar"
+      ],
+      "Set up billing information": [
+        "Configurar información de facturación"
+      ],
+      "Set up two-factor authentication": [
+        "Configurar autenticación de doble factor"
+      ],
+      "Sign in to Google Workspace": [
+        "Iniciar sesión en Google Workspace"
+      ],
+      "Start migration": [
+        "Iniciar la migración"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Para migrar los datos de tu organización, debes instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto concederá permiso a ${ BRAND_NAME } para copiar tus datos. Una vez instalada, vuelve aquí para continuar. Más información"
+      ],
+      "Transfer data from": [
+        "Transferir datos desde"
+      ],
+      "User": [
+        "Usuario"
+      ],
+      "Users migrated": [
+        "Usuarios migrados"
+      ],
+      "Verify your domain": [
+        "Verifica tu dominio"
+      ],
+      "Verify your domain ownership": [
+        "Verifica la propiedad de tu dominio"
+      ],
+      "What are you migrating?": [
+        "¿Qué estás migrando?"
+      ],
+      "Who will be notified?": [
+        "¿A quién se notificará?"
       ]
     },
     "Browser": {
@@ -2875,6 +2969,15 @@
       "Basic chat history": [
         "Historial de chat básico"
       ],
+      "Built and based in Europe": [
+        "Creado y con sede en Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Cumplimiento con las normativas de protección de datos"
+      ],
+      "Data never used for AI training": [
+        "Tus datos nunca se usan para entrenar la IA"
+      ],
       "Full chat history with search": [
         "Historial de chat completo con búsqueda"
       ],
@@ -2886,70 +2989,6 @@
       ],
       "Limited favorites": [
         "Favoritos limitados"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ],
-      "Unlimited favorites for quick access": [
-        "Favoritos ilimitados para un acceso rápido"
-      ],
-      "Upload and query multiple large files": [
-        "Cargar y consultar múltiples archivos de gran tamaño"
-      ],
-      "Upload and query small files": [
-        "Cargar y consultar archivos pequeños"
-      ],
-      "Web search access": [
-        "Acceso a la búsqueda web"
-      ]
-    },
-    "collider_2025: Feature": {
-      "Built and based in Europe": [
-        "Construido y con sede en Europa"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
-      ],
-      "Access to advanced AI models": [
-        "Acceso a modelos de IA avanzados"
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Añadir ${ LUMO_APP_NAME }"
-      ],
-      "Advanced account and network security in one plan": [
-        "Seguridad avanzada de cuenta y red en un solo plan"
-      ],
-      "AI assistant that respects business confidentiality": [
-        "Asistente de IA que respeta la confidencialidad empresarial"
-      ],
-      "AI assistant that respects your privacy": [
-        "Asistente de IA que respeta tu privacidad"
-      ],
-      "Basic chat history": [
-        "Historial de chat básico"
-      ],
-      "Compliance with data protection regulations": [
-        "Cumplimiento con las normativas de protección de datos"
-      ],
-      "Data never used for AI training": [
-        "Datos nunca utilizados para entrenar la IA"
-      ],
-      "Full chat history with search": [
-        "Historial de chat completo con búsqueda"
-      ],
-      "High-speed chats and advanced AI features.": [
-        "Chats de alta velocidad y funciones de IA avanzadas."
-      ],
-      "Limited daily chats": [
-        "Chats diarios limitados"
-      ],
-      "Limited favorites": [
-        "Favoritos limitados"
-      ],
-      "Open source": [
-        "Código abierto"
       ],
       "Strict no-logs policy": [
         "Política estricta de cero registros"
@@ -2971,6 +3010,34 @@
       ],
       "Zero-access encryption": [
         "Cifrado de acceso cero"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construido y con sede en Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de cuenta y red en un solo plan"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "Asistente de IA que respeta la confidencialidad empresarial"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asistente de IA que respeta tu privacidad"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
+      ],
+      "Open source": [
+        "Código abierto"
       ]
     },
     "collider_2025: Navigation": {
@@ -5494,9 +5561,9 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Aún no has sido designado como contacto de emergencia para nadie."
       ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Has llegado al máximo de ${ controller.meta.count } contacto de confianza.",
-        "Has alcanzado el máximo de ${ controller.meta.count } contactos de confianza."
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Has llegado al máximo de ${ limit } contacto de emergencia.",
+        "Has alcanzado el máximo de ${ limit } contactos de emergencia."
       ],
       "You will be notified when someone requests emergency access.": [
         "Se te notificará cuando alguien solicite acceso de emergencia."
@@ -6586,6 +6653,10 @@
       "Pending": [
         "Pendiente"
       ],
+      "Pending invitation": [
+        "Invitación pendiente",
+        "Invitaciones pendientes"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Lo sentimos, no puedes cambiar de plan en este momento."
       ],
@@ -7179,6 +7250,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Entiendo que ya no podré iniciar sesión en versiones anteriores de las aplicaciones móviles de ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -8155,6 +8231,12 @@
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Esto desactivará los reenvíos de correo con cifrado de extremo a extremo:** podrás volver a configurarlos más tarde."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Tus métodos de recuperación ya no serán válidos:** podrás generar nuevos datos de recuperación después."
       ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } más",
@@ -9720,6 +9802,9 @@
       ],
       "Private AI assistant": [
         "Asistente de IA privado"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Protege tu cuenta frente a las amenazas de la computación cuántica con claves criptográficas resistentes al análisis cuántico."
       ],
       "Protected by Swiss privacy laws": [
         "Protegido por la legislación suiza sobre privacidad"
@@ -11509,6 +11594,9 @@
       "6 Pass Plus accounts": [
         "6 cuentas de Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accede a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
+      ],
       "Account holder": [
         "Titular de la cuenta"
       ],
@@ -11730,6 +11818,9 @@
       ],
       "Colors": [
         "Colores"
+      ],
+      "Command line interface (CLI)": [
+        "Interfaz de línea de comandos (CLI)"
       ],
       "Common passwords": [
         "Contraseñas comunes"
@@ -12225,6 +12316,9 @@
       ],
       "Online privacy for your whole family": [
         "Privacidad online para toda la familia"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Solo disponible en los planes de pago de ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
@@ -15170,6 +15264,9 @@
       "Permanent": [
         "Permanente"
       ],
+      "Plain text": [
+        "Texto plano"
+      ],
       "Receive from all": [
         "Recibir de todos"
       ],
@@ -16475,9 +16572,60 @@
         "Mejorar a ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "No se han podido generar las claves. Para activar la protección poscuántica, deberás generar tus nuevas claves de cifrado manualmente.\n\n${ settingsLink } y selecciona «Generar clave» tanto para tu cuenta como para cada dirección."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "No se han podido generar las claves de las direcciones. Para activar la protección poscuántica, deberás crear tus nuevas claves de cifrado manualmente.\n\nVe a ${ settingsLink } y selecciona «Generar clave» para cada dirección."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Debes actualizar todas las aplicaciones móviles de ${ BRAND_NAME }**: tus nuevas claves no funcionarán en versiones anteriores de la aplicación."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Esto generará nuevas claves de cifrado resistentes al análisis cuántico para tu cuenta."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "No se ha podido activar la protección poscuántica"
+      ],
       "Enable and generate keys": [
         "Activar y generar claves"
+      ],
+      "Enabling post-quantum protection...": [
+        "Activando la protección poscuántica..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Accede a ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Inténtalo de nuevo. Si el problema persiste, ponte en contacto con nuestro equipo de soporte."
+      ],
+      "Post-quantum protection": [
+        "Protección postcuántica"
+      ],
+      "Post-quantum protection is enabled": [
+        "La protección postcuántica está activada"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "No olvides generar nuevos datos de recuperación."
+      ],
+      "Post-quantum protection is enabled.": [
+        "La protección postcuántica está activada."
       ]
     },
     "pqc-optin: Progress status": {
@@ -20776,6 +20924,9 @@
       "Find email or username": [
         "Buscar correo electrónico o nombre de usuario"
       ],
+      "Finish setting up your business account": [
+        "Termina de configurar tu cuenta de empresa"
+      ],
       "Folders": [
         "Carpetas"
       ],
@@ -20980,6 +21131,9 @@
       ],
       "Messages and composing": [
         "Mensajes y redacción"
+      ],
+      "Migration assistant": [
+        "Asistente de migración"
       ],
       "Minicalendar": [
         "Minicalendario"
