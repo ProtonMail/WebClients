@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Αυτόματη αντιγραφή του κωδικού πρόσβασης που δημιουργήθηκε στο πρόχειρο"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Συμπληρώστε αυτόματα τα αποθηκευμένα στοιχεία πληρωμής σας."
+      ],
       "Autosaved on ${ url }": [
         "Αυτόματη αποθήκευση στο ${ url }"
       ],
@@ -1861,10 +1864,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -1885,6 +1884,9 @@
       ],
       "Never": [
         "Ποτέ"
+      ],
+      "No credit cards found": [
+        "Δε βρέθηκαν πιστωτικές κάρτες"
       ],
       "No identity item found": [
         "Δεν βρέθηκε στοιχείο ταυτότητας"
@@ -2799,6 +2801,9 @@
       ],
       "Created at": [
         "Δημιουργήθηκε στις"
+      ],
+      "Credit-card autofill": [
+        "Αυτόματη συμπλήρωση πιστωτικής κάρτας"
       ],
       "Crypto Wallet": [
         "Crypto Wallet"
