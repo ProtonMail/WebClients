@@ -23,9 +23,22 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
         messageChain.flatMap((msg) => [...(msg.attachments || []).map((att) => att.id), ...(msg.contextFiles || [])])
     );
 
-    // Filter attachments to only include those from the current conversation
+    // Build attachments map from both Redux store AND message chain attachments
+    // This is important because auto-retrieved Drive attachments are not pushed to server,
+    // so on synced browsers they only exist as shallow attachments in the message chain
+    const messageChainAttachments: Record<string, Attachment> = {};
+    messageChain.forEach((msg) => {
+        msg.attachments?.forEach((att) => {
+            // Shallow attachments from messages have enough metadata for display
+            messageChainAttachments[att.id] = att as Attachment;
+        });
+    });
+
+    // Merge: Redux attachments take precedence (have full data), then message chain attachments
     const currentConversationAttachments = Object.fromEntries(
-        Object.entries(allAttachments).filter(([id, _]) => currentConversationAttachmentIds.has(id))
+        [...Object.entries(messageChainAttachments), ...Object.entries(allAttachments)].filter(([id, _]) =>
+            currentConversationAttachmentIds.has(id)
+        )
     );
 
     // const uniqueAttachmentCount = new Set(Object.values(currentConversationAttachments).map(item => item.filename)).size;
