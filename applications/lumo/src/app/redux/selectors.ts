@@ -22,8 +22,6 @@ export const selectMessages = (state: RootState) => state.messages;
 export const selectMasterKey = (state: RootState) => state.credentials.masterKey;
 export const selectConversations = (state: RootState) => state.conversations;
 export const selectAttachments = (state: RootState) => state.attachments;
-// Assets have been consolidated into Attachments - this alias is for backwards compatibility
-export const selectAssets = selectAttachments;
 
 export const selectMessageById =
     (id: MessageId): LumoSelector<Message | undefined> =>
@@ -59,10 +57,6 @@ export const selectMessagesBySpaceId = (spaceId: SpaceId | null | undefined) => 
 
 export const selectAttachmentsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId);
-
-// Assets have been consolidated into Attachments - these aliases are for backwards compatibility
-export const selectAssetById = (id: AttachmentId) => selectAttachmentById(id);
-export const selectAssetsBySpaceId = selectAttachmentsBySpaceId;
 
 export const selectAllUserMessages = (state: LumoState) =>
     objectFilterV(state.messages, (m: Message) => m.role === Role.User);

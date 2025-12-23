@@ -22,7 +22,7 @@ import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
 import { SearchService } from '../../../../services/search/searchService';
 import type { DriveDocument } from '../../../../types/documents';
-import type { Attachment, Message } from '../../../../types';
+import { type Attachment, type Message, getProjectInfo } from '../../../../types';
 import { getMimeTypeFromExtension } from '../../../../util/filetypes';
 import { DriveBrowser } from '../DriveBrowser';
 import { ContextProgressBar } from './ContextProgressBar';
@@ -77,7 +77,7 @@ export const FilesPanel = ({
 
     // Get space to check for linked Drive folder
     const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
-    const linkedDriveFolder = space?.linkedDriveFolder;
+    const { linkedDriveFolder } = getProjectInfo(space);
 
     // Get user for search service
     const user = useLumoSelector((state) => state.user?.value);
@@ -91,9 +91,9 @@ export const FilesPanel = ({
     const autoRetrievedAttachments = React.useMemo(() => {
         const attachmentsByKey = new Map<string, Attachment & { messageId: string }>();
 
-        messageChain.forEach(msg => {
+        messageChain.forEach((msg) => {
             if (msg.attachments) {
-                msg.attachments.forEach(shallowAtt => {
+                msg.attachments.forEach((shallowAtt) => {
                     const fullAtt = allAttachmentsState[shallowAtt.id];
                     // Check autoRetrieved on BOTH shallow and full attachment
                     // For project files, autoRetrieved is on the shallow attachment (we skip upserting to Redux)
@@ -102,10 +102,12 @@ export const FilesPanel = ({
 
                     if (isAutoRetrieved) {
                         // Use the fullAtt data if available, otherwise construct from shallow
-                        const attachment = fullAtt || {
-                            ...shallowAtt,
-                            filename: shallowAtt.filename || 'Unknown file',
-                        } as Attachment;
+                        const attachment =
+                            fullAtt ||
+                            ({
+                                ...shallowAtt,
+                                filename: shallowAtt.filename || 'Unknown file',
+                            } as Attachment);
 
                         // Merge autoRetrieved and isUploadedProjectFile from shallow if not in full
                         const mergedAtt = {
@@ -129,8 +131,7 @@ export const FilesPanel = ({
         });
 
         // Sort by relevance score descending (highest relevance first)
-        return Array.from(attachmentsByKey.values())
-            .sort((a, b) => (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0));
+        return Array.from(attachmentsByKey.values()).sort((a, b) => (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0));
     }, [messageChain, allAttachmentsState]);
 
     // Check if an auto-retrieved file is currently excluded
@@ -140,8 +141,8 @@ export const FilesPanel = ({
     };
 
     // Split auto-retrieved into active and excluded
-    const activeAutoRetrieved = autoRetrievedAttachments.filter(f => !isAutoRetrievedExcluded(f));
-    const excludedAutoRetrieved = autoRetrievedAttachments.filter(f => isAutoRetrievedExcluded(f));
+    const activeAutoRetrieved = autoRetrievedAttachments.filter((f) => !isAutoRetrievedExcluded(f));
+    const excludedAutoRetrieved = autoRetrievedAttachments.filter((f) => isAutoRetrievedExcluded(f));
 
     const handleIncludeHistoricalFile = (file: any) => {
         dispatch(removeContextFilter({ messageId: file.messageId, filename: file.filename }));
@@ -409,7 +410,7 @@ export const FilesPanel = ({
                 {/* Filter chip - replaces breadcrumb navigation */}
                 {filterMessage && (
                     <div className="mb-4 flex flex-row items-center gap-2">
-                       
+
                             {onClearFilter && (
                                 <Button
                                     size="small"
@@ -439,85 +440,87 @@ export const FilesPanel = ({
 
                 <div className="flex-1 flex-row overflow-y-auto" style={{ minHeight: '35vh' }}>
                     {/* When filtering, show files from the message */}
-                    {filterMessage && (() => {
-                        // All files retrieved for this message (both uploaded and Drive files now use RAG)
-                        const autoRetrievedFiles = allFiles.filter(f => (f as any).autoRetrieved);
-                        const manualFiles = allFiles.filter(f => !(f as any).autoRetrieved);
+                    {filterMessage &&
+                        (() => {
+                            // All files retrieved for this message (both uploaded and Drive files now use RAG)
+                            const autoRetrievedFiles = allFiles.filter((f) => (f as any).autoRetrieved);
+                            const manualFiles = allFiles.filter((f) => !(f as any).autoRetrieved);
 
-                        // Split auto-retrieved by active/excluded
-                        const activeAutoFiles = autoRetrievedFiles.filter(f => {
-                            const filter = contextFilters.find((cf: any) => cf.messageId === (f as any).messageId);
-                            return !filter || !filter.excludedFiles.includes(f.filename);
-                        });
-                        const excludedAutoFiles = autoRetrievedFiles.filter(f => {
-                            const filter = contextFilters.find((cf: any) => cf.messageId === (f as any).messageId);
-                            return filter && filter.excludedFiles.includes(f.filename);
-                        });
+                            // Split auto-retrieved by active/excluded
+                            const activeAutoFiles = autoRetrievedFiles.filter((f) => {
+                                const filter = contextFilters.find((cf: any) => cf.messageId === (f as any).messageId);
+                                return !filter || !filter.excludedFiles.includes(f.filename);
+                            });
+                            const excludedAutoFiles = autoRetrievedFiles.filter((f) => {
+                                const filter = contextFilters.find((cf: any) => cf.messageId === (f as any).messageId);
+                                return filter && filter.excludedFiles.includes(f.filename);
+                            });
 
-                        return (
-                            <>
-                                {/* Auto-retrieved files section when filtering */}
-                                {autoRetrievedFiles.length > 0 && (
-                                    <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
-                                        <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
-                                            <Icon name="folder-open" size={4} className="color-norm" />
-                                            {c('collider_2025: Info').t`Retrieved Project Knowledge`}
-                                        </h3>
-                                        <p className="text-xs color-weak mb-3">
-                                            {c('collider_2025: Info').t`Files automatically retrieved based on your question.`}
-                                        </p>
-                                        {activeAutoFiles.map((file) => (
-                                            <KnowledgeFileItem
-                                                key={`${file.messageId}-${file.id}`}
-                                                file={file}
-                                                onView={handleFileClick}
-                                                isActive={true}
-                                                onExclude={() => handleExcludeHistoricalFile(file)}
-                                            />
-                                        ))}
+                            return (
+                                <>
+                                    {/* Auto-retrieved files section when filtering */}
+                                    {autoRetrievedFiles.length > 0 && (
+                                        <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
+                                            <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
+                                                <Icon name="folder-open" size={4} className="color-norm" />
+                                                {c('collider_2025: Info').t`Retrieved Project Knowledge`}
+                                            </h3>
+                                            <p className="text-xs color-weak mb-3">
+                                                {c('collider_2025: Info')
+                                                    .t`Files automatically retrieved based on your question.`}
+                                            </p>
+                                            {activeAutoFiles.map((file) => (
+                                                <KnowledgeFileItem
+                                                    key={`${file.messageId}-${file.id}`}
+                                                    file={file}
+                                                    onView={handleFileClick}
+                                                    isActive={true}
+                                                    onExclude={() => handleExcludeHistoricalFile(file)}
+                                                />
+                                            ))}
 
-                                        {/* Removed from future questions when filtering */}
-                                        {excludedAutoFiles.length > 0 && (
-                                            <div className="mt-3 pt-3 border-top border-weak">
-                                                <h4 className="text-xs color-weak mb-2">
-                                                    {c('collider_2025: Info').t`Removed from future questions`}
-                                                </h4>
-                                                {excludedAutoFiles.map((file) => (
-                                                    <KnowledgeFileItem
-                                                        key={`${file.messageId}-${file.id}`}
-                                                        file={file}
-                                                        onView={handleFileClick}
-                                                        isActive={false}
-                                                        onInclude={() => handleIncludeHistoricalFile(file)}
-                                                    />
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
+                                            {/* Removed from future questions when filtering */}
+                                            {excludedAutoFiles.length > 0 && (
+                                                <div className="mt-3 pt-3 border-top border-weak">
+                                                    <h4 className="text-xs color-weak mb-2">
+                                                        {c('collider_2025: Info').t`Removed from future questions`}
+                                                    </h4>
+                                                    {excludedAutoFiles.map((file) => (
+                                                        <KnowledgeFileItem
+                                                            key={`${file.messageId}-${file.id}`}
+                                                            file={file}
+                                                            onView={handleFileClick}
+                                                            isActive={false}
+                                                            onInclude={() => handleIncludeHistoricalFile(file)}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
 
-                                {/* Manual files section when filtering */}
-                                {manualFiles.length > 0 && (
-                                    <div className="mb-6 w-full">
-                                        <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                                            <Icon name="file" size={4} />
-                                            {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
-                                        </h3>
+                                    {/* Manual files section when filtering */}
+                                    {manualFiles.length > 0 && (
+                                        <div className="mb-6 w-full">
+                                            <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+                                                <Icon name="file" size={4} />
+                                                {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
+                                            </h3>
 
-                                        {manualFiles.map((file) => (
-                                            <KnowledgeFileItem
-                                                key={`${file.messageId}-${file.id}`}
-                                                file={file}
-                                                onView={handleFileClick}
-                                                isActive={true}
-                                                readonly={true}
-                                            />
-                                        ))}
-                                    </div>
-                                )}
-                            </>
-                        );
-                    })()}
+                                            {manualFiles.map((file) => (
+                                                <KnowledgeFileItem
+                                                    key={`${file.messageId}-${file.id}`}
+                                                    file={file}
+                                                    onView={handleFileClick}
+                                                    isActive={true}
+                                                    readonly={true}
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </>
+                            );
+                        })()}
 
                     {/* When not filtering, show normal view */}
                     {!filterMessage && (
@@ -533,12 +536,14 @@ export const FilesPanel = ({
 
                                     {activeAutoRetrieved.length === 0 ? (
                                         <p className="text-xs color-weak mb-3">
-                                            {c('collider_2025: Info').t`Relevant files will be automatically retrieved based on your questions.`}
+                                            {c('collider_2025: Info')
+                                                .t`Relevant files will be automatically retrieved based on your questions.`}
                                         </p>
                                     ) : (
                                         <>
                                             <p className="text-xs color-weak mb-3">
-                                                {c('collider_2025: Info').t`Files automatically retrieved based on your questions:`}
+                                                {c('collider_2025: Info')
+                                                    .t`Files automatically retrieved based on your questions:`}
                                             </p>
                                             {/* Active auto-retrieved files */}
                                             {activeAutoRetrieved.map((attachment) => (
@@ -558,8 +563,11 @@ export const FilesPanel = ({
                             {/* Manually Attached Files - only show non-auto-retrieved files */}
                             {(() => {
                                 // Filter out auto-retrieved from current attachments (historical files already filtered by hook)
-                                const nonAutoRetrievedCurrentAttachments = currentAttachments.filter(a => !a.autoRetrieved);
-                                const totalManual = nonAutoRetrievedCurrentAttachments.length + activeHistoricalFiles.length;
+                                const nonAutoRetrievedCurrentAttachments = currentAttachments.filter(
+                                    (a) => !a.autoRetrieved
+                                );
+                                const totalManual =
+                                    nonAutoRetrievedCurrentAttachments.length + activeHistoricalFiles.length;
 
                                 if (totalManual === 0) return null;
 
@@ -568,9 +576,7 @@ export const FilesPanel = ({
                                         <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
                                             <Icon name="paper-clip" size={4} className="color-norm" />
                                             {c('collider_2025: Info').t`Attached Files`}
-                                            <span className={'text-normal color-weak'}>
-                                                {totalManual}
-                                            </span>
+                                            <span className={'text-normal color-weak'}>{totalManual}</span>
                                         </h3>
                                         <p className="text-xs color-weak mb-3">
                                             {c('collider_2025: Info').t`Files you've added to this conversation.`}
@@ -644,12 +650,16 @@ export const FilesPanel = ({
                     )}
 
                     {/* Empty State */}
-                    {allFiles.length === 0 && currentAttachments?.length === 0 && autoRetrievedAttachments.length === 0 && !linkedDriveFolder && (
-                        <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
-                            <Icon name="file" size={8} className="color-weak mb-2" />
-                            <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No files available`}</p>
-                        </div>
-                    )}
+                    {allFiles.length === 0 &&
+                        currentAttachments?.length === 0 &&
+                        autoRetrievedAttachments.length === 0 &&
+                        !linkedDriveFolder && (
+                            <div className="flex flex-1 flex-column items-center justify-center text-center h-full">
+                                <Icon name="file" size={8} className="color-weak mb-2" />
+                                <p className="color-weak text-sm m-0">{c('collider_2025: Info')
+                                    .t`No files available`}</p>
+                            </div>
+                        )}
                 </div>
 
                 {/* Only show context progress and explanation when not filtering */}
