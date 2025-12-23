@@ -19,10 +19,9 @@ import {
     cleanSpace,
     getProjectInfo,
 } from '../../types';
-import { listify, mapIds } from '../../util/collections';
+import { listify, mapIds, setIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
-    selectAssetsBySpaceId,
     selectAttachmentsBySpaceId,
     selectConversationsBySpaceId,
     selectMasterKey,
@@ -30,7 +29,13 @@ import {
     selectRemoteIdFromLocal,
     selectSpaceById,
 } from '../selectors';
-import { type AttachmentMap, deleteAllAttachments, deleteAttachment } from '../slices/core/attachments';
+import {
+    type AttachmentMap,
+    deleteAllAttachments,
+    deleteAttachment,
+    locallyDeleteAttachmentFromRemoteRequest,
+    pullAttachmentRequest,
+} from '../slices/core/attachments';
 import type { ConversationMap } from '../slices/core/conversations';
 import {
     deleteAllConversations,
@@ -59,7 +64,6 @@ import {
     pushSpaceSuccess,
 } from '../slices/core/spaces';
 import type { LumoState } from '../store';
-import { locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from './assets';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError } from './index';
 
 // Type alias for backwards compatibility
@@ -450,13 +454,13 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
     }
 
     // Process deleted assets FIRST to ensure they're removed before processing active assets
-    const deletedAssetIds = new Set(listify(deletedAssets).map((asset) => asset.id));
+    const deletedAssetIds = setIds(deletedAssets);
     for (const asset of listify(deletedAssets)) {
         if (!asset.spaceId) {
             console.warn(`Deleted asset ${asset.id} has no spaceId, skipping`);
             continue;
         }
-        yield put(locallyDeleteAssetFromRemoteRequest({ id: asset.id, spaceId: asset.spaceId }));
+        yield put(locallyDeleteAttachmentFromRemoteRequest(asset.id));
     }
 
     // Process active assets, but skip any that are in the deletedAssets list
@@ -475,13 +479,13 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
         // Add idmap entry for the asset (local -> remote mapping)
         yield put(addIdMapEntry({ type: 'asset', localId: asset.id, remoteId: asset.remoteId, saveToIdb: true }));
         // Assets in /spaces response have Encrypted: null, need to fetch individually via /assets/:id
-        yield put(pullAssetRequest({ id: asset.id, spaceId: asset.spaceId }));
+        yield put(pullAttachmentRequest({ id: asset.id }));
     }
 
     // Clean up: Remove any assets from Redux that belong to synced spaces but aren't in the valid remote assets list
     const syncedSpaceIds = new Set([...listify(spaces).map((s) => s.id), ...listify(deletedSpaces).map((s) => s.id)]);
     for (const spaceId of syncedSpaceIds) {
-        const localAssets: Record<string, Asset> = yield select(selectAssetsBySpaceId(spaceId));
+        const localAssets: Record<string, Asset> = yield select(selectAttachmentsBySpaceId(spaceId));
         for (const asset of Object.values(localAssets)) {
             // If asset is not in valid remote assets list and not in deleted assets list, remove it from Redux
             if (!validAssetIds.has(asset.id) && !deletedAssetIds.has(asset.id)) {
