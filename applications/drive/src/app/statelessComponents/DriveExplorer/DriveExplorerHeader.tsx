@@ -96,7 +96,7 @@ export const DriveExplorerHeader = ({
             caption={caption}
             borderWeak
         >
-            <TableHeader className={clsx('h-custom', config?.headerClassName)} style={{ '--h-custom': '2.7rem' }}>
+            <TableHeader className={config?.headerClassName}>
                 <TableRowSticky
                     className="flex h-custom"
                     scrollAreaRef={containerRef}

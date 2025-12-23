@@ -6,7 +6,7 @@ import { NodeType } from '@proton/drive/index';
 import { FileName } from '../../components/FileName';
 import { SignatureIcon } from '../../components/SignatureIcon';
 import { SortField } from '../../hooks/util/useSorting';
-import type { CellDefinition } from '../../statelessComponents/DriveExplorer/types';
+import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
 
 export interface NameCellProps {
     uid: string;
@@ -55,10 +55,10 @@ export const NameCell = ({
     );
 };
 
-export const defaultNameCellConfig: Omit<CellDefinition, 'render'> = {
+export const defaultNameCellConfig: CellDefinitionConfig = {
     id: 'name',
     headerText: c('Label').t`Name`,
-    className: 'flex items-center flex-1',
+    className: 'flex-1',
     sortField: SortField.name,
     testId: 'column-name',
 };

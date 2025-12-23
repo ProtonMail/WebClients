@@ -1,0 +1,47 @@
+import { c } from 'ttag';
+
+import { TimeIntl } from '@proton/components';
+import { readableTime } from '@proton/shared/lib/helpers/time';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import clsx from '@proton/utils/clsx';
+
+import { SortField } from '../../hooks/util/useSorting';
+import type { CellDefinitionConfig } from '../../statelessComponents/DriveExplorer/types';
+import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
+
+export interface ModifiedCellProps {
+    modifiedTime: Date;
+    className?: string;
+}
+
+export function ModifiedCell({ modifiedTime, className }: ModifiedCellProps) {
+    return (
+        <span
+            className={clsx('text-pre', className)}
+            title={readableTime(dateToLegacyTimestamp(modifiedTime), {
+                locale: dateLocale,
+                format: 'PP',
+            })}
+        >
+            <TimeIntl
+                options={{
+                    year: 'numeric',
+                    day: 'numeric',
+                    month: 'short',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                }}
+            >
+                {dateToLegacyTimestamp(modifiedTime)}
+            </TimeIntl>
+        </span>
+    );
+}
+
+export const defaultModifiedCellConfig: CellDefinitionConfig = {
+    id: 'modified',
+    headerText: c('Label').t`Modified`,
+    className: 'w-1/6',
+    sortField: SortField.fileModifyTime,
+    testId: 'column-modified',
+};

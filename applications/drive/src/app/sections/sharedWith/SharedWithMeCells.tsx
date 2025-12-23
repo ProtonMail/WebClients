@@ -3,17 +3,14 @@ import type { MouseEvent, TouchEvent } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Badge, type Breakpoints, FileIcon, useContactEmailsCache } from '@proton/components';
+import { Badge, type Breakpoints, useContactEmailsCache } from '@proton/components';
 import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { NodeType } from '@proton/drive';
-import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
-import clsx from '@proton/utils/clsx';
 
-import { FileName } from '../../components/FileName';
-import { SignatureIcon } from '../../components/SignatureIcon';
-import { getLinkIconText } from '../../components/sections/FileBrowser/utils';
 import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
 import { ContextMenuCell } from '../../statelessComponents/DriveExplorer/cells/ContextMenuCell';
+import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
+import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { useVolumesState } from '../../store/_volumes';
 import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
@@ -202,17 +199,11 @@ export const getSharedWithMeGrid = ({
                 return null;
             }
             return (
-                <div className="flex items-center mx-auto">
-                    <SignatureIcon
-                        haveSignatureIssues={
-                            (item.itemType === ItemType.DIRECT_SHARE && item.haveSignatureIssues) || false
-                        }
-                        isFile={item.type === NodeType.File || item.type === NodeType.Photo}
-                        className="mr-2 shrink-0"
-                    />
-
-                    <FileName text={item.name} testId="grid-item-name" />
-                </div>
+                <GridItemName
+                    name={item.name}
+                    haveSignatureIssues={(item.itemType === ItemType.DIRECT_SHARE && item.haveSignatureIssues) || false}
+                    type={item.type}
+                />
             );
         };
         return <NameComponent />;
@@ -223,83 +214,39 @@ export const getSharedWithMeGrid = ({
             const thumbnail = useThumbnailStore((state) =>
                 item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined
             );
+
             if (!item) {
                 return null;
             }
 
             const isInvitation = item.itemType === ItemType.INVITATION;
 
-            const iconText = getLinkIconText({
-                linkName: item.name,
-                mimeType: item.mediaType || '',
-                isFile: item.type === NodeType.File || item.type === NodeType.Photo,
-            });
-
-            const IconComponent = (
-                <>
-                    {item.type === NodeType.Album && (
-                        <FileIcon
-                            mimeType="Album"
-                            alt={c('Label').t`Album`}
-                            size={12}
-                            style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
-                        />
-                    )}
-                    {thumbnail?.sdUrl && item.type !== NodeType.Album && (
-                        <img
-                            src={thumbnail?.sdUrl}
-                            className={clsx(
-                                'w-full h-full',
-                                // TODO: DRVWEB-4404
-                                // In the future: Music Cover, M4B Audiobook Cover, and other types that are not images that also have covers in their metadata
-                                item.mediaType && isCompatibleCBZ(item.mediaType, item.name)
-                                    ? 'object-contain'
-                                    : 'object-cover'
-                            )}
-                            style={{ objectPosition: 'center' }}
-                            alt={iconText}
-                        />
-                    )}
-                    {!thumbnail?.sdUrl && item.type !== NodeType.Album && (
-                        <FileIcon
-                            mimeType={
-                                ((item.type === NodeType.File || item.type === NodeType.Photo) && item.mediaType) ||
-                                'Folder'
-                            }
-                            alt={iconText}
-                            size={12}
-                            style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
-                        />
-                    )}
-                </>
-            );
-
             return (
-                <>
-                    {isInvitation && (
-                        <Badge className="absolute top-0 right-0 mt-1 mr-1" type="primary">
-                            {c('Badge').t`Invited`}
-                        </Badge>
-                    )}
-                    {isInvitation ? (
-                        <button
-                            className="w-full h-full cusor-pointer flex items-center justify-center"
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                selectionControls?.selectItem(uid);
-                                contextMenuControls.handleContextMenu(e);
-                            }}
-                            onTouchEnd={(e) => {
-                                selectionControls?.selectItem(uid);
-                                contextMenuControls.handleContextMenuTouch?.(e);
-                            }}
-                        >
-                            {IconComponent}
-                        </button>
-                    ) : (
-                        <div className="w-full h-full flex items-center justify-center">{IconComponent}</div>
-                    )}
-                </>
+                <GridItemContent
+                    type={item.type}
+                    name={item.name}
+                    mediaType={item.mediaType}
+                    thumbnailUrl={thumbnail?.sdUrl}
+                    isInvitation={isInvitation}
+                    badge={isInvitation ? <Badge type="primary">{c('Badge').t`Invited`}</Badge> : undefined}
+                    onClick={
+                        isInvitation
+                            ? (e) => {
+                                  e.stopPropagation();
+                                  selectionControls?.selectItem(uid);
+                                  contextMenuControls.handleContextMenu(e);
+                              }
+                            : undefined
+                    }
+                    onTouchEnd={
+                        isInvitation
+                            ? (e) => {
+                                  selectionControls?.selectItem(uid);
+                                  contextMenuControls.handleContextMenuTouch?.(e);
+                              }
+                            : undefined
+                    }
+                />
             );
         };
 

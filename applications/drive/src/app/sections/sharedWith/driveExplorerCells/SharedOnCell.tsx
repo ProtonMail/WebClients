@@ -6,7 +6,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { SortField } from '../../../hooks/util/useSorting';
-import type { CellDefinition } from '../../../statelessComponents/DriveExplorer/types';
+import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
 
 export interface SharedOnCellProps {
@@ -38,7 +38,7 @@ export const SharedOnCell = ({ sharedOn, className }: SharedOnCellProps) => {
     );
 };
 
-export const defaultSharedOnCellConfig: Omit<CellDefinition, 'render'> = {
+export const defaultSharedOnCellConfig: CellDefinitionConfig = {
     id: 'sharedOn',
     headerText: c('Label').t`Shared on`,
     className: 'w-1/6',
