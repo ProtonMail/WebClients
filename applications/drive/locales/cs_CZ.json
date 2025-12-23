@@ -411,8 +411,14 @@
       "Download app": [
         "Stáhnout aplikaci"
       ],
-      "Download apps": [
-        "Stáhnout aplikace"
+      "Download for Mac": [
+        "Stáhnout pro Mac"
+      ],
+      "Download for MacOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
       ],
       "Download info": [
         "Stáhnout informace"
@@ -1209,6 +1215,12 @@
       "What do I get?": [
         "Co získám?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktům",
@@ -1450,9 +1462,6 @@
       "Billed at ${ amount } once": [
         "Účtováno ${ amount } jednorázově"
       ],
-      "forever": [
-        "navždy"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovuje se po 1 měsíci za ${ regularAmount }."
       ]
@@ -1487,11 +1496,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Výprodej Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -1533,36 +1537,6 @@
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Pomozte svým blízkým připojit se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Připojte se k revoluci v oblasti soukromí s našimi nejvýhodnějšími balíčky, nyní s 50% slevou!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Ušetřete ${ savedAmount } s naší nejvýhodnější, časově omezenou nabídkou!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Přejděte na náš dvouletý tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Přejděte na náš roční tarif a ušetřete ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Dopřejte svým blízkým kompletní digitální ochranu."
       ]
     },
     "BF2025: Tooltip": {
@@ -1803,6 +1777,15 @@
       "Basic chat history": [
         "Základní historie konverzací"
       ],
+      "Built and based in Europe": [
+        "Vyvinuto a umístěno v Evropě"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržování předpisů o ochraně osobních údajů"
+      ],
+      "Data never used for AI training": [
+        "Data nejsou nikdy použita pro výcvik AI"
+      ],
       "Full chat history with search": [
         "Úplná historie konverzací s vyhledáním"
       ],
@@ -1814,6 +1797,9 @@
       ],
       "Limited favorites": [
         "Omezený počet oblíbených"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
@@ -1829,6 +1815,9 @@
       ],
       "Web search access": [
         "Přístup k vyhledávání na webu"
+      ],
+      "Zero-access encryption": [
+        "Šifrování s nulovým přístupem"
       ]
     },
     "collider_2025: Info": {
@@ -3355,6 +3344,9 @@
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Stahování desktopových aplikací není momentálně dostupné"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Úprava fakturační adresy není v tuto chvíli k dispozici. Zkuste to prosím později."
       ],
@@ -3829,9 +3821,6 @@
       "We were not able to load some of your shared items": [
         "Některé z vašich sdílených položek se nám nepodařilo načíst"
       ],
-      "We were not able to load some of your shared items info": [
-        "Nepodařilo se nám načíst některé informace o vašich sdílených položkách"
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
@@ -4182,6 +4171,12 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
+      ],
+      "View the invitation": [
+        "Zobrazit pozvánku",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
@@ -5719,6 +5714,9 @@
       "Invite link copied": [
         "Odkaz na pozvánku zkopírován"
       ],
+      "iOS and Android Apps": [
+        "Aplikace pro iOS a Android"
+      ],
       "Issues found": [
         "Nalezeny problémy"
       ],
@@ -6156,6 +6154,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte kód QR pomocí mobilního zařízení"
+      ],
+      "Scan to download": [
+        "Naskenováním stáhněte"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
@@ -7061,6 +7062,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
+      ],
       "Account holder": [
         "Majitel účtu"
       ],
@@ -7168,6 +7172,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhraní příkazového řádku (CLI)"
       ],
       "Comment": [
         "Komentář"
@@ -12514,6 +12521,9 @@
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Získat plný přístup do ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Získat mobilní a desktopové aplikace"
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
