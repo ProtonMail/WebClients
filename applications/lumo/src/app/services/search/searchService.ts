@@ -4,6 +4,7 @@ import { DbApi } from '../../indexedDb/db';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
+import type { AesGcmCryptoKey } from '../../crypto/types';
 
 const WorkerMessageType = {
     Search: 0,
@@ -56,6 +57,10 @@ export class SearchService {
     private static readonly SEARCH_INDEX_KEY_BLOB = 'search_index_key';
     // Search index key (unwrapped) for deriving the search DEK
     private searchIndexKey: string | null = null;
+    // Cached DEK for BM25 index encryption
+    private cachedSearchDek: AesGcmCryptoKey | null = null;
+    // AD string for BM25 index blob encryption
+    private static readonly BM25_INDEX_AD = 'lumo.search.blob.constant.bm25_index';
 
     /**
      * Get the master key from the Redux store.
@@ -110,6 +115,22 @@ export class SearchService {
 
         this.searchIndexKey = newKeyBase64;
         return this.searchIndexKey;
+    }
+
+    /**
+     * Get or derive the DEK for encrypting/decrypting the BM25 index.
+     * The DEK is derived from the search index key using HKDF.
+     */
+    private async getSearchDek(): Promise<AesGcmCryptoKey> {
+        if (this.cachedSearchDek) {
+            return this.cachedSearchDek;
+        }
+
+        const searchIndexKeyBase64 = await this.getSearchIndexKey();
+        const { deriveSearchIndexDek } = await import('../../crypto');
+        const searchIndexKeyBytes = Uint8Array.fromBase64(searchIndexKeyBase64);
+        this.cachedSearchDek = await deriveSearchIndexDek(searchIndexKeyBytes);
+        return this.cachedSearchDek;
     }
 
     private ensureWorker() {
@@ -239,7 +260,12 @@ export class SearchService {
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
         try {
-            await dbApi.saveSearchBlob(SearchService.BM25_INDEX_BLOB, this.bm25Index.serialize());
+            const serialized = this.bm25Index.serialize();
+            const { encryptUint8Array } = await import('../../crypto');
+            const dek = await this.getSearchDek();
+            const plaintextBytes = new TextEncoder().encode(serialized);
+            const encryptedBase64 = await encryptUint8Array(plaintextBytes, dek, SearchService.BM25_INDEX_AD);
+            await dbApi.saveSearchBlob(SearchService.BM25_INDEX_BLOB, encryptedBase64);
         } catch (error) {
             console.warn('Failed to persist BM25 index', error);
         }
@@ -256,18 +282,21 @@ export class SearchService {
                 return;
             }
 
-            const jsonString =
-                typeof blob === 'string'
-                    ? blob
-                    : blob instanceof Uint8Array
-                      ? new TextDecoder('utf-8').decode(blob)
-                      : undefined;
-            if (jsonString) {
-                this.bm25Index = BM25Index.deserialize(jsonString);
-                console.log('[SearchService] Loaded BM25 index:', this.bm25Index.getStats());
-            } else {
+            // The blob should be an encrypted base64 string
+            const encryptedBase64 = typeof blob === 'string' ? blob : undefined;
+            if (!encryptedBase64) {
+                console.warn('[SearchService] BM25 index blob is not a string, rebuilding');
                 this.rebuildBM25Index();
+                return;
             }
+
+            const { decryptUint8Array } = await import('../../crypto');
+            const dek = await this.getSearchDek();
+            const decryptedBytes = await decryptUint8Array(encryptedBase64, dek, SearchService.BM25_INDEX_AD);
+            const jsonString = new TextDecoder('utf-8').decode(decryptedBytes);
+
+            this.bm25Index = BM25Index.deserialize(jsonString);
+            console.log('[SearchService] Loaded BM25 index:', this.bm25Index.getStats());
         } catch (error) {
             console.warn('Failed to load BM25 index, rebuilding:', error);
             this.rebuildBM25Index();
@@ -731,6 +760,81 @@ export class SearchService {
      */
     hasDocument(documentId: string): boolean {
         return this.driveDocuments.some((doc) => doc.id === documentId);
+    }
+
+    /**
+     * Get all unique space IDs referenced by documents in the index
+     * Used for diagnosing orphaned documents (documents referencing deleted spaces)
+     */
+    getReferencedSpaceIds(): Set<string> {
+        const spaceIds = new Set<string>();
+        for (const doc of this.driveDocuments) {
+            if (doc.spaceId) {
+                spaceIds.add(doc.spaceId);
+            }
+        }
+        return spaceIds;
+    }
+
+    /**
+     * Get documents that reference spaces not in the provided valid set
+     * Returns orphaned documents grouped by space ID (counting unique documents, not chunks)
+     */
+    getOrphanedDocuments(validSpaceIds: Set<string>): { bySpace: Map<string, string[]>; totalDocs: number; totalChunks: number } {
+        const bySpace = new Map<string, Set<string>>();
+        let totalChunks = 0;
+        
+        for (const doc of this.driveDocuments) {
+            if (doc.spaceId && !validSpaceIds.has(doc.spaceId)) {
+                totalChunks++;
+                // Use parent document ID for chunks, or doc.id for non-chunks
+                const docId = doc.parentDocumentId || doc.id;
+                const existing = bySpace.get(doc.spaceId) || new Set<string>();
+                existing.add(docId);
+                bySpace.set(doc.spaceId, existing);
+            }
+        }
+        
+        // Convert Sets to Arrays and count unique docs
+        const result = new Map<string, string[]>();
+        let totalDocs = 0;
+        for (const [spaceId, docIds] of bySpace) {
+            result.set(spaceId, Array.from(docIds));
+            totalDocs += docIds.size;
+        }
+        
+        return { bySpace: result, totalDocs, totalChunks };
+    }
+
+    /**
+     * Remove all orphaned documents (documents referencing spaces not in the valid set)
+     * Returns the space IDs that had orphaned documents removed
+     */
+    async cleanupOrphanedDocuments(validSpaceIds: Set<string>): Promise<string[]> {
+        const orphaned = this.getOrphanedDocuments(validSpaceIds);
+        const orphanedSpaceIds = Array.from(orphaned.bySpace.keys());
+        
+        if (orphanedSpaceIds.length === 0) {
+            return [];
+        }
+
+        console.log('[SearchService] Cleaning up orphaned documents:', {
+            spaceIds: orphanedSpaceIds,
+            totalDocs: orphaned.totalDocs,
+            totalChunks: orphaned.totalChunks,
+        });
+
+        // Remove documents for each orphaned space
+        for (const spaceId of orphanedSpaceIds) {
+            this.removeDocumentsBySpace(spaceId);
+        }
+
+        // Persist changes
+        await this.persistManifest();
+        await this.persistBM25Index();
+
+        console.log('[SearchService] Orphaned documents cleanup complete');
+        return orphanedSpaceIds;
     }
 
     /**
