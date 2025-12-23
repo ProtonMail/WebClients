@@ -30,6 +30,10 @@ export interface ComposerToolbarProps {
 
     //UI props
     canShowLumoUpsellToggle?: boolean;
+    /** Hide the "Add from Proton Drive" option in upload menu */
+    hideDriveOption?: boolean;
+    /** When true, shows "Add file to Drive" instead of "Upload from device" */
+    uploadsToDrive?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -42,6 +46,8 @@ export const ComposerToolbar = ({
     handleUploadButtonClick,
     hasAttachments,
     canShowLumoUpsellToggle,
+    hideDriveOption = false,
+    uploadsToDrive = false,
 }: ComposerToolbarProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
@@ -79,6 +85,8 @@ export const ComposerToolbar = ({
                     onClose={() => setShowUploadMenu(false)}
                     onUploadFromComputer={handleOpenFileDialog}
                     onBrowseDrive={handleBrowseDrive}
+                    hideDriveOption={hideDriveOption}
+                    uploadsToDrive={uploadsToDrive}
                 />
                 {isLumoToolingEnabled && (
                     <Button

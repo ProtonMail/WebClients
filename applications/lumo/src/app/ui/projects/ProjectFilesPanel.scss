@@ -61,7 +61,8 @@
 	border-radius: 12px 0 0 12px; // Rounded left corners only, attach to right
 	background-color: transparent;
 	block-size: 75vh;
-	overflow-y: hidden;
+	max-block-size: 75vh; // Ensure max height constraint
+	overflow: hidden; // Container handles overflow, children scroll
 	padding: 16px;
 	margin-inline-end: 0; // Ensure no margin on right side
 }
@@ -69,6 +70,7 @@
 .project-files-section {
 	padding-block-end: 20px;
 	margin-block-end: 20px;
+	min-block-size: 0; // Allow flex child to shrink for scrolling
 
 	&:last-child {
 		border-block-end: none;
@@ -108,14 +110,11 @@
 		padding: 20px;
 		padding-block-end: 20px; // Ensure bottom padding is explicit
 		flex: 1; // Fill available space
+		min-block-size: 0; // Allow flex child to shrink for scrolling
 		display: flex;
 		flex-direction: column;
 		position: relative; // Ensure border is visible
-
-		// Enable scroll when there are files (uploaded or Drive)
-		&.has-files {
-			overflow: hidden auto;
-		}
+		overflow: hidden auto; // Always allow scrolling when content overflows
 
 		// When drive browser is active, let drive browser handle its own scrolling
 		.has-drive-browser & {

@@ -75,7 +75,7 @@ export const FilesManagementView = ({
                         <FilesPanel
                             messageChain={messageChain}
                             filesContainerRef={filesContainerRef}
-                            onClose={onClose}
+                            onClose={modalProps.onClose}
                             handleLinkClick={handleLinkClick}
                             isModal={true}
                             onViewFile={handleViewFile}

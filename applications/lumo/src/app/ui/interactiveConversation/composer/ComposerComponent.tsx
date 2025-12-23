@@ -15,7 +15,8 @@ import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectProvisionalAttachments } from '../../../redux/selectors';
+import { selectProvisionalAttachments, selectSpaceById } from '../../../redux/selectors';
+import type { ProjectSpace } from '../../../types';
 import type { Attachment, Message } from '../../../types';
 import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
@@ -96,6 +97,10 @@ export const ComposerComponent = ({
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
 
+    // Get space to check for linked Drive folder (hides "Add from Drive" option when folder is linked)
+    const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
+    const linkedDriveFolder = (space as ProjectSpace | undefined)?.linkedDriveFolder;
+
     // Get all relevant attachments for context calculations (includes space-level attachments if spaceId is provided)
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
@@ -107,7 +112,7 @@ export const ComposerComponent = ({
         handleOpenFileDialog,
         handleBrowseDrive,
         handleDeleteAttachment,
-    } = useFileHandling({ messageChain, onShowDriveBrowser });
+    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, linkedDriveFolder });
 
     const sendGenerateMessage = useCallback(
         async (editor: any) => {
@@ -300,6 +305,8 @@ export const ComposerComponent = ({
                             handleUploadButtonClick={handleUploadButtonClick}
                             hasAttachments={hasAttachments}
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
+                            hideDriveOption={!!linkedDriveFolder}
+                            uploadsToDrive={!!linkedDriveFolder}
                         />
                     </div>
                 </section>
