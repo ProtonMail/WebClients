@@ -1485,9 +1485,6 @@
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
       ],
-      "forever": [
-        "ikuisesti"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
       ]
@@ -1518,11 +1515,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "Black Friday -ale"
       ]
     },
     "BF2025: Deal details": {
@@ -1564,36 +1556,6 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Auta läheisiäsi liittymään yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "Liity yksityisyyden vallankumoukseen parhailla paketeillamme, nyt 50 %:n alennuksella!"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "hintaan ${ durationDeal }"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "Säästä ${ savedAmount } parhaalla, rajoitetun ajan voimassa olevalla tarjouksellamme!"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "Vaihda kahden vuoden tilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ savedAmount }!"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "Tarjoa ryhmällesi täydellinen digitaalinen suojaus."
       ]
     },
     "BF2025: Tooltip": {
@@ -1684,6 +1646,111 @@
       ],
       "Working with sensitive data?": [
         "Työskenteletkö arkaluonteisten tietojen kanssa?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } vuosi sitten",
+        "${ n } vuotta sitten"
+      ],
+      "Add a domain": [
+        "Lisää verkkotunnus"
+      ],
+      "Add more users...": [
+        "Lisää käyttäjiä..."
+      ],
+      "Authenticate": [
+        "Tunnistaudu"
+      ],
+      "Calendar": [
+        "Kalenteri"
+      ],
+      "Configure migration": [
+        "Määritä siirto"
+      ],
+      "Contacts": [
+        "Yhteystiedot"
+      ],
+      "Domain ownership verified": [
+        "Verkkotunnuksen omistajuus vahvistettu"
+      ],
+      "Domain setup": [
+        "Verkkotunnuksen määritys"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Sähköposti-ilmoitukset lähetetään, kun siirto alkaa ja kun se on valmis. Saat myös ilmoituksen, jos siirrossa ilmenee virheitä tai se keskeytyy vanhentuneiden linkkien vuoksi."
+      ],
+      "Estimated size": [
+        "Arvioitu koko"
+      ],
+      "Everything": [
+        "Kaikki"
+      ],
+      "Failed to load OAuth": [
+        "OAuthin lataaminen epäonnistui"
+      ],
+      "Install migration app": [
+        "Asenna migraatio-sovellus"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Lisätietoja siirrettävistä tiedoista. Lisätietoja"
+      ],
+      "Mail": [
+        "Sähköposti"
+      ],
+      "Migrate": [
+        "Siirrä"
+      ],
+      "Migrate from Google Workspace": [
+        "Siirrä Google Workspace -palvelusta"
+      ],
+      "Migrate users": [
+        "Siirrä käyttäjät"
+      ],
+      "Migration includes": [
+        "Migraatio sisältää"
+      ],
+      "Not started": [
+        "Ei aloitettu"
+      ],
+      "Required to create user accounts": [
+        "Vaaditaan käyttäjätilien luomiseen"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Valitse, mitä haluat siirtää. Tämä koskee kaikkia käyttäjiä riippumatta siitä, luodaanko heidät nyt vai myöhemmin. Siirto alkaa, kun käyttäjätilit on luotu."
+      ],
+      "Set up": [
+        "Määritä"
+      ],
+      "Sign in to Google Workspace": [
+        "Kirjaudu Google Workspace -palveluun"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Organisaatiosi tietojen siirtämiseksi sinun on asennettava ${ BRAND_NAME } Migration Assistant -sovellus Google Workspace Marketplacesta. Tämä antaa ${ BRAND_NAME }:lle luvan kopioida tietosi. Asennuksen jälkeen palaa takaisin tänne jatkaaksesi. Lisätietoja"
+      ],
+      "Transfer data from": [
+        "Siirrä tiedot kohteesta"
+      ],
+      "User": [
+        "Käyttäjä"
+      ],
+      "Users migrated": [
+        "Käyttäjät siirretty"
+      ],
+      "Verify your domain": [
+        "Vahvista verkkotunnuksesi"
+      ],
+      "What are you migrating?": [
+        "Mitä olet siirtämässä?"
+      ],
+      "Who will be notified?": [
+        "Kenelle ilmoitetaan?"
       ]
     },
     "Browser": {
@@ -7996,6 +8063,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
+      ],
       "Account holder": [
         "Tilinhaltija"
       ],
@@ -8139,6 +8209,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Command line interface (CLI)": [
+        "Komentoriviliittymä (CLI)"
       ],
       "Common passwords": [
         "Yleiset salasanat"
@@ -14511,6 +14584,9 @@
       ],
       "Main password": [
         "Pääsalasana"
+      ],
+      "Migration assistant": [
+        "Migraatio-avustaja"
       ],
       "Minicalendar": [
         "Pienoiskalenteri"

@@ -1578,9 +1578,6 @@
       "Billed at ${ amount } once": [
         "一度に${ amount }が請求されます"
       ],
-      "forever": [
-        "永久"
-      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }で1ヶ月後に自動更新されます。"
       ]
@@ -1609,11 +1606,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "ストレージ容量はすべての ${ BRAND_NAME } サービスで共有されています。"
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday sale": [
-        "ブラックフライデーセール"
       ]
     },
     "BF2025: Deal details": {
@@ -1655,36 +1647,6 @@
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
-      ]
-    },
-    "BF2025: Heading alt": {
-      "Black Friday": [
-        "Black Friday"
-      ]
-    },
-    "BF2025: Offer subtitle": {
-      "Help your loved ones join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "大切な人がプライバシー革命に参加できるようサポートしましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ],
-      "Join the privacy revolution with our best-value bundles, now at 50% off!": [
-        "プライバシー革命に参加しましょう。Protonで最もお得なセットが今なら50%オフ！"
-      ]
-    },
-    "BF2025: Offers": {
-      "for ${ durationDeal }": [
-        "${ durationDeal } の場合"
-      ],
-      "Save ${ savedAmount } with our best-value, limited-time deal!": [
-        "期間限定の最もお得なセールで、${ savedAmount }を節約！"
-      ],
-      "Switch to our 2-year plan and save ${ savedAmount }!": [
-        "2年プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Switch to our yearly plan and save ${ savedAmount }!": [
-        "年間プランに切り替えて、${ savedAmount }を節約！"
-      ],
-      "Treat your tribe to complete digital protection.": [
-        "大切な人たちに、完全なデジタル保護を。"
       ]
     },
     "BF2025: Tooltip": {
@@ -1792,6 +1754,110 @@
       ],
       "Working with sensitive data?": [
         "機密データを扱いますか？"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } / ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } 年前"
+      ],
+      "Add a domain": [
+        "ドメインを追加"
+      ],
+      "Add more users...": [
+        "さらにユーザーを追加..."
+      ],
+      "Authenticate": [
+        "認証"
+      ],
+      "Calendar": [
+        "カレンダー"
+      ],
+      "Configure migration": [
+        "移行を設定"
+      ],
+      "Contacts": [
+        "連絡先"
+      ],
+      "Domain ownership verified": [
+        "ドメイン所有権は検証済みです"
+      ],
+      "Domain setup": [
+        "ドメインセットアップ"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "移行の開始時および完了時にメール通知が送信されます。エラーが発生した場合、および有効期限切れのリンクにより移行が一時停止された場合にも通知されます。"
+      ],
+      "Estimated size": [
+        "推定サイズ"
+      ],
+      "Everything": [
+        "すべて"
+      ],
+      "Failed to load OAuth": [
+        "OAuthの読み込みに失敗しました"
+      ],
+      "Install migration app": [
+        "移行アプリをインストール"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "移行可能な内容の詳細をご確認ください。より詳しく"
+      ],
+      "Mail": [
+        "メール"
+      ],
+      "Migrate": [
+        "移行"
+      ],
+      "Migrate from Google Workspace": [
+        "Google Workspaceから移行"
+      ],
+      "Migrate users": [
+        "ユーザーを移行"
+      ],
+      "Migration includes": [
+        "移行に含まれるもの"
+      ],
+      "Not started": [
+        "開始されていません"
+      ],
+      "Required to create user accounts": [
+        "ユーザーアカウントの作成のために必須です"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "移行したいものを選択してください。これは、今後作成されるものも含め、すべてのユーザーに適用されます。ユーザーアカウントが作成された後、移行が開始されます。"
+      ],
+      "Set up": [
+        "セットアップ"
+      ],
+      "Sign in to Google Workspace": [
+        "Google Workspaceにサインイン"
+      ],
+      "Status": [
+        "ステータス"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME }移行アシスタントアプリをインストールする必要があります。これにより、${ BRAND_NAME }がお客様のデータをコピーするための許可が付与されます。インストールが完了したら、ここに戻って続行してください。より詳しく"
+      ],
+      "Transfer data from": [
+        "データ転送元"
+      ],
+      "User": [
+        "ユーザー"
+      ],
+      "Users migrated": [
+        "ユーザーが移行されました"
+      ],
+      "Verify your domain": [
+        "ドメインの検証"
+      ],
+      "What are you migrating?": [
+        "何を移行しますか？"
+      ],
+      "Who will be notified?": [
+        "誰に通知されますか？"
       ]
     },
     "Browser": {
@@ -2025,6 +2091,15 @@
       "Basic chat history": [
         "基本チャット履歴"
       ],
+      "Built and based in Europe": [
+        "ヨーロッパに拠点を置き、創立されました"
+      ],
+      "Compliance with data protection regulations": [
+        "データ保護規則の遵守"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
       "Full chat history with search": [
         "検索機能付きの完全なチャット履歴"
       ],
@@ -2036,6 +2111,9 @@
       ],
       "Limited favorites": [
         "お気に入りの制限"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
@@ -2051,6 +2129,9 @@
       ],
       "Web search access": [
         "ウェブ検索アクセス"
+      ],
+      "Zero-access encryption": [
+        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Info": {
@@ -3556,7 +3637,7 @@
         "${ BRAND_NAME } Duo でストレージを4倍に"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+        "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
     "Easy switch": {
@@ -4583,6 +4664,9 @@
       "Pending": [
         "保留中"
       ],
+      "Pending invitation": [
+        "保留中の招待"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
@@ -4591,6 +4675,9 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "サブスクリプションはこのプランのプライマリー管理者に請求されます。"
+      ],
+      "View the invitation": [
+        "招待を表示"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
@@ -6338,7 +6425,7 @@
         "ネットワークセキュリティの強化"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+        "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
@@ -11592,7 +11679,7 @@
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+        "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
@@ -12080,7 +12167,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } 紹介ごとに"
+        "紹介ごとに ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
@@ -15050,6 +15137,9 @@
       "Main password": [
         "メインパスワード"
       ],
+      "Migration assistant": [
+        "移行アシスタント"
+      ],
       "Minicalendar": [
         "ミニカレンダー"
       ],
@@ -15932,6 +16022,9 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME }、クラウドストレージ、パスワードマネージャーが一つのバンドルに含まれています。 月たったの${ fallBackString }でご利用いただけます。"
