@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectAssets, selectConversations } from '../../../redux/selectors';
+import { selectAttachments, selectConversations } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import type { Project } from '../types';
 
@@ -12,7 +12,7 @@ import type { Project } from '../types';
 export const useProjects = () => {
     const spaces = useLumoSelector(selectSpaceMap);
     const conversations = useLumoSelector(selectConversations);
-    const assets = useLumoSelector(selectAssets);
+    const attachments = useLumoSelector(selectAttachments);
 
     const projects = useMemo(() => {
         const projectList: Project[] = [];
@@ -25,9 +25,9 @@ export const useProjects = () => {
                     (conv) => conv.spaceId === space.id
                 ).length;
 
-                // Count assets (persistent project files) belonging to this space
-                const fileCount = Object.values(assets).filter(
-                    (asset) => asset.spaceId === space.id && !asset.error && !asset.processing
+                // Count attachments (persistent project files) belonging to this space
+                const fileCount = Object.values(attachments).filter(
+                    (attachment) => attachment.spaceId === space.id && !attachment.error && !attachment.processing
                 ).length;
 
                 projectList.push({
@@ -50,8 +50,7 @@ export const useProjects = () => {
             const dateB = new Date(b.createdAt || 0).getTime();
             return dateB - dateA;
         });
-    }, [spaces, conversations, assets]);
+    }, [spaces, conversations, attachments]);
 
     return projects;
 };
-

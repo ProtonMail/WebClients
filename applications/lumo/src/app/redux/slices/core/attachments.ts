@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteAttachment } from '../../../remote/types';
-import type { Attachment, AttachmentId, SerializedAttachment } from '../../../types';
+import type { Attachment, AttachmentId, SerializedAttachment, SpaceId } from '../../../types';
 
 export type PushAttachmentRequest = {
     id: AttachmentId;
@@ -22,8 +22,6 @@ export type PushAttachmentFailure = PushAttachmentRequest & {
 export type PullAttachmentRequest = {
     id: AttachmentId;
 };
-
-import type { SpaceId } from '../../../types';
 
 // Low-level Redux store operations without side-effects.
 export const upsertAttachment = createAction<Attachment>('lumo/attachment/upsert');
