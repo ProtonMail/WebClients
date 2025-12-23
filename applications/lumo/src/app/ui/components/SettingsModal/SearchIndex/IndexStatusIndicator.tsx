@@ -45,6 +45,10 @@ export const IndexStatusIndicator: React.FC = () => {
         };
 
         void loadStats();
+        
+        // Poll for updates while component is mounted (catches reindex completion)
+        const interval = setInterval(loadStats, 3000);
+        return () => clearInterval(interval);
     }, [userId, conversations, isIndexing]);
 
     if (!stats) {
