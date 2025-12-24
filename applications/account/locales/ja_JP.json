@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
+      "Open recovery settings": [
+        "リカバリ設定を開く"
+      ],
       "Opt out": [
         "オプトアウト"
       ],
@@ -7701,6 +7704,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "旧バージョンの${ BRAND_NAME }モバイルアプリからはサインインできなくなることを理解しました。"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ウェブアプリ"
@@ -8706,6 +8714,12 @@
       ],
       "**Sync codes** to all your devices": [
         "すべてのデバイスに**コードを同期**"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**これにより、エンドツーエンド暗号化メール転送が無効になります。**後で再度設定することができます。"
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**回復方法が無効になります:** 後で新しい回復データを生成できます。"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 個以上"
@@ -10369,6 +10383,9 @@
       "Private AI assistant": [
         "プライベート AI アシスタント"
       ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "ポスト量子暗号鍵で、量子コンピューティングの脅威からお客様のアカウントを保護します。"
+      ],
       "Protected by Swiss privacy laws": [
         "スイスの個人情報保護法により保護されています。"
       ],
@@ -11578,9 +11595,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
-      "Your account has been successfully updated": [
-        "アカウントは正常に更新されました"
-      ],
       "Your account was successfully updated with this promotion": [
         "あなたのアカウントはこのプロモーションで正常に更新されました"
       ],
@@ -12294,6 +12308,9 @@
       "6 Pass Plus accounts": [
         "6 Pass Plus アカウント"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "スクリプト、自動化、開発ワークフローに最適なターミナルから、${ PASS_APP_NAME } に安全にアクセスできます。"
+      ],
       "Account holder": [
         "アカウント所有者"
       ],
@@ -12542,6 +12559,9 @@
       ],
       "Colors": [
         "色"
+      ],
+      "Command line interface (CLI)": [
+        "コマンドラインインターフェース (CLI)"
       ],
       "Common passwords": [
         "一般的なパスワード"
@@ -13094,6 +13114,9 @@
       ],
       "Online privacy for your whole family": [
         "家族全員のためのオンラインプライバシー"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "${ PASS_SHORT_APP_NAME }有料プランでのみご利用いただけます"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 パスワード"
@@ -17536,17 +17559,66 @@
         "${ upsellPlanTitle }にアップグレード"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "キーを生成することができませんでした。ポスト量子保護を有効にするには、手動で新しい暗号キーを生成する必要があります。\n\n${ settingsLink }で、アカウントとそれぞれのアドレスに対して「キーを生成する」を選択してください。"
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "アドレスキーを生成できませんでした。ポスト量子保護を有効にするには、手動で新しい暗号キーを生成する必要があります。\n\n${ settingsLink }に行き、それぞれのアドレスに対して「キーを生成する」を選択してください。"
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**${ BRAND_NAME } のすべてのモバイルアプリを更新してください**。古いバージョンのアプリでは、新しいキーは機能しません。"
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "これによりアカウントに新しい耐量子暗号キーが生成されます。"
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "ポスト量子保護を有効にすることができません"
+      ],
       "Enable and generate keys": [
         "鍵を生成・有効化"
       ],
       "Enable post-quantum protection?": [
         "ポスト量子保護を有効にしますか？"
+      ],
+      "Enabling post-quantum protection...": [
+        "ポスト量子保護を有効にしています..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "${ encryptionAndKeysSettingsTitle }へ移動"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "再度お試しください。もし解決しない場合は、カスタマーサポートチームまでお問い合わせください。"
+      ],
+      "Post-quantum protection": [
+        "ポスト量子保護"
+      ],
+      "Post-quantum protection is enabled": [
+        "ポスト量子保護が有効になっています"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "閉じる"
+      ],
       "Got it": [
         "分かりました"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "新しい回復データを生成することを忘れないでください。"
+      ],
+      "Post-quantum protection is enabled.": [
+        "ポスト量子保護が有効になっています。"
       ]
     },
     "pqc-optin: Progress status": {

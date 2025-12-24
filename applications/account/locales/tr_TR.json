@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Gezinmeyi aç"
       ],
+      "Open recovery settings": [
+        "Kurtarma ayarlarını aç"
+      ],
       "Opt out": [
         "Bırak"
       ],
@@ -7755,6 +7758,11 @@
         "${ BRAND_NAME }. Gizlilik odaklı."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Artık ${ BRAND_NAME } mobil uygulamalarının eski sürümlerinde oturum açamayacağımı anladım."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "İnternet uygulaması"
@@ -8794,6 +8802,12 @@
       ],
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Bu işlem uçtan uca şifrelenmiş e-posta yönlendirmelerini kullanımdan kaldırır:** Bunları daha sonra yeniden ayarlayabilirsiniz."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Kurtarma yöntemleriniz geçersiz olacak:** Daha sonra yeni kurtarma verileri oluşturabilirsiniz."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
@@ -10477,6 +10491,9 @@
       "Private AI assistant": [
         "Kişisel Yapay Zeka yardımcısı"
       ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Kuantum dirençli şifreleme anahtarlarıyla hesabınızı kuantum bilişim tehditlerinden koruyun."
+      ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
@@ -11703,8 +11720,8 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
-      "Your account has been successfully updated": [
-        "Hesabınız güncellendi"
+      "Your account has been successfully updated.": [
+        "Hesabınız güncellendi."
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
@@ -12429,7 +12446,7 @@
         "6 Pass Plus hesabı"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+        "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
       ],
       "Account holder": [
         "Hesap sahibi"
@@ -12681,7 +12698,7 @@
         "Renkler"
       ],
       "Command line interface (CLI)": [
-        "Komut satırı arabirimi (CLI)"
+        "Komut satırı arayüzü (CLI)"
       ],
       "Common passwords": [
         "Yaygın parolalar"
@@ -13236,7 +13253,7 @@
         "Tüm aileniz için çevrim içi gizlilik"
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
-        "Sadece ${ PASS_SHORT_APP_NAME } ücretli tarifelerinde kullanılabilir"
+        "Yalnızca ücretli ${ PASS_SHORT_APP_NAME } tarifeleri ile kullanılabilir"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
@@ -17738,17 +17755,66 @@
         "${ upsellPlanTitle } tarifesine yükselt"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Anahtarlar oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısıdan hesabınızdaki her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Adres anahtarları oluşturulamadı. Kuantum sonrası korumasını açmak için yeni şifreleme anahtarlarınızı el ile oluşturmanız gerekir.\n\n${ settingsLink } bağlantısından her adres için 'Anahtar oluştur' seçeneğini kullanın."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Tüm ${ BRAND_NAME } mobil uygulamalarını güncellemelisiniz**: Yeni anahtarlarınız eski uygulama sürümlerinde çalışmayacak."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Bu işlem hesabınız için yeni kuantum dirençli şifreleme anahtarları oluşturur."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Kuantum sonrası koruması açılamadı"
+      ],
       "Enable and generate keys": [
         "Anahtarları kullanıma al ve oluştur"
       ],
       "Enable post-quantum protection?": [
         "Kuantum sonrası koruması açılsın mı?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Kuantum sonrası koruması açılıyor..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "${ encryptionAndKeysSettingsTitle } bölümüne git"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Lütfen yeniden deneyin. İşe yaramazsa müşteri destek ekibimizle görüşün."
+      ],
+      "Post-quantum protection": [
+        "Kuantum sonrası koruması"
+      ],
+      "Post-quantum protection is enabled": [
+        "Kuantum sonrası koruması açıldı"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Kapat"
+      ],
       "Got it": [
         "Anladım"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Yeni kurtarma verilerini oluşturmayı unutmayın."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Kuantum sonrası koruması açıldı."
       ]
     },
     "pqc-optin: Progress status": {
