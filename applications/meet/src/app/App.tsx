@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
+import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
@@ -22,7 +24,7 @@ import { getPublicToken } from './hooks/srp/usePublicToken';
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
 
-const routes = ['join', 'admin/create', 'dashboard', 'anonymous'];
+const routes = ['join', 'admin/create', 'dashboard', 'incognito'];
 
 const landingPageRoute = '/start-free-meeting';
 
@@ -67,7 +69,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
             }
         }
 
-        if (!isGuest && location.pathname.includes('anonymous')) {
+        if (!isGuest && location.pathname.includes('incognito')) {
             history.push('/dashboard');
         }
 
@@ -96,7 +98,26 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const App = () => {
-    const isGuest = window.location.pathname.includes('guest');
+    const hasPersistedSessions = getPersistedSessions().length > 0;
+    const accountSessions = readAccountSessions();
+    const isAuthenticated = hasPersistedSessions || (accountSessions && accountSessions.length > 0);
+
+    const urlHasGuest = window.location.pathname.includes('guest');
+    const isGuest = urlHasGuest && !isAuthenticated;
+
+    if (isAuthenticated && urlHasGuest) {
+        const { pathname, search, hash } = window.location;
+
+        const cleanPath = pathname.replace('/guest', '');
+
+        if (cleanPath.startsWith('/join')) {
+            window.location.href = cleanPath + search + hash;
+        } else {
+            window.location.href = '/dashboard';
+        }
+
+        return null;
+    }
 
     if (!isWasmSupported()) {
         return <WasmUnsupportedError />;
@@ -117,7 +138,7 @@ export const App = () => {
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
-                                <Route path="/anonymous" component={GuestDashboardContainer} />
+                                <Route path="/incognito" component={GuestDashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>
                     </GuestContainer>
