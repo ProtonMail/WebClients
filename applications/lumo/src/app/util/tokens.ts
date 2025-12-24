@@ -121,6 +121,17 @@ export function processForLatexParentheses(markdown: string) {
     return markdown.replace(/\\Bigl/g, '\\left').replace(/\\Bigr/g, '\\right');
 }
 
+/**
+ * Remove <br> tags and replace them with a space to keep table formatting
+ */
+export function normalizeBrTags(markdown: string): string {
+    return (
+        markdown
+            // Normalize <br> variants
+            .replace(/<br\s*\/?>/gi, ' ')
+    );
+}
+
 // remark-math does not natively support latex delimiters like \(, \[, \\(, etc so we must convert both block-level and inline LaTeX delimiters \[ \] and \( \)
 //  to markdown-style math delimiters $$
 // for more information see https://github.com/remarkjs/react-markdown/issues/785
