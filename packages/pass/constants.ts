@@ -159,4 +159,4 @@ export const PASS_FAMILY_PRICE = 499; // €4.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Autofill model version. May be dynamically set in the future */
-export const MODEL_VERSION = '0';
+export const MODEL_VERSION = '1';
