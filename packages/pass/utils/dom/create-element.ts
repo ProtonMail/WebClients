@@ -33,7 +33,7 @@ export const createCustomElement = <T extends HTMLElement>(options: {
     type: string;
     classNames?: string[];
     parent?: HTMLElement | ShadowRoot;
-    attributes?: { [K in keyof T]?: string };
+    attributes?: Record<string, string>;
     styles?: string;
 }): CustomElementRef<T> => {
     const customElement = document.createElement(options.type) as T;
