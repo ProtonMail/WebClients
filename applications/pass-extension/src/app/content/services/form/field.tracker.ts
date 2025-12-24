@@ -68,6 +68,7 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
                     if (field.actionPrevented || req.cancelled) return;
 
                     const active = await field.isActive();
+                    if (active) field.icon?.reposition();
                     if (req.cancelled || active) return;
 
                     field.icon?.detach();

@@ -64,9 +64,15 @@ export const DropdownFocusController: FC<PropsWithChildren> = ({ children }) => 
             }, DROPDOWN_FOCUS_TIMEOUT);
         };
 
+        const onMouseDown = () => {
+            if (!document.hasFocus()) onFocus();
+            window.removeEventListener('mousedown', onMouseDown, { capture: true });
+        };
+
         if (visible) {
             window.addEventListener('blur', onBlur);
             window.addEventListener('focus', onFocus);
+            window.addEventListener('mousedown', onMouseDown, { capture: true });
 
             const unregister = controller.registerHandler(
                 InlinePortMessageType.DROPDOWN_FOCUS,
@@ -79,6 +85,7 @@ export const DropdownFocusController: FC<PropsWithChildren> = ({ children }) => 
                 clearTimeout(blurTimeout);
                 window.removeEventListener('focus', onFocus);
                 window.removeEventListener('blur', onBlur);
+                window.removeEventListener('mousedown', onMouseDown, { capture: true });
             };
         }
     }, [visible]);

@@ -9,6 +9,7 @@ export type SetItem<T = StorageData> = <K extends keyof T>(key: K, value: T[K]) 
 export type SetItems<T = StorageData> = (items: Partial<T>) => Promise<void>;
 export type RemoveItem<T = StorageData> = <K extends keyof T>(key: K) => Promise<void>;
 export type RemoveItems<T = StorageData> = <K extends (keyof T)[]>(keys: K) => Promise<void>;
+export type ClearItems<T = StorageData> = <K extends (keyof T)[]>(options?: { preserve: K }) => Promise<void>;
 
 export interface Store<T = StorageData, K extends keyof T = keyof T> {
     set: (key: K, value: T[K]) => void;
@@ -20,7 +21,8 @@ export interface Storage<T = StorageData> {
     setItem: <K extends keyof T>(key: K, value: T[K]) => MaybePromise<void>;
     getItem: <K extends keyof T>(key: K) => MaybePromise<MaybeNull<T[K]>>;
     removeItem: <K extends keyof T>(key: K) => MaybePromise<void>;
-    clear: () => MaybePromise<void>;
+    /** NOTE: `preserve` is only available in local extension storage */
+    clear: <K extends (keyof T)[]>(options?: { preserve: K }) => MaybePromise<void>;
 }
 
 export interface ExtensionStorage<T> extends Storage<T> {
@@ -41,5 +43,5 @@ export interface StorageInterface<T = StorageData> {
     setItems: SetItems<T>;
     removeItem: RemoveItem<T>;
     removeItems: RemoveItems<T>;
-    clear: () => Promise<void>;
+    clear: ClearItems<T>;
 }

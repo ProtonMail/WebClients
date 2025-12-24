@@ -1,4 +1,5 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { MESSAGE_HOP_DELAY } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
@@ -16,6 +17,7 @@ import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { DOM_SETTLE_MS, nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
@@ -218,9 +220,15 @@ export const createFieldHandles = ({
             return actionTrap.trap(duration);
         },
 
+        /** Returns true if field is focused or has attached inline dropdown */
         isActive: withContext<() => Promise<boolean>>(async (ctx) => {
             const focused = isActiveElement(field.element);
             if (focused) return true;
+
+            /** Prevent focus race conditions: website focus traps (e.g. figma.com modals)
+             * can trigger synchronously while async dropdown focus messages are in-flight.
+             * Wait for message hop to settle before checking dropdown state. */
+            if (ctx?.mainFrame) await wait(MESSAGE_HOP_DELAY);
 
             return (
                 ctx?.service.inline.dropdown

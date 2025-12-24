@@ -25,7 +25,6 @@ import browser from '@proton/pass/lib/globals/browser';
 import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
 import { cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
-import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { Api } from '@proton/pass/types/api/api';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -131,11 +130,11 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.service.telemetry?.stop();
             ctx.service.autofill.clear();
             ctx.service.apiProxy.clear?.().catch(noop);
-            ctx.service.settings.broadcast(getInitialSettings());
             ctx.service.logger.clear().catch(noop);
 
+            void ctx.service.settings.clear();
             void ctx.service.storage.session.clear();
-            void ctx.service.storage.local.clear();
+            void ctx.service.storage.local.clear({ preserve: ['features'] });
             void fileStorage.clearAll();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);

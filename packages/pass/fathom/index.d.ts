@@ -14,13 +14,14 @@ declare const kSocialSelector = '[class*=social], [aria-label*=with]';
 declare const kEditorElements: string[];
 declare const kEditorPatterns: string[];
 declare const kEditorSelector: string;
-declare const kDomGroupSelector =
-    '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside';
+declare const kDomDialogSelector =
+    '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"]';
+declare const kDomGroupSelector: string;
 declare const kUsernameSelector: string;
 declare const kHiddenUsernameSelector: string;
 declare const kHeadingSelector: string;
 declare const kButtonSubmitSelector: string;
-declare const kLayoutSelector = 'div, section, aside, main, nav';
+declare const kLayoutSelector = 'div, section, aside, main, nav, label';
 declare const kAnchorLinkSelector = 'a, [role="link"], span[role="button"]';
 declare const formCandidateSelector: string;
 declare const inputCandidateSelector =
@@ -178,6 +179,7 @@ declare const matchIdentityField: (input: HTMLInputElement, { visible }: Identit
 declare const isIdentity: (fnode: Fnode) => boolean;
 
 declare const isIFrameField: (iframe: HTMLIFrameElement) => boolean;
+declare const isEditorFrame: () => boolean;
 
 type Override = {
     form: HTMLElement;
@@ -299,6 +301,7 @@ export {
     isClassifiableField,
     isCluster,
     isCustomElementWithShadowRoot,
+    isEditorFrame,
     isEmailCandidate,
     isHidden,
     isIFrameField,
@@ -322,6 +325,7 @@ export {
     kAnchorLinkSelector,
     kButtonSubmitSelector,
     kCaptchaSelector,
+    kDomDialogSelector,
     kDomGroupSelector,
     kEditorElements,
     kEditorPatterns,
