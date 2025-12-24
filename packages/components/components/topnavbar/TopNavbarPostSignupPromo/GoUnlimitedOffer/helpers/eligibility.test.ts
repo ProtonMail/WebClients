@@ -28,7 +28,7 @@ const eligibleMailSubscription = {
         },
     ],
     External: SubscriptionPlatform.Default,
-    CreateTime: subDays(new Date(), 180).getTime() / 1000,
+    PeriodStart: subDays(new Date(), 180).getTime() / 1000,
 } as Subscription;
 
 const eligibleDriveSubscription = {
@@ -39,7 +39,7 @@ const eligibleDriveSubscription = {
         },
     ],
     External: SubscriptionPlatform.Default,
-    CreateTime: subDays(new Date(), 180).getTime() / 1000,
+    PeriodStart: subDays(new Date(), 180).getTime() / 1000,
 } as Subscription;
 
 describe('go unlimited offer eligibility', () => {
@@ -127,7 +127,7 @@ describe('go unlimited offer eligibility', () => {
         expect(
             getIsEligible({
                 user: eligibleUser,
-                subscription: { ...eligibleMailSubscription, CreateTime: subDays(new Date(), 2).getTime() / 1000 },
+                subscription: { ...eligibleMailSubscription, PeriodStart: subDays(new Date(), 2).getTime() / 1000 },
                 protonConfig: validMailConfig,
                 parentApp: APPS.PROTONMAIL,
             })
