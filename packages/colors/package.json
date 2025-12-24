@@ -12,9 +12,9 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@types/node": "^24.10.1",
+        "@types/node": "^24.10.4",
         "css-tree": "^2.3.1",
-        "prettier": "^3.7.3",
+        "prettier": "^3.7.4",
         "tinycolor2": "^1.6.0"
     },
     "devDependencies": {
@@ -22,13 +22,13 @@
         "@types/css-tree": "^2.3.11",
         "@types/jest": "^30.0.0",
         "@types/tinycolor2": "^1.4.6",
-        "eslint": "^9.39.1",
+        "eslint": "^9.39.2",
         "jest": "^30.2.0",
-        "ts-jest": "^29.4.5",
+        "ts-jest": "^29.4.6",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3",
-        "webpack": "^5.103.0",
+        "webpack": "^5.104.1",
         "webpack-cli": "^6.0.1"
     }
 }

@@ -21,9 +21,9 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@livekit/components-react": "^2.9.16",
+        "@livekit/components-react": "^2.9.17",
         "@livekit/krisp-noise-filter": "^0.3.4",
-        "@livekit/track-processors": "^0.6.1",
+        "@livekit/track-processors": "^0.7.0",
         "@proton-meet/proton-meet-core": "0.5.5-4",
         "@proton/atoms": "workspace:packages/atoms",
         "@proton/components": "workspace:packages/components",
@@ -40,13 +40,13 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^10.1.0",
-        "livekit-client": "2.16.0",
+        "livekit-client": "2.16.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.103.0"
+        "webpack": "^5.104.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -56,9 +56,9 @@
         "@vitejs/plugin-react-swc": "^3.11.0",
         "@vitest/coverage-v8": "3.2.4",
         "@vitest/ui": "3.2.4",
-        "eslint": "^9.39.1",
+        "eslint": "^9.39.2",
         "happy-dom": "^20.0.11",
-        "prettier": "^3.7.3",
+        "prettier": "^3.7.4",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4"
     }
