@@ -5,7 +5,7 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { PLANS, hasBundleBiz2025, hasVisionary, isManagedExternally } from '@proton/payments';
+import { PLANS, hasBundleBiz2025, hasVisionary } from '@proton/payments';
 import { isOrganization, isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { canPay, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -133,7 +133,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     const isVisionary = hasVisionary(subscription);
     const hasLumoPlus = hasLumoSeat || isVisionary; //could be redundant since only admins of visionary plans get subcription response
     const hasOrganization = organization ? isOrganization(organization) : false;
-    const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
+    // const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
+    const userCanPay = canPay(user) && !isDelinquent(user);
 
     const isOrgB2B = organization ? isOrganizationB2B(organization) : false;
 
@@ -144,6 +145,7 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
 
     // Calculate upsell eligibility
     const showLumoUpsellFree = !hasLumoPlus && isFree(user) && userCanPay;
+
     const showLumoUpsellB2C = !hasLumoPlus && !hasOrganization && isPaid(user) && userCanPay;
     // bundlebiz2025 has all the lumo plus features included, so we don't need to show the upsell
     const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
