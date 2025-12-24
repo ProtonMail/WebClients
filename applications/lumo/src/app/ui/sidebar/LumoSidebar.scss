@@ -483,3 +483,16 @@
 .bg-white {
 	background-color: white !important;
 }
+
+// Fix for UserDropdown visibility issues in Brave/iOS
+// Force dropdown to be visible when it should be open
+.userDropdown:not(.is-dropdown-out) {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: block !important;
+}
+
+// Hide dropdown completely when closing animation is active
+.userDropdown.is-dropdown-out {
+	display: none !important;
+}

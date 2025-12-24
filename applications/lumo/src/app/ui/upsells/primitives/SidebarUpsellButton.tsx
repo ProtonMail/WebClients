@@ -131,7 +131,7 @@ export const SidebarUpsellButton = ({
 
     return (
         <>
-            <SidebarButtonWrapper collapsed={collapsed} triggerMobileModal={path ? false : true}>
+            <SidebarButtonWrapper collapsed={collapsed} triggerMobileModal={true}>
                 {path ? (
                     <SidebarListItemSettingsLink path={path || ''} className={buttonClasses}>
                         <LumoPlusSidebarContent
