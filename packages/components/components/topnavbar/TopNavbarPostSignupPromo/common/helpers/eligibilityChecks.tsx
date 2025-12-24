@@ -129,7 +129,7 @@ export const checkTimeSubscribedIsValid = (
         return false;
     }
 
-    const subscriptionCreateTime = subscription?.CreateTime ? fromUnixTime(subscription.CreateTime) : new Date();
+    const subscriptionCreateTime = subscription?.PeriodStart ? fromUnixTime(subscription.PeriodStart) : new Date();
     const daysSinceSubscription = subscriptionCreateTime ? differenceInDays(new Date(), subscriptionCreateTime) : 0;
 
     return daysSinceSubscription >= minDays;
