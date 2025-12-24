@@ -25,6 +25,7 @@ import type {
     OnePassField,
     OnePassFieldValue,
     OnePassFields,
+    OnePassFileAttributes,
     OnePassItem,
     OnePassLoginDesignation,
     OnePassSection,
@@ -277,6 +278,11 @@ export const extract1PasswordLegacyIdentity = identityBuilderFactory<OnePassLega
     }
 );
 
+/* File attachments are stored in `files/{documentId}__{fileName}` */
+const get1PasswordFilename = ({ documentId, fileName }: { documentId: string; fileName: string }) => {
+    return `files/${documentId}__${fileName}`;
+};
+
 export const into1PasswordItemFiles = (sections: Maybe<OnePassSection[]>): string[] => {
     if (!sections) return [];
 
@@ -285,14 +291,19 @@ export const into1PasswordItemFiles = (sections: Maybe<OnePassSection[]>): strin
             const file = field.value?.file;
 
             if (file?.documentId) {
-                /** File attachments are stored in `files/{documentId}__{filename}` */
-                const filename = `files/${file.documentId}__${file.fileName}`;
+                const filename = get1PasswordFilename({ documentId: file.documentId, fileName: file.fileName });
                 acc.push(filename);
             }
         });
 
         return acc;
     }, []);
+};
+
+export const into1PasswordDocumentItemFile = (documentAttributes: Maybe<OnePassFileAttributes>): MaybeNull<string> => {
+    return documentAttributes?.documentId
+        ? get1PasswordFilename({ documentId: documentAttributes.documentId, fileName: documentAttributes.fileName })
+        : null;
 };
 
 export const extract1PasswordSSHSections = (
