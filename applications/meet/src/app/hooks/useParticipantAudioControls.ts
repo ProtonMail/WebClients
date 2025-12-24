@@ -120,8 +120,8 @@ export const useParticipantAudioControls = () => {
                 return;
             }
 
-            if (pub.source === Track.Source.Microphone) {
-                if (!pub.isSubscribed && !pub.isMuted) {
+            if (pub.source === Track.Source.Microphone && !pub.isMuted) {
+                if (!pub.isSubscribed) {
                     pub.setSubscribed(true);
                     pub.setEnabled(true);
 
@@ -136,10 +136,13 @@ export const useParticipantAudioControls = () => {
             }
 
             if (publication.source === Track.Source.Microphone) {
-                (publication as RemoteTrackPublication).setSubscribed(true);
-                (publication as RemoteTrackPublication).setEnabled(true);
+                const pub = publication as RemoteTrackPublication;
+                if (!pub.isSubscribed) {
+                    pub.setSubscribed(true);
+                    pub.setEnabled(true);
 
-                handleCacheUpdate(publication as RemoteTrackPublication, participant as RemoteParticipant);
+                    handleCacheUpdate(pub, participant as RemoteParticipant);
+                }
             }
         };
 
