@@ -50,6 +50,8 @@ const createIframeRoot = (rootTag: string, target?: HTMLElement) =>
         styles: ProtonPassRootStyles,
     });
 
+const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
+
 export const createInlineRegistry = (elements: PassElementsConfig) => {
     const listeners = createListenerStore();
 
@@ -102,15 +104,19 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             return state.root ?? registry.init();
         },
 
-        /** Modal dialogs block interaction with elements outside their DOM tree.
-         * Ensures root elements remain interactive with modal contexts by moving them
-         * into the appropriate DOM subtree. When given an anchor, finds the modal
-         * containing that element. Without an anchor, targets the topmost active modal.
-         * Falls back to `document.body` when no modal context exists.  */
+        /** Ensures password manager UI remains interactive within focus-trapped modal
+         * contexts. Focus-trap libraries (focus-lock, focus-trap, a11y-dialog) and modal
+         * dialogs restrict keyboard/focus interaction to elements within their DOM subtree.
+         * By dynamically relocating our root element into the active modal's tree, we cooperate
+         * with the page's focus management instead of conflicting with it. */
         ensureInteractive: (anchor) => {
             if (POPOVER_SUPPORTED) {
                 const activeRoot = state.root;
-                const nextParent = (anchor ? getClosestModal(anchor) : getActiveModal()) ?? document.body;
+                const nextParent =
+                    (anchor
+                        ? (getClosestModal(anchor) ?? anchor.closest<HTMLElement>(kFocusTrapSelector))
+                        : getActiveModal()) ?? document.body;
+
                 const parent = activeRoot?.customElement.parentElement;
 
                 if (parent !== nextParent) {
