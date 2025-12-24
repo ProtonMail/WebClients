@@ -26,7 +26,7 @@
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
         "electron-winstaller": "^5.4.0",
-        "immer": "^11.0.1",
+        "immer": "^11.1.0",
         "jsdom@npm:^26.1.0": "patch:jsdom@npm%3A26.1.0#~/.yarn/patches/jsdom-npm-26.1.0-3857255f02.patch",
         "json5": "^2.2.3",
         "merge": "^2.1.1",
@@ -52,9 +52,9 @@
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
         "nyc": "^17.1.0",
-        "prettier": "^3.7.3",
-        "sort-package-json": "^3.5.0",
-        "turbo": "^2.6.1"
+        "prettier": "^3.7.4",
+        "sort-package-json": "^3.6.0",
+        "turbo": "^2.7.1"
     },
     "packageManager": "yarn@4.12.0",
     "engines": {
