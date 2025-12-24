@@ -3827,7 +3827,7 @@
         "Postavite vašu organizaciju"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste PGP kompatibilne usluge."
+        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste usluge kompatibilne s PGP-om."
       ],
       "Share files with links": [
         "Dijeli datoteke s poveznicama"
@@ -4107,6 +4107,9 @@
       ],
       "Expired": [
         "Isteklo"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Zastarjelo"
@@ -4441,9 +4444,6 @@
       ],
       "Never": [
         "Nikad"
-      ],
-      "New": [
-        "Novo"
       ],
       "New password": [
         "Nova lozinka"
@@ -5131,7 +5131,7 @@
         "Šifrirani podaci o kontaktu"
       ],
       "End-to-end encryption": [
-        "Krajnje do krajnje šifriranje"
+        "Krajnje šifriranje"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Brza P2P/BitTorrent preuzimanja"
