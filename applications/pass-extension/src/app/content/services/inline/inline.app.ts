@@ -233,7 +233,6 @@ export const createInlineApp = <T extends InlineRequest>({
     const close = (options: InlineCloseOptions = {}) => {
         cancelAnimationFrame(state.positionReq);
 
-        popover.close();
         pubsub.publish({ type: 'close', state, options }); /* ⚠️ call before resetting state */
 
         iframe.classList.remove('visible');
@@ -241,6 +240,8 @@ export const createInlineApp = <T extends InlineRequest>({
 
         state.visible = false;
         state.action = null;
+
+        popover.close();
 
         void sendPortMessage({ type: InlinePortMessageType.IFRAME_HIDDEN });
     };
