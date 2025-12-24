@@ -6,8 +6,10 @@ export interface PublicKeyCredentialDescriptorSerialized extends Omit<PublicKeyC
     id: number[];
 }
 
-export interface PublicKeyCredentialCreationOptionsSerialized
-    extends Omit<PublicKeyCredentialCreationOptions, 'challenge' | 'user' | 'excludeCredentials'> {
+export interface PublicKeyCredentialCreationOptionsSerialized extends Omit<
+    PublicKeyCredentialCreationOptions,
+    'challenge' | 'user' | 'excludeCredentials'
+> {
     challenge: number[];
     user: PublicKeyCredentialUserEntitySerialized;
     excludeCredentials?: PublicKeyCredentialDescriptorSerialized[];
@@ -17,8 +19,10 @@ export interface RegistrationOptions {
     publicKey: PublicKeyCredentialCreationOptionsSerialized;
 }
 
-export interface PublicKeyCredentialRequestOptionsSerialized
-    extends Omit<PublicKeyCredentialRequestOptions, 'challenge' | 'allowCredentials'> {
+export interface PublicKeyCredentialRequestOptionsSerialized extends Omit<
+    PublicKeyCredentialRequestOptions,
+    'challenge' | 'allowCredentials'
+> {
     challenge: number[];
     allowCredentials: PublicKeyCredentialDescriptorSerialized[];
 }
@@ -37,10 +41,16 @@ export enum AttestationFormat {
     TPM = 'tpm',
 }
 
+export enum Fido2CredentialFlags {
+    // Bitmask
+    Compromised = 1,
+}
+
 export interface RegisteredKey {
     AttestationFormat: AttestationFormat;
     CredentialID: number[];
     Name: string;
+    Flags: Fido2CredentialFlags;
 }
 
 export interface RegisterCredentials {
