@@ -57,7 +57,6 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const close = () => dropdown.close(request);
                 const onFocusChange = onFocusChangeFactory(dropdown, request);
                 const onKeyDown = (evt: KeyboardEvent) => evt.key === 'Escape' && close();
-
                 const parent = form?.scrollParent;
 
                 /** Auto-close listeners for dropdown lifecycle:
@@ -72,7 +71,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'focus', onFocusChange);
                 listeners.addListener(window, 'blur', onFocusChange);
                 listeners.addListener(window, 'mousedown', onBackdropClick(getAnchorField, close));
-                listeners.addListener(document, 'keydown', onKeyDown);
+                listeners.addListener(document, 'keydown', onKeyDown, { capture: true });
 
                 if (parent) listeners.addListener(parent, 'scroll', onActualScroll(parent, close), SCROLL_OPTIONS);
 
