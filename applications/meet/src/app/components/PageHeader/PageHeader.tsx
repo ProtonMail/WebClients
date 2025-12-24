@@ -76,7 +76,7 @@ export const PageHeader = ({
             <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
                 <button
                     className="logo-button rounded-full hidden md:block p-2"
-                    onClick={() => history.push(guestMode ? '/anonymous' : '/dashboard')}
+                    onClick={() => history.push(guestMode ? '/incognito' : '/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
                     <img className="logo cursor-pointer " src={logo} alt="" />
@@ -131,7 +131,7 @@ export const PageHeader = ({
                                 <Button
                                     className="action-button w-custom h-custom rounded-full shrink-0 flex items-center justify-center p-0"
                                     onClick={() =>
-                                        guestMode ? history.push('/anonymous') : history.push('/dashboard')
+                                        guestMode ? history.push('/incognito') : history.push('/dashboard')
                                     }
                                     size="large"
                                     style={{
