@@ -524,6 +524,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Group owner": [
+        "Groepseigenaar."
+      ],
       "Help and feedback": [
         "Hulp en feedback"
       ],
@@ -1762,20 +1765,53 @@
         "${ n } jaar geleden",
         "${ n } jaren geleden"
       ],
+      "Add a domain": [
+        "Een domein toevoegen."
+      ],
+      "Authenticate": [
+        "Verifiëren."
+      ],
+      "Domain ownership verified": [
+        "Domeineigendom geverifieerd."
+      ],
       "Domain setup": [
         "Domeinconfiguratie"
+      ],
+      "Estimated size": [
+        "Geschatte grootte."
       ],
       "Everything": [
         "Alles"
       ],
+      "Learn more about what can be migrated. Learn more": [
+        "Meer informatie over wat kan worden gemigreerd. Meer informatie"
+      ],
+      "Migrate from Google Workspace": [
+        "Migreren vanuit Google Workspace"
+      ],
       "Migrate users": [
         "Gebruikers migreren"
+      ],
+      "Required to create user accounts": [
+        "Nodig om gebruikersaccounts aan te maken."
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Selecteer wat u wilt migreren, dit zal van toepassing zijn op alle gebruikers, ongeacht of deze nu of later worden aangemaakt. De migratie begint nadat gebruikersaccounts zijn aangemaakt."
       ],
       "Set up": [
         "Configureren"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Dit geeft toestemming aan ${ BRAND_NAME } om uw gegevens te kopiëren. Installeer de app en ga hier terug om verder te gaan. Meer informatie."
+      ],
+      "Transfer data from": [
+        "Gegevens overdragen van."
+      ],
+      "User": [
+        "Gebruiker."
+      ],
+      "Users migrated": [
+        "Gebruikers gemigreerd."
       ]
     },
     "Browser": {
@@ -5179,6 +5215,9 @@
       "Select your deal": [
         "Kies uw deal"
       ],
+      "Select your payment method:": [
+        "Selecteer uw betalingsmethode:"
+      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
       ],
@@ -8345,6 +8384,9 @@
       "1 of 1 email address available": [
         "1 van 1 e-mailadres beschikbaar"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
+      ],
       "Account holder": [
         "Rekeninghouder"
       ],
@@ -8488,6 +8530,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Command line interface (CLI)": [
+        "Opdrachtregelinterface (CLI)"
       ],
       "Common passwords": [
         "Veelvoorkomende wachtwoorden"
@@ -9065,6 +9110,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -12194,6 +12242,9 @@
       ],
       "How your free trial works:": [
         "Hoe uw gratis proefperiode werkt:"
+      ],
+      "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get 14 days of premium features for free: ${ referralLink }": [
+        "Ik gebruik ${ BRAND_NAME } en dacht dat u het wellicht interessant vindt. Het is een beveiligde e-mail, cloudopslag, wachtwoordmanager en VPN die uw privacy beschermt. Meld u aan met deze link om 14 dagen gratis premium-functies te krijgen: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
@@ -16373,6 +16424,11 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android."
       ]
     },
     "wallet_signup_2024: Info": {
