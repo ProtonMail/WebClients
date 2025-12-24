@@ -28,7 +28,7 @@ export const createPopoverController = (registry: InlineRegistry): PopoverContro
                 /** Prevents closing the root popover when both dropdown and
                  * notification are active. Since both apps share the same
                  * popover container, closing one should not affect the other */
-                if (dropdown?.getState().visible && notification?.getState().visible) return;
+                if (dropdown?.getState().visible || notification?.getState().visible) return;
                 else hidePopover(root.customElement);
             }
         },
