@@ -1,7 +1,7 @@
 assumes: [snapd2.55]
 name: proton-mail
 icon: assets/linux/icon.svg
-version: $APP_VERSION
+version: $SNAP_VERSION
 summary: Proton Mail Desktop Application
 description: |
   Proton Mail desktop application built with Electron.
@@ -34,7 +34,7 @@ plugs:
   foo-install-cups:
     interface: content
     content: foo
-    default-provider: cups 
+    default-provider: cups
     target: $SNAP_DATA/foo
 
 apps:
@@ -60,4 +60,4 @@ apps:
       - hardware-observe
       - u2f-devices
       - network
-      - cups 
+      - cups
