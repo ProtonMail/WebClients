@@ -28,6 +28,7 @@ import {
     extract1PasswordURLs,
     extract1PasswordWifiFields,
     format1PasswordMonthYear,
+    into1PasswordDocumentItemFile,
     into1PasswordItemFiles,
     is1PasswordCCField,
 } from './1p.utils';
@@ -206,7 +207,10 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                                 return attachFilesToItem(processSshKeyItem(item), files);
                             case OnePassCategory.WIFI:
                                 return attachFilesToItem(processWifiItem(item), files);
-
+                            case OnePassCategory.DOCUMENT:
+                                const file = into1PasswordDocumentItemFile(item.details.documentAttributes);
+                                if (file) files.unshift(file);
+                                return attachFilesToItem(processCustomItem(item), files);
                             default:
                                 const unknownItem = item as OnePassBaseItem & { details: any };
                                 return 'loginFields' in unknownItem.details &&
