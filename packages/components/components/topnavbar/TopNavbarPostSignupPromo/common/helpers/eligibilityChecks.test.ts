@@ -55,7 +55,7 @@ describe('eligibilityChecker helpers', () => {
             currency: 'USD',
         },
         {
-            CreateTime: Math.floor(Date.now() / 1000),
+            PeriodStart: Math.floor(Date.now() / 1000),
         }
     );
 
@@ -251,23 +251,23 @@ describe('eligibilityChecker helpers', () => {
     });
 
     describe('checkTimeSubscribedIsValid', () => {
-        const setSubscriptionCreateTime = (daysAgo: number) => ({
+        const setSubscriptionPeriodStart = (daysAgo: number) => ({
             ...validSubscription,
-            CreateTime: addDays(new Date(), -daysAgo).getTime() / 1000,
+            PeriodStart: addDays(new Date(), -daysAgo).getTime() / 1000,
         });
 
         it('returns true if subscribed for the minimum number of days', () => {
-            const sub = setSubscriptionCreateTime(10);
+            const sub = setSubscriptionPeriodStart(10);
             expect(checkTimeSubscribedIsValid(10, sub)).toBe(true);
         });
 
         it('returns true if subscribed for more than the minimum number of days', () => {
-            const sub = setSubscriptionCreateTime(15);
+            const sub = setSubscriptionPeriodStart(15);
             expect(checkTimeSubscribedIsValid(10, sub)).toBe(true);
         });
 
         it('returns false if subscribed for less than the minimum number of days', () => {
-            const sub = setSubscriptionCreateTime(5);
+            const sub = setSubscriptionPeriodStart(5);
             expect(checkTimeSubscribedIsValid(10, sub)).toBe(false);
         });
 
@@ -275,15 +275,15 @@ describe('eligibilityChecker helpers', () => {
             expect(checkTimeSubscribedIsValid(10, undefined)).toBe(false);
         });
 
-        it('returns true when CreateTime is today and minDays is 0', () => {
+        it('returns true when PeriodStart is today and minDays is 0', () => {
             const now = Math.floor(Date.now() / 1000);
-            const sub = { ...validSubscription, CreateTime: now };
+            const sub = { ...validSubscription, PeriodStart: now };
             expect(checkTimeSubscribedIsValid(0, sub)).toBe(true);
         });
 
-        it('returns false when CreateTime is today and minDays is positive', () => {
+        it('returns false when PeriodStart is today and minDays is positive', () => {
             const now = Math.floor(Date.now() / 1000);
-            const sub = { ...validSubscription, CreateTime: now };
+            const sub = { ...validSubscription, PeriodStart: now };
             expect(checkTimeSubscribedIsValid(1, sub)).toBe(false);
         });
 
