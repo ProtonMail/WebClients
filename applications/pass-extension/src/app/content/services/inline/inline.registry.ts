@@ -51,6 +51,7 @@ const createIframeRoot = (rootTag: string, target?: HTMLElement) =>
     });
 
 const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
+const getClosestFocusTrap = (target: MaybeNull<Element>) => target?.closest<HTMLElement>(kFocusTrapSelector) ?? null;
 
 export const createInlineRegistry = (elements: PassElementsConfig) => {
     const listeners = createListenerStore();
@@ -114,8 +115,8 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
                 const activeRoot = state.root;
                 const nextParent =
                     (anchor
-                        ? (getClosestModal(anchor) ?? anchor.closest<HTMLElement>(kFocusTrapSelector))
-                        : getActiveModal()) ?? document.body;
+                        ? (getClosestModal(anchor) ?? getClosestFocusTrap(anchor))
+                        : (getActiveModal() ?? getClosestFocusTrap(document.activeElement))) ?? document.body;
 
                 const parent = activeRoot?.customElement.parentElement;
 
