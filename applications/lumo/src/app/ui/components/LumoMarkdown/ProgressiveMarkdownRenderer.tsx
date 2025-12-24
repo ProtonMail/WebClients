@@ -7,17 +7,17 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import { useCopyNotification } from '../../../hooks/useCopyNotification';
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { parseInteger } from '../../../util/number';
-import { convertRefTokensToSpans, processForLatexMarkdown } from '../../../util/tokens';
+import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../../util/tokens';
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
-import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 
 /**
  * Progressive Markdown Renderer
@@ -347,7 +347,8 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
         const processedContent = useMemo(() => {
             const processedContent = convertRefTokensToSpans(content || '');
             const processedContentWithMath = processForLatexMarkdown(processedContent);
-            return processedContentWithMath;
+            const processedContentWithNormalizedBr = normalizeBrTags(processedContentWithMath);
+            return processedContentWithNormalizedBr;
         }, [content]);
 
         // Split content into complete (cacheable) and incomplete (active) blocks
