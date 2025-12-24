@@ -770,7 +770,7 @@ export const ProtonMeetContainer = ({
 
         if (guestMode) {
             dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
-            history.push('/anonymous');
+            history.push('/incognito');
             return;
         }
 
