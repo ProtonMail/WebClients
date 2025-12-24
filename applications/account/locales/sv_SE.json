@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Öppna navigering"
       ],
+      "Open recovery settings": [
+        "Öppna återställningsinställningar"
+      ],
       "Opt out": [
         "Tacka nej"
       ],
@@ -5543,6 +5546,9 @@
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "För kompatibilitet har postkvantkryptering inaktiveras för ${ boldForwarderEmail }."
       ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "För kompatibilitet har post-kvantumkryptering inaktiverats och en ny krypteringsnyckel har genererats för ${ boldForwarderEmail }."
+      ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "För kompatibilitet kommer postkvantkryptering att inaktiveras för ${ boldForwarderEmail }."
       ],
@@ -7680,6 +7686,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Jag förstår att jag inte längre kommer att kunna logga in från äldre versioner av mobilappar för ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -11602,8 +11613,8 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
       ],
-      "Your account has been successfully updated": [
-        "Ditt konto har uppdaterats"
+      "Your account has been successfully updated.": [
+        "Ditt konto har uppdaterats."
       ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
@@ -16309,7 +16320,7 @@
         "Secure Core-konfigurationer"
       ],
       "Select who can access...": [
-        "Välj vem som har åtkomst till..."
+        "Välj vem som kan komma åt …"
       ],
       "Send to all": [
         "Skicka till alla"
@@ -17618,12 +17629,35 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Du måste uppdatera alla ${ BRAND_NAME } mobilappar**: dina nya nycklar fungerar inte på äldre appversioner."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Kunde inte aktivera post-kvantumskydd"
+      ],
       "Enable and generate keys": [
         "Aktivera och generera nycklar"
       ],
       "Enable post-quantum protection?": [
         "Aktivera post-kvantumskydd?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Aktiverar post-kvantumskydd …"
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Gå till ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Försök igen. Om det inte fungerar, kontakta vårt kundsupportteam."
+      ],
+      "Post-quantum protection": [
+        "Post-kvantumskydd"
+      ],
+      "Post-quantum protection is enabled": [
+        "Post-kvantumskydd är aktiverat"
       ]
     },
     "pqc-optin: Action": {
@@ -17637,6 +17671,9 @@
     "pqc-optin: Info": {
       "Don't forget to generate new recovery data.": [
         "Glöm inte att generera nya återställningsdata."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Post-kvantumskydd är aktiverat."
       ]
     },
     "pqc-optin: Progress status": {
@@ -23151,6 +23188,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Meddelanden i mappen \"Skickat\" eller \"Utkast\" kommer att fortsätta att visas i den mappen, även om du flyttar dem till annan mapp."
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."

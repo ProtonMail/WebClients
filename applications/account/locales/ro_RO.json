@@ -7812,6 +7812,11 @@
         "${ BRAND_NAME }. Confidențialitate implicită."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor mobile ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicație web"
@@ -8888,6 +8893,9 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Aceasta va dezactiva transferurile mesajelor criptate bilateral:** le veți putea configura din nou mai târziu."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Metodele de recuperare vor fi invalidate:** puteți genera noile date de recuperare mai târziu."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mai multe",
@@ -11837,9 +11845,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
-      "Your account has been successfully updated": [
-        "Contul a fost actualizat."
-      ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
       ],
@@ -13377,6 +13382,9 @@
       ],
       "Online privacy for your whole family": [
         "Confidențialitate online pentru întreaga familie"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Disponibil doar pe planurile cu plată ale ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
@@ -17937,9 +17945,24 @@
         "Trecere la ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\n${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Nu s-au putut genera cheile. Pentru a activa protecția post-cuantică, va trebui să generați manual noile chei de criptare.\n\nAccesați ${ settingsLink } și selectați „Generare cheie” pentru cont și pentru fiecare adresă."
+      ]
+    },
     "PQC compatibility warning": {
       "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
         "**Trebuie să actualizați toate aplicațiile ${ BRAND_NAME } pentru mobile**: noile chei nu vor funcționa pe versiunile mai vechi ale aplicației."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Acesta va genera noi chei de criptare rezistente la atacuri cuantice pentru cont."
       ]
     },
     "PQC optin": {
@@ -17952,16 +17975,36 @@
       "Enable post-quantum protection?": [
         "Activați protecția post-cuantică?"
       ],
+      "Enabling post-quantum protection...": [
+        "Se activează protecția post-cuantică..."
+      ],
       "Go to ${ encryptionAndKeysSettingsTitle }": [
-        "Accesare ${ encryptionAndKeysSettingsTitle }"
+        "Accesați ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Reîncercați. Dacă acest lucru nu funcționează, contactați echipa noastră de asistență pentru clienți."
       ],
       "Post-quantum protection": [
         "Protecție post-cuantică"
+      ],
+      "Post-quantum protection is enabled": [
+        "Protecția post-cuantică este activată"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Închidere"
+      ],
       "Got it": [
         "Am înțeles"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Nu uitați să generați noile date de recuperare."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Protecția post-cuantică este activată."
       ]
     },
     "pqc-optin: Progress status": {
