@@ -49,16 +49,16 @@
         "@proton/types": "workspace:^",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
         "cross-env": "^10.1.0",
-        "electron": "39.2.4",
+        "electron": "39.2.7",
         "electron-builder": "26.0.12",
-        "eslint": "^9.39.1",
+        "eslint": "^9.39.2",
         "jest": "^30.2.0",
         "node-loader": "^2.1.0",
-        "prettier": "^3.7.3",
+        "prettier": "^3.7.4",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3",
-        "webpack": "^5.103.0"
+        "webpack": "^5.104.1"
     },
     "productName": "Proton Pass"
 }

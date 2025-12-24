@@ -15,10 +15,10 @@ name = "proton_authenticator_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2.5.2", features = [] }
+tauri-build = { version = "2.5.3", features = [] }
 
 [dependencies]
-tauri = { version = "2.9.3", features = [] }
+tauri = { version = "2.9.5", features = [] }
 tauri-plugin-opener = "2.5.2"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.145"
@@ -28,7 +28,7 @@ tauri-plugin-store = "2.4.1"
 keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service"] }
 tauri-plugin-process = "2.3.1"
 tauri-plugin-log = "2.7.1"
-log = "0.4.28"
+log = "0.4.29"
 tauri-plugin-http = { version = "2.5.4", features = ["unsafe-headers", "dangerous-settings"] }
 rand = { version = "0.9.2" }
 base64 = { version = "0.22.1" }

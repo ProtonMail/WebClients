@@ -15,17 +15,17 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "json-schema-to-typescript": "^13.1.2",
-        "prettier": "^3.7.3",
+        "prettier": "^3.7.4",
         "typescript": "^5.9.3"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "@types/node": "^24.10.1",
-        "eslint": "^9.39.1",
+        "@types/node": "^24.10.4",
+        "eslint": "^9.39.2",
         "jest": "^30.2.0",
         "jest-fetch-mock": "^3.0.3",
         "rimraf": "^5.0.10",
-        "ts-jest": "^29.4.5",
+        "ts-jest": "^29.4.6",
         "ts-node": "^10.9.2"
     }
 }
