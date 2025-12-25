@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
+      "Open recovery settings": [
+        "Адкрыць налады аднаўлення"
+      ],
       "Opt out": [
         "Адмовіцца"
       ],
@@ -7863,6 +7866,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Я разумею, што я больш не змагу ўвайсці са старых версій мабільных праграм ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "вэб-праграма"
@@ -8970,6 +8978,12 @@
       ],
       "**Sync codes** to all your devices": [
         "**Сінхранізуйце коды** з усімі вашымі прыладамі"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Гэта дзеянне прывядзе да адключэння скразнога шыфравання пры перасылцы лістоў:** вы зможаце наладзіць яго зноў пазней."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Вашы метады аднаўлення будуць ануляваны:** вы зможаце згенерыраваць новыя даныя для аднаўлення пазней."
       ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
@@ -10693,6 +10707,9 @@
       "Private AI assistant": [
         "Прыватны памочнік ШІ"
       ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Абараніце свой уліковы запіс ад квантавых пагроз з квантаваўстойлівымі крыптаграфічнымі ключамі."
+      ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
@@ -11953,8 +11970,8 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
-      "Your account has been successfully updated": [
-        "Ваш уліковы запіс паспяхова абноўлены."
+      "Your account has been successfully updated.": [
+        "Ваш ўліковы запіс паспяхова абноўлены."
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
@@ -18124,17 +18141,66 @@
         "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\n${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага ўліковага запісу і для кожнага адраса."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Не ўдалося згенерыраваць ключы. Вам спатрэбіцца згенерыраваць новыя ключы шыфравання ўручную, каб актываваць постквантавую абарону.\n\nПерайдзіце ў ${ settingsLink } і выберыце \"Згенерыраваць ключ\" для вашага кожнага адраса."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Вы павінны абнавіць усе мабільныя праграмы ${ BRAND_NAME }**: вашы новыя ключы не будуць працаваць са старымі версіямі праграм."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Гэта дзеянне прывядзе да генерацыі новых квантаваўстойлівых ключоў шыфравання для вашага ўліковага запісу."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Немагчыма ўключыць постквантавую абарону"
+      ],
       "Enable and generate keys": [
         "Уключыць і згенерыраваць ключы"
       ],
       "Enable post-quantum protection?": [
         "Уключыць постквантавую абарону?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Уключэнне постквантавай абароны..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Перайдзіце ў ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Паспрабуйце яшчэ раз. Калі гэта не спрацуе, звяжыцеся з нашай службай падтрымкі кліентаў."
+      ],
+      "Post-quantum protection": [
+        "Постквантавая абарона"
+      ],
+      "Post-quantum protection is enabled": [
+        "Постквантавая абарона ўключана"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Закрыць"
+      ],
       "Got it": [
         "Зразумела"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Не забудзьце згенерыраваць новыя даныя для аднаўлення."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Постквантавая абарона ўключана."
       ]
     },
     "pqc-optin: Progress status": {
