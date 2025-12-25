@@ -27,7 +27,7 @@ export enum OnePassCategory {
     NOTE = '003',
     IDENTITY = '004',
     PASSWORD = '005',
-    OTHER = '006',
+    DOCUMENT = '006',
     WIFI = '109',
     SSH_KEY = '114',
 }
@@ -51,6 +51,8 @@ export enum OnePassFieldKey {
     SSH_KEY = 'sshKey',
 }
 
+export type OnePassFileAttributes = { documentId?: string; fileName: string };
+
 export type OnePassFieldValue<K extends OnePassFieldKey> = {
     [OnePassFieldKey.ADDRESS]?: Record<string, string>;
     [OnePassFieldKey.CONCEALED]?: string;
@@ -60,7 +62,7 @@ export type OnePassFieldValue<K extends OnePassFieldKey> = {
     [OnePassFieldKey.STRING]?: string;
     [OnePassFieldKey.TOTP]?: string;
     [OnePassFieldKey.URL]?: string;
-    [OnePassFieldKey.FILE]?: { documentId?: string; fileName: string };
+    [OnePassFieldKey.FILE]?: OnePassFileAttributes;
     [OnePassFieldKey.SSH_KEY]?: {
         privateKey?: string;
         metadata?: { fingerprint: string; keyType: string; privateKey: string; publicKey: string };
@@ -114,9 +116,9 @@ export type OnePassLogin = OnePassItemDetails & {
 };
 export type OnePassCreditCard = OnePassItemDetails;
 export type OnePassIdentity = OnePassItemDetails;
-export type OnePassCustomItem = OnePassItemDetails;
 export type OnePassSshKey = OnePassItemDetails;
 export type OnePassWifi = OnePassItemDetails;
+export type OnePassDocumentItem = OnePassItemDetails & { documentAttributes: Maybe<OnePassFileAttributes> };
 
 export type OnePassBaseItem = {
     uuid: string;
@@ -143,7 +145,7 @@ export type OnePassItem = OnePassBaseItem &
         | { categoryUuid: OnePassCategory.IDENTITY; details: OnePassIdentity }
         | { categoryUuid: OnePassCategory.SSH_KEY; details: OnePassSshKey }
         | { categoryUuid: OnePassCategory.WIFI; details: OnePassWifi }
-        | { categoryUuid: OnePassCategory.OTHER; details: OnePassCustomItem }
+        | { categoryUuid: OnePassCategory.DOCUMENT; details: OnePassDocumentItem }
     );
 
 export type OnePass1PuxData = {
