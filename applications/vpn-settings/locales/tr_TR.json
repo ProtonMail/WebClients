@@ -4020,6 +4020,9 @@
       "Invalid postal code": [
         "Posta kodu geçersiz"
       ],
+      "Invalid private key file": [
+        "Kişisel anahtar dosyası geçersiz"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -8463,7 +8466,7 @@
         "1/1 e-posta adresi kullanılabilir"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "${ PASS_APP_NAME } uygulamasına terminalden güvenli bir şekilde erişin; komut dosyası oluşturma, otomasyon ve geliştirme iş akışları için idealdir."
+        "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
       ],
       "Account holder": [
         "Hesap sahibi"
@@ -8610,7 +8613,7 @@
         "Renkler"
       ],
       "Command line interface (CLI)": [
-        "Komut satırı arabirimi (CLI)"
+        "Komut satırı arayüzü (CLI)"
       ],
       "Common passwords": [
         "Yaygın parolalar"

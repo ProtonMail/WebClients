@@ -1978,7 +1978,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-End šifriranje"
+        "Krajnje šifrirano"
       ],
       "End-to-end encrypted to verified recipient": [
         "End-to-end šifiranje za potvrđenog primatelja"
@@ -1987,16 +1987,16 @@
         "End-to-end šifrirano. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "PGP šifrirano"
+        "Šifrirano PGP-om"
       ],
       "PGP-encrypted to verified recipient": [
-        "PGP šifirano za potvrđenog primatelja"
+        "Šifrirano PGP-om za potvrđenog primatelja"
       ],
       "PGP-encrypted. ${ warningsText }": [
-        "PGP šifrirano. ${ warningsText }"
+        "Šifrirano PGP-om. ${ warningsText }"
       ],
       "PGP-signed": [
-        "PGP potpisano"
+        "Potpisano PGP-om"
       ],
       "The address might be misspelled": [
         "Adresa bi mogla biti pogrešno napisana"
@@ -5378,7 +5378,7 @@
         "Postavite vašu organizaciju"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste PGP kompatibilne usluge."
+        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste usluge kompatibilne s PGP-om."
       ],
       "Shorten selection": [
         "Skrati označeno"
@@ -5815,6 +5815,9 @@
       ],
       "Expired": [
         "Isteklo"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Zastarjelo"
@@ -7314,7 +7317,7 @@
         "Šifrirani podaci o kontaktu"
       ],
       "End-to-end encryption": [
-        "Krajnje do krajnje šifriranje"
+        "Krajnje šifriranje"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Brza P2P/BitTorrent preuzimanja"
@@ -8151,31 +8154,31 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "End-to-end šifrirana i potpisana poruka"
+        "Krajnje šifrirana i potpisana poruka"
       ],
       "End-to-end encrypted message": [
-        "End-to-end šifrirane poruke"
+        "Krajnje šifrirana poruka"
       ],
       "End-to-end encrypted message from verified sender": [
-        "End-to-end šifrirana poruka od potvrđenog primatelja"
+        "Krajnje šifrirana poruka od potvrđenog primatelja"
       ],
       "PGP-encrypted and signed message": [
-        "PGP šifrirana i potpisana poruka"
+        "Poruka šifrirana i potpisana PGP-om"
       ],
       "PGP-encrypted message": [
-        "PGP-šifrirana poruka"
+        "Poruka šifrirana PGP-om"
       ],
       "PGP-encrypted message from verified sender": [
-        "PGP šifrirana poruka od potvrđenog pošiljatelja"
+        "Poruka šifrirana PGP-om, od potvrđenog pošiljatelja"
       ],
       "PGP-signed message": [
-        "PGP potpisana poruka"
+        "Poruka potpisana PGP-om"
       ],
       "PGP-signed message from verified sender": [
-        "PGP potpisana poruka od potvrđenog pošiljatelja"
+        "Poruka potpisana PGP-om od potvrđenog pošiljatelja"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Poruka s PGP potpisom. Provjera pošiljatelja nije uspjela"
+        "Poruka potpisana PGP-om. Provjera pošiljatelja nije uspjela"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Poslano putem ${ MAIL_APP_NAME }a s šifriranjem nultog pristupa"
@@ -8343,19 +8346,19 @@
         "Šifrira ${ MAIL_APP_NAME } za PGP primatelja"
       ],
       "End-to-end encrypted": [
-        "End-to-End šifriranje"
+        "Krajnje šifrirano"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "End-to-end šifiranje za PGP primatelja"
+        "Krajnje šifrirano za PGP primatelja"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "End-to-end šifiranje za potvrđenog PGP primatelja"
+        "Krajnje šifrirano za potvrđenog PGP primatelja"
       ],
       "End-to-end encrypted to verified recipient": [
-        "End-to-end šifiranje za potvrđenog primatelja"
+        "Krajnje šifrirano, za potvrđenog primatelja"
       ],
       "PGP-signed": [
-        "PGP potpisano"
+        "Potpisano PGP-om"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Poslano putem ${ MAIL_APP_NAME }a s šifriranjem nultog pristupa"
@@ -8485,10 +8488,10 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "PGP šifrirana poruka. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
+        "Poruka šifrirana PGP-om. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "PGP potpisana poruka. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
+        "Poruka potpisana PGP-om. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "Pošiljatelja nije moguće provjeriti: Poruka nije potpisana"

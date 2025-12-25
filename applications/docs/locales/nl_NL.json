@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "Maak en kopieer alias"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "Nieuwe ${ SHEETS_APP_NAME } aanmaken"
+      ],
       "Create new folder": [
         "Nieuwe map aanmaken"
       ],
@@ -288,6 +291,9 @@
       "Delete contact group": [
         "Contactgroep verwijderen"
       ],
+      "Delete older revisions": [
+        "Oudere revisies verwijderen"
+      ],
       "Delete permanently": [
         "Permanent verwijderen"
       ],
@@ -311,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Download a copy (as docx)": [
+        "Download een kopie (als docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Download een kopie (als docx)"
       ],
       "Download anyway": [
         "Toch downloaden"
@@ -538,6 +550,9 @@
         "Niet nu"
       ],
       "OK": [
+        "OK"
+      ],
+      "Okay": [
         "OK"
       ],
       "Open": [
@@ -858,6 +873,9 @@
       ],
       "View invoice": [
         "Factuur bekijken"
+      ],
+      "View only": [
+        "Alleen bekijken"
       ],
       "Web page (.html)": [
         "Webpagina (.html)"
@@ -2834,6 +2852,9 @@
       "Failed to open to contact": [
         "Contact maken mislukt"
       ],
+      "Failed to remove older revisions": [
+        "Oudere revisies kunnen niet worden verwijderd"
+      ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
       ],
@@ -3085,6 +3106,9 @@
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
+      "Unable to import file": [
+        "Kan het bestand niet importeren"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan VPN-dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ],
@@ -3114,6 +3138,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "We hebben problemen met het synchroniseren van uw document. Laad de pagina opnieuw."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "We konden dit bestand niet importeren in ${ SHEETS_APP_NAME }. U kunt proberen de inhoud te kopiëren en te plakken in een nieuwe ${ SHEETS_APP_NAME }."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -4940,6 +4967,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Dit document is te groot geworden om te bewerken. U kunt oudere versies verwijderen om verder te bewerken."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Dit document is te groot geworden en uw laatste wijzigingen konden niet worden opgeslagen. Download een kopie om uw werk te bewaren."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dit document heeft veel activiteit. Sommige functies zijn mogelijk tijdelijk niet beschikbaar."
       ],
@@ -5398,6 +5431,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
+      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -5466,6 +5502,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Command line interface (CLI)": [
+        "Opdrachtregelinterface (CLI)"
       ],
       "Confirm password": [
         "Bevestig wachtwoord"
@@ -9261,6 +9300,12 @@
       ],
       "Docs": [
         "Documenten"
+      ],
+      "Document Size Limit Exceeded": [
+        "De maximale documentgrootte is overschreden"
+      ],
+      "Document Size Limit Reached": [
+        "De maximale documentgrootte is overschreden"
       ],
       "Document verification failed": [
         "Documentverificatie mislukt"
