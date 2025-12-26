@@ -42,27 +42,44 @@ export function sanitizeUrlForLogging(urlString: string): string {
 const filterSensitiveLogMessage: Hook = (msg: LogMessage, _transport?: Transport): LogMessage => {
     return {
         ...msg,
-        data: filterSensitiveLogData(msg.data),
+        data: filterSensitiveLogData(msg.data) as typeof msg.data,
     };
 };
 
-const filterSensitiveLogData = (data: unknown[]): unknown[] => {
-    for (let i = 0; i < data.length; i++) {
-        const chunk = data[i];
+const filterSensitiveStringValue = (str: string): string => {
+    const splitData = getFilteredHomePath(str)
+        .split(/(\s|\n)+/g)
+        .filter((s) => s.trim().length);
 
-        if (typeof chunk === "string") {
-            const splittedData = getFilteredHomePath(chunk)
-                .split(/(\s|\n)+/g)
-                .filter((str) => str.trim().length);
+    if (splitData.length > 1) {
+        const filtered = filterSensitiveLogData(splitData);
+        return Array.isArray(filtered) ? filtered.join(" ") : filterSensitiveString(str);
+    }
+    return filterSensitiveString(str);
+};
 
-            if (splittedData.length > 1) {
-                data[i] = filterSensitiveLogData(splittedData).join(" ");
-            } else {
-                data[i] = filterSensitiveString(chunk);
+const filterSensitiveLogData = (data: unknown): unknown => {
+    if (Array.isArray(data)) {
+        for (let i = 0; i < data.length; i++) {
+            const chunk = data[i];
+
+            if (typeof chunk === "string") {
+                data[i] = filterSensitiveStringValue(chunk);
+            } else if (Array.isArray(chunk)) {
+                data[i] = filterSensitiveLogData(chunk);
+            } else if (chunk !== null && typeof chunk === "object") {
+                data[i] = filterSensitiveLogData(chunk);
             }
-        } else if (Array.isArray(chunk)) {
-            data[i] = filterSensitiveLogData(chunk);
         }
+        return data;
+    } else if (data !== null && typeof data === "object") {
+        const filteredObject: { [key: string]: unknown } = {};
+        for (const [key, value] of Object.entries(data)) {
+            filteredObject[key] = filterSensitiveLogData(value);
+        }
+        return filteredObject;
+    } else if (typeof data === "string") {
+        return filterSensitiveStringValue(data);
     }
 
     return data;
