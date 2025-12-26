@@ -32,7 +32,6 @@ import {
   ClientEventVersion,
   CreateDocumentUpdateMessage,
   DocumentUpdateVersion,
-  CreateClientMessageWithDocumentUpdates,
   ConnectionCloseReason,
   DecryptedValue,
 } from '@proton/docs-proto'
@@ -322,19 +321,19 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     this.logger.info(`Retrying ${failedUpdates.length} failed document updates ${failedUpdates.map((u) => u.uuid)}`)
 
-    const message = CreateClientMessageWithDocumentUpdates({
-      updates: failedUpdates,
-    })
+    for (const update of failedUpdates) {
+      const message = CreateDocumentUpdateMessage(update)
 
-    const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
+      const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
 
-    const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
+      const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
 
-    this.logger.info(`Broadcasting failed document update of size: ${binary.byteLength} bytes`)
+      this.logger.info(`Broadcasting failed document update of size: ${binary.byteLength} bytes`)
 
-    void record.connection.broadcastMessage(binary, BroadcastSource.RetryingMessagesAfterReconnect)
+      void record.connection.broadcastMessage(binary, BroadcastSource.RetryingMessagesAfterReconnect)
 
-    metrics.docs_document_updates_total.increment({})
+      metrics.docs_document_updates_total.increment({})
+    }
   }
 
   getConnectionRecord(linkId: LinkID): DocumentConnectionRecord | undefined {
