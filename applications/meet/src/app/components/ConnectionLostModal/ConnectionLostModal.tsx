@@ -8,9 +8,10 @@ import './ConnectionLostModal.scss';
 
 interface ConnectionLostModalProps {
     onClose: () => void;
+    onLeave: () => void;
 }
 
-export const ConnectionLostModal = ({ onClose }: ConnectionLostModalProps) => {
+export const ConnectionLostModal = ({ onClose, onLeave }: ConnectionLostModalProps) => {
     return (
         <ModalTwo
             open={true}
@@ -25,11 +26,9 @@ export const ConnectionLostModal = ({ onClose }: ConnectionLostModalProps) => {
                 <div className="color-weak">{c('Info').t`Connection lost, please join meeting again`}</div>
 
                 <div className="w-full flex flex-column gap-2 mt-4">
-                    <Button
-                        className="rounded-full reload-button py-4 border-none"
-                        onClick={() => window.location.reload()}
-                        size="large"
-                    >{c('Action').t`Leave`}</Button>
+                    <Button className="rounded-full reload-button py-4 border-none" onClick={onLeave} size="large">{c(
+                        'Action'
+                    ).t`Leave`}</Button>
 
                     <Button
                         className="rounded-full py-4 bg-weak close-button border-none"
