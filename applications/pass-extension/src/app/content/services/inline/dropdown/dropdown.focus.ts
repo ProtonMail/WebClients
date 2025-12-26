@@ -2,6 +2,7 @@ import type { InlineFrameTarget } from 'proton-pass-extension/app/content/servic
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
+import { kFocusTrapSelector } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -44,6 +45,8 @@ type DropdownFocusManagerState = { willFocus: boolean; willFocusTimer?: NodeJS.T
  * tabindex or contentEditable attributes. */
 const isFocusableElement = (el: MaybeNull<Element>): boolean => {
     if (!el || !isHTMLElement(el)) return false;
+
+    if (el.matches(kFocusTrapSelector)) return false;
 
     const tag = el.tagName.toLowerCase();
     const focusableTags = ['input', 'textarea', 'select', 'button', 'a'];
