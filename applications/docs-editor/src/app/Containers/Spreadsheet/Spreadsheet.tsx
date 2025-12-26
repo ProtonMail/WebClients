@@ -167,7 +167,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   useEffect(
     () =>
       application.eventBus.addEventCallback((data: SheetImportData) => {
-        if (data.file.type === SupportedProtonDocsMimeTypes.xlsx) {
+        if (
+          data.file.type === SupportedProtonDocsMimeTypes.xlsx ||
+          data.file.type === SupportedProtonDocsMimeTypes.ods
+        ) {
           void handleExcelFileImport(data.file)
           return
         }
