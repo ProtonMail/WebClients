@@ -1,9 +1,11 @@
+import { MESSAGE_HOP_DELAY } from 'proton-pass-extension/app/content/constants.static';
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
 
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { DropdownHandler } from './dropdown.abstract';
 import {
@@ -132,11 +134,18 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
 
         sendMessage: (message) => registry.dropdown?.sendMessage(message),
 
-        getState: async () => {
+        getState: async (checkInFlight) => {
             const dropdown = registry.dropdown;
-            const visible = dropdown?.getState().visible ?? false;
-            const anchor = dropdown?.anchor;
-            const focused = dropdown?.focused ?? false;
+            if (!dropdown) return { visible: false, focused: false };
+
+            /** Prevent focus race conditions: website focus traps (e.g. figma.com modals)
+             * can trigger synchronously while async dropdown focus messages are in-flight.
+             * Wait for message hop to settle before checking dropdown state. */
+            if (checkInFlight && dropdown.getState().visible && !dropdown.focused) await wait(MESSAGE_HOP_DELAY);
+
+            const visible = dropdown.getState().visible;
+            const focused = dropdown.focused;
+            const anchor = dropdown.anchor;
 
             return {
                 visible,
