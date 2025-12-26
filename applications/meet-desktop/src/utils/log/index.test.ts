@@ -26,7 +26,7 @@ const expectFilterSensitiveString = (given: string, want: string) => {
 
 const expectFilterStringIsSame = (givenAndWant: string) => expectFilterSensitiveString(givenAndWant, givenAndWant);
 
-describe("filter sensitve data", () => {
+describe("filter sensitive data", () => {
     it("does not change ok stuff", () => {
         expectFilterStringIsSame("This is OK");
         expectFilterStringIsSame("Some Email without=&");
@@ -136,5 +136,186 @@ describe("filter sensitve data", () => {
             "https://meet.proton.me/u/1/join/id-ABCDEFGHIJKL#pwd-meetpass123",
             "https://meet.proton.me/u/1/join/id-ABCDEFGHIJKL#__FORBIDDEN__=",
         );
+    });
+
+    it("filters sensitive data in object data field", () => {
+        getPathMock.mockImplementation(() => "C:\\Users\\UserTest");
+
+        const givenLogMessage = {
+            data: {
+                id: 3,
+                url: `file:///C:/Users/UserTest/AppData/Local/proton_meet/app-1.0.3/resources/loading.html?message=Loading Proton Account…&color=%237A6E80&backgroundColor=%2316141c`,
+            },
+            date: new Date(),
+            level: "info" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+
+        expect(result).not.toBe(false);
+        expect(typeof result).toBe("object");
+
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as { id: number; url: string };
+        expect(resultData.id).toBe(3);
+        expect(resultData.url).toContain("__HOME_ASCII_");
+        expect(resultData.url).not.toContain("UserTest");
+        expect(resultData.url).toContain("file:///");
+        expect(resultData.url).toContain("/AppData/Local/proton_meet/app-1.0.3/resources/loading.html");
+    });
+
+    it("filters nested objects", () => {
+        getPathMock.mockImplementation(() => "/home/user");
+
+        const givenLogMessage = {
+            data: {
+                user: {
+                    name: "John",
+                    path: "/home/user/documents/file.txt",
+                },
+                metadata: {
+                    timestamp: 1234567890,
+                    location: "/home/user/app/data",
+                },
+            },
+            date: new Date(),
+            level: "info" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as {
+            user: { name: string; email: string; path: string };
+            metadata: { timestamp: number; location: string };
+        };
+
+        expect(resultData.user.name).toBe("John");
+        expect(resultData.user.path).toContain("__HOME_ASCII_");
+        expect(resultData.metadata.location).toContain("__HOME_ASCII_");
+    });
+
+    it("filters objects within arrays", () => {
+        getPathMock.mockImplementation(() => "/home/test");
+
+        const givenLogMessage = {
+            data: [{ id: 1, url: "file:///home/test/file1.txt" }, "plain string"],
+            date: new Date(),
+            level: "info" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as Array<{ id: number; url: string; email: string } | string>;
+
+        expect(Array.isArray(resultData)).toBe(true);
+        expect((resultData[0] as { url: string }).url).toContain("__HOME_ASCII_");
+        expect(resultData[1]).toBe("plain string");
+    });
+
+    it("filters arrays within objects", () => {
+        getPathMock.mockImplementation(() => "/home/user");
+
+        const givenLogMessage = {
+            data: {
+                files: ["/home/user/file1.txt", "/home/user/file2.txt"],
+                metadata: {
+                    paths: ["/home/user/data", "/home/user/cache"],
+                },
+            },
+            date: new Date(),
+            level: "info" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as {
+            files: string[];
+            metadata: { paths: string[] };
+        };
+
+        expect(resultData.files[0]).toContain("__HOME_ASCII_");
+        expect(resultData.files[1]).toContain("__HOME_ASCII_");
+        expect(resultData.metadata.paths[0]).toContain("__HOME_ASCII_");
+    });
+
+    it("preserves non-string values in objects", () => {
+        getPathMock.mockImplementation(() => "/home/user");
+
+        const givenLogMessage = {
+            data: {
+                id: 123,
+                active: true,
+                count: null,
+                items: [1, 2, 3],
+                nested: {
+                    number: 456,
+                    boolean: false,
+                },
+            },
+            date: new Date(),
+            level: "info" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as {
+            id: number;
+            active: boolean;
+            count: null;
+            items: number[];
+            nested: { number: number; boolean: boolean };
+        };
+
+        expect(resultData.id).toBe(123);
+        expect(resultData.active).toBe(true);
+        expect(resultData.count).toBe(null);
+        expect(resultData.items).toEqual([1, 2, 3]);
+        expect(resultData.nested.number).toBe(456);
+        expect(resultData.nested.boolean).toBe(false);
+    });
+
+    it("filters complex nested structures", () => {
+        getPathMock.mockImplementation(() => "C:\\Users\\TestUser");
+
+        const givenLogMessage = {
+            data: {
+                events: [
+                    {
+                        type: "navigate",
+                        url: "file:///C:/Users/TestUser/app/index.html",
+                    },
+                    {
+                        type: "error",
+                        message: "Error in /C:/Users/TestUser/app/script.js",
+                    },
+                ],
+                config: {
+                    paths: {
+                        data: "file:///C:\\Users\\TestUser\\data",
+                        cache: "file:///C:\\Users\\TestUser\\cache",
+                    },
+                },
+            },
+            date: new Date(),
+            level: "error" as const,
+        } as unknown as LogMessage;
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage);
+        const resultMessage = result as LogMessage;
+        const resultData = resultMessage.data as unknown as {
+            events: Array<{
+                type: string;
+                url?: string;
+                message?: string;
+                user?: { home: string };
+            }>;
+            config: { paths: { data: string; cache: string } };
+        };
+
+        expect(resultData.events[0].url).toContain("__HOME_ASCII_");
+        expect(resultData.events[0].url).not.toContain("TestUser");
+        expect(resultData.events[1].message).toContain("__HOME_ASCII_");
+        expect(resultData.config.paths.data).toContain("__HOME_ASCII_");
+        expect(resultData.config.paths.cache).toContain("__HOME_ASCII_");
     });
 });
