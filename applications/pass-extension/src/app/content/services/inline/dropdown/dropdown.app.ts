@@ -80,6 +80,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
     };
 
     const onClose = async (options: InlineCloseOptions) => {
+        focus.disconnect();
         const target = anchor.current;
 
         switch (target?.type) {

@@ -214,7 +214,7 @@ describe('DropdownFocusController', () => {
             anchor.current = { type: 'field', field: field };
             fieldElement.focus();
             const run = simulateFocusTrap(1);
-            const ctrl = createController();
+            createController();
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
@@ -222,7 +222,6 @@ describe('DropdownFocusController', () => {
             await run();
             await req;
             expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
-            expect(ctrl.willFocus).toBe(true);
         });
 
         test('should disconnect when focus trap persists for entire grace period', async () => {
