@@ -21,6 +21,7 @@ interface MeetContainerProps {
     mlsGroupState: MLSGroupState | null;
     displayName: string;
     handleLeave: () => void;
+    handleUngracefulLeave: () => void;
     handleEndMeeting: () => Promise<void>;
     shareLink: string;
     roomName: string;
@@ -74,6 +75,7 @@ export const MeetContainer = ({
     mlsGroupState,
     displayName,
     handleLeave,
+    handleUngracefulLeave,
     handleEndMeeting,
     shareLink,
     roomName,
@@ -156,6 +158,7 @@ export const MeetContainer = ({
                         setChatMessages,
                         participantEvents,
                         handleLeave: leaveWithStopRecording,
+                        handleUngracefulLeave: handleUngracefulLeave,
                         handleEndMeeting: endMeetingWithStopRecording,
                         participantsMap,
                         participantNameMap,

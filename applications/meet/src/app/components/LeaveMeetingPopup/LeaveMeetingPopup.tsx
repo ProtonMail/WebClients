@@ -14,6 +14,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { MeetingSideBars, PopUpControls } from '../../types';
+import { LeaveMeetingWarningModal } from '../LeaveMeetingWarningModal/LeaveMeetingWarningModal';
 import { ScreenShareLeaveWarningModal } from '../ScreenShareLeaveWarningModal/ScreenShareLeaveWarningModal';
 
 import './LeaveMeetingPopup.scss';
@@ -40,12 +41,17 @@ export const LeaveMeetingPopup = () => {
         ) {
             togglePopupState(PopUpControls.LeaveMeeting);
         } else {
-            handleLeave();
+            togglePopupState(PopUpControls.LeaveMeetingParticipant);
         }
     };
 
     const handleClose = () => {
         setPopupStateValue(PopUpControls.LeaveMeeting, false);
+    };
+
+    const handleConfirm = (controls: PopUpControls) => {
+        setPopupStateValue(controls, false);
+        handleLeave();
     };
 
     return (
@@ -108,6 +114,13 @@ export const LeaveMeetingPopup = () => {
             {popupState[PopUpControls.ScreenShareLeaveWarning] && (
                 <ScreenShareLeaveWarningModal
                     onClose={() => setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, false)}
+                    onConfirm={() => handleConfirm(PopUpControls.ScreenShareLeaveWarning)}
+                />
+            )}
+            {popupState[PopUpControls.LeaveMeetingParticipant] && (
+                <LeaveMeetingWarningModal
+                    onClose={() => setPopupStateValue(PopUpControls.LeaveMeetingParticipant, false)}
+                    onConfirm={() => handleConfirm(PopUpControls.LeaveMeetingParticipant)}
                 />
             )}
         </>
