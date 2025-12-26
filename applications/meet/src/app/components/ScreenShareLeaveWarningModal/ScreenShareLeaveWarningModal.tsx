@@ -4,16 +4,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import screenCancelImg from '@proton/styles/assets/img/meet/screen-cancel.png';
 
-import { useMeetContext } from '../../contexts/MeetContext';
-
 import './ScreenShareLeaveWarningModal.scss';
 
 interface ScreenShareLeaveWarningModalProps {
     onClose: () => void;
+    onConfirm: () => void;
 }
 
-export const ScreenShareLeaveWarningModal = ({ onClose }: ScreenShareLeaveWarningModalProps) => {
-    const { handleLeave } = useMeetContext();
+export const ScreenShareLeaveWarningModal = ({ onClose, onConfirm }: ScreenShareLeaveWarningModalProps) => {
     return (
         <ModalTwo open={true} rootClassName="bg-transparent open-link-modal" className="meet-radius border border-norm">
             <div
@@ -33,7 +31,7 @@ export const ScreenShareLeaveWarningModal = ({ onClose }: ScreenShareLeaveWarnin
                 <div className="w-full flex flex-column gap-2 mt-4">
                     <Button
                         className="leave-despite-screen-share-button rounded-full reload-button py-4 text-semibold"
-                        onClick={handleLeave}
+                        onClick={onConfirm}
                         color="norm"
                         size="large"
                     >{c('Action').t`Leave meeting`}</Button>

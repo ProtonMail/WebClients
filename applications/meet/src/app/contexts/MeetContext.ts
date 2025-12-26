@@ -30,6 +30,7 @@ export interface MeetContextValues {
     pageSize: number;
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
+    handleUngracefulLeave: () => void;
     handleEndMeeting: () => Promise<void>;
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
@@ -80,6 +81,7 @@ export const MeetContext = createContext<MeetContextValues>({
     pageSize: PAGE_SIZE,
     setPageSize: () => {},
     handleLeave: () => {},
+    handleUngracefulLeave: () => {},
     handleEndMeeting: async () => {},
     participantsMap: {},
     participantNameMap: {},
