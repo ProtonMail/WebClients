@@ -806,6 +806,32 @@ export const ProtonMeetContainer = ({
         prepareUpsell();
     };
 
+    const handleUngracefulLeave = () => {
+        instantMeetingRef.current = false;
+
+        // Best effort because it is ungraceful
+        try {
+            void room.disconnect();
+            void wasmApp?.leaveMeeting();
+            void stopPiP();
+        } catch {
+        } finally {
+            resetParticipantNameMap();
+        }
+
+        mlsSetupDone.current = false; // need to set mls again after leave meeting
+        startHealthCheck.current = false;
+
+        if (isMeetSeamlessKeyRotationEnabled) {
+            // clean the current key and epoch to avoid use them in next meeting
+            keyRotationSchedulerRef.current.clean();
+        }
+
+        setJoinedRoom(false);
+
+        keyProvider.cleanCurrent();
+    };
+
     const handleEndMeeting = async () => {
         if (!wasmApp) {
             return;
@@ -910,15 +936,17 @@ export const ProtonMeetContainer = ({
                         )
                     ) {
                         setPopupStateValue(PopUpControls.ScreenShareLeaveWarning, true);
-                        return false;
+                    } else {
+                        setPopupStateValue(PopUpControls.LeaveMeetingParticipant, true);
                     }
-                    handleLeave();
+                    return false;
                 } else if (userIsAdminLevel && !hasAnotherAdmin) {
                     setPopupStateValue(PopUpControls.LeaveMeeting, true);
                     return false;
+                } else {
+                    setPopupStateValue(PopUpControls.LeaveMeetingParticipant, true);
+                    return false;
                 }
-
-                return false;
             }
 
             return undefined;
@@ -954,6 +982,7 @@ export const ProtonMeetContainer = ({
                     <MeetContainer
                         displayName={displayName}
                         handleLeave={handleLeave}
+                        handleUngracefulLeave={handleUngracefulLeave}
                         handleEndMeeting={handleEndMeeting}
                         shareLink={shareLink}
                         roomName={meetingDetails.meetingName as string}
@@ -1018,6 +1047,10 @@ export const ProtonMeetContainer = ({
                             void wasmApp
                                 ?.triggerWebSocketReconnect()
                                 .catch((error) => reportMeetError('Failed to trigger websocket reconnect', error));
+                            setConnectionLost(false);
+                        }}
+                        onLeave={() => {
+                            handleUngracefulLeave();
                             setConnectionLost(false);
                         }}
                     />

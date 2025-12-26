@@ -17,6 +17,7 @@ export interface UIStateContextType {
         [PopUpControls.Microphone]: boolean;
         [PopUpControls.Camera]: boolean;
         [PopUpControls.LeaveMeeting]: boolean;
+        [PopUpControls.LeaveMeetingParticipant]: boolean;
         [PopUpControls.ScreenShareLeaveWarning]: boolean;
     };
     togglePopupState: (popupState: PopUpControls) => void;
@@ -42,6 +43,7 @@ export const UIStateContext = createContext<UIStateContextType>({
         [PopUpControls.Microphone]: false,
         [PopUpControls.Camera]: false,
         [PopUpControls.LeaveMeeting]: false,
+        [PopUpControls.LeaveMeetingParticipant]: false,
         [PopUpControls.ScreenShareLeaveWarning]: false,
     },
     togglePopupState: () => {},
@@ -78,6 +80,7 @@ export const UIStateProvider = ({
         [PopUpControls.Microphone]: false,
         [PopUpControls.Camera]: false,
         [PopUpControls.LeaveMeeting]: false,
+        [PopUpControls.LeaveMeetingParticipant]: false,
         [PopUpControls.ScreenShareLeaveWarning]: false,
     });
 
