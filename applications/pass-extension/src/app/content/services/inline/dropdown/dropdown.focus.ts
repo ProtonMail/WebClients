@@ -89,16 +89,6 @@ export const createDropdownFocusController = ({
         clearTimeout(state.willFocusTimer);
         delete state.willFocusTimer;
         state.willFocus = false;
-
-        switch (anchor.current?.type) {
-            case 'field':
-                const fields = anchor.current.field.getFormHandle().getFields();
-                fields.forEach((formField) => formField.interactivity.unlock());
-                break;
-            case 'frame':
-                void onFrameFieldLock(anchor.current, false).catch(noop);
-                break;
-        }
     };
 
     const onWillFocus = () => {
@@ -155,8 +145,12 @@ export const createDropdownFocusController = ({
 
         if (!hasFocus()) {
             return waitUntil(() => releaseFocus(anchor.current), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
-                .then(() => iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS }))
-                .catch(disconnect);
+                .then(() => {
+                    if (!iframe.state.visible) return;
+                    iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS });
+                })
+                .catch(noop)
+                .finally(disconnect);
         }
     });
 
