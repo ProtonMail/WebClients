@@ -3,21 +3,20 @@ import type { ModalStateProps } from '@proton/components'
 import { Checkbox, Icon, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalTwoStatic } from '@proton/components'
 import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
+import useFlag from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 
 export interface SheetImportModalProps extends ModalStateProps {
   handleImport: (data: SheetImportData) => void
 }
 
-const MIMETYPES_TO_ACCEPT = [
-  SupportedProtonDocsMimeTypes.csv,
-  SupportedProtonDocsMimeTypes.tsv,
+const MIMETYPES_THAT_CAN_ONLY_REPLACE_SPREADSHEET: string[] = [
   SupportedProtonDocsMimeTypes.xlsx,
-].join(', ')
+  SupportedProtonDocsMimeTypes.ods,
+]
 
-const XLSX_ONLY_DESTINATIONS = [SheetImportDestination.ReplaceSpreadsheet]
 const CSV_ONLY_DESTINATIONS = [
   SheetImportDestination.InsertAsNewSheet,
   SheetImportDestination.ReplaceAtSelectedCell,
@@ -27,16 +26,38 @@ const CSV_ONLY_DESTINATIONS = [
 function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetImportModalProps) {
   const [isOpen, setIsOpen] = useState(open)
 
+  const isODSImportEnabled = useFlag('SheetsODSImportEnabled')
+  const MIMETYPES_TO_ACCEPT = useMemo(() => {
+    const mimeTypes = [
+      SupportedProtonDocsMimeTypes.csv,
+      SupportedProtonDocsMimeTypes.tsv,
+      SupportedProtonDocsMimeTypes.xlsx,
+    ]
+    if (isODSImportEnabled) {
+      mimeTypes.push(SupportedProtonDocsMimeTypes.ods)
+    }
+    return mimeTypes.join(', ')
+  }, [isODSImportEnabled])
+
   const [file, setFile] = useState<File>()
   const [shouldConvertCells, setShouldConvertCells] = useState(true)
   const [destination, setDestination] = useState<SheetImportDestination>(SheetImportDestination.InsertAsNewSheet)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    if (file?.type === SupportedProtonDocsMimeTypes.xlsx && !XLSX_ONLY_DESTINATIONS.includes(destination)) {
+    if (!file?.type) {
+      return
+    }
+    if (
+      MIMETYPES_THAT_CAN_ONLY_REPLACE_SPREADSHEET.includes(file.type) &&
+      destination !== SheetImportDestination.ReplaceSpreadsheet
+    ) {
       setDestination(SheetImportDestination.ReplaceSpreadsheet)
     }
-    if (file?.type !== SupportedProtonDocsMimeTypes.xlsx && !CSV_ONLY_DESTINATIONS.includes(destination)) {
+    if (
+      !MIMETYPES_THAT_CAN_ONLY_REPLACE_SPREADSHEET.includes(file.type) &&
+      !CSV_ONLY_DESTINATIONS.includes(destination)
+    ) {
       setDestination(SheetImportDestination.InsertAsNewSheet)
     }
   }, [destination, file?.type])
@@ -47,6 +68,8 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
       onClose()
     }
   }
+
+  const canOnlyReplaceSpreadsheet = MIMETYPES_THAT_CAN_ONLY_REPLACE_SPREADSHEET.includes(file?.type ?? '')
 
   return (
     <ModalTwo
@@ -85,7 +108,11 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
                       if (!event.target.files || event.target.files.length !== 1) {
                         return
                       }
-                      setFile(event.target.files[0])
+                      const file = event.target.files[0]
+                      if (!MIMETYPES_TO_ACCEPT.includes(file.type)) {
+                        return
+                      }
+                      setFile(file)
                       setShouldConvertCells(true)
                     }}
                   />
@@ -104,22 +131,22 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
               <Option
                 title={c('sheets_2025:Info').t`Insert as new sheet`}
                 value={SheetImportDestination.InsertAsNewSheet}
-                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
+                disabled={canOnlyReplaceSpreadsheet}
               />
               <Option
                 title={c('sheets_2025:Info').t`Replace spreadsheet`}
                 value={SheetImportDestination.ReplaceSpreadsheet}
-                disabled={file?.type !== SupportedProtonDocsMimeTypes.xlsx}
+                disabled={canOnlyReplaceSpreadsheet}
               />
               <Option
                 title={c('sheets_2025:Info').t`Replace data at selected cell`}
                 value={SheetImportDestination.ReplaceAtSelectedCell}
-                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
+                disabled={canOnlyReplaceSpreadsheet}
               />
               <Option
                 title={c('sheets_2025:Info').t`Replace current sheet`}
                 value={SheetImportDestination.ReplaceCurrentSheet}
-                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
+                disabled={canOnlyReplaceSpreadsheet}
               />
             </SelectTwo>
             <div className="text-[--text-hint] [grid-column:2] [grid-row:1]">{c('sheets_2025:Label')
@@ -135,7 +162,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
                 const checked = event.target.checked
                 setShouldConvertCells(checked)
               }}
-              disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
+              disabled={canOnlyReplaceSpreadsheet}
             >{c('sheets_2025:Label').t`Convert text to numbers, dates, and formulas`}</Checkbox>
           </div>
         </div>
