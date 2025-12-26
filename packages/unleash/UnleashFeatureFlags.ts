@@ -193,6 +193,7 @@ enum DocsFeatureFlag {
     DocsSheetsEnabled = 'DocsSheetsEnabled',
     DocsSheetsDisabled = 'DocsSheetsDisabled',
     SheetsEditorEnabled = 'SheetsEditorEnabled',
+    SheetsODSImportEnabled = 'SheetsODSImportEnabled',
     // Update compression and chunking
     DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',
