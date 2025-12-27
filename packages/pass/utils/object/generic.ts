@@ -1,2 +1,3 @@
-export const objectKeys = <T extends string>(obj: Partial<Record<T, any>>): T[] => Object.keys(obj) as T[];
-export const objectEntries = <T extends keyof any, V>(obj: Record<T, V>) => Object.entries(obj) as [T, V][];
+export const objectKeys = <K extends string>(obj: Partial<Record<K, any>>): K[] => Object.keys(obj) as K[];
+export const objectEntries = <K extends keyof any, V>(obj: Record<K, V>) => Object.entries(obj) as [K, V][];
+export const fromEntries = <K extends string, V>(entries: [K, V][]) => Object.fromEntries(entries) as Record<K, V>;

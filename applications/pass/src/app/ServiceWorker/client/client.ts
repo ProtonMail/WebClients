@@ -7,6 +7,7 @@ import type {
 } from 'proton-pass-web/app/ServiceWorker/types';
 import config from 'proton-pass-web/app/config';
 
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { logger } from '@proton/pass/utils/logger';
 
 import { registerServiceWorker } from './register';
@@ -113,8 +114,9 @@ export const createServiceWorkerClient = (clientID: string): ServiceWorkerClient
     };
 
     if (ENV === 'development') {
-        const self = window as any;
-        self['qa::downtime'] = (enabled: boolean) => sw.send({ type: 'qa::downtime', enabled });
+        QA_SERVICE?.subscribe(
+            ({ type, enabled }) => type === 'api_downtime' && sw.send({ type: 'qa::downtime', enabled })
+        );
     }
 
     return sw;
