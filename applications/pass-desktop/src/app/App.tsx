@@ -43,6 +43,7 @@ import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
@@ -57,6 +58,8 @@ import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
 
 import './app.scss';
+
+if (ENV === 'development') QA_SERVICE?.init(localStorage);
 
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 
