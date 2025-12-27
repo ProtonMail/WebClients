@@ -70,7 +70,7 @@ const SignInWithAnotherDeviceSettings = () => {
                         <label htmlFor="edmToggle" className="flex-1">
                             {c('edm').t`Allow QR code sign‒in`}
                             <Info
-                                url={getKnowledgeBaseUrl('/')}
+                                url={getKnowledgeBaseUrl('/qr-code-sign-in')}
                                 title={c('edm').t`Scan QR code on your mobile device to sign in`}
                                 className="ml-1"
                             />
