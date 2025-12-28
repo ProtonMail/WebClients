@@ -61,7 +61,9 @@ const getApis = (config: ProtonConfig) => {
 };
 
 const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'authentication' | 'api'>) => {
-    const guestUrl = '/guest' + window.location.pathname + window.location.search + window.location.hash;
+    const pathname = window.location.pathname;
+    const guestPathname = pathname.includes('dashboard') ? '/join' : pathname;
+    const guestUrl = '/guest' + guestPathname + window.location.search + window.location.hash;
 
     const sessionResult = await bootstrap.loadSession({
         authentication,
