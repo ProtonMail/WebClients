@@ -56,13 +56,16 @@ const setFrameVisibility = (state: DocumentVisibilityState) => {
     });
 };
 
-const createMockClientController = (mainFrame: boolean) =>
-    createClientController({
+const createMockClientController = (mainFrame: boolean) => {
+    const ctrl = createClientController({
         clientFactory: mockClientFactory,
-        elements,
         scriptId: TEST_SCRIPT_ID,
         mainFrame,
     });
+
+    jest.spyOn(ctrl, 'registerElements').mockResolvedValue(elements);
+    return ctrl;
+};
 
 describe('Client controller', () => {
     let ctrl: ClientController;
