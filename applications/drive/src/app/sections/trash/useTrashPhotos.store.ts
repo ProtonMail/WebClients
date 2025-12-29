@@ -17,24 +17,24 @@ interface TrashStore {
     activeContexts: Set<string>;
 }
 
-export const useTrashStore = create<TrashStore>((set, get) => ({
+export const useTrashPhotosStore = create<TrashStore>((set, get) => ({
     trashNodes: {},
     isLoading: false,
     hasEverLoaded: false,
     eventSubscriptions: null,
     activeContexts: new Set<string>(),
-    addNode: (node: NodeEntity) =>
-        set((state) => {
-            return { trashNodes: { ...state.trashNodes, [node.uid]: node } };
-        }),
     setNodes: (trashNodes: Record<string, NodeEntity>) =>
         set((state) => {
             return { trashNodes: { ...state.trashNodes, ...trashNodes } };
         }),
-    removeNodes: (nodeUids: string[]) =>
+    addNode: (node: NodeEntity) =>
+        set((state) => {
+            return { trashNodes: { ...state.trashNodes, [node.uid]: node } };
+        }),
+    removeNodes: (nodeIds: string[]) =>
         set((state) => {
             const remainingNodes = { ...state.trashNodes };
-            nodeUids.forEach((nodeId) => delete remainingNodes[nodeId]);
+            nodeIds.forEach((nodeId) => delete remainingNodes[nodeId]);
             return { trashNodes: remainingNodes };
         }),
     setLoading: (isLoading: boolean) => {

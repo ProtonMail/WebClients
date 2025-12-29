@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@proton/drive';
+import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
 import {
     type MaybeNode,
     type NodeEntity,
@@ -62,6 +62,9 @@ export type LegacyItem = FileBrowserBaseItem & {
         sharedBy: string;
     };
     treeEventScopeId?: string;
+
+    /** @deprecated use simply NodeType and remove this comment when photo is added in the enum */
+    type: NodeType;
 };
 
 const getLegacyIsAnonymous = (node: NodeEntity) => {
@@ -82,7 +85,10 @@ export const getNodeDisplaySize = (node: NodeEntity) => {
     return node.activeRevision?.claimedSize ?? node.activeRevision?.storageSize ?? node.totalStorageSize ?? 0;
 };
 
-export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
+export const getRootNode = async (
+    node: NodeEntity,
+    drive: ProtonDriveClient | ProtonDrivePhotosClient
+): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);
@@ -95,7 +101,7 @@ export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): P
 export const mapNodeToLegacyItem = async (
     maybeNode: MaybeNode,
     defaultShareId: string,
-    drive: ProtonDriveClient = getDrive()
+    drive: ProtonDriveClient | ProtonDrivePhotosClient = getDrive()
 ): Promise<LegacyItem> => {
     let node: NodeEntity;
     if ('ok' in maybeNode) {
@@ -150,5 +156,6 @@ export const mapNodeToLegacyItem = async (
         isSharedPublicly: node.isSharedPublicly,
         treeEventScopeId: node.treeEventScopeId,
         hasSignatureIssues: !sdkSignatureIssues.ok,
+        type: node.type,
     };
 };

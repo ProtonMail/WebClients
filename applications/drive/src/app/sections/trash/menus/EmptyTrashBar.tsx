@@ -3,22 +3,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
-// import { useTrashNodes } from '../useTrashNodes';
-// import { useTrashNotifications } from '../trashNotifications';
-import { useActions } from '../../../store';
+import { useTrashActions } from '../useTrashActions';
+import { useTrashNotifications } from '../useTrashNotifications';
 
 interface Props {
     disabled?: boolean;
     className?: string;
 }
 export const EmptyTrashBar = ({ disabled, className }: Props) => {
-    // const { emptyTrash } = useTrashNodes();
-    // const { confirmModal, createEmptyTrashConfirmModal } = useTrashNotifications();
-    const { emptyTrash, confirmModal } = useActions();
+    const { emptyTrash } = useTrashActions();
+    const { confirmModal, createEmptyTrashConfirmModal } = useTrashNotifications();
 
     const handleEmptyTrashClick = () => {
-        // createEmptyTrashConfirmModal(emptyTrash);
-        void emptyTrash(new AbortController().signal);
+        createEmptyTrashConfirmModal(emptyTrash);
     };
 
     return (

@@ -2,6 +2,10 @@ import type { ScopeContext } from '@sentry/types';
 
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
+export enum ComponentTag {
+    driveSdk = 'drive-sdk',
+}
+
 export const isEnrichedError = (err: unknown): err is EnrichedError => {
     return (
         err instanceof EnrichedError ||

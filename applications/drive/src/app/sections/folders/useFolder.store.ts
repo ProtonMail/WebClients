@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import type { NodeType } from '@proton/drive/index';
 import { MemberRole } from '@proton/drive/index';
 
 import type { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -25,6 +26,7 @@ export type FolderViewItem = {
     rootUid?: string;
     parentUid: string | undefined;
     hasSignatureIssues: boolean;
+    type: NodeType;
 };
 
 export type FolderViewData = {
