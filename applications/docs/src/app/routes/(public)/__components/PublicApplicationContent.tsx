@@ -34,7 +34,7 @@ export function PublicApplicationContent({
 
   const { user, localID } = usePublicSessionUser()
 
-  const { openAction } = useDocsUrlBar({ isDocsEnabled: publicDriveCompat.isDocsEnabled })
+  const { openAction } = useDocsUrlBar()
 
   const application = useMemo(() => {
     return new Application(
