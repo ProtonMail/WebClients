@@ -31,6 +31,7 @@ export const getInitialBookingFormState = (): InternalBookingForm => {
         duration: DEFAULT_EVENT_DURATION,
         timezone: localTimeZone,
         bookingRanges: [],
+        conflictCalendarIDs: [],
     };
 };
 
@@ -95,6 +96,7 @@ export const computeInitialFormData = ({
         duration,
         timezone,
         bookingRanges: fullSlotDuration,
+        conflictCalendarIDs: [],
     };
 };
 
@@ -175,6 +177,7 @@ export const computeEditFormData = ({
         duration,
         bookingRanges: ranges,
         minimumNoticeMode: editData.minimumNoticeMode ?? bookingPage.minimumNoticeMode,
+        conflictCalendarIDs: editData.conflictCalendarIDs || bookingPage.conflictCalendarIDs,
     };
 };
 

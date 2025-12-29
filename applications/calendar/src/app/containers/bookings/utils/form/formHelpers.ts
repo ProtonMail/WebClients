@@ -54,6 +54,7 @@ export const serializeFormData = (formData: BookingFormData): SerializedFormData
     return {
         ...formData,
         minimumNoticeMode: formData.minimumNoticeMode || MinimumNoticeMode.OFF,
+        conflictCalendarIDs: formData.conflictCalendarIDs,
         bookingSlots: formData.bookingSlots.map((slot) => ({
             ...slot,
             start: getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromLocalDate(slot.start), formData.timezone))),
