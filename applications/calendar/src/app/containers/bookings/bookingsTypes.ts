@@ -22,6 +22,7 @@ export interface APIBooking {
     ModifyTime: number;
     Slots: APISlot[];
     MinimumNoticeMode: MinimumNoticeMode;
+    ConflictCalendarIDs: string[];
 }
 
 export interface SerializedBookingRange {
@@ -47,4 +48,5 @@ export interface SerializedFormData {
     bookingSlots: SerializedSlot[];
     bookingRanges: SerializedBookingRange[];
     minimumNoticeMode: MinimumNoticeMode;
+    conflictCalendarIDs: string[];
 }

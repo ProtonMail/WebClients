@@ -178,6 +178,7 @@ export const encryptBookingPage = async ({
         CalendarKeySignature: calendarKeySignature.toBase64(),
         Slots,
         MinimumNoticeMode: formData.minimumNoticeMode,
+        ConflictCalendarIDs: formData.conflictCalendarIDs,
     };
 };
 

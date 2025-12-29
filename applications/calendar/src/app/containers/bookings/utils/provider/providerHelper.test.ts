@@ -21,6 +21,7 @@ const createFormData = (overrides: Partial<InternalBookingForm> = {}): InternalB
     duration: 30,
     timezone: 'Europe/Zurich',
     bookingRanges: [],
+    conflictCalendarIDs: [],
     ...overrides,
 });
 

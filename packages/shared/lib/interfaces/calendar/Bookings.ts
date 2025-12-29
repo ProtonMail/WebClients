@@ -17,6 +17,7 @@ export interface BookingPageCreationPayload {
     CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
     MinimumNoticeMode: MinimumNoticeMode;
+    ConflictCalendarIDs: string[];
 }
 
 export interface BookingPageEditPayload {
@@ -25,6 +26,7 @@ export interface BookingPageEditPayload {
     CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
     MinimumNoticeMode: MinimumNoticeMode;
+    ConflictCalendarIDs: string[];
 }
 
 export interface ExternalBookingPageSlotsPayload {
@@ -63,6 +65,7 @@ export interface InternalBookingPagePayload {
     CreateTime: number;
     ModifyTime: number;
     MinimumNoticeMode: MinimumNoticeMode;
+    ConflictCalendarIDs: string[];
 }
 
 export interface BookingSlotConfirmationPayload {
