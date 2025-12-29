@@ -28,7 +28,7 @@ export const FormIconRow = ({ title, icon, children, hideBorder = false, suffix 
     }
 
     return (
-        <IconRow icon={icon} containerClassName="items-baseline w-full" labelClassName="pt-0.5">
+        <IconRow icon={icon} containerClassName="items-top w-full booking-sidebar-form-icon-row" labelClassName="pt-0">
             {titleNode}
             {children}
             {!hideBorder && <hr className="mt-5 mb-1 bg-weak" />}

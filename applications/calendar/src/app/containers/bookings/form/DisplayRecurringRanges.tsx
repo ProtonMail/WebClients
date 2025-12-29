@@ -64,7 +64,12 @@ export const DisplayRecurringRanges = ({
                     return day.ranges.map((range, index) => (
                         <Fragment key={range.id}>
                             <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1">
-                                <p className={clsx(index !== 0 && 'visibility-hidden', 'text-semibold m-0')}>
+                                <p
+                                    className={clsx(
+                                        index !== 0 && 'visibility-hidden',
+                                        'text-semibold color-weak text-sm m-0'
+                                    )}
+                                >
                                     {formatterLabel}
                                 </p>
                                 <div className="m-0 relative">
@@ -108,8 +113,8 @@ export const DisplayRecurringRanges = ({
 
                 return (
                     <div className="day-grid grid grid-cols-4 gap-1 items-center mb-2" key={day.id}>
-                        <p className="text-semibold m-0 mr-1">{formatterLabel}</p>
-                        <p className="m-0 color-weak flex items-center">{c('Label').t`Unavailable`}</p>
+                        <p className="text-semibold m-0 mr-1 color-weak text-sm">{formatterLabel}</p>
+                        <p className="m-0 color-weak text-sm flex items-center">{c('Label').t`Unavailable`}</p>
                         <p className="m-0 color-weak" />
                         <div className="flex flex-nowrap shrink-0">
                             <AddButton onClick={() => onAddRange(day.date)} disabled={hasReachedMaxSlots} />
