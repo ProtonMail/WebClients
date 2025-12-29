@@ -13,7 +13,7 @@ import {
     useDrawerWidth,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { useDrive } from '@proton/drive';
+import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { isPaid } from '@proton/shared/lib/user/helpers';
@@ -36,7 +36,6 @@ import {
     DriveProvider,
     useActivePing,
     useBookmarksActions,
-    useDefaultShare,
     useDriveEventManager,
     useSearchControl,
     useUserSettings,
@@ -44,8 +43,10 @@ import {
 import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
-import { VolumeTypeForEvents } from '../store/_volumes';
+import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
+import { getNodeEntity } from '../utils/sdk/getNodeEntity';
+import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
 import { Features, measureFeaturePerformance } from '../utils/telemetry';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
@@ -72,12 +73,10 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 function InitContainer() {
-    const [user] = useUser();
     const api = useApi();
-    const { init: initDrive, drive } = useDrive();
-    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
     const { restoreHashKey } = useSanitization();
+    const { setVolumeShareIds } = useVolumesState();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
@@ -97,16 +96,6 @@ function InitContainer() {
     useEffect(() => {
         const abortController = new AbortController();
         const initPromise = async () => {
-            const userPlan = isPaid(user) ? 'paid' : 'free';
-            if (!drive) {
-                initDrive({
-                    appName: config.APP_NAME,
-                    appVersion: config.APP_VERSION,
-                    userPlan,
-                    logging,
-                });
-            }
-
             try {
                 // In case the user Sign-in from the public page modal, we will redirect him back after we add the file/folder to his bookmarks
                 // In case the user Sign-up we just let him in the App (in /shared-with-me route)
@@ -125,15 +114,24 @@ function InitContainer() {
                     redirectToPublicPage(token);
                 }
 
-                await getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId, createTime }) =>
-                    setDefaultShareRoot({ volumeId, shareId, linkId, createTime })
-                );
-
-                // This is needed for the usePhotos provider
-                // It should load it's own share, but for some reason
-                // without this the app crashes and devices fail to decrypt.
-                // See DRVWEB-4253
-                await getDefaultPhotosShare();
+                const drive = getDrive();
+                const photos = getDriveForPhotos();
+                const { node } = await drive.getMyFilesRootFolder().then(getNodeEntity);
+                const { node: photosNode } = await photos.getMyPhotosRootFolder().then(getNodeEntity);
+                const { volumeId, nodeId } = splitNodeUid(node.uid);
+                const { volumeId: photosVolumeId } = splitNodeUid(photosNode.uid);
+                setDefaultShareRoot({
+                    volumeId,
+                    shareId: node.deprecatedShareId,
+                    linkId: nodeId,
+                    createTime: dateToLegacyTimestamp(node.creationTime),
+                });
+                if (node.deprecatedShareId) {
+                    setVolumeShareIds(volumeId, [node.deprecatedShareId]);
+                }
+                if (photosNode.deprecatedShareId) {
+                    setVolumeShareIds(photosVolumeId, [photosNode.deprecatedShareId]);
+                }
 
                 void migrateShares();
 
@@ -248,6 +246,38 @@ function InitContainer() {
 
 const MainContainer: FunctionComponent = () => {
     const location = useLocation();
+    const { init } = useDrive();
+    const [user] = useUser();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        let drive = getDrive();
+
+        const initializeSDK = async () => {
+            const userPlan = isPaid(user) ? 'paid' : 'free';
+            init({
+                appName: config.APP_NAME,
+                appVersion: config.APP_VERSION,
+                userPlan,
+                logging,
+            });
+
+            drive = getDrive();
+            await drive.getMyFilesRootFolder();
+
+            const photos = getDriveForPhotos();
+            await photos.getMyPhotosRootFolder();
+
+            setLoading(false);
+        };
+        if (!drive) {
+            void initializeSDK();
+        }
+    }, [init, user]);
+
+    if (loading) {
+        return <LoaderPage />;
+    }
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />
