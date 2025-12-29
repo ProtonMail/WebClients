@@ -15,4 +15,15 @@
 			}
 		}
 	}
+
+	&-form-icon-row {
+		.label,
+		.label > span {
+			display: flex;
+		}
+
+		.label svg {
+			margin-block-start: var(--space-0_5);
+		}
+	}
 }
