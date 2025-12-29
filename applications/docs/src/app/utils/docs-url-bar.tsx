@@ -1,6 +1,6 @@
-import { useCallback, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useAuthentication } from '@proton/components'
-import type { DocumentAction } from '@proton/drive-store'
+import { useDriveCompat, type DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -10,12 +10,24 @@ import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './misc'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
-export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
+const DocsUrlContext = createContext<{
+  searchParams: URLSearchParams
+  openAction: DocumentAction | null
+  updateParameters: (params: { newVolumeId: string; newLinkId: string; pathname?: DocumentType }) => void
+  removeActionFromUrl: () => void
+  navigateToAction: (action: DocumentAction, context?: 'private' | 'public') => void
+  linkId: string | undefined
+  changeURLVisually: (action: DocumentAction) => void
+  removeLocalIDFromUrl: () => void
+} | null>(null)
+
+export function DocsUrlContextProvider({ children }: { children: React.ReactNode }) {
+  const { isDocsEnabled } = useDriveCompat()
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()
   const searchParams = useMemo(() => new URLSearchParams(search), [search])
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams, pathname))
+  const [openAction, setOpenAction] = useState<DocumentAction | null>(() => parseOpenAction(searchParams, pathname))
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -133,16 +145,30 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
     }
   })
 
-  return {
-    searchParams,
-    openAction,
-    updateParameters,
-    removeActionFromUrl,
-    navigateToAction,
-    linkId: openAction && 'linkId' in openAction ? openAction.linkId : undefined,
-    changeURLVisually,
-    removeLocalIDFromUrl,
+  return (
+    <DocsUrlContext.Provider
+      value={{
+        searchParams,
+        openAction,
+        updateParameters,
+        removeActionFromUrl,
+        navigateToAction,
+        linkId: openAction && 'linkId' in openAction ? openAction.linkId : undefined,
+        changeURLVisually,
+        removeLocalIDFromUrl,
+      }}
+    >
+      {children}
+    </DocsUrlContext.Provider>
+  )
+}
+
+export function useDocsUrlBar() {
+  const value = useContext(DocsUrlContext)
+  if (!value) {
+    throw new Error('useDocsUrlBar must be used within a DocsUrlContextProvider')
   }
+  return value
 }
 
 export const SHEET_EDITOR_PATH = '/sheet'
