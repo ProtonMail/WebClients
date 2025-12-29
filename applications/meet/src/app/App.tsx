@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
-import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
-import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
@@ -97,28 +95,9 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     return children;
 };
 
+const isGuest = window.location.pathname.includes('guest');
+
 export const App = () => {
-    const hasPersistedSessions = getPersistedSessions().length > 0;
-    const accountSessions = readAccountSessions();
-    const isAuthenticated = hasPersistedSessions || (accountSessions && accountSessions.length > 0);
-
-    const urlHasGuest = window.location.pathname.includes('guest');
-    const isGuest = urlHasGuest && !isAuthenticated;
-
-    if (isAuthenticated && urlHasGuest) {
-        const { pathname, search, hash } = window.location;
-
-        const cleanPath = pathname.replace('/guest', '');
-
-        if (cleanPath.startsWith('/join')) {
-            window.location.href = cleanPath + search + hash;
-        } else {
-            window.location.href = '/dashboard';
-        }
-
-        return null;
-    }
-
     if (!isWasmSupported()) {
         return <WasmUnsupportedError />;
     }
