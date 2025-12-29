@@ -35,7 +35,6 @@ import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
-import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
     Locked: boolean;
@@ -133,14 +132,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const currentAlbumLinkId = useRef<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
-    const { getShare, getShareWithKey, getShareCreatorKeys } = useShare();
+    const { getShare, getShareCreatorKeys } = useShare();
     const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
     const eventAbortController = useRef<AbortController | undefined>(undefined);
     const albumProgress = useAlbumProgressStore();
-    const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const { createNotification } = useNotifications();
 
     useEffect(() => {
@@ -202,33 +200,22 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             }
 
             const defaultPhotosShare = await getDefaultPhotosShare();
-            let photosShareResult = defaultPhotosShare;
 
             if (!defaultPhotosShare) {
-                const { shareId } = await createPhotosWithAlbumsShare();
-                photosShareResult = await getShareWithKey(abortSignal, shareId);
-            }
-
-            if (!photosShareResult) {
                 return;
             }
 
-            setPhotosShare(photosShareResult);
-            const { address } = await getShareCreatorKeys(abortSignal, photosShareResult);
+            setPhotosShare(defaultPhotosShare);
+            const { address } = await getShareCreatorKeys(abortSignal, defaultPhotosShare);
             setUserAddressEmail(address.Email);
-            setVolumeShareIds(photosShareResult.volumeId, [photosShareResult.shareId]);
 
             await loadPhotos(abortSignal);
         },
         [
             // Unstable dependencies:
-            // createPhotosWithAlbumsShare,
-            // getDefaultPhotosShare,
             // getShareCreatorKeys,
-            // getShareWithKey,
             loadPhotos,
             photosShare,
-            setVolumeShareIds,
         ]
     );
 
