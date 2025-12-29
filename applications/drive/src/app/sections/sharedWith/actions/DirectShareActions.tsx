@@ -84,7 +84,7 @@ export const DirectShareActions = ({
                 <ToolbarPreviewButton selectedBrowserItems={legacyItems} />
                 <ToolbarOpenInDocsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
-                <CopyButton type="toolbar" close={close} onClick={copyAction} />
+                {itemChecker.canCopy && <CopyButton type="toolbar" close={close} onClick={copyAction} />}
                 <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.isOnlyOneItem && (
                     <>
@@ -120,7 +120,7 @@ export const DirectShareActions = ({
 
             {itemChecker.canDownload && <ContextDownloadButton selectedBrowserItems={legacyItems} close={close} />}
 
-            <CopyButton type="context" close={close} onClick={copyAction} />
+            {itemChecker.canCopy && <CopyButton type="context" close={close} onClick={copyAction} />}
 
             <ContextDetailsButton
                 selectedBrowserItems={legacyItems}

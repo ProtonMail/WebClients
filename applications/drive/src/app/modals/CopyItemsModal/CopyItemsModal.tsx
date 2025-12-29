@@ -119,9 +119,10 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
                         {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
                         <span>
                             <Button
+                                loading={isCopying}
                                 color="norm"
                                 onClick={copyItemsToTarget}
-                                disabled={isCopying || !copyTargetUid || !!errorMessage}
+                                disabled={!copyTargetUid || !!errorMessage}
                             >{c('Action').t`Make a copy`}</Button>
                         </span>
                     </Tooltip>
