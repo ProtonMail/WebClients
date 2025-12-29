@@ -1,6 +1,7 @@
 import { isSameDay, startOfDay } from 'date-fns';
 import { create } from 'zustand';
 
+import type { PublicKeyReference } from '@proton/crypto';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import uniqueBy from '@proton/utils/uniqueBy';
 
@@ -15,6 +16,18 @@ export type BookingTimeslot = {
     endTime: number;
     timezone: string;
     rrule?: string;
+    detachedSignature: string;
+};
+
+// V1 Crypto model
+export type OldBookingTimeslot = {
+    id: string;
+    // This date is adjusted to the selected timezone of the page. Use this to avoid problems.
+    tzDate: Date;
+    startTime: number;
+    endTime: number;
+    timezone: string;
+    rrule?: string;
     bookingKeyPacket: string;
     detachedSignature: string;
 };
@@ -22,6 +35,7 @@ export type BookingTimeslot = {
 export type BookingDetails = {
     calendarId: string;
     bookingUID: string;
+    calendarPublicKey: PublicKeyReference | undefined;
     summary: string;
     description: string;
     location: string;
@@ -31,6 +45,7 @@ export type BookingDetails = {
     inviterDisplayName?: string;
     inviterEmail: string;
     withProtonMeetLink: boolean;
+    version: 1 | 2;
 };
 
 interface BookingStore {

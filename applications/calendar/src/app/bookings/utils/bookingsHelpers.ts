@@ -13,7 +13,7 @@ import {
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import type { BookingTimeslot } from '../booking.store';
+import type { OldBookingTimeslot } from '../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../constants';
 
 const MAX_WEEK_SECOND = 7 * 24 * 60 * 60;
@@ -37,7 +37,8 @@ const MAX_WEEK_SECOND = 7 * 24 * 60 * 60;
  */
 export const transformAvailableSlotToTimeslot = (
     availableSlot: ExternalBookingPagePayload['AvailableSlots'][number]
-): Omit<BookingTimeslot, 'tzDate'> => ({
+    // V1 Crypto model
+): Omit<OldBookingTimeslot, 'tzDate'> => ({
     id: availableSlot.ID,
     startTime: availableSlot.StartTime,
     endTime: availableSlot.EndTime,
