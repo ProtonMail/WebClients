@@ -7,9 +7,10 @@ import {
     PROTON_THEMES_MAP,
     ThemeSetting,
 } from "@proton/shared/lib/themes/themes";
-import { getMainWindow } from "./view/viewManagement";
+import { getAccountView, getCalendarView, getMailView, getMainWindow } from "./view/viewManagement";
 import { ColorScheme, ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { isWindowValid } from "./view/windowUtils";
+import { isMac } from "./helpers";
 
 export const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",
@@ -70,6 +71,7 @@ export function updateNativeTheme(theme: ThemeSetting) {
             ? PROTON_THEMES_MAP[ThemeTypes.Carbon]
             : PROTON_THEMES_MAP[ThemeTypes.Snow];
         mainWindow.setBackgroundColor(themeColors.themeColorMeta);
+        setThemeOnViews(themeColors.themeColorMeta);
     }
 }
 
@@ -113,4 +115,14 @@ export function isEqualTheme(themeA: ThemeSetting, themeB: ThemeSetting) {
         themeA.FontSize === themeB.FontSize &&
         themeA.Features === themeB.Features
     );
+}
+
+// Used such that we eliminate random white flashes during initial page loads
+function setThemeOnViews(colorTheme: string) {
+    // Forcing a background color on macOS will disable the transparency effect.
+    if (isMac) return;
+
+    getMailView()?.setBackgroundColor(colorTheme);
+    getCalendarView()?.setBackgroundColor(colorTheme);
+    getAccountView()?.setBackgroundColor(colorTheme);
 }
