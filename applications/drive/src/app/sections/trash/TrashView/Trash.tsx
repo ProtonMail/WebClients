@@ -26,13 +26,13 @@ import { SortField } from '../../../store/_views/utils/useSorting';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
+import type { useJointTrashNodes } from '../useJointTrashNodes';
 import { useTrashStore } from '../useTrash.store';
-import type { useTrashNodes } from '../useTrashNodes';
 import { EmptyTrash } from './EmptyTrash';
 
 interface Props {
     shareId: string;
-    trashView: ReturnType<typeof useTrashNodes>;
+    trashView: ReturnType<typeof useJointTrashNodes>;
 }
 
 const { CheckboxCell, ContextMenuCell } = Cells;
@@ -235,7 +235,6 @@ export function Trash({ shareId, trashView }: Props) {
     return (
         <>
             <TrashItemContextMenu
-                trashView={trashView}
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}

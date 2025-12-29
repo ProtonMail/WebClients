@@ -1,7 +1,7 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
 
-import { DriveEventType, getDrive } from '@proton/drive';
+import { DriveEventType, getDrive, getDriveForPhotos } from '@proton/drive';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { logging } from '../../modules/logging';
@@ -16,6 +16,12 @@ import {
 } from './ActionEventManagerTypes';
 
 const logger = logging.getLogger('action-event-manager');
+export const logDebug = (label: string, rest: string | Record<string, unknown> = '') => {
+    logger.debug(`${label}: ${JSON.stringify(rest)}`);
+};
+export const logWarning = (label: string, rest: string | Record<string, unknown> = '') => {
+    logger.debug(`${label}: ${JSON.stringify(rest)}`);
+};
 
 /**
  * ActionEventManager - A type-safe event bus system for folder actions
@@ -85,6 +91,8 @@ class ActionEventManager {
     private listeners = new Map<string, ActionEventListener<ActionEvent>[]>();
 
     private myFilesRootFolderTreeEventScopeId: string | undefined;
+
+    private photosRootFolderTreeEventScopeId: string | undefined;
 
     private treeEventSubscriptions = new Map<
         string,
@@ -205,24 +213,69 @@ class ActionEventManager {
     }
 
     /**
+     * Subscribe to my updates photo-sdk events
+     */
+    async subscribePhotosEventsMyUpdates(context: string): Promise<void> {
+        const drive = getDriveForPhotos();
+        let treeEventScopeId = this.photosRootFolderTreeEventScopeId;
+        try {
+            if (!treeEventScopeId) {
+                const rootFolderResult = await drive.getMyPhotosRootFolder();
+                treeEventScopeId = rootFolderResult.ok
+                    ? rootFolderResult.value.treeEventScopeId
+                    : rootFolderResult.error.treeEventScopeId;
+
+                this.photosRootFolderTreeEventScopeId = treeEventScopeId;
+            }
+            this.subscribePhotosEventsScope(treeEventScopeId, context);
+        } catch (error) {
+            handleSdkError(error);
+        }
+    }
+
+    /**
      * Unsubscribe from  Subscribe to my updates sdk events for a given context
      * Only reset myFilesRootFolderTreeEventScopeId when no contexts remain
      * @param context - The context identifier that was used when subscribing
      */
     async unsubscribeSdkEventsMyUpdates(context: string): Promise<void> {
         if (!this.myFilesRootFolderTreeEventScopeId) {
-            console.warn(
+            logWarning(
                 `[ActionEventManager] Trying to unsubscribe to SdkEventsMyUpdates without having the treeEventScopeId for it`,
                 { context }
             );
             return;
         }
 
-        await this.unsubscribeSdkEventsScope(this.myFilesRootFolderTreeEventScopeId, context);
+        await this.unsubscribeSdkEventsScope(this.myFilesRootFolderTreeEventScopeId, context, 'drive');
 
         // We only reset in case there is no more subscription to it
-        if (!this.treeEventSubscriptions.get(this.myFilesRootFolderTreeEventScopeId)) {
+        const key = this.getTreeSubscriptionKey(this.myFilesRootFolderTreeEventScopeId, 'drive');
+        if (!this.treeEventSubscriptions.get(key)) {
             this.myFilesRootFolderTreeEventScopeId = undefined;
+        }
+    }
+
+    /**
+     * Unsubscribe from photo-sdk events for a given context
+     * Only reset photosRootFolderTreeEventScopeId when no contexts remain
+     */
+    async unsubscribePhotosEventsMyUpdates(context: string): Promise<void> {
+        const treeEventScopeId = this.photosRootFolderTreeEventScopeId;
+
+        if (!treeEventScopeId) {
+            logWarning(
+                `[ActionEventManager] Trying to unsubscribe to PhotosEventsMyUpdates without having the treeEventScopeId for it`,
+                { context }
+            );
+            return;
+        }
+
+        await this.unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
+
+        const key = this.getTreeSubscriptionKey(treeEventScopeId, 'photos');
+        if (!this.treeEventSubscriptions.get(key)) {
+            this.photosRootFolderTreeEventScopeId = undefined;
         }
     }
 
@@ -232,13 +285,13 @@ class ActionEventManager {
      * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
      */
     subscribeSdkEventsScope(treeEventScopeId: string, context: string) {
-        const existing = this.treeEventSubscriptions.get(treeEventScopeId);
+        const key = this.getTreeSubscriptionKey(treeEventScopeId, 'drive');
+        const existing = this.treeEventSubscriptions.get(key);
 
         if (existing) {
             if (existing.contexts.has(context)) {
                 if (this.debugMode) {
-                    // eslint-disable-next-line no-console
-                    console.debug('[ActionEventManager] Given context already exist for SDK scope subscription', {
+                    logDebug('[ActionEventManager] Given context already exist for SDK scope subscription', {
                         context,
                         totalContexts: existing.contexts.size,
                         allContexts: Array.from(existing.contexts),
@@ -248,8 +301,7 @@ class ActionEventManager {
             }
             existing.contexts.add(context);
             if (this.debugMode) {
-                // eslint-disable-next-line no-console
-                console.debug('[ActionEventManager] Added context to existing SDK scope subscription', {
+                logDebug('[ActionEventManager] Added context to existing SDK scope subscription', {
                     treeEventScopeId,
                     context,
                     totalContexts: existing.contexts.size,
@@ -264,14 +316,62 @@ class ActionEventManager {
             await this.handleSdkEvent(event);
         });
 
-        this.treeEventSubscriptions.set(treeEventScopeId, {
+        this.treeEventSubscriptions.set(key, {
             subscription,
             contexts: new Set([context]),
         });
 
         if (this.debugMode) {
-            // eslint-disable-next-line no-console
-            console.debug('[ActionEventManager] Subscribed to new SDK scope events', {
+            logDebug('[ActionEventManager] Subscribed to new SDK scope events', {
+                treeEventScopeId,
+                context,
+                totalScopes: this.treeEventSubscriptions.size,
+            });
+        }
+    }
+    /**
+     * Subscribe to a specific tree event scope with context tracking
+     * @param treeEventScopeId - The tree event scope ID to subscribe to
+     * @param context - A unique context identifier (e.g., 'trashContainer', 'folderView')
+     */
+    subscribePhotosEventsScope(treeEventScopeId: string, context: string) {
+        const key = this.getTreeSubscriptionKey(treeEventScopeId, 'photos');
+        const existing = this.treeEventSubscriptions.get(key);
+
+        if (existing) {
+            if (existing.contexts.has(context)) {
+                if (this.debugMode) {
+                    logDebug('[ActionEventManager] Given context already exist for Photos scope subscription', {
+                        context,
+                        totalContexts: existing.contexts.size,
+                        allContexts: Array.from(existing.contexts),
+                    });
+                }
+                return;
+            }
+            existing.contexts.add(context);
+            if (this.debugMode) {
+                logDebug('[ActionEventManager] Added context to existing Photos scope subscription', {
+                    treeEventScopeId,
+                    context,
+                    totalContexts: existing.contexts.size,
+                    allContexts: Array.from(existing.contexts),
+                });
+            }
+            return;
+        }
+
+        const subscription = getDriveForPhotos().subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
+            await this.handleSdkEvent(event);
+        });
+
+        this.treeEventSubscriptions.set(key, {
+            subscription,
+            contexts: new Set([context]),
+        });
+
+        if (this.debugMode) {
+            logDebug('[ActionEventManager] Subscribed to new Photos scope events', {
                 treeEventScopeId,
                 context,
                 totalScopes: this.treeEventSubscriptions.size,
@@ -285,12 +385,17 @@ class ActionEventManager {
      * @param treeEventScopeId - The tree event scope ID to unsubscribe from
      * @param context - The context identifier that was used when subscribing
      */
-    async unsubscribeSdkEventsScope(treeEventScopeId: string, context: string): Promise<void> {
-        const existing = this.treeEventSubscriptions.get(treeEventScopeId);
+    async unsubscribeSdkEventsScope(
+        treeEventScopeId: string,
+        context: string,
+        client: 'drive' | 'photos' = 'drive'
+    ): Promise<void> {
+        const key = this.getTreeSubscriptionKey(treeEventScopeId, client);
+        const existing = this.treeEventSubscriptions.get(key);
         if (!existing) {
             console.warn(
                 `[ActionEventManager] Trying to unsubscribe to SdkEventsScope without having the treeEventScopeId for it`,
-                { treeEventScopeId, context }
+                { treeEventScopeId, context, client }
             );
             return;
         }
@@ -299,17 +404,15 @@ class ActionEventManager {
 
         if (existing.contexts.size === 0) {
             await existing.subscription.then(({ dispose }) => dispose());
-            this.treeEventSubscriptions.delete(treeEventScopeId);
+            this.treeEventSubscriptions.delete(key);
             if (this.debugMode) {
-                // eslint-disable-next-line no-console
-                console.debug('[ActionEventManager] Unsubscribed from SDK scope events', {
+                logDebug('[ActionEventManager] Unsubscribed from SDK scope events', {
                     treeEventScopeId,
                     remainingScopes: this.treeEventSubscriptions.size,
                 });
             }
         } else if (this.debugMode) {
-            // eslint-disable-next-line no-console
-            console.debug('[ActionEventManager] Removed context from SDK scope subscription', {
+            logDebug('[ActionEventManager] Removed context from SDK scope subscription', {
                 treeEventScopeId,
                 removedContext: context,
                 remainingContexts: existing.contexts.size,
@@ -326,22 +429,17 @@ class ActionEventManager {
         if (this.driveEventSubscription) {
             if (this.driveEventSubscription.contexts.has(context)) {
                 if (this.debugMode) {
-                    // eslint-disable-next-line no-console
-                    console.debug(
-                        '[ActionEventManager] Given context already exist for SDK drive events subscription',
-                        {
-                            context,
-                            totalContexts: this.driveEventSubscription.contexts.size,
-                            allContexts: Array.from(this.driveEventSubscription.contexts),
-                        }
-                    );
+                    logDebug('[ActionEventManager] Given context already exist for SDK drive events subscription', {
+                        context,
+                        totalContexts: this.driveEventSubscription.contexts.size,
+                        allContexts: Array.from(this.driveEventSubscription.contexts),
+                    });
                 }
                 return;
             }
             this.driveEventSubscription.contexts.add(context);
             if (this.debugMode) {
-                // eslint-disable-next-line no-console
-                console.debug('[ActionEventManager] Added context to existing SDK drive events subscription', {
+                logDebug('[ActionEventManager] Added context to existing SDK drive events subscription', {
                     context,
                     totalContexts: this.driveEventSubscription.contexts.size,
                     allContexts: Array.from(this.driveEventSubscription.contexts),
@@ -357,10 +455,13 @@ class ActionEventManager {
                 contexts: new Set([context]),
             };
             if (this.debugMode) {
-                // eslint-disable-next-line no-console
-                console.debug('[ActionEventManager] Subscribed to SDK drive events', { context });
+                logDebug('[ActionEventManager] Subscribed to SDK drive events', { context });
             }
         }
+    }
+
+    private getTreeSubscriptionKey(treeEventScopeId: string, client: 'drive' | 'photos') {
+        return `${client}:${treeEventScopeId}`;
     }
 
     /**
@@ -383,12 +484,10 @@ class ActionEventManager {
             await existing.subscription.then(({ dispose }) => dispose());
             this.driveEventSubscription = undefined;
             if (this.debugMode) {
-                // eslint-disable-next-line no-console
-                console.debug('[ActionEventManager] Unsubscribed from SDK drive events');
+                logDebug('[ActionEventManager] Unsubscribed from SDK drive events');
             }
         } else if (this.debugMode) {
-            // eslint-disable-next-line no-console
-            console.debug('[ActionEventManager] Removed context from SDK drive events subscription', {
+            logDebug('[ActionEventManager] Removed context from SDK drive events subscription', {
                 removedContext: context,
                 remainingContexts: existing.contexts.size,
                 allContexts: Array.from(existing.contexts),
@@ -401,8 +500,7 @@ class ActionEventManager {
      */
     private async handleSdkEvent(event: DriveEvent): Promise<void> {
         if (this.debugMode) {
-            // eslint-disable-next-line no-console
-            console.debug('[ActionEventManager] Handling SDK event', {
+            logDebug('[ActionEventManager] Handling SDK event', {
                 eventType: event.type,
                 nodeUid: 'nodeUid' in event ? event.nodeUid : undefined,
             });

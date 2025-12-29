@@ -116,6 +116,7 @@ describe('mapNodeToLegacyItem', () => {
             name: 'test-file.txt',
             id: nodeUid,
             mimeType: 'text/plain',
+            type: NodeType.File,
             isFile: true,
             shareId: shareId,
             rootShareId: 'share-id-1',

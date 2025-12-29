@@ -13,7 +13,7 @@ import {
 } from '../../../components/sections/ContextMenu';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import type { useTrashNodes } from '../useTrashNodes';
+import { useTrashActions } from '../useTrashActions';
 import { useTrashNotifications } from '../useTrashNotifications';
 
 export function TrashItemContextMenu({
@@ -23,10 +23,8 @@ export function TrashItemContextMenu({
     position,
     open,
     close,
-    trashView,
 }: ContextMenuProps & {
     selectedItems: LegacyItem[];
-    trashView: ReturnType<typeof useTrashNodes>;
 }) {
     const selectedItem = selectedItems[0];
     const hasPreviewAvailable =
@@ -52,7 +50,7 @@ export function TrashItemContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const { confirmModal, createDeleteConfirmModal } = useTrashNotifications();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const { restoreNodes, deleteNodes } = trashView;
+    const { restoreNodes, deleteNodes } = useTrashActions();
 
     const handleDelete = () => {
         createDeleteConfirmModal(selectedItems, () => deleteNodes(selectedItems));
