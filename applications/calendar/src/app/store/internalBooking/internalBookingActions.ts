@@ -172,11 +172,7 @@ export const editBookingPage = createAsyncThunk<
             verificationPreferences: null,
         });
 
-        const {
-            EncryptedContent,
-            EncryptedSecret: NewEncryptedSecret,
-            Slots,
-        } = await encryptBookingPageEdition({
+        const pageData = await encryptBookingPageEdition({
             editData,
             calendarID: calData.calendar.ID,
             updateData: payload,
@@ -188,11 +184,10 @@ export const editBookingPage = createAsyncThunk<
 
         const response = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
             updateBookingPage(editData.bookingUID, {
-                EncryptedContent,
+                ...pageData,
                 EncryptedSecret: bookingPage.verificationErrors.secretVerificationError
-                    ? NewEncryptedSecret
+                    ? pageData.EncryptedSecret
                     : editData.encryptedSecret,
-                Slots,
             })
         );
 
