@@ -13,6 +13,7 @@ import type { Rect } from '@proton/pass/types/utils/dom';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
+import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
@@ -160,16 +161,16 @@ export const getDropdownPosition =
                     const { element } = request.field;
                     const boxElement = request.field.getAnchor().element;
                     const boxed = boxElement !== element;
-                    const bodyTop = root.getBoundingClientRect().top;
+                    const rootRect = POPOVER_SUPPORTED ? { top: 0, left: 0 } : root.getBoundingClientRect();
 
                     const styles = createStyleParser(boxElement);
                     const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
                     const { value: height, offset: offsetBox } = computedHeight;
-                    const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
+                    const { left: boxLeft, top: boxTop, width: boxWidth } = boxElement.getBoundingClientRect();
 
                     return {
-                        top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
-                        left: boxLeft + width - DROPDOWN_WIDTH,
+                        top: boxTop - rootRect.top + offsetBox.bottom + offsetBox.top + height,
+                        left: boxLeft - rootRect.left + boxWidth - DROPDOWN_WIDTH,
                     };
                 case 'frame':
                     return request.coords;
