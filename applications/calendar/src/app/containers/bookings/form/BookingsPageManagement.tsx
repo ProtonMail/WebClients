@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import { DropdownSizeUnit, RadioGroup } from '@proton/components';
+import { RadioGroup } from '@proton/components';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -11,7 +10,6 @@ import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
-import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCalendarLock } from '@proton/icons/icons/IcCalendarLock';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -29,6 +27,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingLocation, BookingState, MinimumNoticeMode } from '../interface';
 import { validateFormData } from '../utils/form/formHelpers';
+import { BookingFormCalendarField } from './BookingFormCalendarField';
 import { FormErrorWrapper, FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
 
@@ -51,6 +50,7 @@ const getBookingBufferTimeOptions = () => {
 
 export const Form = () => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const isNoticeModeEnabled = useFlag('CalendarBookingsNoticeMode');
     const [allowedProducts] = useAllowedProducts();
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
@@ -58,12 +58,7 @@ export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
     const locationOptions = getBookingLocationOption(canUseMeetLocation);
 
-    const { formData, updateFormData, bookingsState } = useBookings();
-
-    const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
-    const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
-
-    const isCalendarSelectDisabled = writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING;
+    const { formData, updateFormData } = useBookings();
 
     const handleToggleBufferTime = (checked: boolean) => {
         if (checked) {
@@ -128,26 +123,28 @@ export const Form = () => {
                 <FormRangeList />
             </FormIconRow>
 
-            <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
-                <Checkbox
-                    className="gap-0 mb-4 text-sm"
-                    checked={!!formData.minimumNoticeMode}
-                    onChange={({ target }) => handleToggleBufferTime(target.checked)}
-                >
-                    {c('Label').t`Add notice period`}
-                </Checkbox>
-                {!!formData.minimumNoticeMode && (
-                    <div className="flex flex-column flex-nowrap gap-3 ml-6">
-                        <RadioGroup
-                            name="selected-buffer-time"
-                            className="text-sm"
-                            onChange={handleSelectBufferTime}
-                            value={formData.minimumNoticeMode}
-                            options={getBookingBufferTimeOptions()}
-                        />
-                    </div>
-                )}
-            </FormIconRow>
+            {isNoticeModeEnabled && (
+                <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
+                    <Checkbox
+                        className="gap-0 mb-4 text-sm"
+                        checked={!!formData.minimumNoticeMode}
+                        onChange={({ target }) => handleToggleBufferTime(target.checked)}
+                    >
+                        {c('Label').t`Add notice period`}
+                    </Checkbox>
+                    {!!formData.minimumNoticeMode && (
+                        <div className="flex flex-column flex-nowrap gap-3 ml-6">
+                            <RadioGroup
+                                name="selected-buffer-time"
+                                className="text-sm"
+                                onChange={handleSelectBufferTime}
+                                value={formData.minimumNoticeMode}
+                                options={getBookingBufferTimeOptions()}
+                            />
+                        </div>
+                    )}
+                </FormIconRow>
+            )}
 
             <FormIconRow icon={<IcMapPin />} title={c('Info').t`Where will the appointment take place?`}>
                 {locationOptions.length > 1 && (
@@ -188,45 +185,7 @@ export const Form = () => {
                 )}
             </FormIconRow>
 
-            <FormIconRow icon={<IcCalendarGrid />} title={c('Info').t`In which calendar should bookings appear?`}>
-                <InputField
-                    as={SelectTwo}
-                    id="calendar-select"
-                    value={formData.selectedCalendar}
-                    label={c('Info').t`In which calendar should bookings appear?`}
-                    labelContainerClassName="sr-only"
-                    onChange={({ value }: { value: any }) => {
-                        updateFormData('selectedCalendar', value);
-                    }}
-                    assistContainerClassName="hidden"
-                    className={clsx(
-                        'max-w-full booking-sidebar-calendar-select',
-                        isCalendarSelectDisabled && 'booking-sidebar-calendar-select--disabled'
-                    )}
-                    fullWidth={false}
-                    disabled={isCalendarSelectDisabled}
-                    size={{ width: DropdownSizeUnit.Static }}
-                    noDropdownCaret={isCalendarSelectDisabled}
-                >
-                    {writeableCalendars.map((calendar) => (
-                        <Option key={calendar.ID} value={calendar.ID} title={calendar.Name}>
-                            <div className="flex flex-nowrap items-center gap-2">
-                                <span
-                                    className="h-2 w-2 inline-block rounded-full items-center shrink-0"
-                                    style={{ backgroundColor: calendar.Color }}
-                                />
-                                <span className="grow text-ellipsis">{calendar.Name}</span>
-                            </div>
-                        </Option>
-                    ))}
-                </InputField>
-                {selectedCalendar && (
-                    <p className="m-0 mt-1 text-sm color-weak">
-                        {c('Info')
-                            .t`People booking time with you will see ${selectedCalendar.Email} as your contact address.`}
-                    </p>
-                )}
-            </FormIconRow>
+            <BookingFormCalendarField />
 
             <FormIconRow icon={<IcFileLines />} title={c('label').t`What should people know about this appointment?`}>
                 <label htmlFor="booking-description" className="sr-only">{c('label')

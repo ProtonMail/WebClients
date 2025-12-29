@@ -18,6 +18,7 @@ export interface InternalBookingPage {
     link: string;
     verificationErrors: VerificationError;
     minimumNoticeMode: MinimumNoticeMode;
+    conflictCalendarIDs: string[];
 }
 
 export interface EditSlotData {
@@ -34,6 +35,7 @@ export interface BookingPageEditData {
     encryptedContent: string;
     bookingKeySalt: string;
     minimumNoticeMode: MinimumNoticeMode;
+    conflictCalendarIDs: string[];
 }
 
 export interface InternalBookingPageSliceInterface {
