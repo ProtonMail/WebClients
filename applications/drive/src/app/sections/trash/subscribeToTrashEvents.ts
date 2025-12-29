@@ -1,0 +1,72 @@
+import { getDrive } from '@proton/drive/index';
+
+import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
+import { sendErrorReport } from '../../utils/errorHandling';
+import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity, isPhotoNode } from '../../utils/sdk/getNodeEntity';
+import { trashLogDebug } from './trashLogger';
+import { useTrashStore } from './useTrash.store';
+import { useTrashPhotosStore } from './useTrashPhotos.store';
+
+const getNode = async (uid: string) => {
+    const drive = getDrive();
+    try {
+        const maybeNode = await drive.getNode(uid);
+        const { node } = getNodeEntity(maybeNode);
+        return node;
+    } catch (error) {
+        handleSdkError(error, { fallbackMessage: 'Unhandled Error', extra: { uid } });
+    }
+};
+
+export const subscribeToTrashEvents = () => {
+    const eventManager = getActionEventManager();
+    void eventManager.subscribeSdkEventsMyUpdates('trashFiles');
+    void eventManager.subscribePhotosEventsMyUpdates('trashPhotos');
+    const unsubscribeFromEvents = eventManager.subscribe(ActionEventName.ALL, async (event) => {
+        const trashPhotoStore = useTrashStore.getState();
+        const trashFilesStore = useTrashPhotosStore.getState();
+        trashLogDebug('trash event', { event });
+        if (!trashFilesStore) {
+            const errorMessage = 'Event emitted before folder has been loaded';
+            const error = new EnrichedError(errorMessage, {
+                tags: { component: ComponentTag.driveSdk },
+                extra: { eventType: event.type },
+            });
+            sendErrorReport(error);
+            trashLogDebug(errorMessage, { event });
+            return;
+        }
+        switch (event.type) {
+            case ActionEventName.RESTORED_NODES:
+                const uids = event.items.map((t) => t.uid);
+                trashPhotoStore.removeNodes(uids);
+                trashFilesStore.removeNodes(uids);
+                break;
+            case ActionEventName.TRASHED_NODES:
+                for (const uid of event.uids) {
+                    const node = await getNode(uid);
+                    if (node) {
+                        if (isPhotoNode(node)) {
+                            trashPhotoStore.addNode(node);
+                        } else {
+                            trashFilesStore.addNode(node);
+                        }
+                    }
+                }
+                break;
+            case ActionEventName.DELETED_NODES:
+                trashPhotoStore.removeNodes(event.uids);
+                trashFilesStore.removeNodes(event.uids);
+                break;
+        }
+    });
+
+    return () => {
+        unsubscribeFromEvents();
+        void getActionEventManager().unsubscribeSdkEventsMyUpdates('trashFiles');
+        void getActionEventManager().unsubscribePhotosEventsMyUpdates('trashPhotos');
+    };
+};

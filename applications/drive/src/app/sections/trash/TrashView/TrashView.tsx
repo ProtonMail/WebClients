@@ -10,7 +10,9 @@ import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { EmptyTrashBar } from '../menus/EmptyTrashBar';
 import { TrashToolbar } from '../menus/TrashToolbar';
+import { useJointTrashNodes } from '../useJointTrashNodes';
 import { useTrashNodes } from '../useTrashNodes';
+import { useTrashPhototsNodes } from '../useTrashPhototsNodes';
 import { Trash } from './Trash';
 
 export const TrashView = () => {
@@ -19,33 +21,32 @@ export const TrashView = () => {
     useEffect(setDefaultRoot, [setDefaultRoot]);
 
     const trashView = useTrashNodes();
+    const trashPhotosView = useTrashPhototsNodes();
+    const jointView = useJointTrashNodes();
 
     const loadTrashNodes = trashView.loadTrashNodes;
-    const populateTrashNodesFromLegacy = trashView.populateTrashNodesFromLegacy;
+    const loadTrashPhotosNodes = trashPhotosView.loadTrashPhotoNodes;
 
     useEffect(() => {
         const abortController = new AbortController();
         void loadTrashNodes(abortController.signal);
+        void loadTrashPhotosNodes(abortController.signal);
         return () => {
             abortController.abort();
         };
-    }, [loadTrashNodes]);
-
-    useEffect(() => {
-        populateTrashNodesFromLegacy();
-    }, [populateTrashNodesFromLegacy]);
+    }, [loadTrashNodes, loadTrashPhotosNodes]);
 
     return (
         <FileBrowserStateProvider
-            itemIds={trashView.trashNodes.map((item) => generateNodeUid(item.volumeId, item.linkId))}
+            itemIds={jointView.trashNodes.map((item) => generateNodeUid(item.volumeId, item.linkId))}
         >
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`Trash`}</span>}
-                toolbar={<TrashToolbar trashView={trashView} />}
+                toolbar={<TrashToolbar trashView={jointView} />}
             />
-            <EmptyTrashBar className="border-bottom border-weak" disabled={trashView.trashNodes.length === 0} />
+            <EmptyTrashBar className="border-bottom border-weak" disabled={jointView.trashNodes.length === 0} />
 
-            <Trash shareId={activeShareId} trashView={trashView} />
+            <Trash shareId={activeShareId} trashView={jointView} />
         </FileBrowserStateProvider>
     );
 };
