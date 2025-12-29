@@ -18,14 +18,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcMeetRecordStop = ({
-    alt,
-    title,
-    size = 4,
-    className = '',
-    viewBox = '0 0 16 16',
-    ...rest
-}: IconProps) => {
+export const IcCalendarLock = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
     return (
         <>
             <svg
@@ -38,12 +31,12 @@ export const IcMeetRecordStop = ({
             >
                 {title ? <title>{title}</title> : null}
 
+                <path d="M13 2a2 2 0 0 1 2 2v4a.5.5 0 0 1-1 0V7H2v6a1 1 0 0 0 1 1h4.5a.5.5 0 0 1 0 1H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2 .5.5 0 0 1 0 1 1 1 0 0 0-1 1v2h12V4a1 1 0 0 0-1-1 .5.5 0 0 1 0-1"></path>
                 <path
                     fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0ZM5 11V5H11V11H5Z"
-                    fill="currentColor"
+                    d="M12 8a2 2 0 0 1 2 2v.024c.57.116 1 .621 1 1.226v2.5c0 .69-.56 1.25-1.25 1.25h-3.5C9.56 15 9 14.44 9 13.75v-2.5c0-.605.43-1.11 1-1.226V10a2 2 0 0 1 2-2m0 .75c-.69 0-1.25.56-1.25 1.25h2.5c0-.69-.56-1.25-1.25-1.25"
                 ></path>
+                <path d="M4.5 1a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5m7 0a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5M10 2a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1z"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>

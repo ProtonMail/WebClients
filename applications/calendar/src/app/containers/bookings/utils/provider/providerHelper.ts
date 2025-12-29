@@ -13,14 +13,14 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
-import type { BookingRange, InternalBookingFrom, Slot } from '../../interface';
+import type { BookingRange, InternalBookingForm, Slot } from '../../interface';
 import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
 import { fromTimestampToUTCDate } from '../timeHelpers';
 
-export const getInitialBookingFormState = (): InternalBookingFrom => {
+export const getInitialBookingFormState = (): InternalBookingForm => {
     const localTimeZone = getTimezone();
 
     return {
@@ -71,7 +71,7 @@ export const computeInitialFormData = ({
     preferredCalendarID: string;
     recurring: boolean;
     canUseMeetLocation: boolean;
-}): InternalBookingFrom => {
+}): InternalBookingForm => {
     const timezone = calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
     const duration = calendarBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
@@ -144,7 +144,7 @@ export const computeEditFormData = ({
     editData: BookingPageEditData;
     canUseMeetLocation: boolean;
     calendarUserSettings?: CalendarUserSettings;
-}): InternalBookingFrom => {
+}): InternalBookingForm => {
     const firstSlot = editData.slots[0];
 
     const timezone = getEditBookingPageTimezone({
@@ -174,6 +174,7 @@ export const computeEditFormData = ({
         recurring,
         duration,
         bookingRanges: ranges,
+        minimumNoticeMode: editData.minimumNoticeMode ?? bookingPage.minimumNoticeMode,
     };
 };
 
@@ -266,8 +267,8 @@ export const wasBookingFormTouched = ({
     currentFormData,
     initialFormData,
 }: {
-    currentFormData: InternalBookingFrom;
-    initialFormData: InternalBookingFrom | undefined;
+    currentFormData: InternalBookingForm;
+    initialFormData: InternalBookingForm | undefined;
 }): boolean => {
     if (!initialFormData) {
         return false;

@@ -3,14 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import { DropdownSizeUnit } from '@proton/components';
+import { DropdownSizeUnit, RadioGroup } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
-import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
+import { IcCalendarLock } from '@proton/icons/icons/IcCalendarLock';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
@@ -25,7 +27,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingLocation, BookingState } from '../interface';
+import { BookingLocation, BookingState, MinimumNoticeMode } from '../interface';
 import { validateFormData } from '../utils/form/formHelpers';
 import { FormErrorWrapper, FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
@@ -37,6 +39,14 @@ export const getBookingLocationOption = (isMeetEnabled: boolean) => {
         isMeetEnabled && { text: MEET_APP_NAME, value: BookingLocation.MEET },
         { text: c('Info').t`Other location`, value: BookingLocation.OTHER_LOCATION },
     ].filter(isTruthy);
+};
+
+const getBookingBufferTimeOptions = () => {
+    return [
+        { value: MinimumNoticeMode.TWO_HOURS, label: c('Info').t`Min. 2 hours before` },
+        { value: MinimumNoticeMode.FORTY_EIGHT_HOURS, label: c('Info').t`Min. 48 hours before` },
+        { value: MinimumNoticeMode.NOT_SAME_DAY, label: c('Info').t`Not on the same day` },
+    ];
 };
 
 export const Form = () => {
@@ -54,6 +64,18 @@ export const Form = () => {
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
     const isCalendarSelectDisabled = writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING;
+
+    const handleToggleBufferTime = (checked: boolean) => {
+        if (checked) {
+            updateFormData('minimumNoticeMode', MinimumNoticeMode.TWO_HOURS);
+        } else {
+            updateFormData('minimumNoticeMode', undefined);
+        }
+    };
+
+    const handleSelectBufferTime = (value: MinimumNoticeMode) => {
+        updateFormData('minimumNoticeMode', value);
+    };
 
     return (
         <form className="flex flex-column flex-nowrap">
@@ -102,8 +124,29 @@ export const Form = () => {
                 </div>
             </FormIconRow>
 
-            <FormIconRow icon={<IcCalendarListCheck />} title={c('Info').t`When can appointments be booked?`}>
+            <FormIconRow icon={<IcCalendarDay />} title={c('Info').t`When can appointments be booked?`}>
                 <FormRangeList />
+            </FormIconRow>
+
+            <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
+                <Checkbox
+                    className="gap-0 mb-4 text-sm"
+                    checked={!!formData.minimumNoticeMode}
+                    onChange={({ target }) => handleToggleBufferTime(target.checked)}
+                >
+                    {c('Label').t`Add notice period`}
+                </Checkbox>
+                {!!formData.minimumNoticeMode && (
+                    <div className="flex flex-column flex-nowrap gap-3 ml-6">
+                        <RadioGroup
+                            name="selected-buffer-time"
+                            className="text-sm"
+                            onChange={handleSelectBufferTime}
+                            value={formData.minimumNoticeMode}
+                            options={getBookingBufferTimeOptions()}
+                        />
+                    </div>
+                )}
             </FormIconRow>
 
             <FormIconRow icon={<IcMapPin />} title={c('Info').t`Where will the appointment take place?`}>

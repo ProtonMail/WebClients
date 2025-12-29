@@ -24,7 +24,7 @@ import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider'
 import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewEvent } from '../../calendar/interface';
 import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
-import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from '../interface';
+import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingForm } from '../interface';
 import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
 import { UpsellBookings } from '../upsells/UpsellBookings';
 import { useBookingUpsell } from '../upsells/useBookingUpsell';
@@ -80,10 +80,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const intersectionRef = useRef<Intersection | null>(null);
-    const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
-    const touchedFormFields = useRef<Set<keyof InternalBookingFrom>>(new Set());
+    const initialFormData = useRef<InternalBookingForm | undefined>(undefined);
+    const touchedFormFields = useRef<Set<keyof InternalBookingForm>>(new Set());
 
-    const [internalForm, setInternalForm] = useState<InternalBookingFrom>(getInitialBookingFormState());
+    const [internalForm, setInternalForm] = useState<InternalBookingForm>(getInitialBookingFormState());
 
     const bookingSlots = useMemo(() => {
         return recomputeSlotsForRanges(internalForm.bookingRanges, internalForm.duration);
@@ -116,7 +116,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         initialFormData.current = formData;
     };
 
-    const updateFormData = (field: keyof InternalBookingFrom, value: any, currentDate?: Date) => {
+    const updateFormData = (field: keyof InternalBookingForm, value: any, currentDate?: Date) => {
         let updatedForm = { ...internalForm, [field]: value };
 
         // Auto-update duration when calendar changes (if user hasn't customized duration)

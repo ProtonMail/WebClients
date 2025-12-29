@@ -1,3 +1,5 @@
+import type { MinimumNoticeMode } from 'proton-calendar/src/app/containers/bookings/interface';
+
 export interface BookingPageSlotsPayload {
     StartTime: number;
     EndTime: number;
@@ -14,6 +16,7 @@ export interface BookingPageCreationPayload {
     EncryptedContent: string;
     CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
+    MinimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface BookingPageEditPayload {
@@ -21,6 +24,7 @@ export interface BookingPageEditPayload {
     EncryptedSecret: string;
     CalendarKeySignature: string;
     Slots: BookingPageSlotsPayload[];
+    MinimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface ExternalBookingPageSlotsPayload {
@@ -58,6 +62,7 @@ export interface InternalBookingPagePayload {
     EncryptedContent: string;
     CreateTime: number;
     ModifyTime: number;
+    MinimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface BookingSlotConfirmationPayload {

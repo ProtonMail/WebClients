@@ -177,6 +177,7 @@ export const encryptBookingPage = async ({
         EncryptedContent: encryptedContent.toBase64(),
         CalendarKeySignature: calendarKeySignature.toBase64(),
         Slots,
+        MinimumNoticeMode: formData.minimumNoticeMode,
     };
 };
 
