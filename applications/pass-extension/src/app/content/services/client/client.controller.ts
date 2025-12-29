@@ -22,6 +22,7 @@ import {
     type ClientObserver,
     createClientObserver,
 } from 'proton-pass-extension/app/content/services/client/client.observer';
+import { registerCustomElements } from 'proton-pass-extension/app/content/services/inline/custom-elements/register';
 import {
     assertFrameVisible,
     getFrameAttributes,
@@ -34,7 +35,9 @@ import 'proton-pass-extension/lib/polyfills/shim';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
@@ -47,18 +50,20 @@ export interface ClientController {
     destroy: (err?: unknown) => void;
     init: () => Promise<void>;
     defer: () => void;
-    start: DebouncedFunc<() => void>;
+    start: DebouncedFunc<() => Promise<void>>;
     startImmediate: () => void;
     stop: (reason: string) => void;
+    registerElements: () => Promise<PassElementsConfig>;
 
+    channel: FrameMessageBroker;
     deferred: boolean;
     deferredUnsubscribe: Maybe<() => void>;
+    elements: MaybeNull<PassElementsConfig>;
     instance: MaybeNull<ContentScriptClient>;
     observer: ClientObserver;
-    channel: FrameMessageBroker;
 }
 
-type ClientControllerOptions = Omit<ContentScriptClientFactoryOptions, 'controller'> & {
+type ClientControllerOptions = Omit<ContentScriptClientFactoryOptions, 'controller' | 'elements'> & {
     clientFactory: (options: ContentScriptClientFactoryOptions) => ContentScriptClient;
 };
 
@@ -105,7 +110,6 @@ const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = withCon
 
 export const createClientController = ({
     clientFactory,
-    elements,
     scriptId,
     mainFrame,
 }: ClientControllerOptions): ClientController => {
@@ -120,6 +124,12 @@ export const createClientController = ({
         observer,
         deferred: false,
         deferredUnsubscribe: undefined,
+        elements: null,
+
+        registerElements: asyncLock(async () => {
+            if (controller.elements) return controller.elements;
+            return (controller.elements = await registerCustomElements());
+        }),
 
         /** Sub-frames: defer until observer detects activity to avoid loading the client
          * in irrelevant frames. This optimization prevents resource allocation in frames
@@ -190,7 +200,7 @@ export const createClientController = ({
                 const visible = await assertFrameVisible(mainFrame);
 
                 if (!signal.aborted) {
-                    if (visible) controller[options.immediate ? 'startImmediate' : 'start']();
+                    if (visible) void controller[options.immediate ? 'startImmediate' : 'start']();
                     else {
                         if (mainFrame) controller.stop('frame-hidden');
                         else controller.defer();
@@ -217,7 +227,7 @@ export const createClientController = ({
          * The 350ms delay with trailing: true ensures final visibility state is
          * captured while preventing thrashing during quick changes in Safari. */
         start: debounce(
-            () => {
+            async () => {
                 observer.observe();
                 controller.deferredUnsubscribe?.();
 
@@ -229,9 +239,10 @@ export const createClientController = ({
                              * to children which may now be considered "active". */
                             void sendMessage(contentScriptMessage({ type: WorkerMessageType.FRAME_DEFERRED_INIT }));
                             logger.debug(`[ClientController::${scriptId}] Starting sub-frame client`);
+                            controller.deferred = false;
                         }
 
-                        controller.deferred = false;
+                        const elements = await controller.registerElements();
                         controller.instance = clientFactory({ scriptId, elements, mainFrame, controller });
                         controller.instance.start();
                         probe?.start(ping, CLIENT_ACTIVITY_PROBE_MS);
@@ -246,8 +257,8 @@ export const createClientController = ({
 
         startImmediate: () => {
             if (!controller.instance) {
-                controller.start();
-                controller.start.flush();
+                void controller.start();
+                void controller.start.flush();
             }
         },
 
@@ -268,6 +279,7 @@ export const createClientController = ({
             listeners.removeAll();
             controller.stop(String(reason ?? 'destroyed'));
             controller.channel.destroy();
+            controller.elements = null;
         },
     };
 
