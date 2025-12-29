@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import { type RetentionRuleScope, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import type { RetentionRuleScopeFormData } from './types';
@@ -56,10 +57,12 @@ export const useRetentionRuleScopeSuggestion = () => {
     const getAutocompleteOptions = (entityType: RetentionRuleScopeType): AutocompleteOption[] => {
         if (entityType === RetentionRuleScopeType.User) {
             return (
-                members?.map((member) => ({
-                    id: member.ID,
-                    label: member.Name,
-                })) ?? []
+                members
+                    ?.filter((member) => member.State === MEMBER_STATE.STATUS_ENABLED)
+                    .map((member) => ({
+                        id: member.ID,
+                        label: member.Name,
+                    })) ?? []
             );
         }
 
