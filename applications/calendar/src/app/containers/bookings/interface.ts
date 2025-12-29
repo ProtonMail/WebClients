@@ -29,7 +29,7 @@ export interface BookingsContextValue {
     openBookingSidebarEdition: (bookingPage: InternalBookingPage, editData: BookingPageEditData) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
-    updateFormData: (field: keyof InternalBookingFrom, value: any, date?: Date) => void;
+    updateFormData: (field: keyof InternalBookingForm, value: any, date?: Date) => void;
     loading: boolean;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
     updateBookingRange: (id: string, start: Date, end: Date) => void;
@@ -63,6 +63,13 @@ export enum BookingRangeError {
     TOO_SHORT = 'TOO_SHORT',
 }
 
+export enum MinimumNoticeMode {
+    OFF = 0,
+    TWO_HOURS = 1,
+    FORTY_EIGHT_HOURS = 2,
+    NOT_SAME_DAY = 3,
+}
+
 export interface BookingRange {
     id: string;
     start: Date;
@@ -93,9 +100,10 @@ export interface BookingFormData {
     location?: string;
     bookingSlots: Slot[];
     bookingRanges: BookingRange[];
+    minimumNoticeMode?: MinimumNoticeMode;
 }
 
-export type InternalBookingFrom = Omit<BookingFormData, 'bookingSlots'>;
+export type InternalBookingForm = Omit<BookingFormData, 'bookingSlots'>;
 
 export enum BookingFormValidationReasons {
     TIME_SLOT_LIMIT = 'TIME_SLOT_LIMIT',

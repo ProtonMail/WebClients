@@ -6,6 +6,7 @@ import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/cal
 import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
 
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
+import { MinimumNoticeMode } from '../../containers/bookings/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import { decryptAndVerifyBookingPageSecret } from '../../containers/bookings/utils/crypto/bookingDecryption';
 import {
@@ -34,6 +35,7 @@ export const loadBookingPage = createAsyncThunk<
         encryptedSecret: '',
         encryptedContent: '',
         bookingKeySalt: '',
+        minimumNoticeMode: MinimumNoticeMode.OFF,
         verificationErrors: {
             slotVerificationError: false,
         },
@@ -70,6 +72,7 @@ export const loadBookingPage = createAsyncThunk<
             encryptedSecret: BookingPage.EncryptedSecret,
             encryptedContent: BookingPage.EncryptedContent,
             bookingKeySalt: BookingPage.BookingKeySalt,
+            minimumNoticeMode: BookingPage.MinimumNoticeMode,
             verificationErrors: {
                 slotVerificationError: slotVerification.failedToVerify,
             },
@@ -188,6 +191,7 @@ export const editBookingPage = createAsyncThunk<
                 EncryptedSecret: bookingPage.verificationErrors.secretVerificationError
                     ? pageData.EncryptedSecret
                     : editData.encryptedSecret,
+                MinimumNoticeMode: payload.minimumNoticeMode,
             })
         );
 

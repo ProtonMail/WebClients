@@ -1,4 +1,5 @@
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
+import type { MinimumNoticeMode } from '../../containers/bookings/interface';
 
 export interface VerificationError {
     secretVerificationError: boolean;
@@ -16,6 +17,7 @@ export interface InternalBookingPage {
     withProtonMeetLink: boolean;
     link: string;
     verificationErrors: VerificationError;
+    minimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface EditSlotData {
@@ -31,6 +33,7 @@ export interface BookingPageEditData {
     encryptedSecret: string;
     encryptedContent: string;
     bookingKeySalt: string;
+    minimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface InternalBookingPageSliceInterface {
