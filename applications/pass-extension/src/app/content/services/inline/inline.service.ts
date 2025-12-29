@@ -6,6 +6,7 @@ import { createIconRegistry } from 'proton-pass-extension/app/content/services/i
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
+import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import noop from '@proton/utils/noop';
 
 import { createDropdownHandler } from './dropdown/dropdown.handler';
@@ -33,7 +34,7 @@ export const createInlineService = ({
         const { coords, action, origin } = payload;
 
         const root = registry.root;
-        const rootRect = root.customElement.getBoundingClientRect();
+        const rootRect = POPOVER_SUPPORTED ? { top: 0, left: 0 } : root.customElement.getBoundingClientRect();
 
         const top = rootRect.top + coords.top;
         const left = rootRect.left + coords.left;

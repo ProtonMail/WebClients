@@ -264,7 +264,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         /** Serialize dropdown open requests through an async queue to prevent
          * race conditions. Concurrent open calls could destabilize the dropdown
          * anchor ref during simultaneous "open" requests. */
-        open: asyncQueue(async (request, ctrl) => {
+        open: asyncQueue(async (request: DropdownRequest, ctrl?: AbortController) => {
             anchor.current =
                 request.type === 'field'
                     ? { type: 'field', field: request.field }
