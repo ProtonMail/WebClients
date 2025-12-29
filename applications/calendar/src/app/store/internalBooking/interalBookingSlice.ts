@@ -93,6 +93,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         calendarID: bookingPage.CalendarID,
                         bookingUID: bookingPage.BookingUID,
                         link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
+                        minimumNoticeMode: bookingPage.MinimumNoticeMode,
                         verificationErrors: {
                             secretVerificationError: decrypted.failedToVerify,
                             slotVerificationError: false,
@@ -182,6 +183,7 @@ const slice = createSlice({
                 description: payload.initialBookingPage.description,
                 location: payload.initialBookingPage.location,
                 withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                minimumNoticeMode: payload.initialBookingPage.minimumNoticeMode,
                 link: payload.bookingLink,
                 verificationErrors: {
                     secretVerificationError: false,
@@ -210,6 +212,7 @@ const slice = createSlice({
                 description: payload.initialBookingPage.description,
                 location: payload.initialBookingPage.location,
                 withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                minimumNoticeMode: payload.initialBookingPage.minimumNoticeMode,
                 link: currentBookingPage.link,
                 verificationErrors: {
                     secretVerificationError: false,
