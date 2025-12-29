@@ -10,7 +10,6 @@ import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
 import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
-import { useSheetsOnboardingModal } from '../../components/modals/SheetsOnboardingModal/SheetsOnboardingModal';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
@@ -27,7 +26,6 @@ export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; lin
 // SDK-ready counterpart of DriveViewDeprecated
 export function FolderView() {
     const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
-    const sheetsOnboardingModal = useSheetsOnboardingModal();
 
     const { activeFolder } = useActiveShare();
     const parentUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
@@ -84,7 +82,6 @@ export function FolderView() {
     return (
         <FileBrowserStateProvider itemIds={sortedUids}>
             {renderAlbumOnboardingModal}
-            {sheetsOnboardingModal}
             {permissions.canEdit ? (
                 <UploadDragDrop
                     shareId={activeFolder.shareId}
