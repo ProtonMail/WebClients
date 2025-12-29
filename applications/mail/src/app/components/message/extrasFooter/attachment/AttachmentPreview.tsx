@@ -72,6 +72,8 @@ const AttachmentPreview = (
         return null;
     }
 
+    console.log({ previewing });
+
     const current = attachments.findIndex((attachment) => attachment.ID === previewing.attachment.ID) + 1;
     const total = attachments.length;
 

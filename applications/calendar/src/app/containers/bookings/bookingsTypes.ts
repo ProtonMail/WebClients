@@ -1,4 +1,4 @@
-import type { BookingLocation } from './interface';
+import type { BookingLocation, MinimumNoticeMode } from './interface';
 
 export interface APISlot {
     ID: string;
@@ -21,6 +21,7 @@ export interface APIBooking {
     CreateTime: number;
     ModifyTime: number;
     Slots: APISlot[];
+    MinimumNoticeMode: MinimumNoticeMode;
 }
 
 export interface SerializedBookingRange {
@@ -45,4 +46,5 @@ export interface SerializedFormData {
     location?: string;
     bookingSlots: SerializedSlot[];
     bookingRanges: SerializedBookingRange[];
+    minimumNoticeMode: MinimumNoticeMode;
 }

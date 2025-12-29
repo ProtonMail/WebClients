@@ -1,6 +1,6 @@
 import { addDays, addHours, set, subDays } from 'date-fns';
 
-import type { BookingRange, InternalBookingFrom } from '../../interface';
+import type { BookingRange, InternalBookingForm } from '../../interface';
 import { BookingLocation } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 import { validateRangeOperation, wasBookingFormTouched } from './providerHelper';
@@ -12,7 +12,7 @@ const createBookingRange = (overrides: Partial<BookingRange> & { id: string }): 
     ...overrides,
 });
 
-const createFormData = (overrides: Partial<InternalBookingFrom> = {}): InternalBookingFrom => ({
+const createFormData = (overrides: Partial<InternalBookingForm> = {}): InternalBookingForm => ({
     recurring: false,
     summary: 'Test Meeting',
     description: 'Test Description',

@@ -3,8 +3,8 @@ import { addHours, getUnixTime, isSameDay } from 'date-fns';
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import type { SerializedFormData } from '../../bookingsTypes';
-import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../interface';
 import type { BookingFormData, BookingFormValidation, BookingRange } from '../../interface';
+import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS, MinimumNoticeMode } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
@@ -53,6 +53,7 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
 export const serializeFormData = (formData: BookingFormData): SerializedFormData => {
     return {
         ...formData,
+        minimumNoticeMode: formData.minimumNoticeMode || MinimumNoticeMode.OFF,
         bookingSlots: formData.bookingSlots.map((slot) => ({
             ...slot,
             start: getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromLocalDate(slot.start), formData.timezone))),
