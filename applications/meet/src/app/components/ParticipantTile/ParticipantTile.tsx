@@ -18,6 +18,7 @@ import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStat
 import { useMeetSelector } from '../../store/hooks';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '../../store/slices/settings';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
+import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
 import './ParticipantTile.scss';
@@ -112,6 +113,11 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
                     '--right-custom': `${positionBySize[viewSize]}rem`,
                 }}
             >
+                <NetworkQualityIndicator
+                    size={indicatorSizeBySize[viewSize]}
+                    participant={participant}
+                    indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                />
                 {isSpeaking && audioIsOn && (
                     <SpeakingIndicator
                         size={indicatorSizeBySize[viewSize]}
