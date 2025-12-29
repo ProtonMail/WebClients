@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar } from '@proton/components';
-import { Icon, ToolbarButton } from '@proton/components';
+import { Icon, Toolbar, ToolbarButton } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../../components/FileBrowser';
@@ -13,20 +12,21 @@ import {
     PreviewButton,
 } from '../../../components/sections/ToolbarButtons';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { useTrashNodes } from '../useTrashNodes';
+import type { useJointTrashNodes } from '../useJointTrashNodes';
+import { useTrashActions } from '../useTrashActions';
 import { useTrashNotifications } from '../useTrashNotifications';
 
-const getSelectedItems = (items: LegacyItem[], selectedItemIds: string[]): LegacyItem[] =>
+const getSelectedItems = (items: LegacyItem[], selectedItemIds: string[] = []): LegacyItem[] =>
     selectedItemIds
         .map((selectedItemId) => items.find(({ isLocked, id }) => !isLocked && selectedItemId === id))
         .filter(isTruthy);
 
-export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useTrashNodes> }) => {
-    const selectionControls = useSelection()!;
+export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useJointTrashNodes> }) => {
+    const selectionControls = useSelection();
     const { confirmModal, createDeleteConfirmModal } = useTrashNotifications();
-    const { restoreNodes, deleteNodes } = useTrashNodes();
+    const { restoreNodes, deleteNodes } = useTrashActions();
     const { trashNodes } = trashView;
-    const selectedItems = getSelectedItems(trashNodes, selectionControls!.selectedItemIds);
+    const selectedItems = getSelectedItems(trashNodes, selectionControls?.selectedItemIds);
 
     // Opening a file preview opens the file in the context of folder.
     // For photos in the photo stream, it is fine as it is regular folder.

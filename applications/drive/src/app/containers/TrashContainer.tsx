@@ -1,26 +1,18 @@
 import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
-import { useShallow } from 'zustand/react/shallow';
-
 import { TrashView } from '../sections/trash/TrashView/TrashView';
-import { useTrashStore } from '../sections/trash/useTrash.store';
+import { subscribeToTrashEvents } from '../sections/trash/subscribeToTrashEvents';
 
 const TrashContainer = () => {
     const TrashComponent = TrashView;
-    const { subscribeToEvents, unsubscribeToEvents } = useTrashStore(
-        useShallow((state) => ({
-            subscribeToEvents: state.subscribeToEvents,
-            unsubscribeToEvents: state.unsubscribeToEvents,
-        }))
-    );
 
     useEffect(() => {
-        void subscribeToEvents('trashContainer');
+        const unsubscribe = subscribeToTrashEvents();
         return () => {
-            void unsubscribeToEvents('trashContainer');
+            unsubscribe();
         };
-    }, [subscribeToEvents, unsubscribeToEvents]);
+    }, []);
 
     return (
         <Routes>

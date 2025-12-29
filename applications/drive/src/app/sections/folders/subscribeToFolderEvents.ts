@@ -4,7 +4,7 @@ import type { LinkShareUrl } from '../../store';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderViewData } from './useFolder.store';
@@ -32,7 +32,7 @@ export const subscribeToFolderEvents = () => {
         if (!folder) {
             const errorMessage = 'Event emitted before folder has been loaded';
             const error = new EnrichedError(errorMessage, {
-                tags: { component: 'client-fe' },
+                tags: { component: ComponentTag.driveSdk },
                 extra: { eventType: event.type },
             });
             sendErrorReport(error);

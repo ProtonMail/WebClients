@@ -336,6 +336,7 @@ describe('ActionEventManager', () => {
 
         it('should handle basic subscription lifecycle', () => {
             const scopeId = 'test-scope-123';
+            const key = `drive:${scopeId}`;
 
             eventBus.subscribeSdkEventsScope(scopeId, 'context1');
             eventBus.subscribeSdkEventsScope(scopeId, 'context2');
@@ -345,15 +346,16 @@ describe('ActionEventManager', () => {
 
             // We do as any as the property is private
             expect((eventBus as any).treeEventSubscriptions.size).toBe(1);
-            expect((eventBus as any).treeEventSubscriptions.get(scopeId)?.contexts.size).toBe(2);
+            expect((eventBus as any).treeEventSubscriptions.get(key)?.contexts.size).toBe(2);
         });
 
         it('should track contexts correctly', async () => {
             const scopeId = 'test-scope-123';
+            const key = `drive:${scopeId}`;
 
             eventBus.subscribeSdkEventsScope(scopeId, 'context1');
             eventBus.subscribeSdkEventsScope(scopeId, 'context2');
-            const subscription = (eventBus as any).treeEventSubscriptions.get(scopeId);
+            const subscription = (eventBus as any).treeEventSubscriptions.get(key);
 
             expect(subscription?.contexts.has('context1')).toBe(true);
             expect(subscription?.contexts.has('context2')).toBe(true);
@@ -361,31 +363,32 @@ describe('ActionEventManager', () => {
 
             await eventBus.unsubscribeSdkEventsScope(scopeId, 'context1');
 
-            expect((eventBus as any).treeEventSubscriptions.has(scopeId)).toBe(true);
-            expect((eventBus as any).treeEventSubscriptions.get(scopeId)?.contexts.size).toBe(1);
+            expect((eventBus as any).treeEventSubscriptions.has(key)).toBe(true);
+            expect((eventBus as any).treeEventSubscriptions.get(key)?.contexts.size).toBe(1);
             expect(mockDispose).not.toHaveBeenCalled();
 
             await eventBus.unsubscribeSdkEventsScope(scopeId, 'context2');
 
-            expect((eventBus as any).treeEventSubscriptions.has(scopeId)).toBe(false);
+            expect((eventBus as any).treeEventSubscriptions.has(key)).toBe(false);
             expect(mockDispose).toHaveBeenCalledTimes(1);
         });
 
         it('should only dispose when all contexts are removed', async () => {
             const scopeId = 'test-scope-123';
+            const key = `drive:${scopeId}`;
 
             eventBus.subscribeSdkEventsScope(scopeId, 'context1');
             eventBus.subscribeSdkEventsScope(scopeId, 'context2');
 
             await eventBus.unsubscribeSdkEventsScope(scopeId, 'context1');
 
-            expect((eventBus as any).treeEventSubscriptions.has(scopeId)).toBe(true);
-            expect((eventBus as any).treeEventSubscriptions.get(scopeId)?.contexts.size).toBe(1);
+            expect((eventBus as any).treeEventSubscriptions.has(key)).toBe(true);
+            expect((eventBus as any).treeEventSubscriptions.get(key)?.contexts.size).toBe(1);
             expect(mockDispose).not.toHaveBeenCalled();
 
             await eventBus.unsubscribeSdkEventsScope(scopeId, 'context2');
 
-            expect((eventBus as any).treeEventSubscriptions.has(scopeId)).toBe(false);
+            expect((eventBus as any).treeEventSubscriptions.has(key)).toBe(false);
             expect(mockDispose).toHaveBeenCalledTimes(1);
         });
 
@@ -403,8 +406,8 @@ describe('ActionEventManager', () => {
             expect(mockSubscribeToTreeEvents).toHaveBeenCalledWith('scope2', expect.any(Function));
 
             expect((eventBus as any).treeEventSubscriptions.size).toBe(2);
-            expect((eventBus as any).treeEventSubscriptions.has('scope1')).toBe(true);
-            expect((eventBus as any).treeEventSubscriptions.has('scope2')).toBe(true);
+            expect((eventBus as any).treeEventSubscriptions.has('drive:scope1')).toBe(true);
+            expect((eventBus as any).treeEventSubscriptions.has('drive:scope2')).toBe(true);
         });
     });
 
