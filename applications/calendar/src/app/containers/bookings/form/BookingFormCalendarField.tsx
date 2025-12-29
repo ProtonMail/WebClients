@@ -70,23 +70,23 @@ export const BookingFormCalendarField = () => {
                 ))}
             </InputField>
             {selectedCalendar && (
-                <p className="m-0 mt-1 text-sm color-weak">
+                <p className="m-0 mt-2 text-sm color-weak">
                     {c('Info').t`Booking contact email: ${selectedCalendar.Email}`}
                 </p>
             )}
 
             {isConflictCalendarsEnabled && writeableCalendars.length > 1 && (
                 <Checkbox
-                    className="gap-0 my-4 text-sm"
+                    className="gap-0 my-4 text-sm items-center"
                     checked={hasConflictingCalendarIDs}
                     onChange={({ target }) => setHasConflictingCalendarIDs(target.checked)}
                 >
-                    {c('Label').t`Check additional calendars for availability`}
+                    <span className="ml-2">{c('Label').t`Check additional calendars for availability`}</span>
                 </Checkbox>
             )}
 
             {hasConflictingCalendarIDs && (
-                <div className="flex flex-column gap-4 ml-6">
+                <div className="flex flex-column gap-4 ml-8 pl-1">
                     <span className="text-sm color-weak">{c('Info').t`Which calendars should block bookings?`}</span>
 
                     {writeableCalendars.map((calendar) => {
@@ -98,7 +98,7 @@ export const BookingFormCalendarField = () => {
                             <Checkbox
                                 key={calendarID}
                                 checked={isChecked}
-                                className="text-sm"
+                                className="text-sm items-center"
                                 borderColor={isSelectedCalendar ? undefined : calendar?.Color}
                                 backgroundColor={isChecked && !isSelectedCalendar ? calendar?.Color : undefined}
                                 disabled={isSelectedCalendar}

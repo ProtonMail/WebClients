@@ -126,17 +126,17 @@ export const Form = () => {
             {isNoticeModeEnabled && (
                 <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
                     <Checkbox
-                        className="gap-0 mb-4 text-sm"
+                        className="gap-0 mb-4 text-sm items-center"
                         checked={!!formData.minimumNoticeMode}
                         onChange={({ target }) => handleToggleBufferTime(target.checked)}
                     >
-                        {c('Label').t`Add notice period`}
+                        <span className="mt-0.5 ml-2">{c('Label').t`Add notice period`}</span>
                     </Checkbox>
                     {!!formData.minimumNoticeMode && (
-                        <div className="flex flex-column flex-nowrap gap-3 ml-6">
+                        <div className="flex flex-column flex-nowrap gap-3 ml-8 pl-1">
                             <RadioGroup
                                 name="selected-buffer-time"
-                                className="text-sm"
+                                className="text-sm inline-flex items-center flex-nowrap"
                                 onChange={handleSelectBufferTime}
                                 value={formData.minimumNoticeMode}
                                 options={getBookingBufferTimeOptions()}

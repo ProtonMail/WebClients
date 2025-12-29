@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, useNotifications } from '@proton/components/index';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
+import clsx from '@proton/utils/clsx';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -120,11 +121,14 @@ export const FormRangeList = () => {
             <div className="flex flex-row items-start mb-3">
                 <Checkbox
                     id="repeat-weekly"
-                    className="mt-2 mr-2"
+                    className="mt-1 mr-4"
                     checked={formData.recurring}
                     onChange={() => updateFormData('recurring', !formData.recurring, date)}
                 />
-                <Label htmlFor="repeat-weekly" className="flex-1">
+                <Label
+                    htmlFor="repeat-weekly"
+                    className={clsx('flex-1 my-auto text-sm', !formData.recurring && 'color-weak')}
+                >
                     {c('Label').t`Repeat weekly`}
                 </Label>
             </div>
