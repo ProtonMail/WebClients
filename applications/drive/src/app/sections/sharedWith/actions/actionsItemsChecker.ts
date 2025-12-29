@@ -16,6 +16,7 @@ export interface ItemTypeChecker {
     hasBookmarks: boolean;
     hasAlbums: boolean;
     hasFiles: boolean;
+    hasPhotos: boolean;
     hasFolders: boolean;
     isOnlyBookmarks: boolean;
     isOnlyInvitations: boolean;
@@ -25,6 +26,7 @@ export interface ItemTypeChecker {
     hasDirectShares: boolean;
     canDownload: boolean;
     canOpenInDocs: boolean;
+    canCopy: boolean;
     items: SharedWithMeListingItemUI[];
 }
 
@@ -44,6 +46,9 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
                 acc.hasAlbums = true;
                 acc.hasNonDownloadableItems = true;
             }
+            if (item.type === NodeType.Photo) {
+                acc.hasPhotos = true;
+            }
             if (item.type === NodeType.File || item.type === NodeType.Photo) {
                 acc.hasFiles = true;
             }
@@ -62,6 +67,7 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
             hasInvitations: false,
             hasBookmarks: false,
             hasDirectShares: false,
+            hasPhotos: false,
             hasAlbums: false,
             hasFiles: false,
             hasFolders: false,
@@ -77,6 +83,7 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
     return {
         hasInvitations: metadata.hasInvitations,
         hasBookmarks: metadata.hasBookmarks,
+        hasPhotos: metadata.hasPhotos,
         hasAlbums: metadata.hasAlbums,
         hasFiles: metadata.hasFiles,
         hasFolders: metadata.hasFolders,
@@ -95,6 +102,7 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
         hasDirectShares: metadata.hasDirectShares,
         canDownload: items.length > 0 && !metadata.hasNonDownloadableItems,
         canOpenInDocs: isOnlyOneItem && singleItem?.type === NodeType.File,
+        canCopy: !metadata.hasAlbums && !metadata.hasPhotos,
         items,
     };
 };
