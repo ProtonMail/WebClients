@@ -1,0 +1,11 @@
+.hide-connection-path-2 svg path:nth-child(2) {
+	opacity: 0.4;
+}
+
+.hide-connection-path-3 svg path:nth-child(3) {
+	opacity: 0.4;
+}
+
+.connection-lost-background-color-danger {
+	background-color: var(--signal-danger-major-3);
+}
