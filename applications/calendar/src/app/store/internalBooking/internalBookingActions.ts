@@ -36,6 +36,7 @@ export const loadBookingPage = createAsyncThunk<
         encryptedContent: '',
         bookingKeySalt: '',
         minimumNoticeMode: MinimumNoticeMode.OFF,
+        conflictCalendarIDs: [],
         verificationErrors: {
             slotVerificationError: false,
         },
@@ -73,6 +74,7 @@ export const loadBookingPage = createAsyncThunk<
             encryptedContent: BookingPage.EncryptedContent,
             bookingKeySalt: BookingPage.BookingKeySalt,
             minimumNoticeMode: BookingPage.MinimumNoticeMode,
+            conflictCalendarIDs: BookingPage.ConflictCalendarIDs,
             verificationErrors: {
                 slotVerificationError: slotVerification.failedToVerify,
             },
@@ -192,6 +194,7 @@ export const editBookingPage = createAsyncThunk<
                     ? pageData.EncryptedSecret
                     : editData.encryptedSecret,
                 MinimumNoticeMode: payload.minimumNoticeMode,
+                ConflictCalendarIDs: payload.conflictCalendarIDs,
             })
         );
 

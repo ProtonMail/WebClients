@@ -18,6 +18,7 @@ describe('booking helpers', () => {
             duration: 60,
             timezone: 'Europe/Zurich',
             bookingRanges: [],
+            conflictCalendarIDs: [],
             bookingSlots: [
                 {
                     id: '10',

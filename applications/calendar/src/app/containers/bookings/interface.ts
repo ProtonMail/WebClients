@@ -101,6 +101,8 @@ export interface BookingFormData {
     bookingSlots: Slot[];
     bookingRanges: BookingRange[];
     minimumNoticeMode?: MinimumNoticeMode;
+    // Only pass extra calendars, no need to pass the calendar the booking page is already on.
+    conflictCalendarIDs: string[];
 }
 
 export type InternalBookingForm = Omit<BookingFormData, 'bookingSlots'>;
