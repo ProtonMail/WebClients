@@ -2,6 +2,7 @@ import init, { App } from '@proton-meet/proton-meet-core';
 import { createBrowserHistory } from 'history';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
+import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
@@ -15,8 +16,10 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
+import { cleanupInactivePersistedSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     getPersistedSession,
+    getPersistedSessions,
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -252,10 +255,38 @@ export const bootstrapApp = async (parameters: BootstrapParameters) => {
     );
 };
 
+const assertNoSessions = async (api: ApiWithListener) => {
+    // First ensure all inactive persisted sessions are cleared.
+    await cleanupInactivePersistedSessions({ api, persistedSessions: getPersistedSessions(), delay: 50 }).catch(noop);
+    // Read session cookie from account.
+    const accountSessions = readAccountSessions();
+    // If account reports any sessions, that value takes precedence. Otherwise, the locally persisted sessions do.
+    const maybeHasSessions = accountSessions ? accountSessions.length >= 0 : getPersistedSessions().length > 0;
+
+    // No sessions, all good to proceed with guest.
+    if (!maybeHasSessions) {
+        return;
+    }
+
+    const { pathname, search, hash } = window.location;
+    const cleanPath = pathname.replace('/guest', '');
+
+    // Redirect to join container so that the login logic proceeds.
+    if (cleanPath.startsWith('/join')) {
+        window.location.href = cleanPath + search + hash;
+    } else {
+        window.location.href = '/dashboard';
+    }
+    // Promise that never resolves to wait for the redirect.
+    return new Promise(noop);
+};
+
 export const bootstrapGuestApp = async (config: ProtonConfig) => {
     const api = createApi({ config, sendLocaleHeaders: true });
 
     registerSessionListener({ type: 'all' });
+
+    await assertNoSessions(api);
 
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, authentication, locales });
