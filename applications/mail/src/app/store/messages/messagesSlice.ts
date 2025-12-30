@@ -76,6 +76,7 @@ export const messagesSlice = createSlice({
         builder.addCase(msgOptimisticAction.optimisticDelete, msgOptimisticReducer.optimisticDelete);
         builder.addCase(msgOptimisticAction.optimisticEmptyLabel, msgOptimisticReducer.optimisticEmptyLabel);
         builder.addCase(msgOptimisticAction.optimisticRestore, msgOptimisticReducer.optimisticRestore);
+        builder.addCase(msgOptimisticAction.optimisticUpdateFlag, msgOptimisticReducer.optimisticUpdateFlag);
 
         builder.addCase(draftAction.createDraft, draftReducer.createDraft);
         builder.addCase(draftAction.openDraft, draftReducer.openDraft);
