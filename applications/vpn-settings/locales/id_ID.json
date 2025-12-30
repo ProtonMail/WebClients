@@ -1160,6 +1160,11 @@
         "Melanjutkan penerusan email"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "tambah lebih banyak kuota"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Cabut"
@@ -1749,6 +1754,110 @@
       ],
       "Working with sensitive data?": [
         "Bekerja dengan data yang sensitif?"
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } dari ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } tahun yang lalu"
+      ],
+      "Add a domain": [
+        "Tambah domain"
+      ],
+      "Add more users...": [
+        "Tambah lebih banyak pengguna..."
+      ],
+      "Authenticate": [
+        "Autentikasi"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Domain ownership verified": [
+        "Kepemilikan domain diverifikasi"
+      ],
+      "Domain setup": [
+        "Pengaturan domain"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Notifikasi email akan dikirim pada saat proses migrasi dimulai dan selesai. Anda juga akan diberi tahu apabila terdapat masalah dan apabila proses migrasi ini dijeda karena tautan yang kedaluwarsa."
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "Everything": [
+        "Segalanya"
+      ],
+      "Failed to load OAuth": [
+        "OAuth gagal dimuat"
+      ],
+      "Install migration app": [
+        "Pasang aplikasi migrasi"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Pelajari lebih lanjut mengenai apa-apa saja yang dapat dimigrasikan. Pelajari lebih lanjut"
+      ],
+      "Mail": [
+        "Surat"
+      ],
+      "Migrate": [
+        "Migrasikan"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrasikan dari Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrasikan pengguna"
+      ],
+      "Migration includes": [
+        "Migrasi meliputi"
+      ],
+      "Not started": [
+        "Belum dimulai"
+      ],
+      "Required to create user accounts": [
+        "Dibutuhkan untuk membuat akun pengguna"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Pilih item apa saja yang ingin Anda migrasikan. Proses ini akan berlaku bagi seluruh pengguna terlepas dari apakah akun pengguna ini dibuat sekarang atau nanti. Migrasi akan dimulai setelah akun pengguna selesai dibuat."
+      ],
+      "Set up": [
+        "Atur"
+      ],
+      "Sign in to Google Workspace": [
+        "Masuk ke Google Workspace"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Untuk memigrasikan data organisasi Anda, Anda perlu untuk memasang aplikasi Asisten Migrasi ${ BRAND_NAME } dari Marketplace Google Workspace. Hal ini akan memberikan izin bagi ${ BRAND_NAME } untuk menyalin data Anda. Setelah asisten ini terpasang, kembali ke halaman ini untuk melanjutkan. Pelajari lebih lanjut"
+      ],
+      "Transfer data from": [
+        "Transfer data dari"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "Users migrated": [
+        "Pengguna dimigrasikan"
+      ],
+      "Verify your domain": [
+        "Verifikasi domain Anda"
+      ],
+      "What are you migrating?": [
+        "Item apa saja yang Anda pindahkan?"
+      ],
+      "Who will be notified?": [
+        "Siapa saja yang akan diberi tahu?"
       ]
     },
     "Browser": {
@@ -4557,6 +4666,9 @@
       ],
       "Pending": [
         "Ditunda"
+      ],
+      "Pending invitation": [
+        "Undangan yang belum ditanggapi"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
@@ -8052,6 +8164,11 @@
         "Warna terpilih:"
       ]
     },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddresses } atau ${ addMoreSeats }"
+      ]
+    },
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Bagaimana cara mengirim pembayaran tunai?"
@@ -8230,6 +8347,9 @@
       "1 of 1 email address available": [
         "1 dari 1 alamat email tersedia"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -8373,6 +8493,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ],
       "Common passwords": [
         "Kata sandi umum"
@@ -9287,6 +9410,11 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Pengguna dan alamat"
       ]
     },
     "Live Chat Modal": {
@@ -15018,6 +15146,9 @@
       "Main password": [
         "Kata sandi utama"
       ],
+      "Migration assistant": [
+        "Asisten migrasi"
+      ],
       "Minicalendar": [
         "Kalender mini"
       ],
@@ -15900,6 +16031,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi berkas lawas dengan pemulihan berkas selama 10 tahun."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Rangkaian privasi dengan email aman, ${ VPN_SHORT_APP_NAME }, ruang penyimpanan cloud, dan pengelola kata sandi dalam satu bundel. Hanya dari ${ fallBackString } per bulannya"
