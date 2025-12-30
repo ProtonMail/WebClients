@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { addressThunk, useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { setAddressKeyFlagAction } from '@proton/account/addressKeys/setAddressKeyFlagAction';
+import { setAddressKeyPrimaryAction } from '@proton/account/addressKeys/setAddressKeyPrimaryAction';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -19,12 +19,11 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useModals from '@proton/components/hooks/useModals';
-import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
-import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
-import { deleteAddressKey, getPrimaryAddressKeysForSigning, setPrimaryAddressKey } from '@proton/shared/lib/keys';
+import { type Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import { deleteAddressKey } from '@proton/shared/lib/keys';
 import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
@@ -76,6 +75,7 @@ const AddressKeysSection = () => {
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKey] = useModalState();
     const [exportPrivateKeyProps, setExportPrivateKeyOpen, renderExportPrivateKey] = useModalState();
     const [exportPublicKeyProps, setExportPublicKeyOpen, renderExportPublicKey] = useModalState();
+    const [confirmPrimaryKeyProps, setConfirmPrimaryKeyOpen, renderConfirmPrimaryKey] = useModalState();
     const [tmpId, setTmpId] = useState('');
 
     const isLoadingKey = loadingKeyID !== '';
@@ -92,56 +92,33 @@ const AddressKeysSection = () => {
               );
     const hasOutgoingE2EEForwardings = outgoingE2EEForwardings.length > 0;
 
+    const handleSetPrimaryKeyHelper = async (address: Address, addressKeyID: string) => {
+        try {
+            setLoadingKeyID(addressKeyID);
+            await dispatch(setAddressKeyPrimaryAction({ address, addressKeyID }));
+        } catch (error) {
+            handleError(error);
+        } finally {
+            setLoadingKeyID('');
+        }
+    };
+
     const handleSetPrimaryKey = async (ID: string) => {
         if (isLoadingKey || !addressKeys || !userKeys || loadingOutgoingAddressForwardings) {
             return;
         }
         const addressKey = getKeyByID(addressKeys, ID);
-
         if (!addressKey || !Address) {
             throw new Error('Key not found');
         }
-
-        const onSetPrimaryKey = async (ID: string) => {
-            try {
-                setLoadingKeyID(ID);
-                const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-                const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
-                    api,
-                    Address,
-                    addressKeys,
-                    ID,
-                    keyTransparencyVerify
-                );
-                await Promise.all([
-                    resignSKLWithPrimaryKey({
-                        api,
-                        ktActivation: dispatch(getKTActivation()),
-                        address: Address,
-                        newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
-                        formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                        userKeys,
-                    }),
-                    keyTransparencyCommit(User, userKeys),
-                ]);
-                await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-            } finally {
-                setLoadingKeyID('');
-            }
-        };
-
-        if (!hasOutgoingE2EEForwardings) {
-            return onSetPrimaryKey(ID);
-        }
-
         // any outgoing e2ee forwardings will be paused if the primary key changes;
         // hence we ask for user confirmation
-        createModal(
-            <ChangePrimaryKeyForwardingNoticeModal
-                onMakeKeyPrimary={async () => onSetPrimaryKey(ID)}
-                fingerprint={addressKey.publicKey.getFingerprint()}
-            />
-        );
+        if (hasOutgoingE2EEForwardings) {
+            setTmpId(ID);
+            setConfirmPrimaryKeyOpen(true);
+            return;
+        }
+        return handleSetPrimaryKeyHelper(Address, ID);
     };
 
     const handleSetFlag = async (ID: string, flagAction: FlagAction) => {
@@ -370,6 +347,17 @@ const AddressKeysSection = () => {
                     onExit={() => {
                         setTmpId('');
                         exportPrivateKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderConfirmPrimaryKey && Address && tmpDecryptedAddressKey && (
+                <ChangePrimaryKeyForwardingNoticeModal
+                    onMakeKeyPrimary={async () => handleSetPrimaryKeyHelper(Address, tmpDecryptedAddressKey.ID)}
+                    fingerprint={tmpDecryptedAddressKey.publicKey.getFingerprint()}
+                    {...confirmPrimaryKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        confirmPrimaryKeyProps.onExit();
                     }}
                 />
             )}

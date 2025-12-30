@@ -4,16 +4,24 @@ import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiv
 import { type FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
-export const setPrimaryAddressKey = async (
-    api: Api,
-    address: Address,
-    keys: DecryptedAddressKey[],
-    ID: string,
-    keyTransparencyVerify: KeyTransparencyVerify
-) => {
-    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
-    const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
-    const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
+export const setPrimaryAddressKey = async ({
+    api,
+    address,
+    addressKeys,
+    addressKeyID,
+    keyTransparencyVerify,
+}: {
+    api: Api;
+    address: Address;
+    addressKeys: DecryptedAddressKey[];
+    addressKeyID: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
+}) => {
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
+    const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => addressKeyID === otherID);
+    const oldActiveKeyV6 = oldActiveKeyV4
+        ? undefined
+        : activeKeys.v6.find(({ ID: otherID }) => addressKeyID === otherID);
 
     if (!oldActiveKeyV4 && !oldActiveKeyV6) {
         throw new Error('Cannot set primary key');
@@ -28,19 +36,19 @@ export const setPrimaryAddressKey = async (
             })
             .sort((a, b) => b.primary - a.primary);
     const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
-        v4: oldActiveKeyV4 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v4, ID) : [...activeKeys.v4],
-        v6: oldActiveKeyV6 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v6, ID) : [...activeKeys.v6],
+        v4: oldActiveKeyV4 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v4, addressKeyID) : [...activeKeys.v4],
+        v6: oldActiveKeyV6 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v6, addressKeyID) : [...activeKeys.v6],
     });
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
         keyTransparencyVerify
     );
-    await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList, Primary: 1 }));
+    await api(setKeyPrimaryRoute({ ID: addressKeyID, SignedKeyList: signedKeyList, Primary: 1 }));
     await onSKLPublishSuccess();
     const newActivePrimaryKey = oldActiveKeyV4
-        ? updatedActiveKeys.v4.find((activeKey) => activeKey.ID === ID)!!
-        : updatedActiveKeys.v6.find((activeKey) => activeKey.ID === ID)!!;
+        ? updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID)!!
+        : updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID)!!;
     const oldActiveKeys = activeKeys;
     return [newActivePrimaryKey, updatedActiveKeys, oldActiveKeys] as const;
 };
