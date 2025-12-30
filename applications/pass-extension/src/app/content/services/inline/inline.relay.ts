@@ -60,6 +60,7 @@ export const createInlineRelay = ({
             dropdown.listeners.addListener(window, 'focus', onFocusChange);
             dropdown.listeners.addListener(parent, 'scroll', onActualScroll(parent, close), SCROLL_OPTIONS);
             dropdown.listeners.addListener(window, 'mousedown', onBackdropClick(cons(field), close));
+            dropdown.listeners.addListener(window, 'wheel', close, { capture: true, once: true });
         }
     );
 
