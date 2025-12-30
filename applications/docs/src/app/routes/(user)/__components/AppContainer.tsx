@@ -1,19 +1,29 @@
-import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@proton/components'
+import {
+  GlobalLoader,
+  GlobalLoaderProvider,
+  LocationErrorBoundary,
+  useApi,
+  useAuthentication,
+  useConfig,
+} from '@proton/components'
 import type { DriveCompat } from '@proton/drive-store'
-import { DriveStoreProvider } from '@proton/drive-store'
+import { DriveStoreProvider, useDriveCompat } from '@proton/drive-store'
 import { Suspense, lazy, useEffect, useMemo } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
-import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
-import { useDriveCompat } from '@proton/drive-store'
 
 import config from '~/config'
 import { ApplicationProvider } from '~/utils/application-context'
 import { useFlag, useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import { DOCUMENT_NEW_PATH, DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH } from '~/utils/docs-url-bar'
+import {
+  DOCUMENT_NEW_PATH,
+  DOCUMENT_CREATION_PATHS,
+  DOCUMENT_EDITOR_PATH,
+  DocsUrlContextProvider,
+} from '~/utils/docs-url-bar'
 
 // container
 // ---------
@@ -27,7 +37,9 @@ export function AppContainer() {
       <GlobalLoader />
       <LocationErrorBoundary>
         <DriveStoreProvider>
-          <Content />
+          <DocsUrlContextProvider>
+            <Content />
+          </DocsUrlContextProvider>
         </DriveStoreProvider>
       </LocationErrorBoundary>
     </GlobalLoaderProvider>
@@ -75,7 +87,6 @@ function useApplication({ driveCompat }: ApplicationOptions) {
       unleashClient,
     )
     // Ensure only one application instance is created
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
