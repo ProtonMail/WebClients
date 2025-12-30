@@ -51,7 +51,7 @@ const createIframeRoot = (rootTag: string, target?: HTMLElement) =>
         styles: ProtonPassRootStyles,
     });
 
-export const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog], [role="dialog"][aria-modal="true"]`;
+export const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
 const getClosestFocusTrap = (target: MaybeNull<Element>) => target?.closest<HTMLElement>(kFocusTrapSelector) ?? null;
 
 export const createInlineRegistry = (elements: PassElementsConfig) => {
@@ -119,7 +119,7 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
                         ? (getClosestModal(anchor) ?? getClosestFocusTrap(anchor))
                         : (getActiveModal() ?? getClosestFocusTrap(document.activeElement))) ?? document.body;
 
-                const parent = activeRoot?.customElement.parentElement ?? document.body;
+                const parent = activeRoot?.customElement.parentElement;
 
                 if (parent !== nextParent) {
                     registry.destroy();
