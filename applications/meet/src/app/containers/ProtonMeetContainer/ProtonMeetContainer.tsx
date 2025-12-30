@@ -522,6 +522,8 @@ export const ProtonMeetContainer = ({
             }
             // Turning auto subscribe off so we have better control over the quality of the tracks
             try {
+                await room.setE2EEEnabled(true);
+
                 await room.connect(websocketUrl, accessToken, {
                     autoSubscribe: false,
                 });
@@ -541,8 +543,6 @@ export const ProtonMeetContainer = ({
                 }
                 throw livekitError;
             }
-
-            await room.setE2EEEnabled(true);
 
             await getParticipants(meetingToken);
 
