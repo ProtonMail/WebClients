@@ -314,7 +314,7 @@
         "Flouter l'arrière-plan"
       ],
       "Chat": [
-        "Discussions"
+        "Chat"
       ],
       "Close": [
         "Fermer"
@@ -335,7 +335,7 @@
         "Quitter la réunion"
       ],
       "Lock meeting": [
-        "Réunion verrouillée"
+        "Verrouiller la réunion"
       ],
       "Meeting details": [
         "Informations de la réunion"
@@ -1393,7 +1393,7 @@
         "Le démarrage de l'enregistrement n'a pas abouti."
       ],
       "Failed to start screen share": [
-        "Partage d'écran impossible"
+        "Le partage d'écran n'a pas abouti"
       ],
       "Failed to unlock meeting": [
         "Échec du déverrouillage de la réunion"
@@ -1429,7 +1429,7 @@
         "Le lien de la réunion que vous tentez d'accéder n'existe pas ou a peut-être été supprimé."
       ],
       "The meeting password is incorrect": [
-        "Le mot de passe de la réunion est incorrect."
+        "Le mot de passe de la réunion n'est pas correct."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -1604,6 +1604,9 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonyme ${ particle } ${ participantNumber }"
       ],
+      "Are you sure you want to leave?": [
+        "Voulez-vous vraiment quitter ?"
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -1674,7 +1677,7 @@
         "Le chiffrement de bout en bout est actif pour l'audio et la vidéo."
       ],
       "End-to-end encryption is active for screen share": [
-        "Chiffrement de bout en bout actif pour le partage d'écran"
+        "Le chiffrement de bout en bout est actif pour le partage d'écran"
       ],
       "End-to-end encryption is active for this chat.": [
         "Le chiffrement de bout en bout est actif pour cette discussion."
@@ -1737,7 +1740,7 @@
         "En quittant, vous mettrez fin au partage d'écran. Voulez-vous continuer ?"
       ],
       "Left": [
-        "À gauche"
+        "A quitté"
       ],
       "Left by mistake?": [
         "Vous avez quitté par erreur ?"
@@ -1803,7 +1806,7 @@
         "Aucun microphone détecté"
       ],
       "No microphone detected.": [
-        "Aucun microphone détecté"
+        "Aucun microphone n'a été détecté"
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
@@ -1896,7 +1899,7 @@
         "Cette réunion est en cours d'enregistrement"
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Cette réunion est verrouillée. Veuillez contacter l'hôte pour y participer."
+        "Cette réunion est verrouillée. Veuillez contacter l'hôte pour la rejoindre."
       ],
       "This meeting is password protected": [
         "Cette réunion est protégée par un mot de passe"
@@ -2279,7 +2282,7 @@
         "Authentificateur"
       ],
       "Chat": [
-        "Discussion"
+        "Chat"
       ],
       "Date": [
         "Date"
@@ -2306,7 +2309,7 @@
         "Vérification que vous n'êtes pas un robot"
       ],
       "Info": [
-        "Info"
+        "Information"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -2357,7 +2360,7 @@
         "Salle de réunion personnelle"
       ],
       "Protecting meeting with end-to-end encryption...": [
-        "Protection de la réunion par chiffrement de bout en bout..."
+        "Protection de la réunion avec un chiffrement de bout en bout..."
       ],
       "Report a problem": [
         "Signaler un bug"
