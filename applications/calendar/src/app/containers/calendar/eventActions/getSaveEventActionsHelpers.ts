@@ -1,10 +1,11 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSupportedStringValue } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';

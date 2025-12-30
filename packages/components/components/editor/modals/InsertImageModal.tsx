@@ -1,6 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,7 +11,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
-import debounce from '@proton/utils/debounce';
 import generateUID from '@proton/utils/generateUID';
 
 import Form from '../../form/Form';

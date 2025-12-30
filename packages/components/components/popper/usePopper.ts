@@ -3,8 +3,7 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import type { Placement, Strategy, VirtualElement } from '@floating-ui/dom';
 import { autoUpdate, computePosition, flip, hide, offset, shift, size } from '@floating-ui/dom';
-
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isDeepEqual from 'lodash/isEqual';
 
 import type { PopperArrow, PopperPlacement, PopperPosition } from './interface';
 import { allPopperPlacements, arrowOffset, getClickRect, getFallbackPlacements, rtlPlacement } from './utils';

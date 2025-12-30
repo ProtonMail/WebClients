@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
 import { useReferrals } from '@proton/account/referrals/hooks';
@@ -14,7 +15,6 @@ import Loader from '@proton/components/components/loader/Loader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import throttle from '@proton/utils/throttle';
 
 const InviteShareLink = () => {
     const [referral, loadingReferral] = useReferrals();

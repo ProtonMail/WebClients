@@ -1,4 +1,5 @@
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
+
 import noop from '@proton/utils/noop';
 
 export enum AsyncValidationStateValue {

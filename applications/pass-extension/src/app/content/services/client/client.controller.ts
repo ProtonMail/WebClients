@@ -6,6 +6,7 @@
  * unnecessary resource allocation in irrelevant frames. Main frames start immediately when visible.
  * Includes activity probing for service worker connection health on long-running tabs. */
 import type { DebouncedFunc } from 'lodash';
+import debounce from 'lodash/debounce';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
     ContentScriptClient,
@@ -38,7 +39,6 @@ import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import { createActivityProbe } from '@proton/pass/utils/time/probe';
-import debounce from '@proton/utils/debounce';
 
 export interface ClientController {
     /** Destroys controller and cleans up all resources. Safe to call at any

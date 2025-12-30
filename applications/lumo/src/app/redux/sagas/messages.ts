@@ -47,14 +47,14 @@ import { waitForSpace } from './spaces';
 
 export function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIterator {
     console.log('Saga triggered: saveDirtyMessage', serializedMessage);
-    
+
     // Check if this message belongs to a ghost conversation - if so, skip saving to IndexedDB
     const conversation: Conversation | undefined = yield select(selectConversationById(serializedMessage.conversationId));
     if (conversation?.ghost) {
         console.log('saveDirtyMessage: Message belongs to ghost conversation, skipping IndexedDB persistence');
         return;
     }
-    
+
     const dbApi: DbApi = yield getContext('dbApi');
     yield call([dbApi, dbApi.updateMessage], serializedMessage, {
         dirty: true,

@@ -1,8 +1,8 @@
 /* eslint-disable-next-line lodash/import-scope */
 import type { DebounceSettings } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import type { Callback } from '@proton/pass/types';
-import debounce from '@proton/utils/debounce';
 
 /** Creates a debounced function that accumulates parameters
  * between calls. Params are collected in a buffer and processe

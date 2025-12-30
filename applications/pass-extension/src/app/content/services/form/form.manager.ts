@@ -1,3 +1,4 @@
+import throttle from 'lodash/throttle';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
     FrameMessageBroker,
@@ -11,7 +12,6 @@ import { FieldType } from '@proton/pass/fathom/labels';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
-import throttle from '@proton/utils/throttle';
 
 import type { FormHandle } from './form';
 import { createFormHandles } from './form';

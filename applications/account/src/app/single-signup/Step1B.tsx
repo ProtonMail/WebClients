@@ -1,6 +1,7 @@
 import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -81,7 +82,6 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';

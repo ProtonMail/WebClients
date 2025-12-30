@@ -15,7 +15,7 @@ import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/s
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
-import throttle from '@proton/utils/throttle';
+import throttle from 'lodash/throttle';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;

@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
@@ -30,7 +31,6 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import debounce from '@proton/utils/debounce';
 
 import type { FieldElement, FieldHandle } from './field';
 import { createFieldHandles } from './field';

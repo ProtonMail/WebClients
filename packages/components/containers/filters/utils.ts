@@ -1,4 +1,5 @@
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isDeepEqual from 'lodash/isEqual';
+
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 

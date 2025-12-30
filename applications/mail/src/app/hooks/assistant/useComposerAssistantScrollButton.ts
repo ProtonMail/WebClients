@@ -1,8 +1,9 @@
 import type { RefObject } from 'react';
 import { useState } from 'react';
 
+import throttle from 'lodash/throttle';
+
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import throttle from '@proton/utils/throttle';
 
 interface Props {
     assistantResultRef: RefObject<HTMLElement>;

@@ -1,6 +1,8 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import throttle from 'lodash/throttle';
+
 import type { EditorMetadata } from '@proton/components';
 import { useModalStateObject } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
@@ -11,7 +13,6 @@ import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-import throttle from '@proton/utils/throttle';
 
 import ComposerAssistantExpanded from 'proton-mail/components/assistant/ComposerAssistantExpanded';
 import ResumeDownloadingModal from 'proton-mail/components/assistant/modals/ResumeDownloadingModal';

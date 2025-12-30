@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { add, fromUnixTime, getUnixTime, isAfter, isBefore, isEqual, sub } from 'date-fns';
 import type { History } from 'history';
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -17,7 +18,6 @@ import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

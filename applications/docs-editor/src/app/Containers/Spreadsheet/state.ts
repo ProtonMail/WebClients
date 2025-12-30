@@ -28,7 +28,7 @@ import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 
 // local state
