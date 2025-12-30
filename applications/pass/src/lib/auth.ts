@@ -1,6 +1,7 @@
 import { flushSync } from 'react-dom';
 
 import type { History, LocationDescriptorObject } from 'history';
+import isDeepEqual from 'lodash/isEqual';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -51,7 +52,6 @@ import {
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';

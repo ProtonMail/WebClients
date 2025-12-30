@@ -1,8 +1,9 @@
 import type { DependencyList, RefObject } from 'react';
 import { useRef } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { KeyboardKeyType } from '@proton/shared/lib/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

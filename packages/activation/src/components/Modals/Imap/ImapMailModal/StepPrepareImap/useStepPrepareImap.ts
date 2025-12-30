@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import cloneDeep from 'lodash/cloneDeep';
+import isDeepEqual from 'lodash/isEqual';
 
 import { GMAIL_CATEGORIES, IMAPS } from '@proton/activation/src/constants';
 import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
@@ -17,7 +18,6 @@ import {
 import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useFolders, useLabels } from '@proton/mail';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';

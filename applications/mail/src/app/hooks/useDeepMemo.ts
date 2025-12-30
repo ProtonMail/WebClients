@@ -1,7 +1,7 @@
 import type { DependencyList } from 'react';
 import { useMemo, useRef } from 'react';
 
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isDeepEqual from 'lodash/isEqual';
 
 /**
  * Special performance oriented useMemo which will store the previous value,

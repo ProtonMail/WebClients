@@ -1,5 +1,7 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import { type ApiStatusState, apiStatusActions, defaultApiStatus } from '@proton/account/apiStatus';
 import { selectUser } from '@proton/account/user';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -8,7 +10,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch, useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import ApiModals from './ApiModals';
 import ApiContext from './apiContext';

@@ -55,14 +55,14 @@ import { waitForSpace } from './spaces';
 
 function* saveDirtyConversation(serializedConversation: SerializedConversation): SagaIterator {
     console.log('Saga triggered: saveDirtyConversation', serializedConversation);
-    
+
     // Check if this is a ghost conversation - if so, skip saving to IndexedDB
     const conversation: Conversation | undefined = yield select(selectConversationById(serializedConversation.id));
     if (conversation?.ghost) {
         console.log('saveDirtyConversation: Ghost conversation detected, skipping IndexedDB persistence');
         return;
     }
-    
+
     const dbApi: DbApi = yield getContext('dbApi');
     yield call([dbApi, dbApi.updateConversation], serializedConversation, {
         dirty: true,
@@ -265,7 +265,7 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
     const type: ResourceType = 'conversation';
     const { id: localId } = payload;
     const priority = payload.priority || 'urgent';
-    
+
     // Check if phantom chat mode is enabled - if so, skip remote persistence
     const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
     if (isGhostChatMode) {

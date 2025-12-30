@@ -1,8 +1,9 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import { isSameDay } from '../../date-fns-utc';
 import { toUTCDate } from '../../date/timezone';
-import isDeepEqual from '../../helpers/isDeepEqual';
 import { omit } from '../../helpers/object';
 import type {
     VcalDateOrDateTimeValue,

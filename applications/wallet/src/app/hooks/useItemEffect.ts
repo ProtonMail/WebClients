@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import usePrevious from '@proton/hooks/usePrevious';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 export const useItemEffect = <T>(effect: (item: T) => void | (() => void), items: T[], otherDeps?: any[]) => {
     const previous = usePrevious(items);

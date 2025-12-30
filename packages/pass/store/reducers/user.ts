@@ -1,3 +1,4 @@
+import isDeepEqual from 'lodash/isEqual';
 import type { Reducer } from 'redux';
 
 import {
@@ -12,25 +13,14 @@ import {
     userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
-import {
-    confirmPendingAuthDevice,
-    getAuthDevices,
-    rejectPendingAuthDevice,
-} from '@proton/pass/store/actions/creators/sso';
-import type {
-    BitField,
-    MaybeNull,
-    PassPlanResponse,
-    RequiredNonNull,
-    UserMonitorStatusResponse,
-} from '@proton/pass/types';
+import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
+import type { BitField, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
@@ -119,8 +109,7 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
             : state.userSettings;
 
         const addresses = Addresses.reduce(
-            (acc, { Action, ID, Address }) =>
-                Action === EventActions.DELETE ? objectDelete(acc, ID) : merge(acc, { [ID]: Address }),
+            (acc, { Action, ID, Address }) => (Action === EventActions.DELETE ? objectDelete(acc, ID) : merge(acc, { [ID]: Address })),
             state.addresses
         );
 

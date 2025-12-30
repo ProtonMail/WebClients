@@ -1,8 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
+import isDeepEqual from 'lodash/isEqual';
 
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';

@@ -2,6 +2,7 @@ import type { ComponentProps, Dispatch, MutableRefObject, ReactNode, SetStateAct
 import { Fragment, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -69,7 +70,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';

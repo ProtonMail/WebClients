@@ -1,6 +1,6 @@
 import type { Selector } from '@reduxjs/toolkit';
 
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isDeepEqual from 'lodash/isEqual';
 
 import type {
     MaybeOptimisticStateObject,
