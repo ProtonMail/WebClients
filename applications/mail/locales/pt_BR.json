@@ -124,13 +124,13 @@
         "Todas lidas"
       ],
       "All Starred": [
-        "Todas com estrela"
+        "Todas com favoritos"
       ],
       "All Unread": [
         "Todas não lidas"
       ],
       "All Unstarred": [
-        "Todos sem estrela"
+        "Todos sem favoritos"
       ],
       "Apply": [
         "Aplicar"
@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1790,19 +1789,19 @@
         "Respondeu para todos"
       ],
       "Star conversation": [
-        "Adicionar estrela na conversa"
+        "Favoritar conversa"
       ],
       "Star message": [
-        "Adicionar estrela na mensagem"
+        "Favoritar mensagem"
       ],
       "Unread email": [
         "E-mail não lido"
       ],
       "Unstar conversation": [
-        "Remover estrela da conversa"
+        "Remover favorito"
       ],
       "Unstar message": [
-        "Remover estrela da mensagem"
+        "Desfavoritar mensagem"
       ]
     },
     "Alternative text for conversation image": {
@@ -5630,7 +5629,7 @@
         "lidos"
       ],
       "starred": [
-        "com estrela"
+        "favorito"
       ]
     },
     "filter: Label": {
@@ -7380,7 +7379,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9722,7 +9722,7 @@
         "Atualizações e atividade de redes sociais"
       ],
       "Starred": [
-        "Com estrela"
+        "Favoritos"
       ],
       "Start date": [
         "Data de início"
@@ -10162,7 +10162,7 @@
         "Spam"
       ],
       "Starred": [
-        "Com estrela"
+        "Favoritos"
       ],
       "Terms": [
         "Termos"
@@ -14070,8 +14070,8 @@
         "${ elementsCount } conversas marcadas como lidas."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } conversa marcada com Estrela.",
-        "${ elementsCount } conversas marcadas com Estrela."
+        "${ elementsCount } conversa marcada como Favorita.",
+        "${ elementsCount } conversas marcadas como Favorita."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } conversa marcada como não lida.",
@@ -14094,8 +14094,8 @@
         "${ elementsCount } conversas removidas de ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } mensagem removida da lista com Estrela.",
-        "${ elementsCount } mensagens removidas da lista com Estrela."
+        "${ elementsCount } mensagem removida dos Favoritos.",
+        "${ elementsCount } mensagens removidas dos Favoritos."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversa adiada",
@@ -14114,8 +14114,8 @@
         "${ elementsCount } mensagens marcadas como lidas."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } mensagem marcada com estrela.",
-        "${ elementsCount } mensagens marcadas com estrela."
+        "${ elementsCount } mensagem marcada como Favorita.",
+        "${ elementsCount } mensagens marcadas como Favorita."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } mensagem marcada como não lida.",
@@ -14138,8 +14138,8 @@
         "${ elementsCount } mensagens removidas de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } mensagem removida da lista com Estrela.",
-        "${ elementsCount } mensagens removidas da lista com Estrela."
+        "${ elementsCount } mensagem removida dos Favoritos.",
+        "${ elementsCount } mensagens removidas dos Favoritos."
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -14286,7 +14286,7 @@
         "Mensagem removida de ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Mensagem removida do marcador Com estrela."
+        "Mensagem removida dos favoritos."
       ],
       "Message updated": [
         "Mensagem atualizada",

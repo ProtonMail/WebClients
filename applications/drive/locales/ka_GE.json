@@ -279,9 +279,6 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
-      "Create a spreadsheet": [
-        "ელცხრილის შექმნა"
-      ],
       "Create album": [
         "ალბომის შექმნა"
       ],
@@ -400,6 +397,12 @@
       ],
       "Download app": [
         "აპის გადმოწერა"
+      ],
+      "Download for Mac": [
+        "გადმოწერა Mac-ისთვის"
+      ],
+      "Download for MacOS": [
+        "გადმოწერა MacOS-ისთვის"
       ],
       "Download for Windows": [
         "გადმოწერა Windows-სთვის"
@@ -1199,6 +1202,12 @@
       "What do I get?": [
         "რას მივიღებ?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
@@ -1724,6 +1733,15 @@
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ],
+      "Compliance with data protection regulations": [
+        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
       ],
@@ -1735,6 +1753,9 @@
       ],
       "Limited favorites": [
         "შეზღუდული რჩეულები"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1750,6 +1771,9 @@
       ],
       "Web search access": [
         "წვდომა ვებში ძებნასთან"
+      ],
+      "Zero-access encryption": [
+        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Info": {
@@ -3252,6 +3276,9 @@
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "კომპიუტერის პროგრამების გადმოწერა ამჟამად ხელმისაწვდომი არაა"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "გადახდის მისამართის ჩასწორება, ამჟამად, ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
       ],
@@ -4057,6 +4084,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
+      ],
+      "View the invitation": [
+        "მოსაწვევის ნახვა",
+        "მოსაწვევების ნახვა"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
@@ -4901,6 +4932,9 @@
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Already in your library": [
+        "უკვე თქვენს ბიბლიოთეკაშია"
+      ],
       "Also try looking in Trash.": [
         "სცადეთ, ნაგვის ყუთშიც ჩაიხედოთ."
       ],
@@ -5443,6 +5477,9 @@
       "Invite link copied": [
         "მოსაწვევის ბმული დაკოპირდა"
       ],
+      "iOS and Android Apps": [
+        "iOS-ის და Android-ის აპები"
+      ],
       "Issues found": [
         "აღმოჩენილი პრობლემები"
       ],
@@ -5873,6 +5910,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
+      ],
+      "Scan to download": [
+        "დაასკანერეთ გადმოსაწერად"
       ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
@@ -6797,6 +6837,9 @@
       "Colors": [
         "ფერები"
       ],
+      "Command line interface (CLI)": [
+        "ბრძანების სტრიქონის ინტერფეისი (CLI)"
+      ],
       "Comment": [
         "კომენტარი"
       ],
@@ -7454,6 +7497,9 @@
       ],
       "Shared with me": [
         "ჩემთვის გაზიარებული"
+      ],
+      "Terms and conditions": [
+        "წესები და პირობები"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -11820,6 +11866,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "მიიღეთ სრული წვდომა ${ CALENDAR_APP_NAME }-ზე"
       ],
+      "Get mobile and desktop apps": [
+        "მიიღეთ აპები მობილურისთვის და კომპიუტერისთვის"
+      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -11880,9 +11929,6 @@
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "წარმოგიდგენთ ${ SHEETS_APP_NAME }-ს"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -12544,6 +12590,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "მიიღეთ Drive for Business"
       ]
     },
     "Validation": {

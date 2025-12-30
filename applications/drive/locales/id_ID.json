@@ -276,9 +276,6 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
-      "Create a spreadsheet": [
-        "Buat lembar kerja"
-      ],
       "Create album": [
         "Buat album"
       ],
@@ -395,6 +392,12 @@
       ],
       "Download app": [
         "Unduh aplikasi"
+      ],
+      "Download for Mac": [
+        "Unduh untuk Mac"
+      ],
+      "Download for MacOS": [
+        "Unduh untuk macOS"
       ],
       "Download for Windows": [
         "Unduh untuk Windows"
@@ -1193,6 +1196,12 @@
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
+      ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
@@ -3278,6 +3287,9 @@
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Unduhan aplikasi desktop saat ini tidak tersedia"
+      ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Penyuntingan alamat tagihan saat ini tidak tersedia. Silakan coba lagi nanti."
       ],
@@ -4901,6 +4913,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
       ],
+      "Already in your library": [
+        "Sudah dalam pustaka Anda"
+      ],
       "Also try looking in Trash.": [
         "Cobalah juga untuk mencari di Sampah."
       ],
@@ -5447,6 +5462,9 @@
       "Invite link copied": [
         "Tautan undangan disalin"
       ],
+      "iOS and Android Apps": [
+        "Aplikasi iOS dan Android"
+      ],
       "Issues found": [
         "Masalah ditemukan"
       ],
@@ -5878,6 +5896,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR dengan perangkat seluler Anda"
+      ],
+      "Scan to download": [
+        "Pindai untuk mengunduh"
       ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
@@ -6536,9 +6557,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Jadikan data Anda tetap milik Anda. Buat dan kolaborasikan berbagai hal dengan lembaran kerja berfitur lengkap yang diamankan oleh enkripsi end-to-end."
-      ],
       "Your email address and password were leaked:": [
         "Alamat email dan kata sandi Anda telah bocor:"
       ],
@@ -6741,6 +6759,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -6848,6 +6869,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ],
       "Comment": [
         "Komentar"
@@ -11889,6 +11913,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Dapatkan akses penuh ke ${ CALENDAR_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Dapatkan Drive versi seluler dan desktop"
+      ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
       ],
@@ -11948,9 +11975,6 @@
       ],
       "Information exposed in breach": [
         "Informasi yang terpapar dalam kebocoran data"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Memperkenalkan ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"

@@ -4003,6 +4003,9 @@
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
+      "You cannot enter the organizer's email": [
+        "Вы не можаце ўвесці электронную пошту арганізатара"
+      ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
       ],
@@ -5343,6 +5346,9 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Кантактны адрас электроннай пошты для браніравання: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Старонка браніравання выдалена"
       ],
@@ -5637,6 +5643,9 @@
       "Host": [
         "Вядучы"
       ],
+      "How far in advance can someone book?": [
+        "За які час загадзя можна забраніраваць?"
+      ],
       "How long should an appointment last?": [
         "Як доўга павінна доўжыцца сустрэча?"
       ],
@@ -5796,6 +5805,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
       ],
+      "Min. 2 hours before": [
+        "Мінімум 2 гадзін да"
+      ],
+      "Min. 48 hours before": [
+        "Мінімум 48 гадзін да"
+      ],
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
@@ -5849,6 +5864,9 @@
       ],
       "Not connected": [
         "Не падключана"
+      ],
+      "Not on the same day": [
+        "Не ў той жа дзень"
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
@@ -5909,9 +5927,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Людзі, якія браніруюць у вас час, убачаць ${ selectedCalendar.Email } у якасці вашага кантактнага адраса."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
@@ -6323,6 +6338,9 @@
       ],
       "Where will the appointment take place?": [
         "Дзе адбудзецца сустрэча?"
+      ],
+      "Which calendars should block bookings?": [
+        "Якія календары павінны блакіраваць браніраванні?"
       ],
       "Which event would you like to delete?": [
         "Якую падзею вы хочаце выдаліць?"
@@ -6790,6 +6808,9 @@
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
+      "Add notice period": [
+        "Дадаць перыяд апавяшчэння"
+      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -6858,6 +6879,9 @@
       ],
       "Category": [
         "Катэгорыя"
+      ],
+      "Check additional calendars for availability": [
+        "Праверце дадатковыя календары на даступнасць"
       ],
       "City": [
         "Горад"

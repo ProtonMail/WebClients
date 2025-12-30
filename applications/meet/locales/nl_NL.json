@@ -17,6 +17,12 @@
       "Agree and continue": [
         "Akkoord en doorgaan"
       ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Wijs ${ selectedParticipantName } aan als host"
+      ],
+      "Assign new host": [
+        "Nieuwe host toewijzen"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -50,8 +56,14 @@
       "Copied": [
         "Gekopieerd"
       ],
+      "Copy ${ title }": [
+        "Kopieer ${ title }"
+      ],
       "Copy address": [
         "Adres kopiëren"
+      ],
+      "Copy invitation text": [
+        "Uitnodigingstekst kopiëren"
       ],
       "Copy link": [
         "Link kopiëren"
@@ -59,8 +71,17 @@
       "Create a free account": [
         "Maak een gratis account aan"
       ],
+      "Create meeting": [
+        "Vergadering aanmaken"
+      ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Disable ${ participantName }'s video": [
+        "Video van ${ participantName } uitschakelen"
+      ],
+      "Disable camera": [
+        "Camera uitschakelen"
       ],
       "Dismiss": [
         "Negeren"
@@ -77,8 +98,20 @@
       "Edit sign-in details": [
         "Bewerk aanmeldgegevens"
       ],
+      "Enable camera": [
+        "Camera inschakelen"
+      ],
+      "Enable video": [
+        "Video inschakelen"
+      ],
+      "End meeting for all": [
+        "Vergadering voor iedereen beëindigen"
+      ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
+      ],
+      "Get Meet Professional": [
+        "Krijg Meet Professional"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -89,11 +122,35 @@
       "Help and resources": [
         "Hulp en bronnen"
       ],
+      "Hide advanced options": [
+        "Geavanceerde opties verbergen"
+      ],
+      "Hide participants": [
+        "Deelnemers verbergen"
+      ],
       "Hide self view": [
         "Verberg eigen weergave"
       ],
+      "Hide timezones": [
+        "Tijdzones verbergen"
+      ],
+      "Join": [
+        "Deelnemen"
+      ],
+      "Join meeting": [
+        "Deelnemen aan vergadering"
+      ],
+      "Kick out": [
+        "Verwijderen"
+      ],
+      "Kick out ${ participantName }": [
+        "Verwijder ${ participantName }"
+      ],
       "Leave": [
         "Verlaat"
+      ],
+      "Leave meeting": [
+        "Vergadering verlaten"
       ],
       "Lock meeting": [
         "Vergadering vergrendelen"
@@ -104,6 +161,9 @@
       "More options for accounts": [
         "Meer opties voor accounts"
       ],
+      "Mute ${ participantName }": [
+        "Demp ${ participantName }"
+      ],
       "Next month": [
         "Volgende maand"
       ],
@@ -112,6 +172,9 @@
       ],
       "Noise cancellation": [
         "Ruisonderdrukking"
+      ],
+      "Open link": [
+        "Link openen"
       ],
       "Picture-in-picture mode": [
         "Beeld-in-beeld-modus"
@@ -122,11 +185,20 @@
       "Previous page": [
         "Vorige pagina"
       ],
+      "Receive video": [
+        "Ontvang video"
+      ],
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Refresh link": [
+        "Link vernieuwen"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "Rejoin meeting": [
+        "Opnieuw deelnemen aan vergadering"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -143,8 +215,17 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Schedule": [
+        "Planning"
+      ],
+      "Schedule meeting": [
+        "Vergadering plannen"
+      ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "Send an encrypted message": [
+        "Stuur een versleuteld bericht"
       ],
       "Settings": [
         "Instellingen"
@@ -154,6 +235,9 @@
       ],
       "Show advanced options": [
         "Geavanceerde opties weergeven"
+      ],
+      "Show participants": [
+        "Deelnemers tonen"
       ],
       "Show timezones": [
         "Tijdzones tonen"
@@ -170,8 +254,20 @@
       "Start": [
         "Start"
       ],
+      "Start a meeting": [
+        "Start een vergadering"
+      ],
+      "Start meeting": [
+        "Start vergadering"
+      ],
       "Start recording": [
         "Start opname"
+      ],
+      "Stay in meeting": [
+        "Blijf in de vergadering"
+      ],
+      "Stop receiving video": [
+        "Video-ontvangst stoppen"
       ],
       "Stop recording": [
         "Stop opname"
@@ -191,6 +287,12 @@
       "Use authentication code": [
         "Authenticatiecode gebruiken"
       ],
+      "Use camera": [
+        "Gebruik camera"
+      ],
+      "Use microphone": [
+        "Gebruik microfoon"
+      ],
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
@@ -205,11 +307,86 @@
       ]
     },
     "Alt": {
+      "Audio settings": [
+        "Audio-instellingen"
+      ],
+      "Blur background": [
+        "Achtergrond vervagen"
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Close search": [
+        "Zoekfunctie sluiten"
+      ],
+      "Copy meeting link": [
+        "Vergadering link kopiëren"
+      ],
       "Go to dashboard": [
         "Ga naar dashboard"
       ],
+      "Leave": [
+        "Afsluiten"
+      ],
+      "Leave Meeting": [
+        "Vergadering verlaten"
+      ],
       "Lock meeting": [
         "Vergadering vergrendelen"
+      ],
+      "Meeting details": [
+        "Vergaderingsgegevens"
+      ],
+      "Open chat message search": [
+        "Open zoekfunctie voor chatberichten"
+      ],
+      "Open participants search": [
+        "Open zoekfunctie voor deelnemers"
+      ],
+      "Participant host control options": [
+        "Opties voor deelnemersbeheer door de host"
+      ],
+      "Participants": [
+        "Deelnemers"
+      ],
+      "Rotate camera": [
+        "Camera roteren"
+      ],
+      "Rotate personal meeting link": [
+        "Roteer persoonlijke vergadering link"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Show passphrase": [
+        "Toon wachtwoord"
+      ],
+      "Toggle camera": [
+        "Camera in-/uitschakelen"
+      ],
+      "Toggle chat": [
+        "Chat aan/uit"
+      ],
+      "Toggle meeting details": [
+        "Vergaderingsgegevens in-/uitschakelen"
+      ],
+      "Toggle microphone": [
+        "Microfoon in-/uitschakelen"
+      ],
+      "Toggle participants": [
+        "Deelnemers in-/uitschakelen"
+      ],
+      "Toggle screen share": [
+        "Scherm delen in-/uitschakelen"
+      ],
+      "Toggle settings": [
+        "Instellingen openen/sluiten"
+      ],
+      "Video settings": [
+        "Video-instellingen"
       ]
     },
     "Apps dropdown": {
@@ -1150,6 +1327,26 @@
         "Onbetaalde factuur"
       ]
     },
+    "Description": {
+      "An always available meeting room for people you trust.": [
+        "Een altijd beschikbare vergaderruimte voor mensen die u vertrouwt."
+      ],
+      "Plan meetings and send invites with ${ CALENDAR_APP_NAME }.": [
+        "Plan vergaderingen en verzend uitnodigingen met ${ CALENDAR_APP_NAME }."
+      ],
+      "Rotating group encryption key for best security": [
+        "Roterende groep encryptie sleutel voor optimale beveiliging"
+      ],
+      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
+        "Instellen van groep end-to-end encryptie met geavanceerde Messaging Layer Security (MLS)"
+      ],
+      "Start a call immediately then share the link with others.": [
+        "Start onmiddellijk een gesprek en deel de link met anderen."
+      ],
+      "Use a link to join a meeting.": [
+        "Gebruik een link om deel te nemen aan een vergadering."
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrouwd contact"
@@ -1165,14 +1362,47 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Failed to assign host": [
+        "Host toewijzen mislukt"
+      ],
       "Failed to create meeting": [
         "Maken van vergadering is mislukt"
+      ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Aanmaken van de persoonlijke vergadering is mislukt, vernieuw de pagina."
       ],
       "Failed to decrypt session key": [
         "Decoderen van de sessiesleutel mislukt."
       ],
+      "Failed to join meeting. Please try again later.": [
+        "Deelnemen aan de vergadering is mislukt. Probeer het later opnieuw."
+      ],
+      "Failed to lock meeting": [
+        "Vergrendelen van vergadering is mislukt"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Roteren van de persoonlijke vergadering link is mislukt."
+      ],
+      "Failed to save recording": [
+        "Kon opname niet opslaan"
+      ],
+      "Failed to send chat message. Please try again.": [
+        "Het is niet gelukt om een chat bericht te sturen. Probeer het opnieuw."
+      ],
+      "Failed to start recording": [
+        "Kon opname niet starten"
+      ],
+      "Failed to start screen share": [
+        "Kon scherm delen niet starten"
+      ],
+      "Failed to unlock meeting": [
+        "Ontgrendelen van vergadering is mislukt"
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
+      ],
+      "Invalid passphrase": [
+        "Ongeldig wachtwoord"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -1186,11 +1416,20 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Screen share is not supported on mobile browsers": [
+        "Scherm delen wordt niet ondersteund op mobiele browsers"
+      ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "De vergadering link waartoe u toegang probeert te krijgen, bestaat niet of is mogelijk verwijderd."
+      ],
+      "The meeting password is incorrect": [
+        "Het wachtwoord voor de vergadering is onjuist."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -1200,6 +1439,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Deze vergadering gebruikt een oudere versie; de host moet deze beëindigen en Meet vernieuwen om te herstarten met de nieuwste versie."
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -1323,8 +1565,47 @@
       ]
     },
     "Info": {
+      " and ": [
+        " en "
+      ],
+      "${ maxParticipants } participant limit reached": [
+        "${ maxParticipants } deelnemerslimiet bereikt"
+      ],
+      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
+        "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
+      ],
+      "${ participantCount } of ${ maxParticipants } participants": [
+        "${ participantCount } van ${ maxParticipants } deelnemers"
+      ],
+      "${ presenterName } (you) is presenting": [
+        "${ presenterName } (u) is aan het presenteren"
+      ],
+      "${ presenterName } is presenting": [
+        "${ presenterName } is aan het presenteren"
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
+        "U bent uitgenodigd door ${ user.DisplayName } voor een ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } vergadering:"
+      ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
+        "U bent uitgenodigd door ${ user.DisplayName } voor een ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } vergadering:\n\n${ time }\n\n${ meetingLink }\n\nVergadering ID: ${ id }"
+      ],
+      "${ user.DisplayName }'s Meeting": [
+        "Vergadering van ${ user.DisplayName }"
+      ],
+      "(You)": [
+        "(U)"
+      ],
+      "<Removed dangerous URL>": [
+        "<Removed dangerous URL>"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "Anonymous ${ particle } ${ participantNumber }": [
+        "Anoniem ${ particle } ${ participantNumber }"
+      ],
+      "Are you sure you want to leave?": [
+        "Weet u zeker dat u wilt verlaten?"
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -1335,14 +1616,53 @@
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Vervolg met de vergadering, erkent en stemt u in met de opname."
       ],
+      "camera": [
+        "camera"
+      ],
+      "Chat with everyone": [
+        "Chat met iedereen"
+      ],
+      "Check your system settings to make sure that a camera is available.": [
+        "Controleer uw systeeminstellingen om ervoor te zorgen dat een camera beschikbaar is."
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Controleer uw systeeminstellingen om ervoor te zorgen dat een microfoon beschikbaar is."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Coming soon": [
+        "Binnenkort beschikbaar"
+      ],
+      "Connection lost": [
+        "Verbinding verloren"
+      ],
+      "Connection lost, please join meeting again": [
+        "Verbinding verloren, neem opnieuw deel aan de vergadering."
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
       "Country code": [
         "Landcode"
+      ],
+      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
+        "Maak een account aan om Meet te verbinden met ${ CALENDAR_APP_NAME } en direct uitnodigingen voor vergaderingen te verzenden."
+      ],
+      "Create an account to have a personal meeting link you can reuse for every call.": [
+        "Maak een account aan om een persoonlijke vergadering link te hebben die u voor elk gesprek kunt hergebruiken."
+      ],
+      "Custom combination": [
+        "Aangepaste combinatie"
+      ],
+      "Default": [
+        "Standaard"
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Standaard - ${ systemDefault.label }"
+      ],
+      "Do you want people to ${ deviceContentType } you in the meeting?": [
+        "Wilt u dat mensen u ${ deviceContentType } in de vergadering?"
       ],
       "Download current logs": [
         "Huidige logboeken downloaden"
@@ -1352,6 +1672,15 @@
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
+      ],
+      "End-to-end encryption is active for audio and video.": [
+        "End-to-end encryptie is actief voor audio en video."
+      ],
+      "End-to-end encryption is active for screen share": [
+        "End-to-end encryptie is actief voor schermdeling"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "End-to-end encryptie is actief voor deze chat."
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw authenticatie app in"
@@ -1368,17 +1697,53 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
+      "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
+        "Elk gesprek, schermdeling en chat is end-to-end versleuteld om uw belangrijkste verbindingen te beschermen."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
+        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging; vergeet niet om deze apart met uw gasten te delen."
+      ],
+      "Free meeting": [
+        "Gratis vergadering"
+      ],
+      "Get your personal meeting ID": [
+        "Ontvang uw persoonlijke vergadering ID"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
+      ],
+      "Host your own secure meeting": [
+        "Organiseer uw eigen veilige vergadering"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Als u Firefox gebruikt, zorg er dan voor dat PeerConnection is ingeschakeld."
+      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
+      "Invitation preview": [
+        "Voorbeeld uitnodiging"
+      ],
+      "Joined": [
+        "Aangesloten"
+      ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Leaving will stop your screen sharing. Do you want to continue?": [
+        "Als u vertrekt, stopt uw schermdeling. Wilt u doorgaan?"
+      ],
+      "Left": [
+        "Links"
+      ],
+      "Left by mistake?": [
+        "Per ongeluk vertrokken?"
       ],
       "Loading": [
         "Laden"
@@ -1392,14 +1757,53 @@
       "Loading...": [
         "Laden..."
       ],
+      "Meet without restrictions": [
+        "Meet zonder beperkingen"
+      ],
+      "Meeting created": [
+        "Vergadering aangemaakt"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Vergadering vol (${ maxParticipants } deelnemers)"
+      ],
+      "Meeting ID: ${ id }": [
+        "Vergadering ID: ${ id }"
+      ],
+      "Meeting link": [
+        "Vergadering link"
+      ],
       "Meeting locked. No new participants can join.": [
         "Vergadering afgesloten. Geen nieuwe deelnemers toegestaan."
+      ],
+      "Meeting unlocked. Participants can join again.": [
+        "Vergadering ontgrendeld. Deelnemers kunnen opnieuw deelnemen."
       ],
       "Member": [
         "Lid"
       ],
+      "microphone": [
+        "microfoon"
+      ],
+      "Microphone effects": [
+        "Microfoon effecten"
+      ],
       "New": [
         "Nieuw"
+      ],
+      "New host": [
+        "Nieuwe host"
+      ],
+      "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
+        "Geen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } gedetecteerd."
+      ],
+      "No camera detected": [
+        "Geen camera gedetecteerd"
+      ],
+      "No camera detected.": [
+        "Geen camera gedetecteerd."
+      ],
+      "No microphone detected": [
+        "Geen microfoon gedetecteerd"
       ],
       "No microphone detected.": [
         "Geen microfoon gedetecteerd."
@@ -1407,8 +1811,38 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
+      "No search results": [
+        "Geen zoekresultaten"
+      ],
+      "No speaker detected": [
+        "Geen luidspreker gedetecteerd"
+      ],
+      "Open external link": [
+        "Externe link openen"
+      ],
       "Other accounts": [
         "Andere accounts"
+      ],
+      "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
+        "Onze end-to-end versleutelde vergaderingen beschermen uw privacy en maken echt vrije meningsuiting mogelijk."
+      ],
+      "participant": [
+        "deelnemer"
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Plak uw ${ MEET_APP_NAME } link om deel te nemen aan een veilige vergadering"
+      ],
+      "Permission denied": [
+        "Toestemming geweigerd"
+      ],
+      "Permissions not given.": [
+        "Machtigingen niet verleend."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Schakel de toegang in tot uw ${ microphoneLinkButton }${ andString }${ cameraLinkButton } voor de beste ervaring."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Voer het wachtwoord in om deze vergadering te ontsleutelen en te bekijken."
       ],
       "Recording saved": [
         "Opname opgeslagen"
@@ -1419,6 +1853,24 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Schedule your next meeting": [
+        "Plan uw volgende vergadering"
+      ],
+      "Secure meeting": [
+        "Veilige vergadering"
+      ],
+      "Select a camera": [
+        "Selecteer een camera"
+      ],
+      "Select a microphone": [
+        "Selecteer een microfoon"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Selecteer een deelnemer om toe te wijzen als de nieuwe host voordat u weggaat: "
+      ],
+      "Select a speaker": [
+        "Selecteer een luidspreker"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -1428,8 +1880,32 @@
       "Share screen": [
         "Scherm delen"
       ],
+      "Share the meeting invitation with others": [
+        "Deel de uitnodiging voor de vergadering met anderen."
+      ],
+      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
+        "Deel deze link om andere uit te nodigen. U kunt deze ook altijd vinden door op het informatiepictogram in de werkbalk te klikken."
+      ],
+      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen deel te nemen. Eenvoudig, veilig en gratis."
+      ],
+      "Stop sharing your screen": [
+        "Stop met het delen van uw scherm"
+      ],
+      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
+        "Dit is een end-to-end versleuteld gesprek met kortstondige berichten. Nadat u het gesprek verlaat, kunt u dit gesprek niet meer openen."
+      ],
       "This meeting is being recorded": [
         "Deze sessie wordt opgenomen"
+      ],
+      "This meeting is locked. Please contact the host to join.": [
+        "Deze vergadering is vergrendeld. Neem contact op met de host om deel te nemen."
+      ],
+      "This meeting is password protected": [
+        "Deze vergadering is beveiligd met een wachtwoord"
+      ],
+      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
+        "Deze vergadering is beveiligd met end-to-end encryptie met Messaging Layer Security (MLS)."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
@@ -1437,11 +1913,29 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
+        "Om uw organisatie te beschermen, nodigt u uw team uit om ${ MEET_APP_NAME } te gebruiken."
+      ],
+      "Turn off camera": [
+        "Camera uitschakelen"
+      ],
       "Turn off microphone": [
         "Microfoon uitschakelen"
       ],
       "Turn on camera": [
         "Zet camera aan"
+      ],
+      "Turn on microphone": [
+        "Microfoon inschakelen"
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Upgrade om de limiet van 1 uur te verwijderen en het aftellen over te slaan. Geniet van vergaderingen tot 24 uur."
+      ],
+      "Video effects": [
+        "Video-effecten"
+      ],
+      "We hope you enjoyed your secure meeting!": [
+        "We hopen dat u genoten heeft van uw beveiligde vergadering!"
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -1461,14 +1955,35 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
+      "You can still turn off your microphone and camera anytime in the meeting": [
+        "U kunt uw microfoon en camera op elk moment tijdens de vergadering uitschakelen"
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "U bent uitgenodigd om deel te nemen aan een beveiligde vergadering. Bevestig uw naam en klik hieronder om deel te nemen."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
+      ],
+      "Your always available meeting room, share it only with people you trust.": [
+        "Uw altijd beschikbare vergaderruimte, deel deze alleen met mensen die u vertrouwt."
+      ],
+      "Your browser or device isn’t supported": [
+        "Uw browser of apparaat wordt niet ondersteund"
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your meeting is ready": [
+        "Uw vergadering is gereed"
+      ],
+      "Your personal link": [
+        "Uw persoonlijke link"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
+        "U staat op het punt om een link in een nieuwe tab te openen. Zorg ervoor dat u de website vertrouwt voordat u doorgaat."
       ]
     },
     "Label": {
@@ -1477,6 +1992,9 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
+      ],
+      "Audio": [
+        "Geluid"
       ],
       "Authenticator app": [
         "Authenticatie app"
@@ -1508,6 +2026,9 @@
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
       ],
+      "Meeting ID": [
+        "Vergaderingsnummer"
+      ],
       "Operating system": [
         "Besturingssysteem"
       ],
@@ -1532,8 +2053,14 @@
       "Verification code": [
         "Verificatiecode"
       ],
+      "Video": [
+        "Video"
+      ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "Your name": [
+        "Uw naam"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
@@ -1556,9 +2083,44 @@
         "Wat is dit?"
       ]
     },
+    "Meet": {
+      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
+        "Uw browser of apparaat software ondersteunt ${ MEET_APP_NAME } niet. ${ MEET_APP_NAME } vereist WebAssembly (Wasm) om te kunnen functioneren. Update uw browser of apparaat naar een versie die Wasm ondersteunt, of probeer een andere browser te gebruiken."
+      ]
+    },
+    "meet_2025": {
+      "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
+        "Aangezien u de enige deelnemer bent in deze vergadering, zal de vergadering automatisch sluiten. Wilt u in deze vergadering blijven?"
+      ]
+    },
+    "meet_2025 Action": {
+      "Leave meeting": [
+        "Vergadering verlaten"
+      ],
+      "Stay in the meeting": [
+        "Blijf in de vergadering"
+      ]
+    },
+    "meet_2025 Error": {
+      "Failed to start Picture-in-Picture": [
+        "Kon beeld-in-beeld niet starten"
+      ]
+    },
     "Notification": {
+      "Coming soon": [
+        "Binnenkort"
+      ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
+      ],
+      "Successfully rotated your personal meeting": [
+        "Uw persoonlijke vergadering is succesvol geroteerd"
+      ],
+      "Your personal meeting link has been copied to the clipboard": [
+        "Uw persoonlijke vergadering link is naar het klembord gekopieerd."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -1573,8 +2135,26 @@
       "E.g., ": [
         "Bijv., "
       ],
+      "Enter meeting title": [
+        "Voer vergadering titel in"
+      ],
       "Enter passphrase": [
         "Voer wachtwoordzin in"
+      ],
+      "Enter secret passphrase": [
+        "Voer geheime wachtwoordzin in"
+      ],
+      "Enter time": [
+        "Voer tijd in"
+      ],
+      "Find...": [
+        "Zoeken..."
+      ],
+      "https://meet.proton.me/join/id-abc#pwd-123": [
+        "https://meet.proton.me/join/id-abc#pwd-123"
+      ],
+      "Loading...": [
+        "Laden..."
       ],
       "Password": [
         "Wachtwoord"
@@ -1584,6 +2164,12 @@
       ],
       "Select": [
         "Selecteer"
+      ],
+      "Type an encrypted message...": [
+        "Typ een versleuteld bericht..."
+      ],
+      "Type your name": [
+        "Typ uw naam"
       ]
     },
     "Safety review": {
@@ -1657,6 +2243,9 @@
       ]
     },
     "Success": {
+      "Assigned new host": [
+        "Een nieuwe host is toegewezen"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -1683,14 +2272,26 @@
       "Are you sure?": [
         "Weet u het zeker?"
       ],
+      "Assign a new host": [
+        "Wijs een nieuwe host aan"
+      ],
       "Audio": [
         "Audio"
+      ],
+      "Authenticator": [
+        "Authenticator"
+      ],
+      "Chat": [
+        "Chat"
       ],
       "Date": [
         "Datum"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
+      ],
+      "Epoch": [
+        "Epoch"
       ],
       "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
         "Epoch ${ prevLog.epoch } → ${ log.epoch }"
@@ -1707,29 +2308,77 @@
       "Human verification": [
         "Persoonsverificatie"
       ],
+      "Info": [
+        "Informatie"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Invite link": [
+        "Uitnodigingslink"
       ],
       "Join a meeting": [
         "Deelnemen aan een vergadering"
       ],
+      "Join meeting": [
+        "Deelnemen aan vergadering"
+      ],
+      "Join with link": [
+        "Deelnemen met link"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Toegetreden op epoch ${ log.epoch }"
+      ],
+      "Joining meeting with ${ participantCount } other participants…": [
+        "U neemt deel aan de vergadering met ${ participantCount } andere deelnemers..."
+      ],
+      "Meeting details": [
+        "Vergaderingsgegevens"
       ],
       "Minicalendar": [
         "Mini-agenda"
       ],
+      "MLS state": [
+        "MLS status"
+      ],
+      "Participants": [
+        "Deelnemers"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Deelnemers (${ filteredParticipants.length })"
+      ],
+      "Passphrase": [
+        "Wachtwoordzin"
+      ],
       "Personal meeting": [
         "Persoonlijke vergadering"
       ],
+      "Personal meeting link": [
+        "Persoonlijke vergadering link"
+      ],
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"
+      ],
+      "Protecting meeting with end-to-end encryption...": [
+        "Vergadering wordt beveiligd met end-to-end-versleuteling..."
       ],
       "Report a problem": [
         "Meld een probleem"
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Schedule a meeting": [
+        "Vergadering plannen"
+      ],
+      "Schedule meeting": [
+        "Vergadering plannen"
+      ],
+      "Secret Passphrase": [
+        "Geheime wachtwoordzin"
+      ],
+      "Secure meeting": [
+        "Veilige vergadering"
       ],
       "Security": [
         "Beveiliging"
@@ -1740,11 +2389,26 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Start secure meeting": [
+        "Start veilige vergadering"
+      ],
+      "Starting meeting as the first participant…": [
+        "Vergadering wordt gestart als de eerste deelnemer..."
+      ],
+      "Talk confidentially": [
+        "Vertrouwelijk communiceren"
+      ],
       "Time": [
         "Tijd"
       ],
+      "Title": [
+        "Titel"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
+      ],
+      "Upcoming meetings": [
+        "Geplande vergaderingen"
       ],
       "Video": [
         "Video"
@@ -1761,6 +2425,14 @@
       ],
       "Background blur is not supported on your browser": [
         "Achtergrondvervaging wordt niet ondersteund door uw browser"
+      ],
+      "Recurring meeting": [
+        "Terugkerende vergadering"
+      ]
+    },
+    "Upgrade Button": {
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "Validation": {
@@ -1779,6 +2451,15 @@
       ]
     },
     "Warning": {
+      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
+        "Kon geen toegang krijgen tot de camera of microfoon. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
+      ],
+      "Could not access camera. You can try enabling it again from the meeting controls.": [
+        "Geen toegang tot de camera. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
+      ],
+      "Could not access microphone. You can try enabling it again from the meeting controls.": [
+        "Geen toegang tot de microfoon. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],

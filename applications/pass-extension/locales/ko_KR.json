@@ -1330,7 +1330,7 @@
         "${ PASS_APP_NAME }에서 저장된 패스키를 통한 인증을 제안합니다."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME }가 로그인 양식에 이메일 별칭 생성을 제안할 것입니다."
+        "${ PASS_APP_NAME }가 로그인 양식에 이메일 별칭 생성을 제안합니다."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }가 로그인 양식에서 강력한 비밀번호 생성을 제안합니다."
@@ -1814,9 +1814,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

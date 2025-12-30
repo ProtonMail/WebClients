@@ -500,6 +500,9 @@
       "Get more servers": [
         "Krijg meer servers"
       ],
+      "Get more storage": [
+        "Krijg meer opslag"
+      ],
       "Get the apps": [
         "De apps downloaden"
       ],
@@ -1276,6 +1279,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genereer ontbrekende sleutels voor adres \"${ emailAddress }\""
       ],
+      "Grant permission": [
+        "Toestemming verlenen"
+      ],
       "Grant permission to “${ emailAddress }”": [
         "Toegang verlenen aan \"${ emailAddress }\""
       ],
@@ -1408,6 +1414,9 @@
       ],
       "During the trial period, you can have up to 10 users.": [
         "Tijdens de proefperiode kunt u maximaal 10 gebruikers hebben."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis voor ${ TRIAL_DURATION_DAYS } dagen"
       ],
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
@@ -1761,6 +1770,9 @@
       ]
     },
     "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } van ${ providerUsers.length }"
+      ],
       "${ n } year ago": [
         "${ n } jaar geleden",
         "${ n } jaren geleden"
@@ -1768,8 +1780,20 @@
       "Add a domain": [
         "Een domein toevoegen."
       ],
+      "Add more users...": [
+        "Meer gebruikers toevoegen..."
+      ],
       "Authenticate": [
         "Verifiëren."
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Configure migration": [
+        "Migratie configureren"
+      ],
+      "Contacts": [
+        "Contacten"
       ],
       "Domain ownership verified": [
         "Domeineigendom geverifieerd."
@@ -1777,20 +1801,41 @@
       "Domain setup": [
         "Domeinconfiguratie"
       ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "E-mailnotificaties worden verzonden wanneer de migratie start en wanneer deze is voltooid. U wordt ook op de hoogte gesteld als er fouten zijn en als de migratie wordt onderbroken vanwege verlopen links."
+      ],
       "Estimated size": [
         "Geschatte grootte."
       ],
       "Everything": [
         "Alles"
       ],
+      "Failed to load OAuth": [
+        "Laden van OAuth mislukt"
+      ],
+      "Install migration app": [
+        "Installeer migratie app"
+      ],
       "Learn more about what can be migrated. Learn more": [
         "Meer informatie over wat kan worden gemigreerd. Meer informatie"
+      ],
+      "Mail": [
+        "Mail"
+      ],
+      "Migrate": [
+        "Migreren"
       ],
       "Migrate from Google Workspace": [
         "Migreren vanuit Google Workspace"
       ],
       "Migrate users": [
         "Gebruikers migreren"
+      ],
+      "Migration includes": [
+        "Migratie omvat"
+      ],
+      "Not started": [
+        "Niet begonnen"
       ],
       "Required to create user accounts": [
         "Nodig om gebruikersaccounts aan te maken."
@@ -1800,6 +1845,12 @@
       ],
       "Set up": [
         "Configureren"
+      ],
+      "Sign in to Google Workspace": [
+        "Inloggen bij Google Workspace"
+      ],
+      "Status": [
+        "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
         "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Dit geeft toestemming aan ${ BRAND_NAME } om uw gegevens te kopiëren. Installeer de app en ga hier terug om verder te gaan. Meer informatie."
@@ -1812,6 +1863,15 @@
       ],
       "Users migrated": [
         "Gebruikers gemigreerd."
+      ],
+      "Verify your domain": [
+        "Verifieer uw domein"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
+      ],
+      "Who will be notified?": [
+        "Wie wordt er op de hoogte gebracht?"
       ]
     },
     "Browser": {
@@ -3960,6 +4020,9 @@
       "Invalid postal code": [
         "Ongeldige postcode"
       ],
+      "Invalid private key file": [
+        "Ongeldig privé-sleutel bestand"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -4032,6 +4095,9 @@
       ],
       "Permissions request failed.": [
         "Verzoek om toestemming mislukt."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Voeg een betaalmethode toe voordat u uw abonnement opnieuw activeert."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
@@ -4878,6 +4944,9 @@
       ],
       "Double VPN": [
         "Dubbele VPN"
+      ],
+      "File attachment ": [
+        "Bestandsbijlage "
       ],
       "Lightning-fast speeds": [
         "Hoge snelheden"
@@ -5859,6 +5928,9 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Step 1: Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
       ],
@@ -5923,6 +5995,9 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Accounts": [
+        "Accounts"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
@@ -7317,6 +7392,9 @@
       "Shared vault updated": [
         "Gedeelde kluis bijgewerkt"
       ],
+      "Sign in only": [
+        "Alleen inloggen"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
@@ -7903,6 +7981,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Zonder een authenticatie app kunt u niet inloggen bij de ${ BRAND_NAME } applicaties die beveiligingssleutels nog niet ondersteunen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -8704,6 +8785,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Voor ${ DRIVE_SHORT_APP_NAME } en ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Voor ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } en ${ SHEETS_SHORT_APP_NAME }."
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
@@ -9667,6 +9751,9 @@
       "Detach from SSO": [
         "Loskoppelen van SSO"
       ],
+      "Disable user": [
+        "Gebruiker uitschakelen"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -9962,6 +10049,9 @@
       ],
       "99.95% SLA": [
         "99,95% SLA"
+      ],
+      "Activity logs and policy": [
+        "Activiteitenlogboek en beleid"
       ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
@@ -11172,6 +11262,9 @@
       "It's too expensive": [
         "Het is te duur"
       ],
+      "macOS": [
+        "macOS"
+      ],
       "My reason isn't listed": [
         "Mijn reden wordt niet vermeld"
       ],
@@ -11214,8 +11307,17 @@
       "Standard server configs": [
         "Standaard server configuraties"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "De hele organisatie"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "option": {
@@ -11936,6 +12038,9 @@
       "End date": [
         "Eind datum"
       ],
+      "Enter name": [
+        "Voer naam in"
+      ],
       "example@domain.com": [
         "voorbeeld@domein.com"
       ],
@@ -12249,6 +12354,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Als u annuleert, verliest u uw **${ referrerRewardAmount }** tegoed beloning."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Als u zich vóór deze datum abonneert, krijgt u **${ referrerRewardAmount }** aan tegoed. Als u zich niet abonneert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -12263,6 +12371,9 @@
       ],
       "Refer friends": [
         "Verwijs vrienden door"
+      ],
+      "Share using ${ name }": [
+        "Deel via ${ name }"
       ],
       "Start earning credits": [
         "Begin met het verdienen van tegoed"
@@ -13533,6 +13644,9 @@
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt u in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
       ],
+      "Set identity": [
+        "Identiteit instellen"
+      ],
       "Set your backup password": [
         "Stel uw back-up wachtwoord in"
       ],
@@ -13556,6 +13670,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Inloggen op een ander apparaat. Was u het?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Single sign-on werkt mogelijk niet correct zonder een organisatie-identiteit. Stel een identiteit in om betrouwbare verificatie te garanderen."
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
@@ -14422,6 +14539,9 @@
       "User deleted": [
         "Gebruiker verwijderd"
       ],
+      "User disabled": [
+        "Gebruiker uitgeschakeld"
+      ],
       "User enabled": [
         "Gebruiker ingeschakeld"
       ]
@@ -15184,6 +15304,9 @@
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"
       ],
+      "How your free trial works": [
+        "Hoe uw gratis proefperiode werkt"
+      ],
       "Human verification": [
         "Persoonsverificatie"
       ],
@@ -15226,6 +15349,9 @@
       ],
       "Main password": [
         "Hoofdwachtwoord"
+      ],
+      "Migration assistant": [
+        "Migratie-assistent"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -15650,6 +15776,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Welkom bij ${ planName }"
       ],
       "What is an alias?": [
         "Wat is een alias?"
@@ -16100,6 +16229,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Bespaar tot ${ priceString }** met een langer abonnement. Dezelfde premium functies, lagere prijs."
       ],
+      "Advanced security for your company": [
+        "Geavanceerde beveiliging voor uw bedrijf"
+      ],
       "Advanced security for your company?": [
         "Geavanceerde beveiliging voor uw bedrijf?"
       ],
@@ -16120,6 +16252,9 @@
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Bescherm uw organisatie tegen dataschendingen met ${ VPN_APP_NAME } voor Bedrijven."
+      ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Onbeperkte privacy voor maximaal ${ FAMILY_MAX_USERS } personen. Vanaf slechts ${ priceString }/maand."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Onbeperkte privacy voor u en een dierbare. Vanaf slechts ${ priceString }/maand."
@@ -16429,6 +16564,24 @@
     "VPNClient": {
       "Android": [
         "Android."
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

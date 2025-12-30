@@ -227,8 +227,14 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Reset all": [
+        "Alles resetten"
+      ],
       "Save": [
         "Opslaan"
+      ],
+      "Saving...": [
+        "Opslaan..."
       ],
       "Scroll to bottom": [
         "Naar beneden scrollen"
@@ -775,6 +781,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Add from ${ DRIVE_APP_NAME }": [
+        "Toevoegen vanuit ${ DRIVE_APP_NAME }"
+      ],
       "Browse ${ DRIVE_SHORT_APP_NAME }": [
         "Blader door ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -784,8 +793,17 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Dark": [
+        "Donker"
+      ],
+      "Disable ghost mode": [
+        "Spookmodus uitschakelen"
+      ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Enable ghost mode": [
+        "Spookmodus inschakelen"
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Ontvang ${ LUMO_SHORT_APP_NAME } Plus al vanaf ${ price }"
@@ -796,8 +814,17 @@
       "I like this response": [
         "Ik vind dit antwoord leuk"
       ],
+      "Light": [
+        "Licht"
+      ],
       "New chat": [
         "Nieuwe chat"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Open ${ DRIVE_APP_NAME }"
+      ],
+      "Refresh folder contents": [
+        "Inhoud van de map vernieuwen"
       ],
       "Report an issue": [
         "Meld een probleem"
@@ -816,11 +843,37 @@
       ],
       "Submit": [
         "Versturen"
+      ],
+      "System": [
+        "Systeem"
+      ],
+      "Try again": [
+        "Probeer opnieuw"
+      ],
+      "Upload a file": [
+        "Upload een bestand"
+      ],
+      "Upload file and add to knowledge base": [
+        "Bestand uploaden en toevoegen aan kennisbank"
+      ],
+      "Upload from device": [
+        "Uploaden vanaf uw apparaat"
+      ]
+    },
+    "collider_2025: b2b": {
+      "By ${ BRAND_NAME }": [
+        "Door ${ BRAND_NAME }"
+      ],
+      "For Business": [
+        "Voor Bedrijven"
       ]
     },
     "collider_2025: Button": {
       "Close": [
         "Sluiten"
+      ],
+      "Delete all": [
+        "Alles verwijderen"
       ],
       "Join waitlist": [
         "Meld u aan voor de wachtlijst"
@@ -828,11 +881,17 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Maybe later": [
+        "Misschien later"
+      ],
       "Open Link": [
         "Link openen"
       ],
       "Retry": [
         "Opnieuw proberen"
+      ],
+      "Try it now": [
+        "Probeer het nu"
       ],
       "Upload": [
         "Uploaden"
@@ -877,6 +936,9 @@
       ]
     },
     "collider_2025: Characteristic Title": {
+      "Enter": [
+        "Invoeren"
+      ],
       "Only you have access": [
         "Alleen u hebt toegang"
       ],
@@ -900,13 +962,70 @@
       ]
     },
     "collider_2025: Context": {
+      "I believe cereal is a soup and I'm not sorry": [
+        "Ik ben van mening dat ontbijtgranen soep zijn en ik heb er geen spijt van."
+      ],
       "I believe pizza is a vegetable if it has enough toppings": [
         "Ik geloof dat pizza een groente is als er genoeg beleg op zit."
+      ],
+      "I believe tabs vs spaces is a human rights issue": [
+        "Ik geloof dat tabs versus spaties een mensenrechtenprobleem is."
+      ],
+      "I collect vintage error messages": [
+        "Ik verzamel vintage foutberichten"
+      ],
+      "I communicate primarily through GIFs and emoji": [
+        "Ik communiceer voornamelijk via GIF's en emoji"
+      ],
+      "I have a PhD in overthinking simple problems": [
+        "Ik heb een doctoraat in het overdenken van eenvoudige problemen"
+      ],
+      "I have strong opinions about pineapple on pizza": [
+        "Ik heb uitgesproken meningen over ananas op pizza"
+      ],
+      "I have trust issues with autocomplete": [
+        "Ik heb vertrouwensproblemen met autocomplete"
+      ],
+      "I judge people based on their commit messages": [
+        "Ik beoordeel mensen op basis van hun commit berichten"
+      ],
+      "I name all my houseplants after Renaissance painters": [
+        "Ik noem al mijn kamerplanten naar schilders uit de Renaissance."
+      ],
+      "I once spent 3 hours debugging a missing semicolon": [
+        "Ik heb eens 3 uur besteed aan het opsporen van fouten als gevolg van een ontbrekende puntkomma."
+      ],
+      "I prefer my explanations like my coffee: dark and bitter": [
+        "Ik heb mijn uitleg graag zoals mijn koffie: donker en bitter"
+      ],
+      "I speak fluent sarcasm and broken French": [
+        "Ik spreek vloeiend sarcasme en gebroken Frans"
+      ],
+      "I talk to my rubber duck for debugging help": [
+        "Ik praat met mijn rubberen eend voor hulp bij het opsporen van fouten"
+      ],
+      "I'm on a first-name basis with Stack Overflow": [
+        "Ik ben goed bekend met Stack Overflow"
+      ],
+      "I'm powered by caffeine and existential dread": [
+        "Ik word aangedreven door cafeïne en existentiële angst"
       ]
     },
     "collider_2025: Description": {
+      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Verhoog uw privé AI ervaring en ontgrendel geavanceerde modellen en premium functies met ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "Last updated on ${ formattedDate }": [
+        "Laatst bijgewerkt op ${ formattedDate }"
+      ],
+      "Permanently delete your chats. This is irreversible.": [
+        "Verwijder uw gesprekken permanent. Dit is onomkeerbaar."
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Schakel tussen lichte en donkere modus"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -920,8 +1039,32 @@
       ]
     },
     "collider_2025: Error": {
+      "Error processing ${ result.fileName }: ${ result.errorMessage }": [
+        "Fout bij het verwerken van ${ result.fileName }: ${ result.errorMessage }"
+      ],
+      "Error processing file: ${ file.name }": [
+        "Fout bij het verwerken van bestand: ${ file.name }"
+      ],
+      "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
+        "Het verwerken van het ${ DRIVE_SHORT_APP_NAME } bestand is mislukt: ${ file.name }"
+      ],
+      "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
+        "Bestand \"${ file.name }\" is te groot (${ fileSizeFormatted }). Maximale toegestane grootte is ${ maxSizeFormatted }."
+      ],
+      "File already added: ${ result.fileName }": [
+        "Bestand reeds toegevoegd: ${ result.fileName }"
+      ],
+      "File format not supported: ${ result.fileName }": [
+        "Bestandsformaat wordt niet ondersteund: ${ result.fileName }"
+      ],
+      "File uploaded but failed to add to knowledge base": [
+        "Bestand geüpload, maar kon niet aan de kennisbank worden toegevoegd."
+      ],
       "Please select a category to describe what went wrong with the generated text": [
         "Selecteer een categorie om te beschrijven wat er misging met de gegenereerde tekst"
+      ],
+      "PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.": [
+        "PowerPoint-bestanden worden niet ondersteund. Converteer naar PDF en upload de PDF-versie voor betere tekstextractie."
       ],
       "Sign up for free to continue chatting and unlock access to chat history, starred chats, and more features.": [
         "Meld u gratis aan om door te gaan met chatten en toegang te krijgen tot gespreksgeschiedenis, favoriete gesprekken en meer functies."
@@ -945,6 +1088,9 @@
       ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
         "Uw verzoek is niet doorgekomen of kon niet worden voltooid. Probeer het opnieuw te verzenden."
+      ],
+      "Your request was queued but the connection was interrupted. This usually happens when ${ LUMO_SHORT_APP_NAME } is experiencing high demand. Please try again.": [
+        "Uw verzoek is in de wachtrij geplaatst, maar de verbinding is onderbroken. Dit gebeurt meestal wanneer ${ LUMO_SHORT_APP_NAME } te maken heeft met grote vraag. Probeer het opnieuw."
       ]
     },
     "collider_2025: Error Title": {
@@ -953,6 +1099,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } heeft het er maar druk mee"
+      ],
+      "Connection interrupted": [
+        "Verbinding verbroken"
       ],
       "Looks like there's a lot of traffic": [
         "Het lijkt erop dat er veel verkeer is"
@@ -1023,8 +1172,28 @@
       "Advanced models": [
         "Geavanceerde modellen"
       ],
+      "Large file uploads": [
+        "Grote bestandsuploads"
+      ],
+      "Unlimited chat history": [
+        "Onbeperkte gespreksgeschiedenis"
+      ],
+      "Unlimited favourite chats": [
+        "Onbeperkt aantal favoriete gesprekken"
+      ],
+      "Unlimited weekly chats": [
+        "Onbeperkt aantal wekelijkse gesprekken"
+      ],
       "Web search": [
         "Zoeken op het web"
+      ]
+    },
+    "collider_2025: Guest Signin": {
+      "Save your chats": [
+        "Sla uw gesprekken op"
+      ],
+      "Sign in to save your conversations and access them from anywhere.": [
+        "Log in om uw gesprekken op te slaan en er overal toegang toe te krijgen."
       ]
     },
     "collider_2025: Header": {
@@ -1033,17 +1202,50 @@
       ]
     },
     "collider_2025: Info": {
+      " ${ BRAND_NAME } file is hidden (not supported yet)": [
+        " ${ BRAND_NAME } bestand is verborgen (nog niet ondersteund)"
+      ],
+      " ${ BRAND_NAME } files are hidden (not supported yet)": [
+        " ${ BRAND_NAME } bestanden zijn verborgen (nog niet ondersteund)"
+      ],
+      " file is hidden (unsupported file type)": [
+        " bestand is verborgen (niet ondersteund bestandstype)"
+      ],
+      " files are hidden (unsupported file types)": [
+        " bestanden zijn verborgen (niet ondersteunde bestandstypen)"
+      ],
+      " of space": [
+        " ruimte"
+      ],
+      " talk to your admin.": [
+        " neem contact op met uw beheerder."
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } opslagruimte is nog niet ingesteld"
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
+      "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
+        "${ LUMO_SHORT_APP_NAME } geeft toegang tot geavanceerde modellen om u te helpen bij complexere vragen en betere antwoorden te bieden."
+      ],
       "1 file": [
         "1 bestand"
       ],
+      "Access ${ DRIVE_APP_NAME }": [
+        "Open ${ DRIVE_APP_NAME }"
+      ],
+      "Active": [
+        "Actief"
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "Add to active": [
+        "Toevoegen aan actief"
+      ],
+      "Adding to knowledge base...": [
+        "Toevoegen aan kennisbank..."
       ],
       "Advanced account and network security in one plan": [
         "Geavanceerde account- en netwerkbeveiliging in één abonnement"
@@ -1056,6 +1258,9 @@
       ],
       "characters": [
         "tekens"
+      ],
+      "Chat knowledge": [
+        "Gesprek kennis"
       ],
       "Check this is the site you expect to visit": [
         "Controleer of dit de site is die u verwacht te bezoeken"
@@ -1084,6 +1289,18 @@
       "Error Processing File": [
         "Fout bij verwerken bestand"
       ],
+      "Exclude file": [
+        "Bestand uitsluiten"
+      ],
+      "File capacity": [
+        "Bestand capaciteit"
+      ],
+      "File capacity for this conversation": [
+        "Bestandscapaciteit voor dit gesprek"
+      ],
+      "File too large for preview (>150k tokens)": [
+        "Bestand te groot voor voorbeeld (>150k tokens)"
+      ],
       "files": [
         "bestanden"
       ],
@@ -1092,6 +1309,9 @@
       ],
       "files are not currently supported for content extraction.": [
         "bestanden worden momenteel niet ondersteund voor inhoudsextractie."
+      ],
+      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
+        "Voor elk gesprek heeft ${ LUMO_SHORT_APP_NAME } de capaciteit om een beperkte hoeveelheid informatie te verwerken. De voortgangsbalk toont hoeveel capaciteit uw huidige bestanden gebruiken. "
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
@@ -1102,8 +1322,17 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Voeg uw prompt en het antwoord toe om ons te helpen de nauwkeurigheid te verbeteren."
       ],
+      "Loading": [
+        "Laden"
+      ],
+      "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
+        "Het lijkt erop dat uw ${ DRIVE_APP_NAME } nog niet is ingesteld."
+      ],
       "Manage files": [
         "Bestanden beheren"
+      ],
+      "Maybe later": [
+        "Misschien later"
       ],
       "No Content Available": [
         "Geen inhoud beschikbaar"
@@ -1113,6 +1342,9 @@
       ],
       "No data rows found in this file.": [
         "Geen gegevensrijen gevonden in dit bestand."
+      ],
+      "No files available": [
+        "Geen bestanden beschikbaar"
       ],
       "Note:": [
         "Let op:"
@@ -1126,8 +1358,14 @@
       "Please wait for files to finish processing": [
         "Wacht alstublieft tot de bestanden klaar zijn met verwerken"
       ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Druk op ${ shiftEnterBoldText } om te vragen"
+      ],
       "Processed content": [
         "Verwerkte inhoud"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "Verwerken van ${ uploadProgress.fileName }"
       ],
       "Processing file contents...": [
         "Bestandsinhoud wordt verwerkt..."
@@ -1174,6 +1412,12 @@
       "Showing first": [
         "Toont eerste"
       ],
+      "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
+        "Meld u aan of maak een account aan om bestanden van uw ${ DRIVE_APP_NAME } (end-to-end versleutelde cloudopslag) te bekijken en toe te voegen aan uw chatkennis."
+      ],
+      "Space usage: ": [
+        "Opslaggebruik: "
+      ],
       "Table view": [
         "Tabelweergave"
       ],
@@ -1183,11 +1427,20 @@
       "This file appears to be empty or contains no extractable text content.": [
         "Dit bestand lijkt leeg te zijn of bevat geen extraheerbare tekstinhoud."
       ],
+      "This folder is empty": [
+        "Deze map is leeg"
+      ],
+      "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
+        "Om te beginnen, open ${ DRIVE_APP_NAME } om uw beveiligde opslag in te stellen."
+      ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Om later naar dit gesprek te kunnen verwijzen, meldt u zich aan of maakt u een account aan."
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Probeer de slimste versie van ${ LUMO_SHORT_APP_NAME } met geavanceerde mogelijkheden."
+      ],
+      "Trying...": [
+        "Bezig..."
       ],
       "Unable to parse this file as a table. You can view the raw content instead.": [
         "Kan dit bestand niet als tabel parseren. U kunt in plaats daarvan de ruwe inhoud bekijken."
@@ -1195,19 +1448,111 @@
       "Unsupported File Type": [
         "Niet-ondersteund bestandstype"
       ],
+      "Unused ": [
+        "Niet gebruikt "
+      ],
       "Uploading ${ uploadProgress.fileName }": [
         "Opladen van ${ uploadProgress.fileName }"
+      ],
+      "used": [
+        "gebruikt"
       ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Let op spelfouten (bijv. proton.me vs pr0t0n.me)"
       ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
+      ],
+      "Your information is zero-access encrypted": [
+        "Uw informatie is zero-access versleuteld"
+      ]
+    },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "E-mailadres is niet geldig"
+      ],
+      "Email address is required": [
+        "E-mailadres is verplicht"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Sluiten"
+      ],
+      "Invite friends": [
+        "Vrienden uitnodigen"
+      ],
+      "Maybe later": [
+        "Misschien later"
+      ],
+      "Send invitation": [
+        "Uitnodiging verzenden"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "E-mail van uw vriend"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Kent u iemand die baat zou hebben bij een privacy-gerichte AI? Nodig hen uit om zich aan te melden voor de wachtlijst van ${ LUMO_SHORT_APP_NAME }. U hebt nog ${ remainingInvitesText } uitnodigingen over."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "U hebt nog ${ remainingInvitesText } uitnodigingen over."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Uitnodiging verzonden"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Uitnodiging verzonden!"
+      ],
+      "No invites left  ": [
+        "Geen uitnodigingen meer over"
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Dank u voor het helpen van anderen om ${ LUMO_SHORT_APP_NAME } te ontdekken! Als er meer uitnodigingen beschikbaar komen, laten we het u weten."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Wij hebben ${ emailText } uitgenodigd. Zij ontvangen instructies over hoe ze zich kunnen aanmelden voor de wachtlijst."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Nodig vrienden uit om ${ LUMO_APP_NAME } te ervaren"
       ]
     },
     "collider_2025: Job": {
       "Cat herder": [
         "Kattenhoeder"
+      ],
+      "Chief Treat Distribution Officer": [
+        "Hoofd Traktatie Verdeler"
+      ],
+      "Director of Windowsill Security": [
+        "Directeur van Windowsill Security"
+      ],
+      "Feline Behavior Consultant": [
+        "Gedragsconsulent voor katten"
+      ],
+      "Head of Yarn Ball Quality Control": [
+        "Hoofd Kwaliteitscontrole van Bollen Garen"
+      ],
+      "Marketing manager": [
+        "Marketingmanager"
+      ],
+      "Professional cat napper": [
+        "Professionele dutjes liefhebber"
+      ],
+      "Professional Sunbeam Tester": [
+        "Professionele Zonnestraal Tester"
+      ],
+      "Senior Cardboard Box Inspector": [
+        "Senior Inspecteur Kartonnen Dozen"
       ]
     },
     "collider_2025: Label": {
@@ -1222,6 +1567,14 @@
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
+      ]
+    },
+    "collider_2025: Legal disclaimer": {
+      "and": [
+        "en"
+      ],
+      "By using ${ LUMO_SHORT_APP_NAME }, you agree to our": [
+        "Door gebruik te maken van ${ LUMO_SHORT_APP_NAME }, gaat u akkoord met onze"
       ]
     },
     "collider_2025: Legal link": {
@@ -1259,13 +1612,51 @@
       ]
     },
     "collider_2025: Personality": {
+      "Business Cat": [
+        "Zakelijke Kat"
+      ],
+      "Default": [
+        "Standaard"
+      ],
+      "Lazy Cat": [
+        "Luie Kat"
+      ],
+      "Playful Cat": [
+        "Speelse Kat"
+      ],
       "Sassy Cat": [
         "Pittige Kat"
+      ],
+      "Wise Cat": [
+        "Wijze Kat"
       ]
     },
     "collider_2025: Personality Description": {
+      "Cheerful and adaptive": [
+        "Opgewekt en adaptief"
+      ],
+      "Chill and laid-back": [
+        "Ontspannen en relaxed"
+      ],
       "Energetic and fun-loving": [
         "Energiek en levenslustig"
+      ],
+      "Professional but still a cat": [
+        "Professioneel, maar nog steeds een kat"
+      ],
+      "Thoughtful and philosophical": [
+        "Bedachtzaam en filosofisch"
+      ],
+      "Witty with a bit of attitude": [
+        "Geestig met een beetje pit."
+      ]
+    },
+    "collider_2025: Personalization": {
+      "Personalize your ${ LUMO_SHORT_APP_NAME } experience": [
+        "Personaliseer uw ${ LUMO_SHORT_APP_NAME } ervaring"
+      ],
+      "Sign in or create a free account to customize how ${ LUMO_SHORT_APP_NAME } interacts with you. Set your preferences, communication style, and more.": [
+        "Log in of maak een gratis account aan om aan te passen hoe ${ LUMO_SHORT_APP_NAME } met u omgaat. Stel uw voorkeuren, communicatiestijl en meer in."
       ]
     },
     "collider_2025: Pill": {
@@ -1287,19 +1678,45 @@
       ],
       "General": [
         "Algemeen"
+      ],
+      "Personalization": [
+        "Personalisatie"
+      ]
+    },
+    "collider_2025: Status": {
+      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ is inbegrepen in uw Visionary abonnement en u heeft toegang tot deze functies:"
+      ],
+      "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
+        "U bent geabonneerd op ${ LUMO_SHORT_APP_NAME }+ en heeft toegang tot de volgende functies:"
       ]
     },
     "collider_2025: Success": {
+      "All chats deleted successfully": [
+        "Alle gesprekken zijn succesvol verwijderd."
+      ],
+      "File added to knowledge base: ${ result.fileName }": [
+        "Bestand toegevoegd aan kennisbank: ${ result.fileName }"
+      ],
+      "File uploaded and added to knowledge base": [
+        "Bestand geüpload en toegevoegd aan de kennisbank"
+      ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
       ]
     },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } Business": [
+        "${ LUMO_SHORT_APP_NAME } Business"
+      ],
       "${ LUMO_SHORT_APP_NAME } Plus": [
         "${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Over ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Delete all chats": [
+        "Verwijder alle gesprekken"
       ],
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
@@ -1319,8 +1736,14 @@
       "Secure your spot": [
         "Beveilig uw plek"
       ],
+      "Theme": [
+        "Thema"
+      ],
       "Upload files": [
         "Bestanden uploaden"
+      ],
+      "Visionary": [
+        "Visionary"
       ],
       "You're on the list": [
         "U staat op de lijst"
@@ -1329,30 +1752,92 @@
         "U staat op de wachtlijst"
       ]
     },
+    "collider_2025: Tooltip": {
+      "Contact your admin to upgrade": [
+        "Neem contact op met uw beheerder om te upgraden"
+      ]
+    },
     "collider_2025: Top nav link": {
       "About": [
         "Over"
+      ],
+      "For Business": [
+        "Voor Bedrijven"
       ],
       "Try ${ MAIL_APP_NAME }": [
         "Probeer ${ MAIL_APP_NAME }"
       ]
     },
     "collider_2025: Trait": {
+      "Chatty": [
+        "Spraakzaam"
+      ],
+      "Encouraging": [
+        "Aanmoedigend"
+      ],
+      "Forward thinking": [
+        "Vooruitdenkend"
+      ],
       "Gen Z": [
         "Generatie Z"
+      ],
+      "Humble": [
+        "Bescheiden"
+      ],
+      "Straight shooting": [
+        "Recht door zee"
+      ],
+      "Traditional": [
+        "Traditioneel"
+      ],
+      "Witty": [
+        "Geestig"
       ]
     },
     "collider_2025: Trait Description": {
       "Be conversational and engaging in responses": [
         "Weest u conversatiegericht en boeiend in reacties"
       ],
+      "Be modest and acknowledge limitations when appropriate": [
+        "Wees bescheiden en erken beperkingen wanneer dit passend is."
+      ],
+      "Be supportive and motivating in your tone": [
+        "Wees ondersteunend en motiverend in uw toon"
+      ],
+      "Embrace progressive and innovative perspectives": [
+        "Omarm progressieve en innovatieve perspectieven"
+      ],
+      "Maintain a formal and conventional approach": [
+        "Hanteer een formele en conventionele benadering"
+      ],
+      "Tell it like it is; don't sugar-coat responses": [
+        "Zeg het zoals het is; draai er niet omheen"
+      ],
+      "Use clever humor and wordplay when appropriate": [
+        "Gebruik slimme humor en woordspelingen indien van toepassing"
+      ],
       "Use modern slang and trendy communication style": [
         "Gebruik moderne omgangstaal en een eigentijdse communicatiestijl"
       ]
     },
     "collider_2025: Trait Sentence": {
+      "Be conversational and engaging in your responses.": [
+        "Ben conversatie gericht en boeiend in reacties."
+      ],
+      "Be humble when appropriate.": [
+        "Wees bescheiden wanneer gepast."
+      ],
+      "Be supportive and motivating in your tone.": [
+        "Wees ondersteunend en motiverend in uw toon."
+      ],
+      "Embrace progressive and innovative perspectives.": [
+        "Omarm progressieve en innovatieve perspectieven."
+      ],
       "Maintain a formal and conventional approach.": [
         "Hanteer een formele en conventionele benadering."
+      ],
+      "Tell it like it is; don't sugar-coat responses.": [
+        "Zeg het zoals het is; draai er niet omheen."
       ],
       "Use clever humor and wordplay when appropriate.": [
         "Gebruik slimme humor en woordspelingen indien van toepassing."
@@ -1365,8 +1850,16 @@
       "Create free account": [
         "Maak een gratis account aan"
       ],
+      "Upgrade": [
+        "Upgraden"
+      ],
       "Your chat history is limited to 7 days. For extended chat history and other premium features, ": [
         "Uw gespreksgeschiedenis is beperkt tot 7 dagen. Voor een uitgebreide gespreksgeschiedenis en andere premiumfuncties, "
+      ]
+    },
+    "collider_2025: Upsell Title": {
+      "Get": [
+        "Krijg"
       ]
     },
     "collider_2025: Waitlist Info": {
@@ -1381,12 +1874,21 @@
       ]
     },
     "collider_2025: Warning": {
+      "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
+        "${ LUMO_SHORT_APP_NAME } heeft het er maar druk mee"
+      ],
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdacht: ${ urlParts.subdomainCount } subdomein",
         "Verdacht: ${ urlParts.subdomainCount } subdomeinen"
       ],
+      "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
+        "Wij ondervinden momenteel veel verkeer, maar als ${ LUMO_SHORT_APP_NAME } Plus klant bevindt u zich in de snelle baan. Wij geven zoals altijd prioriteit aan uw verzoeken."
+      ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
         "Er is momenteel een hogere dan gebruikelijke verkeersdrukte, waardoor reacties mogelijk iets trager zijn dan normaal. ${ signInLink } voor snellere toegang."
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
+        "We ondervinden momenteel een hoger verkeersvolume dan gebruikelijk, dus antwoorden kunnen wat trager zijn. Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor prioriteitstoegang tijdens drukke momenten."
       ]
     },
     "collider_2025: Web Search": {
@@ -1395,11 +1897,23 @@
       ]
     },
     "collider_2025:Action": {
+      "Add details": [
+        "Voeg gegevens toe"
+      ],
+      "Add more information to improve the response": [
+        "Voeg meer informatie toe om het antwoord te verbeteren."
+      ],
       "Ask the model to be more careful and thorough": [
         "Vraag het model om voorzichtiger en grondiger te zijn."
       ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Describe desired changes...": [
+        "Beschrijf de gewenste wijzigingen..."
+      ],
+      "More concise": [
+        "Beknopter"
       ],
       "Next message": [
         "Volgend bericht"
@@ -1412,11 +1926,29 @@
       ],
       "Remove file": [
         "Bestand verwijderen"
+      ],
+      "Request a shorter, more focused response": [
+        "Vraag om een korter, meer gericht antwoord"
+      ],
+      "Retry with the same prompt": [
+        "Opnieuw proberen met dezelfde prompt"
+      ],
+      "Think longer": [
+        "Langer nadenken"
+      ],
+      "Try again": [
+        "Probeer opnieuw"
+      ],
+      "What needs changed?": [
+        "Wat moet er worden gewijzigd?"
       ]
     },
     "collider_2025:Button": {
       "Cancel": [
         "Annuleren"
+      ],
+      "Close sidebar": [
+        "Zijbalk sluiten"
       ],
       "Edit": [
         "Bewerken"
@@ -1430,17 +1962,32 @@
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Krijg ${ LUMO_SHORT_APP_NAME } Plus"
       ],
+      "Help and support": [
+        "Hulp en ondersteuning"
+      ],
+      "Hide sidebar": [
+        "Zijbalk verbergen"
+      ],
+      "Manage chat knowledge files (${ totalFiles })": [
+        "Gesprek kennis bestanden beheren (${ totalFiles })"
+      ],
       "Manage chat knowledge files(${ totalFiles })": [
         "Chatkennisbestanden beheren (${ totalFiles })"
       ],
       "New chat": [
         "Nieuwe chat"
       ],
+      "Search": [
+        "Zoeken"
+      ],
       "Send": [
         "Verzenden"
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Show sidebar": [
+        "Toon zijbalk"
       ],
       "Unfavorite": [
         "Verwijderen uit favorieten"
@@ -1467,6 +2014,9 @@
       ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
+      ],
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
+        "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
       ]
     },
     "collider_2025:Label": {
@@ -1488,6 +2038,20 @@
       ],
       "Processing files, please wait...": [
         "Bestanden worden verwerkt, even geduld alstublieft..."
+      ],
+      "Search chats": [
+        "Gesprekken doorzoeken"
+      ],
+      "Sign in required": [
+        "Aanmelden vereist"
+      ]
+    },
+    "collider_2025:Prompt": {
+      "How do people celebrate New Year's Eve around the world?": [
+        "Hoe viert men over de hele wereld Oudejaarsavond?"
+      ],
+      "What are the origins of Christmas?": [
+        "Wat zijn de oorsprongen van Kerstmis?"
       ]
     },
     "collider_2025:Title": {
@@ -1497,11 +2061,20 @@
       "Built by the team that knows privacy": [
         "Gebouwd door het team dat privacy kent"
       ],
+      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
+        "Donkere modus was een van de meest langverwachte updates van onze community voor ${ LUMO_SHORT_APP_NAME }. Binnen het ${ BRAND_NAME } ecosysteem kunt u het uiterlijk van al uw apps aanpassen, en nu kunt u ook ${ LUMO_SHORT_APP_NAME } aanpassen, met een licht of donker thema."
+      ],
+      "Dark mode is here": [
+        "Donkere modus is hier"
+      ],
       "Earlier": [
         "Eerder"
       ],
       "Favorites": [
         "Favorieten"
+      ],
+      "Ghost mode": [
+        "Spookmodus"
       ],
       "Hello! How can I help you today?": [
         "Hallo! Hoe kan ik u vandaag helpen?"
@@ -1530,8 +2103,17 @@
       "No result.": [
         "Geen resultaat."
       ],
+      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
+        "Met personalisatie kunt u aanpassen hoe ${ LUMO_SHORT_APP_NAME } met u communiceert. Vertel ${ LUMO_SHORT_APP_NAME } uw naam, wat u doet en precies hoe u wilt dat het reageert: met geestige plagerijen, technicsche precisie of beknoptheid. Want de beste AI is niet voor iedereen hetzelfde. Het is er een die aanvoelt alsof het speciaal voor u is gemaakt."
+      ],
+      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
+        "Personalisatie: ${ LUMO_SHORT_APP_NAME } voor u"
+      ],
       "The AI that respects your privacy": [
         "De AI die uw privacy respecteert"
+      ],
+      "This chat disappears when you close it and is never saved.": [
+        "Dit gesprek verdwijnt wanneer u deze sluit en wordt nooit opgeslagen."
       ],
       "Today": [
         "Vandaag"
@@ -3281,6 +3863,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
+      "This information is zero-access encrypted.": [
+        "Uw informatie is zero-access versleuteld."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
@@ -3477,6 +4062,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything else ${ LUMO_SHORT_APP_NAME } should know about you?": [
+        "Is er nog iets anders dat ${ LUMO_SHORT_APP_NAME } van u moet weten?"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -3576,6 +4164,9 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "How should ${ LUMO_SHORT_APP_NAME } behave?": [
+        "Hoe moet ${ LUMO_SHORT_APP_NAME } zich gedragen?"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -3648,11 +4239,17 @@
       "Verification code": [
         "Verificatiecode"
       ],
+      "What do you do?": [
+        "Wat doet u?"
+      ],
       "What happened?": [
         "Wat is er gebeurd?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
+      ],
+      "What should ${ LUMO_SHORT_APP_NAME } call you?": [
+        "Hoe moet ${ LUMO_SHORT_APP_NAME } u noemen?"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
@@ -5090,6 +5687,9 @@
       "Select state": [
         "Selecteer provincie"
       ],
+      "Selected traits will appear here automatically": [
+        "Geselecteerde kenmerken verschijnen hier automatisch"
+      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
       ],
@@ -5865,20 +6465,23 @@
         "Uw kortere adres is nu klaar"
       ]
     },
+    "Tooltip": {
+      "Clear all selected traits and restore trait buttons": [
+        "Wis alle geselecteerde eigenschappen en herstel de eigenschap knoppen."
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "De nieuwe abonnementscyclus start op ${ formattedTime }"
+      ]
+    },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
         "${ LUMO_APP_NAME }: AI-assistent die uw privacy respecteert"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
-    "Tooltip": {
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
-      ],
-      "The new subscription cycle starts on ${ formattedTime }": [
-        "De nieuwe abonnementscyclus start op ${ formattedTime }"
       ]
     },
     "unprivatization": {
