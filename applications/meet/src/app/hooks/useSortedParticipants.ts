@@ -3,6 +3,8 @@ import { useCallback, useMemo, useRef } from 'react';
 import { useParticipants, useRoomContext } from '@livekit/components-react';
 import { type LocalParticipant, type RemoteParticipant, RoomEvent } from 'livekit-client';
 
+import isTruthy from '@proton/utils/isTruthy';
+
 import { useDebouncedActiveSpeakers } from './useDebouncedActiveSpeakers';
 
 type ParticipantWithMetadata = RemoteParticipant | LocalParticipant;
@@ -69,31 +71,36 @@ export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSi
             const wasOnPreviousFirstPage = (p: ParticipantWithMetadata) => prevFirstPageIdentities.has(p.identity);
             const stillExists = (identity: string) => currentParticipants.some((p) => p.identity === identity);
 
-            // 1. Local participant (always first)
-            const localParticipantData = participantsWithColors.find(isLocal) as LocalParticipant;
+            let localParticipantData: ParticipantWithMetadata | null = null;
+            const newActiveSpeakers: ParticipantWithMetadata[] = [];
+            const remainingParticipants: ParticipantWithMetadata[] = [];
 
-            // 2. New active speakers (speaking now but weren't on first page before)
-            const newActiveSpeakers = participantsWithColors.filter(
-                (p) => !isLocal(p) && isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
-            );
+            participantsWithColors.forEach((participant) => {
+                if (isLocal(participant)) {
+                    localParticipantData = participant;
+                } else if (isCurrentlySpeaking(participant) && !wasOnPreviousFirstPage(participant)) {
+                    newActiveSpeakers.push(participant);
+                } else if (!wasOnPreviousFirstPage(participant)) {
+                    remainingParticipants.push(participant);
+                }
+            });
 
             // 3. Previous first page participants (for stability, excluding those now speaking)
             const stablePreviousFirstPageParticipants = prevFirstPageParticipants.current.filter(
                 (p) => !isLocal(p) && stillExists(p.identity)
             );
 
-            // 4. Remaining inactive participants
-            const remainingParticipants = participantsWithColors.filter(
-                (p) => !isLocal(p) && !isCurrentlySpeaking(p) && !wasOnPreviousFirstPage(p)
-            );
-
             // Combine in priority order
             const sortedResult = [
+                // 1. Local participant (always first)
                 localParticipantData,
+                // 2. New active speakers (speaking now but weren't on first page before)
                 ...newActiveSpeakers,
+                // 3. Previous first page participants (for stability, excluding those now speaking)
                 ...stablePreviousFirstPageParticipants,
+                // 4. Remaining inactive participants
                 ...remainingParticipants,
-            ];
+            ].filter(isTruthy);
 
             // Calculate pagination
             const start = currentPage * currentPageSize;
