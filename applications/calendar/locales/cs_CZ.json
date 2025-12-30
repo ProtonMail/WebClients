@@ -5346,6 +5346,9 @@
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Kontaktní e-mail pro rezervace: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Rezervační stránka smazána"
       ],
@@ -5640,6 +5643,9 @@
       "Host": [
         "Hostitel"
       ],
+      "How far in advance can someone book?": [
+        "Jak dlouho předem může někdo provést rezervaci?"
+      ],
       "How long should an appointment last?": [
         "Jak dlouho by měla trvat schůzka?"
       ],
@@ -5799,6 +5805,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 hodiny předem"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 hodin předem"
+      ],
       "Monitor accounts": [
         "Sledování účtů"
       ],
@@ -5852,6 +5864,9 @@
       ],
       "Not connected": [
         "Nepřipojeno"
+      ],
+      "Not on the same day": [
+        "Ne ve stejný den"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -5912,9 +5927,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Lidé, kteří si u vás rezervují čas, uvidí ${ selectedCalendar.Email } jako vaši kontaktní adresu."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
@@ -6326,6 +6338,9 @@
       ],
       "Where will the appointment take place?": [
         "Kde se schůzka uskuteční?"
+      ],
+      "Which calendars should block bookings?": [
+        "Které kalendáře mají blokovat rezervace?"
       ],
       "Which event would you like to delete?": [
         "Kterou událost chcete smazat?"
@@ -6793,6 +6808,9 @@
       "Add image URL": [
         "Přidat odkaz obrázku"
       ],
+      "Add notice period": [
+        "Přidat lhůtu pro upozornění"
+      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
@@ -6861,6 +6879,9 @@
       ],
       "Category": [
         "Kategorie"
+      ],
+      "Check additional calendars for availability": [
+        "Zkontrolovat dostupnost v dalších kalendářích"
       ],
       "City": [
         "Město"

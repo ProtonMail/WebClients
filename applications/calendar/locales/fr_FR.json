@@ -3276,7 +3276,7 @@
         "120 minutes"
       ],
       "120m": [
-        "120m"
+        "120 min"
       ],
       "30 minutes": [
         "30 minutes"
@@ -3288,13 +3288,13 @@
         "60 minutes"
       ],
       "60m": [
-        "60m"
+        "60 min"
       ],
       "90 minutes": [
         "90 minutes"
       ],
       "90m": [
-        "90m"
+        "90 min"
       ]
     },
     "Edit billing address form note": {
@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-mail de contact pour la réservation : ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "La page de réservation a été supprimée"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Hôte"
       ],
+      "How far in advance can someone book?": [
+        "Combien de temps à l'avance peut-on réserver ?"
+      ],
       "How long should an appointment last?": [
         "Combien de temps un rendez-vous doit-il durer ?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
       ],
+      "Min. 2 hours before": [
+        "Minimum 2 heures avant"
+      ],
+      "Min. 48 hours before": [
+        "Minimum 48 heures avant"
+      ],
       "Monitor accounts": [
         "Surveiller les comptes"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Non connecté"
+      ],
+      "Not on the same day": [
+        "Pas le même jour"
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Les personnes qui réservent du temps avec vous verront ${ selectedCalendar.Email } comme votre adresse de contact."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Où aura lieu le rendez-vous ?"
+      ],
+      "Which calendars should block bookings?": [
+        "Quels calendriers doivent bloquer les réservations ?"
       ],
       "Which event would you like to delete?": [
         "Quel événement voulez-vous supprimer ?"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Ajouter l'URL de l'image"
       ],
+      "Add notice period": [
+        "Ajouter une période de préavis"
+      ],
       "Add to group": [
         "Ajouter au groupe"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Catégorie"
+      ],
+      "Check additional calendars for availability": [
+        "Vérifier les disponibilités dans les calendriers supplémentaires."
       ],
       "City": [
         "Ville"
@@ -9349,7 +9370,7 @@
     },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
-        "Êtes-vous sûr de vouloir continuer ?"
+        "Voulez-vous vraiment continuer ?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
         "Si vous choisissez de modifier votre abonnement ${ planTitle }, vous pourriez perdre l'accès à certaines fonctionnalités."

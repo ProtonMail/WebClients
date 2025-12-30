@@ -527,6 +527,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "Group owner": [
+        "ჯგუფის მფლობელი"
+      ],
       "Help and feedback": [
         "დახმარება და გამოხმაურება"
       ],
@@ -1157,6 +1160,11 @@
         "წინ გაგრძელება"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "მეტი ადგილის დამატება"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "გაუქმება"
@@ -1743,6 +1751,102 @@
         "მუშაობთ საიდუმლო მონაცემებთან?"
       ]
     },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } ${ providerUsers.length }-დან"
+      ],
+      "${ n } year ago": [
+        "${ n } წლის წინ",
+        "${ n } წლის წინ"
+      ],
+      "Add a domain": [
+        "დომენის დამატება"
+      ],
+      "Add more users...": [
+        "მეტი მომხმარებლის დამატება..."
+      ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Domain ownership verified": [
+        "დომენის მფლობელობა გადამოწმებულია"
+      ],
+      "Domain setup": [
+        "დომენის მორგება"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Everything": [
+        "ყველაფერი"
+      ],
+      "Failed to load OAuth": [
+        "OAuth-ის ჩატვირთვა ჩავარდა"
+      ],
+      "Install migration app": [
+        "მიგრაციის პროგრამის დაყენება"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "შეიტყვეთ მეტი, რისი მიგრაციაა შესაძლებელი. შეიტყვეთ მეტი"
+      ],
+      "Mail": [
+        "ფოსტა"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrate from Google Workspace": [
+        "მიგრაცია Google Workspace-დან"
+      ],
+      "Migrate users": [
+        "მომხმარებლების მიგრაცია"
+      ],
+      "Migration includes": [
+        "მიგრაცია შეიცავს"
+      ],
+      "Not started": [
+        "დაწყებული არაა"
+      ],
+      "Required to create user accounts": [
+        "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
+      ],
+      "Set up": [
+        "მორგება"
+      ],
+      "Sign in to Google Workspace": [
+        "შესვლა Google Workspace-ში"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "Transfer data from": [
+        "მონაცემების გადმოტანა საიდან"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "Users migrated": [
+        "მომხმარებლები მიგრირებულია"
+      ],
+      "Verify your domain": [
+        "თქვენი დომენის გადამოწმება"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "Who will be notified?": [
+        "ვის გაეგზავნება გაფრთხილება?"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
@@ -1973,6 +2077,15 @@
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ],
+      "Compliance with data protection regulations": [
+        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
       ],
@@ -1984,6 +2097,9 @@
       ],
       "Limited favorites": [
         "შეზღუდული რჩეულები"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1999,6 +2115,9 @@
       ],
       "Web search access": [
         "წვდომა ვებში ძებნასთან"
+      ],
+      "Zero-access encryption": [
+        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Info": {
@@ -4509,6 +4628,10 @@
       "Pending": [
         "რიგში"
       ],
+      "Pending invitation": [
+        "მომლოდინე მოსაწვევი",
+        "მომლოდინე მოსაწვევები"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
       ],
@@ -4517,6 +4640,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
+      ],
+      "View the invitation": [
+        "მოსაწვევის ნახვა",
+        "მოსაწვევების ნახვა"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
@@ -7531,6 +7658,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "განბლოკვისთვის ასწიეთ სატარიფო გეგმა Professional-ზე, ან უფრო მაღლა"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე."
+      ],
       "Upload your completed CSV file to create accounts": [
         "ანგარიშების შესაქმნელად ატვირთეთ თქვენი დასრულებული CSV ფაილი"
       ],
@@ -8329,6 +8459,9 @@
       ],
       "Colors": [
         "ფერები"
+      ],
+      "Command line interface (CLI)": [
+        "ბრძანების სტრიქონის ინტერფეისი (CLI)"
       ],
       "Common passwords": [
         "საერთო პაროლები"
@@ -9242,6 +9375,11 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
       ]
     },
     "Live Chat Modal": {
@@ -14975,6 +15113,9 @@
       ],
       "Main password": [
         "მთავარი პაროლი"
+      ],
+      "Migration assistant": [
+        "მიგრაციის დამხმარე"
       ],
       "Minicalendar": [
         "მინიკალენდარი"

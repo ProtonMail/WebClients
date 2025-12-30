@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Boeking contact e-mail: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Boekingspagina verwijderd"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Host"
       ],
+      "How far in advance can someone book?": [
+        "Hoe ver van tevoren kan iemand boeken?"
+      ],
       "How long should an appointment last?": [
         "Hoe lang moet een afspraak duren?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 uur van tevoren"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 uur van tevoren"
+      ],
       "Monitor accounts": [
         "Accounts monitoren"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Niet verbonden"
+      ],
+      "Not on the same day": [
+        "Niet op dezelfde dag"
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Mensen die tijd bij u boeken, zullen ${ selectedCalendar.Email } als uw contactadres zien."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Waar vindt de afspraak plaats?"
+      ],
+      "Which calendars should block bookings?": [
+        "Welke agenda's moeten boekingen blokkeren?"
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Afbeeldings-URL toevoegen"
       ],
+      "Add notice period": [
+        "Meldingstermijn toevoegen"
+      ],
       "Add to group": [
         "Toevoegen aan groep"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Categorie"
+      ],
+      "Check additional calendars for availability": [
+        "Controleer aanvullende agenda's op beschikbaarheid"
       ],
       "City": [
         "Stad"
@@ -11625,6 +11646,9 @@
       ],
       "How does it work?": [
         "Hoe werkt het?"
+      ],
+      "How your free trial works": [
+        "Hoe uw gratis proefperiode werkt"
       ],
       "Human verification": [
         "Persoonsverificatie"

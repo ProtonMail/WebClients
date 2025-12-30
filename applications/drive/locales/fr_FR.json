@@ -279,9 +279,6 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
-      "Create a spreadsheet": [
-        "Créer une feuille de calcul"
-      ],
       "Create album": [
         "Créer un album"
       ],
@@ -6653,9 +6650,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "Vos données restent les vôtres. Créez et collaborez en utilisant des feuilles de calcul complètes, sécurisées par un chiffrement de bout en bout."
-      ],
       "Your email address and password were leaked:": [
         "Votre adresse e-mail et votre mot de passe ont été exposés :"
       ],
@@ -9980,7 +9974,7 @@
     },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
-        "Êtes-vous sûr de vouloir continuer ?"
+        "Voulez-vous vraiment continuer ?"
       ],
       "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
         "Si vous choisissez de modifier votre abonnement ${ planTitle }, vous pourriez perdre l'accès à certaines fonctionnalités."
@@ -12144,6 +12138,9 @@
       "Get mobile and desktop apps": [
         "Obtenir l'application mobile et l'application de bureau"
       ],
+      "Get mobile app": [
+        "Obtenir l'application mobile"
+      ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
       ],
@@ -12204,9 +12201,6 @@
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "Voici ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."

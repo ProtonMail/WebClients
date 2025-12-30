@@ -1775,6 +1775,15 @@
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ],
+      "Compliance with data protection regulations": [
+        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
       ],
@@ -1786,6 +1795,9 @@
       ],
       "Limited favorites": [
         "შეზღუდული რჩეულები"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1801,6 +1813,9 @@
       ],
       "Web search access": [
         "წვდომა ვებში ძებნასთან"
+      ],
+      "Zero-access encryption": [
+        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Info": {
@@ -3891,6 +3906,9 @@
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
       ],
+      "You cannot enter the organizer's email": [
+        "ორგანიზატორის ელფოსტას ვერ შეიყვანთ"
+      ],
       "You have reached the maximum number of calendars.": [
         "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
       ],
@@ -4269,6 +4287,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
+      ],
+      "View the invitation": [
+        "მოსაწვევის ნახვა",
+        "მოსაწვევების ნახვა"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
@@ -5667,9 +5689,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
       ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "ადამიანები, რომლებიც თქვენთან დროს დაჯავშნიან, ${ selectedCalendar.Email }-ს თქვენს საკონტაქტო მისამართად დაინახავენ."
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline, მხოლოდ, უბრალო ტექსტის ფორმატთანაა თავსებადი."
       ],
@@ -6565,6 +6584,9 @@
       "Colors": [
         "ფერები"
       ],
+      "Command line interface (CLI)": [
+        "ბრძანების სტრიქონის ინტერფეისი (CLI)"
+      ],
       "Company": [
         "კომპანია"
       ],
@@ -7170,6 +7192,9 @@
       ],
       "settings": [
         "მორგება"
+      ],
+      "Terms and conditions": [
+        "წესები და პირობები"
       ],
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
@@ -8128,6 +8153,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "ჩვენ ყოველთვის ვცდილობთ, ${ config.appName } უკეთესი გავხადოთ. რამდენად კმაყოფილი ბრძანდებით მისით?"
       ]
     },
     "new_plans: Subtext": {

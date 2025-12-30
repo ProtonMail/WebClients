@@ -1785,7 +1785,7 @@
         "Historial de chat básico"
       ],
       "Built and based in Europe": [
-        "Construido y con sede en Europa"
+        "Desarrollado y con sede en Europa"
       ],
       "Compliance with data protection regulations": [
         "Cumplimiento con las regulaciones de protección de datos"
@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Correo de contacto para reservas: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Página de reservas eliminada"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Anfitrión"
       ],
+      "How far in advance can someone book?": [
+        "¿Con cuánta antelación se puede reservar?"
+      ],
       "How long should an appointment last?": [
         "¿Cuánto debería durar una cita?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
       ],
+      "Min. 2 hours before": [
+        "Mín. 2 horas antes"
+      ],
+      "Min. 48 hours before": [
+        "Mín. 48 horas antes"
+      ],
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "No conectado"
+      ],
+      "Not on the same day": [
+        "No el mismo día"
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y las leyes de privacidad suizas."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Las personas que reserven con usted verán ${ selectedCalendar.Email } como su dirección de contacto."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline solo es compatible con el formato de Texto Plano."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "¿Dónde tendrá lugar la cita?"
+      ],
+      "Which calendars should block bookings?": [
+        "¿Qué calendarios deben bloquear las reservas?"
       ],
       "Which event would you like to delete?": [
         "¿Cuál evento quiere eliminar?"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Agregar URL de imagen"
       ],
+      "Add notice period": [
+        "Añadir periodo de antelación"
+      ],
       "Add to group": [
         "Agregar al grupo"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Categoría"
+      ],
+      "Check additional calendars for availability": [
+        "Revisar disponibilidad en calendarios adicionales"
       ],
       "City": [
         "Ciudad"

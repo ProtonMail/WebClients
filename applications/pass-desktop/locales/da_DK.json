@@ -1238,7 +1238,7 @@
         "Noget gik galt. Du bedes logge ind igen."
       ],
       "The session has expired. Please sign in again.": [
-        "Din session er udløbet. Log venligst ind igen."
+        "Sessionen er udløbet. Log ind igen."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Der opstod en fejl under fjernelse af det sikre link. Prøv igen om et par minutter."
@@ -1965,10 +1965,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

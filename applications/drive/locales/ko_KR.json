@@ -276,9 +276,6 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
-      "Create a spreadsheet": [
-        "스프레드시트 생성"
-      ],
       "Create album": [
         "앨범 생성"
       ],
@@ -395,6 +392,15 @@
       ],
       "Download app": [
         "앱 다운로드"
+      ],
+      "Download for Mac": [
+        "Mac용 다운로드"
+      ],
+      "Download for MacOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
       ],
       "Download info": [
         "정보 다운로드"
@@ -1191,6 +1197,12 @@
       "What do I get?": [
         "무엇을 받게 되나요?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
       ],
@@ -1714,6 +1726,9 @@
       "Basic chat history": [
         "기본 채팅 기록"
       ],
+      "Built and based in Europe": [
+        "유럽에서 개발 및 기반"
+      ],
       "Compliance with data protection regulations": [
         "데이터 보호 규정 준수"
       ],
@@ -1732,6 +1747,9 @@
       "Limited favorites": [
         "제한된 즐겨찾기"
       ],
+      "Strict no-logs policy": [
+        "엄격한 무로그 정책"
+      ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
       ],
@@ -1746,6 +1764,9 @@
       ],
       "Web search access": [
         "웹 검색 접근"
+      ],
+      "Zero-access encryption": [
+        "제로 액세스 암호화"
       ]
     },
     "collider_2025: Info": {
@@ -3265,6 +3286,9 @@
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "현재 데스크톱 앱을 다운로드할 수 없습니다."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "청구서 주소 수정이 현재 사용할 수 없습니다.\n나중에 다시 시도하시기 바랍니다."
@@ -4889,6 +4913,9 @@
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처가 불러오기됩니다."
       ],
+      "Already in your library": [
+        "라이브러리에 이미 존재함"
+      ],
       "Also try looking in Trash.": [
         "또한 휴지통을 확인해 보세요."
       ],
@@ -5435,6 +5462,9 @@
       "Invite link copied": [
         "초대 링크를 복사했습니다"
       ],
+      "iOS and Android Apps": [
+        "iOS 및 Android 앱"
+      ],
       "Issues found": [
         "문제점 발견"
       ],
@@ -5866,6 +5896,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
+      ],
+      "Scan to download": [
+        "다운로드하려면 스캔"
       ],
       "Search cannot be enabled in this browser": [
         "이 브라우저에서 검색을 활성화할 수 없습니다"
@@ -6524,9 +6557,6 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
-      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
-        "데이터는 온전히 개인의 것이여야 합니다. 모든 기능을 갖춘 스프레드시트를 사용해 생성 및 공동 작업하세요. 종단간 암호화로 데이터가 안전하게 보호됩니다."
-      ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
       ],
@@ -6729,6 +6759,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "스크립팅, 자동화 및 개발 워크플로우에 이상적인 터미널에서 ${ PASS_APP_NAME }에 안전하게 접근하세요."
+      ],
       "Account holder": [
         "예금주"
       ],
@@ -6836,6 +6869,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Command line interface (CLI)": [
+        "명령줄 인터페이스 (CLI)"
       ],
       "Comment": [
         "댓글"
@@ -11820,6 +11856,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }의 모든 기능 이용하기"
       ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 다운로드"
+      ],
       "Get more from your VPN": [
         "VPN에 대해 더 알아보기"
       ],
@@ -11879,9 +11918,6 @@
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
-      ],
-      "Introducing ${ SHEETS_APP_NAME }": [
-        "${ SHEETS_APP_NAME }를 소개합니다"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -12551,6 +12587,11 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Drive for Business 구매"
       ]
     },
     "Validation": {

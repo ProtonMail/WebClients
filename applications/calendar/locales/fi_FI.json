@@ -5083,6 +5083,9 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Varausyhteyshenkilön sähköposti: ${ selectedCalendar.Email }"
+      ],
       "Booking updated successfully": [
         "Varaus päivitettiin onnistuneesti"
       ],
@@ -5354,6 +5357,9 @@
       "Host": [
         "Isäntä"
       ],
+      "How far in advance can someone book?": [
+        "Kuinka aikaisin etukäteen varauksen voi tehdä\n?"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jos pikanäppäimet ovat käytössä, voit käyttää seuraavia näppäimiä pikatoimintoihin tai eri näkymiin siirtymiseen. ${ metaKey } + K on aina käytössä."
       ],
@@ -5499,6 +5505,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Kaikkiin sähköpostiosoitteisiisi lähetetyt viestit saapuvat postilaatikkoosi."
       ],
+      "Min. 2 hours before": [
+        "Väh. 2 tuntia ennen"
+      ],
+      "Min. 48 hours before": [
+        "Väh. 48 tuntia ennen"
+      ],
       "Monitor accounts": [
         "Valvo tilejä"
       ],
@@ -5549,6 +5561,9 @@
       ],
       "Not connected": [
         "Ei yhdistetty"
+      ],
+      "Not on the same day": [
+        "Ei samana päivänä"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -5981,6 +5996,9 @@
       ],
       "Where will the appointment take place?": [
         "Missä tapaaminen järjestetään?"
+      ],
+      "Which calendars should block bookings?": [
+        "Mitkä kalentereiden pitäisi estää varauksia?"
       ],
       "Which event would you like to delete?": [
         "Mitkä tapahtumakerrat haluat poistaa?"
@@ -6418,6 +6436,9 @@
       "Add image URL": [
         "Lisää kuvan URL"
       ],
+      "Add notice period": [
+        "Lisää ilmoitusaika"
+      ],
       "Add to group": [
         "Lisää ryhmään"
       ],
@@ -6486,6 +6507,9 @@
       ],
       "Category": [
         "Aihe"
+      ],
+      "Check additional calendars for availability": [
+        "Tarkista lisäkalentereiden saatavuus"
       ],
       "City": [
         "Kaupunki"
