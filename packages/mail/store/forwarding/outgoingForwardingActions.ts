@@ -245,15 +245,9 @@ export const setupForwarding = ({
             };
 
             if (isReEnablingForwarding && forwardID) {
-                const { OutgoingAddressForwarding } = await silentApi<{
-                    OutgoingAddressForwarding: OutgoingAddressForwarding;
-                }>(
-                    updateForwardingConfig({
-                        ID: forwardID,
-                        ...e2eeForwardingParams,
-                    })
-                );
-                dispatch(outgoingAddressForwardingsActions.upsertForwarding(OutgoingAddressForwarding));
+                // Doesn't return a forwarding
+                await silentApi(updateForwardingConfig({ ID: forwardID, ...e2eeForwardingParams }));
+                await dispatch(outgoingForwardingThunk({ forward }));
             } else {
                 const { OutgoingAddressForwarding } = await silentApi<{
                     OutgoingAddressForwarding: OutgoingAddressForwarding;
