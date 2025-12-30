@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import {
     hasProcessableFields,
     hasProcessableNodes,
@@ -25,7 +26,6 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
-import debounce from '@proton/utils/debounce';
 
 type PageObserverState = {
     idle: boolean;

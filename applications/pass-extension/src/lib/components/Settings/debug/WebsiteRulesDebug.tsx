@@ -1,11 +1,12 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
+import debounce from 'lodash/debounce';
+
 import { Button } from '@proton/atoms/Button/Button';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { validateRules } from '@proton/pass/lib/extension/rules/rules';
 import browser from '@proton/pass/lib/globals/browser';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 export const WebsiteRulesDebug: FC = () => {

@@ -1,12 +1,12 @@
 import type { FC, MouseEventHandler } from 'react';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 import clsx from '@proton/utils/clsx';
-import debounce from '@proton/utils/debounce';
 
 import './TextAreaReadonly.scss';
 

@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
@@ -14,7 +15,6 @@ import type { AutosaveFormEntry } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import { logger } from '@proton/pass/utils/logger';
 import { urlEq } from '@proton/pass/utils/url/utils';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 export const createAutosaveService = (): AutosaveService => {

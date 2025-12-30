@@ -1,9 +1,10 @@
 import type { MouseEventHandler, Reducer } from 'react';
 import { useCallback, useEffect, useReducer, useRef } from 'react';
 
+import debounce from 'lodash/debounce';
+
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
-import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
 import type { ComposerDimension } from '../../helpers/composerPositioning';

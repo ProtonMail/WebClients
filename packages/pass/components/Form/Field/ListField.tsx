@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useTransition } from 'react';
 
 import type { ArrayHelpers, FieldProps, FormikErrors } from 'formik';
 import { FieldArray } from 'formik';
+import debounce from 'lodash/debounce';
 
 import type { Input } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
@@ -15,7 +16,6 @@ import type { Unpack } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
-import debounce from '@proton/utils/debounce';
 
 import { FieldBox } from './Layout/FieldBox';
 import { ListFieldItem } from './ListFieldItem';

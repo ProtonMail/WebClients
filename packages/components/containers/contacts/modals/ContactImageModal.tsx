@@ -1,6 +1,7 @@
 import type { ChangeEvent, FormEvent } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -20,7 +21,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
-import debounce from '@proton/utils/debounce';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {
     url?: string;

@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import { useEvent } from '../utils'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 
 const RESIZE_DEBOUNCE_WAIT = 50
 

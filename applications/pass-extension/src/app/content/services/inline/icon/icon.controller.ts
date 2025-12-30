@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import {
     ACTIVE_ICON_SRC,
     COUNTER_ICON_SRC,
@@ -21,7 +22,6 @@ import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import type { IconStyles } from './icon.utils';

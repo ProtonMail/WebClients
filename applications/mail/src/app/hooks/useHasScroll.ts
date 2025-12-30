@@ -1,7 +1,7 @@
 import type { DependencyList, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
 
 export const useHasScroll = (ref: RefObject<HTMLElement>, dependencies: DependencyList = []) => {
     const [hasVerticalScrollbar, setHasVerticalScrollbar] = useState(false);

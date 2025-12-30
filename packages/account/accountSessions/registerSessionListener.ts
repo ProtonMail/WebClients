@@ -1,9 +1,10 @@
+import debounce from 'lodash/debounce';
+
 import {
     registerSessionCreateListener,
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import debounce from '@proton/utils/debounce';
 
 import { writeAccountSessions } from './storage';
 

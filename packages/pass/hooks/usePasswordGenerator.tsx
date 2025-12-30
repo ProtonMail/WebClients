@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import debounce from 'lodash/debounce';
+
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DEFAULT_MEMORABLE_PW_OPTIONS,
@@ -11,7 +13,6 @@ import { generatePassword } from '@proton/pass/lib/password/generator';
 import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/types';
 import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 export enum CharType {

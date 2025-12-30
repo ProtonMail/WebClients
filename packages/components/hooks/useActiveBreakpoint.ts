@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
 
 export type ActiveBreakpoint = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | '2xlarge';
 
