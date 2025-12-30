@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Open recovery settings": [
+        "Buka pengaturan pemulihan"
+      ],
       "Opt out": [
         "Undur diri"
       ],
@@ -1274,9 +1277,6 @@
       ],
       "Search": [
         "Cari"
-      ],
-      "Search countries": [
-        "Cari negara"
       ],
       "Search settings": [
         "Cari di pengaturan"
@@ -1695,6 +1695,11 @@
         "Melanjutkan penerusan email"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "tambah lebih banyak kuota"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Cabut"
@@ -1940,6 +1945,38 @@
       ],
       "Talk confidentially": [
         "Bercakaplah secara rahasia"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Dompet Bitcoin"
+      ],
+      "Confidential video calls": [
+        "Video call pribadi"
+      ],
+      "Encrypted email": [
+        "Email terenkripsi"
+      ],
+      "Passwords and identity": [
+        "Kata sandi dan identitas"
+      ],
+      "Private AI assistant": [
+        "Asisten AI pribadi"
+      ],
+      "Private browsing": [
+        "Penjelajahan pribadi"
+      ],
+      "Private scheduling": [
+        "Penjadwalan pribadi"
+      ],
+      "Secure cloud storage": [
+        "Ruang cloud aman"
+      ],
+      "Secure online docs": [
+        "Dokumen online aman"
+      ],
+      "Secure online sheets": [
+        "Lembar kerja aman"
       ]
     },
     "Apps dropdown": {
@@ -2594,6 +2631,131 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Alamat email pribadi Anda adalah bagian yang penting dari identitas digital Anda. Seperti halnya nomor telepon, Anda tidak begitu saja membagikan alamat ini ke semua orang yang Anda temui. Inilah mengapa penting adanya bagi Anda untuk memiliki alamat email lainnya yang dapat Anda gunakan untuk berbagai keperluan yang berbeda."
+      ]
+    },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } dari ${ providerUsers.length }"
+      ],
+      "${ n } year ago": [
+        "${ n } tahun yang lalu"
+      ],
+      "Add a custom domain": [
+        "Tambah domain khusus"
+      ],
+      "Add a domain": [
+        "Tambah domain"
+      ],
+      "Add more users...": [
+        "Tambah lebih banyak pengguna..."
+      ],
+      "Authenticate": [
+        "Autentikasi"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Change": [
+        "Ubah"
+      ],
+      "Configure": [
+        "Atur"
+      ],
+      "Configure migration": [
+        "Atur migrasi"
+      ],
+      "Contacts": [
+        "Kontak"
+      ],
+      "Domain ownership verified": [
+        "Kepemilikan domain diverifikasi"
+      ],
+      "Domain setup": [
+        "Pengaturan domain"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Notifikasi email akan dikirim pada saat proses migrasi dimulai dan selesai. Anda juga akan diberi tahu apabila terdapat masalah dan apabila proses migrasi ini dijeda karena tautan yang kedaluwarsa."
+      ],
+      "Estimated size": [
+        "Perkiraan ukuran"
+      ],
+      "Everything": [
+        "Segalanya"
+      ],
+      "Failed to load OAuth": [
+        "OAuth gagal dimuat"
+      ],
+      "Install migration app": [
+        "Pasang aplikasi migrasi"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Pelajari lebih lanjut mengenai apa-apa saja yang dapat dimigrasikan. Pelajari lebih lanjut"
+      ],
+      "Mail": [
+        "Surat"
+      ],
+      "Migrate": [
+        "Migrasikan"
+      ],
+      "Migrate from Google Workspace": [
+        "Migrasikan dari Google Workspace"
+      ],
+      "Migrate users": [
+        "Migrasikan pengguna"
+      ],
+      "Migration includes": [
+        "Migrasi meliputi"
+      ],
+      "Not started": [
+        "Belum dimulai"
+      ],
+      "Required to create user accounts": [
+        "Dibutuhkan untuk membuat akun pengguna"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Pilih item apa saja yang ingin Anda migrasikan. Proses ini akan berlaku bagi seluruh pengguna terlepas dari apakah akun pengguna ini dibuat sekarang atau nanti. Migrasi akan dimulai setelah akun pengguna selesai dibuat."
+      ],
+      "Set up": [
+        "Atur"
+      ],
+      "Set up billing information": [
+        "Atur informasi penagihan"
+      ],
+      "Set up two-factor authentication": [
+        "Atur autentikasi dua faktor"
+      ],
+      "Sign in to Google Workspace": [
+        "Masuk ke Google Workspace"
+      ],
+      "Start migration": [
+        "Mulai migrasi"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Untuk memigrasikan data organisasi Anda, Anda perlu untuk memasang aplikasi Asisten Migrasi ${ BRAND_NAME } dari Marketplace Google Workspace. Hal ini akan memberikan izin bagi ${ BRAND_NAME } untuk menyalin data Anda. Setelah asisten ini terpasang, kembali ke halaman ini untuk melanjutkan. Pelajari lebih lanjut"
+      ],
+      "Transfer data from": [
+        "Transfer data dari"
+      ],
+      "User": [
+        "Pengguna"
+      ],
+      "Users migrated": [
+        "Pengguna dimigrasikan"
+      ],
+      "Verify your domain": [
+        "Verifikasi domain Anda"
+      ],
+      "Verify your domain ownership": [
+        "Verifikasi kepemilikan domain Anda"
+      ],
+      "What are you migrating?": [
+        "Item apa saja yang Anda pindahkan?"
+      ],
+      "Who will be notified?": [
+        "Siapa saja yang akan diberi tahu?"
       ]
     },
     "breadcrumb": {
@@ -5416,6 +5578,9 @@
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Demi kompatibilitas, enkripsi post-kuantum telah dinonaktifkan untuk ${ boldForwarderEmail }."
       ],
+      "For compatibility, post-quantum encryption has been disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
+        "Demi kompatibilitas, enkripsi post-quantum telah dinonaktifkan, dan kunci enkripsi baru telah diaktifkan untuk ${ boldForwarderEmail }."
+      ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
         "Demi kompatibilitas, enkripsi post-quantum akan dinonaktifkan untuk ${ boldForwarderEmail }."
       ],
@@ -5818,6 +5983,9 @@
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Anda belum ditetapkan sebagai kontak darurat bagi siapa pun."
+      ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "Anda telah mencapai batas julah ${ limit } kontak darurat."
       ],
       "You will be notified when someone requests emergency access.": [
         "Anda akan diberi tahu pada saat seseorang meminta akses darurat."
@@ -6861,6 +7029,12 @@
       "Set up family group": [
         "Atur grup keluarga"
       ],
+      "Show all (${ invites.length })": [
+        "Tampilkan semua (${ invites.length })"
+      ],
+      "Show less": [
+        "Tampilkan lebih sedikit"
+      ],
       "Switch plans": [
         "Ubah paket"
       ],
@@ -6939,6 +7113,9 @@
       "Pending": [
         "Ditunda"
       ],
+      "Pending invitation": [
+        "Undangan yang belum ditanggapi"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Maaf, Anda tidak dapat mengubah paket untuk saat ini."
       ],
@@ -6989,6 +7166,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "Anda akan kehilangan akses ke seluruh fitur premium yang disertakan dalam ${ plan }."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "Anda diundang oleh **${ invite.InviterEmail }** untuk menautkan akun Anda ke paket milik grup ini."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket keluarga ini dan menikmati semua fitur premium ${ brandOrAppName } bersama."
@@ -7516,6 +7699,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privasi sebagai hal yang baku."
+      ]
+    },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Saya mengerti bahwa saya tidak lagi akan dapat masuk ke aplikasi ${ BRAND_NAME } seluler versi lawas."
       ]
     },
     "Free trial dekstop": {
@@ -8524,6 +8712,12 @@
       "**Sync codes** to all your devices": [
         "**Sinkronkan kode** ke seluruh perangkat Anda"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Hal ini akan menonaktifkan penerusan email yang terenkripsi end-to-end:** Anda dapat mengatur kembali penerusan ini di kemudian waktu."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Metode pemulihan Anda akan dianulir:** Anda dapat menghasilkan data pemulihan yang baru di kemudian waktu."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lainnya"
       ],
@@ -8967,9 +9161,6 @@
       ],
       "Copy your referral link": [
         "Salin tautan rujukan Anda"
-      ],
-      "Country code": [
-        "Kode negara"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
@@ -9940,9 +10131,6 @@
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
-      "No results found": [
-        "Tidak ada hasil yang ditemukan"
-      ],
       "No single sign-on": [
         "Tidak ada single sign-on"
       ],
@@ -10185,6 +10373,9 @@
       ],
       "Private AI assistant": [
         "Asisten AI pribadi"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Lindungi akun Anda dari ancaman komputasi kuantum dengan kunci kriptografis yang tahan kuantum."
       ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh undang-undang privasi Swiss"
@@ -11395,6 +11586,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated.": [
+        "Akun Anda telah berhasil diperbarui."
+      ],
       "Your account was successfully updated with this promotion": [
         "Akun Anda berhasil diperbarui dengan promosi ini"
       ],
@@ -11507,6 +11701,11 @@
       ],
       "Selected color:": [
         "Warna terpilih:"
+      ]
+    },
+    "Info (Scribe)": {
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
+        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddresses } atau ${ addMoreSeats }"
       ]
     },
     "Info - folder colouring feature": {
@@ -12103,6 +12302,9 @@
       "6 Pass Plus accounts": [
         "6 akun Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -12351,6 +12553,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ],
       "Common passwords": [
         "Kata sandi umum"
@@ -12903,6 +13108,9 @@
       ],
       "Online privacy for your whole family": [
         "Privasi online untuk seluruh keluarga Anda"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Hanya tersedia pada paket ${ PASS_SHORT_APP_NAME } berbayar"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
@@ -13724,6 +13932,11 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "Pengguna dan alamat"
       ]
     },
     "Link label (optional)": {
@@ -17340,17 +17553,66 @@
         "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Kunci tidak dapat dihasilkan. Untuk mengaktifkan perlindungan post-quantum, Anda akan perlu untuk menghasilkan kunci enkripsi baru Anda secara manual\n\nTuju ${ settingsLink } dan pilih 'Hasilkan kunci' untuk akun Anda dan untuk masing-masing alamat."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Kunci alamat tidak dapat dihasilkan. Untuk mengaktifkan perlindungan post-quantum, Anda akan perlu untuk menghasilkan kunci enkripsi baru Anda secara manual\n\nTuju ${ settingsLink } dan pilih 'Hasilkan kunci' untuk masing-masing alamat."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Anda harus memperbarui seluruh aplikasi seluler ${ BRAND_NAME } Anda**: kunci baru Anda tidak akan berfungsi pada aplikasi versi lawas."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Hal ini akan menghasilkan kunci enkripsi tahan kuantum baru untuk akun Anda."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Perlindungan post-quantum tidak dapat diaktifkan"
+      ],
       "Enable and generate keys": [
         "Aktifkan dan hasilkan kunci"
       ],
       "Enable post-quantum protection?": [
         "Aktifkan perlindungan post-quantum?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Mengaktifkan perlindungan post-quantum..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Tuju ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Silakan coba lagi. Apabila hal ini tidak berhasil, hubungi tim layanan dukungan kami."
+      ],
+      "Post-quantum protection": [
+        "Perlindungan post-quantum"
+      ],
+      "Post-quantum protection is enabled": [
+        "Perlindungan post-quantum diaktifkan"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Tutup"
+      ],
       "Got it": [
         "Mengerti"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Jangan lupa untuk menghasilkan data pemulihan yang baru."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Perlindungan post-quantum diaktifkan."
       ]
     },
     "pqc-optin: Progress status": {
@@ -21693,6 +21955,9 @@
       "Find email or username": [
         "Cari email atau nama pengguna"
       ],
+      "Finish setting up your business account": [
+        "Selesaikan pengaturan akun bisnis Anda"
+      ],
       "Folders": [
         "Folder"
       ],
@@ -21912,6 +22177,9 @@
       "Messages and composing": [
         "Pesan dan penulisan"
       ],
+      "Migration assistant": [
+        "Asisten migrasi"
+      ],
       "Minicalendar": [
         "Kalender mini"
       ],
@@ -22034,6 +22302,9 @@
       ],
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
+      ],
+      "Pending invitations": [
+        "Undangan yang belum ditanggapi"
       ],
       "Personalize your email footer": [
         "Sesuaikan footer email Anda"
@@ -23218,6 +23489,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi berkas lawas dengan pemulihan berkas selama 10 tahun."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Rangkaian privasi dengan email aman, ${ VPN_SHORT_APP_NAME }, ruang penyimpanan cloud, dan pengelola kata sandi dalam satu bundel. Hanya dari ${ fallBackString } per bulannya"

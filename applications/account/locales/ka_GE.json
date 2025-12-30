@@ -834,6 +834,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "Group owner": [
+        "ჯგუფის მფლობელი"
+      ],
       "Help and feedback": [
         "დახმარება და გამოხმაურება"
       ],
@@ -1056,6 +1059,9 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
+      "Open recovery settings": [
+        "აღდგენის პარამეტრების გახსნა"
+      ],
       "Opt out": [
         "უარის თქმა"
       ],
@@ -1271,9 +1277,6 @@
       ],
       "Search": [
         "ძებნა"
-      ],
-      "Search countries": [
-        "ქვეყნების ძებნა"
       ],
       "Search settings": [
         "ძებნის მორგება"
@@ -1692,6 +1695,11 @@
         "წინ გაგრძელება"
       ]
     },
+    "Action (Scribe)": {
+      "add more seats": [
+        "მეტი ადგილის დამატება"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "გაუქმება"
@@ -1942,6 +1950,38 @@
       ],
       "Talk confidentially": [
         "ისაუბრეთ კონფიდენციალურად"
+      ]
+    },
+    "app-switcher_2025": {
+      "Bitcoin wallet": [
+        "Bitcoin-ის საფულე"
+      ],
+      "Confidential video calls": [
+        "პირადი ვიდეოზარები"
+      ],
+      "Encrypted email": [
+        "დაშიფრული ელფოსტა"
+      ],
+      "Passwords and identity": [
+        "პაროლები და იდენტიფიკაცია"
+      ],
+      "Private AI assistant": [
+        "პირადი ხი დამხმარე"
+      ],
+      "Private browsing": [
+        "კონფიდენციალური რეჟიმი"
+      ],
+      "Private scheduling": [
+        "პირადი დაგეგმვა"
+      ],
+      "Secure cloud storage": [
+        "დაცული ღრუბლოვანი საცავი"
+      ],
+      "Secure online docs": [
+        "დაცული დოკუმენტები"
+      ],
+      "Secure online sheets": [
+        "დაცული ინტერნეტ-ელცხრილები"
       ]
     },
     "Apps dropdown": {
@@ -2546,6 +2586,123 @@
         "თქვენი ოჯახის სურათებზე ხის ავარჯიშებენ. აი, როგორ უნდა გააჩეროთ ეს"
       ]
     },
+    "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } ${ providerUsers.length }-დან"
+      ],
+      "${ n } year ago": [
+        "${ n } წლის წინ",
+        "${ n } წლის წინ"
+      ],
+      "Add a custom domain": [
+        "მომხმარებლის დომენის დამატება"
+      ],
+      "Add a domain": [
+        "დომენის დამატება"
+      ],
+      "Add more users...": [
+        "მეტი მომხმარებლის დამატება..."
+      ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
+      "Calendar": [
+        "კალენდარი"
+      ],
+      "Change": [
+        "შეცვლა"
+      ],
+      "Configure": [
+        "მორგება"
+      ],
+      "Configure migration": [
+        "მიგრაციის მორგება"
+      ],
+      "Contacts": [
+        "კონტაქტები"
+      ],
+      "Domain ownership verified": [
+        "დომენის მფლობელობა გადამოწმებულია"
+      ],
+      "Domain setup": [
+        "დომენის მორგება"
+      ],
+      "Estimated size": [
+        "სავარაუდო ზომა"
+      ],
+      "Everything": [
+        "ყველაფერი"
+      ],
+      "Failed to load OAuth": [
+        "OAuth-ის ჩატვირთვა ჩავარდა"
+      ],
+      "Install migration app": [
+        "მიგრაციის პროგრამის დაყენება"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "შეიტყვეთ მეტი, რისი მიგრაციაა შესაძლებელი. შეიტყვეთ მეტი"
+      ],
+      "Mail": [
+        "ფოსტა"
+      ],
+      "Migrate": [
+        "მიგრაცია"
+      ],
+      "Migrate from Google Workspace": [
+        "მიგრაცია Google Workspace-დან"
+      ],
+      "Migrate users": [
+        "მომხმარებლების მიგრაცია"
+      ],
+      "Migration includes": [
+        "მიგრაცია შეიცავს"
+      ],
+      "Not started": [
+        "დაწყებული არაა"
+      ],
+      "Required to create user accounts": [
+        "აუცილებელია მომხმარებლის ანგარიშების შესაქმნელად"
+      ],
+      "Set up": [
+        "მორგება"
+      ],
+      "Set up billing information": [
+        "გადახდის ინფორმაციის მორგება"
+      ],
+      "Set up two-factor authentication": [
+        "2FA-ის მორგება"
+      ],
+      "Sign in to Google Workspace": [
+        "შესვლა Google Workspace-ში"
+      ],
+      "Start migration": [
+        "მიგრაციის დაწყება"
+      ],
+      "Status": [
+        "სტატუსი"
+      ],
+      "Transfer data from": [
+        "მონაცემების გადმოტანა საიდან"
+      ],
+      "User": [
+        "მომხმარებელი"
+      ],
+      "Users migrated": [
+        "მომხმარებლები მიგრირებულია"
+      ],
+      "Verify your domain": [
+        "თქვენი დომენის გადამოწმება"
+      ],
+      "Verify your domain ownership": [
+        "თქვენი დომენის მფლობელობის გადამოწმება"
+      ],
+      "What are you migrating?": [
+        "რის მიგრაციას ახდენთ?"
+      ],
+      "Who will be notified?": [
+        "ვის გაეგზავნება გაფრთხილება?"
+      ]
+    },
     "breadcrumb": {
       "Calendars": [
         "კალენდრები"
@@ -2960,6 +3117,15 @@
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ],
+      "Compliance with data protection regulations": [
+        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
       ],
@@ -2971,6 +3137,9 @@
       ],
       "Limited favorites": [
         "შეზღუდული რჩეულები"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -2986,6 +3155,9 @@
       ],
       "Web search access": [
         "წვდომა ვებში ძებნასთან"
+      ],
+      "Zero-access encryption": [
+        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Feature": {
@@ -5701,6 +5873,10 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "თქვენ ჯერ არავის მოუნიშნიხართ, როგორც სასწრაფო კონტაქტი."
       ],
+      "You reached the maximum of ${ limit } emergency contact.": [
+        "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს.",
+        "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს."
+      ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
       ],
@@ -6748,6 +6924,12 @@
       "Set up family group": [
         "საოჯახო ჯგუფის მორგება"
       ],
+      "Show all (${ invites.length })": [
+        "ყველას ჩვენება (${ invites.length })"
+      ],
+      "Show less": [
+        "ნაკლების ჩვენება"
+      ],
       "Switch plans": [
         "სატარიფო გეგმის გადართვა"
       ],
@@ -6824,6 +7006,10 @@
       "Pending": [
         "რიგში"
       ],
+      "Pending invitation": [
+        "მომლოდინე მოსაწვევი",
+        "მომლოდინე მოსაწვევები"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "უკაცრავად, ტარიფს ამჟამად ვერ გადართავთ."
       ],
@@ -6835,6 +7021,10 @@
       ],
       "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "გადასვლის გასაადვილებლად ${ BRAND_NAME } Unlimited-თან 30 დღიან გამოსაცდელ წვდომას მოგცემთ*."
+      ],
+      "View the invitation": [
+        "მოსაწვევის ნახვა",
+        "მოსაწვევების ნახვა"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
@@ -6873,6 +7063,12 @@
       ],
       "You will lose access to all premium features included with ${ plan }.": [
         "დაკარგავთ წვდომას ყველა ფასიან თვისებასთან, რომლებსაც ${ plan } შეიცავს."
+      ],
+      "You're invited by **${ invite.InviterEmail }** to link your account to this group plan.": [
+        "მიგიწვიათ **${ invite.InviterEmail }**-მა, თქვენი ანგარიშის ამ ჯგუფის სატარიფო გეგმასთან დასაკავშირებლად."
+      ],
+      "You're invited to join ${ invite.OrganizationName }": [
+        "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
         "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
@@ -7410,6 +7606,11 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
+      ]
+    },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "მე მესმის, რომ ვეღარ შევალ ${ BRAND_NAME }-ის მობილური პროგრამების ძველ ვერსიებში."
       ]
     },
     "Free trial dekstop": {
@@ -8433,6 +8634,12 @@
       "**Sync codes** to all your devices": [
         "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**ეს გამორთავს გამჭოლად დაშიფრული ელფოსტის გადამისამართებებს:** მათი მორგება თავიდან მოგვიანებით შეგიძლიათ."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**თქვენი აღდგენის მეთოდები გაუქმდება:** ახალი აღდგენის მონაცემების გენერაციას მოგვიანებით შეძლებთ."
+      ],
       "+ ${ invisibleCount } More": [
         "+ კიდევ ${ invisibleCount }",
         "+ კიდევ ${ invisibleCount }"
@@ -8864,9 +9071,6 @@
       ],
       "Copy your referral link": [
         "თქვენი მიმართვის ბმულის კოპირება"
-      ],
-      "Country code": [
-        "ქვეყნის კოდი"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
@@ -9817,9 +10021,6 @@
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
-      "No results found": [
-        "შედეგების გარეშე"
-      ],
       "No single sign-on": [
         "SSO-ის გარეშე"
       ],
@@ -10060,6 +10261,9 @@
       ],
       "Private AI assistant": [
         "პირადი ხი დამხმარე"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "დაიცავით თქვენი ანგარიში კვანტური კომპიუტერის საფრთხეებისგან კვანტურად მდგრადი კრიპტოგრაფიული გასაღებებით."
       ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
@@ -10733,6 +10937,9 @@
       "Upgrade to unlock": [
         "განსაბლოკად ასწიეთ ტარიფი"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე."
+      ],
       "Upload picture": [
         "სურათის ატვრთვა"
       ],
@@ -11210,6 +11417,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე ყველაზე ცოტა ერთი გადაცილებული ინვოისია. წვდომა მალე შეიზღუდება. ${ payInvoiceLink }"
+      ],
+      "Your account has been successfully updated.": [
+        "თქვენი ანგარიში წარმატებით განახლდა."
       ],
       "Your account was successfully updated with this promotion": [
         "თქვენი ანგარიში წარმატებით განახლდა ამ სარეკლამო აქციით"
@@ -12148,6 +12358,9 @@
       "Colors": [
         "ფერები"
       ],
+      "Command line interface (CLI)": [
+        "ბრძანების სტრიქონის ინტერფეისი (CLI)"
+      ],
       "Common passwords": [
         "საერთო პაროლები"
       ],
@@ -12696,6 +12909,9 @@
       ],
       "Online privacy for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "ხელმისაწვდომია, მხოლოდ, ${ PASS_SHORT_APP_NAME }-ის ფასიან სატარიფო გეგმებზე"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 -ის პაროლი"
@@ -13516,6 +13732,11 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
+      ]
+    },
+    "Link (Scribe)": {
+      "Users and addresses": [
+        "მომხმარებლები და მისამართები"
       ]
     },
     "Link label (optional)": {
@@ -16373,6 +16594,9 @@
       "You have been invited to join ${ PASS_APP_NAME }": [
         "გაქვთ მოსაწვევი, ${ PASS_APP_NAME }-ს შეუერთდეთ"
       ],
+      "Your ${ discount }% End of Year discount has been applied": [
+        "თქვენი ${ discount }%-იანი წლის ბოლოს ფასდაკლება გამოყენებულია"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "თქვენს ორგანიზაციას აქვს წვდომა ${ free }-სთან. თუ გნებავთ ${ appName }-ის ფასიან ფუნქციებთან წვდომაც, ტარიფის ასაწევად ორგანიზაციის ადმინისტრატორს დაუკავშირდით."
       ]
@@ -17117,17 +17341,56 @@
         "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**თქვენ უნდა განაახლოთ ყველა ${ BRAND_NAME }-ის მობილური აპლიკაცია**: თქვენი ახალი გასაღებები არ იმუშავებს აპლიკაციის ძველ ვერსიებზე."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "ეს შექმნის ახალ კვანტგამძლე დაშიფვრის გასაღებებს თქვენი ანგარიშისთვის."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "პოსტკვანტური დაცვის ჩართვის შეცდომა"
+      ],
       "Enable and generate keys": [
         "ჩართვა და გასაღების გენერაცია"
       ],
       "Enable post-quantum protection?": [
         "ჩავრთო პოსტკვანტური დაცვა?"
+      ],
+      "Enabling post-quantum protection...": [
+        "მიმდინარეობს პოსტკვანტური უსაფრთხოების ჩართვა..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "${ encryptionAndKeysSettingsTitle }-ზე გადასვლა"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "თავიდან სცადეთ. თუ არ იმუშავებს, დაუკავშირდით ჩვენი მომხმარებლის მხარდაჭერის გუნდს."
+      ],
+      "Post-quantum protection": [
+        "პოსტკვანტური დაცვა"
+      ],
+      "Post-quantum protection is enabled": [
+        "პოსტკვანტური დაცვა ჩართულია"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "დახურვა"
+      ],
       "Got it": [
         "გავიგე"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "არ დაგავიწყდეთ ახალი აღდგენის მონაცემების გენერაცია."
+      ],
+      "Post-quantum protection is enabled.": [
+        "პოსტკვანტური დაცვა ჩართულია."
       ]
     },
     "pqc-optin: Progress status": {
@@ -21494,6 +21757,9 @@
       "Find email or username": [
         "ელფოსტის ან მომხმარებლის მოძებნა"
       ],
+      "Finish setting up your business account": [
+        "დაასრულეთ თქვენი ბიზნეს ანგარიშის მორგება"
+      ],
       "Folders": [
         "საქაღალდეები"
       ],
@@ -21541,6 +21807,9 @@
       ],
       "Generate SMTP token": [
         "SMTP კოდის გენერაცია"
+      ],
+      "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
+        "მიიღეთ ${ planMaxSpace } საცავი თქვენი ფაილებისტვის, ფოტოებისთვის და დოკუმენტებისთვის ${ planName }-ით. ${ upgradeButton }"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "ყველა სერვერთან წვდომისთვის შეიძინეთ ${ vpnPlus }"
@@ -21711,6 +21980,9 @@
       "Messages and composing": [
         "შეტყობინებები და შედგენა"
       ],
+      "Migration assistant": [
+        "მიგრაციის დამხმარე"
+      ],
       "Minicalendar": [
         "მინიკალენდარი"
       ],
@@ -21833,6 +22105,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
+      ],
+      "Pending invitations": [
+        "მომლოდინე მოსაწვევები"
       ],
       "Personalize your email footer": [
         "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"

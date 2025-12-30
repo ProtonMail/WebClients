@@ -1278,9 +1278,6 @@
       "Search": [
         "Пошук"
       ],
-      "Search countries": [
-        "Пошук краін"
-      ],
       "Search settings": [
         "Налады пошуку"
       ],
@@ -2743,10 +2740,10 @@
         "Перанесці"
       ],
       "Migrate from Google Workspace": [
-        "Мігрыраваць з Google Workspace"
+        "Перанесці з Google Workspace"
       ],
       "Migrate users": [
-        "Міграцыя карыстальнікаў"
+        "Перанос карыстальнікаў"
       ],
       "Migration includes": [
         "Міграцыя ўключана"
@@ -2773,7 +2770,7 @@
         "Увайсці ў Google Workspace"
       ],
       "Start migration": [
-        "Пачаць міграцыю"
+        "Пачаць перанос"
       ],
       "Status": [
         "Статус"
@@ -6039,7 +6036,7 @@
         "Час, які патрабуецца, перад тым як доступ будзе прадастаўлены аўтаматычна"
       ],
       "Time required before automatically granting them access": [
-        "Час, які ім неабходны для аўтаматычнага прадастаўлення доступу"
+        "Час, які патрэбны на атрыманне дазволу аўтаматычнага доступу"
       ],
       "Trusted contact": [
         "Давераны кантакт"
@@ -6069,7 +6066,7 @@
         "Вы ўвайшлі ва ўліковы запіс ${ account }."
       ],
       "You can now access and manage their account.": [
-        "Цяпер вы можаце атрымаць доступ да іх уліковага запісу і кіраваць ім."
+        "Цяпер вы можаце атрымаць доступ да ўліковага запісу і кіраваць ім."
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Вы можаце выдаліць іх доступ у любы час, каб аднавіць эксклюзіўны кантроль над сваім уліковым запісам."
@@ -8899,7 +8896,7 @@
         "Дададзены ${ url }."
       ],
       "${ url } deleted.": [
-        "Выдалены ${ url }."
+        "${ url } выдалены."
       ],
       "${ userFound } user found": [
         "Знойдзены ${ userFound } карыстальнік",
@@ -9455,9 +9452,6 @@
       ],
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
-      ],
-      "Country code": [
-        "Код краіны"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",
@@ -10363,7 +10357,7 @@
         "Паведамленні ў папцы Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
       ],
       "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
-        "Паведамленні ў папцы \"Спам\" або \"Сметніца\" будуць выключаны з месцазнаходжання \"Уся пошта\"."
+        "Паведамленні ў папцы \"Спам\" або \"Сметніца\" будуць выключаны з размяшчэння \"Уся пошта\"."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
@@ -10448,9 +10442,6 @@
       ],
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
-      ],
-      "No results found": [
-        "Нічога не знойдзена"
       ],
       "No single sign-on": [
         "Няма адзінага ўваходу"
@@ -11287,7 +11278,7 @@
         "у ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
+        "Вы павінны спраўдзіць уладальніка дамена дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS, каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Выдаляйце даныя толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях, каб пазбегнуць іх страты."
@@ -18559,7 +18550,7 @@
         "Выдаліць правіла"
       ],
       "Delete this scope": [
-        "Выдаліць гэтую вобласць"
+        "Выдаліць гэту вобласць"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -18621,7 +18612,7 @@
         "яшчэ ${ remainingCount }"
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Стварыце правілы захоўвання ў адпаведнасці з палітыкай захоўвання даных вашай арганізацыі. Гэта таксама дазволіць аўтаматычна выдаляць пратэрмінаваныя даныя."
+        "Стварыце правілы захоўвання ў адпаведнасці з палітыкай захоўвання даных вашай арганізацыі. Гэта таксама дазволіць аўтаматычна ачышчаць пратэрмінаваныя даныя."
       ],
       "Forever": [
         "Назаўсёды"
@@ -20218,10 +20209,10 @@
         "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
       ],
       "Built-in encryption": [
-        "Убудаванага шыфравання"
+        "Убудаванае шыфраванне"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Каляндар, менеджар пароляў, файлавае сховішча і VPN"
+        "Каляндар, менеджар пароляў, файлавае сховішча і VPN уключаны"
       ],
       "Device sync": [
         "Сінхранізаваць прыладу"
@@ -22829,10 +22820,10 @@
         "Назіранне за шлюзом"
       ],
       "Gateway monitor disabled": [
-        "Назіранне за шлюзом уключаны"
+        "Назіранне за шлюзом адключана"
       ],
       "Gateway monitor enabled": [
-        "Назіранне за шлюзом выключана"
+        "Назіранне за шлюзом уключана"
       ],
       "Gateways": [
         "Шлюзы"
@@ -22847,7 +22838,7 @@
         "Згенерыраваць новую фразу аднаўлення?"
       ],
       "Generate SMTP token": [
-        "Згенераваць токен SMTP"
+        "Генерацыя токена SMTP"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Атрымайце ${ planMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў з тарыфным планам ${ planName }. ${ upgradeButton }"
