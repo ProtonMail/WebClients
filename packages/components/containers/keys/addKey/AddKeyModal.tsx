@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
+import { addAddressKeyAction } from '@proton/account/addressKeys/addAddressKeyAction';
+import { addUserKeyAction } from '@proton/account/userKeys/addUserKeyAction';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,11 +13,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { AlgorithmInfo } from '@proton/crypto';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
-import type { KeyGenConfig, KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -23,13 +27,19 @@ import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPa
 import SelectKeyGenType from './SelectKeyGenType';
 
 interface Props extends ModalProps {
-    type: 'user' | 'address';
+    target:
+        | {
+              type: 'user';
+          }
+        | {
+              type: 'address';
+              address: Address;
+              /** for `type='address'` only */
+              hasOutgoingE2EEForwardings?: boolean;
+              /** relevant for `type='address'` only */
+              emailAddress: string | undefined;
+          };
     existingAlgorithms: AlgorithmInfo[];
-    onAdd: (config: KeyGenConfig | KeyGenConfigV6) => Promise<string>;
-    /** for `type='address'` only */
-    hasOutgoingE2EEForwardings?: boolean;
-    /** relevant for `type='address'` only */
-    emailAddress: string | undefined;
 }
 
 enum Step {
@@ -41,7 +51,7 @@ interface Model {
     step: Step;
 }
 
-const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardings, emailAddress, ...rest }: Props) => {
+const AddKeyModal = ({ existingAlgorithms, target, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings(); // loading state not needed since settings are prefetched in bootstrap
@@ -50,16 +60,22 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardin
     );
     const keyGenConfig = KEYGEN_CONFIGS[keyGenType];
     const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION });
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
 
     const handleProcess = async () => {
         try {
-            await onAdd(keyGenConfig);
-            if (type === 'user') {
+            if (target.type === 'user') {
+                await dispatch(addUserKeyAction({ keyGenConfig }));
                 createNotification({ text: c('Key generation').t`Key successfully generated.` });
                 return rest.onClose?.();
+            } else if (target.type === 'address') {
+                await dispatch(addAddressKeyAction({ keyGenConfig, address: target.address }));
+                setModel({ step: Step.SUCCESS });
             }
-            setModel({ step: Step.SUCCESS });
         } catch (error) {
+            handleError(error);
+            // eslint-disable-next-line no-console
             console.error(error);
             setModel({ step: Step.ERROR });
         }
@@ -90,7 +106,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardin
             <ModalTwoContent>
                 <div>
                     {(() => {
-                        if (type === 'user') {
+                        if (target.type === 'user') {
                             return (
                                 <>
                                     {model.step === Step.CONFIRMATION && (
@@ -113,6 +129,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardin
                         }
 
                         const pausedForwardingNotice = getPausedForwardingNotice();
+                        const emailAddress = target.type === 'address' ? target.emailAddress : '';
 
                         return (
                             <>
@@ -131,7 +148,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, hasOutgoingE2EEForwardin
                                             ></SelectKeyGenType>
                                         )}
                                         {maybeExistsNotice}
-                                        {hasOutgoingE2EEForwardings && (
+                                        {target.type === 'address' && target.hasOutgoingE2EEForwardings && (
                                             <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
                                                 <Icon
                                                     name="exclamation-circle-filled"
