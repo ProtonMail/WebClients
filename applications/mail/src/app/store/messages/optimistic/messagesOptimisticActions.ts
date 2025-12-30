@@ -18,3 +18,7 @@ export const optimisticDelete = createAction<string[]>('message/optimistic/delet
 export const optimisticEmptyLabel = createAction<string>('message/optimistic/emptyLabel');
 
 export const optimisticRestore = createAction<MessageState[]>('message/optimistic/restore');
+
+export const optimisticUpdateFlag = createAction<{ ID: string; flagToAdd?: number; flagToRemove?: number }>(
+    'message/optimistic/updateFlag'
+);
