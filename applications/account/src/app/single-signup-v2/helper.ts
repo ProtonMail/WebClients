@@ -1,3 +1,5 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
 import {
     type ADDON_NAMES,
@@ -52,7 +54,6 @@ import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Api, Organization, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';

@@ -1,7 +1,8 @@
 import type { MutableRefObject } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isEqual from 'lodash/isEqual';
+
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 export interface MailboxFocusProps {

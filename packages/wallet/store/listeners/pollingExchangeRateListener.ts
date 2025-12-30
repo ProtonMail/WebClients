@@ -1,6 +1,7 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import { CacheType } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { selectExchangeRate } from '../slices';

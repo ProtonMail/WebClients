@@ -2,6 +2,7 @@ import type { MutableRefObject, ReactNode, RefObject } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
 import type { ChallengeRef, ChallengeResult } from '@proton/components/containers/challenge/interface';
@@ -19,7 +20,6 @@ import {
     usernameLengthValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

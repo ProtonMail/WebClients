@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import isDeepEqual from 'lodash/isEqual';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
+ import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
 import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
 
 import type { AddressKeysState } from '../addressKeys';
@@ -20,12 +20,7 @@ import { type UserKeysState, userKeysThunk } from '../userKeys';
 const name = 'organizationKey' as const;
 
 export interface OrganizationKeyState
-    extends UserState,
-        OrganizationState,
-        UserKeysState,
-        AddressesState,
-        AddressKeysState,
-        MembersState {
+    extends UserState, OrganizationState, UserKeysState, AddressesState, AddressKeysState, MembersState {
     [name]: ModelState<CachedOrganizationKey>;
 }
 

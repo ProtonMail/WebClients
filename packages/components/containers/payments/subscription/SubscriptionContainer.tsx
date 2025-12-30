@@ -1,6 +1,7 @@
 import type { FormEvent, ReactNode, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import isEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -93,7 +94,6 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';

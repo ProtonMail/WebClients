@@ -1,6 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -22,7 +23,6 @@ import { isCustomLabel } from '@proton/mail/helpers/location';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';

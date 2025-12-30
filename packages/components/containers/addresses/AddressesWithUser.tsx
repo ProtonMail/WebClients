@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
@@ -39,7 +40,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';

@@ -1,4 +1,5 @@
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isEqual from 'lodash/isEqual';
+
 import isFunction from '@proton/utils/isFunction';
 import isTruthy from '@proton/utils/isTruthy';
 

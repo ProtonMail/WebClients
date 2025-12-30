@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import usePrevious from '@proton/hooks/usePrevious';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 export const useAsyncValue = <T extends unknown>(promise: Promise<T>, dv: T) => {
     const [v, s] = useState(dv);

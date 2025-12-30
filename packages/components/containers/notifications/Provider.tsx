@@ -1,8 +1,9 @@
 import type { ReactNode, Reducer } from 'react';
 import { useEffect, useReducer, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import useInstance from '@proton/hooks/useInstance';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import NotificationsChildrenContext from './childrenContext';
 import type { Notification, NotificationOffset } from './interfaces';

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import isEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -25,7 +26,6 @@ import {
     sendRequestCollapsibleSidebarReport,
     useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getCanAddStorage } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
