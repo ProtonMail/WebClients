@@ -2,11 +2,12 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import type { RefObject } from 'react';
 import type React from 'react';
 
+import throttle from 'lodash/throttle';
+
 import { useHandler } from '@proton/components';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import clamp from '@proton/utils/clamp';
-import throttle from '@proton/utils/throttle';
 
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 
