@@ -39,7 +39,7 @@ import {
 import { TableMenu } from './TableMenu'
 import Portal from '../../Components/Portal'
 import { TableAddButtons } from './TableAddButtons'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 import { TableRowAndColumnMenus } from './TableRowAndColumnMenus'
 import { $insertTableRowAtSelection } from './TableUtils/insertNewRowAtSelection'
 import { $insertTableColumnAtSelection } from './TableUtils/insertNewColumnAtSelection'

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import _debounce from '@proton/utils/debounce';
+import _debounce from 'lodash/debounce';
 
 export const useDebouncedValue = <T extends string | number>(valueIn: T, time: number): T => {
     const [valueOut, setValueOut] = useState(valueIn);

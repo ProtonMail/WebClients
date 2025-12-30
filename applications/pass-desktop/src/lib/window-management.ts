@@ -1,7 +1,7 @@
 import { type BrowserWindow, type Rectangle, app, screen } from 'electron';
+import debounce from 'lodash/debounce';
 
 import type { Optional } from '@proton/shared/lib/interfaces';
-import debounce from '@proton/utils/debounce';
 
 import { store } from '../store';
 

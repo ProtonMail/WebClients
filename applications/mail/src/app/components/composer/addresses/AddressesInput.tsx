@@ -1,6 +1,7 @@
 import type { MouseEvent, MutableRefObject, RefObject } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,7 +14,6 @@ import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers/message/messageRecipients';

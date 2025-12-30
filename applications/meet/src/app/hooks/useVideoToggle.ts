@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalParticipant, LocalTrackPublication, LocalVideoTrack } from 'livekit-client';
 import { ConnectionState, Track } from 'livekit-client';
+import debounce from 'lodash/debounce';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import debounce from '@proton/utils/debounce';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
 import {

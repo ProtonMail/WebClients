@@ -1,7 +1,8 @@
+import debounce from 'lodash/debounce';
+
 import { AVERAGE_BYTES_PER_LOG_LINE, MAX_LOG_STORAGE_LINES, MAX_LOG_STORAGE_RATIO } from '@proton/pass/constants';
 import type { AnyStorage } from '@proton/pass/types';
 import { getLocalStorageQuota } from '@proton/pass/utils/dom/storage';
-import debounce from '@proton/utils/debounce';
 
 export type LogStorageData = { logs: string };
 const LOG_STORAGE_KEY = 'logs';

@@ -1,13 +1,13 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Checkbox, Icon, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import debounce from '@proton/utils/debounce';
 
 import type { FolderMapItem } from '../../CustomizeMailImportModal.interface';
 import { FOLDER_ICONS } from '../../CustomizeMailImportModal.interface';

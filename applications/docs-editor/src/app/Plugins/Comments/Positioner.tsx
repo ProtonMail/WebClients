@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ForwardedRef, ReactNode, RefObject } from 'react'
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 import { mergeRefs } from '../../Shared/mergeRefs'
 import clsx from '@proton/utils/clsx'
 
