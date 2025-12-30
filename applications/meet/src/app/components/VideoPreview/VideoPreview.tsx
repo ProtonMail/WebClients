@@ -23,6 +23,7 @@ interface VideoPreviewProps {
 export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps) => {
     const trackRef = useRef<LocalVideoTrack | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
+    const processorAttachInProgress = useRef(false);
 
     const { isBackgroundBlurSupported, backgroundBlur } = useMediaManagementContext();
 
@@ -34,8 +35,17 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
             return;
         }
 
-        const processor = await ensureBackgroundBlurProcessor(videoTrack, backgroundBlurProcessorInstance);
-        processor?.enable?.();
+        if (processorAttachInProgress.current) {
+            return;
+        }
+
+        processorAttachInProgress.current = true;
+        try {
+            const processor = await ensureBackgroundBlurProcessor(videoTrack, backgroundBlurProcessorInstance);
+            processor?.enable?.();
+        } finally {
+            processorAttachInProgress.current = false;
+        }
     };
 
     useEffect(() => {

@@ -37,6 +37,7 @@ export const useVideoToggle = (
 
     const toggleInProgress = useRef(false);
     const blurToggleInProgress = useRef(false);
+    const processorAttachInProgress = useRef(false);
 
     const prevEnabled = useRef<boolean | null>(null);
     const preventAutoApplyingBlur = useRef(false);
@@ -52,7 +53,17 @@ export const useVideoToggle = (
     };
 
     const attachBackgroundBlurProcessor = async () => {
-        return ensureBackgroundBlurProcessor(getCurrentVideoTrack(), backgroundBlurProcessorInstance);
+        if (processorAttachInProgress.current) {
+            return null;
+        }
+
+        processorAttachInProgress.current = true;
+        try {
+            const result = await ensureBackgroundBlurProcessor(getCurrentVideoTrack(), backgroundBlurProcessorInstance);
+            return result;
+        } finally {
+            processorAttachInProgress.current = false;
+        }
     };
 
     const toggleVideo = async (
@@ -94,10 +105,11 @@ export const useVideoToggle = (
 
         if (currentVideoTrack) {
             try {
+                // Ensure processor is fully stopped before proceeding
                 await currentVideoTrack.stopProcessor();
             } catch (error) {
                 // eslint-disable-next-line no-console
-                console.error(error);
+                console.error('Error stopping processor:', error);
             }
         }
 
@@ -112,10 +124,12 @@ export const useVideoToggle = (
 
         const newVideoTrack = getCurrentVideoTrack();
 
-        if (backgroundBlur && backgroundBlurProcessorInstance) {
-            try {
-                await newVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
-            } catch (error) {}
+        if (backgroundBlur && backgroundBlurProcessorInstance && newVideoTrack) {
+            // Prevent the localTrackPublished handler from also trying to attach the processor
+            preventAutoApplyingBlur.current = true;
+
+            // Use our guarded attachment to prevent concurrent initializations
+            await attachBackgroundBlurProcessor();
         }
 
         // We need to restart the video track on mobile to make sure the facing mode is applied
