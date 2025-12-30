@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου για κρατήσεις: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Η σελίδα κρατήσεων διαγράφηκε"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Διακομιστής"
       ],
+      "How far in advance can someone book?": [
+        "Πόσο νωρίτερα μπορεί κάποιος να κάνει κράτηση;"
+      ],
       "How long should an appointment last?": [
         "Πόσο πρέπει να διαρκεί ένα ραντεβού;"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
       ],
+      "Min. 2 hours before": [
+        "Τουλάχιστον 2 ώρες πριν"
+      ],
+      "Min. 48 hours before": [
+        "Τουλάχιστον 48 ώρες πριν"
+      ],
       "Monitor accounts": [
         "Παρακολούθηση λογαριασμών"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Μη συνδεδεμένο"
+      ],
+      "Not on the same day": [
+        "Όχι την ίδια ημέρα"
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Όσοι κλείσουν ραντεβού μαζί σας θα βλέπουν το ${ selectedCalendar.Email } ως τη διεύθυνση επικοινωνίας σας."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Πού θα λάβει χώρα το ραντεβού;"
+      ],
+      "Which calendars should block bookings?": [
+        "Ποια ημερολόγια πρέπει να μπλοκάρουν τις κρατήσεις;"
       ],
       "Which event would you like to delete?": [
         "Ποια εκδήλωση θα θέλατε να διαγράψετε;"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
       ],
+      "Add notice period": [
+        "Προσθήκη προθεσμίας ειδοποίησης"
+      ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Κατηγορία"
+      ],
+      "Check additional calendars for availability": [
+        "Ελέγξτε επιπλέον ημερολόγια για διαθεσιμότητα"
       ],
       "City": [
         "Πόλη"

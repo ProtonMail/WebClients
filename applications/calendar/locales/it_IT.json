@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Email di contatto per la prenotazione: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Pagina di prenotazione eliminata"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Host"
       ],
+      "How far in advance can someone book?": [
+        "Con quanto anticipo si può prenotare?"
+      ],
       "How long should an appointment last?": [
         "Quanto dovrebbe durare un appuntamento?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 ore prima"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 ore prima"
+      ],
       "Monitor accounts": [
         "Monitora gli account"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Non connesso"
+      ],
+      "Not on the same day": [
+        "Non lo stesso giorno"
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Le persone che prenotano un appuntamento con te vedranno ${ selectedCalendar.Email } come tuo indirizzo di contatto."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline è compatibile solo con il formato Testo semplice."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Dove si terrà l'appuntamento?"
+      ],
+      "Which calendars should block bookings?": [
+        "Quali calendari dovrebbero bloccare le prenotazioni?"
       ],
       "Which event would you like to delete?": [
         "Quale evento vuoi eliminare?"
@@ -6610,6 +6625,9 @@
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
+      "Add notice period": [
+        "Aggiungi periodo di preavviso"
+      ],
       "Add to group": [
         "Aggiungi a un gruppo"
       ],
@@ -6678,6 +6696,9 @@
       ],
       "Category": [
         "Categoria"
+      ],
+      "Check additional calendars for availability": [
+        "Controlla i calendari aggiuntivi per la disponibilità"
       ],
       "City": [
         "Città"

@@ -5182,6 +5182,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Bokningskontaktens e-post: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Bokningssida borttagen"
       ],
@@ -5465,6 +5468,9 @@
       "Host": [
         "Värd"
       ],
+      "How far in advance can someone book?": [
+        "Hur långt i förväg kan någon boka?"
+      ],
       "How long should an appointment last?": [
         "Hur långt ska ett möte vara?"
       ],
@@ -5622,6 +5628,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 timmar innan"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 timmar innan"
+      ],
       "Monitor accounts": [
         "Övervaka konton"
       ],
@@ -5666,6 +5678,9 @@
       ],
       "Not connected": [
         "Inte ansluten"
+      ],
+      "Not on the same day": [
+        "Inte på samma dag"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -5726,9 +5741,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Personer som bokar tid med dig kommer se ${ selectedCalendar.Email } som din kontaktadress."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline är endast kompatibelt med oformaterat textformat."
@@ -6125,6 +6137,9 @@
       ],
       "Where will the appointment take place?": [
         "Var kommer mötet att äga rum?"
+      ],
+      "Which calendars should block bookings?": [
+        "Vilka kalendrar ska blockera bokningar?"
       ],
       "Which event would you like to delete?": [
         "Vilken händelse vill du ta bort?"
@@ -6636,6 +6651,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Check additional calendars for availability": [
+        "Kontrollera ytterligare kalendrar för tillgänglighet"
       ],
       "City": [
         "Ort"
