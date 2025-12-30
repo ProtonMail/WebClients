@@ -31,9 +31,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
 
   const [user] = useUser()
 
-  const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar({
-    isDocsEnabled: driveCompat.isDocsEnabled,
-  })
+  const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar()
   useEffectOnce(() => {
     removeLocalIDFromUrl()
   })

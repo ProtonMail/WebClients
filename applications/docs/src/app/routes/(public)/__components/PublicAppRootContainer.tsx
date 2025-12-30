@@ -1,21 +1,21 @@
-import { LocationErrorBoundary } from '@proton/components'
+import { LocationErrorBoundary, UnAuthenticated } from '@proton/components'
 import {
   PublicDriveStoreProvider,
   PublicDriveStoreProviderWithAuthenticatedUser,
 } from '@proton/drive-store/lib/DriveStoreProvider'
 import { PublicApplicationContent } from './PublicApplicationContent'
 import { usePublicDriveCompat } from '@proton/drive-store/lib'
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useEffect, useRef } from 'react'
 import { PasswordPage } from './PasswordPage'
-import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
 import type { ProviderType } from '../../../provider-type'
+import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 
 export function PublicAppRootContainer({
   session,
@@ -42,9 +42,11 @@ export function PublicAppRootContainer({
       <ApplicableDriveStoreProvider>
         <UnAuthenticated>
           <PublicCompatProvider session={session}>
-            <RenderApplicationWhenReady
-              providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
-            />
+            <DocsUrlContextProvider>
+              <RenderApplicationWhenReady
+                providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
+              />
+            </DocsUrlContextProvider>
           </PublicCompatProvider>
         </UnAuthenticated>
       </ApplicableDriveStoreProvider>
