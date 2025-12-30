@@ -4,11 +4,11 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
-import { useLoading } from '@proton/hooks';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     isAutoFlaggedPhishing,
     isDMARCValidationFailure,
@@ -16,17 +16,20 @@ import {
     isSuspicious,
 } from '@proton/shared/lib/mail/messages';
 
+import { useMailDispatch } from '../../../../store/hooks';
+import { optimisticUpdateFlag } from '../../../../store/messages/optimistic/messagesOptimisticActions';
+
 interface Props {
     message: MessageStateWithData;
 }
 
 const ExtraSpamScore = ({ message }: Props) => {
-    const [loading, withLoading] = useLoading();
     const { LabelIDs = [] } = message.data || {};
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [spamScoreModalProps, setSpamScoreModalOpen] = useModalState();
+    const dispatch = useMailDispatch();
 
     if (isDMARCValidationFailure(message.data)) {
         return (
@@ -60,10 +63,15 @@ const ExtraSpamScore = ({ message }: Props) => {
     }
 
     const markAsLegitimate = async () => {
-        await api(markAsHam(message.data.ID));
-        await call();
         setSpamScoreModalOpen(false);
-        createNotification({ text: c('Success').t`Message marked as legitimate` });
+        dispatch(optimisticUpdateFlag({ ID: message.data.ID, flagToAdd: MESSAGE_FLAGS.FLAG_HAM_MANUAL }));
+        try {
+            await api(markAsHam(message.data.ID));
+            await call();
+            createNotification({ text: c('Success').t`Message marked as legitimate` });
+        } catch {
+            dispatch(optimisticUpdateFlag({ ID: message.data.ID, flagToRemove: MESSAGE_FLAGS.FLAG_HAM_MANUAL }));
+        }
     };
 
     return (
@@ -95,8 +103,11 @@ const ExtraSpamScore = ({ message }: Props) => {
                 data-testid="spam-banner:mark-legitimate-prompt"
                 title={c('Title').t`Mark email as legitimate`}
                 buttons={[
-                    <Button loading={loading} color="norm" onClick={() => withLoading(markAsLegitimate())}>{c('Action')
-                        .t`Mark legitimate`}</Button>,
+                    <Button
+                        data-testid="spam-banner:mark-legitimate-prompt-btn"
+                        color="norm"
+                        onClick={() => markAsLegitimate()}
+                    >{c('Action').t`Mark legitimate`}</Button>,
                     <Button onClick={spamScoreModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
                 ]}
                 {...spamScoreModalProps}
