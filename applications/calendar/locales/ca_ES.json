@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Correu electrònic de contacte de la reserva: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "S'ha eliminat la pàgina de reserves."
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Amfitrió"
       ],
+      "How far in advance can someone book?": [
+        "Amb quina antelació es pot fer una reserva?"
+      ],
       "How long should an appointment last?": [
         "Quant ha de durar una cita?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
       ],
+      "Min. 2 hours before": [
+        "Mín. 2 hores abans"
+      ],
+      "Min. 48 hours before": [
+        "Mín. 48 hores abans"
+      ],
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Sense connexió"
+      ],
+      "Not on the same day": [
+        "No el mateix dia"
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Les persones que reservin temps amb vosaltres veuran ${ selectedCalendar.Email } com la vostra adreça de contacte."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "On tindrà lloc la cita?"
+      ],
+      "Which calendars should block bookings?": [
+        "Quins calendaris han de bloquejar reserves?"
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment voleu eliminar?"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Afegeix l'URL de la imatge"
       ],
+      "Add notice period": [
+        "Afegiu un període de preavís"
+      ],
       "Add to group": [
         "Afegeix al grup"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Categoria"
+      ],
+      "Check additional calendars for availability": [
+        "Comproveu la disponibilitat de calendaris addicionals"
       ],
       "City": [
         "Ciutat"

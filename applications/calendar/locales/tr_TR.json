@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Rezervasyon iletişim e-postası: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Rezervasyon sayfası silindi"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Sunucu"
       ],
+      "How far in advance can someone book?": [
+        "Rezervasyon ne kadar önceden yapılabilir?"
+      ],
       "How long should an appointment last?": [
         "Randevu ne kadar sürmeli?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
       ],
+      "Min. 2 hours before": [
+        "En az 2 saat önce"
+      ],
+      "Min. 48 hours before": [
+        "En az 48 saat önce"
+      ],
       "Monitor accounts": [
         "Hesapları izle"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Bağlı değil"
+      ],
+      "Not on the same day": [
+        "Aynı gün içinde değil"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Sizden randevu alan kişiler, iletişim için ${ selectedCalendar.Email } adresinizi görecek."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Randevu nerede gerçekleşecek?"
+      ],
+      "Which calendars should block bookings?": [
+        "Hangi takvimler rezervasyonları engellemelidir?"
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -6613,6 +6628,9 @@
       "Add image URL": [
         "Adresten görsel ekle"
       ],
+      "Add notice period": [
+        "Bildirim süresi ekle"
+      ],
       "Add to group": [
         "Gruba ekle"
       ],
@@ -6681,6 +6699,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Check additional calendars for availability": [
+        "Müsaitlik durumu için ek takvimleri kontrol edin"
       ],
       "City": [
         "İl"

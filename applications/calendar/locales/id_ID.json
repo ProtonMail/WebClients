@@ -3901,6 +3901,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
       ],
+      "You cannot enter the organizer's email": [
+        "Anda tidak dapat memasukkan email milik penyelenggara"
+      ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai batas jumlah kalender maksimum."
       ],
@@ -5676,9 +5679,6 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Orang lain yang memesan waktu dengan Anda akan melihat ${ selectedCalendar.Email } sebagai alamat kontak Anda."
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format teks polos."
       ],
@@ -6505,6 +6505,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -6597,6 +6600,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ],
       "Company": [
         "Perusahaan"

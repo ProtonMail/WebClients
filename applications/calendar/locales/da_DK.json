@@ -864,7 +864,7 @@
         "Log ud"
       ],
       "Sign out of all accounts": [
-        "Log ud alle konti"
+        "Log ud af alle konti"
       ],
       "Skip": [
         "Spring over"
@@ -3187,7 +3187,7 @@
         "Jeg skifter til en anden udbyder"
       ],
       "Temporary need, may come back in the future": [
-        "Midlertidigt behov, komme måske tilbage engang i fremtiden"
+        "Midlertidigt behov – kommer måske tilbage engang i fremtiden"
       ],
       "The VPN is too slow": [
         "VPN er for langsom"
@@ -3735,7 +3735,7 @@
         "Betalingsproces forbrugt"
       ],
       "Payment process failed": [
-        "Betalingproces mislykkedes"
+        "Betalingsprocessen mislykkedes"
       ],
       "Payment process not supported": [
         "Betalingsprocessen understøttes ikke"
@@ -3914,7 +3914,7 @@
         "Ukendt fejl"
       ],
       "Unknown payment token status": [
-        "Ukendt betalingstokens status"
+        "Ukendt betalingstokenstatus"
       ],
       "Username must begin with a letter or digit": [
         "Brugernavn skal begynde med et bogstav eller et tal"
@@ -5062,7 +5062,7 @@
         "**Trin 3:** Få ${ referrerRewardAmount } i kredit for hver person, der opretter et abonnement."
       ],
       "+${ bonusSpace } bonus storage": [
-        "+${ bonusSpace } bonus lagerplads"
+        "+${ bonusSpace } bonuslagerplads"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
@@ -5199,6 +5199,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Bookings kontakt-e-mail: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Reservationsside slettet"
@@ -5486,6 +5489,9 @@
       "Host": [
         "Vært"
       ],
+      "How far in advance can someone book?": [
+        "Hvor lang tid i forvejen kan der bookes?"
+      ],
       "How long should an appointment last?": [
         "Hvor længe skal en aftale vare?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Beskeder til alle dine e-mailadresser ender i din indbakke."
       ],
+      "Min. 2 hours before": [
+        "Mindst 2 timer før"
+      ],
+      "Min. 48 hours before": [
+        "Mindst 48 timer før"
+      ],
       "Monitor accounts": [
         "Overvåg konti"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Ikke forbundet"
+      ],
+      "Not on the same day": [
+        "Ikke samme dag"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
@@ -5756,9 +5771,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
-      ],
-      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "De, der reserverer tid med dig, vil se ${ selectedCalendar.Email } som din kontaktadresse."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med Plain Text-formatet."
@@ -6109,7 +6121,7 @@
         "Versionsnummer er kopieret til udklipsholder"
       ],
       "Visa Secure logo": [
-        "Visa Secure logo"
+        "Visa Secure-logo"
       ],
       "VPN IP": [
         "VPN-IP"
@@ -6164,6 +6176,9 @@
       ],
       "Where will the appointment take place?": [
         "Hvor vil aftalen finde sted?"
+      ],
+      "Which calendars should block bookings?": [
+        "Hvilke kalendere skal blokere bookinger?"
       ],
       "Which event would you like to delete?": [
         "Hvilken begivenhed ønsker du at slette?"
@@ -6598,6 +6613,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Få sikker adgang til ${ PASS_APP_NAME } fra terminalen, ideelt til scripting, automatisering og udviklingsarbejdsgange."
+      ],
       "Account holder": [
         "Kontohaver"
       ],
@@ -6609,6 +6627,9 @@
       ],
       "Add image URL": [
         "Tilføj billed-URL"
+      ],
+      "Add notice period": [
+        "Tilføj varslingsperiode"
       ],
       "Add to group": [
         "Føj til gruppe"
@@ -6679,6 +6700,9 @@
       "Category": [
         "Kategori"
       ],
+      "Check additional calendars for availability": [
+        "Kontroller yderligere kalendere for tilgængelighed"
+      ],
       "City": [
         "By"
       ],
@@ -6690,6 +6714,9 @@
       ],
       "Colors": [
         "Farver"
+      ],
+      "Command line interface (CLI)": [
+        "Kommandolinjegrænseflade (CLI)"
       ],
       "Company": [
         "Selskab"
@@ -7989,7 +8016,7 @@
         "Telefon-support (20+ brugere)"
       ],
       "Priority email support": [
-        "Prioriteret e-mail-support"
+        "Prioriteret e-mailsupport"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -8339,7 +8366,7 @@
         "Vælg tilpassede tidspunkter for påmindelse om en e-mail eller modtagelse af din besked"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Opret flere e-mailadresser til dine onlineidentiteter, f.eks. JensShopper@${ domain } til shoppingkonti, JensNews@${ domain } til nyhedsabonnementer."
+        "Opret flere e-mailadresser til dine onlineidentiteter, f.eks. JensShopper@${ domain } til shoppingkonti, JensNews@${ domain } til nyhedsabonnementer"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
@@ -8370,7 +8397,7 @@
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Gennemtving udlogning af brugersessioner, når brugeroplysningerne menes at være kompromitterede."
+        "Gennemtving udlogning af brugersessioner, når brugeroplysningerne menes at være kompromitterede"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-understøttelse er begrænset til skrivebords-apps (f.eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-baserede IMAP-integrationer er i øjeblikket ikke understøttet."
@@ -8394,7 +8421,7 @@
         "Ligesom en mappe, er en boks en praktisk måde, at organisere dine elementer på"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways."
+        "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
@@ -8406,7 +8433,7 @@
         "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
+        "Mulighed for at se ikke-private brugerindbakker som brugeren ville herunder fulde besked- og kontaktoplysninger"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
         "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, administrere deres adgang til ${ BRAND_NAME }-tjenester og udføre andre opgaver."
@@ -8439,7 +8466,7 @@
         "Beskyt din rigtige e-mailadresse mod afsløring eller lækage via aliasser (en tilfældigt genereret e-mailadresse, som videresender e-mails til din indbakke)."
       ],
       "Provides the highest level of account security protection and specialist support": [
-        "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
+        "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialisthjælp"
       ],
       "Quickly set up out-of-office messages": [
         "Indstil hurtigt meddelelser til automatisk svar, når du ikke er på kontoret"
@@ -8531,7 +8558,7 @@
         "Forbind automatisk"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Forøg din lagerplads til ${ bundleStorage } i alt"
+        "Forøg din lagerplads til ${ bundleStorage } pr. bruger"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
@@ -9278,7 +9305,7 @@
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
       ],
       "Timeout exceeded": [
-        "Timeout overskredet"
+        "Tidsgrænse overskredet"
       ],
       "VAT": [
         "Moms"
@@ -9760,7 +9787,7 @@
         "Du har **${ daysRemaining } dage tilbage** til at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
       ],
       "your subscription": [
-        "Dit abonnement"
+        "dit abonnement"
       ]
     },
     "Reload event button tooltip": {
@@ -10608,7 +10635,7 @@
         "${ planName } giver dig adgang til alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }. Privatliv er indbygget, så du kan fortsætte, velvidende at dine data og din identitet er sikret."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
+        "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine data og deres sikkerhed."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } giver dig ubegrænset privatliv og mere lagerplads til op til 2 personer."
@@ -10721,7 +10748,7 @@
         "Hjælper aktivister i Hongkong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Sådan fik vores kundeafdeling vores VPN-app direkte i hænderne på folk."
+        "Sådan fik vores kundeserviceteam vores VPN-app leveret direkte til folk."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
         "Sådan kæmpede vi tilbage, da ${ BRAND_NAME } blev blokeret i en aggressiv kampagne."
@@ -10908,7 +10935,7 @@
         "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden udgangen af faktureringsperioden. Hvis du glemmer at foretage en manuel betaling, og automatisk betaling er deaktiveret for alle betalingsmetoder, kan vi desuden automatisk nedgradere din konto, hvilket vil føre til tabet af mange funktioner."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden slutningen af faktureringsperioden. Vi kan ikke automatisk nedgradere dig, for hvis du har overskredet lagerpladsen for det gratis abonnement eller bruger andre betalte funktioner, kan vi ikke automatisk slette filer, e-mails eller andre data for dig. Hvis du deaktiverer automatisk betaling, skal du huske at betale din næste abonnementsfakture inden forfaldsdatoen for at forhindre suspendering af kontoen."
+        "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden slutningen af faktureringsperioden. Vi kan ikke automatisk nedgradere dig, for hvis du har overskredet lagerpladsen for det gratis abonnement eller bruger andre betalte funktioner, kan vi ikke automatisk slette filer, e-mails eller andre data for dig. Hvis du deaktiverer automatisk betaling, skal du huske at betale din næste abonnementsfaktura inden forfaldsdatoen for at forhindre suspendering af kontoen."
       ]
     },
     "Subscription saving": {
@@ -11652,7 +11679,7 @@
         "Introducerer bookingsider"
       ],
       "Invalid verification code": [
-        "Ugyldig verifikationskode"
+        "Ugyldig bekræftelseskode"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -11946,7 +11973,7 @@
         "Bekræfter dit kort..."
       ],
       "Verifying your payment...": [
-        "Verificerer din betaling..."
+        "Bekræfter din betaling..."
       ],
       "VPN explained": [
         "VPN forklaret"
