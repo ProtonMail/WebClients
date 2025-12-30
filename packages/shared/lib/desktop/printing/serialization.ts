@@ -100,11 +100,19 @@ export async function serializeAndSanitizeDocument(doc: Document): Promise<strin
 
     // Apply converted imges
     const clonedImages = sanitizedDoc.querySelectorAll('img');
-    imageData.forEach((dataUrl, index) => {
-        if (clonedImages[index]) {
-            clonedImages[index].src = dataUrl;
+    for (let i = 0; i < clonedImages.length; i++) {
+        const img = clonedImages[i];
+
+        if (imageData.has(i)) {
+            // Remove lazy loading, otherwise images might not be present in the print doc
+            img.src = imageData.get(i)!;
+            img.removeAttribute('loading');
+            img.removeAttribute('decoding');
+            img.setAttribute('decoding', 'sync');
+        } else {
+            img.remove();
         }
-    });
+    }
 
     const htmlContent = `
     <!DOCTYPE html>
