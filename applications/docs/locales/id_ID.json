@@ -288,6 +288,9 @@
       "Delete contact group": [
         "Hapus grup kontak"
       ],
+      "Delete older revisions": [
+        "Hapus revisi lawas"
+      ],
       "Delete permanently": [
         "Hapus secara permanen"
       ],
@@ -311,6 +314,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Unduh salinan (sebagai docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Unduh salinan (sebagai xlsx)"
       ],
       "Download anyway": [
         "Tetap unduh"
@@ -538,6 +547,9 @@
         "Tidak sekarang"
       ],
       "OK": [
+        "OK"
+      ],
+      "Okay": [
         "OK"
       ],
       "Open": [
@@ -857,6 +869,9 @@
       ],
       "View invoice": [
         "Lihat faktur"
+      ],
+      "View only": [
+        "Hanya lihat"
       ],
       "Web page (.html)": [
         "Halaman web (.html)"
@@ -2820,6 +2835,9 @@
       ],
       "Failed to open to contact": [
         "Kontak gagal dibuka"
+      ],
+      "Failed to remove older revisions": [
+        "Revisi lawas gagal dihapus"
       ],
       "Failed to rename document. Please try again later.": [
         "Nama dokumen gagal diubah. Silakan coba lagi nanti."
@@ -4884,6 +4902,12 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Dokumen ini telah menjadi terlampau besar untuk dapat disunting. Anda dapat menghapus revisi lawas untuk lanjut menyunting."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Dokumen ini telah menjadi terlampau besar, dan perubahan terkini Anda tidak dapat disimpan. Unduh salinan dokumen ini untuk menyimpan pekerjaan Anda."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokumen ini sedang memiliki banyak aktivitas. Sebagian fitur mungkin tidak akan tersedia untuk sementara waktu."
       ],
@@ -5336,6 +5360,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
       "Add email address": [
         "Tambah alamat email"
       ],
@@ -5404,6 +5431,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -9149,6 +9179,12 @@
       ],
       "Docs": [
         "Dokumen"
+      ],
+      "Document Size Limit Exceeded": [
+        "Batas Ukuran Dokumen Terlampaui"
+      ],
+      "Document Size Limit Reached": [
+        "Batas Ukuran Dokumen Tercapai"
       ],
       "Document verification failed": [
         "Verifikasi dokumen gagal"

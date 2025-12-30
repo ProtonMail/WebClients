@@ -250,6 +250,9 @@
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "ახალი ${ SHEETS_APP_NAME }-ის შექმნა"
+      ],
       "Create new folder": [
         "ახალი საქაღალდის შექმნა"
       ],
@@ -288,6 +291,9 @@
       "Delete contact group": [
         "კონტაქტების ჯგუფის წაშლა"
       ],
+      "Delete older revisions": [
+        "ძველი ვერსიების წაშლა"
+      ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
@@ -311,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
+      ],
+      "Download a copy (as docx)": [
+        "ასლის გადმოწერა (docx ფორმატში)"
+      ],
+      "Download a copy (as xlsx)": [
+        "ასლის გადმოწერა (xlsx ფორმატში)"
       ],
       "Download anyway": [
         "მაინც გადმოწერა"
@@ -538,6 +550,9 @@
         "არა ახლა"
       ],
       "OK": [
+        "დიახ"
+      ],
+      "Okay": [
         "დიახ"
       ],
       "Open": [
@@ -858,6 +873,9 @@
       ],
       "View invoice": [
         "ინვოისის ნახვა"
+      ],
+      "View only": [
+        "მხოლოდ დათვალიერებისათვის"
       ],
       "Web page (.html)": [
         "ვებგვერდი (.html)"
@@ -1284,6 +1302,15 @@
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
+      "Built and based in Europe": [
+        "აგებულია და დაფუძნებულია ევროპაში"
+      ],
+      "Compliance with data protection regulations": [
+        "თავსებადობა მონაცემთა დაცვის რეგულაციებთან"
+      ],
+      "Data never used for AI training": [
+        "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
+      ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
       ],
@@ -1292,6 +1319,9 @@
       ],
       "Limited favorites": [
         "შეზღუდული რჩეულები"
+      ],
+      "Strict no-logs policy": [
+        "ჩვენ არ ვინახავთ ჟურნალს"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -1307,6 +1337,9 @@
       ],
       "Web search access": [
         "წვდომა ვებში ძებნასთან"
+      ],
+      "Zero-access encryption": [
+        "ნულოვანი წვდომის დაშიფვრა"
       ]
     },
     "collider_2025: Info": {
@@ -2799,6 +2832,9 @@
       "Failed to open to contact": [
         "კონტაქტისთვის გახსნა ჩავარდა"
       ],
+      "Failed to remove older revisions": [
+        "ძველი ვერსიების წაშლა ჩავარდა"
+      ],
       "Failed to rename document. Please try again later.": [
         "დოკუმენტის სახელის გადარქმევა ჩავარდა. მოგვიანებით სცადეთ."
       ],
@@ -3049,6 +3085,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
+      "Unable to import file": [
+        "ფაილის შემოტანა შეუძლებელია"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN-ის სამუშაო მაგიდის ჩატვირთვა შეუძლებელია. გადაამოწმეთ თქვენი კავშირი და თავიდან სცადეთ."
@@ -3388,6 +3427,10 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
+      ],
+      "View the invitation": [
+        "მოსაწვევის ნახვა",
+        "მოსაწვევების ნახვა"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
@@ -4844,6 +4887,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
       ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "ეს დოკუმენტი ძალიან დიდი გახდა ჩასასწორებლად. ჩასწორების გასაგრძელებლად, შეგიძლიათ, ძველი ვერსიები წაშალოთ."
+      ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "ამ დოკუმენტში ძალიან ბევრი აქტივობაა. ზოგიერთი ფუნქცია, შეიძლება, დროებით ხელმიუწვდომელი იყოს."
       ],
@@ -5347,6 +5393,9 @@
       "Colors": [
         "ფერები"
       ],
+      "Command line interface (CLI)": [
+        "ბრძანების სტრიქონის ინტერფეისი (CLI)"
+      ],
       "Confirm password": [
         "პაროლის დადასტურება"
       ],
@@ -5807,6 +5856,9 @@
       ],
       "Resume now": [
         "გაგრძელება ახლა"
+      ],
+      "Terms and conditions": [
+        "წესები და პირობები"
       ],
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
@@ -9097,6 +9149,12 @@
       ],
       "Docs": [
         "დოკუმენტები"
+      ],
+      "Document Size Limit Exceeded": [
+        "დოკუმენტის ზომის ზღვარი გადაჭარბებულია"
+      ],
+      "Document Size Limit Reached": [
+        "მიღწეულია დოკუმენტის ზომის ზღვარი"
       ],
       "Document verification failed": [
         "დოკუმენტის გადამოწმება ჩავარდა"
