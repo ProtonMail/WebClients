@@ -12,6 +12,8 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
 
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
@@ -23,9 +25,11 @@ import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isElementConversation } from '../../../helpers/elements';
+import type { LabelChanges } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
+import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
 import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
@@ -158,6 +162,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const { sendSimpleActionReport } = useListTelemetry();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
     const isES = useIsEncryptedSearch();
+    const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const handleOnBackMoveAction = useMoveBackAction();
 
@@ -190,18 +195,51 @@ export const usePermanentDeleteSelection = (labelID: string) => {
 
             handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE, elements });
 
+            // Always call the delete API for all elements - backend decides hard delete vs soft delete
             await runParallelChunkedActions({
                 api,
                 items: elements,
                 chunkSize: mailActionsChunkSize,
                 action: (chunk: Element[]) => {
-                    // Delete action is done performed on a list of IDs
+                    // Delete action is performed on a list of IDs
                     const itemIDs = chunk.map((c: Element) => c.ID);
                     return conversationMode ? deleteConversations(itemIDs, labelID) : deleteMessages(itemIDs);
                 },
                 canUndo: false,
                 // In permanent delete, we have no UndoToken. So if a chunk fails, we want to undo the part which failed only
-                optimisticAction: (items) => optimisticDelete(items, labelID),
+                optimisticAction: (items: Element[]) => {
+                    // Check if element will be soft-deleted by retention policy
+                    const shouldBeRetained = (item: Element) => {
+                        if (conversationMode) {
+                            return 'ExpiringByRetention' in item && item.ExpiringByRetention;
+                        }
+                        return isExpiringByRetentionRule(item);
+                    };
+
+                    // Separate items into those that will be soft-deleted (retention policy) vs hard-deleted
+                    const softDeleteItems = items.filter(shouldBeRetained);
+                    const hardDeleteItems = items.filter((item) => !shouldBeRetained(item));
+
+                    // Apply optimistic updates immediately and store rollback functions
+                    const softDeleteRollback =
+                        softDeleteItems.length > 0
+                            ? optimisticApplyLabels({
+                                  elements: softDeleteItems,
+                                  inputChanges: { [MAILBOX_LABEL_IDS.SOFT_DELETED]: true } as LabelChanges,
+                                  isMove: true,
+                                  currentLabelID: labelID,
+                              })
+                            : noop;
+
+                    const hardDeleteRollback =
+                        hardDeleteItems.length > 0 ? optimisticDelete(hardDeleteItems, labelID) : noop;
+
+                    // Return rollback function to undo changes if API fails
+                    return () => {
+                        softDeleteRollback();
+                        hardDeleteRollback();
+                    };
+                },
             });
 
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
