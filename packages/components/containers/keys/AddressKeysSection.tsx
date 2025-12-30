@@ -16,16 +16,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
-import { ForwardingState, ForwardingType, type KeyGenConfig, type KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
-    addAddressKeysProcess,
     deleteAddressKey,
     getPrimaryAddressKeysForSigning,
     setAddressKeyFlags,
@@ -47,8 +44,6 @@ import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
-    const { stop, start } = useEventManager();
-    const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
     const [Addresses, loadingAddresses] = useAddresses();
@@ -239,41 +234,6 @@ const AddressKeysSection = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (keyGenConfig: KeyGenConfig | KeyGenConfigV6) => {
-        if (!Address || !addressKeys || !userKeys || !Addresses) {
-            throw new Error('Missing address or address keys');
-        }
-        try {
-            stop();
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            const [newKey, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
-                api,
-                userKeys,
-                keyGenConfig: keyGenConfig,
-                addresses: Addresses,
-                address: Address,
-                addressKeys: addressKeys,
-                keyPassword: authentication.getPassword(),
-                keyTransparencyVerify,
-            });
-            await Promise.all([
-                resignSKLWithPrimaryKey({
-                    api,
-                    ktActivation: dispatch(getKTActivation()),
-                    address: Address,
-                    newPrimaryKeys: getPrimaryAddressKeysForSigning(updatedActiveKeys, true),
-                    formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                    userKeys,
-                }),
-                keyTransparencyCommit(User, userKeys),
-            ]);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-            return newKey.fingerprint;
-        } finally {
-            start();
-        }
-    };
-
     const handleImportKey = () => {
         if (isLoadingKey || !addressKeys || !userKeys) {
             return;
@@ -388,13 +348,15 @@ const AddressKeysSection = () => {
 
     return (
         <>
-            {renderAddKey && (
+            {renderAddKey && Address && (
                 <AddKeyModal
-                    type="address"
+                    target={{
+                        type: 'address',
+                        address: Address,
+                        hasOutgoingE2EEForwardings: hasOutgoingE2EEForwardings,
+                        emailAddress: Address?.Email,
+                    }}
                     existingAlgorithms={existingAlgorithms}
-                    onAdd={onAdd}
-                    hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
-                    emailAddress={Address?.Email}
                     {...addKeyProps}
                 />
             )}
