@@ -1,9 +1,9 @@
 import { addWeeks, fromUnixTime, isAfter, isBefore, subWeeks } from 'date-fns';
+import isDeepEqual from 'lodash/isEqual';
 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 
 import {

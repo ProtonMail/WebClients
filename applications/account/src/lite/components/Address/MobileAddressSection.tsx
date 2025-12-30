@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
@@ -10,7 +11,6 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getStatus } from '@proton/components/containers/addresses/helper';
 import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';

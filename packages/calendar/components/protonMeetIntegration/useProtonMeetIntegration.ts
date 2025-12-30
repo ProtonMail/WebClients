@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -20,7 +21,6 @@ import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 import { useFlag } from '@proton/unleash';
-import debounce from '@proton/utils/debounce';
 
 import { calendarUrlQueryParams } from '../../constants';
 import {

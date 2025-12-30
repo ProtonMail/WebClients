@@ -1,3 +1,5 @@
+import debounce from 'lodash/debounce';
+
 import {
     selectDuplicatePasswords,
     selectExcludedItems,
@@ -10,7 +12,6 @@ import { B2BEventName } from '@proton/pass/types/data/b2b';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import debounce from '@proton/utils/debounce';
 
 import { isBusinessPlan } from '../organization/helpers';
 import type { MonitorService } from './service';

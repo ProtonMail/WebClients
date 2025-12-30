@@ -1,6 +1,7 @@
 import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -22,7 +23,6 @@ import {
     hasReachedContactGroupMembersLimit,
 } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';

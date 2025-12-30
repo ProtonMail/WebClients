@@ -1,5 +1,6 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import type { ItemContent, ItemExtraField, ItemRevision, ItemType, Metadata } from '@proton/pass/types';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 type Diff<T extends object> = Partial<Record<keyof T, boolean>>;
 

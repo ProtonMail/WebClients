@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 
+import debounce from 'lodash/debounce';
 import type { IEditor, PluginEvent } from 'roosterjs-editor-types';
 import { PluginEventType } from 'roosterjs-editor-types';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
-import debounce from '@proton/utils/debounce';
 
 import type { SetEditorToolbarConfig } from '../../interface';
 

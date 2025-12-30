@@ -1,6 +1,6 @@
+import isDeepEqual from 'lodash/isEqual';
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { pick } from '@proton/shared/lib/helpers/object';
 
 import { DEFAULT_LOCALE } from '../constants';

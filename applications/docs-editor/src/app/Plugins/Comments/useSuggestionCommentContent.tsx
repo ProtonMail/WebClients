@@ -1,7 +1,7 @@
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import type { LexicalEditor } from 'lexical'
 import { useState, useEffect, Fragment } from 'react'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { type SuggestionSummaryContent, generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
 import { useCommentsContext } from './CommentsContext'

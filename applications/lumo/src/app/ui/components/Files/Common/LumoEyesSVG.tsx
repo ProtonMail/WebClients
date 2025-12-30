@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
 
 export const LumoEyesSVG = () => {
     const [cursor, setCursor] = useState({ x: 0, y: 0 });

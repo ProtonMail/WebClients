@@ -12,7 +12,7 @@ import {
 } from '@proton/components'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
-import debounce from '@proton/utils/debounce'
+import debounce from 'lodash/debounce'
 import { isHTMLElement } from '../../Utils/guard'
 import type { NodeKey } from 'lexical'
 import { $getNearestNodeFromDOMNode, $getNodeByKey } from 'lexical'

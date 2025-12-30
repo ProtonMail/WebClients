@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 
 import type { IDBPDatabase } from 'idb';
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -13,7 +14,6 @@ import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryp
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import {

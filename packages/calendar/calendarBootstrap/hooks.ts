@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+import debounce from 'lodash/debounce';
 
 import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities';
 import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
-import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import { type CalendarsBootstrapState, calendarBootstrapThunk, selectCalendarsBootstrap } from './index';

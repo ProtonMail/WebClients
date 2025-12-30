@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
 
 import type { DeviceState, SwitchActiveDevice } from '../types';
 

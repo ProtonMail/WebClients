@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import Form from '@proton/components/components/form/Form';
@@ -19,7 +20,6 @@ import { useFolders, useLabels } from '@proton/mail';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { applyFilters } from '@proton/shared/lib/api/filters';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import generateUID from '@proton/utils/generateUID';

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import isEqual from 'lodash/isEqual';
+
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 

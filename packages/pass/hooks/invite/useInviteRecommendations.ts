@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import debounce from 'lodash/debounce';
+
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
 import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
 import { getShareAccessOptions, inviteRecommendationsIntent } from '@proton/pass/store/actions';
 import type { InviteRecommendationsIntent, InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import debounce from '@proton/utils/debounce';
 
 type InviteRecommendationsState = InviteRecommendationsSuccess & { loading: boolean };
 

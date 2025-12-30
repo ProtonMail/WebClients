@@ -1,7 +1,8 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';

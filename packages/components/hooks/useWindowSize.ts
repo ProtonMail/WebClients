@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import debounce from '@proton/utils/debounce';
+import debounce from 'lodash/debounce';
 
 const getWindowSize = (): [width: number, height: number] => {
     return [window.innerWidth, window.innerHeight];

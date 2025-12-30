@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -21,7 +22,6 @@ import { CacheType } from '@proton/redux-utilities';
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Label } from '@proton/shared/lib/interfaces';
 import move from '@proton/utils/move';
 

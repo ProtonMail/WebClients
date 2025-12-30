@@ -1,3 +1,4 @@
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { startImportTask } from '@proton/activation/src/api';
@@ -12,7 +13,6 @@ import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/a
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';

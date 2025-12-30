@@ -1,11 +1,11 @@
 import { useCallback, useEffect } from 'react';
 
 import { createSelector } from '@reduxjs/toolkit';
+import isEqual from 'lodash/isEqual';
 
 import usePrevious from '@proton/hooks/usePrevious';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { createHooks } from '@proton/redux-utilities';
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { pick } from '@proton/shared/lib/helpers/object';
 
 import { apiWalletTransactionDataThunk, selectApiWalletTransactionData } from '../slices';

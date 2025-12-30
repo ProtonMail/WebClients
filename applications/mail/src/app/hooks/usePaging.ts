@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
+import debounce from 'lodash/debounce';
+
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
-import debounce from '@proton/utils/debounce';
 
 import { pageCount } from '../helpers/paging';
 
