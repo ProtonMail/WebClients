@@ -11162,7 +11162,6 @@ __metadata:
   dependencies:
     "@rowsncolumns/utils": "workspace:^"
     "@types/uzip": "npm:^0.20201231.2"
-    "@wmakeev/exceljs": "npm:^4.4.5"
     fast-xml-parser: "npm:^5.2.3"
     rxjs: "npm:^7.8.2"
     uzip: "npm:^0.20201231.0"
@@ -15704,23 +15703,6 @@ __metadata:
     webpack-dev-server:
       optional: true
   checksum: 10/688138f7b2f96ed7a5aae2798bd647e4db0fdf8e86850a493c987049eec6faf63ba78d8f08b4f0a9e41dc459cba80abfb621ae1a45890bb0fa2c09baef4db75b
-  languageName: node
-  linkType: hard
-
-"@wmakeev/exceljs@npm:^4.4.5":
-  version: 4.4.5
-  resolution: "@wmakeev/exceljs@npm:4.4.5"
-  dependencies:
-    archiver: "npm:^5.0.0"
-    dayjs: "npm:^1.8.34"
-    fast-csv: "npm:^4.3.1"
-    jszip: "npm:^3.10.1"
-    readable-stream: "npm:^3.6.0"
-    saxes: "npm:^5.0.1"
-    tmp: "npm:^0.2.0"
-    unzipper: "npm:^0.10.11"
-    uuid: "npm:^8.3.0"
-  checksum: 10/3dde05924159c54953d956d47a7a59bf285a611de2f0e4dfd1c52370ca42092d377ceb6404afc5f75554422014636015bfde64cf2158edff478ed44d5d4a505b
   languageName: node
   linkType: hard
 
