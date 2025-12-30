@@ -84,10 +84,17 @@ export function useCurrentScreenShare({
                 return;
             }
 
-            notifications.createNotification({
-                type: 'error',
-                text: c('Error').t`Failed to start screen share`,
-            });
+            if (err.message === 'The object can not be found here.') {
+                notifications.createNotification({
+                    type: 'error',
+                    text: c('Error').t`Please allow screen sharing in your system permissions, then try again`,
+                });
+            } else {
+                notifications.createNotification({
+                    type: 'error',
+                    text: c('Error').t`Failed to start screen share`,
+                });
+            }
         }
     };
 
