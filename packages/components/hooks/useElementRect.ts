@@ -1,8 +1,9 @@
 import type { RefObject } from 'react';
 import { useLayoutEffect, useState } from 'react';
 
+import throttle from 'lodash/throttle';
+
 import noop from '@proton/utils/noop';
-import throttle from '@proton/utils/throttle';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
 const keys = ['bottom', 'height', 'left', 'right', 'top', 'width', 'x', 'y'];

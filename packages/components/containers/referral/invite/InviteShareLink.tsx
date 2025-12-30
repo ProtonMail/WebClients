@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -8,10 +9,9 @@ import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
-import throttle from '@proton/utils/throttle';
 
-import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
 import ReferralShareLinks from './inviteActions/ReferralShareLinks';
+import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
 
 const InviteShareLink = ({ className }: { className?: string }) => {
     const [userSettings] = useUserSettings();

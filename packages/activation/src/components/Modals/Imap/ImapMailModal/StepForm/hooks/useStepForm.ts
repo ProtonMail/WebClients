@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import throttle from 'lodash/throttle';
+
 import { updateImport } from '@proton/activation/src/api';
 import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '@proton/activation/src/interface';
 import { selectImapDraftProduct } from '@proton/activation/src/logic/draft/draft.selector';
@@ -16,7 +18,6 @@ import {
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useApi } from '@proton/components';
-import throttle from '@proton/utils/throttle';
 
 import useAuthInfoByEmail from './useAuthInfoByEmail';
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';

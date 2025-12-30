@@ -1,3 +1,4 @@
+import throttle from 'lodash/throttle';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -11,7 +12,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
-import throttle from '@proton/utils/throttle';
 
 import type { FieldHandle } from './field';
 import type { FormTracker } from './form.tracker';

@@ -2,6 +2,7 @@ import type { CSSProperties, MouseEventHandler, Ref } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,7 +12,6 @@ import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
-import throttle from '@proton/utils/throttle';
 
 import { getCannotSaveEvent } from '../../helpers/event';
 import { useRect } from '../../hooks/useRect';

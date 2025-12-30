@@ -5,7 +5,7 @@ import Footer from '@proton/components/components/footer/Footer';
 import useElementRect from '@proton/components/hooks/useElementRect';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
-import throttle from '@proton/utils/throttle';
+import throttle from 'lodash/throttle';
 
 interface Props {
     buttons: ReactElement[];
