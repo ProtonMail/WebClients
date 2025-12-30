@@ -4,8 +4,16 @@ import type { MessageStateWithData } from '@proton/mail/store/messages/messagesT
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { mailTestRender } from 'proton-mail/helpers/test/helper';
+import { optimisticUpdateFlag } from 'proton-mail/store/messages/optimistic/messagesOptimisticActions';
 
 import ExtraSpamScore from './ExtraSpamScore';
+
+const mockDispatch = jest.fn();
+jest.mock('proton-mail/store/hooks', () => ({
+    useMailDispatch: () => mockDispatch,
+    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
+    useMailStore: jest.fn().mockReturnValue({ getState: jest.fn() }),
+}));
 
 describe('ExtraSpamScore', () => {
     it('should show DMARC validation failure banner', async () => {
@@ -41,6 +49,29 @@ describe('ExtraSpamScore', () => {
 
         fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
         expect(screen.getByTestId('spam-banner:mark-legitimate-prompt')).toBeInTheDocument();
+    });
+
+    it('should dispatch optimisticUpdateFlag after marking as legitimate', async () => {
+        const message = {
+            data: {
+                ID: 'test-message-id',
+                Flags: MESSAGE_FLAGS.FLAG_PHISHING_AUTO,
+            },
+        } as unknown as MessageStateWithData;
+
+        await mailTestRender(<ExtraSpamScore message={message} />);
+
+        fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
+        expect(screen.getByTestId('spam-banner:mark-legitimate-prompt')).toBeInTheDocument();
+
+        fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate-prompt-btn'));
+
+        expect(mockDispatch).toHaveBeenCalledWith(
+            optimisticUpdateFlag({
+                ID: 'test-message-id',
+                flagToAdd: MESSAGE_FLAGS.FLAG_HAM_MANUAL,
+            })
+        );
     });
 
     describe('banner copy change test', () => {

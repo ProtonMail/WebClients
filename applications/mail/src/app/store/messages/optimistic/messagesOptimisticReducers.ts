@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { hasLabel } from '../../../helpers/elements';
 import type { LabelChanges } from '../../../helpers/labels';
@@ -56,4 +57,25 @@ export const optimisticRestore = (
     messages.forEach((message) => {
         state[message.localID] = message as any;
     });
+};
+
+export const optimisticUpdateFlag = (
+    state: Draft<MessagesState>,
+    {
+        payload: { ID, flagToAdd, flagToRemove },
+    }: PayloadAction<{ ID: string; flagToAdd?: number; flagToRemove?: number }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState?.data) {
+        let flags = messageState.data?.Flags || 0;
+
+        if (flagToAdd) {
+            flags = setBit(flags, flagToAdd);
+        } else if (flagToRemove) {
+            flags = clearBit(flags, flagToRemove);
+        }
+
+        messageState.data.Flags = flags;
+    }
 };
