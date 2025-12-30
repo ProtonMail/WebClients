@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Kopier automatisk den genererede adgangskode til udklipsholderen"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Udfyld automatisk dine gemte betalingsoplysninger."
+      ],
       "Autosaved on ${ url }": [
         "Autogemt på ${ url }"
       ],
@@ -1862,7 +1865,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1884,6 +1888,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "No credit cards found": [
+        "Intet betalingskort fundet"
       ],
       "No identity item found": [
         "Intet identitetselement fundet"
@@ -2798,6 +2805,9 @@
       ],
       "Created at": [
         "Oprettet kl."
+      ],
+      "Credit-card autofill": [
+        "Automatisk udfyldelse af kreditkort"
       ],
       "Crypto Wallet": [
         "Wallet til kryptovaluta"
