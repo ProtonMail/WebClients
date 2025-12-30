@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { addressThunk, useInactiveKeys } from '@proton/account';
+import { useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { setAddressKeyFlagAction } from '@proton/account/addressKeys/setAddressKeyFlagAction';
 import { setAddressKeyPrimaryAction } from '@proton/account/addressKeys/setAddressKeyPrimaryAction';
@@ -15,15 +15,10 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useModals from '@proton/components/hooks/useModals';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { CacheType } from '@proton/redux-utilities';
 import { type Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
-import { deleteAddressKey } from '@proton/shared/lib/keys';
 import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
@@ -39,15 +34,12 @@ import { getKeyByID } from './shared/helper';
 import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
-    const { createModal } = useModals();
-    const api = useApi();
     const [User] = useUser();
     const [Addresses, loadingAddresses] = useAddresses();
     const [userKeys] = useUserKeys();
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [maybeAddressIndex, setAddressIndex] = useState(-1);
-    const createKTVerifier = useKTVerifier();
     const keyReactivationRequests = useInactiveKeys();
     const dispatch = useDispatch();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
@@ -76,6 +68,7 @@ const AddressKeysSection = () => {
     const [exportPrivateKeyProps, setExportPrivateKeyOpen, renderExportPrivateKey] = useModalState();
     const [exportPublicKeyProps, setExportPublicKeyOpen, renderExportPublicKey] = useModalState();
     const [confirmPrimaryKeyProps, setConfirmPrimaryKeyOpen, renderConfirmPrimaryKey] = useModalState();
+    const [deleteKeyProps, setDeleteKeyOpen, renderDeleteKey] = useModalState();
     const [tmpId, setTmpId] = useState('');
 
     const isLoadingKey = loadingKeyID !== '';
@@ -148,44 +141,8 @@ const AddressKeysSection = () => {
         if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
-        const addressKey = getKeyByID(addressKeys, ID);
-        const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
-        if (!addressDisplayKey || !Address) {
-            throw new Error('Key not found');
-        }
-        const { fingerprint } = addressDisplayKey;
-        const privateKey = addressKey?.privateKey;
-
-        const onDelete = async (): Promise<void> => {
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            await deleteAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
-            await keyTransparencyCommit(User, userKeys);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-        };
-
-        const onExport = (): Promise<void> => {
-            return new Promise((resolve, reject) => {
-                if (!privateKey) {
-                    return reject(new Error('Private key is not decrypted'));
-                }
-                createModal(
-                    <ExportPrivateKeyModal
-                        onClose={reject}
-                        onSuccess={resolve}
-                        name={addressEmail}
-                        privateKey={privateKey}
-                    />
-                );
-            });
-        };
-
-        createModal(
-            <DeleteKeyModal
-                onDelete={onDelete}
-                onExport={privateKey ? onExport : undefined}
-                fingerprint={fingerprint}
-            />
-        );
+        setDeleteKeyOpen(true);
+        setTmpId(ID);
     };
 
     const handleAddKey = () => {
@@ -298,6 +255,7 @@ const AddressKeysSection = () => {
 
     const tmpDecryptedAddressKey = getKeyByID(addressKeys || [], tmpId);
     const tmpAddressKey = getKeyByID(Address?.Keys || [], tmpId);
+    const addressDisplayKey = getKeyByID(addressKeysDisplay, tmpId);
 
     return (
         <>
@@ -350,14 +308,28 @@ const AddressKeysSection = () => {
                     }}
                 />
             )}
-            {renderConfirmPrimaryKey && Address && tmpDecryptedAddressKey && (
+            {renderConfirmPrimaryKey && Address && addressDisplayKey && tmpDecryptedAddressKey && (
                 <ChangePrimaryKeyForwardingNoticeModal
                     onMakeKeyPrimary={async () => handleSetPrimaryKeyHelper(Address, tmpDecryptedAddressKey.ID)}
-                    fingerprint={tmpDecryptedAddressKey.publicKey.getFingerprint()}
+                    fingerprint={addressDisplayKey.fingerprint}
                     {...confirmPrimaryKeyProps}
                     onExit={() => {
                         setTmpId('');
                         confirmPrimaryKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderDeleteKey && Address && tmpAddressKey && addressDisplayKey && (
+                <DeleteKeyModal
+                    name={addressEmail}
+                    address={Address}
+                    addressKey={tmpAddressKey}
+                    privateKey={tmpDecryptedAddressKey}
+                    fingerprint={addressDisplayKey.fingerprint}
+                    {...deleteKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        deleteKeyProps.onExit();
                     }}
                 />
             )}
