@@ -6,10 +6,9 @@ import { c, msgid } from 'ttag';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import FileInput from '@proton/components/components/input/FileInput';
-import useModals from '@proton/components/hooks/useModals';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 import type { CsvConfig } from '../csv';
 import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
@@ -35,7 +34,8 @@ const UploadCSVFileButton = ({
 }: Props) => {
     const [importing, setImporting] = useState(false);
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
+    const [errorModalProps, setErrorModalOpen, renderErrorModal] = useModalState();
+    const [errors, setErrors] = useState<ReactNode[]>([]);
 
     const csvTemplateButton = (
         <InlineLinkButton
@@ -55,6 +55,8 @@ const UploadCSVFileButton = ({
         c('Info').jt`Please check your file, or try using our ${csvTemplateButton}.`;
 
     const handleFiles = async (files: File[]) => {
+        const jsxErrors: ReactNode[] = [];
+
         try {
             const { users, errors } = await parseMultiUserCsv(files, csvConfig);
 
@@ -69,56 +71,56 @@ const UploadCSVFileButton = ({
                     (error) => error.type === CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH
                 );
 
-                if (requiredEmailErrors.length || requiredPasswordErrors.length | passwordMinLengthErrors.length) {
-                    return createModal(
-                        <CsvFormatErrorModal>
-                            {requiredEmailErrors.length > 0 ? (
-                                <p className={clsx('mt-0', !requiredPasswordErrors.length && 'mb-0')}>
-                                    {c('Info').ngettext(
-                                        msgid`Please add an email address for the user on row`,
-                                        `Please add email addresses for the users on rows`,
-                                        requiredEmailErrors.length
-                                    )}{' '}
-                                    {requiredEmailErrors.map((error) => error.rowNumber).join(', ')}
-                                </p>
-                            ) : null}
-                            {requiredPasswordErrors.length > 0 ? (
-                                <p className="my-0">
-                                    {c('Info').ngettext(
-                                        msgid`Please add a password for the user on row`,
-                                        `Please add passwords for the users on rows`,
-                                        requiredPasswordErrors.length
-                                    )}{' '}
-                                    {requiredPasswordErrors.map((error) => error.rowNumber).join(', ')}
-                                </p>
-                            ) : null}
-
-                            {passwordMinLengthErrors.length > 0 ? (
-                                <p className="my-0">
-                                    {c('Info').t`Password must be ${MIN_PASSWORD_LENGTH} characters or more.`}{' '}
-                                    {c('Info').ngettext(
-                                        msgid`Affected user is on row`,
-                                        `Affected users are on rows`,
-                                        passwordMinLengthErrors.length
-                                    )}{' '}
-                                    {passwordMinLengthErrors.map((error) => error.rowNumber).join(', ')}
-                                </p>
-                            ) : null}
-                        </CsvFormatErrorModal>
-                    );
+                if (requiredEmailErrors.length || requiredPasswordErrors.length || passwordMinLengthErrors.length) {
+                    if (requiredEmailErrors.length > 0) {
+                        jsxErrors.push(
+                            <>
+                                {c('Info').ngettext(
+                                    msgid`Please add an email address for the user on row`,
+                                    `Please add email addresses for the users on rows`,
+                                    requiredEmailErrors.length
+                                )}{' '}
+                                {requiredEmailErrors.map((error) => error.rowNumber).join(', ')}
+                            </>
+                        );
+                    }
+                    if (requiredPasswordErrors.length > 0) {
+                        jsxErrors.push(
+                            <>
+                                {c('Info').ngettext(
+                                    msgid`Please add a password for the user on row`,
+                                    `Please add passwords for the users on rows`,
+                                    requiredPasswordErrors.length
+                                )}{' '}
+                                {requiredPasswordErrors.map((error) => error.rowNumber).join(', ')}
+                            </>
+                        );
+                    }
+                    if (passwordMinLengthErrors.length) {
+                        jsxErrors.push(
+                            <>
+                                {c('Info').t`Password must be ${MIN_PASSWORD_LENGTH} characters or more.`}{' '}
+                                {c('Info').ngettext(
+                                    msgid`Affected user is on row`,
+                                    `Affected users are on rows`,
+                                    passwordMinLengthErrors.length
+                                )}{' '}
+                                {passwordMinLengthErrors.map((error) => error.rowNumber).join(', ')}
+                            </>
+                        );
+                    }
                 }
 
                 const invalidTypeErrors = errors.filter(
                     (error) => error.type === CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE
                 );
                 if (invalidTypeErrors.length) {
-                    return createModal(
-                        <CsvFormatErrorModal>
-                            <p className="mt-0">{c('Info').t`The format of your CSV file is incorrect.`}</p>
-                            <p className="mb-0">{pleaseCheckYourFileText}</p>
-                        </CsvFormatErrorModal>
-                    );
+                    jsxErrors.push(c('Info').t`The format of your CSV file is incorrect.`, pleaseCheckYourFileText);
                 }
+            }
+
+            if (jsxErrors.length) {
+                return;
             }
 
             onUpload(users);
@@ -128,21 +130,12 @@ const UploadCSVFileButton = ({
             }
 
             if (error instanceof TooManyUsersError) {
-                createModal(
-                    <CsvFormatErrorModal>
-                        <p className="m-0">{error.message}</p>
-                    </CsvFormatErrorModal>
-                );
+                jsxErrors.push(error.message);
                 return;
             }
 
             if (error instanceof CsvConversionError || error instanceof CsvFormatError) {
-                createModal(
-                    <CsvFormatErrorModal>
-                        <p className="mt-0">{error.message}</p>
-                        <p className="mb-0">{pleaseCheckYourFileText}</p>
-                    </CsvFormatErrorModal>
-                );
+                jsxErrors.push(error.message, pleaseCheckYourFileText);
                 return;
             }
 
@@ -150,18 +143,45 @@ const UploadCSVFileButton = ({
                 type: 'error',
                 text: error.message,
             });
+        } finally {
+            if (jsxErrors.length) {
+                setErrors(jsxErrors);
+                setErrorModalOpen(true);
+            }
         }
     };
     return (
         <>
+            {renderErrorModal && (
+                <CsvFormatErrorModal
+                    {...errorModalProps}
+                    onExit={() => {
+                        setErrors([]);
+                        errorModalProps.onExit();
+                    }}
+                >
+                    <div className="flex flex-column gap-2">
+                        {errors.map((node, index) => {
+                            return (
+                                // eslint-disable-next-line react/no-array-index-key
+                                <p key={index} className="m-0">
+                                    {node}
+                                </p>
+                            );
+                        })}
+                    </div>
+                </CsvFormatErrorModal>
+            )}
             <FileInput
                 className={className}
                 accept=".csv"
                 onChange={async ({ target }) => {
-                    setImporting(true);
-                    const files = Array.from(target.files as FileList);
-                    await handleFiles(files);
-                    setImporting(false);
+                    if (target.files && target.files.length) {
+                        setImporting(true);
+                        const files = Array.from(target.files);
+                        await handleFiles(files);
+                        setImporting(false);
+                    }
                 }}
                 loading={importing}
                 color={color}
