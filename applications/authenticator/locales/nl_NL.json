@@ -5,6 +5,15 @@
   },
   "contexts": {
     "Action": {
+      "Animate code change": [
+        "Codewijziging animeren"
+      ],
+      "Automatic backups": [
+        "Automatische back-ups"
+      ],
+      "Backup and reset": [
+        "Back-up en resetten"
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -14,22 +23,532 @@
       "Confirm": [
         "Bevestigen"
       ],
+      "Confirm reset": [
+        "Reset bevestigen"
+      ],
+      "Copy ${ issuer } (${ name })": [
+        "Kopieer ${ issuer } (${ name })"
+      ],
       "Create": [
         "Aanmaken"
       ],
       "Dismiss": [
         "Negeren"
       ],
+      "Export data without password": [
+        "Gegevens exporteren zonder wachtwoord"
+      ],
+      "Hide codes": [
+        "Codes verbergen"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
+      "Reload app": [
+        "App herladen"
+      ],
       "Try again": [
         "Opnieuw proberen"
+      ],
+      "Use this password": [
+        "Gebruik dit wachtwoord"
+      ]
+    },
+    "authenticator-2025:Action": {
+      "Change folder": [
+        "Map wijzigen"
+      ],
+      "Clear search": [
+        "Zoekveld leegmaken"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Continue anyway": [
+        "Toch doorgaan"
+      ],
+      "Continue anyways": [
+        "Toch doorgaan"
+      ],
+      "Create a free account": [
+        "Maak een gratis account aan"
+      ],
+      "Create a new vault": [
+        "Nieuwe kluis aanmaken"
+      ],
+      "Create new code": [
+        "Nieuwe code aanmaken"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Edit": [
+        "Bewerk"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "How to update ${ AUTHENTICATOR_APP_NAME } on Linux": [
+        "Hoe ${ AUTHENTICATOR_APP_NAME } te updaten op Linux"
+      ],
+      "How to use ${ AUTHENTICATOR_SHORT_APP_NAME }": [
+        "Hoe gebruikt u ${ AUTHENTICATOR_SHORT_APP_NAME }"
+      ],
+      "Import": [
+        "Importeer"
+      ],
+      "Import codes": [
+        "Codes importeren"
+      ],
+      "Need more help?": [
+        "Meer hulp nodig?"
+      ],
+      "Open settings": [
+        "Instellingen openen"
+      ],
+      "Please try again or reset to create a new one.": [
+        "Probeer het opnieuw of reset om een nieuwe aan te maken."
+      ],
+      "Please try again.": [
+        "Probeer het opnieuw."
+      ],
+      "Remove previous backups": [
+        "Eerdere back-ups verwijderen"
+      ],
+      "Report an issue": [
+        "Meld een probleem"
+      ],
+      "Reset": [
+        "Reset"
+      ],
+      "Save code": [
+        "Code opslaan"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Secure now": [
+        "Nu beveiligen"
+      ],
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sync between devices": [
+        "Synchroniseer tussen apparaten"
+      ],
+      "Try again": [
+        "Probeer opnieuw"
+      ],
+      "Unlock": [
+        "Ontgrendelen"
+      ],
+      "Unlock with biometrics": [
+        "Ontgrendel met biometrische gegevens"
+      ],
+      "Update and relaunch": [
+        "Updaten en herstarten"
+      ]
+    },
+    "authenticator-2025:Description": {
+      "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
+        "U hebt dit wachtwoord nodig om ${ AUTHENTICATOR_APP_NAME } te ontgrendelen elke keer dat het opnieuw opstart."
+      ],
+      "Your import file is protected by a password. Please enter the password to proceed.": [
+        "Uw importbestand is beveiligd met een wachtwoord. Voer het wachtwoord in om verder te gaan."
+      ]
+    },
+    "authenticator-2025:Error": {
+      "An unknown error occured. Please contact us to resolve this issue.": [
+        "Er is een onbekende fout opgetreden. Neem contact met ons op om dit probleem op te lossen."
+      ],
+      "Authentication canceled": [
+        "Authenticatie geannuleerd"
+      ],
+      "Biometric authentication failure (Code: ${ code })": [
+        "Biometrische authenticatie mislukt (Code: ${ code })"
+      ],
+      "Cannot generate secure storage key. You can try to create a password app lock instead": [
+        "Kan geen veilige opslagsleutel genereren. U kunt in plaats daarvan proberen een app vergrendeling met wachtwoord in te stellen."
+      ],
+      "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
+        "U kunt deze map niet gebruiken. Kies een map in de persoonlijke map van uw gebruiker (${ home })"
+      ],
+      "Codes from file \"${ filename }\" could not be imported": [
+        "Codes uit bestand \"${ filename }\" konden niet worden geïmporteerd."
+      ],
+      "Failed database migration. If the issue persists, please contact customer support.": [
+        "Mislukte databasemigratie. Als het probleem aanhoudt, neem dan contact op met de klantenservice."
+      ],
+      "Failed to create export": [
+        "Maken van export is mislukt"
+      ],
+      "Failed to import due to wrong password. Please try again.": [
+        "Importeren mislukt vanwege een onjuist wachtwoord. Probeer het opnieuw."
+      ],
+      "Failed to reorder items": [
+        "De volgorde van items wijzigen is mislukt"
+      ],
+      "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
+        "De migratie is mislukt na het updaten van ${ AUTHENTICATOR_APP_NAME }. U kunt het opnieuw proberen, of een back-up maken van uw gegevens en de app resetten om verder te gaan."
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
+      ],
+      "The app couldn’t access your storage key.": [
+        "De app kon geen toegang krijgen tot uw opslagsleutel."
+      ],
+      "Unable to access your secure storage key due to a system issue.": [
+        "Kan geen toegang krijgen tot uw veilige opslagsleutel vanwege een systeemprobleem."
+      ],
+      "We couldn't create your secure storage key due to a system limitation.": [
+        "We konden uw veilige opslagsleutel niet aanmaken vanwege een systeembeperking."
+      ],
+      "We couldn't generate your secure storage key.": [
+        "Het is ons niet gelukt om uw veilige opslagsleutel te genereren."
+      ],
+      "Your storage key appears to be damaged and can't be read.": [
+        "Uw opslagsleutel lijkt beschadigd te zijn en kan niet worden gelezen."
+      ],
+      "Your storage key is missing and needs to be recreated.": [
+        "Uw opslagsleutel ontbreekt en moet opnieuw worden aangemaakt."
+      ]
+    },
+    "authenticator-2025:Import": {
+      "${ count } item was skipped. HOTP isn’t currently supported.": [
+        "${ count } item werd overgeslagen. HOTP wordt momenteel niet ondersteund.",
+        "${ count } items werden overgeslagen. HOTP wordt momenteel niet ondersteund."
+      ],
+      "Imported ${ totalImports } code": [
+        "${ totalImports } code geïmporteerd",
+        "${ totalImports } codes geïmporteerd"
+      ]
+    },
+    "authenticator-2025:Info": {
+      "Backup files will not be erased.": [
+        "Back-upbestanden worden niet gewist."
+      ],
+      "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
+        "Kies ${ plainTextBold }, hiermee wordt een txt bestand aangemaakt dat u hier kunt gebruiken."
+      ],
+      "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
+        "Kies ${ zipTextBold }, hiermee wordt een zip bestand aangemaakt dat u hier kunt gebruiken."
+      ],
+      "Code added": [
+        "Code toegevoegd"
+      ],
+      "Code added but could not be synced": [
+        "Code toegevoegd, maar kon niet gesynchroniseerd worden."
+      ],
+      "Code deleted": [
+        "Code verwijderd"
+      ],
+      "Code edited": [
+        "Code bewerkt"
+      ],
+      "Code edited but could not be synced": [
+        "Code bewerkt, maar kon niet gesynchroniseerd worden."
+      ],
+      "Code reordered but could not be synced": [
+        "De volgorde van de code is gewijzigd, maar kon niet worden gesynchroniseerd."
+      ],
+      "Export created": [
+        "Export aangemaakt"
+      ],
+      "Failed syncing local items to remote": [
+        "Synchronisatie van lokale items met extern is mislukt"
+      ],
+      "Failed to add code.": [
+        "Toevoegen van code is mislukt."
+      ],
+      "Failed to edit code": [
+        "Bewerken van code is mislukt"
+      ],
+      "Failed updating remote items": [
+        "Het bijwerken van externe items is mislukt"
+      ],
+      "Importing codes from ${ paths.length } files...": [
+        "Codes importeren uit ${ paths.length } bestanden..."
+      ],
+      "Importing codes...": [
+        "Codes importeren..."
+      ],
+      "Last backup: ${ lastBackupDateDisplay }.": [
+        "Laatste back-up: ${ lastBackupDateDisplay }."
+      ],
+      "Lock updated": [
+        "Vergrendeling bijgewerkt"
+      ],
+      "New version ${ latestVersion.version } is available": [
+        "Nieuwe versie ${ latestVersion.version } is beschikbaar"
+      ],
+      "One-time code copied": [
+        "Eenmalige code gekopieerd"
+      ],
+      "Only the last ${ BACKUP_MAX_AMOUNT } daily backups are kept.": [
+        "Alleen de laatste ${ BACKUP_MAX_AMOUNT } dagelijkse back-ups worden bewaard."
+      ],
+      "Plain text": [
+        "Tekst zonder opmaak"
+      ],
+      "Please go to ${ settingsPath }.": [
+        "Ga naar ${ settingsPath }."
+      ],
+      "Please import your data manually for now.": [
+        "Importeer uw gegevens voorlopig handmatig."
+      ],
+      "Settings > 2FAS Backup > Export": [
+        "Instellingen > 2FAS Back-up > Exporteren"
+      ],
+      "Settings > Data > Export codes": [
+        "Instellingen > Gegevens > Codes exporteren"
+      ],
+      "Settings > Export": [
+        "Instellingen > Exporteren"
+      ],
+      "Settings > Import & Export > Export": [
+        "Instellingen > Importeren & Exporteren > Exporteren"
+      ],
+      "Settings > Transfer accounts > Export accounts": [
+        "Instellingen > Accounts overdragen > Accounts exporteren"
+      ],
+      "Settings > Transfer accounts > Export accounts to file": [
+        "Instellingen > Accounts overdragen > Accounts exporteren naar bestand"
+      ],
+      "Sync disabled": [
+        "Synchronisatie uitgeschakeld"
+      ],
+      "Sync enabled": [
+        "Synchronisatie ingeschakeld"
+      ],
+      "This will create a 2fas file that you can use here.": [
+        "Hiermee wordt een 2fas bestand aangemaakt dat u hier kunt gebruiken."
+      ],
+      "This will create a Json file that you can use here.": [
+        "Hiermee wordt een JSON bestand aangemaakt dat u hier kunt gebruiken."
+      ],
+      "This will create one or more QR codes that you can use here.": [
+        "Hiermee worden één of meer QR-codes aangemaakt die u hier kunt gebruiken."
+      ],
+      "Unfortunately, Authy doesn’t currently support exporting data from their app. Consider contacting Authy to request this feature.": [
+        "Helaas ondersteunt Authy momenteel het exporteren van gegevens vanuit hun app niet. Overweeg om contact op te nemen met Authy om deze functie aan te vragen."
+      ],
+      "Unfortunately, Microsoft Authenticator doesn’t currently support exporting data from their app. Consider contacting Microsoft to request this feature.": [
+        "Helaas ondersteund Microsoft Authenticator momenteel het exporteren van gegevens vanuit hun app niet. Overweeg om contact op te nemen met Microsoft om deze functie aan te vragen."
+      ],
+      "ZIP": [
+        "Postcode"
+      ]
+    },
+    "authenticator-2025:Label": {
+      "30 seconds": [
+        "30 seconden"
+      ],
+      "60 seconds": [
+        "60 seconden"
+      ],
+      "Account: ${ user.Email }": [
+        "Account: ${ user.Email }"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Advanced options": [
+        "Geavanceerde opties"
+      ],
+      "Algorithm": [
+        "Algoritme"
+      ],
+      "App lock": [
+        "App vergrendeling"
+      ],
+      "Appearance": [
+        "Uiterlijk"
+      ],
+      "Automatic": [
+        "Automatisch"
+      ],
+      "Backup folder": [
+        "Back-up map"
+      ],
+      "Backups": [
+        "Back-ups"
+      ],
+      "Biometrics": [
+        "Biometrie"
+      ],
+      "Boxed": [
+        "Omkaderd"
+      ],
+      "Dark": [
+        "Donker"
+      ],
+      "Digit style": [
+        "Cijfer stijl"
+      ],
+      "Digits": [
+        "Cijfers"
+      ],
+      "Discover ${ BRAND_NAME }": [
+        "Ontdek ${ BRAND_NAME }"
+      ],
+      "Enabled, temporarily offline": [
+        "Ingeschakeld, tijdelijk offline"
+      ],
+      "Enter your password:": [
+        "Voer uw wachtwoord in:"
+      ],
+      "Export": [
+        "Exporteer"
+      ],
+      "Import": [
+        "Importeer"
+      ],
+      "Issuer": [
+        "Uitgever"
+      ],
+      "Light": [
+        "Licht"
+      ],
+      "Loading account data...": [
+        "Accountgegevens worden geladen..."
+      ],
+      "Manage your data": [
+        "Beheer uw gegevens"
+      ],
+      "None": [
+        "Geen"
+      ],
+      "Once deleted, this code cannot be recovered.": [
+        "Eenmaal verwijderd, kan deze code niet worden hersteld."
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Plain": [
+        "Zonder opmaak"
+      ],
+      "Secret": [
+        "Geheim"
+      ],
+      "Secret key": [
+        "Geheime sleutel"
+      ],
+      "Security": [
+        "Beveiliging"
+      ],
+      "Support": [
+        "Hulp"
+      ],
+      "Theme": [
+        "Thema"
+      ],
+      "Time interval": [
+        "Tijdsinterval"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Title, account, or label": [
+        "Titel, account of label"
+      ],
+      "Type": [
+        "Soort"
+      ],
+      "View logs": [
+        "Logboeken bekijken"
+      ]
+    },
+    "authenticator-2025:Reason": {
+      "disable lock": [
+        "vergrendeling uitschakelen"
+      ],
+      "enable lock": [
+        "vergrendeling inschakelen"
       ]
     },
     "authenticator-2025:Title": {
+      "Confirm password": [
+        "Wachtwoord bevestigen"
+      ],
+      "Create password": [
+        "Wachtwoord aanmaken"
+      ],
+      "Delete \"${ displayName }\"": [
+        "Verwijder \"${ displayName }\""
+      ],
+      "Edit code": [
+        "Code bewerken"
+      ],
+      "Encrypted backup is now available": [
+        "Versleutelde back-up is nu beschikbaar"
+      ],
+      "Import codes from ${ provider }": [
+        "Importeer codes uit ${ provider }"
+      ],
+      "Log in": [
+        "Inloggen"
+      ],
+      "New code": [
+        "Nieuwe code"
+      ],
+      "No export available": [
+        "Geen export beschikbaar"
+      ],
+      "Protected file": [
+        "Beschermd bestand"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
       "Sign up": [
         "Registreren"
+      ],
+      "Storage key issue": [
+        "Opslagsleutel probleem"
+      ],
+      "Unlock ${ AUTHENTICATOR_APP_NAME }": [
+        "Ontgrendel ${ AUTHENTICATOR_APP_NAME }"
+      ]
+    },
+    "authenticator-2025:Warning": {
+      "Automatic backup was disabled due to missing backup folder (${ backupDirectory })": [
+        "Automatische back-up werd uitgeschakeld vanwege een ontbrekende back-upmap (${ backupDirectory })"
+      ],
+      "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
+        "Voor verbeterde beveiliging is de niet-versleutelde automatische back-up uitgeschakeld. U kunt deze opnieuw inschakelen in de instellingen."
+      ],
+      "If you continue without setting up a secure storage key, your data will still be encrypted locally, but the key will be saved less securely.": [
+        "Als u doorgaat zonder een veilige opslagsleutel in te stellen, worden uw gegevens lokaal nog steeds versleuteld, maar de sleutel wordt minder veilig opgeslagen."
+      ],
+      "Nothing to import.": [
+        "Niets te importeren."
+      ],
+      "Resetting your storage key will erase any local data that hasn’t been synced.": [
+        "Het resetten van uw opslagsleutel zal alle lokale gegevens wissen die nog niet zijn gesynchroniseerd."
+      ],
+      "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
+        "Fout wachtwoord. U hebt nog ${ remainingCount } poging over, daarna worden uw gegevens gewist.",
+        "Fout wachtwoord. U hebt nog ${ remainingCount } pogingen over, daarna worden uw gegevens gewist."
+      ],
+      "You have ${ backupsCount } previous backup on your device that can be removed.": [
+        "U hebt ${ backupsCount } vorige back-up op uw apparaat die kan worden verwijderd.",
+        "U hebt ${ backupsCount } eerdere back-ups op uw apparaat die kunnen worden verwijderd."
+      ],
+      "You have ${ remainingCount } attempt left - after that, your data will be erased.": [
+        "U hebt ${ remainingCount } poging over - daarna worden uw gegevens gewist.",
+        "U hebt ${ remainingCount } pogingen over - daarna worden uw gegevens gewist."
+      ],
+      "You have entered a wrong password.": [
+        "U heeft een verkeerd wachtwoord ingevoerd."
+      ],
+      "Your data will be erased after 10 failed attempts.": [
+        "Uw gegevens worden gewist na 10 mislukte pogingen."
+      ],
+      "Your local data is encrypted on-disk, but the encryption key is not securely stored on your system. For better protection, set up secure storage or create an app password.": [
+        "Uw lokale gegevens zijn op schijf versleuteld, maar de encryptiesleutel wordt niet veilig op uw systeem opgeslagen. Voor betere bescherming kunt u beveiligde opslag instellen of een app wachtwoord aanmaken."
       ]
     },
     "Error": {
@@ -52,6 +571,9 @@
       ]
     },
     "Info": {
+      "A ${ BRAND_NAME } account is required to enable end-to-end encrypted sync between devices.": [
+        "Een ${ BRAND_NAME } account is vereist om end-to-end versleutelde synchronisatie tussen apparaten in te schakelen."
+      ],
       "Identity confirmed": [
         "Identiteit bevestigd"
       ],
@@ -66,6 +588,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt uw wachtwoord en uw persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
+      ],
+      "Protect your accounts with an extra layer of security.": [
+        "Bescherm uw accounts met een extra beveiligingslaag."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -110,16 +635,59 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "Next": [
+        "Volgende"
+      ],
+      "No entries matching your search": [
+        "Geen resultaten gevonden die overeenkomen met uw zoekopdracht"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ]
     },
     "Placeholder": {
+      "Confirm password": [
+        "Wachtwoord bevestigen"
+      ],
       "Password": [
         "Wachtwoord"
       ]
     },
+    "Title": {
+      "Confirm password": [
+        "Wachtwoord bevestigen"
+      ],
+      "Device sync": [
+        "Apparaat synchronisatie"
+      ],
+      "No codes yet": [
+        "Nog geen codes"
+      ],
+      "Set backup password": [
+        "Back-up wachtwoord instellen"
+      ],
+      "Set export password": [
+        "Stel export wachtwoord in"
+      ]
+    },
+    "Validation": {
+      "Secret cannot be empty": [
+        "Geheim mag niet leeg zijn"
+      ],
+      "Title cannot be empty": [
+        "Titel mag niet leeg zijn"
+      ]
+    },
     "Warning": {
+      "Database cannot be backed up.": [
+        "Er kan geen back-up van de database worden gemaakt."
+      ],
+      "No backup location selected.": [
+        "Geen back-uplocatie geselecteerd."
+      ],
+      "This will create an unencrypted backup and reset the application to resolve the migration failure. You will need to import your data from the backup file after the reset completes. Delete the backup file once finished.": [
+        "Hiermee creëert u een niet-versleutelde back-up en reset u de toepassing om de migratie fout op te lossen. U zult uw gegevens vanuit het back-upbestand moeten importeren nadat de reset is voltooid. Verwijder het back-upbestand zodra u klaar bent."
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan niet inloggen bij ${ PASS_APP_NAME }. ${ additionalMessage }"
       ]
