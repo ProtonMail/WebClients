@@ -1500,6 +1500,9 @@
       "Automatically copy the generated password to the clipboard": [
         "Automatisch het gegenereerde wachtwoord kopiëren naar het klembord"
       ],
+      "Automatically fill in your saved payment information.": [
+        "Vul automatisch uw opgeslagen betalingsinformatie in."
+      ],
       "Autosaved on ${ url }": [
         "Automatisch bewaard op ${ url }"
       ],
@@ -1862,7 +1865,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -1884,6 +1888,9 @@
       ],
       "Never": [
         "Nooit"
+      ],
+      "No credit cards found": [
+        "Geen creditcard gevonden"
       ],
       "No identity item found": [
         "Geen identiteitsitem gevonden"
@@ -2798,6 +2805,9 @@
       ],
       "Created at": [
         "Aangemaakt op"
+      ],
+      "Credit-card autofill": [
+        "Creditcard automatisch aanvullen"
       ],
       "Crypto Wallet": [
         "Crypto Wallet"

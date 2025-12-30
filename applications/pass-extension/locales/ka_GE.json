@@ -1485,6 +1485,9 @@
       "Automatically copy the generated password to the clipboard": [
         "გენერირებული პაროლების ავტომატური დაკოპირება ბუფერში."
       ],
+      "Automatically fill in your saved payment information.": [
+        "თქვენი შენახული გადახდის ინფორმაციის ავტომატური შევსება."
+      ],
       "Autosaved on ${ url }": [
         "ავტომატურად შენახულია ბმულზე ${ url }"
       ],
@@ -1840,6 +1843,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1860,6 +1867,9 @@
       ],
       "Never": [
         "არასოდეს"
+      ],
+      "No credit cards found": [
+        "საკრედიტო ბარათები აღმოჩენილი არაა"
       ],
       "No identity item found": [
         "იდენტიფიკატორის ელემენტის გარეშე"
@@ -2753,6 +2763,9 @@
       ],
       "Created at": [
         "შექმნის დრო"
+      ],
+      "Credit-card autofill": [
+        "საკრედიტო ბარათის ავტოშევსება"
       ],
       "Crypto Wallet": [
         "კრიპტო საფულე"
