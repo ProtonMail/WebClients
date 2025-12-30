@@ -316,12 +316,14 @@ const HeaderExpanded = ({
                 </div>
             )}
             {showDetails && isMessageExpiringByRetentionRule && expirationDate && (
-                <div className="mb-2 flex flex-nowrap color-weak">
-                    <span className="self-center mr-2 text-ellipsis">
-                        <IcTrashClock className="mr-2" />
-                        {getExpiresOnMessage(expirationDate)}
-                    </span>
-                </div>
+                <Tooltip title={getExpiresOnMessage(expirationDate)}>
+                    <div className="mb-2 flex flex-nowrap color-weak">
+                        <span className="self-center mr-2 text-ellipsis">
+                            <IcTrashClock className="mr-2" />
+                            {getExpiresOnMessage(expirationDate)}
+                        </span>
+                    </div>
+                </Tooltip>
             )}
 
             <HeaderExtra
