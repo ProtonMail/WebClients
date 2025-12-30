@@ -1,6 +1,7 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
 import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
+import { type FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const setPrimaryAddressKey = async (
@@ -107,20 +108,27 @@ export const deleteAddressKey = async (
     await onSKLPublishSuccess();
 };
 
-export const setAddressKeyFlags = async (
-    api: Api,
-    address: Address,
-    keys: DecryptedAddressKey[],
-    ID: string,
-    flags: number,
-    keyTransparencyVerify: KeyTransparencyVerify
-) => {
-    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
+export const setAddressKeyFlags = async ({
+    api,
+    address,
+    keyTransparencyVerify,
+    flagAction,
+    addressKeys,
+    addressKeyID,
+}: {
+    api: Api;
+    address: Address;
+    addressKeys: DecryptedAddressKey[];
+    addressKeyID: string;
+    flagAction: FlagAction;
+    keyTransparencyVerify: KeyTransparencyVerify;
+}) => {
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => {
-        if (activeKey.ID === ID) {
+        if (activeKey.ID === addressKeyID) {
             return {
                 ...activeKey,
-                flags,
+                flags: getNewAddressKeyFlags(activeKey.flags, flagAction),
             };
         }
         return activeKey;
@@ -130,11 +138,18 @@ export const setAddressKeyFlags = async (
         v4: activeKeys.v4.map(setFlags),
         v6: activeKeys.v6.map(setFlags),
     });
+    const v4TargetKey = updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID);
+    const v6TargetKey = updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID);
+    const flags = v6TargetKey?.flags ?? v4TargetKey?.flags;
+    if (flags === undefined) {
+        throw new Error('Key not found');
+    }
+
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
         keyTransparencyVerify
     );
-    await api(setKeyFlagsRoute({ ID, Flags: flags, SignedKeyList: signedKeyList }));
+    await api(setKeyFlagsRoute({ ID: addressKeyID, Flags: flags, SignedKeyList: signedKeyList }));
     await onSKLPublishSuccess();
 };
