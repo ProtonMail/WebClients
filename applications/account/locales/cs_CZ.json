@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Otevřít menu"
       ],
+      "Open recovery settings": [
+        "Otevřít nastavení obnovení"
+      ],
       "Opt out": [
         "Odhlásit se"
       ],
@@ -1274,9 +1277,6 @@
       ],
       "Search": [
         "Vyhledat"
-      ],
-      "Search countries": [
-        "Vyhledat země"
       ],
       "Search settings": [
         "Hledat v nastavení"
@@ -2673,6 +2673,9 @@
       ]
     },
     "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } z(e) ${ providerUsers.length }"
+      ],
       "${ n } year ago": [
         "před ${ n } rokem",
         "před ${ n } lety",
@@ -2691,11 +2694,17 @@
       "Authenticate": [
         "Ověřit"
       ],
+      "Calendar": [
+        "Kalendář"
+      ],
       "Change": [
         "Změnit"
       ],
       "Configure": [
         "Konfigurovat"
+      ],
+      "Configure migration": [
+        "Nastavení migrace"
       ],
       "Contacts": [
         "Kontakty"
@@ -2709,8 +2718,17 @@
       "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
         "E-mailová upozornění budou zaslána při zahájení migrace a po jejím dokončení. Budete také informováni, pokud dojde k chybám a pokud bude migrace pozastavena z důvodu vypršení platnosti odkazů."
       ],
+      "Estimated size": [
+        "Odhadovaná velikost"
+      ],
       "Everything": [
         "Vše"
+      ],
+      "Failed to load OAuth": [
+        "Nepodařilo se načíst OAuth"
+      ],
+      "Install migration app": [
+        "Nainstalovat migrační aplikaci"
       ],
       "Learn more about what can be migrated. Learn more": [
         "Zjistěte více o tom, co lze migrovat. Více informací"
@@ -2730,11 +2748,26 @@
       "Migration includes": [
         "Migrace zahrnuje"
       ],
+      "Not started": [
+        "Nezahájeno"
+      ],
+      "Required to create user accounts": [
+        "Nutné pro vytvoření uživatelských účtů"
+      ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Vyberte, co chcete migrovat. Toto nastavení se použije pro všechny uživatele, ať už jsou vytvořeni nyní nebo později. Migrace začne po vytvoření uživatelských účtů."
       ],
       "Set up": [
         "Nastavení"
+      ],
+      "Set up billing information": [
+        "Nastavit fakturační údaje"
+      ],
+      "Set up two-factor authentication": [
+        "Nastavit dvoufázové ověření"
+      ],
+      "Sign in to Google Workspace": [
+        "Přihlásit se do Google Workspace"
       ],
       "Start migration": [
         "Spustit migraci"
@@ -2753,6 +2786,15 @@
       ],
       "Users migrated": [
         "Uživatelé migrováni"
+      ],
+      "Verify your domain": [
+        "Ověřte svou doménu"
+      ],
+      "Verify your domain ownership": [
+        "Ověřte vlastnictví své domény"
+      ],
+      "What are you migrating?": [
+        "Co migrujete?"
       ],
       "Who will be notified?": [
         "Kdo bude informován?"
@@ -7821,6 +7863,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Chápu, že se již nebudu moci přihlásit ve starších verzích mobilních aplikací ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webová aplikace"
@@ -8929,6 +8976,12 @@
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Toto deaktivuje koncově šifrovaná přeposílání e-mailů:** můžete je znovu nastavit později."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Vaše metody obnovení budou zneplatněny:** nové údaje pro obnovu si můžete vygenerovat později."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } další",
         "+ ${ invisibleCount } další",
@@ -9399,9 +9452,6 @@
       ],
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
-      ],
-      "Country code": [
-        "Kód země"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
@@ -10393,9 +10443,6 @@
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
       ],
-      "No results found": [
-        "Nebyly nalezeny žádné výsledky"
-      ],
       "No single sign-on": [
         "Žádné jednotné přihlášení"
       ],
@@ -10650,6 +10697,9 @@
       ],
       "Private AI assistant": [
         "Soukromý AI asistent"
+      ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Chraňte svůj účet před hrozbami kvantových výpočtů pomocí kvantově odolných kryptografických klíčů."
       ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
@@ -18082,17 +18132,66 @@
         "Navýšit na ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Nepodařilo se vygenerovat klíče. Pro aktivaci postkvantové ochrany budete muset vygenerovat své nové šifrovací klíče ručně.\n\n${ settingsLink } a vyberte 'Generovat klíč' pro svůj účet a pro každou adresu."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Nepodařilo se vygenerovat klíče adres. Pro aktivaci postkvantové ochrany budete muset vygenerovat své nové šifrovací klíče ručně.\n\nPřejděte do ${ settingsLink } a vyberte 'Generovat klíč' pro každou adresu."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Musíte aktualizovat všechny mobilní aplikace ${ BRAND_NAME }**: vaše nové klíče nebudou fungovat ve starších verzích aplikací."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Tím se vygenerují nové kvantově odolné šifrovací klíče pro váš účet."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Nepodařilo se povolit postkvantovou ochranu"
+      ],
       "Enable and generate keys": [
         "Povolit a generovat klíče"
       ],
       "Enable post-quantum protection?": [
         "Povolit postkvantovou ochranu?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Povolení postkvantové ochrany..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Přejít do ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Zkuste to prosím znovu. Pokud to nebude fungovat, kontaktujte náš tým zákaznické podpory."
+      ],
+      "Post-quantum protection": [
+        "Postkvantová ochrana"
+      ],
+      "Post-quantum protection is enabled": [
+        "Postkvantová ochrana je povolena"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Zavřít"
+      ],
       "Got it": [
         "Rozumím"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Nezapomeňte si vygenerovat nové údaje pro obnovení."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Postkvantová ochrana je povolena."
       ]
     },
     "pqc-optin: Progress status": {
