@@ -8,6 +8,7 @@ import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { type CustomElementRef, createCustomElement } from '@proton/pass/utils/dom/create-element';
 import { POPOVER_SUPPORTED, getActiveModal, getClosestModal } from '@proton/pass/utils/dom/popover';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
@@ -118,11 +119,10 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
                         ? (getClosestModal(anchor) ?? getClosestFocusTrap(anchor))
                         : (getActiveModal() ?? getClosestFocusTrap(document.activeElement))) ?? document.body;
 
-                const parent = activeRoot?.customElement.parentElement;
+                const parent = activeRoot?.customElement.parentElement ?? document.body;
 
                 if (parent !== nextParent) {
                     registry.destroy();
-                    if (activeRoot) parent?.removeChild(activeRoot.customElement);
                     registry.init(nextParent);
                 }
             }
@@ -167,13 +167,15 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             listeners.removeAll();
             state.apps.dropdown?.destroy();
             state.apps.notification?.destroy();
-            state.root = null; /* reset in-case we recycle the content-script */
+
+            safeCall(() => state.root?.customElement.remove())();
+            state.root = null;
             state.popover = null;
         },
 
         attachDropdown: withContext((ctx, layer) => {
             if (!ctx) return null;
-            if (layer) registry.ensureInteractive(layer);
+            registry.ensureInteractive(layer ?? null);
 
             if (state.apps.dropdown === null) {
                 logger.debug(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
