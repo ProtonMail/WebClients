@@ -64,7 +64,8 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (
              * to avoid relying on the `load` event on the iframe document itself
              * which does not account for react lifecycle where the IFrameBridge
              * will be instantiated. */
-            IFrameBridge.postMessage({ type: IFRAME_APP_READY_EVENT, endpoint });
+            const iframe = new URLSearchParams(window.location.hash.slice(1)).get('iframe');
+            IFrameBridge.postMessage({ type: IFRAME_APP_READY_EVENT, endpoint, iframe });
             window.addEventListener('message', IFrameBridge.injectPorts);
             return () => window.removeEventListener('message', IFrameBridge.injectPorts);
         },
