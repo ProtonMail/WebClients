@@ -6,5 +6,6 @@ module.exports = {
     setupFiles: ["<rootDir>/jest.setup.ts"],
     moduleNameMapper: {
         "\\.css": "<rootDir>/src/utils/tests/fileMock.ts",
+        "^update-electron-app$": "<rootDir>/src/mocks/update-electron-app.ts",
     },
 };
