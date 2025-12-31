@@ -8,6 +8,7 @@ import {
 import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import type { FileUploadTask } from '../types';
+import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
@@ -20,6 +21,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
 
         try {
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
+
             const metadata = await this.createFileUploaderMetadata(
                 task.file,
                 mimeType,
@@ -30,7 +32,8 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
             const drive = this.driveClient;
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
 
-            const controller = await uploader.uploadFromFile(task.file, thumbnails, (uploadedBytes: number) => {
+            const stream = createFileStream(task.file);
+            const controller = await uploader.uploadFromStream(stream, thumbnails, (uploadedBytes: number) => {
                 this.eventCallback?.({
                     type: 'file:progress',
                     uploadId: task.uploadId,

@@ -3,11 +3,18 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import type { createWorker } from '@proton/raw-images/src';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
+import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { RawImageHandler } from './rawImageHandler';
 
 jest.mock('@proton/raw-images/src', () => ({
     createWorker: jest.fn(),
+}));
+
+jest.mock('../constants', () => ({
+    ...jest.requireActual('../constants'),
+    isIosDevice: false,
+    MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS: 100 * 1024 * 1024,
 }));
 
 describe('RawImageHandler', () => {
@@ -43,6 +50,19 @@ describe('RawImageHandler', () => {
     });
 
     describe('generate', () => {
+        test('Throws UnsupportedFormatError for large RAW images on iOS', async () => {
+            Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
+
+            const largeSize = 150 * 1024 * 1024; // 150MB, exceeds 100MB limit
+            const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
+
+            await expect(
+                handler.generate(blob, 'large.nef', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+            ).rejects.toThrow(UnsupportedFormatError);
+
+            Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
+        });
+
         test('Throws MissingDataError when RAW has no embedded thumbnail', async () => {
             const mockTerminate = jest.fn();
             const mockInitialize = jest.fn().mockResolvedValue(undefined);
