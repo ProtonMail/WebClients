@@ -6,6 +6,7 @@ import { NodeWithSameNameExistsValidationError, getDriveForPhotos } from '../../
 import { type ExtendedAttributesMetadata, generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
 import type { PhotosUploadTask } from '../types';
+import { createFileStream } from '../utils/createFileStream';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
@@ -21,7 +22,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             const duplicateUids = await driveForPhotos.findPhotoDuplicates(
                 task.file.name,
                 async () => {
-                    const fileStream = task.file.stream();
+                    const fileStream = createFileStream(task.file);
                     const hashResult = await CryptoProxy.computeHashStream({
                         algorithm: 'unsafeSHA1',
                         dataStream: fileStream,
@@ -46,7 +47,9 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 task.isUnfinishedUpload
             );
             const uploader = await driveForPhotos.getFileUploader(task.file.name, metadata, abortController.signal);
-            const controller = await uploader.uploadFromFile(task.file, thumbnails, (uploadedBytes: number) => {
+
+            const stream = createFileStream(task.file);
+            const controller = await uploader.uploadFromStream(stream, thumbnails, (uploadedBytes: number) => {
                 this.eventCallback?.({
                     type: 'file:progress',
                     uploadId: task.uploadId,

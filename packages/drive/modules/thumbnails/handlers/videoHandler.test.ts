@@ -2,8 +2,15 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
+import * as constants from '../constants';
 import { UnsupportedFormatError } from '../thumbnailError';
 import { VideoHandler } from './videoHandler';
+
+jest.mock('../constants', () => ({
+    ...jest.requireActual('../constants'),
+    isIosDevice: false,
+    MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS: 500 * 1024 * 1024,
+}));
 
 describe('VideoHandler', () => {
     let handler: VideoHandler;
@@ -28,6 +35,19 @@ describe('VideoHandler', () => {
     });
 
     describe('generate', () => {
+        test('Throws UnsupportedFormatError for large videos on iOS', async () => {
+            Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
+
+            const largeSize = 600 * 1024 * 1024; // 600MB, exceeds 500MB limit
+            const blob = new Blob(['video content'], { type: 'video/mp4' });
+
+            await expect(
+                handler.generate(blob, 'large.mp4', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+            ).rejects.toThrow(UnsupportedFormatError);
+
+            Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
+        });
+
         test('Throws UnsupportedFormatError when video extraction fails', async () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 

@@ -26,11 +26,21 @@ jest.mock('@proton/crypto', () => {
         },
     };
 });
+jest.mock('../utils/createFileStream', () => ({
+    createFileStream: jest.fn(() => {
+        return new ReadableStream({
+            start(controller) {
+                controller.enqueue(new Uint8Array([1, 2, 3]));
+                controller.close();
+            },
+        });
+    }),
+}));
 
 describe('PhotosUploadExecutor', () => {
     let executor: PhotosUploadExecutor;
     let mockEventCallback: jest.MockedFunction<EventCallback>;
-    let mockUploadFromFile: jest.Mock;
+    let mockUploadFromStream: jest.Mock;
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
 
@@ -49,7 +59,7 @@ describe('PhotosUploadExecutor', () => {
         jest.clearAllMocks();
 
         mockEventCallback = jest.fn();
-        mockUploadFromFile = jest.fn();
+        mockUploadFromStream = jest.fn();
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
 
@@ -80,7 +90,7 @@ describe('PhotosUploadExecutor', () => {
 
         const mockFindPhotoDuplicates = jest.fn().mockResolvedValue([]);
 
-        mockUploadFromFile.mockResolvedValue({
+        mockUploadFromStream.mockResolvedValue({
             completion: mockCompletion,
         });
 
@@ -89,7 +99,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         mockGetFileUploader.mockResolvedValue({
-            uploadFromFile: mockUploadFromFile,
+            uploadFromStream: mockUploadFromStream,
         });
 
         jest.mocked(getDriveForPhotos).mockReturnValue({
@@ -223,7 +233,7 @@ describe('PhotosUploadExecutor', () => {
             const task = createFileTask();
             let progressCallback: (uploadedBytes: number) => void = () => {};
 
-            mockUploadFromFile.mockImplementation((_file, _thumbnails, onProgress) => {
+            mockUploadFromStream.mockImplementation((_stream, _thumbnails, onProgress) => {
                 progressCallback = onProgress;
                 return Promise.resolve({
                     completion: mockCompletion,
@@ -446,8 +456,8 @@ describe('PhotosUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const uploadArgs = mockUploadFromFile.mock.calls[0];
-            expect(uploadArgs[0]).toBeInstanceOf(File);
+            const uploadArgs = mockUploadFromStream.mock.calls[0];
+            expect(uploadArgs[0]).toBeInstanceOf(ReadableStream);
             expect(uploadArgs[1]).toEqual([]);
             expect(typeof uploadArgs[2]).toBe('function');
         });
@@ -458,7 +468,7 @@ describe('PhotosUploadExecutor', () => {
             conflictError.existingNodeUid = 'node123';
             conflictError.isUnfinishedUpload = false;
 
-            mockUploadFromFile.mockRejectedValue(conflictError);
+            mockUploadFromStream.mockRejectedValue(conflictError);
 
             await executor.execute(task);
 
@@ -474,7 +484,7 @@ describe('PhotosUploadExecutor', () => {
             const task = createFileTask();
             const uploadError = new Error('Upload failed');
 
-            mockUploadFromFile.mockRejectedValue(uploadError);
+            mockUploadFromStream.mockRejectedValue(uploadError);
 
             await executor.execute(task);
 
@@ -489,7 +499,7 @@ describe('PhotosUploadExecutor', () => {
         it('should emit error event with default message for non-Error exceptions', async () => {
             const task = createFileTask();
 
-            mockUploadFromFile.mockRejectedValue('string error');
+            mockUploadFromStream.mockRejectedValue('string error');
 
             await executor.execute(task);
 
@@ -529,8 +539,8 @@ describe('PhotosUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const uploadArgs = mockUploadFromFile.mock.calls[0];
-            expect(uploadArgs[0]).toBeInstanceOf(File);
+            const uploadArgs = mockUploadFromStream.mock.calls[0];
+            expect(uploadArgs[0]).toBeInstanceOf(ReadableStream);
             expect(uploadArgs[1]).toEqual(mockThumbnails);
             expect(typeof uploadArgs[2]).toBe('function');
         });

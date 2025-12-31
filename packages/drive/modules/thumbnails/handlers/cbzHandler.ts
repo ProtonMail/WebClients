@@ -3,6 +3,7 @@ import type { ThumbnailType } from '@protontech/drive-sdk';
 import type { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 
+import { MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS, isIosDevice } from '../constants';
 import { MissingDataError, ThumbnailError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
@@ -23,6 +24,16 @@ export class CbzHandler extends BaseHandler {
         thumbnailTypes: ThumbnailType[],
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
+        if (isIosDevice && fileSize > MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS) {
+            throw new UnsupportedFormatError('large CBZ on iOS Safari', {
+                context: {
+                    stage: 'CBZ size check',
+                    fileSize: fileSize,
+                    mimeType: content.type,
+                },
+            });
+        }
+
         const perf = this.createPerformanceTracker(debug);
 
         try {
