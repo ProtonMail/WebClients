@@ -77,3 +77,25 @@ jest.mock('@proton/components/containers/vpn/flag', () => ({
 jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
     getFlagSvg: jest.fn().mockImplementation((it) => it),
 }));
+
+jest.mock('@protontech/drive-sdk/dist/telemetry', () => {
+    return {
+        ConsoleLogHandler: jest.fn().mockImplementation(() => {
+            return { log: jest.fn() };
+        }),
+        MemoryLogHandler: jest.fn().mockImplementation(() => {
+            return {
+                log: jest.fn(),
+                getLogs: jest.fn().mockReturnValue([]),
+            };
+        }),
+        LogLevel: {
+            DEBUG: 'DEBUG',
+            INFO: 'INFO',
+            WARNING: 'WARNING',
+            ERROR: 'ERROR',
+        },
+        setTelemetryEnabled: jest.fn(),
+        setTelemetryHandler: jest.fn(),
+    };
+});
