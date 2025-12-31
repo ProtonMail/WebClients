@@ -47,7 +47,7 @@ describe('ActionEventManager', () => {
     beforeEach(() => {
         eventBus = getActionEventManager();
         eventBus.clear();
-        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
