@@ -33,10 +33,18 @@ const mockedGetCompleteSpaceDetails = jest.mocked(getCompleteSpaceDetails);
 jest.mock('../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
 const mockedUseSuggestBusinessModal = jest.mocked(useSuggestBusinessModal);
 
-jest.mock('./SettingsLink', () => ({
-    __esModule: true,
-    default: ({ children, ...props }: any) => <a {...props}>{children}</a>,
-}));
+jest.mock('./SettingsLink', () => {
+    const React = require('react');
+    return {
+        __esModule: true,
+        // eslint-disable-next-line react/display-name
+        default: React.forwardRef(({ children, ...props }: any, ref: any) => (
+            <a ref={ref} {...props}>
+                {children}
+            </a>
+        )),
+    };
+});
 
 describe('SidebarStorageUpsell', () => {
     const mockShowModal = jest.fn();

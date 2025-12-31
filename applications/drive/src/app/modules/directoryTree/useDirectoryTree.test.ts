@@ -1221,18 +1221,14 @@ describe('useDirectoryTree', () => {
             });
 
             // Start expanding multiple branches without awaiting
-            let devicesPromise!: Promise<void>;
-            let sharedPromise!: Promise<void>;
-            let myFilesPromise!: Promise<void>;
-
-            act(() => {
-                devicesPromise = result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
-                sharedPromise = result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
-                myFilesPromise = result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
-            });
+            const devicesPromise = result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            const sharedPromise = result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            const myFilesPromise = result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
 
             // Wait a bit for some items to be processed
-            await new Promise((resolve) => setTimeout(resolve, 150));
+            await act(async () => {
+                await new Promise((resolve) => setTimeout(resolve, 150));
+            });
 
             // Unmount should abort all loading operations
             unmount();
