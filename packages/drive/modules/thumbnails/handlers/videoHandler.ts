@@ -3,6 +3,7 @@ import type { ThumbnailType } from '@protontech/drive-sdk';
 import { type SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
+import { MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS, isIosDevice } from '../constants';
 import { FileLoadError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
@@ -23,6 +24,16 @@ export class VideoHandler extends BaseHandler {
         thumbnailTypes: ThumbnailType[],
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
+        if (isIosDevice && fileSize > MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS) {
+            throw new UnsupportedFormatError('large video on iOS Safari', {
+                context: {
+                    stage: 'video size check',
+                    fileSize: fileSize,
+                    mimeType: content.type,
+                },
+            });
+        }
+
         const perf = this.createPerformanceTracker(debug);
 
         let videoInfo;

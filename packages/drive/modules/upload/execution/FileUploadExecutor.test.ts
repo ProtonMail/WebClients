@@ -15,11 +15,21 @@ jest.mock('../../../index', () => {
 });
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
+jest.mock('../utils/createFileStream', () => ({
+    createFileStream: jest.fn(() => {
+        return new ReadableStream({
+            start(controller) {
+                controller.enqueue(new Uint8Array([1, 2, 3]));
+                controller.close();
+            },
+        });
+    }),
+}));
 
 describe('FileUploadExecutor', () => {
     let executor: FileUploadExecutor;
     let mockEventCallback: jest.MockedFunction<EventCallback>;
-    let mockUploadFromFile: jest.Mock;
+    let mockUploadFromStream: jest.Mock;
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
     let mockGetFileRevisionUploader: jest.Mock;
@@ -28,7 +38,7 @@ describe('FileUploadExecutor', () => {
         jest.clearAllMocks();
 
         mockEventCallback = jest.fn();
-        mockUploadFromFile = jest.fn();
+        mockUploadFromStream = jest.fn();
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
         mockGetFileRevisionUploader = jest.fn();
@@ -54,7 +64,7 @@ describe('FileUploadExecutor', () => {
             },
         });
 
-        mockUploadFromFile.mockResolvedValue({
+        mockUploadFromStream.mockResolvedValue({
             completion: mockCompletion,
         });
 
@@ -63,11 +73,11 @@ describe('FileUploadExecutor', () => {
         });
 
         mockGetFileUploader.mockResolvedValue({
-            uploadFromFile: mockUploadFromFile,
+            uploadFromStream: mockUploadFromStream,
         });
 
         mockGetFileRevisionUploader.mockResolvedValue({
-            uploadFromFile: mockUploadFromFile,
+            uploadFromStream: mockUploadFromStream,
         });
 
         jest.mocked(getDrive).mockReturnValue({
@@ -115,7 +125,7 @@ describe('FileUploadExecutor', () => {
 
         it('should use custom drive client when set', async () => {
             const customMockGetFileUploader = jest.fn().mockResolvedValue({
-                uploadFromFile: mockUploadFromFile,
+                uploadFromStream: mockUploadFromStream,
             });
             const customDriveClient = {
                 getFileUploader: customMockGetFileUploader,
@@ -132,7 +142,7 @@ describe('FileUploadExecutor', () => {
 
         it('should persist custom drive client across multiple executions', async () => {
             const customMockGetFileUploader = jest.fn().mockResolvedValue({
-                uploadFromFile: mockUploadFromFile,
+                uploadFromStream: mockUploadFromStream,
             });
             const customDriveClient = {
                 getFileUploader: customMockGetFileUploader,
@@ -188,7 +198,7 @@ describe('FileUploadExecutor', () => {
             const task = createFileTask();
             let progressCallback: (uploadedBytes: number) => void = () => {};
 
-            mockUploadFromFile.mockImplementation((_file, _thumbnails, onProgress) => {
+            mockUploadFromStream.mockImplementation((_stream, _thumbnails, onProgress) => {
                 progressCallback = onProgress;
                 return Promise.resolve({
                     completion: mockCompletion,
@@ -346,8 +356,8 @@ describe('FileUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const uploadArgs = mockUploadFromFile.mock.calls[0];
-            expect(uploadArgs[0]).toBeInstanceOf(File);
+            const uploadArgs = mockUploadFromStream.mock.calls[0];
+            expect(uploadArgs[0]).toBeInstanceOf(ReadableStream);
             expect(uploadArgs[1]).toEqual([]);
             expect(typeof uploadArgs[2]).toBe('function');
         });
@@ -358,7 +368,7 @@ describe('FileUploadExecutor', () => {
             conflictError.existingNodeUid = 'node123';
             conflictError.isUnfinishedUpload = false;
 
-            mockUploadFromFile.mockRejectedValue(conflictError);
+            mockUploadFromStream.mockRejectedValue(conflictError);
 
             await executor.execute(task);
 
@@ -374,7 +384,7 @@ describe('FileUploadExecutor', () => {
             const task = createFileTask();
             const uploadError = new Error('Upload failed');
 
-            mockUploadFromFile.mockRejectedValue(uploadError);
+            mockUploadFromStream.mockRejectedValue(uploadError);
 
             await executor.execute(task);
 
@@ -389,7 +399,7 @@ describe('FileUploadExecutor', () => {
         it('should emit error event with default message for non-Error exceptions', async () => {
             const task = createFileTask();
 
-            mockUploadFromFile.mockRejectedValue('string error');
+            mockUploadFromStream.mockRejectedValue('string error');
 
             await executor.execute(task);
 
@@ -429,8 +439,8 @@ describe('FileUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const uploadArgs = mockUploadFromFile.mock.calls[0];
-            expect(uploadArgs[0]).toBeInstanceOf(File);
+            const uploadArgs = mockUploadFromStream.mock.calls[0];
+            expect(uploadArgs[0]).toBeInstanceOf(ReadableStream);
             expect(uploadArgs[1]).toEqual(mockThumbnails);
             expect(typeof uploadArgs[2]).toBe('function');
         });
