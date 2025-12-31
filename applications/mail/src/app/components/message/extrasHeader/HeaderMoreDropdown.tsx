@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { addDays } from 'date-fns';
+import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -245,6 +245,18 @@ const HeaderMoreDropdown = ({
 
     const handleExpire = (days: number) => {
         const date = days ? addDays(new Date(), days) : undefined;
+
+        if (date && willExpireByRetentionRule && message.data?.ExpirationTime) {
+            const currentExpirationDate = fromUnixTime(message.data.ExpirationTime);
+            if (date > currentExpirationDate) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Cannot set expiration longer than retention policy allows.`,
+                });
+                return;
+            }
+        }
+
         const expirationTime = getExpirationTime(date);
         void dispatch(
             expireMessages({
@@ -734,7 +746,11 @@ const HeaderMoreDropdown = ({
             {moveSnoozedModal}
             {moveToSpamModal}
             {renderCustomExpirationModal && (
-                <CustomExpirationModal onSubmit={handleCustomExpiration} {...CustomExpirationModalProps} />
+                <CustomExpirationModal
+                    onSubmit={handleCustomExpiration}
+                    message={message}
+                    {...CustomExpirationModalProps}
+                />
             )}
         </>
     );

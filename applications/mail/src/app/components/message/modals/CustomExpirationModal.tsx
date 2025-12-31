@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 
-import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from 'date-fns';
+import { addDays, endOfDay, endOfToday, fromUnixTime, isBefore, isToday, startOfToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -15,6 +15,8 @@ import {
     ModalTwoHeader,
     TimeInput,
 } from '@proton/components';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { getMinExpirationTime } from 'proton-mail/helpers/expiration';
@@ -24,32 +26,45 @@ import { getChooseDateText } from '../../composer/modals/helper';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: (expirationDate: Date) => void;
+    message?: MessageState;
 }
 
-const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
+const CustomExpirationModal = ({ onSubmit, message, ...rest }: Props) => {
     const { onClose } = rest;
     const [userSettings] = useUserSettings();
     const tomorrow = useRef<Date>(addDays(new Date(), 1));
     const minDate = startOfToday();
-    const maxDate = endOfDay(addDays(minDate, EXPIRATION_TIME_MAX_DAYS));
+
+    // If message is retained by retention rule with expiration, max date is the current expiration date
+    // Otherwise, use the standard max date
+    const hasRetentionRule = message?.data && isExpiringByRetentionRule(message.data);
+    const currentExpirationTime = message?.data?.ExpirationTime;
+    const currentExpirationDate = currentExpirationTime ? fromUnixTime(currentExpirationTime) : undefined;
+
+    const standardMaxDate = endOfDay(addDays(minDate, EXPIRATION_TIME_MAX_DAYS));
+    const maxDate = hasRetentionRule && currentExpirationDate ? currentExpirationDate : standardMaxDate;
+
     const [date, setDate] = useState<Date>(tomorrow.current);
 
     const errorDate = useMemo(() => {
         if (date < minDate) {
             return c('Error').t`Choose a date in the future.`;
         }
-        if (date > maxDate) {
+        if (hasRetentionRule && currentExpirationDate && date > currentExpirationDate) {
+            return c('Error').t`Cannot set expiration longer than retention policy allows.`;
+        }
+        if (date > standardMaxDate) {
             // translator : The variable is the number of days, written in digits
             return getChooseDateText(EXPIRATION_TIME_MAX_DAYS);
         }
         return undefined;
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EF6486
-    }, [date]);
+    }, [date, hasRetentionRule, currentExpirationDate]);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        if (!date) {
+        if (!date || errorDate) {
             return;
         }
 
@@ -117,7 +132,8 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="reset">{c('Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit">{c('Action').t`Self-destruct message`}</Button>
+                <Button color="norm" type="submit" disabled={!!errorDate}>{c('Action')
+                    .t`Self-destruct message`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
