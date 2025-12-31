@@ -3,9 +3,9 @@ import type { Context } from '@sentry/types';
 
 import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { isIosDevice, isSafariDevice } from './constants';
 import { ThumbnailProcessor } from './handlerRegistry';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
 import {
@@ -17,9 +17,6 @@ import {
     UnsupportedFormatError,
 } from './thumbnailError';
 import type { ThumbnailResult } from './utils';
-
-const isIosDevice: boolean = isIos();
-const isSafariDevice: boolean = isSafari();
 
 let processorInstance: ThumbnailProcessor | null = null;
 

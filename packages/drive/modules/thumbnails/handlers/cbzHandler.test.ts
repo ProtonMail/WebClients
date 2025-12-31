@@ -2,11 +2,17 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
+import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { CbzHandler } from './cbzHandler';
 
 jest.mock('@proton/components/containers/filePreview/ComicBookPreview', () => ({
     getCBZCover: jest.fn(),
+}));
+
+jest.mock('../constants', () => ({
+    ...jest.requireActual('../constants'),
+    isIosDevice: false,
 }));
 
 describe('CbzHandler', () => {
@@ -35,6 +41,19 @@ describe('CbzHandler', () => {
     });
 
     describe('generate', () => {
+        test('Throws UnsupportedFormatError for large CBZ files on iOS', async () => {
+            Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
+
+            const largeSize = 150 * 1024 * 1024; // 150MB, exceeds 100MB limit
+            const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
+
+            await expect(
+                handler.generate(blob, 'large.cbz', largeSize, SupportedMimeTypes.webp, [ThumbnailType.Type1])
+            ).rejects.toThrow(UnsupportedFormatError);
+
+            Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
+        });
+
         test('Throws MissingDataError when CBZ has no cover', async () => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
             jest.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
