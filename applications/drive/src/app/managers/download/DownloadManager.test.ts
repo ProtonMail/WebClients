@@ -204,17 +204,11 @@ const resetSingleton = () => {
     Reflect.set(DownloadManager, 'instance', undefined);
 };
 
-beforeAll(() => {
-    jest.spyOn(console, 'debug').mockImplementation(() => {});
-    jest.spyOn(console, 'warn').mockImplementation(() => {});
-});
-
-afterAll(() => {
-    jest.restoreAllMocks();
-});
+let consoleWarnSpy: jest.SpyInstance;
 
 beforeEach(() => {
     jest.clearAllMocks();
+    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     const getStateMock = useDownloadManagerStore.getState as jest.Mock;
     getStateMock.mockReset();
@@ -248,6 +242,10 @@ beforeEach(() => {
     sdkMock.resetSDKListeners();
 
     resetSingleton();
+});
+
+afterEach(() => {
+    consoleWarnSpy.mockRestore();
 });
 
 describe('DownloadManager', () => {
