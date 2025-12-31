@@ -65,7 +65,7 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                         {headerText}
                     </div>
                     {status === TransferManagerStatus.InProgress && (
-                        <div className="color-weak text-sm" data-testid="transfer-manager:header:status-text">
+                        <div className="color-weak text-sm" data-testid="transfer-manager:header:progress-text">
                             {progressText}
                         </div>
                     )}
