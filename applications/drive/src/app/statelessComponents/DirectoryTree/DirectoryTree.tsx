@@ -114,6 +114,7 @@ function DirectoryTreeBranch({
                     aria-selected={isSelected}
                     checked={isSelected}
                     className={clsx('absolute left-0 ml-2', !isSelected && 'opacity-0')}
+                    data-testid={isSelected ? 'copy-destination-selected' : 'copy-destination-not-selected'}
                 />
 
                 <div className="flex items-center gap-4 pl-6">
