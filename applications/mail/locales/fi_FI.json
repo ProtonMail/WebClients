@@ -1504,6 +1504,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4432,6 +4436,9 @@
       "Cannot export this contact": [
         "Tätä yhteystietoa ei voida viedä"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Erääntymistä ei voi asettaa pidemmäksi kuin säilytyskäytäntö sallii."
+      ],
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
@@ -7312,8 +7319,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
