@@ -97,6 +97,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy descriptor": [
+        "Kopiera beskrivare"
+      ],
       "Copy public key (${ prefix })": [
         "Kopiera offentlig nyckel (${ prefix })"
       ],
@@ -2382,11 +2385,20 @@
       ]
     },
     "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Beskrivare kopierad till urklipp"
+      ],
       "I want the ${ prefix } instead": [
         "Jag vill ha ${ prefix } istället"
       ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importera denna beskrivare till annan plånboksmjukvara för att övervaka ditt saldo och generera mottagaradresser utan att exponera dina privata nycklar."
+      ],
       "Public key (${ prefix }) copied to clipboard": [
         "Offentlig nyckel (${ prefix }) kopierad till urklipp"
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Vi rekommenderar starkt att använda beskrivaren ovan istället, då den innehåller all nödvändig information för att säkerställa korrekt adressgenerering. xpub, ypub och zpub ingår inte i standard BIP:er och bör endast användas med försiktighet."
       ]
     },
     "familyOffer_2023:Error": {
