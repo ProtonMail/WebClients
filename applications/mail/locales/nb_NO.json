@@ -1504,6 +1504,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -4484,6 +4488,9 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Kan ikke angi utløpsdato som er lenger enn det retningslinjen for oppbevaring tillater."
+      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -7376,8 +7383,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
