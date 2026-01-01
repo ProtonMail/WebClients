@@ -100,7 +100,7 @@
         "Tilføj ${ BRAND_NAME }-konto"
       ],
       "Add ${ BRAND_NAME } address": [
-        "Tilføj ${ BRAND_NAME } adresse"
+        "Tilføj ${ BRAND_NAME }-adresse"
       ],
       "Add account": [
         "Tilføj konto"
@@ -1277,6 +1277,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search countries": [
+        "Søg lande"
       ],
       "Search settings": [
         "Søgeindstillinger"
@@ -4531,7 +4534,7 @@
         "Oplev sand frihed online og beskyt dit privatliv."
       ],
       "Get more from your ${ planTitle } subscription.": [
-        "Få mere ud af dit ${ planTitle } abonnement."
+        "Få mere ud af dit ${ planTitle }-abonnement."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
         "Opbevar dine filer, fotos og dokumenter sikkert med ${ maxDriveSpace } gratis lagerplads i skyen."
@@ -6445,7 +6448,7 @@
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
+        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Please upload a square logo": [
         "Overfør et kvadratisk logo"
@@ -9262,6 +9265,9 @@
       "Copy your referral link": [
         "Kopier dit henvisningslink"
       ],
+      "Country code": [
+        "Landekode"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Opret ${ calendarsToBeCreatedCount } ny kalender",
         "Opret ${ calendarsToBeCreatedCount } nye kalendere"
@@ -10238,6 +10244,9 @@
       "No payment is required at this time.": [
         "Betaling er ikke påkrævet på nuværende tidspunkt."
       ],
+      "No results found": [
+        "Ingen resultater fundet"
+      ],
       "No single sign-on": [
         "Ingen single sign-on"
       ],
@@ -10486,7 +10495,7 @@
         "Privat AI-assistent"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
-        "Beskyt din konto mod trusler fra kvantecomputere med kvantebestandige kryptografiske nøgler."
+        "Beskyt din konto mod trusler fra kvantecomputere med kryptografiske nøgler, der er modstandsdygtige."
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
@@ -13415,7 +13424,7 @@
         "Anden adgangskode"
       ],
       "Secure password generator": [
-        "Sikker adgangskodegenerator"
+        "Generator til sikker adgangskode"
       ],
       "Select Linux package format": [
         "Vælg Linux-pakkeformat"
@@ -15386,7 +15395,7 @@
         "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du forsøger at abonnere igen."
       ]
     },
     "new_plans: Info": {
@@ -15498,7 +15507,7 @@
         "Adresser har fuld sende- og modtagefunktion. En bruger kan få tildelt flere adresser, men en enkelt adresse kan ikke tildeles til flere brugere."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
+        "Tillader, at du forbinder til mere end ét netværk samtidigt, f.eks. kan du streame en film fra et andet land samtidigt med, at du får lokale søgeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
@@ -17813,7 +17822,7 @@
     },
     "pqc-optin: Progress status": {
       "Generating post-quantum account key": [
-        "Genererer post-kvantum kontonøgle"
+        "Genererer postkvantum kontonøgle"
       ],
       "Generating post-quantum address keys for each address": [
         "Genererer post-kvantum-adressenøgler for hver adresse"
@@ -22787,7 +22796,7 @@
         "Indstil gendannelsesmetode"
       ],
       "Set up authenticator app": [
-        "Konfigurér autenfikator-app"
+        "Konfigurér godkendelsesapp"
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
@@ -24296,7 +24305,7 @@
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
       ],
       "You will not see this import record in the list any more.": [
-        "Du vil ikke længere se denne import-postering på listen."
+        "Du vil ikke længere se denne importpost på listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"

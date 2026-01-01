@@ -1222,7 +1222,7 @@
         "Rétablir les valeurs par défaut"
       ],
       "Restore": [
-        "Restauration"
+        "Restaurer"
       ],
       "Resume": [
         "Reprendre"
@@ -1277,6 +1277,9 @@
       ],
       "Search": [
         "Rechercher"
+      ],
+      "Search countries": [
+        "Rechercher dans les pays"
       ],
       "Search settings": [
         "Rechercher dans les paramètres"
@@ -5777,7 +5780,7 @@
     },
     "email_forwarding_2023: Warning": {
       "Warning": [
-        "Avertissement"
+        "Attention"
       ]
     },
     "emergency_access": {
@@ -9262,6 +9265,9 @@
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
       ],
+      "Country code": [
+        "Indicatif du pays"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
         "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -10237,6 +10243,9 @@
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
+      ],
+      "No results found": [
+        "Aucun résultat n'a été trouvé."
       ],
       "No single sign-on": [
         "Pas d’authentification unique"
@@ -12056,7 +12065,7 @@
         "Inactif"
       ],
       "Invalid": [
-        "Invalide"
+        "Non valide"
       ],
       "Obsolete": [
         "Obsolète"
@@ -12121,7 +12130,7 @@
         "Développer/Réduire l'éditeur"
       ],
       "Filter": [
-        "Filtre"
+        "Filtrer"
       ],
       "Forward": [
         "Transférer"
@@ -14025,7 +14034,7 @@
         "Demander une invitation"
       ],
       "Resume now": [
-        "Reprendre à présent"
+        "Reprendre maintenant"
       ],
       "Set email address": [
         "Définir l'adresse e-mail"
@@ -17800,7 +17809,7 @@
         "Fermer"
       ],
       "Got it": [
-        "C'est compris"
+        "J'ai compris"
       ]
     },
     "pqc-optin: Info": {
@@ -21531,7 +21540,7 @@
       ],
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ami abonné",
-        "${ friendsSubscribed } amis se sont abonnés"
+        "${ friendsSubscribed } amis abonnés"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"

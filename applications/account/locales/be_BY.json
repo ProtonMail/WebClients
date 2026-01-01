@@ -1278,6 +1278,9 @@
       "Search": [
         "Пошук"
       ],
+      "Search countries": [
+        "Пошук краін"
+      ],
       "Search settings": [
         "Налады пошуку"
       ],
@@ -2579,7 +2582,7 @@
         "Абараніце сваю працу"
       ],
       "See and manage all your email subscriptions": [
-        "Паглядзець і кіраваць усімі сваімі падпіскамі электроннай пошты"
+        "Праглядайце і кіруйце ўсімі сваімі падпіскамі электроннай пошты"
       ],
       "Send files via secure links or email, revoke access whenever needed.": [
         "Адпраўляйце файлы праз бяспечныя спасылкі або электронную пошту, адклікайце доступ па меры неабходнасці."
@@ -6099,7 +6102,7 @@
         "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дзён** або калі яны ўхваляць ваш запыт."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
-        "Ваш кантакт для экстраных выпадкаў ${ name } запытвае доступ да вашага ўліковага запісу."
+        "Ваш кантакт для экстранных выпадкаў ${ name } запытвае доступ да вашага ўліковага запісу."
       ]
     },
     "Empty group name": {
@@ -7106,7 +7109,7 @@
         "Не ўдалося экспартаваць некаторыя з вашых падзей."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Падключэнне да інтэрнэту было перарвана і экспартаванне не завяршылася. Паспрабуйце яшчэ раз."
+        "Падключэнне да інтэрнэту было перарвана і экспартаванне не завершана. Паспрабуйце яшчэ раз."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Вы можаце захаваць файл падзей ICS, якія былі паспяхова экспартаваны."
@@ -9453,6 +9456,9 @@
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
       ],
+      "Country code": [
+        "Код краіны"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",
         "Стварыць ${ calendarsToBeCreatedCount } новыя календары",
@@ -9724,7 +9730,7 @@
         "Уключыце гэты адрас, каб далучыцца да гэтага календара"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Уключыце TLS або SSL знешняй паштовай службы, калі яна падтрымлівае гэтыя пратаколы."
+        "Уключыце TLS або SSL у знешнім сэрвісе, калі ім падтрымліваюцца гэтыя пратаколы."
       ],
       "Enabled countries": [
         "Уключаныя краіны"
@@ -10443,6 +10449,9 @@
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
       ],
+      "No results found": [
+        "Нічога не знойдзена"
+      ],
       "No single sign-on": [
         "Няма адзінага ўваходу"
       ],
@@ -10939,7 +10948,7 @@
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Згенерыруйце новы токен, каб карыстацца гэта функцыяй."
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Згенерыруйце новы токен, каб карыстацца гэтай функцыяй."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Адкладайце паведамленні на потым, каб яны знаходзіліся ў верхняй частцы вашай паштовай скрыні, калі вам гэта неабходна"
@@ -11062,7 +11071,7 @@
         "Паведамленне ${ boldDataLocked } не будзе больш паказвацца, але вы ўсё яшчэ можаце разблакіраваць свае даныя ў ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "${ MAIL_APP_NAME } Export Tool дазваляе экспартаваць расшыфраваныя лісты з вашага ўліковага запісу ${ MAIL_APP_NAME } у вашу прыладу. Пасля гэтага іх можна праглядаць, імпартаваць у іншы ўліковы запіс электроннай пошты або паштовы кліент."
+        "${ MAIL_APP_NAME } Export Tool дазваляе экспартаваць расшыфраваныя лісты з вашага ўліковага запісу ${ MAIL_APP_NAME } у вашу прыладу. Пасля гэтага іх можна праглядаць або імпартаваць у іншы ўліковы запіс электроннай пошты або паштовы кліент."
       ],
       "The calendar will be removed from your account.": [
         "Каляндар будзе выдалены з вашага ўліковага запісу."
@@ -11368,7 +11377,7 @@
         "Немагчыма праверыць бягучы статус назірання за шлюзамі."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Немагчыма спраўдзіць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
+        "Немагчыма спраўдзіць подпіс файла аднаўлення. Звярніцеся ў службу падтрымкі."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
@@ -20090,7 +20099,7 @@
         "Паспрабуйце ${ BRAND_NAME } бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
-        "Паспрабуйце ${ BRAND_NAME } на 14 дзён бясплатна"
+        "Паспрабуйце ${ BRAND_NAME } на працягу 14 дзён бясплатна"
       ],
       "Try ${ planName } for free": [
         "Паспрабуйце ${ planName } бясплатна"
