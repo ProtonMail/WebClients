@@ -196,6 +196,7 @@ export const FilePreviewContent = ({
                         isPublic={isPublic}
                         isPublicDocsAvailable={isPublicDocsAvailable}
                         onOpenInDocs={onOpenInDocs}
+                        mimeType={mimeType}
                     />
                 </div>
             );

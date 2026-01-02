@@ -6,6 +6,7 @@ import {
     mimeTypeToOpenInDocsType,
 } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { useDocumentActions } from '../../store/_documents';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
@@ -74,7 +75,9 @@ export default function usePreviewActions({
         await uploadController.completion();
     };
 
-    const openInDocsType = node ? mimeTypeToOpenInDocsType(mimeType) : undefined;
+    const isODSImportEnabled = useFlagsDriveSheetODSImport();
+    const openInDocsType = node ? mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled) : undefined;
+
     const openInDocs = () => {
         if (!openInDocsType) {
             return;

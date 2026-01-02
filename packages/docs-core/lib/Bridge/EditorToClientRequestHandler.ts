@@ -17,6 +17,7 @@ import type { ErrorInfo } from 'react'
 import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/ApplicationEvent'
 import { WordCountEvent } from './Events'
 import type { CustomWindow } from '../Application/Window'
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
 
 declare const window: CustomWindow
 
@@ -170,5 +171,9 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
 
   async getIsRunningInNativeMobileWeb(): Promise<boolean> {
     return window.Android != null || window.webkit?.messageHandlers?.iOS != null
+  }
+
+  async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
+    return this.docOrchestrator.checkIfFeatureFlagIsEnabled(featureFlag)
   }
 }

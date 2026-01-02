@@ -2,6 +2,7 @@ import { MimeIcon } from '@proton/components';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSheetODSImport } from '../../../../flags/useFlagsDriveSheetODSImport';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -12,13 +13,14 @@ interface Props {
 }
 
 export const OpenInDocsButton = ({ openInDocs, mimeType, linkId, close }: Props) => {
-    const openInDocsType = mimeTypeToOpenInDocsType(mimeType);
+    const isODSImportEnabled = useFlagsDriveSheetODSImport();
+    const openInDocsType = mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled);
     if (!openInDocsType) {
         throw new Error(`Unsupported MIME type for OpenInDocs: ${mimeType}`);
     }
     return (
         <ContextMenuButton
-            name={getOpenInDocsString(openInDocsType)}
+            name={getOpenInDocsString(openInDocsType, mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />}
             testId="context-menu-open-in-docs"
             action={() => openInDocs(linkId)}

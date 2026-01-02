@@ -6,19 +6,20 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import Icon from '@proton/components/components/icon/Icon';
 import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 const SHARED_STATUS_TO_COLOR = {
@@ -97,7 +98,8 @@ const Header = ({
         );
     };
 
-    const openInDocsType = mimeTypeToOpenInDocsType(mimeType);
+    const isODSImportEnabled = useFlag('SheetsODSImportEnabled');
+    const openInDocsType = mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled);
 
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
@@ -128,7 +130,7 @@ const Header = ({
             <div className="flex items-center">
                 {isLargeViewport && onOpenInDocs && openInDocsType && (
                     <Button
-                        title={getOpenInDocsString(openInDocsType)}
+                        title={getOpenInDocsString(openInDocsType, mimeType)}
                         onClick={onOpenInDocs}
                         shape="outline"
                         className="mr-4 flex items-center"
@@ -136,7 +138,7 @@ const Header = ({
                         data-testid="file-preview:actions:open-in-docs"
                     >
                         <MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />
-                        {getOpenInDocsString(openInDocsType)}
+                        {getOpenInDocsString(openInDocsType, mimeType)}
                     </Button>
                 )}
                 {onRestore && (

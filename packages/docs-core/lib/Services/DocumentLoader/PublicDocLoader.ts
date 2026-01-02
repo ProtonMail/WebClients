@@ -162,6 +162,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.eventBus,
       this.editorController,
       this.documentState,
+      this.unleashClient,
     )
 
     this.renameController = new PublicRenameController(documentState, this.driveCompat, this.getNode, this.logger)

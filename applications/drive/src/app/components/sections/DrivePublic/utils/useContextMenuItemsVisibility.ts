@@ -2,12 +2,14 @@ import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useFlagsDriveSheetODSImport } from '../../../../flags/useFlagsDriveSheetODSImport';
 import type { DecryptedLink } from '../../../../store';
 import { useDownloadScanFlag } from '../../../../store';
 import { useIsSheetsEnabled } from '../../../../store/_documents/useDriveDocsSheetsFF';
 
 export function useContextMenuItemsVisibility({ selectedLinks }: { selectedLinks: DecryptedLink[] }) {
     const isSheetsEnabled = useIsSheetsEnabled();
+    const isODSImportEnabled = useFlagsDriveSheetODSImport();
     const isDownloadScanEnabled = useDownloadScanFlag();
 
     const firstLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
@@ -18,7 +20,7 @@ export function useContextMenuItemsVisibility({ selectedLinks }: { selectedLinks
         isOnlyOneFileItem && !!firstLink.mimeType && isPreviewAvailable(firstLink.mimeType, firstLink.size);
 
     const protonDocuments = selectedLinks
-        .map((link) => ({ link, docsType: mimeTypeToOpenInDocsType(link?.mimeType) }))
+        .map((link) => ({ link, docsType: mimeTypeToOpenInDocsType(link?.mimeType, isODSImportEnabled) }))
         .filter((item): item is { link: DecryptedLink; docsType: OpenInDocsType } => item.docsType !== undefined);
 
     const canOpenInDocs =
