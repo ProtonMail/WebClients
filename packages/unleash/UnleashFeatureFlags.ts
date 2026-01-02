@@ -258,6 +258,7 @@ enum MeetFeatureFlag {
     MeetAllowDecryptionErrorReporting = 'MeetAllowDecryptionErrorReporting',
     MeetClientMetricsLog = 'MeetClientMetricsLog',
     MeetVp9 = 'MeetVp9',
+    MeetHigherBitrate = 'MeetHigherBitrate',
 }
 
 enum LumoFeatureFlag {

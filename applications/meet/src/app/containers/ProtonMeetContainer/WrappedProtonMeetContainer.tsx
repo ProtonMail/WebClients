@@ -30,6 +30,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
 
     const isMeetAllowDecryptionErrorReportingEnabled = useFlag('MeetAllowDecryptionErrorReporting');
     const isMeetVp9Allowed = useFlag('MeetVp9');
+    const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
 
     useEffect(() => {
         if (!isLogExtensionSetup.current && isMeetAllowDecryptionErrorReportingEnabled) {
@@ -87,23 +88,23 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 worker: workerRef.current,
             },
             videoCaptureDefaults: {
-                resolution: isMeetVp9Allowed
+                resolution: isMeetHigherBitrate
                     ? qualityConstants[QualityScenarios.PortraitView].resolution
                     : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
             },
             dynacast: true,
-            adaptiveStream: isMeetVp9Allowed,
+            adaptiveStream: isMeetHigherBitrate,
             publishDefaults: {
                 simulcast: true,
                 backupCodec: isMeetVp9Allowed,
-                videoEncoding: isMeetVp9Allowed
+                videoEncoding: isMeetHigherBitrate
                     ? qualityConstants[QualityScenarios.PortraitView].encoding
                     : legacyQualityConstants[QualityScenarios.PortraitView].encoding,
                 videoSimulcastLayers: [
-                    isMeetVp9Allowed
+                    isMeetHigherBitrate
                         ? qualityConstants[QualityScenarios.SmallView]
                         : legacyQualityConstants[QualityScenarios.SmallView],
-                    isMeetVp9Allowed
+                    isMeetHigherBitrate
                         ? qualityConstants[QualityScenarios.MediumView]
                         : legacyQualityConstants[QualityScenarios.MediumView],
                 ],
