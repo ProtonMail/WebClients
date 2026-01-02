@@ -9,3 +9,7 @@
 .connection-lost-background-color-danger {
 	background-color: var(--signal-danger-major-3);
 }
+
+.network-quality-tooltip::before {
+	border-block-end-color: var(--background-strong) !important;
+}

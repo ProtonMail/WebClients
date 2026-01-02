@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ConnectionQuality, type Participant } from 'livekit-client';
+import { c } from 'ttag';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcMeetConnectionIndicator } from '@proton/icons/icons/IcMeetConnectionIndicator';
 import clsx from '@proton/utils/clsx';
 
@@ -22,6 +24,26 @@ const getPathVisibilityClasses = (connectionQuality: ConnectionQuality | undefin
             return 'hide-connection-path-2 hide-connection-path-3';
         default:
             return '';
+    }
+};
+
+const getLabel = (connectionQuality: ConnectionQuality | undefined) => {
+    switch (connectionQuality) {
+        case ConnectionQuality.Excellent:
+            // Translators: Excellent network/internet connection performance
+            return c('Tooltip').t`Excellent connection`;
+        case ConnectionQuality.Good:
+            // Translators: Good network/internet connection performance
+            return c('Tooltip').t`Good connection`;
+        case ConnectionQuality.Poor:
+            // Translators: Poor network/internet connection performance
+            return c('Tooltip').t`Poor connection`;
+        case ConnectionQuality.Lost:
+            // Translators: Lost network/internet connection
+            return c('Tooltip').t`Lost connection`;
+        default:
+            // Translators: Unknown network/internet connection status
+            return c('Tooltip').t`Unknown connection status`;
     }
 };
 
@@ -56,15 +78,17 @@ export const NetworkQualityIndicator = ({ size, participant, indicatorSize = 24 
     }
 
     return (
-        <div
-            className={clsx(
-                'user-select-none flex items-center justify-center w-custom h-custom rounded-full',
-                pathVisibilityClasses,
-                isDanger ? 'connection-lost-background-color-danger' : 'bg-weak'
-            )}
-            style={{ width: size, height: size, opacity: 0.8 }}
-        >
-            <IcMeetConnectionIndicator width={indicatorSize} height={indicatorSize} />
-        </div>
+        <Tooltip title={getLabel(connectionQuality)} tooltipClassName="network-quality-tooltip bg-strong color-norm">
+            <div
+                className={clsx(
+                    'user-select-none flex items-center justify-center w-custom h-custom rounded-full',
+                    pathVisibilityClasses,
+                    isDanger ? 'connection-lost-background-color-danger' : 'bg-weak'
+                )}
+                style={{ width: size, height: size, opacity: 0.8 }}
+            >
+                <IcMeetConnectionIndicator width={indicatorSize} height={indicatorSize} />
+            </div>
+        </Tooltip>
     );
 };
