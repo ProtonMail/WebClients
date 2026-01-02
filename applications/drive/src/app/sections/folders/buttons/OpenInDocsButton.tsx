@@ -28,7 +28,7 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
         return null;
     }
 
-    const title = getOpenInDocsString(openInDocsInfo);
+    const title = getOpenInDocsString(openInDocsInfo, openInDocsInfo.mimeType);
     const icon = <MimeIcon name={getOpenInDocsMimeIconName(openInDocsInfo)} className="mr-2" />;
 
     if (type === 'toolbar') {

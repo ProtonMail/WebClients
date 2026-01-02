@@ -165,12 +165,15 @@ export const isConvertibleToProtonDocsDocument = (mimeType: string) =>
 export const isConvertibleToProtonDocsSpreadsheet = (mimeType: string) =>
     mimeType === SupportedProtonDocsMimeTypes.xlsx ||
     mimeType === SupportedProtonDocsMimeTypes.csv ||
-    mimeType === SupportedProtonDocsMimeTypes.tsv;
+    mimeType === SupportedProtonDocsMimeTypes.tsv ||
+    mimeType === SupportedProtonDocsMimeTypes.ods;
 
 export const getDocsConversionType = (mimeType: string): DocsConversionType => {
     switch (mimeType) {
         case SupportedProtonDocsMimeTypes.xlsx:
             return 'xlsx';
+        case SupportedProtonDocsMimeTypes.ods:
+            return 'ods';
         case SupportedProtonDocsMimeTypes.csv:
             return 'csv';
         case SupportedProtonDocsMimeTypes.tsv:
@@ -195,7 +198,7 @@ export type ProtonDocumentType = 'document' | 'spreadsheet';
 
 export type OpenInDocsType = { type: ProtonDocumentType; isNative: boolean };
 
-export function mimeTypeToOpenInDocsType(mimeType?: string): OpenInDocsType | undefined {
+export function mimeTypeToOpenInDocsType(mimeType?: string, isODSImportEnabled?: boolean): OpenInDocsType | undefined {
     if (!mimeType) {
         return undefined;
     }
@@ -211,6 +214,9 @@ export function mimeTypeToOpenInDocsType(mimeType?: string): OpenInDocsType | un
         return { type: 'document', isNative };
     }
     if (isSheet || isConvertibleToSpreadsheet) {
+        if (!isODSImportEnabled && mimeType === SupportedProtonDocsMimeTypes.ods) {
+            return undefined;
+        }
         return { type: 'spreadsheet', isNative };
     }
     return undefined;

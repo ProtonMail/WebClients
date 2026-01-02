@@ -1,5 +1,6 @@
 import { type ProtonDocumentType, mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
 import type { DecryptedLink } from '../_links';
 import { useDocumentActions } from './useDocumentActions';
 import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';
@@ -27,6 +28,7 @@ export type OpenInDocsInfo =
            * convertible document.
            */
           isNative: boolean;
+          mimeType: string;
       }
     | { canOpen: false };
 
@@ -36,6 +38,7 @@ export const useOpenInDocs = (
     const { openDocument: openDocumentAction, convertDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
+    const isODSImportEnabled = useFlagsDriveSheetODSImport();
 
     // Can't open if the link is not provided or it doesn't have a mime type.
     if (!link?.mimeType) {
@@ -43,7 +46,7 @@ export const useOpenInDocs = (
     }
 
     const { mimeType } = link;
-    const openInDocsType = mimeTypeToOpenInDocsType(mimeType);
+    const openInDocsType = mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled);
     const hasParent = Boolean(link?.parentLinkId);
 
     // Can't open if...
@@ -74,5 +77,5 @@ export const useOpenInDocs = (
         }
     };
 
-    return { canOpen: true, openDocument, type, isNative };
+    return { canOpen: true, openDocument, type, isNative, mimeType };
 };

@@ -13,6 +13,18 @@ export const getNodeNameWithoutExtension = (node: DecryptedNode) => {
     case SupportedProtonDocsMimeTypes.html:
       extension = 'html'
       break
+    case SupportedProtonDocsMimeTypes.ods:
+      extension = 'ods'
+      break
+    case SupportedProtonDocsMimeTypes.csv:
+      extension = 'csv'
+      break
+    case SupportedProtonDocsMimeTypes.tsv:
+      extension = 'tsv'
+      break
+    case SupportedProtonDocsMimeTypes.xlsx:
+      extension = 'xlsx'
+      break
     default:
       extension = 'txt'
   }

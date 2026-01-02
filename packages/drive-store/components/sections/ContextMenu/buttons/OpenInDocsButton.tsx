@@ -9,12 +9,13 @@ interface Props {
     close: () => void;
     type: ProtonDocumentType;
     isNative: boolean;
+    mimeType: string;
 }
 
-const OpenInDocsButton = ({ openDocument, close, type, isNative }: Props) => {
+const OpenInDocsButton = ({ openDocument, close, type, isNative, mimeType }: Props) => {
     return (
         <ContextMenuButton
-            name={getOpenInDocsString({ type, isNative })}
+            name={getOpenInDocsString({ type, isNative }, mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName({ type })} className="mr-2" />}
             testId="context-menu-open-in-docs"
             action={openDocument}

@@ -2,6 +2,7 @@ import { type ProtonDocumentType, mimeTypeToOpenInDocsType } from '@proton/share
 
 import { useFlagsDriveDocs } from '../../flags/useFlagsDriveDocs';
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
+import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
 import { useDocumentActions } from './useDocumentActions';
 
 type OpenInDocsActionParameters = {
@@ -26,6 +27,7 @@ export type OpenInDocsInfo =
            * convertible document.
            */
           isNative: boolean;
+          mimeType: string;
       }
     | { canOpen: false };
 
@@ -37,13 +39,14 @@ export const useOpenInDocs = (node?: {
     const { openDocument: openDocumentAction, convertDocument } = useDocumentActions();
     const { isDocsEnabled } = useFlagsDriveDocs();
     const isSheetsEnabled = useFlagsDriveSheet();
+    const isODSImportEnabled = useFlagsDriveSheetODSImport();
 
     // Can't open if the node is not provided or it doesn't have a media type.
     if (!node?.mediaType) {
         return { canOpen: false };
     }
 
-    const openInDocsType = mimeTypeToOpenInDocsType(node.mediaType);
+    const openInDocsType = mimeTypeToOpenInDocsType(node.mediaType, isODSImportEnabled);
     const hasParent = Boolean(node.parentUid);
 
     // Can't open if...
@@ -74,5 +77,5 @@ export const useOpenInDocs = (node?: {
         }
     };
 
-    return { canOpen: true, openDocument, type, isNative };
+    return { canOpen: true, openDocument, type, isNative, mimeType: node.mediaType };
 };

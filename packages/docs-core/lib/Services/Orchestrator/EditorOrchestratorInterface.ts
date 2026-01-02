@@ -11,6 +11,7 @@ import type {
   SafeDocsUserState,
   FileMenuAction,
 } from '@proton/docs-shared'
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
 
 export interface EditorOrchestratorInterface {
   userAddress: string
@@ -51,4 +52,5 @@ export interface EditorOrchestratorInterface {
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
 
   handleFileMenuAction(action: FileMenuAction): Promise<void>
+  checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
 }

@@ -4,6 +4,7 @@ import type { MimeName } from '@proton/components/components/icon/MimeIcon';
 
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '../constants';
 import type { OpenInDocsType } from '../helpers/mimetype';
+import { SupportedMimeTypes } from './constants';
 
 export const getNumAccessesTooltipMessage = () =>
     c('Info').t`The download count includes both actual downloads and instances when files are previewed.`;
@@ -14,7 +15,7 @@ export const getSizeTooltipMessage = () =>
 /**
  * Returns `Open` or `Open in Proton Docs/Sheets` depending on passed `mimeType`.
  */
-export const getOpenInDocsString = ({ type, isNative }: OpenInDocsType): string => {
+export const getOpenInDocsString = ({ type, isNative }: OpenInDocsType, mimeType?: string): string => {
     if (isNative) {
         // translator: 'Open' action for documents
         return c('Action').t`Open`;
@@ -29,6 +30,11 @@ export const getOpenInDocsString = ({ type, isNative }: OpenInDocsType): string 
         case 'spreadsheet':
             appName = SHEETS_APP_NAME;
             break;
+    }
+
+    if (mimeType === SupportedMimeTypes.ods) {
+        // translator: 'Open in Proton Sheets (Beta)' action
+        return c('sheets_2025:Action').t`Open in ${appName} (Beta)`;
     }
 
     // translator: 'Open in Proton Docs/Sheets' action
