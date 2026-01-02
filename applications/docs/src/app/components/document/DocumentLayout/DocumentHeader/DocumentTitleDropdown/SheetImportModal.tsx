@@ -166,6 +166,12 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
             >{c('sheets_2025:Label').t`Convert text to numbers, dates, and formulas`}</Checkbox>
           </div>
         </div>
+        {file?.type === SupportedProtonDocsMimeTypes.ods && (
+          <div className="mt-2 flex items-center gap-2 px-8 text-sm text-[--text-hint]">
+            <Icon name="info-circle" />
+            <span>{c('Info').t`Importing ODS files is currently in beta`}</span>
+          </div>
+        )}
         <div className="flex gap-4 px-8 pt-4">
           <Button className="ml-auto" onClick={closeModal}>{c('Action').t`Cancel`}</Button>
           <Button

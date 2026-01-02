@@ -154,6 +154,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       this.eventBus,
       this.editorController,
       documentState,
+      this.unleashClient,
     )
 
     this.renameController = new PrivateRenameController(documentState, this.driveCompat, this.getNode, this.logger)

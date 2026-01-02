@@ -124,7 +124,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
         >
           {s('Print')}
         </UI.MenuItem>
-        <DownloadSubmenu triggerMenuAction={triggerMenuAction} />
+        <DownloadSubmenu triggerMenuAction={triggerMenuAction} clientInvoker={clientInvoker} />
         <UI.MenuSeparator />
         <UI.MenuItem
           leadingIconSlot={<UI.Icon legacyName="info-circle" />}
@@ -263,7 +263,21 @@ function MoveToTrashOption({ triggerMenuAction }: { triggerMenuAction: (action: 
   )
 }
 
-function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
+function DownloadSubmenu({
+  triggerMenuAction,
+  clientInvoker,
+}: {
+  triggerMenuAction: (action: FileMenuAction) => Promise<void>
+  clientInvoker: EditorRequiresClientMethods
+}) {
+  const [isODSExportEnabled, setIsODSExportEnabled] = useState(false)
+  useEffect(() => {
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled('SheetsODSExportEnabled')
+      .then(setIsODSExportEnabled)
+      .catch(console.error)
+  }, [clientInvoker])
+
   return (
     <Ariakit.MenuProvider>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
@@ -280,6 +294,18 @@ function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: Fi
         >
           {s('Microsoft Excel (.xlsx)')}
         </UI.MenuItem>
+        {isODSExportEnabled && (
+          <UI.MenuItem
+            onClick={() => {
+              void triggerMenuAction({
+                type: 'download',
+                format: 'ods',
+              })
+            }}
+          >
+            {s('OpenDocument Spreadsheet (.ods) (Beta)')}
+          </UI.MenuItem>
+        )}
         <UI.MenuItem
           onClick={() => {
             void triggerMenuAction({
@@ -317,6 +343,8 @@ function strings() {
     Print: c('sheets_2025:Spreadsheet editor menubar file menu').t`Print`,
     Download: c('sheets_2025:Spreadsheet editor menubar file menu').t`Download`,
     'Microsoft Excel (.xlsx)': c('sheets_2025:Spreadsheet editor menubar file menu').t`Microsoft Excel (.xlsx)`,
+    'OpenDocument Spreadsheet (.ods) (Beta)': c('sheets_2025:Spreadsheet editor menubar file menu')
+      .t`OpenDocument Spreadsheet (.ods) (Beta)`,
     'Comma Separated Values (.csv)': c('sheets_2025:Spreadsheet editor menubar file menu')
       .t`Comma Separated Values (.csv)`,
     'Tab Separated Values (.tsv)': c('sheets_2025:Spreadsheet editor menubar file menu').t`Tab Separated Values (.tsv)`,

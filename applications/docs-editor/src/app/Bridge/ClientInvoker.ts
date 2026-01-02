@@ -22,6 +22,7 @@ import {
   type EditorEventData,
 } from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -149,6 +150,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   async handleFileMenuAction(action: FileMenuAction): Promise<void> {
     return this.invokeClientMethod('handleFileMenuAction', [action])
+  }
+
+  async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
+    return this.invokeClientMethod('checkIfFeatureFlagIsEnabled', [featureFlag])
   }
 
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
