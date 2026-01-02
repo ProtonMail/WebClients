@@ -9,7 +9,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
 import { UIStateProvider } from '../../contexts/UIStateContext';
-import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
+import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import type { DecryptionErrorLog, KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
@@ -29,6 +29,8 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const [decryptionErrorLogs, setDecryptionErrorLogs] = useState<DecryptionErrorLog[]>([]);
 
     const isMeetAllowDecryptionErrorReportingEnabled = useFlag('MeetAllowDecryptionErrorReporting');
+    const isMeetVp9Allowed = useFlag('MeetVp9');
+    const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
 
     useEffect(() => {
         if (!isLogExtensionSetup.current && isMeetAllowDecryptionErrorReportingEnabled) {
@@ -86,20 +88,30 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 worker: workerRef.current,
             },
             videoCaptureDefaults: {
-                resolution: qualityConstants[QualityScenarios.PortraitView].resolution,
+                resolution: isMeetHigherBitrate
+                    ? qualityConstants[QualityScenarios.PortraitView].resolution
+                    : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
             },
             dynacast: true,
+            adaptiveStream: isMeetHigherBitrate,
             publishDefaults: {
                 simulcast: true,
-                backupCodec: false,
-                videoEncoding: qualityConstants[QualityScenarios.PortraitView].encoding,
+                backupCodec: isMeetVp9Allowed,
+                videoEncoding: isMeetHigherBitrate
+                    ? qualityConstants[QualityScenarios.PortraitView].encoding
+                    : legacyQualityConstants[QualityScenarios.PortraitView].encoding,
                 videoSimulcastLayers: [
-                    qualityConstants[QualityScenarios.SmallView],
-                    qualityConstants[QualityScenarios.MediumView],
+                    isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.SmallView]
+                        : legacyQualityConstants[QualityScenarios.SmallView],
+                    isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.MediumView]
+                        : legacyQualityConstants[QualityScenarios.MediumView],
                 ],
                 audioPreset: { maxBitrate: audioQuality },
                 screenShareEncoding: screenShareQuality.encoding,
                 screenShareSimulcastLayers: [],
+                videoCodec: isMeetVp9Allowed ? 'vp9' : 'vp8',
             },
             disconnectOnPageLeave: false,
         });
