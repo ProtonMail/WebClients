@@ -2,6 +2,7 @@ import type { InlineFrameTarget } from 'proton-pass-extension/app/content/servic
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
+import { kFocusTrapSelector } from 'proton-pass-extension/app/content/services/inline/inline.registry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -45,6 +46,8 @@ type DropdownFocusManagerState = { willFocus: boolean; willFocusTimer?: NodeJS.T
 const isFocusableElement = (el: MaybeNull<Element>): boolean => {
     if (!el || !isHTMLElement(el)) return false;
 
+    if (el.matches(kFocusTrapSelector)) return false;
+
     const tag = el.tagName.toLowerCase();
     const focusableTags = ['input', 'textarea', 'select', 'button', 'a'];
     return focusableTags.includes(tag) || el.hasAttribute('tabindex') || el.isContentEditable;
@@ -86,16 +89,6 @@ export const createDropdownFocusController = ({
         clearTimeout(state.willFocusTimer);
         delete state.willFocusTimer;
         state.willFocus = false;
-
-        switch (anchor.current?.type) {
-            case 'field':
-                const fields = anchor.current.field.getFormHandle().getFields();
-                fields.forEach((formField) => formField.interactivity.unlock());
-                break;
-            case 'frame':
-                void onFrameFieldLock(anchor.current, false).catch(noop);
-                break;
-        }
     };
 
     const onWillFocus = () => {
@@ -152,8 +145,12 @@ export const createDropdownFocusController = ({
 
         if (!hasFocus()) {
             return waitUntil(() => releaseFocus(anchor.current), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
-                .then(() => iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS }))
-                .catch(disconnect);
+                .then(() => {
+                    if (!iframe.state.visible) return;
+                    iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS });
+                })
+                .catch(noop)
+                .finally(disconnect);
         }
     });
 

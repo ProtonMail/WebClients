@@ -18,13 +18,10 @@ import noop from '@proton/utils/noop';
 
 import { createContentScriptClient as clientFactory } from './services/client/client';
 import { createClientController } from './services/client/client.controller';
-import { registerCustomElements } from './services/inline/custom-elements/register';
 
 (async () => {
     const mainFrame = isMainFrame();
     const scriptId = uniqueId(16);
-    const elements = await registerCustomElements();
-    const controller = createClientController({ elements, mainFrame, scriptId, clientFactory });
-
+    const controller = createClientController({ mainFrame, scriptId, clientFactory });
     return controller.init();
 })().catch(noop);

@@ -16,5 +16,5 @@ export interface DropdownHandler {
     destroy: () => void;
     toggle: (request: DropdownRequest) => void;
     sendMessage: (message: InlineMessage) => void;
-    getState: () => Promise<DropdownStateDTO>;
+    getState: (checkInFlight?: boolean) => Promise<DropdownStateDTO>;
 }

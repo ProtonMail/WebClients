@@ -26,6 +26,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
 import type {
@@ -130,6 +131,7 @@ export const createInlineApp = <T extends InlineRequest>({
     const portMessageHandlers: Map<InlineMessageType, InlinePortMessageHandler> = new Map();
     const pubsub = createPubSub<InlineEvent<T>>();
     const listeners = createListenerStore();
+    const iframeID = uniqueId(8);
 
     const state: InlineState<InlineAction<T>> = {
         action: null,
@@ -145,18 +147,25 @@ export const createInlineApp = <T extends InlineRequest>({
     const iframe = createElement<HTMLIFrameElement>({
         type: 'iframe',
         classNames,
-        attributes: { src },
+        attributes: { src: `${src}#iframe=${iframeID}` },
         parent: popover.root.shadowRoot,
     });
 
     iframe.style.setProperty(`--frame-animation`, animation);
 
-    const checkStale = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
-    const ensureLoaded = asyncLock(() => waitUntil({ check: () => state.loaded, cancel: checkStale }, 50));
-    const ensureReady = asyncLock(() => waitUntil({ check: () => state.ready, cancel: checkStale }, 20));
+    const cancel = withContext<() => boolean>((ctx) => Boolean(ctx?.getState().stale));
+    const ensureLoaded = asyncLock(() => waitUntil({ check: () => state.loaded, cancel }, 50));
+    const ensureReady = asyncLock(() => waitUntil({ check: () => state.ready, cancel }, 20));
 
+    /** Leverage the unique `iframeID` to validate the `IFRAME_APP_READY_EVENT`. When
+     * relocating the `proton-pass-root` custom element to evade focus-traps, we may
+     * intercept post messages from a previous iframe that we will unmount. */
     const unlisten = listeners.addListener(window, 'message', (event) => {
-        if (event.data.type === IFRAME_APP_READY_EVENT && event.data.endpoint === id) {
+        if (
+            event.data.type === IFRAME_APP_READY_EVENT &&
+            event.data.endpoint === id &&
+            event.data.iframe === iframeID
+        ) {
             state.loaded = true;
             unlisten();
         }
@@ -295,7 +304,7 @@ export const createInlineApp = <T extends InlineRequest>({
 
         state.port?.onMessage.removeListener(onMessageHandler);
         portMessageHandlers.clear();
-        safeCall(() => popover.root.shadowRoot.removeChild(iframe))();
+        safeCall(() => iframe.remove())();
         state.port = null;
 
         pubsub.unsubscribe();
