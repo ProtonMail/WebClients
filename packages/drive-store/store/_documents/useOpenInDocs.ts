@@ -27,6 +27,7 @@ export type OpenInDocsInfo =
            * convertible document.
            */
           isNative: boolean;
+          mimeType: string;
       }
     | { canOpen: false };
 
@@ -74,5 +75,5 @@ export const useOpenInDocs = (
         }
     };
 
-    return { canOpen: true, openDocument, type, isNative };
+    return { canOpen: true, openDocument, type, isNative, mimeType };
 };

@@ -8,6 +8,7 @@ import type { SuggestionSummaryType } from '../SuggestionType'
 import type { EditorEvent, EditorEventData } from './EditorEvent'
 import type { SafeDocsUserState } from '../Doc/DocsAwareness'
 import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
 
 export type FileMenuAction =
   | {
@@ -106,4 +107,6 @@ export interface EditorRequiresClientMethods {
   getIsRunningInNativeMobileWeb(): Promise<boolean>
 
   handleFileMenuAction(action: FileMenuAction): Promise<void>
+
+  checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
 }

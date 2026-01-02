@@ -14,7 +14,7 @@ import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { splitExtension } from '@proton/shared/lib/helpers/file'
 import { functions } from '@rowsncolumns/functions'
-import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
+import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
@@ -100,6 +100,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       })
       return new Uint8Array(buffer)
     }
+    if (format === 'ods') {
+      const buffer = await createODSFile({
+        ...state,
+        cellXfs: state.cellXfs ?? undefined,
+      })
+      return new Uint8Array(buffer)
+    }
     if (format === 'csv') {
       const csv = createCSVFromSheetData(state.sheetData[state.activeSheetId])
       return stringToUint8Array(csv)
@@ -148,13 +155,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     const canConvertFile =
       editorInitializationConfig &&
       editorInitializationConfig.mode === 'conversion' &&
-      ['xlsx', 'csv', 'tsv'].includes(editorInitializationConfig.type.dataType)
+      ['xlsx', 'csv', 'tsv', 'ods'].includes(editorInitializationConfig.type.dataType)
     if (canConvertFile && !didConvertFromFile.current) {
       didConvertFromFile.current = true
       const file = new File([editorInitializationConfig.data], `import.${editorInitializationConfig.type.dataType}`, {
         type: SupportedProtonDocsMimeTypes[editorInitializationConfig.type.dataType as SpreadsheetConversionType],
       })
-      if (editorInitializationConfig.type.dataType === 'xlsx') {
+      if (editorInitializationConfig.type.dataType === 'xlsx' || editorInitializationConfig.type.dataType === 'ods') {
         void handleExcelFileImport(file)
       } else {
         void importCSVFile(file)

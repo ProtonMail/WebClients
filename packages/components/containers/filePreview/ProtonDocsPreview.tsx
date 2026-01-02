@@ -12,9 +12,10 @@ interface Props {
     isPublic?: boolean;
     isPublicDocsAvailable?: boolean;
     onOpenInDocs?: () => void;
+    mimeType: string;
 }
 
-export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, onOpenInDocs }) => {
+export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, onOpenInDocs, mimeType }) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     let message = c('Info').t`Preview for this file type is not supported`;
@@ -53,7 +54,7 @@ export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, 
                     className="text-bold mt-8"
                     onClick={onOpenInDocs}
                 >
-                    {getOpenInDocsString({ type: 'document', isNative: false })}
+                    {getOpenInDocsString({ type: 'document', isNative: false }, mimeType)}
                 </Button>
             )}
         </div>

@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useAuthentication } from '@proton/components'
-import { useDriveCompat, type DocumentAction } from '@proton/drive-store'
+import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -9,6 +9,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './misc'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import useFlag from '@proton/unleash/useFlag'
 
 const DocsUrlContext = createContext<{
   searchParams: URLSearchParams
@@ -22,7 +23,7 @@ const DocsUrlContext = createContext<{
 } | null>(null)
 
 export function DocsUrlContextProvider({ children }: { children: React.ReactNode }) {
-  const { isDocsEnabled } = useDriveCompat()
+  const isDocsEnabled = !useFlag('DriveDocsDisabled')
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()

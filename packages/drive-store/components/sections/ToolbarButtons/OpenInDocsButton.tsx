@@ -24,7 +24,7 @@ const OpenInDocsButton = ({ selectedBrowserItems }: Props) => {
 
     return (
         <ToolbarButton
-            title={getOpenInDocsString(openInDocs)}
+            title={getOpenInDocsString(openInDocs, openInDocs.mimeType)}
             icon={<MimeIcon name={getOpenInDocsMimeIconName(openInDocs)} className="mr-2" />}
             onClick={() => openInDocs.openDocument()}
             data-testid="toolbar-open-in-docs"

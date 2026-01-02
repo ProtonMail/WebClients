@@ -21,6 +21,8 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
+import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -37,6 +39,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     private readonly eventBus: InternalEventBusInterface,
     private readonly editor: EditorControllerInterface,
     private readonly documentState: DocumentState | PublicDocumentState,
+    private readonly unleashClient: UnleashClient,
   ) {}
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
@@ -242,5 +245,9 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return this.editor.handleFileMenuAction(action)
+  }
+
+  async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
+    return this.unleashClient.isReady() && this.unleashClient.isEnabled(featureFlag)
   }
 }
