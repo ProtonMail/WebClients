@@ -1,24 +1,20 @@
 import { useEffect, useState } from 'react';
-import type { SetStateAction } from 'react';
 
-import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import type { RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
+import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import RetentionScopeItem from './RetentionScopeItem';
 import { PRODUCT_FILTER_OPTIONS } from './constants';
 import { generateClientIDForRuleScope } from './helpers';
-import type { RetentionRuleFormData } from './types';
+import type { RetentionRuleScopeFormData } from './types';
 
 interface Props {
-    values: RetentionRuleFormData;
-    setValues: (
-        values: SetStateAction<RetentionRuleFormData>,
-        shouldValidate?: boolean
-    ) => Promise<void> | Promise<FormikErrors<RetentionRuleFormData>>;
+    products: RetentionRuleProduct;
+    value: RetentionRuleScopeFormData[];
+    onChange: (newValue: RetentionRuleScopeFormData[]) => void;
 }
 
 enum RetentionScopeOption {
@@ -38,52 +34,52 @@ const getInitialScope = (productOptions: RetentionRuleScopeType[]) => {
     };
 };
 
-const RetentionScopes = ({ values, setValues }: Props) => {
+const RetentionScopes = ({ products, value, onChange }: Props) => {
     const [scopeOption, setScopeOption] = useState(
-        values.scopes.length > 0 ? RetentionScopeOption.Specific : RetentionScopeOption.All
+        value.length > 0 ? RetentionScopeOption.Specific : RetentionScopeOption.All
     );
 
+    const productOptions = PRODUCT_FILTER_OPTIONS[products];
+
     useEffect(() => {
-        if (values.scopes.length === 0 && scopeOption === RetentionScopeOption.Specific) {
+        if (value.length === 0 && scopeOption === RetentionScopeOption.Specific) {
             setScopeOption(RetentionScopeOption.All);
         }
-    }, [values.scopes.length, scopeOption]);
+    }, [value.length, scopeOption]);
 
     const handleScopeOptionChange = (value: RetentionScopeOption) => {
         setScopeOption(value);
         if (value === RetentionScopeOption.All) {
-            void setValues({ ...values, scopes: [] });
+            onChange([]);
         } else {
-            const productOptions = PRODUCT_FILTER_OPTIONS[values.products];
             const initialScope = getInitialScope(productOptions);
-            void setValues({ ...values, scopes: [initialScope] });
+            onChange([initialScope]);
         }
     };
 
     const handleAddScope = () => {
-        const productOptions = PRODUCT_FILTER_OPTIONS[values.products];
         const newScope = getInitialScope(productOptions);
-        void setValues({ ...values, scopes: [...values.scopes, newScope] });
+        onChange([...value, newScope]);
     };
 
     const handleRemoveScope = (id: string) => {
-        void setValues({ ...values, scopes: values.scopes.filter((scope) => scope.id !== id) });
+        onChange(value.filter((scope: RetentionRuleScopeFormData) => scope.id !== id));
     };
 
-    const handleScopeFieldChange = (id: string, field: RetentionRuleScopeType) => {
-        void setValues({
-            ...values,
-            scopes: values.scopes.map((scope) =>
+    const handleScopeTypeChange = (id: string, field: RetentionRuleScopeType) => {
+        onChange(
+            value.map((scope: RetentionRuleScopeFormData) =>
                 scope.id === id ? { ...scope, entityType: field, entityID: '' } : scope
-            ),
-        });
+            )
+        );
     };
 
-    const handleScopeValueChange = (id: string, value: string) => {
-        void setValues({
-            ...values,
-            scopes: values.scopes.map((scope) => (scope.id === id ? { ...scope, entityID: value } : scope)),
-        });
+    const handleScopeValueChange = (id: string, field: string) => {
+        const index = value.findIndex((scope: RetentionRuleScopeFormData) => scope.id === id);
+        if (index !== -1) {
+            const newScope = { ...value[index], entityID: field };
+            onChange([...value.slice(0, index), newScope, ...value.slice(index + 1)]);
+        }
     };
 
     return (
@@ -106,23 +102,19 @@ const RetentionScopes = ({ values, setValues }: Props) => {
                                 label: c('retention_policy_2025_Option').t`Specific users or groups`,
                             },
                         ]}
-                        disableChange={PRODUCT_FILTER_OPTIONS[values.products].length === 0}
+                        disableChange={productOptions.length === 0}
                     />
                 </div>
                 {scopeOption === RetentionScopeOption.Specific && (
                     <>
                         <div className="pl-5">
-                            {values.scopes.map((scope) => (
+                            {value.map((scope) => (
                                 <RetentionScopeItem
                                     key={scope.id}
-                                    scope={{
-                                        id: scope.id,
-                                        entityType: scope.entityType,
-                                        entityID: scope.entityID,
-                                    }}
-                                    selectedProduct={values.products}
+                                    scope={scope}
+                                    selectedProduct={products}
                                     onRemoveScope={handleRemoveScope}
-                                    onScopeFieldChange={handleScopeFieldChange}
+                                    onScopeTypeChange={handleScopeTypeChange}
                                     onScopeValueChange={handleScopeValueChange}
                                 />
                             ))}
