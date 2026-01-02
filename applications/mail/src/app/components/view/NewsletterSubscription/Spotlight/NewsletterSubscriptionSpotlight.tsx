@@ -9,7 +9,7 @@ export const NewsletterSubscription = () => {
                 <img alt="" src={spotlightStar} className="w-custom" style={{ '--w-custom': '2.5rem' }} />
             </div>
             <div className="flex flex-column flex-nowrap items-start">
-                <p className="text-bold m-0 mb-2">{c('Title').t`Your subscriptions in one place`}</p>
+                <p className="text-bold m-0 mb-2">{c('Title').t`Your newsletters in one place`}</p>
                 <p className="m-0">{c('Info').t`Easily manage and unsubscribe from newsletters and mailing lists.`}</p>
             </div>
         </div>
