@@ -5,9 +5,10 @@ import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { type CustomElementRef, createCustomElement } from '@proton/pass/utils/dom/create-element';
 import { POPOVER_SUPPORTED, getActiveModal, getClosestModal } from '@proton/pass/utils/dom/popover';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
@@ -50,7 +51,7 @@ const createIframeRoot = (rootTag: string, target?: HTMLElement) =>
         styles: ProtonPassRootStyles,
     });
 
-const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
+export const kFocusTrapSelector = `[data-focus-lock-disabled], [data-focus-lock], [data-focus-trap], [data-a11y-dialog]`;
 const getClosestFocusTrap = (target: MaybeNull<Element>) => target?.closest<HTMLElement>(kFocusTrapSelector) ?? null;
 
 export const createInlineRegistry = (elements: PassElementsConfig) => {
@@ -122,7 +123,6 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
 
                 if (parent !== nextParent) {
                     registry.destroy();
-                    if (activeRoot) parent?.removeChild(activeRoot.customElement);
                     registry.init(nextParent);
                 }
             }
@@ -134,11 +134,12 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             listeners.removeAll();
             state.root = createIframeRoot(elements.root, target);
             state.popover = createPopoverController(registry);
+            const { customElement } = state.root;
 
             if (state.apps.dropdown) onAttached('dropdown');
             if (state.apps.notification) onAttached('notification');
 
-            const handleRootRemoval = withContext((ctx) => {
+            const onRootRemoved = withContext((ctx) => {
                 state.root = null;
                 state.popover = null;
                 state.apps.dropdown?.destroy();
@@ -150,15 +151,14 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
                 else registry.destroy();
             });
 
-            const handleColorSchemeChange = withContext((ctx) => {
+            const setTheme = withContext<Callback>((ctx) => {
                 const settings = ctx?.getSettings();
-                if (settings?.theme === PassThemeOption.OS) registry.setTheme(settings.theme);
+                registry.setTheme(settings?.theme);
             });
 
-            const customEl = state.root.customElement;
-
-            listeners.addListener(customEl, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
-            listeners.addListener(matchDarkTheme(), 'change', handleColorSchemeChange);
+            listeners.addListener(customElement, PASS_ROOT_REMOVED_EVENT as any, onRootRemoved, { once: true });
+            listeners.addListener(matchDarkTheme(), 'change', setTheme);
+            setTheme();
 
             return state.root;
         },
@@ -167,13 +167,15 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             listeners.removeAll();
             state.apps.dropdown?.destroy();
             state.apps.notification?.destroy();
-            state.root = null; /* reset in-case we recycle the content-script */
+
+            safeCall(() => state.root?.customElement.remove())();
+            state.root = null;
             state.popover = null;
         },
 
         attachDropdown: withContext((ctx, layer) => {
             if (!ctx) return null;
-            if (layer) registry.ensureInteractive(layer);
+            registry.ensureInteractive(layer ?? null);
 
             if (state.apps.dropdown === null) {
                 logger.debug(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
@@ -198,27 +200,20 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
         }),
 
         setTheme: (theme = PASS_DEFAULT_THEME) => {
-            state.root?.customElement.setAttribute(
-                PASS_ELEMENT_THEME,
-                ((): string => {
-                    switch (theme) {
-                        case PassThemeOption.PassDark:
-                            return 'dark';
-                        case PassThemeOption.PassLight:
-                            return 'light';
-                        case PassThemeOption.OS:
-                            return 'os';
-                    }
-                })()
-            );
-
-            const payload = (() => {
-                if (theme === PassThemeOption.OS) {
-                    return matchDarkTheme().matches ? PassThemeOption.PassDark : PassThemeOption.PassLight;
+            const [injectionTheme, payload] = (() => {
+                switch (theme) {
+                    case PassThemeOption.PassDark:
+                        return ['dark', theme] as const;
+                    case PassThemeOption.PassLight:
+                        return ['light', theme] as const;
+                    case PassThemeOption.OS:
+                        const isDark = matchDarkTheme().matches;
+                        const match = isDark ? PassThemeOption.PassDark : PassThemeOption.PassLight;
+                        return ['os', match] as const;
                 }
-                return theme;
             })();
 
+            state.root?.customElement.setAttribute(PASS_ELEMENT_THEME, injectionTheme);
             state.apps.dropdown?.sendMessage({ type: InlinePortMessageType.IFRAME_THEME, payload });
             state.apps.notification?.sendMessage({ type: InlinePortMessageType.IFRAME_THEME, payload });
         },

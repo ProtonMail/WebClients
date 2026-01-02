@@ -45,6 +45,7 @@ export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
 
             listeners.addListener(window, 'scroll', onActualScroll(window, close), SCROLL_OPTIONS);
             listeners.addListener(window, 'focus', close, { once: true });
+            listeners.addListener(window, 'wheel', close, { capture: true, once: true });
         }
     };
 
