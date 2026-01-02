@@ -1769,6 +1769,27 @@
         "Lavori con dati sensibili?"
       ]
     },
+    "BOSS": {
+      "${ n } year ago": [
+        "${ n } anno",
+        "${ n } anni"
+      ],
+      "Domain setup": [
+        "Configurazione del dominio"
+      ],
+      "Everything": [
+        "Tutto"
+      ],
+      "Migrate users": [
+        "Migra gli utenti"
+      ],
+      "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
+        "Seleziona cosa vuoi migrare; questa scelta si applicherà a tutti gli utenti, sia quelli già esistenti sia quelli creati in futuro. La migrazione inizierà dopo la creazione degli account utente."
+      ],
+      "Set up": [
+        "Configura"
+      ]
+    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applicazione desktop ${ MAIL_APP_NAME }"
