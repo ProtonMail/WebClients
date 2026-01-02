@@ -616,6 +616,11 @@ export function useProtonSheetsUIState(
     },
   }
 
+  const kv = {
+    ...state.kv,
+    set: state.yjsState.kvSet,
+  }
+
   return {
     focusGrid,
     withFocusGrid,
@@ -631,6 +636,7 @@ export function useProtonSheetsUIState(
     insert,
     charts,
     data,
+    kv,
     /** @deprecated temporary, to be removed eventually */
     legacy: state,
   }

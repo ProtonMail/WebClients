@@ -30,6 +30,7 @@ import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from 'lodash/debounce'
 import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
+import type { Transaction } from 'yjs'
 
 // local state
 // -----------
@@ -169,6 +170,19 @@ function useSearchState({ localState, spreadsheetState }: SearchStateDependencie
   return useSearch({ ...localState, ...spreadsheetState, sheetId: spreadsheetState.activeSheetId })
 }
 
+// kv state
+// ---------
+
+type KeyValueState = {
+  defaultCurrency: string | undefined
+  locale: string | undefined
+}
+
+const useKeyValueState = create<KeyValueState>()((set) => ({
+  defaultCurrency: undefined,
+  locale: undefined,
+}))
+
 // Yjs state
 // ---------
 
@@ -217,7 +231,24 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     )
   }, [yjsState.users])
 
-  return { ...yjsState, userName, users: usersWithCorrectColor }
+  const kv = useMemo(() => yDoc.getMap<string | boolean | number | undefined>('kv'), [yDoc])
+  useEffect(() => {
+    function handleKVChange(_: unknown, transaction: Transaction) {
+      if (transaction.origin !== 'local') {
+        useKeyValueState.setState(kv.toJSON())
+      }
+    }
+    kv.observeDeep(handleKVChange)
+    return () => kv.unobserveDeep(handleKVChange)
+  }, [kv])
+  const kvSet = useEvent((key: keyof KeyValueState, value: string | boolean | number | undefined) => {
+    useKeyValueState.setState({ [key]: value })
+    yDoc.transact(() => {
+      kv.set(key, value)
+    }, 'local')
+  })
+
+  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet }
 }
 
 // proton sheets state
@@ -422,6 +453,8 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     localState.onChangeUserDefinedColors((userDefinedColors) => [...userDefinedColors, color])
   })
 
+  const kv = useKeyValueState()
+
   return {
     ...baseState,
     chartsState,
@@ -441,6 +474,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onRequestFonts,
     goToCell,
     onAddUserDefinedColor,
+    kv,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
