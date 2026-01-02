@@ -1205,7 +1205,7 @@
         "Redimensionner le panneau"
       ],
       "Restore": [
-        "Restauration"
+        "Restaurer"
       ],
       "Resume": [
         "Reprendre"
@@ -1505,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2834,7 +2835,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boîte de réception"
+        "Déplacer vers le dossier Boite de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -3951,7 +3952,7 @@
     },
     "Density mode": {
       "Comfortable": [
-        "Confort"
+        "Confortable"
       ],
       "Compact": [
         "Compact"
@@ -4487,11 +4488,18 @@
       "Cannot export this contact": [
         "Impossible d'exporter ce contact"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "La date d'expiration ne peut dépasser celle définie dans les règles d'utilisation."
+      ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
       "Choose a date in the future.": [
         "Choisissez une date à venir."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Choisissez une date dans le ${ n } prochain jour.",
+        "Choisissez une date dans les ${ n } prochains jours."
       ],
       "Condition incomplete": [
         "La condition est incomplète."
@@ -7375,8 +7383,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8435,7 +8442,7 @@
         "Adresse IP du VPN"
       ],
       "Warning": [
-        "Avertissement"
+        "Attention"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Nous nous excusons, il s'agit peut-être d'une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer ce message comme légitime ?"
@@ -8916,7 +8923,7 @@
         "Développer/Réduire l'éditeur"
       ],
       "Filter": [
-        "Filtre"
+        "Filtrer"
       ],
       "Forward": [
         "Transférer"
@@ -10134,7 +10141,7 @@
         "Demander une invitation"
       ],
       "Resume now": [
-        "Reprendre à présent"
+        "Reprendre maintenant"
       ],
       "Scheduled": [
         "Programmés"
@@ -12677,12 +12684,12 @@
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
       ],
       "Friend joined": [
-        "Un ami a rejoint",
-        "Des amis ont rejoint"
+        "Ami a rejoint",
+        "Amis ont rejoint"
       ],
       "Friend subscribed": [
-        "Un ami s'est abonné",
-        "Des amis se sont abonnés"
+        "Ami abonné",
+        "Amis abonnés"
       ],
       "Invite friends. Get credits.": [
         "Invitez vos amis et recevez des crédits."

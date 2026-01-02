@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-postadresse for bestillingskontakt: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Bestillingsside slettet"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Vert"
       ],
+      "How far in advance can someone book?": [
+        "Hvor langt i forveien kan noen bestille?"
+      ],
       "How long should an appointment last?": [
         "Hvor lenge skal en avtale vare?"
       ],
@@ -5643,6 +5649,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 timer før"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 timer før"
+      ],
       "Monitor accounts": [
         "Overvåk kontoer"
       ],
@@ -5696,6 +5708,9 @@
       ],
       "Not connected": [
         "Ikke tilkoblet"
+      ],
+      "Not on the same day": [
+        "Ikke på samme dag"
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
@@ -6162,6 +6177,9 @@
       "Where will the appointment take place?": [
         "Hvor vil avtalen finne sted?"
       ],
+      "Which calendars should block bookings?": [
+        "Hvilke kalendere skal blokkere bestillinger?"
+      ],
       "Which event would you like to delete?": [
         "Hvilken hendelse ønsker du å slette?"
       ],
@@ -6610,6 +6628,9 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
+      "Add notice period": [
+        "Legg til oppsigelsestid"
+      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -6678,6 +6699,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Check additional calendars for availability": [
+        "Sjekk tilgjengelighet i flere kalendere"
       ],
       "City": [
         "Poststed"

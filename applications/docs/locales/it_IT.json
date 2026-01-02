@@ -291,6 +291,9 @@
       "Delete contact group": [
         "Elimina gruppo di contatti"
       ],
+      "Delete older revisions": [
+        "Elimina le revisioni precedenti"
+      ],
       "Delete permanently": [
         "Elimina definitivamente"
       ],
@@ -314,6 +317,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app per ${ DRIVE_APP_NAME }"
+      ],
+      "Download a copy (as docx)": [
+        "Scarica una copia (in formato .docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "Scarica una copia (in formato .xlsx)"
       ],
       "Download anyway": [
         "Scarica comunque"
@@ -542,6 +551,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Okay": [
+        "Ok"
       ],
       "Open": [
         "Apri"
@@ -861,6 +873,9 @@
       ],
       "View invoice": [
         "Visualizza fattura"
+      ],
+      "View only": [
+        "Solo visualizzazione"
       ],
       "Web page (.html)": [
         "Pagina web (.html)"
@@ -2836,6 +2851,9 @@
       ],
       "Failed to open to contact": [
         "Impossibile aprire il contatto"
+      ],
+      "Failed to remove older revisions": [
+        "Il sistema non è riuscito a eliminare versioni precedenti"
       ],
       "Failed to rename document. Please try again later.": [
         "Impossibile rinominare il documento. Riprova più tardi."
@@ -4942,6 +4960,12 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Questo documento è diventato troppo grande per essere modificato. Puoi rimuovere le versioni precedenti per continuare a modificare."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "Questo documento è diventato troppo grande e non è stato possibile salvare le tue ultime modifiche. Scarica una copia per conservare il tuo lavoro."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Questo documento contiene molte attività. Alcune funzionalità potrebbero essere temporaneamente non disponibili."
@@ -9314,6 +9338,9 @@
         "Documenti"
       ],
       "Document Size Limit Exceeded": [
+        "Limite di dimensione del documento superato"
+      ],
+      "Document Size Limit Reached": [
         "Limite di dimensione del documento superato"
       ],
       "Document verification failed": [

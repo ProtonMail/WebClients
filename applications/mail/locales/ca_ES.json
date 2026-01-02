@@ -1505,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4487,6 +4488,9 @@
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "No es pot establir una caducitat superior a la que permet la política de conservació."
+      ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
@@ -7379,8 +7383,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"

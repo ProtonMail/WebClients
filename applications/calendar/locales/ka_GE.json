@@ -5144,6 +5144,9 @@
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "ჯავშნის საკონტაქტო ელფოსტა: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "დაჯავშნის გვერდი წაიშალა"
       ],
@@ -5424,6 +5427,9 @@
       "Host": [
         "ჰოსტი"
       ],
+      "How far in advance can someone book?": [
+        "რამდენად ადრე შეუძლია ვინმეს, დაჯავნოს?"
+      ],
       "How long should an appointment last?": [
         "რამდენ ხანს უნდა გაგრძელდეს შეხვედრა?"
       ],
@@ -5578,6 +5584,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
       ],
+      "Min. 2 hours before": [
+        "მინ. 2 საათით ადრე"
+      ],
+      "Min. 48 hours before": [
+        "მინ. 48 საათით ადრე"
+      ],
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
@@ -5628,6 +5640,9 @@
       ],
       "Not connected": [
         "მიერთებული არაა"
+      ],
+      "Not on the same day": [
+        "არა იმდღესვე"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -6070,6 +6085,9 @@
       "Where will the appointment take place?": [
         "სად მოხდება შეხვედრა?"
       ],
+      "Which calendars should block bookings?": [
+        "რომელმა კალენდრებმა უნდა დაბლოკონ დაჯავშნა?"
+      ],
       "Which event would you like to delete?": [
         "რომელი მოვლენის წაშლა გნებავთ?"
       ],
@@ -6503,6 +6521,9 @@
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
+      "Add notice period": [
+        "გაფრთხილების პერიოდის დამატება"
+      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
@@ -6571,6 +6592,9 @@
       ],
       "Category": [
         "კატეგორია"
+      ],
+      "Check additional calendars for availability": [
+        "დამატებითი კალენდრების შემოწმება ხელმისაწვდომობაზე"
       ],
       "City": [
         "ქალაქი"
