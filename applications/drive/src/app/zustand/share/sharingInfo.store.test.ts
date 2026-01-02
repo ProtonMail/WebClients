@@ -14,6 +14,12 @@ const mockedBaseShareResult = {
 describe('mapShareResultToSharingInfo', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('2024-01-15T12:00:00Z'));
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
     });
 
     it('should return undefined when shareResult is undefined', () => {
@@ -105,7 +111,7 @@ describe('mapShareResultToSharingInfo', () => {
             publicLinkId: mockPublicLinkId,
         });
 
-        const pastDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
+        const pastDate = new Date('2024-01-14T12:00:00Z'); // One day before frozen time
 
         const shareResult: ShareResult = {
             ...mockedBaseShareResult,
