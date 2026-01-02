@@ -41,8 +41,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '77.1',
-  log_list_timestamp: '2025-12-02T12:53:20Z',
+  version: '80.14',
+  log_list_timestamp: '2026-01-02T12:57:01Z',
   operators: [
     {
       name: 'Google',
@@ -260,7 +260,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEastxYj1mntGuyv74k4f+yaIx+ZEzlSJ+iVTYWlw8SpSKJ4TfxYWuBhnETlhpyG/5seJn0mOSnVgXsZ1JRflI7g==',
           url: 'https://wyvern.ct.digicert.com/2027h1/',
           mmd: 86400,
-          state: { qualified: { timestamp: '2025-10-10T18:00:00Z' } },
+          state: { usable: { timestamp: '2025-12-20T18:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-01-01T00:00:00Z',
             end_exclusive: '2027-07-01T00:00:00Z'
@@ -272,7 +272,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEuOg8hcgaYT/MShxpag2Hige0zsLzz8vOLZXp6faCdzM+Mn/njyU9ROAuwDxuu88/Grxn46kmehdOKVDFexbdSg==',
           url: 'https://wyvern.ct.digicert.com/2027h2/',
           mmd: 86400,
-          state: { qualified: { timestamp: '2025-10-10T18:00:00Z' } },
+          state: { usable: { timestamp: '2025-12-20T18:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
@@ -320,7 +320,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvirIq1XPwgwG7BnbMh2zoUbEt+T8z8XAtg9lo8jma+aaTQl8iVCypUFXtLpt4/SHaoUzbvcjDX/6B1IbL3OoIQ==',
           url: 'https://sphinx.ct.digicert.com/2027h1/',
           mmd: 86400,
-          state: { qualified: { timestamp: '2025-10-10T18:00:00Z' } },
+          state: { usable: { timestamp: '2025-12-20T18:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-01-01T00:00:00Z',
             end_exclusive: '2027-07-01T00:00:00Z'
@@ -332,7 +332,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUCe23M889mAsUVeTTBcNsAmP374ZWQboLdR8RdGwM3VZ6P/sDwhrL7wK4zrXPh3HwLDDLxDjvRBeivUSbpZSwA==',
           url: 'https://sphinx.ct.digicert.com/2027h2/',
           mmd: 86400,
-          state: { qualified: { timestamp: '2025-10-10T18:00:00Z' } },
+          state: { usable: { timestamp: '2025-12-20T18:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
@@ -598,7 +598,15 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtXYwB63GyNLkS9L1vqKNnP10+jrW+lldthxg090fY4eG40Xg1RvANWqrJ5GVydc9u8H3cYZp9LNfkAmqrr2NqQ==',
           url: 'https://oak.ct.letsencrypt.org/2025h2/',
           mmd: 86400,
-          state: { usable: { timestamp: '2023-11-26T12:00:00Z' } },
+          state: {
+            readonly: {
+              timestamp: '2025-12-12T22:30:00Z',
+              final_tree_head: {
+                sha256_root_hash: 'fn06m+bnTrDRl01hT1F1TdZPYfxciFZZn7NAayeGOVQ=',
+                tree_size: 1958525022
+              }
+            }
+          },
           temporal_interval: {
             start_inclusive: '2025-06-20T00:00:00Z',
             end_exclusive: '2026-01-20T00:00:00Z'
@@ -610,7 +618,15 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmdRhcCL6d5MNs8eAliJRvyV5sQFC6UF7iwzHsmVaifT64gJG1IrHzBAHESdFSJAjQN56TYky+9cK616MovH2SQ==',
           url: 'https://oak.ct.letsencrypt.org/2026h1/',
           mmd: 86400,
-          state: { usable: { timestamp: '2024-11-04T00:00:00Z' } },
+          state: {
+            readonly: {
+              timestamp: '2025-12-12T22:30:00Z',
+              final_tree_head: {
+                sha256_root_hash: 'deSRNfTNPgd9wfzoXIznvi+QUTxuK0R+daC6JGKGK3Q=',
+                tree_size: 598614696
+              }
+            }
+          },
           temporal_interval: {
             start_inclusive: '2025-12-20T00:00:00Z',
             end_exclusive: '2026-07-20T00:00:00Z'
@@ -622,7 +638,15 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEanCds5bj7IU2lcNPnIvZfMnVkSmu69aH3AS8O/Y0D/bbCPdSqYjvuz9Z1tT29PxcqYxf+w1g5CwPFuwqsm3rFQ==',
           url: 'https://oak.ct.letsencrypt.org/2026h2/',
           mmd: 86400,
-          state: { usable: { timestamp: '2024-11-04T00:00:00Z' } },
+          state: {
+            readonly: {
+              timestamp: '2025-12-12T22:30:00Z',
+              final_tree_head: {
+                sha256_root_hash: 'uTgg1k3DUbSFFdXewyyxbsQuCc9RupplMphTwtXqvf4=',
+                tree_size: 130815692
+              }
+            }
+          },
           temporal_interval: {
             start_inclusive: '2026-06-20T00:00:00Z',
             end_exclusive: '2027-01-20T00:00:00Z'
@@ -953,7 +977,7 @@ export const ctLogs ={
           submission_url: 'https://halloumi2025h2.log.ct.ipng.ch/',
           monitoring_url: 'https://halloumi2025h2.mon.ct.ipng.ch/',
           mmd: 60,
-          state: { qualified: { timestamp: '2025-10-07T18:30:00Z' } },
+          state: { usable: { timestamp: '2025-12-17T18:30:00Z' } },
           temporal_interval: {
             start_inclusive: '2025-07-01T00:00:00Z',
             end_exclusive: '2026-01-01T00:00:00Z'
@@ -966,7 +990,7 @@ export const ctLogs ={
           submission_url: 'https://halloumi2026h1.log.ct.ipng.ch/',
           monitoring_url: 'https://halloumi2026h1.mon.ct.ipng.ch/',
           mmd: 60,
-          state: { qualified: { timestamp: '2025-10-07T18:30:00Z' } },
+          state: { usable: { timestamp: '2025-12-17T18:30:00Z' } },
           temporal_interval: {
             start_inclusive: '2026-01-01T00:00:00Z',
             end_exclusive: '2026-07-01T00:00:00Z'
@@ -992,7 +1016,7 @@ export const ctLogs ={
           submission_url: 'https://halloumi2027h1.log.ct.ipng.ch/',
           monitoring_url: 'https://halloumi2027h1.mon.ct.ipng.ch/',
           mmd: 60,
-          state: { qualified: { timestamp: '2025-10-07T18:30:00Z' } },
+          state: { usable: { timestamp: '2025-12-17T18:30:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-01-01T00:00:00Z',
             end_exclusive: '2027-07-01T00:00:00Z'
@@ -1005,7 +1029,7 @@ export const ctLogs ={
           submission_url: 'https://halloumi2027h2.log.ct.ipng.ch/',
           monitoring_url: 'https://halloumi2027h2.mon.ct.ipng.ch/',
           mmd: 60,
-          state: { qualified: { timestamp: '2025-10-07T18:30:00Z' } },
+          state: { usable: { timestamp: '2025-12-17T18:30:00Z' } },
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
