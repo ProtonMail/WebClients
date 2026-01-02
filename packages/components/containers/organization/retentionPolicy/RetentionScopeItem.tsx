@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import { PRODUCT_FILTER_OPTIONS } from './constants';
@@ -18,7 +18,7 @@ interface Props {
     scope: RetentionRuleScopeFormData;
     selectedProduct: RetentionRuleProduct;
     onRemoveScope: (id: string) => void;
-    onScopeFieldChange: (id: string, field: RetentionRuleScopeType) => void;
+    onScopeTypeChange: (id: string, field: RetentionRuleScopeType) => void;
     onScopeValueChange: (id: string, value: string) => void;
 }
 
@@ -26,16 +26,19 @@ const RetentionScopeItem = ({
     scope,
     selectedProduct,
     onRemoveScope,
-    onScopeFieldChange,
+    onScopeTypeChange,
     onScopeValueChange,
 }: Props) => {
     const { getScopeFieldLabel, getAutocompleteOptions, getScopeValueLabel } = useRetentionRuleScopeSuggestion();
 
     const [autocompleteValue, setAutocompleteValue] = useState(getScopeValueLabel(scope.entityID, scope.entityType));
 
+    const autocompleteOptions = useMemo(() => getAutocompleteOptions(scope.entityType), [scope.entityType]);
+
     const onChange = (value: string) => {
         setAutocompleteValue(value);
-        onScopeValueChange(scope.id, value);
+        const option = autocompleteOptions.find((option) => option.label === value);
+        onScopeValueChange(scope.id, option?.id ?? '');
     };
 
     const onSelect = ({ label: displayValue, id }: AutocompleteOption) => {
@@ -44,16 +47,19 @@ const RetentionScopeItem = ({
     };
 
     const onFieldChange = ({ value }: { value: RetentionRuleScopeType }) => {
-        onScopeFieldChange(scope.id, value);
+        onScopeTypeChange(scope.id, value);
         setAutocompleteValue('');
     };
+
+    const invalidValue = autocompleteOptions.find((option) => option.id === scope.entityID) == null;
+    const selectedProductOption = PRODUCT_FILTER_OPTIONS[selectedProduct];
 
     return (
         <div className="flex gap-2 m-2">
             <div className="w-1/3">
-                {PRODUCT_FILTER_OPTIONS[selectedProduct] && (
+                {selectedProductOption && (
                     <SelectTwo value={scope.entityType} onChange={onFieldChange}>
-                        {PRODUCT_FILTER_OPTIONS[selectedProduct].map((option) => (
+                        {selectedProductOption.map((option) => (
                             <Option key={option} value={option} title={getScopeFieldLabel(option)} />
                         ))}
                     </SelectTwo>
@@ -65,10 +71,11 @@ const RetentionScopeItem = ({
                     value={autocompleteValue}
                     onChange={onChange}
                     onSelect={onSelect}
-                    options={getAutocompleteOptions(scope.entityType)}
+                    options={autocompleteOptions}
                     getData={(option: AutocompleteOption) => option.label}
                     placeholder={c('retention_policy_2025_Placeholder').t`Enter value`}
                     showHiddenResultsHint
+                    error={invalidValue ? c('retention_policy_2025_Error').t`Invalid value` : undefined}
                 />
             </div>
             <div className="shrink-0 w-custom" style={{ '--w-custom': '3em' }}>

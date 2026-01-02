@@ -148,10 +148,15 @@ const RetentionPolicyModal = ({
         },
     });
 
-    const { values, setValues, errors, isValid, dirty } = form;
+    const { values, setValues, errors, isValid, dirty, setFieldValue } = form;
+    const { products, scopes, name, lifetime, action } = values;
+    const setField =
+        <K extends keyof RetentionRuleFormData>(field: K, validate?: boolean) =>
+        (value: RetentionRuleFormData[K]) =>
+            setFieldValue(field, value, validate);
 
     const getTitleWordCountHint = () => {
-        const currentLength = values.name.length;
+        const currentLength = name.length;
         let colorClass = 'text-weak';
 
         if (currentLength > MAX_TITLE_LENGTH) {
@@ -189,7 +194,7 @@ const RetentionPolicyModal = ({
             return;
         }
 
-        if (values.action === RetentionRuleAction.RetainPurgeAll) {
+        if (action === RetentionRuleAction.RetainPurgeAll) {
             openConfirmModal(true);
         } else {
             form.handleSubmit();
@@ -209,7 +214,7 @@ const RetentionPolicyModal = ({
                 <FormikProvider value={form}>
                     <Form id={FORM_ID} className="flex flex-column gap-0" onSubmit={onFormSubmit}>
                         <ProductSelection
-                            selectedProduct={values.products}
+                            selectedProduct={products}
                             onChange={(product) => setValues({ ...values, products: product, scopes: [] })}
                         />
                         <InputFieldTwo
@@ -217,22 +222,22 @@ const RetentionPolicyModal = ({
                             as={TextAreaTwo}
                             rows={2}
                             label={c('retention_policy_2025_Label').t`Rule title`}
-                            placeholder={getRuleNamePlaceholder(values.products)}
-                            value={values.name}
+                            placeholder={getRuleNamePlaceholder(products)}
+                            value={name}
                             disabled={loading}
-                            onValue={(value) => setValues({ ...values, name: value }, true)}
+                            onValue={setField('name', true)}
                             hint={getTitleWordCountHint()}
                             error={errors.name}
                             autoFocus
                         />
                         <RetentionDurationSetting values={values} setValues={setValues} />
-                        <RetentionScopes values={values} setValues={setValues} />
+                        <RetentionScopes products={products} value={scopes} onChange={setField('scopes')} />
                     </Form>
                 </FormikProvider>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={modalProps.onClose}>{c('retention_policy_2025_Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit" form={FORM_ID} loading={loading} disabled={!dirty}>
+                <Button color="norm" type="submit" form={FORM_ID} loading={loading} disabled={!dirty || !isValid}>
                     {retentionRule
                         ? c('retention_policy_2025_Action').t`Save changes`
                         : c('retention_policy_2025_Action').t`Create rule`}
@@ -258,7 +263,7 @@ const RetentionPolicyModal = ({
                     ]}
                     {...confirmModalProps}
                 >
-                    {getConfirmationMessage(values.products, values.lifetime)}
+                    {getConfirmationMessage(products, lifetime)}
                 </Prompt>
             )}
         </ModalTwo>
