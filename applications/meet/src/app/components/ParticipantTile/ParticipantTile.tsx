@@ -151,7 +151,7 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
 
             {shouldShowVideo ? (
                 <>
-                    <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
+                    <div className="gradient-overlay absolute top-0 left-0 w-full h-full pointer-events-none" />
                     <VideoTrack
                         key={cameraVideoPublication?.trackSid}
                         className="participant-tile-body__video bg-strong w-full h-full rounded-xl"
