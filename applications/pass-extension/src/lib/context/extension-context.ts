@@ -62,7 +62,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         const name = generatePortName(endpoint, senderTabId, frameId);
         const port = browser.runtime.connect(browser.runtime.id, { name });
 
-        logger.info(`[${logCtx}] tabId resolved & port opened`);
+        logger.debug(`[${logCtx}] tabId resolved & port opened`);
 
         /** NOTE: When disconnection is triggered by the service worker unregistering,
          * the caller should handle reconnection timing to avoid "receiving end does
