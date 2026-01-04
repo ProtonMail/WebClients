@@ -68,6 +68,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
                 onBottleneck: ({ detectionTime }) => {
                     logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
                     context.destroy({ reason: 'bottleneck' });
+                    options.controller.destroy();
                 },
             }),
 
