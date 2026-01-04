@@ -132,7 +132,7 @@ export const createDetectorService = (config: DetectorConfig) => {
             maxTime: MIN_MAX_DETECTION_TIME,
             onMaxTime: (detectionTime) => {
                 const { hostname } = window.location;
-                logger.info(`[Detector] Slow down detected on ${hostname} (took ${detectionTime}ms)`);
+                logger.info(`[Detector] Slow down detected on ${hostname} (${detectionTime.toFixed(2)}ms)`);
 
                 if (detectionTime >= MAX_MAX_DETECTION_TIME) {
                     config?.onBottleneck?.({ detectionTime, hostname });
