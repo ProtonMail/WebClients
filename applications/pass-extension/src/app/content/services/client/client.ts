@@ -49,7 +49,7 @@ export const createContentScriptClient = ({
         mainFrame,
         scriptId,
         destroy: (options) => {
-            logger.info(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
+            logger.debug(`[ContentScript::${scriptId}] destroying.. [reason: "${options.reason}"]`);
             context.setState({ stale: true });
 
             context.service.formManager.destroy();
@@ -174,7 +174,7 @@ export const createContentScriptClient = ({
                         /** Restart the controller. SW re-registration timeout is
                          * handled by `controller.start` debounce (350ms). */
                         controller.stop('port disconnected');
-                        controller.start();
+                        void controller.start();
                     },
 
                     /** if the extension context errors out: destroy the parent
