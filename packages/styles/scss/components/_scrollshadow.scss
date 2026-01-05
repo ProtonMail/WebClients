@@ -1,3 +1,5 @@
+@use '../lib/rem' as *;
+
 $scrollshadow-height: rem(5) !default;
 
 .scrollshadow {

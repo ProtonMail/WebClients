@@ -1,3 +1,11 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .field-two {
 	&-container {
 		position: relative;
@@ -148,15 +156,15 @@
 		outline: none;
 		filter: none; // fixes Firefox autofill color
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			padding-inline: em(8);
 		}
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			font-size: max(16px, em($base-font-size));
 		}
 
-		@include media('print') {
+		@include im.media('print') {
 			font-size: 10pt;
 		}
 

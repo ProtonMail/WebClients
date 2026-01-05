@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .modal-two-footer {
 	display: flex;
@@ -8,13 +11,13 @@
 	flex-wrap: wrap-reverse;
 	flex-shrink: 0;
 
-	@include media('<=xsmall') {
+	@include im.media('<=xsmall') {
 		flex-direction: column-reverse;
 		align-items: stretch;
 	}
 
 	&--full {
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			justify-content: flex-end;
 
 			& > *:not(:first-child) {

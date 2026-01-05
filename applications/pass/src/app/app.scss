@@ -1,2 +1,2 @@
-@import '~@proton/pass/styles/common';
-@import '~@proton/styles/scss/lib/config';
+@use '~@proton/pass/styles/common' as *;
+@use '~@proton/styles/scss/lib/config' as *;

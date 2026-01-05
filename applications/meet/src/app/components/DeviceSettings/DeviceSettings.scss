@@ -1,26 +1,29 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .device-settings-container {
 	inline-size: 100%;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		inline-size: 35rem;
 		max-inline-size: 35rem;
 	}
 
-	@include media('>large') {
+	@include im.media('>large') {
 		inline-size: 41.69rem;
 		max-inline-size: 41.69rem;
 	}
 
 	.circle-button {
-		@include media('>=large') {
+		@include im.media('>=large') {
 			inline-size: 3rem !important;
 			block-size: 3rem !important;
 		}
 
-		@include media('>large') {
+		@include im.media('>large') {
 			inline-size: 3.5rem !important;
 			block-size: 3.5rem !important;
 		}
@@ -30,7 +33,7 @@
 .device-settings-container-loading {
 	display: none !important;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		display: flex !important;
 	}
 }
@@ -45,13 +48,13 @@
 	inline-size: 100%;
 	flex-grow: 1;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		inline-size: 35rem;
 		block-size: 19.25rem;
 		flex-grow: 0;
 	}
 
-	@include media('>large') {
+	@include im.media('>large') {
 		inline-size: 41.69rem;
 		block-size: 23.25rem;
 		flex-grow: 0;

@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/em' as *;
 
 .pass-card-icon {
 	color: var(--text-invert);

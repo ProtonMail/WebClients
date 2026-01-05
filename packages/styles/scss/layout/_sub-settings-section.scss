@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .sub-settings-section {
 	&-anchor {
@@ -9,7 +13,7 @@
 			.settings-cards & {
 				inset-block-start: rem(3);
 
-				@include media('<=medium') {
+				@include im.media('<=medium') {
 					inset-inline-start: rem(-16);
 					inset-block-start: rem(2);
 					padding-inline-end: rem(4);

@@ -1,7 +1,11 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .pass-policy-label {
-	@include media('>small') {
+	@include im.media('>small') {
 		inline-size: em(400);
 		max-inline-size: em(400);
 	}

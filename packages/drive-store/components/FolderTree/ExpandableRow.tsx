@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -82,6 +82,7 @@ const ExpandableRow = ({
                                 toggleExpand(link.linkId);
                             }}
                             data-testid={isExpanded ? 'expanded-folder' : 'expand-button'}
+                            icon
                         >
                             <IcChevronDown
                                 size={3}

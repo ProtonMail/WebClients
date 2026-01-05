@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use '../lib/config' as config;
 
 /**
  * Calculate an rem value from a px value
@@ -6,6 +7,6 @@
  * @param {Number} $user-default-font-size - The default font-size of the browser. Should be equivalent to 16px
  * @return {Number} - The $px value converted in rem
  */
-@function rem($px, $user-default-font-size: $root-default-font-size) {
+@function rem($px, $user-default-font-size: config.$root-default-font-size) {
 	@return (math.div($px, $user-default-font-size)) * 1rem;
 }

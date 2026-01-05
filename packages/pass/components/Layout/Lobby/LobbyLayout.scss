@@ -1,5 +1,6 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/pass/styles/lobby';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/pass/styles/lobby' as *;
 
 .pass-lobby {
 	&--content::before {

@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .pass-otp--donut {
 	display: block;

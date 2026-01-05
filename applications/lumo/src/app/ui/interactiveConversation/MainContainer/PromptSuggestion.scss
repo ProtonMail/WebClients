@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .prompt-suggestion {
 	display: flex !important;
@@ -17,7 +20,7 @@
 		justify-content: center;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		margin-block: 16px 0;
 		padding-inline: 0;
 		inline-size: 100%;
@@ -60,7 +63,7 @@
 		outline-offset: 2px;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		font-size: 13px;
 		padding-block: 8px;
 		padding-inline: 12px;
@@ -84,7 +87,7 @@
 	display: inline-flex;
 	align-items: center;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		// Allow text to wrap naturally on mobile
 		display: inline;
 		white-space: normal;

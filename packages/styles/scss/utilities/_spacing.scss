@@ -1,11 +1,13 @@
 @use 'sass:map';
 
+@use '../lib/rem' as *;
+@use '../lib/responsive-classes' as *;
+@use '../lib/dash-join' as *;
+@use '../lib/str-replace' as *;
+@use '../lib/pixel-to-rem' as *;
+
 // when updating margin sizes, please update them in Storybook accordingly
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
-
-@function pixel-to-rem($value) {
-	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
-}
 
 $spacings: (
 	'0': 0,
@@ -57,31 +59,45 @@ $placements: (
 
 @each $propertyname, $property in $properties {
 	@each $placementname, $placement in $placements {
-		$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
+		$cssproperty: if(
+			sass($placementname == 'default'): $property; else: dash-join($property, $placement),
+		);
 
 		@each $spacingname, $size in $spacings {
 			@if not($property == 'padding' and $spacingname == 'auto') {
-				$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), $spacingname);
+				$classname: dash-join(
+					$propertyname +
+						if(
+							sass($placementname == 'default'): '' ; else: $placementname,
+						),
+					$spacingname
+				);
 				$value: pixel-to-rem($size);
 				$dummy-map: map.merge(
 					$dummy-map,
 					(
 						$classname: (
-							#{$cssproperty}: #{$value},
-						),
+								#{$cssproperty}: #{$value},
+							),
 					)
 				);
 			}
 		}
 
-		$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), 'custom');
+		$classname: dash-join(
+			$propertyname +
+				if(
+					sass($placementname == 'default'): '' ; else: $placementname,
+				),
+			'custom'
+		);
 		$value: var(--#{'[BPN]' + $classname});
 		$dummy-map: map.merge(
 			$dummy-map,
 			(
 				$classname: (
-					#{$cssproperty}: #{$value},
-				),
+						#{$cssproperty}: #{$value},
+					),
 			)
 		);
 	}
@@ -95,31 +111,45 @@ $placements: (
 );
 
 @each $placementname, $placement in $placements {
-	$cssproperty: if($placementname == 'default', 'gap', dash-join($placement, 'gap'));
+	$cssproperty: if(
+		sass($placementname == 'default'): 'gap' ; else: dash-join($placement, 'gap'),
+	);
 
 	@each $spacingname, $size in $spacings {
 		@if not($spacingname == 'auto') {
-			$classname: dash-join('gap', if($placementname == 'default', '', $placementname), $spacingname);
+			$classname: dash-join(
+				'gap',
+				if(
+					sass($placementname == 'default'): '' ; else: $placementname,
+				),
+				$spacingname
+			);
 			$value: pixel-to-rem($size);
 			$dummy-map: map.merge(
 				$dummy-map,
 				(
 					$classname: (
-						#{$cssproperty}: #{$value},
-					),
+							#{$cssproperty}: #{$value},
+						),
 				)
 			);
 		}
 	}
 
-	$classname: dash-join('gap', if($placementname == 'default', '', $placementname), 'custom');
+	$classname: dash-join(
+		'gap',
+		if(
+			sass($placementname == 'default'): '' ; else: $placementname,
+		),
+		'custom'
+	);
 	$value: var(--#{'[BPN]' + $classname});
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
 			$classname: (
-				#{$cssproperty}: #{$value},
-			),
+					#{$cssproperty}: #{$value},
+				),
 		)
 	);
 }

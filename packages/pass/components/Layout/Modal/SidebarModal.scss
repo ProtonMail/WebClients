@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/pass/pass-lib';
+@use '~@proton/styles/scss/pass/pass-lib' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .pass-modal-two--sidebar,
 .pass-modal-two--sidebar-content {
@@ -34,21 +37,21 @@
 
 #pass-web {
 	.pass-modal-two--sidebar-content .modal-two-dialog {
-		@include media('<xsmall') {
+		@include im.media('<xsmall') {
 			--size: 100%;
 		}
 
-		@include media('>small') {
+		@include im.media('>small') {
 			--size: calc(((100% - var(--pass-sidebar-size)) * 0.596));
 		}
 	}
 
 	.pass-modal-two--sidebar .modal-two-dialog {
-		@include media('<xsmall') {
+		@include im.media('<xsmall') {
 			--size: 90%;
 		}
 
-		@include media('>small') {
+		@include im.media('>small') {
 			--size: calc(((100% - var(--pass-sidebar-size)) * 0.55));
 		}
 	}

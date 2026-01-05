@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .wallet-fullscreen-modal {
 	--logo-size: #{rem(160)};
@@ -18,11 +22,11 @@
 		padding-block: rem(20) 0;
 		border-block-end: 1px solid var(--border-norm);
 
-		@include media('>=xsmall') {
+		@include im.media('>=xsmall') {
 			padding-block: rem(20) rem(10);
 		}
 
-		@include media('>=small') {
+		@include im.media('>=small') {
 			display: grid;
 			grid-template-columns: var(--logo-size) 1fr var(--logo-size);
 			gap: var(--space-2);
@@ -36,7 +40,7 @@
 	}
 
 	.modal-two-header-actions {
-		@include media('>=small') {
+		@include im.media('>=small') {
 			display: flex;
 			flex-direction: row-reverse;
 			position: relative;
@@ -57,7 +61,7 @@
 		inline-size: 100%;
 		margin-inline: auto;
 
-		@include media('>=medium') {
+		@include im.media('>=medium') {
 			display: grid;
 			grid-template-columns: var(--selector-size) 1fr 0;
 			gap: var(--space-6);
@@ -65,7 +69,7 @@
 			padding-block: rem(34);
 		}
 
-		@include media('>=large') {
+		@include im.media('>=large') {
 			grid-template-columns: var(--selector-size) 1fr var(--selector-size);
 		}
 	}
@@ -73,12 +77,12 @@
 	&-main {
 		inline-size: 100%;
 
-		@include media('<medium') {
+		@include im.media('<medium') {
 			margin-inline: auto;
 			max-inline-size: rem(532);
 		}
 
-		@include media('>=large') {
+		@include im.media('>=large') {
 			margin-inline: auto;
 			max-inline-size: rem(532);
 		}
@@ -93,7 +97,7 @@
 	&-right {
 		display: none;
 
-		@include media('>=large') {
+		@include im.media('>=large') {
 			display: block;
 		}
 	}

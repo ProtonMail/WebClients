@@ -1,5 +1,10 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .eventpopover {
 	position: absolute;
@@ -13,13 +18,13 @@
 	animation-fill-mode: both;
 	border: 1px solid var(--border-weak);
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inset: 0;
 		inline-size: 100%;
 		block-size: 100%;
 	}
 
-	@include media('>small') {
+	@include im.media('>small') {
 		inline-size: rem(500);
 		max-inline-size: rem(368);
 		max-block-size: 100%;
@@ -27,11 +32,11 @@
 		box-shadow: var(--shadow-lifted);
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		padding-inline: rem(16);
 	}
 
-	@include media('print') {
+	@include im.media('print') {
 		inline-size: rem(368);
 		block-size: fit-content;
 		border: 1px solid var(--border-norm);
@@ -133,7 +138,7 @@
 			gap: em(8, 16);
 		}
 
-		@include media('>=#{em(350, 16)}') {
+		@include im.media('>=#{em(350, 16)}') {
 			flex-flow: row nowrap;
 
 			.eventpopover-recurrency {
@@ -141,7 +146,7 @@
 				margin-inline-start: auto;
 			}
 		}
-		@include media('<#{em(350, 16)}') {
+		@include im.media('<#{em(350, 16)}') {
 			button {
 				flex-direction: row-reverse;
 				justify-content: flex-end;

@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 $breakpoint-layout: 880 !default;
 
@@ -13,7 +18,7 @@ $breakpoint-layout: 880 !default;
 		&.offer-modal {
 			--size: #{rem(970)};
 
-			@include media('<=#{em($breakpoint-layout, 16)}') {
+			@include im.media('<=#{em($breakpoint-layout, 16)}') {
 				--size: #{rem(450)};
 			}
 		}
@@ -46,7 +51,7 @@ $breakpoint-layout: 880 !default;
 			}
 		}
 
-		@include media('<=#{em($breakpoint-layout, 16)}') {
+		@include im.media('<=#{em($breakpoint-layout, 16)}') {
 			.offer-right-img-container {
 				display: none;
 			}

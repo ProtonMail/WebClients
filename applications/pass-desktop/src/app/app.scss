@@ -1,7 +1,7 @@
-$header-height: 52;
+@use '~@proton/pass/styles/common' as *;
+@use '~@proton/styles/scss/lib/config' as conf;
 
-@import '~@proton/pass/styles/common';
-@import '~@proton/styles/scss/lib/config';
+conf.$header-height: 52;
 
 .app-root {
 	transform: translateZ(0); // to be rendered by GPU

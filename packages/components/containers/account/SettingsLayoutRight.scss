@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .settings-layout-right {
 	min-inline-size: em(240);
@@ -6,14 +10,14 @@
 	&--toggle-container {
 		padding-block-start: 0.4rem; // to get it horizontally centered with text
 
-		@include media('<=#{em(820, 16)}') {
+		@include im.media('<=#{em(820, 16)}') {
 			padding-block-start: 0;
 		}
 	}
 
 	&-fixed-size {
 		max-inline-size: em(240);
-		@include media('<=small') {
+		@include im.media('<=small') {
 			max-inline-size: 100%;
 		}
 	}

@@ -1,15 +1,18 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .testimonial-grid {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	grid-gap: 1rem;
 
-	@include media('>small') {
+	@include im.media('>small') {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	@include media('>large') {
+	@include im.media('>large') {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }

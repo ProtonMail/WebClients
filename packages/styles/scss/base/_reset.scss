@@ -1,3 +1,4 @@
+@use '../lib/config' as config;
 @use 'sass:map';
 
 article,
@@ -59,11 +60,11 @@ td,
 th {
 	font-size: 1em;
 	line-height: inherit;
-	margin-block: $base-line-height * 1em;
+	margin-block: config.$base-line-height * 1em;
 	margin-inline: 0;
 }
 
-@if $use-reset-button==true {
+@if config.$use-reset-button==true {
 	/* reset buttons, remember to style them in forms */
 	input,
 	select,
@@ -135,7 +136,7 @@ select {
 	vertical-align: middle;
 }
 
-@if $use-reset-button==false {
+@if config.$use-reset-button==false {
 	/** fix typo inputs **/
 	input,
 	select,
@@ -147,7 +148,7 @@ select {
 }
 
 /* fix display img/iframe */
-@if $use-vertical-align-img-iframe==true {
+@if config.$use-vertical-align-img-iframe==true {
 	img,
 	iframe {
 		vertical-align: middle;
@@ -179,7 +180,7 @@ pre,
 code,
 kbd,
 samp {
-	font-family: $font-family-monospace;
+	font-family: config.$font-family-monospace;
 	font-size: 1em;
 }
 

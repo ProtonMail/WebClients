@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .conversation-title {
 	max-inline-size: 24rem;
@@ -16,7 +20,7 @@
 		}
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		.conversation-header-title-view {
 			display: none;
 		}

@@ -1,14 +1,17 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lite-layout {
 	&--light-bg {
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
 		}
 	}
 
 	&--dark-bg {
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background: #191927;
 		}
 	}

@@ -1,3 +1,7 @@
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
+@use '../base/interactive' as *;
+
 .apps-dropdown {
 	&-button {
 		@extend .interactive;

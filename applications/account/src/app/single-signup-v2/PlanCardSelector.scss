@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .card-plan {
 	--card-box-shadow-color1: rgb(205 79 232 / 0.28);
@@ -34,7 +39,7 @@
 	&-price {
 		font-size: rem(28);
 
-		@include media('>=medium') {
+		@include im.media('>=medium') {
 			font-size: rem(32);
 		}
 	}
@@ -112,36 +117,36 @@
 	grid-template-columns: 1fr;
 	gap: var(--space-2);
 
-	@include media('>=medium') {
+	@include im.media('>=medium') {
 		gap: var(--space-4);
 	}
 
 	&[data-plan-count='2'] {
-		@include media('<=medium') {
+		@include im.media('<=medium') {
 			.pricing-box-content-cycle--highlighted {
 				order: -1;
 			}
 		}
 
-		@include media('>=small') {
+		@include im.media('>=small') {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 
 	&[data-plan-count='3'] {
-		@include media('<=medium') {
+		@include im.media('<=medium') {
 			.pricing-box-content-cycle--highlighted {
 				order: -1;
 			}
 		}
 
-		@include media('>=medium') {
+		@include im.media('>=medium') {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 
 	&[data-plan-count='4'] {
-		@include media('<large') {
+		@include im.media('<large') {
 			.pricing-box-content-cycle {
 				@for $i from 1 through 4 {
 					&:nth-child(#{$i}) {
@@ -155,13 +160,13 @@
 			}
 		}
 
-		@include media('>=small') {
+		@include im.media('>=small') {
 			max-inline-size: fit-content;
 			grid-template-columns: repeat(2, 1fr);
 			gap: var(--space-6);
 		}
 
-		@include media('>=large') {
+		@include im.media('>=large') {
 			max-inline-size: none;
 			grid-template-columns: repeat(4, 1fr);
 			gap: var(--space-4);

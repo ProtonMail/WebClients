@@ -1,13 +1,18 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .publish-banner {
 	justify-content: space-between;
-	min-block-size: 52px;
+	min-block-size: rem(52);
 
 	&.unpublished {
 		background-color: color-mix(in srgb, var(--signal-warning) 15%, transparent);
 
-		@media (max-width: 1024px) {
+		@include im.media('<=#{em(1024, 16)}') {
 			.unpublished-cta {
 				flex-shrink: 1;
 				justify-content: end;
@@ -40,10 +45,7 @@
 	block-size: rem(28);
 }
 
-.enabled-chip {
-	background-color: var(--interaction-weak);
-}
-
+.enabled-chip,
 .disabled-chip {
 	background-color: var(--background-weak);
 }

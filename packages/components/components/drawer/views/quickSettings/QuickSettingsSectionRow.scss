@@ -1,5 +1,6 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/base/interactive';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/base/interactive' as *;
 
 .quickSettingsSectionRow {
 	min-block-size: rem(32);

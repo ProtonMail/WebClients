@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .onboarding-icon {
 	background-image: linear-gradient(to bottom right, rgb(236 170 255 / 0.09), rgb(106 72 246 / 0.09));

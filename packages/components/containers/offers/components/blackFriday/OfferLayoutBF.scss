@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 @font-face {
 	font-family: 'SFSUPER05-BOLD';
@@ -119,7 +124,7 @@
 			font-size: em(54);
 			font-weight: bold;
 			line-height: 1.4;
-			@include media('<=#{em(480, 16)}') {
+			@include im.media('<=#{em(480, 16)}') {
 				font-size: em(40);
 				margin-block-start: 0.25em;
 			}
@@ -141,10 +146,10 @@
 	// override for 2 plan or more display
 	&:not(.offer-modal--one-deal) {
 		.offer-plan-namePeriod {
-			@include media('<=#{em(850, 16)}') {
+			@include im.media('<=#{em(850, 16)}') {
 				min-block-size: 5em; // proton unlimited on 2 lines // TOCHECK WITH ALL
 			}
-			@include media('<=small') {
+			@include im.media('<=small') {
 				min-block-size: 0;
 			}
 		}
@@ -162,10 +167,10 @@
 		}
 
 		.offer-plan-namePeriod {
-			@include media('<=#{em(950, 16)}') {
+			@include im.media('<=#{em(950, 16)}') {
 				min-block-size: 6.2em; // proton unlimited on 2 lines
 			}
-			@include media('<=small') {
+			@include im.media('<=small') {
 				min-block-size: 0;
 			}
 		}
@@ -202,7 +207,7 @@
 	.offer-plan-container {
 		max-inline-size: 100%;
 
-		@include media('>=medium') {
+		@include im.media('>=medium') {
 			max-inline-size: rem(384);
 		}
 	}
@@ -223,7 +228,7 @@
 			.currency,
 			.amount--large {
 				font-size: em(48); // will probably remove it because of 3 plans
-				@include media('<=#{em(480, 16)}') {
+				@include im.media('<=#{em(480, 16)}') {
 					font-size: em(40);
 				}
 			}
@@ -343,7 +348,7 @@
 
 // small fix to save a bit of space for some promotions
 .modal-two:has([class*='offer-black-friday-2025']) {
-	@include media('>=#{em(680, 16)}') {
+	@include im.media('>=#{em(680, 16)}') {
 		padding-inline: 2em;
 	}
 }

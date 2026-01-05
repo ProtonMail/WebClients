@@ -1,23 +1,26 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-chat-container {
 	// Smooth transitions when panels open/close
 	.lumo-chat-item {
-		@include media('>small') {
+		@include im.media('>small') {
 			transition: inline-size 0.3s ease-in-out;
 		}
 	}
-	
+
 	&.lumo-chat-container-with-sources {
-		@include media('>small') {
+		@include im.media('>small') {
 			.lumo-chat-item {
 				inline-size: 80%;
 			}
 		}
 	}
-	
+
 	&.lumo-chat-container-with-knowledge-base {
-		@include media('>small') {
+		@include im.media('>small') {
 			.lumo-chat-item {
 				inline-size: 80%;
 			}

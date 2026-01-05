@@ -1,19 +1,26 @@
-@import 'meet/meet-breakpoints';
+@use 'meet/meet-breakpoints' as *;
 
-// Configuration
-@import 'lib/';
+@use 'lib/im-to-em' as *;
+
+// Library
+@use 'lib/' as *;
+
+// Vendors
+@use 'lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 // Initialisation
-@import 'base/';
+@use 'base/' as *;
 
 // Layout
-@import 'layout/';
+@use 'layout/' as *;
 
 // Components
-@import 'components/';
+@use 'components/' as *;
 
 // Helpers
-@import 'utilities/';
+@use 'utilities/' as *;
 
 :root {
 	--font-weight-medium: 500;

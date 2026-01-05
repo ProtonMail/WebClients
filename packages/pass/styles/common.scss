@@ -1,18 +1,19 @@
-@import '~@proton/styles/scss/proton-pass';
+// Check this one that fails
+@use '~@proton/styles/scss/proton-pass' as *;
 
-@import 'animation';
-@import 'button';
-@import 'dropdown';
-@import 'fields';
-@import 'lobby';
-@import 'password';
-@import 'scroll';
-@import 'sidebar';
-@import 'skeletons';
-@import 'table';
-@import 'text';
-@import 'themes';
-@import 'utils';
+@use 'animation' as *;
+@use 'button' as *;
+@use 'dropdown' as *;
+@use 'fields' as *;
+@use 'lobby' as *;
+@use 'password' as *;
+@use 'scroll' as *;
+@use 'sidebar' as *;
+@use 'skeletons' as *;
+@use 'table' as *;
+@use 'text' as *;
+@use 'themes' as *;
+@use 'utils' as *;
 
 :root {
 	--pass-sidebar-size: 22.5em;

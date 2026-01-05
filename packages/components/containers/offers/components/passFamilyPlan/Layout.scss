@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 [class*='offer-pass-family-plan-2024-yearly'] {
 	&#{&} {
@@ -14,7 +18,7 @@
 
 		&.offer-modal {
 			--size: #{rem(970)};
-			@include media('<medium') {
+			@include im.media('<medium') {
 				--size: #{rem(450)};
 			}
 		}
@@ -60,7 +64,7 @@
 			}
 		}
 
-		@include media('<medium') {
+		@include im.media('<medium') {
 			.offer-right-img-container {
 				display: none;
 			}

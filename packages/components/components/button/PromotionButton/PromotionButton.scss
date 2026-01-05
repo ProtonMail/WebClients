@@ -1,5 +1,6 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .button-promotion {
 	--upgrade-color-stop-1: var(--optional-upgrade-color-1, #fd4baf);

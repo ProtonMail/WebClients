@@ -1,11 +1,16 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use './config' as calendarconfig;
 
 .calendar-fullday-row {
-	border-block-end: $calendar-grid-border;
-	padding-block-end: $calendar-gridcell-gutter;
+	border-block-end: calendarconfig.$calendar-grid-border;
+	padding-block-end: calendarconfig.$calendar-gridcell-gutter;
 
 	.calendar-aside {
-		margin-block-end: -$calendar-gridcell-gutter;
+		margin-block-end: -#{calendarconfig.$calendar-gridcell-gutter};
 	}
 }
 
@@ -18,12 +23,12 @@
 }
 
 .calendar-first-row-heading {
-	@include media('<=medium') {
+	@include im.media('<=medium') {
 		font-size: rem(12);
 	}
 }
 
-@include media('<=small') {
+@include im.media('<=small') {
 	// we show abbreviated version only on week/month view
 	.is-week-view,
 	.is-month-view {

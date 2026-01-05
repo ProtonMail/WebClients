@@ -1,5 +1,11 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 :root {
 	--drawer-width: #{rem(0)}; // unit needed for calc()
@@ -44,7 +50,7 @@
 	}
 
 	// Between 681 and 1280 px, the widget has to be displayed on top of the rest of the UI
-	@include media('<=#{em($breakpoint-for-drawer, 16)}') {
+	@include im.media('<=#{em($breakpoint-for-drawer, 16)}') {
 		position: absolute;
 		inset-inline-end: 0;
 		block-size: 100%;
@@ -52,14 +58,14 @@
 		box-shadow: var(--shadow-lifted);
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inline-size: 100vw;
 	}
 
 	// We want to be able to use contacts even under 680px in a larger view
 	// So we hide the drawer-app container only if the app in view is not contact
 	&--hide-on-mobile {
-		@include media('<=small') {
+		@include im.media('<=small') {
 			display: none;
 		}
 	}

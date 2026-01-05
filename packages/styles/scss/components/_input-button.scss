@@ -1,3 +1,5 @@
+@use '../lib/em' as *;
+
 .input-button.button {
 	--button-default-border-color: var(--field-norm);
 	--button-default-background-color: var(--background-norm);

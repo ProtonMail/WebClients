@@ -61,7 +61,7 @@ $stroke-map: (
 		}
 
 		@each $axis in (x, y) {
-			@keyframes #{'anime-loader-orbit-' + $axis + if($name == 'default', '', '-' + $name)} {
+			@keyframes #{'anime-loader-orbit-' + $axis + if(sass($name == "default"): ""; else: "-" + $name)} {
 				0% {
 					transform: #{'rotate' + $axis + '(0)'};
 					stroke-width: $value;

@@ -1,11 +1,14 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .participant-controls-buttons {
 	inline-size: auto;
 	justify-content: center;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		justify-content: initial;
 	}
 }

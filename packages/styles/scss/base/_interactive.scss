@@ -1,3 +1,6 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
 %interactive {
 	outline: none; // be careful of a11y
 	color: inherit;
@@ -149,7 +152,7 @@
  * Interactive gives only default colors on every states
  * Focus states as pseudo element with inset to deal with overflow-hidden
  */
-.interactive-pseudo-inset {
+%interactive-pseudo-inset {
 	@extend %interactive;
 	@extend .interactive-pseudo;
 
@@ -158,6 +161,10 @@
 	&::after {
 		inset: var(--interactive-inset);
 	}
+}
+
+.interactive-pseudo-inset {
+	@extend %interactive-pseudo-inset;
 }
 
 .interactive-pseudo-protrude {

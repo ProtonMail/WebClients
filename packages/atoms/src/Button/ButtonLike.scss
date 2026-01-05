@@ -1,5 +1,11 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/dash-join' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 /*
  * Button shape
@@ -185,11 +191,18 @@
  */
 @each $color in (norm, weak, danger, warning, success, info) {
 	// Initialize namespace
-	$group: if($color == 'norm' or $color == 'weak', 'interaction', 'signal');
+	$group: 'signal';
+	@if $color == 'norm' or $color == 'weak' {
+		$group: 'interaction';
+	}
 
 	// Solid shape
 	.button-solid-#{$color} {
-		$solid-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'contrast'))});
+		$solid-text-color: var(
+			--#{if(
+					sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'contrast'),
+				)}
+		);
 
 		--button-default-background-color: var(--#{dash-join($group, $color)});
 		--button-hover-background-color: var(--#{dash-join($group, $color, 'major-1')});
@@ -212,13 +225,13 @@
 		--button-hover-border-color: var(--#{dash-join($group, $color, 'major-2')});
 		--button-active-border-color: var(--#{dash-join($group, $color, 'major-3')});
 		--button-default-text-color: var(
-			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-1'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
 		);
 		--button-hover-text-color: var(
-			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-2'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
 		);
 		--button-active-text-color: var(
-			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-3'))}
+			--#{if(sass($color == 'weak' or $color == 'norm'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
 		);
 	}
 
@@ -227,16 +240,28 @@
 		--button-default-background-color: var(--interaction-default);
 		--button-hover-background-color: var(--interaction-default-hover);
 		--button-active-background-color: var(--interaction-default-active);
-		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
-		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
-		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
+		--button-default-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
+		);
+		--button-hover-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
+		);
+		--button-active-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
+		);
 	}
 
 	// Underline shape
 	.button-underline-#{$color} {
-		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
-		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
-		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
+		--button-default-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-1'))}
+		);
+		--button-hover-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-2'))}
+		);
+		--button-active-text-color: var(
+			--#{if(sass($color == 'weak'): 'text-norm' ; else: dash-join($group, $color, 'major-3'))}
+		);
 	}
 }
 
@@ -331,25 +356,25 @@
 		}
 
 		&.w-full.sm\:w-auto {
-			@include media('<=xsmall') {
+			@include im.media('<=xsmall') {
 				padding-inline-end: var(--padding-inline);
 			}
 		}
 
 		&.w-full.md\:w-auto {
-			@include media('<=small') {
+			@include im.media('<=small') {
 				padding-inline-end: var(--padding-inline);
 			}
 		}
 
 		&.w-full.lg\:w-auto {
-			@include media('<=medium') {
+			@include im.media('<=medium') {
 				padding-inline-end: var(--padding-inline);
 			}
 		}
 
 		&.w-full.xl\:w-auto {
-			@include media('<=large') {
+			@include im.media('<=large') {
 				padding-inline-end: var(--padding-inline);
 			}
 		}

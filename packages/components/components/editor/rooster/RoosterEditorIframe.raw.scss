@@ -1,8 +1,13 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/base/custom-properties/init';
-@import '~@proton/styles/scss/base/custom-properties/optionals';
-@import '~@proton/components/components/dropzone/Dropzone';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/base/custom-properties/init' as *;
+@use '~@proton/styles/scss/base/custom-properties/optionals' as *;
+@use '~@proton/components/components/dropzone/Dropzone' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .proton {
 	&-h-full {
@@ -146,7 +151,7 @@ html {
 		transition-duration: 0.01ms !important;
 	}
 }
-@include media('reduced-motion') {
+@include im.media('reduced-motion') {
 	@include reduce-motion;
 }
 

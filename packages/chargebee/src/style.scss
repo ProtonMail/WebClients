@@ -1,8 +1,9 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/base/custom-properties';
-@import '~@proton/styles/scss/base/typo';
-@import '~@proton/styles/scss/utilities/spacing';
+@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/styles/scss/base/custom-properties' as *;
+@use '~@proton/styles/scss/base/typo' as *;
+
+// @use '~@proton/styles/scss/utilities/spacing' as *; SEEMS NOT NEEDED
 
 body {
 	font-family:

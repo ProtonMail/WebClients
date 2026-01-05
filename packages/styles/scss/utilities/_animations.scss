@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/easing' as *;
+
 @keyframes fadeInUp {
 	from {
 		opacity: 0;

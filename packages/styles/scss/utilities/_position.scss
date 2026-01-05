@@ -1,4 +1,6 @@
 @use 'sass:map';
+@use '../lib/config' as *;
+@use '../lib/responsive-classes' as *;
 
 @include responsive-classes(
 	(

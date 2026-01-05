@@ -1,6 +1,7 @@
-@import '~@proton/styles/scss/lib/config';
-@import '~@proton/styles/scss/lib/easing';
-@import '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
 
 .pass {
 	&-skeleton {

@@ -1,4 +1,4 @@
-@import '~@proton/pass/styles/common';
+@use '~@proton/pass/styles/common' as *;
 
 body {
 	overflow: auto !important;

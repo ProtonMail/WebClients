@@ -1,4 +1,6 @@
-@use "sass:map";
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
 .resize-area {
 	&-container {

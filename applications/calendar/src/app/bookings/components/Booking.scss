@@ -1,5 +1,10 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/specifics/arizona';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use '~@proton/styles/scss/specifics/arizona' as *;
 
 $booking-breakpoint: em(750, 16);
 
@@ -25,7 +30,7 @@ body:has(.booking-main-container) {
 
 	&-wrapper {
 		&#{&} {
-			@include media('>=#{$booking-breakpoint}') {
+			@include im.media('>=#{$booking-breakpoint}') {
 				flex-direction: row;
 			}
 		}
@@ -37,7 +42,7 @@ body:has(.booking-main-container) {
 		inset-block-start: var(--space-12);
 		border-radius: var(--border-radius-3xl);
 
-		@include media('<=#{$booking-breakpoint}') {
+		@include im.media('<=#{$booking-breakpoint}') {
 			inline-size: 100%;
 			position: static;
 		}
@@ -77,12 +82,12 @@ body:has(.booking-main-container) {
 
 	&-button-minicalendar {
 		&#{&} {
-			@include media('>medium') {
+			@include im.media('>medium') {
 				min-inline-size: rem(260);
 			}
 		}
 
-		@include media('<=#{em(400, 16)}') {
+		@include im.media('<=#{em(400, 16)}') {
 			&-icon {
 				display: none;
 			}
@@ -227,7 +232,7 @@ body:has(.booking-main-container) {
 		&-grid {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			@include media('<=#{$booking-breakpoint}') {
+			@include im.media('<=#{$booking-breakpoint}') {
 				grid-template-columns: repeat(1, minmax(0, 1fr));
 			}
 

@@ -1,3 +1,6 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
 .multi-select {
 	&-container {
 		border-radius: var(--border-radius-md);

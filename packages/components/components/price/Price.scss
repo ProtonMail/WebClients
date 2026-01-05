@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .price--large {
 	.amount,
@@ -17,19 +21,19 @@
 	.price--large {
 		.amount,
 		.currency {
-			@include media('<=#{em(1050, 16)}') {
+			@include im.media('<=#{em(1050, 16)}') {
 				font-size: em(36); // not enough space
 			}
-			@include media('<=medium') {
+			@include im.media('<=medium') {
 				font-size: em(48);
 			}
-			@include media('<=#{em(800, 16)}') {
+			@include im.media('<=#{em(800, 16)}') {
 				font-size: em(36); // not enough space
 			}
-			@include media('<=small') {
+			@include im.media('<=small') {
 				font-size: em(48);
 			}
-			@include media('<=xsmall') {
+			@include im.media('<=xsmall') {
 				font-size: em(36); // not enough space
 			}
 		}

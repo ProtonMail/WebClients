@@ -18,8 +18,8 @@ const Radio = ({ id, children, className = 'inline-flex', name, disabled = false
             className,
         ])}
     >
-        <input id={id} type="radio" className="radio" name={name} disabled={disabled} {...rest} />
-        <span className={clsx('radio-fakeradio shrink-0', children ? 'mr-2' : '')} />
+        <input id={id} type="radio" className="radio sr-only" name={name} disabled={disabled} {...rest} />
+        <span className={clsx('radio-fakeradio checkbox-fakecheck shrink-0', children ? 'mr-2' : '')} />
         {children}
     </label>
 );

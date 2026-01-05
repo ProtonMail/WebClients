@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 .DocumentEditor {
 	--lexical-ordered-list-margin: 1rem;
 }
@@ -20,7 +22,7 @@ $list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman)
 
 	@for $i from 1 through 5 {
 		&--depth-#{$i} {
-			--list-style-type: #{nth($list-style-types, $i)};
+			--list-style-type: #{list.nth($list-style-types, $i)};
 		}
 	}
 
@@ -50,7 +52,9 @@ $list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman)
 	}
 
 	@for $i from 1 through 5 {
-		$list-style: if($i % 2==0, 'circle', 'disc');
+		$list-style: if(
+			sass($i % 2==0): 'circle' ; else: 'disc',
+		);
 
 		&--depth-#{$i} {
 			list-style-type: #{$list-style};

@@ -1,8 +1,7 @@
 /* stylelint-disable */
 
-@import
-	'context-bar',
-	'navigation',
-	'structure',
-	'sub-settings-section',
-	'toolbar';
+@forward 'context-bar';
+@forward 'navigation';
+@forward 'structure';
+@forward 'sub-settings-section';
+@forward 'toolbar';

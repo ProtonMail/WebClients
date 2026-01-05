@@ -1,9 +1,14 @@
 /*
  * Specific reset for Android
  */
-/* stylelint-disable-next-line value-keyword-case */
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
-	sans-serif;
+@use 'sass:math';
+@use '../lib/config' as config;
+@use '../lib/em' as em;
+
+/* stylelint-disable */
+$font-family:
+	-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+/* stylelint-enable */
 
 article,
 aside,
@@ -161,9 +166,11 @@ dfn {
 /*
  * Deal with typo
  */
-$use-other-typo-helpers: false;
-$use-other-line-height-helpers: false;
-$base-font-size: 16;
+config.$use-other-typo-helpers: false;
+config.$use-other-line-height-helpers: false;
+config.$base-font-size: 16;
+config.$base-line-height: 1.25;
+
 $title-sizes: (
 	h1: 32,
 	h2: 24,
@@ -173,10 +180,26 @@ $title-sizes: (
 	h6: 12,
 );
 
-/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-@import '../lib/config';
-/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-@import '../base/typo';
+html {
+	/* Introduce `--setting-font-size` to make the font size setting possible. */
+
+	/* chosen size * browser default size / app default size * 100% / browser default size */
+	font-size: calc(var(--setting-font-size) * #{math.div(16, 14) * math.div(100%, 16)});
+}
+
+body {
+	font-size: em.em(config.$base-font-size, config.$root-default-font-size);
+}
+
+@each $tag, $size in $title-sizes {
+	#{$tag},
+	.#{$tag} {
+		display: block;
+		margin: 0;
+		font-size: em.em($size);
+		font-weight: var(--font-weight-normal);
+	}
+}
 
 /*
  * Vars
@@ -189,12 +212,13 @@ $title-sizes: (
 /*
  * Base styles
  */
+/* stylelint-disable no-duplicate-selectors */
 body {
 	font-size: 100%;
 	inline-size: 100%;
 	font-family: $font-family;
 	padding: 1rem;
-	line-height: $base-line-height;
+	line-height: config.$base-line-height;
 	background-color: var(--background-norm);
 	color: var(--text-norm);
 }

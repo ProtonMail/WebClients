@@ -1,6 +1,6 @@
-@import '~@proton/pass/styles/common';
-@import '~@proton/pass/styles/extension';
-@import '~@proton/styles/scss/lib/config';
+@use '~@proton/pass/styles/common' as *;
+@use '~@proton/pass/styles/extension' as *;
+@use '~@proton/styles/scss/base/fonts' as *;
 
 body {
 	// Extensions seem to have injected style sheets

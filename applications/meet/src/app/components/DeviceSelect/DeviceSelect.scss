@@ -1,6 +1,6 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .device-select {
 	&#{&} {

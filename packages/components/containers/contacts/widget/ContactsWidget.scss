@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .contacts-widget {
 	--min-width: #{em(500)};
@@ -18,7 +23,7 @@
 	.ReactVirtualized__Grid__innerScrollContainer {
 		border: 0;
 	}
-	@include media('<=small') {
+	@include im.media('<=small') {
 		&.dropdown {
 			padding-inline: 5%;
 		}
@@ -56,7 +61,7 @@
 	display: none;
 }
 
-@include media('mouse', '>small') {
+@include im.media('mouse', '>small') {
 	.contact-item-hover-action-buttons {
 		margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
 	}

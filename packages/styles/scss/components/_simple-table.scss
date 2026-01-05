@@ -1,7 +1,9 @@
-.simple-table {
-	@extend .border-collapse;
-	@extend .border-none;
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
 
+.simple-table {
+	border-collapse: collapse;
+	border: 0;
 	inline-size: 100%;
 
 	--table-border-color: var(--border-norm);
@@ -190,8 +192,7 @@
 }
 
 .alternate-table-bg-row-rounded {
-	@extend .border-none;
-
+	border: 0;
 	inline-size: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
