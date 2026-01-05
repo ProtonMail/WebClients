@@ -1,8 +1,8 @@
 type Bytes = Uint8Array<ArrayBuffer>;
 
-const makeAbortTransformer = (signal: AbortSignal): Transformer<Bytes, Bytes> => ({
+const makeAbortTransformer = (signal: AbortSignal | undefined): Transformer<Bytes, Bytes> => ({
     transform(chunk: Bytes, controller: TransformStreamDefaultController) {
-        if (signal.aborted) {
+        if (signal?.aborted) {
             controller.error(new DOMException('Aborted', 'AbortError'));
             return;
         }
@@ -10,5 +10,5 @@ const makeAbortTransformer = (signal: AbortSignal): Transformer<Bytes, Bytes> =>
     },
 });
 
-export const makeAbortTransformStream = (signal: AbortSignal): TransformStream<Bytes, Bytes> =>
+export const makeAbortTransformStream = (signal: AbortSignal | undefined): TransformStream<Bytes, Bytes> =>
     new TransformStream(makeAbortTransformer(signal));
