@@ -68,6 +68,7 @@ type FolderActions = {
     setError: (error: EnrichedError | null) => void;
     setRole: (role: MemberRole) => void;
     setItem: (item: FolderViewItem) => void;
+    setItems: (items: FolderViewItem[]) => void;
     updateItem: (uid: string, item: Partial<FolderViewItem>) => void;
     removeItem: (uid: string) => void;
     reset: () => void;
@@ -124,6 +125,21 @@ export const useFolderStore = create<FolderStore>()(
 
                 return {
                     items: updatedItems,
+                };
+            }),
+        setItems: (items: FolderViewItem[]) =>
+            set((state) => {
+                const updatedItems = new Map(state.items);
+                const newUids = new Set(state.itemUids);
+
+                items.forEach((item) => {
+                    updatedItems.set(item.uid, item);
+                    newUids.add(item.uid);
+                });
+
+                return {
+                    items: updatedItems,
+                    itemUids: newUids,
                 };
             }),
         updateItem: (uid: string, item: Partial<FolderViewItem>) =>

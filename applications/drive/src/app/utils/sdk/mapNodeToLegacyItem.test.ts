@@ -481,4 +481,40 @@ describe('mapNodeToLegacyItem', () => {
 
         expect(result.activeRevision?.state).toBe(0);
     });
+
+    it('should use loadedRootNode when provided and not call drive.getNode', async () => {
+        const mockRootNode: NodeEntity = {
+            uid: 'loaded-root-uid',
+            parentUid: undefined,
+            deprecatedShareId: 'loaded-root-share-id',
+            name: 'Root',
+            keyAuthor: mockAuthor,
+            nameAuthor: mockAuthor,
+            directRole: MemberRole.Admin,
+            type: NodeType.Folder,
+            mediaType: undefined,
+            isShared: false,
+            isSharedPublicly: false,
+            creationTime: new Date(shareCreateTime),
+            modificationTime: new Date(shareCreateTime),
+            trashTime: undefined,
+            totalStorageSize: 0,
+            activeRevision: undefined,
+            folder: {
+                claimedModificationTime: new Date(shareCreateTime),
+            },
+            treeEventScopeId: '',
+        };
+
+        const maybeNode: MaybeNode = {
+            ok: true,
+            value: mockNodeEntity,
+        };
+
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare.shareId, mockDrive, mockRootNode);
+
+        expect(mockDrive.getNode).not.toHaveBeenCalled();
+        expect(result.rootUid).toBe('loaded-root-uid');
+        expect(result.rootShareId).toBe('loaded-root-share-id');
+    });
 });
