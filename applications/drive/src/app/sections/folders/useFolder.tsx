@@ -13,7 +13,7 @@ import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDeviceStore } from '../devices/devices.store';
-import { useFolderStore } from './useFolder.store';
+import { type FolderViewItem, useFolderStore } from './useFolder.store';
 
 export function useFolder() {
     const { drive } = useDrive();
@@ -48,7 +48,7 @@ export function useFolder() {
 
     const load = useCallback(
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
-            const { setIsLoading, reset, setItem, setFolder, setRole, setPermissions } = useFolderStore.getState();
+            const { setIsLoading, reset, setItems, setFolder, setRole, setPermissions } = useFolderStore.getState();
             const { getByRootFolderUid } = useDeviceStore.getState();
             reset();
             setIsLoading(true);
@@ -84,21 +84,46 @@ export function useFolder() {
                     canTrash,
                 });
                 let showErrorNotification = false;
-                for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, undefined, ac.signal)) {
-                    try {
-                        if (ac.signal.aborted) {
-                            // Stop processing as soon as the request gets superseded so stale items from the previous folder
-                            // do not bleed into the current view even though the SDK iteration is still yielding results.
-                            return;
-                        }
-                        const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
-                        setItem(legacyItem);
-                    } catch (e) {
-                        handleError(e, {
-                            showNotification: false,
-                        });
-                        showErrorNotification = true;
+
+                /**
+                 * In case SDK already cached (some are all) folder's children,
+                 * it will loop fast and update the store fast as well.
+                 * This will cause React to re-render a lot in a short amount of time causing freeze of the app
+                 * We solve that by adding a batching + flush system
+                 * Every 30ms we update the store no matter the number of loaded items
+                 * This doesn't not prevent the iteration to continue
+                 * We need to find a better way to handle those cases in the future with new DriveExplorer
+                 */
+                const itemsBatch: FolderViewItem[] = [];
+
+                const flushBatch = () => {
+                    if (itemsBatch.length > 0) {
+                        setItems([...itemsBatch]);
+                        itemsBatch.length = 0;
                     }
+                };
+
+                const intervalId = setInterval(flushBatch, 30);
+
+                try {
+                    for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, undefined, ac.signal)) {
+                        try {
+                            if (ac.signal.aborted) {
+                                clearInterval(intervalId);
+                                return;
+                            }
+                            const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive, node);
+                            itemsBatch.push(legacyItem);
+                        } catch (e) {
+                            handleError(e, {
+                                showNotification: false,
+                            });
+                            showErrorNotification = true;
+                        }
+                    }
+                } finally {
+                    clearInterval(intervalId);
+                    flushBatch();
                 }
                 if (showErrorNotification) {
                     createNotification({
