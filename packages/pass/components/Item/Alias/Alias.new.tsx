@@ -227,7 +227,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     loading={loading}
                                     error={Boolean(
                                         Object.keys(form.touched).length > 0 &&
-                                            (errors.aliasPrefix || errors.aliasSuffix)
+                                        (errors.aliasPrefix || errors.aliasSuffix)
                                     )}
                                     actions={
                                         <Button
