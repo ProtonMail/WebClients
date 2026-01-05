@@ -1,12 +1,15 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .card-button {
 	background-color: var(--background-card) !important;
 	border-radius: var(--border-radius-full);
 	border-color: var(--border-card);
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		border-radius: 2rem;
 	}
 

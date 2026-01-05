@@ -1,5 +1,8 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .connection-lost-modal {
 	backdrop-filter: blur(10px);
@@ -27,7 +30,7 @@
 		inline-size: 90%;
 		box-shadow: none !important;
 
-		@include media('>medium') {
+		@include im.media('>medium') {
 			inline-size: 25.6rem !important;
 			block-size: 22.6rem !important;
 		}

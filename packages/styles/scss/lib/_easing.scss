@@ -1,3 +1,5 @@
+@use 'sass:string';
+
 /**
  * Easing functions for transitions and animations
  * Learn more at http://easings.net/
@@ -69,5 +71,5 @@
 		@error "'#{$type}' is not a correct value for easing().";
 	}
 
-	@return cubic-bezier(unquote($value));
+	@return cubic-bezier(string.unquote($value));
 }

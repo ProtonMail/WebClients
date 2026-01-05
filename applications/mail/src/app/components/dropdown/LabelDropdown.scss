@@ -1,8 +1,11 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .label-dropdown {
 	&-list {
-		@include media('>small') {
+		@include im.media('>small') {
 			max-block-size: 13.5em;
 		}
 	}

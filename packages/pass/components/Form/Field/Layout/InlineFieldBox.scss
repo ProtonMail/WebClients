@@ -1,9 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 
 .pass-inline-field-box {
 	display: grid;
 	align-items: center;
-
 
 	@each $size, $value in (sm: 140, md: 200, lg: 250) {
 		&.#{$size} {

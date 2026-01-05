@@ -1,5 +1,5 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
 
 .dropzone {
 	&--bordered {

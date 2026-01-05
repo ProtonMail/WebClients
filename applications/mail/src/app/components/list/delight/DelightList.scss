@@ -1,6 +1,6 @@
 @use 'sass:math';
-
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/config' as *;
 
 .items-column-list {
 	contain: content;
@@ -30,7 +30,7 @@
 	z-index: 2;
 	inset-inline: 0;
 	inset-block-start: 0;
-	block-size: max(1px, rem(1));
+	block-size: max(1px, #{rem(1)});
 	background: linear-gradient(90deg, var(--signal-info), var(--signal-info-minor-1), var(--signal-info));
 	background-size: 200% 100%;
 	animation: gradientAnimation 3s infinite alternate linear;

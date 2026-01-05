@@ -1,4 +1,6 @@
 @use 'sass:map';
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
 
 .file-preview {
 	position: fixed;

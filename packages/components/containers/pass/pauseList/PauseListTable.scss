@@ -1,6 +1,6 @@
 // Taken from applications/pass-extension/src/lib/components/Settings/PauseList.scss
-
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 
 .pass-pause-list--table {
 	th small {

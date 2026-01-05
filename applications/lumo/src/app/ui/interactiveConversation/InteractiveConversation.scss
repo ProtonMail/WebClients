@@ -1,5 +1,6 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .main-text {
 	font-family: Syne, Inter, system-ui, sans-serif;

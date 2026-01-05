@@ -1,4 +1,5 @@
-@import '~@proton/pass/styles/common';
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/pass/styles/common';
 
 body {
 	overflow: auto !important;

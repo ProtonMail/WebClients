@@ -1,5 +1,11 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .composer {
 	position: absolute;
@@ -22,7 +28,7 @@
 	border-end-start-radius: 0;
 	border-end-end-radius: 0;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		border-radius: 0;
 	}
 
@@ -67,7 +73,7 @@
 			padding-inline-end: rem(1);
 			cursor: text;
 
-			@include media('<=small') {
+			@include im.media('<=small') {
 				&.composer-addresses-fakefield {
 					padding-block: 0;
 					min-block-size: em(33);
@@ -115,7 +121,7 @@
 				inline-size: 18%;
 			}
 
-			@include media('<=small') {
+			@include im.media('<=small') {
 				&#{&} {
 					// temporary workaround
 					inline-size: 100%;
@@ -343,7 +349,7 @@
 			}
 		}
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			.input-element {
 				padding-inline-start: 0;
 			}
@@ -360,7 +366,7 @@
 	&-to-editor.composer-editor-collapsed .field:empty,
 	& &-addresses-container.field, // specificity :-] (only for composer)
 	& &-addresses-container.field &-addresses-input-container {
-		@include media('<=small') {
+		@include im.media('<=small') {
 			padding-inline-start: 0;
 			margin-inline-start: 0;
 		}
@@ -445,7 +451,7 @@
 		.inner-modal {
 			inline-size: rem(360);
 			max-block-size: 90%;
-			@include media('<=small') {
+			@include im.media('<=small') {
 				block-size: auto;
 			}
 
@@ -477,7 +483,7 @@
 			&#{&} {
 				// had to override button groups specificity
 				&#{&} {
-					@include media('>large') {
+					@include im.media('>large') {
 						padding-inline: rem(3);
 					}
 				}
@@ -488,7 +494,7 @@
 	// Keep minimal size when activity label is empty
 	&-send-button {
 		min-inline-size: rem(40);
-		@include media('<=small') {
+		@include im.media('<=small') {
 			min-inline-size: 0;
 		}
 	}

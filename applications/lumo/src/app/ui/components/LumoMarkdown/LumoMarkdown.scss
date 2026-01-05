@@ -1,5 +1,3 @@
-@import '~@proton/styles/scss/lib';
-
 // Content visibility optimization - Safari-safe
 // Safari has known issues with content-visibility, so we use feature detection
 // Also exclude elements with overflow to avoid rendering issues

@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/pass/pass-lib';
+@use '~@proton/styles/scss/pass/pass-lib' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .pass-onboarding-upgrade {
 	.description {
@@ -11,7 +14,7 @@
 			border: 2px solid var(--signal-warning);
 
 			&-content {
-				@include media('<small') {
+				@include im.media('<small') {
 					display: contents;
 				}
 			}
@@ -52,7 +55,7 @@
 				}
 
 				&-title {
-					@include media('<medium') {
+					@include im.media('<medium') {
 						white-space: nowrap;
 						overflow: hidden;
 						text-overflow: ellipsis;

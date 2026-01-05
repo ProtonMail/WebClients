@@ -1,8 +1,12 @@
-@use "sass:map";
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
-.notifications-container {
+%notifications-container {
 	position: fixed;
-	inset-block-end: calc(em(24) + env(safe-area-inset-bottom));
+	inset-block-end: calc(#{em(24)} + env(safe-area-inset-bottom));
 	inset-inline-start: 50%;
 	z-index: map.get($z-indexes, 'notifications');
 	transform: translateX(-50%);
@@ -14,9 +18,14 @@
 		}
 	}
 
+	/* stylelint-disable-next-line scss/percent-placeholder-pattern */
 	&--shifted {
 		inset-block-end: calc(var(--shift-custom-y) + env(safe-area-inset-bottom));
 	}
+}
+
+.notifications-container {
+	@extend %notifications-container;
 }
 
 .notification {

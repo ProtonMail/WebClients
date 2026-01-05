@@ -1,4 +1,6 @@
 @use 'sass:math';
+@use '../lib/em' as *;
+@use '../lib/dash-join' as *;
 
 .button-group {
 	display: inline-flex;
@@ -222,8 +224,8 @@
 	.button-group-outline-#{$color},
 	.button-group-ghost-#{$color} {
 		.button-group-item.is-selected:not([disabled], .is-disabled) {
-			background-color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color))});
-			color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color), 'contrast')});
+			background-color: var(--#{dash-join($group, if(sass($color == 'weak'): 'norm' ; else: $color))});
+			color: var(--#{dash-join($group, if(sass($color == 'weak'): 'norm' ; else: $color), 'contrast')});
 		}
 	}
 }

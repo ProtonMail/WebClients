@@ -1,3 +1,6 @@
+@use '../lib/em' as *;
+@use '../lib/include-media' as *;
+
 .editable-section-container {
 	display: inline-grid;
 	grid-template-columns: min-content minmax(5em, 1fr);

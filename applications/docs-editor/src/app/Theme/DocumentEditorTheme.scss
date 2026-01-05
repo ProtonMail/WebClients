@@ -1,7 +1,7 @@
-@import 'lists';
-@import 'table';
-@import 'code';
-@import 'suggestions';
+@use 'lists' as *;
+@use 'table' as *;
+@use 'code' as *;
+@use 'suggestions' as *;
 
 .DocumentEditor {
 	min-block-size: 100%;

@@ -1,3 +1,6 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
 .action-card {
 	transition: 0.15s easing(ease-out-quint);
 

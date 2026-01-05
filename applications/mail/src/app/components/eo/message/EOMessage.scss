@@ -1,10 +1,13 @@
-@import '~@proton/styles/scss/lib/index';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .eo-message-header {
 	&#{&} {
 		border-radius: 0;
 
-		@include media('>small') {
+		@include im.media('>small') {
 			.message-banners-container {
 				> * {
 					margin-block-end: 0.85em;

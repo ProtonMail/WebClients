@@ -1,6 +1,12 @@
-@use "sass:map";
+@use 'sass:map';
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 $searchoverlay-breakpoint: em(1000, 16);
 
@@ -39,7 +45,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 		}
 	}
 
-	@include media('<=#{$searchoverlay-breakpoint}') {
+	@include im.media('<=#{$searchoverlay-breakpoint}') {
 		inset: 0;
 		display: flex;
 		padding-block: 15%;
@@ -51,11 +57,11 @@ $searchoverlay-breakpoint: em(1000, 16);
 		background-color: var(--backdrop-norm);
 	}
 
-	@include media('<=#{em(520, 16)}') {
+	@include im.media('<=#{em(520, 16)}') {
 		padding: 5%;
 	}
 
-	@include media('>#{$searchoverlay-breakpoint}') {
+	@include im.media('>#{$searchoverlay-breakpoint}') {
 		inset-block-start: calc(var(--top) * 1px - 1px + var(--space-2));
 		/* stylelint-disable */
 		inset-inline-start: calc(var(--left) * 1px - 1px);
@@ -68,7 +74,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */
 	&-backdrop {
-		@include media('<=#{$searchoverlay-breakpoint}') {
+		@include im.media('<=#{$searchoverlay-breakpoint}') {
 			position: absolute;
 			inset: 0;
 			z-index: 0;
@@ -82,7 +88,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 			background: none;
 		}
 
-		@include media('>#{$searchoverlay-breakpoint}') {
+		@include im.media('>#{$searchoverlay-breakpoint}') {
 			display: none;
 		}
 	}
@@ -98,7 +104,8 @@ $searchoverlay-breakpoint: em(1000, 16);
 		overflow: auto;
 		border-radius: var(--border-radius-md);
 		background-color: var(--background-norm);
-		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
+		background-image:
+			radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
 		background-position:
 			50% 0,
@@ -106,7 +113,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
-		@include media('<=#{$searchoverlay-breakpoint}') {
+		@include im.media('<=#{$searchoverlay-breakpoint}') {
 			position: relative;
 			z-index: 1;
 			inline-size: 100%;
@@ -114,7 +121,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 			transition: transform 0.1s ease-out;
 		}
 
-		@include media('>#{$searchoverlay-breakpoint}') {
+		@include im.media('>#{$searchoverlay-breakpoint}') {
 			inline-size: calc(var(--width) * 1px);
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);

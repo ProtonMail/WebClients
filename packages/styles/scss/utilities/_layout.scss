@@ -1,3 +1,5 @@
+@use '../lib/config' as *;
+
 .overflow-auto {
 	overflow: auto;
 }

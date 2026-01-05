@@ -1,22 +1,5 @@
-.outline-none {
-	// we remove outline for all cases, and add it back for focus-visible cases
+@use 'outline-mixins' as *;
 
-	&,
-	&--at-all {
-		&,
-		&:focus {
-			outline: 0;
-		}
-	}
+// just to be able to import the outline-mixins somewhere else
 
-	&:focus-visible:not([tabindex='-1']) {
-		outline: 2px auto;
-	}
-
-	&--at-all {
-		// God forgive me for this = please use this really if you know what you're doing, usually removing all outline is not a good practice.
-		&:focus-visible {
-			outline: 0;
-		}
-	}
-}
+@include outline-full-import;

@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 /**
  * Convert a list of arguments into a string seperated by dashes
  * @param {String} $args - A list of arguments
@@ -8,11 +10,16 @@
 	$first-add: true;
 	$glue: '-';
 
-	@for $i from 1 through length($args) {
-		$e: nth($args, $i);
+	@for $i from 1 through list.length($args) {
+		$e: list.nth($args, $i);
 
 		@if $e != null and $e != '' {
-			$result: if($i == 1 or $first-add == true, #{$e}, #{$result}#{$glue}#{$e});
+			@if $i == 1 or $first-add == true {
+				$result: #{$e};
+			} @else {
+				$result: #{$result}#{$glue}#{$e};
+			}
+
 			$first-add: false;
 		}
 	}

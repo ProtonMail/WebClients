@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-input-container {
 	// Base styles
@@ -8,7 +13,7 @@
 	transition: all 0.3s ease-out;
 
 	// Mobile styles
-	@include media('<=small') {
+	@include im.media('<=small') {
 		border-block-end: none !important;
 		inline-size: 98% !important;
 		margin-block-end: 10px;
@@ -24,7 +29,7 @@
 
 	&.shadow-lifted-composer {
 		box-shadow: var(--optional-shadow-lifted-offset, 0 calc(var(--1px) * 5) calc(var(--1px) * 12)) rgb(var(--shadow-color,var(--shadow-default-color))/var(--shadow-lifted-opacity));
-		@include media('<=small') {
+		@include im.media('<=small') {
 			// Theme overrides
 			box-shadow: none !important;
 		}
@@ -74,7 +79,7 @@
 		}
 
 		// Ghost mode mobile overrides
-		@include media('<=small') {
+		@include im.media('<=small') {
 			// Theme overrides
 			background-color: var(--ghost-bg-primary) !important;
 
@@ -89,7 +94,7 @@
 
 .lumo-input {
 	border-radius: #{rem(16)};
-	font-size: 16px !important;
+	font-size: rem(16) !important;
 	transition: all 0.3s ease-out;
 }
 

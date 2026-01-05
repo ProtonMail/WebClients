@@ -1,6 +1,10 @@
-@import './assets/fonts/fonts.css';
-@import '~@proton/styles/scss/proton-lumo';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use './assets/fonts/fonts.css' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/proton-lumo' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 // body::before {
 // 	position: fixed;
@@ -17,7 +21,7 @@
 	container-name: maintext;
 	max-inline-size: 100%;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inline-size: 100%;
 		max-inline-size: 100%;
 		box-sizing: border-box;
@@ -29,7 +33,7 @@
 	font-size: rem(36);
 	font-feature-settings: 'ss04';
 
-	@include media('<=medium') {
+	@include im.media('<=medium') {
 		font-size: rem(30);
 	}
 
@@ -77,7 +81,7 @@
 	backface-visibility: hidden;
 
 	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
-	@include media('>small') {
+	@include im.media('>small') {
 		transform: translateZ(0);
 	}
 
@@ -90,7 +94,7 @@
 	}
 
 	// Mobile sidebar transitions - true overlay that doesn't affect layout
-	@include media('<=small') {
+	@include im.media('<=small') {
 		position: fixed !important;
 		inset-block-start: 0 !important;
 		inset-inline-start: 0 !important;
@@ -276,7 +280,7 @@
 	contain: layout;
 	backface-visibility: hidden;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		font-size: 16px;
 	}
 }

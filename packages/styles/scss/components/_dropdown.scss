@@ -1,4 +1,12 @@
 @use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '@proton/styles/scss/lib/transform-origins' as *;
+@use '@proton/styles/scss/base/interactive' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .dropdown {
 	/*
@@ -62,7 +70,7 @@
 
 	@include transform-origins;
 
-	@include media('touch', '<=small') {
+	@include im.media('touch', '<=small') {
 		&.adaptive-for-touch-screens {
 			inset: 0;
 			display: flex;
@@ -106,7 +114,7 @@
 		}
 	}
 
-	@include media('touch', '<=xsmall') {
+	@include im.media('touch', '<=xsmall') {
 		&.adaptive-for-touch-screens {
 			padding-inline: 10%;
 		}
@@ -117,7 +125,7 @@
 		display: none;
 	}
 
-	@include media('touch', '<=small') {
+	@include im.media('touch', '<=small') {
 		&.adaptive-for-touch-screens &-backdrop {
 			position: absolute;
 			inset: 0;
@@ -165,7 +173,7 @@
 		}
 	}
 
-	@include media('touch', '<=small') {
+	@include im.media('touch', '<=small') {
 		&.adaptive-for-touch-screens &-content {
 			position: relative;
 			z-index: 1;

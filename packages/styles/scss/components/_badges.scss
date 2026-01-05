@@ -1,7 +1,10 @@
-[class*='badge-label'] {
-	@extend .text-uppercase;
-	@extend .inline-flex;
+@use '../lib/rem' as *;
+@use '../lib/em' as *;
+@use '../lib/rem' as *;
 
+[class*='badge-label'] {
+	text-transform: uppercase;
+	display: inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
 	padding-inline: em(8, 11);
 	line-height: rem(22);

@@ -1,8 +1,17 @@
-@import '~@proton/styles/scss/proton-calendar';
+@use '~@proton/styles/scss/proton-calendar';
 
-@import '~@proton/styles/scss/layout/native';
+@use '~@proton/styles/scss/layout/native';
 
 // Specific styles
-@import '~@proton/styles/scss/specifics/placeholder-loading', 'styles/config', 'styles/specifics', 'styles/grid',
-	'styles/monthgrid', 'styles/daygrid', 'styles/eventcell', 'styles/aside', 'styles/eventpopover', 'styles/debug',
-	'styles/loader-container', 'styles/dropzone';
+@use '~@proton/styles/scss/specifics/placeholder-loading';
+@use 'styles/config';
+@use 'styles/specifics';
+@use 'styles/grid';
+@use 'styles/monthgrid';
+@use 'styles/daygrid';
+@use 'styles/eventcell';
+@use 'styles/aside';
+@use 'styles/eventpopover';
+@use 'styles/debug';
+@use 'styles/loader-container';
+@use 'styles/dropzone';

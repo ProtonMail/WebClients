@@ -1,3 +1,5 @@
+@use '../lib/em' as *;
+
 .meter-bar {
 	--size: #{em(10)};
 	--meter-bar-background-color: var(--border-norm);

@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
 
 .panel-section {
 	min-block-size: 100%;

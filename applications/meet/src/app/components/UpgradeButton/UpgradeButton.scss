@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
 
 .upgrade-button-link {
 	text-decoration: none !important;

@@ -1,3 +1,5 @@
+@use '../base/interactive' as *;
+
 .autocomplete-suggestions {
 	position: absolute;
 	z-index: -1;
@@ -12,7 +14,9 @@
 	border: 1px solid var(--border-norm);
 	transform: translateY(-1.5em);
 	opacity: 0;
-	transition: transform 100ms ease-in, opacity 100ms ease-out 20ms;
+	transition:
+		transform 100ms ease-in,
+		opacity 100ms ease-out 20ms;
 
 	&,
 	div:last-child {

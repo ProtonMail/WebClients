@@ -1,8 +1,16 @@
-@import '~@proton/styles/scss/proton-meet';
+@use 'sass:list';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/proton-meet' as *;
 
-@import '~@proton/styles/scss/layout/native';
+@use '~@proton/styles/scss/layout/native' as *;
 
-@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/settings';
+@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
+@use '~@proton/styles/scss/specifics/settings' as *;
+
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .modal-two-backdrop {
 	background: transparent !important;
@@ -48,7 +56,7 @@ $meet-background-colors:
 
 @for $i from 1 through 6 {
 	.meet-background-#{$i} {
-		background-color: nth($meet-background-colors, $i);
+		background-color: #{list.nth($meet-background-colors, $i)};
 	}
 }
 
@@ -58,23 +66,23 @@ $profile-colors:
 
 @for $i from 1 through 6 {
 	.profile-background-#{$i} {
-		background: nth($profile-colors, $i);
+		background: #{list.nth($profile-colors, $i)};
 	}
 }
 
 @for $i from 1 through 6 {
 	.profile-color-#{$i} {
-		color: nth($profile-colors, $i) !important;
+		color: #{list.nth($profile-colors, $i)} !important;
 	}
 }
 
 @for $i from 1 through 6 {
 	.tile-border-#{$i} {
-		border: 3px solid nth($profile-colors, $i);
+		border: 3px solid #{list.nth($profile-colors, $i)};
 	}
 
 	.tile-border-#{$i}-small {
-		border: 2px solid nth($profile-colors, $i);
+		border: 2px solid #{list.nth($profile-colors, $i)};
 	}
 }
 
@@ -115,7 +123,7 @@ $profile-colors:
 .device-selector-dropdown {
 	max-inline-size: 50vw;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inline-size: calc(100vw - 3rem);
 		max-inline-size: calc(100vw - 3rem) !important;
 	}
@@ -123,7 +131,7 @@ $profile-colors:
 	.dropdown-content {
 		max-inline-size: 50vw;
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			max-inline-size: calc(100vw - 3rem) !important;
 		}
 	}
@@ -201,11 +209,11 @@ $profile-colors:
 .meet-container-padding-x {
 	padding-inline: 1.5rem;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		padding-inline: 2.5rem;
 	}
 
-	@include media('>large') {
+	@include im.media('>large') {
 		padding-inline: 3.75rem;
 	}
 }

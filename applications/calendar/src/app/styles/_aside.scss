@@ -1,7 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/rem' as *;
+@use './config' as calendarconfig;
 
 .calendar-aside {
-	inline-size: $calendar-aside-width;
+	inline-size: calendarconfig.$calendar-aside-width;
 	font-size: rem(10);
 }
 

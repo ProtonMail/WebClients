@@ -1,7 +1,6 @@
 .folder-tree {
-	@extend .border;
-	@extend .overflow-auto;
-
+	border: 1px solid var(--border-norm);
+	overflow: auto;
 	border-radius: var(--border-radius-md);
 	block-size: 28em;
 
@@ -20,9 +19,6 @@
 			padding: 0.85em;
 
 			&-button {
-				@extend .button;
-				@extend .button-for-icon;
-
 				display: flex;
 				padding: 0;
 			}

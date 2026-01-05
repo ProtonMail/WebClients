@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
 .subscription-container {
 	background-color: var(--background-lowered);

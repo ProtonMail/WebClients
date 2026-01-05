@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib/config';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .placeholder-danger::placeholder {
 	color: var(--signal-danger);

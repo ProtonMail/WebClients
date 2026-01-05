@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use '../lib/rem' as *;
 
 $treeview-border-width: 1px !default;
 $treeview-indentation-margin: rem(30) !default;

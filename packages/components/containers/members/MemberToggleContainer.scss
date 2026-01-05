@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .member-toggle-container {
 	display: grid;
@@ -9,7 +13,7 @@
 	grid-template-rows: auto 1fr;
 	grid-column-gap: #{rem(8)};
 
-	@include media('>xsmall') {
+	@include im.media('>xsmall') {
 		grid-template-areas:
 			'toggle label'
 			'toggle assistive';

@@ -1,5 +1,5 @@
-@import '~@proton/styles/scss/lib'; // Needed for placeholder-loading import
-@import '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
 
 .calendar-widget {
 	&-skeleton {

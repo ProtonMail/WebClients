@@ -1,10 +1,9 @@
 /* stylelint-disable */
 
-@import
-	'field',
-	'field-two',
-	'textarea',
-	'checkbox',
-	'radio',
-	'toggle',
-	'label';
+@forward 'field';
+@forward 'field-two';
+@forward 'textarea';
+@forward 'checkbox';
+@forward 'radio';
+@forward 'toggle';
+@forward 'label';

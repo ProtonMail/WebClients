@@ -1,9 +1,13 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .toolbar-row {
 	flex-direction: column;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		flex-direction: row-reverse;
 		justify-content: space-between;
 	}
@@ -12,7 +16,7 @@
 		min-block-size: rem(44);
 		border-block-end: 1px solid var(--border-weak);
 
-		@include media('>medium') {
+		@include im.media('>medium') {
 			border-block-end: none;
 		}
 	}

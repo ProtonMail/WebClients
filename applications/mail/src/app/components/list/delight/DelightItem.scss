@@ -1,5 +1,10 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/specifics/placeholder-loading';
 
 $item-container-height: rem(64);
 
@@ -117,7 +122,7 @@ $item-container-height: rem(64);
 		content: ' ';
 	}
 
-	@include media('mouse', '>small') {
+	@include im.media('mouse', '>small') {
 		.is-column &-hover-action-buttons {
 			margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover
 			inset-block-start: rem(10);

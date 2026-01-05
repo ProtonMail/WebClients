@@ -1,5 +1,9 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .event-popover {
 	&-calendar-border {
@@ -10,7 +14,7 @@
 		min-block-size: rem(28);
 		margin-block-end: rem(4);
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			margin-inline-end: rem(18);
 		}
 

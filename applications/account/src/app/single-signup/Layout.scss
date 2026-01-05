@@ -1,17 +1,21 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .bg-norm-weak {
 	background-color: #efecfd;
 }
 
 .signup-v1-bg {
-	@include media('>xsmall') {
+	@include im.media('>xsmall') {
 		background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
 	}
 }
 
 .signup-v1-bg--dark {
-	@include media('>xsmall') {
+	@include im.media('>xsmall') {
 		--promotion-text-weak: #c1b2ff;
 
 		background: linear-gradient(359.26deg, #1b1340 29.47%, #392982 114.26%);
@@ -22,21 +26,21 @@
 
 	.vpn-for-business-logo {
 		color: var(--optional-promotion-text-color);
-		@include media('<xsmall') {
+		@include im.media('<xsmall') {
 			display: none;
 		}
 	}
 
 	.proton-for-business-logo {
 		color: var(--optional-promotion-text-color);
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			display: none;
 		}
 	}
 }
 
 .signup-v1-bg--bf2025 {
-	@include media(">xsmall") {
+	@include im.media(">xsmall") {
 		background: radial-gradient(69.05% 69.05% at 50% 0%, #5a3ecf 0%, #1b1340 100%),
 			linear-gradient(0deg, #191927, #191927);
 
@@ -55,7 +59,7 @@
 			--logo-text-product-color: white;
 		}
 
-		@include media('<xsmall') {
+		@include im.media('<xsmall') {
 			display: none;
 		}
 	}
@@ -68,7 +72,7 @@
 		font-size: rem(32);
 		color: var(--optional-promotion-text-color);
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			font-size: rem(24);
 		}
 	}

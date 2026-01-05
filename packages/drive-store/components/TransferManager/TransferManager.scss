@@ -1,5 +1,9 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .transfers-manager {
 	inline-size: 100%;
@@ -10,16 +14,16 @@
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 	background: var(--background-norm);
 
-	@include media('height<=xsmall') {
+	@include im.media('height<=xsmall') {
 		max-block-size: 100%;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inset-inline-start: 0;
 		inset-block-end: 0;
 	}
 
-	@include media('>small') {
+	@include im.media('>small') {
 		margin-inline-end: inherit;
 
 		// Make rounded border for both manager and header to not include
@@ -63,7 +67,7 @@
 	}
 
 	&--minimized {
-		@include media('height<=xsmall') {
+		@include im.media('height<=xsmall') {
 			max-block-size: initial;
 			block-size: initial;
 		}
@@ -77,15 +81,15 @@
 		align-items: center;
 		block-size: 5em; // To avoid height blinking on status changing
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
 		}
 
-		@include media('>small') {
+		@include im.media('>small') {
 			grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
 		}
 
-		@include media('height>xsmall') {
+		@include im.media('height>xsmall') {
 			&:last-child {
 				border-block-end: none;
 			}
@@ -104,7 +108,7 @@
 		}
 
 		&-icon {
-			@include media('<=#{em(420, 16)}') {
+			@include im.media('<=#{em(420, 16)}') {
 				display: none;
 			}
 		}
@@ -113,7 +117,7 @@
 			white-space: nowrap;
 			font-variant-numeric: tabular-nums;
 
-			@include media('<=small') {
+			@include im.media('<=small') {
 				svg {
 					margin: 0;
 				}

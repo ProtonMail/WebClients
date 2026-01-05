@@ -1,7 +1,14 @@
-@use "sass:map";
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@use '~@proton/styles/scss/components/notification' as *;
 
 .calendar-loader-container {
-	@extend .notifications-container;
+	@extend %notifications-container;
 
 	position: absolute;
 	z-index: map.get($z-indexes, 'up');
@@ -9,7 +16,7 @@
 	inset-block-end: unset;
 	inset-inline-start: 50%;
 
-	@include media('>small') {
+	@include im.media('>small') {
 		inset-block-start: em(140);
 	}
 

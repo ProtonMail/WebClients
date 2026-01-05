@@ -1,5 +1,5 @@
-@import '~@proton/colors/themes/dist/duotone.theme.css';
-@import '~@proton/styles/scss/proton-ui-storybook';
+@use '~@proton/colors/themes/dist/duotone.theme' as *;
+@use '~@proton/styles/scss/proton-ui-storybook' as *;
 
 body {
 	overflow: scroll !important;

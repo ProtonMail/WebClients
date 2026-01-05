@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/pass/pass-lib';
+@use '~@proton/styles/scss/pass/pass-lib' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .pass-welcome {
 	&--onboarding-video {
@@ -18,7 +21,7 @@
 	}
 
 	&--on-medium-default-grow {
-		@include media('<medium') {
+		@include im.media('<medium') {
 			flex: 1 1 auto !important;
 		}
 	}
