@@ -101,7 +101,8 @@ export const getRootNode = async (
 export const mapNodeToLegacyItem = async (
     maybeNode: MaybeNode,
     defaultShareId: string,
-    drive: ProtonDriveClient | ProtonDrivePhotosClient = getDrive()
+    drive: ProtonDriveClient | ProtonDrivePhotosClient = getDrive(),
+    loadedRootNode?: NodeEntity
 ): Promise<LegacyItem> => {
     let node: NodeEntity;
     if ('ok' in maybeNode) {
@@ -113,7 +114,7 @@ export const mapNodeToLegacyItem = async (
 
     let activeRevision;
     const nodeRevision = node.activeRevision;
-    const rootNode = await getRootNode(node, drive);
+    const rootNode = loadedRootNode || (await getRootNode(node, drive));
     if (nodeRevision) {
         activeRevision = {
             id: splitNodeRevisionUid(nodeRevision.uid).revisionId,
