@@ -49,6 +49,7 @@ export const getAliasOptions = async (shareId: string): Promise<AliasOptions> =>
         suffixes: aliasOptions.Suffixes.map((data) => ({
             signedSuffix: data.SignedSuffix!,
             suffix: data.Suffix!,
+            isPremium: data.IsPremium!,
             isCustom: data.IsCustom!,
             domain: data.Domain!,
         })),

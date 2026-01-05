@@ -129,6 +129,8 @@ export const AliasForm = <V extends AliasFormValues>({
                             {(aliasOptions?.suffixes ?? []).map((suffix) => (
                                 <Option key={suffix.value} value={suffix} title={suffix.value}>
                                     {suffix.value}
+                                    {' (' /* ensure a space before opening parenthesis */}
+                                    {suffix.isPremium ? c('Info').t`Premium domain` : c('Info').t`Public domain`})
                                 </Option>
                             ))}
                         </Field>

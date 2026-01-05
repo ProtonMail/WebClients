@@ -8,7 +8,7 @@ import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import { useRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {
-    suffixes: { value: string; signature: string }[];
+    suffixes: { value: string; signature: string; isPremium: boolean }[];
     mailboxes: AliasMailbox[];
 };
 
@@ -37,9 +37,10 @@ export const useAliasOptions = ({
     const getAliasOptions = useRequest(requestAliasOptions, {
         onSuccess: (options) => {
             const sanitized = {
-                suffixes: options.suffixes.map(({ suffix, signedSuffix }) => ({
+                suffixes: options.suffixes.map(({ suffix, signedSuffix, isPremium }) => ({
                     value: suffix,
                     signature: signedSuffix,
+                    isPremium,
                 })),
                 mailboxes: options.mailboxes,
             };
