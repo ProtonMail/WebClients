@@ -12,22 +12,33 @@ const replaceViewportHeightUnit = (element: HTMLElement) => {
 };
 
 // had to extract the method, only because some testing issues
-export const handleTopLeftPropertiesRemoval = ({
+export const handleTopLeftRightPropertiesRemoval = ({
     left,
+    right,
     top,
     insetInlineStart,
+    insetInlineEnd,
     insetBlockStart,
     insetBlockEnd,
-}: Record<'top' | 'left' | 'insetInlineStart' | 'insetBlockStart' | 'insetBlockEnd', string>): Map<string, string> => {
+}: Record<
+    'top' | 'left' | 'right' | 'insetInlineStart' | 'insetInlineEnd' | 'insetBlockStart' | 'insetBlockEnd',
+    string
+>): Map<string, string> => {
     const result = new Map();
     if (left) {
         result.set('left', 'unset');
+    }
+    if (right) {
+        result.set('right', 'unset');
     }
     if (top) {
         result.set('top', 'unset');
     }
     if (insetInlineStart) {
         result.set('insetInlineStart', 'unset');
+    }
+    if (insetInlineEnd) {
+        result.set('insetInlineEnd', 'unset');
     }
     if (insetBlockStart) {
         result.set('insetBlockStart', 'unset');
@@ -39,13 +50,14 @@ export const handleTopLeftPropertiesRemoval = ({
 };
 
 // some emails are using left and top to hide content, so we remove these properties
-const replaceLeftTopProperties = (element: HTMLElement) => {
+const replaceLeftRightTopProperties = (element: HTMLElement) => {
     const left = element.style.left;
     const top = element.style.top;
-
+    const right = element.style.right;
     const insetInlineStart = element.style.insetInlineStart;
+    const insetInlineEnd = element.style.insetInlineEnd;
     const insetBlockStart = element.style.insetBlockStart;
-    const insetBlockEnd = element.style.insetBlockEnd; // will consider insetInlineEnd in a later step
+    const insetBlockEnd = element.style.insetBlockEnd;
 
     if (left) {
         // additionnal fix for some emails that moreother do perform a sr-only-like on their content (🤦)
@@ -66,7 +78,15 @@ const replaceLeftTopProperties = (element: HTMLElement) => {
         }
     }
 
-    const results = handleTopLeftPropertiesRemoval({ top, left, insetInlineStart, insetBlockStart, insetBlockEnd });
+    const results = handleTopLeftRightPropertiesRemoval({
+        top,
+        left,
+        right,
+        insetInlineStart,
+        insetInlineEnd,
+        insetBlockStart,
+        insetBlockEnd,
+    });
 
     results.forEach((value, property) => {
         // @ts-expect-error // we send valid properties
@@ -193,7 +213,7 @@ export const transformStyleAttributes = (document: Element) => {
 
         replaceViewportHeightUnit(element);
 
-        replaceLeftTopProperties(element);
+        replaceLeftRightTopProperties(element);
 
         removeNegativeMargins(element);
 
