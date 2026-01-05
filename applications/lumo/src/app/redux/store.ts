@@ -44,6 +44,7 @@ export const setupStore = ({
             const m2 = m1.prepend(listenerMiddleware.middleware);
             // Throttle streaming updates to 60fps
             const m2b = m2.concat(streamingThrottleMiddleware);
+            // const m2b = m2;
             const m3 = sagaMiddleware ? m2b.concat(sagaMiddleware) : m2b;
             return m3;
         },
