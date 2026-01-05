@@ -12,6 +12,7 @@ import {
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { StreamProcessor } from './streaming';
+import { makeAbortTransformStream } from './transforms/abort';
 import type {
     AssistantCallOptions,
     LumoApiClientConfig,
@@ -154,17 +155,13 @@ export class LumoApiClient {
                 endpoint,
                 signal,
             });
+            const stream = responseBody.pipeThrough(makeAbortTransformStream(signal));
 
-            const reader = responseBody.getReader();
+            const reader = stream.getReader();
             const decoder = new TextDecoder('utf-8');
             const processor = new StreamProcessor();
 
             while (true) {
-                // Manual signal check since API wrapper does not preserve abort signal connection to streams
-                if (signal?.aborted) {
-                    throw new DOMException('Aborted', 'AbortError');
-                }
-
                 const { done, value } = await reader.read();
                 if (done) {
                     finalStatus = 'succeeded';
