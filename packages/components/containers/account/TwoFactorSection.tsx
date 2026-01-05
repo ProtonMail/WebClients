@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
@@ -18,10 +18,12 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
 import { APPS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
+import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -236,9 +238,20 @@ const TwoFactorSection = () => {
                                 </div>
                                 {registeredKeys.map((registeredKey) => {
                                     const id = getId(registeredKey);
+                                    const isCompromised = hasBit(registeredKey.Flags, Fido2CredentialFlags.Compromised);
                                     return (
-                                        <div key={id} className="flex items-center py-2 border-bottom">
-                                            <div className="flex-1 text-break mr-2">{registeredKey.Name}</div>
+                                        <div key={id} className="flex items-center py-2 gap-2 border-bottom">
+                                            <div className="flex-1 text-break items-center">
+                                                <span>{registeredKey.Name}</span>
+                                                {isCompromised && (
+                                                    <Pill
+                                                        color="#5C3700"
+                                                        backgroundColor="#F5D4A2"
+                                                        rounded="rounded-sm"
+                                                        className="ml-2 text-semibold text-center"
+                                                    >{c('Info').t`Compromised`}</Pill>
+                                                )}
+                                            </div>
                                             <ButtonGroup size="small">
                                                 <Button
                                                     icon
