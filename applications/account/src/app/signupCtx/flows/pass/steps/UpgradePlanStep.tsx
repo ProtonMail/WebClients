@@ -2,7 +2,6 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getPassCliText } from '@proton/components/containers/payments/features/pass';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
@@ -15,7 +14,7 @@ import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/sha
 import { Layout } from '../components/Layout/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
-import { family, getPassPlusOfferPlan, passLifetime, passPlus, unlimited } from '../plans';
+import { family, getPassPlusOfferPlan, passPlus, unlimited } from '../plans';
 
 type Props = {
     onContinue: (payment: boolean) => Promise<void>;
@@ -35,15 +34,6 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
 
         return getSimplePriceString(price.uiData.currency, price.uiData.withDiscountPerMonth);
     };
-
-    const plusLifetimePrice = (() => {
-        const price = payments.getPriceOrFallback({
-            planIDs: passLifetime.planIDs,
-            cycle: CYCLE.YEARLY,
-            currency: payments.selectedPlan.currency,
-        });
-        return getSimplePriceString(price.uiData.currency, price.uiData.regularAmountPerCycle);
-    })();
 
     const handlePayPlan = (plan: PLANS, coupon?: string) => {
         payments.selectPlan({
@@ -151,26 +141,6 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
                     {plans.map((plan) => (
                         <PlanCard key={String(plan.title)} {...plan} />
                     ))}
-                </div>
-                <div className="relative flex items-center justify-center border-gradient rounded-lg mt-12 p-6 gap-4">
-                    <div
-                        className="banner-gradient-bg absolute top-custom left-custom color-invert text-semibold text-xs px-2 text-center text-ellipsis rounded-sm"
-                        style={{ '--top-custom': '-0.5rem', '--left-custom': '1rem' }}
-                    >{c('Label').t`Limited time`}</div>
-                    <div>
-                        <h3 className="text-bold">{c('Title').t`Pass Plus Lifetime for ${plusLifetimePrice}`}</h3>
-                        <h4 className="text-sm color-weak">{c('Subtitle').t`Pay once, access forever.`}</h4>
-                    </div>
-                    <Button
-                        size="large"
-                        color="norm"
-                        shape="outline"
-                        pill
-                        onClick={() => handlePayPlan(PLANS.PASS_LIFETIME)}
-                        className="md:ml-16 md:px-14"
-                    >
-                        {c('Action').t`Pay once`}
-                    </Button>
                 </div>
             </div>
             {offerModal.state.open && (
