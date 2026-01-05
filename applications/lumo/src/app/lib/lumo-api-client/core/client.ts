@@ -181,13 +181,7 @@ export class LumoApiClient {
 
                 // Run response chunk interceptors
                 let valueTmp: GenerationToFrontendMessage | undefined = value;
-                try {
-                    valueTmp = await this.notifyResponse(valueTmp, responseContext);
-                } catch (error: any) {
-                    // Run response error interceptors
-                    await this.notifyResponseError(error, responseContext);
-                    throw error;
-                }
+                valueTmp = await this.notifyResponse(valueTmp, responseContext);
 
                 if (chunkCallback) {
                     const result = await chunkCallback(valueTmp);
