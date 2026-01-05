@@ -3,7 +3,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { GenerationToFrontendMessage } from '../../../types-api';
 import {
     DEFAULT_LUMO_PUB_KEY,
-    decryptContent,
     encryptTurns,
     generateRequestId,
     generateRequestKey,
@@ -13,6 +12,7 @@ import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStream } from './transforms/chunks';
+import { makeDecryptionTransformStream } from './transforms/decrypt';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
@@ -159,7 +159,14 @@ export class LumoApiClient {
             const stream = responseBody
                 .pipeThrough(makeAbortTransformStream(signal))
                 .pipeThrough(makeUtf8DecodingTransformStream())
-                .pipeThrough(makeChunkParserTransformStream());
+                .pipeThrough(makeChunkParserTransformStream())
+                .pipeThrough(
+                    makeDecryptionTransformStream({
+                        enableU2LEncryption,
+                        requestKey,
+                        requestId,
+                    })
+                );
             const reader = stream.getReader();
 
             while (true) {
@@ -170,35 +177,16 @@ export class LumoApiClient {
                 }
                 if (!value) continue;
 
-                // Decrypt chunk content if needed
-                let processedChunk = value;
-                if (value.type === 'token_data' && value.encrypted && enableU2LEncryption && requestKey && requestId) {
-                    try {
-                        const adString = `lumo.response.${requestId}.chunk`;
-                        const decryptedContent = await decryptContent(value.content, requestKey, adString);
-                        processedChunk = {
-                            ...value,
-                            content: decryptedContent,
-                            encrypted: false,
-                        };
-                    } catch (error) {
-                        console.error('Failed to decrypt chunk:', error);
-                        // Continue with encrypted content - let the callback handle it
-                        // FIXME I don't think it's a good idea to pass the encrypted content to the callback in
-                        //  case of error. It means we could start displaying gibberish base64 inside the Lumo UI
-                        //  instead of properly failing.
-                    }
-                }
-
                 // Update response context
                 responseContext.chunkCount++;
-                if (processedChunk.type === 'token_data') {
-                    responseContext.totalContentLength += processedChunk.content.length;
+                if (value.type === 'token_data') {
+                    responseContext.totalContentLength += value.content.length;
                 }
 
                 // Run response chunk interceptors
+                let valueTmp: GenerationToFrontendMessage | undefined = value;
                 try {
-                    processedChunk = await this.notifyResponse(processedChunk, responseContext);
+                    valueTmp = await this.notifyResponse(valueTmp, responseContext);
                 } catch (error: any) {
                     // Run response error interceptors
                     await this.notifyResponseError(error, responseContext);
@@ -206,7 +194,7 @@ export class LumoApiClient {
                 }
 
                 if (chunkCallback) {
-                    const result = await chunkCallback(processedChunk);
+                    const result = await chunkCallback(valueTmp);
                     if (result && result.error) {
                         throw result.error;
                     }
@@ -239,7 +227,7 @@ export class LumoApiClient {
         }
     }
 
-    private async notifyResponse(processedChunk: GenerationToFrontendMessage, responseContext: ResponseContext) {
+    private async notifyResponse(value: GenerationToFrontendMessage, responseContext: ResponseContext) {
         // FIXME: The code supports modifying the response chunk, but I don't think we ever need to do it in
         //        fact. This is further highlighted by the fact that the function
         //        createContentTransformInterceptor() is never used.
@@ -249,10 +237,10 @@ export class LumoApiClient {
         //        TLDR: remove the transform capability
         for (const interceptor of this.config.interceptors.response || []) {
             if (interceptor.onResponseChunk) {
-                processedChunk = await interceptor.onResponseChunk(processedChunk, responseContext);
+                value = await interceptor.onResponseChunk(value, responseContext);
             }
         }
-        return processedChunk;
+        return value;
     }
 
     private async notifyRequest(request: LumoApiGenerationRequest, requestContext: RequestContext) {
