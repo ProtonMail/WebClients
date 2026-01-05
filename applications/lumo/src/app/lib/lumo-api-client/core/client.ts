@@ -15,6 +15,7 @@ import { makeChunkParserTransformStream } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
 import { makeDecryptionTransformStream } from './transforms/decrypt';
 import { makeFinishSink } from './transforms/finish';
+import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
@@ -159,7 +160,8 @@ export class LumoApiClient {
                 endpoint,
                 signal,
             });
-            // Run the processing stream
+
+            // Run the processing stream: this is the core logic
             await responseBody
                 .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
                 .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
@@ -173,6 +175,7 @@ export class LumoApiClient {
                     })
                 )
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
+                .pipeThrough(makeSmoothingTransformStream())
                 .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
 
             // Stream is complete
