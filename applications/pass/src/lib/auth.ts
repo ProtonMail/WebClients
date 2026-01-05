@@ -238,12 +238,12 @@ export const createAuthService = ({
                 const route = ((): Partial<LocationDescriptorObject<MaybeNull<AuthRouteState>>> => {
                     const base = getBasename(localID) ?? '/';
                     switch (reauth?.type) {
-                        case ReauthAction.SSO_EXPORT:
+                        case ReauthAction.EXPORT_CONFIRM:
                             return { pathname: base + '/settings', hash: 'export' };
-                        case ReauthAction.SSO_PW_LOCK:
-                        case ReauthAction.SSO_BIOMETRICS:
+                        case ReauthAction.PW_LOCK_SETUP:
+                        case ReauthAction.BIOMETRICS_SETUP:
                             return { pathname: base + '/settings', hash: 'security' };
-                        case ReauthAction.SSO_OFFLINE:
+                        case ReauthAction.OFFLINE_SETUP:
                             return { pathname: base + '/settings', hash: 'general' };
                         default:
                             return {
@@ -371,14 +371,14 @@ export const createAuthService = ({
                             authStore.setOfflineVerifier(offlineVerifier);
 
                             switch (fork.reauth.type) {
-                                case ReauthAction.SSO_PW_LOCK: {
+                                case ReauthAction.PW_LOCK_SETUP: {
                                     const { current, ttl } = fork.reauth.data;
                                     if (current) await auth.deleteLock(authStore.getLockMode(), current);
                                     authStore.setLockMode(LockMode.PASSWORD);
                                     authStore.setLockTTL(ttl);
                                     break;
                                 }
-                                case ReauthAction.SSO_BIOMETRICS: {
+                                case ReauthAction.BIOMETRICS_SETUP: {
                                     const { current, ttl } = fork.reauth.data;
                                     if (current) await auth.deleteLock(authStore.getLockMode(), current);
                                     const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
@@ -393,7 +393,7 @@ export const createAuthService = ({
 
                             /** Session has been persisted at this point so
                              * it's safe to mutate the `offlineEnabled` setting */
-                            if (fork.reauth.type === ReauthAction.SSO_OFFLINE) {
+                            if (fork.reauth.type === ReauthAction.OFFLINE_SETUP) {
                                 const localID = authStore.getLocalID();
                                 const settings = await core.settings.resolve(localID);
                                 await core.settings.sync({ ...settings, offlineEnabled: true }, localID);

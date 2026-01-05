@@ -191,7 +191,7 @@ export const useLockSetup = (): LockSetup => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     reauth: {
-                        type: ReauthAction.SSO_PW_LOCK,
+                        type: ReauthAction.PW_LOCK_SETUP,
                         data: { current: current?.secret, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
@@ -215,7 +215,7 @@ export const useLockSetup = (): LockSetup => {
                 /* else prompt for password */
                 return confirmPassword({
                     reauth: {
-                        type: ReauthAction.SSO_BIOMETRICS,
+                        type: ReauthAction.BIOMETRICS_SETUP,
                         data: { current: current?.secret, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },

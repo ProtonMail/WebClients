@@ -13,7 +13,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 import type { PasswordModalProps } from './PasswordModal';
 
-export const SSOReauthModal: FC<PasswordModalProps> = ({ loading, open, reauth, onClose, onReauth }) => {
+export const ReauthModal: FC<PasswordModalProps> = ({ loading, open, reauth, onClose, onReauth }) => {
     const online = useOnline();
 
     if (!reauth) return null;

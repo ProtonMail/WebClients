@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
+import { ReauthModal } from '@proton/pass/components/Lock/ReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
@@ -50,10 +50,10 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
     const authStore = useAuthStore();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
-    /** SSO users which do not have an offline password should
-     * trigger a re-auth via account when unlocking. */
-    const isSSO = useSelector(selectIsSSO);
+    const sso = useSelector(selectIsSSO);
     const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
+    const shouldReauth = sso && !hasOfflinePassword;
+    const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     const getInitialModalState = useCallback((): PasswordModalState => {
         const { message, title, label } = passwordTypeSwitch({
@@ -91,8 +91,6 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
 
     const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
-    const shouldReauth = isSSO && !hasOfflinePassword;
-    const Component = shouldReauth ? SSOReauthModal : PasswordModal;
 
     return (
         <PasswordUnlockContext.Provider value={handler}>

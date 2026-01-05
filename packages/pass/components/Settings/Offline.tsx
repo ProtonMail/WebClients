@@ -25,7 +25,7 @@ export const Offline: FC = () => {
     const setupOffline = async () =>
         confirmPassword({
             reauth: {
-                type: ReauthAction.SSO_OFFLINE,
+                type: ReauthAction.OFFLINE_SETUP,
                 fork: { promptBypass: 'none', promptType: 'offline' },
             },
             onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled: true }),
