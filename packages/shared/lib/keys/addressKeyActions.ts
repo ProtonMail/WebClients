@@ -1,18 +1,27 @@
 import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
 import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
+import { type FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
-export const setPrimaryAddressKey = async (
-    api: Api,
-    address: Address,
-    keys: DecryptedAddressKey[],
-    ID: string,
-    keyTransparencyVerify: KeyTransparencyVerify
-) => {
-    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
-    const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => ID === otherID);
-    const oldActiveKeyV6 = oldActiveKeyV4 ? undefined : activeKeys.v6.find(({ ID: otherID }) => ID === otherID);
+export const setPrimaryAddressKey = async ({
+    api,
+    address,
+    addressKeys,
+    addressKeyID,
+    keyTransparencyVerify,
+}: {
+    api: Api;
+    address: Address;
+    addressKeys: DecryptedAddressKey[];
+    addressKeyID: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
+}) => {
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
+    const oldActiveKeyV4 = activeKeys.v4.find(({ ID: otherID }) => addressKeyID === otherID);
+    const oldActiveKeyV6 = oldActiveKeyV4
+        ? undefined
+        : activeKeys.v6.find(({ ID: otherID }) => addressKeyID === otherID);
 
     if (!oldActiveKeyV4 && !oldActiveKeyV6) {
         throw new Error('Cannot set primary key');
@@ -27,19 +36,19 @@ export const setPrimaryAddressKey = async (
             })
             .sort((a, b) => b.primary - a.primary);
     const updatedActiveKeys = getNormalizedActiveAddressKeys(address, {
-        v4: oldActiveKeyV4 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v4, ID) : [...activeKeys.v4],
-        v6: oldActiveKeyV6 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v6, ID) : [...activeKeys.v6],
+        v4: oldActiveKeyV4 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v4, addressKeyID) : [...activeKeys.v4],
+        v6: oldActiveKeyV6 ? getKeysWithUpdatedPrimaryFlag(activeKeys.v6, addressKeyID) : [...activeKeys.v6],
     });
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
         keyTransparencyVerify
     );
-    await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList, Primary: 1 }));
+    await api(setKeyPrimaryRoute({ ID: addressKeyID, SignedKeyList: signedKeyList, Primary: 1 }));
     await onSKLPublishSuccess();
     const newActivePrimaryKey = oldActiveKeyV4
-        ? updatedActiveKeys.v4.find((activeKey) => activeKey.ID === ID)!!
-        : updatedActiveKeys.v6.find((activeKey) => activeKey.ID === ID)!!;
+        ? updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID)!!
+        : updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID)!!;
     const oldActiveKeys = activeKeys;
     return [newActivePrimaryKey, updatedActiveKeys, oldActiveKeys] as const;
 };
@@ -107,20 +116,27 @@ export const deleteAddressKey = async (
     await onSKLPublishSuccess();
 };
 
-export const setAddressKeyFlags = async (
-    api: Api,
-    address: Address,
-    keys: DecryptedAddressKey[],
-    ID: string,
-    flags: number,
-    keyTransparencyVerify: KeyTransparencyVerify
-) => {
-    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, keys);
+export const setAddressKeyFlags = async ({
+    api,
+    address,
+    keyTransparencyVerify,
+    flagAction,
+    addressKeys,
+    addressKeyID,
+}: {
+    api: Api;
+    address: Address;
+    addressKeys: DecryptedAddressKey[];
+    addressKeyID: string;
+    flagAction: FlagAction;
+    keyTransparencyVerify: KeyTransparencyVerify;
+}) => {
+    const activeKeys = await getActiveAddressKeys(address.SignedKeyList, addressKeys);
     const setFlags = <V extends ActiveKeyWithVersion>(activeKey: V) => {
-        if (activeKey.ID === ID) {
+        if (activeKey.ID === addressKeyID) {
             return {
                 ...activeKey,
-                flags,
+                flags: getNewAddressKeyFlags(activeKey.flags, flagAction),
             };
         }
         return activeKey;
@@ -130,11 +146,18 @@ export const setAddressKeyFlags = async (
         v4: activeKeys.v4.map(setFlags),
         v6: activeKeys.v6.map(setFlags),
     });
+    const v4TargetKey = updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID);
+    const v6TargetKey = updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID);
+    const flags = v6TargetKey?.flags ?? v4TargetKey?.flags;
+    if (flags === undefined) {
+        throw new Error('Key not found');
+    }
+
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
         address,
         keyTransparencyVerify
     );
-    await api(setKeyFlagsRoute({ ID, Flags: flags, SignedKeyList: signedKeyList }));
+    await api(setKeyFlagsRoute({ ID: addressKeyID, Flags: flags, SignedKeyList: signedKeyList }));
     await onSKLPublishSuccess();
 };

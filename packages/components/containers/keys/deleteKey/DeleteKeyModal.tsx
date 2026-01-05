@@ -2,13 +2,20 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { deleteAddressKeyAction } from '@proton/account/addressKeys/deleteAddressKeyAction';
 import { Button } from '@proton/atoms/Button/Button';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import type { Address, AddressKey, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import ExportPrivateKeyModal from '../exportKey/ExportPrivateKeyModal';
 
 enum STEPS {
     EXPORT_KEY,
@@ -17,25 +24,32 @@ enum STEPS {
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     fingerprint: string;
-    onDelete: () => Promise<void>;
-    onExport?: () => Promise<void>;
+    privateKey?: DecryptedAddressKey;
+    address: Address;
+    addressKey: AddressKey;
+    name: string;
 }
 
-const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: Props) => {
-    const [step, setStep] = useState(onExport ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
+const DeleteKeyModal = ({ name, address, addressKey, fingerprint, privateKey, ...rest }: Props) => {
+    const [step, setStep] = useState(privateKey ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const handleClose = loading ? noop : onClose;
+    const handleClose = loading ? noop : rest.onClose;
+    const dispatch = useDispatch();
+    const [exportModal, showExportModal] = useModalTwoPromise<{ privateKey: DecryptedAddressKey }>();
+    const handleError = useErrorHandler();
 
     const deleteKey = async () => {
         try {
-            await onDelete();
+            await dispatch(deleteAddressKeyAction({ address, addressKeyID: addressKey.ID }));
             const fp = <code key="0">{fingerprint}</code>;
             createNotification({
                 text: <span>{c('Notification').jt`Key with fingerprint ${fp} has been deleted.`}</span>,
             });
+        } catch (e) {
+            handleError(e);
         } finally {
-            onClose?.();
+            rest.onClose?.();
         }
     };
 
@@ -63,8 +77,12 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                         onClick={async () => {
                             await withLoading(
                                 (async () => {
-                                    await onExport?.();
-                                    await setStep(STEPS.DELETE_KEY);
+                                    try {
+                                        if (privateKey) {
+                                            await showExportModal({ privateKey });
+                                        }
+                                        setStep(STEPS.DELETE_KEY);
+                                    } catch {}
                                 })()
                             );
                         }}
@@ -112,7 +130,26 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
         throw new Error('Unsupported step');
     })();
 
-    return <Prompt {...rest} {...stepProps} />;
+    return (
+        <>
+            {exportModal(({ onResolve, onReject, privateKey, ...rest }) => {
+                return (
+                    <ExportPrivateKeyModal
+                        {...rest}
+                        onClose={() => {
+                            onReject();
+                        }}
+                        onSuccess={() => {
+                            onResolve();
+                        }}
+                        name={name}
+                        privateKey={privateKey.privateKey}
+                    />
+                );
+            })}
+            <Prompt {...rest} {...stepProps} />
+        </>
+    );
 };
 
 export default DeleteKeyModal;
