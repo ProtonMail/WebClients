@@ -1,5 +1,9 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .explore-apps-list {
 	--transition-duration: 0.4s;
@@ -47,7 +51,7 @@
 	inline-size: 5.5rem;
 	transition: inline-size var(--transition-duration) ease;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		inline-size: 7.5rem;
 	}
 
@@ -101,7 +105,7 @@
 	&:hover &-icon,
 	&:focus-visible &-icon {
 		box-shadow: var(--shadow-hover);
-		transform: translateY(rem(-1));
+		transform: translateY(#{rem(-1)});
 
 		&::after {
 			--offset: 0.19rem;
@@ -113,7 +117,7 @@
 	&-description {
 		transition: all var(--transition-duration) ease 0s;
 		opacity: 0;
-		transform: translateY(rem(3));
+		transform: translateY(#{rem(3)});
 	}
 
 	&:hover &-description,
@@ -137,7 +141,7 @@
 		opacity: 1;
 		transform: translateY(0);
 
-		@include media('>small') {
+		@include im.media('>small') {
 			position: absolute;
 			transition: all var(--transition-duration) ease 0s;
 		}
@@ -155,7 +159,7 @@
 
 	&:hover &-plan-badge,
 	&:focus-visible &-plan-badge {
-		@include media('>small') {
+		@include im.media('>small') {
 			opacity: 0;
 			transform: translateY(rem(-2));
 			transition: all var(--transition-duration) ease calc(var(--transition-duration) * 0.7);
@@ -184,6 +188,6 @@
 	}
 
 	&:hover &-new-badge {
-		transform: translateY(rem(-3));
+		transform: translateY(#{rem(-3)});
 	}
 }

@@ -1,3 +1,6 @@
+@use '../lib/rem' as *;
+@use '../lib/include-media' as *;
+
 .button-account {
 	&-container {
 		border: 1px solid var(--border-norm); // inconsistent with borders...

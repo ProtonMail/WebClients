@@ -1,3 +1,7 @@
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
+@use '../utilities/rotate' as *;
+
 *,
 *::before,
 *::after {
@@ -19,7 +23,8 @@ body {
 	color: var(--selection-text-color);
 }
 
-a {
+a,
+.link {
 	color: var(--link-norm);
 	text-decoration: underline;
 	text-decoration-skip-ink: auto;
@@ -206,7 +211,7 @@ details {
 
 	&[open] > summary {
 		.summary-caret {
-			@extend .rotateX-180;
+			@include gen-rotate(x, 180);
 		}
 
 		.summary-triangle {

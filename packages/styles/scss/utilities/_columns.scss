@@ -1,3 +1,5 @@
+@use '../lib/responsive-classes' as *;
+
 @include responsive-classes(
 	(
 		columns-1: (

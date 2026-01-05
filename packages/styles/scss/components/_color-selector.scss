@@ -1,3 +1,6 @@
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
 .color-selector {
 	&-container {
 		--color-item-size: #{em(44)};

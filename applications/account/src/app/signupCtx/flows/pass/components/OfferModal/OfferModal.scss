@@ -1,8 +1,12 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .modal-overlay {
-	background: rgba(0 0 0 / 0.5);
+	background: rgb(0 0 0 / 0.5);
 	backdrop-filter: blur(8px);
 	z-index: map.get($z-indexes, 'modals');
 }
@@ -15,7 +19,7 @@
 	&-title-container {
 		opacity: 0;
 
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			opacity: 1;
 		}
 	}

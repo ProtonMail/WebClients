@@ -1,5 +1,10 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 $field-container: rem(260) !default;
 $modal-max-width: rem(700) !default;
@@ -130,15 +135,15 @@ $modal-full-dimension: 98% !default;
 		.field-container--full {
 			inline-size: calc(100% - var(--label-width, #{$label-width}));
 
-			@include media('<=#{em(1360, 16)}') {
+			@include im.media('<=#{em(1360, 16)}') {
 				inline-size: $field-container;
 			}
 
-			@include media('<=#{em(830, 16)}') {
+			@include im.media('<=#{em(830, 16)}') {
 				inline-size: calc(100% - var(--label-width, #{$label-width}));
 			}
 
-			@include media('<=small') {
+			@include im.media('<=small') {
 				inline-size: 100%;
 			}
 		}
@@ -181,7 +186,7 @@ $modal-full-dimension: 98% !default;
 	}
 }
 
-@include media('height<=#{$breakpoint-low-height-modal}') {
+@include im.media('height<=#{$breakpoint-low-height-modal}') {
 	.inner-modal {
 		max-block-size: $modal-full-dimension;
 	}
@@ -196,7 +201,7 @@ $modal-full-dimension: 98% !default;
 }
 
 // small viewports
-@include media('<=#{$modal-breakpoint-width}') {
+@include im.media('<=#{$modal-breakpoint-width}') {
 	.inner-modal {
 		margin: 1%;
 		min-inline-size: 0;

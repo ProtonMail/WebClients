@@ -1,5 +1,7 @@
-@import '~@proton/styles/scss/lib/index';
-@import '../../composer/composer';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as *;
+@use '../../composer/composer';
 
 .eo {
 	&-message-header {

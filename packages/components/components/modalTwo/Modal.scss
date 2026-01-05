@@ -1,5 +1,11 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .modal-two {
 	position: fixed;
@@ -18,11 +24,11 @@
 	max-inline-size: 100vw;
 	max-block-size: 100vh;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		padding: 2em;
 	}
 
-	@include media('<=xsmall') {
+	@include im.media('<=xsmall') {
 		padding: 1em;
 	}
 
@@ -35,13 +41,13 @@
 	}
 
 	&--fullscreen-on-mobile {
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			padding: 0;
 			align-items: stretch;
 			background: none;
 		}
 
-		@include media('print') {
+		@include im.media('print') {
 			position: absolute;
 			inset-block-end: unset;
 			padding: em(10);
@@ -49,7 +55,7 @@
 	}
 
 	&--fullscreen-on-mobile &-dialog {
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			flex: 1 0 100%;
 			border-radius: 0;
 		}
@@ -119,11 +125,11 @@
 		animation: 0.25s easing(ease-out-cubic) both;
 		animation-name: anime-modal-two-dialog-in;
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			--margin: #{rem(24)};
 		}
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			--margin: #{rem(16)};
 		}
 

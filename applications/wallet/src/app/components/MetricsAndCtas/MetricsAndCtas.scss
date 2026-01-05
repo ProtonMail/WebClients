@@ -1,10 +1,14 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .metrics-and-ctas {
 	&-hr-large {
 		display: none;
 
-		@include media('>=#{rem(1300)}') {
+		@include im.media('>=#{rem(1300)}') {
 			display: block;
 		}
 	}
@@ -12,11 +16,11 @@
 	&-btc-text {
 		display: block;
 
-		@include media('>=#{rem(1000)}') {
+		@include im.media('>=#{rem(1000)}') {
 			display: none;
 		}
 
-		@include media('>=#{rem(1400)}') {
+		@include im.media('>=#{rem(1400)}') {
 			display: block;
 		}
 	}
@@ -24,11 +28,11 @@
 	&-chart {
 		display: none;
 
-		@include media('>=#{rem(1000)}') {
+		@include im.media('>=#{rem(1000)}') {
 			display: none;
 		}
 
-		@include media('>=#{rem(1270)}') {
+		@include im.media('>=#{rem(1270)}') {
 			display: block;
 		}
 	}

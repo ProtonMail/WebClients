@@ -1,5 +1,5 @@
 /* stylelint-disable */
-@import '~@proton/styles/scss/proton-docs';
+@use '~@proton/styles/scss/proton-docs' as *;
 
 @tailwind base;
 @tailwind components;

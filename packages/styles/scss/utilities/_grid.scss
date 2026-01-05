@@ -1,4 +1,6 @@
 @use 'sass:map';
+@use '../lib/rem' as *;
+@use '../lib/responsive-classes' as *;
 
 .grid-auto-fill {
 	display: grid;
@@ -30,12 +32,12 @@
 );
 
 // Create an empty map to make it reachable outside of loops
-$dummy-map: ();
+$dummy-map-grid: ();
 
 // Add `grid-cols` utilities to the map
 @each $columns in (2, 3, 4, 5, 6) {
-	$dummy-map: map.merge(
-		$dummy-map,
+	$dummy-map-grid: map.merge(
+		$dummy-map-grid,
 		(
 			grid-cols-#{$columns}: (
 					grid-template-columns: repeat($columns, minmax(0, 1fr)),
@@ -45,4 +47,4 @@ $dummy-map: ();
 }
 
 // Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
-@include responsive-classes($dummy-map);
+@include responsive-classes($dummy-map-grid);

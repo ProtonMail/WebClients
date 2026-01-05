@@ -1,5 +1,11 @@
 @use 'sass:math';
 @use 'sass:map';
+@use 'sass:meta';
+@use '../lib/rem' as *;
+@use '../lib/responsive-classes' as *;
+@use '../lib/dash-join' as *;
+@use '../lib/str-replace' as *;
+@use '../lib/pixel-to-rem' as *;
 
 // Usually used with `flex` when we want to avoid min sizes to 0 on direct children
 .\*\:min-size-auto > * {
@@ -9,11 +15,7 @@
 
 // ----------------------------------------------------------------------------
 
-@function pixel-to-rem($value) {
-	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
-}
-
-$dummy-map: ();
+$dummy-map-sizing: ();
 
 /// These sizings were defined in collaboration with the Design team.
 /// Please contact the UXE team if you need any additional one.
@@ -43,7 +45,7 @@ $dummy-map: ();
 			@if not(($sizingname == 'auto' and $boundary != '') or ($sizingname == 'none' and $boundary == '')) {
 				$classname: dash-join($boundary, $direction, $sizingname);
 				$value: pixel-to-rem($size);
-				$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
+				$dummy-map-sizing: map.merge($dummy-map-sizing, (#{$classname}: (#{$propname}: #{$value})));
 			}
 		}
 
@@ -54,7 +56,7 @@ $dummy-map: ();
 				@for $j from 1 through $i - 1 {
 					$classname: dash-join($boundary, $direction, $j + '\\\/' + $i);
 					$value: math.div($j, $i) * 100%;
-					$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
+					$dummy-map-sizing: map.merge($dummy-map-sizing, (#{$classname}: (#{$propname}: #{$value})));
 				}
 			}
 		}
@@ -62,9 +64,9 @@ $dummy-map: ();
 		// Customs
 		$classname: dash-join($boundary, $direction, 'custom');
 		$value: var(--#{'[BPN]' + $classname});
-		$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
+		$dummy-map-sizing: map.merge($dummy-map-sizing, (#{$classname}: (#{$propname}: #{$value})));
 	}
 }
 
 // We need to serialize the classes to avoid any cascade ordering issues
-@include responsive-classes($dummy-map);
+@include responsive-classes($dummy-map-sizing);

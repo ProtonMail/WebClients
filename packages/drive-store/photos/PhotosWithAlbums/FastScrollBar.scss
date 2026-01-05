@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 // Attention, this file is complex and rely on a lot of absolute position logic from the photos grid
 // Please touch with extreme caution and a lot of testing

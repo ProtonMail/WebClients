@@ -1,5 +1,7 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/specifics/placeholder-loading';
 
 .b2b-onboarding-modal {
 	&.modal-two-dialog--xlarge {

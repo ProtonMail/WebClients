@@ -1,3 +1,5 @@
+@use '../lib/include-media' as *;
+
 @include media('print') {
 	/**
 	 * add in this all elements which need to be hardly reseted for print

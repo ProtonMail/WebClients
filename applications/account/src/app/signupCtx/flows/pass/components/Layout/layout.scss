@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 body {
 	overflow-y: auto;
@@ -20,11 +23,11 @@ body {
 	.signup-layout-gap {
 		gap: var(--space-4);
 
-		@include media('>medium') {
+		@include im.media('>medium') {
 			gap: 6rem;
 		}
 
-		@include media('>large') {
+		@include im.media('>large') {
 			gap: 10rem;
 		}
 	}

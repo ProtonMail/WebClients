@@ -1,6 +1,6 @@
 .breadcrumb {
 	&-container {
-		@extend .border;
+		border: 1px solid var(--border-norm);
 	}
 
 	&-button {

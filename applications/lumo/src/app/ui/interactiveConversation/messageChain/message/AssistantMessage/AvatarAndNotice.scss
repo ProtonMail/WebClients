@@ -1,4 +1,4 @@
-@import './mobile-constants';
+@use './mobile-constants' as *;
 
 .avatar-and-notice {
 	container-type: inline-size;

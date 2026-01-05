@@ -1,5 +1,8 @@
-@import './mobile-constants';
-@import '~@proton/styles/scss/lib';
+@use './mobile-constants' as *;
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 @keyframes border-spin {
 	100% {

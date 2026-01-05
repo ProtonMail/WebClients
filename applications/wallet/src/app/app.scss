@@ -1,8 +1,10 @@
-@import '~@proton/styles/scss/proton-wallet';
+@use '~@proton/styles/scss/proton-wallet';
 
-@import '~@proton/styles/scss/layout/native';
+@use '~@proton/styles/scss/layout/native';
 
-@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/settings';
+@use '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/specifics/settings';
 
 // Specific styles
-@import 'styles/override', 'styles/app';
+@use 'styles/override';
+@use 'styles/app';

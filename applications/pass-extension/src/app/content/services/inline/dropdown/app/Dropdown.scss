@@ -1,5 +1,5 @@
-@import '~@proton/pass/styles/common';
-@import '~@proton/pass/styles/extension';
+@use '~@proton/pass/styles/common' as *;
+@use '~@proton/pass/styles/extension' as *;
 
 body {
 	background: transparent;

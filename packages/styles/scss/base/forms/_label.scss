@@ -1,3 +1,7 @@
+@use '../../lib/config' as *;
+@use '../../lib/rem' as *;
+@use '../../lib/include-media' as *;
+
 /* label */
 // $label-width defined in global vars
 .label {

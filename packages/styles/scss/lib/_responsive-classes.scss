@@ -1,5 +1,8 @@
 @use 'sass:string';
 @use 'sass:map';
+@use 'sass:meta';
+@use '../lib/include-media' as *;
+@use '../lib/str-replace' as *;
 
 $queries: (
 	default: 'all',
@@ -18,10 +21,16 @@ $queries: (
 	$classstack: '';
 	@each $classname in $classnames {
 		// Remove dot (.) if there is one
-		$classname: if(string.slice($classname, 1, 1) == '.', string.slice($classname, 2, -1), $classname);
+		@if string.slice($classname, 1, 1) == '.' {
+			$classname: string.slice($classname, 2, -1);
+		}
 
 		// Stack classe with dot, comma and responsive prefix
-		$classstack: if($classstack == '', '.' + $prefix + $classname, $classstack + ', .' + $prefix + $classname);
+		@if $classstack == '' {
+			$classstack: '.' + $prefix + $classname;
+		} @else {
+			$classstack: $classstack + ', .' + $prefix + $classname;
+		}
 	}
 	@return $classstack;
 }
@@ -51,17 +60,22 @@ $queries: (
 @mixin responsive-classes($param) {
 	@each $breakpointname, $query in $queries {
 		@include media($query) {
-			$prefix: if($breakpointname == 'default', '', $breakpointname + '\\\:');
-			@if type-of($param) == 'map' {
+			$prefix: $breakpointname + '\\\:';
+			@if $breakpointname == 'default' {
+				$prefix: '';
+			}
+			@if meta.type-of($param) == 'map' {
 				@each $classnames, $properties in $param {
 					#{stack-classenames($classnames, $prefix)} {
 						@each $property, $value in $properties {
 							// Search in the $value string if we need the breakpoint name, e.g. for custom sizing css variables
-							$value: if(
-								string.index(#{$value}, '[BPN]'),
-								str-replace($value, '[BPN]', if($breakpointname == 'default', '', $breakpointname + '-')),
-								$value
-							);
+							@if string.index(#{$value}, '[BPN]') {
+								@if $breakpointname == 'default' {
+									$value: str-replace($value, '[BPN]', '');
+								} @else {
+									$value: str-replace($value, '[BPN]', $breakpointname + '-');
+								}
+							}
 
 							#{$property}: #{$value};
 						}

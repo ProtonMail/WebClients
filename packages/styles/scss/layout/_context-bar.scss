@@ -1,14 +1,20 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .context-bar {
 	background: var(--background-strong);
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		inline-size: $context-bar-width;
 		min-inline-size: rem($context-bar-min-width);
 		max-inline-size: $context-bar-max-width;
 		border-inline-start: 1px solid var(--border-norm);
 	}
 
-	@include media('<=medium') {
+	@include im.media('<=medium') {
 		border-block-start: 1px solid var(--border-norm);
 	}
 

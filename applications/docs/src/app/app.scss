@@ -1,7 +1,8 @@
-@import '~@proton/styles/scss/proton-docs';
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/proton-docs' as *;
 
 // Required for "Move to folder" modal
-@import '~@proton/drive-store/components/FolderTree/FolderTree';
+@use '~@proton/drive-store/components/FolderTree/FolderTree' as *;
 
 :root {
 	--primary-rgb: 109 74 255;

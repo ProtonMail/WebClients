@@ -1,4 +1,10 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
 
 $container-to-width: 4em !default;
 
@@ -25,7 +31,7 @@ $container-to-width: 4em !default;
 		&::before {
 			inline-size: 25%;
 
-			@include media('<=small') {
+			@include im.media('<=small') {
 				inline-size: 50%;
 			}
 		}

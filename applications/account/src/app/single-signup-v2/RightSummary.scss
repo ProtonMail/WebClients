@@ -1,5 +1,3 @@
-@import '~@proton/styles/scss/lib';
-
 .right-summary {
 	--summary-gradient-border-color: 218 211 255;
 	--summary-gradient-background-color-1: rgb(109 74 255 / 0.037);
@@ -9,7 +7,8 @@
 
 	&--gradient {
 		border: 1px solid var(--border-norm);
-		background: linear-gradient(
+		background:
+			linear-gradient(
 				81.4deg,
 				var(--summary-gradient-background-color-1) 0%,
 				var(--summary-gradient-background-color-2) 100%

@@ -1,3 +1,5 @@
+@use '../lib/config' as *;
+
 .ellipsis-loader {
 	display: inline-block;
 	inline-size: 1.3em;

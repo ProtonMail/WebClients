@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 @keyframes rotating {
 	from {
 		transform: rotate(0deg);

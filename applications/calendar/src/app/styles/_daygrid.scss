@@ -1,13 +1,20 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use './config' as calendarconfig;
+
 .calendar-daygrid {
 	min-block-size: rem(410);
 
-	@include media('print') {
+	@include im.media('print') {
 		min-block-size: rem(700);
 	}
 
 	&-weeknumber {
-		border-block-end: $calendar-grid-border;
-		border-inline-end: $calendar-grid-border;
+		border-block-end: calendarconfig.$calendar-grid-border;
+		border-inline-end: calendarconfig.$calendar-grid-border;
 		background-color: var(--background-weak);
 
 		&-width {
@@ -17,11 +24,11 @@
 
 	&-row,
 	&-days {
-		border-block-end: $calendar-grid-border;
+		border-block-end: calendarconfig.$calendar-grid-border;
 	}
 
 	&-day {
-		@include media('screen') {
+		@include im.media('screen') {
 			&[aria-current='true'] {
 				font-weight: var(--font-weight-bold);
 				color: var(--primary);
@@ -35,6 +42,6 @@
 	}
 
 	&-column:not(:last-child) {
-		border-inline-end: $calendar-grid-border;
+		border-inline-end: calendarconfig.$calendar-grid-border;
 	}
 }

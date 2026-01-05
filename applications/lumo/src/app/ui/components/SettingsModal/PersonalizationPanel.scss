@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 
 .personalization-panel {
     display: flex;
@@ -14,7 +18,7 @@
         min-height: 0; /* Allow flex item to shrink */
         
         // On mobile, ensure content doesn't take up all space so footer is visible
-        @include media('<=small') {
+        @include im.media('<=small') {
             max-height: calc(100vh - 16rem); // Reserve space for header, tabs, and footer
         }
     }
@@ -70,7 +74,7 @@
         margin-bottom: 1rem;
         
         // Ensure footer is always visible on mobile
-        @include media('<=small') {
+        @include im.media('<=small') {
             position: sticky;
             bottom: 0;
             z-index: 10;

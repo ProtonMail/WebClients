@@ -1,3 +1,11 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .textarea {
 	min-block-size: rem(36);
 	padding-block: em(7); // 36px height with wrapper borders, same as buttons
@@ -8,13 +16,15 @@
 	color: var(--field-text-color);
 	outline: none;
 	filter: none; // fixes Firefox autofill color
-	transition: 0.15s easing(ease-out-quint), block-size 0s;
+	transition:
+		0.15s easing(ease-out-quint),
+		block-size 0s;
 
-	@include media('<=xsmall') {
+	@include im.media('<=xsmall') {
 		padding-inline: em(8);
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		font-size: max(16px, em($base-font-size));
 	}
 

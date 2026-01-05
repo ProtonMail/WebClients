@@ -1,6 +1,7 @@
 @use 'sass:math';
 
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 
 .circle-loader {
 	$total-length: 43.699; // total length of path, calculated by getTotalLength() in JS

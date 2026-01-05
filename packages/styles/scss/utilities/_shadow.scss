@@ -1,4 +1,5 @@
 // .shadow-norm .shadow-lifted for purgecss
+@use '../lib/responsive-classes' as *;
 
 @each $type in (norm, raised, lifted) {
 	:root {

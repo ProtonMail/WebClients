@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 .composer-assistant {
 	// will need to taxonomise, left as exception ATM

@@ -1,5 +1,7 @@
 @use 'sass:map';
 @use 'sass:math';
+@use '../lib/config' as *;
+@use '../lib/transform-origins' as *;
 
 .spotlight {
 	$arrow-width: 1em;

@@ -1,10 +1,10 @@
-@import '~@proton/styles/scss/proton-drive';
-@import '~@proton/styles/scss/specifics/placeholder-loading';
+@use '~@proton/styles/scss/proton-drive';
+@use '~@proton/styles/scss/specifics/placeholder-loading';
 
-@import './components/sections/Trash/EmptyTrashNotification/EmptyTrashNotification';
-@import './components/FileBrowser/FileBrowser';
-@import './components/FolderTree/FolderTree';
-@import './components/FolderTree/FloatingEllipsis';
-@import './components/modals/ShareLinkModal/ShareLinkModal';
-@import './components/layout/sidebar/DriveSidebar/DriveSidebar';
-@import './components/sections/sections';
+@use './components/sections/Trash/EmptyTrashNotification/EmptyTrashNotification';
+@use './components/FileBrowser/FileBrowser';
+@use './components/FolderTree/FolderTree';
+@use './components/FolderTree/FloatingEllipsis';
+@use './components/modals/ShareLinkModal/ShareLinkModal';
+@use './components/layout/sidebar/DriveSidebar/DriveSidebar';
+@use './components/sections/sections';

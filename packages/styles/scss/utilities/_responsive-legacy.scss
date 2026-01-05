@@ -1,3 +1,5 @@
+@use '../lib/include-media' as *;
+
 @include media('<=small') {
 	.on-mobile {
 		@for $i from 2 through 3 {

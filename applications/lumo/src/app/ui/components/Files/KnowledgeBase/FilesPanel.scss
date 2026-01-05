@@ -1,8 +1,11 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .files-management-modal {
 	// Ensure full screen on mobile
-	@include media('<=small') {
+	@include im.media('<=small') {
 		.modal-two {
 			block-size: 100vh;
 			max-block-size: 100vh;
@@ -35,7 +38,7 @@
 
 .files-panel {
 	// Smooth panel entrance animation
-	@include media('>small') {
+	@include im.media('>small') {
 		animation: slideInFromRight 0.3s ease-out;
 	}
 

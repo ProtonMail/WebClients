@@ -1,8 +1,13 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .user-dropdown {
 	&-button {
-		@include media('<=small') {
+		@include im.media('<=small') {
 			flex-direction: row-reverse;
 			inline-size: 100%;
 			padding: var(--space-2);
@@ -36,11 +41,11 @@
 		&::after {
 			border-radius: var(--border-radius-lg);
 
-			@include media('>=small') {
+			@include im.media('>=small') {
 				border-radius: var(--border-radius-md);
 			}
 
-			@include media('>=large') {
+			@include im.media('>=large') {
 				inset: -$focus-ring-size;
 			}
 		}
@@ -52,11 +57,11 @@
 			max-inline-size: rem(200);
 			text-align: start;
 
-			@include media('>medium') {
+			@include im.media('>medium') {
 				text-align: end;
 			}
 
-			@include media('>=small', '<=large') {
+			@include im.media('>=small', '<=large') {
 				display: none;
 			}
 		}

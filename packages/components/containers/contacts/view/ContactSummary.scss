@@ -1,11 +1,15 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 // ?????
 .contactsummary-list-item {
 	block-size: rem(25);
 }
 
-@include media('<=small') {
+@include im.media('<=small') {
 	.contact-modal-select {
 		max-inline-size: calc(100% - 3.3em);
 	}

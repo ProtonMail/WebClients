@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use 'sass:map';
+@use "sass:map";
 
 /**
  * Convert a $breakpoint map from px to em
@@ -8,10 +8,10 @@
  * @param {Number} $base-value - The base pixel value of the app for media queries
  * @return {Map} - The $breakpoints map converted in em
  */
-@function im-to-em($breakpoints, $base-value: 16px) {
+@function im-to-em($breakpoints-temp, $base-value: 16px) {
 	$new-breakpoints: ();
 
-	@each $name, $value in $breakpoints {
+	@each $name, $value in $breakpoints-temp {
 		$em-value: (math.div($value, $base-value)) * 1em;
 		$new-breakpoints: map.merge(
 			$new-breakpoints,

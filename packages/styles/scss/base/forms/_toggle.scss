@@ -1,4 +1,8 @@
 @use 'sass:math';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
 $toggle-width: em(40) !default;
 $toggle-width-button: em(24) !default;

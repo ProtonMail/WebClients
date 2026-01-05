@@ -1,17 +1,22 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/specifics/bf-background';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@use '~@proton/styles/scss/specifics/bf-background' as *;
 
 .subscription-container-plan-customizer:has(*) {
 	margin-block-end: var(--space-8);
 }
 
-@include media('>xsmall') {
+@include im.media('>xsmall') {
 	.subscription-modal {
 		@include bf-bgs;
 	}
 }
 
-@include media('<=xsmall') {
+@include im.media('<=xsmall') {
 	.subscription-modal-bf-bg {
 		padding: 0;
 		background: var(--background-norm);
@@ -35,7 +40,7 @@
 	}
 }
 
-@include media('>medium') {
+@include im.media('>medium') {
 	// Set height to avoid it switching between steps
 	.subscription-modal--fixed-height {
 		block-size: rem(900);

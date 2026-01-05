@@ -1,4 +1,7 @@
 @use 'sass:math';
+@use '../lib/rem' as *;
+@use '../lib/include-media' as *;
+@use '../utilities/visibility' as *;
 
 $height-wizard: rem(6) !default;
 $size-current-pin: rem(16) !default;
@@ -38,7 +41,7 @@ $size-current-pin: rem(16) !default;
 		position: relative;
 
 		&:not(:last-child) {
-			@extend .flex-1;
+			flex: 1 1 0;
 		}
 
 		// positionned first element always with a aria-current/is-complete

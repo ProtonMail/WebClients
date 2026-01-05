@@ -1,30 +1,25 @@
 @use 'lib/im-to-em' as *;
 
-// Variables specific overrides
-$breakpoints: im-to-em(
-	(
-		'xlarge': 1500px,
-		'large': 1100px,
-		'medium': 940px,
-		'small': 680px,
-		'xsmall': 450px,
-	)
-);
+// Library
+@use 'lib/' as *;
+
 $use-height-auto-td: false;
 $use-height-auto-img: false;
 $use-height-auto-table: false;
 
-// Library
-@import 'lib/';
+// Vendors
+@use 'lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 // Initialisation
-@import 'base/';
+@use 'base/' as *;
 
 // Layout
-@import 'layout/';
+@use 'layout/' as *;
 
 // Components
-@import 'components/';
+@use 'components/' as *;
 
 // Helpers
-@import 'utilities/';
+@use 'utilities/' as *;
