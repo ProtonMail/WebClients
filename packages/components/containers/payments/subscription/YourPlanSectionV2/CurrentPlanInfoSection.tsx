@@ -7,6 +7,7 @@ import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import type { ADDON_NAMES } from '@proton/payments';
 import {
     type Subscription,
@@ -23,7 +24,11 @@ import {
     isTrial,
     subscriptionExpires,
 } from '@proton/payments';
-import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payments/core/subscription/helpers';
+import {
+    isExFamilyTrial,
+    isTrialRenewing,
+    willTrialExpireInLessThan1Week,
+} from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -214,11 +219,14 @@ export const CurrentPlanInfoSection = ({
 
     const { subscriptionExpiresSoon } = subscriptionExpires(subscription);
 
+    const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
+
     const cta = (() => {
         if (
-            !isAutoRenewTrial(subscription) &&
-            willTrialExpireInLessThan1Week(subscription) &&
-            subscriptionExpiresSoon
+            (!isAutoRenewTrial(subscription) &&
+                willTrialExpireInLessThan1Week(subscription) &&
+                subscriptionExpiresSoon) ||
+            (isExFamilyTrial(subscription) && !hasTrialPaymentMethods)
         ) {
             return (
                 <Button onClick={() => handleEditPayment(SUBSCRIPTION_STEPS.CHECKOUT)} data-testid="subscribe">
