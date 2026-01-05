@@ -1,5 +1,11 @@
+@use '../lib/dash-join' as *;
+
 @each $color in (primary, primary-contrast, danger, warning, success, info) {
-	$prefix: if($color != 'primary', 'signal', '');
+	$prefix: 'signal';
+
+	@if $color == 'primary' {
+		$prefix: '';
+	}
 
 	.bg-#{$color} {
 		background-color: var(--#{dash-join($prefix, $color)});

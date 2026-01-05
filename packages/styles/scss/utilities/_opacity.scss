@@ -1,5 +1,6 @@
 // When adding new opacity classes, add the values also in Storybook
 // applications/storybook/src/stories/cssUtilities/Opacity.stories.tsx
+@use '../lib/include-media' as *;
 
 .opacity-80 {
 	opacity: 0.8;

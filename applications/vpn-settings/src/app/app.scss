@@ -1,2 +1,3 @@
-@import '~@proton/styles/scss/proton-vpn-settings';
-@import '~@proton/styles/scss/specifics/placeholder-loading', '~@proton/styles/scss/specifics/settings';
+@use '~@proton/styles/scss/proton-vpn-settings' as *;
+@use '~@proton/styles/scss/specifics/placeholder-loading' as *;
+@use '~@proton/styles/scss/specifics/settings' as *;

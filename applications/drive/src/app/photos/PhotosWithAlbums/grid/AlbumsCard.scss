@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 @keyframes albums-card-loading {
 	/**
@@ -47,7 +48,7 @@
 
 	&-share-icon {
 		background-color: rgb(112 109 107 / 0.8);
-		inline-size: 20px;
-		block-size: 20px;
+		inline-size: rem(20);
+		block-size: rem(20);
 	}
 }

@@ -1,23 +1,16 @@
 // Config
-@import
-	'config';
-
-// Vendors
-@import
-	'~include-media';
+@forward 'config';
 
 // Functions
-@import
-	'em',
-	'rem',
-	'im-to-em',
-	'logical',
-	'str-replace',
-	'easing',
-	'dash-join';
+@forward 'em';
+@forward 'rem';
+@forward 'im-to-em';
+@forward 'logical';
+@forward 'str-replace';
+@forward 'easing';
+@forward 'dash-join';
 
 // Mixins
-@import
-	'vendor-prefix',
-	'transform-origins',
-	'responsive-classes';
+@forward 'vendor-prefix';
+@forward 'transform-origins';
+@forward 'responsive-classes';

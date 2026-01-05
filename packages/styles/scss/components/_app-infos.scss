@@ -1,3 +1,7 @@
+@use '../base/interactive' as *;
+@use '../lib/em' as *;
+@use '../utilities/visibility' as *;
+
 .app-infos {
 	&-fake-meter {
 		block-size: em(4);

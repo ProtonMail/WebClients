@@ -1,5 +1,8 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .transfer-manager-fixed-position {
 	position: fixed;
@@ -16,7 +19,7 @@
 	color: var(--text-norm);
 	overflow: hidden;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		inset-inline: 1rem;
 		inline-size: calc(100vw - 2rem);
 		max-inline-size: calc(100vw - 2rem);

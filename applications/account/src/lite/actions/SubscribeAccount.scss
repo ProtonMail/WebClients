@@ -1,7 +1,10 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/specifics/bf-background';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use '~@proton/styles/scss/specifics/bf-background' as *;
 
-@include media('>xsmall') {
+@include im.media('>xsmall') {
 	.subscribe-account {
 		@include bf-bgs;
 

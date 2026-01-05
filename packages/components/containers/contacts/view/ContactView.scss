@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .contact-view {
 	&-actions {
@@ -15,7 +19,7 @@
 	/*
 	 * Make summary elements wrap at 1500
 	 */
-	@include media('<=xlarge') {
+	@include im.media('<=xlarge') {
 		.contactsummary-contact-name-container {
 			display: flex;
 			flex-direction: column;
@@ -31,7 +35,7 @@
 	/*
 	* triger mobile adaptation around 1000px because... not enough space
 	*/
-	@include media('>medium', '<=large') {
+	@include im.media('>medium', '<=large') {
 		.contactsummary-container {
 			display: block;
 		}

@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib/config';
+@use '~@proton/styles/scss/base/fonts' as *;
 
 pre {
 	// override default monospaced font applied to pre tag

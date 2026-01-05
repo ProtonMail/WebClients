@@ -1,0 +1,158 @@
+@use 'sass:map';
+@use '../lib/dash-join' as *;
+@use '../lib/responsive-classes' as *;
+
+@mixin flex-full-import() {
+	.\*\:items-center > * {
+		align-items: center;
+	}
+
+	.\*\:self-center > * {
+		margin-block: auto;
+		align-self: center;
+	}
+
+	// Create an empty map to make it reachable outside of loops
+	$dummy-map-flex: ();
+
+	// Add `flex-direction` utilities to the map
+	@each $direction in (row, row-reverse, column, column-reverse) {
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				flex-#{$direction}: (
+						flex-direction: $direction,
+					)
+			)
+		);
+	}
+
+	// Add `justify` utilities to the map
+	@each $justify in (start, center, end, space-between, space-around, space-evenly) {
+		// Remove prefix when 'start' and 'end' will be recognized by browsers
+		$prefix: '';
+		@if $justify == start or $justify == end {
+			$prefix: 'flex';
+		}
+
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				justify-#{$justify}: (
+						justify-content: #{dash-join($prefix, $justify)},
+					)
+			)
+		);
+	}
+
+	// Add `flex-wrap` utilities to the map
+	@each $wrap in (wrap, wrap-reverse, nowrap) {
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				flex-#{$wrap}: (
+						flex-wrap: #{$wrap},
+					)
+			)
+		);
+	}
+
+	// Add `order` utilities to the map
+	// Use a for in case we need more
+	@for $i from 0 through 3 {
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				order-#{$i}: (
+						order: #{$i},
+					)
+			)
+		);
+	}
+
+	@each $order in (initial) {
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				order-#{$order}: (
+						order: #{$order},
+					)
+			)
+		);
+	}
+
+	// Add `align-items` utilities to the map
+	@each $align in (start, center, end, baseline, stretch, inherit) {
+		// Remove prefix when 'start' and 'end' will be recognized by browsers
+		$prefix: '';
+		@if $align == start or $align == end {
+			$prefix: 'flex';
+		}
+
+		$dummy-map-flex: map.merge(
+			$dummy-map-flex,
+			(
+				items-#{$align}: (
+						align-items: #{dash-join($prefix, $align)},
+					),
+				self-#{$align}: (
+						align-self: #{dash-join($prefix, $align)},
+					),
+				content-#{$align}: (
+						align-content: #{dash-join($prefix, $align)},
+					)
+			)
+		);
+	}
+
+	// Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
+	@include responsive-classes($dummy-map-flex);
+
+	// ----------------------------------------------------------------------------
+
+	@include responsive-classes(
+		(
+			flex-1: (
+				// Do not use `0%` for basis:
+				// Percentage depends on explicit size of the container, which causes issues with auto height
+				flex: 1 1 0,
+			),
+
+			flex-auto: (
+				flex: 1 1 auto,
+			),
+
+			flex-initial: (
+				flex: 0 1 auto,
+			),
+
+			flex-none: (
+				flex: none,
+			),
+
+			grow: (
+				flex-grow: 1,
+			),
+
+			grow-2: (
+				flex-grow: 2,
+			),
+
+			grow-0: (
+				flex-grow: 0,
+			),
+
+			grow-custom: (
+				flex-grow: var(--#{'[BPN]' + 'grow-custom'}),
+			),
+
+			shrink: (
+				flex-shrink: 1,
+			),
+
+			shrink-0: (
+				flex-shrink: 0,
+			),
+		)
+	);
+}

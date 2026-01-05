@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .file-browser-header-checkbox-cell,
 .file-browser-list-checkbox-cell {
@@ -133,7 +138,7 @@
 }
 
 // This is the size where Accept / Decline buttons can fit in the list view
-@include media('>=#{em(1280, 16)}') {
+@include im.media('>=#{em(1280, 16)}') {
 	body:not(.drawer-is-open) {
 		.file-browser-list-item--accept-decline-cell {
 			inline-size: calc(100% / 6 + 3rem);

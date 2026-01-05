@@ -1,5 +1,9 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 $booking-sidebar-breakpoint: em(1000, 16);
 
@@ -14,7 +18,7 @@ body:has(.booking-sidebar-container) {
 	&-container {
 		animation: booking-sidebar-in 0.15s ease-in-out;
 
-		@include media('<=#{$booking-sidebar-breakpoint}') {
+		@include im.media('<=#{$booking-sidebar-breakpoint}') {
 			position: absolute;
 			inset-block: 0;
 			inline-size: var(--sm-w-custom);

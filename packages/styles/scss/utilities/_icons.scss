@@ -1,3 +1,7 @@
+@use '../lib/rem' as *;
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
+
 %icon-base {
 	display: inline-block;
 	vertical-align: middle;

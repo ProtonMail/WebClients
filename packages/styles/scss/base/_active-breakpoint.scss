@@ -1,8 +1,12 @@
+@use '../lib/include-media' as im;
+
 // Add the screen size inside a pseudo element on <body> to be read in useActiveBreakpoint in React
 body::before {
 	display: none;
 
-	@each $screenSize, $query in (
+	@each $screenSize,
+		$query
+			in (
 				'xsmall': '<=xsmall',
 				'small': '>xsmall',
 				'medium': '>small',
@@ -11,7 +15,7 @@ body::before {
 				'2xlarge': '>xlarge'
 			)
 	{
-		@include media($query) {
+		@include im.media($query) {
 			content: '#{$screenSize}';
 		}
 	}

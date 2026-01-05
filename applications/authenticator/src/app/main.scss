@@ -1,5 +1,5 @@
-@import '~@proton/styles/scss/proton-pass';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/proton-pass' as *;
+@use '~@proton/styles/scss/lib/config' as *;
 
 html,
 body {

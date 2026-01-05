@@ -13,11 +13,11 @@
 } */
 
 @font-face {
-    font-family: 'Syne';
+    font-family: Syne;
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('./Syne-Medium.woff2') format('woff2'), 
-         url('./Syne-Medium.woff') format('woff'), 
-         url('./Syne-Medium.ttf') format('truetype')
+    src: url(~@proton/styles/assets/fonts/Syne-Medium.woff2) format('woff2'), 
+         url(~@proton/styles/assets/fonts/Syne-Medium.woff) format('woff'), 
+         url(~@proton/styles/assets/fonts/Syne-Medium.ttf) format('truetype')
   }

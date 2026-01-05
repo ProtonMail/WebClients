@@ -1,5 +1,9 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 @keyframes slideAcross {
 	from {
@@ -27,7 +31,7 @@
 		animation: slideAcross 0.3s ease-out;
 		border-radius: var(--border-radius-xl);
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			border-radius: 0;
 		}
 	}

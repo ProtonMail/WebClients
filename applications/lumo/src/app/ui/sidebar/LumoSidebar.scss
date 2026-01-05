@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-sidebar {
 	display: flex;
@@ -8,7 +13,7 @@
 	gap: 8px;
 
 	// background-color: var(--background-norm);
-	@include media('<=small') {
+	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 	}
 
@@ -138,7 +143,7 @@
 	border: none;
 	background: transparent;
 	outline: none;
-	font-size: 14px;
+	font-size: rem(14);
 	color: var(--text-norm);
 
 	&::placeholder {
@@ -162,7 +167,7 @@
 
 .search-label {
 	flex: 1;
-	font-size: 14px;
+	font-size: rem(14);
 	color: var(--text-norm);
 	opacity: 1;
 	transition: opacity 0.3s ease;
@@ -244,7 +249,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	color: inherit;
-	font-size: 14px;
+	font-size: rem(14);
 	transition: background-color 0.15s ease;
 	padding-inline: 6px;
 
@@ -291,7 +296,7 @@
 	padding-inline: 8px;
 	margin-block: 8px 4px;
 	margin-inline: 0;
-	font-size: 12px;
+	font-size: rem(12);
 	color: var(--text-weak);
 	font-weight: 600;
 	text-transform: uppercase;
@@ -321,7 +326,7 @@
 }
 
 // Mobile-specific sidebar enhancements (core positioning handled in index.scss)
-@include media('<=small') {
+@include im.media('<=small') {
 	// Reset sidebar bottom padding on mobile
 	.sidebar-section.sidebar-bottom {
 		padding-block-start: 0;
@@ -476,7 +481,7 @@
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
 		block-size: 44px;
-		font-size: 16px;
+		font-size: rem(16);
 	}
 }
 

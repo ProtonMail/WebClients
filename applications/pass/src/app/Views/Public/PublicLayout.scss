@@ -1,5 +1,5 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/pass/styles/lobby';
+@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/pass/styles/lobby' as *;
 
 .pass-public-layout {
 	background: radial-gradient(65% 65% at 100% 100%, rgb(109 87 117 / 1) 0%, rgb(255 255 255 / 0) 100%), #1c173a;

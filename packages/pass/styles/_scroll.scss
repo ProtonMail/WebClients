@@ -1,7 +1,5 @@
-@import '~@proton/styles/scss/lib/config';
-
 .overflow-overlay {
-	overflow: overlay;
+	overflow: overlay; // to check if still useful: already present in utilities
 }
 
 // Scroll.scss override

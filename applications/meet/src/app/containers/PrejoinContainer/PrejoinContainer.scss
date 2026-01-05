@@ -1,5 +1,8 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .action-button {
 	background-color: var(--background-card);
@@ -11,7 +14,7 @@
 	padding: var(--space-4);
 	padding-block-start: 5.63rem;
 
-	@include media('>medium') {
+	@include im.media('>medium') {
 		padding-inline: 0;
 		padding-block-start: 0;
 	}
@@ -19,7 +22,7 @@
 	.prejoin-container-content {
 		block-size: 100%;
 
-		@include media('>medium') {
+		@include im.media('>medium') {
 			block-size: initial;
 		}
 	}

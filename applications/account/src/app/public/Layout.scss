@@ -2,7 +2,13 @@
  * signup specific styles
  */
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .sign-layout {
 	transform: translateZ(0); // to be rendered by GPU
@@ -16,13 +22,13 @@
 		justify-content: space-between;
 		align-items: center;
 
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			display: grid;
 			grid-template-columns: repeat(3, minmax(auto, 100%));
 			justify-content: space-between;
 		}
 
-		@include media('>small') {
+		@include im.media('>small') {
 			grid-template-columns: 30vw minmax(max-content, 100%) 30vw;
 		}
 
@@ -44,12 +50,12 @@
 	}
 
 	&-bg {
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
 		}
 
 		&--dark {
-			@include media('>xsmall') {
+			@include im.media('>xsmall') {
 				--scrollbar-thumb-color: #413085;
 
 				background: #1b1340;
@@ -75,12 +81,12 @@
 		font-weight: var(--font-weight-bold); // design request
 	}
 
-	@include media('>small') {
+	@include im.media('>small') {
 		min-block-size: rem(390); // value to keep back button centered when > mobile breakpoint
 	}
 
 	$three-column-breakpoint: 1300px;
-	@include media('>#{$three-column-breakpoint}') {
+	@include im.media('>#{$three-column-breakpoint}') {
 		&-three-columns {
 			.sign-layout {
 				max-inline-size: rem(375);
@@ -94,7 +100,7 @@
 	}
 
 	// had to add this adaptation because not enough space for back button as we increased size of main content
-	@include media('<=#{$three-column-breakpoint}') {
+	@include im.media('<=#{$three-column-breakpoint}') {
 		&-three-columns {
 			&#{&} {
 				flex-direction: column;
@@ -108,7 +114,7 @@
 	}
 
 	// had to add this adaptation because not enough space for back button as we increased size of main content
-	@include media('<=#{em(1120, 16)}') {
+	@include im.media('<=#{em(1120, 16)}') {
 		&-mobile-columns {
 			&#{&} {
 				flex-direction: column;
@@ -122,7 +128,7 @@
 		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
-	@include media('<=xsmall') {
+	@include im.media('<=xsmall') {
 		&-mobile-columns {
 			&#{&} {
 				.sign-layout-upsell {
@@ -146,7 +152,7 @@
 		font-size: rem(28);
 		font-weight: normal;
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			font-size: em(map.get($title-sizes, 'h3'));
 			margin: 0;
 		}
@@ -171,7 +177,7 @@
 		margin-inline: auto;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		.payment-left,
 		.payment-right {
 			inline-size: 100%;
@@ -185,19 +191,19 @@
 	// special case for Signup in Proton-Account :-\
 	// this overrides only what's needed just below this
 	.payment-side-fields {
-		@include media('<=#{em(768, 16)}') {
+		@include im.media('<=#{em(768, 16)}') {
 			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 		}
 
-		@include media('<=#{em(720, 16)}') {
+		@include im.media('<=#{em(720, 16)}') {
 			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 		}
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 		}
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		}
 	}
@@ -209,15 +215,15 @@
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	gap: var(--space-6);
 
-	@include media('<=#{em(768, 16)}') {
+	@include im.media('<=#{em(768, 16)}') {
 		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 	}
 
-	@include media('<=xsmall') {
+	@include im.media('<=xsmall') {
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	}
 }
@@ -228,7 +234,7 @@
 	--label-width: #{$label-width};
 }
 
-@include media('<=medium') {
+@include im.media('<=medium') {
 	.payment-container {
 		--label-width: 45%;
 	}
@@ -238,7 +244,7 @@
 .account-form-cycle-currency-selectors {
 	inline-size: calc((100% - 3em) / 4); // 4 plans
 
-	@include media('<=#{em(1100, 16)}') {
+	@include im.media('<=#{em(1100, 16)}') {
 		&.flex-nowrap {
 			flex-wrap: wrap;
 
@@ -257,11 +263,11 @@
 	}
 
 	// saved for future dark background
-	// @include media('<=xsmall') {
+	// @include im.media('<=xsmall') {
 	// 	color: var(--link-norm) !important;
 	// }
 
-	// @include media('>xsmall') {
+	// @include im.media('>xsmall') {
 	// 	color: var(--color-norm);
 	// 	opacity: 0.7;
 

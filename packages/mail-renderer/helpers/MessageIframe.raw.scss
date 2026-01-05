@@ -1,9 +1,18 @@
+@use '~@proton/styles/scss/lib/config' as *;
+
 $use-vertical-align-img-iframe: false;
 
-@import '~@proton/styles/scss/lib';
-@import '@proton/styles/scss/base/reset';
-@import '@proton/styles/scss/base/scrollbar';
-@import '@proton/styles/scss/base/custom-properties';
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/base/reset' as *;
+@use '~@proton/styles/scss/base/scrollbar' as *;
+@use '~@proton/styles/scss/base/custom-properties' as *;
+@use '~@proton/styles/scss/utilities/flex-mixins' as *;
+@use '~@proton/styles/scss/utilities/outline-mixins' as *;
 
 /* ----------------------
       EMAIL RESET
@@ -330,10 +339,9 @@ blockquote.protonmail_quote
 	padding-block-end: 1em;
 	overflow: auto;
 
-	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-	@import '~@proton/styles/scss/utilities/flex';
-	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
-	@import '~@proton/styles/scss/utilities/outline';
+	@include flex-full-import;
+
+	@include outline-full-import;
 
 	.sr-only {
 		border: 0;
@@ -497,7 +505,7 @@ blockquote.protonmail_quote
 	}
 }
 
-@include media('print') {
+@include im.media('print') {
 	/**
     * add in this all elements which need to be hardly reseted for print
     */

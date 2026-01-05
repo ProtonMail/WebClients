@@ -1,5 +1,4 @@
 /* stylelint-disable */
 
-@import
-	'init',
-	'optionals';
+@forward 'init';
+@forward 'optionals';

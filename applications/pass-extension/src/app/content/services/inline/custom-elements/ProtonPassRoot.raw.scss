@@ -1,4 +1,8 @@
+<<<<<<< HEAD:applications/pass-extension/src/app/content/services/inline/custom-elements/ProtonPassRoot.raw.scss
 @import './reset';
+=======
+@use '../styles/reset' as *;
+>>>>>>> 43e6a4861aa (Fix Pass extension imports + column list in mail):applications/pass-extension/src/app/content/injections/custom-elements/ProtonPassRoot.raw.scss
 
 :host {
 	@include reset;

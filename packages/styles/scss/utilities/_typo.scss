@@ -1,4 +1,11 @@
 @use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
+@use '~@proton/styles/scss/lib/responsive-classes' as *;
+@use '~@proton/styles/scss/lib/vendor-prefix' as *;
+@use '~@proton/styles/scss/base/reset' as *;
 
 .text-monospace {
 	font-family: $font-family-monospace;
@@ -71,10 +78,6 @@
 			@include vendor-prefix(hyphens, auto, webkit);
 		}
 	}
-}
-
-.link {
-	@extend a;
 }
 
 .link-focus {

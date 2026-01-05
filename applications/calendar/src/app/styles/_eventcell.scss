@@ -1,3 +1,12 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use './config' as calendarconfig;
+
 /*
   Appearance factorization
 */
@@ -119,8 +128,8 @@
 */
 
 .calendar-dayeventcell {
-	padding-inline-end: $calendar-gridcell-margin;
-	padding-block-start: $calendar-gridcell-gutter;
+	padding-inline-end: calendarconfig.$calendar-gridcell-margin;
+	padding-block-start: calendarconfig.$calendar-gridcell-gutter;
 	white-space: nowrap;
 
 	&-inner {
@@ -210,7 +219,7 @@
 		white-space: nowrap;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		&-title,
 		&-timestring {
 			font-size: rem(12);

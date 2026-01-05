@@ -1,4 +1,9 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .drawer-sidebar {
 	min-inline-size: rem(46);
@@ -51,7 +56,7 @@
 
 	&--hide-on-tablet,
 	&--drawer-app-opened {
-		@include media('<=#{em($breakpoint-for-drawer, 16)}') {
+		@include im.media('<=#{em($breakpoint-for-drawer, 16)}') {
 			display: none;
 		}
 	}

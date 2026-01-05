@@ -1,7 +1,11 @@
-@import '~@proton/styles/scss/proton-mail';
+@use '~@proton/styles/scss/proton-mail';
 
-@import '~@proton/styles/scss/layout/native';
+@use '~@proton/styles/scss/layout/native';
 
 // Specific styles
-@import '~@proton/styles/scss/specifics/placeholder-loading', 'styles/layout', 'styles/message', 'styles/attachments',
-	'styles/colors', 'styles/categories_colors';
+@use '~@proton/styles/scss/specifics/placeholder-loading';
+@use 'styles/layout';
+@use 'styles/message';
+@use 'styles/attachments';
+@use 'styles/colors';
+@use 'styles/categories_colors';

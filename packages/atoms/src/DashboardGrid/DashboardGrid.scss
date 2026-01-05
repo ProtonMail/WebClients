@@ -1,11 +1,14 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .DashboardGrid {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-6);
 
-	@include media('>large') {
+	@include im.media('>large') {
 		display: grid;
 		gap: var(--space-4) var(--space-6);
 		grid-template-columns: auto;
@@ -28,7 +31,7 @@
 	}
 
 	&-columns-3 {
-		@include media('>large') {
+		@include im.media('>large') {
 			grid-template: auto auto / 1fr 1fr 1fr;
 			grid-template-areas:
 				'header-left header-center header-right'

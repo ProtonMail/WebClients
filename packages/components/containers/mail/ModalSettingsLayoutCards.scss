@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .layoutCards-two-per-row {
 	&#{&} {
@@ -19,7 +22,7 @@
 			inline-size: 100%;
 		}
 
-		@include media('<=xsmall') {
+		@include im.media('<=xsmall') {
 			grid-template-columns: 1fr;
 		}
 	}

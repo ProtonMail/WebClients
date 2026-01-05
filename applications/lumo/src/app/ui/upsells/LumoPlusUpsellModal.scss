@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+/* stylelint-disable no-duplicate-selectors */
+// will need to fix this later
 
 .modal-two--upsell-lumoplus {
 	--size: #{rem(480)};
@@ -15,13 +19,13 @@
 		.backdrop {
 			display: none !important;
 		}
-		
+
 		// Also try to hide any backdrop by class or element
 		+ .modal-two-backdrop,
 		+ .modal-two-backdrop--in,
 		+ .modal-backdrop,
 		+ .backdrop,
-		+ [class*="backdrop"] {
+		+ [class*='backdrop'] {
 			display: none !important;
 		}
 	}
@@ -74,7 +78,7 @@ body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
 }
 
 // More aggressive backdrop prevention
-[class*="modal-two-backdrop"] {
+[class*='modal-two-backdrop'] {
 	&:has(~ .lumo-plus-backdrop-overlay),
 	body:has(.lumo-plus-backdrop-overlay) & {
 		display: none !important;
@@ -88,18 +92,18 @@ body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
 	// CSS variables for dynamic positioning
 	--start-x: 0%;
 	--start-y: 100%;
-	
+
 	&.lumo-backdrop-hidden {
 		opacity: 0;
-		transform:4 scale(0.1);
+		transform: scale(0.1);
 		border-radius: 100%;
 	}
-	
+
 	&.lumo-backdrop-sweeping {
-		animation: liquidFlow 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+		animation: liquidFlow 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 		will-change: transform, opacity, border-radius;
 	}
-	
+
 	&.lumo-backdrop-visible {
 		opacity: 0.9;
 	}
@@ -111,6 +115,7 @@ body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
 		opacity: 0;
 		clip-path: circle(0% at 50% 100%);
 	}
+
 	100% {
 		opacity: 0.9;
 		clip-path: circle(150% at 50% 50%);
@@ -125,15 +130,16 @@ body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
 @keyframes modalFadeIn {
 	0% {
 		opacity: 0;
+
 		// transform: scale(0.95) translateY(10px);
 	}
+
 	100% {
 		opacity: 1;
+
 		// transform: scale(1) translateY(0);
 	}
 }
-
-
 
 .feature-table-layout {
 	display: grid;
@@ -160,6 +166,7 @@ body:has(.lumo-plus-backdrop-overlay) .modal-two-backdrop--in {
 		opacity: 0;
 		transform: scale(0.95) translateY(10px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: scale(1) translateY(0);

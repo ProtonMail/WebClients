@@ -1,4 +1,7 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .source-favicon:first-child {
 	margin-inline-start: 0;
@@ -6,12 +9,12 @@
 
 .source-favicon {
 	margin-inline-end: -4px;
-	width: 20px;
-	height: 20px;
+	inline-size: 20px;
+	block-size: 20px;
 }
 
 .sources-panel {
-	@include media('>small') {
+	@include im.media('>small') {
 		animation: slideInFromRight 0.3s ease-out;
 	}
 }
@@ -21,6 +24,7 @@
 		transform: translateX(100%);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0);
 		opacity: 1;

@@ -1,8 +1,12 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-settings-modal {
 	// Mobile adjustments
-	@include media('<=small') {
+	@include im.media('<=small') {
 		block-size: auto;
 		min-block-size: calc(100vh - 2rem);
 		max-block-size: calc(100vh - 2rem);
@@ -35,7 +39,7 @@
 		overflow: hidden !important; // Prevent scrolling on desktop
 
 		// Allow natural scrolling on mobile
-		@include media('<=small') {
+		@include im.media('<=small') {
 			overflow: auto !important;
 		}
 	}
@@ -62,7 +66,7 @@
 		flex-direction: column;
 
 		// Mobile specific adjustments
-		@include media('<=small') {
+		@include im.media('<=small') {
 			padding: 1rem;
 			min-block-size: auto;
 			block-size: calc(100vh - 2rem);
@@ -80,7 +84,7 @@
 		padding-block: 2.4rem 1rem;
 
 		// Make sidebar match the height of its parent container on desktop only
-		@include media('>small') {
+		@include im.media('>small') {
 			min-block-size: calc(60vh + 4rem);
 		}
 	}
@@ -94,7 +98,7 @@
 		color: var(--text-weak);
 
 		// Adjust positioning on mobile to align with Settings text
-		@include media('<=small') {
+		@include im.media('<=small') {
 			inset-block-start: 1rem;
 			inset-inline-end: 1rem;
 		}
@@ -125,7 +129,7 @@
 	}
 
 	// Mobile section styling
-	@include media('<=small') {
+	@include im.media('<=small') {
 		.mobile-section-header {
 			border-block-end: 1px solid var(--border-weak);
 			padding-block-end: 0.75rem;
@@ -290,7 +294,7 @@
 	color: #4b5563;
 
 	// Mobile adjustments for better proportions
-	@include media('>small') {
+	@include im.media('>small') {
 		min-block-size: 200px;
 		border-radius: 0.75rem;
 	}

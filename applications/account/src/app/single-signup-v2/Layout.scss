@@ -1,11 +1,15 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 :root {
 	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
 }
 
 .md\:rounded-4xl {
-	@include media('>=medium') {
+	@include im.media('>=medium') {
 		&#{&} {
 			border-radius: var(--border-radius-4xl);
 		}
@@ -18,7 +22,7 @@
 	}
 
 	&-bg {
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background:
 				radial-gradient(38.47% 29.48% at 50% -3.24%, var(--background-norm) 0%, transparent 100%),
 				linear-gradient(180deg, #f7f5ff 0%, transparent 100%), var(--background-norm);
@@ -41,7 +45,7 @@
 			background: linear-gradient(180deg, #2a2247 0%, rgb(42 34 71 / 0.3) 100%);
 		}
 
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background:
 				radial-gradient(37.39% 37.39% at 50.8% 0%, rgb(90 62 207 / 0.6) 0%, rgb(0 0 0 / 0) 100%),
 				#191927;
@@ -57,7 +61,7 @@
 			background: linear-gradient(180deg, #2a2247 0%, rgb(42 34 71 / 0.3) 100%);
 		}
 
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background: linear-gradient(180deg, #392982 0%, transparent 40%);
 		}
 	}
@@ -74,7 +78,7 @@
 			--summary-gradient-border-color: 211 213 255;
 		}
 
-		@include media('>xsmall') {
+		@include im.media('>xsmall') {
 			background: linear-gradient(180deg, #f3f4fc 0%, transparent 40%);
 		}
 	}
@@ -98,7 +102,7 @@
 	.large-font {
 		font-size: rem(40);
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			font-size: rem(24);
 		}
 	}

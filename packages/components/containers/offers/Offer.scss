@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we'll have some display issues.
 
@@ -19,14 +23,14 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 
 			.modal-two-content {
 				margin-block-end: 0;
-				@include media('>small') {
+				@include im.media('>small') {
 					display: flex;
 					inline-size: 100%;
 				}
 			}
 
 			// kill scroll only for desktop
-			@include media('>small') {
+			@include im.media('>small') {
 				.scroll-outer-vertical .scroll-inner,
 				.scroll-child {
 					overflow: hidden;
@@ -52,11 +56,11 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 
 	// for some promotions
 	&-proton-logo {
-		@include media('<=small') {
+		@include im.media('<=small') {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
 		}
 	}
-	@include media('<=small') {
+	@include im.media('<=small') {
 		&-proton-logo {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
 		}
@@ -67,7 +71,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	&-modal &-main-wrapper {
 		margin-inline: -2rem;
 		margin-block-start: -0.5em;
-		@include media('<=small') {
+		@include im.media('<=small') {
 			margin-inline: 0;
 		}
 
@@ -84,12 +88,12 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	&-modal:not(.offer-modal--one-deal) {
 		.offer-main-content {
 			margin-inline: 2rem;
-			@include media('<=small') {
+			@include im.media('<=small') {
 				margin-inline: 0;
 			}
 		}
 
-		@include media('>small') {
+		@include im.media('>small') {
 			.offer-close-button--dark {
 				color: white; // always above a banner, so hardcoded to white
 			}
@@ -100,7 +104,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	&-side-image-container,
 	&-side-image {
 		min-inline-size: 300px;
-		@include media('<=#{em(900, 16)}') {
+		@include im.media('<=#{em(900, 16)}') {
 			min-inline-size: 250px;
 		}
 	}
@@ -117,7 +121,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	// special 2x2 stacking for four plan case
 	&-main-wrapper--four-plans &-wrapper {
 		// special 2x2 stacking for four plan case
-		@include media('<=#{em(1200, 16)}') {
+		@include im.media('<=#{em(1200, 16)}') {
 			flex-wrap: wrap;
 
 			.offer-plan-container {
@@ -156,11 +160,11 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 
 		&:not(:first-child) {
 			margin-inline-start: 1em;
-			@include media('<=small') {
+			@include im.media('<=small') {
 				margin-inline-start: 0;
 			}
 		}
-		@include media('<=small') {
+		@include im.media('<=small') {
 			max-inline-size: none;
 
 			&--mostPopularOnMobile {
@@ -183,10 +187,10 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 
 	&-plan {
 		padding-inline: em(20);
-		@include media('<=#{em(850, 16)}') {
+		@include im.media('<=#{em(850, 16)}') {
 			padding-inline: em(18);
 		}
-		@include media('<=small') {
+		@include im.media('<=small') {
 			padding-inline: em(24);
 		}
 
@@ -217,7 +221,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		}
 
 		// hidden when empty on mobile
-		@include media('<=small') {
+		@include im.media('<=small') {
 			&:empty {
 				display: none;
 			}
@@ -226,10 +230,10 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 
 	&-plan-namePeriod {
 		.offer-modal:not(.offer-modal--one-deal) & {
-			@include media('<=#{em(850, 16)}') {
+			@include im.media('<=#{em(850, 16)}') {
 				min-block-size: 6em; // proton unlimited on 2 lines
 			}
-			@include media('<=small') {
+			@include im.media('<=small') {
 				min-block-size: 0;
 			}
 		}
@@ -242,14 +246,14 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		.currency {
 			font-size: em($amount-size);
 			font-weight: var(--font-weight-bold);
-			@include media('<=#{em(1050, 16)}') {
+			@include im.media('<=#{em(1050, 16)}') {
 				font-size: em(28);
 			}
-			@include media('<=#{em(770, 16)}') {
+			@include im.media('<=#{em(770, 16)}') {
 				// fix for medium viewports
 				font-size: em(24);
 			}
-			@include media('<=small') {
+			@include im.media('<=small') {
 				font-size: em($amount-size);
 			}
 		}
@@ -260,12 +264,12 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 			display: inline-block;
 
 			.offer-modal:not(.offer-modal--one-deal) & {
-				@include media('<=#{em(960, 16)}') {
+				@include im.media('<=#{em(960, 16)}') {
 					min-inline-size: 100%;
 					position: relative;
 					inset-block-start: -0.5em;
 				}
-				@include media('<=small') {
+				@include im.media('<=small') {
 					min-inline-size: 0;
 					position: static;
 				}

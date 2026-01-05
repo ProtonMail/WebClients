@@ -1,5 +1,6 @@
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
 
 $size-tracker: 1rem !default;
 

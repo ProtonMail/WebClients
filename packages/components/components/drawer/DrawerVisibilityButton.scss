@@ -1,5 +1,10 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .drawer-visibility-control {
 	position: absolute;
@@ -48,7 +53,7 @@
 		color: var(--text-weak);
 	}
 
-	@include media('print') {
+	@include im.media('print') {
 		display: none;
 	}
 }

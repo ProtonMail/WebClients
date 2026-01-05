@@ -1,8 +1,10 @@
 @use 'lib/im-to-em' as *;
-@use 'sass:map';
+
+// Library
+@use 'lib/' as *;
 
 // Variables specific overrides
-$breakpoints: im-to-em(
+$breakpoints-product: im-to-em(
 	(
 		'xlarge': 1500px,
 		'large': 1100px,
@@ -12,17 +14,19 @@ $breakpoints: im-to-em(
 	)
 );
 
-// Configuration
-@import 'lib/';
+// Vendors
+@use 'lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 // Initialisation
-@import 'base/';
+@use 'base/' as *;
 
 // Layout
-@import 'layout/';
+@use 'layout/' as *;
 
 // Components
-@import 'components/';
+@use 'components/' as *;
 
 // Helpers
-@import 'utilities/';
+@use 'utilities/' as *;

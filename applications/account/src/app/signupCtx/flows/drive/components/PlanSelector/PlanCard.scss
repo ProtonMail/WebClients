@@ -1,4 +1,6 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
 .drive-signup-plan-card {
 	--plan-card-border-width: 3px;

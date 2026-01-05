@@ -1,5 +1,8 @@
-@import '~@proton/styles/scss/lib';
-@import '~@proton/styles/scss/meet/meet-breakpoints';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
 .personal-meeting-modal {
 	background: #0009;
@@ -8,7 +11,7 @@
 	.modal-two-dialog {
 		box-shadow: none !important;
 
-		@include media('>medium') {
+		@include im.media('>medium') {
 			inline-size: 24.5rem;
 		}
 	}

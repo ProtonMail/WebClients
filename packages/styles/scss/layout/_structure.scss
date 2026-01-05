@@ -1,11 +1,15 @@
 @use 'sass:map';
 @use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 /* fix bug on Chrome */
 body {
-	@extend .overflow-hidden;
-
+	overflow: hidden;
 	block-size: 100%;
 }
 
@@ -52,7 +56,7 @@ html,
 	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
 
-	@include media('>small') {
+	@include im.media('>small') {
 		contain: content;
 		padding-block: var(--space-3);
 		padding-inline: var(--space-2) rem(10);
@@ -86,7 +90,7 @@ html,
 
 		// we need to set up locally drawer-width to 0 when drawer is "above" content and not aside
 		// so the calculation above will be correct
-		@include media('<=#{em($breakpoint-for-drawer, 16)}') {
+		@include im.media('<=#{em($breakpoint-for-drawer, 16)}') {
 			--drawer-width: #{rem(0)};
 		}
 
@@ -182,7 +186,7 @@ html,
 		}
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		position: fixed;
 		inset: 0;
 		z-index: map.get($z-indexes, 'mobile-navigation');
@@ -218,7 +222,7 @@ html,
 	&-backdrop {
 		display: none;
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			display: block;
 			background-color: var(--backdrop-norm);
 			position: fixed;
@@ -242,7 +246,7 @@ html,
 		}
 	}
 
-	@include media('>small') {
+	@include im.media('>small') {
 		block-size: rem($header-height);
 		inline-size: rem($width-sidebar);
 
@@ -253,7 +257,7 @@ html,
 }
 
 .hamburger {
-	@include media('<=small') {
+	@include im.media('<=small') {
 		flex-shrink: 0; // this has to stay
 		margin-inline-end: 0.1em; // just for not touching the text on hover state :)
 	}
@@ -265,7 +269,7 @@ html,
 	box-shadow: var(--main-box-shadow);
 	background: var(--background-norm);
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		margin-inline-end: 0;
 		border-radius: 0;
 		border-inline-start-width: 0;
@@ -289,14 +293,14 @@ html,
 	}
 
 	&-rounded--left {
-		@include media('>small') {
+		@include im.media('>small') {
 			border-inline-start: 1px solid var(--border-weak);
 			border-start-start-radius: var(--border-radius-lg);
 		}
 	}
 
 	&-rounded--right {
-		@include media('>small') {
+		@include im.media('>small') {
 			border-inline-end: 1px solid var(--border-weak);
 			border-start-end-radius: var(--border-radius-lg);
 			overflow: hidden;
@@ -325,7 +329,7 @@ $height-for-mobile: 8em !default;
 	block-size: $height-for-tablet;
 }
 
-@include media('<=small') {
+@include im.media('<=small') {
 	.main-area--padding-fix {
 		padding-block-end: $height-for-mobile;
 

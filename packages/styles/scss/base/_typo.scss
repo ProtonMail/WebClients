@@ -1,4 +1,7 @@
 @use 'sass:math';
+@use '../lib/config' as config;
+@use '../lib/vendor-prefix' as vp;
+@use '../lib/em' as em;
 
 html {
 	/* Introduce `--setting-font-size` to make the font size setting possible. */
@@ -9,22 +12,22 @@ html {
 
 body {
 	color: var(--text-norm);
-	line-height: $base-line-height;
-	font-size: em($base-font-size, $root-default-font-size);
+	line-height: config.$base-line-height;
+	font-size: em.em(config.$base-font-size, config.$root-default-font-size);
 }
 
-@each $tag, $size in $title-sizes {
+@each $tag, $size in config.$title-sizes {
 	#{$tag},
 	.#{$tag} {
 		display: block;
 		margin: 0;
-		font-size: em($size);
+		font-size: em.em($size);
 		font-weight: var(--font-weight-normal);
 	}
 }
 
 /* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
-@if $hyphenation == true {
+@if config.$hyphenation == true {
 	textarea,
 	table,
 	td,
@@ -38,7 +41,7 @@ body {
 
 		@supports (-webkit-hyphens: auto) or (hyphens: auto) {
 			word-break: normal;
-			@include vendor-prefix(hyphens, auto, webkit);
+			@include vp.vendor-prefix(hyphens, auto, webkit);
 		}
 	}
 }

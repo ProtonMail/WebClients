@@ -1,5 +1,8 @@
-@use 'sass:math';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 // Enhanced sign-in section for guest users in chat history
 .chat-history-signin-section {
@@ -12,15 +15,15 @@
 	}
 
 	.chat-history-signin-icon {
-		inline-size: 24px;
-		block-size: 24px;
+		inline-size: rem(24);
+		block-size: rem(24);
 		margin-block-end: 8px;
 		opacity: 0.7;
 		color: var(--primary);
 	}
 
 	.chat-history-signin-title {
-		font-size: 16px;
+		font-size: rem(16);
 		font-weight: 600;
 		color: var(--text-norm);
 		margin: 0;
@@ -28,7 +31,7 @@
 	}
 
 	.chat-history-signin-description {
-		font-size: 14px;
+		font-size: rem(14);
 		color: var(--text-weak);
 		line-height: 1.4;
 		margin: 0;
@@ -76,7 +79,7 @@
 	}
 
 	.chat-history-signin-secondary {
-		font-size: 13px;
+		font-size: rem(13);
 		color: var(--text-weak);
 		margin: 0;
 

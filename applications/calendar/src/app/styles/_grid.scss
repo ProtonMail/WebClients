@@ -1,22 +1,30 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+@use './config' as calendarconfig;
+
 .calendar-grid {
 	&-heading {
 		color: var(--text-norm);
 		font-weight: var(--font-weight-semibold);
 
-		@include media('>small') {
+		@include im.media('>small') {
 			flex-wrap: nowrap;
 		}
 
-		@include media('>small', '<large') {
+		@include im.media('>small', '<large') {
 			padding-inline: 0;
 		}
 
 		&-day {
-			@include media('<=small') {
+			@include im.media('<=small') {
 				inline-size: 100%;
 			}
 
-			@include media('>small') {
+			@include im.media('>small') {
 				margin-inline-end: rem(2);
 			}
 		}
@@ -29,7 +37,7 @@
 			block-size: 1.75em;
 			transition: 0.15s easing(ease-out-quint);
 
-			@include media('>small') {
+			@include im.media('>small') {
 				block-size: rem(28);
 				inline-size: rem(28);
 			}
@@ -44,10 +52,10 @@
 			background-color: var(--interaction-default-active);
 		}
 
-		@include media('screen') {
+		@include im.media('screen') {
 			&[aria-current='date'] {
 				.calendar-grid-heading-day {
-					@include media('>small') {
+					@include im.media('>small') {
 						margin-inline-end: rem(6);
 					}
 				}
@@ -77,9 +85,9 @@
 			}
 		}
 
-		@include media('<=small') {
+		@include im.media('<=small') {
 			&[aria-pressed='true'] &-number {
-				@include media('screen') {
+				@include im.media('screen') {
 					background-color: var(--primary);
 					color: var(--primary-contrast);
 				}
@@ -88,7 +96,7 @@
 	}
 
 	&-gridcells {
-		border-block-end: $calendar-grid-border;
+		border-block-end: calendarconfig.$calendar-grid-border;
 	}
 
 	&-dayLine,
@@ -105,12 +113,12 @@
 		&::after {
 			block-size: 100%;
 			margin-inline-start: -1px;
-			border-inline-start: $calendar-grid-border;
+			border-inline-start: calendarconfig.$calendar-grid-border;
 		}
 	}
 
 	&-hourLine {
-		block-size: $calendar-hour-height-minimum;
+		block-size: calendarconfig.$calendar-hour-height-minimum;
 
 		// we need to check support of lvh, added also max support in case
 		@supports (
@@ -118,21 +126,21 @@
 				max(1rem, 100lvh),
 			)
 		) {
-			block-size: $calendar-hour-height;
+			block-size: calendarconfig.$calendar-hour-height;
 		}
 
 		&::after {
 			inline-size: 100%;
 			margin-block-start: -1px;
-			border-block-end: $calendar-grid-border;
+			border-block-end: calendarconfig.$calendar-grid-border;
 		}
 	}
 
 	&-gridcell {
-		margin-inline-end: $calendar-gridcell-margin;
+		margin-inline-end: calendarconfig.$calendar-gridcell-margin;
 
 		&::after {
-			border-inline-start: $calendar-grid-border;
+			border-inline-start: calendarconfig.$calendar-grid-border;
 			block-size: 100%;
 			margin-inline-start: -1px;
 		}
@@ -140,7 +148,7 @@
 
 	&-nowHourLine {
 		z-index: 8; // Need to be higher than .calendar-eventcell.isSelected's z-index
-		inset-inline: 0 (-$calendar-gridcell-margin);
+		inset-inline: 0 (-#{calendarconfig.$calendar-gridcell-margin});
 		border-block-end: 2px solid var(--primary);
 		box-shadow: var(--shadow-norm);
 		pointer-events: none;
@@ -158,14 +166,14 @@
 	}
 
 	&-timeBlock {
-		block-size: $calendar-hour-height-minimum;
+		block-size: calendarconfig.$calendar-hour-height-minimum;
 
 		@supports (
 			block-size: (
 				max(1rem, 100lvh),
 			)
 		) {
-			block-size: $calendar-hour-height;
+			block-size: calendarconfig.$calendar-hour-height;
 		}
 	}
 
@@ -176,7 +184,7 @@
 }
 
 .calendar-time-grid {
-	@include media('print') {
+	@include im.media('print') {
 		flex-basis: auto;
 	}
 }

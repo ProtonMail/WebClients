@@ -1,5 +1,6 @@
 @use 'sass:map';
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
 
 .tooltip {
 	$tooltip-width: 14.5em;
@@ -84,7 +85,10 @@
 
 	// colored versions
 	@each $color in (primary, danger, warning, success, info) {
-		$prefix: if($color != 'primary', 'signal-', '');
+		$prefix: '';
+		@if $color != 'primary' {
+			$prefix: 'signal-';
+		}
 
 		&-#{$color} {
 			--tooltip-background-color: var(--#{$prefix + $color});

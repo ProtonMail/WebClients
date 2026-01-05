@@ -1,4 +1,7 @@
 @use 'sass:math';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
 @mixin progress-bar-size($size: 0.5em) {
 	block-size: $size;
 	border-radius: #{math.div($size, 2)};

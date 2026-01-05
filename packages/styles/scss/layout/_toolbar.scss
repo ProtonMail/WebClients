@@ -1,3 +1,9 @@
+@use '../lib/config' as *;
+@use '../lib/em' as *;
+@use '../lib/rem' as *;
+@use '../lib/include-media' as *;
+@use '../base/interactive' as *;
+
 .toolbar {
 	--padding-toolbar-button: #{em(9)};
 	--padding-toolbar-button-dropdown: #{em(9)};
@@ -31,7 +37,7 @@
 	}
 
 	&-button {
-		@extend .interactive;
+		@extend %interactive;
 
 		position: relative;
 		display: flex;
@@ -63,7 +69,7 @@
 
 			&-more-selections {
 				--padding-toolbar-button-dropdown: 0;
-				--height-toolbar-button: rem(20) !important;
+				--height-toolbar-button: #{rem(20)} !important;
 			}
 		}
 	}
@@ -87,7 +93,7 @@
 
 	// new select
 	.select {
-		@extend .interactive;
+		@extend %interactive;
 
 		border-color: transparent;
 		background-color: unset;

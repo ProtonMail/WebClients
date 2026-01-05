@@ -1,3 +1,6 @@
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
+
 .item-icon {
 	inline-size: rem($conversation-icon-size);
 	block-size: rem($conversation-icon-size);

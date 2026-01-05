@@ -1,4 +1,5 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
 
 // Increase the challenge width on the iframe to show the input outline correctly.
 // These values (--space-2) go with the bodyClassName on the challenge

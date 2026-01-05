@@ -1,3 +1,5 @@
+@use '../lib/rem' as *;
+
 .aside-link {
 	border-radius: 50%;
 	inline-size: rem(32);

@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
 
 .unsupported-wasm-container {
 	position: absolute;
