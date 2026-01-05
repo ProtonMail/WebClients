@@ -11,8 +11,9 @@ import {
 } from './encryption';
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
-import { StreamProcessor } from './streaming';
 import { makeAbortTransformStream } from './transforms/abort';
+import { makeChunkParserTransformStream } from './transforms/chunks';
+import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
     LumoApiClientConfig,
@@ -155,11 +156,11 @@ export class LumoApiClient {
                 endpoint,
                 signal,
             });
-            const stream = responseBody.pipeThrough(makeAbortTransformStream(signal));
-
+            const stream = responseBody
+                .pipeThrough(makeAbortTransformStream(signal))
+                .pipeThrough(makeUtf8DecodingTransformStream())
+                .pipeThrough(makeChunkParserTransformStream());
             const reader = stream.getReader();
-            const decoder = new TextDecoder('utf-8');
-            const processor = new StreamProcessor();
 
             while (true) {
                 const { done, value } = await reader.read();
@@ -169,80 +170,23 @@ export class LumoApiClient {
                 }
                 if (!value) continue;
 
-                const s = decoder.decode(value, { stream: true });
-                if (s === '') continue;
-
-                // todo: deduplicate complex logic (copy #1)
-                const parsedData = processor.processChunk(s);
-                for (const chunk of parsedData) {
-                    // Decrypt chunk content if needed
-                    let processedChunk = chunk;
-                    if (
-                        chunk.type === 'token_data' &&
-                        chunk.encrypted &&
-                        enableU2LEncryption &&
-                        requestKey &&
-                        requestId
-                    ) {
-                        try {
-                            const adString = `lumo.response.${requestId}.chunk`;
-                            const decryptedContent = await decryptContent(chunk.content, requestKey, adString);
-                            processedChunk = {
-                                ...chunk,
-                                content: decryptedContent,
-                                encrypted: false,
-                            };
-                        } catch (error) {
-                            console.error('Failed to decrypt chunk:', error);
-                            // Continue with encrypted content - let the callback handle it
-                            // FIXME I don't think it's a good idea to pass the encrypted content to the callback in
-                            //  case of error. It means we could start displaying gibberish base64 inside the Lumo UI
-                            //  instead of properly failing.
-                        }
-                    }
-
-                    // Update response context
-                    responseContext.chunkCount++;
-                    if (processedChunk.type === 'token_data') {
-                        responseContext.totalContentLength += processedChunk.content.length;
-                    }
-
-                    // Run response chunk interceptors
-                    try {
-                        processedChunk = await this.notifyResponse(processedChunk, responseContext);
-                    } catch (error: any) {
-                        // Run response error interceptors
-                        await this.notifyResponseError(error, responseContext);
-                        throw error;
-                    }
-
-                    if (chunkCallback) {
-                        const result = await chunkCallback(processedChunk);
-                        if (result && result.error) {
-                            throw result.error;
-                        }
-                    }
-                }
-            }
-
-            // Process any remaining data
-            // todo: deduplicate complex logic (copy #2)
-            const parsedData = processor.finalize();
-            for (const chunk of parsedData) {
                 // Decrypt chunk content if needed
-                let processedChunk = chunk;
-                if (chunk.type === 'token_data' && chunk.encrypted && enableU2LEncryption && requestKey && requestId) {
+                let processedChunk = value;
+                if (value.type === 'token_data' && value.encrypted && enableU2LEncryption && requestKey && requestId) {
                     try {
                         const adString = `lumo.response.${requestId}.chunk`;
-                        const decryptedContent = await decryptContent(chunk.content, requestKey, adString);
+                        const decryptedContent = await decryptContent(value.content, requestKey, adString);
                         processedChunk = {
-                            ...chunk,
+                            ...value,
                             content: decryptedContent,
                             encrypted: false,
                         };
                     } catch (error) {
                         console.error('Failed to decrypt chunk:', error);
                         // Continue with encrypted content - let the callback handle it
+                        // FIXME I don't think it's a good idea to pass the encrypted content to the callback in
+                        //  case of error. It means we could start displaying gibberish base64 inside the Lumo UI
+                        //  instead of properly failing.
                     }
                 }
 
