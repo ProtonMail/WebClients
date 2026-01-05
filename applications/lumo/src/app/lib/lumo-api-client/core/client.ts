@@ -14,6 +14,7 @@ import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStream } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
 import { makeDecryptionTransformStream } from './transforms/decrypt';
+import { makeFinishSink } from './transforms/finish';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
@@ -150,6 +151,7 @@ export class LumoApiClient {
             chunkCount: 0,
             totalContentLength: 0,
         };
+        const thisNotifyResponse = this.notifyResponse.bind(this);
 
         // Call server and read the streamed result
         try {
@@ -157,41 +159,24 @@ export class LumoApiClient {
                 endpoint,
                 signal,
             });
-            const stream = responseBody
-                .pipeThrough(makeAbortTransformStream(signal))
-                .pipeThrough(makeUtf8DecodingTransformStream())
-                .pipeThrough(makeChunkParserTransformStream())
+            // Run the processing stream
+            await responseBody
+                .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
+                .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
+                .pipeThrough(makeChunkParserTransformStream()) // utf8 -> chunk objects
                 .pipeThrough(
+                    // U2L decryption
                     makeDecryptionTransformStream({
                         enableU2LEncryption,
                         requestKey,
                         requestId,
                     })
                 )
-                .pipeThrough(makeContextUpdaterTransformStream(responseContext));
-            const reader = stream.getReader();
+                .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
+                .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
 
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) {
-                    finalStatus = 'succeeded';
-                    break;
-                }
-                if (!value) continue;
-
-                // Run response chunk interceptors
-                let valueTmp: GenerationToFrontendMessage | undefined = value;
-                valueTmp = await this.notifyResponse(valueTmp, responseContext);
-
-                if (chunkCallback) {
-                    const result = await chunkCallback(valueTmp);
-                    if (result && result.error) {
-                        throw result.error;
-                    }
-                }
-            }
-
-            // Run response complete interceptors
+            // Stream is complete
+            finalStatus = 'succeeded';
             await this.notifyResponseComplete(finalStatus, responseContext);
         } catch (error: any) {
             // Run response error interceptors
