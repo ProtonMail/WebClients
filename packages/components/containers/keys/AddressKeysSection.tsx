@@ -1,12 +1,13 @@
 import type { ChangeEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { addressThunk, useInactiveKeys } from '@proton/account';
+import { useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { setAddressKeyFlagAction } from '@proton/account/addressKeys/setAddressKeyFlagAction';
+import { setAddressKeyPrimaryAction } from '@proton/account/addressKeys/setAddressKeyPrimaryAction';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,24 +15,11 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useModals from '@proton/components/hooks/useModals';
-import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { CacheType } from '@proton/redux-utilities';
-import { ForwardingState, ForwardingType, type KeyGenConfig, type KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
-import {
-    addAddressKeysProcess,
-    deleteAddressKey,
-    getPrimaryAddressKeysForSigning,
-    setAddressKeyFlags,
-    setPrimaryAddressKey,
-} from '@proton/shared/lib/keys';
-import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
+import { type Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
+import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
@@ -46,25 +34,23 @@ import { getKeyByID } from './shared/helper';
 import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
-    const { createModal } = useModals();
-    const { stop, start } = useEventManager();
-    const authentication = useAuthentication();
-    const api = useApi();
     const [User] = useUser();
     const [Addresses, loadingAddresses] = useAddresses();
     const [userKeys] = useUserKeys();
     const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
-    const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
-    const createKTVerifier = useKTVerifier();
+    const [maybeAddressIndex, setAddressIndex] = useState(-1);
     const keyReactivationRequests = useInactiveKeys();
     const dispatch = useDispatch();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
+
+    const addressIndex = maybeAddressIndex === -1 ? 0 : maybeAddressIndex;
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
     const addressWithKeys = addressesKeys?.find(({ address }) => address.ID === addressID);
     const addressKeys = addressWithKeys?.keys;
+    const handleError = useErrorHandler();
 
     const {
         address: { displayKeys: addressKeysDisplay, existingAlgorithms },
@@ -79,12 +65,11 @@ const AddressKeysSection = () => {
     const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
     const [importKeyProps, setImportKeyModalOpen, renderImportKey] = useModalState();
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKey] = useModalState();
-
-    useEffect(() => {
-        if (addressIndex === -1 && Array.isArray(Addresses)) {
-            setAddressIndex(0);
-        }
-    }, [addressIndex, Addresses]);
+    const [exportPrivateKeyProps, setExportPrivateKeyOpen, renderExportPrivateKey] = useModalState();
+    const [exportPublicKeyProps, setExportPublicKeyOpen, renderExportPublicKey] = useModalState();
+    const [confirmPrimaryKeyProps, setConfirmPrimaryKeyOpen, renderConfirmPrimaryKey] = useModalState();
+    const [deleteKeyProps, setDeleteKeyOpen, renderDeleteKey] = useModalState();
+    const [tmpId, setTmpId] = useState('');
 
     const isLoadingKey = loadingKeyID !== '';
     const outgoingE2EEForwardings =
@@ -100,56 +85,33 @@ const AddressKeysSection = () => {
               );
     const hasOutgoingE2EEForwardings = outgoingE2EEForwardings.length > 0;
 
+    const handleSetPrimaryKeyHelper = async (address: Address, addressKeyID: string) => {
+        try {
+            setLoadingKeyID(addressKeyID);
+            await dispatch(setAddressKeyPrimaryAction({ address, addressKeyID }));
+        } catch (error) {
+            handleError(error);
+        } finally {
+            setLoadingKeyID('');
+        }
+    };
+
     const handleSetPrimaryKey = async (ID: string) => {
         if (isLoadingKey || !addressKeys || !userKeys || loadingOutgoingAddressForwardings) {
             return;
         }
         const addressKey = getKeyByID(addressKeys, ID);
-
         if (!addressKey || !Address) {
             throw new Error('Key not found');
         }
-
-        const onSetPrimaryKey = async (ID: string) => {
-            try {
-                setLoadingKeyID(ID);
-                const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-                const [, newActiveKeys, formerActiveKeys] = await setPrimaryAddressKey(
-                    api,
-                    Address,
-                    addressKeys,
-                    ID,
-                    keyTransparencyVerify
-                );
-                await Promise.all([
-                    resignSKLWithPrimaryKey({
-                        api,
-                        ktActivation: dispatch(getKTActivation()),
-                        address: Address,
-                        newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
-                        formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                        userKeys,
-                    }),
-                    keyTransparencyCommit(User, userKeys),
-                ]);
-                await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-            } finally {
-                setLoadingKeyID('');
-            }
-        };
-
-        if (!hasOutgoingE2EEForwardings) {
-            return onSetPrimaryKey(ID);
-        }
-
         // any outgoing e2ee forwardings will be paused if the primary key changes;
         // hence we ask for user confirmation
-        createModal(
-            <ChangePrimaryKeyForwardingNoticeModal
-                onMakeKeyPrimary={async () => onSetPrimaryKey(ID)}
-                fingerprint={addressKey.publicKey.getFingerprint()}
-            />
-        );
+        if (hasOutgoingE2EEForwardings) {
+            setTmpId(ID);
+            setConfirmPrimaryKeyOpen(true);
+            return;
+        }
+        return handleSetPrimaryKeyHelper(Address, ID);
     };
 
     const handleSetFlag = async (ID: string, flagAction: FlagAction) => {
@@ -157,24 +119,14 @@ const AddressKeysSection = () => {
             return;
         }
         const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
-
         if (!addressDisplayKey || !Address) {
             throw new Error('Key not found');
         }
-
         try {
             setLoadingKeyID(ID);
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            await setAddressKeyFlags(
-                api,
-                Address,
-                addressKeys,
-                ID,
-                getNewAddressKeyFlags(addressDisplayKey.flags, flagAction),
-                keyTransparencyVerify
-            );
-            await keyTransparencyCommit(User, userKeys);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
+            await dispatch(setAddressKeyFlagAction({ address: Address, addressKeyID: ID, flagAction }));
+        } catch (e) {
+            handleError(e);
         } finally {
             setLoadingKeyID('');
         }
@@ -189,44 +141,8 @@ const AddressKeysSection = () => {
         if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
-        const addressKey = getKeyByID(addressKeys, ID);
-        const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
-        if (!addressDisplayKey || !Address) {
-            throw new Error('Key not found');
-        }
-        const { fingerprint } = addressDisplayKey;
-        const privateKey = addressKey?.privateKey;
-
-        const onDelete = async (): Promise<void> => {
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            await deleteAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
-            await keyTransparencyCommit(User, userKeys);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-        };
-
-        const onExport = (): Promise<void> => {
-            return new Promise((resolve, reject) => {
-                if (!privateKey) {
-                    return reject(new Error('Private key is not decrypted'));
-                }
-                createModal(
-                    <ExportPrivateKeyModal
-                        onClose={reject}
-                        onSuccess={resolve}
-                        name={addressEmail}
-                        privateKey={privateKey}
-                    />
-                );
-            });
-        };
-
-        createModal(
-            <DeleteKeyModal
-                onDelete={onDelete}
-                onExport={privateKey ? onExport : undefined}
-                fingerprint={fingerprint}
-            />
-        );
+        setDeleteKeyOpen(true);
+        setTmpId(ID);
     };
 
     const handleAddKey = () => {
@@ -239,41 +155,6 @@ const AddressKeysSection = () => {
         setAddKeyModalOpen(true);
     };
 
-    const onAdd = async (keyGenConfig: KeyGenConfig | KeyGenConfigV6) => {
-        if (!Address || !addressKeys || !userKeys || !Addresses) {
-            throw new Error('Missing address or address keys');
-        }
-        try {
-            stop();
-            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-            const [newKey, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
-                api,
-                userKeys,
-                keyGenConfig: keyGenConfig,
-                addresses: Addresses,
-                address: Address,
-                addressKeys: addressKeys,
-                keyPassword: authentication.getPassword(),
-                keyTransparencyVerify,
-            });
-            await Promise.all([
-                resignSKLWithPrimaryKey({
-                    api,
-                    ktActivation: dispatch(getKTActivation()),
-                    address: Address,
-                    newPrimaryKeys: getPrimaryAddressKeysForSigning(updatedActiveKeys, true),
-                    formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                    userKeys,
-                }),
-                keyTransparencyCommit(User, userKeys),
-            ]);
-            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
-            return newKey.fingerprint;
-        } finally {
-            start();
-        }
-    };
-
     const handleImportKey = () => {
         if (isLoadingKey || !addressKeys || !userKeys) {
             return;
@@ -281,7 +162,6 @@ const AddressKeysSection = () => {
         if (!Address) {
             throw new Error('Keys not found');
         }
-
         setImportKeyModalOpen(true);
     };
 
@@ -289,29 +169,16 @@ const AddressKeysSection = () => {
         if (isLoadingKey || !addressKeys) {
             return;
         }
-        const decryptedAddressKey = getKeyByID(addressKeys, ID);
-        if (!decryptedAddressKey) {
-            throw new Error('Key not found');
-        }
-        createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={decryptedAddressKey.privateKey} />);
+        setExportPrivateKeyOpen(true);
+        setTmpId(ID);
     };
 
     const handleExportPublic = (ID: string) => {
         if (isLoadingKey || !addressKeys) {
             return;
         }
-        const decryptedAddressKey = getKeyByID(addressKeys, ID);
-        const Key = getKeyByID(Address?.Keys || [], ID);
-        if (!Key) {
-            throw new Error('Key not found');
-        }
-        createModal(
-            <ExportPublicKeyModal
-                name={addressEmail}
-                fallbackPrivateKey={Key.PrivateKey}
-                publicKey={decryptedAddressKey?.publicKey}
-            />
-        );
+        setExportPublicKeyOpen(true);
+        setTmpId(ID);
     };
 
     const { isSelf, isPrivate } = User;
@@ -386,15 +253,21 @@ const AddressKeysSection = () => {
         );
     })();
 
+    const tmpDecryptedAddressKey = getKeyByID(addressKeys || [], tmpId);
+    const tmpAddressKey = getKeyByID(Address?.Keys || [], tmpId);
+    const addressDisplayKey = getKeyByID(addressKeysDisplay, tmpId);
+
     return (
         <>
-            {renderAddKey && (
+            {renderAddKey && Address && (
                 <AddKeyModal
-                    type="address"
+                    target={{
+                        type: 'address',
+                        address: Address,
+                        hasOutgoingE2EEForwardings: hasOutgoingE2EEForwardings,
+                        emailAddress: Address?.Email,
+                    }}
                     existingAlgorithms={existingAlgorithms}
-                    onAdd={onAdd}
-                    hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
-                    emailAddress={Address?.Email}
                     {...addKeyProps}
                 />
             )}
@@ -410,6 +283,54 @@ const AddressKeysSection = () => {
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
                     {...reactivateKeyProps}
+                />
+            )}
+            {renderExportPublicKey && tmpAddressKey && (
+                <ExportPublicKeyModal
+                    name={addressEmail}
+                    fallbackPrivateKey={tmpAddressKey.PrivateKey}
+                    publicKey={tmpDecryptedAddressKey?.publicKey}
+                    {...exportPublicKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        exportPublicKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderExportPrivateKey && tmpDecryptedAddressKey && (
+                <ExportPrivateKeyModal
+                    name={addressEmail}
+                    privateKey={tmpDecryptedAddressKey.privateKey}
+                    {...exportPrivateKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        exportPrivateKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderConfirmPrimaryKey && Address && addressDisplayKey && tmpDecryptedAddressKey && (
+                <ChangePrimaryKeyForwardingNoticeModal
+                    onMakeKeyPrimary={async () => handleSetPrimaryKeyHelper(Address, tmpDecryptedAddressKey.ID)}
+                    fingerprint={addressDisplayKey.fingerprint}
+                    {...confirmPrimaryKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        confirmPrimaryKeyProps.onExit();
+                    }}
+                />
+            )}
+            {renderDeleteKey && Address && tmpAddressKey && addressDisplayKey && (
+                <DeleteKeyModal
+                    name={addressEmail}
+                    address={Address}
+                    addressKey={tmpAddressKey}
+                    privateKey={tmpDecryptedAddressKey}
+                    fingerprint={addressDisplayKey.fingerprint}
+                    {...deleteKeyProps}
+                    onExit={() => {
+                        setTmpId('');
+                        deleteKeyProps.onExit();
+                    }}
                 />
             )}
             {children}
