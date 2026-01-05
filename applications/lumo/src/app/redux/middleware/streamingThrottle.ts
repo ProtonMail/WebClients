@@ -1,6 +1,6 @@
 import type { Middleware } from '@reduxjs/toolkit';
 
-import { appendChunk } from '../slices/core/messages';
+import { appendChunk, finishMessage } from '../slices/core/messages';
 
 /**
  * Streaming Throttle Middleware
@@ -149,7 +149,7 @@ export const streamingThrottleMiddleware: Middleware = (store) => (next) => {
 
     return (action: any) => {
         // If finishMessage arrives, flush any pending chunks FIRST
-        if (action.type === 'lumo/message/finish') {
+        if (action.type === finishMessage.type) {
             const pendingChunks = throttler.flush();
             pendingChunks.forEach((chunk) => {
                 next({

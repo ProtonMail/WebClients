@@ -1,5 +1,4 @@
-import { consider } from 'applications/lumo/src/app/util/nullable';
-
+import { consider } from '../../../../util/nullable';
 import { decryptContent } from '../encryption';
 import type { AesGcmCryptoKey, GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted } from '../types';
 
