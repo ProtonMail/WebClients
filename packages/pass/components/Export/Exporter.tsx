@@ -75,7 +75,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
                     await confirmPassword({
                         reauth: {
-                            type: ReauthAction.SSO_EXPORT,
+                            type: ReauthAction.EXPORT_CONFIRM,
                             data: values,
                             fork: { promptBypass: 'none', promptType: 'default' },
                         },

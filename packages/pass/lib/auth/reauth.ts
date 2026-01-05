@@ -2,10 +2,10 @@ import type { ExportRequestOptions } from '@proton/pass/lib/export/types';
 import type { Maybe } from '@proton/pass/types';
 
 export enum ReauthAction {
-    SSO_BIOMETRICS = 'SSO_BIOMETRICS',
-    SSO_EXPORT = 'SSO_EXPORT',
-    SSO_OFFLINE = 'SSO_OFFLINE',
-    SSO_PW_LOCK = 'SSO_PW_LOCK',
+    BIOMETRICS_SETUP = 'BIOMETRICS_SETUP',
+    EXPORT_CONFIRM = 'EXPORT_CONFIRM',
+    OFFLINE_SETUP = 'OFFLINE_SETUP',
+    PW_LOCK_SETUP = 'PW_LOCK_SETUP',
 }
 
 type ReauthLockChange = {
@@ -16,11 +16,13 @@ type ReauthLockChange = {
 };
 
 export type ReauthActionPayload =
-    | { type: ReauthAction.SSO_BIOMETRICS; data: ReauthLockChange }
-    | { type: ReauthAction.SSO_EXPORT; data: ExportRequestOptions }
-    | { type: ReauthAction.SSO_OFFLINE }
-    | { type: ReauthAction.SSO_PW_LOCK; data: ReauthLockChange };
+    | { type: ReauthAction.BIOMETRICS_SETUP; data: ReauthLockChange }
+    | { type: ReauthAction.EXPORT_CONFIRM; data: ExportRequestOptions }
+    | { type: ReauthAction.OFFLINE_SETUP }
+    | { type: ReauthAction.PW_LOCK_SETUP; data: ReauthLockChange };
 
 /** Checks if the reauth action requires backup password authentication */
 export const isSSOBackupPasswordReauth = ({ type }: ReauthActionPayload) =>
-    type === ReauthAction.SSO_BIOMETRICS || type === ReauthAction.SSO_OFFLINE || type === ReauthAction.SSO_PW_LOCK;
+    type === ReauthAction.BIOMETRICS_SETUP ||
+    type === ReauthAction.OFFLINE_SETUP ||
+    type === ReauthAction.PW_LOCK_SETUP;
