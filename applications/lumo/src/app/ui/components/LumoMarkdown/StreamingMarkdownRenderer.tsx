@@ -116,28 +116,7 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
         // Only re-render if content changed
         // Note: We ignore isStreaming changes because we use effectiveIsStreaming internally
         // which is locked after initial render. This prevents flickering cursor on stream end.
-        if (!contentChanged) {
-            return true; // Props are equal, skip re-render
-        }
-
-        // During streaming, skip re-renders only for very small changes
-        if (nextProps.isStreaming && contentChanged) {
-            const prevLength = prevProps.content?.length || 0;
-            const nextLength = nextProps.content?.length || 0;
-            const delta = nextLength - prevLength;
-
-            // For large content, skip re-render if change is tiny (< 50 characters)
-            if (nextLength > RENDER_RAW_TEXT_THRESHOLD) {
-                if (delta < 50 && delta > 0) {
-                    return true; // Skip re-render
-                }
-            } else if (delta < 20 && delta > 0) {
-                // For smaller content, skip only very tiny changes (< 20 chars)
-                return true;
-            }
-        }
-
-        return false; // Props changed significantly, re-render
+        return !contentChanged; // If props are equal, skip re-render (return true means skip)
     }
 );
 
