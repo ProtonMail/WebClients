@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
+import { SESSION_VERSION, decryptSessionBlob, getPersistedSessionKey } from '@proton/pass/lib/auth/session';
+import type { Maybe } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -20,6 +22,16 @@ import {
 
 export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
     const { authStore, api, onNotification } = auth.config;
+
+    const getPersistedToken = async (localID: Maybe<number>): Promise<Maybe<string>> => {
+        const session = await auth.config.getPersistedSession(localID);
+        const clientKey = await getPersistedSessionKey(auth.config.api, authStore);
+        const payloadVersion = session?.payloadVersion ?? SESSION_VERSION;
+
+        if (!(session?.blob && clientKey)) throw new Error('Could not verify unlock request against persisted session');
+        const decryptedSession = await decryptSessionBlob(clientKey, session?.blob, payloadVersion);
+        return decryptedSession.sessionLockToken;
+    };
 
     const adapter: LockAdapter = {
         type: LockMode.SESSION,
@@ -109,7 +121,6 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
             logger.info(`[SessionLock] unlocking session`);
             await api.reset();
 
-            const currentToken = authStore.getLockToken();
             const currentMode = authStore.getLockMode();
 
             const token = await unlockSession(secret).catch(async (error) => {
@@ -135,6 +146,18 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
                 throw error;
             });
+
+            /** Validate unlock token against persisted session data. This
+             * prevents bypass attacks where an attacker might tamper with
+             * unlock requests when the session is only locked client-side.
+             * We avoid relying on `authStore.getLockToken()` as it is
+             * unstable prior to a full app boot (can reset on auth init/lock). */
+            const currentToken = await getPersistedToken(authStore.getLocalID());
+
+            if (currentToken && currentToken !== token) {
+                await auth.logout({ soft: false, broadcast: true });
+                throw new Error('Invalid session unlock response');
+            }
 
             authStore.setLockToken(token);
             authStore.setLockMode(LockMode.SESSION);
