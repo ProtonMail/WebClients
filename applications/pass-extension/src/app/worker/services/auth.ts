@@ -75,15 +75,6 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (or(clientUnauthorized, clientSessionLocked)(ctx.status)) return false;
             if (clientAuthorized(ctx.status)) return true;
 
-            /** Early permission check on auth init - this avoids failing
-             * with an `Internet connection lost` error if the extension
-             * permissions are too strict for session resuming */
-            if (!(await hasHostPermissions(getMinimalHostPermissions(config)))) {
-                authService.config.onNotification?.({ type: 'error', key: NotificationKey.EXT_PERMISSIONS, text: '' });
-                void authService.config.onSessionFailure?.({ retryable: false });
-                return false;
-            }
-
             return ctx.service.auth.resumeSession(undefined, options);
         }),
 
@@ -205,6 +196,21 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
+
+        onResumeStart: async ({ hasSession }) => {
+            /** Early permission check on session resume - this avoids failing
+             * with an `Internet connection lost` error if the extension
+             * permissions are too strict for session resuming */
+            if (!(await hasHostPermissions(getMinimalHostPermissions(config)))) {
+                if (!hasSession) authService.config.onSessionEmpty?.();
+                else void authService.config.onSessionFailure?.({ retryable: false });
+
+                authService.config.onNotification?.({ type: 'error', key: NotificationKey.EXT_PERMISSIONS, text: '' });
+                return false;
+            }
+
+            return true;
+        },
 
         onUnlocked: withContext(async (ctx, mode, _, localID) => {
             if (clientBooted(ctx.getState().status)) return;

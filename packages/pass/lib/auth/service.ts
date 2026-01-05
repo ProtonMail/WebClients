@@ -140,6 +140,9 @@ export interface AuthServiceConfig {
      * user automatically when requesting a fork from account. Optional `data`
      * object should be persisted for the `result.state` key. */
     onForkRequest?: (result: RequestForkResult, data?: RequestForkData) => void;
+    /** Optional hook when session resuming starts. Returning `false` from this
+     * function will halt the session resume sequence. */
+    onResumeStart?: (data: { hasSession: boolean }) => MaybePromise<boolean>;
     /** Called when an invalid persistent session error is thrown during a
      * session resuming sequence. It will get called with the invalid session
      * and the localID being resumed for retry mechanisms */
@@ -536,18 +539,23 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     try {
                         const memorySession = await config.getMemorySession?.();
                         const persistedSession = await config.getPersistedSession(localID);
+                        const validMemorySession = memorySession && authStore.validSession(memorySession);
+                        const hasSession = Boolean(validMemorySession || persistedSession);
 
-                        /** If we have an in-memory decrypted AuthSession - use it to
-                         * login without making any other API requests. Authorizing
-                         * from in-memory session does not account for force lock, rather
-                         * when locking the in-memory session should be cleared */
-                        if (memorySession && authStore.validSession(memorySession)) {
+                        const proceed = (await config.onResumeStart?.({ hasSession })) ?? true;
+                        if (!proceed) return false;
+
+                        if (validMemorySession) {
+                            /** If we have an in-memory decrypted AuthSession - use it to
+                             * login without making any other API requests. Authorizing
+                             * from in-memory session does not account for force lock, rather
+                             * when locking, the in-memory session should be cleared */
                             logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
                             return await authService.login(memorySession, {});
                         }
 
-                        /** If we have no persisted session to resume from, exit early */
                         if (!persistedSession) {
+                            /** If we have no persisted session to resume from, exit early */
                             logger.info(`[AuthService] No persisted session found`);
                             config.onSessionEmpty?.();
                             return false;
