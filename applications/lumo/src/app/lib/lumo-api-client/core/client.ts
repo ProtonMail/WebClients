@@ -12,6 +12,7 @@ import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStream } from './transforms/chunks';
+import { makeContextUpdaterTransformStream } from './transforms/context';
 import { makeDecryptionTransformStream } from './transforms/decrypt';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
@@ -166,7 +167,8 @@ export class LumoApiClient {
                         requestKey,
                         requestId,
                     })
-                );
+                )
+                .pipeThrough(makeContextUpdaterTransformStream(responseContext));
             const reader = stream.getReader();
 
             while (true) {
@@ -176,12 +178,6 @@ export class LumoApiClient {
                     break;
                 }
                 if (!value) continue;
-
-                // Update response context
-                responseContext.chunkCount++;
-                if (value.type === 'token_data') {
-                    responseContext.totalContentLength += value.content.length;
-                }
 
                 // Run response chunk interceptors
                 let valueTmp: GenerationToFrontendMessage | undefined = value;
