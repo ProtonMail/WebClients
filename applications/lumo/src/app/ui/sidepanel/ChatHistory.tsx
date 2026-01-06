@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { Icon } from '@proton/components';
 
 import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -73,7 +72,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     // const isLoading = !isGuest && !persistence.ready;
     const isLoading = false; // fixme is this correct?
 
-    const { favorites, categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
+    const { categorizedConversations, noConversationAtAll, noSearchMatch } = useMemo(() => {
         const conversations = getVisibleConversations(
             conversationMap,
             spaceMap,
@@ -84,16 +83,15 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
         );
 
         const sortedConversations = conversations.sort(sortByDate('desc'));
-        const allFavorites = sortedConversations.filter((conversation) => conversation.starred === true);
-        const favorites = searchConversations(allFavorites, searchInput); // Apply search filter to favorites
-        const filteredConversations = searchConversations(sortedConversations, searchInput);
+        // Exclude favorites from history - they appear in a separate section
+        const nonFavorites = sortedConversations.filter((conversation) => !conversation.starred);
+        const filteredConversations = searchConversations(nonFavorites, searchInput);
         const categorizedConversations = categorizeConversations(filteredConversations);
 
         return {
-            favorites,
             categorizedConversations,
             noConversationAtAll: sortedConversations.length === 0,
-            noSearchMatch: filteredConversations.length === 0 && sortedConversations.length > 0,
+            noSearchMatch: filteredConversations.length === 0 && nonFavorites.length > 0,
         };
     }, [conversationMap, spaceMap, searchInput, isGuest, conversationId, isGhostChatMode, showProjectConversationsInHistory]);
 
@@ -106,21 +104,6 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
             <Scroll className="flex-1">
-                {favorites.length > 0 && (
-                    <>
-                        <div className="sidebar-section-header">
-                            <Icon name="star" size={4} />
-                            <span>{c('collider_2025:Title').t`Favorites`}</span>
-                        </div>
-                        <div className="max-h-custom overflow-y-auto ml-6" style={{ '--max-h-custom': '20%' }}>
-                            <RecentChatsList
-                                conversations={favorites}
-                                selectedConversationId={conversationId}
-                                onItemClick={onItemClick}
-                            />
-                        </div>
-                    </>
-                )}
                 {/* Enhanced sign-in section for all guest users */}
                 {isGuest && <ChatHistoryGuestUserUpsell />}
 

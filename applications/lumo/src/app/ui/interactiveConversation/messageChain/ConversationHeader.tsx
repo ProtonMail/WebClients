@@ -172,23 +172,25 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                 <HeaderWrapper>
                     <div className="flex flex-row items-center gap-1">
                         {!isGhostChatMode && (
-                            <LumoButton
-                                iconSize={5}
-                                iconName={isStarred ? 'star-filled' : 'star'}
-                                title={
-                                    isStarred
-                                        ? c('collider_2025:Button').t`Unfavorite`
-                                        : c('collider_2025:Button').t`Favorite`
-                                }
-                                alt={c('collider_2025:Button').t`Favorite`}
-                                onClick={handleStarClick}
-                                tooltipPlacement="top"
-                                isActive={isStarred}
-                                className="no-print"
-                                size="medium"
-                            />
+                            <div className="relative">
+                                <LumoButton
+                                    iconSize={5}
+                                    iconName={isStarred ? 'star-filled' : 'star'}
+                                    title={
+                                        isStarred
+                                            ? c('collider_2025:Button').t`Unfavorite`
+                                            : c('collider_2025:Button').t`Favorite`
+                                    }
+                                    alt={c('collider_2025:Button').t`Favorite`}
+                                    onClick={handleStarClick}
+                                    tooltipPlacement="top"
+                                    isActive={isStarred}
+                                    className="no-print"
+                                    size="medium"
+                                />
+                            </div>
                         )}
-
+                        
                         <div className="relative">
                             {totalFiles > 1 && (
                                 <span className="absolute bg-primary text-white text-xs rounded-full min-w-5 h-5 flex items-center justify-center px-1 file-count">
@@ -287,20 +289,22 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
 
                 <div className="flex flex-row items-center gap-1">
                     {!isGhostChatMode && (
-                        <LumoButton
-                            iconName={isStarred ? 'star-filled' : 'star'}
-                            title={
-                                isStarred
-                                    ? c('collider_2025:Button').t`Unfavorite`
-                                    : c('collider_2025:Button').t`Favorite`
-                            }
-                            alt={c('collider_2025:Button').t`Favorite`}
-                            onClick={handleStarClick}
-                            tooltipPlacement="top"
-                            isActive={isStarred}
-                            className="no-print"
-                            size="medium"
-                        />
+                        <div className="relative">
+                            <LumoButton
+                                iconName={isStarred ? 'star-filled' : 'star'}
+                                title={
+                                    isStarred
+                                        ? c('collider_2025:Button').t`Unfavorite`
+                                        : c('collider_2025:Button').t`Favorite`
+                                }
+                                alt={c('collider_2025:Button').t`Favorite`}
+                                onClick={handleStarClick}
+                                tooltipPlacement="top"
+                                isActive={isStarred}
+                                className="no-print"
+                                size="medium"
+                            />
+                        </div>
                     )}
 
                     <div className="relative">
