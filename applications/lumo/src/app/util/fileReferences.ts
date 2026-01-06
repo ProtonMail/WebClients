@@ -20,44 +20,44 @@ export interface FileReference {
  */
 export function parseFileReferences(content: string): FileReference[] {
     const references: FileReference[] = [];
-    
+
     // Pattern 1: @file "filename" or @file filename (legacy format)
     // Supports quoted filenames with spaces: @file "my file.txt"
     // Or unquoted filenames: @file myfile.txt
     const legacyPattern = /@file\s+(?:"([^"]+)"|([^\s@]+))/g;
-    
-    let match;
+
+    let match: RegExpExecArray | null;
     while ((match = legacyPattern.exec(content)) !== null) {
-        const fileName = match[1] || match[2]; // Quoted or unquoted filename
+        const fileName = match[1] || match[2];
+        const matchText = match[0];
+        const matchIndex = match.index;
         references.push({
-            match: match[0],
+            match: matchText,
             fileName: fileName.trim(),
-            startIndex: match.index,
-            endIndex: match.index + match[0].length,
+            startIndex: matchIndex,
+            endIndex: matchIndex + matchText.length,
         });
     }
-    
-    // Pattern 2: @filename.ext (direct @ mention format)
-    // Matches @filename with common file extensions
-    // Must have a file extension to avoid matching @mentions of people/things
+
     const directPattern = /@([^\s@"]+\.(?:pdf|doc|docx|txt|md|csv|xls|xlsx|json|html|xml|rtf|ppt|pptx|png|jpg|jpeg|gif|webp|svg))/gi;
-    
+
     while ((match = directPattern.exec(content)) !== null) {
         const fileName = match[1]; // Filename without @
-        // Check if this reference overlaps with a legacy pattern match
+        const matchText = match[0];
+        const matchIndex = match.index;
         const overlaps = references.some(
-            (ref) => match.index >= ref.startIndex && match.index < ref.endIndex
+            (ref) => matchIndex >= ref.startIndex && matchIndex < ref.endIndex
         );
         if (!overlaps) {
             references.push({
-                match: match[0],
+                match: matchText,
                 fileName: fileName.trim(),
-                startIndex: match.index,
-                endIndex: match.index + match[0].length,
+                startIndex: matchIndex,
+                endIndex: matchIndex + matchText.length,
             });
         }
     }
-    
+
     return references;
 }
 
@@ -71,11 +71,11 @@ export async function resolveFileReferences(
 ): Promise<{ content: string; referencedFiles: { fileName: string; content: string }[] }> {
     const references = parseFileReferences(content);
     const referencedFiles: { fileName: string; content: string }[] = [];
-    
+
     if (references.length === 0) {
         return { content, referencedFiles: [] };
     }
-    
+
     // Resolve all file references
     const resolvedFiles = await Promise.all(
         references.map(async (ref) => {
@@ -87,7 +87,7 @@ export async function resolveFileReferences(
             return null;
         })
     );
-    
+
     // Replace references in reverse order to maintain indices
     let updatedContent = content;
     for (let i = resolvedFiles.length - 1; i >= 0; i--) {
@@ -102,7 +102,7 @@ export async function resolveFileReferences(
                 updatedContent.slice(ref.endIndex);
         }
     }
-    
+
     return { content: updatedContent, referencedFiles };
 }
 

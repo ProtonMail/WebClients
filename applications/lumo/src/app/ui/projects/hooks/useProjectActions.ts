@@ -9,6 +9,7 @@ import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequ
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { SpaceId } from '../../../types';
 import { ConversationStatus } from '../../../types';
+import { sendProjectCreateEvent, sendProjectDeleteEvent } from '../../../util/telemetry';
 
 export const useProjectActions = () => {
     const dispatch = useLumoDispatch();
@@ -34,6 +35,8 @@ export const useProjectActions = () => {
                 })
             );
             dispatch(pushSpaceRequest({ id: spaceId }));
+
+            sendProjectCreateEvent();
 
             // Navigate to the new project detail view (not a conversation)
             history.push(`/projects/${spaceId}`);
@@ -87,6 +90,8 @@ export const useProjectActions = () => {
             // This uses the cascade delete saga which handles all related data
             dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
             dispatch(pushSpaceRequest({ id: spaceId }));
+
+            sendProjectDeleteEvent();
 
             // Navigate to projects list after deletion
             history.push('/projects');
