@@ -1,4 +1,4 @@
-import type { Certificate, GeneralName } from 'pkijs';
+import { type Certificate, type GeneralName, TimeType } from 'pkijs';
 
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
@@ -180,26 +180,20 @@ export const verifyCertChain = async (
 
 /**
  * Extract the list of CT log IDs from the SCTs of the certificate, in the order they appear
+ * @return log IDs in base64, to match the ID format in the CT logs
  */
-export const extractSCTs = (certificate: Certificate) => {
+export const extractSCTs = (certificate: Certificate): string[] => {
     const SignedCertificateTimestampListID = '1.3.6.1.4.1.11129.2.4.2';
-    const timestamps: string[] = [];
 
-    for (let i = 0; certificate.extensions && i < certificate.extensions.length; i++) {
-        if (certificate.extensions[i].extnID === SignedCertificateTimestampListID) {
-            const { parsedValue } = certificate.extensions[i];
-            if (parsedValue) {
-                timestamps.push(
-                    ...parsedValue
-                        .toJSON()
-                        .timestamps.map(({ logID }: { logID: string }) => Uint8Array.fromHex(logID).toBase64())
-                );
-            }
-            break;
-        }
-    }
+    const targetExtension = certificate.extensions?.find(
+        (extension) => extension.extnID === SignedCertificateTimestampListID
+    );
 
-    return timestamps;
+    return targetExtension?.parsedValue
+        ? targetExtension.parsedValue
+              .toJSON()
+              .timestamps.map(({ logID }: { logID: string }) => Uint8Array.fromHex(logID).toBase64())
+        : [];
 };
 
 /**
@@ -212,62 +206,61 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     const logs = ctLogs.operators.flatMap(({ logs, tiled_logs }) =>
         [...logs, ...tiled_logs].map(({ log_id, key }) => ({ log_id, key }))
     );
-    const verified: boolean[] = [];
     const { verifySCTsForCertificate } = await importPkijs();
     // verifySCTsForCertificate mutates the extensions, preserve them
     // for the subsequent calls.
-    const certificateExtensions = certificate.extensions;
+    const originalCertificateExtensions = certificate.extensions;
+    const verifiedSctsFromOperators = new Map<string, number>();
+
     for (let i = 0; i < scts.length; i++) {
-        try {
-            certificate.extensions = certificateExtensions?.slice();
-            verified.push(...(await verifySCTsForCertificate(certificate, issuerCert, logs, i)));
-        } catch (error: any) {
-            verified.push(false);
-            certificate.extensions = certificateExtensions;
-            ktSentryReport('SCT verification failed', {
-                errorMessage: error.message,
+        certificate.extensions = originalCertificateExtensions?.slice();
+
+        const verificationResult = await verifySCTsForCertificate(certificate, issuerCert, logs, i)
+            .catch((error) => {
+                certificate.extensions = originalCertificateExtensions;
+                ktSentryReport('SCT verification failed', {
+                    errorMessage: error.message,
+                    certificate: printCertificate(certificate),
+                    issuerCert: printCertificate(issuerCert),
+                });
+                return [false];
+            })
+            .finally(() => {
+                certificate.extensions = originalCertificateExtensions;
+            });
+
+        if (verificationResult.length !== 1) {
+            throw throwKTError('Unexpected return value from `verifySCTsForCertificate`', {
+                scts: JSON.stringify(scts),
+                verificationResult: JSON.stringify(verificationResult),
                 certificate: printCertificate(certificate),
                 issuerCert: printCertificate(issuerCert),
             });
         }
-    }
-    certificate.extensions = certificateExtensions;
 
-    if (verified.length !== scts.length) {
-        return throwKTError('The number of verified SCTs does not match with the number of SCTs', {
-            scts: JSON.stringify(scts),
-            verified: JSON.stringify(verified),
-            certificate: printCertificate(certificate),
-            issuerCert: printCertificate(issuerCert),
-        });
-    }
-
-    const sctsFromOperators = new Map<string, number>();
-    for (let i = 0; i < scts.length; i++) {
-        const isVerified = verified[i];
-        const logID = scts[i];
+        const [isVerified] = verificationResult;
         if (isVerified) {
+            const logID = scts[i];
             for (const operator of ctLogs.operators) {
                 if (
                     operator.logs.some(({ log_id }) => log_id === logID) ||
                     operator.tiled_logs.some(({ log_id }) => log_id === logID)
                 ) {
                     const operatorName = operator.name;
-                    const previousCount = sctsFromOperators.get(operatorName) || 0;
-                    sctsFromOperators.set(operatorName, previousCount + 1);
+                    const previousCount = verifiedSctsFromOperators.get(operatorName) || 0;
+                    verifiedSctsFromOperators.set(operatorName, previousCount + 1);
                     break;
                 }
             }
         }
     }
 
-    if (sctsFromOperators.size < SCT_THRESHOLD) {
+    if (verifiedSctsFromOperators.size < SCT_THRESHOLD) {
         return throwKTError('The number of verified SCTs does not reach the number of operator threshold', {
             scts: JSON.stringify(scts),
-            verified: JSON.stringify(verified),
             certificate: printCertificate(certificate),
             issuerCert: printCertificate(issuerCert),
-            sctsFromOperators: JSON.stringify([...sctsFromOperators.entries()]),
+            sctsFromOperators: JSON.stringify([...verifiedSctsFromOperators.entries()]),
         });
     }
 };
@@ -275,8 +268,8 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
 export const parseCertTime = (cert: Certificate) => {
     let returnedDate: number;
     switch (cert.notBefore.type) {
-        case 0:
-        case 1:
+        case TimeType.UTCTime:
+        case TimeType.GeneralizedTime:
             returnedDate = cert.notBefore.value.getTime();
             break;
         default:
