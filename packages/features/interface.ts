@@ -129,6 +129,9 @@ export enum FeatureCode {
     // BYOE
     BYOESpotlightModal = 'BYOESpotlightModal',
 
+    // Lumo
+    LumoSmoothedRendering = 'LumoSmoothedRendering',
+
     // NPS
     NPSFeedbackDesktopCalendar = 'NPSFeedbackDesktopCalendar',
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',

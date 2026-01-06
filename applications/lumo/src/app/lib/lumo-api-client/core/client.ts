@@ -35,6 +35,7 @@ import type {
 // Default configuration
 const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
     enableU2LEncryption: true,
+    enableSmoothing: true,
     endpoint: '', // No custom endpoint by default
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
@@ -175,7 +176,7 @@ export class LumoApiClient {
                     })
                 )
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
-                .pipeThrough(makeSmoothingTransformStream())
+                .pipeThrough(makeSmoothingTransformStream(this.config.enableSmoothing))
                 .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
 
             // Stream is complete

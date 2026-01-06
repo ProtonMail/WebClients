@@ -323,6 +323,7 @@ export function sendMessage({
     isEdit,
     updateSibling,
     enableExternalToolsToggled,
+    enableSmoothing = true,
     contextFilters = [],
     datePair,
 }: {
@@ -337,6 +338,7 @@ export function sendMessage({
     isEdit?: boolean;
     updateSibling?: (message: Message | undefined) => void;
     enableExternalToolsToggled: boolean;
+    enableSmoothing?: boolean;
     contextFilters?: any[];
     datePair?: [string, string];
 }) {
@@ -526,6 +528,7 @@ export function sendMessage({
                 assistantMessageId: assistantMessageWithContext.id,
                 signal,
                 enableExternalTools: noAttachment && enableExternalToolsToggled,
+                enableSmoothing,
                 requestTitle: shouldRequestTitle,
                 contextFilters,
                 personalizationPrompt,
@@ -553,6 +556,7 @@ export function regenerateMessage(
     messagesWithContext: Message[],
     signal: AbortSignal,
     enableExternalTools: boolean,
+    enableSmoothing: boolean = true,
     contextFilters: any[] = [],
     retryInstructions?: string
 ) {
@@ -697,6 +701,7 @@ export function regenerateMessage(
                     enableExternalTools,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                        enableSmoothing,
                     },
                     errorHandler: createLumoErrorHandler(),
                 })
@@ -885,6 +890,7 @@ export async function fetchAssistantResponse({
     assistantMessageId,
     signal,
     enableExternalTools,
+    enableSmoothing = true,
     requestTitle = false,
     contextFilters = [],
     personalizationPrompt,
@@ -902,6 +908,7 @@ export async function fetchAssistantResponse({
     assistantMessageId: string;
     signal: AbortSignal;
     enableExternalTools: boolean;
+    enableSmoothing?: boolean;
     requestTitle?: boolean;
     contextFilters?: any[];
     personalizationPrompt?: string;
@@ -1017,6 +1024,7 @@ export async function fetchAssistantResponse({
             requestTitle,
             config: {
                 enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                enableSmoothing,
             },
             errorHandler: createLumoErrorHandler(),
         })
