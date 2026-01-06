@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { type FreePlanDefault, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
 import {
@@ -28,7 +28,15 @@ import {
     getStorageFeatureB2B,
     getVersionHistory,
 } from './drive';
-import { get24x7Support, getAdminPanel, getPassMonitor, getSentinel, getSupport, getUsersFeature } from './highlights';
+import {
+    get24x7Support,
+    getAdminPanel,
+    getNUsersText,
+    getPassMonitor,
+    getSentinel,
+    getSupport,
+    getUsersFeature,
+} from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan } from './interface';
 import { getLumoPlusFeatures, getLumoProfessionalFeatures } from './lumo';
 import {
@@ -119,11 +127,7 @@ export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
 
 export const getUpToNUsers = (numberOfUsers: number): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').ngettext(
-            msgid`${numberOfUsers} user`,
-            `Up to ${numberOfUsers} users`,
-            numberOfUsers
-        ),
+        text: getNUsersText(numberOfUsers),
         included: true,
     };
 };
