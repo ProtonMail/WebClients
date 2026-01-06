@@ -5346,6 +5346,9 @@
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Kontaktný email rezervácie: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Stránka rezervácií bola vymazaná"
       ],
@@ -5640,6 +5643,9 @@
       "Host": [
         "Hostiteľ"
       ],
+      "How far in advance can someone book?": [
+        "Ako dlho vopred je možné rezervovať?"
+      ],
       "How long should an appointment last?": [
         "Ako dlho by mala trvať schôdzka?"
       ],
@@ -5799,6 +5805,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Správy zo všetkých vašich emailových adries budú chodiť do vašej schránky."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 hodiny vopred"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 hodín vopred"
+      ],
       "Monitor accounts": [
         "Monitorujte účty"
       ],
@@ -5852,6 +5864,9 @@
       ],
       "Not connected": [
         "Nepripojené"
+      ],
+      "Not on the same day": [
+        "Nie v rovnaký deň"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -6324,6 +6339,9 @@
       "Where will the appointment take place?": [
         "Kde sa bude konať stretnutie?"
       ],
+      "Which calendars should block bookings?": [
+        "Ktoré kalendáre by mali blokovať rezervácie?"
+      ],
       "Which event would you like to delete?": [
         "Ktorú udalosť si prajete zmazať?"
       ],
@@ -6775,6 +6793,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
       "Account holder": [
         "Vlastník účtu"
       ],
@@ -6786,6 +6807,9 @@
       ],
       "Add image URL": [
         "Pridať URL adresu obrázka"
+      ],
+      "Add notice period": [
+        "Pridať upovedomenie o termíne"
       ],
       "Add to group": [
         "Pridať do skupiny"
@@ -6856,6 +6880,9 @@
       "Category": [
         "Kategória"
       ],
+      "Check additional calendars for availability": [
+        "Skontrolovať dostupnosť v ďalších kalendároch"
+      ],
       "City": [
         "Mesto"
       ],
@@ -6867,6 +6894,9 @@
       ],
       "Colors": [
         "Farby"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ],
       "Company": [
         "Spoločnosť"

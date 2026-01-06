@@ -131,6 +131,9 @@
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "将推荐链接添加到 ${ MAIL_APP_NAME } 签名中"
       ],
+      "Add sieve filter": [
+        "创建 Sieve 筛选规则"
+      ],
       "Add user": [
         "添加用户"
       ],
@@ -887,9 +890,6 @@
       "Pay ${ price } now": [
         "立即支付 ${ price }"
       ],
-      "Pay once": [
-        "一次性支付"
-      ],
       "Preview": [
         "预览"
       ],
@@ -910,6 +910,9 @@
       ],
       "Quote": [
         "引用"
+      ],
+      "Reactivate keys": [
+        "重新激活密钥"
       ],
       "Reconnect": [
         "重新连接"
@@ -2226,6 +2229,9 @@
       ],
       "Advanced account protection": [
         "高级账户保护"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能。"
       ],
       "Cancel and downgrade": [
         "取消并降级"
@@ -4318,17 +4324,30 @@
         "验证邮件已发至 ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Set up email forwarding": [
+        "设置邮件自动转发"
+      ]
+    },
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "请尝试重新打开链接。"
       ]
     },
     "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "自动将收到的邮件转发至另一邮箱地址。"
+      ],
       "You can safely close this tab.": [
         "您可以安全地关闭此页面了。"
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
         "您不会收到 ${ boldForwarderEmail } 自动转发的电子邮件。"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "了解详情"
       ]
     },
     "email_forwarding_2023: Title": {
@@ -4604,6 +4623,9 @@
       ],
       "Invalid postal code": [
         "邮政编码不正确"
+      ],
+      "Invalid Sieve code": [
+        "Sieve 代码无效"
       ],
       "Invalid URL": [
         "链接无效"
@@ -5839,6 +5861,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
+      ],
       "Allow:": [
         "白名单："
       ],
@@ -7365,6 +7390,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
       ],
+      "Download your PGP keys for use with other PGP-compatible services.": [
+        "您可以下载 PGP 密钥用于其他兼容 PGP 的服务。"
+      ],
       "Drop file here to upload": [
         "拖至此处上传文件"
       ],
@@ -7878,6 +7906,9 @@
       "Learn more about Gateways": [
         "了解网关"
       ],
+      "learn more about Sieve programming language": [
+        "进一步了解 Sieve 编程语言"
+      ],
       "Learn more about single sign-on": [
         "进一步了解单点登录"
       ],
@@ -8081,6 +8112,9 @@
       ],
       "One time import": [
         "一次性导入"
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才需要更改下列选项。"
       ],
       "Open source": [
         "开放源代码"
@@ -8469,6 +8503,15 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需使用此功能，请先生成 SMTP 专用密码。"
+      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "使信息延后通知以便它们在您需要时出现在收件箱顶部"
       ],
@@ -8801,6 +8844,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等值。"
@@ -9206,6 +9252,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
+      ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ${ MAIL_APP_NAME }。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "可以使用以下凭据，通过诸如 macOS 下的 Tunnelblick 和 GNU/Linux 下的 OpenVPN 等第三方开源 VPN 客户端，连接到 ${ VPN_APP_NAME } 服务器。"
@@ -9804,6 +9853,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "了解如何操作"
+      ],
+      "Learn more": [
+        "了解详情"
       ]
     },
     "Label": {
@@ -9957,6 +10009,9 @@
       "Assertion Consumer Service URL": [
         "断言消费者服务 URL"
       ],
+      "Attach public key": [
+        "附上公钥"
+      ],
       "Attach screenshot(s)": [
         "截图"
       ],
@@ -9974,6 +10029,9 @@
       ],
       "Auto-delete unwanted messages": [
         "自动删除无用邮件"
+      ],
+      "Auto-reply": [
+        "自动回复"
       ],
       "Auto-unsubscribe": [
         "自动退订邮件"
@@ -10172,6 +10230,9 @@
       ],
       "Default language": [
         "默认语言"
+      ],
+      "Default PGP scheme": [
+        "默认 PGP 格式"
       ],
       "Default scrollbars": [
         "使用默认滚动条"
@@ -10419,9 +10480,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
       ],
-      "Limited time": [
-        "限时"
-      ],
       "Logo": [
         "图标"
       ],
@@ -10620,6 +10678,9 @@
       "Previous password": [
         "先前的密码"
       ],
+      "Prompt to trust keys": [
+        "询问是否信任密钥"
+      ],
       "Proration": [
         "当前等级结余"
       ],
@@ -10706,6 +10767,9 @@
       ],
       "Show week numbers": [
         "显示周数"
+      ],
+      "Sign external messages": [
+        "对向外发送的邮件予以数字签名"
       ],
       "Signature": [
         "落款"
@@ -10826,6 +10890,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Verify keys with Key Transparency": [
+        "通过密钥透明化系统验证密钥"
       ],
       "Vulnerable": [
         "易受攻击"
@@ -11426,6 +11493,11 @@
       ],
       "For individuals": [
         "面向个人"
+      ]
+    },
+    "mail_signup_2025: Info": {
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "${ BRAND_NAME } 商业版的所有应用与高级功能，为您的企业数据全方位保驾护航"
       ]
     },
     "mailtrial2024: Action": {
@@ -12410,6 +12482,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
+      ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "设置自动回复以通知发件人您不在办公室或无法回复。"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "专用VPN解决方案，提供安全、无限制、高速的互联网访问。"
@@ -14299,6 +14374,12 @@
       ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "所有 ${ BRAND_NAME } 付费产品均包含在 Duo 套餐中。"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 的所有高级功能。"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "适合需要 ${ maxSpace } 存储空间的用户以及情侣。"
@@ -16761,6 +16842,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
       ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能，内置全方位隐私保护，您可以放心使用，无需担心数据与身份安全受到任何威胁。"
+      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"
       ],
@@ -17655,6 +17739,9 @@
       "Add pm.me subdomain": [
         "添加 pm.me 子域名"
       ],
+      "Add Sieve filter": [
+        "创建 Sieve 筛选规则"
+      ],
       "Add to allow list": [
         "加入白名单"
       ],
@@ -18047,6 +18134,9 @@
       ],
       "Edit servers": [
         "编辑服务器"
+      ],
+      "Edit Sieve filter": [
+        "更改 Sieve 筛选规则"
       ],
       "Edit the list of servers of the gateway": [
         "编辑分配给网关的服务器列表"
@@ -19199,6 +19289,21 @@
       ],
       "Waiting for user to accept the invitation": [
         "等待用户接受邀请"
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "发送邮件时自动附上您的公钥，以便收件人验证邮件真实性并向您回复加密邮件。"
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "选择面向非 ${ BRAND_NAME } 用户加密与数字签名的默认 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "自动对向外发送的所有邮件予以数字签名，以便对方验证邮件真实性。签名采用的默认 PGP 格式可在下方设置。"
       ]
     },
     "Tooltip; share calendar modal ": {

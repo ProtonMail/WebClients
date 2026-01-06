@@ -975,7 +975,7 @@
         "Bliv her"
       ],
       "Stop using single sign-on": [
-        "Stop med at bruge single sign-on"
+        "Stop med at bruge enkeltlogon"
       ],
       "Submit": [
         "Indsend"
@@ -1353,7 +1353,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }'s indbakke"
+        "Indbakke for ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 trackere fjernet"
@@ -3441,7 +3441,7 @@
         "${ name } tilføjet"
       ],
       "${ name } deletion failed": [
-        "${ name } sletning mislykkedes"
+        "${ name } kunne ikke slettes"
       ],
       "${ name } failed to move to allow list": [
         "${ name } kunne ikke flyttes til tilladelseslisten"
@@ -3542,7 +3542,7 @@
         "Chrome"
       ],
       "Desktop": [
-        "Desktop"
+        "Skrivebord"
       ],
       "Download for Linux": [
         "Download til Linux"
@@ -3702,7 +3702,7 @@
         "QR-kode-login deaktiveret"
       ],
       "QR code sign-in enabled": [
-        "QR-kode-login aktiveret"
+        "Login med QR-kode aktiveret"
       ],
       "Scan QR code on your mobile device to sign in": [
         "Scan QR-kode på din mobilenhed for at logge ind"
@@ -5267,7 +5267,7 @@
         "Navn"
       ],
       "Organization key fingerprint": [
-        "Organisationsnøgle-fingeraftryk"
+        "Organisationsnøglefingeraftryk"
       ],
       "Password ends with": [
         "Adgangskode slutter med"
@@ -5904,7 +5904,7 @@
         "${ vaultLink } opdateret"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "${ vpnPlus } påkrævet for forbindelse på landniveau."
+        "${ vpnPlus } påkrævet for forbindelse på landeniveau."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } påkrævet for at få Secure Core-funktion."
@@ -6231,6 +6231,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
       ],
+      "Compromised": [
+        "Kompromitteret"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder (IdP). Dette vil aktivere SAML for hele organisationen."
       ],
@@ -6349,7 +6352,7 @@
         "standard e-mailadresse"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
+        "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }s prioritet har det laveste tal."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
@@ -6501,7 +6504,7 @@
         "End-to-end e-mailkryptering er deaktiveret for denne gruppe på grund af eksterne adresser."
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
-        "End-to-end e-mailkryptering er deaktiveret for denne gruppe. Det kan aktiveres."
+        "End-to-end-e-mailkryptering er deaktiveret for denne gruppe. Det kan aktiveres."
       ],
       "End-to-end email encryption is enabled for this group.": [
         "End-to-end e-mailkryptering er aktiveret for denne gruppe."
@@ -6510,7 +6513,7 @@
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
       ],
       "Ends on ${ formattedPeriodEndDate }": [
-        "Slutter den ${ formattedPeriodEndDate }"
+        "Slutter ${ formattedPeriodEndDate }"
       ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
@@ -6687,7 +6690,7 @@
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
+        "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -6884,7 +6887,7 @@
         "Lær mere om gateways"
       ],
       "Learn more about single sign-on": [
-        "Lær mere om single sign-on"
+        "Lær mere om enkeltlogon"
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Se hvad du skal gøre her ${ dataLeakedLink }"
@@ -7305,7 +7308,7 @@
         "Skan denne kode med din autentifikator-app for at konfigurere din konto. ${ switchButton }."
       ],
       "SCIM integration disabled": [
-        "SCIM-integration slået fra"
+        "SCIM-integration deaktiveret"
       ],
       "SCIM token active": [
         "SCIM-token aktiv"
@@ -7587,7 +7590,7 @@
         "Denne besked vil ikke nå supportteamet, hvis du har et problem med vores service eller ønsker yderligere hjælp fra vores side ${ supportLink }."
       ],
       "This service is not available to users signing in with single sign-on.": [
-        "Denne tjeneste er ikke tilgængelig for brugere, der logger ind med single sign-on."
+        "Denne tjeneste er ikke tilgængelig for brugere, der logger ind med enkeltlogon."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
@@ -8151,7 +8154,7 @@
         "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
-        "Det er ikke muligt at gendanne låste data ved hjælp af dine indsamlede gendannelsesfiler. Dette forhindrer også enhedsbaseret gendannelse."
+        "Det er ikke muligt at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette deaktiverer også enhedsbaseret gendannelse."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
@@ -8267,7 +8270,7 @@
         "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
       ],
       "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+        "Nøglen ${ fingerprint } er allerede blevet uploadet"
       ],
       "Optional": [
         "Valgfri"
@@ -9115,10 +9118,10 @@
         "Show ${ n } administratorer"
       ],
       "Single sign-on Entity ID": [
-        "Single sign-on enheds-ID"
+        "ID for enkeltlogonenhed"
       ],
       "Single sign-on URL": [
-        "Single sign-on URL"
+        "Enkeltlogon-URL"
       ],
       "Spam": [
         "Spam"
@@ -9669,7 +9672,7 @@
         "Log ud"
       ],
       "Two password mode disabled": [
-        "To-adgangskodetilstand deaktiveret"
+        "Tilstand med to adgangskoder er deaktiveret"
       ],
       "Two password mode enabled": [
         "To-adgangskodetilstand aktiveret"
@@ -9849,7 +9852,7 @@
         "Australske Dollars"
       ],
       "Brazilian real": [
-        "Brasiliansk real"
+        "Brasilianske real"
       ],
       "British pound": [
         "Britisk pund"
@@ -10549,7 +10552,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+        "Ellers vil adgangen til din konto være begrænset, og din konto vil i sidste ende blive deaktiveret."
       ],
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
         "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
@@ -10893,7 +10896,7 @@
     },
     "news": {
       "${ app } and ${ additionalApp } product updates": [
-        "${ app } og ${ additionalApp } produktopdateringer"
+        "Produktopdateringer til ${ app } og ${ additionalApp }"
       ],
       "${ app } product updates": [
         "${ app } produktopdateringer"
@@ -11598,7 +11601,7 @@
         "Alle administratorer vil få afgang til nøglen"
       ],
       "Are you sure you want to change your organization key?": [
-        "Er du sikker på at du vil ændre organisationsnøglen?"
+        "Er du sikker på, at du vil ændre organisationsnøglen?"
       ],
       "Change organization key": [
         "Skift organisationsnøgle"
@@ -12475,6 +12478,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Ugyldig værdi"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Levetiden skal være længere end ${ MIN_LIFETIME } dag",
         "Levetiden skal være større end ${ MIN_LIFETIME } dage"
@@ -13481,7 +13487,7 @@
     },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ boldedMemberAddress } beder om din hjælp til at logge ind på sin/deres ${ BRAND_NAME }-konto med single sign-on."
+        "${ boldedMemberAddress } beder om din hjælp til at logge ind på sin/deres ${ BRAND_NAME }-konto med enkeltlogon."
       ],
       "${ n } member requested your help to sign in.": [
         "${ n } medlem har bedt om hjælp til at logge ind",
@@ -13621,7 +13627,7 @@
         "Dette er den eneste måde at gendanne hele din konto på, så sørg for at opbevare den et sikkert sted."
       ],
       "Join ${ organizationName }": [
-        "Tilmeld ${ organizationName }"
+        "Tilmeld dig ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Sørg for at gemme den et sikkert sted, så du kan komme tilbage til din konto, hvis du mister adgang til dine legitimationsoplysninger til din identitetsudbyder."
@@ -13636,7 +13642,7 @@
         "Ikke-SSO brugere (oprettet manuelt, ikke leveret af din identitetsudbyder) kan stadig logge ind på din organisation."
       ],
       "Once single sign-on is disabled for your organization:": [
-        "Når single sing-on er deaktiveret for din organisation:"
+        "Når enkeltlogon er deaktiveret for din organisation:"
       ],
       "Reject": [
         "Afvis"
@@ -13648,10 +13654,10 @@
         "Fjern alle andre enheder"
       ],
       "Remove single sign-on": [
-        "Fjern single sign-on"
+        "Fjern enkeltlogon"
       ],
       "Remove single sign-on for your organization?": [
-        "Fjern single sign-on for din organisation?"
+        "Fjern enkeltlogon for din organisation?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Angiv en backupadgangskode for at tilføje et ekstra lag af beskyttelse. Den giver dig mulighed for at logge ind, hvis du bliver låst ude, så sørg for at opbevare den et sikkert sted."
@@ -13672,7 +13678,7 @@
         "Log ind på din organisation"
       ],
       "Sign out and in again to change your backup password": [
-        "Log ud og ind igen for at ændre din backup password"
+        "Log ud og ind igen for at ændre din backupadgangskode"
       ],
       "Sign-in confirmed": [
         "Login bekræftet"
@@ -13690,7 +13696,7 @@
         "Single sign-on fjernet"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "Brugeren ${ user } er nu en single sign-on-konto. Den tidligere adgangskode blev ændret til at være backupadgangskode."
+        "Brugeren ${ user } er nu en enkeltlogonkonto. Den tidligere adgangskode blev ændret til at være backupadgangskode."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
         "For at få adgang til ${ BRAND_NAME }-tjenester skal de logge ind igen via deres identitetsudbyder. For at denne bruger kan logge ind skal der være vished for, at de findes hos deres identitetsudbyder."
@@ -14120,7 +14126,7 @@
         "Produktivitetsfunktioner til e-mail"
       ],
       "Extra storage and bonuses": [
-        "Få ekstra lagerplads og bonusser"
+        "Ekstra lagerplads og brugere"
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
@@ -15521,7 +15527,7 @@
         "Fjern server?"
       ],
       "Remove single sign-on": [
-        "Fjern single sign-on"
+        "Fjern enkeltlogon"
       ],
       "Remove user?": [
         "Fjern bruger?"
@@ -15647,7 +15653,7 @@
         "Forenkle adgangskodehåndtering"
       ],
       "Single sign-on": [
-        "Single sign-on"
+        "Enkeltlogon"
       ],
       "Spam, block, and allow lists": [
         "Spam-, blokerings- og tilladelseslister"
@@ -15684,7 +15690,7 @@
         "Skift til én-adgangskode-tilstand"
       ],
       "Switch to two-password mode": [
-        "Skift til to-adgangskode-tilstand"
+        "Skift til tilstand med to adgangskoder"
       ],
       "Text": [
         "Tekst"
@@ -15962,7 +15968,7 @@
         "URL-adresse til slutpunkt fra identitetsudbyder (f.eks. https://idp.example.com/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Uden single sign-on-brugere, hvis 2FA håndteres af din identitetsudbyder"
+        "Uden enkeltlogonbrugere hvis tofaktorgodkendelse håndteres af din identitetsudbyder"
       ],
       "Feature in early access": [
         "Funktion i tidlig adgang"
@@ -15983,7 +15989,7 @@
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Single-sign-on-brugere vil ikke modtage e-mailpåmindelsen."
+        "Medlemmer, der ikke bruger tofaktorgodkendelse, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Enkeltlogonbrugere vil ikke modtage e-mailpåmindelsen."
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke alle oplysninger på listen blev afsløret for alle brugere"
@@ -16081,7 +16087,7 @@
         "Sender medlemsinvitation"
       ],
       "User declined invitation": [
-        "Bruger afviste invitation"
+        "Brugeren afviste invitationen"
       ],
       "Waiting for user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
@@ -16239,7 +16245,7 @@
         "Dette vil tilbagekalde administratortilladelsen til håndtering af denne brugers konto."
       ],
       "To gain administrator rights, they will have to set a backup password the next time they sign in to ${ BRAND_NAME }.": [
-        "For at opnå administratorrettigheder skal de indstille en backupadgangskode næste gang de logger ind på ${ BRAND_NAME }."
+        "For at opnå administratorrettigheder skal de indstille en backupadgangskode, næste gang de logger ind på ${ BRAND_NAME }."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "For at fortsætte skal du bede om brugerens tilladelse til at tilgå deres data eller nulstille deres adgangskode."

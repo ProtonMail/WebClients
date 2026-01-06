@@ -1505,8 +1505,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4489,7 +4488,7 @@
         "Bu kişi dışa aktarılamadı"
       ],
       "Cannot set expiration longer than retention policy allows.": [
-        "Verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için son geçerlilik tarihi ayarlanamaz."
+        "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -7383,7 +7382,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -15590,14 +15590,14 @@
       "Your free trial has ended": [
         "Ücretsiz deneme süreniz sona erdi"
       ],
+      "Your newsletters in one place": [
+        "Bültenleriniz tek bir yerde"
+      ],
       "Your plan": [
         "Tarifeniz"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
-      ],
-      "Your subscriptions in one place": [
-        "Abonelikleriniz tek bir yerde"
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"

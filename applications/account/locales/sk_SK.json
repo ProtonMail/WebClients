@@ -1059,6 +1059,9 @@
       "Open navigation": [
         "Otvoriť menu"
       ],
+      "Open recovery settings": [
+        "Otvoriť nastavenia obnovy"
+      ],
       "Opt out": [
         "Odhlásiť sa"
       ],
@@ -1079,9 +1082,6 @@
       ],
       "Pay ${ price } now": [
         "Zaplatiť teraz ${ price }"
-      ],
-      "Pay once": [
-        "Zaplaťte raz"
       ],
       "Preview": [
         "Náhľad"
@@ -7863,6 +7863,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in to older versions of ${ BRAND_NAME } mobile apps.": [
+        "Rozumiem, že sa už nebudem môcť prihlásiť do starších verzií mobilných aplikácií ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webová aplikácia"
@@ -8970,6 +8975,12 @@
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizovať kódy** do všetkých vašich zariadení"
+      ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Týmto sa deaktivuje end-to-end šifrované preposielanie emailov:** môžete ich neskôr znovu nastaviť."
+      ],
+      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
+        "**Vaše metódy obnovy budú zneplatnené:** nové údaje na obnovenie môžete vygenerovať neskôr."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } ďalšia",
@@ -10693,6 +10704,9 @@
       "Private AI assistant": [
         "Súkromný AI asistent"
       ],
+      "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
+        "Chráňte svoj účet pred hrozbami kvantového výpočtového výkonu pomocou kvantovo odolných kryptografických kľúčov."
+      ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
       ],
@@ -11953,6 +11967,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated.": [
+        "Váš účet bol úspešne aktualizovaný."
+      ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
       ],
@@ -12693,6 +12710,9 @@
       "6 Pass Plus accounts": [
         "6 účtov Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
       "Account holder": [
         "Vlastník účtu"
       ],
@@ -12941,6 +12961,9 @@
       ],
       "Colors": [
         "Farby"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ],
       "Common passwords": [
         "Bežné heslá"
@@ -13359,9 +13382,6 @@
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
       ],
-      "Limited time": [
-        "Časovo obmedzené"
-      ],
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
       ],
@@ -13493,6 +13513,9 @@
       ],
       "Online privacy for your whole family": [
         "Online súkromie pre celú vašu rodinu"
+      ],
+      "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
+        "Dostupné len v platných plánoch ${ PASS_SHORT_APP_NAME }"
       ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
@@ -18112,17 +18135,66 @@
         "Navýšiť na ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Couldn’t generate keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\n${ settingsLink } and select 'Generate key' for your account and for each address.": [
+        "Kľúče sa nepodarilo vygenerovať. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\n${ settingsLink } a vyberte možnosť „Vygenerovať kľúč“ pre svoj účet a pre každú adresu."
+      ]
+    },
+    "PQC adress key generation": {
+      "Couldn’t generate address keys. To activate post-quantum protection, you’ll need to generate your new encryption keys manually.\n\nGo to ${ settingsLink } and select 'Generate key' for each address.": [
+        "Nepodarilo sa vygenerovať klúče adresy. Ak chcete aktivovať postkvantovú ochranu, budete musieť nové šifrovacie kľúče vygenerovať ručne.\n\nPrejdite na ${ settingsLink } a pre každú adresu vyberte možnosť „Vygenerovať kľúč“."
+      ]
+    },
+    "PQC compatibility warning": {
+      "**You must update all ${ BRAND_NAME } mobile apps**: your new keys won't work on older app versions.": [
+        "**Musíte aktualizovať všetky mobilné aplikácie ${ BRAND_NAME }**: vaše nové kľúče nebudú fungovať v starších verziách aplikácií."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Týmto sa vygenerujú nové kvantovo odolné šifrovacie kľúče pre váš účet."
+      ]
+    },
     "PQC optin": {
+      "Couldn't enable post-quantum protection": [
+        "Nepodarilo sa aktivovať postkvantovú ochranu"
+      ],
       "Enable and generate keys": [
         "Povoliť a generovať kľúče"
       ],
       "Enable post-quantum protection?": [
         "Povoliť postkvantovú ochranu?"
+      ],
+      "Enabling post-quantum protection...": [
+        "Povoľovanie postkvantovej ochrany..."
+      ],
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Prejsť do ${ encryptionAndKeysSettingsTitle }"
+      ],
+      "Please try again. If that doesn’t work, contact our customer support team.": [
+        "Skúste to znova, prosím. Ak to nepomôže, kontaktujte náš tím zákazníckej podpory."
+      ],
+      "Post-quantum protection": [
+        "Postkvantová ochrana"
+      ],
+      "Post-quantum protection is enabled": [
+        "Postkvantová ochrana je povolená"
       ]
     },
     "pqc-optin: Action": {
+      "Close": [
+        "Zavrieť"
+      ],
       "Got it": [
         "Rozumiem"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Don't forget to generate new recovery data.": [
+        "Nezabudnite si vygenerovať nové obnovovacie údaje."
+      ],
+      "Post-quantum protection is enabled.": [
+        "Postkvantová ochrana je povolená."
       ]
     },
     "pqc-optin: Progress status": {
@@ -18508,6 +18580,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Neplatná hodnota"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Životnosť musí byť väčšia ako ${ MIN_LIFETIME } deň",
         "Životnosť musí byť väčšia ako ${ MIN_LIFETIME } dni",
@@ -21461,9 +21536,6 @@
       "Free forever": [
         "Navždy zadarmo"
       ],
-      "Pay once, access forever.": [
-        "Zaplaťte raz, prístup navždy."
-      ],
       "per month, billed annually": [
         "mesačne, účtované každý rok"
       ],
@@ -23037,9 +23109,6 @@
       ],
       "Other sign-in issues": [
         "Iné problémy s prihlásením"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime za ${ plusLifetimePrice }"
       ],
       "Password": [
         "Heslo"

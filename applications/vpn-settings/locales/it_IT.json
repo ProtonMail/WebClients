@@ -1770,24 +1770,108 @@
       ]
     },
     "BOSS": {
+      "${ migratedCount } of ${ providerUsers.length }": [
+        "${ migratedCount } di ${ providerUsers.length }"
+      ],
       "${ n } year ago": [
         "${ n } anno",
         "${ n } anni"
       ],
+      "Add a domain": [
+        "Aggiungi un dominio"
+      ],
+      "Add more users...": [
+        "Aggiungi più utenti..."
+      ],
+      "Authenticate": [
+        "Autenticati"
+      ],
+      "Calendar": [
+        "Calendario"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
+      "Domain ownership verified": [
+        "Possesso del dominio verificato"
+      ],
       "Domain setup": [
         "Configurazione del dominio"
+      ],
+      "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
+        "Le notifiche email verranno inviate all’inizio e al completamento della migrazione. Riceverai inoltre avvisi in caso di errori o se la migrazione viene sospesa a causa di link scaduti."
+      ],
+      "Estimated size": [
+        "Dimensioni Stimate"
       ],
       "Everything": [
         "Tutto"
       ],
+      "Failed to load OAuth": [
+        "Impossibile caricare OAuth"
+      ],
+      "Install migration app": [
+        "Installa l’app di migrazione"
+      ],
+      "Learn more about what can be migrated. Learn more": [
+        "Scopri di più su cosa può essere migrato. Scopri di più"
+      ],
+      "Mail": [
+        "E-mail"
+      ],
+      "Migrate": [
+        "Migra"
+      ],
+      "Migrate from Google Workspace": [
+        "Migra da Google Workspace"
+      ],
       "Migrate users": [
         "Migra gli utenti"
+      ],
+      "Migration includes": [
+        "La migrazione include"
+      ],
+      "Not started": [
+        "Non iniziato"
+      ],
+      "Required to create user accounts": [
+        "Necessario per creare account utente"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
         "Seleziona cosa vuoi migrare; questa scelta si applicherà a tutti gli utenti, sia quelli già esistenti sia quelli creati in futuro. La migrazione inizierà dopo la creazione degli account utente."
       ],
       "Set up": [
         "Configura"
+      ],
+      "Sign in to Google Workspace": [
+        "Accedi a Google Workspace"
+      ],
+      "Status": [
+        "Stato"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Markeplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
+        "Per migrare i dati della tua organizzazione, devi installare l’app ${ BRAND_NAME } Migration Assistant dal Google Workspace Marketplace. Questo concederà a ${ BRAND_NAME } il permesso di copiare i tuoi dati. Dopo l’installazione, torna qui per continuare. Scopri di più"
+      ],
+      "Transfer data from": [
+        "Trasferisci dati da"
+      ],
+      "User": [
+        "Utente"
+      ],
+      "Users migrated": [
+        "Utenti migrati"
+      ],
+      "Verify your domain": [
+        "Verifica il tuo dominio"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
+      ],
+      "Who will be notified?": [
+        "Chi verrà notificato?"
       ]
     },
     "Browser": {
@@ -3936,6 +4020,9 @@
       "Invalid postal code": [
         "Codice postale non valido"
       ],
+      "Invalid private key file": [
+        "File della chiave privata non valido"
+      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -4605,6 +4692,10 @@
       ],
       "Pending": [
         "In attesa"
+      ],
+      "Pending invitation": [
+        "Invito in sospeso",
+        "Inviti in sospeso"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
@@ -6140,6 +6231,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premio CNET Editors Choice con una valutazione di 8,4 su 10"
       ],
+      "Compromised": [
+        "Compromessa"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configura l'autenticazione SAML per la tua organizzazione tramite un provider di identità (IdP). Sarà possibile utilizzare SAML per l'intera organizzazione."
       ],
@@ -7221,6 +7315,9 @@
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteggi il tuo account ${ BRAND_NAME }"
+      ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Videoconferenza sicura, crittografata end-to-end"
       ],
       "Securing your account": [
         "Protezione del tuo account"
@@ -8371,6 +8468,9 @@
       "1 of 1 email address available": [
         "1 su 1 indirizzo email disponibile"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
+      ],
       "Account holder": [
         "Titolare del conto"
       ],
@@ -8514,6 +8614,9 @@
       ],
       "Colors": [
         "Colori"
+      ],
+      "Command line interface (CLI)": [
+        "Interfaccia a riga di comando (CLI)"
       ],
       "Common passwords": [
         "Password comuni"
@@ -12386,6 +12489,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Valore non valido"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "La durata deve essere maggiore di ${ MIN_LIFETIME } giorno.",
         "La durata deve essere maggiore dei ${ MIN_LIFETIME } giorni."
@@ -15281,6 +15387,9 @@
       "Main password": [
         "Password principale"
       ],
+      "Migration assistant": [
+        "Migration Assistant"
+      ],
       "Minicalendar": [
         "Mini calendario"
       ],
@@ -16497,8 +16606,20 @@
       "Android": [
         "Android"
       ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "iOS": [
         "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "wallet_signup_2024: Info": {

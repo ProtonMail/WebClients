@@ -3901,6 +3901,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
       ],
+      "You cannot enter the organizer's email": [
+        "주최자의 이메일을 입력할 수 없습니다"
+      ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
       ],
@@ -5124,6 +5127,9 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "예약 연락처 이메일: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "예약 페이지가 삭제되었습니다"
       ],
@@ -5406,6 +5412,9 @@
       "Host": [
         "호스트"
       ],
+      "How far in advance can someone book?": [
+        "얼마나 미리 예약할 수 있나요?"
+      ],
       "How long should an appointment last?": [
         "일정 소요시간이 얼마입니까?"
       ],
@@ -5562,6 +5571,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
       ],
+      "Min. 2 hours before": [
+        "최소 2시간 전"
+      ],
+      "Min. 48 hours before": [
+        "최소 48시간 전"
+      ],
       "Monitor accounts": [
         "계정 모니터링"
       ],
@@ -5616,6 +5631,9 @@
       "Not connected": [
         "연결되지 않음"
       ],
+      "Not on the same day": [
+        "같은 날이 아닐 때"
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -5654,6 +5672,9 @@
       ],
       "Other accounts": [
         "다른 계정"
+      ],
+      "Other location": [
+        "다른 위치"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
@@ -6074,6 +6095,9 @@
       ],
       "Where will the appointment take place?": [
         "약속은 어디에서 진행되나요?"
+      ],
+      "Which calendars should block bookings?": [
+        "어떤 캘린더에서 예약을 차단할까요?"
       ],
       "Which event would you like to delete?": [
         "어느 이벤트를 삭제하고 싶나요?"
@@ -6514,6 +6538,9 @@
       "Add image URL": [
         "이미지 URL 추가"
       ],
+      "Add notice period": [
+        "알림 기간 추가"
+      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -6582,6 +6609,9 @@
       ],
       "Category": [
         "카테고리"
+      ],
+      "Check additional calendars for availability": [
+        "추가 캘린더의 일정 가능 여부 확인"
       ],
       "City": [
         "시/군/구"
