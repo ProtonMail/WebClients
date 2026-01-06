@@ -1,42 +1,14 @@
-.new-project-modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+// Remove default input styling when using unstyled prop
+.unstyled-field {
+    input {
+        border: none;
+        background: transparent;
+        padding: 0.5rem;
+        outline: none;
 
-    // Match personalization panel input styles
-    input, textarea, select {
-        border: 1px solid var(--border-weak) !important;
-        padding: 10px;
-        border-radius: 8px;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
     }
-
-    // Style the input wrapper containers from InputFieldTwo
-    .input-two,
-    .textarea-two {
-        border: 1px solid var(--border-weak);
-        border-radius: 8px;
-    }
-
-    // Label styling to match personalization
-    label {
-        font-weight: 600;
-        font-size: 0.8125rem;
-        color: var(--text-norm);
-    }
-}
-
-.new-project-modal-category-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.new-project-modal-category-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
 }
