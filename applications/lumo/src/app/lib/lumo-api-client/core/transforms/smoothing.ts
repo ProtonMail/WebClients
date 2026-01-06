@@ -255,5 +255,7 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 const strategy = {
     highWaterMark: 99999999,
 };
-export const makeSmoothingTransformStream = (): TransformStream<M, M> =>
-    new TransformStream(makeSmoothingTransformer(), strategy, strategy);
+export const makeSmoothingTransformStream = (enabled: boolean = true): TransformStream<M, M> =>
+    enabled
+        ? new TransformStream(makeSmoothingTransformer(), strategy, strategy)
+        : new TransformStream(); // passthrough if disabled

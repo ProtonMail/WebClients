@@ -65,6 +65,7 @@ export type Status = 'succeeded' | 'failed';
 // Configuration interfaces
 export interface LumoApiClientConfig {
     enableU2LEncryption?: boolean;
+    enableSmoothing?: boolean;
     endpoint?: string;
     lumoPubKey?: string;
     externalTools?: ToolName[];
