@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
       ],
-      "Pay once": [
-        "Bir kez ödeyin"
-      ],
       "Preview": [
         "Ön izle"
       ],
@@ -9217,6 +9214,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editörün Seçimi ödülünü 10 üzerinden 8,4 puanla kazandı"
       ],
+      "Compromised": [
+        "Ele geçirilmiş"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Kuruluşunuz için bir kimlik hizmeti sağlayıcı (IdP) kullanarak SAML kimlik doğrulamasını yapılandırın. Bu işlem, tüm kuruluş için SAML özelliğini kullanıma alır."
       ],
@@ -13116,9 +13116,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
-      ],
-      "Limited time": [
-        "Sınırlı süreli"
       ],
       "Link label (optional)": [
         "Bağlantı etiketi (isteğe bağlı)"
@@ -18194,6 +18191,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Geçersiz değer"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır",
         "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
@@ -21015,9 +21015,6 @@
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
-      "Pay once, access forever.": [
-        "Bir kere ödeyin, ömür boyu kullanın."
-      ],
       "per month, billed annually": [
         "aylık, yılda bir faturalanır"
       ],
@@ -22557,9 +22554,6 @@
       ],
       "Other sign-in issues": [
         "Diğer oturum açma sorunları"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime ${ plusLifetimePrice } ile"
       ],
       "Password": [
         "Parola"

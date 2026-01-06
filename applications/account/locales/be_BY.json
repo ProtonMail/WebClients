@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
       ],
-      "Pay once": [
-        "Заплаціць аднаразова"
-      ],
       "Preview": [
         "Папярэдні прагляд"
       ],
@@ -2456,7 +2453,7 @@
         "Ізалюйце сваё жыццё ад Google"
       ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
-        "Адкрыйце для сябе нашы парады па эфектыўнаму кіраванню вашай паштовай скрыняй. Такім чынам вы зможаце застацца прадуктыўнымі і сфакусіраванымі."
+        "Адкрыйце для сябе нашы парады па эфектыўнаму кіраванню вашай паштовай скрыняй. Такім чынам вы зможаце застацца прадукцыйнымі і сфакусіраванымі."
       ],
       "Easily manage your inbox": [
         "Лёгка кіруйце сваёй паштовай скрыняй"
@@ -2719,7 +2716,7 @@
         "Наладка дамена"
       ],
       "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі міграцыя пачнецца і калі яна будзе завершана. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі міграцыя будзе прыпынена з прычыны пратэрмінаваных спасылак."
+        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі пачнецца перанос і калі ён будзе завершаны. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі перанос будзе прыпынена з прычыны пратэрмінаваных спасылак."
       ],
       "Estimated size": [
         "Прыблізны памер"
@@ -2731,7 +2728,7 @@
         "Не ўдалося загрузіць OAuth"
       ],
       "Install migration app": [
-        "Усталяваць праграму міграцыі"
+        "Усталяваць праграму пераносу"
       ],
       "Learn more about what can be migrated. Learn more": [
         "Даведайцеся больш аб тым, што можна перанесці. Даведацца больш"
@@ -2749,7 +2746,7 @@
         "Перанос карыстальнікаў"
       ],
       "Migration includes": [
-        "Міграцыя ўключана"
+        "Перанос уключаны"
       ],
       "Not started": [
         "Не запушчана"
@@ -5937,7 +5934,7 @@
         "Запыт экстранага доступу"
       ],
       "Emergency access requested": [
-        "Экстраны доступ запытаны"
+        "Экстранны доступ запытаны"
       ],
       "Emergency access revoked": [
         "Экстраны доступ адкліканы"
@@ -6018,7 +6015,7 @@
         "Падпіска пратэрмінавана"
       ],
       "They added me as trusted contact. I can access their account in case of an emergency.": [
-        "Яны дадалі мяне ў якасці давераганага кантакту і я магу атрымліваць доступ да іх улікогвага запісу ў выпадку экстраннай сітуацыі."
+        "Яны дадалі мяне ў якасці даверанага кантакту і я магу атрымліваць доступ да іх уліковага запісу ў выпадку экстраннай сітуацыі."
       ],
       "They may ask to access my account in case of an emergency.": [
         "Яны могуць папрасіць доступ да майго ўліковага запісу ў выпадку экстраннай сітуацыі."
@@ -9411,6 +9408,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
       ],
+      "Compromised": [
+        "Скампраметаваны"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
       ],
@@ -10993,7 +10993,7 @@
         "Сховішча, выкарыстанае гэтым карыстальнікам"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "Захоўвайце гэты пароль і файл у надзейным месцы. Яны неабходны, каб імпартаваць ваш ключ."
+        "Захоўвайце гэты пароль і файл у надзейным месцы. Яны спатрэбяцца, каб імпартаваць ваш ключ."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -11755,7 +11755,7 @@
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
       ],
       "You can change storage allocation at **Users and addresses**": [
-        "Вы можаце змяніць вылучэнне сховішча ў **Карыстальнікі і адрасы**"
+        "Вы можаце змяніць вылучэнне сховішча ў раздзеле **Карыстальнікі і адрасы**"
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
@@ -13385,9 +13385,6 @@
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
       ],
-      "Limited time": [
-        "Абмежаваны час"
-      ],
       "Link label (optional)": [
         "Метка спасылкі (неабавязкова)"
       ],
@@ -14401,7 +14398,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
+        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
@@ -17171,7 +17168,7 @@
         "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
-        "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink }, нашай ${ privacyPolicyLink } і ${ referralPolicyLink }"
+        "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink }, а таксама з нашай ${ privacyPolicyLink } і ${ referralPolicyLink }"
       ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
@@ -18586,6 +18583,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Памылковае значэнне"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзень",
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дні",
@@ -20123,7 +20123,7 @@
         "Да 6 карыстальнікаў"
       ],
       "Upload files of any size": [
-        "Запамоўванне файлаў любога памеру"
+        "Запампоўванне файлаў любога памеру"
       ],
       "Use your current email": [
         "Скарыстайцеся сваёй бягучай электроннай поштай"
@@ -21538,9 +21538,6 @@
     "Subtitle": {
       "Free forever": [
         "Бясплатна назаўсёды"
-      ],
-      "Pay once, access forever.": [
-        "Аплаціце адзін раз і атрымайце пажыццёвы доступ."
       ],
       "per month, billed annually": [
         "у месяц (аплачваецца адзін раз у год)"
@@ -23115,9 +23112,6 @@
       ],
       "Other sign-in issues": [
         "Іншыя праблемы ўваходу"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Пажыццёвы доступ да Pass Plus за ${ plusLifetimePrice }"
       ],
       "Password": [
         "Пароль"

@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Nyní zaplatit ${ price }"
       ],
-      "Pay once": [
-        "Zaplatit jednorázově"
-      ],
       "Preview": [
         "Náhled"
       ],
@@ -9411,6 +9408,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Cena redakce CNET s hodnocením 8,4 z 10 hvězd"
       ],
+      "Compromised": [
+        "Kompromitováno"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Nastavte pro svoji organizaci ověřování pomocí SAML prostřednictvím poskytovatele identity (IdP). Tím se SAML aktivuje pro vaši celou organizaci."
       ],
@@ -13385,9 +13385,6 @@
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
       ],
-      "Limited time": [
-        "Omezený čas"
-      ],
       "Link label (optional)": [
         "Štítek odkazu (volitelné)"
       ],
@@ -14273,7 +14270,7 @@
         "Import/export"
       ],
       "Learn more": [
-        "Zjistit více"
+        "Více informací"
       ],
       "Learn more about data recovery": [
         "Další informace o obnově dat"
@@ -18586,6 +18583,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Neplatná hodnota"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Životnost musí být delší než ${ MIN_LIFETIME } den",
         "Životnost musí být delší než ${ MIN_LIFETIME } dny",
@@ -21539,9 +21539,6 @@
       "Free forever": [
         "Navždy zdarma"
       ],
-      "Pay once, access forever.": [
-        "Zaplaťte jednou a přistupujte navždy."
-      ],
       "per month, billed annually": [
         "za měsíc, účtováno ročně"
       ],
@@ -23115,9 +23112,6 @@
       ],
       "Other sign-in issues": [
         "Další problémy s přihlášením"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Doživotní tarif Pass Plus za ${ plusLifetimePrice }"
       ],
       "Password": [
         "Heslo"

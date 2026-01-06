@@ -5200,6 +5200,9 @@
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-mail de contato do agendamento: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Página de agendamentos excluída"
       ],
@@ -5486,6 +5489,9 @@
       "Host": [
         "Anfitrião"
       ],
+      "How far in advance can someone book?": [
+        "Com que antecedência alguém pode agendar?"
+      ],
       "How long should an appointment last?": [
         "Quanto tempo deve durar um compromisso?"
       ],
@@ -5642,6 +5648,12 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "As mensagens para todos os seus endereços de e-mail irão para sua caixa de entrada."
+      ],
+      "Min. 2 hours before": [
+        "Mín. 2 horas antes"
+      ],
+      "Min. 48 hours before": [
+        "Mín. 48 horas antes"
       ],
       "Monitor accounts": [
         "Monitor de contas"
@@ -6165,6 +6177,9 @@
       "Where will the appointment take place?": [
         "Onde o compromisso vai acontecer?"
       ],
+      "Which calendars should block bookings?": [
+        "Quais calendários devem bloquear agendamentos?"
+      ],
       "Which event would you like to delete?": [
         "Qual evento gostaria de excluir?"
       ],
@@ -6684,6 +6699,9 @@
       ],
       "Category": [
         "Categoria"
+      ],
+      "Check additional calendars for availability": [
+        "Verificar calendários adicionais para disponibilidade"
       ],
       "City": [
         "Cidade"

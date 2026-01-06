@@ -1830,7 +1830,7 @@
         "Наладка дамена"
       ],
       "Email notifications will be sent when migration starts and when it’s completed. You will also be notified if there are errors and if migration is paused due to expired links.": [
-        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі міграцыя пачнецца і калі яна будзе завершана. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі міграцыя будзе прыпынена з прычыны пратэрмінаваных спасылак."
+        "Апавяшчэнні па электроннай пошце будуць адпраўлены, калі пачнецца перанос і калі ён будзе завершаны. Вы таксама будзеце апавешчаны, калі будуць памылкі і калі перанос будзе прыпынена з прычыны пратэрмінаваных спасылак."
       ],
       "Estimated size": [
         "Прыблізны памер"
@@ -1842,7 +1842,7 @@
         "Не ўдалося загрузіць OAuth"
       ],
       "Install migration app": [
-        "Усталяваць праграму міграцыі"
+        "Усталяваць праграму пераносу"
       ],
       "Learn more about what can be migrated. Learn more": [
         "Даведайцеся больш аб тым, што можна перанесці. Даведацца больш"
@@ -1860,7 +1860,7 @@
         "Перанос карыстальнікаў"
       ],
       "Migration includes": [
-        "Міграцыя ўключана"
+        "Перанос уключаны"
       ],
       "Not started": [
         "Не запушчана"
@@ -2022,7 +2022,7 @@
         "Пазнаёміцца і наладзіць функцыі"
       ],
       "Invite your team": [
-        "Запрасіце сваю каманду"
+        "Запрасіць сваю каманду"
       ],
       "Manage global VPN permissions": [
         "Кіраваць глабальнымі дазволамі VPN"
@@ -6397,6 +6397,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
       ],
+      "Compromised": [
+        "Скампраметаваны"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
       ],
@@ -8234,7 +8237,7 @@
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
       ],
       "You can change storage allocation at **Users and addresses**": [
-        "Вы можаце змяніць вылучэнне сховішча ў **Карыстальнікі і адрасы**"
+        "Вы можаце змяніць вылучэнне сховішча ў раздзеле **Карыстальнікі і адрасы**"
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
@@ -9834,7 +9837,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
+        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
@@ -12812,6 +12815,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Памылковае значэнне"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзень",
         "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дні",

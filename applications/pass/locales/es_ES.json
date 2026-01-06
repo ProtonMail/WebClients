@@ -1892,8 +1892,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2115,11 +2114,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Usa la ruta de dominio completa, por ejemplo mi-dominio.es o mi-subdominio.mi-dominio.es si estás usando un subdominio."
       ],
+      "Premium domain": [
+        "Dominio prémium"
+      ],
       "Press Enter to copy": [
         "Presiona Enter para copiar"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
+      "Public domain": [
+        "Dominio público"
       ],
       "Reconnect": [
         "Reconectar"

@@ -1513,10 +1513,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4533,6 +4530,9 @@
       ],
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nemožno nastaviť expiráciu dlhšiu, než povoľujú zásady uchovávania."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
@@ -7616,7 +7616,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9407,6 +9410,9 @@
       "/month": [
         "/mesiac"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
       "Account holder": [
         "Vlastník účtu"
       ],
@@ -9553,6 +9559,9 @@
       ],
       "Colors": [
         "Farby"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ],
       "Company": [
         "Spoločnosť"
@@ -16153,14 +16162,14 @@
       "Your free trial has ended": [
         "Vaša bezplatná skúšobná verzia vypršala"
       ],
+      "Your newsletters in one place": [
+        "Vaše newslettre na jednom mieste"
+      ],
       "Your plan": [
         "Váš plán"
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
-      ],
-      "Your subscriptions in one place": [
-        "Vaše emailové odbery na jednom mieste"
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"

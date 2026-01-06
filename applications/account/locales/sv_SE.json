@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Betala ${ price } nu"
       ],
-      "Pay once": [
-        "Betala en gång"
-      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -8742,6 +8739,9 @@
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
       ],
+      "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
+        "**Detta kommer inaktivera end-to-end-krypterad vidarebefordran av e-post:** du kan ställa in dem igen senare."
+      ],
       "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
         "**Dina återställningsmetoder kommer att ogiltigförklaras:** Du kan generera nya återställningsdata senare."
       ],
@@ -9152,6 +9152,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktionens valpris med ett betyg på 8,4 av 10"
+      ],
+      "Compromised": [
+        "Komprometterad"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
@@ -13018,9 +13021,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
-      ],
-      "Limited time": [
-        "Begränsad tid"
       ],
       "Link label (optional)": [
         "Länketikett (valfritt)"
@@ -18062,6 +18062,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Ogiltigt värde"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Livstid måste vara längre än ${ MIN_LIFETIME } dag",
         "Livstid måste vara längre än ${ MIN_LIFETIME } dagar"
@@ -20877,9 +20880,6 @@
       "Free forever": [
         "Gratis för alltid"
       ],
-      "Pay once, access forever.": [
-        "Betala en gång, åtkomst för alltid."
-      ],
       "per month, billed annually": [
         "per månad, faktureras årligen"
       ],
@@ -22428,9 +22428,6 @@
       ],
       "Other sign-in issues": [
         "Andra inloggningsproblem"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime för ${ plusLifetimePrice }"
       ],
       "Password": [
         "Lösenord"

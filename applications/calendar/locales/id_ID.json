@@ -5127,6 +5127,9 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Email kontak pemesanan: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "Halaman pemesanan dihapus"
       ],
@@ -5409,6 +5412,9 @@
       "Host": [
         "Tuan rumah"
       ],
+      "How far in advance can someone book?": [
+        "Seberapa jauh sebelumnya pemesanan dapat dibuat?"
+      ],
       "How long should an appointment last?": [
         "Seberapa lama janji temu ini akan berlangsung?"
       ],
@@ -5565,6 +5571,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 jama sebelumnya"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 jam sebelumnya"
+      ],
       "Monitor accounts": [
         "Monitor akun"
       ],
@@ -5618,6 +5630,9 @@
       ],
       "Not connected": [
         "Tidak terhubung"
+      ],
+      "Not on the same day": [
+        "Tidak dalam hari yang sama"
       ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
@@ -6081,6 +6096,9 @@
       "Where will the appointment take place?": [
         "Di mana janji temu ini akan berlangsung?"
       ],
+      "Which calendars should block bookings?": [
+        "Kalender mana saja yang harus memblokir pemesanan?"
+      ],
       "Which event would you like to delete?": [
         "Acara mana yang ingin dihapus?"
       ],
@@ -6520,6 +6538,9 @@
       "Add image URL": [
         "Tambah URL gambar"
       ],
+      "Add notice period": [
+        "Tambah masa pemberitahuan"
+      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -6588,6 +6609,9 @@
       ],
       "Category": [
         "Kategori"
+      ],
+      "Check additional calendars for availability": [
+        "Periksa kalender tambahan untuk ketersediaan"
       ],
       "City": [
         "Kota"

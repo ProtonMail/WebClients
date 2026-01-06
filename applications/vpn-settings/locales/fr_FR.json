@@ -6231,6 +6231,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Prix Editors' Choice de CNET avec une note de 8,4 sur 10"
       ],
+      "Compromised": [
+        "Compromise"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurez l'authentification SAML pour votre organisation via un fournisseur d'identité (IdP). Cela permettra d'activer SAML pour l'ensemble de l'organisation."
       ],
@@ -12482,10 +12485,13 @@
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Après ${ lifetime } jour, tous les messages seront supprimés.",
-        "Après ${ lifetime } jours, tous les messages seront supprimés"
+        "Après ${ lifetime } jours, tous les messages seront supprimés."
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "La valeur n'est pas valide."
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "La durée doit être supérieure à ${ MIN_LIFETIME } jour.",
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."

@@ -90,6 +90,9 @@
       "Apply": [
         "적용"
       ],
+      "Ask me next time": [
+        "나중에 내"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
@@ -246,6 +249,9 @@
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
+      "Create new ${ SHEETS_APP_NAME }": [
+        "새로운 ${ SHEETS_APP_NAME } 생성"
+      ],
       "Create new folder": [
         "새 폴더 만들기"
       ],
@@ -282,6 +288,9 @@
       "Delete contact group": [
         "그룹 삭제"
       ],
+      "Delete older revisions": [
+        "오래된 버전 삭제"
+      ],
       "Delete permanently": [
         "영구적으로 삭제"
       ],
@@ -305,6 +314,12 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
+      ],
+      "Download a copy (as docx)": [
+        "복사본 다운로드(docx)"
+      ],
+      "Download a copy (as xlsx)": [
+        "복사본 다운로드(xlsx)"
       ],
       "Download anyway": [
         "무시하고 다운로드"
@@ -534,6 +549,9 @@
       "OK": [
         "확인"
       ],
+      "Okay": [
+        "확인"
+      ],
       "Open": [
         "열기"
       ],
@@ -653,6 +671,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save preferences": [
+        "환경 설정 저장"
       ],
       "Search": [
         "검색"
@@ -848,6 +869,9 @@
       ],
       "View invoice": [
         "청구서 보기"
+      ],
+      "View only": [
+        "보기 전용"
       ],
       "Web page (.html)": [
         "웹페이지 (.html)"
@@ -2812,6 +2836,9 @@
       "Failed to open to contact": [
         "연락처 열기 실패"
       ],
+      "Failed to remove older revisions": [
+        "오래된 버전을 제거하는 데 실패했습니다."
+      ],
       "Failed to rename document. Please try again later.": [
         "문서 이름 변경 실패. 다시 시도하세요."
       ],
@@ -3058,6 +3085,9 @@
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
       ],
+      "Unable to import file": [
+        "파일을 가져올 수 없습니다"
+      ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "VPN 대시보드를 불러오지 못했습니다. 연결 상태 확인 후 다시 시도해 주세요."
       ],
@@ -3087,6 +3117,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "문서를 동기화하는데 오류가 발생했습니다. 페이지를 새로고침하세요."
+      ],
+      "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
+        "해당 파일을 ${ SHEETS_APP_NAME }로 불러오지 못했습니다. 이 파일의 내용물을 복사 및 붙여놓기하여 ${ SHEETS_APP_NAME }에 추가 가능합니다."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -4188,6 +4221,9 @@
       "Continue": [
         "계속"
       ],
+      "Converting document...": [
+        "문서를 변환하는 중..."
+      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4232,6 +4268,9 @@
       ],
       "Creating link to folder": [
         "폴더 링크를 만드는 중"
+      ],
+      "Creating new document...": [
+        "새로운 문서를 생성하는 중..."
       ],
       "Current plan": [
         "현재 플랜"
@@ -4326,6 +4365,12 @@
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
+      "Error converting document: ${ errorMessage }": [
+        "문서 변환 오류: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "문서 로드 실패: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "동기화 오류"
       ],
@@ -4386,6 +4431,12 @@
       "Geoblocking": [
         "차단된 콘텐츠"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "문서에 추가된 댓글 및 제안 사항에 대한 이메일 업데이트를 받아보세요."
+      ],
+      "Get Notified About Comments": [
+        "댓글 알림 받기"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
@@ -4430,6 +4481,9 @@
       ],
       "Important note": [
         "중요 사항"
+      ],
+      "Importing ODS files is currently in beta": [
+        "현재 ODS 파일 불러오기는 베타 버전입니다."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail }(에)서 ${ fromEmail }(으)로 데이터를 전달 중입니다."
@@ -4521,6 +4575,9 @@
       "Low Priority": [
         "중요도 낮음"
       ],
+      "Making a copy...": [
+        "복사본을 생성하는 중..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "최대 ${ MAX_SHARED_URL_PASSWORD_LENGTH }자"
       ],
@@ -4550,6 +4607,9 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
       ],
       "No email address": [
         "이메일 주소 없음"
@@ -4833,6 +4893,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
+      ],
       "There are no documents in the trash.": [
         "휴지통 내에 문서가 존재하지 않습니다."
       ],
@@ -4841,6 +4904,12 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "이 문서는 편집하기에 너무 커졌습니다. 편집을 지속하기 위해 이전 수정본 삭제가 가능합니다."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
+        "이 문서가 너무 커서 최근 변경 사항을 저장할 수 없습니다. 작업물을 보존하기 위해 사본을 다운로드하십시오."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "이 문서의 활동량이 너무 많습니다. 일부 기능이 일시적으로 사용 불가합니다."
@@ -5441,6 +5510,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Enable email notifications": [
+        "이메일 알림 활성화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
       ],
@@ -5488,6 +5560,9 @@
       ],
       "Include application logs in bug report": [
         "버그 신고에 애플리케이션 로그 포함"
+      ],
+      "Include document name in notification": [
+        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -9053,6 +9128,12 @@
       ],
       "Docs": [
         "Docs"
+      ],
+      "Document Size Limit Exceeded": [
+        "문서 크기 제한 도달"
+      ],
+      "Document Size Limit Reached": [
+        "문서 크기 제한 도달"
       ],
       "Document verification failed": [
         "문서 확인 실패"
