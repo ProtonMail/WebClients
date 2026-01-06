@@ -1,9 +1,8 @@
-import type { DismissNpsRequest, SubmitNpsRequest } from '../interfaces/NetPromoterScore';
+import type { SubmitNpsRequest } from '../interfaces/NetPromoterScore';
 
-export const dismissNps = (data: DismissNpsRequest) => ({
+export const dismissNps = () => ({
     url: 'core/v4/nps/dismiss',
     method: 'post',
-    data,
 });
 
 export const submitNps = (data: SubmitNpsRequest) => ({
