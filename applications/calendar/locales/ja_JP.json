@@ -5127,6 +5127,9 @@
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "予約連絡先メールアドレス: ${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "予約ページが削除されました"
       ],
@@ -5409,6 +5412,9 @@
       "Host": [
         "ホスト"
       ],
+      "How far in advance can someone book?": [
+        "どれくらい前に予約できますか?"
+      ],
       "How long should an appointment last?": [
         "予約時間はどのくらいに設定しますか？"
       ],
@@ -5565,6 +5571,12 @@
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
+      "Min. 2 hours before": [
+        "最低2時間前"
+      ],
+      "Min. 48 hours before": [
+        "最低48時間前"
+      ],
       "Monitor accounts": [
         "アカウントモニター"
       ],
@@ -5618,6 +5630,9 @@
       ],
       "Not connected": [
         "接続されていません"
+      ],
+      "Not on the same day": [
+        "同じ日ではない"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -6081,6 +6096,9 @@
       "Where will the appointment take place?": [
         "ご予定はどこで行われますか？"
       ],
+      "Which calendars should block bookings?": [
+        "どのカレンダーで予約をブロックしますか?"
+      ],
       "Which event would you like to delete?": [
         "どの予定を削除しますか？"
       ],
@@ -6520,6 +6538,9 @@
       "Add image URL": [
         "画像 URL を追加"
       ],
+      "Add notice period": [
+        "通知期間を追加する"
+      ],
       "Add to group": [
         "グループに追加"
       ],
@@ -6588,6 +6609,9 @@
       ],
       "Category": [
         "カテゴリー"
+      ],
+      "Check additional calendars for availability": [
+        "空き状況については追加のカレンダーを確認してください"
       ],
       "City": [
         "市区町村"
