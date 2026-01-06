@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 
 import type { App } from '@proton-meet/proton-meet-core';
 
-import { ApiContext } from '@proton/components';
+import { ApiContext, NotificationsChildren, useNotifications } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
@@ -33,6 +33,8 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     const [initialised, setInitialised] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    const notificationsManager = useNotifications();
+
     const storeRef = useRef<MeetStore>();
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
@@ -41,7 +43,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
     const initialiseServicesAndStore = async () => {
         try {
             const { store, authentication, unleashClient, unauthenticatedApi, history, wasmApp } =
-                await bootstrapGuestApp(config);
+                await bootstrapGuestApp(config, notificationsManager);
 
             storeRef.current = store;
 
@@ -84,6 +86,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                         <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
                             <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
+                                    <NotificationsChildren />
                                     {children}
                                 </ErrorBoundary>
                             </WasmContext.Provider>
