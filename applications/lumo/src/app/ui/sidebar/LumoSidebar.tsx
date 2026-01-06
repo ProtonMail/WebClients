@@ -238,20 +238,20 @@ const LumoSidebarContent = () => {
     return (
         <>
             <div className="lumo-sidebar">
-                {/* Mobile Header: Logo + Close Button (ChatGPT style) */}
+                {/* Mobile Header: Logo + Close Button */}
                 {isSmallScreen && (
-                    <div className="sidebar-mobile-header">
-                        <div className="sidebar-mobile-logo">
-                            <img src={lumoCatIcon} alt="Lumo" className="sidebar-logo" />
-                        </div>
-
-                        {/* Close button on right */}
+                    <div
+                        className="flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak"
+                        style={{ margin: '-16px -16px 0 -16px' }}
+                    >
+                        <img src={lumoCatIcon} alt="Lumo" className="shrink-0" style={{ height: '40px' }} />
                         <button
-                            className="sidebar-mobile-close-btn"
+                            className="shrink-0 flex items-center justify-center color-weak interactive-pseudo-inset rounded-sm ml-auto"
                             onClick={toggle}
                             aria-label={c('collider_2025:Button').t`Close sidebar`}
+                            style={{ width: '32px', height: '32px' }}
                         >
-                            <Icon name="chevron-left" />
+                            <Icon name="chevron-left" size={4} />
                         </button>
                     </div>
                 )}

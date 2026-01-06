@@ -1,3 +1,7 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .lumo-sidebar {
 	display: flex;
@@ -6,8 +10,7 @@
 	padding: 12px;
 	gap: 8px;
 
-	// background-color: var(--background-norm);
-	@media('<=small') {
+	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 	}
 
@@ -28,15 +31,12 @@
 		button {
 			@extend .sidebar-item;
 
-			// Override any conflicting styles
 			border-radius: 8px !important;
 			block-size: 40px !important;
 			display: flex !important;
 			align-items: center !important;
 			padding: 8px !important;
 			padding-inline: 6px !important;
-
-			// background-color: var(--background-upsell-button) !important;
 
 			&:hover {
 				background-color: var(--interaction-default-hover) !important;
@@ -53,7 +53,6 @@
 	&.sidebar-bottom {
 		margin-block-start: auto;
 		padding-block-start: 12px;
-		gap: 4px;
 	}
 }
 
@@ -187,20 +186,7 @@
 	}
 }
 
-// Favorites and History section
-.favorites-history-section {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-	margin-block-start: 4px;
-}
-
-// Favorites sidebar section
-.favorites-sidebar-section {
-	display: flex;
-	flex-direction: column;
-}
-
+// Favorites content - only specific styling needed
 .favorites-content {
 	max-block-size: 30vh;
 	overflow-y: auto;
@@ -362,7 +348,6 @@
 	padding-block: 4px;
 	padding-inline: 8px;
 	margin-block: 8px 4px;
-	margin-inline: 0;
 
 	svg,
 	.icon {
@@ -373,7 +358,6 @@
 		opacity: 0.7;
 	}
 
-	// Text styling
 	span {
 		white-space: nowrap;
 		overflow: hidden;
@@ -388,7 +372,6 @@
 	block-size: 40px;
 	padding: 8px;
 	margin-block: 4px;
-	margin-inline: 0;
 	cursor: pointer;
 	border-radius: 8px;
 	transition: background-color 0.15s ease;
@@ -436,20 +419,13 @@
 }
 
 .projects-list {
-	display: flex;
-	flex-direction: column;
 	margin-inline-start: 23px;
 }
 
 .projects-text-button {
-	border: none;
-	background: transparent;
-	cursor: pointer;
-	transition: background-color 0.15s ease;
-	display: flex;
-	align-items: center;
 	flex: 1;
 	text-align: start;
+	transition: background-color 0.15s ease;
 
 	&:focus {
 		outline: 2px solid var(--focus-outline);
@@ -462,30 +438,21 @@
 }
 
 .projects-create-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
-	background: transparent;
-	cursor: pointer;
 	border-radius: 4px;
 	opacity: 0.6;
 	transition: opacity 0.15s ease, background-color 0.15s ease;
 	height: 22px;
 	width: 21px;
 	padding-bottom: 2px;
-	background-color: transparent;
 
 	&:hover {
 		opacity: 0.6;
 		background-color: #e7e7e7;
-		border-radius: 5px;
-
 	}
 }
 
 // Mobile-specific sidebar enhancements (core positioning handled in index.scss)
-@media('<=small') {
+@include im.media('<=small') {
 
 	// Reset sidebar bottom padding on mobile
 	.sidebar-section.sidebar-bottom {
@@ -548,13 +515,6 @@
 		// New chat and search sections are now conditionally rendered for mobile guests
 	}
 
-	// Projects sidebar section
-	.projects-sidebar-section {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-	}
-
 	.projects-header-container {
 		position: relative;
 		border-radius: 8px;
@@ -567,39 +527,17 @@
 
 	.projects-header-button {
 		position: relative;
-		display: flex;
-		align-items: center;
-		gap: 0;
 		flex: 1;
 	}
 
 	.projects-icon-button {
-		border: none;
-		background: transparent;
-		cursor: pointer;
-		padding: 0px;
-		padding-inline: 0px;
 		border-radius: 6px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		flex-shrink: 0;
 		min-width: 24px;
 		height: 24px;
 	}
 
-	.projects-folder-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-
-
 	.project-sidebar-item {
-		display: flex;
-		align-items: center;
-		gap: 8px;
 		padding: 6px 12px;
 		border-radius: 6px;
 		text-decoration: none;
@@ -613,15 +551,7 @@
 		}
 	}
 
-	.project-icon-small {
-		flex-shrink: 0;
-	}
-
 	.project-sidebar-item-see-all {
-		border: none;
-		background: transparent;
-		cursor: pointer;
-		margin-inline-start: 0;
 		padding: 4px 12px;
 		border-radius: 4px;
 	}
@@ -631,55 +561,6 @@
 		margin-inline-start: 36px;
 	}
 
-	// ChatGPT-style mobile header with logo and close button
-	.sidebar-mobile-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-block: 16px;
-		padding-inline: 20px 16px;
-		margin-block: -16px 0;
-		margin-inline: -16px; // Extend to edges, add bottom margin
-		border-block-end: 1px solid var(--border-weak);
-
-		.sidebar-mobile-logo {
-			.sidebar-logo {
-				block-size: 24px;
-				inline-size: auto;
-				max-inline-size: 100px;
-				opacity: 0.9;
-			}
-		}
-
-		.sidebar-mobile-close-btn {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			inline-size: 32px;
-			block-size: 32px;
-			background: transparent;
-			border: none;
-			border-radius: 6px;
-			color: var(--text-weak);
-			cursor: pointer;
-			transition: all 0.2s ease-in-out;
-
-			&:hover {
-				background: var(--background-weak);
-				color: var(--text-norm);
-			}
-
-			&:focus {
-				outline: 2px solid var(--focus-outline);
-				outline-offset: 2px;
-			}
-
-			svg {
-				inline-size: 16px;
-				block-size: 16px;
-			}
-		}
-	}
 
 	.sidebar-bottom-user-dropdown {
 		padding-block: 8px;
@@ -691,34 +572,6 @@
 		button {
 			border: none;
 		}
-	}
-
-	// Lumo logo section for mobile sidebar - centered branding
-	.sidebar-logo-section {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-block: 24px 16px;
-		padding-inline: 16px;
-		margin-block-end: 8px;
-
-		.sidebar-logo {
-			block-size: 32px;
-			inline-size: auto;
-			max-inline-size: 120px;
-			opacity: 0.9;
-			transition: opacity 0.2s ease-in-out;
-
-			&:hover {
-				opacity: 1;
-			}
-		}
-	}
-
-	// Hide the close button inside the sidebar on mobile
-	.sidebar .hamburger-button,
-	.sidebar button[class*='hamburger'] {
-		display: none !important; // Hide close button inside sidebar
 	}
 
 	// Larger touch targets and spacing for mobile sidebar items
