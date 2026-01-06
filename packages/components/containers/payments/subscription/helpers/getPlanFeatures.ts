@@ -116,7 +116,7 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
 
     const users: Feature = {
         icon: 'users',
-        text: c('new_plans: feature').ngettext(
+        text: c('Cancellation upsell').ngettext(
             msgid`${numberOfUsers} user`,
             `Up to ${numberOfUsers} users`,
             numberOfUsers
