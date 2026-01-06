@@ -4693,6 +4693,10 @@
       "Pending": [
         "Ausstehend"
       ],
+      "Pending invitation": [
+        "Ausstehende Einladung",
+        "Ausstehende Einladungen"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Du kannst leider derzeit nicht zwischen Abonnements wechseln."
       ],
@@ -6226,6 +6230,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors Choice Award mit einer Bewertung von 8,4 von 10"
+      ],
+      "Compromised": [
+        "Gefährdet"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfiguriere die SAML-Authentifizierung für deine Organisation über einen Identitätsanbieter (IdP). Dadurch wird SAML für die gesamte Organisation aktiviert."
@@ -12467,6 +12474,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Ungültiger Wert"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Die Lebensdauer muss größer als ${ MIN_LIFETIME } Tag sein",
         "Die Lebensdauer muss größer als ${ MIN_LIFETIME } Tag sein"
