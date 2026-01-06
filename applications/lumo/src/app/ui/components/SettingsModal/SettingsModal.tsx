@@ -486,7 +486,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
 
                             {/* Panel content */}
                             <div
-                                className="flex flex-column flex-nowrap gap-2 flex-1 overflow-y-auto mb-5"
+                                className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
                                 style={{ minHeight: 0 }}
                             >
                                 {activePanel === 'account' &&
