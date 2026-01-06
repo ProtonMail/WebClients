@@ -193,10 +193,12 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
     const { isDarkLumoTheme } = useLumoTheme();
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
+    const isLumoToolingEnabled = useFlag('LumoTooling');
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
+    const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
 
     // Index management state
     const conversations = useLumoSelector(selectConversations);
@@ -306,6 +308,27 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     />
                 }
             />
+
+            {/* Automatic web search toggle */}
+            {isLumoToolingEnabled && (
+                <SettingsSectionItem
+                    icon="globe"
+                    text={c('collider_2025: Title').t`Automatic web search`}
+                    subtext={c('collider_2025: Description').t`Always enable web search for new conversations`}
+                    button={
+                        <Toggle
+                            id="automatic-web-search-toggle"
+                            checked={automaticWebSearch}
+                            onChange={() => {
+                                updateSettings({
+                                    automaticWebSearch: !automaticWebSearch,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
+                />
+            )}
 
             {/* Search Index Management */}
             <SettingsSectionItem
