@@ -5,10 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { offlineToggle } from '@proton/pass/store/actions';
+import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -16,27 +13,9 @@ import clsx from '@proton/utils/clsx';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
-    const confirmPassword = usePasswordUnlock();
-    const passwordTypeSwitch = usePasswordTypeSwitch();
+    const [setup, loading] = useOfflineSetup();
+
     const enabled = useSelector(selectOfflineEnabled);
-
-    const toggle = useRequest(offlineToggle, { initial: true });
-
-    const setupOffline = async () =>
-        confirmPassword({
-            reauth: {
-                type: ReauthAction.OFFLINE_SETUP,
-                fork: { promptBypass: 'none', promptType: 'offline' },
-            },
-            onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled: true }),
-            message: passwordTypeSwitch({
-                extra: c('Info').t`Please confirm your extra password in order to enable offline mode`,
-                sso: c('Info').t`Please confirm your backup password in order to enable offline mode`,
-                twoPwd: c('Info').t`Please confirm your second password in order to enable offline mode`,
-                default: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
-            }),
-        });
-
     const signalColor = enabled ? 'color-success' : 'color-warning';
 
     return (
@@ -67,9 +46,9 @@ export const Offline: FC = () => {
                             <Button
                                 color="norm"
                                 shape="outline"
-                                disabled={toggle.loading}
-                                loading={toggle.loading}
-                                onClick={setupOffline}
+                                disabled={loading}
+                                loading={loading}
+                                onClick={setup}
                             >{c('Label').t`Enable offline access`}</Button>
                         )}
                     </div>
