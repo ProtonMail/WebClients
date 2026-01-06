@@ -26,8 +26,9 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
     const space = useLumoSelector(selectSpaceById(projectId));
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     // Filter out auto-retrieved files - they're from Drive indexing, not user uploads
+    // Also require filename to match ProjectFilesPanel filter (excludes incomplete/syncing attachments)
     const files = Object.values(spaceAttachments).filter(
-        (attachment) => !attachment.error && !attachment.autoRetrieved
+        (attachment) => !attachment.error && !attachment.autoRetrieved && attachment.filename
     );
     const hasExistingFiles = files.length > 0;
     const { isInitialized, getRootFolder } = useDriveSDK();
