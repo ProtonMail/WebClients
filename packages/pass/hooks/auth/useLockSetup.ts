@@ -192,7 +192,7 @@ export const useLockSetup = (): LockSetup => {
                 return confirmPassword({
                     reauth: {
                         type: ReauthAction.PW_LOCK_SETUP,
-                        data: { current: current?.secret, ttl },
+                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
@@ -216,7 +216,7 @@ export const useLockSetup = (): LockSetup => {
                 return confirmPassword({
                     reauth: {
                         type: ReauthAction.BIOMETRICS_SETUP,
-                        data: { current: current?.secret, ttl },
+                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),

@@ -30,7 +30,13 @@ import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pas
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
-import { ReauthAction, isSSOBackupPasswordReauth } from '@proton/pass/lib/auth/reauth';
+import {
+    ReauthAction,
+    decryptReauthLock,
+    encryptReauthLock,
+    isLockChangeReauth,
+    isOfflinePasswordReauth,
+} from '@proton/pass/lib/auth/reauth';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -372,14 +378,14 @@ export const createAuthService = ({
 
                             switch (fork.reauth.type) {
                                 case ReauthAction.PW_LOCK_SETUP: {
-                                    const { current, ttl } = fork.reauth.data;
+                                    const { current, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
                                     if (current) await auth.deleteLock(authStore.getLockMode(), current);
                                     authStore.setLockMode(LockMode.PASSWORD);
                                     authStore.setLockTTL(ttl);
                                     break;
                                 }
                                 case ReauthAction.BIOMETRICS_SETUP: {
-                                    const { current, ttl } = fork.reauth.data;
+                                    const { current, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
                                     if (current) await auth.deleteLock(authStore.getLockMode(), current);
                                     const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
                                     authStore.setEncryptedOfflineKD(encryptedOfflineKD);
@@ -398,10 +404,10 @@ export const createAuthService = ({
                                 const settings = await core.settings.resolve(localID);
                                 await core.settings.sync({ ...settings, offlineEnabled: true }, localID);
                             }
-                        } else if (isSSOBackupPasswordReauth(fork.reauth)) {
+                        } else if (isOfflinePasswordReauth(fork.reauth)) {
                             /** Ensure SSO backup password reauth has required
                              * offline components, otherwise throw an error */
-                            throw new Error('Invalid SSO backup password reauth');
+                            throw new Error('Invalid fork reauth');
                         }
                     } catch (err) {
                         /** If there was a failure processing the `reauth` payload
@@ -437,8 +443,15 @@ export const createAuthService = ({
             }
 
             clearPendingRevocations();
-            sessionStorage.setItem(getStateKey(state), JSON.stringify(data ?? redirect.data));
 
+            if (data?.type === 'reauth' && isLockChangeReauth(data.reauth)) {
+                /** Encrypt the reauth payload in case we're attempting to
+                 * mutate the lock-type after reauth (saved to session storage). */
+                data.reauth.data = await encryptReauthLock(data.reauth.data, authStore);
+            }
+
+            const sessionState = JSON.stringify(data ?? redirect.data);
+            sessionStorage.setItem(getStateKey(state), sessionState);
             window.location.replace(url);
         },
 
