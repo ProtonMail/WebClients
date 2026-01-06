@@ -1513,10 +1513,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4533,6 +4530,9 @@
       ],
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nelze nastavit pozdější vypršení platnosti, než co povolují zásady uchovávání."
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
@@ -7616,7 +7616,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10388,7 +10391,7 @@
         "Štítky"
       ],
       "Learn more": [
-        "Zjistit více"
+        "Více informací"
       ],
       "Less": [
         "Méně"
@@ -16159,14 +16162,14 @@
       "Your free trial has ended": [
         "Vaše bezplatná zkušební doba skončila"
       ],
+      "Your newsletters in one place": [
+        "Vaše e-mailové zpravodaje na jednom místě"
+      ],
       "Your plan": [
         "Váš tarif"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
-      ],
-      "Your subscriptions in one place": [
-        "Vaše e-mailové odběry na jednom místě"
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"

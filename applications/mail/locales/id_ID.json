@@ -1500,9 +1500,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -4464,6 +4461,9 @@
       ],
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Waktu kedaluwarsa tidak dapat diatur lebih lama dari waktu yang diizinkan oleh peraturan penyimpanan data"
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -15306,9 +15306,6 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
-      ],
-      "Your subscriptions in one place": [
-        "Seluruh langganan Anda dalam satu tempat"
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"

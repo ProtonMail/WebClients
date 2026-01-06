@@ -1432,6 +1432,9 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -2132,7 +2135,7 @@
         "${ participantName } pediu as últimas actualizações de um evento que já não existe no seu calendário."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } perguntou sobre as últimas actualizações de um evento que não corresponde aos detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
+        "${ participantName } perguntou sobre as últimas atualizações de um evento que não corresponde aos detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } declinou um convite e propôs um novo horário para uma ocorrência deste evento."
@@ -2189,7 +2192,7 @@
         "${ participantName } tinha recusado um convite para este evento."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } tinha declinado o seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desactualizadas."
+        "${ participantName } tinha recusado o seu convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } tinha declinado o seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desactualizadas."
@@ -6987,7 +6990,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -14687,9 +14691,6 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
-      ],
-      "Your subscriptions in one place": [
-        "As suas subscrições num só lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {
