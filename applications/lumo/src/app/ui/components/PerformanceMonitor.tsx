@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -233,7 +233,8 @@ export const PerformanceMonitor = () => {
             tokenDelays: [...historyRef.current.tokenDelays, timeSinceLastToken].slice(-HISTORY_SIZE),
             renderTimes: [...historyRef.current.renderTimes, renderTime].slice(-HISTORY_SIZE),
             tokensPerSecHistory: [...historyRef.current.tokensPerSecHistory, tokensPerSecond].slice(-HISTORY_SIZE),
-            fpsHistory: fps > 0 ? [...historyRef.current.fpsHistory, fps].slice(-HISTORY_SIZE) : historyRef.current.fpsHistory,
+            fpsHistory:
+                fps > 0 ? [...historyRef.current.fpsHistory, fps].slice(-HISTORY_SIZE) : historyRef.current.fpsHistory,
         };
 
         setMetrics({
@@ -309,9 +310,7 @@ export const PerformanceMonitor = () => {
             <div className="debug-view-row">
                 <span className="debug-view-label">{c('lumo: Debug View').t`Status`}</span>
                 <span className="debug-view-value">
-                    {isStreaming
-                        ? `🔴 ${c('lumo: Debug View').t`Streaming`}`
-                        : `⚪ ${c('lumo: Debug View').t`Idle`}`}
+                    {isStreaming ? `🔴 ${c('lumo: Debug View').t`Streaming`}` : `⚪ ${c('lumo: Debug View').t`Idle`}`}
                 </span>
             </div>
 
@@ -364,9 +363,7 @@ export const PerformanceMonitor = () => {
 
             <div className="debug-view-section">
                 <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">
-                        {c('lumo: Debug View').t`Token delays`} (0-500ms)
-                    </div>
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Token delays`} (0-500ms)</div>
                     <Sparkline
                         data={metrics.history?.tokenDelays || []}
                         width={220}
@@ -380,9 +377,7 @@ export const PerformanceMonitor = () => {
                 </div>
 
                 <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">
-                        {c('lumo: Debug View').t`Render time`} (0-50ms)
-                    </div>
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Render time`} (0-50ms)</div>
                     <Sparkline
                         data={metrics.history?.renderTimes || []}
                         width={220}
@@ -396,9 +391,7 @@ export const PerformanceMonitor = () => {
                 </div>
 
                 <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">
-                        {c('lumo: Debug View').t`Tokens/sec`} (0-200)
-                    </div>
+                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Tokens/sec`} (0-200)</div>
                     <Sparkline
                         data={metrics.history?.tokensPerSecHistory || []}
                         width={220}
@@ -414,7 +407,10 @@ export const PerformanceMonitor = () => {
                 <button className="debug-view-btn debug-view-btn--secondary" onClick={handleClearHistory}>
                     {c('lumo: Debug View').t`Clear History`}
                 </button>
-                <button className="debug-view-btn debug-view-btn--primary" onClick={() => setShowSearchIndexDebug(true)}>
+                <button
+                    className="debug-view-btn debug-view-btn--primary"
+                    onClick={() => setShowSearchIndexDebug(true)}
+                >
                     🔍 {c('lumo: Debug View').t`Search Index Debug`}
                 </button>
                 <div className="debug-view-hint">
@@ -422,7 +418,9 @@ export const PerformanceMonitor = () => {
                 </div>
             </div>
 
-            <SearchIndexDebugModal open={showSearchIndexDebug} onClose={() => setShowSearchIndexDebug(false)} />
+            {showSearchIndexDebug && (
+                <SearchIndexDebugModal open={showSearchIndexDebug} onClose={() => setShowSearchIndexDebug(false)} />
+            )}
         </div>
     );
 };
