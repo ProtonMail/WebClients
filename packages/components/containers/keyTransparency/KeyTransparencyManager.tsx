@@ -42,7 +42,7 @@ const KeyTransparencyManager = ({ children }: Props) => {
         };
         if (selfAuditPending && ktActivation !== KeyTransparencyActivation.DISABLED && safeIsOnline) {
             setSelfAuditPending(false);
-            run();
+            void run();
         }
     }, [selfAuditPending, ktActivation, safeIsOnline]);
 
