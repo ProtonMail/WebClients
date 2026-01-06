@@ -73,6 +73,7 @@ export const useLumoActions = ({
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
     const isLumoToolingEnabled = useFlag('LumoTooling');
+    const enableSmoothing = useFlag('LumoSmoothedRendering');
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
@@ -122,6 +123,7 @@ export const useLumoActions = ({
                 signal,
                 navigateCallback,
                 enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
+                enableSmoothing,
                 contextFilters,
                 datePair,
             })
@@ -218,6 +220,7 @@ export const useLumoActions = ({
                 isEdit: true,
                 updateSibling: preferSibling,
                 enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
+                enableSmoothing,
                 contextFilters,
             })
         );
@@ -300,6 +303,7 @@ export const useLumoActions = ({
                 messagesWithContext,
                 signal,
                 enableExternalTools,
+                enableSmoothing,
                 contextFilters,
                 retryInstructions
             )
