@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .projects-view {
 	display: flex;
@@ -20,12 +24,12 @@
 	margin-inline: auto;
 	inline-size: 100%;
 
-	@include media('<=medium') {
+	@include im.media('<=medium') {
 		padding: 32px;
 		max-inline-size: none;
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		padding-block: 16px 0;
 		padding-inline: 32px;
 		max-inline-size: none;
@@ -50,7 +54,7 @@
 	gap: 32px;
 	min-block-size: 0;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		padding: 20px;
 		gap: 24px;
 	}
@@ -72,7 +76,7 @@
 	max-inline-size: 900px;
 	inline-size: 100%;
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		grid-template-columns: 1fr;
 		gap: 12px;
 	}
@@ -84,7 +88,7 @@
 	gap: 12px;
 	max-inline-size: 900px;
 
-	@media (width <= 768px) {
+	@include im.media ('<=small') {
 		display: flex;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
@@ -98,7 +102,7 @@
 		}
 	}
 
-	@include media('<=small') {
+	@include im.media('<=small') {
 		display: none;
 	}
 }
@@ -155,14 +159,7 @@
 	flex-shrink: 0;
 	overflow-x: visible;
 
-	@media (width <= 768px) {
-		overflow-x: auto;
-		margin-inline: -16px;
-		padding-inline: 16px;
-		inline-size: calc(100% + 32px);
-	}
-
-	@include media('<=small') {
+	@include im.media('<=small') {
 		display: none;
 	}
 }
