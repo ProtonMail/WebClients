@@ -1,0 +1,1644 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);",
+    "language": "ar_SA"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "مصادقة"
+      ],
+      "Cancel": [
+        "إلغاء"
+      ],
+      "Change password": [
+        "تغيير كلمة المرور"
+      ],
+      "Close": [
+        "أغلق"
+      ],
+      "Continue": [
+        "متابعة"
+      ],
+      "Dismiss": [
+        "تجاهل"
+      ],
+      "Edit email address": [
+        "تعديل عنوان البريد الإلكتروني"
+      ],
+      "Edit phone number": [
+        "تعديل رقم الهاتف"
+      ],
+      "Edit sign-in details": [
+        "تعديل معلومات الدخول"
+      ],
+      "Forgot password?": [
+        "هل نسيت كلمة المرور؟"
+      ],
+      "Get verification code": [
+        "احصل على رمز التحقق"
+      ],
+      "More info: ${ safeTitle }": [
+        "مزيد من المعلومات: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "تحديث الصفحة"
+      ],
+      "Request new code": [
+        "اطلب رمزا جديدًا"
+      ],
+      "Resend code": [
+        "أعِد إرسال الرمز"
+      ],
+      "Search countries": [
+        "البحث عن بلد"
+      ],
+      "Try another method": [
+        "حاول بطريقة أخرى"
+      ],
+      "Use authentication code": [
+        "استخدم رمز المصادقة"
+      ],
+      "Use recovery code": [
+        "استخدام رمز الاسترداد"
+      ],
+      "Verify": [
+        "تحقّق"
+      ],
+      "Verify account": [
+        "التحقق من الحساب"
+      ],
+      "View invoice": [
+        "عرض الفاتورة"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "تطبيق ${ MAIL_APP_NAME } لسطح المكتب"
+      ],
+      "Use your own email domain": [
+        "استخدم نطاق بريدك الإلكتروني الخاص"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "تخزين سحابي ومشاركة للملفات الكبيرة"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "دولة أبخازيا"
+      ],
+      "Afghanistan": [
+        "أفغانستان"
+      ],
+      "Albania": [
+        "ألبانيا"
+      ],
+      "Algeria": [
+        "الجزائر"
+      ],
+      "American Samoa": [
+        "ساموا الأمريكية"
+      ],
+      "Andorra": [
+        "أندورا"
+      ],
+      "Angola": [
+        "أنغولا"
+      ],
+      "Anguilla": [
+        "أنجويلا"
+      ],
+      "Antarctica": [
+        "القارة القطبية الجنوبية"
+      ],
+      "Antigua and Barbuda": [
+        "أنتيغوا وبربودا"
+      ],
+      "Argentina": [
+        "الأرجنتين"
+      ],
+      "Armenia": [
+        "أرمينيا"
+      ],
+      "Aruba": [
+        "أروبا"
+      ],
+      "Ascension Island": [
+        "جزيرة أسنسيون"
+      ],
+      "Australia": [
+        "أستراليا"
+      ],
+      "Austria": [
+        "النمسا"
+      ],
+      "Azerbaijan": [
+        "أذربيجان"
+      ],
+      "Bahamas": [
+        "الباهاماس"
+      ],
+      "Bahrain": [
+        "البحرين"
+      ],
+      "Bangladesh": [
+        "بنغلاديش"
+      ],
+      "Barbados": [
+        "باربادوس"
+      ],
+      "Belarus": [
+        "روسيا البيضاء"
+      ],
+      "Belgium": [
+        "بلجيكا"
+      ],
+      "Belize": [
+        "بليز"
+      ],
+      "Benin": [
+        "البينين"
+      ],
+      "Bermuda": [
+        "برمودا"
+      ],
+      "Bhutan": [
+        "بوتان"
+      ],
+      "Bolivia": [
+        "بوليفيا"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "بونير، سانت أوستاتيوس وسابا"
+      ],
+      "Bosnia and Herzegovina": [
+        "البوسنة والهرسك"
+      ],
+      "Botswana": [
+        "بوتسوانا"
+      ],
+      "Bouvet Island": [
+        "جزيرة بوفيت"
+      ],
+      "Brazil": [
+        "البرازيل"
+      ],
+      "British Indian Ocean Territory": [
+        "إقليم المحيط الهندي البريطاني"
+      ],
+      "Brunei Darussalam": [
+        "بروناي دار السلام"
+      ],
+      "Bulgaria": [
+        "بلغاريا"
+      ],
+      "Burkina Faso": [
+        "بوركينا فاسو"
+      ],
+      "Burundi": [
+        "بورندي"
+      ],
+      "Cambodia": [
+        "كمبوديا"
+      ],
+      "Cameroon": [
+        "الكاميرون"
+      ],
+      "Canada": [
+        "كندا"
+      ],
+      "Cape Verde": [
+        "الرأس الأخضر"
+      ],
+      "Cayman Islands": [
+        "جزر الكايمان"
+      ],
+      "Central African Republic": [
+        "جمهورية إفريقيا الوسطى"
+      ],
+      "Chad": [
+        "تشاد"
+      ],
+      "Chile": [
+        "تشيلي"
+      ],
+      "China": [
+        "الصين"
+      ],
+      "Christmas Island": [
+        "جزيرة كريستماس"
+      ],
+      "Cocos (Keeling) Islands": [
+        "جزر كوكس (كيلينغ)"
+      ],
+      "Colombia": [
+        "كولومبيا"
+      ],
+      "Comoros": [
+        "جزر القمر"
+      ],
+      "Congo": [
+        "الكونغو"
+      ],
+      "Congo, Democratic Republic of the": [
+        "جمهورية الكونغو الديمقراطية"
+      ],
+      "Cook Islands": [
+        "جزر كوك"
+      ],
+      "Costa Rica": [
+        "كوستا ريكا"
+      ],
+      "Croatia": [
+        "كرواتيا"
+      ],
+      "Cuba": [
+        "كوبا"
+      ],
+      "Curaçao": [
+        "كوراساو"
+      ],
+      "Cyprus": [
+        "قبرص"
+      ],
+      "Czech Republic": [
+        "جمهورية التشيك"
+      ],
+      "Côte d'Ivoire": [
+        "ساحل العاج"
+      ],
+      "Denmark": [
+        "الدنمارك"
+      ],
+      "Djibouti": [
+        "جيبوتي"
+      ],
+      "Dominica": [
+        "دومينيكا"
+      ],
+      "Dominican Republic": [
+        "جمهورية الدومينيكان"
+      ],
+      "Ecuador": [
+        "الإكوادور"
+      ],
+      "Egypt": [
+        "مصر"
+      ],
+      "El Salvador": [
+        "السلفادور"
+      ],
+      "Equatorial Guinea": [
+        "غينيا الإستوائية"
+      ],
+      "Eritrea": [
+        "إرتريا"
+      ],
+      "Estonia": [
+        "إستونيا"
+      ],
+      "Eswatini": [
+        "اسواتيني"
+      ],
+      "Ethiopia": [
+        "إثيوبيا"
+      ],
+      "Falkland Islands": [
+        "جزر فالكلاند"
+      ],
+      "Faroe Islands": [
+        "جزر فاراو"
+      ],
+      "Federated States of Micronesia": [
+        "ولايات ميكرونيزيا الموحدة"
+      ],
+      "Fiji": [
+        "فيجي"
+      ],
+      "Finland": [
+        "فنلندا"
+      ],
+      "France": [
+        "فرنسا"
+      ],
+      "French Guiana": [
+        "غوايانا الفرنسية"
+      ],
+      "French Polynesia": [
+        "بولينيزيا الفرنسية"
+      ],
+      "French Southern Territories": [
+        "الأراضي الجنوبية الفرنسية"
+      ],
+      "Gabon": [
+        "الغابون"
+      ],
+      "Gambia": [
+        "غامبيا"
+      ],
+      "Georgia": [
+        "جورجيا"
+      ],
+      "Germany": [
+        "ألمانيا"
+      ],
+      "Ghana": [
+        "غانا"
+      ],
+      "Gibraltar": [
+        "جبل طارق"
+      ],
+      "Greece": [
+        "اليونان"
+      ],
+      "Greenland": [
+        "غرينلاند"
+      ],
+      "Grenada": [
+        "غرناطة"
+      ],
+      "Guadeloupe": [
+        "غوادلوبي"
+      ],
+      "Guam": [
+        "غوام"
+      ],
+      "Guatemala": [
+        "غواتيمالا"
+      ],
+      "Guernsey": [
+        "جزيرة جيرنزي"
+      ],
+      "Guinea": [
+        "غينيا"
+      ],
+      "Guinea-Bissau": [
+        "غينيا بيساو"
+      ],
+      "Guyana": [
+        "غويانا"
+      ],
+      "Haiti": [
+        "هايتي"
+      ],
+      "Heard Island and McDonald Islands": [
+        "جزيرة هيرد وجزر ماكدونالد"
+      ],
+      "Holy See (Vatican City State)": [
+        "مدينة الفاتيكان"
+      ],
+      "Honduras": [
+        "الهندوراس"
+      ],
+      "Hong Kong": [
+        "هونغ كونغ"
+      ],
+      "Hungary": [
+        "المجر"
+      ],
+      "Iceland": [
+        "آيسلندا"
+      ],
+      "India": [
+        "الهند"
+      ],
+      "Indonesia": [
+        "اندونيسيا"
+      ],
+      "International": [
+        "عالمي"
+      ],
+      "Iran": [
+        "إيران"
+      ],
+      "Iraq": [
+        "العراق"
+      ],
+      "Ireland": [
+        "أيرلندا"
+      ],
+      "Isle of Man": [
+        "جزيرة إيل أوف مان"
+      ],
+      "Israel": [
+        "إسرائيل"
+      ],
+      "Italy": [
+        "إيطاليا"
+      ],
+      "Jamaica": [
+        "جامايكا"
+      ],
+      "Japan": [
+        "اليابان"
+      ],
+      "Jersey": [
+        "جيرسي"
+      ],
+      "Jordan": [
+        "الأردن"
+      ],
+      "Kazakhstan": [
+        "كازاخستان"
+      ],
+      "Kenya": [
+        "كينيا"
+      ],
+      "Kiribati": [
+        "كيريباتي"
+      ],
+      "Kosovo": [
+        "كوسوفو"
+      ],
+      "Kuwait": [
+        "الكويت"
+      ],
+      "Kyrgyzstan": [
+        "قيرغيزستان"
+      ],
+      "Laos": [
+        "اللاووس"
+      ],
+      "Latvia": [
+        "لاتفيا"
+      ],
+      "Lebanon": [
+        "لبنان"
+      ],
+      "Lesotho": [
+        "ليسوتو"
+      ],
+      "Liberia": [
+        "ليبيريا"
+      ],
+      "Libya": [
+        "ليبيا"
+      ],
+      "Liechtenstein": [
+        "ليشتنشتاين"
+      ],
+      "Lithuania": [
+        "لتوانيا"
+      ],
+      "Luxembourg": [
+        "لوكسمبورج"
+      ],
+      "Macao": [
+        "ماكاو"
+      ],
+      "Madagascar": [
+        "مدغشقر"
+      ],
+      "Malawi": [
+        "مالاوي"
+      ],
+      "Malaysia": [
+        "ماليزيا"
+      ],
+      "Maldives": [
+        "جزر المالديف"
+      ],
+      "Mali": [
+        "مالي"
+      ],
+      "Malta": [
+        "مالطا"
+      ],
+      "Marshall Islands": [
+        "جزر مارشال"
+      ],
+      "Martinique": [
+        "جزر المارتينيك"
+      ],
+      "Mauritania": [
+        "موريتانيا"
+      ],
+      "Mauritius": [
+        "موريشيوس"
+      ],
+      "Mayotte": [
+        "جزيرة مايوت"
+      ],
+      "Mexico": [
+        "المكسيك"
+      ],
+      "Moldova": [
+        "مولدوفا"
+      ],
+      "Monaco": [
+        "موناكو"
+      ],
+      "Mongolia": [
+        "منغوليا"
+      ],
+      "Montenegro": [
+        "مونتنغرو"
+      ],
+      "Montserrat": [
+        "مونتسيرات"
+      ],
+      "Morocco": [
+        "المغرب"
+      ],
+      "Mozambique": [
+        "الموزمبيق"
+      ],
+      "Myanmar": [
+        "ميانمار"
+      ],
+      "Namibia": [
+        "ناميبيا"
+      ],
+      "Nauru": [
+        "ناورو"
+      ],
+      "Nepal": [
+        "النيبال"
+      ],
+      "Netherlands": [
+        "هولندا"
+      ],
+      "New Caledonia": [
+        "كاليدونيا الجديدة"
+      ],
+      "New Zealand": [
+        "نيوزيلندا"
+      ],
+      "Nicaragua": [
+        "نيكاراغوا"
+      ],
+      "Niger": [
+        "النيجر"
+      ],
+      "Nigeria": [
+        "نيجيريا"
+      ],
+      "Niue": [
+        "نيوي"
+      ],
+      "Norfolk Island": [
+        "جزيرة نورفولك"
+      ],
+      "North Korea": [
+        "كوريا الشمالية"
+      ],
+      "North Macedonia": [
+        "شمال مقدونيا"
+      ],
+      "Northern Mariana Islands": [
+        "جزر ماريانا الشمالية"
+      ],
+      "Norway": [
+        "النرويج"
+      ],
+      "Oman": [
+        "عمان"
+      ],
+      "Pakistan": [
+        "باكستان"
+      ],
+      "Palau": [
+        "باﻻو"
+      ],
+      "Palestine": [
+        "فلسطين"
+      ],
+      "Panama": [
+        "بنما"
+      ],
+      "Papua New Guinea": [
+        "بابوا غينيا الجديدة"
+      ],
+      "Paraguay": [
+        "البراغواي"
+      ],
+      "Peru": [
+        "البيرو"
+      ],
+      "Philippines": [
+        "الفيليبين"
+      ],
+      "Pitcairn": [
+        "جزر بيتكيرن"
+      ],
+      "Poland": [
+        "بولندا"
+      ],
+      "Portugal": [
+        "البرتغال"
+      ],
+      "Puerto Rico": [
+        "بورتو ريكو"
+      ],
+      "Qatar": [
+        "قطر"
+      ],
+      "Reunion": [
+        "جزر Réunion الفرنسية"
+      ],
+      "Romania": [
+        "رومانيا"
+      ],
+      "Russia": [
+        "روسيا"
+      ],
+      "Rwanda": [
+        "رواندا"
+      ],
+      "Saint Barthélemy": [
+        "سانت بارتيليمي"
+      ],
+      "Saint Helena": [
+        "سانت هيلينا"
+      ],
+      "Saint Kitts and Nevis": [
+        "سانت كيتس ونيفيس"
+      ],
+      "Saint Lucia": [
+        "سانتا لوسيا"
+      ],
+      "Saint Martin (French Part)": [
+        "سانت مارتن (الجزء الفرنسي)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "سانت بيير وميكلون"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "سانت فنسنت وجزر غرينادين"
+      ],
+      "Samoa": [
+        "ساموا"
+      ],
+      "San Marino": [
+        "سان مارينو"
+      ],
+      "Sao Tome and Principe": [
+        "ساو تومي وبرينسيبي"
+      ],
+      "Saudi Arabia": [
+        "المملكة العربية السعودية"
+      ],
+      "Senegal": [
+        "السنغال"
+      ],
+      "Serbia": [
+        "صربيا"
+      ],
+      "Seychelles": [
+        "السيشل"
+      ],
+      "Sierra Leone": [
+        "سيراليون"
+      ],
+      "Singapore": [
+        "سنغافورة"
+      ],
+      "Sint Maarten": [
+        "سينت مارتن"
+      ],
+      "Slovakia": [
+        "سلوفاكيا"
+      ],
+      "Slovenia": [
+        "سلوفينيا"
+      ],
+      "Solomon Islands": [
+        "جزر سليمان"
+      ],
+      "Somalia": [
+        "الصومال"
+      ],
+      "South Africa": [
+        "جنوب إفريقيا"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "جورجيا الجنوبية وجزر ساندويتش الجنوبية"
+      ],
+      "South Korea": [
+        "كوريا الجنوبية"
+      ],
+      "South Ossetia": [
+        "أوسيتيا الجنوبية"
+      ],
+      "South Sudan": [
+        "جنوب السودان"
+      ],
+      "Spain": [
+        "إسبانيا"
+      ],
+      "Sri Lanka": [
+        "سريلانكا"
+      ],
+      "Sudan": [
+        "السودان"
+      ],
+      "Suriname": [
+        "سورينام"
+      ],
+      "Svalbard and Jan Mayen": [
+        "سفالبارد وجان مايان"
+      ],
+      "Sweden": [
+        "السويد"
+      ],
+      "Switzerland": [
+        "سويسرا"
+      ],
+      "Syria": [
+        "سوريا"
+      ],
+      "Taiwan": [
+        "تايوان"
+      ],
+      "Tajikistan": [
+        "طاجيكستان"
+      ],
+      "Tanzania": [
+        "تنزانيا"
+      ],
+      "Thailand": [
+        "تايلاند"
+      ],
+      "Timor-Leste": [
+        "تيمور الشرقية"
+      ],
+      "Togo": [
+        "الطوغو"
+      ],
+      "Tokelau": [
+        "التوكيلاو"
+      ],
+      "Tonga": [
+        "تونغا"
+      ],
+      "Trinidad and Tobago": [
+        "ترنداد وتوباجو"
+      ],
+      "Tristan da Cunha": [
+        "جزر تريستان دا كونها"
+      ],
+      "Tunisia": [
+        "تونس"
+      ],
+      "Turkey": [
+        "تركيا"
+      ],
+      "Turkmenistan": [
+        "تركمانستان"
+      ],
+      "Turks and Caicos Islands": [
+        "جزر تركس وكايكوس"
+      ],
+      "Tuvalu": [
+        "توفالو"
+      ],
+      "Uganda": [
+        "أوغندا"
+      ],
+      "Ukraine": [
+        "أوكرانيا"
+      ],
+      "United Arab Emirates": [
+        "الإمارات العربية المتحدة"
+      ],
+      "United Kingdom": [
+        "المملكة المتحدة"
+      ],
+      "United States": [
+        "الولايات المتحدة"
+      ],
+      "United States Minor Outlying Islands": [
+        "جزر الولايات المتحدة الصغيرة النائية"
+      ],
+      "Uruguay": [
+        "الأورغواي"
+      ],
+      "Uzbekistan": [
+        "أوزبكستان"
+      ],
+      "Vanuatu": [
+        "فاناتو"
+      ],
+      "Venezuela": [
+        "فنزويلا"
+      ],
+      "Vietnam": [
+        "فييتنام"
+      ],
+      "Virgin Islands, British": [
+        "جزر فيرجن البريطانية"
+      ],
+      "Virgin Islands, U.S.": [
+        "جزر فيرجن الأمريكية"
+      ],
+      "Wallis and Futuna": [
+        "جزر واليس وفوتونا"
+      ],
+      "Western Sahara": [
+        "الصحراء الغربية"
+      ],
+      "Yemen": [
+        "اليمن"
+      ],
+      "Zambia": [
+        "زامبيا"
+      ],
+      "Zimbabwe": [
+        "زيمبابوي"
+      ],
+      "Åland Islands": [
+        "جزر آلاند"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "الفاتورة المتأخرة"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "النطاق غير متاح، حاول مرة أخرى لاحقًا"
+      ],
+      "Email is not valid": [
+        "البريد الإلكتروني غير صحيح"
+      ],
+      "Enter 6 digits": [
+        "أدخل ٦ أرقام"
+      ],
+      "Incorrect username": [
+        "اسم مستخدم غير صحيح"
+      ],
+      "Invalid verification code": [
+        "رمز التحقق خاطئ"
+      ],
+      "Not a valid number": [
+        "رقم غير صحيح"
+      ],
+      "Passwords do not match": [
+        "كلمتا المرور غير متطابقتين"
+      ],
+      "Request timed out": [
+        "انتهت مهلة الطلب"
+      ],
+      "The email addresses do not match": [
+        "عناوين البريد الإلكتروني غير متطابقة"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "يتجاوز هذا الحقل الحد الأقصى البالغ ${ maximumLength } حرفًا."
+      ],
+      "This field is required": [
+        "هذه الخانة مطلوبه"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "يتطلب هذا الحقل على الأقل ${ minimumLength } حرفا."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "حاول استخدام الأحرف والأرقام و_.- فقط"
+      ],
+      "Unknown error": [
+        "‏‏خطأ غير معروف"
+      ],
+      "Username must begin with a letter or digit": [
+        "يجب أن يبدأ اسم المستخدم بحرف أو رقم"
+      ],
+      "Username must end with a letter or digit": [
+        "يجب أن ينتهي اسم المستخدم بحرف أو رقم"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "خطأ: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "يرجى تحديث الصفحة أو المحاولة مرة أخرى لاحقًا."
+      ],
+      "Something went wrong": [
+        "طرأ خللٌ ما"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "لم نتمكن من تحميل هذه الصفحة. يرجى تحديث الصفحة أو التحقق من اتصالك بالإنترنت."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "حدث خطأ ما أثناء المصادقة باستخدام مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "أدرج مفتاح أمان مرتبطًا بحساب ${ BRAND_NAME } الخاص بك."
+      ],
+      "Security key": [
+        "مفتاح الأمان"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "مفتاح الأمان"
+      ]
+    },
+    "file size format": {
+      "bytes": [
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت"
+      ],
+      "GB": [
+        "جيجابايت"
+      ],
+      "KB": [
+        "كيلوبايت"
+      ],
+      "MB": [
+        "ميجابايت"
+      ],
+      "TB": [
+        "تيرابايت"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت",
+        "بايت"
+      ],
+      "Gigabytes": [
+        "جيجابايت",
+        "جيجابايت",
+        "جيجابايت",
+        "جيجابايت",
+        "جيجابايت",
+        "جيجابايت"
+      ],
+      "Kilobytes": [
+        "كيلوبايت",
+        "كيلوبايت",
+        "كيلوبايت",
+        "كيلوبايت",
+        "كيلوبايت",
+        "كيلوبايت"
+      ],
+      "Megabytes": [
+        "ميغابايت",
+        "ميغابايت",
+        "ميغابايت",
+        "ميغابايت",
+        "ميغابايت",
+        "ميغابايت"
+      ],
+      "Terabytes": [
+        "تيرابايت",
+        "تيرابايت",
+        "تيرابايتان",
+        "تيرابايت",
+        "تيرابايت",
+        "تيرابايت"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "اتبع النظام"
+      ],
+      "Theme font": [
+        "خط المظهر"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "كبير"
+      ],
+      "Medium (recommended)": [
+        "متوسط (موصى به)"
+      ],
+      "Small": [
+        "صغير"
+      ],
+      "Very large": [
+        "كبير جدًا"
+      ],
+      "Very small": [
+        "صغير جدًا"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "البريد"
+      ],
+      "Manual": [
+        "يدوي"
+      ],
+      "No verification method available": [
+        "لا توجد طريقة تحقق متاحة"
+      ],
+      "SMS": [
+        "رسالة نصية"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "لا يمكن استخدام رقم الهاتف إلا للتحقق من حساب ${ BRAND_NAME } واحد فقط"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "قبل طلب رمز تحقق جديد ، تحقق من مجلد الرسائل غير المرغوب فيها وتأكد من أن ${ strong } هو العنوان الصحيح."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
+      ],
+      "Country code": [
+        "رمز البلد"
+      ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "إنشاء عدة حسابات مجانية غير مسموح به وفقًا لـ ‎${ termsLink }"
+      ],
+      "Each code can only be used once": [
+        "يمكن استخدام كل رمز مرة واحدة فقط"
+      ],
+      "Edit email address": [
+        "تعديل عنوان البريد الإلكتروني"
+      ],
+      "Enter the code from your authenticator app": [
+        "أدخل الرمز من تطبيق المصادقة لديك"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "أدخل رمز التحقق. رَقَم ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "أدخل كلمة مرورك الخاصة (كجهة اتصال موثوق بها)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "لمزيد من المعلومات ولإزالة القيود، يرجى تسجيل الدخول على ${ mailLink }."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "إذا كنت تواجه مشكلة في إنشاء الحساب الخاص بك، يرجى طلب دعوة وسوف نستجيب في غضون يوم عمل واحد."
+      ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "إذا كنت تعتقد أننا ارتكبنا خطأً، يُرجى ‎${ contactLink }"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "إذا لم تجد البريد الإلكتروني في علبة الوارد الخاصة بك، يرجى التحقق من مجلد البريد المزعج الخاص بك."
+      ],
+      "Internet connection lost": [
+        "فُقد الاتصال بالإنترنت"
+      ],
+      "Learn more": [
+        "أعرف المزيد"
+      ],
+      "Loading": [
+        "التحميل جارٍ"
+      ],
+      "No results found": [
+        "لم يعثر على أي نتائج"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "لا يمكن الوصول إلى الخوادم. يرجى المحاولة مرة أخرى في بضع دقائق"
+      ],
+      "Session timed out": [
+        "انتهت مهلة الجلسة"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "لمكافحة البريد المزعج وإساءة المعاملة، يرجى التحقق من أنك بشري."
+      ],
+      "To remove restrictions, you can upgrade to a paid plan.": [
+        "لإزالة القيود، يمكنك الترقية إلى خطة اشتراك مدفوعة."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.": [
+        "لدينا خطط اشتراك مصممة خصيصًا للمستخدمين من أمثالك، الذين يحتاجون إلى أكثر من عنوان بريد إلكتروني واحد."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "سنرسل رمز تحقق جديدًا إلى ${strong}"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "عندما تقوم بإعداد المصادقة الثنائية، فإننا نوفر رموز استرداد يمكنك استخدامها لتسجيل الدخول إذا فقدت الوصول إلى تطبيق المصادقة الخاص بك."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "هل ترغب في تلقي رمز تحقق جديد أو استخدام طريقة تحقق بديلة؟"
+      ],
+      "Would you like to receive a new verification code?": [
+        "هل تريد استقبال رمز تحقق جدبد؟"
+      ],
+      "You can now return to the application to continue": [
+        "يمكنك الآن العودة إلى التطبيق للمتابعة"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "حساب ${ BRAND_NAME } الخاص بك معلّق حاليًا. بعد 28 يومًا، لن تصل رسائل البريد الإلكتروني إلى صندوق الوارد الخاص بك، وسيتم حظر روابط مشاركة سحابة التخزين الخاصة بك، ولن تتمكن من تحميل ملفات جديدة. لاستئناف الخدمة العادية، يرجى دفع أي فواتير مستحقة."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "سيتم استخدام بريدك الإلكتروني فقط لهذا التحقق لمرة واحدة."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "سيتم استخدام رقم هاتفك فقط لهذا التحقق لمرة واحدة."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "تطبيق الاستيثاق"
+      ],
+      "Code is 6 digits without spaces": [
+        "الرمز مكون من 6 أرقام دون مسافات"
+      ],
+      "Email address": [
+        "عنوان البريد الإلكتروني"
+      ],
+      "Hide password": [
+        "إخفاء كلمة المرور"
+      ],
+      "Password": [
+        "الكلمة السرية"
+      ],
+      "Phone number": [
+        "رقم الهاتف"
+      ],
+      "Reveal password": [
+        "كشف الكلمة السرية"
+      ],
+      "Verification code": [
+        "رمز التحقق"
+      ],
+      "Your password (admin)": [
+        "كلمة المرور الخاصة بك (المشرف)"
+      ],
+      "Your password (trusted contact)": [
+        "كلمة مرورك (جهة اتصال موثوق بها)"
+      ]
+    },
+    "Link": {
+      "contact us": [
+        "تواصل معنا"
+      ],
+      "Learn more": [
+        "معرفة المزيد"
+      ],
+      "Request an invite": [
+        "طلب دعوة"
+      ],
+      "terms of service": [
+        "شروط الخدمة"
+      ]
+    },
+    "new_plans": {
+      "Keep your inbox organized with folders": [
+        "حافظ على تنظيم صندوق الوارد الخاص بك باستخدام المجلدات"
+      ]
+    },
+    "new_plans: Action": {
+      "Get ${ planTitle }": [
+        "أحصل على ${ planTitle }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "مساعد الكتابة ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } custom email domains": [
+        "${ n } نطاقات بريد إلكتروني مخصصة",
+        "${ n } نطاق بريد إلكترونيّ مخصّص",
+        "${ n } نطاقا بريد إلكترونيّ مخصّصان",
+        "${ n } نطاقات بريد إلكترونيّ مخصّصة",
+        "${ n } نطاق/نطاقات بريد إلكترونيّ مخصّص",
+        "${ n } نطاق/نطاقات بريد إلكترونيّ مخصّص"
+      ],
+      "${ n } email addresses per user": [
+        "${ n } من عناوين البريد الإلكتروني لكل مستخدم",
+        "${ n } عنوان بريد إلكترونيّ لمستخدم",
+        "${ n } عنوانا بريد إلكترونيّ لمستخدم",
+        "${ n } عناوين بريد إلكترونيّ لمستخدم",
+        "${ n } عناوين بريد إلكترونيّ لمستخدم",
+        "${ n } عناوين بريد إلكترونيّ لمستخدم"
+      ],
+      "${ n } email addresses/aliases": [
+        "${ n } من عناوين البريد الإلكتروني/الأسماء المستعارة",
+        "${ n } عنوان البريد الإلكتروني",
+        "عنوانا بريد إلكتروني/اسمان مستعاران (${ n })",
+        "${ n } عناوين بريد إلكتروني/أسماء مستعارة",
+        "${ n } عنوان بريد إلكتروني/اسمًا مستعارًا",
+        "${ n } عنوان بريد إلكتروني/اسم مستعار"
+      ],
+      "${ n } filters": [
+        "${ n } مرشحات",
+        "${ n } مرشح",
+        "${ n } مرشحان",
+        "${ n } مرشحات",
+        "${ n } مرشحًا",
+        "${ n } مرشح"
+      ],
+      "${ n } folders": [
+        "${ n } مجلدات",
+        "${ n } مجلد",
+        "${ n } مجلدان",
+        "${ n } مجلّدات",
+        "${ n } مجلّداً",
+        "${ n } مجلّداً"
+      ],
+      "${ n } folders and labels": [
+        "${ n } مجلد وتسمية",
+        "${ n } مجلد وتسمية",
+        "${ n } مجلد وتسمية",
+        "${ n } مجلدات وتسميات",
+        "${ n } مجلدات وتسميات",
+        "${ n } مجلدات وتسميات"
+      ],
+      "${ n } labels": [
+        "${ n } تسميات",
+        "${ n } تسمية",
+        "${ n } تسميتان",
+        "${ n } تسميات",
+        "${ n } تسمية",
+        "${ n } تسمية"
+      ],
+      "${ n } messages per day": [
+        "${ n } رسالة يوميًا",
+        "${ n } رسالة واحدة في اليوم",
+        "${ n } رسالتان اثنتان في اليوم",
+        "${ n } رسائل في اليوم",
+        "${ n } رسالة/رسائل في اليوم",
+        "${ n } رسالة/رسائل في اليوم"
+      ],
+      "${ options }-day file version history": [
+        "سجل إصدارات الملف لمدة ${ options } يوم",
+        "سجل إصدارات الملف لمدة ${ options } يوم",
+        "سجل إصدارات الملف لمدة ${ options } يومين",
+        "سجل إصدارات الملف لمدة ${ options } أيام",
+        "سجل إصدارات الملف لمدة ${ options } يومًا",
+        "سجل إصدارات الملف لمدة ${ options } يوم"
+      ],
+      "${ size } attachment size": [
+        "حجم المرفقات ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "مساحة تخزين آمنة بحجم ${ size } لكل مستخدم"
+      ],
+      "${ size } storage": [
+        "تخزين ${ size }"
+      ],
+      "${ size } storage per user": [
+        "مساحة تخزين ${ size } لكل مستخدم"
+      ],
+      "1 TB secure storage": [
+        "مساحة تخزين آمنة بسعة 1 تيرابايت"
+      ],
+      "10 email addresses/aliases": [
+        "10 عناوين بريد إلكتروني/أسماء مستعارة"
+      ],
+      "10 more premium features": [
+        "10 ميزات مميزة إضافية"
+      ],
+      "10-year file version history": [
+        "سجل إصدارات الملفات لمدة 10 سنوات"
+      ],
+      "15 GB storage": [
+        "مساحة تخزينية 15 جيجا"
+      ],
+      "200 GB of storage": [
+        "مساحة تخزين 200 جيجابايت"
+      ],
+      "Advanced account protection": [
+        "الحماية المتقدمة للحساب"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "جميع منتجات وميزات ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "جميع خدمات ${ BRAND_NAME } الأساسية (${ MAIL_SHORT_APP_NAME }، و${ VPN_SHORT_APP_NAME }، و${ PASS_SHORT_APP_NAME })"
+      ],
+      "Auto-delete Spam and Trash": [
+        "حذف البريد المزعج والمهملات تلقائيًا"
+      ],
+      "Auto-reply": [
+        "رد تلقائي"
+      ],
+      "Automatic email forwarding": [
+        "إعادة توجيه البريد الإلكتروني تلقائيًا"
+      ],
+      "Calendar sharing": [
+        "مشاركة التقويم"
+      ],
+      "Catch-all": [
+        "شامل"
+      ],
+      "Collaborate and share large files": [
+        "التعاون ومشاركة الملفات الكبيرة"
+      ],
+      "Contact groups": [
+        "مجموعات جهات الاتصال"
+      ],
+      "Contact groups management": [
+        "إدارة مجموعات جهات الاتصال"
+      ],
+      "Custom and secure business email": [
+        "بريد إلكتروني تجاري مخصَّص وآمن"
+      ],
+      "Custom email domains": [
+        "نطاقات بريد إلكتروني مخصَّصة"
+      ],
+      "Desktop app": [
+        "تطبيق سطح المكتب"
+      ],
+      "Easy Switch import assistant": [
+        "مساعد استيراد Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "دعم عميل البريد الإلكتروني (عبر IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "مجموعات البريد الإلكتروني"
+      ],
+      "Encrypted contact details": [
+        "تفاصيل جهات الاتصال المشفرة"
+      ],
+      "End-to-end encryption": [
+        "تشفير من طرف إلى طرف"
+      ],
+      "Generate emails with a prompt": [
+        "إنشاء رسائل بريد إلكتروني باستخدام مطالبة"
+      ],
+      "HTML signatures": [
+        "تواقيع HTML"
+      ],
+      "Online document editor": [
+        "محرر مستندات عبر الإنترنت"
+      ],
+      "Password health": [
+        "سلامة كلمات المرور"
+      ],
+      "Password-protected Emails": [
+        "رسائل بريد إلكتروني محمية بكلمة مرور"
+      ],
+      "Private photo backup": [
+        "نسخ احتياطي خاص للصور"
+      ],
+      "Proofread and refine your emails": [
+        "تدقيق رسائل البريد الإلكتروني وتحسينها"
+      ],
+      "Quickly craft replies": [
+        "صياغة الردود بسرعة"
+      ],
+      "Recover previous file versions": [
+        "استرداد إصدارات الملفات السابقة"
+      ],
+      "Save time emailing": [
+        "وفر الوقت في المراسلة عبر البريد الإلكتروني"
+      ],
+      "Schedule and snooze emails for any time": [
+        "جدولة رسائل البريد الإلكتروني وتأجيلها لأي وقت"
+      ],
+      "Secure file storage and sharing": [
+        "تخزين ومشاركة آمنة للملفات"
+      ],
+      "Share files with no size limit": [
+        "مشاركة الملفات بلا حدود للحجم"
+      ],
+      "Short domain (@pm.me)": [
+        "نطاق قصير (@pm.me)"
+      ],
+      "SMTP submission": [
+        "إرسال SMTP"
+      ],
+      "Support for up to 2 users": [
+        "دعم لما يصل إلى مستخدمَين"
+      ],
+      "Sync and backup all your files across devices": [
+        "مزامنة جميع ملفاتك ونسخها احتياطيًا عبر الأجهزة"
+      ],
+      "Unlimited filters": [
+        "مرشحات غير محدودة"
+      ],
+      "Unlimited folders": [
+        "مجلدات غير محدودة"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "مجلدات ، وبطاقات عنونة ، وعوامل تصفية غير محدودة"
+      ],
+      "Unlimited labels": [
+        "تسميات غير محدودة"
+      ],
+      "Unlimited messages per day": [
+        "رسائل غير محدودة يوميًا"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "تخزين يصل إلى ${ totalStorageSize }"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "نطاق بريد إلكتروني مخصَّص واحد"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "أنشئ عدة عناوين بريد إلكتروني لهوياتك على الإنترنت، على سبيل المثال JohnShopper@${ domain } لحسابات التسوق، وJohnNews@${ domain2 } للاشتراك في الأخبار"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "مساحة التخزين مشتركة بين ${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: أمِّن ملفاتك بسعة تخزين سحابية مشفرة. تشمل المزامنة التلقائية، ومشاركة الملفات المشفرة، والمزيد."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: أمّن رسائل بريدك الإلكتروني بتشفير من طرف إلى طرف. يشمل دعم نطاقات البريد الإلكتروني المخصصة و15 عنوان بريد إلكتروني وأسماء مستعارة غير محدودة من hide-my-email والمزيد."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "يمكنك الدخول إلى ${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME } بسهولة من سطح المكتب"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "العناوين لديها القدرة الكاملة على الإرسال والاستقبال. يمكن للمستخدم أن يكون لديه عناوين متعددة مخصصة له؛ ومع ذلك، لا يمكن تخصيص عنوان واحد لعدة مستخدمين."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "يسمح لك بإعداد ردود تلقائية (auto-reply) لرسائلك الواردة"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "مسح الرسائل التي يزيد عمرها عن 30 يومًا تلقائيًا من المهملات والبريد المزعج"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "أعد توجيه رسائل البريد الإلكتروني المُرسَلة إلى حسابك على ${ MAIL_APP_NAME } تلقائيًا إلى أي عنوان بريد إلكتروني آخر."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "إرسال البريد الإلكتروني الترويجي أو المبرمج بكميات كبيرة غير مدعوم حاليًا. نوصي باستخدام مزود خدمة بريد إلكتروني مخصص لحالة الاستخدام هذه."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "اختر أوقاتًا مخصصة ليتم تذكيرك ببريد إلكتروني أو لوصول رسالتك"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "أنشئ عناوين بريد إلكتروني متعددة لهوياتك على الإنترنت، على سبيل المثال، JohnShopper@${ domain } لحسابات التسوق، و JohnNews@${ domain } للاشتراك في الأخبار"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "أنشئ ما يصل إلى ${ n } من عناوين البريد الإلكتروني/الأسماء المستعارة التي يمكنك تخصيصها لأفراد العائلة. استخدمها للهويات على الإنترنت، على سبيل المثال، JohnShopper@${ domain } لحسابات التسوق."
+      ],
+      "Email everyone in a group with a single email address": [
+        "مراسلة جميع أفراد المجموعة عبر البريد الإلكتروني باستخدام عنوان بريد إلكتروني واحد"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "يضمن استلامك لجميع رسائل البريد الإلكتروني المرسلة إلى نطاقك، حتى لو كان عنوان البريد الإلكتروني غير موجود أو لم يعد موجودًا أو به خطأ إملائي"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "يقتصر دعم IMAP على استخدام تطبيقات سطح المكتب (مثل Outlook و Apple Mail و Thunderbird) عبر ${ MAIL_APP_NAME } Bridge. لا يتم دعم عمليات تكامل IMAP المستندة إلى السحابة حاليًا."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "التسميات هي علامات بسيطة يمكنك إضافتها إلى الرسائل لتسهيل العثور عليها أو لتطبيق المرشحات عليها"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "خصص توقيع بريدك الإلكتروني بالشعارات والصور وأيقونات وسائل التواصل الاجتماعي وروابط تفاصيل الاتصال الخاصة بك والمزيد"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "يمنع الوصول إلى الرسائل من قِبل ${ BRAND_NAME } أو الأطراف الثالثة. الأشخاص الوحيدون الذين يمكنهم قراءة الرسائل هم المُرسِل والمستلم المقصود."
+      ],
+      "Quickly set up out-of-office messages": [
+        "إعداد رسائل \"خارج المكتب\" بسرعة"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "انقل رسائل البريد الإلكتروني أو التقويمات أو جهات الاتصال الخاصة بك بسهولة من أي خدمة"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "أمِّن ملفاتك من خلال التخزين السحابي المشفر. يتضمن المزامنة التلقائية ومشاركة الملفات المشفرة وغير ذلك."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "خزّن تفاصيل جهات الاتصال بأمان، مثل رقم الهاتف والعنوان وتاريخ الميلاد والملاحظات الشخصية. يضمن التشفير منعدم الوصول أنه حتى ${ BRAND_NAME } لا يمكنه الوصول إليها."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "أرسل رسائل بريد إلكتروني إلى مجموعات كبيرة بسرعة وسهولة عن طريق إنشاء أي عدد تريده من مجموعات جهات الاتصال (حتى 100 جهة اتصال لكل مجموعة)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "أعِدّ مرشحات للرد تلقائيًا على رسائل بريدك الإلكتروني أو فرزها و/أو تسميتها"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "شارك ملفاتك أو مجلداتك مع أي شخص باستخدام روابط آمنة وقابلة للمشاركة"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "يسمح SMTP لخدمات أو أجهزة الطرف الثالث بإرسال البريد الإلكتروني عبر ${ MAIL_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "مساحة التخزين مشتركة عبر ${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } و ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "تتم مشاركة مساحة التخزين عبر ${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME } و${ DRIVE_APP_NAME }. يمكن للمسؤولين تخصيص مساحات تخزين مختلفة للمستخدمين في مؤسستهم."
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "مساحة التخزين مشتركة بين المستخدمين عبر ${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } و ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "استخدم عناوين نطاق بريدك الإلكتروني المخصصة، على سبيل المثال، you@yourname.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "عند الإرسال إلى مستخدمي ${ MAIL_APP_NAME } الآخرين، يكون التشفير تلقائيًا. يتطلب الإرسال إلى مستخدمين من خارج ${ MAIL_APP_NAME_TWO } تعيين كلمة مرور قبل الإرسال."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "أضف المزيد من التخصيص مع 15 عنوان بريد إلكتروني ودعم لـ 3 نطاقات بريد إلكتروني مخصصة"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "عزز مساحة التخزين لديك إلى ${ bundleStorage } لكل مستخدم"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "عزز مساحة التخزين لديك إلى إجمالي ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domains": [
+        "دعم نطاقات البريد الإلكتروني المخصصة ${ n }",
+        "الدعم لنطاق البريد الإلكتروني المخصص ${ n }",
+        "دعم نطاقات البريد الإلكتروني المخصصة ${ n }",
+        "دعم نطاقات البريد الإلكتروني المخصصة ${ n }",
+        "دعم نطاقات البريد الإلكتروني المخصصة ${ n }",
+        "دعم نطاقات البريد الإلكتروني المخصصة ${ n }"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "كلمة السر"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "جميع الميزات المميزة من ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "لم يكتمل تسجيل الدخول بنجاح."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "تسجيل الدخول"
+      ],
+      "Sign in to your organization": [
+        "تسجيل الدخول إلى مؤسستك"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "مساحة تخزين للبيانات التي أنشأتها تطبيقات ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME } و ${ CONTACTS_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "تخزين سحابي يصل إلى ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "تخزين بريد يصل إلى ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "For all ${ BRAND_NAME } services": [
+        "لجميع خدمات ${ BRAND_NAME }"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "تم إرسال الرمز إلى ${ methodTo }"
+      ],
+      "Verification successful": [
+        "تم التحقق بنجاح"
+      ]
+    },
+    "Title": {
+      "Account restricted": [
+        "تم تقييد الحساب"
+      ],
+      "Account temporarily locked": [
+        "الحساب مقفل مؤقتًا"
+      ],
+      "Enter your password": [
+        "أدخل كلمة مرورك"
+      ],
+      "Human verification": [
+        "التحقق البشري"
+      ],
+      "Invalid verification code": [
+        "رمز التحقق خاطئ"
+      ],
+      "Request new code": [
+        "اطلب رمزا جديدًا"
+      ],
+      "Two-factor authentication": [
+        "المصادقة الثنائية"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل",
+        "كلمة السر يجب ان تحتوي على ${ MIN_PASSWORD_LENGTH } حرف على الأقل"
+      ]
+    }
+  }
+}
