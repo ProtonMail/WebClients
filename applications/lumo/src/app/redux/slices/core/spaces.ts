@@ -51,8 +51,26 @@ const initialState: SpaceMap = EMPTY_SPACE_MAP;
 const spacesReducer = createReducer<SpaceMap>(initialState, (builder) => {
     builder
         .addCase(addSpace, (state, action) => {
-            console.log('Action triggered: addSpace', action.payload);
             const space = action.payload;
+            const existing = state[space.id];
+            const existingLinkedFolder = existing?.isProject ? (existing as any).linkedDriveFolder : undefined;
+            const newLinkedFolder = space.isProject ? (space as any).linkedDriveFolder : undefined;
+            
+            // Warn if we're losing linkedDriveFolder data
+            if (existingLinkedFolder && !newLinkedFolder) {
+                console.warn(`[addSpace] WARNING: Overwriting space ${space.id} and LOSING linkedDriveFolder!`, {
+                    existingFolderId: existingLinkedFolder?.folderId,
+                    newFolderId: newLinkedFolder?.folderId,
+                    stack: new Error().stack
+                });
+            } else {
+                console.log('Action triggered: addSpace', { 
+                    id: space.id, 
+                    isProject: space.isProject,
+                    hasLinkedFolder: !!newLinkedFolder 
+                });
+            }
+            
             state[space.id] = space;
         })
         .addCase(deleteSpace, (state, action) => {

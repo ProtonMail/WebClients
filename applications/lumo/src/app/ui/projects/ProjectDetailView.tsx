@@ -273,8 +273,8 @@ const ProjectDetailViewInner = () => {
         );
     }
 
-    // Count files for this space (exclude auto-retrieved as they're conversation-specific)
-    const fileCount = Object.values(spaceAttachments).filter((att) => !att.error && !att.autoRetrieved).length;
+    // Count files for this space (exclude auto-retrieved and require filename to match ProjectFilesPanel)
+    const fileCount = Object.values(spaceAttachments).filter((att) => !att.error && !att.autoRetrieved && att.filename).length;
 
     // Get prompt suggestions based on project category (only shown when no conversations exist)
     const promptSuggestions = sortedConversations.length === 0 ? getPromptSuggestionsForCategory(category.id) : [];
@@ -499,6 +499,7 @@ const ProjectDetailViewInner = () => {
                 {/* Sidepanel - Desktop only */}
                 {!isMobileViewport && showSidebar && (
                     <ProjectFilesPanel
+                        key={projectId}
                         projectId={projectId}
                         instructions={projectInstructions}
                         onEditInstructions={() => instructionsModal.openModal(true)}
@@ -515,6 +516,7 @@ const ProjectDetailViewInner = () => {
                     />
                     <ModalTwoContent>
                         <ProjectFilesPanel
+                            key={projectId}
                             projectId={projectId}
                             instructions={projectInstructions}
                             onEditInstructions={() => {
