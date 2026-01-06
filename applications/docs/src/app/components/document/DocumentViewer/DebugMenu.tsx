@@ -15,7 +15,7 @@ import { ConnectionCloseReason } from '@proton/docs-proto'
 import { isDevOrBlack } from '@proton/docs-shared'
 
 export type DebugMenuProps = {
-  docController: AuthenticatedDocControllerInterface
+  docController?: AuthenticatedDocControllerInterface
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   documentType: DocumentType
@@ -37,10 +37,16 @@ export function DebugMenu({ docController, editorController, documentState, docu
   }, [isOpen, editorController])
 
   const commitToRTS = async () => {
+    if (!docController) {
+      return
+    }
     void docController.debugSendCommitCommandToRTS()
   }
 
   const squashDocument = async () => {
+    if (!docController) {
+      return
+    }
     void docController.squashDocument()
   }
 
@@ -53,6 +59,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
   }
 
   const createInitialCommit = async () => {
+    if (!docController) {
+      return
+    }
     const editorState = await editorController.getDocumentState()
     if (editorState) {
       void docController.createInitialCommitFromEditorState(editorState)
@@ -155,15 +164,19 @@ export function DebugMenu({ docController, editorController, documentState, docu
         )}
         {isDevOrBlack() && (
           <>
-            <Button size="small" onClick={commitToRTS}>
-              Commit Doc with RTS
-            </Button>
-            <Button size="small" onClick={squashDocument}>
-              Squash Last Commit with DX
-            </Button>
-            <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
-              Create Initial Commit
-            </Button>
+            {docController && (
+              <>
+                <Button size="small" onClick={commitToRTS}>
+                  Commit Doc with RTS
+                </Button>
+                <Button size="small" onClick={squashDocument}>
+                  Squash Last Commit with DX
+                </Button>
+                <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
+                  Create Initial Commit
+                </Button>
+              </>
+            )}
             <Button size="small" onClick={closeConnection}>
               Close Connection
             </Button>
@@ -195,9 +208,11 @@ export function DebugMenu({ docController, editorController, documentState, docu
         <Button size="small" onClick={downloadYJSStateAsUpdate}>
           Download YJS state as single update
         </Button>
-        <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
-          Download All Updates as ZIP
-        </Button>
+        {docController && (
+          <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
+            Download All Updates as ZIP
+          </Button>
+        )}
       </div>
     </div>
   )
