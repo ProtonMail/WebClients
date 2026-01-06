@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Paga ${ price } ara"
       ],
-      "Pay once": [
-        "Pagament únic"
-      ],
       "Preview": [
         "Vista prèvia"
       ],
@@ -9217,6 +9214,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
       ],
+      "Compromised": [
+        "En perill"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això activarà SAML per a tota l'organització."
       ],
@@ -13116,9 +13116,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
-      ],
-      "Limited time": [
-        "Oferta per temps limitat"
       ],
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
@@ -18194,6 +18191,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "El valor no és vàlid"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "La durada ha de ser superior a ${ MIN_LIFETIME } dia",
         "La durada ha de ser superior a ${ MIN_LIFETIME } dies"
@@ -21018,9 +21018,6 @@
       "Free forever": [
         "Gratuït per sempre"
       ],
-      "Pay once, access forever.": [
-        "Amb un únic pagament, accés per sempre"
-      ],
       "per month, billed annually": [
         "al mes amb facturació anual"
       ],
@@ -22560,9 +22557,6 @@
       ],
       "Other sign-in issues": [
         "Altres problemes d'inici de sessió"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus de per vida per ${ plusLifetimePrice }"
       ],
       "Password": [
         "Contrasenya"

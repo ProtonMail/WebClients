@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Payer ${ price } maintenant"
       ],
-      "Pay once": [
-        "Paiement unique"
-      ],
       "Preview": [
         "Aperçu"
       ],
@@ -4975,7 +4972,7 @@
         "Navigateur"
       ],
       "Calendar": [
-        "Calendar"
+        "Calendrier"
       ],
       "Chrome": [
         "Chrome"
@@ -9220,6 +9217,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Prix Editors' Choice de CNET avec une note de 8,4 sur 10"
       ],
+      "Compromised": [
+        "Compromise"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurez l'authentification SAML pour votre organisation via un fournisseur d'identité (IdP). Cela permettra d'activer SAML pour l'ensemble de l'organisation."
       ],
@@ -13119,9 +13119,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
-      ],
-      "Limited time": [
-        "Offre à durée limitée"
       ],
       "Link label (optional)": [
         "Label du lien (facultatif)"
@@ -18193,10 +18190,13 @@
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Après ${ lifetime } jour, tous les messages seront supprimés.",
-        "Après ${ lifetime } jours, tous les messages seront supprimés"
+        "Après ${ lifetime } jours, tous les messages seront supprimés."
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "La valeur n'est pas valide."
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "La durée doit être supérieure à ${ MIN_LIFETIME } jour.",
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
@@ -21021,9 +21021,6 @@
       "Free forever": [
         "Gratuit pour toujours"
       ],
-      "Pay once, access forever.": [
-        "Un seul paiement, un accès à vie"
-      ],
       "per month, billed annually": [
         "par mois (facturation annuelle)"
       ],
@@ -22563,9 +22560,6 @@
       ],
       "Other sign-in issues": [
         "Autres problèmes de connexion"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime pour ${ plusLifetimePrice }"
       ],
       "Password": [
         "Mot de passe"
