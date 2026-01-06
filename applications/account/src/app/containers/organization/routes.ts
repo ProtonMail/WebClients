@@ -169,7 +169,7 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
     const showBusinessMigrationSection =
-        isOLESEnabled &&
+        Boolean(isOLESEnabled) &&
         isAdmin &&
         isOrganizationB2B(organization) &&
         (hasActiveOrganizationKey || hasActiveOrganization);
