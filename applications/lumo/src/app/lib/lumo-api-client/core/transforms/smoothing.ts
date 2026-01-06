@@ -2,6 +2,20 @@
 import { sleep } from '../../../../util/date';
 import type { GenerationToFrontendMessageDecrypted as M } from '../types';
 
+declare global {
+    interface Window {
+        lumoSmoothingDebug?: {
+            lag: number;
+            bufferSize: number;
+            differential: number;
+            rate: number;
+            drate: number;
+            stiffness: number;
+            isPulling: boolean;
+        };
+    }
+}
+
 class StringDeque {
     private str: string;
     private start: number = 0;
@@ -58,20 +72,26 @@ class StringDeque {
 
 const REFRESH_MS = 12;
 
+export const DAMPEN_RATE = 10;
+export const LAG0 = 40;
+export const STIFFNESS_PUSH = 8;
+export const STIFFNESS_PULL = 8;
+
 const makeSmoothingTransformer = (): Transformer<M, M> => {
     let buffer = new StringDeque('');
     let rate = 0; // char/second - emission process first derivative (aka speed or velocity)
     let lastTime = Date.now();
-    const stiffnessPull = 8; // stiffness constant when spring is extended
-    const stiffnessPush = 1; // stiffness constant when spring is compressed
-    const lag0 = 10; // chars - length of the spring at rest
+    const stiffnessPull = STIFFNESS_PULL; // stiffness constant when spring is extended
+    const stiffnessPush = STIFFNESS_PUSH; // stiffness constant when spring is compressed
+    const lag0 = LAG0; // chars - length of the spring at rest
     let lag = 0; // difference between arrival and emission processes, chars
     // let next_item_task = asyncio.create_task(anext(network_gen, None))
-    let dampen = 10;
+    let dampen = DAMPEN_RATE;
     let count = 0;
     let timeoutHandle: number | undefined = undefined;
     let started = false;
     let ending = false;
+    let debugEnabled = typeof window !== 'undefined' && localStorage.getItem('lumo_debug_perf') === 'true';
 
     function emit(value: M, controller: TransformStreamDefaultController<M>) {
         controller.enqueue(value);
@@ -100,8 +120,8 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
         // Clear scheduled invocation
         disableTimeout();
 
-        // Simple trick to make sure we go till the end - overextend the spring by the rest length,
-        // so the spring will naturally reach rest exactly at the end of the input stream
+        // Make sure we go till the end, otherwise we'll stop when the spring is at rest length,
+        // missing lag0 chars in the buffer
         ending = true;
 
         // Make progress manually until stream is over
@@ -140,23 +160,22 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
         // Integrate first derivative with Newton first law applied to a spring mass:
         // F=ma --> dr/dt = a = F/m = F/1 = k(x-x0) = stiffness(lag - lag0)
         // console.log(`[smoothing] lag = ${lag} chars`);
-        let differential = lag - lag0; // diff between the spring's rest length and the mass's actual position
-        if (ending) differential += lag0;
+        let differential = !ending ? lag - lag0 : lag; // diff between the spring's rest length and the mass's actual position
         console.log(`[smoothing] differential = ${differential} chars`);
         const isPulling = differential > 0; // whether the mass is behind or ahead of the spring's rest length (lag0)
         console.log(`[smoothing] isPulling: ${isPulling}`);
         const stiffness = isPulling ? stiffnessPull : stiffnessPush; // selective spring pressure depending on direction
         console.log(`[smoothing] stiffness: ${stiffness}`);
-        const drate = stiffness * dt * differential;
+        const drate = (stiffness * differential - dampen * rate) * dt;
         console.log(`[smoothing] drate: ${drate}`);
         rate += drate; // integrate dr/dt
         console.log(`[smoothing] rate (pre clamp): ${rate}`);
         rate = Math.max(rate, 0); // no negative rate
-        // rate = Math.max(rate, 0.1); // force a tiny rate to always advance
+        if (ending) rate = Math.max(rate, 10); // force a tiny rate to always advance
         // console.log(`[smoothing] rate: ${rate}`);
 
         // Integrate the mass's position, i.e. calculate how many chars to emit
-        const dlag = (rate - dampen) * dt;
+        const dlag = rate * dt;
         // console.log(`[smoothing] dlag: ${dlag}`);
         const advance = Math.max(0, Math.min(dlag, lag));
         const clamped = dlag < 0 || dlag > lag;
@@ -177,6 +196,19 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
         if (clamped && advance > 0) {
             rate = Math.max(0, Math.min(rate, advance / dt));
+        }
+
+        // Export debug metrics if performance monitor is enabled
+        if (debugEnabled && typeof window !== 'undefined') {
+            window.lumoSmoothingDebug = {
+                lag,
+                bufferSize: buffer.length,
+                differential,
+                rate,
+                drate,
+                stiffness,
+                isPulling,
+            };
         }
 
         // Call again soon even if the input stream doesn't yield new data
