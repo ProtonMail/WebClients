@@ -29,6 +29,7 @@ import {
 } from '../videoConferencing/useVideoConfTelemetry';
 import { shouldAutoAddMeetingLink } from './shouldAutoAddMeetingLink';
 import type { IntegrationState } from './types';
+import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
 
 interface UseProtonMeetIntegrationParameters {
     model: EventModel;
@@ -57,6 +58,8 @@ export const useProtonMeetIntegration = ({
     const [user] = useUser();
 
     const notifications = useNotifications();
+
+    const { showAutoAddNotification, canAutoAddMeeting } = useAutoAddMeetLinkNotification();
 
     const [processState, setProcessState] = useState<IntegrationState | undefined>(
         isActive ? 'meeting-present' : undefined
@@ -252,7 +255,7 @@ export const useProtonMeetIntegration = ({
     const triedToAddMeetingLinkToDuplicateEvent = useRef(false);
 
     useEffect(() => {
-        const autoAddAvailable = isMeetVideoConferenceEnabled && isAutoAddMeetingLinkEnabled;
+        const autoAddAvailable = isMeetVideoConferenceEnabled && isAutoAddMeetingLinkEnabled && canAutoAddMeeting;
 
         if (!autoAddAvailable) {
             return;
@@ -267,7 +270,9 @@ export const useProtonMeetIntegration = ({
         });
 
         if (autoAddMeeting) {
-            void createVideoConferenceMeeting();
+            void createVideoConferenceMeeting().then(() => {
+                showAutoAddNotification();
+            });
         }
 
         if (isDuplicating) {
@@ -283,6 +288,8 @@ export const useProtonMeetIntegration = ({
         model.conferenceProvider,
         isDuplicating,
         isAutoAddMeetingLinkEnabled,
+        canAutoAddMeeting,
+        showAutoAddNotification,
     ]);
 
     const setupInProgress = useRef(false);
