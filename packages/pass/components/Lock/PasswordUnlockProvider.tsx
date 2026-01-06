@@ -20,7 +20,7 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 
-/** Should only be used once the app has booted and state hydrated*/
+/** Should only be used once the app has booted and state hydrated */
 export const usePasswordTypeSwitch = () => {
     /** Only web & desktop can use the user's second password as an unlock
      * mechanism. Any password verification done in the extension must go
@@ -51,8 +51,15 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
     const sso = useSelector(selectIsSSO);
+    const twoPwd = useSelector(selectHasTwoPasswordMode);
     const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
-    const shouldReauth = sso && !hasOfflinePassword;
+
+    /** SSO or two-pwd mode users which do not have an offline password
+     * should trigger a re-auth via account when unlocking. For SSO users,
+     * we cannot verify their backup-password without going through account.
+     * Same for two-password mode users, the pass scope is insufficient to
+     * retrieve the user salts in order to verify the second password */
+    const shouldReauth = (sso || twoPwd) && !hasOfflinePassword;
     const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     const getInitialModalState = useCallback((): PasswordModalState => {
