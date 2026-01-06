@@ -190,7 +190,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                                 />
                             </div>
                         )}
-                        
+
                         <div className="relative">
                             {totalFiles > 1 && (
                                 <span className="absolute bg-primary text-white text-xs rounded-full min-w-5 h-5 flex items-center justify-center px-1 file-count">
@@ -338,7 +338,6 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
         prevProps.conversation.spaceId !== nextProps.conversation.spaceId ||
         prevProps.conversation.starred !== nextProps.conversation.starred;
 
-    // Check if total file count has changed (this is what the component uses from messageChain)
     const prevTotalFiles = prevProps.messageChain.reduce((count, message) => {
         return count + (message.attachments?.length || 0);
     }, 0);
@@ -347,7 +346,5 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
     }, 0);
 
     const totalFilesChanged = prevTotalFiles !== nextTotalFiles;
-
-    // Only re-render if conversation changed, total files changed, or onOpenFiles changed
     return !conversationChanged && !totalFilesChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
 });
