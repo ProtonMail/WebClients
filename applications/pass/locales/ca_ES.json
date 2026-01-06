@@ -1892,8 +1892,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2118,11 +2117,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilitzeu el domini del camí complet, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
       ],
+      "Premium domain": [
+        "Domini prèmium"
+      ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
+      ],
+      "Public domain": [
+        "Domini públic"
       ],
       "Reconnect": [
         "Torna a connectar"

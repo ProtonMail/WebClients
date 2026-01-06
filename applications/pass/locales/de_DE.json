@@ -1891,10 +1891,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2118,11 +2114,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Bitte verwende die vollständige Domain, z. B. meine-domain.de oder meine-subdomain.meine-domain.de, wenn du eine Subdomain verwendest."
       ],
+      "Premium domain": [
+        "Premium-Domain"
+      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
+      ],
+      "Public domain": [
+        "Öffentliche Domain"
       ],
       "Reconnect": [
         "Erneut verbinden"
