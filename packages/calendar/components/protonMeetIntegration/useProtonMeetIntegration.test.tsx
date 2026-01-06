@@ -74,6 +74,15 @@ jest.mock('@proton/meet/utils/cryptoUtils', () => ({
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
 
+jest.mock('./useAutoAddMeetLinkNotification', () => ({
+    useAutoAddMeetLinkNotification: jest.fn().mockReturnValue({
+        showAutoAddNotification: jest.fn(),
+        handleDisableAutoAddMeetLink: jest.fn(),
+        isDisabling: false,
+        canAutoAddMeeting: false,
+    }),
+}));
+
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
     return <Router history={createBrowserHistory()}>{children}</Router>;
 };

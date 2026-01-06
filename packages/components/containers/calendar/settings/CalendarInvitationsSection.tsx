@@ -11,9 +11,11 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import useFlag from '@proton/unleash/useFlag';
 
 import InviteLocaleSelector from './InviteLocaleSelector';
 
@@ -22,18 +24,37 @@ interface Props {
     locales: TtagLocaleMap;
 }
 
-const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, AutoImportInvite }, locales }: Props) => {
+const CalendarInvitationsSection = ({
+    calendarUserSettings: { InviteLocale, AutoImportInvite, AutoAddConferenceLink },
+    locales,
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
     const [loadingInviteLocale, withLoadingInviteLocale] = useLoading();
     const [loadingAutoImportInvite, withLoadingAutoImportInvite] = useLoading();
+    const [loadingAutoAddMeetLink, withLoading] = useLoading();
+
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
         await call();
         createNotification({ text: c('Success').t`Preference saved` });
+    };
+
+    const handleAutoAddMeetLinkChange = () => {
+        const shouldDisable =
+            !AutoAddConferenceLink ||
+            (typeof AutoAddConferenceLink === 'object' &&
+                AutoAddConferenceLink.Provider === AutoAddVideoConferenceLinkProvider.Meet);
+
+        const newValue = shouldDisable
+            ? AutoAddVideoConferenceLinkProvider.None
+            : AutoAddVideoConferenceLinkProvider.Meet;
+
+        return withLoading(handleChange({ AutoAddConferenceLink: newValue }));
     };
 
     const displayedLocale = InviteLocale === null ? null : getClosestLocaleCode(InviteLocale, locales);
@@ -91,6 +112,33 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {isMeetVideoConferenceEnabled && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label className="text-semibold" htmlFor="auto-add-meet-link">
+                            <span>{c('Label').t`Auto-add Meet links`}</span>
+                            <Info
+                                buttonClass="inline-flex ml-2"
+                                title={c('Info')
+                                    .t`Automatically add Meet links to your calendar invitations when there is at least one invitee.`}
+                            />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight isToggleContainer>
+                        <Toggle
+                            id="auto-add-meet-link"
+                            aria-describedby="auto-add-meet-link"
+                            loading={loadingAutoAddMeetLink}
+                            checked={
+                                !!AutoAddConferenceLink &&
+                                typeof AutoAddConferenceLink === 'object' &&
+                                AutoAddConferenceLink.Provider === AutoAddVideoConferenceLinkProvider.Meet
+                            }
+                            onChange={handleAutoAddMeetLinkChange}
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
         </SettingsSection>
     );
 };
