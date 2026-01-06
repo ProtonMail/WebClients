@@ -60,7 +60,7 @@ export const AztecoPaymentDetailsModal = ({
                         <div>
                             {selectedQuote.PaymentMethod === 'BankTransfer' ||
                             selectedQuote.PaymentMethod === 'InstantPayment'
-                                ? c('bitcoin buy').t`1% bank transfer fee`
+                                ? c('bitcoin buy').t`2% bank transfer fee`
                                 : c('bitcoin buy').t`4% credit card fee`}
                         </div>
                         {selectedQuote.PaymentProcessingFee} {selectedQuote.FiatCurrencySymbol}
