@@ -10,6 +10,7 @@ import {
     createFileAttachmentsDiscoveryRule,
     createItemSharingRule,
     createMonitorLearnMoreRule,
+    createOfflineSetupRule,
     createPendingShareAccessRule,
     createProtonAnniversary2025Rule,
     createSSOChangeLockRule,
@@ -50,6 +51,7 @@ export const spotlight = createSpotlightService({
         createSecurityRule(store),
         createAliasSyncEnableRule(store),
         createUserRenewalRule(store),
+        createOfflineSetupRule(store),
 
         /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
         createWelcomeRule(),
