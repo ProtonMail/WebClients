@@ -363,6 +363,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                     </div>
                                 </div>
                                 <DriveBrowser
+                                    key={linkedDriveFolder.folderId}
                                     ref={driveBrowserRef}
                                     onFileSelect={handleDriveFileSelect}
                                     initialShowDriveBrowser={true}
@@ -437,7 +438,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
                 {/* Link Drive Folder Modal */}
                 {linkDriveFolderModal.render && (
-                    <LinkDriveFolderModal {...linkDriveFolderModal.modalProps} projectId={projectId} />
+                    <LinkDriveFolderModal key={projectId} {...linkDriveFolderModal.modalProps} projectId={projectId} />
                 )}
 
                 {/* Create Folder Modal */}

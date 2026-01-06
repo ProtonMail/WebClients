@@ -1,4 +1,8 @@
-@import '~@proton/styles/scss/lib';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
 
 .project-detail-view {
 	block-size: 100%;
@@ -53,19 +57,9 @@
 		padding-inline-start: 0;
 	}
 
-	// @media (max-width: 1024px) {
-	//     .project-detail-header.with-sidebar & {
-	//         flex: 0 1 50%;
-	//     }
-	// }
-
-	@media (width <= 768px) {
+	@include im.media ('<=small') {
 		flex: 1 1 auto;
-
-		// max-width: 90%;
 		padding-inline-start: 8px;
-
-		// order: 1;
 	}
 }
 
@@ -188,7 +182,7 @@
 	flex-direction: column !important; // Ensure column layout is enforced
 	align-items: center; // Center children horizontally
 
-	@media (width <= 768px) {
+	@include im.media('<=small') {
 		padding-block: 8px 0;
 		padding-inline: 6px 8px;
 	}
@@ -210,7 +204,7 @@
 	align-items: center;
 	justify-content: center;
 
-	@media (width <= 768px) {
+	@include im.media('<=small') {
 		max-inline-size: 100%;
 		inline-size: 100%;
 		margin-inline: 0;
@@ -334,7 +328,7 @@
 		padding-inline: 30px 0;
 	}
 
-	@include media('<small') {
+	@include im.media('<small') {
 		padding: 0;
 		inline-size: 100%;
 		max-inline-size: 100%;
@@ -421,7 +415,6 @@
 		padding-inline: 20px;
 	}
 
-	// Reduce padding at small heights
 	@media (max-height: 500px) {
 		padding-block: 8px 0;
 	}

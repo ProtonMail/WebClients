@@ -550,26 +550,31 @@ export function* refreshSpaceFromRemote({
 
     if (localSpace) {
         // Space exists in Redux - check if linkedDriveFolder state differs between local and remote
-        const { isLinked: localIsLinkedToDrive } = getProjectInfo(localSpace);
+        const { isLinked: localIsLinkedToDrive, linkedDriveFolder: localLinkedFolder } = getProjectInfo(localSpace);
+        const { linkedDriveFolder: remoteLinkedFolder } = getProjectInfo(remoteSpace);
+
+        console.log(`refreshSpaceFromRemote ${localId}: Comparing drive state:`, {
+            localIsLinked: localIsLinkedToDrive,
+            localFolderId: localLinkedFolder?.folderId,
+            remoteIsLinked: remoteIsLinkedToDrive,
+            remoteFolderId: remoteLinkedFolder?.folderId,
+        });
 
         if (remoteIsLinkedToDrive !== localIsLinkedToDrive) {
-            // linkedDriveFolder state differs - update local from remote
-            if (remoteIsLinkedToDrive) {
+            // linkedDriveFolder state differs
+            if (remoteIsLinkedToDrive && !localIsLinkedToDrive) {
+                // Remote has link, local doesn't - update local from remote
                 console.log(`refreshSpaceFromRemote ${localId}: Remote is linked to drive, updating local`);
-            } else {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote is not linked to drive, updating local`);
-                // Clean up the search index for documents from this space
-                const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
-                if (userId) {
-                    console.log(`refreshSpaceFromRemote ${localId}: Cleaning up search index for space`);
-                    const searchService = SearchService.get(userId);
-                    searchService.removeDocumentsBySpace(localId);
-                }
+                yield put(addSpace(remoteSpace)); // Update Redux with remote data
+                yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // Update IDB
+            } else if (!remoteIsLinkedToDrive && localIsLinkedToDrive) {
+                // Local has link, remote doesn't - KEEP LOCAL (sync hasn't propagated yet)
+                // Don't overwrite local with remote to prevent data loss
+                console.log(`refreshSpaceFromRemote ${localId}: Local is linked to drive but remote is not - KEEPING LOCAL (pending sync)`);
+                // The pushSpaceRequest should sync the local linkedDriveFolder to remote
             }
-            yield put(addSpace(remoteSpace)); // Update Redux with remote data
-            yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // Update IDB
         } else {
-            console.log(`refreshSpaceFromRemote ${localId}: received space already exists in Redux, noop`);
+            console.log(`refreshSpaceFromRemote ${localId}: Both have same link state (${localIsLinkedToDrive}), noop`);
         }
         return;
     }
@@ -581,23 +586,21 @@ export function* refreshSpaceFromRemote({
         const idbProjectInfo = idbSpace ? getProjectInfo(idbSpace) : null;
         const idbIsLinkedToDrive = idbProjectInfo?.isLinked ?? false;
 
-        // If linkedDriveFolder state differs between remote and IDB, use remote
+        // If linkedDriveFolder state differs between remote and IDB
         if (remoteIsLinkedToDrive !== idbIsLinkedToDrive) {
-            if (remoteIsLinkedToDrive) {
+            if (remoteIsLinkedToDrive && !idbIsLinkedToDrive) {
+                // Remote has link, IDB doesn't - update from remote
                 console.log(`refreshSpaceFromRemote ${localId}: Remote is linked to drive, updating from remote`);
-            } else {
-                console.log(`refreshSpaceFromRemote ${localId}: Remote is not linked to drive, updating from remote`);
-                // Clean up the search index for documents from this space
-                const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
-                if (userId) {
-                    console.log(`refreshSpaceFromRemote ${localId}: Cleaning up search index for space`);
-                    const searchService = SearchService.get(userId);
-                    searchService.removeDocumentsBySpace(localId);
-                }
+                yield put(addSpace(remoteSpace)); // Redux
+                yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
+                yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // IDB
+            } else if (!remoteIsLinkedToDrive && idbIsLinkedToDrive && idbSpace) {
+                // IDB has link, remote doesn't - KEEP IDB (sync hasn't propagated yet)
+                console.log(`refreshSpaceFromRemote ${localId}: IDB is linked to drive but remote is not - keeping IDB (pending sync)`);
+                const cleanIdb = cleanSpace(idbSpace);
+                yield put(addSpace(cleanIdb)); // Redux
+                yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: false })); // Redux
             }
-            yield put(addSpace(remoteSpace)); // Redux
-            yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
-            yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false }); // IDB
         } else if (idbSpace) {
             // Use IDB version
             const cleanIdb = cleanSpace(idbSpace);
