@@ -195,6 +195,17 @@
 	margin-block-start: 4px;
 }
 
+// Favorites sidebar section
+.favorites-sidebar-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.favorites-content {
+	max-block-size: 30vh;
+	overflow-y: auto;
+}
+
 // Chat history sidebar section - structured like projects
 .chat-history-sidebar-section {
 	display: flex;

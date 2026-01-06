@@ -23,6 +23,7 @@ import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { SearchModal } from '../components/SearchModal/SearchModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
 import { LumoSidebarUpsell } from '../upsells/composed/LumoSidebarUpsell';
+import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 import { ProjectsSidebarSection } from './ProjectsSidebarSection';
 
@@ -276,6 +277,8 @@ const LumoSidebarContent = () => {
                         <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 }
+
+                <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
 
                 <ChatHistorySection searchValue={searchValue} showText={showText} />
 
