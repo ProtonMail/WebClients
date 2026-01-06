@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { LAG0 } from '../../lib/lumo-api-client/core/transforms/smoothing';
 import { useLumoSelector } from '../../redux/hooks';
 import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDebugModal';
 
@@ -21,15 +22,27 @@ interface PerformanceMetrics {
     fps?: number;
     messageCount?: number;
     longestRenderTime?: number;
+    smoothing?: {
+        lag: number;
+        bufferSize: number;
+        differential: number;
+        rate: number;
+        drate: number;
+        stiffness: number;
+        isPulling: boolean;
+    } | null;
     history?: {
         tokenDelays: number[];
         renderTimes: number[];
         tokensPerSecHistory: number[];
         fpsHistory: number[];
+        smoothingLag: number[];
+        smoothingRate: number[];
+        smoothingDifferential: number[];
     };
 }
 
-const HISTORY_SIZE = 200;
+const HISTORY_SIZE = 1000;
 
 interface SparklineProps {
     data: number[];
@@ -41,6 +54,108 @@ interface SparklineProps {
     warningThreshold?: number;
     dangerThreshold?: number;
 }
+
+interface SpringMassVisualizationProps {
+    lag: number;
+    differential: number;
+    isPulling: boolean;
+    rate: number;
+}
+
+const SpringMassVisualization = ({ lag, differential, isPulling, rate }: SpringMassVisualizationProps) => {
+    const width = 220;
+    const height = 80;
+    const restPosition = LAG0; // lag0
+    const maxLag = 200;
+
+    // Calculate positions (inverted: wall on right, mass moves left as lag increases)
+    // massX represents the RIGHT edge of the mass
+    const massX = width - 20 - (lag / maxLag) * (width - 60);
+    const massSize = 20;
+    const springStartX = massX - massSize; // Spring connects to left edge of mass
+    const springEndX = width - 20;
+
+    // Spring parameters
+    const springCoils = 8;
+    const springAmplitude = 8;
+    const springColor = isPulling ? 'var(--signal-danger)' : 'var(--signal-success)';
+    const restX = width - 20 - (restPosition / maxLag) * (width - 60);
+
+    // Generate spring path
+    const springPath = [];
+    const springLength = springEndX - springStartX;
+    const segmentLength = springLength / (springCoils * 2);
+
+    springPath.push(`M ${springStartX} ${height / 2}`);
+    for (let i = 0; i < springCoils; i++) {
+        const x1 = springStartX + (i * 2 + 1) * segmentLength;
+        const x2 = springStartX + (i * 2 + 2) * segmentLength;
+        springPath.push(`L ${x1} ${height / 2 - springAmplitude}`);
+        springPath.push(`L ${x2} ${height / 2 + springAmplitude}`);
+    }
+    springPath.push(`L ${springEndX} ${height / 2}`);
+
+    const massOpacity = Math.min(0.4 + (rate / 100) * 0.6, 1);
+
+    return (
+        <svg width={width} height={height} style={{ display: 'block', background: 'var(--background-weak)' }}>
+            {/* Rest position indicator */}
+            <line
+                x1={restX}
+                y1={10}
+                x2={restX}
+                y2={height - 10}
+                stroke="var(--text-weak)"
+                strokeWidth="1"
+                strokeDasharray="3,3"
+                opacity="0.4"
+            />
+            <text x={restX} y={8} fontSize="8" fill="var(--text-weak)" textAnchor="middle">
+                rest
+            </text>
+
+            {/* Wall/anchor */}
+            <rect x={width - 20} y={height / 2 - 15} width={5} height={30} fill="var(--text-norm)" opacity="0.6" />
+
+            {/* Spring */}
+            <path d={springPath.join(' ')} fill="none" stroke={springColor} strokeWidth="2" opacity="0.8" />
+
+            {/* Mass - positioned with right edge at massX */}
+            <rect
+                x={massX - massSize}
+                y={height / 2 - massSize / 2}
+                width={massSize}
+                height={massSize}
+                fill={springColor}
+                opacity={massOpacity}
+                stroke="var(--text-norm)"
+                strokeWidth="1.5"
+            />
+
+            {/* Direction arrow - above the mass */}
+            {rate > 1 && (
+                <path
+                    d={
+                        isPulling
+                            ? `M ${massX} ${height / 2 - massSize / 2 - 5} L ${massX + 10} ${height / 2 - massSize / 2 - 5} L ${massX + 7} ${height / 2 - massSize / 2 - 8} M ${massX + 10} ${height / 2 - massSize / 2 - 5} L ${massX + 7} ${height / 2 - massSize / 2 - 2}`
+                            : `M ${massX - massSize} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 10} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 7} ${height / 2 - massSize / 2 - 8} M ${massX - massSize - 10} ${height / 2 - massSize / 2 - 5} L ${massX - massSize - 7} ${height / 2 - massSize / 2 - 2}`
+                    }
+                    stroke={springColor}
+                    strokeWidth="2"
+                    fill="none"
+                />
+            )}
+
+            {/* Labels */}
+            <text x={10} y={height - 5} fontSize="9" fill="var(--text-weak)">
+                {maxLag}
+            </text>
+            <text x={width - 25} y={height - 5} fontSize="9" fill="var(--text-weak)">
+                0
+            </text>
+        </svg>
+    );
+};
 
 const Sparkline = ({
     data,
@@ -119,6 +234,9 @@ export const PerformanceMonitor = () => {
             renderTimes: [],
             tokensPerSecHistory: [],
             fpsHistory: [],
+            smoothingLag: [],
+            smoothingRate: [],
+            smoothingDifferential: [],
         },
     });
     const [isVisible, setIsVisible] = useState(false);
@@ -157,7 +275,18 @@ export const PerformanceMonitor = () => {
         renderTimes: number[];
         tokensPerSecHistory: number[];
         fpsHistory: number[];
-    }>({ tokenDelays: [], renderTimes: [], tokensPerSecHistory: [], fpsHistory: [] });
+        smoothingLag: number[];
+        smoothingRate: number[];
+        smoothingDifferential: number[];
+    }>({
+        tokenDelays: [],
+        renderTimes: [],
+        tokensPerSecHistory: [],
+        fpsHistory: [],
+        smoothingLag: [],
+        smoothingRate: [],
+        smoothingDifferential: [],
+    });
     const fpsFrameRef = useRef<number>(0);
     const fpsLastTimeRef = useRef<number>(Date.now());
     const longestRenderRef = useRef<number>(0);
@@ -229,12 +358,27 @@ export const PerformanceMonitor = () => {
 
         const messageCount = Object.keys(messages).length;
 
+        // Read smoothing metrics from window
+        const smoothingMetrics =
+            typeof window !== 'undefined' && (window as any).lumoSmoothingDebug
+                ? (window as any).lumoSmoothingDebug
+                : null;
+
         historyRef.current = {
             tokenDelays: [...historyRef.current.tokenDelays, timeSinceLastToken].slice(-HISTORY_SIZE),
             renderTimes: [...historyRef.current.renderTimes, renderTime].slice(-HISTORY_SIZE),
             tokensPerSecHistory: [...historyRef.current.tokensPerSecHistory, tokensPerSecond].slice(-HISTORY_SIZE),
             fpsHistory:
                 fps > 0 ? [...historyRef.current.fpsHistory, fps].slice(-HISTORY_SIZE) : historyRef.current.fpsHistory,
+            smoothingLag: smoothingMetrics
+                ? [...historyRef.current.smoothingLag, smoothingMetrics.lag].slice(-HISTORY_SIZE)
+                : historyRef.current.smoothingLag,
+            smoothingRate: smoothingMetrics
+                ? [...historyRef.current.smoothingRate, smoothingMetrics.rate].slice(-HISTORY_SIZE)
+                : historyRef.current.smoothingRate,
+            smoothingDifferential: smoothingMetrics
+                ? [...historyRef.current.smoothingDifferential, smoothingMetrics.differential].slice(-HISTORY_SIZE)
+                : historyRef.current.smoothingDifferential,
         };
 
         setMetrics({
@@ -251,6 +395,7 @@ export const PerformanceMonitor = () => {
             fps: fps || metrics.fps,
             messageCount,
             longestRenderTime: Math.round(longestRenderRef.current * 100) / 100,
+            smoothing: smoothingMetrics,
             history: historyRef.current,
         });
     }, [messages, isVisible]);
@@ -260,7 +405,15 @@ export const PerformanceMonitor = () => {
     const isStreaming = metrics.streamStartTime !== null;
 
     const handleClearHistory = () => {
-        historyRef.current = { tokenDelays: [], renderTimes: [], tokensPerSecHistory: [], fpsHistory: [] };
+        historyRef.current = {
+            tokenDelays: [],
+            renderTimes: [],
+            tokensPerSecHistory: [],
+            fpsHistory: [],
+            smoothingLag: [],
+            smoothingRate: [],
+            smoothingDifferential: [],
+        };
         renderCountRef.current = 0;
         longestRenderRef.current = 0;
         setMetrics((prev) => ({
@@ -360,6 +513,106 @@ export const PerformanceMonitor = () => {
                     </span>
                 </span>
             </div>
+
+            {metrics.smoothing && (
+                <>
+                    <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                        <span className="debug-view-header-icon">🧮</span>
+                        {c('lumo: Debug View').t`Smoothing (Spring-Mass)`}
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Lag`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.lag.toFixed(1)} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Buffer size`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.bufferSize} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Differential`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.differential.toFixed(1)} chars</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Rate`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.rate.toFixed(1)} c/s</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Acceleration`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.drate.toFixed(2)} c/s²</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Stiffness`}</span>
+                        <span className="debug-view-value">{metrics.smoothing.stiffness}</span>
+                    </div>
+
+                    <div className="debug-view-row">
+                        <span className="debug-view-label">{c('lumo: Debug View').t`Spring state`}</span>
+                        <span className="debug-view-value">
+                            {metrics.smoothing.isPulling ? '⬅️ Pulling' : '➡️ Pushing'}
+                        </span>
+                    </div>
+
+                    <div style={{ marginTop: '12px', marginBottom: '8px' }}>
+                        <div className="debug-view-chart-label" style={{ marginBottom: '4px' }}>
+                            {c('lumo: Debug View').t`Spring-Mass Visualization`}
+                        </div>
+                        <SpringMassVisualization
+                            lag={metrics.smoothing.lag}
+                            differential={metrics.smoothing.differential}
+                            isPulling={metrics.smoothing.isPulling}
+                            rate={metrics.smoothing.rate}
+                        />
+                    </div>
+
+                    <div className="debug-view-section" style={{ marginTop: '8px' }}>
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Lag`} (0-400 chars)</div>
+                            <Sparkline
+                                data={metrics.history?.smoothingLag || []}
+                                width={220}
+                                height={30}
+                                color="var(--interaction-norm)"
+                                minValue={0}
+                                maxValue={400}
+                                warningThreshold={200}
+                                dangerThreshold={300}
+                            />
+                        </div>
+
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Rate`} (0-400 c/s)</div>
+                            <Sparkline
+                                data={metrics.history?.smoothingRate || []}
+                                width={220}
+                                height={30}
+                                color="var(--signal-success)"
+                                minValue={0}
+                                maxValue={400}
+                            />
+                        </div>
+
+                        <div className="debug-view-chart">
+                            <div className="debug-view-chart-label">
+                                {c('lumo: Debug View').t`Differential`} (-10-40 chars)
+                            </div>
+                            <Sparkline
+                                data={metrics.history?.smoothingDifferential || []}
+                                width={220}
+                                height={30}
+                                color="var(--signal-warning)"
+                                minValue={-10}
+                                maxValue={40}
+                            />
+                        </div>
+                    </div>
+                </>
+            )}
 
             <div className="debug-view-section">
                 <div className="debug-view-chart">
