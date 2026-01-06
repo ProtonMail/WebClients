@@ -1540,6 +1540,9 @@
       "Advanced account protection": [
         "高级账户保护"
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能。"
+      ],
       "Cancel and downgrade": [
         "取消并降级"
       ],
@@ -9329,6 +9332,14 @@
         "联系人"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 的所有高级功能。"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
+      ]
+    },
     "plus_block": {
       "Stay on ${ currentPlanTitle }": [
         "继续使用 ${ currentPlanTitle }"
@@ -9410,7 +9421,7 @@
         "已订阅的好友"
       ],
       "More sharing options": [
-        "更多分享选项1"
+        "更多分享方式"
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "一旦您的完整订阅开始，您仍然可以在 30 天内取消并获得按比例的退款。"
@@ -10153,6 +10164,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能，内置全方位隐私保护，您可以放心使用，无需担心数据与身份安全受到任何威胁。"
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } 为您提供所有应用程序、所有功能、新版本的早期访问权限，以及控制数据及其安全性所需的一切。"

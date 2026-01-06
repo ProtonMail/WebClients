@@ -5231,6 +5231,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
+      "Better in the app": [
+        "Працуе лепш у праграме"
+      ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
@@ -7888,7 +7891,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
+        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
@@ -12558,6 +12561,9 @@
         "Знойдзены ${ searchView.numberOfResults } вынікаў",
         "Знойдзены ${ searchView.numberOfResults } вынікаў"
       ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Атрымайце ${ DRIVE_SHORT_APP_NAME } на свой тэлефон"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
       ],
@@ -12566,9 +12572,6 @@
       ],
       "Get mobile and desktop apps": [
         "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
-      ],
-      "Get mobile app": [
-        "Атрымаць мабільную праграму"
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
@@ -13036,7 +13039,7 @@
         "Дакумент без назвы ад ${ date }"
       ],
       "Untitled spreadsheet ${ date }": [
-        "Таблiца без назвы ад ${ date }"
+        "Табліца без назвы ад ${ date }"
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"
