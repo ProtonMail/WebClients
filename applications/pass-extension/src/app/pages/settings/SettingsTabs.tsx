@@ -21,6 +21,7 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { RequestForkData } from '@proton/pass/lib/auth/fork';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
@@ -88,6 +89,11 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
     const onReauth = useCallback<OnReauthFn>((reauth, fork) => {
+        /** NOTE: extension reauth is only required for confirming password
+         * before an export sequence for SSO users as we cannot verify their
+         * backup password other than through account */
+        if (reauth.type !== ReauthAction.EXPORT_CONFIRM) return;
+
         const user = selectUser(store.getState());
         const userID = user?.ID;
         const email = user?.Email;
