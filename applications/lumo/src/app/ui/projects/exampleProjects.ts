@@ -9,7 +9,7 @@ export const EXAMPLE_PROJECTS: Project[] = [
         name: c('collider_2025:Project').t`Personal Finance Manager`,
         description: c('collider_2025:Project').t`Track spending, create budgets, and plan financial goals with personalized insights`,
         isExample: true,
-        icon: 'finance',
+        icon: 'money-bills',
         instructions: `You are a personal finance advisor helping users manage their money effectively. Provide practical guidance on budgeting, saving, investing, debt management, and financial planning.
 
 Key guidelines:
@@ -30,7 +30,7 @@ Key guidelines:
         name: c('collider_2025:Project').t`Homework Study Partner`,
         description: c('collider_2025:Project').t`Get help understanding assignments, solving problems, and learning concepts`,
         isExample: true,
-        icon: 'homework',
+        icon: 'pass-atom',
         instructions: `You are a patient and encouraging homework assistant. Help students understand concepts, work through problems, and develop critical thinking skills without simply giving answers.
 
 Key guidelines:
@@ -73,7 +73,7 @@ Key guidelines:
         name: c('collider_2025:Project').t`Research & Analysis Partner`,
         description: c('collider_2025:Project').t`Synthesize sources, analyze data, and develop insights for your research projects`,
         isExample: true,
-        icon: 'research',
+        icon: 'lightbulb',
         instructions: `You are a research assistant helping users conduct thorough, well-organized research. Assist with literature reviews, data analysis, source synthesis, and insight generation.
 
 Key guidelines:
@@ -96,7 +96,7 @@ Key guidelines:
         name: c('collider_2025:Project').t`Creative Writing Coach`,
         description: c('collider_2025:Project').t`Develop stories, refine prose, and improve your writing craft`,
         isExample: true,
-        icon: 'writing',
+        icon: 'pen-sparks',
         instructions: `You are a supportive writing coach helping users improve their creative and professional writing. Provide feedback, suggestions, and encouragement across all writing projects.
 
 Key guidelines:

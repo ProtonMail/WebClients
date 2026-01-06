@@ -3,24 +3,15 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Icon,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-    TextAreaTwo,
-} from '@proton/components';
+import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { PROJECT_CATEGORIES } from '../constants';
+import { IconPicker } from '../components/IconPicker';
+import { DEFAULT_PROJECT_ICON, getIconFromProjectName } from '../constants';
 import { useProjectActions } from '../hooks/useProjectActions';
 
 import './NewProjectModal.scss';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface NewProjectModalProps extends ModalStateProps {
     onProjectCreated?: (projectId: string) => void;
@@ -38,7 +29,8 @@ export const NewProjectModal = ({
 }: NewProjectModalProps) => {
     const [projectName, setProjectName] = useState('');
     const [projectInstructions, setProjectInstructions] = useState('');
-    const [selectedIcon, setSelectedIcon] = useState<string>('other');
+    const [selectedIcon, setSelectedIcon] = useState<string>(DEFAULT_PROJECT_ICON);
+    const [userSelectedIcon, setUserSelectedIcon] = useState(false);
     const { createProject } = useProjectActions();
 
     // Populate initial values when modal opens
@@ -46,14 +38,29 @@ export const NewProjectModal = ({
         if (modalProps.open) {
             setProjectName(initialName || '');
             setProjectInstructions(initialInstructions || '');
-            setSelectedIcon(initialIcon || 'other');
+            setSelectedIcon(initialIcon || DEFAULT_PROJECT_ICON);
+            setUserSelectedIcon(!!initialIcon);
         }
     }, [modalProps.open, initialName, initialInstructions, initialIcon]);
+
+    // Auto-suggest icon based on project name (only if user hasn't manually selected)
+    useEffect(() => {
+        if (!userSelectedIcon && projectName.trim()) {
+            const suggestedIcon = getIconFromProjectName(projectName);
+            setSelectedIcon(suggestedIcon);
+        }
+    }, [projectName, userSelectedIcon]);
+
+    const handleIconSelect = (icon: string) => {
+        setSelectedIcon(icon);
+        setUserSelectedIcon(true);
+    };
 
     const handleCancel = () => {
         setProjectName('');
         setProjectInstructions('');
-        setSelectedIcon('other');
+        setSelectedIcon(DEFAULT_PROJECT_ICON);
+        setUserSelectedIcon(false);
         modalProps.onClose?.();
     };
 
@@ -75,55 +82,35 @@ export const NewProjectModal = ({
     return (
         <>
             <ModalTwo {...modalProps} onClose={handleCancel} size="large">
-                <ModalTwoHeader title={c('collider_2025:Title').t`New Project`} subline={c('collider_2025:Subline').t`Projects keep chats, files, and custom instructions in one place. Use them for ongoing work, or just to keep things tidy.`}/>
+                <ModalTwoHeader title={c('collider_2025:Title').t`Create new project`} subline={c('collider_2025:Subline').t`Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.`}/>
                 
                 <ModalTwoContent>
-                    <div className="new-project-modal-content">
-                        {/* Category selection */}
-                        <div className="mt-4 mb-4">
-                            <label htmlFor="project-category" className="label text-bold">
-                                {c('collider_2025:Label').t`Category`}
-                            </label>
-                            <SelectTwo
-                                id="project-category"
-                                value={selectedIcon}
-                                className="mt-2"
-                                onValue={(value: string) => setSelectedIcon(value)}
-                            >
-                                {PROJECT_CATEGORIES.map((category) => (
-                                    <Option key={category.id} value={category.id} title={category.name}>
-                                        <div className="new-project-modal-category-option">
-                                            <div
-                                                className="new-project-modal-category-icon"
-                                                style={{ color: category.color }}
-                                            >
-                                                <Icon name={category.icon as any} size={6} />
-                                            </div>
-                                            <span>{category.name}</span>
-                                        </div>
-                                    </Option>
-                                ))}
-                            </SelectTwo>
+                    <div className="flex flex-column gap-4">
+                        {/* Project name with icon picker */}
+                        <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
+                            <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
+                            <InputFieldTwo
+                                id="project-name"
+                                placeholder={c('collider_2025:Placeholder').t`Holiday planner`}
+                                value={projectName}
+                                onValue={setProjectName}
+                                autoFocus={false}
+                                maxLength={100}
+                                unstyled
+                                className="flex-1 unstyled-field"
+                                dense
+                            />
                         </div>
-
-                        <InputFieldTwo
-                            id="project-name"
-                            label={c('collider_2025:Label').t`Project name`}
-                            placeholder={c('collider_2025:Placeholder').t`Enter project name`}
-                            value={projectName}
-                            onValue={setProjectName}
-                            autoFocus
-                            maxLength={100}
-                        />
                         
-                        <div className="mt-1">
-                            <label htmlFor="project-instructions" className="label">
+                        <div>
+                            <label htmlFor="project-instructions" className="block text-semibold text-sm color-norm mb-2">
                                 {c('collider_2025:Label').t`Project Instructions (optional)`}
                             </label>
                             <TextAreaTwo
                                 id="project-instructions"
                                 placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
                                 value={projectInstructions}
+                                className='border border-weak rounded-lg'
                                 onValue={setProjectInstructions}
                                 rows={5}
                             />
