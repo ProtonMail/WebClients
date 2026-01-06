@@ -1505,8 +1505,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4488,6 +4487,9 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "No se puede establecer una caducidad superior a la permitida por la política de retención."
+      ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
@@ -7380,7 +7382,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -15587,14 +15590,14 @@
       "Your free trial has ended": [
         "Finalizó su prueba gratuita"
       ],
+      "Your newsletters in one place": [
+        "Tus boletines en un solo lugar"
+      ],
       "Your plan": [
         "El plan"
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
-      ],
-      "Your subscriptions in one place": [
-        "Sus suscripciones en un solo lugar"
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"

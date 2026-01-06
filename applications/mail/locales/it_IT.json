@@ -1504,10 +1504,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -4488,6 +4484,9 @@
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Non puoi impostare una scadenza più lunga di quanto consentito dalla Policy di Conservazione."
+      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -7380,7 +7379,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9109,6 +9109,9 @@
       "/month": [
         "/ mese"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
+      ],
       "Account holder": [
         "Titolare del conto"
       ],
@@ -9255,6 +9258,9 @@
       ],
       "Colors": [
         "Colori"
+      ],
+      "Command line interface (CLI)": [
+        "Interfaccia a riga di comando (CLI)"
       ],
       "Company": [
         "Azienda"
@@ -15581,14 +15587,14 @@
       "Your free trial has ended": [
         "La tua prova gratuita è terminata"
       ],
+      "Your newsletters in one place": [
+        "Le tue newsletter in un unico posto"
+      ],
       "Your plan": [
         "Il tuo piano"
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
-      ],
-      "Your subscriptions in one place": [
-        "Le tue iscrizioni in un unico posto"
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"

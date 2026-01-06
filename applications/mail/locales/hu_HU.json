@@ -1261,6 +1261,9 @@
       "Select date and time": [
         "Dátum és idő kiválasztása"
       ],
+      "Select rating ${ n } out of ${ to }": [
+        "Válasszon értékelést ${ n } innen ${ to }"
+      ],
       "Self-destruct in 7 days": [
         "Önmegsemmisítés 7 nap múlva"
       ],
@@ -1278,6 +1281,9 @@
       ],
       "send auto-reply email": [
         "automatikus válasz küldése"
+      ],
+      "Send Feedback": [
+        "Visszajelzés küldése"
       ],
       "Send read receipt": [
         "Olvasási visszaigazolás küldése"
@@ -1481,8 +1487,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4394,6 +4399,9 @@
       "Cannot export this contact": [
         "A névjegy exportálása nem sikerült"
       ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "A megőrzési szabályzatban megengedettnél hosszabb időkorlát nem éllítható be."
+      ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
@@ -7249,6 +7257,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -9598,6 +9607,9 @@
       ],
       "System information": [
         "Rendszer információk"
+      ],
+      "Tell us more about your experience": [
+        "Írj részletesen a tapasztalataidről"
       ],
       "The category has been updated, thanks for your feedback!": [
         "A kategória frissítésre került, köszönjük visszajelzését!"
@@ -15253,6 +15265,9 @@
         "Megvédtük ${ trackersCount } követőtől",
         "Megvédtük ${ trackersCount } követőtől"
       ],
+      "We'd love to hear from you!": [
+        "Szívesen hallanánk önről"
+      ],
       "Welcome": [
         "Üdvözli"
       ],
@@ -15300,9 +15315,6 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
-      ],
-      "Your subscriptions in one place": [
-        "Az előfizetései egy helyen"
       ],
       "✨ Categories are coming!": [
         "✨ Érkeznek a kategóriák!"

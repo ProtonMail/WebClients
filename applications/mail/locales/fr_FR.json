@@ -1505,8 +1505,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4489,7 +4488,7 @@
         "Impossible d'exporter ce contact"
       ],
       "Cannot set expiration longer than retention policy allows.": [
-        "La date d'expiration ne peut dépasser celle définie dans les règles d'utilisation."
+        "Il est impossible de définir une expiration plus longue que celle autorisée par la politique de conservation."
       ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
@@ -7383,7 +7382,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -15590,14 +15590,14 @@
       "Your free trial has ended": [
         "Votre essai gratuit est terminé."
       ],
+      "Your newsletters in one place": [
+        "Vos newsletters en un seul endroit."
+      ],
       "Your plan": [
         "Votre abonnement"
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
-      ],
-      "Your subscriptions in one place": [
-        "Vos abonnements au même endroit"
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
