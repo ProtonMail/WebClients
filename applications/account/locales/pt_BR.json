@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
       ],
-      "Pay once": [
-        "Pague uma vez"
-      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -9203,6 +9200,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors' Choice Award com classificação de 8,4 de 10"
       ],
+      "Compromised": [
+        "Comprometido"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configure a autenticação SAML para sua organização através de um provedor de identidade (PI). Isso habilitará o SAML para toda a organização."
       ],
@@ -11706,6 +11706,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated.": [
+        "Sua conta foi atualizada com sucesso."
+      ],
       "Your account was successfully updated with this promotion": [
         "Sua conta foi atualizada com essa promoção."
       ],
@@ -13099,9 +13102,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
-      ],
-      "Limited time": [
-        "Tempo limitado"
       ],
       "Link label (optional)": [
         "Link do marcador (opcional)"
@@ -17752,6 +17752,11 @@
         "**Você deve atualizar todos os aplicativos móveis ${ BRAND_NAME }**: suas novas chaves não funcionarão em versões mais antigas do aplicativo."
       ]
     },
+    "PQC key generation": {
+      "This will generate new quantum-resistant encryption keys for your account.": [
+        "Isso gerará novas chaves de criptografia resistentes à computação quântica para sua conta."
+      ]
+    },
     "PQC optin": {
       "Couldn't enable post-quantum protection": [
         "Não foi possível ativar a proteção pós-quântica"
@@ -18165,6 +18170,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Valor inválido"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "A duração deve ser maior que ${ MIN_LIFETIME } dia",
         "A duração deve ser maior que ${ MIN_LIFETIME } dias"
@@ -20986,9 +20994,6 @@
       "Free forever": [
         "Gratuito para sempre"
       ],
-      "Pay once, access forever.": [
-        "Pague uma vez e acesse para sempre."
-      ],
       "per month, billed annually": [
         "por mês, com cobrança anual"
       ],
@@ -22537,9 +22542,6 @@
       ],
       "Other sign-in issues": [
         "Outros problemas de acesso"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime por ${ plusLifetimePrice }"
       ],
       "Password": [
         "Senha"

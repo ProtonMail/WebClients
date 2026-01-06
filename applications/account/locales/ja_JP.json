@@ -1083,9 +1083,6 @@
       "Pay ${ price } now": [
         "${ price } を支払う"
       ],
-      "Pay once": [
-        "一度だけの支払い"
-      ],
       "Preview": [
         "プレビュー"
       ],
@@ -11595,6 +11592,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated.": [
+        "アカウントが正常に更新されました。"
+      ],
       "Your account was successfully updated with this promotion": [
         "あなたのアカウントはこのプロモーションで正常に更新されました"
       ],
@@ -12979,9 +12979,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
-      ],
-      "Limited time": [
-        "期間限定"
       ],
       "Link label (optional)": [
         "リンクラベル(オプション)"
@@ -17995,6 +17992,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "無効な値"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "期間は ${ MIN_LIFETIME } 日よりも長く設定してください。"
       ],
@@ -20750,9 +20750,6 @@
       "Free forever": [
         "永久無料"
       ],
-      "Pay once, access forever.": [
-        "一度お支払いいただくと、ずっとご利用いただけます。"
-      ],
       "per month, billed annually": [
         "月払い、年払い"
       ],
@@ -22275,9 +22272,6 @@
       ],
       "Other sign-in issues": [
         "その他のサインインに関する問題"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Lifetime を ${ plusLifetimePrice } で"
       ],
       "Password": [
         "パスワード"
