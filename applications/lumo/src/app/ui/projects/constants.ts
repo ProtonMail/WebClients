@@ -7,34 +7,176 @@ export interface ProjectCategory {
     color: string;
 }
 
-export const PROJECT_CATEGORIES: ProjectCategory[] = [
-    { id: 'investing', name: 'Investing', icon: 'money-bills', color: '#1DB767' }, 
-    { id: 'homework', name: 'Homework', icon: 'pass-atom', color: '#FFAC2E' },
-    { id: 'writing', name: 'Writing', icon: 'pen-sparks', color: '#625DF5' }, 
-    { id: 'health', name: 'Health', icon: 'heart-filled', color: '#DD5DCC' },
-    { id: 'planning', name: 'Planning', icon: 'calendar-cells', color: '#95a5a6' },
-    { id: 'legal', name: 'Legal', icon: 'file-lines', color: '#1BA3FD' }, 
-    { id: 'research', name: 'Research', icon: 'lightbulb', color: '#625DF5' },
-    { id: 'finance', name: 'Finance', icon: 'money-bills', color: '#1DB767' },
-    { id: 'work', name: 'Work', icon: 'pass-work', color: '#625DF5' }, 
-    { id: 'personal', name: 'Personal', icon: 'user-filled', color: '#FFAC2E' }, 
-    { id: 'coding', name: 'Coding', icon: 'code', color: '#1BA3FD' }, 
-    { id: 'language', name: 'Language', icon: 'speech-bubble', color: '#DD5DCC' },
-    { id: 'other', name: 'Other', icon: 'folder-filled', color: '#625DF5' },
+// Available icons for project icon picker (validated against @proton/icons)
+export const PROJECT_ICONS: string[] = [
+    // Work & Productivity
+    'folder',
+    'file-lines',
+    'calendar-cells',
+    'pass-work',
+    'presentation-screen',
+    
+    // Development & Tech
+    'code',
+    'window-terminal',
+    'users-merge',
+    'robot',
+    'rocket',
+    'bolt',
+    'wrench',
+    
+    
+    // Design & Creative
+    'palette',
+    'pen-sparks',
+    'camera',
+    'pass-atom',
+    
+    // Finance & Commerce
+    'bank',
+    'wallet',
+    'money-bills',
+    'pass-shopping-cart',
+    'pass-shop',
+    'pass-shopping-cart',
+    
+    // Communication & Media
+    'mobile',
+    'tv',
+    'language',
+    
+    // Data & Analytics
+    'chart-line',
+    'lightbulb',
+    
+    // Nature & Living Things
+    'earth',
+    'pass-leaf',
+    'pass-flower',
+    'pass-fish',
+    'pass-bear',
+    'pass-cream',
+    'sun',
+    'fire',
+    
+    // Lifestyle & Personal
+    'pass-home',
+    'pass-heart',
+    'pass-gift',
+    'pass-book',
+    'bookmark',
+    
+    // Recreation & Fun
+    'pass-basketball',
+    'pass-pacman',
 ];
 
 export const DEFAULT_PROJECT_ICON = 'folder';
 export const DEFAULT_PROJECT_COLOR = '#6D4AFF';
 
-export function getProjectCategory(iconId?: string): ProjectCategory {
-    return PROJECT_CATEGORIES.find((cat) => cat.id === iconId) || PROJECT_CATEGORIES[PROJECT_CATEGORIES.length - 1];
+// Icon heuristics: map keywords to icons
+const ICON_KEYWORDS: Record<string, string[]> = {
+    'folder': ['folder', 'files', 'documents', 'organize'],
+    'file-lines': ['document', 'paper', 'report', 'legal', 'contract'],
+    'pass-shop': ['shop', 'shopping', 'store', 'market', 'mall', 'department store', 'retail'],
+    'pass-atom': ['homework', 'study', 'learn', 'education', 'knowledge'],
+    'pen-sparks': ['ai', 'magic', 'creative', 'ideas', 'brainstorm', 'write', 'writing', 'draft', 'notes', 'blog', 'article', 'essay'],
+    'money-bills': ['money', 'finance', 'investing', 'budget', 'expense', 'salary', 'income', 'bank', 'financial'],
+    'code': ['code', 'coding', 'programming', 'developer', 'software', 'app', 'web', 'javascript', 'python', 'react', 'terminal'],
+    'pass-pacman': ['pacman', 'game', 'play', 'entertainment', 'playstation', 'xbox', 'gaming'],
+    'pass-basketball': ['football', 'soccer', 'basketball', 'tennis', 'golf', 'baseball', 'hockey', 'cricket', 'rugby', 'volleyball', 'boxing', 'wrestling', 'mma', 'ufc'],
+    'language': ['language', 'translate', 'chinese', 'spanish', 'french', 'german', 'japanese', 'korean', 'learn'],
+    'heart': ['love', 'fit', 'favorite', 'wedding', 'relationship', 'dating', 'personal', 'health', 'wellness'],
+    'paint-roller': ['design', 'art', 'creative', 'painting', 'interior', 'decor', 'color'],
+    'sliders': ['settings', 'config', 'preferences', 'customize', 'tuning'],
+    'earth': ['travel', 'trip', 'vacation', 'holiday', 'world', 'international', 'geography'],
+    'lock': ['security', 'password', 'privacy', 'encryption', 'safe', 'protect'],
+    'mobile': ['mobile', 'phone', 'ios', 'android', 'smartphone'],
+    'tv': ['tv', 'movie', 'movies', 'film', 'video', 'streaming', 'netflix', 'youtube', 'entertainment'],
+    'fire': ['hot', 'trending', 'urgent', 'important', 'energy', 'startup'],
+    'chart-line': ['analytics', 'metrics', 'stats', 'growth', 'tracking', 'performance', 'kpi', 'report'],
+    'buildings': ['office', 'company', 'business', 'corporate', 'career', 'real estate', 'property'],
+    'pass-home': ['home', 'house', 'living', 'family', 'domestic'],
+    'lightbulb': ['research', 'innovation', 'think', 'concept'],
+    'calendar-cells': ['calendar', 'plan', 'schedule', 'event', 'date'],
+    'pass-fish': ['fish','food', 'restaurant', 'meal', 'dining', 'restaurant'],
+    'pass-leaf': ['leaf', 'plant', 'tree', 'nature', 'forest', 'garden', 'vegan', 'vegetarian'],
+    'pass-work': ['work', 'job', 'professional', 'career', 'employment'],
+    'pass-gift': ['birthday', 'party', 'celebration', 'present', 'anniversary'],
+    'camera': ['photo', 'photography', 'picture', 'image', 'visual'],
+    'key': ['access', 'login', 'authentication', 'credentials'],
+    'sun': ['sun', 'sunny', 'weather', 'sunrise', 'sunset'],
+    'pass-book': ['save', 'favorite', 'reading', 'books', 'library'],
+};
+
+/**
+ * Get a suggested icon based on project name using keyword heuristics
+ */
+export function getIconFromProjectName(projectName: string): string {
+    const nameLower = projectName.toLowerCase();
+    
+    for (const [icon, keywords] of Object.entries(ICON_KEYWORDS)) {
+        for (const keyword of keywords) {
+            if (nameLower.includes(keyword)) {
+                return icon;
+            }
+        }
+    }
+    
+    return DEFAULT_PROJECT_ICON;
 }
 
 /**
- * Get prompt suggestions for a project category.
- * Returns an array of translatable prompt suggestions based on the category ID.
+ * Get project category/icon info. Handles both:
+ * - Legacy category IDs (e.g., 'investing', 'health')
+ * - Direct icon names (e.g., 'money-bills', 'heart')
  */
-export function getPromptSuggestionsForCategory(categoryId?: string): string[] {
+export function getProjectCategory(iconId?: string): ProjectCategory {
+    
+    
+    // Check if it's a direct icon name from our icon list
+    if (iconId && PROJECT_ICONS.includes(iconId)) {
+        return {
+            id: iconId,
+            name: iconId, // Use icon name as category name
+            icon: iconId, // Icon name is the same as the ID
+            color: DEFAULT_PROJECT_COLOR,
+        };
+    }
+    
+    // Fallback to default
+    return {
+        id: 'other',
+        name: 'Other',
+        icon: DEFAULT_PROJECT_ICON,
+        color: DEFAULT_PROJECT_COLOR,
+    };
+}
+
+// Map direct icon names to prompt categories for suggestions
+const ICON_TO_PROMPT_CATEGORY: Record<string, string> = {
+    'money-bills': 'finance',
+    'chart-line': 'finance',
+    'heart': 'health',
+    'globe': 'planning',
+    'calendar-cells': 'planning',
+    'pencil': 'writing',
+    'pen-sparks': 'writing',
+    'code': 'coding',
+    'buildings': 'work',
+    'briefcase': 'work',
+    'lightbulb': 'research',
+    'file-lines': 'legal',
+};
+
+/**
+ * Get prompt suggestions for a project category or icon.
+ * Returns an array of translatable prompt suggestions based on the category ID or icon name.
+ */
+export function getPromptSuggestionsForCategory(categoryOrIconId?: string): string[] {
+    // If it's a direct icon name, map it to a category
+    const categoryId = ICON_TO_PROMPT_CATEGORY[categoryOrIconId || ''] || categoryOrIconId;
+    
     switch (categoryId) {
         case 'health':
             return [

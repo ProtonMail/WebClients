@@ -90,7 +90,7 @@ export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }
         >
             <div className="project-card-header">
                 <div className="project-card-title-row">
-                    <Icon name={category.icon as any} size={4.5} className="project-card-icon" style={{ color: category.color }} />
+                    <Icon name={category.icon as any} size={4.5} className="project-card-icon" />
                     <h3 className="project-card-title">{project.name}</h3>
                 </div>
                 {!project.isExample && (
