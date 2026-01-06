@@ -58,8 +58,9 @@ export const AztecoPaymentDetailsModal = ({
 
                     <div className="flex flex-row justify-space-between">
                         <div>
-                            {selectedQuote.PaymentMethod === 'BankTransfer'
-                                ? c('bitcoin buy').t`1% bank transfer fee`
+                            {selectedQuote.PaymentMethod === 'BankTransfer' ||
+                            selectedQuote.PaymentMethod === 'InstantPayment'
+                                ? c('bitcoin buy').t`2% bank transfer fee`
                                 : c('bitcoin buy').t`4% credit card fee`}
                         </div>
                         {selectedQuote.PaymentProcessingFee} {selectedQuote.FiatCurrencySymbol}
