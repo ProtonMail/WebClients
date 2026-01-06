@@ -1,5 +1,9 @@
-@use "sass:math";
-@import "~@proton/styles/scss/lib";
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 
 // Spotlight-style search modal overlay
 .search-modal-overlay {
@@ -82,7 +86,7 @@
     font-size: 18px;
     color: var(--text-norm);
     padding: 0;
-    
+
     &::placeholder {
         color: var(--text-hint);
     }
@@ -97,20 +101,20 @@
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    
+
     // Custom scrollbar
     &::-webkit-scrollbar {
         width: 8px;
     }
-    
+
     &::-webkit-scrollbar-track {
         background: transparent;
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background: var(--scrollbar-thumb-color);
         border-radius: 4px;
-        
+
         &:hover {
             background: var(--scrollbar-thumb-hover-color);
         }
@@ -153,15 +157,15 @@
     cursor: pointer;
     text-align: left;
     transition: background-color 0.1s ease;
-    
+
     &:hover {
         background: var(--interaction-default-hover);
     }
-    
+
     &:active {
         background: var(--interaction-default-active);
     }
-    
+
     &:focus-visible {
         outline: none;
         background: var(--interaction-default-hover);
@@ -173,7 +177,7 @@
     .search-result-icon {
         color: var(--primary);
     }
-    
+
     .search-result-folder-path {
         display: flex;
         align-items: center;
@@ -311,18 +315,18 @@
     .search-modal-overlay {
         background-color: rgba(0, 0, 0, 0.7);
     }
-    
+
     .search-modal-spotlight {
         box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
     }
 }
 
 // Responsive
-@include media("<=small") {
+@include im.media("<=small") {
     .search-modal-overlay {
         padding-top: 8vh;
     }
-    
+
     .search-modal-spotlight {
         max-width: calc(100% - 32px);
         max-height: 80vh;
