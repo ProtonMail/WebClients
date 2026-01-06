@@ -59,7 +59,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
      * we cannot verify their backup-password without going through account.
      * Same for two-password mode users, the pass scope is insufficient to
      * retrieve the user salts in order to verify the second password */
-    const shouldReauth = (sso || twoPwd) && !hasOfflinePassword;
+    const shouldReauth = (sso || (twoPwd && !EXTENSION_BUILD)) && !hasOfflinePassword;
     const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     const getInitialModalState = useCallback((): PasswordModalState => {
