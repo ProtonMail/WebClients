@@ -1,6 +1,8 @@
 /**
  * Utility functions for parsing and resolving file references in messages
- * Supports @file "filename" or @file filename syntax
+ * Supports:
+ * - @file "filename" or @file filename syntax (legacy)
+ * - @filename.ext syntax (direct mention, used by autocomplete)
  */
 
 export interface FileReference {
@@ -12,18 +14,20 @@ export interface FileReference {
 
 /**
  * Parse file references from message content
- * Matches patterns like: @file "filename" or @file filename
+ * Matches patterns like:
+ * - @file "filename" or @file filename (legacy format)
+ * - @filename.ext (direct @ mention format used by autocomplete)
  */
 export function parseFileReferences(content: string): FileReference[] {
     const references: FileReference[] = [];
     
-    // Match @file "filename" or @file filename
+    // Pattern 1: @file "filename" or @file filename (legacy format)
     // Supports quoted filenames with spaces: @file "my file.txt"
     // Or unquoted filenames: @file myfile.txt
-    const pattern = /@file\s+(?:"([^"]+)"|([^\s@]+))/g;
+    const legacyPattern = /@file\s+(?:"([^"]+)"|([^\s@]+))/g;
     
     let match;
-    while ((match = pattern.exec(content)) !== null) {
+    while ((match = legacyPattern.exec(content)) !== null) {
         const fileName = match[1] || match[2]; // Quoted or unquoted filename
         references.push({
             match: match[0],
@@ -31,6 +35,27 @@ export function parseFileReferences(content: string): FileReference[] {
             startIndex: match.index,
             endIndex: match.index + match[0].length,
         });
+    }
+    
+    // Pattern 2: @filename.ext (direct @ mention format)
+    // Matches @filename with common file extensions
+    // Must have a file extension to avoid matching @mentions of people/things
+    const directPattern = /@([^\s@"]+\.(?:pdf|doc|docx|txt|md|csv|xls|xlsx|json|html|xml|rtf|ppt|pptx|png|jpg|jpeg|gif|webp|svg))/gi;
+    
+    while ((match = directPattern.exec(content)) !== null) {
+        const fileName = match[1]; // Filename without @
+        // Check if this reference overlaps with a legacy pattern match
+        const overlaps = references.some(
+            (ref) => match.index >= ref.startIndex && match.index < ref.endIndex
+        );
+        if (!overlaps) {
+            references.push({
+                match: match[0],
+                fileName: fileName.trim(),
+                startIndex: match.index,
+                endIndex: match.index + match[0].length,
+            });
+        }
     }
     
     return references;
