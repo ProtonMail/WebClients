@@ -281,8 +281,16 @@ const assertNoSessions = async (api: ApiWithListener) => {
     return new Promise(noop);
 };
 
-export const bootstrapGuestApp = async (config: ProtonConfig) => {
+export const bootstrapGuestApp = async (config: ProtonConfig, notificationsManager: NotificationsManager) => {
     const api = createApi({ config, sendLocaleHeaders: true });
+
+    api.addEventListener((event) => {
+        if (event.type === 'notification') {
+            notificationsManager.createNotification(event.payload);
+            return true;
+        }
+        return false;
+    });
 
     registerSessionListener({ type: 'all' });
 
@@ -314,6 +322,7 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
             config,
             history,
             eventManager: undefined as any,
+            notificationsManager,
         },
     });
 
