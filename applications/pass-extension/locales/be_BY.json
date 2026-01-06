@@ -1914,12 +1914,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -1972,7 +1966,7 @@
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
       ],
       "Open the Extensions menu": [
-        "Адкрыць меню з пашырэннямі"
+        "Адкрыйце меню з пашырэннямі"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Адкрыйце налады Safari, знайдзіце ${ PASS_APP_NAME }, перайдзіце ў \"Дазволы\" і ўключыце дазволы вэб-сайта."
@@ -2136,11 +2130,17 @@
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Выкарыстоўвайце поўны шлях дамена. Напрыклад, moi-damen.com або moi-paddamen.moi-damen.com, калі вы выкарыстоўваеце паддамен."
       ],
+      "Premium domain": [
+        "Прэміяльны дамен"
+      ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
+      ],
+      "Public domain": [
+        "Публічны дамен"
       ],
       "Quickly autofill your 2FA tokens.": [
         "Хуткае аўтазапаўненне вашых токенаў 2ФА."
