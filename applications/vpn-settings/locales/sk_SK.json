@@ -8701,6 +8701,9 @@
       "1 of 1 email address available": [
         "1 z 1 dostupnej emailovej adresy"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
       "Account holder": [
         "Vlastník účtu"
       ],
@@ -8844,6 +8847,9 @@
       ],
       "Colors": [
         "Farby"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ],
       "Common passwords": [
         "Bežné heslá"
@@ -12791,6 +12797,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Neplatná hodnota"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Životnosť musí byť väčšia ako ${ MIN_LIFETIME } deň",
         "Životnosť musí byť väčšia ako ${ MIN_LIFETIME } dni",
