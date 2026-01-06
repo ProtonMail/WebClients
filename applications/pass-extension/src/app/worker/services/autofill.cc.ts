@@ -39,7 +39,7 @@ export const clusterCCFormFields = (
 
     const fields: (FrameField & AbstractField<FieldType>)[] = [];
     const frameChildren = new Map<FrameId, FrameId[]>();
-    const visisted = new Set<FrameId>();
+    const visited = new Set<FrameId>();
     const result = new Map<FrameId, FrameField[]>();
 
     const getParentFrameId = (frameId: FrameId): MaybeNull<FrameId> => frames.get(frameId)?.frame.parent ?? null;
@@ -146,8 +146,10 @@ export const clusterCCFormFields = (
         for (const childFrameId of getFrameChildren(parentFrameId)) {
             for (const form of clusters.get(childFrameId)?.forms ?? []) {
                 for (const field of form.fields) {
+                    /** form contains iframe: ambiguous */
                     if (field.type === 'frame') return [];
                     if (!isCCField(field)) continue;
+                    /** form contains seen CC field type: ambiguous */
                     if (seen.has(field.fieldSubType)) return [];
                     seen.add(field.fieldSubType);
                 }
@@ -201,8 +203,8 @@ export const clusterCCFormFields = (
      * When we encounter an iframe reference, we immediately process its contents
      * inline, which preserves the natural order. */
     const collectFrameItems = (frameId: FrameId, formId?: string) => {
-        if (visisted.has(frameId)) return;
-        visisted.add(frameId);
+        if (visited.has(frameId)) return;
+        visited.add(frameId);
 
         const cluster = clusters.get(frameId);
         if (!cluster) return;
