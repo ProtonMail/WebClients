@@ -14,6 +14,7 @@ import { selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/sele
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../../types';
+import { sendProjectDriveFolderLinkEvent, sendProjectDriveFolderUnlinkEvent } from '../../../util/telemetry';
 import { DriveBrowser } from '../../components/Files/DriveBrowser/DriveBrowser';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
@@ -94,6 +95,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 });
             });
 
+            sendProjectDriveFolderLinkEvent();
+
             createNotification({
                 text: c('collider_2025:Success').t`Drive folder linked successfully`,
                 type: 'success',
@@ -146,6 +149,8 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             for (const attachment of autoRetrievedAttachments) {
                 dispatch(deleteAttachment(attachment.id));
             }
+
+            sendProjectDriveFolderUnlinkEvent();
 
             createNotification({
                 text: c('collider_2025:Success').t`Drive folder unlinked`,
