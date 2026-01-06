@@ -1,6 +1,11 @@
 import { updateCalendarSettings, updateMember } from '@proton/shared/lib/api/calendars';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
-import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
+import {
+    AutoAddVideoConferenceLinkProvider,
+    CALENDAR_FLAGS,
+    CALENDAR_TYPE,
+    SETTINGS_VIEW,
+} from '@proton/shared/lib/calendar/constants';
 import { reactivateCalendarsKeys } from '@proton/shared/lib/calendar/crypto/keys/reactivateCalendarKeys';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
@@ -299,6 +304,10 @@ export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     ViewPreference: SETTINGS_VIEW.WEEK,
     InviteLocale: null,
     AutoImportInvite: 0,
+    AutoAddConferenceLink: {
+        Provider: AutoAddVideoConferenceLinkProvider.Meet,
+        DisplayNotification: 1,
+    },
 };
 
 const getHasChangedCalendarMemberData = (calendarPayload: CalendarCreateData, calendar: VisualCalendar) => {

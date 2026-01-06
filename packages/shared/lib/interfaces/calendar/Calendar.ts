@@ -1,4 +1,5 @@
 import type {
+    AutoAddVideoConferenceLinkProvider,
     CALENDAR_DISPLAY,
     CALENDAR_SHARE_BUSY_TIME_SLOTS,
     CALENDAR_TYPE,
@@ -32,6 +33,11 @@ export interface VisualCalendar extends CalendarWithOwnMembers {
     Priority: number;
 }
 
+export interface AutoAddVideoConferenceLinkOutput {
+    Provider: AutoAddVideoConferenceLinkProvider | null;
+    DisplayNotification: number;
+}
+
 export interface CalendarUserSettings {
     DefaultCalendarID: Nullable<string>;
     WeekLength: number;
@@ -43,6 +49,7 @@ export interface CalendarUserSettings {
     ViewPreference: SETTINGS_VIEW;
     InviteLocale: Nullable<string>;
     AutoImportInvite: number;
+    AutoAddConferenceLink?: AutoAddVideoConferenceLinkOutput | AutoAddVideoConferenceLinkProvider;
 }
 
 export interface CalendarNotificationSettings {

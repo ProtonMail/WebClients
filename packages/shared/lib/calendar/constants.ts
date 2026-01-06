@@ -1,5 +1,6 @@
 import { ACCENT_COLORS } from '../colors';
 import { BASE_SIZE } from '../helpers/size';
+import { VIDEO_CONFERENCE_PROVIDER } from '../interfaces/calendar';
 
 export const MAX_CALENDARS_FREE = 3;
 export const MAX_CALENDARS_PAID = 25; // Only paid mail
@@ -424,3 +425,9 @@ export const CALENDAR_MOBILE_APP_LINKS = {
     appStore: 'https://apps.apple.com/app/apple-store/id1514709943',
     playStore: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar',
 };
+
+export enum AutoAddVideoConferenceLinkProvider {
+    None = 0,
+    Zoom = VIDEO_CONFERENCE_PROVIDER.ZOOM,
+    Meet = VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+}
