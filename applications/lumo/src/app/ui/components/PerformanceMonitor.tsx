@@ -8,6 +8,11 @@ import { SearchIndexDebugModal } from './SettingsModal/SearchIndex/SearchIndexDe
 
 import './PerformanceMonitor.scss';
 
+interface TimePoint {
+    t: number;
+    v: number;
+}
+
 interface PerformanceMetrics {
     tokensPerSecond: number;
     totalTokens: number;
@@ -32,20 +37,26 @@ interface PerformanceMetrics {
         isPulling: boolean;
     } | null;
     history?: {
-        tokenDelays: number[];
-        renderTimes: number[];
-        tokensPerSecHistory: number[];
-        fpsHistory: number[];
-        smoothingLag: number[];
-        smoothingRate: number[];
-        smoothingDifferential: number[];
+        tokenDelays: TimePoint[];
+        renderTimes: TimePoint[];
+        tokensPerSecHistory: TimePoint[];
+        fpsHistory: TimePoint[];
+        smoothingLag: TimePoint[];
+        smoothingRate: TimePoint[];
+        smoothingDifferential: TimePoint[];
     };
 }
 
 const HISTORY_SIZE = 1000;
+const TIME_WINDOW_MS = 30000; // 30 seconds
+
+// Helper to filter time-based history to last 30s
+const filterByTimeWindow = (history: TimePoint[], now: number): TimePoint[] => {
+    return history.filter((p) => now - p.t <= TIME_WINDOW_MS).slice(-HISTORY_SIZE);
+};
 
 interface SparklineProps {
-    data: number[];
+    data: TimePoint[];
     width?: number;
     height?: number;
     color?: string;
@@ -66,14 +77,14 @@ const SpringMassVisualization = ({ lag, differential, isPulling, rate }: SpringM
     const width = 220;
     const height = 80;
     const restPosition = LAG0; // lag0
-    const maxLag = 200;
+    const maxLag = 400;
 
     // Calculate positions (inverted: wall on right, mass moves left as lag increases)
     // massX represents the RIGHT edge of the mass
-    const massX = width - 20 - (lag / maxLag) * (width - 60);
     const massSize = 20;
-    const springStartX = massX - massSize; // Spring connects to left edge of mass
-    const springEndX = width - 20;
+    const massX = width - massSize - (lag / maxLag) * (width - 60);
+    const springStartX = massX; // Spring connects to right edge of mass
+    const springEndX = width - massSize;
 
     // Spring parameters
     const springCoils = 8;
@@ -171,9 +182,14 @@ const Sparkline = ({
 
     const range = maxValue - minValue || 1;
 
-    const points = data.map((value, index) => {
-        const x = (index / (data.length - 1)) * width;
-        const clampedValue = Math.min(Math.max(value, minValue), maxValue);
+    // Time-based x-positioning
+    const oldestTime = data[0].t;
+    const newestTime = data[data.length - 1].t;
+    const timeWindow = newestTime - oldestTime || 1; // avoid div by 0
+
+    const points = data.map((point) => {
+        const x = ((point.t - oldestTime) / timeWindow) * width;
+        const clampedValue = Math.min(Math.max(point.v, minValue), maxValue);
         const y = height - ((clampedValue - minValue) / range) * height;
         return `${x},${y}`;
     });
@@ -181,8 +197,8 @@ const Sparkline = ({
     const pathData = `M ${points.join(' L ')}`;
 
     const recentValues = data.slice(-10);
-    const hasWarning = warningThreshold && recentValues.some((v) => v >= warningThreshold);
-    const hasDanger = dangerThreshold && recentValues.some((v) => v >= dangerThreshold);
+    const hasWarning = warningThreshold && recentValues.some((p) => p.v >= warningThreshold);
+    const hasDanger = dangerThreshold && recentValues.some((p) => p.v >= dangerThreshold);
 
     const lineColor = hasDanger ? 'var(--signal-danger)' : hasWarning ? 'var(--signal-warning)' : color;
 
@@ -271,13 +287,13 @@ export const PerformanceMonitor = () => {
     const renderCountRef = useRef(0);
     const lastTokenTimeRef = useRef<number>(Date.now());
     const historyRef = useRef<{
-        tokenDelays: number[];
-        renderTimes: number[];
-        tokensPerSecHistory: number[];
-        fpsHistory: number[];
-        smoothingLag: number[];
-        smoothingRate: number[];
-        smoothingDifferential: number[];
+        tokenDelays: TimePoint[];
+        renderTimes: TimePoint[];
+        tokensPerSecHistory: TimePoint[];
+        fpsHistory: TimePoint[];
+        smoothingLag: TimePoint[];
+        smoothingRate: TimePoint[];
+        smoothingDifferential: TimePoint[];
     }>({
         tokenDelays: [],
         renderTimes: [],
@@ -364,21 +380,33 @@ export const PerformanceMonitor = () => {
                 ? (window as any).lumoSmoothingDebug
                 : null;
 
+        // Update history with time-stamped points, filter by 30s window
         historyRef.current = {
-            tokenDelays: [...historyRef.current.tokenDelays, timeSinceLastToken].slice(-HISTORY_SIZE),
-            renderTimes: [...historyRef.current.renderTimes, renderTime].slice(-HISTORY_SIZE),
-            tokensPerSecHistory: [...historyRef.current.tokensPerSecHistory, tokensPerSecond].slice(-HISTORY_SIZE),
+            tokenDelays: filterByTimeWindow(
+                [...historyRef.current.tokenDelays, { t: now, v: timeSinceLastToken }],
+                now
+            ),
+            renderTimes: filterByTimeWindow([...historyRef.current.renderTimes, { t: now, v: renderTime }], now),
+            tokensPerSecHistory: filterByTimeWindow(
+                [...historyRef.current.tokensPerSecHistory, { t: now, v: tokensPerSecond }],
+                now
+            ),
             fpsHistory:
-                fps > 0 ? [...historyRef.current.fpsHistory, fps].slice(-HISTORY_SIZE) : historyRef.current.fpsHistory,
+                fps > 0
+                    ? filterByTimeWindow([...historyRef.current.fpsHistory, { t: now, v: fps }], now)
+                    : filterByTimeWindow(historyRef.current.fpsHistory, now),
             smoothingLag: smoothingMetrics
-                ? [...historyRef.current.smoothingLag, smoothingMetrics.lag].slice(-HISTORY_SIZE)
-                : historyRef.current.smoothingLag,
+                ? filterByTimeWindow([...historyRef.current.smoothingLag, { t: now, v: smoothingMetrics.lag }], now)
+                : filterByTimeWindow(historyRef.current.smoothingLag, now),
             smoothingRate: smoothingMetrics
-                ? [...historyRef.current.smoothingRate, smoothingMetrics.rate].slice(-HISTORY_SIZE)
-                : historyRef.current.smoothingRate,
+                ? filterByTimeWindow([...historyRef.current.smoothingRate, { t: now, v: smoothingMetrics.rate }], now)
+                : filterByTimeWindow(historyRef.current.smoothingRate, now),
             smoothingDifferential: smoothingMetrics
-                ? [...historyRef.current.smoothingDifferential, smoothingMetrics.differential].slice(-HISTORY_SIZE)
-                : historyRef.current.smoothingDifferential,
+                ? filterByTimeWindow(
+                      [...historyRef.current.smoothingDifferential, { t: now, v: smoothingMetrics.differential }],
+                      now
+                  )
+                : filterByTimeWindow(historyRef.current.smoothingDifferential, now),
         };
 
         setMetrics({
@@ -554,7 +582,7 @@ export const PerformanceMonitor = () => {
                     <div className="debug-view-row">
                         <span className="debug-view-label">{c('lumo: Debug View').t`Spring state`}</span>
                         <span className="debug-view-value">
-                            {metrics.smoothing.isPulling ? '⬅️ Pulling' : '➡️ Pushing'}
+                            {metrics.smoothing.isPulling ? '➡️ Pulling' : '⬅️ Pushing'}
                         </span>
                     </div>
 

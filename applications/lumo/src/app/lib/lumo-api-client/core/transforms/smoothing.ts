@@ -70,18 +70,21 @@ class StringDeque {
     }
 }
 
-const REFRESH_MS = 12;
+const REFRESH_MS = 4;
+const DISABLE_SMOOTHING = false;
 
-export const DAMPEN_RATE = 10;
+export const DAMPEN_RATE = 20; // smoothes sudden rate changes
 export const LAG0 = 40;
 export const STIFFNESS_PUSH = 8;
-export const STIFFNESS_PULL = 8;
+export const STIFFNESS_PULL = 16;
+export const STIFFNESS_PULL_ENDING = 40;
 
 const makeSmoothingTransformer = (): Transformer<M, M> => {
     let buffer = new StringDeque('');
     let rate = 0; // char/second - emission process first derivative (aka speed or velocity)
     let lastTime = Date.now();
     const stiffnessPull = STIFFNESS_PULL; // stiffness constant when spring is extended
+    const stiffnessPullEnding = STIFFNESS_PULL_ENDING; // stiffness constant when spring is extended
     const stiffnessPush = STIFFNESS_PUSH; // stiffness constant when spring is compressed
     const lag0 = LAG0; // chars - length of the spring at rest
     let lag = 0; // difference between arrival and emission processes, chars
@@ -115,6 +118,8 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     }
 
     async function flush(controller: TransformStreamDefaultController<M>) {
+        if (DISABLE_SMOOTHING) return;
+
         // console.log('[smoothing] flush');
 
         // Clear scheduled invocation
@@ -160,11 +165,11 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
         // Integrate first derivative with Newton first law applied to a spring mass:
         // F=ma --> dr/dt = a = F/m = F/1 = k(x-x0) = stiffness(lag - lag0)
         // console.log(`[smoothing] lag = ${lag} chars`);
-        let differential = !ending ? lag - lag0 : lag; // diff between the spring's rest length and the mass's actual position
+        let differential = !ending ? lag - lag0 : lag + lag0; // diff between the spring's rest length and the mass's actual position
         console.log(`[smoothing] differential = ${differential} chars`);
         const isPulling = differential > 0; // whether the mass is behind or ahead of the spring's rest length (lag0)
         console.log(`[smoothing] isPulling: ${isPulling}`);
-        const stiffness = isPulling ? stiffnessPull : stiffnessPush; // selective spring pressure depending on direction
+        const stiffness = isPulling ? (!ending ? stiffnessPull : stiffnessPullEnding) : stiffnessPush; // selective spring pressure depending on direction
         console.log(`[smoothing] stiffness: ${stiffness}`);
         const drate = (stiffness * differential - dampen * rate) * dt;
         console.log(`[smoothing] drate: ${drate}`);
@@ -220,6 +225,11 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     }
 
     async function transform(value: M, controller: TransformStreamDefaultController) {
+        if (DISABLE_SMOOTHING) {
+            controller.enqueue(value);
+            return;
+        }
+
         // console.log('transform: value = ', value);
         if (value.type !== 'token_data' || value.target !== 'message') {
             // console.log('[smoothing] transform: flushing');
@@ -242,5 +252,8 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     };
 };
 
+const strategy = {
+    highWaterMark: 99999999,
+};
 export const makeSmoothingTransformStream = (): TransformStream<M, M> =>
-    new TransformStream(makeSmoothingTransformer());
+    new TransformStream(makeSmoothingTransformer(), strategy, strategy);
