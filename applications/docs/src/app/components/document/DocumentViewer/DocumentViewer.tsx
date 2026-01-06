@@ -523,7 +523,7 @@ export function DocumentViewer({
 
   return (
     <div className="relative h-full w-full">
-      {ready && isDebugMode && docController && editorController && documentState && (
+      {ready && isDebugMode && editorController && documentState && (
         <DebugMenu
           docController={docController}
           editorController={editorController}
