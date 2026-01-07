@@ -13,12 +13,15 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApiResult from '@proton/components/hooks/useApiResult';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { CountryOptions } from '@proton/payments';
+import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
 import AddServerConfirmationModal from './AddServerConfirmationModal';
 import type { DeletedDedicatedIp } from './DeletedDedicatedIp';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 import type { GatewayDto } from './GatewayDto';
+import type { GatewayGroup } from './GatewayGroup';
 import type { GatewayLocation } from './GatewayLocation';
 import type { GatewayModel } from './GatewayModel';
 import { GatewayNameField } from './GatewayNameField';
@@ -34,7 +37,8 @@ interface Props extends ModalProps<typeof Form> {
     deletedInCountries: Record<string, number>;
     ownedCount: number;
     usedCount: number;
-    users: readonly GatewayUser[];
+    users: GatewayUser[];
+    groups: GatewayGroup[];
     countryOptions: CountryOptions;
     isEditing?: boolean;
     singleServer?: boolean;
@@ -54,6 +58,7 @@ const GatewayModal = ({
     ownedCount,
     usedCount,
     users,
+    groups,
     countryOptions,
     onSubmitDone,
     isEditing = false,
@@ -61,6 +66,7 @@ const GatewayModal = ({
     showCancelButton = false,
     ...rest
 }: Props) => {
+    const { createNotification } = useNotifications();
     const { loading: deletedDedicatedIPsLoading, result } = useApiResult<
         { DedicatedIps: DeletedDedicatedIp[] },
         typeof queryDeletedDedicatedIPs
@@ -108,7 +114,6 @@ const GatewayModal = ({
 
         rest.onClose?.();
     };
-
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
             return;
@@ -160,13 +165,27 @@ const GatewayModal = ({
                       Location: model.location,
                       Features: model.features,
                       UserIds: model.userIds,
+                      GroupIds: model.groupIds,
                   }
                 : {
                       Name: model.name,
                       Features: model.features,
                       UserIds: model.userIds,
                       Quantities: quantities,
+                      GroupIds: model.groupIds,
                   };
+        if (
+            (model.features & SERVER_FEATURES.DOUBLE_RESTRICTION) !== 0 &&
+            (!model.userIds || model.userIds.length === 0) &&
+            (!model.groupIds || model.groupIds.length === 0)
+        ) {
+            createNotification({
+                text: c('Error').t`Please select at least one user or group before continuing.`,
+                type: 'error',
+            });
+
+            return;
+        }
         try {
             setLoading(true);
             await onSubmitDone(dtoBody);
@@ -186,7 +205,7 @@ const GatewayModal = ({
 
     return (
         <>
-            <ModalTwo size={step === STEP.MEMBERS ? 'xlarge' : 'large'} as={Form} onSubmit={handleSubmit} {...rest}>
+            <ModalTwo size="large" as={Form} onSubmit={handleSubmit} {...rest}>
                 <ModalTwoHeader
                     title={(() => {
                         if (step === STEP.NAME) {
@@ -225,8 +244,8 @@ const GatewayModal = ({
                             )}
                             {step === STEP.MEMBERS && (
                                 <GatewayUserSelection
-                                    loading={loading}
                                     users={users}
+                                    groups={groups}
                                     model={model}
                                     changeModel={changeModel}
                                 />

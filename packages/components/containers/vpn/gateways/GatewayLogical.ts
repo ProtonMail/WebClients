@@ -13,4 +13,5 @@ export interface GatewayLogical {
     Users: string[];
     Servers: GatewayServer[];
     Visible: boolean;
+    Groups: string[];
 }

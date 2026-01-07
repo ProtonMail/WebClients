@@ -6,4 +6,5 @@ export interface Gateway {
     ExitCountry: string;
     Logicals: GatewayLogical[];
     Users: GatewayUser[];
+    GroupIds: string[] | null;
 }
