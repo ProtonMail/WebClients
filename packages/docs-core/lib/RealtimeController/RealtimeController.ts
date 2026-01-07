@@ -32,7 +32,6 @@ import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunki
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { SquashErrorEvent } from '../UseCase/SquashDocument'
-import { tmpConvertOldDocTypeToNew } from '../utils/convert-doc-type'
 
 /**
  * @TODO DRVDOC-802
@@ -41,11 +40,9 @@ import { tmpConvertOldDocTypeToNew } from '../utils/convert-doc-type'
  * nominal as a temporary workaround.
  */
 export const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 100
-export const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
 
 export class RealtimeController implements InternalEventHandlerInterface, RealtimeControllerInterface {
   initialSyncTimer: ReturnType<typeof setTimeout> | null = null
-  initialConnectionTimer: ReturnType<typeof setTimeout> | null = null
 
   isDestroyed = false
   abortWebsocketConnectionAttempt = false
@@ -141,9 +138,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     if (this.initialSyncTimer) {
       clearTimeout(this.initialSyncTimer)
     }
-    if (this.initialConnectionTimer) {
-      clearTimeout(this.initialConnectionTimer)
-    }
   }
 
   public resetSizeTracker(size: number): void {
@@ -195,6 +189,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       )
     } else if (event.type === WebsocketConnectionEvent.FailedToConnect) {
       this.handleWebsocketFailedToConnectEvent()
+    } else if (event.type === WebsocketConnectionEvent.DidNotReceiveReadyMessageInTime) {
+      this.documentState.setProperty('realtimeConnectionTimedOut', true)
     } else if (event.type === WebsocketConnectionEvent.ConnectedAndReady) {
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
@@ -270,18 +266,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     })
   }
 
-  beginInitialConnectionTimer(): void {
-    this.initialConnectionTimer = setTimeout(() => {
-      this.logger.warn('Initial connection with RTS cannot seem to be formed in a reasonable time')
-      this.documentState.setProperty('realtimeConnectionTimedOut', true)
-      metrics.docs_connection_ready_total.increment({
-        type: 'timeout',
-        visibility: this.visibility,
-        docType: tmpConvertOldDocTypeToNew(this.documentType),
-      })
-    }, MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR)
-  }
-
   beginInitialSyncTimer(): void {
     this.initialSyncTimer = setTimeout(() => {
       this.logger.warn('Client did not receive ServerHasMoreOrLessGivenTheClientEverythingItHas event in time')
@@ -318,10 +302,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     this.documentState.setProperty('realtimeStatus', 'connected')
 
     this.beginInitialSyncTimer()
-
-    if (this.initialConnectionTimer) {
-      clearTimeout(this.initialConnectionTimer)
-    }
   }
 
   handleWebsocketDisconnectedEvent(
@@ -370,8 +350,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       .catch((e) => {
         this.logger.error(e)
       })
-
-    this.beginInitialConnectionTimer()
 
     return connection
   }

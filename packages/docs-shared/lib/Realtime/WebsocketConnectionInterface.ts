@@ -10,4 +10,5 @@ export interface WebsocketConnectionInterface {
   canBroadcastMessages(): boolean
   isConnected(): boolean
   broadcastMessage(data: Uint8Array<ArrayBuffer>, source: BroadcastSource): Promise<void>
+  queueReconnection(options?: { skipDelay: boolean }): void
 }

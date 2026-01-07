@@ -113,10 +113,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
         this.closeConnectionDueToGoingAwayTimer = undefined
       }
 
-      if (!this.socket) {
-        this.logger.info('Document became visible, reconnecting')
-        this.queueReconnection({ skipDelay: true })
-      }
+      this.logger.info('Document became visible, reconnecting')
+      this.queueReconnection({ skipDelay: true })
     } else if (document.visibilityState === 'hidden') {
       this.closeConnectionDueToGoingAwayTimer = setTimeout(() => {
         this.logger.info('Closing connection due to user being away for too long')
@@ -385,6 +383,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.reconnectTimeout = setTimeout(() => {
       if (document.visibilityState === 'visible') {
         void this.connect()
+      } else {
+        this.logger.info('Did not connect because document is not visible')
       }
     }, reconnectDelay)
   }
