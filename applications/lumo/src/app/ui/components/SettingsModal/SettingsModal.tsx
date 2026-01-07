@@ -38,7 +38,6 @@ import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
-import { IndexStatusIndicator } from './SearchIndex/IndexStatusIndicator';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 
 import './SettingsModal.scss';
@@ -338,8 +337,6 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     <div className="flex flex-column gap-1">
                         <span className="color-weak">{c('collider_2025: Description')
                             .t`Encrypted search index for chats and Drive files.`}</span>
-
-                        <IndexStatusIndicator />
 
                         {showIndexingProgress && (
                             <IndexingStatusBanner

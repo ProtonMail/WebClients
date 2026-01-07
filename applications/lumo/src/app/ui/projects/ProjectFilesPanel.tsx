@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     Icon,
@@ -32,6 +33,7 @@ import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFi
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 
 import './ProjectFilesPanel.scss';
+
 
 interface ProjectFilesPanelProps {
     projectId: string;
@@ -275,11 +277,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 <div className="project-files-section flex flex-column flex-nowrap flex-1">
                     <div className="project-files-section-header">
                         <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
-                        <div className="flex items-center gap-1">
-                            {/* Show upload and trash buttons when files exist and no Drive folder */}
-                            {!linkedDriveFolder && files.length > 0 && (
-                                <>
-                                    <Button
+
+                            <div className="flex items-center gap-1">
+                                {/* Show upload and trash buttons when files exist and no Drive folder */}
+                                {!linkedDriveFolder && files.length > 0 && (
+                                    <>
+                                        <Button
                                         icon
                                         shape="ghost"
                                         size="small"
@@ -314,6 +317,13 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             )}
                         </div>
                     </div>
+                    {(linkedDriveFolder !== null || files.length > 0) && (
+                        <div className="flex items-center gap-1 text-sm">
+                            <Banner className="mb-1 color-weak no-border" variant="norm-outline" icon={<Icon name="light-lightbulb" size={3.5}/>}>
+                                {c('collider_2025:Info').t`Type @filename to ask questions about a specific file`}
+                            </Banner>
+                        </div>
+                    )}
                     <div className={`project-files-section-content bg-weak files-section flex-1 ${files.length > 0 || linkedDriveFolder ? 'has-files' : ''}`}>
                         {/* Upload progress overlay */}
                         {uploadProgress && (
