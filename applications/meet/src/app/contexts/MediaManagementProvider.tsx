@@ -13,6 +13,7 @@ import { useAudioToggle } from '../hooks/useAudioToggle';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useDevices } from '../hooks/useDevices';
 import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
+import { useMicrophoneVolumeAnalysis } from '../hooks/useMicrophoneVolumeAnalysis';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
@@ -54,6 +55,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         microphone: 'prompt',
     });
 
+    const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
+        useMicrophoneVolumeAnalysis();
+
     const switchActiveDevice: SwitchActiveDevice = useCallback(
         async ({ deviceType, deviceId, isSystemDefaultDevice, preserveDefaultDevice = false }) => {
             if ((deviceType === 'audiooutput' && !supportsSetSinkId()) || isMobile()) {
@@ -61,7 +65,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             try {
-                void room.switchActiveDevice(deviceType, deviceId);
+                await room.switchActiveDevice(deviceType, deviceId);
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error(error);
@@ -145,6 +149,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     };
 
     const initializeDevices = async () => {
+        await cleanupMicrophoneVolumeAnalysis();
+
         const results = await Promise.allSettled([
             initializeCamera(initialCameraState),
             initializeMicrophone(initialAudioState),
@@ -333,6 +339,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 setInitialAudioState,
                 switchActiveDevice,
                 initializeDevices,
+                getMicrophoneVolumeAnalysis,
+                initializeMicrophoneVolumeAnalysis,
+                cleanupMicrophoneVolumeAnalysis,
             }}
         >
             {children}
