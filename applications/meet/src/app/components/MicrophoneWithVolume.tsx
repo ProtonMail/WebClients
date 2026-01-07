@@ -1,25 +1,22 @@
-import { useLocalParticipant } from '@livekit/components-react';
-
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import type { IconSize } from '@proton/icons/types';
 
-import { useMicrophoneVolume } from '../hooks/useMicrophoneVolume';
+import { useMediaManagementContext } from '../contexts/MediaManagementContext';
+import { useMicrophoneVolume, useMicrophoneVolumeDirect } from '../hooks/useMicrophoneVolume';
 
 const NORMAL_SPEAKING_MIN_THRESHOLD = 0.04;
 const NORMAL_SPEAKING_THRESHOLD = 0.1;
 const VOLUME_UPDATE_THROTTLE_MS = 100;
 
 interface MicrophoneWithVolumeProps {
-    isMicrophoneEnabled: boolean;
     size: IconSize;
+    volume: number;
 }
 
 const clipPathYValues = [3.5, 4.5, 5.5, 7, 8, 10];
 
-export const MicrophoneWithVolume = ({ isMicrophoneEnabled, size }: MicrophoneWithVolumeProps) => {
-    const volume = useMicrophoneVolume(isMicrophoneEnabled, VOLUME_UPDATE_THROTTLE_MS);
-
+export const MicrophoneWithVolume = ({ size, volume }: MicrophoneWithVolumeProps) => {
     const updatedVolume = volume < NORMAL_SPEAKING_MIN_THRESHOLD ? 0 : volume;
 
     const volumeIndicatorTop = updatedVolume / NORMAL_SPEAKING_THRESHOLD;
@@ -51,7 +48,15 @@ export const MicrophoneWithVolume = ({ isMicrophoneEnabled, size }: MicrophoneWi
 };
 
 export const MicrophoneWithVolumeWithMicrophoneState = ({ size }: Pick<IconProps, 'size'>) => {
-    const { isMicrophoneEnabled } = useLocalParticipant();
+    const { isAudioEnabled } = useMediaManagementContext();
+    const volume = useMicrophoneVolume(isAudioEnabled, VOLUME_UPDATE_THROTTLE_MS);
 
-    return <MicrophoneWithVolume isMicrophoneEnabled={isMicrophoneEnabled} size={size as IconSize} />;
+    return <MicrophoneWithVolume size={size as IconSize} volume={volume} />;
+};
+
+export const MicrophoneWithVolumeWithMicrophoneStateDirect = ({ size }: Pick<IconProps, 'size'>) => {
+    const { initialAudioState } = useMediaManagementContext();
+    const volume = useMicrophoneVolumeDirect(initialAudioState, VOLUME_UPDATE_THROTTLE_MS);
+
+    return <MicrophoneWithVolume size={size as IconSize} volume={volume} />;
 };

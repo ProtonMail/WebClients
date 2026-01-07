@@ -46,15 +46,17 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
             if (!supportsSetSinkId()) {
                 return;
             }
+
+            const sinkId = value ?? '';
             await switchActiveDevice({
                 deviceType: 'audiooutput',
-                deviceId: value === null ? '' : value,
+                deviceId: sinkId,
                 isSystemDefaultDevice: isDefaultDevice(value),
             });
 
             const audioElements = document.querySelectorAll('audio');
 
-            await Promise.all([...audioElements].map((el) => el.setSinkId(value as string)));
+            await Promise.all([...audioElements].map((el) => el.setSinkId(sinkId)));
         } catch (e) {
             // eslint-disable-next-line no-console
             console.error('Error setting audio output device:', e);

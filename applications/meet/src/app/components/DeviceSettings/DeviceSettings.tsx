@@ -19,7 +19,7 @@ import { supportsSetSinkId } from '../../utils/browser';
 import { filterDevices, isDefaultDevice, resolveDevice } from '../../utils/device-utils';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
-import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
+import { MicrophoneWithVolumeWithMicrophoneStateDirect } from '../MicrophoneWithVolume';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 import { VideoPreview } from '../VideoPreview/VideoPreview';
 import { VideoSettingsDropdown } from '../VideoSettings/VideoSettingsDropdown';
@@ -217,10 +217,7 @@ export const DeviceSettings = ({
                         IconComponent={
                             isMicrophoneEnabled
                                 ? ({ size }) => (
-                                      <MicrophoneWithVolume
-                                          isMicrophoneEnabled={isMicrophoneEnabled}
-                                          size={size as IconSize}
-                                      />
+                                      <MicrophoneWithVolumeWithMicrophoneStateDirect size={size as IconSize} />
                                   )
                                 : IcMeetMicrophoneOff
                         }

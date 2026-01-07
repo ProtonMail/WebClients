@@ -4,80 +4,105 @@ import { useLocalParticipant } from '@livekit/components-react';
 import { Track } from 'livekit-client';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementContext';
-import { withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
 
-function calculateRms(data: Uint8Array<ArrayBuffer>) {
+const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
-        const val = (data[i] - 128) / 128;
-        sum += val * val;
+        const normalized = (data[i] - 128) / 128;
+        sum += normalized * normalized;
     }
-    return Math.sqrt(sum / data.length);
-}
+    const rms = Math.sqrt(sum / data.length);
 
-function startMicVolumeAnalysis(
-    microphone: MediaDeviceInfo,
-    setVolume: (v: number) => void,
-    throttleMs: number,
-    lastUpdateRef: React.MutableRefObject<number>
-) {
-    let audioContext: AudioContext | null = null;
-    let raf: number | null = null;
-    let stream: MediaStream | null = null;
+    return Math.pow(Math.min(rms, 1), 0.5);
+};
 
-    const cleanup = () => {
-        if (audioContext) {
-            void audioContext.close();
-            audioContext = null;
-        }
-        if (raf) {
-            cancelAnimationFrame(raf);
-            raf = null;
-        }
-        if (stream) {
-            stream.getTracks().forEach((track) => track.stop());
-            stream = null;
-        }
-    };
+export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number = 100) => {
+    const {
+        getMicrophoneVolumeAnalysis,
+        initializeMicrophoneVolumeAnalysis,
+        cleanupMicrophoneVolumeAnalysis,
+        selectedMicrophoneId,
+    } = useMediaManagementContext();
+    const [volume, setVolume] = useState(0);
+    const rafRef = useRef<number | null>(null);
+    const lastUpdateRef = useRef<number>(0);
+    const mountedRef = useRef(true);
+    const deviceIdRef = useRef<string | null>(null);
 
-    withIOSAudioSessionWorkaround(async () => navigator.mediaDevices.getUserMedia({ audio: true }))
-        .then((mediaStream) => {
-            stream = mediaStream;
-            audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-            const analyser = audioContext.createAnalyser();
-            analyser.fftSize = 256;
-
-            const source = audioContext.createMediaStreamSource(mediaStream);
-            source.connect(analyser);
-
-            const dataArray = new Uint8Array(analyser.frequencyBinCount);
-
-            function updateVolume() {
-                analyser.getByteTimeDomainData(dataArray);
-                const rms = calculateRms(dataArray);
-
-                const now = Date.now();
-                if (now - lastUpdateRef.current > throttleMs) {
-                    setVolume(Math.pow(rms, 0.5));
-                    lastUpdateRef.current = now;
-                }
-                raf = requestAnimationFrame(updateVolume);
-            }
-            updateVolume();
-        })
-        .catch(() => {
+    useEffect(() => {
+        if (!isMicOn) {
             setVolume(0);
-        });
+            cleanupMicrophoneVolumeAnalysis();
+            return;
+        }
 
-    return cleanup;
-}
+        mountedRef.current = true;
+
+        lastUpdateRef.current = 0;
+
+        const cleanup = () => {
+            mountedRef.current = false;
+            if (rafRef.current !== null) {
+                cancelAnimationFrame(rafRef.current);
+                rafRef.current = null;
+            }
+            cleanupMicrophoneVolumeAnalysis();
+        };
+
+        const updateVolume = () => {
+            const { analyser, dataArray } = getMicrophoneVolumeAnalysis();
+            if (!mountedRef.current || !analyser || !dataArray) {
+                return;
+            }
+
+            analyser.getByteTimeDomainData(dataArray as Uint8Array<ArrayBuffer>);
+            const rms = calculateRms(dataArray as Uint8Array<ArrayBuffer>);
+
+            const now = Date.now();
+            if (now - lastUpdateRef.current >= throttleMs) {
+                setVolume(rms);
+                lastUpdateRef.current = now;
+            }
+
+            rafRef.current = requestAnimationFrame(updateVolume);
+        };
+
+        const initialize = async () => {
+            const currentDeviceId = selectedMicrophoneId ?? null;
+            deviceIdRef.current = currentDeviceId;
+
+            await initializeMicrophoneVolumeAnalysis(currentDeviceId);
+
+            if (!mountedRef.current || deviceIdRef.current !== currentDeviceId) {
+                return;
+            }
+
+            const { analyser, dataArray } = getMicrophoneVolumeAnalysis();
+            if (analyser && dataArray) {
+                rafRef.current = requestAnimationFrame(updateVolume);
+            } else {
+                setVolume(0);
+            }
+        };
+
+        void initialize();
+
+        return cleanup;
+    }, [
+        isMicOn,
+        throttleMs,
+        selectedMicrophoneId,
+        getMicrophoneVolumeAnalysis,
+        initializeMicrophoneVolumeAnalysis,
+        cleanupMicrophoneVolumeAnalysis,
+    ]);
+
+    return volume;
+};
 
 export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) => {
-    const { defaultMicrophone } = useMediaManagementContext();
     const { localParticipant } = useLocalParticipant();
     const [volume, setVolume] = useState(0);
-    const lastUpdateRef = useRef<number>(0);
 
     const liveKitMicTrack = localParticipant
         ? [...localParticipant.trackPublications.values()].find(
@@ -88,33 +113,20 @@ export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) 
     const hasLiveKitTrack = !!liveKitMicTrack?.track;
 
     useEffect(() => {
-        if (!isMicOn) {
+        if (!isMicOn || !hasLiveKitTrack || !localParticipant) {
             setVolume(0);
             return;
         }
 
-        if (hasLiveKitTrack && localParticipant) {
-            const interval = setInterval(() => {
-                const audioLevel = localParticipant.audioLevel;
-                setVolume(Math.pow(audioLevel, 0.5));
-            }, throttleMs);
-
-            return () => {
-                clearInterval(interval);
-            };
-        }
-
-        if (!defaultMicrophone) {
-            setVolume(0);
-            return;
-        }
-
-        const cleanup = startMicVolumeAnalysis(defaultMicrophone, setVolume, throttleMs, lastUpdateRef);
+        const interval = setInterval(() => {
+            const audioLevel = localParticipant.audioLevel;
+            setVolume(Math.pow(audioLevel, 0.5));
+        }, throttleMs);
 
         return () => {
-            cleanup();
+            clearInterval(interval);
         };
-    }, [isMicOn, throttleMs, defaultMicrophone, hasLiveKitTrack, localParticipant]);
+    }, [isMicOn, throttleMs, hasLiveKitTrack, localParticipant]);
 
     return volume;
 };
