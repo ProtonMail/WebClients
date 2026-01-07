@@ -32,6 +32,7 @@ import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunki
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { SquashErrorEvent } from '../UseCase/SquashDocument'
+import { tmpConvertOldDocTypeToNew } from '../utils/convert-doc-type'
 
 /**
  * @TODO DRVDOC-802
@@ -62,6 +63,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     readonly unleashClient: UnleashClient,
     readonly documentType: DocumentType,
     readonly sizeTracker: DocSizeTracker,
+    readonly visibility: 'public' | 'private',
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
@@ -272,6 +274,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     this.initialConnectionTimer = setTimeout(() => {
       this.logger.warn('Initial connection with RTS cannot seem to be formed in a reasonable time')
       this.documentState.setProperty('realtimeConnectionTimedOut', true)
+      metrics.docs_connection_ready_total.increment({
+        type: 'timeout',
+        visibility: this.visibility,
+        docType: tmpConvertOldDocTypeToNew(this.documentType),
+      })
     }, MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR)
   }
 

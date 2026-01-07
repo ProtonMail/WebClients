@@ -112,6 +112,7 @@ describe('RealtimeController', () => {
       } as unknown as jest.Mocked<UnleashClient>,
       'doc',
       new DocSizeTracker(logger, eventBus),
+      'private',
     )
 
     documentState.setProperty('editorReady', true)

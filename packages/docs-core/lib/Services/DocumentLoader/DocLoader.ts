@@ -131,6 +131,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       this.unleashClient,
       documentType,
       this.sizeTracker,
+      'private',
     )
     realtime.initializeConnection()
 

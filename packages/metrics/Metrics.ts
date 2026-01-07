@@ -18,6 +18,7 @@ import type { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/do
 import type { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
 import type { HttpsProtonMeDocsCommitIdOutOfSyncTotalV1SchemaJson } from './types/docs_commit_id_out_of_sync_total_v1.schema';
 import type { HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson } from './types/docs_commit_signature_error_total_v1.schema';
+import type { HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson } from './types/docs_connection_ready_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
@@ -202,6 +203,8 @@ class Metrics extends MetricsBase {
     public docs_commit_id_out_of_sync_total: Counter<HttpsProtonMeDocsCommitIdOutOfSyncTotalV1SchemaJson>;
 
     public docs_commit_signature_error_total: Counter<HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson>;
+
+    public docs_connection_ready_total: Counter<HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson>;
 
     public docs_document_updates_ack_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>;
 
@@ -578,6 +581,11 @@ class Metrics extends MetricsBase {
 
         this.docs_commit_signature_error_total = new Counter<HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson>(
             { name: 'docs_commit_signature_error_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_connection_ready_total = new Counter<HttpsProtonMeDocsConnectionReadyTotalV1SchemaJson>(
+            { name: 'docs_connection_ready_total', version: 1 },
             this.requestService
         );
 
