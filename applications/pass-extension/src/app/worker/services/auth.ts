@@ -26,13 +26,14 @@ import { lockSync, unlock } from '@proton/pass/store/actions/creators/auth';
 import { cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
 import type { Api } from '@proton/pass/types/api/api';
-import type { MaybeNull } from '@proton/pass/types/utils/index';
+import type { MaybeNull, RequiredProps } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import type { ExtensionForkPayload } from '@proton/shared/lib/authentication/fork/extension';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -55,6 +56,11 @@ export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) =
         return false;
     }
 });
+
+type ValidExtensionForkPayload = RequiredProps<ExtensionForkPayload, 'keyPassword'>;
+
+export const validateExtensionForkPayload = (payload: ExtensionForkPayload): payload is ValidExtensionForkPayload =>
+    Boolean(payload.keyPassword);
 
 export const createAuthService = (api: Api, authStore: AuthStore) => {
     const authService = createCoreAuthService({
@@ -295,6 +301,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 const localState: MaybeNull<string> = await service.storage.session
                     .getItem<any>(stateKey)
                     .catch(() => null);
+
+                if (!validateExtensionForkPayload(payload)) throw new Error('Invalid `ExtensionForkPayload`');
 
                 const result = await authService.consumeFork(
                     { mode: 'extension', tabId: tab?.id!, localState, ...payload },

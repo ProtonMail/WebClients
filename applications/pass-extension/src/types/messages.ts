@@ -37,7 +37,6 @@ import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { ForkPayload } from '@proton/pass/types/api/fork';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
@@ -64,7 +63,10 @@ import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
 import type { ClientEndpoint, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
 import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import type { AppState, PopupInitialState } from '@proton/pass/types/worker/state';
-import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
+import type {
+    ExtensionForkPayload,
+    ExtensionForkResultPayload,
+} from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
@@ -182,7 +184,7 @@ export enum WorkerMessageType {
 
 /* messages for communication with account */
 export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
-export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
+export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ExtensionForkPayload>;
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 
