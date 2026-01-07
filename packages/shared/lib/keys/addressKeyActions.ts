@@ -2,6 +2,7 @@ import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../
 import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { type FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
+import { getDefaultKeyFlags } from './keyFlags';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const setPrimaryAddressKey = async ({
@@ -146,12 +147,17 @@ export const setAddressKeyFlags = async ({
         v4: activeKeys.v4.map(setFlags),
         v6: activeKeys.v6.map(setFlags),
     });
-    const v4TargetKey = updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID);
-    const v6TargetKey = updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID);
-    const flags = v6TargetKey?.flags ?? v4TargetKey?.flags;
-    if (flags === undefined) {
-        throw new Error('Key not found');
-    }
+    const flags =
+        // Either the key is a decrypted v4 key, with a new computed flag
+        updatedActiveKeys.v4.find((activeKey) => activeKey.ID === addressKeyID)?.flags ??
+        // Or the key is a decrypted v6 key, with a new computed flag
+        updatedActiveKeys.v6.find((activeKey) => activeKey.ID === addressKeyID)?.flags ??
+        // Or the key is not decrypted and thus not in the active list of keys, in which case it falls back to the previous flags
+        // from the key object itself, or a default value from which it computes a new flag.
+        getNewAddressKeyFlags(
+            address.Keys.find(({ ID: otherID }) => addressKeyID === otherID)?.Flags ?? getDefaultKeyFlags(address),
+            flagAction
+        );
 
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         updatedActiveKeys,
