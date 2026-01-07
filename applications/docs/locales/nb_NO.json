@@ -4544,6 +4544,9 @@
       "Important note": [
         "Viktig merknad"
       ],
+      "Importing ODS files is currently in beta": [
+        "Importering av ODS-filer er for øyeblikket i beta"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
@@ -6470,10 +6473,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruker",
-        "Opptil ${ numberOfUsers } brukere"
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
