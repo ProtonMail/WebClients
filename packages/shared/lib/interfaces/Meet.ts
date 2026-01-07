@@ -22,7 +22,7 @@ export interface MeetingInfoResponse {
         Locked: EnumLockedState;
         MaxDuration: number;
         MaxParticipants: number;
-        ExpirationTime: number;
+        ExpirationTime: number | null;
     };
     Code: 1000;
 }

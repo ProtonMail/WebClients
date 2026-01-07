@@ -5,7 +5,7 @@ export const useMeetingSetup = () => {
     const token = getPublicToken();
     const urlPassword = getUrlPassword();
 
-    const { getMeetingDetails, getAccessDetails, initHandshake } = useMeetingAuthentication();
+    const { getMeetingDetails, getAccessDetails, initHandshake, getMeetingInfo } = useMeetingAuthentication();
 
     return {
         token,
@@ -13,5 +13,6 @@ export const useMeetingSetup = () => {
         getMeetingDetails,
         getAccessDetails,
         initHandshake,
+        getMeetingInfo,
     };
 };

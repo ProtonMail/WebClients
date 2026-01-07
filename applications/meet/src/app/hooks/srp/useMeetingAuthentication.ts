@@ -51,7 +51,7 @@ export const useMeetingAuthentication = () => {
                     locked: !!meetingInfo.MeetingInfo.Locked,
                     maxDuration: meetingInfo.MeetingInfo.MaxDuration,
                     maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
-                    expirationTime: meetingInfo.MeetingInfo.ExpirationTime,
+                    expirationTime: meetingInfo.MeetingInfo.ExpirationTime ?? 0,
                 };
             } catch (error) {
                 reportMeetError('Failed to get meeting info', error);
@@ -74,5 +74,5 @@ export const useMeetingAuthentication = () => {
         }
     }, []);
 
-    return { getMeetingDetails, getAccessDetails, initHandshake };
+    return { getMeetingDetails, getAccessDetails, initHandshake, getMeetingInfo };
 };
