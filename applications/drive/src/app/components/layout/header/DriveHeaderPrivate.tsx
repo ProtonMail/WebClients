@@ -38,7 +38,7 @@ export const DriveHeaderPrivate = ({
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={isSearchFeatureEnabled() && <SearchField />}
                 settingsButton={settingsButton}
-                upsellButton={<SuggestBusinessButton />}
+                upsellButton={SuggestBusinessButton()}
                 downloadAppButton={<DownloadAppButton />}
             />
         </>
