@@ -4,6 +4,7 @@ export interface GatewayModel {
     Name?: string;
     Location?: GatewayLocation;
     Features?: number;
-    UserIds?: readonly string[] | null;
+    UserIds?: string[] | null;
     Quantities?: Record<string, number>;
+    GroupIds?: string[] | null;
 }
