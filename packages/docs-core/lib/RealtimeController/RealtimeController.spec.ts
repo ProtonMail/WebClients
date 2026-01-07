@@ -22,11 +22,7 @@ import {
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
-import {
-  MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR,
-  MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT,
-  RealtimeController,
-} from './RealtimeController'
+import { RealtimeController } from './RealtimeController'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
@@ -123,11 +119,6 @@ describe('RealtimeController', () => {
       controller.destroy()
     }
     jest.clearAllMocks()
-  })
-
-  test('should expose correct constant values', () => {
-    expect(MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT).toBe(100)
-    expect(MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR).toBe(3_000)
   })
 
   test('should properly initialize controller with all dependencies', () => {
@@ -534,7 +525,7 @@ describe('RealtimeController', () => {
       expect(logger.error).toHaveBeenCalledWith(mockError)
     })
 
-    it('should return connection and start timer', () => {
+    it('should return connection', () => {
       const mockConnection = {
         connect: jest.fn().mockResolvedValue(undefined),
       } as unknown as WebsocketConnectionInterface
@@ -543,11 +534,9 @@ describe('RealtimeController', () => {
       const entitlements = { keys: {} } as DocumentEntitlements
       documentState.setProperty('entitlements', entitlements)
 
-      const spy = jest.spyOn(controller, 'beginInitialConnectionTimer')
       const returnedConnection = controller.initializeConnection()
 
       expect(returnedConnection).toBe(mockConnection)
-      expect(spy).toHaveBeenCalled()
     })
 
     it('should pass abort callback to connect', async () => {
@@ -575,16 +564,14 @@ describe('RealtimeController', () => {
   describe('destroy', () => {
     it('should clear both timers if they exist', () => {
       // Set up both timers
-      controller.beginInitialConnectionTimer()
       controller.beginInitialSyncTimer()
 
       const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
 
       controller.destroy()
 
-      expect(clearTimeoutSpy).toHaveBeenCalledTimes(2)
+      expect(clearTimeoutSpy).toHaveBeenCalledTimes(1)
       expect(clearTimeoutSpy).toHaveBeenCalledWith(controller.initialSyncTimer)
-      expect(clearTimeoutSpy).toHaveBeenCalledWith(controller.initialConnectionTimer)
     })
 
     it('should not attempt to clear timers if they do not exist', () => {
@@ -704,22 +691,6 @@ describe('RealtimeController', () => {
       controller.handleRealtimeConnectionReady()
 
       expect(spy).not.toHaveBeenCalledWith('realtimeReadyToBroadcast', true)
-    })
-  })
-
-  describe('beginInitialConnectionTimer', () => {
-    it('should set timer and call timeout callback after delay', () => {
-      controller.beginInitialConnectionTimer()
-      documentState.setProperty = jest.fn()
-
-      expect(controller.initialConnectionTimer).toBeDefined()
-
-      jest.advanceTimersByTime(MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR + 1)
-
-      expect(controller.logger.warn).toHaveBeenCalledWith(
-        'Initial connection with RTS cannot seem to be formed in a reasonable time',
-      )
-      expect(documentState.setProperty).toHaveBeenCalledWith('realtimeConnectionTimedOut', true)
     })
   })
 
@@ -990,15 +961,6 @@ describe('RealtimeController', () => {
   })
 
   describe('handleWebsocketConnectedEvent', () => {
-    it('should clear initialConnectionTimer if it exists', () => {
-      controller.beginInitialConnectionTimer()
-      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
-
-      controller.handleWebsocketConnectedEvent()
-
-      expect(clearTimeoutSpy).toHaveBeenCalledWith(controller.initialConnectionTimer)
-    })
-
     it('should not attempt to clear timer if it does not exist', () => {
       const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
 
