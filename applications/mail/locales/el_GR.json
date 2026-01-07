@@ -1505,7 +1505,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2524,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } αποθηκευτικού χώρου"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } αποθηκευτικού χώρου email"
@@ -7382,8 +7387,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -10654,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } χρήστης",
-        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
         "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",

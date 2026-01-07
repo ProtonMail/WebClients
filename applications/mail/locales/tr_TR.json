@@ -1505,7 +1505,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2524,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
@@ -7382,8 +7387,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10654,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
@@ -15591,7 +15591,7 @@
         "Ücretsiz deneme süreniz sona erdi"
       ],
       "Your newsletters in one place": [
-        "Bültenleriniz tek bir yerde"
+        "Tüm duyurularınız tek bir yerde"
       ],
       "Your plan": [
         "Tarifeniz"

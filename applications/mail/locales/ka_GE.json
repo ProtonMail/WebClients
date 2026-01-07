@@ -1504,6 +1504,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -7302,8 +7306,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7394,9 +7397,6 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -10517,10 +10517,6 @@
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } მომხმარებელი",
-        "${ numberOfUsers } მომხამრებელი"
       ],
       "${ options }-day file version history": [
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",

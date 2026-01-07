@@ -1504,6 +1504,10 @@
       "Trust": [
         "Considera attendibile"
       ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -2521,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } di spazio d'archiviazione"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utente",
+        "Fino a ${ numberOfUsers } utenti"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } di spazio di archiviazione email"
@@ -7379,8 +7387,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10651,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utente",
-        "Fino a ${ numberOfUsers } utenti"
       ],
       "${ options }-day file version history": [
         "Cronologia delle versioni dei file per ${ options } giorni",
