@@ -372,6 +372,7 @@ export class AppDependencies extends DependencyContainer {
         appVersion,
         unleashClient,
         this.get<DocSizeTracker>(App_TYPES.SizeTracker),
+        compatWrapper.getCompatType(),
       )
     })
 
