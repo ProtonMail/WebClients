@@ -4,19 +4,19 @@ import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib
 import { PassEncryptionTag } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
-import { getOfflineComponents } from './crypto';
+import { generateOfflineComponents } from './crypto';
 
 describe('cache crypto operations', () => {
     beforeAll(() => setupCryptoProxyForTesting());
     afterAll(() => releaseCryptoProxy());
 
-    describe('getOfflineComponents', () => {
+    describe('generateOfflineComponents', () => {
         test('Should compute offline components correctly for a given password', async () => {
             /** mock argon2 to avoid jest keeping a dangling worker alive */
             const argon2 = jest.spyOn(CryptoProxy, 'computeArgon2').mockImplementation(async () => generateKey());
 
             const randomPassword = uint8ArrayToString(generateKey());
-            const components = await getOfflineComponents(randomPassword);
+            const components = await generateOfflineComponents(randomPassword);
 
             expect(components.offlineConfig.salt).toBeDefined();
             expect(components.offlineConfig.params).toStrictEqual(ARGON2_PARAMS.RECOMMENDED);

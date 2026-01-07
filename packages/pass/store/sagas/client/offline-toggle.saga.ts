@@ -1,7 +1,7 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { type OfflineComponents, getOfflineComponents } from '@proton/pass/lib/cache/crypto';
+import { type OfflineComponents, generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { offlineToggle } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
@@ -21,7 +21,7 @@ function* offlineToggleWorker(
          * the authentication store, generate the `offlineConfig`
          * `offlineKD` and persist the session immediately */
         if (payload.enabled && !authStore.hasOfflinePassword()) {
-            const data: OfflineComponents = yield getOfflineComponents(payload.loginPassword);
+            const data: OfflineComponents = yield generateOfflineComponents(payload.loginPassword);
             authStore.setOfflineConfig(data.offlineConfig);
             authStore.setOfflineKD(data.offlineKD);
             authStore.setOfflineVerifier(data.offlineVerifier);

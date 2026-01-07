@@ -25,7 +25,7 @@ import {
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
-import { extractOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
+import { extractBlobOfflineComponents, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
@@ -321,7 +321,7 @@ export const createAuthService = ({
         onForkConsumeStart: () => auth.config.onLoginStart?.(),
 
         onForkConsumeComplete: async (session, { state }) => {
-            const { offlineConfig, offlineKD, UserID, LocalID } = session;
+            const { offlineConfig, offlineKD, offlineVerifier, UserID, LocalID } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
             try {
@@ -351,9 +351,7 @@ export const createAuthService = ({
             /** Automatically create the password lock if we have the necessary
              * offline components when consuming the fork. Disabled for SSO users
              * as this would require using the backup password (bad UX) */
-            if (offlineConfig && offlineKD) {
-                session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-
+            if (offlineConfig && offlineKD && offlineVerifier) {
                 if (!session.sso) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
                     session.lockMode = LockMode.PASSWORD;
@@ -375,7 +373,7 @@ export const createAuthService = ({
 
                     try {
                         if (blob?.type === 'offline') {
-                            const { offlineKD, offlineConfig } = extractOfflineComponents(blob);
+                            const { offlineKD, offlineConfig } = extractBlobOfflineComponents(blob);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
 
                             authStore.setOfflineKD(offlineKD);
