@@ -3,10 +3,13 @@ import { c } from 'ttag';
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import type { OfflineComponents } from '@proton/pass/lib/cache/crypto';
+import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
-import type { TabId } from '@proton/pass/types';
+import type { Maybe, TabId } from '@proton/pass/types';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { logger } from '@proton/pass/utils/logger';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
@@ -23,9 +26,11 @@ import {
 } from '@proton/shared/lib/authentication/fork/constants';
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -63,6 +68,9 @@ export type RequestForkData = {
     /** Action that should be resumed upon successful re-auth */
     reauth: ReauthActionPayload;
 };
+
+type BaseSessionKeys = 'keyPassword' | 'payloadVersion' | 'offlineConfig' | 'offlineKD' | 'offlineVerifier';
+type BaseSession = Pick<AuthSession, BaseSessionKeys>;
 
 export const getStateKey = (state: string) => `f${state}`;
 export const generateForkState = () =>
@@ -135,6 +143,7 @@ export type ConsumeForkPayload =
           keyPassword: string;
           localState: MaybeNull<string>;
           mode: 'extension';
+          offlineKey: Maybe<OfflineKey>;
           persistent: boolean;
           selector: string;
           state: string;
@@ -161,16 +170,22 @@ export const pullFork = async (options: ConsumeForkOptions): Promise<PullForkRes
     )(payload);
 };
 
-export const extractOfflineComponents = ({
-    offlineKeyPassword,
-    offlineKeySalt,
-}: Extract<ForkEncryptedBlob, { type: 'offline' }>): Required<Pick<AuthSession, 'offlineConfig' | 'offlineKD'>> => ({
-    offlineKD: atob(offlineKeyPassword),
+export const extractOfflineComponents = (
+    password: string,
+    salt: string
+): Omit<OfflineComponents, 'offlineVerifier'> => ({
+    offlineKD: atob(password),
     offlineConfig: {
-        salt: atob(offlineKeySalt),
+        salt: atob(salt),
         params: ARGON2_PARAMS.RECOMMENDED,
     },
 });
+
+export const extractBlobOfflineComponents = ({
+    offlineKeyPassword,
+    offlineKeySalt,
+}: Extract<ForkEncryptedBlob, { type: 'offline' }>): Omit<OfflineComponents, 'offlineVerifier'> =>
+    extractOfflineComponents(offlineKeyPassword, offlineKeySalt);
 
 /**
  * If `keyPassword` is not provided to `ConsumeForkOptions`, it will attempt to recover it from
@@ -207,33 +222,59 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
      * in the extension will require a full SRP flow to validate the primary
      * user password. Pass lacks sufficient scope to verify the secondary mailbox
      * password, making secondary password verification impossible. */
-    const data =
-        payload.mode === 'extension'
-            ? { keyPassword: payload.keyPassword, payloadVersion: SESSION_VERSION }
-            : await (async () => {
-                  try {
-                      const { payloadVersion, key } = payload;
-                      const clientKey = await importKey(key!);
-                      const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+    const base: BaseSession = await (async () => {
+        const offlineKeySupported = !QA_SERVICE?.state.login_without_offline_components;
 
-                      const isOfflineBlob = decryptedBlob?.type === 'offline';
-                      const parseOffline = isOfflineBlob && !QA_SERVICE?.state.login_without_offline_components;
-                      const offline = parseOffline ? extractOfflineComponents(decryptedBlob) : {};
+        switch (payload.mode) {
+            case 'extension':
+                const data: BaseSession = { keyPassword: payload.keyPassword, payloadVersion: SESSION_VERSION };
 
-                      if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
+                if (payload.offlineKey && offlineKeySupported) {
+                    try {
+                        const { password, salt } = payload.offlineKey;
+                        const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
+                        const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                        data.offlineKD = offlineKD;
+                        data.offlineConfig = offlineConfig;
+                        data.offlineVerifier = offlineVerifier;
+                    } catch (err) {
+                        logger.error('[ConsumeFork] Failed offline component extraction', err);
+                    }
+                }
 
-                      return {
-                          keyPassword: decryptedBlob.keyPassword,
-                          payloadVersion,
-                          ...offline,
-                      };
-                  } catch (err) {
-                      throw new InvalidForkConsumeError(getErrorMessage(err));
-                  }
-              })();
+                return data;
+            case 'web':
+                try {
+                    const { payloadVersion, key } = payload;
+                    const clientKey = await importKey(key!);
+                    const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+
+                    if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
+
+                    const { keyPassword } = decryptedBlob;
+                    const data: BaseSession = { keyPassword, payloadVersion };
+
+                    if (decryptedBlob?.type === 'offline' && offlineKeySupported) {
+                        try {
+                            const { offlineKD, offlineConfig } = extractBlobOfflineComponents(decryptedBlob);
+                            const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
+                            data.offlineKD = offlineKD;
+                            data.offlineConfig = offlineConfig;
+                            data.offlineVerifier = offlineVerifier;
+                        } catch (err) {
+                            logger.error('[ConsumeFork] Failed offline component extraction', err);
+                        }
+                    }
+
+                    return data;
+                } catch (err) {
+                    throw new InvalidForkConsumeError(getErrorMessage(err));
+                }
+        }
+    })();
 
     const session: AuthSession = {
-        ...data,
+        ...base,
         UID,
         LocalID,
         UserID: User.ID,
