@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
+    ButtonWithTextAndIcon,
     type ModalStateProps,
     ModalTwo,
     ModalTwoContent,
@@ -97,24 +98,23 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
                     />
                 )}
             </ModalTwoContent>
-            <ModalTwoFooter className="flex justify-evenly gap-4">
-                <Button
-                    onClick={() =>
-                        showCreateFolderModal({
-                            parentFolderUid: copyTargetUid,
-                            onSuccess: ({ uid, name }) =>
-                                uid && copyTargetUid
-                                    ? addNode(uid, copyTargetUid, name)
-                                    : console.error('Missing data for new folder in copy modal'),
-                        })
-                    }
-                    disabled={!copyTargetUid}
-                >
-                    {c('Action').t`Create new folder`}
-                </Button>
+            <ModalTwoFooter>
+                <div className="flex justify-space-between">
+                    <ButtonWithTextAndIcon
+                        onClick={() =>
+                            showCreateFolderModal({
+                                parentFolderUid: copyTargetUid,
+                                onSuccess: ({ uid, name }) =>
+                                    uid && copyTargetUid
+                                        ? addNode(uid, copyTargetUid, name)
+                                        : console.error('Missing data for new folder in copy modal'),
+                            })
+                        }
+                        disabled={!copyTargetUid}
+                        iconName="folder-plus"
+                        buttonText={c('Action').t`New folder`}
+                    />
 
-                <div className="flex gap-4">
-                    <Button onClick={onClose}>{c('Action').t`Close`}</Button>
                     <Tooltip title={errorMessage}>
                         {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
                         <span>
