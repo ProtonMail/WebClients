@@ -154,7 +154,7 @@
     },
     "authenticator-2025:Description": {
       "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
-        "U hebt dit wachtwoord nodig om ${ AUTHENTICATOR_APP_NAME } te ontgrendelen elke keer dat het opnieuw opstart."
+        "U heeft dit wachtwoord nodig om ${ AUTHENTICATOR_APP_NAME } te ontgrendelen elke keer dat het opnieuw opstart."
       ],
       "Your import file is protected by a password. Please enter the password to proceed.": [
         "Uw importbestand is beveiligd met een wachtwoord. Voer het wachtwoord in om verder te gaan."
@@ -231,7 +231,7 @@
         "Back-upbestanden worden niet gewist."
       ],
       "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
-        "Kies ${ plainTextBold }, hiermee wordt een txt bestand aangemaakt dat u hier kunt gebruiken."
+        "Kies ${ plainTextBold }, hiermee wordt een txt-bestand aangemaakt dat u hier kunt gebruiken."
       ],
       "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
         "Kies ${ zipTextBold }, hiermee wordt een zip bestand aangemaakt dat u hier kunt gebruiken."
@@ -530,16 +530,16 @@
         "Het resetten van uw opslagsleutel zal alle lokale gegevens wissen die nog niet zijn gesynchroniseerd."
       ],
       "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
-        "Fout wachtwoord. U hebt nog ${ remainingCount } poging over, daarna worden uw gegevens gewist.",
-        "Fout wachtwoord. U hebt nog ${ remainingCount } pogingen over, daarna worden uw gegevens gewist."
+        "Fout wachtwoord. U heeft nog ${ remainingCount } poging over, daarna worden uw gegevens gewist.",
+        "Fout wachtwoord. U heeft nog ${ remainingCount } pogingen over, daarna worden uw gegevens gewist."
       ],
       "You have ${ backupsCount } previous backup on your device that can be removed.": [
-        "U hebt ${ backupsCount } vorige back-up op uw apparaat die kan worden verwijderd.",
-        "U hebt ${ backupsCount } eerdere back-ups op uw apparaat die kunnen worden verwijderd."
+        "U heeft ${ backupsCount } vorige back-up op uw apparaat die kan worden verwijderd.",
+        "U heeft ${ backupsCount } eerdere back-ups op uw apparaat die kunnen worden verwijderd."
       ],
       "You have ${ remainingCount } attempt left - after that, your data will be erased.": [
-        "U hebt ${ remainingCount } poging over - daarna worden uw gegevens gewist.",
-        "U hebt ${ remainingCount } pogingen over - daarna worden uw gegevens gewist."
+        "U heeft ${ remainingCount } poging over - daarna worden uw gegevens gewist.",
+        "U heeft ${ remainingCount } pogingen over - daarna worden uw gegevens gewist."
       ],
       "You have entered a wrong password.": [
         "U heeft een verkeerd wachtwoord ingevoerd."
