@@ -332,6 +332,9 @@
       "Deselect all": [
         "Deselectare toate"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Dezactivare adăugare automată legături web ${ MEET_APP_NAME }"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -916,6 +919,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Turn off auto-add": [
+        "Dezactivare adăugare automată"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activați ${ DARK_WEB_MONITORING_NAME }"
@@ -1727,6 +1733,11 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } stocare"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } spațiu e-mail"
@@ -3611,6 +3622,9 @@
       ],
       "Failed to update secret passphrase": [
         "Nu s-a putut actualiza fraza de acces secretă."
+      ],
+      "Failed to update settings": [
+        "Nu s-au putut actualiza setările."
       ],
       "First name is too long": [
         "Prenumele este prea lung."
@@ -6210,6 +6224,9 @@
       "Warning": [
         "Avertizare"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "S-a adăugat automat o legătură web ${ MEET_APP_NAME }"
+      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -7895,11 +7912,6 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",
@@ -11170,6 +11182,9 @@
       ],
       "Answer sent and event deleted": [
         "Răspuns trimis și eveniment șters."
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "S-a dezactivat adăugarea automată de legături web ${ MEET_APP_NAME }."
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"

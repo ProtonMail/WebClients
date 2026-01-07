@@ -335,6 +335,9 @@
       "Deselect all": [
         "Zrušit výběr všeho"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Deaktivovat funkci automatického přidávání odkazů na ${ MEET_APP_NAME }"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -919,6 +922,9 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
+      ],
+      "Turn off auto-add": [
+        "Vypnout automatické přidávání"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
@@ -1742,6 +1748,12 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložiště"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložiště pro e-maily"
@@ -3639,6 +3651,9 @@
       ],
       "Failed to update secret passphrase": [
         "Aktualizace tajného hesla selhala"
+      ],
+      "Failed to update settings": [
+        "Aktualizace nastavení selhala"
       ],
       "First name is too long": [
         "Křestní jméno je příliš dlouhé"
@@ -6291,6 +6306,9 @@
       "Warning": [
         "Varování"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automaticky jsme přidali odkaz na ${ MEET_APP_NAME }"
+      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -8008,12 +8026,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uživatel",
-        "Až ${ numberOfUsers } uživatelé",
-        "Až ${ numberOfUsers } uživatelů",
-        "Až ${ numberOfUsers } uživatelů"
       ],
       "${ options }-day file version history": [
         "${ options }denní historie verzí souborů",
@@ -11366,6 +11378,9 @@
       ],
       "Answer sent and event deleted": [
         "Odpověď byla odeslána a událost smazána"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatické přidávání odkazů na ${ MEET_APP_NAME } deaktivováno"
       ],
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
