@@ -5363,14 +5363,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/krisp-noise-filter@npm:^0.3.4":
-  version: 0.3.4
-  resolution: "@livekit/krisp-noise-filter@npm:0.3.4"
+"@livekit/krisp-noise-filter@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@livekit/krisp-noise-filter@npm:0.4.0"
   dependencies:
     "@livekit/mutex": "npm:^1.1.1"
   peerDependencies:
     livekit-client: ^2.0.8
-  checksum: 10/bf4fff50e57c74d6fbeca9b3c65c99ebd110587cb81dd320fd2a270d1441831ae1ebf2fc3ecff5ce194f993f7715f0bc442edc725c8197b631dfa1c2908156f9
+  checksum: 10/406e3cf15fe56a939f32322f7ba4f605b8ac8aa682740edd6e38b520cd2a701ef10e9590ad26d1cdfd69239695ea26e4fc66f2eb22cd7e9851f976fd37c3c161
   languageName: node
   linkType: hard
 
@@ -38338,7 +38338,7 @@ __metadata:
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
     "@livekit/components-react": "npm:^2.9.17"
-    "@livekit/krisp-noise-filter": "npm:^0.3.4"
+    "@livekit/krisp-noise-filter": "npm:^0.4.0"
     "@livekit/track-processors": "npm:^0.7.0"
     "@proton-meet/proton-meet-core": "npm:0.5.5-4"
     "@proton/atoms": "workspace:packages/atoms"
