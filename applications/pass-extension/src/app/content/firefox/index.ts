@@ -9,17 +9,10 @@ window.addEventListener('message', async (message) => {
         if (message.data && message.data?.type !== undefined && message.data?.app === APPS.PROTONPASSBROWSEREXTENSION) {
             switch (message.data.type) {
                 case WorkerMessageType.ACCOUNT_FORK:
-                    const { keyPassword, selector, state, persistent, trusted } = message.data.payload;
                     return await sendMessage.on(
                         contentScriptMessage({
                             type: WorkerMessageType.ACCOUNT_FORK,
-                            payload: {
-                                selector,
-                                state,
-                                keyPassword,
-                                persistent,
-                                trusted,
-                            },
+                            payload: message.data.payload,
                         }),
                         (response) =>
                             window.postMessage({
