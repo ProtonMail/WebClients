@@ -31,7 +31,7 @@ const RecentChatsList = ({ conversations, selectedConversationId, disabled = fal
                         <LumoLink
                             to={`/c/${conversation.id}`}
                             className={clsx(
-                                'absolute inset-0 pl-4',
+                                'absolute inset-0 pl-2',
                                 'flex items-center',
                                 'text-ellipsis hover:text-primary',
                                 isSelected && 'text-semibold'

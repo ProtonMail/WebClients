@@ -524,8 +524,6 @@ export const FilesPanel = ({
                     {/* When not filtering, show normal view */}
                     {!filterMessage && (
                         <>
-                            {/* Auto-retrieved files section - includes both uploaded files and Drive files */}
-                            {/* All project knowledge is now retrieved via RAG */}
                             {(linkedDriveFolder || autoRetrievedAttachments.length > 0) && (
                                 <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
                                     <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
