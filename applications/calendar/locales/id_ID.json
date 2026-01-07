@@ -6329,6 +6329,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Email kontak pemesanan: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Seberapa jauh sebelumnya pemesanan dapat dibuat?"
+      ],
+      "Min. 2 hours before": [
+        "Min. 2 jama sebelumnya"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 jam sebelumnya"
+      ],
+      "Not on the same day": [
+        "Tidak dalam hari yang sama"
+      ],
+      "Which calendars should block bookings?": [
+        "Kalender mana saja yang harus memblokir pemesanan?"
       ]
     },
     "info": {
@@ -7038,6 +7056,12 @@
       ],
       "Zoom meeting": [
         "Pertemuan Zoom"
+      ],
+      "Add notice period": [
+        "Tambah masa pemberitahuan"
+      ],
+      "Check additional calendars for availability": [
+        "Periksa kalender tambahan untuk ketersediaan"
       ]
     },
     "label": {

@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Desativar recurso de adicionar links do ${ MEET_APP_NAME } automaticamente"
+      ],
+      "Turn off auto-add": [
+        "Desativa adição automática"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida e privada"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuário",
+        "Até ${ numberOfUsers } usuários"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Failed to update settings": [
+        "Falha ao atualizar as configurações"
       ]
     },
     "error": {
@@ -6417,6 +6430,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-mail de contato do agendamento: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Com que antecedência alguém pode agendar?"
+      ],
+      "Min. 2 hours before": [
+        "Mín. 2 horas antes"
+      ],
+      "Min. 48 hours before": [
+        "Mín. 48 horas antes"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Adicionamos automaticamente um link do ${ MEET_APP_NAME }"
+      ],
+      "Which calendars should block bookings?": [
+        "Quais calendários devem bloquear agendamentos?"
       ]
     },
     "info": {
@@ -7135,6 +7166,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Check additional calendars for availability": [
+        "Verificar calendários adicionais para disponibilidade"
       ]
     },
     "label": {
@@ -11123,6 +11157,9 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Links do ${ MEET_APP_NAME } para adicionar automaticamente desativados"
       ]
     },
     "Suffix": {

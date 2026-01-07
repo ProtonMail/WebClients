@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Deaktivovat funkci automatického přidávání odkazů na ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Vypnout automatické přidávání"
       ]
     },
     "action": {
@@ -1784,6 +1790,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rychlá a soukromá VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
       ]
     },
     "Checkout row": {
@@ -4023,6 +4035,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Failed to update settings": [
+        "Aktualizace nastavení selhala"
       ]
     },
     "error": {
@@ -6602,6 +6617,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automaticky jsme přidali odkaz na ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -6881,7 +6899,7 @@
         "Kategorie"
       ],
       "Check additional calendars for availability": [
-        "Zkontrolovat dostupnost v dalších kalendářích"
+        "Zkontrolujte dostupnost v dalších kalendářích"
       ],
       "City": [
         "Město"
@@ -7480,7 +7498,7 @@
         "když dojde k úniku vašich dat"
       ],
       "Learn more": [
-        "Zjistit více"
+        "Více informací"
       ],
       "My calendars": [
         "Mé kalendáře"
@@ -11531,6 +11549,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatické přidávání odkazů na ${ MEET_APP_NAME } deaktivováno"
       ]
     },
     "Suffix": {

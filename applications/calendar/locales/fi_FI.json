@@ -989,6 +989,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy booking page link": [
+        "Kopioi varaussivun linkki"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Poista käytöstä automaattinen ${ MEET_APP_NAME }-linkkien lisääminen"
+      ],
+      "Remove the booking range": [
+        "Poista varausväli"
+      ],
+      "Turn off auto-add": [
+        "Poista automaattinen lisäys käytöstä"
       ]
     },
     "action": {
@@ -1707,6 +1719,10 @@
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
       ]
     },
     "Checkout row": {
@@ -1763,6 +1779,12 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Built and based in Europe": [
+        "Rakennettu ja sijaitsee Euroopassa"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ]
     },
     "collider_2025: Info": {
@@ -3855,6 +3877,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Failed to update settings": [
+        "Asetusten päivittäminen epäonnistui"
       ]
     },
     "error": {
@@ -6243,6 +6268,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videopuhelu"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Lisäsimme automaattisesti ${ MEET_APP_NAME } -linkin."
       ]
     },
     "info": {
@@ -10052,6 +10083,9 @@
       ],
       "Video conferencing is here!": [
         "Videoneuvottelut ovat täällä!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } on täällä!"
       ]
     },
     "sso": {
@@ -10772,6 +10806,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME } -linkkien automaattinen lisääminen on poistettu käytöstä"
       ]
     },
     "Suffix": {

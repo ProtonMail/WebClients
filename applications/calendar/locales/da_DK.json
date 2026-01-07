@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Deaktiver automatisk tilføjelse af ${ MEET_APP_NAME } links-funktionen"
+      ],
+      "Turn off auto-add": [
+        "Slå automatisk tilføjelse fra"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra hurtig og privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Failed to update settings": [
+        "Kunne ikke opdatere indstillinger"
       ]
     },
     "error": {
@@ -5941,7 +5954,7 @@
         "Abonnement fornyes automatisk hver ${ cycle } måned."
       ],
       "Subscription auto-renews every month.": [
-        "Abonnementet auto-fornyer hver måned."
+        "Abonnementet fornyes automatisk hver måned."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Vi har automatisk tilføjet et ${ MEET_APP_NAME } link"
       ]
     },
     "info": {
@@ -8289,7 +8305,7 @@
         "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du forsøger at abonnere igen."
       ]
     },
     "new_plans: label": {
@@ -8348,7 +8364,7 @@
         "Adresser har fuld sende- og modtagefunktion. En bruger kan få tildelt flere adresser, men en enkelt adresse kan ikke tildeles til flere brugere."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
+        "Tillader, at du forbinder til mere end ét netværk samtidigt, f.eks. kan du streame en film fra et andet land samtidigt med, at du får lokale søgeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
@@ -8535,7 +8551,7 @@
         "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online."
+        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Når du sender til andre ${ MAIL_APP_NAME } brugere, er krypteringen automatisk. Afsendelse til ikke-${ MAIL_APP_NAME_TWO } brugere kræver en adgangskode før afsendelse."
@@ -10733,7 +10749,7 @@
         "Produktivitetsfunktioner til e-mail"
       ],
       "Extra storage and bonuses": [
-        "Få ekstra lagerplads og bonusser"
+        "Ekstra lagerplads og brugere"
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
@@ -11135,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har afmeldt dig"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatisk tilføjelse af ${ MEET_APP_NAME } links er deaktiveret"
       ]
     },
     "Suffix": {

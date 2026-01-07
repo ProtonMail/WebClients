@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesini kapat"
+      ],
+      "Turn off auto-add": [
+        "Otomatik eklemeyi kapat"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Çok hızlı ve güvenli VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Failed to update settings": [
+        "Ayarlar güncellenemedi"
       ]
     },
     "error": {
@@ -5201,7 +5214,7 @@
         "Faturalama dönemi: ${ text }"
       ],
       "Booking contact email: ${ selectedCalendar.Email }": [
-        "Rezervasyon iletişim e-postası: ${ selectedCalendar.Email }"
+        "Rezervasyon iletişim e-posta adresi: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Rezervasyon sayfası silindi"
@@ -6178,7 +6191,7 @@
         "Randevu nerede gerçekleşecek?"
       ],
       "Which calendars should block bookings?": [
-        "Hangi takvimler rezervasyonları engellemelidir?"
+        "Rezervasyonları engelleyecek takvimler hangileridir?"
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantısı eklendi"
       ]
     },
     "info": {
@@ -6701,7 +6717,7 @@
         "Kategori"
       ],
       "Check additional calendars for availability": [
-        "Müsaitlik durumu için ek takvimleri kontrol edin"
+        "Uygunluk durumu için ek takvimlere bakılsın"
       ],
       "City": [
         "İl"
@@ -11135,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "Aboneliği sonlandırdınız"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesi kapatıldı"
       ]
     },
     "Suffix": {

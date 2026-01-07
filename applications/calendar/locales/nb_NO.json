@@ -6414,6 +6414,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "E-postadresse for bestillingskontakt: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Hvor langt i forveien kan noen bestille?"
+      ],
+      "Min. 2 hours before": [
+        "Min. 2 timer før"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 timer før"
+      ],
+      "Not on the same day": [
+        "Ikke på samme dag"
+      ],
+      "Which calendars should block bookings?": [
+        "Hvilke kalendere skal blokkere bestillinger?"
       ]
     },
     "info": {
@@ -7129,6 +7147,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Add notice period": [
+        "Legg til oppsigelsestid"
+      ],
+      "Check additional calendars for availability": [
+        "Sjekk tilgjengelighet i flere kalendere"
       ]
     },
     "label": {

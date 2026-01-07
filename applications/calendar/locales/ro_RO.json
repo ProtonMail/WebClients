@@ -1023,6 +1023,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Dezactivare adăugare automată legături web ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Dezactivare adăugare automată"
       ]
     },
     "action": {
@@ -1769,6 +1775,11 @@
       ],
       "Ultra fast and private VPN": [
         "VPN rapid și privat"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ]
     },
     "Checkout row": {
@@ -3989,6 +4000,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Failed to update settings": [
+        "Nu s-au putut actualiza setările."
       ]
     },
     "error": {
@@ -6517,6 +6531,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "S-a adăugat automat o legătură web ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -11333,6 +11350,9 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "S-a dezactivat adăugarea automată de legături web ${ MEET_APP_NAME }."
       ]
     },
     "Suffix": {
