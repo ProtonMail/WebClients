@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Απενεργοποίηση της λειτουργίας αυτόματης προσθήκης συνδέσμων ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Απενεργοποίηση αυτόματης προσθήκης"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Εξαιρετικά γρήγορο και ιδιωτικό VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Failed to update settings": [
+        "Απέτυχε η ενημέρωση ρυθμίσεων"
       ]
     },
     "error": {
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Προσθέσαμε αυτόματα έναν σύνδεσμο ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -11135,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Αυτόματη προσθήκη συνδέσμων ${ MEET_APP_NAME } απενεργοποιημένη"
       ]
     },
     "Suffix": {

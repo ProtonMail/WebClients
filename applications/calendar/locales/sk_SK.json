@@ -6584,6 +6584,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "Kontaktný email rezervácie: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "Ako dlho vopred je možné rezervovať?"
+      ],
+      "Min. 2 hours before": [
+        "Min. 2 hodiny vopred"
+      ],
+      "Min. 48 hours before": [
+        "Min. 48 hodín vopred"
+      ],
+      "Not on the same day": [
+        "Nie v rovnaký deň"
+      ],
+      "Which calendars should block bookings?": [
+        "Ktoré kalendáre by mali blokovať rezervácie?"
       ]
     },
     "info": {
@@ -7305,6 +7323,18 @@
       ],
       "Zoom meeting": [
         "Zoom stretnutie"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
+      "Add notice period": [
+        "Pridať upovedomenie o termíne"
+      ],
+      "Check additional calendars for availability": [
+        "Skontrolovať dostupnosť v ďalších kalendároch"
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ]
     },
     "label": {

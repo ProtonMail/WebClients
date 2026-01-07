@@ -6329,6 +6329,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "予約連絡先メールアドレス: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "どれくらい前に予約できますか?"
+      ],
+      "Min. 2 hours before": [
+        "最低2時間前"
+      ],
+      "Min. 48 hours before": [
+        "最低48時間前"
+      ],
+      "Not on the same day": [
+        "同じ日ではない"
+      ],
+      "Which calendars should block bookings?": [
+        "どのカレンダーで予約をブロックしますか?"
       ]
     },
     "info": {
@@ -7038,6 +7056,12 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Add notice period": [
+        "通知期間を追加する"
+      ],
+      "Check additional calendars for availability": [
+        "空き状況については追加のカレンダーを確認してください"
       ]
     },
     "label": {

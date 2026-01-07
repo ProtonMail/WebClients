@@ -1013,6 +1013,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Inaktivera funktionen “Lägg till automatiskt“ för ${ MEET_APP_NAME }-länkar"
+      ],
+      "Turn off auto-add": [
+        "Stäng av “Lägg till automatiskt“"
       ]
     },
     "action": {
@@ -1748,6 +1754,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnabb och privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ]
     },
     "Checkout row": {
@@ -3940,6 +3950,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Failed to update settings": [
+        "Misslyckades att uppdatera inställningar"
       ]
     },
     "error": {
@@ -6387,6 +6400,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Vi har lagt till en ${ MEET_APP_NAME }-länk automatiskt"
       ]
     },
     "info": {
@@ -7105,6 +7121,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Add notice period": [
+        "Lägg till aviseringsperiod"
       ]
     },
     "label": {
@@ -11076,6 +11095,9 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "“Lägg till automatiskt“ inaktiverat för ${ MEET_APP_NAME }-länkar"
       ]
     },
     "Suffix": {

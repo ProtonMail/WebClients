@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Disattiva la funzionalità di aggiunta automatica dei link di ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Disattiva aggiunta automatica"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultra veloce e privata"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utente",
+        "Fino a ${ numberOfUsers } utenti"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Failed to update settings": [
+        "Errore nell'aggiornamento delle impostazioni"
       ]
     },
     "error": {
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Abbiamo aggiunto automaticamente un link a ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -7147,6 +7163,12 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
+      ],
+      "Command line interface (CLI)": [
+        "Interfaccia a riga di comando (CLI)"
       ]
     },
     "label": {
@@ -11129,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Disabilitati i link di aggiunta automatica di ${ MEET_APP_NAME }"
       ]
     },
     "Suffix": {

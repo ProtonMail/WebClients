@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Desactiva la característica d'afegir automàticament enllaços de ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Desactiveu l'addició automàtica"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Connexió VPN ultraràpida i privada"
+      ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Failed to update settings": [
+        "No s'ha pogut actualitzar les preferències"
       ]
     },
     "error": {
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Hem afegit automàticament un enllaç de ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -11135,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "Heu anul·lat la subscripció amb èxit"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "S'ha desactivat l'addició automàtica d'enllaços de ${ MEET_APP_NAME }"
       ]
     },
     "Suffix": {

@@ -6310,6 +6310,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "ჯავშნის საკონტაქტო ელფოსტა: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "რამდენად ადრე შეუძლია ვინმეს, დაჯავნოს?"
+      ],
+      "Min. 2 hours before": [
+        "მინ. 2 საათით ადრე"
+      ],
+      "Min. 48 hours before": [
+        "მინ. 48 საათით ადრე"
+      ],
+      "Not on the same day": [
+        "არა იმდღესვე"
+      ],
+      "Which calendars should block bookings?": [
+        "რომელმა კალენდრებმა უნდა დაბლოკონ დაჯავშნა?"
       ]
     },
     "info": {
@@ -7022,6 +7040,12 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Add notice period": [
+        "გაფრთხილების პერიოდის დამატება"
+      ],
+      "Check additional calendars for availability": [
+        "დამატებითი კალენდრების შემოწმება ხელმისაწვდომობაზე"
       ]
     },
     "label": {

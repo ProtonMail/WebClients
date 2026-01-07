@@ -3918,6 +3918,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "You cannot enter the organizer's email": [
+        "주최자의 이메일을 입력할 수 없습니다"
       ]
     },
     "error": {
@@ -6323,6 +6326,27 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "예약 연락처 이메일: ${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "얼마나 미리 예약할 수 있나요?"
+      ],
+      "Min. 2 hours before": [
+        "최소 2시간 전"
+      ],
+      "Min. 48 hours before": [
+        "최소 48시간 전"
+      ],
+      "Not on the same day": [
+        "같은 날이 아닐 때"
+      ],
+      "Other location": [
+        "다른 위치"
+      ],
+      "Which calendars should block bookings?": [
+        "어떤 캘린더에서 예약을 차단할까요?"
       ]
     },
     "info": {
@@ -7032,6 +7056,12 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Add notice period": [
+        "알림 기간 추가"
+      ],
+      "Check additional calendars for availability": [
+        "추가 캘린더의 일정 가능 여부 확인"
       ]
     },
     "label": {

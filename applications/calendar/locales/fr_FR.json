@@ -1019,6 +1019,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Désactiver la fonctionnalité d'ajout automatique des liens ${ MEET_APP_NAME }"
+      ],
+      "Turn off auto-add": [
+        "Désactiver l'ajout automatique"
       ]
     },
     "action": {
@@ -1754,6 +1760,10 @@
       ],
       "Ultra fast and private VPN": [
         "Un VPN ultra-rapide et privé"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ]
     },
     "Checkout row": {
@@ -3955,6 +3965,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Failed to update settings": [
+        "Les paramètres n'ont pas pu être mis à jour."
       ]
     },
     "error": {
@@ -6127,7 +6140,7 @@
         "Adresse IP du VPN"
       ],
       "Warning": [
-        "Avertissement"
+        "Attention"
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
@@ -6432,6 +6445,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Nous avons automatiquement ajouté un lien ${ MEET_APP_NAME }"
       ]
     },
     "info": {
@@ -7086,7 +7102,7 @@
         "Barre d'outils"
       ],
       "Unavailable": [
-        "Indisponible"
+        "Non disponible"
       ],
       "Upload picture": [
         "Importer une image"
@@ -7319,7 +7335,7 @@
         "Demander une invitation"
       ],
       "Resume now": [
-        "Reprendre à présent"
+        "Reprendre maintenant"
       ],
       "settings": [
         "paramètres"
@@ -9751,12 +9767,12 @@
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
       ],
       "Friend joined": [
-        "Un ami a rejoint",
-        "Des amis ont rejoint"
+        "Ami a rejoint",
+        "Amis ont rejoint"
       ],
       "Friend subscribed": [
-        "Un ami s'est abonné",
-        "Des amis se sont abonnés"
+        "Ami abonné",
+        "Amis abonnés"
       ],
       "Invite friends. Get credits.": [
         "Invitez vos amis et recevez des crédits."
@@ -11135,6 +11151,9 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Ajout automatique des liens ${ MEET_APP_NAME } désactivé"
       ]
     },
     "Suffix": {
