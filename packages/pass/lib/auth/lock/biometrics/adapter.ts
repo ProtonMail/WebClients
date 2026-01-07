@@ -8,7 +8,7 @@ import {
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
@@ -79,7 +79,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
             if (!authStore.hasOfflinePassword()) {
-                const { offlineConfig, offlineKD, offlineVerifier } = await getOfflineComponents(secret);
+                const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(secret);
                 authStore.setOfflineConfig(offlineConfig);
                 authStore.setOfflineKD(offlineKD);
                 authStore.setOfflineVerifier(offlineVerifier);
