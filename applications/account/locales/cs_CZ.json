@@ -3147,6 +3147,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložiště"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložiště pro e-maily"
       ],
@@ -9297,6 +9303,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Automatická odpověď je aktivní vždy v rozsahu vámi vybraných hodin a dnů v týdnu."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Automaticky přidávejte odkazy na Meet do pozvánek v kalendáři, pokud je pozván alespoň jeden účastník."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
       ],
@@ -12851,6 +12860,9 @@
       "Auto show remote images": [
         "Automaticky zobrazovat externí obrázky"
       ],
+      "Auto-add Meet links": [
+        "Automatické přidávání odkazů na Meet"
+      ],
       "Auto-advance": [
         "Automatické pokračování"
       ],
@@ -15148,12 +15160,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uživatel",
-        "Až ${ numberOfUsers } uživatelé",
-        "Až ${ numberOfUsers } uživatelů",
-        "Až ${ numberOfUsers } uživatelů"
-      ],
       "${ options }-day file version history": [
         "${ options }denní historie verzí souborů",
         "${ options }denní historie verzí souborů",
@@ -17024,9 +17030,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Koupit nyní"
-      ],
       "Contact us": [
         "Kontaktujte nás"
       ],
@@ -17295,9 +17298,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Přihlášení do ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Speciální: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začněte používat ${ PASS_APP_NAME }"

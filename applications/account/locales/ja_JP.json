@@ -14665,9 +14665,6 @@
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
       ],
-      "${ numberOfUsers } user": [
-        "最大${ numberOfUsers }人のユーザー"
-      ],
       "${ options }-day file version history": [
         "${ options }-日間のファイルバージョン履歴"
       ],
@@ -16469,9 +16466,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "今すぐ購入"
-      ],
       "Contact us": [
         "私たちにご連絡ください"
       ],
@@ -16740,9 +16734,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } にログインしています"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "特別：${ PLAN_NAMES[PLANS.PASS_LIFETIME] }が${ priceString }。"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }を始めましょう"

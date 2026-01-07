@@ -3117,6 +3117,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail-lagerplads"
       ],
@@ -9106,6 +9110,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Autosvar er altid aktiv på de ugedage og i det tidsrum, som du vælger."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Tilføj automatisk Meet-links til dine kalenderinvitationer, når der er mindst én deltager."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
       ],
@@ -12586,6 +12593,9 @@
       "Auto show remote images": [
         "Vis automatisk eksterne billeder"
       ],
+      "Auto-add Meet links": [
+        "Tilføj automatisk Meet-links"
+      ],
       "Auto-advance": [
         "Auto-fremføring"
       ],
@@ -14831,10 +14841,6 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruger",
-        "Op til ${ numberOfUsers } brugere"
-      ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
         "${ options }-dags filversionshistorik"
@@ -16659,9 +16665,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Køb nu"
-      ],
       "Contact us": [
         "Kontakt os"
       ],
@@ -16930,9 +16933,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logger ind på ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Særligt: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynd at bruge ${ PASS_APP_NAME }"
