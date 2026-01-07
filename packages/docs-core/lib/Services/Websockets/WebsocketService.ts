@@ -69,6 +69,7 @@ import {
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
+import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
 
 type LinkID = string
 
@@ -96,6 +97,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private appVersion: string,
     private unleashClient: UnleashClient,
     readonly sizeTracker: DocSizeTracker,
+    readonly visibility: 'public' | 'private',
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
@@ -295,6 +297,12 @@ export class WebsocketService implements WebsocketServiceInterface {
         document: record.document,
         readinessInformation: readinessInformation,
       },
+    })
+
+    metrics.docs_connection_ready_total.increment({
+      type: 'success',
+      visibility: this.visibility,
+      docType: tmpConvertOldDocTypeToNew(this.documentType),
     })
 
     this.retryFailedDocumentUpdatesForDoc(record.document)

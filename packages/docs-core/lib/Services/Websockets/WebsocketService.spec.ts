@@ -101,6 +101,7 @@ describe('WebsocketService', () => {
         isEnabled: jest.fn().mockReturnValue(true),
       } as unknown as jest.Mocked<UnleashClient>,
       new DocSizeTracker(logger, eventBus),
+      'private',
     )
 
     service.createConnection(documentState)

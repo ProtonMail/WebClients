@@ -135,6 +135,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
         this.unleashClient,
         documentType,
         this.sizeTracker,
+        'public',
       )
 
       realtime.initializeConnection()
