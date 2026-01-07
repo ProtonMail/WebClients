@@ -40,9 +40,10 @@ import {
     getAttachmentPub,
 } from '../../types';
 import type { GenerationToFrontendMessage } from '../../types-api';
+import { calculateSingleAttachmentContextSize } from '../../llm/utils';
 
-// Helper function to determine which files will actually be used in the LLM context
-// Note: Project files are now retrieved via RAG (same as Drive files) - no special handling needed
+const SMALL_FILE_SET_TOKEN_THRESHOLD = 45000; // ~45k tokens threshold to include all uploaded files in the first message
+
 function getContextFilesForMessage(
     messageChain: Message[],
     contextFilters: ContextFilter[] = []
@@ -71,16 +72,54 @@ function getContextFilesForMessage(
     return contextFiles;
 }
 
-// Error handler for sendMessageWithRedux
 const createLumoErrorHandler = () => (message: GenerationToFrontendMessage, cId: string) =>
     createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
 
-/** Result from RAG document retrieval */
 interface RAGRetrievalResult {
-    /** Formatted context string for LLM */
     context: string;
-    /** Attachments created from retrieved documents (to be added to message) */
     attachments: Attachment[];
+}
+
+/**
+ * Get all uploaded files for a project space and calculate their total token count.
+ * This is used to determine if we should include all files in the first message
+ * instead of relying on search-based retrieval.
+ * 
+ * @param spaceId - The project space ID
+ * @param allAttachments - All attachments from Redux state
+ * @param alreadyRetrievedDocIds - Set of document IDs already used in conversation
+ * @param referencedFileNames - Set of @mentioned file names to exclude
+ * @returns Object with uploaded files and their total token count
+ */
+function getUploadedProjectFiles(
+    spaceId: string,
+    allAttachments: Record<string, Attachment>,
+    alreadyRetrievedDocIds: Set<string>,
+    referencedFileNames: Set<string>
+): { files: Attachment[], totalTokens: number } {
+    const uploadedFiles: Attachment[] = [];
+    let totalTokens = 0;
+
+    for (const attachment of Object.values(allAttachments)) {
+        // Only include files that:
+        // 1. Belong to this project space
+        // 2. Are uploaded files (not auto-retrieved from Drive)
+        // 3. Haven't been used in the conversation yet
+        // 4. Weren't explicitly @mentioned
+        // 5. Have markdown content (successfully processed)
+        if (
+            attachment.spaceId === spaceId &&
+            !attachment.autoRetrieved &&
+            !alreadyRetrievedDocIds.has(attachment.id) &&
+            !referencedFileNames.has(attachment.filename.toLowerCase()) &&
+            attachment.markdown
+        ) {
+            uploadedFiles.push(attachment);
+            totalTokens += calculateSingleAttachmentContextSize(attachment);
+        }
+    }
+
+    return { files: uploadedFiles, totalTokens };
 }
 
 /**
@@ -140,6 +179,50 @@ async function retrieveDocumentContextForProject(
     });
 
     console.log(`[RAG] Already retrieved ${alreadyRetrievedDocIds.size} documents in this conversation`);
+
+    // For the first message in a project, check if we should include all uploaded files
+    // instead of relying on search. This ensures better responses for small file sets.
+    const isFirstMessage = userMessageCount === 1;
+
+    if (isFirstMessage) {
+        const { files: uploadedFiles, totalTokens } = getUploadedProjectFiles(
+            spaceId,
+            allAttachments,
+            alreadyRetrievedDocIds,
+            referencedFileNames
+        );
+
+        console.log(`[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens`);
+
+        // If total tokens are under threshold, include all uploaded files directly
+        if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD) {
+            console.log(`[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`);
+            
+            // Mark files as auto-retrieved for consistent handling
+            const attachments: Attachment[] = uploadedFiles.map(file => ({
+                ...file,
+                autoRetrieved: true,
+                isUploadedProjectFile: true,
+                relevanceScore: 1.0, // All files are equally relevant when including everything
+            }));
+
+            // Format context for all files
+            const searchService = SearchService.get(userId);
+            const formattedDocs = uploadedFiles.map(file => ({
+                id: file.id,
+                name: file.filename,
+                content: file.markdown || '',
+                score: 1.0,
+            }));
+
+            return {
+                context: searchService.formatRAGContext(formattedDocs),
+                attachments,
+            };
+        } else if (uploadedFiles.length > 0) {
+            console.log(`[RAG] Uploaded files exceed threshold (${totalTokens} > ${SMALL_FILE_SET_TOKEN_THRESHOLD}), falling back to search-based retrieval`);
+        }
+    }
 
     try {
         const searchService = SearchService.get(userId);
