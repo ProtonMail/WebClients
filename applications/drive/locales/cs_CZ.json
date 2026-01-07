@@ -1699,6 +1699,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložiště"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložiště pro e-maily"
       ],
@@ -8326,12 +8332,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uživatel",
-        "Až ${ numberOfUsers } uživatelé",
-        "Až ${ numberOfUsers } uživatelů",
-        "Až ${ numberOfUsers } uživatelů"
       ],
       "${ options }-day file version history": [
         "${ options }denní historie verzí souborů",
