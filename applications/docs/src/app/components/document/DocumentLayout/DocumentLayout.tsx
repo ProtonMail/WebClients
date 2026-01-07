@@ -29,7 +29,7 @@ export function DocumentLayout({ children, documentType, actionMode }: DocumentL
         sidebar={null}
         drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}
       >
-        <PrivateMainArea hasToolbar>
+        <PrivateMainArea hasToolbar className="[&>div]:h-full">
           {children}
           <DocumentSizeLimitModal documentType={documentType} />
         </PrivateMainArea>
