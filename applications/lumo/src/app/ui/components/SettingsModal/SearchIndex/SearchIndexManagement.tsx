@@ -15,9 +15,9 @@ export const SearchIndexManagement: FunctionComponent<Props> = ({ onReindex, dis
             onClick={onReindex}
             disabled={disabled}
             loading={disabled}
-            title={c('Action').t`Re-index all conversations`}
+            title={c('Action').t`Re-index all content - conversations and files`}
         >
-            {c('Action').t`Reindex`}
+            {c('Action').t`Reset`}
         </Button>
     </div>
 );
