@@ -4,5 +4,5 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export function getSecurityKeySigningWarning() {
     return c('Info')
-        .t`Without an authenticator app, you will not be able to sign in to the ${BRAND_NAME} applications that don’t yet support security keys.`;
+        .t`Some ${BRAND_NAME} apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.`;
 }
