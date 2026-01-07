@@ -130,7 +130,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     async (file: File) => {
       setIsImportingExcelFile(true)
       docState.startSheetsExcelImport()
-      const { requiresRecalc } = await importExcelFile(file, 1000, 100, true)
+      const { requiresRecalc } = await importExcelFile(file, {
+        minRowCount: 1000,
+        minColumnCount: 100,
+        enableCellXfsRegistry: true,
+      })
       const patches = await generateStatePatches()
       for (const key of Object.keys(patches)) {
         state.yjsState.onBroadcastPatch([
