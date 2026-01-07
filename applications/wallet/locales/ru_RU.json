@@ -556,9 +556,6 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } заключил партнёрство с ${ rampLink }, ${ banxaLink } и ${ moonpayLink }, тремя зарегистрированными услугами криптоактивов, чтобы облегчить покупку BTC. Укажите свой регион, чтобы увидеть доступных провайдеров и способы оплаты."
       ],
-      "1% bank transfer fee": [
-        "Комиссия 1 % за банковский перевод"
-      ],
       "4% credit card fee": [
         "Комиссия 4 % за кредитную карту"
       ],
@@ -3465,12 +3462,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } пользователь",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей"
       ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
