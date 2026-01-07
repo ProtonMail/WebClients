@@ -15148,12 +15148,6 @@
         "${ n } падключэнняў па VPN",
         "${ n } падключэнняў па VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } карыстальнік",
-        "Да ${ numberOfUsers } карыстальнікаў",
-        "Да ${ numberOfUsers } карыстальнікаў",
-        "Да ${ numberOfUsers } карыстальнікаў"
-      ],
       "${ options }-day file version history": [
         "${ options }-дзённая гісторыя версій файла",
         "${ options }-дзённая гісторыя версій файла",
@@ -17024,9 +17018,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Купіць"
-      ],
       "Contact us": [
         "Звязацца з намі"
       ],
@@ -17295,9 +17286,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Уваход у ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Адмысловая прапанова: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } за ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"

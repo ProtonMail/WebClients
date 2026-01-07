@@ -492,6 +492,9 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } 與 ${ rampLink }、${ banxaLink } 和 ${ moonpayLink } 這三間註冊的加密資產服務機構合作，以方便購買 BTC。請輸入您所在的地區以查看可用的服務商和繳款方式。"
       ],
+      "2% bank transfer fee": [
+        "2% 銀行轉帳手續費"
+      ],
       "Amount": [
         "金額"
       ],
@@ -721,6 +724,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB }儲存"
+      ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -3068,9 +3074,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers }個用戶"
       ],
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"

@@ -1685,6 +1685,11 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } stocare"
       ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } spațiu e-mail"
       ],
@@ -8207,11 +8212,6 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",

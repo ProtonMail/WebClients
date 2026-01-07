@@ -1513,7 +1513,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -7616,10 +7619,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7713,9 +7713,6 @@
       ],
       "Low Priority": [
         "Nízka priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -10996,12 +10993,6 @@
         "${ n } VPN pripojenia",
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } používateľ",
-        "Až ${ numberOfUsers } používatelia",
-        "Až ${ numberOfUsers } používateľov",
-        "Až ${ numberOfUsers } používateľov"
       ],
       "${ options }-day file version history": [
         "${ options }-dňová história verzií súborov",

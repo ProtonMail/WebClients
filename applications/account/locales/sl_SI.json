@@ -11314,12 +11314,6 @@
         "${ n } VPN povezave",
         "${ n } VPN povezav"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uporabnik",
-        "${ numberOfUsers } uporabnika",
-        "${ numberOfUsers } uporabniki",
-        "${ numberOfUsers } uporabnikov"
-      ],
       "${ options }-day file version history": [
         "${ options }-dnevna zgodovina verzij datoteke",
         "${ options }-dnevna zgodovina verzij datoteke",
@@ -12981,9 +12975,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Kupi zdaj"
-      ],
       "Contact us": [
         "Stopite v stik z nami"
       ],
@@ -13216,9 +13207,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Prijava na ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Posebna ponudba: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začnite uporabljati ${ PASS_APP_NAME }"

@@ -14472,10 +14472,6 @@
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } მომხმარებელი",
-        "${ numberOfUsers } მომხამრებელი"
-      ],
       "${ options }-day file version history": [
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
@@ -16292,9 +16288,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "შეიძინეთ ახლა"
-      ],
       "Contact us": [
         "დაგვიკავშირდით"
       ],
@@ -16557,9 +16550,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ში შესვლა"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "სპეციალური: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } სულ რაღაც ${ priceString } ფასად."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დაწყება"

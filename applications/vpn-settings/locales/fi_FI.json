@@ -1901,6 +1901,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tallennustilaa"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } sähköpostitallennustilaa"
       ],
@@ -1983,6 +1987,9 @@
       "Basic chat history": [
         "Rajoitettu keskusteluhistoria"
       ],
+      "Built and based in Europe": [
+        "Rakennettu ja sijaitsee Euroopassa"
+      ],
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
       ],
@@ -1994,6 +2001,9 @@
       ],
       "Limited favorites": [
         "Rajoitettu määrä suosikkeja"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -9539,10 +9549,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } käyttäjä",
-        "Enintään ${ numberOfUsers } käyttäjää"
       ],
       "${ options }-day file version history": [
         "${ options } päivän tiedostojen versiohistoria",

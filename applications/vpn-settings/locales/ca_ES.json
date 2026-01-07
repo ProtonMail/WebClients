@@ -2025,6 +2025,10 @@
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'emmagatzematge de correu electrònic"
       ],
@@ -10005,10 +10009,6 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuari",
-        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ options }-day file version history": [
         "Historial de versions de fitxers de ${ options } dies",

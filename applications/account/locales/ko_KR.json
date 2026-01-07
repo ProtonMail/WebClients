@@ -14444,9 +14444,6 @@
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
       ],
-      "${ numberOfUsers } user": [
-        "최대 ${ numberOfUsers }명 사용자"
-      ],
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
       ],
@@ -16213,9 +16210,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "지금 구매"
-      ],
       "Contact us": [
         "문의하기"
       ],
@@ -16484,9 +16478,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 로그인 중"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "특전: ${ priceString }에 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 구매"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용 시작"

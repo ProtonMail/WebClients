@@ -3117,6 +3117,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } αποθηκευτικού χώρου"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } αποθηκευτικού χώρου email"
       ],
@@ -9103,6 +9107,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Η αυτόματη απάντηση είναι πάντα ενεργή τις ημέρες της εβδομάδας που επιλέγετε, εντός των επιλεγμένων ωρών."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Προσθέστε αυτόματα συνδέσμους Meet στις προσκλήσεις του ημερολογίου σας όταν υπάρχει τουλάχιστον ένας προσκεκλημένος."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Αυτόματη εκκαθάριση μηνυμάτων ηλεκτρονικού ταχυδρομείου που μετακινήθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες."
       ],
@@ -12583,6 +12590,9 @@
       "Auto show remote images": [
         "Αυτόματη εμφάνιση απομακρυσμένων εικόνων"
       ],
+      "Auto-add Meet links": [
+        "Αυτόματη προσθήκη συνδέσμων Meet"
+      ],
       "Auto-advance": [
         "Αυτομ. εμφάνιση"
       ],
@@ -14828,10 +14838,6 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } χρήστης",
-        "Έως ${ numberOfUsers } χρήστες"
-      ],
       "${ options }-day file version history": [
         "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
         "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
@@ -16656,9 +16662,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Αγοράστε τώρα"
-      ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -16927,9 +16930,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Σύνδεση στο ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Ειδικά: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } για ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Αρχίστε να χρησιμοποιείτε το ${ PASS_APP_NAME }"

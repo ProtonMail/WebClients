@@ -1249,6 +1249,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
       ],
@@ -4545,7 +4549,7 @@
         "Önemli not"
       ],
       "Importing ODS files is currently in beta": [
-        "ODS dosyalarını içe aktarma şu anda test aşamasındadır"
+        "ODS dosyalarını içe aktarma özelliği henüz deneme aşamasında"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -6416,10 +6420,6 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",

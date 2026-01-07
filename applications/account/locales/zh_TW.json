@@ -2160,6 +2160,9 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB }儲存"
       ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位使用者"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
       ],
@@ -11090,9 +11093,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers }個用戶"
       ],
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"

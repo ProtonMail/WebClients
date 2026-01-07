@@ -1504,6 +1504,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -7379,8 +7383,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7474,9 +7477,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -10651,10 +10651,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruker",
-        "Opptil ${ numberOfUsers } brukere"
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
@@ -15586,6 +15582,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
+      ],
+      "Your newsletters in one place": [
+        "Dine nyhetsbrev på ett sted"
       ],
       "Your plan": [
         "Din plan"

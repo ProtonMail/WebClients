@@ -329,6 +329,9 @@
       "Deselect all": [
         "Desseleccionar-ho tot"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Desactiva la característica d'afegir automàticament enllaços de ${ MEET_APP_NAME }"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -913,6 +916,9 @@
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
+      ],
+      "Turn off auto-add": [
+        "Desactiveu l'addició automàtica"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Habilita ${ DARK_WEB_MONITORING_NAME }"
@@ -1712,6 +1718,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'emmagatzematge de correu electrònic"
@@ -3583,6 +3593,9 @@
       ],
       "Failed to update secret passphrase": [
         "No s'ha pogut actualitzar la frase de contrasenya secreta"
+      ],
+      "Failed to update settings": [
+        "No s'ha pogut actualitzar les preferències"
       ],
       "First name is too long": [
         "El nom és massa llarg."
@@ -6129,6 +6142,9 @@
       "Warning": [
         "Advertència"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Hem afegit automàticament un enllaç de ${ MEET_APP_NAME }"
+      ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
@@ -7782,10 +7798,6 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuari",
-        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ options }-day file version history": [
         "Historial de versions de fitxers de ${ options } dies",
@@ -10974,6 +10986,9 @@
       ],
       "Answer sent and event deleted": [
         "S'ha enviat la resposta i s'ha eliminat l'esdeveniment"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "S'ha desactivat l'addició automàtica d'enllaços de ${ MEET_APP_NAME }"
       ],
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."

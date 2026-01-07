@@ -2039,6 +2039,11 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } stocare"
       ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } spațiu e-mail"
       ],
@@ -6314,6 +6319,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
       ],
+      "Compromised": [
+        "Compromisă"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
       ],
@@ -10127,11 +10135,6 @@
         "${ n } seifuri",
         "${ n } de seifuri"
       ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
-      ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",
         "Istoric versiuni fișiere: ${ options } zile",
@@ -12627,6 +12630,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Valoare nevalidă"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Număr minim de zile necesar pentru perioada de retenție: ${ MIN_LIFETIME }",
         "Număr minim de zile necesar pentru perioada de retenție: ${ MIN_LIFETIME }",

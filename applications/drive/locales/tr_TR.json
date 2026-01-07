@@ -1671,6 +1671,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
       ],
@@ -8088,10 +8092,6 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",

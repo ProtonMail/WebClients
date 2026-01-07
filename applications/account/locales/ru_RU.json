@@ -11978,12 +11978,6 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } пользователь",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей"
-      ],
       "${ options }-day file version history": [
         "${ options }-дневный журнал версий файла",
         "${ options }-дневный журнал версий файла",
@@ -13502,9 +13496,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Купите сейчас"
-      ],
       "Contact us": [
         "Связаться с нами"
       ],
@@ -13744,9 +13735,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Вход в ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Специальное предложение: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } по цене ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Начните использовать ${ PASS_APP_NAME }"

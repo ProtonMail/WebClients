@@ -9214,6 +9214,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
       ],
+      "Compromised": [
+        "Kompromittert"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurer SAML-autentisering for organisasjonen din gjennom en identitetsleverandør (IdP). Dette vil aktivere SAML for hele organisasjonen."
       ],
@@ -14825,10 +14828,6 @@
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruker",
-        "Opptil ${ numberOfUsers } brukere"
-      ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
         "${ options }-dagers filversjonshistorikk"
@@ -16653,9 +16652,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Kjøp nå"
-      ],
       "Contact us": [
         "Kontakt oss"
       ],
@@ -16924,9 +16920,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logger på ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Spesialtilbud: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynn å bruke ${ PASS_APP_NAME }"
@@ -18188,6 +18181,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Ugyldig verdi"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Livstid må være lengre enn ${ MIN_LIFETIME } dag",
         "Livstid må være lengre enn ${ MIN_LIFETIME } dager"

@@ -1505,7 +1505,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2524,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagringsutrymme"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } lagringsutrymme för e-post"
@@ -7367,8 +7372,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7462,9 +7466,6 @@
       ],
       "Low Priority": [
         "Låg prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gör ${ MAIL_APP_NAME } till din standardapplikation för e-post."
       ],
       "Manage your folders": [
         "Hantera dina mappar"
@@ -10624,10 +10625,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } användare",
-        "Upp till ${ numberOfUsers } användare"
       ],
       "${ options }-day file version history": [
         "${ options }-dagars filversionshistorik",
