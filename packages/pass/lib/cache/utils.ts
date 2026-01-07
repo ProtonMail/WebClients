@@ -17,7 +17,7 @@ type PasswordUnlockOptions = {
  * unlocking without checking the LockMode. */
 export const canLocalUnlock = (options: PasswordUnlockOptions): boolean => {
     if (!(options.offlineConfig && options.offlineVerifier)) return false;
-    if (options.offline) return OFFLINE_SUPPORTED && options.offlineEnabled;
+    if (options.offline) return options.offlineEnabled;
     if (options.lockMode === LockMode.BIOMETRICS) return Boolean(options.encryptedOfflineKD);
     if (options.lockMode === LockMode.PASSWORD) return true;
     return false;
