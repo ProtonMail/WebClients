@@ -38,6 +38,7 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
     const streamPromiseRef = useRef<Promise<{ stream: SeekableReadableStream; claimedTotalSize?: number }> | undefined>(
         undefined
     );
+    const messageQueueRef = useRef<Promise<void>>(Promise.resolve());
 
     const clearSerwiceWorkerTimeout = () => {
         if (swTimeoutRef.current) {
@@ -164,8 +165,10 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
         initServiceWorker(abortController);
         streamPromiseRef.current = initStreamPromise(abortController.signal);
 
-        const messageHandler = async (event: MessageEvent) => {
-            await handleMessage(abortController, event);
+        const messageHandler = (event: MessageEvent) => {
+            // Chain message handling to ensure sequential processing.
+            // We cannot seek to different place while read is in progress.
+            messageQueueRef.current = messageQueueRef.current.then(() => handleMessage(abortController, event));
         };
         navigator.serviceWorker.addEventListener('message', messageHandler);
 
