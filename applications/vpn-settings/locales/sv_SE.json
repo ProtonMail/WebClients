@@ -2019,6 +2019,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagringsutrymme"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } lagringsutrymme för e-post"
       ],
@@ -9959,10 +9963,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } användare",
-        "Upp till ${ numberOfUsers } användare"
       ],
       "${ options }-day file version history": [
         "${ options }-dagars filversionshistorik",

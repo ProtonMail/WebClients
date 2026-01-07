@@ -2025,6 +2025,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
       ],
@@ -9994,10 +9998,6 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
-      ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
         "${ options } günlük dosya sürümü geçmişi"
@@ -12471,7 +12471,7 @@
     },
     "retention_policy_2025_Error": {
       "Invalid value": [
-        "Geçersiz değer"
+        "Değer geçersiz"
       ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır",

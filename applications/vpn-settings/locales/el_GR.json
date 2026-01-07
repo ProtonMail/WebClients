@@ -2025,6 +2025,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } αποθηκευτικού χώρου"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } αποθηκευτικού χώρου email"
       ],
@@ -10005,10 +10009,6 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } χρήστης",
-        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
         "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
