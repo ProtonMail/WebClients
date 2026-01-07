@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 
-import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { MAX_INDEXABLE_FILES, useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
@@ -87,6 +87,13 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             // Kick off indexing for this folder, associated to the project space
             void indexFolder(currentBrowsedFolder.nodeUid, currentBrowsedFolder.name, folderPath.join(' / '), {
                 spaceId: projectId,
+            }).then((result) => {
+                if (result.limitExceeded) {
+                    createNotification({
+                        text: c('collider_2025:Warning').t`This folder contains ${result.totalFiles} indexable files. Only the first ${MAX_INDEXABLE_FILES} files were indexed. ${result.skippedFiles} files were skipped.`,
+                        type: 'warning',
+                    });
+                }
             }).catch((error) => {
                 console.error('Drive folder indexing failed:', error);
                 createNotification({
@@ -217,7 +224,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             <>
                                 <p className="text-sm color-weak mb-4">
                                     {c('collider_2025:Info')
-                                        .t`Browse to the Drive folder you want to link to this project, then click "Link this folder".`}
+                                        .jt`Browse to the Drive folder you want to link to this project, then click "Link this folder". A maximum of ${MAX_INDEXABLE_FILES} files will be usable by Lumo.`}
                                 </p>
                                 <DriveBrowser
                                     onFileSelect={() => {
@@ -232,7 +239,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                 {currentBrowsedFolder && !isAtRoot && (
                                     <div className="mt-4 p-4 bg-weak rounded border border-weak">
                                         <div className="flex items-center gap-2">
-                                            <Icon name="folder" className="color-primary" />
+                                            <Icon name="folder" className="color-norm" />
                                             <span className="text-sm">
                                                 {c('collider_2025:Label').t`Current folder:`}{' '}
                                                 <span className="text-bold">{currentBrowsedFolder.name}</span>
@@ -242,10 +249,13 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                 )}
                                 {isAtRoot && (
                                     <div className="mt-4 p-3 bg-weak rounded text-sm">
-                                        <div className="flex items-center gap-2 color-weak">
-                                            <Icon name="info-circle" size={4} />
-                                            <span>{c('collider_2025:Info')
-                                                .t`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
+                                        <div className="flex flex-column gap-1 color-weak">
+                                            <div className="flex items-center gap-2">
+                                                <Icon name="folder-arrow-in-filled" size={4} />
+                                                <span>{c('collider_2025:Info')
+                                                    .jt`Navigate into a folder to link it. The root folder cannot be linked.`}</span>
+                                            </div>
+
                                         </div>
                                     </div>
                                 )}
