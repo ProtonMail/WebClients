@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import useFlag from '@proton/unleash/useFlag';
+
 import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLocalParticipantAdmin } from './useIsLocalParticipantAdmin';
 
@@ -7,10 +9,12 @@ export const useMeetingTimeout = () => {
     const { expirationTime, handleLeave, handleEndMeeting, isGuestAdmin } = useMeetContext();
     const { isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
+    const meetUpsellEnabled = useFlag('MeetUpsell');
+
     const isHostOrAdmin = isLocalParticipantHost || isGuestAdmin;
 
     useEffect(() => {
-        if (!expirationTime) {
+        if (!expirationTime || !meetUpsellEnabled) {
             return;
         }
 
@@ -30,7 +34,9 @@ export const useMeetingTimeout = () => {
             return;
         }
 
-        const timeoutId = setTimeout(() => {}, timeUntilExpiration);
+        const timeoutId = setTimeout(() => {
+            void handleTimeout();
+        }, timeUntilExpiration);
 
         return () => clearTimeout(timeoutId);
     }, []);
