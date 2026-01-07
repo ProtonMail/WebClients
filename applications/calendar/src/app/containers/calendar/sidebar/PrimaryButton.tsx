@@ -9,6 +9,8 @@ import clsx from '@proton/utils/clsx';
 import { BookingSidebarAction } from '../../bookings/BookingSidebarAction';
 import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
 
+import './PrimaryButton.scss';
+
 interface Props {
     collapsed: boolean;
     onCreateEvent?: () => void;
@@ -51,7 +53,7 @@ export const PrimaryButton = ({ collapsed, onCreateEvent, utcDate }: Props) => {
     }
 
     return (
-        <ButtonGroup color="norm" shape="solid" size="large" className="w-full">
+        <ButtonGroup color="norm" shape="solid" size="large" className="w-full calendar-sidebar-primary-buttons-group">
             <PrimaryAction collapsed={collapsed} onCreateEvent={onCreateEvent} group />
             <BookingSidebarAction onCreateEvent={onCreateEvent} disabled={!onCreateEvent} utcDate={utcDate} />
         </ButtonGroup>
