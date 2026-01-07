@@ -1249,6 +1249,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } opslagruimte"
       ],
+      "${ numberOfUsers } user": [
+        "Tot ${ numberOfUsers } gebruiker",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mailopslag"
       ],
@@ -6416,10 +6420,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ options }-day file version history": [
         "Bestandsversiegeschiedenis van ${ options } dag",
