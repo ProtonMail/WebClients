@@ -70,8 +70,11 @@ import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 type LinkID = string
+
+const MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE = 4_000
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
@@ -86,6 +89,8 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   destroyed = false
+
+  connectionReadyTimeout: ReturnType<typeof setTimeout> | undefined = undefined
 
   constructor(
     private _createRealtimeValetToken: FetchRealtimeToken,
@@ -187,6 +192,25 @@ export class WebsocketService implements WebsocketServiceInterface {
             document: nodeMeta,
           },
         })
+
+        this.connectionReadyTimeout = setTimeout(() => {
+          this.logger.warn('Connection established but no ready message received from RTS in a reasonable time')
+          metrics.docs_connection_ready_total.increment({
+            type: 'timeout',
+            visibility: this.visibility,
+            docType: tmpConvertOldDocTypeToNew(this.documentType),
+          })
+          traceError('Did not receive RTS ready message in time', {
+            extra: {
+              docType: tmpConvertOldDocTypeToNew(this.documentType),
+              docVisibility: this.visibility,
+            },
+          })
+          this.closeConnection(nodeMeta)
+          this.queueReconnectionForDocument(nodeMeta).catch((error) => {
+            this.logger.error('Error queuing reconnection for document', error)
+          })
+        }, MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE)
       },
 
       onFailToConnect: (reason) => {
@@ -277,6 +301,11 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord, content: Uint8Array<ArrayBuffer>): void {
     this.logger.info('Received ready to broadcast message from RTS')
+
+    if (this.connectionReadyTimeout) {
+      clearTimeout(this.connectionReadyTimeout)
+      this.connectionReadyTimeout = undefined
+    }
 
     record.connection.markAsReadyToAcceptMessages()
     record.debouncer.markAsReadyToFlush()
@@ -374,6 +403,15 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.logger.info(`Reconnecting to document without delay`)
 
     await record.connection.connect(undefined, options)
+  }
+
+  async queueReconnectionForDocument(nodeMeta: NodeMeta | PublicNodeMeta): Promise<void> {
+    const record = this.getConnectionRecord(nodeMeta.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    record.connection.queueReconnection()
   }
 
   async createAndBroadcastDocumentUpdateMessage(
