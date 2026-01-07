@@ -32,7 +32,7 @@ import type { GatewayLogical } from './GatewayLogical';
 import GatewayModal from './GatewayModal';
 import type { GatewayModel } from './GatewayModel';
 import GatewayRenameModal from './GatewayRenameModal';
-import GatewayRow from './GatewayRow';
+import { GatewayRow } from './GatewayRow';
 import GatewayServersModal from './GatewayServersModal';
 import GatewayUsersModal from './GatewayUsersModal';
 import { addIpInVPNGateway, createVPNGateway, deleteVPNGateway, renameVPNGateway, updateVPNGatewayUsers } from './api';
@@ -44,10 +44,14 @@ interface Props {
     showCancelButton?: boolean;
 }
 
-const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly string[] | null] => {
+const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, string[] | null, string[] | null] => {
     const features = data.Features || 0;
 
-    return [features, features & SERVER_FEATURES.DOUBLE_RESTRICTION ? data.UserIds || [] : null];
+    return [
+        features,
+        features & SERVER_FEATURES.DOUBLE_RESTRICTION ? data.UserIds || [] : null,
+        features & SERVER_FEATURES.DOUBLE_RESTRICTION ? data.GroupIds || [] : null,
+    ];
 };
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
@@ -73,6 +77,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             Provisioning: { TranslatedDuration: provisioningDuration },
         },
         users,
+        groups,
         locations,
         gateways,
         refresh,
@@ -266,7 +271,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 });
 
                 if (!gatewayHost) {
-                    const [features, usersIds] = getFeaturesAndUserIds(data);
+                    const [features, usersIds, groupIds] = getFeaturesAndUserIds(data);
 
                     gatewayHost = await createGateway(
                         createVPNGateway({
@@ -274,6 +279,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             Location: getLocationFromId(locationId),
                             Features: features,
                             UserIds: usersIds,
+                            GroupIds: groupIds,
                         })
                     );
 
@@ -307,7 +313,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             return createServersSequentially(data);
         }
 
-        const [features, usersIds] = getFeaturesAndUserIds(data);
+        const [features, usersIds, groupIds] = getFeaturesAndUserIds(data);
 
         return createGateway(
             createVPNGateway({
@@ -315,6 +321,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 Location: data.Location,
                 Features: features,
                 UserIds: usersIds,
+                GroupIds: groupIds,
             })
         );
     };
@@ -328,6 +335,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             ownedCount: ipAddresses,
             usedCount: ipCount,
             users,
+            groups,
             onSubmitDone: async (data: GatewayModel) => {
                 const gateway = await buildGateway(data);
 
@@ -401,6 +409,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             Features: gateway.Logicals[0]?.Features,
                             UserIds: gateway.Logicals[0]?.Users,
                             Quantities: addedQuantities,
+                            GroupIds: gateway.GroupIds,
                         },
                         gateway,
                         'gateway-servers-editions',
@@ -427,12 +436,16 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             model: {
                 features: logical.Features,
                 userIds: logical.Users,
+                groupIds: logical.Groups,
             },
             users,
+            groups,
             onSubmitDone: async (data: GatewayModel) => {
-                const [features, usersIds] = getFeaturesAndUserIds(data);
+                const [features, usersIds, groupIds] = getFeaturesAndUserIds(data);
 
-                const update = await api<{ Gateway: Gateway }>(updateVPNGatewayUsers(gateway.Name, features, usersIds));
+                const update = await api<{ Gateway: Gateway }>(
+                    updateVPNGatewayUsers(gateway.Name, features, usersIds, groupIds)
+                );
 
                 if (!update?.Gateway) {
                     createNotification({
@@ -585,6 +598,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                     gateway={gateway}
                                     isDeleted={isDeleted}
                                     users={users ?? []}
+                                    groups={groups ?? []}
                                     provisioningDuration={provisioningDuration}
                                     renameGateway={renameGateway}
                                     editGatewayServers={editGatewayServers}
