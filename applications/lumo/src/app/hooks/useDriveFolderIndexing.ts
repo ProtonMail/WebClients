@@ -6,7 +6,7 @@ import { NodeType } from '@proton/drive';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
 import { fileProcessingService } from '../services/fileProcessingService';
-import { getMimeTypeFromExtension } from '../util/filetypes';
+import { getMimeTypeFromExtension, isFileTypeSupported } from '../util/filetypes';
 import { SearchService } from '../services/search/searchService';
 import type { DriveDocument, FolderIndexingStatus } from '../types/documents';
 import type { SpaceId } from '../types';
@@ -24,6 +24,17 @@ interface FileWithPath extends DriveNode {
 // Number of files to download in parallel
 const PARALLEL_DOWNLOAD_LIMIT = 5;
 
+// Maximum number of files that can be indexed from a Drive folder
+export const MAX_INDEXABLE_FILES = 200;
+
+interface IndexFolderResult {
+    success: boolean;
+    totalFiles: number;
+    indexedFiles: number;
+    skippedFiles: number;
+    limitExceeded: boolean;
+}
+
 interface UseDriveFolderIndexingReturn {
     indexedFolders: IndexedDriveFolder[];
     indexingStatus: FolderIndexingStatus | null;
@@ -32,7 +43,7 @@ interface UseDriveFolderIndexingReturn {
         folderName: string,
         folderPath: string,
         options?: IndexFolderOptions
-    ) => Promise<void>;
+    ) => Promise<IndexFolderResult>;
     /** Rehydrate all indexed folders. Pass validSpaceIds to skip folders linked to deleted spaces. */
     rehydrateFolders: (validSpaceIds?: Set<SpaceId>) => Promise<number>;
     removeIndexedFolder: (folderUid: string) => Promise<void>;
@@ -150,8 +161,16 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     );
 
     const indexFolder = useCallback(
-        async (folderUid: string, folderName: string, folderPath: string, options?: IndexFolderOptions) => {
-            if (!user?.ID) return;
+        async (folderUid: string, folderName: string, folderPath: string, options?: IndexFolderOptions): Promise<IndexFolderResult> => {
+            if (!user?.ID) {
+                return {
+                    success: false,
+                    totalFiles: 0,
+                    indexedFiles: 0,
+                    skippedFiles: 0,
+                    limitExceeded: false,
+                };
+            }
 
             const { spaceId } = options || {};
 
@@ -170,9 +189,24 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     console.log('[DriveIndexing] Captured treeEventScopeId:', treeEventScopeId);
                 }
 
-                console.log('[DriveIndexing] Found', allFiles.length, 'total files in folder tree');
+                // Filter to only indexable files (exclude images, unsupported formats, etc.)
+                const indexableFiles = allFiles.filter((file) => {
+                    const mimeType = file.mediaType || getMimeTypeFromExtension(file.name);
+                    return isFileTypeSupported(file.name, mimeType);
+                });
 
-                setIndexingProgress(0, allFiles.length);
+                console.log('[DriveIndexing] Found', allFiles.length, 'total files,', indexableFiles.length, 'indexable files in folder tree');
+
+                const totalIndexableFiles = indexableFiles.length;
+                const limitExceeded = totalIndexableFiles > MAX_INDEXABLE_FILES;
+                const filesToProcess = limitExceeded ? indexableFiles.slice(0, MAX_INDEXABLE_FILES) : indexableFiles;
+                const skippedFiles = limitExceeded ? totalIndexableFiles - MAX_INDEXABLE_FILES : 0;
+
+                if (limitExceeded) {
+                    console.warn(`[DriveIndexing] File limit exceeded. Indexing first ${MAX_INDEXABLE_FILES} of ${totalIndexableFiles} indexable files. ${skippedFiles} files will be skipped.`);
+                }
+
+                setIndexingProgress(0, filesToProcess.length);
 
                 const documents: DriveDocument[] = [];
                 let processedCount = 0;
@@ -210,16 +244,16 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 };
 
                 // Process in batches of PARALLEL_DOWNLOAD_LIMIT
-                for (let i = 0; i < allFiles.length; i += PARALLEL_DOWNLOAD_LIMIT) {
-                    const batch = allFiles.slice(i, i + PARALLEL_DOWNLOAD_LIMIT);
+                for (let i = 0; i < filesToProcess.length; i += PARALLEL_DOWNLOAD_LIMIT) {
+                    const batch = filesToProcess.slice(i, i + PARALLEL_DOWNLOAD_LIMIT);
                     const batchNum = Math.floor(i / PARALLEL_DOWNLOAD_LIMIT) + 1;
-                    const totalBatches = Math.ceil(allFiles.length / PARALLEL_DOWNLOAD_LIMIT);
-                    const batchEndIndex = Math.min(i + PARALLEL_DOWNLOAD_LIMIT, allFiles.length);
+                    const totalBatches = Math.ceil(filesToProcess.length / PARALLEL_DOWNLOAD_LIMIT);
+                    const batchEndIndex = Math.min(i + PARALLEL_DOWNLOAD_LIMIT, filesToProcess.length);
                     
                     console.log(`[DriveIndexing] Processing batch ${batchNum}/${totalBatches} (${batch.length} files)`);
                     
                     // Show progress as "processing files X to Y"
-                    setIndexingProgress(i, allFiles.length, `Downloading files ${i + 1}-${batchEndIndex} of ${allFiles.length}`);
+                    setIndexingProgress(i, filesToProcess.length, `Downloading files ${i + 1}-${batchEndIndex} of ${filesToProcess.length}`);
 
                     // Yield to allow UI to update
                     await new Promise(resolve => setTimeout(resolve, 0));
@@ -235,7 +269,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         processedCount++;
                     }
 
-                    setIndexingProgress(processedCount, allFiles.length, `Processed ${processedCount}/${allFiles.length} files`);
+                    setIndexingProgress(processedCount, filesToProcess.length, `Processed ${processedCount}/${filesToProcess.length} files`);
                 }
 
                 const documentsWithContent = documents.filter((d) => d.content && d.content.length > 0);
@@ -268,6 +302,14 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 });
 
                 console.log('[DriveIndexing] Indexing complete:', documentsWithContent.length, 'documents indexed');
+                
+                return {
+                    success: true,
+                    totalFiles: totalIndexableFiles,
+                    indexedFiles: documentsWithContent.length,
+                    skippedFiles,
+                    limitExceeded,
+                };
             } catch (error) {
                 const message = error instanceof Error ? error.message : String(error);
                 // If folder is missing/forbidden, clean it up
@@ -275,6 +317,14 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     await removeIndexedFolder(folderUid);
                 }
                 console.error('[DriveIndexing] Failed to index folder:', error);
+                
+                return {
+                    success: false,
+                    totalFiles: 0,
+                    indexedFiles: 0,
+                    skippedFiles: 0,
+                    limitExceeded: false,
+                };
             } finally {
                 // Always reset the indexing status to idle state
                 resetIndexingStatus();
