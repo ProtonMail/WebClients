@@ -4998,6 +4998,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "保持ポリシーで許可されているよりも長い有効期限を設定することはできません。"
       ]
     },
     "error": {
@@ -7259,7 +7262,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -15309,6 +15312,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Your newsletters in one place": [
+        "ニュースレターを一か所に"
       ]
     },
     "Today icon tooltip in mini calendar": {

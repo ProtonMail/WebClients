@@ -1690,6 +1690,10 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ]
     },
     "action": {
@@ -2543,6 +2547,10 @@
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
       ]
     },
     "Checkout row": {
@@ -2599,6 +2607,12 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Built and based in Europe": [
+        "Rakennettu ja sijaitsee Euroopassa"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ]
     },
     "collider_2025: Info": {
@@ -4973,6 +4987,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Erääntymistä ei voi asettaa pidemmäksi kuin säilytyskäytäntö sallii."
       ]
     },
     "error": {
@@ -7312,8 +7329,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7409,7 +7425,7 @@
         "Alhainen tärkeys"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tee ${ MAIL_APP_NAME }stä oletussähköpostisovelluksesi."
+        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovelluksesi."
       ],
       "Manage your folders": [
         "Hallitse kansioitasi"
@@ -15360,6 +15376,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Luokat ovat tulossa!"
+      ],
+      "Your newsletters in one place": [
+        "Uutiskirjeesi yhdessä paikalla"
       ]
     },
     "Today icon tooltip in mini calendar": {

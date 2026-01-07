@@ -1505,7 +1505,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Εξαιρετικά γρήγορο και ιδιωτικό VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
       ]
     },
     "Checkout row": {
@@ -5034,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Δεν είναι δυνατή η ρύθμιση λήξης που υπερβαίνει το χρονικό διάστημα που επιτρέπει η πολιτική διατήρησης."
       ]
     },
     "error": {
@@ -7379,8 +7387,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -15598,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Your newsletters in one place": [
+        "Τα ενημερωτικά δελτία σας σε ένα μέρος"
       ]
     },
     "Today icon tooltip in mini calendar": {

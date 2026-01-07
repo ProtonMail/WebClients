@@ -1505,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Connexió VPN ultraràpida i privada"
+      ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ]
     },
     "Checkout row": {
@@ -5034,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "No es pot establir una caducitat superior a la que permet la política de conservació."
       ]
     },
     "error": {
@@ -7379,8 +7387,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -15598,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "Your newsletters in one place": [
+        "Els vostres butlletins en un sol lloc"
       ]
     },
     "Today icon tooltip in mini calendar": {

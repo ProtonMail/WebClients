@@ -1698,6 +1698,11 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -2576,6 +2581,11 @@
       ],
       "Ultra fast and private VPN": [
         "VPN rapid și privat"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ]
     },
     "Checkout row": {
@@ -5064,6 +5074,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nu se poate seta o expirare mai lungă decât permite politica de păstrare."
       ]
     },
     "error": {
@@ -7493,9 +7506,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -15881,6 +15892,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Your newsletters in one place": [
+        "Tote buletinele informative într-un singur loc"
       ]
     },
     "Today icon tooltip in mini calendar": {

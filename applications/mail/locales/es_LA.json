@@ -1505,7 +1505,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuario",
+        "Hasta ${ numberOfUsers } usuarios"
       ]
     },
     "Checkout row": {
@@ -5034,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "No se puede establecer una caducidad superior a la permitida por la política de retención."
       ]
     },
     "error": {
@@ -7379,8 +7387,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -15598,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Your newsletters in one place": [
+        "Tus boletines en un solo lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {

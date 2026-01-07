@@ -1505,7 +1505,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnelle en private VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "Tot ${ numberOfUsers } gebruiker",
+        "Tot ${ numberOfUsers } gebruikers"
       ]
     },
     "Checkout row": {
@@ -5034,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "U mag de verloopdatum niet later instellen dan het retentiebeleid toestaat."
       ]
     },
     "error": {
@@ -7379,8 +7387,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -15598,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "Your newsletters in one place": [
+        "Jouw nieuwsbrieven op één plek"
       ]
     },
     "Today icon tooltip in mini calendar": {
