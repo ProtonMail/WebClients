@@ -75,7 +75,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const run = async () => {
             if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
                 const { key, selector, state, payloadVersion, persistent } = getConsumeForkParameters();
-                const localState = sessionStorage.getItem(getStateKey(state));
+                const stateKey = getStateKey(state);
+                const localState = sessionStorage.getItem(stateKey);
+                sessionStorage.removeItem(stateKey);
 
                 if (!localState) {
                     logger.info('[AuthServiceProvider] Invalid fork path');

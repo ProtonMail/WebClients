@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { SSOReauthModal } from '@proton/pass/components/Lock/SSOReauthModal';
+import { ReauthModal } from '@proton/pass/components/Lock/ReauthModal';
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
@@ -20,7 +20,7 @@ const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async ()
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
 
-/** Should only be used once the app has booted and state hydrated*/
+/** Should only be used once the app has booted and state hydrated */
 export const usePasswordTypeSwitch = () => {
     /** Only web & desktop can use the user's second password as an unlock
      * mechanism. Any password verification done in the extension must go
@@ -50,10 +50,17 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
     const authStore = useAuthStore();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
-    /** SSO users which do not have an offline password should
-     * trigger a re-auth via account when unlocking. */
-    const isSSO = useSelector(selectIsSSO);
+    const sso = useSelector(selectIsSSO);
+    const twoPwd = useSelector(selectHasTwoPasswordMode);
     const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
+
+    /** SSO or two-pwd mode users which do not have an offline password
+     * should trigger a re-auth via account when unlocking. For SSO users,
+     * we cannot verify their backup-password without going through account.
+     * Same for two-password mode users, the pass scope is insufficient to
+     * retrieve the user salts in order to verify the second password */
+    const shouldReauth = (sso || (twoPwd && !EXTENSION_BUILD)) && !hasOfflinePassword;
+    const Component = shouldReauth ? ReauthModal : PasswordModal;
 
     const getInitialModalState = useCallback((): PasswordModalState => {
         const { message, title, label } = passwordTypeSwitch({
@@ -91,8 +98,6 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
 
     const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
-    const shouldReauth = isSSO && !hasOfflinePassword;
-    const Component = shouldReauth ? SSOReauthModal : PasswordModal;
 
     return (
         <PasswordUnlockContext.Provider value={handler}>

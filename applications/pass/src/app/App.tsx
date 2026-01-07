@@ -53,6 +53,7 @@ import {
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -68,6 +69,8 @@ import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/cli
 import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
 import locales from './locales';
+
+if (ENV === 'development') QA_SERVICE?.init(localStorage);
 
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 

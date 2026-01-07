@@ -12,6 +12,7 @@ export enum PassEncryptionTag {
     FileKey = 'filekey',
     FileDataV2 = 'v2;{chunkIndex};{totalChunks};filedata.item.pass.proton',
     FileMetadataV2 = 'v2;filemetadata.item.pass.proton',
+    ReauthPayload = 'reauthpayload',
 }
 
 export enum PassSignatureContext {

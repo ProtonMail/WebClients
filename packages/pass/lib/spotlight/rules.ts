@@ -10,6 +10,7 @@ import {
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
     selectLockEnabled,
+    selectOfflineEnabled,
     selectPassPlan,
     selectUserData,
     selectUserPlan,
@@ -212,3 +213,14 @@ export const createAutotypeRules = (): SpotlightRule[] =>
             when: (previous) => !previous,
         })
     );
+
+export const createOfflineSetupRule = (store: Store) =>
+    createSpotlightRule({
+        message: SpotlightMessage.OFFLINE_SETUP,
+        when: (previous) => {
+            if (previous) return false;
+            const state = store.getState();
+            const offlineEnabled = selectOfflineEnabled(state);
+            return !offlineEnabled;
+        },
+    });

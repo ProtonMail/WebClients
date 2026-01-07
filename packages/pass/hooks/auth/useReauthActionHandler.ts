@@ -30,7 +30,7 @@ export const useReauthActionHandler = (store: Store<State>) => {
 
     return useCallback(async (reauth: ReauthActionPayload) => {
         switch (reauth.type) {
-            case ReauthAction.SSO_EXPORT:
+            case ReauthAction.EXPORT_CONFIRM:
                 createNotification(
                     enhance({
                         type: 'info',
@@ -64,19 +64,19 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     }
                 }, 1_500);
 
-            case ReauthAction.SSO_PW_LOCK:
+            case ReauthAction.PW_LOCK_SETUP:
                 return createNotification({
                     type: 'info',
                     text: c('Info').t`Password lock successfully registered. Use it to unlock ${PASS_APP_NAME}`,
                 });
 
-            case ReauthAction.SSO_BIOMETRICS:
+            case ReauthAction.BIOMETRICS_SETUP:
                 return createNotification({
                     type: 'info',
                     text: c('Info').t`Biometrics lock successfully registered. Use it to unlock ${PASS_APP_NAME}`,
                 });
 
-            case ReauthAction.SSO_OFFLINE:
+            case ReauthAction.OFFLINE_SETUP:
                 if (authStore?.hasOfflinePassword()) {
                     return createNotification({
                         type: 'info',

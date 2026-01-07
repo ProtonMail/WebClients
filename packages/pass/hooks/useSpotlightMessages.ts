@@ -120,6 +120,7 @@ export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) =
                         className: SubTheme.RED,
                         weak: true,
                     },
+
                     ...extra,
                 ],
                 'type'

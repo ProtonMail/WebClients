@@ -1,12 +1,9 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
+import { put, takeLeading } from 'redux-saga/effects';
 
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { type OfflineComponents, getOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
-import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { UserPassPlan } from '@proton/pass/types/api/plan';
 
 function* offlineToggleWorker(
     { getAuthService, getAuthStore }: RootSagaOptions,
@@ -17,9 +14,6 @@ function* offlineToggleWorker(
     const requestId = meta.request.id;
 
     try {
-        const plan: UserPassPlan = yield select(selectPassPlan);
-        if (!isPaidPlan(plan)) throw new Error();
-
         const verified: boolean = yield auth.confirmPassword(payload.loginPassword);
         if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
