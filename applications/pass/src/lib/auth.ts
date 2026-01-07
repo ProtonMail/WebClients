@@ -104,7 +104,7 @@ export const createAuthService = ({
             offline: !getOnline(),
             offlineConfig: authStore.getOfflineConfig(),
             offlineVerifier: authStore.getOfflineVerifier(),
-            offlineEnabled: true || ((await core.settings.resolve(localID))?.offlineEnabled ?? false),
+            offlineEnabled: (await core.settings.resolve(localID))?.offlineEnabled ?? false,
             encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
         });
 
