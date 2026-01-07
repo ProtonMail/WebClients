@@ -6,7 +6,7 @@ import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import type { Api, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
@@ -30,7 +30,6 @@ import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import type { PullForkCall, RequestForkData } from './fork';
@@ -613,11 +612,11 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     case PasswordVerification.EXTRA_PASSWORD: {
                         await verifyExtraPassword({ password });
 
-                        const { offlineConfig, offlineKD } = await getOfflineComponents(password);
+                        const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(password);
 
                         authStore.setOfflineConfig(offlineConfig);
                         authStore.setOfflineKD(offlineKD);
-                        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+                        authStore.setOfflineVerifier(offlineVerifier);
 
                         /** Online extra password verification will happen on
                          * first login after a successful fork. At this point
@@ -655,7 +654,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             /** Compute the offline components in order to update the auth store on successful
              * extra password registration : this will affect any password locks or offline mode
              * setting. Users will now have to unlock the client with the extra password */
-            const { offlineConfig, offlineKD } = await getOfflineComponents(password);
+            const { offlineConfig, offlineKD, offlineVerifier } = await generateOfflineComponents(password);
             await registerExtraPassword({ password });
 
             /* Clear biometrics */
@@ -672,7 +671,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setExtraPassword(true);
             authStore.setOfflineConfig(offlineConfig);
             authStore.setOfflineKD(offlineKD);
-            authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+            authStore.setOfflineVerifier(offlineVerifier);
 
             await authService.persistSession();
             return true;
