@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, SettingsLink } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
@@ -20,6 +21,8 @@ interface TimeLimitCTAPopupProps {
 }
 
 export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
+    const meetUpsellEnabled = useFlag('MeetUpsell');
+
     const anchorRef = useRef<HTMLDivElement>(null);
     const { paidUser } = useMeetContext();
 
@@ -31,12 +34,12 @@ export const TimeLimitCTAPopup = ({ children }: TimeLimitCTAPopupProps) => {
     const canOpenDropdown = !paidUser;
     const forceShowPopup = showRemainingTime && canOpenDropdown;
 
-    const isPopupOpen = isHovered || forceShowPopup;
+    const isPopupOpen = (isHovered || forceShowPopup) && meetUpsellEnabled;
 
     const timeLeft = formatDuration(timeLeftMs);
 
     useEffect(() => {
-        if (isExpiringSoon) {
+        if (isExpiringSoon && meetUpsellEnabled) {
             setShowRemainingTime(true);
         }
     }, [isExpiringSoon]);
