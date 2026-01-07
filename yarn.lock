@@ -9186,7 +9186,7 @@ __metadata:
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
     "@protontech/telemetry": "npm:^1.0.4"
-    "@protontech/tidy-url": "npm:^1.18.3"
+    "@protontech/tidy-url": "npm:^1.18.4"
     "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^1.2.6"
     "@sentry/browser": "npm:^7.120.4"
@@ -9502,10 +9502,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/tidy-url@npm:^1.18.3":
-  version: 1.18.3
-  resolution: "@protontech/tidy-url@npm:1.18.3"
-  checksum: 10/e12859808569f7410f05d8d114cbdd0142b33ab8e1ea6d93ff02064ef2d1b4d6fda05416efac3b7b1e856de2b01b67c3ca1db7fb278a3f90c6b1249141f5d9a4
+"@protontech/tidy-url@npm:^1.18.4":
+  version: 1.18.4
+  resolution: "@protontech/tidy-url@npm:1.18.4"
+  checksum: 10/8f2a8eca0651f0ba1ee6a45d29c72e903e8f027a032907c82501924928f5269944e825a58a6b2486db4645f09a06d93edec1dce7e46d7714e02865012ad0c5cb
   languageName: node
   linkType: hard
 
@@ -38231,7 +38231,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/pmcrypto": "npm:^8.8.1"
-    "@protontech/tidy-url": "npm:^1.18.3"
+    "@protontech/tidy-url": "npm:^1.18.4"
     "@reduxjs/toolkit": "npm:^2.11.2"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
