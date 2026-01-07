@@ -588,8 +588,8 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } s'est associé à ${ rampLink }, ${ banxaLink } et ${ moonpayLink }, trois services de crypto-actifs, enregistrés pour faciliter l'achat de bitcoins. Veuillez entrer votre région pour afficher les fournisseurs et les moyens de paiement disponibles."
       ],
-      "1% bank transfer fee": [
-        "1 % de frais de virement bancaire"
+      "2% bank transfer fee": [
+        "2 % de frais de virement bancaire"
       ],
       "4% credit card fee": [
         "4 % de frais de carte bancaire"
@@ -961,6 +961,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } d'espace de stockage"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'espace de stockage pour vos messages"
@@ -3585,10 +3589,6 @@
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utilisateur",
-        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ],
       "${ options }-day file version history": [
         "Historique des versions de fichiers datant de ${ options } jours",

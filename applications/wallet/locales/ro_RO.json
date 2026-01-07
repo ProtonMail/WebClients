@@ -593,8 +593,8 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } a încheiat un parteneriat cu ${ rampLink }, ${ banxaLink } și ${ moonpayLink }, trei servicii de active cripto înregistrate, pentru a facilita achiziția de BTC. Introduceți regiunea pentru a vedea furnizorii și metodele de plată disponibile."
       ],
-      "1% bank transfer fee": [
-        "Comision transfer bancar 1%"
+      "2% bank transfer fee": [
+        "Comision transfer bancar 2%"
       ],
       "4% credit card fee": [
         "Comision card de plată 4%"
@@ -966,6 +966,11 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } stocare"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } spațiu e-mail"
@@ -3621,11 +3626,6 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",
