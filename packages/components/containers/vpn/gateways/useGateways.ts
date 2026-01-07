@@ -6,6 +6,7 @@ import { PLANS } from '@proton/payments';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import type { Gateway } from './Gateway';
+import type { GatewayGroup } from './GatewayGroup';
 import type { GatewayLocation } from './GatewayLocation';
 import type { GatewayUser } from './GatewayUser';
 import { queryVPNGateways } from './api';
@@ -33,7 +34,8 @@ interface GatewayResult {
     Countries: readonly string[];
     Locations: readonly GatewayLocation[];
     Gateways: readonly Gateway[];
-    Users: readonly GatewayUser[];
+    Users: GatewayUser[];
+    Groups: GatewayGroup[];
 }
 
 const getDefaultConfig = (nbDay: number) => {
@@ -86,6 +88,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
                 Locations: [],
                 Gateways: [],
                 Users: [],
+                Groups: [],
             };
         }
 
@@ -105,6 +108,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
         locations: result?.Locations,
         gateways: result?.Gateways,
         users: result?.Users || [],
+        groups: result?.Groups || [],
         refresh,
     };
 };

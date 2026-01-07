@@ -35,7 +35,12 @@ export const renameVPNGateway = (currentName: string, newName: string) => ({
     },
 });
 
-export const updateVPNGatewayUsers = (currentName: string, features: number, userIds?: readonly string[] | null) => ({
+export const updateVPNGatewayUsers = (
+    currentName: string,
+    features: number,
+    userIds?: readonly string[] | null,
+    groupIds?: readonly string[] | null
+) => ({
     url: 'vpn/v1/business/gateways',
     method: 'put',
     data: {
@@ -43,6 +48,7 @@ export const updateVPNGatewayUsers = (currentName: string, features: number, use
         NewName: currentName,
         Features: features,
         UserIds: userIds ?? null,
+        GroupIds: groupIds ?? null,
     },
 });
 

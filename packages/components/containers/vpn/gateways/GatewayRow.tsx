@@ -8,8 +8,9 @@ import clsx from '@proton/utils/clsx';
 
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
+import type { GatewayGroup } from './GatewayGroup';
 import type { GatewayLogical } from './GatewayLogical';
-import GatewayManageButton from './GatewayManageButton';
+import { GatewayManageButton } from './GatewayManageButton';
 import type { GatewayServer } from './GatewayServer';
 import type { GatewayUser } from './GatewayUser';
 import { getFormattedLoad, getMembers } from './helpers';
@@ -24,7 +25,8 @@ interface Props {
     showLoad?: boolean;
     gateway: Gateway;
     isDeleted: (logical: GatewayLogical) => boolean;
-    users: readonly GatewayUser[];
+    users: GatewayUser[];
+    groups: GatewayGroup[];
     countryOptions: CountryOptions;
     provisioningDuration: string;
     deletingLogicals: readonly string[];
@@ -44,6 +46,7 @@ export const GatewayRow = ({
     gateway,
     isDeleted,
     users,
+    groups,
     countryOptions,
     provisioningDuration,
     renameGateway,
@@ -149,7 +152,7 @@ export const GatewayRow = ({
                 </div>,
                 ...(isAdmin
                     ? [
-                          getMembers(users, main),
+                          getMembers(users, groups, main),
                           <GatewayManageButton
                               gateway={gateway}
                               logical={main}
