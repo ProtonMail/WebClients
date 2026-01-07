@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } d'espace de stockage"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'espace de stockage pour vos messages"
       ],
@@ -1491,7 +1495,7 @@
     },
     "collider_2025: Invite Email Placeholder": {
       "Your friend's email": [
-        "E-mail de votre ami"
+        "L'e-mail de votre ami"
       ]
     },
     "collider_2025: Invite Info": {
@@ -1518,12 +1522,12 @@
         "Merci d'aider les autres à découvrir ${ LUMO_SHORT_APP_NAME } ! Si d'autres invitations deviennent disponibles, nous vous en informerons."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Nous avons envoyé une invitation à ${ emailText }. Le destinataire recevra des instructions sur la façon de rejoindre la liste d'attente."
+        "Nous avons invité ${ emailText }. Cette personne recevra des instructions pour rejoindre la liste d'attente."
       ]
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Invitez des amis à profiter de ${ LUMO_APP_NAME }"
+        "Invitez des amis à découvrir ${ LUMO_APP_NAME }"
       ]
     },
     "collider_2025: Job": {
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utilisateur",
-        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ],
       "${ options }-day file version history": [
         "Historique des versions de fichiers datant de ${ options } jours",

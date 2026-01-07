@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } di spazio d'archiviazione"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utente",
+        "Fino a ${ numberOfUsers } utenti"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } di spazio di archiviazione email"
       ],
@@ -1496,7 +1500,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Conosci qualcuno che trarrebbe beneficio da un'AI attenta alla privacy? Invitalo a entrare nella lista d'attesa di ${ LUMO_SHORT_APP_NAME }. Ti rimangono ${ remainingInvitesText } inviti."
+        "Conosci qualcuno a cui farebbe bene un'IA focalizzata sulla privacy? Invitalo a iscriversi alla lista d'attesa di ${ LUMO_SHORT_APP_NAME }. Ti rimangono ${ remainingInvitesText } inviti."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "Ti rimangono${ remainingInvitesText } inviti."
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utente",
-        "Fino a ${ numberOfUsers } utenti"
       ],
       "${ options }-day file version history": [
         "Cronologia delle versioni dei file per ${ options } giorni",

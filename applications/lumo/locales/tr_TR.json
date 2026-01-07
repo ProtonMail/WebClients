@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
       ],
@@ -1523,7 +1527,7 @@
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimini yaşamaya davet edin"
+        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimine davet edin"
       ]
     },
     "collider_2025: Job": {
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
