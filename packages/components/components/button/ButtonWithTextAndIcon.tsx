@@ -15,6 +15,7 @@ export function ButtonWithTextAndIcon({
     mimeIconName,
     buttonText,
     onClick,
+    disabled,
 }: {
     shape?: ButtonLikeShape;
     color?: ThemeColorUnion;
@@ -23,9 +24,17 @@ export function ButtonWithTextAndIcon({
     mimeIconName?: MimeName;
     buttonText: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
 }) {
     return (
-        <Button shape={shape} color={color} size={size} className="inline-flex items-center gap-2" onClick={onClick}>
+        <Button
+            shape={shape}
+            color={color}
+            size={size}
+            className="inline-flex items-center gap-2"
+            onClick={onClick}
+            disabled={disabled}
+        >
             {iconName && <Icon name={iconName} />}
             {mimeIconName && <MimeIcon name={mimeIconName} />}
             {buttonText}
