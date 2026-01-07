@@ -21,10 +21,8 @@ interface FileWithPath extends DriveNode {
     relativePath: string;
 }
 
-// Number of files to download in parallel
 const PARALLEL_DOWNLOAD_LIMIT = 5;
 
-// Maximum number of files that can be indexed from a Drive folder
 export const MAX_INDEXABLE_FILES = 200;
 
 interface IndexFolderResult {
@@ -57,7 +55,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus } = useDriveIndexing();
-    
+
     // Derive indexingStatus from the shared context eventIndexingStatus
     const indexingStatus: FolderIndexingStatus | null = eventIndexingStatus.isIndexing
         ? {
@@ -70,7 +68,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
             stage: eventIndexingStatus.stage,
         }
         : null;
-    
+
     // Derive isIndexing from the shared context
     const isIndexing = eventIndexingStatus.isIndexing;
 
@@ -249,9 +247,9 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     const batchNum = Math.floor(i / PARALLEL_DOWNLOAD_LIMIT) + 1;
                     const totalBatches = Math.ceil(filesToProcess.length / PARALLEL_DOWNLOAD_LIMIT);
                     const batchEndIndex = Math.min(i + PARALLEL_DOWNLOAD_LIMIT, filesToProcess.length);
-                    
+
                     console.log(`[DriveIndexing] Processing batch ${batchNum}/${totalBatches} (${batch.length} files)`);
-                    
+
                     // Show progress as "processing files X to Y"
                     setIndexingProgress(i, filesToProcess.length, `Downloading files ${i + 1}-${batchEndIndex} of ${filesToProcess.length}`);
 
@@ -260,7 +258,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
 
                     // Download and process batch in parallel
                     const batchResults = await Promise.all(batch.map(processFile));
-                    
+
                     // Collect successful results
                     for (const doc of batchResults) {
                         if (doc) {
@@ -302,7 +300,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 });
 
                 console.log('[DriveIndexing] Indexing complete:', documentsWithContent.length, 'documents indexed');
-                
+
                 return {
                     success: true,
                     totalFiles: totalIndexableFiles,
@@ -317,7 +315,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                     await removeIndexedFolder(folderUid);
                 }
                 console.error('[DriveIndexing] Failed to index folder:', error);
-                
+
                 return {
                     success: false,
                     totalFiles: 0,
