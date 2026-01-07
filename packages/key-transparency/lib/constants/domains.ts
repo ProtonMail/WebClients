@@ -1,8 +1,8 @@
-export const NO_KT_DOMAINS = [
-    // Google
-    '@gmail.com',
-    '@googlemail.com',
-    '@google.com',
+export const NO_KT_DOMAINS = new Set([
+    // Google (allowed as BYOE addresses)
+    // '@gmail.com',
+    // '@googlemail.com',
+    // '@google.com',
     '@googlegroups.com',
     // Microsoft
     '@charter.com',
@@ -443,4 +443,4 @@ export const NO_KT_DOMAINS = [
     // Yandex
     '@yandex.ru',
     '@yandex.ua',
-];
+]);
