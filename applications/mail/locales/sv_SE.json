@@ -1505,7 +1505,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2604,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnabb och privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ]
     },
     "Checkout row": {
@@ -2654,6 +2659,21 @@
       ],
       "Web search access": [
         "Webbsökningsåtkomst"
+      ],
+      "Built and based in Europe": [
+        "Byggd och baserad i Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Efterlevnad av dataskyddsföreskrifter"
+      ],
+      "Data never used for AI training": [
+        "Data används aldrig för AI-träning"
+      ],
+      "Strict no-logs policy": [
+        "Strikt policy att inte logga"
+      ],
+      "Zero-access encryption": [
+        "Kryptering med noll åtkomst"
       ]
     },
     "collider_2025: Info": {
@@ -7390,8 +7410,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9860,6 +9879,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
+      ],
+      "Command line interface (CLI)": [
+        "Kommandoradsgränssnitt (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12179,6 +12204,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ]
     },
     "Payments.Error": {
@@ -15580,6 +15608,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Your newsletters in one place": [
+        "Dina nyhetsbrev på ett ställe"
       ]
     },
     "Today icon tooltip in mini calendar": {

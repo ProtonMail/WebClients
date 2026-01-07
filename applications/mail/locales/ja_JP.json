@@ -1776,7 +1776,7 @@
         "全員に返信済み"
       ],
       "Star conversation": [
-        "会話にスターをつける"
+        "会話に星印をつける"
       ],
       "Star message": [
         "メッセージにスターをつける"
@@ -2642,6 +2642,21 @@
       ],
       "Web search access": [
         "ウェブ検索アクセス"
+      ],
+      "Built and based in Europe": [
+        "ヨーロッパに拠点を置き、創立されました"
+      ],
+      "Compliance with data protection regulations": [
+        "データ保護規則の遵守"
+      ],
+      "Data never used for AI training": [
+        "データはAI学習には決して使用されません"
+      ],
+      "Strict no-logs policy": [
+        "厳格なノーログポリシー"
+      ],
+      "Zero-access encryption": [
+        "ゼロアクセス暗号化"
       ]
     },
     "collider_2025: Info": {
@@ -4272,7 +4287,7 @@
         "${ BRAND_NAME } Duo でストレージを4倍に"
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
-        "${ BRAND_NAME } Duo とお客様のプラン特典を共有"
+        "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
     "Edit billing address form note": {
@@ -4924,7 +4939,7 @@
         "外部アカウントのフォルダが多すぎます。インポートをカスタマイズしてフォルダをいくつか削除してください。"
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "コンテンツ検索に問題があります。デフォルト検索が代わりに使用されています。"
+        "コンテンツ検索に問題があったので、代わりに普通の検索を使用しました。"
       ],
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
@@ -5021,6 +5036,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "保持ポリシーで許可されているよりも長い有効期限を設定することはできません。"
       ]
     },
     "error": {
@@ -5385,6 +5403,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "View the invitation": [
+        "招待を表示"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5738,7 +5759,7 @@
         "メールがさらに安全に、便利に、そして関連性が向上しました! 無料のストレージも合計 1 GB に増やしました。"
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ strongText } を ${ BRAND_NAME } のアドレスに変更します"
+        "${ strongText } を ${ BRAND_NAME } のアドレスに変更しましょう"
       ],
       "Changed accounts": [
         "変更されたアカウント"
@@ -5798,7 +5819,7 @@
         "トラッカーからの保護"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Gmail から ${ strongText } を設定する"
+        "Gmail からの${ strongText }を設定する"
       ],
       "Sign in to the mobile app to complete this step": [
         "モバイル端末でサインインして、このステップを達成"
@@ -7057,7 +7078,7 @@
         "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "完全にプライベートで暗号化済みの通信を確保します。無料の${ BRAND_NAME }メールアドレスを今すぐ取得してください。"
+        "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
       "Enter the code from your authenticator app": [
         "認証アプリからのコードを入力してください"
@@ -7264,7 +7285,7 @@
         "マーケティングメールと緊急性の低いアプリの通知が含まれます。"
       ],
       "Includes marketing emails like offers and product announcements.": [
-        "オファーや製品発表などのマーケティングメールが含まれます。"
+        "新製品発表やセールなどのマーケティングメールを含みます。"
       ],
       "Includes news recaps and other non-promotional content. ": [
         "ニュースの要約とプロモーション以外のコンテンツが含まれています。 "
@@ -7279,7 +7300,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7771,7 +7792,7 @@
         "携帯デバイスでQRコードを読み込んでください。"
       ],
       "Scheduled send of this message will be canceled.": [
-        "このメッセージの送信予約はキャンセルされました。"
+        "このメッセージの送信予約はキャンセルされます。"
       ],
       "Scheduling message": [
         "メッセージを送信予約中"
@@ -8047,7 +8068,7 @@
         "このファイルは、非常に大きいためプレビューできません"
       ],
       "This invitation is saved in a disabled calendar.": [
-        "招待は無効化されたカレンダーに保存されました。"
+        "招待は無効化されたカレンダーに保存されています。"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "これは組織の名称またはニックネームであり、ユーザーに表示されます。いつでも変更できます。"
@@ -8272,7 +8293,7 @@
         "アップグレードしてプライバシー第一のインターネットをサポートします。"
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "すべての人にプライバシーをという目標を支えるためにアップグレードしてください。"
+        "すべての人にプライバシーを提供するという当社の目標をサポートするために、アップグレードしましょう。"
       ],
       "Upgrade to support privacy and get more features.": [
         "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
@@ -8748,7 +8769,7 @@
         "「Trust Key 」をクリックすると、この公開鍵がこの送信者に関連付けられ、このアドレスからのメールは自動的に暗号検証されます。"
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "「Trust Key」をクリックすると、新しいコンタクトが作成され、この公開鍵がこの差出人に関連付けられます。このアドレスからのメールは自動的に暗号化検証されます。"
+        "「鍵を信頼する」をクリックすると、新しい連絡先が作成され、この公開鍵がこの差出人に関連付けられます。このアドレスからのメールは自動的に暗号化検証されます。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "次のフィンガープリントのプライマリー鍵を信頼しますか？"
@@ -9623,7 +9644,7 @@
         "カテゴリが更新されました、フィードバックありがとうございます！"
       ],
       "The filter is disabled. ${ enableButton }": [
-        "フィルターが無効です: ${ enableButton }"
+        "フィルターは無効です。${ enableButton }"
       ],
       "Theme": [
         "テーマ"
@@ -9732,6 +9753,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "スクリプト、自動化、開発ワークフローに最適なターミナルから、${ PASS_APP_NAME } に安全にアクセスできます。"
+      ],
+      "Command line interface (CLI)": [
+        "コマンドラインインターフェース (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11640,7 +11667,7 @@
         "ドメイン名をリンクし、組織のすべてのメンバーのアカウントを作成します。"
       ],
       "Make it your own": [
-        "自分のものにする"
+        "あなたらしいスタイルに"
       ],
       "Pick a theme": [
         "テーマを選択"
@@ -11718,7 +11745,7 @@
         "E コマースと小売業"
       ],
       "Entertainment": [
-        "エンターテインメント"
+        "娯楽・エンタメ"
       ],
       "Food and beverage": [
         "食料品と飲料"
@@ -12003,7 +12030,7 @@
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+        "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
@@ -12303,7 +12330,7 @@
         "執筆アシスタントに何を書くか伝えてください。例: \"ニュースレターで今後の予定をお知らせします\""
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
-        "ライティングアシスタントに何を書くべきかを伝えます。例：\"ジムのメンバーシップをキャンセルする\""
+        "執筆アシスタントに何を書くべきか伝えましょう。例：「体操のメンバーシップをキャンセルする」"
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
         "執筆アシスタントに何を書くか伝えてください。例: ジェーンをパーティーに招待してください"
@@ -12473,7 +12500,7 @@
     },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
-        "${ referrerRewardAmount } 紹介ごとに"
+        "紹介ごとに ${ referrerRewardAmount }"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
@@ -15323,6 +15350,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Your newsletters in one place": [
+        "ニュースレターを一か所に"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -124,13 +124,13 @@
         "Todas lidas"
       ],
       "All Starred": [
-        "Todas com estrela"
+        "Todas com favoritos"
       ],
       "All Unread": [
         "Todas não lidas"
       ],
       "All Unstarred": [
-        "Todos sem estrela"
+        "Todos sem favoritos"
       ],
       "Apply": [
         "Aplicar"
@@ -1505,7 +1505,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1789,19 +1790,19 @@
         "Respondeu para todos"
       ],
       "Star conversation": [
-        "Adicionar estrela na conversa"
+        "Favoritar conversa"
       ],
       "Star message": [
-        "Adicionar estrela na mensagem"
+        "Favoritar mensagem"
       ],
       "Unread email": [
         "E-mail não lido"
       ],
       "Unstar conversation": [
-        "Remover estrela da conversa"
+        "Remover favorito"
       ],
       "Unstar message": [
-        "Remover estrela da mensagem"
+        "Desfavoritar mensagem"
       ]
     },
     "Alternative text for conversation image": {
@@ -2604,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida e privada"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuário",
+        "Até ${ numberOfUsers } usuários"
       ]
     },
     "Checkout row": {
@@ -2660,6 +2665,21 @@
       ],
       "Web search access": [
         "Acesso à pesquisa na web"
+      ],
+      "Built and based in Europe": [
+        "Construído e baseado na Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformidade com os regulamentos de proteção de dados"
+      ],
+      "Data never used for AI training": [
+        "Os dados nunca são usados para treinamento de IA"
+      ],
+      "Strict no-logs policy": [
+        "Política rigorosa de inexistência de registros"
+      ],
+      "Zero-access encryption": [
+        "Criptografia de acesso zero"
       ]
     },
     "collider_2025: Info": {
@@ -5652,7 +5672,7 @@
         "lidos"
       ],
       "starred": [
-        "com estrela"
+        "favorito"
       ]
     },
     "filter: Label": {
@@ -7402,8 +7422,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9739,7 +9758,7 @@
         "Atualizações e atividade de redes sociais"
       ],
       "Starred": [
-        "Com estrela"
+        "Favoritos"
       ],
       "Start date": [
         "Data de início"
@@ -9887,6 +9906,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
+      ],
+      "Command line interface (CLI)": [
+        "Interface de linha de comando (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10179,7 +10204,7 @@
         "Spam"
       ],
       "Starred": [
-        "Com estrela"
+        "Favoritos"
       ],
       "Terms": [
         "Termos"
@@ -14087,8 +14112,8 @@
         "${ elementsCount } conversas marcadas como lidas."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } conversa marcada com Estrela.",
-        "${ elementsCount } conversas marcadas com Estrela."
+        "${ elementsCount } conversa marcada como Favorita.",
+        "${ elementsCount } conversas marcadas como Favorita."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } conversa marcada como não lida.",
@@ -14111,8 +14136,8 @@
         "${ elementsCount } conversas removidas de ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } mensagem removida da lista com Estrela.",
-        "${ elementsCount } mensagens removidas da lista com Estrela."
+        "${ elementsCount } mensagem removida dos Favoritos.",
+        "${ elementsCount } mensagens removidas dos Favoritos."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversa adiada",
@@ -14131,8 +14156,8 @@
         "${ elementsCount } mensagens marcadas como lidas."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } mensagem marcada com estrela.",
-        "${ elementsCount } mensagens marcadas com estrela."
+        "${ elementsCount } mensagem marcada como Favorita.",
+        "${ elementsCount } mensagens marcadas como Favorita."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } mensagem marcada como não lida.",
@@ -14155,8 +14180,8 @@
         "${ elementsCount } mensagens removidas de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } mensagem removida da lista com Estrela.",
-        "${ elementsCount } mensagens removidas da lista com Estrela."
+        "${ elementsCount } mensagem removida dos Favoritos.",
+        "${ elementsCount } mensagens removidas dos Favoritos."
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -14303,7 +14328,7 @@
         "Mensagem removida de ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Mensagem removida do marcador Com estrela."
+        "Mensagem removida dos favoritos."
       ],
       "Message updated": [
         "Mensagem atualizada",
@@ -15621,6 +15646,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "Your newsletters in one place": [
+        "Seus boletins informativos em um só lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {

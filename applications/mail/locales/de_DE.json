@@ -1693,6 +1693,10 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ]
     },
     "action": {
@@ -2601,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultraschnelles und privates VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzern"
       ]
     },
     "Checkout row": {
@@ -2657,6 +2665,21 @@
       ],
       "Web search access": [
         "Websuche-Zugriff"
+      ],
+      "Built and based in Europe": [
+        "Entwickelt und Ansässig in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Einhaltung der Datenschutzbestimmungen"
+      ],
+      "Data never used for AI training": [
+        "Deine Daten werden niemals für KI-Training verwendet"
+      ],
+      "Strict no-logs policy": [
+        "Strenge \"No Logs\"-Richtlinie"
+      ],
+      "Zero-access encryption": [
+        "Zero-Access Verschlüsselung"
       ]
     },
     "collider_2025: Info": {
@@ -5054,6 +5077,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Du kannst das Ablaufdatum nicht länger einstellen, als es die Aufbewahrungsrichtlinie erlaubt."
       ]
     },
     "error": {
@@ -7399,8 +7425,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9884,6 +9909,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
+      ],
+      "Command line interface (CLI)": [
+        "Kommandozeilen-Schnittstelle (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15612,6 +15643,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorien kommen."
+      ],
+      "Your newsletters in one place": [
+        "Deine Newsletter an einem Ort"
       ]
     },
     "Today icon tooltip in mini calendar": {

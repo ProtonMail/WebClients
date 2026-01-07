@@ -1693,6 +1693,10 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
       ]
     },
     "action": {
@@ -2601,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultra veloce e privata"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utente",
+        "Fino a ${ numberOfUsers } utenti"
       ]
     },
     "Checkout row": {
@@ -2657,6 +2665,21 @@
       ],
       "Web search access": [
         "Accesso alla Ricerca Web"
+      ],
+      "Built and based in Europe": [
+        "Sviluppato e basato in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Conformità con le normative sulla protezione dei dati"
+      ],
+      "Data never used for AI training": [
+        "I dati non vengono mai utilizzati per l’addestramento dell’IA"
+      ],
+      "Strict no-logs policy": [
+        "Rigida politica contro i registri"
+      ],
+      "Zero-access encryption": [
+        "Crittografia ad accesso zero"
       ]
     },
     "collider_2025: Info": {
@@ -5054,6 +5077,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Non puoi impostare una scadenza più lunga di quanto consentito dalla Policy di Conservazione."
       ]
     },
     "error": {
@@ -7399,8 +7425,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9884,6 +9909,12 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
+      ],
+      "Command line interface (CLI)": [
+        "Interfaccia a riga di comando (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15612,6 +15643,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Your newsletters in one place": [
+        "Le tue newsletter in un unico posto"
       ]
     },
     "Today icon tooltip in mini calendar": {

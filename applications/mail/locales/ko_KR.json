@@ -2645,6 +2645,21 @@
       ],
       "Web search access": [
         "웹 검색 접근"
+      ],
+      "Built and based in Europe": [
+        "유럽에서 개발 및 기반"
+      ],
+      "Compliance with data protection regulations": [
+        "데이터 보호 규정 준수"
+      ],
+      "Data never used for AI training": [
+        "대화 데이터가 AI학습에 절대 사용되지 않음"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 무로그 정책"
+      ],
+      "Zero-access encryption": [
+        "제로 액세스 암호화"
       ]
     },
     "collider_2025: Info": {
@@ -5024,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "보존 정책이 허용하는 것보다 유효기간을 더 길게 설정할 수 없습니다."
       ]
     },
     "error": {
@@ -5388,6 +5406,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace }을(를) 초과하는 스토리지의 ${ usedSpace }을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 플랜을 구매한 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "View the invitation": [
+        "초대장 보기"
       ]
     },
     "familyOffer_2023:Label": {
@@ -9735,6 +9756,12 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "스크립팅, 자동화 및 개발 워크플로우에 이상적인 터미널에서 ${ PASS_APP_NAME }에 안전하게 접근하세요."
+      ],
+      "Command line interface (CLI)": [
+        "명령줄 인터페이스 (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10073,6 +10100,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Terms and conditions": [
+        "이용 약관"
       ]
     },
     "Link to calendar event": {
@@ -15318,6 +15348,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "Your newsletters in one place": [
+        "모든 뉴스레터들을 한곳에"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15850,6 +15883,11 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "${ config.appName }의 경험 향상을 위해 Proton은 항상 노력하고 있습니다. 회원님의 경험에 얼마나 만족하시나요?"
       ]
     }
   }

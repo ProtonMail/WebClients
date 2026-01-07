@@ -1505,7 +1505,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2604,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnelle en private VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "Tot ${ numberOfUsers } gebruiker",
+        "Tot ${ numberOfUsers } gebruikers"
       ]
     },
     "Checkout row": {
@@ -2660,6 +2665,21 @@
       ],
       "Web search access": [
         "Toegang tot webzoekopdrachten"
+      ],
+      "Built and based in Europe": [
+        "Gebouwd en gevestigd in Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Naleving van de regelgeving inzake gegevensbescherming"
+      ],
+      "Data never used for AI training": [
+        "Data wordt nooit gebruikt voor het trainen van AI"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logsbeleid"
+      ],
+      "Zero-access encryption": [
+        "Zero-access encryptie"
       ]
     },
     "collider_2025: Info": {
@@ -5057,6 +5077,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "U mag de verloopdatum niet later instellen dan het retentiebeleid toestaat."
       ]
     },
     "error": {
@@ -7402,8 +7425,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9887,6 +9909,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Krijg veilig toegang tot ${ PASS_APP_NAME } vanaf de terminal, ideaal voor scripting, automatisering en ontwikkelingworkflows."
+      ],
+      "Command line interface (CLI)": [
+        "Opdrachtregelinterface (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15612,6 +15640,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "How your free trial works": [
+        "Hoe uw gratis proefperiode werkt"
+      ],
+      "Your newsletters in one place": [
+        "Jouw nieuwsbrieven op één plek"
       ]
     },
     "Today icon tooltip in mini calendar": {

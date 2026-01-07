@@ -1505,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2604,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "Connexió VPN ultraràpida i privada"
+      ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ]
     },
     "Checkout row": {
@@ -2660,6 +2665,21 @@
       ],
       "Web search access": [
         "Accés a la cerca web"
+      ],
+      "Built and based in Europe": [
+        "Desenvolupat i amb seu a Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Compleix amb el reglament de protecció de dades"
+      ],
+      "Data never used for AI training": [
+        "Les dades no s'utilitzaran mai per entrenament de la IA"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no guardar registres"
+      ],
+      "Zero-access encryption": [
+        "Xifratge d'accés zero"
       ]
     },
     "collider_2025: Info": {
@@ -5057,6 +5077,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "No es pot establir una caducitat superior a la que permet la política de conservació."
       ]
     },
     "error": {
@@ -7402,8 +7425,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9887,6 +9909,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+      ],
+      "Command line interface (CLI)": [
+        "Interfície de línia d'ordres (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15615,6 +15643,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "Your newsletters in one place": [
+        "Els vostres butlletins en un sol lloc"
       ]
     },
     "Today icon tooltip in mini calendar": {

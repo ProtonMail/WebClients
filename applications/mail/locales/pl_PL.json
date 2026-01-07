@@ -1643,6 +1643,9 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Subscribe now": [
+        "Subskrybuj teraz"
       ]
     },
     "action": {
@@ -7345,10 +7348,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8792,6 +8792,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Zaproś znajomych do ${ BRAND_NAME } za pomocą linku polecającego."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu ${ BRAND_NAME } za darmo."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Twoi znajomi otrzymają 2 tygodnie planu za darmo."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego znajomego, który zasubskrybuje plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Otrzymaj ${ referrerRewardAmount } w środkach za każdego użytkownika, który zasubskrybuje plan."
       ]
     },
     "info": {
@@ -10091,6 +10106,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Musisz reaktywować klucze, aby zobaczyć zaktualizowane zaproszenie"
+      ],
+      "Terms and conditions": [
+        "Regulamin"
       ]
     },
     "Link to calendar event": {
@@ -15350,6 +15368,12 @@
       ],
       "Your subscriptions in one place": [
         "Twoje subskrypcje w jednym miejscu"
+      ],
+      "How your free trial works": [
+        "Jak działa darmowa wersja próbna"
+      ],
+      "Share your link": [
+        "Udostępnij link"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16011,6 +16035,26 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za polecenie"
+      ],
+      "Invite friends. Get credits.": [
+        "Zaproś znajomych. Zdobądź środki."
+      ],
+      "Invited friends": [
+        "Zaproszeni znajomi"
+      ],
+      "More sharing options": [
+        "Więcej opcji udostępniania"
+      ],
+      "Start earning credits": [
+        "Zacznij zarabiać środki"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Możesz otrzymać do **${ maxRewardAmount }** w środkach."
       ]
     }
   }

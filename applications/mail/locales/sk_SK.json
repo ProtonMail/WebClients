@@ -1513,7 +1513,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -2690,6 +2693,21 @@
       ],
       "Web search access": [
         "Prístup k webovému vyhľadávaniu"
+      ],
+      "Built and based in Europe": [
+        "Vytvorené a umiestnené v Európe"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržiavanie predpisov o ochrane údajov"
+      ],
+      "Data never used for AI training": [
+        "Údaje nikdy nepoužívané na trénovanie AI"
+      ],
+      "Strict no-logs policy": [
+        "Prísna zásada neuchovávania záznamov"
+      ],
+      "Zero-access encryption": [
+        "Šifrovanie s nulovým prístupom"
       ]
     },
     "collider_2025: Info": {
@@ -5123,6 +5141,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nemožno nastaviť expiráciu dlhšiu, než povoľujú zásady uchovávania."
       ]
     },
     "error": {
@@ -5493,6 +5514,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "View the invitation": [
+        "Zobraziť pozvánku",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky",
+        "Zobraziť pozvánky"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7630,10 +7657,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10179,6 +10203,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16181,6 +16211,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Your newsletters in one place": [
+        "Vaše newslettre na jednom mieste"
       ]
     },
     "Today icon tooltip in mini calendar": {

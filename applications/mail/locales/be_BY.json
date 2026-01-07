@@ -1513,7 +1513,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -2690,6 +2693,21 @@
       ],
       "Web search access": [
         "Доступ да пошуку ў інтэрнэце"
+      ],
+      "Built and based in Europe": [
+        "Створана і базіруецца ў Еўропе"
+      ],
+      "Compliance with data protection regulations": [
+        "Адпавядае прававым нормам па абароне даных"
+      ],
+      "Data never used for AI training": [
+        "Даныя ніколі не выкарыстоўваюцца для навучання ШІ"
+      ],
+      "Strict no-logs policy": [
+        "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Zero-access encryption": [
+        "Шыфраванне з нулявым доступам"
       ]
     },
     "collider_2025: Info": {
@@ -5123,6 +5141,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Немагчыма задаць тэрмін дзеяння, які даўжэйшы за дазволены палітыкай захоўвання."
       ]
     },
     "error": {
@@ -5493,6 +5514,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "View the invitation": [
+        "Паглядзець запрашэнне",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні",
+        "Паглядзець запрашэнні"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7630,10 +7657,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10179,6 +10203,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
+      ],
+      "Command line interface (CLI)": [
+        "Інтэрфейс каманднага радка (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10572,7 +10602,7 @@
         "Палепшыце, каб атрымаць поўны доступ"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Ваша ${ driveStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
+        "Ваша ${ driveStorage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Ваша ${ mailStorage } запоўнена. Вызваліце месца або ${ cta }. Гэта дазволіць вам далей адпраўляць і прымаць лісты."
@@ -16181,6 +16211,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "Your newsletters in one place": [
+        "Вашы рассылкі ў адным месцы"
       ]
     },
     "Today icon tooltip in mini calendar": {

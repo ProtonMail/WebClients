@@ -1277,7 +1277,7 @@
         "Tarih ve saat seçin"
       ],
       "Select rating ${ n } out of ${ to }": [
-        "Puan seçin ${ n } / ${ to }"
+        "Değerlendirin ${ n } / ${ to }"
       ],
       "Self-destruct in 7 days": [
         "7 gün içinde kendini yok et"
@@ -1298,7 +1298,7 @@
         "otomatik yanıt e-postası gönder"
       ],
       "Send Feedback": [
-        "Geri Bildirim Gönder"
+        "Geri bildirim gönder"
       ],
       "Send read receipt": [
         "Okundu bilgisi gönderilsin"
@@ -1505,7 +1505,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1906,10 +1907,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
-        "Deneme süresi ${ formattedDate1 } tarihinde sona erdikten sonra aylık otomatik olarak yenilenen ücretli bir abonelik haline gelecektir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate1 } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate2 } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -2604,6 +2605,10 @@
       ],
       "Ultra fast and private VPN": [
         "Çok hızlı ve güvenli VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
       ]
     },
     "Checkout row": {
@@ -2660,6 +2665,21 @@
       ],
       "Web search access": [
         "Site arama erişimi"
+      ],
+      "Built and based in Europe": [
+        "Avrupa merkezli ve orada geliştirildi"
+      ],
+      "Compliance with data protection regulations": [
+        "Veri koruma yönetmeliklerine uygunluk"
+      ],
+      "Data never used for AI training": [
+        "Veriler asla yapay zeka eğitimi için kullanılmaz"
+      ],
+      "Strict no-logs policy": [
+        "Katı kayıt tutmama ilkesi"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Info": {
@@ -5057,6 +5077,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
       ]
     },
     "error": {
@@ -7402,8 +7425,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9400,7 +9422,7 @@
         "Açık adres"
       ],
       "Extremely Satisfied": [
-        "Son Derece Memnun"
+        "Çok memnunum"
       ],
       "Failed to create folder ${ newFolderName }": [
         "${ newFolderName } klasörü oluşturulamadı"
@@ -9772,7 +9794,7 @@
         "Sistem bilgileri"
       ],
       "Tell us more about your experience": [
-        "Bize deneyiminiz hakkında daha fazla bilgi verin"
+        "Bize deneyiminiz ile ilgili bilgi verin"
       ],
       "The category has been updated, thanks for your feedback!": [
         "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
@@ -9826,7 +9848,7 @@
         "Doğrulama kodu"
       ],
       "Very Dissatisfied": [
-        "Çok Memnun Değil"
+        "Hiç memnun değilim"
       ],
       "Video conference": [
         "Görüntülü görüşme"
@@ -9887,6 +9909,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
+      ],
+      "Command line interface (CLI)": [
+        "Komut satırı arayüzü (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11180,7 +11208,7 @@
     },
     "new_plans: label": {
       "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
-        "${ config.appName } uygulamasını daha iyi hale getirmek için sürekli çaba gösteriyoruz. Deneyiminizden ne kadar memnun kaldınız?"
+        "${ config.appName } uygulamasını geliştirmek için sürekli çalışıyoruz. Deneyiminizden ne kadar memnun kaldınız?"
       ]
     },
     "new_plans: Subtext": {
@@ -15615,6 +15643,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Your newsletters in one place": [
+        "Tüm duyurularınız tek bir yerde"
       ]
     },
     "Today icon tooltip in mini calendar": {

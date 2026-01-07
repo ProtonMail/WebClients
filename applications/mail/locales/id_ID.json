@@ -2642,6 +2642,21 @@
       ],
       "Web search access": [
         "Akses pencarian web"
+      ],
+      "Built and based in Europe": [
+        "Dirancang dan berbasis di Eropa"
+      ],
+      "Compliance with data protection regulations": [
+        "Patuh terhadap peraturan perlindungan data"
+      ],
+      "Data never used for AI training": [
+        "Data tidak pernah digunakan untuk melatih AI"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log yang ketat"
+      ],
+      "Zero-access encryption": [
+        "Enkripsi zero-access"
       ]
     },
     "collider_2025: Info": {
@@ -5021,6 +5036,9 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Waktu kedaluwarsa tidak dapat diatur lebih lama dari waktu yang diizinkan oleh peraturan penyimpanan data"
       ]
     },
     "error": {
@@ -5385,6 +5403,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "View the invitation": [
+        "Lihat undangan"
       ]
     },
     "familyOffer_2023:Label": {
@@ -9732,6 +9753,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
+      ],
+      "Command line interface (CLI)": [
+        "Antarmuka baris perintah (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15850,6 +15877,11 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "new_plans: label": {
+      "We're always striving to make ${ config.appName } better. How satisfied are you with your experience?": [
+        "Kami selalu berupaya untuk menjadikan ${ config.appName } lebih baik. Seberapa puaskah Anda dengan pengalaman Anda?"
       ]
     }
   }

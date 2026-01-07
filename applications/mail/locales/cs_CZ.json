@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2630,6 +2633,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rychlá a soukromá VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
       ]
     },
     "Checkout row": {
@@ -2690,6 +2699,21 @@
       ],
       "Web search access": [
         "Přístup k vyhledávání na webu"
+      ],
+      "Built and based in Europe": [
+        "Vyvinuto a umístěno v Evropě"
+      ],
+      "Compliance with data protection regulations": [
+        "Dodržování předpisů o ochraně osobních údajů"
+      ],
+      "Data never used for AI training": [
+        "Data nejsou nikdy použita pro výcvik AI"
+      ],
+      "Strict no-logs policy": [
+        "Přísné zásady neukládání logů"
+      ],
+      "Zero-access encryption": [
+        "Šifrování s nulovým přístupem"
       ]
     },
     "collider_2025: Info": {
@@ -5123,6 +5147,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nelze nastavit pozdější vypršení platnosti, než co povolují zásady uchovávání."
       ]
     },
     "error": {
@@ -5493,6 +5520,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
+      ],
+      "View the invitation": [
+        "Zobrazit pozvánku",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky",
+        "Zobrazit pozvánky"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7630,10 +7663,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10179,6 +10209,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
+      ],
+      "Command line interface (CLI)": [
+        "Rozhraní příkazového řádku (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10399,7 +10435,7 @@
         "Štítky"
       ],
       "Learn more": [
-        "Zjistit více"
+        "Více informací"
       ],
       "Less": [
         "Méně"
@@ -16181,6 +16217,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Your newsletters in one place": [
+        "Vaše e-mailové zpravodaje na jednom místě"
       ]
     },
     "Today icon tooltip in mini calendar": {

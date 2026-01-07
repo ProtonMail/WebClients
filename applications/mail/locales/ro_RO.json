@@ -1698,6 +1698,11 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -2614,6 +2619,11 @@
       ],
       "Ultra fast and private VPN": [
         "VPN rapid și privat"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
       ]
     },
     "Checkout row": {
@@ -2672,6 +2682,21 @@
       ],
       "Web search access": [
         "Acces la căutare pe internet"
+      ],
+      "Built and based in Europe": [
+        "Construit și cu sediul în Europa"
+      ],
+      "Compliance with data protection regulations": [
+        "Respectare reguli de protecție a datelor"
+      ],
+      "Data never used for AI training": [
+        "Datele nu sunt utilizate niciodată pentru antrenarea IA"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
+      ],
+      "Zero-access encryption": [
+        "Criptare cu acces zero"
       ]
     },
     "collider_2025: Info": {
@@ -5087,6 +5112,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nu se poate seta o expirare mai lungă decât permite politica de păstrare."
       ]
     },
     "error": {
@@ -5455,6 +5483,11 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "View the invitation": [
+        "Afișare invitație",
+        "Afișare invitații",
+        "Afișare invitații"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7511,9 +7544,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8677,7 +8708,7 @@
         "Deja aveți un cont gratuit"
       ],
       "You are about to open another browser tab and visit:": [
-        "Se va deschide o nouă filă în navigator cu adresa:"
+        "Se va deschide o filă nouă în navigatorul web cu adresa:"
       ],
       "You are about to open your default browser and visit:": [
         "Urmează să deschideți navigatorul web implicit și să vizitați:"
@@ -10028,6 +10059,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
+      "Command line interface (CLI)": [
+        "Interfață în linie de comandă (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15348,7 +15385,7 @@
         "Opțiuni etichetă"
       ],
       "Link confirmation": [
-        "legătură web de confirmare"
+        "Confirmare legătură web"
       ],
       "Load embedded images": [
         "Încărcare imagini incluse"
@@ -15893,6 +15930,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Your newsletters in one place": [
+        "Tote buletinele informative într-un singur loc"
       ]
     },
     "Today icon tooltip in mini calendar": {
