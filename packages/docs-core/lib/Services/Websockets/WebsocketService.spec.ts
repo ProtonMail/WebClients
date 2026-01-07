@@ -80,6 +80,7 @@ describe('WebsocketService', () => {
       info: jest.fn(),
       debug: jest.fn(),
       error: jest.fn(),
+      warn: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
 
     service = new WebsocketService(
@@ -139,6 +140,9 @@ describe('WebsocketService', () => {
           document: record.document,
         },
       })
+
+      expect(service.connectionReadyTimeout).toBeDefined()
+      clearTimeout(service.connectionReadyTimeout)
     })
   })
 

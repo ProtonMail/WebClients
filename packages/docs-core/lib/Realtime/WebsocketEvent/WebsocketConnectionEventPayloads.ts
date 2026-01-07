@@ -10,6 +10,7 @@ type BaseWebsocketPayload = {
 
 export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.Connecting]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.DidNotReceiveReadyMessageInTime]: BaseWebsocketPayload
   [WebsocketConnectionEvent.ConnectedAndReady]: BaseWebsocketPayload & {
     readinessInformation?: ConnectionReadyPayload
   }
