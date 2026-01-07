@@ -11748,10 +11748,6 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utilizador",
-        "Até ${ numberOfUsers } utilizadores"
-      ],
       "${ options }-day file version history": [
         "Histórico de versões de ficheiros de ${ options } dias",
         "Histórico de versões de ficheiros de ${ options } dias"
@@ -13312,9 +13308,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Comprar agora"
-      ],
       "Contact us": [
         "Contacte-nos"
       ],
@@ -13554,9 +13547,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Inicio de sessão no ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Oferta especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a utilizar o ${ PASS_APP_NAME }"

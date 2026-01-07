@@ -3084,6 +3084,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } di spazio d'archiviazione"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utente",
+        "Fino a ${ numberOfUsers } utenti"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } di spazio di archiviazione email"
       ],
@@ -5522,7 +5526,7 @@
         "Azioni"
       ],
       "Forward from": [
-        "inoltra da"
+        "Inoltra da"
       ],
       "Forward to": [
         "Inoltra a"
@@ -9001,6 +9005,9 @@
       "Auto-reply is active from the start time to the end time.": [
         "La risposta automatica rimarrà attiva dalla data di inizio a quella di fine."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Aggiungi automaticamente i link di Meet agli inviti del tuo calendario quando c'è almeno un invitato."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimina automaticamente le email spostate nel Cestino nello Spam da più di 30 giorni."
       ],
@@ -12424,6 +12431,9 @@
       "Auto show remote images": [
         "Mostra automaticamente le immagini remote"
       ],
+      "Auto-add Meet links": [
+        "Aggiungi automaticamente link Meet"
+      ],
       "Auto-advance": [
         "Avanzamento automatico"
       ],
@@ -14630,10 +14640,6 @@
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utente",
-        "Fino a ${ numberOfUsers } utenti"
-      ],
       "${ options }-day file version history": [
         "Cronologia delle versioni dei file per ${ options } giorni",
         "Cronologia delle versioni dei file per ${ options } giorni"
@@ -16437,9 +16443,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Acquista ora"
-      ],
       "Contact us": [
         "Contattaci"
       ],
@@ -16708,9 +16711,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Accesso a ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Offerta: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Inizia a utilizzare ${ PASS_APP_NAME }"

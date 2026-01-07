@@ -2553,6 +2553,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tallennustilaa"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } sähköpostitallennustilaa"
       ],
@@ -2640,6 +2644,9 @@
       "Basic chat history": [
         "Rajoitettu keskusteluhistoria"
       ],
+      "Built and based in Europe": [
+        "Rakennettu ja sijaitsee Euroopassa"
+      ],
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
       ],
@@ -2651,6 +2658,9 @@
       ],
       "Limited favorites": [
         "Rajoitettu määrä suosikkeja"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -7837,6 +7847,9 @@
       "Attention required": [
         "Huomiota vaaditaan"
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Lisää Meet-linkit automaattisesti kalenterikutsuihisi, kun kutsuttuja on vähintään yksi."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Tyhjennä yli 30 päivää sitten roskakoriin ja -postiin siirretyt viestit automaattisesti."
       ],
@@ -10840,6 +10853,9 @@
       "Auto show remote images": [
         "Näytä ulkoiset kuvat automaattisesti"
       ],
+      "Auto-add Meet links": [
+        "Lisää Meet-linkit automaattisesti"
+      ],
       "Auto-advance": [
         "Siirry seuraavaan automaattisesti"
       ],
@@ -12823,10 +12839,6 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } käyttäjä",
-        "Enintään ${ numberOfUsers } käyttäjää"
-      ],
       "${ options }-day file version history": [
         "${ options } päivän tiedostojen versiohistoria",
         "${ options } päivän tiedostojen versiohistoria"
@@ -14494,9 +14506,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Osta nyt"
-      ],
       "Contact us": [
         "Ota yhteyttä"
       ],
@@ -14745,9 +14754,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Kirjaudutaan ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Erikoistarjous: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } hintaan ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME }in käyttö"
