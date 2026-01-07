@@ -55,6 +55,8 @@ interface MeetContainerProps {
     setPageSize: React.Dispatch<React.SetStateAction<number>>;
     page: number;
     pageSize: number;
+    expirationTime: number | null;
+    isGuestAdmin: boolean;
 }
 
 export const MeetContainer = ({
@@ -68,6 +70,7 @@ export const MeetContainer = ({
     setPageSize,
     page,
     pageSize,
+    expirationTime,
     locked,
     maxDuration,
     maxParticipants,
@@ -96,6 +99,7 @@ export const MeetContainer = ({
     instantMeeting,
     assignHost,
     keyRotationLogs,
+    isGuestAdmin,
     isRecordingInProgress,
     getKeychainIndexInformation,
     decryptionErrorLogs,
@@ -187,6 +191,8 @@ export const MeetContainer = ({
                         assignHost,
                         paidUser,
                         keyRotationLogs,
+                        expirationTime,
+                        isGuestAdmin,
                         isRecordingInProgress,
                         getKeychainIndexInformation,
                         decryptionErrorLogs,

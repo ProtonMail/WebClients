@@ -123,7 +123,8 @@ export const ProtonMeetContainer = ({
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
 
-    const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
+    const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails, getMeetingInfo } =
+        useMeetingSetup();
 
     const { setPopupStateValue } = useUIStateContext();
 
@@ -146,6 +147,7 @@ export const ProtonMeetContainer = ({
         locked: false,
         maxDuration: 0,
         maxParticipants: 0,
+        expirationTime: null as number | null,
     });
 
     const [connectionLost, setConnectionLost] = useState(false);
@@ -209,6 +211,8 @@ export const ProtonMeetContainer = ({
     const notifications = useNotifications();
 
     const keyRotationSchedulerRef = useRef(new KeyRotationScheduler(keyProvider));
+
+    const isGuestAdminRef = useRef(false);
 
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
@@ -644,20 +648,30 @@ export const ProtonMeetContainer = ({
                 handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
             });
 
-            setMeetingDetails({
+            setMeetingDetails((prev) => ({
+                ...prev,
                 meetingId: id,
                 meetingPassword: passwordBase,
                 meetingName: roomName,
                 locked,
                 maxDuration,
                 maxParticipants,
-            });
+            }));
 
             setMeetingReadyPopupOpen(true);
 
             await handleJoin(displayName, id);
 
             meetingLinkRef.current = getMeetingLink(id, passwordBase);
+
+            const meetingInfo = await getMeetingInfo(id);
+
+            setMeetingDetails((prev) => ({
+                ...prev,
+                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
+            }));
+
+            isGuestAdminRef.current = guestMode;
 
             history.push(meetingLinkRef.current);
         } catch (error: any) {
@@ -734,6 +748,12 @@ export const ProtonMeetContainer = ({
             await handleJoin(displayName, meetingToken);
 
             meetingLinkRef.current = getMeetingLink(token, urlPassword);
+            const meetingInfo = await getMeetingInfo(meetingToken);
+
+            setMeetingDetails((prev) => ({
+                ...prev,
+                expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
+            }));
         } catch (error: any) {
             reportMeetError('Failed to join meeting', error);
             setJoiningInProgress(false);
@@ -1021,6 +1041,8 @@ export const ProtonMeetContainer = ({
                         page={page}
                         pageSize={pageSize}
                         sortedParticipantsMap={sortedParticipantsMap}
+                        expirationTime={meetingDetails.expirationTime}
+                        isGuestAdmin={isGuestAdminRef.current}
                     />
                 ) : (
                     <PrejoinContainer
