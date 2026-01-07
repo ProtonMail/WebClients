@@ -325,7 +325,7 @@ const useTips = () => {
                 return userSettings && !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
             case TipActionType.GetProtonSubdomainAddress:
                 return (
-                    (user.isFree || (user.isAdmin && user.isSelf && !hasEnabledPremiumAddresses)) &&
+                    (user.isFree || (user.isAdmin && user.isSelf && user.hasPaidMail && !hasEnabledPremiumAddresses)) &&
                     !getIsBYOEOnlyAccount(addresses)
                 );
             case TipActionType.CreateAlias:
