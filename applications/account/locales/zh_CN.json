@@ -11962,9 +11962,6 @@
       "${ n } VPN connection": [
         "${ n } 台设备可同时接入 VPN"
       ],
-      "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位用户"
-      ],
       "${ options }-day file version history": [
         "${ options } 天文件版本历史记录"
       ],
@@ -13528,9 +13525,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "立即购买"
-      ],
       "Contact us": [
         "联系我们"
       ],
@@ -13775,9 +13769,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "正在登录 ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "特别优惠：${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅需 ${ priceString }。"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "开始使用 ${ PASS_APP_NAME }"

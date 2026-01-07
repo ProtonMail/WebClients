@@ -588,8 +588,8 @@
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "Το ${ WALLET_APP_NAME } έχει συνεργαστεί με ${ rampLink }, ${ banxaLink } και ${ moonpayLink }, τρεις επίσημες υπηρεσίες κρυπτονομισμάτων, για τις συναλλαγές BTC. Παρακαλούμε εισάγετε την περιοχή σας για να δείτε τους διαθέσιμους παρόχους και τους τρόπους πληρωμής."
       ],
-      "1% bank transfer fee": [
-        "1% χρέωση τραπεζικού εμβάσματος"
+      "2% bank transfer fee": [
+        "2% χρέωση τραπεζικού εμβάσματος"
       ],
       "4% credit card fee": [
         "4% χρέωση πιστωτικής κάρτας"
@@ -961,6 +961,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } αποθηκευτικού χώρου"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } αποθηκευτικού χώρου email"
@@ -3585,10 +3589,6 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } χρήστης",
-        "Έως ${ numberOfUsers } χρήστες"
       ],
       "${ options }-day file version history": [
         "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",

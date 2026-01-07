@@ -1505,7 +1505,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2524,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail-lagerplads"
@@ -7382,8 +7387,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7479,7 +7483,7 @@
         "Lav prioritet"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -10654,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruger",
-        "Op til ${ numberOfUsers } brugere"
       ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",

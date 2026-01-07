@@ -3117,6 +3117,10 @@
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'emmagatzematge de correu electrònic"
       ],
@@ -9103,6 +9107,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "La resposta automàtica estarà sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Afegiu automàticament enllaços de Meet a les invitacions del vostre calendari quan hi hagi almenys un convidat."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
       ],
@@ -12583,6 +12590,9 @@
       "Auto show remote images": [
         "Mostra les imatges remotes automàticament"
       ],
+      "Auto-add Meet links": [
+        "Afegiu automàticament enllaços de Meet"
+      ],
       "Auto-advance": [
         "Avanç automàtic"
       ],
@@ -14828,10 +14838,6 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuari",
-        "Fins a ${ numberOfUsers } usuaris"
-      ],
       "${ options }-day file version history": [
         "Historial de versions de fitxers de ${ options } dies",
         "Historial de versions de fitxers de ${ options } dies"
@@ -16656,9 +16662,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Compreu ara"
-      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -16927,9 +16930,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "S'està iniciant la sessió a ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Oferta especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenceu a utilitzar ${ PASS_APP_NAME }"

@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } Speicherplatz"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzern"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } E-Mail-Speicherplatz"
       ],
@@ -1472,7 +1476,7 @@
         "E-Mail-Adresse ist ungültig"
       ],
       "Email address is required": [
-        "E-Mail-Adresse benötigt"
+        "E-Mail-Adresse ist erforderlich"
       ]
     },
     "collider_2025: Invite Button": {
@@ -1491,7 +1495,7 @@
     },
     "collider_2025: Invite Email Placeholder": {
       "Your friend's email": [
-        "E-Mail-Adresse deines Freundes"
+        "Die E-Mail-Adresse deines Freundes"
       ]
     },
     "collider_2025: Invite Info": {
@@ -1509,7 +1513,7 @@
     },
     "collider_2025: Invite Success": {
       "Invite sent!": [
-        "Einladung gesendet"
+        "Einladungen gesendet!"
       ],
       "No invites left  ": [
         "Keine Einladungen mehr übrig  "
@@ -1523,7 +1527,7 @@
     },
     "collider_2025: Invite Title": {
       "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Freunde einladen, ${ LUMO_APP_NAME } zu nutzen"
+        "Lade Freunde ein, ${ LUMO_APP_NAME } zu erleben"
       ]
     },
     "collider_2025: Job": {
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } Benutzer",
-        "Bis zu ${ numberOfUsers } Benutzer"
       ],
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",

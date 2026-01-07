@@ -11900,10 +11900,6 @@
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } felhasználó",
-        "Akár ${ numberOfUsers } felhasználó"
-      ],
       "${ options }-day file version history": [
         "Fájlok változtatási előzményeinek megtartása ${ options } napig",
         "Fájlok változtatási előzményeinek megtartása ${ options } napig"
@@ -13465,9 +13461,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Vásároljon most"
-      ],
       "Contact us": [
         "Lépjen velünk kapcsolatba"
       ],
@@ -13712,9 +13705,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Bejelentkezés a ${ PASS_APP_NAME }-be"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Különleges: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a következő áron: ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } használatának megkezdése"

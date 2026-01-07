@@ -3108,6 +3108,10 @@
       "${ maxSpaceTB } storage": [
         "Armazenamento de ${ maxSpaceTB }"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuário",
+        "Até ${ numberOfUsers } usuários"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } de armazenamento de e-mail"
       ],
@@ -12569,6 +12573,9 @@
       "Auto show remote images": [
         "Mostrar imagens remotas automaticamente"
       ],
+      "Auto-add Meet links": [
+        "Adicionar links do Meet automaticamente"
+      ],
       "Auto-advance": [
         "Avanço automático"
       ],
@@ -14817,10 +14824,6 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuário",
-        "Até ${ numberOfUsers } usuários"
-      ],
       "${ options }-day file version history": [
         "Histórico de versões de arquivo de ${ options } dias",
         "Histórico de versões de arquivo de ${ options } dias"
@@ -16645,9 +16648,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Comprar agora"
-      ],
       "Contact us": [
         "Fale conosco"
       ],
@@ -16916,9 +16916,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sessão em ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comece a usar o ${ PASS_APP_NAME }"

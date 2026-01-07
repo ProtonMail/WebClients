@@ -329,6 +329,9 @@
       "Deselect all": [
         "Tümünü bırak"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesini kapat"
+      ],
       "Discard": [
         "Sil"
       ],
@@ -913,6 +916,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Turn off auto-add": [
+        "Otomatik eklemeyi kapat"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
@@ -1712,6 +1718,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } depolama alanı"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-posta depolama alanı"
@@ -3583,6 +3593,9 @@
       ],
       "Failed to update secret passphrase": [
         "Gizli parola ifadesi güncellenemedi"
+      ],
+      "Failed to update settings": [
+        "Ayarlar güncellenemedi"
       ],
       "First name is too long": [
         "Ad çok uzun"
@@ -6129,6 +6142,9 @@
       "Warning": [
         "Uyarı"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantısı eklendi"
+      ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
@@ -7782,10 +7798,6 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
       ],
       "${ options }-day file version history": [
         "${ options } günlük dosya sürümü geçmişi",
@@ -10974,6 +10986,9 @@
       ],
       "Answer sent and event deleted": [
         "Yanıt gönderildi ve etkinlik silindi"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Otomatik olarak ${ MEET_APP_NAME } bağlantıları eklenmesi kapatıldı"
       ],
       "Billing details updated": [
         "Fatura bilgileri güncellendi"

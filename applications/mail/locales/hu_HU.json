@@ -1487,7 +1487,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7257,7 +7258,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -7349,9 +7349,6 @@
       ],
       "Low Priority": [
         "Alacsony prioritású"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tegye a ${ MAIL_APP_NAME }-t az alapértelmezett levelezőprogramjává."
       ],
       "Manage your folders": [
         "Mappák kezelése"
@@ -10493,10 +10490,6 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } felhasználó",
-        "Akár ${ numberOfUsers } felhasználó"
       ],
       "${ options }-day file version history": [
         "Fájlok változtatási előzményeinek megtartása ${ options } napig",

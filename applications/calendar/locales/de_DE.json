@@ -329,6 +329,9 @@
       "Deselect all": [
         "Alle abwählen"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Funktion zum automatischen Hinzufügen von ${ MEET_APP_NAME }-Links deaktivieren"
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -913,6 +916,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Turn off auto-add": [
+        "Automatisches hinzufügen deaktivieren"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
@@ -1712,6 +1718,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } Speicherplatz"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzern"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } E-Mail-Speicherplatz"
@@ -3583,6 +3593,9 @@
       ],
       "Failed to update secret passphrase": [
         "Geheime Passphrase konnte nicht aktualisiert werden"
+      ],
+      "Failed to update settings": [
+        "Aktualisieren der Einstellungen fehlgeschlagen"
       ],
       "First name is too long": [
         "Der Vorname ist zu lang."
@@ -6129,6 +6142,9 @@
       "Warning": [
         "Warnung"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Wir haben automatisch einen ${ MEET_APP_NAME }-Link hinzugefügt."
+      ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
@@ -7782,10 +7798,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } Benutzer",
-        "Bis zu ${ numberOfUsers } Benutzer"
       ],
       "${ options }-day file version history": [
         "Dateiversionsverlauf für ${ options } Tag",
@@ -10974,6 +10986,9 @@
       ],
       "Answer sent and event deleted": [
         "Antwort gesendet und Termin gelöscht"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Funktion zum automatischen Hinzufügen von ${ MEET_APP_NAME }-Links deaktiviert."
       ],
       "Billing details updated": [
         "Rechnungsdetails aktualisiert"

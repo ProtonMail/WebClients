@@ -1504,6 +1504,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Clave de confianza",
+        "Claves de confianza"
+      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -2521,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } de almacenamiento"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuario",
+        "Hasta ${ numberOfUsers } usuarios"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } de almacenamiento de correo electrónico"
@@ -7379,8 +7387,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7476,7 +7483,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto."
+        "Establece ${ MAIL_APP_NAME } como tu aplicación de correo predeterminada."
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -10651,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuario",
-        "Hasta ${ numberOfUsers } usuarios"
       ],
       "${ options }-day file version history": [
         "Historial de ${ options } días de las versiones de los archivos",

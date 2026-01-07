@@ -1434,6 +1434,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -2391,6 +2394,9 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB }儲存"
+      ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位使用者"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }電子郵件儲存"
@@ -6910,7 +6916,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7001,9 +7007,6 @@
       ],
       "Low Priority": [
         "較低優先順序"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "將${ MAIL_APP_NAME }設為預設電子郵件應用程式."
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -9912,9 +9915,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers }個用戶"
       ],
       "${ options }-day file version history": [
         "${ options }-天的檔案版本紀錄"

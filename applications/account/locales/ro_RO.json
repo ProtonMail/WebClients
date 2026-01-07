@@ -3132,6 +3132,11 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } stocare"
       ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } spațiu e-mail"
       ],
@@ -9200,6 +9205,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Autorăspunsul este activ întotdeauna în zilele selectate ale săptămânii, între orele stabilite."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Se adaugă automat legături web Meet la invitațiile din calendar atunci când există cel puțin un invitat."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Ștergeți automat mesajele mutate în folderul «Gunoi» și «Nedorite» mai vechi de 30 de zile."
       ],
@@ -9310,6 +9318,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
+      ],
+      "Compromised": [
+        "Compromisă"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
@@ -12714,6 +12725,9 @@
       "Auto show remote images": [
         "Afișare automată imagini externe"
       ],
+      "Auto-add Meet links": [
+        "Adăugare automată legături web Meet"
+      ],
       "Auto-advance": [
         "Avansare automată"
       ],
@@ -14985,11 +14999,6 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
-      ],
       "${ options }-day file version history": [
         "Istoric versiuni fișiere: ${ options } zi",
         "Istoric versiuni fișiere: ${ options } zile",
@@ -16837,9 +16846,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Cumpărare"
-      ],
       "Contact us": [
         "Contactați-ne"
       ],
@@ -17108,9 +17114,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Se conectează la ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } cu ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Începeți să utilizați ${ PASS_APP_NAME }"
@@ -18384,6 +18387,9 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Invalid value": [
+        "Valoare nevalidă"
+      ],
       "Lifetime must be greater than ${ MIN_LIFETIME } day": [
         "Număr minim de zile necesar pentru perioada de retenție: ${ MIN_LIFETIME }",
         "Număr minim de zile necesar pentru perioada de retenție: ${ MIN_LIFETIME }",

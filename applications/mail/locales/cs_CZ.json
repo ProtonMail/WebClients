@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2550,6 +2553,12 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložiště"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložiště pro e-maily"
@@ -7616,10 +7625,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7713,9 +7719,6 @@
       ],
       "Low Priority": [
         "Nízká priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -10996,12 +10999,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uživatel",
-        "Až ${ numberOfUsers } uživatelé",
-        "Až ${ numberOfUsers } uživatelů",
-        "Až ${ numberOfUsers } uživatelů"
       ],
       "${ options }-day file version history": [
         "${ options }denní historie verzí souborů",

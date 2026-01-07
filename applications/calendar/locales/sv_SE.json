@@ -329,6 +329,9 @@
       "Deselect all": [
         "Avmarkera alla"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Inaktivera funktionen “Lägg till automatiskt“ för ${ MEET_APP_NAME }-länkar"
+      ],
       "Discard": [
         "Avfärda"
       ],
@@ -907,6 +910,9 @@
       ],
       "Try another method": [
         "Prova annan metod"
+      ],
+      "Turn off auto-add": [
+        "Stäng av “Lägg till automatiskt“"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
@@ -1706,6 +1712,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagringsutrymme"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } lagringsutrymme för e-post"
@@ -3571,6 +3581,9 @@
       ],
       "Failed to update secret passphrase": [
         "Misslyckades att uppdatera hemlig lösenfras"
+      ],
+      "Failed to update settings": [
+        "Misslyckades att uppdatera inställningar"
       ],
       "First name is too long": [
         "Förnamn är för långt"
@@ -6093,6 +6106,9 @@
       "Warning": [
         "Varning"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Vi har lagt till en ${ MEET_APP_NAME }-länk automatiskt"
+      ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
@@ -7731,10 +7747,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } användare",
-        "Upp till ${ numberOfUsers } användare"
       ],
       "${ options }-day file version history": [
         "${ options }-dagars filversionshistorik",
@@ -10918,6 +10930,9 @@
       ],
       "Answer sent and event deleted": [
         "Svar skickat och händelse borttagen"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "“Lägg till automatiskt“ inaktiverat för ${ MEET_APP_NAME }-länkar"
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"

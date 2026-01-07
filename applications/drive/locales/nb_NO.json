@@ -5075,6 +5075,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Better in the app": [
+        "Bedre i appen"
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
@@ -8142,10 +8145,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruker",
-        "Opptil ${ numberOfUsers } brukere"
       ],
       "${ options }-day file version history": [
         "${ options }-dag filversjonshistorikk",
@@ -12125,6 +12124,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "Fant ${ searchView.numberOfResults } resultat",
         "Fant ${ searchView.numberOfResults } resultater"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Få ${ DRIVE_SHORT_APP_NAME } på telefonen din"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"

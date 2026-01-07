@@ -3078,6 +3078,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagringsutrymme"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } lagringsutrymme för e-post"
       ],
@@ -12488,6 +12492,9 @@
       "Auto show remote images": [
         "Visa externa bilder automatiskt"
       ],
+      "Auto-add Meet links": [
+        "Lägg till Meet-länkar automatiskt"
+      ],
       "Auto-advance": [
         "Gå automatiskt vidare"
       ],
@@ -14731,10 +14738,6 @@
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } användare",
-        "Upp till ${ numberOfUsers } användare"
-      ],
       "${ options }-day file version history": [
         "${ options }-dagars filversionshistorik",
         "${ options }-dagars filversionshistorik"
@@ -16559,9 +16562,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Köp nu"
-      ],
       "Contact us": [
         "Kontakta oss"
       ],
@@ -16830,9 +16830,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Loggar in på ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } till ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Börja använda ${ PASS_APP_NAME }"

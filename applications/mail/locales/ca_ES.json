@@ -1505,7 +1505,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2524,6 +2525,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "${ numberOfUsers } user": [
+        "Fins a ${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } d'emmagatzematge de correu electrònic"
@@ -7382,8 +7387,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10654,10 +10658,6 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuari",
-        "Fins a ${ numberOfUsers } usuaris"
       ],
       "${ options }-day file version history": [
         "Historial de versions de fitxers de ${ options } dies",

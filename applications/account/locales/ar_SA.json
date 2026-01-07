@@ -5026,6 +5026,11 @@
         "يرجى محاولة فتح الرابط مرة أخرى."
       ]
     },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "الإجراءات"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "You can safely close this tab.": [
         "يمكنك إغلاق علامة التبويب هذه بأمان."
@@ -15406,9 +15411,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "احصل عليه الآن"
-      ],
       "Contact us": [
         "تواصل معنا"
       ],
@@ -15674,9 +15676,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "جارٍ تسجيل الدخول إلى ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "عرض خاص: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } مقابل ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "ابدأ باستخدام ${ PASS_APP_NAME }"

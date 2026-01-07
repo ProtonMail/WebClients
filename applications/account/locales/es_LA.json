@@ -3117,6 +3117,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } de almacenamiento"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuario",
+        "Hasta ${ numberOfUsers } usuarios"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } de almacenamiento de correo electrónico"
       ],
@@ -9106,6 +9110,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "La respuesta automática siempre está activa en los días de la semana y entre las horas seleccionadas que seleccione."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Añada automáticamente enlaces de Meet a sus invitaciones de calendario cuando haya al menos un invitado."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimine automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
       ],
@@ -12586,6 +12593,9 @@
       "Auto show remote images": [
         "Mostrar las imágenes remotas automáticamente"
       ],
+      "Auto-add Meet links": [
+        "Añadir enlaces de Meet automáticamente"
+      ],
       "Auto-advance": [
         "Avance automático"
       ],
@@ -14831,10 +14841,6 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuario",
-        "Hasta ${ numberOfUsers } usuarios"
-      ],
       "${ options }-day file version history": [
         "Historial de ${ options } días de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
@@ -16659,9 +16665,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Buy now": [
-        "Comprar ahora"
-      ],
       "Contact us": [
         "Contáctenos"
       ],
@@ -16930,9 +16933,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sesión en ${ PASS_APP_NAME }"
-      ],
-      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Oferta: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenzar con ${ PASS_APP_NAME }"
