@@ -113,11 +113,11 @@ export const Participants = () => {
             >
                 {filteredParticipants.map((participant: Participant, index) => {
                     const videoPub = Array.from(participant.trackPublications.values()).find(
-                        (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera && pub.track
+                        (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera
                     );
 
                     const audioPublication = Array.from(participant.trackPublications.values()).find(
-                        (pub) => pub.kind === Track.Kind.Audio && pub.track
+                        (pub) => pub.kind === Track.Kind.Audio && pub.source === Track.Source.Microphone
                     );
                     const isMuted = !audioPublication || audioPublication.isMuted;
 
