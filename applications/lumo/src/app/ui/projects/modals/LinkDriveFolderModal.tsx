@@ -16,6 +16,7 @@ import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import { getProjectInfo } from '../../../types';
 import { sendProjectDriveFolderLinkEvent, sendProjectDriveFolderUnlinkEvent } from '../../../util/telemetry';
 import { DriveBrowser } from '../../components/Files/DriveBrowser/DriveBrowser';
+import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface LinkDriveFolderModalProps extends ModalStateProps {
     projectId: string;
@@ -224,7 +225,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             <>
                                 <p className="text-sm color-weak mb-4">
                                     {c('collider_2025:Info')
-                                        .jt`Browse to the Drive folder you want to link to this project, then click "Link this folder". A maximum of ${MAX_INDEXABLE_FILES} files will be usable by Lumo.`}
+                                        .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder". A maximum of ${MAX_INDEXABLE_FILES} files will be usable by ${LUMO_SHORT_APP_NAME}.`}
                                 </p>
                                 <DriveBrowser
                                     onFileSelect={() => {
