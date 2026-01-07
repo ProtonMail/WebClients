@@ -1481,7 +1481,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1669,6 +1670,12 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Select rating ${ n } out of ${ to }": [
+        "Válasszon értékelést ${ n } innen ${ to }"
+      ],
+      "Send Feedback": [
+        "Visszajelzés küldése"
       ]
     },
     "action": {
@@ -4919,6 +4926,9 @@
       ],
       "ZIP code is required": [
         "Irányítószám szükséges"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "A megőrzési szabályzatban megengedettnél hosszabb időkorlát nem éllítható be."
       ]
     },
     "error": {
@@ -7248,7 +7258,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -9703,6 +9712,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Tell us more about your experience": [
+        "Írj részletesen a tapasztalataidről"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15306,6 +15318,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Érkeznek a kategóriák!"
+      ],
+      "We'd love to hear from you!": [
+        "Szívesen hallanánk önről"
       ]
     },
     "Today icon tooltip in mini calendar": {

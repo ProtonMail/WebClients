@@ -1505,7 +1505,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultrasnabb och privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } användare",
+        "Upp till ${ numberOfUsers } användare"
       ]
     },
     "Checkout row": {
@@ -7367,8 +7372,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -15566,6 +15570,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Your newsletters in one place": [
+        "Dina nyhetsbrev på ett ställe"
       ]
     },
     "Today icon tooltip in mini calendar": {

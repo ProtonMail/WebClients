@@ -4998,6 +4998,9 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Waktu kedaluwarsa tidak dapat diatur lebih lama dari waktu yang diizinkan oleh peraturan penyimpanan data"
       ]
     },
     "error": {

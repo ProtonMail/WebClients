@@ -1205,7 +1205,7 @@
         "Redimensionner le panneau"
       ],
       "Restore": [
-        "Restauration"
+        "Restaurer"
       ],
       "Resume": [
         "Reprendre"
@@ -1505,7 +1505,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Clé de confiance",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Un VPN ultra-rapide et privé"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
       ]
     },
     "Checkout row": {
@@ -2834,7 +2839,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boîte de réception"
+        "Déplacer vers le dossier Boite de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -3951,7 +3956,7 @@
     },
     "Density mode": {
       "Comfortable": [
-        "Confort"
+        "Confortable"
       ],
       "Compact": [
         "Compact"
@@ -5030,6 +5035,13 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Il est impossible de définir une expiration plus longue que celle autorisée par la politique de conservation."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Choisissez une date dans le ${ n } prochain jour.",
+        "Choisissez une date dans les ${ n } prochains jours."
       ]
     },
     "error": {
@@ -7375,8 +7387,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8435,7 +8446,7 @@
         "Adresse IP du VPN"
       ],
       "Warning": [
-        "Avertissement"
+        "Attention"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Nous nous excusons, il s'agit peut-être d'une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer ce message comme légitime ?"
@@ -8916,7 +8927,7 @@
         "Développer/Réduire l'éditeur"
       ],
       "Filter": [
-        "Filtre"
+        "Filtrer"
       ],
       "Forward": [
         "Transférer"
@@ -10134,7 +10145,7 @@
         "Demander une invitation"
       ],
       "Resume now": [
-        "Reprendre à présent"
+        "Reprendre maintenant"
       ],
       "Scheduled": [
         "Programmés"
@@ -12677,12 +12688,12 @@
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
       ],
       "Friend joined": [
-        "Un ami a rejoint",
-        "Des amis ont rejoint"
+        "Ami a rejoint",
+        "Amis ont rejoint"
       ],
       "Friend subscribed": [
-        "Un ami s'est abonné",
-        "Des amis se sont abonnés"
+        "Ami abonné",
+        "Amis abonnés"
       ],
       "Invite friends. Get credits.": [
         "Invitez vos amis et recevez des crédits."
@@ -15594,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Your newsletters in one place": [
+        "Vos newsletters en un seul endroit."
       ]
     },
     "Today icon tooltip in mini calendar": {

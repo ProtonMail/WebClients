@@ -1513,7 +1513,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5100,6 +5103,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nemožno nastaviť expiráciu dlhšiu, než povoľujú zásady uchovávania."
       ]
     },
     "error": {
@@ -7613,10 +7619,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10162,6 +10165,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
+      "Command line interface (CLI)": [
+        "Rozhranie príkazového riadka (CLI)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16164,6 +16173,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Your newsletters in one place": [
+        "Vaše newslettre na jednom mieste"
       ]
     },
     "Today icon tooltip in mini calendar": {

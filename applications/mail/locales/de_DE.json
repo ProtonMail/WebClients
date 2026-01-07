@@ -1693,6 +1693,10 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ]
     },
     "action": {
@@ -2563,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultraschnelles und privates VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzern"
       ]
     },
     "Checkout row": {
@@ -5031,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Du kannst das Ablaufdatum nicht länger einstellen, als es die Aufbewahrungsrichtlinie erlaubt."
       ]
     },
     "error": {
@@ -7376,8 +7387,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -15595,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorien kommen."
+      ],
+      "Your newsletters in one place": [
+        "Deine Newsletter an einem Ort"
       ]
     },
     "Today icon tooltip in mini calendar": {

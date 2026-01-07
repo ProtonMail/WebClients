@@ -1505,7 +1505,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "VPN ultrarrápida e privada"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuário",
+        "Até ${ numberOfUsers } usuários"
       ]
     },
     "Checkout row": {
@@ -7379,8 +7384,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -15604,6 +15608,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "Your newsletters in one place": [
+        "Seus boletins informativos em um só lugar"
       ]
     },
     "Today icon tooltip in mini calendar": {

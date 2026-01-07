@@ -1513,7 +1513,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2592,6 +2595,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rychlá a soukromá VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "${ numberOfUsers } uživatelé",
+        "${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
       ]
     },
     "Checkout row": {
@@ -5100,6 +5109,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Nelze nastavit pozdější vypršení platnosti, než co povolují zásady uchovávání."
       ]
     },
     "error": {
@@ -7613,10 +7625,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10388,7 +10397,7 @@
         "Štítky"
       ],
       "Learn more": [
-        "Zjistit více"
+        "Více informací"
       ],
       "Less": [
         "Méně"
@@ -16170,6 +16179,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Your newsletters in one place": [
+        "Vaše e-mailové zpravodaje na jednom místě"
       ]
     },
     "Today icon tooltip in mini calendar": {

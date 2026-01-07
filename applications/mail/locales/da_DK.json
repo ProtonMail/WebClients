@@ -1505,7 +1505,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1811,7 +1812,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay }'s indbakke"
+        "Indbakke for ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 trackere fjernet"
@@ -2566,6 +2567,10 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra hurtig og privat VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ]
     },
     "Checkout row": {
@@ -4962,7 +4967,7 @@
         "Denne besked er allerede blevet sendt"
       ],
       "This message has already been sent. A new draft has been saved.": [
-        "Denne besked er allerede blevet sendt. Et ny udkast er blevet gemt."
+        "Denne besked er allerede blevet sendt. Et nyt udkast er blevet gemt."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
@@ -5034,6 +5039,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Cannot set expiration longer than retention policy allows.": [
+        "Udløb kan ikke indstilles til et tidspunkt senere end hvad opbevaringspolitikken tillader."
       ]
     },
     "error": {
@@ -7379,8 +7387,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7476,7 +7483,7 @@
         "Lav prioritet"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -8025,7 +8032,7 @@
         "Abonnement fornyes automatisk hver ${ cycle } måned."
       ],
       "Subscription auto-renews every month.": [
-        "Abonnementet auto-fornyer hver måned."
+        "Abonnementet fornyes automatisk hver måned."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
@@ -11158,7 +11165,7 @@
         "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du forsøger at abonnere igen."
       ]
     },
     "new_plans: label": {
@@ -11217,7 +11224,7 @@
         "Adresser har fuld sende- og modtagefunktion. En bruger kan få tildelt flere adresser, men en enkelt adresse kan ikke tildeles til flere brugere."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
+        "Tillader, at du forbinder til mere end ét netværk samtidigt, f.eks. kan du streame en film fra et andet land samtidigt med, at du får lokale søgeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
@@ -11404,7 +11411,7 @@
         "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online."
+        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Når du sender til andre ${ MAIL_APP_NAME } brugere, er krypteringen automatisk. Afsendelse til ikke-${ MAIL_APP_NAME_TWO } brugere kræver en adgangskode før afsendelse."
@@ -13828,7 +13835,7 @@
         "Produktivitetsfunktioner til e-mail"
       ],
       "Extra storage and bonuses": [
-        "Få ekstra lagerplads og bonusser"
+        "Ekstra lagerplads og brugere"
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
@@ -15598,6 +15605,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier er på vej!"
+      ],
+      "Your newsletters in one place": [
+        "Dine nyhedsbreve på ét sted"
       ]
     },
     "Today icon tooltip in mini calendar": {
