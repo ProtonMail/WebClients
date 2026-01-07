@@ -154,6 +154,7 @@ const verifyPublicKeys = async ({
     getLatestEpoch: GetLatestEpoch;
     /**
      * Optimisations for apps where users with external domains do not have valid keys (e.g. Mail)
+     * (except for the BYOE providers)
      */
     skipVerificationOfExternalDomains: boolean;
     isCatchall: boolean;
@@ -161,7 +162,7 @@ const verifyPublicKeys = async ({
     try {
         if (!signedKeyList || !signedKeyList.Signature) {
             // Absent or obsolete address
-            if (skipVerificationOfExternalDomains && NO_KT_DOMAINS.includes(getEmailDomain(email))) {
+            if (skipVerificationOfExternalDomains && NO_KT_DOMAINS.has(getEmailDomain(email))) {
                 return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
             }
         }
