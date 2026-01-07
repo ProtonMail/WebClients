@@ -18,11 +18,13 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
+import { MeetingDuration } from '../MeetingDuration';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
@@ -34,6 +36,7 @@ import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
+import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
 import './MeetingBody.scss';
@@ -58,7 +61,7 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, roomName, guestMode, paidUser } = useMeetContext();
+    const { participantNameMap, meetingLink, roomName, guestMode, paidUser, isGuestAdmin } = useMeetContext();
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
@@ -71,6 +74,8 @@ export const MeetingBody = ({
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
+
+    const { isLocalParticipantHost, isLocalParticipantAdmin } = useIsLocalParticipantAdmin();
 
     useEffect(() => {
         if (isScreenShare && screenShareTrack?.publication?.track && screenShareVideoRef.current) {
@@ -93,6 +98,15 @@ export const MeetingBody = ({
     const screenShareLabel = isLocalScreenShare
         ? c('Info').t`${presenterName} (you) is presenting`
         : c('Info').t`${presenterName} is presenting`;
+    const meetingTitle = (
+        <div className="flex items-center gap-2 flex-nowrap">
+            {meetUpsellEnabled && (
+                <>{guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}</>
+            )}
+            <div className="meeting-name flex-1 text-lg text-ellipsis overflow-hidden text-semibold">{roomName}</div>
+            {(isLocalParticipantAdmin || isLocalParticipantHost) && <MeetingDuration />}
+        </div>
+    );
 
     return (
         <div
@@ -104,19 +118,11 @@ export const MeetingBody = ({
         >
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
-                    {meetUpsellEnabled && (
-                        <>
-                            {guestMode || !paidUser ? (
-                                <UpgradeIcon />
-                            ) : (
-                                <IcMeetShieldStar className="shield-star" size={5} />
-                            )}
-                        </>
+                    {isLocalParticipantAdmin || isLocalParticipantHost || isGuestAdmin ? (
+                        <TimeLimitCTAPopup>{meetingTitle}</TimeLimitCTAPopup>
+                    ) : (
+                        meetingTitle
                     )}
-                    <div className="meeting-name flex-1 text-lg text-ellipsis overflow-hidden text-semibold">
-                        {roomName}
-                    </div>
-
                     <div className="text-ellipsis overflow-hidden">
                         {isVideoEnabled && isMobile() && (
                             <CircleButton

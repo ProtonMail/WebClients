@@ -1,9 +1,14 @@
 import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
+import clsx from '@proton/utils/clsx';
 
 import './UpgradeIcon.scss';
 
-export const UpgradeIcon = () => {
+interface UpgradeIconProps {
+    customSize?: number;
+}
+
+export const UpgradeIcon = ({ customSize }: UpgradeIconProps) => {
     const uid = useUid('linear-gradient');
 
     return (
@@ -11,8 +16,8 @@ export const UpgradeIcon = () => {
             <Icon
                 name="upgrade"
                 size={5}
-                className="apps-dropdown-button-icon shrink-0 no-print"
-                style={{ fill: `url(#${uid})` }}
+                className={clsx('apps-dropdown-button-icon shrink-0 no-print', !!customSize && 'w-custom h-custom')}
+                style={{ fill: `url(#${uid})`, ...(!!customSize && { width: customSize, height: customSize }) }}
             />
             <svg width="0" height="0" style={{ position: 'absolute' }}>
                 <defs>

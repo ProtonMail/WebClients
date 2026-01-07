@@ -14,6 +14,7 @@ import type {
 } from '../types';
 
 export interface MeetContextValues {
+    expirationTime: number | null;
     locked: boolean;
     maxDuration: number;
     maxParticipants: number;
@@ -62,9 +63,11 @@ export interface MeetContextValues {
     getKeychainIndexInformation: () => (number | undefined)[];
     decryptionErrorLogs: DecryptionErrorLog[];
     sortedParticipantsMap: Map<string, RemoteParticipant | LocalParticipant>;
+    isGuestAdmin: boolean;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
+    expirationTime: null as number | null,
     locked: false,
     maxDuration: 0,
     maxParticipants: 0,
@@ -113,6 +116,7 @@ export const MeetContext = createContext<MeetContextValues>({
     getKeychainIndexInformation: () => [],
     decryptionErrorLogs: [],
     sortedParticipantsMap: new Map(),
+    isGuestAdmin: false,
 });
 
 export const useMeetContext = () => {

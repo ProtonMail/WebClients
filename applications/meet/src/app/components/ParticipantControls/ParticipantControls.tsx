@@ -28,10 +28,12 @@ import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../ty
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
+import { MeetingDuration } from '../MeetingDuration';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
+import { TimeLimitCTAPopup } from '../TimeLimitCTAPopup/TimeLimitCTAPopup';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
@@ -42,7 +44,7 @@ import './ParticipantControls.scss';
 export const ParticipantControls = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { roomName, page, setPage, isScreenShare, guestMode, paidUser } = useMeetContext();
+    const { roomName, page, setPage, isScreenShare, guestMode, paidUser, isGuestAdmin } = useMeetContext();
     const { selfView } = useMeetSelector(selectMeetSettings);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -134,6 +136,20 @@ export const ParticipantControls = () => {
         cameraTooltipTitle = isCameraEnabled ? c('Info').t`Turn off camera` : c('Info').t`Turn on camera`;
     }
 
+    const meetingTitle = (
+        <div className="flex h3 items-center gap-2 pl-4 flex-nowrap">
+            {meetUpsellEnabled && (
+                <>{guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}</>
+            )}
+            <span className="participant-controls-title text-ellipsis">{roomName}</span>
+            {hasAdminPermission && (
+                <div className="ml-2">
+                    <MeetingDuration />
+                </div>
+            )}
+        </div>
+    );
+
     return (
         <div className="w-full flex flex-nowrap flex-column">
             {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isScreenShare && (
@@ -148,24 +164,14 @@ export const ParticipantControls = () => {
                 )}
                 style={{ '--h-custom': '5rem' }}
             >
-                <div
-                    className={clsx(
-                        isLargerThanMd || isNarrowHeight ? '' : 'hidden',
-                        'lg:flex flex-1 justify-start h3 items-center gap-2 pl-4'
+                <div className={clsx('lg:flex flex-1 justify-start', isLargerThanMd || isNarrowHeight ? '' : 'hidden')}>
+                    {hasAdminPermission || isGuestAdmin ? (
+                        <TimeLimitCTAPopup>{meetingTitle}</TimeLimitCTAPopup>
+                    ) : (
+                        meetingTitle
                     )}
-                >
-                    {meetUpsellEnabled && (
-                        <>
-                            {guestMode || !paidUser ? (
-                                <UpgradeIcon />
-                            ) : (
-                                <IcMeetShieldStar className="shield-star" size={5} />
-                            )}
-                        </>
-                    )}
-
-                    <span className="participant-controls-title">{roomName}</span>
                 </div>
+
                 <div className="participant-controls-buttons flex flex-nowrap gap-2">
                     {!isMobile() ? (
                         <>
