@@ -65,6 +65,12 @@ export interface MediaManagementContextType {
     switchActiveDevice: SwitchActiveDevice;
     initializeDevices: () => Promise<void>;
     facingMode: 'environment' | 'user';
+    getMicrophoneVolumeAnalysis: () => {
+        analyser: AnalyserNode | null;
+        dataArray: Uint8Array<ArrayBuffer> | null;
+    };
+    initializeMicrophoneVolumeAnalysis: (deviceId: string | null) => Promise<void>;
+    cleanupMicrophoneVolumeAnalysis: () => void;
 }
 
 const defaultValues: MediaManagementContextType = {
@@ -102,6 +108,12 @@ const defaultValues: MediaManagementContextType = {
     switchActiveDevice: () => Promise.resolve(),
     initializeDevices: () => Promise.resolve(),
     facingMode: 'user',
+    getMicrophoneVolumeAnalysis: () => ({
+        analyser: null,
+        dataArray: null,
+    }),
+    initializeMicrophoneVolumeAnalysis: () => Promise.resolve(),
+    cleanupMicrophoneVolumeAnalysis: () => {},
 };
 
 export const MediaManagementContext = createContext<MediaManagementContextType>(defaultValues);
