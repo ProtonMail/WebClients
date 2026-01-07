@@ -7,17 +7,31 @@ import CoreHeader from '@proton/components/components/header/Header';
 import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
+import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { UpsellButton } from '@proton/pass/components/Menu/Upsell/UpsellButton';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { OfflineSetup } from '@proton/pass/components/Onboarding/OfflineSetup';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
+import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
 import { SpotlightMessage } from '@proton/pass/types';
 
+const WEB_SPOTLIGHTS: SpotlightMessageDefinition[] = [
+    {
+        type: SpotlightMessage.OFFLINE_SETUP,
+        mode: 'custom',
+        component: OfflineSetup,
+        id: 'offline-setup',
+        className: SubTheme.VIOLET,
+        weak: true,
+    },
+];
+
 const SpotlightSection = () => {
     const spotlight = useSpotlight();
-    const definitions = useSpotlightMessages();
+    const definitions = useSpotlightMessages(WEB_SPOTLIGHTS);
 
     useEffect(() => {
         const type = spotlightService.getMessage().message;

@@ -60,6 +60,8 @@ export enum SpotlightMessage {
     AUTOTYPE_CONFIRM = 28,
     /** Autotype confirmation on desktop when using keyboard shortcut */
     AUTOTYPE_CONFIRM_SHORTCUT = 29,
+    /** Offline manual setup available */
+    OFFLINE_SETUP = 30,
 }
 
 export type SpotlightAcknowledgment = {

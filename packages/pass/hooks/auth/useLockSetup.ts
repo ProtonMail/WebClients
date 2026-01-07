@@ -18,7 +18,7 @@ import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectHasTwoPasswordMode, selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -71,7 +71,6 @@ export const useLockSetup = (): LockSetup => {
     const currentLockMode = useSelector(selectLockMode);
     const lockTTL = useSelector(selectLockTTL);
 
-    const hasTwoPasswordMode = useSelector(selectHasTwoPasswordMode);
     const plan = useSelector(selectPassPlan);
     const isFreePlan = !isPaidPlan(plan);
 
@@ -130,7 +129,7 @@ export const useLockSetup = (): LockSetup => {
                         message: (() => {
                             switch (mode) {
                                 /** If the next mode is `BIOMETRIC` then we'll feed the result of this
-                                 *  first unlock call to the `BIOMETRIC` lock creation */
+                                 * first unlock call to the `BIOMETRIC` lock creation */
                                 case LockMode.BIOMETRICS:
                                     return passwordTypeSwitch({
                                         extra: c('Info')
@@ -191,8 +190,8 @@ export const useLockSetup = (): LockSetup => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     reauth: {
-                        type: ReauthAction.SSO_PW_LOCK,
-                        data: { current: current?.secret, ttl },
+                        type: ReauthAction.PW_LOCK_SETUP,
+                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
@@ -215,8 +214,8 @@ export const useLockSetup = (): LockSetup => {
                 /* else prompt for password */
                 return confirmPassword({
                     reauth: {
-                        type: ReauthAction.SSO_BIOMETRICS,
-                        data: { current: current?.secret, ttl },
+                        type: ReauthAction.BIOMETRICS_SETUP,
+                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
@@ -299,12 +298,7 @@ export const useLockSetup = (): LockSetup => {
         [biometricsEnabled, isFreePlan]
     );
 
-    const password = useMemo(
-        () => ({
-            enabled: !EXTENSION_BUILD && (!hasTwoPasswordMode || (authStore?.hasOfflinePassword() ?? false)),
-        }),
-        [hasTwoPasswordMode]
-    );
+    const password = useMemo(() => ({ enabled: !EXTENSION_BUILD }), []);
 
     return {
         lock,

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import type { TabId } from '@proton/pass/types';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -214,12 +215,17 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                       const { payloadVersion, key } = payload;
                       const clientKey = await importKey(key!);
                       const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+
+                      const isOfflineBlob = decryptedBlob?.type === 'offline';
+                      const parseOffline = isOfflineBlob && !QA_SERVICE?.state.login_without_offline_components;
+                      const offline = parseOffline ? extractOfflineComponents(decryptedBlob) : {};
+
                       if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
 
                       return {
                           keyPassword: decryptedBlob.keyPassword,
                           payloadVersion,
-                          ...(decryptedBlob.type === 'offline' ? extractOfflineComponents(decryptedBlob) : {}),
+                          ...offline,
                       };
                   } catch (err) {
                       throw new InvalidForkConsumeError(getErrorMessage(err));

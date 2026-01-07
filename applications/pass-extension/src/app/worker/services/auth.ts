@@ -140,7 +140,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onForkReauth: async (data, state) => {
             switch (data.reauth.type) {
-                case ReauthAction.SSO_EXPORT:
+                case ReauthAction.EXPORT_CONFIRM:
                     const path = `/settings.html#export?state=${state}`;
                     await browser.tabs.create({ url: browser.runtime.getURL(path) });
                     return true;

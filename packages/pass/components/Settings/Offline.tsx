@@ -3,99 +3,56 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import Checkbox from '@proton/components/components/input/Checkbox';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { offlineToggle } from '@proton/pass/store/actions';
-import { selectHasTwoPasswordMode, selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
-import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
+import { selectOfflineEnabled } from '@proton/pass/store/selectors';
+import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
 
 export const Offline: FC = () => {
-    const confirmPassword = usePasswordUnlock();
-    const passwordTypeSwitch = usePasswordTypeSwitch();
-    const authStore = useAuthStore();
+    const [setup, loading] = useOfflineSetup();
 
     const enabled = useSelector(selectOfflineEnabled);
-    const plan = useSelector(selectPassPlan);
-    const freeUser = !isPaidPlan(plan);
-    const twoPwdMode = useSelector(selectHasTwoPasswordMode);
-
-    const validUserType = !freeUser;
-    const validPasswordMode = !twoPwdMode || (authStore?.hasOfflinePassword() ?? false);
-    const canEnableOffline = validUserType && validPasswordMode;
-    const disabled = !canEnableOffline;
-
-    const toggle = useRequest(offlineToggle, { initial: true });
-    offlineToggle.requestID();
-
-    const toggleOffline = async (enabled: boolean) =>
-        confirmPassword({
-            reauth: {
-                type: ReauthAction.SSO_OFFLINE,
-                fork: { promptBypass: 'none', promptType: 'offline' },
-            },
-            onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled }),
-            message: passwordTypeSwitch({
-                extra: enabled
-                    ? c('Info').t`Please confirm your extra password in order to enable offline mode`
-                    : c('Info').t`Please confirm your extra password in order to disable offline mode`,
-                sso: enabled
-                    ? c('Info').t`Please confirm your backup password in order to enable offline mode`
-                    : c('Info').t`Please confirm your backup password in order to disable offline mode`,
-                twoPwd: enabled
-                    ? c('Info').t`Please confirm your second password in order to enable offline mode`
-                    : c('Info').t`Please confirm your second password in order to disable offline mode`,
-                default: enabled
-                    ? c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`
-                    : c('Info').t`Please confirm your ${BRAND_NAME} password in order to disable offline mode`,
-            }),
-        });
+    const signalColor = enabled ? 'color-success' : 'color-warning';
 
     return (
         <>
-            <SettingsPanel
-                title={c('Label').t`Offline mode`}
-                {...(disabled
-                    ? {
-                          contentClassname: 'opacity-50 pointer-events-none py-4',
-                          actions: freeUser
-                              ? [
-                                    <UpgradeButton
-                                        upsellRef={UpsellRef.SETTING}
-                                        inline
-                                        className="text-sm"
-                                        key="upgrade"
-                                    />,
-                                ]
-                              : [],
-                          subTitle: freeUser
-                              ? c('Error')
-                                    .t`Offline mode isn't currently available for your plan and not compatible with two password mode.`
-                              : c('Error').t`Offline mode is currently not available for two password mode.`,
-                      }
-                    : {})}
-            >
-                <Checkbox
-                    checked={enabled}
-                    disabled={toggle.loading || disabled}
-                    loading={toggle.loading}
-                    onChange={(e) => toggleOffline(e.target.checked)}
-                >
-                    <span>
-                        {c('Label').t`Enable offline access`}
-                        <span className="block color-weak text-sm">
-                            {c('Info')
-                                .t`${PASS_APP_NAME} will require your ${BRAND_NAME} password in order to access data offline.`}
-                        </span>
-                    </span>
-                </Checkbox>
+            <SettingsPanel title={c('Label').t`Offline mode`}>
+                <div className="flex gap-2 flex-row items-start">
+                    <Icon
+                        name={enabled ? 'checkmark-circle-filled' : 'cross-circle-filled'}
+                        className={clsx('shrink-0 mt-0.5', signalColor)}
+                    />
+                    <div className="flex-1 flex gap-3">
+                        <div>
+                            <span className={clsx('block', signalColor)}>
+                                {enabled
+                                    ? c('Info').t`${PASS_SHORT_APP_NAME} offline mode enabled.`
+                                    : c('Warning').t`${PASS_SHORT_APP_NAME} offline mode disabled.`}
+                            </span>
+                            <span className="text-sm color-weak lh100">
+                                {enabled
+                                    ? c('Info')
+                                          .t`When enabled, you can still access your ${PASS_SHORT_APP_NAME} data if you lose internet connectivity or if ${BRAND_NAME} servers are unreachable.`
+                                    : c('Info')
+                                          .t`Enable offline mode to access your ${PASS_SHORT_APP_NAME} data if you lose internet connectivity or if ${BRAND_NAME} servers are unreachable.`}
+                            </span>
+                        </div>
+
+                        {!enabled && (
+                            <Button
+                                color="norm"
+                                shape="outline"
+                                disabled={loading}
+                                loading={loading}
+                                onClick={setup}
+                            >{c('Label').t`Enable offline access`}</Button>
+                        )}
+                    </div>
+                </div>
             </SettingsPanel>
         </>
     );
