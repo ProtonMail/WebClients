@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Kopioi alias \"${ name }\""
       ],
+      "Copy booking page link": [
+        "Kopioi varaussivun linkki"
+      ],
       "Copy email address": [
         "Kopioi sähköpostiosoite"
       ],
@@ -316,6 +319,9 @@
       ],
       "Deselect all": [
         "Tyhjennä valinnat"
+      ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Poista käytöstä automaattinen ${ MEET_APP_NAME }-linkkien lisääminen"
       ],
       "Discard": [
         "Hylkää"
@@ -701,6 +707,9 @@
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
+      "Remove the booking range": [
+        "Poista varausväli"
+      ],
       "Remove this notification": [
         "Poista ilmoitus"
       ],
@@ -886,6 +895,9 @@
       ],
       "Try another method": [
         "Kokeile toista tapaa"
+      ],
+      "Turn off auto-add": [
+        "Poista automaattinen lisäys käytöstä"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
@@ -1666,6 +1678,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } tallennustilaa"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } sähköpostitallennustilaa"
       ],
@@ -1737,6 +1753,9 @@
       "Basic chat history": [
         "Rajoitettu keskusteluhistoria"
       ],
+      "Built and based in Europe": [
+        "Rakennettu ja sijaitsee Euroopassa"
+      ],
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
       ],
@@ -1748,6 +1767,9 @@
       ],
       "Limited favorites": [
         "Rajoitettu määrä suosikkeja"
+      ],
+      "Strict no-logs policy": [
+        "Tiukka lokivapaa käytäntö"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -3496,6 +3518,9 @@
       "Failed to update secret passphrase": [
         "Salaisen salalauseen päivittäminen epäonnistui"
       ],
+      "Failed to update settings": [
+        "Asetusten päivittäminen epäonnistui"
+      ],
       "First name is too long": [
         "Etunimi on liian pitkä"
       ],
@@ -4872,6 +4897,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videopuhelu"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
@@ -5954,6 +5982,9 @@
       ],
       "Warning": [
         "Varoitus"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Lisäsimme automaattisesti ${ MEET_APP_NAME } -linkin."
       ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
@@ -7572,10 +7603,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } käyttäjä",
-        "Enintään ${ numberOfUsers } käyttäjää"
       ],
       "${ options }-day file version history": [
         "${ options } päivän tiedostojen versiohistoria",
@@ -10041,6 +10068,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } on täällä!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Hallitse päivääsi ja seuraa ajankäyttöäsi entistä paremmin värikoodaamalla kalenterisi."
       ],
@@ -10617,6 +10647,9 @@
       ],
       "Answer sent and event deleted": [
         "Vastaus lähetettiin ja tapahtuma poistettiin"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "${ MEET_APP_NAME } -linkkien automaattinen lisääminen on poistettu käytöstä"
       ],
       "Billing details updated": [
         "Laskutustiedot päivitetty"

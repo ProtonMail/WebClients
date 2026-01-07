@@ -329,6 +329,9 @@
       "Deselect all": [
         "Fravælg alle"
       ],
+      "Disable auto-add ${ MEET_APP_NAME } links feature": [
+        "Deaktiver automatisk tilføjelse af ${ MEET_APP_NAME } links-funktionen"
+      ],
       "Discard": [
         "Kassér"
       ],
@@ -913,6 +916,9 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
+      ],
+      "Turn off auto-add": [
+        "Slå automatisk tilføjelse fra"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til"
@@ -1712,6 +1718,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } lagerplads"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruger",
+        "Op til ${ numberOfUsers } brugere"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mail-lagerplads"
@@ -3583,6 +3593,9 @@
       ],
       "Failed to update secret passphrase": [
         "Det lykkedes ikke at opdatere hemmelig adgangssætning"
+      ],
+      "Failed to update settings": [
+        "Kunne ikke opdatere indstillinger"
       ],
       "First name is too long": [
         "Fornavn er for langt"
@@ -6129,6 +6142,9 @@
       "Warning": [
         "Advarsel"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Vi har automatisk tilføjet et ${ MEET_APP_NAME } link"
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -7782,10 +7798,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruger",
-        "Op til ${ numberOfUsers } brugere"
       ],
       "${ options }-day file version history": [
         "${ options }-dags filversionshistorik",
@@ -10974,6 +10986,9 @@
       ],
       "Answer sent and event deleted": [
         "Svar sendt og begivenhed slettet"
+      ],
+      "Auto-add ${ MEET_APP_NAME } links disabled": [
+        "Automatisk tilføjelse af ${ MEET_APP_NAME } links er deaktiveret"
       ],
       "Billing details updated": [
         "Faktureringsoplysninger opdateret"
