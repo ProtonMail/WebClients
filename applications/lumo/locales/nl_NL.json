@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } opslagruimte"
       ],
+      "${ numberOfUsers } user": [
+        "Tot ${ numberOfUsers } gebruiker",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mailopslag"
       ],
@@ -1013,7 +1017,7 @@
     },
     "collider_2025: Description": {
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
-        "Verhoog uw privé AI ervaring en ontgrendel geavanceerde modellen en premium functies met ${ LUMO_SHORT_APP_NAME } Plus."
+        "Verhoog uw privé AI-ervaring en ontgrendel geavanceerde modellen en premium functies met ${ LUMO_SHORT_APP_NAME } Plus."
       ],
       "Last updated on ${ formattedDate }": [
         "Laatst bijgewerkt op ${ formattedDate }"
@@ -1496,10 +1500,10 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Kent u iemand die baat zou hebben bij een privacy-gerichte AI? Nodig hen uit om zich aan te melden voor de wachtlijst van ${ LUMO_SHORT_APP_NAME }. U hebt nog ${ remainingInvitesText } uitnodigingen over."
+        "Kent u iemand die baat zou hebben bij een privacy-eerst AI? Nodig hen uit om zich aan te melden voor de wachtlijst van ${ LUMO_SHORT_APP_NAME }. U hebt nog ${ remainingInvitesText } uitnodigingen over."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
-        "U hebt nog ${ remainingInvitesText } uitnodigingen over."
+        "U heeft nog ${ remainingInvitesText } uitnodigingen over."
       ]
     },
     "collider_2025: Invite Sent": {
@@ -1512,13 +1516,13 @@
         "Uitnodiging verzonden!"
       ],
       "No invites left  ": [
-        "Geen uitnodigingen meer over"
+        "Geen uitnodigingen meer over  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Dank u voor het helpen van anderen om ${ LUMO_SHORT_APP_NAME } te ontdekken! Als er meer uitnodigingen beschikbaar komen, laten we het u weten."
+        "Dank u om anderen ${ LUMO_SHORT_APP_NAME } te leren ontdekken! Als er meer uitnodigingen beschikbaar komen, laten we u dat weten."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Wij hebben ${ emailText } uitgenodigd. Zij ontvangen instructies over hoe ze zich kunnen aanmelden voor de wachtlijst."
+        "We hebben ${ emailText } uitgenodigd. Zij ontvangen instructies over hoe ze zich kunnen aanmelden voor de wachtlijst."
       ]
     },
     "collider_2025: Invite Title": {
@@ -1822,7 +1826,7 @@
     },
     "collider_2025: Trait Sentence": {
       "Be conversational and engaging in your responses.": [
-        "Ben conversatie gericht en boeiend in reacties."
+        "Wees conversatiegericht en boeiend in uw reacties."
       ],
       "Be humble when appropriate.": [
         "Wees bescheiden wanneer gepast."
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ options }-day file version history": [
         "Bestandsversiegeschiedenis van ${ options } dag",

@@ -705,6 +705,10 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } de almacenamiento"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuario",
+        "Hasta ${ numberOfUsers } usuarios"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } de almacenamiento de correo electrónico"
       ],
@@ -1469,7 +1473,7 @@
     },
     "collider_2025: Invite": {
       "Email address is not valid": [
-        "La dirección de correo electrónico no es válida."
+        "La dirección de correo electrónico no es válida"
       ],
       "Email address is required": [
         "Se requiere una dirección de correo electrónico"
@@ -1480,10 +1484,10 @@
         "Cerrar"
       ],
       "Invite friends": [
-        "Invitar a amigos"
+        "Invitar amistades"
       ],
       "Maybe later": [
-        "Quizás más tarde"
+        "Tal vez más tarde"
       ],
       "Send invitation": [
         "Enviar invitación"
@@ -1509,7 +1513,7 @@
     },
     "collider_2025: Invite Success": {
       "Invite sent!": [
-        "Invitación enviada"
+        "¡Invitación enviada!"
       ],
       "No invites left  ": [
         "No quedan invitaciones  "
@@ -4485,10 +4489,6 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuario",
-        "Hasta ${ numberOfUsers } usuarios"
       ],
       "${ options }-day file version history": [
         "Historial de ${ options } días de las versiones de los archivos",
