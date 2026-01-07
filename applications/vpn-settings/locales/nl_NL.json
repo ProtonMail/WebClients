@@ -528,7 +528,7 @@
         "Begrepen"
       ],
       "Group owner": [
-        "Groepseigenaar."
+        "Groepseigenaar"
       ],
       "Help and feedback": [
         "Hulp en feedback"
@@ -1778,13 +1778,13 @@
         "${ n } jaren geleden"
       ],
       "Add a domain": [
-        "Een domein toevoegen."
+        "Een domein toevoegen"
       ],
       "Add more users...": [
         "Meer gebruikers toevoegen..."
       ],
       "Authenticate": [
-        "Verifiëren."
+        "Authenticeren"
       ],
       "Calendar": [
         "Agenda"
@@ -1796,7 +1796,7 @@
         "Contacten"
       ],
       "Domain ownership verified": [
-        "Domeineigendom geverifieerd."
+        "Domeineigendom geverifieerd"
       ],
       "Domain setup": [
         "Domeinconfiguratie"
@@ -1859,10 +1859,10 @@
         "Gegevens overdragen van."
       ],
       "User": [
-        "Gebruiker."
+        "Gebruiker"
       ],
       "Users migrated": [
-        "Gebruikers gemigreerd."
+        "Gebruikers gemigreerd"
       ],
       "Verify your domain": [
         "Verifieer uw domein"
@@ -2024,6 +2024,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } opslagruimte"
+      ],
+      "${ numberOfUsers } user": [
+        "Tot ${ numberOfUsers } gebruiker",
+        "Tot ${ numberOfUsers } gebruikers"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } e-mailopslag"
@@ -9991,10 +9995,6 @@
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
-      ],
       "${ options }-day file version history": [
         "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dag"
@@ -16566,7 +16566,7 @@
     },
     "VPNClient": {
       "Android": [
-        "Android."
+        "Android"
       ],
       "Android TV": [
         "Android TV"
