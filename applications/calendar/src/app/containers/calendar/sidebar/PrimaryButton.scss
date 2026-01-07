@@ -1,0 +1,9 @@
+// for the case of Calendar sidebar primary buttons group,
+// we want to change the separator color if both buttons are disabled
+.calendar-sidebar-primary-buttons-group {
+	&:has(.button-group-item:first-child[disabled]):has(.button-group-item:last-child[disabled]) {
+		.vr {
+			border-color: var(--border-weak);
+		}
+	}
+}
