@@ -387,30 +387,31 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                         ) : files.length === 0 ? (
                             /* Empty state with upload options */
                             <div className="project-files-empty-zone">
-                                <h4 className="project-files-empty-title">
-                                    {c('collider_2025:Title').t`No knowledge yet`}
+                                <h4 className="project-files-empty-title text-xl">
+                                    {c('collider_2025:Title').t`Nothing here yet`}
                                 </h4>
                                 <p className="project-files-empty-subtitle color-weak">
-                                    {c('collider_2025:Info').t`Upload files or connect ${DRIVE_APP_NAME}.`}
-                                </p>
-                                <p className="project-files-empty-hint color-weak">
                                     {c('collider_2025:Info')
-                                        .t`Use of ${DRIVE_APP_NAME} allows ${LUMO_SHORT_APP_NAME} to use larger files.`}
+                                        .t`Upload files from ${DRIVE_APP_NAME} or straight from your computer.`}
+                                </p>
+                                <p className="project-files-empty-hint color-weak text-sm">
+                                    {c('collider_2025:Info')
+                                        .t`Using ${DRIVE_APP_NAME} lets ${LUMO_SHORT_APP_NAME} work with larger files.`}
                                 </p>
                                 <div className="project-files-empty-actions">
-                                    <Button
-                                        shape="outline"
-                                        onClick={handleAddFiles}
-                                        className="project-files-action-button"
-                                    >
-                                        {c('collider_2025:Button').t`Add files`}
-                                    </Button>
                                     <Button
                                         shape="outline"
                                         onClick={() => linkDriveFolderModal.openModal(true)}
                                         className="project-files-action-button"
                                     >
-                                        {c('collider_2025:Button').t`Connect to ${DRIVE_APP_NAME}`}
+                                        {c('collider_2025:Button').t`Upload from ${DRIVE_APP_NAME}`}
+                                    </Button>
+                                    <Button
+                                        shape="outline"
+                                        onClick={handleAddFiles}
+                                        className="project-files-action-button"
+                                    >
+                                        {c('collider_2025:Button').t`Upload from computer`}
                                     </Button>
                                 </div>
                             </div>
