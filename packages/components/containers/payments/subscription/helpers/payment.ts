@@ -16,7 +16,9 @@ export const getDefaultSelectedProductPlans = ({ appName, plan }: { appName: Pro
     }
 
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE].find((planName) => plan === planName);
-    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((planName) => plan === planName);
+    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.MEET_BUSINESS].find(
+        (planName) => plan === planName
+    );
     const defaultB2BPlan = PLANS.MAIL_PRO;
     return {
         [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,

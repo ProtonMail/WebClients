@@ -249,7 +249,8 @@ export const getAccountAppRoutes = ({
         isPassConsumerOrPassFamilyOrg ||
         (isFree && app === APPS.PROTONPASS) ||
         (isFree && app === APPS.PROTONLUMO) ||
-        (isFree && app === APPS.PROTONAUTHENTICATOR)
+        (isFree && app === APPS.PROTONAUTHENTICATOR) ||
+        (isFree && app === APPS.PROTONMEET)
     );
 
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
@@ -271,7 +272,7 @@ export const getAccountAppRoutes = ({
         getHasStorageSplit(user) && !getHasVpnB2BPlan(subscription) && app !== APPS.PROTONVPN_SETTINGS;
 
     const showEasySwitchSection =
-        (!isExternalUser || isBYOEUser) && !(app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR) && !isSSOUser;
+        (!isExternalUser || isBYOEUser) && !(app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR || app === APPS.PROTONMEET) && !isSSOUser;
 
     const showVideoConferenceSection =
         (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&

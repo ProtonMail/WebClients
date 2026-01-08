@@ -10,6 +10,7 @@ import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import FirstEmailReservationFlowSignup from './flows/firstEmailReservation/FirstEmailReservationFlow';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
+import MeetB2CSignup from './flows/meet/MeetB2CSignup';
 import PassSignup from './flows/pass/PassSignup';
 import ReferralSignup from './flows/referral/ReferralSignup';
 
@@ -28,6 +29,14 @@ const PassSignupController = (props: BaseSignupContextProps) => (
     <Switch>
         <Route>
             <PassSignup {...props} />
+        </Route>
+    </Switch>
+);
+
+const MeetSignupController = (props: BaseSignupContextProps) => (
+    <Switch>
+        <Route>
+            <MeetB2CSignup {...props} />
         </Route>
     </Switch>
 );
@@ -77,6 +86,9 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 </Route>
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                     <PassSignupController {...props} />
+                </Route>
+                <Route path={SSO_PATHS.MEET_SIGNUP}>
+                    <MeetSignupController {...props} />
                 </Route>
                 {firstEmailEnabled && (
                     <Route path={SSO_PATHS.FIRST_EMAIL}>

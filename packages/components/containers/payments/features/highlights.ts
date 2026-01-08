@@ -11,6 +11,7 @@ import {
     FAMILY_MAX_USERS,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    MEET_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     PROTON_SENTINEL_NAME,
@@ -87,6 +88,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.VPN_BUSINESS]: null,
             [PLANS.LUMO]: null,
             [PLANS.LUMO_BUSINESS]: null,
+            [PLANS.MEET_BUSINESS]: null,
             [PLANS.VISIONARY]: {
                 text: getNUsersText(VISIONARY_MAX_USERS),
                 included: true,
@@ -107,7 +109,7 @@ export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
 
 export const getSupport = (
     type: 'limited' | 'priority',
-    product?: 'drive' | 'mail' | 'pass' | 'vpn' | 'all'
+    product?: 'drive' | 'mail' | 'pass' | 'vpn' | 'meet' | 'all'
 ): PlanCardFeatureDefinition => {
     const text =
         type === 'limited' ? c('new_plans: feature').t`Limited support` : c('new_plans: feature').t`Priority support`;
@@ -125,6 +127,9 @@ export const getSupport = (
             break;
         case 'vpn':
             subtext = c('customer_support.feature.vpn').t`For ${VPN_APP_NAME}`;
+            break;
+        case 'meet':
+            subtext = c('customer_support.feature.meet').t`For ${MEET_APP_NAME}`;
             break;
         case 'all':
             subtext = c('customer_support.feature.all').t`For all ${BRAND_NAME} services`;
@@ -239,6 +244,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_BUSINESS]: getSupport('priority', 'vpn'),
                 [PLANS.LUMO]: getSupport('priority'),
                 [PLANS.LUMO_BUSINESS]: getSupport('priority'),
+                [PLANS.MEET_BUSINESS]: getSupport('priority', 'meet'),
                 [PLANS.VISIONARY]: getSupport('priority'),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSupport('priority'),
             },
@@ -269,6 +275,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
                 [PLANS.LUMO]: getSentinel(),
                 [PLANS.LUMO_BUSINESS]: null,
+                [PLANS.MEET_BUSINESS]: getSentinel(true),
                 [PLANS.VISIONARY]: getSentinel(true),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSentinel(true),
             },
@@ -299,6 +306,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
+                [PLANS.MEET_BUSINESS]: null,
                 [PLANS.VISIONARY]: null,
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
@@ -330,6 +338,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
+                [PLANS.MEET_BUSINESS]: null,
                 [PLANS.VISIONARY]: null,
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAdminPanel(),
             },

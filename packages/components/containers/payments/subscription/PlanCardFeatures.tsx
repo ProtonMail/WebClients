@@ -9,6 +9,7 @@ import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
@@ -20,6 +21,7 @@ import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { AllFeatures } from '../features';
@@ -220,6 +222,8 @@ interface Props {
 }
 
 const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
+    const isMeetPlansEnabled = useFlag('MeetPlans');
+
     const highlightFeatures = (
         <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -282,6 +286,16 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.lumo, audience)} />
         </div>
     );
+    const meetFeatures = isMeetPlansEnabled ? (
+        <div data-testid={`${planName}-meet`}>
+            <h3>
+                <MeetLogo />
+            </h3>
+            <PlanCardFeatureList features={getFeatureDefinitions(planName, features.meet, audience)} />
+        </div>
+    ) : (
+        <></>
+    );
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
             <h3 className="h4 text-bold">{c('new_plans: heading').t`Team management`}</h3>
@@ -302,6 +316,7 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
         APPS.PROTONVPN_SETTINGS,
         APPS.PROTONPASS,
         APPS.PROTONLUMO,
+        APPS.PROTONMEET,
         APPS.PROTONWALLET,
     ] as const;
     type ProductApp = (typeof defaultProductOrder)[number];
@@ -313,6 +328,7 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
         [APPS.PROTONVPN_SETTINGS]: vpnFeatures,
         [APPS.PROTONPASS]: passFeatures,
         [APPS.PROTONLUMO]: lumoFeatures,
+        [APPS.PROTONMEET]: meetFeatures,
         [APPS.PROTONWALLET]: walletFeatures,
     };
 

@@ -18,6 +18,7 @@ import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
@@ -46,6 +47,8 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
+    const isReferralExpansionEnabled = useFlag('ReferralExpansionDiscover');
+    const isMeetPlansEnabled = useFlag('MeetPlans');
     useLoad();
 
     const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
@@ -57,6 +60,8 @@ const YourPlanSectionInner = ({ app }: Props) => {
         openSubscriptionModal,
         canAccessDuoPlan,
         user,
+        isReferralExpansionEnabled,
+        isMeetPlansEnabled,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
