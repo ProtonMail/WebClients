@@ -6,8 +6,8 @@ import type { Project } from './types';
 export const EXAMPLE_PROJECTS: Project[] = [
     {
         id: 'example-personal-finance',
-        name: c('collider_2025:Project').t`Personal Finance Manager`,
-        description: c('collider_2025:Project').t`Track spending, create budgets, and plan financial goals with personalized insights`,
+        name: c('collider_2025:Project').t`Financial assistant`,
+        description: c('collider_2025:Project').t`Plan financial goals with personalized insights`,
         isExample: true,
         icon: 'money-bills',
         instructions: `You are a personal finance advisor helping users manage their money effectively. Provide practical guidance on budgeting, saving, investing, debt management, and financial planning.
@@ -27,7 +27,7 @@ Key guidelines:
     },
     {
         id: 'example-homework-helper',
-        name: c('collider_2025:Project').t`Homework Study Partner`,
+        name: c('collider_2025:Project').t`Study companion`,
         description: c('collider_2025:Project').t`Get help understanding assignments, solving problems, and learning concepts`,
         isExample: true,
         icon: 'pass-atom',
@@ -48,7 +48,7 @@ Key guidelines:
     },
     {
         id: 'example-language-tutor',
-        name: c('collider_2025:Project').t`Language Learning Companion`,
+        name: c('collider_2025:Project').t`Learn a language`,
         description: c('collider_2025:Project').t`Practice conversations, learn grammar, and build vocabulary in your target language`,
         isExample: true,
         icon: 'language',
@@ -93,7 +93,7 @@ Key guidelines:
     },
     {
         id: 'example-writing-coach',
-        name: c('collider_2025:Project').t`Creative Writing Coach`,
+        name: c('collider_2025:Project').t`Writing coach`,
         description: c('collider_2025:Project').t`Develop stories, refine prose, and improve your writing craft`,
         isExample: true,
         icon: 'pen-sparks',
