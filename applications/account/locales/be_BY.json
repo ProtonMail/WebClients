@@ -3147,6 +3147,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } сховішча"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } сховішча для лістоў"
       ],
@@ -9297,6 +9303,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Аўтаматычны адказ заўсёды актыўны ў выбраныя вамі дні тыдня паміж выбранымі гадзінамі."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Аўтаматычна дадавайце спасылкі Meet у вашы запрашэнні календара, калі ёсць хаця б адзін запрошаны."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
       ],
@@ -10953,6 +10962,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Адкладайце паведамленні на потым, каб яны знаходзіліся ў верхняй частцы вашай паштовай скрыні, калі вам гэта неабходна"
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Некаторыя праграмы ${ BRAND_NAME } яшчэ могуць не падтрымліваць ключы бяспекі. У вас можа адсутнічаць магчымасць увайсці ў такія праграмы, калі вы адключыце 2ФА у праграме аўтэнтыфікацыі."
+      ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
       ],
@@ -11687,9 +11699,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Без праграмы аўтэнтыфікацыі вы не зможаце ўвайсці ў праграмы ${ BRAND_NAME }, якія яшчэ не падтрымліваюць ключы бяспекі."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -12850,6 +12859,9 @@
       ],
       "Auto show remote images": [
         "Аўтаматычна паказваць аддаленыя відарысы"
+      ],
+      "Auto-add Meet links": [
+        "Аўтаматычна дадаваць спасылкі Meet"
       ],
       "Auto-advance": [
         "Аўтаматычны пераход"
@@ -18729,14 +18741,6 @@
         "Рэдагаванне правіла захоўвання"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Адміністратар"
-      ],
-      "User": [
-        "Карыстальнік"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Адключыць аднаўленне па тэлефоне**, каб прадухіліць захоп вашага ўліковага запісу зламыснікамі."
@@ -21918,9 +21922,6 @@
       ],
       "Edit": [
         "Рэдагаваць"
-      ],
-      "Email": [
-        "Электронная пошта"
       ],
       "Email address": [
         "Адрас электроннай пошты"

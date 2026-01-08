@@ -11343,9 +11343,6 @@
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
       ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "認証アプリがないと、まだセキュリティキーをサポートしていない${ BRAND_NAME }のアプリにサインインできなくなります。"
-      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
       ],
@@ -18132,14 +18129,6 @@
         "保持ルールを編集"
       ]
     },
-    "Role": {
-      "Admin": [
-        "管理者"
-      ],
-      "User": [
-        "ユーザー"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **電話による復旧を無効化**し、攻撃者によるアカウントの乗っ取りを防ぎます。"
@@ -21132,9 +21121,6 @@
       ],
       "Edit": [
         "編集"
-      ],
-      "Email": [
-        "メール"
       ],
       "Email address": [
         "メールアドレス"
