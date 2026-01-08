@@ -265,6 +265,9 @@
       "Edit vault": [
         "Editar o cofre"
       ],
+      "Enable": [
+        "Ativar"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ative o ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1095,12 +1098,6 @@
       "Network error": [
         "Erro de rede"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "O modo offline não está atualmente disponível para o modo de duas palavras-passe."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "O modo off-line não está disponível no momento para o seu plano e não é compatível com o modo de duas palavras-passe."
-      ],
       "Passphrase is incorrect": [
         "A frase-passe está incorreta"
       ],
@@ -1336,9 +1333,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "O ${ PASS_APP_NAME } só importará inícios de sessão, notas, cartões de crédito e identidades."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "O ${ PASS_APP_NAME } exigirá a sua palavra-passe da ${ BRAND_NAME } para acessar os dados offline."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } convite foi enviado.",
@@ -1903,9 +1897,6 @@
       "Please check your spam folder or try resending the code.": [
         "Verifique a sua pasta de spam ou tente reenviar o código."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Confirme a sua palavra-passe da ${ BRAND_NAME } para desativar o modo offline."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme a sua palavra-passe da ${ BRAND_NAME } para ativar o modo offline."
       ],
@@ -1920,9 +1911,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirme a sua palavra-passe de backup para o bloqueio automático com a sua palavra-passe."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Confirme a sua palavra-passe de backup para desativar o modo offline."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Confirme a sua palavra-passe de backup para ativar o modo offline."
@@ -1944,9 +1932,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirme a sua palavra-passe adicional para o bloqueio automático com a sua palavra-passe adicional."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Confirme a sua palavra-passe adicional para desativar o modo offline."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Confirme a sua palavra-passe adicional para ativar o modo offline."
@@ -1989,9 +1974,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirme a sua segunda palavra-passe para o bloqueio automático com a sua palavra-passe."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Confirme a sua segunda palavra-passe para desativar o modo offline."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirme a sua segunda palavra-passe para ativar o modo offline."

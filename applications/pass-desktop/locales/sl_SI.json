@@ -241,6 +241,9 @@
       "Edit vault": [
         "Uredi trezor"
       ],
+      "Enable": [
+        "Omogoči"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Omogoči ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -916,12 +919,6 @@
       "Network error": [
         "Omrežna napaka"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Način brez povezave trenutno ni na voljo za vaš paket in ni združljiv z načinom z dvema gesloma."
-      ],
       "Passphrase is incorrect": [
         "Geslo ni pravilno"
       ],
@@ -1153,9 +1150,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } bo prikazal ikono predmeta prek posredniškega strežnika ${ BRAND_NAME } za anonimizirane slike."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } bo zahteval ${ BRAND_NAME } geslo za dostop do podatkov v načinu brez povezave."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } je onemogočen."

@@ -310,6 +310,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Enable": [
+        "Povolit"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Povolit ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1199,12 +1202,6 @@
       "Network error": [
         "Chyba sítě"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Offline režim není v současnosti k dispozici pro režim dvou hesel."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Offline režim není momentálně k dispozici u vašeho tarifu a není kompatibilní s režimem dvou hesel."
-      ],
       "Passphrase is incorrect": [
         "Heslo je nesprávné"
       ],
@@ -1509,8 +1506,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky, platební karty a identity."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } bude vyžadovat vaše heslo ${ BRAND_NAME } pro přístup k datům offline."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Offline režim ${ PASS_SHORT_APP_NAME } povolen."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } pozvánka úspěšně odeslána",
@@ -1782,6 +1779,9 @@
       "Enable auto-locking to secure your data": [
         "Povolte automatické zamykání pro ochranu vašich dat"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Povolte režim offline, abyste měli přístup k datům ${ PASS_SHORT_APP_NAME }, pokud ztratíte připojení k internetu nebo pokud jsou servery ${ BRAND_NAME } nedostupné."
+      ],
       "Enabling biometrics auto-lock": [
         "Povolení automatického zamykání biometrií"
       ],
@@ -2017,7 +2017,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2109,9 +2112,6 @@
       "Please check your spam folder or try resending the code.": [
         "Zkontrolujte prosím složku se spamem nebo zkuste kód odeslat znovu."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli deaktivovat režim offline"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
       ],
@@ -2126,9 +2126,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Pro automatické zamykání vaším heslem prosím potvrďte své záložní heslo."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Potvrďte prosím své záložní heslo , abyste mohli deaktivovat režim offline"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Potvrďte prosím své záložní heslo , abyste mohli povolit režim offline"
@@ -2150,9 +2147,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Pro automatické zamykání vaším dodatečným heslem prosím potvrďte své dodatečné heslo."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Potvrďte prosím své dodatečné heslo , abyste mohli deaktivovat režim offline"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Potvrďte prosím své dodatečné heslo , abyste mohli povolit režim offline"
@@ -2195,9 +2189,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Pro automatické zamykání vaším heslem prosím potvrďte své druhé heslo."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Pro deaktivaci režimu offline prosím potvrďte své druhé heslo"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Pro povolení režimu offline prosím potvrďte své druhé heslo"
@@ -2564,6 +2555,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Při vytváření/úpravě přihlášení na ${ PASS_APP_NAME } bude vždy viditelné vstupní 'uživatelské jméno'."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Pokud je povoleno, můžete i nadále přistupovat k datům ${ PASS_SHORT_APP_NAME }, pokud dojde ke ztrátě připojení k internetu nebo pokud jsou servery ${ BRAND_NAME } nedostupné."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Při odesílání e-mailu z tohoto aliasu bude jako odesílatel zobrazen e-mail ${ emailSender }."
@@ -4810,6 +4804,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "Setup offline mode": [
+        "Nastavení režimu offline"
+      ],
       "Share vaults with your team": [
         "Sdílet trezory s vaším týmem"
       ],
@@ -4965,6 +4962,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Je vyžadováno heslo ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Offline režim ${ PASS_SHORT_APP_NAME } deaktivován."
       ],
       "2 consecutive dots are not allowed": [
         "2 po sobě jdoucí tečky nejsou povoleny"

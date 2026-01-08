@@ -9311,6 +9311,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Torkuta viestit myöhemmäksi, jotta ne ovat ensimmäisenä saapuneissasi silloin, kun haluat"
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Jotkin ${ BRAND_NAME } -sovellukset eivät ehkä vielä tue turva-avaimia. Jos poistat todennusohjelman 2FA-toiminnon käytöstä, et ehkä voi kirjautua kyseisiin sovelluksiin."
+      ],
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
       ],
@@ -15926,14 +15929,6 @@
         "Muokkaa säilytyssääntöä"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Ylläpitäjä"
-      ],
-      "User": [
-        "Käyttäjä"
-      ]
-    },
     "Safety review": {
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Ota käyttöön palautus puhelimitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
@@ -18676,9 +18671,6 @@
       ],
       "Edit": [
         "Muokkaa"
-      ],
-      "Email": [
-        "Sähköpostiosoite"
       ],
       "Email address": [
         "Sähköpostiosoite"

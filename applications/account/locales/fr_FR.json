@@ -10745,6 +10745,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Mettez vos messages en attente pour les retrouver en tête de votre boîte de réception au moment voulu."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Certaines applications ${ BRAND_NAME } peuvent ne pas prendre en charge les clés de sécurité pour le moment. Si vous désactivez l'application d'authentification (A2F), vous pourriez ne pas pouvoir vous connecter à ces applications."
+      ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
       ],
@@ -11469,9 +11472,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Sans une application d'authentification, vous ne pourrez pas vous connecter aux applications ${ BRAND_NAME } qui ne prennent pas encore en charge les clés de sécurité."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -18346,14 +18346,6 @@
         "Modifier la règle de conservation"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administrateur"
-      ],
-      "User": [
-        "Utilisateur"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Désactivez la récupération par téléphone** pour empêcher les attaquants de prendre le contrôle de votre compte."
@@ -21412,9 +21404,6 @@
       ],
       "Edit": [
         "Modifier"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Email address": [
         "Adresse e-mail"

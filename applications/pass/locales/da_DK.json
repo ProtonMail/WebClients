@@ -298,6 +298,9 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivér ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1142,12 +1145,6 @@
       "Network error": [
         "Netværksfejl"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Offline-tilstand er i øjeblikket ikke tilgængelig for to-adgangskode-tilstand."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Offline-tilstand er i øjeblikket ikke tilgængelig for dit abonnement og er ikke kompatibel med to adgangskode-tilstand."
-      ],
       "Passphrase is incorrect": [
         "Adgangssætning er forkert"
       ],
@@ -1401,8 +1398,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil kun importere indlogninger, noter, betalingskort og identiteter."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } kræver din ${ BRAND_NAME }-adgangskode for at tilgå data offline."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tilstand er aktiveret."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitation sendt",
@@ -1670,6 +1667,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver autolåsning for at sikre dine data"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktivér offline-tilstand for at få adgang til dine ${ PASS_SHORT_APP_NAME }-data, hvis du mister internetforbindelsen, eller hvis ${ BRAND_NAME }-serverne er utilgængelige."
       ],
       "Enabling biometrics auto-lock": [
         "Aktiverer biometrisk autolås"
@@ -1976,9 +1976,6 @@
       "Please check your spam folder or try resending the code.": [
         "Tjek din spam-mappe, eller prøv at sende koden igen."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bekræft din adgangskode til ${ BRAND_NAME } for at deaktivere offline-tilstand"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
       ],
@@ -1993,9 +1990,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bekræft din sikkerhedskopi-adgangskode for at autolåse med din adgangskode."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Bekræft din sikkerhedskopi-adgangskode for at deaktivere offline-tilstand"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Bekræft din sikkerhedskopi-adgangskode for at aktivere offline-tilstand"
@@ -2017,9 +2011,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekræft venligst din ekstra adgangskode for at autolåse med din ekstra adgangskode."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Bekræft din ekstra adgangskode for at deaktivere offline-tilstand"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Bekræft din ekstra adgangskode for at aktivere offline-tilstand"
@@ -2062,9 +2053,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bekræft din anden adgangskode for at autolåse med din adgangskode."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Bekræft din anden adgangskode for at deaktivere offline-tilstand"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Bekræft din anden adgangskode for at aktivere offline-tilstand"
@@ -2425,6 +2413,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ved oprettelse/redigering af et login på ${ PASS_APP_NAME } vil 'brugernavn'-inputtet altid være synligt."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Når det er aktiveret, kan du stadig få adgang til dine ${ PASS_SHORT_APP_NAME }-data, hvis du mister internetforbindelsen, eller hvis ${ BRAND_NAME }-serverne er utilgængelige."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Når der sendes en e-mail fra dette alias, vil e-mailen vise ${ emailSender } som afsender."
@@ -4545,6 +4536,9 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Setup offline mode": [
+        "Konfigurer offline-tilstand"
+      ],
       "Share vaults with your team": [
         "Del bokse med dit team"
       ],
@@ -4696,6 +4690,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Adgangskoden til ${ BRAND_NAME } kræves"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tilstand er deaktiveret."
       ],
       "2 consecutive dots are not allowed": [
         "2 på hinanden følgende prikker er ikke tilladt"

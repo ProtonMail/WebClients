@@ -10042,6 +10042,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Pausa los mensajes para más tarde, para que estén al principio de tu bandeja de entrada cuando los necesites."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Es posible que algunos servicios de ${ BRAND_NAME } aún no sean compatibles con las llaves de seguridad. Si desactivas el 2FA como modo de autenticación, podrías perder el acceso a ellos."
+      ],
       "Some keys successfully reactivated": [
         "Se han reactivado algunas claves."
       ],
@@ -10718,9 +10721,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Sin una aplicación autenticadora, no podrás iniciar sesión en las aplicaciones de ${ BRAND_NAME } que aún no soportan llaves de seguridad."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -17125,14 +17125,6 @@
         "Editar regla de conservación"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administrador"
-      ],
-      "User": [
-        "Usuario"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Desactivar recuperación por teléfono** para evitar que los atacantes tomen el control de tu cuenta."
@@ -20129,9 +20121,6 @@
       ],
       "Edit": [
         "Editar"
-      ],
-      "Email": [
-        "Correo electrónico"
       ],
       "Email address": [
         "Dirección de correo electrónico"

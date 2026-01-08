@@ -265,6 +265,9 @@
       "Edit vault": [
         "Tároló szerkesztése"
       ],
+      "Enable": [
+        "Engedélyezés"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Engedélyezi: ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1095,12 +1098,6 @@
       "Network error": [
         "Hálózati hiba"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Az offline mód jelenleg nem érhető el két jelszavas módban."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Az offline üzemmód jelenleg nem érhető el a csomaghoz, és nem kompatibilis a két jelszavas üzemmóddal."
-      ],
       "Passphrase is incorrect": [
         "A jelmondat hibás"
       ],
@@ -1347,9 +1344,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } csak belépési adatokat, jegyzeteket, hitelkártyákat és személyazonosságokat fog importálni."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "A ${ PASS_APP_NAME } a ${ BRAND_NAME } jelszavát fogja kérni az adatok offline eléréséhez."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } meghívó sikeresen elküldve",
@@ -1914,9 +1908,6 @@
       "Please check your spam folder or try resending the code.": [
         "Kérjük, ellenőrizze a levélszemét mappát, vagy próbálja meg újra elküldeni a kódot."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód letiltásához."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód engedélyezéséhez"
       ],
@@ -1931,9 +1922,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Kérjük, erősítse meg a biztonsági mentés jelszavát a jelszóval történő automatikus lezáráshoz."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "A biztonsági mentési jelszava megadásával tiltsa le az offline módot"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "A biztonsági mentési jelszava megadásával engedélyezheti az offline módot"
@@ -1955,9 +1943,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Kérjük, erősítse meg az extra jelszavát az extra jelszavával történő automatikus lezáráshoz."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Erősítse meg az extra jelszót az offline mód letiltásához"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Erősítse meg az extra jelszót az offline mód engedélyezéséhez"
@@ -2000,9 +1985,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Kérjük, erősítse meg a második jelszavát a jelszóval történő automatikus lezáráshoz."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "A második jelszava megadásával tiltsa le az offline módot"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "A második jelszava megadásával engedélyezheti az offline módot"

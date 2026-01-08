@@ -298,6 +298,9 @@
       "Edit vault": [
         "保管庫を編集"
       ],
+      "Enable": [
+        "有効化する"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } を有効にする"
       ],
@@ -1137,12 +1140,6 @@
       "Network error": [
         "ネットワークエラーが発生しました"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "現在、オフライン モードは 2 パスワード モードでは利用できません。"
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "現在、オフライン モードはご利用のプランでは利用できず、2 パスワード モードと互換性がありません。"
-      ],
       "Passphrase is incorrect": [
         "パスフレーズが間違っています"
       ],
@@ -1382,9 +1379,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } はログイン情報、メモ、クレジットカード、ユーザー情報のみインポートします。"
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } でデータにオフラインでアクセスするには、${ BRAND_NAME } のパスワードが必要です。"
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count }通の招待の送信に成功しました"
@@ -1950,9 +1944,6 @@
       "Please check your spam folder or try resending the code.": [
         "スパムフォルダを確認するか、コードを再送信してください。"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "オフライン モードを無効にするには、${ BRAND_NAME } のパスワードを確認してください"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "オフライン モードを有効にするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
@@ -1967,9 +1958,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "パスワードで自動ロックするには、バックアップパスワードを確認してください。"
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "オフラインモードを無効にするには、 バックアップパスワードを確認してください"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "オフラインモードを有効にするには、 バックアップパスワードを確認してください"
@@ -1991,9 +1979,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "追加パスワードで自動ロックするには、追加パスワードを確認してください。"
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "オフラインモードを無効にするには、 追加のパスワードを確認してください"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "オフラインモードを有効にするには、 追加のパスワードを確認してください"
@@ -2036,9 +2021,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "パスワードで自動ロックするには、2つ目のパスワードを確認してください。"
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "オフラインモードを無効にするには、2つ目のパスワードを確認してください。"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "オフラインモードを有効にするには、2つ目のパスワードを確認してください。"
