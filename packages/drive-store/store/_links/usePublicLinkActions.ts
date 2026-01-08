@@ -92,7 +92,6 @@ export function usePublicLinkActions() {
 
         return {
             hash,
-            signingKeys,
             addressKeyInfo,
             nodeKeys,
             encryptedName,
@@ -173,7 +172,7 @@ export function usePublicLinkActions() {
             documentType = 'doc',
         }: { token: string; parentLinkId: string; name: string; documentType?: 'doc' | 'sheet' }
     ) => {
-        const { hash, addressKeyInfo, nodeKeys, signingKeys, encryptedName } = await getCreationData(abortSignal, {
+        const { hash, addressKeyInfo, nodeKeys, encryptedName } = await getCreationData(abortSignal, {
             name,
             token,
             parentLinkId,
@@ -183,6 +182,7 @@ export function usePublicLinkActions() {
         const { ContentKeyPacket, ContentKeyPacketSignature } = await generateContentKeys(nodeKeys.privateKey);
 
         // Documents do not have any blocks, so we sign an empty array.
+        const signingKeys = addressKeyInfo?.privateKey || nodeKeys.privateKey;
         const ManifestSignature = await sign(new Uint8Array([]), signingKeys);
 
         const { Document, AuthorizationToken } = await preventLeave(
