@@ -3147,6 +3147,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložisko"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložisko pre emaily"
       ],
@@ -9297,6 +9303,9 @@
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Automatická odpoveď je vždy aktívna vo vybrané dni v týždni medzi vybranými hodinami."
       ],
+      "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
+        "Automatické pridávanie odkazov na služby Meet do vašich pozvánok do kalendára, ak je pozvaný aspoň jeden účastník."
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické vymazanie emailov presunutých do koša a spamu pred viac ako 30 dňami."
       ],
@@ -10953,6 +10962,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Odložte si správy na neskôr, takže budú v hornej časti doručenej pošty, keď budete chcieť."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Niektoré ${ BRAND_NAME } aplikácie ešte nemusia podporovať bezpečnostné kľúče. Ak vypnete 2FA z autentifikačnej aplikácie, možno sa do týchto aplikácií nebudete môcť prihlásiť."
+      ],
       "Some keys successfully reactivated": [
         "Niektoré kľúče boli úspešne reaktivované"
       ],
@@ -11687,9 +11699,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Bez overovacej aplikácie sa nebudete môcť prihlásiť do aplikácií ${ BRAND_NAME }, ktoré ešte nepodporujú bezpečnostné kľúče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -12850,6 +12859,9 @@
       ],
       "Auto show remote images": [
         "Automaticky zobrazovať vzdialené obrázky"
+      ],
+      "Auto-add Meet links": [
+        "Automaticky pridať odkazy na Meet"
       ],
       "Auto-advance": [
         "Automatický postup"
@@ -18729,14 +18741,6 @@
         "Upraviť pravidlo uchovávania"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administrátor"
-      ],
-      "User": [
-        "Používateľ"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Deaktivujte obnovenie prostredníctvom telefónu**, aby ste zabránili útočníkom prevziať kontrolu nad vaším účtom."
@@ -21918,9 +21922,6 @@
       ],
       "Edit": [
         "Upraviť"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Emailová adresa"
