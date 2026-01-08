@@ -35,14 +35,6 @@ export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
         hideWindow(mainWindow);
         await wait(1000);
 
-        fields.forEach((field, i) => {
-            autotype.text(field);
-
-            if (i < fields.length - 1) {
-                autotype.tab();
-            } else if (enterAtTheEnd) {
-                autotype.enter();
-            }
-        });
+        autotype.performAutotype(fields, enterAtTheEnd);
     });
 };

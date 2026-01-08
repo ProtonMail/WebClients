@@ -7,6 +7,9 @@ const targets = (() => {
         case 'darwin':
             return ['x86_64-apple-darwin', 'aarch64-apple-darwin'];
         case 'linux':
+            // If building on a parallels VM - switch target
+            // architecture to arm64 and run with `ELECTRON_DISABLE_SANDBOX=1`
+            // return ['aarch64-unknown-linux-gnu'];
             return ['x86_64-unknown-linux-musl', 'x86_64-unknown-linux-gnu'];
     }
 })();
