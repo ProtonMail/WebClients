@@ -64,7 +64,6 @@ const DelightfulProductSwitcher = ({ onLogin, onSwitch, state }: Props) => {
                     <ExploreAppsListV2
                         subscription={{ subscribed, plan: Organization?.PlanName }}
                         apps={getExploreApps({
-                            subscribed,
                             user: User,
                             organization: Organization,
                             isDocsHomepageAvailable,
