@@ -3010,17 +3010,6 @@
         "Вы подписаны на ${ PLAN_NAMES[PLANS.PASS] } по специальной цене ${ price } в год. Перейдя на бесплатный план, вы навсегда потеряете скидку, даже если вы улучшите снова в будущем."
       ]
     },
-    "Drawer tab, Action": {
-      "Download for Linux": [
-        "Скачать для Linux"
-      ],
-      "Download for macOS": [
-        "Скачать для macOS"
-      ],
-      "Download for Windows": [
-        "Скачать для Windows"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Подробная история версий"
@@ -3605,9 +3594,6 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
-      ],
-      "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Не удалось загрузить панель управления VPN. Проверьте ваше подключение и попробуйте снова."
       ],
       "Unexpected error, we can't import the contacts": [
         "Неожиданная ошибка, мы не можем импортировать контакты"
@@ -4741,9 +4727,6 @@
         "${ updated } контактов успешно обновлено.",
         "${ updated } контактов успешно обновлено."
       ],
-      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
-        "${ VPN_APP_NAME } скрывает ваш IP-адрес, поэтому веб-сайты не могут вас идентифицировать."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } участник)",
         "(${ memberCount } участника)",
@@ -4752,12 +4735,6 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } в месяц)"
-      ],
-      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Автоподключение**: Открывает и подключается к VPN, как только вы включаете устройство."
-      ],
-      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
-        "**Kill switch**: Останавливает утечку данных, блокируя Интернет, если VPN неожиданно отключается."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -4783,26 +4760,11 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
-      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "Безопасное подключение необходимо при удаленной работе. VPN защищает данные компании от киберугроз и сохраняет приватность вашей работы."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
-      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN шифрует ваше подключение и скрывает ваш адрес IP, что значительно затрудняет отслеживание и контроль вашего просмотра веб-страниц."
-      ],
-      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN скрывает ваш адрес IP и шифрует ваши действия в браузере, благодаря чему веб-сайтам, рекламодателям и интернет-провайдерам сложнее впоследствии вас отследить."
-      ],
-      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN - это защищенный туннель между вашим устройством и Интернетом. Он скрывает ваше местоположение и активность от вашего интернет-провайдера (ISP) и посещаемых вами сайтов."
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
-      ],
-      "Ad targeting": [
-        "Нацеливание рекламы"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Добавленные и удаленные участники будут уведомлены обо всех событиях в этой серии."
@@ -4815,9 +4777,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
-      ],
-      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Рекламодатели отслеживают ваш просмотр веб-страниц, чтобы показывать целевую рекламу. ${ VPN_APP_NAME } блокирует трекеры и рекламу, делая ваше подключение быстрее и улучшая работу в Интернете."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
@@ -4941,9 +4900,6 @@
       ],
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
-      ],
-      "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Подключитесь к ${ VPN_APP_NAME }, чтобы приватно просматривать веб-страницы"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Контакт назначен группе ${ contactGroupName }"
@@ -5131,12 +5087,6 @@
       "Frequency modifications will be lost.": [
         "Изменения повторов событий будут утеряны."
       ],
-      "Geoblocking": [
-        "Геоблокировка"
-      ],
-      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
-      ],
       "here": [
         "здесь"
       ],
@@ -5185,9 +5135,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
-      "In restrictive countries": [
-        "В странах, где действуют ограничения"
-      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
@@ -5211,9 +5158,6 @@
       ],
       "It's better to have:": [
         "Лучше иметь:"
-      ],
-      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лучше всего использовать VPN постоянно. А вот когда угрозы кибербезопасности могут быть самыми высокими:"
       ],
       "JCB logo": [
         "Логотип JCB"
@@ -5290,9 +5234,6 @@
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
-      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
-        "Большинство публичных сетей WiFi безопасны, но в некоторых из них отсутствует защита, что подвергает вас киберугрозам. VPN шифрует ваш трафик, обеспечивая вам защиту."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
@@ -5323,9 +5264,6 @@
       "Not a valid URL": [
         "Недействительный URL"
       ],
-      "Not connected": [
-        "Нет подключения"
-      ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
@@ -5337,9 +5275,6 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "События, ранее обновленные организатором, будут сохранены."
-      ],
-      "On public WiFi networks": [
-        "При использовании публичных сетей WiFi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
@@ -5446,9 +5381,6 @@
       "Primary": [
         "Основной"
       ],
-      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "Приватный просмотр (или режим «инкогнито») полезен только для того, чтобы скрыть ваши действия на устройстве. Он не позволяет браузеру сохранять историю и файлы cookie, но не делает вас невидимым. Ваш интернет-провайдер, администратор сети и посещаемые вами сайты все равно могут видеть, что вы делаете в Интернете."
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
@@ -5463,9 +5395,6 @@
       ],
       "Removed participants will be notified.": [
         "Удаленные участники будут уведомлены."
-      ],
-      "Scan the QR code with your mobile device": [
-        "Отсканируйте QR-код с вашего мобильного устройства"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этот адрес."
@@ -5500,20 +5429,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
-      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Некоторые правительства блокируют или ограничивают доступ к определенным веб-сайтам. VPN помогает обойти цензуру, при этом сохраняя ваши действия и личные данные конфиденциальными."
-      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Некоторые ваши ответы на события, ранее обновленные организатором, будут потеряны."
       ],
-      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Некоторые веб-сайты службы трансляций блокируют содержимое по регионам. VPN позволяет вам обходить эти ограничения и получать свободный доступ к Интернету."
-      ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
-      ],
-      "Stay connected effortlessly by enabling the following VPN settings:": [
-        "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
@@ -5529,9 +5449,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
-      ],
-      "Surveillance": [
-        "Надзор"
       ],
       "Symbols (#$&)": [
         "Символы (#$&)"
@@ -5605,12 +5522,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
-      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Это означает, что ваш интернет-провайдер и посещаемые вами сайты не смогут связать вашу личную информацию с вашими действиями в Интернете."
-      ],
-      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Этот уникальный код может использоваться веб-сайтами и интернет-провайдерами для привязки вашего местоположения и истории просмотров к вашему устройству."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
@@ -5644,9 +5555,6 @@
       "Total VPN connections": [
         "Всего подключений к VPN"
       ],
-      "Tracking": [
-        "Отслеживание"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
       ],
@@ -5676,9 +5584,6 @@
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
-      ],
-      "VPN IP": [
-        "IP VPN"
       ],
       "Warning": [
         "Предупреждение"
@@ -5712,12 +5617,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Отображение недели и месяца применяется только для рабочего стола."
-      ],
-      "When working remotely": [
-        "Во время удаленной работы"
-      ],
-      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Когда вы подключаетесь к VPN, используется технология шифрования, чтобы скрыть ваш адрес IP (уникальный код, присвоенный вашему устройству)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации, мы предоставляем коды восстановления для входа в аккаунт, если вы потеряете доступ к приложению аутентификатора."
@@ -5908,15 +5807,6 @@
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
       ],
-      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
-        "Ваш интернет-провайдер может отслеживать, а иногда и продавать ваши данные или даже определять, на какие сайты вы можете заходить."
-      ],
-      "Your IP": [
-        "Ваш IP-адрес"
-      ],
-      "Your IP address is visible and can be used to track your online activity.": [
-        "Ваш адрес IP виден и может быть использован для отслеживания ваших действий в Интернете."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
       ],
@@ -5926,17 +5816,11 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша следующая дата платежа: ${ renewalTime }. Обратитесь в службу поддержки, если вам требуется немедленное изменение тарифа."
       ],
-      "Your online activity is protected": [
-        "Ваши действия в Интернете защищены"
-      ],
       "Your password was leaked:": [
         "Произошла утечка вашего пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your physical location is visible and can be used to restrict your access to the internet.": [
-        "Ваше физическое местоположение видно и может быть использовано для ограничения вашего доступа к Интернету."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
@@ -6598,15 +6482,6 @@
       ],
       "Your calendar URL": [
         "URL вашего календаря"
-      ],
-      "Your IP": [
-        "Ваш IP-адрес"
-      ],
-      "Your ISP": [
-        "Ваш интернет-провайдер"
-      ],
-      "Your location": [
-        "Ваше местоположение"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -10704,9 +10579,6 @@
       "Deleting contacts": [
         "Удаление контактов"
       ],
-      "Desktop": [
-        "Для настольных компьютеров"
-      ],
       "Discard changes?": [
         "Сбросить изменения?"
       ],
@@ -10721,9 +10593,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
-      ],
-      "Download the app": [
-        "Скачать приложение"
       ],
       "Drop to upload": [
         "Перетащите для выгрузки"
@@ -10794,9 +10663,6 @@
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
-      "Get more from your VPN": [
-        "Получите больше от VPN"
-      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Получить приложения ${ appName[APP_NAME] }"
       ],
@@ -10820,9 +10686,6 @@
       ],
       "High security for your account": [
         "Высокая безопасность вашего аккаунта"
-      ],
-      "How does it all work?": [
-        "Как всё это работает?"
       ],
       "How does it work?": [
         "Как это работает?"
@@ -10863,9 +10726,6 @@
       "Location": [
         "Местоположение"
       ],
-      "Make a secure connection your default": [
-        "Сделайте защищенное подключение вашим подключением по умолчанию"
-      ],
       "Merge contacts": [
         "Объединение контактов"
       ],
@@ -10874,9 +10734,6 @@
       ],
       "Minicalendar": [
         "Миникалендарь"
-      ],
-      "Mobile": [
-        "Для мобильных устройств"
       ],
       "Need more aliases?": [
         "Нужно больше псевдонимов?"
@@ -10937,9 +10794,6 @@
       ],
       "Previous": [
         "Назад"
-      ],
-      "Private browsing vs VPN": [
-        "Приватный просмотр по сравнению с VPN"
       ],
       "Processing...": [
         "Обработка…"
@@ -11124,9 +10978,6 @@
       "Verifying your payment...": [
         "Проверяем ваш платёж..."
       ],
-      "VPN explained": [
-        "Что такое VPN"
-      ],
       "Warning": [
         "Предупреждение"
       ],
@@ -11145,17 +10996,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Добро пожаловать в ${ BRAND_NAME } для бизнеса"
       ],
-      "What can a VPN protect you from?": [
-        "От чего вас может защитить VPN?"
-      ],
-      "What is a VPN?": [
-        "Что такое VPN?"
-      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
-      ],
-      "When is it most important to use a VPN?": [
-        "Когда важнее всего использовать VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
