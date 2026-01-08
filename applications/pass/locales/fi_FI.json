@@ -268,6 +268,9 @@
       "Edit vault": [
         "Muokkaa holvia"
       ],
+      "Enable": [
+        "Käytä"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ],
@@ -1071,12 +1074,6 @@
       "Network error": [
         "Verkkovirhe"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Yhteydetön tila ei ole tällä hetkellä käytettävissä kahden salasanan tilassa."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Yhteydetön tila ei tällä hetkellä sisälly tilaukseesi, eikä se ole yhteensopiva kahden salasanan tilan kanssa."
-      ],
       "Passphrase is incorrect": [
         "Salalause on virheellinen"
       ],
@@ -1321,8 +1318,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tila käytössä."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } kutsu lähetettiin",
@@ -1578,6 +1575,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ota offline-tila käyttöön, jotta voit käyttää ${ PASS_SHORT_APP_NAME } -tietoja, jos internetyhteys katkeaa tai ${ BRAND_NAME } -palvelimet eivät ole käytettävissä."
       ],
       "Enabling biometrics auto-lock": [
         "Automaattista biometristä avausta otetaan käyttöön"
@@ -1878,9 +1878,6 @@
       "Please check your spam folder or try resending the code.": [
         "Tarkasta roskapostikansiosi tai kokeile koodin uudelleenlähetystä."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Vahvista ${ BRAND_NAME }-salasanasi poistaaksesi yhteydettömän tilan käytöstä"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
       ],
@@ -1895,9 +1892,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Vahvista varasalasanasi käyttääksesi automaattista salasanalukitusta."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Vahvista varasalasanasi poistaaksesi yhteydettömän tilan käytöstä"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Vahvista varasalasanasi ottaaksesi yhteydettömän tilan käyttöön"
@@ -1919,9 +1913,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vahvista lisäsalasanasi käyttääksesi automaattista lisäsalasanalukitusta."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Vahvista lisäsalasanasi poistaaksesi yhteydettömän tilan käytöstä"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Vahvista lisäsalasanasi ottaaksesi yhteydettömän tilan käyttöön"
@@ -2282,6 +2273,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Käyttäjätunnus-kenttä näytetään aina, kun luot/muokkaat kirjautumistietoja ${ PASS_APP_NAME }issa."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Kun tämä on käytössä, voit edelleen käyttää ${ PASS_SHORT_APP_NAME } -tietoja, vaikka internetyhteys katkeaisi tai ${ BRAND_NAME } -palvelimet eivät olisi käytettävissä."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Kun lähetät sähköpostin tästä aliaksesta, sen lähettäjänä näkyy ${ emailSender }."
@@ -4340,6 +4334,9 @@
       "Settings": [
         "Asetukset"
       ],
+      "Setup offline mode": [
+        "Määritä offline-tila"
+      ],
       "Share vaults with your team": [
         "Jaa holveja tiimillesi"
       ],
@@ -4491,6 +4488,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-salasana vaaditaan"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tila pois käytöstä."
       ],
       "2 consecutive dots are not allowed": [
         "Kahta peräkkäistä pistettä ei sallita"

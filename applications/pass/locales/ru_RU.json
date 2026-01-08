@@ -265,6 +265,9 @@
       "Edit vault": [
         "Редактировать хранилище"
       ],
+      "Enable": [
+        "Включить"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1096,12 +1099,6 @@
       "Network error": [
         "Ошибка сети"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "В настоящее время автономный режим недоступен для режима двух паролей."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Офлайновый режим в настоящее время недоступен для вашего тарифа и не совместим с режимом двух паролей."
-      ],
       "Passphrase is incorrect": [
         "Неверная парольная фраза"
       ],
@@ -1360,9 +1357,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } будет импортировать только имена пользователей, заметки, кредитные карты и личные данные."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } приглашение успешно отправлено",
@@ -1943,9 +1937,6 @@
       "Please check your spam folder or try resending the code.": [
         "Проверьте папку Спам или попробуйте повторно отправить код."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
       ],
@@ -1960,9 +1951,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Подтвердите ваш пароль резервной копии для автоматической блокировки вашим паролем."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Подтвердите пароль резервной копии, чтобы отключить автономный режим"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Подтвердите пароль резервной копии, чтобы включить автономный режим"
@@ -1984,9 +1972,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Подтвердите свой дополнительный пароль, чтобы автоматическая блокировка осуществлялась с помощью вашего дополнительного пароля."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Подтвердите дополнительный пароль, чтобы отключить автономный режим"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Подтвердите дополнительный пароль, чтобы включить автономный режим"
@@ -2029,9 +2014,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Для автоблокировки с помощью пароля подтвердите второй пароль."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Чтобы отключить автономный режим, подтвердите второй пароль."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Чтобы включить автономный режим, подтвердите второй пароль."

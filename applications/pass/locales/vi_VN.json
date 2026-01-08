@@ -206,6 +206,9 @@
       "Edit vault": [
         "Sửa kho lưu trữ"
       ],
+      "Enable": [
+        "Kích hoạt"
+      ],
       "Enable this alias to receive emails sent to this alias": [
         "Kích hoạt bí danh này để nhận email gửi đến địa chỉ này."
       ],
@@ -739,12 +742,6 @@
       "Network error": [
         "Lỗi mạng"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Chế độ ngoại tuyến không khả dụng với chế độ hai mật khẩu."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Chế độ ngoại tuyến không khả dụng với gói người dùng của bạn cũng như không phù hợp với chế độ 2 mật khẩu."
-      ],
       "Passphrase is incorrect": [
         "Đăng nhập không chính xác"
       ],
@@ -928,9 +925,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của nội dung qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } sẽ hỏi mật khẩu ${ BRAND_NAME } để có thể truy cập dữ liệu ngoại tuyến."
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } rò rỉ đã dược phát hiện"
@@ -1273,9 +1267,6 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để bật chê độ ngoại tuyến"
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Vui lòng xác nhận mật khẩu dự phòng để tắt chế độ ngoại tuyến"
       ],
       "Please confirm your extra password": [
         "Vui lòng xác nhận mật khẩu bổ sung của bạn"

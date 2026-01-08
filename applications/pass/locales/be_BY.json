@@ -298,6 +298,9 @@
       "Edit vault": [
         "Рэдагаваць сховішча"
       ],
+      "Enable": [
+        "Уключыць"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1152,12 +1155,6 @@
       "Network error": [
         "Памылка сеткі"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Рэжым па-за сеткай у цяперашні момант недаступны для рэжыму двух пароляў."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Рэжым па-за сеткай у цяперашні момант недаступны для вашага тарыфнага плана і несумяшчальны з рэжымам двух пароляў."
-      ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
       ],
@@ -1437,8 +1434,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і ідэнтычнасці."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Пазасеткавы рэжым у ${ PASS_SHORT_APP_NAME } уключаны."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } запрашэнне паспяхова адпраўлена",
@@ -1712,6 +1709,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Уключыце пазасеткавы рэжым, каб атрымаць доступ да сваіх даных ${ PASS_SHORT_APP_NAME }. Гэта карысна ў выпадках, калі злучэнне з інтэрнэтам страчана або калі серверы ${ BRAND_NAME } недаступны."
       ],
       "Enabling biometrics auto-lock": [
         "Уключэнне аўтаблакіроўкі біяметрыяй"
@@ -2028,9 +2028,6 @@
       "Please check your spam folder or try resending the code.": [
         "Спраўдзіце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб адключыць рэжым па-за сеткай"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
@@ -2045,9 +2042,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Пацвердзіце свой рэзервовы пароль для аўтаблакіроўкі з дапамогай вашага пароля."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Пацвердзіце свой рэзервовы пароль для таго, каб адключыць рэжым па-за сеткай"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Пацвердзіце свой рэзервовы пароль для таго, каб уключыць рэжым па-за сеткай"
@@ -2069,9 +2063,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Пацвердзіце свой дадатковы пароль, калі вы хочаце прызначыць яго для аўтаблакіроўкі."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Пацвердзіце свой дадатковы пароль для таго, каб адключыць рэжым па-за сеткай"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Пацвердзіце свой дадатковы пароль для таго, каб уключыць рэжым па-за сеткай"
@@ -2114,9 +2105,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Пацвердзіце свой другі пароль для аўтаблакіроўкі з дапамогай вашага пароля."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Пацвердзіце свой другі пароль, каб адключыць рэжым па-за сеткай"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Пацвердзіце свой другі пароль, каб уключыць рэжым па-за сеткай"
@@ -2483,6 +2471,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Пры стварэнні або рэдагаванні запісу ўваходу ў ${ PASS_APP_NAME } поле ўводу 'імя карыстальніка' заўсёды будзе бачным."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Калі ўключана, то вы ўсё яшчэ можаце атрымаць доступ да сваіх даных ${ PASS_SHORT_APP_NAME }. Гэта карысна ў выпадках, калі злучэнне з інтэрнэтам страчана або калі серверы ${ BRAND_NAME } недаступны."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Пры адпраўцы ліста з гэтага псеўданіма ў якасці адпраўніка будзе адлюстравана электронная пошта ${ emailSender }."
@@ -4655,6 +4646,9 @@
       "Settings": [
         "Налады"
       ],
+      "Setup offline mode": [
+        "Наладка пазасеткавага рэжыму"
+      ],
       "Share vaults with your team": [
         "Абагульванне сховішчаў з вашай камандай"
       ],
@@ -4810,6 +4804,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Пазасеткавы рэжым у ${ PASS_SHORT_APP_NAME } выключаны."
       ],
       "2 consecutive dots are not allowed": [
         "2 кропкі запар забаронены"

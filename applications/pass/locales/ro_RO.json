@@ -298,6 +298,9 @@
       "Edit vault": [
         "Editare seif"
       ],
+      "Enable": [
+        "Activare"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1147,12 +1150,6 @@
       "Network error": [
         "Eroare de rețea."
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Modul deconectat nu este momentan disponibil pentru modul cu două parole."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Modul deconectat nu este momentan disponibil pentru planul actual și nu este compatibil cu modul cu două parole."
-      ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
       ],
@@ -1418,9 +1415,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
       ],
       "${ payload.count } invite successfully sent": [
         "Invitații trimise: ${ payload.count }",
@@ -2002,9 +1996,6 @@
       "Please check your spam folder or try resending the code.": [
         "Verificați în folderul de mesaje nedorite sau reîncercați trimiterea codului."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Confirmați parola ${ BRAND_NAME } pentru a dezactiva modul deconectat."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmați parola ${ BRAND_NAME } pentru a activa modul deconectat."
       ],
@@ -2019,9 +2010,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirmați parola de rezervă pentru a bloca automat cu parolă."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Confirmați parola de rezervă pentru a dezactiva modul deconectat."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Confirmați parola de rezervă pentru a activa modul deconectat."
@@ -2043,9 +2031,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirmați parola suplimentară pentru blocarea automat cu parola suplimentară."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Confirmați parola suplimentară pentru a dezactiva modul deconectat."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Confirmați parola suplimentară pentru a activa modul deconectat."
@@ -2088,9 +2073,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirmați parola secundară pentru autoblocare cu parola."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Confirmați parola secundară pentru dezactivare mod fără conexiune."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirmați parola secundară pentru activare mod fără conexiune."

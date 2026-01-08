@@ -253,6 +253,9 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Enable": [
+        "Увімкнути"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Увімкнути ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1036,12 +1039,6 @@
       "Network error": [
         "Помилка мережі"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Автономний режим не доступний для вашого тарифного плану і не сумісний з режимом двох паролів."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Автономний режим не доступний для вашого тарифного плану і не сумісний з режимом двох паролів."
-      ],
       "Passphrase is incorrect": [
         "Парольна фраза неправильна"
       ],
@@ -1297,9 +1294,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпортує лише дані входу, нотатки, кредитні картки та посвідчення особи."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } запрошення успішно відправлено",
