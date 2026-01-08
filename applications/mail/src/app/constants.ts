@@ -110,6 +110,7 @@ export const MAIL_UPSELL_BANNERS_OPTIONS_URLS = {
 
 export const restoringEncryptedMessagesURL = getKnowledgeBaseUrl('/recover-encrypted-messages-files');
 export const reActivateKeySettingsURL = '/encryption-keys';
+export const manageAddressKeysSettingsURL = '/encryption-keys#addresses';
 
 export const emailTrackerProtectionURL = getKnowledgeBaseUrl('/email-tracker-protection');
 
