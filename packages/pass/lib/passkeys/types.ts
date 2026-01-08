@@ -16,8 +16,8 @@ type WebAuthnIntercept<T> = { intercept: false } | { intercept: true; response: 
 
 export type PasskeyQueryPayload = { credentialIds: number[][]; domain: string };
 
-export type PasskeyCreatePayload = { domain: string; request: string };
+export type PasskeyCreatePayload = { domain?: string; request: string };
 export type PasskeyCreateResponse = WebAuthnIntercept<WasmGeneratePasskeyResponse>;
 
-export type PasskeyGetPayload = { domain: string; request: string; passkey?: SelectedPasskey };
+export type PasskeyGetPayload = { domain?: string; request: string; passkey?: SelectedPasskey };
 export type PasskeyGetResponse = WebAuthnIntercept<WasmResolvePasskeyChallengeResponse>;
