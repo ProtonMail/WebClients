@@ -3,12 +3,13 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { useSortedList } from '@proton/components';
-import type { MemberRole } from '@proton/drive/index';
+import { NonProtonInvitationState } from '@proton/drive';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { RoleDropdownMenu } from '../RoleDropdownMenu';
+import type { DirectSharingRole } from '../interfaces';
 import { type DirectMember, MemberType } from '../interfaces';
+import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
 import { getContactNameAndEmail } from './helpers/getContactNameAndEmail';
 
 interface Props {
@@ -18,7 +19,7 @@ interface Props {
     members: DirectMember[];
     isLoading: boolean;
     onRemove: (email: string) => Promise<void>;
-    onChangeRole: (email: string, role: MemberRole) => Promise<void>;
+    onChangeRole: (email: string, role: DirectSharingRole) => Promise<void>;
     onResendInvitation: (invitationId: string) => Promise<void>;
     onCopyInvitationLink: (invitationId: string, email: string) => void;
     viewOnly: boolean;
@@ -91,22 +92,23 @@ export const DirectSharingListing = ({
                                 ) : null}
                             </p>
                         </div>
-                        <RoleDropdownMenu
+                        <DirectSharingMemberMenu
                             disabled={viewOnly}
-                            externalInvitationState={member.state}
-                            onChangeRole={(newRole: MemberRole) => onChangeRole(member.inviteeEmail, newRole)}
                             selectedRole={member.role}
+                            onChangeRole={(newRole) => onChangeRole(member.inviteeEmail, newRole)}
+                            externalInvitationState={member.state}
+                            onResendInvitation={
+                                member.type === MemberType.ProtonInvitation &&
+                                (!member.state || member.state === NonProtonInvitationState.Pending)
+                                    ? () => onResendInvitation(member.uid)
+                                    : undefined
+                            }
                             onCopyInvitationLink={
                                 member.type === MemberType.ProtonInvitation
                                     ? () => onCopyInvitationLink(member.uid, member.inviteeEmail)
                                     : undefined
                             }
                             onRemoveAccess={() => onRemove(member.inviteeEmail)}
-                            onResendInvitationEmail={
-                                member.type === MemberType.ProtonInvitation
-                                    ? () => onResendInvitation(member.uid)
-                                    : undefined
-                            }
                         />
                     </div>
                 );
