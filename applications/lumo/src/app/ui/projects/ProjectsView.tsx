@@ -7,22 +7,23 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
+
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
+import { HeaderWrapper } from '../header/HeaderWrapper';
+import { ProjectCard } from './ProjectCard';
 import { EXAMPLE_PROJECTS } from './exampleProjects';
+import { useProjects } from './hooks/useProjects';
+import { NewProjectModal } from './modals/NewProjectModal';
+import { ProjectLimitModal } from './modals/ProjectLimitModal';
+
+import './ProjectsView.scss';
 
 const getRandomProjects = (count: number) => {
     const shuffled = [...EXAMPLE_PROJECTS].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, count);
 };
-import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
-import { useProjects } from './hooks/useProjects';
-import { NewProjectModal } from './modals/NewProjectModal';
-import { ProjectCard } from './ProjectCard';
-import { ProjectLimitModal } from './modals/ProjectLimitModal';
-import { HeaderWrapper } from '../header/HeaderWrapper';
-
-import './ProjectsView.scss';
 
 export const ProjectsView = () => {
     const history = useHistory();
@@ -67,20 +68,13 @@ export const ProjectsView = () => {
                     <div className="projects-empty-icon">
                         <img src={lumoProjects} alt="Projects" width={300} />
                     </div>
-                    <h2 className="projects-empty-title">
-                        {c('collider_2025:Title').t`Sign in to create projects`}
-                    </h2>
+                    <h2 className="projects-empty-title">{c('collider_2025:Title').t`Sign in to create projects`}</h2>
                     <p className="projects-empty-description">
-                        {c('collider_2025:Info').t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
+                        {c('collider_2025:Info')
+                            .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
                     </p>
                     <div className="flex flex-column gap-2 items-center mt-4" style={{ maxWidth: '20rem' }}>
-                        <ButtonLike
-                            as={SettingsLink}
-                            color="norm"
-                            shape="solid"
-                            path="/signup"
-                            className="w-full"
-                        >
+                        <ButtonLike as={SettingsLink} color="norm" shape="solid" path="/signup" className="w-full">
                             {c('collider_2025:Button').t`Create a free account`}
                         </ButtonLike>
                         <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
@@ -105,10 +99,8 @@ export const ProjectsView = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="projects-inspiration-section projects-inspiration-section--with-projects">
-                        <h2 className="projects-inspiration-title">
-                            {c('collider_2025:Title').t`Inspiration`}
-                        </h2>
+                    <div className="projects-inspiration-section projects-inspiration-section--with-projects overflow-x-auto py-2">
+                        <h2 className="projects-inspiration-title">{c('collider_2025:Title').t`Inspiration`}</h2>
                         <div className="projects-grid projects-grid--inspiration">
                             {randomProjects.map((project) => (
                                 <ProjectCard
@@ -134,15 +126,14 @@ export const ProjectsView = () => {
                             {c('collider_2025:Title').t`Get started by creating a new project`}
                         </h2>
                         <p className="projects-empty-description">
-                            {c('collider_2025:Info').t`Projects help you organize conversations with custom instructions and files.`}
+                            {c('collider_2025:Info')
+                                .t`Projects help you organize conversations with custom instructions and files.`}
                         </p>
                     </div>
                 </div>
                 <div className="projects-inspiration-section">
-                    <h2 className="projects-inspiration-title">
-                        {c('collider_2025:Title').t`Inspiration`}
-                    </h2>
-                    <div className="projects-grid projects-grid--inspiration">
+                    <h2 className="projects-inspiration-title">{c('collider_2025:Title').t`Inspiration`}</h2>
+                    <div className="projects-grid projects-grid--inspiration overflow-x-auto py-2">
                         {randomProjects.map((project) => (
                             <ProjectCard
                                 key={project.id}
