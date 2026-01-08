@@ -15,8 +15,9 @@ import {
     ModalTwoHeader,
     useToggle,
 } from '@proton/components';
-import { MemberRole, type ShareNodeSettings } from '@proton/drive/index';
+import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
+import useFlag from '@proton/unleash/useFlag';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import ErrorState from '../../components/modals/ShareLinkModal/ErrorState';
@@ -28,7 +29,7 @@ import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
-import type { DirectMember } from './interfaces';
+import type { DirectMember, DirectSharingRole } from './interfaces';
 
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
@@ -94,7 +95,10 @@ export const SharingModalView = ({
     const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
     const [publicLinkStateChanging, withPublicLinkStateChanging] = useLoading();
 
-    const [selectedRole, setRole] = useState<MemberRole>(MemberRole.Editor);
+    const adminRoleEnabled = useFlag('DriveSharingAdminPermissions');
+    const [selectedRole, setRole] = useState<DirectSharingRole>(
+        adminRoleEnabled ? MemberRole.Admin : MemberRole.Editor
+    );
     const [inviteMessage, setInviteMessage] = useState('');
     const {
         state: includeInviteMessage,

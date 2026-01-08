@@ -3,13 +3,13 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
-import type { MemberRole } from '@proton/drive/index';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { RoleDropdownMenu } from '../RoleDropdownMenu';
+import type { DirectSharingRole } from '../interfaces';
 import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
+import { DirectSharingRoleSelect } from './DirectSharingRoleSelect';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';
 import { inviteesToRecipients, recipientsToInvitees } from './helpers/transformers';
 import type { ShareInvitee } from './interfaces';
@@ -18,10 +18,10 @@ interface Props {
     disabled: boolean;
     invitees: ShareInvitee[];
     existingEmails: string[];
-    selectedRole: MemberRole;
+    selectedRole: DirectSharingRole;
     onAdd: (invitees: ShareInvitee[]) => void;
     onRemove: (email: string) => void;
-    onChangeRole: (role: MemberRole) => void;
+    onChangeRole: (role: DirectSharingRole) => void;
 }
 
 export const DirectSharingAutocomplete = ({
@@ -97,11 +97,10 @@ export const DirectSharingAutocomplete = ({
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 />
                 <div className="absolute inset-y-center right-0">
-                    <RoleDropdownMenu
+                    <DirectSharingRoleSelect
                         disabled={disabled}
                         selectedRole={selectedRole}
                         onChangeRole={onChangeRole}
-                        autocompleteOptions
                     />
                 </div>
             </div>
