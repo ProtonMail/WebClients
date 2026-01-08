@@ -75,7 +75,8 @@ export const createPasskeyService = () => {
                     switch (data.request.type) {
                         case WorkerMessageType.PASSKEY_CREATE: {
                             const { token } = data;
-                            const { request, domain } = data.request.payload;
+                            const { request } = data.request.payload;
+                            const domain = location.hostname;
 
                             return approveRequest(token, () => {
                                 const settings = ctx.getSettings();
@@ -94,7 +95,8 @@ export const createPasskeyService = () => {
                         }
                         case WorkerMessageType.PASSKEY_GET: {
                             const { token } = data;
-                            const { domain, request } = data.request.payload;
+                            const { request } = data.request.payload;
+                            const domain = location.hostname;
 
                             return approveRequest(token, () => {
                                 const settings = ctx.getSettings();
