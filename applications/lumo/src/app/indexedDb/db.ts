@@ -1,6 +1,7 @@
 import isEqual from 'lodash/isEqual';
 
 import { computeSha256AsBase64 } from '../crypto';
+import { handleIndexedDBVersionDowngrade } from '../helpers/indexedDBVersionHandler';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
 import type {
     SerializedConversationMap,
@@ -988,19 +989,26 @@ export class DbApi {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
-            const request = indexedDB.open(dbName, 10);
+            const dbVersion = 10;
+
+            // Handle version downgrade by deleting the database if needed
+            try {
+                await handleIndexedDBVersionDowngrade(dbName, dbVersion);
+            } catch (error) {
+                console.error('[LumoDB] Error handling version downgrade:', error);
+            }
+
+            const request = indexedDB.open(dbName, dbVersion);
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;
 
                 // Initial DB setup (version 6)
                 if (event.oldVersion < 6) {
-                    // Create space store
                     if (!db.objectStoreNames.contains(SPACE_STORE)) {
                         void db.createObjectStore(SPACE_STORE, { keyPath: SpaceStoreFields.Id });
                     }
 
-                    // Create conversation store
                     if (!db.objectStoreNames.contains(CONVERSATION_STORE)) {
                         const conversationStore = db.createObjectStore(CONVERSATION_STORE, {
                             keyPath: ConversationStoreFields.Id,
@@ -1010,7 +1018,6 @@ export class DbApi {
                         });
                     }
 
-                    // Create message store
                     if (!db.objectStoreNames.contains(MESSAGE_STORE)) {
                         const messageStore = db.createObjectStore(MESSAGE_STORE, { keyPath: MessageStoreFields.Id });
                         messageStore.createIndex(MessageStoreIndexes.ConversationId, ConversationStoreFields.Id, {
@@ -1018,7 +1025,6 @@ export class DbApi {
                         });
                     }
 
-                    // Create local <-> remote ID store
                     if (!db.objectStoreNames.contains(REMOTE_ID_STORE)) {
                         const I = RemoteIdStoreIndexes;
                         const F = RemoteIdStoreFields;
