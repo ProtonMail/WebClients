@@ -163,6 +163,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNCalendarsFeature(MAX_CALENDARS_FREE),
                 [PLANS.LUMO_BUSINESS]: getNCalendarsFeature(MAX_CALENDARS_FREE),
+                [PLANS.MEET_BUSINESS]: getNCalendarsFeature(MAX_CALENDARS_FREE),
                 [PLANS.VISIONARY]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.VISIONARY]?.MaxCalendars),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNCalendarsFeature(
                     MAX_CALENDARS_FREE || plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxCalendars
@@ -194,9 +195,10 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getEndToEndEncryption(),
-                [PLANS.VISIONARY]: getEndToEndEncryption(),
                 [PLANS.LUMO_BUSINESS]: getEndToEndEncryption(),
+                [PLANS.MEET_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEndToEndEncryption(),
+                [PLANS.VISIONARY]: getEndToEndEncryption(),
             },
         },
         {
@@ -224,9 +226,10 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getShareFeature(plansMap, PLANS.LUMO),
-                [PLANS.VISIONARY]: getShareFeature(plansMap, PLANS.VISIONARY),
                 [PLANS.LUMO_BUSINESS]: getShareFeature(plansMap, PLANS.LUMO_BUSINESS),
+                [PLANS.MEET_BUSINESS]: getShareFeature(plansMap, PLANS.MEET_BUSINESS),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getShareFeature(plansMap, PLANS.VPN_PASS_BUNDLE_BUSINESS),
+                [PLANS.VISIONARY]: getShareFeature(plansMap, PLANS.VISIONARY),
             },
         },
         {
@@ -254,9 +257,10 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getInvitation(),
-                [PLANS.VISIONARY]: getInvitation(),
                 [PLANS.LUMO_BUSINESS]: getInvitation(),
+                [PLANS.MEET_BUSINESS]: getInvitation(),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getInvitation(),
+                [PLANS.VISIONARY]: getInvitation(),
             },
         },
         {
@@ -284,9 +288,10 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getTeamAvailability(),
-                [PLANS.VISIONARY]: getTeamAvailability(),
                 [PLANS.LUMO_BUSINESS]: getTeamAvailability(),
+                [PLANS.MEET_BUSINESS]: getTeamAvailability(),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getTeamAvailability(),
+                [PLANS.VISIONARY]: getTeamAvailability(),
             },
         },
     ];

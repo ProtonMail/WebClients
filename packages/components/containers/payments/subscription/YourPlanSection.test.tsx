@@ -298,7 +298,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Mail Professional');
+            within(upsellPanel as HTMLElement).getByText('Proton Business Suite');
 
             // Usage Panel
             expect(usagePanel).toBeTruthy();
@@ -325,7 +325,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Mail Professional');
+            within(upsellPanel as HTMLElement).getByText('Proton Business Suite');
         });
     });
 });

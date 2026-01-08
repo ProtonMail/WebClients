@@ -226,6 +226,8 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-pass'
     /** Context-based generic signup */
     | 'ctx-signup-generic'
+    /** Context-based Meet signup */
+    | 'ctx-signup-meet'
     /** Context-based referral signup */
     | 'ctx-signup-referral'
     /** Subscription modification modal for existing users */

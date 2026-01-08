@@ -25,6 +25,8 @@ export const isOrganizationPassFamily = (organization?: Organization) => organiz
 export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.VISIONARY;
 export const isOrganizationLumoBusiness = (organization?: Organization) =>
     organization?.PlanName === PLANS.LUMO_BUSINESS;
+export const isOrganizationMeetBusiness = (organization?: Organization) =>
+    organization?.PlanName === PLANS.MEET_BUSINESS;
 
 export const getOrganizationDenomination = (organization?: Organization) => {
     if (

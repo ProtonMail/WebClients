@@ -22,10 +22,13 @@ import {
     getIsB2BAudienceFromPlan,
     getPrice,
     hasBundle,
+    hasBundlePro,
+    hasBundlePro2024,
     hasDeprecatedVPN,
     hasDrive,
     hasDrive1TB,
     hasDriveBusiness,
+    hasDrivePro,
     hasDuo,
     hasLumoBusiness,
     hasMail,
@@ -40,6 +43,7 @@ import {
     hasVpnPro,
     isForbiddenModification,
     isPlan,
+    isTrial,
 } from '@proton/payments';
 import {
     type PreloadedPaymentsContextType,
@@ -74,15 +78,9 @@ import {
     getStorageFeatureB2B,
     getVersionHistory,
 } from '../../features/drive';
-import { getCustomBranding, getSentinel, getSupport, getUsersFeature } from '../../features/highlights';
+import { getSentinel, getSupport, getUsersFeature } from '../../features/highlights';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../../features/interface';
-import {
-    getB2BNDomainsFeature,
-    getNAddressesFeature,
-    getNAddressesFeatureB2B,
-    getNDomainsFeature,
-    getProtonScribe,
-} from '../../features/mail';
+import { getB2BNDomainsFeature, getNAddressesFeature, getNDomainsFeature, getProtonScribe } from '../../features/mail';
 import {
     FREE_PASS_ALIASES,
     PASS_PLUS_VAULTS,
@@ -106,7 +104,6 @@ import {
     getB2BHighSpeedVPNConnectionsFeature,
     getDedicatedServersVPNFeature,
     getHighSpeedVPNConnectionsFeature,
-    getVPNConnections,
     getVPNConnectionsFeature,
 } from '../../features/vpn';
 import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
@@ -650,42 +647,6 @@ const getFamilyUpsell = ({
     });
 };
 
-const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    const mailBusinessPlan = plansMap[PLANS.MAIL_BUSINESS];
-    if (!mailBusinessPlan) {
-        return null;
-    }
-
-    const mailBusinessStorage = humanSize({ bytes: mailBusinessPlan?.MaxSpace ?? 50, fraction: 0 });
-
-    const features: UpsellFeature[] = [
-        getStorageBoostFeatureB2B(mailBusinessStorage),
-        getNAddressesFeatureB2B({ n: mailBusinessPlan?.MaxAddresses ?? 15 }),
-        getB2BNDomainsFeature(mailBusinessPlan?.MaxDomains ?? 10),
-        getVPNConnections(1),
-        getCustomBranding(true),
-        getSentinel(true),
-    ];
-
-    return getUpsell({
-        plan: PLANS.MAIL_BUSINESS,
-        plansMap,
-        features,
-        upsellPath: DASHBOARD_UPSELL_PATHS.MAILEPRO,
-        onUpgrade: () =>
-            openSubscriptionModal({
-                cycle: defaultUpsellCycleB2B,
-                plan: PLANS.MAIL_BUSINESS,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
-            }),
-        ...rest,
-    });
-};
-
 const getBundleProUpsell = ({
     plansMap,
     openSubscriptionModal,
@@ -704,6 +665,53 @@ const getBundleProUpsell = ({
     const features: MaybeUpsellFeature[] = [
         hasDriveBusinessPlan ? getStorageFeatureB2B(storageBytes, {}) : getStorageBoostFeatureB2B(businessStorage),
         getB2BNDomainsFeature(bundleProPlan?.MaxDomains ?? 15),
+        getNCalendarsPerUserFeature(MAX_CALENDARS_PAID),
+        getCollaborate(),
+        getVersionHistory('10y'),
+        getPasswordManager(),
+        getVaultSharingB2B('unlimited'),
+        getB2BHighSpeedVPNConnectionsFeature(),
+        getSentinel(true),
+        getPhoneSupport(),
+    ];
+
+    return getUpsell({
+        plan,
+        plansMap,
+        features: features.filter((item): item is UpsellFeature => isTruthy(item)),
+        upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                plan,
+                cycle: defaultUpsellCycleB2B,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
+const getBundleBizUpsell = ({
+    plansMap,
+    openSubscriptionModal,
+    hasDriveBusinessPlan = false,
+    ...rest
+}: GetPlanUpsellArgs): MaybeUpsell => {
+    const plan = PLANS.BUNDLE_BIZ_2025;
+    const bundleBizPlan = plansMap[plan];
+    if (!bundleBizPlan) {
+        return null;
+    }
+
+    const storageBytes = bundleBizPlan?.MaxSpace ?? 1099511627776;
+    const businessStorage = humanSize({ bytes: storageBytes, fraction: 0, unitOptions: { max: 'TB' } });
+
+    const features: MaybeUpsellFeature[] = [
+        hasDriveBusinessPlan ? getStorageFeatureB2B(storageBytes, {}) : getStorageBoostFeatureB2B(businessStorage),
+        getB2BNDomainsFeature(bundleBizPlan?.MaxDomains ?? 20),
         getNCalendarsPerUserFeature(MAX_CALENDARS_PAID),
         getCollaborate(),
         getVersionHistory('10y'),
@@ -801,6 +809,8 @@ type ResolveUpsellsToDisplayProps = {
     openSubscriptionModal: OpenSubscriptionModalCallback;
     canAccessDuoPlan?: boolean;
     user: UserModel;
+    isReferralExpansionEnabled?: boolean;
+    isMeetPlansEnabled?: boolean;
 };
 
 export const resolveUpsellsToDisplay = ({
@@ -813,6 +823,8 @@ export const resolveUpsellsToDisplay = ({
     isFree,
     canAccessDuoPlan,
     user,
+    isReferralExpansionEnabled,
+    isMeetPlansEnabled,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
     if (!subscription) {
@@ -839,7 +851,24 @@ export const resolveUpsellsToDisplay = ({
         const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
         const hasLumoFree = isFree && app === APPS.PROTONLUMO;
 
+        // Please remove this once bundlebiz2025 is available for all users.
+        const bundleBizExists = plansMap[PLANS.BUNDLE_BIZ_2025] !== undefined;
+
         switch (true) {
+            case Boolean(
+                isTrial(subscription) && hasMail(subscription) && subscription.PeriodEnd && !isReferralExpansionEnabled
+            ):
+                return [
+                    getMailPlusUpsell({ ...upsellsPayload, isTrialEnding: true }),
+                    getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
+                ];
+            case Boolean(
+                isTrial(subscription) &&
+                hasBundle(subscription) &&
+                subscription.PeriodEnd &&
+                !isReferralExpansionEnabled
+            ):
+                return [getBundleUpsell({ ...upsellsPayload, isTrialEnding: true })];
             case Boolean(hasMailFree):
                 return [
                     getMailPlusUpsell({ ...upsellsPayload }),
@@ -893,15 +922,17 @@ export const resolveUpsellsToDisplay = ({
                         isRecommended: true,
                     }),
                 ];
-            case hasMailPro(subscription):
-                return [getMailBusinessUpsell(upsellsPayload)];
-            case hasMailBusiness(subscription) || hasDriveBusiness(subscription):
-                return [
-                    getBundleProUpsell({
-                        ...upsellsPayload,
-                        hasDriveBusinessPlan: hasDriveBusiness(subscription),
-                    }),
-                ];
+            case hasMailPro(subscription) ||
+                hasMailBusiness(subscription) ||
+                hasDriveBusiness(subscription) ||
+                hasDrivePro(subscription): {
+                const params = {
+                    ...upsellsPayload,
+                    hasDriveBusinessPlan: hasDriveBusiness(subscription),
+                };
+                return [getBundleProUpsell(params), getBundleBizUpsell(params)];
+            }
+
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVPNPassProUpsell(upsellsPayload)];
             case hasVpnBusiness(subscription):
@@ -909,15 +940,32 @@ export const resolveUpsellsToDisplay = ({
                     isTruthy
                 );
 
-            case hasLumoBusiness(subscription):
+            case hasLumoBusiness(subscription): {
+                const description = c('lumo_signup_2025: Info')
+                    .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`;
                 return [
                     getBundleProUpsell({
                         ...upsellsPayload,
                         addons: { [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 },
-                        description: c('lumo_signup_2025: Info')
-                            .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`,
+                        description,
                     }),
+                    getBundleBizUpsell({ ...upsellsPayload, description }),
                 ];
+            }
+
+            // If user has the old bundlepro2022 and there is bundlebiz2025 available then it means that we renamed our
+            // bundlepro2024 to Workspace Standard and added the new features to it. In this case it makes sense to
+            // upsell bundlepro2022 users to the updated and extended bundlepro2024 (and bundlebiz2025 of course).
+            case hasBundlePro(subscription) && bundleBizExists:
+                return [getBundleProUpsell(upsellsPayload), getBundleBizUpsell(upsellsPayload)];
+
+            // But if bundlebiz2025 is not available yet then it means that bundlepro2024 is still called PBS. In this
+            // case we shouldn't show any upsell to avoid confusion.
+            case hasBundlePro(subscription) && !bundleBizExists:
+                return [];
+
+            case hasBundlePro2024(subscription):
+                return [getBundleBizUpsell(upsellsPayload)];
 
             case hasVPNPassProfessional(subscription):
                 return [getBundleProUpsell(upsellsPayload)];

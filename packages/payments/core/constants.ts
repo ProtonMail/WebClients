@@ -163,6 +163,10 @@ export enum ADDON_NAMES {
     // lumobiz2025
     MEMBER_LUMO_BUSINESS = `${ADDON_PREFIXES.MEMBER}-lumobiz2025`,
 
+    // meetbiz2025
+    MEMBER_MEET_BUSINESS = `${ADDON_PREFIXES.MEMBER}-meetbiz2025`,
+    LUMO_MEET_BUSINESS = `${ADDON_PREFIXES.LUMO}-meetbiz2025`,
+
     // vpnpassbiz2025
     MEMBER_VPN_PASS_BUNDLE_BUSINESS = `${ADDON_PREFIXES.MEMBER}-vpnpassbiz2025`,
     LUMO_VPN_PASS_BUNDLE_BUSINESS = `${ADDON_PREFIXES.LUMO}-vpnpassbiz2025`,
@@ -239,6 +243,10 @@ export const AddonFeatureLimitKeyMapping: Readonly<{
 
     // lumobiz2025
     [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: 'MaxMembers',
+
+    // meetbiz2025
+    [ADDON_NAMES.MEMBER_MEET_BUSINESS]: 'MaxMembers',
+    [ADDON_NAMES.LUMO_MEET_BUSINESS]: 'MaxLumo',
 
     // vpnpassbiz2025
     [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: 'MaxMembers',
@@ -337,6 +345,10 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     // lumobiz2025
     [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: MAX_MEMBER_ADDON,
 
+    // meetbiz2025
+    [ADDON_NAMES.MEMBER_MEET_BUSINESS]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.LUMO_MEET_BUSINESS]: MAX_MEMBER_LUMO_ADDON,
+
     // vpnpassbiz2025
     [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.LUMO_VPN_PASS_BUNDLE_BUSINESS]: MAX_LUMO_ADDON,
@@ -395,6 +407,7 @@ export enum PLANS {
     PASS_LIFETIME = 'passlifetime2024',
     LUMO = 'lumo2024',
     LUMO_BUSINESS = 'lumobiz2025',
+    MEET_BUSINESS = 'meetbiz2025',
     VPN_PASS_BUNDLE_BUSINESS = 'vpnpassbiz2025',
 }
 
@@ -427,6 +440,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
     [PLANS.PASS_FAMILY]: 'Pass Family',
     [PLANS.PASS_LIFETIME]: 'Pass + SimpleLogin Lifetime',
+    [PLANS.MEET_BUSINESS]: 'Meet Professional',
     [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 'VPN and Pass Professional',
 };
 
