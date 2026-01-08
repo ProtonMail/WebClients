@@ -409,6 +409,7 @@ export const SSO_PATHS = {
     LUMO_SIGN_IN: '/lumo',
     DESKTOP_SIGN_IN: '/desktop/login',
     MEET_SIGNUP: '/meet/signup',
+    MEET_SIGNUP_B2B: '/meet/signup/business',
     MEET_SIGN_IN: '/meet',
     SIGNUP: '/signup',
     START: '/start',
@@ -822,6 +823,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     DUO = 'duo-dashboard',
     BUSINESS = 'business-dashboard',
     LUMO = 'lumo-dashboard',
+    MEET = 'meet-dashboard',
 }
 
 export type UPSELL_FEATURE =

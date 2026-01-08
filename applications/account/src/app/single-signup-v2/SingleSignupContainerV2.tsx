@@ -195,6 +195,7 @@ const SingleSignupContainerV2 = ({
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
+    const isMeetPlansEnabled = useFlag('MeetPlans');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -206,6 +207,7 @@ const SingleSignupContainerV2 = ({
                 SSO_PATHS.DRIVE_SIGNUP_B2B,
                 SSO_PATHS.CALENDAR_SIGNUP_B2B,
                 SSO_PATHS.LUMO_SIGNUP_B2B,
+                SSO_PATHS.MEET_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
             ].includes(location.pathname as any)
         ) {
@@ -279,6 +281,7 @@ const SingleSignupContainerV2 = ({
             model: defaultSignupModel,
             vpnServersCountData: defaultSignupModel.vpnServersCountData,
             isNewB2BPlanEnabled,
+            isMeetPlansEnabled,
         });
 
         const planParameters = getPlanIDsFromParamsWithForcedAddons({
@@ -333,6 +336,7 @@ const SingleSignupContainerV2 = ({
         model,
         vpnServersCountData,
         isNewB2BPlanEnabled,
+        isMeetPlansEnabled,
     });
     const {
         planCards,

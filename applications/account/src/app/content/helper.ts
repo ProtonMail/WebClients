@@ -109,6 +109,9 @@ export const getSignupUrl = (
         if (getIsLumoApp(app)) {
             return { path: SSO_PATHS.LUMO_SIGNUP, params };
         }
+        if (getIsMeetApp(app)) {
+            return { path: SSO_PATHS.MEET_SIGNUP, params };
+        }
 
         if (productParam === 'business') {
             return { path: SSO_PATHS.BUSINESS_SIGNUP, params };

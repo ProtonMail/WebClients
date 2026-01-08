@@ -220,6 +220,7 @@ export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_FAMILY);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
 export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
+export const hasMeetBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
 // including 2 versions of bundlepro + bundlebiz2025
@@ -410,6 +411,7 @@ const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.PASS_BUSINESS,
     PLANS.LUMO_BUSINESS,
     PLANS.VPN_PASS_BUNDLE_BUSINESS,
+    PLANS.MEET_BUSINESS,
 ]);
 export const getHasExternalMemberCapableB2BPlan = (subscription: MaybeFreeSubscription) => {
     return subscription?.Plans?.some((plan) => externalMemberB2BPlans.has(plan.Name)) || false;
@@ -896,6 +898,7 @@ const plansWithAutomatic12mTo24mDowncycling: Record<PLANS, boolean> = {
     [PLANS.MAIL]: true,
     [PLANS.MAIL_PRO]: false,
     [PLANS.MAIL_BUSINESS]: false,
+    [PLANS.MEET_BUSINESS]: false,
     [PLANS.VPN]: false,
     [PLANS.VPN2024]: true,
     [PLANS.BUNDLE]: true,

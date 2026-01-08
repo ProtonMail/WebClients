@@ -30,7 +30,7 @@ import {
     hasVpnBusiness,
     isTrial,
 } from '@proton/payments';
-import { getHasVpnOnlyB2BPlan } from '@proton/payments/core/subscription/helpers';
+import { getHasVpnOnlyB2BPlan, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -45,6 +45,7 @@ import percentage from '@proton/utils/percentage';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
 import { getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
+import { getMeetBusinessFeatures, getMeetFreeFeatures } from '../../../features/meet';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -348,6 +349,22 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
+    const getMeetFree = () => {
+        return (
+            <StripedList alternate={alternate}>
+                <SubscriptionItems user={user} items={getMeetFreeFeatures()} />
+            </StripedList>
+        );
+    };
+
+    const getMeetBusiness = () => {
+        return (
+            <StripedList alternate={alternate}>
+                <SubscriptionItems user={user} items={getMeetBusinessFeatures()} />
+            </StripedList>
+        );
+    };
+
     const getDriveAppB2B = () => {
         const items: (Item | false)[] = [b2bUsersItem, getVersionHistory(365), getBasicFeatures()];
 
@@ -546,6 +563,12 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     }
                     if (user.isFree && app === APPS.PROTONLUMO) {
                         return getLumoFree();
+                    }
+                    if (hasMeetBusiness(subscription)) {
+                        return getMeetBusiness();
+                    }
+                    if (user.isFree && app === APPS.PROTONMEET) {
+                        return getMeetFree();
                     }
                     if (hasDriveBusiness(subscription)) {
                         return getDriveAppB2B();

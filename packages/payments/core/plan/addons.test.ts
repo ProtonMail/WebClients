@@ -311,6 +311,7 @@ describe('getSupportedAddons', () => {
                 PLANS.PASS_BUSINESS,
                 PLANS.LUMO_BUSINESS,
                 PLANS.VPN_PASS_BUNDLE_BUSINESS,
+                PLANS.MEET_BUSINESS,
             ];
 
             expect(plansWithAddons.sort()).toEqual(expectedPlansWithAddons.sort());
