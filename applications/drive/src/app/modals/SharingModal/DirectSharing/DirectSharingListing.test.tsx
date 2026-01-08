@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 
+import type { DirectMember } from '../interfaces';
 import { MemberType } from '../interfaces';
 import { DirectSharingListing } from './DirectSharingListing';
 
@@ -25,28 +26,14 @@ jest.mock('./helpers/getContactNameAndEmail', () => ({
     }),
 }));
 
-jest.mock('../RoleDropdownMenu', () => ({
-    RoleDropdownMenu: ({
-        selectedRole,
-        disabled,
-        isLoading,
-        onChangeRole,
-        onRemoveAccess,
-        onResendInvitationEmail,
-        onCopyInvitationLink,
-    }: any) => (
-        <div data-testid="role-dropdown-menu">
-            <button disabled={disabled || isLoading} onClick={() => onChangeRole && onChangeRole(MemberRole.Editor)}>
-                {selectedRole}
-            </button>
-            {onRemoveAccess && <button onClick={onRemoveAccess}>Remove</button>}
-            {onResendInvitationEmail && <button onClick={onResendInvitationEmail}>Resend</button>}
-            {onCopyInvitationLink && <button onClick={onCopyInvitationLink}>Copy Link</button>}
-            <span data-testid="has-resend">{onResendInvitationEmail ? 'true' : 'false'}</span>
-            <span data-testid="has-copy">{onCopyInvitationLink ? 'true' : 'false'}</span>
-        </div>
-    ),
-}));
+const MEMBERS: DirectMember[] = [
+    {
+        inviteeEmail: 'john@example.com',
+        role: MemberRole.Viewer,
+        type: MemberType.ProtonInvitation,
+        uid: 'invitation-1',
+    },
+];
 
 describe('DirectSharingListing', () => {
     const defaultProps = {
@@ -101,7 +88,7 @@ describe('DirectSharingListing', () => {
     });
 
     it('renders members list with/without contact names', () => {
-        const members = [
+        const members: DirectMember[] = [
             {
                 inviteeEmail: 'john@example.com',
                 role: MemberRole.Viewer,
@@ -138,75 +125,40 @@ describe('DirectSharingListing', () => {
         expect(screen.getAllByText('unknown@example.com')).toHaveLength(1);
     });
 
-    it('passes correct props to RoleDropdownMenu', () => {
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
+    it('renders member dropdown with correct role', () => {
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} />);
 
-        render(<DirectSharingListing {...defaultProps} members={members} />);
-
-        expect(screen.getByTestId('role-dropdown-menu')).toBeInTheDocument();
-        expect(screen.getByText('viewer')).toBeInTheDocument();
+        expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
+        expect(screen.getByText('Viewer')).toBeInTheDocument();
     });
 
-    it('disables RoleDropdownMenu when viewOnly is true', () => {
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
+    it('disables dropdown when viewOnly is true', () => {
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} viewOnly={true} />);
 
-        render(<DirectSharingListing {...defaultProps} members={members} viewOnly={true} />);
-
-        expect(screen.getByText('viewer')).toBeDisabled();
+        expect(screen.getByText('Viewer')).toBeDisabled();
     });
 
     it('calls onChangeRole when role is changed', async () => {
         const onChangeRole = jest.fn().mockResolvedValue(undefined);
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
 
-        render(<DirectSharingListing {...defaultProps} members={members} onChangeRole={onChangeRole} />);
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} onChangeRole={onChangeRole} />);
 
-        const roleButton = screen.getByText('viewer');
-        await user.click(roleButton);
+        // Open the dropdown
+        await user.click(screen.getByTestId('dropdown-button'));
+
+        // Click on Editor role option
+        await user.click(screen.getByText('Editor'));
 
         expect(onChangeRole).toHaveBeenCalledWith('john@example.com', MemberRole.Editor);
     });
 
-    it('calls onRemove when remove button is clicked', async () => {
+    it('calls onRemove when remove access is clicked', async () => {
         const onRemove = jest.fn().mockResolvedValue(undefined);
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
 
-        render(<DirectSharingListing {...defaultProps} members={members} onRemove={onRemove} />);
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} onRemove={onRemove} />);
 
-        const removeButton = screen.getByText('Remove');
-        await user.click(removeButton);
+        await user.click(screen.getByTestId('dropdown-button'));
+        await user.click(screen.getByText('Remove access'));
 
         await waitFor(() => {
             expect(onRemove).toHaveBeenCalledWith('john@example.com');
@@ -215,20 +167,11 @@ describe('DirectSharingListing', () => {
 
     it('calls onResendInvitation for ProtonInvitation', async () => {
         const onResendInvitation = jest.fn().mockResolvedValue(undefined);
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
 
-        render(<DirectSharingListing {...defaultProps} members={members} onResendInvitation={onResendInvitation} />);
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} onResendInvitation={onResendInvitation} />);
 
-        const resendButton = screen.getByText('Resend');
-        await user.click(resendButton);
+        await user.click(screen.getByTestId('dropdown-button'));
+        await user.click(screen.getByText('Resend invite'));
 
         await waitFor(() => {
             expect(onResendInvitation).toHaveBeenCalledWith('invitation-1');
@@ -237,28 +180,19 @@ describe('DirectSharingListing', () => {
 
     it('calls onCopyInvitationLink for ProtonInvitation', async () => {
         const onCopyInvitationLink = jest.fn();
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                state: NonProtonInvitationState.Pending,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
 
         render(
-            <DirectSharingListing {...defaultProps} members={members} onCopyInvitationLink={onCopyInvitationLink} />
+            <DirectSharingListing {...defaultProps} members={MEMBERS} onCopyInvitationLink={onCopyInvitationLink} />
         );
 
-        const copyButton = screen.getByText('Copy Link');
-        await user.click(copyButton);
+        await user.click(screen.getByTestId('dropdown-button'));
+        await user.click(screen.getByText('Copy invite link'));
 
         expect(onCopyInvitationLink).toHaveBeenCalledWith('invitation-1', 'john@example.com');
     });
 
-    it('does not show resend and copy buttons for Member type', () => {
-        const members = [
+    it('does not show resend and copy options for Member type', async () => {
+        const members: DirectMember[] = [
             {
                 inviteeEmail: 'john@example.com',
                 role: MemberRole.Viewer,
@@ -269,14 +203,17 @@ describe('DirectSharingListing', () => {
 
         render(<DirectSharingListing {...defaultProps} members={members} />);
 
-        expect(screen.queryByText('Resend')).not.toBeInTheDocument();
-        expect(screen.queryByText('Copy Link')).not.toBeInTheDocument();
-        expect(screen.getByTestId('has-resend')).toHaveTextContent('false');
-        expect(screen.getByTestId('has-copy')).toHaveTextContent('false');
+        // Open the dropdown
+        await user.click(screen.getByTestId('dropdown-button'));
+
+        expect(screen.queryByText('Resend invite')).not.toBeInTheDocument();
+        expect(screen.queryByText('Copy invite link')).not.toBeInTheDocument();
+        // Remove access should still be available
+        expect(screen.getByText('Remove access')).toBeInTheDocument();
     });
 
-    it('does not show resend and copy buttons for NonProtonInvitation type', () => {
-        const members = [
+    it('does not show resend and copy options for NonProtonInvitation type', async () => {
+        const members: DirectMember[] = [
             {
                 inviteeEmail: 'john@example.com',
                 role: MemberRole.Viewer,
@@ -288,27 +225,23 @@ describe('DirectSharingListing', () => {
 
         render(<DirectSharingListing {...defaultProps} members={members} />);
 
-        expect(screen.queryByText('Resend')).not.toBeInTheDocument();
-        expect(screen.queryByText('Copy Link')).not.toBeInTheDocument();
-        expect(screen.getByTestId('has-resend')).toHaveTextContent('false');
-        expect(screen.getByTestId('has-copy')).toHaveTextContent('false');
+        // Open the dropdown
+        await user.click(screen.getByTestId('dropdown-button'));
+
+        expect(screen.queryByText('Resend invite')).not.toBeInTheDocument();
+        expect(screen.queryByText('Copy invite link')).not.toBeInTheDocument();
+        // Remove access should still be available
+        expect(screen.getByText('Remove access')).toBeInTheDocument();
     });
 
-    it('shows resend and copy buttons only for ProtonInvitation type', () => {
-        const members = [
-            {
-                inviteeEmail: 'john@example.com',
-                role: MemberRole.Viewer,
-                type: MemberType.ProtonInvitation,
-                uid: 'invitation-1',
-            },
-        ];
+    it('shows resend and copy options for ProtonInvitation type', async () => {
+        render(<DirectSharingListing {...defaultProps} members={MEMBERS} />);
 
-        render(<DirectSharingListing {...defaultProps} members={members} />);
+        // Open the dropdown
+        await user.click(screen.getByTestId('dropdown-button'));
 
-        expect(screen.getByText('Resend')).toBeInTheDocument();
-        expect(screen.getByText('Copy Link')).toBeInTheDocument();
-        expect(screen.getByTestId('has-resend')).toHaveTextContent('true');
-        expect(screen.getByTestId('has-copy')).toHaveTextContent('true');
+        expect(screen.getByText('Resend invite')).toBeInTheDocument();
+        expect(screen.getByText('Copy invite link')).toBeInTheDocument();
+        expect(screen.getByText('Remove access')).toBeInTheDocument();
     });
 });
