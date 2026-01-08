@@ -23,7 +23,6 @@ import { ProgressiveMarkdownRenderer } from './ProgressiveMarkdownRenderer';
  */
 
 const STREAMING_UPDATE_INTERVAL = 50; // Update every 50ms during streaming (smoother)
-const RENDER_RAW_TEXT_THRESHOLD = 8000; // Show raw text for content > 8KB during streaming
 
 interface StreamingMarkdownProps {
     message: Message;

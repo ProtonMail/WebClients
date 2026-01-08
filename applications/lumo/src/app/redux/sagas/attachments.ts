@@ -189,8 +189,24 @@ export function* softDeleteAttachmentFromRemote({ payload: localId }: { payload:
 export function* softDeleteAttachmentFromLocal({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
+    
+    // Get user ID for search service cleanup
+    const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+    
     yield put(deleteAttachment(localId)); // Redux
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: true }); // IDB
+    
+    // Clean up search index for this attachment
+    if (userId) {
+        try {
+            const SearchService = yield call(() => import('../../../services/search/searchService').then(m => m.SearchService));
+            const searchService = SearchService.get(userId);
+            searchService.removeDocument(localId);
+            console.log('[Attachment] Removed from search index:', localId);
+        } catch (error) {
+            console.error('[Attachment] Failed to remove from search index:', error);
+        }
+    }
 }
 
 /*** loggers ***/
