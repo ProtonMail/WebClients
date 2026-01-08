@@ -14,6 +14,7 @@ import {
     isMail,
     isUpgradeURL,
     isUpsellURL,
+    isZoomAuthURL,
 } from "../urls/urlTests";
 import {
     getAccountView,
@@ -215,7 +216,7 @@ export function handleWebContents(contents: WebContents) {
             return { action: "allow" };
         };
 
-        if (isGoogleOAuthAuthorizationURL(url)) {
+        if (isGoogleOAuthAuthorizationURL(url) || isZoomAuthURL(url)) {
             if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
             return allow(`oauth process enabled, opening in new electron window ${url}`);
         }
