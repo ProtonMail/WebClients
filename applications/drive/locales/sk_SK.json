@@ -516,6 +516,9 @@
       "Get link": [
         "Získať odkaz"
       ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
+      ],
       "Get secure storage for ${ simplePriceString }": [
         "Získať bezpečné úložisko za ${ simplePriceString }"
       ],
@@ -1698,6 +1701,12 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložisko"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložisko pre emaily"
