@@ -19,7 +19,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/pdf'],
         description: 'PDF Document',
         category: 'document',
-        pandocFormat: 'pdf'
+        // No pandocFormat - uses pdfParse library for text extraction, handled separately in worker
     },
     word: {
         extensions: ['doc', 'docx'],
@@ -49,14 +49,14 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
         description: 'Excel Document',
         category: 'spreadsheet',
-        pandocFormat: 'csv'
+        // No pandocFormat - uses ExcelJS library for conversion, handled separately in worker
     },
     csv: {
         extensions: ['csv'],
         mimeTypes: ['text/csv', 'application/csv'],
         description: 'CSV',
         category: 'spreadsheet',
-        pandocFormat: 'csv'
+        // No pandocFormat - already plain text, decoded directly as UTF-8
     },
 
     // Note: PowerPoint presentations are not supported
@@ -68,35 +68,35 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/plain'],
         description: 'Text File',
         category: 'text',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     markdown: {
         extensions: ['md', 'markdown'],
         mimeTypes: ['text/markdown', 'text/x-markdown'],
         description: 'Markdown Document',
         category: 'text',
-        pandocFormat: 'markdown'
+        // No pandocFormat - already plain text, no conversion needed
     },
     html: {
         extensions: ['html', 'htm'],
         mimeTypes: ['text/html'],
         description: 'HTML Document',
         category: 'web',
-        pandocFormat: 'html'
+        // No pandocFormat - HTML is already readable by LLMs, processed as plain text
     },
     latex: {
         extensions: ['latex', 'tex'],
         mimeTypes: ['text/latex'],
         description: 'LaTeX Document',
         category: 'text',
-        pandocFormat: 'latex'
+        // No pandocFormat - already plain text, LLMs can read LaTeX markup directly
     },
     rst: {
         extensions: ['rst'],
         mimeTypes: ['text/rst'],
         description: 'reStructuredText',
         category: 'text',
-        pandocFormat: 'rst'
+        // No pandocFormat - already plain text, LLMs can read RST markup directly
     },
     asciidoc: {
         extensions: ['adoc', 'asciidoc', 'asc'],
@@ -112,21 +112,21 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/css'],
         description: 'CSS File',
         category: 'web',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     javascript: {
         extensions: ['js', 'mjs', 'jsx'],
         mimeTypes: ['application/javascript', 'text/javascript'],
         description: 'JavaScript File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     typescript: {
         extensions: ['ts', 'tsx'],
         mimeTypes: ['application/typescript', 'text/x-typescript'],
         description: 'TypeScript File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
 
     // Data formats
@@ -135,14 +135,14 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/json'],
         description: 'JSON File',
         category: 'config',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     xml: {
         extensions: ['xml'],
         mimeTypes: ['application/xml', 'text/xml'],
         description: 'XML File',
         category: 'config',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
 
     // Configuration files
@@ -151,21 +151,21 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['application/yaml', 'text/yaml', 'application/x-yaml', 'text/x-yaml'],
         description: 'YAML File',
         category: 'config',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     toml: {
         extensions: ['toml'],
         mimeTypes: ['application/toml', 'text/toml'],
         description: 'TOML File',
         category: 'config',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     ini: {
         extensions: ['ini', 'cfg', 'conf', 'properties', 'env'],
         mimeTypes: ['text/plain'],
         description: 'Configuration File',
         category: 'config',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
 
     // Log files
@@ -174,7 +174,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/x-log', 'application/x-log'],
         description: 'Log File',
         category: 'log',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
 
     // Programming languages
@@ -239,49 +239,49 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/plain'],
         description: 'Swift File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     kotlin: {
         extensions: ['kt'],
         mimeTypes: ['text/plain'],
         description: 'Kotlin File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     scala: {
         extensions: ['scala'],
         mimeTypes: ['text/plain'],
         description: 'Scala File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     clojure: {
         extensions: ['clj'],
         mimeTypes: ['text/plain'],
         description: 'Clojure File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     haskell: {
         extensions: ['hs'],
         mimeTypes: ['text/plain'],
         description: 'Haskell File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     ocaml: {
         extensions: ['ml'],
         mimeTypes: ['text/plain'],
         description: 'OCaml File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     r: {
         extensions: ['r'],
         mimeTypes: ['text/plain'],
         description: 'R File',
         category: 'code',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     sql: {
         extensions: ['sql'],
@@ -371,56 +371,56 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         mimeTypes: ['text/plain'],
         description: 'Dockerfile',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     makefile: {
         extensions: ['makefile'],
         mimeTypes: ['text/plain'],
         description: 'Makefile',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     cmake: {
         extensions: ['cmake'],
         mimeTypes: ['text/plain'],
         description: 'CMake File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     gradle: {
         extensions: ['gradle'],
         mimeTypes: ['text/plain'],
         description: 'Gradle File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     maven: {
         extensions: ['maven'],
         mimeTypes: ['text/plain'],
         description: 'Maven File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     sbt: {
         extensions: ['sbt'],
         mimeTypes: ['text/plain'],
         description: 'SBT File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     cargo: {
         extensions: ['cargo'],
         mimeTypes: ['text/plain'],
         description: 'Cargo File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     lockfile: {
         extensions: ['lock'],
         mimeTypes: ['text/plain'],
         description: 'Lock File',
         category: 'build',
-        pandocFormat: 'markdown'
+        // No pandocFormat - processed as plain text
     },
     gitignore: {
         extensions: ['gitignore'],
@@ -609,7 +609,11 @@ export function shouldProcessAsPlainText(mimeType: string): boolean {
         'application/x-ruby',
         'text/x-c++src',
 
-        // Text and markup formats (processed as plain text, no Pandoc)
+        // Text and markup formats (already plain text, LLMs can read them directly)
+        'text/markdown',
+        'text/x-markdown',
+        'text/latex',
+        'text/rst',
         'text/asciidoc',
         'text/x-asciidoc',
 
@@ -648,19 +652,13 @@ export function needsPandocConversion(mimeType: string): boolean {
     // Normalize mimeType by converting to lowercase and trimming
     const normalizedMime = mimeType.toLowerCase().trim();
 
-    // Files that actually benefit from Pandoc conversion
+    // Only binary document formats that need text extraction via Pandoc
     const pandocTypes = new Set([
-        // Markup formats that benefit from conversion
-        'text/markdown',
-        'text/x-markdown',
-        'text/latex',
-        'text/rst',
-
-        // Document formats (handled by Pandoc)
+        // Binary document formats (need Pandoc to extract text)
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.oasis.opendocument.text',
-        'application/rtf',
+        'application/rtf',  // RTF has control codes, needs conversion to clean text
     ]);
 
     return pandocTypes.has(normalizedMime);
