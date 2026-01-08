@@ -310,6 +310,9 @@
       "Edit vault": [
         "Redigera valv"
       ],
+      "Enable": [
+        "Aktivera"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktivera ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Nätverksfel"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Offlineläge är för närvarande inte tillgängligt för tvålösenordsläge."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Offlineläge är för närvarande inte tillgängligt för ditt paket och inte kompatibelt med två lösenordsläge."
-      ],
       "Passphrase is incorrect": [
         "Lösenfras är fel"
       ],
@@ -1472,9 +1469,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } kommer att kräva ditt ${ BRAND_NAME }-lösenord för att komma åt data offline."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } inbjudan skickad",
@@ -1966,6 +1960,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2054,9 +2052,6 @@
       "Please check your spam folder or try resending the code.": [
         "Kontrollera din skräppostmapp eller försök att skicka koden igen."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att inaktivera offlineläge"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att aktivera offlineläge"
       ],
@@ -2071,9 +2066,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bekräfta ditt reservlösenord för att låsa automatiskt med ditt lösenord."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Bekräfta ditt reservlösenord för att inaktivera offlineläge"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Bekräfta ditt reservlösenord för att aktivera offlineläge"
@@ -2095,9 +2087,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekräfta ditt extra lösenord för att låsa automatiskt med ditt extra lösenord."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Bekräfta ditt extra lösenord för att inaktivera offlineläge"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Bekräfta ditt extra lösenord för att aktivera offlineläge"
@@ -2140,9 +2129,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bekräfta ditt andra lösenord för att låsa automatiskt med ditt lösenord."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Bekräfta ditt andra lösenord för att inaktivera offlineläge"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Bekräfta ditt andra lösenord för att aktivera offlineläge"
@@ -4687,6 +4673,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Setup offline mode": [
+        "Ställ in offlineläge"
       ],
       "Share vaults with your team": [
         "Dela valv med ditt team"

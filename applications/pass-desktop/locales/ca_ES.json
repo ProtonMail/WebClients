@@ -310,6 +310,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Enable": [
+        "Activa"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Error de xarxa"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Actualment, el mode fora de línia no està disponible per al mode de dues contrasenyes."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Actualment, el mode fora de línia no està disponible per al vostre pla i no és compatible amb el mode de dues contrasenyes."
-      ],
       "Passphrase is incorrect": [
         "La frase de contrasenya no és correcta"
       ],
@@ -1473,8 +1470,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes, targetes de crèdit i identitats."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } us demanarà la contrasenya ${ BRAND_NAME } per a accedir a les dades fora de línia."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "S'ha habilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
       ],
       "${ payload.count } invite successfully sent": [
         "S'ha enviat ${ payload.count } invitació.",
@@ -1740,6 +1737,9 @@
       "Enable auto-locking to secure your data": [
         "Activeu el bloqueig automàtic per protegir les vostres dades"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Habiliteu el mode fora de línia per a accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
+      ],
       "Enabling biometrics auto-lock": [
         "Activant el bloqueig automàtic biomètric"
       ],
@@ -1967,7 +1967,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2057,9 +2058,6 @@
       "Please check your spam folder or try resending the code.": [
         "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Confirmeu la contrasenya de ${ BRAND_NAME } per a desactivar el mode fora de línia."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a activar el mode fora de línia."
       ],
@@ -2074,9 +2072,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirmeu la contrasenya de recuperació per tal de bloquejar-la automàticament amb la vostra contrasenya."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Confirmeu la contrasenya de recuperació per a desactivar el mode fora de línia."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Confirmeu la contrasenya de recuperació per a activar el mode fora de línia."
@@ -2098,9 +2093,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirmeu la vostra contrasenya addicional per tal de bloquejar automàticament l'aplicació amb ella."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Confirmeu la contrasenya addicional per a desactivar el mode fora de línia."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Confirmeu la contrasenya addicional per a activar el mode fora de línia."
@@ -2143,9 +2135,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirmeu la segona contrasenya per tal de bloquejar-la automàticament amb la vostra contrasenya."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Confirmeu la segona contrasenya per a desactivar el mode fora de línia."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirmeu la segona contrasenya per a activar el mode fora de línia."
@@ -2506,6 +2495,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quan creeu o editeu un inici de sessió a ${ PASS_APP_NAME }, l'entrada «nom d'usuari» sempre serà visible."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quan estigui habilitada, encara podreu accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Quan envieu un correu electrònic des d'aquest àlies, el correu electrònic mostrarà ${ emailSender } com a remitent."
@@ -4700,6 +4692,9 @@
       "Settings": [
         "Preferències"
       ],
+      "Setup offline mode": [
+        "Configureu el mode fora de línia"
+      ],
       "Share vaults with your team": [
         "Compartiu caixes fortes amb el vostre equip"
       ],
@@ -4851,6 +4846,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "S'ha deshabilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
       ],
       "2 consecutive dots are not allowed": [
         "No es permet l'ús de 2 punts consecutius."

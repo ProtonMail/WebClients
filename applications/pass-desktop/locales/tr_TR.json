@@ -310,6 +310,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Enable": [
+        "Aç"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini aç"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Ağ sorunu"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Çevrim dışı kip şu anda iki parola kipinde kullanılamaz."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Çevrim dışı kip şu anda tarifenizde kullanılamaz ve iki parola kipi ile uyumlu değil."
-      ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
       ],
@@ -1473,8 +1470,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } uygulaması verilere çevrim dışı erişebilmek için ${ BRAND_NAME } parolanızı isteyecek."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } davet gönderildi",
@@ -1740,6 +1737,9 @@
       "Enable auto-locking to secure your data": [
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişim için çevrim dışı kipi kullanıma alın."
+      ],
       "Enabling biometrics auto-lock": [
         "Otomatik biyometri kilidi kullanıma alınıyor"
       ],
@@ -1967,7 +1967,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2057,9 +2058,6 @@
       "Please check your spam folder or try resending the code.": [
         "Lütfen istenmeyen klasörünüzü denetleyin ya da kodu yeniden göndermeyi deneyin."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Çevrim dışı kipini kapatmak için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Çevrim dışı kipini açmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
@@ -2074,9 +2072,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitleme yapabilmek için lütfen yedek parolanızı yazın."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Çevrim dışı kipini kapatmak için lütfen yedek parolanızı yazın"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Çevrim dışı kipini açmak için lütfen yedek parolanızı yazın"
@@ -2098,9 +2093,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Çevrim dışı kipini kapatmak için lütfen ek parolanızı yazın"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Çevrim dışı kipini açmak için lütfen ek parolanızı yazın"
@@ -2143,9 +2135,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitleme yapabilmek için lütfen ikinci parolanızı onaylayın."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Çevrim dışı kipini kapatmak için lütfen ikinci parolanızı onaylayın"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Çevrim dışı kipini kullanıma almak için lütfen ikinci parolanızı onaylayın"
@@ -2506,6 +2495,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Bu kullanıma alınırsa internet bağlantınızı kaybetseniz veya ${ BRAND_NAME } sunucularına ulaşılamasa dahi ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Bu takma addan gönderilecek e-postaların göndericisi olarak ${ emailSender } görüntülenecek."
@@ -4700,6 +4692,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Setup offline mode": [
+        "Çevrim dışı kipi kur"
+      ],
       "Share vaults with your team": [
         "Kasaları ekibinizle paylaşın"
       ],
@@ -4851,6 +4846,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi kapatıldı."
       ],
       "2 consecutive dots are not allowed": [
         "Arka arka 2 nokta yazılamaz"

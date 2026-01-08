@@ -310,6 +310,9 @@
       "Edit vault": [
         "Επεξεργασία κρύπτης"
       ],
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Σφάλμα δικτύου"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Η λειτουργία εκτός σύνδεσης δεν είναι προς το παρόν διαθέσιμη για το πλάνο σας και δεν είναι συμβατή με τη λειτουργία δύο κωδικών πρόσβασης."
-      ],
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
       ],
@@ -1473,8 +1470,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης ενεργοποιημένη."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } πρόσκληση στάλθηκε με επιτυχία",
@@ -1740,6 +1737,9 @@
       "Enable auto-locking to secure your data": [
         "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ενεργοποιήστε τη λειτουργία εκτός σύνδεσης για να έχετε πρόσβαση στα δεδομένα σας ${ PASS_SHORT_APP_NAME } σε περίπτωση απώλειας σύνδεσης στο διαδίκτυο ή αν οι διακομιστές ${ BRAND_NAME } δεν είναι προσβάσιμοι."
+      ],
       "Enabling biometrics auto-lock": [
         "Ενεργοποίηση αυτόματου κλειδώματος βιομετρικών στοιχείων"
       ],
@@ -1966,6 +1966,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2054,9 +2058,6 @@
       "Please check your spam folder or try resending the code.": [
         "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να απενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
@@ -2071,9 +2072,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασής σας για να απενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασής σας για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
@@ -2095,9 +2093,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με τον επιπλέον κωδικό πρόσβασής σας."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να απενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
@@ -2140,9 +2135,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για αυτόματο κλείδωμα με τον κωδικό πρόσβασής σας."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για να απενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
@@ -2503,6 +2495,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Κατά τη δημιουργία/επεξεργασία μιας σύνδεσης στο ${ PASS_APP_NAME } η είσοδος 'όνομα χρήστη' θα είναι πάντα ορατή."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Όταν είναι ενεργοποιημένη, μπορείτε να συνεχίσετε να έχετε πρόσβαση στα δεδομένα σας ${ PASS_SHORT_APP_NAME } σε περίπτωση απώλειας σύνδεσης στο διαδίκτυο ή αν οι διακομιστές ${ BRAND_NAME } δεν είναι προσβάσιμοι."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Κατά την αποστολή ενός μηνύματος ηλεκτρονικού ταχυδρομείου από αυτό το ψευδώνυμο, το μήνυμα ηλεκτρονικού ταχυδρομείου θα εμφανίζει ως αποστολέα το ${ emailSender }."
@@ -4682,6 +4677,9 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Setup offline mode": [
+        "Ρύθμιση λειτουργίας εκτός σύνδεσης"
+      ],
       "Share vaults with your team": [
         "Κοινή χρήση κρυπτών με την ομάδα σας"
       ],
@@ -4833,6 +4831,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης απενεργοποιημένη."
       ],
       "2 consecutive dots are not allowed": [
         "2 διαδοχικές κουκκίδες δεν επιτρέπονται"
