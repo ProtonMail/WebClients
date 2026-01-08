@@ -40,10 +40,27 @@ export const useStuckTrackMonitor = ({
     const stuckCheckIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const defaultResetTrack = async (publication: RemoteTrackPublication) => {
+        // Check if publication is still valid before starting
+        if (!publication.track) {
+            return;
+        }
+
         publication.setEnabled(false);
         await wait(100);
+
+        // Check if publication is still valid before continuing
+        if (!publication.track) {
+            return;
+        }
+
         publication.setSubscribed(false);
         await wait(100);
+
+        // Check if publication is still valid before re-subscribing
+        if (!publication.track) {
+            return;
+        }
+
         publication.setSubscribed(true);
         publication.setEnabled(true);
     };
