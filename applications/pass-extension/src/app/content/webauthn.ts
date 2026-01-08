@@ -59,10 +59,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
             const result = await bridge.sendMessage(
                 {
                     type: WorkerMessageType.PASSKEY_CREATE,
-                    payload: {
-                        request: JSON.stringify(sanitizeBuffers(options.publicKey)),
-                        domain: location.hostname,
-                    },
+                    payload: { request: JSON.stringify(sanitizeBuffers(options.publicKey)) },
                 },
                 { timeout: options.publicKey.timeout, signal: options.signal }
             );
@@ -92,10 +89,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
             const result = await bridge.sendMessage(
                 {
                     type: WorkerMessageType.PASSKEY_GET,
-                    payload: {
-                        request: JSON.stringify(sanitizeBuffers(options.publicKey)),
-                        domain: location.hostname,
-                    },
+                    payload: { request: JSON.stringify(sanitizeBuffers(options.publicKey)) },
                 },
                 { timeout: options.publicKey.timeout, signal: options.signal }
             );
