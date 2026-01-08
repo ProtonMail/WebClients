@@ -283,6 +283,9 @@
       "Edit vault": [
         "금고 편집"
       ],
+      "Enable": [
+        "활성화"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 활성화"
       ],
@@ -1154,12 +1157,6 @@
       "Network error": [
         "네트워크 오류"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "현재 오프라인 모드에서는 2차 비밀번호 모드를 사용할 수 없습니다."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "현재 플랜에서는 오프라인 모드를 사용할 수 없으며 2차 비밀번호 모드와 호환되지 않습니다."
-      ],
       "Passphrase is incorrect": [
         "비밀번호가 올바르지 않습니다."
       ],
@@ -1424,9 +1421,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME }에서 오프라인 데이터 접근을 위해 ${ BRAND_NAME } 비밀번호를 필요로 합니다."
       ],
       "${ payload.count } invite successfully sent": [
         "초대 ${ payload.count }개를 성공적으로 보냈습니다."
@@ -1912,7 +1906,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2001,9 +1995,6 @@
       "Please check your spam folder or try resending the code.": [
         "스팸 폴더를 확인하거나 코드를 다시 전송해 보세요."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "오프라인 모드를 비활성화하려면 ${ BRAND_NAME } 비밀번호로 인증해 주십시오."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "오프라인 모드를 활성화하려면 ${ BRAND_NAME } 비밀번호로 인증해 주십시오."
       ],
@@ -2018,9 +2009,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "오프라인 모드를 비활성화하려면 백업 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "오프라인 모드를 활성화하려면 백업 비밀번호로 인증해 주십시오."
@@ -2042,9 +2030,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "비밀번호를 사용하는 자동 잠금을 위해 추가 비밀번호를 확인해 주세요."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "오프라인 모드를 비활성화하려면 추가 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "오프라인 모드를 활성화하려면 추가 비밀번호로 인증해 주십시오."
@@ -2087,9 +2072,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "오프라인 모드를 활성화하려면 백업 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "오프라인 모드를 활성화하려면 백업 비밀번호로 인증해 주십시오."

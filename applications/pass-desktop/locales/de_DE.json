@@ -310,6 +310,9 @@
       "Edit vault": [
         "Tresor bearbeiten"
       ],
+      "Enable": [
+        "Aktivieren"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } aktivieren"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Netzwerkfehler"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Der Offlinemodus ist derzeit nicht für den Zwei-Passwort-Modus verfügbar."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Der Offline-Modus ist derzeit für dein Abonnement nicht verfügbar und nicht mit dem Zwei-Passwort-Modus kompatibel."
-      ],
       "Passphrase is incorrect": [
         "Passphrase ist falsch"
       ],
@@ -1473,8 +1470,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen, Kreditkarten und Identitäten."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus aktiviert."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } Einladung erfolgreich gesendet",
@@ -1740,6 +1737,9 @@
       "Enable auto-locking to secure your data": [
         "Aktiviere die automatische Sperre, um deine Daten zu sichern"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktiviere den Offline-Modus, um auf deine ${ PASS_SHORT_APP_NAME }-Daten zuzugreifen, falls deine Internetverbindung abbricht oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
+      ],
       "Enabling biometrics auto-lock": [
         "Automatische biometrische Sperre aktivieren"
       ],
@@ -1966,6 +1966,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -2054,9 +2058,6 @@
       "Please check your spam folder or try resending the code.": [
         "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu deaktivieren."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
       ],
@@ -2071,9 +2072,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bitte bestätige dein Backup-Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Bitte bestätige dein Backup-Passwort, um den Offline-Modus zu deaktivieren."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Bitte bestätige dein Backup-Passwort, um den Offline-Modus zu aktivieren."
@@ -2095,9 +2093,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bitte bestätige dein zusätzliches Passwort, damit die automatische Sperre mit deinem zusätzlichen Passwort aktiviert wird."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Bitte bestätige dein zusätzliches Passwort, um den Offline-Modus zu deaktivieren."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Bitte bestätige dein zusätzliches Passwort, um den Offline-Modus zu aktivieren."
@@ -2140,9 +2135,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bitte bestätige dein zweites Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu deaktivieren"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu aktivieren"
@@ -2503,6 +2495,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Beim Erstellen/Bearbeiten eines Logins auf ${ PASS_APP_NAME } wird die Eingabe 'Benutzername' immer sichtbar sein."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Wenn aktiviert, kannst du immer noch auf deine ${ PASS_SHORT_APP_NAME }-Daten zugreifen, wenn du keine Internetverbindung hast oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Wenn du eine E-Mail von diesem Alias aus versendest, wird ${ emailSender } als Absender in der E-Mail erscheinen."
@@ -4697,6 +4692,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Setup offline mode": [
+        "Offline-Modus einrichten"
+      ],
       "Share vaults with your team": [
         "Teile Tresore mit deinem Team"
       ],
@@ -4848,6 +4846,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-Passwort erforderlich"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus deaktiviert."
       ],
       "2 consecutive dots are not allowed": [
         "2 aufeinanderfolgende Punkte sind nicht erlaubt"

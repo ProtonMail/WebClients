@@ -310,6 +310,9 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Enable": [
+        "Aktiver"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktiver ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Nettverksfeil"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Frakoblet modus er for øyeblikket ikke tilgjengelig for topassordmodus."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Frakoblet modus er for øyeblikket ikke tilgjengelig for planen din og er ikke kompatibel med to passordmodus."
-      ],
       "Passphrase is incorrect": [
         "Passfrase er feil"
       ],
@@ -1472,9 +1469,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitasjon sendt",
@@ -1966,6 +1960,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2054,9 +2052,6 @@
       "Please check your spam folder or try resending the code.": [
         "Sjekk søppelpostmappen din eller prøv å sende koden på nytt."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bekreft passordet for ${ BRAND_NAME } for å deaktivere frakoblet modus"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
       ],
@@ -2071,9 +2066,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Bekreft reservepassordet ditt for å deaktivere frakoblet modus"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Bekreft reservepassordet ditt for å aktivere frakoblet modus"
@@ -2095,9 +2087,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekreft det ekstra passordet for å kunne låse automatisk med ditt ekstra passord."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Bekreft ekstra passordet ditt for å deaktivere frakoblet modus"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Bekreft ekstra passordet ditt for å aktivere frakoblet modus"
@@ -2140,9 +2129,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bekreft det andre passordet ditt for å bruke autolås med passordet ditt."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Bekreft det andre passordet ditt for å deaktivere frakoblet modus"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Bekreft ditt andre passord for å aktivere frakoblet modus"
