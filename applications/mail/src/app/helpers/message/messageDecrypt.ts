@@ -201,21 +201,22 @@ export const verifyMessage = async (
 };
 
 /**
- * Try to get the key responsible for the message encryption from user's keys
- * keyFound contains the address, the key and keyIds of the key in case we need to display which key is needed to the user
- * matchingKey is the keyID of the key that we need to store in localStorage
+ * Find the address key the message is encrypted to.
+ * The key might not be found if the user has deleted the address key, or if the message was encrypted
+ * to a key that the user does not own, or never imported into their Proton account.
+ * @return  if found among the address keys: the keyID of the address key encrypting the message, and whether the key is inactive
  */
-export const getMessageDecryptionKeyIDFromAddress = async (address: Address, message: Message) => {
+export const getMessageDecryptionKeyInfoFromAddress = async (address: Address, message: Message) => {
     const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
         armoredMessage: message.Body,
     });
 
-    for (const { PrivateKey: armoredKey } of address.Keys) {
+    for (const { PrivateKey: armoredKey, Active } of address.Keys) {
         const { keyIDs: addressKeyIDs } = await CryptoProxy.getKeyInfo({ armoredKey });
         const matchingKeyID = addressKeyIDs.find((keyID) => encryptionKeyIDs.includes(keyID));
 
         if (matchingKeyID) {
-            return matchingKeyID;
+            return { keyID: matchingKeyID, isKeyInactive: Active !== 1 };
         }
     }
 };
