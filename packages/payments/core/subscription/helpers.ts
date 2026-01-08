@@ -452,6 +452,14 @@ export const isReferralTrial = (subscription: Subscription | FreeSubscription | 
     return isTrial(subscription) && subscription.TrialType === TrialType.ReferralProgram;
 };
 
+export const isExFamilyTrial = (subscription: Subscription | FreeSubscription | undefined) => {
+    if (isFreeSubscription(subscription) || !subscription) {
+        return false;
+    }
+
+    return isTrial(subscription) && subscription.TrialType === TrialType.FamilyPlan;
+};
+
 const autoRenewTrialPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN2024, PLANS.BUNDLE]);
 
 // Remove the plan check once subscription.Renew is correctly set
