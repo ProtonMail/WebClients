@@ -8,6 +8,7 @@ import { useApi, useContactEmailsCache, useGetCalendarEventRaw, useHasSuspendedC
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -21,6 +22,11 @@ const MIN_CUTOFF = -MINUTE;
 
 export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
     if (isElectronMail) {
+        // Calendar view and sidebar-calendar notifications conflict
+        // Don't send notifications when embedded on Desktop
+        if (getIsIframe()) {
+            return;
+        }
         return createElectronNotification({ title, body: text, app: 'calendar' });
     }
     return create(title, {
