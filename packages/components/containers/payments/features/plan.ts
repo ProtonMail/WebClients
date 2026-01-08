@@ -53,6 +53,7 @@ import {
     getProtonScribe,
     getSMTPToken,
 } from './mail';
+import { getMeetBusinessFeatures } from './meet';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -772,6 +773,17 @@ export const getVPNPassProPlan = (plan: Plan, serversCount: VPNServersCountData 
     };
 };
 
+export const getMeetBusinessPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.MEET_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('collider_2025: Info').t`Private video calls for the conversations that matter.`,
+        cta: getCTA(plan.Title),
+        features: getMeetBusinessFeatures(),
+    };
+};
+
 /**
  * Takes a plans map, a plan and some options and returns short visual plan details
  *
@@ -849,6 +861,8 @@ export const getShortPlan = (
             return getLumoBusinessPlan(planData);
         case PLANS.VPN_PASS_BUNDLE_BUSINESS:
             return getVPNPassProPlan(planData, vpnServers);
+        case PLANS.MEET_BUSINESS:
+            return getMeetBusinessPlan(planData);
         default:
             return null;
     }

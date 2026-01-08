@@ -23,6 +23,7 @@ import {
     getMailBusinessPlan,
     getMailPlan,
     getMailProPlan,
+    getMeetBusinessPlan,
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
     getPassFamilyPlan,
@@ -354,6 +355,14 @@ export const getSummaryPlan = ({
             plan,
             title: plan.Title,
             features: [],
+        };
+    }
+    if (plan?.Name === PLANS.MEET_BUSINESS) {
+        const shortPlan = getMeetBusinessPlan(plan);
+        return {
+            logo: <Logo appName={APPS.PROTONMEET} variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
         };
     }
 };

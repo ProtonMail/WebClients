@@ -1,5 +1,5 @@
 import { FREE_PLAN, PLANS, getPlanFromPlanIDs } from '@proton/payments';
-import { getIsLumoApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
+import { getIsLumoApp, getIsMeetApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -11,6 +11,7 @@ import { getGenericConfiguration } from './generic/configuration';
 import type { SignupModelV2, SignupParameters2 } from './interface';
 import { getLumoConfiguration } from './lumo/configuration';
 import { getMailConfiguration } from './mail/configuration';
+import { getMeetConfiguration } from './meet/configuration';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
 
@@ -23,6 +24,7 @@ export const getSignupConfiguration = ({
     viewportWidth,
     theme,
     isNewB2BPlanEnabled,
+    isMeetPlansEnabled,
 }: {
     toApp?: APP_NAMES;
     model: SignupModelV2;
@@ -32,6 +34,7 @@ export const getSignupConfiguration = ({
     viewportWidth: any; // todo lazy
     theme: PublicTheme;
     isNewB2BPlanEnabled: boolean;
+    isMeetPlansEnabled: boolean;
 }) => {
     const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
     const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
@@ -115,6 +118,16 @@ export const getSignupConfiguration = ({
             isNewB2BPlanEnabled,
             vpnServersCountData,
             signupParameters,
+        });
+    }
+
+    if (getIsMeetApp(toApp)) {
+        return getMeetConfiguration({
+            defaultPlan: signupParameters.defaultPlan,
+            plansMap: model.plansMap,
+            isLargeViewport: viewportWidth['>=large'],
+            isMeetPlansEnabled,
+            isNewB2BPlanEnabled,
         });
     }
 

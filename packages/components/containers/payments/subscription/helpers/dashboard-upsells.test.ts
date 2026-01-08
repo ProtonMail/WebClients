@@ -17,7 +17,6 @@ import {
     duoUpsell,
     familyUpsell,
     mailPlusUpsell,
-    mailProfessionalUpsell,
     passPlusUpsell,
     subscription,
     unlimitedUpsell,
@@ -413,14 +412,14 @@ describe('resolveUpsellsToDisplay', () => {
             });
 
             const upsell = upsells[0];
-            expect(upsell).toMatchObject(mailProfessionalUpsell);
+            expect(upsell).toMatchObject(bundle2024Upsell);
 
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
-                plan: PLANS.MAIL_BUSINESS,
+                plan: PLANS.BUNDLE_PRO_2024,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 metrics: {
                     source: 'upsells',

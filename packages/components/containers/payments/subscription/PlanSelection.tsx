@@ -241,7 +241,9 @@ export function useAccessiblePlans({
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
+    const isMeetSettingsApp = app === APPS.PROTONMEET;
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
+    const isMeetPlansEnabled = useFlag('MeetPlans');
 
     const plansMap = getPlansMap(plans, currency, false);
 
@@ -336,6 +338,8 @@ export function useAccessiblePlans({
 
     const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
 
+    const meetB2BPlans = filterPlans([plansMap[PLANS.MEET_BUSINESS]]);
+
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -347,6 +351,7 @@ export function useAccessiblePlans({
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
     const isWalletB2BPlans = isWalletSettingsApp && walletB2BPlans.length !== 0;
     const isLumoB2BPlans = isLumoSettingsApp && lumoB2BPlans.length !== 0;
+    const isMeetB2BPlans = isMeetSettingsApp && meetB2BPlans.length !== 0;
 
     const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
         // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
@@ -371,6 +376,8 @@ export function useAccessiblePlans({
             return walletB2BPlans;
         } else if (isLumoB2BPlans) {
             return lumoB2BPlans;
+        } else if (isMeetB2BPlans && isMeetPlansEnabled) {
+            return meetB2BPlans;
         }
 
         const plans = isNewB2BPlanEnabled
