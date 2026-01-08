@@ -13,8 +13,16 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import type { User } from '@proton/shared/lib/interfaces';
-import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
+import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys';
+import {
+    hasPaidDrive,
+    hasPaidLumo,
+    hasPaidMail,
+    hasPaidMeet,
+    hasPaidPass,
+    hasPaidVpn,
+    hasPaidWallet,
+} from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import LumoLogoAnimated from './LumoLogoAnimated';
@@ -27,21 +35,32 @@ interface App {
     bit: PRODUCT_BIT;
     isNew?: boolean;
     style: CSSProperties;
+    priority: number;
 }
 
-export const getExploreApps = ({
-    subscribed,
-    ...options
-}: {
-    subscribed?: User['Subscribed'];
-} & Omit<Parameters<typeof getAvailableApps>[0], 'context'>) => {
+export const getExploreApps = ({ ...options }: Omit<Parameters<typeof getAvailableApps>[0], 'context'>) => {
     const user = options.user;
     const availableApps = getAvailableApps({ ...options, context: 'dropdown' });
+
+    const priorities = { default: 100, higher: 1, lower: 1000 };
+
+    const getMailPriority = () => {
+        if (user) {
+            if (hasPaidMail(user)) {
+                return priorities.higher;
+            }
+            if (getIsExternalAccount(user) && !getIsBYOEAccount(user)) {
+                return priorities.lower;
+            }
+        }
+        return priorities.default;
+    };
 
     return [
         {
             name: APPS.PROTONMAIL,
             bit: PRODUCT_BIT.MAIL,
+            priority: getMailPriority(),
             description: () => {
                 // translator: Description for Proton Mail. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Encrypted email`;
@@ -57,6 +76,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONCALENDAR,
             bit: PRODUCT_BIT.MAIL,
+            priority: getMailPriority(), // Keeps Calendar after Mail
             description: () => {
                 // translator: Description for Proton Calendar. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Private scheduling`;
@@ -70,25 +90,9 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
         {
-            name: APPS.PROTONMEET,
-            bit: PRODUCT_BIT.MEET,
-            isNew: true,
-            description: () => {
-                // translator: Description for Proton Meet. As concise as possible, under 20 characters please
-                return c('app-switcher_2025').t`Confidential video calls`;
-            },
-            style: {
-                '--gradient-hover':
-                    'radial-gradient(92.31% 87.1% at 18.21% 97.43%, rgb(158 188 255 / 0.5) 0%, rgb(136 123 255 / 0.5) 41.88%, rgb(109 74 255 / 0.5) 71.63%)',
-                '--shadow-color-1': 'rgb(109 74 255 / 0.1)',
-                '--shadow-color-2': 'rgb(115 100 255 / 0.2)',
-                '--shadow-color-3': 'rgb(113 157 255 / 0.3)',
-            } as CSSProperties,
-        },
-        {
             name: APPS.PROTONPASS,
             bit: PRODUCT_BIT.PASS,
-            condition: hasPassLifetime,
+            priority: user && hasPaidPass(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton Pass. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Passwords and identity`;
@@ -104,6 +108,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONVPN_SETTINGS,
             bit: PRODUCT_BIT.VPN,
+            priority: user && hasPaidVpn(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton VPN. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Private browsing`;
@@ -120,6 +125,7 @@ export const getExploreApps = ({
             name: APPS.PROTONLUMO,
             bit: PRODUCT_BIT.LUMO,
             isNew: true,
+            priority: user && hasPaidLumo(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Lumo. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Private AI assistant`;
@@ -134,6 +140,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONDRIVE,
             bit: PRODUCT_BIT.DRIVE,
+            priority: user && hasPaidDrive(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton Drive. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Secure cloud storage`;
@@ -149,6 +156,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONDOCS,
             bit: PRODUCT_BIT.DRIVE,
+            priority: user && hasPaidDrive(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton Docs. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Secure online docs`;
@@ -164,6 +172,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONSHEETS,
             bit: PRODUCT_BIT.DRIVE,
+            priority: user && hasPaidDrive(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton Sheets. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Secure online sheets`;
@@ -178,8 +187,26 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
         {
+            name: APPS.PROTONMEET,
+            bit: PRODUCT_BIT.MEET,
+            isNew: true,
+            priority: user && hasPaidMeet(user) ? priorities.higher : priorities.default,
+            description: () => {
+                // translator: Description for Proton Meet. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Confidential video calls`;
+            },
+            style: {
+                '--gradient-hover':
+                    'radial-gradient(92.31% 87.1% at 18.21% 97.43%, rgb(158 188 255 / 0.5) 0%, rgb(136 123 255 / 0.5) 41.88%, rgb(109 74 255 / 0.5) 71.63%)',
+                '--shadow-color-1': 'rgb(109 74 255 / 0.1)',
+                '--shadow-color-2': 'rgb(115 100 255 / 0.2)',
+                '--shadow-color-3': 'rgb(113 157 255 / 0.3)',
+            } as CSSProperties,
+        },
+        {
             name: APPS.PROTONWALLET,
             bit: PRODUCT_BIT.WALLET,
+            priority: user && hasPaidWallet(user) ? priorities.higher : priorities.default,
             description: () => {
                 // translator: Description for Proton Wallet. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Bitcoin wallet`;
@@ -193,21 +220,7 @@ export const getExploreApps = ({
             } as CSSProperties,
         },
     ]
-        .sort((a, b) => {
-            if (
-                (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) ||
-                (user && a.condition?.(user) && !b.condition?.(user))
-            ) {
-                return -1;
-            }
-            if (
-                (hasBit(subscribed, b.bit) && !hasBit(subscribed, a.bit)) ||
-                (user && b.condition?.(user) && !a.condition?.(user))
-            ) {
-                return 1;
-            }
-            return 0;
-        })
+        .sort((a, b) => a.priority - b.priority)
         .filter(({ name }) => availableApps.includes(name));
 };
 
