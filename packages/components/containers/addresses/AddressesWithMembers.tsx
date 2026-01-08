@@ -79,7 +79,8 @@ const AddressesWithMembers = ({
     const { UsedAddresses: OrganizationUsedAddresses, MaxAddresses: OrganizationMaxAddresses } = organization || {};
     const usedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const maxAddresses = OrganizationMaxAddresses || 1;
-    const addressesAvailable = maxAddresses - usedAddresses;
+    // This value may become negative due to the API may allow plan changes for disabled addresses
+    const addressesAvailable = Math.max(maxAddresses - usedAddresses, 0);
 
     const { byoeAddressesAvailableCount, maxBYOEAddresses } = useBYOEAddressesCounts();
 
