@@ -270,7 +270,7 @@ export const useSharingModalState = ({
         createNotification({ text: c('Info').t`Invite link copied` });
     };
 
-    const directMembers: DirectMember[] = sharingInfo.members
+    const directMembers = sharingInfo.members
         .map((member) => ({
             uid: member.uid,
             inviteeEmail: member.inviteeEmail,
@@ -293,7 +293,7 @@ export const useSharingModalState = ({
                 state: nonProtonInvitation.state,
                 type: MemberType.ProtonInvitation,
             }))
-        );
+        ) as DirectMember[]; // FIXME "Feel free to just throw if that happens on client side with comment it is not expected and that SDK will improve typing and then it can be deleted."
 
     return {
         open,

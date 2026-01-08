@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input'
+import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Icon,
@@ -26,7 +26,7 @@ import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-
 import clsx from '@proton/utils/clsx';
 
 import { useDriveUpsellModal } from '../../../components/modals/DriveUpsellModal';
-import { RoleDropdownMenu } from '../RoleDropdownMenu';
+import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';
 
 interface Props {
     url?: string;
@@ -138,11 +138,10 @@ export const PublicSharing = ({
                         {viewOnly ? (
                             <div className="hidden sm:block">{c('Label').t`Viewer`}</div>
                         ) : (
-                            <RoleDropdownMenu
+                            <PublicRoleDropdownMenu
                                 disabled={!url || isLoading}
                                 selectedRole={role}
                                 onChangeRole={handleChangeRole}
-                                publicLinkOptions
                             />
                         )}
                     </div>
