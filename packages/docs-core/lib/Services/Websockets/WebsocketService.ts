@@ -74,7 +74,7 @@ import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 type LinkID = string
 
-const MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE = 4_000
+const MAX_MS_TO_WAIT_FOR_RTS_READY_MESSAGE = 3_000
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
