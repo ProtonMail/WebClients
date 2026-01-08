@@ -73,21 +73,9 @@ impl Autotype {
     }
 
     #[napi]
-    pub fn text(&mut self, text: String) -> napi::Result<()> {
+    pub fn perform_autotype(&mut self, fields: Vec<String>, enter_at_the_end: Option<bool>) -> napi::Result<()> {
         self.autotype
-            .text(&text)
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
-    }
-
-    #[napi]
-    pub fn tab(&mut self) -> napi::Result<()> {
-        self.autotype.tab().map_err(|e| napi::Error::from_reason(e.to_string()))
-    }
-
-    #[napi]
-    pub fn enter(&mut self) -> napi::Result<()> {
-        self.autotype
-            .enter()
+            .perform_autotype(fields, enter_at_the_end)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
