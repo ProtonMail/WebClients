@@ -66,7 +66,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     plaintext: {
         extensions: ['txt'],
         mimeTypes: ['text/plain'],
-        description: 'Text Document',
+        description: 'Text File',
         category: 'text',
         pandocFormat: 'markdown'
     },
@@ -290,7 +290,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         category: 'code',
         // No pandocFormat - processed as plain text
     },
-    
+
     // Additional programming languages
     dart: {
         extensions: ['dart'],
@@ -425,9 +425,8 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     gitignore: {
         extensions: ['gitignore'],
         mimeTypes: ['text/plain'],
-        description: 'Git Ignore File',
-        category: 'config',
-        pandocFormat: 'markdown'
+        description: 'Gitignore File',
+        category: 'text',
     }
 };
 
@@ -463,7 +462,11 @@ export function getMimeTypeToDescriptionMap(): Record<string, string> {
     const map: Record<string, string> = {};
     Object.values(FILE_TYPE_CONFIGS).forEach(config => {
         config.mimeTypes.forEach(mimeType => {
-            map[mimeType] = config.description;
+            // Only set if not already defined (first-wins strategy)
+            // This prevents later configs from overwriting earlier ones for shared MIME types like 'text/plain'
+            if (!map[mimeType]) {
+                map[mimeType] = config.description;
+            }
         });
     });
     return map;
@@ -486,18 +489,19 @@ export function getAcceptAttributeString(): string {
 }
 
 export function getFileTypeDescription(fileName: string, mimeType?: string): string {
-    // Try MIME type first
-    if (mimeType) {
-        const mimeToDescMap = getMimeTypeToDescriptionMap();
-        const description = mimeToDescMap[mimeType];
-        if (description) return description;
-    }
-
-    // Fallback to file extension
+    // Try file extension first for better accuracy
+    // This is especially important for ambiguous MIME types like 'text/plain'
     const ext = fileName.split('.').pop()?.toLowerCase();
     if (ext) {
         const extToDescMap = getExtensionToDescriptionMap();
         const description = extToDescMap[ext];
+        if (description) return description;
+    }
+
+    // Fallback to MIME type if extension doesn't match
+    if (mimeType) {
+        const mimeToDescMap = getMimeTypeToDescriptionMap();
+        const description = mimeToDescMap[mimeType];
         if (description) return description;
     }
 
@@ -543,14 +547,14 @@ export function mimeToHuman({ mimeType, filename }: { mimeType?: string; filenam
 export function mimeTypeToPandocFormat(mimeType: string): string | undefined {
     // Normalize mimeType by converting to lowercase and trimming
     const normalizedMime = mimeType.toLowerCase().trim();
-    
+
     // Find the config that contains this MIME type
     for (const config of Object.values(FILE_TYPE_CONFIGS)) {
         if (config.mimeTypes.some(mime => mime.toLowerCase() === normalizedMime)) {
             return config.pandocFormat;
         }
     }
-    
+
     return undefined;
 }
 
@@ -561,12 +565,12 @@ export function mimeTypeToPandocFormat(mimeType: string): string | undefined {
 export function shouldProcessAsPlainText(mimeType: string): boolean {
     // Normalize mimeType by converting to lowercase and trimming
     const normalizedMime = mimeType.toLowerCase().trim();
-    
+
     // Files that should be processed directly as plain text (no Pandoc needed)
     const plainTextTypes = new Set([
         // Code files
         'application/javascript',
-        'text/javascript', 
+        'text/javascript',
         'application/typescript',
         'text/x-typescript',
         'text/x-python',
@@ -604,36 +608,36 @@ export function shouldProcessAsPlainText(mimeType: string): boolean {
         'application/x-php',
         'application/x-ruby',
         'text/x-c++src',
-        
+
         // Text and markup formats (processed as plain text, no Pandoc)
         'text/asciidoc',
         'text/x-asciidoc',
-        
+
         // Data/Config files
         'application/json',
         'application/xml',
         'text/xml',
         'application/yaml',
         'text/yaml',
-        'application/x-yaml', 
+        'application/x-yaml',
         'text/x-yaml',
         'application/toml',
         'text/toml',
-        
+
         // Web files
         'text/css',
         'text/html',  // HTML can be processed directly, LLMs understand HTML markup
-        
+
         // Already handled separately
         'text/plain',
         'text/csv',
         'application/csv',
-        
+
         // Log files and other plain text
         'text/x-log',
         'application/x-log',
     ]);
-    
+
     return plainTextTypes.has(normalizedMime);
 }
 
@@ -641,23 +645,23 @@ export function shouldProcessAsPlainText(mimeType: string): boolean {
  * Determine if a file type needs actual Pandoc document conversion
  */
 export function needsPandocConversion(mimeType: string): boolean {
-    // Normalize mimeType by converting to lowercase and trimming  
+    // Normalize mimeType by converting to lowercase and trimming
     const normalizedMime = mimeType.toLowerCase().trim();
-    
+
     // Files that actually benefit from Pandoc conversion
     const pandocTypes = new Set([
         // Markup formats that benefit from conversion
         'text/markdown',
-        'text/x-markdown', 
+        'text/x-markdown',
         'text/latex',
         'text/rst',
-        
+
         // Document formats (handled by Pandoc)
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'application/vnd.oasis.opendocument.text',
         'application/rtf',
     ]);
-    
+
     return pandocTypes.has(normalizedMime);
 }

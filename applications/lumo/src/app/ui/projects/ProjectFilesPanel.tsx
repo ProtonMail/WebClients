@@ -317,7 +317,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             )}
                         </div>
                     </div>
-                    {(linkedDriveFolder !== null || files.length > 0) && (
+                    {(linkedDriveFolder !== undefined || files.length > 0) && (
                         <div className="flex items-center gap-1 text-sm">
                             <Banner className="mb-1 color-weak no-border" variant="norm-outline" icon={<Icon name="light-lightbulb" size={3.5}/>}>
                                 {c('collider_2025:Info').t`Type @filename to ask questions about a specific file`}
