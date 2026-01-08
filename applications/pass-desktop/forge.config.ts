@@ -1,7 +1,7 @@
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerDMG } from '@electron-forge/maker-dmg';
+import { MakerMSIX } from '@electron-forge/maker-msix';
 import { MakerRpm } from '@electron-forge/maker-rpm';
-import { MakerSquirrel } from '@electron-forge/maker-squirrel';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-natives';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
@@ -39,14 +39,23 @@ const config: ForgeConfig = {
     rebuildConfig: {},
     makers: [
         // Windows
-        new MakerSquirrel({
-            loadingGif: path.join(__dirname, 'assets', 'installSpinner.gif'),
-            iconUrl: path.join(__dirname, 'assets', 'logo.ico'),
-            setupIcon: path.join(__dirname, 'assets', 'logo.ico'),
-            signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
-            setupExe: `ProtonPass_Setup_${pkg.version}.exe`,
-            name: 'ProtonPass',
-            vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
+        new MakerMSIX({
+            packageName: `ProtonPass_Setup_${pkg.version}.msix`,
+            packageAssets: `${__dirname}/assets`,
+            logLevel: 'debug',
+            manifestVariables: {
+                packageIdentity: 'ProtonPass',
+                packageDisplayName: 'Proton Pass',
+                packageDescription: 'Open-source and secure identity manager.',
+                appDisplayName: 'Proton Pass',
+                appExecutable: 'ProtonPass.exe',
+                publisher: 'CN=Proton AG',
+                publisherDisplayName: 'Proton AG',
+            },
+            sign: !!process.env.SQUIRREL_SIGNTOOL_ARGS,
+            windowsSignOptions: {
+                signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
+            },
         }),
         // macOS
         new MakerDMG((arch) => ({
