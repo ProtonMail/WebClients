@@ -177,12 +177,14 @@ describe('useCurrentScreenShare', () => {
     it('should subscribe to existing screen shares when joining the room', () => {
         const mockPublication1 = {
             source: Track.Source.ScreenShare,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };
 
         const mockPublication2 = {
             source: Track.Source.Camera,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };
@@ -221,12 +223,14 @@ describe('useCurrentScreenShare', () => {
     it('should subscribe to all screen shares when multiple exist', () => {
         const mockPublication1 = {
             source: Track.Source.ScreenShare,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };
 
         const mockPublication2 = {
             source: Track.Source.ScreenShare,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };
@@ -284,6 +288,7 @@ describe('useCurrentScreenShare', () => {
         // Simulate a new screen share being published
         const newScreenSharePublication = {
             source: Track.Source.ScreenShare,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };
@@ -310,6 +315,7 @@ describe('useCurrentScreenShare', () => {
         // Simulate a camera track being published
         const cameraPublication = {
             source: Track.Source.Camera,
+            kind: Track.Kind.Video,
             setSubscribed: vi.fn(),
             setEnabled: vi.fn(),
         };

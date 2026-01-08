@@ -140,9 +140,10 @@ export const useParticipantAudioControls = () => {
                 if (!pub.isSubscribed) {
                     pub.setSubscribed(true);
                     pub.setEnabled(true);
-
-                    handleCacheUpdate(pub, participant as RemoteParticipant);
                 }
+
+                // We call handleCacheUpdate here when the track is unmuted to bring it forward in the cache
+                handleCacheUpdate(pub, participant as RemoteParticipant);
             }
         };
 
@@ -159,31 +160,21 @@ export const useParticipantAudioControls = () => {
             }
         };
 
-        const handleTrackMuted = (publication: TrackPublication, participant: Participant) => {
-            if (participant.identity === room.localParticipant.identity) {
-                return;
-            }
-
-            if (publication.source === Track.Source.Microphone) {
-                (publication as RemoteTrackPublication).setSubscribed(false);
-                subscribedMicrophoneTrackPublicationsRef.current =
-                    subscribedMicrophoneTrackPublicationsRef.current.filter(
-                        (item) => item.publication?.trackSid !== publication.trackSid
-                    );
-            }
+        const handleRoomDisconnected = () => {
+            subscribedMicrophoneTrackPublicationsRef.current = [];
         };
 
         room.on(RoomEvent.TrackPublished, handleAudioTrackPublished);
         room.on(RoomEvent.TrackUnmuted, handleTrackUnmuted);
         room.on(RoomEvent.TrackUnpublished, handleTrackUnpublished);
-        room.on(RoomEvent.TrackMuted, handleTrackMuted);
         room.on(RoomEvent.Connected, handleRoomConnected);
+        room.on(RoomEvent.Disconnected, handleRoomDisconnected);
         return () => {
             room.off(RoomEvent.TrackPublished, handleAudioTrackPublished);
             room.off(RoomEvent.TrackUnmuted, handleTrackUnmuted);
             room.off(RoomEvent.TrackUnpublished, handleTrackUnpublished);
-            room.off(RoomEvent.TrackMuted, handleTrackMuted);
             room.off(RoomEvent.Connected, handleRoomConnected);
+            room.off(RoomEvent.Disconnected, handleRoomDisconnected);
         };
     }, [room]);
 };
