@@ -35,7 +35,17 @@ const SECURITY_HEADERS = {
 };
 
 const VIDEO_STREAMING_BLOCK_TIMEOUT = 30 * 1000;
+
+/**
+ * Timeout for retrieving next chunk of data from the client.
+ * It must allow to:
+ *  - finish previous operation (read of previous requested chunks; 10 seconds)
+ *  - download up to two blocks of data and decrypt them (90 seconds each)
+ */
+const VIDEO_STREAMING_TIMEOUT = (10 + 90 + 90) * 1000;
+
 const MAXIMUM_BLOCKS_CACHE = 3; // (4MB * 3 = 12MB)
+
 const MAXIMUM_CONCURRENT_STREAMS = 3;
 
 /**
@@ -297,7 +307,7 @@ class DownloadServiceWorker {
                         }> = new Promise((resolve, reject) => {
                             const timeout = setTimeout(() => {
                                 reject(new Error('Stream chunk request timeout'));
-                            }, VIDEO_STREAMING_BLOCK_TIMEOUT);
+                            }, VIDEO_STREAMING_TIMEOUT);
 
                             channel.port1.onmessage = (msg) => {
                                 clearTimeout(timeout);
