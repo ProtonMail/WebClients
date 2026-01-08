@@ -98,10 +98,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             projectLimitModal.openModal(true);
             return;
         }
-
-        if (onItemClick) {
-            onItemClick();
-        }
+    
         newProjectModal.openModal(true);
     };
 
@@ -135,7 +132,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                 aria-label={c('collider_2025:Button').t`Projects`}
                             >
                                 <div className="sidebar-item-icon">
-                                    <Icon name="folder" size={4} className="rtl:mirror" />
+                                    <Icon name="folder" size={4} />
                                 </div>
                                 <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
                                     {c('collider_2025:Button').t`Projects`}
@@ -194,6 +191,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                         onClick={handleCreateProject}
                                         aria-label={c('collider_2025:Button').t`Create project`}
                                         title={c('collider_2025:Button').t`Create project`}
+                                        type="button"
                                     >
                                         <Icon name="plus" size={3} />
                                     </button>
@@ -206,9 +204,9 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             )}
 
             {/* Projects List - shown when expanded (only for authenticated users) */}
-            {!isGuest && isExpanded && showText && projects.length > 0 && (
+            {!isGuest && isExpanded && showText && (
                 <div className="projects-list">
-                    {projects.slice(0, 5).map((project) => {
+                    {projects.length > 0 && projects.slice(0, 5).map((project) => {
                         const category = getProjectCategory(project.icon);
                         const isSelected = currentProjectId === project.id;
 
@@ -240,17 +238,16 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                             {c('collider_2025:Button').t`See all`}
                         </button>
                     )}
+
+                    {projects.length === 0 && (
+                        <div className="px-3 py-2 text-sm color-weak">
+                        {c('collider_2025:Info').t`No projects yet`}
+                    </div>
+                    )}
                 </div>
             )}
 
-            {/* Empty state when expanded (only for authenticated users) */}
-            {!isGuest && isExpanded && showText && projects.length === 0 && (
-                <div className="projects-empty px-3 py-2 text-sm color-weak">
-                    {c('collider_2025:Info').t`No projects yet`}
-                </div>
-            )}
 
-            {/* New Project Modal */}
             {newProjectModal.render && <NewProjectModal {...newProjectModal.modalProps} />}
             {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </div>
