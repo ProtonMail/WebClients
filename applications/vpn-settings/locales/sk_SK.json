@@ -2053,6 +2053,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložisko"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložisko pre emaily"
       ],
@@ -7597,6 +7603,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Niektoré ${ BRAND_NAME } aplikácie ešte nemusia podporovať bezpečnostné kľúče. Ak vypnete 2FA z autentifikačnej aplikácie, možno sa do týchto aplikácií nebudete môcť prihlásiť."
+      ],
       "Some keys successfully reactivated": [
         "Niektoré kľúče boli úspešne reaktivované"
       ],
@@ -8184,9 +8193,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Bez overovacej aplikácie sa nebudete môcť prihlásiť do aplikácií ${ BRAND_NAME }, ktoré ešte nepodporujú bezpečnostné kľúče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -12952,14 +12958,6 @@
         "Upraviť pravidlo uchovávania"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administrátor"
-      ],
-      "User": [
-        "Používateľ"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Skontrolujte zabezpečenie účtu"
@@ -15091,9 +15089,6 @@
       ],
       "Edit": [
         "Upraviť"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Emailová adresa"

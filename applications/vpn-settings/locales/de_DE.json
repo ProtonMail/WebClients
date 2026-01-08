@@ -7411,6 +7411,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Manche ${ BRAND_NAME }-Apps unterstützen möglicherweise noch keine Sicherheitsschlüssel. Wenn du die Zwei-Faktor-Authentifizierung per Authenticator-App deaktivierst, kannst du dich möglicherweise nicht bei diesen Apps anmelden."
+      ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
       ],
@@ -7988,9 +7991,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Ohne eine Authentifizierungs-App kannst du dich nicht bei den ${ BRAND_NAME }-Anwendungen anmelden, die noch keine Sicherheitsschlüssel unterstützen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -12626,14 +12626,6 @@
         "Aufbewahrungsregel bearbeiten"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administrator"
-      ],
-      "User": [
-        "Benutzer"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Kontosicherheit überprüfen"
@@ -14663,9 +14655,6 @@
       ],
       "Edit": [
         "Bearbeiten"
-      ],
-      "Email": [
-        "E‐Mail‐Adresse"
       ],
       "Email address": [
         "E‐Mail‐Adresse"
