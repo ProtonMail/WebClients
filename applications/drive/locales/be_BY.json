@@ -516,6 +516,9 @@
       "Get link": [
         "Атрымаць спасылку"
       ],
+      "Get mobile and desktop apps": [
+        "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
+      ],
       "Get secure storage for ${ simplePriceString }": [
         "Атрымаць бяспечнае сховішча для ${ simplePriceString }"
       ],
@@ -1698,6 +1701,12 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } сховішча"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } сховішча для лістоў"

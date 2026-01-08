@@ -310,6 +310,9 @@
       "Edit vault": [
         "Kluis bewerken"
       ],
+      "Enable": [
+        "Inschakelen"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
       ],
@@ -1189,12 +1192,6 @@
       "Network error": [
         "Netwerkfout"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Offline-modus is momenteel niet beschikbaar voor twee wachtwoordmodus."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Offline-modus is momenteel niet beschikbaar voor uw abonnement en niet compatibel met twee wachtwoordmodus."
-      ],
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
       ],
@@ -1472,9 +1469,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } zal alleen logins importeren, creditcards en identiteiten."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } heeft uw ${ BRAND_NAME }-wachtwoord nodig om offline toegang te krijgen tot gegevens."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } uitnodiging succesvol verzonden",
@@ -1967,7 +1961,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2057,9 +2052,6 @@
       "Please check your spam folder or try resending the code.": [
         "Controleer uw spam map of probeer de code opnieuw te versturen."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus uit te schakelen"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
       ],
@@ -2074,9 +2066,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bevestig uw back-upwachtwoord om automatisch te vergrendelen met uw wachtwoord."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Bevestig uw back-upwachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Bevestig uw back-upwachtwoord om offline modus in te schakelen"
@@ -2098,9 +2087,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw extra wachtwoord."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Bevestig uw extra wachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Bevestig uw extra wachtwoord om offline modus in te schakelen"
@@ -2143,9 +2129,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw wachtwoord."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Bevestig uw extra wachtwoord om offline modus uit te schakelen"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Bevestig uw extra wachtwoord om offline modus in te schakelen"

@@ -310,6 +310,9 @@
       "Edit vault": [
         "საცავის ჩასწორება"
       ],
+      "Enable": [
+        "ჩართვა"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
@@ -1174,12 +1177,6 @@
       "Network error": [
         "ქსელის შეცდომა"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "ინტერნეტის გარეშე მუშაობის რეჟიმი ამჟამად ხელმიუწვდომელია 2 პაროლის რეჟიმში."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "ინტერნეტის გარეშე მუშაობის რეჟიმი ამჟამად ხელმიუწვდომელია თქვენი ტარიფისთვის და თავსებადი არაა ორი პაროლის რეჟიმთან."
-      ],
       "Passphrase is incorrect": [
         "საკვანძო ფრაზა არასწორია"
       ],
@@ -1457,9 +1454,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს, საკრედიტო ბარათებს და იდენტიფიკატორებს შემოიტანს."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
@@ -1945,6 +1939,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2030,9 +2028,6 @@
       "Please check your spam folder or try resending the code.": [
         "შეამოწმეთ თქვენი სპამის საქაღალდე, ან სცადეთ,, კოდი თავიდან გააგზავნოთ"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის გამოსართავად"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
@@ -2047,9 +2042,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "დაადასტურეთ თქვნი მარქაფი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის გამოსართავად"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "დაადასტურეთ თქვნი მარქაფი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
@@ -2071,9 +2063,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "დაადასტურეთ თქვენი დამატებითიპაროლი, რომ თქვენი დამატებითი პაროლით ავტოდაბლოკვა ჩართოთ."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "დაადასტურეთ თქვნი დამატებითი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის გასათიშად"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "დაადასტურეთ თქვნი დამატებითი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
@@ -2116,9 +2105,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "დაადასტურეთ თქვენი მეორე პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის გამოსართავად"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"

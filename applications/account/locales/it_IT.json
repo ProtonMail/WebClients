@@ -10616,6 +10616,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Posponi i messaggi in modo da collocarli all'inizio della tua posta in arrivo quando vuoi."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Alcune app di ${ BRAND_NAME } potrebbero non supportare ancora le chiavi di sicurezza. Se disattivi l'autenticazione a due fattori (2FA) tramite app di autenticazione, potresti non essere in grado di accedere a tali app."
+      ],
       "Some keys successfully reactivated": [
         "Alcune chiavi sono state riattivate con successo"
       ],
@@ -11319,9 +11322,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Senza un'app di autenticazione, non potrai accedere alle application di ${ BRAND_NAME } che non supportano ancora le chiavi di sicurezza."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -18115,14 +18115,6 @@
         "Modifica la regola di conservazione"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Amministratore"
-      ],
-      "User": [
-        "Utente"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Disabilita il recupero tramite telefono **per impedire che utenti malintenzionati prendano il controllo del tuo account."
@@ -21158,9 +21150,6 @@
       ],
       "Edit": [
         "Modifica"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Indirizzo email"

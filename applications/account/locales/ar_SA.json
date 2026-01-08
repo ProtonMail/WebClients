@@ -6903,6 +6903,9 @@
       ]
     },
     "Filter notification": {
+      "${ Label.Name } updated": [
+        "تم تحديث ${ Label.Name }"
+      ],
       "Filter ${ Filter.Name } updated": [
         "حُدِّث المُرشِّح ${ Filter.Name }"
       ]
@@ -9332,6 +9335,9 @@
       "Loading": [
         "التحميل جارٍ"
       ],
+      "Loading ${ appName }": [
+        "جاري التحميل ${ appName }"
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "جارٍ تحميل التقويم، يُرجى الانتظار. ستتم إعادة توجيهك إلى منصة الجدولة الخاصة بنا Calendly في علامة تبويب جديدة."
       ],
@@ -10617,9 +10623,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "من دون تفعيل لن تكون قادراً على إنشاء مستخدمين جدد أو إضافة عناوين إلى المستخدمين الحاليين، أو الوصول إلى حسابات المستخدم غير الخاصة."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "بدون تطبيق المصادقة، لن تتمكن من تسجيل الدخول إلى تطبيقات ${ BRAND_NAME } التي لا تدعم مفاتيح الأمان بعد."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "هل ترغب في تلقي رمز تحقق جديد أو استخدام طريقة تحقق بديلة؟"
@@ -17007,14 +17010,6 @@
         "تعديل قاعدة الاحتفاظ"
       ]
     },
-    "Role": {
-      "Admin": [
-        "مشرف"
-      ],
-      "User": [
-        "مستخدم"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **تعطيل الاسترداد عن طريق الهاتف** لمنع المهاجمين من السيطرة على حسابك."
@@ -20216,9 +20211,6 @@
       ],
       "Edit": [
         "تعديل"
-      ],
-      "Email": [
-        "البريد الإلكتروني"
       ],
       "Email address": [
         "عنوان البريد الإلكتروني"

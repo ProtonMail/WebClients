@@ -7411,6 +7411,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "És possible que algunes aplicacions de ${ BRAND_NAME } encara no admetin claus de seguretat. Si hi desactiveu l'autenticació de dos factors (2FA), potser no podreu iniciar la sessió en aquestes aplicacions."
+      ],
       "Some keys successfully reactivated": [
         "S'han reactivat algunes claus."
       ],
@@ -7988,9 +7991,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Sense una aplicació d'autenticació, no podreu iniciar la sessió a les aplicacions de ${ BRAND_NAME } que encara no admeten claus de seguretat."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -12641,14 +12641,6 @@
         "Edita la regla de conservació"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Administardor"
-      ],
-      "User": [
-        "Usuari"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Comprova la seguretat del compte"
@@ -14685,9 +14677,6 @@
       ],
       "Edit": [
         "Edita"
-      ],
-      "Email": [
-        "Corrreu electrònic"
       ],
       "Email address": [
         "Adreça de correu electrònic"

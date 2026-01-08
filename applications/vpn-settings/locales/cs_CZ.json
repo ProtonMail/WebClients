@@ -7603,6 +7603,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Některé aplikace ${ BRAND_NAME } zatím nemusí podporovat bezpečnostní klíče. Pokud vypnete dvoufázové ověřování pomocí ověřovací aplikace, možná se do těchto aplikací nebudete moci přihlásit."
+      ],
       "Some keys successfully reactivated": [
         "Některé klíče byly úspěšně znovu aktivovány"
       ],
@@ -8190,9 +8193,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Bez aplikace dvoufázového ověření se nebudete moci přihlásit do ${ BRAND_NAME } aplikací které zatím nepodporují bezpečnostní klíče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -12955,14 +12955,6 @@
         "Upravit pravidlo uchovávání"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Správce"
-      ],
-      "User": [
-        "Uživatel"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Zkontrolujte zabezpečení účtu"
@@ -15088,9 +15080,6 @@
       ],
       "Edit": [
         "Upravit"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Email address": [
         "E-mailová adresa"

@@ -10745,6 +10745,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Udsæt beskeder til senere, så de ligger øverst i din indbakke, når du ønsker"
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Nogle ${ BRAND_NAME }-apps understøtter muligvis ikke sikkerhedsnøgler endnu. Det er ikke sikkert, du kan logge ind på disse apps, his du deaktiverer 2FA fra godkender-appen ."
+      ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
       ],
@@ -11469,9 +11472,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Uden en autentificeringsapp vil du ikke kunne logge ind på ${ BRAND_NAME }-applikationer, som endnu ikke understøtter sikkerhedsnøgler."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -18346,14 +18346,6 @@
         "Ret opbevaringsregel"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Admin"
-      ],
-      "User": [
-        "Bruger"
-      ]
-    },
     "Safety review": {
       " **Disable recovery by phone** to prevent attackers from taking over your account.": [
         " **Deaktivér genopretning via telefon** for at forhindre angribere i at overtage din konto."
@@ -21409,9 +21401,6 @@
       ],
       "Edit": [
         "Redigér"
-      ],
-      "Email": [
-        "E-mail"
       ],
       "Email address": [
         "E-mailadresse"

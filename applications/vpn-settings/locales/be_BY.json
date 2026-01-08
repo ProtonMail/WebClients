@@ -2053,6 +2053,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } сховішча"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } сховішча для лістоў"
       ],
@@ -7597,6 +7603,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Некаторыя праграмы ${ BRAND_NAME } яшчэ могуць не падтрымліваць ключы бяспекі. У вас можа адсутнічаць магчымасць увайсці ў такія праграмы, калі вы адключыце 2ФА у праграме аўтэнтыфікацыі."
+      ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
       ],
@@ -8184,9 +8193,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Без праграмы аўтэнтыфікацыі вы не зможаце ўвайсці ў праграмы ${ BRAND_NAME }, якія яшчэ не падтрымліваюць ключы бяспекі."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -12967,14 +12973,6 @@
         "Рэдагаванне правіла захоўвання"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Адміністратар"
-      ],
-      "User": [
-        "Карыстальнік"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Праверце бяспеку ўліковага запісу"
@@ -15100,9 +15098,6 @@
       ],
       "Edit": [
         "Рэдагаваць"
-      ],
-      "Email": [
-        "Электронная пошта"
       ],
       "Email address": [
         "Адрас электроннай пошты"

@@ -310,6 +310,9 @@
       "Edit vault": [
         "Sunting brankas"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1184,12 +1187,6 @@
       "Network error": [
         "Kesalahan jaringan"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Mode luring saat ini tidak tersedia pada mode kata sandi ganda."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Mode offline saat ini tidak tersedia untuk paket Anda dan tidak kompatibel dengan mode kata sandi ganda."
-      ],
       "Passphrase is incorrect": [
         "Frasa sandi salah"
       ],
@@ -1454,9 +1451,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } akan memerlukan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } undangan berhasil dikirim"
@@ -1941,6 +1935,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2028,9 +2025,6 @@
       "Please check your spam folder or try resending the code.": [
         "Silakan periksa folder spam Anda atau cobalah untuk mengirimkan ulang kode ini."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan mode offline"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
       ],
@@ -2045,9 +2039,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk menonaktifkan mode offline"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Silakan konfirmasi kata sandi cadangan Anda untuk mengaktifkan mode offline"
@@ -2069,9 +2060,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan mode offline"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengaktifkan mode offline"
@@ -2114,9 +2102,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Silakan konfirmasikan kata sandi kedua Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Silakan konfirmasikan kata sandi kedua Anda untuk menonaktifkan mode offline"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Silakan konfirmasikan kata sandi kedua Anda untuk mengaktifkan mode offline"

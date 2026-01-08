@@ -7411,6 +7411,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
+        "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemeyebilir. Kimlik doğrulama uygulaması İki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
+      ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
       ],
@@ -7988,9 +7991,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
-      ],
-      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
-        "Bir kimlik doğrulama uygulaması olmadan, henüz güvenlik anahtarlarını desteklemeyen ${ BRAND_NAME } uygulamalarında oturum açamazsınız."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -12622,14 +12622,6 @@
         "Verileri tutma kuralını düzenle"
       ]
     },
-    "Role": {
-      "Admin": [
-        "Yönetici"
-      ],
-      "User": [
-        "Kullanıcı"
-      ]
-    },
     "Safety review": {
       "Check account security": [
         "Hesap güvenliğini denetle"
@@ -14655,9 +14647,6 @@
       ],
       "Edit": [
         "Düzenle"
-      ],
-      "Email": [
-        "E-posta"
       ],
       "Email address": [
         "E-posta adresi"

@@ -1275,6 +1275,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } úložisko"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } úložisko pre emaily"
       ],

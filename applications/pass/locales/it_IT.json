@@ -298,6 +298,9 @@
       "Edit vault": [
         "Modifica cassaforte"
       ],
+      "Enable": [
+        "Abilita"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Abilita ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1142,12 +1145,6 @@
       "Network error": [
         "Errore di rete"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "L'accesso offline non è attualmente disponibile con la modalità a doppia password."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "L'accesso offline non è attualmente disponibile con la modalità a doppia password e con il tuo piano."
-      ],
       "Passphrase is incorrect": [
         "Passphrase non valida"
       ],
@@ -1401,8 +1398,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importerà solo login, note, carte di credito e identità."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } richiederà la password dell'account ${ BRAND_NAME } per accedere ai dati offline."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } abilitata."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invito spedito",
@@ -1670,6 +1667,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Attiva la modalità offline per accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
       ],
       "Enabling biometrics auto-lock": [
         "Abilita il blocco automatico con biometria"
@@ -1976,9 +1976,6 @@
       "Please check your spam folder or try resending the code.": [
         "Controlla la cartella spam o prova a inviare nuovamente il codice."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Conferma la password dell'account ${ BRAND_NAME } per disabilitare la modalità offline"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Conferma la password dell'account ${ BRAND_NAME } per abilitare la modalità offline"
       ],
@@ -1993,9 +1990,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Conferma la tua password di backup per abilitare il blocco automatico con password."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Conferma la password di backup dell'account per disabilitare la modalità offline"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Conferma la password di backup dell'account per abilitare la modalità offline"
@@ -2017,9 +2011,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Conferma la tua password aggiuntiva per abilitare il blocco automatico con la password aggiuntiva."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Conferma la password extra dell'account per disabilitare la modalità offline"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Conferma la password extra dell'account per abilitare la modalità offline"
@@ -2062,9 +2053,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Conferma la tua password secondaria per abilitare il blocco automatico con la tua password."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Conferma la tua password secondaria per disattivare la modalità offline"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Conferma la tua password secondaria per attivare la modalità offline"
@@ -2425,6 +2413,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quando crei/modifichi un accesso su ${ PASS_APP_NAME } l'input 'nome utente' sarà sempre visibile."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando abilitata, puoi comunque accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Quando invii un email da questo alias, l'email mostrerà ${ emailSender } come mittente"
@@ -4545,6 +4536,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Setup offline mode": [
+        "Imposta la modalità offline"
+      ],
       "Share vaults with your team": [
         "Condividi le casseforti con il tuo team"
       ],
@@ -4696,6 +4690,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } disabilitata."
       ],
       "2 consecutive dots are not allowed": [
         "Non sono ammessi 2 punti consecutivi"
