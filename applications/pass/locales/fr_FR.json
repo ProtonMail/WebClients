@@ -298,6 +298,9 @@
       "Edit vault": [
         "Modifier le coffre-fort"
       ],
+      "Enable": [
+        "Activer"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activez ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1142,12 +1145,6 @@
       "Network error": [
         "Erreur de réseau "
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Le mode hors ligne n'est actuellement pas disponible pour le mode deux mots de passe."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Le mode hors ligne n'est actuellement pas disponible pour votre abonnement et n'est pas compatible avec le mode deux mots de passe."
-      ],
       "Passphrase is incorrect": [
         "La phrase secrète n'est pas correcte."
       ],
@@ -1401,8 +1398,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes, cartes de paiement et identités."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } vous demandera votre mot de passe ${ BRAND_NAME } pour accéder à vos données en mode hors ligne."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Le mode hors ligne de ${ PASS_SHORT_APP_NAME } a été activé."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invitation a été envoyée.",
@@ -1670,6 +1667,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Activez le verrouillage automatique pour sécuriser vos données."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Activez le mode hors ligne pour accéder à vos données ${ PASS_SHORT_APP_NAME } si vous perdez la connectivité Internet ou si les serveurs ${ BRAND_NAME } sont inaccessibles."
       ],
       "Enabling biometrics auto-lock": [
         "Activation du verrouillage automatique biométrique"
@@ -1979,9 +1979,6 @@
       "Please check your spam folder or try resending the code.": [
         "Vérifiez le dossier indésirables/spam ou essayez de renvoyer le code."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Confirmez votre mot de passe ${ BRAND_NAME } pour désactiver le mode hors ligne."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour activer le mode hors ligne."
       ],
@@ -1996,9 +1993,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirmez votre mot de passe de secours afin de verrouiller automatiquement avec votre mot de passe."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Confirmez votre mot de passe de secours pour désactiver le mode hors ligne."
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Confirmez votre mot de passe de secours pour activer le mode hors ligne."
@@ -2020,9 +2014,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec votre mot de passe supplémentaire."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Confirmez votre mot de passe supplémentaire pour désactiver le mode hors ligne."
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Confirmez votre mot de passe supplémentaire pour activer le mode hors ligne."
@@ -2065,9 +2056,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirmez votre second mot de passe afin de verrouiller automatiquement avec votre mot de passe."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Veuillez confirmer votre second mot de passe pour désactiver le mode hors ligne."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirmez votre second mot de passe pour activer le mode hors ligne."
@@ -2428,6 +2416,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Lors de la création ou de la modification d'un identifiant sur ${ PASS_APP_NAME }, le champ Nom d'utilisateur sera toujours visible."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quand cette option est activée, vous pouvez toujours accéder à vos données ${ PASS_SHORT_APP_NAME } si vous perdez la connectivité Internet ou si les serveurs ${ BRAND_NAME } sont inaccessibles."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Lors de l'envoi d'un email depuis cet alias, l'expéditeur affiché sera ${ emailSender }."
@@ -4548,6 +4539,9 @@
       "Settings": [
         "Paramètres"
       ],
+      "Setup offline mode": [
+        "Configurer le mode hors ligne"
+      ],
       "Share vaults with your team": [
         "Partagez vos coffres-forts avec votre équipe"
       ],
@@ -4699,6 +4693,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Le mot de passe de ${ BRAND_NAME } est nécessaire."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Le mode hors ligne de ${ PASS_SHORT_APP_NAME } a été désactivé."
       ],
       "2 consecutive dots are not allowed": [
         "L'usage de 2 points consécutifs n'est pas autorisé."

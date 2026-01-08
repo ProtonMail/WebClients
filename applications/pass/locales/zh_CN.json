@@ -265,6 +265,9 @@
       "Edit vault": [
         "编辑保险库"
       ],
+      "Enable": [
+        "启用"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1090,12 +1093,6 @@
       "Network error": [
         "网络错误"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "脱机模式目前不适用于双密码模式。"
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "脱机模式目前不适用于您的计划，并且与双密码模式不兼容。"
-      ],
       "Passphrase is incorrect": [
         "密码不正确"
       ],
@@ -1329,9 +1326,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } 需要您的 ${ BRAND_NAME } 密码才能离线访问数据。"
       ],
       "${ payload.count } invite successfully sent": [
         "成功发送 ${ payload.count } 份邀请"
@@ -1888,9 +1882,6 @@
       "Please check your spam folder or try resending the code.": [
         "请检查您的垃圾邮件文件夹或尝试重新发送代码。"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "请确认您的 ${ BRAND_NAME } 密码以禁用脱机模式"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "请确认您的 ${ BRAND_NAME } 密码以启用脱机模式"
       ],
@@ -1905,9 +1896,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "请确认备份密码，以便使用密码自动锁定。"
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "请确认您的备份密码，以便禁用脱机模式"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "请确认您的备份密码，以便启用离线模式"
@@ -1929,9 +1917,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "请确认额外密码，以便使用额外密码自动锁定。"
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "请确认您的额外密码，以便禁用脱机模式"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "请确认您的额外密码，以便启用脱机模式"
@@ -1974,9 +1959,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "请确认您的二次密码，以便使用您的密码自动锁定。"
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "请确认您的二次密码，以便停用离线模式"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "请确认您的二次密码，以便启用离线模式"

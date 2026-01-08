@@ -298,6 +298,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Enable": [
+        "Habilitar"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Ative o ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1142,12 +1145,6 @@
       "Network error": [
         "Erro de rede"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Modo off-line está temporariamente indisponível para o modo de duas senhas."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Modo off-line não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
-      ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
       ],
@@ -1401,8 +1398,8 @@
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas, cartões de crédito e identidades."
       ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modo off-line do ${ PASS_SHORT_APP_NAME } está ativado."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } convite enviado",
@@ -1979,9 +1976,6 @@
       "Please check your spam folder or try resending the code.": [
         "Verifique sua pasta de spam ou tente reenviar o código."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Confirme sua senha da ${ BRAND_NAME } para desativar o modo off-line"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
       ],
@@ -1996,9 +1990,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirme sua senha de backup para bloquear automaticamente com a sua senha."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Confirme sua senha de backup para desativar o modo off-line"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Confirme sua senha de backup para ativar o modo off-line"
@@ -2020,9 +2011,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirme sua senha adicional para bloquear automaticamente com a sua senha adicional."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Confirme sua senha adicional para ativar o modo off-line"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Confirme sua senha adicional para ativar o modo off-line"
@@ -2065,9 +2053,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirme sua segunda senha para bloquear automaticamente com a sua senha."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Confirme sua segunda senha para desativar o modo off-line"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirme sua segunda senha para ativar o modo off-line"
@@ -4548,6 +4533,9 @@
       "Settings": [
         "Configurações"
       ],
+      "Setup offline mode": [
+        "Configurar modo off-line"
+      ],
       "Share vaults with your team": [
         "Compartilhe cofres com sua equipe"
       ],
@@ -4699,6 +4687,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "A senha da ${ BRAND_NAME } é obrigatória"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modo off-line do ${ PASS_SHORT_APP_NAME } está desativado."
       ],
       "2 consecutive dots are not allowed": [
         "Não é permitido o uso de 2 pontos consecutivos."

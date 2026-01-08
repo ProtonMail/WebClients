@@ -265,6 +265,9 @@
       "Edit vault": [
         "Edytuj sejf"
       ],
+      "Enable": [
+        "Włącz"
+      ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -1105,12 +1108,6 @@
       "Network error": [
         "Błąd sieci"
       ],
-      "Offline mode is currently not available for two password mode.": [
-        "Tryb offline nie jest dostępny w trybie podwójnego hasła."
-      ],
-      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Tryb offline nie jest dostępny w Twoim planie i nie jest kompatybilny z trybem podwójnego hasła."
-      ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
       ],
@@ -1372,9 +1369,6 @@
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek, kart płatniczych i tożsamości."
-      ],
-      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } wymaga hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline."
       ],
       "${ payload.count } invite successfully sent": [
         "Wysłano ${ payload.count } zaproszenie",
@@ -1958,9 +1952,6 @@
       "Please check your spam folder or try resending the code.": [
         "Sprawdź folder spam lub wyślij ponownie kod."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby wyłączyć tryb offline."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
       ],
@@ -1975,9 +1966,6 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Potwierdź hasło zapasowe, aby włączyć blokadę za pomocą hasła."
-      ],
-      "Please confirm your backup password in order to disable offline mode": [
-        "Potwierdź hasło zapasowe, aby wyłączyć tryb offline"
       ],
       "Please confirm your backup password in order to enable offline mode": [
         "Potwierdź hasło zapasowe, aby włączyć tryb offline"
@@ -1999,9 +1987,6 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Potwierdź dodatkowe hasło, aby włączyć blokadę."
-      ],
-      "Please confirm your extra password in order to disable offline mode": [
-        "Potwierdź dodatkowe hasło, aby wyłączyć tryb offline"
       ],
       "Please confirm your extra password in order to enable offline mode": [
         "Potwierdź dodatkowe hasło, aby włączyć tryb offline"
@@ -2044,9 +2029,6 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Potwierdź drugie hasło, aby włączyć blokadę."
-      ],
-      "Please confirm your second password in order to disable offline mode": [
-        "Potwierdź drugie hasło, aby wyłączyć tryb offline"
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Potwierdź drugie hasło, aby włączyć tryb offline"
