@@ -69,7 +69,7 @@ export const CreateOutgoingEmergencyContactModal = ({
                     const payload = {
                         targetEmail,
                         triggerDelay: waitTime / SECOND,
-                        types: DelegatedAccessTypeEnum.EmergencyAccess | DelegatedAccessTypeEnum.SocialRecovery,
+                        types: DelegatedAccessTypeEnum.EmergencyAccess,
                     };
                     try {
                         setLoading(true);
