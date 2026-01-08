@@ -115,7 +115,7 @@ export function useCurrentScreenShare({
         // Subscribe to all existing screen shares when joining
         for (const participant of room.remoteParticipants.values()) {
             for (const publication of participant.trackPublications.values()) {
-                if (publication.source === Track.Source.ScreenShare) {
+                if (publication.kind === Track.Kind.Video && publication.source === Track.Source.ScreenShare) {
                     publication.setSubscribed(true);
                     publication.setEnabled(true);
                 }
@@ -124,7 +124,7 @@ export function useCurrentScreenShare({
 
         // Subscribe to new screen shares as they're published
         const handleTrackPublished = (publication: RemoteTrackPublication) => {
-            if (publication.source === Track.Source.ScreenShare) {
+            if (publication.kind === Track.Kind.Video && publication.source === Track.Source.ScreenShare) {
                 publication.setSubscribed(true);
                 publication.setEnabled(true);
             }
