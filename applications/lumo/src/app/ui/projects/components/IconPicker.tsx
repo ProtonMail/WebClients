@@ -19,6 +19,11 @@ export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
         close();
     };
 
+    const handleToggle = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        toggle();
+    };
+
     return (
         <>
             <button
@@ -26,7 +31,7 @@ export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
                 type="button"
                 className="icon-picker-trigger flex items-center justify-center shrink-0 w-custom h-custom border-none rounded bg-transparent cursor-pointer color-norm"
                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' } as React.CSSProperties}
-                onClick={toggle}
+                onClick={handleToggle}
                 aria-label={c('collider_2025:Action').t`Choose project icon`}
                 title={c('collider_2025:Tooltip').t`Choose icon`}
             >

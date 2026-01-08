@@ -29,3 +29,16 @@
         }
     }
 }
+
+// Mobile-specific dropdown positioning fixes
+@media (max-width: 768px) {
+    .icon-picker-grid {
+        min-width: 14rem; // Slightly smaller on mobile for better fit
+    }
+
+    // Ensure dropdown appears above modal content on mobile
+    :global(.dropdown) {
+        z-index: 1000 !important;
+        position: relative !important;
+    }
+}
