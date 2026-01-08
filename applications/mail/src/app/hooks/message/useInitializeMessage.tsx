@@ -53,8 +53,8 @@ import {
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
+import { useMessageDecryptionErrorNotification } from './useMessageDecryptionErrorNotification';
 
 export const useInitializeMessage = () => {
     const api = useApi();
@@ -65,7 +65,7 @@ export const useInitializeMessage = () => {
     const getAttachment = useGetAttachment();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
-    const { verifyKeys } = useKeyVerification();
+    const { maybeCreateNotificationForDecryptionError } = useMessageDecryptionErrorNotification();
     const authentication = useAuthentication();
 
     const { feature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
@@ -138,7 +138,7 @@ export const useInitializeMessage = () => {
                 Object.assign(errors, decryption.errors);
 
                 // Get message decryption key to display a notification to the user that its password may have been reset recently
-                await verifyKeys(message.data);
+                await maybeCreateNotificationForDecryptionError(message.data);
             }
 
             if (isUnreadMessage(getData())) {
