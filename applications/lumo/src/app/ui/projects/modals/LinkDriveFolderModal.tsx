@@ -225,7 +225,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             <>
                                 <p className="text-sm color-weak mb-4">
                                     {c('collider_2025:Info')
-                                        .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder". A maximum of ${MAX_INDEXABLE_FILES} files will be usable by ${LUMO_SHORT_APP_NAME}.`}
+                                        .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder".`}
                                 </p>
                                 <DriveBrowser
                                     onFileSelect={() => {
