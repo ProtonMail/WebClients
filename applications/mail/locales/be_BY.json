@@ -2554,6 +2554,12 @@
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } сховішча"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
+      ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace } сховішча для лістоў"
       ],
@@ -7713,6 +7719,9 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
       ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
