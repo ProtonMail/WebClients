@@ -43,17 +43,19 @@ type Props = {
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
-    const { endpoint, setExtensionClientState, onTelemetry, theme } = usePassCore();
+    const core = usePassCore();
     const config = usePassConfig();
-
-    const dispatch = useDispatch();
     const { url, port, senderTabId } = useExtensionContext();
+    const { endpoint, theme, connectivity } = core;
+    const { setExtensionClientState, onTelemetry } = core;
 
     const activityProbe = useExtensionActivityProbe();
+    const dispatch = useDispatch();
 
     const ready = useExtensionClientInit(
         useMemo(
             () => ({
+                onConnectivity: connectivity.setStatus,
                 onStateChange: (state) => {
                     if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
 

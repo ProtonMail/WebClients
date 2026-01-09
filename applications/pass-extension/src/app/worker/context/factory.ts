@@ -7,6 +7,7 @@ import { createAutoFillService } from 'proton-pass-extension/app/worker/services
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
 import { createClipboardService } from 'proton-pass-extension/app/worker/services/clipboard';
+import { createConnectivityService } from 'proton-pass-extension/app/worker/services/connectivity';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
 import { createFeatureFlagService } from 'proton-pass-extension/app/worker/services/feature-flags';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
@@ -87,6 +88,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             b2bEvents: createB2BEventsService(storage.local, store),
             clipboard: createClipboardService(),
             core,
+            connectivity: createConnectivityService(),
             featureFlags: createFeatureFlagService(),
             formTracker: createFormTrackerService(),
             inline: createInlineService(),
