@@ -67,6 +67,7 @@ it('should render', () => {
                     status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
             },
             {
                 api: apiMock,
@@ -90,6 +91,7 @@ it('should initialize payment methods (with chargebee)', async () => {
                     status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
             },
             {
                 api: apiMock,
@@ -229,6 +231,7 @@ it('should filter out internal payment methods', async () => {
                     status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
             },
             {
                 api: apiMock,
@@ -316,6 +319,7 @@ it('should update methods when amount changes', async () => {
                         status: () => paymentStatus,
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
+                    enablePaypalRegionalCurrenciesBatch3: false,
                 },
                 {
                     api: apiMock,
@@ -375,6 +379,7 @@ it('should get saved method by its ID', async () => {
                     status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
             },
             {
                 api: apiMock,
@@ -416,6 +421,7 @@ it('should set selected method', async () => {
                     status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
+                enablePaypalRegionalCurrenciesBatch3: false,
             },
             {
                 api: apiMock,
@@ -483,6 +489,7 @@ it('should update amount correctly even if the initialization is slow', async ()
                         status: () => paymentStatus,
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
+                    enablePaypalRegionalCurrenciesBatch3: false,
                 },
                 {
                     api: apiMock,

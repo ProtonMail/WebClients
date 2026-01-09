@@ -7,9 +7,9 @@ import { userThunk } from '@proton/account/user';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
-import { getIsNewBatchCurrenciesEnabled } from '@proton/components/payments/client-extensions';
+import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CYCLE, PLANS, PLAN_NAMES, getPreferredCurrency } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -46,6 +46,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
     const [openSubscriptionModal] = useSubscriptionModal();
     const dispatch = useDispatch();
     const getFlag = useGetFlag();
+    const { getPreferredCurrency } = useCurrencies();
 
     useEffect(() => {
         let isConfigFetched = false;
@@ -98,7 +99,6 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     plans,
                     paymentStatus,
                     subscription,
-                    enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
                 });
 
                 // Get user currency

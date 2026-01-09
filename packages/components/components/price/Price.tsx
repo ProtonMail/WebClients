@@ -1,34 +1,36 @@
 import type { ReactNode } from 'react';
 
 import { type Currency, CurrencySymbols } from '@proton/payments';
+import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import clsx from '@proton/utils/clsx';
 
-import { humanPrice, isCurrencyWithSpace } from './helper';
+import { formatPriceWithoutCurrency } from './helper';
 
 import './Price.scss';
 
-export interface Props {
-    children: number | string;
-    currency?: Currency | string;
+export type StyleProps = {
     className?: string;
-    divisor?: number;
     suffix?: ReactNode;
     prefix?: string;
     isDisplayedInSentence?: boolean;
     large?: boolean;
-    'data-testid'?: string;
     suffixClassName?: string;
     currencyClassName?: string;
     amountClassName?: string;
     wrapperClassName?: string;
     suffixNextLine?: boolean;
-}
+};
+
+export type Props = {
+    children: number | string; // amount in base units (cents for USD/CHF/EUR)
+    currency: Currency;
+    'data-testid'?: string;
+} & StyleProps;
 
 const Price = ({
     children: amount = 0,
-    currency = '',
+    currency,
     className = '',
-    divisor = 100,
     suffix = '',
     prefix = '',
     isDisplayedInSentence = false,
@@ -40,7 +42,9 @@ const Price = ({
     amountClassName,
     suffixNextLine = false,
 }: Props) => {
-    const value = typeof amount === 'string' ? amount : humanPrice(amount, divisor);
+    const { symbolPosition } = getCurrencyFormattingConfig(currency);
+
+    const value = typeof amount === 'string' ? amount : formatPriceWithoutCurrency(amount, currency);
     const [integer, decimal] = `${value}`.split('.');
 
     const signElement = typeof amount === 'number' && amount < 0 ? <span className="prefix">-</span> : null;
@@ -62,20 +66,23 @@ const Price = ({
             return valueElement;
         }
 
-        if (currency === 'EUR') {
+        const currencySymbol = CurrencySymbols[currency as Currency] || currency;
+
+        if (symbolPosition === 'suffix-space') {
             return (
                 <>
                     {valueElement}
-                    <span className={clsx(['currency', currencyClassName])}>&nbsp;€</span>
+                    <span className={clsx(['currency', currencyClassName])}>&nbsp;{currencySymbol}</span>
                 </>
             );
         }
 
-        const hasSpace = isCurrencyWithSpace(currency);
+        const hasSpace = symbolPosition === 'prefix-space';
+
         return (
             <>
                 <span className={clsx(['currency', currencyClassName])}>
-                    {CurrencySymbols[currency as Currency] || currency}
+                    {currencySymbol}
                     {hasSpace && <>&nbsp;</>}
                 </span>
                 {valueElement}

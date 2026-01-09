@@ -6,8 +6,6 @@ import {
     type BillingAddress,
     type ChargeablePaymentParameters,
     type CreateBitcoinTokenData,
-    MAX_BITCOIN_AMOUNT,
-    MIN_BITCOIN_AMOUNT,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
     type PaymentsVersion,
@@ -16,7 +14,8 @@ import {
     getTokenStatus,
     isTokenPaymentMethod,
 } from '@proton/payments';
-import type { PaymentProcessorHook } from '@proton/payments';
+import type { Currency, PaymentProcessorHook } from '@proton/payments';
+import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -148,7 +147,7 @@ export interface BitcoinHook extends PaymentProcessorHook {
     request: () => Promise<void>;
     error: boolean;
     amount: number;
-    currency: string;
+    currency: Currency;
     awaitingBitcoinPayment: boolean;
     bitcoinLoading: boolean;
     processingBitcoinToken: boolean;
@@ -251,7 +250,7 @@ const useBitcoin = ({
     };
 
     const request = async () => {
-        const isCorrectAmount = Amount >= MIN_BITCOIN_AMOUNT && Amount <= MAX_BITCOIN_AMOUNT;
+        const isCorrectAmount = Amount >= getMinBitcoinAmount(Currency) && Amount <= getMaxBitcoinAmount(Currency);
 
         const alreadyHasToken =
             model.amount === Amount &&

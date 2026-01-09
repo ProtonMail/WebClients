@@ -77,8 +77,8 @@ import type { ShortPlanLike } from '../features/interface';
 import { isShortPlanLike } from '../features/interface';
 import { getShortPlan } from '../features/plan';
 import { getForcedFeatureLimitations } from '../planCustomizer/forced-addon-limits';
-import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
+import PlanSelectionPlanCard, { type HocPrice } from './PlanSelectionPlanCard';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
@@ -641,7 +641,7 @@ const PlanSelection = (props: Props) => {
         );
         const groupId = hasPlanWithCoupon ? `plan-selection-audience-${audience}` : undefined;
 
-        const priceElement: HocPrice = (props) => (
+        const getPrice: HocPrice = (props) => (
             <OfferPrice
                 key={`${plan.Name}-${plan.Currency}-${cycle}-${plan.ID}-${audience}`}
                 planToCheck={{
@@ -665,7 +665,7 @@ const PlanSelection = (props: Props) => {
             );
 
         return (
-            <PlanCard
+            <PlanSelectionPlanCard
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
                 action={action}
                 actionLabel={actionLabel}
@@ -697,7 +697,7 @@ const PlanSelection = (props: Props) => {
                     (plan.ID === PLANS.FREE && !isFreeSubscription && subscription?.Renew === Renew.Disabled)
                 }
                 key={plan.ID}
-                price={priceElement}
+                getPrice={getPrice}
                 features={featuresElement}
                 onSelect={(planName) => {
                     // Mail plus users selecting free plan are redirected to the cancellation reminder flow
@@ -727,7 +727,7 @@ const PlanSelection = (props: Props) => {
             // this render contains some assumptions that are valid only because we currently have the only UI plan.
             // If we get more later, then this code must be generalized. Examples: "Let's talk" price might be
             // different, so is the actionElement.
-            <PlanCard
+            <PlanSelectionPlanCard
                 isCurrentPlan={false}
                 actionElement={<VpnEnterpriseAction />}
                 enableActionLabelSpacing={isVpnB2bPlans && audience === Audience.B2B}
@@ -736,9 +736,9 @@ const PlanSelection = (props: Props) => {
                 planTitle={plan.title}
                 recommended={false}
                 key={plan.plan}
-                price={
+                getPrice={
                     // translator: displayed instead of price for VPN Enterprise plan. User should contact Sales first.
-                    c('Action').t`Let's talk`
+                    () => c('Action').t`Let's talk`
                 }
                 features={<PlanCardFeatureList features={plan.features} icon />}
             />

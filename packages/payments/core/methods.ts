@@ -3,19 +3,16 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import orderBy from '@proton/utils/orderBy';
 
+import {
+    getMinApplePayAmount,
+    getMinBitcoinAmount,
+    getMinGooglePayAmount,
+    getMinPaypalAmountChargebee,
+} from './amount-limits';
 import { getPaymentMethods } from './api/api';
 import type { BillingAddress } from './billing-address/billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import {
-    type ADDON_NAMES,
-    MIN_APPLE_PAY_AMOUNT,
-    MIN_BITCOIN_AMOUNT,
-    MIN_GOOGLE_PAY_AMOUNT,
-    MIN_PAYPAL_AMOUNT_CHARGEBEE,
-    MethodStorage,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-} from './constants';
+import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import { isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
@@ -116,6 +113,7 @@ export interface PaymentMethodsParameters {
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
+    enablePaypalRegionalCurrenciesBatch3?: boolean;
 }
 
 const sepaCountries = new Set([
@@ -243,6 +241,8 @@ export class PaymentMethods {
 
     public isTrial: boolean;
 
+    public enablePaypalRegionalCurrenciesBatch3: boolean;
+
     constructor({
         paymentStatus,
         paymentMethods,
@@ -260,6 +260,7 @@ export class PaymentMethods {
         canUseApplePay,
         canUseGooglePay,
         isTrial,
+        enablePaypalRegionalCurrenciesBatch3,
     }: PaymentMethodsParameters) {
         this._paymentStatus = paymentStatus;
 
@@ -278,6 +279,7 @@ export class PaymentMethods {
         this.canUseApplePay = !!canUseApplePay;
         this.canUseGooglePay = !!canUseGooglePay;
         this.isTrial = !!isTrial;
+        this.enablePaypalRegionalCurrenciesBatch3 = !!enablePaypalRegionalCurrenciesBatch3;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -508,7 +510,7 @@ export class PaymentMethods {
         return (
             this.paymentStatus.VendorStates.Bitcoin &&
             flowSupportsBtc &&
-            this.amount >= MIN_BITCOIN_AMOUNT &&
+            this.amount >= getMinBitcoinAmount(this.currency) &&
             !this.isB2BPlan() &&
             !btcDisabledSpecialCases &&
             (notDelinquent || this.flow === 'credit') &&
@@ -534,14 +536,19 @@ export class PaymentMethods {
             ({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL || Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
         );
 
-        const isPaypalAmountValid = this.amount >= MIN_PAYPAL_AMOUNT_CHARGEBEE;
+        const isPaypalAmountValid = this.amount >= getMinPaypalAmountChargebee(this.currency);
         const isInvoice = this.flow === 'invoice';
+
+        // hide Paypal until Braintree enables new regional currencies
+        const newCurrencies: Currency[] = ['HKD', 'SGD', 'JPY', 'KRW', 'PLN'];
+        const isNewCurrency = newCurrencies.includes(this.currency);
 
         const paypalAvailable =
             this.paymentStatus.VendorStates.Paypal &&
             !alreadyHasPayPal &&
             (isPaypalAmountValid || isInvoice) &&
-            !this.isTrial;
+            !this.isTrial &&
+            (!isNewCurrency || this.enablePaypalRegionalCurrenciesBatch3);
         return paypalAvailable;
     }
 
@@ -558,7 +565,7 @@ export class PaymentMethods {
         ] as PaymentMethodFlow[];
         const isAllowedFlow = flows.includes(this.flow);
 
-        const isApplePayAmountValid = this.amount >= MIN_APPLE_PAY_AMOUNT;
+        const isApplePayAmountValid = this.amount >= getMinApplePayAmount(this.currency);
 
         return (
             this.paymentStatus.VendorStates.Apple &&
@@ -583,7 +590,7 @@ export class PaymentMethods {
         ] as PaymentMethodFlow[];
         const isAllowedFlow = flows.includes(this.flow);
 
-        const isGooglePayAmountValid = this.amount >= MIN_GOOGLE_PAY_AMOUNT;
+        const isGooglePayAmountValid = this.amount >= getMinGooglePayAmount(this.currency);
 
         return (
             this.paymentStatus.VendorStates.Google &&
@@ -637,6 +644,7 @@ export async function initializePaymentMethods({
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
+    enablePaypalRegionalCurrenciesBatch3: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();
     const paymentMethodsPromise = (() => {

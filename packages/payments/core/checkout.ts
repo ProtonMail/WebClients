@@ -124,7 +124,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     // calculation purposes.
     if (plan?.Name === PLANS.VPN_BUSINESS) {
         const addon = addonsMap[ADDON_NAMES.IP_VPN_BUSINESS];
-        
+
         if (addon) {
             addon.quantity += 1;
         } else {

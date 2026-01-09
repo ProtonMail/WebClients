@@ -2,14 +2,12 @@ import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
 import Price from '@proton/components/components/price/Price';
+import { type Currency, PAYMENT_METHOD_TYPES, type PlainPaymentMethodType } from '@proton/payments';
 import {
-    type Currency,
-    MAX_PAYPAL_AMOUNT,
-    MIN_PAYPAL_AMOUNT_CHARGEBEE,
-    MIN_PAYPAL_AMOUNT_INHOUSE,
-    PAYMENT_METHOD_TYPES,
-    type PlainPaymentMethodType,
-} from '@proton/payments';
+    getMaxCreditAmount,
+    getMinPaypalAmountChargebee,
+    getMinPaypalAmountInhouse,
+} from '@proton/payments/core/amount-limits';
 
 import PayPalInfoMessage from './PayPalInfoMessage';
 
@@ -21,7 +19,7 @@ interface Props {
 
 const PayPalView = ({ amount, currency, method }: Props) => {
     const isChargebeePaypal = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-    const minAmount = isChargebeePaypal ? MIN_PAYPAL_AMOUNT_CHARGEBEE : MIN_PAYPAL_AMOUNT_INHOUSE;
+    const minAmount = isChargebeePaypal ? getMinPaypalAmountChargebee(currency) : getMinPaypalAmountInhouse(currency);
 
     if (amount < minAmount) {
         const minimumAmount = (
@@ -37,7 +35,7 @@ const PayPalView = ({ amount, currency, method }: Props) => {
         );
     }
 
-    if (amount > MAX_PAYPAL_AMOUNT) {
+    if (amount > getMaxCreditAmount(currency)) {
         return <Alert className="mb-4" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
