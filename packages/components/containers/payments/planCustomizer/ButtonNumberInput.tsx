@@ -91,6 +91,7 @@ export const ButtonNumberInput = ({
             )}
             <input
                 autoComplete="off"
+                disabled={disabled}
                 min={min}
                 max={max}
                 value={tmpValue === null ? '' : currentValue}
