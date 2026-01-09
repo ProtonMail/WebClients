@@ -26,6 +26,7 @@ import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlag, selectUserSettings } from '@proton/pass/store/selectors/user';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { LocalStoreData } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
@@ -70,8 +71,8 @@ export const options: RootSagaOptions = {
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
-        const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
-
+        const cacheKeys: (keyof LocalStoreData)[] = ['state', 'snapshot', 'salt', 'version', 'encryptedCacheKey'];
+        const cache = await ctx.service.storage.local.getItems(cacheKeys);
         if (isChromeExtensionRollback() && cache.version === EXTENSION_BUILD_VERSION) return {};
         return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
