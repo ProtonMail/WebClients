@@ -4,12 +4,21 @@ import { getTestPlans } from '@proton/testing/data';
 import { FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
     getAvailableCurrencies,
+    getCurrencyFormattingConfig,
+    getDefaultMainCurrency,
+    getDefaultMainCurrencyByCountryCode,
+    getFallbackCurrency,
+    getNaiveCurrencyRate,
     getPreferredCurrency,
+    getStatusCurrency,
     getSupportedRegionalCurrencies,
+    isMainCurrency,
     isRegionalCurrency,
     mainCurrencies,
+    mapCountryToRegionalCurrency,
+    mapRegionalCurrencyToCountry,
 } from './currencies';
-import type { PaymentStatus } from './interface';
+import type { Currency, PaymentStatus } from './interface';
 import type { Plan } from './plan/interface';
 import type { Subscription } from './subscription/interface';
 
@@ -25,7 +34,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     paramCurrency: currency,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(currency);
         });
@@ -36,13 +45,33 @@ describe('currencies', () => {
                 VendorStates: {} as any,
             };
 
+            const user = {
+                Currency: 'BRL',
+            } as UserModel;
+
             expect(
                 getPreferredCurrency({
                     paymentStatus: status,
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: true,
+                    user,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
+        });
+
+        it('should not respect BRL param if status currency is the same and there is no user', () => {
+            const status: PaymentStatus = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            expect(
+                getPreferredCurrency({
+                    paymentStatus: status,
+                    paramCurrency: 'BRL',
+                    enableNewBatchCurrencies: false,
+                })
+            ).toEqual('USD');
         });
 
         it('should return fallback currency if BRL is requested via param but status currency is not BRL', () => {
@@ -55,9 +84,9 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
-            ).toEqual('EUR');
+            ).toEqual('USD');
         });
 
         const regionalCurrencies = ['BRL', 'JPY', 'RANDOM'];
@@ -80,7 +109,7 @@ describe('currencies', () => {
                         paymentStatus: status,
                         paramCurrency: Currency,
                         user,
-                        enableNewBatchCurrencies: true,
+                        enableNewBatchCurrencies: false,
                     })
                 ).toEqual(Currency);
             }
@@ -109,13 +138,13 @@ describe('currencies', () => {
                         paramCurrency: Currency,
                         user,
                         subscription,
-                        enableNewBatchCurrencies: true,
+                        enableNewBatchCurrencies: false,
                     })
                 ).toEqual(Currency);
             }
         );
 
-        it('should return regional currency if there is no param currency', () => {
+        it('should not return regional currency if there is no param currency and no user', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -134,7 +163,36 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
+                })
+            ).toEqual('USD');
+        });
+
+        it('should return regional currency if there is no param currency but user has it', () => {
+            const user = {
+                Currency: 'BRL',
+            } as UserModel;
+
+            const status: PaymentStatus = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            const plans = [
+                {
+                    Currency: 'USD',
+                },
+                {
+                    Currency: 'BRL',
+                },
+            ] as Plan[];
+
+            expect(
+                getPreferredCurrency({
+                    paymentStatus: status,
+                    user,
+                    plans,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -155,7 +213,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -176,7 +234,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -200,7 +258,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -219,7 +277,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     subscription,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -248,7 +306,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     plans,
                     subscription,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('JPY');
         });
@@ -268,7 +326,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -288,7 +346,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -309,7 +367,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -330,7 +388,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -360,7 +418,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     plans,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('JPY');
         });
@@ -387,7 +445,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -414,9 +472,8 @@ describe('currencies', () => {
                     paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
-
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -477,9 +534,9 @@ describe('currencies', () => {
                     user,
                     plans,
                     paramPlanName,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
-            ).toEqual('EUR');
+            ).toEqual('USD');
         });
 
         it('should return user currency if user is free, plans are undefined, subscription is free and status does not have preferred currency', () => {
@@ -515,30 +572,9 @@ describe('currencies', () => {
                     plans,
                     subscription,
                     paymentStatus: status,
-                    enableNewBatchCurrencies: true,
-                })
-            ).toEqual('CHF');
-        });
-
-        it('should return regional currency if plans have it and status has it even if the feature flag is disable (backend-lead behaviour)', () => {
-            const status = {
-                CountryCode: 'BR',
-                VendorStates: {} as any,
-            };
-
-            const plans = [
-                {
-                    Currency: 'BRL',
-                },
-            ] as Plan[];
-
-            expect(
-                getPreferredCurrency({
-                    paymentStatus: status,
-                    plans,
                     enableNewBatchCurrencies: false,
                 })
-            ).toEqual('BRL');
+            ).toEqual('CHF');
         });
 
         it('should return regional currency if free plan is selected', () => {
@@ -553,15 +589,15 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
                     paramPlanName: PLANS.FREE,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
     });
 
     describe('getAvailableCurrencies', () => {
-        it('should return regional currency', () => {
+        it('should NOT return regional currency if only status is provided (without user)', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -570,7 +606,26 @@ describe('currencies', () => {
             expect(
                 getAvailableCurrencies({
                     paymentStatus: status,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
+                })
+            ).toEqual(['USD', 'EUR', 'CHF']);
+        });
+
+        it('should return regional currency if user is provided', () => {
+            const status: PaymentStatus = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            const user = {
+                Currency: 'USD',
+            } as User;
+
+            expect(
+                getAvailableCurrencies({
+                    paymentStatus: status,
+                    user,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -591,7 +646,7 @@ describe('currencies', () => {
                 getAvailableCurrencies({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -612,7 +667,7 @@ describe('currencies', () => {
                 getAvailableCurrencies({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -631,7 +686,7 @@ describe('currencies', () => {
                 getAvailableCurrencies({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -657,7 +712,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     user,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -683,7 +738,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     user,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -702,7 +757,7 @@ describe('currencies', () => {
                 getAvailableCurrencies({
                     paymentStatus: status,
                     subscription,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -728,7 +783,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     subscription,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -754,7 +809,7 @@ describe('currencies', () => {
                     paymentStatus: status,
                     subscription,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -773,7 +828,7 @@ describe('currencies', () => {
                 getAvailableCurrencies({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL', 'ARS']);
         });
@@ -795,7 +850,7 @@ describe('currencies', () => {
                         paymentStatus: status,
                         user,
                         paramCurrency: mainCurrencyParam,
-                        enableNewBatchCurrencies: true,
+                        enableNewBatchCurrencies: false,
                     })
                 ).toEqual(['USD', 'EUR', 'CHF']);
             }
@@ -803,7 +858,7 @@ describe('currencies', () => {
     });
 
     describe('getSupportedRegionalCurrencies', () => {
-        it('should return regional currency if regional currencies', () => {
+        it('should NOT return regional currency if only status is provided (without user)', () => {
             const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -812,7 +867,26 @@ describe('currencies', () => {
             expect(
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
+                })
+            ).toEqual([]);
+        });
+
+        it('should return regional currency if user is provided', () => {
+            const status: PaymentStatus = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            };
+
+            const user = {
+                Currency: 'USD',
+            } as User;
+
+            expect(
+                getSupportedRegionalCurrencies({
+                    paymentStatus: status,
+                    user,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -831,7 +905,7 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -850,7 +924,7 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     subscription,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -871,7 +945,7 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -892,7 +966,7 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual([]);
         });
@@ -913,7 +987,7 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual([]);
         });
@@ -1088,7 +1162,7 @@ describe('currencies', () => {
                     user,
                     subscription,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(expected);
         });
@@ -1131,31 +1205,116 @@ describe('currencies', () => {
                     user,
                     subscription,
                     plans,
-                    enableNewBatchCurrencies: true,
+                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['GBP', 'BRL']);
         });
     });
+});
 
-    it('should return regional currency if plans have it and status has it even if the feature flag is disable (backend-lead behaviour)', () => {
-        const status = {
-            CountryCode: 'BR',
-            VendorStates: {} as any,
-        };
+describe('getCurrencyFormattingConfig', () => {
+    it('should return correct config for EUR', () => {
+        expect(getCurrencyFormattingConfig('EUR')).toEqual({
+            symbolPosition: 'suffix-space',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
 
-        const plans = [
-            {
-                Currency: 'BRL',
-            },
-        ] as Plan[];
+    it('should return correct config for CHF', () => {
+        expect(getCurrencyFormattingConfig('CHF')).toEqual({
+            symbolPosition: 'prefix-space',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
 
-        expect(
-            getSupportedRegionalCurrencies({
-                paymentStatus: status,
-                plans,
-                enableNewBatchCurrencies: false,
-            })
-        ).toEqual(['BRL']);
+    it('should return correct config for USD', () => {
+        expect(getCurrencyFormattingConfig('USD')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for BRL', () => {
+        expect(getCurrencyFormattingConfig('BRL')).toEqual({
+            symbolPosition: 'prefix-space',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for GBP', () => {
+        expect(getCurrencyFormattingConfig('GBP')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for CAD', () => {
+        expect(getCurrencyFormattingConfig('CAD')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for AUD', () => {
+        expect(getCurrencyFormattingConfig('AUD')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for SGD', () => {
+        expect(getCurrencyFormattingConfig('SGD')).toEqual({
+            symbolPosition: 'prefix-space',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for HKD', () => {
+        expect(getCurrencyFormattingConfig('HKD')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should return correct config for JPY', () => {
+        expect(getCurrencyFormattingConfig('JPY')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 0,
+            divisor: 1,
+        });
+    });
+
+    it('should return correct config for KRW', () => {
+        expect(getCurrencyFormattingConfig('KRW')).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 0,
+            divisor: 1,
+        });
+    });
+
+    it('should return correct config for PLN', () => {
+        expect(getCurrencyFormattingConfig('PLN')).toEqual({
+            symbolPosition: 'suffix-space',
+            decimalPoints: 2,
+            divisor: 100,
+        });
+    });
+
+    it('should fallback to USD config for unknown currencies', () => {
+        expect(getCurrencyFormattingConfig('XXX' as any)).toEqual({
+            symbolPosition: 'prefix-nospace',
+            decimalPoints: 2,
+            divisor: 100,
+        });
     });
 });
 
@@ -1166,5 +1325,268 @@ describe('isRegionalCurrency', () => {
         expect(isRegionalCurrency('CHF')).toBe(false);
         expect(isRegionalCurrency('BRL')).toBe(true);
         expect(isRegionalCurrency('JPY' as any)).toBe(true);
+    });
+});
+
+describe('getDefaultMainCurrencyByCountryCode', () => {
+    it('should return USD for undefined country code', () => {
+        expect(getDefaultMainCurrencyByCountryCode(undefined)).toBe('USD');
+    });
+
+    it('should return USD for unknown country code', () => {
+        expect(getDefaultMainCurrencyByCountryCode('XX')).toBe('USD');
+    });
+
+    it('should return CHF for Switzerland', () => {
+        expect(getDefaultMainCurrencyByCountryCode('CH')).toBe('CHF');
+    });
+
+    it('should return EUR for EU countries', () => {
+        const euCountries = [
+            'AT',
+            'BE',
+            'BG',
+            'HR',
+            'CY',
+            'CZ',
+            'DK',
+            'EE',
+            'FI',
+            'FR',
+            'DE',
+            'GR',
+            'IE',
+            'IT',
+            'LV',
+            'LT',
+            'LU',
+            'MT',
+            'NL',
+            'PT',
+            'RO',
+            'SK',
+            'SI',
+            'ES',
+            'SE',
+        ];
+        euCountries.forEach((country) => {
+            expect(getDefaultMainCurrencyByCountryCode(country)).toBe('EUR');
+        });
+    });
+
+    it('should return EUR for other countries with EUR fallback', () => {
+        const eurFallbackCountries = ['IS', 'LI', 'NO', 'GB', 'AD', 'MC', 'SM', 'VA'];
+        eurFallbackCountries.forEach((country) => {
+            expect(getDefaultMainCurrencyByCountryCode(country)).toBe('EUR');
+        });
+    });
+
+    it('should return USD for countries without fallback', () => {
+        expect(getDefaultMainCurrencyByCountryCode('US')).toBe('USD');
+        expect(getDefaultMainCurrencyByCountryCode('HU')).toBe('USD');
+        expect(getDefaultMainCurrencyByCountryCode('PL')).toBe('USD');
+        expect(getDefaultMainCurrencyByCountryCode('MK')).toBe('USD');
+        expect(getDefaultMainCurrencyByCountryCode('TR')).toBe('USD');
+        expect(getDefaultMainCurrencyByCountryCode('SG')).toBe('USD');
+    });
+});
+
+describe('getDefaultMainCurrency', () => {
+    it('should return USD for undefined payment status', () => {
+        expect(getDefaultMainCurrency(undefined)).toBe('USD');
+    });
+
+    it('should extract country code from PaymentStatus', () => {
+        const status: PaymentStatus = {
+            CountryCode: 'CH',
+            VendorStates: {} as any,
+        };
+        expect(getDefaultMainCurrency(status)).toBe('CHF');
+    });
+
+    it('should extract country code from BillingAddress', () => {
+        const billingAddress = {
+            CountryCode: 'DE',
+        };
+        expect(getDefaultMainCurrency(billingAddress)).toBe('EUR');
+    });
+
+    it('should handle undefined CountryCode', () => {
+        const status: PaymentStatus = {
+            CountryCode: undefined as any,
+            VendorStates: {} as any,
+        };
+        expect(getDefaultMainCurrency(status)).toBe('USD');
+    });
+});
+
+describe('isMainCurrency', () => {
+    it('should return true for main currencies', () => {
+        expect(isMainCurrency('USD')).toBe(true);
+        expect(isMainCurrency('EUR')).toBe(true);
+        expect(isMainCurrency('CHF')).toBe(true);
+    });
+
+    it('should return false for regional currencies', () => {
+        expect(isMainCurrency('BRL')).toBe(false);
+        expect(isMainCurrency('GBP')).toBe(false);
+        expect(isMainCurrency('JPY')).toBe(false);
+        expect(isMainCurrency('KRW')).toBe(false);
+    });
+});
+
+describe('mapCountryToRegionalCurrency', () => {
+    it('should map country codes to their regional currencies', () => {
+        expect(mapCountryToRegionalCurrency('BR', true)).toBe('BRL');
+        expect(mapCountryToRegionalCurrency('GB', true)).toBe('GBP');
+        expect(mapCountryToRegionalCurrency('AU', true)).toBe('AUD');
+        expect(mapCountryToRegionalCurrency('CA', true)).toBe('CAD');
+
+        expect(mapCountryToRegionalCurrency('JP', true)).toBe('JPY');
+        expect(mapCountryToRegionalCurrency('KR', true)).toBe('KRW');
+        expect(mapCountryToRegionalCurrency('PL', true)).toBe('PLN');
+        expect(mapCountryToRegionalCurrency('SG', true)).toBe('SGD');
+        expect(mapCountryToRegionalCurrency('HK', true)).toBe('HKD');
+
+        expect(mapCountryToRegionalCurrency('JP', false)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('KR', false)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('PL', false)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('SG', false)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('HK', false)).toBeUndefined();
+    });
+
+    it('should return undefined for countries without regional currencies', () => {
+        expect(mapCountryToRegionalCurrency('US', true)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('DE', true)).toBeUndefined();
+        expect(mapCountryToRegionalCurrency('XX', true)).toBeUndefined();
+    });
+});
+
+describe('mapRegionalCurrencyToCountry', () => {
+    it('should map regional currencies to their countries', () => {
+        expect(mapRegionalCurrencyToCountry('BRL')).toBe('BR');
+        expect(mapRegionalCurrencyToCountry('GBP')).toBe('GB');
+        expect(mapRegionalCurrencyToCountry('AUD')).toBe('AU');
+        expect(mapRegionalCurrencyToCountry('CAD')).toBe('CA');
+        expect(mapRegionalCurrencyToCountry('JPY')).toBe('JP');
+        expect(mapRegionalCurrencyToCountry('KRW')).toBe('KR');
+        expect(mapRegionalCurrencyToCountry('PLN')).toBe('PL');
+        expect(mapRegionalCurrencyToCountry('SGD')).toBe('SG');
+        expect(mapRegionalCurrencyToCountry('HKD')).toBe('HK');
+    });
+
+    it('should return undefined for main currencies', () => {
+        expect(mapRegionalCurrencyToCountry('USD')).toBeUndefined();
+        expect(mapRegionalCurrencyToCountry('EUR')).toBeUndefined();
+        expect(mapRegionalCurrencyToCountry('CHF')).toBeUndefined();
+    });
+
+    it('should return undefined for unknown currencies', () => {
+        expect(mapRegionalCurrencyToCountry('XXX' as Currency)).toBeUndefined();
+    });
+});
+
+describe('getFallbackCurrency', () => {
+    it('should return the fallback currency for regional currencies', () => {
+        expect(getFallbackCurrency('BRL')).toBe('USD'); // BR -> USD
+        expect(getFallbackCurrency('GBP')).toBe('EUR'); // GB -> EUR
+        expect(getFallbackCurrency('AUD')).toBe('USD'); // AU -> USD
+        expect(getFallbackCurrency('CAD')).toBe('USD'); // CA -> USD
+        expect(getFallbackCurrency('JPY')).toBe('USD'); // JP -> USD
+        expect(getFallbackCurrency('KRW')).toBe('USD'); // KR -> USD
+        expect(getFallbackCurrency('PLN')).toBe('USD'); // PL -> USD
+        expect(getFallbackCurrency('SGD')).toBe('USD'); // SG -> USD
+        expect(getFallbackCurrency('HKD')).toBe('USD'); // HK -> USD
+    });
+
+    it('should return USD for unknown currencies', () => {
+        expect(getFallbackCurrency('XXX' as Currency)).toBe('USD');
+    });
+});
+
+describe('getNaiveCurrencyRate', () => {
+    it('should return predefined rates for known currencies', () => {
+        expect(getNaiveCurrencyRate('BRL')).toBe(5);
+        expect(getNaiveCurrencyRate('PLN')).toBe(5);
+        expect(getNaiveCurrencyRate('HKD')).toBe(10);
+    });
+
+    it('should return adjusted rates for currencies with different decimal points', () => {
+        // JPY should have coversion rate 100. But because it has 0 decimal points instead of 2, we remove two
+        // orders of magnitude.
+        expect(getNaiveCurrencyRate('JPY')).toBe(1);
+
+        // KRW should have coversion rate 1000. But because it has 0 decimal points instead of 2, we remove two orders
+        // of magnitude.
+        expect(getNaiveCurrencyRate('KRW')).toBe(10);
+    });
+
+    it('should return 1 for unknown currencies', () => {
+        expect(getNaiveCurrencyRate('XXX' as Currency)).toBe(1);
+    });
+
+    it('should return 1 for main currencies without predefined rates', () => {
+        expect(getNaiveCurrencyRate('USD')).toBe(1);
+        expect(getNaiveCurrencyRate('EUR')).toBe(1);
+        expect(getNaiveCurrencyRate('CHF')).toBe(1);
+    });
+});
+
+describe('getStatusCurrency', () => {
+    it('should return undefined if paymentStatus is undefined', () => {
+        const user = {} as User;
+        expect(getStatusCurrency(undefined, user, false)).toBeUndefined();
+    });
+
+    it('should return undefined if user is undefined', () => {
+        const status: PaymentStatus = {
+            CountryCode: 'BR',
+            VendorStates: {} as any,
+        };
+        expect(getStatusCurrency(status, undefined, false)).toBeUndefined();
+    });
+
+    it('should return undefined if both paymentStatus and user are undefined', () => {
+        expect(getStatusCurrency(undefined, undefined, false)).toBeUndefined();
+    });
+
+    it('should return regional currency if both paymentStatus and user exist and country has regional currency', () => {
+        const status: PaymentStatus = {
+            CountryCode: 'BR',
+            VendorStates: {} as any,
+        };
+        const user = {} as User;
+
+        expect(getStatusCurrency(status, user, false)).toBe('BRL');
+    });
+
+    it('should return GBP for GB country code', () => {
+        const status: PaymentStatus = {
+            CountryCode: 'GB',
+            VendorStates: {} as any,
+        };
+        const user = {} as User;
+
+        expect(getStatusCurrency(status, user, false)).toBe('GBP');
+    });
+
+    it('should return undefined if country does not have regional currency', () => {
+        const status: PaymentStatus = {
+            CountryCode: 'US',
+            VendorStates: {} as any,
+        };
+        const user = {} as User;
+
+        expect(getStatusCurrency(status, user, false)).toBeUndefined();
+    });
+
+    it('should return undefined if country code is undefined', () => {
+        const status: PaymentStatus = {
+            CountryCode: undefined as any,
+            VendorStates: {} as any,
+        };
+        const user = {} as User;
+
+        expect(getStatusCurrency(status, user, false)).toBeUndefined();
     });
 });

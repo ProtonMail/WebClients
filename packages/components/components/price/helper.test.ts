@@ -1,4 +1,4 @@
-import { getSimplePriceString, humanPrice } from './helper';
+import { formatPriceWithoutCurrency, getSimplePriceString } from './helper';
 
 describe('getSimplePriceString', () => {
     const NBSP = '\u00A0';
@@ -36,29 +36,45 @@ describe('getSimplePriceString', () => {
     it('should support suffix', () => {
         expect(getSimplePriceString('EUR', 111, ' / month')).toBe(`1.11${NBSP}€ / month`);
     });
+
+    it('should render PLN', () => {
+        expect(getSimplePriceString('PLN', 123)).toBe(`1.23${NBSP}zł`);
+    });
+
+    it('should render JPY', () => {
+        expect(getSimplePriceString('JPY', 123)).toBe(`¥123`);
+    });
+
+    it('should render KRW', () => {
+        expect(getSimplePriceString('KRW', 123)).toBe(`₩123`);
+    });
+
+    it('should render SGD', () => {
+        expect(getSimplePriceString('SGD', 123)).toBe(`SGD${NBSP}1.23`);
+    });
+
+    it('should render HKD', () => {
+        expect(getSimplePriceString('HKD', 123)).toBe(`HK$1.23`);
+    });
 });
 
 describe('humanPrice', () => {
     it('should return a String', () => {
-        expect(humanPrice(111)).toBe('1.11');
+        expect(formatPriceWithoutCurrency(111, 'USD')).toBe('1.11');
     });
 
     it('should support divisor', () => {
-        expect(humanPrice(100, 1)).toBe('100');
-    });
-
-    it('should support empty parameters', () => {
-        expect(humanPrice()).toBe('0');
+        expect(formatPriceWithoutCurrency(100, 'JPY')).toBe('100');
     });
 
     it('should remove .00 when needed', () => {
-        expect(humanPrice(100)).toBe('1');
-        expect(humanPrice(120)).toBe('1.20');
-        expect(humanPrice(123)).toBe('1.23');
+        expect(formatPriceWithoutCurrency(100, 'USD')).toBe('1');
+        expect(formatPriceWithoutCurrency(120, 'USD')).toBe('1.20');
+        expect(formatPriceWithoutCurrency(123, 'USD')).toBe('1.23');
     });
 
     it('should return positive amount', () => {
-        expect(humanPrice(-100)).toBe('1');
-        expect(humanPrice(-123)).toBe('1.23');
+        expect(formatPriceWithoutCurrency(-100, 'USD')).toBe('1');
+        expect(formatPriceWithoutCurrency(-123, 'USD')).toBe('1.23');
     });
 });

@@ -113,6 +113,8 @@ enum PaymentsFlag {
     PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     GooglePay = 'GooglePay',
+    RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
+    PaypalRegionalCurrenciesBatch3 = 'PaypalRegionalCurrenciesBatch3',
 }
 
 export enum CalendarFeatureFlag {

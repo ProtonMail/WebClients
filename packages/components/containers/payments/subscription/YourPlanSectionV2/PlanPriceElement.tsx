@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { CYCLE, type FreeSubscription, type Subscription, isManagedExternally } from '@proton/payments';
+import { CYCLE, type Subscription, isManagedExternally } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    subscription?: Subscription | FreeSubscription;
+    subscription: Subscription;
     user: UserModel;
 }
 const PlanPriceElement = ({ subscription }: Props) => {
@@ -15,7 +15,7 @@ const PlanPriceElement = ({ subscription }: Props) => {
     return (
         !isManagedExternally(subscription) && (
             <Price
-                currency={subscription?.Currency}
+                currency={subscription.Currency}
                 suffix={subscription && amount ? c('Suffix').t`/month` : ''}
                 wrapperClassName="text-semibold"
                 currencyClassName="text-5xl color-norm"

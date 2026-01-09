@@ -1,7 +1,8 @@
 import { apiMock } from '@proton/testing/lib/api';
 import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
-import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
+import { getMaxCreditAmount, getMinPaypalAmountInhouse } from '../amount-limits';
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import type { AmountAndCurrency, ChargeablePaymentParameters, TokenPaymentMethod } from '../interface';
 import { PaypalPaymentProcessor, PaypalWrongAmountError } from './paypalPayment';
 
@@ -183,31 +184,31 @@ describe('PaypalPaymentProcessor', () => {
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE - 1,
+            Amount: getMinPaypalAmountInhouse('USD') - 1,
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(true);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
+            Amount: getMinPaypalAmountInhouse('USD'),
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: (MAX_CREDIT_AMOUNT + MIN_PAYPAL_AMOUNT_INHOUSE) / 2,
+            Amount: (getMaxCreditAmount('USD') + getMinPaypalAmountInhouse('USD')) / 2,
             Currency: 'EUR',
         });
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MAX_CREDIT_AMOUNT,
+            Amount: getMaxCreditAmount('USD'),
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MAX_CREDIT_AMOUNT + 1,
+            Amount: getMaxCreditAmount('USD') + 1,
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(true);
@@ -215,7 +216,7 @@ describe('PaypalPaymentProcessor', () => {
 
     it('should throw when amount is not in range', async () => {
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE - 1,
+            Amount: getMinPaypalAmountInhouse('USD') - 1,
             Currency: 'USD',
         });
 
@@ -223,7 +224,7 @@ describe('PaypalPaymentProcessor', () => {
 
         resetPaymentProcessor();
         paymentProcessor.setAmountAndCurrency({
-            Amount: MAX_CREDIT_AMOUNT + 1,
+            Amount: getMaxCreditAmount('USD') + 1,
             Currency: 'USD',
         });
 
@@ -231,7 +232,7 @@ describe('PaypalPaymentProcessor', () => {
 
         resetPaymentProcessor();
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
+            Amount: getMinPaypalAmountInhouse('USD'),
             Currency: 'USD',
         });
 
@@ -241,21 +242,21 @@ describe('PaypalPaymentProcessor', () => {
 
     it('should throw when amount is not in range (no resets)', async () => {
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE - 1,
+            Amount: getMinPaypalAmountInhouse('USD') - 1,
             Currency: 'USD',
         });
 
         await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MAX_CREDIT_AMOUNT + 1,
+            Amount: getMaxCreditAmount('USD') + 1,
             Currency: 'USD',
         });
 
         await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrow(PaypalWrongAmountError);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
+            Amount: getMinPaypalAmountInhouse('USD'),
             Currency: 'USD',
         });
 

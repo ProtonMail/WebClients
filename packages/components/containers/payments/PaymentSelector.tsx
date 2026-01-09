@@ -7,7 +7,8 @@ import { useUser } from '@proton/account/user/hooks';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type Currency, type PaymentStatus, getCurrencyRate } from '@proton/payments';
+import { type Currency, type PaymentStatus, getNaiveCurrencyRate } from '@proton/payments';
+import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import AmountButton from './AmountButton';
@@ -18,8 +19,6 @@ interface Props {
     amount: number;
     onChangeCurrency: (currency: Currency) => void;
     onChangeAmount: (amount: number) => void;
-    maxAmount?: number;
-    minAmount?: number;
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
 }
@@ -29,8 +28,6 @@ const PaymentSelector = ({
     amount,
     onChangeCurrency,
     onChangeAmount,
-    minAmount,
-    maxAmount,
     disableCurrencySelector,
     paymentStatus,
 }: Props) => {
@@ -40,10 +37,12 @@ const PaymentSelector = ({
 
     const [inputValue, setInputValue] = useState('');
 
+    const { divisor } = getCurrencyFormattingConfig(currency);
+
     const getAmounts = (currency: Currency) => {
-        const defaultAmounts = [500, 1000, 5000, 10000];
-        const rate = getCurrencyRate(currency);
-        return defaultAmounts.map((value) => Math.floor(value * rate));
+        const defaultUsdAmounts = [500, 1000, 5000, 10000];
+        const rate = getNaiveCurrencyRate(currency);
+        return defaultUsdAmounts.map((value) => Math.floor(value * rate));
     };
 
     const handleChangeAmount = (value: number) => {
@@ -53,12 +52,11 @@ const PaymentSelector = ({
 
     const handleChangeCurrency = (newCurrency: Currency) => {
         onChangeCurrency(newCurrency);
+        setInputValue('');
 
-        if (getCurrencyRate(newCurrency) !== getCurrencyRate(currency)) {
-            const newAmounts = getAmounts(newCurrency);
-            // select the lowest amount
-            handleChangeAmount(newAmounts[0]);
-        }
+        // select the lowest amount
+        const newAmounts = getAmounts(newCurrency);
+        handleChangeAmount(newAmounts[0]);
     };
 
     const amounts = getAmounts(currency);
@@ -69,6 +67,7 @@ const PaymentSelector = ({
                 {amounts.map((value) => (
                     <div key={value} className="md:flex-1 mb-2 md:mb-0">
                         <AmountButton
+                            currency={currency}
                             aria-describedby="id_desc_amount id_desc_currency"
                             className="w-full"
                             onSelect={handleChangeAmount}
@@ -93,17 +92,8 @@ const PaymentSelector = ({
                                 return;
                             }
                             const value = Number(target.value);
-                            if (minAmount && value < minAmount / 100) {
-                                return;
-                            }
-                            if (maxAmount && value > maxAmount / 100) {
-                                return;
-                            }
                             setInputValue(`${value}`);
-                            onChangeAmount(Math.floor(value * 100));
-                        }}
-                        onBlur={() => {
-                            setInputValue(`${amount / 100}`);
+                            onChangeAmount(Math.floor(value * divisor));
                         }}
                         value={inputValue}
                         id="otherAmount"

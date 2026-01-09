@@ -7,8 +7,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import type { AmountAndCurrency } from '@proton/payments';
+import type { AmountAndCurrency, Currency } from '@proton/payments';
 import { CYCLE, PLANS } from '@proton/payments';
+import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';
@@ -31,8 +32,9 @@ import {
 
 import './DuoPlan.scss';
 
-const roundAmount = (amount: number) => {
-    return Math.round(amount / 100) * 100;
+const roundAmount = (amount: number, currency: Currency) => {
+    const { divisor } = getCurrencyFormattingConfig(currency);
+    return Math.round(amount / divisor) * divisor;
 };
 
 const Layout = (props: OfferLayoutProps) => {
@@ -53,7 +55,7 @@ const Layout = (props: OfferLayoutProps) => {
             const duoPlan = plansMap[PLANS.DUO];
             const savedAmount2y = (duoPlan?.Pricing[CYCLE.MONTHLY] || 0) * deal.cycle - deal.prices?.withCoupon;
             return {
-                Amount: roundAmount(savedAmount2y),
+                Amount: roundAmount(savedAmount2y, duoPlan.Currency),
                 Currency: duoPlan.Currency,
             };
         }
@@ -61,7 +63,7 @@ const Layout = (props: OfferLayoutProps) => {
         const bundlePlan = plansMap[PLANS.BUNDLE]; // Bundle = unlimited
         const savedAmount = (bundlePlan?.Pricing[deal.cycle] || 0) * 2 - deal.prices?.withCoupon;
         return {
-            Amount: roundAmount(savedAmount),
+            Amount: roundAmount(savedAmount, bundlePlan.Currency),
             Currency: bundlePlan.Currency,
         };
     }, [deal, isCycleTwoYear, plansMapLoading]);

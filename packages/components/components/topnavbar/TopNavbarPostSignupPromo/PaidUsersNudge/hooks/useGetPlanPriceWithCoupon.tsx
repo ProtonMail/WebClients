@@ -24,6 +24,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
         yearlyPrice: 0,
         discountedPrice: 0,
         savedAmount: 0,
+        currency,
     });
 
     useEffect(() => {
@@ -54,6 +55,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
                 yearlyPrice,
                 discountedPrice,
                 savedAmount: checkout.discountPerCycle,
+                currency,
             });
         };
 

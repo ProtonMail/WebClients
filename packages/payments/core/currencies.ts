@@ -9,6 +9,39 @@ import type { Plan } from './plan/interface';
 import type { Subscription } from './subscription/interface';
 import { isValidPlanName } from './type-guards';
 
+interface CurrencyFormattingConfig {
+    symbolPosition: 'suffix-space' | 'prefix-space' | 'prefix-nospace';
+    decimalPoints: number;
+    divisor: number;
+}
+
+export function getCurrencyFormattingConfig(currency: Currency): CurrencyFormattingConfig {
+    type CurrencyFormattingConfigWithoutDelimiter = Omit<CurrencyFormattingConfig, 'divisor'>;
+
+    const currencyFormattingConfigs: Record<Currency, CurrencyFormattingConfigWithoutDelimiter> = {
+        EUR: { symbolPosition: 'suffix-space', decimalPoints: 2 },
+        CHF: { symbolPosition: 'prefix-space', decimalPoints: 2 },
+        USD: { symbolPosition: 'prefix-nospace', decimalPoints: 2 },
+        BRL: { symbolPosition: 'prefix-space', decimalPoints: 2 },
+        GBP: { symbolPosition: 'prefix-nospace', decimalPoints: 2 },
+        CAD: { symbolPosition: 'prefix-nospace', decimalPoints: 2 },
+        AUD: { symbolPosition: 'prefix-nospace', decimalPoints: 2 },
+        SGD: { symbolPosition: 'prefix-space', decimalPoints: 2 },
+        HKD: { symbolPosition: 'prefix-nospace', decimalPoints: 2 },
+        JPY: { symbolPosition: 'prefix-nospace', decimalPoints: 0 },
+        KRW: { symbolPosition: 'prefix-nospace', decimalPoints: 0 },
+        PLN: { symbolPosition: 'suffix-space', decimalPoints: 2 },
+    };
+
+    const configsWithDelimiter = Object.fromEntries(
+        (Object.entries(currencyFormattingConfigs) as [Currency, CurrencyFormattingConfigWithoutDelimiter][]).map(
+            ([currency, config]) => [currency, { ...config, divisor: 10 ** config.decimalPoints }]
+        )
+    ) as Record<Currency, CurrencyFormattingConfig>;
+
+    return configsWithDelimiter?.[currency] ?? configsWithDelimiter.USD;
+}
+
 const countriesWithEurFallback = new Set([
     // EU Member States
     'AT',
@@ -50,30 +83,29 @@ const countriesWithEurFallback = new Set([
     'VA',
 ]);
 
+export function getDefaultMainCurrencyByCountryCode(countryCode: string | undefined): Currency {
+    const fallbackCurrency: Currency = 'USD';
+    if (countryCode) {
+        if (countryCode === 'CH') {
+            return 'CHF';
+        }
+
+        if (countriesWithEurFallback.has(countryCode)) {
+            return 'EUR';
+        }
+    }
+
+    return fallbackCurrency;
+}
+
 /**
  * A function that generalizes the old DEFAULT_CURRENCY constant. Instead of always using EUR, we gravitate towards USD
  * as defined by P2-1039, while some countries have their own fallbacks among main currencies. For example, most of the
  * EU countries fall back to EUR, and Switzerland falls back to CHF.
  */
-export const getDefaultMainCurrency = (paymentStatus?: PaymentStatus | BillingAddress): Currency => {
-    const fallbackCurrency: Currency = 'USD';
-    const countryCode = paymentStatus?.CountryCode;
-    if (!countryCode) {
-        return fallbackCurrency;
-    }
-
-    if (countryCode === 'CH') {
-        return 'CHF';
-    }
-
-    if (countriesWithEurFallback.has(countryCode)) {
-        return 'EUR';
-    }
-
-    // it is expected that the regional currency can't be the default currency, so we fallback to the main currency.
-    // This is because regional currencies are not supported by all plans.
-    return fallbackCurrency;
-};
+export function getDefaultMainCurrency(paymentStatus?: PaymentStatus | BillingAddress): Currency {
+    return getDefaultMainCurrencyByCountryCode(paymentStatus?.CountryCode);
+}
 
 export const mainCurrencies: readonly Currency[] = Object.freeze(['USD', 'EUR', 'CHF']);
 export function isMainCurrency(currency: Currency): boolean {
@@ -84,25 +116,39 @@ export function isRegionalCurrency(currency: Currency): boolean {
     return !isMainCurrency(currency);
 }
 
-export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = undefined;
-const newBatchCurrencies = new Set<Currency>([]);
+export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = 'RegionalCurrenciesBatch3';
+
+export function isNewBatchRegionalCurrency(currency: Currency | undefined): boolean {
+    if (!currency) {
+        return false;
+    }
+
+    const newBatchRegionalCurrencies: readonly Currency[] = ['JPY', 'KRW', 'PLN', 'SGD', 'HKD'];
+    return newBatchRegionalCurrencies.includes(currency);
+}
+
+const countryToRegionalCurrencyMap: Readonly<Partial<Record<string, Currency>>> = Object.freeze({
+    BR: 'BRL',
+    GB: 'GBP',
+    AU: 'AUD',
+    CA: 'CAD',
+    JP: 'JPY',
+    KR: 'KRW',
+    PL: 'PLN',
+    SG: 'SGD',
+    HK: 'HKD',
+});
 
 export function mapCountryToRegionalCurrency(
     countryCode: string,
     enableNewBatchCurrencies: boolean
 ): Currency | undefined {
-    const result = {
-        BR: 'BRL' as const,
-        GB: 'GBP' as const,
-        AU: 'AUD' as const,
-        CA: 'CAD' as const,
-    }[countryCode];
-
+    const result = countryToRegionalCurrencyMap[countryCode];
     if (!result) {
         return;
     }
 
-    const isNewBatchCurrency = newBatchCurrencies.has(result);
+    const isNewBatchCurrency = isNewBatchRegionalCurrency(result);
     if (!isNewBatchCurrency) {
         return result;
     }
@@ -110,12 +156,13 @@ export function mapCountryToRegionalCurrency(
     return enableNewBatchCurrencies ? result : undefined;
 }
 
-export function getFallbackCurrency(currency: Currency): Currency {
-    if (isRegionalCurrency(currency)) {
-        return 'EUR';
-    }
+export function mapRegionalCurrencyToCountry(currency: Currency): string | undefined {
+    return Object.entries(countryToRegionalCurrencyMap).find(([_, value]) => value === currency)?.[0];
+}
 
-    return currency;
+export function getFallbackCurrency(currency: Currency): Currency {
+    const country = mapRegionalCurrencyToCountry(currency);
+    return getDefaultMainCurrencyByCountryCode(country);
 }
 
 function getMaybeRegionalPlansCurrency(
@@ -134,6 +181,20 @@ function getMaybeRegionalPlansCurrency(
     return maybeRegionalPlansCurrency;
 }
 
+export function getStatusCurrency(
+    paymentStatus: PaymentStatus | undefined,
+    user: User | undefined,
+    enableNewBatchCurrencies: boolean
+): Currency | undefined {
+    // we ignore regional currency coming from the status endpoint if user doesn't exist yet. This is because we
+    // want the backend to control the rollout of regional currencies, especially for the new signups.
+    // So expected behavior is: new users should fully rely on the backend to determine the available currencies.
+    // And existing users can rely on status, subscription, and user currency.
+    return !!paymentStatus && !!user
+        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
+        : undefined;
+}
+
 export function getSupportedRegionalCurrencies({
     paymentStatus,
     plans,
@@ -149,9 +210,7 @@ export function getSupportedRegionalCurrencies({
     subscription?: Subscription | FreeSubscription;
     enableNewBatchCurrencies: boolean;
 }): Currency[] {
-    const statusCurrency = !!paymentStatus
-        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
-        : undefined;
+    const statusCurrency = getStatusCurrency(paymentStatus, user, enableNewBatchCurrencies);
 
     const currencies = [
         statusCurrency,
@@ -193,9 +252,7 @@ export function getPreferredCurrency({
     subscription?: Subscription | FreeSubscription | null;
     enableNewBatchCurrencies: boolean;
 }): Currency {
-    const statusCurrency = paymentStatus
-        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
-        : undefined;
+    const statusCurrency = getStatusCurrency(paymentStatus, user, enableNewBatchCurrencies);
 
     const userCurrency =
         !!user && (isRegionalCurrency(user?.Currency) || !!user?.isPaid || user?.Credit !== 0)
@@ -292,13 +349,22 @@ export function getAvailableCurrencies({
 }
 
 /**
- * That's a naïve currency conversion. Can't be used in any critical applications. But can be used for cases that are
+ * That's a naïve currency conversion. Must not be used in any critical applications. But can be used for cases that are
  * updated rare. For example, the buttons that pre-select the number of credit to top up.
  */
-export function getCurrencyRate(currency: Currency): number {
-    if (currency === 'BRL') {
-        return 5;
-    }
+export function getNaiveCurrencyRate(currency: Currency): number {
+    const currencyRates: Partial<Record<Currency, number>> = {
+        BRL: 5,
+        PLN: 5,
+        HKD: 10,
+        JPY: 100,
+        KRW: 1000,
+    };
 
-    return 1;
+    const defaultDecimalPoints = getCurrencyFormattingConfig('USD').decimalPoints;
+
+    const decimalPointsDiff = defaultDecimalPoints - getCurrencyFormattingConfig(currency).decimalPoints;
+    const decimalShift = 10 ** decimalPointsDiff;
+
+    return (currencyRates[currency] ?? 1) / decimalShift;
 }
