@@ -59,7 +59,7 @@ export const useDrivePlan = () => {
         /** `true` is plan is *Drive Professional*. */
         isDriveProfessional,
 
-        /** `true` if plan is *Proton Business Suite*. */
+        /** `true` if plan is *Workspace Standard*. */
         isProtonBusinessSuite,
 
         /** `true` if plan is *Drive Lite*. */
