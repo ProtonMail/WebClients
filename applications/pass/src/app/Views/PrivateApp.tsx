@@ -35,8 +35,8 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
 import { clientOffline } from '@proton/pass/lib/client';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { offlineResume } from '@proton/pass/store/actions';
 import {
     selectIsSSO,
