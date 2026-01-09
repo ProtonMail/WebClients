@@ -7,7 +7,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { ComponentTag, EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
-import type { FolderViewData } from './useFolder.store';
+import type { FolderStore, FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
 
 const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
@@ -21,6 +21,13 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
         handleSdkError(error, { fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
     return legacyItem ? { ...legacyItem, shareUrl } : undefined;
+};
+
+const addFolderItemToStore = async (uid: string, folder: FolderViewData, folderStore: FolderStore) => {
+    const legacyItem = await getLegacyItemFromUid(uid, folder);
+    if (legacyItem) {
+        folderStore.setItem(legacyItem);
+    }
 };
 
 export const subscribeToFolderEvents = () => {
@@ -53,10 +60,7 @@ export const subscribeToFolderEvents = () => {
             case ActionEventName.RESTORED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid) {
-                        const legacyItem = await getLegacyItemFromUid(item.uid, folder);
-                        if (legacyItem) {
-                            store.setItem(legacyItem);
-                        }
+                        void addFolderItemToStore(item.uid, folder, store);
                     } else {
                         store.removeItem(item.uid);
                     }
@@ -66,6 +70,8 @@ export const subscribeToFolderEvents = () => {
                 for (const item of event.items) {
                     if (item.parentUid !== folder.uid) {
                         store.removeItem(item.uid);
+                    } else {
+                        void addFolderItemToStore(item.uid, folder, store);
                     }
                 }
                 break;
@@ -73,10 +79,7 @@ export const subscribeToFolderEvents = () => {
             case ActionEventName.UPDATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
-                        const legacyItem = await getLegacyItemFromUid(item.uid, folder);
-                        if (legacyItem) {
-                            store.updateItem(item.uid, legacyItem);
-                        }
+                        void addFolderItemToStore(item.uid, folder, store);
                     } else {
                         store.removeItem(item.uid);
                     }
@@ -85,10 +88,7 @@ export const subscribeToFolderEvents = () => {
             case ActionEventName.CREATED_NODES:
                 for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
-                        const legacyItem = await getLegacyItemFromUid(item.uid, folder);
-                        if (legacyItem) {
-                            store.setItem(legacyItem);
-                        }
+                        void addFolderItemToStore(item.uid, folder, store);
                     } else {
                         store.removeItem(item.uid);
                     }
