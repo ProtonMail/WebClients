@@ -19,7 +19,6 @@ import {
     type BillingAddressStatus,
     type Currency,
     type FreeSubscription,
-    MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
     type PaymentMethodFlow,
     type PaymentMethodType,
@@ -31,6 +30,7 @@ import {
     savedMethodRequires3DS,
     type useSepaCurrencyOverride,
 } from '@proton/payments';
+import { getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import {
     type CbIframeHandles,
     type ChargebeeCardWrapperProps,
@@ -162,10 +162,11 @@ export const PaymentsNoApi = ({
 
     const loadingBitcoin = useStableLoading([loadingHookProps, !!loadingBitcoinProp]);
 
-    if (flow === 'credit' && amount < MIN_CREDIT_AMOUNT) {
+    const minCreditAmount = getMinCreditAmount(currency);
+    if (flow === 'credit' && amount < minCreditAmount) {
         const price = (
             <Price key="price" currency={currency}>
-                {MIN_CREDIT_AMOUNT}
+                {minCreditAmount}
             </Price>
         );
         return (

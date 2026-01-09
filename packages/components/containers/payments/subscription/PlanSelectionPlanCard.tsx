@@ -3,19 +3,17 @@ import type { ReactElement, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
+import type { StyleProps as PriceStyleProps } from '@proton/components/components/price/Price';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
-import isFunction from '@proton/utils/isFunction';
 
-export type HocPriceProps = Omit<PriceProps, 'children'>;
-export type HocPrice = (props: HocPriceProps) => ReactElement;
+export type HocPrice = (props: PriceStyleProps) => ReactElement | string | string[];
 
 interface Base {
     planName: PLANS;
     planTitle: ReactNode;
-    price: string | ReactElement | HocPrice;
+    getPrice: HocPrice;
     info: string;
     features: ReactNode;
     isCurrentPlan?: boolean;
@@ -48,10 +46,10 @@ const getCycleUnit = (planName: PLANS) => {
     return c('Cycle').t`/month`;
 };
 
-const PlanCard = ({
+const PlanSelectionPlanCard = ({
     planName,
     planTitle,
-    price,
+    getPrice,
     info,
     action,
     actionLabel,
@@ -110,30 +108,12 @@ const PlanCard = ({
                 <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
                 <div className="mb-4 flex flex-wrap items-baseline plan-selection-price">
                     {(() => {
-                        const commonPriceProps: HocPriceProps = {
+                        return getPrice({
                             large: true,
-                        };
-
-                        if (isFunction(price)) {
-                            return price({
-                                ...commonPriceProps,
-                                suffix: getCycleUnit(planName),
-                                suffixClassName: 'color-weak plan-selection-suffix text-left',
-                                suffixNextLine: true,
-                            });
-                        }
-
-                        if (typeof price === 'string') {
-                            return (
-                                <span className="mb-5">
-                                    <Price {...commonPriceProps} className="mb-0.5">
-                                        {price}
-                                    </Price>
-                                </span>
-                            );
-                        }
-
-                        return price;
+                            suffix: getCycleUnit(planName),
+                            suffixClassName: 'color-weak plan-selection-suffix text-left',
+                            suffixNextLine: true,
+                        });
                     })()}
                 </div>
 
@@ -148,4 +128,4 @@ const PlanCard = ({
     );
 };
 
-export default PlanCard;
+export default PlanSelectionPlanCard;

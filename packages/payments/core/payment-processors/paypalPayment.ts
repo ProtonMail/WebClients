@@ -1,7 +1,8 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { getMaxCreditAmount, getMinPaypalAmountInhouse } from '../amount-limits';
 import { createTokenV4 } from '../api/api';
-import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES } from '../constants';
+import { PAYMENT_METHOD_TYPES } from '../constants';
 import { type PaymentVerificator, formatToken } from '../createPaymentToken';
 import type {
     AmountAndCurrency,
@@ -164,16 +165,16 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
 
     private checkAmount() {
         const isInRange =
-            (this.amountAndCurrency.Amount >= MIN_PAYPAL_AMOUNT_INHOUSE &&
-                this.amountAndCurrency.Amount <= MAX_CREDIT_AMOUNT) ||
+            (this.amountAndCurrency.Amount >= getMinPaypalAmountInhouse('USD') &&
+                this.amountAndCurrency.Amount <= getMaxCreditAmount('USD')) ||
             // 0 is allowed because in this case we don't need to fetch token
             this.amountAndCurrency.Amount === 0 ||
             this.ignoreAmountCheck;
         return {
             isInRange,
             currentAmount: this.amountAndCurrency.Amount,
-            minAmount: MIN_CREDIT_AMOUNT,
-            maxAmount: MAX_CREDIT_AMOUNT,
+            minAmount: getMinPaypalAmountInhouse('USD'),
+            maxAmount: getMaxCreditAmount('USD'),
         };
     }
 }

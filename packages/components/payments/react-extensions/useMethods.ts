@@ -48,6 +48,7 @@ export interface Props {
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
+    enablePaypalRegionalCurrenciesBatch3: boolean;
 }
 
 interface Dependencies {
@@ -101,6 +102,7 @@ export const useMethods = (
         canUseApplePay,
         canUseGooglePay,
         isTrial,
+        enablePaypalRegionalCurrenciesBatch3,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -121,6 +123,7 @@ export const useMethods = (
         pendingCanUseApplePay?: boolean;
         pendingCanUseGooglePay?: boolean;
         pendingIsTrial?: boolean;
+        pendingEnablePaypalRegionalCurrenciesBatch3?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -183,6 +186,7 @@ export const useMethods = (
                 canUseApplePay,
                 canUseGooglePay,
                 isTrial,
+                enablePaypalRegionalCurrenciesBatch3,
             });
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -207,6 +211,7 @@ export const useMethods = (
                     pendingCanUseApplePay,
                     pendingCanUseGooglePay,
                     pendingIsTrial,
+                    pendingEnablePaypalRegionalCurrenciesBatch3,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -271,6 +276,11 @@ export const useMethods = (
                 if (pendingIsTrial !== undefined) {
                     paymentMethodsRef.current.isTrial = pendingIsTrial;
                 }
+
+                if (pendingEnablePaypalRegionalCurrenciesBatch3 !== undefined) {
+                    paymentMethodsRef.current.enablePaypalRegionalCurrenciesBatch3 =
+                        pendingEnablePaypalRegionalCurrenciesBatch3;
+                }
             }
 
             setStatus(paymentMethodsRef.current.paymentStatus);
@@ -304,6 +314,7 @@ export const useMethods = (
                 pendingCanUseApplePay: canUseApplePay,
                 pendingCanUseGooglePay: canUseGooglePay,
                 pendingIsTrial: isTrial,
+                pendingEnablePaypalRegionalCurrenciesBatch3: enablePaypalRegionalCurrenciesBatch3,
             };
             return;
         }
@@ -322,12 +333,24 @@ export const useMethods = (
         paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
         paymentMethodsRef.current.canUseGooglePay = !!canUseGooglePay;
         paymentMethodsRef.current.isTrial = !!isTrial;
+        paymentMethodsRef.current.enablePaypalRegionalCurrenciesBatch3 = !!enablePaypalRegionalCurrenciesBatch3;
         if (paymentStatus) {
             paymentMethodsRef.current.paymentStatus = paymentStatus;
             setStatus(paymentStatus);
         }
         updateMethods();
-    }, [amount, currency, coupon, flow, selectedPlanName, billingAddress, canUseApplePay, canUseGooglePay, isTrial]);
+    }, [
+        amount,
+        currency,
+        coupon,
+        flow,
+        selectedPlanName,
+        billingAddress,
+        canUseApplePay,
+        canUseGooglePay,
+        isTrial,
+        enablePaypalRegionalCurrenciesBatch3,
+    ]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
 

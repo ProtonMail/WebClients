@@ -411,7 +411,7 @@ export enum PLANS {
     VPN_PASS_BUNDLE_BUSINESS = 'vpnpassbiz2025',
 }
 
-export const PLAN_NAMES: { [key in PLANS]: string } = {
+export const PLAN_NAMES: Record<PLANS, string> = {
     [PLANS.FREE]: 'Free',
     [PLANS.VPN]: 'VPN Plus',
     [PLANS.VPN2024]: 'VPN Plus',
@@ -472,19 +472,14 @@ export enum CurrencySymbols {
     GBP = '£',
     CHF = 'CHF',
     BRL = 'BRL',
+    JPY = '¥',
+    KRW = '₩',
+    PLN = 'zł',
+    SGD = 'SGD',
+    HKD = 'HK$',
 }
 
 export const CURRENCIES = Object.keys(CurrencySymbols) as readonly (keyof typeof CurrencySymbols)[];
-
-export const MIN_CREDIT_AMOUNT = 500;
-export const MAX_CREDIT_AMOUNT = 4000000;
-export const MIN_BITCOIN_AMOUNT = 499;
-export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
-export const MIN_PAYPAL_AMOUNT_INHOUSE = 499;
-export const MIN_PAYPAL_AMOUNT_CHARGEBEE = 100;
-export const MAX_PAYPAL_AMOUNT = 99999900;
-export const MIN_APPLE_PAY_AMOUNT = 100;
-export const MIN_GOOGLE_PAY_AMOUNT = 100;
 
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,

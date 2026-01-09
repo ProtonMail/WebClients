@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { getMaxCreditAmount, getMinPaypalAmountInhouse } from '@proton/payments/core/amount-limits';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
 import { usePaypal } from './usePaypal';
@@ -255,27 +256,27 @@ it('should update desabled state when the amount changes', () => {
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: MIN_PAYPAL_AMOUNT_INHOUSE - 1,
+        Amount: getMinPaypalAmountInhouse('USD') - 1,
     });
     expect(result.current.disabled).toBe(true);
 
     rerender({
-        Amount: MIN_PAYPAL_AMOUNT_INHOUSE,
+        Amount: getMinPaypalAmountInhouse('USD'),
     });
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: (MIN_PAYPAL_AMOUNT_INHOUSE + MAX_CREDIT_AMOUNT) / 2,
+        Amount: (getMinPaypalAmountInhouse('USD') + getMaxCreditAmount('USD')) / 2,
     });
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: MAX_CREDIT_AMOUNT,
+        Amount: getMaxCreditAmount('USD'),
     });
     expect(result.current.disabled).toBe(false);
 
     rerender({
-        Amount: MAX_CREDIT_AMOUNT + 1,
+        Amount: getMaxCreditAmount('USD') + 1,
     });
     expect(result.current.disabled).toBe(true);
 

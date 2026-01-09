@@ -28,6 +28,11 @@ describe('plans', () => {
             AUD: [],
             CAD: [],
             GBP: [],
+            JPY: [],
+            KRW: [],
+            PLN: [],
+            SGD: [],
+            HKD: [],
         };
         mockDefaultCurrency = 'USD';
     });
@@ -69,17 +74,17 @@ describe('plans', () => {
 
     const setup = (
         paymentStatus: PaymentStatus = defaultPaymentStatus,
-        user: UserModel = defaultUser,
-        subscription: Subscription = defaultSubscription
+        user: UserModel | null = defaultUser,
+        subscription: Subscription | null = defaultSubscription
     ) => {
         const extraThunkArguments = {
             api: apiMock,
         } as unknown as ProtonThunkArguments;
 
         const subscriptionState: SubscriptionState['subscription'] = {
-            ...getModelState(subscription),
+            ...getModelState(subscription ?? undefined),
             meta: {
-                ...getModelState(subscription).meta,
+                ...getModelState(subscription ?? undefined).meta,
                 type: 1,
             },
         };
@@ -87,7 +92,7 @@ describe('plans', () => {
         return getTestStore({
             reducer: { ...userReducer, ...paymentStatusReducer, ...subscriptionReducer, ...plansReducer },
             preloadedState: {
-                user: getModelState(user),
+                user: getModelState(user ?? undefined),
                 paymentStatus: getModelState(paymentStatus),
                 subscription: subscriptionState,
             },
@@ -221,7 +226,7 @@ describe('plans', () => {
         });
     });
 
-    it('should fetch BRL plans', async () => {
+    it(`should fetch BRL plans if backend didn't return them - only if user exists`, async () => {
         const { store } = setup({ ...defaultPaymentStatus, CountryCode: 'BR' });
 
         mockPlans.USD = [
@@ -305,6 +310,116 @@ describe('plans', () => {
                             1: 160,
                             12: 1600,
                             24: 2880,
+                        },
+                    },
+                    {
+                        Name: PLANS.MAIL,
+                        Currency: 'EUR',
+                        Pricing: {
+                            1: 100,
+                            12: 1000,
+                            24: 1800,
+                        },
+                    },
+                    {
+                        Name: PLANS.BUNDLE,
+                        Currency: 'EUR',
+                        Pricing: {
+                            1: 200,
+                            12: 2000,
+                            24: 3600,
+                        },
+                    },
+                    {
+                        Name: PLANS.MAIL,
+                        Currency: 'CHF',
+                        Pricing: {
+                            1: 100,
+                            12: 1000,
+                            24: 1800,
+                        },
+                    },
+                    {
+                        Name: PLANS.BUNDLE,
+                        Currency: 'CHF',
+                        Pricing: {
+                            1: 200,
+                            12: 2000,
+                            24: 3600,
+                        },
+                    },
+                ],
+                freePlan: FREE_PLAN,
+            },
+        });
+    });
+
+    it(`should NOT fetch BRL plans if backend didn't return them - if user doesn't exist (backend-controlled regional currencies rollout for new signups)`, async () => {
+        const { store } = setup({ ...defaultPaymentStatus, CountryCode: 'BR' }, null, null);
+
+        mockPlans.USD = [
+            {
+                Name: PLANS.MAIL,
+                Currency: 'USD',
+                Pricing: {
+                    1: 100,
+                    12: 1000,
+                    24: 1800,
+                },
+            },
+            {
+                Name: PLANS.BUNDLE,
+                Currency: 'USD',
+                Pricing: {
+                    1: 200,
+                    12: 2000,
+                    24: 3600,
+                },
+            },
+        ] as Plan[];
+
+        mockPlans.BRL = [
+            {
+                Name: PLANS.MAIL,
+                Currency: 'BRL',
+                Pricing: {
+                    1: 80,
+                    12: 800,
+                    24: 1440,
+                },
+            },
+            {
+                Name: PLANS.BUNDLE,
+                Currency: 'BRL',
+                Pricing: {
+                    1: 160,
+                    12: 1600,
+                    24: 2880,
+                },
+            },
+        ] as Plan[];
+
+        await store.dispatch(plansThunk());
+
+        expect(selectPlans(store.getState())).toMatchObject({
+            value: {
+                plans: [
+                    {
+                        Name: PLANS.MAIL,
+                        Currency: 'USD',
+                        Pricing: {
+                            1: 100,
+                            12: 1000,
+                            24: 1800,
+                        },
+                    },
+                    {
+                        Name: PLANS.BUNDLE,
+                        Currency: 'USD',
+                        Pricing: {
+                            1: 200,
+                            12: 2000,
+                            24: 3600,
                         },
                     },
                     {

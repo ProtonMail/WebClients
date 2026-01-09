@@ -1,13 +1,11 @@
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
+import { getMinApplePayAmount, getMinBitcoinAmount, getMinPaypalAmountChargebee } from './amount-limits';
 import {
     Autopay,
     CYCLE,
     FREE_SUBSCRIPTION,
-    MIN_APPLE_PAY_AMOUNT,
-    MIN_BITCOIN_AMOUNT,
-    MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MethodStorage,
     PAYMENT_METHOD_TYPES,
     PLANS,
@@ -634,6 +632,7 @@ describe('initializePaymentMethods()', () => {
             selectedPlanName: undefined,
             billingAddress: undefined,
             enableSepa: false,
+            enablePaypalRegionalCurrenciesBatch3: false,
         });
 
         expect(methods).toBeDefined();
@@ -682,6 +681,7 @@ describe('initializePaymentMethods()', () => {
             selectedPlanName: undefined,
             billingAddress: undefined,
             enableSepa: false,
+            enablePaypalRegionalCurrenciesBatch3: false,
         });
 
         expect(methods).toBeDefined();
@@ -854,7 +854,7 @@ describe('Chargebee Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_BITCOIN_AMOUNT - 1,
+            amount: getMinBitcoinAmount(TEST_CURRENCY) - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1145,7 +1145,7 @@ describe('Bitcoin', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_BITCOIN_AMOUNT - 1,
+            amount: getMinBitcoinAmount(TEST_CURRENCY) - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1274,7 +1274,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1293,7 +1293,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1313,7 +1313,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1332,7 +1332,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT - 1,
+            amount: getMinApplePayAmount(TEST_CURRENCY) - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1358,7 +1358,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1377,7 +1377,7 @@ describe('Apple Pay', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                amount: MIN_APPLE_PAY_AMOUNT,
+                amount: getMinApplePayAmount(TEST_CURRENCY),
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: flow,
@@ -1399,7 +1399,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1418,7 +1418,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT,
+            amount: getMinApplePayAmount(TEST_CURRENCY),
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1438,7 +1438,7 @@ describe('Apple Pay', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_APPLE_PAY_AMOUNT * 10, // Much higher than minimum
+            amount: getMinApplePayAmount(TEST_CURRENCY) * 10, // Much higher than minimum
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1581,7 +1581,7 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
+            amount: getMinPaypalAmountChargebee(TEST_CURRENCY) - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1599,7 +1599,7 @@ describe('Chargebee PayPal', () => {
         const methods = new PaymentMethods({
             paymentStatus: status,
             paymentMethods: [],
-            amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
+            amount: getMinPaypalAmountChargebee(TEST_CURRENCY) - 1,
             currency: TEST_CURRENCY,
             coupon: '',
             flow: flow,
@@ -1741,7 +1741,7 @@ describe('Trial mode payment method restrictions', () => {
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],
-                amount: MIN_APPLE_PAY_AMOUNT,
+                amount: getMinApplePayAmount(TEST_CURRENCY),
                 currency: TEST_CURRENCY,
                 coupon: '',
                 flow: 'subscription',

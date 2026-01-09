@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 interface Props extends Omit<ButtonProps, 'onSelect' | 'onClick'> {
     value?: number;
     amount?: number;
-    currency?: Currency;
+    currency: Currency;
     onSelect: (value: number) => void;
 }
 

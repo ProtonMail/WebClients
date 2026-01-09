@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/payments';
+import type { Currency, PLANS } from '@proton/payments';
 
 export type SupportedPlans = PLANS.MAIL | PLANS.DRIVE | PLANS.BUNDLE;
 
@@ -19,4 +19,5 @@ export interface PriceData {
     yearlyPrice: number;
     discountedPrice: number;
     savedAmount: number;
+    currency: Currency;
 }
