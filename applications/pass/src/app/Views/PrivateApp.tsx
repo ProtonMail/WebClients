@@ -1,17 +1,15 @@
 import { type FC, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AccountSwitcher } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcher';
 import { useSpotlightListener } from 'proton-pass-web/lib/hooks/useSpotlightListener';
-import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useAppConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
 import { Header } from '@proton/pass/components/Header/Header';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
@@ -35,15 +33,7 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { clientOffline } from '@proton/pass/lib/client';
-import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import { offlineResume } from '@proton/pass/store/actions';
-import {
-    selectIsSSO,
-    selectLockMode,
-    selectLockSetupRequired,
-    selectRequestInFlight,
-} from '@proton/pass/store/selectors';
+import { selectIsSSO, selectLockMode, selectLockSetupRequired } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -53,38 +43,16 @@ import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
 import { PrivateRouter } from './PrivateRouter';
 
 const Main: FC = () => {
-    const dispatch = useDispatch();
     const { status } = useAppState();
     const authStore = useAuthStore();
     const localID = authStore?.getLocalID();
-    const offline = clientOffline(status);
-    const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const isSSO = useSelector(selectIsSSO);
     const lockMode = useSelector(selectLockMode);
     const authService = useAuthService();
     const interactive = useItemScope() !== undefined;
+    const connectivityBar = useAppConnectivityBar(status, localID);
+
     useSpotlightListener();
-
-    const connectivityBar = useConnectivityBar((connectivity) => ({
-        className: offline ? 'bg-weak border-top' : 'bg-danger',
-        hidden: connectivity === ConnectivityStatus.ONLINE && !offline,
-        text: offline ? (
-            <div className="flex items-center gap-2">
-                <span>{c('Info').t`Offline mode`}</span>
-
-                <Button
-                    className="text-sm"
-                    onClick={() => dispatch(offlineResume.intent({ localID }))}
-                    shape="underline"
-                    size="small"
-                    loading={offlineResuming}
-                    disabled={offlineResuming}
-                >
-                    {offlineResuming ? c('Info').t`Reconnecting` : c('Info').t`Reconnect`}
-                </Button>
-            </div>
-        ) : undefined,
-    }));
 
     const handleLock = useCallback(() => authService.lock(lockMode, { broadcast: true, soft: false }), [lockMode]);
 
