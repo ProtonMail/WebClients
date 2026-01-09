@@ -1,19 +1,17 @@
 @keyframes anime-move-light {
 	0% {
 		opacity: 0;
-		cx: 0;
-		cy: -60;
+		transform: translate(0, -60px);
 	}
 
 	50% {
 		opacity: 1;
-		cx: 50;
+		transform: translate(20px, 0);
 	}
 
 	100% {
 		opacity: 0;
-		cx: 20;
-		cy: 112;
+		transform: translate(0, 112px);
 	}
 }
 
