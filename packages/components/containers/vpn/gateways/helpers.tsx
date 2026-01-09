@@ -18,6 +18,14 @@ export const getSuffix = (name: string | undefined) => name?.match(/#\d+$/)?.[0]
 
 const locations: Record<string, GatewayLocation> = {};
 
+const sortGatewayUsers = (a: GatewayUser, b: GatewayUser): number => {
+    if (!a.Name || !b.Name) {
+        return 0;
+    }
+
+    return a.Name.localeCompare(b.Name);
+};
+
 const getAverageLoad = (servers: GatewayServer[]) =>
     servers.reduce((load, server) => load + server.Load, 0) / servers.length;
 
@@ -95,7 +103,7 @@ const GroupItem = ({ group, keyPrefix, id }: GroupItemProps) => {
             </DropdownButton>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                {group?.Users.map((user) => (
+                {group?.Users.sort(sortGatewayUsers).map((user) => (
                     <div
                         key={`logical-users-${keyPrefix}-${id}-${(user as any).UserID}`}
                         className="flex items-center gap-1 py-2 px-4"
