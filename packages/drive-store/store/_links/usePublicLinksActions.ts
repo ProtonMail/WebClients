@@ -73,7 +73,7 @@ export function usePublicLinksActions() {
                         .then((response) => {
                             response.Responses.forEach((link) => {
                                 if (link.Response.Code !== API_CODES.SINGLE_SUCCESS) {
-                                    if (link.Response.Code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+                                    if (link.Response.Code === API_CUSTOM_ERROR_CODES.INCOMPATIBLE_STATE) {
                                         notAllowedErrorCount += 1;
                                     }
                                     failures[link.LinkID] = link.Response.Error;
