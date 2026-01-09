@@ -6,7 +6,9 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Logo } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { PLANS, getHasPlusPlan } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
+import { getHasPlusPlan, getHasProPlan } from '@proton/payments';
+import { getHasBusinessProductPlan } from '@proton/payments/core/plan/helpers';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName, getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -234,26 +236,22 @@ interface Props {
 }
 
 const allBits =
-    PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN | PRODUCT_BIT.WALLET | PRODUCT_BIT.LUMO;
-
-const professionalPlans = new Set([
-    PLANS.MAIL_BUSINESS,
-    PLANS.PASS_BUSINESS,
-    PLANS.VPN_BUSINESS,
-    PLANS.LUMO_BUSINESS,
-    PLANS.VPN_PASS_BUNDLE_BUSINESS,
-]);
-
-const essentialsPlans = new Set([PLANS.MAIL_PRO, PLANS.PASS_PRO, PLANS.VPN_PRO, PLANS.DRIVE_PRO]);
+    PRODUCT_BIT.MAIL |
+    PRODUCT_BIT.PASS |
+    PRODUCT_BIT.DRIVE |
+    PRODUCT_BIT.VPN |
+    PRODUCT_BIT.WALLET |
+    PRODUCT_BIT.LUMO |
+    PRODUCT_BIT.MEET;
 
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {
         return '';
     }
-    if (essentialsPlans.has(plan)) {
+    if (getHasProPlan(plan)) {
         return 'Essentials';
     }
-    if (professionalPlans.has(plan)) {
+    if (getHasBusinessProductPlan(plan)) {
         return 'Professional';
     }
     if (getHasPlusPlan(plan)) {
