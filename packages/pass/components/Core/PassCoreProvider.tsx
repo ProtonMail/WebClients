@@ -13,6 +13,7 @@ import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { preloadPassUI } from '@proton/pass/lib/core/ui.proxy';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
 import type { ClientEndpoint, Maybe, MaybeNull, TabId } from '@proton/pass/types';
@@ -44,6 +45,8 @@ export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
+    /** connectivity service/proxy */
+    connectivity: ConnectivityService;
     /** Core proxy instance */
     core: PassCoreProxy;
     /** i18n service instance */

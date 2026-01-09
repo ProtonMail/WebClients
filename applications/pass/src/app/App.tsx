@@ -88,6 +88,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
     return {
         config: PASS_CONFIG,
+        connectivity,
         core,
         endpoint: 'web',
         i18n: i18n(locales),

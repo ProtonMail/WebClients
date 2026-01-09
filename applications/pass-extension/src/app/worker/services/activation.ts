@@ -257,8 +257,9 @@ export const createActivationService = () => {
             const settings = sanitizeSettings(await ctx.service.settings.resolve(), { canCreateItems });
             // Note: in the future we can modify this to add featureFlags variants in the extension content script
             const { features } = await ctx.service.featureFlags.resolve();
+            const connectivity = ctx.service.connectivity.getStatus();
 
-            return { state: ctx.getState(), features, settings };
+            return { state: ctx.getState(), features, settings, connectivity };
         }
     );
 

@@ -6,6 +6,7 @@ import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/tele
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -16,6 +17,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import type { ExtensionClientState, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
@@ -69,6 +71,7 @@ const getPassCoreProviderProps = (
 
     return {
         config,
+        connectivity: createConnectivityProxy(),
         core: createPassCoreProxy(createCoreServiceBridge(messageFactory)),
         endpoint,
         i18n: createI18nService({
@@ -247,9 +250,11 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
             setExtensionClientState={(value) => (extensionClientState.current = value)}
             wasm={wasm}
         >
-            <AuthStoreProvider store={authStore}>
-                <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
-            </AuthStoreProvider>
+            <ConnectivityProvider service={coreProps.connectivity}>
+                <AuthStoreProvider store={authStore}>
+                    <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
+                </AuthStoreProvider>
+            </ConnectivityProvider>
         </PassCoreProvider>
     );
 };

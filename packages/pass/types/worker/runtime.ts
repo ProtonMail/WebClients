@@ -1,4 +1,8 @@
+import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { FeatureFlagState } from '@proton/pass/store/reducers/user';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
+import type { AppState } from '@proton/pass/types/worker/state';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
 export type ClientEndpoint =
@@ -32,4 +36,11 @@ export type EndpointContext = {
     senderTabId: TabId;
     /** FrameID of the current endpoint */
     frameId: FrameId;
+};
+
+export type ClientInitResult = {
+    state: AppState;
+    settings: ProxiedSettings;
+    features: FeatureFlagState;
+    connectivity: ConnectivityStatus;
 };
