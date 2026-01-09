@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 export const useUnlockGuard = (opts: { offlineEnabled?: boolean; onOffline?: () => void }) => {
