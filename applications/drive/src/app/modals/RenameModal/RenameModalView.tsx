@@ -26,7 +26,9 @@ export type RenameModalViewProps = {
     isFile: boolean;
     onClose?: () => void;
     name: string;
-    ignoreExtension: boolean;
+    // The name (or part of it) that will need to be highlighted at
+    // focus time in the modal's input.
+    nameToFocus: string;
     isDoc?: boolean;
 };
 
@@ -34,7 +36,7 @@ export const RenameModalView = ({
     handleSubmit,
     name: originalName,
     isFile,
-    ignoreExtension,
+    nameToFocus,
     // modalProps
     onClose,
     onExit,
@@ -48,11 +50,8 @@ export const RenameModalView = ({
         if (autofocusDone) {
             return;
         }
+        e.target.setSelectionRange(0, nameToFocus.length);
         setAutofocusDone(true);
-        if (ignoreExtension) {
-            return e.target.select();
-        }
-        e.target.setSelectionRange(0, originalName.length);
     };
 
     const onBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
