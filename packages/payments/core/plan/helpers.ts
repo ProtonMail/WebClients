@@ -200,6 +200,20 @@ export const getHasProPlan = (planName?: PLANS) => {
     );
 };
 
+export const getHasBusinessProductPlan = (planName?: PLANS) => {
+    return (
+        planName &&
+        [
+            PLANS.MAIL_BUSINESS,
+            PLANS.PASS_BUSINESS,
+            PLANS.VPN_BUSINESS,
+            PLANS.LUMO_BUSINESS,
+            PLANS.VPN_PASS_BUNDLE_BUSINESS,
+            PLANS.MEET_BUSINESS,
+        ].some((otherPlanName) => otherPlanName === planName)
+    );
+};
+
 export const getHasSomeDrivePlusPlan = (planName?: PLANS | ADDON_NAMES) => {
     return planName && [PLANS.DRIVE, PLANS.DRIVE_1TB].some((otherPlanName) => otherPlanName === planName);
 };
