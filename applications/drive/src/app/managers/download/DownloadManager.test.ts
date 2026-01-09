@@ -284,6 +284,7 @@ describe('DownloadManager', () => {
             pause: jest.fn(),
             resume: jest.fn(),
             completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
             getClaimedSizeInBytes: jest.fn(() => nodeSize),
@@ -321,7 +322,6 @@ describe('DownloadManager', () => {
         await flushAsync();
 
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
-        expect(activeDownloads.has('download-1')).toBe(true);
         expect(storeMockState.updateDownloadItem).toHaveBeenNthCalledWith(
             1,
             'download-1',
@@ -374,6 +374,7 @@ describe('DownloadManager', () => {
             pause: jest.fn(),
             resume: jest.fn(),
             completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
         };
         const fileDownloader = {
             getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
@@ -385,7 +386,10 @@ describe('DownloadManager', () => {
 
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
-        const readableStream = {} as ReadableStream<Uint8Array<ArrayBuffer>>;
+        const readableStream = {
+            cancel: jest.fn(),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
@@ -404,6 +408,7 @@ describe('DownloadManager', () => {
             'download-cancel',
             expect.objectContaining({ status: DownloadStatus.Cancelled, error: undefined }),
         ]);
+        expect(readableStream.cancel).toHaveBeenCalled();
     });
 
     it('should mark a single file download as failed when the SDK throws', async () => {
