@@ -8,6 +8,7 @@ import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { CopyButton } from '../buttons/CopyButton';
 import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';
 import { DetailsButton } from '../buttons/DetailsButton';
@@ -15,7 +16,6 @@ import { DownloadButton } from '../buttons/DownloadButton';
 import { MoveButton } from '../buttons/MoveButton';
 import { OpenInDocsButton } from '../buttons/OpenInDocsButton';
 import { PreviewButton } from '../buttons/PreviewButton';
-import { RenameButton } from '../buttons/RenameButton';
 import { RevisionsContextButton } from '../buttons/RevisionsContextButton';
 import { ShareLinkButton } from '../buttons/ShareLinkButton';
 import { TrashButton } from '../buttons/TrashButton';
@@ -112,12 +112,7 @@ export function FolderItemContextMenu({
                 ) : null}
                 {permissions.canCopy && <CopyButton type="context" close={close} onClick={showCopyModal} />}
                 {permissions.canRename && isOnlyOneItem && (
-                    <RenameButton
-                        type="context"
-                        selectedItems={selectedItems}
-                        close={close}
-                        onClick={showRenameModal}
-                    />
+                    <RenameActionButton type="context" close={close} onClick={showRenameModal} />
                 )}
                 <DetailsButton type="context" selectedItems={selectedItems} onClick={showDetailsModal} close={close} />
                 {permissions.canEdit && <ContextSeparator />}
