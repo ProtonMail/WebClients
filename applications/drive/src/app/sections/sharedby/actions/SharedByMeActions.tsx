@@ -1,16 +1,15 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive/index';
+import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import type { useRenameModal } from '../../../components/modals/RenameModal';
 import type { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import {
     DetailsButton as ContextDetailsButton,
     DownloadButton as ContextDownloadButton,
     OpenInDocsButton as ContextOpenInDocsButton,
     PreviewButton as ContextPreviewButton,
-    RenameButton as ContextRenameButton,
     ShareLinkButton as ContextShareLinkButton,
 } from '../../../components/sections/ContextMenu/buttons';
 import {
@@ -23,8 +22,10 @@ import {
 } from '../../../components/sections/ToolbarButtons';
 import { useOpenInDocs } from '../../../hooks/docs/useOpenInDocs';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
+import type { useRenameModal } from '../../../modals/RenameModal';
 import type { usePreviewModal } from '../../../modals/preview';
 import { useActions } from '../../../store';
+import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { StopSharingButton } from '../buttons/StopSharingButton';
 import type { SharedByMeItem } from '../useSharedByMe.store';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
@@ -130,16 +131,24 @@ export const SharedByMeActions = ({
             )}
             {itemChecker.canDownload && <ContextDownloadButton selectedBrowserItems={legacyItems} close={close} />}
             {itemChecker.canRename && splitedSingleItemUid && singleItem && (
-                <ContextRenameButton
-                    link={{
-                        name: singleItem.name,
-                        linkId: splitedSingleItemUid.nodeId,
-                        volumeId: splitedSingleItemUid.volumeId,
-                        mimeType: singleItem.mediaType || '',
-                        isFile: singleItem.type === NodeType.File || singleItem.type === NodeType.Photo,
-                        rootShareId: singleItem.rootShareId,
-                    }}
-                    showRenameModal={showRenameModal}
+                <RenameActionButton
+                    type={'context'}
+                    onClick={() =>
+                        showRenameModal({
+                            isFile: singleItem.type === NodeType.File || singleItem.type === NodeType.Photo,
+                            isDoc: !!singleItem.mediaType && isProtonDocsDocument(singleItem.mediaType),
+                            name: singleItem.name,
+                            volumeId: splitedSingleItemUid.volumeId,
+                            linkId: splitedSingleItemUid.nodeId,
+                            onSubmit: (formattedName) =>
+                                renameLink(
+                                    new AbortController().signal,
+                                    singleItem.rootShareId,
+                                    splitedSingleItemUid.nodeId,
+                                    formattedName
+                                ),
+                        })
+                    }
                     close={close}
                 />
             )}
