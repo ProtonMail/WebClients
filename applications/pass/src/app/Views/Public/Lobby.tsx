@@ -18,8 +18,8 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
 import { clientBusy, clientErrored } from '@proton/pass/lib/client';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
