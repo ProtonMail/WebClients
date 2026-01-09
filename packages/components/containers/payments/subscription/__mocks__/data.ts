@@ -408,7 +408,7 @@ export const passPlusUpsell = {
 export const vpnBusinessUpsell = {
     plan: PLANS.VPN_BUSINESS,
     planKey: PLANS.VPN_BUSINESS,
-    title: 'VPN Professional', // the plan got renamed during the Proton Business Suite launch
+    title: 'VPN Professional', // the plan got renamed during the Workspace Standard launch
     description: 'Advanced network security and access management with dedicated secure Gateways',
     otherCtas: [],
     price: {
@@ -419,7 +419,7 @@ export const vpnBusinessUpsell = {
 
 export const bundle2024Upsell = {
     planKey: 'bundlepro2024',
-    title: 'Proton Business Suite',
+    title: 'Workspace Standard',
     description: 'All Proton business apps and premium features to protect your entire business.',
 };
 
