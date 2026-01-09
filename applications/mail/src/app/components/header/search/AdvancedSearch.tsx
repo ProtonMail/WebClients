@@ -10,7 +10,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
+import { Checkbox, DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proton/components';
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
@@ -19,14 +19,14 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
+import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
+import { extractSearchParameters, filterFromUrl, keywordToString, setFilterInUrl } from '../../../helpers/mailboxUrl';
 import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
@@ -42,6 +42,7 @@ interface SearchModel {
     end?: Date;
     wildcard?: number;
     filter?: string;
+    hasAttachments?: boolean;
 }
 
 const UNDEFINED = undefined;
@@ -57,6 +58,7 @@ const DEFAULT_MODEL_WITHOUT_LABEL_ID: Omit<SearchModel, 'labelID'> = {
     filter: UNDEFINED,
     begin: undefined,
     end: undefined,
+    hasAttachments: false,
 };
 
 const getRecipients = (value = '') =>
@@ -68,8 +70,9 @@ const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Add
 
 const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => {
     const { keyword, address, wildcard, from = '', to, begin, end } = extractSearchParameters(history.location);
-
-    const { filter } = getSearchParams(history.location.search);
+    const filterUrl = filterFromUrl(history.location);
+    const hasAttachments = filterUrl.Attachments === 1;
+    const filter = hasAttachments ? 'has-file' : UNDEFINED;
 
     return {
         ...(keyword && { labelID: selectedLabelID }),
@@ -81,6 +84,7 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
         begin: begin ? fromUnixTime(begin) : UNDEFINED,
         end: end ? sub(fromUnixTime(end), { days: 1 }) : UNDEFINED,
         filter,
+        hasAttachments,
     };
 };
 
@@ -157,7 +161,8 @@ const AdvancedSearch = ({
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { keyword, begin, end, wildcard, from, to, address, filter } = reset ? DEFAULT_MODEL : model;
+        const { keyword, begin, end, wildcard, from, to, address, hasAttachments } = reset ? DEFAULT_MODEL : model;
+        const filter = hasAttachments ? 'has-file' : UNDEFINED;
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
@@ -197,7 +202,11 @@ const AdvancedSearch = ({
     };
 
     const handleClear = () => {
-        updateModel((currentModel) => ({ ...currentModel, keyword: '' }));
+        updateModel((currentModel) => ({
+            ...currentModel,
+            keyword: '',
+            filter: undefined,
+        }));
         searchInputRef.current?.focus();
         sendClearSearchFieldsReport(esEnabled);
     };
@@ -206,6 +215,10 @@ const AdvancedSearch = ({
         event.preventDefault(); // necessary to block native reset behaviour
 
         updateModel(DEFAULT_MODEL);
+
+        const newLocation = setFilterInUrl(history.location, {});
+        history.push(newLocation);
+
         searchInputRef.current?.focus();
         sendClearSearchFieldsReport(esEnabled);
     };
@@ -341,6 +354,22 @@ const AdvancedSearch = ({
                                     )
                                 )}
                             </SelectTwo>
+                        </div>
+                        <div className="mb-2">
+                            <Label className="advanced-search-label text-semibold">{c('Label').t`Filters`}</Label>
+                            <Checkbox
+                                checked={model.hasAttachments || false}
+                                onChange={({ target }) =>
+                                    updateModel({
+                                        ...model,
+                                        hasAttachments: target.checked,
+                                        filter: target.checked ? 'has-file' : UNDEFINED,
+                                    })
+                                }
+                                className="block"
+                            >
+                                {c('Label').t`Has attachments`}
+                            </Checkbox>
                         </div>
                     </>
                 )}
