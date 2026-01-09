@@ -10,6 +10,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
+import thumbnail from '@proton/pass/assets/extension-onboarding/proton-pass-tutorial-thumbnail.jpg';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
@@ -81,10 +82,14 @@ export const Welcome: FC = () => {
                                             .t`Here you will find all the necessary information to get you started.`}
                                     </h3>
                                     <div className="pass-welcome--onboarding-video rounded-xl">
-                                        <iframe
+                                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                                        <video
+                                            className="w-full"
+                                            preload="metadata"
                                             src={PASS_VIDEO_URL}
-                                            title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
-                                            allowFullScreen
+                                            poster={thumbnail}
+                                            title={c('Info').t`Discover ${PASS_APP_NAME} video`}
+                                            controls
                                         />
                                     </div>
                                 </div>
