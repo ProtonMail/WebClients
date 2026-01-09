@@ -10,7 +10,7 @@ import {
     getConnectivityRetryTimeout,
     getConnectivityWarning,
     intoConnectivityStatus,
-} from '@proton/pass/lib/api/connectivity';
+} from '@proton/pass/lib/network/connectivity.utils';
 import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
 import { asyncLock, cancelable } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
