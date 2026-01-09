@@ -1,10 +1,15 @@
 import { app, BrowserWindow, dialog } from "electron";
-import { promises } from "node:fs";
-import path from "node:path";
+import { promises, unlinkSync, writeFileSync } from "node:fs";
+import path, { join } from "node:path";
 import { getMainWindow } from "../view/viewManagement";
 import { isWindowValid } from "../view/windowUtils";
+import { printLogger } from "../log";
 
-const loadTimeoutMs = 200;
+const LOAD_TIMEOUT_MS = 300;
+const MAX_DATA_URL_LENGTH = 1000000;
+
+type PrintAction = (window: BrowserWindow) => Promise<void>;
+
 export const PRINT_DATA_URL_PREFIX = "data:text/html;charset=utf-8,";
 export const validPrintContent = new Set<string>();
 
@@ -17,53 +22,125 @@ const createPrintWindow = () => {
     });
 };
 
-function printHTML(htmlContent: string) {
-    const printWindow = createPrintWindow();
+async function withPrintWindowViaFile(htmlContent: string, action: PrintAction): Promise<void> {
+    const window = createPrintWindow();
 
-    validPrintContent.add(htmlContent);
-    printWindow.loadURL(`${PRINT_DATA_URL_PREFIX}${encodeURIComponent(htmlContent)}`);
+    const tempPath = join(app.getPath("temp"), `print-${Date.now().toString(36)}.html`);
+    writeFileSync(tempPath, htmlContent, "utf-8");
+    window.loadFile(tempPath);
 
-    printWindow.webContents.on("did-finish-load", () => {
-        // Timeout needed for page to load content properly.
-        setTimeout(() => {
-            printWindow.webContents.print({}, (_) => {
-                if (isWindowValid(printWindow)) printWindow.close();
-            });
-        }, loadTimeoutMs);
+    const cleanup = () => {
+        try {
+            unlinkSync(tempPath);
+        } catch (e) {
+            // Ignore
+        }
+        if (isWindowValid(window)) window.close();
+    };
+
+    return new Promise((resolve, reject) => {
+        window.webContents.on("did-fail-load", (_, errorCode, errorDesc) => {
+            printLogger.error("Failed to load content:", errorCode, errorDesc);
+            cleanup();
+            reject(new Error(`Failed to load content: ${errorDesc}`));
+        });
+
+        window.webContents.on("did-finish-load", () => {
+            setTimeout(async () => {
+                try {
+                    await action(window);
+                    resolve();
+                } catch (error) {
+                    reject(error);
+                } finally {
+                    cleanup();
+                }
+            }, LOAD_TIMEOUT_MS);
+        });
     });
 }
 
-async function printAndSaveToPDF(parentWindow: BrowserWindow, htmlContent: string) {
-    try {
-        const { filePath, canceled } = await dialog.showSaveDialog(parentWindow, {
-            title: "Save PDF",
-            defaultPath: path.join(app.getPath("documents"), "Proton_Mail.pdf"),
-            filters: [{ name: "PDF files", extensions: ["pdf"] }],
+async function withPrintWindowViaURL(htmlContent: string, action: PrintAction): Promise<void> {
+    const window = createPrintWindow();
+
+    validPrintContent.add(htmlContent);
+    window.loadURL(`${PRINT_DATA_URL_PREFIX}${encodeURIComponent(htmlContent)}`);
+
+    const cleanup = () => {
+        if (isWindowValid(window)) window.close();
+    };
+
+    return new Promise((resolve, reject) => {
+        window.webContents.on("did-fail-load", (_, errorCode, errorDesc) => {
+            printLogger.error("Failed to load content:", errorCode, errorDesc);
+            cleanup();
+            reject(new Error(`Failed to load content: ${errorDesc}`));
         });
 
-        if (canceled || !filePath) return;
-
-        const pdfWindow = createPrintWindow();
-
-        validPrintContent.add(htmlContent);
-        pdfWindow.loadURL(`${PRINT_DATA_URL_PREFIX}${encodeURIComponent(htmlContent)}`);
-
-        pdfWindow.webContents.on("did-finish-load", async () => {
+        window.webContents.on("did-finish-load", () => {
             setTimeout(async () => {
-                const data = await pdfWindow.webContents.printToPDF({
-                    pageSize: "A4",
-                });
-
-                await promises.writeFile(filePath, data);
-                if (isWindowValid(pdfWindow)) pdfWindow.close();
-
-                if (isWindowValid(parentWindow)) {
-                    dialog.showMessageBox(parentWindow, {
-                        type: "info",
-                        message: "PDF saved successfully!",
-                    });
+                try {
+                    await action(window);
+                    resolve();
+                } catch (error) {
+                    reject(error);
+                } finally {
+                    cleanup();
                 }
-            }, loadTimeoutMs);
+            }, LOAD_TIMEOUT_MS);
+        });
+    });
+}
+
+function withPrintWindow(htmlContent: string, action: PrintAction): Promise<void> {
+    const encodedLength = PRINT_DATA_URL_PREFIX.length + encodeURIComponent(htmlContent).length;
+    if (encodedLength > MAX_DATA_URL_LENGTH) {
+        return withPrintWindowViaFile(htmlContent, action);
+    }
+    return withPrintWindowViaURL(htmlContent, action);
+}
+
+async function printHTML(htmlContent: string) {
+    printLogger.info(`Handling print, size: ${htmlContent.length}`);
+
+    try {
+        await withPrintWindow(htmlContent, (window) => {
+            return new Promise((resolve) => {
+                window.webContents.print({}, (success, failureReason) => {
+                    if (!success && failureReason !== "cancelled") {
+                        printLogger.error("Print failed:", failureReason);
+                    }
+                    resolve();
+                });
+            });
+        });
+    } catch (error) {
+        printLogger.error("Print error:", error);
+    }
+}
+
+async function printAndSaveToPDF(parentWindow: BrowserWindow, htmlContent: string) {
+    printLogger.info(`Handling printing to PDF, size: ${htmlContent.length}`);
+
+    const { filePath, canceled } = await dialog.showSaveDialog(parentWindow, {
+        title: "Save PDF",
+        defaultPath: path.join(app.getPath("documents"), "Proton_Mail.pdf"),
+        filters: [{ name: "PDF files", extensions: ["pdf"] }],
+    });
+
+    if (canceled || !filePath) return;
+
+    try {
+        await withPrintWindow(htmlContent, async (window) => {
+            const data = await window.webContents.printToPDF({ pageSize: "A4" });
+            await promises.writeFile(filePath, data);
+
+            if (isWindowValid(parentWindow)) {
+                dialog.showMessageBox(parentWindow, {
+                    type: "info",
+                    message: "PDF saved successfully!",
+                });
+            }
         });
     } catch (error) {
         dialog.showErrorBox("Save Failed", (error as Error).message);
@@ -88,5 +165,8 @@ export function showPrintDialog(htmlContent: string) {
             } else if (response === 1) {
                 printHTML(htmlContent);
             }
+        })
+        .catch((error) => {
+            printLogger.error("Print dialog error:", error);
         });
 }
