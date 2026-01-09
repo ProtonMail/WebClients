@@ -38,18 +38,53 @@ describe('Price component', () => {
         expect((container.firstChild as any).textContent).toBe('-BRL 15');
     });
 
-    it('should use the divisor defined', () => {
-        const { container } = render(<Price divisor={1}>{1500}</Price>);
-        expect((container.firstChild as any).textContent).toBe('1500');
+    it('should render price with PLN in suffix', () => {
+        const { container } = render(<Price currency="PLN">{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('15 zł');
     });
 
-    it('should render string values as is', () => {
-        const { container } = render(<Price>{'Let us talk'}</Price>);
-        expect((container.firstChild as any).textContent).toBe('Let us talk');
+    it('should render negative price with PLN in suffix', () => {
+        const { container } = render(<Price currency="PLN">{-1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('-15 zł');
     });
 
-    it('should render value without currencies', () => {
-        const { container } = render(<Price>{1500}</Price>);
-        expect((container.firstChild as any).textContent).toBe('15');
+    it('should render price with HKD in prefix', () => {
+        const { container } = render(<Price currency="HKD">{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('HK$15');
+    });
+
+    it('should render negative price with HKD in prefix', () => {
+        const { container } = render(<Price currency="HKD">{-1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('-HK$15');
+    });
+
+    it('should render price with JPY in prefix', () => {
+        const { container } = render(<Price currency="JPY">{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('¥1500');
+    });
+
+    it('should render negative price with JPY in prefix', () => {
+        const { container } = render(<Price currency="JPY">{-1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('-¥1500');
+    });
+
+    it('should render price with KRW in prefix', () => {
+        const { container } = render(<Price currency="KRW">{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('₩1500');
+    });
+
+    it('should render negative price with KRW in prefix', () => {
+        const { container } = render(<Price currency="KRW">{-1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('-₩1500');
+    });
+
+    it('should render price with SGD in prefix', () => {
+        const { container } = render(<Price currency="SGD">{1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('SGD 15');
+    });
+
+    it('should render negative price with SGD in prefix', () => {
+        const { container } = render(<Price currency="SGD">{-1500}</Price>);
+        expect((container.firstChild as any).textContent).toBe('-SGD 15');
     });
 });

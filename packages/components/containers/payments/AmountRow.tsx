@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import type { PaymentStatus, PlainPaymentMethodType } from '@proton/payments';
+import Label from '@proton/components/components/label/Label';
+import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import type { Currency } from '@proton/payments';
 
 import PaymentSelector from './PaymentSelector';
 
@@ -32,8 +31,8 @@ const AmountRow = ({
     }
 
     return (
-        <Row>
-            <span className="label" id="id_desc_amount">{c('Label').t`Amount`}</span>
+        <div className="my-4">
+            <Label className="mb-2 block text-bold" id="id_desc_amount">{c('Label').t`Amount`}</Label>
             <Field>
                 <PaymentSelector
                     paymentStatus={paymentStatus}
@@ -44,7 +43,7 @@ const AmountRow = ({
                     disableCurrencySelector={disableCurrencySelector}
                 />
             </Field>
-        </Row>
+        </div>
     );
 };
 

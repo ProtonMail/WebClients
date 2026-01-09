@@ -8,7 +8,7 @@ import Alert from '@proton/components/components/alert/Alert';
 import Bordered from '@proton/components/components/container/Bordered';
 import Price from '@proton/components/components/price/Price';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
-import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/payments';
+import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
 
 import BitcoinDetails from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
@@ -34,25 +34,27 @@ const Bitcoin = ({
         void request();
     }, [amount, currency, billingAddress?.CountryCode, billingAddress?.State, billingAddress?.ZipCode]);
 
-    if (amount < MIN_BITCOIN_AMOUNT) {
+    const minBitcoinAmount = getMinBitcoinAmount(currency);
+    if (amount < minBitcoinAmount) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
         return (
             <Alert className="mb-4" type="warning">
                 {i18n(
                     <Price key="price" currency={currency}>
-                        {MIN_BITCOIN_AMOUNT}
+                        {minBitcoinAmount}
                     </Price>
                 )}
             </Alert>
         );
     }
-    if (amount > MAX_BITCOIN_AMOUNT) {
+    const maxBitcoinAmount = getMaxBitcoinAmount(currency);
+    if (amount > maxBitcoinAmount) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount above maximum (${amount}).`;
         return (
             <Alert className="mb-4" type="warning">
                 {i18n(
                     <Price key="price" currency={currency}>
-                        {MAX_BITCOIN_AMOUNT}
+                        {maxBitcoinAmount}
                     </Price>
                 )}
             </Alert>

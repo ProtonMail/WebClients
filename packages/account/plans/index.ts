@@ -5,7 +5,6 @@ import {
     CURRENCIES,
     type Currency,
     type FreePlanDefault,
-    NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     type Plan,
     getAvailableCurrencies,
     getDefaultMainCurrency,
@@ -13,6 +12,7 @@ import {
     isRegionalCurrency,
     queryPlans,
 } from '@proton/payments';
+import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments/core/currencies';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     CacheType,
@@ -130,7 +130,6 @@ const thunk = ({
                 ]);
 
                 // Step 2: if some required currencies are missing, then we fetch them separately
-
                 // if the regional currencis were not loaded initially, then that's the second chance to load them
                 const missingCurrencies = regionalCurrencies.filter(
                     (currency) => !plansResult.some((plan) => plan.Currency === currency)

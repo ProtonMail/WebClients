@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { c } from 'ttag';
-
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
 import type { Currency } from '@proton/payments';
@@ -10,32 +8,14 @@ import clsx from '@proton/utils/clsx';
 export interface Props {
     title: ReactNode;
     amount: number;
-    currency?: Currency;
+    currency: Currency;
     className?: string;
     suffix?: ReactNode;
     loading?: boolean;
     'data-testid'?: string;
-    star?: boolean;
 }
 
-const CheckoutRow = ({
-    title,
-    amount = 0,
-    currency,
-    className = '',
-    suffix,
-    loading = false,
-    star,
-    'data-testid': dataTestId,
-}: Props) => {
-    if (amount === 0 && !currency) {
-        return (
-            <div className={clsx(['flex flex-nowrap justify-space-between mb-4', className])}>
-                <div className="pr-2">{title}</div>
-                <span>{c('Price').t`Free`}</span>
-            </div>
-        );
-    }
+const CheckoutRow = ({ title, amount, currency, className, suffix, loading, 'data-testid': dataTestId }: Props) => {
     return (
         <>
             <div
@@ -50,7 +30,6 @@ const CheckoutRow = ({
                         <Price currency={currency} data-testid={dataTestId}>
                             {amount}
                         </Price>
-                        {star ? '*' : null}
                     </span>
                 )}
             </div>

@@ -226,6 +226,7 @@ export const usePaymentFacade = (
         isTrial,
         canUseApplePay,
         canUseGooglePay,
+        enablePaypalRegionalCurrenciesBatch3,
         onDeclined,
         onValidationFailed,
         telemetryContext,
@@ -259,6 +260,7 @@ export const usePaymentFacade = (
         isTrial?: boolean;
         canUseApplePay?: boolean;
         canUseGooglePay?: boolean;
+        enablePaypalRegionalCurrenciesBatch3: boolean;
         telemetryContext: PaymentTelemetryContext;
         onDeclined: ({
             selectedMethodType,
@@ -332,6 +334,7 @@ export const usePaymentFacade = (
             canUseApplePay,
             canUseGooglePay,
             isTrial,
+            enablePaypalRegionalCurrenciesBatch3,
         },
         {
             api,

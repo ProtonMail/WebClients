@@ -24,9 +24,6 @@ import { usePollEvents } from '@proton/components/payments/client-extensions/use
 import { useLoading } from '@proton/hooks';
 import {
     type Currency,
-    MAX_BITCOIN_AMOUNT,
-    MIN_BITCOIN_AMOUNT,
-    MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
     type PaymentStatus,
@@ -34,6 +31,7 @@ import {
     getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
+import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -46,7 +44,7 @@ import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';
 import StyledPayPalButton from './StyledPayPalButton';
 
-const getCurrenciesI18N = () => ({
+const getCurrenciesI18N = (): Record<Currency, string> => ({
     EUR: c('Monetary unit').t`Euro`,
     CHF: c('Monetary unit').t`Swiss franc`,
     USD: c('Monetary unit').t`US Dollar`,
@@ -54,6 +52,11 @@ const getCurrenciesI18N = () => ({
     GBP: c('Monetary unit').t`British pound`,
     AUD: c('Monetary unit').t`Australian dollar`,
     CAD: c('Monetary unit').t`Canadian dollar`,
+    JPY: c('Monetary unit').t`Japanese yen`,
+    KRW: c('Monetary unit').t`South Korean won`,
+    PLN: c('Monetary unit').t`Polish złoty`,
+    SGD: c('Monetary unit').t`Singapore dollar`,
+    HKD: c('Monetary unit').t`Hong Kong dollar`,
 });
 
 type Props = {
@@ -127,11 +130,11 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const methodValue = paymentFacade.selectedMethodValue;
 
     const submit = (() => {
-        const bitcoinAmountInRange = debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT;
+        const bitcoinAmountInRange =
+            debouncedAmount >= getMinBitcoinAmount(currency) && debouncedAmount <= getMaxBitcoinAmount(currency);
         if (
-            debouncedAmount < MIN_CREDIT_AMOUNT ||
-            ((methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
-                !bitcoinAmountInRange)
+            (methodValue === PAYMENT_METHOD_TYPES.BITCOIN || methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
+            !bitcoinAmountInRange
         ) {
             return null;
         }
@@ -186,11 +189,16 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
             );
         }
 
+        const minCreditAmount = getMinCreditAmount(currency);
+        const lowAmount = debouncedAmount < minCreditAmount;
+
         return (
             <Button
                 color="norm"
                 loading={loading}
-                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected || amountLoading}
+                disabled={
+                    paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected || amountLoading || lowAmount
+                }
                 type="submit"
                 data-testid="top-up-button"
             >
@@ -233,7 +241,9 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
 
     const amountToCharge =
         amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) ? null : (
-            <Price currency={currency}>{debouncedAmount}</Price>
+            <Price currency={currency} key="amount-to-charge">
+                {debouncedAmount}
+            </Price>
         );
 
     return (

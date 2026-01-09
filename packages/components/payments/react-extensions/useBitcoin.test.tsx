@@ -2,13 +2,8 @@ import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import type { AmountAndCurrency } from '@proton/payments';
-import {
-    MAX_BITCOIN_AMOUNT,
-    PAYMENT_TOKEN_STATUS,
-    type PaymentsVersion,
-    createTokenV4,
-    getTokenStatusV4,
-} from '@proton/payments';
+import { PAYMENT_TOKEN_STATUS, type PaymentsVersion, createTokenV4, getTokenStatusV4 } from '@proton/payments';
+import { getMaxBitcoinAmount } from '@proton/payments/core/amount-limits';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing';
 
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';
@@ -119,7 +114,7 @@ it('should not request the token if the amount is too low', async () => {
 
 it('should not request the token if the amount is too high', async () => {
     const amountAndCurrency: AmountAndCurrency = {
-        Amount: MAX_BITCOIN_AMOUNT + 1000,
+        Amount: getMaxBitcoinAmount('EUR') + 1000,
         Currency: 'EUR',
     };
 

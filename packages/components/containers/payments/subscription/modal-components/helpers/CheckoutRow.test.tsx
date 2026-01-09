@@ -9,6 +9,7 @@ beforeEach(() => {
     props = {
         title: 'My Checkout Title',
         amount: 999,
+        currency: 'CHF',
     };
 });
 
@@ -16,15 +17,6 @@ it('should render', () => {
     const { container } = render(<CheckoutRow {...props} />);
 
     expect(container).not.toBeEmptyDOMElement();
-});
-
-it('should render free if amount is 0 and there is no currency', () => {
-    props.amount = 0;
-    props.currency = undefined;
-    const { container } = render(<CheckoutRow {...props} />);
-
-    expect(container).toHaveTextContent(props.title as string);
-    expect(container).toHaveTextContent('Free');
 });
 
 it('should render loading state', () => {

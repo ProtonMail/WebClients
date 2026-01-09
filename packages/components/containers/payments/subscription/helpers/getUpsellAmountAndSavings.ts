@@ -26,7 +26,6 @@ interface UpsellAmountAndSavingsProps {
 const getSavings = ({ currentAmount, currentCycle, upsellMonthlyAmount }: GetSavingsProps) => {
     const currentMonthlyAmount = currentAmount / currentCycle;
     const amountSaved = currentMonthlyAmount - upsellMonthlyAmount;
-
     return Math.round((amountSaved / currentMonthlyAmount) * 100);
 };
 
