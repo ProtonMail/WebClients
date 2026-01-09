@@ -35,7 +35,7 @@ import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/The
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { api, exposeApi } from '@proton/pass/lib/api/api';
+import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
@@ -43,11 +43,11 @@ import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/l
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { createConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
@@ -63,15 +63,18 @@ import './app.scss';
 
 if (ENV === 'development') QA_SERVICE?.init(localStorage);
 
+const api = createApi({ config: PASS_CONFIG });
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
-
-exposeApi(createApi({ config: PASS_CONFIG }));
-exposePassCrypto(createPassCrypto(core, store));
-sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
-
+const connectivity = createConnectivityService({ api });
 const history = createHashHistory();
-const imageProxy = createImageProxyHandler(api);
 const showWelcome = isFirstLaunch();
+const imageProxy = createImageProxyHandler(api);
+
+exposeApi(api);
+exposePassCrypto(createPassCrypto(core, store));
+
+sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
+connectivity.init();
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -84,8 +87,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     theme: createPassThemeManager({ getTheme }),
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
-
-    getApiState: api.getState,
 
     supportsBiometrics: async () => {
         if (BUILD_TARGET === 'linux') return false;
@@ -142,10 +143,7 @@ export const App = () => {
                 <NotificationsProvider>
                     <ModalsProvider>
                         <PassExtensionLink>
-                            <ConnectivityProvider
-                                subscribe={api.subscribe}
-                                onPing={() => api({ ...ping(), unauthenticated: true })}
-                            >
+                            <ConnectivityProvider service={connectivity}>
                                 <Router history={history}>
                                     <NavigationProvider>
                                         <AuthStoreProvider store={authStore}>
