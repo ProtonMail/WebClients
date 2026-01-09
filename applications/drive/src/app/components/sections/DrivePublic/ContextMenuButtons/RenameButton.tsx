@@ -26,6 +26,7 @@ export const RenameButton = ({ link, showRenameModal, close }: Props) => {
                     isFile: link.isFile,
                     name: link.name,
                     isDoc: isProtonDocsDocument(link.mimeType),
+                    mediaType: link.mimeType,
                     volumeId: link.volumeId,
                     linkId: link.linkId,
                     onSubmit: (formattedName) =>
