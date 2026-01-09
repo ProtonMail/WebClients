@@ -169,7 +169,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         const [mailSettings, organization] = await preloadPromise;
 
-        const OnlyInInboxForCategories =
+        const OnlyInInboxForCategoriesCounts =
             organization.Settings.MailCategoryViewEnabled && mailSettings.MailCategoryView ? 1 : 0;
 
         const eventManager = bootstrap.eventManager({
@@ -178,7 +178,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 getEvents(eventID, {
                     ConversationCounts: 1,
                     MessageCounts: 1,
-                    OnlyInInboxForCategories,
+                    OnlyInInboxForCategoriesCounts,
                 }),
         });
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
