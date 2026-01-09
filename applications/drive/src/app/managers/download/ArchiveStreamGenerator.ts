@@ -1,6 +1,8 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
 
+import { TransferCancel } from '../../utils/transfer';
+import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
@@ -9,6 +11,7 @@ import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { handleDownloadError } from './utils/handleError';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
+import { waitForSignatureIssueDecision, waitForUnsupportedFileDecision } from './utils/waitForUserDecision';
 
 export type { ArchiveItem, ArchiveTracker } from './downloadTypes';
 
@@ -73,6 +76,7 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize:
         },
         waitForCompletion(): Promise<void> {
             const pendingCompletions = [...completionPromises.values()];
+            downloadLogDebug('ArchiveStreamGenerator waitForCompletion', { pendingCompletions });
             if (!pendingCompletions.length) {
                 return Promise.resolve();
             }
@@ -127,6 +131,7 @@ export class ArchiveStreamGenerator {
     private scheduledTasksAwaitingStart = 0;
     private hasProducedItem = false;
     private totalClaimedSize = 0;
+    private hasSignatureIssues = false;
 
     readonly tracker: ArchiveTracker;
     readonly generator: AsyncGenerator<ArchiveItem>;
@@ -155,8 +160,7 @@ export class ArchiveStreamGenerator {
             pause: () => this.tracker.pauseAll(),
             resume: () => this.tracker.resumeAll(),
             completion: () => this.tracker.waitForCompletion(),
-            // TBI isDownloadCompleteWithSignatureIssues
-            isDownloadCompleteWithSignatureIssues: () => false,
+            isDownloadCompleteWithSignatureIssues: () => this.hasSignatureIssues,
         };
 
         this.abortSignal.addEventListener('abort', () => {
@@ -181,7 +185,7 @@ export class ArchiveStreamGenerator {
                 parentPath,
             };
         }
-
+        const { getQueueItem, addSignatureIssue } = useDownloadManagerStore.getState();
         const drive = getDownloadSdk(this.downloadId);
         const downloader = await drive.getFileDownloader(node.uid, this.abortSignal);
         const claimedSize = downloader.getClaimedSizeInBytes();
@@ -210,35 +214,52 @@ export class ArchiveStreamGenerator {
             this.tracker.updateDownloadProgress(taskId, downloadedBytes, this.totalClaimedSize);
             this.scheduler.updateDownloadProgress(taskId, downloadedBytes);
         });
+        const queueItem = getQueueItem(this.downloadId);
 
-        void controller
-            .completion()
-            .catch(async (error) => {
-                try {
-                    await writableForDownloader.abort(error);
-                } catch (abortError) {
-                    downloadLogDebug('WritableStream abort failed', {
-                        downloadId: this.downloadId,
-                        error: abortError,
+        const completeIndividualFile = async () => {
+            try {
+                await controller.completion();
+            } catch (error) {
+                // Manifest issues cannot be inferred by metadata, can only be thrown when completing the download
+                if (controller.isDownloadCompleteWithSignatureIssues()) {
+                    this.hasSignatureIssues = true;
+                    addSignatureIssue(this.downloadId, {
+                        name: node.name,
+                        nodeType: node.type,
+                        location: 'manifest',
+                        issueStatus: IssueStatus.Detected,
+                    });
+                    const decision = await waitForSignatureIssueDecision(this.downloadId, node.name);
+                    writerClosed = true;
+                    if (decision === IssueStatus.Approved) {
+                        void streamWriter.close();
+                    } else {
+                        // This is user cancellation
+                        void streamWriter.abort(new TransferCancel({ id: this.downloadId }));
+                    }
+                } else {
+                    void streamWriter.abort(error);
+                    handleDownloadError(this.downloadId, [node], error, this.abortSignal.aborted);
+                    this.handleTrackerError(error);
+                    this.archiveItemsQueue.error(error);
+                    throw error;
+                }
+            } finally {
+                if (!writerClosed) {
+                    // writableForDownloader is locked by the SDK so we can't close it,
+                    // but we own the underlying streamWriter so we can close that
+                    streamWriter.close().catch(() => {
+                        downloadLogDebug('Download error on closing streamWriter', { downloadId: this.downloadId });
                     });
                 }
+            }
+        };
 
-                handleDownloadError(this.downloadId, [node], error, this.abortSignal.aborted);
-                this.handleTrackerError(error);
-                this.archiveItemsQueue.error(error);
-                throw error;
-            })
-            .finally(() => {
-                if (writerClosed) {
-                    return;
-                }
-                // writableForDownloader is locked by the SDK so we can't close it,
-                // but we own the underlying streamWriter so we can close that
-                streamWriter.close().catch(() => {
-                    downloadLogDebug('Download error', { downloadId: this.downloadId });
-                });
-            });
+        if (queueItem?.unsupportedFileDetected) {
+            await waitForUnsupportedFileDecision(this.downloadId, completeIndividualFile);
+        }
 
+        void completeIndividualFile();
         this.tracker.attachController(taskId, controller);
 
         return {

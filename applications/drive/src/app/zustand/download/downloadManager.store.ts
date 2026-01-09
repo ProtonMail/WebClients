@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import type { NodeType } from '@proton/drive/index';
 import generateUID from '@proton/utils/generateUID';
 
 // TODO: Maybe find a new home for this const since it's shared between download/upload
@@ -13,6 +14,16 @@ export enum BaseTransferStatus {
     Pending = 'pending',
     Cancelled = 'cancelled',
 }
+
+type SignatureIssueLocation =
+    | 'passphrase'
+    | 'hash'
+    | 'name'
+    | 'xattrs'
+    | 'contentKeyPacket'
+    | 'blocks'
+    | 'thumbnail'
+    | 'manifest';
 
 export enum DownloadStatus {
     InProgress = BaseTransferStatus.InProgress,
@@ -33,7 +44,18 @@ export enum MalawareDownloadResolution {
     ContinueDownload = 'ContinueDownload',
 }
 
-type IssueStatus = 'detected' | 'approved' | 'rejected';
+export enum IssueStatus {
+    Detected = 'detected',
+    Approved = 'approved',
+    Rejected = 'rejected',
+}
+
+export type SignatureIssue = {
+    name: string;
+    nodeType: NodeType;
+    issueStatus: IssueStatus;
+    location: SignatureIssueLocation;
+};
 
 export type DownloadItem = {
     downloadId: string;
@@ -47,6 +69,9 @@ export type DownloadItem = {
     downloadedBytes: number;
     malwareDetected?: Map<string, IssueStatus>;
     unsupportedFileDetected?: IssueStatus;
+    signatureIssues?: Record<string, SignatureIssue>;
+    // Decision set with applyAll, will override individual choices
+    signatureIssueAllDecision?: IssueStatus;
     lastStatusUpdateTime: Date;
     isPhoto?: boolean;
 };
@@ -58,6 +83,8 @@ type DownloadManagerStore = {
     queueIds: Set<string>;
     addDownloadItem: (item: DownloadItemInput) => string;
     updateDownloadItem: (downloadId: string, update: Partial<DownloadItem>) => void;
+    addSignatureIssue: (downloadId: string, update: SignatureIssue) => void;
+    updateSignatureIssueStatus: (downloadId: string, issueName: string, status: IssueStatus) => void;
     removeDownloadItems: (downloadIds: string[]) => void;
     clearQueue: () => void;
     getQueue: () => DownloadItem[];
@@ -124,6 +151,41 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
             clearQueue: () => set(initialState),
             getQueue: () => Array.from(get().queue.values()),
             getQueueItem: (downloadId) => get().queue.get(downloadId),
+            addSignatureIssue: (downloadId, issue) =>
+                set((state) => {
+                    const existing = state.queue.get(downloadId);
+                    if (!existing) {
+                        return {};
+                    }
+                    const queue = new Map(state.queue);
+                    queue.set(downloadId, {
+                        ...existing,
+                        signatureIssues: {
+                            ...(existing.signatureIssues ?? {}),
+                            [issue.name]: issue,
+                        },
+                    });
+                    return { queue };
+                }),
+            updateSignatureIssueStatus: (downloadId, issueName, status) =>
+                set((state) => {
+                    const existing = state.queue.get(downloadId);
+                    const issues = existing?.signatureIssues;
+                    if (!existing || !issues) {
+                        return {};
+                    }
+                    const queue = new Map(state.queue);
+                    const issue = issues[issueName];
+                    issue.issueStatus = status;
+                    queue.set(downloadId, {
+                        ...existing,
+                        signatureIssues: {
+                            ...(existing.signatureIssues ?? {}),
+                            [issueName]: issue,
+                        },
+                    });
+                    return { queue };
+                }),
         }),
         { name: 'DownloadManagerStore' }
     )

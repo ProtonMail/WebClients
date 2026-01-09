@@ -7,11 +7,19 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components/index';
+import { NodeType } from '@proton/drive/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
-import { BaseTransferStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
+import { useSignatureIssueModal } from '../../../components/modals/SignatureIssueModal';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
+import type { TransferSignatureIssueStrategy } from '../../../store';
+import {
+    BaseTransferStatus,
+    IssueStatus,
+    useDownloadManagerStore,
+} from '../../../zustand/download/downloadManager.store';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 
@@ -68,7 +76,8 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const { cancelTransfer, retryTransfer } = useTransferManagerActions();
-    const [containsDocumentModal, showModal] = useDownloadContainsDocumentsModal();
+    const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
+    const [signatureIssueModal, showSignatureIssueModal] = useSignatureIssueModal();
     const onlyShowTransferredBytes = !totalSize;
     // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
     const transferredBytes = Math.min(totalSize, entry.transferredBytes);
@@ -83,36 +92,57 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         UploadStatus.Skipped,
         UploadStatus.PhotosDuplicate,
     ].includes(entry.status as BaseTransferStatus);
-
-    const { getDownloadItem, updateDownloadItem, unsupportedFileDetected } = useDownloadManagerStore(
+    const dm = DownloadManager.getInstance();
+    const { item } = useDownloadManagerStore(
         useShallow((state) => {
-            const item = state.getQueueItem(entry.id);
-            return {
-                getDownloadItem: state.getQueueItem,
-                updateDownloadItem: state.updateDownloadItem,
-                unsupportedFileDetected: item?.unsupportedFileDetected,
-            };
+            return { item: state.getQueueItem(entry.id) };
         })
     );
 
     useEffect(() => {
-        if (unsupportedFileDetected === 'detected') {
-            const item = getDownloadItem(entry.id);
+        const { updateDownloadItem } = useDownloadManagerStore.getState();
+
+        if (item?.unsupportedFileDetected === IssueStatus.Detected) {
             if (!item) {
                 return;
             }
-            showModal({
+            showDocumentsModal({
                 onSubmit: () => {
-                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'approved' });
+                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: IssueStatus.Approved });
                 },
                 onCancel: () => {
                     cancelTransfer(entry);
-                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'rejected' });
+                    updateDownloadItem(item.downloadId, { unsupportedFileDetected: IssueStatus.Rejected });
                 },
             });
         }
-        // showModal causes infinite rerender
-    }, [entry.id, unsupportedFileDetected, getDownloadItem, updateDownloadItem, cancelTransfer]);
+
+        const issues = item?.signatureIssues ?? {};
+        const unresolvedIssues = Object.values(issues).filter((issue) => issue.issueStatus === IssueStatus.Detected);
+        const issue = unresolvedIssues[0];
+        if (!item || !issue) {
+            return;
+        }
+        if (item?.signatureIssueAllDecision) {
+            // Case in which the user has selected an option with applyAll already
+            dm.resolveSignatureIssue(item, issue.name, item?.signatureIssueAllDecision);
+        } else {
+            showSignatureIssueModal({
+                name: issue.name,
+                isFile: issue.nodeType === NodeType.File || issue.nodeType === NodeType.Photo,
+                downloadName: item.name,
+                signatureIssues: { [issue.location]: 0 },
+                apply: (strategy: TransferSignatureIssueStrategy, applyAll: boolean) => {
+                    dm.resolveSignatureIssue(item, issue.name, strategy, applyAll);
+                },
+                cancelAll: () => {
+                    dm.resolveSignatureIssue(item, issue.name, IssueStatus.Rejected);
+                    cancelTransfer(entry);
+                },
+            });
+        }
+        // showModal not in deps because is not stable
+    }, [item, entry.id, cancelTransfer]);
 
     return (
         <div
@@ -197,6 +227,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 )}
             </div>
             {containsDocumentModal}
+            {signatureIssueModal}
         </div>
     );
 };

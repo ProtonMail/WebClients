@@ -10,7 +10,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
-import { BaseTransferStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { BaseTransferStatus, IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
 export const useTransferManagerActions = () => {
@@ -56,7 +56,7 @@ export const useTransferManagerActions = () => {
         if (entry.type === 'download') {
             const item = getDownloadItem(entry.id);
             if (item?.unsupportedFileDetected) {
-                updateDownloadItem(entry.id, { unsupportedFileDetected: 'detected' });
+                updateDownloadItem(entry.id, { unsupportedFileDetected: IssueStatus.Detected });
             }
             downloadManager.retry([entry.id]);
         }
