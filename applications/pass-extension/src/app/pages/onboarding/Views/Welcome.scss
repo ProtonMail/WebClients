@@ -6,18 +6,10 @@ im.$media-expressions: $media-expressions;
 .pass-welcome {
 	&--onboarding-video {
 		position: relative;
-		padding-block-end: 48%;
+		padding-block-end: 56.25%;
 		block-size: 0;
 		inline-size: 100%;
 		overflow: hidden;
-
-		iframe {
-			position: absolute;
-			inset-block-start: 0;
-			inset-inline-start: 0;
-			inline-size: 100%;
-			block-size: 100%;
-		}
 	}
 
 	&--on-medium-default-grow {
