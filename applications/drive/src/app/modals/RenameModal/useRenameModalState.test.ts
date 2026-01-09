@@ -1,63 +1,152 @@
-import { MemberRole, type NodeEntity, NodeType } from '@proton/drive/index';
+import { renderHook } from '@testing-library/react-hooks';
+
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
-import { getIgnoreExtension } from './useRenameModalState';
+import { useRenameModalState } from './useRenameModalState';
 
-export const mockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
-    uid: 'mock-uid',
-    parentUid: 'parent-uid',
-    name: 'mock-file.txt',
-    keyAuthor: {
-        ok: true,
-        value: 'key-author-1',
-    },
-    nameAuthor: {
-        ok: true,
-        value: 'name-author-1',
-    },
-    directRole: MemberRole.Admin,
-    type: NodeType.File,
-    mediaType: 'application/octet-stream',
-    isShared: false,
-    isSharedPublicly: false,
-    creationTime: new Date('2024-01-01T00:00:00Z'),
-    modificationTime: new Date('2024-01-01T00:00:00Z'),
-    trashTime: undefined,
-    totalStorageSize: 12345,
-    activeRevision: undefined,
-    folder: {
-        claimedModificationTime: new Date('2024-01-01T00:00:00Z'),
-    },
-    treeEventScopeId: 'tree-event-scope-id',
-    ...overrides,
-});
+jest.mock('@proton/components', () => ({
+    useNotifications: jest.fn(() => ({
+        createNotification: jest.fn(),
+    })),
+}));
 
-describe('getIgnoreExtension', () => {
+jest.mock('@proton/drive/index', () => ({
+    useDrive: jest.fn(() => ({
+        drive: {
+            renameNode: jest.fn(),
+        },
+    })),
+}));
+
+const defaultProps = {
+    onClose: () => {},
+    onExit: () => {},
+    onSubmit: (_newName: string) => Promise.resolve(),
+    volumeId: 'VOLUME_ID',
+    linkId: 'LINK_ID',
+    open: true,
+    name: 'DEFAULT_NAME',
+    isFile: true,
+    isDoc: false,
+    mediaType: 'DEFAULT_MEDIATYPE',
+};
+
+describe('useRenameModalState', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
-    it('returns true if node is null', () => {
-        expect(getIgnoreExtension(null, 'file.docx')).toBe(true);
+    afterEach(() => {
+        jest.clearAllMocks();
     });
 
-    it('returns true if node is a folder', () => {
-        expect(getIgnoreExtension(mockNode({ type: NodeType.Folder, mediaType: undefined }), 'folder')).toBe(true);
-    });
+    describe('Compute the filename to focus', () => {
+        it('should focus the filename without the png extension', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myimage.png',
+                    mediaType: 'image/png',
+                })
+            );
 
-    it('returns true if mediaType is Proton Docs', () => {
-        expect(getIgnoreExtension(mockNode({ mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE }), 'file.docx')).toBe(true);
-    });
+            expect(result.current.nameToFocus).toBe('myimage');
+        });
 
-    it('returns true if mediaType is Proton Sheets', () => {
-        expect(getIgnoreExtension(mockNode({ mediaType: PROTON_DOCS_SPREADSHEET_MIMETYPE }), 'file.docx')).toBe(true);
-    });
+        it('should focus the filename without the vcf extension', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myvcard.vcf',
+                    mediaType: 'text/vcard',
+                })
+            );
 
-    it('returns true if name doesnt include an extension', () => {
-        expect(getIgnoreExtension(mockNode({ mediaType: 'text/plain' }), '.txt')).toBe(true);
-    });
+            expect(result.current.nameToFocus).toBe('myvcard');
+        });
 
-    it('returns false in case of file with extention', () => {
-        expect(getIgnoreExtension(mockNode({ mediaType: 'text/plain' }), 'file.txt')).toBe(false);
+        it('should focus the entire filename when the name is missing', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: '.txt',
+                    mediaType: 'plain/text',
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('.txt');
+        });
+
+        it('should focus the filename without the docx extension', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'mydocument.docx',
+                    mediaType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('mydocument');
+        });
+
+        it('should focus the entire name for folder', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myfolder',
+                    isFile: false,
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('myfolder');
+        });
+
+        it('should focus the entire name for folder, even with a dot inside', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myfolder.withdot',
+                    isFile: false,
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('myfolder.withdot');
+        });
+
+        it('should focus the entire name for proton documents', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myprotondocument.with_dot_inside',
+                    mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('myprotondocument.with_dot_inside');
+        });
+
+        it('should focus the entire name for proton sheets', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'myprotonsheets.with_dot_inside',
+                    mediaType: PROTON_DOCS_SPREADSHEET_MIMETYPE,
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('myprotonsheets.with_dot_inside');
+        });
+
+        it('should focus the entire name when missing the mediatype', async () => {
+            const { result } = renderHook(() =>
+                useRenameModalState({
+                    ...defaultProps,
+                    name: 'somefile.mp3',
+                    mediaType: undefined,
+                })
+            );
+
+            expect(result.current.nameToFocus).toBe('somefile.mp3');
+        });
     });
 });
