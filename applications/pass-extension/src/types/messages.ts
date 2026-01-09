@@ -24,6 +24,7 @@ import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { ClipboardAutoClearDTO, ClipboardWriteDTO } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
+import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
@@ -60,7 +61,7 @@ import type {
     FormSubmitPayload,
 } from '@proton/pass/types/worker/form';
 import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
-import type { ClientEndpoint, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
+import type { ClientEndpoint, ClientInitResult, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
 import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import type { AppState, PopupInitialState } from '@proton/pass/types/worker/state';
 import type {
@@ -114,6 +115,9 @@ export enum WorkerMessageType {
     CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
     CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
+
+    CONNECTIVITY = 'CONNECTIVITY',
+
     DEBUG = 'DEBUG',
     DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
     ENDPOINT_INIT = 'ENDPOINT_INIT',
@@ -215,6 +219,8 @@ export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tab
 export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
+export type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
+
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
 export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
@@ -311,6 +317,7 @@ export type WorkerMessage =
     | ClipboardAutoClearMessage
     | ClipboardReadMessage
     | ClipboardWriteMessage
+    | ConnectivityStatusMessage
     | DebugMessage
     | DesktopUnlockSecretMessage
     | EndpointInitMessage
@@ -396,7 +403,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
-    [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.CLIENT_INIT]: ClientInitResult;
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.DESKTOP_UNLOCK_SECRET]: { secret: string };
     [WorkerMessageType.ENDPOINT_INIT]: EndpointContext;

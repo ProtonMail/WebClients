@@ -25,6 +25,7 @@ import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { ClipboardService } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
 
@@ -46,6 +47,7 @@ export interface WorkerContextInterface {
         b2bEvents: MaybeNull<B2BEventsService>;
         clipboard: ClipboardService;
         core: PassCoreProxy;
+        connectivity: ConnectivityService;
         featureFlags: FeatureFlagService;
         formTracker: FormTrackerService;
         i18n: I18NService;

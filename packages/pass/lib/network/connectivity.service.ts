@@ -39,9 +39,11 @@ export type ConnectivityState = {
     retryCancel: Maybe<Callback>;
 };
 
-/** Determines true connectivity status requiring both
- * API reachability and navigator online state */
-const isOnline = ({ status, navigatorOnline }: ConnectivityState) =>
+/** Determines effective online state for retry handler transition detection:
+ * requires both API reachability and navigator online. This is intentionally
+ * stricter than the public `online` getter which only checks `status`, as the
+ * navigator state is used to detect when to start/stop retry handlers. */
+const isEffectivelyOnline = ({ status, navigatorOnline }: ConnectivityState) =>
     status === ConnectivityStatus.ONLINE && navigatorOnline;
 
 /** Creates connectivity service managing network state with
@@ -113,7 +115,7 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
     /** Handles online/offline state transitions, starting retry
      * logic when offline, stopping when online */
     const onOnlineTransition = (wasOnline: boolean) => {
-        const online = isOnline(state);
+        const online = isEffectivelyOnline(state);
 
         if (online !== wasOnline) {
             logger.info(`[ConnectivityService] online=${online} [${state.status}]`);
@@ -128,7 +130,7 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
 
     const init = () => {
         const onNavigatorEvent = () => {
-            const wasOnline = isOnline(state);
+            const wasOnline = isEffectivelyOnline(state);
             const online = navigator.onLine;
             state.navigatorOnline = online;
             onOnlineTransition(wasOnline);
@@ -136,7 +138,7 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
 
         const onApiEvent: Subscriber<ApiSubscriptionEvent> = (event) => {
             if (event.type === 'connectivity') {
-                const wasOnline = isOnline(state);
+                const wasOnline = isEffectivelyOnline(state);
                 setStatus(intoConnectivityStatus(event));
                 onOnlineTransition(wasOnline);
             }
@@ -147,7 +149,7 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
         listeners.addSubscriber(api.subscribe(onApiEvent));
 
         /** Trigger initial connectivity state transition */
-        onOnlineTransition(!isOnline(state));
+        onOnlineTransition(!isEffectivelyOnline(state));
         void check();
     };
 

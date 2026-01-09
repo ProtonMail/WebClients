@@ -78,6 +78,7 @@ connectivity.init();
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
+    connectivity,
     core,
     endpoint: 'desktop',
     i18n: i18n(locales),
