@@ -9,7 +9,7 @@ export enum ConnectivityStatus {
     DOWNTIME = 'DOWNTIME',
 }
 
-const CONNECTIVITY_RETRY_TIMEOUT = 5_000;
+export const CONNECTIVITY_RETRY_TIMEOUT = 5_000;
 
 type ConnectivityOptions = { online: boolean; unreachable: boolean };
 
