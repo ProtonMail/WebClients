@@ -1,8 +1,30 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { NotificationButton, useNotifications } from '@proton/components';
 
 import { useErrorHandler } from '../store/_utils';
+
+const SuccessNotificationContent = ({ message, undoAction }: { message: string; undoAction?: () => Promise<void> }) => {
+    const [undoClicked, setUndoClicked] = useState(false);
+    return (
+        <>
+            <span>{message}</span>
+            {undoAction && (
+                <>
+                    <NotificationButton
+                        disabled={undoClicked}
+                        onClick={() => {
+                            setUndoClicked(true);
+                            void undoAction();
+                        }}
+                    >{c('Action').t`Undo`}</NotificationButton>
+                </>
+            )}
+        </>
+    );
+};
 
 export function useListNotifications() {
     const { createNotification } = useNotifications();
@@ -24,16 +46,7 @@ export function useListNotifications() {
 
         createNotification({
             type: 'success',
-            text: (
-                <>
-                    <span>{message}</span>
-                    {undoAction && (
-                        <>
-                            <NotificationButton onClick={() => undoAction()}>{c('Action').t`Undo`}</NotificationButton>
-                        </>
-                    )}
-                </>
-            ),
+            text: <SuccessNotificationContent message={message} undoAction={undoAction} />,
         });
     };
 
