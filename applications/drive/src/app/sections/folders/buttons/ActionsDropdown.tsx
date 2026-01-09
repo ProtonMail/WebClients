@@ -79,6 +79,7 @@ export const ActionsDropdown = ({ volumeId, shareId, selectedItems, role }: Prop
                     isDoc: isProtonDocsDocument(selectedItems[0].mimeType),
                     volumeId: selectedItems[0].volumeId,
                     linkId: selectedItems[0].linkId,
+                    mediaType: selectedItems[0].mimeType,
                     onSubmit: (formattedName) =>
                         renameLink(
                             new AbortController().signal,

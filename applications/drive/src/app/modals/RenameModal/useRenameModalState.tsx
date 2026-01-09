@@ -1,22 +1,19 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
-import type { NodeEntity } from '@proton/drive';
 import { generateNodeUid, useDrive } from '@proton/drive';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type RenameModalInnerProps = {
     onSuccess?: (newName: string) => Promise<void>;
     volumeId: string;
     linkId: string;
     name: string;
+    mediaType: string | undefined;
     isFile: boolean; // isFile could come from getNode but it will be slow with noticeable delay in the modal
     /** @deprecated used only on legacy, it will not be handled here */
     onSubmit?: (newName: string) => Promise<void>;
@@ -36,14 +33,20 @@ const splitLinkName = (linkName: string) => {
     return splitExtension(linkName);
 };
 
-export const getIgnoreExtension = (node: null | NodeEntity, name: string) => {
-    const isFile = node?.type === 'file';
-    let ignoreExtension = !isFile;
-    if (node !== null && node.mediaType) {
-        const [namePart] = splitLinkName(name);
-        ignoreExtension = isProtonDocsDocument(node.mediaType) || isProtonDocsSpreadsheet(node.mediaType) || !namePart;
+const computeFilenameToFocus = (name: string, isFile: boolean, mediaType: string | undefined) => {
+    if (!isFile || !mediaType) {
+        return name;
     }
-    return ignoreExtension;
+
+    if (isProtonDocsDocument(mediaType) || isProtonDocsSpreadsheet(mediaType)) {
+        return name;
+    }
+    const [namePart] = splitLinkName(name);
+    if (namePart) {
+        return namePart;
+    }
+
+    return name;
 };
 
 export const useRenameModalState = ({
@@ -52,28 +55,14 @@ export const useRenameModalState = ({
     linkId,
     name,
     isFile,
+    mediaType,
     onSuccess,
     ...modalProps
 }: UseRenameModalProps) => {
     const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
-    const [node, setNode] = useState<null | NodeEntity>(null);
-    const ignoreExtension = getIgnoreExtension(node, name);
     const { handleError } = useSdkErrorHandler();
-    useEffect(() => {
-        const fetchNode = async () => {
-            try {
-                const maybeNode = await drive.getNode(generateNodeUid(volumeId, linkId));
-                const { node } = getNodeEntity(maybeNode);
-                setNode(node);
-            } catch (e) {
-                handleError(e);
-                onClose();
-            }
-        };
-        void fetchNode();
-    }, [volumeId, linkId, createNotification, drive, handleError, onClose]);
 
     const handleSubmit = async (newName: string) => {
         const nodeUid = generateNodeUid(volumeId, linkId);
@@ -97,7 +86,7 @@ export const useRenameModalState = ({
         handleSubmit,
         onClose,
         name,
-        ignoreExtension,
+        nameToFocus: computeFilenameToFocus(name, isFile, mediaType),
         isFile,
     };
 };

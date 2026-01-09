@@ -71,6 +71,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
                 showRenameModal({
                     isFile: selectedLinks[0].isFile,
                     name: selectedLinks[0].name,
+                    mediaType: selectedLinks[0].mimeType,
                     isDoc: isProtonDocsDocument(selectedLinks[0].mimeType),
                     volumeId: selectedLinks[0].volumeId,
                     linkId: selectedLinks[0].linkId,

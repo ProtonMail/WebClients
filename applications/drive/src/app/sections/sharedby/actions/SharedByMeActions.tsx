@@ -140,6 +140,7 @@ export const SharedByMeActions = ({
                             name: singleItem.name,
                             volumeId: splitedSingleItemUid.volumeId,
                             linkId: splitedSingleItemUid.nodeId,
+                            mediaType: singleItem.mediaType,
                             onSubmit: (formattedName) =>
                                 renameLink(
                                     new AbortController().signal,
