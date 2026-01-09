@@ -16,30 +16,42 @@ export const getMessageExpirationDate = (message: MessageState) => {
     return undefined;
 };
 
-const getTodayText = (value: string) => {
+const getTodayText = (value: string, isRetentionPolicy = false) => {
+    //translator: Full sentence for reference: "This message will be purged today at 12:30 PM"
+    if (isRetentionPolicy) {
+        return c('Info').t`This message will be purged today at ${value}`;
+    }
     //translator: Full sentence for reference: "This message will expire today at 12:30 PM"
     return c('Info').t`This message will expire today at ${value}`;
 };
 
-const getTomorrowText = (value: string) => {
-    // translator: Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
+const getTomorrowText = (value: string, isRetentionPolicy = false) => {
+    // translator: Full sentence for reference: "This message will be purged tomorrow at 12:30 PM"
+    if (isRetentionPolicy) {
+        return c('Info').t`This message will be purged tomorrow at ${value}`;
+    }
+    //translator: Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
     return c('Info').t`This message will expire tomorrow at ${value}`;
 };
 
-const getOnText = (value: string) => {
-    // translator: Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
+const getOnText = (value: string, isRetentionPolicy = false) => {
+    // translator: Full sentence for reference: "This message will be purged on Tuesday, May 11 at 12:30 PM"
+    if (isRetentionPolicy) {
+        return c('Info').t`This message will be purged on ${value}`;
+    }
+    //translator: Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
     return c('Info').t`This message will expire on ${value}`;
 };
 
-export const getExpiresOnMessage = (expirationDate: Date) => {
+export const getExpiresOnMessage = (expirationDate: Date, isRetentionPolicy = false) => {
     const shortDateMessage = format(expirationDate, 'p', { locale: dateLocale });
 
     if (isToday(expirationDate)) {
-        return getTodayText(shortDateMessage);
+        return getTodayText(shortDateMessage, isRetentionPolicy);
     } else if (isTomorrow(expirationDate)) {
-        return getTomorrowText(shortDateMessage);
+        return getTomorrowText(shortDateMessage, isRetentionPolicy);
     } else {
-        return getOnText(formatFullDate(expirationDate));
+        return getOnText(formatFullDate(expirationDate), isRetentionPolicy);
     }
 };
 
