@@ -13,7 +13,7 @@ export const removeListeners = (el: HTMLElement): void => {
     el.replaceWith(el.cloneNode(true));
 };
 
-type EventSource = Window | Document | HTMLElement | MediaQueryList;
+type EventSource = Window | Document | HTMLElement | MediaQueryList | ServiceWorkerGlobalScope;
 
 type EventMap<T extends EventSource> = T extends Window
     ? WindowEventMap
@@ -21,7 +21,9 @@ type EventMap<T extends EventSource> = T extends Window
       ? DocumentEventMap
       : T extends HTMLElement
         ? HTMLElementEventMap
-        : never;
+        : T extends ServiceWorkerGlobalScope
+          ? ServiceWorkerGlobalScopeEventMap
+          : never;
 
 type EventType<T extends EventSource, E extends keyof EventMap<T>> = EventMap<T>[E];
 
