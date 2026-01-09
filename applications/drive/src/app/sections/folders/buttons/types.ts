@@ -1,19 +1,3 @@
-type FolderButtonType = 'toolbar' | 'context';
+import type { ActionButtonProps } from '../../buttons/types';
 
-type BaseProps = {
-    type: FolderButtonType;
-    title?: string;
-    onClick: () => void;
-};
-
-type FolderToolbarButtonProps = BaseProps & {
-    type: 'toolbar';
-    close?: never;
-};
-
-type FolderContextButtonProps = BaseProps & {
-    type: 'context';
-    close: () => void;
-};
-
-export type FolderButtonProps = FolderToolbarButtonProps | FolderContextButtonProps;
+export type FolderButtonProps = ActionButtonProps;

@@ -6,7 +6,9 @@ import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { useSelection } from '../../../components/FileBrowser';
+import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
+import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CopyButton } from '../buttons/CopyButton';
 import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
@@ -19,7 +21,6 @@ import { LayoutToolbarButton } from '../buttons/LayoutButton';
 import { MoveButton } from '../buttons/MoveButton';
 import { OpenInDocsButton } from '../buttons/OpenInDocsButton';
 import { PreviewButton } from '../buttons/PreviewButton';
-import { RenameButton } from '../buttons/RenameButton';
 import { ShareLinkButton } from '../buttons/ShareLinkButton';
 import { ShareToolbarButton } from '../buttons/ShareToolbarButton';
 import { TrashButton } from '../buttons/TrashButton';
@@ -148,8 +149,8 @@ export const FolderToolbar = ({
                             />
                         )}
                         {permissions.canCopy && <CopyButton type="toolbar" onClick={showCopyModal} />}
-                        {permissions.canRename && (
-                            <RenameButton selectedItems={selectedItems} type="toolbar" onClick={showRenameModal} />
+                        {permissions.canRename && !noSelection(selectedItems) && !isMultiSelect(selectedItems) && (
+                            <RenameActionButton type="toolbar" onClick={showRenameModal} />
                         )}
                         <DetailsButton type="toolbar" selectedItems={selectedItems} onClick={showDetailsModal} />
 
