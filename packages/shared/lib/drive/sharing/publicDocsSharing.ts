@@ -9,7 +9,7 @@ import { DriveDocsPublicShareMessageType } from '../constants';
 /**
  * Timeout in `ms` for waiting for the custom password.
  */
-const DRIVE_DOCS_CUSTOM_PASSWORD_TIMEOUT = 1 * 1000;
+const DRIVE_DOCS_CUSTOM_PASSWORD_TIMEOUT = 10 * 1000;
 
 /**
  * Helper to open a new window for Docs and communicate the custom password.
