@@ -304,7 +304,7 @@ export const getRoutes = ({
                     available: !isSSOUser,
                 },
                 {
-                    text: c('Title').t`OpenVPN / IKEv2 username`,
+                    text: c('Title').t`OpenVPN username`,
                     id: 'openvpn',
                 },
                 {

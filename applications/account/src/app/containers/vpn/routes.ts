@@ -39,8 +39,8 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
             },
             openvpn: {
                 id: 'openvpn',
-                text: c('Title').t`OpenVPN / IKEv2`,
-                to: '/OpenVpnIKEv2',
+                text: c('Title').t`OpenVPN`,
+                to: '/OpenVpn',
                 icon: 'key',
                 subsections: [
                     {
