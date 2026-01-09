@@ -78,7 +78,7 @@ type FolderActions = {
     checkAndSetHasEverLoaded: () => void;
 };
 
-type FolderStore = FolderState & FolderActions;
+export type FolderStore = FolderState & FolderActions;
 
 const initialState: FolderState = {
     isLoading: false,
