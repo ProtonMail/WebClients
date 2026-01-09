@@ -445,7 +445,7 @@ export const PLAN_NAMES: Record<PLANS, string> = {
     [PLANS.LUMO]: 'Lumo Plus',
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
-    [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
+    [PLANS.BUNDLE_PRO_2024]: 'Workspace Standard',
     [PLANS.BUNDLE_BIZ_2025]: 'Workspace Premium',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.DUO]: 'Proton Duo',
