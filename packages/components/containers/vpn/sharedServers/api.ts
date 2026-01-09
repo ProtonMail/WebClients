@@ -15,7 +15,7 @@ export interface FilterPolicyRequest {
     Type: number;
     State: number;
     Locations: SharedServerLocation[];
-    UserIds: (string | number)[] | null;
+    UserIds: string[] | null;
     GroupIds: (string | number)[] | null;
 }
 

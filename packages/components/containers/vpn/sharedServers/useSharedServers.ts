@@ -22,7 +22,7 @@ export interface VpnLocationFilterPolicy {
 }
 
 export interface SharedServerUser {
-    UserID: number | string;
+    UserID: string;
     Name: string;
     Email: string;
 }
