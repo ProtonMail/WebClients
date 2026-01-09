@@ -299,7 +299,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Proton Business Suite');
+            within(upsellPanel as HTMLElement).getByText('Workspace Standard');
 
             // Usage Panel
             expect(usagePanel).toBeTruthy();
@@ -326,7 +326,7 @@ describe('YourPlanSection', () => {
 
             // Upsell Panel
             expect(upsellPanel).toBeTruthy();
-            within(upsellPanel as HTMLElement).getByText('Proton Business Suite');
+            within(upsellPanel as HTMLElement).getByText('Workspace Standard');
         });
     });
 });
