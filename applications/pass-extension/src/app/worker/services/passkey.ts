@@ -14,6 +14,12 @@ export function assertValidPasskeyRequest(domain: Maybe<string>, tabUrl: Maybe<s
     if (new URL(tabUrl).hostname !== domain) throw new Error('Invalid passkey request: domain mistmatch');
 }
 
+export const isSecureLocalhost = (tabUrl: Maybe<string>) => {
+    if (!tabUrl) return false;
+    const { protocol, hostname } = new URL(tabUrl);
+    return hostname === 'localhost' && protocol === 'https:';
+};
+
 export const createPasskeyService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PASSKEY_QUERY,
@@ -28,7 +34,8 @@ export const createPasskeyService = () => {
             const tabUrl = tab?.id ? (await browser.tabs.get(tab.id)).url : undefined;
             assertValidPasskeyRequest(domain, tabUrl);
 
-            const response = await ctx.service.core.generate_passkey(domain, request);
+            const isLocalhost = isSecureLocalhost(tabUrl);
+            const response = await ctx.service.core.generate_passkey(domain, request, isLocalhost);
             return { intercept: true, response };
         })
     );
@@ -50,7 +57,8 @@ export const createPasskeyService = () => {
             if (!passkey) throw new Error(c('Error').t`Unknown passkey`);
 
             const content = Uint8Array.fromBase64(passkey.content);
-            const response = await ctx.service.core.resolve_passkey_challenge(domain, content, request);
+            const isLocalhost = isSecureLocalhost(tabUrl);
+            const response = await ctx.service.core.resolve_passkey_challenge(domain, content, request, isLocalhost);
             return { intercept: true, response };
         })
     );
