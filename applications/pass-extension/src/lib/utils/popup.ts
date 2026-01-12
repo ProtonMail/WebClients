@@ -95,7 +95,7 @@ export const createPopupController = (): PopupController => {
     const expand = (subpath?: string) => {
         browser.windows
             .create({
-                url: browser.runtime.getURL(`popup.html#${subpath}`),
+                url: browser.runtime.getURL(`popup.html#${subpath ?? ''}`),
                 type: 'popup',
                 focused: true,
             })

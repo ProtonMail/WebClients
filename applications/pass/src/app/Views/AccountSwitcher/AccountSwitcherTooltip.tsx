@@ -1,62 +1,33 @@
 import type { FC, ReactNode } from 'react';
 import { useEffect } from 'react';
 
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import {
+    AccountSwitcherList,
+    type AccountSwitcherProps,
+} from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherList';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { UserPanel } from '@proton/pass/components/Account/UserPanel';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
-import { AuthMode } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useAuthService } from './AuthServiceProvider';
-import { useAuthSwitch } from './AuthSwitchProvider';
-
-type AccountSwitcherProps = { sessions: SwitchableSession[]; childClassName?: string };
-
-export const AccountSwitcherList: FC<AccountSwitcherProps> = ({ sessions, childClassName }) => {
-    const authSwitch = useAuthSwitch();
-
-    return sessions.map(({ LocalID, PrimaryEmail, DisplayName, UID }) => (
-        <DropdownMenuButton
-            key={LocalID}
-            onClick={() => authSwitch.switch(LocalID)}
-            label={<UserPanel email={PrimaryEmail} name={DisplayName} />}
-            quickActionsClassname="pr-2"
-            quickActionsPlacement="bottom-end"
-            className={childClassName}
-            parentClassName="max-w-full"
-            quickActions={[
-                <DropdownMenuButton
-                    key="revoke"
-                    size="small"
-                    label={c('Action').t`Sign out`}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return authSwitch.revoke({ type: AuthMode.COOKIE, UID });
-                    }}
-                />,
-            ]}
-        />
-    ));
-};
-
 type PopperProps = ReturnType<typeof usePopperAnchor<HTMLButtonElement>>;
-type AccountSwitcherTooltipProps = AccountSwitcherProps & { children: (props: PopperProps) => ReactNode };
+type AccountSwitcherTooltipProps = AccountSwitcherProps & {
+    children: (props: PopperProps) => ReactNode;
+};
 
 export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ children, sessions }) => {
     const { SSO_URL } = usePassConfig();
-    const authService = useAuthService();
     const online = useOnline();
+
+    const authService = useAuthService();
 
     const dropdown = usePopperAnchor<HTMLButtonElement>();
     const [key, rerender] = useRerender();

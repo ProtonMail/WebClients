@@ -31,6 +31,7 @@ if (typeof browser !== 'undefined') {
             .map((locale) => `chunk.locales/${locale}-json.js`);
 
         const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
+
         const cryptoChunks = [
             'chunk.crypto-worker-api.js',
             'chunk.crypto-argon2.js',

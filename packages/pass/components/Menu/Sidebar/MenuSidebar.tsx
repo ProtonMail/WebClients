@@ -1,10 +1,6 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 
-import { AccountActions } from 'proton-pass-web/app/Views/Sidebar/AccountActions';
-import { AuthActions } from 'proton-pass-web/app/Views/Sidebar/AuthActions';
-import { OnboardingActions } from 'proton-pass-web/app/Views/Sidebar/OnboardingActions';
-import { OrganizationActions } from 'proton-pass-web/app/Views/Sidebar/OrganizationActions';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,6 +9,9 @@ import Icon from '@proton/components/components/icon/Icon';
 import { UserStorage } from '@proton/pass/components/Account/UserStorage';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
 import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
+import { AuthActions } from '@proton/pass/components/Menu/Sidebar/AuthActions';
+import { OnboardingActions } from '@proton/pass/components/Menu/Sidebar/OnboardingActions';
+import { OrganizationActions } from '@proton/pass/components/Menu/Sidebar/OrganizationActions';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
@@ -25,8 +24,14 @@ import { selectOrganizationVaultCreationDisabled } from '@proton/pass/store/sele
 
 import { MenuActions } from './MenuActions';
 
-export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
-    const menu = useMenuItems({ onAction: onToggle });
+type Props = {
+    onLock: () => void;
+    onLogout: (options: { soft: boolean }) => void;
+    userPanel: ReactNode;
+};
+
+export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
+    const menu = useMenuItems();
     const vaultActions = useVaultActions();
     const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
 
@@ -72,7 +77,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                 <hr className="my-2 mx-4" aria-hidden="true" />
 
-                <AuthActions />
+                <AuthActions onLock={onLock} />
 
                 <Submenu
                     icon="bolt"
@@ -100,9 +105,9 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
-                    <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
-                        <AccountActions />
-                        <MenuActions />
+                    <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 ">
+                        {userPanel}
+                        {!EXTENSION_BUILD && <MenuActions onLogout={onLogout} />}
                     </div>
 
                     <UserStorage />
