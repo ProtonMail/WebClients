@@ -11,6 +11,7 @@ import type {
   WordCountInfoCollection,
   EditorEvent,
   EditorEventData,
+  AppPlatform,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
@@ -169,8 +170,12 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     return this.docOrchestrator.handleFileMenuAction(action)
   }
 
-  async getIsRunningInNativeMobileWeb(): Promise<boolean> {
-    return window.Android != null || window.webkit?.messageHandlers?.iOS != null
+  async getAppPlatform(): Promise<AppPlatform> {
+    if (window.Android != null || window.webkit?.messageHandlers?.iOS != null) {
+      return 'nativeMobileWeb'
+    }
+
+    return 'web'
   }
 
   async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {

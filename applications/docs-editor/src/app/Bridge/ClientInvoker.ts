@@ -12,6 +12,7 @@ import type {
   SuggestionSummaryType,
   SafeDocsUserState,
   FileMenuAction,
+  AppPlatform,
 } from '@proton/docs-shared'
 import {
   GenerateUUID,
@@ -189,7 +190,7 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     })
   }
 
-  async getIsRunningInNativeMobileWeb(): Promise<boolean> {
-    return this.invokeClientMethod('getIsRunningInNativeMobileWeb', [])
+  async getAppPlatform(): Promise<AppPlatform> {
+    return this.invokeClientMethod('getAppPlatform', [])
   }
 }
