@@ -27,6 +27,7 @@ const RELEASE = parseEnvVar('RELEASE', false, parseBool);
 const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, parseBool);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, parseBool);
 const RUNTIME_RELOAD_PORT = parseEnvVar('RUNTIME_RELOAD_PORT', 8089, parseInt);
+const WEBPACK_BUNDLE_ANALYZER = parseEnvVar('WEBPACK_BUNDLE_ANALYZER', false, Boolean);
 const WEBPACK_CIRCULAR_DEPS = parseEnvVar('WEBPACK_CIRCULAR_DEPS', false, Boolean);
 const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 8090, Number);
 const E2E_TESTS = parseEnvVar('E2E_TESTS', false, parseBool);
@@ -50,6 +51,7 @@ export default {
     RESUME_FALLBACK,
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
+    WEBPACK_BUNDLE_ANALYZER,
     WEBPACK_CIRCULAR_DEPS,
     WEBPACK_DEV_PORT,
 };

@@ -1,9 +1,10 @@
 import { type FC, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { AccountSwitcherList, AccountSwitcherTooltip } from 'proton-pass-web/app/Auth/AccountSwitcher';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
+import { AccountSwitcherList } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherList';
+import { AccountSwitcherTooltip } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherTooltip';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
@@ -81,7 +82,7 @@ export const Lobby: FC = () => {
                                     style={{ '--max-h-custom': '11.5em' }}
                                 >
                                     <div className="flex flex-column gap-2">
-                                        <AccountSwitcherList sessions={sessions} childClassName="rounded pl-2" />
+                                        <AccountSwitcherList sessions={sessions} />
                                     </div>
                                 </Scroll>
                             )

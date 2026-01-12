@@ -2,16 +2,18 @@ import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { AccountSwitcher } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcher';
+import { useSpotlightListener } from 'proton-pass-web/lib/hooks/useSpotlightListener';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useToggle from '@proton/components/hooks/useToggle';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
+import { Header } from '@proton/pass/components/Header/Header';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
@@ -19,6 +21,8 @@ import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PasswordUnlockProvider } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvider';
+import { MenuSidebar } from '@proton/pass/components/Menu/Sidebar/MenuSidebar';
+import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
@@ -34,16 +38,19 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
-import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
+import {
+    selectIsSSO,
+    selectLockMode,
+    selectLockSetupRequired,
+    selectRequestInFlight,
+} from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
-import { Header } from './Header/Header';
 import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
 import { PrivateRouter } from './PrivateRouter';
-import { Menu } from './Sidebar/Menu';
 
 const Main: FC = () => {
     const dispatch = useDispatch();
@@ -53,10 +60,10 @@ const Main: FC = () => {
     const offline = clientOffline(status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const isSSO = useSelector(selectIsSSO);
-
-    /** FIXME: update `useToggle` so callbacks are stable */
-    const { state: expanded, set } = useToggle();
-    const toggle = useCallback(() => set((prev) => !prev), []);
+    const lockMode = useSelector(selectLockMode);
+    const authService = useAuthService();
+    const interactive = useItemScope() !== undefined;
+    useSpotlightListener();
 
     const connectivityBar = useConnectivityBar((connectivity) => ({
         className: offline ? 'bg-weak border-top' : 'bg-danger',
@@ -79,6 +86,16 @@ const Main: FC = () => {
         ) : undefined,
     }));
 
+    const handleLock = useCallback(
+        () =>
+            authService.lock(lockMode, {
+                broadcast: true,
+                soft: false,
+                userInitiated: true,
+            }),
+        [lockMode]
+    );
+
     return (
         <div className="content-container flex flex-1 shrink-0 flex-column">
             <FirstChild>
@@ -88,13 +105,13 @@ const Main: FC = () => {
             </FirstChild>
 
             <div className="flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
-                <Sidebar expanded={expanded} onToggle={toggle}>
-                    <Menu onToggle={toggle} />
+                <Sidebar>
+                    <MenuSidebar onLock={handleLock} onLogout={authService.logout} userPanel={<AccountSwitcher />} />
                 </Sidebar>
 
                 <main id="main" className="content flex-1 overflow-hidden">
                     <div className="flex flex-nowrap flex-column h-full">
-                        <Header sidebarExpanded={expanded} sidebarToggle={toggle} />
+                        <Header onLock={handleLock} onLogout={authService.logout} interactive={interactive} />
                         <div className="flex items-center justify-center flex-nowrap w-full h-full">
                             <PrivateRouter />
                             {isSSO && (
