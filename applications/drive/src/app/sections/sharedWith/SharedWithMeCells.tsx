@@ -89,13 +89,7 @@ export const getSharedWithMeCells = ({
                     displayName = contactEmail?.Name || sharedBy;
                 }
 
-                return (
-                    <SharedByCell
-                        uid={uid}
-                        displayName={displayName}
-                        isPublicLink={item.itemType === ItemType.BOOKMARK}
-                    />
-                );
+                return <SharedByCell displayName={displayName} isPublicLink={item.itemType === ItemType.BOOKMARK} />;
             };
             return <SharedByCellComponent />;
         },

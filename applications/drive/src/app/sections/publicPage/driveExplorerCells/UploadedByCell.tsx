@@ -9,14 +9,14 @@ import { stringComparator } from '../../../modules/sorting/comparators';
 import { SortField } from '../../../modules/sorting/types';
 import type { CellDefinitionConfig } from '../../../statelessComponents/DriveExplorer/types';
 
-export interface SharedByCellProps {
-    displayName: string;
-    isPublicLink?: boolean;
+export interface UploadedByCellProps {
+    displayName: string | undefined;
     className?: string;
 }
 
-export const SharedByCell = ({ displayName, isPublicLink = false, className }: SharedByCellProps) => {
-    if (isPublicLink) {
+// TODO: Find a way to combine with ShareByCell
+export const UploadedByCell = ({ displayName, className }: UploadedByCellProps) => {
+    if (!displayName) {
         return (
             <div className={clsx('flex flex-nowrap items-center gap-2', className)}>
                 <Avatar
@@ -28,9 +28,9 @@ export const SharedByCell = ({ displayName, isPublicLink = false, className }: S
                         '--max-h-custom': '1.75rem',
                     }}
                 >
-                    <Icon className="color-weak" name="globe" />
+                    <Icon className="color-weak" name="user" />
                 </Avatar>
-                <span className="text-ellipsis color-weak">{c('Info').t`Public link`}</span>
+                <span className="text-ellipsis color-weak">{c('Info').t`Anonymous`}</span>
             </div>
         );
     }
@@ -43,13 +43,13 @@ export const SharedByCell = ({ displayName, isPublicLink = false, className }: S
     );
 };
 
-export const defaultSharedByCellConfig: CellDefinitionConfig = {
-    id: 'sharedBy',
-    headerText: c('Label').t`Shared by`,
+export const defaultUploadedByCellConfig: CellDefinitionConfig = {
+    id: 'uploadedBy',
+    headerText: c('Label').t`Uploaded by`,
     className: 'w-1/5',
-    sortField: SortField.sharedBy,
+    sortField: SortField.uploadedBy,
     sortConfig: [
-        { field: SortField.sharedBy, comparator: stringComparator },
+        { field: SortField.uploadedBy, comparator: stringComparator },
         { field: SortField.name, comparator: stringComparator },
     ],
     testId: 'column-shared-by',

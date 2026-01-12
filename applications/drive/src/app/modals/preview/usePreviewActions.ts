@@ -7,8 +7,8 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
+import { useDocumentActions } from '../../hooks/docs/useDocumentActions';
 import { downloadManager } from '../../managers/download/DownloadManager';
-import { useDocumentActions } from '../../store/_documents';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
 import type { Drive } from './interface';
@@ -26,7 +26,7 @@ export default function usePreviewActions({
     nodeData?: Uint8Array<ArrayBuffer>[];
 }) {
     // TODO: Do not use legacy document actions - convert to new document actions.
-    const { openDocumentWithNodeUid, convertDocumentWithNodeUid, downloadDocumentWithNodeUid } = useDocumentActions();
+    const { openDocument, convertDocument, downloadDocument } = useDocumentActions();
 
     const mimeType = getNodeMimeType(node);
 
@@ -34,15 +34,15 @@ export default function usePreviewActions({
         ? undefined
         : async () => {
               if (mimeType && isProtonDocsDocument(mimeType)) {
-                  await downloadDocumentWithNodeUid({
+                  await downloadDocument({
                       type: 'doc',
-                      nodeUid,
+                      uid: nodeUid,
                   });
                   return;
               } else if (mimeType && isProtonDocsSpreadsheet(mimeType)) {
-                  await downloadDocumentWithNodeUid({
+                  await downloadDocument({
                       type: 'sheet',
-                      nodeUid,
+                      uid: nodeUid,
                   });
                   return;
               }
@@ -89,14 +89,15 @@ export default function usePreviewActions({
         }[openInDocsType.type];
 
         if (openInDocsType.isNative) {
-            void openDocumentWithNodeUid({
+            void openDocument({
                 type,
-                nodeUid,
+                uid: nodeUid,
+                openBehavior: 'tab',
             });
         } else {
-            void convertDocumentWithNodeUid({
+            void convertDocument({
                 type,
-                nodeUid,
+                uid: nodeUid,
             });
         }
     };
