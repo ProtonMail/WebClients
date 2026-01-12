@@ -188,6 +188,7 @@ const getPaymentDataFromChargeableCallback = (
         paymentsVersion,
         sourceType,
         source,
+        paymentProcessorType,
     }: Parameters<SignupContextType['submitPaymentData']>[1]
 ): SignupData['paymentData'] => {
     const legacyTokenPayment: TokenPayment | undefined = isV5PaymentToken(chargeablePaymentParameters)
@@ -199,6 +200,7 @@ const getPaymentDataFromChargeableCallback = (
         paymentsVersion,
         paymentMethodType: sourceType,
         paymentMethodValue: source,
+        paymentProcessorType,
     };
 
     return {

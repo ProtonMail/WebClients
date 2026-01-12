@@ -11,8 +11,10 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
 import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
@@ -21,10 +23,11 @@ import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import { VpnDownloadSection } from '../VpnDownloadSection/VpnDownloadSection';
 import { VpnGetMoreSection } from '../VpnGetMoreSection/VpnGetMoreSection';
 
-export const VpnDownloadAndInfoSection = () => {
+export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = hasAnyPlusWithoutVPN(subscription) ? PLANS.BUNDLE : PLANS.VPN2024;
 
     const handleExplorePlans = () => {
@@ -32,6 +35,7 @@ export const VpnDownloadAndInfoSection = () => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

@@ -13,6 +13,7 @@ import {
     useErrorHandler,
 } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -23,6 +24,7 @@ import {
     type Currency,
     FREE_PLAN,
     PLANS,
+    type PaymentProcessorType,
     type Plan,
     type PlanIDs,
     SubscriptionMode,
@@ -32,6 +34,7 @@ import {
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
+    getPlanNameFromIDs,
     getPlansMap,
     hasPlanIDs,
 } from '@proton/payments';
@@ -175,6 +178,9 @@ const SingleSignupContainer = ({
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
     const getPaymentStatus = useGetPaymentStatus();
+    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
+        flow: 'signup-vpn',
+    });
     const activeBreakpoint = useActiveBreakpoint();
 
     const getPlans = useGetPlans();
@@ -547,6 +553,22 @@ const SingleSignupContainer = ({
     }, []);
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+        const getTelemetryParams = () => {
+            const subscriptionData = cache.subscriptionData;
+
+            const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
+            const plan = getPlanNameFromIDs(subscriptionData.planIDs);
+
+            return {
+                method,
+                overrides: {
+                    plan,
+                    cycle: subscriptionData.cycle,
+                    amount: subscriptionData.checkResult.AmountDue,
+                },
+            };
+        };
+
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
@@ -556,6 +578,14 @@ const SingleSignupContainer = ({
                 hasZipCodeValidation,
                 canGenerateMnemonic: false,
                 telemetryContext,
+                reportPaymentSuccess: () => {
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentSuccess(method, overrides);
+                },
+                reportPaymentFailure: () => {
+                    const { method, overrides } = getTelemetryParams();
+                    reportPaymentFailure(method, overrides);
+                },
             }),
             wait(3500),
         ]);

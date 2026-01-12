@@ -54,6 +54,8 @@ export const handleSubscribeUser = async (
         telemetryContext,
         userCurrency,
         subscription,
+        onPaymentSuccess,
+        onPaymentFailure,
     }: {
         productParam: ProductParam;
         hasZipCodeValidation: boolean;
@@ -61,6 +63,8 @@ export const handleSubscribeUser = async (
         telemetryContext: PaymentTelemetryContext;
         userCurrency: Currency | undefined;
         subscription: Subscription | FreeSubscription | undefined;
+        onPaymentSuccess?: () => void;
+        onPaymentFailure?: () => void;
     }
 ) => {
     if (hasFreePlanIDs(subscriptionData.planIDs)) {
@@ -74,37 +78,44 @@ export const handleSubscribeUser = async (
         paymentsVersion = 'v4';
     }
 
-    const { Subscription } = await createSubscription(
-        api,
-        {
-            Plans: subscriptionData.planIDs,
-            Currency: subscriptionData.currency,
-            Cycle: subscriptionData.cycle,
-            BillingAddress: subscriptionData.billingAddress,
-            VatId: subscriptionData.vatNumber,
-            ...(subscriptionData.trial ? { StartTrial: true } : {}),
-            ...{
-                Payment: subscriptionData.paymentToken,
-                Amount: subscriptionData.checkResult.AmountDue,
-                ...(subscriptionData.checkResult.Coupon?.Code
-                    ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                    : undefined),
+    try {
+        const { Subscription } = await createSubscription(
+            api,
+            {
+                Plans: subscriptionData.planIDs,
+                Currency: subscriptionData.currency,
+                Cycle: subscriptionData.cycle,
+                BillingAddress: subscriptionData.billingAddress,
+                VatId: subscriptionData.vatNumber,
+                ...(subscriptionData.trial ? { StartTrial: true } : {}),
+                ...{
+                    Payment: subscriptionData.paymentToken,
+                    Amount: subscriptionData.checkResult.AmountDue,
+                    ...(subscriptionData.checkResult.Coupon?.Code
+                        ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                        : undefined),
+                },
             },
-        },
-        {
-            product: productParam,
-            version: paymentsVersion,
-            hasZipCodeValidation,
-            build,
-            telemetryContext,
-            userCurrency,
-            subscription,
-            paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
-            paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
-        }
-    );
+            {
+                product: productParam,
+                version: paymentsVersion,
+                hasZipCodeValidation,
+                build,
+                telemetryContext,
+                userCurrency,
+                subscription,
+                paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
+                paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
+            }
+        );
 
-    return Subscription;
+        onPaymentSuccess?.();
+
+        return Subscription;
+    } catch (error) {
+        onPaymentFailure?.();
+        throw error;
+    }
 };
 
 const setupKeys = async ({

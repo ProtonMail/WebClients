@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -20,6 +21,7 @@ interface Props extends UpsellSectionBaseProps {
 
 const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE;
     const { priceDifference, priceFallbackPerMonth, showPriceDifference } = useSubscriptionPriceComparison(
@@ -33,6 +35,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
+            telemetryFlow,
         });
     };
 

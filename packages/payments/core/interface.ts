@@ -37,6 +37,7 @@ import type {
     TransactionState,
     TransactionType,
 } from './constants';
+import type { PaymentProcessorType } from './payment-processors/interface';
 import type { PlansMap } from './plan/interface';
 import type { EnrichedCheckResponse } from './subscription/interface';
 
@@ -66,6 +67,7 @@ export type WrappedPaymentsVersion = {
 };
 
 export type WrappedProcessorType = {
+    paymentProcessorType: PaymentProcessorType;
     paymentMethodType: PlainPaymentMethodType;
     paymentMethodValue: PaymentMethodType;
 };

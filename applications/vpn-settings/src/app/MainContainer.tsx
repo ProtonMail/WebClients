@@ -338,7 +338,7 @@ const MainContainer: FunctionComponent = () => {
                                     >
                                         <YourPlanSectionV2 app={app} />
                                         <YourPlanUpsellsSectionV2 app={app} />
-                                        <VpnDownloadAndInfoSection />
+                                        <VpnDownloadAndInfoSection app={app} />
                                         <VpnAlsoInYourPlanSection app={app} />
                                         <VpnBlogSection />
                                     </PrivateMainSettingsArea>
