@@ -3,8 +3,8 @@ import { createStringifier } from '../../stringifier'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../../ApplicationProvider'
 import { useActiveBreakpoint } from '@proton/components'
-import { useEffect, useState } from 'react'
 import { Icon } from '../ui'
+import { useAppPlatform } from '../../../../Hooks/useAppPlatform'
 
 const { s } = createStringifier(strings)
 
@@ -17,26 +17,9 @@ export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
   const { viewportWidth } = useActiveBreakpoint()
   const canEdit = application.getRole().canEdit()
   const isSmallViewport = viewportWidth['<=small']
-  const [isRunningInNativeMobileWeb, setIsRunningInNativeMobileWeb] = useState(false)
+  const appPlatform = useAppPlatform(clientInvoker)
 
-  // TODO: Extract this into a custom hook
-  useEffect(() => {
-    let ignore = false
-    clientInvoker
-      .getIsRunningInNativeMobileWeb()
-      .then((response) => {
-        if (!ignore) {
-          setIsRunningInNativeMobileWeb(response)
-        }
-      })
-      .catch(() => {})
-
-    return () => {
-      ignore = true
-    }
-  }, [clientInvoker])
-
-  const visible = isRunningInNativeMobileWeb && canEdit && isSmallViewport
+  const visible = appPlatform === 'nativeMobileWeb' && canEdit && isSmallViewport
   if (!visible) {
     return null
   }
