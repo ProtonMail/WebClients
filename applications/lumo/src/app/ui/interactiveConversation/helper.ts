@@ -449,8 +449,8 @@ export type NewMessageData = {
 };
 
 export type ConversationContext = {
-    spaceId: SpaceId | undefined; // i want to make these mandatory
-    conversationId: ConversationId | undefined; // i want to make these mandatory
+    spaceId: SpaceId;
+    conversationId: ConversationId;
     allConversationAttachments: Attachment[];
     messageChain: Message[];
     contextFilters: ContextFilter[];
