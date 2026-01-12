@@ -57,7 +57,6 @@ interface Props {
     history: History;
     numAddresses: number;
     disabledCategoriesIDs: string[];
-    doNotUseTurndown: boolean;
 }
 
 export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
@@ -73,7 +72,6 @@ export const getESCallbacks = ({
     history,
     numAddresses,
     disabledCategoriesIDs,
-    doNotUseTurndown,
 }: Props): ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
     const { ID: userID } = user;
 
@@ -83,7 +81,7 @@ export const getESCallbacks = ({
     });
 
     const fetchESItemContent = (itemID: string, abortSignal?: AbortSignal) =>
-        fetchMessage(itemID, api, getMessageKeys, doNotUseTurndown, abortSignal);
+        fetchMessage(itemID, api, getMessageKeys, abortSignal);
 
     // We need to keep the recovery point for metadata indexing in memory
     // for cases where IDB couldn't be instantiated but we still want to
@@ -357,7 +355,7 @@ export const getESCallbacks = ({
                             const cleanDecryptedBody =
                                 typeof decryptedBody === 'string'
                                     ? (mimetype || contentMessage.MIMEType) === MIME_TYPES.DEFAULT
-                                        ? cleanText(decryptedBody, true, doNotUseTurndown)
+                                        ? cleanText(decryptedBody, true)
                                         : decryptedBody
                                     : undefined;
 

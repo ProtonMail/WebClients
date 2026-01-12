@@ -1,7 +1,6 @@
 import type { ESCiphertext } from '@proton/encrypted-search';
 import { apiHelper } from '@proton/encrypted-search';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
-import { toText } from '@proton/mail/helpers/parserHtml';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -19,12 +18,8 @@ enum CONTENT_VERSION {
     DOM_INDEXING = 2,
 }
 
-const getContentVersion = (doNotUseTurndown: boolean): CONTENT_VERSION => {
-    if (doNotUseTurndown) {
-        return CONTENT_VERSION.DOM_INDEXING;
-    }
-
-    return CONTENT_VERSION.V1;
+const getContentVersion = (): CONTENT_VERSION => {
+    return CONTENT_VERSION.DOM_INDEXING;
 };
 
 /**
@@ -76,7 +71,7 @@ const getCleanMessageContent = (content: string) => {
 /**
  * Remove quoted text and HTML tags from body
  */
-export const cleanText = (text: string, includeQuote: boolean, doNotUseTurndown: boolean) => {
+export const cleanText = (text: string, includeQuote: boolean) => {
     const domParser = new DOMParser();
 
     // No need to add comments and b64 images to the ES cache
@@ -88,27 +83,14 @@ export const cleanText = (text: string, includeQuote: boolean, doNotUseTurndown:
     removeTag(body, 'style');
     removeTag(body, 'script');
 
-    let content = body.innerHTML;
+    const preparedBody = prepareHTMLBody(body);
+
     if (!includeQuote) {
-        const [noQuoteContent] = locateBlockquote(body);
-        content = noQuoteContent;
+        const [noQuoteContent] = locateBlockquote(preparedBody);
+        return getCleanMessageContent(noQuoteContent || '');
     }
 
-    /* Preserve as much as possible line breaks so that we don't get false positive in results.
-     E.g., with this content
-        <div>cat</div>
-        <div>her</div>
-
-     Here, "cat" and "her" should match, but not "cather".
-     */
-    if (doNotUseTurndown) {
-        const preparedBody = prepareHTMLBody(body);
-        return getCleanMessageContent(preparedBody.textContent || '');
-    }
-
-    return toText(content.replaceAll('</div>', '</div><br>'))
-        .replace(/\n{2,}/g, '\n')
-        .trim();
+    return getCleanMessageContent(preparedBody.textContent || '');
 };
 
 /**
@@ -209,7 +191,6 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    doNotUseTurndown: boolean,
     signal?: AbortSignal
 ): Promise<{ content?: ESMessageContent; error?: any }> => {
     try {
@@ -237,7 +218,7 @@ export const fetchMessage = async (
         const cleanDecryptedBody =
             typeof decryptedBody === 'string'
                 ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
-                    ? cleanText(decryptedBody, includeQuote, doNotUseTurndown)
+                    ? cleanText(decryptedBody, includeQuote)
                     : decryptedBody
                 : undefined;
 
@@ -245,7 +226,7 @@ export const fetchMessage = async (
             content: {
                 decryptedBody: cleanDecryptedBody,
                 decryptedSubject,
-                version: getContentVersion(doNotUseTurndown),
+                version: getContentVersion(),
             },
         };
     } catch (error: any) {
