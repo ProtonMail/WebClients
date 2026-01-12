@@ -13,7 +13,6 @@ import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
 interface LabelProps {
-    currentLabelID: string;
     counterMap: LocationCountMap;
     label: Label;
     updateFocusItem: (item: string) => void;
@@ -21,19 +20,11 @@ interface LabelProps {
     applyLabels: (params: ApplyLabelsParams) => void;
 }
 
-const SidebarLabel = ({
-    currentLabelID,
-    counterMap,
-    label,
-    updateFocusItem,
-    moveToFolder,
-    applyLabels,
-}: LabelProps) => {
+const SidebarLabel = ({ counterMap, label, updateFocusItem, moveToFolder, applyLabels }: LabelProps) => {
     const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
 
     return (
         <SidebarItem
-            currentLabelID={currentLabelID}
             labelID={label.ID}
             isOptionDropdownOpened={isOptionDropdownOpened}
             icon="circle-filled"
@@ -56,7 +47,6 @@ const SidebarLabel = ({
 };
 
 interface LabelsProps {
-    currentLabelID: string;
     counterMap: LocationCountMap;
     labels: Label[];
     updateFocusItem: (item: string) => void;
@@ -64,14 +54,7 @@ interface LabelsProps {
     applyLabels: (params: ApplyLabelsParams) => void;
 }
 
-const SidebarLabels = ({
-    currentLabelID,
-    counterMap,
-    labels,
-    updateFocusItem,
-    moveToFolder,
-    applyLabels,
-}: LabelsProps) => {
+const SidebarLabels = ({ counterMap, labels, updateFocusItem, moveToFolder, applyLabels }: LabelsProps) => {
     return labels.length === 0 ? (
         <div className="py-2 ml-7 text-sm color-weak">{c('Description').t`No labels`}</div>
     ) : (
@@ -81,7 +64,6 @@ const SidebarLabels = ({
                     key={label.ID}
                     label={label}
                     updateFocusItem={updateFocusItem}
-                    currentLabelID={currentLabelID}
                     counterMap={counterMap}
                     moveToFolder={moveToFolder}
                     applyLabels={applyLabels}

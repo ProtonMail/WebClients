@@ -1,6 +1,5 @@
 import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
-import type { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
@@ -34,14 +33,6 @@ const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<a
 loudRejection();
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
-
-const labelID = 'labelID';
-
-const props = {
-    labelID,
-    location: {} as Location,
-    onToggleExpand: jest.fn(),
-};
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
@@ -130,7 +121,7 @@ describe('MailSidebar', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        const view = await mailTestRender(<MailSidebar {...props} />);
+        const view = await mailTestRender(<MailSidebar />);
 
         return { ...view };
     };
@@ -177,7 +168,7 @@ describe('MailSidebar', () => {
 
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 user: getModelState(buildUser({ ID: undefined, isAdmin: true })),
                 categories: getModelState(systemFolders),
@@ -200,7 +191,7 @@ describe('MailSidebar', () => {
         mockedUseRetentionPolicies.mockReturnValue([[{ id: '1', name: 'Test Policy' }], false]);
 
         setupTest();
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 user: getModelState(buildUser({ ID: undefined, isAdmin: false, accessType: AccessType.AdminAccess })),
                 categories: getModelState(systemFolders),
@@ -222,7 +213,7 @@ describe('MailSidebar', () => {
 
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 user: getModelState(buildUser({ ID: undefined, isAdmin: false })),
                 categories: getModelState(systemFolders),
@@ -245,7 +236,7 @@ describe('MailSidebar', () => {
 
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 user: getModelState(buildUser({ ID: undefined, isAdmin: true })),
                 categories: getModelState(systemFolders),
@@ -259,7 +250,7 @@ describe('MailSidebar', () => {
     it('should show folder tree', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([folder, subfolder]),
             },
@@ -289,7 +280,7 @@ describe('MailSidebar', () => {
     it('should show label list', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([label]),
             },
@@ -305,7 +296,7 @@ describe('MailSidebar', () => {
     it('should show unread counters', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([folder, label, ...systemFolders]),
                 conversationCounts: getModelState([inboxMessages, allMailMessages, folderMessages, labelMessages]),
@@ -331,7 +322,7 @@ describe('MailSidebar', () => {
     it('should navigate to the label on click', async () => {
         setupTest();
 
-        const { history } = await mailTestRender(<MailSidebar {...props} />, {
+        const { history } = await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([folder]),
             },
@@ -349,7 +340,7 @@ describe('MailSidebar', () => {
     it('should navigate to the inbox folder and set it as active', async () => {
         setupTest();
 
-        const { history } = await mailTestRender(<MailSidebar {...props} />, {
+        const { history } = await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([...systemFolders]),
             },
@@ -374,7 +365,7 @@ describe('MailSidebar', () => {
     it('should call event manager on click if already on label', async () => {
         setupTest();
 
-        const { history } = await mailTestRender(<MailSidebar {...props} />, {
+        const { history } = await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState([folder]),
             },
@@ -397,7 +388,7 @@ describe('MailSidebar', () => {
     it('should be updated when counters are updated', async () => {
         setupTest();
 
-        const { store } = await mailTestRender(<MailSidebar {...props} />, {
+        const { store } = await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([inboxMessages]),
@@ -421,7 +412,7 @@ describe('MailSidebar', () => {
     it('should not show scheduled sidebar item when feature flag is disabled', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([scheduledMessages]),
@@ -434,7 +425,7 @@ describe('MailSidebar', () => {
     it('should show scheduled sidebar item if scheduled messages', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />, {
+        await mailTestRender(<MailSidebar />, {
             preloadedState: {
                 categories: getModelState(systemFolders),
                 conversationCounts: getModelState([scheduledMessages]),
@@ -450,7 +441,7 @@ describe('MailSidebar', () => {
     it('should not show scheduled sidebar item without scheduled messages', async () => {
         setupTest();
 
-        await mailTestRender(<MailSidebar {...props} />);
+        await mailTestRender(<MailSidebar />);
         expect(screen.queryByTestId(`Scheduled`)).toBeNull();
     });
 
@@ -458,7 +449,7 @@ describe('MailSidebar', () => {
         it('should navigate with the arrow keys', async () => {
             setupTest();
 
-            const { container } = await mailTestRender(<MailSidebar {...props} />, {
+            const { container } = await mailTestRender(<MailSidebar />, {
                 preloadedState: {
                     categories: getModelState([label, folder, ...systemFolders]),
                 },
@@ -516,7 +507,7 @@ describe('MailSidebar', () => {
             const TestComponent = () => {
                 return (
                     <>
-                        <MailSidebar {...props} />
+                        <MailSidebar />
                         <div data-shortcut-target="item-container" tabIndex={-1}>
                             test
                         </div>
@@ -566,7 +557,7 @@ describe('Sidebar checklist display', () => {
             ],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<MailSidebar {...props} />);
+        await mailTestRender(<MailSidebar />);
         screen.getByTestId('onboarding-checklist');
     });
 
@@ -584,7 +575,7 @@ describe('Sidebar checklist display', () => {
             ],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<MailSidebar {...props} />);
+        await mailTestRender(<MailSidebar />);
         const checklistWrapper = screen.queryByTestId('onboarding-checklist');
 
         expect(checklistWrapper).toBeNull();
@@ -604,7 +595,7 @@ describe('Sidebar checklist display', () => {
             ],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<MailSidebar {...props} />);
+        await mailTestRender(<MailSidebar />);
         const checklistWrapper = screen.queryByTestId('onboarding-checklist');
 
         expect(checklistWrapper).toBeNull();
@@ -639,7 +630,7 @@ describe('Sidebar checklist display', () => {
             ],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<MailSidebar {...props} />);
+        await mailTestRender(<MailSidebar />);
 
         const closeButton = screen.getByTestId('onboarding-checklist-header-hide-button');
         fireEvent.click(closeButton);

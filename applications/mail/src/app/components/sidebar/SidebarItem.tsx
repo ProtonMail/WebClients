@@ -25,6 +25,8 @@ import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
@@ -51,7 +53,6 @@ const NO_DROP_SET: Set<string> = new Set([
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
 interface Props {
-    currentLabelID: string;
     labelID: string;
     isFolder: boolean;
     isLabel?: boolean;
@@ -78,7 +79,6 @@ interface Props {
 }
 
 const SidebarItem = ({
-    currentLabelID,
     labelID,
     icon,
     iconSize,
@@ -111,6 +111,8 @@ const SidebarItem = ({
     const { checkAllRef } = useCheckAllRef();
     const [labels] = useLabels();
     const [folders] = useFolders();
+
+    const mailParams = useMailSelector(params);
 
     const categoryViewControl = useCategoriesView();
 
@@ -152,8 +154,8 @@ const SidebarItem = ({
         const customViewLabelIDs = Object.entries(CUSTOM_VIEWS).map(([, view]) => {
             return view.label.toString();
         });
-        return !(labelID === currentLabelID) && !NO_DROP_SET.has(labelID) && !customViewLabelIDs.includes(labelID);
-    }, [currentLabelID, labelID]);
+        return !(labelID === mailParams.labelID) && !NO_DROP_SET.has(labelID) && !customViewLabelIDs.includes(labelID);
+    }, [mailParams.labelID, labelID]);
 
     const dropCallback = useCallback(
         (itemIDs: string[]) => {
@@ -163,19 +165,19 @@ const SidebarItem = ({
                 if (isFolder) {
                     void moveToFolder({
                         elements,
-                        sourceLabelID: currentLabelID,
+                        sourceLabelID: mailParams.labelID,
                         destinationLabelID: labelID,
                         folderName: text,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                         sourceAction: SOURCE_ACTION.DRAG_AND_DROP_MENU,
-                        currentFolder: folderLocation(currentLabelID, labels, folders),
+                        currentFolder: folderLocation(mailParams.labelID, labels, folders),
                     });
                 } else {
                     void applyLabels({
                         elements,
                         changes: { [labelID]: true },
-                        labelID: currentLabelID,
+                        labelID: mailParams.labelID,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                         destinationLabelID: labelID,
@@ -184,7 +186,7 @@ const SidebarItem = ({
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1E6B59
-        [applyLabels, dragFilter, checkAllRef, currentLabelID, getElementsFromIDs, isFolder, labelID, selectAll]
+        [applyLabels, dragFilter, checkAllRef, mailParams.labelID, getElementsFromIDs, isFolder, labelID, selectAll]
     );
 
     const { dragOver, dragProps, handleDrop } = useItemsDroppable(dragFilter, isFolder ? 'move' : 'link', dropCallback);
